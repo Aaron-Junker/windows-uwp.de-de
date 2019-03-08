@@ -4,14 +4,14 @@ title: Anpassen des Druck-Workflows
 description: Erstellen Sie angepasste Druck-Workflows entsprechend den Anforderungen Ihrer Organisation.
 ms.date: 08/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, das Drucken
+keywords: Windows 10, Uwp, Drucken
 ms.localizationpriority: medium
 ms.openlocfilehash: 96e308793e60c0367c712fb93a5d25a056397568
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927175"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653235"
 ---
 # <a name="customize-the-print-workflow"></a>Anpassen des Druck-Workflows
 
@@ -240,9 +240,9 @@ Der Unterschied besteht darin, dass WSDAs zwar automatisch für den Benutzer akt
 
 ### <a name="set-the-workflow-apps-policy"></a>Festlegen der Richtlinien für die Workflow-App
 Die Workflow-App-Richtlinie wird durch Powershell-Befehle auf dem Gerät festgelegt, das die Workflow-App ausführen soll. Die Befehle Set-Printer, Add-Printer (bestehender Port) und Add-Printer (neuer WSD-Port) werden modifiziert, um das Festen von Workflow-Richtlinien zu ermöglichen. 
-* `Disabled`: Workflow-Apps werden nicht aktiviert.
-* `Uninitialized`: Workflow-Apps werden aktiviert, wenn der Workflow-DCA auf dem System installiert ist. Wenn die App nicht installiert ist, wird trotzdem gedruckt. 
-* `Enabled`: Workflow-Contract wird aktiviert, wenn der Workflow-DCA auf dem System installiert ist. Wenn die App nicht installiert ist, schlägt das Drucken fehl. 
+* `Disabled`: Workflow-apps werden nicht aktiviert werden.
+* `Uninitialized`: Workflowanwendungen werden aktiviert, wenn der Workflow DCA im System installiert ist. Wenn die App nicht installiert ist, wird trotzdem gedruckt. 
+* `Enabled`: Workflow-Vertrag wird aktiviert werden, wenn der Workflow DCA im System installiert ist. Wenn die App nicht installiert ist, schlägt das Drucken fehl. 
 
 Mit dem folgenden Befehl wird die Workflow-App auf dem angegebenen Drucker als erforderlich festgelegt.
 ```Powershell
@@ -251,10 +251,10 @@ Set-Printer –Name "Microsoft XPS Document Writer" -WorkflowPolicy On
 
 Ein lokaler Benutzer kann diese Richtlinie auf einem lokalen Drucker ausführen, oder der Druckeradministrator kann diese Richtlinie auf dem Druckerserver ausführen. Die Richtlinie wird dann mit allen Client-Verbindungen synchronisiert. Der Druckeradministrator kann diese Richtlinie immer dann verwenden, wenn ein neuer Drucker hinzugefügt wird.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
-[Beispiel zur Workflow-App](https://github.com/Microsoft/print-oem-samples)
+[Workflow-app-Beispiel](https://github.com/Microsoft/print-oem-samples)
 
-[Namespace Windows.Graphics.Printing.Workflow](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
+[Windows.Graphics.Printing.Workflow-namespace](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
 
 

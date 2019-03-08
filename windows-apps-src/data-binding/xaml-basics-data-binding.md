@@ -6,26 +6,26 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923117"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639985"
 ---
 # <a name="create-data-bindings"></a>Erstellen von Datenbindungen
 
 Angenommen, Sie haben eine schöne UI entworfen und implementiert, die mit Platzhalterbildern, "Lorem Ipsum"-Standardtext und Steuerelementen gefüllt ist, die noch keine Funktion haben. Als Nächstes möchten Sie es von einem Prototyp-Entwurf in eine echten App umwandeln und mit echte Daten verbinden. 
 
-In diesem Lernprogramm erfahren Sie, wie Sie Ihre Textbausteine durch Datenbindungen ersetzen und andere direkte Links zwischen der Benutzeroberfläche und Ihren Daten erstellen. Außerdem erfahren, wie Sie die Daten für die Anzeige formatieren oder konvertieren und die Benutzeroberfläche und die Daten synchron halten. Wenn Sie dieses Lernprogramm abgeschlossen haben, können Sie die Einfachheit und Organisation des XAML- und C#-Codes vereinfachen und organisieren, damit die Verwaltung und Erweiterung einfacher ist.
+In diesem Lernprogramm erfahren Sie, wie Sie Ihre Textbausteine durch Datenbindungen ersetzen und andere direkte Links zwischen der Benutzeroberfläche und Ihren Daten erstellen. Außerdem erfahren, wie formatieren oder konvertieren Sie die Daten für die Anzeige, und Ihre Benutzeroberfläche und die Daten synchron halten. Wenn Sie dieses Tutorial abgeschlossen haben, Sie werden zur Verbesserung der Einfachheit und Organisation von der XAML und C# Codes, wodurch es einfacher zu verwalten und zu erweitern.
 
-Sie beginnen mit einer vereinfachten Version des PhotoLab-Beispiels. Dieses Starterversion umfasst die vollständigen Datenebene sowie ein grundlegendes XAML-Layout und lässt viele kleinere Features aus, um den Code leichter zu durchsuchen. In diesem Lernprogramm lernen Sie nicht das Erstellen der vollständigen App. Lesen Sie daher die endgültige Version zu Features durch wie z.B. benutzerdefinierte Animationen und Support für Ihre Telefon. Die endgültige Version finden Sie im Stammordner des [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)-Repos. 
+Sie beginnen mit einer vereinfachten Version des PhotoLab-Beispiels. Dieses Starterversion umfasst die vollständigen Datenebene sowie ein grundlegendes XAML-Layout und lässt viele kleinere Features aus, um den Code leichter zu durchsuchen. In diesem Lernprogramm lernen Sie nicht das Erstellen der vollständigen App. Lesen Sie daher die endgültige Version zu Features durch wie z. B. benutzerdefinierte Animationen und Support für Ihre Telefon. Die endgültige Version finden Sie im Stammordner des [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)-Repos. 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 * [Visual Studio 2017 und die neueste Version des Windows 10-SDKs](https://developer.microsoft.com/windows/downloads).
 
-## <a name="part-0-get-the-code"></a>Teil 0: Code herunterladen
-Der Startpunkt für diese Übung befindet sich im PhotoLab-Beispiel-Repository, im Ordner [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding). Nachdem Sie das Repository geklont/heruntergeladen haben, können Sie das Projekt bearbeiten, indem Sie PhotoLab.sln mit Visual Studio2017 öffnen.
+## <a name="part-0-get-the-code"></a>Teil 0: Code abrufen
+Der Startpunkt für diese Übung befindet sich im PhotoLab-Beispiel-Repository, im Ordner [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding). Nachdem Sie das Repository geklont/heruntergeladen haben, können Sie das Projekt bearbeiten, indem Sie PhotoLab.sln mit Visual Studio 2017 öffnen.
 
 Die PhotoLab-App besteht aus zwei Hauptseiten:
 
@@ -35,13 +35,13 @@ Die PhotoLab-App besteht aus zwei Hauptseiten:
 **DetailPage.xaml:** zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 ![DetailPage](../design/basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-replace-the-placeholders"></a>Teil 1: Ersetzen Sie die Platzhalter
+## <a name="part-1-replace-the-placeholders"></a>Teil 1: Ersetzen Sie die Platzhalter
 
 Hier erstellen Sie einmalige Bindungen der XAML-Datenvorlage, um echte Bilder und Metadaten von Bildern anstelle der Platzhalterinhalte anzuzeigen. 
 
-Einmalige Bindungen eignen sich für schreibgeschützte, nicht veränderliche Daten d.h. sie sind sehr leistungsfähig und leicht zu erstellen und zeigen große Datensätze in den **GridView**- und **ListView**-Steuerelementen an. 
+Einmalige Bindungen eignen sich für schreibgeschützte, nicht veränderliche Daten d. h. sie sind sehr leistungsfähig und leicht zu erstellen und zeigen große Datensätze in den **GridView**- und **ListView**-Steuerelementen an. 
 
-**Ersetzen Sie den Platzhalter mit einmaligen Bindungen**
+**Ersetzen Sie die Platzhalter durch einmalige Bindungen**
 
 1. Öffnen Sie den Ordner „xaml-basics-startpunkte\data-binding” und starten Sie die Datei PhotoLab.sln. 
 
@@ -122,7 +122,7 @@ Führen Sie die App aus, um herauszufinden, wie sie bisher aussieht. Keine weite
 > [!Note]
 > Wenn Sie weiter experimentieren möchten, versuchen Sie, der Datenvorlage einen neuen TextBlock hinzuzufügen, und verwenden Sie den x: Bind IntelliSense-Trick, um eine Eigenschaft zu suchen, die Sie anzeigen möchten. 
 
-## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>Teil 2: Verwenden der Bindung,um die Galerie-UI mit Bildern zu verbinden
+## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>Teil 2: Verwenden Sie die Bindung zur Verbindung mit den Images der Benutzeroberfläche des Katalogs
 
 Hier erstellen Sie einmalige Bindungen auf XAML-Seiten für die Verbindung der Fotogalerie-Ansicht mit der Bildersammlung und ersetzen dadurch den vorhandenen prozeduralen Code, der dies im CodeBehind durchführt. Erstellen Sie außerdem eine Schaltfläche **Löschen**, um zu sehen, wie sich die Fotogalerie-Ansicht ändert, wenn Sie Bilder aus der Sammlung entfernen. Gleichzeitig erfahren Sie, wie Ereignisse für mehr Flexibilität als herkömmliche Ereignishandler an Ereignishandler gebunden werden. 
 
@@ -132,9 +132,9 @@ Alle Bindungen, die bisher behandelt wurden, befinden sich innerhalb der Datenvo
 
 Im PhotoLab-Beispiel kann eine solche Bindung verwendet werden, um das Haupt-**GridView**-Steuerelement direkt mit der Sammlung von Bildern zu verbinden, anstatt dies im CodeBehind durchzuführen. Später sehen Sie weitere Beispiele. 
 
-**Binden des Haupt-Steuerelements „GridView” an die Bildersammlung**
+**Binden Sie die wichtigsten GridView-Steuerelement an die Auflistung der Bilder**
 
-1. Suchen Sie unter MainPage.xaml.cs die **OnNavigatedTo**-Methode und entfernen Sie den Code, der **ItemsSource ** festlegt.
+1. Suchen Sie unter MainPage.xaml.cs die **OnNavigatedTo**-Methode und entfernen Sie den Code, der **ItemsSource**  festlegt.
 
     **Vorher:**
     ```c#
@@ -160,7 +160,7 @@ Im PhotoLab-Beispiel kann eine solche Bindung verwendet werden, um das Haupt-**G
               ItemsSource="{x:Bind Images}" 
     ```
 
-    Die **Bild**-Eigenschaft ist vom Typ **ObservableCollection\ < ImageFileInfo\>**, sodass die einzelnen Elemente, in unter **GridView** angezeigt werden vom Typ **ImageFileInfo** sind. Dies entspricht dem **x: DataType**-Wert, der in Teil 1 beschrieben wurde. 
+    Die **Images** Eigenschaft ist vom Typ **ObservableCollection\<ImageFileInfo\>**, damit die einzelnen Elemente der Anzeige der **GridView** sind Der Typ **ImageFileInfo**. Dies entspricht dem **x: DataType**-Wert, der in Teil 1 beschrieben wurde. 
 
 Alle Bindungen, die wir haben bisher untersucht haben, sind einmalige, schreibgeschützte Bindungen und entsprechen dem Standardverhalten für nur **x: Bind**-Ausdrücke. Die Daten werden nur bei der Initialisierung hochgeladen, wodurch High-End-Bindungen entstehen – dies eignet sich ideal für die Unterstützung von mehreren komplexen Ansichten großer Datensätze. 
 
@@ -171,11 +171,11 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-Der **Bild**-Eigenschaftswert ändert sich nie, aber da die Eigenschaft vom Typ **ObservableCollection\<T\>** ist können sich die *Inhalte* der Sammlung ändern, und die Bindung wird automatisch die Änderungen erkennen und die Benutzeroberfläche aktualisieren. 
+Die **Images** Eigenschaftswert sich nie ändert, aber da die Eigenschaft vom Typ **ObservableCollection\<T\>**, *Inhalt* von der Auflistung kann geändert werden, und die Bindung automatisch Beachten Sie die Änderungen und die Benutzeroberfläche aktualisiert wird. 
 
-Um dies zu testen, werden wir vorübergehend eine Schaltfläche hinzufügen, die das derzeit ausgewählte Bild löscht. In der endgültigen Version ist diese Schaltfläche nicht vorhanden, da die Auswahl eines Bildes Sie zu einer Detailseite führt. Das Verhalten von **ObservableCollection\<T\>** ist jedoch im letzten PhotoLab-Beispiel wichtig, da der XAML-Code im Seitenkonstruktor initialisiert wird (über den **InitializeComponent**-Methodenaufruf). Die **Bild**-Sammlung wird unten in der **OnNavigatedTo**-Methode aufgefüllt. 
+Um dies zu testen, werden wir vorübergehend eine Schaltfläche hinzufügen, die das derzeit ausgewählte Bild löscht. In der endgültigen Version ist diese Schaltfläche nicht vorhanden, da die Auswahl eines Bildes Sie zu einer Detailseite führt. Jedoch das Verhalten der **ObservableCollection\<T\>**  ist im letzten Beispiel PhotoLab wichtig, da die XAML in der Page-Konstruktor initialisiert wird (über die  **InitializeComponent** Methodenaufruf), aber die **Images** -Auflistung wird aufgefüllt, weiter unten in der **OnNavigatedTo** Methode. 
 
-**Schaltfläche „Löschen” hinzufügen**
+**Hinzufügen einer Schaltfläche "löschen"**
 
 1. Suchen Sie in MainPage.xaml die **CommandBar** mit dem Namen **MainCommandBar** und fügen Sie eine neue Schaltfläche vor der Schaltfläche zum Zoomen hinzu. (Die Zoomsteuerelemente funktionieren noch nicht. Sie können diese im nächsten Teil des Lernprogramms anschließen.)
 
@@ -198,20 +198,20 @@ Um dies zu testen, werden wir vorübergehend eine Schaltfläche hinzufügen, die
 
     Diese Methode löscht das ausgewählte Bild aus der **Bild**-Sammlung. 
 
-Führen Sie jetzt die App aus und verwenden Sie die Schaltfläche, um ein paar Bilder zu löschen. Wie Sie sehen, wird die Benutzeroberfläche automatisch aktualisiert, Dank der Datenbindung und dem **ObservableCollection\<T\>**-Typ. 
+Führen Sie jetzt die App aus und verwenden Sie die Schaltfläche, um ein paar Bilder zu löschen. Wie Sie sehen können, die Benutzeroberfläche aufgrund der Datenbindung automatisch aktualisiert wird und die **ObservableCollection\<T\>**  Typ. 
 
 > [!Note]
 > Hier ist eine schwierigere Herausforderung: versuchen Sie, zwei Schaltflächen hinzuzufügen, die das ausgewählte Bild in der Liste nach oben oder unten verschieben, und binden Sie dann das x: Bind-Klick-Ereignisse dieser zwei neuen Methoden an DeleteSelectedImage.
  
-## <a name="part-3-set-up-the-zoom-slider"></a>Teil 3: Einrichten des Zoom-Schiebereglers 
+## <a name="part-3-set-up-the-zoom-slider"></a>Teil 3: Richten Sie den Zoomschieberegler 
 
 In dieser Phase erstellen wir unidirektionale Bindungen von einem Steuerelement in der Datenvorlage zum Zoomschieberegler, der sich außerhalb der Vorlage befindet. Außerdem erfahren Sie, dass Sie die Datenbindung mit vielen Eigenschaften des Steuerelements verwenden können, nicht nur die offensichtlichsten, wie **TextBlock.Text** und **Image.Source**. 
 
-**Binden Sie die Datenvorlage Bild an den Zoomschieberegler an**
+**Binden Sie die Vorlage für Images Daten an der Zoomschieberegler**
 
 * Suchen Sie ein **DataTemplate** mit dem Namen **ImageGridView_DefaultItemTemplate** und ersetzen Sie die Werte von **Höhe** und **Breite** des **Raster**-Steuerelements im oberen Bereich der Vorlage.
 
-    **Vorher**
+    **Vor dem**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -220,7 +220,7 @@ In dieser Phase erstellen wir unidirektionale Bindungen von einem Steuerelement 
               Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **Nachher**
+    **After**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -233,12 +233,12 @@ In dieser Phase erstellen wir unidirektionale Bindungen von einem Steuerelement 
     
     Haben Sie bemerkt, dass dies **Bindungs**-Ausdrücke sind und nicht **x: Bind**-Ausdrücke? Dies ist die alte Vorgehensweise der Nutzung von Datenbindungen, und diese ist veraltet. **x: Bind** hat fast alle Funktionen von **Bindung** und vieles mehr. Wenn Sie jedoch **x: Bind** in einer Datenvorlage verwenden, bindet sie sich an den Typ, der im Wert **x: DataType** deklariert ist. Wie binden Sie etwas in der Vorlage an etwas auf der XAML-Seite oder im CodeBehind? Müssen Sie einen veralteten **Bindungs**-Ausdruck verwenden. 
     
-    **Bindungs**-Ausdrücke erkennen den **x: DataType**-Wert nicht an, aber diese **Bindungs**-Ausdrücken haben **ElementName**-Werte, die nahezu auf die gleiche Weise funktionieren. Diese teilen dem Bindungsmodul mit, dass **Binding Value** eine Bindung für die **Wert**-Eigenschaft für das angegebene Element auf der Seite ist (d.h. das Element mit dem **x: Name**-Wert). Wenn Sie eine Eigenschaft im CodeBehind binden möchten, würde es etwa so aussehen ```{Binding MyCodeBehindProperty, ElementName=page}``` wobei **Seite** sich auf den **x: Name**-Wert bezieht, der im Element **Seite** in XAML festgelegt ist. 
+    **Bindungs**-Ausdrücke erkennen den **x: DataType**-Wert nicht an, aber diese **Bindungs**-Ausdrücken haben **ElementName**-Werte, die nahezu auf die gleiche Weise funktionieren. Diese teilen dem Bindungsmodul mit, dass **Binding Value** eine Bindung für die **Wert**-Eigenschaft für das angegebene Element auf der Seite ist (d. h. das Element mit dem **x: Name**-Wert). Wenn Sie eine Eigenschaft im CodeBehind binden möchten, würde es etwa so aussehen ```{Binding MyCodeBehindProperty, ElementName=page}``` wobei **Seite** sich auf den **x: Name**-Wert bezieht, der im Element **Seite** in XAML festgelegt ist. 
     
     > [!NOTE]
     > In der Standardeinstellung sind **Bindungs**-Ausdrücke *unilateral*, was bedeutet, dass sie die Benutzeroberfläche automatisch aktualisieren, wenn die Eigenschaft des gebundenen Werts sich ändert. 
     > 
-    > Im Gegensatz dazu ist die Standardeinstellung für **x: Bind** *einmalig*, was bedeutet, dass jegliche Änderungen an der gebundenen Eigenschaft ignoriert werden. Dies ist die Standardeinstellung, da es die leistungsstärkste Option ist und die meisten Bindungen zu statischen, schreibgeschützten Daten erstellt werden. 
+    > Im Gegensatz dazu ist die Standardeinstellung für **x: Bind***einmalig*, was bedeutet, dass jegliche Änderungen an der gebundenen Eigenschaft ignoriert werden. Dies ist die Standardeinstellung, da es die leistungsstärkste Option ist und die meisten Bindungen zu statischen, schreibgeschützten Daten erstellt werden. 
     >
     > Hier gilt folgende Lektion: die bei Verwendung von **X: Bind** mit Eigenschaften, deren Werte sich ändern kann, müssen Sie ```Mode=OneWay```oder ```Mode=TwoWay``` hinzufügen. Im nächsten Abschnitt sehen Sie ein Beispiel dafür.
 
@@ -247,15 +247,15 @@ Führen Sie die App aus und verwenden Sie den Schieberegler, um die Größe der 
 ![Die App mit angezeigtem Zoomschieberegler ausführen](../design/basics/images/xaml-basics/gallery-with-zoom-control.png)
 
 > [!NOTE]
-> Hier ist eine Herausforderung: versuchen Sie andere UI-Eigenschaften an die **Wert**-Eigenschaft des Zoomschiebereglers oder eines anderen Reglers zu binden, den Sie nach dem Zoomschieberegler hinzufügen. Sie können z.B. die **FontSize**-Eigenschaft der **TitleTextBlock** auf einen neuen Schieberegler mit einem Standardwert von **24** binden. Achten Sie darauf, dass Sie angemessene minimale und maximalen Werte festlegen.
+> Hier ist eine Herausforderung: versuchen Sie andere UI-Eigenschaften an die **Wert**-Eigenschaft des Zoomschiebereglers oder eines anderen Reglers zu binden, den Sie nach dem Zoomschieberegler hinzufügen. Sie können z. B. die **FontSize**-Eigenschaft der **TitleTextBlock** auf einen neuen Schieberegler mit einem Standardwert von **24** binden. Achten Sie darauf, dass Sie angemessene minimale und maximalen Werte festlegen.
 
-## <a name="part-4-improve-the-zoom-experience"></a>Teil 4: Verbessern der Zoomerfahrung 
+## <a name="part-4-improve-the-zoom-experience"></a>Teil 4: Verbessern Sie die benutzerfreundlichkeit für zoom 
 
-In diesem Abschnitt fügen Sie dem CodeBehind eine benutzerdefinierte **ItemSize**-Eigenschaft hinzu und erstellen eine unidirektionale Bindungen von der Bildvorlage auf die neue Eigenschaft. Der **ItemSize**-Wert wird vom Zoomschieberegler und anderen Faktoren wie z.B. dem Umschalten von **Bildschirmgröße anpassen** und der Fenstergröße aktualisiert, die so eine präzisere Erfahrung bieten. 
+In diesem Abschnitt fügen Sie dem CodeBehind eine benutzerdefinierte **ItemSize**-Eigenschaft hinzu und erstellen eine unidirektionale Bindungen von der Bildvorlage auf die neue Eigenschaft. Der **ItemSize**-Wert wird vom Zoomschieberegler und anderen Faktoren wie z. B. dem Umschalten von **Bildschirmgröße anpassen** und der Fenstergröße aktualisiert, die so eine präzisere Erfahrung bieten. 
 
 Im Gegensatz zu integrierten Steuerelement-Eigenschaften werden Ihre benutzerdefinierten Eigenschaften nicht automatisch die Benutzeroberfläche aktualisieren, auch nicht bei unidirektionale und bidirektionale Bindungen. Sie funktionieren gut **einmaligen** Bindungen, aber wenn Sie Ihre Änderungen tatsächlich auf der Benutzeroberfläche anzeigen möchten, müssen Sie zuerst einige Aufgaben ausführen. 
 
-**Erstellen Sie die ItemSize-Eigenschaft, damit die Benutzeroberfläche aktualisiert wird**
+**Erstellen Sie die ItemSize-Eigenschaft, sodass die Benutzeroberfläche aktualisiert**
 
 1. In MainPage.xaml.cs, ändern Sie die Signatur der **MainPage**-Klasse, damit die **INotifyPropertyChanged**-Schnittstelle implementiert wird.
 
@@ -299,11 +299,11 @@ Im Gegensatz zu integrierten Steuerelement-Eigenschaften werden Ihre benutzerdef
 
     Die **ItemSize**-Eigenschaft enthält den Wert eines privaten **_itemSize**-Felds. Durch Verwenden eines solchen Sicherungsfelds kann die Eigenschaft überprüfen, ob ein neuer Wert identisch mit dem alten Wert ist, bevor es möglicherweise unnötig ein **PropertyChanged**-Ereignis auslöst.
 
-    Das Ereignis selbst wird durch die **Invoke**-Methode ausgelöst. Das Fragezeichen überprüft, ob das **PropertyChanged**-Ereignis null ist – d.h., ob bereits ein Ereignishandler hinzugefügt wurde. Jede unidirektionale oder bidirektionale Bindung fügt einen Ereignishandler in den Hintergrund hinzu, aber wenn niemand horcht, geschieht hier nichts mehr. Wenn **PropertyChanged** nicht null ist, wird **Invoke** mit einem Verweis auf die Ereignisquelle (die Seite selbst, die durch das Schlagwort **dies** dargestellt wird) und einem **Ereignisargument**-Objekt aufgerufen , das den Namen der Eigenschaft anzeigt. Mit diesen Informationen, wird jede unidirektionale oder bidirektionalen Bindungen für die **ItemSize**-Eigenschaft über jegliche Änderungen informiert, damit die gebundene UI aktualisiert werden kann. 
+    Das Ereignis selbst wird durch die **Invoke**-Methode ausgelöst. Das Fragezeichen überprüft, ob das **PropertyChanged**-Ereignis null ist – d. h., ob bereits ein Ereignishandler hinzugefügt wurde. Jede unidirektionale oder bidirektionale Bindung fügt einen Ereignishandler in den Hintergrund hinzu, aber wenn niemand horcht, geschieht hier nichts mehr. Wenn **PropertyChanged** nicht null ist, wird **Invoke** mit einem Verweis auf die Ereignisquelle (die Seite selbst, die durch das Schlagwort **dies** dargestellt wird) und einem **Ereignisargument**-Objekt aufgerufen , das den Namen der Eigenschaft anzeigt. Mit diesen Informationen, wird jede unidirektionale oder bidirektionalen Bindungen für die **ItemSize**-Eigenschaft über jegliche Änderungen informiert, damit die gebundene UI aktualisiert werden kann. 
 
 4. Suchen Sie in MainPage.xaml ein **DataTemplate** mit dem Namen **ImageGridView_DefaultItemTemplate** und ersetzen Sie die Werte von **Höhe** und **Breite** des **Raster**-Steuerelements im oberen Bereich der Vorlage. (Wenn Sie im vorherigen Teil dieses Lernprogramms die Bindungen von einem Steuerelement zum anderen erstellt haben, müssen Sie als einzige Änderungen **Wert** durch **ItemSize** und **ZoomSlider** durch **Seite** ersetzen. Führen Sie dies für die Höhe und Breite aus!)
 
-    **Vorher**
+    **Vor dem**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -312,7 +312,7 @@ Im Gegensatz zu integrierten Steuerelement-Eigenschaften werden Ihre benutzerdef
             Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **Nachher**
+    **After**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -415,7 +415,7 @@ Führen Sie die App aus und verwenden Sie den Zoomschieberegler und den Schalter
 > Hier ist eine Herausforderung: versuchen Sie einen **TextBlock** nach dem **ZoomSlider** hinzuzufügen und die **Text**-Eigenschaft an die **ItemSize**-Eigenschaft zu binden. Da es sich nicht um eine Datenvorlage handelt, können Sie **x: Bind** anstelle von **Bindung** wie in den vorherigen **ItemSize**-Bindungen verwenden.  
 }
 
-## <a name="part-5-enable-user-edits"></a>Teil 5: Aktivieren der Bearbeitung durch den Benutzer
+## <a name="part-5-enable-user-edits"></a>Teil 5: Aktivieren Sie die benutzerbearbeitungen
 
 Hier erstellen Sie bidirektionale Bindungen, damit Benutzer die Werte aktualisieren können, einschließlich der Bildtitel, Bewertung und verschiedener visuelle Effekte. 
 
@@ -423,12 +423,12 @@ Um dies zu erreichen, aktualisieren Sie die vorhandene **DetailPage**, die ein e
 
 Zunächst müssen Sie jedoch die **DetailPage** anhängen, damit die App darauf navigiert, wenn der Benutzer ein Bild in der Galerie anklickt.
 
-**Anhängen der DetailPage**
+**Fügen Sie der DetailPage**
 
 1. Suchen Sie in MainPage.xaml das **GridView** mit dem Namen **ImageGridView** und fügen Sie ein **ItemClick**-Attribut hinzu. 
 
     > [!TIP] 
-    > Wenn Sie die Änderung eintippen anstatt diese zu kopieren/einzufügen, sehen Sie ein IntelliSense-Popup mit der Bezeichnung "\<New Event Handler\>". Wenn Sie die Tab-Taste drücken, wird es den Wert mit dem Namen eines standardmäßigen Ereignishandlers füllen und automatisch die Methode im nächsten Schritt auskommentieren. Drücken Sie dann F12, um zu der Methode im CodeBehind zu navigieren. 
+    > Wenn Sie in die folgende Änderung anstelle von kopieren/einfügen eingeben, sehen Sie eine IntelliSense-Popupfenster, die besagt "\<neuen Ereignishandler\>". Wenn Sie die Tab-Taste drücken, wird es den Wert mit dem Namen eines standardmäßigen Ereignishandlers füllen und automatisch die Methode im nächsten Schritt auskommentieren. Drücken Sie dann F12, um zu der Methode im CodeBehind zu navigieren. 
 
     **Vorher:**
     ```xaml
@@ -463,7 +463,7 @@ Wie Sie sehen können, zeigt das Textfeld den Titel an und Sie können Änderung
 
 Alle Steuerelemente sind bereits mithilfe der einfachen **x: Bind**-Ausdrücke gebunden, die wir in Teil 1 behandelt haben. Wenn Sie sich erinnern, bedeutet dies, dass sie alle einmalige Bindungen sind, was erklärt, warum die Änderungen der Werte nicht registriert sind. Um dieses Problem zu beheben, müssen wir diese lediglich in bidirektionalen Bindungen umwandeln. 
 
-**Machen Sie die Bearbeitungssteuerelemente interaktiv**
+**Stellen Sie die Bearbeitungssteuerelementen interaktive**
 
 1. Suchen Sie in DetailPage.xaml den **TextBlock** mit dem Namen **TitleTextBlock** und das **RadRating**-Steuerelement dahinter, und aktualisieren Sie deren **x: Bind**-Ausdrücke, damit sie **Mode = TwoWay** enthalten.
 
@@ -502,7 +502,7 @@ Wie die unidirektionalen Bindungen, die wir vorher behandelt haben, werden diese
 
 Führen Sie die App aus und testen Sie die Bearbeitungssteuerelemente. Wenn Sie eine Änderung vornehmen, wirkt sich dies jetzt auf den Bildwert aus, und diese Änderungen bleiben konstant, wenn Sie wieder zur Hauptseite navigieren. 
 
-## <a name="part-6-format-values-through-function-binding"></a>Teil 6: Formatieren von Werten über die Bind-Funktion
+## <a name="part-6-format-values-through-function-binding"></a>Teil 6: Formatieren von Werten über funktionsbindung
 
 Ein letztes Problem bleibt bestehen. Wenn Sie den Effekt-Schieberegler verschieben, ändern Sie die Beschriftungen daneben nicht. 
 
@@ -510,9 +510,9 @@ Ein letztes Problem bleibt bestehen. Wenn Sie den Effekt-Schieberegler verschieb
 
 Der letzte Teil dieses Lernprogramms behandelt das Hinzufügen von Bindungen, die die Werte des Schiebereglers für die Anzeige formatieren.
 
-**Binden Sie die Effekt-Schiebereglerbeschriftungen und formatieren Sie die Werte für die Anzeige**
+**Binden Sie die Auswirkungen schiebereglerbezeichnungen und formatieren Sie die Werte für die Anzeige**
 
-1. Suchen Sie den **TextBlock** hinter dem **Belichtungs**-Schieberegler und ersetzen den **Text**-Wert durch den hier gezeigten Bindungsausdruck.
+1. Suchen der **TextBlock** nach der **Offenlegung** Schieberegler, und ersetzen die **Text** Wert mit den hier gezeigten Bindungsausdruck.
 
     **Vorher:**
     ```xaml
@@ -557,11 +557,11 @@ Wenn Sie die App ausführen, funktioniert jetzt alles, einschließlich der Schie
 > Versuchen Sie die Funktions-Bindung mit dem **TextBlock** vom letzten Play-Punkt und binden Sie sie an eine neue Methode, die eine Zeichenfolge im "000 x 000"-Format zurückgibt, wenn Sie sie an den **ItemSize**-Wert übergeben.
 
 
-## <a name="conclusion"></a>Fazit
+## <a name="conclusion"></a>Abschluss
 
 In diesem Lernprogramm haben Sie einen Einblick in die Datenbindung und einige der verfügbaren Funktionen erhalten. Eines möchten wir jedoch zu bedenken geben: nicht alles kann gebunden werden, und in einigen Fällen sind die Werte zum Herstellen einer Verbindung nicht kompatibel mit den Eigenschaften, die Sie anbinden möchten. Es gibt zwar ein hohes Maß an Flexibilität beim Binden, dies funktioniert allerdings nicht in jeder Situation.
 
-Ein Beispiel für ein Problem, das nicht durch Bindungen angesprochen wird ist, wenn ein Steuerelement keine geeigneten Eigenschaften zum Binden hat, wie bei der Detailseite der Zoom-Funktion. Dieser Zoomschieberegler muss mit **ScrollViewer** interagieren, das das Bild anzeigt, aber **ScrollViewer** kann nur über die **ChangeView**-Methode aktualisiert werden. In diesem Fall verwenden wir herkömmliche Ereignishandler, um **ScrollViewer** und den Zoomschieberegler zu synchronisieren. Weitere Details zu den Methoden finden Sie unter **DetailPage****ZoomSlider_ValueChanged** und **MainImageScroll_ViewChanged**.
+Ein Beispiel für ein Problem, das nicht durch Bindungen angesprochen wird ist, wenn ein Steuerelement keine geeigneten Eigenschaften zum Binden hat, wie bei der Detailseite der Zoom-Funktion. Dieser Zoomschieberegler muss mit **ScrollViewer** interagieren, das das Bild anzeigt, aber **ScrollViewer** kann nur über die **ChangeView**-Methode aktualisiert werden. In diesem Fall verwenden wir konventionellen Ereignishandler zu der **ScrollViewer** und Zoomschieberegler in synchronisieren, finden Sie unter den **DetailPage** **ZoomSlider_ValueChanged** und **MainImageScroll_ViewChanged** Methoden für die Details.
 
 Trotzdem ist das Binden eine leistungsfähige und flexible Möglichkeit zur Vereinfachung des Codes und um die UI-Logik von der Datenlogik getrennt zu halten. Dadurch ist es viel einfacher für Sie, beide Seiten zu koordinieren und gleichzeitig das Risikos der Einführung von Fehlern auf der anderen Seite zu reduzieren. 
 
@@ -595,5 +595,5 @@ Wie Sie gesehen haben, wenn Sie den Zoomfaktor auf der Detailseite ändern, wird
     
 Sie sollten in diesem Lernprogramm alle benötigten Informationen erhalten haben, aber wenn Sie weitere Unterstützung benötigen, sind die Datenbindungsdokumente nur einen Mausklick entfernt. Beginnen Sie hier:
 
-+ [{x:Bind}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [{X: Bind}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
++ [Die Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)

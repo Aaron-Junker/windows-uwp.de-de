@@ -1,21 +1,21 @@
 ---
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: Verwenden Sie diese Methode aus der Microsoft Store Collection-API, um den Kauf eines Verbrauchsprodukt für einen bestimmten Kunden als abgewickelt zu melden. Damit ein Benutzer ein Verbrauchsprodukt erneut erwerben kann, muss Ihre App oder Ihr Dienst das Verbrauchsprodukt für den betreffenden Benutzer als abgewickelt melden.
-title: Verbrauchsprodukte als erfüllt melden
+title: Melden von konsumierbaren Produkten als erfüllt
 ms.date: 03/19/2018
 ms.topic: article
-keywords: Windows10, UWP, Microsoft Store-Sammlungs-API, erfüllen, Verbrauchsprodukt
+keywords: Windows 10, UWP, Microsoft Store-Sammlungs-API, erfüllen, Verbrauchsprodukt
 ms.localizationpriority: medium
 ms.openlocfilehash: cea8937af3df0ad1e80434d649f431d188521667
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116026"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615805"
 ---
-# <a name="report-consumable-products-as-fulfilled"></a>Verbrauchsprodukte als erfüllt melden
+# <a name="report-consumable-products-as-fulfilled"></a>Melden von konsumierbaren Produkten als erfüllt
 
-Verwenden Sie diese Methode aus der Microsoft Store Collection-API, um den Kauf eines Verbrauchsprodukt für einen bestimmten Kunden als abgewickelt zu melden. Damit ein Benutzer ein Verbrauchsprodukt erneut erwerben kann, muss Ihre App oder Ihr Dienst das Verbrauchsprodukt für den betreffenden Benutzer als erfüllt melden.
+Verwenden Sie diese Methode aus der Microsoft Store Collection-API, um den Kauf eines Verbrauchsprodukt für einen bestimmten Kunden als abgewickelt zu melden. Damit ein Benutzer ein Verbrauchsprodukt erneut erwerben kann, muss Ihre App oder Ihr Dienst das Verbrauchsprodukt für den betreffenden Benutzer als abgewickelt melden.
 
 Sie können diese Methode auf zwei Weisen verwenden, um ein Verbrauchsprodukt als erfüllt zu melden:
 
@@ -27,12 +27,12 @@ Sie können diese Methode auf zwei Weisen verwenden, um ein Verbrauchsprodukt al
 
 Zur Verwendung dieser Methode benötigen Sie:
 
-* Ein AzureAD-Zugriffstoken, das mit dem Zielgruppen-URI `https://onestore.microsoft.com` erstellt wurde.
+* Ein Azure AD-Zugriffstoken, das mit dem Zielgruppen-URI `https://onestore.microsoft.com` erstellt wurde.
 * Ein Microsoft Store-ID-Schlüssel, der die Identität des Benutzers darstellt, für den Sie ein Verbrauchsprodukt als erfüllt melden möchten.
 
 Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus einem Dienst](view-and-grant-products-from-a-service.md).
 
-## <a name="request"></a>Anforderung
+## <a name="request"></a>Anfordern
 
 
 ### <a name="request-syntax"></a>Anforderungssyntax
@@ -46,10 +46,10 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 
 | Header         | Typ   | Beschreibung                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Autorisierung  | String | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;.                           |
+| Autorisierung  | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;.                           |
 | Host           | string | Muss auf den Wert **collections.mp.microsoft.com** festgelegt werden.                                            |
 | Content-Length | number | Die Länge des Anforderungstexts.                                                                       |
-| Inhaltstyp   | string | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
+| Content-Type   | string | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -57,9 +57,9 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 | Parameter     | Typ         | Beschreibung         | Erforderlich |
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | Der Benutzer, für den dieser Artikel genutzt wird. Weitere Informationen finden Sie in der folgenden Tabelle.        | Ja      |
-| itemId        | Zeichenfolge       | Der Wert *itemId*, der von einer [Produktanfrage](query-for-products.md) zurückgegeben wird. Verwenden Sie diesen Parameter mit *trackingId*.      | Nein       |
+| itemId        | string       | Der Wert *itemId*, der von einer [Produktanfrage](query-for-products.md) zurückgegeben wird. Verwenden Sie diesen Parameter mit *trackingId*.      | Nein       |
 | trackingId    | guid         | Eine eindeutige, vom Entwickler angegebene Tracking-ID. Verwenden Sie diesen Parameter mit *itemId*.         | Nein       |
-| Produkt-ID     | Zeichenfolge       | Der Wert *productId*, den eine [Produktabfrage](query-for-products.md) zurückgibt. Verwenden Sie diesen Parameter mit *transactionId*.   | Nein.       |
+| productId     | string       | Der Wert *productId*, den eine [Produktabfrage](query-for-products.md) zurückgibt. Verwenden Sie diesen Parameter mit *transactionId*.   | Nein       |
 | transactionId | guid         | Ein Transaktions-ID-Wert, der aus einer der folgenden Quellen abgerufen wird. Verwenden Sie diesen Parameter mit *productId*.<ul><li>Die [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid)-Eigenschaft der [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392)-Klasse.</li><li>Der von [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync), [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) oder [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) zurückgegebene App- oder Produktbeleg.</li><li>Der Parameter *transactionId*, der von einer [Produktabfrage](query-for-products.md) zurückgegeben wird.</li></ul>   | Nein       |
 
 
@@ -69,7 +69,7 @@ Das UserIdentity-Objekt enthält die folgenden Parameter.
 |----------------------|--------|-------------------|----------|
 | identityType         | string | Gibt den Zeichenfolgenwert **b2b** an.    | Ja      |
 | identityValue        | string | Der [Microsoft Store-ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4), der die Identität des Benutzers darstellt, für den Sie ein Verbrauchsprodukt als erfüllt melden möchten.      | Ja      |
-| localTicketReference | string | Der angeforderte Bezeichner für die zurückgegebene Antwort. Es wird empfohlen, denselben Wert als *userId*-[Anspruch](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) im Microsoft Store-ID-Schlüssel zu verwenden. | Ja      |
+| localTicketReference | string | Der angeforderte Bezeichner für die zurückgegebene Antwort. Es wird empfohlen, die Sie verwenden den gleichen Wert wie die *"UserID"*[Anspruch](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) in den Microsoft Store-ID-Schlüssel.   | Ja      |
 
 
 ### <a name="request-examples"></a>Anforderungsbeispiele
@@ -144,7 +144,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Verwalten von Produktansprüchen aus einem Dienst](view-and-grant-products-from-a-service.md)
-* [Produktabfrage](query-for-products.md)
-* [Gewähren kostenloser Produkte](grant-free-products.md)
-* [Verlängern eines Microsoft Store-ID-Schlüssels](renew-a-windows-store-id-key.md)
+* [Verwalten von Product-Berechtigungen von einem Dienst](view-and-grant-products-from-a-service.md)
+* [Abfrage von Produkten](query-for-products.md)
+* [Gewähren Sie kostenlose Produkte](grant-free-products.md)
+* [Erneuern Sie einen Microsoft Store-ID-Schlüssel](renew-a-windows-store-id-key.md)

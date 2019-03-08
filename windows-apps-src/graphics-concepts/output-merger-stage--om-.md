@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 63a77048bed3ad27f2040a672d93380d0250f9aa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929848"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641095"
 ---
 # <a name="output-merger-om-stage"></a>Ausgabezusammenführungsphase (OM)
 
@@ -31,7 +31,7 @@ Die OM-Phase generiert die endgültige gerenderte Pixelfarbe durch eine Kombinat
 -   Der Inhalt der Renderziele
 -   Der Inhalt der Tiefe/Schablone-Puffer.
 
-### <a name="span-idblending-overviewspanspan-idblending-overviewspanspan-idblending-overviewspanblending-overview"></a><span id="Blending-overview"></span><span id="blending-overview"></span><span id="BLENDING-OVERVIEW"></span>Mischen (Übersicht)
+### <a name="span-idblending-overviewspanspan-idblending-overviewspanspan-idblending-overviewspanblending-overview"></a><span id="Blending-overview"></span><span id="blending-overview"></span><span id="BLENDING-OVERVIEW"></span>Übersicht über die Blending
 
 Bei der Vermischung werden eine oder mehrere Pixelwerte zum Erstellen einer endgültigen Pixelfarbe kombiniert. In der folgenden Abbildung wird der Prozess Vermischung von Pixeldaten dargestellt.
 
@@ -43,13 +43,13 @@ Die Vermischung mit fester Funktion kann unabhängig für jedes Renderziel aktiv
 
 Bei der Verwendung von sRGB-Renderzielen konvertiert die Laufzeit die Renderzielfarbe vor der Vermischung in linearen Speicherplatz. Die Laufzeit konvertiert den gemischten Endwert zurück in sRGB-Speicherplatz, bevor der Wert wieder im Renderziel gespeichert wird.
 
-### <a name="span-iddual-source-color-blendingspanspan-iddual-source-color-blendingspanspan-iddual-source-color-blendingspandual-source-color-blending"></a><span id="Dual-source-color-blending"></span><span id="dual-source-color-blending"></span><span id="DUAL-SOURCE-COLOR-BLENDING"></span>Farben aus zwei Quellen vermischen
+### <a name="span-iddual-source-color-blendingspanspan-iddual-source-color-blendingspanspan-iddual-source-color-blendingspandual-source-color-blending"></a><span id="Dual-source-color-blending"></span><span id="dual-source-color-blending"></span><span id="DUAL-SOURCE-COLOR-BLENDING"></span>Dual-Quellfarbe blending
 
 Mit diesem Feature kann die Ausgabezusammenführungsphase beide Ausgaben des Pixelshaders (o0 und o1) gleichzeitig als Eingaben für einen Vorgang mit einem einzelnen Renderziel in Steckplatz 0 verwenden. Beispiele für gültige Vermischungsvorgänge sind: hinzufügen, subtrahieren und wieder hinzufügen. Die Vermischungsgleichung und die Maske Schreibausgabe geben an, welche Komponenten der Pixelshader ausgibt. Zusätzliche Komponenten werden ignoriert.
 
 Schreiben in andere Ausgaben von Pixelshadern (o2, o3 usw.) ist nicht definiert; Sie können nur in Renderziele schreiben, die an Steckplatz 0 gebunden sind. Das Schreiben von oDepth ist während der Farbvermischung aus zwei Quellen gültig.
 
-### <a name="span-iddepth-stencil-testspanspan-iddepth-stencil-testspanspan-iddepth-stencil-testspandepth-stencil-testing-overview"></a><span id="Depth-Stencil-Test"></span><span id="depth-stencil-test"></span><span id="DEPTH-STENCIL-TEST"></span>Tiefen- und Schablonentest (Übersicht)
+### <a name="span-iddepth-stencil-testspanspan-iddepth-stencil-testspanspan-iddepth-stencil-testspandepth-stencil-testing-overview"></a><span id="Depth-Stencil-Test"></span><span id="depth-stencil-test"></span><span id="DEPTH-STENCIL-TEST"></span>Übersicht über tiefenschablone
 
 Ein Tiefenschablonenpuffer, der als Texturressource erstellt wird, kann sowohl Tiefen- als auch Schablonendaten enthalten. Die Tiefedaten werden verwendet, um zu bestimmen, welche Pixel sich am nächsten bei der Kamera befinden, und die Schablonedaten werden verwendet, um zu maskieren, welche Pixel aktualisiert werden können. Schließlich werden sowohl die Tiefen- als auch die Schablonendatenwerte von der Ausgabezusammenführungsphase verwendet, um festzustellen, ob eine Pixel gezeichnet werden soll oder nicht. Das folgende Diagramm zeigt die Durchführung des Tiefen- und Schablonentests.
 
@@ -65,7 +65,7 @@ Wenn im Tiefenpufferformat keine Schablonenkomponente vorhanden ist oder kein Ti
 
 Es kann jeweils nur ein Tiefen-/Schablonepuffer aktiv sein; gebundenen Ressourcenansichten müssen mit der Tiefen-/Schablonenansicht übereinstimmen (selbe Größe und Dimensionen). Dies bedeutet nicht, dass die Ressourcengröße übereinstimmen muss, sondern die Ansichtsgröße muss übereinstimmen.
 
-### <a name="span-idsample-maskspanspan-idsample-maskspanspan-idsample-maskspansample-mask-overview"></a><span id="Sample-Mask"></span><span id="sample-mask"></span><span id="SAMPLE-MASK"></span>Beispielmaske (Übersicht)
+### <a name="span-idsample-maskspanspan-idsample-maskspanspan-idsample-maskspansample-mask-overview"></a><span id="Sample-Mask"></span><span id="sample-mask"></span><span id="SAMPLE-MASK"></span>Übersicht über die Beispiel-Maske
 
 Eine Beispielmaske ist eine Multi-Sampling-Deckungsmaske mit 32 Bit, deren Beispiele in aktiven Renderziele aktualisiert werden. Es ist nur eine Beispielmaske zulässig. Die Zuordnung der Bits in einer Beispielmaske zu den Beispielen einer Ressource wird von einem Benutzer festgelegt. Für das n-Sample-Rendering werden die ersten n-Bits der Beispielmaske (aus den unwichtigsten Bytes) verwendet (maximal 32 Bits).
 
@@ -82,13 +82,13 @@ Die Ausgabezusammenführungsphase (OM) generiert die endgültige gerenderte Pixe
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Ausgabe
 
 
-### <a name="span-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanoutput-write-mask-overview"></a><span id="Output-write-mask-overview"></span><span id="output-write-mask-overview"></span><span id="OUTPUT-WRITE-MASK-OVERVIEW"></span>Ausgabe-Schreibmaske (Übersicht)
+### <a name="span-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanoutput-write-mask-overview"></a><span id="Output-write-mask-overview"></span><span id="output-write-mask-overview"></span><span id="OUTPUT-WRITE-MASK-OVERVIEW"></span>Übersicht über die Write-Output mask
 
 Verwenden Sie (pro Komponente) eine Ausgabe-Schreibmaske , um zu steuern, welche Daten in ein Renderziel geschrieben werden können.
 
-### <a name="span-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanmultiple-render-targets-overview"></a><span id="Multiple-render-targets-overview"></span><span id="multiple-render-targets-overview"></span><span id="MULTIPLE-RENDER-TARGETS-OVERVIEW"></span>Mehrere Renderziele (Übersicht)
+### <a name="span-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanmultiple-render-targets-overview"></a><span id="Multiple-render-targets-overview"></span><span id="multiple-render-targets-overview"></span><span id="MULTIPLE-RENDER-TARGETS-OVERVIEW"></span>Übersicht über mehrere Render-Ziele
 
-Mit einen Pixelshader können mindestens 8 separate Renderziele des gleichen Typs (Puffer, Texture1D, Texture1DArray usw.) gerendert werden. Darüber hinaus müssen alle Renderziele in allen Dimensionen (Breite, Höhe, Tiefe, Arraygröße, Beispielanzahlen) die gleiche Größe besitzen. Jedes Renderziel besitzt möglicherweise ein anderes Datenformat.
+Mit einen Pixelshader können mindestens 8 separate Renderziele des gleichen Typs (Puffer, Texture1D, Texture1DArray usw.) gerendert werden. Darüber hinaus müssen alle Renderziele in allen Dimensionen (Breite, Höhe, Tiefe, Arraygröße, Beispielanzahlen) die gleiche Größe besitzen. Jedes Renderziel kann ein anderes Datenformat haben.
 
 Sie können eine beliebige Kombination aus Renderziel-Steckplätzen (bis zu 8) verwenden. Eine Ressourcenansicht kann nicht jedoch an mehrere Renderziel-Steckplätze gleichzeitig gebunden werden. Eine Ansicht kann verwendet werden, solange die Ressourcen nicht gleichzeitig genutzt werden.
 
@@ -108,8 +108,8 @@ Sie können eine beliebige Kombination aus Renderziel-Steckplätzen (bis zu 8) v
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="configuring-depth-stencil-functionality.md">Konfigurieren der Tiefenschablonenfunktionalität</a></p></td>
-<td align="left"><p>In diesem Abschnittwerden die Schrittezum Einrichten des Tiefenschablonenpuffers und des Tiefenschablonenzustands für die Ausgabezusammenführungsphase behandelt.</p></td>
+<td align="left"><p><a href="configuring-depth-stencil-functionality.md">Konfigurieren der Funktionalität der tiefenschablone</a></p></td>
+<td align="left"><p>In diesem Abschnitt werden die Schritte zum Einrichten des Tiefenschablonenpuffers und der Tiefenschablonenphase für die Ausgabezusammenführungsphase behandelt.</p></td>
 </tr>
 </tbody>
 </table>

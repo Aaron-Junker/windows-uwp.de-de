@@ -1,31 +1,31 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
-title: Vorbereitung
-description: Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, und Erstellen von universellen Windows-Plattform (UWP) apps für Windows 10.
+title: Einrichten
+description: Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, und mit dem beginnen Sie Erstellen von apps für universelle Windows-Plattform (UWP) für Windows 10.
 ms.date: 05/07/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047937"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658645"
 ---
-# <a name="get-set-up"></a>Vorbereiten
+# <a name="get-set-up"></a>Einrichten
 
 ![Vorbereitungen für die Verwendung von Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-Die Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, und Erstellen von universellen Windows-Plattform (UWP) apps für Windows 10.
+Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, und mit dem beginnen Sie Erstellen von apps für universelle Windows-Plattform (UWP) für Windows 10.
 
-## <a name="1-download-or-update-visual-studio"></a>1. Laden Sie Visual Studio herunter, oder aktualisieren Sie es.
+## <a name="1-download-or-update-visual-studio"></a>1. Herunterladen oder Aktualisieren von Visual Studio
 
-Microsoft Visual Studio2017 können, die Sie entwerfen, codieren, testen und Debuggen Ihrer apps.
+Microsoft Visual Studio 2017 können, die Sie entwerfen, codieren, testen und Debuggen Ihre apps.
 
-Wenn Sie bereits über Visual Studio2017 besitzen, können Sie das kostenlose Microsoft Visual Studio Community2017 installieren. Dieser Download umfasst auch Geräte-Simulatoren zum Testen Ihrer Apps:
+Wenn Sie bereits über Visual Studio 2017 haben, können Sie die kostenlose Microsoft Visual Studio Community 2017 installieren. Dieser Download umfasst auch Geräte-Simulatoren zum Testen Ihrer Apps:
 
--   [Windows10-Entwicklertools herunterladen](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+-   [Windows 10-Entwicklertools herunterladen](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
 Verwenden Sie bei der Installation von Visual Studio die Option „Entwicklungstools für universelle Windows-Apps“, so wie hier gezeigt:
 
@@ -38,7 +38,7 @@ Wenn Sie Visual Studio bereits verwenden, aber entdecken, dass Ihnen einige Komp
    ![So wiederholen Sie den Installationsvorgang](images/win10-cs-install.png)
 
 
-## <a name="2-enable-your-device-for-development"></a>2. Aktivieren Sie Ihr Gerät für die Entwicklung
+## <a name="2-enable-your-device-for-development"></a>2. Aktivieren Ihres Geräts für die Entwicklung
 
 UWP-Apps müssen auf echten Computern und Smartphones getestet werden. Bevor Sie Apps für Ihren Computer oder Ihr Windows Phone bereitstellen können, müssen Sie das Gerät für die Entwicklung registrieren.
 
@@ -52,22 +52,22 @@ Sie können jetzt mit der Entwicklung von Apps beginnen. Zum Übermitteln an den
 
 ## <a name="whats-next"></a>Nächste Schritte
 
-Nachdem Sie die Tools installiert und Ihr Gerät für die Entwicklung aktiviert haben, schauen Sie sich unsere Anleitungen mit den ersten Schritten zum Erstellen von Windows10-Apps an.
+Nachdem Sie die Tools installiert und Ihr Gerät für die Entwicklung aktiviert haben, schauen Sie sich unsere Anleitungen mit den ersten Schritten zum Erstellen von Windows 10-Apps an.
 
--   [Beginnen Sie mit der Codierung](create-uwp-apps.md)
+-   [Mit Programmieren beginnen](create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Setupskripts für die Windows-Entwicklung
 
 Wenn Sie Ihr Gerät anpassen und andere Funktionen oder Pakete installieren möchten, schauen Sie sich dieses Projekt für Systemsetupskripts an.
 
-- [Setupskripts für Entwickler](https://github.com/Microsoft/windows-dev-box-setup-scripts)
+- [Entwickler-Setup-Skripts](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## <a name="want-more-tools-and-downloads"></a>Benötigen Sie mehr Tools und Downloads?
 
 Die vollständige Liste der Tools und Downloads finden Sie unter [Downloads](https://go.microsoft.com/fwlink/p/?linkid=285935).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 * [Codebeispiele für UWP-Entwickler](https://developer.microsoft.com/windows/samples)
 * [Was ist eine UWP-App?](universal-application-platform-guide.md)
-* [Für Windows-Konto anmelden](sign-up.md)
+* [Für Windows-Konto registrieren](sign-up.md)

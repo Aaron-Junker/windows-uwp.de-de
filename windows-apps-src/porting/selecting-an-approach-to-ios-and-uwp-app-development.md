@@ -4,14 +4,14 @@ title: Auswählen eines Ansatzes für die Entwicklung von iOS- und UWP-Apps
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf23926a1c17615db5ef838d21f9a46a8921c8c
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114666"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655785"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Auswählen eines Ansatzes für die Entwicklung von iOS- und UWP-Apps
 
@@ -24,7 +24,7 @@ Windows und iOS sind anscheinend sehr unterschiedlich, es stehen jedoch immer me
 
 ## <a name="writing-a-new-app"></a>Schreiben einer neuen App
 
-Wenn Sie eine neue App erstellen, stehen zahlreiche Optionen zur Verfügung, u.a.:
+Wenn Sie eine neue App erstellen, stehen zahlreiche Optionen zur Verfügung, u. a.:
 
 -   [Xamarin](https://go.microsoft.com/fwlink/p/?LinkID=320484)
 
@@ -40,7 +40,7 @@ Wenn Sie eine neue App erstellen, stehen zahlreiche Optionen zur Verfügung, u.a
 
 -   [MonoGame](https://go.microsoft.com/fwlink/p/?LinkID=320483)
 
-    Der geistige Nachfolger von XNA. Nun handelt es sich dabei um ein plattformübergreifendes OpenSource-Framework. Das bedeutet, Sie können Apps in C# für zahlreiche Plattformen mit Unterstützung für Physik-Engines sowie 2D- und 3D-Grafiken schreiben.
+    Der geistige Nachfolger von XNA. Nun handelt es sich dabei um ein plattformübergreifendes Open Source-Framework. Das bedeutet, Sie können Apps in C# für zahlreiche Plattformen mit Unterstützung für Physik-Engines sowie 2D- und 3D-Grafiken schreiben.
 
 ## <a name="adapting-an-existing-app"></a>Anpassen einer vorhandenen App
 
@@ -54,9 +54,9 @@ Bei einer vorhandenen iOS-App stehen weniger Optionen zur Verfügung. Es ist jed
 
     Wenn die Kerngeschäftslogik nicht in Objective-C oder Swift, sondern in C++ geschrieben ist, können Sie diesen Code häufig mit geringfügigen Änderungen in Ihrem Projekt verwenden. Anschließend können Sie wie bei anderen Windows-Apps mithilfe von XAML die Benutzeroberfläche definieren und den C++-Code bei Bedarf nutzen.
 
--   [Verwenden von ANGLE zum Ausführen von OpenGL ES unter Windows](https://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Verwenden Sie zum Ausführen von OpenGL ES auf Windows Winkel](https://go.microsoft.com/fwlink/p/?linkid=618387)
 
-    Ein Zwischenschritt zum Portieren Ihres OpenGL ES2.0-Projekts ist die Verwendung von ANGLE. Mit ANGLE können Sie OpenGL ES-Inhalte unter Windows ausführen, indem Sie OpenGL ES-API-Aufrufe in DirectX11-API-Aufrufe übersetzen.
+    Ein Zwischenschritt zum Portieren Ihres OpenGL ES 2.0-Projekts ist die Verwendung von ANGLE. Mit ANGLE können Sie OpenGL ES-Inhalte unter Windows ausführen, indem Sie OpenGL ES-API-Aufrufe in DirectX 11-API-Aufrufe übersetzen.
 
 ## <a name="other-cross-platform-authoring-tools"></a>Andere plattformübergreifende Erstellungstools
 

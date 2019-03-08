@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Installieren, SDK, Werbebibliotheken
 ms.localizationpriority: medium
 ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047751"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658035"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installieren des Microsoft Advertising-SDK
 
-Zum Anzeigen von UWP-Apps unter Windows10, installieren Sie das [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp). Dieses SDK ist eine Erweiterung von Visual Studio2015 und späteren Versionen.
+Zum Anzeigen von UWP-Apps unter Windows 10, installieren Sie das [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp). Dieses SDK ist eine Erweiterung von Visual Studio 2015 und späteren Versionen.
 
 > [!NOTE]
-> Wenn Sie Entwickeln einer JavaScript/HTML UWP-app und Sie Windows 10 SDK Version 10.0.14393 (Anniversary Update) installiert haben, oder höher ist, müssen Sie auch die [WinJS](https://github.com/winjs/winjs) -Bibliothek installieren. Diese Bibliothek war in den früheren Versionen von Windows 10 enthalten, aber ab Windows 10 Anniversary SDK Version 10.0.14393 (Anniversary Update) muss diese Bibliothek separat installiert werden.
+> Wenn Sie eine JavaScript/HTML-UWP-app entwickeln und Sie Windows 10 SDK-Version 10.0.14393 (Anniversary Update) installiert haben oder höher verwenden, müssen Sie auch installieren die [WinJS](https://github.com/winjs/winjs) Bibliothek. Diese Bibliothek war in den früheren Versionen von Windows 10 enthalten, aber ab Windows 10 Anniversary SDK Version 10.0.14393 (Anniversary Update) muss diese Bibliothek separat installiert werden.
 
 <span id="install-msi" />
 
@@ -82,11 +82,11 @@ Folgen Sie nach der Installation des Microsoft Advertising-SDK diesen Anweisunge
 
 1. Öffnen Sie das Projekt in Visual Studio.
     > [!NOTE]
-    > Sollte in Ihrem Projekt die Zielplattform **Any CPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z.B. **x86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
+    > Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **X86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen...** aus.
 
-3. Erweitern Sie im **Reference Manager** **Universelles Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising-SDK für XAML** (für XAML-Apps) oder **Microsoft Advertising-SDK für JavaScript** (für Apps, die mit JavaScript und HTML erstellt wurden) aus.
+3. Erweitern Sie im **Reference Manager****Universelles Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising-SDK für XAML** (für XAML-Apps) oder **Microsoft Advertising-SDK für JavaScript** (für Apps, die mit JavaScript und HTML erstellt wurden) aus.
 
 4.  Klicken Sie im **Verweis-Manager** auf „OK“.
 
@@ -94,8 +94,8 @@ Exemplarische Vorgehensweisen zur erstmaligen Verwendung der Werbe-APIs finden S
 
 * [Interstitialwerbung](interstitial-ads.md)
 * [Native Anzeigen](native-ads.md)
-* [AdControl in XAML und .NET](adcontrol-in-xaml-and--net.md)
-* [AdControl in HTML 5 und Javascript](adcontrol-in-html-5-and-javascript.md)
+* [Adcontrol-Element in XAML und .NET](adcontrol-in-xaml-and--net.md)
+* [Adcontrol-Element in HTML 5- und Javascript](adcontrol-in-html-5-and-javascript.md)
 
 <span id="framework" />
 

@@ -3,14 +3,14 @@ title: Zeigerbasierte Animationen
 description: Lernen Sie, wie man die Position eines Zeigers verwendet, um dynamische „Stick to the Cursor“-Erfahrungen zu erzeugen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, Uwp, animation
+keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 3512d47c8b3e689b0baadec26c1d8f0f510e03ef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931401"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639925"
 ---
 # <a name="pointer-based-animations"></a>Zeigerbasierte Animationen
 
@@ -20,8 +20,8 @@ Dieser Artikel zeigt, wie man die Position eines Zeigers verwendet, um dynamisch
 
 Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
 
-- [Eingabegesteuerte Animationen](input-driven-animations.md)
-- [Relationsbasierte Animationen](relation-animations.md)
+- [Eingabe-driven Animationen](input-driven-animations.md)
+- [Beziehung basierend Animationen](relation-animations.md)
 
 ## <a name="why-create-pointer-position-driven-experiences"></a>Warum zeigerpositionsgesteuerte Erlebnisse erstellen?
 
@@ -37,15 +37,15 @@ Beispiele:
 
 - Drehen eines Bildes basierend auf der Position eines Zeigers
 
-    ![Beispiel Zeigerrotation](images/animation/pointer-rotate.gif)
+    ![Zeiger-Rotations-Beispiel](images/animation/pointer-rotate.gif)
 
 ## <a name="using-pointerpositionpropertyset"></a>Verwenden von PointerPositionPropertySet
 
 Diese Erlebnisse können Sie mit dem PointerPositionPropertySet erzeugen. Dieses PropertySet wird für ein UIElement erstellt, um die Position des Zeigers beizubehalten, während das UIElement positiv Hit-getestet wird. Der Positionswert ist relativ zum Koordinatenraum des UIElements (eine Position <0,0> ist die linke obere Ecke des UIElements). Sie können dann diese Eigenschaft, die in einer Animation festgelegt wurde, nutzen, um die Bewegung einer anderen Eigenschaft zu steuern.
 
-Für jede der verschiedenen Pointer-Eingabemodalitäten gibt es eine Reihe von Eingabezuständen, in denen sich die Positionsänderungen befinden könnten: Hover, Pressed, Pressed und Moved. Das PointerPositionPropertySet behält nur die Position des Zeigers in den Zuständen „Hover“, „Pressed“ und „Pressed and Moved“ für Mouse und Pen bei.
+Für jeden der anderen Zeiger Eingabemöglichkeiten gibt es eine Anzahl von Eingabe Zustände, in denen die Eingabe sein kann, in dem die Position ändert: Zeigen Sie mit, geklickt, gedrückt und verschoben. Das PointerPositionPropertySet behält nur die Position des Zeigers in den Zuständen „Hover“, „Pressed“ und „Pressed and Moved“ für Mouse und Pen bei.
 
-Allgemeine Schrittefür den Einstieg:
+Allgemeine Schritte für den Einstieg:
 
 1. Identifizieren Sie das UIElement, in dem Sie die Position des Zeigers verfolgen möchten.
 1. Zugriff auf das PointerPositionPropertySet über ElementCompositionPreview.
@@ -61,7 +61,7 @@ Allgemeine Schrittefür den Einstieg:
 
 Betrachten wir ein Beispiel, bei dem wir die Hover-Position einer Maus und eines Stifts nutzen, um ein Bild dynamisch zu drehen.
 
-![Beispiel Zeigerrotation](images/animation/pointer-rotate.gif)
+![Zeiger-Rotations-Beispiel](images/animation/pointer-rotate.gif)
 
 Das Bild ist ein UIElement, also lassen Sie uns zuerst einen Verweis auf das PointerPositionPropertySet erhalten.
 

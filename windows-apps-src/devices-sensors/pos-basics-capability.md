@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c09a9093389fc0a917243773eae6803220ed610
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115754"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634685"
 ---
 # <a name="pointofservice-device-capability"></a>PointOfService-Gerätefunktion
 Sie fordern Zugriff auf die PointOfService-APIs an, indem Sie die Funktion in Ihrem Anwendungspaketmanifest deklarieren. Sie können die meisten Funktionen mithilfe des Manifest-Designers in Microsoft Visual Studio deklarieren, oder Sie können sie manuell hinzufügen.  
@@ -22,7 +22,7 @@ Sie fordern Zugriff auf die PointOfService-APIs an, indem Sie die Funktion in Ih
 
 1. Erweitern Sie im **Projektmappen-Explorer** den Projektknoten Ihrer UWP-Anwendung.
 2. Doppelklicken Sie auf die Datei **Package.appxmanifest**.  
-*Wenn die Manifestdatei bereits in der XML-Codeansicht geöffnet ist, werden Sie von Visual Studio zum Schließen der Datei aufgefordert.*
+*Wenn die Manifestdatei bereits in der XML-Codeansicht geöffnet ist, werden Sie von Visual Studio aufgefordert, die Datei zu schließen.*
 3. Öffnen Sie die Registerkarte **Funktionen**.
 4. Klicken Sie auf das Kontrollkästchen neben **Point of Service** in der Liste der Funktionen, um die Funktionalität des Point-of-Service-Geräts zu aktivieren.
 

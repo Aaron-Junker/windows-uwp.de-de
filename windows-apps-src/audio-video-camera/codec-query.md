@@ -1,20 +1,20 @@
 ---
 ms.assetid: 0A360481-B649-4E90-9BC4-4449BA7445EF
 description: Führen Sie eine Abfrage nach Audio- und Video-Encodern und -Decodern durch, die auf einem Gerät installiert ist.
-title: Abfrage nach installierten Codecs
+title: Abfrage für installierte Codecs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, Uwp, Codecs, Encoder, Decoder, Abfrage
+keywords: Windows 10, Uwp, Codecs, Encoder, Decoder, Abfrage
 ms.localizationpriority: medium
 ms.openlocfilehash: 4241aad5a01617d6a002c6f5d6da0a4bb1455616
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921574"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593865"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>Abfrage installierter Codecs auf einem Gerät
-Mit der **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)**-Klasse können Sie auf dem aktuellen Gerät installierte Codecs abfragen. Die Liste der Codecs, die in Windows10 für andere Gerätefamilien enthalten sind, finden Sie im Artikel [Unterstützte Codecs](supported-codecs.md). Da aber Benutzer und Apps zusätzliche Codecs auf einem Gerät installieren können, sollten Sie zur Laufzeit die Codec-Unterstützung abfragen, um festzustellen, welche Codecs auf dem aktuellen Gerät verfügbar sind.
+Mit der **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)**-Klasse können Sie auf dem aktuellen Gerät installierte Codecs abfragen. Die Liste der Codecs, die in Windows 10 für andere Gerätefamilien enthalten sind, finden Sie im Artikel [Unterstützte Codecs](supported-codecs.md). Da aber Benutzer und Apps zusätzliche Codecs auf einem Gerät installieren können, sollten Sie zur Laufzeit die Codec-Unterstützung abfragen, um festzustellen, welche Codecs auf dem aktuellen Gerät verfügbar sind.
 
 Die CodecQuery-API ist ein Mitglied des **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/windows.media.core)**-Namespace, daher müssen Sie diesen Namespace in Ihre App einbeziehen.
 
@@ -26,7 +26,7 @@ Initialisieren Sie eine neue Instanz der **CodecQuery**-Klasse, indem Sie den Ko
 
 [!code-cs[NewCodecQuery](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetNewCodecQuery)]
 
-Die **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery.findallasync)**-Methode gibt alle installierten Codecs zurück, die den angegebenen Parametern entsprechen. Diese Parameter umfassen einen **[CodecKind](https://docs.microsoft.com/uwp/api/windows.media.core.codeckind)**-Wert, der angibt, ob Sie Audio- oder Video-Codecs oder beide abfragen, einen **[CodecCategory](https://docs.microsoft.com/uwp/api/windows.media.core.codeccategory)**-Wert, der angibt, ob Sie Encoder oder Decoder abfragen, und eine Zeichenfolge, die den Untertyp der abgefragten Mediencodierung, z.B. H.264-Video oder MP3-Audio, angibt.
+Die **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery.findallasync)**-Methode gibt alle installierten Codecs zurück, die den angegebenen Parametern entsprechen. Diese Parameter umfassen einen **[CodecKind](https://docs.microsoft.com/uwp/api/windows.media.core.codeckind)**-Wert, der angibt, ob Sie Audio- oder Video-Codecs oder beide abfragen, einen **[CodecCategory](https://docs.microsoft.com/uwp/api/windows.media.core.codeccategory)**-Wert, der angibt, ob Sie Encoder oder Decoder abfragen, und eine Zeichenfolge, die den Untertyp der abgefragten Mediencodierung, z. B. H.264-Video oder MP3-Audio, angibt.
 
 Geben Sie eine leere Zeichenfolge oder null für den Untertypwert an, um Codecs für alle Untertypen zurückgeben. Im folgenden Beispiel werden alle auf dem Gerät installierten Video-Encoder aufgelistet.
 
@@ -45,9 +45,9 @@ Im folgenden Beispiel wird abgefragt, ob ein FLAC-Audio-Encoder auf dem aktuelle
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Medienwiedergabe](media-playback.md)
-* [Allgemeine Foto-, Video- und Audioaufnahme mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Transkodieren von Mediendateien](transcode-media-files.md)
-* [Unterstützte Codecs](supported-codecs.md)
+* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Transcodieren von Mediendateien](transcode-media-files.md)
+* [Unterstützte codecs](supported-codecs.md)
  
 
  

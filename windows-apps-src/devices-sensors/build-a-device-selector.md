@@ -4,14 +4,14 @@ title: Erstellen einer Geräteauswahl
 description: Durch das Erstellen einer Geräteauswahl können Sie die Geräte begrenzen, die Sie beim Auflisten von Geräten durchsuchen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 01a4bfc2ec4c1d442058dbb6009065541f93cc7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921753"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652495"
 ---
 # <a name="build-a-device-selector"></a>Erstellen einer Geräteauswahl
 
@@ -36,7 +36,7 @@ Bei Verwendung der [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/
 
 Die [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)-APIs enthalten eine Canonical AQS-Syntax, die jedoch nicht alle Operatoren unterstützt. Eine Liste der beim Erstellen der Filterzeichenfolge verfügbaren Eigenschaften finden Sie unter [Geräteinformationseigenschaften](device-information-properties.md).
 
-**Achtung**benutzerdefinierte Eigenschaften, die definiert werden mit der `{GUID} PID` Format nicht verwendet werden, wenn der AQS-Filterzeichenfolge. Dies liegt daran, dass der Eigenschaftstyp vom bekannten Eigenschaftennamen abgeleitet wird.
+**Vorsicht**  benutzerdefinierte Eigenschaften, die definiert sind, mit der `{GUID} PID` Format kann nicht verwendet werden, wenn Ihre AQS Filterzeichenfolge erstellen. Dies liegt daran, dass der Eigenschaftstyp vom bekannten Eigenschaftennamen abgeleitet wird.
 
  
 
@@ -46,23 +46,23 @@ Die folgende Tabelle enthält die AQS-Operatoren mit den von ihnen unterstützte
 |--------------------------------|-----------------------------------------------------------------------------|
 | **COP\_EQUAL**                 | String, Boolean, GUID, UInt16, UInt32                                       |
 | **COP\_NOTEQUAL**              | String, Boolean, GUID, UInt16, UInt32                                       |
-| **COP\_LESSTHAN**              | UInt16, UInt32                                                              |
-| **COP\_GREATERTHAN**           | UInt16, UInt32                                                              |
+| **COP\_"LESSTHAN"**              | UInt16, UInt32                                                              |
+| **COP\_"GREATERTHAN"**           | UInt16, UInt32                                                              |
 | **COP\_LESSTHANOREQUAL**       | UInt16, UInt32                                                              |
 | **COP\_GREATERTHANOREQUAL**    | UInt16, UInt32                                                              |
-| **COP\_VALUE\_CONTAINS**       | String, String Array, Boolean Array, GUID Array, UInt16 Array, UInt32 Array |
-| **COP\_VALUE\_NOTCONTAINS**    | String, String Array, Boolean Array, GUID Array, UInt16 Array, UInt32 Array |
-| **COP\_VALUE\_STARTSWITH**     | String                                                                      |
-| **COP\_VALUE\_ENDSWITH**       | String                                                                      |
-| **COP\_DOSWILDCARDS**          | Nicht unterstützt                                                               |
-| **COP\_WORD\_EQUAL**           | Nicht unterstützt                                                               |
-| **COP\_WORD\_STARTSWITH**      | Nicht unterstützt                                                               |
-| **COP\_APPLICATION\_SPECIFIC** | Nicht unterstützt                                                               |
+| **COP\_WERT\_ENTHÄLT**       | String, String Array, Boolean Array, GUID Array, UInt16 Array, UInt32 Array |
+| **COP\_WERT\_NOTCONTAINS**    | String, String Array, Boolean Array, GUID Array, UInt16 Array, UInt32 Array |
+| **COP\_WERT\_"STARTSWITH"**     | Zeichenfolge                                                                      |
+| **COP\_WERT\_"ENDSWITH"**       | Zeichenfolge                                                                      |
+| **COP\_DOSWILDCARDS**          | Nicht unterstützt.                                                               |
+| **COP\_WORD\_EQUAL**           | Nicht unterstützt.                                                               |
+| **COP\_WORD\_"STARTSWITH"**      | Nicht unterstützt.                                                               |
+| **COP\_ANWENDUNG\_BESTIMMTE** | Nicht unterstützt.                                                               |
 
 
-> **Tipp:** können Sie **NULL** für **cop\_notequal** oder **null**angeben. Dies führt zu einer Eigenschaft ohne Wert oder ohne vorhandenen Wert. In AQS geben Sie **NULL** mithilfe leerer Klammern \[\] an.
+> **Tipp**  können Sie angeben, **NULL** für **COP\_gleich** oder **COP\_NOTEQUAL**. Dies führt zu einer Eigenschaft ohne Wert oder ohne vorhandenen Wert. Geben Sie im AQS, **NULL** mit leeren Klammern \[ \].
 
-> **Wichtige**bei der Verwendung der Operatoren **COP\_VALUE\_CONTAINS** und **COP\_VALUE\_NOTCONTAINS** Verhalten Sie sich bei Zeichenfolgen und Zeichenfolgenarrays. Im Falle einer Zeichenfolge führt das System eine Suche ohne Berücksichtigung der Groß-/Kleinschreibung durch, um festzustellen, ob das Gerät die angegebene Zeichenfolge als Teilzeichenfolge enthält. Im Falle eines Zeichenfolgenarrays werden Teilzeichenfolgen nicht gesucht. Mit dem Zeichenfolgenarray wird das Array durchsucht, um festzustellen, ob es die gesamte angegebene Zeichenfolge enthält. Es ist nicht möglich, ein Zeichenfolgenarray zu durchsuchen, um festzustellen, ob die Elemente im Array eine Teilzeichenfolge enthalten.
+> **Wichtige**  bei Verwendung der **COP\_Wert\_CONTAINS** und **COP\_Wert\_NOTCONTAINS** Operatoren Sie verhalten sich anders mit Zeichenfolgen und Zeichenfolgen-Arrays. Im Falle einer Zeichenfolge führt das System eine Suche ohne Berücksichtigung der Groß-/Kleinschreibung durch, um festzustellen, ob das Gerät die angegebene Zeichenfolge als Teilzeichenfolge enthält. Im Falle eines Zeichenfolgenarrays werden Teilzeichenfolgen nicht gesucht. Mit dem Zeichenfolgenarray wird das Array durchsucht, um festzustellen, ob es die gesamte angegebene Zeichenfolge enthält. Es ist nicht möglich, ein Zeichenfolgenarray zu durchsuchen, um festzustellen, ob die Elemente im Array eine Teilzeichenfolge enthalten.
 
 Wenn keine einzelne AQS-Filterzeichenfolge erstellt werden kann, die den richtigen Ergebnisbereich herausfiltert, können Sie Ihre Ergebnisse nach Erhalt filtern. In diesem Fall wird jedoch empfohlen, die Ergebnisse der anfänglichen AQS-Filterzeichenfolge so weit wie möglich einzuschränken, wenn Sie sie für [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)-APIs bereitstellen. Dadurch wird die Leistung der Anwendung verbessert.
 
@@ -70,42 +70,38 @@ Wenn keine einzelne AQS-Filterzeichenfolge erstellt werden kann, die den richtig
 
 Die folgenden Beispiele veranschaulichen, wie die AQS-Syntax verwendet werden kann, um die aufzulistenden Geräte einzuschränken. Alle diese Filterzeichenfolgen werden mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) kombiniert, um einen vollständigen Filter zu erstellen. Wenn keine Art angegeben ist, wird **DeviceInterface** als Standardart verwendet.
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **DeviceInterface** kombiniert wird, listet er alle Objekte auf, die die Schnittstellenklasse für die Audioaufzeichnung enthalten und derzeit aktiviert sind. **=
-              ** wird zu **COP\_EQUALS**.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **DeviceInterface** kombiniert wird, listet er alle Objekte auf, die die Schnittstellenklasse für die Audioaufzeichnung enthalten und derzeit aktiviert sind. **=** Übersetzung in **COP\_gleich**.
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, die mindestens eine Hardware-ID von „GenCdRom“ aufweisen. **~~
-              ** wird zu **COP\_VALUE\_CONTAINS**.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, die mindestens eine Hardware-ID von „GenCdRom“ aufweisen. **~~** Übersetzung in **COP\_Wert\_CONTAINS**.
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **DeviceContainer** kombiniert wird, listet er alle Objekte auf, die einen Modellnamen aufweisen, der die Teilzeichenfolge „Microsoft“ enthält. **~~
-              ** wird zu **COP\_VALUE\_CONTAINS**.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **DeviceContainer** kombiniert wird, listet er alle Objekte auf, die einen Modellnamen aufweisen, der die Teilzeichenfolge „Microsoft“ enthält. **~~** Übersetzung in **COP\_Wert\_CONTAINS**.
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **DeviceInterface** kombiniert wird, listet er alle Objekte auf, deren Name mit der Teilzeichenfolge „Microsoft“ beginnt. **~&lt;
-              ** wird zu **COP\_STARTSWITH**.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **DeviceInterface** kombiniert wird, listet er alle Objekte auf, deren Name mit der Teilzeichenfolge „Microsoft“ beginnt. **~&lt;** Übersetzung in **COP\_"StartsWith"**.
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, für die eine **System.Devices.IpAddress**-Eigenschaft festgelegt wurde. **&lt;&gt;\[\]** wird zu **COP\_NOTEQUALS**, kombiniert mit einem **NULL**-Wert.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, für die eine **System.Devices.IpAddress**-Eigenschaft festgelegt wurde. **&lt;&gt;\[\]** Übersetzung in **COP\_NOTEQUALS** in Kombination mit einem **NULL** Wert.
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, für die keine **System.Devices.IpAddress**-Eigenschaft festgelegt wurde. **=\[\]** wird zu **COP\_EQUALS**, kombiniert mit einem **NULL**-Wert.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, für die keine **System.Devices.IpAddress**-Eigenschaft festgelegt wurde. **=\[\]** Übersetzung in **COP\_gleich** in Kombination mit einem **NULL** Wert.
 
 ``` syntax
 System.Devices.IpAddress:=[]

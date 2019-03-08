@@ -1,19 +1,19 @@
 ---
-title: Vollständiger Code für "BasicLoader"
+title: Vollständiger Code für BasicLoader
 description: Vollständiger Code für eine Klasse und Methoden, die allgemeine Grafikressourcen wie Gitter, Texturen und verschiedene Shader-Objekte konvertieren und laden.
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, BasicLoader
+keywords: Windows 10, UWP, Spiele, BasicLoader
 ms.localizationpriority: medium
 ms.openlocfilehash: cfcec2550455df8afe5870f9b760e1f7225f847c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930220"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637255"
 ---
-# <a name="complete-code-for-basicloader"></a>Vollständiger Code für "BasicLoader"
+# <a name="complete-code-for-basicloader"></a>Vollständiger Code für BasicLoader
 
 
 
@@ -22,12 +22,12 @@ Vollständiger Code für eine Klasse und Methoden, die allgemeine Grafikressourc
 Dieses Thema enthält die folgenden Abschnitte:
 
 -   [Technologien](#technologies)
--   [Anforderungen](#requirements)
--   [Anzeigen des Codes (C++)](#view-the-code-c)
+-   [Anforderungen an](#requirements)
+-   [Zeigen Sie den Code (C++)](#view-the-code-c)
 
 <span id="download_locations"></span>
 
-## <a name="download-location"></a>Downloadort
+## <a name="download-location"></a>Downloadpfad
 
 
 Dieses Beispiel kann nicht heruntergeladen werden.

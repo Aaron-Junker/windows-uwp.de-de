@@ -4,28 +4,28 @@ description: Hier finden Sie Lösungen für allgemeine Entwicklungsprobleme mit 
 title: XAML- und C#-Handbuch zur Problembehandlung
 ms.date: 08/23/2017
 ms.topic: article
-keywords: Windows10, UWP, Werbung, Advertising, AdControl, Problembehandlung, XAML, c#
+keywords: Windows 10, UWP, Werbung, Advertising, AdControl, Problembehandlung, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941387"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615915"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML- und C#-Handbuch zur Problembehandlung
 
 Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Microsoft Advertising-Bibliotheken in XAML-Apps.
 
 * [XAML](#xaml)
-  * [AdControl wird nicht angezeigt](#xaml-notappearing)
-  * [Blackbox blinkt und wird ausgeblendet](#xaml-blackboxblinksdisappears)
-  * [Anzeigen werden nicht aktualisiert](#xaml-adsnotrefreshing)
+  * [Adcontrol-Element nicht angezeigt](#xaml-notappearing)
+  * [Blackbox blinkt und ausgeblendet wird](#xaml-blackboxblinksdisappears)
+  * [Anzeigen, die nicht aktualisiert](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [AdControl wird nicht angezeigt](#csharp-adcontrolnotappearing)
-  * [Blackbox blinkt und wird ausgeblendet](#csharp-blackboxblinksdisappears)
-  * [Anzeigen werden nicht aktualisiert](#csharp-adsnotrefreshing)
+  * [Adcontrol-Element nicht angezeigt](#csharp-adcontrolnotappearing)
+  * [Blackbox blinkt und ausgeblendet wird](#csharp-blackboxblinksdisappears)
+  * [Anzeigen, die nicht aktualisiert](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -37,7 +37,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 1.  Stellen Sie sicher, dass die **Internet (Client)**-Funktion in „Package.appxmanifest“ ausgewählt ist.
 
-2.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und anzeigeneinheits-ID, die Sie im Partner Center erhalten haben. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in Ihrer App](set-up-ad-units-in-your-app.md#live-ad-units).
+2.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und die Ad-Einheit-ID, die Sie im Partner Center zu erhalten. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -173,7 +173,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und anzeigeneinheits-ID, die Sie im Partner Center erhalten haben. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in Ihrer App](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und die Ad-Einheit-ID, die Sie im Partner Center zu erhalten. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs

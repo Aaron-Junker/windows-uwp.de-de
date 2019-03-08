@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934665"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620495"
 ---
 # <a name="domain-shader-ds-stage"></a>Domainshaderphase (DS)
 
 
-Die Domainshaderphase (DS) berechnet die Vertexposition eines unterteilten Punkts im Ausgabe-Patch. Sie berechnet die Vertexposition, die dem jeweiligen Domainsample entspricht. Ein Domainshader wird einmal pro Tessellator-Phase-Ausgabepunkt ausgeführt und verfügt über schreibgeschützten Zugriff auf den Hull-Shader-Patch und die Ausgabe-Patch-Konstanten sowie die Tessellator-Phase-Ausgabe-UV-Koordinaten.
+Die Domainshaderphase (DS) berechnet die Vertexposition eines unterteilten Punkts im Ausgabefeld. Sie Berechnet die Vertexposition, die dem jeweiligen Domainsample entspricht. Ein Domain-Shader wird einmal pro Ausgabepunkt der Tessellatorstufe ausgeführt und hat schreibgeschützten Zugriff auf die UV-Koordinaten der Ausgabe der Tessellatorstufe, den Ausgabepatch des Hull-Shaders und dessen Ausgabepatchkonstanten.
 
 ## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Zweck und Verwendung
 
@@ -38,7 +38,7 @@ Die Domainshaderphase (DS) gibt die Vertex-Position eines unterteilen Punkts im 
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Ausgabe
 
 
--   Die Domainshaderphase (DS) gibt die Vertex-Position eines unterteilten Punkts im Ausgabe-Patch zurück.
+-   Die Domain-Shader-Stufe (DS-Stufe) gibt die Vertexposition eines unterteilten Punkts im Ausgabepatch aus.
 
 Nachdem der Domainshader abgeschlossen ist, wird die Tesselation abgeschlossen und die Pipelinedaten werden an die nächste Pipelinephase weitergeleitet (z. B. die [Geometry-Shader-Phase (GS)](geometry-shader-stage--gs-.md) und die [Pixel-Shader-Phase (PS)](pixel-shader-stage--ps-.md)). Ein Geometrieshader erwartet Primitiven mit strukturierten Daten (z. B. 6 Vertizes pro Dreieck). Er ist bei aktiver Tesselation nicht gültig (dies führt zu einem unerwartetem Verhalten, das einen Fehler der Debugschicht auslöst).
 

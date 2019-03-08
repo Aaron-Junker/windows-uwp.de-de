@@ -3,21 +3,21 @@ title: Starten einer App auf einem Remotegerät
 description: Erfahren Sie, wie Sie mithilfe von Project Rome eine App auf einem Remotegerät starten können.
 ms.date: 02/12/2018
 ms.topic: article
-keywords: Windows 10, Uwp, verbundenen Geräten, remote-Systemen, "ROME" Projekt "ROME"
+keywords: Windows 10, Uwp, verbundene Geräte "," Remotesystemen "," ROM "," Projekt "ROME"
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930781"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658415"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>Starten einer App auf einem Remotegerät
 
 In diesem Artikel wird das Starten einer Windows-App auf einem Remotegerät beschrieben.
 
-Ab Windows10, Version 1607, kann eine UWP-App eine UWP-App oder Windows-Desktopanwendung remote auf einem anderen Geräte starten, auf dem ebenfalls Windows10, Version 1607 oder höher, ausgeführt wird. Voraussetzung ist, dass beide Geräte mit dem gleichen Microsoft-Konto (MSA) angemeldet sind. Dies ist der einfachste Anwendungsfall von Project Rome.
+Ab Windows 10, Version 1607, kann eine UWP-App eine UWP-App oder Windows-Desktopanwendung remote auf einem anderen Geräte starten, auf dem ebenfalls Windows 10, Version 1607 oder höher, ausgeführt wird. Voraussetzung ist, dass beide Geräte mit dem gleichen Microsoft-Konto (MSA) angemeldet sind. Dies ist der einfachste Anwendungsfall von Project Rome.
 
 Das Feature für den Remotestart ermöglicht aufgabenorientierte Benutzeroberflächen; ein Benutzer kann eine Aufgabe auf einem Gerät starten und auf einem anderen Gerät beenden. Wenn Benutzer beispielsweise auf dem Mobiltelefon in ihrem Auto Musik hören, könnten sie die Wiedergabefunktion anschließend an ihre Xbox One übertragen, wenn sie zu Hause ankommen. Durch Remotestarten können Apps kontextbezogene Daten an die Remote-App übergeben, die gestartet wird, damit diese den Vorgang an der Stelle fortsetzt, an der dieser unterbrochen wurde.
 
@@ -35,7 +35,7 @@ Damit Ihre App eine App auf einem Remotegerät starten kann, müssen Sie Ihrem A
 
 ### <a name="enable-cross-device-sharing"></a>Ermöglichen Sie die geräteübergreifende Freigabe
 
-Darüber hinaus muss festgelegt werden, dass das Clientgerät die geräteübergreifende Freigabe zulässt. Diese Einstellung ist standardmäßig aktiviert. Sie können in den **Einstellungen** wie folgt darauf zugreifen: **System** > **Geteilte Umgebungen** > **Auf allen Geräten freigeben**. 
+Darüber hinaus muss festgelegt werden, dass das Clientgerät die geräteübergreifende Freigabe zulässt. Diese Einstellung, die in zugegriffen wird **Einstellungen**: **System** > **freigegebene Umgebungen** > **Freigabe geräteübergreifend**, ist standardmäßig aktiviert. 
 
 ![Einstellungsseite geteilter Umgebungen](images/shared-experiences-settings.png)
 
@@ -74,7 +74,7 @@ Das [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-[API-Referenz für Remotesysteme](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[Übersicht über verbundene Apps und Geräte (Project Rome)](connected-apps-and-devices.md)  
+[Remote-Systemen-API-Referenz](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[Verbundene apps und Geräten (Projekt "ROME") (Übersicht)](connected-apps-and-devices.md)  
 [Ermitteln von Remotegeräten](discover-remote-devices.md)  
 Das [Beispiel für Remotesysteme](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) zeigt die Vorgehensweise zum Erkennen eines Remotesystems, Starten einer App auf einem Remotesystem und Verwenden von App-Diensten zum Senden von Nachrichten zwischen Apps, die auf zwei Systemen ausgeführt werden.

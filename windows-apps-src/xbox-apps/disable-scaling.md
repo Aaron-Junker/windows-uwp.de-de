@@ -3,18 +3,18 @@ title: So deaktivieren Sie die Skalierung
 description: Anleitung zum Deaktivieren des Standard-Skalierungsfaktors.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.assetid: 6e68c1fc-a407-4c0b-b0f4-e445ccb72ff3
 ms.localizationpriority: medium
 ms.openlocfilehash: 44688ff40792ba2ee72cbd1d96bae1ac59834efa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933944"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604745"
 ---
 # <a name="how-to-turn-off-scaling"></a>So deaktivieren Sie die Skalierung   
-Standardmäßig werden Anwendungen für XAML-Apps auf 200Prozent und für HTML-Apps auf 150Prozent skaliert. Der Standardskalierungsfaktor kann deaktiviert werden. Infolgedessen verwendet die Anwendung die tatsächlichen Pixelabmessungen des Geräts (1910 x 1080Pixel).   
+Standardmäßig werden Anwendungen für XAML-Apps auf 200 Prozent und für HTML-Apps auf 150 Prozent skaliert. Der Standardskalierungsfaktor kann deaktiviert werden. Infolgedessen verwendet die Anwendung die tatsächlichen Pixelabmessungen des Geräts (1910 x 1080 Pixel).   
    
 ## <a name="html"></a>HTML   
 Sie können den Skalierungsfaktor deaktivieren, indem Sie den folgenden Codeausschnitt verwenden: 
@@ -43,6 +43,6 @@ bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayo
 ## <a name="directxc"></a>DirectX/C++   
 DirectX-/C++-Anwendungen werden nicht skaliert. Die automatische Skalierung gilt nur für HTML- und XAML-Anwendungen.  
 
-## <a name="see-also"></a>Weitere Informationen
-- [Bewährte Methoden für Xbox](tailoring-for-xbox.md)
-- [UWP auf XboxOne](index.md)
+## <a name="see-also"></a>Siehe auch
+- [Bewährte Methoden für die Xbox](tailoring-for-xbox.md)
+- [UWP auf Xbox One](index.md)

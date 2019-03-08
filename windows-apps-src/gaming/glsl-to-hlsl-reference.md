@@ -1,44 +1,44 @@
 ---
 title: GLSL-zu-HLSL-Referenz
-description: Sie portieren Ihren OpenGL Shader Language (GLSL)-Code zu Microsoft High Level Shader Language (HLSL)-Code, wenn Sie Ihre Grafikarchitektur von OpenGLES2.0 zu Direct3D11 portieren, um ein Spiel für die universelle Windows-Plattform (UWP) zu erstellen.
+description: Sie portieren Ihren OpenGL Shader Language (GLSL)-Code zu Microsoft High Level Shader Language (HLSL)-Code, wenn Sie Ihre Grafikarchitektur von OpenGL ES 2.0 zu Direct3D 11 portieren, um ein Spiel für die universelle Windows-Plattform (UWP) zu erstellen.
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, glsl, hlsl, opengl, directx, Shader
+keywords: Windows 10, UWP, glsl, hlsl, opengl, directx, Shader
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938909"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611165"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL-zu-HLSL-Referenz
 
 
 
-Sie portieren Ihren OpenGL Shader Language (GLSL)-Code zu Microsoft High Level Shader Language (HLSL)-Code, wenn Sie Ihre [Grafikarchitektur von OpenGLES2.0 zu Direct3D11 portieren](port-from-opengl-es-2-0-to-directx-11-1.md), um ein Spiel für die universelle Windows-Plattform (UWP) zu erstellen. Die hier verwendete GLSL ist kompatibel mit OpenGLES2.0, und die HLSL ist kompatibel mit Direct3D11. Informationen zu den Unterschieden zwischen Direct3D11 und Vorgängerversionen von Direct3D finden Sie unter [Funktionszuordnung](feature-mapping.md).
+Sie portieren Ihren OpenGL Shader Language (GLSL)-Code zu Microsoft High Level Shader Language (HLSL)-Code, wenn Sie Ihre [Grafikarchitektur von OpenGL ES 2.0 zu Direct3D 11 portieren](port-from-opengl-es-2-0-to-directx-11-1.md), um ein Spiel für die universelle Windows-Plattform (UWP) zu erstellen. Die hier verwendete GLSL ist kompatibel mit OpenGL ES 2.0, und die HLSL ist kompatibel mit Direct3D 11. Informationen zu den Unterschieden zwischen Direct3D 11 und Vorgängerversionen von Direct3D finden Sie unter [Funktionszuordnung](feature-mapping.md).
 
--   [Vergleich zwischen OpenGLES2.0 und Direct3D11](#comparing-opengl-es-20-with-direct3d-11)
--   [Portieren von GLSL-Variablen zu HLSL](#porting-glsl-variables-to-hlsl)
--   [Portieren von GLSL-Typen zu HLSL](#porting-glsl-types-to-hlsl)
--   [Portieren von vordefinierten globalen GLSL-Variablen zu HLSL](#porting-glsl-pre-defined-global-variables-to-hlsl)
--   [Beispiele für das Portieren von GLSL-Variablen zu HLSL](#examples-of-porting-glsl-variables-to-hlsl)
-    -   [Uniform-Variable, Attribut und variierende Variable in GLSL](#uniform-attribute-and-varying-in-glsl)
-    -   [Konstantenpuffer und Datenübertragungen in HLSL](#constant-buffers-and-data-transfers-in-hlsl)
--   [Beispiele für das Portieren von OpenGL-Renderingcode zu Direct3D](#examples-of-porting-opengl-rendering-code-to-direct3d)
+-   [Vergleichen von OpenGL ES 2.0 mit Direct3D 11](#comparing-opengl-es-20-with-direct3d-11)
+-   [Portieren von GLSL-Variablen, um "HLSL"](#porting-glsl-variables-to-hlsl)
+-   [Portieren von GLSL-Typen in "HLSL"](#porting-glsl-types-to-hlsl)
+-   [Portieren von GLSL vordefinierte globale Variablen für die "HLSL"](#porting-glsl-pre-defined-global-variables-to-hlsl)
+-   [Beispiele für Portieren GLSL-Variablen, um "HLSL"](#examples-of-porting-glsl-variables-to-hlsl)
+    -   [Einheitliche, Attribut- und variieren in GLSL](#uniform-attribute-and-varying-in-glsl)
+    -   [Konstante Puffer und Datenübertragungen in "HLSL"](#constant-buffers-and-data-transfers-in-hlsl)
+-   [Portieren von OpenGL-Rendering-Code für Direct3D-Beispiele](#examples-of-porting-opengl-rendering-code-to-direct3d)
 -   [Verwandte Themen](#related-topics)
 
-## <a name="comparing-opengl-es-20-with-direct3d-11"></a>Vergleich zwischen OpenGLES2.0 und Direct3D11
+## <a name="comparing-opengl-es-20-with-direct3d-11"></a>Vergleich zwischen OpenGL ES 2.0 und Direct3D 11
 
 
-OpenGLES2.0 und Direct3D11 sind sich in vielen Bereichen ähnlich. Beide verwenden ähnliche Renderingpipelines und Grafikfunktionen. Bei Direct3D 11 handelt es sich jedoch um eine Renderingimplementierung und API und nicht um eine Spezifikation. OpenGLES2.0 ist dagegen eine Renderingspezifikation und API und keine Implementierung. Folgende allgemeine Unterschiede bestehen zwischen Direct3D11 und OpenGLES2.0:
+OpenGL ES 2.0 und Direct3D 11 sind sich in vielen Bereichen ähnlich. Beide verwenden ähnliche Renderingpipelines und Grafikfunktionen. Bei Direct3D 11 handelt es sich jedoch um eine Renderingimplementierung und API und nicht um eine Spezifikation. OpenGL ES 2.0 ist dagegen eine Renderingspezifikation und API und keine Implementierung. Folgende allgemeine Unterschiede bestehen zwischen Direct3D 11 und OpenGL ES 2.0:
 
-| OpenGL ES2.0                                                                                         | Direct3D11                                                                                                            |
+| OpenGL ES 2.0                                                                                         | Direct3D 11                                                                                                            |
 |-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | Hardware- und betriebssystemagnostische Spezifikation mit vom Anbieter bereitgestellten Implementierungen.             | Microsoft-Implementierung der Hardwareabstraktion und -zertifizierung auf Windows-Plattformen.                                |
 | Allgemein gehalten, um unterschiedliche Hardware zu unterstützen. Die meisten Ressourcen werden von der Runtime verwaltet.                                     | Direkter Zugriff auf das Hardwarelayout. Ressourcen und Verarbeitung können von der App verwaltet werden.                                              |
-| Stellt Module auf höherer Ebene über Drittanbieterbibliotheken bereit (z.B. Simple DirectMedia Layer, SDL). | Module auf höherer Ebene wie Direct2D werden basierend auf Modulen auf niedrigerer Eben erstellt, um die Entwicklung für Windows-Apps zu vereinfachen.             |
+| Stellt Module auf höherer Ebene über Drittanbieterbibliotheken bereit (z. B. Simple DirectMedia Layer, SDL). | Module auf höherer Ebene wie Direct2D werden basierend auf Modulen auf niedrigerer Eben erstellt, um die Entwicklung für Windows-Apps zu vereinfachen.             |
 | Unterscheidung von Hardwareanbietern anhand von Erweiterungen.                                                         | Microsoft fügt der API optionale Funktionen in generischer Form hinzu, sodass sie nicht speziell für einen bestimmten Hardwareanbieter gelten. |
 
  
@@ -65,7 +65,7 @@ Folgende allgemeine Unterschiede bestehen zwischen GLSL und HLSL:
 <td align="left">In die Grafik-API integrierte Shaderkompilierung</td>
 <td align="left">Der HLSL-Compiler <a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">kompiliert den Shader</a> in eine binäre Zwischendarstellung, bevor er von Direct3D an den Treiber übergeben wird.
 <div class="alert">
-<strong>Hinweis:</strong>diese binäre Darstellung ist hardwareunabhängig. Sie wird normalerweise beim Erstellen der App und nicht zur Laufzeit kompiliert.
+<strong>Beachten Sie</strong>  diese binäre Darstellung ist die Hardware, die unabhängig. Sie wird normalerweise beim Erstellen der App und nicht zur Laufzeit kompiliert.
 </div>
 <div>
  
@@ -83,18 +83,18 @@ Folgende allgemeine Unterschiede bestehen zwischen GLSL und HLSL:
 <p>min10float, min16float</p></td>
 </tr>
 <tr class="odd">
-<td align="left">texture2D[Funktion]</td>
+<td align="left">texture2D [Funktion]</td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb509695">texture.Sample</a> [Datentyp.Funktion]</td>
 </tr>
 <tr class="even">
-<td align="left">sampler2D[Datentyp]</td>
+<td align="left">sampler2D [Datentyp]</td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471525">Texture2D</a> [Datentyp]</td>
 </tr>
 <tr class="odd">
 <td align="left">Zeilenmatrizen (Standard)</td>
 <td align="left">Spaltenmatrizen (Standard)
 <div class="alert">
-<strong>Hinweis:</strong>  <strong>Row_major</strong> -Typmodifizierer verwenden, um das Layout für eine Variable zu ändern. Weitere Informationen finden Sie unter <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Variablensyntax</a>. Sie können auch ein Compilerkennzeichen oder ein Pragma angeben, um den globalen Standardwert zu ändern.
+<strong>Beachten Sie</strong>    verwenden die <strong>Row_major</strong> Typmodifizierer so ändern Sie das Layout für eine Variable. Weitere Informationen finden Sie unter <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Variablensyntax</a>. Sie können auch ein Compilerkennzeichen oder ein Pragma angeben, um den globalen Standardwert zu ändern.
 </div>
 <div>
  
@@ -109,11 +109,11 @@ Folgende allgemeine Unterschiede bestehen zwischen GLSL und HLSL:
 
  
 
-> **Hinweis:** HLSL sind Texturen und Sampler zwei separate Objekte. In GLSL ist die Texturbindung wie bei Direct3D9 Teil des Samplerstatus.
+> **Beachten Sie**  HLSL hat, Texturen und Postprozessoren als zwei separate Objekte. In GLSL ist die Texturbindung wie bei Direct3D 9 Teil des Samplerstatus.
 
  
 
-In GLSL stellen Sie einen Großteil des OpenGL-Status in Form von vordefinierten globalen Variablen dar. Bei GLSL verwenden Sie z.B. die **gl\_Position**-Variable zum Angeben der Vertexposition und die **gl\_FragColor**-Variable zum Angeben der Fragmentfarbe. In HLSL übergeben Sie den Direct3D-Status explizit vom App-Code an den Shader. Bei Direct3D und HLSL muss die Eingabe für den Vertex-Shader z.B. dem Datumsformat im Scheitelpunktpuffer entsprechen, und die Struktur eines Konstantenpuffers im App-Code muss mit der Struktur eines Konstantenpuffers ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) im Shadercode übereinstimmen.
+In GLSL stellen Sie einen Großteil des OpenGL-Status in Form von vordefinierten globalen Variablen dar. Mit GLSL, verwenden Sie z. B. die **Gl\_Position** Variable, um Vertexposition anzugeben und die **Gl\_FragColor** Variable, um Fragment Farbe anzugeben. In HLSL übergeben Sie den Direct3D-Status explizit vom App-Code an den Shader. Bei Direct3D und HLSL muss die Eingabe für den Vertex-Shader z. B. dem Datumsformat im Scheitelpunktpuffer entsprechen, und die Struktur eines Konstantenpuffers im App-Code muss mit der Struktur eines Konstantenpuffers ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) im Shadercode übereinstimmen.
 
 ## <a name="porting-glsl-variables-to-hlsl"></a>Portieren von GLSL-Variablen zu HLSL
 
@@ -133,21 +133,21 @@ In GLSL wenden Sie Modifizierer (Qualifizierer) auf eine globale Shadervariablen
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>uniform-Variable</strong></p>
+<td align="left"><p><strong>uniform</strong></p>
 <p>Sie übergeben eine Uniform-Variable vom App-Code in die Vertex- und/oder Fragment-Shader. Sie müssen die Werte aller Uniform-Variablen festlegen, bevor Sie Dreiecke mit den Shadern zeichnen, damit ihre Werte gleich bleiben, während ein Dreieckgitter gezeichnet wird. Diese Werte sind einheitlich. Einige Uniform-Variablen werden für den gesamten Frame festgelegt und andere speziell für ein bestimmtes Vertex-/Pixelshaderpaar.</p>
 <p>Uniform-Variablen sind Variablen, die pro Polygon gelten.</p></td>
 <td align="left"><p>Verwenden Sie einen Konstantenpuffer.</p>
-<p>Siehe <a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">So wird's gemacht: Erstellen eines Konstantenpuffers</a> und <a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">Shaderkonstanten</a>.</p></td>
+<p>Finden Sie unter <a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">Vorgehensweise: Erstellen ein Konstantenpuffers</a> und <a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">Shaderkonstanten</a>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>variierende Variable</strong></p>
-<p>Sie initialisieren eine variierende Variable im Vertex-Shader und übergeben sie an eine identisch benannte variierende Variable im Fragment-Shader. Da der Vertex-Shader nur den Wert der variieRendern Variablen an jedem Scheitelpunkt festlegt, werden diese Werte vom Rasterizer (perspektivisch korrekt) interpoliert, um Pro-Fragment-Werte zu generieren, die dann in den Fragment-Shader übergeben werden. Diese Variablen sind bei jedem Dreieck unterschiedlich.</p></td>
+<td align="left"><p><strong>varying</strong></p>
+<p>Sie initialisieren eine variierende Variable im Vertex-Shader und übergeben sie an eine identisch benannte variierende Variable im Fragment-Shader. Da der Vertex-Shader nur den Wert der variierenden Variablen an jedem Scheitelpunkt festlegt, werden diese Werte vom Rasterizer (perspektivisch korrekt) interpoliert, um Pro-Fragment-Werte zu generieren, die dann in den Fragment-Shader übergeben werden. Diese Variablen sind bei jedem Dreieck unterschiedlich.</p></td>
 <td align="left">Verwenden Sie die vom Vertex-Shader zurückgegebene Struktur als Eingabe für den Pixelshader. Stellen Sie sicher, dass die Semantikwerte übereinstimmen.</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>Attribut</strong></p>
+<td align="left"><p><strong>attribute</strong></p>
 <p>Ein Attribut ist Teil der Beschreibung eines Scheitelpunkts, die Sie vom App-Code an den Vertex-Shader übergeben. Anders als bei einer Uniform-Variable legen Sie den Wert jedes Attributs für jeden Scheitelpunkt fest, sodass jeder Scheitelpunkt einen anderen Wert haben kann. Attributvariablen sind Variablen, die pro Scheitelpunkt gelten.</p></td>
-<td align="left"><p>Definieren Sie einen Scheitelpunktpuffer in Ihrem Direct3D-App-Code, und passen Sie ihn an die im Vertex-Shader definierte Scheitelpunkteingabe an. Optional können Sie einen Indexpuffer definieren. Siehe <a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">So wird's gemacht: Erstellen eines Scheitelpunktpuffers</a> und <a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">So wird's gemacht: Erstellen eines Indexpuffers</a>.</p>
+<td align="left"><p>Definieren Sie einen Scheitelpunktpuffer in Ihrem Direct3D-App-Code, und passen Sie ihn an die im Vertex-Shader definierte Scheitelpunkteingabe an. Optional können Sie einen Indexpuffer definieren. Finden Sie unter <a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">Vorgehensweise: Erstellen Sie einen Vertexpuffer</a> und <a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">Vorgehensweise: Erstellen Sie einen Indexpuffer</a>.</p>
 <p>Erstellen Sie ein Eingabelayout in Ihrem Direct3D-App-Code, und passen Sie die Semantikwerte an die Werte in der Scheitelpunkteingabe an. Siehe <a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">Erstellen des Eingabelayouts</a>.</p></td>
 </tr>
 <tr class="even">
@@ -184,7 +184,7 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 <tr class="odd">
 <td align="left">Skalare Typen: float, int, bool</td>
 <td align="left"><p>Skalare Typen: float, int, bool</p>
-<p>also,uint, double</p>
+<p>also, uint, double</p>
 <p>Weitere Informationen finden Sie unter <a href="https://msdn.microsoft.com/library/windows/desktop/bb509646">Skalare Typen</a>.</p></td>
 </tr>
 <tr class="even">
@@ -213,9 +213,9 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 <tr class="odd">
 <td align="left"><p>Matrixtyp</p>
 <ul>
-<li>mat2: 2x2-Float-Matrix</li>
-<li>mat3: 3x3-Float-Matrix</li>
-<li>mat4: 4x4-Float-Matrix</li>
+<li>MAT2: 2 x 2 "float"-matrix</li>
+<li>mat3: 3 x 3 "float"-matrix</li>
+<li>mat4: die "float" 4 x 4-matrix</li>
 </ul></td>
 <td align="left"><p>Matrixtyp</p>
 <ul>
@@ -243,15 +243,15 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 <p>highp float -&gt; float</p>
 <p>highp int -&gt; int</p></li>
 <li><p>mediump</p>
-<p>Dieser auf float und int angewendete Qualifizierer entspricht min16float und min12int in HLSL. Mindestens 10Bits Mantisse (nicht wie "min10float").</p></li>
+<p>Dieser auf float und int angewendete Qualifizierer entspricht min16float und min12int in HLSL. Mindestens 10 Bits Mantisse (nicht wie "min10float").</p></li>
 <li><p>lowp</p>
-<p>Dieser auf "float" angewendete Qualifizierer bietet einen Gleitkommabereich von -2bis2. Entspricht „min10float“ in HLSL.</p></li>
+<p>Dieser auf "float" angewendete Qualifizierer bietet einen Gleitkommabereich von -2 bis 2. Entspricht „min10float“ in HLSL.</p></li>
 </ul></td>
 <td align="left"><p>Genauigkeitstypen</p>
 <ul>
 <li>min16float: min. 16-Bit-Gleitkommawert</li>
 <li><p>min10float</p>
-<p>Min. 2.8-Bit-Festpunktwert mit Vorzeichen (2Bits ganze Zahl und 8Bits Nachkommakomponente). Die 8-Bit-Nachkommakomponente kann inklusive1 sein (anstelle von exklusive), um den kompletten Bereich von -2bis2 zu verwenden.</p></li>
+<p>Min. 2.8-Bit-Festpunktwert mit Vorzeichen (2 Bits ganze Zahl und 8 Bits Nachkommakomponente). Die 8-Bit-Nachkommakomponente kann inklusive 1 sein (anstelle von exklusive), um den kompletten Bereich von -2 bis 2 zu verwenden.</p></li>
 <li>min16int: min. 16-Bit-Ganzzahl mit Vorzeichen</li>
 <li><p>min12int: min. 12-Bit-Ganzzahl mit Vorzeichen</p>
 <p>Dieser Typ dient für "10Level9" (<a href="https://msdn.microsoft.com/library/windows/desktop/ff476876">9_x-Funktionsebenen</a>). Ganze Zahlen werden dort durch Gleitkommazahlen dargestellt. Dies ist die Genauigkeit, die Sie erhalten, wenn Sie eine ganze Zahl mit einer 16-Bit-Gleitkommazahl emulieren.</p></li>
@@ -295,18 +295,18 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 <p>Scheitelpunktposition</p>
 <p>Beispiel: - gl_Position = position;</p></td>
 <td align="left"><p>SV_Position</p>
-<p>POSITION in Direct3D9</p>
+<p>POSITION in Direct3D 9</p>
 <p>Diese Semantik ist vom Typ <strong>float4</strong>.</p>
 <p>Ausgabe des Vertex-Shaders</p>
 <p>Scheitelpunktposition</p>
-<p>Beispiel: - float4 vPosition : SV_Position;</p></td>
+<p>Beispiel: float4 vPosition: SV_Position;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_PointSize</strong></p>
 <p>Diese Variable ist vom Typ <strong>float</strong>.</p>
 <p>Punktgröße</p></td>
 <td align="left"><p>PSIZE</p>
-<p>Ohne Bedeutung, sofern nicht Direct3D9 das Ziel ist.</p>
+<p>Ohne Bedeutung, sofern nicht Direct3D 9 das Ziel ist.</p>
 <p>Diese Semantik ist vom Typ <strong>float</strong>.</p>
 <p>Ausgabe des Vertex-Shaders</p>
 <p>Punktgröße</p></td>
@@ -317,11 +317,11 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 <p>Fragmentfarbe</p>
 <p>Beispiel: - gl_FragColor = vec4(colorVarying, 1.0);</p></td>
 <td align="left"><p>SV_Target</p>
-<p>COLOR in Direct3D9</p>
+<p>COLOR in Direct3D 9</p>
 <p>Diese Semantik ist vom Typ <strong>float4</strong>.</p>
 <p>Ausgabe des Pixelshaders</p>
 <p>Pixelfarbe</p>
-<p>Beispiel: - float4 Color[4] : SV_Target;</p></td>
+<p>Beispiel: Farbe von float4 [4]: SV_Target;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragData[n]</strong></p>
@@ -336,18 +336,18 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 <p>Diese Variable ist vom Typ <strong>vec4</strong>.</p>
 <p>Fragmentposition im Framepuffer</p></td>
 <td align="left"><p>SV_Position</p>
-<p>Nicht verfügbar in Direct3D9</p>
+<p>Nicht verfügbar in Direct3D 9</p>
 <p>Diese Semantik ist vom Typ <strong>float4</strong>.</p>
 <p>Eingabe des Pixelshaders</p>
 <p>Koordinaten des Bildschirmbereichs</p>
-<p>Beispiel: - float4 screenSpace : SV_Position</p></td>
+<p>Beispiel: float4 ScreenSpace: SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FrontFacing</strong></p>
 <p>Diese Variable ist vom Typ <strong>bool</strong>.</p>
 <p>Bestimmt, ob ein Fragment zu einem Vorderseitengrundtyp gehört.</p></td>
 <td align="left"><p>SV_IsFrontFace</p>
-<p>VFACE in Direct3D9</p>
+<p>VFACE in Direct3D 9</p>
 <p>„SV_IsFrontFace“ ist vom Typ <strong>bool</strong>.</p>
 <p>VFACE ist vom Typ <strong>float</strong>.</p>
 <p>Eingabe des Pixelshaders</p>
@@ -358,19 +358,19 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 <p>Diese Variable ist vom Typ <strong>vec2</strong>.</p>
 <p>Fragmentposition innerhalb eines Punkts (nur Punktrasterung)</p></td>
 <td align="left"><p>SV_Position</p>
-<p>VPOS in Direct3D9</p>
+<p>VPOS in Direct3D 9</p>
 <p>„SV_Position“ ist vom Typ <strong>float4</strong>.</p>
 <p>VPOS ist vom Typ <strong>float2</strong>.</p>
 <p>Eingabe des Pixelshaders</p>
 <p>Pixel- oder Bildpunktposition im Bildschirmbereich</p>
-<p>Beispiel: - float4 pos : SV_Position</p></td>
+<p>Beispiel: float4 pos: SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragDepth</strong></p>
 <p>Diese Variable ist vom Typ <strong>float</strong>.</p>
 <p>Tiefenpufferdaten</p></td>
 <td align="left"><p>SV_Depth</p>
-<p>DEPTH in Direct3D9</p>
+<p>DEPTH in Direct3D 9</p>
 <p>„SV_Depth“ ist vom Typ <strong>float</strong>.</p>
 <p>Ausgabe des Pixelshaders</p>
 <p>Tiefenpufferdaten</p></td>
@@ -513,7 +513,7 @@ float4 main(PixelShaderInput input) : SV_Target
 ## <a name="examples-of-porting-opengl-rendering-code-to-direct3d"></a>Beispiele für das Portieren von OpenGL-Renderingcode zu Direct3D
 
 
-Im Folgenden zeigen wir Ihnen ein Beispiel für das Rendering in OpenGLES2.0-Code und anschließend das entsprechende Beispiel in Direct3D11-Code.
+Im Folgenden zeigen wir Ihnen ein Beispiel für das Rendering in OpenGL ES 2.0-Code und anschließend das entsprechende Beispiel in Direct3D 11-Code.
 
 OpenGL-Renderingcode
 
@@ -562,7 +562,7 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [Portieren von OpenGLES2.0 zu Direct3D11](port-from-opengl-es-2-0-to-directx-11-1.md)
+* [Portieren von OpenGL ES 2.0 zu Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)
 
  
 

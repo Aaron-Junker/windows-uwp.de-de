@@ -1,31 +1,31 @@
 ---
-Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
+Description: Sie können Ihre Apps oder Add-Ons im Microsoft Store auch bewerben, indem Sie sie für einen begrenzten Zeitraum als Sonderangebot bereitstellen.
 title: Anbieten vergünstigter Apps und Add-Ons
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c844c37bab8a135468d74558e8dc053b18d48cc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934339"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625315"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>Anbieten vergünstigter Apps und Add-Ons
 
-Sie können Ihre Apps oder Add-Ons im Microsoft Store auch bewerben, indem Sie sie für einen begrenzten Zeitraum als Sonderangebot bereitstellen. Sie können das Produkt auch auf einer niedrigeren Preisstufe oder mit einem prozentbasierten Rabatt anbieten. Und Sie können auswählen, ob das Sonderangebot für alle Benutzer anbieten oder ein exklusives Angebot für Kunden, die eine Ihrer anderen Produkte besitzen machen.
+Sie können Ihre Apps oder Add-Ons im Microsoft Store auch bewerben, indem Sie sie für einen begrenzten Zeitraum als Sonderangebot bereitstellen. Sie können das Produkt auch auf einer niedrigeren Preisstufe oder mit einem prozentbasierten Rabatt anbieten. Und Sie können auswählen, ob bieten den Verkauf für jeden Benutzer, oder stellen sie ein exklusives Angebot für Kunden, die eine andere Produkte besitzen.
 
 > [!NOTE]
-> Sonderpreise wird für die Abonnement-Add-Ons nicht unterstützt.
+> Verkaufs-Preise wird für die Abonnement-Add-Ons nicht unterstützt.
 
-Bei der Verwendung des Abschnitts **Sonderpreise** der Seite **Preise und Verfügbarkeit** einer Übermittlung zur vorübergehenden Senkung des Preises Ihrer App oder Ihres Add-Ons sehen Kunden, die sich den Store-Eintrag ansehen, dass der Preis durchgestrichen wurde, d.h. gesenkt wurde (im Gegensatz zu einer [geplanten Preisänderung](set-and-schedule-app-pricing.md#schedule-price-changes), bei der der Preis gesenkt oder angehoben werden kann, ohne dass dies als Änderung im Store angezeigt wird). 
+Bei der Verwendung des Abschnitts **Sonderpreise** der Seite **Preise und Verfügbarkeit** einer Übermittlung zur vorübergehenden Senkung des Preises Ihrer App oder Ihres Add-Ons sehen Kunden, die sich den Store-Eintrag ansehen, dass der Preis durchgestrichen wurde, d. h. gesenkt wurde (im Gegensatz zu einer [geplanten Preisänderung](set-and-schedule-app-pricing.md#schedule-price-changes), bei der der Preis gesenkt oder angehoben werden kann, ohne dass dies als Änderung im Store angezeigt wird). 
 
 Während der Zeit, in der Ihr ein Produkt als Sonderangebot angeboten wird, können Kunden es während des Zeitraums, den Sie ausgewählt haben, zu dem niedrigeren Preis erwerben. Wenn Sie den Preis auf **Kostenlos** senken, können Kunden die App bzw. das IAP während des Zeitraums für das Sonderangebot herunterladen, ohne dafür zu bezahlen.
 
 > [!IMPORTANT]
-> Sonderpreise werden nur für Kunden mit Windows 10-Geräten, einschließlich Xbox One angezeigt. Verkäufe, die Sie nur für Besitzer eines Ihrer anderen Produkte anbieten werden nur für Kunden unter Windows 10, Version 1607 oder höher angezeigt.
+> Verkaufs-Preise wird nur für Ihre Kunden auf Windows 10-Geräten, einschließlich Xbox One angezeigt. Verkäufe, die Sie nur für den Besitzer eines Ihrer anderen Produkte anbieten, werden nur für Kunden, die unter Windows 10, Version 1607 oder höher angezeigt.
 > 
 > Bei anderen Betriebssystemen wird den Kunden der reguläre Preis für Ihre App oder Ihr Add-On angezeigt und können diese nicht zu Sonderpreisen erwerben. Sie können einen Preis jederzeit ändern, indem Sie ein anderes Preisniveau bei einer neuen Übermittlung auswählen, dieser wird jedoch nicht als Sonderangebot für einen begrenzten Zeitraum angezeigt.
 
@@ -34,7 +34,7 @@ Während der Zeit, in der Ihr ein Produkt als Sonderangebot angeboten wird, kön
 
 Sonderangebote werden im Rahmen der Übermittlung für Apps oder Add-Ons geplant. Wenn Sie ein Sonderangebot für bereits veröffentlichte Apps oder Add-Ons planen möchten, müssen Sie diese erneut übermitteln, selbst wenn dies die einzige vorzunehmende Änderung ist.
 
-**So planen Sie ein Sonderangebot**
+**Um ein Verkauf zu planen.**
 
 1. Wechseln Sie auf der Seite **Preise und Verfügbarkeit** einer aktiven App- oder Add-On-Übermittlung zum Abschnitt **Verkaufspreise**.
 2. Wählen Sie **Optionen anzeigen**, und wählen Sie dann **Neues Angebot**.
@@ -43,20 +43,20 @@ Sonderangebote werden im Rahmen der Übermittlung für Apps oder Add-Ons geplant
    > [!NOTE]
    > Die im Abschnitt Angebotspreise von Ihnen getroffene Marktauswahl hat keinen Einfluss auf die Märkte, in denen die App angeboten wird. Mit dieser Auswahl wird lediglich festgelegt, ob ein Angebotspreis erhältlich ist, und in welchen Märkten. Wenn Sie Angebotspreise für einen Markt festlegen, in dem Ihre App nicht verfügbar ist, steht die App in diesem Markt weiterhin nicht zur Verfügung.
 4. Wählen Sie eine der folgenden Optionen, um die Art des Rabatts anzugeben:
-   - **Preis**: Mit dieser Option können Sie ein niedrigeres Preisniveau auswählen, zu dem Ihre App angeboten wird. Sie können die Dropdownliste für die Währung ändern, um den Preis in der von Ihnen bevorzugten Währung auszuwählen. (Der Preis wird für jede Währung in das entsprechende Niveau konvertiert. Weitere Informationen finden Sie unter [Preise](set-app-pricing-and-availability.md).)
-   - **Prozentsatz**: Mit dieser Option können Sie den Prozentsatz für einen Rabatt auswählen, der auf die App angewendet wird. Der gleiche Prozentsatz wird für alle Währungen verwendet.
+   - **Preis**: Verwenden Sie diese Option, um einen niedrigeren Tarif auszuwählen, an dem Ihre app angeboten wird. Sie können die Dropdownliste für die Währung ändern, um den Preis in der von Ihnen bevorzugten Währung auszuwählen. (Der Preis wird für jede Währung in das entsprechende Niveau konvertiert. Weitere Informationen finden Sie unter [Preise](set-app-pricing-and-availability.md).)
+   - **Prozentsatz**: Verwenden Sie diese Option, um den Prozentsatz für einen Rabatt von auszuwählen, die zu Ihrer app angewendet werden. Der gleiche Prozentsatz wird für alle Währungen verwendet.
 5. Wählen Sie in der Zeile **Offered to** eine der verfügbaren Optionen aus, einschließlich:
-   - **Jeder**: Das Sonderangebot wird für alle Kunden angeboten.
-   - **Owners of**: Das Sonderangebot wird Kunden, die bereits eine Ihrer Apps besitzen, angeboten. Sie können eine Ihrer veröffentlichten Apps aus der Dropdownliste auswählen, die angezeigt wird. Sie müssen eine oder mehrere Apps veröffentlicht haben, damit diese Option zur Verfügung steht.
+   - **Jeder**: Die Verkaufszahlen werden für alle Kunden angeboten.
+   - **Besitzer der**: Die Verkaufszahlen werden für Kunden angeboten, die bereits einer Ihrer apps besitzen. Sie können eine Ihrer veröffentlichten Apps aus der Dropdownliste auswählen, die angezeigt wird. Sie müssen eine oder mehrere Apps veröffentlicht haben, damit diese Option zur Verfügung steht.
 
   > [!IMPORTANT]
-  > Wenn Sie die Option **Owners of** auswählen, ist der Verkauf nur für Kunden unter Windows10, Version 1607 oder höher sichtbar.
+  > Wenn Sie die Option **Owners of** auswählen, ist der Verkauf nur für Kunden unter Windows 10, Version 1607 oder höher sichtbar.
 
-   - **Bekannte Anwendergruppen**: Das Sonderangebot wird Personen in der ausgewählten [bekannten Anwendergruppe](create-known-user-groups.md) angeboten. Sie müssen die bekannte Anwendergruppe bereits erstellt habe, damit diese Option angezeigt wird.
-   - **Segment**: Das Sonderangebot wird Personen im ausgewählten Kundensegment angeboten. Sie können hier ein [bereits erstelltes Segment](create-customer-segments.md) verwenden. Sie können auch **First time payers** auswählen, um das Sonderangebot nur für Kunden anzubieten, die noch nie etwas im Store erworben haben. Wir bieten dieses Segment hier an, da wir festgestellt haben, dass Kunden nach ihrem ersten Store-Einkauf häufig weitere Einkäufe tätigen. Für diese Gruppe eignen sich also unter Umständen Angebotspreise sehr gut.
+   - **Bekannte Benutzergruppe**: Wird der Verkauf angeboten, an die Personen in der [bekannte Benutzergruppe](create-known-user-groups.md) Sie auswählen. Sie müssen die bekannte Anwendergruppe bereits erstellt habe, damit diese Option angezeigt wird.
+   - **Segment**: An die Personen in der Customer-Segment wird, die Sie auswählen, der Verkauf angeboten. Sie können hier ein [bereits erstelltes Segment](create-customer-segments.md) verwenden. Sie können auch **First time payers** auswählen, um das Sonderangebot nur für Kunden anzubieten, die noch nie etwas im Store erworben haben. Wir bieten dieses Segment hier an, da wir festgestellt haben, dass Kunden nach ihrem ersten Store-Einkauf häufig weitere Einkäufe tätigen. Für diese Gruppe eignen sich also unter Umständen Angebotspreise sehr gut.
 6. Geben Sie das Datum und die Uhrzeit für den Start und das Ende des Angebotszeitraums ein. Wählen Sie eine der folgenden Zeitzonenoptionen aus:
-   - **UTC**: Die ausgewählte Zeit ist UTC-Zeit (Universal Coordinated Time, Koordinierte Weltzeit), damit das Angebot überall zur gleichen Zeit verfügbar gemacht wird.
-   - **Lokal**: Die ausgewählte Zeit ist die in jeder Zeitzone für einen Markt verwendete Uhrzeit. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
+   - **UTC**: Die Zeit, die Sie auswählen, werden die Zeit (Universal Coordinated Time, UTC), damit der Verkauf zur gleichen Zeit überall tritt auf.
+   - **Local**: Die Zeit, die Sie auswählen, wird die Verwendung in allen Zeitzonen, die einen Markt zugeordnet sein. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
 7. Wenn Sie ein weiteres Sonderangebot planen möchten, wählen Sie **Neues Angebot**. Klicken Sie andernfalls im unteren Bereich der Seite **Preise und Verfügbarkeit** auf **Speichern**, und klicken Sie dann in der Übermittlungsübersicht auf **An Store übermitteln**.
 
 > [!NOTE]
@@ -68,7 +68,7 @@ Sonderangebote werden im Rahmen der Übermittlung für Apps oder Add-Ons geplant
 
 Zum Bearbeiten oder Abbrechen eines bereits für Apps oder Add-Ons geplanten Sonderangebots müssen Sie sie erneut übermitteln und an den Store senden.
 
-**So bearbeiten Sie ein geplantes Sonderangebot**
+**So bearbeiten Sie einen geplanten Verkauf**
 
 1.  Wechseln Sie auf der Seite **Preise und Verfügbarkeit** einer aktiven App- oder Add-On-Übermittlung zum Abschnitt **Verkaufspreise**.
 2.  Navigieren Sie zum Sonderangebot, das Sie aktualisieren möchten, und nehmen Sie dann die gewünschten Änderungen vor.
@@ -79,7 +79,7 @@ Nachdem Ihre Übermittlung den Zertifizierungsprozess durchlaufen hat, werden di
 > [!IMPORTANT]
 > Wenn ein Sonderangebot bereits begonnen hat, können Sie das Startdatum nicht bearbeiten. Sie können das Enddatum zwar bearbeiten, es wird jedoch empfohlen, ein Angebot nicht so zu ändern, dass es vor dem ursprüngliche Enddatum endet. Es kann für potenzielle Kunden frustrierend sein, wenn Sie ein Sonderangebot vor dem ursprünglich veröffentlichten Datum beenden (da Kunden das geplante Enddatum sehen, wenn sie den Store-Eintrag Ihrer App anzeigen).
 
- **So brechen Sie ein noch nicht begonnenes Sonderangebot ab**
+ **Um ein Verkauf abzubrechen, der noch nicht gestartet wurde**
 
 1.  Wechseln Sie auf der Seite **Preise und Verfügbarkeit** einer aktiven App- oder Add-On-Übermittlung zum Abschnitt **Verkaufspreise**.
 2.  Navigieren Sie zum Sonderangebot, das Sie abbrechen möchten, und klicken Sie auf **Entfernen**, um es zu entfernen.

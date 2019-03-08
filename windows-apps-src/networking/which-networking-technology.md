@@ -4,14 +4,14 @@ description: Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-
 title: Welche Netzwerktechnologie?
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b64ddadd0e543930fa72d0c44a6cacf0a873df89
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050683"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656305"
 ---
 # <a name="which-networking-technology"></a>Welche Netzwerktechnologie?
 
@@ -22,7 +22,7 @@ Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-Entwickler zu
 
 Verwenden Sie [Sockets](sockets.md), wenn Sie mit einem anderen Gerät kommunizieren und Ihr eigenes Protokoll verwenden möchten.
 
-Zwei Implementierungen von Sockets sind für UWP-Entwickler (Universelle Windows-Plattform) verfügbar: [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) und [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673). Wenn Sie neuen Code schreiben, hat Windows.Networking.Sockets den Vorteil, dass es sich um eine moderne API handelt, die für die Verwendung durch UWP-Entwickler vorgesehen ist. Wenn Sie plattformübergreifende Netzwerkbibliotheken oder anderen vorhandenen Winsock-Code verwenden oder die Winsock-API bevorzugen, verwenden Sie Winsock.
+Zwei Implementierungen von Sockets sind für Entwickler von universellen Windows-Plattform (UWP) verfügbar: [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960), und [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673). Wenn Sie neuen Code schreiben, hat Windows.Networking.Sockets den Vorteil, dass es sich um eine moderne API handelt, die für die Verwendung durch UWP-Entwickler vorgesehen ist. Wenn Sie plattformübergreifende Netzwerkbibliotheken oder anderen vorhandenen Winsock-Code verwenden oder die Winsock-API bevorzugen, verwenden Sie Winsock.
 
 ### <a name="when-to-use-sockets"></a>Wann sollten Sockets verwenden werden?
 
@@ -69,14 +69,14 @@ Verwenden Sie [HttpClient](httpclient.md) (und den Rest der [**Windows.Web.Http*
 
 Verwenden Sie die [Hintergrundübertragungs-API](background-transfers.md), wenn Sie zuverlässig Dateien über das Netzwerk übertragen möchten. Die Hintergrundübertragungs-API bietet erweiterte Upload- und Downloadfeatures, die bei angehaltener App im Hintergrund ausgeführt werden und auch nach Beendigung der App aktiv bleiben. Die API überwacht den Netzwerkstatus und kann Übertragungen automatisch anhalten und fortsetzen, wenn die Verbindung unterbrochen wird. Übertragungen sind außerdem daten- und akkuabhängig – die Downloadaktivität wird also basierend auf dem aktuellen Verbindungs- und Geräteakkustatus angepasst. Diese Funktionen sind wichtig, wenn Ihre App auf mobilen oder akkubetriebenen Geräten ausgeführt wird. Die API ist ideal für das Hoch- und Herunterladen von großen Dateien über HTTP(S) geeignet. FTP wird auch unterstützt, allerdings nur für Downloads.
 
-Ein neues Feature für die hintergrundübertragung in Windows 10 ist die Möglichkeit, eine nachverarbeitung auszulösen, wenn eine Dateiübertragung abgeschlossen hat, damit können Sie lokale Kataloge aktualisieren, andere apps aktivieren oder den Benutzer benachrichtigen, wenn ein Download abgeschlossen ist.
+Ein neues Hintergrund-Transfer-Feature in Windows 10 ist die Möglichkeit, nach der Verarbeitung auslösen, wenn die Dateiübertragung abgeschlossen wurde, damit können Sie lokale Kataloge aktualisieren, aktivieren die anderen apps oder Benutzer benachrichtigen, wenn ein Download abgeschlossen ist, an.
 
 ### <a name="when-to-use-background-transfers"></a>Wann sollten Hintergrundübertragungen verwendet werden?
 
 -   Verwenden Sie Hintergrundübertragungen zum zuverlässigen Übertragen großer Dateien oder einer großen Anzahl von Dateien.
 -   Verwenden Sie Hintergrundübertragungen mit Abschlussgruppen für Hintergrundübertragungen, wenn Sie Dateiübertragungen im Nachhinein mit einer Hintergrundaufgabe verarbeiten möchten.
 -   Verwenden Sie Hintergrundübertragungen, wenn Sie eine laufende Übertragung nach einer Netzwerkunterbrechung wiederaufnehmen möchten.
--   Verwenden Sie Hintergrundübertragungen, wenn Sie das Übertragungsverhalten auf Grundlage von Netzwerkbedingungen ändern möchten, z.B. beim Wechsel zu einem Volumentarif.
+-   Verwenden Sie Hintergrundübertragungen, wenn Sie das Übertragungsverhalten auf Grundlage von Netzwerkbedingungen ändern möchten, z. B. beim Wechsel zu einem Volumentarif.
 
 ### <a name="when-not-to-use-background-transfers"></a>Wann sollten Hintergrundübertragungen nicht verwendet werden?
 
@@ -105,7 +105,7 @@ Mit der [**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/li
 
 Mit der [**Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250)-API können Sie Nahfeldkommunikation für Apps verwenden, die die Näherung oder das Koppeln mit Geräten nutzen, um eine einfache Datenübertragung zu ermöglichen. Weitere Informationen zum Verwenden dieser API finden Sie unter [Unterstützen von Näherung und Koppeln](https://msdn.microsoft.com/library/windows/apps/hh465229).
 
-### <a name="rssatom-feeds"></a>RSS/Atom-Feeds
+### <a name="rssatom-feeds"></a>RSS-/Atom-Feeds
 
 Mit der [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632)-API können Sie Syndication-Feeds mit RSS- und Atom-Formaten verwalten. Weitere Informationen zur Verwendung dieser API finden Sie unter [RSS/Atom-Feeds](web-feeds.md).
 
@@ -127,7 +127,7 @@ Mit der [**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/lib
 
 ### <a name="mobile-operators"></a>Mobilfunkanbieter
 
-Windows 10 stellt einer großen Entwicklergruppe einige APIs, die bisher nur Geräteherstellern und Mobilfunkanbietern zur Verfügung standen bereit. Beachten Sie, dass obwohl diese APIs jetzt verfügbar gemacht werden, sie auch bestimmten App-Funktionen unterliegen, die von Microsoft genehmigt werden müssen, bevor eine App veröffentlicht werden kann. Die tatsächliche Verwendung dieser APIs wird nach wie vor in erster Linie auf Gerätehersteller und Mobilfunkanbieter beschränkt.
+Windows 10, die auf einer breiten entwicklerzielgruppe stellt einige APIs, die Gerätehersteller und mobilen Betreibern nur zuvor verfügbar gemacht wurden. Beachten Sie, dass obwohl diese APIs jetzt verfügbar gemacht werden, sie auch bestimmten App-Funktionen unterliegen, die von Microsoft genehmigt werden müssen, bevor eine App veröffentlicht werden kann. Die tatsächliche Verwendung dieser APIs wird nach wie vor in erster Linie auf Gerätehersteller und Mobilfunkanbieter beschränkt.
 
 ### <a name="network-operations"></a>Netzwerkvorgänge
 
@@ -135,5 +135,5 @@ Die [**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library
 
 ### <a name="sms"></a>SMS
 
-Der [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567)-Namespace verarbeitet SMS- und verwandte Nachrichten als untergeordnete Elemente. Er wird für die Verwendung durch Mobilfunkanbieter für die App-gerichtete SMS-Verwendung bereitgestellt und wird durch eine Funktion gesteuert, die nicht zur Verwendung durch die meisten App-Entwickler genehmigt wird. Wenn Sie eine App für die Verarbeitung von Nachrichten schreiben, verwenden Sie stattdessen die [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321)-API, da sie nicht nur SMS-Nachrichten verarbeiten kann, sondern auch Nachrichten aus anderen Quellen, z.B. Echtzeit-Chat-Apps, sodass eine viel umfangreichere Chat-/Nachrichtenerfahrung möglich wird.
+Der [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567)-Namespace verarbeitet SMS- und verwandte Nachrichten als untergeordnete Elemente. Er wird für die Verwendung durch Mobilfunkanbieter für die App-gerichtete SMS-Verwendung bereitgestellt und wird durch eine Funktion gesteuert, die nicht zur Verwendung durch die meisten App-Entwickler genehmigt wird. Wenn Sie eine App für die Verarbeitung von Nachrichten schreiben, verwenden Sie stattdessen die [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321)-API, da sie nicht nur SMS-Nachrichten verarbeiten kann, sondern auch Nachrichten aus anderen Quellen, z. B. Echtzeit-Chat-Apps, sodass eine viel umfangreichere Chat-/Nachrichtenerfahrung möglich wird.
 

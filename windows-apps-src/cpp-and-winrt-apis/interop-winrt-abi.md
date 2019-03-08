@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, portieren, migrieren, interoperabilität, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932896"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639945"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interoperabilität zwischen C++/WinRT und der ABI
 
-Dieses Thema zeigt, wie Sie zwischen SDK Application binary Interface (ABI) konvertieren und [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Objekte. Sie können diese Techniken verwenden, um zwischen Code, der diese beiden Möglichkeiten der Programmierung mit Windows-Runtime verwendet, zu interagieren. Sie können sie außerdem verwenden, wenn Sie Ihren Code schrittweise von der ABI nach C++/WinRT verschieben.
+In diesem Thema wird gezeigt, wie für die Konvertierung zwischen SDK für anwendungsbinärdateischnittstelle (ABI) und [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Objekte. Sie können diese Techniken verwenden, um zwischen Code, der diese beiden Möglichkeiten der Programmierung mit Windows-Runtime verwendet, zu interagieren. Sie können sie außerdem verwenden, wenn Sie Ihren Code schrittweise von der ABI nach C++/WinRT verschieben.
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>Was ist die Windows-Runtime-ABI, und welche Arten von ABI gibt es?
 Eine Windows-Runtime-Klasse (Laufzeitklasse) ist eigentlich eine Abstraktion. Diese Abstraktion definiert eine binäre Schnittstelle (Application Binary Interface oder ABI), die es verschiedenen Programmiersprachen ermöglicht, mit einem Objekt zu interagieren. Unabhängig von der Programmiersprache erfolgt die Client-Code-Interaktion bei einem Windows-Runtime-Objekt auf der untersten Ebene, wobei die Client-Sprachkonstrukte in Aufrufe im ABI des Objekts übersetzt werden.
@@ -246,11 +246,11 @@ int main()
 ## <a name="important-apis"></a>Wichtige APIs
 * [AddRef-Funktion](https://msdn.microsoft.com/library/windows/desktop/ms691379)
 * [QueryInterface-Funktion](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [WinRT:: attach_abi-Funktion](/uwp/cpp-ref-for-winrt/attach-abi)
-* [winrt::com_ptr Strukturvorlage](/uwp/cpp-ref-for-winrt/com-ptr)
-* [WinRT:: copy_from_abi-Funktion](/uwp/cpp-ref-for-winrt/copy-from-abi)
-* [WinRT:: copy_to_abi-Funktion](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [WinRT:: detach_abi-Funktion](/uwp/cpp-ref-for-winrt/detach-abi)
-* [winrt::get_abi Funktion](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::Windows::Foundation::IUnknown::as Mitgliedsfunktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [winrt::Windows::Foundation::IUnknown::try_as Mitgliedsfunktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [WinRT::attach_abi-Funktion](/uwp/cpp-ref-for-winrt/attach-abi)
+* [Vorlage für WinRT::com_ptr-Struktur](/uwp/cpp-ref-for-winrt/com-ptr)
+* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [WinRT::copy_to_abi-Funktion](/uwp/cpp-ref-for-winrt/copy-to-abi)
+* [WinRT::detach_abi-Funktion](/uwp/cpp-ref-for-winrt/detach-abi)
+* [WinRT::get_abi-Funktion](/uwp/cpp-ref-for-winrt/get-abi)
+* [WinRT::Windows::Foundation::IUnknown:: Member-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [WinRT::Windows::Foundation::IUnknown::try_as-Member-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)

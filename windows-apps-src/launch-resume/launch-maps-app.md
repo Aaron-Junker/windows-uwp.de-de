@@ -4,21 +4,21 @@ description: Erfahren Sie, wie Sie die Windows-Karten-App aus Ihrer App starten 
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 021e3142a4e94f762cc48dbc86905dcf0b658772
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045699"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645235"
 ---
 # <a name="launch-the-windows-maps-app"></a>Starten der Windows-Karten-App
 
 
 
 
-Erfahren Sie, wie Sie die Windows-Karten-App aus Ihrer App starten können. In diesem Kapitel werden die URI-(Uniform Resource Identifier)-Schemas **bingmaps:, *ms-drive-to:, ms-walk-to:** und **ms-settings:** erläutert. Verwenden Sie diese URI-Schemas zum Starten der Windows-Karten-App für bestimmte Karten, Wegbeschreibungen und Suchergebnisse oder um über die Einstellungs-App Offlinekarten für Windows-Karten herunterzuladen.
+Erfahren Sie, wie Sie die Windows-Karten-App aus Ihrer App starten können. In diesem Thema wird beschrieben, die **Bingmaps:, *ms-Laufwerk-to:, ms-Walk-to:**  und **ms-Einstellungen:** Uniform Resource Identifier (URI)-Schemas. Verwenden Sie diese URI-Schemas zum Starten der Windows-Karten-App für bestimmte Karten, Wegbeschreibungen und Suchergebnisse oder um über die Einstellungs-App Offlinekarten für Windows-Karten herunterzuladen.
 
 **Tipp** Um mehr über das Starten der Windows-Karten-App aus Ihrer App zu erfahren, laden Sie das [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977) aus dem Repository [Beispiele für universelle Windows-Plattform](https://go.microsoft.com/fwlink/p/?LinkId=619979) auf GitHub herunter.
 
@@ -26,9 +26,9 @@ Erfahren Sie, wie Sie die Windows-Karten-App aus Ihrer App starten können. In d
 
 Mit URI-Schemas können Sie Apps öffnen, indem Sie auf Hyperlinks klicken (oder programmgesteuert in Ihrer App). Ebenso wie Sie eine neue E-Mail mithilfe von **mailto:** starten oder einen Webbrowser mithilfe von **http:** verwenden können, haben Sie auch die Möglichkeit, die Windows-Karten-App mithilfe von **bingmaps:**, **ms-drive-to:** und **ms-walk-to:** zu öffnen.
 
--   Der **bingmaps:**-URI stellt Karten für Standorte, Suchergebnisse, Wegbeschreibungen und Datenverkehr bereit.
--   Der **ms-drive-to:**-URI stellt detaillierte Fahrtwegbeschreibungen von Ihrem aktuellen Standort bereit.
--   Der **ms-walk-to:**-URI stellt detaillierte Fußwegbeschreibungen von Ihrem aktuellen Standort bereit.
+-   Die **Bingmaps:** URI enthält die Zuordnungen für Speicherorte, Suchergebnisse, Anweisungen und Datenverkehr.
+-   Die **ms-Laufwerk-to:** URI stellt die Turn-von-Turn Fahrtrichtungen aus Ihrem aktuellen Speicherort bereit.
+-   Die **ms-Walk-to:** URI stellt die Turn-von-Turn walkingstrecken erfahren Sie, wie aus Ihrem aktuellen Speicherort bereit.
 
 Der folgende URI startet beispielsweise die Windows-Karten-App und zeigt eine über New York City zentrierte Karte an.
 
@@ -44,14 +44,14 @@ Beschreibung des URI-Schemas:
 
 In diesem URI-Schema steht *query* für eine Reihe von Parametername-/-wert-Paaren:
 
-**&param1=value1&param2=value2 …**
+**& param1 = value1 & param2 = value2...**
 
 Eine vollständige Liste der verfügbaren Parameter finden Sie unter dem [bingmaps:](#bingmaps-param-reference)-, [ms-drive-to:](#ms-drive-to-param-reference)- und [ms-walk-to:](#ms-walk-to-param-reference)-Parameterverweis. Weiter unten in diesem Thema finden Sie dazu Beispiele.
 
 ## <a name="launch-a-uri-from-your-app"></a>Starten eines URIs aus Ihrer App
 
 
-Um die Windows-Karten-App aus Ihrer App zu starten, rufen Sie die [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)-Methode mit einem **bingmaps:**-, **ms-drive-to:**- oder **ms-walk-to:**-URI auf. Im folgenden Beispiel wird derselbe URI wie im vorherigen Beispiel gestartet. Weitere Informationen zum Starten von Apps mithilfe des URIs finden Sie unter [Starten der Standard-App für einen URI](launch-default-app.md).
+Um die Zuordnungen von Windows-app aus Ihrer app zu starten, rufen Sie die [ **LaunchUriAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701476) -Methode mit einer **Bingmaps:**, **ms-Laufwerk-to:**, oder  **MS-Walk-to:** DER URI. Im folgenden Beispiel wird derselbe URI wie im vorherigen Beispiel gestartet. Weitere Informationen zum Starten von Apps mithilfe des URIs finden Sie unter [Starten der Standard-App für einen URI](launch-default-app.md).
 
 ```cs
 // Center on New York City
@@ -77,10 +77,10 @@ Verwenden Sie zum Steuern der Art der Ansicht die *ss* (Streetside) und *sty* (F
 | bingmaps:?                                                                 | Öffnet die Karten-App.                                                                                                                                                                            |
 | bingmaps:?cp=40.726966~-74.006076                                          | Zeigt eine über New York City zentrierte Karte an.                                                                                                                                                    |
 | bingmaps:?cp=40.726966~-74.006076&lvl=10                                   | Zeigt eine über New York City zentrierte Karte mit Zoomfaktor 10 an.                                                                                                                            |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Zeigt eine Karte von New York City an, die dem im **bb**-Argument angegebenen Bereich entspricht.                                                                                                           |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | Zeigt eine Karte von New York City an, die dem im Begrenzungsrahmenargument angegebenen Bereich entspricht. Der im **cp**-Argument angegebene Mittelpunkt von Seattle wird ignoriert, da *bb* angegeben wurde. |
+| Bingmaps:? bb = 39.719\_-74.52 ~ 41.71\_-73.5                                   | Zeigt eine Karte von New York City an, die dem im **bb**-Argument angegebenen Bereich entspricht.                                                                                                           |
+| Bingmaps:? bb = 39.719\_-74.52 ~ 41.71\_-73.5 & cp = 47 ~-122                        | Zeigt eine Karte von New York City an, die dem im Begrenzungsrahmenargument angegebenen Bereich entspricht. Der im **cp**-Argument angegebene Mittelpunkt von Seattle wird ignoriert, da *bb* angegeben wurde. |
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Zeigt den Punkt „Caesar’s Palace“ (in Las Vegas) auf einer Karte mit Zoomfaktor 16 an.                                                                                                 |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Zeigt den Punkt „Some\_Business“ (in Las Vegas) auf einer Karte an.                                                                                                                               |
+| bingmaps:?Collection=Point.40.726966\_-74.006076\_einige 255FBusiness %        | Zeigt eine Zuordnung mit einem Punkt, der mit dem Namen einige\_Business (in Las Vegas).                                                                                                                               |
 | bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | Zeigt eine Karte von New York City mit Verkehr im Luftansichtformat an.                                                                                                                          |
 | bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Zeigt eine 3D-Ansicht der Space Needle an.                                                                                                                                                        |
 | bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | Zeigt eine 3D-Ansicht der Space Needle mit einem Radius von 200 m, einem Neigungswinkel von 75 Grad und der Richtung mit 165 Grad an.                                                                             |
@@ -97,7 +97,7 @@ Bei einer Standortsuche mithilfe des *q*-Parameters wird empfohlen, die Suchbegr
 | bingmaps:?q=1600%20Pennsylvania%20Ave,%20Washington,%20DC     | Zeigt eine Karte an und sucht die Adresse des Weißen Hauses in Washington, D.C. |
 | bingmaps:?q=coffee&where=Seattle                              | Sucht nach „Kaffee“ in Seattle.                                                    |
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | Sucht nach New York in der Nähe des angegebenen Mittelpunkts.                             |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | Suche nach einer Pizzeria im angegebenen Begrenzungsrahmen (d.h. in New York City).      |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | Suche nach einer Pizzeria im angegebenen Begrenzungsrahmen (d. h. in New York City).      |
 
  
 ## <a name="display-multiple-points"></a>Anzeigen mehrerer Punkte
@@ -110,7 +110,7 @@ Verwenden Sie den *collection*-Parameter zum Anzeigen eines benutzerdefinierten 
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | Sucht nach „Caesar’s Palace“ in Las Vegas und zeigt die Ergebnisse in der am besten geeigneten Kartenansicht auf einer Karte an.                         |
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16                                                                                         | Zeigt die Ortsmarke „Caesars Palace“ in Las Vegas mit dem Zoomfaktor 16 an.                                               |
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669                   | Zeit die beiden Ortsmarken „Caesars Palace“ und „The Bellagio“ in Las Vegas mit dem Zoomfaktor 16 an.              |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Zeigt New York mit der Ortsmarke „Fake\_Business\_with\_Underscore“ an.                                                  |
+| bingmaps:?Collection=Point.40.726966\_-74.006076\_% 255FBusiness % 255Fwith % 255FUnderscore Fake                                                                        | Zeigt in New York mit einer ortsmarke mit dem Namen Fake\_Business\_mit\_Unterstrich.                                                  |
 | bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669 | Zeigt die Liste „Hotel List“ und die beiden Ortsmarken „Caesars Palace“ und „The Bellagio“ in Las Vegas mit dem Zoomfaktor 16 an. |
 
  
@@ -136,9 +136,9 @@ Sie können Wegbeschreibungen zwischen zwei Punkten mit dem *rtp*-Parameter anze
 ## <a name="display-turn-by-turn-directions"></a>Anzeigen detaillierter Wegbeschreibungen
 
 
-Mit den **ms-drive-to:**- und **ms-walk-to:**-URI-Schemas können Sie direkt eine detaillierte Ansicht einer Route starten. Diese URI-Schemas können nur Wegbeschreibungen von der aktuellen Position des Benutzers bereitstellen. Wenn Sie Wegbeschreibungen zwischen Punkten bereitstellen müssen, die nicht die aktuelle Position des Benutzers enthalten, verwenden Sie das **bingmaps:**-URI-Schema wie im vorherigen Abschnitt beschrieben. Weitere Informationen zu diesen URI-Schemas finden Sie unter dem [ms-drive-to:](#ms-drive-to-param-reference)- und [ms-walk-to:](#ms-walk-to-param-reference)-Parameterverweis.
+Die **ms-Laufwerk-to:** und **ms-Walk-to:** URI-Schemas können Sie direkt in einer Reihe-von-Turn eine Route zu starten. Diese URI-Schemas können nur Wegbeschreibungen von der aktuellen Position des Benutzers bereitstellen. Wenn Sie die Anweisungen zwischen Punkten, die keine aktuellen Standort des Benutzers enthalten angeben müssen, verwenden Sie die **Bingmaps:** URI-Schema, wie im vorherigen Abschnitt beschrieben. Weitere Informationen zu diesen URI-Schemas finden Sie unter dem [ms-drive-to:](#ms-drive-to-param-reference)- und [ms-walk-to:](#ms-walk-to-param-reference)-Parameterverweis.
 
-> **Wichtig**  Wenn die URI-Schemas **ms-drive-to:** oder **ms-walk-to:** gestartet werden, überprüft die Karten-App, ob für das Gerät bereits ein GPS-Positionsfixpunkt bestimmt wurde. Ist dies der Fall, geht die Karten-App zu detaillierten Wegbeschreibungen über. Falls nicht, zeigt die App die Routenübersicht an, wie unter [Anzeigen von Wegbeschreibungen und Verkehr](#display-directions-and-traffic) beschrieben.
+> **Wichtige** bei der **ms-Laufwerk-to:** oder **ms-Walk-to:** URI-Schemas gestartet werden, werden die Karten-app überprüfen, um festzustellen, ob das Gerät einen GPS-Standort zu beheben jemals aufgewiesen hat. Ist dies der Fall, geht die Karten-App zu detaillierten Wegbeschreibungen über. Falls nicht, zeigt die App die Routenübersicht an, wie unter [Anzeigen von Wegbeschreibungen und Verkehr](#display-directions-and-traffic) beschrieben.
 
 ![Beispiel für eine detaillierte Wegbeschreibung](images/windowsmapsappdirections.png)
 
@@ -150,7 +150,7 @@ Mit den **ms-drive-to:**- und **ms-walk-to:**-URI-Schemas können Sie direkt ein
 
 ## <a name="download-offline-maps"></a>Herunterladen von Offlinekarten
 
-Mit dem **ms-settings:**-URI-Schema können Sie direkt eine bestimmte Seite in der Einstellungs-App öffnen. Die Karten-App wird zwar nicht durch das **ms-settings:**-URI-Schema gestartet, Sie haben jedoch die Möglichkeit, die Seite für die Offlinekarten direkt in der Einstellungs-App zu starten. Außerdem zeigt das URI-Schema ein Bestätigungsdialogfeld zum Herunterladen der von der Karten-App verwendeten Offlinekarten an. Das URI-Schema akzeptiert einen Punkt, der durch einen Breiten- und Längengrad angegeben wird, und bestimmt automatisch, ob für eine Region mit diesem Punkt Offlinekarten verfügbar sind.  Wenn der übergebene Breiten- und Längengrad in mehrere Download-Regionen fällt, kann der Benutzer im Bestätigungsdialogfeld auswählen, welche dieser Regionen heruntergeladen werden soll. Wenn Offlinekarten für eine Region mit diesem Punkt nicht verfügbar sind, wird die Seite mit den Offlinekarten in der Einstellungs-App mit einem Fehlerdialogfeld angezeigt.
+Die **ms-Einstellungen:** URI-Schema können Sie direkt in eine bestimmte Seite in der Einstellungs-app zu starten. Während der **ms-Einstellungen:** URI-Schema nicht in den Karten-app starten, sondern erlaubt Ihnen, direkt auf die Seite Offline zugeordnet, in der Einstellungs-app zu starten, und zeigt ein Bestätigungsdialogfeld zum Herunterladen der offline-Zuordnungen, die von der Karten-app verwendet. Das URI-Schema akzeptiert einen Punkt, der durch einen Breiten- und Längengrad angegeben wird, und bestimmt automatisch, ob für eine Region mit diesem Punkt Offlinekarten verfügbar sind.  Wenn der übergebene Breiten- und Längengrad in mehrere Download-Regionen fällt, kann der Benutzer im Bestätigungsdialogfeld auswählen, welche dieser Regionen heruntergeladen werden soll. Wenn Offlinekarten für eine Region mit diesem Punkt nicht verfügbar sind, wird die Seite mit den Offlinekarten in der Einstellungs-App mit einem Fehlerdialogfeld angezeigt.
 
 | Beispiel-URI  | Ergebnisse |
 |-------------|---------|
@@ -183,8 +183,8 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 <td align="left"><p>Mittelpunkt</p></td>
 <td align="left"><p>cp = "cp=" cpval</p>
 <p>cpval = degreeslat "~" degreeslon</p>
-<p>degreeslat = ["-"] 1*3DIGIT ["." 1*7DIGIT]</p>
-<p>degreeslon = ["-"] 1*2DIGIT ["." 1*7DIGIT]</p>
+<p>Degreeslat = ["-"] 1*3DIGIT ["." 1*7DIGIT]</p>
+<p>Degreeslon = ["-"] 1*2DIGIT ["." 1*7DIGIT]</p>
 <p>Beispiel:</p>
 <p>cp=40.726966~-74.006076</p></td>
 <td align="left"><p>Beide Werte müssen in Dezimalgrad ausgedrückt und durch eine Tilde (<b>~</b>) getrennt werden.</p>
@@ -199,8 +199,8 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 <p>northlatitude = degreeslat</p>
 <p>westlongitude = degreeslon</p>
 <p>eastlongitude = degreeslon</p>
-<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
-<p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
+<p>Degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
+<p>Degreeslon = ["-"] 12-stellige ["." 17DIGIT]</p>
 <p>Beispiel:</p>
 <p>bb=39.719_-74.52~41.71_-73.5</p></td>
 <td align="left"><p>Ein rechteckiger Bereich, der den in Dezimalgrad ausgedrückten Begrenzungsrahmen angibt. Die untere linke Ecke und die obere rechte Ecke werden durch eine Tilde (<b>~</b>) getrennt. Breiten- und Längengrad sind jeweils durch einen Unterstrich (<b>_</b>) getrennt.</p>
@@ -208,8 +208,8 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 <p>Gültige Breitengradwerte liegen zwischen -90 und einschließlich +90.</p><p>Die Parameter „cp“ und „lvl“ werden ignoriert, wenn ein Begrenzungsrahmen bereitgestellt wird.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><b>where</b></p></td>
-<td align="left"><p>Position</p></td>
+<td align="left"><p><b>WHERE</b></p></td>
+<td align="left"><p>Pfad</p></td>
 <td align="left"><p>where = "where=" whereval</p>
 <p>whereval = 1 *( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "*" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 <p>Beispiel:</p>
@@ -228,26 +228,26 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 <tr class="odd">
 <td align="left"><p><b>lvl</b></p></td>
 <td align="left"><p>Zoomfaktor</p></td>
-<td align="left"><p>lvl = "lvl=" 1<i>2DIGIT ["." 1</i>2DIGIT]</p>
+<td align="left"><p>LVL = "Lvl =" 1<i>2DIGIT ["." 1</i>2DIGIT]</p>
 <p>Beispiel:</p>
 <p>lvl=10.50</p></td>
 <td align="left"><p>Definiert den Zoomfaktor der Kartenansicht. Gültige Werte sind 1 bis 20, wobei 1 durchgehend gezoomt ist.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><b>sty</b></p></td>
-<td align="left"><p>Stil</p></td>
+<td align="left"><p>Format</p></td>
 <td align="left"><p>sty = "sty=" ("a" / "r"/"3d")</p>
 <p>Beispiel:</p>
 <p>sty=a</p></td>
 <td align="left"><p>Definiert den Kartenstil. Gültige Werte für diesen Parameter umfassen:</p>
 <ul>
-<li>**a**: Zeigt eine Luftansicht der Karte an.</li>
-<li>**r**: Zeigt eine Straßenansicht der Karte an.</li>
-<li>**3d**: Zeigt eine 3D-Ansicht der Karte an. Verwenden Sie den Wert in Verbindung mit dem **cp**-Parameter und optional mit dem **rad**-Parameter.</li>
+<li>**a**: Zeigt ein Luftbild an der Zuordnung.</li>
+<li>**r**: Zeigt eine Straße an der Zuordnung.</li>
+<li>**3d**: Zeigen Sie 3D an der Zuordnung. Verwenden Sie den Wert in Verbindung mit dem **cp**-Parameter und optional mit dem **rad**-Parameter.</li>
 </ul>
 <p>Unter Windows 10 sind die Stile der Luftansicht und der 3D-Ansicht identisch.</p>
 <div class="alert">
-**Hinweis:** der **Sty** -Parameter ausgelassen liefert dieselben Ergebnisse als Sty = R.
+**Beachten Sie**  Omitting der **Sty** erzeugt die gleichen Ergebnisse wie Sty = R.
 </div>
 <div>
  
@@ -285,7 +285,7 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 <p>ss=1</p></td>
 <td align="left"><p>Gibt an, dass bei <code>ss=1</code> Straßenbilder angezeigt werden. Wenn der <b>ss</b>-Parameter ausgelassen wird, wird dasselbe Ergebnis wie bei <code>ss=0</code> zurückgegeben. Verwenden Sie den Wert in Verbindung mit dem <b>cp</b>-Parameter, um die Position der Straßenansicht festzulegen.</p>
 <div class="alert">
-**Hinweis:** Straßenbilder sind nicht in allen Regionen verfügbar.
+**Beachten Sie**  Straßenebene Bilder ist in allen Regionen nicht verfügbar.
 </div>
 <div>
  
@@ -293,13 +293,13 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 </tr>
 <tr class="odd">
 <td align="left"><p><b>trfc</b></p></td>
-<td align="left"><p>Verkehr</p></td>
+<td align="left"><p>Datenverkehr</p></td>
 <td align="left"><p>trfc = "trfc=" BIT</p>
 <p>Beispiel:</p>
 <p>trfc=1</p></td>
 <td align="left"><p>Gibt an, ob die Karte Verkehrsinformationen enthält. Wenn der trfc-Parameter ausgelassen wird, werden dieselben Ergebnisse wie bei <code>trfc=0</code> zurückgegeben.</p>
 <div class="alert">
-**Hinweis:** Datenverkehr Daten sind nicht in allen Regionen verfügbar.
+**Beachten Sie**  Verkehrsdaten ist nicht in allen Regionen verfügbar.
 </div>
 <div>
  
@@ -312,8 +312,8 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 <p>waypoint = ("pos." point ) / ("adr." whereval)</p>
 <p>point = "point." pointval ["_" title]</p>
 <p>pointval = degreeslat "" degreeslon</p>
-<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
-<p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
+<p>Degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
+<p>Degreeslon = ["-"] 12-stellige ["." 17DIGIT]</p>
 <p>title = whereval</p>
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 
@@ -328,7 +328,7 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 <p>Bei einer unvollständigen Route wird keine Routenlinie gezeichnet.</p>
 <p>Geben Sie dies zusammen mit dem **mode**-Parameter an, um die Transportmethode (fahren, laufen oder öffentliche Verkehrsmittel) anzugeben. Wenn **mode** nicht angegeben ist, werden Wegbeschreibungen mithilfe der Einstellung für die Transportmethode des Benutzers bereitgestellt.</p>
 <div class="alert">
-**Hinweis:** ein Titel kann für einen Ort verwendet werden, der Speicherort von der **pos** -Parameterwert angegeben wird. Anstatt der Breiten- und Längengrade wird der Titel angezeigt.
+**Beachten Sie**  ein Titel kann für einen Standort verwendet werden, wenn der Speicherort, wird angegeben wird die **pos** Parameterwert. Anstatt der Breiten- und Längengrade wird der Titel angezeigt.
 </div>
 <div>
  
@@ -342,9 +342,9 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 <p>mode=d</p></td>
 <td align="left"><p>Legt die Transportmethode fest. Gültige Werte für diesen Parameter umfassen:</p>
 <ul>
-<li>**d**: Zeigt eine Routenübersicht für Wegbeschreibungen an.</li>
-<li>**t**: Zeigt eine Routenübersicht für Wegbeschreibungen für öffentliche Verkehrsmittel an.</li>
-<li>**w**: Zeigt eine Routenübersicht für Fußwegbeschreibungen an.</li>
+<li>**d**: Übersicht über zeigt die Route für das Abrufen von wegbeschreibungen</li>
+<li>**t**: Zeigt weiterleiten Übersicht erfahren Sie, während der Übertragung</li>
+<li>**w**: Zeigt weiterleiten, Übersicht über die zum Durchlaufen von Anweisungen</li>
 </ul>
 <p>Verwenden Sie den Wert in Verbindung mit dem **rtp**-Parameter für die Routenbeschreibungen. Wenn **mode** nicht angegeben ist, werden Wegbeschreibungen mithilfe der Einstellung für die Transportmethode des Benutzers bereitgestellt. Ein **mode**-Parameter kann ohne Routenparameter bereitgestellt werden, um die Wegbeschreibungseingabe für diese Methode vom aktuellen Standort einzugeben.</p></td>
 </tr>
@@ -357,8 +357,8 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?") </p>
 <p>point = "point." pointval ["_" title] </p>
 <p>pointval = degreeslat "" degreeslon </p>
-<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT] </p>
-<p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT] </p>
+<p>Degreeslat = ["-"] 13DIGIT ["." 17DIGIT] </p>
+<p>Degreeslon = ["-"] 12-stellige ["." 17DIGIT] </p>
 <p>title = whereval</p>
 
 
@@ -410,7 +410,7 @@ Der URI zum Starten einer Anforderung für detaillierte Fußwegbeschreibungen mu
 
 ## <a name="ms-settings-parameter-reference"></a>ms-settings: Parameterverweis
 
-Die Syntax für Karten-App-spezifische Parameter für das **ms-settings:**-URI-Schema wird unten definiert. **maps-downloadmaps** wird zusammen mit dem **ms-settings:**-URI in Form von **ms-settings:maps-downloadmaps?** angegeben, um die Offlineseite für Karteneinstellungen anzugeben. 
+Die Syntax für ordnet bestimmte app-Parameter für die **ms-Einstellungen:** URI-Schema wird weiter unten definiert. **Maps-Downloadmaps** angegeben ist, zusammen mit den **ms-Einstellungen:** URI in Form von **ms-Einstellungen: Maps-Downloadmaps?** an, dass die offlinekarten-Seite "Einstellungen". 
 
 | Parameter | Definition | Beispiel | Details |
 |-----------|------------|---------|----------|

@@ -1,17 +1,17 @@
 ---
 ms.assetid: ''
 description: Dieser Artikel zeigt Ihnen, wie Sie Videos aus mehreren Quellen gleichzeitig in eine einzige Datei mit mehreren eingebetteten Videospuren aufnehmen können.
-title: Erfassen von mehreren Quellen mit „MediaFrameSourceGroup”
+title: Erfassen von mehreren Quellen mit MediaFrameSourceGroup
 ms.date: 09/12/2017
 ms.topic: article
-keywords: Windows10, Uwp, Aufnahme, Video
+keywords: Windows 10, Uwp, Aufnahme, Video
 ms.localizationpriority: medium
 ms.openlocfilehash: c474221769bf3aec6e32c80f21386ac1ca2620ea
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058631"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636615"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Erfassen von mehreren Quellen mit MediaFrameSourceGroup
 
@@ -48,7 +48,7 @@ Ab Windows 10, Version 1709, können Sie mehrere Encoding-Eigenschaften auf eine
 
 ### <a name="encode-timed-metadata-in-media-files"></a>Codieren von zeitgesteuerten Metadaten in Mediendateien
 
-Ab Windows10, Version 1803, können Sie neben Audio und Video ebenfalls Metadaten in einer Mediendatei codieren, dessen Datenformat unterstützt wird. GoPro-Metadaten (Gpmd) können z.B. in MP4-Dateien gespeichert werden, um den geografischen Standort, der mit einem Videostream korrelierte ist, zu vermitteln. 
+Ab Windows 10, Version 1803, können Sie neben Audio und Video ebenfalls Metadaten in einer Mediendatei codieren, dessen Datenformat unterstützt wird. GoPro-Metadaten (Gpmd) können z. B. in MP4-Dateien gespeichert werden, um den geografischen Standort, der mit einem Videostream korrelierte ist, zu vermitteln. 
 
 Die Codierung von Metadaten verwendet ein Muster, das parallel zur Codierung von Audio oder Video ist. Die [**TimedMetadataEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties)-Klasse beschreibt den Typ, Untertyp und die Codierungseigenschaften der Metadaten, wie **VideoEncodingProperties** für Videos. Der [**TimedMetadataStreamDescriptor**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) identifiziert einen Metadatenstream, wie **VideoStreamDescriptor** für Videostreams.  
 
@@ -56,7 +56,7 @@ Das folgende Beispiel zeigt, wie Sie ein **TimedMetadataStreamDescriptor**-Objek
 
 [!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
 
-Rufen Sie [**MediaEncodingProfile.SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) , um den Metadatenstream-Deskriptor dem Codierungsprofil hinzuzufügen. Das folgende Beispiel zeigt eine Hilfsmethode, die zwei Videostream-Deskriptoren akzeptiert, einen Audiodatenstrom-Deskriptor, und einen zeitgesteuerten Metadatenstream-Deskriptor und ein **MediaEncodingProfile** zurückgibt, das zum Codieren von Streams verwendet werden kann.
+Rufen Sie [ **MediaEncodingProfile.SetTimedMetadataTracks** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) den Metadaten-Stream-Deskriptor für das encoding-Profil hinzufügen. Das folgende Beispiel zeigt eine Hilfsmethode, die zwei Videostream-Deskriptoren akzeptiert, einen Audiodatenstrom-Deskriptor, und einen zeitgesteuerten Metadatenstream-Deskriptor und ein **MediaEncodingProfile** zurückgibt, das zum Codieren von Streams verwendet werden kann.
 
 [!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
 
@@ -70,9 +70,9 @@ Wenn der Vorgang abgeschlossen ist, wurde eine Videodatei erstellt, die das von 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
-* [Allgemeine Foto-, Video- und Audioaufnahme mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Verarbeiten von Medienframes mit „MediaFrameReader“](process-media-frames-with-mediaframereader.md)
-* [Medienelemente, Wiedergabelisten und Titel](media-playback-with-mediasource.md)
+* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Verarbeiten von Medien-Frames mit MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Medienobjekte, Wiedergabelisten und Spuren](media-playback-with-mediasource.md)
 
 
  

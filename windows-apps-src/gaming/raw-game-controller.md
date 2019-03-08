@@ -4,20 +4,20 @@ description: Mithilfe der Windows.Gaming.Input-APIs für unformatierte Gamecontr
 ms.assetid: 2A466C16-1F51-4D8D-AD13-704B6D3C7BEC
 ms.date: 03/08/2017
 ms.topic: article
-keywords: Windows10, Uwp, Spiele, Eingabe, unformatierter Gamecontroller
+keywords: Windows 10, Uwp, Spiele, Eingabe, unformatierter Gamecontroller
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5f4d49ad49cf9f9065fe17788456e9dd2a4a4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946796"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644625"
 ---
 # <a name="raw-game-controller"></a>Unformatierter Gamecontroller
 
 Diese Seite beschreibt die Grundlagen der Programmierung für fast jeden Gamecontrollertyp mithilfe von [Windows.Gaming.Input.RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) und weiterer APIs für die Universelle Windows-Plattform (UWP).
 
-Auf dieser Seite lernen Sie:
+Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 
 * Eine Liste der verbundenen unformatierten Gamecontroller und ihrer Benutzer zu erstellen
 * Zu ermitteln, ob ein unformatierter Gamecontroller hinzugefügt oder entfernt wurde
@@ -139,13 +139,13 @@ rawGameController->GetCurrentReading(
 
 Da nicht für jeden Controllertyp garantiert werden kann, welche Position in den Arrays welchen Eingabewert enthält, müssen diese Werte durch die Methoden [RawGameController.GetButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetButtonLabel_System_Int32_) und [RawGameController.GetSwitchKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_) ermittelt werden.
 
-**GetButtonLabel** gibt den Text oder das Symbol auf einer physischen Taste an, nicht ihre Funktion und sollte daher nur als Hilfe genutzt werden, falls Sie dem Spieler auf der Benutzeroberfläche zeigen möchten, welche Taste welche Funktion ausführt. **GetSwitchKind** gibt die Art eines Schalters an (d.h. wie viele Positionen er hat), nicht seinen Namen.
+**GetButtonLabel** gibt den Text oder das Symbol auf einer physischen Taste an, nicht ihre Funktion und sollte daher nur als Hilfe genutzt werden, falls Sie dem Spieler auf der Benutzeroberfläche zeigen möchten, welche Taste welche Funktion ausführt. **GetSwitchKind** gibt die Art eines Schalters an (d. h. wie viele Positionen er hat), nicht seinen Namen.
 
 Da es keine standardisierte Methode gibt, um die Bezeichnungen von Achsen oder Schaltern abzurufen, müssen Sie diese durch Eingaben selbst ermitteln.
 
 Wenn Sie einen bestimmten Controller unterstützen möchten, können Sie durch die Aufrufe [RawGameController.HardwareProductId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId) und [RawGameController.HardwareVendorId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId) ermitteln, ob er unterstützt wird. Da die Position jeder Eingabe in einem Array für alle Controller mit gleicher **HardwareProductId** und **HardwareVendorId** gilt, müssen Sie nicht befürchten, dass Ihre Logik möglicherweise nicht zu den verschiedenen Controllern eines Typs passt.
 
-Jeder Abruf des Zustands eines unformatierten Gamecontrollers gibt auch einen Zeitstempel zurück, der den genauen Zeitpunkt des Abrufs angibt. Dieser Zeitstempel ist nützlich, um einen Bezug zu den Zeitpunkten früherer Abrufe oder Spielsimulationen herzustellen.
+Jeder Abruf des Zustands eines unformatierten Gamecontrollers gibt auch einen Zeitstempel zurück, der den genauen Zeitpunkt des Abrufs angibt. Der Zeitstempel ist nützlich, um einen Bezug zu den Zeitpunkten vorheriger Ablesungen oder zum Zeitpunkt der Spielsimulation herzustellen.
 
 ### <a name="reading-the-buttons-and-switches"></a>Lesen von Schaltflächen und Tasten
 
@@ -168,7 +168,7 @@ for (uint32_t i = 0; i < buttonCount; i++)
 }
 ```
 
-In einigen Fällen möchten Sie vielleicht ermitteln, ob eine Taste von „gedrückt“ zu „nicht gedrückt“ bzw. umgekehrt wechselt, oder ob mehrere Tasten gedrückt/ nicht gedrückt bzw. in bestimmter Weise angeordnet sind. Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) sowie unter [Erkennen komplexer Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
+In einigen Fällen möchten Sie vielleicht ermitteln, ob eine Taste von „gedrückt“ zu „nicht gedrückt“ bzw. umgekehrt wechselt, oder ob mehrere Tasten gedrückt bzw. nicht gedrückt oder in bestimmter Weise angeordnet sind&mdash;einige gedrückt, andere nicht. Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) sowie unter [Erkennen von komplexen Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 Schalterwerte werden als Array mit [GameControllerSwitchPosition](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerswitchposition) angegeben. Diese Eigenschaft ist ein Bitfeld und wird deshalb bitweise maskiert, um die Richtung des Schalters zu isolieren.
 
@@ -187,7 +187,7 @@ for (uint32_t i = 0; i < switchCount; i++)
 
 ### <a name="reading-the-analog-inputs-sticks-triggers-throttles-and-so-on"></a>Ablesen von analogen Eingaben (Sticks, Trigger, Drosselungen usw.)
 
-Eine analoge Achse liefert Werte zwischen 0,0 und 1,0. Dazu gehören die einzelnen Dimensionen auf einem Stick, z.B. X und Y für Standardsticks, oder auch X-, Y- und Z-Achsen (für Rollen, Neigen und Schwenken) für Steuerknüppel.
+Eine analoge Achse liefert Werte zwischen 0,0 und 1,0. Dazu gehören die einzelnen Dimensionen auf einem Stick, z. B. X und Y für Standardsticks, oder auch X-, Y- und Z-Achsen (für Rollen, Neigen und Schwenken) für Steuerknüppel.
 
 Die Werte können jeden analogen Eingabetyp wie Trigger, Drosselungen usw. darstellen. Da für diese Werte keine Bezeichnungen angegeben werden, empfehlen wir Ihren Code auf verschiedenen Eingabegeräten zu testen, um sicherzustellen, dass er wie erwartet funktioniert.
 
@@ -205,7 +205,7 @@ float leftTrigger = currentAxisReading[4];
 float rightTrigger = currentAxisReading[5];
 ```
 
-Sie bemerken, dass die gelesenen Werte nicht zuverlässig den neutralen Wert 0,5 liefern, wenn sich der Stick in der ruhenden Mittelstellung befindet, sondern verschiedene Näherungswerte bei 0,5, sobald der Stick bewegt wurde und in die Mittelstellung zurückkehrt. Zur Kompensierung dieser Abweichungen können Sie einen kleinen _inaktiven Bereich_ implementieren (also einen zu ignorieRendern Wertebereich nahe der idealen Mittelposition).
+Sie bemerken, dass die gelesenen Werte nicht zuverlässig den neutralen Wert 0,5 liefern, wenn sich der Stick in der ruhenden Mittelstellung befindet, sondern verschiedene Näherungswerte bei 0,5, sobald der Stick bewegt wurde und in die Mittelstellung zurückkehrt. Zur Kompensierung dieser Abweichungen können Sie einen kleinen _inaktiven Bereich_ implementieren (also einen zu ignorierenden Wertebereich nahe der idealen Mittelposition).
 
 Um inaktive Bereiche zu implementieren, können Sie beispielsweise festlegen, wie weit der Stick von der Mittelstellung bewegt wird, und die Werte unterhalb der gewählten Entfernung ignorieren. Die grobe Entfernung kann nach dem Satz des Pythagoras berechnet werden; diese Methode ist allerdings nicht exakt, da die Werte von Sticks nicht planar, sondern polar sind. Dadurch entsteht ein radialer inaktiver Bereich.
 
@@ -231,11 +231,11 @@ if ((oppositeSquared + adjacentSquared) < deadzoneSquared)
 
 The [RawGameControllerUWP sample (GitHub)](TODO: Link) demonstrates how to use raw game controllers. TODO: More information-->
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
-* [Eingaben für Spiele](input-for-games.md)
-* [Eingabemethoden für Spiele](input-practices-for-games.md)
-* [Windows.Gaming.Input-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Geben Sie für Spiele](input-for-games.md)
+* [Eingabe-Methoden für Spiele](input-practices-for-games.md)
+* [Windows.Gaming.Input-namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Windows.Gaming.Input.RawGameController-Klasse](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)
 * [Windows.Gaming.Input.IGameController-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows.Gaming.Input.IGameControllerBatteryInfo-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo)
+* [Windows.Gaming.Input.IGameControllerBatteryInfo interface](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo)

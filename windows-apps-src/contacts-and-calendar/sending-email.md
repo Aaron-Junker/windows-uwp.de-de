@@ -1,25 +1,25 @@
 ---
 description: Hier erfahren Sie, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten, damit Benutzer eine E-Mail senden können. Sie können die Felder der E-Mail vor dem Anzeigen des Dialogfelds mit Daten füllen. Die Nachricht wird erst gesendet, wenn Benutzer auf die Schaltfläche „Senden“ tippen.
-title: E-Mail senden
+title: Senden von E-Mails
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: Kontakte, E-Mail, Senden
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927404"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626485"
 ---
 # <a name="send-email"></a>Senden von E-Mails
 
 Hier erfahren Sie, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten, damit Benutzer eine E-Mail senden können. Sie können die Felder der E-Mail vor dem Anzeigen des Dialogfelds mit Daten füllen. Die Nachricht wird erst gesendet, wenn Benutzer auf die Schaltfläche „Senden“ tippen.
 
-**Inhalt dieses Artikels**
+**In diesem Artikel**
 
--   [Starten des Dialogfelds zum Verfassen einer E-Mail](#launch-the-compose-email-dialog)
+-   [Starten Sie das Dialogfeld der Compose-e-Mail](#launch-the-compose-email-dialog)
 -   [Zusammenfassung und nächste Schritte](#summary-and-next-steps)
 -   [Verwandte Themen](#related-topics)
 
@@ -47,7 +47,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> Anlagen, die Sie eine e-Mail mit der Klasse [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) hinzufügen, werden nur in die Mail-app angezeigt. Wenn Benutzer andere e-Mail-Anwendung, als das standardmäßige e-Mail-Programm konfiguriert haben, wird das Fenster zum Verfassen einer ohne den Anhang angezeigt. Dies ist ein bekanntes Problem.
+> Anlagen, die Sie an eine e-Mail-Adresse hinzufügen, mit der [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) Klasse wird nur in der Mail-app angezeigt. Wenn Benutzer andere e-Mail-Programm als ihre e-Mail-Standardprogramm konfiguriert haben, wird das Fenster "Compose" ohne die Anlage angezeigt. Dies ist ein bekanntes Problem.
 
 ## <a name="summary-and-next-steps"></a>Zusammenfassung und nächste Schritte
 
@@ -55,8 +55,8 @@ In diesem Thema haben Sie erfahren, wie Sie das Dialogfeld zum Verfassen einer E
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Auswählen von Kontakten](selecting-contacts.md)
-* [Fortsetzen von Windows Phone-Apps nach dem Aufrufen einer Dateiauswahl](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [Kontakte auswählen](selecting-contacts.md)
+* [Wie Sie Ihre Windows Phone-app weiterhin nach dem Aufruf von eine Dateiauswahl](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  

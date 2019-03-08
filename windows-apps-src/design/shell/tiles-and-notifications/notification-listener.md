@@ -1,29 +1,29 @@
 ---
-Description: Learn how to use Notification Listener to access all of the user's notifications.
+Description: Hier erfahren Sie, wie Sie die Notification-Listener zu verwenden, um auf alle Benachrichtigungen des Benutzers zuzugreifen.
 title: Notification-Listener
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
 template: detail.hbs
 ms.date: 06/13/2017
 ms.topic: article
-keywords: Windows10, Uwp, notification listener, Usernotificationlistener, Dokumentation, Zugriff auf Benachrichtigungen
+keywords: Windows 10, Uwp, notification listener, Usernotificationlistener, Dokumentation, Zugriff auf Benachrichtigungen
 ms.localizationpriority: medium
 ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942262"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649615"
 ---
-# <a name="notification-listener-access-all-notifications"></a>Notification-Listener: Zugriff auf alle Benachrichtigungen
+# <a name="notification-listener-access-all-notifications"></a>Listener für benutzerbenachrichtigungen: Zugriff auf alle Benachrichtigungen
 
-Der Notification-Listener ermöglicht den Zugriff auf die Benachrichtigungen eines Benutzers. Smartwatches und andere Wearables können die Benachrichtigungsfunktion nutzen, um die Benachrichtigungen des Telefons an das tragbare Gerät zu senden. Die heimautomation können Notification-Listener verwenden, um bestimmte Aktionen auszuführen, wenn Benachrichtigungen, z. B. blinken empfangen werden, wenn Sie einen Anruf erhalten. 
+Der Notification-Listener ermöglicht den Zugriff auf die Benachrichtigungen eines Benutzers. Smartwatches und andere Wearables können die Benachrichtigungsfunktion nutzen, um die Benachrichtigungen des Telefons an das tragbare Gerät zu senden. Listener für benutzerbenachrichtigungen können heimautomatisierung apps bestimmte Aktionen ausführen, wenn Benachrichtigungen, beispielsweise können, die die Lichter blinken zu lassen empfangen werden, wenn Sie einen Anruf erhalten. 
 
 > [!IMPORTANT]
-> **Benötigt Anniversary Update**: Sie müssen das SDK 14393 als Ziel und Build 14393 oder höher ausführen, um Notification-Listener verwenden zu können.
+> **Erfordert Anniversary Update**: Sie müssen SDK 14393 ausgerichtet und Build 14393 oder höher, um Listener für Benutzerbenachrichtigungen verwenden ausgeführt werden.
 
 
-> **Wichtige APIs**: [UserNotificationListener-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **Wichtige APIs**: [UserNotificationListener Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>Aktivieren des Listeners durch Hinzufügen der User Notification-Funktion 
@@ -91,7 +91,7 @@ switch (accessStatus)
 }
 ```
 
-Der Benutzer kann den Zugriff jederzeit über Windows-Einstellungen widerrufen. Aus diesem Grund sollten Ihre app immer den Zugriffsstatus über die [GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) -Methode vor der Ausführung von Code, der den Notification-Listener verwendet. Wenn der Benutzer den Zugriff widerruft, schlagen die APIs stillschweigend fehl, anstatt eine Ausnahme auszulösen (z. B. gibt die API zum Abrufen aller Benachrichtigungen einfach eine leere Liste zurück).
+Der Benutzer kann den Zugriff jederzeit über Windows-Einstellungen widerrufen. Ihre app sollte daher immer Überprüfen des Zugriffsstatus über die [GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) Methode vor dem Ausführen von Code, der die Listener für benutzerbenachrichtigungen verwendet. Wenn der Benutzer den Zugriff widerruft, schlagen die APIs stillschweigend fehl, anstatt eine Ausnahme auszulösen (z. B. gibt die API zum Abrufen aller Benachrichtigungen einfach eine leere Liste zurück).
 
 
 ## <a name="access-the-users-notifications"></a>Zugriff auf Benachrichtigungen des Benutzers
@@ -138,7 +138,7 @@ await appLogo.SetSourceAsync(await appLogoStream.OpenReadAsync());
 
 Der Inhalt der Benachrichtigung selbst, wie z. B. der Benachrichtigungstext, ist in der Eigenschaft [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification.Notification) enthalten. Diese Eigenschaft enthält den visuellen Teil der Benachrichtigung. (Wenn Sie mit dem Senden von Benachrichtigungen unter Windows vertraut sind, werden Sie feststellen, dass die [Visual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification.Visual)- und [Visual Bindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual.Bindings)-Eigenschaften im [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification)-Objekt dem entsprechen, was Entwickler beim anzeigen einer Benachrichtigung senden.)
 
-Wir wollen nach der Toast-Bindung suchen (für fehlersicheren Code sollten Sie überprüfen, ob die Bindung nicht null ist). Aus der Bindung können Sie die Textelemente entnehmen. Sie können sich beliebig viele Textelemente anzeigen lassen. (Im Idealfall sollten Sie alle anzeigen.) Sie können die Textelemente unterschiedlich behandeln, z. B. das erste als Titeltext und nachfolgende Elemente als Fließtext.
+Wir wollen nach der Toast-Bindung suchen (für fehlersicheren Code sollten Sie überprüfen, ob die Bindung nicht null ist). Aus der Bindung können Sie die Textelemente entnehmen. Sie können sich beliebig viele Textelemente anzeigen lassen. (Im Idealfall sollten Sie alle angezeigt.) Sie können auswählen, der die Textelemente anders behandelt werden sollen; Behandeln Sie z. B. das erste Konto als Titeltext und nachfolgenden Elemente als Textkörper.
 
 ```csharp
 // Get the toast binding, if present
@@ -229,7 +229,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 Die Hintergrundaufgabe ist lediglich ein Hinweis: Sie gibt keine Auskunft darüber, welche Benachrichtigung hinzugefügt oder entfernt wurde. Wenn Ihre Hintergrundaufgabe ausgelöst wird, sollten Sie die Benachrichtigungen auf Ihrem Wearable synchronisieren, damit sie die Benachrichtigungen in der Plattform widerspiegeln. Wenn Ihre Hintergrundaufgabe fehlschlägt, können Sie beim nächsten Ausführen Ihrer Hintergrundaufgabe immer noch Benachrichtigungen über Ihre Wearable wiederherstellen.
 
-`SyncNotifications` ist eine Methode, die Sie implementieren. Der nächste Abschnitt zeigt wie. 
+`SyncNotifications` ist eine Methode, die Sie implementieren. der nächste Abschnitt zeigt, wie. 
 
 
 ## <a name="determining-which-notifications-were-added-and-removed"></a>Ermitteln welche Benachrichtigungen hinzugefügt und entfernt wurden
@@ -277,9 +277,9 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>Vordergrundereignis für hinzugefügt/geschlossene Benachrichtigungen
 
 > [!IMPORTANT] 
-> Bekanntes Problem: das Ereignis im Vordergrund bewirkt eine Schleife CPU auf die aktuellen Versionen von Windows und zuvor vor, die nicht funktioniert. Verwenden Sie nicht das Ereignis im Vordergrund. Ein bevorstehenden Windows Update werden wir dieses Problem beheben.
+> Bekanntes Problem: Die Vordergrund-Ereignis verursacht eine Schleife für die CPU auf neuere Versionen von Windows und vorher funktionierte nicht davor. Verwenden Sie nicht das Vordergrund-Ereignis. In einem zukünftigen Update, Windows werden wir dieses Problem beheben.
 
-Verwenden Sie anstelle der vordergrundereignis für eine Hintergrundaufgabe [einzelprozessmodell](../../../launch-resume/create-and-register-an-inproc-background-task.md) den zuvor aufgeführten Code. Die Hintergrundaufgabe zudem können Sie ereignisbenachrichtigungen beide zu erhalten, während die app geschlossen ist oder ausgeführt wird.
+Anstatt das Vordergrund-Ereignis verwenden, den oben gezeigten Code ein [Modell mit einem einzelnen Prozess](../../../launch-resume/create-and-register-an-inproc-background-task.md) Hintergrundaufgabe ausgeführt. Die Hintergrundaufgabe können Sie zudem Änderung ereignisbenachrichtigungen beide zu erhalten, während Ihre app geschlossen ist oder ausgeführt wird.
 
 ```csharp
 // Subscribe to foreground event (DON'T USE THIS)
@@ -292,6 +292,6 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 ```
 
 
-## <a name="howto-fixdelays-in-the-background-task"></a>So wird's gemacht-Fixdelays in der Hintergrundaufgabe
+## <a name="howto-fixdelays-in-the-background-task"></a>Behebung von Verzögerungen im Hintergrund ausführen
 
-Wenn Sie Ihre app zu testen, werden Sie möglicherweise feststellen, dass die Hintergrundaufgabe manchmal verzögert ist und mehrere Minuten lang nicht ausgelöst. Um die Verzögerung zu beheben, an die Benutzer Togo auf den Systemeinstellungen -> System -> Akku -> Akkunutzung nach app, Ihre app in der Liste finden, auszuwählen, und legen sie "immer im Hintergrund zugelassen."Danach sollte die Hintergrundaufgabe immer innerhalb einer Sekunde der Benachrichtigung angestoßen werden.
+Wenn Ihre app zu testen, werden Sie feststellen, dass die Hintergrundaufgabe manchmal verzögert wird und nicht für mehrere Minuten auslösen. Um die Verzögerung zu beheben, fordert die Systemeinstellungen zu -> System -> Akku Akkunutzung von app ->, Ihre app in der Liste zu finden, auszuwählen, und legen Sie ihn auf "immer im Hintergrund zulässig." Danach sollte die Hintergrundaufgabe immer in rund um die Benachrichtigung empfangen wird von einer Sekunde ausgelöst werden.

@@ -4,14 +4,14 @@ description: Hier finden Sie Informationen zum Einsatz von 2D-Bitmapgrafiken und
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Directx, 2D, Grafiken
+keywords: Windows 10, UWP, Spiele, Directx, 2D, Grafiken
 ms.localizationpriority: medium
 ms.openlocfilehash: 1154abc4305307d87f15fbe0c0e5461e3a15e27e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924454"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632655"
 ---
 # <a name="2d-graphics-for-directx-games"></a>2D-Grafiken für DirectX-Spiele
 
@@ -32,7 +32,7 @@ In DirectX sind 2D-Grafiken Teil der 3D-Pipeline. Die Menge der verfügbaren Bil
 
 Im Anschluss finden Sie einige der grundlegenden Konzepte, mit denen Sie vertraut sein sollten, bevor Sie mit der Entwicklung von 2D-Grafiken beginnen:
 
--   Pixel und Rasterkoordinaten. Ein Pixel ist ein einzelner Punkt einer Rasteranzeige und besitzt lediglich ein Koordinatenpaar (bestehend aus x- und y-Koordinate), das seine Anzeigeposition angibt. (Der Begriff „Pixel“ wird häufig synonym für die physischen Pixel der Anzeige und für die adressierbaren Speicherelemente verwendet, die die Farb- und Alphawerte der Pixel enthalten, bevor sie an die Anzeige gesendet werden.) Das Raster wird von APIs als rechteckiges Raster mit Pixelelementen behandelt. Dieses entspricht häufig 1:1 dem Raster der physischen Pixel einer Anzeige. Rasterkoordinatensysteme beginnen links oben mit dem Pixel an der Position (0, 0). Dieses Pixel befindet sich somit im Raster ganz links oben.
+-   Pixel und Rasterkoordinaten. Ein Pixel ist ein einzelner Punkt einer Rasteranzeige und besitzt lediglich ein Koordinatenpaar (bestehend aus x- und y-Koordinate), das seine Anzeigeposition angibt. (Der Begriff "Pixels" wird häufig synonym verwendet zwischen der physischen Pixeln, die die Anzeige zu bilden und adressierbaren Speicher Elemente verwendet, um die Farb- und Alphawerte Werte der Pixel aufzunehmen, bevor sie auf dem Bildschirm gesendet werden.) Das Raster wird durch die APIs als einem rechteckigen Raster von Elementen der Pixel, behandelt, die 1:1-Entsprechung mit einer Anzeige der physischen Pixelraster verfügt oft über. Rasterkoordinatensysteme beginnen links oben mit dem Pixel an der Position (0, 0). Dieses Pixel befindet sich somit im Raster ganz links oben.
 -   Bitmapgrafiken werden gelegentlich auch als Rastergrafiken bezeichnet und sind Grafikelemente, die als rechteckiges Raster mit Pixelwerten dargestellt werden. Sprites (berechnete Pixelarrays, die unabhängig vom Raster verwaltet werden) sind eine Art von Bitmapgrafik, die in einem Spiel häufig für die aktiven Charaktere oder für animierte Objekte verwendet werden, die vom Hintergrund unabhängig sind. Die verschiedenen Animationsframes für ein Sprite werden als Bitmapsammlungen dargestellt und als Blätter oder Stapel bezeichnet. Bei Hintergründen handelt es sich um größere Bitmapobjekte, die mindestens die gleiche Auflösung besitzen wie das Bildschirmraster und häufig als eine Art Kulisse für das Spielfeld des Spiels fungieren.
 -   Vektorgrafiken nutzen geometrische Grundtypen wie Punkte, Linien, Kreise und Polgygone, um zweidimensionale Objekte zu definieren. Sie werden nicht als Pixelarrays dargestellt, sondern als mathematische Gleichungen, die sie im zweidimensionalen Raum definieren. Sie entsprechen nicht unbedingt 1:1 dem Pixelraster der Anzeige und müssen aus dem Koordinatensystem, in dem sie gerendert wurden, in das Rasterkoordinatensystem der Anzeige transformiert werden.
 -   Bei der Translation wird die neue Position eines Punkts oder Vertexes im gleichen Koordinatensystem berechnet.
@@ -42,20 +42,20 @@ Im Anschluss finden Sie einige der grundlegenden Konzepte, mit denen Sie vertrau
 -   Beim Clipping werden Teile der Bitmaps oder Geometrie entfernt, die sich nicht im sichtbaren Bereich der Anzeige befinden oder von Objekten mit höherer Anzeigepriorität verdeckt werden.
 -   Der Framepuffer ist ein Speicherbereich, der sich häufig in der Grafikhardware befindet und die finale Rasterstruktur enthält, die auf den Bildschirm gezeichnet wird. Die Swapchain ist eine Sammlung von Puffern. Hier erfolgt der Zeichnungsvorgang in einem Hintergrundpuffer, und das Bild wird nach Fertigstellung des Vorgangs in den Vordergrund gebracht, um es anzuzeigen.
 
-## <a name="design-considerations"></a>Überlegungen bei der Entwicklung
+## <a name="design-considerations"></a>Überlegungen zum Entwurf
 
 
 Mit der Entwicklung von 2D-Grafiken können Sie sich sehr gut in die Direct3D-Entwicklung einarbeiten und haben mehr Zeit für andere wichtige Aspekte der Spieleentwicklung wie Audio, Steuerung und Spielmechanik.
 
 Verwenden Sie für den Zeichnungsvorgang immer einen Hintergrundpuffer. Wenn der Zeichnungsvorgang direkt im Framepuffer erfolgt, wird das Bild angezeigt, sobald das Signal zum Anzeigen empfangen wird (üblicherweise jede sechzigstel Sekunde), auch wenn der Zeichnungsvorgang noch gar nicht abgeschlossen sein sollte.
 
-Achten Sie bei Ihrer Grafikengine darauf, dass diese eine Reihe von Auflösungen unterstützt – von 1024x600 bis mindestens 1920x1080. Ihre Zielgruppe wird es zu schätzen wissen, wenn Ihr Spiel die native Auflösung ihres LCD-Monitors unterstützt (besonders bei 2D-Grafiken).
+Achten Sie bei Ihrer Grafikengine darauf, dass diese eine Reihe von Auflösungen unterstützt – von 1024 x 600 bis mindestens 1920 x 1080. Ihre Zielgruppe wird es zu schätzen wissen, wenn Ihr Spiel die native Auflösung ihres LCD-Monitors unterstützt (besonders bei 2D-Grafiken).
 
 In Sachen Optik sind großartige Grafiken Ihre wichtigste Ressource. Ihre Bitmapgrafiken sind zwar vielleicht nicht ganz so beeindruckend wie fotorealistische 3D-Grafik mit den neuesten Shadermodell-Features, mit einer großartigen Grafik in hoher Auflösung können Sie aber mindestens genauso viel Stil und Persönlichkeit erzeugen – und das bei deutlich geringerem Leistungsbedarf.
 
-## <a name="reference"></a>Referenz
+## <a name="reference"></a>Verweis
 
 
--   [Übersicht über Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987)
--   [Schnellstartanleitung für Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Übersicht über die Interoperabilität von Direct2D und Direct3D](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+-   [Übersicht über die Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987)
+-   [Direct2D-Schnellstart](https://msdn.microsoft.com/library/windows/desktop/dd535473)
+-   [Direct2D und Direct3D-Interoperabilität (Übersicht)](https://msdn.microsoft.com/library/windows/desktop/dd370966)

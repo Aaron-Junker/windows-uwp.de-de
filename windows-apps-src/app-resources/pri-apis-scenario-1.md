@@ -1,19 +1,19 @@
 ---
-Description: In this scenario, we'll make a new app to represent our custom build system. We'll create a resource indexer and add strings and other kinds of resources to it. Then we'll generate and dump a PRI file.
+Description: In diesem Szenario erstellen wir eine neue App zur Darstellung unseres benutzerdefinierten Buildsystems. Wir erstellen einen Ressourceindexer und fügen diesem Zeichenfolgen und andere Arten von Ressourcen hinzu. Dann generieren und sichern wir eine PRI-Datei.
 title: 'Szenario 1: Generieren einer PRI-Datei aus Zeichenfolgenressourcen und Ressourcendateien'
 template: detail.hbs
 ms.date: 05/07/2018
 ms.topic: article
-keywords: Windows10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
+keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058841"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622755"
 ---
-# <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Szenario 1: Generieren einer PRI-Datei aus Zeichenfolgenressourcen und Ressourcendateien
+# <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Szenario 1: Generieren einer PRI-Datei von Zeichenfolgenressourcen und Ressourcendateien
 In diesem Szenario verwenden wir die [APIs zur Paketressourcenindizierung (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690), um eine neue App zur Darstellung unseres benutzerdefinierten Buildsystems zu erstellen. Denken Sie daran: Der Zweck dieses benutzerdefinierten Buildsystems besteht darin, PRI-Dateien für eine Ziel-UWP-App zu erstellen. Im Rahmen dieser exemplarischen Vorgehensweise erstellen wir also einige Beispielressourcendateien (mit Zeichenfolgen und anderen Arten von Ressourcen), um die Ressourcen dieser Ziel-UWP-App abzubilden.
 
 ## <a name="new-project"></a>Neues Projekt
@@ -139,7 +139,7 @@ Hier werden die Argumente erläutert, die an **MrmCreateResourceIndexer** überg
 - Eine Liste der Standardressourcenqualifizierer.
 - Ein Zeiger auf unseren Ressourcenindexer-Handle, sodass die Funktion diesen festlegen kann.
 
-Im nächsten Schritt fügen wir unsere Ressourcen dem Ressourcenindexer hinzu, den wir gerade erstellt haben. `resources.resw` ist eine Ressourcendatei (.resw), die die neutralen Zeichenfolgen für die Ziel-UWP-App enthält. Führen Sie (in diesem Thema) einen Bildlauf nach oben durch, wenn Sie den Inhalt dieser Datei anzeigen möchten. `de-DE\resources.resw` enthält unsere deutschen Zeichenfolgen und `en-US\resources.resw` enthält unsere englischen Zeichenfolgen. Zum Hinzufügen der Zeichenfolgenressourcen innerhalb einer Ressourcendatei zu einem Ressourcenindexer rufen Sie [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers) auf. Als Drittes rufen wir die [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile)-Funktion zu einer Datei auf, die eine neutrale Bildressource für den Ressourcenindexer enthält.
+Im nächsten Schritt fügen wir unsere Ressourcen dem Ressourcenindexer hinzu, den wir gerade erstellt haben. `resources.resw` ist eine Ressourcendatei (.resw), die die neutralen Zeichenfolgen für die Ziel-UWP-app enthält. Führen Sie (in diesem Thema) einen Bildlauf nach oben durch, wenn Sie den Inhalt dieser Datei anzeigen möchten. `de-DE\resources.resw` enthält unsere deutschen Zeichenfolgen, und `en-US\resources.resw` angezeigten englischen Zeichenfolgen. Zum Hinzufügen der Zeichenfolgenressourcen innerhalb einer Ressourcendatei zu einem Ressourcenindexer rufen Sie [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers) auf. Als Drittes rufen wir die [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile)-Funktion zu einer Datei auf, die eine neutrale Bildressource für den Ressourcenindexer enthält.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
@@ -162,7 +162,7 @@ Zu diesem Zeitpunkt wurde eine PRI-Datei mit dem Namen `resources.pri` in einem 
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
-Da eine PRI-Datei ein binäres Format hat, können wir das soeben Generierte leichter anzeigen, wenn wir die binäre PRI-Datei in ihr XML-Äquivalent sichern. Ein Aufruf von [**MrmDumpPriFile**](/windows/desktop/menurc/mrmdumpprifile) bietet genau diese Funktion.
+Da eine PRI-Datei ein binäres Format hat, können wir das soeben Generierte leichter anzeigen, wenn wir die binäre PRI-Datei in ihr XML-Äquivalent sichern. Ein Aufruf von [ **MrmDumpPriFile** ](/windows/desktop/menurc/mrmdumpprifile) macht genau das.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
@@ -231,7 +231,7 @@ Die erste Zeichenfolgenressource lautet *EnOnlyString* aus `en-US\resources.resw
 In diesem Szenario haben wir gezeigt, wie Sie die [APIs zur Paketressourcenindizierung (PRI](https://msdn.microsoft.com/library/windows/desktop/mt845690) verwenden, um einen Ressourcenindexer zu erstellen. Wir haben dem Ressourcenindexer Zeichenfolgenressourcen und Ressourcendateien hinzugefügt. Anschließend haben wir mit dem Ressourcenindexer eine binäre PRI-Datei generiert. Und schließlich haben wir die binäre PRI-Datei im XML-Format gesichert, sodass wir überprüfen konnten, dass sie die erwarteten Informationen enthält.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [Referenz für die Paketressourcenindizierung (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [Ressource "Package" Indizierung (PRI)-Referenz](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [APIs zur Paketressourcenindizierung (PRI) und benutzerdefinierte Buildsysteme](pri-apis-custom-build-systems.md)
+* [Indizierung (PRI)-APIs und benutzerdefinierte Ressource "Package" zum Erstellen von Systemen](pri-apis-custom-build-systems.md)
