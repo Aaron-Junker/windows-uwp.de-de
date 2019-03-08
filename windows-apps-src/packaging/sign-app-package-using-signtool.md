@@ -3,15 +3,15 @@ title: Signieren eines App-Pakets mit SignTool
 description: Verwenden Sie SignTool, um ein App-Paket manuell mit einem Zertifikat zu signieren.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922612"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594805"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Signieren eines App-Pakets mit SignTool
 
@@ -24,23 +24,23 @@ ms.locfileid: "8922612"
 Weitere Informationen zur Codesignatur und zu Zertifikaten im Allgemeinen finden Sie unter [Einführung in die Codesignatur](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing).
 
 ## <a name="prerequisites"></a>Voraussetzungen
-- **Ein App-Paket**  
+- **Ein app-Paket**  
     Weitere Informationen über das manuelle Erstellen eines App-Pakets finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). 
 
 - **Ein gültiges Signaturzertifikat**  
     Weitere Informationen zum Erstellen oder Importieren ein gültiges Signaturzertifikats finden Sie unter [Erstellen oder Importieren eines Zertifikats für die Paketsignierung](https://msdn.microsoft.com/windows/uwp/packaging/create-certificate-package-signing).
 
 - **SignTool.exe**  
-    Abhängig vom Installationspfad des SDK befindet sich **SignTool** an folgenden Speicherorten auf Ihrem Windows10-PC:
-    - x86: C:\Programme (x86)\Windows Kits\10\bin\x86\SignTool.exe
-    - x64: C:\Programme (x86)\Windows Kits\10\bin\x64\SignTool.exe
+    Abhängig vom Installationspfad des SDK befindet sich **SignTool** an folgenden Speicherorten auf Ihrem Windows 10-PC:
+    - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
+    - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>Verwenden von SignTool
 
 **SignTool** kann zum Signieren von Dateien, Überprüfen von Signaturen oder Zeitstempeln, Entfernen von Signaturen und mehr verwendet werden. Um ein App-Paket zu signieren, benötigen Sie den Befehl **sign**. Vollständige Informationen zu **SignTool** finden Sie auf der [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)-Referenzseite. 
 
 ### <a name="determine-the-hash-algorithm"></a>Ermitteln des Hashalgorithmus
-Wenn Sie mit **SignTool** Ihr App-Paket oder -Bündel signieren, muss der in **SignTool** verwendete Hashalgorithmus derselbe Algorithmus sein, den Sie beim Packen Ihre App verwendet haben. Wenn Sie z.B. **MakeAppx.exe** verwendet haben, um Ihr App-Paket mit den Standardeinstellungen zu erstellen, müssen Sie SHA256 in **SignTool** angeben, da das der von **MakeAppx.exe** verwendete Standardalgorithmus ist.
+Wenn Sie mit **SignTool** Ihr App-Paket oder -Bündel signieren, muss der in **SignTool** verwendete Hashalgorithmus derselbe Algorithmus sein, den Sie beim Packen Ihre App verwendet haben. Wenn Sie z. B. **MakeAppx.exe** verwendet haben, um Ihr App-Paket mit den Standardeinstellungen zu erstellen, müssen Sie SHA256 in **SignTool** angeben, da das der von **MakeAppx.exe** verwendete Standardalgorithmus ist.
 
 Um herauszufinden, welcher Hashalgorithmus beim Packen einer App verwendet wurde, extrahieren Sie den Inhalt des App-Pakets und überprüfen die Datei AppxBlockMap.xml. Weitere Informationen zum Entpacken/Extrahieren eines App-Pakets finden Sie unter [Extrahieren von Dateien aus einem Paket oder Bündel](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle). Die Hashmethode befindet sich im BlockMap-Element und besitzt dieses Format:
 ```
@@ -108,7 +108,7 @@ SignTool Error: An unexpected internal error has occurred.
 Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B) 
 ```
 
-Wenn der Fehlercode mit 0x8008 beginnt, z.B. 0x80080206 (APPX_E_CORRUPT_CONTENT), ist das Paket, das gerade signiert wird, nicht gültig. Wenn Sie diesen Fehlertyp erhalten, müssen Sie das Paket neu erstellen und **SignTool** erneut ausführen.
+Wenn der Fehlercode mit 0x8008 beginnt, z. B. 0x80080206 (APPX_E_CORRUPT_CONTENT), ist das Paket, das gerade signiert wird, nicht gültig. Wenn Sie diesen Fehlertyp erhalten, müssen Sie das Paket neu erstellen und **SignTool** erneut ausführen.
 
 **SignTool** verfügt über eine Debugoption, um Zertifikatfehler anzuzeigen und zu filtern. Um die Debugfunktion zu verwenden, geben Sie die Option `/debug` direkt hinter `sign` und dann den vollständigen **SignTool**-Befehl an.
 ```
@@ -119,13 +119,13 @@ Ein allgemeinerer Fehler ist 0x8007000B. Zu diesem Fehlertyp finden Sie weitere 
  
 So suchen Sie weitere Informationen im Ereignisprotokoll
 - Führen Sie Eventvwr.msc aus.
-- Öffnen Sie das Ereignisprotokoll: Ereignisanzeige (Lokal) -> Anwendungs- und Dienstprotokolle -> Microsoft -> Windows--> AppxPackagingOM -> Microsoft-Windows-AppxPackaging/Operational.
+- Öffnen Sie das Ereignisprotokoll geschrieben: Ereignisanzeige (lokal) -> Anwendungen und Dienstprotokolle > Microsoft -> Windows-AppxPackagingOM > Microsoft-Windows-AppxPackaging/Operational->
 - Suchen Sie das letzte Fehlerereignis.
 
 Der interne Fehler 0x8007000B entspricht in der Regel einem der folgenden Werte:
 
-| **Ereignis-ID** | **Beispiel der Ereigniszeichenfolge** | **Vorschlag** |
+| **Ereignis-ID** | **Beispiel für Ereignis-Zeichenfolge** | **Suggestion** |
 |--------------|--------------------------|----------------|
-| 150          | Fehler 0x8007000B: Der Name des Herausgebers des App-Manifests (CN=Contoso) muss mit dem Namen des Antragstellers des Signaturzertifikats (CN=Contoso, C=US) übereinstimmen. | Der Name des Herausgebers des App-Manifests muss exakt mit dem Namen des Antragstellers der Signatur übereinstimmen.               |
-| 151.          | Fehler 0x8007000B: Die angegebene Hashmethode der Signatur (SHA512) muss mit der Hashmethode, die in der App-Paketblockzuordnung (SHA256) verwendet wurde, übereinstimmen.     | Der im Parameter /fd angegebene Hashalgorithmus ist falsch. Führen Sie **SignTool** erneut mit dem Hashalgorithmus aus, der mit der App-Paketblockzuordnung übereinstimmt (mit dem das App-Paket erstellt wurde).  |
-| 152          | Fehler 0x8007000B: Der Inhalt des App-Pakets muss für die Blockzuordnung gültig sein.                                                           | Das App-Paket ist beschädigt und muss neu erstellt werden, um eine neue Blockzuordnung zu generieren. Weitere Informationen zum Erstellen eines App-Pakets finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). |
+| 150          | Fehler 0x8007000B: Der Name der app-manifest Verleger (CN = Contoso) muss der Antragstellername des signierenden Zertifikats überein (CN = Contoso, C = US). | Der Name des Herausgebers des App-Manifests muss exakt mit dem Namen des Antragstellers der Signatur übereinstimmen.               |
+| 151          | Fehler 0x8007000B: Die Signaturmethode des Hash übereinstimmen angegebenen (SHA512) der Hash-Methode, die in der app-Paket (SHA256) verwendet.     | Der im Parameter /fd angegebene Hashalgorithmus ist falsch. Führen Sie **SignTool** erneut mit dem Hashalgorithmus aus, der mit der App-Paketblockzuordnung übereinstimmt (mit dem das App-Paket erstellt wurde).  |
+| 152          | Fehler 0x8007000B: Der Inhalt des app-Pakets müssen für die Zuordnung der Block überprüfen.                                                           | Das App-Paket ist beschädigt und muss neu erstellt werden, um eine neue Blockzuordnung zu generieren. Weitere Informationen zum Erstellen eines App-Pakets finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). |

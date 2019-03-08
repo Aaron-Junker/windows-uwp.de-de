@@ -1,28 +1,28 @@
 ---
-Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+Description: MakePri.exe akzeptiert die Befehle createconfig, dump, new, resourcepack und versioned. In diesem Thema wird die Anwendung der Befehle erläutert.
 title: Befehlszeilenoptionen für MakePri.exe
 template: detail.hbs
 ms.date: 04/10/2018
 ms.topic: article
-keywords: Windows10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
+keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943414"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603395"
 ---
-# <a name="makepriexe-command-line-options"></a>Befehlszeilenoptionen für MakePRI.exe
+# <a name="makepriexe-command-line-options"></a>Befehlszeilenoptionen für MakePri.exe
 
-[MakePri.exe](compile-resources-manually-with-makepri.md) akzeptiert die Befehle `createconfig`, `dump`, `new`, `resourcepack` und `versioned`. In diesem Thema werden die Befehlszeilenoptionen für diese Befehle erläutert.
+[MakePri.exe](compile-resources-manually-with-makepri.md) akzeptiert die Befehle `createconfig`, `dump`, `new`, `resourcepack` und `versioned`. In diesem Thema werden die Befehlszeilenoptionen für deren Verwendung erläutert.
 
 > [!NOTE]
-> MakePri.exe wird installiert, wenn Sie die Option **Windows SDK für verwalteten UWP-Apps** während der Installation von Windows Software Development Kit überprüfen. Es installiert ist, um den Pfad `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ebenso wie in den Ordnern für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe installiert ist, wenn Sie aktivieren die **Windows SDK für verwaltete UWP-Apps** Option während der Installation von Windows Software Development Kit. Es wird auf den Pfad installiert `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (sowie in Ordnern, die mit dem Namen für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
-## <a name="getting-help-from-the-command-line"></a>Hilfe von der Befehlszeile
+## <a name="getting-help-from-the-command-line"></a>Abrufen von Hilfe über die Befehlszeile
 
-Sie können ausführen `MakePri.exe help` oder `MakePri.exe /?` um die Befehle anzuzeigen, die Sie mit MakePri.exe verwenden können. Sie können auch ausstellen `MakePri.exe <command> /?` finden Sie die Einzelheiten zu einem Befehl und in sehr seltenen Fällen sogar `MakePri.exe <command> <option>` für Einzelheiten zu den Optionen finden Sie unter.
+Sie können ausführen `MakePri.exe help` oder `MakePri.exe /?` um die Befehle anzuzeigen, die Sie mit MakePri.exe verwenden können. Sie können auch ausgeben `MakePri.exe <command> /?` um Einzelheiten zu einem Befehl abzurufen und in sehr seltenen Fällen zu sehen, auch `MakePri.exe <command> <option>` Einzelheiten dazu, eine Option angezeigt.
 
 ## <a name="makepri-commands"></a>MakePri-Befehle
 
@@ -115,7 +115,7 @@ Help:
 Der Befehl `dump` gibt den Dump einer XML-Datei aus, die eine Liste aller Ressourcen in einer angegebenen PRI-Datei enthält. Führen Sie `MakePri.exe dump /?` aus, um detaillierte Hilfe für diesen Befehl anzuzeigen.
 
 > [!NOTE]
-> Ein schemafreies Ressourcenpaket ist ein Ressourcenpaket, das mit dem Schalter *omitSchemaFromResourcePacks* in der PRI-Konfigurationsdatei erstellt wurde. Um ein schemafreies Ressourcenpaket zu sichern, verwenden Sie den Schalter `/es <main_package_PRI_file>`. Wenn Sie die Hauptdatei nicht angeben, wird eine Fehlermeldung angezeigt, die in etwa wie folgt lautet: „*Die resources.pri im Paket wurde beschädigt, sodass die Verschlüsselung fehlgeschlagen ist (Fehler PRI222: 0xdef0000f - Unbestimmter Fehler aufgetreten)*“.
+> Ein schemafreies Ressourcenpaket ist ein Ressourcenpaket, das mit dem Schalter *omitSchemaFromResourcePacks* in der PRI-Konfigurationsdatei erstellt wurde. Um ein schemafreies Ressourcenpaket zu sichern, verwenden Sie den Schalter `/es <main_package_PRI_file>`. Wenn Sie nicht, der Haupt-Datei angeben, und klicken Sie dann Sie die Fehlermeldung sehen "*der resources.pri in das Paket war beschädigt, damit Fehler bei der Verschlüsselung (Fehler PRI222: 0xdef0000f - Unbekannter Fehler aufgetreten)*".
 
 ```console
 C:\>makepri dump /?
@@ -416,18 +416,18 @@ Für `resourcepack` und `versioned` können Sie eine Schemadatei bereitstellen, 
 
 **FILEPATH** ist ein Token, das den Speicherort der PRI-Eingabedatei oder PRI-Schemadatei angibt
 
-## <a name="47indexoptionsio-option"></a>& #47;IndexOptions(io)-Option
+## <a name="47indexoptionsio-option"></a>&#47;IndexOptions(io)-option
 
-Sie verwenden der Option "Optionen" (/ e/a) mit `new`, `resourcepack`, und `versioned` Optionen angeben, die detaillierte Kontrolle über das Verhalten der Ressource Indexer bereitstellen. Index-Optionen sind standardmäßig deaktiviert.
+Verwendung der Option "Optionen" (/ e/a) mit `new`, `resourcepack`, und `versioned` um Optionen anzugeben, die detaillierte Kontrolle über das Verhalten der Ressource Indexer bereitstellen. Indexoptionen sind standardmäßig deaktiviert.
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**Optionen** ist eine durch Trennzeichen getrennte Liste besteht aus der folgenden Optionen.
+**Optionen** ist eine durch Trennzeichen getrennte Liste umfasst die folgenden Optionen.
 
-- +/-HiddenFiles(hf). Index (+) oder ignorieren (-) Dateien und Ordner ausgeblendet.
-- +/-LinkedFiles(lf). Index (+) oder ignorieren (-) verknüpft, Dateien und Ordner.
+- +/-HiddenFiles(hf). Index (+) oder zu ignorieren (-) versteckte Dateien und Ordner.
+- +/-LinkedFiles(lf). Index (+) oder zu ignorieren (-) verknüpft, Dateien und Ordner.
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) Option
 
@@ -458,7 +458,7 @@ Und hier ein Beispiel für Inhalte einer Zuordnungsdatei für ein Ressourcenpake
 
 ## <a name="output-summary"></a>Ausgabezusammenfassung
 
-Wenn Ressourcenpakete erstellt werden, ist die Ausgabezusammenfassung von MakePRI.exe ausführlicher. Beispiel:
+Wenn Ressourcenpakete erstellt werden, ist die Ausgabezusammenfassung von MakePRI.exe ausführlicher. Hier sehen Sie ein Beispiel.
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
@@ -501,7 +501,7 @@ Hier ein Beispiel für eine Fehlerbedingung und die entsprechende Fehlermeldung:
 
 | Fehlerbedingung | Fehlermeldung |
 | --------------- | ------------- |
-| Der Name der Ausgabedatei entspricht einem der Ressourcenpaketnamen in der Konfiguration. | Ungültige Konfiguration: Der Ressourcenpaketname <resource pack name> darf nicht mit dem Namen der Ausgabedatei <outputfilename.pri> übereinstimmen. |
+| Der Name der Ausgabedatei entspricht einem der Ressourcenpaketnamen in der Konfiguration. | Ungültige Konfiguration: Pack-Ressourcenname <resource pack name> können nicht die gleichen wie die Ausgabedatei < outputfilename.pri >. |
 
 ## <a name="reversemaprm-option"></a>/ReverseMap(rm) Option
 

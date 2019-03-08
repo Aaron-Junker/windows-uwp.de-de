@@ -1,17 +1,17 @@
 ---
-Description: Common questions about ad campaigns
+Description: Häufige Fragen zu Anzeigenkampagnen
 title: Häufige Fragen zu Anzeigenkampagnen
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6875f5b06bbd253b7fe80fbc53936fe0dcf1a6b9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924843"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597065"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Häufige Fragen zu Anzeigenkampagnen
 
@@ -21,7 +21,7 @@ Das entscheiden Sie selbst. Denken Sie jedoch an eines: Je mehr Sie ausgeben, de
 
 ### <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>Wie kann ich das für meine Anzeigenkampagne maximal zulässige monatliche Budget erhöhen?
 
-Wenn Sie in einem Monat mehr als 10.000USD für Ihre Anzeigenkampagnen ausgeben möchten, wenden Sie sich an [aiacare@microsoft.com](mailto:aiacare@microsoft.com). Wir werden Sie auf ein Premiumkonto aktualisieren, in dem Sie bis zu 50.000USD pro Kampagne ausgeben können. Ein Premiumkonto stellt Ihnen darüber hinaus zusätzliche Funktionen bereit, wie die Möglichkeit, Start- und Enddaten für Kampagnen festzulegen und eine Ziel-URL für Ihre Kampagne anzugeben.
+Wenn Sie in einem Monat mehr als 10.000 USD für Ihre Anzeigenkampagnen ausgeben möchten, wenden Sie sich an [aiacare@microsoft.com](mailto:aiacare@microsoft.com). Wir werden Sie auf ein Premiumkonto aktualisieren, in dem Sie bis zu 50.000 USD pro Kampagne ausgeben können. Ein Premiumkonto stellt Ihnen darüber hinaus zusätzliche Funktionen bereit, wie die Möglichkeit, Start- und Enddaten für Kampagnen festzulegen und eine Ziel-URL für Ihre Kampagne anzugeben.
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>Kann ich Anzeigen für eine meiner Apps in anderen Apps präsentieren?
 
@@ -37,7 +37,7 @@ Wenn Sie eine der Standardanzeigenvorlagen verwenden, können Sie die Größe, d
 
 ### <a name="where-will-my-ad-appear"></a>Wo erscheint meine Anzeige?
 
-Ihre Anzeige erscheint in Apps, die der Altersfreigabe und der Betriebssystemversion Ihrer App entsprechen. Sie können diese Eigenschaften festlegen, wenn Sie Ihre app im Microsoft Store veröffentlichen. Für „universelle” Kampagnen werden Ihre Anzeigen auch in MSN.com, Outlook.com, Skype und anderen Microsoft-Premium-Eigenschaften angezeigt.
+Ihre Anzeige erscheint in Apps, die der Altersfreigabe und der Betriebssystemversion Ihrer App entsprechen. Sie können diese Eigenschaften festlegen, wenn Sie Ihre app in den Microsoft Store veröffentlichen. Für „universelle” Kampagnen werden Ihre Anzeigen auch in MSN.com, Outlook.com, Skype und anderen Microsoft-Premium-Eigenschaften angezeigt.
 
 Anzeigenkampagnen werden derzeit in folgenden Ländern und Regionen unterstützt:
 
@@ -51,13 +51,13 @@ Arabisch, Chinesisch (traditionell), Chinesisch (vereinfacht), Dänisch, Deutsch
 
 ### <a name="when-will-i-be-billed"></a>Wann erfolgt die Abrechnung?
 
-Ihnen werden jedes Mal, wenn auf Ihrem Konto 50$ Gebühren anfallen (oder der entsprechende Betrag in der lokalen Währung Ihres Markts oder Ihrer Region), alle kostenpflichtigen Kampagnen für Ihr Konto in Rechnung gestellt.
+Ihnen werden jedes Mal, wenn auf Ihrem Konto 50 $ Gebühren anfallen (oder der entsprechende Betrag in der lokalen Währung Ihres Markts oder Ihrer Region), alle kostenpflichtigen Kampagnen für Ihr Konto in Rechnung gestellt.
 
-Wenn auf Ihrem Konto in dem Zeitraum von 30 Tagen nach dem letzten Abrechnungsdatum weniger als 50$ Gebühren anfallen, werden Ihnen diese Gebühren zu Beginn des Folgemonats in Rechnung gestellt. Dadurch wird sichergestellt, dass auf Ihrem Konto nicht länger als einen Monat Gebühren für Anzeigenkampagnen offen bleiben.
+Wenn auf Ihrem Konto in dem Zeitraum von 30 Tagen nach dem letzten Abrechnungsdatum weniger als 50 $ Gebühren anfallen, werden Ihnen diese Gebühren zu Beginn des Folgemonats in Rechnung gestellt. Dadurch wird sichergestellt, dass auf Ihrem Konto nicht länger als einen Monat Gebühren für Anzeigenkampagnen offen bleiben.
 
 Wenn Sie nicht warten möchten, bis die Abrechnung erstellt wird, können Sie Ihre Rechnung sofort bezahlen, indem Sie **Jetzt abrechnen** auf der Seite **Rechnungszusammenfassung** (**Werbeaktionen** > **Abrechnungsverlauf**) auswählen. Ihre Zahlungsmethode wird mit dem Betrag belastet, der unter **Nicht abgerechneter Betrag** aufgelistet wird.
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>Wie kann ich eine Kreditkarte löschen oder die Details einer Kreditkarte bearbeiten?
 
-Wechseln Sie zu <http://commerce.microsoft.com>, melden Sie sich mit den Anmeldeinformationen Ihres Microsoft-Konto an, und nehmen Sie die erforderlichen Änderungen.
+Wechseln Sie zu <http://commerce.microsoft.com>, melden Sie sich mit den Anmeldeinformationen Ihres Microsoft-Konto und die erforderlichen Änderungen vorzunehmen.
 

@@ -1,17 +1,17 @@
 ---
-title: Einrichten der Umgebung für die UWP-Entwicklung auf Xbox
+title: Einrichten der UWP-Entwicklungsumgebung auf Xbox
 description: Schritte zum Einrichten und Testen der Umgebung für die UWP-Entwicklung auf Xbox
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1d8c6a33bd7d9249b5000767ece154ab7f8776
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046004"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603875"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Einrichten der UWP-Entwicklungsumgebung auf Xbox
 
@@ -23,11 +23,11 @@ In diesem Artikel werden die Schritte zum Einrichten und Testen der Entwicklungs
 
 ## <a name="visual-studio-setup"></a>Einrichten von Visual Studio
 
-1. Installieren Sie Visual Studio 2017, Visual Studio 2015 Update 3 oder die neueste Version von Visual Studio. Weitere Informationen und Downloads für die Installation finden Sie unter [Downloads und Tools für Windows 10](https://dev.windows.com/downloads). Es wird empfohlen, dass Sie die neueste Version von Visual Studio verwenden, damit Sie die neuesten Updates für Entwickler und Sicherheit erhalten können.
+1. Installieren Sie Visual Studio 2017, Visual Studio 2015 Update 3 oder die neueste Version von Visual Studio. Weitere Informationen und Downloads für die Installation finden Sie unter [Downloads und Tools für Windows 10](https://dev.windows.com/downloads). Es wird empfohlen, dass Sie die neueste Version von Visual Studio verwenden, sodass Sie die neuesten Updates für Entwickler und Sicherheit empfangen können.
 
-2. Wenn Sie Visual Studio2017 erneut installieren, stellen Sie sicher, dass Sie die Arbeitsauslastung **Entwicklung für die universelle Windows-Plattform** auswählen. Wenn Sie ein C++-Entwickler sind, stellen Sie sicher, dass Sie auch das Kontrollkästchen ** 	UWP-Tools für C++** im Bereich **Zusammenfassung** rechts unter **Entwicklung für die universelle Windows-Plattform** wählen. Es ist nicht Teil der Standardinstallation.
+2. Wenn Sie Visual Studio 2017 erneut installieren, stellen Sie sicher, dass Sie die Arbeitsauslastung **Entwicklung für die universelle Windows-Plattform** auswählen. Wenn Sie ein C++-Entwickler sind, stellen Sie sicher, dass Sie auch das Kontrollkästchen  **	UWP-Tools für C++** im Bereich **Zusammenfassung** rechts unter **Entwicklung für die universelle Windows-Plattform** wählen. Es ist nicht Teil der Standardinstallation.
 
-    ![Installieren von Visual Studio2017](images/development-environment-setup-1.png)
+    ![Installieren von Visual Studio 2017](images/development-environment-setup-1.png)
 
     Wenn Sie Visual Studio 2015 Update 3 installieren, stellen Sie sicher, dass das Kontrollkästchen **Entwicklungstools für universelle Windows-Apps** aktiviert ist.
 
@@ -35,7 +35,7 @@ In diesem Artikel werden die Schritte zum Einrichten und Testen der Entwicklungs
 
 ## <a name="windows-10-sdk-setup"></a>Einrichten des Windows 10 SDK
 
-Installieren Sie das aktuelle Windows10 SDK. Dies ist in der Installation von Visual Studio enthalten, aber wenn Sie es separat herunterladen möchten, finden Sie weitere Informationen unter [Windows10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
+Installieren Sie das aktuelle Windows 10 SDK. Dies ist in der Installation von Visual Studio enthalten, aber wenn Sie es separat herunterladen möchten, finden Sie weitere Informationen unter [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 
 
 ## <a name="enabling-developer-mode"></a>Aktivieren des Entwicklermodus
@@ -50,13 +50,13 @@ Bevor Sie eine App auf Ihrer Xbox One bereitstellen können, muss ein Benutzer a
 
 1. Stellen Sie sicher, dass sich der Entwicklungscomputer in demselben lokalen Netzwerk wie die gewünschte Xbox One befindet. Dies bedeutet normalerweise, dass beide denselben Router verwenden und sich im gleichen Subnetz befinden. Es wird eine drahtgebundene Netzwerkverbindung empfohlen.
 
-2. Stellen Sie sicher, dass sich die Xbox One Konsole im Entwicklermodus befindet.  Weitere Informationen finden Sie unter [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md).
+2. Stellen Sie sicher, dass sich die Xbox One-Konsole im Entwicklermodus befindet.  Weitere Informationen finden Sie unter [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md).
 
 3. Legen Sie die Programmiersprache fest, die Sie für Ihre UWP-App verwenden möchten.
 
 4. Wählen Sie auf Ihrem Entwicklungs-PC in Visual Studio **Neu/Projekt** aus.
 
-5. Wählen Sie im Fenster **Neues Projekt** **Windows Universal/Leere App (Universal Windows)** aus.
+5. Wählen Sie im Fenster **Neues Projekt****Windows Universal/Leere App (Universal Windows)** aus.
 
 ### <a name="starting-a-c-project"></a>Starten eines C#-Projekts
 
@@ -72,7 +72,7 @@ Bevor Sie eine App auf Ihrer Xbox One bereitstellen können, muss ein Benutzer a
 
     c. Ändern Sie unter **Startoptionen** das **Zielgerät** in **Remotecomputer**.
 
-    d. Geben Sie in **Remotecomputer** die System-IP-Adresse oder den Hostnamen der Xbox One Konsole ein. Informationen zum Ermitteln der IP-Adresse oder des Hostnamens finden Sie unter [Einführung in Xbox One-Tools](introduction-to-xbox-tools.md).
+    d. Geben Sie in **Remotecomputer** die System-IP-Adresse oder den Hostnamen der Xbox One-Konsole ein. Informationen zum Ermitteln der IP-Adresse oder des Hostnamens finden Sie unter [Einführung in Xbox One-Tools](introduction-to-xbox-tools.md).
 
     e. Wählen Sie in der Dropdownliste **Authentifizierungsmodus** den Eintrag **Universell (unverschlüsseltes Protokoll)** aus.
 
@@ -90,7 +90,7 @@ Bevor Sie eine App auf Ihrer Xbox One bereitstellen können, muss ein Benutzer a
 
    b. Ändern Sie **Zu startender Debugger** auf der Registerkarte **Debuggen** in **Remotecomputer**.
 
-   c. Geben Sie in **Computername** die System-IP-Adresse oder den Hostnamen der Xbox One Konsole ein. Informationen zum Ermitteln der IP-Adresse oder des Hostnamens finden Sie unter [Einführung in Xbox One-Tools](introduction-to-xbox-tools.md).
+   c. Geben Sie in **Computername** die System-IP-Adresse oder den Hostnamen der Xbox One-Konsole ein. Informationen zum Ermitteln der IP-Adresse oder des Hostnamens finden Sie unter [Einführung in Xbox One-Tools](introduction-to-xbox-tools.md).
 
    d. Wählen Sie in der Dropdownliste **Authentifizierungstyp** den Eintrag **Universell (unverschlüsseltes Protokoll)** aus.
 
@@ -100,13 +100,13 @@ Bevor Sie eine App auf Ihrer Xbox One bereitstellen können, muss ein Benutzer a
 
 ### <a name="pin-pair-your-device-with-visual-studio"></a>Koppeln des Geräts per PIN mit Visual Studio
 
-1. Speichern Sie die Einstellungen, und stellen Sie sicher, dass sich die Xbox One Konsole im Entwicklermodus befindet.
+1. Speichern Sie die Einstellungen, und stellen Sie sicher, dass sich die Xbox One-Konsole im Entwicklermodus befindet.
 
 2. Drücken Sie im geöffneten Projekt in Visual Studio F5.
 
 3. Wenn dies Ihre erste Bereitstellung ist, werden Sie in einem Dialogfeld in Visual Studio aufgefordert, Ihr Gerät per PIN zu koppeln.
 
-    a. Um eine PIN abzurufen, öffnen Sie auf der Startseite der Xbox One Konsole **Dev Home**.
+    a. Um eine PIN abzurufen, öffnen Sie auf der Startseite der Xbox One-Konsole **Dev Home**.
 
     b. Wählen Sie auf der Registerkarte **Startseite** unter **Schnelle Aktionen** die Option **Visual Studio-Pin anzeigen** aus.
   
@@ -120,9 +120,9 @@ Bevor Sie eine App auf Ihrer Xbox One bereitstellen können, muss ein Benutzer a
 
 Herzlichen Glückwunsch! Sie haben Ihre erste UWP-App auf Xbox erfolgreich erstellt und bereitgestellt!
 
-## <a name="see-also"></a>Weitere Informationen
-- [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md)  
+## <a name="see-also"></a>Siehe auch
+- [Ein Xbox-Entwickler-Modus-Aktivierung](devkit-activation.md)  
 - [Downloads und Tools für Windows 10](https://dev.windows.com/downloads)  
 - [Windows-Insider-Programm](https://go.microsoft.com/fwlink/?LinkId=780552)  
-- [Einführung in Xbox One-Tools](introduction-to-xbox-tools.md) 
-- [UWP auf Xbox One](index.md)
+- [Einführung in die Xbox One-tools](introduction-to-xbox-tools.md) 
+- [UWP auf Xbox One](index.md)

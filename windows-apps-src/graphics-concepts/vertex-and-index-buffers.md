@@ -1,23 +1,23 @@
 ---
-title: Scheitelpunkt- und Indexpuffer
+title: Vertex- und Indexpuffer
 description: Scheitelpunktpuffer sind Speicherpuffer, die Scheitelpunktdaten enthalten. Scheitelpunkte in einem Scheitelpunktpuffer werden verarbeitet, um Transformation, Beleuchtung und Zuschneiden auszuführen.
 ms.assetid: 8A39CD23-85FB-4424-9AC3-37919704CD68
 keywords:
-- Scheitelpunkt- und Indexpuffer
+- Vertex- und Indexpuffer
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d2ea6ce4060957ade5dd1007389be51176440f04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936325"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593575"
 ---
-# <a name="vertex-and-index-buffers"></a>Scheitelpunkt- und Indexpuffer
+# <a name="vertex-and-index-buffers"></a>Vertex- und Indexpuffer
 
 
-*Scheitelpunktpuffer* sind Speicherpuffer, die Scheitelpunktdaten enthalten. Scheitelpunkte in einem Scheitelpunktpuffer werden verarbeitet, um Transformation, Beleuchtung und Zuschneiden auszuführen. *Indexpuffer* sind Speicherpuffer mit Indexdaten, die Ganzzahl-Offsets in Scheitelpunktpuffern darstellen, und zum Rendern von Grundtypen verwendet werden.
+*Scheitelpunktpuffer* sind Speicherpuffer, die Scheitelpunktdaten enthalten. Scheitelpunkte in einem Scheitelpunktpuffer werden verarbeitet, um Transformation, Beleuchtung und Zuschneiden auszuführen. *Indexpuffer* sind Speicherpuffer mit Indexdaten, die Ganzzahl-Offsets in Vertexpuffer darstellen, und zum Rendern von Grundtypen verwendet werden.
 
 Scheitelpunktpuffer können Scheitelpunkte beliebiger Art enthalten, die gerendert werden können – transformiert oder nicht transformiert, beleuchtet oder nicht beleuchtet. Sie können die Scheitelpunkte in einem Scheitelpunktpuffer verarbeiten, um Vorgänge wie Transformation oder Beleuchtung durchzuführen, oder um Zuschneidemarkierungen zu generieren. Die Transformation wird immer ausgeführt.
 
@@ -39,8 +39,8 @@ Die Flexibilität der Scheitelpunktpuffer macht sie zu idealen Phasenpunkten fü
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="introduction-to-buffers.md">Einführung zu Puffern</a></p></td>
-<td align="left"><p>Eine Pufferressource ist eine Sammlung vollständig typisierter Daten, die zu Elementen gruppiert werden. Puffer speichern Daten, wie z.B. Texturkoordinaten in einem <em>Scheitelpunktpuffer</em>, Indizes in einem <em>Indexpuffer</em>, Shader-Konstantendaten in einem <em>Konstantenpuffer</em>, Positionsvektoren, normale Vektoren oder den Gerätezustand.</p></td>
+<td align="left"><p><a href="introduction-to-buffers.md">Einführung in Puffer</a></p></td>
+<td align="left"><p>Eine Pufferressource ist eine Sammlung vollständig typisierter Daten, die zu Elementen gruppiert werden. Puffer speichern Daten, wie z. B. Texturkoordinaten in einem <em>Scheitelpunktpuffer</em>, Indizes in einem <em>Indexpuffer</em>, Shader-Konstantendaten in einem <em>Konstantenpuffer</em>, Positionsvektoren, normale Vektoren oder den Gerätezustand.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="index-buffers.md">Indexpuffer</a></p></td>
@@ -54,7 +54,7 @@ Die Flexibilität der Scheitelpunktpuffer macht sie zu idealen Phasenpunkten fü
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Direct3D-Grafik-Lernanleitung](index.md)
+[Schulungsleitfaden für Direct3D-Grafiken](index.md)
 
  
 

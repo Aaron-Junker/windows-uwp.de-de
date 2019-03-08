@@ -4,14 +4,14 @@ description: In diesem Artikel wird beschrieben, wie Sie für Ihre App zur Medie
 title: Erstellen, Planen und Verwalten von Medienunterbrechungen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 93bcadad38e3d070e8a6b541db4d68bf547bc0b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933470"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603585"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>Erstellen, Planen und Verwalten von Medienunterbrechungen
 
@@ -70,7 +70,7 @@ Das [**BreakStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.M
 
 [!code-cs[BreakStarted](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakStarted)]
 
-[**BreakEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakEnded) wird ausgelöst, wenn alle Medienelemente in der Unterbrechung wiedergegeben oder übersprungen wurden. Sie können den Handler für dieses Ereignis zum Aktualisieren der Benutzeroberfläche verwenden, um anzugeben, dass die Wiedergabe der Medienunterbrechung beendet ist.
+[**BreakEnded** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakEnded) wird ausgelöst, wenn alle Elemente in die Unterbrechung Media Wiedergabe beendet wurde, oder über übersprungen wurden. Sie können den Handler für dieses Ereignis zum Aktualisieren der Benutzeroberfläche verwenden, um anzugeben, dass die Wiedergabe der Medienunterbrechung beendet ist.
 
 [!code-cs[BreakEnded](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakEnded)]
 
@@ -80,7 +80,7 @@ Im folgenden Beispiel wird die [**Source**](https://msdn.microsoft.com/library/w
 
 [!code-cs[BreakSkipped](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSkipped)]
 
-[**BreaksSeekedOver**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver) wird ausgelöst, wenn die Wiedergabeposition des Hauptmedienelements den geplanten Zeitpunkt für eine oder mehrere Medienunterbrechungen passiert. Im folgenden Beispiel wird eine Überprüfung durchgeführt, um festzustellen, ob mehr als eine Medienunterbrechung übergangen wurde, wenn die Wiedergabeposition nach vorne verschoben wird und wenn sie um weniger als 10 Minuten nach vorne verschoben wird. Falls ja, wird die erste übergangene Unterbrechung, die aus der [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks)-Sammlung abgerufen und von den Ereignisargumenten verfügbar gemacht wurde, durch einen Aufruf der [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689)-Methode des **MediaPlayer.BreakManager** sofort wiedergegeben.
+[**BreaksSeekedOver** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver) wird ausgelöst, wenn die Wiedergabeposition des Mediums main über den geplanten Zeitpunkt für eine oder mehrere Datenträger Pausen bewegt. Im folgenden Beispiel wird eine Überprüfung durchgeführt, um festzustellen, ob mehr als eine Medienunterbrechung übergangen wurde, wenn die Wiedergabeposition nach vorne verschoben wird und wenn sie um weniger als 10 Minuten nach vorne verschoben wird. Falls ja, wird die erste übergangene Unterbrechung, die aus der [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks)-Sammlung abgerufen und von den Ereignisargumenten verfügbar gemacht wurde, durch einen Aufruf der [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689)-Methode des **MediaPlayer.BreakManager** sofort wiedergegeben.
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
@@ -96,8 +96,8 @@ Im folgenden Beispiel wird ein Handler für das **BufferingProgressChanged-Ereig
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Medienwiedergabe](media-playback.md)
-* [Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“](play-audio-and-video-with-mediaplayer.md)
-* [Manuelle Steuerung der Steuerelemente für den Systemmedientransport](system-media-transport-controls.md)
+* [Abspielen von Audio- und Videodateien mit MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Manuelle Steuerung für die System-Media-Transport-Steuerelemente](system-media-transport-controls.md)
 
  
 

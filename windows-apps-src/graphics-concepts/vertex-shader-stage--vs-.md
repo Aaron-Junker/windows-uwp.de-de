@@ -1,23 +1,23 @@
 ---
-title: Scheitelpunkt-Shader- (VS) Phase
-description: Die Scheitelpunkt-Shader- (VS) Phase verarbeitet Scheitelpunkte und führt dabei in der Regel Vorgänge wie Transformationen, das Anwenden von Skins und Beleuchtung durch. Ein Scheitelpunkt-Shader verarbeitet immer einen einzigen Eingabescheitelpunkt und erzeugt daraus einen einzigen Ausgabescheitelpunkt.
+title: Vertexshaderphase (VS)
+description: Die Scheitelpunkt-Shader- (VS) Phase verarbeitet Scheitelpunkte und führt dabei in der Regel Vorgänge wie Transformationen, das Anwenden von Skins und Beleuchtung durch. Ein Vertex-Shader verarbeitet immer nur einen Eingabevertex und erzeugt daraus einen Ausgabevertex.
 ms.assetid: 5133C4BB-B4E6-4697-9276-F718AD44869C
 keywords:
-- Scheitelpunkt-Shader- (VS) Phase
+- Vertexshaderphase (VS)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ca3b5e230270b46b7cb2709d4bfa06c4c51d0224
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947192"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598155"
 ---
-# <a name="vertex-shader-vs-stage"></a>Scheitelpunkt-Shader- (VS) Phase
+# <a name="vertex-shader-vs-stage"></a>Vertexshaderphase (VS)
 
 
-Die Scheitelpunkt-Shader- (VS) Phase verarbeitet Scheitelpunkte und führt dabei in der Regel Vorgänge wie Transformationen, das Anwenden von Skins und Beleuchtung durch. Ein Scheitelpunkt-Shader verarbeitet immer einen einzigen Eingabescheitelpunkt und erzeugt daraus einen einzigen Ausgabescheitelpunkt.
+Die Scheitelpunkt-Shader- (VS) Phase verarbeitet Scheitelpunkte und führt dabei in der Regel Vorgänge wie Transformationen, das Anwenden von Skins und Beleuchtung durch. Ein Vertex-Shader verarbeitet immer nur einen Eingabevertex und erzeugt daraus einen Ausgabevertex.
 
 ## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Zweck und Verwendung
 
@@ -33,23 +33,23 @@ Die Scheitelpunkt-Shader-Stufe ist eine programmierbare Shader-Stufe. Sie wird i
 
 Die Scheitelpunkt-Shader- (VS) Phase verarbeitet Scheitelpunkte aus dem Eingabe-Assembler. Ein Scheitelpunkt-Shader operiert immer auf einem einzigen Eingabescheitelpunkt und erzeugt daraus einen einzigen Ausgabescheitelpunkt. Die Scheitelpunkt-Shader-Phase muss immer für auszuführende Pipeline aktiv sein. Wenn keine Scheitelpunktänderung oder -transformation erforderlich ist, muss ein Pass-Through-Scheitelpunkt-Shader erstellt und auf die Pipeline festgelegt werden.
 
-Jeder Scheitelpunkt-Shader-Eingabescheitelpunkt kann aus bis zu 16 32-Bit-Vektoren (mit jeweils bis zu 4 Komponenten) bestehen. Jeder Ausgabescheitelpunkt kann aus bis zu 16 32-Bit-Vektoren mit jeweils 4 Komponenten bestehen. Alle Scheitelpunkt-Shader benötigen mindestens eine Eingabe und eine Ausgabe, die so klein wie ein Skalarwert sein können.
+Jeder Eingabevertex für einen Vertex-Shader kann aus mehreren 32-Bit-Vektoren bestehen (maximal 16, mit jeweils bis zu 4-Komponenten). Jeder Ausgabevertex kann aus mehreren 32-Bit-Vektoren bestehen (maximal 16 mit jeweils 4 Komponenten). Alle Scheitelpunkt-Shader benötigen mindestens eine Eingabe und eine Ausgabe, die so klein wie ein Skalarwert sein können.
 
-Der Scheitelpunkt-Shader-Phase kann zwei vom System generierte Werte vom Eingabe-Assembler verarbeiten: Scheitelpunkt-ID und Instanz-ID (vgl. Systemwerte und Semantik). Da Scheitelpunkt-ID und Instanz-ID auf Scheitelpunktebene bedeutsam sind und von der Hardware generierte IDs nur in di erste Phase eingegeben werden können, die sie versteht, können diese ID-Werte nur in die Scheitelpunkt-Shader-Phase eingegeben werden.
+Die Vertex-Shader-Stufe kann zwei vom System generierte Werte aus der Eingabe-Assembler verwenden: VertexID und Instanz-ID (Siehe Systemwerte und Semantik). Da Scheitelpunkt-ID und Instanz-ID auf Scheitelpunktebene bedeutsam sind und von der Hardware generierte IDs nur in di erste Phase eingegeben werden können, die sie versteht, können diese ID-Werte nur in die Scheitelpunkt-Shader-Phase eingegeben werden.
 
 Scheitelpunkt-Shader werden immer auf allen Scheitelpunkten ausgeführt, einschließlich benachbarter Scheitelpunkte in Eingabe-Grundtyp-Topologien mit Nachbarschaft. Die Ausführungshäufigkeit des Scheitelpunkt-Shaders kann von der CPU mithilfe der VSInvocations-Pipelinestatistik abgefragt werden.
 
-Ein Scheitelpunkt-Shader kann Lade- und Textursampling-Vorgänge durchführen, bei denen Bildschirmbereichsableitungen nicht erforderlich sind (mithilfe systeminterner HLSL-Funktionen: [Sample (DirectX HLSL Texture Object)](https://msdn.microsoft.com/library/windows/desktop/bb509695), [SampleCmpLevelZero (DirectX HLSL Texture Object)](https://msdn.microsoft.com/library/windows/desktop/bb509697) und [SampleGrad (DirectX HLSL Texture Object)](https://msdn.microsoft.com/library/windows/desktop/bb509698)).
+Ein Vertex-Shader kann laden und Ausführen textursampling Vorgänge Bildschirmbereich ableitungen sind, in denen nicht erforderlich (Verwenden der systeminternen Funktionen "HLSL": [Beispiel (HLSL von DirectX-Textur-Objekt)](https://msdn.microsoft.com/library/windows/desktop/bb509695), [SampleCmpLevelZero (HLSL von DirectX-Textur-Objekt)](https://msdn.microsoft.com/library/windows/desktop/bb509697), und [SampleGrad (HLSL von DirectX-Textur-Objekt)](https://msdn.microsoft.com/library/windows/desktop/bb509698)).
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Eingabe
 
 
-Ein einzelner Scheitelpunkt- mit den vom System generierten Werten Scheitelpunkt-ID und Instanz-ID. Jeder Eingabevertex für einen Vertex-Shader kann aus mehreren 32-Bit-Vektoren bestehen (maximal 16, mit jeweils bis zu 4-Komponenten).
+Ein einzelner Vertex mit systemgenerierten Werten wie VertexID und InstanceID. Jeder Eingabevertex für einen Vertex-Shader kann aus mehreren 32-Bit-Vektoren bestehen (maximal 16, mit jeweils bis zu 4-Komponenten).
 
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Ausgabe
 
 
-Ein einzelner Vertex. Jeder Ausgabescheitelpunkt kann aus bis zu 16 32-Bit-Vektoren mit jeweils 4 Komponenten bestehen.
+Ein einzelner Vertex. Jeder Ausgabevertex kann aus mehreren 32-Bit-Vektoren bestehen (maximal 16 mit jeweils 4 Komponenten).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 

@@ -1,6 +1,6 @@
 ---
 title: Vektoren, Scheitelpunkte und Quaternionen
-description: In Direct3D beschreiben Scheitelpunkte die Position und Ausrichtung. Jeder Scheitelpunkt in einem Grundtyp wird durch einen Vektor, der seine Position, Farbe, Textur und Koordinaten angibt, sowie einen normalen Vektor für seine Ausrichtung beschrieben.
+description: In Direct3D beschreiben Scheitelpunkte die Position und Ausrichtung. Jeder Scheitelpunkt in einen Grundtyp wird durch einen Vektor beschrieben, der die Positions-, Farb-, Texturkoordinaten angibt sowie durch einen normalen Vektor, der die Ausrichtung angibt.
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
 keywords:
 - Vektoren, Scheitelpunkte und Quaternionen
@@ -8,22 +8,22 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8942e53b7372e2e8b3cf4ed05f89b4187bdfc4be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926409"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599865"
 ---
 # <a name="vectors-vertices-and-quaternions"></a>Vektoren, Scheitelpunkte und Quaternionen
 
 
-In Direct3D beschreiben Scheitelpunkte die Position und Ausrichtung. Jeder Scheitelpunkt in einem Grundtyp wird durch einen Vektor, der seine Position, Farbe, Textur und Koordinaten angibt, sowie einen normalen Vektor für seine Ausrichtung beschrieben.
+In Direct3D beschreiben Scheitelpunkte die Position und Ausrichtung. Jeder Scheitelpunkt in einen Grundtyp wird durch einen Vektor beschrieben, der die Positions-, Farb-, Texturkoordinaten angibt sowie durch einen normalen Vektor, der die Ausrichtung angibt.
 
-Quaternionen fügen ein viertes Element zu den \[x, y, Z\]-Werten hinzu, die einen Drei-Komponenten-Vektor definieren. Quaternionen sind eine Alternative zu Matrix-Methoden, die in der Regel für 3D -Drehungen verwendet werden. Ein Quaternion repräsentiert eine Achse im 3D-Raum sowie eine Drehung um diese Achse. Beispielsweise kann ein Quaternion eine (1,1,2)-Achse und eine Drehung um ein Bogenmaß repräsentieren. Quaternionen enthalten wertvolle Informationen, ihr wirklicher Nutzen liegt jedoch in zwei Operationen, die Sie mit ihnen durchführen können: Komposition und Interpolation.
+Quaternionen hinzufügen, eine vierte Element mit der \[X, y, Z\] Werte, die einen drei-Komponente-Vektor zu definieren. Quaternionen sind eine Alternative zu Matrix-Methoden, die in der Regel für 3D -Drehungen verwendet werden. Ein Quaternion repräsentiert eine Achse im 3D-Raum sowie eine Drehung um diese Achse. Beispielsweise kann ein Quaternion eine (1,1,2)-Achse und eine Drehung um ein Bogenmaß repräsentieren. Quaternionen enthalten wertvolle Informationen, ihr wirklicher Nutzen liegt jedoch in zwei Operationen, die Sie mit ihnen durchführen können: Komposition und Interpolation.
 
 Die Durchführung einer Komposition mit Quaternionen ist vergleichbar mit ihrer Kombinierung. Die Komposition von zwei Quaternionen wird wie in der folgenden Abbildung gezeigt notiert.
 
-![Illustrationder Quaternionendrehung](images/quateq.png)
+![Illustration der Quaternionendrehung](images/quateq.png)
 
 Die Komposition von zwei Quaternionen für eine Geometrie bedeutet die „Drehung der Geometrie um Ache₂ mit Drehung₂ und anschließend um Achse₁ mit Drehung₁". In diesem Fall ist Q eine Drehung um eine einzelne Achse als Ergebnis der Anwendung von q₂ und dann von q₁ auf die Geometrie.
 

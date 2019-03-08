@@ -4,14 +4,14 @@ title: Vorlageneinstellungsklassen
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b44aaf741c188658c7a639422b0d091f8db6e3e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924866"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589785"
 ---
 # <a name="template-settings-classes"></a>Vorlageneinstellungsklassen
 
@@ -26,14 +26,14 @@ Es wird davon ausgegangen, dass Sie Ihrer Benutzeroberfläche Steuerelemente hin
 
 Es gibt mehrere **TemplateSettings**-Klassen. Alle sind im [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818)-Namespace enthalten. Im Anschluss finden Sie eine Liste der Klassen und einen Link zur **TemplateSettings**-Eigenschaft des entsprechenden Steuerelements. Mit dieser **TemplateSettings**-Eigenschaft greifen Sie auf die **TemplateSettings**-Werte für das Steuerelement zu und können Vorlagenbindungen an seine Eigenschaften festlegen:
 
--   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): Wert von [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
--   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): Wert von [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
--   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): Wert von [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
--   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): Wert von [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
--   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): Wert von [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
--   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): Wert von [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
--   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): Wert von [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
--   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): Wert von [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
+-   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): Wert der [ **ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
+-   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): Wert der [ **GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
+-   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): Wert der [ **ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
+-   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): Wert der [ **ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
+-   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): Wert der [ **ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
+-   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): Wert der [ **SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
+-   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): Wert der [ **ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
+-   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): Wert der [ **ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
 **TemplateSettings**-Eigenschaften sind zur Verwendung in XAML und nicht im Code bestimmt. Es handelt sich dabei um schreibgeschützte Untereigenschaften einer schreibgeschützten **TemplateSettings**-Eigenschaft eines übergeordneten Steuerelements. Für ein Szenario mit erweiterten benutzerdefinierten Steuerelementen, in dem Sie eine neue [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390)-basierte Klasse erstellen und daher die Steuerelementlogik beeinflussen können, empfiehlt es sich, eine benutzerdefinierte **TemplateSettings**-Eigenschaft für das Steuerelement zu definieren, um hilfreiche Informationen für das Ändern der Vorlage eines Steuerelements zu kommunizieren. Als schreibgeschützten Wert dieser Eigenschaft definieren Sie eine neue **TemplateSettings**-Klasse im Zusammenhang mit Ihrem Steuerelement, das schreibgeschützte Eigenschaften für alle Informationselemente aufweist, die für Vorlagenmaße, Animationspositionierung usw. relevant sind, und geben Aufrufern die Runtime-Instanz dieser Klasse, die mit Ihrer Steuerelementlogik initialisiert wird. **TemplateSettings**-Klassen werden von [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) abgeleitet, sodass die Eigenschaften das Abhängigkeitseigenschaftensystem für Rückrufe für Eigenschaftsänderungen verwenden können. Die Bezeichner von Abhängigkeitseigenschaften für die Eigenschaften sind jedoch nicht als öffentliche API verfügbar, da die **TemplateSettings**-Eigenschaften für Aufrufer schreibgeschützt sein sollen.
 
@@ -54,7 +54,7 @@ Hier sehen Sie ein Beispiel aus den ersten XAML-Standardvorlagen für Steuerelem
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-Der vollständige XAML-Code für die [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)-Vorlage umfasst mehrere hundert Zeilen, hierbei handelt es sich also nur um einen sehr kleinen Auszug. Dieser XAML-Code definiert einen Teil des Steuerelements, das als eines von sechs [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)-Elementen die sich drehende Animation für einen unbestimmten Fortschritt darstellt. Ihnen als Entwickler gefallen die Kreise möglicherweise nicht, und Sie möchten einen anderen Grafikgrundtyp oder eine andere grundlegende Form für den Animationsverlauf verwenden. Sie können stattdessen z.B. ein **ProgressRing**-Element erstellen, das eine Reihe von in einem Quadrat angeordneten [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Elementen enthält. Dabei kann jede einzelne **Rectangle**-Komponente Ihrer neuen Vorlage wie folgt aussehen:
+Der vollständige XAML-Code für die [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)-Vorlage umfasst mehrere hundert Zeilen, hierbei handelt es sich also nur um einen sehr kleinen Auszug. Dieser XAML-Code definiert einen Teil des Steuerelements, das als eines von sechs [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)-Elementen die sich drehende Animation für einen unbestimmten Fortschritt darstellt. Ihnen als Entwickler gefallen die Kreise möglicherweise nicht, und Sie möchten einen anderen Grafikgrundtyp oder eine andere grundlegende Form für den Animationsverlauf verwenden. Sie können stattdessen z. B. ein **ProgressRing**-Element erstellen, das eine Reihe von in einem Quadrat angeordneten [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Elementen enthält. Dabei kann jede einzelne **Rectangle**-Komponente Ihrer neuen Vorlage wie folgt aussehen:
 
 ```xml
 <Rectangle
@@ -95,7 +95,7 @@ Hier sehen Sie ein weiteres Beispiel für die Verwendung von standardmäßigen X
 
 Da auch diese Vorlage viel XAML-Code enthält, zeigen wir wieder nur einen Auszug. Dies ist nur ein Beispiel für die Zustände und Designanimationen, die dieselben [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752)-Eigenschaften verwenden. Für [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) erzwingt die Verwendung der **ComboBoxTemplateSettings**-Werte durch Bindungen, dass verwandte Animationen in der Vorlage beendet werden und an Positionen beginnen, die auf gemeinsamen Werten basieren. Dadurch ist der Übergang nahtlos.
 
-**Hinweis:**  , wenn Sie **TemplateSettings** Werte als Teil Ihrer Steuerelementvorlage verwenden, stellen Sie sicher, dass Sie bei der Festlegen von Eigenschaften, die den Typ des Werts entsprechen. Andernfalls müssen Sie u.U. einen Wertkonverter für die Bindung erstellen, damit der Zieltyp der Bindung von einem anderen Quelltyp des **TemplateSettings**-Werts konvertiert werden kann. Weitere Informationen finden Sie unter [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
+**Beachten Sie**    bei Verwendung **TemplateSettings** Werte als Teil Ihrer Steuerelementvorlage, stellen Sie sicher, Eigenschaften, die den Typ des Werts übereinstimmen einstellen. Andernfalls müssen Sie u. U. einen Wertkonverter für die Bindung erstellen, damit der Zieltyp der Bindung von einem anderen Quelltyp des **TemplateSettings**-Werts konvertiert werden kann. Weitere Informationen finden Sie unter [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
 ## <a name="related-topics"></a>Verwandte Themen
 

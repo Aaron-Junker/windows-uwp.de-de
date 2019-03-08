@@ -4,14 +4,14 @@ title: XAML und Leerzeichen
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 521e794680df6449ebc49745319c4aeec74405d1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923906"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589955"
 ---
 # <a name="xaml-and-whitespace"></a>XAML und Leerzeichen
 
@@ -20,7 +20,7 @@ Informationen zu von XAML verwendeten Regeln für die Leerzeichenverarbeitung.
 
 ## <a name="whitespace-processing"></a>Leerzeichenverarbeitung
 
-In XML sind Leerzeichen in XAML Leerzeichen, Zeilenvorschub und Tabulator. Diese entsprechen den Unicode-Werten "0020" 000A und 0009. Standardmäßig wird diese Leerzeichennormalisierung angewendet, wenn ein XAML-Verarbeiter auf internen Text zwischen Elementen in einer XAML-Datei stößt:
+In XAML werden genau wie in XML Leerstellen, Zeilenvorschub und Tabulator als Leerzeichen verwendet. Diese entsprechen den Unicode-Werten "0020", "000A" bzw. "0009". Standardmäßig wird diese Leerzeichennormalisierung angewendet, wenn ein XAML-Verarbeiter auf internen Text zwischen Elementen in einer XAML-Datei stößt:
 
 -   Zeilenvorschubzeichen zwischen ostasiatischen Zeichen werden entfernt.
 -   Alle Leerzeichen (Leerstelle, Zeilenvorschub, Tabulator) werden in Leerstellen umgewandelt.
@@ -50,7 +50,7 @@ Auch bei Inhaltsmodellen, die Zeichenfolgen akzeptieren, gilt das folgende Stand
 
 Leerzeichen im Quell-XAML-Code können für die spätere Darstellung auf unterschiedliche Arten beibehalten werden. Diese sind von der XAML-Leerzeichennormalisierung des XAML-Verarbeiters nicht betroffen.
 
-`xml:space="preserve"`: Geben Sie dieses Attribut auf der Ebene des Elements an, für das die Leerzeichen erhalten bleiben sollen. Beachten Sie, dass dadurch alle Leerzeichen erhalten bleiben, einschließlich derer, die möglicherweise von Codeeditoren oder Entwurfsoberflächen hinzugefügt werden, um Markupelemente als visuell intuitive Schachtelung auszurichten. Ob diese Leerzeichen gerendert werden ist ebenfalls wieder eine Frage des Inhaltsmodells für das Containerelement. Wir raten davon ab, `xml:space="preserve"` auf Stammebene anzugeben, da die Mehrzahl an Objektmodellen Leerzeichen in der Regel nicht als signifikant ansehen. Legen Sie das Attribut stattdessen explizit nur auf der Ebene der Elemente fest, die Leerzeichen innerhalb von Zeichenfolgen rendern oder bei denen es sich um Sammlungen handelt, in denen Leerzeichen von Bedeutung sind.
+`xml:space="preserve"`: Legen Sie dieses Attribut auf der Ebene des Elements, in denen Leerraum beibehalten werden muss. Beachten Sie, dass dadurch alle Leerzeichen erhalten bleiben, einschließlich derer, die möglicherweise von Codeeditoren oder Entwurfsoberflächen hinzugefügt werden, um Markupelemente als visuell intuitive Schachtelung auszurichten. Ob diese Leerzeichen gerendert werden ist ebenfalls wieder eine Frage des Inhaltsmodells für das Containerelement. Wir raten davon ab, `xml:space="preserve"` auf Stammebene anzugeben, da die Mehrzahl an Objektmodellen Leerzeichen in der Regel nicht als signifikant ansehen. Legen Sie das Attribut stattdessen explizit nur auf der Ebene der Elemente fest, die Leerzeichen innerhalb von Zeichenfolgen rendern oder bei denen es sich um Sammlungen handelt, in denen Leerzeichen von Bedeutung sind.
 
-Entitäten und geschützte Leerzeichen: In XAML kann eine beliebige Unicodeentität innerhalb eines Textobjektmodells angegeben werden. Sie können dedizierte Entitäten wie geschützte Leerzeichen (in UTF-8-Codierung) verwenden. Darüber hinaus können Sie Rich-Text-Steuerelemente verwenden, die geschützte Leerzeichen unterstützen. Gehen Sie mit Bedacht vor, wenn Sie Layoutmerkmale wie Einzüge mithilfe von Entitäten simulieren, da die Laufzeitausgabe der Entitäten von einer größeren Anzahl von Faktoren abhängt als bei den allgemeinen Layoutkomponenten, beispielsweise der ordnungsgemäßen Verwendung von Bereichen und Rändern.
+Entitäten und geschützte Leerzeichen: XAML unterstützt, platziert eine Unicode-Entität in einem Textobjektmodell. Sie können dedizierte Entitäten wie geschützte Leerzeichen (in UTF-8-Codierung) verwenden. Darüber hinaus können Sie Rich-Text-Steuerelemente verwenden, die geschützte Leerzeichen unterstützen. Gehen Sie mit Bedacht vor, wenn Sie Layoutmerkmale wie Einzüge mithilfe von Entitäten simulieren, da die Laufzeitausgabe der Entitäten von einer größeren Anzahl von Faktoren abhängt als bei den allgemeinen Layoutkomponenten, beispielsweise der ordnungsgemäßen Verwendung von Bereichen und Rändern.
 

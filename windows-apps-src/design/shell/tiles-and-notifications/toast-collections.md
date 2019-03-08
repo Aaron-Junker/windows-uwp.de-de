@@ -1,27 +1,27 @@
 ---
-Description: Learn how to group notifications in Action Center using collections.
+Description: Erfahren Sie, wie Sie Benachrichtigungen im Info-Center mithilfe von Sammlungen zu gruppieren.
 title: Popupsammlungen
 label: Toast Collections
 template: detail.hbs
 ms.date: 05/16/2018
 ms.topic: article
-keywords: Windows10, UWP, Benachrichtigungen, Sammlungen, Sammlung, Gruppenbenachrichtigungen, Gruppieren von Benachrichtigungen, gruppieren, organisieren, Info-Center, Popup
+keywords: Windows 10, UWP, Benachrichtigungen, Sammlungen, Sammlung, Gruppenbenachrichtigungen, Gruppieren von Benachrichtigungen, gruppieren, organisieren, Info-Center, Popup
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b6818f876c094298a0a6636faa00efa9a192545
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943881"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600685"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Gruppieren von Popupbenachrichtigungen mit Sammlungen
 Verwenden Sie Sammlungen, um Ihre App-Popups im Info-Center zu organisieren. Mithilfe von Sammlungen können Benutzer Informationen im Info-Center leichter finden und Entwickler können ihre Benachrichtigungen besser verwalten.  Die folgenden APIs ermöglichen das Entfernen, Erstellen und Aktualisieren von Benachrichtigungssammlungen.
 
 > [!IMPORTANT]
-> **Erfordert Creators Update**: Sie müssen als Ziel das SDK 15063 angeben und Build 15063 oder höher ausführen, um Popupbenachrichtigungen zu verwenden. Zugehörige APIs: [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection) und [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **Erfordert Creators Update**: Sie müssen SDK 15063 ausgerichtet und Build 15063 oder höher, um den Toast Sammlungen ausgeführt werden. Zugehörige APIs: [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection) und [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 Sie sehen das folgende Beispiel einer Messaging-App, die die Benachrichtigungen basierend auf der Chatgruppe trennt. Jeder Titel (Comp Sci 160A Project Chat, Direct Messages, Lacrosse Team Chat) ist eine separate Sammlung.  Beachten Sie, wie die Benachrichtigungen unterschiedlich gruppiert werden, als wären sie von einer separaten App, obwohl sie alle Benachrichtigungen von derselben App sind.  Wenn Sie Benachrichtigungen auf raffiniertere Art organisieren möchten, lesen Sie [Popup-Header](toast-headers.md).  
-![Sammlungsbeispiel mit zwei unterschiedlichen Gruppen von Benachrichtigungen](images/toast-collection-example.png)
+![Auflistungsbeispiel für die mit zwei verschiedenen Gruppen von Benachrichtigungen](images/toast-collection-example.png)
 
 ## <a name="creating-collections"></a>Erstellen von Sammlungen
 Bei der Erstellung jeder Sammlung müssen Sie einen Anzeigenamen und ein Symbol angeben, die als Teil des Sammlungstitels im Info-Center angezeigt werden, wie in der Abbildung oben dargestellt. Sammlungen erfordern außerdem ein Start-Argument, damit die App zur richtigen Stelle in der App navigieren kann, wenn ein Benutzer auf den Titel der Sammlung klickt.  
@@ -149,7 +149,7 @@ await collectionManager.SaveToastCollectionAsync(updatedToastCollection);
 ```
 ## <a name="managing-toasts-within-a-collection"></a>Verwalten von Popups in einer Sammlung
 #### <a name="group-and-tag-properties"></a>Gruppierungs- und Tag-Eigenschaften
-Die Gruppierungs- und Tag-Eigenschaften identifizieren zusammen eine Benachrichtigung in einer Sammlung eindeutig.  Gruppe (und Tag) dienen als zusammengesetzter primärer Schlüssel (mehr als eine ID) zur Identifizierung der Benachrichtigung. Wenn Sie z.B. eine Benachrichtigung entfernen oder ersetzen möchten, müssen Sie angeben können, *welche Benachrichtigung* entfernt/ersetzt werden soll. Dies erreichen Sie durch Angabe von Tag und Gruppe. Ein Beispiel ist eine Messaging-App.  Der Entwickler könnte die Unterhaltungs-ID als Gruppe und die Nachrichten-ID als Tag verwenden.
+Die Gruppierungs- und Tag-Eigenschaften identifizieren zusammen eine Benachrichtigung in einer Sammlung eindeutig.  Gruppe (und Tag) dienen als zusammengesetzter primärer Schlüssel (mehr als eine ID) zur Identifizierung der Benachrichtigung. Wenn Sie z. B. eine Benachrichtigung entfernen oder ersetzen möchten, müssen Sie angeben können, *welche Benachrichtigung* entfernt/ersetzt werden soll. Dies erreichen Sie durch Angabe von Tag und Gruppe. Ein Beispiel ist eine Messaging-App.  Der Entwickler könnte die Unterhaltungs-ID als Gruppe und die Nachrichten-ID als Tag verwenden.
 
 #### <a name="remove-a-toast-from-a-collection"></a>Entfernen eines Popups aus einer Sammlung
 Sie können einzelne Popups mithilfe der Tag- und Gruppen-IDs entfernen oder alle Popups in einer Sammlung löschen.
@@ -188,6 +188,6 @@ Die Popupsammlungen, die Sie erstellen, werden auch in den Benachrichtigungseins
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Popupinhalt](adaptive-interactive-toasts.md)
-* [Popup-Header](toast-headers.md)
-* [Benachrichtigungsbibliothek auf GitHub (Teil des Windows-Community-Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Inhalt der Popupbenachrichtigung](adaptive-interactive-toasts.md)
+* [Toast-Header](toast-headers.md)
+* [Benachrichtigungsbibliothek auf GitHub (Teil der Windows-Community-Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

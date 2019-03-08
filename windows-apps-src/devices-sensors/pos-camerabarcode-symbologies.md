@@ -6,14 +6,14 @@ ms.topic: article
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 14cb42e0bd0f1bac307a9dfc1ac188d8b11d8cb8
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115797"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610325"
 ---
 # <a name="symbologies"></a>Symbologien
-Dieses Thema enthält Beispiel-Barcodes für jede Symbologie, die vom Software-Strichcode-Decoder unterstützt wird, die mit im Lieferumfang von Windows10 enthalten sind, einschließlich: UPC/EAN, Code 39, Code 128, Interleaved 2 of 5, Databar Omnidirectional, Databar Stacked, QR Code und GS1DWCode.
+Dieses Thema enthält Beispiel-Barcodes aller die Symbologien, die von der Software Barcode-Decoder, der im Lieferumfang von Windows 10, z. B. unterstützt: UPC/EAN, 39-Code, Code 128, Interleaved 2 aus 5, Datenbalken omnidirektionale, Datenbalken gestapelte QR-Code und GS1DWCode.
 
 ## <a name="1d-symbologies"></a>1D-Symbologien
 
@@ -55,4 +55,4 @@ Scannen Sie das Image eines Pakets unten mit der Kamera-StrichcodesScanner-Anwen
 ![Strichcodebeispiel - GS1DWCode](images/pos/rice-box-v7.jpg)
 
 > [!NOTE]
-> Der in Windows10 integrierte Softwaredecoder stammt von [*Digimarc Corporation*](https://www.digimarc.com/)
+> Der in Windows 10 integrierte Softwaredecoder stammt von [*Digimarc Corporation*](https://www.digimarc.com/)

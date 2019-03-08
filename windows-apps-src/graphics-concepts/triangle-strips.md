@@ -1,23 +1,23 @@
 ---
-title: Dreieckstreifen
-description: Ein Dreiecksstrip ist eine Reihe verbundener Dreiecke. Da die Dreiecke verbunden sind, muss die Anwendung nicht alle drei Scheitelpunkte für jedes Dreieck wiederholt angeben.
+title: Dreiecksstrips
+description: Ein Dreieckstreifen ist eine Reihe verbundener Dreiecke. Da die Dreiecke verbunden sind, muss die Anwendung nicht alle drei Scheitelpunkte für jedes Dreieck wiederholt angeben.
 ms.assetid: BACC74C5-14E5-4ECC-9139-C2FD1808DB82
 keywords:
-- Dreieckstreifen
+- Dreiecksstrips
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945902"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599285"
 ---
-# <a name="triangle-strips"></a>Dreieckstreifen
+# <a name="triangle-strips"></a>Dreiecksstrips
 
 
-Ein Dreiecksstrip ist eine Reihe verbundener Dreiecke. Da die Dreiecke verbunden sind, muss die Anwendung nicht alle drei Scheitelpunkte für jedes Dreieck wiederholt angeben. So benötigen Sie beispielsweise nur sieben Scheitelpunkte zur Definition des folgenden Dreieckstreifens.
+Ein Dreieckstreifen ist eine Reihe verbundener Dreiecke. Da die Dreiecke verbunden sind, muss die Anwendung nicht alle drei Scheitelpunkte für jedes Dreieck wiederholt angeben. So benötigen Sie beispielsweise nur sieben Scheitelpunkte zur Definition des folgenden Dreieckstreifens.
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Beispiel
 
@@ -28,7 +28,7 @@ Das System verwendet die Scheitelpunkte v1, v2 und v3 zum Zeichnen des ersten Dr
 
 Die meisten Objekte in 3D-Szenen bestehen aus Dreieckstreifen. Der Grund dafür ist, dass mit Dreieckstreifen komplexe Objekte so zusammengesetzt werden können, dass Speicherplatz und Verarbeitungszeit dabei effizient genutzt werden.
 
-Die folgende Abbildungzeigt einen gerenderte Dreieckstreifen.
+Die folgende Abbildung zeigt einen gerenderte Dreieckstreifen.
 
 ![Illustration eines gerenderten Dreieckstreifens](images/tstrip2.png)
 
@@ -61,7 +61,7 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie diesen Dreieckstreifen i
 d3dDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 4);
 ```
 
-## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>Vielecke
+## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>Polygone
 
 
 Häufig werden Dreieckstreifen verwendet, um Vielecke zu erstellen. Ein Vieleck ist eine geschlossene 3D-Figur, die von mindestens drei Scheitelpunkten begrenzt wird. Das einfachste Vieleck ist ein Dreieck. Microsoft Direct3D verwendet Dreiecke zur Erstellung der meisten Vielecke, da alle drei Scheitelpunkte in einem Dreieck garantiert auf der gleichen Ebene liegen. Das Rendern von nicht-planaren Scheitelpunkten ist ineffizient. Sie können Dreiecke zu großen, komplexen Vielecken und Gittern kombinieren.
@@ -70,14 +70,14 @@ Die folgende Abbildung zeigt einen Würfel. Je zwei Dreiecke bilden die einzelne
 
 ![Illustration eines Würfels mit zwei Dreiecken auf jeder Seite](images/cube3d.png)
 
-Sie können mit Dreiecken auch Grundtypen erstellen, deren Oberflächen wie glatte Kurven aussehen. Die folgende Abbildungzeigt die Simulation einer Kugel mithilfe von Dreiecken. Nach der Anwendung eines Materials kann die Kugel beim Rendern so gestaltet werden, dass sie rund wirkt.
+Sie können mit Dreiecken auch Grundtypen erstellen, deren Oberflächen wie glatte Kurven aussehen. Die folgende Abbildung zeigt die Simulation einer Kugel mithilfe von Dreiecken. Nach der Anwendung eines Materials kann die Kugel beim Rendern so gestaltet werden, dass sie rund wirkt.
 
 ![Illustration einer mithilfe von Dreiecken simulierten Kugel](images/sphere3d.png)
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Grundtypen](primitives.md)
+[Primitive Typen](primitives.md)
 
  
 

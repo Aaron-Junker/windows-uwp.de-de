@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Spiele, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 37deaabe2586391b0f0c93359133f10830558539
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981494"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608855"
 ---
 # <a name="game-flow-management"></a>Spielablaufverwaltung
 
@@ -24,7 +24,7 @@ Das Spiel hat nun ein Fenster, registriert einige Ereignishandler und lädt Asse
 
 Wir verwalten den Spielablauf mithilfe von Spielzuständen. Wenn ein Benutzer eine UWP-Spiel-App aus einem angehaltenen Zustand fortsetzt, kann das Spiel eine beliebigen der möglichen Zustände besitzen.
 
-In diesem Beispiel kann sich das Spiel beim Start in einem von dreiZuständen befinden:
+In diesem Beispiel kann sich das Spiel beim Start in einem von drei Zuständen befinden:
 * Die Spielschleife wird mitten in einem Level ausgeführt.
 * Die Spielschleife wird nicht ausgeführt, da gerade ein Spiel abgeschlossen wurde. (Der Highscore ist festgelegt)
 * Es wurde kein Spiel gestartet, oder das Spiel befindet sich zwischen zwei Leveln. (Der Highscore ist 0)
@@ -41,7 +41,7 @@ Dementsprechend stellt das Fortsetzungsereignis sicher, dass das Beispielspiel a
 
 Je nach Zustand hat der Spieler unterschiedliche Möglichkeiten. 
 
-* Wird das Spiel mitten in einem Level fortgesetzt, entsteht der Eindruck, es sei angehalten, und auf dem Overlay steht eine Fortsetzungsoption zur Verfügung.
+* Wird das Spiel mitten in einem Level fortgesetzt, entsteht der Eindruck, es sei  pausiert, und auf dem Overlay steht eine Fortsetzungsoption zur Verfügung.
 * Wenn das Spiel in einem Zustand fortgesetzt wird, in dem es abgeschlossen ist, zeigt es die Highscores und eine Option zum Starten eines neuen Spiels an.
 * Wird das Spiel dagegen vor dem Start eines Levels fortgesetzt, sieht der Spieler eine Startoption auf dem Overlay.
 
@@ -131,9 +131,9 @@ In der Methode [__App::Run__](https://github.com/Microsoft/Windows-universal-sam
 
 Im Spielbeispiel kann sich das Spiel in drei Hauptzuständen (__UpdateEngineState__) befinden:
 
-1. __Waiting for resources__: Die Spielschleife wird durchlaufen, und ein Übergang ist erst möglich, wenn Ressourcen (insbesondere Grafikressourcen) verfügbar sind. Nach Abschluss der asynchronen Aufgaben zum Laden der Ressourcen wird der Zustand zu __ResourcesLoaded__ aktualisiert. Dieser Fall tritt üblicherweise zwischen Leveln ein, wenn ein Level neue Ressourcen von einem Datenträger, einem Spieleserver oder Cloudbackend lädt. Im Spielbeispiel simulieren wir dieses Verhalten, da an dieser Stelle keine zusätzlichen levelspezifischen Ressourcen für das Spiel geladen werden müssen.
-2. __Waiting for press__: Die Spielschleife wird durchlaufen, bis eine bestimmte Benutzereingabe erfolgt. Bei der Eingabe handelt es sich um eine Spieleraktion zum Laden eines Spiels, zum Starten eines Levels oder zum Fortsetzen eines Levels. Der Beispielcode bezieht sich auf diese Unterzustände als __PressResultState__-Aufzählungswerte.
-3. In __Dynamics__: Die Spielschleife wird ausgeführt, während der Spieler spielt. Während der Spieler spielt, sucht das Spiel nach drei Bedingungen, auf die es reagieren kann: 
+1. __Warten auf Ressourcen__: Die Spielschleife wird durchlaufen, und ein Übergang ist erst möglich, wenn Ressourcen (insbesondere Grafikressourcen) verfügbar sind. Nach Abschluss der asynchronen Aufgaben zum Laden der Ressourcen wird der Zustand zu __ResourcesLoaded__ aktualisiert. Dieser Fall tritt üblicherweise zwischen Leveln ein, wenn ein Level neue Ressourcen von einem Datenträger, einem Spieleserver oder Cloudbackend lädt. Im Spielbeispiel simulieren wir dieses Verhalten, da an dieser Stelle keine zusätzlichen levelspezifischen Ressourcen für das Spiel geladen werden müssen.
+2. __Drücken Sie warten__: Die Spielschleife wird durchlaufen, bis eine bestimmte Benutzereingabe erfolgt. Bei der Eingabe handelt es sich um eine Spieleraktion zum Laden eines Spiels, zum Starten eines Levels oder zum Fortsetzen eines Levels. Der Beispielcode bezieht sich auf diese Unterzustände als __PressResultState__-Aufzählungswerte.
+3. In __Dynamics__: Die Spielschleife wird ausgeführt, und der Spieler spielt. Während der Spieler spielt, sucht das Spiel nach drei Bedingungen, auf die es reagieren kann: 
     * __TimeExpired__: Ablauf des Zeitlimits für einen Level
     * __LevelComplete__: Abschluss eines Levels durch den Spieler 
     * __GameComplete__: Abschluss aller Level durch den Spieler
@@ -144,7 +144,7 @@ Betrachten wir nun den Code für die Aktualisierungsschleife unten.
 
 ### <a name="appupdate-method"></a>App::Update method
 
-Die Struktur des Zustandsautomaten zur Aktualisierung der Spiele-Engine
+Die Struktur des Zustandsautomaten zur Aktualisierung der Spielengine
 
 ```cpp
 void GameMain::Update()
@@ -289,7 +289,7 @@ Dies sind die in diesem Beispiel verwendeten Ereignishandler sowie die jeweils b
 <td align="left">OnDpiChanged</td>
 <td align="left">Behandelt <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>. Der DPI-Wert der Anzeige hat sich geändert, und das Spiel passt seine Ressourcen entsprechend an.
 <div class="alert">
-<strong>Hinweis:</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong></a> -Koordinaten sind in DIPs (Device Independent Pixels) für <a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>. Daher müssen Sie Direct2D über die DPI-Änderung informieren, damit die 2D-Ressourcen oder -Grundtypen korrekt angezeigt werden.
+<strong>Beachten Sie</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>"corewindow"</strong> </a> Koordinaten sind als die DIPs (geräteunabhängigen Pixeln), für die <a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>. Daher müssen Sie Direct2D über die DPI-Änderung informieren, damit die 2D-Ressourcen oder -Grundtypen korrekt angezeigt werden.
 </div>
 <div>
 </div></td>
@@ -334,9 +334,9 @@ Dies sind die in diesem Beispiel verwendeten Ereignishandler sowie die jeweils b
 In diesem Thema haben wir erläutert, wie der allgemeine Spielablauf mithilfe von Spielzuständen verwaltet wird, und dass ein Spiel aus mehreren verschiedenen Zustandsautomaten besteht. Wir haben zudem gezeigt, wie Sie die UI aktualisieren und wichtige App-Ereignishandler verwalten können. Nun können wir uns mit der Renderingschleife, dem Spiel und seinen Mechanismen befassen.
  
 Sie können die anderen Komponenten, aus denen dieses Spiel besteht, in beliebiger Reihenfolge durcharbeiten:
-* [Definieren des Hauptobjekts für das Spiel](tutorial--defining-the-main-game-loop.md)
-* [Rendering-Framework I: Einführung in das Rendering](tutorial--assembling-the-rendering-pipeline.md)
-* [Rendering-Framework II: Spiel-Rendering](tutorial-game-rendering.md)
-* [Hinzufügen einer Benutzeroberfläche](tutorial--adding-a-user-interface.md)
+* [Das Spiele Hauptobjekt definieren](tutorial--defining-the-main-game-loop.md)
+* [Rendering-Framework I: Einführung zu rendern](tutorial--assembling-the-rendering-pipeline.md)
+* [Rendering-Framework II: Rendern von Spielen](tutorial-game-rendering.md)
+* [Fügen Sie eine Benutzeroberfläche hinzu](tutorial--adding-a-user-interface.md)
 * [Hinzufügen von Steuerelementen](tutorial--adding-controls.md)
-* [Hinzufügen von Sound](tutorial--adding-sound.md)
+* [Hinzufügen von sound](tutorial--adding-sound.md)

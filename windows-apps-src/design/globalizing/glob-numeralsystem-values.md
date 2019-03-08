@@ -1,5 +1,5 @@
 ---
-Description: This topic lists the values available to the NumeralSystem property of various classes in the Windows.Globalization namespace.
+Description: In diesem Thema werden die für die NumeralSystem-Eigenschaft von verschiedenen Klassen im Windows.Globalization-Namespace verfügbaren Werte aufgeführt.
 title: NumeralSystem-Werte
 template: detail.hbs
 ms.date: 11/02/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierung
 ms.localizationpriority: medium
 ms.openlocfilehash: f4b7e914684d2e4d3d9c4c1f0cdc7e88d7b5b8fe
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924002"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610045"
 ---
 # <a name="numeralsystem-values"></a>NumeralSystem-Werte
 
@@ -46,7 +46,7 @@ Dies sind die Werte für **NumeralSystem**, die von Windows unterstützt werden.
 | Knda | Kannada | U+0CE6, U+0CE7, U+0CE8, U+0CE9, U+0CEA, U+0CEB, U+0CEC, U+0CED, U+0CEE, U+0CEF |
 | Lana | Tai Tham Hora | U+1A80, U+1A81, U+1A82, U+1A83, U+1A84, U+1A85, U+1A86, U+1A87, U+1A88, U+1A89 |
 | LanaTham | Tai Tham Tham | U+1A90, U+1A91, U+1A92, U+1A93, U+1A94, U+1A95, U+1A96, U+1A97, U+1A98, U+1A99 |
-| Laoo | Lao | U+0ED0, U+0ED1, U+0ED2, U+0ED3, U+0ED4, U+0ED5, U+0ED6, U+0ED7, U+0ED8, U+0ED9 |
+| Laoo | Laotisch | U+0ED0, U+0ED1, U+0ED2, U+0ED3, U+0ED4, U+0ED5, U+0ED6, U+0ED7, U+0ED8, U+0ED9 |
 | Latn | Lateinisch | U+0030, U+0031, U+0032, U+0033, U+0034, U+0035, U+0036, U+0037, U+0038, U+0039 |
 | Lepc | Lepcha | U+1C40, U+1C41, U+1C42, U+1C43, U+1C44, U+1C45, U+1C46, U+1C47, U+1C48, U+1C49 |
 | Limb | Limbu | U+1946, U+1947, U+1948, U+1949, U+194A, U+194B, U+194C, U+194D, U+194E, U+194F |

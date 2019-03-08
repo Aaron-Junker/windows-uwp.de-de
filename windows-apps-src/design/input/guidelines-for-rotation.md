@@ -1,24 +1,24 @@
 ---
-Description: This topic describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
+Description: In diesem Thema wird beschrieben, die neue Windows-Benutzeroberfläche für die Rotation und enthält Richtlinien zur benutzerfreundlichkeit, die berücksichtigt werden sollten, wenn Sie dieser neue Mechanismus für die Interaktion in Ihre UWP-app verwenden.
 title: Drehung
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923794"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617205"
 ---
 # <a name="rotation"></a>Drehung
 
 
-In diesem Artikel wird die neue Windows-Benutzeroberfläche beschrieben, die Drehungen unterstützt. Außerdem enthält das Thema Richtlinien für die Benutzeroberfläche, die Sie berücksichtigen sollten, wenn Sie diesen neuen Interaktionsmechanismus in einer UWP-App verwenden.
+In diesem Artikel wird die neue Windows-Benutzeroberfläche beschrieben, die Drehungen unterstützt. Außerdem enthält er Richtlinien für die Benutzeroberfläche, die Sie berücksichtigen sollten, wenn Sie diesen neuen Interaktionsmechanismus in einer UWP-App verwenden.
 
 > **Wichtige APIs**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
@@ -29,7 +29,7 @@ In diesem Artikel wird die neue Windows-Benutzeroberfläche beschrieben, die Dre
 ## <a name="additional-usage-guidance"></a>Weitere Hinweise zur Verwendung
 
 
-**Übersicht über Drehung**
+**Übersicht über die Drehung**
 
 Die Drehung ist eine für Touchscreens optimierte Technik, die von UWP-Apps verwendet wird und mit der Benutzer ein Objekt kreisförmig drehen können (im Uhrzeigersinn oder gegen den Uhrzeigersinn).
 
@@ -38,30 +38,30 @@ Abhängig vom Eingabegerät wird für die Drehungsinteraktion Folgendes verwende
 -   Eine Maus oder ein aktiver Zeichenstift/Eingabestift zum Verschieben des Drehungsziehelements eines ausgewählten Objekts.
 -   Berührung oder passiver Zeichen-/Eingabestift zum Drehen des Objekts in die gewünschte Richtung mit der Drehbewegung.
 
-**Gründe für die Verwendung von Drehung**
+**Verwenden der Drehung**
 
 Verwenden Sie Drehung, damit Benutzer leichter UI-Elemente direkt drehen können. In den folgenden Diagrammen sehen Sie einige der unterstützten Fingerpositionen für die Drehungsinteraktion.
 
 ![Diagramm zur Veranschaulichung verschiedener Fingerhaltungen, die für Drehungen unterstützt werden](images/ux-rotate-positions.png)
 
-**Hinweis:**  intuitiv in den meisten Fällen ist der drehungspunkt ist einer der zwei Berührungspunkte, wenn der Benutzer kann einen drehungspunkt Bezug zu den Kontaktpunkten (z. B. in einer Zeichen- oder layoutanwendung) angeben. In den folgenden Abbildungen wird gezeigt, wie die Benutzeroberfläche beeinträchtigt werden kann, wenn der Drehungspunkt nicht auf diese Weise eingeschränkt ist.
+**Beachten Sie**    intuitiv, und klicken Sie in den meisten Fällen die Drehung ist ein zwei Touch-Punkt, wenn der Benutzer ein, die nicht mit der Kontaktpunkte (z. B. in einer Zeichnung oder das Layout-Anwendung) Drehpunkt angeben kann. In den folgenden Abbildungen wird gezeigt, wie die Benutzeroberfläche beeinträchtigt werden kann, wenn der Drehungspunkt nicht auf diese Weise eingeschränkt ist.
 
 In der ersten Abbildung sehen Sie den ersten (Daumen) und den zweiten Berührungspunkt (Zeigefinger): Der Zeigefinger berührt einen Baum, und der Daumen berührt einen Holzblock.
 
-![Abbildung mit den zwei anfänglichen Berührungspunkten für die Drehbewegung](images/ux-rotate-points1.png)
+![Bild, auf dem die zwei ersten Touch-Punkten für die Rotation Bewegung.](images/ux-rotate-points1.png)
 In dieser zweiten Abbildung wird die Drehung um den anfänglichen Berührungspunkt (Daumen) ausgeführt. Nach der Drehung berührt immer noch der Zeigefinger den Baumstamm und der Daumen den Holzblock (Drehungspunkt).
 
-![Abbildung mit einem gedrehten Bild, dessen Drehungspunkt durch einen der zwei anfänglichen Berührungspunkte eingeschränkt ist](images/ux-rotate-points2.png)
+![Bild, auf dem Bild mit den Drehpunkt gedreht, die auf eine der ersten zwei Berührungspunkte beschränkt werden.](images/ux-rotate-points2.png)
 In dieser dritten Abbildung wurde der Mittelpunkt der Drehung durch die Anwendung als Mittelpunkt des Bilds definiert (oder vom Benutzer entsprechend festgelegt). Da das Bild nicht um einen der Finger gedreht wurde, hat der Benutzer nach der Drehung nicht das Gefühl, direkt etwas geändert zu haben (es sei denn, er hat diese Einstellung ausgewählt).
 
-![Abbildung mit einem gedrehten Bild, dessen Drehungspunkt durch den Mittelpunkt des Bilds anstatt durch die zwei anfänglichen Berührungspunkte eingeschränkt ist](images/ux-rotate-points3.png)
+![Bild, auf dem Bild mit den Drehpunkt gedreht, die auf die Mitte des Bildes statt eines der beiden ersten Touch-Punkte beschränkt werden.](images/ux-rotate-points3.png)
 In dieser letzten Abbildung wurde der Mittelpunkt der Drehung durch die Anwendung als Mittelpunkt des Bilds definiert (oder vom Benutzer entsprechend festgelegt). Auch in diesem Fall hat der Benutzer nicht das Gefühl, direkt etwas geändert zu haben (es sei denn, er hat diese Einstellung ausgewählt).
 
 ![Abbildung mit einem gedrehten Bild, dessen Drehungspunkt durch den am weitesten links angeordneten Mittelpunkt des Bilds anstatt durch die zwei anfänglichen Berührungspunkte eingeschränkt ist](images/ux-rotate-points4.png)
 
  
 
-Windows8 unterstützt drei drehungsarten: frei, eingeschränkt und kombiniert.
+Windows 8 unterstützt drei Arten von Rotation: kostenlose, eingeschränkte und kombinierten.
 
 <table>
 <colgroup>
@@ -77,7 +77,7 @@ Windows8 unterstützt drei drehungsarten: frei, eingeschränkt und kombiniert.
 <tbody>
 <tr class="odd">
 <td align="left">Freie Drehung</td>
-<td align="left"><p>Mit der freien Drehung können Benutzer Inhalte frei in einem beliebigen Bereich von 360Grad drehen. Wenn der Benutzer das Objekt ablegt, bleibt das Objekt in der ausgewählten Position. Die freie Drehung ist hilfreich in Zeichen- und Layoutanwendungen wie beispielsweise MicrosoftPowerPoint, Word, Visio und Paint sowie Adobe Photoshop, Illustrator und Flash.</p></td>
+<td align="left"><p>Bei der freien Drehung können Benutzer Inhalte frei um bis zu 360 Grad drehen. Wenn das Objekt losgelassen wird, bleibt es in der ausgewählten Position. Die freie Drehung ist hilfreich in Zeichen- und Layoutanwendungen wie beispielsweise Microsoft PowerPoint, Word, Visio und Paint sowie Adobe Photoshop, Illustrator und Flash.</p></td>
 </tr>
 <tr class="even">
 <td align="left">Eingeschränkte Drehung</td>
@@ -88,7 +88,7 @@ Windows8 unterstützt drei drehungsarten: frei, eingeschränkt und kombiniert.
 <td align="left">Kombinierte Drehung</td>
 <td align="left"><p>Die kombinierte Drehung unterstützt freie Drehung mit Zonen (ähnlich wie Führungsschienen unter <a href="guidelines-for-panning.md">Richtlinien für Verschiebung</a>) an jedem der 90-Grad-Andockpunkte, die durch die eingeschränkte Drehung erzwungen werden. Wenn das Objekt außerhalb einer der 90-Grad-Zonen losgelassen wird, bleibt das Objekt in dieser Position. Anderenfalls wird das Objekt automatisch zu einem Andockpunkt gedreht.</p>
 <div class="alert">
-<strong>Hinweis:</strong>eine Benutzeroberflächen-Führungsschiene ist ein Feature, das in der schränkt ein Bereich um ein Ziel die Bewegung zu einem bestimmten Wert oder Speicherort für die Auswahl zu beeinflussen.
+<strong>Beachten Sie</strong>  Rail eine Benutzer-Schnittstelle ist eine Funktion, die in dem ein Bereich, um ein Ziel schränkt den Trend zu einigen spezifischen Wert oder Speicherort, um die Auswahl zu beeinflussen.
 </div>
 <div>
  
@@ -103,20 +103,20 @@ Windows8 unterstützt drei drehungsarten: frei, eingeschränkt und kombiniert.
 
 
 **Beispiele**
-* [Einfaches Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Beispiel für Eingabe mit niedriger Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archivbeispiele**
-* [Eingabe: Beispiel für XAML-Benutzereingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Eingabe: Beispiel für Gerätefunktionen](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Eingabe: Beispiel für Fingereingabe-Treffertests](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Beispiel für XAML-Bildlauf, -Verschiebung und -Zoom](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Eingabe: vereinfachtes Freihandbeispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Eingabe: Gesten und Manipulationen mit GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Eingabe: Beispiel für Manipulationen und Gesten (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Beispiel für die DirectX-Fingereingabe](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Eingabe: XAML-benutzerbeispiel Eingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Eingabe: Beispiel zu Leistungstests in Touch Treffer](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML Bildlauf, schwenken und Zoomen Beispiel](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Eingabe: Vereinfachte Freihand-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Eingabe: Gesten und Bearbeitungen mit GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Eingabe: Manipulationen und Beispiel für Bewegungen (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX-Touch-Eingabe-Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

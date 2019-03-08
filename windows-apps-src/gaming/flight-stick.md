@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, Spiele, Eingabe, Steuerknüppel
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eceb30c62f1e803397aff71d59b560c39736cf9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927973"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609015"
 ---
 # <a name="flight-stick"></a>Steuerknüppel
 
 Auf dieser Seite werden die Grundlagen der Programmierung für Xbox One-zertifizierte Steuerknüppel mit [Windows.Gaming.Input.FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) und verwandten APIs für die Universelle Windows-Plattform (UWP) beschrieben.
 
-Auf dieser Seite erfahren Sie:
+Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 
 * Wie Sie eine Liste der verbundenen Steuerknüppel und ihrer Benutzer erstellen
 * Wie Sie ermitteln, ob ein Steuerknüppel hinzugefügt oder entfernt wurde
@@ -26,7 +26,7 @@ Auf dieser Seite erfahren Sie:
 
 ## <a name="overview"></a>Übersicht
 
-Steuerknüppel sind Spieleingabegeräte, die das Gefühl eines Steuerknüppels reproduzieren, der in Flugzeugen oder Raumschiffen benutzt wird. Sie sind das perfekte Eingabegerät für die schnelle und genaue Steuerung von Fluggeräten. Steuerknüppel werden in Windows10- und Xbox One-UWP-Apps durch den Namespace [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) unterstützt.
+Steuerknüppel sind Spieleingabegeräte, die das Gefühl eines Steuerknüppels reproduzieren, der in Flugzeugen oder Raumschiffen benutzt wird. Sie sind das perfekte Eingabegerät für die schnelle und genaue Steuerung von Fluggeräten. Steuerknüppel werden in Windows 10- und Xbox One-UWP-Apps durch den Namespace [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) unterstützt.
 
 Xbox One-Steuerknüppel sind mit den folgenden Steuerelementen ausgestattet:
 
@@ -41,7 +41,7 @@ Xbox One-Steuerknüppel sind mit den folgenden Steuerelementen ausgestattet:
 
 ### <a name="ui-navigation"></a>Benutzeroberflächennavigation
 
-Um den Aufwand für die Unterstützung unterschiedlicher Eingabegeräte für die Benutzeroberflächennavigation zu verringern und die Konsistenz zwischen Spielen und Geräten zu fördern, dienen die meisten _physischen_ Eingabegeräte gleichzeitig als getrennte _logische_ Eingabegeräte, die als [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) bezeichnet werden. Der Benutzeroberflächen-Navigationscontroller stellt über verschiedene Eingabegeräte hinweg ein gemeinsames Vokabular für Benutzeroberflächen-Navigationsbefehle bereit.
+Um den Aufwand für die Unterstützung unterschiedlicher Eingabegeräte für die Benutzeroberflächennavigation zu verringern und die Konsistenz zwischen Spielen und Geräten zu fördern, dienen die meisten _physischen_ Eingabegeräte gleichzeitig als getrennte _logische_ Eingabegeräte, die als [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) bezeichnet werden. Der Benutzeroberflächen-Navigationscontroller stellt ein gemeinsames Vokabular für Benutzeroberflächen-Navigationsbefehle über verschiedene Eingabegeräte hinweg bereit.
 
 Ein Steuerknüppel als Benutzeroberflächen-Navigationscontroller ordnet den [erforderlichen Satz](ui-navigation-controller.md#required-set) an Navigationsbefehlen dem Joystick und den Tasten **Ansicht**, **Menü**, **FirePrimary** und **FireSecondary** zu.
 
@@ -49,8 +49,8 @@ Ein Steuerknüppel als Benutzeroberflächen-Navigationscontroller ordnet den [er
 | ------------------:| ----------------------------------- |
 |                 Nach oben | Joystick nach oben                         |
 |               Nach unten | Joystick nach-unten                       |
-|               Links | Joystick nach links                       |
-|              Rechts | Joystick nach rechts                      |
+|               Nach links | Joystick nach links                       |
+|              Nach rechts | Joystick nach rechts                      |
 |               Ansicht | **Ansicht**-Taste                     |
 |               Menü | **Menü**-Taste                     |
 |             Annehmen | **FirePrimary**-Taste              |
@@ -116,11 +116,11 @@ Each flight stick can be associated with a user account to link their identity t
 
 ## <a name="reading-the-flight-stick"></a>Lesen von Steuerknüppeleingaben
 
-Nachdem Sie den Steuerknüppel identifiziert haben, für den Sie sich interessieren, können Sie Eingaben von ihm erfassen. Im Gegensatz zu anderen Eingaben, die Sie möglicherweise kennen, teilen Steuerknüppel Zustandsänderungen nicht durch das Auslösen von Ereignissen mit. Stattdessen müssen Sie den aktuellen Zustand regelmäßig lesen, indem Sie ihn _abrufen_.
+Nachdem Sie den Steuerknüppel identifiziert haben, für den Sie sich interessieren, können Sie Eingaben von ihm erfassen. Im Gegensatz zu anderen Eingaben, die Sie möglicherweise kennen, teilen Steuerknüppel Zustandsänderungen nicht durch das Auslösen von Ereignissen mit. Stattdessen müssen Sie den aktuellen Status regelmäßig lesen, indem Sie ihn _abrufen_.
 
 ### <a name="polling-the-flight-stick"></a>Abrufen des Zustands von Steuerknüppeln
 
-Beim Abrufen wird ein Snapshot des Steuerknüppels zu einem bestimmten Zeitpunkt erstellt. Dieser Ansatz zum Erfassen von Eingaben ist für die meisten Spiele geeignet, da deren Logik in der Regel in einer deterministischer Schleife, anstatt ereignisgesteuert ausgeführt wird. Im Allgemeinen lassen sich Spielbefehle auch aus erfassten Eingaben zusammen einfacher interpretieren, als aus vielen einzelnen Eingaben, die im Laufe der Zeit erfasst wurden.
+Beim Abrufen wird ein Snapshot des Steuerknüppels zu einem bestimmten Zeitpunkt erstellt. Dieser Ansatz zur Eingabeerfassung ist für die meisten Spiele geeignet, da deren Logik normalerweise als deterministische Schleife, nicht ereignisgesteuert ausgeführt wird. Außerdem lassen sich Spielbefehle aus erfassten Eingaben einfacher interpretieren als aus vielen einzelnen Eingaben, die im Laufe der Zeit erfasst wurden.
 
 Sie rufen den Zustand eines Steuerknüppels ab, indem Sie [FlightStick.GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick.GetCurrentReading) aufrufen. Diese Funktion gibt eine [FlightStickReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading)-Struktur zurück, die den Zustand des Steuerknüppels enthält.
 
@@ -148,11 +148,11 @@ float pitch = reading.Pitch;
 float yaw = reading.Yaw;
 ```
 
-Sie werden feststellen, dass die gelesenen Joystickwerte nicht zuverlässig einen neutralen 0,0-Wert liefern, wenn sich der Joystick in der Mittelstellung (und damit im Ruhezustand) befindet. Stattdessen erhalten Sie verschiedene Näherungswerte für 0,0, wann immer der Joystick bewegt wurde und wieder in die Mittelstellung zurückkehrt. Zur Kompensierung dieser Abweichungen können Sie einen kleinen _inaktiven Bereich_ implementieren (also einen zu ignorieRendern Wertebereich nahe der idealen Mittelposition).
+Sie werden feststellen, dass die gelesenen Joystickwerte nicht zuverlässig einen neutralen 0,0-Wert liefern, wenn sich der Joystick in der Mittelstellung (und damit im Ruhezustand) befindet. Stattdessen erhalten Sie verschiedene Näherungswerte für 0,0, wann immer der Joystick bewegt wurde und wieder in die Mittelstellung zurückkehrt. Zur Kompensierung dieser Abweichungen können Sie einen kleinen _inaktiven Bereich_ implementieren (also einen zu ignorierenden Wertebereich nahe der idealen Mittelposition).
 
 Zur Implementierung eines inaktiven Bereichs können Sie beispielsweise ermitteln, wie weit sich der Joystick von der Mittelposition entfernt hat, und dabei die Werte ignorieren, die eine bestimmte, von Ihnen gewählte Entfernung unterschreiten. Die grobe Entfernung kann mit dem Satz des Pythagoras berechnet werden. Die Berechnung ist allerdings nicht exakt, da die Joystickwerte im Grunde polar und nicht planar sind. Dadurch entsteht ein radialer inaktiver Bereich.
 
-Das folgende Beispiel veranschaulicht einen einfachen radialen inaktiven Bereich mit dem Satz des Pythagoras:
+Das folgende Beispiel zeigt einen radialen inaktiven Bereich, berechnet nach dem Satz des Pythagoras:
 
 ```cpp
 // Choose a deadzone. Readings inside this radius are ignored.
@@ -197,7 +197,7 @@ if (FlightStickButtons::None == (reading.Buttons & FlightStickButtons::FirePrima
 }
 ```
 
-In einigen Fällen möchten Sie möglicherweise ermitteln, ob eine Taste von „Gedrückt“ zu „Nicht gedrückt“ oder von „Nicht gedrückt“ zu „Gedrückt“ wechselt, ob mehrere Tasten gedrückt oder nicht gedrückt werden oder ob verschiedene Tasten in einer bestimmten Weise angeordnet sind – einige sind gedrückt, andere nicht. Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) sowie unter [Erkennen komplexer Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
+In einigen Fällen möchten Sie vielleicht ermitteln, ob eine Taste von „gedrückt“ zu „nicht gedrückt“ bzw. umgekehrt wechselt, oder ob mehrere Tasten gedrückt bzw. nicht gedrückt oder in bestimmter Weise angeordnet sind&mdash;einige gedrückt, andere nicht. Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) sowie unter [Erkennen von komplexen Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 Der Wert des Mehrwegeschalters wird aus der [FlightStickReading.HatSwitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.HatSwitch)-Eigenschaft gelesen. Da diese Eigenschaft ebenfalls ein Bitfeld ist, wird erneut die bitweise Maskierung verwendet, um die Position des Mehrwegeschalters zu ermitteln.
 
@@ -225,6 +225,6 @@ The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-AT
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Windows.Gaming.Input.UINavigationController-Klasse](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
-* [Windows.Gaming.Input.IGameController-Benutzeroberfläche](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Eingabemethoden für Spiele](input-practices-for-games.md)
+* [Windows.Gaming.Input.UINavigationController class](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
+* [Windows.Gaming.Input.IGameController-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Eingabe-Methoden für Spiele](input-practices-for-games.md)

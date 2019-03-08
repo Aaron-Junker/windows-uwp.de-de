@@ -1,17 +1,17 @@
 ---
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: Abrufen von Dateieigenschaften
-description: Es werden Eigenschaften&\#8212;oberster Ebene, grundlegend und erweitert&\#8212;für eine Datei abgerufen, die durch ein StorageFile-Objekt dargestellt wird.
+description: Abrufen von Eigenschaften &\#8212; auf der obersten Ebene, grundlegende und erweiterte &\#8212; für eine Datei, die durch eine "storagefile" dargestellte Objekt.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cde9d8753248614603ee49fb1415ec18ec4669b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044188"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596995"
 ---
 # <a name="get-file-properties"></a>Abrufen von Dateieigenschaften
 
@@ -24,11 +24,11 @@ ms.locfileid: "9044188"
 Es werden Eigenschaften – oberste Ebene, grundlegend und erweitert – für eine Datei abgerufen, die durch ein [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)-Objekt dargestellt wird.
 
 > [!NOTE]
-> Ein vollständiges Beispiel finden Sie im [Dateizugriff-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Ein vollständiges Beispiel finden Sie unter den [Beispieldatei für Access](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
--   **Verstehen der asynchronen Programmierung für UWP-Apps (Universelle Windows-Plattform)**
+-   **Verstehen Sie die asynchrone Programmierung für apps der universellen Windows-Plattform (UWP)**
 
     Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
@@ -88,7 +88,7 @@ foreach (Windows.Storage.StorageFile file in files)
 
 ## <a name="getting-a-files-extended-properties"></a>Abrufen von erweiterten Eigenschaften einer Datei
 
-Neben den Eigenschaften der obersten Ebene und den grundlegenden Eigenschaften sind dem Inhalt der Datei viele Eigenschaften zugeordnet. Auf diese erweiterten Eigenschaften wird zugegriffen, indem die [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124)-Methode aufgerufen wird. (Ein [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113)-Objekt wird durch den Aufruf einer [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225)-Eigenschaft abgerufen.) Während auf Dateieigenschaften der obersten Ebene und grundlegende Dateieigenschaften in Form von Eigenschaften einer Klasse zugegriffen werden kann – [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) und **BasicProperties**, werden erweiterte Eigenschaften abgerufen, indem eine [IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091) -Sammlung von [String](https://go.microsoft.com/fwlink/p/?LinkID=325032)-Objekten mit den Namen der abzurufenden Eigenschaften an die **BasicProperties.RetrievePropertiesAsync**-Methode übergeben wird. Diese Methode gibt dann eine [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) -Sammlung zurück. Anschließend werden die einzelnen erweiterten Eigenschaften anhand des Namens oder Indexes aus der Sammlung abgerufen.
+Neben den Eigenschaften der obersten Ebene und den grundlegenden Eigenschaften sind dem Inhalt der Datei viele Eigenschaften zugeordnet. Auf diese erweiterten Eigenschaften wird zugegriffen, indem die [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124)-Methode aufgerufen wird. (Ein [ **BasicProperties** ](https://msdn.microsoft.com/library/windows/apps/br212113) -Objekt abgerufen wird, durch den Aufruf der [ **StorageFile.Properties** ](https://msdn.microsoft.com/library/windows/apps/br227225) Eigenschaft.) Während der obersten Ebene und die grundlegende Eigenschaften wie die Eigenschaften einer Klasse zugegriffen werden –[**"storagefile"** ](https://msdn.microsoft.com/library/windows/apps/br227171) und **BasicProperties**bzw. – werden erweiterte Eigenschaften erhalten durch Übergeben einer ["IEnumerable"](https://go.microsoft.com/fwlink/p/?LinkID=313091) Auflistung von [Zeichenfolge](https://go.microsoft.com/fwlink/p/?LinkID=325032) Objekte, die die Namen der Eigenschaften, die auf abgerufen werden sollen die  **BasicProperties.RetrievePropertiesAsync** Methode. Diese Methode gibt dann eine [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) -Sammlung zurück. Anschließend werden die einzelnen erweiterten Eigenschaften anhand des Namens oder Indexes aus der Sammlung abgerufen.
 
 In diesem Beispiel werden alle Dateien der Bildbibliothek aufgezählt und die Namen der gewünschten Eigenschaften (**DataAccessed** und **FileOwner**) in einem [List](https://go.microsoft.com/fwlink/p/?LinkID=325246)-Objekt angegeben. Dieses [List](https://go.microsoft.com/fwlink/p/?LinkID=325246)-Objekt wird an [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) übergeben, um die Eigenschaften abzurufen. Diese Eigenschaften werden dann anhand des Namens aus dem zurückgegebenen [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238)-Objekt abgerufen.
 

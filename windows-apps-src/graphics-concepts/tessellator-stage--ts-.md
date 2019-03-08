@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7768d63405281d3155affc6c9f09c62568761718
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945507"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607395"
 ---
 # <a name="tessellator-ts-stage"></a>Tessellatorphase (TS)
 
@@ -24,7 +24,7 @@ Die Tessellatorphase (TS) erstellt ein Samplingmuster der Domäne, das den Geome
 
 Das folgende Diagramm zeigt die Phasen der Direct3D-Grafikpipeline.
 
-![Diagramm der Direct3D11-Pipeline, das die Phasen Hüllen-Shader, Tessellator und Domänen-Shader zeigt.](images/d3d11-pipeline-stages-tessellation.png)
+![Diagramm der Direct3D 11-Pipeline, das die Phasen Hüllen-Shader, Tessellator und Domänen-Shader zeigt.](images/d3d11-pipeline-stages-tessellation.png)
 
 Das folgende Diagramm zeigt die einzelnen Tessellationsphasen.
 
@@ -47,32 +47,32 @@ Durch Implementierung der Tessellation in die Hardware kann eine Grafikpipeline 
 Vorteile bei der Tessellation:
 
 -   Tessellation spart viel Speicher und Bandbreite, wodurch eine Anwendung höher detaillierte Oberflächen aus niedrigauflösenden Modellen rendern kann. Die in die Direct3D-Grafikpipeline implementierte Tessellationstechnik unterstützt auch die Ersetzungszuordnung, die beeindruckende Mengen von Oberflächendetails erzeugen kann.
--   Tessellation unterstützt skalierbare Renderingtechniken, z.B. kontinuierliche oder ansichtsabhängige Detailtiefen, die spontan berechnet werden können.
+-   Tessellation unterstützt skalierbare Renderingtechniken, z. B. kontinuierliche oder ansichtsabhängige Detailtiefen, die spontan berechnet werden können.
 -   Tessellation verbessert die Leistung durch die Ausführung aufwendiger Berechnungen bei niedrigerer Frequenz (die Berechnungen erfolgen am detailärmeren Modell). Dies könnte Übergangsberechnungen mit Übergangsformen oder Morphzielen für realistische Animationen oder physikalische Berechnungen für Kollisionserkennung oder die Dynamik weicher Körper einschließen.
 
 Die Direct3D-Grafikpipeline implementiert Tessellation in Hardware, wodurch die Arbeit von der CPU auf die GPU verlagert wird. Dies kann zu sehr großen Leistungsverbesserungen führen, wenn eine Anwendung eine große Anzahl von Morphzielen und/oder ausgeklügelten Skinning-/Deformationsmodellen implementiert.
 
-Der Tessellator ist eine Phase mit fester Funktion, die durch Binden eines [Hüllen-Shaders](hull-shader-stage--hs-.md) an die Pipeline initialisiert wird. (siehe [Initialisieren der Tessellatorphase](https://msdn.microsoft.com/library/windows/desktop/ff476341)). Die Aufgabe der Tessellatorphase besteht darin, eine Domäne (Viereck, Dreieck oder Linie) in viele kleinere Objekte (Dreiecke, Punkte oder Linien) zu unterteilen. Die Tessellator unterteilt eine kanonische Domäne in einem normalisierten (Null-zu-Eins) Koordinatensystem. Eine viereckige Domäne wird z.B. als Einheitsquadrat unterteilt (tesselliert).
+Der Tessellator ist eine Phase mit fester Funktion, die durch Binden eines [Hüllen-Shaders](hull-shader-stage--hs-.md) an die Pipeline initialisiert wird. (finden Sie unter [so wird's gemacht: Initialisieren die Mosaikstufe](https://msdn.microsoft.com/library/windows/desktop/ff476341)). Die Aufgabe der Tessellatorphase besteht darin, eine Domäne (Viereck, Dreieck oder Linie) in viele kleinere Objekte (Dreiecke, Punkte oder Linien) zu unterteilen. Die Tessellator unterteilt eine kanonische Domäne in einem normalisierten (Null-zu-Eins) Koordinatensystem. Eine viereckige Domäne wird z. B. als Einheitsquadrat unterteilt (tesselliert).
 
-### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>Phasen in der Tessellatorphase (TS)
+### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>Phasen in der Phase Mosaikeingabefaktoren (TS)
 
 Die Tessellatorphase (TS) arbeitet in zwei Phasen:
 
 -   Die erste Phase verarbeitet die Tessellationsfaktoren, wobei mit der 32-Bit-Gleitkommaarithmetik Rundungsprobleme behoben, sehr kleine Faktoren behandelt, Faktoren reduziert und kombiniert werden.
--   Die zweite Phase generiert Punkt- oder Topologielisten auf Grundlage des ausgewählten Partitionierungstyps. Dies ist die Hauptaufgabe der Tessellatorphase, und hier werden 16-Bit-Bruchzahlen mit Festkommaarithmetik verwendet. Festpunktarithmetik ermöglicht Hardwarebeschleunigung bei gleichzeitiger Beibehaltung einer akzeptablen Genauigkeit. Beispielsweise können bei einem 64Meter breiten Patch mit dieser Genauigkeit Punkte mit einer Auflösung von 2mm platziert werden.
+-   Die zweite Phase generiert Punkt- oder Topologielisten auf Grundlage des ausgewählten Partitionierungstyps. Dies ist die Hauptaufgabe der Tessellatorphase, und hier werden 16-Bit-Bruchzahlen mit Festkommaarithmetik verwendet. Festpunktarithmetik ermöglicht Hardwarebeschleunigung bei gleichzeitiger Beibehaltung einer akzeptablen Genauigkeit. Beispielsweise können bei einem 64 Meter breiten Patch mit dieser Genauigkeit Punkte mit einer Auflösung von 2 mm platziert werden.
 
     | Partitionierungstyp | Bereich                       |
     |----------------------|-----------------------------|
     | Fractional\_odd      | \[1...63\]                  |
-    | Fractional\_even     | TessFactor-Bereich: \[2..64\] |
-    | Integer              | TessFactor-Bereich: \[1..64\] |
-    | Pow2                 | TessFactor-Bereich: \[1..64\] |
+    | Sekundenbruchteile\_sogar     | TessFactor Bereich: \[2..64\] |
+    | Ganze Zahl              | TessFactor Bereich: \[1..64\] |
+    | Pow2                 | TessFactor Bereich: \[1..64\] |
 
      
 
-Tessellation wird mit zwei programmierbaren Shaderphasen implementiert: einem [Hüllen-Shader](hull-shader-stage--hs-.md) und einem [Domänen-Shader](domain-shader-stage--ds-.md). Diese Shaderphasen werden mit HLSL-Code programmiert, der im Shadermodell5 definiert ist. Die Shaderziele sind: hs\_5\_0 und ds\_5\_0. Der Titel erstellt den Shader, dann wird der Code für die Hardware aus den kompilierten Shadern extrahiert und an die Laufzeit übergeben, wenn Shader an die Pipeline gebunden werden.
+Tessellation wird mit zwei programmierbaren Shaderphasen implementiert: einem [Hüllen-Shader](hull-shader-stage--hs-.md) und einem [Domänen-Shader](domain-shader-stage--ds-.md). Diese Shaderphasen werden mit HLSL-Code programmiert, der im Shadermodell 5 definiert ist. Der Shader-Ziele sind: hs\_5\_0 und ds\_5\_0. Der Titel erstellt den Shader, dann wird der Code für die Hardware aus den kompilierten Shadern extrahiert und an die Laufzeit übergeben, wenn Shader an die Pipeline gebunden werden.
 
-### <a name="span-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanenablingdisabling-tessellation"></a><span id="Enabling_disabling_tessellation"></span><span id="enabling_disabling_tessellation"></span><span id="ENABLING_DISABLING_TESSELLATION"></span>Aktivieren/Deaktivieren der Tessellation
+### <a name="span-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanenablingdisabling-tessellation"></a><span id="Enabling_disabling_tessellation"></span><span id="enabling_disabling_tessellation"></span><span id="ENABLING_DISABLING_TESSELLATION"></span>Aktivieren/Deaktivieren der Tesselierung
 
 Aktivieren Sie die Tessellation, indem Sie einen Hüllen-Shader erstellen und diesen an die Hüllen-Shaderphase binden (dadurch wird die Tessellatorphase automatisch eingerichtet). Um die abschließenden Vertexpositionen aus den tessellierten Patches zu generieren, müssen Sie auch einen [Domänen-Shader](domain-shader-stage--ds-.md) erstellen und diesen an die Domänen-Shaderphase binden. Sobald die Tessellation aktiviert ist, muss die Dateneingabe für die Eingabeassemblerphase (IA) aus Patchdaten bestehen. Die Eingabeassemblertopologie muss eine Patchkonstantentopologie sein.
 

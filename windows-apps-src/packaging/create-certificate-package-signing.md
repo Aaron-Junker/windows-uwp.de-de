@@ -3,15 +3,15 @@ title: Erstellen eines Paketsignaturzertifikats
 description: PowerShell-Tools helfen bei der Erstellung und beim Export eines App-Paketsignaturzertifikats.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928974"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591545"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>Erstellen eines Paketsignaturzertifikats
 
@@ -23,10 +23,10 @@ In diesem Artikel wird die Erstellung und der Export eines App-Paketsignaturzert
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- **Verpackte oder unverpackte Apps**  
+- **Eine App-Pakete oder entpackt-app**  
 Eine App mit einer AppxManifest.xml-Datei. Sie müssen während der Erstellung des Zertifikats auf die Manifestdatei verweisen, die zum Signieren der endgültigen Version des App-Pakets verwendet wird. Details zum manuellen Verpacken von Apps finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
 
-- **PKI-Cmdlets (Public Key-Infrastruktur)**  
+- **Public Key-Infrastruktur (PKI)-Cmdlets**  
 Sie benötigen die PKI-Cmdlets zum Erstellen und Exportieren Ihres Signaturzertifikats. For more information, see [Public Key-Infrastruktur-Cmdlets](https://docs.microsoft.com/powershell/module/pkiclient/).
 
 ## <a name="create-a-self-signed-certificate"></a>Erstellen eines selbstsignierten Zertifikats
@@ -54,9 +54,9 @@ Basierend auf der „AppxManifest.xml”-Datei aus dem vorherigen Beispiel, soll
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-Nach dem Ausführen dieses Befehls wird das Zertifikat dem lokalen Zertifikatspeicher hinzugefügt, wie im Parameter ‑CertStoreLocation angegeben. Das Ergebnis des Befehls erzeugt auch der Fingerabdruck des Zertifikats.  
+Nach dem Ausführen dieses Befehls wird das Zertifikat dem lokalen Zertifikatspeicher hinzugefügt, wie im Parameter ‑CertStoreLocation angegeben. Das Ergebnis des Befehls wird den Fingerabdruck des Zertifikats auch erstellt werden.  
 
-**Hinweis:**  
+**Hinweis**  
 Sie können das Zertifikat mithilfe der folgenden Befehle in einem PowerShell-Fenster anzeigen:
 ```
 Set-Location Cert:\LocalMachine\My
@@ -76,7 +76,7 @@ $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
-- **Verwendung von „ProtectTo”**
+- **ProtectTo Nutzung**
 ```
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```

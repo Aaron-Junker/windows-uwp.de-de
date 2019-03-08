@@ -1,5 +1,5 @@
 ---
-Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
+Description: Simulieren und Eingabe von Geräten, z. B. Tastatur, Maus, Touch, Stift und Gamepad in UWP-apps automatisieren.
 title: Simulieren der Benutzereingabe über die Eingabeeinfügung
 label: Input injection
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933974"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602325"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simulieren der Benutzereingabe über die Eingabeeinfügung
 
@@ -22,7 +22,7 @@ Sie können Benutzereingaben über Geräte wie Tastatur, Maus, Touch, Stift und 
 
 ## <a name="overview"></a>Übersicht
 
-Über die Eingabeeinfügung kann Ihre UWP-Anwendung die Eingabe über eine Vielzahl von Eingabegeräten simulieren und diese Eingabe überall hinleiten, z.B. außerhalb des Clientbereichs Ihrer App (selbst zu Apps, die mit Administratorberechtigungen ausgeführt werden, wie etwa der Registrierungs-Editor).
+Über die Eingabeeinfügung kann Ihre UWP-Anwendung die Eingabe über eine Vielzahl von Eingabegeräten simulieren und diese Eingabe überall hinleiten, z. B. außerhalb des Clientbereichs Ihrer App (selbst zu Apps, die mit Administratorberechtigungen ausgeführt werden, wie etwa der Registrierungs-Editor).
 
 Die Eingabeeinfügung ist nützlich für UWP-Apps und -Tools, die eine Funktionalität mit Bedienungshilfen, Testfunktionen (ad hoc, automatisiert) und Remotezugriff sowie Supportfeatures bereitstellen müssen.
 
@@ -41,11 +41,11 @@ Um die Eingabeeinfügungs-APIs in Ihrer UWP-App verwenden zu können, müssen Si
 
 | ![Beispiel für die Touch-Eingabeeinfügung](images/injection/touch-input-injection.gif) | 
 |:--:|
-| *Beispiel für die Touch-Eingabeeinfügung* |
+| *Touch-Eingabe-Injection-Beispiel* |
 
 In diesem Beispiel wird veranschaulicht, wie Sie die Eingabeeinfügungs-APIs ([Windows.UI.Input.Preview.Injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)) verwenden, um Mauseingabeereignisse in einem Bereich einer App zu überwachen und entsprechende Toucheingabe-Ereignisse in einem anderen Bereich zu simulieren.
 
-**Laden Sie dieses Beispiel unter [Beispiel für Eingabeeinfügung (Maus zu Touch)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip) herunter.**
+**Laden Sie dieses Beispiel von [Injection-Beispiel für Eingabe (Maus, touch)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
 
 1. Zunächst richten wir die Benutzeroberfläche ein (MainPage.xaml).
 
@@ -360,8 +360,8 @@ In diesem Beispiel wird veranschaulicht, wie Sie die Eingabeeinfügungs-APIs ([W
 
 4. Schließlich verarbeiten wir alle [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase)-Weiterleitungsereignisse im Eingabeeinfügungsbereich und aktualisieren die Benutzeroberfläche mit dem Namen der angeklickten Schaltfläche.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
 ### <a name="topic-samples"></a>Themenbeispiele
 
-- [Beispiel für Eingabeeinfügung (Maus zu Touch)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)
+- [Eingabe-Injection-Beispiel (Maus, touch)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)

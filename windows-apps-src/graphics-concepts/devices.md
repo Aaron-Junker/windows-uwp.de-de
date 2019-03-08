@@ -1,6 +1,6 @@
 ---
 title: Geräte
-description: Ein Direct3D-Gerät ist die Komponente zum Rendern von Direct3D. Ein Gerät kapselt und speichert den Renderzustand, führt Transformationen und Beleuchtungsvorgänge aus und rastert ein Bilds auf einer Oberfläche.
+description: Ein Direct3D-Gerät ist die Komponente zum Rendern von Direct3D. Ein Gerät kapselt und speichert den Renderstatus, führt Transformationen und Beleuchtungsvorgänge aus, und rastert ein Bild zu einer Oberfläche.
 ms.assetid: BC903462-A32A-46BA-8411-FB294F5D2CD9
 keywords:
 - Geräte
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e49a9dcaa2638065946f01797cbea084a1432a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930701"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602305"
 ---
 # <a name="devices"></a>Geräte
 
 
-Ein Direct3D-Gerät ist die Komponente zum Rendern von Direct3D. Ein Gerät kapselt und speichert den Renderzustand, führt Transformationen und Beleuchtungsvorgänge aus und rastert ein Bilds auf einer Oberfläche.
+Ein Direct3D-Gerät ist die Komponente zum Rendern von Direct3D. Ein Gerät kapselt und speichert den Renderstatus, führt Transformationen und Beleuchtungsvorgänge aus, und rastert ein Bild zu einer Oberfläche.
 
 Wie im folgenden Diagramm dargestellt, umfasst die Architektur von Direct3D-Geräten ein Tranformationsmodul, Beleuchtungsmoduls und ein Rastermodul.
 
@@ -36,9 +36,9 @@ Hardwarebeschleunigte Geräte bieten eine wesentlich bessere Leistung als Softwa
 
 Mit Ausnahme des Referenzgeräts unterstützen Softwaregeräte nicht immer die gleichen Funktionen wie ein Hardwaregerät. Anwendungen sollten daher immer die Gerätefunktionen Abfragen und so die unterstützten Funktionen ermitteln.
 
-Da das Verhalten der Software- und Referenzgeräte von Direct3D9 dem des HAL-Gerätes identisch ist, funktioniert für das HAL-Gerät erstellter Anwendungscode ohne Änderungen auch mit den Software- und Referenzgeräten. Das Verhalten des Software- oder Referenzgeräts ist mit dem des HAL-Gerätes identisch. Die Gerätefunktionalitäten können jedoch abweichen. Vor allem das Softwaregerät implementiert möglicherweise erheblich weniger Funktionen.
+Da das Verhalten der Software- und Referenzgeräte von Direct3D 9 dem des HAL-Gerätes identisch ist, funktioniert für das HAL-Gerät erstellter Anwendungscode ohne Änderungen auch mit den Software- und Referenzgeräten. Das Verhalten des Software- oder Referenzgeräts ist mit dem des HAL-Gerätes identisch. Die Gerätefunktionalitäten können jedoch abweichen. Vor allem das Softwaregerät implementiert möglicherweise erheblich weniger Funktionen.
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Inhalt dieses Abschnitts
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>In diesem Abschnitt
 
 
 <table>
@@ -58,20 +58,20 @@ Da das Verhalten der Software- und Referenzgeräte von Direct3D9 dem des HAL-Ger
 <td align="left"><p>Direct3D-Gerätetypen sind HAL-Gerät (Hardwareabstraktionsschicht) und den Referenz-Rasterizer.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="windowed-vs--full-screen-mode.md">Vergleich von Vollbild- und Fenstermodus</a></p></td>
-<td align="left"><p>Direct3D-Anwendungen können entweder im Fenstermodus oder im Vollbildmodus ausgeführt werden. Im <em>Fenstermodus</em> teilt sich die Anwendung die verfügbare Bildschirmfläche auf dem Desktop mit allen anderen ausgeführten Programmen. Im <em>Vollbildmodus</em> deckt das Fenster der Anwendung den gesamten Desktop ab. Die ausgeführten Programme (einschließlich der Entwicklungsumgebung) sind nicht sichtbar.</p></td>
+<td align="left"><p><a href="windowed-vs--full-screen-mode.md">Im Vergleich zu den Vollbildmodus im Fenstermodus</a></p></td>
+<td align="left"><p>Direct3D-Anwendungen können jeweils entweder im Fenstermodus oder im Vollbildmodus ausgeführt werden. Im <em>Fenstermodus</em> teilt sich die Anwendung die verfügbare Bildschirmfläche auf dem Desktop mit allen anderen ausgeführten Programmen. Im <em>Vollbildmodus</em> bedeckt das Fenster der Anwendung den gesamten Desktop, alle anderen ausgeführten Programme (einschließlich der Entwicklungsumgebung) werden ausgeblendet.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="lost-devices.md">Lost-Zustand</a></p></td>
-<td align="left"><p>Ein Direct3D-Gerät kann sich in einem Operational-Zustand oder Lost-Zustand befinden. Der Zustand <em>Operational</em> ist der normalen Zustand des Geräts. In diesem wird das Gerät ausgeführt die Renderingdarstellung läuft wie erwartet. Das Gerät wechselt zum <em>Lost</em>-Zustand sobald ein Ereignis, z.B. den Verlust des Tastaturfokus in einer Vollbildanwendung, auftritt und das Rendering somit unmöglich wird.</p></td>
+<td align="left"><p><a href="lost-devices.md">Verlorene Geräte</a></p></td>
+<td align="left"><p>Ein Direct3D-Gerät kann sich entweder im Zustand „betriebsbereit” oder im Zustand „nicht mehr auffindbar” befinden. Der Zustand <em>Operational</em> ist der normalen Zustand des Geräts. In diesem wird das Gerät ausgeführt die Renderingdarstellung läuft wie erwartet. Das Gerät wechselt zum <em>Lost</em>-Zustand sobald ein Ereignis, z. B. den Verlust des Tastaturfokus in einer Vollbildanwendung, auftritt und das Rendering somit unmöglich wird.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="swap-chains.md">Swapchains</a></p></td>
+<td align="left"><p><a href="swap-chains.md">Swapketten</a></p></td>
 <td align="left"><p>Eine Swapchain ist eine Sammlung von Puffern, die zum Anzeigen von Frames für den Benutzer verwendet werden. Bei jeder Darstellung eines neuen Frames für eine Anzeige durch eine Anwendung wird der erste Puffer der Swapchain zum Anzeigepuffer. Dieser Prozess heißt <em>Swapping</em> bzw. <em>Flipping</em>.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="introduction-to-rasterization-rules.md">Einführung in Rasterungsregeln</a></p></td>
-<td align="left"><p>Häufig entsprechend die Punkte von Vertizes nicht exakt den Pixel auf dem Bildschirm. In diesem Fall nutzt Direct3D Dreieck-Rasterungsregeln, um zu entscheiden, welche Pixel für ein Dreieck genutzt werden.</p></td>
+<td align="left"><p><a href="introduction-to-rasterization-rules.md">Einführung in die Rasterungsregeln</a></p></td>
+<td align="left"><p>Häufig stimmen die als Scheitelpunkte angegebenen Punkte nicht exakt mit den Pixeln auf dem Bildschirm überein. Wenn dieser Fall eintritt, verwendet Direct3D Dreiecksrasterregeln, um zu entscheiden, welche Pixel für ein vorhandenes Dreieck gelten.</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,7 +81,7 @@ Da das Verhalten der Software- und Referenzgeräte von Direct3D9 dem des HAL-Ger
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Direct3D-Grafik-Lernanleitung](index.md)
+[Schulungsleitfaden für Direct3D-Grafiken](index.md)
 
  
 

@@ -1,19 +1,19 @@
 ---
 description: Ein XAML-NameScope speichert Beziehungen zwischen den definierten XAML-Namen von Objekten und ihren entsprechenden Instanzen. Dies ist vergleichbar mit der weiteren Bedeutung des Begriffs NameScope in anderen Programmiersprachen und Technologien.
-title: XAML-NameScopes
+title: XAML-Namescopes
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe6119e9cac162486d23472f5d5876924b7ef9e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928421"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589815"
 ---
-# <a name="xaml-namescopes"></a>XAML-NameScopes
+# <a name="xaml-namescopes"></a>XAML-Namescopes
 
 
 Ein *XAML-NameScope* speichert Beziehungen zwischen den definierten XAML-Namen von Objekten und ihren entsprechenden Instanzen. Dies ist vergleichbar mit der weiteren Bedeutung des Begriffs *NameScope* in anderen Programmiersprachen und Technologien.
@@ -30,7 +30,7 @@ Sie können auch die [**FindName**](https://msdn.microsoft.com/library/windows/a
 
 Technisch gesehen wird für das XAML selbst ein Markupcompilerdurchlauf durchgeführt, während gleichzeitig das XAML und die darin für CodeBehind definierte partielle Klasse gemeinsam kompiliert werden. Jedes Objektelement, für das im Markup ein **Name**- oder [x:Name-Attribut](x-name-attribute.md) definiert wurde, generiert ein internes Feld mit einem Namen, der mit dem XAML-Namen übereinstimmt. Dieses Feld ist anfänglich leer. Die Klasse generiert dann eine **InitializeComponent**-Methode, die erst aufgerufen wird, wenn das gesamte XAML geladen wurde. Anschließend werden durch die **InitializeComponent**-Logik alle internen Felder mit dem [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)-Rückgabewert für die entsprechende Namenszeichenfolge aufgefüllt. Sie können diese Infrastruktur selbst erkennen, indem Sie sich die Dateien mit der Erweiterung ".g" (generiert) ansehen, die für die einzelnen XAML-Seiten nach der Kompilierung im /obj-Unterordner eines Projekts für eine Windows-Runtime-App erstellt werden. Sie können die Felder und die **InitializeComponent**-Methode auch als Member der erstellten Assemblys anzeigen, wenn Sie eine Reflexion über diese ausführen oder in anderer Weise ihre MSIL-Inhalte untersuchen.
 
-**Hinweis:** speziell für für VisualC++-komponentenerweiterungen (C++ / CX)-apps kein Sicherungsfeld für einen **X: Name** -Verweis nicht für das Stammelement einer XAML-Datei erstellt. Wenn Sie aus CodeBehind für C++/CX auf das Stammobjekt verweisen müssen, verwenden Sie andere APIs oder eine Strukturausnahme. Sie können beispielsweise erst [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) für ein bekanntes benanntes Unterelement und anschließend [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) aufrufen.
+**Beachten Sie**  speziell für Visual C++-komponentenerweiterungen (C++ / CX)-apps, die ein dahinter liegendes Feld für eine **X: Name** Verweis wird nicht für das Stammelement einer XAML-Datei erstellt. Wenn Sie aus CodeBehind für C++/CX auf das Stammobjekt verweisen müssen, verwenden Sie andere APIs oder eine Strukturausnahme. Sie können beispielsweise erst [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) für ein bekanntes benanntes Unterelement und anschließend [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) aufrufen.
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>Erstellen von Objekten zur Laufzeit mit XamlReader.Load
 
@@ -81,7 +81,7 @@ Wegen der separaten XAML-NameScopes erfordert die Suche nach benannten Elementen
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Übersicht über XAML](xaml-overview.md)
-* [x:Name-Attribut](x-name-attribute.md)
+* [X: Name-Attribut](x-name-attribute.md)
 * [Schnellstart: Steuerelementvorlagen](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)

@@ -1,6 +1,6 @@
 ---
 title: Geräte- und prozessübergreifende Streamingressourcen
-description: Kachelpools können mit anderen Prozessen wie herkömmliche Ressourcen geteilt werden. Streamingressourcen, die auf Kachelpools verweisen, können nicht geräte- und prozessübergreifend geteilt werden.
+description: Kachelpools können von anderen Prozessen wie herkömmliche Ressourcen freigegeben werden. Streamingressourcen, die auf Kachelpools verweisen, können nicht auf allen Geräten und Prozessen freigegeben werden.
 ms.assetid: D035AF4B-D71B-4F20-9A98-7C360BF9B285
 keywords:
 - Geräte- und prozessübergreifende Streamingressourcen
@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a0bff43cfd26c43bb5f75f37a66c55e556429470
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936130"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593665"
 ---
-# <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>Geräte- und prozessübergreifende Streamingressourcen
+# <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>Streamen von Ressource Prozess- und gemeinsame Nutzung von Geräten
 
 
-Kachelpools können mit anderen Prozessen wie herkömmliche Ressourcen geteilt werden. Streamingressourcen, die auf Kachelpools verweisen, können nicht geräte- und prozessübergreifend geteilt werden. Separate Prozesse können aber eigene Streamingressourcen erstellen, die den für diese Streamingressourcen freigegebenen Kachelpools zugeordnet werden.
+Kachelpools können von anderen Prozessen wie herkömmliche Ressourcen freigegeben werden. Streamingressourcen, die auf Kachelpools verweisen, können nicht auf allen Geräten und Prozessen freigegeben werden. Separate Prozesse können aber eigene Streamingressourcen erstellen, die den für diese Streamingressourcen freigegebenen Kachelpools zugeordnet werden.
 
 Die Größe freigegebener Kachelpools kann nicht geändert werden.
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Inhalt dieses Abschnitts
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>In diesem Abschnitt
 
 
 <table>
@@ -37,7 +37,7 @@ Die Größe freigegebener Kachelpools kann nicht geändert werden.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md">Von den Streamingressourcen nicht unterstützte Schablonenformate</a></p></td>
+<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md">Schablone-Formate, die durch das streaming von Ressourcen nicht unterstützt.</a></p></td>
 <td align="left"><p>Formate, die Schablonen enthalten, werden von Streamingressourcen nicht unterstützt.</p></td>
 </tr>
 </tbody>
@@ -48,7 +48,7 @@ Die Größe freigegebener Kachelpools kann nicht geändert werden.
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Erstellen von Streamingressourcen](creating-streaming-resources.md)
+[Erstellen von streaming-Ressourcen](creating-streaming-resources.md)
 
  
 

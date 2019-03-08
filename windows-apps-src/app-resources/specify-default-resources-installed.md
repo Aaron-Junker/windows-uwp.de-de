@@ -1,17 +1,17 @@
 ---
-Description: If your app doesn't have resources that match the particular settings of a customer device, then the app's default resources are used. This topic explains how to specify what those default resources are.
+Description: Wenn Ihre App über keine Ressourcen verfügt, die den speziellen Einstellungen eines Kundengeräts entsprechen, werden die Standardressourcen der App verwendet. In diesem Thema wird erläutert, wie Sie diese Standardressourcen festlegen.
 title: Angeben der von der App verwendeten Standardressourcen
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
-keywords: Windows10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
+keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048903"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593985"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>Angeben der von der App verwendeten Standardressourcen
 
@@ -19,13 +19,13 @@ Wenn Ihre App über keine Ressourcen verfügt, die den speziellen Einstellungen 
 
 Wenn ein Kunde Ihre App aus dem Microsoft Store installiert, werden die Einstellungen auf dem Gerät des Kunden mit den verfügbaren Ressourcen der App verglichen. Damit wird sichergestellt, dass nur die richtigen Ressourcen heruntergeladen und für diesen Benutzer installiert werden müssen. Beispielsweise werden die am besten geeigneten Zeichenfolgen und Bilder für die Spracheinstellungen des Benutzers sowie die optimale Geräteauflösung und DPI-Einstellung verwendet. Zum Beispiel ist `200` der Standardwert für `scale`. Sie können die Standardeinstellungen bei Bedarf aber überschreiben.
 
-Selbst für Ressourcen, die nicht in ihre eigenen Ressourcenpakete wechseln (z.B. Bilder, die für hohe Kontrasteinstellungen angepasst sind), können Sie angeben, welche Standardressourcen die App zur Laufzeit verwenden soll, wenn keine Ressource, die mit den Einstellungen des Benutzers übereinstimmt, gefunden werden kann. Zum Beispiel ist `standard` der Standardwert für `contrast`. Sie können die Standardeinstellungen bei Bedarf aber überschreiben.
+Selbst für Ressourcen, die nicht in ihre eigenen Ressourcenpakete wechseln (z. B. Bilder, die für hohe Kontrasteinstellungen angepasst sind), können Sie angeben, welche Standardressourcen die App zur Laufzeit verwenden soll, wenn keine Ressource, die mit den Einstellungen des Benutzers übereinstimmt, gefunden werden kann. Zum Beispiel ist `standard` der Standardwert für `contrast`. Sie können die Standardeinstellungen bei Bedarf aber überschreiben.
 
 Diese Standardwerte werden in Form von Standardressourcenqualifiziererwerten angegeben. Eine Erklärung zu Ressourcenqualifizierern, deren Verwendung und Zweck finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](tailor-resources-lang-scale-contrast.md).
 
 Diese Standardwerte können Sie auf zweierlei Weise konfigurieren. Sie können entweder eine Konfigurationsdatei zu Ihrem Projekt hinzufügen oder Ihre Projektdatei direkt bearbeiten. Verwenden Sie die Option, mit der Sie am besten vertraut sind oder die mit Ihrem Buildsystem am besten funktioniert.
 
-## <a name="option-1-use-priconfigdefaultxml-to-specify-default-qualifier-values"></a>Option1: Verwenden von „priconfig.default.xml“ zur Angabe von Standardqualifiziererwerten
+## <a name="option-1-use-priconfigdefaultxml-to-specify-default-qualifier-values"></a>Option 1: Verwenden von „priconfig.default.xml“ zur Angabe von Standardqualifiziererwerten
 
 1. Fügen Sie in Visual Studio ein neues Element zu Ihrem Projekt hinzu. Wählen Sie „XML-Datei“, und nennen Sie die Datei `priconfig.default.xml`.
 2. Wählen Sie im Projektmappen-Explorer `priconfig.default.xml` aus, und überprüfen Sie das Eigenschaftenfenster. Die Buildaktion der Datei sollte auf „Keine” und „In Ausgabeverzeichnis kopieren” sollte auf „Nicht kopieren” festgelegt sein.
@@ -80,9 +80,9 @@ Wenn Sie die Datei `priconfig.default.xml` nennen, wird sie von Visual Studio er
 
 Ersetzen Sie `FILE-PATH-AND-NAME` durch den Pfad zur und den Namen der Datei.
 
-## <a name="option-2-use-your-project-file-to-specify-default-qualifier-values"></a>Option2: Verwenden der Projektdatei zur Angabe von Standardqualifiziererwerten
+## <a name="option-2-use-your-project-file-to-specify-default-qualifier-values"></a>Option 2: Verwenden der Projektdatei zur Angabe von Standardqualifiziererwerten
 
-Dies ist eine Alternative zu Option1. Sobald Sie mit der Funktionsweise von Option1 vertraut sind, können Sie stattdessen Option2 wählen, sollte dies besser zu Ihrem Entwicklungs- und/oder Buildworkflow passen.
+Dies ist eine Alternative zu Option 1. Sobald Sie mit der Funktionsweise von Option 1 vertraut sind, können Sie stattdessen Option 2 wählen, sollte dies besser zu Ihrem Entwicklungs- und/oder Buildworkflow passen.
 
 Fügen Sie diese XML-Datei in Ihrer Projektdatei zwischen dem öffnenden und schließenden Tag des ersten `<PropertyGroup>`-Elements hinzu.
 
@@ -102,6 +102,6 @@ Speichern und schließen Sie, und erstellen Sie das Projekt dann neu.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](tailor-resources-lang-scale-contrast.md)
-* [BCP-47-Sprachtag](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Manuelles Kompilieren von Ressourcen mit MakePri.exe](compile-resources-manually-with-makepri.md)
+* [Passen Sie Ihre Ressourcen für die Sprache, Skalierung, hoher Kontrast und anderen Qualifizierer](tailor-resources-lang-scale-contrast.md)
+* [BCP-47-Sprachtag.](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Kompilieren von Ressourcen mit MakePri.exe manuell](compile-resources-manually-with-makepri.md)

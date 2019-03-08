@@ -1,18 +1,18 @@
 ---
-title: Geräteportal-Controller– API-Referenz
+title: Geräteportal-Controller – API-Referenz
 description: Hier erfahren Sie, wie Sie die Anzahl der angeschlossenen physischen Controller abrufen und sie programmgesteuert deaktivieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5061f9193d78d4ff23f5fa707b0bea67a10f98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929835"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657005"
 ---
-# <a name="controller-api-reference"></a>Controller– API-Referenz   
+# <a name="controller-api-reference"></a>Controller – API-Referenz   
 Mit dieser REST-API können Sie die Anzahl der angeschlossenen physischen Controller abrufen und deaktivieren.
 
 ## <a name="determine-the-number-of-attached-physical-controllers"></a>Bestimmen der Anzahl der angeschlossenen physischen Controller
@@ -31,7 +31,7 @@ GET | /ext/remoteinput/controllers
 
 **Anforderungsheader**
 
-- Keiner
+- Keine
 
 **Anforderungstext**   
 
@@ -41,13 +41,13 @@ GET | /ext/remoteinput/controllers
 
 - Die JSON-Number-Eigenschaft ConnectedControllerCount, die die Anzahl der angeschlossenen physischen Controller angibt.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-200 | Erfolg
+200 | Möglich
 4XX | Fehlercodes
 5XX | Fehlercodes
 
@@ -67,7 +67,7 @@ DELETE | /ext/remoteinput/controllers
 
 **Anforderungsheader**
 
-- Keiner
+- Keine
 
 **Anforderungstext**   
 
@@ -77,7 +77,7 @@ DELETE | /ext/remoteinput/controllers
 
 - Keine 
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -88,6 +88,6 @@ HTTP-Statuscode      | Beschreibung
 5XX | Fehlercodes
 
 <br />
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Xbox

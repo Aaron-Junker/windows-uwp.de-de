@@ -4,11 +4,11 @@ title: Inhalte als Objekte
 template: detail.hbs
 ms.localizationpriority: medium
 ms.openlocfilehash: ed2ac8530d69929cc0e0e921cfb1cc5368058cd2
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981444"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593115"
 ---
 # <a name="content-as-objects"></a>Inhalte als Objekte
 
@@ -16,7 +16,7 @@ ms.locfileid: "8981444"
 
 Sie können die Tiefe oder z-Reihenfolge von Elementen manipulieren, um eine visuelle Hierarchie zu erstellen, die die Bedienung Ihrer Anwendung erleichtert.  
 
-> Hinweis: Dieser Artikel ist ein früher Entwurf für eine neue Funktion von Windows 10 RS2. Featurenamen, Terminologie und Funktionen sind nicht endgültig. 
+> Hinweis: In diesem Artikel handelt es sich um einen frühen Entwurf für ein neues Feature von Windows 10 RS2. Featurenamen, Terminologie und Funktionen sind nicht endgültig. 
 
 ## <a name="why-visual-hierarchy-is-important"></a>Warum visuelle Hierarchie wichtig ist
 
@@ -35,7 +35,7 @@ Eine klare visuelle Hierarchie sagt dem Benutzer, welche Elemente am wichtigsten
   <p>Wie schafft man also eine klare visuelle Hierarchie? In früheren Versionen von Windows 10 konnten Sie Leerraum, Position und Typografie verwenden, um eine visuelle Hierarchie zu definieren. </p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/flat-layout.png">Ein flaches Layout</a>
+    <a href="images/content-as-objects/flat-layout.png">Ein Flatfile-layout</a>
     
   </div>
 </div>
@@ -43,7 +43,7 @@ Eine klare visuelle Hierarchie sagt dem Benutzer, welche Elemente am wichtigsten
 
 Mit Windows 10 RS2 haben wir buchstäblich eine weitere Dimension hinzugefügt: die Tiefe. 
 
-<a href="images/content-as-objects/depth-in-layout2.png">Tiefe im Layout</a>
+<a href="images/content-as-objects/depth-in-layout2.png">Die Tiefe im layout</a>
 
 
 ## <a name="use-depth-to-establish-a-hierarchy"></a>Aufbau einer Hierarchie über Tiefe 
@@ -59,14 +59,14 @@ Mit Windows 10 RS2 haben wir buchstäblich eine weitere Dimension hinzugefügt: 
     </p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">Tiefe im Layout</a> 
+    <a href="images/content-as-objects/elements-forward-backward.png">Die Tiefe im layout</a> 
     
   </div>
 </div>
 </div>
 
 ## <a name="how-does-it-work"></a>Wie funktioniert das?
-> TODO: Kurze Beschreibung, wie Sie die z-Reihenfolge der Elemente steuern können. Ist die z-Reihenfolge explizit fest implementiert, oder gibt es ein semantisches Ranking-System? Wie bewegen sich Objekte von einer Ebene zur anderen? Was macht das System automatisch, und worüber müssen sich Designer/Entwickler Gedanken machen? 
+> TODO: Kurze Beschreibung, wie Sie die Z-Reihenfolge der Elemente steuern können. Ist die z-Reihenfolge explizit fest implementiert, oder gibt es ein semantisches Ranking-System? Wie bewegen sich Objekte von einer Ebene zur anderen? Was macht das System automatisch, und worüber müssen sich Designer/Entwickler Gedanken machen? 
 
 ## <a name="the-four-layers-of-a-typical-app-layers"></a>Die vier Ebenen einer typischen App
 
@@ -76,12 +76,12 @@ Mit Windows 10 RS2 haben wir buchstäblich eine weitere Dimension hinzugefügt: 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>Hinter dem Hintergrund</b> Diese Ebene liegt hinter der app.  Wenn Elemente auf diese Ebene verschoben werden, empfehlen wir, sie nicht interaktiv zu gestalten. Elemente auf dieser Ebene haben den langsamsten Parallax-Effekt und werden auf das App-Fenster beschnitten. TODO: Ist diese Ebene skalierbar? 
+<b>Nach Hintergrund</b> dieser Ebene befindet sich hinter der app.  Wenn Elemente auf diese Ebene verschoben werden, empfehlen wir, sie nicht interaktiv zu gestalten. Elemente auf dieser Ebene haben den langsamsten Parallax-Effekt und werden auf das App-Fenster beschnitten. TODO: Werden diese Ebene skaliert? 
 
-<p>Beispiele für Hintergrundelemente sind das Bild hinter dem Inhalt, TODO: Beispiel, TODO: Beispiel.</p>
+<p>Beispiel-Hintergrund-Elemente enthalten Bild hinter dem Inhalt, TODO: Beispiel: TODO: Beispiel:.</p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">Die Hintergrundebene einer App</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">Abgesehen von der Ebene einer App im Hintergrund</a>
     
   </div>
 </div>
@@ -92,9 +92,9 @@ Mit Windows 10 RS2 haben wir buchstäblich eine weitere Dimension hinzugefügt: 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>Passive Ebene</b> Dies ist die Basisebene der app, in denen UI-Elemente in der Standardeinstellung.  Elemente bewegen sich auf dieser Ebene in Echtzeit (keine Parallax-Effekt). Sie werden auf das App-Fenster beschnitten und auf 100 % skaliert. 
+<b>Passive Ebene</b> Dies ist der Ebene von der app, in dem Elemente der Benutzeroberfläche in der Standardeinstellung Leben.  Elemente bewegen sich auf dieser Ebene in Echtzeit (keine Parallax-Effekt). Sie werden auf das App-Fenster beschnitten und auf 100 % skaliert. 
 
-<p>Beispielelemente: Der App-Hintergrund, der Text, das sekundäre UI, wie z. B. das App-Navigations-UI.</p>
+<p>Beispiel-Elemente: Der app Hintergrund, Text, sekundäre Benutzeroberfläche, z. B. die Benutzeroberfläche der app-Navigation.</p>
   </div>
   <div class="side-by-side-content-right">
     <a href="images/content-as-objects/elements-forward-backward.png">Die passive Ebene einer App</a>
@@ -108,12 +108,12 @@ Mit Windows 10 RS2 haben wir buchstäblich eine weitere Dimension hinzugefügt: 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>Handlungsaufforderungen</b> Diese Ebene ist für interaktive Elemente, die Sie über Elemente auf der passiven Ebene priorisieren. Elemente auf dieser Ebene haben einen mittleren Parallax-Effekt und werden auf das App-Fenster beschnitten. TODO: Skalieren Elemente auf dieser Ebene oder haben sie einen Schlagschatten?
+<b>Aufrufe von Aktion</b> diese Ebene ist für die interaktive Elemente, die Sie über den passiven Ebenenelemente priorisieren. Elemente auf dieser Ebene haben einen mittleren Parallax-Effekt und werden auf das App-Fenster beschnitten. TODO: Führen Sie die Elemente auf dieser Ebene Skala oder aufweisen einen Schlagschatten?
 
-<p>Beispielelemente: Listen, Raster, primäre Befehle (TODO: z.B.....).</p> 
+<p>Beispiel-Elemente: Listen, Raster, primären Befehle (TODO: Such As...).</p> 
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">Die Call-to-Action-Schicht einer App</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">Die Call-to-Action-Ebene einer App</a>
     
   </div>
 </div>
@@ -123,7 +123,7 @@ Mit Windows 10 RS2 haben wir buchstäblich eine weitere Dimension hinzugefügt: 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>Hero-Ebene</b> Diese Ebene ist für das Element mit der höchsten Priorität auf dem Bildschirm zum Zeitpunkt.  Elemente auf dieser Ebene können die Grenzen des App-Fensters sprengen, sie können skalieren, und sie erhalten automatisch einen Schlagschatten.
+<b>Hero-Ebene</b> diese Ebene ist für das Element der höchsten Priorität auf dem Bildschirm, zu dem Zeitpunkt.  Elemente auf dieser Ebene können die Grenzen des App-Fensters sprengen, sie können skalieren, und sie erhalten automatisch einen Schlagschatten.
 
 <p>Beispielelemente: fotografische Elemente, das aktuell ausgewählte Element.</p>  
   </div>
@@ -141,10 +141,10 @@ Depth is meaningful; it establishes visual and interactive hierarchy for users t
 -->
 
 ## <a name="example-tbd"></a>Beispiel: TBD
-> TODO: Zeigen, wie man ein gemeinsames UI-Muster für die Verwendung der z-Reihenfolge anpasst. Wir sollten Illustrationen und Code zeigen. 
+> TODO: Zeigen Sie, wie ein häufiges Benutzeroberfläche, um die Z-Reihenfolge verwenden anpassen. Wir sollten Illustrationen und Code zeigen. 
 
 ## <a name="download-the-code-samples"></a>Codebeispiele herunterladen
->TODO: Link zu Beispielen, die diese Funktion demonstrieren. 
+>TODO: Link zu Beispielen, die diese Funktion veranschaulichen. 
 
 
 ## <a name="related-articles"></a>Verwandte Artikel

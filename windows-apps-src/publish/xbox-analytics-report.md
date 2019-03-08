@@ -1,25 +1,25 @@
 ---
-Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
+Description: Der Xbox-Analytics-Bericht im Partner Center zeigt Sie eine Statistik zur wie Ihre Kunden mit der Xbox-Funktionen in Ihrem Produkt ansprechender sind.
 title: Bericht der Xbox Analyse
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, Xbox Analyse, Xbox Live-Analyse, Xbox-Statistiken
+keywords: Windows 10, UWP, Xbox Analyse, Xbox Live-Analyse, Xbox-Statistiken
 ms.localizationpriority: medium
 ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922391"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607445"
 ---
-# <a name="xbox-analytics-report"></a>Xbox Analysebericht
+# <a name="xbox-analytics-report"></a>Bericht der Xbox Analyse
 
-Der **Xbox** Analysebericht im [Partner-Center](https://partner.microsoft.com/dashboard) zeigt Sie Statistiken darüber an, wie Ihre Kunden die Xbox-Features in Ihrem Spiel nutzen. Es enthält auch Informationen zur Dienstintegrität, um Clientfehler zu beheben.
+Die **Xbox Analytics** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) erfahren Sie Statistiken dazu, wie Ihre Kunden ansprechende, mit der Xbox-Funktionen in Ihrem Spiel sind. Es enthält auch Informationen zur Dienstintegrität, um Clientfehler zu beheben.
 
 > [!IMPORTANT]
-> Dieser Bericht wird nur angezeigt, wenn Sie ein Spiel für Xbox oder ein Spiel veröffentlichen, das Xbox Live-Dienste verwendet. Zu diesem Zweck Sie [konzeptgenehmigungsprozess](../gaming/concept-approval.md), einschließlich Spiele, die von [Microsoft-Partnern](../xbox-live/developer-program-overview.md#microsoft-partners) veröffentlicht und Spiele über übermittelt durchlaufen müssen die [ ID@Xbox Programm](../xbox-live/developer-program-overview.md#id). Spiele, die über das [Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) veröffentlicht sind derzeit nicht sichtbar in diesem Bericht.
+> Dieser Bericht wird nur angezeigt, wenn Sie ein Spiel für Xbox oder ein Spiel veröffentlichen, das Xbox Live-Dienste verwendet. Wechseln Sie zu diesem Zweck über die [Konzept Genehmigungsprozess](../gaming/concept-approval.md), wozu Spiele, die von veröffentlichten [Microsoft-Partner](../xbox-live/developer-program-overview.md#microsoft-partners) und Spiele, die gesendet werden, über die [ ID@Xbox Programm](../xbox-live/developer-program-overview.md#id). Spiele veröffentlicht wird, über die [Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) sind derzeit nicht sichtbar in diesem Bericht.
 
-Sie können den **Xbox** Analysebericht im linken Navigationsmenü für Ihr Spiel anzeigen, indem erweitern **Analysieren** und Auswählen von **Xbox-Analyse**.  Sie können diese Daten im Partner Center oder [den Bericht herunterladen](download-analytic-reports.md) offline anzeigen anzeigen.
+Sehen Sie die **Xbox Analytics** Bericht im linken Navigationsmenü für Ihr Spiel durch Erweitern **analysieren** und **Xbox Analytics**.  Sie können diese Daten anzeigen, im Partner Center oder [Bericht herunterladen](download-analytic-reports.md) offline anzeigen.
 
 
 ## <a name="overview-tab"></a>Registerkarte Übersicht
@@ -86,12 +86,12 @@ In den Abschnitten auf der **Xbox Live Registerkarte „Dienstintegrität”** k
 
 ### <a name="apply-filters"></a>Anwenden von Filtern
 
-Im oberen Bereich der Registerkarte können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **30D** (30Tage), aber Sie können Daten für **7D** (7Tage) oder einen benutzerdefinierten Datumsbereich auswählen, den Sie festlegen (nicht mehr als 30Tage). Beachten Sie für einen benutzerdefinierten Datumsbereich, dass alle Diagramme den Diagrammbereich auf den ersten und letzten Tag der Daten innerhalb des Bereichs kürzen, den Sie eingegeben haben.
+Im oberen Bereich der Registerkarte können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **30D** (30 Tage), aber Sie können Daten für **7D** (7 Tage) oder einen benutzerdefinierten Datumsbereich auswählen, den Sie festlegen (nicht mehr als 30 Tage). Beachten Sie für einen benutzerdefinierten Datumsbereich, dass alle Diagramme den Diagrammbereich auf den ersten und letzten Tag der Daten innerhalb des Bereichs kürzen, den Sie eingegeben haben.
 
 Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite nach Paketversion, Gerätetyp und/oder Sandbox zu filtern.
-- **Paketversion**: Der Standardfilter ist **Alle Versionen**, aber Sie können die Dienstintegritätsdaten auf eine bestimmte Paketversion beschränken.
-- **Gerätetyp**: Die Standardeinstellung ist **Alle Gerät**, Sie können jedoch die Dienstintegritätsdaten auf einen bestimmten Gerätetyp beschränken.
-- **Sandbox**: Die Standardeinstellung ist **RETAIL**, Sie können jedoch die Dienstintegritätsdaten auf eine bestimmte Sandbox beschränken.
+- **Paketversion**: Der Standardfilter ist **alle Versionen**, aber Sie können einschränken, die Dienst-integritätsdaten, um eine spezielle Version des Pakets.
+- **Gerätetyp**: Die Standardeinstellung ist **alle Geräte**, aber Sie können die Service Health-Daten zu einem bestimmten Gerätetyp einschränken.
+- **Sandbox**: Die Standardeinstellung ist **RETAIL**, aber Sie können die Health-Dienstdaten einer bestimmten Sandbox einschränken.
 
 Die Informationen in allen unten angezeigten Diagrammen beziehen sich auf den ausgewählten Zeitraum und alle von Ihnen ausgewählten Filter. In einigen Abschnitten können Sie zusätzliche Filter anwenden.
 
@@ -108,7 +108,7 @@ Sie können auch nur Ratenbegrenzungsfehler anzeigen, indem Sie **Begrenzung der
 Dieses Diagramm zeigt standardmäßig die sechs Top-Dienste nach Fehleranzahl an. Sie können das Filtersymbol in der oberen rechten Ecke dieses Abschnitts auswählen, um unterschiedliche Dienste auszuwählen. Sie können Fehler für maximal sechs Dienste auf einmal anzeigen.
 
 > [!NOTE]
-> Die Legende zeigt nur die unterschiedlichen Präfixe für die einzelnen Dienste an (z.B. **presence** anstelle von **presence.xboxlive.com**). Sie finden die vollständige Service-Adresse in der Tabelle **Clientfehler nach Endpunkt** weiter unten in der Registerkarte **Xbox Live-Dienstintegrität** .
+> Die Legende zeigt nur die unterschiedlichen Präfixe für die einzelnen Dienste an (z. B. **presence** anstelle von **presence.xboxlive.com**). Sie finden die vollständige Service-Adresse in der Tabelle **Clientfehler nach Endpunkt** weiter unten in der Registerkarte **Xbox Live-Dienstintegrität** .
 
 
 ### <a name="service-availability"></a>Dienstverfügbarkeit
@@ -118,7 +118,7 @@ Das Diagramm **Dienstverfügbarkeit** zeigt die tägliche Verfügbarkeit aller X
 Dieses Diagramm zeigt standardmäßig die sechs Dienste mit der niedrigsten Verfügbarkeit an. Sie können das Filtersymbol in der oberen rechten Ecke dieses Abschnitts auswählen, um unterschiedliche Dienste auszuwählen. Sie können die Verfügbarkeit für maximal sechs Dienste auf einmal anzeigen.
 
 > [!NOTE]
-> Die Legende zeigt nur die unterschiedlichen Präfixe für die einzelnen Dienste an (z.B. **presence** anstelle von **presence.xboxlive.com**). Sie finden die vollständige Service-Adresse in der Tabelle **Clientfehler nach Endpunkt** weiter unten in der Registerkarte **Xbox Live-Dienstintegrität** .
+> Die Legende zeigt nur die unterschiedlichen Präfixe für die einzelnen Dienste an (z. B. **presence** anstelle von **presence.xboxlive.com**). Sie finden die vollständige Service-Adresse in der Tabelle **Clientfehler nach Endpunkt** weiter unten in der Registerkarte **Xbox Live-Dienstintegrität** .
 
 
 ### <a name="client-errors-by-endpoint"></a>Clientfehler nach Endpunkt

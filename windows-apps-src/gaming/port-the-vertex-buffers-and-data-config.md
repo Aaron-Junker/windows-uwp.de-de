@@ -1,19 +1,19 @@
 ---
-title: Portieren der Vertexpuffer und -daten
+title: Portieren der Vertexpuffer und Daten
 description: In diesem Schritt definieren Sie die Vertexpuffer für die Gitter und die Indexpuffer, mit deren Hilfe die Shader die Scheitelpunkte (Vertices) in einer angegebenen Reihenfolge durchlaufen können.
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Portieren, Vertexpuffer, Daten, Direct3D
+keywords: Windows 10, UWP, Spiele, Portieren, Vertexpuffer, Daten, Direct3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938483"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592815"
 ---
-# <a name="port-the-vertex-buffers-and-data"></a>Portieren der Vertexpuffer und -Daten
+# <a name="port-the-vertex-buffers-and-data"></a>Portieren der Vertexpuffer und Daten
 
 
 
@@ -28,7 +28,7 @@ In diesem Schritt definieren Sie die Vertexpuffer für die Gitter und die Indexp
 
 Zuerst untersuchen wir das hartcodierte Modell für das Würfelgitter, das verwendet werden soll. Für beide Darstellungen wurden die Scheitelpunkte in Form einer Dreiecksliste organisiert (im Gegensatz zu einer Kette oder einem anderen effizienteren Dreieckslayout). Alle Scheitelpunkte in beiden Darstellungen verfügen außerdem über zugeordnete Indizes und Farbwerte. Ein Großteil des Direct3D-Codes in diesem Thema bezieht sich auf Variablen und Objekte, die im Direct3D-Projekt definiert wurden.
 
-Dies ist der Würfel für die Verarbeitung mit OpenGLES2.0. In der Beispielimplementierung besteht jeder Scheitelpunkt (Vertex) aus sieben Gleitkommawerten: drei Positionskoordinaten gefolgt von vier RGBA-Farbwerten.
+Dies ist der Würfel für die Verarbeitung mit OpenGL ES 2.0. In der beispielimplementierung wird jedem Scheitelpunkt 7 "float"-Werte an: 3 Positionskoordinaten gefolgt von 4 Werten der RGBA-Farbe.
 
 ```cpp
 #define CUBE_INDICES 36
@@ -68,7 +68,7 @@ GLuint cubeIndices[] =
 };
 ```
 
-Dies ist der gleiche Würfel für die Verarbeitung mit Direct3D11.
+Dies ist der gleiche Würfel für die Verarbeitung mit Direct3D 11.
 
 ```cpp
 VertexPositionColor cubeVerticesAndColors[] = 
@@ -106,17 +106,17 @@ unsigned short cubeIndices[] =
 };
 ```
 
-Es ist erkennbar, dass der Würfel im OpenGLES2.0-Code in einem "rechtshändigen" Koordinatensystem dargestellt wird, während der Würfel im Direct3D-spezifischen Code in einem "linkshändigen" Koordinatensystem dargestellt wird. Beim Importieren Ihrer eigenen Gitterdaten müssen Sie die Koordinaten der z-Achse für Ihr Modell umkehren und die Indizes für die einzelnen Gitter entsprechend ändern, um die Dreiecke gemäß der Änderung im Koordinatensystem zu durchlaufen.
+Es ist erkennbar, dass der Würfel im OpenGL ES 2.0-Code in einem "rechtshändigen" Koordinatensystem dargestellt wird, während der Würfel im Direct3D-spezifischen Code in einem "linkshändigen" Koordinatensystem dargestellt wird. Beim Importieren Ihrer eigenen Gitterdaten müssen Sie die Koordinaten der z-Achse für Ihr Modell umkehren und die Indizes für die einzelnen Gitter entsprechend ändern, um die Dreiecke gemäß der Änderung im Koordinatensystem zu durchlaufen.
 
 Wir setzen voraus, dass das Verschieben des Würfelgitters aus dem rechtshändigen OpenGL ES 2.0-Koordinatensystem in das linkshändige Direct3D-Koordinatensystem erfolgreich war. Als Nächstes sehen wir uns an, wie die Würfeldaten für die Verarbeitung in beiden Modellen geladen werden.
 
 ## <a name="instructions"></a>Anweisungen
 
-### <a name="step-1-create-an-input-layout"></a>Schritt 1: Erstellen eines Eingabelayouts
+### <a name="step-1-create-an-input-layout"></a>Schritt 1: Erstellen Sie ein Layout für die Eingabe
 
 In OpenGL ES 2.0 werden die Vertexdaten als Attribute angegeben, die für die Shaderobjekte bereitgestellt und von diesen gelesen werden. Normalerweise geben Sie eine Zeichenfolge, die den im GLSL-Code des Shaders verwendeten Attributnamen enthält, für das Shaderprogrammobjekt an und erhalten einen Speicherbereich zurück, den Sie für den Shader bereitstellen können. In diesem Beispiel enthält ein Vertexpufferobjekt eine Liste mit benutzerdefinierten Vertexstrukturen, die wie folgt definiert und formatiert sind:
 
-OpenGLES2.0: Konfigurieren der Attribute, in denen die Informationen pro Vertex enthalten sind
+OpenGL ES 2.0: Konfigurieren Sie die Attribute, die die pro-Vertex-Informationen enthalten.
 
 ``` syntax
 typedef struct 
@@ -126,13 +126,13 @@ typedef struct
 } Vertex;
 ```
 
-In OpenGL ES 2.0 gelten Eingabelayouts implizit. Sie verwenden eine normale GL\_ELEMENT\_ARRAY\_BUFFER-Struktur und geben die Breite und den Versatz an, damit der Vertex-Shader die Daten nach dem Hochladen interpretieren kann. Sie informieren den Shader mithilfe von **glVertexAttribPointer**, bevor gerendert wird, welche Attribute welchen Teilen der einzelnen Vertexdatenblöcke zugeordnet werden.
+In der OpenGL ES 2.0 sind Eingabe Layouts implizit; Sie erstellen ein allgemeines GL\_ELEMENT\_ARRAY\_Puffer und geben Sie das Segment, und versetzt, sodass dem Vertexshader offensichtlich korrekte Daten interpretieren kann, nach dem Hochladen. Sie informieren den Shader mithilfe von **glVertexAttribPointer**, bevor gerendert wird, welche Attribute welchen Teilen der einzelnen Vertexdatenblöcke zugeordnet werden.
 
 In Direct3D müssen Sie beim Erstellen des Puffers ein Eingabelayout angeben, um die Struktur der Vertexdaten im Vertexpuffer zu beschreiben, und nicht vor dem Zeichnen der Geometrie. Dazu verwenden Sie ein Eingabelayout, das dem Layout der Daten für die einzelnen Scheitelpunkte im Speicher entspricht. Es ist sehr wichtig, dies genau anzugeben!
 
-Hier erstellen Sie eine Eingabebeschreibung als Array mit [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180)-Strukturen.
+Hier erstellen Sie eine Eingabe Beschreibung als ein Array von [ **D3D11\_Eingabe\_ELEMENT\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) Strukturen.
 
-Direct3D: Definieren der Beschreibung eines Eingabelayouts
+Direct3D: Definieren Sie eine Beschreibung der eingabelayout.
 
 ``` syntax
 struct VertexPositionColor
@@ -151,13 +151,13 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-Mit dieser Eingabebeschreibung wird ein Vertex als ein Vektorpaar mit jeweils dreiKoordinaten definiert: ein 3D-Vektor zum Speichern der Vertexposition in den Modellkoordinaten und ein anderer 3D-Vektor zum Speichern des RGB-Farbwerts, der dem Vertex zugeordnet ist. In diesem Fall verwenden Sie das 3x32-Bit-Gleitkommaformat. Elemente dieses Typs sind im Code als `XMFLOAT3(X.Xf, X.Xf, X.Xf)` dargestellt. Sie sollten Typen aus der [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574)-Bibliothek immer bei der Behandlung von Daten verwenden, die von einem Shader genutzt werden. So wird die richtige Verpackung und Ausrichtung der Daten sichergestellt. (Verwenden Sie beispielsweise [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) oder [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) für Vektordaten und [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) für Matrizen.)
+Mit dieser Eingabebeschreibung wird ein Vertex als ein Vektorpaar mit jeweils drei Koordinaten definiert: ein 3D-Vektor zum Speichern der Vertexposition in den Modellkoordinaten und ein anderer 3D-Vektor zum Speichern des RGB-Farbwerts, der dem Vertex zugeordnet ist. In diesem Fall verwenden Sie das 3x32-Bit-Gleitkommaformat. Elemente dieses Typs sind im Code als `XMFLOAT3(X.Xf, X.Xf, X.Xf)` dargestellt. Sie sollten Typen aus der [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574)-Bibliothek immer bei der Behandlung von Daten verwenden, die von einem Shader genutzt werden. So wird die richtige Verpackung und Ausrichtung der Daten sichergestellt. (Verwenden Sie beispielsweise [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) oder [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) für Vektordaten und [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) für Matrizen.)
 
-Eine Liste aller möglichen Formattypen finden Sie unter [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+Eine Liste aller möglichen Format Typen, finden Sie unter [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
 
-Nachdem das Layout für die Eingabe pro Vertex definiert wurde, erstellen Sie das Layoutobjekt. Im folgenden Code schreiben Sie es in **m\_inputLayout**, eine Variable vom Typ **ComPtr** (die auf ein Objekt vom Typ [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) verweist). **fileData** enthält das kompilierte Vertexshaderobjekt aus dem vorherigen Schritt [Portieren der Shader](port-the-shader-config.md).
+Nachdem das Layout für die Eingabe pro Vertex definiert wurde, erstellen Sie das Layoutobjekt. In den folgenden Code, Sie schreiben, damit **m\_InputLayout**, eine Variable vom Typ **ComPtr** (die verweist auf ein Objekt des Typs [ **ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** enthält das kompilierte Vertexshaderobjekt aus dem vorherigen Schritt [Portieren der Shader](port-the-shader-config.md).
 
-Direct3D: Erstellen des vom Vertexpuffer verwendeten Eingabelayouts
+Direct3D: Erstellen Sie das eingabelayout, die von den Vertexpuffer verwendet.
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11InputLayout>      m_inputLayout;
@@ -175,11 +175,11 @@ m_d3dDevice->CreateInputLayout(
 
 Wir haben das Eingabelayout definiert. Als Nächstes erstellen wir einen Puffer, der dieses Layout nutzt, und laden die Daten des Würfelgitters in den Puffer.
 
-### <a name="step-2-create-and-load-the-vertex-buffers"></a>Schritt 2: Erstellen und Laden der Vertexpuffer
+### <a name="step-2-create-and-load-the-vertex-buffers"></a>Schritt 2: Erstellen Sie und Laden Sie die Vertex-Puffer
 
-Erstellen Sie in OpenGL ES 2.0 ein Pufferpaar: einen für die Positionsdaten und einen für die Farbdaten. (Sie können auch eine Struktur erstellen, die beide zusammen mit einem einzelnen Puffer enthält.) Binden Sie jeden der Puffer sowie die Schreibposition und die Farbdaten darin ein. Später während der Renderfunktion binden Sie die Puffer erneut und stellen das Format der Daten im Puffer für den Shader bereit, damit diese richtig interpretiert werden können.
+Erstellen Sie in OpenGL ES 2.0 ein Pufferpaar: einen für die Positionsdaten und einen für die Farbdaten. (Sie können auch eine Struktur, die beide enthält erstellen und einen einzelnen Puffer.) Sie binden jeder Puffer und die Position und die Farbdaten in diese schreiben. Später während der Renderfunktion binden Sie die Puffer erneut und stellen das Format der Daten im Puffer für den Shader bereit, damit diese richtig interpretiert werden können.
 
-OpenGLES2.0: Binden der Vertexpuffer
+OpenGL ES 2.0: Binden Sie die Vertexpuffer
 
 ``` syntax
 // upload the data for the vertex position buffer
@@ -188,13 +188,13 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-In Direct3D werden von Shadern aufrufbare Puffer als [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)-Strukturen dargestellt. Zum Binden dieses Puffers an ein Shaderobjekt erstellen Sie mit [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) eine CD3D11\_BUFFER\_DESC-Struktur für jeden Puffer. Legen Sie anschließend den Puffer des Direct3D-Gerätekontexts fest, indem Sie eine für den Puffertyp spezifische set-Methode wie [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) aufrufen.
+In Direct3D, Shader zugänglichen Puffer dargestellt werden, als [ **D3D11\_SUBRESOURCE\_Daten** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) Strukturen. Um den Speicherort dieses Puffers an Shader-Objekt zu binden, müssen Sie erstellen eine CD3D11\_Puffer\_DESC-Struktur für jeden Puffer mit [ **ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), und legen Sie dann der Puffer des Gerätekontexts Direct3D durch Aufrufen von Set-Methode zum Puffertyp, wie z. B. [ **ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
 
 Geben Sie beim Festlegen des Puffers die Breite (die Größe des Datenelements für einen einzelnen Vertex) sowie den Versatz (wo die eigentlichen Vertexdaten beginnen) zum Anfang des Puffers an.
 
-Beachten Sie, dass der Zeiger auf das **vertexIndices**-Array dem **pSysMem**-Feld der [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)-Struktur zugewiesen wird. Wenn dies nicht korrekt angegeben wird, ist das Gitter beschädigt oder leer!
+Beachten Sie, dass wir weisen Sie den Zeiger auf die **VertexIndices** array an die **pSysMem** Feld der [ **D3D11\_SUBRESOURCE\_Daten** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) Struktur. Wenn dies nicht korrekt angegeben wird, ist das Gitter beschädigt oder leer!
 
-Direct3D: Erstellen und Festlegen des Vertexpuffers
+Direct3D: Erstellen Sie, und legen Sie den Vertexpuffer
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -220,13 +220,13 @@ m_d3dContext->IASetVertexBuffers(
   &offset);
 ```
 
-### <a name="step-3-create-and-load-the-index-buffer"></a>Schritt 3: Erstellen und Laden des Indexpuffers
+### <a name="step-3-create-and-load-the-index-buffer"></a>Schritt 3: Erstellen Sie und Laden Sie die Index-Puffer
 
-Indexpuffer stellen eine effiziente Möglichkeit dar, für den Vertex-Shader das Suchen nach einzelnen Scheitelpunkten (Vertices) zuzulassen. Obwohl sie nicht zwingend erforderlich sind, werden sie in diesem Beispielrenderer verwendet. Wie bei Vertexpuffern in OpenGLES2.0 auch, wird ein Indexpuffer erstellt und als allgemeiner Puffer gebunden. Anschließend werden die bereits erstellten Indizes in den Puffer kopiert.
+Indexpuffer stellen eine effiziente Möglichkeit dar, für den Vertex-Shader das Suchen nach einzelnen Scheitelpunkten (Vertices) zuzulassen. Obwohl sie nicht zwingend erforderlich sind, werden sie in diesem Beispielrenderer verwendet. Wie bei Vertexpuffern in OpenGL ES 2.0 auch, wird ein Indexpuffer erstellt und als allgemeiner Puffer gebunden. Anschließend werden die bereits erstellten Indizes in den Puffer kopiert.
 
 Wenn Sie bereit zum Zeichnen sind, binden Sie sowohl den Vertexpuffer als auch den Indexpuffer erneut und rufen **glDrawElements** auf.
 
-OpenGL ES 2.0: Senden der Indexreihenfolge an den Draw-Aufruf
+OpenGL ES 2.0: Senden Sie die Reihenfolge der Indexe, an den Draw-Aufruf.
 
 ``` syntax
 GLuint indexBuffer;
@@ -248,9 +248,9 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-Für Direct3D ist der Prozess sehr ähnlich, jedoch etwas didaktischer gestaltet. Stellen Sie den Indexpuffer als Direct3D-Unterressource für die [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)-Schnittstelle bereit, die Sie beim Konfigurieren von Direct3D erstellt haben. Rufen Sie zu diesem Zweck [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) mit der konfigurierten Unterressource wie folgt für das Indexarray auf. (Beachten Sie auch hier, dass der Zeiger auf das **cubeIndices**-Array dem **pSysMem**-Feld der [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)-Struktur zugewiesen wird.)
+Für Direct3D ist der Prozess sehr ähnlich, jedoch etwas didaktischer gestaltet. Stellen Sie den Indexpuffer als Direct3D-Unterressource für die [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)-Schnittstelle bereit, die Sie beim Konfigurieren von Direct3D erstellt haben. Rufen Sie zu diesem Zweck [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) mit der konfigurierten Unterressource wie folgt für das Indexarray auf. (Beachten Sie, dass Sie den Zeiger zum Zuweisen der **CubeIndices** array an die **pSysMem** Feld der [ **D3D11\_SUBRESOURCE\_Daten** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) Struktur.)
 
-Direct3D: Erstellen des Indexpuffers
+Direct3D: Erstellen Sie die Index-Puffer.
 
 ``` syntax
 m_indexCount = ARRAYSIZE(cubeIndices);
@@ -276,7 +276,7 @@ m_d3dContext->IASetIndexBuffer(
 
 Später werden Sie die Dreiecke wie folgt mit einem Aufruf von [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (bzw. [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) für nicht indizierte Scheitelpunkte) zeichnen. (Ausführlichere Informationen erhalten Sie bereits jetzt unter [Zeichnen auf den Bildschirm](draw-to-the-screen.md).)
 
-Direct3D: Zeichnen der indizierten Scheitelpunkte
+Direct3D: Zeichnen Sie die indizierten Scheitelpunkte.
 
 ``` syntax
 m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -299,14 +299,14 @@ m_d3dContext->DrawIndexed(
 
 [Portieren des GLSL-Codes](port-the-glsl.md)
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 Fügen Sie den Code, mit dem unter [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) Methoden aufgerufen werden, beim Strukturieren von Direct3D jeweils in eine Methode ein, die aufgerufen wird, wenn die Geräteressourcen neu erstellt werden müssen. (In der Direct3D-Projektvorlage befindet sich dieser Code in den **CreateDeviceResource**-Methoden des Rendererobjekts. Der Code zum Aktualisieren des Gerätekontexts ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) wird jedoch in der **Render**-Methode platziert, da dort die Shaderphasen tatsächlich erstellt und die Daten gebunden werden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [Portieren eines einfachen OpenGL ES 2.0-Renderers zu Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [Gewusst wie: einen Renderer mit einfachen OpenGL ES 2.0 zu Direct3D 11-port](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 * [Portieren der Shaderobjekte](port-the-shader-config.md)
 * [Portieren der Vertexpuffer und -daten](port-the-vertex-buffers-and-data-config.md)
 * [Portieren des GLSL-Codes](port-the-glsl.md)

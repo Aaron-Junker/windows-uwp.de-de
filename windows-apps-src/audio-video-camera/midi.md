@@ -4,20 +4,20 @@ description: In diesem Artikel wird beschrieben, wie Sie MIDI-Geräte (Musical I
 title: MIDI
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947563"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612745"
 ---
 # <a name="midi"></a>MIDI
 
 
 
-In diesem Artikel wird beschrieben, wie Sie MIDI-Geräte (Musical Instrument Digital Interface) aufzählen und MIDI-Nachrichten in einer universellen Windows-App senden und empfangen. Windows 10 unterstützt MIDI über USB (Klasse-kompatibel und die meisten vertraulich Treiber), MIDI über Bluetooth LE (Windows 10 Anniversary Edition und höher), und über frei verfügbar Drittanbieter-Produkte, MIDI-Ethernet- und Routingereignisse MIDI.
+In diesem Artikel wird beschrieben, wie Sie MIDI-Geräte (Musical Instrument Digital Interface) aufzählen und MIDI-Nachrichten in einer universellen Windows-App senden und empfangen. Windows 10 unterstützt MIDI über USB (Klasse entsprechen und die meisten proprietäre-Treiber), MIDI über Bluetooth LE (Windows 10 Anniversary Edition und höher), und über die kostenlos verfügbare Drittanbieterprodukte, MIDI über Ethernet und weitergeleitete MIDI.
 
 ## <a name="enumerate-midi-devices"></a>Aufzählen von MIDI-Geräten
 
@@ -29,7 +29,7 @@ Fügen Sie der XAML-Seite ein [**ListBox**](https://msdn.microsoft.com/library/w
 
 [!code-xml[MidiListBoxes](./code/MIDIWin10/cs/MainPage.xaml#SnippetMidiListBoxes)]
 
-Die [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)-Methode der [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)-Klasse wird verwendet, um viele verschiedene Arten von Geräten aufzulisten, die von Windows erkannt werden. Um anzugeben, dass die Methode nur nach MIDI-Eingabegeräten suchen soll, verwenden Sie die von [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) zurückgegebene Auswahlzeichenfolge. **FindAllAsync** gibt eine [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) zurück, die für jedes beim System registrierte MIDI-Eingabegerät eine **DeviceInformation** enthält. Wenn die zurückgegebene Sammlung keine Elemente enthält, sind keine MIDI-Eingabegeräte verfügbar. Wenn die Sammlung Elemente enthält, durchlaufen Sie die **DeviceInformation**-Objekte, und fügen Sie den Namen der einzelnen Geräte zu **ListBox** mit MIDI-Eingabegeräten hinzu.
+Die [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)-Methode der [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)-Klasse wird verwendet, um viele verschiedene Arten von Geräten aufzulisten, die von Windows erkannt werden. Um anzugeben, dass die Methode nur nach MIDI-Eingabegeräten suchen soll, verwenden Sie die von [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) zurückgegebene Auswahlzeichenfolge. **FindAllAsync** gibt eine [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) zurück, die eine **DeviceInformation** für jedes beim System registrierte MIDI-Eingabegerät enthält. Wenn die zurückgegebene Sammlung keine Elemente enthält, sind keine MIDI-Eingabegeräte verfügbar. Wenn die Sammlung Elemente enthält, durchlaufen Sie die **DeviceInformation**-Objekte, und fügen Sie den Namen der einzelnen Geräte zu **ListBox** mit MIDI-Eingabegeräten hinzu.
 
 [!code-cs[EnumerateMidiInputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiInputDevices)]
 
@@ -68,10 +68,10 @@ Registrieren Sie Handler für die Ereignishandler des Überwachungselements.
 
 **DeviceWatcher** hat die folgenden Ereignisse:
 
--   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450): Wird ausgelöst, wenn dem System ein neues Gerät hinzugefügt wird
--   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - Wird ausgelöst, wenn ein Gerät aus dem System entfernt wird.
--   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - Wird ausgelöst, wenn die Informationen im Zusammenhang mit einem vorhandenen Gerät aktualisiert werden.
--   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - Wird ausgelöst, wenn das Überwachungselement die Aufzählung des angeforderten Gerätetyps abgeschlossen hat.
+-   [**Hinzugefügt** ](https://msdn.microsoft.com/library/windows/apps/br225450) -ausgelöst, wenn das System ein neues Gerät hinzugefügt wird.
+-   [**Entfernt** ](https://msdn.microsoft.com/library/windows/apps/br225453) -ausgelöst, wenn ein Gerät aus dem System entfernt wird.
+-   [**Aktualisiert** ](https://msdn.microsoft.com/library/windows/apps/br225458) -ausgelöst, wenn ein vorhandenes Gerät zugeordnete Informationen aktualisiert wird.
+-   [**EnumerationCompleted** ](https://msdn.microsoft.com/library/windows/apps/br225451) -ausgelöst, wenn die Watcher die Enumeration des angeforderten Typs abgeschlossen wurde.
 
 Im Ereignishandler für jedes dieser Ereignisse wird die **UpdateDevices**-Hilfsmethode aufgerufen, um das **ListBox** mit der aktuellen Geräteliste zu aktualisieren. Da **UpdateDevices** UI-Elemente aktualisiert und diese Ereignishandler nicht für den UI-Thread aufgerufen werden, muss jeder Aufruf von einem Aufruf von [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) umschlossen werden, wodurch der angegebene Code für den UI-Thread ausgeführt wird.
 
@@ -131,9 +131,9 @@ Achten Sie beim Deaktivieren Ihrer App darauf, die App-Ressourcen zu bereinigen.
 
 Beim Aufzählen der MIDI-Ausgabegeräte mit dem oben beschriebenen Verfahren erkennt Ihre App ein MIDI-Gerät namens „Microsoft GS Wavetable Synth“. Hierbei handelt es sich um einen integrierten General MIDI-Synthesizer, der von Ihrer App aus wiedergeben werden kann. Bei dem Versuch, einen MIDI-Out-Port für dieses Gerät zu erstellen, tritt jedoch ein Fehler auf, wenn die SDK-Erweiterung für den integrierten Synthesizer nicht in Ihrem Projekt enthalten ist.
 
-**So fügen Sie die General MIDI Synth SDK-Erweiterung in Ihrem App-Projekt hinzu**
+**Die allgemeine MIDI Synthesizer-SDK-Erweiterung in das app-Projekt eingeschlossen werden sollen.**
 
-1.  Klicken Sie im **Projektmappen-Explorer** unter Ihrem Projekt mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen...** aus.
+1.  Klicken Sie im **Projektmappen-Explorer** unter Ihrem Projekt mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen…** aus.
 2.  Erweitern Sie den Knoten **Universelle Windows-App**.
 3.  Wählen Sie **Erweiterungen**.
 4.  Wählen Sie aus der Liste der Erweiterungen **Microsoft General MIDI-DLS für universelle Windows-Apps**.

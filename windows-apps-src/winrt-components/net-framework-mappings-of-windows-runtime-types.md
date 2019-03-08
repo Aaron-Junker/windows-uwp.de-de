@@ -4,14 +4,14 @@ description: Die folgende Tabelle enthält die Zuordnungen, die das .NET Framewo
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927506"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602615"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>.NET Framework-Zuordnungen von Windows-Runtime-Typen
 
@@ -22,9 +22,9 @@ Die folgende Tabelle enthält die Zuordnungen, die das .NET Framework zwischen U
 ## <a name="mapping-tables"></a>Zuordnungstabellen
 
 
-Die meisten Typen mit demselben Namespace- und Typnamen in der UWP und dem .NET Framework sind Strukturen (oder Typen, die Strukturen zugeordnet sind, z.B. Aufzählungen bzw. Enumerationen). Strukturen verfügen in der UWP nur über Felder und benötigen Hilfstypen, die das .NET Framework ausblendet. Die .NET Framework-Versionen dieser Strukturen haben Eigenschaften und Methoden, die die Funktionalität der ausgeblendeten Hilfstypen bereitstellen.
+Die meisten Typen mit demselben Namespace- und Typnamen in der UWP und dem .NET Framework sind Strukturen (oder Typen, die Strukturen zugeordnet sind, z. B. Aufzählungen bzw. Enumerationen). Strukturen verfügen in der UWP nur über Felder und benötigen Hilfstypen, die das .NET Framework ausblendet. Die .NET Framework-Versionen dieser Strukturen haben Eigenschaften und Methoden, die die Funktionalität der ausgeblendeten Hilfstypen bereitstellen.
 
-Tabelle1: UWP-Typen, die .NET Framework-Typen mit einem anderen Namen und/oder Namespace zugeordnet sind.
+Tabelle 1: UWP-Typen, die .NET Framework-Typen mit einem anderen Namen und/oder Namespace zugeordnet.
 
 | UWP-Typ/Namespace                                            | .NET Framework-Typ/Namespace                                          | .NET Framework-Assembly                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
@@ -57,17 +57,17 @@ Tabelle1: UWP-Typen, die .NET Framework-Typen mit einem anderen Namen und/oder N
 
  
 
-Tabelle2: UWP-Typen, die .NET Framework-Typen mit demselben Namen und Namespace zugeordnet sind.
+Tabelle 2: UWP-Typen, die auf .NET Framework-Typen mit dem gleichen Namen und Namespace zugeordnet.
 
 | Namespace                           | Typ               | .NET Framework-Assembly                   |
 |-------------------------------------|--------------------|-------------------------------------------|
-| Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Point              | System.Runtime.WindowsRuntime.dll         |
+| Windows.UI                          | Farbe              | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | punkt              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Rect               | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Size               | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | Größe               | System.Runtime.WindowsRuntime.dll         |
 | Windows.UI.Xaml.Input               | ICommand           | System.ObjectModel.dll                    |
 | Windows.UI.Xaml                     | CornerRadius       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml                     | Duration           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml                     | Dauer           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | DurationTyp       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | GridLength         | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | GridUnitType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
@@ -83,4 +83,4 @@ Tabelle2: UWP-Typen, die .NET Framework-Typen mit demselben Namen und Namespace 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Erstellen von Windows-Runtime-Komponenten in c# und Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

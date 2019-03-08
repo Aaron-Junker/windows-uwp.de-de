@@ -1,23 +1,23 @@
 ---
-Description: Lets the user set a value in a given range.
+Description: Ermöglicht dem Benutzer das Festlegen eines Werts in einem angegebenen Bereich.
 title: Schieberegler
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f01aec2a0dc6010eab53122d69e64c57fe4f5c3d
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037082"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589925"
 ---
 # <a name="sliders"></a>Schieberegler
 
@@ -27,7 +27,7 @@ Ein Schieberegler ist ein Steuerelement, über das der Benutzer aus einer Reihe 
 
 > **Wichtige APIs**: [Slider-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), [Value-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx), [ValueChanged-Ereignis](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
-![Schieberegler-Steuerelement](images/controls/slider.png)
+![Schiebereglersteuerelement](images/controls/slider.png)
 
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
@@ -40,11 +40,11 @@ Verwenden Sie einen Schieberegler nicht für binäre Einstellungen. Verwenden Si
 
 Hier sind einige weitere Faktoren, die Sie bei der Entscheidung für oder gegen die Verwendung eines Schiebereglers berücksichtigen sollten:
 
--   **Handelt es sich bei der Einstellung um eine relative Anzahl?** Ist dies nicht der Fall, verwenden Sie stattdessen [Optionsfelder](radio-button.md) oder ein [Listenfeld](lists.md).
--   **Handelt es sich bei der Einstellung um einen exakten, bekannten numerischen Wert?** Wenn ja, verwenden Sie ein numerisches [Textfeld](text-box.md).
--   **Wäre es für Benutzer hilfreich, sofort Feedback zur Auswirkung von Einstellungsänderungen zu erhalten?** Wenn ja, verwenden Sie einen Schieberegler. Beispielsweise können Benutzer eine Farbe leichter auswählen, wenn sie sofort sehen, wie sich Änderungen an den Werten für Farbton, Sättigung oder Leuchtdichte auswirken.
--   **Weist die Einstellung einen Bereich aus vier oder mehr Werten auf?** Ist dies nicht der Fall, verwenden Sie stattdessen [Optionsfelder](radio-button.md).
--   **Können Benutzer den Wert ändern?** Schieberegler dienen zur Benutzerinteraktion. Wenn der Wert in keinem Fall von Benutzern geändert werden kann, verwenden Sie stattdessen schreibgeschützten Text.
+-   **Scheint die Einstellung wie eine relative Menge?** Ist dies nicht der Fall, verwenden Sie stattdessen [Optionsfelder](radio-button.md) oder ein [Listenfeld](lists.md).
+-   **Ist die Einstellung einer genauen numerischen Wert?** Wenn ja, verwenden Sie ein numerisches [Textfeld](text-box.md).
+-   **Sofortiges Feedback zu den Auswirkungen von Änderungen festlegen würde ein Benutzer nutzen?** Wenn ja, verwenden Sie einen Schieberegler. Beispielsweise können Benutzer eine Farbe leichter auswählen, wenn sie sofort sehen, wie sich Änderungen an den Werten für Farbton, Sättigung oder Leuchtdichte auswirken.
+-   **Haben die Einstellung, die einen Bereich von vier oder mehr Werten?** Ist dies nicht der Fall, verwenden Sie stattdessen [Optionsfelder](radio-button.md).
+-   **Kann der Benutzer den Wert ändern?** Schieberegler dienen zur Benutzerinteraktion. Wenn der Wert in keinem Fall von Benutzern geändert werden kann, verwenden Sie stattdessen schreibgeschützten Text.
 
 Wenn Sie zwischen einem Schieberegler und einem numerischen Textfeld entscheiden, verwenden Sie in folgenden Fällen ein numerisches Textfeld:
 
@@ -64,8 +64,8 @@ Verwenden Sie in folgenden Fällen einen Schieberegler:
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/Slider">die App zu öffnen und den Schieberegler in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -117,12 +117,12 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 -   Passen Sie das Steuerelement an, sodass Benutzer den Wert einfach anpassen können. Stellen Sie für Einstellungen mit separaten Werten sicher, dass der Benutzer jeden Wert einfach mithilfe der Maus auswählen kann. Stellen Sie sicher, dass die Endpunkte des Schiebereglers immer in die Bereiche einer Ansicht passen.
 -   Geben Sie während oder nach der Benutzerauswahl ein sofortiges Feedback (sofern umsetzbar). Beispielsweise gibt die Windows-Lautstärkeregelung einen Signalton aus, um die ausgewählte Audiolautstärke anzuzeigen.
--   Verwenden Sie Bezeichnungen, um den Wertebereich anzuzeigen. Eine Ausnahme liegt vor, wenn der Schieberegler vertikal ausgerichtet ist und die obere Beschriftung „Maximum”, „Hoch”, „Mehr” oder ähnlich lautet, ist die Bedeutung klar, und Sie können die anderen Beschriftungen weglassen.
+-   Verwenden Sie Bezeichnungen, um den Wertebereich anzuzeigen. Ausnahme: Wenn der Schieberegler vertikal ausgerichtet ist, und die oberste Bezeichnung ist die maximale, hoch, können weitere oder äquivalent, Sie die anderen Bezeichnungen auslassen, da die Bedeutung unklar ist.
 -   Deaktivieren Sie alle zugeordneten Beschriftungen und das visuelle Feedback, wenn Sie den Schieberegler deaktivieren.
 -   Bedenken Sie beim Festlegen der Flussrichtung bzw. Ausrichtung Ihres Schiebereglers die Textrichtung. In einigen Sprachen fließt das Skript von links nach rechts, und in anderen von rechts nach links.
 -   Verwenden Sie einen Schieberegler nicht als Statusanzeige.
 -   Legen Sie für die Miniaturansicht des Schiebereglers keine andere Größe als die Standardgröße fest.
--   Erstellen Sie keinen fortlaufenden Schieberegler, wenn der Wertebereich groß ist und die Benutzer mit hoher Wahrscheinlichkeit einen von mehreren repräsentativen Werten aus dem Bereich auswählen. Verwenden Sie diese Werte stattdessen als einzige zulässige Schritte. Wenn der Höchstwert für einen Zeitwert beispielsweise 1Monat ist, die Benutzer aber nur zwischen 1Minute, 1Stunde, 1Tag oder 1Monat auswählen sollen, erstellen Sie einen Schieberegler mit 4Schrittpunkten.
+-   Erstellen Sie keinen fortlaufenden Schieberegler, wenn der Wertebereich groß ist und die Benutzer mit hoher Wahrscheinlichkeit einen von mehreren repräsentativen Werten aus dem Bereich auswählen. Verwenden Sie diese Werte stattdessen als einzige zulässige Schritte. Wenn der Höchstwert für einen Zeitwert beispielsweise 1 Monat ist, die Benutzer aber nur zwischen 1 Minute, 1 Stunde, 1 Tag oder 1 Monat auswählen sollen, erstellen Sie einen Schieberegler mit 4 Schrittpunkten.
 
 ## <a name="additional-usage-guidance"></a>Weitere Hinweise zur Verwendung
 
@@ -130,7 +130,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 Sie können den Schieberegler horizontal oder vertikal ausrichten. Bestimmen Sie anhand dieser Richtlinien das geeignete Layout.
 
--   Verwenden Sie eine natürliche Ausrichtung. Wenn der Schieberegler beispielsweise einen echten Wert darstellt, der normalerweise vertikal angezeigt wird (z.B. eine Temperatur), verwenden Sie die vertikale Ausrichtung.
+-   Verwenden Sie eine natürliche Ausrichtung. Wenn der Schieberegler beispielsweise einen echten Wert darstellt, der normalerweise vertikal angezeigt wird (z. B. eine Temperatur), verwenden Sie die vertikale Ausrichtung.
 -   Wenn das Steuerelement für die Suche in Medien verwendet wird, beispielsweise in einer Video-App, verwenden Sie die horizontale Ausrichtung.
 -   Wenn Sie einen Schieberegler auf einer Seite verwenden, die in eine Richtung geschwenkt werden kann (horizontal oder vertikal), verwenden Sie für den Schieberegler eine andere Ausrichtung als die Schwenkrichtung. Anderenfalls streifen Benutzer möglicherweise beim Schwenken der Seite den Schieberegler und ändern versehentlich den Wert.
 -   Wenn Sie noch nicht sicher sind, welche Ausrichtung Sie verwenden sollen, nehmen Sie die, die am besten zum Seitenlayout passt.
@@ -147,14 +147,14 @@ Die Bereichsrichtung ist die Richtung, in der Sie den Schieberegler bewegen, wen
 
 -   Verwenden Sie Schrittpunkte, wenn der Schieberegler keine beliebigen Werte zwischen minimalen und maximalen Werten zulassen soll. Wenn Sie beispielsweise einen Schieberegler verwenden, um die Anzahl der zu kaufenden Kinotickets anzugeben, lassen Sie keine Gleitkommawerte zu. Verwenden Sie den Schrittwert "1".
 -   Wenn Sie Schritte (auch als Andockpunkte bezeichnet) angeben, stellen Sie sicher, dass der letzte Schritt am Maximalwert des Schiebereglers ausgerichtet ist.
--   Verwenden Sie Teilstriche, wenn Sie Benutzern die Position wichtiger Werte zeigen möchten. So kann beispielsweise ein Schieberegler für die Zoomsteuerung Teilstriche für 50%, 100% und 200% haben.
+-   Verwenden Sie Teilstriche, wenn Sie Benutzern die Position wichtiger Werte zeigen möchten. So kann beispielsweise ein Schieberegler für die Zoomsteuerung Teilstriche für 50 %, 100 % und 200 % haben.
 -   Zeigen Sie Teilstriche an, wenn Benutzer den ungefähren Wert der Einstellung wissen müssen.
 -   Zeigen Sie Teilstriche und eine Wertbeschriftung an, wenn die Benutzer den genauen Wert der ausgewählten Einstellung erfahren sollen, ohne mit dem Steuerelement zu interagieren. Andernfalls können Sie die QuickInfo für den Wert verwenden, um den genauen Wert anzuzeigen.
--   Zeigen Sie immer Teilstriche an, wenn Schrittpunkte nicht offensichtlich sind. Wenn der Schieberegler beispielsweise 200Pixel breit ist und 200Andockpunkte hat, können Sie die Teilstriche ausblenden, da die Benutzer das Andockverhalten nicht bemerken. Wenn aber nur zehn Andockpunkte vorhanden sind, zeigen Sie Teilstriche an.
+-   Zeigen Sie immer Teilstriche an, wenn Schrittpunkte nicht offensichtlich sind. Wenn der Schieberegler beispielsweise 200 Pixel breit ist und 200 Andockpunkte hat, können Sie die Teilstriche ausblenden, da die Benutzer das Andockverhalten nicht bemerken. Wenn aber nur zehn Andockpunkte vorhanden sind, zeigen Sie Teilstriche an.
 
 ### <a name="labels"></a>Beschriftungen
 
--   **Schiebereglerbeschriftungen**
+-   **Schiebereglerbezeichnungen**
 
     Aus der Schiebereglerbeschriftung geht hervor, wofür der Schieberegler verwendet wird.
 
@@ -162,15 +162,15 @@ Die Bereichsrichtung ist die Richtung, in der Sie den Schieberegler bewegen, wen
     -   Platzieren Sie Beschriftungen über dem Schieberegler, wenn er sich in einem Formular befindet, in dem die meisten Beschriftungen über den Steuerelementen positioniert sind.
     -   Platzieren Sie Beschriftungen an der Seite, wenn sich der Schieberegler in einer Umgebung befindet, in der die meisten Beschriftungen neben den Steuerelementen positioniert sind.
     -   Platzieren Sie Beschriftungen nach Möglichkeit nicht unter dem Schieberegler, da der Benutzer die Beschriftung mit dem Finger verdecken könnte, wenn er den Schieberegler berührt.
--   **Bereichsbeschriftungen**
+-   **Bereichs-Bezeichnungen**
 
     Die Bereichs- oder Füllungsbeschriftungen beschreiben den minimalen und den maximalen Wert des Schiebereglers.
 
     -   Beschriften Sie die beiden Enden des Schiebereglerbereichs, sofern dies nicht aufgrund einer vertikalen Ausrichtung unnötig ist.
     -   Verwenden Sie nach Möglichkeit für jede Beschriftung nur ein Wort.
     -   Verwenden Sie keine Interpunktion am Ende.
-    -   Stellen Sie sicher, dass die Beschriftungen aussagekräftig und parallel sind. Beispiele: "Maximum/Minimum", "Mehr/Weniger", "Niedrig/Hoch", "Leise/Laut".
--   **Wertbeschriftungen**
+    -   Stellen Sie sicher, dass die Beschriftungen aussagekräftig und parallel sind. Beispiele: Minimale/maximale mehr/kleiner, niedrige/hohe, vorläufig/lauten.
+-   **Wertbezeichnungen**
 
     Eine Wertbeschriftung zeigt den aktuellen Wert des Schiebereglers an.
 
@@ -191,5 +191,5 @@ Ziehen Sie beim Entwerfen eines benutzerdefinierten Schiebereglers Möglichkeite
 - [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-topics"></a>Verwandte Themen
-- [Umschalter](toggles.md)
+- [Ein/aus-Schalter](toggles.md)
 - [Slider-Klasse](https://msdn.microsoft.com/library/windows/apps/br209614)

@@ -3,15 +3,15 @@ title: Device Portal - Referenz zur API für Xbox-Entwicklereinstellungen
 description: Erfahren Sie, wie Sie auf Xbox-Entwicklereinstellungen zugreifen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920889"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598645"
 ---
 # <a name="developer-settings-api-reference"></a>Referenz zur API für Entwicklereinstellungen   
 Mit dieser API können Sie auf Xbox One-Einstellungen zugreifen, die für die Entwicklung nützlich sind.
@@ -46,17 +46,17 @@ Die Antwort ist ein JSON-Einstellungsarray mit allen Einstellungen. Jedes Einste
 * RequiresReboot („Yes“|„No“): Dieses Feld gibt an, ob ein Neustart erforderlich ist, damit die Einstellung wirksam wird.
 * Disabled – („Yes“ | „No“): Dieses Feld gibt an, ob die Einstellung deaktiviert ist und nicht bearbeitet werden kann.
 * Category (String): Die Kategorie der Einstellung.
-* Type („Text“ | „Number“ | „Bool“ | „Select“): Dieses Feld gibt den Einstellungstyp an– Texteingabe, ein boolescher Wert („true“ oder „false“), eine Zahl mit einem Mindestwert oder Maximalwert oder Auswahl aus einer bestimmten Liste mit Werten.
+* Type („Text“ | „Number“ | „Bool“ | „Select“): Dieses Feld gibt den Einstellungstyp an – Texteingabe, ein boolescher Wert („true“ oder „false“), eine Zahl mit einem Mindestwert oder Maximalwert oder Auswahl aus einer bestimmten Liste mit Werten.
 
-Wenn die Einstellung eine Zahl ist:
-* Min. – (Number): Dieses Feld gibt den minimalen numerischen Wert der Einstellung an.
-* Max. – (Number): Dieses Feld gibt den numerischen Maximalwert der Einstellung.
+Wenn die Einstellung auf eine Zahl ist:
+* Min - (Anzahl) dieses Feld gibt den minimalen numerischen Wert der Einstellung an.
+* Max: (Anzahl) dieses Feld gibt den maximalen numerischen Wert der Einstellung an.
 
-Wenn die Einstellung "select" ist:
-* OptionsVariable – ("Yes" | "No") dieses Feld gibt an, ob die Einstellungsoptionen variabel sind, ob die gültigen Optionen ohne Neustart geändert werden können.
+Wenn die Einstellung zu wählen:
+* OptionsVariable - ("Yes" | "No") dieses Feld gibt an, ob die Festlegen von Optionen Variablen sind, wenn die gültigen Optionen, ohne einen Neustart des Computers ändern können.
 * Options: JSON-Array mit den gültigen Auswahloptionen als Zeichenfolgen.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -75,7 +75,7 @@ Mit der folgenden Anforderung können Sie Informationen zu einer einzelnen Einst
 
 Methode      | Anforderungs-URI
 :------     | :-----
-GET | /ext/settings/\<setting name\>
+GET | /ext/Settings/\<Einstellungsname\>
 <br />
 **URI-Parameter**
 
@@ -97,17 +97,17 @@ Die Antwort ist ein JSON-Objekt mit folgenden Feldern:
 * RequiresReboot („Yes“|„No“): Dieses Feld gibt an, ob ein Neustart erforderlich ist, damit die Einstellung wirksam wird.
 * Disabled – („Yes“ | „No“): Dieses Feld gibt an, ob die Einstellung deaktiviert ist und nicht bearbeitet werden kann.
 * Category (String): Die Kategorie der Einstellung.
-* Type („Text“ | „Number“ | „Bool“ | „Select“): Dieses Feld gibt den Einstellungstyp an– Texteingabe, ein boolescher Wert („true“ oder „false“), eine Zahl mit einem Mindestwert oder Maximalwert oder Auswahl aus einer bestimmten Liste mit Werten.
+* Type („Text“ | „Number“ | „Bool“ | „Select“): Dieses Feld gibt den Einstellungstyp an – Texteingabe, ein boolescher Wert („true“ oder „false“), eine Zahl mit einem Mindestwert oder Maximalwert oder Auswahl aus einer bestimmten Liste mit Werten.
 
-Wenn die Einstellung eine Zahl ist:
-* Min. – (Number): Dieses Feld gibt den minimalen numerischen Wert der Einstellung an.
-* Max. – (Number): Dieses Feld gibt den numerischen Maximalwert der Einstellung.
+Wenn die Einstellung auf eine Zahl ist:
+* Min - (Anzahl) dieses Feld gibt den minimalen numerischen Wert der Einstellung an.
+* Max: (Anzahl) dieses Feld gibt den maximalen numerischen Wert der Einstellung an.
 
-Wenn die Einstellung "select" ist:
-* OptionsVariable – ("Yes" | "No") dieses Feld gibt an, ob die Einstellungsoptionen variabel sind, ob die gültigen Optionen ohne Neustart geändert werden können.
+Wenn die Einstellung zu wählen:
+* OptionsVariable - ("Yes" | "No") dieses Feld gibt an, ob die Festlegen von Optionen Variablen sind, wenn die gültigen Optionen, ohne einen Neustart des Computers ändern können.
 * Options: JSON-Array mit den gültigen Auswahloptionen als Zeichenfolgen.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -126,7 +126,7 @@ Mit der folgenden Anforderung können Sie den Wert für eine Einstellung festleg
 
 Methode      | Anforderungs-URI
 :------     | :-----
-PUT | /ext/settings/\<setting name\>
+PUT | /ext/Settings/\<Einstellungsname\>
 <br />
 **URI-Parameter**
 
@@ -144,7 +144,7 @@ Value (Zeichenfolge): Der neue Wert für die Einstellung.
 
 - Keine
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -155,6 +155,6 @@ HTTP-Statuscode      | Beschreibung
 5XX | Fehlercodes
 
 <br />
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Xbox

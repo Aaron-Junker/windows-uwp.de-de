@@ -1,30 +1,30 @@
 ---
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: Verwenden Sie diese Methoden in der Microsoft Store-Übermittlungs-API, um Daten für apps abzurufen, die für Ihr Partner Center-Konto registriert wurden.
+description: Verwenden Sie diese Methoden in der Microsoft Store-Übermittlung API zum Abrufen von Daten für apps, die mit Ihrem Partner Center-Konto registriert sind.
 title: Abrufen von App-Daten
 ms.date: 02/28/2018
 ms.topic: article
-keywords: Windows10, UWP, Microsoft Store-Übermittlungs-API, App-Daten
+keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, App-Daten
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930016"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598895"
 ---
 # <a name="get-app-data"></a>Abrufen von App-Daten
 
-Verwenden Sie die folgenden Methoden in der Microsoft Store-Übermittlungs-API, um Daten für vorhandene apps im Partner Center-Konto zu erhalten. Eine Einführung in die Microsoft Store-Übermittlungs-API einschließlich der Voraussetzungen für die Verwendung der API finden Sie unter [Erstellen und Verwalten von Übermittlungen mit MicrosoftStore-Diensten](create-and-manage-submissions-using-windows-store-services.md).
+Verwenden Sie die folgenden Methoden in der Microsoft Store-Übermittlung API zum Abrufen von Daten für vorhandene apps in Ihrem Partner Center-Konto. Eine Einführung in die Microsoft Store-Übermittlungs-API einschließlich der Voraussetzungen für die Verwendung der API finden Sie unter [Erstellen und Verwalten von Übermittlungen mit Microsoft Store-Diensten](create-and-manage-submissions-using-windows-store-services.md).
 
-Bevor Sie diese Methoden verwenden können, muss die app bereits im Partner Center-Konto vorhanden sein. Informationen zum Erstellen oder Verwalten von Übermittlungen für Apps finden Sie unter den Methoden in [Verwalten von App-Übermittlungen](manage-app-submissions.md).
+Bevor Sie diese Methoden verwenden können, muss die app bereits in Ihrem Partner Center-Konto vorhanden sein. Informationen zum Erstellen oder Verwalten von Übermittlungen für Apps finden Sie unter den Methoden in [Verwalten von App-Übermittlungen](manage-app-submissions.md).
 
 | Methode | URI                                                                                             | Beschreibung                                                 |
 |------- |------------------------------------------------------------------------------------------------ |------------------------------------------------------------ |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [Daten für Ihre gesamten Apps abrufen](get-all-apps.md)               |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [Daten für eine bestimmte App abrufen](get-an-app.md)                |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [Add-Ons für eine App abrufen](get-add-ons-for-an-app.md)         |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [Flight-Pakete für eine App abrufen](get-flights-for-an-app.md) |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [Abrufen von Daten für alle Ihre apps](get-all-apps.md)               |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [Abrufen von Daten für eine bestimmte app](get-an-app.md)                |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [Abrufen von Add-ons für eine app](get-add-ons-for-an-app.md)         |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [Paket Flüge für eine app zu erhalten.](get-flights-for-an-app.md) |
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -60,15 +60,15 @@ Diese Ressource steht für eine App, die in Ihrem Konto registriert ist.
 }
 ```
 
-Diese Ressource hat die folgenden Werte.
+Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung       |
 |-----------------|---------|---------------------|
-| id            | String  | Die Store-ID der App. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
-| primaryName   | String  | Der Primärname der App.      |
+| id            | string  | Die Store-ID der App. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
+| primaryName   | string  | Der Primärname der App.      |
 | packageFamilyName | string  | Der Paketfamilienname der App.      |
 | packageIdentityName          | string  | Die Paketidentität der App.                       |
-| publisherName       | string  | Die Windows-Herausgeber-ID, die mit der App verknüpft ist. Dies entspricht dem **Package/Identity/Publisher** -Wert, der auf der Seite [App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) für die app im Partner Center angezeigt wird.       |
+| publisherName       | string  | Die Windows-Herausgeber-ID, die mit der App verknüpft ist. Dies entspricht der **Paketherausgeber/Identity/** Wert, der auf die [App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) Seite für die app im Partner Center.       |
 | firstPublishedDate      | string  | Das Datum, an dem die App erstmals im Format ISO 8601 veröffentlicht wurde.   |
 | lastPublishedApplicationSubmission       | object | Eine [Übermittlungsressource](#submission_object) mit Informationen über die letzte veröffentlichte Übermittlung für die App.    |
 | pendingApplicationSubmission        | object  |  Eine [Übermittlungsressource](#submission_object) mit Informationen über die aktuelle ausstehende Übermittlung für die App.   |   
@@ -87,7 +87,7 @@ Diese Ressource enthält Informationen zu einem Add-On.
 }
 ```
 
-Diese Ressource hat die folgenden Werte.
+Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung         |
 |-----------------|---------|----------------------|
@@ -119,7 +119,7 @@ Diese Ressource enthält Informationen zu einem Flight-Paket für eine App.
 }
 ```
 
-Diese Ressource hat die folgenden Werte.
+Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung           |
 |-----------------|---------|------------------------|
@@ -156,9 +156,9 @@ Die Ressource hat die folgenden Werte.
  
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen und Verwalten von Übermittlungen mit Microsoft Store-Diensten](create-and-manage-submissions-using-windows-store-services.md)
-* [Verwalten von App-Übermittlungen mithilfe der Microsoft Store-Übermittlungs-API](manage-app-submissions.md)
-* [Abrufen aller Apps](get-all-apps.md)
-* [Abrufen einer App](get-an-app.md)
-* [Abrufen von Add-Ons für eine App](get-add-ons-for-an-app.md)
-* [Abrufen von Flight-Paketen für eine App](get-flights-for-an-app.md)
+* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Verwalten der Übermittlung von Apps mit die Übermittlung zum Microsoft Store-API](manage-app-submissions.md)
+* [Alle apps abrufen](get-all-apps.md)
+* [Erhalten Sie eine app](get-an-app.md)
+* [Abrufen von Add-ons für eine app](get-add-ons-for-an-app.md)
+* [Paket Flüge für eine app zu erhalten.](get-flights-for-an-app.md)

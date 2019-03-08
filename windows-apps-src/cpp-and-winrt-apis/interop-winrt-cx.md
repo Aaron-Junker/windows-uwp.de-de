@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, portieren, migrieren, interoperabilität, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 558f3fa75e7dd599927a9d2ace256bf1feb98e77
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042302"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621645"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Interoperabilität zwischen C++/WinRT und C++/CX
 
-Strategien zum Portieren nach und nach des Codes in Ihrer [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) Projekt [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) finden Sie im Abschnitt [Wechsel zu C++ / WinRT von C++ / CX](move-to-winrt-from-cx.md).
+Strategien für die schrittweise das Portieren von Code in Ihre [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) Projekt [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) finden Sie im [verschieben in C++ / WinRT in C++ / CX](move-to-winrt-from-cx.md).
 
-Dieses Thema zeigt zwei Hilfsfunktionen gezeigt, mit denen Sie zum Konvertieren zwischen C++ / CX- und C++ / WinRT-Objekten im selben Projekt. Sie können sie um Interoperabilität zwischen Code, der die beiden sprachprojektionen verwendet, oder Sie können die Funktionen verwenden, wie Sie Ihren Code von C++ Portieren / CX nach C++ / WinRT.
+In diesem Thema wird gezeigt, zwei Hilfsfunktionen, die Sie verwenden können, für die Konvertierung zwischen C++ / CX und C++ / WinRT-Objekte im selben Projekt. Können Sie Sie verwenden, um Interoperabilität zwischen Code, der die zwei sprachprojektionen verwendet werden soll, oder Sie können die Funktionen verwenden, wie Sie den Code in C++ Portieren c++ / CX verwenden, um C++ / WinRT.
 
 ## <a name="fromcx-and-tocx-functions"></a>Funktionen from_cx und to_cx
 Die folgende Hilfsfunktion konvertiert ein C++/CX-Objekt in ein äquivalentes C++/WinRT-Objekt. Die Funktion bildet ein C++/CX-Objekt auf den zugrundeliegenden [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) Schnittstellenzeiger ab. Sie ruft dann [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) auf diesem Zeiger auf, um de Standardschnittstelle des C++/WinRT-Objekts abzurufen. **QueryInterface** ist das Windows-Runtime Application Binary Interface (ABI) Äquivalent zur safe_cast-Erweiterung von C++/CX. Und die Funktion [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) ermittelt die Adresse des zugrundeliegenden **IUnknown**-Schnittstellenzeiger eines C++/WinRT-Objekts, sodass er auf einen anderen Wert gesetzt werden kann.
@@ -45,15 +45,15 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 }
 ```
 
-## <a name="example-project-showing-the-two-helper-functions-in-use"></a>Beispielprojekt mit die beiden verwendeten Hilfsfunktionen verwendet
+## <a name="example-project-showing-the-two-helper-functions-in-use"></a>Zeigt die beiden Hilfsfunktionen verwendet Beispielprojekt
 
-Reproduziert werden, auf einfache Weise das Szenario für das Portieren nach und nach des Codes in einer C++ / CX-Projekts zu C++ / WinRT können Sie damit beginnen durch Erstellen eines neuen Projekts in Visual Studio mithilfe eines C++ / WinRT-Projektvorlagen (finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
+Reproduziert werden, auf einfache Weise das Szenario der schrittweise das Portieren von Code in einem C++ / CX-Projekt in C++ / WinRT, beginnen Sie, indem das Erstellen eines neuen Projekts in Visual Studio mithilfe eines C++ / WinRT-Projektvorlagen (finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT ](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
 
-Dieses Beispielprojekt auch zeigt, wie Sie Namespace-Aliase für die verschiedenen Inseln des Codes verwenden können, um den Umgang mit sonstigen potenziellen Namespacekonflikten zwischen der C++ / WinRT-Projektion und der C++ / CX-Projektion.
+Dieses Beispielprojekt auch wird veranschaulicht, wie Sie Namespacealiase für die verschiedenen Inseln von Code, um verarbeiten andernfalls potenziellen Namespace-Konflikt zwischen der C++ / WinRT Projektions- und C++ / CX-Projektion.
 
-- Erstellen Sie eine **Visual C++** \> **Windows Universal** > **Core App (C++ / WinRT)** Projekt.
-- In den Projekteigenschaften, **C/C++-** \> **Allgemeine** \> **Windows-Runtime-Erweiterung** \> **Ja (/ Zw)**. Dies aktiviert die Projekt-Unterstützung für C++ / CX.
-- Ersetzen Sie den Inhalt des `App.cpp` mit der untenstehenden codeauflistung.
+- Erstellen Sie eine **Visual C++** \> **Windows Universal** > **Core-App (C++ / WinRT)** Projekt.
+- In den Projekteigenschaften **C/C++-** \> **allgemeine** \> **Windows-Runtime-Erweiterung nutzen** \> **Ja (/ Zw)** . Dies aktiviert die Unterstützung von Projekten für C++ / CX.
+- Ersetzen Sie den Inhalt der `App.cpp` mit der codeauflistung unten.
 
 ```cppwinrt
 // App.cpp
@@ -253,11 +253,11 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [IUnknown Schnittstelle](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [IUnknown-Schnittstelle](https://msdn.microsoft.com/library/windows/desktop/ms680509)
 * [QueryInterface-Funktion](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::get_abi Funktion](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::get_abi Funktion](/uwp/cpp-ref-for-winrt/put-abi)
+* [WinRT::get_abi-Funktion](/uwp/cpp-ref-for-winrt/get-abi)
+* [WinRT::put_abi-Funktion](/uwp/cpp-ref-for-winrt/put-abi)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [C++/CX zu C++/WinRT wechseln](move-to-winrt-from-cx.md)
+* [Verschieben von c++ / WinRT in C++ / CX](move-to-winrt-from-cx.md)

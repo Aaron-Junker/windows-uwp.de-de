@@ -1,39 +1,39 @@
 ---
-title: Dämpfungs- und Spotlight-Faktor
-description: Die Komponenten für diffuse und Glanzlichtbeleuchtung der globalen Beleuchtungsgleichung enthalten Begriffe, die die Lichtdämpfung und den Blickpunkt-Kegel beschreiben.
+title: Dämpfung- und Spotlight-Faktor
+description: Die diffusen und spiegelnden Beleuchtungskomponenten der globalen Beleuchtungsgleichung enthalten Begriffe, die die Abschwächung des Lichts und den Spotlicht-Kegel beschreiben.
 ms.assetid: F61D4ACB-09AB-4087-9E2D-224E472D6196
 keywords:
-- Dämpfungs- und Spotlight-Faktor
+- Dämpfung- und Spotlight-Faktor
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8126ac8fa738a2b8a9680d215179fe23f77c5d44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937844"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659295"
 ---
-# <a name="attenuation-and-spotlight-factor"></a>Dämpfungs- und Spotlight-Faktor
+# <a name="attenuation-and-spotlight-factor"></a>Dämpfung- und Spotlight-Faktor
 
 
-Die Komponenten für diffuse und Glanzlichtbeleuchtung der globalen Beleuchtungsgleichung enthalten Begriffe, die die Lichtdämpfung und den Blickpunkt-Kegel beschreiben. Diese Begriffe werden nachfolgend beschrieben.
+Die diffusen und spiegelnden Beleuchtungskomponenten der globalen Beleuchtungsgleichung enthalten Begriffe, die die Abschwächung des Lichts und den Spotlicht-Kegel beschreiben. Diese Begriffe werden nachfolgend beschrieben.
 
-## <a name="span-idattenuationspanspan-idattenuationspanspan-idattenuationspanattenuation"></a><span id="Attenuation"></span><span id="attenuation"></span><span id="ATTENUATION"></span>Dämpfung
+## <a name="span-idattenuationspanspan-idattenuationspanspan-idattenuationspanattenuation"></a><span id="Attenuation"></span><span id="attenuation"></span><span id="ATTENUATION"></span>Attenuation
 
 
 Die Lichtdämpfung hängt vom Typ des Lichts und dem Abstand zwischen dem Licht und der Vertexposition ab. Verwenden Sie eine der folgenden Formeln, um die Dämpfung zu berechnen.
 
-Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
+Atten = 1 / (att0<sub>ich</sub> + att1<sub>ich</sub> \* d + att2<sub>ich</sub> \* d²)
 
 Dabei gilt:
 
 | Parameter        | Standardwert | Typ           | Beschreibung                                     | Bereich          |
 |------------------|---------------|----------------|-------------------------------------------------|----------------|
-| att0<sub>i</sub> | 0,0           | Gleitkomma | Konstanter Dämpfungsfaktor                     | 0 bis +unendlich |
-| att1<sub>i</sub> | 0,0           | Gleitkomma | Linearer Dämpfungsfaktor                       | 0 bis +unendlich |
-| att2<sub>i</sub> | 0,0           | Gleitkomma | Quadratischer Dämpfungsfaktor                    | 0 bis +unendlich |
-| d                | Nicht zutreffend           | Gleitkomma | Abstand zwischen Vertexposition und Position der Lichtquelle | Nicht zutreffend            |
+| att0<sub>i</sub> | 0.0           | Gleitkomma | Konstanter Dämpfungsfaktor                     | 0 bis +unendlich |
+| att1<sub>i</sub> | 0.0           | Gleitkomma | Linearer Dämpfungsfaktor                       | 0 bis +unendlich |
+| att2<sub>i</sub> | 0.0           | Gleitkomma | Quadratischer Dämpfungsfaktor                    | 0 bis +unendlich |
+| d                | n. a.           | Gleitkomma | Abstand zwischen Vertexposition und Position der Lichtquelle | n. a.            |
 
  
 
@@ -48,7 +48,7 @@ Dabei gilt:
 
 | Parameter       | Standardwert | Typ                                             | Beschreibung                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
-| L<sub>dir</sub> | Nicht zutreffend           | 3D-Vektor mit X-, Y- und Z-Gleitkommawerten | Richtungsvektor von der Vertexposition bis zur Position der Lichtquelle |
+| L<sub>dir</sub> | n. a.           | 3D-Vektor mit X-, Y- und Z-Gleitkommawerten | Richtungsvektor von der Vertexposition bis zur Position der Lichtquelle |
 
  
 
@@ -67,10 +67,10 @@ Die folgende Gleichung legt den Spotlight-Faktor fest.
 
 | Parameter         | Standardwert | Typ           | Beschreibung                              | Bereich                    |
 |-------------------|---------------|----------------|------------------------------------------|--------------------------|
-| rho<sub>i</sub>   | Nicht zutreffend           | Gleitkomma | Kosinus(Winkel) für Spotlight i            | Nicht zutreffend                      |
-| phi<sub>i</sub>   | 0,0           | Gleitkomma | Halbschatten-Winkel für Spotlight i nach Bogenmaß | \[theta<sub>i</sub>, pi) |
-| theta<sub>i</sub> | 0,0           | Gleitkomma | Kernschatten-Winkel für Spotlight i nach Bogenmaß    | \[0, pi)                 |
-| Farbverlauf           | 0,0           | Gleitkomma | Farbverlaufsfaktor                           | (-unendlich +unendlich)   |
+| rho<sub>i</sub>   | n. a.           | Gleitkomma | Kosinus(Winkel) für Spotlight i            | n. a.                      |
+| phi<sub>i</sub>   | 0.0           | Gleitkomma | Halbschatten-Winkel für Spotlight i nach Bogenmaß | \[theta<sub>i</sub>, pi) |
+| theta<sub>i</sub> | 0.0           | Gleitkomma | Kernschatten-Winkel für Spotlight i nach Bogenmaß    | \[0, pi)                 |
+| Farbverlauf           | 0.0           | Gleitkomma | Farbverlaufsfaktor                           | (-unendlich +unendlich)   |
 
  
 
@@ -82,8 +82,8 @@ und
 
 | Parameter       | Standardwert | Typ                                             | Beschreibung                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
-| L<sub>dcs</sub> | Nicht zutreffend           | 3D-Vektor mit X-, Y- und Z-Gleitkommawerten | Der negativen Wert der Lichteinfallsrichtung im Kamerabereich         |
-| L<sub>dir</sub> | Nicht zutreffend           | 3D-Vektor mit X-, Y- und Z-Gleitkommawerten | Richtungsvektor von der Vertexposition bis zur Position der Lichtquelle |
+| L<sub>dcs</sub> | n. a.           | 3D-Vektor mit X-, Y- und Z-Gleitkommawerten | Der negativen Wert der Lichteinfallsrichtung im Kamerabereich         |
+| L<sub>dir</sub> | n. a.           | 3D-Vektor mit X-, Y- und Z-Gleitkommawerten | Richtungsvektor von der Vertexposition bis zur Position der Lichtquelle |
 
  
 
@@ -92,7 +92,7 @@ Nach dem Berechnen der Lichtdämpfung berücksichtigt Direct3D auch eventuelle S
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Beleuchtungsmathematik](mathematics-of-lighting.md)
+[Mathematik der Beleuchtung](mathematics-of-lighting.md)
 
  
 

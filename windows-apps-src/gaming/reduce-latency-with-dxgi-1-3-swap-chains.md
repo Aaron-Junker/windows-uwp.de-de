@@ -1,41 +1,41 @@
 ---
-title: Reduzieren der Latenz mit DXGI1.3-Swapchains
-description: Verwenden Sie DXGI1.3 zum Reduzieren der geltenden Framelatenz, indem Sie warten, bis die Swapchain den geeigneten Zeitpunkt zum Beginnen mit dem Rendern eines neuen Frames signalisiert.
+title: Reduzieren der Latenz mit DXGI 1.3-Swapchains
+description: Verwenden Sie DXGI 1.3 zum Reduzieren der geltenden Framelatenz, indem Sie warten, bis die Swapchain den geeigneten Zeitpunkt signalisiert, um mit dem Rendern eines neuen Frames zu beginnen.
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Latenz, DXGI, Swapchains, Directx
+keywords: Windows 10, UWP, Spiele, Latenz, DXGI, Swapchains, Directx
 ms.localizationpriority: medium
 ms.openlocfilehash: acb5c58eebafa53fe140442550356f7eb7534efe
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047169"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594915"
 ---
-# <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Reduzieren der Latenz mit DXGI 1.3-Swapchains
+# <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Reduzieren der Latenz mit DXGI 1.3-Swapchains
 
 
 
-Verwenden Sie DXGI 1.3 zum Reduzieren der geltenden Framelatenz, indem Sie warten, bis die Swapchain den geeigneten Zeitpunkt zum Beginnen mit dem Rendern eines neuen Frames signalisiert. Spiele müssen in der Regel die geringstmögliche Latenz aufweisen, was den Zeitraum vom Eingang der Spielereingabe bis zur Reaktion des Spiels auf die Eingabe betrifft, indem die Anzeige aktualisiert wird. In diesem Thema wird ein Verfahren erläutert, das ab Version Direct3D11.2 verfügbar ist. Damit können Sie in Ihrem Spiel die geltende Framelatenz verringern.
+Verwenden Sie DXGI 1.3 zum Reduzieren der geltenden Framelatenz, indem Sie warten, bis die Swapchain den geeigneten Zeitpunkt signalisiert, um mit dem Rendern eines neuen Frames zu beginnen. Spiele müssen in der Regel die geringstmögliche Latenz aufweisen, was den Zeitraum vom Eingang der Spielereingabe bis zur Reaktion des Spiels auf die Eingabe betrifft, indem die Anzeige aktualisiert wird. In diesem Thema wird ein Verfahren erläutert, das ab Version Direct3D 11.2 verfügbar ist. Damit können Sie in Ihrem Spiel die geltende Framelatenz verringern.
 
 ## <a name="how-does-waiting-on-the-back-buffer-reduce-latency"></a>Wie kann mit dem Warten auf den Hintergrundpuffer die Latenz reduziert werden?
 
 
 Bei der Flipmodell-Swapchain werden „Flips“ des Hintergrundpuffers jeweils in die Warteschlange eingereiht, wenn vom Spiel [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) aufgerufen wird. Wenn von der Renderschleife „Present()“ aufgerufen wird, blockiert das System den Thread, bis die Darstellung eines vorherigen Frames abgeschlossen ist. So wird in der Warteschlange Platz für den neuen Frame geschaffen, bevor dieser dargestellt wird. Dies verursacht zusätzliche Latenz zwischen dem Zeitpunkt, zu dem vom Spiel ein Frame gezeichnet wird, und dem Zeitpunkt, zu dem die Anzeige des Frames vom System zugelassen wird. In vielen Fällen wird vom System ein stabiles Gleichgewicht erreicht, bei dem vom Spiel zwischen dem Rendern und Darstellen des Frames immer nahezu einen ganzen zusätzlichen Frame lang abgewartet wird. Es ist besser zu warten, bis das System zum Akzeptieren eines neuen Frames bereit ist, als den Frame basierend auf den aktuellen Daten zu rendern und sofort in die Warteschlange einzureihen.
 
-Erstellen Sie eine Swapchain mit Wartemöglichkeit, indem Sie das [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076)-Flag verwenden. Swapchains, die auf diese Art erstellt werden, können Ihre Renderschleife benachrichtigen, wenn das System zum Akzeptieren eines neuen Frames bereit ist. So kann das Spiel anhand der aktuellen Daten rendern und das Ergebnis sofort in die vorhandene Warteschlange einfügen.
+Erstellen eine mit wartemöglichkeit SwapChain mit der [ **DXGI\_SWAP\_Kette\_FLAG\_FRAME\_LATENZ\_WAITABLE\_Objekt** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) Flag. Swapchains, die auf diese Art erstellt werden, können Ihre Renderschleife benachrichtigen, wenn das System zum Akzeptieren eines neuen Frames bereit ist. So kann das Spiel anhand der aktuellen Daten rendern und das Ergebnis sofort in die vorhandene Warteschlange einfügen.
 
-## <a name="step-1-create-a-waitable-swap-chain"></a>Schritt 1: Erstellen einer Swapchain mit Wartemöglichkeit
+## <a name="step-1-create-a-waitable-swap-chain"></a>Schritt 1: Erstellen einer SwapChain mit mit wartemöglichkeit
 
 
-Geben Sie das [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076)-Flag an, wenn Sie [**CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) aufrufen.
+Geben Sie die [ **DXGI\_AUSTAUSCHEN\_Kette\_FLAG\_FRAME\_LATENZ\_WAITABLE\_Objekt** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) kennzeichnen Sie beim Aufrufen [ **CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559).
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **Hinweis:**  Flags dieses Flag kann nicht hinzugefügt oder entfernt werden mithilfe von [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). Von DXGI wird ein Fehlercode zurückgegeben, wenn dieses Flag anders als bei der Erstellung der Swapchain festgelegt wird.
+> **Beachten Sie**    im Gegensatz zu einigen Flags die, dieses Flag kann nicht hinzugefügt oder entfernt werden mithilfe von [ **ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). Von DXGI wird ein Fehlercode zurückgegeben, wenn dieses Flag anders als bei der Erstellung der Swapchain festgelegt wird.
 
  
 
@@ -50,7 +50,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## <a name="step-2-set-the-frame-latency"></a>Schritt 2: Festlegen der Framelatenz
+## <a name="step-2-set-the-frame-latency"></a>Schritt 2: Legen Sie die Frame-Latenz
 
 
 Legen Sie die Framelatenz mit der [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313)-API fest, anstatt [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334) aufzurufen.
@@ -68,7 +68,7 @@ Standardmäßig ist die Framelatenz für Swapchains mit Wartemöglichkeit auf 1 
 //    );
 ```
 
-## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>Schritt 3: Abrufen des Objekts mit Wartemöglichkeit aus der Swapchain
+## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>Schritt 3: Das Objekt mit wartemöglichkeit aus der SwapChain zu erhalten.
 
 
 Rufen Sie [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) auf, um das „wait“-Handle abzurufen. Das „wait“-Handle ist ein Zeiger auf das Objekt mit Wartemöglichkeit. Speichern Sie dieses Handle für die Verwendung durch die Renderschleife.
@@ -80,7 +80,7 @@ Rufen Sie [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.micr
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>Schritt4: Warten vor dem Rendern der einzelnen Frames
+## <a name="step-4-wait-before-rendering-each-frame"></a>Schritt 4: Warten Sie vor dem Rendern jeder frame
 
 
 Die Renderschleife sollte warten, bis die Swapchain über das Objekt mit Wartemöglichkeit ein Signal sendet, bevor sie mit dem Rendern eines Frames beginnt. Dies gilt auch für den ersten Frame, der mit der Swapchain gerendert wird. Verwenden Sie [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036), und stellen Sie das in Schritt 2 abgerufene „wait“-Handle bereit, um den Start eines Frames zu signalisieren.
@@ -154,7 +154,7 @@ Weitere Informationen zur Programmierung mit Multithreading unter Windows finden
 * [Asynchrone Programmierung in C++](https://msdn.microsoft.com/library/windows/apps/mt187334)
 * [Prozesse und Threads](https://msdn.microsoft.com/library/windows/desktop/ms684841)
 * [Synchronisierung](https://msdn.microsoft.com/library/windows/desktop/ms686353)
-* [Verwenden von Ereignisobjekten (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
+* [Mithilfe solcher Objekte (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
 
  
 

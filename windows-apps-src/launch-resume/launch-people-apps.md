@@ -4,20 +4,20 @@ description: In diesem Thema wird das URI-Schema „ms-people“ beschrieben. Ih
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ab10acab42ab3f03121a7c5a462cb651b0f3f31b
-ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014705"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595565"
 ---
 # <a name="launch-the-people-app"></a>Starten der Kontakte-App
 
-In diesem Thema wird das **ms-people:**-URI-Schema beschrieben. Ihre App kann dieses URI-Schema verwenden, um die Kontakte-App für bestimmte Aktionen zu starten.
+In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann dieses URI-Schema verwenden, um die Kontakte-App für bestimmte Aktionen zu starten.
 
-## <a name="ms-people-uri-scheme-reference"></a>ms-people: URI-Schemaverweis
+## <a name="ms-people-uri-scheme-reference"></a>ms-people: URI-Schema-Verweis
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ In diesem Thema wird das **ms-people:**-URI-Schema beschrieben. Ihre App kann di
 </div>
 <div> 
 </div></td>
-<td align="left">MS-People: Viewcontact?ContactId =&lt;Contactid&gt;&amp;AggregatedId =&lt;Aggid&gt;&amp;PhoneNumber = &lt;Phonenum&gt;&amp;E-Mail =&lt;e-Mail&gt;&amp;ContactName =&lt;Name&gt;&amp;Contact =&lt;Contactobj&gt;</td>
+<td align="left">ms-people:viewcontact?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">Startet mit einer „Kontakt speichern“-Seite innerhalb der Kontakte-App, um den angegeben Kontakt mit der angegebenen Telefonnummer oder E-Mail-Adresse zu speichern.
@@ -101,7 +101,7 @@ In diesem Thema wird das **ms-people:**-URI-Schema beschrieben. Ihre App kann di
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><b>Suchzeichenfolge</b></td>
+<td align="left"><b>SearchString</b></td>
 <td align="left"><p>Optional.</p>
 <p>Die Suchzeichenfolge für die Informationen zur Kontaktsuche.</p>
 <p>Die Telefonnummer oder den Namen des Kontakts.</p></td>
@@ -139,7 +139,7 @@ In diesem Thema wird das **ms-people:**-URI-Schema beschrieben. Ihre App kann di
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><b>Email</b></td>
+<td align="left"><b>E-Mail</b></td>
 <td align="left"><p>Optional.</p>
 <p>Die E-Mail-Adresse des Kontakts.</p></td>
 <td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
@@ -151,7 +151,7 @@ In diesem Thema wird das **ms-people:**-URI-Schema beschrieben. Ihre App kann di
 <td align="left"><p>ms-people:viewcontact?ContactName=John%20%Smith</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><b>Contact</b></td>
+<td align="left"><b>Kontakt</b></td>
 <td align="left"><p>Optional.</p>
 <p>Das Kontaktobjekt.</p></td>
 <td align="left"><p>ms-people:viewcontact?Contact={Serialized Contact}</p></td>
@@ -182,7 +182,7 @@ In diesem Thema wird das **ms-people:**-URI-Schema beschrieben. Ihre App kann di
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="even">
-<td align="left"><b>Email</b></td>
+<td align="left"><b>E-Mail</b></td>
 <td align="left"><p>Optional.</p>
 <p>Die E-Mail-Adresse des Kontakts.</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com</p></td>
@@ -285,13 +285,13 @@ In diesem Thema wird das **ms-people:**-URI-Schema beschrieben. Ihre App kann di
 </tr>
 
 <tr class="odd">
-<td align="left"><b>Spitzname</b></td>
+<td align="left"><b>der Spitzname</b></td>
 <td align="left"><p>Optional.</p>
 <p>Spitzname des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>Notizen</b></td>
+<td align="left"><b>Hinweise</b></td>
 <td align="left"><p>Optional.</p>
 <p>Notizen zum Kontakt.</p></td>
 </tr>
@@ -315,13 +315,13 @@ In diesem Thema wird das **ms-people:**-URI-Schema beschrieben. Ihre App kann di
 </tr>
 
 <tr class="even">
-<td align="left"><b>Title</b></td>
+<td align="left"><b>Titel</b></td>
 <td align="left"><p>Optional.</p>
 <p>Anrede des Kontakts.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>Webseite</b></td>
+<td align="left"><b>Website</b></td>
 <td align="left"><p>Optional.</p>
 <p>Webseite des Kontakts.</p></td>
 </tr>

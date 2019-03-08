@@ -4,14 +4,14 @@ ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: Auswählen einer Programmiersprache
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 48cea8c1a3a3c35a53a3376c48e3192c94caf709
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049287"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620775"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>Erste Schritte: Auswählen einer Programmiersprache
 
@@ -25,22 +25,22 @@ UWP-Apps können mit C++, C#, Microsoft Visual Basic und JavaScript entwickelt w
 Obwohl wir uns in diesem Artikel auf C# konzentrieren, bieten die restlichen Sprachen ebenfalls klare Vorteile, die Sie kennen sollten. Wenn Sie bei der App beispielsweise in erster Linie Wert auf die Leistung legen, ist C++ möglicherweise die richtige Wahl (insbesondere bei einer aufwändigen Grafik). Die Microsoft .NET-Version von Visual Basic ist hervorragend für Visual Basic-App-Entwickler geeignet. JavaScript mit HTML5 ist eine gute Wahl für Entwickler mit Webentwicklungshintergrund. Weitere Informationen finden Sie unter einem der folgenden Themen:
 
 -   [Erstellen Sie Ihrer ersten UWP-app mit C++](../get-started/create-a-basic-windows-10-app-in-cpp.md)
--   [Erstellen Sie Ihrer ersten UWP-app mit c# oder Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [Erstellen Ihrer ersten UWP-app, über C# oder Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
 -   [Erstellen Sie Ihrer ersten UWP-app mit JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
-**Hinweis:** für apps mit 3D-Grafiken die Standards OpenGL und OpenGL ES sind nicht nativ für UWP-apps verfügbar. Wenn Sie Ihren OpenGL ES-Code in Microsoft DirectX nicht neu schreiben möchten, könnte **Angle** von Interesse für Sie sein. Angle ist ein laufendes Projekt, das zum Konvertieren von OpenGL in DirectX entwickelt wurde, indem OpenGL-API-Aufrufe in DirectX-API-Aufrufe übersetzt werden. Weitere Informationen hierzu finden Sie unter den folgenden Themen:
+**Beachten Sie**  für Anwendungen, 3D-Grafiken zu verwenden, die OpenGL und OpenGL ES-Standards sind nicht für UWP-apps nativ verfügbar. Wenn Sie Ihren OpenGL ES-Code in Microsoft DirectX nicht neu schreiben möchten, könnte **Angle** von Interesse für Sie sein. Angle ist ein laufendes Projekt, das zum Konvertieren von OpenGL in DirectX entwickelt wurde, indem OpenGL-API-Aufrufe in DirectX-API-Aufrufe übersetzt werden. Weitere Informationen hierzu finden Sie unter den folgenden Themen:
 -   [Angle](https://code.google.com/p/angleproject/)
 -   [Erstellen Sie Ihrer ersten UWP-app mit DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [Beispiele für UWP-Apps, die DirectX nutzen](https://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [Wo finde ich das DirectX SDK?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+-   [UWP-app-Beispiele, die DirectX verwenden.](https://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [Wo befindet sich das DirectX SDK?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## <a name="giving-c-a-go"></a>Testen von C#
 
 Als iOS-Entwickler sind Sie die Arbeit mit Objective-C und Swift gewohnt. C# ist die Microsoft-Programmiersprache, die beiden am ähnlichsten ist. Unserer Meinung nach ist C# für die meisten Entwickler und die meisten Apps die Sprache, die am einfachsten und schnellsten erlernbar ist. Daher liegt der Schwerpunkt der Informationen und exemplarischen Vorgehensweisen in diesem Artikel auf dieser Sprache. Weitere Informationen zu C# finden Sie unter den folgenden Themen:
 
--   [Erstellen Sie Ihrer ersten UWP-app mit c# oder Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [Beispiele für UWP-Apps, die Verwendung von c#](https://go.microsoft.com/fwlink/p/?LinkId=263453)
--   [Visual C#-](https://go.microsoft.com/fwlink/p/?LinkId=263450)
+-   [Erstellen Ihrer ersten UWP-app, über C# oder Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [Verwenden Sie UWP-app-BeispieleC#](https://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [Visual C#](https://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 Es folgt ein Vergleich einer Klasse, die sowohl in Objective-C als auch in C# geschrieben wurde. Die Objective-C-Version wird zuerst dargestellt. Die C#-Version folgt danach.
 
@@ -142,4 +142,4 @@ C# ist eine einfach erlernbare Sprache und verfügt über viele Unterstützungsk
 
 ## <a name="next-step"></a>Nächster Schritt
 
-[Erste Schritte: Aufbau von Visual Studio](getting-started-getting-around-in-visual-studio.md)
+[Erste Schritte: Kennenlernen von Visual Studio](getting-started-getting-around-in-visual-studio.md)

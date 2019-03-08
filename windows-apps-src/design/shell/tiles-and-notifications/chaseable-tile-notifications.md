@@ -1,19 +1,19 @@
 ---
-Description: Use chaseable tile notifications to find out what your app displayed on its Live Tile when the user clicked it.
+Description: Verwenden Sie verfolgbare Kachelbenachrichtigungen, um herauszufinden, was Ihre App auf der Live-Kachel anzeigt, wenn der Benutzer darauf geklickt hat.
 title: Verfolgbare Kachelbenachrichtigungen
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
 template: detail.hbs
 ms.date: 06/13/2017
 ms.topic: article
-keywords: Windows10, Uwp, verfolgbare Kacheln, Live-Kacheln, verfolgbare Kachelbenachrichtigungen
+keywords: Windows 10, Uwp, verfolgbare Kacheln, Live-Kacheln, verfolgbare Kachelbenachrichtigungen
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938000"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592645"
 ---
 # <a name="chaseable-tile-notifications"></a>Verfolgbare Kachelbenachrichtigungen
 
@@ -21,10 +21,10 @@ Mit den verfolgbaren Kachelbenachrichtigungen können Sie festlegen, welche Kach
 Beispielsweise könnte eine Nachrichtenanwendung diese Funktion verwenden, um herauszufinden, welche Nachrichtenstory ihre Live-Kachel angezeigt hat. Sie könnte sicherstellen, dass die Story prominent angezeigt wird, damit der Benutzer sie finden kann. 
 
 > [!IMPORTANT]
-> **Erfordert das Anniversary Update**: Um verfolgbare Kachelbenachrichtigungen mit C#, C++ oder VB-basierte UWP-Apps zu verwenden, müssen Sie SDK 14393 als Zielobjekt auswählen und Build 14393 oder höher ausführen. Für JavaScript-basierte UWP-Apps müssen Sie SDK 17134 als Zielobjekt auswählen und Build 17134 oder höher verwenden. 
+> **Erfordert Anniversary Update**: Mit chaseable Tile-Benachrichtigungen mit C#, C++ und VB-basierte UWP-apps, Sie müssen als Ziel SDK 14393 und Build 14393 oder höher ausgeführt werden. Für JavaScript-basierte UWP-Apps müssen Sie SDK 17134 als Zielobjekt auswählen und Build 17134 oder höher verwenden. 
 
 
-> **Wichtige APIs**: [LaunchActivatedEventArgs.TileActivatedInfo-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **Wichtige APIs**: [LaunchActivatedEventArgs.TileActivatedInfo Eigenschaft](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>Funktionsweise
@@ -40,7 +40,7 @@ Verfolgbare Kachelbenachrichtigungen werden normalerweise verwendet, wenn Sie di
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>Was tun mit einer verfolgbaren Kachelbenachrichtigung?
 
-Der wichtigste Aspekt ist, dass Sie in den meisten Szenarien **NICHT direkt zu der spezifischen Benachrichtigung navigieren sollten**, die sich auf der Kachel befand, als der Benutzer darauf geklickt hat. Ihr Live-Kachel wird als Einstiegspunkt in Ihre Anwendung verwendet. Es kann zwei Szenarien geben, wenn ein Benutzer auf Ihr Live-Kachel klickt: (1) Er will Ihre Anwendung normal starten, oder (2) er will mehr Informationen über eine bestimmte Benachrichtigung sehen, die auf der Live-Kachel war. Da es für den Benutzer keine Möglichkeit gibt, explizit anzugeben, welches Verhalten er wünscht, ist es das ideale Erlebnis, **Ihre Anwendung normal zu starten und gleichzeitig sicherzustellen, dass die Benachrichtigung, die der Benutzer gesehen hat, leicht erkennbar ist**.
+Der wichtigste Aspekt ist, dass Sie in den meisten Szenarien **NICHT direkt zu der spezifischen Benachrichtigung navigieren sollten**, die sich auf der Kachel befand, als der Benutzer darauf geklickt hat. Ihr Live-Kachel wird als Einstiegspunkt in Ihre Anwendung verwendet. Es kann zwei Szenarien vorhanden sein, wenn ein Benutzer auf Ihre Live-Kachel klickt: (1) sie verwenden wollten, Ihre app normal zu starten, oder (2) sie weitere Informationen zu einer bestimmten Benachrichtigung sehen, die auf der Live-Kachel war wollten. Da es für den Benutzer keine Möglichkeit gibt, explizit anzugeben, welches Verhalten er wünscht, ist es das ideale Erlebnis, **Ihre Anwendung normal zu starten und gleichzeitig sicherzustellen, dass die Benachrichtigung, die der Benutzer gesehen hat, leicht erkennbar ist**.
 
 Wenn Sie beispielsweise auf die Live-Kachel der MSN News-App klicken, wird die Anwendung normal gestartet: Sie zeigt die Startseite oder den Artikel an, den der Benutzer zuvor gelesen hat. Auf der Startseite sorgt die App jedoch dafür, dass die Story aus der Live-Kachel leicht auffindbar ist. Auf diese Weise werden beide Szenarien unterstützt: das Szenario, in dem Sie einfach nur die Anwendung starten/fortsetzen möchten, und das Szenario, in dem Sie die spezifische Story anzeigen möchten.
 
@@ -111,7 +111,7 @@ Das LaunchActivatedEventArgs-Objekt hat eine Eigenschaft, die verfolgbare Benach
 
 Das [TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)-Objekt enthält eine Eigenschaft namens [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications), die eine Liste von Benachrichtigungen enthält, die innerhalb der letzten 15 Minuten auf der Kachel angezeigt wurden. Das erste Element in der Liste stellt die Benachrichtigung dar, die gerade auf de Kachel angezeigt wird, und die folgenden Elemente stellen die Benachrichtigungen dar, die der Benutzer vor dem aktuellen Element gesehen hat. Wenn Ihre Kachel gelöscht wurde, ist diese Liste leer.
 
-Jede ShownTileNotificationhas eine Argumentsproperty. Die Argumentsproperty werden initialisiert, mit der Argumentsstring aus Ihrer kachelbenachrichtigungs-Payload oder null, wenn der Payload nicht die Argumentsstring enthält.
+Jede ShownTileNotification verfügt über eine Arguments-Eigenschaft. Arguments-Eigenschaft wird mit der Argumentzeichenfolge "von Ihrem Nutzlast der Tile-Benachrichtigung oder Null initialisiert werden, wenn Ihre Nutzlast die Argumentzeichenfolge nicht enthalten waren.
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -178,5 +178,5 @@ Wenn Sie mit unformatiertes XML anstatt der Notifications-Bibliothek verwenden, 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [LaunchActivatedEventArgs.TileActivatedInfo-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [TileActivatedInfo-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

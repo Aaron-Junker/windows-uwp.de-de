@@ -1,23 +1,23 @@
 ---
-title: Verbundene Apps und Geräte (Project Rome)
+title: Verbundene Apps und Geräte (Projekt „Rome”)
 description: In diesem Abschnitt wird beschrieben, wie Sie mithilfe der Remote Systems-Plattform Remotegeräte entdecken, eine App auf einem Remotegerät starten und mit einem App-Dienst auf einem Remotegerät kommunizieren.
 ms.date: 06/08/2018
 ms.topic: article
-keywords: Windows 10, Uwp, verbundenen Geräten, remote-Systemen, "ROME" Projekt "ROME"
+keywords: Windows 10, Uwp, verbundene Geräte "," Remotesystemen "," ROM "," Projekt "ROME"
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: c785e6d2a8021148f572df88a6d9e6ba07c4a457
-ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "9031366"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601175"
 ---
-# <a name="connected-apps-and-devices-project-rome"></a>Verbundene Apps und Geräte (Project Rome)
+# <a name="connected-apps-and-devices-project-rome"></a>Verbundene Apps und Geräte (Projekt „Rome”)
 
-In diesem Abschnitt wird erläutert, wie apps Geräte-und plattformübergreifend mit [Project Rome](https://developer.microsoft.com/en-us/windows/project-rome). Das Projekt "ROME" in einem Szenario mit plattformübergreifenden implementieren finden Sie auf der [Haupt-Dokumentation-Seite für Projekt "ROME"](https://docs.microsoft.com/en-us/windows/project-rome/).
+In diesem Abschnitt wird erläutert, wie zum Verbinden von apps für Geräte und Plattformen mit [Projekt "ROME"](https://developer.microsoft.com/en-us/windows/project-rome). Informationen zum Projekt "ROME" in einem plattformübergreifenden Szenario zu implementieren, finden Sie auf die [Haupt-Dokumentationsseite für Projekt "ROME"](https://docs.microsoft.com/en-us/windows/project-rome/).
 
-Die meisten Benutzer verfügen über mehrere Geräte, wobei sie häufig eine Aktivität auf einem Gerät beginnen und auf einem anderen Gerät abschließen. Dazu müssen Apps geräte- und plattformübergreifend sein. Projekt "ROME" können Sie ermitteln von Remotegeräten, eine app auf einem Remotegerät starten und mit einem app-Dienst auf einem Remotegerät kommunizieren.
+Die meisten Benutzer verfügen über mehrere Geräte, wobei sie häufig eine Aktivität auf einem Gerät beginnen und auf einem anderen Gerät abschließen. Dazu müssen Apps geräte- und plattformübergreifend sein. Projekt "ROME" können Sie zum Ermitteln von Remotegeräten, starten Sie eine app auf einem Remotegerät und per app Service auf einem Remotegerät zu kommunizieren.
 
 Die mit Windows 10, Version 1607, eingeführten [Remotesysteme-APIs](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems) ermöglichen Ihnen das Schreiben von Apps, mit denen Benutzer eine Aufgabe auf einem Gerät starten und auf einem anderen Gerät abschließen können. Die Aufgabe bleibt der zentrale Fokus, und Benutzer können an dem für sie komfortabelsten Gerät arbeiten. Zum Beispiel hört ein Benutzer vielleicht Radio auf seinem Mobiltelefon. Aber zu Hause angekommen möchte er möglicherweise die Wiedergabe auf seine Xbox One übertragen, die in die Heim-Stereoanlage eingebunden ist.
 
@@ -31,9 +31,9 @@ Weitere Informationen zu Project Rome im Allgemeinen, einschließlich Ressourcen
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Starten einer App auf einem Remotegerät](launch-a-remote-app.md) | Erfahren Sie, wie Sie eine App auf einem Remotegerät starten. In diesem Thema werden der einfachste Anwendungsfall und die vorläufige Einrichtung behandelt.  |
-| [Erkennen von Remotegeräten](discover-remote-devices.md)  | Erfahren Sie, wie Sie Geräte erkennen, zu denen Sie eine Verbindung herstellen können. |
-| [Kommunizieren mit einem App-Remotedienst](communicate-with-a-remote-app-service.md) | Erfahren Sie, wie Sie mit einer App auf einem Remotegerät interagieren. |
-| [Verbinden von Geräten über Remotesitzungen](remote-sessions.md) | Ermöglichen Sie die gemeinsame Nutzung auf verbundenen Geräten, indem Sie diese in einer Remotesitzung vereinen. |
-| [Benutzeraktivitäten geräteübergreifend fortsetzen](useractivities.md)| Hilfe Benutzer fortsetzen können, was sie auch über mehrere Geräte in Ihrer app erledigt haben.|
-| [Bewährte Methoden für Benutzeraktivitäten](useractivities-best-practices.md)| Hier erfahren Sie die empfohlenen Methoden zum Erstellen und Aktualisieren von Aktivitäten des Benutzers.|
+| [Starten Sie eine app auf einem Remotegerät](launch-a-remote-app.md) | Erfahren Sie, wie Sie eine App auf einem Remotegerät starten. In diesem Thema werden der einfachste Anwendungsfall und die vorläufige Einrichtung behandelt.  |
+| [Ermitteln von Remotegeräten](discover-remote-devices.md)  | Erfahren Sie, wie Sie Geräte entdecken, zu denen Sie eine Verbindung herstellen können. |
+| [Mit einem remote-app-Dienst kommunizieren](communicate-with-a-remote-app-service.md) | Erfahren Sie, wie Sie mit einer App auf einem Remotegerät interagieren. |
+| [Verbinden Sie Geräte über remote-Sitzungen](remote-sessions.md) | Ermöglichen Sie die gemeinsame Nutzung auf verbundenen Geräten, indem Sie diese in einer Remotesitzung vereinen. |
+| [Fortsetzen von Benutzeraktivitäten, sogar auf Geräten](useractivities.md)| Helfen Sie Benutzern, die fortgesetzt, wo sie auch auf mehreren Geräten in Ihrer app aufgehört haben.|
+| [Bewährte Methoden für Benutzer Aktivitäten](useractivities-best-practices.md)| Erfahren Sie, die empfohlenen Methoden zum Erstellen und Aktualisieren von Benutzeraktivitäten.|

@@ -1,34 +1,34 @@
 ---
-Description: The Insights report in Partner Center highlights significant changes about your apps.
+Description: Die Insights-Bericht im Partner Center hebt hervor, wichtige Änderungen zu Ihren apps.
 title: Bericht über Geschäftsverlauf
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Insight, Trend, Anomalien, Anomalie, sich
+keywords: Windows 10, Uwp, Einblicke, Trend, Anomalien, anomalieerkennung, datenänderungen
 ms.localizationpriority: medium
 ms.openlocfilehash: 95cb43c45731c88ec758806aef91c3d7d8f36ad6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943546"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661525"
 ---
 # <a name="insights-report"></a>Bericht über Geschäftsverlauf
 
 
-**Im [Partner Center](https://partner.microsoft.com/dashboard) -Bericht** zeigt erhebliche Änderungen (Erhöhung oder Verringerung in einer bestimmten Metrik), die wir in den letzten 30 Tagen in Ihrer Käufe, Integrität, und/oder Nutzungsdaten erkannt. Auf diese Weise können Sie einen kurzen Überblick über potenziell wichtige Änderungen zu erhalten, ohne alle Diagramme in jedem dieser Berichte anzeigen.
+Die **Insights** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) bedeutende Änderungen (Rückgänge oder Anstiege in einer bestimmten Metrik), die wir in den letzten 30 Tagen in Ihrer Übernahmen, die Integrität und/oder die Auslastung erkannt werden Daten. Dadurch können Sie einen kurzen Blick auf potenziell wichtige Änderungen abrufen, ohne alle Diagramme in jedem dieser Berichte anzeigen.
 
 > [!NOTE]
-> Daten in diesem Bericht werden die letzten 30 Tagen behandelt. Sie können nicht auf einen anderen Zeitraum für diesen Bericht auswählen.
+> Dieser Bericht enthält die letzten 30 Tagen. Sie können nicht auf einen anderen Zeitraum für diesen Bericht auswählen.
 
-Der Bericht Daten in drei Registerkarten sortiert: **Käufe**, **Integrität**und **Verwendung**. Um Daten für eine dieser Bereiche anzuzeigen, wählen Sie die Registerkarte.
+Der Bericht sortiert die Daten in drei Registerkarten: **Akquisitionen**, **Integrität**, und **Nutzung**. Um Insights für einen dieser Bereiche anzuzeigen, wählen Sie die Registerkarte.
 
-Einblicke werden angezeigt, wenn wir eine bedeutende Änderung in Ihre Daten zu erkennen. Für jede Insight zeigen wir Folgendes:
-- **Interne Typ**: der Bereich, in dem die Einblicke erkannt wurde.
-- **Wert**: die bestimmte Metrik die erheblich geändert (oder **Alle** trifft die Änderung in der gesamten **interne Typ**).
-- **Datum**: das Datum, an dem wir die Änderung identifiziert. Dieses Datum stellt das Ende der Woche, in der wir eine erhebliche Erhöhung oder Verringerung, die im Vergleich zu Woche festgestellt.
-- **Insgesamt beeinträchtigen**: den Prozentsatz, der der Wert gestiegen oder gesunken sind für Ihre gesamte Kundenbasis. Dies hilft Ihnen zu verstehen, wie weit verbreitete die Auswirkungen von einer bestimmten Änderung möglicherweise insbesondere dann, wenn es auf Prozentsatz dargestellt vergleichen, **Top Mitwirkenden.**
-- **Oberen Mitwirkenden**: ggf. bestimmtes Segment, Paket oder andere identifizierende Umstand sollten Sie besser zu verstehen, welche Kunden die Änderung bezieht sich auf. Beispielsweise kann eine Änderung in erster Linie mit Kunden über einen bestimmten Markt oder auf einen bestimmten Gerätetyp erkannt werden. Für die **integritätsdaten** kann dies Hashes für bestimmte Fehler oder eine Paketversionen enthalten. Gegebenenfalls zeigen wir, dass der Wert erhöht oder verringert wird für diese Authentifizierungsstufe auch dem Prozentsatz.
+Einblicke werden angezeigt, wenn eine wesentliche Änderung in Ihren Daten erkannt. Für jede Insight zeigen wir Folgendes:
+- **Insight-Typ**: Der Bereich, in dem die Einblick erkannt wurde.
+- **Wert**: Die spezifische Metrik die erheblich geändert (oder **alle** trifft die Änderung auf die gesamte **Insight Typ**).
+- **Datum**: Das Datum, an dem die Änderung erkannt wurden. Dieses Datum stellt dar, das Ende der Woche, die in der wir eine beträchtliche Zunahme oder verringern, die im Vergleich zu die Woche vor, die erkannt werden.
+- **Insgesamt auswirken**: Der Prozentsatz, den der Wert erhöht oder verringert wird, über Ihre gesamte Kundenbasis. Dadurch können Sie verstehen, wie weit verbreitet die Auswirkungen der eine bestimmte Änderung möglicherweise insbesondere, wenn es mit Prozentsatz Informationen siehe verglichen, **Top Contributors.**
+- **Top-Mitwirkende**: Falls zutreffend, das spezifische Segment, Paket oder andere identifizierende Faktor, um zu erfahren, welche Kunden die Änderung bezieht sich auf. Beispielsweise kann eine Änderung in erster Linie für Kunden, die auf einen bestimmten Markt oder auf einen bestimmten Gerätetyp erkannt werden. Für **Integrität** Daten enthalten bestimmte Fehler Hashes oder Paket-Versionen. Falls zutreffend, zeigen wir, dass der Wert erhöht oder verringert wird, dass der Faktor für die auch dem Prozentsatz.
 - **Aktion**:
-   - Wählen Sie **Anzeigen 14 Tagen Trend** zum Anzeigen von einem Diagramm an, wie die Metrik befindet sich in der gesamte 14 Tage für das interne Datum geändert.
-   - Wählen Sie **uns mitteilen, wenn dies korrekt ist** , uns Ihr Feedback und lassen Sie uns wissen, wenn die Erkenntnisse, die wir bereitgestellt haben präzise erscheinen. Dieses Feedback hilft uns, um den Vorgang fortzusetzen, um die Daten zu verbessern, die wir hier bereitstellen. 
+   - Wählen Sie **anzeigen 14-Tage-Trend** an ein Diagramm mit, wie die Metrik während der gesamten 14 Tage vor dem Insight-Datum geändert.
+   - Wählen Sie **Teilen Sie uns, wenn dies genau ist** senden Sie uns Ihr Feedback, und lassen Sie uns wissen, wenn die gewonnenen Erkenntnisse wir haben genau erscheinen. Dieses Feedback hilft uns, um den Vorgang fortzusetzen, um die Daten zu verbessern, die wir hier bereitstellen. 
 

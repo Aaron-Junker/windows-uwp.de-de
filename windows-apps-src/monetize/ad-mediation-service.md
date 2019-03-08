@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Anzeigenvermittlung
 ms.localizationpriority: medium
 ms.openlocfilehash: 9197dd4b62df26ff63e469063573789da948c767
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049817"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592255"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft-Anzeigenvermittlungsdienst
 
@@ -28,7 +28,7 @@ Der Anzeigenvermittlungsdienst wird in eine Vielzahl von Anzeigennetzwerken übe
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>Verwalten der Komplexität von Anzeigennetzwerkbeziehungen  
 
-Der Anzeigenvermittlungsdienst ist in eine Vielzahl von Anzeigennetzwerken integriert, sodass Sie diese Arbeit nicht übernehmen müssen. Nachdem Sie das Microsoft Advertising-SDK zum Anzeigen von Werbung in Ihrer app verwenden, können Sie Ihre anzeigenvermittlungseinstellungen ändern Sie [im Partner Center](../publish/in-app-ads.md#mediation-settings) anzeigen aus mehreren Anzeigennetzwerken anzuzeigen. Sie profitieren davon, Anzeigen aus neuen Anzeigennetzwerken abrufen zu können, ohne Änderungen an Ihrem Code vorzunehmen.
+Der Anzeigenvermittlungsdienst ist in eine Vielzahl von Anzeigennetzwerken integriert, sodass Sie diese Arbeit nicht übernehmen müssen. Nachdem Sie das Microsoft Advertising SDK verwenden, anzeigen in Ihrer app angezeigt, können Sie ändern, dass Ihre Einstellungen für die Vermittlung [im Partner Center](../publish/in-app-ads.md#mediation-settings) anzeigen über mehrere Ad-Netzwerke dargestellt werden. Sie profitieren davon, Anzeigen aus neuen Anzeigennetzwerken abrufen zu können, ohne Änderungen an Ihrem Code vorzunehmen.
 
 Wir verwalten die End-to-End-Beziehung mit den Anzeigennetzwerken in Ihrem Auftrag. Wir kümmern uns um alles von der Anzeigennetzwerkintegration bis zur Bereitstellung von Anzeigen, der Berichterstellung und den Auszahlungen ohne zusätzlichen Aufwand von Ihrer Seite.
 
@@ -47,7 +47,7 @@ Der Anzeigenvermittlungsdienst ist darauf ausgelegt, die höchste Rentabilität 
 
 Neue Anzeigennetzwerke werden automatisch eingefügt und über ein lernendes Budget auf ihre Leistung bewertet. Innerhalb kurzer Zeit finden sie Ihren Platz im Wasserfall. Damit werden die Anzeigennetzwerke wettbewerbsfähiger, und es trägt außerdem dazu bei, dass der Entwickler die Monetarisierung durch Apps optimal nutzt.
 
-Es wird dringend empfohlen, unsere [empfohlenen Vermittlungseinstellungen](../publish/in-app-ads.md#mediation-settings) zu verwenden, um den Umsatz durch Anzeigen in Ihren Apps zu maximieren. Dadurch können unsere Algorithmen,die beste Rentabilität für Ihre App ermöglichen. Sie haben jedoch auch die Freiheit, wählen Sie Ihre eigenen anzeigenvermittlungseinstellungen im Partner Center, um mehr Kontrolle über die anzeigennetzwerke verfügen, die anzeigen und die Reihenfolge in der dies der Fall ist.
+Es wird dringend empfohlen, unsere [empfohlenen Vermittlungseinstellungen](../publish/in-app-ads.md#mediation-settings) zu verwenden, um den Umsatz durch Anzeigen in Ihren Apps zu maximieren. Dadurch können unsere Algorithmen,die beste Rentabilität für Ihre App ermöglichen. Allerdings müssen Sie auch die Freiheit gibt, wählen Ihre eigenen Einstellungen für die Vermittlung im Partner Center, um mehr Kontrolle über die Ad-Netzwerke zu erhalten, die dienen, anzeigen und die Reihenfolge, in der dies der Fall.
 
 ## <a name="rich-data-and-signals"></a>Umfangreiche Daten und Signale
 
@@ -56,5 +56,5 @@ Der Anzeigenvermittlungsdienst arbeitet mit verschiedenen Anzeigennetzwerken zus
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp)
-* [Einstellungen der Anzeigenvermittlung](../publish/in-app-ads.md#mediation-settings)
+* [Einstellungen für die Vermittlung](../publish/in-app-ads.md#mediation-settings)
 * [Bericht zur Anzeigenleistung](../publish/advertising-performance-report.md)

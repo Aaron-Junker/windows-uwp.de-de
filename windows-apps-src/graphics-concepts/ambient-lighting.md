@@ -1,6 +1,6 @@
 ---
 title: Umgebungslicht
-description: Das Umgebungslicht bietet konstante Beleuchtung für eine Szene.
+description: Umgebungsbeleuchtung bietet konstante Beleuchtung für eine Szene.
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
 keywords:
 - Umgebungslicht
@@ -8,22 +8,22 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934439"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663645"
 ---
 # <a name="ambient-lighting"></a>Umgebungslicht
 
 
-Umgebungsbeleuchtung bietet konstante Beleuchtung für eine Szene. Sie leuchtet alle Objekteckpunkte gleich aus, da sie nicht von anderen Beleuchtungsfaktoren abhängig ist, wie der Eckpunktnormalen, der Richtung des Lichts, der Position der Lichtquelle, der Reichweite oder Abschwächung des Lichts. Umgebungsbeleuchtung ist in alle Richtungen konstant und färbt alle Pixel eines Objekts identisch. Obwohl die Berechnung schnell ist, sehen die Objekte flach und unrealistisch aus.
+Umgebungsbeleuchtung bietet konstante Beleuchtung für eine Szene. Sie leuchtet alle Objekteckpunkte gleich aus, da sie nicht von anderen Beleuchtungsfaktoren abhängig ist, wie der Eckpunktnormalen, der Richtung des Lichts, der Position der Lichtquelle, der Reichweite oder Abschwächung des Lichts. Umgebungsbeleuchtung ist in alle Richtungen konstant und färbt alle Pixel eines Objekts identisch. Sie lässt sich schnell berechnen, bewirkt jedoch, dass Objekte flach und unrealistisch aussehen.
 
 Das Umgebungslicht ist zwar der schnellste Beleuchtungstyp, es erzeugt allerdings die unrealistischsten Ergebnisse. Direct3D enthält eine einzige globale Umgebungslichteigenschaft, die Sie ohne Erstellen des Lichts verwenden können. Alternativ können Sie jede Lichtquellen als Umgebungslicht festlegen.
 
 Das Umgebungslicht für eine Szene wird durch die folgende Gleichung beschrieben.
 
-Umgebungslicht = Cₐ\*\[Gₐ + sum(Atten<sub>i</sub>\*Spot<sub>i</sub>\*L<sub>ai</sub>)\]
+Umgebender = Cₐ\*\[Gₐ + Sum (Atten<sub>ich</sub>\*Stelle<sub>ich</sub>\*L<sub>Ai</sub>)\]
 
 Dabei gilt:
 
@@ -31,26 +31,26 @@ Dabei gilt:
 |-------------------|---------------|---------------|-------------------------------------------------------------------------------------------------------------------|
 | Cₐ                | (0,0,0,0)     | D3DCOLORVALUE | Materielle Umgebungsfarbe                                                                                            |
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | Globale Umgebungsfarbe                                                                                              |
-| Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | Dämpfung der ith-Beleuchtung. Unter [Dämpfungs- und Spotlight-Faktor](attenuation-and-spotlight-factor.md). |
-| Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | Spotlight-Faktor der ith-Beleuchtung. Unter [Dämpfungs- und Spotlight-Faktor](attenuation-and-spotlight-factor.md).  |
-| Summe               | Nicht zutreffend           | Nicht zutreffend           | Summe des Umgebungslichts                                                                                          |
+| Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | Dämpfung der ith-Beleuchtung. Siehe [Abschwächungs- und Spotlicht-Faktor](attenuation-and-spotlight-factor.md). |
+| Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | Spotlight-Faktor der ith-Beleuchtung. Siehe [Abschwächungs- und Spotlicht-Faktor](attenuation-and-spotlight-factor.md).  |
+| Summe               | n. a.           | n. a.           | Summe des Umgebungslichts                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | Helle Umgebungsfarbe der ith-Beleuchtung                                                                              |
 
  
 
 Der Wert für Cₐ ist entweder:
 
--   Vertexfarbe1, wenn AMBIENTMATERIALSOURCE = D3DMCS\_FARBE1 und die erste Vertexfarbe in der Vertex-Deklaration angegeben wird.
--   Vertexfarbe2, wenn AMBIENTMATERIALSOURCE = D3DMCS\_FARBE2 und die zweite Vertexfarbe in der Vertex-Deklaration angegeben wird.
+-   Vertex "Farbe1", wenn AMBIENTMATERIALSOURCE = D3DMCS\_"Farbe1", und der ersten Vertexfarbe in der Vertexdeklaration angegeben wird.
+-   Vertex-color2, wenn AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2 und die zweite Vertexfarbe in der Vertexdeklaration angegeben wird.
 -   Materielle Umgebungsfarbe.
 
-**Hinweis:**  Wenn Option AMBIENTMATERIALSOURCE verwendet wird, und die Vertexfarbe nicht angegeben ist, wird die materielle Umgebungsfarbe verwendet.
+**Beachten Sie**    Wenn entweder AMBIENTMATERIALSOURCE-Option verwendet wird, und die Vertexfarbe wurde nicht angegeben, wird die Material Ambiente-Farbe verwendet.
 
  
 
 Um die materielle Umgebungsfarbe anzuwenden, verwenden Sie „SetMaterial” wie im folgenden Beispielcode dargestellt.
 
-Gₐ ist die globale Umgebungsfarbe. Sie wird mit „SetRenderState(D3DRS\_AMBIENT)” festgelegt. In einer Direct3D-Szene gibt es eine globale Umgebungsfarbe. Dieser Parameter ist keinem Direct3D-Lichtobjekt zugeordnet.
+Gₐ ist die globale Umgebungsfarbe. Mithilfe von SetRenderState festgelegt (D3DRS\_AMBIENT). In einer Direct3D-Szene gibt es eine globale Umgebungsfarbe. Dieser Parameter ist keinem Direct3D-Lichtobjekt zugeordnet.
 
 L<sub>ai</sub> ist die Umgebungsfarbe der ith-Beleuchtung in der Szene. Jedes Direct3D-Licht hat eine Reihe von Eigenschaften, von denen eine die Umgebungsfarbe ist. Der Begriff „Summe” (L<sub>Ai</sub>) beschreibt die Summe aller Umgebungsfarben in der Szene.
 
@@ -68,13 +68,13 @@ Ambient.b = 0.0f;
 Ambient.a = 0.0f;
 ```
 
-Gemäß der Gleichung ist die resultierende Farbe für die Objekt-Scheitelpunkte eine Kombination aus der materiellen Farbe und der Farbe des Lichts.
+Gemäß der Gleichung ist die resultierende Farbe für die Objektvertices eine Kombination aus der Materialfarbe und der Lichtfarbe.
 
 Die folgenden beiden Abbildungen zeigen die materielle Farbe (in Grau) und die Farbe des Lichts (hellrot).
 
 ![Abbildung einer grauen Kugel](images/amb1.jpg)![Abbildung einer roten Kugel](images/lightred.jpg)
 
-Die resultierende Szene ist in der folgenden Abbildungdargestellt. Das einzige Objekt in der Szene ist eine Kugel. Das Umgebungslicht beleuchtet alle Objekt-Schnittpunkte mit derselben Farbe. Es ist nicht von der Vertexnormale oder Lichteinfallsrichtung abhängig. Die Kugel sieht wie ein 2D-Kreis aus, da es keinen Unterschied in der Schattierung der Oberfläche des Objekts gibt.
+Die resultierende Szene wird in der folgenden Abbildung dargestellt. Das einzige Objekt in der Szene ist eine Kugel. Das Umgebungslicht beleuchtet alle Objekt-Schnittpunkte mit derselben Farbe. Es ist nicht von der Vertexnormale oder Lichteinfallsrichtung abhängig. Die Kugel sieht wie ein 2D-Kreis aus, da es keinen Unterschied in der Schattierung der Oberfläche des Objekts gibt.
 
 ![Abbildung einer Kugel mit Umgebungslicht](images/lighta.jpg)
 
@@ -83,7 +83,7 @@ Verwenden Sie neben dem Umgebungslicht diffuses oder Glanzlicht, um Objekten ein
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Beleuchtungsmathematik](mathematics-of-lighting.md)
+[Mathematik der Beleuchtung](mathematics-of-lighting.md)
 
  
 

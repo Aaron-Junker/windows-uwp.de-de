@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Spiele, DirectX, Starten, Reaktivieren
 ms.localizationpriority: medium
 ms.openlocfilehash: ac2f7e70d813ea3314d897eedb5e245d781ce412
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924989"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662215"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>Starten und Reaktivieren von Apps (DirectX und C++)
 
@@ -21,9 +21,9 @@ Hier erfahren Sie, wie Sie Ihre DirectX-App für die universelle Windows-Plattfo
 
 | Thema | Beschreibung |
 |---------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [So wird's gemacht: Aktivieren einer App](how-to-activate-an-app-directx-and-cpp.md) | In diesem Thema erfahren Sie, wie Sie die Aktivierungsbenutzeroberfläche für eine DirectX-App für die universelle Windows-Plattform (UWP) definieren. |
-| [So wird's gemacht: Anhalten einer App](how-to-suspend-an-app-directx-and-cpp.md) | In diesem Thema wird gezeigt, wie wichtige Systemzustände und App-Daten gespeichert werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) anhält. |
-| [So wird's gemacht: Fortsetzen einer App](how-to-resume-an-app-directx-and-cpp.md) | In diesem Thema erfahren Sie, wie wichtige Anwendungsdaten wiederhergestellt werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) fortsetzt. |
+| [Wie Sie eine app zu aktivieren](how-to-activate-an-app-directx-and-cpp.md) | In diesem Thema erfahren Sie, wie Sie die Aktivierungsbenutzeroberfläche für eine DirectX-App für die universelle Windows-Plattform (UWP) definieren. |
+| [Gewusst wie: Anhalten eine app](how-to-suspend-an-app-directx-and-cpp.md) | In diesem Thema wird gezeigt, wie wichtige Systemzustände und App-Daten gespeichert werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) anhält. |
+| [Fortsetzen eine app](how-to-resume-an-app-directx-and-cpp.md) | In diesem Thema erfahren Sie, wie wichtige Anwendungsdaten wiederhergestellt werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) fortsetzt. |
  
 
  

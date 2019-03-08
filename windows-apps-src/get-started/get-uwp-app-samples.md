@@ -3,20 +3,20 @@ title: Beispiele für UWP-Apps abrufen
 description: Erfahren Sie, wie Sie die Beispiele für UWP-Codes von GitHub herunterladen können.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Beispielcode, Codebeispiele
+keywords: Windows 10, UWP, Beispielcode, Codebeispiele
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049717"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598535"
 ---
 # <a name="get-uwp-app-samples"></a>Beispiele für UWP-Apps abrufen
 
 Die Beispiele für Universelle Windows Plattform-Apps (UWP-Apps) sind über Repositorys auf GitHub verfügbar. Unter [Samples](https://developer.microsoft.com/windows/samples "Dev Center Beispiele") finden Sie eine durchsuchbare, kategorisierte Liste, oder durchsuchen Sie die Repository [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die Universelle Windows-Plattform"), die Beispiele für alle UWP-Features und ihre API-Verwendungsmuster enthält.  
-![GitHub-UWP-Beispiel-Repository](images/GitHubUWPSamplesPage.png)
+![Beispielrepository von GitHub UWP](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>Code herunterladen
 
@@ -28,9 +28,9 @@ Die ZIP-Datei enthält stets die neuesten Beispiele. Sie benötigen zum Herunter
 
 
 > [!NOTE]
-> Für das Öffnen, Erstellen und Ausführen der UWP-Beispiele sind Visual Studio2015 oder höher und das Windows SDK erforderlich. Eine kostenlose Kopie von Visual Studio Community mit Unterstützung für die Erstellung von UWP-Apps erhalten Sie [hier](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Downloads für Windows-Entwicklungstools").  
+> Für das Öffnen, Erstellen und Ausführen der UWP-Beispiele sind Visual Studio 2015 oder höher und das Windows SDK erforderlich. Eine kostenlose Kopie von Visual Studio Community mit Unterstützung für die Erstellung von UWP-Apps erhalten Sie [hier](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Downloads für Windows-Entwicklungstools").  
 >
-> Zudem sollten Sie sicherstellen, dass nicht nur einzelne Beispiele, sondern das gesamte Archiv entpackt wurde. Alle Beispiele erfordern den Archivordner „SharedContent“. Die Beispiele für UWP-Features verfügen über verknüpfte Dateien in Visual Studio, um das Duplizieren gemeinsam verwendeter Dateien zu vermeiden, z.B. von Beispieldateien für Vorlagen und Bildressourcen. Diese gemeinsamen Dateien werden im Ordner „SharedContent“ im Stammverzeichnis des Repositorys gespeichert. Der Verweis in den Projektdateien erfolgt über Links.
+> Darüber hinaus sollten Sie sicherstellen, dass nicht nur einzelne Beispiele, sondern das gesamte Archiv entpackt wurde. Alle Beispiele erfordern den Archivordner „SharedContent“. Die Beispiele für UWP-Features verfügen über verknüpfte Dateien in Visual Studio, um das Duplizieren gemeinsam verwendeter Dateien zu vermeiden, z. B. von Beispieldateien für Vorlagen und Bildressourcen. Diese gemeinsamen Dateien werden im Ordner „SharedContent“ im Stammverzeichnis des Repositorys gespeichert. Der Verweis in den Projektdateien erfolgt über Links.
 
 Öffnen Sie nach dem Herunterladen der ZIP-Datei die Beispiele in Visual Studio:
 
@@ -41,11 +41,11 @@ Die ZIP-Datei enthält stets die neuesten Beispiele. Sie benötigen zum Herunter
 
     ![Beispielordner](images/SamplesUnzip2.png)
 
-3.  Wählen Sie ein Beispiel wie z.B. Höhenmesser aus, um mehrere Ordner mit den unterstützten Sprachen anzuzeigen.
+3.  Wählen Sie ein Beispiel wie z. B. Höhenmesser aus, um mehrere Ordner mit den unterstützten Sprachen anzuzeigen.
 
     ![Sprachordner](images/SamplesUnzip3.png)
 
-4.  Wählen Sie die gewünschte Sprache (z.B. CS für C\#) aus. Es wird eine Visual Studio-Projektmappendatei angezeigt, die Sie in Visual Studio öffnen können.
+4.  Wählen Sie die Sprache, Sie wie z. B. CS für C# verwenden, möchten\#, sehen Sie eine Visual Studio-Projektmappendatei, die Sie in Visual Studio öffnen können.
 
     ![VS-Projektmappe](images/SamplesUnzip4.png)
 

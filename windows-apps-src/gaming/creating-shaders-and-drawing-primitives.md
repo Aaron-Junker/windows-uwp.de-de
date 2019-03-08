@@ -4,14 +4,14 @@ description: Im Folgenden wird das Kompilieren und Erstellen von Shadern mit HLS
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Shader, Grundtypen, DirectX
+keywords: Windows 10, UWP, Spiele, Shader, Grundtypen, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 5173adc26e0730ccb80f93fe0c12af286b0c1a49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923470"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589765"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>Erstellen von Shadern und Zeichnen von Grundtypen
 
@@ -21,7 +21,7 @@ Im Folgenden wird das Kompilieren und Erstellen von Shadern mit HLSL-Quelldateie
 
 Ein gelbes Dreieck wird mit Vertex- und Pixelshadern erstellt. Nach dem Erstellen des Direct3D-Geräts, der Swapchain und der Renderingzielansicht werden Daten aus Binärshaderobjektdateien auf dem Datenträger gelesen.
 
-**Ziel:** Shader erstellen und Grundtypen zeichnen.
+**Ziel:** Zum Erstellen von Shadern und zum Zeichnen von primitiven.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -30,7 +30,7 @@ Es wird davon ausgegangen, dass Sie mit C+ vertraut sind. Sie müssen außerdem 
 
 Ferner wird davon ausgegangen, dass Sie sich mit dem Dokument [Schnellstart: Einrichten von DirectX-Ressourcen und Anzeigen eines Bilds](setting-up-directx-resources.md) vertraut gemacht haben.
 
-**Zeitaufwand:** 20Minuten.
+**Zeit in Anspruch:** 20 Minuten.
 
 ## <a name="instructions"></a>Anweisungen
 
@@ -77,15 +77,15 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### <a name="2-reading-data-from-disk"></a>2. Lesen von Daten von einem Datenträger
+### <a name="2-reading-data-from-disk"></a>2. Lesen von Daten vom Datenträger
 
-Hier wird die DX::ReadDataAsync-Funktion aus „DirectXHelper.h“ in der DirectX11-App-Vorlage (Universal Windows) verwendet, um asynchron Daten aus einer Datei auf dem Datenträger zu lesen.
+Hier wird die DX::ReadDataAsync-Funktion aus „DirectXHelper.h“ in der DirectX 11-App-Vorlage (Universal Windows) verwendet, um asynchron Daten aus einer Datei auf dem Datenträger zu lesen.
 
-### <a name="3-creating-vertex-and-pixel-shaders"></a>3. Erstellen von Vertex- und Pixelshadern
+### <a name="3-creating-vertex-and-pixel-shaders"></a>3. Erstellen von Vertex- und Pixel-Shader
 
-Zunächst werden Daten aus der Datei „SimpleVertexShader.cso“ gelesen. Anschließend werden die Daten dem Bytearray *vertexShaderBytecode* zugewiesen. [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) wird mit dem Bytearray aufgerufen, um den Vertexshader ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)) zu erstellen. Die Vertextiefe wird in der Quelldatei „SimpleVertexShader.hlsl“ auf den Wert 0,5 festgelegt, um zu garantieren, dass das Dreieck gezeichnet wird. Ein Array von [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180)-Strukturen wird gefüllt, um das Layout des Vertexshadercodes zu beschreiben. Im Anschluss wird [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) aufgerufen, um das Layout zu erstellen. Das Array verfügt über ein Layoutelement, das die Vertexposition definiert. Zunächst werden Daten aus der Datei „SimplePixelShader.cso“ gelesen. Anschließend werden die Daten dem Bytearray *pixelShaderBytecode* zugewiesen. [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) wird mit dem Bytearray aufgerufen, um den Pixelshader ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)) zu erstellen. Der Pixelwert wird in der Quelldatei „SimplePixelShader.hlsl“ auf (1,1,1,1) festgelegt, damit das Dreieck gelb wird. Wenn Sie die Farbe ändern möchten, können Sie diesen Wert ändern.
+Zunächst werden Daten aus der Datei „SimpleVertexShader.cso“ gelesen. Anschließend werden die Daten dem Bytearray *vertexShaderBytecode* zugewiesen. [  **ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) wird mit dem Bytearray aufgerufen, um den Vertexshader ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)) zu erstellen. Die Vertextiefe wird in der Quelldatei „SimpleVertexShader.hlsl“ auf den Wert 0,5 festgelegt, um zu garantieren, dass das Dreieck gezeichnet wird. Wir füllen ein Array von [ **D3D11\_Eingabe\_ELEMENT\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) Strukturen beschrieben, das Layout der Vertex-Shader-Code, und rufen Sie anschließend [ **ID3D11Device::CreateInputLayout** ](https://msdn.microsoft.com/library/windows/desktop/ff476512) das Layout erstellt. Das Array verfügt über ein Layoutelement, das die Vertexposition definiert. Zunächst werden Daten aus der Datei „SimplePixelShader.cso“ gelesen. Anschließend werden die Daten dem Bytearray *pixelShaderBytecode* zugewiesen. [  **ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) wird mit dem Bytearray aufgerufen, um den Pixelshader ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)) zu erstellen. Der Pixelwert wird in der Quelldatei „SimplePixelShader.hlsl“ auf (1,1,1,1) festgelegt, damit das Dreieck gelb wird. Wenn Sie die Farbe ändern möchten, können Sie diesen Wert ändern.
 
-Vertex- und Indexpuffer werden erstellt, um ein einfaches Dreieck zu definieren. Zu diesem Zweck wird zunächst das Dreieck definiert. Anschließend werden die Vertex- und Indexpuffer ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) und [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) mithilfe der Dreieckdefinition beschrieben, bevor dann [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) einmal für jeden Puffer aufgerufen wird.
+Vertex- und Indexpuffer werden erstellt, um ein einfaches Dreieck zu definieren. Zu diesem Zweck zuerst definieren wir das Dreieck zu beschreiben als Nächstes die Vertex- und Indexpuffer ([**D3D11\_Puffer\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) und [ **D3D11\_ SUBRESOURCE\_Daten**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) mithilfe der Definition des Dreiecks, und rufen Sie zum Schluss [ **ID3D11Device::CreateBuffer** ](https://msdn.microsoft.com/library/windows/desktop/ff476501) einmal für jeden Puffer.
 
 ```cpp
         auto loadVSTask = DX::ReadDataAsync(L"SimpleVertexShader.cso");
@@ -200,17 +200,17 @@ Vertex- und Indexpuffer werden erstellt, um ein einfaches Dreieck zu definieren.
 
 Mithilfe der Vertex- und Pixelshader, des Vertexshaderlayouts sowie der Vertex- und Indexpuffer wird dann ein gelbes Dreieck gezeichnet.
 
-### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. Zeichnen des Dreiecks und Darstellen des gerenderten Bilds
+### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. Zeichnen das Dreieck aus, und das gerenderte Bild darstellen
 
-Wir geben eine endlose Schleife zum fortlaufenden Rendern und Anzeigen der Szene ein. Wir rufen [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) auf, um das Renderziel als Ausgabeziel anzugeben. [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) wird mit dem Wert „{ 0.071f, 0.04f, 0.561f, 1.0f }“ aufgerufen, um das Renderingziel durchgehend blau anzuzeigen.
+Wir rufen eine Endlosschleife auf, um die Szene fortlaufend zu rendern und anzuzeigen. Wir rufen [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) auf, um das Renderziel aus Ausgabeziel anzugeben. [  **ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) wird mit dem Wert „{ 0.071f, 0.04f, 0.561f, 1.0f }“ aufgerufen, um das Renderingziel durchgehend blau anzuzeigen.
 
 In der Endlosschleife wird ein gelbes Dreieck auf der blauen Oberfläche gezeichnet.
 
-**So zeichnen Sie ein gelbes Dreieck**
+**Zeichnen Sie ein gelbes Dreieck**
 
-1.  Wir rufen zunächst [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) auf, um das Streamen der Vertexpufferdaten in die Eingabeassemblerphase zu beschreiben.
+1.  Wir rufen zunächst [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) auf, um das Streamen der Vertexpufferdaten in den Eingabeassemblerzustand zu beschreiben.
 2.  Als Nächstes rufen wir [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) und [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) auf, um die Vertex- und Indexpuffer an den Eingabeassemblerzustand zu binden.
-3.  Nun rufen wir [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) mit dem [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP)-Wert auf, um für den Eingabeassemblerzustand anzugeben, dass die Vertexdaten als Dreieckskette interpretiert werden.
+3.  Als Nächstes rufen wir [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) mit der [ **D3D11\_PRIMITIVEN\_Topologie\_ TRIANGLESTRIP** ](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) Wert, der für die Eingabe-Assembler Stufe die Vertexdaten als Farbstreifen Dreieck interpretiert angegeben.
 4.  Im nächsten Schritt rufen wir [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) auf, um die Vertexshaderphase mit dem Vertexshadercode zu initialisieren. Zudem rufen wir [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) auf, um die Pixelshaderphase mit dem Pixelshadercode zu initialisieren.
 5.  Abschließend wird [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) aufgerufen, um das Dreieck zu zeichnen und an die Renderingpipeline zu senden.
 
@@ -287,7 +287,7 @@ In diesem Thema wurde ein gelbes Dreieck mit Vertex- und Pixelshadern erstellt u
 
 Als Nächstes wird ein kreisender 3D-Würfel erstellt, und Lichteffekte werden auf den Würfel angewendet.
 
-[Verwenden von Tiefe und Effekten auf Grundtypen](using-depth-and-effects-on-primitives.md)
+[Verwenden von Tiefe und Auswirkungen für primitive Typen](using-depth-and-effects-on-primitives.md)
 
  
 

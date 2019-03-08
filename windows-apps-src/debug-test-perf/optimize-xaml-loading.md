@@ -4,21 +4,21 @@ title: Optimieren Ihres XAML-Markups
 description: Die Analyse von XAML-Markup zum Erstellen von Objekten im Arbeitsspeicher kann für eine komplexe Benutzeroberfläche viel Zeit in Anspruch nehmen. Hier finden Sie einige Punkte, die Sie zur Optimierung der XAML-Markupanalyse, Ladezeit und Effizienz des Arbeitsspeichers für Ihre App vornehmen können.
 ms.date: 08/10/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ec88af01e46788ea9f24760af7f9a3b81281ba8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921468"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593125"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimieren Ihres XAML-Markups
 
 
 Die Analyse von XAML-Markup zum Erstellen von Objekten im Arbeitsspeicher kann für eine komplexe Benutzeroberfläche viel Zeit in Anspruch nehmen. Es folgen einige Vorschläge zur Optimierung der XAML-Markupanalyse, Ladezeit und Effizienz des Arbeitsspeichers Ihrer App.
 
-Beschränken Sie beim Start der App das zu ladende XAML-Markup auf die Elemente, die für die anfängliche Benutzeroberfläche erforderlich sind. Überprüfen Sie das Markup auf der ersten Seite (einschließlich Seitenressourcen), und stellen Sie sicher, dass Sie nicht zusätzliche Elemente laden, die nicht sofort benötigt werden. Diese Elemente können aus einer Vielzahl von Quellen stammen, z.B. aus Ressourcenverzeichnissen, oder es sind Elemente, die anfänglich reduziert sind oder über anderen Elementen dargestellt werden.
+Beschränken Sie beim Start der App das zu ladende XAML-Markup auf die Elemente, die für die anfängliche Benutzeroberfläche erforderlich sind. Überprüfen Sie das Markup auf der ersten Seite (einschließlich Seitenressourcen), und stellen Sie sicher, dass Sie nicht zusätzliche Elemente laden, die nicht sofort benötigt werden. Diese Elemente können aus einer Vielzahl von Quellen stammen, z. B. aus Ressourcenverzeichnissen, oder es sind Elemente, die anfänglich reduziert sind oder über anderen Elementen dargestellt werden.
 
 Ein möglichst effizienter XAML-Code erfordert Kompromisse. Oft gibt es in einer Situation mehrere Lösungsmöglichkeiten. Wir betrachten hier einige der häufigsten Probleme und stellen Richtlinien bereit, mit deren Hilfe Sie die richtige Entscheidung für Ihre App treffen können.
 
@@ -39,7 +39,7 @@ Wenn Ihr XAML-Markup Elemente enthält, die nicht sofort angezeigt werden müsse
 Verwenden Sie das Attribut [x:Load](../xaml-platform/x-load-attribute.md) anstelle der Eigenschaft [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.Visibility), um zu steuern, wann ein Element angezeigt wird. Wenn die Sichtbarkeit eines Elements auf **Collapsed** festgelegt ist, wird es zwar während des Renderns übersprungen, aber die Objektinstanz verbraucht trotzdem Arbeitsspeicher. Durch die Verwendung von x:Load erstellt das Framework die Objektinstanz nur bei Bedarf, sodass der Speicherverbrauch geringer ist. Der Nachteil ist etwas zusätzlicher Speicherverbrauch (ca. 600 Bytes), wenn die UI nicht geladen ist.
 
 > [!NOTE]
-> Um Elemente verzögert zu laden, verwenden Sie das Attribut [x:Load](../xaml-platform/x-load-attribute.md) oder [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md). Das Attribut x:Load ist ab Windows10 Creators Update (Version 1703, SDK-Build 15063) verfügbar. Die Mindestversion, auf die Ihr Visual Studio-Projekt abzielt, muss *Windows 10 Creators Update (10.0, Build 15063)* sein, damit x:Load verwendet werden kann. Für frühere Versionen verwenden Sie x:DeferLoadStrategy.
+> Um Elemente verzögert zu laden, verwenden Sie das Attribut [x:Load](../xaml-platform/x-load-attribute.md) oder [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md). Das Attribut x:Load ist ab Windows 10 Creators Update (Version 1703, SDK-Build 15063) verfügbar. Die Mindestversion, auf die Ihr Visual Studio-Projekt abzielt, muss *Windows 10 Creators Update (10.0, Build 15063)* sein, damit x:Load verwendet werden kann. Für frühere Versionen verwenden Sie x:DeferLoadStrategy.
 
 Die folgenden Beispiele zeigen den Unterschied zwischen der Anzahl von Elementen und der Speicherbelegung, wenn verschiedene Techniken verwendet werden, um UI-Elemente auszublenden. Ein ListView- und ein GridView-Steuerelement mit identischen Elementen werden in das Grundraster einer Seite platziert. Das ListView-Steuerelement ist nicht sichtbar, das GridView-Steuerelement wird angezeigt. Mit dem XAML-Code in jedem dieser Beispiele wird die gleiche Benutzeroberfläche auf dem Bildschirm angezeigt. Wir verwenden die [Tools für Profilerstellung und Leistung](tools-for-profiling-and-performance.md) aus Visual Studio, um Elementanzahl und Speicherbelegung zu überprüfen.
 
@@ -126,7 +126,7 @@ Das ListView-Steuerelement und seine untergeordneten Elemente werden nicht in de
 
 Layoutpanel verfügen über die Eigenschaft [Background](https://msdn.microsoft.com/library/windows/apps/BR227512), sodass zum Einfärben kein [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) vor dem Panel erforderlich ist.
 
-**Ineffizient.**
+**Inefficient**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -135,7 +135,7 @@ Layoutpanel verfügen über die Eigenschaft [Background](https://msdn.microsoft.
 </Grid>
 ```
 
-**Effizient**
+**Efficient**
 
 ```xaml
 <Grid Background="Black"/>
@@ -163,11 +163,11 @@ Ein innerhalb von [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xa
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Ressourcen und ResourceDictionary-Bereich
 
-Falls eine Seite auf ein Steuerelement oder eine Ressource in einer anderen Datei verweist, wird auch diese Datei vom Framework analysiert.
+Falls eine Seite auf ein Steuerelement oder auf eine Ressource in einer anderen Datei verweist, wird auch diese Datei vom Framework analysiert.
 
 Da _InitialPage.xaml_ in diesem Beispiel eine Ressource von _ExampleResourceDictionary.xaml_ verwendet, muss die gesamte Datei _ExampleResourceDictionary.xaml_ beim Start analysiert werden.
 
-**InitialPage.xaml**
+**InitialPage.xaml.**
 
 ```xaml
 <Page x:Class="ExampleNamespace.InitialPage" ...>
@@ -185,7 +185,7 @@ Da _InitialPage.xaml_ in diesem Beispiel eine Ressource von _ExampleResourceDict
 </Page>
 ```
 
-**ExampleResourceDictionary.xaml**
+**ExampleResourceDictionary.xaml.**
 
 ```xaml
 <ResourceDictionary>
@@ -212,7 +212,7 @@ Wenn Sie eine Ressource in der gesamten App auf vielen Seiten verwenden, ist es 
 </Application>
 ```
 
-**InitialPage.xaml**
+**InitialPage.xaml.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -223,7 +223,7 @@ Wenn Sie eine Ressource in der gesamten App auf vielen Seiten verwenden, ist es 
 </Page>
 ```
 
-**SecondPage.xaml**
+**SecondPage.xaml.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -234,7 +234,7 @@ Wenn Sie eine Ressource in der gesamten App auf vielen Seiten verwenden, ist es 
 </Page>
 ```
 
-Um dieses Beispiel effizienter zu gestalten, verschieben Sie `SecondPageTextBrush` in _SecondPage.xaml_ und `ThirdPageTextBrush` in _ThirdPage.xaml_. `InitialPageTextBrush` kann in _App.xaml_ verbleiben, da Anwendungsressourcen beim Start der App analysiert werden müssen.
+Um dieses Beispiel effizienter zu gestalten, verschieben Sie `SecondPageTextBrush` in _SecondPage.xaml_ und `ThirdPageTextBrush` in _ThirdPage.xaml_. `InitialPageTextBrush` verbleiben im _"App.xaml"_ Anwendungsressourcen in jedem Fall beim Starten der app analysiert werden müssen.
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>Zusammenfassen mehrerer gleichartiger Pinsel in einer Ressource
 
@@ -262,7 +262,7 @@ Die XAML-Plattform speichert allgemein verwendete Objekte zwischen, um eine mög
 
 Definieren Sie den Pinsel als Ressource, um die Duplizierung zu beheben. Wenn Steuerelemente auf anderen Seiten denselben Pinsel verwenden, verschieben Sie diese in die Datei _App.xaml_.
 
-**Effizient**
+**Effiziente.**
 
 ```xaml
 <Page ... >
@@ -291,7 +291,7 @@ Wenn ein Element nicht angezeigt wird, da es transparent ist oder von anderen El
 
 Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stapeln, um einen Effekt zu erzielen. In diesem Beispiel ist das Ergebnis eine zweifarbige Form, wobei die obere Hälfte schwarz (vom Hintergrund von [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704)) und die untere Hälfte grau ist (vom halbtransparenten weißen [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Objekt, das mit einer Alpha-Überblendung über den schwarzen Hintergrund von **Grid** gelegt wird). Hier werden 150 % der Pixel gefüllt, die erforderlich sind, um das Ergebnis zu erzielen.
 
-**Ineffizient**
+**Ineffizient.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -304,7 +304,7 @@ Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stap
 </Grid>
 ```
 
-**Effizient.**
+**Effiziente.**
 
 ```xaml
 <Grid>
@@ -319,9 +319,9 @@ Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stap
 
 ### <a name="layout-panels"></a>Layoutpanels
 
-Ein Layoutpanel kann für zwei Zwecke verwendet werden – um einem Bereich einzufärben und um untergeordnete Elemente darzustellen. Wenn ein Element, das sich in der Z-Ordnung weiter hinten befindet, einem Bereich bereits eine Farbe zuweist, dann muss ein darüber befindliches Layoutpanel diesem Bereich keine Farbe zuweisen. Stattdessen kann es sich darauf konzentrieren, seine untergeordneten Elemente zu gestalten. Im Folgenden finden Sie ein Beispiel hierfür.
+Ein Layoutpanel kann zwei Zwecke verfolgen: einem Bereich eine Farbe zuzuweisen und untergeordnete Elemente darzustellen. Wenn ein Element, das sich in der Z-Ordnung weiter hinten befindet, einem Bereich bereits eine Farbe zuweist, dann muss ein darüber befindliches Layoutpanel diesem Bereich keine Farbe zuweisen. Stattdessen kann es sich darauf konzentrieren, seine untergeordneten Elemente zu gestalten. Hier sehen Sie ein Beispiel.
 
-**Ineffizient**
+**Ineffizient.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -334,7 +334,7 @@ Ein Layoutpanel kann für zwei Zwecke verwendet werden – um einem Bereich einz
 </GridView>
 ```
 
-**Effizient**
+**Effiziente.**
 
 ```xaml
 <GridView Background="Blue">
@@ -352,7 +352,7 @@ Wenn für das [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) T
 
 Verwenden Sie ein [Border](https://msdn.microsoft.com/library/windows/apps/BR209253)-Element, um einen Rahmen um ein Objekt zu zeichnen. In diesem Beispiel wird ein [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) als provisorischer Rahmen für eine [TextBox](https://msdn.microsoft.com/library/windows/apps/BR209683) verwendet. Allerdings werden alle Pixel in der Mitte der Zelle überzeichnet.
 
-**Ineffizient**
+**Ineffizient.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -371,7 +371,7 @@ Verwenden Sie ein [Border](https://msdn.microsoft.com/library/windows/apps/BR209
 </Grid>
 ```
 
-**Effizient.**
+**Effiziente.**
 
 ```xaml
  <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -387,7 +387,7 @@ Achten Sie auf die Ränder. Zwei benachbarte Elemente überlappen sich (möglich
 
 Eine andere Quelle für die Überzeichnung ist eine Form, die aus vielen überlappenden Elementen besteht. Wenn Sie [CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084) für die [UIElement](https://msdn.microsoft.com/library/windows/apps/BR208911)-Klasse mit der Verbundform auf **BitmapCache** festlegen, rendert die Plattform das Element für eine Bitmap einmalig und verwendet dann diese Bitmap für jeden Frame (anstelle der Überzeichnung).
 
-**Ineffizient**
+**Ineffizient.**
 
 ```xaml
 <Canvas Background="White">
@@ -403,7 +403,7 @@ Das obige Bild ist das Ergebnis, aber hier folgt eine Karte der überzeichneten 
 
 ![Venn-Diagramm mit Überschneidungsbereichen](images/translucentvenn.png)
 
-**Effizient**
+**Effiziente.**
 
 ```xaml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -417,15 +417,15 @@ Beachten Sie die Verwendung von [CacheMode](https://msdn.microsoft.com/library/w
 
 ## <a name="use-xbf2"></a>Verwendung von XBF2
 
-Bei XBF2 handelt es sich um eine binäre Darstellung des XAML-Markups, die sämtliche Nachteile der Textanalyse zur Laufzeit vermeidet. Darüber hinaus optimiert sie den Binärcode für das Laden und die Strukturerstellung und ermöglicht die Verwendung von Fast-Path für XAML-Typen, um die Effizienz bei der Heap- und Objekterstellung (VSM, ResourceDictionary, Stile usw.) zu verbessern. Dank vollständiger Abbildung im Speicher entsteht beim Laden und Lesen einer XAML-Seite keinerlei Heap-Bedarf. Des Weiteren verringert sich der Datenträgerbedarf gespeicherter XAML-Seiten in einem APPX-Element. XBF2 zeichnet sich durch eine kompaktere Darstellung aus und kann den Datenträgerbedarf im Vergleich zu XAML/XBF1-Dateien um bis zu 50Prozent reduzieren. So wurde bei der integrierten Foto-App etwa eine Reduzierung um rund 60Prozent erreicht – von ehemals rund 1MB (XBF1-Ressourcen) auf ca. 400KB (XBF2-Ressourcen). Darüber hinaus wurden für Apps auch Verbesserungen bei CPU (15 bis 20Prozent) und Win32-Heap (10 bis 15Prozent) verzeichnet.
+Bei XBF2 handelt es sich um eine binäre Darstellung des XAML-Markups, die sämtliche Nachteile der Textanalyse zur Laufzeit vermeidet. Darüber hinaus optimiert sie den Binärcode für das Laden und die Strukturerstellung und ermöglicht die Verwendung von Fast-Path für XAML-Typen, um die Effizienz bei der Heap- und Objekterstellung (VSM, ResourceDictionary, Stile usw.) zu verbessern. Dank vollständiger Abbildung im Speicher entsteht beim Laden und Lesen einer XAML-Seite keinerlei Heap-Bedarf. Des Weiteren verringert sich der Datenträgerbedarf gespeicherter XAML-Seiten in einem APPX-Element. XBF2 zeichnet sich durch eine kompaktere Darstellung aus und kann den Datenträgerbedarf im Vergleich zu XAML/XBF1-Dateien um bis zu 50 Prozent reduzieren. So wurde bei der integrierten Foto-App etwa eine Reduzierung um rund 60 Prozent erreicht – von ehemals rund 1 MB (XBF1-Ressourcen) auf ca. 400 KB (XBF2-Ressourcen). Darüber hinaus wurden für Apps auch Verbesserungen bei CPU (15 bis 20 Prozent) und Win32-Heap (10 bis 15 Prozent) verzeichnet.
 
-Integrierte XAML-Steuerelemente und vom Framework bereitgestellte Wörterbücher sind bereits vollständig XBF2-fähig. Achten Sie bei Ihrer eigenen App darauf, dass Ihre Projektdatei mindestens „TargetPlatformVersion8.2“ deklariert.
+Integrierte XAML-Steuerelemente und vom Framework bereitgestellte Wörterbücher sind bereits vollständig XBF2-fähig. Achten Sie bei Ihrer eigenen App darauf, dass Ihre Projektdatei mindestens „TargetPlatformVersion 8.2“ deklariert.
 
-Wenn Sie wissen möchten, ob Sie über XBF2 verfügen, öffnen Sie Ihre App in einem Binär-Editor. Falls das 12. und 13.Byte „00 02“ ist, haben Sie XBF2.
+Wenn Sie wissen möchten, ob Sie über XBF2 verfügen, öffnen Sie Ihre App in einem Binär-Editor. Falls das 12. und 13. Byte „00 02“ ist, haben Sie XBF2.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Bewährte Methoden für die Leistung Ihrer App beim Starten](best-practices-for-your-app-s-startup-performance.md)
+- [Bewährte Methoden für die Leistung Ihrer app starten](best-practices-for-your-app-s-startup-performance.md)
 - [Optimieren des XAML-Layouts](optimize-your-xaml-layout.md)
 - [Optimieren der ListView- und GridView-Benutzeroberfläche](optimize-gridview-and-listview.md)
-- [Tools für Profilerstellung und Leistung](tools-for-profiling-and-performance.md)
+- [Tools zur profilerstellung und Leistung](tools-for-profiling-and-performance.md)

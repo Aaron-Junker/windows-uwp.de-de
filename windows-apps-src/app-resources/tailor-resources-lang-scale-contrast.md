@@ -1,19 +1,19 @@
 ---
-Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+Description: In diesem Thema wird das allgemeine Konzept der Qualifizierer erläutert, wie sie verwendet werden und wofür die einzelnen Qualifizierernamen dienen.
 title: Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
+keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117660"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608135"
 ---
-# <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Passen Sie Ihrer Ressourcen der Sprache, Skalierung, dem hohen Kontrast und anderen Qualifizierern an
+# <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern
 
 In diesem Thema wird das allgemeine Konzept der Ressourcenqualifizierer erläutert, wie sie verwendet werden und wofür die einzelnen Qualifizierernamen dienen. Eine Referenztabelle für die verschiedenen Qualifiziererwerte finden Sie unter [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
 
@@ -29,7 +29,7 @@ Ein Qualifizierername ist ein Schlüssel, der einer Reihe von Qualifiziererwerte
 | :--------------- | :--------------- | :--------------- |
 | Einstellung für hohen Kontrast | Kontrast | Standard, hoch, schwarz, weiß |
 
-Kombinieren Sie einen Qualifizierernamen mit einem Qualifiziererwert, um einen Qualifizierer zu bilden. `<qualifier name>-<qualifier value>` ist das Format des Qualifizierers. `contrast-standard` ist ein Beispiel für einen Qualifizierer.
+Kombinieren Sie einen Qualifizierernamen mit einem Qualifiziererwert, um einen Qualifizierer zu bilden. `<qualifier name>-<qualifier value>` ist das Format der Qualifizierer an. `contrast-standard` ist ein Beispiel für einen Qualifizierer an.
 
 Für hohen Kontrast ist der Satz von Qualifizierern `contrast-standard`, `contrast-high`, `contrast-black` und `contrast-white`. Bei Qualifizierernamen und Qualifiziererwerten wird die Groß-/Kleinschreibung nicht beachtet. Beispielsweise: `contrast-standard` und `Contrast-Standard` sind die gleiche Qualifizierer.
 
@@ -44,7 +44,7 @@ Hier ist ein Beispiel für die Verwendung von Qualifizierer zum Benennen von Ord
 \Assets\Images\contrast-white\<logo.png, and other image files>
 ```
 
-Wenn Sie Ihre Ordner wie im obigen Beispiel benennen, verwendet Ihre App den hohen Kontrast zum Laden von Dateien aus dem Ordner mit dem Namen für den entsprechenden Qualifizierer. Wenn die Einstellung hoher Kontrast (Schwarz) ist, werden die Ressourcendateien in den Ordern `\Assets\Images\contrast-black` geladen. Wenn die Einstellung "Keine" ist (d.h. der Computer ist nicht im Modus mit hohem Kontrast), werden die Ressourcendateien in den Ordner `\Assets\Images\contrast-standard` geladen.
+Wenn Sie Ihre Ordner wie im obigen Beispiel benennen, verwendet Ihre App den hohen Kontrast zum Laden von Dateien aus dem Ordner mit dem Namen für den entsprechenden Qualifizierer. Wenn die Einstellung hoher Kontrast (Schwarz) ist, werden die Ressourcendateien in den Ordern `\Assets\Images\contrast-black` geladen. Wenn die Einstellung "Keine" ist (d. h. der Computer ist nicht im Modus mit hohem Kontrast), werden die Ressourcendateien in den Ordner `\Assets\Images\contrast-standard` geladen.
 
 ## <a name="use-qualifiers-in-file-names"></a>Qualifizierer in Dateinamen verwenden
 
@@ -64,7 +64,7 @@ Die Datei, deren Name den geeignetsten Qualifizierer für die Einstellung enthä
 Weitere Informationen finden Sie unter [Referenzieren eines Bezeichners für Zeichenfolgenressourcen im XAML-Markup](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Referenzieren eines Bezeichners für Zeichenfolgenressourcen im Code](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code) und [Referenzieren eines Bilds oder eines anderen Elements in XAML-Markup und Code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
 
 ## <a name="actual-and-neutral-qualifier-matches"></a>Aktuelle und neutrale Qualifizierertreffer
-Sie müssen nicht für *jeden* Qualifiziererwert eine Ressourcendatei erstellen. Wenn Sie z.B. feststellen, dass Sie nur eine visuelle Ressource für hohen Kontrast und eine für den standardmäßigen Kontrast benötigen, benennen Sie diese Ressourcen wie folgt.
+Sie müssen nicht für *jeden* Qualifiziererwert eine Ressourcendatei erstellen. Wenn Sie z. B. feststellen, dass Sie nur eine visuelle Ressource für hohen Kontrast und eine für den standardmäßigen Kontrast benötigen, benennen Sie diese Ressourcen wie folgt.
 
 ```console
 \Assets\Images\logo.contrast-high.png
@@ -88,7 +88,7 @@ Weitere Informationen zur Funktionsweise der Übereinstimmung für Qualifizierer
 
 ## <a name="multiple-qualifiers"></a>Mehrere Qualifizierer
 
-Sie können Qualifizierer in Ordner- und Dateinamen kombinieren. Wenn z.B. Ihre App Bildressourcen bei aktiviertem Modus für hohen Kontrast lädt *und* der Skalierungsfaktor für die Anzeige ist 400. Eine Möglichkeit hierfür sind geschachtelte Ordner.
+Sie können Qualifizierer in Ordner- und Dateinamen kombinieren. Wenn z. B. Ihre App Bildressourcen bei aktiviertem Modus für hohen Kontrast lädt *und* der Skalierungsfaktor für die Anzeige ist 400. Eine Möglichkeit hierfür sind geschachtelte Ordner.
 
 ```console
 \Assets\Images\contrast-high\scale-400\<logo.png, and other image files>
@@ -124,7 +124,7 @@ Es ist unwahrscheinlich, dass Sie den `configuration` Qualifizierernamen benöti
 
 Der Qualifizierer `configuration` wird verwendet, um eine Ressource zu laden, die am besten dem Wert der `MS_CONFIGURATION_ATTRIBUTE_VALUE`-Umgebungsvariablen entspricht. Die Variable kann auf den Zeichenfolgenwert festgelegt werden, der den relevanten Ressourcen zugewiesen wurde, beispielsweise `designer` oder `test`.
 
-## <a name="contrast"></a>Kontrast
+## <a name="contrast"></a>Vergleichen Sie
 
 Der `contrast`-Qualifizierer wird verwendet, um Ressourcen anzubieten, die den Einstellungen für hohen Kontrast am besten entsprechen.
 
@@ -191,7 +191,7 @@ Es ist unwahrscheinlich, dass Sie den `dxfeaturelevel` Qualifizierernamen benöt
 
 ## <a name="homeregion"></a>HomeRegion
 
-Der `homeregion`-Qualifizierer entspricht auf der Benutzereinstellung für Land/Region. Es stellt den Wohnort des Benutzers dar. Werte umfassen beliebig gültige [BCP-47-Regionstags](https://go.microsoft.com/fwlink/p/?linkid=227302). D.h. jeder **ISO 3166-1-Alpha-2** Regionscode mit zwei Buchstaben sowie ein Satz **ISO 3166-1 numerischen** dreistelliger geografischer Codes für zusammengesetzte Regionen (siehe [Zusammenstellung von Regionscodes der Statistikabteilung der Vereinten Nationen (M49)](https://go.microsoft.com/fwlink/p/?linkid=247929)). Codes für bestimmte wirtschaftliche und andere Gruppierungen sind ungültig.
+Der `homeregion`-Qualifizierer entspricht auf der Benutzereinstellung für Land/Region. Es stellt den Wohnort des Benutzers dar. Werte umfassen beliebig gültige [BCP-47-Regionstags](https://go.microsoft.com/fwlink/p/?linkid=227302). D. h. jeder **ISO 3166-1-Alpha-2** Regionscode mit zwei Buchstaben sowie ein Satz **ISO 3166-1 numerischen** dreistelliger geografischer Codes für zusammengesetzte Regionen (siehe [Zusammenstellung von Regionscodes der Statistikabteilung der Vereinten Nationen (M49)](https://go.microsoft.com/fwlink/p/?linkid=247929)). Codes für bestimmte wirtschaftliche und andere Gruppierungen sind ungültig.
 
 ## <a name="language"></a>Sprache
 
@@ -206,7 +206,7 @@ Verwenden Sie in der Regel einen `language`-Qualifizierer, um die Ordner zu bene
 \Strings\language-ja\Resources.resw
 ```
 
-Lassen Sie den `language-`-Teil des `language`-Qualifizierers aus (d.h. den Qualifizierernamen). Sie können dies nicht mit anderen Arten von Qualifizierern durchführen. Sie können dies nur in einem Ordnernamen tun.
+Lassen Sie den `language-`-Teil des `language`-Qualifizierers aus (d. h. den Qualifizierernamen). Sie können dies nicht mit anderen Arten von Qualifizierern durchführen. Sie können dies nur in einem Ordnernamen tun.
 
 ```console
 \Strings\en\Resources.resw
@@ -226,7 +226,7 @@ Unter [Lokalisieren Ihrer UI-Zeichenfolgen](localize-strings-ui-manifest.md) fin
 
 Ein `layoutdirection`-Qualifizierer entspricht der Layoutrichtung der Einstellung für die Anzeigesprache. Beispielsweise muss ein Bild für eine Rechts-nach-links-Sprache wie Arabisch oder Hebräisch unter Umständen gespiegelt werden. Layoutpanels und Bilder in Ihrer Benutzeroberfläche reagieren der Layoutrichtung entsprechend, wenn Sie deren [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection)-Eigenschaft festlegen (Informationen hierzu finden Sie unter [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)). Allerdings ist der `layoutdirection`-Qualifizierer nur für Fälle, in denen ein einfaches Kippen nicht ausreicht. Sie können auf die Ausrichtung bestimmter Leserichtungen und Textausrichtungen auf allgemeine Weise reagieren.
 
-## <a name="scale"></a>Skalieren
+## <a name="scale"></a>Skalierung
 
 Windows wählt automatisch einen Skalierungsfaktor für jede Anzeige aus, basierend auf dem DPI-Wert (Punkte pro Zoll) und dem Betrachtungsabstand des Geräts. Weitere Informationen finden Sie unter [Effektive Pixel und Skalierungsfaktor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). Sie sollten Ihre Bilder in mehreren empfohlenen Größen (mindestens 100, 200 und 400) erstellen, damit Windows entweder die passende Größe auswählen oder die nächstgelegene Größe verwenden und dann skalieren kann. Damit Windows erkennen kann, welche physische Datei die richtige Bildgröße für den Anzeigeskalierungsfaktor enthält, verwenden Sie einen `scale`-Qualifizierer. Die Skalierung einer Ressource entspricht dem Wert von [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale) oder der Ressource mit der nächstgrößeren Skalierung.
 
@@ -269,11 +269,11 @@ Der Qualifizierer `theme` wird verwendet, um Ressourcen bereitzustellen, die am 
 
 * [Effektive Pixel und Skalierungsfaktor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Ressourcenverwaltungssystem](resource-management-system.md)
-* [So wird's gemacht: Vorbereiten für die Lokalisierung](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
-* [Erkennen der Plattform, auf der Ihre App ausgeführt wird](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Übersicht über die Gerätefamilien](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-* [Lokalisieren der Zeichenfolgen Ihrer Benutzeroberfläche](localize-strings-ui-manifest.md)
+* [Vorbereiten für die Lokalisierung](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [Erkennen von der Plattform wird Ihrer app auf ausgeführt](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [Familien Geräteübersicht](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [Lokalisieren Sie Ihre UI-Zeichenfolgen](localize-strings-ui-manifest.md)
 * [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Zusammenstellung von Regionscodes der Statistikabteilung der Vereinten Nationen (M49)](https://go.microsoft.com/fwlink/p/?linkid=247929)
-* [IANA Language Subtag Registry](https://go.microsoft.com/fwlink/p/?linkid=227303)
+* [United Nations Statistik Division M49 Zusammensetzung Landes-/Regionscodes](https://go.microsoft.com/fwlink/p/?linkid=247929)
+* [IANA Language-Sprachtags Registrierung](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

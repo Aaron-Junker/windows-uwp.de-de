@@ -1,19 +1,19 @@
 ---
-title: Vollständiger Code für "BasicReaderWriter"
+title: Vollständiger Code für BasicReaderWriter
 description: Vollständiger Code für eine Klasse und Methoden zum allgemeinen Lesen und Schreiben von Binärdatendateien.
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, BasicReaderWriter
+keywords: Windows 10, UWP, Spiele, BasicReaderWriter
 ms.localizationpriority: medium
 ms.openlocfilehash: 60c2bf74de1e56004f1f705f317bc6bd1bb34b26
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925108"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594995"
 ---
-# <a name="complete-code-for-basicreaderwriter"></a>Vollständiger Code für "BasicReaderWriter"
+# <a name="complete-code-for-basicreaderwriter"></a>Vollständiger Code für BasicReaderWriter
 
 
 
@@ -22,11 +22,11 @@ Vollständiger Code für eine Klasse und Methoden zum allgemeinen Lesen und Schr
 Dieses Thema enthält die folgenden Abschnitte:
 
 -   [Technologien](#technologies)
--   [Anforderungen](#requirements)
--   [Anzeigen des Codes (C++)](#view-the-code-c)
+-   [Anforderungen an](#requirements)
+-   [Zeigen Sie den Code (C++)](#view-the-code-c)
 
 
-## <a name="download-location"></a>Downloadort
+## <a name="download-location"></a>Downloadpfad
 
 Dieses Beispiel kann nicht heruntergeladen werden.
 

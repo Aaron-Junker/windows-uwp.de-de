@@ -1,19 +1,19 @@
 ---
 ms.assetid: ''
 description: Zeigt, wie Sie die Übertragung von Spielen durch eine UWP-App verwalten.
-title: Übertragen von Spielen verwalten
+title: Übertragung von Spielen verwalten
 ms.date: 09/27/2017
 ms.topic: article
 keywords: Windows 10, Spiel, Übertragung
 ms.localizationpriority: medium
 ms.openlocfilehash: c906551fd626dec726498ded9a7995007230504f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930491"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607585"
 ---
-# <a name="manage-game-broadcasting"></a>Übertragen von Spielen verwalten
+# <a name="manage-game-broadcasting"></a>Übertragung von Spielen verwalten
 In diesem Artikel wird erläutert, wie Sie die Übertragung von Spielen durch eine UWP-App verwalten. Benutzer müssen die Übertragung von Spielen mithilfe der Systembenutzeroberfläche initiieren, die in Windows integriert ist. Aber ab Version 1709 von Windows 10 können Apps die Übertragungsoberfläche des Systems starten und Benachrichtigungen empfangen, wenn die Übertragung gestartet oder beendet wird.
 
 ## <a name="add-the-windows-desktop-extensions-for-the-uwp-to-your-app"></a>Hinzufügen der „Windows Desktop Extensions for the UWP” zu Ihrer App
@@ -25,7 +25,7 @@ Die APIs aus dem Namespace **[Windows.Media.AppBroadcasting](https://docs.micros
 4. Klicken Sie auf **OK**.
 
 ## <a name="launch-the-system-ui-to-allow-the-user-to-initiate-broadcasting"></a>Starten Sie die Systembenutzeroberfläche, damit der Benutzer die Übertragung initiieren kann.
-Es gibt verschiedene Gründe dafür, dass Ihre App momentan möglicherweise nicht übertragen kann. Beispielsweise könnte das aktuelle Gerät nicht den Hardwareanforderungen für Übertragungen entsprechen, oder eine andere App überträgt gerade Daten. Vor dem Starten der Systembenutzeroberfläche sollten Sie überprüfen, ob Ihre App momentan übertragen kann. Überprüfen Sie zunächst, ob die Übertragungs-APIs auf dem aktuellen Gerät verfügbar sind. Die APIs sind nur auf Geräten verfügbar, auf denen Version 1709 (oder höher) von Windows10 ausgeführt wird. Statt die Version des Betriebssystems zu überprüfen, können Sie die Methode **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** verwenden, um festzustellen, ob Version 1.0 von *Windows.Media.AppBroadcasting.AppBroadcastingContract* vorhanden ist. Wenn dieser Vertrag vorhanden ist, sind die Übertragungs-APIs auf dem Gerät verfügbar.
+Es gibt verschiedene Gründe dafür, dass Ihre App momentan möglicherweise nicht übertragen kann. Beispielsweise könnte das aktuelle Gerät nicht den Hardwareanforderungen für Übertragungen entsprechen, oder eine andere App überträgt gerade Daten. Vor dem Starten der Systembenutzeroberfläche sollten Sie überprüfen, ob Ihre App momentan übertragen kann. Überprüfen Sie zunächst, ob die Übertragungs-APIs auf dem aktuellen Gerät verfügbar sind. Die APIs sind nur auf Geräten verfügbar, auf denen Version 1709 (oder höher) von Windows 10 ausgeführt wird. Statt die Version des Betriebssystems zu überprüfen, können Sie die Methode **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** verwenden, um festzustellen, ob Version 1.0 von *Windows.Media.AppBroadcasting.AppBroadcastingContract* vorhanden ist. Wenn dieser Vertrag vorhanden ist, sind die Übertragungs-APIs auf dem Gerät verfügbar.
 
 Als Nächstes rufen eine Instanz der Klasse **[AppBroadcastingUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui)** ab, indem Sie die Factorymethode **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetDefault)** auf einem PC aufrufen, auf dem nur ein einzelner Benutzer angemeldet ist. Auf XBox, wo mehrere Benutzer angemeldet sein können, rufen Sie stattdessen **[GetForUser](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.getforuser)** auf. Rufen Sie dann **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetStatus)** auf, um den Übertragungsstatus Ihrer App zu ermitteln.
 
