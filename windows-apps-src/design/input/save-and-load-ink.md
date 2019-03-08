@@ -1,5 +1,5 @@
 ---
-Description: UWP apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
+Description: UWP-Apps, die Windows Ink unterstützen, können Freihandstriche in eine serialisierte Freihandformatdatei (Ink Serialized Format-Datei, ISF-Datei) serialisieren und aus dieser deserialisieren. Die ISF-Datei ist eine GIF-Bild mit zusätzlichen Metadaten für alle Eigenschaften und Verhaltensweisen von Freihandstrichen. Apps ohne Unterstützung der Freihandeingabe können das statische GIF-Bild, einschließlich Alphakanal-Hintergrundtransparenz, anzeigen.
 title: Speichern und Abrufen der Daten zu Windows Ink-Strichen
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c12e5cb7012ba9ff9a4ed383427e37b79835983
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045346"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645845"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Speichern und Abrufen der Daten zu Windows Ink-Strichen
 
@@ -21,7 +21,7 @@ ms.locfileid: "9045346"
 UWP-Apps, die Windows Ink unterstützen, können Freihandstriche in eine serialisierte Freihandformatdatei (Ink Serialized Format-Datei, ISF-Datei) serialisieren und aus dieser deserialisieren. Die ISF-Datei ist eine GIF-Bild mit zusätzlichen Metadaten für alle Eigenschaften und Verhaltensweisen von Freihandstrichen. Apps ohne Unterstützung der Freihandeingabe können das statische GIF-Bild, einschließlich Alphakanal-Hintergrundtransparenz, anzeigen.
 
 > [!NOTE]
-> Bei ISF handelt es sich um die kompakteste permanente Freihanddarstellung. Sie kann in ein binäres Dokumentformat, z.B. in eine GIF-Datei, eingebettet oder direkt in der Zwischenablage platziert werden.
+> Bei ISF handelt es sich um die kompakteste permanente Freihanddarstellung. Sie kann in ein binäres Dokumentformat, z. B. in eine GIF-Datei, eingebettet oder direkt in der Zwischenablage platziert werden.
 
 > **Wichtige APIs**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
@@ -29,7 +29,7 @@ UWP-Apps, die Windows Ink unterstützen, können Freihandstriche in eine seriali
 
 Hier wird veranschaulicht, wie Sie in einem [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)-Steuerelement gezeichnete Freihandstriche speichern.
 
-**Laden Sie dieses Beispiel unter [Speichern und Laden von Freihandstrichen aus einer ISF-Datei (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip) herunter.**
+**Laden Sie dieses Beispiel von [speichern und Laden von Freihandstrichen aus einer Datei Format ISF (Ink Serialized)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  Zuerst wird die Benutzeroberfläche eingerichtet.
 
@@ -161,7 +161,7 @@ public MainPage()
 
 Hier wird veranschaulicht, wie Freihandstriche aus einer Datei geladen und in einem [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)-Steuerelement gerendert werden.
 
-**Laden Sie dieses Beispiel unter [Speichern und Laden von Freihandstrichen aus einer ISF-Datei (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip) herunter.**
+**Laden Sie dieses Beispiel von [speichern und Laden von Freihandstrichen aus einer Datei Format ISF (Ink Serialized)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  Zuerst wird die Benutzeroberfläche eingerichtet.
 
@@ -277,7 +277,7 @@ Damit die Zwischenablagefunktion unterstützt wird, müssen für die integrierte
 
 In diesem Beispiel wird die Strichauswahl aktiviert, wenn die Eingabe mit einer Zeichenstift-Drucktaste (oder der rechten Maustaste) geändert wird. Ein vollständiges Beispiel für das Implementieren der Strichauswahl finden Sie unter „Weitergabe der Eingabe für die erweiterte Verarbeitung“ in [Zeichen- und Eingabestiftinteraktionen](pen-and-stylus-interactions.md).
 
-**Laden Sie dieses Beispiel unter [Speichern und Laden von Freihandstrichen aus der Zwischenablage](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip) herunter.**
+**Laden Sie dieses Beispiel von [speichern und Laden von Freihandstrichen aus der Zwischenablage](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
 
 1.  Zuerst wird die Benutzeroberfläche eingerichtet.
 
@@ -436,17 +436,17 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 * [Zeichen- und Eingabestiftinteraktionen](pen-and-stylus-interactions.md)
 
-**Themenbeispiele**
-* [Speichern und Laden von Freihandstrichen aus einer ISF-Datei (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+**Beispiele für Thema**
+* [Speichern und Laden von Freihandstrichen aus einer Datei Format ISF (Ink Serialized)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
 * [Speichern und Laden von Freihandstrichen aus der Zwischenablage](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
 
-**Andere Beispiele**
-* [Einfaches Freihandbeispiel (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Komplexes Freihandbeispiel (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Freihandbeispiel (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Lernprogramm „Erste Schritte:” Unterstützen von Freihandeingaben in Ihrer UWP-App](https://aka.ms/appsample-ink)
-* [Malbuchbeispiel](https://aka.ms/cpubsample-coloringbook)
-* [Familiennotizbeispiel](https://aka.ms/cpubsample-familynotessample)
+**Weitere Beispiele**
+* [Beispiel für einfache Freihandeingaben (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Komplexe Freihand-Beispiel (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Freihand-Beispiel (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Einstiegstutorial: Unterstützung von Freihandeingaben in Ihre UWP-app](https://aka.ms/appsample-ink)
+* [Codefarben Book-Beispiel](https://aka.ms/cpubsample-coloringbook)
+* [Anmerkungen zu dieser Version Familie-Beispiel](https://aka.ms/cpubsample-familynotessample)
 
 
 

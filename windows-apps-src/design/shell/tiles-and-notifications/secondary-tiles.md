@@ -1,18 +1,18 @@
 ---
-Description: Secondary tiles allow users to pin specific content and deep links from your app onto their Start menu, providing easy future access to the content within your app.
+Description: Mit sekundären Kacheln können Benutzer für den einfachen zukünftigen Zugriff auf den Inhalt Ihrer App bestimmte Inhalte und Deep-Links von der App an das Startmenü heften.
 title: Sekundäre Kacheln
 label: Secondary tiles
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
-keywords: Windows10, UWP, sekundäre Kacheln
+keywords: Windows 10, UWP, sekundäre Kacheln
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940619"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653185"
 ---
 # <a name="secondary-tiles"></a>Sekundäre Kacheln
 
@@ -21,19 +21,19 @@ Mit sekundären Kacheln können Benutzer für den einfachen zukünftigen Zugriff
 
 ![Screenshot von sekundären Kacheln](images/secondarytiles.png)
 
-Benutzer können z.B. das Wetter für verschiedene Orte an das Startmenü anheften, um (1) einfache, auf einen Blick erkennbare Live-Informationen über das aktuelle Wetter dank Live-Kachel und (2) einen schnellen Einstiegspunkt für die bestimmte Stadt Wetter, u. a. zu erhalten. Benutzer können auch bestimmte Aktien, Nachrichtenartikel und weitere Elemente anheften, die Ihnen wichtig sind.
+Benutzer können z. B. das Wetter für verschiedene Orte an das Startmenü anheften, um (1) einfache, auf einen Blick erkennbare Live-Informationen über das aktuelle Wetter dank Live-Kachel und (2) einen schnellen Einstiegspunkt für die bestimmte Stadt Wetter, u. a. zu erhalten. Benutzer können auch bestimmte Aktien, Nachrichtenartikel und weitere Elemente anheften, die Ihnen wichtig sind.
 
 Durch das Hinzufügen von sekundären Kacheln zur App, kann der Benutzer schnell und effizient erneut Kontakt mit Ihrer App aufnehmen, und ihm den einfachen Zugriff ermöglichen, den sekundäre Kacheln bereitstellen.
 
 **Sekundäre Kacheln können nur vom Benutzer auf der Startseite angeheftet werden. Von Apps können sekundäre Kacheln nicht programmgesteuert ohne Zustimmung des Anwenders angeheftet werden.** Der Benutzer muss explizit auf eine Schaltfläche "Anheften" in der App klicken, worauf Sie die API verwenden, um die Anforderung an eine sekundäre Kachel zu erstellen. Das System zeigt anschließend ein Dialogfeld an, das den Benutzer auffordert, zu bestätigen, ob die die Kachel angeheftet werden soll.
 
-## <a name="quick-links"></a>Quicklinks
+## <a name="quick-links"></a>Direktlink
 
 | Artikel | Beschreibung |
 | --- | --- |
-| [Anleitung für sekundäre Kacheln](secondary-tiles-guidance.md) | Hier erfahren Sie, wann und wo sekundäre Kacheln verwendet werden sollen. |
+| [Anleitungen, sekundäre Kacheln](secondary-tiles-guidance.md) | Hier erfahren Sie, wann und wo sekundäre Kacheln verwendet werden sollen. |
 | [Sekundäre Kacheln anheften](secondary-tiles-pinning.md) | Hier erfahren Sie, wie Sie eine sekundäre Kachel anheften. |
-| [Anheften ab einer Desktopanwendung](secondary-tiles-desktop-pinning.md) | Windows-Desktopanwendungen können sekundäre Kacheln dank der Desktop-Brücke anheften! |
+| [Anheften von desktop-Anwendung](secondary-tiles-desktop-pinning.md) | Windows-Desktopanwendungen können sekundäre Kacheln dank der Desktop-Brücke anheften! |
 
 
 ## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>Verhältnis zwischen sekundären Kacheln und primären Kacheln
@@ -54,7 +54,7 @@ Sich häufig ändernde Inhalte, die ein Benutzer im Blick behalten möchte, kön
 Sekundäre Kacheln sind in vielen Punkten mit primären Kacheln vergleichbar:
 
 * Sie verwenden Kachelbenachrichtigungen, um umfangreichen Inhalte anzuzeigen.
-* Für den Standardinhalt der Kachel muss ein 150x150 Pixel großes Logo vorhanden sein.
+* Für den Standardinhalt der Kachel muss ein 150 x 150 Pixel großes Logo vorhanden sein.
 * Sie können optional die anderen Logo-Größen enthalten, um größere Kachel zu aktivieren.
 * Sie können Benachrichtigungen und Signale anzeigen.
 * Sie können auf dem Startmenü neu angeordnet werden.
@@ -66,9 +66,9 @@ In einigen entscheidenden Punkten unterscheiden sich sekundäre Kacheln jedoch v
 * Benutzer können ihre sekundären Kacheln jederzeit löschen, ohne dabei die übergeordnete App zu löschen.
 * Sekundäre Kacheln können zur Laufzeit erstellt werden. App-Kacheln können nur bei der Installation erstellt werden.
 * Vom Benutzer wird in einem Flyout eine Bestätigung angefordert, bevor eine sekundäre Kachel hinzugefügt wird.
-* Sie können für den Sperrbildschirm nicht programmgesteuert über eine Anfrage an den Benutzer ausgewählt werden. Der Benutzer muss die sekundäre Kachel auf der Seite personalisieren in PC-Einstellungen manuell hinzufügen.
+* Sie können für den Sperrbildschirm nicht programmgesteuert über eine Anfrage an den Benutzer ausgewählt werden. Der Benutzer muss die sekundäre Kachel über die Seite "anpassen" manuell in die PC-Einstellungen hinzufügen.
 
-Für Kachel- und Signalupdater und Pushbenachrichtigungskanäle für sekundäre Kacheln gibt es besondere Methoden, um Benachrichtigungen zu senden. Sie entsprechen den Versionen, die mit primären Kacheln verwendet werden. Beispiel: CreateBadgeUpdaterForApplication und CreateBadgeUpdaterForSecondaryTile.
+Für Kachel- und Signalupdater und Pushbenachrichtigungskanäle für sekundäre Kacheln gibt es besondere Methoden, um Benachrichtigungen zu senden. Sie entsprechen den Versionen, die mit primären Kacheln verwendet werden. Z. B. CreateBadgeUpdaterForApplication im Vergleich zu CreateBadgeUpdaterForSecondaryTile.
 
 
 ## <a name="guidance-on-secondary-tiles"></a>Anleitung für sekundäre Kacheln

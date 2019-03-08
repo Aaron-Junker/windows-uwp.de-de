@@ -1,27 +1,27 @@
 ---
-Description: Radio buttons let users select one option from two or more choices.
+Description: Mit Optionsfeldern können Benutzer eine oder mehrere Optionen auswählen.
 title: Richtlinien für Optionsfelder
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 91903365a258d54804b420cd217dd7c25d79406a
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037232"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606135"
 ---
 # <a name="radio-buttons"></a>Optionsfelder
 
-> **Wichtige APIs**: [RadioButton-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [Checked-Ereignis](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [IsChecked-Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+> **Wichtige APIs**: [RadioButton-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [aktivierte Ereignis](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [IsChecked-Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 Mithilfe von Optionsfeldern können Benutzer eine Option aus einer Gruppe von Optionsfeldern auswählen. Jede Option wird durch ein Optionsfeld dargestellt, und Benutzer können nur ein Optionsfeld in einer Gruppe von Optionsfeldern auswählen.
 
@@ -35,7 +35,7 @@ Verwenden Sie Optionsfelder, um Benutzern mindestens zwei Optionen bereitzustell
 
 ![Eine Gruppe von Optionsfeldern](images/radiobutton_basic.png)
 
-Verwenden Sie Optionsfelder, wenn Benutzer alle Optionen sehen müssen, um eine Auswahl treffen zu können. Da Optionsfelder alle Optionen gleichermaßen hervorheben, schenken Benutzer den Optionen möglicherweise mehr Aufmerksamkeit, als eigentlich erforderlich ist. Sie können auch andere Steuerelemente verwenden, es sei denn, die Optionen erfordern zusätzliche Aufmerksamkeit seitens des Benutzers. Verwenden Sie stattdessen beispielsweise eine [Dropdownliste](lists.md), wenn die standardmäßige Option für die meisten Benutzer in den meisten Situationen empfohlen ist.
+Verwenden Sie Optionsfelder, wenn Benutzer alle Optionen sehen müssen, um eine Auswahl treffen zu können. Da Optionsfelder alle Optionen gleichermaßen hervorheben, schenken Benutzer den Optionen möglicherweise mehr Aufmerksamkeit, als eigentlich erforderlich ist. Sie können auch andere Steuerelemente verwenden, es sei denn, die Optionen erfordern zusätzliche Aufmerksamkeit seitens des Benutzers. Verwenden Sie beispielsweise demgegenüber eine [Dropdownliste](lists.md), wenn die standardmäßige Option für die meisten Benutzer in den meisten Situationen empfohlen ist.
 
 ![Dropdownliste](images/combo_box_collapsed.png)
 
@@ -51,7 +51,7 @@ Wenn Optionen Zahlen mit festgelegten Schritten (10, 20, 30) sind, verwenden Sie
 
 ![Schiebereglersteuerelement](images/controls/slider.png)
 
-Wenn mehr als 8Optionen vorhanden sind, verwenden Sie eine [Dropdownliste](lists.md) oder ein [Listenfeld](lists.md).
+Wenn mehr als 8 Optionen vorhanden sind, verwenden Sie eine [Dropdownliste](lists.md) oder ein [Listenfeld](lists.md).
 
 ![Kombinationsfeld](images/combo_box_scroll.png)
 
@@ -66,8 +66,8 @@ Wenn die verfügbaren Optionen auf dem aktuellen Kontext der App basieren oder a
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/RadioButton">die App zu öffnen und RadioButton in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -176,7 +176,7 @@ Ein Optionsfeld hat zwei Zustände: *aktiviert* und *deaktiviert*. Wenn ein Opti
 -   Stellen Sie sicher, dass der Zweck und der aktuelle Status einer Gruppe von Optionsfeldern nachvollziehbar ist.
 -   Begrenzen Sie den Text des Optionsfelds auf eine einzelne Zeile.
 -   Wenn der Textinhalt dynamisch ist, bedenken Sie die Größenänderung der Schaltfläche und die visuellen Effekte herum.
--   Verwenden Sie die Standardschriftart, es sei denn, Sie müssen gemäß Ihren Markenrichtlinien eine andere Schriftart verwenden.
+-   Verwenden Sie die standardmäßige Schriftart, es sei denn, Sie müssen gemäß Ihren Markenrichtlinien eine andere verwenden.
 -   Platzieren Sie keine zwei Optionsfeldgruppen nebeneinander. Wenn sich zwei Optionsfeldgruppen direkt nebeneinander befinden, ist es schwierig, festzustellen, welche Schaltflächen zu welcher Gruppe gehören.
 
 ## <a name="additional-usage-guidance"></a>Weitere Hinweise zur Verwendung
@@ -191,7 +191,7 @@ Diese Abbildung zeigt die richtige Vorgehensweise zum Platzieren und Anordnen vo
 
 **Für Designer**
 - [Schaltflächen](buttons.md)
-- [Umschalter](toggles.md)
+- [Ein/aus-Schalter](toggles.md)
 - [Kontrollkästchen](checkbox.md)
 - [Listen und Kombinationsfelder](lists.md)
 - [Schieberegler](slider.md)

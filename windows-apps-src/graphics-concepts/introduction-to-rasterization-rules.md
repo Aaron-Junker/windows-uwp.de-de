@@ -1,6 +1,6 @@
 ---
 title: Einführung in die Regeln für die Rasterung
-description: Häufig entsprechend die Punkte von Vertizes nicht exakt den Pixel auf dem Bildschirm. Wenn dieser Fall eintritt, verwendet Direct3D Dreiecksrasterregeln, um zu entscheiden, welche Pixel für ein vorhandenes Dreieck gelten.
+description: Häufig stimmen die als Scheitelpunkte angegebenen Punkte nicht exakt mit den Pixeln auf dem Bildschirm überein. Wenn dieser Fall eintritt, verwendet Direct3D Dreiecksrasterregeln, um zu entscheiden, welche Pixel für ein vorhandenes Dreieck gelten.
 ms.assetid: 4232CDBA-F669-4417-9378-F9013E83462C
 keywords:
 - Einführung in die Regeln für die Rasterung
@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1907be029254d99be9e6158c93c179baea1fb0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947932"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641085"
 ---
 # <a name="introduction-to-rasterization-rules"></a>Einführung in die Regeln für die Rasterung
 
 
-Häufig entsprechend die Punkte von Vertizes nicht exakt den Pixel auf dem Bildschirm. Wenn dieser Fall eintritt, verwendet Direct3D Dreiecksrasterregeln, um zu entscheiden, welche Pixel für ein vorhandenes Dreieck gelten.
+Häufig stimmen die als Scheitelpunkte angegebenen Punkte nicht exakt mit den Pixeln auf dem Bildschirm überein. Wenn dieser Fall eintritt, verwendet Direct3D Dreiecksrasterregeln, um zu entscheiden, welche Pixel für ein vorhandenes Dreieck gelten.
 
 Es folgt eine vereinfachte Einführung in die Regeln für die Rasterung. Weitere Einzelheiten finden Sie unter [Regeln für die Rasterung](rasterization-rules.md). Siehe auch [Rasterizerphase (RS)](rasterizer-stage--rs-.md).
 
-## <a name="span-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspantriangle-rasterization-rules"></a><span id="Triangle_Rasterization_Rules"></span><span id="triangle_rasterization_rules"></span><span id="TRIANGLE_RASTERIZATION_RULES"></span>Regeln für das Dreiecksraster
+## <a name="span-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspantriangle-rasterization-rules"></a><span id="Triangle_Rasterization_Rules"></span><span id="triangle_rasterization_rules"></span><span id="TRIANGLE_RASTERIZATION_RULES"></span>Dreieck Rasterization Regeln
 
 
 Direct3D verwendet für die Füllgeometrie eine Oben-Links-Füllkonvention. Es handelt sich hierbei um die gleiche Konvention, die in GDI und OpenGL für Rechtecke verwendet wird. In Direct3D ist der Mittelpunkt eines Pixels der entscheidende Punkt. Wenn der Mittelpunkt in einem Dreieck liegt, ist das Pixel Teil des Dreiecks. Die Mittelpunkte der Pixel liegen auf ganzzahligen Koordinaten.
@@ -59,7 +59,7 @@ Punkte werden auf die gleiche Weise gerendert wie Punkt-Sprites, welche beide al
 
 Die Rendering-Regeln für nicht geglättete Linien stimmen exakt mit denen für [GDI lines](https://msdn.microsoft.com/library/windows/desktop/dd145027) überein.
 
-## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>Punkt-Sprite-Regeln
+## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>Punkt Sprite-Regeln
 
 
 Punkt-Sprites und Patch-Grundtypen sind gerastert, da die Grundtypen zuerst in Dreiecke tesseliert, und die daraus entstehenden Dreiecke dann gerastert werden.
@@ -69,9 +69,9 @@ Punkt-Sprites und Patch-Grundtypen sind gerastert, da die Grundtypen zuerst in D
 
 [Geräte](devices.md)
 
-[Rasterizerphase (RS)](rasterizer-stage--rs-.md)
+[Phase des Rasterizers (RS)](rasterizer-stage--rs-.md)
 
-[Regeln für die Rasterung](rasterization-rules.md)
+[Rasterization Regeln](rasterization-rules.md)
 
  
 

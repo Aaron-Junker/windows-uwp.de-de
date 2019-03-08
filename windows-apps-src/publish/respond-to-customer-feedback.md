@@ -3,26 +3,26 @@ title: Reagieren auf Kundenfeedback
 description: Sie können direkt auf Feedback reagieren, das Ihre Kunden im Feedback-Hub hinterlassen.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
 ms.openlocfilehash: 93d4da26dbb4c5eee1856b3a594214aabbbbaa00
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047565"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645075"
 ---
 # <a name="respond-to-customer-feedback"></a>Reagieren auf Kundenfeedback
 
-Sie können den [Feedbackbericht](feedback-report.md) verwenden, um das Feedback zu prüfen, das Ihre Windows10-Kunden zu Ihrer App im Feedback-Hub hinterlassen haben, und dann direkt auf dieses Feedback antworten. Sie können Ihre Antworten im Feedback-Hub für alle Benutzer veröffentlichen (entweder als einzelne Kommentare oder durch Aktualisieren des Status eines Feedbacks und Hinzufügen einer Beschreibung), um die Kunden über neue Funktionen und Fehlerkorrekturen zu informieren oder um detaillierteres Feedback zur Verbesserung Ihrer App zu bitten. Sie können Ihre Antwort auch per E-Mail direkt an den Kunden senden, der das Feedback abgegeben hat.
+Sie können den [Feedbackbericht](feedback-report.md) verwenden, um das Feedback zu prüfen, das Ihre Windows 10-Kunden zu Ihrer App im Feedback-Hub hinterlassen haben, und dann direkt auf dieses Feedback antworten. Sie können Ihre Antworten im Feedback-Hub für alle Benutzer veröffentlichen (entweder als einzelne Kommentare oder durch Aktualisieren des Status eines Feedbacks und Hinzufügen einer Beschreibung), um die Kunden über neue Funktionen und Fehlerkorrekturen zu informieren oder um detaillierteres Feedback zur Verbesserung Ihrer App zu bitten. Sie können Ihre Antwort auch per E-Mail direkt an den Kunden senden, der das Feedback abgegeben hat.
 
 > [!TIP]
-> Über die Feedback-API im [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) können Sie es Kunden ermöglichen, Feedback zu geben. Dabei wird ein Steuerelement hinzugefügt, über das Kunden direkt [den Feedback-Hub von Ihrer UWP-App starten können](../monetize/launch-feedback-hub-from-your-app.md). Bedenken Sie, dass jeder Kunde, der Ihre App auf einem Windows10-Gerät heruntergeladen hat, das den Feedback-Hub unterstützt, mithilfe der Feedback-Hub-App ein Feedback abgeben kann. Aus diesem Grund wird in diesem Bericht möglicherweise Feedback von Kunden angezeigt, auch wenn Sie in Ihrer App nicht explizit um Feedback gebeten haben.
+> Über die Feedback-API im [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) können Sie es Kunden ermöglichen, Feedback zu geben. Dabei wird ein Steuerelement hinzugefügt, über das Kunden direkt [den Feedback-Hub von Ihrer UWP-App starten können](../monetize/launch-feedback-hub-from-your-app.md). Bedenken Sie, dass jeder Kunde, der Ihre App auf einem Windows 10-Gerät heruntergeladen hat, das den Feedback-Hub unterstützt, mithilfe der Feedback-Hub-App ein Feedback abgeben kann. Aus diesem Grund wird in diesem Bericht möglicherweise Feedback von Kunden angezeigt, auch wenn Sie in Ihrer App nicht explizit um Feedback gebeten haben.
 
 Um zu einem Feedback eine Antwort zu geben, klicken Sie auf den Link **Feedback beantworten**, der neben dem Feedback in Ihrem **Feedbackbericht** angezeigt wird.
 
-[Partner Center](https://partner.microsoft.com/dashboard) unterstützt drei Optionen für Antworten an Kunden, die Feedback zu Ihrer app gegeben. Unabhängig davon, welche Option Sie wählen, denken Sie daran, dass maximal 1.000Zeichen für jede Antwort zulässig sind.
+[Partner Center](https://partner.microsoft.com/dashboard) unterstützt drei Optionen für die Reaktion auf Kunden, die Bereitstellen von Feedback zu Ihrer app. Unabhängig davon, welche Option Sie wählen, denken Sie daran, dass maximal 1.000 Zeichen für jede Antwort zulässig sind.
 
 ## <a name="public-comments-in-feedback-hub"></a>Öffentliche Kommentare im Feedback-Hub
 
@@ -40,15 +40,15 @@ Nachdem Sie das Kontrollkästchen **Kommentar als E-Mail senden** aktiviert habe
 
 ## <a name="public-status-updates-and-descriptions-in-feedback-hub"></a>Öffentliche Statusaktualisierungen und Beschreibungen im Feedback-Hub
 
-Eine dritte Option für eine öffentliche Antwort ist, den Status eines Feedbacks anzugeben, um z.B. Ihren Kunden mitzuteilen, dass Sie an dem Problem arbeiten oder es gelöst haben. Wenn Sie den Status zu einem Feedback aktualisieren, wird dieser zusammen mit dem Feedback im Feedback-Hub angezeigt.
+Eine dritte Option für eine öffentliche Antwort ist, den Status eines Feedbacks anzugeben, um z. B. Ihren Kunden mitzuteilen, dass Sie an dem Problem arbeiten oder es gelöst haben. Wenn Sie den Status zu einem Feedback aktualisieren, wird dieser zusammen mit dem Feedback im Feedback-Hub angezeigt.
 
 Um diese Option zu verwenden, wählen Sie das Optionsfeld **Status aktualisieren** aus. Wählen Sie dann eine der folgenden Optionen aus:
 
-- **Wird untersucht**: Sie sind sich des Problems bewusst und gehen ihm nach.
-- **Wir arbeiten daran**: Sie sind dabei, ein Problem zu lösen oder eine angeforderte Funktion hinzuzufügen.
-- **Abgeschlossen**: Sie haben ein Update veröffentlicht, um das Problem zu lösen oder die angeforderte Funktion hinzuzufügen.
+- **Untersuchen von**: Sie sind ein Problem bekannt, und Sie darin suchen.
+- **Wir arbeiten**: Sie können beim Beheben des Problems oder Hinzufügen eines angeforderten Features.
+- **Abgeschlossen**: Sie haben ein Update, um das Problem beheben, oder fügen Sie das angeforderte Feature veröffentlicht.
 
-Neben dem Aktualisieren des Status können Sie auch einen Kommentar eingeben, um weitere Informationen bereitzustellen, z.B. eine Schätzung, wann das Problem gelöst sein wird, oder weitere Informationen zu den neuesten Änderungen. Diese Beschreibung wird am oberen Rand der Liste der Kommentare angezeigt (im Feedbackbericht werden der aktuelle Status und die Beschreibung angezeigt).
+Neben dem Aktualisieren des Status können Sie auch einen Kommentar eingeben, um weitere Informationen bereitzustellen, z. B. eine Schätzung, wann das Problem gelöst sein wird, oder weitere Informationen zu den neuesten Änderungen. Diese Beschreibung wird am oberen Rand der Liste der Kommentare angezeigt (im Feedbackbericht werden der aktuelle Status und die Beschreibung angezeigt).
 
 Mit der Option **Status aktualisieren** können Sie den Status jederzeit ändern (und aktualisierte Beschreibungen für jede Statusänderung hinzufügen). Wenn Sie den Status eines Feedbacks ändern, wird der Status auch im Feedback-Hub aktualisiert, damit den Kunden, die Ihre Antwort lesen, der aktuelle Status angezeigt wird.
 
@@ -56,7 +56,7 @@ Mit der Option **Status aktualisieren** können Sie den Status jederzeit ändern
 ## <a name="guidelines-for-responses"></a>Richtlinien für Antworten
 
 Unabhängig davon, welche Methode Sie verwenden, um auf das Feedback der Kunden zu reagieren, müssen Sie folgende Richtlinien für alle Antworten befolgen.
-- Antworten dürfen maximal 1.000Zeichen umfassen.
+- Antworten dürfen maximal 1.000 Zeichen umfassen.
 - Sie dürfen Benutzern für ihre öffentlichen Kommentare keine Gegenleistungen, einschließlich digitaler Apps, anbieten.
 - Ihre Antwort sollte keine Marketing- oder Werbeinhalte enthalten. Beachten Sie, dass die Person, die ein Feedback abgegeben hat, bereits Ihr Kunde ist.
 - Bewerben Sie in Ihrer Antwort keine anderen Apps oder Dienste.

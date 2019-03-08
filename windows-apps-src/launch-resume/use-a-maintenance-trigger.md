@@ -4,18 +4,18 @@ description: Hier erfahren Sie, wie Sie die MaintenanceTrigger-Klasse zum Ausfü
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 53107ca6add4193737ab0d00497bbe6324bee44f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047009"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661855"
 ---
 # <a name="use-a-maintenance-trigger"></a>Verwenden eines Wartungsauslösers
 
@@ -25,7 +25,7 @@ ms.locfileid: "9047009"
 - [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 - [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-Hier erfahren Sie, wie Sie die [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)-Klasse zum Ausführen von einfachem Code im Hintergrund verwenden, während das Gerät eingesteckt ist.
+Erfahren Sie, wie Sie die [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)-Klasse zum Ausführen von einfachem Code im Hintergrund verwenden, während das Gerät angeschlossen ist.
 
 ## <a name="create-a-maintenance-trigger-object"></a>Erstellen eines MaintenanceTrigger-Objekts
 
@@ -36,9 +36,9 @@ Weitere Informationen zum Schreiben einer Hintergrundaufgabenklasse finden Sie u
 Erstellen Sie ein neues [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)-Objekt. Der zweite Parameter *OneShot* gibt an, ob die Wartungsaufgabe nur einmal oder regelmäßig ausgeführt wird. Wenn *OneShot* auf „true“ festgelegt ist, gibt der erste Parameter (*FreshnessTime*) an, wie lange mit der Planung der Hintergrundaufgabe gewartet werden soll (in Minuten). Wenn *OneShot* auf „false“ festgelegt ist, gibt *FreshnessTime* an, wie oft die Hintergrundaufgabe ausgeführt wird.
 
 > [!NOTE]
-> Wenn *FreshnessTime* auf weniger als 15 Minuten festgelegt ist, wird eine Ausnahme ausgelöst, wenn Sie versuchen, die Hintergrundaufgabe zu registrieren.
+> Wenn *FreshnessTime* festgelegt ist auf weniger als 15 Minuten wird eine Ausnahme ausgelöst, bei dem Versuch, die die Hintergrundaufgabe zu registrieren.
 
-Dieser Beispielcode erstellt einen Auslöser, der einmal pro Stunde ausgeführt wird.
+Dieser Beispielcode erstellt einen Trigger, der einmal pro Stunde ausgeführt wird.
 
 ```csharp
 uint waitIntervalMinutes = 60;
@@ -108,7 +108,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 > Für alle Gerätefamilien mit Ausnahme von Desktops können Hintergrundaufgaben beendet werden, wenn der Arbeitsspeicher des Geräts knapp wird. Wenn eine Ausnahme über wenig Arbeitsspeicher nicht angezeigt oder von der App nicht behandelt wird, wird die Hintergrundaufgabe ohne Warnung und ohne Auslösen des OnCanceled-Ereignisses beendet. Dadurch soll die Benutzerfreundlichkeit der App im Vordergrund sichergestellt werden. Entwerfen Sie die Hintergrundaufgabe so, dass dieses Szenario behandelt werden kann.
 
 > [!NOTE]
-> Universelle Windows-Plattform-apps müssen [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) aufrufen, bevor hintergrundtrigger-Typen.
+> Apps der universellen Windows-Plattform müssen Aufrufen [ **"requestaccessasync"** ](https://msdn.microsoft.com/library/windows/apps/hh700485) vor der Registrierung eines die Triggertypen Hintergrund.
 
 Rufen Sie [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) und anschließend [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) auf, wenn die App nach der Aktualisierung gestartet wird, um sicherzustellen, dass Ihre universelle Windows-App nach der Veröffentlichung eines Updates der App weiterhin ordnungsgemäß ausgeführt wird. Weitere Informationen finden Sie unter [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md).
 
@@ -118,15 +118,15 @@ Rufen Sie [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh7
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb des Prozesses](create-and-register-an-inproc-background-task.md)
-* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb des Prozesses](create-and-register-a-background-task.md)
-* [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
-* [Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md)
-* [Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md)
-* [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
-* [Reagieren auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
-* [Festlegen von Bedingungen zum Ausführen einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md)
-* [Aktualisieren einer Live-Kachel über eine Hintergrundaufgabe](update-a-live-tile-from-a-background-task.md)
-* [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)
+* [Erstellen Sie und registrieren Sie eine Out-of-Process-Hintergrundaufgabe](create-and-register-a-background-task.md)
+* [Deklarieren Sie Hintergrundtasks im Manifest Anwendung](declare-background-tasks-in-the-application-manifest.md)
+* [Eine abgebrochene Hintergrundaufgabe verarbeiten](handle-a-cancelled-background-task.md)
+* [Überwachen von Aufgabenstatus Hintergrund und Abschluss](monitor-background-task-progress-and-completion.md)
+* [Eine Hintergrundaufgabe registrieren](register-a-background-task.md)
+* [Reagieren Sie auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
+* [Festlegen von Bedingungen für die Ausführung einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md)
+* [Live-Kachel aus einem Hintergrundtask aktualisiert](update-a-live-tile-from-a-background-task.md)
+* [Führen Sie eine Hintergrundaufgabe über einen timer](run-a-background-task-on-a-timer-.md)
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
-* [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-* [So wird’s gemacht: Auslösen von Anhalte-, Fortsetzungs- und Hintergrundereignissen in UWP-Apps (beim Debuggen)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Eine Hintergrundaufgabe Debuggen](debug-a-background-task.md)
+* [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps (beim debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)

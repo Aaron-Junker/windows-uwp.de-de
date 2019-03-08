@@ -1,24 +1,24 @@
 ---
 title: Rendern der Szene mit Tiefentest
-description: Erstellen Sie einen Schatteneffekt, indem Sie Ihrem Vertexshader (bzw. Geometrieshader) und dem Pixelshader einen Tiefentest hinzufügen.
+description: Erstellen Sie einen Schatteneffekt, indem Sie dem Vertex-Shader (bzw. Geometry-Shader) und dem Pixel-Shader einen Tiefentest hinzufügen.
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Rendern, Szene, Tiefentest, Direct3D, Schatten
+keywords: Windows 10, UWP, Spiele, Rendern, Szene, Tiefentest, Direct3D, Schatten
 ms.localizationpriority: medium
 ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924519"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630455"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>Rendern der Szene mit Tiefentest
 
 
 
 
-Erstellen Sie einen Schatteneffekt, indem Sie dem Vertex-Shader (bzw. Geometry-Shader) und dem Pixel-Shader einen Tiefentest hinzufügen. Teil3 von [Exemplarische Vorgehensweise: Implementieren von Schattenvolumes mithilfe von Tiefenpuffern in Direct3D11](implementing-depth-buffers-for-shadow-mapping.md).
+Erstellen Sie einen Schatteneffekt, indem Sie dem Vertex-Shader (bzw. Geometry-Shader) und dem Pixel-Shader einen Tiefentest hinzufügen. Teil 3 von [Exemplarische Vorgehensweise: Implementieren Sie mithilfe von Tiefenpuffern in Direct3D 11 Schattenvolumen](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="include-transformation-for-light-frustum"></a>Einfügen der Transformation für Licht-Frustum
 
@@ -67,7 +67,7 @@ Als Nächstes wird vom Pixelshader die vom Vertex-Shader bereitgestellte interpo
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>Testen, ob sich die Position im Licht-Frustum befindet
 
 
-Prüfen Sie zuerst, ob sich das Pixel im Ansichts-Frustum des Lichts befindet, indem Sie die X- und Y-Koordinaten normalisieren. Wenn diese beide innerhalb des Bereichs \[0, 1\] liegen, ist es möglich, dass das Pixel im Schatten liegt. Andernfalls können Sie den Tiefentest überspringen. Mit einem Shader kann dies ohne viel Zeitaufwand getestet werden, indem [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) aufgerufen und das Ergebnis mit dem Originalwert verglichen wird.
+Prüfen Sie zuerst, ob sich das Pixel im Ansichts-Frustum des Lichts befindet, indem Sie die X- und Y-Koordinaten normalisieren. Wenn beide innerhalb des Bereichs \[0, 1\] ist es möglich, dass das Pixel im Schatten. Andernfalls können Sie den Tiefentest überspringen. Mit einem Shader kann dies ohne viel Zeitaufwand getestet werden, indem [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) aufgerufen und das Ergebnis mit dem Originalwert verglichen wird.
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.

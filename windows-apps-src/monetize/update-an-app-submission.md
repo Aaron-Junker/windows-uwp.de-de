@@ -4,14 +4,14 @@ description: Verwenden Sie diese Methode aus der Microsoft Store-Übermittlungs-
 title: Aktualisieren einer App-Übermittlung
 ms.date: 04/17/2018
 ms.topic: article
-keywords: Windows10, UWP, Microsoft Store-Übermittlungs-API, App-Übermittlung, Aktualisieren
+keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, App-Übermittlung, Aktualisieren
 ms.localizationpriority: medium
 ms.openlocfilehash: b61508edf2ebc2ab155110189fe67df63e2bab30
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938975"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634615"
 ---
 # <a name="update-an-app-submission"></a>Aktualisieren einer App-Übermittlung
 
@@ -24,10 +24,10 @@ Weitere Informationen dazu, wie diese Methode zum Erstellen einer App-Übermittl
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken abgerufen haben, können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
-* Erstellen Sie eine Übermittlung für eine Ihrer apps. Sie können dies im Partner Center oder können Sie dies tun, indem Sie mithilfe der Methode zum [Erstellen einer app-Übermittlungs](create-an-app-submission.md) .
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Erstellen Sie eine Eingabe für eine Ihrer apps. Sie können dies im Partner Center, oder Sie erreichen dies, indem die [erstellen Sie ein app-Einsendung](create-an-app-submission.md) Methode.
 
-## <a name="request"></a>Anforderung
+## <a name="request"></a>Anfordern
 
 Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie Verwendungsbeispiele und Beschreibungen des Header und Anforderungstexts.
 
@@ -40,15 +40,15 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
+| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App, für die Sie eine Übermittlung aktualisieren möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | String | Erforderlich. Die ID der zu aktualisierenden Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer App-Übermittlung](create-an-app-submission.md) verfügbar. Für eine Übermittlung, die im Partner Center erstellt wurde, ist diese ID auch in der URL für die übermittlungsseite im Partner Center verfügbar.  |
+| applicationId | string | Erforderlich. Die Store-ID der App, für die Sie eine Übermittlung aktualisieren möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| submissionId | string | Erforderlich. Die ID der zu aktualisierenden Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer App-Übermittlung](create-an-app-submission.md) verfügbar. Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -57,26 +57,26 @@ Der Anforderungstext hat folgende Parameter.
 
 | Wert      | Typ   | Beschreibung                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| applicationCategory           | string  |   Eine Zeichenfolge, die [Kategorie und/oder Unterkategorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) für Ihre App angibt. Kategorien und Unterkategorien werden mit einem Unterstrich "_" zu einer einzigen Zeichenfolge zusammengefasst, z.B. **BooksAndReference_EReader**.      |  
+| applicationCategory           | string  |   Eine Zeichenfolge, die [Kategorie und/oder Unterkategorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) für Ihre App angibt. Kategorien und Unterkategorien werden mit einem Unterstrich „_“ zu einer einzigen Zeichenfolge zusammengefasst, z. B. **BooksAndReference_EReader**.      |  
 | pricing           |  object  | Ein Objekt, das Preisinfos für die App enthält. Weitere Informationen finden Sie im Abschnitt [Preisressource](manage-app-submissions.md#pricing-object).       |   
 | visibility           |  string  |  Die Sichtbarkeit der App. Folgende Werte sind möglich: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
-| targetPublishMode           | string  | Der Publish-Modus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishMode           | string  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |  
 | listings           |   object  |  Ein Wörterbuch von Schlüssel-Wert-Paaren, wobei ein Schlüssel ein Ländercode und ein Wert eine [Eintragsressourcen](manage-app-submissions.md#listing-object)-Objekt ist, das Eintragsinfos für die App enthält.       |   
-| hardwarePreferences           |  array  |   Ein Array von Zeichenfolgen, die die [Hardwareeinstellungen](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) für die App definieren. Folgende Werte sind möglich: <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| hardwarePreferences           |  array  |   Ein Array von Zeichenfolgen, die die [Hardwareeinstellungen](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) für die App definieren. Folgende Werte sind möglich: <ul><li>Touch</li><li>Tastatur</li><li>Maus</li><li>Kamera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
 | automaticBackupEnabled           |  boolean  |   Gibt an, ob Windows die App-Daten in automatische Sicherungen auf OneDrive aufnehmen können. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
 | canInstallOnRemovableMedia           |  boolean  |   Gibt an, ob Kunden die App auf Wechselmedien installieren können. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  boolean |   Gibt an, ob game DVR für die App aktiviert ist.    |   
-| gamingOptions           |  Objekt |   Ein Array mit einer [Spieloptionenressource](manage-app-submissions.md#gaming-options-object), die spielbezogene Einstellungen für die App definiert.     |   
-| hasExternalInAppProducts           |     Boolescher Wert          |   Gibt an, ob die App Benutzern Käufe außerhalb des Microsoft Store-e-Commerce-Systems gestattet. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| gamingOptions           |  object |   Ein Array mit einer [Spieloptionenressource](manage-app-submissions.md#gaming-options-object), die spielbezogene Einstellungen für die App definiert.     |   
+| hasExternalInAppProducts           |     boolean          |   Gibt an, ob die App Benutzern Käufe außerhalb des Microsoft Store-e-Commerce-Systems gestattet. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | meetAccessibilityGuidelines           |    boolean           |  Gibt an, ob getestet wurde, ob die App die Richtlinien zur Barrierefreiheit erfüllt. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
 | notesForCertification           |  string  |   Enthält [Hinweise zur Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) für Ihre App.    |    
-| applicationPackages           |   array  | Enthält Objekte, die Details über die einzelnen Pakete der Übermittlung bereitstellen. Weitere Informationen finden Sie unten im Abschnitt [Anwendungspaket](manage-app-submissions.md#application-package-object). Beim Aufruf dieser Methode zur Aktualisierung einer App-Übermittlung sind im Antworttext nur die *fileName*-, *fileStatus*-, *minimumDirectXVersion*- und *minimumSystemRam*-Werte dieser Objekte erforderlich. Die anderen Werte werden von Partner Center aufgefüllt.   |    
+| applicationPackages           |   array  | Enthält Objekte, die Details über die einzelnen Pakete der Übermittlung bereitstellen. Weitere Informationen finden Sie unten im Abschnitt [Anwendungspaket](manage-app-submissions.md#application-package-object). Beim Aufruf dieser Methode zur Aktualisierung einer App-Übermittlung sind im Antworttext nur die *fileName*-, *fileStatus*-, *minimumDirectXVersion*- und *minimumSystemRam*-Werte dieser Objekte erforderlich. Die anderen Werte werden vom Partner Center aufgefüllt.   |    
 | packageDeliveryOptions    | object  | Enthält den schrittweisen Paketrollout sowie erforderliche Einstellungen für die Übermittlung. Weitere Informationen finden Sie unter [options-Objekt für die Paketübermittlung](manage-app-submissions.md#package-delivery-options-object).  |
-| enterpriseLicensing           |  string  |  Einer der [Werte für Enterprise-Lizenzierung](manage-app-submissions.md#enterprise-licensing), die das Verhalten der Enterprise-Lizenzierung für die App angeben.  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Gibt an, ob Microsoft [die App für zukünftige Windows10-Gerätefamilien verfügbar machen](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) darf.    |    
-| allowTargetFutureDeviceFamilies           | boolean   |  Gibt an, ob die App [auf zukünftige Windows10-Gerätefamilien abzielen](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) darf.     |   
-| trailers           |  Array |   Ein Array mit [Trailerressourcen](manage-app-submissions.md#trailer-object), die Videotrailer für den App-Eintrag darstellen.   |   
+| enterpriseLicensing           |  string  |  Einer der [Werte für Unternehmenslizenzierung](manage-app-submissions.md#enterprise-licensing), die das Verhalten der Unternehmenslizenzierung für die App angeben.  |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Gibt an, ob Microsoft [die App für zukünftige Windows 10-Gerätefamilien verfügbar machen](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) darf.    |    
+| allowTargetFutureDeviceFamilies           | boolean   |  Gibt an, ob die App [auf zukünftige Windows 10-Gerätefamilien abzielen](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) darf.     |   
+| trailers           |  array |   Ein Array mit [Trailerressourcen](manage-app-submissions.md#trailer-object), die Videotrailer für den App-Eintrag darstellen.   |   
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
@@ -294,14 +294,14 @@ Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die A
 | Fehlercode |  Beschreibung   |
 |--------|------------------|
 | 400  | Die Übermittlung konnte nicht aktualisiert werden, da die Anforderung ungültig ist. |
-| 409  | Die Übermittlung konnte im aktuellen Zustand der app nicht aktualisiert werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht von der Microsoft Store-Übermittlungs-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported)wird. |   
+| 407  | Die Übermittlung konnte aufgrund des aktuellen Status der app nicht aktualisiert werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen und Verwalten von Übermittlungen mit Microsoft Store-Diensten](create-and-manage-submissions-using-windows-store-services.md)
-* [Abrufen einer App-Übermittlung](get-an-app-submission.md)
-* [Erstellen einer App-Übermittlung](create-an-app-submission.md)
-* [Ausführen eines Commit für eine App-Übermittlung](commit-an-app-submission.md)
-* [Löschen einer App-Übermittlung](delete-an-app-submission.md)
-* [Abrufen des Status einer App-Übermittlung](get-status-for-an-app-submission.md)
+* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Erhalten Sie eine app-Übermittlung](get-an-app-submission.md)
+* [Erstellen Sie ein app-Übermittlung](create-an-app-submission.md)
+* [Übernehmen Sie eine app-Übermittlung](commit-an-app-submission.md)
+* [Löschen Sie ein app-Übermittlung](delete-an-app-submission.md)
+* [Abrufen des Status einer app-Übermittlung](get-status-for-an-app-submission.md)

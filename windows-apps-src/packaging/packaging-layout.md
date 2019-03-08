@@ -3,14 +3,14 @@ title: Paketerstellung mit dem Verpackungslayout
 description: Das Verpackungslayout ist ein Dokument, das die Verpackungsstruktur der App beschreibt. Es gibt die Bündel einer App („primär” und „optional”), die Pakete in den Bündeln sowie die Dateien in den Paketen an.
 ms.date: 04/30/2018
 ms.topic: article
-keywords: windows10, verpackung, paketlayout, bestandspaket
+keywords: windows 10, verpackung, paketlayout, bestandspaket
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e54b74cf3052fdeb5b70cc90f59ab0ea59aef76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941927"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627655"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>Paketerstellung mit dem Verpackungslayout  
 
@@ -51,9 +51,9 @@ Hier sehen Sie ein Beispiel für ein einfaches Verpackungslayout:
 Analysieren wir dieses Beispiel, um zu verstehen, wie es funktioniert.
 
 ### <a name="packagefamily"></a>PackageFamily
-Dieses verpackungslayout erstellt eine einzelne flache app-Bündel-Datei mit einer X64 architekturpaket und einem Bestandspaket namens "Medien". 
+Erstellt dieses Paket Layout eine einzelnen Flatfile-app-Paketdatei mit x X64-Architektur und ein "Medien" Asset-Paket. 
 
-Das **PackageFamily**-Element wird verwendet, um ein App-Bündel zu definieren. Sie müssen das **ManifestPath**-Attribut verwenden, um für das Bündel eine **AppxManifest**-Datei bereitzustellen, wobei diese **AppxManifest**-Datei der **AppxManifest**-Datei für das Architekturpaket des Bündels entsprechen sollte. Das **ID**-Attribut muss ebenfalls angegeben werden. Dies wird während der Erstellung des Pakets zusammen mit MakeAppx.exe verwendet, damit Sie nur dieses Paket erstellen können, wenn Sie möchten, und das ist der Dateiname des resultierenden Pakets. Das **FlatBundle**-Attribut wird verwendet, um zu beschreiben, welche Art von Bündel Sie erstellen möchten, wobei **true** für ein flaches Bündel (über das Sie hier mehr lesen können), und **false** für ein klassisches Bündel steht. Das **ResourceManager**-Attribut wird verwendet, um anzugeben, ob die Ressourcenpakete innerhalb dieses Bündels MRT verwenden, um auf die Dateien zuzugreifen. Dies ist standardmäßig **true**, ab Windows10, Version 1803, ist es jedoch noch nicht fertig, daher muss dieses Attribut auf **false** gesetzt werden.
+Das **PackageFamily**-Element wird verwendet, um ein App-Bündel zu definieren. Sie müssen das **ManifestPath**-Attribut verwenden, um für das Bündel eine **AppxManifest**-Datei bereitzustellen, wobei diese **AppxManifest**-Datei der **AppxManifest**-Datei für das Architekturpaket des Bündels entsprechen sollte. Das **ID**-Attribut muss ebenfalls angegeben werden. Dies wird während der Erstellung des Pakets zusammen mit MakeAppx.exe verwendet, damit Sie nur dieses Paket erstellen können, wenn Sie möchten, und das ist der Dateiname des resultierenden Pakets. Das **FlatBundle**-Attribut wird verwendet, um zu beschreiben, welche Art von Bündel Sie erstellen möchten, wobei **true** für ein flaches Bündel (über das Sie hier mehr lesen können), und **false** für ein klassisches Bündel steht. Das **ResourceManager**-Attribut wird verwendet, um anzugeben, ob die Ressourcenpakete innerhalb dieses Bündels MRT verwenden, um auf die Dateien zuzugreifen. Dies ist standardmäßig **true**, ab Windows 10, Version 1803, ist es jedoch noch nicht fertig, daher muss dieses Attribut auf **false** gesetzt werden.
 
 
 ### <a name="package-and-assetpackage"></a>Package und AssetPackage
@@ -64,7 +64,7 @@ Standardmäßig wird für jedes Paket im Bündel eine **AppxManifest**-Datei gen
 ### <a name="files"></a>Dateien
 Innerhalb jeder Paketdefinition können Sie das **Datei**-Element verwenden, um Dateien auszuwählen, die in diesem Paket enthalten sein sollen. Das **SourcePath**-Attribut gibt an, wo sich die Dateien lokal befinden. Sie können Dateien aus verschiedenen Ordnern (durch Angabe von relativen Pfaden), verschiedenen Laufwerken (durch Angabe von absoluten Pfaden) oder sogar Netzwerkfreigaben auswählen (beispielsweise durch Angabe von `\\myshare\myapp\*`). **DestinationPath** gibt an, wo die Dateien innerhalb des Pakets, relativ zum Paketstammverzeichnis, gespeichert werden. **ExcludePath** kann verwendet werden (anstelle der beiden anderen Attribute), um Dateien von denen auszuschließen, die von den **SourcePath**-Attributen anderer **File**-Elemente innerhalb des gleichen Pakets ausgewählt wurden.
 
-Jedes **File**-Element kann zum Auswählen mehrerer Dateien mithilfe von Platzhaltern verwendet werden. Im Allgemeinen können einzelne Platzhalter (`*`) innerhalb des Pfades überall und beliebig oft verwendet werden. Ein Platzhalter entspricht jedoch nur den Dateien in einem Ordner und nicht in Unterordnern. Beispielsweise kann `C:\MyGame\*\*` in **SourcePath** zum Auswählen der Dateien `C:\MyGame\Audios\UI.mp3` und `C:\MyGame\Videos\intro.mp4` verwendet werden, es kann jedoch nicht `C:\MyGame\Audios\Level1\warp.mp3` auswählen. Der doppelte Platzhalter (`**`) kann auch anstelle von Ordner- oder Dateinamen verwendet werden, um beliebige Zeichenfolgen rekursiv zu ersetzen (jedoch nicht neben Teilnamen). Beispielsweise kann `C:\MyGame\**\Level1\**` `C:\MyGame\Audios\Level1\warp.mp3` und `C:\MyGame\Videos\Bonus\Level1\DLC1\intro.mp4` auswählen. Platzhalter können auch verwendet werden, um Dateinamen im Rahmen des Verpackungsprozesses direkt zu ändern, wenn die Platzhalter an verschiedenen Stellen zwischen Quelle und Ziel verwendet werden. Wenn zum Beispiel `C:\MyGame\Audios\*` für **SourcePath** und `Sound\copy_*` für **DestinationPath** steht, kann `C:\MyGame\Audios\UI.mp3` ausgewählt werden und wird im Paket als `Sound\copy_UI.mp3` angezeigt. Im Allgemeinen muss die Anzahl der einfachen Platzhalter und doppelten Platzhalter für **SourcePath** und **DestinationPath** eines einzelnen **File**-Elements identisch sein.
+Jedes **File**-Element kann zum Auswählen mehrerer Dateien mithilfe von Platzhaltern verwendet werden. Im Allgemeinen können einzelne Platzhalter (`*`) innerhalb des Pfades überall und beliebig oft verwendet werden. Ein Platzhalter entspricht jedoch nur den Dateien in einem Ordner und nicht in Unterordnern. Beispielsweise kann `C:\MyGame\*\*` in **SourcePath** zum Auswählen der Dateien `C:\MyGame\Audios\UI.mp3` und `C:\MyGame\Videos\intro.mp4` verwendet werden, es kann jedoch nicht `C:\MyGame\Audios\Level1\warp.mp3` auswählen. Der doppelte Platzhalter (`**`) kann auch anstelle von Ordner- oder Dateinamen verwendet werden, um beliebige Zeichenfolgen rekursiv zu ersetzen (jedoch nicht neben Teilnamen). Beispielsweise kann `C:\MyGame\**\Level1\**``C:\MyGame\Audios\Level1\warp.mp3` und `C:\MyGame\Videos\Bonus\Level1\DLC1\intro.mp4` auswählen. Platzhalter können auch verwendet werden, um Dateinamen im Rahmen des Verpackungsprozesses direkt zu ändern, wenn die Platzhalter an verschiedenen Stellen zwischen Quelle und Ziel verwendet werden. Wenn zum Beispiel `C:\MyGame\Audios\*` für **SourcePath** und `Sound\copy_*` für **DestinationPath** steht, kann `C:\MyGame\Audios\UI.mp3` ausgewählt werden und wird im Paket als `Sound\copy_UI.mp3` angezeigt. Im Allgemeinen muss die Anzahl der einfachen Platzhalter und doppelten Platzhalter für **SourcePath** und **DestinationPath** eines einzelnen **File**-Elements identisch sein.
 
 
 ## <a name="advanced-packaging-layout-example"></a>Beispiel für ein erweitertes Verpackungslayout
@@ -143,7 +143,7 @@ Ressourcenpakete können mit dem **ResourcePackage**-Element angegeben werden. I
 
 Optionale Pakete besitzen jeweils ihre eigenen, eindeutigen Paketfamiliennamen und müssen mit **PackageFamily**-Elementen definiert werden, wenn das **Optional**-Attribut als **true** angegeben wird. Das **RelatedSet**-Attribut wird verwendet, um anzugeben, ob sich das optionale Paket innerhalb des zugehörigen Sets befindet (standardmäßig ist dieser Wert „true”), und ob das optionale Paket mit dem primären Paket aktualisiert werden soll.
 
-Das Element **PrebuiltPackage** wird verwendet, um Pakete hinzufügen, die nicht definiert sind, in das verpackungslayout für enthalten oder referenziert in den app-Bündel-Dateien erstellt werden. In diesem Fall wird ein anderes optionales DLC-Paket enthalten wird, damit die primären app-Bündel-Datei darauf verweisen und es Teil des zugehörigen Sets werden.
+Die **PrebuiltPackage** Element wird verwendet, um Pakete hinzufügen, die nicht definiert sind, im Paket Layout enthalten oder auf die verwiesen wird in die app-Bundle-Dateien erstellt werden sollen. In diesem Fall wird eine andere DLC optionalen Pakets hier eingefügt wird, so, dass die primären app-Paketdatei kann darauf verwiesen wird und der zugehörigen Gruppe angehören.
 
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>Erstellen von App-Paketen mit einem Verpackungslayout und MakeAppx.exe
@@ -159,13 +159,13 @@ Wenn Sie jedoch Ihre App aktualisieren, und einige Pakete keine geänderten Date
 MakeAppx.exe build /f PackagingLayout.xml /id "x64" /ip PreviousVersion\ /op OutputPackages\ /iv
 ```
 
-Mit dem `/id`-Kennzeichen können die zu erstellenden Pakete aus dem Verpackungslayout entsprechend dem **ID**-Attribut im Layout ausgewählt werden. `/ip` wird verwendet, um anzugeben, wo sich in diesem Fall die früheren Versionen der Pakete befinden. Die vorherige Version muss bereitgestellt werden, da die app-Bundle-Datei weiterhin auf die vorherige Version des **Media** -Pakets verweisen muss. Mit dem `/iv`-Kennzeichen wird die Version der zu erstellenden Pakete automatisch erhöht (anstatt die Version in der **AppxManifest**-Datei zu ändern). Sie können auch die Switches `/pv` und `/bv` verwenden, um eine Paketversion (für alle zu erstellenden Pakete) bzw. eine Bündelversion (für alle zu erstellenden Bündel), direkt bereitzustellen.
+Mit dem `/id`-Kennzeichen können die zu erstellenden Pakete aus dem Verpackungslayout entsprechend dem **ID**-Attribut im Layout ausgewählt werden. `/ip` wird verwendet, um anzugeben, wo sich in diesem Fall die früheren Versionen der Pakete befinden. Die vorherige Version muss angegeben werden, da die app-Paketdatei noch immer benötigt, um auf die vorherige Version von verweisen die **Media** Paket. Mit dem `/iv`-Kennzeichen wird die Version der zu erstellenden Pakete automatisch erhöht (anstatt die Version in der **AppxManifest**-Datei zu ändern). Sie können auch die Switches `/pv` und `/bv` verwenden, um eine Paketversion (für alle zu erstellenden Pakete) bzw. eine Bündelversion (für alle zu erstellenden Bündel), direkt bereitzustellen.
 Verwenden Sie diesen Befehl, wenn Sie mithilfe des erweiterten Verpackungslayoutbeispiels auf dieser Seite nur das optionale Bündel **Designs** und das App-Paket **Themes.main**, auf das es verweist, erstellen möchten:
 
 ``` example 
 MakeAppx.exe build /f PackagingLayout.xml /id "Themes" /op OutputPackages\ /bc /nbp
 ```
 
-Das `/bc`-Kennzeichen wird verwendet, um anzugeben, dass die untergeordneten Elemente des **Designs**-Bündels ebenfalls erstellt werden sollen (in diesem Fall wird **Themes.main** erstellt). Das `/nbp`-Kennzeichen gibt an, dass das übergeordnete Element des **Designs**-Bündels nicht erstellt werden soll. Das übergeordnete Element von **Designs**, bei dem es sich um ein optionales App-Bündel handelt, ist das primäre App-Bündel: **MyGame**. In der Regel muss für ein optionales Paket in einem zugehörigen Set auch das primäre App-Bündel erstellt werden, damit das optionale Paket installiert werden kann, da auf das optionale Paket auch im primären App-Bündel verwiesen wird, wenn es sich in einem zugehörigen Set befindet (um die Versionierung zwischen primärem und optionalem Paket zu gewährleisten). Das folgende Diagramm veranschaulicht die über- und untergeordnete Beziehung zwischen Paketen.
+Das `/bc`-Kennzeichen wird verwendet, um anzugeben, dass die untergeordneten Elemente des **Designs**-Bündels ebenfalls erstellt werden sollen (in diesem Fall wird **Themes.main** erstellt). Das `/nbp`-Kennzeichen gibt an, dass das übergeordnete Element des **Designs**-Bündels nicht erstellt werden soll. Das übergeordnete Element des **Designs**, ist ein optionaler app-Bundle, ist die primäre app-Bundle: **MyGame**. In der Regel muss für ein optionales Paket in einem zugehörigen Set auch das primäre App-Bündel erstellt werden, damit das optionale Paket installiert werden kann, da auf das optionale Paket auch im primären App-Bündel verwiesen wird, wenn es sich in einem zugehörigen Set befindet (um die Versionierung zwischen primärem und optionalem Paket zu gewährleisten). Das folgende Diagramm veranschaulicht die über- und untergeordnete Beziehung zwischen Paketen.
 
 ![Verpackungslayout-Diagramm](images/packaging-layout.png)

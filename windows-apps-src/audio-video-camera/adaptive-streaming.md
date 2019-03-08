@@ -1,24 +1,24 @@
 ---
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
-description: In diesem Artikel wird beschrieben, wie Sie die Wiedergabe von Multimediainhalten für adaptives Streaming einer App für die Universelle Windows-Plattform (UWP) hinzufügen können. Dieses Feature unterstützt derzeit die Wiedergabe von Inhalten über HTTP Live Streaming(HLS) und Dynamic Streaming over HTTP(DASH).
+description: In diesem Artikel wird beschrieben, wie Sie die Wiedergabe von Multimediainhalten für adaptives Streaming einer App für die Universelle Windows-Plattform (UWP) hinzufügen können. Dieses Feature unterstützt derzeit die Wiedergabe von Inhalten über HTTP Live Streaming (HLS) und Dynamic Streaming over HTTP (DASH).
 title: Adaptives Streaming
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116342"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617875"
 ---
 # <a name="adaptive-streaming"></a>Adaptives Streaming
 
 
-In diesem Artikel wird beschrieben, wie Sie die Wiedergabe von Multimediainhalten für adaptives Streaming einer App für die Universelle Windows-Plattform (UWP) hinzufügen können. Dieses Feature unterstützt die Wiedergabe von Inhalten über HTTP Live Streaming(HLS) und Dynamic Streaming over HTTP(DASH). Ab Windows10, Version1803, wird Smooth Streaming von **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** unterstützt.
+In diesem Artikel wird beschrieben, wie Sie die Wiedergabe von Multimediainhalten für adaptives Streaming einer App für die Universelle Windows-Plattform (UWP) hinzufügen können. Dieses Feature unterstützt die Wiedergabe von Inhalten über HTTP Live Streaming (HLS) und Dynamic Streaming over HTTP (DASH). Ab Windows 10, Version 1803, wird Smooth Streaming von **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** unterstützt.
 
-Eine Liste der unterstützten HLS-Protokolltags finden Sie unter [Unterstützung von HLS-Tags](hls-tag-support.md). 
+Eine Liste mit unterstützten HLS-Protokolltags finden Sie unter [Unterstützung von HLS-Tags](hls-tag-support.md). 
 
 Eine Liste der unterstützten DASH-Profile finden Sie unter [DASH-Profilunterstützung](dash-profile-support.md). 
 
@@ -42,13 +42,13 @@ Rufen Sie [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/win
 [!code-cs[ManifestSource](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSource)]
 
 > [!NOTE] 
-> Ab Windows10, Version1607, wird die Verwendung der **MediaPlayer**-Klasse zum Wiedergeben von Medienelementen empfohlen. **MediaPlayerElement** ist ein einfaches XAML-Steuerelement, das zum Rendern des Inhalts eines **MediaPlayer**-Objekts auf einer XAML-Seite verwendet wird. Das **MediaElement**-Steuerelement wird aus Gründen der Abwärtskompatibilität weiterhin unterstützt. Weitere Informationen zur Verwendung von **MediaPlayer** und **MediaPlayerElement** zum Wiedergeben von Medieninhalten finden Sie unter [Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“](play-audio-and-video-with-mediaplayer.md). Informationen zur Verwendung von **MediaSource** und dazugehörigen APIs für die Arbeit mit Medieninhalten finden Sie unter [Medienelemente, Wiedergabelisten und Titel](media-playback-with-mediasource.md).
+> Ab Windows 10, Version 1607, wird die Verwendung der **MediaPlayer**-Klasse zum Wiedergeben von Medienelementen empfohlen. **MediaPlayerElement** ist ein einfaches XAML-Steuerelement, das zum Rendern des Inhalts eines **MediaPlayer**-Objekts auf einer XAML-Seite verwendet wird. Das **MediaElement**-Steuerelement wird aus Gründen der Abwärtskompatibilität weiterhin unterstützt. Weitere Informationen zur Verwendung von **MediaPlayer** und **MediaPlayerElement** zum Wiedergeben von Medieninhalten finden Sie unter [Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“](play-audio-and-video-with-mediaplayer.md). Informationen zur Verwendung von **MediaSource** und dazugehörigen APIs für die Arbeit mit Medieninhalten finden Sie unter [Medienelemente, Wiedergabelisten und Titel](media-playback-with-mediasource.md).
 
 ## <a name="adaptive-streaming-with-adaptivemediasource"></a>Adaptives Streaming mit AdaptiveMediaSource
 
-Verwenden Sie das **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)**-Objekt, wenn Ihre App erweiterte adaptive Streamingfunktionen erfordert, z.B. das Bereitstellen von benutzerdefinierten HTTP-Headern, die Überwachung der aktuellen Download- und Wiedergabe-Bitraten oder das Anpassen der Verhältnisse, die bestimmen, wann das System Bitraten des adaptiven Datenstroms wechselt.
+Verwenden Sie das **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)**-Objekt, wenn Ihre App erweiterte adaptive Streamingfunktionen erfordert, z. B. das Bereitstellen von benutzerdefinierten HTTP-Headern, die Überwachung der aktuellen Download- und Wiedergabe-Bitraten oder das Anpassen der Verhältnisse, die bestimmen, wann das System Bitraten des adaptiven Datenstroms wechselt.
 
-Die adaptiven Streaming-APIs befinden sich im [**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279)-Namespace. Die Beispiele in diesem Artikel verwenden APIs aus den folgenden Namespaces.
+Die adaptiven Streaming-APIs sind im [**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279)-Namespace zu finden. Die Beispiele in diesem Artikel verwenden APIs aus den folgenden Namespaces.
 
 [!code-cs[AdaptiveStreamingUsing](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
 
@@ -70,7 +70,7 @@ Das [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn93
 
 Sie können mit dem **DownloadRequested**-Ereignishandler die Ressourcenanforderung durch Aktualisieren der Eigenschaften des von den Ereignisargumenten bereitgestellten [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942)-Objekts ändern. Im folgenden Beispiel wird der URI, aus dem die Ressource abgerufen wird, durch die Aktualisierung der [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250)-Eigenschaften des Ergebnisobjekts geändert. Sie können auch den Bytebereichsoffset und die Länge für Mediensegmente umschreiben oder, wie im folgenden Beispiel gezeigt, den Ressourcen-URI ändern, um die vollständige Ressource herunterzuladen und das Bytebereichsoffset und die Länge auf null festzulegen.
 
-Sie können den Inhalt der angeforderten Ressource durch Festlegen der [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943)- oder [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249)-Eigenschaft des Ergebnisobjekts überschreiben. Im folgenden Beispiel wird der Inhalt der Manifestressource durch Festlegen der **Buffer**-Eigenschaft ersetzt. Wenn Sie die Ressourcenanforderung mit Daten aktualisieren, die asynchron abgerufen werden, z.B. durch Abrufen von Daten von einem Remoteserver oder asynchrone Benutzerauthentifizierung, müssen Sie [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) aufrufen, um eine Verzögerung abzurufen. Anschließend bei Abschluss des Vorgangs rufen Sie dann [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934) auf, um dem System zu signalisieren, dass der Downloadanforderungsvorgang fortgesetzt werden kann.
+Sie können den Inhalt der angeforderten Ressource durch Festlegen der [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943)- oder [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249)-Eigenschaften des Ergebnisobjekts überschreiben. Im folgenden Beispiel wird der Inhalt der Manifestressource durch Festlegen der **Buffer**-Eigenschaft ersetzt. Wenn Sie die Ressourcenanforderung mit Daten aktualisieren, die asynchron abgerufen werden, z. B. durch Abrufen von Daten von einem Remoteserver oder asynchrone Benutzerauthentifizierung, müssen Sie [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) aufrufen, um eine Verzögerung abzurufen. Anschließend bei Abschluss des Vorgangs rufen Sie dann [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934) auf, um dem System zu signalisieren, dass der Downloadanforderungsvorgang fortgesetzt werden kann.
 
 [!code-cs[AMSDownloadRequested](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadRequested)]
 
@@ -83,7 +83,7 @@ Das **AdaptiveMediaSource**-Objekt stellt Ereignisse bereit, mit denen Sie reagi
 ## <a name="handle-download-completion-and-failure-events"></a>Behandeln von Downloadabschluss und Fehlerereignissen
 Das **AdaptiveMediaSource**-Objekt löst das [**DownloadFailed**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource.DownloadFailed)-Ereignis aus, wenn der Download einer angeforderten Ressource fehlschlägt. Sie können mit diesem Ereignis die UI als Reaktion auf den Fehler aktualisieren. Sie können das Ereignis auch verwenden, um statistische Informationen über den Downloadvorgang und den Fehler zu protokollieren. 
 
-Das an den Ereignishandler übergebene [**AdaptiveMediaSourceDownloadFailedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs)-Objekt enthält Metadaten über den Fehler beim Herunterladen der Ressource, z.B. den Ressourcentyp, den URI der Ressource und die Position im Stream, an der der Fehler aufgetreten ist. Die [**RequestId**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs.RequestId)-Eigenschaft erhält einen vom System generierter eindeutigen Bezeichner für die Anforderung, der zum Korrelieren von Statusinformationen über eine einzelne Anforderung für mehrere Ereignisse verwendet werden kann.
+Das an den Ereignishandler übergebene [**AdaptiveMediaSourceDownloadFailedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs)-Objekt enthält Metadaten über den Fehler beim Herunterladen der Ressource, z. B. den Ressourcentyp, den URI der Ressource und die Position im Stream, an der der Fehler aufgetreten ist. Die [**RequestId**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs.RequestId)-Eigenschaft erhält einen vom System generierter eindeutigen Bezeichner für die Anforderung, der zum Korrelieren von Statusinformationen über eine einzelne Anforderung für mehrere Ereignisse verwendet werden kann.
 
 Die [**Statistics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs.Statistics)-Eigenschaft gibt ein [**AdaptiveMediaSourceDownloadStatistics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadstatistics)-Objekt zurück, das ausführliche Informationen über die Anzahl der zum Zeitpunkt des Ereignisses empfangenen Bytes und über den zeitlichen Ablauf der verschiedenen Meilensteine im Downloadvorgang enthält. Sie können diese Informationen protokollieren, um Leistungsprobleme in Ihrer Implementierung des adaptiven Streaming zu identifizieren.
 
@@ -100,7 +100,7 @@ Das **AdaptiveMediaSource**-Objekt stell die [**Diagnostics**](https://docs.micr
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 
 ## <a name="defer-binding-of-adaptive-streaming-content-for-items-in-a-playback-list-by-using-mediabinder"></a>Verzögern der Bindung adaptiver Streaming-Inhalte für Elemente in einer Wiedergabeliste mit MediaBinder
-Die [**MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder)-Klasse ermöglicht das Verzögern der Bindung von Medieninhalten in einer [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955). Ab Windows10, Version1703, können Sie eine [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) als gebundenen Inhalt angeben. Der Prozess für die verzögerte Bindung einer adaptiven Medienquelle entspricht größtenteils dem Binden anderer Medientypen, was in [Medienelemente, Wiedergabelisten und Titel](media-playback-with-mediasource.md) beschrieben ist. 
+Die [**MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder)-Klasse ermöglicht das Verzögern der Bindung von Medieninhalten in einer [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955). Ab Windows 10, Version 1703, können Sie eine [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) als gebundenen Inhalt angeben. Der Prozess für die verzögerte Bindung einer adaptiven Medienquelle entspricht größtenteils dem Binden anderer Medientypen, was in [Medienelemente, Wiedergabelisten und Titel](media-playback-with-mediasource.md) beschrieben ist. 
 
 Erstellen Sie eine **MediaBinder**-Instanz, legen Sie eine App-definierte [**Token**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Token)-Zeichenfolge fest, um den zu bindenden Inhalt zu identifizieren, und führen Sie eine Registrierung für das [**Binding**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Binding)-Ereignis durch. Erstellen Sie eine **MediaSource** aus dem **Binder**, indem Sie [**MediaSource.CreateFromMediaBinder**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediabinder) aufrufen. Erstellen Sie anschließend ein **MediaPlaybackItem** aus der **MediaSource**, und fügen Sie es der Wiedergabeliste hinzu.
 
@@ -116,9 +116,9 @@ Wenn Sie Ereignishandler für die gebundene adaptive Medienquelle registrieren m
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Medienwiedergabe](media-playback.md)
-* [Unterstützung von HLS-Tags](hls-tag-support.md) 
-* [DASH-Profilunterstützung](dash-profile-support.md) 
-* [Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“](play-audio-and-video-with-mediaplayer.md)
+* [Unterstützung für HLS-Tags](hls-tag-support.md) 
+* [Unterstützung für Dash-profile](dash-profile-support.md) 
+* [Abspielen von Audio- und Videodateien mit MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Wiedergeben von Medien im Hintergrund](background-audio.md) 
 
 
