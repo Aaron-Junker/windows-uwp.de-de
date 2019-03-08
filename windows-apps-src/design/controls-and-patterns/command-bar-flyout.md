@@ -1,11 +1,11 @@
 ---
-Description: Command bar flyouts give users inline access to your app's most common tasks.
+Description: Befehlsleiste Flyouts Benutzern Zugriff gewähren, Inline zu Ihrer app am häufigsten verwendeten Aufgaben.
 title: Befehlsleisten-Flyout
 label: Command bar flyout
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 pm-contact: abarlow
 design-contact: ksulliv
 dev-contact: llongley
@@ -13,43 +13,43 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: cb87bea001492e39a0f60b96f884db70b5bd28ad
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116292"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592525"
 ---
 # <a name="command-bar-flyout"></a>Befehlsleisten-Flyout
 
-Das Befehlsleisten-Flyout können Sie Benutzer einfachen Zugriff auf allgemeine Aufgaben bereitstellen, indem Befehle in einem schwebenden Symbolleisten im Zusammenhang mit eines Elements auf die UI-Canvas angezeigt.
+Das Befehl-Flyout-Leiste können Sie die Benutzern einfachen Zugriff auf allgemeine Aufgaben führt Befehle in einer unverankerte Symbolleiste, die im Zusammenhang mit der ein Element im Zeichenbereich Benutzeroberfläche bieten.
 
-![Eine erweiterte Text Befehlsleisten-flyout](images/command-bar-flyout-header.png)
+![Eine erweiterte Text Befehlsleiste flyout](images/command-bar-flyout-header.png)
 
-> CommandBarFlyout erfordert Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher, oder in der [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/).
+> CommandBarFlyout erfordert Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher, oder die [Windows UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-> - **Plattform-APIs**: [CommandBarFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.commandbarflyout)"," [TextCommandBarFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)"," [AppBarButton-Klasse](/uwp/api/windows.ui.xaml.controls.appbarbutton)"," [Klasse "appbartogglebutton"](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)"," [Klasse "appbarseparator"](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **Windows-UI-Bibliothek-APIs**: [CommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+> - **Plattform-APIs**: [CommandBarFlyout Klasse](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout Klasse](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [AppBarButton Klasse](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton Klasse](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [ AppBarSeparator-Klasse](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>- **Windows-APIs für UI-Bibliothek**: [CommandBarFlyout Klasse](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 
-Wie [CommandBar](app-bars.md)hat CommandBarFlyout **PrimaryCommands** und **"secondarycommands"** Eigenschaften, mit denen Sie Befehle hinzufügen. Sie können entweder Auflistung, oder beide Befehle versehen. Wann und wie die primären und sekundären Befehle angezeigt werden, hängt von den Anzeigemodus.
+Wie [CommandBar](app-bars.md), CommandBarFlyout hat **PrimaryCommands** und **SecondaryCommands** Eigenschaften Befehle hinzufügen können. Sie können Befehle in der Auflistung oder beiden platzieren. Wann und wie die primäre und sekundäre Befehle angezeigt werden, hängt von den Anzeigemodus ab.
 
-Das Befehlsleisten-Flyout verfügt über zwei Anzeigemodi: *reduziert* und *Erweitert*.
+Flyout Befehlsleiste verfügt über zwei Anzeigemodi: *reduziert* und *erweitert*.
 
-- Im Modus "Collapsed" werden nur die primären Befehle angezeigt. Verfügt Ihr Befehlsleisten-Flyout primären und sekundären Befehle, eine "Schaltfläche" Weitere, dargestellt durch eine Ellipse \ [• • •] wird angezeigt. So kann der Benutzer Zugriff auf die sekundären Befehle von Wechsel zur erweiterten Modus zu erhalten.
-- Im erweiterten Modus werden die primären und sekundären Befehle angezeigt. (Wenn das Steuerelement nur sekundäre Elemente verfügt, werden sie in einer Weise ähnelt dem MenuFlyout-Steuerelement angezeigt.)
+- Im reduzierten Modus werden nur die primären Befehle angezeigt. Verfügt Ihr Befehlsleiste Flyout primäre und sekundäre Befehle verwenden, wird eine Schaltfläche "Weitere Informationen", die durch ein Auslassungszeichen dargestellt wird \[• • • anzuzeigen\], wird angezeigt. Dadurch kann der Benutzer Zugriff auf die sekundäre Befehle zu erhalten, durch den Übergang in den erweiterten Modus.
+- Im erweiterten Modus werden die primären und sekundären Befehle angezeigt. (Wenn das Steuerelement nur sekundäre Elemente enthält, werden sie ähnlich wie für das Steuerelement MenuFlyout angezeigt.)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Verwenden Sie das CommandBarFlyout-Steuerelement, um eine Sammlung von Befehle für dem Benutzer, z. B. Schaltflächen und Menüelementen im Kontext eines Elements auf der app-Canvas anzeigen.
+Verwenden Sie das CommandBarFlyout-Steuerelement, um eine Auflistung von Befehlen für dem Benutzer, z. B. Schaltflächen und Menüelemente, im Kontext eines Elements auf der Canvas app anzuzeigen.
 
-Die TextCommandBarFlyout zeigt Textbefehle im TextBlock, TextBox, RichEditBox, RichTextBlock und PasswordBox-Steuerelemente. Die Befehle sind für die aktuelle Textauswahl automatisch entsprechend konfiguriert. Verwenden Sie eine CommandBarFlyout, um die Standard-Text-Befehle für Textsteuerelemente ersetzen.
+Die TextCommandBarFlyout zeigt Textbefehlen im Textfeld, TextBlock, RichEditBox, RichTextBlock und PasswordBox-Steuerelemente. Die Befehle sind automatisch entsprechend für die aktuelle Textauswahl konfiguriert. Verwenden Sie eine CommandBarFlyout, um die Standard-Text-Befehle auf Textsteuerelemente zu ersetzen.
 
-Um kontextbezogene anzeigen führen Sie die Befehle auf Listenelemente die Anleitung im [Contextual Befehle für Sammlungen und Listen](collection-commanding.md).
+Kontextbezogene anzuzeigenden Befehle für Listenelemente Anleitung im [kontextbezogene Befehle für Auflistungen und Listen](collection-commanding.md).
 
 ### <a name="commandbarflyout-vs-menuflyout"></a>CommandBarFlyout Vs MenuFlyout
 
-Um Befehle in einem Kontextmenü anzuzeigen, können Sie CommandBarFlyout oder MenuFlyout verwenden. CommandBarFlyout wird empfohlen, da es mehr Funktionen als MenuFlyout bereitstellt. Sie können CommandBarFlyout mit nur sekundäre Befehle verwenden, erhalten das Verhalten und von einem MenuFlyout, oder verwenden Sie das vollständige Befehlsleisten-Flyout mit primären und sekundären Befehlen.
+Um Befehle in einem Kontextmenü anzuzeigen, können Sie CommandBarFlyout oder MenuFlyout verwenden. CommandBarFlyout wird empfohlen, da sie mehr Funktionen als MenuFlyout bereitstellt. Sie können CommandBarFlyout mit nur sekundäre Befehle verwenden, um das Verhalten zu erhalten und von einem MenuFlyout, oder verwenden Sie das Flyout der vollständige Befehlsleiste mit Befehlen für den primären und sekundären.
 
-> Verwandte Informationen finden Sie unter [Flyouts](../controls-and-patterns/dialogs-and-flyouts/flyouts.md), [Menüs und Kontextmenüs](menus.md)und [Befehlsleisten](app-bars.md).
+> Verwandte Informationen finden Sie unter [Flyouts](../controls-and-patterns/dialogs-and-flyouts/flyouts.md), [Menüs und Kontextmenüs](menus.md), und [der Befehlsleisten](app-bars.md).
 
 ## <a name="examples"></a>Beispiele
 
@@ -58,36 +58,36 @@ Um Befehle in einem Kontextmenü anzuzeigen, können Sie CommandBarFlyout oder M
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie die <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> -app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/CommandBarFlyout">die app zu öffnen und finden Sie unter der CommandBarFlyout in Aktion zu sehen</a>.</p>
+    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/CommandBarFlyout">öffnen Sie die app, und finden Sie unter den CommandBarFlyout in Aktion</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-## <a name="proactive-vs-reactive-invocation"></a>Im Vergleich zu Zeiten Aufruf proaktive
+## <a name="proactive-vs-reactive-invocation"></a>Proaktive und reaktive Aufruf
 
-Es gibt in der Regel zwei Möglichkeiten zum Aufrufen eines Flyout oder das Menü ", die mit einem Element auf die UI-Canvas zugeordnet ist: _proaktive aufrufen_ und _reaktive Aufruf_.
+Es gibt in der Regel zwei Möglichkeiten zum Aufrufen einer Flyout oder einem Menü, das mit einem auf dem UI-Canvas-Element zugeordnet ist: _proaktive Aufruf_ und _reaktive Aufruf_.
 
-Unter proaktive Aufruf werden Befehle automatisch angezeigt, wenn der Benutzer mit dem Element interagiert, die die Befehle zugeordnet sind. Beispielsweise können Text Formatierungsbefehle eingeblendet, wählt der Benutzer Text in einem Textfeld. In diesem Fall wird das Befehlsleisten-Flyout nicht den Fokus erhalten. Stattdessen zeigt sie geeignete Befehle nahe das Element, dem mit der Benutzer interagiert. Wenn der Benutzer mit den Befehlen interagieren nicht, werden sie geschlossen.
+In proaktive aufrufen werden Befehle automatisch angezeigt, wenn der Benutzer mit dem Element interagiert, die die Befehle zugeordnet sind. Beispielsweise können Text Formatierungsbefehle angezeigt, wenn der Benutzer Text in einem Textfeld auswählt. In diesem Fall nimmt das Befehl-Flyout-Leiste nicht den Fokus. Stattdessen stellt er relevanten Befehle in der Nähe das Element, dem mit der Benutzer interagiert. Wenn der Benutzer mit den Befehlen interagieren nicht, werden sie verworfen.
 
-In Zeiten Aufruf werden Befehle in Reaktion auf eine explizite Benutzeraktion angezeigt, die Befehle anfordern. Beispiel: eine mit der rechten Maustaste. Dies entspricht dem herkömmliche-Konzept von ein [Kontextmenü](menus.md).
+Reaktive Aufruf werden Befehle als Reaktion auf eine explizite Benutzeraktion angezeigt, die Befehle anfordern; Beispiel: eine mit der rechten Maustaste. Dies entspricht dem herkömmlichen Konzept einer [Kontextmenü](menus.md).
 
-Sie können die Möglichkeit, oder sogar eine Mischung aus den beiden CommandBarFlyout verwenden.
+Sie können die CommandBarFlyout in Weise oder sogar eine Mischung aus beiden verwenden.
 
-## <a name="create-a-command-bar-flyout"></a>Erstellen Sie eine Befehlsleisten-flyout
+## <a name="create-a-command-bar-flyout"></a>Erstellen Sie einen Befehlsleiste flyout
 
-Dieses Beispiel zeigt, wie Sie eine Befehlsleisten-Flyout erstellt und reaktiv sowohl proaktiv. Wenn das Bild getippt wird, wird das Flyout im Modus "Collapsed" angezeigt. Wenn als Kontextmenü angezeigt wird, wird das Flyout im erweiterten Modus angezeigt. In beiden Fällen kann der Benutzer erweitern oder reduzieren das Flyout, nachdem er geöffnet wird.
+Dieses Beispiel zeigt, wie ein Befehlsleiste Flyout erstellen und verwenden sie proaktiv und reaktiv. Wenn das Bild angetippt wird, wird das Flyout im reduzierten Modus angezeigt. Wenn als Kontextmenü angezeigt wird, wird das Flyout in den erweiterten Modus angezeigt. In beiden Fällen kann der Benutzer erweitern oder reduzieren das Flyout aus, nachdem es geöffnet wurde.
 
-![Beispiel für eine "Collapsed" Befehlsleisten-flyout](images/command-bar-flyout-img-collapsed.png)
+![Beispiel für einen reduzierten Befehlsleiste flyout](images/command-bar-flyout-img-collapsed.png)
 
-> _Eine "Collapsed" Befehlsleisten-flyout_
+> _Eine reduzierte Befehlsleiste flyout_
 
-![Beispiel für eine erweiterte Befehlsleisten-flyout](images/command-bar-flyout-img-expanded.png)
+![Beispiel für einen erweiterten Befehlsleiste flyout](images/command-bar-flyout-img-expanded.png)
 
-> _Eine erweiterte Befehlsleisten-flyout_
+> _Einen erweiterten Befehlsleiste flyout_
 
 ```xaml
 <Grid>
@@ -124,70 +124,70 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-### <a name="show-commands-proactively"></a>Befehle proaktiv anzeigen
+### <a name="show-commands-proactively"></a>Zeigen Sie proaktiv Befehle
 
-Wenn Sie proaktiv Kontextbefehlen anzeigen, sollte nur die primären Befehle in der Standardeinstellung angezeigt werden (das Befehlsleisten-Flyout sollte reduziert werden). Platzieren Sie die wichtigsten Befehle in der Auflistung der primäre Befehle und weitere Befehle, die normalerweise in einem Kontextmenü in die sekundären Befehle Auflistung würde.
+Wenn Sie proaktiv kontextbezogene Befehle, die angezeigt werden, soll nur die primären Befehle werden standardmäßig angezeigt werden (der Befehlsleiste Flyout sollten reduziert werden.). Platzieren Sie die wichtigsten Befehle in der Auflistung der primären Befehle, und klicken Sie auf zusätzliche Befehle, die normalerweise in einem Kontextmenü in der Auflistung sekundäre Befehle aufgenommen werden würden.
 
-Um Befehle proaktiv anzuzeigen, behandeln Sie in der Regel das Ereignis [Klicken](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) oder [Tapped](/uwp/api/windows.ui.xaml.uielement.tapped) , um die Befehlsleisten-Flyout anzuzeigen. Legen Sie das Flyout [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) **vorübergehende** oder **TransientWithDismissOnPointerMoveAway** , um das Flyout im Modus "Collapsed" zu öffnen, ohne den Fokus fest.
+Um Befehle proaktiv zu veranschaulichen, behandeln Sie in der Regel die [klicken Sie auf](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) oder [Tapped](/uwp/api/windows.ui.xaml.uielement.tapped) Ereignis, um das Befehl-Balken-Flyout anzeigen. Festlegen des Flyouts [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) zu **vorübergehende** oder **TransientWithDismissOnPointerMoveAway** das Flyout im reduzierten Modus zu öffnen, ohne den Fokus.
 
-Ab Windows 10 Insider Preview, Text-Steuerelemente verfügen über eine **SelectionFlyout** -Eigenschaft. Wenn Sie diese Eigenschaft ein Flyout zuordnen, wird er automatisch angezeigt, wenn Text markiert ist.
+Ab Windows 10 Insider Preview können die Textsteuerelemente haben eine **SelectionFlyout** Eigenschaft. Wenn Sie diese Eigenschaft ein Flyout zuweisen, wird es automatisch angezeigt, wenn Text markiert ist.
 
 ### <a name="show-commands-reactively"></a>Befehle reaktiv anzeigen
 
-Wenn Sie Kontextbefehlen reaktiv, als Kontextmenü angezeigt wird, werden die sekundären Befehle standardmäßig angezeigt (das Befehlsleisten-Flyout sollte erweitert werden). In diesem Fall möglicherweise das Befehlsleisten-Flyout primären und sekundären Befehle oder nur sekundäre Befehle.
+Wenn Sie kontextbezogene Befehle, die reaktiv als Kontextmenü angezeigt werden, sind die sekundäre Befehle standardmäßig angezeigt (der Befehlsleiste Flyout sollten erweitert). In diesem Fall möglicherweise das Befehl-Leiste Flyout primäre und sekundäre Befehle oder nur sekundäre Befehle.
 
-Um Befehle in einem Kontextmenü anzuzeigen, weisen Sie in der Regel das Flyout der [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) -Eigenschaft eines Benutzeroberflächenelements. Auf diese Weise wird das Flyout Öffnen des Elements behandelt, und Sie müssen nichts weiter tun.
+Um Befehle in einem Kontextmenü anzuzeigen, weisen Sie in der Regel das Flyout zum Abfragen der [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) Eigenschaft eines Benutzeroberflächenelements. Auf diese Weise öffnen das Flyout erfolgt durch das Element, und Sie müssen nichts weiter tun.
 
-Behandelt das Flyout (z. B. auf ein Ereignis [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) ) angezeigt werden, legen Sie das Flyout [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) auf **Standard** in das Flyout im erweiterten Modus zu öffnen, und weisen Sie ihm den Fokus.
+Verarbeitet das Flyout mit sich selbst (z. B. auf eine [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) Ereignis), legen Sie des Flyouts [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) zu **Standard** auf das Flyout in den erweiterten Modus zu öffnen und Geben Sie ihm den Fokus.
 
 > [!TIP]
-> Weitere Informationen zu den Optionen ein Flyout und Steuern der Platzierung der das Flyout angezeigt finden Sie unter [Flyouts](../controls-and-patterns/dialogs-and-flyouts/flyouts.md).
+> Weitere Informationen zu Optionen, die beim Anzeigen eines Flyouts und zur Steuerung der Platzierung des Flyouts, finden Sie unter [Flyouts](../controls-and-patterns/dialogs-and-flyouts/flyouts.md).
 
 ## <a name="commands-and-content"></a>Befehle und Inhalt
 
-Das CommandBarFlyout-Steuerelement verfügt über 2 Eigenschaften Sie Befehle und Inhalte hinzufügen können: [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands) und ["secondarycommands"](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands).
+Das Steuerelement CommandBarFlyout hat 2 – Eigenschaften, die Sie verwenden können, um Befehle und Inhalt hinzuzufügen: [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands) und [SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands).
 
-Befehlsleistenelemente werden standardmäßig der **PrimaryCommands**-Sammlung hinzugefügt. Diese Befehle werden angezeigt, in der Befehlsleiste und sowohl die "Collapsed" auch im erweiterten Modus sichtbar sind. Im Gegensatz zu CommandBar primäre Befehle nicht automatisch Überlauf auf sekundäre Befehle und möglicherweise abgeschnitten.
+Befehlsleistenelemente werden standardmäßig der **PrimaryCommands**-Sammlung hinzugefügt. Diese Befehle werden in der Befehlsleiste angezeigt und sind in beiden Modi zu- bzw. aufgeklappt sichtbar. Im Gegensatz zu CommandBar primären Befehle nicht automatisch einem Überlauf auf die sekundäre Befehle und möglicherweise abgeschnitten.
 
-Sie können auch Befehle zur Auflistung **"secondarycommands"** hinzufügen. Sekundäre Befehle werden im Menü Teil des Steuerelements angezeigt und sind nur im erweiterten Modus sichtbar.
+Sie können auch Befehle zum Hinzufügen der **SecondaryCommands** Auflistung. Sekundäre Befehle in der Menü-Teil des Steuerelements angezeigt werden und sind nur in den erweiterten Modus sichtbar.
 
 ### <a name="app-bar-buttons"></a>App-Leistenschaltflächen
 
-Sie können die PrimaryCommands und "secondarycommands" direkt mit [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)und [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) Steuerelementen auffüllen.
+Sie können die füllen PrimaryCommands und SecondaryCommands direkt mit [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx), und [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) Steuerelemente.
 
-Die Steuerelemente für die App-Leistenschaltfläche zeichnen sich durch ein Symbol und eine Textbeschriftung aus. Diese Steuerelemente sind für die Verwendung in Befehlsleisten optimiert, und ihr Erscheinungsbild ändert, je nachdem, ob das Steuerelement in der Befehlsleiste oder im Überlaufmenü angezeigt wird.
+Die Steuerelemente für die App-Leistenschaltfläche zeichnen sich durch ein Symbol und eine Textbeschriftung aus. Diese Steuerelemente sind für die Verwendung in einer Befehlsleiste optimiert, und ihre Darstellung ändert sich je nachdem, ob das Steuerelement in der Befehlsleiste oder Überlaufmenü angezeigt werden.
 
-- App-Leistenschaltflächen als primäre Befehle verwendet werden in der Befehlsleiste mit nur ihre Symbol angezeigt. die Beschriftung wird nicht angezeigt. Es wird empfohlen, dass Sie eine QuickInfo verwenden, um eine Beschreibung des Befehls anzuzeigen wie hier gezeigt.
+- App-Leiste Schaltflächen verwendet, wie die primären Befehle sind in der Befehlsleiste mit nur deren Symbol angezeigt, die Bezeichnung wird nicht angezeigt. Es wird empfohlen, eine QuickInfo verwenden, um eine textbeschreibung des Befehls angezeigt wie hier gezeigt.
     ```xaml
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     ```
-- App-Leistenschaltflächen als sekundäre Befehle verwendet werden im Menü mit der Bezeichnung und Symbol sichtbar angezeigt.
+- App-Leiste-Schaltflächen, die als sekundäre Befehle werden im Menü mit der Bezeichnung und den Symbol sichtbar angezeigt.
 
 ### <a name="other-content"></a>Andere Inhalte
 
-Sie können eine Befehlsleisten-Flyout eine AppBarElementContainer umschließen andere Steuerelemente hinzufügen. Auf diese Weise können Sie die Steuerelemente wie [DropDownButton](buttons.md) oder [SplitButton](buttons.md)hinzugefügt oder Containern wie [StackPanel](buttons.md) um komplexere Benutzeroberfläche zu erstellen.
+Sie können ein Befehlsleiste Flyout andere Steuerelemente hinzufügen, indem Sie sie in einem AppBarElementContainer umschließen. Dadurch können Sie das Hinzufügen der Steuerelemente wie [DropDownButton](buttons.md) oder [SplitButton](buttons.md), oder Hinzufügen von Containern wie [StackPanel](buttons.md) zum Erstellen komplexer Benutzeroberfläche.
 
-Um den primären oder sekundären Befehl Sammlungen von einem Befehlsleisten-Flyout hinzugefügt werden, muss ein Element die [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) -Schnittstelle implementieren. AppBarElementContainer ist ein Wrapper, der diese Schnittstelle implementiert, sodass Sie ein Element zu einer Befehlsleiste hinzufügen können, auch wenn es nicht die Schnittstelle selbst implementiert.
+Damit Sie den primären oder sekundären Befehl Sammlungen der Flyout-Befehlsleiste hinzugefügt werden, muss ein Element implementieren die [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) Schnittstelle. AppBarElementContainer ist ein Wrapper, der diese Schnittstelle implementiert, sodass Sie ein Element mit einer Befehlsleiste hinzufügen können, auch wenn es nicht die Schnittstelle selbst implementiert.
 
-Hier wird ein AppBarElementContainer verwendet, um zusätzliche Elemente zu einer Befehlsleisten-Flyout hinzuzufügen. Die primären Befehle, um die Auswahl an Farben ermöglichen eine SplitButton hinzugefügt. StackPanel wird die sekundären Befehle, um ein komplexeres Layout für Zoomsteuerelemente ermöglichen hinzugefügt.
+Hier ist ein AppBarElementContainer verwendet, um einen Befehlsleiste Flyout zusätzliche Elemente hinzuzufügen. Auswahl von Farben ermöglicht die primären Befehle wird ein SplitButton hinzugefügt. Ein StackPanel wird die sekundäre Befehle aus, um ein komplexeres Layout für die Zoomsteuerelemente ermöglichen hinzugefügt.
 
 > [!TIP]
-> Standardmäßig Elemente für die app-Canvas zur möglicherweise nicht sehen in einer Befehlsleiste. Wenn Sie ein Element, AppBarElementContainer hinzufügen, gibt es jedoch einige Schritte, die Sie ausführen sollten, um sicherzustellen, das Element, das andere Element auf der Befehl entsprechen:
+> In der Standardeinstellung entwickelt wurden, für die app-Canvas sieht möglicherweise nicht rechts in einer Befehlsleiste. Wenn Sie ein Element mithilfe von AppBarElementContainer hinzufügen, gibt es einige Schritte, die Sie ausführen sollten, um das Element, das andere Element auf der Befehl übereinstimmen zu machen:
 >
-> - Überschreiben Sie die Standardpinsel mit [einfache Formatierung](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling) des Elements Hintergrund und Rahmen Schaltflächen auf der app entsprechen.
-> - Anpassen der Größe und Position des Elements.
-> - Umschließen Sie Symbole in einer Viewbox mit einer Breite und Höhe des 16px.
+> - Überschreiben Sie die Standardpinsel mit [einfache Stile](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling) des Elements Hintergrund und Rahmen, die Schaltflächen auf der app entsprechen.
+> - Passen Sie die Größe und Position des Elements.
+> - Umschließen Sie Symbole mit einer Viewbox mit einer Breite und Höhe des 16px.
 
 > [!NOTE]
-> Dieses Beispiel zeigt nur dem Befehlsleisten-Flyout UI, es keine Befehle implementiert, die angezeigt werden. Weitere Informationen zur Implementierung der Befehle finden Sie unter [Schaltflächen](buttons.md) und [befehlsdesigngrundlagen](../basics/commanding-basics.md).
+> Dieses Beispiel zeigt nur den Befehlsleiste Flyout-Benutzeroberfläche es nicht die Befehle implementiert, die angezeigt werden. Weitere Informationen über die Befehle implementiert, finden Sie unter [Schaltflächen](buttons.md) und [Befehl Entwurf Grundlagen](../basics/commanding-basics.md).
 
-![Eine Befehlsleisten-Flyout mit einer Split-Schaltfläche](images/command-bar-flyout-split-button.png)
+![Ein Befehlsleiste Flyout mit einer unterteilten Schaltfläche](images/command-bar-flyout-split-button.png)
 
-> _Eine "Collapsed" Befehlsleisten-Flyout mit einer offenen SplitButton_
+> _Eine reduzierte Befehlsleiste Flyout mit einer geöffneten SplitButton_
 
-![Eine komplexe Benutzeroberfläche Befehlsleisten-flyout](images/command-bar-flyout-custom-ui.png)
+![Ein Befehlsleiste Flyout mit komplexen Benutzeroberfläche](images/command-bar-flyout-custom-ui.png)
 
-> _Eine erweiterte Befehlsleisten-Flyout mit benutzerdefinierten Zoom UI im Menü ""_
+> _Einen erweiterten Befehlsleiste Flyouts vergrößern/verkleinern Benutzeroberfläche im Menü_
 
 
 ```xaml
@@ -294,11 +294,11 @@ Hier wird ein AppBarElementContainer verwendet, um zusätzliche Elemente zu eine
 
 ## <a name="create-a-context-menu-with-secondary-commands-only"></a>Erstellen Sie ein Kontextmenü mit nur sekundäre Befehle
 
-Sie können eine CommandBarFlyout mit nur sekundäre Befehle als [Kontextmenü](menus.md), anstelle einer MenuFlyout verwenden.
+Können Sie eine CommandBarFlyout mit nur sekundäre Befehle als eine [Kontextmenü](menus.md), anstelle einer MenuFlyout.
 
-![Eine Befehlsleisten-Flyout mit nur sekundäre Befehle](images/command-bar-flyout-context-menu.png)
+![Ein Befehlsleiste Flyout mit nur sekundäre Befehle](images/command-bar-flyout-context-menu.png)
 
-> _Befehlsleisten-Flyout als Kontextmenü_
+> _Befehlsleiste Flyout als Kontextmenü_
 
 ```xaml
 <Grid>
@@ -320,11 +320,11 @@ Sie können eine CommandBarFlyout mit nur sekundäre Befehle als [Kontextmenü](
 </Grid>
 ```
 
-Sie können auch eine CommandBarFlyout mit einem DropDownButton verwenden, zum Erstellen eines Standardmenüs.
+Sie können auch eine CommandBarFlyout mit einem DropDownButton verwenden, an um ein Standardmenü zu erstellen.
 
-![Eine Befehlsleisten-Flyout mit als ein Dropdown-Menü "Schaltfläche"](images/command-bar-flyout-dropdown.png)
+![Ein Befehlsleiste Flyout mit als ein Dropdown-im Schaltflächenmenü](images/command-bar-flyout-dropdown.png)
 
-> _Ein Dropdown-Menü "Schaltfläche" in einem Befehlsleisten-flyout_
+> _Ein Dropdown-Menü der Schaltfläche in ein Flyout der Befehl-Leiste_
 
 ```xaml
 <CommandBarFlyout>
@@ -367,46 +367,46 @@ Sie können auch eine CommandBarFlyout mit einem DropDownButton verwenden, zum E
 </CommandBarFlyout>
 ```
 
-## <a name="command-bar-flyouts-for-text-controls"></a>Flyouts auf einer Befehlsleiste für Text-Steuerelemente
+## <a name="command-bar-flyouts-for-text-controls"></a>Befehlsleiste Flyouts für Textsteuerelemente
 
-Die [TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout) ist eine spezielle Befehlsleisten-Flyout, die Befehle zum Bearbeiten von Text enthält. Jedes Textsteuerelement zeigt die TextCommandBarFlyout automatisch als Kontextmenü (Rechtsklick), oder wenn Text markiert ist. Das Text Befehlsleisten-Flyout passt sich die Textauswahl nur relevante Befehle angezeigt.
+Die [TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout) ist eine spezielle Befehlsleiste Flyout, das Befehle zum Bearbeiten von Text enthält. Jeder Text-Steuerelement wird automatisch die TextCommandBarFlyout, als Kontextmenü (Rechtsklick), oder wenn Text markiert ist. Das Text-Befehlsleiste Flyout passt sich an die Textauswahl um nur die relevanten Befehle anzuzeigen.
 
-![Eine "Collapsed" Text Befehlsleisten-flyout](images/command-bar-flyout-text-selection.png)
+![Ein reduzierten Text Befehlsleiste flyout](images/command-bar-flyout-text-selection.png)
 
-> _Ein Text Befehlsleisten-Flyout auf Textauswahl_
+> _Ein Text-Befehlsleiste Flyout auf ausgewählten text_
 
-![Eine erweiterte Text Befehlsleisten-flyout](images/command-bar-flyout-text-full.png)
+![Eine erweiterte Text Befehlsleiste flyout](images/command-bar-flyout-text-full.png)
 
-> _Eine erweiterte Text Befehlsleisten-flyout_
+> _Eine erweiterte Text Befehlsleiste flyout_
 
 
-### <a name="available-commands"></a>Verfügbaren Befehle
+### <a name="available-commands"></a>Verfügbare Befehle
 
-Diese Tabelle zeigt die Befehle in einer TextCommandBarFlyout, und wenn diese angezeigt werden.
+Diese Tabelle zeigt die Befehle in einem TextCommandBarFlyout, und wenn sie angezeigt werden.
 
-| Befehl | Dargestellt … |
+| Befehl | Angezeigt... |
 | ------- | -------- |
-| Fett | Wenn das Steuerelement keine schreibgeschützt (RichEditBox nur) ist. |
-| Kursiv | Wenn das Steuerelement keine schreibgeschützt (RichEditBox nur) ist. |
-| Unterstreichen | Wenn das Steuerelement keine schreibgeschützt (RichEditBox nur) ist. |
-| Nachweis von Manipulation | Wenn IsSpellCheckEnabled **"true"** und falsch geschrieben wird Text ausgewählt. |
-| Ausschneiden | Wenn das Textsteuerelement ist nicht schreibgeschützt, und Text ausgewählt ist. |
-| Kopieren | Wenn Text ausgewählt ist. |
-| Einfügen | Wenn das Textsteuerelement ist nicht schreibgeschützt, und die Zwischenablage Inhalt ist. |
-| Rückgängig machen | Wenn eine Aktion, die rückgängig gemacht werden können. |
+| Bold | Wenn das Steuerelement nicht schreibgeschützten (RichEditBox nur) ist. |
+| Italic | Wenn das Steuerelement nicht schreibgeschützten (RichEditBox nur) ist. |
+| Underline | Wenn das Steuerelement nicht schreibgeschützten (RichEditBox nur) ist. |
+| Korrekturhilfen | Wenn IsSpellCheckEnabled ist **"true"** und falsch geschriebenen Text ausgewählt ist. |
+| Ausschneiden | Wenn das Steuerelement ist nicht nur-Lese und Text ausgewählt ist. |
+| Kopieren | Wenn Text markiert ist. |
+| Einfügen | Wenn das Steuerelement ist nicht schreibgeschützt, und die Zwischenablage der Inhalt ist. |
+| Rückgängig machen | Wenn eine Aktion, die rückgängig gemacht werden kann. |
 | Alle auswählen | Wenn der Text ausgewählt werden können. |
 
-### <a name="custom-text-command-bar-flyouts"></a>Benutzerdefinierter Text, der Flyouts auf einer Befehlsleiste
+### <a name="custom-text-command-bar-flyouts"></a>Benutzerdefinierten Text Befehlsleiste flyouts
 
-TextCommandBarFlyout kann nicht angepasst werden, und von jedes Textsteuerelement automatisch verwaltet wird. Allerdings können Sie die standardmäßige TextCommandBarFlyout mit benutzerdefinierten Befehlen ersetzen.
+TextCommandBarFlyout kann nicht angepasst werden, und von jeder Text-Steuerelement automatisch verwaltet wird. Allerdings können Sie die Standardeinstellung TextCommandBarFlyout mit benutzerdefinierten Befehlen ersetzen.
 
-- Um die standardmäßige TextCommandBarFlyout ersetzen, die auf Textauswahl angezeigt wird, können Sie erstellen Sie eine benutzerdefinierte CommandBarFlyout (oder andere Flyout) und weisen sie die **SelectionFlyout** -Eigenschaft. Wenn Sie SelectionFlyout auf **null**festlegen, werden keine Befehle auf Auswahl angezeigt.
-- Um die Standard-TextCommandBarFlyout ersetzen, die im Kontextmenü angezeigt wird, weisen Sie eine benutzerdefinierte CommandBarFlyout (oder andere Flyout-Typ) für die **ContextFlyout** -Eigenschaft für ein Text-Steuerelement. Wenn Sie ContextFlyout auf **null**festgelegt, wird das Flyout "Menü" angezeigt, die in früheren Versionen des Textsteuerelements anstelle der TextCommandBarFlyout angezeigt.
+- Um die Standardeinstellung TextCommandBarFlyout zu ersetzen, die auf ausgewählten Text angezeigt wird, können Sie erstellen eine benutzerdefinierte CommandBarFlyout (oder ein anderer Typ "Flyout") und weisen sie Sie der **SelectionFlyout** Eigenschaft. Wenn Sie auf SelectionFlyout **null**, werden keine Befehle auf der Auswahl angezeigt.
+- Um die Standardeinstellung TextCommandBarFlyout zu ersetzen, die als im Kontextmenü angezeigt wird, weisen Sie eine benutzerdefinierte CommandBarFlyout (oder ein anderer Typ "Flyout") zu den **ContextFlyout** Eigenschaft in einem Textsteuerelement. Wenn Sie auf ContextFlyout **null**, das im menüflyout angezeigt Steuerelement wird in früheren Versionen des Texts anstelle der TextCommandBarFlyout angezeigt.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
 - [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
-- [Beispiel für XAML-Befehle](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [Befehle der XAML-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

@@ -6,11 +6,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928984"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593075"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutorial: Erstellen von adaptiven Layouts
 
@@ -28,22 +28,22 @@ Die **Detailsseite** zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-* Visual Studio 2017: [Visual Studio 2017 Community herunterladen (kostenlos)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Windows 10 SDK (10.0.15063.468 oder höher): [Neuestes Windows SDK herunterladen (kostenlos)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Windows Mobile-Emulator: [Download des Windows 10 Mobile Emulators (kostenlos)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Visual Studio 2017: [Visual Studio 2017 Community (kostenlos) herunterladen](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10 SDK (10.0.15063.468 oder höher):  [Das aktuelle Windows-SDK (kostenlos) herunterladen](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Windows mobile-Emulator: [Herunterladen von Windows 10 mobile-Emulator (kostenlos)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
-## <a name="part-0-get-the-starter-code-from-github"></a>Teil 0: Startcode von Github holen
+## <a name="part-0-get-the-starter-code-from-github"></a>Teil 0: Den Startcode von Github abrufen
 
 Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Beispiels. 
 
-1. Wechseln Sie zu [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). Sie gelangen auf die GitHub-Seite für das Beispiel. 
+1. Wechseln Sie zu [ https://github.com/Microsoft/Windows-appsample-photo-lab ](https://github.com/Microsoft/Windows-appsample-photo-lab). Sie gelangen auf die GitHub-Seite für das Beispiel. 
 2. Als nächstes müssen Sie das Beispiel klonen oder herunterladen. Klicken Sie auf die Schaltfläche **Clone or download**. Ein Untermenü erscheint.
     <figure>
         <img src="../basics/images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
         <figcaption>Das <b>Clone or download</b>-Menü auf der GitHub-Seite des Fotolbeispiels.</figcaption>
     </figure>
 
-    **Wenn Sie mit GitHub nicht vertraut sind:**
+    **Wenn Sie nicht mit GitHub vertraut sind:**
     
     a. Klicken Sie auf **Download ZIP** und speichern Sie die Datei lokal. Es wird eine ZIP-Datei heruntergeladen, die alle benötigten Projektdateien enthält.
     b. Entpacken Sie die Datei. Verwenden Sie den Datei-Explorer, um zu der gerade heruntergeladenen ZIP-Datei zu navigieren, klicken Sie mit der rechten Maustaste darauf und wählen Sie **Alle extrahieren...** aus. c. Navigieren Sie zu Ihrer lokalen Kopie des Beispiels und wechseln Sie zum `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout`-Verzeichnis.    
@@ -55,15 +55,15 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
 
 3. Öffnen Sie das Projekt durch einen Klick auf `Photolab.sln`.
 
-## <a name="part-1-run-the-mobile-emulator"></a>Teil 1: Ausführen des Mobile-Emulators
+## <a name="part-1-run-the-mobile-emulator"></a>Teil 1: Führen Sie die mobilen-emulator
 
-Stellen Sie sicher, dass Ihre Lösungsplattform in der Visual Studio-Symbolleiste auf x86 oder x64 und nicht ARM festgelegt ist, und ändern Sie Ihr Zielgerät vom lokalen Computer auf eines der Mobile Emulatoren, die Sie installiert haben (z.B. Mobile Emulator 10.0.15063 WVGA 5 Zoll 1GB). Führen Sie die Fotogalerie-App im ausgewählten Mobile Emulator durch Drücken von **F5** aus.
+Stellen Sie sicher, dass Ihre Lösungsplattform in der Visual Studio-Symbolleiste auf x86 oder x64 und nicht ARM festgelegt ist, und ändern Sie Ihr Zielgerät vom lokalen Computer auf eines der Mobile Emulatoren, die Sie installiert haben (z. B. Mobile Emulator 10.0.15063 WVGA 5 Zoll 1 GB). Führen Sie die Fotogalerie-App im ausgewählten Mobile Emulator durch Drücken von **F5** aus.
 
 Sobald die App gestartet wird, sehen Sie wahrscheinlich, dass die App zwar funktioniert, sie allerdings auf einem kleinen Viewport nicht so gut aussieht. Das dynamische Grid-Element passt sich der begrenzten Bildschirmfläche so gut wie möglich an, indem es die Anzahl der angezeigten Spalten reduziert. Dies erzeugt ein einfallsloses Layout, das unangebracht für diesen kleinen Viewport aussieht.
 
 ![Mobiles Layout: danach](../basics/images/xaml-basics/adaptive-layout-mobile-before.png)
 
-## <a name="part-2-build-a-tailored-mobile-layout"></a>Teil 2: Erstellen eines mobilen maßgeschneiderten Layouts
+## <a name="part-2-build-a-tailored-mobile-layout"></a>Teil 2: Erstellen Sie ein maßgeschneiderte mobiles layout
 Damit diese App auch auf kleineren Geräten gut aussieht, werden wir eine Reihe von Stilen auf unserer XAML-Seite erstellen, die nur dann angewandt wird, wenn ein mobiles Gerät erkannt wird.
 
 ### <a name="create-a-new-datatemplate"></a>Erstellen einer neuen Datenvorlage
@@ -211,7 +211,7 @@ Versuchen Sie nun die App mit Mobile-Emulator auszuführen. Wird das neue Layout
 
 ![Mobiles Layout: danach](../basics/images/xaml-basics/adaptive-layout-mobile-after.png)
 
-## <a name="part-3-adapt-to-multiple-window-sizes-on-a-single-device"></a>Teil 3: Anpassen mehrerer Fenstergrößen auf einem einzigen Gerät
+## <a name="part-3-adapt-to-multiple-window-sizes-on-a-single-device"></a>Teil 3: Auf einem einzelnen Gerät mehrere Fenster der Größe anpassen
 Das Erstellen eines neuen maßgeschneiderten Layouts löst die Herausforderung eines reaktionsfähigen Designs für Mobilgeräte, aber was geschieht bei Desktops und Tablet-PCs? Die App kann im Vollbildmodus ansprechend aussehen, aber wenn der Benutzer das Fenster verkleinert kann sie unter Umständen komisch wirken. Wir garantieren, dass die Oberfläche für Endbenutzer immer gut aussieht, wenn Sie **VisualStateManager** auf mehrere Fenstergrößen auf einem einzigen Gerät anpassen.
 
 ![Kleines Fenster: vorher](../basics/images/xaml-basics/adaptive-layout-small-before.png)
@@ -321,11 +321,11 @@ Nach Abschluss dieser Übung verfügen Sie über ausreichende adaptive Layout-Ke
 
 Wenn Sie Probleme haben, finden Sie weitere Unterstützung in den folgenden Abschnitten von [Definieren von Seitenlayouts mit XAML](../layout/layouts-with-xaml.md).
 
-+ [Visuelle Zustände und Zustandsauslöser](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [Maßgeschneiderte Layouts](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
++ [Visuelle Zustände und zustandstrigger](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
++ [Angepasste layouts](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
 
 Auch wenn Sie weitere Informationen erhalten möchten, wie die erste Fotobearbeitungs-App erstellt wurde, sehen Sie sich dieses Lernprogramme auf XAML an: [Benutzeroberflächen](../basics/xaml-basics-ui.md) und [Datenbindung](../../data-binding/xaml-basics-data-binding.md).
 
 ## <a name="get-the-final-version-of-the-photolab-sample"></a>Abrufen der finalen Version des PhotoLab-Beispiels
 
-In diesem Lernprogramm lernen Sie nicht das Erstellen der vollständigen App. Lesen Sie daher die [endgültige Version](https://github.com/Microsoft/Windows-appsample-photo-lab) zu Features durch wie z.B. benutzerdefinierte Animationen und Support für Ihre Telefon.
+In diesem Lernprogramm lernen Sie nicht das Erstellen der vollständigen App. Lesen Sie daher die [endgültige Version](https://github.com/Microsoft/Windows-appsample-photo-lab) zu Features durch wie z. B. benutzerdefinierte Animationen und Support für Ihre Telefon.

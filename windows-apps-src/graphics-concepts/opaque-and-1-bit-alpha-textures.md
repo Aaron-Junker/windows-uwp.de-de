@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923721"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594005"
 ---
-# <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>Undurchsichtige und 1-Bit-Alpha-Texturen
+# <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>Nicht transparent und 1-Bit-alphatexturen
 
 
 Das Texturformat BC1 ist für Texturen, die undurchsichtig sind oder eine transparente Farbe haben.
 
-Für jeden undurchsichtigen oder 1-Bit-Alpha-Block sind zwei 16-Bit-Werte (RGB-5:6:5-Format) und eine 4x4-Bitmap mit 2 Bits pro Pixel gespeichert. Dies ergibt insgesamt 64Bit für 16 Texel oder vier Bits pro Texel. Im Block Bitmap stehen 2 Bits pro Texel zwischen den vier Farben zur Auswahl, von denen zwei in den codierten Daten gespeichert sind. Die beiden anderen Farben werden von diesen gespeicherten Farben mittels linearer Interpolation abgeleitet. Dieser Aufbau ist im folgenden Diagramm dargestellt.
+Für jeden undurchsichtigen oder 1-Bit-Alpha-Block sind zwei 16-Bit-Werte (RGB-5:6:5-Format) und eine 4x4-Bitmap mit 2 Bits pro Pixel gespeichert. Dies ergibt insgesamt 64 Bit für 16 Texel oder vier Bits pro Texel. Im Block Bitmap stehen 2 Bits pro Texel zwischen den vier Farben zur Auswahl, von denen zwei in den codierten Daten gespeichert sind. Die beiden anderen Farben werden von diesen gespeicherten Farben mittels linearer Interpolation abgeleitet. Dieser Aufbau ist im folgenden Diagramm dargestellt.
 
 ![Diagramm des Bitmap-Layouts](images/colors1.png)
 
@@ -55,7 +55,7 @@ else
 
 Es wird empfohlen, dass Sie die RGBA-Komponenten des Transparenzpixels vor dem Vermischen auf 0 (null) setzen.
 
-Die folgenden Tabellen zeigen das Speicherlayout für den 8-Byte-Block. Es wird vorausgesetzt, dass der erste Index der Y-Koordinate entspricht und der zweite Index der X-Koordinate entspricht. Beispielsweise bezieht sich Texel\ [1\]\[2\] auf das Texturzuordnungspixel bei (x,y) = (2,1).
+Die folgenden Tabellen zeigen das Speicherlayout für den 8-Byte-Block. Es wird vorausgesetzt, dass der erste Index der Y-Koordinate entspricht und der zweite Index der X-Koordinate entspricht. Z. B. Texel\[1\]\[2\] bezieht sich auf das Pixel an Textur Karte an (x, y) = (2,1).
 
 Im folgenden findet sich das Speicherlayout für den 8-Byte-Block (64-Bit):
 
@@ -63,12 +63,12 @@ Im folgenden findet sich das Speicherlayout für den 8-Byte-Block (64-Bit):
 |--------------|----------------|
 | 0            | Farbe\_0       |
 | 1            | Farbe\_1       |
-| 2            | Bitmap-Word\_0 |
+| 2            | Bitmap Word\_0 |
 | 3            | Bitmap Word\_1 |
 
  
 
-Farbe\_0 und Farbe\_1, die Farben der beiden Extreme sind wie folgt angeordnet:
+Farbe\_0 und Farbe\_1, die Farben auf den beiden äußeren Enden, werden wie folgt angeordnet:
 
 | Bits        | Farbe                 |
 |-------------|-----------------------|
@@ -78,9 +78,9 @@ Farbe\_0 und Farbe\_1, die Farben der beiden Extreme sind wie folgt angeordnet:
 
  
 
-\*niederwertigstes Bit
+\*unwichtigste bit
 
-Bitmap-Word\_0 wird wie folgt dargestellt:
+Bitmap-Word\_0 ist wie folgt angeordnet:
 
 | Bits          | Texel           |
 |---------------|-----------------|
@@ -95,9 +95,9 @@ Bitmap-Word\_0 wird wie folgt dargestellt:
 
  
 
-\*höchstwertiges Bit (MSB)
+\*höchstwertigen Bit (MSB)
 
-Bitmap-Word\_1 wird wie folgt dargestellt:
+Bitmap-Word\_1 ist wie folgt angeordnet:
 
 | Bits        | Texel           |
 |-------------|-----------------|
@@ -112,10 +112,10 @@ Bitmap-Word\_1 wird wie folgt dargestellt:
 
  
 
-## <a name="span-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>Beispiel für eine undurchsichtige Codierung
+## <a name="span-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>Beispiel für die Codierung nicht transparente Farbe
 
 
-Als Beispiel für die undurchsichtige Codierung wird davon ausgegangen, dass die Farben rot und schwarz an den Extremen liegen. Rot ist Farbe\_0 und schwarz ist Farbe\_1. Es gibt vier interpolierte Farben, die den einheitlich verteilten Verlauf dazwischen bilden. Um die Werte für die 4x4-Bitmap zu ermitteln, werden die folgenden Berechnungen verwendet:
+Als Beispiel für die undurchsichtige Codierung wird davon ausgegangen, dass die Farben rot und schwarz an den Extremen liegen. Ist die Farbe Rot\_0 und Schwarz ist Farbe\_1. Es gibt vier interpolierte Farben, die den einheitlich verteilten Verlauf dazwischen bilden. Um die Werte für die 4x4-Bitmap zu ermitteln, werden die folgenden Berechnungen verwendet:
 
 ```
 00 ? color_0
@@ -130,20 +130,20 @@ Die Bitmap sieht dann wie im folgenden Diagramm aus.
 
 Dies sieht wie die nachstehend dargestellten Reihe von Farben aus.
 
-**Hinweis:**  In einem Bild wird Pixel (0,0) oben links angezeigt.
+**Beachten Sie**    In einem Bild, Pixel (0,0), die auf der oberen linken Ecke angezeigt.
 
  
 
-![Abbildungeines undurchsichtig codierten Farbverlaufs](images/redsquares.png)
+![Abbildung eines undurchsichtig codierten Farbverlaufs](images/redsquares.png)
 
-## <a name="span-idexampleof1bitalphaencodingspanspan-idexampleof1bitalphaencodingspanspan-idexampleof1bitalphaencodingspanexample-of-1-bit-alpha-encoding"></a><span id="Example_of_1_Bit_Alpha_Encoding"></span><span id="example_of_1_bit_alpha_encoding"></span><span id="EXAMPLE_OF_1_BIT_ALPHA_ENCODING"></span>Beispiel einer 1-Bit-Alpha-Kodierung
+## <a name="span-idexampleof1bitalphaencodingspanspan-idexampleof1bitalphaencodingspanspan-idexampleof1bitalphaencodingspanexample-of-1-bit-alpha-encoding"></a><span id="Example_of_1_Bit_Alpha_Encoding"></span><span id="example_of_1_bit_alpha_encoding"></span><span id="EXAMPLE_OF_1_BIT_ALPHA_ENCODING"></span>Beispiel 1-Bit-alpha-Codierung
 
 
-Dieses Format wird ausgewählt, wenn die vorzeichenlose 16-Bit-Ganzzahl, Farbe\_0, kleiner ist als die vorzeichenlose 16-Bit-Ganzzahl, Farbe\_1. Ein Beispiel, in dem dieses Format verwendet werden kann, sind Blätter an einem Baum, dargestellt gegen einen blauen Himmel. Während drei Grünabstufungen weiterhin für die Blätter verfügbar sind, können einige Texel als transparent gekennzeichnet werden. Zwei Farben fixieren die Extreme und die dritte Farbe ist eine interpolierte Farbe.
+Dieses Format wird ausgewählt. wenn die 16-Bit-Ganzzahl ohne Vorzeichen, die Farbe\_0 (null) ist kleiner als die 16-Bit-Ganzzahl, Farbe\_1. Ein Beispiel, in dem dieses Format verwendet werden kann, sind Blätter an einem Baum, dargestellt gegen einen blauen Himmel. Während drei Grünabstufungen weiterhin für die Blätter verfügbar sind, können einige Texel als transparent gekennzeichnet werden. Zwei Farben fixieren die Extreme und die dritte Farbe ist eine interpolierte Farbe.
 
 Die nachstehende Abbildung ist ein Beispiel für ein solches Bild.
 
-![Abbildungder 1-Bit-Alpha-Codierung](images/greenthing.png)
+![Abbildung der 1-Bit-Alpha-Codierung](images/greenthing.png)
 
 Wird das Bild weiß dargestellt, wäre das Texel als transparent codiert. Die RGBA-Komponenten der transparenten Texel sollten vor dem Vermischen auf NULL gesetzt werden.
 
@@ -163,7 +163,7 @@ Die Bitmap sieht dann wie im folgenden Diagramm aus.
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Komprimierte Texturressourcen](compressed-texture-resources.md)
+[Komprimierte des texturressourcen](compressed-texture-resources.md)
 
  
 

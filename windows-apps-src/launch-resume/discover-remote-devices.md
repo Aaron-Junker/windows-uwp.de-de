@@ -1,19 +1,19 @@
 ---
-title: Ermitteln von Remotegeräten
+title: Entdecken von Remotegeräten
 description: Erfahren Sie, wie Sie Remotegeräte über Ihre App mit Project Rome ermitteln können.
 ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, verbundenen Geräten, remote-Systemen, "ROME" Projekt "ROME"
+keywords: Windows 10, Uwp, verbundene Geräte "," Remotesystemen "," ROM "," Projekt "ROME"
 ms.localizationpriority: medium
 ms.openlocfilehash: 7788cb546eddf77292210b5b1e8268239504a843
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930856"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592135"
 ---
-# <a name="discover-remote-devices"></a>Ermitteln von Remotegeräten
+# <a name="discover-remote-devices"></a>Entdecken von Remotegeräten
 Ihre App kann die WLAN-, Bluetooth- und Cloud-Verbindung nutzen, um Windows-Geräte zu ermitteln, die mit demselben Microsoft-Konto wie das ermittelnde Gerät angemeldet sind. Auf den Remotegeräten muss keine spezielle Software installiert sein, damit sie erkennbar sind.
 
 > [!NOTE]
@@ -22,7 +22,7 @@ Ihre App kann die WLAN-, Bluetooth- und Cloud-Verbindung nutzen, um Windows-Ger�
 ## <a name="filter-the-set-of-discoverable-devices"></a>Filtern der Gruppe von erkennbaren Geräten
 Die Gruppe der erkennbaren Geräte kann mithilfe von [**RemoteSystemWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher) mit Filtern eingegrenzt werden. Filter können den Ermittlungstyp (proximales gegenüber lokales Netzwerk gegenüber Cloud-Verbindung), Gerätetyp (Desktop, Mobilgerät, Xbox, Hub und Hologramm) und den Verfügbarkeitsstatus (den Status der Verfügbarkeit eines Geräts für die Verwendung von Remotesystem-Eigenschaften) erkennen.
 
-Filter-Objekte müssen erstellt werden, bevor oder während das **RemoteSystemWatcher**-Objekt initialisiert wird, da sie als Parameter an den Konstruktor übergeben werden. Der folgende Code erstellt einen Filter von jedem verfügbaren Typ und fügt diese anschließend einer Liste hinzu.
+Filter-Objekte müssen erstellt werden, bevor oder während das **RemoteSystemWatcher**-Objekt initialisiert wird, da sie als Parameter an den Konstruktor übergeben werden. Der folgende Code erstellt einen Filter von jedem verfügbaren Typ und fügt sie anschließend einer Liste hinzu.
 
 > [!NOTE]
 > Der Code in diesen Beispielen setzt voraus, dass Sie in Ihrer Datei über eine `using Windows.System.RemoteSystems`-Anweisung verfügen.
@@ -31,12 +31,12 @@ Filter-Objekte müssen erstellt werden, bevor oder während das **RemoteSystemWa
 
 > [!NOTE]
 > Der Filterwert „proximal“ garantiert den Grad der physischen Näherung nicht. Verwenden Sie für Szenarien, für die eine zuverlässige physische Näherung erforderlich ist, den Wert [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) in Ihrem Filter. Derzeit erlaubt dieser Filter nur Geräte, die von Bluetooth erkannt werden können. Neue Erkennungsmethoden, die eine physische Näherung garantieren können, werden hier ebenfalls berücksichtigt, sobald diese unterstützt werden.  
-Zudem ist in der [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem)-Klasse eine Eigenschaft enthalten, die angibt, ob sich ein erkanntes Gerät tatsächlich physisch in der Nähe befindet: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
+Es gibt auch eine Eigenschaft in der [ **RemoteSystem** ](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) -Klasse, die angibt, ob ein ermitteltes Gerät in der Tat in physischer Nähe ist: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
 
 > [!NOTE]
 > Wenn Sie beabsichtigen, Geräte über ein lokales Netzwerk zu ermitteln (bestimmt durch die Auswahl des Filters „Ermittlungstyp“), muss Ihr Netzwerk das Profil „Privat“ oder „Domäne“ aufweisen. Ihr Gerät ermittelt andere Geräte nicht über ein „öffentliches“ Netzwerk.
 
-Sobald eine Liste mit [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter)-Objekten erstellt wurde, kann diese an den Konstruktor eines **RemoteSystemWatcher**übergeben werden.
+Sobald eine Liste mit [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter)-Objekten erstellt wurde, kann sie an den Konstruktor eines **RemoteSystemWatcher**übergeben werden.
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
 
@@ -65,7 +65,7 @@ bool isRemoteSystemLaunchUriCapable = remoteSystem.GetCapabilitySupportedAsync(K
 
 ## <a name="cross-user-discovery"></a>Erkennung von Cross-Benutzern
 
-Entwickler können festlegen, dass _alle_ Geräte, die sich in der Nähe des Clientgeräts befinden, erkannt werden und nicht nur diejenigen Geräte, die auf denselben Benutzer registriert sind. Dies wird implementiert durch einen speziellen **IRemoteSystemFilter**, [**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter). Die Implementierung erfolgt auf die gleiche Weise, wie für andere Filtertypen:
+Entwickler können festlegen, dass _alle_ Geräte, die sich in der Nähe des Client-Geräts befinden, erkannt werden und nicht nur diejenigen Geräte, die auf denselben Benutzer registriert sind. Dies wird implementiert durch einen speziellen **IRemoteSystemFilter**, [**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter). Die Implementierung erfolgt auf die gleiche Weise, wie für andere Filtertypen:
 
 ```csharp
 // Construct a user type filter that includes anonymous devices
@@ -93,7 +93,7 @@ Um diese Einstellung zu ändern, muss der Benutzer die Anwendung **Einstellungen
 ![Einstellungsseite geteilter Umgebungen](images/shared-experiences-settings.png)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Verbundene Apps und Geräte (Project Rome)](connected-apps-and-devices.md)
-* [Starten einer Remote-App](launch-a-remote-app.md)
-* [API-Referenz für Remotesysteme](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [Verbundene apps und Geräten (Projekt "ROME")](connected-apps-and-devices.md)
+* [Starten Sie eine remote-app](launch-a-remote-app.md)
+* [Remote-Systemen-API-Referenz](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
 * [Beispiel für Remotesysteme](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

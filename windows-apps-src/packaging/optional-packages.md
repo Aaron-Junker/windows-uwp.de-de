@@ -4,66 +4,66 @@ title: Optionale Pakete und die Erstellung zugehöriger Sets
 description: Optionale Pakete enthalten Inhalte, die in ein Hauptpaket integriert werden können. Diese sind nützlich für herunterladbare Inhalte (DLC), da große Apps so im Hinblick auf Größenbeschränkungen geteilt werden, oder auch, um zusätzliche Inhalte getrennt von der ursprünglichen App zu liefern.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: Windows 10, Uwp, optionale Pakete, zusammengehörig, Paket-Erweiterung, visual studio
+keywords: Windows 10, UWP, optionale Pakete, zugehöriges Set, Paketerweiterung, Visual Studio
 ms.localizationpriority: medium
 ms.openlocfilehash: f62d6c99acc75033403fac7a498308cea6f7d3f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945590"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594025"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Optionale Pakete und die Erstellung zugehöriger Sets
-Optionale Pakete enthalten Inhalte, die in ein Hauptpaket integriert werden können. Diese sind nützlich für herunterladbare Inhalte (DLC), da große Apps so im Hinblick auf größenbeschränkungen, oder auch zusätzliche Inhalte getrennt von der ursprünglichen app.
+Optionale Pakete enthalten Inhalte, die in ein Hauptpaket integriert werden können. Diese sind nützlich für herunterladbare Inhalte (DLC), da große Apps so im Hinblick auf Größenbeschränkungen geteilt werden, oder auch, um zusätzliche Inhalte getrennt von der ursprünglichen App zu liefern.
 
-Verwandte Gruppen sind eine Erweiterung der optionalen Pakete – sie können über die wichtigsten und optionale Pakete strenger Versionen zu erzwingen. Sie können Sie die systemeigenen Code (C++) von optionalen Paketen laden. 
+Zugehörige Sets sind eine Erweiterung von optionalen Paketen – sie ermöglichen Ihnen, strenge Versionen in allen Haupt- und optionalen Paketen zu erzwingen. Darüber hinaus können Sie damit systemeigenen Code (C++) aus optionalen Paketen laden. 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- Visual Studio 2017 Version 15.1
-- Windows10, Version1703
-- Windows 10, Version 1703 SDK
+- Visual Studio 2017, Version 15.1
+- Windows 10, Version 1703
+- Windows 10, Version 1703 SDK
 
-Alle von der aktuellen Entwicklungstools finden Sie [Downloads und Tools für Windows 10](https://developer.microsoft.com/windows/downloads).
+Informationen zum Abrufen der aktuellen Entwicklungstools finden Sie unter [Downloads und Tools für Windows 10](https://developer.microsoft.com/windows/downloads).
 
 > [!NOTE]
-> Um eine app übermitteln, die an den Microsoft Store optionale Pakete und/oder zugehörige Gruppen verwendet, benötigen Sie eine Berechtigung. Optionale Pakete und zugehörige Gruppen können für Zeile des Business (LOB) oder Unternehmens-apps ohne Partner Center-Berechtigung verwendet werden, wenn sie nicht an den Store übermittelt werden. Informationen zum Erhalt einer Berechtigung, eine App zu übermitteln, die optionale Pakete und zugehörige Gruppen verwendet, finden Sie unter [Windows-Support für Entwickler](https://developer.microsoft.com/windows/support).
+> Um eine app zu senden, die optionale Pakete bzw. verwandte an den Microsoft Store arbeitet, benötigen Sie Berechtigungen. Optionale Pakete und verwandte können für Line of Business (LOB) oder Enterprise-apps ohne Erlaubnis des Partner Center verwendet werden, wenn diese nicht an den Store gesendet werden. Informationen zum Erhalt einer Berechtigung, eine App zu übermitteln, die optionale Pakete und zugehörige Gruppen verwendet, finden Sie unter [Windows-Support für Entwickler](https://developer.microsoft.com/windows/support).
 
 ### <a name="code-sample"></a>Codebeispiel
-Während Sie in diesem Artikel lesen, empfiehlt es sich, dass Sie folgen Sie das [optionale Paket-Codebeispiel](https://github.com/AppInstaller/OptionalPackageSample) auf GitHub eine praktische zu verstehen und wie optionale Pakete und zugehörige Gruppen Arbeit in Visual Studio.
+Auch wenn Sie diesen Artikel lesen, empfiehlt es sich, sich mit dem [Codebeispiel für optionale Pakete](https://github.com/AppInstaller/OptionalPackageSample) auf GitHub vertraut zu machen, um zu verstehen, wie optionale Pakete und zugehörige Sets innerhalb von Visual Studio funktionieren.
 
 ## <a name="optional-packages"></a>Optionale Pakete
-Um ein optionales Paket in Visual Studio erstellen, müssen Sie:
-1. Stellen Sie sicher, dass Ihre app **Zielplattformversion Min** auf festgelegt ist: 10.0.15063.0 oder höher.
-2. Öffnen Sie in Ihrem Projekt **Hauptpaket** der `Package.appxmanifest` Datei. Navigieren Sie zur Registerkarte "Verpacken", und notieren Sie Ihren **paketfamilienname**, dies ist alles, was vor dem Zeichen "_".
-3. Aus Ihrem Projekt **optionales Paket** Rechtsklick die `Package.appxmanifest` , und wählen Sie **mit öffnen > XML (Text) Editor**.
-4. Suchen Sie die `<Dependencies>` Element in der Datei. Fügen Sie Folgendes hinzu:
+Um ein optionales Paket in Visual Studio zu erstellen, müssen Sie Folgendes tun:
+1. Stellen Sie sicher, dass Ihre app **Plattform mindestens erforderlichen Zielversion** auf festgelegt ist: 10.0.15063.0 oder höher.
+2. Öffnen Sie im **Hauptpaket**-Projekt die Datei `Package.appxmanifest`. Navigieren Sie zur Registerkarte „Verpacken”, und notieren Sie sich den **Paketfamiliennamen**, also alles vor dem Zeichen „_”.
+3. Klicken Sie im Projekt **optionales Paket** mit der rechten Maustaste auf `Package.appxmanifest`, und wählen Sie **Öffnen mit > XML (Text) Editor** aus.
+4. Suchen Sie das `<Dependencies>`-Element in der Datei. Führen Sie dann die folgende Aktion aus:
 
 ```XML
 <uap3:MainPackageDependency Name="[MainPackageDependency]"/>
 ```
 
-Ersetzen Sie `[MainPackageDependency]` mit der **paketfamilienname** aus Schritt2. Dies wird angegeben, dass das **optionale Paket** das **Hauptpaket**abhängig ist.
+Ersetzen Sie `[MainPackageDependency]` mit Ihrem **Paketfamiliennamen** aus Schritt2. Dadurch wird festgelegt, dass Ihr **optionales Paket** von Ihrem **Hauptpaket** abhängig ist.
 
-Wenn Sie die Schritte 1 bis 4, einrichten-Paket-Abhängigkeiten haben, können Sie entwickeln wie gewohnt weiter. Wenn Sie Code aus optionalen Pakets in das Hauptpaket laden möchten, müssen Sie eine verwandte Gruppe zu erstellen. Finden Sie im Abschnitt [verknüpft legt](#related_sets) für Weitere Informationen.
+Wenn Sie die Paketabhängigkeiten mithilfe der Schritte 1 bis 4 eingerichtet haben, können Sie wie gewohnt mit dem Entwickeln fortfahren. Wenn Sie Code aus dem optionalen Paket in das Hauptpaket laden möchten, müssen Sie ein zugehöriges Set erstellen. Weitere Informationen hierzu finden Sie im Abschnitt [Zugehörige Sets](#related_sets).
 
-Visual Studio kann konfiguriert werden, um Ihrem Hauptpaket jedes Mal erneut bereitstellen Sie ein optionales Paket bereitstellen. Um die Buildabhängigkeit in Visual Studio festlegen, sollten Sie folgende Aktionen ausführen:
+Visual Studio kann so konfiguriert werden, dass es Ihr Hauptpaket jedes Mal erneut bereitstellt, wenn Sie ein optionales Paket bereitstellen. Um die Buildabhängigkeit in Visual Studio festzulegen, sollten Sie folgendermaßen vorgehen:
 
-- Klicken Sie mit der rechten Maustaste auf das optionale Paket-Projekt, und wählen Sie **Abhängigkeiten Build > Projekt Abhängigkeiten...**
-- Überprüfen Sie das Hauptpaket-Projekt, und klicken Sie auf "OK". 
+- Klicken Sie mit der rechten Maustaste auf das optionale Paketprojekt, und wählen Sie **Buildabhängigkeiten > Projektabhängigkeiten...** aus.
+- Markieren Sie das Hauptpaketprojekt, und wählen Sie „OK” aus. 
 
-Jetzt, jedes Mal, wenn Sie F5 oder ein optionales Paket-Projekt erstellen, wird Visual Studio das Hauptpaket Projekt erstellen zuerst. Dadurch wird sichergestellt, dass Ihre Hauptprojekt und optional Projekte synchronisiert sind.
+Immer wenn Sie jetzt F5 drücken oder ein optionales Paketprojekt erstellen, erstellt Visual Studio das Hauptpaketprojekt zuerst. Dadurch wird sichergestellt, dass Ihr Hauptprojekt und Ihre optionalen Projekte synchron sind.
 
-## Zugehörige Gruppen<a name="related_sets"></a>
+## Zugehörige Sets<a name="related_sets"></a>
 
-Wenn Sie Code über ein optionales Paket in das Hauptpaket laden möchten, müssen Sie eine verwandte Gruppe zu erstellen. Um eine verwandte Gruppe zu erstellen, müssen die Hauptpaket und optionalen Pakets eng werden. Die Metadaten für zugehörige Gruppen wird in der Datei .appxbundle oder .msixbundle des Hauptpakets angegeben. Visual Studio können Sie die richtige Metadaten in Ihren Dateien zu erhalten. Um Ihre app-Lösung für die zugehörige Gruppen zu konfigurieren, verwenden Sie die folgenden Schritte aus:
+Wenn Sie Code aus einem optionalen Paket in das Hauptpaket laden möchten, müssen Sie ein zugehöriges Set erstellen. Um ein zugehöriges Set zu erstellen, müssen das Hauptpaket und die optionalen Pakete eng miteinander verknüpft sein. Die Metadaten für verwandte wird in der Datei .appxbundle oder .msixbundle Hauptpaket angegeben. Mit Visual Studio können Sie die richtigen Metadaten in den Dateien abrufen. Führen Sie die folgenden Schritte aus, um die Lösung Ihrer App für zugehörige Sets zu konfigurieren:
 
-1. Klicken Sie mit der rechten Maustaste auf das Hauptpaket-Projekt, wählen Sie **Hinzufügen > Neues Element**
-2. Klicken Sie im Fenster Suchen Sie die installierten Vorlagen für "txt", und fügen Sie eine neue Textdatei.
+1. Klicken Sie mit der rechten Maustaste auf das Hauptpaketprojekt, und wählen Sie **Hinzufügen > Neues Element...** aus.
+2. Suchen Sie im Fenster zu den installierten Vorlagen nach „.txt”, und fügen Sie eine neue Textdatei hinzu.
 > [!IMPORTANT]
-> Die neue Textdatei muss den Namen: `Bundle.Mapping.txt`.
+> Die neue Textdatei muss folgendermaßen benannt sein: `Bundle.Mapping.txt`.
 
-3. In der `Bundle.Mapping.txt` Datei, die Sie geben relative Pfade optionales Paket Projekte oder externe Pakete. Ein Beispiel für `Bundle.Mapping.txt` Datei sollte etwa wie folgt aussehen:
+3. In der Datei `Bundle.Mapping.txt` können Sie relative Pfade zu optionalen Paketprojekten oder externen Paketen festlegen. Eine `Bundle.Mapping.txt`-Datei sieht dann beispielsweise so aus:
 
 ```syntax
 [OptionalProjects]
@@ -74,10 +74,10 @@ Wenn Sie Code über ein optionales Paket in das Hauptpaket laden möchten, müss
 "..\ActivatableOptionalPackage1\x86\Release\ActivatableOptionalPackage3_1.1.1.0\ ActivatableOptionalPackage3_1.1.1.0.appx"
 ```
 
-Wenn Ihre Lösung auf diese Weise konfiguriert ist, erstellt Visual Studio ein Paketmanifest für das Hauptpaket mit alle erforderlichen Metadaten für die zugehörige Gruppen. 
+Wenn Ihre Lösung auf diese Weise konfiguriert wurde, erstellt Visual Studio für das Hauptpaket ein Bündelmanifest mit allen erforderlichen Metadaten für zugehörige Sets. 
 
-Beachten Sie, die optionale Pakete wie ein `Bundle.Mapping.txt` -Datei für die zugehörige Gruppen funktioniert nur unter Windows 10, Version 1703 oder höher. Darüber hinaus sollte Ihre app Min Zielplattformversion 10.0.15063.0 oder höher festgelegt werden.
+Beachten Sie, die optionale Pakete, wie eine `Bundle.Mapping.txt` -Datei für verwandte funktioniert nur unter Windows 10, Version 1703 oder höher. Darüber hinaus sollte für Ihre app Version der Zielplattform Min 10.0.15063.0 oder höher festgelegt werden.
 
 ## Bekannte Probleme<a name="known_issues"></a>
 
-Debuggen eines optionalen verwandten Gruppen-Projekts ist derzeit in Visual Studio nicht unterstützt. Um dieses Problem zu umgehen, können Sie bereitstellen und starten die Aktivierung (STRG + F5) und manuell den Debugger an einen Prozess anhängen. Um den Debugger, wechseln Sie in Visual Studio im Menü "Debug", wählen Sie "Anhängen, Prozess...", und hängen Sie den Debugger an der **Haupt-app-Prozess**.
+Das Debuggen eines zugehörigen Sets für optionale Projekte wird derzeit nicht in Visual Studio unterstützt. Um dieses Problem zu umgehen, können Sie die Aktivierung bereitstellen und starten (STRG+F5) und den Debugger manuell an einen Prozess anhängen. Um den Debugger anzuhängen, wechseln Sie in Visual Studio zum Menü „Debuggen”, wählen Sie „An Prozess anhängen...”, und hängen Sie den Debugger an den **Haupt-App-Prozess** an.

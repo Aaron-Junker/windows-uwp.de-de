@@ -1,27 +1,27 @@
 ---
-title: Exposition von HLSL-Streamingressourcen
+title: Belichtung von HLSL-Streamingressourcen
 description: Zur Unterstützung von Streamingressourcen in Shader Model 5 ist eine spezielle Microsoft High Level Shader Language (HLSL)-Syntax erforderlich.
 ms.assetid: 00A40D82-0565-43DC-82AB-0675B7E772E3
 keywords:
-- Exposition von HLSL-Streamingressourcen
+- Belichtung von HLSL-Streamingressourcen
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936282"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643485"
 ---
-# <a name="hlsl-streaming-resources-exposure"></a>Exposition von HLSL-Streamingressourcen
+# <a name="hlsl-streaming-resources-exposure"></a>Belichtung von HLSL-Streamingressourcen
 
 
-Zur Unterstützung von Streamingressourcen in [Shader Model 5](https://msdn.microsoft.com/library/windows/desktop/ff471356) ist eine spezielle Microsoft High Level Shader Language (HLSL)-Syntax erforderlich.
+Eine spezielle Syntax für die Microsoft High Level Shader Language (HLSL) ist für die Unterstützung von Streaming Ressourcen in [Shadermodell 5](https://msdn.microsoft.com/library/windows/desktop/ff471356) erforderlich.
 
 Die HLSL-Syntax für Shader Model 5 ist nur auf Geräten zulässig, die Streamingressourcen unterstützen. Jede relevante HLSL-Methode für das Streaming von Ressourcen in der folgenden Tabelle akzeptiert einen (feedback) oder zwei (clamp und feedback in dieser Reihenfolge) zusätzliche optionale Parameter. Aufbau einer **Sample**-Methode:
 
-**Sample(sampler, location \[, offset \[, clamp \[, feedback\] \] \])**
+**Beispiel (Sampler, Speicherort \[, Offset \[, Clamp \[, Feedback\] \] \])**
 
 Ein Beispiel für eine **Sample**-Methode ist [**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787).
 
@@ -33,9 +33,9 @@ Der Parameter feedback ist eine **Uint**-Variable, die Sie der internen Funktion
 
 So lautet die Syntax für [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083):
 
-**bool CheckAccessFullyMapped(in uint FeedbackVar);**
+**"bool" CheckAccessFullyMapped (in (Uint FeedbackVar);**
 
-[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) interpretiert den Wert von *FeedbackVar* und gibt TRUE zurück, wenn alle Daten, auf die zugegriffen wird, der Ressource zugeordnet wurden. Andernfalls gibt **CheckAccessFullyMapped** den Wert FALSE zurück.
+[**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083) interpretiert den Wert der *FeedbackVar* und gibt true, wenn alle Daten, die auf die zugegriffen wird wurde in der Ressource zugeordnet ist, andernfalls **CheckAccessFullyMapped**"false" zurückgibt.
 
 Wenn der Parameter clamp oder feedback vorhanden ist, gibt der Compiler eine Variante der Grundanweisung aus. Beispielsweise generiert sample für eine Streamingressource die Anweisung `sample_cl_s`.
 
@@ -43,7 +43,7 @@ Ist weder clamp noch feedback angegeben, gibt der Compiler die Grundanweisung au
 
 Der clamp-Wert 0.0f gibt an, dass kein Clamp-Vorgang ausgeführt wird. Daher kann der Treibercompiler die Anweisung weiter an die Zielarchitektur anpassen. Ist feedback ein NULL-Register in einer Anweisung, wird das Feedback nicht verwendet. Daher kann der Treibercompiler die Anweisung weiter an die Zielarchitektur anpassen.
 
-Wenn der HLSL-Compiler erkennt, dass clamp den Wert 0.0f hat und feedback nicht verwendet wird, gibt der Compiler die entsprechende Grundanweisung aus (z.B. `sample` statt `sample_cl_s`).
+Wenn der HLSL-Compiler erkennt, dass clamp den Wert 0.0f hat und feedback nicht verwendet wird, gibt der Compiler die entsprechende Grundanweisung aus (z. B. `sample` statt `sample_cl_s`).
 
 Besteht ein Streamingressourcenzugriff aus mehreren Bytecodeanweisungen, beispielsweise für strukturierte Ressourcen, aggregiert der Compiler einzelne feedback-Werte mit der OR-Operation, um den endgültigen feedback-Wert zu erzeugen. Dadurch ergibt sich für einen solchen komplexen Zugriff ein einzelner feedback-Wert.
 
@@ -103,7 +103,7 @@ In der folgende Tabelle sind die HLSL-Methoden zusammengefasst, die geändert wu
 <p>[RW]Buffer</p>
 <p>[RW]ByteAddressBuffer</p>
 <p>[RW]StructuredBuffer</p></td>
-<td align="left">Load</td>
+<td align="left">Laden</td>
 </tr>
 </tbody>
 </table>
@@ -113,7 +113,7 @@ In der folgende Tabelle sind die HLSL-Methoden zusammengefasst, die geändert wu
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Pipelinezugriff auf Streamingressourcen](pipeline-access-to-streaming-resources.md)
+[Pipeline-Zugriff auf Ressourcen streaming](pipeline-access-to-streaming-resources.md)
 
  
 
