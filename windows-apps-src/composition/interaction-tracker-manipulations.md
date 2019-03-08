@@ -3,14 +3,14 @@ title: Angepasste Manipulation mit InteractionTracker
 description: In diesem Artikel zeigen wir Ihnen, wie Sie mit InteractionTracker benutzerdefinierte Manipulationserlebnisse erstellen können.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, Uwp, animation
+keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d2c965bcfbf81efe73ce8aff93cdb8b31163fbd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941735"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653845"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>Angepasste Manipulation mit InteractionTracker
 
@@ -20,8 +20,8 @@ In diesem Artikel zeigen wir Ihnen, wie Sie mit InteractionTracker benutzerdefin
 
 Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
 
-- [Eingabegesteuerte Animationen](input-driven-animations.md)
-- [Relationsbasierte Animationen](relation-animations.md)
+- [Eingabe-driven Animationen](input-driven-animations.md)
+- [Beziehung basierend Animationen](relation-animations.md)
 
 ## <a name="why-create-custom-manipulation-experiences"></a>Warum benutzerdefinierte Manipulationserlebnisse erstellen?
 
@@ -59,12 +59,12 @@ Als State-Machine können die Eigenschaften von InteractionTracker durch eine de
 
 ### <a name="interactiontracker-state-machine"></a>InteractionTracker-State-Machine
 
-Wie bereits erwähnt, ist InteractionTracker eine State-Machine mit 4 Zuständen, von die jede auf die anderen Fourstates übergehen kann. (Weitere Informationen darüber, wie InteractionTracker zwischen diesen Zuständen übergeht, finden Sie in der [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker)-Klassendokumentation.)
+Wie bereits erwähnt, ist InteractionTracker Zustandsautomat mit 4 Zuständen – jeweils in einem der anderen vier Zustände übergehen kann. (Weitere Informationen darüber, wie InteractionTracker zwischen diesen Zuständen übergeht, finden Sie in der [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker)-Klassendokumentation.)
 
-| Zustand | Beschreibung |
+| Status | Beschreibung |
 |-------|-------------|
 | Idle | Nicht aktiv, keine Eingaben oder Animationen |
-| Interacting | Aktive Benutzereingaben erkannt |
+| Interaktion | Aktive Benutzereingaben erkannt |
 | Inertia | Aktive Bewegung aus aktiver Eingabe oder programmgesteuerter Beschleunigung |
 | CustomAnimation | Aktive Bewegung, die durch eine angepasste Animation entsteht |
 
@@ -78,8 +78,8 @@ Damit InteractionTracker von Eingaben gesteuert werden kann, müssen Sie eine Vi
 
 1. Die Hit-Test-Region, in der die Eingabe verfolgt wird, und der Koordinatenraum, in dem Gesten erkannt werden
 1. Die Konfigurationen der Eingaben, die erkannt und geroutet werden. Einige von diesen sind:
-    - Erkennbare Gesten: Position X und Y (horizontales und vertikales Schwenken), die Skalierung (Zusammendrücken)
-    - Trägheit
+    - Erkennbare Gesten: Position-X und Y (horizontale und vertikale schwenken), Skalierung (verkleinern)
+    - Inertia
     - Führungsschienen und Verkettung
     - Umleitungsmodi: Welche Eingaben von Daten werden automatisch an InteractionTracker umgeleitet?
 
@@ -167,5 +167,5 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
 
 Für weiterführende Anwendungen von InteractionTracker lesen Sie bitte die folgenden Artikel:
 
-- [Erstellen von Andockpunkten mit InertiaModifiern](inertia-modifiers.md)
-- [Pull-to-Refresh mit SourceModifiern](source-modifiers.md)
+- [Erstellen von Ausrichtungspunkte mit InertiaModifiers](inertia-modifiers.md)
+- [Zum Aktualisieren Ziehen mit SourceModifiers](source-modifiers.md)

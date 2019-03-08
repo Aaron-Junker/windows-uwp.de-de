@@ -1,42 +1,42 @@
 ---
-Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
+Description: Zeigt, wie Sie eine Windows-Desktopanwendung (z. B. Win32, WPF und Windows Forms) für Windows 10 manuell verpacken.
 Search.Product: eADQiWindows 10XVcnh
-title: Eine Anwendung manuell Verpacken (Desktop-Brücke)
+title: Manuelles Packen einer Anwendung (Desktop-Brücke)
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1dd159b7cd04a7641bf3f89605e054a00a0bad58
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051113"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651175"
 ---
-# <a name="package-a-desktop-application-manually"></a>Manuelles Verpacken einer desktop-Anwendungs
+# <a name="package-a-desktop-application-manually"></a>Packen Sie manuell eine desktop-Anwendung
 
-Dieses Thema zeigt, wie Sie Ihre Anwendung ohne Tools wie Visual Studio oder den Desktop App Converter (DAC) verpacken.
+In diesem Thema erfahren Sie, wie Sie Ihre Anwendung zu packen, ohne Verwendung von Tools wie Visual Studio oder den Desktop App Converter (DAC).
 
 Um Ihre App manuell zu verpacken, erstellen Sie eine Paketmanifestdatei, und führen Sie dann ein Befehlszeilentool aus, um ein Windows-App-Paket zu generieren.
 
-Berücksichtigen Sie die manuelle Verpackung, wenn Sie die Anwendung mithilfe der "Xcopy" installieren, oder Sie mit den auf dem System Ihren app Installer vorgenommenen Änderungen vertraut sind und genauere Kontrolle über den Prozess.
+Betrachten Sie die manuelle Verpacken, wenn Sie die Anwendung mithilfe des Befehls Xcopy installieren oder Sie kennen sich mit den Änderungen, die Ihrer app-Installer an das System sendet, und möchten Sie mehr Kontrolle über den Prozess.
 
 Wenn Sie sich nicht darüber sicher sind, welche Änderungen an das System durch Ihren Installer vorgenommen werden oder wenn Sie lieber automatisierte Tools für das Generieren Ihres Paketmanifestes verwenden möchten, sollten Sie eine [dieser](desktop-to-uwp-root.md#convert) Optionen erwägen.
 
 >[!IMPORTANT]
->Die Fähigkeit zum Erstellen eines Windows-app-Pakets für Ihre desktop-Anwendung (auch bekannt als der Desktop-Brücke) wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die Windows 10 Anniversary Update (10.0; verwendet werden Build 14393) oder einer neueren Version in Visual Studio.
+>Die Fähigkeit zum Erstellen einer Windows-app-Paket für die desktop-Anwendung (auch bekannt als die Desktop-Brücke) wurde in Windows 10 Version 1607 eingeführt, und es kann nur in Projekten, die Windows 10 Anniversary Update (10.0; als Ziel verwendet werden Build 14393) oder eine neuere Version in Visual Studio.
 
 ## <a name="first-prepare-your-application"></a>Vorbereiten Ihrer Anwendung
 
-Lesen Sie dieses Handbuch, bevor Sie mit der paketerstellung für Ihre Anwendung beginnen: [Vorbereiten eine desktop-Anwendung zu verpacken](desktop-to-uwp-prepare.md).
+Überprüfen Sie dieses Handbuch, bevor Sie beginnen, erstellen ein Paket für Ihre Anwendung: [Packen eine desktop-Anwendung vorbereiten](desktop-to-uwp-prepare.md).
 
 ## <a name="create-a-package-manifest"></a>Erstellen eines Paketmanifests
 
 Erstellen Sie eine Datei, nennen Sie sie **appxmanifest.xml**, und fügen Sie diese XML-Datei hinzu.
 
-Es ist eine einfache Vorlage, die die vom Paket benötigten Elemente und Attribute enthält. Wir werden im nächsten Abschnittdie Werte hinzufügen.
+Es ist eine einfache Vorlage, die die vom Paket benötigten Elemente und Attribute enthält. Wir werden im nächsten Abschnitt die Werte hinzufügen.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -84,11 +84,11 @@ Hier ist ein Beispiel für ein **Identitäts**-Element mit Platzhaltertext für 
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> Wenn Sie den Anwendungsnamen Ihrer im Microsoft Store reserviert haben, können Sie den Namen und Herausgeber abrufen, mit [Partner Center](https://partner.microsoft.com/dashboard). Wenn Sie Ihre Anwendung auf andere Systeme querladen möchten, können Sie für diese Ihre eigenen Namen bereitstellen, solange der Name des Herausgebers, die Sie auswählen, mit dem Namen des Zertifikats übereinstimmt, die Sie zum Signieren Ihrer app verwenden.
+> Wenn Sie den Anwendungsnamen in der Microsoft Store reserviert haben, erhalten Sie den Namen und Herausgeber mit [Partner Center](https://partner.microsoft.com/dashboard). Wenn Sie, Ihrer Anwendung auf anderen Systemen querladen möchten beabsichtigen, können Sie Ihre eigenen Namen für diese bereitstellen, solange der Name des Verlegers, den Sie auswählen, mit dem Namen des Zertifikats übereinstimmt, die Sie zum Signieren von Apps verwenden.
 
 ### <a name="properties"></a>Eigenschaften
 
-Das [Eigenschaften](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties)-Element hat 3 erforderliche untergeordnete Elemente. Hier ist ein Beispiel für einen **Eigenschaften**-Knoten mit Platzhaltertext für die Elemente. **DisplayName** ist der Name der Anwendung, die Sie im Store für apps reservieren, die an den Store hochgeladen werden.
+Das [Eigenschaften](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties)-Element hat 3 erforderliche untergeordnete Elemente. Hier ist ein Beispiel für einen **Eigenschaften**-Knoten mit Platzhaltertext für die Elemente. Die **"DisplayName"** ist der Name der Anwendung, die Sie in den Store, für apps reservieren, die auf den Store hochgeladen werden.
 
 ```XML
 <Properties>
@@ -109,7 +109,7 @@ Hier ist ein Beispiel für einen [Ressourcen](https://docs.microsoft.com/uwp/sch
 ```
 ### <a name="dependencies"></a>Abhängigkeiten
 
-Legen Sie immer für desktop-apps, die Erstellung eines Pakets für die ``Name`` -Attribut auf ``Windows.Desktop``.
+Für desktop-apps, die Sie ein Paket erstellen, legen Sie immer die ``Name`` Attribut ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -118,7 +118,7 @@ Legen Sie immer für desktop-apps, die Erstellung eines Pakets für die ``Name``
 ```
 
 ### <a name="capabilities"></a>Funktionen
-Für desktop-apps, die Sie ein Paket erstellen, für die Sie hinzugefügt haben die ``runFullTrust`` Funktion.
+Für desktop-apps, die Sie ein Paket erstellen, für die Sie hinzufügen müssen die ``runFullTrust`` Funktion.
 
 ```XML
 <Capabilities>
@@ -131,7 +131,7 @@ Geben Sie in diese Vorlage Informationen ein, die Ihre App beschreiben.
 
 ### <a name="application-element"></a>Anwendungselemente
 
-Für desktop-apps, die Sie ein Paket erstellen, das ``EntryPoint`` -Attribut des Application-Elements ist immer ``Windows.FullTrustApplication``.
+Für desktop-apps, die Sie ein Paket, erstellen die ``EntryPoint`` Attributs des Anwendungselements ist immer ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>
@@ -159,7 +159,7 @@ Hier ist ein Beispiel für einen [VisualElements](https://docs.microsoft.com/uwp
 
 Zielbasierte Ressourcen gelten für Symbole und Kacheln, die in der Windows-Taskleiste, in der Aufgabenansicht, über ALT+TAB, in der Andockhilfe und in der unteren rechten Ecke von Startkacheln angezeigt werden. Erhalten Sie [hier](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets) weitere Informationen.
 
-1. Rufen Sie die richtigen 44x44-Bilder ab, und kopieren Sie sie dann in den Ordner, der Ihre Bilder (d.h. Ressourcen) enthält.
+1. Rufen Sie die richtigen 44x44-Bilder ab, und kopieren Sie sie dann in den Ordner, der Ihre Bilder (d. h. Ressourcen) enthält.
 
 2. Erstellen Sie für jedes 44x44-Bild eine Kopie im selben Ordner, und hängen Sie **.targetsize-44_altform-unplated** an den Dateinamen an. Sie sollten zwei Kopien von jedem Symbol haben, jeweils spezifisch benannt. Nach Abschluss des Prozesses könnte Ihr Ressourcen-Ordner beispielsweise **MYAPP_44x44.png** und **MYAPP_44x44.targetsize-44_altform-unplated.png** enthalten.
 
@@ -174,7 +174,7 @@ Zielbasierte Ressourcen gelten für Symbole und Kacheln, die in der Windows-Task
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>Paketressourcendateien (Package Resource Index, PRI) generieren
 
-Wenn Sie zielbasierte Ressourcen erstellen, wie im vorherigen Abschnitt beschrieben, oder Sie ändern die visuellen Ressourcen Ihrer Anwendung, nachdem Sie das Paket erstellt haben, müssen Sie eine neue PRI-Datei generieren.
+Wenn Sie Ziel-basierte Ressourcen erstellen, wie im vorherigen Abschnitt beschrieben, oder Sie die visuellen Ressourcen Ihrer Anwendung ändern nach der Erstellung des Pakets, müssen Sie eine neue PRI-Datei zu generieren.
 
 1.  Öffnen Sie eine **Developer-Eingabeaufforderung für VS 2017**.
 
@@ -184,7 +184,7 @@ Wenn Sie zielbasierte Ressourcen erstellen, wie im vorherigen Abschnitt beschrie
 
 5.  Erstellen Sie die resources.pri-Dateien mit dem Befehl ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
 
-    Der Befehl für Ihre Anwendung könnte z. B. wie folgt aussehen: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+    Der Befehl für Ihre Anwendung könnte beispielsweise folgendermaßen aussehen: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
 
 6.  Verpacken Sie Ihre Windows-App-Datei mithilfe der Anweisungen im nächsten Schritt.
 
@@ -192,35 +192,35 @@ Wenn Sie zielbasierte Ressourcen erstellen, wie im vorherigen Abschnitt beschrie
 
 ## <a name="generate-a-windows-app-package"></a>Erstellen eines Windows-App-Pakets
 
-Verwenden Sie **MakeAppx.exe**, um ein Windows-App-Paket für Ihr Projekt zu generieren. Ist es mit im Windows10 SDK enthalten, und wenn Sie Visual Studio installiert haben, können Sie ganz einfach über Developer-Eingabeaufforderung für Visual Studio zugreifen.
+Verwenden Sie **MakeAppx.exe**, um ein Windows-App-Paket für Ihr Projekt zu generieren. Ist es mit im Windows 10 SDK enthalten, und wenn Sie Visual Studio installiert haben, können Sie ganz einfach über Developer-Eingabeaufforderung für Visual Studio zugreifen.
 
 Weitere Informationen finden Sie in [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)
 
 ## <a name="run-the-packaged-app"></a>Ausführung der verpackten App
 
-Sie können Ihre Anwendung zu testen, lokal ohne Erwerb eines Zertifikats und signieren Sie es ausführen. Führen Sie einfach dieses PowerShell-Cmdlet aus:
+Sie können Ihre Anwendung lokal, ohne dass ein Zertifikat zu erhalten, und signieren Sie es testen ausführen. Führen Sie einfach dieses PowerShell-Cmdlet aus:
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 Ersetzen Sie zum Aktualisieren der EXE- oder DLL-Dateien Ihrer App die vorhandenen Dateien in Ihrem Paket durch die neuen, vergrößern Sie die Versionsnummer in der Datei „AppxManifest.xml“, und führen Sie den oben genannten Befehl erneut aus.
 
 > [!NOTE]
-> Eine Anwendung immer als interaktiver Benutzer ausgeführt wird, und jedes Laufwerk, das Sie Ihres Anwendungspakets zu installieren, muss auf NTFS-Format formatiert sein.
+> Eine gepackte Anwendung immer ausgeführt wird, als interaktiver Benutzer aus, und alle Festplatten, die Sie bei die gepackte Anwendung installieren muss NTFS-Format formatiert sein.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Finden Sie Antworten auf Ihre Fragen**
+**Hier finden Sie Antworten auf Ihre Fragen**
 
 Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Sie können [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D) Fragen dazu stellen.
 
-**Geben Sie Feedback oder Verbesserungsvorschläge**
+**Geben Sie Feedback oder Vorschläge für Features**
 
 Weitere Informationen finden Sie unter [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
-**Schrittweise Ausführung von Code / Suchen und Beheben von Problemen**
+**Code schrittweise durchlaufen / suchen und Beheben von Problemen**
 
-Finden Sie unter [ausführen, Debuggen und testen eine verpackte desktop-Anwendung](desktop-to-uwp-debug.md)
+Finden Sie unter [ausführen, Debuggen und testen eine App-Pakete desktop-Anwendung](desktop-to-uwp-debug.md)
 
-**Signieren Sie Ihre Anwendung, und verteilen Sie es**
+**Signieren Sie Ihrer Anwendung und dann verteilen**
 
-Finden Sie unter [Verteilen einer verpackten desktop-Anwendung](desktop-to-uwp-distribute.md)
+Finden Sie unter [verteilen eine App-Pakete desktop-Anwendung](desktop-to-uwp-distribute.md)

@@ -1,22 +1,22 @@
 ---
 title: xDeferLoadStrategy-Attribut
-description: „xDeferLoadStrategy“ verzögert die Erstellung eines Elements und seiner untergeordneten Elemente, verkürzt die Startzeit, erhöht aber leicht die Arbeitsspeicherauslastung.Jedes betroffene Element erhöht die Arbeitsspeicherauslastung um ca. 600 Bytes.
+description: „xDeferLoadStrategy“ verzögert die Erstellung eines Elements und seiner untergeordneten Elemente, verkürzt die Startzeit, erhöht aber leicht die Arbeitsspeicherauslastung. Jedes betroffene Element erhöht die Arbeitsspeicherauslastung um ca. 600 Bytes.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4432362db74f830774a2c4f74401c472c128a120
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937698"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659985"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy-Attribut
 
 > [!IMPORTANT]
-> Ab Windows10, Version 1703 (Creators Update) wird **x:DeferLoadStrategy** durch das [**x:Load-Attribut**](x-load-attribute.md) ersetzt. Die Verwendung von `x:Load="False"` ist der von `x:DeferLoadStrategy="Lazy"` gleichzustellen, jedoch ermöglicht x:Load bei Bedarf das Entladen der Benutzeroberfläche. Weitere Informationen finden Sie unter [x:Load-Attribut](x-load-attribute.md).
+> Ab Windows 10, Version 1703 (Creators Update) wird **x:DeferLoadStrategy** durch das [**x:Load-Attribut**](x-load-attribute.md) ersetzt. Die Verwendung von `x:Load="False"` ist der von `x:DeferLoadStrategy="Lazy"` gleichzustellen, jedoch ermöglicht x:Load bei Bedarf das Entladen der Benutzeroberfläche. Weitere Informationen finden Sie unter [x:Load-Attribut](x-load-attribute.md).
 
 Sie können **x:DeferLoadStrategy = "Lazy"** zur Optimierung des Starts oder der Strukturerstellungsleistung Ihrer XAML-App. Bei der Verwendung von **x:DeferLoadStrategy = "Lazy"** wird die Erstellung eines Elements und seiner untergeordneten Elemente verzögert, was zu einer verringerten Startzeit und Arbeitsspeicherkosten führt. Dies ist zur Reduzierung der Kosten für Elemente nützlich, die selten oder nur bedingt angezeigt werden. Das Element wird verwirklicht, wenn Code oder VisualStateManager darauf verweist.
 
@@ -28,11 +28,11 @@ Durch die Verfolgung von verzögerten Elementen durch das XAML-Framework werden 
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Einschränkungen für die Verwendung von **x:DeferLoadStrategy** sind:
 
-- Definieren Sie ein [X: Name](x-name-attribute.md)für das Element, da dieses muss das Element später gefunden werden.
+- Definieren Sie eine [X: Name](x-name-attribute.md) für das Element, wie es eine Möglichkeit, das Element später zu finden sein muss.
 - Sie können nur Typen ableiten, die von einem [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) oder [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) abgeleitet werden.
 - Die können keine Stammelemente in einer [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) oder [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) zurückstellen.
 - Sie können keine Elemente in einem [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) zurückstellen.
@@ -47,7 +47,7 @@ Es gibt mehrere Möglichkeiten, verzögerte Elementen zu erkennen:
 - Legen Sie das verzögerte Elemente in allen **Storyboards** als Ziel fest.
 - Verwenden Sie eine Bindung, die auf das verzögerte Element ausgerichtet ist.
 
-> HINWEIS: Nach Start der Instanziierung eines Elements wird es im Benutzeroberflächen-Thread erstellt. Dies kann ggf. bewirken, dass die Oberfläche ruckelt, wenn zu viele auf einmal erstellt werden.
+> HINWEIS: Nach dem Start der Instanziierung eines Elements wird es der UI-Thread erstellt, damit es verursachen die Benutzeroberfläche auf, wenn zu Stocken, dass viel auf einmal erstellt wird.
 
 Wenn ein verzögertes Element mit einer der oben aufgeführten Methoden erstellt wurde, passiert Folgendes:
 
@@ -55,9 +55,9 @@ Wenn ein verzögertes Element mit einer der oben aufgeführten Methoden erstellt
 - Alle Bindungen für das Element werden ausgewertet.
 - Wenn Sie sich für den Empfang von Benachrichtigungen über Änderungen an der Eigenschaft, die die verzögerten Elemente enthält, registriert haben, wird die Benachrichtigung ausgelöst.
 
-Sie können verzögerte Elemente verschachteln, jedoch müssen Sie vom äußersten Element aus nach innen erkannt werden. Wenn Sie versuchen, ein untergeordnetes Element zu erkennen, bevor das übergeordnete Element erkannt wurde, wird eine Ausnahme ausgelöst.
+Sie können verzögerte Elemente verschachteln, jedoch müssen Sie vom äußersten Element aus nach innen erkannt werden.  Wenn Sie versuchen, ein untergeordnetes Element zu erkennen, bevor das übergeordnete Element erkannt wurde, wird eine Ausnahme ausgelöst.
 
-In der Regel wird empfohlen, dass Sie Elemente zurückstellen, die nicht im ersten Frame angezeigt werden.Bei der Suche nach zu verzögernden Kandidaten empfiehlt es sich, nach Elementen zu suchen, die mit reduzierter [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) erstellt werden. Eine Benutzeroberfläche, die durch eine Benutzerinteraktion ausgelöst wird, ist außerdem ein guter Ort zum Suchen nach Elementen, die zurückgestellt werden können.
+In der Regel wird empfohlen, dass Sie Elemente zurückstellen, die nicht im ersten Frame angezeigt werden. Bei der Suche nach zu verzögernden Kandidaten empfiehlt es sich, nach Elementen zu suchen, die mit reduzierter [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) erstellt werden. Eine Benutzeroberfläche, die durch eine Benutzerinteraktion ausgelöst wird, ist außerdem ein guter Ort zum Suchen nach Elementen, die zurückgestellt werden können.
 
 Seien Sie vorsichtig beim Verzögern von Elementen in einem [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878), da so die Startzeit verringert, aber auch die Leistung beim Verschieben reduziert werden kann – je nachdem, was Sie erstellen. Wenn Sie die Leistung beim Verschieben erhöhen möchten, finden Sie in den Dokumentationen [{x:Bind}-Markuperweiterung](x-bind-markup-extension.md) und [x:Phase-Attribut](x-phase-attribute.md) weitere Informationen.
 

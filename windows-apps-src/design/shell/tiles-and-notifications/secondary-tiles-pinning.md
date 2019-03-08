@@ -1,20 +1,20 @@
 ---
-Description: Learn how to pin a secondary tile to Start from your UWP app.
-title: Sekundäre Kacheln an die Startseite anheften
+Description: Erfahren Sie, wie eine sekundäre Kachel an Start anheften, aus der UWP-app.
+title: Sekundäre Kacheln an Startmenü anheften
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
-keywords: Windows10, UWP, sekundäre Kacheln, Anheften, anheften, Schnellstart, Codebeispiel, Beispiel, Sekundärkachel
+keywords: Windows 10, UWP, sekundäre Kacheln, Anheften, anheften, Schnellstart, Codebeispiel, Beispiel, Sekundärkachel
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939666"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653155"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>Sekundäre Kacheln an die Startseite anheften
+# <a name="pin-secondary-tiles-to-start"></a>Sekundäre Kacheln an Startmenü anheften
 
 
 Dieses Thema führt Sie durch die Schritte zum Erstellen einer sekundären Kachel für Ihre UWP-App und Anheften der Kachel an das Startmenü.
@@ -37,10 +37,10 @@ using Windows.UI.StartScreen;
 
 Sekundäre Kacheln bestehen aus einigen wichtigen Komponenten...
 
-* **TileId**: Ein eindeutiger Bezeichner, mit dem Sie die Kachel von Ihren anderen sekundären Kacheln identifizieren können.
-* **DisplayName**: Der Name, der auf der Kachel angezeigt werden sollen.
-* **Argumente**: Die Argumente, die an Ihre App zurück übergeben werden sollen, wenn der Benutzer auf Ihre Kachel klickt.
-* **Square150x150Logo**: Das erforderliche Logo, das auf der mittelgroßen Kachel angezeigt wird (die in verkleinerter Kachelgröße angezeigt wird, wenn kein kleines Logo bereitgestellt wird).
+* **TileId**: Ein eindeutiger Bezeichner, der Sie die Kachel für die anderen sekundären Kacheln identifizieren kann.
+* **DisplayName**: Der Name, den Sie auf der Kachel angezeigt werden sollen.
+* **Argumente**: Die Argumente sollen übergebenen zurück zu Ihrer app klickt der Benutzer auf die Kachel.
+* **Square150x150Logo**: Das erforderliche Logo, das angezeigt wird, auf die mittlere Größe Kachel (und zur Kachel "klein" geändert werden, wenn kein kleines Logo angegeben).
 
 Sie **MÜSSEN** initialisierte Werte für alle oben genannten Eigenschaften anbieten, da andernfalls eine Ausnahme ausgelöst wird.
 
@@ -67,7 +67,7 @@ SecondaryTile tile = new SecondaryTile(
 ```
 
 
-## <a name="optional-add-support-for-larger-tile-sizes"></a>Optional: Hinzufügen von Unterstützung für größere Kacheln
+## <a name="optional-add-support-for-larger-tile-sizes"></a>Optional: Hinzufügen von Unterstützung für größere-Kachel
 
 Wenn Sie vorhaben, umfassende Kachelbenachrichtigungen auf der sekundären Kachel anzuzeigen, sollten Sie dem Anwender ermöglichen, die Breite oder Größe ihrer Kachel zu ändern, damit noch mehr Inhalte angezeigt werden.
 
@@ -100,8 +100,8 @@ tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 ```
 
 
-## <a name="optional-3d-secondary-tiles"></a>Optional: Sekundäre 3D-Kacheln
-Sie können die sekundäre Kachel für Windows Mixed Reality verbessern, indem Sie 3D-Ressourcen hinzufügen. Benutzer können 3D-Kacheln direkt in ihre Windows Mixed Reality Home-Umgebung anstelle des Startmenüs platzieren, wenn sie Ihre App in einer Mixed Reality-Umgebung verwenden. Sie können z.B. 360° Photospheres erstellen, die direkt in einer 360°-Foto-App verknüpft werden oder Ihren Benutzern ermöglichen, ein 3D-Modell eines Stuhls aus einem Möbelkatalog zu platzieren, das eine Seite zu den Optionen für Preise und Farben für das Objekt öffnet, wenn es ausgewählt wird. Informationen zu ersten Schritten finden Sie in der [Mixed Reality-Entwicklerdokumentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home).
+## <a name="optional-3d-secondary-tiles"></a>Optional: 3D, sekundäre Kacheln
+Sie können die sekundäre Kachel für Windows Mixed Reality verbessern, indem Sie 3D-Ressourcen hinzufügen. Benutzer können 3D-Kacheln direkt in ihre Windows Mixed Reality Home-Umgebung anstelle des Startmenüs platzieren, wenn sie Ihre App in einer Mixed Reality-Umgebung verwenden. Sie können z. B. 360° Photospheres erstellen, die direkt in einer 360°-Foto-App verknüpft werden oder Ihren Benutzern ermöglichen, ein 3D-Modell eines Stuhls aus einem Möbelkatalog zu platzieren, das eine Seite zu den Optionen für Preise und Farben für das Objekt öffnet, wenn es ausgewählt wird. Informationen zu ersten Schritten finden Sie in der [Mixed Reality-Entwicklerdokumentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home).
 
 
 
@@ -164,7 +164,7 @@ await tile.UpdateAsync();
 
 ## <a name="enumerating-all-pinned-secondary-tiles"></a>Auflisten aller angehefteten sekundären Kacheln
 
-Wenn Sie alle Kacheln ermitteln müssen, die der Benutzer angeheftet hat, verwenden Sie anstelle von *SecondaryTile.Exists* *SecondaryTile.FindAllAsync()*.
+Wenn Sie alle Kacheln ermitteln müssen, die der Benutzer angeheftet hat, verwenden Sie anstelle von *SecondaryTile.Exists**SecondaryTile.FindAllAsync()*.
 
 ```csharp
 // Get all secondary tiles
@@ -179,8 +179,8 @@ Weitere Informationen zum Anzeigen umfassender Inhalte auf einer Kachel per Kach
 
 ## <a name="related"></a>Verwandte Themen
 
-* [Übersicht über sekundäre Kacheln](secondary-tiles.md)
-* [Anleitung für sekundäre Kacheln](secondary-tiles-guidance.md)
-* [Kachelressourcen](app-assets.md)
-* [Dokumentation für den Kachelinhalt](create-adaptive-tiles.md)
+* [Übersicht über die sekundäre Kacheln](secondary-tiles.md)
+* [Sekundäre Kacheln Anleitungen](secondary-tiles-guidance.md)
+* [Kachel "-Objekte](app-assets.md)
+* [Kachel "Content-Dokumentation](create-adaptive-tiles.md)
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)

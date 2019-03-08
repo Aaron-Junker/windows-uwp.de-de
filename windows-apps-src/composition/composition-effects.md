@@ -4,14 +4,14 @@ title: Kompositionseffekte
 description: Mithilfe von Effekt-APIs können Entwickler anpassen, wie ihre Benutzeroberfläche gerendert wird.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045313"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653825"
 ---
 # <a name="composition-effects"></a>Kompositionseffekte
 
@@ -27,24 +27,24 @@ Effekte können auch für XAML-UI-Elemente mit einem Effektpinsel mit [**XamlCom
 
 ## <a name="effect-features"></a>Effektfeatures
 
-- [Effektbibliothek](./composition-effects.md#effect-library)
+- [Auswirkungen-Bibliothek](./composition-effects.md#effect-library)
 - [Verketten von Effekten](./composition-effects.md#chaining-effects)
-- [Animationsunterstützung](./composition-effects.md#animation-support)
-- [Konstante im Vergleich zu animierten Effekteigenschaften](./composition-effects.md#constant-vs-animated-effect-properties)
-- [Mehrere Effektinstanzen mit unabhängigen Eigenschaften](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+- [Unterstützung für Animationen](./composition-effects.md#animation-support)
+- [Konstanten im Vergleich zu Animierter Effekt-Eigenschaften](./composition-effects.md#constant-vs-animated-effect-properties)
+- [Mehrere Instanzen von Auswirkungen mit unabhängige Eigenschaften](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### <a name="effect-library"></a>Effektbibliothek
 
 Derzeit unterstützt die Komposition folgende Effekte:
 
-| Effekt               | Beschreibung                                                                                                                                                                                                                |
+| Auswirkung               | Beschreibung                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2D-affine Transformation  | Wendet eine 2D-affine Transformationsmatrix auf ein Bild an. Dieser Effekt wurde verwendet, um die Alphamaske in unseren [Effektbeispielen](https://go.microsoft.com/fwlink/?LinkId=785341) zu animieren.       |
 | Arithmetische Komposition | Kombiniert zwei Bilder mittels einer flexiblen Gleichung. Eine arithmetische Komposition wurde verwendet, um einen Überblendungseffekt in unseren [Beispielen](https://go.microsoft.com/fwlink/?LinkId=785341) zu erzeugen. |
 | Fülleffekt         | Erzeugt einen Fülleffekt, der zwei Bilder kombiniert. Die Komposition stellt 21 der 26 in Win2D unterstützten [Füllmethoden](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm) bereit.        |
 | Farbquelle         | Generiert ein Bild, das eine Volltonfarbe enthält.                                                                                                                                                                               |
 | Komposition            | Kombiniert zwei Bilder. Die Komposition stellt alle 13 in Win2D unterstützten [Kompositionsmodi](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm) bereit.                                              |
-| Kontrast             | Erhöht oder verringert den Kontrast eines Bilds.                                                                                                                                                                           |
+| Vergleichen Sie             | Erhöht oder verringert den Kontrast eines Bilds.                                                                                                                                                                           |
 | Belichtung             | Erhöht oder verringert die Belichtung eines Bilds.                                                                                                                                                                           |
 | Graustufen            | Konvertiert ein Bild in ein monochromes Graustufenbild.                                                                                                                                                                                   |
 | Gammakorrektur       | Ändert die Farben eines Bilds, indem die Gammakorrekturfunktion pro Kanal angewendet wird.                                                                                                                                           |
@@ -54,7 +54,7 @@ Derzeit unterstützt die Komposition folgende Effekte:
 | Sepia                | Konvertiert ein Bild in Sepiatöne.                                                                                                                                                                                          |
 | Temperatur und Farbton | Passt die Temperatur und/oder den Farbton eines Bilds an.                                                                                                                                                                           |
 
-Ausführliche Informationen finden Sie in der Beschreibung des Win2D-Namespaces [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm). In der Komposition nicht unterstützte Effekte sind mit \[NoComposition\] gekennzeichnet.
+Ausführliche Informationen finden Sie in der Beschreibung des Win2D-Namespaces [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm). Effekte, die in der Zusammensetzung nicht unterstützt werden als hingewiesen \[NoComposition\].
 
 ### <a name="chaining-effects"></a>Verketten von Effekten
 
@@ -136,9 +136,9 @@ In diesem Schnellstart-Lernprogramm erfahren Sie, wie Sie einige der grundlegend
 - [Installieren von Visual Studio](./composition-effects.md#installing-visual-studio)
 - [Erstellen eines neuen Projekts](./composition-effects.md#creating-a-new-project)
 - [Installieren von Win2D](./composition-effects.md#installing-win2d)
-- [Festlegen der Grundlagen für die Komposition](./composition-effects.md#setting-your-composition-basics)
-- [Erstellen eines CompositionSurface-Pinsels](./composition-effects.md#creating-a-compositionsurface-brush)
-- [Erstellen, Kompilieren und Anwenden von Effekten](./composition-effects.md#creating-compiling-and-applying-effects)
+- [Festlegen der Kompositions-Grundlagen](./composition-effects.md#setting-your-composition-basics)
+- [Erstellen einen Pinsel CompositionSurface](./composition-effects.md#creating-a-compositionsurface-brush)
+- [Erstellen, kompilieren und das Anwenden von Effekten](./composition-effects.md#creating-compiling-and-applying-effects)
 
 ### <a name="installing-visual-studio"></a>Installieren von Visual Studio
 
@@ -156,7 +156,7 @@ In diesem Schnellstart-Lernprogramm erfahren Sie, wie Sie einige der grundlegend
 
 Win2D wird als „Nuget.org“-Paket freigegeben und muss installiert werden, damit Sie Effekte nutzen können.
 
-Es gibt zwei Paketversionen: eine für Windows 10 und eine für Windows 8.1. Für Kompositionseffekte verwenden Sie die Windows10-Version.
+Es gibt zwei Paketversionen: eine für Windows 10 und eine für Windows 8.1. Für Kompositionseffekte verwenden Sie die Windows 10-Version.
 
 - Starten Sie den NuGet-Paket-Manager, indem Sie „Extras → NuGet-Paket-Manager → NuGet-Pakete für Projektmappe verwalten“ auswählen.
 - Suchen Sie nach „Win2D“, und wählen Sie das entsprechende Paket für die Zielversion von Windows aus. Da Windows.UI. Composition Windows 10 (aber nicht 8.1) unterstützt, wählen Sie „Win2D.uwp“ aus.
@@ -237,12 +237,12 @@ LoadImage(surfaceBrush);
 
 ## <a name="more-information"></a>Weitere Informationen
 
-- [Microsoft – GitHub-Seite zum Thema „Komposition“](https://github.com/Microsoft/composition)
+- [Microsoft – Komposition GitHub](https://github.com/Microsoft/composition)
 - [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
-- [Windows Composition-Team auf Twitter](https://twitter.com/wincomposition)
-- [Kompositionsübersicht](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+- [Windows-Kompositions-Team auf Twitter](https://twitter.com/wincomposition)
+- [Übersicht über die Komposition](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
 - [Grundlagen der visuellen Struktur](composition-visual-tree.md)
 - [Kompositionspinsel](composition-brushes.md)
 - [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
 - [Übersicht über Animationen](composition-animation.md)
-- [Systemeigene DirectX- und Direct2D-Interoperabilität mit „BeginDraw“ und „EndDraw“](composition-native-interop.md)
+- [Komposition systemeigenem DirectX und Direct2D Interoperation mit "beginDraw" und "EndDraw"](composition-native-interop.md)
