@@ -1,5 +1,5 @@
 ---
-title: Einrichten von Geofence-Bereichen
+title: Einrichten eines Geofence
 description: Richten Sie einen Geofence-Bereich in Ihrer App ein, und erfahren Sie, wie Sie Benachrichtigungen im Vordergrund und Hintergrund behandeln.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ms.date: 02/08/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Karten, Standort, Geofence, Benachrichtigungen
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e00a3db8890183f50efad6caa31bd573707c6a6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9045689"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606125"
 ---
 # <a name="set-up-a-geofence"></a>Einrichten eines Geofence
 
@@ -20,9 +20,9 @@ ms.locfileid: "9045689"
 
 Richten Sie einen [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587)-Bereich in Ihrer App ein, und erfahren Sie, wie Sie Benachrichtigungen im Vordergrund und Hintergrund behandeln.
 
-**Tipp** Wenn Sie weitere Informationen zum Zugreifen auf die Position in Ihrer App benötigen, laden Sie das folgende Beispiel aus den [API-Beispielen für die Universelle Windows-Plattform](https://go.microsoft.com/fwlink/p/?LinkId=619979) auf GitHub herunter.
+**Tipp** Wenn Sie weitere Informationen zum Zugreifen auf die Position in Ihrer App erhalten möchten, laden Sie das folgende Beispiel aus den [API-Beispielen für die Universelle Windows-Plattform](https://go.microsoft.com/fwlink/p/?LinkId=619979) auf GitHub herunter.
 
--   [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universelle Windows-Plattform (UWP)-Map-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>Aktivieren der Positionsfunktion
 
@@ -37,12 +37,12 @@ Richten Sie einen [**Geofence**](https://msdn.microsoft.com/library/windows/apps
   </Capabilities>
 ```
 
-## <a name="set-up-a-geofence"></a>Einrichten von Geofence-Bereichen
+## <a name="set-up-a-geofence"></a>Einrichten eines Geofence
 
 
-### <a name="step-1-request-access-to-the-users-location"></a>Schritt 1: Anfordern des Zugriffs auf die Position des Benutzers
+### <a name="step-1-request-access-to-the-users-location"></a>Schritt 1: Anfordern des Zugriffs auf den Standort des Benutzers
 
-**Wichtig** Sie müssen über die [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)-Methode Zugriff auf Positionsdaten des Benutzers anfordern, bevor Sie versuchen, auf die Position des Benutzers zuzugreifen. Sie müssen die **RequestAccessAsync**-Methode aus dem UI-Thread aufrufen, und die App muss sich im Vordergrund befinden. Ihre App kann erst auf Positionsdaten des Benutzers zugreifen, nachdem der Benutzer der App den Zugriff gewährt hat.
+**Wichtig** Sie müssen über die [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)-Methode Zugriff auf Positionsdaten des Benutzers anfordern, bevor Sie versuchen, auf die Position des Benutzers zuzugreifen. Sie müssen die **RequestAccessAsync**-Methode aus dem UI-Thread aufrufen, und die App muss sich im Vordergrund ausgeführt werden. Ihre App kann erst auf Positionsdaten des Benutzers zugreifen, nachdem der Benutzer der App den Zugriff gewährt hat.
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -50,9 +50,9 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-Die [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)-Methode fordert den Benutzer auf, den Zugriff auf seinen Standort zu genehmigen. Der Benutzer wird nur einmal (pro App) aufgefordert. Nachdem die Berechtigung erstmalig gewährt oder verweigert wurde, fordert die Methode keine Berechtigung mehr vom Benutzer an. Um das Ändern von Standortberechtigungen nach der Aufforderung für den Benutzer zu vereinfachen, sollten Sie einen Link zu den Standorteinstellungen bereitstellen wie weiter unten in diesem Thema beschrieben.
+Die [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)-Methode fordert den Benutzer auf, den Zugriff auf seinen Standort zu genehmigen. Der Benutzer wird nur einmal (pro App) aufgefordert. Nachdem die Berechtigung erstmalig gewährt oder verweigert wurde, fordert die Methode keine Berechtigung mehr vom Benutzer an. Um das Ändern von Standortberechtigungen nach der Aufforderung für den Benutzer zu vereinfachen, sollten Sie einen Link zu den Standorteinstellungen bereitstellen (s. wie weiter unten in diesem Thema).
 
-### <a name="step-2-register-for-changes-in-geofence-state-and-location-permissions"></a>Schritt 2: Registrieren für Änderungen des Geofence-Zustands und für Positionsberechtigungen
+### <a name="step-2-register-for-changes-in-geofence-state-and-location-permissions"></a>Schritt 2: Registrieren Sie sich für Änderungen in den Zustand und den Speicherort Geofence-Berechtigungen
 
 In diesem Beispiel wird eine **switch**-Anweisung mit **accessStatus** (aus dem vorherigen Beispiel) verwendet, die nur aktiv ist, wenn der Zugriff auf den Standort eines Benutzers zugelassen wird. Der Code greift (sofern Zugriff auf die Position des Benutzers gewährt wurde) auf die aktuellen Geofences zu und führt eine Registrierung für Geofence-Zustandsänderungen und für Positionsberechtigungsänderungen durch.
 
@@ -95,7 +95,7 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 }
 ```
 
-### <a name="step-3-create-the-geofence"></a>Schritt 3: Erstellen des Geofence-Bereichs
+### <a name="step-3-create-the-geofence"></a>Schritt 3: Erstellen des geofence
 
 Nun können Sie ein [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587)-Objekt definieren und einrichten. Je nach Ihren Anforderungen stehen mehrere verschiedene Konstruktorüberladungen zur Auswahl. Geben Sie im einfachsten Geofence-Konstruktor wie hier gezeigt nur [**Id**](https://msdn.microsoft.com/library/windows/apps/dn263724) und [**Geoshape**](https://msdn.microsoft.com/library/windows/apps/dn263718) an.
 
@@ -120,11 +120,11 @@ Geofence geofence = new Geofence(fenceId, geocircle);
 
 Sie können den Geofence mit einem der anderen Konstruktoren weiter optimieren. Im nächsten Beispiel legt der Geofence-Konstruktor diese zusätzlichen Parameter fest:
 
--   [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) – Gibt an, für welche Geofence-Ereignisse Sie Benachrichtigungen erhalten möchten: Betreten der definierten Region, Verlassen der definierten Region oder Entfernen des Geofence-Bereichs.
--   [**SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) – Entfernt den Geofence-Bereich, nachdem alle Zustände erfüllt wurden, auf die der Geofence-Bereich überwacht wird.
--   [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) – Gibt an, wie lange sich der Benutzer innerhalb oder außerhalb des definierten Bereichs befinden muss, bevor das Enter- oder Exit-Ereignis ausgelöst wird.
--   [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) – Gibt an, wann mit der Überwachung des Geofence-Bereichs begonnen wird.
--   [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) – Gibt die Dauer für die Überwachung des Geofence-Bereichs an.
+-   [**MonitoredStates** ](https://msdn.microsoft.com/library/windows/apps/dn263728) – gibt an, welche Geofence-Ereignisse, die Sie möchten, Benachrichtigungen für die Eingabe von der definierten Region verlassen der definierte Bereich oder die Entfernung des geofence befindet.
+-   [**SingleUse** ](https://msdn.microsoft.com/library/windows/apps/dn263732) -Geofence entfernt, nachdem alle Status des Geofence für überwacht wird, erfüllt wurden.
+-   [**DwellTime** ](https://msdn.microsoft.com/library/windows/apps/dn263703) – gibt an, wie lange der Benutzer muss sein innerhalb oder außerhalb der definierte Bereich ist, bevor die EINGABETASTE/Exit-Ereignisse ausgelöst werden.
+-   [**"StartTime"** ](https://msdn.microsoft.com/library/windows/apps/dn263735) – gibt an, wann beim Starten der Überwachung des geofence befindet.
+-   [**Dauer** ](https://msdn.microsoft.com/library/windows/apps/dn263697) -gibt den Zeitraum für das Überwachen des geofence befindet.
 
 ```csharp
 // Set the fence ID.
@@ -173,7 +173,7 @@ try {
 }
 ```
 
-### <a name="step-4-handle-changes-in-location-permissions"></a>Schritt 4: Behandeln von Änderungen an Positionsberechtigungen
+### <a name="step-4-handle-changes-in-location-permissions"></a>Schritt 4: Behandeln Sie Änderungen an Berechtigungen für Positionsdaten
 
 Das [**GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595)-Objekt löst das [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646)-Ereignis aus, um anzugeben, dass sich die Positionseinstellungen des Benutzers geändert haben. Das Ereignis übergibt den entsprechenden Status über die Eigenschaft **sender.Status** des Arguments (vom Typ [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)). Beachten Sie, dass diese Methode nicht vom UI-Thread aufgerufen wird und das [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)-Objekt die UI-Änderungen aufruft.
 
@@ -236,7 +236,7 @@ Nachdem Ihre Geofence-Bereiche erstellt wurden, müssen Sie die Logik für das E
 
 Sie können direkt in der App auf Ereignisse lauschen, wenn diese ausgeführt wird, oder Sie können eine Registrierung für eine Hintergrundaufgabe vornehmen, damit Sie eine Hintergrundbenachrichtigung erhalten, sobald ein Ereignis eintritt.
 
-### <a name="step-1-register-for-geofence-state-change-events"></a>Schritt 1: Durchführen der Registrierung für Ereignisse zur Änderung des Geofence-Zustands
+### <a name="step-1-register-for-geofence-state-change-events"></a>Schritt 1: Registrieren Sie für Statusänderungsereignisse geofence
 
 Damit die App bei der Änderung eines Geofence-Zustands eine Vordergrundbenachrichtigung erhält, müssen Sie einen Ereignishandler registrieren. Dies wird normalerweise eingerichtet, wenn Sie den Geofence-Bereich erstellen.
 
@@ -250,7 +250,7 @@ private void Initialize()
 
 ```
 
-### <a name="step-2-implement-the-geofence-event-handler"></a>Schritt 2: Implementieren des Geofence-Ereignishandlers
+### <a name="step-2-implement-the-geofence-event-handler"></a>Schritt 2: Implementieren Sie die Geofence-Ereignishandler
 
 Der nächste Schritt ist die Implementierung der Ereignishandler. Die hier durchzuführende Aktion hängt davon ab, zu welchem Zweck Ihre App den Geofence-Bereich verwendet.
 
@@ -308,12 +308,12 @@ Nachdem Ihre Geofence-Bereiche erstellt wurden, müssen Sie die Logik für das E
 So lauschen Sie auf ein Geofence-Ereignis im Hintergrund
 
 -   Deklarieren der Hintergrundaufgabe im App-Manifest
--   Registrieren der Hintergrundaufgabe in Ihrer App Wenn Ihre App Internetzugriff benötigt, z.B. um auf einen Cloud-Dienst zuzugreifen, können Sie dafür ein Kennzeichen festlegen, wenn das Ereignis ausgelöst wird. Sie können mithilfe eines Kennzeichens auch sicherstellen, dass der Benutzer anwesend ist, wenn das Ereignis ausgelöst wird. So können Sie sicher sein, dass der Benutzer die Benachrichtigung erhält.
+-   Registrieren der Hintergrundaufgabe in Ihrer App Wenn Ihre App Internetzugriff benötigt, z. B. um auf einen Cloud-Dienst zuzugreifen, können Sie dafür ein Kennzeichen festlegen, wenn das Ereignis ausgelöst wird. Sie können mithilfe eines Kennzeichens auch sicherstellen, dass der Benutzer anwesend ist, wenn das Ereignis ausgelöst wird. So können Sie sicher sein, dass der Benutzer die Benachrichtigung erhält.
 -   Fordern Sie den Benutzer bei im Vordergrund ausgeführter App auf, der App Positionsberechtigungen zu gewähren.
 
-### <a name="step-1-register-for-geofence-state-change-events"></a>Schritt 1: Durchführen der Registrierung für Ereignisse zur Änderung des Geofence-Zustands
+### <a name="step-1-register-for-geofence-state-change-events"></a>Schritt 1: Registrieren Sie für Statusänderungsereignisse geofence
 
-Fügen Sie im App-Manifest auf der Registerkarte **Deklarationen** eine Deklaration für eine Hintergrundaufgabe zum Standort hinzu. Gehen Sie wie folgt vor:
+Fügen Sie im App-Manifest auf der Registerkarte **Deklarationen** eine Deklaration für eine Hintergrundaufgabe zur Position hinzu. Gehen Sie dazu wie folgt vor:
 
 -   Fügen Sie eine Deklaration vom Typ **Hintergrundaufgaben** hinzu.
 -   Legen Sie den Eigenschaftenaufgabentyp **Standort** fest.
@@ -321,7 +321,7 @@ Fügen Sie im App-Manifest auf der Registerkarte **Deklarationen** eine Deklarat
 
 ### <a name="step-2-register-the-background-task"></a>Schritt 2: Registrieren der Hintergrundaufgabe
 
-Mit dem Code in diesem Schritt wird die Geofencing-Hintergrundaufgabe registriert. Beachten Sie, dass bei der Erstellung des Geofence-Bereichs eine Überprüfung auf Positionsberechtigungen durchgeführt wurde.
+Mit dem in diesem Schritt angegebenen Code wird die Geofencing-Hintergrundaufgabe registriert. Beachten Sie, dass bei der Erstellung des Geofence-Bereichs eine Überprüfung auf Positionsberechtigungen durchgeführt wurde.
 
 ```csharp
 async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
@@ -371,9 +371,9 @@ async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
 
 ```
 
-### <a name="step-3-handling-the-background-notification"></a>Schritt 3: Behandeln der Hintergrundbenachrichtigung
+### <a name="step-3-handling-the-background-notification"></a>Schritt 3: Behandeln der Hintergrund-Benachrichtigung
 
-Die Aktion, die Sie zum Benachrichtigen der Benutzer durchführen, richtet sich nach dem Verwendungszweck der App. Sie können aber z.B. eine Popupbenachrichtigung anzeigen, einen Ton wiedergeben oder eine Live-Kachel aktualisieren. Der Code in diesem Schritt dient zum Behandeln der Benachrichtigung.
+Die Aktion, die Sie zum Benachrichtigen der Benutzer durchführen, richtet sich nach dem Verwendungszweck der App. Sie können aber z. B. eine Popupbenachrichtigung anzeigen, Audiosound wiedergeben oder eine Live-Kachel aktualisieren. Der Code in diesem Schritt dient zum Behandeln der Benachrichtigung.
 
 ```csharp
 async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTaskCompletedEventArgs e)
@@ -444,15 +444,15 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Das Testen und Debuggen von Geofencing-Apps kann eine Herausforderung sein, da diese Apps von der Position des Geräts abhängig sind. Im Folgenden stellen wir verschiedene Methoden zum Testen von im Vordergrund und im Hintergrund ausgeführten Geofencing-Apps vor.
 
-**So debuggen Sie eine Geofencing-App**
+**Debuggen eine app mit geofencing**
 
 1.  Bewegen Sie das Gerät physisch an eine neue Position.
 2.  Sie können das Betreten eines Geofences testen, indem Sie eine Geofence-Region erstellen, die Ihre aktuelle Position enthält. Auf diese Weise befinden Sie sich bereits innerhalb des Geofences, und das Ereignis „Geofence betreten“ wird sofort ausgelöst.
-3.  Verwenden Sie den MicrosoftVisual Studio-Emulator, um Positionen für das Gerät zu simulieren.
+3.  Verwenden Sie den Microsoft Visual Studio-Emulator, um Positionen für das Gerät zu simulieren.
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-foreground"></a>Testen und Debuggen einer im Vordergrund ausgeführten Geofencing-App
 
-**So testen Sie eine im Vordergrund ausgeführte Geofencing-App**
+**Zum Testen Ihrer app Geofencing wird, im Vordergrund ausgeführt**
 
 1.  Erstellen Sie Ihre App in Visual Studio.
 2.  Starten Sie Ihre App im Visual Studio-Emulator.
@@ -461,7 +461,7 @@ Das Testen und Debuggen von Geofencing-Apps kann eine Herausforderung sein, da d
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-background"></a>Testen und Debuggen einer im Hintergrund ausgeführten Geofencing-App
 
-**So testen Sie eine im Hintergrund ausgeführte Geofencing-App**
+**Zum Testen Ihrer app Geofencing wird, Hintergrund ausgeführt**
 
 1.  Erstellen Sie Ihre App in Visual Studio. Beachten Sie, dass Ihre App den Hintergrundaufgabentyp **Position** festlegen muss.
 2.  Stellen Sie die App zunächst lokal bereit.
@@ -475,12 +475,12 @@ Das Testen und Debuggen von Geofencing-Apps kann eine Herausforderung sein, da d
 
 Bevor Ihre App auf Positionsdaten zugreifen kann, muss **Position** auf dem Gerät aktiviert sein. Vergewissern Sie sich in der **Einstellungs**-App, dass die folgenden **Datenschutzeinstellungen für den Standort** aktiviert sind:
 
--   **Position dieses Geräts...** ist **aktiviert (gilt nicht für Windows 10 Mobile)**
+-   **Speicherort für dieses Gerät...**  standardablaufverfolung **auf** (gilt nicht in Windows 10 Mobile)
 -   Die Einstellung **Position** der Positionsdienste ist **aktiviert**.
 -   Ihre App hat unter **Wählen Sie Apps aus, die Ihre Position verwenden dürfen** die Einstellung **Ein**.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [UWP-Geolocation-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=533278)
-* [Entwurfsrichtlinien für Geofencing](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Entwurfsrichtlinien für Apps mit Positionsbestimmung](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Entwurfsrichtlinien für geofencing](https://msdn.microsoft.com/library/windows/apps/dn631756)
+* [Entwurfsrichtlinien für apps mit Standortbestimmung](https://msdn.microsoft.com/library/windows/apps/hh465148)

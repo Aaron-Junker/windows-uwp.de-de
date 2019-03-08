@@ -1,17 +1,17 @@
 ---
 ms.assetid: 3a3ea86e-fa47-46ee-9e2e-f59644c0d1db
 description: Dieser Artikel beschreibt, wie Sie Arbeitsspeicher reduzieren, wenn Ihre App in den Hintergrund verschoben wird.
-title: Reduzieren der Speicherverwendung bei Verschieben der App in den Hintergrundzustand
+title: Reduzieren Sie die Speicherverwendung, wenn Ihre App in den Hintergrundzustand verschoben wird
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 28c21b3d3b3e53def2181e96a58b53998ee0f04a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046603"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660725"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>Geben Sie Speicher frei, wenn Ihre App in den Hintergrund verschoben wird
 
@@ -19,7 +19,7 @@ Dieser Artikel beschreibt, wie Sie die Größe des Speichers reduzieren, den Ihr
 
 ## <a name="new-background-events"></a>Neue Hintergrund-Ereignisse
 
-Windows 10, Version 1607, führt zwei neue App-Lebenszyklusereignisse, [ **EnteredBackground** ](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) und [ **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground), ein. Diese Ereignisse ermöglichen Ihrer App zu wissen, wann sie in den Hintergrund verschoben wird bzw. diesen verlässt.
+Windows 10, Version 1607, führt zwei neue App-Lebenszyklusereignisse, [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) und [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground), ein. Diese Ereignisse ermöglichen Ihrer App zu wissen, wann sie in den Hintergrund verschoben wird bzw. diesen verlässt.
 
 Wenn Ihre App in den Hintergrund verschoben wird, können sich die vom System erzwungen Speicherbeschränkungen ändern. Verwenden Sie diese Ereignisse, um den aktuellen Speicherverbrauch zu prüfen und Ressourcen freizugeben, um unterhalb des Grenzwerts zu bleiben, so dass Ihre App nicht angehalten und möglicherweise beendet wird, während sie sich im Hintergrund befindet.
 
@@ -61,7 +61,7 @@ Es ist möglich, dass zwar der Speicherbedarf Ihrer App aktuell unter dem Speich
 
 [!code-cs[MemoryUsageIncreased](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageIncreased)]
 
-Sie können die Hilfsmethode **ReduceMemoryUsage** implementieren, um Arbeitsspeicher freizugeben, wenn die App den Auslastungsgrenzwert für Hintergrund-Apps überschreitet. Die Vorgehensweise bei der Freigabe von Arbeitsspeicher hängt von den Spezifikationen Ihrer App ab. Eine empfohlene Methode besteht darin, die Benutzeroberfläche und andere mit der App-Ansicht zusammenhängende Ressourcen freizugeben. Dazu stellen Sie sicher, dass Sie die App im Hintergrund ausführen; setzen Sie dann die [ **Content** ](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content)-Eigenschaft des App-Fensters auf `null`, heben Sie die Registrierung der UI-Ereignishandler auf und entfernen Sie alle anderen Verweise, die Sie möglicherweise auf der Seite haben. Wenn Sie die Registrierung Ihrer UI-Ereignishandler nicht aufheben und andere Referenzen auf der Seite nicht löschen, kann die Seitenressource nicht freigegeben werden. Rufen Sie dann **GC.Collect** auf, um den freigegebenen Speicherplatz sofort freizugeben. In der Regel ist es nicht erforderlich, eine Garbage Collection zu erzwingen, da das System dies erledigt. In diesem speziellen Fall reduzieren wir die Menge an Arbeitsspeicher, die dieser Anwendung zugewiesen wird, wenn sie in den Hintergrund verschoben wird. So wird die Wahrscheinlichkeit verringert, dass das System bestimmt, dass die App beendet werden muss, um Arbeitsspeicher freizugeben.
+Sie können die Hilfsmethode **ReduceMemoryUsage** implementieren, um Arbeitsspeicher freizugeben, wenn die App den Auslastungsgrenzwert für Hintergrund-Apps überschreitet. Die Vorgehensweise bei der Freigabe von Arbeitsspeicher hängt von den Spezifikationen Ihrer App ab. Eine empfohlene Methode besteht darin, die Benutzeroberfläche und andere mit der App-Ansicht zusammenhängende Ressourcen freizugeben. Dazu stellen Sie sicher, dass Sie die App im Hintergrund ausführen; setzen Sie dann die [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content)-Eigenschaft des App-Fensters auf `null`, heben Sie die Registrierung der UI-Ereignishandler auf und entfernen Sie alle anderen Verweise, die Sie möglicherweise auf der Seite haben. Wenn Sie die Registrierung Ihrer UI-Ereignishandler nicht aufheben und andere Referenzen auf der Seite nicht löschen, kann die Seitenressource nicht freigegeben werden. Rufen Sie dann **GC.Collect** auf, um den freigegebenen Speicherplatz sofort freizugeben. In der Regel ist es nicht erforderlich, eine Garbage Collection zu erzwingen, da das System dies erledigt. In diesem speziellen Fall reduzieren wir die Menge an Arbeitsspeicher, die dieser Anwendung zugewiesen wird, wenn sie in den Hintergrund verschoben wird. So wird die Wahrscheinlichkeit verringert, dass das System bestimmt, dass die App beendet werden muss, um Arbeitsspeicher freizugeben.
 
 [!code-cs[UnloadViewContent](./code/ReduceMemory/cs/App.xaml.cs#SnippetUnloadViewContent)]
 
@@ -91,8 +91,8 @@ Wenn eine App vom Vordergrund in den Hintergrund wechselt, erhält sie zuerst ei
 - **Verwenden** Sie das **EnteredBackground**-Ereignis, um UI-Ressourcen freizugeben, von denen Sie wissen, dass Ihre App sie im Hintergrund nicht benötigt. Beispielsweise könnten Sie das Cover-Bild für einen Song freigeben.
 - **Verwenden** Sie das **AppMemoryUsageLimitChanging**-Ereignis, um sicherzustellen, dass Ihre App weniger Speicher verbraucht als der neue Hintergrundgrenzwert vorgibt. Achten Sie darauf, Ressourcen freizugeben, wenn dies nicht der Fall ist. Wenn Sie dies nicht tun, kann Ihre App je nach der gerätespezifischen Richtlinie angehalten oder beendet werden.
 - **Rufen** Sie manuell den Garbage Collector auf, wenn Ihre App die neue Speichergrenze überschreitet, wenn das **AppMemoryUsageLimitChanging**-Ereignis auslöst.
-- **Verwenden** Sie das **AppMemoryUsageIncreased**-Ereignis für die weitere Überwachung der Speichernutzung Ihrer App im Hintergrund, wenn Sie erwarten, dass diese sich ändert. Wenn die **AppMemoryUsageLevel** **High** oder **OverLimit** ist, geben Sie Ressourcen frei.
-- **Geben Sie eventuell** UI-Ressourcen im **AppMemoryUsageLimitChanging**-Ereignishandler anstelle des **EnteredBackground**-Handlers frei, um die Leistung zu erhöhen. Verwenden Sie einen booleschen Wert in den Ereignishandlern **EnteredBackground/LeavingBackground**, um zu verfolgen, ob sich die App im Vordergrund oder im Hintergrund befindet. Wenn dann im Eventhandler **AppMemoryUsageLimitChanging** **AppMemoryUsage** den Grenzwert überschreitet und sich die App im Hintergrund befindet (nach dem booleschen Wert), können Sie UI-Ressourcen freigeben.
+- **Verwenden** Sie das **AppMemoryUsageIncreased**-Ereignis für die weitere Überwachung der Speichernutzung Ihrer App im Hintergrund, wenn Sie erwarten, dass diese sich ändert. Wenn die **AppMemoryUsageLevel****High** oder **OverLimit** ist, geben Sie Ressourcen frei.
+- **Geben Sie eventuell** UI-Ressourcen im **AppMemoryUsageLimitChanging**-Ereignishandler anstelle des **EnteredBackground**-Handlers frei, um die Leistung zu erhöhen. Verwenden Sie einen booleschen Wert in den Ereignishandlern **EnteredBackground/LeavingBackground**, um zu verfolgen, ob sich die App im Vordergrund oder im Hintergrund befindet. Wenn dann im Eventhandler **AppMemoryUsageLimitChanging****AppMemoryUsage** den Grenzwert überschreitet und sich die App im Hintergrund befindet (nach dem booleschen Wert), können Sie UI-Ressourcen freigeben.
 - **Führen Sie keine** Langzeitaufgaben im **EnteredBackground**-Ereignis durch, da dies dazu führen kann, dass der Übergang zwischen Anwendungen für die Benutzer langsam vor sich geht.
 
 ### <a name="moving-from-the-background-to-the-foreground"></a>Verschieben vom Hintergrund in den Vordergrund

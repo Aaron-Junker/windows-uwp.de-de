@@ -1,17 +1,17 @@
 ---
 title: Aktivierung des Xbox One-Entwicklermodus
-description: Dieser Artikel beschreibt das Aktivieren des Entwicklermodus, sodass Sie zwischen Retailmodus und Entwicklermodus wechseln können.
+description: Dieser Artikel beschreibt das Aktivieren des Entwicklermodus, sodass Sie zwischen Einzelhandelsmodus und Entwicklermodus wechseln können.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
 ms.openlocfilehash: 3664ecae152b7178709bffc373a877e58a86461a
-ms.sourcegitcommit: eaee5a45d5eace64c69e67691e5330b466cc74c2
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083260"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590535"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Aktivierung des Xbox One-Entwicklermodus
 
@@ -38,13 +38,13 @@ Der Entwicklermodus kann auf jeder Xbox One-Konsole aktiviert werden. Nach dem A
 
     ![Aktivierungsschritt 5](images/activation-step-5.png)  
     
-5.  [Ein app-Entwickler-Konto im Partner Center registrieren](https://developer.microsoft.com/store/register).  Dies ist auch der erste Schritt beim Veröffentlichen Ihres Spiels.
+5.  [Registrieren Sie ein app-Entwickler-Konto im Partner Center](https://developer.microsoft.com/store/register).  Dies ist auch der erste Schritt beim Veröffentlichen Ihres Spiels.
 
-6.  Melden Sie sich beim [Partner Center](https://partner.microsoft.com/dashboard) mit Ihrem gültig, aktuellen Partner Center-app-Entwicklerkonto an.  Wenn Sie nicht mehrere Optionen im linken Navigationsbereich angezeigt oder nicht finden Sie unter der Option **eine neue app erstellen** , in **der Übersicht auf, die folgenden Schritte und Aktivierung Links _funktioniert nicht_** . Stellen Sie sicher, dass Sie Ihr Entwicklerkonto app aus dem vorherigen Schritt vollständig registriert.
+6.  Melden Sie sich beim [Partner Center](https://partner.microsoft.com/dashboard) mit dem gültige und aktuelle Partner Center-app-Entwicklerkonto.  Wenn Sie nicht mehrere Optionen im linken Navigationsbereich angezeigt oder wird nicht angezeigt der **Erstellen einer neuen app** option die **Übersicht über die** Abschnitt, die folgenden Schritte und die Aktivierungslinks _funktioniert nicht_ ; stellen Sie sicher, dass Sie vollständig app-Entwicklerkonto aus dem vorherigen Schritt registriert.
 
 7.  Wechseln Sie zu [partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices).
 
-8.  Geben Sie den in der DevMode Aktivierungs-App angezeigten Aktivierungscode ein. Ihrem Konto ist eine begrenzte Anzahl von Aktivierungen zugewiesen. Nach dem Aktivieren des Entwicklermodus aktiviert wurde, wird die Partner Center angegeben, dass Sie eine der mit Ihrem Konto verknüpften Aktivierungen verwendet haben.
+8.  Geben Sie den in der DevMode Aktivierungs-App angezeigten Aktivierungscode ein. Ihrem Konto ist eine begrenzte Anzahl von Aktivierungen zugewiesen. Nach der Entwicklermodus aktiviert wurde, gibt die Partner Center, dass Sie eines der Aktivierungen, die Ihrem Konto zugeordnet werden.
 
     ![Aktivierungsschritt 8](images/activation-step-8-rs2.png)    
     
@@ -57,7 +57,7 @@ Der Entwicklermodus kann auf jeder Xbox One-Konsole aktiviert werden. Nach dem A
     ![Aktivierungsschritt 12](images/activation-step-12.png)   
 
 ## <a name="switch-between-retail-and-developer-mode"></a>Wechseln zwischen Einzelhandels- und Entwicklermodus
-Nachdem der Entwicklermodus auf der Konsole aktiviert wurde, können Sie mithilfe von **Dev Home** zwischen Einzelhandelsmodus und Entwicklermodus wechseln. Weitere Informationen zum Starten und Verwenden von Dev Home finden Sie unter [Einführung in Xbox One-Tools](introduction-to-xbox-tools.md).
+Nachdem der Entwicklermodus auf der Konsole aktiviert wurde, können Sie mithilfe von **Dev Home** zwischen Einzelhandelsmodus und Entwicklermodus wechseln. Weitere Informationen zum Starten und Verwenden von Dev Home, finden Sie unter [Einführung in Xbox One-Tools](introduction-to-xbox-tools.md).
 
 * Um in den Einzelhandelsmodus wechseln, öffnen Sie **Dev Home**. Wählen Sie unter **Schnelle Aktionen** die Option **Entwicklermodus verlassen**. Dadurch wird die Konsole im Einzelhandelsmodus neu gestartet.    
 
@@ -67,6 +67,6 @@ Nachdem der Entwicklermodus auf der Konsole aktiviert wurde, können Sie mithilf
 
   ![Aktivierungsschritt 14](images/activation-step-12.png)  
 
-## <a name="see-also"></a>Weitere Informationen
-- [Deaktivierung des Xbox One-Entwicklermodus](devkit-deactivation.md)
-- [UWP auf Xbox One](index.md)
+## <a name="see-also"></a>Siehe auch
+- [Ein Xbox-Entwickler-Modus-Deaktivierung](devkit-deactivation.md)
+- [UWP auf Xbox One](index.md)

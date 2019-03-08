@@ -4,14 +4,14 @@ title: Aufbau von Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 82cb45dae1a4b9b1a9db8fabc044edf8157f1eb1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920444"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646335"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>Erste Schritte: Aufbau von Visual Studio
 
@@ -70,7 +70,7 @@ Visual Studio ist ähnlich aufgebaut. Rechts über den **Eigenschaften** befinde
 
 ![Schaltflächenereignisliste in Visual Studio](images/ios-to-uwp/vs-button-event.png)
 
-Um Code für das Click-Ereignis der Schaltfläche hinzuzufügen, wählen Sie im Bereich **Entwurf** zunächst die Schaltfläche aus. Klicken Sie als Nächstes auf die Schaltfläche mit dem Gewitterblitz, und doppelklicken Sie auf das leere Feld neben **Click**. Visual Studio fügt dann das Ereignis „myButton\_Click“ dem Feld **Click** hinzu. Anschließend wird der entsprechende Ereignishandler zur Datei „MainPage.xaml.cs“ hinzugefügt und angezeigt, wie im Folgenden dargestellt.
+Um Code für das Click-Ereignis der Schaltfläche hinzuzufügen, wählen Sie im Bereich **Entwurf** zunächst die Schaltfläche aus. Klicken Sie als Nächstes auf die Schaltfläche mit dem Gewitterblitz, und doppelklicken Sie auf das leere Feld neben **Click**. Visual Studio fügt dann das Ereignis "MyButton\_klicken Sie auf" auf die **klicken Sie auf** Feld und fügt hinzu, und die entsprechenden Ereignishandler in der Datei "MainPage.Xaml.cs" wie folgt angezeigt.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -98,7 +98,7 @@ In Visual Studio müssen Sie das Steuerelement nicht zuordnen, da dies immer aut
 
 ![Fenster "Bezeichnungseigenschaften" in Visual Studio](images/ios-to-uwp/vs-label-properties.png)
 
-Lassen Sie uns nun dem Click-Ereignis der Schaltfläche Code hinzufügen. Tippen Sie dazu auf die Datei „MainPage.xaml.cs“, und fügen Sie dem myButton\_Click-Ereignishandler den folgenden Code hinzu.
+Lassen Sie uns nun dem Click-Ereignis der Schaltfläche Code hinzufügen. Zu diesem Zweck, tippen Sie auf die Datei "MainPage.Xaml.cs", und fügen Sie den folgenden Code, um die MyButton\_Click-Ereignishandler.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)

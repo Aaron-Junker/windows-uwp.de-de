@@ -7,11 +7,11 @@ keywords: Windows 10, Uwp, Sicherheit
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: a0a16ac9a2d810f7f4cbe2be403713b5cec4997b
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116046"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641025"
 ---
 # <a name="web-account-manager"></a>Web Account Manager
 
@@ -20,7 +20,7 @@ In diesem Artikel wird beschrieben, wie Sie **[AccountsSettingsPane](https://doc
 > [!NOTE]
 > Ein vollständiges Codebeispiel finden Sie im [WebAccountManagement-Beispiel auf GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620621).
 
-## <a name="get-set-up"></a>Vorbereitung
+## <a name="get-set-up"></a>Einrichten
 
 Erstellen Sie zunächst eine neue leere App in Visual Studio. 
 
@@ -76,7 +76,7 @@ Wenn Sie Ihre App ausführen und auf die Anmeldeschaltfläche klicken, sollte ei
 Der Bereich ist leer, weil das System nur eine UI-Shell bereitstellt. Der Entwickler kann den Bereich programmgesteuert mit Identitätsanbietern auffüllen. 
 
 > [!TIP]
-> Optional können Sie **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** anstelle von **[Anzeigen](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** verwenden, die eine **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**, für die Abfrage für den Status des Vorgangs zurückgegeben wird. 
+> Optional können Sie **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** anstelle von  **[anzeigen](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**, wodurch ein  **[ IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**, um den Status des Vorgangs abgefragt. 
 
 ## <a name="register-for-accountcommandsrequested"></a>Registrieren für AccountCommandsRequested
 
@@ -172,13 +172,13 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-In diesem Beispiel wird die Zeichenfolge „wl.basic“ an den Parameter _scope_ übergeben. „scope“ steht für den Typ von Informationen, die Sie vom bereitstellenden Dienst für einen bestimmten Benutzer anfordern. Bestimmte Bereiche ermöglichen nur den Zugriff auf grundlegende Informationen eines Benutzers, z.B. Name und E-Mail-Adresse, während andere Bereiche möglicherweise Zugriff auf vertrauliche Informationen wie die Fotos oder den E-Mail-Posteingang des Benutzers gewähren. Im Allgemeinen sollte Ihre App Berechtigungen in dem Umfang verwenden, der für die Durchführung ihrer Funktion am geringsten erforderlich ist. Dienstanbieter stellen in ihrer Dokumentation Informationen dazu bereit, welche Bereiche erforderlich sind, um die für den betreffenden Dienst zu verwendenden Token anzufordern. 
+In diesem Beispiel wird die Zeichenfolge „wl.basic“ an den Parameter _scope_ übergeben. „scope“ steht für den Typ von Informationen, die Sie vom bereitstellenden Dienst für einen bestimmten Benutzer anfordern. Bestimmte Bereiche ermöglichen nur den Zugriff auf grundlegende Informationen eines Benutzers, z. B. Name und E-Mail-Adresse, während andere Bereiche möglicherweise Zugriff auf vertrauliche Informationen wie die Fotos oder den E-Mail-Posteingang des Benutzers gewähren. Im Allgemeinen sollte Ihre App Berechtigungen in dem Umfang verwenden, der für die Durchführung ihrer Funktion am geringsten erforderlich ist. Dienstanbieter stellen in ihrer Dokumentation Informationen dazu bereit, welche Bereiche erforderlich sind, um die für den betreffenden Dienst zu verwendenden Token anzufordern. 
 
-* Informationen zu Office365- und Outlook.com-Bereichen finden Sie unter [Authentifizieren von Office 365- und Outlook.com-APIs mit dem v2.0-Authentifizierungsendpunkt](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2). 
+* Informationen zu Office 365- und Outlook.com-Bereichen finden Sie unter [Authentifizieren von Office 365- und Outlook.com-APIs mit dem v2.0-Authentifizierungsendpunkt](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2). 
 * Informationen zu OneDrive-Bereichen finden Sie unter [Authentifizierung und Anmeldung bei OneDrive](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
-> Wenn Ihre app Anmeldung Hinweis (für das Benutzerfeld mit der Standard-e-Mail-Adresse zu füllen) oder andere spezielle Eigenschaft, die im Zusammenhang mit der Oberfläche-Anmeldung verwendet, führen Sie sie optional in der **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** -Eigenschaft. Dadurch wird das System an die Eigenschaft ignoriert werden sollen, beim Zwischenspeichern des Web-Kontos, das Konto Unterschiede im Cache verhindert.
+> Optional, wenn Ihre app Anmeldung Hinweis (für das Feld "Benutzer" mit einer Standard-e-Mail-Adresse zu füllen) oder andere spezielle Eigenschaft, die im Zusammenhang mit der anmeldeerfahrung verwendet, führen Sie sie in der **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** Eigenschaft. Dadurch wird das System, um die Eigenschaft zu ignorieren, beim Zwischenspeichern von der Web-Konto, dem, das Konto-Diskrepanzen in den Cache verhindert wird.
 
 Wenn Sie eine Unternehmens-App entwickeln, möchten Sie wahrscheinlich eine Verbindung mit einer Azure Active Directory (AAD)-Instanz herstellen und die Microsoft Graph-API anstelle regulärer MSA-Dienste verwenden. Verwenden Sie in diesem Szenario stattdessen folgenden Code: 
 
@@ -338,7 +338,7 @@ Da der Tokenabruf im Hintergrund sehr einfach ist, sollten Sie diese Methode ver
 
 ## <a name="remove-a-stored-account"></a>Entfernen eines gespeicherten Kontos
 
-Wenn Sie ein Webkonto beibehalten, sollten Sie Benutzern die Möglichkeit geben, ihr Konto von Ihrer App zu trennen. Auf diese Weise sie können effektiv "Abmelden" der app: ihre Kontoinformationen werden nach dem Start nicht mehr automatisch geladen. Entfernen Sie dafür zuerst alle gespeicherten Konto- und Anbieterinformationen aus dem Speicher. Rufen Sie dann **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** auf, um den Cache zu löschen und vorhandene App-Tokens für ungültig zu erklären. 
+Wenn Sie ein Webkonto beibehalten, sollten Sie Benutzern die Möglichkeit geben, ihr Konto von Ihrer App zu trennen. Auf diese Weise diese können effektiv "Abmelden" der app: ihre Kontoinformationen werden nicht mehr automatisch beim Start geladen werden. Entfernen Sie dafür zuerst alle gespeicherten Konto- und Anbieterinformationen aus dem Speicher. Rufen Sie dann **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** auf, um den Cache zu löschen und vorhandene App-Tokens für ungültig zu erklären. 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -422,14 +422,14 @@ Einstellungsbefehle lassen sich grundsätzlich überall verwenden. Es wird jedoc
 
 ## <a name="see-also"></a>Siehe auch
 
-[Windows.Security.Authentication.Web.Core-Namespace](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.aspx)
+[Windows.Security.Authentication.Web.Core-namespace](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.aspx)
 
-[Windows.Security.Credentials-Namespace](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.aspx)
+[Windows.Security.Credentials-namespace](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.aspx)
 
 [AccountsSettingsPane-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.accountssettingspane)
 
-[Webauthentifizierungsbroker](web-authentication-broker.md)
+[Web Authentication broker](web-authentication-broker.md)
 
-[Beispiel für die Webkontoverwaltung](https://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Beispiel für Web-Konto-Verwaltung](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 
-[Lunch Scheduler-App](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
+[Mittagessen Aufgabenplanungs-app](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

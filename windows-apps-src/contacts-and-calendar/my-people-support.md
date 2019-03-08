@@ -3,32 +3,32 @@ title: Support für Meine Kontakte zu einer Anwendung hinzufügen
 description: Erläutert, wie Sie einer Anwendung Support für „Meine Kontakte” hinzufügen, und wie Sie Kontakte auf der Startseite anheften und entfernen
 ms.date: 06/28/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044444"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611535"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Support für Meine Kontakte zu einer Anwendung hinzufügen
 
-Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakten an die Taskleiste, um neue Kontaktobjekt zu erstellen, die auf unterschiedliche Weise miteinander interagieren können. In diesem Artikel wird gezeigt, wie Sie Support für dieses Feature hinzufügen können, damit Benutzer Kontakte direkt in der App anheften können. Wenn Kontakte angeheftet sind, werden neue Arten an Benutzerinteraktionen verfügbar, z.B. [Meine Kontakte freigeben](my-people-sharing.md) und [Benachrichtigungen ](my-people-notifications.md).
+Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakten an die Taskleiste, um neue Kontaktobjekt zu erstellen, die auf unterschiedliche Weise miteinander interagieren können. In diesem Artikel wird gezeigt, wie Sie Support für dieses Feature hinzufügen können, damit Benutzer Kontakte direkt in der App anheften können. Wenn Kontakte angeheftet sind, werden neue Arten an Benutzerinteraktionen verfügbar, z. B. [Meine Kontakte freigeben](my-people-sharing.md) und [Benachrichtigungen ](my-people-notifications.md).
 
 ![Chat für Meine Kontakte](images/my-people-chat.png)
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows10 und Microsoft Visual Studio2017 Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 und Microsoft Visual Studio 2017 Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Sie sollten über Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache verfügen. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Übersicht
 
 Es gibt drei Dinge, die durchgeführt werden müssen, damit die Anwendung das Feature„ Meine Kontakte” verwenden kann:
 
-1. [Unterstützung für den „ShareTarget”-Aktivierungsvertrag im Anwendungsmanifest bekannt geben.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Versehen Sie die Kontakte, die der Benutzer auf Ihre freigeben kann mit Kommentaren.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Unterstützung für die "sharetarget" aktivierungskontrakt im Anwendungsmanifest deklariert werden.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Kommentieren Sie die Kontakte, die die Benutzer freigeben können, um Ihre App ein.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  Unterstützen Sie mehrere Instanzen Ihrer Anwendung, die zur gleichen Zeit ausgeführt werden. Benutzer müssen mit einer vollständigen Version Ihrer Anwendung interagieren, während Sie diese im Kontaktbereich verwenden.  Sie können diese sogar in mehreren Kontaktlisten gleichzeitig verwenden.  Um dies zu unterstützen, muss Ihre Anwendung mehrere Ansichten gleichzeitig ausführen können. Weitere Informationen hierzu finden Sie im Artikel ["Anzeigen mehrerer Ansichten für eine App"](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
 
 Wenn Sie dies getan haben, wird die Anwendung in der Kontaktliste für Kontakte mit Kommentaren angezeigt.
@@ -37,7 +37,7 @@ Wenn Sie dies getan haben, wird die Anwendung in der Kontaktliste für Kontakte 
 
 Um Unterstützung für den Vertrag „Meine Kontakte” zu deklarieren, öffnen Sie die Anwendung in Visual Studio. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei **Package.appxmanifest** und wählen Sie **Öffnen mit** aus. Wählen Sie aus dem Menü anschließend **XML (Text)-Editor**, und klicken Sie auf **OK**. Nehmen Sie danach folgenden Änderungen am Manifest vor.
 
-**Vorher**
+**Vor dem**
 
 ```xml
 <Package
@@ -53,7 +53,7 @@ Um Unterstützung für den Vertrag „Meine Kontakte” zu deklarieren, öffnen 
 
 ```
 
-**Nachher**
+**After**
 
 ```xml
 <Package
@@ -101,13 +101,13 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-Die “appId” ist der Paketfamilienname, gefolgt von ‘!’ und einer aktivierbaren Klassen-ID. Um Ihren Paketfamilienname zu suchen, öffnen Sie **Package.appxmanifest** mithilfe des Standard-Editors, und suchen Sie den Namen auf der Registerkarte "Verpacken". Hier entspricht "App" der aktivierbaren Klassen der Anwendungsstart-Ansicht.
+Die “appId” ist der Paketfamilienname, gefolgt von ‘!’ und einer aktivierbaren Klassen-ID. Um den Paketfamiliennamen zu such, öffnen Sie **Package.appxmanifest** mithilfe des Standard-Editors und suchen Sie auf der Registerkarte "Verpacken". Hier ist "App" die aktivierbare Klasse, die der Anwendungsstart-Ansicht entspricht.
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>Kontakten die Einladung von neuen potenziellen Benutzern ermöglichen
 
-Standardmäßig wird die Anwendung nur für Kontakte in der Kontaktliste angezeigt, die Sie speziell kommentiert haben.  Dies vermeidet eine Verwechslungen mit Kontakten, die nicht mit Ihnen durch die App interagiert können.  Wenn Sie möchten, dass Ihre Anwendung für Kontakte angezeigt wird, deren Ihre Anwendung nicht bekannt ist (z.B. um Benutzer dazu aufzufordern, ihrem Konto Kontakte hinzuzufügen), können Sie Ihrem Manifest Folgendes hinzufügen:
+Standardmäßig wird die Anwendung nur für Kontakte in der Kontaktliste angezeigt, die Sie speziell kommentiert haben.  Dies vermeidet eine Verwechslungen mit Kontakten, die nicht mit Ihnen durch die App interagiert können.  Wenn Sie möchten, dass Ihre Anwendung für Kontakte angezeigt wird, deren Ihre Anwendung nicht bekannt ist (z. B. um Benutzer dazu aufzufordern, ihrem Konto Kontakte hinzuzufügen), können Sie Ihrem Manifest Folgendes hinzufügen:
 
-**Vorher**
+**Vor dem**
 
 ```Csharp
 <Applications>
@@ -121,7 +121,7 @@ Standardmäßig wird die Anwendung nur für Kontakte in der Kontaktliste angezei
 </Applications>
 ```
 
-**Nachher**
+**After**
 
 ```Csharp
 <Applications>
@@ -172,7 +172,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 Wenn Ihre Anwendung mit diesem Vertrag aktiviert ist, erhält sie ein [ContactPanelActivatedEventArgs-Objekt](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  Dieses enthält die ID des Kontakts, mit dem Ihre Anwendung zu interagieren versucht und ein [ContactPanel](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactpanel)-Objekt. Sie sollten einen Verweis auf dieses ContactPanel-Objekt beibehalten, der die Interaktion mit der Liste ermöglicht.
 
 Das ContactPanel-Objekt verfügt über zwei Ereignisse, auf die Ihre Anwendung hören soll:
-+ Das **LaunchFullAppRequested**-Ereignis wird gesendet, wenn der Benutzer das Element der Benutzeroberfläche aufgerufen hat, das anfordert, dass die vollständige Anwendung in einem eigenen Fenster gestartet wird.  Ihre Anwendung ist für ihren Start verantwortlich und übergibt dabei alle erforderlichen Kontexte.  Sie können nach Ihren eigenen Wünschen durchführen (z.B. per Protokollstart).
++ Das **LaunchFullAppRequested**-Ereignis wird gesendet, wenn der Benutzer das Element der Benutzeroberfläche aufgerufen hat, das anfordert, dass die vollständige Anwendung in einem eigenen Fenster gestartet wird.  Ihre Anwendung ist für ihren Start verantwortlich und übergibt dabei alle erforderlichen Kontexte.  Sie können nach Ihren eigenen Wünschen durchführen (z. B. per Protokollstart).
 + Die **Closing-Ereignis** wird gesendet, wenn Ihre Anwendung im Begriff ist, beendet zu werden, sodass Sie den Kontext speichern können.
 
 Mit dem ContactPanel-Objekt können Sie ebenfalls die Hintergrundfarbe des Headers der Kontaktliste festlegen (wenn er nicht festgelegt ist, wird das Systemdesign standardmäßig verwendet) und die Kontaktliste programmgesteuert schließen.
@@ -185,11 +185,11 @@ Wenn Sie möchten, dass auf der Taskleiste angeheftete Kontakte ein Signal erhal
 
 Um einen Kontakt zu benachrichtigen, muss der Knoten der obersten Ebene Popups hint-people-Parameter enthalten, um den Absender-Kontakt oder andere Kontakte anzugeben. Dieser Parameter kann folgende Werte haben:
 + **E-Mail-Adresse** 
-    + z.B. mailto:johndoe@mydomain.com
+    + z. B. mailto:johndoe@mydomain.com
 + **Telefonnummer** 
-    + z.B. Tel:888-888-8888
+    + z. B. Tel:888-888-8888
 + **Remote-ID** 
-    + z.B. remoteid:1234
+    + z. B. remoteid:1234
 
 Hier ist ein Beispiel, wie Sie eine Popupbenachrichtigung für eine bestimmte Person identifizieren:
 ```XML
@@ -248,11 +248,11 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **Hinweis:** 
 
-## <a name="see-also"></a>Weitere Informationen:
-+ [„Meine Kontakte” freigeben](my-people-sharing.md)
-+ [Meine Kontakte – Benachrichtigungen](my-people-notifications.md)
-+ [Channel 9-Video zum Hinzufügen von „Meine Kontakte” zu einer Anwendung](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [Beispiel zur „Meine Kontakte”-Integration](https://aka.ms/mypeoplebuild2017)
-+ [Beispiel für Visitenkarten](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
+## <a name="see-also"></a>Siehe auch
++ [Meine Freigabe Personen](my-people-sharing.md)
++ [Meine Benachrichtigungen Personen](my-people-notifications.md)
++ [Channel 9-Video zum Hinzufügen, dass meine Benutzer zu einer Anwendung zu unterstützen.](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [Meine Benutzer-integrationsbeispiel](https://aka.ms/mypeoplebuild2017)
++ [Wenden Sie sich an kartenbeispiels](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [Dokumentation zur PinnedContactManager-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [Verbinden der App mit Aktionen auf einer Visitenkarte](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [Verbinden Sie Ihrer app mit Aktionen für eine Visitenkarte](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

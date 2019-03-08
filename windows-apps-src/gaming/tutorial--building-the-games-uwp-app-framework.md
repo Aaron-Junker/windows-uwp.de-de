@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Spiele, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 175009773f7969adbaf36a036e733443f593467f
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117770"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620555"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Definieren des UWP-App-Frameworks
 
@@ -22,11 +22,11 @@ Sie müssen zuerst einen Ansichtsanbieter abrufen, mit dem das App-Singleton (al
 Das Ansichtsanbieterobjekt implementiert die __IFrameworkView__-Schnittstelle, die aus einer Reihe von Methoden besteht, die zum Erstellen dieses Spielbeispiels konfiguriert werden müssen.
 
 Sie müssen diese fünf Methoden implementieren, die vom App-Singleton aufgerufen werden:
-* [__Initialize__](#initialize-the-view-provider)
+* [__Initialisieren__](#initialize-the-view-provider)
 * [__SetWindow__](#configure-the-window-and-display-behaviors)
 * [__Load__](#load-method-of-the-view-provider)
 * [__Run__](#run-method-of-the-view-provider)
-* [__Uninitialize__](#uninitialize-method-of-the-view-provider)
+* [__Die Initialisierung aufheben__](#uninitialize-method-of-the-view-provider)
 
 Die __Initialize__-Methode wird beim Starten der App aufgerufen. Die __SetWindow__-Methode wird nach __Initialize__ aufgerufen. Es wird dann __Load__ aufgerufen. Wenn das Spiel fortgesetzt wird, wird die __Run__-Methode aufgerufen. Wenn das Spiel beendet wird, wird die __Uninitialize__-Methode aufgerufen. Weitere Informationen finden Sie unter [__IFrameworkView__ API-Referenz](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview). 
 
@@ -41,7 +41,7 @@ Richten Sie das Framework für ein UWP-DirectX-Spiel ein und implementieren den 
 
 Sehen wir uns die __wichtigsten__ Schleifen in __App.cpp__ an. 
 
-In diesem Schritterstellen wir eine Factory für die Ansicht (implementiert __IFrameworkViewSource__), wodurch wiederum Instanzen des Ansichtsanbieterobjekts erstellt werden (implementiert __IFrameworkView__), das die Ansicht definiert.
+In diesem Schritt erstellen wir eine Factory für die Ansicht (implementiert __IFrameworkViewSource__), wodurch wiederum Instanzen des Ansichtsanbieterobjekts erstellt werden (implementiert __IFrameworkView__), das die Ansicht definiert.
 
 ### <a name="main-method"></a>Main-Methode
 
@@ -186,12 +186,12 @@ void App::Load(
 
 ### <a name="gamemain-constructor"></a>GameMain-Konstruktor
 
-* Erstellen und initialisieren Sie den Spielrenderer. Weitere Informationen finden Sie unter [Rendering-Framework I: Einführung in das Rendering](tutorial--assembling-the-rendering-pipeline.md).
+* Erstellen und initialisieren Sie den Spielrenderer. Weitere Informationen finden Sie unter [Rendering-Framework I: Einführung in Rendering](tutorial--assembling-the-rendering-pipeline.md).
 * Erstellen Sie die Initialisierung des Simple3Dgame-Objekts. Weitere Informationen finden Sie unter [Definieren des Hauptobjekts für das Spiel](tutorial--defining-the-main-game-loop.md).    
 * Erstellen Sie das UI-Steuerelement und die Überlagerung von Spieledaten zum Anzeigen einer Statusleiste, während die Ressourcendateien geladen werden. Weitere Informationen finden Sie unter [Hinzufügen einer Benutzeroberfläche](tutorial--adding-a-user-interface.md).
 * Erstellen Sie den Controller, damit er die Eingaben des Controllers (Fingereingabe, Maus oder Xbox-Controller) lesen kann. Weitere Informationen finden Sie unter [Hinzufügen von Steuerelementen](tutorial--adding-controls.md).
 * Nach dem Initialisieren des Controllers definieren wir zwei rechteckige Bereiche in den Ecken unten links und unten rechts auf dem Bildschirm für die Bewegungs- bzw. Kamerasteuerungen. Der Spieler verwendet das durch den Aufruf von **SetMoveRect** definierte Rechteck links unten als virtuelles Bedienfeld, um die Kamera vor und zurück sowie seitlich zu bewegen. Das durch die **SetFireRect**-Methode definierte Rechteck rechts unten wird als virtuelle Taste zum Abfeuern der Munition verwendet.
-* Verwenden Sie __create_task__ und __create_task::then__, um das Laden von Ressourcen in zwei getrennte Phasen zu unterteilen. Da der Zugriff auf den Direct3D11-Gerätekontext auf den Thread beschränkt ist, auf dem der Gerätekontext beim Zugriff auf das Direct3D11-Gerät erstellt wurde und die Erstellung des Objekts den Threadbeschränkungen unterliegt, bedeutet dies, dass die **CreateGameDeviceResourcesAsync**-Aufgabe in einem separaten Thread ausgeführt werden kann, von der Aufgabe zur Vervollständigung (*FinalizeCreateGameDeviceResources*), die im Originalthread ausgeführt wird. Wir verwenden ein ähnliches Muster zum Laden von Levelressourcen mit **LoadLevelAsync** und **FinalizeLoadLevel**.
+* Verwenden Sie __create_task__ und __create_task::then__, um das Laden von Ressourcen in zwei getrennte Phasen zu unterteilen. Da der Zugriff auf den Direct3D 11-Gerätekontext auf den Thread beschränkt ist, auf dem der Gerätekontext beim Zugriff auf das Direct3D 11-Gerät erstellt wurde und die Erstellung des Objekts den Threadbeschränkungen unterliegt, bedeutet dies, dass die **CreateGameDeviceResourcesAsync**-Aufgabe in einem separaten Thread ausgeführt werden kann, von der Aufgabe zur Vervollständigung (*FinalizeCreateGameDeviceResources*), die im Originalthread ausgeführt wird. Wir verwenden ein ähnliches Muster zum Laden von Levelressourcen mit **LoadLevelAsync** und **FinalizeLoadLevel**.
 
 ```cpp
 GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) :
@@ -298,19 +298,19 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="run-method-of-the-view-provider"></a>Die Run-Methode des Ansichtsanbieters
 
-Die drei zuvor beschriebenen Methoden: __Initialize__, __SetWindow__ und __Load__ haben die Vorbereitung abgeschlossen. Das Spiel kann jetzt auf die **Run**-Methode weitergehen und der Spaß kann beginnen! Die Ereignisse, die es für den Wechsel des Spielzustands nutzt, werden verteilt und verarbeitet. Die Grafik wird im Rahmen der Spielschleifendurchläufe aktualisiert.
+Die früheren drei Methoden: __Initialisieren Sie__, __"SetWindow"__, und __Load__ die Stufe festgelegt haben. Das Spiel kann jetzt auf die **Run**-Methode weitergehen und der Spaß kann beginnen! Die Ereignisse, die es für den Wechsel des Spielzustands nutzt, werden verteilt und verarbeitet. Die Grafik wird im Rahmen der Spielschleifendurchläufe aktualisiert.
 
 ### <a name="apprun"></a>App::Run
 
 Starten Sie eine __While__-Schleife, die beendet wird, wenn der Spieler das Spielfenster schließt.
 
-Der Beispielcode geht im Zustandsautomaten der Spielengine in einen von zweiZuständen über:
-    * __Deactivated__: Das Spielfenster wird deaktiviert (verliert also den Fokus) oder angedockt. In diesem Fall hält das Spiel die Ereignisverarbeitung an und wartet auf den Fensterfokus bzw. darauf, dass das Fenster wieder abgedockt wird.
-    * __TooSmall__: Das Spiel aktualisiert den eigenen Zustand und rendert die Grafik für die Anzeige.
+Der Beispielcode geht im Zustandsautomaten der Spielengine in einen von zwei Zuständen über:
+    * __Deaktiviert__: Das Spielfenster wird deaktiviert (verliert also den Fokus) oder angedockt. In diesem Fall hält das Spiel die Ereignisverarbeitung an und wartet auf den Fensterfokus bzw. darauf, dass das Fenster wieder abgedockt wird.
+    * __TooSmall__: Das Spiel aktualisiert seinen eigenen Status und rendert die Grafiken für die Anzeige.
 
 Wenn Ihr Spiel den Fokus hat, müssen Sie jedes in der Meldungswarteschlange eingehende Ereignis behandeln. Daher müssen Sie [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) mit der Option **ProcessAllIfPresent** aufrufen. Andere Optionen können zu einer verzögerten Verarbeitung von Meldungsereignissen führen. So entsteht der Eindruck, dass das Spiel nicht reagiert oder Toucheingaben nur träge umgesetzt werden.
 
-Wenn die App nicht sichtbar ist, angehalten oder angedockt wurde, möchten wir nicht, dass sie Meldungen ausgibt, die niemals ankommen, und dabei auch noch Ressourcen beansprucht. Daher muss das Spiel **ProcessOneAndAllPending** verwenden, was eine Blockierung bis zum Eingang eines Ereignisses zur Folge hat. Dieses Ereignis wird dann zusammen mit anderen Ereignissen verarbeitet, die während der Verarbeitung des ersten Ereignisses in der Prozesswarteschlange eingehen. [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) springt nach der Verarbeitung der Warteschlange sofort wieder zurück.
+Wenn die App nicht sichtbar ist, angehalten oder angedockt wurde, möchten wir nicht, dass sie Meldungen ausgibt, die niemals ankommen, und dabei auch noch Ressourcen beansprucht. Daher muss das Spiel **ProcessOneAndAllPending** verwenden, was eine Blockierung bis zum Eingang eines Ereignisses zur Folge hat. Dieses Ereignis wird dann zusammen mit anderen Ereignissen verarbeitet, die während der Verarbeitung des ersten Ereignisses in der Prozesswarteschlange eingehen. [**ProcessEvents** ](https://msdn.microsoft.com/library/windows/apps/br208215) dann sofort nach der Verarbeitung der Warteschlange zurückgegeben.
 
 ```cpp
 void App::Run()
@@ -384,7 +384,7 @@ void GameMain::Run()
 
 Wenn der Benutzer letztendlich die Sitzung beendet, müssen wir sie bereinigen. An dieser Stelle kommt die **Uninitialize**-Eigenschaft ins Spiel.
 
-In Windows 10 beim Schließen des app-Fensters nicht die Beendigung des app Prozesses, aber stattdessen wird des Zustands des app-Singleton in den Speicher. Sollte eine besondere Aktion wie eine spezielle Bereinigung von Ressourcen erforderlich sein, wenn das System diesen Speicher freigeben muss, platzieren Sie den Code für diese Bereinigung in dieser Methode.
+Klicken Sie in Windows 10 schließen das app-Fenster nicht zu beenden den Prozess der app, aber stattdessen schreibt er den Status des app-Singletons in den Speicher. Sollte eine besondere Aktion wie eine spezielle Bereinigung von Ressourcen erforderlich sein, wenn das System diesen Speicher freigeben muss, platzieren Sie den Code für diese Bereinigung in dieser Methode.
 
 ### <a name="app-uninitialize"></a>App:: Uninitialize
 

@@ -1,19 +1,19 @@
 ---
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: Verwenden Sie diese Methode der Microsoft Store-API für Rezensionen, um zu bestimmen, ob Sie auf eine bestimmte Rezension für eine bestimmte App oder auf alle Rezensionen für diese App antworten können.
-title: Antwortinformationen für Rezensionen abrufen
+title: Abrufen von Antwortinformationen für Rezensionen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Store-Dienste, Microsoft Store-API für Rezensionen, Antwortinformationen
+keywords: Windows 10, UWP, Store-Dienste, Microsoft Store-API für Rezensionen, Antwortinformationen
 ms.localizationpriority: medium
 ms.openlocfilehash: 0497b5eec67f9204139cd10d4523b534d6c8779f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928836"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595555"
 ---
-# <a name="get-response-info-for-reviews"></a>Antwortinformationen für Rezensionen abrufen
+# <a name="get-response-info-for-reviews"></a>Abrufen von Antwortinformationen für Rezensionen
 
 Wenn Sie programmgesteuert auf eine Kundenrezension zu Ihrer App antworten möchten, verwenden Sie diese Methode der Microsoft Store-API für Rezensionen, um zunächst zu ermitteln, ob Sie berechtigt sind, auf die Rezension zu antworten. Sie können nicht auf Rezensionen von Kunden antworten, die keine Antwort auf ihre Rezension erhalten möchten. Nachdem sichergestellt ist, dass Sie auf eine Rezension antworten können, verwenden Sie die Methode [Antworten auf App-Rezensionen senden](submit-responses-to-app-reviews.md), um programmgesteuert zu antworten.
 
@@ -23,10 +23,10 @@ Wenn Sie programmgesteuert auf eine Kundenrezension zu Ihrer App antworten möch
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](respond-to-reviews-using-windows-store-services.md#prerequisites) für die Microsoft Store-Analyse-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken abgerufen haben, können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 * Rufen Sie die ID der Rezension ab, für die Sie überprüfen möchten, ob Sie darauf antworten können. Rezensions-IDs finden Sie in den Antwortdaten der Methode [Abrufen von App-Rezensionen](get-app-reviews.md) der Microsoft Store-Analyse-API und unter [Offlinedownload](../publish/download-analytic-reports.md) im Bericht [Rezensionen](../publish/reviews-report.md).
 
-## <a name="request"></a>Anforderung
+## <a name="request"></a>Anfordern
 
 
 ### <a name="request-syntax"></a>Anforderungssyntax
@@ -40,14 +40,14 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
+| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 | Parameter        | Typ   | Beschreibung                                     |  Erforderlich  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | string | Die Store-ID der App, welche die Rezension enthält, für die Sie bestimmen möchten, ob Sie antworten können. Die Store-ID ist auf der [Seite App-Identität](../publish/view-app-identity-details.md) im Partner Center verfügbar. Beispiel für eine Store-ID: 9WZDNCRFJ3Q8. |  Ja  |
+| applicationId | string | Die Store-ID der App, welche die Rezension enthält, für die Sie bestimmen möchten, ob Sie antworten können. Die Store-ID ist verfügbar, auf die [Seite "App-Identität"](../publish/view-app-identity-details.md) im Partner Center. Beispiel für eine Store-ID: 9WZDNCRFJ3Q8. |  Ja  |
 | reviewId | string | Die ID der Rezension, auf die Sie antworten möchten (dies ist eine GUID). Rezensions-IDs finden Sie in den Antwortdaten der Methode [Abrufen von App-Rezensionen](get-app-reviews.md) der Microsoft Store-Analyse-API und unter [Offlinedownload](../publish/download-analytic-reports.md) im Bericht [Rezensionen](../publish/reviews-report.md). <br/>Wenn Sie diesen Parameter nicht angeben, wird im Antworttext für diese Methode stehen, ob Sie über Berechtigungen zum Beantworten von Rezensionen für die angegebene App verfügen. |  Nein  |
 
 
@@ -67,7 +67,7 @@ Authorization: Bearer <your access token>
 
 | Wert      | Typ   | Beschreibung    |  
 |------------|--------|-----------------------|
-| CanRespond      | Boolean  | Der Wert **true** gibt an, dass Sie auf die angegebene Rezension antworten können oder dass Sie berechtigt sind, auf eine beliebige Rezensionen für die angegebene App zu antworten. Andernfalls ist dieser Wert **false**.       |
+| CanRespond      | Boolesch  | Der Wert **true** gibt an, dass Sie auf die angegebene Rezension antworten können oder dass Sie berechtigt sind, auf eine beliebige Rezensionen für die angegebene App zu antworten. Andernfalls ist dieser Wert **false**.       |
 | DefaultSupportEmail  | string |  Die von Ihrer App [unterstütze E-Mail-Adresse](../publish/enter-app-properties.md#support-contact-info) finden Sie im Store-Eintrag Ihrer App. Wenn Sie keine unterstützte E-Mail-Adresse angegeben haben, ist dieses Feld leer.    |
 
  
@@ -84,7 +84,7 @@ Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Übermitteln von Antworten auf Rezensionen mithilfe der Microsoft Store-Analyse-API](submit-responses-to-app-reviews.md)
-* [Reagieren Sie auf kundenrezensionen über Partner Center](../publish/respond-to-customer-reviews.md)
-* [Antworten auf Rezensionen mit Microsoft Store-Diensten](respond-to-reviews-using-windows-store-services.md)
-* [Abrufen von App-Rezensionen](get-app-reviews.md)
+* [Senden von Antworten auf Berichte, die mit dem Microsoft Store-Textanalyse-API](submit-responses-to-app-reviews.md)
+* [Reagieren Sie auf Überprüfungen durch den Kunden über Partner Center](../publish/respond-to-customer-reviews.md)
+* [Reagieren Sie auf Überprüfungen mithilfe von Microsoft Store services](respond-to-reviews-using-windows-store-services.md)
+* [Abrufen von app-Bewertungen](get-app-reviews.md)

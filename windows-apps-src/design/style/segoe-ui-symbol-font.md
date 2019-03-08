@@ -1,5 +1,5 @@
 ---
-Description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
+Description: In diesem Artikel finden Sie eine Liste der in der Schriftart „Segoe MDL2 Assets“ enthaltenen Glyphen und Hinweise zu deren Verwendung.
 Search.Refinement.TopicID: 184
 title: Richtlinien für Segoe MDL2-Symbole
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
@@ -7,14 +7,14 @@ label: Segoe MDL2 icons
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934815"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649055"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2-Symbole
 
@@ -22,11 +22,11 @@ ms.locfileid: "8934815"
 
 In diesem Artikel werden die Symbole der Schriftart Segoe MDL2 Assets aufgeführt. 
 
-> **Wichtige APIs**: [**Symbol-Enumeration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [**FontIcon-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **Wichtige APIs**: [**Symbol Enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>Informationen zu MDL2 Assets
 
-Mit der Veröffentlichung von Windows10 wurde die Schriftart Segoe UI Symbol von Windows8/8.1 durch die Schriftart Segoe MDL2 Assets ersetzt. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** ist jedoch weiterhin als „veraltete“ Ressource verfügbar. Es wird jedoch empfohlen, Apps auf die neue Schriftart **Segoe MDL2 Assets** zu aktualisieren.)
+Mit der Veröffentlichung von Windows 10 wurde die Schriftart Segoe UI Symbol von Windows 8/8.1 durch die Schriftart Segoe MDL2 Assets ersetzt. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** werden weiterhin als "legacy" Ressource verfügbar, aber es wird empfohlen, aktualisieren Ihre app, um die Verwendung der neuen **Segoe MDL2 Assets**.)
 
 Die Mehrzahl der in der Schriftart **Segoe MDL2 Assets** enthaltenen Symbole und Benutzeroberflächen-Steuerelemente sind dem Unicode-Bereich „Private Use Area“ (PUA) zugeordnet. Mithilfe des PUA können Entwickler Glyphen, die keinen vorhandenen Codepunkten zugeordnet sind, private Unicode-Werte zuweisen. Dies ist hilfreich bei der Erstellung einer Symbolschriftart, führt jedoch auch zu einem Interoperabilitätsproblem. Ist die Schriftart nicht verfügbar, werden die Glyphen nicht angezeigt. Verwenden Sie die Glyphen nur, wenn Sie die Schriftart **Segoe MDL2 Assets** explizit angeben können.
 
@@ -43,7 +43,7 @@ Alle Glyphen in **Segoe MDL2 Assets** haben dieselbe feste Breite mit einer kons
 Viele der Symbole verfügen zudem über gespiegelte Formen, die in Sprachen verwendet werden können, in denen die Rechts-nach-Links-Ausrichtung verwendet wird, beispielsweise Arabisch, Farsi und Hebräisch.
 
 ## <a name="using-the-icons"></a>Verwenden der Symbole
-Wenn Sie eine app in c#/VB/C++- und XAML entwickeln, können Sie mit der [Symbol-Enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)bestimmte Glyphen der Segoe MDL2 Assets verwenden. 
+Wenn Sie eine app in entwickeln C#/VB/C++ und XAML, können Sie angegebenen Symbole aus Segoe MDL2 Assets mit den [Symbol Enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
@@ -55,15 +55,15 @@ Wenn Sie ein Glyphen der Schriftart **Segoe MDL2 Assets** verwenden möchten, da
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Sie können auch die statische Ressource `SymbolThemeFontFamily` **Segoe MDL2 Assets**, statt die Schriftart anhand des Namens Zugriff auf:
+Sie können auch die statische Ressource `SymbolThemeFontFamily` für den Zugriff auf **Segoe MDL2 Assets**, anstatt die Schriftart anhand des Namens:
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
 ## <a name="how-do-i-get-this-font"></a>Wie erhalte ich diese Schriftart?
-* Unter Windows 10: Vorhanden ist, Sie müssen, nichts weiter, die Schriftart im Lieferumfang von Windows.
-* Auf einem Mac, müssen Sie zum Herunterladen und installieren Sie die Schriftart: <a href="https://aka.ms/SegoeFonts">erhalten Sie die Segoe UI und MDL2 Symbolschriftarten</a>
+* Unter Windows 10: Es gibt nichts, was Sie tun müssen, die Schriftart im Lieferumfang von Windows.
+* Auf einem Mac müssen Sie herunterladen und installieren die Schriftart aus: <a href="https://aka.ms/SegoeFonts">Abrufen der Segoe UI und MDL2 Symbol-Schriftarten</a>
 
 ## <a name="icon-list"></a>Liste der Symbole
 Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symbole enthält, als hier gezeigt werden kann. Viele der Symbole dienen speziellen Zwecken und werden für gewöhnlich nicht an anderer Stelle verwendet.
@@ -82,7 +82,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E701.png" width="32" height="32" alt="Wifi" /></td>
   <td>E701</td>
-  <td>WLAN</td>
+  <td>Wifi</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E702.png" width="32" height="32" alt="Bluetooth" /></td>
   <td>E702</td>
@@ -102,7 +102,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E706.png" width="32" height="32" alt="Brightness" /></td>
   <td>E706</td>
-  <td>Helligkeit</td>
+  <td>Brightness</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E707.png" width="32" height="32" alt="MapPin" /></td>
   <td>E707</td>
@@ -138,11 +138,11 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E70F.png" width="32" height="32" alt="Edit" /></td>
   <td>E70F</td>
-  <td>Bearbeiten</td>
+  <td>Bearbeiten Sie</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E710.png" width="32" height="32" alt="Add" /></td>
   <td>E710</td>
-  <td>Add</td>
+  <td>Hinzufügen</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E711.png" width="32" height="32" alt="Cancel" /></td>
   <td>E711</td>
@@ -166,11 +166,11 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E716.png" width="32" height="32" alt="People" /></td>
   <td>E716</td>
-  <td>Kontakte</td>
+  <td>People</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E717.png" width="32" height="32" alt="Phone" /></td>
   <td>E717</td>
-  <td>Telefone</td>
+  <td>Phone</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E718.png" width="32" height="32" alt="Pin" /></td>
   <td>E718</td>
@@ -246,11 +246,11 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E72A.png" width="32" height="32" alt="Forward" /></td>
   <td>E72A</td>
-  <td>Vorwärts</td>
+  <td>Forward</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E72B.png" width="32" height="32" alt="Back" /></td>
   <td>E72B</td>
-  <td>Zurück</td>
+  <td>Back</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E72C.png" width="32" height="32" alt="Refresh" /></td>
   <td>E72C</td>
@@ -258,7 +258,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E72D.png" width="32" height="32" alt="Share" /></td>
   <td>E72D</td>
-  <td>Freigabe</td>
+  <td>Share</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E72E.png" width="32" height="32" alt="Lock" /></td>
   <td>E72E</td>
@@ -290,7 +290,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E739.png" width="32" height="32" alt="Checkbox" /></td>
   <td>E739</td>
-  <td>Kontrollkästchen</td>
+  <td>Checkbox</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E73A.png" width="32" height="32" alt="CheckboxComposite" /></td>
   <td>E73A</td>
@@ -354,15 +354,15 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E749.png" width="32" height="32" alt="Print" /></td>
   <td>E749</td>
-  <td>Drucken</td>
+  <td>Print</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74A.png" width="32" height="32" alt="Up" /></td>
   <td>E74A</td>
-  <td>Oben</td>
+  <td>Nach oben</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74B.png" width="32" height="32" alt="Down" /></td>
   <td>E74B</td>
-  <td>Unten</td>
+  <td>Nach unten</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74C.png" width="32" height="32" alt="OEM" /></td>
   <td>E74C</td>
@@ -370,7 +370,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E74D.png" width="32" height="32" alt="Delete" /></td>
   <td>E74D</td>
-  <td>Delete</td>
+  <td>Löschen</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74E.png" width="32" height="32" alt="Save" /></td>
   <td>E74E</td>
@@ -378,7 +378,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E74F.png" width="32" height="32" alt="Mute" /></td>
   <td>E74F</td>
-  <td>Stummschalten</td>
+  <td>Mute</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E750.png" width="32" height="32" alt="BackSpaceQWERTY" /></td>
   <td>E750</td>
@@ -470,7 +470,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E768.png" width="32" height="32" alt="Play" /></td>
   <td>E768</td>
-  <td>Wiedergeben</td>
+  <td>Play</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E769.png" width="32" height="32" alt="Pause" /></td>
   <td>E769</td>
@@ -502,7 +502,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E771.png" width="32" height="32" alt="Personalize" /></td>
   <td>E771</td>
-  <td>Personalisieren</td>
+  <td>Personalize</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E772.png" width="32" height="32" alt="Devices" /></td>
   <td>E772</td>
@@ -538,7 +538,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E77A.png" width="32" height="32" alt="Unpin" /></td>
   <td>E77A</td>
-  <td>Loslösen</td>
+  <td>Unpin</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E77B.png" width="32" height="32" alt="Contact" /></td>
   <td>E77B</td>
@@ -570,7 +570,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E785.png" width="32" height="32" alt="Unlock" /></td>
   <td>E785</td>
-  <td>Entsperren</td>
+  <td>Unlock</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E786.png" width="32" height="32" alt="Slideshow" /></td>
   <td>E786</td>
@@ -578,7 +578,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E787.png" width="32" height="32" alt="Calendar" /></td>
   <td>E787</td>
-  <td>Kalender</td>
+  <td>Calendar</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E788.png" width="32" height="32" alt="GripperResize" /></td>
   <td>E788</td>
@@ -602,7 +602,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E790.png" width="32" height="32" alt="Color" /></td>
   <td>E790</td>
-  <td>Farben</td>
+  <td>Farbe</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E791.png" width="32" height="32" alt="DataSense" /></td>
   <td>E791</td>
@@ -614,7 +614,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E793.png" width="32" height="32" alt="Light" /></td>
   <td>E793</td>
-  <td>Licht</td>
+  <td>Hell</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E799.png" width="32" height="32" alt="AspectRatio" /></td>
   <td>E799</td>
@@ -626,7 +626,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E7A6.png" width="32" height="32" alt="Redo" /></td>
   <td>E7A6</td>
-  <td>Wiederholen</td>
+  <td>Redo</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7A7.png" width="32" height="32" alt="Undo" /></td>
   <td>E7A7</td>
@@ -670,7 +670,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BE.png" width="32" height="32" alt="Education" /></td>
   <td>E7BE</td>
-  <td>Bildung</td>
+  <td>Education</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BF.png" width="32" height="32" alt="ShoppingCart" /></td>
   <td>E7BF</td>
@@ -686,7 +686,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C3.png" width="32" height="32" alt="Page" /></td>
   <td>E7C3</td>
-  <td>Seite</td>
+  <td>Page</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C4.png" width="32" height="32" alt="TaskView" /></td>
   <td>E7C4</td>
@@ -870,7 +870,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E815.png" width="32" height="32" alt="Touch" /></td>
   <td>E815</td>
-  <td>Toucheingabe</td>
+  <td>Touch</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E816.png" width="32" height="32" alt="MapDirections" /></td>
   <td>E816</td>
@@ -894,7 +894,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E81D.png" width="32" height="32" alt="Location" /></td>
   <td>E81D</td>
-  <td>Speicherort</td>
+  <td>Pfad</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E81E.png" width="32" height="32" alt="MapLayers" /></td>
   <td>E81E</td>
@@ -906,7 +906,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E821.png" width="32" height="32" alt="Work" /></td>
   <td>E821</td>
-  <td>Aufgabe</td>
+  <td>Work</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E822.png" width="32" height="32" alt="Construction" /></td>
   <td>E822</td>
@@ -1338,7 +1338,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E895.png" width="32" height="32" alt="Sync" /></td>
   <td>E895</td>
-  <td>Synchronisieren</td>
+  <td>Sync</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E896.png" width="32" height="32" alt="Download" /></td>
   <td>E896</td>
@@ -1346,7 +1346,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E897.png" width="32" height="32" alt="Help" /></td>
   <td>E897</td>
-  <td>Hilfe</td>
+  <td>Help</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E898.png" width="32" height="32" alt="Upload" /></td>
   <td>E898</td>
@@ -1422,7 +1422,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AB.png" width="32" height="32" alt="Switch" /></td>
   <td>E8AB</td>
-  <td>Wechsel</td>
+  <td>Schalter</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AC.png" width="32" height="32" alt="Rename" /></td>
   <td>E8AC</td>
@@ -1438,11 +1438,11 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AF.png" width="32" height="32" alt="Remote" /></td>
   <td>E8AF</td>
-  <td>Remote</td>
+  <td>Fernbedienung</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B0.png" width="32" height="32" alt="Click" /></td>
   <td>E8B0</td>
-  <td>Klick</td>
+  <td>Klicken Sie</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B1.png" width="32" height="32" alt="Shuffle" /></td>
   <td>E8B1</td>
@@ -1450,7 +1450,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B2.png" width="32" height="32" alt="Movies" /></td>
   <td>E8B2</td>
-  <td>Filme</td>
+  <td>Movies</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B3.png" width="32" height="32" alt="SelectAll" /></td>
   <td>E8B3</td>
@@ -1458,7 +1458,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B4.png" width="32" height="32" alt="Orientation" /></td>
   <td>E8B4</td>
-  <td>Orientation</td>
+  <td>Ausrichtung</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B5.png" width="32" height="32" alt="Import" /></td>
   <td>E8B5</td>
@@ -1478,11 +1478,11 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B9.png" width="32" height="32" alt="Picture" /></td>
   <td>E8B9</td>
-  <td>Bild</td>
+  <td>Picture</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BA.png" width="32" height="32" alt="Caption" /></td>
   <td>E8BA</td>
-  <td>Untertitel für Hörgeschädigte</td>
+  <td>Beschriftung</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BB.png" width="32" height="32" alt="ChromeClose" /></td>
   <td>E8BB</td>
@@ -1494,7 +1494,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BD.png" width="32" height="32" alt="Message" /></td>
   <td>E8BD</td>
-  <td>Nachricht</td>
+  <td>Meldung</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BE.png" width="32" height="32" alt="Leaf" /></td>
   <td>E8BE</td>
@@ -1518,7 +1518,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C3.png" width="32" height="32" alt="Read" /></td>
   <td>E8C3</td>
-  <td>Lesen</td>
+  <td>Read</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C4.png" width="32" height="32" alt="ShowBcc" /></td>
   <td>E8C4</td>
@@ -1570,7 +1570,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D0.png" width="32" height="32" alt="Priority" /></td>
   <td>E8D0</td>
-  <td>Priorität</td>
+  <td>Priority</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D1.png" width="32" height="32" alt="GotoToday" /></td>
   <td>E8D1</td>
@@ -1614,15 +1614,15 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DB.png" width="32" height="32" alt="Italic" /></td>
   <td>E8DB</td>
-  <td>Kursiv</td>
+  <td>Italic</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DC.png" width="32" height="32" alt="Underline" /></td>
   <td>E8DC</td>
-  <td>Unterstreichen</td>
+  <td>Underline</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DD.png" width="32" height="32" alt="Bold" /></td>
   <td>E8DD</td>
-  <td>Fett</td>
+  <td>Bold</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DE.png" width="32" height="32" alt="MoveToFolder" /></td>
   <td>E8DE</td>
@@ -1702,7 +1702,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F1.png" width="32" height="32" alt="Library" /></td>
   <td>E8F1</td>
-  <td>Bibliothek</td>
+  <td>Library</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F2.png" width="32" height="32" alt="ChatBubbles" /></td>
   <td>E8F2</td>
@@ -1742,7 +1742,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FB.png" width="32" height="32" alt="Accept" /></td>
   <td>E8FB</td>
-  <td>Akzeptieren</td>
+  <td>Annehmen</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FC.png" width="32" height="32" alt="GoToStart" /></td>
   <td>E8FC</td>
@@ -1754,7 +1754,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FE.png" width="32" height="32" alt="Scan" /></td>
   <td>E8FE</td>
-  <td>Scannen</td>
+  <td>Scan</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FF.png" width="32" height="32" alt="Preview" /></td>
   <td>E8FF</td>
@@ -1842,7 +1842,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E91B.png" width="32" height="32" alt="Photo" /></td>
   <td>E91B</td>
-  <td>Foto</td>
+  <td>Photo</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E91C.png" width="32" height="32" alt="ActionCenter" /></td>
   <td>E91C</td>
@@ -1878,7 +1878,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E927.png" width="32" height="32" alt="Swipe" /></td>
   <td>E927</td>
-  <td>Wischen</td>
+  <td>Swipe</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E928.png" width="32" height="32" alt="Fingerprint" /></td>
   <td>E928</td>
@@ -2006,7 +2006,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E950.png" width="32" height="32" alt="Component" /></td>
   <td>E950</td>
-  <td>Komponente</td>
+  <td>Component</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E951.png" width="32" height="32" alt="DMC" /></td>
   <td>E951</td>
@@ -2054,7 +2054,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E95E.png" width="32" height="32" alt="Health" /></td>
   <td>E95E</td>
-  <td>Integrität</td>
+  <td>Health</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E960.png" width="32" height="32" alt="Webcam2" /></td>
   <td>E960</td>
@@ -2062,7 +2062,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E961.png" width="32" height="32" alt="Input" /></td>
   <td>E961</td>
-  <td>Eingabeart</td>
+  <td>Input</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E962.png" width="32" height="32" alt="Mouse" /></td>
   <td>E962</td>
@@ -2090,7 +2090,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E968.png" width="32" height="32" alt="Network" /></td>
   <td>E968</td>
-  <td>Netzwerk</td>
+  <td>Network</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E969.png" width="32" height="32" alt="StorageNetworkWireless" /></td>
   <td>E969</td>
@@ -2162,7 +2162,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E97C.png" width="32" height="32" alt="Type" /></td>
   <td>E97C</td>
-  <td>Eingabe</td>
+  <td>Typ</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E97D.png" width="32" height="32" alt="Korean" /></td>
   <td>E97D</td>
@@ -2354,7 +2354,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E9CE.png" width="32" height="32" alt="Unknown" /></td>
   <td>E9CE</td>
-  <td>Unknown</td>
+  <td>Unbekannt</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D2.png" width="32" height="32" alt="AreaChart" /></td>
   <td>E9D2</td>
@@ -2362,7 +2362,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D5.png" width="32" height="32" alt="CheckList" /></td>
   <td>E9D5</td>
-  <td>Prüfliste für die</td>
+  <td>CheckList</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D9.png" width="32" height="32" alt="Diagnostic" /></td>
   <td>E9D9</td>
@@ -2374,7 +2374,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F3.png" width="32" height="32" alt="Process" /></td>
   <td>E9F3</td>
-  <td>Verarbeiten</td>
+  <td>Process</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F5.png" width="32" height="32" alt="Processing" /></td>
   <td>E9F5</td>
@@ -2414,7 +2414,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EA37.png" width="32" height="32" alt="List" /></td>
   <td>EA37</td>
-  <td>Liste</td>
+  <td>List</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA38.png" width="32" height="32" alt="Asterisk" /></td>
   <td>EA38</td>
@@ -2562,7 +2562,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EA69.png" width="32" height="32" alt="Media" /></td>
   <td>EA69</td>
-  <td>Medien</td>
+  <td>Media</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA6A.png" width="32" height="32" alt="SyncError" /></td>
   <td>EA6A</td>
@@ -2678,11 +2678,11 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EB3C.png" width="32" height="32" alt="Design" /></td>
   <td>EB3C</td>
-  <td>Entwerfen</td>
+  <td>Entwurf</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB41.png" width="32" height="32" alt="Website" /></td>
   <td>EB41</td>
-  <td>Webseite</td>
+  <td>Website</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB42.png" width="32" height="32" alt="Drop" /></td>
   <td>EB42</td>
@@ -2690,7 +2690,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EB44.png" width="32" height="32" alt="Radar" /></td>
   <td>EB44</td>
-  <td>Netz</td>
+  <td>Netzdiagramm</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB47.png" width="32" height="32" alt="BusSolid" /></td>
   <td>EB47</td>
@@ -2730,7 +2730,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EB50.png" width="32" height="32" alt="Reminder" /></td>
   <td>EB50</td>
-  <td>Erinnerung</td>
+  <td>Reminder</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB51.png" width="32" height="32" alt="Heart" /></td>
   <td>EB51</td>
@@ -3042,7 +3042,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EBC6.png" width="32" height="32" alt="Project" /></td>
   <td>EBC6</td>
-  <td>Projizieren</td>
+  <td>Projekt</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EBD2.png" width="32" height="32" alt="AdjustHologram" /></td>
   <td>EBD2</td>
@@ -3438,7 +3438,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/ECAD.png" width="32" height="32" alt="Calories" /></td>
   <td>ECAD</td>
-  <td>Kalorienverbrauch</td>
+  <td>Kalorien</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ECB9.png" width="32" height="32" alt="BandBattery0" /></td>
   <td>ECB9</td>
@@ -3542,7 +3542,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/ED15.png" width="32" height="32" alt="Feedback" /></td>
   <td>ED15</td>
-  <td>Feedback</td>
+  <td>Feedback senden</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ED1E.png" width="32" height="32" alt="Subtitles" /></td>
   <td>ED1E</td>
@@ -3974,11 +3974,11 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3B.png" width="32" height="32" alt="Replay" /></td>
   <td>EF3B</td>
-  <td>Wiedergabe</td>
+  <td>Wiedergeben</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3C.png" width="32" height="32" alt="Eyedropper" /></td>
   <td>EF3C</td>
-  <td>Pipette</td>
+  <td>Formatpipette</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3D.png" width="32" height="32" alt="LineDisplay" /></td>
   <td>EF3D</td>
@@ -4098,7 +4098,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B9.png" width="32" height="32" alt="Connected" /></td>
   <td>F0B9</td>
-  <td>Connected</td>
+  <td>Verbunden</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0C6.png" width="32" height="32" alt="PencilFill" /></td>
   <td>F0C6</td>
@@ -4742,7 +4742,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/F540.png" width="32" height="32" alt="Safe" /></td>
   <td>F540</td>
-  <td>Sichere</td>
+  <td>Safe</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F552.png" width="32" height="32" alt="LaptopSecure" /></td>
   <td>F552</td>
@@ -4893,7 +4893,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>HolePunchPortraitLeft</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F591.png" width="32" height="32" alt="HolePunchPortraitRight" /></td>
-  <td>F591.</td>
+  <td>F591</td>
   <td>HolePunchPortraitRight</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F592.png" width="32" height="32" alt="HolePunchPortraitTop" /></td>
@@ -5014,7 +5014,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/F5ED.png" width="32" height="32" alt="Set" /></td>
   <td>F5ED</td>
-  <td>Legen Sie fest</td>
+  <td>Festlegen</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F5EE.png" width="32" height="32" alt="SetSolid" /></td>
   <td>F5EE</td>
@@ -5167,7 +5167,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Richtlinien für Symbole](../style/icons.md)
-* [Symbol-Enumeration](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [Symbolenumeration](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
 * [FontIcon-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 

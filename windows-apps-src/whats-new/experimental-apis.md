@@ -3,14 +3,14 @@ title: Experimentelle APIs
 description: Grundlegendes zu experimentellen APIs
 ms.date: 11/13/2017
 ms.topic: article
-keywords: Windows10, UWP, experimentell,-API
+keywords: Windows 10, UWP, experimentell,-API
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d6e236368134086081141e220088358f4897033
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927466"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657945"
 ---
 # <a name="experimental-apis"></a>Experimentelle APIs
 
@@ -29,6 +29,6 @@ Um diese APIs für experimentelle Zwecke zu aktivieren, verwenden Sie das Plug-I
 
 Die Dokumentation für eine bestimmte experimentelle API liegt im Ermessen des Teams, die diese besitzt.
 
-## <a name="providing-feedback"></a>Bereitstellen von Feedback
+## <a name="providing-feedback"></a>Abgeben von Feedback
 
 Wenn Sie eine experimentelle API ausprobiert haben und Feedback dazu abgeben möchten, verwenden Sie die Kategorie **Entwicklerplattform** im [Windows-Feedback-Hub](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
