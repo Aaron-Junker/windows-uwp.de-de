@@ -7,18 +7,18 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933911"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643985"
 ---
-# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Lernprogramm: Unterstützen von Surface Dial (und anderen Radgeräten) in Ihrer UWP-App
+# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Tutorial: Unterstützen von Surface Dial (und anderen Radgeräten) in Ihrer UWP-App
 
-![Abbildung: Surface Dial mit Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
+![Abbildung des Surface Dial mit Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
 *Surface Dial mit Surface Studio und Surface Pen* (im [Microsoft Store](https://aka.ms/purchasesurfacedial) käuflich erhältlich).
 
-In diesem Lernprogramm erfahren Sie, wie Sie die von Radgeräten wie Surface Dial unterstützte Benutzerinteraktionen anpassen. Wie verwenden Codeausschnitte aus einer Beispiel-App, die Sie von GitHub herunterladen können (Siehe [Beispielcode](#sample-code)), um die verschiedenen Features und zugehörigen [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)-APIs zu veranschaulichen, die in den einzelnen Schrittenbeschrieben werden.
+In diesem Lernprogramm erfahren Sie, wie Sie die von Radgeräten wie Surface Dial unterstützte Benutzerinteraktionen anpassen. Wie verwenden Codeausschnitte aus einer Beispiel-App, die Sie von GitHub herunterladen können (Siehe [Beispielcode](#sample-code)), um die verschiedenen Features und zugehörigen [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)-APIs zu veranschaulichen, die in den einzelnen Schritten beschrieben werden.
 
 Wir konzentrieren uns auf Folgendes:
 * Angeben, welche integrierten Tools in dem [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)-Menü angezeigt werden.
@@ -42,11 +42,11 @@ Das Dial unterstützt drei grundlegende Gesten:
 
 * Ein Computer (oder ein virtueller Computer) mit Windows 10 Creators Update oder höher
 * [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Ein Radgerät (aktuell nur die [Surface Dial](https://aka.ms/purchasesurfacedial))
 * Wenn Sie noch keine Erfahrung mit der App-Entwicklung in der Universellen Windows-Plattform (UWP) mit Visual Studio haben, werfen Sie einen Blick in diese Themen, bevor Sie dieses Lernprogramm starten:  
     * [Vorbereiten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [Erstellen der App „Hello, world“ (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [Erstellen einer "Hello, World" app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## <a name="set-up-your-devices"></a>Einrichten Ihrer Geräte
 
@@ -56,15 +56,15 @@ Das Dial unterstützt drei grundlegende Gesten:
 4. Entfernen Sie falls nötig an der Unterseite der Dial den Batteriedeckel.
 5. Drücken und halten Sie den kleinen eingesetzten Knopf neben den Batterien, bis das Bluetooth-Licht aufleuchtet.
 6. Wechseln Sie zurück zu Ihrem Windows-Gerät und wählen Sie **Bluetooth oder ein anderes Gerät hinzufügen**.
-7. Wählen Sie im Dialogfeld **Hinzufügen eines Geräts** **Bluetooth** > **Surface Dial**. Ihre Surface Dial sollte jetzt eine Verbindung herstellen und der Liste der Geräte unter **Maus, Tastatur und Stift** auf der Einstellungsseite **Bluetooth & andere Geräte** hinzugefügt werden.
+7. Wählen Sie im Dialogfeld **Hinzufügen eines Geräts****Bluetooth** > **Surface Dial**. Ihre Surface Dial sollte jetzt eine Verbindung herstellen und der Liste der Geräte unter **Maus, Tastatur und Stift** auf der Einstellungsseite **Bluetooth & andere Geräte** hinzugefügt werden.
 8. Testen Sie das Dial, indem Sie sie einige Sekunden lang gedrückt halten, um das integrierte Menü anzuzeigen.
-9. Wenn das Menü nicht auf dem Bildschirm angezeigt wird (das Dial sollte auch Vibrieren), wechseln Sie zurück zu den Bluetooth-Einstellungen, entfernen Sie das Gerät, und versuchen Sie, das Gerät erneut zu verbinden.
+9. Wenn Sie im Menü nicht auf dem Bildschirm angezeigt wird (das Dial sollte auch Vibrieren), wechseln Sie an der Bluetooth-Einstellungen wird das Gerät entfernt, und versuchen Sie erneut eine Verbindung des Geräts.
 
 > [!NOTE]
 > Wheel-Geräte können in den **Rad**-Einstellungen angepasst werden:
-> 1. Wählen Sie im **Startmenü** **Einstellungen**.
+> 1. Wählen Sie im **Startmenü****Einstellungen**.
 > 2. Wählen Sie **Geräte** > **Rad**.    
-> ![Bildschirm „Radeinstellungen”](images/radialcontroller/wheel-settings.png)
+> ![Bildschirm "Einstellungen" Wheel](images/radialcontroller/wheel-settings.png)
 
 Jetzt können Sie dieses Lernprogramm starten. 
 
@@ -74,23 +74,23 @@ In diesem Lernprogramm verwenden wir eine Beispiels-App, um die erläuterten Kon
 Laden Sie dieses Visual Studio-Beispiel und den Quellecode von [GitHub](https://github.com/) unter [Windows-App-Beispiel-Erste-Schritte-Radialcontroller-Beispiel](https://aka.ms/appsample-radialcontroller) herunter:
 
 1. Wählen Sie die grüne Schaltfläche **Klonen oder herunterladen** aus.  
-![Klonen des Repositorys](images/radialcontroller/wheel-clone.png)
+![Beim Klonen des Repositorys](images/radialcontroller/wheel-clone.png)
 2. Wenn Sie ein GitHub-Konto haben, können Sie das Repository auf Ihrem lokalen Computer mit der Option **In Visual Studio öffnen** klonen. 
 3. Wenn Sie kein GitHub-Konto haben, oder wenn Sie einfach eine lokale Kopie des Projekts möchten, wählen Sie **Herunterladen der ZIP-Datei** (Sie müssen regelmäßig auf neues Updates prüfen).
 
 > [!IMPORTANT]
-> Der Großteil des Codes im Beispiel ist als Kommentar formatiert. Bei den einzelnen Schritten in diesem Thema werden Sie aufgefordert, die Kommentare der verschiedenen Codeabschnitte zu entfernen. Markieren Sie einfach in Visual Studio die Codezeilen und drücken Sie STRG+K und anschließend STRG + U.
+> Der Großteil des Codes im Beispiel ist als Kommentar formatiert. Bei den einzelnen Schritten werden Sie aufgefordert, die Kommentare der verschiedenen Codeabschnitte zu entfernen. Markieren Sie einfach in Visual Studio die Codezeilen und drücken Sie STRG+K und anschließend STRG + U.
 
 ## <a name="components-that-support-wheel-functionality"></a>Komponenten, die Radfunktionen unterstützen
 
 Diese Objekte bieten den Großteil der Radgerätefunktion für UWP-Apps.
 
-| Komponente | Beschreibung |
+| Component | Beschreibung |
 | --- | --- |
-| [**RadialController**-Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) und die zugehörigen | Stellt einen Radeingabegerät oder -Zubehör, z.B. das Surface Dial, dar. |
+| [**RadialController** Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) und verwandten | Stellt einen Radeingabegerät oder -Zubehör, z. B. das Surface Dial, dar. |
 | [**IRadialControllerConfigurationInterop**](https://msdn.microsoft.com/library/windows/desktop/mt790709) / [**IRadialControllerInterop**](https://msdn.microsoft.com/library/windows/desktop/mt790711)<br/>Wir gehen hier nicht auf diese Funktionalität ein. Weitere Informationen finden Sie unter der [Klassisches Windows-Desktopbeispiel](https://aka.ms/radialcontrollerclassicsample). | Ermöglicht die Interoperabilität mit einer UWP-App. |
 
-## <a name="step-1-run-the-sample"></a>Schritt1: Ausführen des Beispiels
+## <a name="step-1-run-the-sample"></a>Schritt 1: Ausführen des Beispiels
 
 Nachdem Sie die RadialController-Beispiel-App heruntergeladen haben, stellen Sie sicher, dass sie ausgeführt wird:
 1. Öffnen Sie das Beispielprojekt in Visual Studio.
@@ -98,15 +98,15 @@ Nachdem Sie die RadialController-Beispiel-App heruntergeladen haben, stellen Sie
 3. Drücken Sie F5, um zu kompilieren, bereitzustellen und auszuführen. 
 
 > [!NOTE]
-> Alternativ können Sie das Menüelement **Debuggen** > **"Debuggen starten"** oder die Schaltfläche **lokale Maschine** ausführen, die hier dargestellt wird: ![Visual Studio-Projektschaltfläche](images/radialcontroller/wheel-vsrun.png)
+> Alternativ können Sie auswählen **Debuggen** > **Debuggen** Menüelement, oder wählen Sie die **lokalen Computer** hier gezeigte Schaltfläche "ausführen": ![Visual Studio-Build-Projekt-Schaltfläche](images/radialcontroller/wheel-vsrun.png)
 
 Das App-Fenster wird geöffnet und nach einem Begrüßungsbildschirm wird der Startbildschirm angezeigt.
 
 ![Leere App](images/radialcontroller/wheel-app-step1-empty.png)
 
-OK, nun haben wir die grundlegende UWP-App, die wir im verbleibenden Teil dieses Lernprogramms verwenden werden. In den folgenden Schrittenfügen wir unsere **RadialController**-Funktionen hinzu.
+OK, nun haben wir die grundlegende UWP-App, die wir im verbleibenden Teil dieses Lernprogramms verwenden werden. In den folgenden Schritten fügen wir unsere **RadialController**-Funktionen hinzu.
 
-## <a name="step-2-basic-radialcontroller-functionality"></a>Schritt2: Grundlegende RadialController-Funktionen
+## <a name="step-2-basic-radialcontroller-functionality"></a>Schritt 2: Grundlegende RadialController-Funktionalität
 
 Halten Sie das Surface Dial gedrückt, während die App im Vordergrund ausgeführt wird, um das ** RadialController **-Menü anzuzeigen.
 
@@ -120,12 +120,12 @@ Diese Abbildungen zeigen zwei Varianten des Standardmenüs. (Es gibt viele ander
 
 Jetzt werden wir einige grundlegende Anpassungen vornehmen.
 
-## <a name="step-3-add-controls-for-wheel-input"></a>Schritt3: Hinzufügen von Steuerelementen für die Radeingabe
+## <a name="step-3-add-controls-for-wheel-input"></a>Schritt 3: Hinzufügen von Steuerelementen für Rad-Eingabe
 
 Fügen wir zunächst die Benutzeroberfläche für unsere App hinzu:
 
 1. Öffnen Sie die Datei „MainPage_Basic.xaml“.
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist („\ <!--Schritt3: Hinzufügen von Steuerelementen für die Eingabe des Mausrads-->”).
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ("\<! – Schritt 3: Hinzufügen der Steuerelemente für Rad-Eingabe--> ").
 3. Entfernen Sie die Kommentare aus den folgenden Zeilen.
 
     ```xaml
@@ -159,12 +159,12 @@ An dieser Stelle sind nur die **Initialisierungsbeispiel**-Schaltfläche, Schieb
 
 ![Grundlegendes Beispiel für die App-UI](images/radialcontroller/wheel-app-step3-basicui.png)
 
-## <a name="step-4-customize-the-basic-radialcontroller-menu"></a>Schritt 4: Anpassen des grundlegenden RadialController-Menüs
+## <a name="step-4-customize-the-basic-radialcontroller-menu"></a>Schritt 4: Anpassen der einfachen RadialController-Menüs
 
 Fügen wir nun den für den **RadialController**-Zugriff auf unsere Steuerelemente erforderlichen Code hinzu.
 
 1. Öffnen Sie die Datei „MainPage_Basic.xaml.cs”.
-2. Suchen Sie den Code, der mit dem Titel in dieses Schritts gekennzeichnet ist („/ / Schritt4: grundlegende RadialController Anpassung für das Menü”).
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ("/ / Schritt 4: Grundlegende RadialController Anpassung-Menüs").
 3. Entfernen Sie die Kommentare aus den folgenden Zeilen:
     - Die [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input) und [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams)-Typenverweise werden für Funktionen in den folgenden Schritten verwendet:  
     
@@ -282,12 +282,12 @@ Fügen wir nun den für den **RadialController**-Zugriff auf unsere Steuerelemen
 
 OK, verknüpfen wir nun diese Schaltflächen.
 
-## <a name="step-5-configure-menu-at-runtime"></a>Schritt5: Konfigurieren des Menüs zur Laufzeit
+## <a name="step-5-configure-menu-at-runtime"></a>Schritt 5: Konfigurieren Sie im Menü zur Laufzeit
 
 In diesem Schritt verknüpfen wir die Schaltflächen **Element hinzufügen/entfernen** und **RadialController-Menü zurücksetzen**, um zu zeigen, wie Sie das Menü dynamisch anpassen können.
 
 1. Öffnen Sie die Datei „MainPage_Basic.xaml.cs”.
-2. Suchen Sie den Code, der mit dem Titel in dieses Schritts gekennzeichnet ist („// Schritt5: Konfigurieren von Menü zur Laufzeit”).
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ("/ / Schritt 5: Konfigurieren Sie im Menü zur Laufzeit").
 3. Löschen Sie die Kommentare in den folgenden Methoden und führen Sie die App erneut aus. Wählen Sie dabei jedoch keine Schaltflächen aus (sparen Sie sich das für den nächsten Schritt auf).  
 
     ``` csharp
@@ -340,7 +340,7 @@ In diesem Schritt verknüpfen wir die Schaltflächen **Element hinzufügen/entfe
 
     Wie Sie sehen, wurde das Menü auf den ursprünglichen Zustand zurückgesetzt.
 
-## <a name="step-6-customize-the-device-haptics"></a>Schritt6: Anpassen der Gerätehaptik
+## <a name="step-6-customize-the-device-haptics"></a>Schritt 6: Das Gerät Haptics anpassen
 Das Surface Dial und andere Radgeräte können Benutzern haptisches Feedback für die aktuelle Interaktion (basierend auf den Klick oder die Drehung) bereitstellen.
 
 In diesem Schritt wird gezeigt, wie Sie das haptische Feedback anpassen können, indem Sie die Steuerelemente für den Schieberegler und Umschalter zuordnen, sodass das haptische Feedbackverhalten dynamisch festgelegt wird. In diesem Beispiel muss der Umschalter auf an gestellt sein, damit das Feedback aktiviert wird, während der Schiebereglerwert angibt, wie oft das Feedback wiederholt wird. 
@@ -349,7 +349,7 @@ In diesem Schritt wird gezeigt, wie Sie das haptische Feedback anpassen können,
 > Haptisches Feedback kann vom Benutzer auf der Seite **Einstellungen** >  **Geräte** > **Rad** deaktiviert werden.
 
 1. Öffnen Sie die Datei „App.xaml.cs“:
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist („Schritt 6: Anpassen der Gerätehaptik”).
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ("Schritt 6: Passen Sie das Gerät Haptics").
 3. Kommentieren Sie die erste und dritte Zeile („MainPage_Basic” und „MainPage”), und entfernen Sie die Kommentare aus der zweiten Zeile („MainPage_Haptics”).  
 
     ``` csharp
@@ -358,7 +358,7 @@ In diesem Schritt wird gezeigt, wie Sie das haptische Feedback anpassen können,
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
 4. Öffnen Sie die Datei „MainPage_Haptics.xaml“.
-5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist („\<!-- Schritt 6: Anpassen der Gerätehaptik -->”).
+5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ("\<! – Schritt 6: Anpassen des Geräts Haptics--> ").
 6. Entfernen Sie die Kommentare aus den folgenden Zeilen. (Dieser UI-Code gibt lediglich an, welche Haptikfunktionen von dem aktuellen Gerät unterstützt werden.)    
 
     ```xaml
@@ -431,7 +431,7 @@ In diesem Schritt wird gezeigt, wie Sie das haptische Feedback anpassen können,
     </StackPanel>
     ```
 7. Öffnen Sie die Datei „MainPage_Haptics.xaml.cs“.
-8. Suchen Sie den Code, mit dem Titel dieses Schritts gekennzeichnet ist („Schritt6: Haptikeinstellungen”).
+8. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ("Schritt 6: Anpassen von Haptics")
 9. Entfernen Sie die Kommentare aus den folgenden Zeilen:  
 
     - Der [Windows.Devices.Haptics](https://docs.microsoft.com/uwp/api/windows.devices.haptics)-Typverweis wird für die Funktionen in den folgenden Schritten verwendet.  
@@ -580,12 +580,12 @@ In diesem Schritt wird gezeigt, wie Sie das haptische Feedback anpassen können,
 
 Führen Sie nun die App erneut aus, um die benutzerdefinierte Haptik auszuprobieren, indem Sie den Schiebereglerwert und den Zustand des Ein-/Aus-Schalters ändern.
 
-## <a name="step-7-define-on-screen-interactions-for-surface-studio-and-similar-devices"></a>Schritt7: Onscreen-Interaktionen auf dem Bildschirm für Surface Studio und ähnliche Geräte definieren
+## <a name="step-7-define-on-screen-interactions-for-surface-studio-and-similar-devices"></a>Schritt 7: Definieren Sie auf dem Bildschirm Interaktionen für Surface-Studio und ähnliche Geräte
 Im Zusammenspiel mit Surface Studio bietet das Surface Dial Benutzern ein noch innovativeres Bedienerlebnis. 
 
 Das Surface Dial unterstützt nicht nur die beschriebene Standardmenüaktion „Drücken und Halten“, sondern kann zusätzlich direkt auf dem Bildschirm des Surface Studio platziert werden. Dadurch wird ein spezielles Onscreen-Menü aktiviert. 
 
-Das System erkennt sowohl die Auflageposition als auch die Begrenzungen des Surface Dial, kann anhand dieser Informationen auf die durch das Gerät verursachte Okklusion reagieren und eine größere Menüversion darstellen, die außen um die Drehsteuerung herum angezeigt wird. Auch die App kann diese Informationen nutzen, um die Benutzeroberfläche an das Vorhandensein des Geräts und dessen beabsichtigte Nutzung anzupassen, z.B. daran, wie der Benutzer seine Hand und seinen Arm platziert. 
+Das System erkennt sowohl die Auflageposition als auch die Begrenzungen des Surface Dial, kann anhand dieser Informationen auf die durch das Gerät verursachte Okklusion reagieren und eine größere Menüversion darstellen, die außen um die Drehsteuerung herum angezeigt wird. Auch die App kann diese Informationen nutzen, um die Benutzeroberfläche an das Vorhandensein des Geräts und dessen beabsichtigte Nutzung anzupassen, z. B. daran, wie der Benutzer seine Hand und seinen Arm platziert. 
 
 Das Beispiel, das mit diesem Lernprogramm einhergeht, enthält ein etwas komplexeres Beispiel, das einige dieser Funktionen veranschaulicht.
 
@@ -594,7 +594,7 @@ Um dies in Aktion zu sehen (dafür ist Surface Studio erforderlich):
 1. Laden Sie das Beispiel auf einem Surface Studio-Gerät (mit Visual Studio installiert) herunter
 2. Öffnen Sie das Beispiel in Visual Studio.
 3. Öffnen Sie die Datei „App.xaml.cs“.
-4. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist („Schritt7: Onscreen-Interaktionen für Surface Studio und ähnliche Geräte definieren”)
+4. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ("Schritt 7: Definieren Sie auf dem Bildschirm Interaktionen für Surface-Studio und ähnliche Geräte ")
 5. Kommentieren Sie die zweite Zeile („MainPage_Basic” und „MainPage_Haptics”), und entfernen Sie die Kommentare aus der dritten Zeile („MainPage”).  
 
     ``` csharp
@@ -611,4 +611,4 @@ Um dies in Aktion zu sehen (dafür ist Surface Studio erforderlich):
 
 ## <a name="summary"></a>Zusammenfassung
 
-Herzlichen Glückwunsch, Sie haben das *Lernprogramm für die ersten Schritte: Unterstützung von Surface Dial (und anderen Radgeräten) in Ihrer UWP-App* abgeschlossen! Wir haben Ihnen den für die Unterstützung von einem Radgerät in Ihren UWP-Apps erforderlichen Code gezeigt. Außerdem haben Sie erfahren, wie Sie Ihren Benutzern umfangreichere Erfahrungen bereitstellen, die von **RadialController**-APIs unterstützt werden.
+Herzlichen Glückwunsch zum Abschluss der *Lernprogramm für erste Schritte: Das Surface Dial (und anderen Geräten rad) in Ihre UWP-app unterstützt*! Wir haben Ihnen den für die Unterstützung von einem Radgerät in Ihren UWP-Apps erforderlichen Code gezeigt. Außerdem haben Sie erfahren, wie Sie Ihren Benutzern umfangreichere Erfahrungen bereitstellen, die von **RadialController**-APIs unterstützt werden.

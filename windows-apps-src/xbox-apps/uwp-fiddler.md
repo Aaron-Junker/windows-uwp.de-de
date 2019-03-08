@@ -1,17 +1,17 @@
 ---
-title: Verwendung von Fiddler mit Xbox One bei der Entwicklung für UWP
-description: Beschreibt die Verwendung des Freeware-Tools Fiddler, um den Netzwerkverkehr für ein Xbox One Dev Kit für UWP anzuzeigen.
+title: Verwenden von Fiddler mit Xbox One bei der Entwicklung für UWP
+description: Beschreibt die Verwendung des Freeware-Tools Fiddler, um den Netzwerkverkehr für einen Xbox One Dev Kit für UWP anzuzeigen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: fae6caf73cb8a5b569193a17e65e5d8b4f582ff2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046726"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652225"
 ---
 # <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>Verwenden von Fiddler mit Xbox One bei der Entwicklung für UWP
 
@@ -27,7 +27,7 @@ Fiddler kann Auswirkungen auf den Netzwerkstatus haben, der von der Konsole geme
 Führen Sie diese Schritte zum Installieren und Aktivieren von Fiddler aus, um den Datenverkehr von Ihrem Dev Kit zu überwachen:
 
 1. Installieren Sie Fiddler auf Ihrem Entwicklungscomputer, indem Sie die Anweisungen auf der [Fiddler-Website](https://www.fiddler2.com/fiddler2/) befolgen. 
-2. Starten Sie Fiddler, und wählen Sie im Menü **Extras** **Fiddler-Optionen** aus. 
+2. Starten Sie Fiddler, und wählen Sie im Menü **Extras****Fiddler-Optionen** aus. 
 3. Wählen Sie die Registerkarte **Verbindungen** aus, und stellen Sie sicher, dass **Remoteverbindungen für Remotecomputer zulassen** ausgewählt ist. 
 4. Klicken Sie auf **OK**, um die Änderung der Einstellungen zu akzeptieren. Ihnen wird nun ein Dialogfeld angezeigt, in dem Ihnen mitgeteilt wird, dass Fiddler neu gestartet werden muss, damit die Änderung wirksam wird, und Sie Ihre möglicherweise Ihre Firewall manuell konfigurieren müssen. Klicken Sie auf in diesem Dialogfeld auf **OK**, *starten Sie Fiddler jedoch noch nicht neu*.
 5. Konfigurieren Sie die erforderliche Firewallregel, um Remotecomputern das Herstellen von Verbindungen zu gestatten. Starten Sie das Windows-Firewall-Systemsteuerungsapplet. Klicken Sie auf **Erweiterte Einstellungen** und anschließend auf **Eingehende Regel**. Suchen Sie die Regel mit dem Namen „FiddlerProxy“, und führen Sie einen Bildlauf nach rechts durch. Überprüfen Sie dabei, ob jede Einstellung in der folgenden Tabelle für diese Regel angezeigt wird.
@@ -37,15 +37,15 @@ Führen Sie diese Schritte zum Installieren und Aktivieren von Fiddler aus, um d
   | Name              | FiddlerProxy                   |
   | Gruppe             | *Kein Wert* |
   | Profil           | Alle                            |
-  | Aktiviert           | Ja                            |
+  | Enabled           | Ja                            |
   | Aktion            | Zulassen                          |
-  | Überschreiben          | Nein                             |
-  | Programm           | *Pfad zu fiddler.exe*          |
-  | LocalAddress      | Any                            |
-  | RemoteAddress     | Any                            |
+  | Außer Kraft setzen          | Nein                             |
+  | Programm           | *Pfad zur fiddler.exe*          |
+  | LocalAddress      | Beliebig                            |
+  | RemoteAddress     | Beliebig                            |
   | Protokoll          | TCP                            |
-  | LocalPort         | Any                            |
-  | RemotePort        | Any                            |
+  | LocalPort         | Beliebig                            |
+  | RemotePort        | Beliebig                            |
   | AllowedUsers      | Beliebig                            |
   | AllowedComputers  | Beliebig                            |
 
@@ -74,10 +74,10 @@ Um die Verwendung von Fiddler als Proxy für das Internet zu beenden (und zu ver
 > [!NOTE]
 > Jeder PC, auf dem Fiddler installiert ist, verwendet ein anderes Fiddler-Stammzertifikat. Wenn Sie mehrere PCs besitzen, die verwendet werden könnten, um Ihrem Dev Kit einen Fiddler-Proxy bereitzustellen, müssen Sie das neue Stammzertifikat auswählen, wenn Sie zwischen diesen wechseln. Wenn Sie nur einen PC verwenden, müssen Sie das Stammzertifikat nur bei der ersten Aktivierung von Fiddler auswählen. Sie müssen dennoch die IP-Adresse und den Port angeben.
 
-## <a name="see-also"></a>Weitere Informationen
-- [Fiddler-Einstellungen – API-Referenz](wdp-fiddler-api.md)
+## <a name="see-also"></a>Siehe auch
+- [Fiddler-API-Referenz](wdp-fiddler-api.md)
 - [Häufig gestellte Fragen](frequently-asked-questions.md)
-- [UWP auf XboxOne](index.md)
+- [UWP auf Xbox One](index.md)
 
 
 

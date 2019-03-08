@@ -1,24 +1,24 @@
 ---
-title: Device Portal Netzwerk Anmeldeinformationen API-Referenz
-description: Enthält Informationen zum Hinzufügen, entfernen oder Aktualisieren der Netzwerkanmeldeinformationen programmgesteuert.
+title: Referenz zur API für Netzwerkanmeldeinformationen des Geräteportals
+description: Erfahren Sie, wie Sie Netzwerkanmeldeinformationen programmgesteuert hinzufügen, entfernen oder aktualisieren.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: ac30d8db830c51ee40653feb49b443ed44502617
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934685"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659215"
 ---
-# <a name="network-credentials-api-reference"></a>Netzwerk-Anmeldeinformationen-API-Referenz
-Sie können hinzufügen, entfernen Sie oder aktualisieren Sie gespeicherten Netzwerkanmeldeinformationen auf Ihr dev Kit mittels dieser REST-API.
+# <a name="network-credentials-api-reference"></a>Referenz zur API für Netzwerkanmeldeinformationen
+Sie können gespeicherte Netzwerkanmeldeinformationen auf Ihrem Dev Kit mit dieser REST-API hinzufügen, entfernen oder aktualisieren.
 
-## <a name="get-existing-credentials"></a>Abrufen von vorhandenen Anmeldeinformationen
+## <a name="get-existing-credentials"></a>Abrufen vorhandener Anmeldeinformationen
 
 **Anforderung**
 
-Sie können eine Liste der gespeicherten Freigaben zusammen mit den Benutzernamen des Benutzers abrufen, die Anmeldeinformationen für diese Netzwerkfreigabe verfügt.
+Sie können eine Liste der gespeicherten Freigaben sowie den Benutzernamen des Benutzers abrufen, die über Anmeldeinformationen für diese Netzwerkfreigabe verfügt.
 
 Methode      | Anforderungs-URI
 :------     | :-----
@@ -38,18 +38,18 @@ GET | /ext/networkcredential
 
 **Antwort**   
 
-- JSON-Array im folgenden Format:
+- Ein JSON-Array im folgenden Format:
 * Anmeldeinformationen
-  * NetworkPath - den Pfad zu der Netzwerkfreigabe.
-  * UserName: der Benutzername die Anmeldeinformationen gespeichert hat.
+  * NetworkPath: Der Pfad zur Netzwerkfreigabe.
+  * Benutzername: Der Benutzername mit gespeicherten Anmeldeinformationen.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-200 | Erfolg
+200 | Möglich
 4XX | Fehlercodes
 5XX | Fehlercodes
 
@@ -67,7 +67,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter      | Beschreibung     | 
 | ------------------ |-----------------|
-| NetworkPath        | Die Netzwerkpfad für die Freigabe Sie Anmeldeinformationen für den Zugriff auf Hinzufügen. |
+| NetworkPath        | Der Netzwerkpfad zur Freigabe, zu der Sie Anmeldeinformationen für den Zugriff hinzufügen. |
 <br>
 
 **Anforderungsheader**
@@ -77,25 +77,25 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 **Anforderungstext**
 
 - Die folgenden JSON-Elemente:
-* NetworkPath - den Pfad zu der Netzwerkfreigabe.
-* UserName: der Benutzername, um die Anmeldeinformationen zu speichern.
-* Password: das neue oder aktualisierte Kennwort für diesen Benutzer.
+* NetworkPath: Der Pfad zur Netzwerkfreigabe.
+* Benutzername: der Benutzername, unter dem die Anmeldeinformationen gespeichert werden sollen.
+* Passwort: Das neue oder aktualisierte Kennwort für diesen Benutzer.
 
 **Antwort**   
 
 - Keine  
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-204 | Erfolg
+204 | Möglich
 4XX | Fehlercodes
 5XX | Fehlercodes
 
-## <a name="remove-stored-credentials-for-a-share"></a>Entfernen Sie die gespeicherte Anmeldeinformationen für eine Bereitstellungsfreigabe.
+## <a name="remove-stored-credentials-for-a-share"></a>Entfernen Sie gespeicherte Anmeldeinformationen für eine Freigabe.
 
 **Anforderung**
 
@@ -109,7 +109,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter      | Beschreibung     | 
 | ------------------ |-----------------|
-| NetworkPath        | Der Netzwerkpfad für die Freigabe aus der Sie die gespeicherte Anmeldeinformationen entfernen. |
+| NetworkPath        | Der Netzwerkpfad zur Freigabe, aus der Sie die gespeicherten Anmeldeinformationen entfernen. |
 <br>
 
 **Anforderungsheader**
@@ -124,18 +124,18 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 - Keine 
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-204 | Die Anforderung von Anmeldeinformationen war erfolgreich.
+204 | Die Anforderung der Anmeldeinformationen war erfolgreich.
 4XX | Fehlercodes
 5XX | Fehlercodes
 
 <br />
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Xbox
 

@@ -1,31 +1,31 @@
 ---
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
+Description: Dieses Handbuch wird erläutert, wie Visual Studio-Projektmappe um bearbeiten, Debuggen und Verpacken von desktop-Anwendung zu konfigurieren.
 Search.Product: eADQiWindows 10XVcnh
-title: Verpacken einer desktop-Anwendungs mit Visual Studio
+title: Packen einer desktop-Anwendung mit Visual Studio
 ms.date: 08/30/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 04a16b5e824621b0e7f32c8cb012db326f591d48
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048257"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655965"
 ---
-# <a name="package-a-desktop-application-by-using-visual-studio"></a>Verpacken einer desktop-Anwendungs mit Visual Studio
+# <a name="package-a-desktop-application-by-using-visual-studio"></a>Packen einer desktop-Anwendung mit Visual Studio
 
-Sie können Visual Studio verwenden, um ein Paket für Ihre Desktop-App zu generieren. Anschließend können Sie veröffentlichen, die auf den Microsoft Store oder querladen es auf einem oder mehreren PCs verpacken.
+Sie können Visual Studio verwenden, um ein Paket für Ihre Desktop-App zu generieren. Anschließend können Sie veröffentlichen, die an den Microsoft Store oder Laden sie auf eine oder mehrere PCs packen.
 
 Die aktuelle Version von Visual Studio bietet ein neue Version des Paketprojekts, um manuelle Schritte zu eliminieren, die beim Verpacken Ihrer App erforderlich sind. Sie müssen nur Ihr Paketprojekt hinzufügen, auf das Desktopprojekt verweisen und F5 drücken, um Ihre App zu debuggen. Es sind keine manuellen Optimierungsmethoden mehr erforderlich. Das neue optimierte Design ist eine enorme Verbesserung über die Benutzeroberfläche, die in der vorherigen Version von Visual Studio verfügbar war.
 
 >[!IMPORTANT]
->Die Fähigkeit zum Erstellen eines Windows-app-Pakets für Ihre desktop-Anwendung (auch bekannt als der Desktop-Brücke) wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die Windows 10 Anniversary Update (10.0; verwendet werden Build 14393) oder einer neueren Version in Visual Studio.
+>Die Fähigkeit zum Erstellen einer Windows-app-Paket für die desktop-Anwendung (auch bekannt als die Desktop-Brücke) wurde in Windows 10 Version 1607 eingeführt, und es kann nur in Projekten, die Windows 10 Anniversary Update (10.0; als Ziel verwendet werden Build 14393) oder eine neuere Version in Visual Studio.
 
 ## <a name="first-prepare-your-application"></a>Vorbereiten Ihrer Anwendung
 
-Lesen Sie dieses Handbuch, bevor Sie mit der paketerstellung für Ihre Anwendung beginnen: [Vorbereiten eine desktop-Anwendung zu verpacken](desktop-to-uwp-prepare.md).
+Überprüfen Sie dieses Handbuch, bevor Sie beginnen, erstellen ein Paket für Ihre Anwendung: [Packen eine desktop-Anwendung vorbereiten](desktop-to-uwp-prepare.md).
 
 <a id="new-packaging-project"/>
 
@@ -40,9 +40,9 @@ Lesen Sie dieses Handbuch, bevor Sie mit der paketerstellung für Ihre Anwendung
    ![Paketprojekt](images/desktop-to-uwp/packaging-project.png)
 
    >[!NOTE]
-   >Dieses Projekt wird nur in Visual Studio2017 ab Version 15.5 oder höher angezeigt.
+   >Dieses Projekt wird nur in Visual Studio 2017 ab Version 15.5 oder höher angezeigt.
 
-3. Legen Sie die **Zielversion** des Projekts auf eine beliebige Version fest, stellen Sie jedoch sicher, dass die **Mindestens erforderliche Version** auf **Windows10 Anniversary Update** eingestellt ist.
+3. Legen Sie die **Zielversion** des Projekts auf eine beliebige Version fest, stellen Sie jedoch sicher, dass die **Mindestens erforderliche Version** auf **Windows 10 Anniversary Update** eingestellt ist.
 
    ![Das Dialogfeld zur Auswahl der Paketversion](images/desktop-to-uwp/packaging-version.png)
 
@@ -58,7 +58,7 @@ Lesen Sie dieses Handbuch, bevor Sie mit der paketerstellung für Ihre Anwendung
 
    ![Als Einstiegspunkt festlegen](images/desktop-to-uwp/entry-point-set.png)
 
-6. Erstellen Sie das Paketprojekt, um sicherzustellen, dass keine Fehler angezeigt werden.  Wenn Fehler auftreten, öffnen Sie den **Konfigurations-Manager** , und stellen Sie sicher, dass Ihre Projekte die gleichen Zielplattform.
+6. Erstellen Sie das Paketprojekt, um sicherzustellen, dass keine Fehler angezeigt werden.  Wenn Sie Fehler erhalten, öffnen Sie **Configuration Manager** und stellen Sie sicher, dass Ihre Projekte die gleiche Plattform als Ziel.
 
    ![Konfigurations-manager](images/desktop-to-uwp/config-manager.png)
 
@@ -73,26 +73,26 @@ Lesen Sie dieses Handbuch, bevor Sie mit der paketerstellung für Ihre Anwendung
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Finden Sie Antworten auf Ihre Fragen**
+**Hier finden Sie Antworten auf Ihre Fragen**
 
 Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Fragen Sie uns [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Geben Sie Feedback oder Verbesserungsvorschläge**
+**Geben Sie Feedback oder Vorschläge für Features**
 
 Weitere Informationen finden Sie unter [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
 **Führen Sie aus, Debuggen Sie oder testen Sie Ihre desktop-Anwendung**
 
-Finden Sie unter [ausführen, Debuggen und testen eine verpackte desktop-Anwendung](desktop-to-uwp-debug.md)
+Finden Sie unter [ausführen, Debuggen und testen eine App-Pakete desktop-Anwendung](desktop-to-uwp-debug.md)
 
-**Verbessern Sie Ihre desktop-Anwendung durch Hinzufügen von UWP-APIs**
+**Erweitern Sie Ihre desktop-Anwendung durch Hinzufügen von UWP-APIs**
 
-Siehe [Verbessern Sie Ihre Desktopanwendung für Windows10](desktop-to-uwp-enhance.md)
+Siehe [Verbessern Sie Ihre Desktopanwendung für Windows 10](desktop-to-uwp-enhance.md)
 
-**Erweitern Sie Ihre desktop-Anwendung durch Hinzufügen von UWP-Projekten und Komponenten für Windows-Runtime**
+**Erweitern Sie die desktop-Anwendung durch Hinzufügen von UWP-Projekten und Windows-Runtime-Komponenten**
 
 Weitere Informationen finden Sie unter [Erweitern Ihrer Desktopanwendung mit modernen UWP-Komponenten](desktop-to-uwp-extend.md).
 
-**Verteilen Ihrer App**
+**Verteilen Sie Ihre app**
 
-Finden Sie unter [Verteilen einer verpackten desktop-Anwendung](desktop-to-uwp-distribute.md)
+Finden Sie unter [verteilen eine App-Pakete desktop-Anwendung](desktop-to-uwp-distribute.md)

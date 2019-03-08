@@ -4,14 +4,14 @@ description: In diesem Thema erfahren Sie, wie Sie Effekte auf die Kameravorscha
 title: Effekte für die Videoaufnahme
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e9960e66c6bcdd7105e201d48e2317de4a39a19a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947512"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636625"
 ---
 # <a name="effects-for-video-capture"></a>Effekte für die Videoaufnahme
 
@@ -27,13 +27,13 @@ Um Videos mithilfe der Gerätekamera aufzunehmen oder in der Vorschau anzuzeigen
 > [!NOTE]
 > Auf einigen Geräten sind der Vorschaudatenstrom und Aufnahmedatenstrom identisch. Wenn Sie **MediaStreamType.VideoPreview** oder **MediaStreamType.VideoRecord** angeben und **AddVideoEffectAsync** aufrufen, wird der Effekt folglich sowohl auf den Vorschaudatenstrom als auch auf den Aufnahmedatenstrom angewendet. Sie können bestimmen, ob der Vorschaudatenstrom und Aufnahmedatenstrom auf dem aktuellen Gerät identisch sind, indem Sie die [**VideoDeviceCharacteristic**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings.VideoDeviceCharacteristic)-Eigenschaft von [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.MediaCaptureSettings) auf das **MediaCapture**-Objekt überprüfen. Wenn der Wert dieser Eigenschaft **VideoDeviceCharacteristic.AllStreamsIdentical** oder **VideoDeviceCharacteristic.PreviewRecordStreamsIdentical** lautet, sind die Datenströme identisch, und alle auf einen Datenstrom angewendeten Effekte wirken sich auch auf den anderen aus.
 
-Im folgenden Beispiel wird sowohl dem Vorschaudatenstrom als auch dem Aufnahmedatenstrom der Kamera ein Effekt hinzugefügt. Dieses Beispiel veranschaulicht, wie Sie überprüfen, ob Aufnahme- und Vorschaustreams identisch sind.
+Im folgenden Beispiel wird sowohl dem Vorschaudatenstrom als auch dem Aufnahmedatenstrom der Kamera ein Effekt hinzugefügt. Dieses Beispiel veranschaulicht, wie Sie überprüfen, ob der Aufnahme- und Vorschaudatenstrom identisch sind.
 
 [!code-cs[BasicAddEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetBasicAddEffect)]
 
 Beachten Sie, dass **AddVideoEffectAsync** ein Objekt zurückgibt, das die [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.IMediaExtension)-Schnittstelle implementiert, die den hinzugefügten Videoeffekt darstellt. Bei einigen Effekten können die Effekteinstellungen geändert werden, indem Sie [**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) an die [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986)-Methode übergeben.
 
-Ab Windows10, Version 1607, können Sie auch das von **AddVideoEffectAsync** zurückgegebene Objekt verwenden, um den Effekt aus der Videopipeline zu entfernen, indem Sie es an [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957) übergeben. **RemoveEffectAsync** ermittelt automatisch, ob der Effektobjektparameter dem Vorschau- oder Aufnahmedatenstrom hinzugefügt wurde. Auf diese Weise müssen Sie beim Aufrufen keinen Datenstromtyp angeben.
+Ab Windows 10, Version 1607, können Sie auch das von **AddVideoEffectAsync** zurückgegebene Objekt verwenden, um den Effekt aus der Videopipeline zu entfernen, indem Sie es an [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957) übergeben. **RemoveEffectAsync** ermittelt automatisch, ob der Effektobjektparameter dem Vorschau- oder Aufnahmedatenstrom hinzugefügt wurde. Auf diese Weise müssen Sie beim Aufrufen keinen Datenstromtyp angeben.
 
 [!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
 
@@ -87,7 +87,7 @@ Legen Sie die [**Video**](https://msdn.microsoft.com/library/windows/apps/hh7011
 
 ### <a name="handle-the-video-stabilization-effect-being-disabled"></a>Behandeln des Deaktivierens des Videostabilisierungseffekts
 
-Das System kann den Videostabilisierungseffekt automatisch deaktivieren, wenn Sie der Pixeldurchsatz zu groß für die Verarbeitung durch den Effekt ist oder wenn erkannt wird, dass der Effekt langsam ausgeführt wird. In diesem Fall wird das „EnabledChanged“-Ereignis ausgelöst. Die **VideoStabilizationEffect**-Instanz im Parameter *sender* gibt den neuen Zustand des Effekts (aktiviert oder deaktiviert) an. [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) hat einen [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981)-Wert, der angibt, warum der Effekt aktiviert oder deaktiviert wurde. Beachten Sie, dass dieses Ereignis auch ausgelöst wird, wenn Sie den Effekt programmgesteuert aktivieren oder deaktivieren. In diesem Fall ist der Grund **Programmatic**.
+Das System kann den Videostabilisierungseffekt automatisch deaktivieren, wenn Sie der Pixeldurchsatz zu groß für die Verarbeitung durch den Effekt ist oder wenn erkannt wird, dass der Effekt langsam ausgeführt wird. In diesem Fall wird das „EnabledChanged“-Ereignis ausgelöst. Die **VideoStabilizationEffect**-Instanz im Parameter *sender* gibt den neuen Zustand des Effekts (aktiviert oder deaktiviert) an. [  **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) hat einen [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981)-Wert, der angibt, warum der Effekt aktiviert oder deaktiviert wurde. Beachten Sie, dass dieses Ereignis auch ausgelöst wird, wenn Sie den Effekt programmgesteuert aktivieren oder deaktivieren. In diesem Fall ist der Grund **Programmatic**.
 
 In der Regel verwenden Sie dieses Ereignis zum Anpassen der Benutzeroberfläche Ihrer App, um den aktuellen Status der Videostabilisierung anzugeben.
 
@@ -102,7 +102,7 @@ Rufen Sie zum Bereinigen des Videostabilisierungseffekts [**RemoveEffectAsync**]
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
-* [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

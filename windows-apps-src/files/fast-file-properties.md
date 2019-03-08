@@ -3,25 +3,25 @@ title: Schneller Zugriff auf Dateieigenschaften in UWP
 description: Stellen Sie schnell eine Liste von Dateien und ihren Eigenschaften über eine Bibliothek in einer UWP-App zusammen.
 ms.date: 02/06/2019
 ms.topic: article
-keywords: Windows10, Uwp, Datei, Eigenschaften
+keywords: Windows 10, Uwp, Datei, Eigenschaften
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060054"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630235"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>Schneller Zugriff auf Dateieigenschaften in UWP 
 
 Erfahren Sie, wie Sie schnell eine Liste von Dateien und ihren Eigenschaften aus einer Bibliothek zusammenstellen und diese Eigenschaften in einer App verwenden können.  
 
 Voraussetzungen 
-- **Asynchrone Programmierung für universelle Windows-Plattform (UWP) apps**  erfahren Sie, wie zum Schreiben von asynchronen apps in c# oder Visual Basic finden Sie unter [aufrufen asynchroner APIs in c# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).     Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
-- **Zugriffsberechtigungen für Bibliotheken**  Der Code in diesen Beispielen erfordert die **PicturesLibrary** -Funktion, aber Ihr Dateispeicherort erfordern einen anderen Zugriffstyp oder keinen überhaupt. Weitere Informationen finden Sie unter [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
-- **Einfache dateiauflistung**  Diesem Beispiel wird mit [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) einige erweiterte aufzählungseigenschaften gesetzt. Um mehr darüber zu erfahren, wie Sie eine einfache Liste von Dateien für ein kleineres Verzeichnis erhalten, lesen Sie [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
+- **Asynchrone Programmierung für apps der universellen Windows-Plattform (UWP)**   erfahren Sie, wie asynchrone Schreiben von apps in C# oder Visual Basic finden Sie unter [Aufrufen von asynchronen APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).     Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
+- **Zugriffsberechtigungen für Bibliotheken**   für den Code in diesen Beispielen ist das **PicturesLibrary** -Funktion, aber den Dateispeicherort möglicherweise eine Funktion oder keine Funktion überhaupt. Weitere Informationen finden Sie unter [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
+- **Einfache Enumeration**    dieses Beispiel verwendet ["queryoptions"](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) einige erweiterte enumerationseigenschaften festlegen. Um mehr darüber zu erfahren, wie Sie eine einfache Liste von Dateien für ein kleineres Verzeichnis erhalten, lesen Sie [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
 
-## <a name="usage"></a>Verwendung  
+## <a name="usage"></a>Verwendungszweck  
 Viele Apps müssen die Eigenschaften einer Gruppe von Dateien auflisten, müssen aber nicht immer direkt mit den Dateien interagieren. Zum Beispiel, eine Musikanwendung spielt immer nur eine Datei ab (Öffnen), aber sie benötigt die Eigenschaften aller Dateien in einem Ordner, so dass die Anwendung die Song-Warteschlange anzeigen kann. So kann der Benutzer eine gültige Datei zum Abspielen auswählen. 
 
 Die Beispiele auf dieser Seite sollten nicht in Apps verwendet werden, die die Metadaten jeder Datei modifizieren, oder in Apps, die mit allen resultierenden StorageFiles interagieren (über das Lesen ihrer Eigenschaften hinaus). Weitere Informationen finden Sie unter [Aufzählung und Abfrage von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
@@ -109,14 +109,14 @@ while (images.Count != 0 || index < 10000) 
 ```
 
 ### <a name="results"></a>Ergebnisse 
-Die resultierenden StorageFile-Dateien enthalten nur die angeforderten Eigenschaften, werden aber 10-mal schneller zurückgegeben als die anderen IndexerOption.Die Anwendung kann weiterhin Zugriff auf Eigenschaften beantragen, die nicht bereits in der Abfrage enthalten sind, aber es gibt eine Leistungseinbuße, um die Datei zu öffnen und diese Eigenschaften abzurufen.  
+Die resultierenden StorageFile-Dateien enthalten nur die angeforderten Eigenschaften, werden aber 10-mal schneller zurückgegeben als die anderen IndexerOption. Die Anwendung kann weiterhin Zugriff auf Eigenschaften beantragen, die nicht bereits in der Abfrage enthalten sind, aber es gibt eine Leistungseinbuße, um die Datei zu öffnen und diese Eigenschaften abzurufen.  
 
 ## <a name="adding-folders-to-libraries"></a>Hinzufügen von Ordnern zu Libraries 
 Apps können den Benutzer mittels [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync) auffordern, den Speicherort zum Index hinzuzufügen. Sobald der Speicherort einmal enthalten ist, wird er automatisch indiziert und Apps können diese Technik verwenden, um die Dateien aufzuzählen.
  
-## <a name="see-also"></a>Weitere Informationen:
-[QueryOptions-API-Referenz](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
-[Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
+## <a name="see-also"></a>Siehe auch
+["Queryoptions" API-Referenz](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
+[Aufzählen und Abfragen von Dateien und Ordner](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
  
  

@@ -1,28 +1,28 @@
 ---
-Description: Add-ons (or in-app products) are published through Partner Center.
+Description: Add-Ons (oder in-app-Produkte) werden über das Partner Center veröffentlicht.
 title: Add-On-Übermittlungen
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, IAP, In-App-Kauf, In-App-Produkt, IAP-Übermittlung
+keywords: Windows 10, UWP, IAP, In-App-Kauf, In-App-Produkt, IAP-Übermittlung
 ms.localizationpriority: medium
 ms.openlocfilehash: 28383ed82c418ff15806c325d6eab5a05f9987bf
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045063"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620365"
 ---
 # <a name="add-on-submissions"></a>Add-On-Übermittlungen
 
-Add-Ons (auch als In-App-Produkte bezeichnet) sind ergänzende Elemente für Ihre App, die von Kunden erworben werden können. Ein Add-on kann ein lustiges sein, die neues Feature, ein neues gamelevel oder etwas anderes vorstellen Benutzer Spaß daran haben. Add-Ons sind nicht nur eine gute Möglichkeit, um Geld zu verdienen, sondern fördern zudem die Kundeninteraktion und -bindung.
+Add-Ons (auch als In-App-Produkte bezeichnet) sind ergänzende Elemente für Ihre App, die von Kunden erworben werden können. Ein Add-on kann es sich um ein unterhaltsames sein, die neue Funktion, ein neues Spiel auf oder gibt es eine andere Meinung Benutzer interessiert bleiben. Add-Ons sind nicht nur eine gute Möglichkeit, um Geld zu verdienen, sondern fördern zudem die Kundeninteraktion und -bindung.
 
-Add-Ons werden über das [Partner Center](https://partner.microsoft.com/dashboard)veröffentlicht und benötigen Sie ein aktives [Entwicklerkonto](https://go.microsoft.com/fwlink/p/?LinkId=615100). Sie müssen die [Add-Ons außerdem im Code Ihrer App aktivieren](../monetize/in-app-purchases-and-trials.md).
+Add-Ons über veröffentlicht werden [Partner Center](https://partner.microsoft.com/dashboard), müssen Sie ein aktives [Entwicklerkonto](https://go.microsoft.com/fwlink/p/?LinkId=615100). Sie müssen die [Add-Ons außerdem im Code Ihrer App aktivieren](../monetize/in-app-purchases-and-trials.md).
 
-Der erste Schritt bei der Add-on-Übermittlung ist das Add-on im Partner Center [dessen Produkttyp und Produkt-ID](set-your-add-on-product-id.md)erstellt. Danach müssen Sie eine Übermittlung erstellen, damit Ihr Add-on über den Microsoft Store erworben werden kann. Sie können ein Add-On gleichzeitig mit [Ihrer App einreichen](app-submissions.md) oder unabhängig vorgehen. Außerdem können Sie [Updates](#updating-an-add-on-after-publication) für Add-Ons ausführen, nachdem die App im Store eingetragen wurde, ohne dass die App erneut übermittelt werden muss.
+Der erste Schritt in der Add-on-Übermittlungsprozess ist die Erstellung des Add-Ons im Partner Center von [die Produkttyp und die Produkt-ID definieren](set-your-add-on-product-id.md). Anschließend erstellen Sie eine Eingabe, damit das Add-on über den Microsoft Store erworben werden kann. Sie können ein Add-On gleichzeitig mit [Ihrer App einreichen](app-submissions.md) oder unabhängig vorgehen. Außerdem können Sie [Updates](#updating-an-add-on-after-publication) für Add-Ons ausführen, nachdem die App im Store eingetragen wurde, ohne dass die App erneut übermittelt werden muss.
 
 > [!NOTE]
-> In diesem Abschnitt der Dokumentation wird beschrieben, wie Add-ons im Partner Center zu übermitteln. Alternativ dazu können Sie auch die [Microsoft Store-Übermittlungs-API](../monetize/create-and-manage-submissions-using-windows-store-services.md) verwenden, um Add-On-Übermittlungen zu automatisieren.
+> In diesem Abschnitt der Dokumentation wird beschrieben, wie im Partner Center-Add-Ons zu übermitteln. Alternativ dazu können Sie auch die [Microsoft Store-Übermittlungs-API](../monetize/create-and-manage-submissions-using-windows-store-services.md) verwenden, um Add-On-Übermittlungen zu automatisieren.
 
 
 ## <a name="checklist-for-submitting-an-add-on"></a>Prüfliste für die Übermittlung eines Add-Ons
@@ -32,45 +32,45 @@ Hier finden Sie eine Liste mit den Informationen, die Sie beim Erstellen Ihrer A
 
 ### <a name="create-a-new-add-on-page"></a>Erstellen einer neuen Add-On-Seite
 
-| Feldname                    | Hinweise                            |
+| Name des Felds                    | Anmerkungen                            |
 |-------------------------------|----------------------------------|
-| [**Produkttyp**](set-your-add-on-product-id.md#product-type)      | Nötig |  
+| [**Produkttyp**](set-your-add-on-product-id.md#product-type)      | Erforderlich |  
 | [**Produkt-ID**](set-your-add-on-product-id.md#product-id)          | Erforderlich |        
 
 
 ### <a name="properties-page"></a>Seite „Eigenschaften“
 
-| Feldname                    | Hinweise                              |   
+| Name des Felds                    | Anmerkungen                              |   
 |-------------------------------|------------------------------------|
-| [**Produktlebensdauer**](enter-add-on-properties.md#product-lifetime)  | Erforderlich, wenn der Produkttyp **Gebrauchsgut** lautet. Gilt nicht für andere Produkttypen. |
+| [**Produktlebenszyklus**](enter-add-on-properties.md#product-lifetime)  | Erforderlich, wenn der Produkttyp **Gebrauchsgut** lautet. Gilt nicht für andere Produkttypen. |
 | [**Menge**](enter-add-on-properties.md#quantity)  | Erforderlich, wenn der Produkttyp **Vom Store verwalteter Verbrauchsartikel** lautet. Gilt nicht für andere Produkttypen. |
-| [**Abonnementdauer**](enter-add-on-properties.md#subscription-period)          | Erforderlich, wenn der Produkttyp **Dauerauftrag** lautet. Gilt nicht für andere Produkttypen.       |  
+| [**Abonnementzeitraum**](enter-add-on-properties.md#subscription-period)          | Erforderlich, wenn der Produkttyp **Dauerauftrag** lautet. Gilt nicht für andere Produkttypen.       |  
 | [**Kostenlose Testversion**](enter-add-on-properties.md#free-trial)          | Erforderlich, wenn der Produkttyp **Dauerauftrag** lautet. Gilt nicht für andere Produkttypen.       |
 | [**Inhaltstyp**](enter-add-on-properties.md#content-type)          | Erforderlich    |               
-| [**Schlüsselwörter**](enter-add-on-properties.md#keywords)                  | Optional (bis zu zehnSchlüsselwörter mit jeweils maximal 30Zeichen) |
-| [**Benutzerdefinierte Entwicklerdaten**](enter-add-on-properties.md#custom-developer-data)   | Optional (maximal 3.000Zeichen)            |
+| [**Keywords**](enter-add-on-properties.md#keywords)                  | Optional (bis zu zehn Schlüsselwörter mit jeweils maximal 30 Zeichen) |
+| [**Benutzerdefinierte Entwickler-Daten**](enter-add-on-properties.md#custom-developer-data)   | Optional (maximal 3.000 Zeichen)            |
 
 
 ### <a name="pricing-and-availability-page"></a>Seite „Preise und Verfügbarkeit“
 
-| Feldname                    | Hinweise                                       |
+| Name des Felds                    | Anmerkungen                                       |
 |-------------------------------|---------------------------------------------|
-| [**Märkte**](set-add-on-pricing-and-availability.md#markets)  | Standard: alle möglichen Märkte |
-| [**Sichtbarkeit**](set-add-on-pricing-and-availability.md#visibility)   | Standard: Zum Kauf erhältlich. Kann im App-Eintrag angezeigt werden |
-| [**Zeitplan**](set-add-on-pricing-and-availability.md#schedule)    | Standard: so schnell wie möglich veröffentlichen
-| [**Preise**](set-add-on-pricing-and-availability.md#pricing)                | Erforderlich                                    |
-| [**Sonderpreise**](put-apps-and-add-ons-on-sale.md)               | Optional                    |
+| [**Märkte**](set-add-on-pricing-and-availability.md#markets)  | Standardwert: Alle möglichen Märkte |
+| [**Sichtbarkeit**](set-add-on-pricing-and-availability.md#visibility)   | Standardwert: Erhältlich. Kann im App-Eintrag angezeigt werden |
+| [**Zeitplan**](set-add-on-pricing-and-availability.md#schedule)    | Standardwert: Version so bald wie möglich
+| [**– Preise**](set-add-on-pricing-and-availability.md#pricing)                | Erforderlich                                    |
+| [**Verkaufs-Preise**](put-apps-and-add-ons-on-sale.md)               | Optional                    |
 
 
 ### <a name="store-listings"></a>Store-Einträge
 
 Ein Store-Eintrag ist erforderlich. Es wird empfohlen, für jede von der App unterstützte [Sprache](create-add-on-store-listings.md#store-listing-languages) Store-Einträge anzugeben.
 
-| Feldname                    | Hinweise                                       |
+| Name des Felds                    | Anmerkungen                                       |
 |-------------------------------|---------------------------------------------|
 | [**Titel**](create-add-on-store-listings.md#title)                    | Erforderlich (max. 100 Zeichen)           |
 | [**Beschreibung**](create-add-on-store-listings.md#description)       | Optional (max. 200 Zeichen)            |
-| [**Symbol**](create-add-on-store-listings.md#icon)                    | Optional (PNG, 300x300 Pixel)            |
+| [**Icon**](create-add-on-store-listings.md#icon)                    | Optional (PNG, 300x300 Pixel)            |
 
 
 Nachdem Sie diese Informationen eingegeben haben, klicken Sie auf **An Store einreichen**. In den meisten Fällen dauert der Zertifizierungsprozess etwa eine Stunde. Danach wird Ihr Add-On im Store veröffentlicht und steht für Kunden zum Kauf bereit.
@@ -81,11 +81,11 @@ Nachdem Sie diese Informationen eingegeben haben, klicken Sie auf **An Store ein
 
 ## <a name="updating-an-add-on-after-publication"></a>Aktualisieren eines Add-Ons nach der Veröffentlichung
 
-Sie können ein veröffentlichtes Add-On jederzeit ändern. Add-On-Änderungen werden eingereicht und veröffentlicht unabhängig von Ihrer app daher in der Regel Sie nicht die gesamte app aktualisieren, um ein Add-on, z. B. zum Aktualisieren des Preises oder der Beschreibung ändern müssen.
+Sie können ein veröffentlichtes Add-On jederzeit ändern. Add-On-Änderungen übermittelt und unabhängig von Ihrer app veröffentlicht wird, damit Sie nicht in der Regel die gesamte app zu aktualisieren, um ein Add-on wie das Aktualisieren der Preis oder die Beschreibung ändern müssen.
 
-Übermitteln von Updates, Add-on Seite im Partner Center und klicken Sie auf **Aktualisieren**. Dadurch entsteht eine neue Übermittlung für das Add-on, wobei die Informationen aus der vorherigen Übermittlung als Ausgangspunkt. Ändern Sie wie folgt, und klicken Sie dann auf **an den Store übermitteln**.
+Um Updates zu senden, fahren Sie mit der hinzufügen-auf der Seite im Partner Center, und klicken Sie auf **Update**. Hiermit wird eine neue Eingabe für das Add-on, mit den Informationen aus Ihrer vorherigen Übermittlung als Ausgangspunkt. Nehmen Sie die Änderungen, die Sie möchten, und klicken Sie dann auf **an den Store übermitteln**.
 
-Wenn Sie ein zuvor angebotenes Add-On entfernen möchten, können Sie dies tun, indem Sie eine neue Übermittlung erstellen und die Option [Verteilung und Sichtbarkeit](set-add-on-pricing-and-availability.md) unter **Im Store ausgeblendet** in **Beenden des Erwerbs**. Achten Sie darauf, dass Sie Ihre app Code aktualisieren, um auch Verweise auf das Add-on zu entfernen (insbesondere dann, wenn Ihre app zuvor veröffentlichten frühere Versionen von Windows 8.1 unterstützt diese sichtbarkeitseinstellung gilt nicht für diese Kunden).
+Wenn Sie ein zuvor angebotenes Add-On entfernen möchten, können Sie dies tun, indem Sie eine neue Übermittlung erstellen und die Option [Verteilung und Sichtbarkeit](set-add-on-pricing-and-availability.md) unter **Im Store ausgeblendet** in **Beenden des Erwerbs**. Achten Sie darauf, um Code Ihrer app zu aktualisieren, je nach Bedarf auch Verweise auf das Add-on entfernen (insbesondere dann, wenn Ihre app zuvor veröffentlichte Windows 8.1 unterstützt, die früher – diese sichtbarkeitseinstellung wird nicht gelten für Kunden).
 
 > [!IMPORTANT]
-> Ist Ihre app zuvor veröffentlichten verfügbar für Kunden unter Windows 8.x, Sie müssen zum Erstellen und veröffentlichen eine neue app-Übermittlung, um die Add-on-Updates diese Kunden sichtbar zu machen. Auch wenn Sie neue Add-Ons einer App für Windows 8.x hinzufügen, nachdem die App veröffentlicht wurde, müssen Sie den App-Code aktualisieren, um auf diese Add-Ons zu verweisen, und die App dann erneut übermitteln. Andernfalls sind die neuen Add-Ons nicht für Kunden unter Windows 8.x sichtbar.
+> Wenn Ihre app zuvor veröffentlichte für Kunden mit Windows verfügbar ist 8.x, Sie benötigen zum Erstellen und veröffentlichen eine neue app senden, um die Add-on-Updates für die Kunden sichtbar zu machen. Auch wenn Sie neue Add-Ons einer App für Windows 8.x hinzufügen, nachdem die App veröffentlicht wurde, müssen Sie den App-Code aktualisieren, um auf diese Add-Ons zu verweisen, und die App dann erneut übermitteln. Andernfalls sind die neuen Add-Ons nicht für Kunden unter Windows 8.x sichtbar.

@@ -1,40 +1,40 @@
 ---
 title: Werbekampagnen-Bericht
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
-description: Der Bericht "Anzeigenkampagne Ad" im Partner Center können Sie sehen, wie Ihre app Werbekampagnen sind.
+description: Der Ad-Kampagne-Bericht im Partner Center können Sie sehen, wie Ihre app Promotion-Anzeigenkampagnen ausführen.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, bewerben, App, Kampagnen, Bericht, Installationen
+keywords: Windows 10, UWP, bewerben, App, Kampagnen, Bericht, Installationen
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b798abf88805ef3c693149149be958ba0cc1de9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046839"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653545"
 ---
-# <a name="ad-campaign-report"></a>Bericht „Anzeigenkampagne“
+# <a name="ad-campaign-report"></a>Werbekampagnen-Bericht
 
-Der Bericht " **Anzeigenkampagne** " im [Partner Center](https://partner.microsoft.com/dashboard) gibt Aufschluss über app Promotion Leistung Ihrer [Anzeigenkampagnen](create-an-ad-campaign-for-your-app.md) sind. Um den Bericht anzuzeigen, erweitern Sie im linken Navigationsmenü **bewerben** , und wählen Sie **Anzeigenkampagnen**.
+Die **Ad Kampagne** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) können Sie sehen, wie Werbeaktionen für Ihre app [Anzeigenkampagnen](create-an-ad-campaign-for-your-app.md) durchführen. Um den Bericht anzuzeigen, erweitern Sie **Attract** im linken Navigationsmenü, und wählen **Anzeigenkampagnen**.
 
 ## <a name="definitions"></a>Definitionen
 
 Dieser Bericht zeigt die Daten für folgenden Elemente an:
 
--   **Aufrufe**: Gibt an, wie häufig Ihre Anzeige von Kunden aufgerufen wurde.
--   **Klicks**: Gibt an, wie häufig von Kunden auf Ihre Anzeige geklickt wurde.
--   **Konvertierungen**: Wenn Ihr Kampagnenziel im Erhöhen der Installationen Ihrer App besteht, ist die Konvertierung die Anzahl der Male innerhalb von 24 Stunden, die jemand Ihre Anzeige angezeigt und dann Ihre App installiert hat. Besteht Ihr Kampagnenziel im Steigern der Interaktionen in Ihrer App, dann ist die Konvertierung die Anzahl der Male innerhalb von 24 Stunden, die jemand Ihre Anzeige angezeigt und dann Ihre App geöffnet hat. Nachfolgend finden Sie weitere Informationen zur Installationsverfolgung und zum Messen von Konvertierungen.
--   **Ausgaben**: der Betrag, die Sie für die einzelnen Kampagnen ausgegeben haben.
+-   **Eindrücke**: Die Anzahl der Häufigkeit, mit die der Ad-Kunden angezeigt wurde.
+-   **Klickt**: Die Anzahl der Häufigkeit, mit die ein Kunde auf Ihrem Ad geklickt hat.
+-   **Konvertierungen**: Wenn Ihre Kampagne installiert, die Ihrer App zu erhöhen wird, wird eine Konvertierung ist die Anzahl an, wie oft eine Person Ad angezeigt, und klicken Sie dann Ihre app innerhalb von 24 Stunden installiert. Besteht Ihr Kampagnenziel im Steigern der Interaktionen in Ihrer App, dann ist die Konvertierung die Anzahl der Male innerhalb von 24 Stunden, die jemand Ihre Anzeige angezeigt und dann Ihre App geöffnet hat. Nachfolgend finden Sie weitere Informationen zur Installationsverfolgung und zum Messen von Konvertierungen.
+-   **Ausgaben**: Die Größe jeder Kampagne des Money, die Sie verbracht haben.
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
 
 Oben im Bericht können Sie die folgenden **Abschnittsfilter** verwenden, um den Umfang der Daten, die im Bericht angezeigten werden, anzupassen:
 
--   **Datum**: Die Standardeinstellung ist **Letzte 30 Tage**, aber Sie können festlegen, ob die Daten für 3, 6 oder 12Monate angezeigt werden sollen.
--   **Kampagnenziel**: Sie können alle Kampagnen anzeigen oder die Daten begrenzen, um nur Daten anzuzeigen, deren Ziel **App-Installationen** oder **Interaktionen mit der App** sind.
--   **App-Name**: Die Standardauswahl ist **Alle**, Sie können jedoch festlegen, dass nur Kampagnen für eine bestimmte App angezeigt werden.
--   **Kampagnentyp**: Sie können alle Arten von Kampagnen anzeigen oder die Daten begrenzen und nur kostenpflichtige, Eigenwerbung oder Community-Anzeigenkampagnen anzeigen.
--   **Status**: die Standardeinstellung ist **Alle**, Sie können allerdings auch Daten nur für Kampagnen anzeigen, die einen bestimmten Status haben (**Aktiv**, **Entwurf**, **Angehalten**, **Abgeschlossen** oder **Eingreifen erforderlich**).
+-   **Datum**: Die Standardauswahl ist **letzte 30 Tage**, aber Sie können auswählen, um Daten anzuzeigen, 3, 6 oder 12 Monate lang.
+-   **Ziel der Kampagne**: Sie können alle Kampagnen anzeigen oder begrenzen Sie die Daten, um nur diejenigen anzuzeigen, deren Ziel besteht darin, **App installiert** oder **App Engagement**.
+-   **App-Namen**: Die Standardauswahl ist **alle**, aber Sie können auswählen, um Kampagnen für nur eine bestimmte app anzuzeigen.
+-   **Typ Kampagne**: Sie können alle Kampagnentypen anzeigen oder begrenzen Sie die Daten anzeigen, die nur bezahlt, Haus oder Community-Anzeigenkampagnen.
+-   **Status**: Die Standardauswahl ist **alle**, aber Sie können Daten nur für Kampagnen angezeigt, die in einem bestimmten Status fallen auswählen (**Active**, **Entwurf**, **angehalten**, **Beendet**, oder **Eingreifen**).
 
 
 ## <a name="ad-campaign-metrics"></a>Metriken von Anzeigenkampagnen
@@ -48,7 +48,7 @@ Sie können jeweils Leistungsdaten für bis zu sechs verschiedene Anzeigenkampag
 
 ## <a name="install-tracking"></a>Nachverfolgung von Installationen
 
-Eine Kampagne bietet über das Partner Center dringend benötigte Verkaufsförderung Ihrer apps. Anzeigenaufrufe werden Kunden angezeigt, die ein hohes Interesse an der App haben. Diese Kunden klicken auf die Anzeige und installieren die App aus dem Store. Vorher war es schwierig zu unterscheiden, ob die Installationen das Ergebnis einer Anzeigenkampagne waren oder auf andere Weise zustande gekommen sind.
+Ausführen einer installieren-Ad-Kampagne über Partner Center stellt bereit, die benötigte so, dass Ihre apps angekündigt. Anzeigenaufrufe werden Kunden angezeigt, die ein hohes Interesse an der App haben. Diese Kunden klicken auf die Anzeige und installieren die App aus dem Store. Vorher war es schwierig zu unterscheiden, ob die Installationen das Ergebnis einer Anzeigenkampagne waren oder auf andere Weise zustande gekommen sind.
 
 Dieser Bericht zeigt, wie viele Installationen Sie mit Ihren Anzeigenkampagnen erzielt haben. Dies umfasst nur Downloads, die das direkte Ergebnis Ihrer Anzeigenkampagnen sind, und schließt alle anderen Downloadquellen aus.
 
@@ -67,7 +67,7 @@ Eine Installation per Handy, Tablet, PC oder andere Windows 10-Geräte wird im S
 2.  Der Kunde hat sich mit einem Microsoft-Konto angemeldet.
 3.  Der Kunde erfüllt die [COPPA](https://go.microsoft.com/fwlink?LinkId=536558)- Anforderungen (Kunden, die die COPPA-Anforderungen nicht erfüllen, können nicht nachverfolgt werden).
 
-Folglich kann es dazu kommen, dass die Nachverfolgung der App-Installationen nicht die exakte Anzahl von Installationen ergibt, die durch eine Anzeigenkampagne generiert werden. Beachten Sie, dass Sie die Gesamtanzahl der Installationen für eine app anzeigen können (über Kampagnen etc.) in der Bericht " [Käufe](acquisitions-report.md) " im Partner Center.
+Folglich kann es dazu kommen, dass die Nachverfolgung der App-Installationen nicht die exakte Anzahl von Installationen ergibt, die durch eine Anzeigenkampagne generiert werden. Beachten Sie, dass Sie die Gesamtzahl der Installationen für eine app anzeigen können (über Kampagnen, und andernfalls) in der [Akquisitionen](acquisitions-report.md) Bericht im Partner Center.
 
 
 ## <a name="account-billing-history"></a>Verlauf der Rechnungsstellung für das Konto
@@ -80,7 +80,7 @@ Sie können den Verlauf der Rechnungsstellung für Ihr Konto auch als Microsoft 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen einer Anzeigenkampagne für Ihre App](create-an-ad-campaign-for-your-app.md)
+* [Erstellen Sie eine Ad-Kampagne für Ihre app](create-an-ad-campaign-for-your-app.md)
 
  
 

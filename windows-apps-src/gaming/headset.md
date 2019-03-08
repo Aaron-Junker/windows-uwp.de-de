@@ -4,18 +4,18 @@ description: Verwenden Sie die Windows.Gaming.Input-Headset-APIs, um Headsets zu
 ms.assetid: 021CCA26-D339-4C8B-B084-0D499BD83ABE
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Kopfhörer
+keywords: Windows 10, UWP, Spiele, Kopfhörer
 ms.localizationpriority: medium
 ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933891"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627955"
 ---
 # <a name="headset"></a>Headset
 
-In diesem Dokument wird die grundlegende Programmierung für Headsets unter Verwendung von [Windows.Gaming.Input.Headset][Headset] und zugehöriger APIs für die universelle Windows-Plattform (UWP) beschrieben.
+In diesem Dokument wird die grundlegende Programmierung für Headsets unter Verwendung von [Windows.Gaming.Input.Headset][headset] und zugehöriger APIs für die universelle Windows-Plattform (UWP) beschrieben.
 
 Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 * Zugreifen auf ein Headset, das mit einem Eingabe- oder Navigationsgerät verbunden ist
@@ -24,7 +24,7 @@ Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 
 ## <a name="headset-overview"></a>Übersicht über Headsets
 
-Headsets sind Geräte für die Audioaufnahme und -wiedergabe und werden am häufigsten zur Kommunikation mit anderen Spielern in Onlinespielen verwendet, können aber auch im Spiel oder für andere kreative Aufgaben verwendet werden. Headsets werden in Windows10 und UWP-Apps für Xbox durch den [Windows.Gaming.Input][]-Namespace unterstützt.
+Headsets sind Geräte für die Audioaufnahme und -wiedergabe und werden am häufigsten zur Kommunikation mit anderen Spielern in Onlinespielen verwendet, können aber auch im Spiel oder für andere kreative Aufgaben verwendet werden. Headsets werden in Windows 10 und UWP-Apps für Xbox durch den [Windows.Gaming.Input][]-Namespace unterstützt.
 
 
 ## <a name="detect-and-track-headsets"></a>Erkennen und Nachverfolgen von Headsets

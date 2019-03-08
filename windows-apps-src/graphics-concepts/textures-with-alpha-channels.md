@@ -1,6 +1,6 @@
 ---
 title: Texturen mit Alphakanälen
-description: Es gibt zwei Möglichkeiten, Texturzuordnungen mit komplexer Transparenz zu kodieren.
+description: Es gibt zwei Möglichkeiten, Texturabbildungen mit komplexer Transparenz zu codieren.
 ms.assetid: 768A774A-4F21-4DDE-B863-14211DA92926
 keywords:
 - Texturen mit Alphakanälen
@@ -8,27 +8,27 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934004"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651475"
 ---
 # <a name="textures-with-alpha-channels"></a>Texturen mit Alphakanälen
 
 
-Es gibt zwei Möglichkeiten, Texturabbildungen mit komplexer Transparenz zu codieren. In jedem Fall geht ein Block, der die Transparenz beschreibt, dem bereits beschriebenen 64-Bit-Block voraus. Die Transparenz wird entweder als 4x4-Bitmap mit 4Bits pro Pixel (explizite Kodierung) oder mit weniger Bits und linearer Interpolation dargestellt, die mit der für Farben verwendeten Kodierung vergleichbar ist.
+Es gibt zwei Möglichkeiten, Texturabbildungen mit komplexer Transparenz zu codieren. In jedem Fall geht ein Block, der die Transparenz beschreibt, dem bereits beschriebenen 64-Bit-Block voraus. Die Transparenz wird entweder als 4 x 4-Bitmap mit 4 Bits pro Pixel (explizite Codierung) oder mit weniger Bits und linearer Interpolation dargestellt, die mit der verwendeten Codierung von Farben vergleichbar ist.
 
 Die Transparenzblock und der Farbblock sind wie in der folgenden Tabelle gezeigt angeordnet.
 
-| Wort-Adresse | 64-Bit-Block                      |
+| Word-Adresse | 64-Bit-Block                      |
 |--------------|-----------------------------------|
 | 3:0          | Transparenzblock                |
 | 7:4          | Zuvor beschriebener 64-Bit-Block |
 
  
 
-## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>Explizite Texturkodierung
+## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>Explizite Textur-Codierung
 
 
 Für die explizite Texturkodierung (Format BC2) werden die Alphakomponenten der Texel, die die Transparenz beschreiben, in einer 4 x 4-Bitmap mit 4 Bits pro Texel kodiert. Diese vier Bits kann können auf verschiedene Weise gewonnen werden, etwa durch Dithering oder durch Verwendung der vier wichtigsten Bits der Alphadaten. Wie auch immer sie produziert werden, so sind sie, ohne irgendeine Art von Interpolation.
@@ -37,7 +37,7 @@ Das folgende Diagramm zeigt einen 64-Bit-Transparenzblock.
 
 ![Diagramm eines 64-Bit-Transparenzblocks](images/colors4.png)
 
-**Hinweis:**  die Komprimierungsmethode von Direct3D verwendet die vier wichtigsten Bits.
+**Beachten Sie**    Direct3D-Komprimierungsmethode verwendet die vier höchstwertigen Bits.
 
  
 
@@ -54,7 +54,7 @@ Layout für Wort 0:
 
  
 
-\*am wenigsten wichtigstes Bit, wichtigstes Bit (MSB)
+\*unwichtigste Bit, höchstwertigen bit (MSB)
 
 Layout für Wort 1:
 
@@ -91,10 +91,10 @@ Layout für Wort 3:
 
 Der Farbvergleich, der in BC1 verwendet wird, um festzustellen, ob der Texel transparent ist, wird in diesem Format nicht verwendet. Es wird angenommen, dass die Farbdaten ohne den Farbvergleich immer wie im 4-Farben-Modus behandelt werden.
 
-## <a name="span-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanthree-bit-linear-alpha-interpolation"></a><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>Lineare Drei-Bit-Alpha-Interpolation
+## <a name="span-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanthree-bit-linear-alpha-interpolation"></a><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>3-Bit-linearen alpha-interpolation
 
 
-Die Kodierung der Transparenz für das Format BC3 basiert auf einem Konzept, das der für Farbe verwendeten linearen Kodierung ähnelt. Zwei 8-Bit-Alphawerte und eine 4 x 4-Bitmap mit drei Bits pro Pixel sind in den ersten acht Bytes des Blocks gespeichert. Die repräsentativen Alphawerte werden zum Interpolieren der Alpha-Zwischenwerte verwendet. Die Art und Weise der beiden Alphawerte bietet weitere Informationen. Wenn alpha\_0 größer als alpha\_1 ist, erstellt die Interpolation sechs Alpha-Zwischenwerte. Andernfalls werden vier Alpha-Zwischenwerte zwischen den angegebenen Alpha-Extremen interpoliert. Die zwei zusätzlichen impliziten Alphawerte sind 0 (vollständig transparent) und 255 (vollständig opak).
+Die Kodierung der Transparenz für das Format BC3 basiert auf einem Konzept, das der für Farbe verwendeten linearen Kodierung ähnelt. Zwei 8-Bit-Alphawerte und eine 4 x 4-Bitmap mit drei Bits pro Pixel sind in den ersten acht Bytes des Blocks gespeichert. Die repräsentativen Alphawerte werden zum Interpolieren der Alpha-Zwischenwerte verwendet. Die Art und Weise der beiden Alphawerte bietet weitere Informationen. Wenn alpha\_0 ist größer als Alpha\_1, und dann sechs intermediate alpha-Werte werden durch die Interpolation erstellt. Andernfalls werden vier Alpha-Zwischenwerte zwischen den angegebenen Alpha-Extremen interpoliert. Die zwei zusätzlichen impliziten Alphawerte sind 0 (vollständig transparent) und 255 (vollständig opak).
 
 Das folgende Codebeispiel veranschaulicht diesen Algorithmus.
 
@@ -142,7 +142,7 @@ Der Farbvergleich, der in BC1 verwendet wird, um festzustellen, ob der Texel tra
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Komprimierte Texturressourcen](compressed-texture-resources.md)
+[Komprimierte des texturressourcen](compressed-texture-resources.md)
 
  
 

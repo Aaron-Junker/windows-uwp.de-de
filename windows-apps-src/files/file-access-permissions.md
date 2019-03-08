@@ -1,10 +1,10 @@
 ---
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: Berechtigungen für den Dateizugriff
-description: Apps können standardmäßig auf bestimmte Dateisystemspeicherorte zugreifen. Apps können darüber hinaus mithilfe der Dateiauswahl oder durch die Deklaration von Funktionen auf weitere Speicherorte zugreifen.
+description: Apps können standardmäßig auf bestimmte Dateisystemspeicherorte zugreifen. Apps können darüber hinaus mithilfe der Dateiauswahl oder über die Deklaration von Funktionen auf weitere Speicherorte zugreifen.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,15 +12,15 @@ dev_langs:
 - cpp
 - javascript
 ms.openlocfilehash: 4845b20ed74642f6fb34ea40dd774c91ae378e7b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050280"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630405"
 ---
 # <a name="file-access-permissions"></a>Berechtigungen für den Dateizugriff
 
-Universelle Windows-Plattform (UWP) apps können standardmäßig auf bestimmte Dateisystemspeicherorte zugreifen. Apps können außerdem mithilfe der Dateiauswahl oder durch die Deklaration von Funktionen auf weitere Speicherorte zugreifen.
+Apps der universellen Windows-Plattform (UWP), können standardmäßig auf bestimmte Speicherorte im Dateisystem zugreifen. Apps können darüber hinaus mithilfe der Dateiauswahl oder über die Deklaration von Funktionen auf weitere Speicherorte zugreifen.
 
 ## <a name="the-locations-that-all-apps-can-access"></a>Für alle Apps zugängliche Speicherorte
 
@@ -29,7 +29,7 @@ Bei Erstellung einer neuen App können Sie standardmäßig auf folgende Dateisys
 ### <a name="application-install-directory"></a>Installationsverzeichnis der Anwendung
 Der Ordner, in denen Ihre app auf dem System des Benutzers installiert ist.
 
-Es gibt zwei primäre Möglichkeiten, greifen Sie auf Dateien und Ordner in Ihrer app Installationsverzeichnis:
+Es gibt zwei Hauptmethoden, den Zugriff auf Dateien und Ordner in Ihrer app-Installationsverzeichnis:
 
 1. Sie können auf folgende Weise einen [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) aufrufen, der das Installationsverzeichnis Ihrer App darstellt:
 
@@ -92,12 +92,12 @@ Es gibt zwei primäre Möglichkeiten, greifen Sie auf Dateien und Ordner in Ihre
 
 Darüber hinaus können Sie im Gegensatz zu anderen Speicherorten auf das Installationsverzeichnis Ihrer App auch direkt mit [Win32 und COM für UWP-Apps (Universelle Windows-Plattform)](https://msdn.microsoft.com/library/windows/apps/br205757) und einigen [Funktionen der C/C++-Standardbibliothek in Microsoft Visual Studio](https://msdn.microsoft.com/library/hh875057.aspx) zugreifen.
 
-Das Installationsverzeichnis der Anwendung ist ein schreibgeschützter Speicherort. Sie können nicht über die Dateiauswahl auf das Installationsverzeichnis zugreifen.
+Das Installationsverzeichnis der Anwendung ist ein schreibgeschützter Speicherort. Sie können nicht über die Dateiauswahl für das Installationsverzeichnis zugreifen.
 
-### <a name="application-data-locations"></a>Speicherorte von Anwendungsdaten
+### <a name="application-data-locations"></a>Anwendung von Standorten
 Die Ordner, in denen Ihre App Daten speichern kann. Diese Ordner (lokal, servergespeichert und temporär) werden nach Installation Ihrer Anwendung erstellt.
 
-Es gibt zwei wesentlichen Möglichkeiten Zugriff auf Dateien und Ordner in den Dateispeicherorten Ihrer app:
+Es gibt zwei Hauptmethoden, Dateien und Ordner von Ihrer app von Standorten zugreifen:
 
 1.  Verwenden Sie die [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587)-Eigenschaften, um einen Dateiordner abzurufen.
 
@@ -127,7 +127,7 @@ Es gibt zwei wesentlichen Möglichkeiten Zugriff auf Dateien und Ordner in den D
     
     Nach dem Aufrufen des [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), der den Dateispeicherort der Anwendung darstellt, können Sie auf Dateien und Ordner im Verzeichnis mithilfe der **StorageFolder**-Methode zugreifen. Im Beispiel werden diese **StorageFolder**-Objekte in der `localFolder`-Variablen gespeichert. Weitere Informationen zum Verwenden der Speicherorte von App-Daten finden Sie unter [ApplicationData-Klasse](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata). Sie können auch das [Beispiel für Anwendungsdaten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) von GitHub herunterladen.
 
-2. Sie können eine Datei direkt aus lokalen Ordner Ihrer Anwendung abrufen, mithilfe der Anwendungs-URI wie folgt aus:
+2. Sie können eine Datei direkt aus Ihrer app lokale Ordner abrufen, mithilfe einer app-URI wie folgt:
     
     ```csharp
     using Windows.Storage;
@@ -164,7 +164,7 @@ Es gibt zwei wesentlichen Möglichkeiten Zugriff auf Dateien und Ordner in den D
 
 Darüber hinaus können Sie, im Gegensatz zu anderen Speicherorten, auf Dateien in den App-Datenspeicherorten auch mit [Win32 und COM für UWP-Apps (Universelle Windows-Plattform)](https://msdn.microsoft.com/library/windows/apps/br205757) und einigen Funktionen der C/C++-Standardbibliothek in Microsoft Visual Studio zugreifen.
 
-Sie können nicht über die Dateiauswahl auf die lokale, servergespeicherte oder temporäre Ordner zugreifen.
+Sie können nicht die lokale roaming oder temporären Ordner über die Dateiauswahl zugreifen.
 
 ### <a name="removable-devices"></a>Wechselmedien
 Darüber hinaus kann Ihre App standardmäßig auf einige der Dateien auf verbundenen Geräten zugreifen. Diese Möglichkeit besteht, wenn Ihre App die [Erweiterung für die automatische Wiedergabe](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay) verwendet, die automatisch gestartet wird, sobald Benutzer ein Gerät, wie eine Kamera oder einen USB-Speicherstick, an Ihr System anschließen. Die Dateien, auf welche Ihre App zugreifen kann, sind auf bestimmte Dateitypen begrenzt, die über Deklarationen von Dateitypzuordnungen in Ihrem App-Manifest festgelegt sind.
@@ -174,8 +174,8 @@ Sie können natürlich auch auf Dateien und Ordner auf einem Wechselmedium mithi
 > [!NOTE]
 > Weitere Informationen zum Zugriff auf eine SD-Karte oder andere Wechselgeräte finden Sie unter [Zugreifen auf die SD-Karte](access-the-sd-card.md).
 
-## <a name="locations-that-uwp-apps-can-access"></a>UWP-apps zugängliche Speicherorte
-### <a name="users-downloads-folder"></a>Downloadordner des Benutzers
+## <a name="locations-that-uwp-apps-can-access"></a>Standorte, die UWP-apps zugreifen können
+### <a name="users-downloads-folder"></a>Ordner "Downloads" des Benutzers
 
 Der Ordner, in dem heruntergeladene Dateien standardmäßig gespeichert werden.
 
@@ -212,7 +212,7 @@ Standardmäßig kann Ihre Anwendung nur auf Dateien und Ordner im Ordner "Downlo
     });
     ```
 
-    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) wird überladen, sodass Sie festlegen können, was das System im Fall einer bereits vorhandenen gleichnamigen Datei im Downloadordner des Benutzers tun sollte. Nach vollständiger Ausführung dieser Methoden wird ein [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) zurückgegeben, das die erstellte Datei darstellt. Diese Datei wird im Beispiel `newFile` genannt.
+    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[ **CreateFileAsync** ](https://msdn.microsoft.com/library/windows/apps/hh996761) ist überladen, sodass Sie angeben können, was das System tun sollte Wenn bereits eine vorhandene Datei im Ordner "Downloads" mit dem gleichen Namen vorhanden ist. Nach vollständiger Ausführung dieser Methoden wird ein [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) zurückgegeben, das die erstellte Datei darstellt. Diese Datei wird im Beispiel `newFile` genannt.
 
 - Sie können im Downloadordner des Benutzers wie folgt einen Unterordner erstellen:
 
@@ -245,7 +245,7 @@ Standardmäßig kann Ihre Anwendung nur auf Dateien und Ordner im Ordner "Downlo
     });
     ```
 
-    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) wird überladen, sodass Sie festlegen können, was das System im Fall eines bereits vorhandenen gleichnamigen Unterordners im Ordner „Downloads“ des Benutzers tun sollte. Nach vollständiger Ausführung dieser Methoden wird ein [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) zurückgegeben, der den erstellten Unterordner darstellt. Diese Datei wird im Beispiel `newFolder` genannt.
+    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[ **CreateFolderAsync** ](https://msdn.microsoft.com/library/windows/apps/hh996763) ist überladen, sodass Sie angeben können, was das System tun sollte, wenn bereits ein vorhandener Unterordner im Ordner "Downloads" mit dem gleichen Namen vorhanden ist. Nach vollständiger Ausführung dieser Methoden wird ein [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) zurückgegeben, der den erstellten Unterordner darstellt. Diese Datei wird im Beispiel `newFolder` genannt.
 
 Wenn Sie eine Datei oder einen Ordner im Downloadordner erstellen, empfehlen wir, die Datei oder den Ordner der [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) Ihrer App hinzuzufügen, sodass zukünftig leicht auf dieses Element zugegriffen werden kann.
 
@@ -257,17 +257,17 @@ App, die die [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpack
 
 In der folgenden Tabelle sind weitere Speicherorte aufgeführt, auf die Sie durch Deklarieren von Funktionen und Verwenden der zugehörigen [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346)-APIs zugreifen können:
 
-| Ort | Funktion | Windows.Storage-API |
+| Pfad | Funktion | Windows.Storage-API |
 |----------|------------|---------------------|
-| Alle Dateien, auf die der Benutzer Zugriff hat. Beispiel: Dokumente, Bilder, Fotos, Downloads, Desktop, OneDrive usw. | broadFileSystemAccess<br><br>Dies ist eine eingeschränkte Funktion. Zugriff lässt sich unter " **Einstellungen"** > **Datenschutz** > **Dateisystem**. Da Benutzer gewähren oder verweigern die Berechtigung jederzeit unter " **Einstellungen"** können, sollten Sie sicherstellen, dass Ihre app diese Änderungen flexibel. Wenn Sie feststellen, dass Ihre app nicht zugreifen kann, können Sie den Benutzer auffordern, die Einstellung zu ändern, indem Sie einen Link zum Artikel [Windows 10-Dateisystemzugriff und Datenschutz](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy) . Beachten Sie, dass der Benutzer die app zu schließen, Sie schalten und starten Sie die app muss. Wenn sie die Einstellung umzuschalten, während die app ausgeführt wird, wird die Plattform Ihre app angehalten, damit können Sie den Zustand speichern, und dann das Apps beendet werden, um die neue Einstellung zu übernehmen. Im April 2018 Update ist die Standardeinstellung für die Berechtigung. Im Oktober 2018 Update ist standardmäßig deaktiviert.<br /><br />Wenn Sie eine App an den Store übermitteln, die diese Funktion deklariert, müssen Sie zusätzliche Beschreibungen dazu bereitstellen, warum die App diese Funktion benötigt und wie sie diese verwenden wird.<br>Diese Funktion funktioniert für APIs im [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) -Namespace. Finden Sie im Abschnitt " **Beispiel** " am Ende dieses Artikels finden Sie ein Beispiel für diese Funktion in Ihrer app zu aktivieren. | n.a. |
-| Dokumente | DocumentsLibrary <br><br>Hinweis: Sie müssen Ihrem App-Manifest Dateitypzuordnungen hinzufügen, die bestimmte Dateitypen deklarieren, auf die Ihre App an diesem Speicherort Zugriff hat. <br><br>Verwenden Sie diese Funktion, wenn Ihre App:<br>- Den plattformübergreifenden Offlinezugriff auf bestimmte OneDrive-Inhalte mit gültigen OneDrive-URLs oder Ressourcen-IDs ermöglicht.<br>-Speichert geöffnete Dateien des Benutzers automatisch im OneDrive offline | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| Alle Dateien, auf die der Benutzer Zugriff hat. Beispiel: Dokumente, Bilder, Fotos, Downloads, Desktop, OneDrive usw. | broadFileSystemAccess<br><br>Dies ist eine eingeschränkte Funktion. Zugriff-Zuordnungsvorgänge kann in **Einstellungen** > **Datenschutz** > **Dateisystem**. Da Benutzer gewähren oder verweigern die Berechtigung von einem beliebigen Zeitpunkt im können **Einstellungen**, sollten Sie sicherstellen, dass es sich bei Ihrer app auf diese Änderungen stabil ist. Wenn Sie feststellen, dass Ihre app nicht zugreifen kann, können Sie den Benutzer auffordern, die Einstellung zu ändern, indem ein Link zu der [Dateisystemzugriff für Windows 10 und Datenschutz](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy) Artikel. Beachten Sie, dass der Benutzer muss die app schließen, schalten Sie die Einstellung, und die app neu starten. Wenn sie die Einstellung umzuschalten, während die app ausgeführt wird, hält die Plattform Ihrer app, damit können Sie den Status speichern und dann beenden Sie die app erzwungen, um die neue Einstellung zu übernehmen. Im April 2018 Update ist die Standardeinstellung für die Berechtigung. Im Update vom Oktober 2018 ist standardmäßig deaktiviert.<br /><br />Wenn Sie eine App an den Store übermitteln, die diese Funktion deklariert, müssen Sie zusätzliche Beschreibungen dazu bereitstellen, warum die App diese Funktion benötigt und wie sie diese verwenden wird.<br>Diese Funktion ist für APIs in der [ **Windows.Storage** ](https://msdn.microsoft.com/library/windows/apps/BR227346) Namespace. Finden Sie unter den **Beispiel** Abschnitt am Ende dieses Artikels ein Beispiel für Informationen zum Aktivieren dieser Funktion in Ihrer app. | n. a. |
+| Dokumente | DocumentsLibrary <br><br>Hinweis: Sie müssen eine Dateitypzuordnung hinzufügen, in Ihrer app-Manifest, in denen bestimmte Dateitypen deklariert, die Ihre app an diesem Standort zugreifen können. <br><br>Verwenden Sie diese Funktion, wenn Ihre App:<br>- Den plattformübergreifenden Offlinezugriff auf bestimmte OneDrive-Inhalte mit gültigen OneDrive-URLs oder Ressourcen-IDs ermöglicht.<br>– Speichert geöffneten Dateien auf OneDrive des Benutzers, während automatisch offline | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | Musik     | MusicLibrary <br>Weitere Informationen finden Sie unter [Dateien und Ordner in den Musik-, Bild- und Videobibliotheken](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | Bilder  | PicturesLibrary<br> Weitere Informationen finden Sie unter [Dateien und Ordner in den Musik-, Bild- und Videobibliotheken](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
 | Videos    | VideosLibrary<br>Weitere Informationen finden Sie unter [Dateien und Ordner in den Musik-, Bild- und Videobibliotheken](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
 | Wechselmedien  | RemovableDevices <br><br>Hinweis: Sie müssen Ihrem App-Manifest Dateitypzuordnungen hinzufügen, die bestimmte Dateitypen deklarieren, auf die Ihre App an diesem Speicherort Zugriff hat. <br><br>Weitere Informationen finden Sie unter [Zugreifen auf die SD-Karte](access-the-sd-card.md). | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
 | Bibliotheken der Heimnetzgruppen  | Mindestens eine der folgenden Funktionen ist erforderlich. <br>– MusicLibrary <br>– PicturesLibrary <br>– VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
 | Medienservergeräte (DLNA) | Mindestens eine der folgenden Funktionen ist erforderlich. <br>– MusicLibrary <br>– PicturesLibrary <br>– VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
-| Universal Naming Convention (UNC)-Ordner | Eine Kombination der folgenden Funktionen ist erforderlich. <br><br>Die Funktion für Heim- oder Arbeitsplatznetzwerke: <br>– PrivateNetworkClientServer <br><br>Zudem mindestens eine Funktion zu Internet und öffentlichen Netzwerken: <br>– InternetClient <br>– InternetClientServer <br><br>Und gegebenenfalls die Funktion für Domänenanmeldeinformationen:<br>– EnterpriseAuthentication <br><br>Hinweis: Sie müssen Ihrem App-Manifest Dateitypzuordnungen hinzufügen, die bestimmte Dateitypen deklarieren, auf die Ihre App an diesem Speicherort Zugriff hat. | Abrufen eines Ordners mithilfe von: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Abrufen einer Datei mithilfe von: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
+| Universal Naming Convention (UNC)-Ordner | Eine Kombination der folgenden Funktionen ist erforderlich. <br><br>Die Funktion für Heim- oder Arbeitsplatznetzwerke: <br>– PrivateNetworkClientServer <br><br>Zudem mindestens eine Funktion zu Internet und öffentlichen Netzwerken: <br>– InternetClient <br>– InternetClientServer <br><br>Und gegebenenfalls die Funktion für Domänenanmeldeinformationen:<br>– EnterpriseAuthentication <br><br>Hinweis: Sie müssen eine Dateitypzuordnung hinzufügen, in Ihrer app-Manifest, in denen bestimmte Dateitypen deklariert, die Ihre app an diesem Standort zugreifen können. | Abrufen eines Ordners mithilfe von: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Abrufen einer Datei mithilfe von: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
 
 **Beispiel**
 

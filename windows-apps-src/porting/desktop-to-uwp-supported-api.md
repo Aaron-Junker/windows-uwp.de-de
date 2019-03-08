@@ -1,20 +1,20 @@
 ---
-Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
+Description: Verpackte Desktop-Apps können eine Vielzahl von UWP-APIs (Universelle Windows Plattform) verwenden, selbst wenn ihre Umwandlung in eine UWP-App nicht vollständig ist. Dieser Artikel führt die verfügbaren Klassen auf, die Ihre verpackten App verwenden kann.
 Search.Product: eADQiWindows 10XVcnh
 title: UWP-APIs, die für eine verpackte Desktop-App verfügbar sind (Desktop-Brücke)
 ms.date: 10/27/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c3131207c04b421a6d8ab6aeeb16aa3107bbf21d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048850"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644715"
 ---
-# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>UWP-APIs verfügbar, um eine verpackte desktop-app
+# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>UWP-APIs, die für eine desktop-app-Paket verfügbar
 
 Verpackte Desktop-Apps können eine Vielzahl von UWP-APIs (Universelle Windows Plattform) verwenden, selbst wenn ihre Umwandlung in eine UWP-App nicht vollständig ist. Dieser Artikel führt die verfügbaren Klassen auf, die Ihre verpackten App verwenden kann.
 
@@ -26,12 +26,12 @@ Die meisten UWP-APIs funktionieren problemlos für verpackte Desktop-Apps. Aller
 <tr><td>Hintergrundaufgaben</td><td>Verpackte Apps können zwar Hintergrundaufgaben registrieren, jedoch können nur vollständige UWP-Apps <i>als</i> Hintergrundaufgabe ausgeführt werden. Weitere Informationen finden Sie in <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">Beispiel für eine Hintergrundaufgabe auf GitHub</a>.</td></tr>
 <tr><td>Bluetooth</td><td>Nicht alle APIs werden derzeit für verpackte Apps unterstützt.</td></tr>
 <tr><td>Chat und Anrufe</td><td>Verpackte Apps können nicht auf mobilen Geräten ausgeführt werden, wenn sie nicht vollständig zu UWP portiert wurden.</td></tr>
-<tr><td>Vertragsaktivierung</td><td>Nur vollständige UWP-apps können vertraglich aktiviert werden.</td></tr>
+<tr><td>Vertragsaktivierung</td><td>Nur die vollständige UWP-apps können von einem Vertrag aktiviert werden.</td></tr>
 <tr><td>Kryptografie</td><td>Nicht alle APIs werden derzeit für verpackte Apps unterstützt.</td></tr>
 <tr><td>Geolocation</td><td>Nicht alle APIs werden derzeit für verpackte Apps unterstützt.</td></tr>
 <tr><td>Datei- und Ordnerauswahl</td><td>Verpackte Apps verfügen über vollen Dateisystemzugriff und benötigen keine UWP-Auswahl.</td></tr>
 <tr><td>Media</td><td>Nicht alle APIs werden derzeit für verpackte Apps unterstützt.</td></tr>
-<tr><td>PointofService (POS)</td><td>Nicht alle APIs werden derzeit für verpackte Apps unterstützt.</td></tr>
+<tr><td>Point of Service (POS)</td><td>Nicht alle APIs werden derzeit für verpackte Apps unterstützt.</td></tr>
 <tr><td>Smartcards</td><td>Nicht alle APIs werden derzeit für verpackte Apps unterstützt.</td></tr>
 <tr><td>PlayReady</td><td>Nicht alle APIs werden derzeit für verpackte Apps unterstützt.</td></tr>
 <tr><td>VPN</td><td>Nicht alle APIs werden derzeit für verpackte Apps unterstützt.</td></tr>
@@ -48,7 +48,7 @@ Einige UWP-APIs, die für vollständige Desktop-Anwendungen verfügbar sind, wer
 
 Im folgenden finden Sie eine vollständige Liste der UWP-APIs, die in verpackten Apps unterstützt werden. Sie können [In verpackten Apps neu unterstützte APIs](#new) oder [In verpackten Apps und Desktopanwendungen unterstützte APIs](#both) anzeigen.
 
-Beispiele zur Verwendung von WinRT-APIs finden Sie auf GitHub unter [Desktop-Brücke zu UWP: Beispiele](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) und [Apps für die universelle Windows-Plattform (UWP): Beispiele](https://github.com/Microsoft/Windows-universal-samples). Sie können außerdem den Blog-Artikel zum Erstellen einer App für Windows nutzen: [Aufrufen von Windows10-APIs aus einer Desktop-Anwendung](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
+Beispiele zur Verwendung von WinRT-APIs finden Sie auf GitHub unter [Desktop-Brücke zu UWP: Beispiele](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) und [Apps für die universelle Windows-Plattform (UWP): Beispiele](https://github.com/Microsoft/Windows-universal-samples). Sie können außerdem den Blog-Artikel zum Erstellen einer App für Windows nutzen: [Aufrufen von Windows 10-APIs aus einer Desktop-Anwendung](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
 <a id="new" />
 
@@ -1048,10 +1048,10 @@ Beispiele zur Verwendung von WinRT-APIs finden Sie auf GitHub unter [Desktop-Br�
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Finden Sie Antworten auf Ihre Fragen**
+**Hier finden Sie Antworten auf Ihre Fragen**
 
 Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Fragen Sie uns [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Geben Sie Feedback oder Verbesserungsvorschläge**
+**Geben Sie Feedback oder Vorschläge für Features**
 
 Weitere Informationen finden Sie unter [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

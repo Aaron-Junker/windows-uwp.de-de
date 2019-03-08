@@ -1,28 +1,28 @@
 ---
 ms.assetid: 5aeb009c-1f2f-7c04-4477-cbe92c473174
-title: Netzwerkseite (Dev Home)
-description: Enthält Informationen über die Netzwerk-Seite die Dev Home-App für Xbox One.
+title: Seite „Netzwerke“ (Dev Home)
+description: Enthält Informationen über die Seite „Netzwerke“ auf der Dev Home-App für Xbox One.
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d82b350cccfd90509f3b9f031de2785e91e0dc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943675"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646345"
 ---
-# <a name="networking-page-dev-home"></a>Netzwerkseite (Dev Home)
+# <a name="networking-page-dev-home"></a>Seite „Netzwerke“ (Dev Home)
    
   
-Die **Netzwerk-** Seite des Dev Home simuliert verschiedene Netzwerke Bedingungen für die Problembehandlung. Außerdem können Sie eine Netzwerk-Paket-Verfolgung zu initiieren.   
- ![Netzwerkseite von Dev Home](images/devhome_networking.png)   
+Auf der Seite **Networking** von Dev Home werden verschiedene Netzwerkbedingungen für die Problembehandlung simuliert. Sie können hier die Ablaufverfolgung für ein Netzwerkpaket starten.   
+ ![Registerkarte "Netzwerk" des Dev-Startseite](images/devhome_networking.png)   
   
-Die Seite " **Netzwerk** " enthält die folgenden Bereichen:   
+Die Seite **Networking** enthält die folgenden Bereiche:   
  
-   *  [Netzwerksimulation](#ID4EEB)  
+   *  [Netzwerkemulation](#ID4EEB)  
    *  [XBTrace (Netcap)](#ID4EOB)  
 
  
@@ -33,22 +33,22 @@ Die Seite " **Netzwerk** " enthält die folgenden Bereichen:
 ## <a name="network-simulation"></a>Netzwerksimulation  
    
   
-Bereich **Netzwerksimulation** führt eine Netzwerksimulation mit verschiedenen Bandbreite Profile testen.   
+Im Bereich **Netzwerksimulation** wird eine Netzwerksimulation für Tests anhand von Bandbreitenprofilen ausgeführt.   
   
 <a id="ID4EOB"></a>
 
    
 
-## <a name="xbtrace-netcap"></a>XBTrace (Netcap)  
+## <a name="xbtrace-netcap"></a>XBTrace (netcap)  
    
   
-Der Bereich **XBTrace (Netcap)** startet oder beendet wird eine Netzwerk-Paket-Verfolgung.   
+Im Bereich **XBTrace (netcap)** wird die Ablaufverfolgung für ein Netzwerkpaket gestartet oder beendet.   
   
 <a id="ID4E2B"></a>
 
    
 
-## <a name="see-also"></a>Weitere Informationen:  
- [Entwickler-Startbildschirm auf der Konsole (Dev Home)](dev-home.md)
+## <a name="see-also"></a>Siehe auch  
+ [Entwickler-Homepage in der Konsole (Dev-Startseite)](dev-home.md)
 
   

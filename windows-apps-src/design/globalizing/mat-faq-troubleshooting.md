@@ -1,5 +1,5 @@
 ---
-Description: This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0.
+Description: Dieses Thema enthält Antworten auf häufig gestellte Fragen und Probleme in Bezug auf das Multilingual App Toolkit (MAT) 4.0.
 title: Multilingual App Toolkit – Fragen und Antworten sowie Problembehandlung
 template: detail.hbs
 ms.date: 11/13/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050593"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648265"
 ---
-# <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>Multilingual App Toolkit 4.0 – Fragen und Antworten sowie Problembehandlung
+# <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>Multilingual App Toolkit 4.0 – Häufig gestellte Fragen und Problembehandlung
 
 Dieses Thema enthält Antworten auf häufig gestellte Fragen und Probleme in Bezug auf das Multilingual App Toolkit (MAT) 4.0.
 
@@ -41,7 +41,7 @@ Führen Sie folgende Schritte aus.
 
 ## <a name="when-i-build-my-project-i-dont-see-a-message-saying-that-a-multilingual-app-toolkit-build-has-started"></a>Beim Erstellen meines Projekts wird keine Meldung angezeigt, dass ein Multilingual App Toolkit-Build gestartet wurde.
 
-Stellen Sie sicher, dass Sie MAT für Ihr Projekt aktiviert haben. Wählen Sie im Menü **Extras** **Multilingual App Toolkit** > **Auswahl aktivieren**. Wenn Ihr Projekt mit einer früheren Version aktiviert wurde, müssen Sie das MAT im Menü **Extras** zunächst deaktivieren und anschließend erneut aktivieren. Dadurch wird das Projekt aktualisiert, sodass es mit der neuen Version des Toolkits verwendet werden kann.
+Stellen Sie sicher, dass Sie MAT für Ihr Projekt aktiviert haben. Wählen Sie im Menü **Extras****Multilingual App Toolkit** > **Auswahl aktivieren**. Wenn Ihr Projekt mit einer früheren Version aktiviert wurde, müssen Sie das MAT im Menü **Extras** zunächst deaktivieren und anschließend erneut aktivieren. Dadurch wird das Projekt aktualisiert, sodass es mit der neuen Version des Toolkits verwendet werden kann.
 
 Vergewissern Sie sich, dass die Komponente „Build Task for all Visual Studio editions” installiert wurde. Diese Buildkomponente wird zusammen mit der Erweiterung installiert, kann jedoch bei der Installation manuell deaktiviert werden. Diese Komponente wird benötigt, um die XLF-Dateien zu aktualisieren und die Übersetzung in die PRI-Datei einzufügen. Bei einer ordnungsgemäßen Installation und Funktion der Komponente werden die folgenden Build-Meldungen angezeigt.
 
@@ -142,7 +142,7 @@ Beim Importvorgang wird vor dem eigentlichen Import eine grundlegende Überprüf
 
 ## <a name="what-if-my-translator-doesnt-have-windows-10-andor-visual-studio-andor-the-multilingual-app-toolkit-installed"></a>Was passiert, wenn mein Übersetzer eines der Produkte Windows 10, Visual Studio und Multilingual App Toolkit nicht installiert hat?
 
-Bei Auswahl von **Ausgabe: E-Mail-Empfänger** im Ausgabedialog für die Zeichenfolgenressource enthält die E-Mail einen Link zum Herunterladen und Installieren das Multilingual App Toolkit (MAT) 4.0. Ihre Übersetzer kann den eigenständigen Mehrsprachen-Editor aus MAT 4.0 auch ohne Windows10 oder Visual Studio installieren.
+Bei der Auswahl **Ausgabe: E-Mail-Empfänger** Ressourcen Zeichenfolge "Export" im Dialogfeld die e-Mail enthält einen Link zum Herunterladen und installieren das Multilingual App Toolkit (MAT) 4.0. Ihre Übersetzer kann den eigenständigen Mehrsprachen-Editor aus MAT 4.0 auch ohne Windows 10 oder Visual Studio installieren.
 
 Weitere Informationen finden Sie unter [Verwenden des Multilingual App Toolkit 4.0](use-mat.md).
 
@@ -177,6 +177,6 @@ Vor dem Start des Zertifizierungsprozesses für den Microsoft Store müssen Sie 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Verwenden des Multilingual App Toolkit 4.0](use-mat.md)
+* [Mit dem Multilingual App Toolkit 4.0](use-mat.md)
 * [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
-* [Befehlszeilenoptionen für MakePri.exe](../../app-resources/makepri-exe-command-options.md)
+* [MakePri.exe-Befehlszeilenoptionen](../../app-resources/makepri-exe-command-options.md)

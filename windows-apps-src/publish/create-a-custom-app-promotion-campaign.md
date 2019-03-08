@@ -4,29 +4,29 @@ title: Erstellen einer Werbekampagne für benutzerdefinierte Apps
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, benutzerdefiniert, App, Werbung, Kampagnen
+keywords: Windows 10, UWP, benutzerdefiniert, App, Werbung, Kampagnen
 ms.localizationpriority: medium
 ms.openlocfilehash: 407a34294155e688e672db392c262e1607c01a39
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934167"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653735"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Erstellen einer Werbekampagne für benutzerdefinierte Apps
 
 Neben dem Erstellen einer [Anzeigenkampagne für Ihre App](create-an-ad-campaign-for-your-app.md), die in Windows-Apps ausgeführt wird, können Sie Ihre App auch über andere Kanäle bewerben. Beispielsweise können Sie Ihre App mit einem Drittanbieter für App-Marketing bewerben oder Links zu Ihrer App in sozialen Netzwerken bereitstellen. Diese Aktivitäten werden als *benutzerdefinierte Kampagnen* bezeichnet.
 
-Wenn Sie benutzerdefinierte Kampagnen für Ihre App ausführen, können Sie die relative Leistung der einzelnen Kampagnen nachverfolgen, indem Sie für jede benutzerdefinierte Kampagne eine andere URL mit jeweils unterschiedlichen *Kampagnen-IDs* erstellen. Wenn ein Kunde unter Windows 10 eine URL, die eine Kampagnen-ID enthält klickt, Microsoft ordnet die klicken Sie auf der entsprechenden benutzerdefinierten Kampagne und diese Daten zur Verfügung stellt Sie im [Partner Center](https://partner.microsoft.com/dashboard).
+Wenn Sie benutzerdefinierte Kampagnen für Ihre App ausführen, können Sie die relative Leistung der einzelnen Kampagnen nachverfolgen, indem Sie für jede benutzerdefinierte Kampagne eine andere URL mit jeweils unterschiedlichen *Kampagnen-IDs* erstellen. Klickt ein Kunde mit Windows 10 eine URL, die eine Kampagnen-ID enthält, wird Microsoft ordnet klicken Sie auf die entsprechende benutzerdefinierte Kampagne und macht diese Daten für Sie verfügbar [Partner Center](https://partner.microsoft.com/dashboard).
 
 > [!IMPORTANT]
-> Diese Daten werden nur auf Windows 10 für Kunden nachverfolgt. Kunden, die andere Betriebssysteme verwenden, können trotzdem den Link zu Ihrem App-Eintrag aufrufen, es werden jedoch keine Daten über die Aktivitäten dieser Kunden eingeschlossen.
+> Diese Daten ist nur unter Windows 10 für Kunden verfolgt. Kunden, die andere Betriebssysteme verwenden, können trotzdem den Link zu Ihrem App-Eintrag aufrufen, es werden jedoch keine Daten über die Aktivitäten dieser Kunden eingeschlossen.
 
 Es gibt im Wesentlichen zwei Typen von Daten zu benutzerdefinierten Kampagnen: *Seitenaufrufe* für den Store-Eintrag Ihrer App und *Konvertierungen*. Als Konvertierung wird ein App-Erwerb bezeichnet, der daraus resultiert, dass ein Kunde von einer über eine benutzerdefinierte Kampagne enthaltene URL aus auf die Store-Eintragsseite für Ihre App klickt. Weitere Informationen zu Konvertierungen finden Sie unter [Wann gelten App-Erwerbe als Konvertierungen?](#understanding-how-acquisitions-qualify-as-conversions) in diesem Thema.
 
 Sie können Leistungsdaten einer benutzerdefinierten Kampagne für Ihre App auf folgende Arten abrufen:
 
-* Sie können Daten über Seitenaufrufe und Konvertierungen für Ihre app oder Ihr Add-on aus der **App-Seitenaufrufe und-Konvertierungen nach Kampagnen-ID** und **Konvertierungen pro Kampagne alle** Diagramme im [Bericht "Käufe"](acquisitions-report.md)anzeigen.
+* Können Sie Daten zu Seitenansichten und Konvertierungen für Ihre app oder ein Add-on aus Anzeigen der **App Seitenaufrufe und Konvertierungen von Kampagnen-ID** und **insgesamt Kampagne Konvertierungen** Diagramme der [Übernahmen Bericht](acquisitions-report.md).
 * Wenn es sich bei Ihrer App um eine App für die universelle Windows-Plattform (UWP) handelt, können Sie mit APIs im Windows SDK programmgesteuert die benutzerdefinierte Kampagnen-ID abrufen, die zu einer Konvertierung geführt hat.
 
 ## <a name="example-custom-campaign-scenario"></a>Beispielszenario für eine benutzerdefinierte Kampagne
@@ -35,9 +35,9 @@ Stellen Sie sich vor, ein Spieleentwickler hat die Entwicklung eines neuen Spiel
 
 Um den Erfolg der einzelnen Werbekanäle nachzuverfolgen, erstellt der Entwickler zwei Varianten der URL mit einem Link zum Store-Eintrag für das Spiel:
 
-* Die URL, die er auf seiner Facebook-Seite postet, enthält die benutzerdefinierte Kampagnen-ID `my-facebook-campaign`
+* Die URL, die sie mit ihrem Facebook-Seite sendet, enthält die benutzerdefinierten Kampagnen-ID `my-facebook-campaign`
 
-* Die URL, die er auf Twitter postet, enthält die benutzerdefinierte Kampagnen-ID `my-twitter-campaign`
+* Die URL, die sie in Twitter Posten wird enthält die benutzerdefinierten Kampagnen-ID `my-twitter-campaign`
 
 Wenn seine Facebook- und Twitter-Follower auf die URLs klicken, verfolgt Microsoft jeden Klick und ordnet ihn der entsprechenden benutzerdefinierten Kampagne zu. Nachfolgende qualifizierende Käufe des Spiels und Käufe von Add-Ons werden der benutzerdefinierten Kampagne zugeordnet und als Konvertierungen gemeldet.
 
@@ -45,9 +45,9 @@ Wenn seine Facebook- und Twitter-Follower auf die URLs klicken, verfolgt Microso
 
 ## <a name="understanding-how-acquisitions-qualify-as-conversions"></a>Wann gelten Erwerbe als Konvertierungen?
 
-Als benutzerdefinierten Kampagnen-*Konvertierung* wird ein App-Erwerb bezeichnet, der daraus resultiert, dass ein Kunde von einer über eine benutzerdefinierte Kampagne beworbenen URL klickt. Es gibt verschiedene Szenarien für die Qualifizierung als Konvertierung für die **App-Seitenaufrufe und-Konvertierungen nach Kampagnen-ID** und **Konvertierungen pro Kampagne alle** Diagramme im [Bericht "Käufe"](acquisitions-report.md) und für die Qualifizierung als Konvertierung für [ Programmgesteuertes Abrufen der Kampagnen-ID](#programmatically).
+Als benutzerdefinierten Kampagnen-*Konvertierung* wird ein App-Erwerb bezeichnet, der daraus resultiert, dass ein Kunde von einer über eine benutzerdefinierte Kampagne beworbenen URL klickt. Es gibt verschiedene Szenarien für berechtigte, die als eine Konvertierung für die **App Seitenaufrufe und Konvertierungen von Kampagnen-ID** und **insgesamt Kampagne Konvertierungen** Diagramme der [Akquisitionen-Bericht ](acquisitions-report.md) und für eine Konvertierung für berechtigte [programmgesteuert Abrufen der Kampagnen-ID](#programmatically).
 
-### <a name="qualifying-conversions-in-the-acquisitions-report"></a>Qualifizieren von Konvertierungen im Bericht Käufe
+### <a name="qualifying-conversions-in-the-acquisitions-report"></a>Qualifizieren von Konvertierungen in die Übernahmen-Bericht
 
 Die folgenden Szenarien gelten als Konvertierung für die Diagramme **App-Seitenaufrufe und -Konvertierungen nach Kampagnen-ID** und **Gesamtanzahl der Konvertierungen pro Kampagne** im [Bericht "Käufe"](acquisitions-report.md):
 
@@ -62,9 +62,9 @@ Die folgenden Szenarien gelten als Konvertierung für die Diagramme **App-Seiten
 
 Damit eine App-Installation beim programmgesteuerten Abrufen der Kampagnen-ID der App als Konvertierung gilt, müssen die folgenden Bedingungen erfüllt sein:
 
-* Auf einem Gerät mit **Windows10, Version 1607 oder höher**: ein Kunde (ob auf einem gültigen Microsoft-Konto angemeldet oder nicht) klickt auf eine App-URL, die eine benutzerdefinierte Kampagnen-ID enthält, und wird zur Store-Eintragsseite für die App weitergeleitet. Der Kunde erwirbt die App nach Ansicht des Store-Eintrags durch Klicken auf die URL.
+* Auf einem Gerät mit **Windows 10, Version 1607 oder höher**: Ein Kunde klickt (ob erkannten Microsoft-Konto oder nicht angemeldet) eine URL, die eine benutzerdefinierte Kampagnen-ID enthält, und auf die Store-Angebotsseite für die app umgeleitet. Der Kunde erwirbt die App nach Ansicht des Store-Eintrags durch Klicken auf die URL.
 
-* Auf einem Gerät mit **Windows10, Version 1511 oder früher**: ein Kunde (muss auf einem gültigen Microsoft-Konto angemeldet sein) klickt auf eine App-URL, die eine benutzerdefinierte Kampagnen-ID enthält, und wird zur Store-Eintragsseite für die App weitergeleitet. Der Kunde erwirbt die App nach Ansicht des Store-Eintrags durch Klicken auf die URL. Bei diesen Versionen von Windows10 muss der Benutzer auf einem gültiges Microsoft-Konto angemeldet sein, damit der Erwerb von Volumenlizenzen als Konvertierung eingeordnet wird, wenn die Kampagnen-ID programmgesteuert abgerufen wird.
+* Auf einem Gerät mit **Windows 10, Version 1511 oder früher**: Ein Kunde (die mit einem erkannten Microsoft-Konto angemeldet sein muss) klickt, eine URL, die eine benutzerdefinierte Kampagnen-ID enthält, und auf die Store-Angebotsseite für die app umgeleitet wird. Der Kunde erwirbt die App nach Ansicht des Store-Eintrags durch Klicken auf die URL. Bei diesen Versionen von Windows 10 muss der Benutzer auf einem gültiges Microsoft-Konto angemeldet sein, damit der Erwerb von Volumenlizenzen als Konvertierung eingeordnet wird, wenn die Kampagnen-ID programmgesteuert abgerufen wird.
 
 > [!NOTE]
 > Wenn der Kunde die Store-Eintragsseite verlässt, jedoch innerhalb von 24 Stunden auf die Seite zurückkehrt (entweder auf dem gleichen Gerät oder auf einem anderen Gerät, wenn er sich mit demselben Microsoft-Konto anmeldet) und die App erwirbt, **gilt** dies als Konvertierung im Diagramm **App-Seitenaufrufe und -Konvertierungen nach Kampagnen-ID** und **Gesamtanzahl der Konvertierungen pro Kampagne** im [Bericht "Käufe"](acquisitions-report.md). Dies gilt allerdings **nicht** als Konvertierung, wenn Sie die Kampagnen-ID programmgesteuert abrufen.
@@ -86,9 +86,9 @@ So erstellen Sie eine Microsoft Store-Seiten-URL für Ihre App mit einer benutze
 
 3.  Fügen Sie am Ende der URL für Ihre App die folgende Zeichenfolge an:
 
-    * Fügen Sie an eine HTML-Format-URL **`?cid=*my custom campaign ID*`** an. Wenn Skype beispielsweise eine Kampagnen-ID mit dem Wert **custom\_campaign** einführt, würde die neue URL einschließlich der Kampagnen-ID folgendermaßen lauten: `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`.
+    * Fügen Sie an eine HTML-Format-URL **`?cid=*my custom campaign ID*`** an. Wenn es sich bei Skype-ID einer Kampagne mit dem Wert führt z. B. **benutzerdefinierte\_Kampagne**, die neue URL, einschließlich der Kampagne-ID: `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`.
 
-    * Fügen Sie für eine URL im Protokoll-Format **`&cid=*my custom campaign ID*`** an. Wenn Skype beispielsweise eine Kampagnen-ID mit dem Wert **custom\_campaign** einführt, würde die neue Protokoll-URL einschließlich der Kampagnen-ID folgendermaßen lauten: `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`.
+    * Fügen Sie für eine URL im Protokoll-Format **`&cid=*my custom campaign ID*`** an. Wenn es sich bei Skype-ID einer Kampagne mit dem Wert führt z. B. **benutzerdefinierte\_Kampagne**, einschließlich der Kampagne, die ID der neuen Protokoll-URL: `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`.
 
 <span id="programmatically" />
 
@@ -98,18 +98,18 @@ Wenn es sich bei Ihrer App um eine UWP-App handelt, können Sie die Ihrer App zu
 
 Diese APIs geben nur dann eine Kampagnen-ID-Zeichenfolge zurück, wenn der Kunde auf die URL mit der eingebetteten Kampagnen-ID geklickt hat, die Microsoft Store-Seite für Ihre App angezeigt hat und dann die App ohne Verlassen der Store-Eintragsseite erwirbt. Wenn der Benutzer die Seite verlässt und dann später zurückkehrt und die App erwirbt, gilt dies bei der Verwendung dieser APIs [nicht als Konvertierung](#conversions).
 
-Sie können verschiedene APIs verwenden, je nach der Version von Windows10, auf die Ihre App ausgerichtet ist:
+Sie können verschiedene APIs verwenden, je nach der Version von Windows 10, auf die Ihre App ausgerichtet ist:
 
-* Windows10, Version 1607 oder höher: Verwenden Sie die [**StoreContext**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Klasse im **Windows.Services.Store**-Namespace. Bei der Verwendung dieser API können Sie die benutzerdefinierten Kampagnen-IDs für alle [qualifizierten Einkäufe](#conversions) abrufen, unabhängig davon, ob der Benutzer auf einem gültigen Microsoft-Konto angemeldet ist.
+* Windows 10, Version 1607 oder höher: Verwenden der [ **StoreContext** ](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) -Klasse in der **Windows.Services.Store** Namespace. Bei der Verwendung dieser API können Sie die benutzerdefinierten Kampagnen-IDs für alle [qualifizierten Einkäufe](#conversions) abrufen, unabhängig davon, ob der Benutzer auf einem gültigen Microsoft-Konto angemeldet ist.
 
-* Windows10, Version 1511 oder früher: Verwenden Sie die [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp)-Klasse im **Windows.ApplicationModel.Store**-Namespace. Bei der Verwendung dieser API können Sie nur die benutzerdefinierten Kampagnen-IDs für [qualifizierte Einkäufe](#conversions) abrufen, wobei der Benutzer auf einem gültigen Microsoft-Konto angemeldet sein muss.
+* Windows 10, Version 1511 oder früher: Verwenden der [ **CurrentApp** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) -Klasse in der **Windows.ApplicationModel.Store** Namespace. Bei der Verwendung dieser API können Sie nur die benutzerdefinierten Kampagnen-IDs für [qualifizierte Einkäufe](#conversions) abrufen, wobei der Benutzer auf einem gültigen Microsoft-Konto angemeldet sein muss.
 
 > [!NOTE]
-> Auch wenn der **Windows.ApplicationModel.Store**-Namespace in allen Versionen von Windows10 verfügbar ist, empfehlen wir, dass Sie die APIs im **Windows.Services.Store**-Namespace verwenden, wenn Ihre App auf Windows10, Version 1607 oder höher, ausgerichtet ist. Weitere Informationen zu den Unterschieden zwischen diesen Namespaces finden Sie unter [In-App-Käufe und Testversionen](../monetize/in-app-purchases-and-trials.md#choose-namespace). Im folgenden Codebeispiel wird veranschaulicht, wie Sie Ihren Code strukturieren, um die beiden APIs im selben Projekt zu verwenden.
+> Auch wenn der **Windows.ApplicationModel.Store**-Namespace in allen Versionen von Windows 10 verfügbar ist, empfehlen wir, dass Sie die APIs im **Windows.Services.Store**-Namespace verwenden, wenn Ihre App auf Windows 10, Version 1607 oder höher, ausgerichtet ist. Weitere Informationen zu den Unterschieden zwischen diesen Namespaces finden Sie unter [In-App-Käufe und Testversionen](../monetize/in-app-purchases-and-trials.md#choose-namespace). Im folgenden Codebeispiel wird veranschaulicht, wie Sie Ihren Code strukturieren, um die beiden APIs im selben Projekt zu verwenden.
 
 ### <a name="code-example"></a>Codebeispiel
 
-Im folgenden Codebeispiel wird veranschaulicht, wie Sie die benutzerdefinierte Kampagnen-ID abrufen. In diesem Beispiel werden beide Gruppen von APIs im **Windows.Services.Store**- und im **Windows.ApplicationModel.Store**-Namespace mit [versionsadaptivem Code](../debug-test-perf/version-adaptive-code.md) verwendet. Mit diesem Prozess kann Ihr Code auf allen Versionen von Windows10 ausgeführt werden. Um diesen Code zu verwenden, muss mit die Ziel-Betriebssystemversion des Projekts **Windows 10 Anniversary Edition (10.0; Build 14394)** oder höher sein, auch wenn die minimale Betriebssystemversion eine frühere Version sein kann.
+Im folgenden Codebeispiel wird veranschaulicht, wie Sie die benutzerdefinierte Kampagnen-ID abrufen. In diesem Beispiel werden beide Gruppen von APIs im **Windows.Services.Store**- und im **Windows.ApplicationModel.Store**-Namespace mit [versionsadaptivem Code](../debug-test-perf/version-adaptive-code.md) verwendet. Mit diesem Prozess kann Ihr Code auf allen Versionen von Windows 10 ausgeführt werden. Um diesen Code zu verwenden, muss mit die Ziel-Betriebssystemversion des Projekts **Windows 10 Anniversary Edition (10.0; Build 14394)** oder höher sein, auch wenn die minimale Betriebssystemversion eine frühere Version sein kann.
 
 ``` csharp
 // This example assumes the code file has using statements for
@@ -163,12 +163,12 @@ public async Task<string> GetCampaignId()
 
 Dieser Code bewirkt Folgendes:
 
-1. Zunächst überprüft er, ob die [**StoreContext**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Klasse im **Windows.Services.Store**-Namespace auf dem aktuellen Gerät verfügbar ist (Das bedeutet, dass das Gerät Windows10, Version 1607 oder höher, ausführt). Wenn dies der Fall ist, verwendet der Code diese Klasse weiter.
+1. Zunächst überprüft er, ob die [**StoreContext**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Klasse im **Windows.Services.Store**-Namespace auf dem aktuellen Gerät verfügbar ist (Das bedeutet, dass das Gerät Windows 10, Version 1607 oder höher, ausführt). Wenn dies der Fall ist, verwendet der Code diese Klasse weiter.
 
 2. Als Nächstes wird versucht, die benutzerdefinierte Kampagnen-ID für den Fall abzurufen, dass der aktuelle Benutzer ein gültiges Microsoft-Konto hat. Dazu ruft der Code ein [**StoreSku**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreSku)-Objekt ab, das die aktuelle App-SKU darstellt, und ruft dann die [**CampaignId**](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata.CampaignId)-Eigenschaft auf, um die Kampagnen-ID abzurufen, sofern verfügbar.
 3. Der Code versucht dann, die Kampagnen-ID für den Fall abzurufen, dass der aktuelle Benutzer über kein gültiges Microsoft-Konto verfügt. In diesem Fall ist die Kampagnen-ID in die App-Lizenz eingebettet. Der Code ruft die Lizenz mit der [**GetAppLicenseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetAppLicenseAsync)-Methode ab und analysiert dann den JSON-Inhalt der Lizenz auf den Wert eines Schlüssel mit dem Namen *customPolicyField1*. Dieser Wert enthält die Kampagnen-ID.
 
-4. Wenn die [**StoreContext**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Klasse im **Windows.Services.Store**-Namespace nicht verfügbar ist, verwendet der Code dann wieder die[**GetAppPurchaseCampaignIdAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp#Windows_ApplicationModel_Store_CurrentApp_GetAppPurchaseCampaignIdAsync)-Methode im **Windows.ApplicationModel.Store**-Namespace, um die benutzerdefinierte Kampagnen-ID abzurufen (Dieser Namespace ist in allen Versionen von Windows10 verfügbar, einschließlich Version 1511 und früher). Beachten Sie, dass Sie bei Verwendung dieser Methode nur die benutzerdefinierten Kampagnen-IDs für [qualifizierte Einkäufe](#conversions) abrufen können, wenn der Benutzer ein gültiges Microsoft-Konto hat.
+4. Wenn die [**StoreContext**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Klasse im **Windows.Services.Store**-Namespace nicht verfügbar ist, verwendet der Code dann wieder die[**GetAppPurchaseCampaignIdAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp#Windows_ApplicationModel_Store_CurrentApp_GetAppPurchaseCampaignIdAsync)-Methode im **Windows.ApplicationModel.Store**-Namespace, um die benutzerdefinierte Kampagnen-ID abzurufen (Dieser Namespace ist in allen Versionen von Windows 10 verfügbar, einschließlich Version 1511 und früher). Beachten Sie, dass Sie bei Verwendung dieser Methode nur die benutzerdefinierten Kampagnen-IDs für [qualifizierte Einkäufe](#conversions) abrufen können, wenn der Benutzer ein gültiges Microsoft-Konto hat.
 
 ### <a name="specify-the-campaign-id-in-the-proxy-file-for-the-windowsapplicationmodelstore-namespace"></a>Geben Sie die Kampagnen-ID in der Proxydatei für Windows.ApplicationModel.Store namespace an
 
@@ -193,4 +193,4 @@ Bevor Sie eine URL für eine benutzerdefinierte Kampagnen bewerben, empfehlen wi
 
 3.  Klicken Sie noch einige weitere Male auf die URL, und schließen Sie nach jedem Besuch der App-Seite die UWP-App oder die Browserseite. Erwerben Sie bei **einem** der Besuche Ihrer App-Seite die App, um eine Konvertierung zu generieren. Zählen Sie, wie oft Sie insgesamt auf die URL geklickt haben.
 
-4. Stellen Sie sicher, ob die erwarteten Seitenaufrufe und Konvertierungen in der **App-Seitenaufrufe und-Konvertierungen nach Kampagnen-ID** und die **Gesamtanzahl der Konvertierungen pro Kampagne** im [Bericht "Käufe"](acquisitions-report.md)angezeigt werden, und Testen Ihre app-Code, um festzustellen, ob es können abgerufen Sie die Kampagnen-ID, die mit den oben beschriebenen APIs erfolgreich werden.
+4. Überprüfen, ob die erwartete Seitenaufrufe und die Konvertierungen, die in angezeigt werden die **App Seitenaufrufe und Konvertierungen von Kampagnen-ID** und **insgesamt Kampagne Konvertierungen** Diagramme der [Akquisitionen-Bericht ](acquisitions-report.md), und Testen Ihrer app-Code, um festzustellen, ob sie erfolgreich die Kampagnen-ID, die mithilfe der oben beschriebenen APIs abrufen kann.

@@ -1,17 +1,17 @@
 ---
-Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
+Description: Beim Übermitteln eines Add-Ons sind die Optionen auf der Seite „Eigenschaften“ hilfreich, um das Verhalten Ihres Add-Ons festzulegen, wenn es Kunden angeboten wird.
 title: Eingeben von Add-On-Eigenschaften
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, Add-Ons, Eigenschaften, Abonnementzeitraum, Produktlebensdauer, Inhaltstyp, IAP, In-App-Kauf, In-App-Produkt
+keywords: Windows 10, UWP, Add-Ons, Eigenschaften, Abonnementzeitraum, Produktlebensdauer, Inhaltstyp, IAP, In-App-Kauf, In-App-Produkt
 ms.localizationpriority: medium
 ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925824"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629675"
 ---
 # <a name="enter-add-on-properties"></a>Eingeben von Add-On-Eigenschaften
 
@@ -29,17 +29,17 @@ Die Felder, die Sie auf dieser Seite sehen, variieren je nach den Produkttyp Ihr
 
 ## <a name="product-lifetime"></a>Produktlebensdauer
 
-Wenn Sie als Produkttyp **Gebrauchsgut** ausgewählt haben, wird hier die **Produktlebenszeit** angezeigt. Die standardmäßige **Produktlebenszeit** dauerhafter Add-Ons ist **Unbegrenzt**. Das Add-On läuft also niemals ab. Falls gewünscht, können Sie die **Produktlebenszeit** ändern, damit das Add-on nach einer festgelegten Zeitspanne (von 1 bis 365 Tage) abläuft.
+Wenn Sie als Produkttyp **Gebrauchsgut** ausgewählt haben, wird hier die **Produktlebenszeit** angezeigt. Die standardmäßige **Produktlebenszeit** dauerhafter Add-Ons ist **Unbegrenzt**. Das Add-On läuft also niemals ab. Wenn Sie es vorziehen, können Sie ändern die **Produktlebenszyklus** , damit das Add-on nach einer festgelegten Dauer (mit den Optionen von 1 – 365 Tagen) abläuft.
 
 
-## <a name="quantity"></a>Menge
+## <a name="quantity"></a>Anzahl
 
 Wenn Sie den Produkttyp **Vom Store verwalteter Verbrauchsartikel** ausgewählt haben, wird hier die **Menge** angezeigt. Sie müssen eine Zahl zwischen 1 und 1000000 eingeben. Diese Menge wird Kunden gewährt, wenn sie Ihr Add-On erwerben, und vom Store wird der Betrag nachverfolgt, wenn die App die Nutzung des Add-Ons durch Kunden meldet.
 
 
 ## <a name="subscription-period"></a>Abonnementdauer
 
-Wenn Sie als Produkttyp **Abonnement** ausgewählt haben, wird hier die **Abonnementdauer** angezeigt. Wählen Sie eine Option aus, um anzugeben, wie häufig der Kunde für das Abonnement in Rechnung gestellt wird. Die Standardoption ist **monatlich**, aber Sie können auch auswählen, **3 Monaten**, **6 Monate**, **jährlich**oder **24 Monate**.
+Wenn Sie als Produkttyp **Abonnement** ausgewählt haben, wird hier die **Abonnementdauer** angezeigt. Wählen Sie eine Option aus, um anzugeben, wie häufig der Kunde für das Abonnement in Rechnung gestellt wird. Die Standardoption ist **monatliche**, aber Sie können auch auswählen, **3 Monate**, **6 Monate**, **jährlich**, oder **24 Monate**.
 
 > [!IMPORTANT]
 > Sie können nach der Veröffentlichung Ihres Add-Ons Ihre **Abonnementdauer** auswählen.
@@ -55,7 +55,7 @@ Wenn Sie als Produkttyp **Abonnement** ausgewählt haben, wird hier die **Kosten
 
 ## <a name="content-type"></a>Inhaltstyp
 
-Unabhängig vom Produkttyp Ihres Add-Ons müssen Sie die Art der Inhalte angeben, die Sie anbieten. Für die meisten Add-Ons sollte der Inhaltstyp **Download elektronischer Software** lauten. Wenn eine andere Option aus der Liste Ihr Add-On besser beschreibt (wenn Sie z.B. einen Musikdownload oder ein E-Book anbieten), wählen Sie stattdessen diese Option.
+Unabhängig vom Produkttyp Ihres Add-Ons müssen Sie die Art der Inhalte angeben, die Sie anbieten. Für die meisten Add-Ons sollte der Inhaltstyp **Download elektronischer Software** lauten. Wenn eine andere Option aus der Liste Ihr Add-On besser beschreibt (wenn Sie z. B. einen Musikdownload oder ein E-Book anbieten), wählen Sie stattdessen diese Option.
 
 Mögliche Optionen für den Inhaltstyp eines Add-Ons:
 
@@ -84,7 +84,7 @@ Sie können für jedes eingereichte Add-On bis zu zehn Schlüsselwörter von jew
 Verwenden Sie zur Abfrage des Felds die Eigenschaft [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) in [Windows.Services.Store namespace](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Wenn Sie [Windows.ApplicationModel.Store-Namespace](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) verwenden, nutzen Sie die Eigenschaft [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords).)
 
 > [!NOTE]
-> Schlüsselwörter sind nicht für die Verwendung in der Pakete für Windows8 und Windows8.1 verfügbar.
+> Schlüsselwörter sind nicht für die Verwendung in Paketen, die für Windows 8 und Windows 8.1 verfügbar.
 
 <span id="custom-developer-data" />
 
@@ -97,7 +97,7 @@ Nehmen Sie beispielsweise an, dass Sie ein Spiel anbieten und Add-Ons verkaufen,
 Verwenden Sie zur Abfrage des Felds die Eigenschaft [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) unter [Windows.Services.Store namespace](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Wenn Sie [Windows.ApplicationModel.Store-Namespace](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) verwenden, nutzen Sie die Eigenschaft [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag).)
 
 > [!NOTE]
-> Das **benutzerdefinierte entwicklerdaten** -Feld ist nicht für die Verwendung in der Pakete für Windows8 und Windows8.1 verfügbar.
+> Die **benutzerdefinierte Entwickler Daten** Feld ist nicht zur Verwendung in Paketen, die für Windows 8 und Windows 8.1 verfügbar.
 
  
 

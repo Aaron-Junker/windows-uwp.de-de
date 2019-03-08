@@ -1,17 +1,17 @@
 ---
-Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
+Description: Auf der Seite „Altersfreigaben“ des App-Übermittlungsprozesses können Sie Informationen zu Ihrer App bereitstellen, damit sie die entsprechenden Altersfreigaben von der International Age Ratings Coalition (IARC) erhalten kann.
 title: Altersfreigaben
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.date: 05/08/2018
 ms.topic: article
-keywords: Windows10, UWP, Altersfreigabe, Spielfreigabe, IARC, Bewertung, Fragebogen, Bewertungsgremium, Inhaltsbewertung
+keywords: Windows 10, UWP, Altersfreigabe, Spielfreigabe, IARC, Bewertung, Fragebogen, Bewertungsgremium, Inhaltsbewertung
 ms.localizationpriority: medium
 ms.openlocfilehash: 3582328a0f013c2f7b4ccc9affb5b61ca643761c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049082"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643445"
 ---
 # <a name="age-ratings"></a>Altersfreigaben
 
@@ -26,7 +26,7 @@ Bei der ersten Übermittlung einer App (oder bei der ersten Aktualisierung einer
 
 Hierbei ist es unbedingt erforderlich, dass Sie die Fragen wahrheitsgetreu beantworten. Klicken Sie für weitere Informationen und Fragen auf das Symbol "Info", das angezeigt wird. Im Rahmen dieses Prozesses geben wir Ihren Herausgeber-Anzeigenamen und Ihre E-Mail-Adresse an die IARC weiter. Nach dem Ausfüllen des Fragebogens werden vom IARC-Bewertungssystem basierend auf Ihren Antworten Informationen zur Altersfreigabe und Inhaltsbewertung bereitgestellt. Wir verwenden diese Bewertungsinformationen, wenn Ihre App Kunden in unterschiedlichen Märkten angezeigt wird. Außerdem erhalten Sie von der IARC eine E-Mail mit einer Bestätigung der App-Bewertung, nachdem die App veröffentlicht wurde.
 
-Bei der ersten Frage wird nach der Kategorie gefragt, die Ihre App (und die dazugehörigen Metadaten) am besten beschreibt. Nachdem Sie eine Auswahl getroffen haben, werden weitere Fragen angezeigt. Die Fragen richten sich jeweils nach den vorherigen Antworten. Um weitere Informationen zu erhalten, die Sie wissen, wie Sie eine Frage helfen können, klicken Sie auf das Symbol "Info" neben dieser Frage. Falls Sie einen Fehler machen, können Sie zurückgehen oder den Fragebogen neu starten, um die richtigen Antworten anzugeben.
+Bei der ersten Frage wird nach der Kategorie gefragt, die Ihre App (und die dazugehörigen Metadaten) am besten beschreibt. Nachdem Sie eine Auswahl getroffen haben, werden weitere Fragen angezeigt. Die Fragen richten sich jeweils nach den vorherigen Antworten. Um weitere Informationen zu erhalten, mit denen Sie erfahren, wie Sie eine Frage zu beantworten können, klicken Sie auf das Symbol "Info" neben diese Frage. Falls Sie einen Fehler machen, können Sie zurückgehen oder den Fragebogen neu starten, um die richtigen Antworten anzugeben.
 
 Klicken Sie nach dem Beantworten aller Fragen auf **Save and generate**. Alle zugewiesenen Freigaben der App werden angezeigt, und Sie können den Übermittlungsvorgang fortsetzen. Sie können auch auf **Bearbeiten** klicken, um Antworten im Fragebogen zu korrigieren.
 
@@ -49,13 +49,13 @@ Falls Sie Fragen zu der erhaltenen Altersfreigabe für Ihre App haben oder Einsp
 In einigen Fällen kann es aufgrund der Freigabe der App vorkommen, dass sie für ein bestimmtes Land oder eine Region als ungeeignet eingestuft wird. Ihnen wird dann eine Meldung mit einem Hinweis zu den Märkten angezeigt, auf denen Ihre App nicht angeboten werden kann. Wenn Sie mit dieser Einstufung (oder einer anderen Einstufung) nicht einverstanden sind, können Sie dagegen Einspruch einlegen. Nutzen Sie hierfür den Link in der E-Mail mit dem Freigabezertifikat, die Sie von der IARC erhalten.
 
 
-## <a name="previous-microsoft-store-age-ratings"></a>Bisherige MicrosoftStore-Altersfreigaben
+## <a name="previous-microsoft-store-age-ratings"></a>Bisherige Microsoft Store-Altersfreigaben
 
 Bisher haben Entwickler die Altersfreigabe für ihre App selbst angegeben, anstatt den Fragebogen auszufüllen. Im Folgenden finden Sie eine Übersicht über die vorherigen Microsoft Store-Altersfreigaben:
 
 | Altersfreigabe                           | Beschreibung                            |
 |--------------------------------------|----------------------------------------|
-| 3+ (geeignet für Kleinkinder)     | Diese Apps enthalten für Kleinkinder geeignete Inhalte. Sie können minimale komische Gewalt enthalten, die in nicht realistischer, comicartiger Weise dargestellt ist. Die Figuren dürfen keinen realen Personen ähneln oder mit realen Personen in Verbindung gebracht werden können. Die Apps dürfen keine beängstigenden Inhalte und keine Darstellungen von Nacktheit oder Andeutungen sexueller oder krimineller Aktivität enthalten. Apps mit dieser Altersfreigabe können zudem keine Features aktivieren, die den Zugriff auf für Kleinkinder ungeeignete Inhalte oder Funktionen ermöglichen, z.B. die unkontrollierte Onlinefreigabe von Informationen (siehe Altersfreigabekategorie "12+").            |
+| 3+ (geeignet für Kleinkinder)     | Diese Apps enthalten für Kleinkinder geeignete Inhalte. Sie können minimale komische Gewalt enthalten, die in nicht realistischer, comicartiger Weise dargestellt ist. Die Figuren dürfen keinen realen Personen ähneln oder mit realen Personen in Verbindung gebracht werden können. Die Apps dürfen keine beängstigenden Inhalte und keine Darstellungen von Nacktheit oder Andeutungen sexueller oder krimineller Aktivität enthalten. Apps mit dieser Altersfreigabe können zudem keine Features aktivieren, die den Zugriff auf für Kleinkinder ungeeignete Inhalte oder Funktionen ermöglichen, z. B. die unkontrollierte Onlinefreigabe von Informationen (siehe Altersfreigabekategorie "12+").            |
 | 7+ (geeignet für Kinder ab 7 Jahren)   | Für Apps mit dieser Altersfreigabe gelten die gleichen Kriterien wie für Apps für die Altersstufe 3+, außer dass diese Apps Inhalte enthalten können, die kleinere Kinder möglicherweise verängstigen, sowie Darstellungen partieller Nacktheit, sofern diese keine sexuelle Aktivität andeuten. Diese Bewertung sollte nur für Apps verwendet werden, deren Inhalt für Kinder geeignet ist.                                                                                   |
 | 12+ (geeignet für Kinder ab 12 Jahren) | Apps mit dieser Altersfreigabe können weitergehende Darstellungen von Nacktheit nicht sexueller Art, geringfügig anschauliche Gewaltdarstellungen gegen nicht reale Figuren oder nicht anschauliche Gewaltdarstellungen gegenüber Menschen oder Tieren enthalten. Apps mit dieser Altersfreigabe können auch anstößige Ausdrücke enthalten, aber keine anstößige Sprache sexueller Natur. Apps mit dieser Altersfreigabe können auch: (i) den unkontrollierten Zugriff auf soziale Onlinenetzwerke oder (ii) die unkontrollierte Freigabe persönlicher Informationen an dritte Parteien (darunter andere Spieler oder Onlinebekanntschaften) ermöglichen. (Ihre App muss für jede als „kontrolliert“ geltende Aktivität Jugendschutzfeatures enthalten, die die elterliche Erlaubnis erfordern, um Freigabefeatures zu nutzen. Sie müssen diese Features explizit identifizieren und ihre Funktion in den [Hinweisen für Zertifizierung](notes-for-certification.md) erläutern.) |
 | 16+ (geeignet für Kinder ab 16 Jahren) | In Apps mit dieser Altersfreigabe können realistische Gewalt mit minimalen blutrünstigen Szenen und sexuelle Aktivität dargestellt werden. Die Apps können entsprechend den in den Store-Richtlinien festgelegten Einschränkungen auch Darstellungen von Drogen- oder Tabakkonsum und kriminellen Aktivitäten sowie mehr anstößige Inhalte als Apps für die Altersstufe 12+ enthalten.                                                                                                                           |

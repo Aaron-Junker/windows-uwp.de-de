@@ -1,11 +1,11 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
+Description: Dialogfelder und Flyouts zeigen vorübergehende UI-Elemente an, die angezeigt werden, wenn der Benutzer sie anfordert oder eine Aktion erfolgt, die eine Benachrichtigung oder Genehmigung erfordert.
 title: Dialogfeld-Steuerelemente
 label: Dialogs
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
@@ -13,15 +13,15 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: bee954cba446ac7dc7eb41622d9275b3b73af6ee
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116099"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621835"
 ---
 # <a name="dialog-controls"></a>Dialogfeld-Steuerelemente
 
-Dialogfelder sind modale benutzeroberflächenüberlagerungen, die kontextbezogene app-Informationen enthalten. Sie blockieren Interaktionen mit dem app-Fenster, bis Sie explizit geschlossen werden. Sie verlangen häufig eine Aktion vom Benutzer.
+Dialogfeld-Steuerelemente sind modale Benutzeroberfläche überlagert, die kontextbezogene app-Informationen bereitstellen. Sie blockieren Interaktionen mit dem app-Fenster, bis Sie explizit verworfen wird. Sie verlangen häufig eine Aktion vom Benutzer.
 
 ![Beispiel für ein Dialogfeld](../images/dialogs/dialog_RS2_delete_file.png)
 
@@ -32,7 +32,7 @@ Dialogfelder sind modale benutzeroberflächenüberlagerungen, die kontextbezogen
 
 Verwenden Sie Dialogfelder und Flyouts, um Benutzern wichtige Informationen mitzuteilen oder deren Bestätigung bzw. zusätzliche Informationen anzufordern, bevor eine Aktion abgeschlossen werden kann.
 
-Empfehlungen dazu, wann Sie ein Dialogfeld verwendet werden und wann ein Flyout (ein ähnliches Steuerelement), finden Sie unter [Dialogfelder und Flyouts](index.md). 
+Finden Sie Empfehlungen dazu, wann verwenden Sie ein Dialogfeld oder ein Flyout anzeigt (ein ähnliches Steuerelement), verwenden Sie [Dialogfelder und Flyouts](index.md). 
 
 ## <a name="examples"></a>Beispiele
 
@@ -43,8 +43,8 @@ Empfehlungen dazu, wann Sie ein Dialogfeld verwendet werden und wann ein Flyout 
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> oder <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in Aktion zu sehen.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -62,7 +62,7 @@ Empfehlungen dazu, wann Sie ein Dialogfeld verwendet werden und wann ein Flyout 
     -   Stellen Sie bei Verwendung eines Dialogfeldtitels mithilfe des Inhaltsbereichs weitere Details bereit, oder definieren Sie Terminologie. Wiederholen Sie nicht den Titel mit anderen Worten.
 -   Mindestens eine Dialogfeldschaltfläche muss angezeigt werden.
     -   Stellen Sie sicher, dass Ihr Dialogfeld mindestens eine Schaltfläche aufweist, die eine sichere, nicht-destruktive Aktion wie „Alles klar!“, „Schließen“ oder „Abbrechen“ auslöst. Verwenden Sie die CloseButton-API, um diese Schaltfläche hinzuzufügen.
-    -   Verwenden Sie für den Schaltflächentext konkrete Antworten auf die Hauptanweisung oder den Inhalt. Beispiel: „Möchten Sie AppName den Zugriff auf Ihren Standort erlauben?“, gefolgt von den Schaltflächen „Zulassen“ und „Blockieren“. Konkrete Antworten erleichtern das Verständnis und ermöglichen somit eine schnelle Entscheidungsfindung.
+    -   Verwenden Sie für den Schaltflächentext konkrete Antworten auf die Hauptanweisung oder den Inhalt. Beispiel: "Möchten Sie AppName den Zugriff auf Ihren Standort erlauben?", gefolgt von den Schaltflächen "Zulassen" und "Blockieren". Klare Antworten erleichtern das Verständnis und damit die schnelle Entscheidungsfindung.
     - Stellen Sie sicher, dass der Text der Aktionsschaltflächen kurz ist. Kurze Anweisungen ermöglichen dem Benutzer, schnell und zuverlässig eine Entscheidung zu treffen.
     - Zusätzlich zur sicheren, nicht-destruktiven Aktion können Sie dem Benutzer optional ein oder zwei Aktionsschaltflächen anzeigen, die im Zusammenhang mit der Hauptanweisung stehen. Diese „bestätigenden“ Aktionsschaltflächen unterstreichen den Hauptgrund des Dialogfelds. Verwenden Sie die PrimaryButton- und SecondaryButton-APIs, um diese „bestätigenden“ Aktionen hinzufügen.
     - Die „bestätigenden“ Aktionsschaltflächen sollten als die am weitesten links stehenden Schaltflächen angezeigt werden. Die sichere, nicht-destruktive Aktion sollte als die am weitesten rechts stehende Schaltfläche angezeigt werden.
@@ -70,7 +70,7 @@ Empfehlungen dazu, wann Sie ein Dialogfeld verwendet werden und wann ein Flyout 
 -   Verwenden Sie Dialogfelder nicht für kontextbezogene Fehler, die sich auf eine bestimmte Stelle auf der Seite beziehen, beispielsweise Validierungsfehler (wie in Kennwortfeldern). Verwenden Sie die Canvas der App selbst zum Anzeigen von Inlinefehlern.
 - Verwenden Sie die [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), um Ihre Dialogfeldumgebung zu erstellen. Verwenden Sie nicht die veraltete MessageDialog-API.
 
-## <a name="how-to-create-a-dialog"></a>So erstellen Sie ein Dialogfeld
+## <a name="how-to-create-a-dialog"></a>Vorgehensweise: Erstellen Sie ein Dialogfeld
 Um ein Dialogfeld zu erstellen, verwenden Sie die [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog). Sie können ein Dialogfeld im Code oder Markup erstellen. Obwohl es in der Regel leichter ist, UI-Elemente in XAML zu definieren, ist es bei einem einfachen Dialogfeld unkomplizierter, Code zu verwenden. In diesem Beispiel wird ein Dialogfeld erstellt, um dem Benutzer mitzuteilen, dass keine WLAN-Verbindung vorhanden ist. Für die Anzeige wird die Methode [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) verwendet.
 
 ```csharp
@@ -118,8 +118,8 @@ private async void DisplayDeleteFileDialog()
 }
 ```
 
-## <a name="provide-a-safe-action"></a>Bieten Sie eine sichere Aktion
-Da Dialogfelder Benutzerinteraktion blockieren, und Schaltflächen für die Benutzer das primäre Mittel sind, ein Dialogfeld zu schließen, sollten Sie sicherstellen, dass Ihr Dialogfeld mindestens eine „sichere“, nicht-destruktive Schaltfläche wie z.B. „Schließen“ oder „Alles klar!“ enthält. **Alle Dialogfelder sollten mindestens eine sichere Aktionsschaltfläche enthalten, um das Dialogfeld zu schließen.** Dadurch wird sichergestellt, dass der Benutzer das Dialogfeld zuverlässig schließen kann, ohne eine Aktion auszuführen.<br>![Dialogfeld mit einer Schaltfläche](../images/dialogs/dialog_RS2_one_button.png)
+## <a name="provide-a-safe-action"></a>Geben Sie ein sicheres vorgehen.
+Da Dialogfelder Benutzerinteraktion blockieren, und Schaltflächen für die Benutzer das primäre Mittel sind, ein Dialogfeld zu schließen, sollten Sie sicherstellen, dass Ihr Dialogfeld mindestens eine „sichere“, nicht-destruktive Schaltfläche wie z. B. „Schließen“ oder „Alles klar!“ enthält. **Alle Dialoge müssen mindestens ein sicheres vorgehen-Schaltfläche, um das Dialogfeld zu schließen enthalten.** Dadurch wird sichergestellt, dass der Benutzer das Dialogfeld zuverlässig schließen kann, ohne eine Aktion auszuführen.<br>![Ein Dialogfeld eine Schaltfläche](../images/dialogs/dialog_RS2_one_button.png)
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -186,7 +186,7 @@ Mithilfe der integrierten Schaltflächen kann das Dialogfeld optisch an andere D
 ### <a name="closebutton"></a>CloseButton
 Jedes Dialogfeld sollte eine sichere, nicht-destruktive Aktionsschaltfläche aufweisen, die dem Benutzer das zuverlässige Beenden des Dialogfelds ermöglicht.
 
-Verwenden Sie die ContentDialog.CloseButton-API, um diese Schaltfläche zu erstellen. Dadurch schaffen Sie die jeweils richtige Benutzerumgebung für alle Eingabemöglichkeiten wie z.B. Maus, Tastatur, Fingereingabe und Gamepad. Dies ist nötig, wenn:
+Verwenden Sie die ContentDialog.CloseButton-API, um diese Schaltfläche zu erstellen. Dadurch schaffen Sie die jeweils richtige Benutzerumgebung für alle Eingabemöglichkeiten wie z. B. Maus, Tastatur, Fingereingabe und Gamepad. Dies ist nötig, wenn:
 <ol>
     <li>Der Benutzer auf CloseButton klickt oder tippt </li>
     <li>Der Benutzer die Zurück-Taste des Systems betätigt </li>
@@ -256,10 +256,10 @@ Ein typisches Bestätigungsdialogfeld verfügt über zwei Schaltflächen: eine S
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementkatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [QuickInfos](../tooltips.md)
-- [Menüs und Kontextmenü](../menus.md)
+- [Menüs und Kontextmenüs](../menus.md)
 - [Flyout-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

@@ -1,21 +1,21 @@
 ---
 title: Aktivieren des Benutzermoduszugriffs auf GPIO, I2C und SPI
-description: In diesem Lernprogramm wird der Benutzermoduszugriff auf GPIO, I2C, SPI und UART auf Windows10 beschrieben.
+description: In diesem Lernprogramm wird der Benutzermoduszugriff auf GPIO, I2C, SPI und UART auf Windows 10 beschrieben.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, ACPI, GPIO, I2C, SPI, UEFI
+keywords: Windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
 ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936398"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620305"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Aktivieren des Benutzermoduszugriffs auf GPIO, I2C und SPI
 
-Windows 10 enthält neue APIs für den Zugriff auf GPIO, I2C, SPI und UART direkt aus Benutzermodus. Platinen für die Entwicklung, z.B. Raspberry Pi 2, zeigen eine Teilmenge dieser Verbindungen, mit denen Benutzer ein grundlegendes Berechnungsmodell mit benutzerdefiniertem Schaltkreis auf eine bestimmte Anwendung erweitern können. Diese Low-Level Busse werden in der Regel mit nur einer Teilmenge der GPIO-Pins und -Busse in den Headern für andere wichtige integrierte Funktionen freigegeben. Um die Systemstabilität zu erhalten, ist es erforderlich, anzugeben, welche Pins und Busse zur Änderung durch Benutzermodusanwendungen sicher sind.
+Windows 10 enthält neue APIs für den Zugriff auf GPIO, I2C, SPI und UART direkt aus Benutzermodus. Platinen für die Entwicklung, z. B. Raspberry Pi 2, zeigen eine Teilmenge dieser Verbindungen, mit denen Benutzer ein grundlegendes Berechnungsmodell mit benutzerdefiniertem Schaltkreis auf eine bestimmte Anwendung erweitern können. Diese Low-Level Busse werden in der Regel mit nur einer Teilmenge der GPIO-Pins und -Busse in den Headern für andere wichtige integrierte Funktionen freigegeben. Um die Systemstabilität zu erhalten, ist es erforderlich, anzugeben, welche Pins und Busse zur Änderung durch Benutzermodusanwendungen sicher sind.
 
 In diesem Dokument wird beschrieben, wie diese Konfiguration in ACPI angegeben wird, und es enthält Tools, um zu überprüfen, dass die Konfiguration richtig angegeben wurde.
 
@@ -26,7 +26,7 @@ Benutzermoduszugriff auf Low-Level-Busse unter Windows wird über die vorhandene
 
 ## <a name="asl-by-example"></a>ASL anhand eines Beispiels
 
-Betrachten wir die rhproxy-Geräteknotendeklaration auf Raspberry Pi 2. Erstellen Sie zunächst die ACPI-Gerätedeklaration im Bereich \\_SB.
+Betrachten wir die rhproxy-Geräteknotendeklaration auf Raspberry Pi 2. Erstellen Sie zunächst die ACPI-Gerät-Deklaration in der \\_SB Bereich.
 
 ```cpp
 Device(RHPX)
@@ -37,9 +37,9 @@ Device(RHPX)
 }
 ```
 
-* _HID – Hardware Id. Legen Sie hier eine herstellerspezifische Hardware-ID fest.
-* _CID – Compatible Id. Muss “MSFT8000” sein.
-* _UID – Eindeutige ID. Auf 1 festlegen.
+* _HID – Hardware-ID. Legen Sie hier eine herstellerspezifische Hardware-ID fest.
+* _CID – Kompatible ID. Muss „MSFT8000“ sein.
+* _UID – Eindeutige ID. Legen Sie den Wert auf 1 fest.
 
 Als Nächstes deklarieren wir alle GPIO- und SPB-Ressourcen, die für den Benutzermodus verfügbar gemacht werden soll. Die Reihenfolge, in der Ressourcen deklariert werden, ist wichtig, da Ressourcenindizes verwendet werden, um Ressourcen Eigenschaften zuordnen. Sind mehrere I2C- oder SPI-Busse verfügbar gemacht, gilt der erste deklarierte Bus als „Standard“-Bus für diesen Typ und ist die Instanz, die durch die `GetDefaultAsync()`-Methoden der [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) und [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) zurückgegeben wird.
 
@@ -157,9 +157,9 @@ Dadurch wird ein Bus mit dem Namen „SPI1“ erstellt und dem Ressourcenindex 2
 
 * Muss `SpbCx` verwenden oder SpbCx-kompatibel sein
 * Muss die [MITT SPI-Tests](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx) bestanden haben
-* Muss eine Taktfrequenz von 4Mhz unterstützen
+* Muss eine Taktfrequenz von 4 Mhz unterstützen
 * Muss 8-Bit-Datenlänge unterstützen
-* Muss alle SPI-Modi unterstützen: 0, 1, 2, 3
+* Müssen alle SPI-Modi zu unterstützen: 0, 1, 2, 3
 
 ### <a name="i2c"></a>I2C
 
@@ -214,7 +214,7 @@ Als Nächstes deklarieren wir die GPIO-Pins, die für den Benutzermodus verfügb
 * Deklarieren Sie Pins, die mit integrierten Funktionen wie Schaltflächen und LEDs verbunden sind.
 * Deklarieren Sie keine Pins, die für Systemfunktionen reserviert sind oder gar nicht verbunden sind.
 
-Im folgenden ASL-Block werden zwei Pins deklariert – GPIO4 und GPIO5. Die anderen Pins werden aus Platzgründen nicht hier aufgeführt. AnhangC enthält ein Beispiel für das Powershell-Skript, das verwendet werden kann, um die GPIO-Ressourcen zu generieren.
+Im folgenden ASL-Block werden zwei Pins deklariert – GPIO4 und GPIO5. Die anderen Pins werden aus Platzgründen nicht hier aufgeführt. Anhang C enthält ein Beispiel für das Powershell-Skript, das verwendet werden kann, um die GPIO-Ressourcen zu generieren.
 
 ```cpp
 // Index 4 – GPIO 4
@@ -255,7 +255,7 @@ Die SupportedDriveModes-Eigenschaft gibt an, welche Laufwerkmodi vom GPIO-Contro
 | Flagwert | Laufwerkmodus | Beschreibung |
 |------------|------------|-------------|
 | 0 x 1        | InputHighImpedance | Der Pin unterstützt eine hohe Impedanzeingabe, die dem Wert „PullNone“ in ACPI entspricht. |
-| 0 x 2        | InputPullUp | Der Pin unterstützt einen integrierten Pull-Up-Widerstand, der dem Wert „PullUp“ in ACPI entspricht. |
+| 0x2        | InputPullUp | Der Pin unterstützt einen integrierten Pull-Up-Widerstand, der dem Wert „PullUp“ in ACPI entspricht. |
 | 0 x 4        | InputPullDown | Der Pin unterstützt einen integrierten Pull-Down-Widerstand, der dem Wert „PullDown“ in ACPI entspricht. |
 | 0 x 8        | OutputCmos | Der Pin unterstützt sowohl die Generierung von starken Höhen als auch die von starken Tiefen (im Gegensatz zu einem offenen Ausgleich). |
 
@@ -268,7 +268,7 @@ Wenn ein GPIO-Signal einen Levelshifter durchläuft, bevor es den verfügbar gem
 Windows unterstützt zwei Schemas für die Pinnummerierung:
 
 * Sequenzielle Pinnummerierung – Benutzer sehen Zahlen wie 0, 1, 2... bis zur Anzahl der verfügbar gemachten Pins. 0 ist die erste in ASL deklarierte GpioIo-Ressource, 1 ist die zweite in ASL deklarierte GpioIo-Ressource usw.
-* Native Pinnummerierung – Benutzer sehen die Pinnummern in GpioIo-Beschreibungen, z.B. 4, 5, 12, 13, ... .
+* Native Pinnummerierung – Benutzer sehen die Pinnummern in GpioIo-Beschreibungen, z. B. 4, 5, 12, 13, ... .
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
@@ -288,7 +288,7 @@ Wählen Sie das Schema für die Nummerierung, das am kompatibelsten mit der ver�
 
 #### <a name="gpio-driver-requirements"></a>GPIO-Treiberanforderungen
 
-* Müssen verwenden: `GpioClx`
+* Müssen verwenden `GpioClx`
 * Müssen auf SOC-Speicher zugeordnet werden
 * Müssen emulierte ActiveBoth-Interruptbehandlung verwenden
 
@@ -329,7 +329,7 @@ Dies weist dem Controller den Anzeigenamen „UART2“ zu. Dabei handelt es sich
 
 ## <a name="runtime-pin-muxing"></a>Runtime-Pin-Muxing
 
-Pin-Muxing bezeichnet die Möglichkeit, denselben physischen Pin für unterschiedliche Funktionen zu verwenden. Mehrere verschiedene integrierte Peripheriegeräte, z.B. I2C-Controller, SPI-Controller und GPIO-Controller können an der gleichen physischen Pin auf einen SOC geleitet werden. Der Mux-Block steuert, welche Funktion zu einem bestimmten Zeitpunkt auf dem Pin aktiv ist. Normalerweise ist Firmware für die Funktionszuweisung beim Start verantwortlich ist und diese Zuweisung bleibt während des Startvorgangs statisch. Runtime-Pin-Muxing bietet die Möglichkeit, Pinfunktionszuweisungen zur Laufzeit neu zu konfigurieren. Wenn Benutzer die Pinfunktion zur Laufzeit auswählen können, wird die Entwicklung beschleunigt, da Benutzer die Pins einer Platine schnell neu konfigurieren können und da die Hardware mehr Anwendungen unterstützt, als sie es bei einer statischen Konfiguration tun würde.
+Pin-Muxing bezeichnet die Möglichkeit, denselben physischen Pin für unterschiedliche Funktionen zu verwenden. Mehrere verschiedene integrierte Peripheriegeräte, z. B. I2C-Controller, SPI-Controller und GPIO-Controller können an der gleichen physischen Pin auf einen SOC geleitet werden. Der Mux-Block steuert, welche Funktion zu einem bestimmten Zeitpunkt auf dem Pin aktiv ist. Normalerweise ist Firmware für die Funktionszuweisung beim Start verantwortlich ist und diese Zuweisung bleibt während des Startvorgangs statisch. Runtime-Pin-Muxing bietet die Möglichkeit, Pinfunktionszuweisungen zur Laufzeit neu zu konfigurieren. Wenn Benutzer die Pinfunktion zur Laufzeit auswählen können, wird die Entwicklung beschleunigt, da Benutzer die Pins einer Platine schnell neu konfigurieren können und da die Hardware mehr Anwendungen unterstützt, als sie es bei einer statischen Konfiguration tun würde.
 
 Benutzer können Muxing-Unterstützung für GPIO, I2C, SPI und UART nutzen, ohne zusätzlichen Code zu schreiben. Wenn ein Benutzer eine GPIO oder Bus mit [OpenPin()](https://msdn.microsoft.com/library/dn960157.aspx) oder [FromIdAsync()](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync) öffnet, werden die zugrunde liegenden physische Pins automatisch an die angeforderte Funktion gemuxt. Wenn die Pins bereits von einer anderen Funktion verwendet werden, schlägt der OpenPin()- oder FromIdAsync()-Aufruf fehl. Wenn der Benutzer das Gerät schließt, indem er das Objekt [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx), [I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx), [SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) oder [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx) löscht, werden die Pins freigegeben, sodass sie später für eine andere Funktion geöffnet werden können.
 
@@ -553,7 +553,7 @@ Wenn ein Client eine Muxing-Ressource nicht länger benötigt, wird das Handle g
 
 ### <a name="authoring-guidelines-for-acpi-tables"></a>Richtlinien für das Erstellen von ACPI-Tabellen
 
-In diesem Abschnitt wird beschrieben, wie Muxing-Ressourcen Clienttreibern bereitgestellt werden. Beachten Sie, dass Sie Microsoft ASL Compiler Build 14327 oder höher zum Kompilieren von Tabellen mit `MsftFunctionConfig()`-Ressourcen benötigen. `MsftFunctionConfig()` Ressourcen werden den Pin-Muxing-Clients als Hardwareressourcen bereitgestellt. `MsftFunctionConfig()` Ressourcen sollten Treibern bereitgestellt werden, die Pin-Muxing-Änderungen erfordern. Dies sind in der Regel SPB- und serielle Controllertreiber; sie sollten jedoch nicht SPB- und seriellen peripheren Gerätetreibern bereitgestellt werden, da die Controllertreiber für die Muxing-Konfiguration verantwortlich sind.
+In diesem Abschnitt wird beschrieben, wie Muxing-Ressourcen Clienttreibern bereitgestellt werden. Beachten Sie, dass Sie Microsoft ASL Compiler Build 14327 oder höher zum Kompilieren von Tabellen mit `MsftFunctionConfig()`-Ressourcen benötigen. `MsftFunctionConfig()` Ressourcen werden wie die Hardwareressourcen Pin Muxing Clients bereitgestellt. `MsftFunctionConfig()` Ressourcen, die Pin Muxing Änderungen erfordern, meist SPB und serielle Controllertreiber bereitgestellt werden soll, ohne darf nicht SPB und serial peripheral Treiber, seit die Konfiguration des Controllers Treiber Handles Muxing bereitgestellt werden.
 Das `MsftFunctionConfig()`-ACPI-Makro wird wie folgt definiert:
 
 ```cpp
@@ -605,11 +605,11 @@ Device(I2C1)
 }
 ```
 
-Zusätzlich zum Arbeitsspeicher und den Interruptressourcen, die normalerweise von einem Controllertreiber benötigt werden, wird eine `MsftFunctionConfig()`-Ressource ebenfalls angegeben. Diese Ressource ermöglicht es dem I2C-Controllertreiber, die Pins 2 und 3 – vom Geräteknoten am \\_SB.GPIO0 verwaltet – in Funktion 4 mit aktiviertem Pull-Up-Widerstand zu verwenden.
+Zusätzlich zum Arbeitsspeicher und den Interruptressourcen, die normalerweise von einem Controllertreiber benötigt werden, wird eine `MsftFunctionConfig()`-Ressource ebenfalls angegeben. Diese Ressource ermöglicht den I2C-Controller-Treiber einzufügenden Pins, 2 und 3 – verwaltet von der Geräteknoten auf \\_SB. GPIO0 – in 4-Funktion mit Pull-Up-Widerstand aktiviert.
 
 ## <a name="supporting-muxing-support-in-gpioclx-client-drivers"></a>Unterstützen der Muxing-Unterstützung im GpioClx-Clienttreiber
 
-`GpioClx` verfügt über integrierte Unterstützung für Pin-Muxing. GpioClx-Miniporttreiber (auch als „GpioClx-Clienttreiber“ bezeichnet) steuern die GPIO-Controller-Hardware. Ab Windows 10 Build 14327 können GpioClx-Miniporttreiber durch die Implementierung von zwei neuen DDIs Unterstützung für Pin-Muxing hinzufügen:
+`GpioClx` verfügt über integrierte Unterstützung für die Pin Muxing aus. GpioClx-Miniporttreiber (auch als „GpioClx-Clienttreiber“ bezeichnet) steuern die GPIO-Controller-Hardware. Ab Windows 10 Build 14327 können GpioClx-Miniporttreiber durch die Implementierung von zwei neuen DDIs Unterstützung für Pin-Muxing hinzufügen:
 
 * CLIENT_ConnectFunctionConfigPins – Aufgerufen von `GpioClx`, damit der Miniporttreiber die angegebene Muxing-Konfiguration anwendet.
 * CLIENT_ConnectFunctionConfigPins – Aufgerufen von `GpioClx`, damit der Miniporttreiber die angegebene Muxing-Konfiguration rückgängig macht.
@@ -618,7 +618,7 @@ Unter [GpioClx-Ereignisrückruffunktionen](https://msdn.microsoft.com/library/wi
 
 Zusätzlich zu diesen beiden neuen DDIs, sollten bestehende DDIs auf Pin-Muxing-Kompatibilität überprüft werden:
 
-* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins wird von GpioClx aufgerufen, damit der Miniporttreiber einen Satz Pins für die GPIO-Eingabe oder -Ausgabe konfiguriert. GPIO und MsftFunctionConfig schließen sich gegenseitig aus, d.h. ein Pin wird nie mit GPIO und MsftFunctionConfig gleichzeitig verbunden sein. Da eine standardmäßige Pinfunktion von GPIO nicht benötigt wird, muss ein Pin nicht unbedingt an ein GPIO gemuxt werden, wenn ConnectIoPins aufgerufen wird. ConnectIoPins ist erforderlich, um alle Vorgänge auszuführen, die erforderlich sind, um den Pin bereit für GPIO zu machen, einschließlich des Muxing-Vorgangs. *CLIENT_ConnectInterrupt* sollte sich ähnlich verhalten, da Interrupts als Sonderfall von GPIO-Eingaben angesehen werden können.
+* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins wird von GpioClx aufgerufen, damit der Miniporttreiber einen Satz Pins für die GPIO-Eingabe oder -Ausgabe konfiguriert. GPIO und MsftFunctionConfig schließen sich gegenseitig aus, d. h. ein Pin wird nie mit GPIO und MsftFunctionConfig gleichzeitig verbunden sein. Da eine standardmäßige Pinfunktion von GPIO nicht benötigt wird, muss ein Pin nicht unbedingt an ein GPIO gemuxt werden, wenn ConnectIoPins aufgerufen wird. ConnectIoPins ist erforderlich, um alle Vorgänge auszuführen, die erforderlich sind, um den Pin bereit für GPIO zu machen, einschließlich des Muxing-Vorgangs. *CLIENT_ConnectInterrupt* sollte sich ähnlich verhalten, da Interrupts als Sonderfall von GPIO-Eingaben angesehen werden können.
 * CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt – Diese Routine sollte Pins in den Zustand zurückversetzen, in dem sie waren, als CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt aufgerufen wurde, es sei denn, das PreserveConfiguration-Flag ist angegeben. Zusätzlich zum Wiederherstellen der Richtung des Pins auf ihren Standardzustand, sollte der Miniport auch jeden Pin-Muxing-Zustand in den Zustand zurückversetzen, in dem er war, als die Routine _Connect aufgerufen wurde.
 
 Nehmen wir beispielsweise an, dass die Muxing-Standardkonfiguration eines Pins UART ist und dass der Pin auch als GPIO verwendet werden kann. Wenn CLIENT_ConnectIoPins aufgerufen wird, um den Pin für GPIO zu verbinden, sollte der Pin auf GPIO gemuxt werden; bei CLIENT_DisconnectIoPins sollte der Pin zurück auf UART gemuxt werden. Im Allgemeinen sollten die _Disconnect-Routinen Vorgänge widerrufen, die von _Connect Routinen durchgeführt wurden.
@@ -633,11 +633,11 @@ Das folgende Diagramm zeigt die Abhängigkeiten zwischen den einzelnen Komponent
 
 Bei Gerätinitialisierung analysieren die `SpbCx`- und `SerCx`-Frameworks alle `MsftFunctionConfig()`-Ressourcen, die dem Gerät als Hardwareressourcen bereitgestellt werden. SpbCx/SerCx erwerben dann Pin-Muxing-Ressourcen bzw. geben diese bei Bedarf frei.
 
-`SpbCx` wendet die Pin-Muxing-Konfiguration in seinem *IRP_MJ_CREATE*-Handler direkt vor Aufruf des [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx)-Rückrufs des Clienttreibers an. Wenn die Muxing-Konfiguration nicht angewendet werden kann, wird der `EvtSpbTargetConnect()`-Rückruf des Controllertreibers nicht aufgerufen. Daher kann ein SPB-Controllertreiber davon ausgehen, dass Pins an die SPB-Funktion gemuxt werden, wenn `EvtSpbTargetConnect()` aufgerufen wird.
+`SpbCx` Wendet die Konfiguration der Pin Muxing in seine *IRP_MJ_CREATE* Handler auf, unmittelbar vor Aufrufen der Clienttreiber [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) Rückruf. Wenn die Muxing-Konfiguration nicht angewendet werden kann, wird der `EvtSpbTargetConnect()`-Rückruf des Controllertreibers nicht aufgerufen. Daher kann ein SPB-Controllertreiber davon ausgehen, dass Pins an die SPB-Funktion gemuxt werden, wenn `EvtSpbTargetConnect()` aufgerufen wird.
 
-`SpbCx` kehrt die Pin-Muxing-Konfiguration in seinem *IRP_MJ_CLOSE*-Handler direkt nach Aufrufen des [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx)-Rückruf des Controllertreibers um. Das Ergebnis ist, dass Pins an die SPB-Funktion gemuxt werden, sobald ein peripherer Treiber einen Handle für den SPB-Controllertreiber öffnet. Das Muxing wird entfernt, wenn der periphere Treiber seinen Handle schließt.
+`SpbCx` setzt die Konfiguration der Pin Muxing in seine *IRP_MJ_CLOSE* Handler auf, nach dem Aufrufen des Controller-Treibers [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) Rückruf. Das Ergebnis ist, dass Pins an die SPB-Funktion gemuxt werden, sobald ein peripherer Treiber einen Handle für den SPB-Controllertreiber öffnet. Das Muxing wird entfernt, wenn der periphere Treiber seinen Handle schließt.
 
-`SerCx` verhält sich ähnlich. `SerCx` erwirbt alle `MsftFunctionConfig()`-Ressourcen in seinem *IRP_MJ_CREATE*-Handler direkt vor Aufruf des [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx)-Rückruf des Controllertreibers, und gibt alle Ressourcen im IRP_MJ_CLOSE-Handler nach dem [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx)-Rückruf des Controllertreibers frei.
+`SerCx` verhält sich ähnlich wie ein. `SerCx` Ruft alle `MsftFunctionConfig()` Ressourcen in der *IRP_MJ_CREATE* Handler nur vor dem Aufrufen des Controller-Treibers [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) Rückruf, und gibt alle Ressourcen in der IRP_MJ_CLOSE Handler, nach dem Aufrufen des Controller-Treibers [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) Rückruf.
 
 Die Auswirkung des dynamischen Pin-Muxing für `SerCx` und `SpbCx`-Controllertreiber besteht darin, dass sie Pins tolerieren müssen, bei denen das Muxing von der SPB-/UART-Funktion zu bestimmten Zeiten entfernt wird. Controllertreiber müssen wird davon ausgehen, dass Pins nicht gemuxt werden, bis `EvtSpbTargetConnect()` oder `EvtSerCx2FileOpen()` aufgerufen wird. Pins werden nicht zwangsläufig während der folgenden Rückrufe an eine SPB-/UART-Funktion gemuxt. Folgende Liste ist nicht vollständig, sie stellt jedoch die am häufigsten verwendeten PNP-Routinen dar, die von Controllertreibern implementiert werden.
 
@@ -652,7 +652,7 @@ Wenn Sie bereit sind, Rhproxy zu testen, ist die folgende schrittweise Anleitung
 
 1. Stellen Sie sicher, dass jeder `SpbCx`, `GpioClx` und `SerCx`-Controllertreiber geladen und ordnungsgemäß ausgeführt wird
 1. Stellen Sie sicher, dass `rhproxy` im System vorhanden ist In einigen Editionen und Builds von Windows ist er nicht vorhanden.
-1. Kompilieren und laden Sie den Rhproxy-Knoten mit `ACPITABL.dat`
+1. Kompilieren Sie und Laden Sie Ihre Rhproxy Knoten mit `ACPITABL.dat`
 1. Überprüfen Sie, ob der `rhproxy`-Geräteknoten vorhanden ist.
 1. Überprüfen Sie, dass `rhproxy` geladen ist und startet
 1. Stellen Sie sicher, dass die erwarteten Geräte für den Benutzermodus verfügbar gemacht werden
@@ -662,7 +662,7 @@ Wenn Sie bereit sind, Rhproxy zu testen, ist die folgende schrittweise Anleitung
 
 ### <a name="verify-controller-drivers"></a>Überprüfen Sie die Controller-Treiber
 
-Da „rhproxy” andere Geräte im System für den Benutzermodus verfügbar macht, funktioniert es nur, wenn diese Geräte bereits verwendet werden. Der erste Schrittbesteht darin, zu überprüfen, ob die Geräte – die I2C, SPI, GPIO-Controller, die Sie verfügbar machen möchten – bereits funktionieren.
+Da „rhproxy” andere Geräte im System für den Benutzermodus verfügbar macht, funktioniert es nur, wenn diese Geräte bereits verwendet werden. Der erste Schritt besteht darin, zu überprüfen, ob die Geräte – die I2C, SPI, GPIO-Controller, die Sie verfügbar machen möchten – bereits funktionieren.
 
 Führen Sie an einer Eingabeaufforderung Folgendes aus
 
@@ -701,7 +701,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-2. Laden Sie [WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) herunter und suchen Sie `asl.exe` unter `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
+2. Herunterladen der [WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) und `asl.exe` an `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
 3. Führen Sie den folgenden Befehl aus, um ACPITABL.dat zu generieren:
 
 ```ps
@@ -737,14 +737,14 @@ devcon status *msft8000
 
 Wenn die Ausgabe angibt, dass rhproxy gestartet wurde, wurde rhproxy geladen und erfolgreich gestartet. Wenn ein Fehlercode angezeigt wird, müssen Sie dies untersuchen. Einige häufige Problemcodes sind:
 
-* Problem 51 – `CM_PROB_WAITING_ON_DEPENDENCY` -Das System startet rhproxy nicht, da eine der Abhängigkeiten nicht geladen wurde. Dies bedeutet, dass die Ressourcen auf rhproxy auf einen ungültigen ACPI-Knoten hinweisen, oder dass die Zielgeräte nicht gestartet wurden. Überprüfen Sie zunächst, dass alle Geräte erfolgreich ausgeführt werden (siehe 'Überprüfen Sie die Controller-Treiber' weiter oben). Anschließend überprüfen Sie Ihre ASL und stellen Sie sicher, dass alle Pfade für die Ressource (z.B. `\_SB.I2C1`) korrekt sind, und auf gültige Knoten in Ihrem DSDT hinweisen.
+* Problem 51 – `CM_PROB_WAITING_ON_DEPENDENCY` -Das System startet rhproxy nicht, da eine der Abhängigkeiten nicht geladen wurde. Dies bedeutet, dass die Ressourcen auf rhproxy auf einen ungültigen ACPI-Knoten hinweisen, oder dass die Zielgeräte nicht gestartet wurden. Überprüfen Sie zunächst, dass alle Geräte erfolgreich ausgeführt werden (siehe 'Überprüfen Sie die Controller-Treiber' weiter oben). Anschließend überprüfen Sie Ihre ASL und stellen Sie sicher, dass alle Pfade für die Ressource (z. B. `\_SB.I2C1`) korrekt sind, und auf gültige Knoten in Ihrem DSDT hinweisen.
 * Problem 10: `CM_PROB_FAILED_START` -Rhproxy konnte nicht gestartet werden, wahrscheinlich aufgrund eines Ressourceananalyseproblems. Überprüfen Sie die ASL und Ressourceindizes in der DSD, und stellen Sie sicher, dass die GPIO-Ressourcen in zunehmender Pin-Reihenfolge angegeben werden.
 
 ### <a name="verify-that-the-expected-devices-are-exposed-to-usermode"></a>Stellen Sie sicher, dass die erwarteten Geräte für den Benutzermodus verfügbar gemacht werden
 
 Wenn rhproxy ausgeführt wird, sollte es Geräte-Schnittstellen erstellt haben, auf die vom Benutzermodus zugegriffen werden kann. Wir verwenden einige Befehlszeilentools zum Aufzählen von Geräten und sehen, ob sie vorhanden sind.
 
-Klon der [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) -Repository und erstellen die `GpioTestTool`, `I2cTestTool`, `SpiTestTool`, und `Mincomm` Beispiele. Kopieren Sie die Tools auf Ihr Testgerät, und verwenden Sie die folgenden Befehle zur Auflistung der Geräte.
+Klonen der [ https://github.com/ms-iot/samples ](https://github.com/ms-iot/samples) Repository und erstellen die `GpioTestTool`, `I2cTestTool`, `SpiTestTool`, und `Mincomm` Beispiele. Kopieren Sie die Tools auf Ihr Testgerät, und verwenden Sie die folgenden Befehle zur Auflistung der Geräte.
 
 ```ps
 I2cTestTool.exe -list
@@ -757,7 +757,7 @@ Sie sollten Ihre Geräte und die Anzeigenamen sehen. Wenn die richtigen Geräte 
 
 ### <a name="verify-each-device-on-the-command-line"></a>Überprüfen Sie jedes Gerät in der Befehlszeile
 
-Der nächste Schrittist die Verwendung der Befehlszeilentools, um andere Geräte zu öffnen und mit ihnen zu interagieren.
+Der nächste Schritt ist die Verwendung der Befehlszeilentools, um andere Geräte zu öffnen und mit ihnen zu interagieren.
 
 I2CTestTool-Beispiel:
 
@@ -811,15 +811,15 @@ Verwenden Sie die folgenden Beispiele, um zu überprüfen, ob die Geräte ab UWP
 
 Herunterladen des [Hardware Lab Kit (HLK)](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit). Die folgenden Test sind verfügbar:
 
-* [GPIO WinRT-Funktions- und Belastungstests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
-* [I2C WinRT-Schreibtests (EEPROM erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
-* [I2C WinRT-Lesetests (EEPROM erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
-* [I2C WinRT nicht vorhandene untergeordneten Adresse - Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
+* [GPIO WinRT funktionsfähig und Belastungstests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
+* [I2C WinRT-Write-Tests (Speicher erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
+* [I2C WinRT-Read-Tests (Speicher erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
+* [I2C WinRT nicht vorhandene untergeordnete Adresse Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
 * [I2C WinRT erweiterte Funktionstests (Mbed LPC1768 erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
-* [SPI WinRT Taktfrequenz-Überprüfungstest (Mbed LPC1768 erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
-* [SPI WinRT IO Übertragungstests (Mbed LPC1768 erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
-* [SPI WinRT Stride-Überprüfungstests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
-* [SPI WinRT Übertragungstests für die Lückenerkennung (Mbed LPC1768 erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
+* [SPI WinRT Uhr Häufigkeit Buildüberprüfungstests (Mbed LPC1768 erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
+* [SPI WinRT e/a-Transfer-Tests (Mbed LPC1768 erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
+* [Tests der SPI WinRT Stride-Überprüfung](https://docs.microsoft.com/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
+* [SPI WinRT übertragen Lücke Erkennung Tests (Mbed LPC1768 erforderlich)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
 
 Bei der Auswahl des rhproxy-Geräteknotens im HLK-Manager werden die entsprechenden Tests automatisch ausgewählt.
 
@@ -856,9 +856,9 @@ Klicken Sie auf „Ausgewählte ausführen“. Weitere Dokumentation zu jedem Te
 
 ## <a name="apendix"></a>Anhang
 
-### <a name="appendix-a---raspberry-pi-asl-listing"></a>AnhangA – Raspberry Pi-ASL-Verzeichnis
+### <a name="appendix-a---raspberry-pi-asl-listing"></a>Anhang A – Raspberry Pi-ASL-Verzeichnis
 
-Header-Pinout:https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
+Header-Pinouts: https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```cpp
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1018,9 +1018,9 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ```
 
-### <a name="appendix-b---minnowboardmax-asl-listing"></a>AnhangB – MinnowBoardMax-ASL-Verzeichnis
+### <a name="appendix-b---minnowboardmax-asl-listing"></a>Anhang B – MinnowBoardMax-ASL-Verzeichnis
 
-Header-Pinout:https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
+Header-Pinouts: https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```cpp
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1173,7 +1173,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-### <a name="appendix-c---sample-powershell-script-to-generate-gpio-resources"></a>AnhangC - Beispiel-Powershell-Skript zum Generieren von GPIO-Ressourcen
+### <a name="appendix-c---sample-powershell-script-to-generate-gpio-resources"></a>Anhang C - Beispiel-Powershell-Skript zum Generieren von GPIO-Ressourcen
 
 Das folgende Skript kann zum Generieren der GPIO-Ressourcendeklarationen für Raspberry Pi verwendet werden:
 

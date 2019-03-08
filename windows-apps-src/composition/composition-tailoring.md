@@ -1,47 +1,47 @@
 ---
-title: Komposition anpassen
-description: Verwenden Sie die Composition-APIs zum Anpassen der Benutzeroberfläche für Leistung optimieren und benutzereinstellungen und Geräteeigenschaften anzupassen.
+title: Anpassen der Komposition
+description: Verwenden Sie die Kompositions-APIs zum Anpassen der Benutzeroberflächenautomatisierungs und Optimieren der Leistung zu ermöglichen, benutzereinstellungen und die Eigenschaften des Geräts.
 ms.date: 07/16/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bcc9a6d89a143d8fd03d73dbd83b832ed9513ee2
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058711"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644415"
 ---
-# <a name="tailoring-effects--experiences-using-windows-ui"></a>Kollatierungsanpassung Effekte & spielumgebungen mit Windows-Benutzeroberfläche
+# <a name="tailoring-effects--experiences-using-windows-ui"></a>Anpassen von Auswirkungen und Erfahrungen mit Windows-Benutzeroberfläche
 
-Windows-Benutzeroberfläche bietet viele ansprechender Effekte, Animationen und bedeutet, dass zur Differenzierung. Benutzer für die Leistung und anpassbarkeit bietet erfüllen ist jedoch weiterhin ein notwendiger Bestandteil erfolgreiche Anwendungen erstellen. Die universelle Windows-Plattform unterstützt eine große, diverse Familie von Geräten, die verschiedenen Features und Funktionen. Um eine inklusive Umgebung für alle Ihre Benutzer bereitzustellen, müssen Sie sicherzustellen, dass Ihre Anwendung Skalieren auf allen Geräten und Voreinstellungen des Benutzers zu respektieren. Anpassen der Benutzeroberfläche kann eine effiziente Möglichkeit zum Nutzen Funktionen des Geräts und sicherzustellen, dass ein angenehmeres und inklusive Umgebung bereitstellen.
+Windows-Benutzeroberfläche bietet viele ansprechende Effekte, Animationen und bedeutet, dass um diese zu unterscheiden. Erfüllt die Erwartungen der Benutzer für Leistung und anpassbarkeit ist jedoch immer noch ein wichtiger Bestandteil von erfolgreiche Anwendungen erstellen. Die universelle Windows-Plattform unterstützt eine umfangreiche und verschiedene-Familie von Geräten, die unterschiedlichen Features und Funktionen haben. Um eine inklusive-Erfahrung für alle Benutzer zu gewährleisten, müssen Sie die Skalierung Ihrer Anwendungen auf Geräten sicher und benutzereinstellungen berücksichtigen. Anpassen der Benutzeroberfläche, bieten eine effiziente Möglichkeit, nutzen Sie die funktionsmöglichkeiten eines Geräts und eine angenehme und inklusive benutzererfahrung sicherzustellen.
 
-Anpassen der Benutzeroberfläche ist eine allgemeine Kategorie umfassenden Arbeit für eine hohe Leistung schöne UI in Bezug auf den folgenden Bereichen:
+Anpassen der Benutzeroberfläche ist eine Kategorie umfasst Aufgaben für Leistung und ansprechende Benutzeroberfläche in Bezug auf den folgenden Bereichen:
 
-- Die Wahrung und zur Anpassung an den benutzereinstellungen für Effekte
-- Mit benutzereinstellungen für Animationen
-- Optimierung der Benutzeroberfläche für die angegebene Hardwarefunktionen
+- Unter Beachtung der und zur Anpassung an den benutzereinstellungen für Effekte
+- Sicherheitsszenarios unverzichtbar benutzereinstellungen für Animationen
+- Optimieren der Benutzeroberfläche für den angegebenen Hardwarefunktionen
 
-Hier werden wie bei der Gestaltung Ihrer Effekte und Animationen mit der visuellen Ebene in den Bereichen oben behandelt, aber es gibt viele andere Weise bei der Gestaltung Ihrer Anwendung, um sicherzustellen, dass eine hervorragende benutzerumgebung Ende. Richtlinien-Dokumente stehen zum [Anpassen die Benutzeroberfläche](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) für verschiedene Geräte und [Reaktionsfähigkeit der Benutzeroberfläche zu erstellen](/windows/uwp/design/layout/responsive-design).
+Hier wird beschrieben, wie Sie Ihre Effekten und Animationen mit der visuellen Ebene in den Bereichen, die oben genannten anpassen, aber es gibt viele andere Methoden zum Anpassen der Anwendung, damit eine hervorragende endbenutzererfahrung. Anleitungen-Dokumentation finden Sie Anleitungen zum [Anpassen Ihrer Benutzeroberfläche](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) für verschiedene Geräte und [Erstellen von reaktionsfähigen UI](/windows/uwp/design/layout/responsive-design).
 
-## <a name="user-effects-settings"></a>Effekte benutzereinstellungen
+## <a name="user-effects-settings"></a>Auswirkungen von benutzereinstellungen
 
-Benutzer können die Windows-Erfahrung für den unterschiedlichsten Gründen, anpassen, die Anwendungen sollten respektieren und Anpassung an. Um einen Bereich, die Endbenutzer steuern können ändert sich die Arten von Effekten den, die Benutzern angezeigt werden, wird ihre System verwendet.
+Benutzer können ihre Windows-Benutzeroberfläche für eine Vielzahl von Gründen anpassen, welche die Anwendungen berücksichtigen sollten, und sich anpassen. Ein Bereich, den Endbenutzer steuern können, ändert die Typen von Auswirkungen, die sie sehen, die in ihrem System verwendet.
 
-### <a name="transparency-effects-settings"></a>Transparenz Effekte Einstellungen
+### <a name="transparency-effects-settings"></a>Einstellungen für die Auswirkungen von Transparenz
 
-Eine solche Effekt-Einstellung, die Benutzer anpassen können, ist Transparenzeffekten ein-/ausschalten aktivieren. Dies kann in den Einstellungen unter Personalisierung > Farben oder über Einstellungen app > erleichterte Bedienung > Anzeige gefunden werden.
+Eine solche Einstellung für die Auswirkung, die Benutzer anpassen können, ist das Transparenzeffekte ein-und aktivieren. Diese finden Sie in der Einstellungs-app unter Personalisierung > Farben, oder über die app "Einstellungen" > erleichterte Bedienung > anzeigen.
 
-![Option "Transparenz" unter "Einstellungen"](images/tailoring-transparency-setting.png)
+![In den Einstellungen die Option "Transparenz"](images/tailoring-transparency-setting.png)
 
-Wenn aktiviert, wird keine Auswirkungen, die Transparenz verwendet wie erwartet angezeigt. Dies gilt für Acryl, HostBackdropBrush oder alle benutzerdefinierten Effekt-Diagramm, das nicht vollständig deckend ist.
+Wenn aktiviert, werden unwirksam, die Transparenz verwendet wie erwartet angezeigt werden. Dies gilt für den Blog, HostBackdropBrush oder jedes benutzerdefinierten Effekts-Diagramm, das nicht vollständig deckend ist.
 
-Wenn deaktiviert, wird Acryl-Material automatisch mit einer Volltonfarbe anzuzeigen zurückgreifen, da des XAML-acrylpinsel standardmäßig das dieses Ereignis überwacht hat. Hier sehen wir die Rechner-app entsprechend zurückgreifen auf eine Volltonfarbe Transparenzeffekten nicht aktiviert werden:
+Wenn deaktiviert, wird Blog Material automatisch auf eine Volltonfarbe zurückgreifen, da XAMLs-acrylpinsel standardmäßig auf dieses Ereignis überwacht wurde. Hier sehen wir die Rechner-Anwendung entsprechend Fallback auf eine Volltonfarbe Wenn Transparenzeffekte nicht aktiviert sind:
 
-![Rechner mit Acryl](images/tailoring-acrylic.png)
-![Rechner mit Acryl, die Reaktion auf Transparenz-Einstellungen](images/tailoring-acrylic-fallback.png)
+![Rechner mit Blog](images/tailoring-acrylic.png)
+![-Rechner mit Antworten auf die Transparenzeinstellungen Blog](images/tailoring-acrylic-fallback.png)
 
-Jedoch muss die Anwendung für jede benutzerdefinierte Effekte auf die [UISettings.AdvancedEffectsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) -Eigenschaft oder [AdvancedEffectsEnabledChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) -Ereignis zu reagieren und wechseln Sie den Effekt/effektgraphen entnommen Sie einen Effekt verwenden, der keine Transparenz festgelegt wurde. Ein Beispiel hierfür finden Sie unten:
+Für jegliche benutzerdefinierten wirkt sich die Anwendung muss jedoch auf reagieren die [UISettings.AdvancedEffectsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) Eigenschaft oder [AdvancedEffectsEnabledChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) Ereignis und Switch out die Auswirkungen/Wirkung Diagramm ein Effekts verwendet wird, das keine Transparenz aufweist. Ein Beispiel dafür ist unten:
 
 ```cs
 public MainPage()
@@ -57,11 +57,11 @@ private void Uisettings_AdvancedEffectsEnabledChanged(UISettings sender, object 
 }
 ```
 
-## <a name="animations-settings"></a>Animationen Einstellungen
+## <a name="animations-settings"></a>Einstellungen für Animationen
 
-Anwendungen sollten auf ähnliche Weise überwachen und reagieren auf die [UISettings.AnimationsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) -Eigenschaft, um sicherzustellen, dass Animationen auf oder basierend auf benutzereinstellungen in Einstellungen > erleichterte Bedienung > Anzeige deaktiviert sind.
+Anwendungen sollten auf ähnliche Weise Lauschen und reagieren auf die [UISettings.AnimationsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) Eigenschaft, um sicherzustellen, dass Animationen sind aktiviert oder deaktiviert basierend auf benutzereinstellungen in den Einstellungen > erleichterte Bedienung > anzeigen.
 
-![Animationen Option unter "Einstellungen"](images/tailoring-animations-setting.png)
+![Animationen-Option in den Einstellungen](images/tailoring-animations-setting.png)
 
 ```cs
 public MainPage()
@@ -75,30 +75,30 @@ public MainPage()
 
 ## <a name="leveraging-the-capabilities-api"></a>Nutzung der API-Funktionen
 
-Durch die Nutzung der [CompositionCapabilities](/uwp/api/windows.ui.composition.compositioncapabilities) APIs, können Sie erkennen, welche Komposition verfügbar sind und Leistung auf die angegebene Hardware-Funktionen und passen Sie das Design, um sicherzustellen, dass Endbenutzer eine leistungsfähige und ansprechender Erfahrung auf jedem Gerät abrufen. Die APIs bieten eine Möglichkeit zum Überprüfen der Hardware-Systemfunktionen um ordnungsgemäßes Effekt über eine Vielzahl von verschiedenen Formfaktoren Skalierung zu implementieren. Dies erleichtert Ihnen die Anwendung, um ein schöner erstellen und die nahtlose endbenutzererfahrung entsprechend anpassen.
+Durch die Nutzung der [CompositionCapabilities](/uwp/api/windows.ui.composition.compositioncapabilities) -APIs können Sie erkennen die Komposition verfügbar sind und leistungsstarke auf angegebene Hardware-features und passen Sie den Entwurf, um sicherzustellen, dass Endbenutzer erhalten eine leistungsfähige und ansprechende Benutzeroberfläche auf einem das Gerät. Die-APIs bieten die Möglichkeit zur Überprüfung von Hardware-Systemfunktionen, um die ordnungsgemäße Skalierung für eine Vielzahl von Formfaktoren Effekt zu implementieren. Dies erleichtert Ihnen die Anwendung, um eine schöne erstellen und die nahtlose End-benutzererfahrung entsprechend anpassen.
 
-Diese API stellt Methoden und ein Ereignis-Listener, der durchgeführt werden kann, Effekt Skalierung Entscheidungen für die Benutzeroberfläche der Anwendung. Das Feature erkennt, wie gut das System komplexen Komposition und Rendern Vorgänge verarbeiten kann und dann die Informationen in einem-nutzen-Modell für Entwickler nutzen.
+Diese API stellt die Methoden "und" einen Ereignislistener, die mit der Skalierung von Entscheidungen für die Benutzeroberfläche der Anwendung wirksam werden kann. Die Funktion erkennt, wie gut das System komplexer Zusammensetzung und Renderingvorgängen verarbeiten kann und dann die Informationen in einem einfach zu nutzenden-Modell für Entwickler nutzen können.
 
-### <a name="using-composition-capabilities"></a>Komposition Funktionen verwenden
+### <a name="using-composition-capabilities"></a>Mithilfe von Komposition-Funktionen
 
-Die CompositionCapabilities-Funktionalität wird bereits für Funktionen wie acrylmaterial, genutzt wird, in denen das Material wieder für eine weitere leistungsfähige Effekt je nach Szenario und Hardware fällt.
+Die CompositionCapabilities-Funktionalität wird bereits für Funktionen wie Blog-Material, genutzt wird, in denen das Material auf eine weitere leistungsstarke Auswirkung je nach Szenario und Hardware zurückgegriffen.
 
-Die API kann auf vorhandenen Code in einigen einfachen Schritten hinzugefügt werden.
+Die API für vorhandenen Code in wenigen einfachen Schritten kann hinzugefügt werden.
 
-1. Erwerben Sie das Objekt Funktionen in Ihrer Anwendung-Konstruktor.
+1. Abrufen des funktionalitätsobjekts in Ihrer Anwendung-Konstruktor.
 
     ```cs
     _capabilities = CompositionCapabilities.GetForCurrentView();
     ```
 
-1. Registrieren Sie eine geänderte Funktionen Ereignislistener für Ihre app.
+1. Registrieren Sie einen Funktionen-changed-Ereignis-Listener für Ihre app.
 
     ```cs
     _capabilities.Changed += HandleCapabilitiesChanged;
     ```
 
-1. Hinzufügen von Inhalten zu Ereignis Rückrufmethode in verschiedenen Funktionen Ebenen zu behandeln. Dies kann nicht sein oder mit dem nächsten Schritt unten ähnlich.
-1. Wenn Sie Effekte verwenden, überprüfen Sie zunächst das Objekt Funktionen. In Betracht, bedingte Überprüfungen oder zum Wechseln von Steuerelement-Anweisungen, je nachdem, wie Sie die Effekte anpassen möchten.
+1. Fügen Sie Inhalt an die Rückruf-Ereignismethode unterschiedlicher Funktionen behandelt. Dies kann oder möglicherweise nicht der nächste Schritt unten ähnelt.
+1. Wenn Effekte verwenden zu können, überprüfen Sie zunächst die Capabilities-Objekt. Bedingungsüberprüfungen in Betracht, oder wechseln Sie Steueranweisungen, je nachdem, wie Sie die Auswirkungen anpassen möchten.
 
     ```cs
     if (_capabilities.AreEffectsSupported())
@@ -112,17 +112,17 @@ Die API kann auf vorhandenen Code in einigen einfachen Schritten hinzugefügt we
     }
     ```
 
-Vollständiger Beispielcode finden Sie auf das [Windows-UI-Github-Repository](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
+Vollständiges Codebeispiel finden Sie auf die [Windows UI-Github-Repository](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
 
-## <a name="fast-vs-slow-effects"></a>Fast im Vergleich zu langsam Effekte
+## <a name="fast-vs-slow-effects"></a>Schnelle oder langsame Effekte
 
-Anhand des Feedbacks der bereitgestellten [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) und [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) Methoden in der CompositionCapabilities-API, können die Anwendung teuer oder nicht unterstützte Effekte für andere Effekte ihrer Wahl ausgetauscht werden, die optimiert sind für das Gerät. Einige Effekte sind bekanntermaßen konsistent Weitere Ressourcen-intensiv als andere und sollten sparsam verwendet werden, und andere Effekte können mehr frei verwendet werden. Für alle Effekte sollte jedoch Vorsicht verwendet werden beim Verketten und als einige Szenarien oder Kombinationen Animieren der Leistungsmerkmale des Diagramms Effekt ändern können. Unten sind einige Faustregel Leistungsmerkmale für einzelne Effekte:
+Aufgrund des Feedbacks aus der bereitgestellten [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) und [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) -Methoden in der CompositionCapabilities-API kann die Anwendung kann entscheiden, zu teuer oder nicht unterstützten Effekte für austauschen andere Auswirkungen ihrer Wahl, die für das Gerät optimiert sind. Einige Effekte bekanntermaßen Weitere ressourcenintensiv als andere konsistent sein und sollten sparsam eingesetzt werden und andere Effekte können flexibler verwendet werden. Für alle Effekte sollte jedoch Sorgfalt verwendet werden beim Verketten und animieren, die als einige Szenarien oder Kombinationen von die Leistungsmerkmale des Diagramms Auswirkungen ändern können. Im folgenden finden Sie einige Faustregel Leistungsmerkmale für die einzelnen Auswirkungen:
 
-- Effekte, die bekanntermaßen mit hoher Leistung auswirken sind wie folgt – Bildbearbeitungstools, Schatten Maske, BackDropBrush, HostBackDropBrush und Visual Layer. Diese werden nicht für low-End-Geräten [(Featureebene 9.1-9.3)](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)empfohlen und sollte überlegt auf high-End-Geräten verwendet werden.
-- Effekte mit mittlerer Leistungseinbußen enthalten bestimmte Blend-Effekt BlendModes (Helligkeit, Farbe, Sättigung und Farbton), Farbe Matrix SpotLight SceneLightingEffect und (je nach Szenario) BorderEffect. Diese Effekte mit bestimmten Szenarien auf low-End-Geräten funktionieren, aber achten sollte verwendet werden, wenn verketten und animieren. Empfehlen Sie einschränken der Verwendung auf zwei oder weniger auf Übergänge nur animieren.
-- Alle anderen Effekte geringe Leistung auswirken und in allen angemessene Szenarien beim animieren und Verkettung arbeiten.
+- Effekte, die bekannt sind, haben Auswirkungen auf die hohe Leistung sind wie folgt: Bildbearbeitungstools, Volumeschattenkopie-Maske, BackDropBrush, HostBackDropBrush und Ebene Visual. Diese werden nicht empfohlen, für die low-End-Geräten [(die Funktionsebene 9.1-9.3)](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx), und sollte mit Bedacht auf high-End-Geräten verwendet werden.
+- Effekte mit Auswirkungen auf die mittlere Leistung enthalten Farbmatrix, bestimmte Blend Auswirkungen BlendModes (Helligkeit, Farbe, Sättigung und Hue), SpotLight, SceneLightingEffect und (je nach Szenario) BorderEffect. Diese Effekte auf low-End-Geräten mit bestimmten Szenarien funktioniert möglicherweise, jedoch Sorgfalt beim Verketten und animieren, verwendet werden soll. Empfehlen Sie einschränken der Verwendung auf zwei oder weniger, und bei Übergängen nur animieren.
+- Alle anderen Auswirkungen haben Auswirkungen auf die mit niedriger Leistung und in alle plausible Szenarien beim animieren und verketten.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [UWP-Techniken für reaktionsfähiges Design](https://docs.microsoft.com/windows/uwp/design/layout/responsive-design)
+- [Reaktionsfähige Designtechniken UWP](https://docs.microsoft.com/windows/uwp/design/layout/responsive-design)
 - [UWP Gerät anpassen](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)

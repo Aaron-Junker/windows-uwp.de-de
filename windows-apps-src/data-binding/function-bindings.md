@@ -1,29 +1,29 @@
 ---
-description: Die xBind-Markuperweiterung mit der Funktionen in Markup verwendet werden.
+description: Die Markuperweiterung xBind ermöglicht Funktionen, die im Markup verwendet werden.
 title: Funktionen in x:Bind
 ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, Uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060034"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626215"
 ---
 # <a name="functions-in-xbind"></a>Funktionen in x:Bind
 
 > [!NOTE]
-> Allgemeine Informationen zur Verwendung der Datenbindung in Ihrer app mit **{X: Bind}** (sowie einen vollständigen Vergleich zwischen **{X: Bind}** und **{Binding}**) finden Sie unter [Datenbindung im Detail](data-binding-in-depth.md).
+> Allgemeine Informationen zum Verwenden der Datenbindung in Ihrer app mit **{X: Bind}** (und eine allumfassende Vergleich zwischen **{X: Bind}** und **{Binding}**), finden Sie unter [Daten Binden ausführlich](data-binding-in-depth.md).
 
-Ab Windows10, Version 1607, unterstützt **{x: Bind}** die Verwendung einer Funktion als blattbildenden Schrittdes Bindungspfades. Dadurch wird Folgendes ermöglicht:
+Ab Windows 10, Version 1607, unterstützt **{x: Bind}** die Verwendung einer Funktion als blattbildenden Schritt des Bindungspfades. Dadurch können:
 
 - Eine einfachere Möglichkeit der Konvertierung von Werten
 - Eine Möglichkeit, Bindungen von mehr als einem Parameter abhängig zu machen
 
 > [!NOTE]
-> Wenn Sie Funktionen für **{x: Bind}** verwenden möchten, muss die Ziel-SDK-Version 14393 oder höher sein. Sie können keine Funktionen verwenden, wenn Ihre App für frühere Versionen von Windows10 bestimmt ist. Weitere Informationen zu Zielversionen finden Sie unter [Versionsadaptiver Code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Wenn Sie Funktionen für **{x: Bind}** verwenden möchten, muss die Ziel-SDK-Version 14393 oder höher sein. Sie können keine Funktionen verwenden, wenn Ihre App für frühere Versionen von Windows 10 bestimmt ist. Weitere Informationen zu Zielversionen finden Sie unter [Versionsadaptiver Code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 Im folgenden Beispiel werden Hintergrund und Vordergrund des Elements an Funktionen gebunden, um eine Konvertierung basierend auf dem Farbparameter durchzuführen
 
@@ -63,7 +63,7 @@ class ColorEntry
 
 Der Pfad der Funktion wird wie jeder andere Eigenschaftspfad angegeben. Er kann Punkte (.), Indexer oder Umwandlungen für die Suche nach der Funktion enthalten.
 
-Statische Funktionen können mithilfe der XMLNamespace:ClassName.MethodName-Syntax angegeben werden. Verwenden Sie z. B. die unten Syntax für die Bindung an statische Funktionen im CodeBehind.
+Statische Funktionen können mithilfe der XMLNamespace:ClassName.MethodName-Syntax angegeben werden. Verwenden Sie z. B. der folgenden Syntax für die Bindung an statische Funktionen im Code-Behind.
 
 ```xaml
 <Page 
@@ -87,7 +87,7 @@ namespace MyNamespace
 }
 ```
 
-Sie können auch Systemfunktionen direkt im Markup verwenden, um einfache Szenarien wie das Datum formatieren, Formatieren von Text, Text Konkatinierungen usw., z. B. auszuführen:
+Sie können auch direkt im Markup Systemfunktionen verwenden, um einfache Szenarien wie die Formatierung des Datums, Text zu formatieren, Text Verkettungen, usw., z. B. zu erreichen:
 
 ```xaml
 <Page 
@@ -103,12 +103,12 @@ Ist der Modus OneWay/TwoWay, wird auf den Pfad der Funktion eine Änderungserken
 
 Für die zu bindende Funktion müssen folgende Voraussetzungen gelten:
 
-- Code und die Metadaten müssen auf sie zugreifen können, d.h. interne/private Aktionen in C#, aber für C++/CX werden öffentliche WinRT-Methoden benötigt
+- Code und die Metadaten müssen auf sie zugreifen können, d. h. interne/private Aktionen in C#, aber für C++/CX werden öffentliche WinRT-Methoden benötigt
 - Überladung basiert auf der Anzahl der Argumente, nicht auf ihrem Typ, und es wird die erste Übereinstimmung mit dieser Anzahl von Argumenten gesucht
 - Die Argumenttypen müssen den übergebenen Daten entsprechen. Es werden keine einschränkenden Konvertierungen durchgeführt
 - Der Rückgabetyp der Funktion muss mit dem Typ der Eigenschaft übereinstimmen, für die die Bindung verwendet wird
 
-Das Bindungsmodul reagiert auf Änderung der Eigenschaft Benachrichtigungen mit den Namen der Funktion ausgelöst und Bindungen erneut nach Bedarf auswerten. Beispiel:
+Die Bindungs-Engine reagiert auf die Eigenschaftenänderung Benachrichtigungen ausgelöst werden, mit dem Funktionsnamen und Bindungen nach Bedarf neu zu bewerten. Zum Beispiel:
 
 ```xaml
 <DataTemplate x:DataType="local:Person">
@@ -164,7 +164,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> Sie können Funktionen in X: Bind um zu erreichen die gleichen Szenarien wie was über Konverter und MultiBinding in WPF unterstützt wurde.
+> Sie können Funktionen in X: Bind als was über Konverter und MultiBinding-Instanz in WPF unterstützt dieselben Szenarien erreichen.
 
 ## <a name="function-arguments"></a>Funktionsargumente
 
@@ -178,7 +178,7 @@ Mehrere Argumente können durch Komma (,) voneinander getrennt angegeben werden
 
 ### <a name="two-way-function-bindings"></a>Bidirektionale Funktionsbindung
 
-In einem Szenario mit bidirektionaler Bindung muss eine zweite Funktion für die umgekehrte Bindungsrichtung angegeben werden. Dies erfolgt mithilfe der **BindBack** Bindung-Eigenschaft. In dem Beispiel unten haben die Funktion zu ergreifende Maßnahme ein Argument, das den Wert, der das Modell übernommen werden muss.
+In einem Szenario mit bidirektionaler Bindung muss eine zweite Funktion für die umgekehrte Bindungsrichtung angegeben werden. Dies erfolgt mithilfe der **BindBack** Eigenschaft binden. In der folgenden Beispiel gibt es dauert für die Funktion ein Argument, das den Wert, der wieder in das Modell mithilfe von Push übertragen werden muss.
 
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />

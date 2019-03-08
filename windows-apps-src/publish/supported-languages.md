@@ -1,31 +1,31 @@
 ---
-Description: You can submit apps to the Microsoft Store in over 100 languages.
+Description: Sie können in mehr als 100 Sprachen der Microsoft Store-apps senden.
 title: Unterstützte Sprachen
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.date: 02/20/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
-ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083708"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657755"
 ---
 # <a name="supported-languages"></a>Unterstützte Sprachen
 
 
-Sie können apps an den Microsoft Store in mehr als 100 Sprachen übermitteln.
+Sie können in mehr als 100 Sprachen der Microsoft Store-apps senden.
 
-Weitere Informationen zum Konfigurieren von Sprachen in Ihren apps, [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md) , und [verstehen benutzerprofilsprachen und app-manifest-Sprachen](../design/globalizing/manage-language-and-region.md)angezeigt. Wir bieten auch ein [Multilingual App Toolkit](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat), mit dessen Hilfe Sie Apps programmieren können, die mehrere Sprachen unterstützen.
+Weitere Informationen zum Konfigurieren von Sprachen in Ihren apps finden Sie unter [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md) und [grundlegendes Profil Benutzersprachen und app-manifest Sprachen](../design/globalizing/manage-language-and-region.md). Wir bieten auch ein [Multilingual App Toolkit](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat), mit dessen Hilfe Sie Apps programmieren können, die mehrere Sprachen unterstützen.
 
 ## <a name="supported-languages"></a>Unterstützte Sprachen
 
 
-Hierbei handelt es sich um die Sprachen, die den Microsoft Store unterstützt. Ihre app muss mindestens eine dieser Sprachen unterstützen. 
+Hierbei handelt es sich um die Sprachen, die den Microsoft Store unterstützt. Ihre app muss mindestens eine der folgenden Sprachen unterstützt. 
 
-Sprachcodes, die hier nicht aufgeführt sind, werden nicht vom Store unterstützt. Es wird empfohlen, dass Sie keinen abzielen Sprachcodes als denjenigen die unten aufgeführten enthalten; Diese Pakete nicht an Kunden verteilt werden, und können dazu führen, dass Verzögerungen oder Fehlern Zertifizierung.
+Sprachcodes, die hier nicht aufgeführt sind, werden von der Store nicht unterstützt. Es wird empfohlen, dass Sie keine Pakete mit dem Ziel Sprachcodes außer den nachfolgend aufgeführten enthalten; solche Pakete werden nicht an Kunden verteilt werden und verursacht möglicherweise Verzögerungen oder Fehlern Zertifizierung.
 
 | Name der Sprache         | Unterstützte Sprachcodes                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -36,14 +36,14 @@ Sprachcodes, die hier nicht aufgeführt sind, werden nicht vom Store unterstütz
 | Armenisch              | hy, hy-am                                                                                                                                                                                             |
 | Assamesisch              | as, as-in                                                                                                                                                                                             |
 | Aserbaidschanisch           | az, az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
-| Baskisch (Baskisch)       | eu, eu-es                                                                                                                                                                                             |
+| Baskisch (Baskenland)       | eu, eu-es                                                                                                                                                                                             |
 | Belarussisch            | be, be-by                                                                                                                                                                                             |
 | Bangla                | bn, bn-bd, bn-in                                                                                                                                                                                      |
 | Bosnisch               | bs, bs-cyrl, bs-cyrl-ba, bs-latn, bs-latn-ba                                                                                                                                                          |
 | Bulgarisch             | bg, bg-bg                                                                                                                                                                                             |
 | Katalanisch               | ca, ca-es, ca-es-valencia                                                                                                                                                                             |
 | Cherokee              | chr-cher, chr-cher-us, chr-latn                                                                                                                                                                       |
-| Chinesisch (vereinfacht)  | "Zh-Hans", "Zh-Cn", "Zh-Hans-Cn", "Zh-sg", "Zh-Hans-sg                                                                                                                                                     |
+| Chinesisch (vereinfacht)  | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
 | Chinesisch (traditionell) | zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw                                                                                                                                      |
 | Kroatisch              | hr, hr-hr, hr-ba                                                                                                                                                                                      |
 | Tschechisch                 | cs, cs-cz                                                                                                                                                                                             |
@@ -77,7 +77,7 @@ Sprachcodes, die hier nicht aufgeführt sind, werden nicht vom Store unterstütz
 | Kasachisch                | kk, kk-kz                                                                                                                                                                                             |
 | Khmer                 | km, km-kh                                                                                                                                                                                             |
 | K'iche'               | quc-latn, qut-gt, qut-latn                                                                                                                                                                            |
-| Rwanda           | rw, rw-rw                                                                                                                                                                                             |
+| Kinyarwanda           | rw, rw-rw                                                                                                                                                                                             |
 | Kisuaheli             | sw, sw-ke                                                                                                                                                                                             |
 | Konkani               | kok, kok-in                                                                                                                                                                                           |
 | Koreanisch                | ko, ko-kr                                                                                                                                                                                             |

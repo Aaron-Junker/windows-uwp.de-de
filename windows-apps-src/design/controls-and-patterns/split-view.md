@@ -1,23 +1,23 @@
 ---
-title: Geteilte Darstellung
+title: Geteilte Ansicht
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-description: Ein Steuerelement für die geteilte Ansicht verfügt über einen erweiterbaren/reduzierbaren Bereich und einen Inhaltsbereich.
+description: Ein Steuerelement für die geteilte Darstellung verfügt über einen erweiterbaren/reduzierbaren Bereich und einen Inhaltsbereich.
 label: Split view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e0c709261b08231fa82af615d5398fd66648d4e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036872"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646465"
 ---
 # <a name="split-view-control"></a>Steuerelement für geteilte Ansicht
 
@@ -32,7 +32,7 @@ Dies ist ein Beispiel für die Verwendung von SplitView durch die Microsoft Edge
 
  Der Inhaltsbereich einer geteilten Ansicht wird stets angezeigt. Der Bereich kann erweitert und reduziert werden oder geöffnet bleiben. Er kann vom linken oder rechten Rand eines App-Fensters aus eingeblendet werden. Der Bereich verfügt über vier Modi:
 
--   **Überlagerung**
+-   **Overlay**
 
     Der Bereich ist ausgeblendet, bis er geöffnet wird. Ist der Bereich geöffnet, überlagert er den Inhaltsbereich.
 
@@ -50,7 +50,7 @@ Dies ist ein Beispiel für die Verwendung von SplitView durch die Microsoft Edge
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Das Steuerelement für die geteilte Ansicht kann für eine Drawer-Ansicht verwendet werden, in der Benutzer den ergänzenden Bereich öffnen und schließen können. Sie können z.B. SplitView verwenden, um das [Master/Details-](master-details.md)-Muster zu erstellen.
+Das Steuerelement für die geteilte Ansicht kann für eine Drawer-Ansicht verwendet werden, in der Benutzer den ergänzenden Bereich öffnen und schließen können. Sie können z. B. SplitView verwenden, um das [Master/Details-](master-details.md)-Muster zu erstellen.
 
 Wenn Sie ein Navigationsmenü mit einer Schaltfläche zum Erweitern/Reduzieren und eine Liste mit Navigationselementen erstellen möchten, verwenden Sie das [NavigationView](navigationview.md)-Steuerelement.
 
@@ -63,8 +63,8 @@ Wenn Sie ein Navigationsmenü mit einer Schaltfläche zum Erweitern/Reduzieren u
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/SplitView">die App zu öffnen und SplitView in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -98,6 +98,6 @@ Dies ist ein SplitView-Steuerelement mit einem offenen Bereich, der inline neben
 - [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-topics"></a>Verwandte Themen
-- [Navigationsbereichsmuster](navigationview.md)
+- [Navigationsbereich im Bereich Muster](navigationview.md)
 - [Listenansicht](lists.md)
 - [Master/Details](master-details.md)

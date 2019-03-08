@@ -1,48 +1,48 @@
 ---
-Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
+Description: Wenn die von Ihnen bereitgestellten Pakete auf unterschiedliche Betriebssysteme ausgerichtet sind, können Sie Teile Ihres Store-Eintrags für verschiedene Zielbetriebssysteme anpassen.
 title: Erstellen plattformspezifischer Store-Einträge
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, anpassen, Eintrag, Beschreibung, früher
+keywords: Windows 10, UWP, anpassen, Eintrag, Beschreibung, früher
 ms.localizationpriority: medium
 ms.openlocfilehash: bfb21d56df357640734e9e5026783cc398468f0a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943201"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654955"
 ---
 # <a name="create-platform-specific-store-listings"></a>Erstellen plattformspezifischer Store-Einträge
 
 
-Wenn Ihre app zuvor veröffentlichten Pakete, die unterschiedliche Betriebssysteme ausgerichtet sind enthält, haben Sie die Möglichkeit, Teile Ihres Store-Eintrags für Kunden mit früheren Betriebssystemversionen anzupassen (Windows 8.x oder früher und/oder Windows Phone 8.x oder früher). 
+Wenn Ihre app zuvor veröffentlichte Pakete gespeichert, die auf verschiedenen Betriebssystemen ausgerichtet sind, Sie haben die Möglichkeit, Teile Ihrer Store-Angebot für Kunden, die in früheren Betriebssystemversionen anzupassen (Windows 8.x oder früher bzw. Windows Phone 8.x oder früher). 
 
-Kunden auf Windows 10 (einschließlich Xbox) werden immer der standardmäßige [Store-Eintrag](create-app-store-listings.md)angezeigt. Die Option, plattformspezifische Store-Einträge zu erstellen, es sei denn, Sie bereits Ihre app mit Paketen veröffentlicht haben, die eine oder mehrere frühere Betriebssystemversionen unterstützen nicht angezeigt werden. 
+Unter Windows 10 (einschließlich Xbox) die Kunden sehen sich immer auf die Standardeinstellung [Store auflisten](create-app-store-listings.md). Die Möglichkeit, plattformspezifischen Store-Angebote zu erstellen, es sei denn, Sie Ihre app mit Paketen bereits veröffentlicht haben, die eine oder mehrere frühere Betriebssystemversionen unterstützen nicht angezeigt. 
 
 > [!IMPORTANT]
-> Ab dem 31. Oktober 2018 Produkte neu erstellten Pakete für Windows-8.x/Windows enthalten können nicht Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
-Plattformspezifische Store-Einträge können nützlich sein, wenn Sie Features betonen vorkommen, die nur in einer Betriebssystemversion angezeigt werden, oder Screenshots bereitstellen, die für ein bestimmtes Betriebssystem (unabhängig vom Gerätetyp) sind.
+Plattformspezifischen Store-Angebote können nützlich sein, wenn Sie Funktionen zu erwähnen, die nur in eine Version des Betriebssystems angezeigt werden soll, oder möchten, Screenshots bereitstellen, die für ein bestimmtes Betriebssystem (unabhängig vom Gerätetyp) spezifisch sind.
 
 > [!NOTE]
-> Durch das Erstellen eines plattformspezifischen Store-Eintrags in einer Sprache erstellen Sie nicht automatisch plattformspezifische Store-Einträge in den anderen von Ihrer App unterstützten Sprachen. Sie müssen den plattformspezifischen Store-Eintrag getrennt für jede Sprache erstellen. Beachten Sie außerdem, dass Sie [Importieren und Exportieren von Store-Eintrag Daten](import-and-export-store-listings.md) für plattformspezifische Einträge nicht möglich.
+> Erstellen einer plattformspezifischen erstellt Store auflisten, die in einer Sprache keine Liste der plattformspezifischen Store in anderen Sprachen, die Ihre app unterstützt. Sie müssen den plattformspezifischen Store-Eintrag getrennt für jede Sprache erstellen. Beachten Sie auch, dass Sie nicht [importieren und Exportieren von Daten auflisten Store](import-and-export-store-listings.md) für plattformspezifische Angebote.
 
 
 ## <a name="creating-a-platform-specific-store-listing"></a>Erstellen eines plattformspezifischen Store-Eintrags
 
-Am oberen Rand der Seite **Store-Eintrag** , wenn Ihre app zuvor veröffentlichten Pakete enthält, die für frühere Betriebssystemversionen unterstützen ((Windows 8.x oder früher und/oder Windows Phone 8.x oder früher), Sie können wählen **erstellen ein plattformspezifischen app Store-Eintrags **. Nach Auswahl dieser Option werden Sie aufgefordert, die gewünschten Betriebssystemversionen auszuwählen, die Ihre Übermittlung unterstützen. Wenn Sie bereits plattformspezifische Store-Einträge für alle früheren Betriebssystemversionen Ihre app ausgerichtet ist erstellt haben, nicht Sie weitere Auswahl vornehmen.
+Am oberen Rand Ihrer **Store auflisten** Seite, wenn Ihre app zuvor veröffentlichte Pakete enthält, die frühere Betriebssystemversionen unterstützen ((Windows 8.x oder früher bzw. Windows Phone 8.x oder früher), können Sie auswählen, **erstellen ein Liste der plattformspezifischen app-Store**. Nach Auswahl dieser Option werden Sie aufgefordert, die gewünschten Betriebssystemversionen auszuwählen, die Ihre Übermittlung unterstützen. Nachdem Sie bereits plattformspezifischen Store-Angebote für alle von der früheren Betriebssystemversionen Ihrer Anwendungsziele erstellt haben, wird nicht Sie eine andere Auswahl treffen können.
 
-Sie können Ihre Store-Eintrags Standard (Windows 10) als Ausgangspunkt, wodurch Texte und Bilder, die Sie für Ihren standardmäßigen Store eingegeben haben Eintrag. Sie werden dann Änderungen vornehmen, die Sie vor dem speichern möchten. Alternativ können Sie mit einem vollständig leeren Store-Eintrag starten.
+Ihr Standardwert (Windows 10)-Store-Angebot können als Startpunkt verwenden, das alles enthält, über den entsprechenden Text und Bilder für Ihre Standard-Store eingegebenen auflisten. Sie werden dann Änderungen vornehmen, die Sie vor dem speichern möchten. Alternativ können Sie mit einem vollständig leeren Store-Eintrag starten.
 
 Nachdem Sie auf **Weiter** geklickt haben, enthält die Seite **Store-Eintrag** einen Abschnitt für den gerade erstellten plattformspezifischen Store-Eintrag. Dieser Abschnitt enthält einen eigenen Satz von Feldern für **Beschreibung** (erforderlich), **Neuigkeiten in dieser Version**, **Screenshots**, **Symbol für App-Kachel**, **App-Features** und **Weitere Systemanforderungen**. Achten Sie darauf, Informationen in jedes Feld einzugeben, für das Sie Informationen im benutzerdefinierten Store-Eintrag anzeigen möchten, auch wenn die Informationen mit dem standardmäßigen Store-Eintrag übereinstimmen. Wenn Sie eines dieser Felder leer lassen, werden keine Informationen für dieses Feld im benutzerdefinierten Store-Eintrag angezeigt.
 
 > [!IMPORTANT]
 > Die Felder im Abschnitt [Zusätzliche Informationen](create-app-store-listings.md#additional-information) des Store-Eintrag können nicht für unterschiedliche Betriebssystemversionen angepasst werden.
 > 
-> Da einige Felder auf der Standardseite für den [Store-Eintrag](create-app-store-listings.md) nur für Kunden unter Windows10 gelten, sehen Sie nicht alle Optionen beim Erstellen eines plattformspezifischen Store-Eintrags. Beispielsweise können Sie keine Trailer zu einem plattformspezifischen Store-Eintrag hinzufügen, da Trailer nur für Kunden unter Windows10, Version 1607, oder höher angezeigt werden. 
+> Da einige Felder auf der Standardseite für den [Store-Eintrag](create-app-store-listings.md) nur für Kunden unter Windows 10 gelten, sehen Sie nicht alle Optionen beim Erstellen eines plattformspezifischen Store-Eintrags. Beispielsweise können Sie keine Trailer zu einem plattformspezifischen Store-Eintrag hinzufügen, da Trailer nur für Kunden unter Windows 10, Version 1607, oder höher angezeigt werden. 
 
-Sie können weiterhin plattformspezifische Einträge zu bearbeiten, um für Kunden auf eine bestimmte Version des Betriebssystems ändern.
+Sie können weiterhin plattformspezifische Angebote zu bearbeiten, nach Bedarf, um die Änderungen für Kunden mit einer bestimmten Version des Betriebssystems vornehmen.
 
 
 ## <a name="removing-a-platform-specific-store-listing"></a>Entfernen eines plattformspezifischen Store-Eintrags

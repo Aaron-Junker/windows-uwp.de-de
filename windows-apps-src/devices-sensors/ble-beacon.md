@@ -3,15 +3,15 @@ title: Bluetooth-Werbung
 description: Dieser Abschnitt enthält Artikel zur Integration von Bluetooth Low Energy (LE)-Ankündigungen in Apps für die Universelle Windows-Plattform (UWP) mithilfe der AdvertisementWatcher- and AdvertisementPublisher-APIs.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
 ms.openlocfilehash: b1c8271c8066304dce355cf50afd4509173eed3e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046789"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653265"
 ---
 # <a name="bluetooth-le-advertisements"></a>Bluetooth LE-Ankündigungen
 
@@ -43,7 +43,7 @@ Um Bluetooth LE-Grundfunktionalität in einer App für die Universelle Windows-P
 
 Bluetooth LE-Ankündigungen ermöglichen Ihrem Gerät, konstant eine spezifische Nutzlast („Ankündigung“ genannt) zu signalisieren. Diese Ankündigung kann von jedem Bluetooth LE-kompatiblen Gerät in der Nähe erkannt werden, wenn es für den Empfang dieser spezifischen Ankündigung eingerichtet wurde.
 
-> **Hinweis**: für Schutz der Privatsphäre, ist die Lebensdauer von der Ankündigung an diejenige der app gebunden. Sie können einen BluetoothLEAdvertisementPublisher erstellen und in einer Hintergrundaufgabe „Start“ aufrufen, um die Ankündigung im Hintergrund auszuführen. Weitere Informationen zu Hintergrundaufgaben finden Sie unter [Starten, Fortsetzen und Hintergrundaufgaben](https://msdn.microsoft.com/windows/uwp/launch-resume/index).
+> **Hinweis**: Für Datenschutz ist die Lebensdauer Ihrer Ankündigung an, die Ihrer App gebunden. Sie können einen BluetoothLEAdvertisementPublisher erstellen und in einer Hintergrundaufgabe „Start“ aufrufen, um die Ankündigung im Hintergrund auszuführen. Weitere Informationen zu Hintergrundaufgaben finden Sie unter [Starten, Fortsetzen und Hintergrundaufgaben](https://msdn.microsoft.com/windows/uwp/launch-resume/index).
 
 ### <a name="basic-publishing"></a>Grundlegende Veröffentlichung
 
@@ -144,7 +144,7 @@ watcher.SignalStrengthFilter.OutOfRangeTimeout = TimeSpan.FromMilliseconds(2000)
 
 ### <a name="gauging-distance"></a>Messen der Entfernung
 
-Wenn der Rückruf Ihrer Bluetooth LE-Überwachung ausgelöst wird, enthalten die „EventArgs“ einen RSSI-Wert, der Sie über die Stärke des empfangenen Signals informiert (d.h., wie stark das Bluetooth-Signal ist).
+Wenn der Rückruf Ihrer Bluetooth LE-Überwachung ausgelöst wird, enthalten die „EventArgs“ einen RSSI-Wert, der Sie über die Stärke des empfangenen Signals informiert (d. h., wie stark das Bluetooth-Signal ist).
 
 ```csharp
 private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
@@ -156,4 +156,4 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 
 Dieses kann zwar in eine ungefähre Entfernung übersetzt werden, sollte jedoch nicht zum Messen der echten Entfernung verwendet werden, da jeder Sender unterschiedlich ist. Unterschiedliche Umweltbedingungen können das Messen der Entfernung erschweren (wie Wände, Sendergehäuse oder sogar die Luftfeuchtigkeit).
 
-Eine Alternative zur Beurteilung der reinen Entfernung besteht im Definieren von „Buckets“. Sender tendieren dazu, 0–50dBm zu melden, wenn sie sehr nahe sind,-50–-90dBm, wenn sie sich in einem mittleren Abstand befinden, und weniger als -90dBm, wenn sie weit entfernt sind. Tests sind die beste Möglichkeit, diese Buckets für Ihre App festzulegen.
+Eine Alternative zur Beurteilung der reinen Entfernung besteht im Definieren von „Buckets“. Sender tendieren dazu, 0 – 50 dBm zu melden, wenn sie sehr nahe sind,-50 – -90 dBm, wenn sie sich in einem mittleren Abstand befinden, und weniger als -90 dBm, wenn sie weit entfernt sind. Tests sind die beste Möglichkeit, diese Buckets für Ihre App festzulegen.

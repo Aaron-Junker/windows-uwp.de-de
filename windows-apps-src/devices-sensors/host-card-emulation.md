@@ -1,44 +1,44 @@
 ---
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: Erstellen einer NFC-Smartcard-App
-description: Windows Phone8.1 hat Apps mit NFC-Kartenemulation per SIM-basiertem sicherem Element unterstützt. Für dieses Modell war es aber erforderlich, dass Apps für das sichere Bezahlen eng mit den Betreibern von mobilen Netzwerken gekoppelt waren.
+description: Windows Phone 8.1 hat Apps mit NFC-Kartenemulation per SIM-basiertem sicherem Element unterstützt. Für dieses Modell war es aber erforderlich, dass Apps für das sichere Bezahlen eng mit den Betreibern von mobilen Netzwerken gekoppelt waren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bc39c3aa59ca9624cc4664136b6294c07ed56083
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981424"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644585"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Erstellen einer NFC-Smartcard-App
 
 
-**Wichtige**dieses Thema gilt nur für Windows 10 Mobile.
+**Wichtige**  dieses Thema gilt nur für Windows 10 Mobile.
 
-Windows Phone8.1 hat Apps mit NFC-Kartenemulation per SIM-basiertem sicherem Element unterstützt. Für dieses Modell war es aber erforderlich, dass Apps für das sichere Bezahlen eng mit den Betreibern von mobilen Netzwerken gekoppelt waren. Dadurch wurde die Vielfältigkeit möglicher Zahlungslösungen anderer Händler oder Entwickler eingeschränkt, die nicht mit Betreibern von mobilen Netzwerken gekoppelt waren. In Windows 10 Mobile haben wir eine neue kartenemulation Technologie, die aufgerufen wird, Host-Kartenemulation (HCE) eingeführt. Mithilfe von HCE-Technologie kann Ihre App direkt mit einem NFC-Kartenleser kommunizieren. In diesem Thema wird veranschaulicht, wie die Host-Kartenemulation (HCE) auf Windows 10 Mobile-Geräten funktioniert und wie Sie eine HCE-app entwickeln können, damit Ihre Kunden Ihre Dienste ohne Zusammenarbeit mit einem Betreiber eines mobilen Netzwerks per Smartphone anstelle einer physischen Karte zugreifen können.
+Windows Phone 8.1 hat Apps mit NFC-Kartenemulation per SIM-basiertem sicherem Element unterstützt. Für dieses Modell war es aber erforderlich, dass Apps für das sichere Bezahlen eng mit den Betreibern von mobilen Netzwerken gekoppelt waren. Dadurch wurde die Vielfältigkeit möglicher Zahlungslösungen anderer Händler oder Entwickler eingeschränkt, die nicht mit Betreibern von mobilen Netzwerken gekoppelt waren. In Windows 10 Mobile haben wir eine neue Karte Emulation Technologie, die aufgerufen wird, handelt es sich bei Host Karte Emulation (HCE) eingeführt. Mithilfe von HCE-Technologie kann Ihre App direkt mit einem NFC-Kartenleser kommunizieren. In diesem Thema wird veranschaulicht, wie der Host Karte Emulation (HCE) auf Windows 10 Mobile-Geräten funktioniert und wie Sie eine app HCE entwickeln können, sodass Ihre Kunden Ihre Dienste über ihre Rufnummer anstelle von physischen Karten bei sich zugreifen können, ohne die Zusammenarbeit mit einem MNO.
 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>Voraussetzungen für die Entwicklung einer HCE-App
 
 
-Um eine HCE-basierte kartenemulations-app für Windows 10 Mobile entwickeln möchten, müssen Sie Ihre Entwicklungsumgebung erhalten. Sie können einrichten erhalten durch die Installation von Microsoft Visual Studio2015, die die Windows-Entwicklertools und den Windows 10 Mobile-Emulator mit NFC-emulationsunterstützung enthält. Weitere Informationen zur Einrichtung finden Sie unter [Vorbereiten](https://msdn.microsoft.com/library/windows/apps/Dn726766).
+Um eine Karte HCE basierende-Emulation-app für Windows 10 Mobile zu entwickeln, müssen Sie Ihre Einrichtung der Entwicklungsumgebung zu erhalten. Sie können einrichten erhalten durch die Installation von Microsoft Visual Studio 2015, einschließlich der Windows-Entwicklertools und den Windows 10 Mobile-Emulator mit den NFC-Emulation unterstützen. Weitere Informationen zur Einrichtung finden Sie unter [Vorbereiten](https://msdn.microsoft.com/library/windows/apps/Dn726766).
 
-Optional, wenn Sie ein echtes Windows 10 Mobile-Gerät anstelle des vorhandenen Windows 10 Mobile-Emulators testen möchten, benötigen Sie auch die folgenden Elemente.
+Optional, wenn Sie mit einem realen Windows 10 Mobile-Gerät anstelle der enthalten Windows 10 Mobile-Emulator testen möchten, ist außerdem die folgenden Elemente erforderlich.
 
--   Ein Windows 10 Mobile-Gerät mit NFC-HCE-Unterstützung. Derzeit verfügen das Lumia730, 830, 640 und 640XL über die Hardware zur Unterstützung von NFC-HCE-Apps.
--   Lesegeräteinheit, die die Protokolle ISO/IEC14443-4 und ISO/IEC7816-4 unterstützt.
+-   Ein Windows 10 Mobile-Gerät mit Unterstützung von NFC HCE. Derzeit verfügen das Lumia 730, 830, 640 und 640 XL über die Hardware zur Unterstützung von NFC-HCE-Apps.
+-   Lesegeräteinheit, die die Protokolle ISO/IEC 14443-4 und ISO/IEC 7816-4 unterstützt.
 
-Windows 10 Mobile implementiert einen HCE-Dienst mit den folgenden Funktionen.
+Windows 10 Mobile implementiert einen HCE-Dienst, der die folgenden Funktionen bietet.
 
 -   Apps können die Applet-IDs (AIDs) für die Karten registrieren, die emuliert werden sollen.
 -   Die Konfliktlösung und das Routing des Anwendungsprotokoll-Dateneinheit-Befehls (Application Protocol Data Unit, APDU) und der Antwort werden mit einer der registrierten Apps basierend auf der Auswahl des externen Kartenlesers und der Benutzereinstellung gekoppelt.
 -   Behandlung der Ereignisse und Benachrichtigungen für die Apps als Ergebnis von Benutzeraktionen.
 
-Windows 10 unterstützt die Emulation von Smartcards, die auf ISO-DEP (ISO-IEC 14443-4) und mithilfe von APDUs gemäß der Definition in der ISO-IEC 7816-4-Spezifikation kommuniziert. Windows 10 unterstützt ISO/IEC 14443-4 Typ A Technologie für HCE-apps. Für Technologien wie TypB, TypF und Nicht-ISO-DEP (z.B. MIFARE) wird die Weiterleitung an die SIM standardmäßig durchgeführt.
+Windows 10 unterstützt die Emulation von Smartcards aufgeführt, die auf ISO-DEP basieren (ISO-IEC-14443-4) und kommuniziert mit APDUs dürfen gemäß dem ISO-IEC 7816-4-Spezifikation. Windows 10 unterstützt den ISO/IEC 14443-4-Typ A-Technologie für HCE-apps. Für Technologien wie Typ B, Typ F und Nicht-ISO-DEP (z. B. MIFARE) wird die Weiterleitung an die SIM standardmäßig durchgeführt.
 
-Nur Windows 10 Mobile-Geräte sind die kartenemulationsfunkton aktiviert. SIM-basierte und HCE-basierte kartenemulation ist nicht für andere Versionen von Windows 10 verfügbar.
+Nur Windows 10 Mobile-Geräte sind mit der Smartcard-Emulation-Funktion aktiviert. SIM und HCE-basierten Karte Emulation ist nicht verfügbar, in anderen Versionen von Windows 10.
 
 Das folgende Diagramm zeigt die Architektur für die Unterstützung der HCE- und SIM-basierten Kartenemulation.
 
@@ -46,9 +46,9 @@ Das folgende Diagramm zeigt die Architektur für die Unterstützung der HCE- und
 
 ## <a name="app-selection-and-aid-routing"></a>App-Auswahl und AID-Routing
 
-Um eine HCE-app entwickeln, müssen Sie wissen, wie Windows 10 Mobile-Geräten AIDs an eine bestimmte app funktioniert, da Benutzer mehrere unterschiedliche HCE-apps installieren können. Jede App kann mehrere HCE- und SIM-basierte Karten registrieren. Älteren Windows Phone 8.1-apps, die SIM-basierte werden weiterhin für Windows 10 Mobile werden, solange der Benutzer im Menü mit den NFC-Einstellungen die Option "SIM-Karte" als standardmäßige Zahlungskarte auswählt. Diese Standardeinstellung wird festgelegt, wenn das Gerät zum ersten Mal eingeschaltet wird.
+Um eine HCE-app entwickeln, müssen Sie verstehen, wie Windows 10 Mobile-Geräte Hilfsmittel für eine bestimmte app weitergeleitet werden, weil Benutzer mehrere verschiedene HCE apps installieren können. Jede App kann mehrere HCE- und SIM-basierte Karten registrieren. Ältere Windows Phone 8.1-apps, die von SIM-basiert sind weiterhin auf Windows 10 Mobile funktioniert nur, wenn der Benutzer die Option "SIM-Karte" als die standardmäßige hinterlegte Kreditkarte in das Menü "NFC-Einstellung" auswählt. Diese Standardeinstellung wird festgelegt, wenn das Gerät zum ersten Mal eingeschaltet wird.
 
-Wenn der Benutzer mit ihrem Windows 10 Mobile-Gerät ein Terminal berühren, werden die Daten automatisch an die richtige auf dem Gerät installierte app weitergeleitet. Diese Weiterleitung basiert auf den Applet-IDs (AIDs), bei denen es sich um Bezeichner mit 5-16Byte handelt. Während dieses Vorgangs überträgt das externe Terminal eine SELECT-Befehl-APDU, um die AID anzugeben, an die alle nachfolgenden APDU-Befehle geleitet werden sollen. Mit den nachfolgenden SELECT-Befehlen wird die Weiterleitung wieder geändert. Basierend auf den von Apps registrierten AIDs und den Benutzereinstellungen wird der APDU-Datenverkehr an eine bestimmte App geleitet, die dann eine APDU als Antwort sendet. Beachten Sie hierbei, dass ein Terminal während eines Vorgangs unter Umständen versucht, mit mehreren unterschiedlichen Apps zu kommunizieren. Sie müssen also sicherstellen, dass die Hintergrundaufgabe Ihrer App nach der Deaktivierung so schnell wie möglich beendet wird, damit die Hintergrundaufgabe einer anderen App auf die APDU antworten kann. Hintergrundaufgaben werden später in diesem Thema beschrieben.
+Wenn der Benutzer ihr Windows 10 Mobile-Gerät zu einem Terminal tippt, werden die Daten automatisch an die richtige app, die auf dem Gerät installierten weitergeleitet. Diese Weiterleitung basiert auf den Applet-IDs (AIDs), bei denen es sich um Bezeichner mit 5 - 16 Byte handelt. Während dieses Vorgangs überträgt das externe Terminal eine SELECT-Befehl-APDU, um die AID anzugeben, an die alle nachfolgenden APDU-Befehle geleitet werden sollen. Mit den nachfolgenden SELECT-Befehlen wird die Weiterleitung wieder geändert. Basierend auf den von Apps registrierten AIDs und den Benutzereinstellungen wird der APDU-Datenverkehr an eine bestimmte App geleitet, die dann eine APDU als Antwort sendet. Beachten Sie hierbei, dass ein Terminal während eines Vorgangs unter Umständen versucht, mit mehreren unterschiedlichen Apps zu kommunizieren. Sie müssen also sicherstellen, dass die Hintergrundaufgabe Ihrer App nach der Deaktivierung so schnell wie möglich beendet wird, damit die Hintergrundaufgabe einer anderen App auf die APDU antworten kann. Hintergrundaufgaben werden später in diesem Thema beschrieben.
 
 HCE-Apps müssen sich mit bestimmten AIDs registrieren, die sie verarbeiten können, damit sie APDUs für eine AID erhalten. Apps deklarieren AIDs über AID-Gruppen. Eine AID-Gruppe entspricht vom Konzept her einer individuellen physischen Karte. Beispielsweise wird eine Kreditkarte mit einer AID-Gruppe deklariert, und eine zweite Kreditkarte einer anderen Bank wird mit einer anderen zweiten AID-Gruppe deklariert, auch wenn beide unter Umständen über die gleiche AID verfügen.
 
@@ -56,13 +56,13 @@ HCE-Apps müssen sich mit bestimmten AIDs registrieren, die sie verarbeiten kön
 
 Wenn eine App physische Karten (AID-Gruppen) registriert, kann sie die AID-Gruppenkategorie entweder als „Payment“ (Zahlung) oder „Other“ (Sonstiges) deklarieren. Es können zwar mehrere AID-Zahlungsgruppen gleichzeitig registriert sein, aber nur jeweils eine dieser AID-Zahlungsgruppen kann für den Vorgang „Bezahlen per Berührung“ aktiviert sein. Die Auswahl erfolgt durch den Benutzer. Der Grund für dieses Verhalten ist, dass Benutzer bewusst auswählen möchten, welche Zahlungs-, Kredit- oder Debitkarte jeweils verwendet wird, damit der Bezahlvorgang nicht über eine unerwünschte Karte abgewickelt wird, wenn das Terminal mit dem Gerät berührt wird.
 
-Gleichzeitig können aber mehrere AID-Gruppen, die unter „Other“ (Sonstiges) registriert sind, ohne Benutzerinteraktion aktiviert sein. Dieses Verhalten ist vorhanden, weil für andere Arten von Karten (z.B. Treue-, Gutschein- oder Transit-Karten) erwartet wird, dass sie ohne jegliches Zutun oder Eingaben funktionieren, wenn das Terminal mit dem Smartphone berührt wird.
+Gleichzeitig können aber mehrere AID-Gruppen, die unter „Other“ (Sonstiges) registriert sind, ohne Benutzerinteraktion aktiviert sein. Dieses Verhalten ist vorhanden, weil für andere Arten von Karten (z. B. Treue-, Gutschein- oder Transit-Karten) erwartet wird, dass sie ohne jegliches Zutun oder Eingaben funktionieren, wenn das Terminal mit dem Smartphone berührt wird.
 
 Alle AID-Gruppen, die als „Payment“ (Zahlung) registriert sind, werden auf der Seite mit den NFC-Einstellungen in der Kartenliste angezeigt, sodass Benutzer ihre Standardkarte für Zahlungen auswählen können. Wenn eine Standardkarte für Zahlungen ausgewählt wird, wird die App, mit der die jeweilige AID-Zahlungsgruppe registriert wurde, zur standardmäßigen App für Zahlungen. Standardmäßige Apps für Zahlungen können alle eigenen AID-Gruppen ohne Benutzerinteraktion aktivieren und deaktivieren. Wenn der Benutzer die Aufforderung zum Wählen der standardmäßigen App für die Bezahlung ablehnt, wird die derzeit als Standard-App ausgewählte App (falls vorhanden) weiter als Standardeinstellung verwendet. Im folgenden Screenshot ist die Seite mit den NFC-Einstellungen dargestellt.
 
 ![Screenshot der Seite mit NFC-Einstellungen](./images/nfc-settings.png)
 
-Gemäß dem obigen Beispiel-Screenshot: Wenn der Benutzer seine Standardkarte für Zahlungen in eine andere Karte ändert, die nicht von „HCE Application1“ registriert wurde, erstellt das System eine Bestätigungsaufforderung, damit der Benutzer seine Zustimmung geben kann. Falls der Benutzer seine Standardkarte für Zahlungen aber in eine andere Karte ändert, die von „HCE Application1“ registriert wurde, erstellt das System keine Bestätigungsaufforderung für den Benutzer, weil „HCE Application1“ bereits die Standard-App für Zahlungen ist.
+Gemäß dem obigen Beispiel-Screenshot: Wenn der Benutzer seine Standardkarte für Zahlungen in eine andere Karte ändert, die nicht von „HCE Application 1“ registriert wurde, erstellt das System eine Bestätigungsaufforderung, damit der Benutzer seine Zustimmung geben kann. Falls der Benutzer seine Standardkarte für Zahlungen aber in eine andere Karte ändert, die von „HCE Application 1“ registriert wurde, erstellt das System keine Bestätigungsaufforderung für den Benutzer, weil „HCE Application 1“ bereits die Standard-App für Zahlungen ist.
 
 ## <a name="conflict-resolution-for-non-payment-aid-groups"></a>Konfliktlösung für andere AID-Gruppen
 
@@ -70,9 +70,9 @@ Karten, die nicht für die Bezahlung bestimmt und in der Kategorie „Other“ (
 
 In Ihrer App können nicht für die Bezahlung bestimmte AID-Gruppen genauso wie AID-Zahlungsgruppen erstellt, registriert und aktiviert werden. Der Hauptunterschied besteht darin, dass die Emulationskategorie für nicht für die Bezahlung bestimmte AID-Gruppen auf „Other“ (Sonstiges) festgelegt ist und nicht auf „Payment“ (Zahlung). Nach dem Registrieren der AID-Gruppe im System müssen Sie die AID-Gruppe aktivieren, damit NFC-Datenverkehr empfangen werden kann. Wenn Sie versuchen, eine nicht für die Bezahlung bestimmte AID-Gruppe für den Empfang von Datenverkehr zu aktivieren, wird dem Benutzer keine Bestätigungsaufforderung angezeigt. Dies ist nur der Fall, wenn ein Konflikt mit einer der AIDs besteht, die von einer anderen App bereits im System registriert wurden. Wenn ein Konflikt besteht, werden dem Benutzer Informationen dazu angezeigt, welche Karte und die dazugehörige App deaktiviert werden, wenn der Benutzer die neu registrierte AID-Gruppe aktiviert.
 
-**Koexistenz mit SIM-basierten NFC-Anwendungen**
+**Koexistenz mit SIM-basierte NFC-Anwendungen**
 
-In Windows 10 Mobile richtet das System die NFC-Controller Routingtabelle ein, die zum treffen von Routingentscheidungen auf Controllerebene verwendet wird. Die Tabelle enthält Routinginformationen für die folgenden Elemente:
+In Windows 10 Mobile richtet die NFC-Controller Routingtabelle, die verwendet wird, um Routingentscheidungen zu treffen, auf der Ebene des Controllers das System. Die Tabelle enthält Routinginformationen für die folgenden Elemente:
 
 -   Einzelne AID-Routen
 -   Protokollbasierte Route (ISO-DEP)
@@ -80,9 +80,9 @@ In Windows 10 Mobile richtet das System die NFC-Controller Routingtabelle ein, d
 
 Wenn eine externe Leseeinheit den Befehl „SELECT AID” sendet, überprüft der NFC-Controller zuerst die AID-Routen in der Routingtabelle auf eine Übereinstimmung. Falls keine Übereinstimmung vorhanden ist, wird die protokollbasierte Route als Standardroute für ISO-DEP (14443-4-A)-Datenverkehr verwendet. Für anderen Datenverkehr, der nicht auf ISO-DEP basiert, wird das technologiebasierte Routing verwendet.
 
-Windows 10 Mobile bietet eine Menüoption "SIM-Karte" in der Seite mit den NFC-Einstellungen weiterhin ältere Windows Phone 8.1-SIM-basierte apps verwenden, die nicht die AIDs im System registriert werden. Wenn Benutzer „SIM-Karte“ als Standardkarte für Zahlungen auswählen, wird die ISO-DEP-Route auf „UICC“ festgelegt. Für alle anderen Auswahlmöglichkeiten im Dropdownmenü verläuft die ISO-DEP-Route zum Host.
+Windows 10 Mobile bietet eine Menüoption "SIM-Karte" in der NFC-Einstellungsseite weiterhin ältere Windows Phone 8.1-SIM-basierte apps verwenden, die mit dem System nicht ihre Kampf gegen AIDs registrieren. Wenn Benutzer „SIM-Karte“ als Standardkarte für Zahlungen auswählen, wird die ISO-DEP-Route auf „UICC“ festgelegt. Für alle anderen Auswahlmöglichkeiten im Dropdownmenü verläuft die ISO-DEP-Route zum Host.
 
-Die ISO-DEP-Route wird auf "SIM-Karte" für Geräte festgelegt, die eine SE SIM-Karte aktiviert sein, wenn das Gerät zum ersten Mal mit Windows 10 Mobile gestartet wird. Wenn der Benutzer eine HCE-fähige App installiert und diese App HCE-AID-Gruppenregistrierungen aktiviert, zeigt die ISO-DEP-Route auf den Host. Für neue SIM-basierte Anwendungen müssen die AIDs auf der SIM-Karte registriert werden, damit die jeweiligen AID-Routen in die Routingtabelle des Controllers eingefügt werden können.
+Die ISO-DEP-Route wird auf "SIM-Karte" für Geräte festgelegt, die SE SIM-Karte aktiviert ist, wenn das Gerät zum ersten Mal mit Windows 10 Mobile gestartet wird. Wenn der Benutzer eine HCE-fähige App installiert und diese App HCE-AID-Gruppenregistrierungen aktiviert, zeigt die ISO-DEP-Route auf den Host. Für neue SIM-basierte Anwendungen müssen die AIDs auf der SIM-Karte registriert werden, damit die jeweiligen AID-Routen in die Routingtabelle des Controllers eingefügt werden können.
 
 ## <a name="creating-an-hce-based-app"></a>Erstellen einer HCE-basierten App
 
@@ -91,7 +91,7 @@ Ihre HCE-App besteht aus zwei Teilen:
 -   Vordergrund-App für die Benutzerinteraktion
 -   Hintergrundaufgabe, die vom System zum Verarbeiten von APDUs für eine bestimmte AID ausgelöst wird
 
-Aufgrund der extrem hohen Leistungsanforderungen in Bezug auf das Laden der Hintergrundaufgabe als Antwort auf eine NFC-Berührung ist es ratsam, die gesamte Hintergrundaufgabe in systemeigenem C++/CX-Code zu implementieren (einschließlich aller erforderlichen Abhängigkeiten, Verweise oder Bibliotheken), anstatt in C# oder verwaltetem Code. C# und verwalteter Code bieten zwar normalerweise eine gute Leistung, aber es fällt auch Mehraufwand an, z.B. beim Laden von .NET CLR, der durch die Verwendung von C++/CX vermieden werden kann.
+Aufgrund der extrem hohen Leistungsanforderungen in Bezug auf das Laden der Hintergrundaufgabe als Antwort auf eine NFC-Berührung ist es ratsam, die gesamte Hintergrundaufgabe in systemeigenem C++/CX-Code zu implementieren (einschließlich aller erforderlichen Abhängigkeiten, Verweise oder Bibliotheken), anstatt in C# oder verwaltetem Code. C# und verwalteter Code bieten zwar normalerweise eine gute Leistung, aber es fällt auch Mehraufwand an, z. B. beim Laden von .NET CLR, der durch die Verwendung von C++/CX vermieden werden kann.
 ## <a name="create-and-register-your-background-task"></a>Erstellen und Registrieren einer Hintergrundaufgabe
 
 Sie müssen in Ihrer HCE-App eine Hintergrundaufgabe für die Verarbeitung und Beantwortung von APDUs erstellen, die vom System weitergeleitet werden. Beim ersten Starten Ihrer App wird im Vordergrund eine HCE-Hintergrundaufgabe registriert, mit der die [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/BR224803)-Schnittstelle implementiert wird, wie im folgenden Code gezeigt.
@@ -247,7 +247,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-Sie können bis zu neun AIDs (jeweils mit einer Länge von 5bis 16Byte) pro AID-Gruppe verwenden.
+Sie können bis zu neun AIDs (jeweils mit einer Länge von 5 bis 16 Byte) pro AID-Gruppe verwenden.
 
 Verwenden Sie die [**RegisterAppletIdGroupAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894656)-Methode, um Ihre AID-Gruppe im System zu registrieren. Es wird dann ein [**SmartCardAppletIdGroupRegistration**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration)-Objekt zurückgegeben. Standardmäßig ist die [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration)-Eigenschaft des Registrierungsobjekts auf **Disabled** festgelegt. Dies bedeutet, dass Ihre AIDs im System zwar registriert sind, aber sie sind noch nicht aktiviert und empfangen auch keinen Datenverkehr.
 
@@ -273,9 +273,9 @@ registration.RequestActivationPolicyChangeAsync (AppletIdGroupActivationPolicy.E
     }
 ```
 
-**Ereignisbenachrichtigung bei Änderung der Aktivierungsrichtlinie**
+**Ereignisbenachrichtigung Activation-Richtlinie ändern**
 
-In Ihrer Hintergrundaufgabe können Sie den Empfang von Ereignissen für den Fall einrichten, dass sich die Aktivierungsrichtlinie für eine Ihrer AID-Gruppenregistrierungen außerhalb der App ändert. Es kann zum Beispiel sein, dass Benutzer die Standard-App für Zahlungen über das Menü mit den NFC-Einstellungen von einer Ihrer Karten in eine andere Karte ändern, die von einer anderen App gehostet wird. Falls Ihre App aus Gründen des internen Setups, z.B. der Aktualisierung von Live-Kacheln, über diese Änderung informiert sein muss, können Sie Ereignisbenachrichtigungen über diese Änderung erhalten und in Ihrer App entsprechende Maßnahmen ergreifen.
+In Ihrer Hintergrundaufgabe können Sie den Empfang von Ereignissen für den Fall einrichten, dass sich die Aktivierungsrichtlinie für eine Ihrer AID-Gruppenregistrierungen außerhalb der App ändert. Es kann zum Beispiel sein, dass Benutzer die Standard-App für Zahlungen über das Menü mit den NFC-Einstellungen von einer Ihrer Karten in eine andere Karte ändern, die von einer anderen App gehostet wird. Falls Ihre App aus Gründen des internen Setups, z. B. der Aktualisierung von Live-Kacheln, über diese Änderung informiert sein muss, können Sie Ereignisbenachrichtigungen über diese Änderung erhalten und in Ihrer App entsprechende Maßnahmen ergreifen.
 
 ```csharp
 var taskBuilder = new BackgroundTaskBuilder();
@@ -312,7 +312,7 @@ reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundO
 
 Ihre App sollte überprüfen, ob ein Gerät über NFC-Hardware verfügt und die Kartenemulationsfunktion und die Hostkartenemulation unterstützt, bevor diese Features dem Benutzer angeboten werden.
 
-Die NFC-Smartcard-Emulationsfunktion wird nur unter Windows 10 Mobile, also versuchen, verwenden Sie die Smartcard-Emulator-APIs in anderen Versionen von Windows 10 aktiviert, Fehler verursacht. Sie können die Smartcard-API-Unterstützung im folgenden Codeausschnitt überprüfen.
+Die NFC-Smartcard-Emulation-Funktion ist nur aktiviert, auf Windows 10 Mobile, also den Smartcard-Emulator-APIs in anderen Versionen von Windows 10 verwenden möchten, wird Fehler verursachen. Sie können die Smartcard-API-Unterstützung im folgenden Codeausschnitt überprüfen.
 
 ```csharp
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
@@ -324,7 +324,7 @@ Außerdem können Sie überprüfen, ob das Gerät über NFC-Hardware für eine F
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
 ```
 
-Die Unterstützung für HCE- und AID-basiertes UICC-Routing ist nur auf neueren Geräten verfügbar, z.B. Lumia730, 830, 640 und 640XL. Alle neuen NFC-fähigen Geräte unter Windows 10 Mobile sollten Unterstützung für HCE. Ihre App kann die HCE-Unterstützung wie folgt überprüfen.
+Die Unterstützung für HCE- und AID-basiertes UICC-Routing ist nur auf neueren Geräten verfügbar, z. B. Lumia 730, 830, 640 und 640 XL. Neue NFC kann Geräte unter Windows 10 Mobile und nach dem sollte HCE unterstützen. Ihre App kann die HCE-Unterstützung wie folgt überprüfen.
 
 ```csharp
 Smartcardemulator.IsHostCardEmulationSupported();
@@ -332,7 +332,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 ## <a name="lock-screen-and-screen-off-behavior"></a>Verhalten des Sperrbildschirms und bei „Bildschirm aus“
 
-Windows 10 Mobile verfügt über die emulationseinstellungen auf Geräteebene, die vom Mobilfunknetzbetreiber oder Hersteller des Geräts festgelegt werden können. Das Umschalten der Option „Zum Bezahlen berühren“ ist standardmäßig deaktiviert, und die „Aktivierungsrichtlinie auf Geräteebene“ ist auf „Immer“ festgelegt, es sei denn, der Netzbetreiber oder Hersteller überschreibt diese Werte.
+Windows 10 Mobile hat auf Geräteebene Karte-Emulation-Einstellungen, die vom mobilen Bediener oder den Hersteller des Geräts festgelegt werden können. Das Umschalten der Option „Zum Bezahlen berühren“ ist standardmäßig deaktiviert, und die „Aktivierungsrichtlinie auf Geräteebene“ ist auf „Immer“ festgelegt, es sei denn, der Netzbetreiber oder Hersteller überschreibt diese Werte.
 
 Ihre Anwendung kann den Wert von [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) auf Geräteebene abfragen und abhängig vom gewünschten Verhalten Ihrer App in den einzelnen Zuständen jeweils Maßnahmen ergreifen.
 
@@ -382,4 +382,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-<b>Wichtige</b>  die ältere binäre SMS-abfangverfahrens in Windows Phone 8.1 wurde entfernt und durch neue, umfassendere SMS Unterstützung in Windows 10 Mobile ersetzt, aber alle älteren Windows Phone 8.1-apps, die hierauf basieren, müssen aktualisieren, um die neue Windows 10 Mobile-SMS verwenden APIs.
+<b>Wichtige</b>    die ältere binäre SMS Intercept-Unterstützung in Windows Phone 8.1 entfernt und durch neue größeren SMS-Unterstützung in Windows 10 Mobile ersetzt wurde, aber alle älteren Windows Phone 8.1-apps auf, die aktualisiert werden müssen, um die Verwendung der neuen SMS-APIs für Windows 10 Mobile.

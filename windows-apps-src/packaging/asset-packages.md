@@ -1,18 +1,18 @@
 ---
-title: Einführung zu Bestandspaketen
+title: Einführung in Bestandspakete
 description: Asset-Pakete sind ein Pakettyp, der als zentraler Speicherort für die gemeinsamen Dateien einer Anwendung fungiert. Dadurch wird die Notwendigkeit doppelter Dateien in allen Architekturpaketen effektiv eliminiert.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: windows10, verpackung, paketlayout, bestandspaket
+keywords: windows 10, verpackung, paketlayout, bestandspaket
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ae65d13f92f5ab28f2f5eda468032bb7f83793
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944351"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594665"
 ---
-# <a name="introduction-to-asset-packages"></a>Einführung zu Bestandspaketen
+# <a name="introduction-to-asset-packages"></a>Einführung in Bestandspakete
 
 > [!IMPORTANT]
 > Wenn Sie Ihre App an den Store übermitteln möchten, müssen Sie sich an den [Windows-Support für Entwickler](https://developer.microsoft.com/windows/support) wenden und eine Genehmigung für die Verwendung von Bestandspaketen erhalten.
@@ -26,7 +26,7 @@ Da Bestandspakete sämtliche architektur-, sprach- und skalierungsunabhängigen 
 ### <a name="how-do-asset-packages-affect-publishing"></a>Wie wirken sich Bestandspakete auf die Veröffentlichung aus?
 Der offensichtlichste Vorteil von Bestandspaketen ist die reduzierte Größe von verpackten Apps. Kleinere App-Pakete beschleunigen den Veröffentlichungsprozess der App, indem der Store weniger Dateien verarbeitet. Dies ist jedoch nicht der wichtigste Vorteil von Bestandspaketen.
 
-Wenn ein Bestandspaket erstellt wird, können Sie angeben, ob das Ausführen des Pakets zugelassen werden soll. Da Bestandspakete nur architekturunabhängige Dateien enthalten sollten, enthalten sie in der Regel keine .dll oder .exe-Dateien, sodass Bestandspakete in der Regel nicht ausgeführt werden müssen. Die Bedeutung dieser Unterscheidung besteht darin, dass während des Veröffentlichungsprozesses alle ausführbaren Pakete gescannt werden müssen, um sicherzustellen, dass sie keine Malware enthalten. Dieser Scanvorgang dauert bei größeren Paketen länger. Wenn ein Paket jedoch als nicht ausführbar gekennzeichnet ist, stellt die Installation der App sicher, dass die in diesem Paket enthaltenen Dateien nicht ausgeführt werden können. Mit dieser Garantie entfällt während der Veröffentlichung der App (und auch der Updates) die Notwendigkeit für eine vollständige Paketprüfung, und die Scanzeit für Malware wird erheblich reduziert. Dadurch wird die Veröffentlichung für Apps, die Bestandspakete verwenden, deutlich beschleunigt. Beachten Sie, dass diese [flat-Bundle-app-Pakete](flat-bundles.md) auch verwendet werden müssen, um diesen veröffentlichungsvorteil zu erhalten, da dies dem Store ist, jede .appx oder .msix-Paketdatei parallel zu verarbeiten ermöglicht. 
+Wenn ein Bestandspaket erstellt wird, können Sie angeben, ob das Ausführen des Pakets zugelassen werden soll. Da Bestandspakete nur architekturunabhängige Dateien enthalten sollten, enthalten sie in der Regel keine .dll oder .exe-Dateien, sodass Bestandspakete in der Regel nicht ausgeführt werden müssen. Die Bedeutung dieser Unterscheidung besteht darin, dass während des Veröffentlichungsprozesses alle ausführbaren Pakete gescannt werden müssen, um sicherzustellen, dass sie keine Malware enthalten. Dieser Scanvorgang dauert bei größeren Paketen länger. Wenn ein Paket jedoch als nicht ausführbar gekennzeichnet ist, stellt die Installation der App sicher, dass die in diesem Paket enthaltenen Dateien nicht ausgeführt werden können. Mit dieser Garantie entfällt während der Veröffentlichung der App (und auch der Updates) die Notwendigkeit für eine vollständige Paketprüfung, und die Scanzeit für Malware wird erheblich reduziert. Dadurch wird die Veröffentlichung für Apps, die Bestandspakete verwenden, deutlich beschleunigt. Beachten Sie, dass [Flatfile-app-bündelpakete](flat-bundles.md) muss ebenfalls verwendet werden, um dieser Veröffentlichung profitieren, da es sich handelt, was den Store jede AppX- oder .msix Paketdatei parallel verarbeiten können. 
 
 
 ### <a name="should-i-use-asset-packages"></a>Sollte ich Bestandspakete verwenden?
@@ -67,7 +67,7 @@ xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
 xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 
- Wenn nicht angegeben, ist der Standardwert für **AllowExecution** **true**. Setzen Sie ihn auf **false** für Bestandspakete ohne ausführbare Dateien, um die Veröffentlichung zu beschleunigen.  
+ Wenn nicht angegeben, ist der Standardwert für **AllowExecution****true**. Setzen Sie ihn auf **false** für Bestandspakete ohne ausführbare Dateien, um die Veröffentlichung zu beschleunigen.  
 
 
 

@@ -7,53 +7,53 @@ keywords: Windows 10, UWP, Windows Forms, WPF
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bf25fea6ca6e8809c12324ae57a42cc712ded2a5
-ms.sourcegitcommit: 9df81996628359ad6af4227339a2ce01c2d804e3
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "9001784"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619705"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>UWP-Steuerelemente in Desktopanwendungen
 
 > [!NOTE]
-> XAML-Inseln sind als Entwicklervorschau verfügbar. Obwohl wir Sie Sie diese in Ihrem eigenen Code Prototyp ausprobieren können, jetzt dazu ermutigen, wird nicht empfohlen, dass Sie sie zu diesem Zeitpunkt in Produktionscode verwenden. Diese APIs und Steuerelemente erhalten auch weiterhin breiter und Stabilisierung in zukünftigen Windows-Versionen. Microsoft übernimmt keine Garantie, weder ausdrücklich noch stillschweigend, für die hier bereitgestellten Informationen.
+> XAML-Inseln sind derzeit als Entwicklervorschau verfügbar. Obwohl Sie diese in Ihrem eigenen Prototypcode ausprobieren können, jetzt bald, empfehlen wir nicht, die Sie im Produktionscode zu diesem Zeitpunkt verwenden. Diese APIs und Steuerelementen weiterhin, heranzureifen und stabilisieren in zukünftigen Versionen von Windows. Microsoft übernimmt keine Garantie, weder ausdrücklich noch stillschweigend, für die hier bereitgestellten Informationen.
 >
-> Wenn Sie Feedback zur XAML-Inseln haben, erstellen Sie ein neues Problem in das [WindowsCommunityToolkit Repository](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues) , und geben Sie Ihren Kommentar es. Wenn Sie es vorziehen, Ihr Feedback privat zu übermitteln, können Sie es senden XamlIslandsFeedback@microsoft.com. Ihre Einblicke und Szenarien sind uns sehr wichtig.
+> Wenn Sie Feedback zu XAML-Inseln haben, erstellen Sie ein neues Problem in der [WindowsCommunityToolkit Repository](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues) und lassen Sie Ihre Kommentare vorhanden. Wenn Sie Ihr Feedback zu senden, privat möchten, können Sie senden, damit XamlIslandsFeedback@microsoft.com. Ihre Einblicke und Szenarien sind sehr wichtig für uns.
 
-Windows 10 können jetzt Sie UWP-Steuerelemente in nicht-UWP-desktop-Apps zu verwenden, damit Sie das Erscheinungsbild und Funktionalität Ihrer vorhandenen desktop-Anwendungen mit den neuesten Windows 10-UI-Funktionen, die nur über UWP-Steuerelemente sind verbessern können. Dies bedeutet, dass Sie verwenden können UWP-Features wie [Windows Ink](../design/input/pen-and-stylus-interactions.md) und Steuerelemente, die das [Fluent Design-Systems](../design/fluent-design-system/index.md) in Ihrer vorhandenen WPF-, Windows Forms und C++ Win32-Anwendungen zu unterstützen. In diesem Szenario Entwickler wird *XAML-Inseln*bezeichnet.
+Windows 10 ermöglicht jetzt das UWP-Steuerelementen in nicht-UWP-desktop-Anwendungen zu verwenden, sodass Sie verbessern können, die aussehen, Verhalten und Funktionalität von Ihren bestehenden desktopanwendungen mit den neuesten Windows 10-Benutzeroberflächen-Features, die nur über die UWP-Steuerelemente verfügbar sind. Dies bedeutet, dass Sie UWP-Features wie z. B. können [Windows Ink](../design/input/pen-and-stylus-interactions.md) und Steuerelemente, unterstützen die [Fluent-Entwurfssystem](../design/fluent-design-system/index.md) in Ihre vorhandenen WPF, Windows Forms und C++-Win32-Anwendungen. Dieses Szenario Developer bezeichnet *XAML-Inseln*.
 
-Wir bieten verschiedene Möglichkeiten, verwenden Sie XAML-Inseln in Ihren WPF, Windows Forms und C++ Win32-Anwendungen, je nach Technologie oder Framework, die Sie verwenden werden.
+Wir bieten verschiedene Möglichkeiten zum Verwenden von XAML-Inseln in Ihren WPF, Windows Forms und C++-Win32-Anwendungen, abhängig von der Technologie oder ein Framework, die Sie verwenden.
 
-## <a name="wrapped-controls"></a>Mit dem Steuerelemente
+## <a name="wrapped-controls"></a>Umschlossene Steuerelemente
 
-WPF- oder Windows Forms-Anwendung können eine Auswahl mit dem UWP-Steuerelemente in der [Windows-Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)verwenden. Wir bezeichnen diese Steuerelemente als *Steuerelemente eingeschlossen* , da sie die Benutzeroberfläche und Funktionen von einem bestimmten UWP-Steuerelement umschließen. Sie können diese Steuerelemente direkt auf der Entwurfsoberfläche Ihres WPF- oder Windows Forms-Projekts hinzufügen und sie dann wie jedes andere WPF- oder Windows Forms-Steuerelement im Designer verwenden.
+WPF- und Windows Forms-Anwendungen können eine Auswahl von umschlossenen UWP-Steuerelemente in der [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Wir bezeichnen diese Steuerelemente als *umschlossen Steuerelemente* , da sie die Schnittstelle und die Funktionalität eines bestimmten Steuerelements UWP umschließen. Sie können diese Steuerelemente direkt auf die Entwurfsoberfläche des WPF oder Windows Forms-Projekts hinzufügen und verwenden Sie diese dann wie jedes andere WPF oder Windows Forms-Steuerelement im Designer.
 
 > [!NOTE]
-> Mit dem Steuerelemente sind nicht für C++ Win32-desktop-Apps verfügbar. Diese Arten von Anwendungen müssen die [UWP-XAML hosting-API](#uwp-xaml-hosting-api)verwenden.
+> Umschlossene Steuerelemente sind nicht für C++-Win32-desktopanwendungen verfügbar. Diese Typen von Anwendungen verwenden, müssen die [UWP XAML hosting-API](#uwp-xaml-hosting-api).
 
-Die folgenden mit dem UWP-Steuerelemente sind derzeit für WPF- oder Windows Forms-Anwendung verfügbar. Weitere umschlossen UWP-Steuerelemente sind für zukünftige Versionen von Windows Community Toolkit geplant.
+Die folgenden umschlossene UWP-Steuerelemente sind derzeit für WPF- und Windows Forms-Anwendungen verfügbar. Weitere umschlossen UWP-Steuerelemente sind für zukünftige Versionen des Windows-Community Toolkits geplant.
 
 | Steuerelement | Betriebssystem | Beschreibung |
 |-----------------|-------------------------------|-------------|
-| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows10, Version1803 | Mithilfe der Microsoft Edge-Renderingmodul Webinhalt angezeigt. |
-| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Bietet eine Version des **WebView** , die mit Weitere Betriebssystemversionen kompatibel ist. Dieses Steuerelement verwendet, die Microsoft Edge-Rendering-Engine zur Anzeige von Webinhalten auf Windows 10, Version 1803, und die Internet Explorer-Rendering-Engine zur Anzeige von Webinhalten in früheren Versionen von Windows 10, Windows 8.x und Windows 7. |
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, Version 1809 (build 17763) | Geben Sie einen Surface und die zugehörigen Symbolleisten für Windows Ink-basierte Benutzerinteraktion in Ihre Windows Forms- oder WPF-desktop-Anwendung. |
-| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, Version 1809 (build 17763) | Bettet eine Ansicht, die streamt und rendert Medieninhalte z. B. Videowiedergabe in Ihre Windows Forms- oder WPF-desktop-Anwendung. |
-| [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, Version 1809 (build 17763) | Können Sie eine grafische oder fotorealistische Karte in Ihre Windows Forms- oder WPF-desktop-Anwendung anzuzeigen. |
+| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10, Version 1803 | Verwendet die Microsoft Edge-Rendering-Engine Webinhalt angezeigt. |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Bietet eine Version von **WebView** mit mehr OS-Versionen kompatibel ist. Dieses Steuerelement verwendet wird, die Microsoft Edge-Rendering-Engine Webinhalt auf Windows 10, Version 1803 und höher angezeigt und das Internet Explorer-Renderingmodul anzuzeigenden Webinhalten in früheren Versionen von Windows 10, Windows 8.x und Windows 7. |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, Version 1809 (build 17763) | Geben Sie eine Fläche aus, und verwandte Symbolleisten für Windows Ink-basierte Benutzerinteraktion in Ihre Windows Forms oder WPF-Desktopanwendung an. |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, Version 1809 (build 17763) | Bettet eine Ansicht, die streams auf und rendert die Medieninhalte wie z. B. Videos in Ihre Windows Forms oder WPF-Desktopanwendung an. |
+| [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, Version 1809 (build 17763) | Können Sie eine symbolische oder fotorealistische-Karte in Ihrer Windows Forms oder WPF-Desktopanwendung anzeigen. |
 
-## <a name="host-controls"></a>Host-Steuerelemente
+## <a name="host-controls"></a>Hosten von Steuerelementen
 
-Für Szenarien mit mehr als die von den verfügbaren mit Steuerelementen in können WPF- oder Windows Forms-Anwendung das Steuerelement [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) auch im [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)verwenden. Dieses Steuerelement kann alle UWP-Steuerelement hosten, die von [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), z. B. alle UWP-Steuerelemente, die von Windows SDK als auch benutzerdefinierte Steuerelemente bereitgestellten abgeleitet wird. Dieses Steuerelement unterstützt Windows 10 Insider Preview SDK-Build 17709 und spätere Versionen.
-
-> [!NOTE]
-> Host-Steuerelemente sind nicht für C++ Win32-desktop-Apps verfügbar. Diese Arten von Anwendungen müssen die [UWP-XAML hosting-API](#uwp-xaml-hosting-api)verwenden.
-
-## <a name="uwp-xaml-hosting-api"></a>UWP-XAML hosting-API
-
-Wenn Sie eine C++ Win32-Anwendung verfügen, können die *UWP-XAML hosting-API* Sie alle UWP-Steuerelement hosten, die von [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) in alle UI-Element in der Anwendung abgeleitet wird, die über eine zugeordnete Fenster-Handle (HWND) verfügt. Diese API wurde in Windows 10 Insider Preview SDK Build 17709 eingeführt. Weitere Informationen zur Verwendung dieser API finden Sie [unter Verwendung des XAML-API in einer desktop-Anwendung hosten](using-the-xaml-hosting-api.md).
+Für Szenarien durch die verfügbaren Steuerelemente für die umschlossene abgedeckt, WPF- und Windows Forms-Anwendungen können auch die [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) steuern, der [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Dieses Steuerelement kann alle UWP-Steuerelemente, die abgeleitet hosten [ **Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), einschließlich alle UWP-Steuerelement, die vom Windows SDK bereitgestellt werden sowie benutzerdefinierte Benutzersteuerelemente. Dieses Steuerelement unterstützt die Windows 10 Insider Preview SDK, Build, 17709 und höhere Versionen.
 
 > [!NOTE]
-> C++ Win32-desktop-Apps müssen die UWP-XAML hosting-API zum Hosten von UWP-Steuerelementen verwenden. Mit dem Steuerelemente und Host-Steuerelemente sind nicht für diese Arten von Anwendungen verfügbar. WPF- oder Windows Forms-Anwendung empfehlen wir, die mit dem Steuerelemente und die Host-Steuerelemente in der Windows-Community-Toolkit anstelle der UWP-XAML verwenden, hosting-API. Diese Steuerelemente verwenden, die UWP-XAML intern hosting-API und ein einfacher Development-Erlebnis zu bieten. Allerdings können Sie die UWP-XAML hosting-API direkt in WPF- oder Windows Forms-Anwendung, wenn Sie auswählen.
+> Hoststeuerelemente sind nicht für C++-Win32-desktopanwendungen verfügbar. Diese Typen von Anwendungen verwenden, müssen die [UWP XAML hosting-API](#uwp-xaml-hosting-api).
+
+## <a name="uwp-xaml-hosting-api"></a>UWP XAML hosting-API
+
+Wenn Sie eine C++-Win32-Anwendung verfügen, können Sie mithilfe der *UWP XAML hosting-API* auf alle UWP-Steuerelemente hosten, die von abgeleitet [ **Windows.UI.Xaml.UIElement** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) in jedem Element der Benutzeroberfläche in Ihre Anwendung mit einer zugeordneten Fensterhandle (HWND). Diese API wurde in Windows 10 Insider Preview SDK Build 17709 eingeführt. Weitere Informationen zur Verwendung dieser API finden Sie unter [mithilfe der hosting-API in einer Desktopanwendung XAML](using-the-xaml-hosting-api.md).
+
+> [!NOTE]
+> C++-Win32-desktop-Anwendungen müssen die UWP XAML hosting-API zum Hosten von UWP-Steuerelementen verwenden. Umschlossene Steuerelemente und-Hoststeuerelemente sind nicht verfügbar für diese Arten von Anwendungen. Für WPF und Windows Forms-Anwendungen empfehlen wir die Verwendung der umschlossene Steuerelementen und Hoststeuerelementen im Windows-Community-Toolkit anstelle der UWP XAML hosting-API werden. Diese Steuerelemente verwenden Sie die UWP XAML intern hosting-API und eine einfachere Entwicklungsumgebung bereitzustellen. Allerdings können Sie die UWP XAML hosting-API direkt in WPF- und Windows Forms-Anwendungen, wenn Sie auswählen.
 
 ## <a name="architecture-overview"></a>Übersicht über die Architektur
 
@@ -73,32 +73,32 @@ In den meisten Fällen wird nur die Funktionalität nicht unterstützt, die in d
 
 ### <a name="whats-supported-only-with-workarounds"></a>Nur mit Problemumgehungen unterstützt
 
-:heavy_check_mark: Hosting mehrerer Inbox-Steuerelemente innerhalb mehrerer Fenster Sie müssen jedes Fenster in seinem eigenen Thread platzieren.
+:heavy_check_mark: Hosten von mehreren Posteingang-Steuerelementen in mehrere Fenster. Sie müssen jedes Fenster in seinem eigenen Thread platzieren.
 
-:heavy_check_mark: Verwendung von ``x:Bind`` mit gehosteten Steuerelementen Sie müssen das Datenmodell in einer .NET Standardbibliothek deklarieren.
+:heavy_check_mark: Mithilfe von ``x:Bind`` Steuerelemente gehostet. Sie müssen das Datenmodell in einer .NET Standardbibliothek deklarieren.
 
-:heavy_check_mark: C#-basierte Drittanbieter-Steuerelemente Wenn Sie über den Quellcode eines Drittanbieter-Steuerelements verfügen, können Sie ihn kompilieren.
+:heavy_check_mark: C#-basierte Steuerelemente eines Drittanbieters. Wenn Sie über den Quellcode eines Drittanbieter-Steuerelements verfügen, können Sie ihn kompilieren.
 
 ### <a name="whats-not-yet-supported"></a>Noch nicht unterstützt
 
-:no_entry_sign: Tools mit Bedienungshilfen, die gleichartig für die Anwendung und die gehosteten Steuerelemente funktionieren
+:no_entry_sign: Tools für Barrierefreiheit, die funktionieren nahtlos in die Anwendung und die gehosteten Steuerelemente.
 
-:no_entry_sign: Lokalisierter Inhalt in Steuerelementen für Anwendungen, die kein Windows-App-Paket enthalten
+:no_entry_sign: Lokalisierte Inhalte in Steuerelementen, die Sie Anwendungen hinzufügen, die ein Windows-app-Paket nicht enthalten.
 
-:no_entry_sign: Asset-Verweise in XAML innerhalb von Anwendungen, die kein Windows-App-Paket enthalten
+:no_entry_sign: Objektverweise in XAML vorgenommen werden, in Anwendungen, die ein Windows-app-Paket nicht enthalten.
 
-:no_entry_sign: Steuerelemente, die korrekt bezüglich Änderungen von DPI und Skalierung reagieren
+:no_entry_sign: Steuerelemente, die ordnungsgemäß reagieren auf Änderungen der DPI-Wert und Skalierung.
 
-:no_entry_sign: Hinzufügen eines **WebView**-Steuerelements zu einem benutzerdefinierten Steuerelement (entweder „on-thread”, „off-thread” oder „out of proc”)
+:no_entry_sign: Hinzufügen einer **WebView** Steuerelement ein benutzerdefiniertes Steuerelement, das (auf Thread, aus Threads, oder aus der Prozedur).
 
-:no_entry_sign: Der Fluent-Effekt [Reveal Highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal)
+:no_entry_sign: Die [anzeigen Hervorhebung](https://docs.microsoft.com/windows/uwp/design/style/reveal) Fluent wirksam.
 
-:no_entry_sign: Inline-Freihandeingabe, @Places und @People für Eingabesteuerelemente
+:no_entry_sign: Inline Freihand, @Places, und @People für Eingabesteuerelemente.
 
-:no_entry_sign: Zuweisen von Zugriffstasten
+:no_entry_sign: Zuweisen von Zugriffstasten.
 
-:no_entry_sign: C++-basierte Steuerelemente von Drittanbietern
+:no_entry_sign: C++-basierte Drittanbieter-Steuerelementen.
 
-:no_entry_sign: Hosten benutzerdefinierter Steuerelemente
+:no_entry_sign: Hosten von benutzerdefinierten Steuerelementen.
 
 Die Elemente in dieser Liste werden sich wahrscheinlich ändern, da wir ständig daran arbeiten, Fluent auf dem Desktop zu optimieren.  

@@ -1,41 +1,41 @@
 ---
-Description: This article describes how to create a Windows Runtime component that implements the IBasicVideoEffect interface to allow you to create custom effects for video streams.
+Description: In diesem Artikel wird beschrieben, wie Sie eine Windows-Runtime-Komponente erstellen, die die IBasicVideoEffect-Schnittstelle implementiert, mit der Sie benutzerdefinierte Effekte für Videostreams erstellen können.
 MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Benutzerdefinierte Videoeffekte
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e48febb3fb49a35fe256e58cf7c80b4abe93267
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045569"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623085"
 ---
 # <a name="custom-video-effects"></a>Benutzerdefinierte Videoeffekte
 
 
 
 
-In diesem Artikel wird beschrieben, wie Sie eine Komponente für Windows-Runtime erstellen, die die [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788)-Schnittstelle implementiert, mit der Sie benutzerdefinierte Effekte für Videostreams erstellen können. Benutzerdefinierte Effekte können mit verschiedenen Windows-Runtime-APIs verwendet werden, z.B. [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), die den Zugriff auf die Kamera eines Gerätes ermöglicht, sowie [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), mit der Sie komplexe Kompositionen aus Medienclips erstellen können.
+In diesem Artikel wird beschrieben, wie Sie eine Windows-Runtime-Komponente erstellen, die die [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788)-Schnittstelle implementiert, mit der Sie benutzerdefinierte Effekte für Videostreams erstellen können. Benutzerdefinierte Effekte können mit verschiedenen Windows-Runtime-APIs verwendet werden, z. B. [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), die den Zugriff auf die Kamera eines Gerätes ermöglicht, sowie [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), mit der Sie komplexe Kompositionen aus Medienclips erstellen können.
 
 ## <a name="add-a-custom-effect-to-your-app"></a>Hinzufügen eines benutzerdefinierten Effekts zu Ihrer App
 
 
 Sie definieren einen benutzerdefinierte Videoefekt in einer Klasse, die die [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788)-Schnittstelle implementiert. Diese Klasse kann nicht direkt in Ihr App-Projekt integriert werden. Stattdessen müssen Sie eine Windows-Runtime-Komponente verwenden, um Ihre Videoeffektklasse zu hosten.
 
-**Hinzufügen einer Windows-Runtime-Komponente für den Videoeffekt**
+**Hinzufügen einer Windows-Runtime-Komponente, um Ihr video zu erzielen**
 
 1.  Wechseln Sie in Microsoft Visual Studio bei geöffneter Projektmappe zum Menü **Datei**, und wählen Sie **Hinzufügen-&gt;Neues Projekt** aus.
 2.  Wählen Sie den Projekttyp **Komponente für Windows-Runtime (Universal Windows)** aus.
 3.  Nennen Sie das Projekt in diesem Beispiel *VideoEffectComponent*. Auf diesen Namen wird später im Code verwiesen.
 4.  Klicken Sie auf **OK**.
 5.  Die Projektvorlage erstellt eine Klasse namens „Class1.cs“. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Symbol für „Class1.cs“, und wählen Sie **Umbenennen** aus.
-6.  Benennen Sie die Datei in *ExampleVideoEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. Klicken Sie auf **Ja**.
+6.  Benennen Sie die Datei in *ExampleVideoEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. klicken Sie auf **Ja**.
 7.  Öffnen Sie **ExampleVideoEffect.cs**, und aktualisieren Sie die Definition der Klasse, um die [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788)-Schnittstelle zu implementieren.
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
@@ -69,7 +69,7 @@ Die [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn
 
 ### <a name="isreadonly-property"></a>IsReadOnly-Eigenschaft
 
-Die [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792)-Eigenschaft teilt dem System mit, ob Ihr Effekt in die Ausgabe des Effekts schreibt. Wenn Ihre App die Videoframes nicht ändert (z.B. ein Effekt, der nur eine Analyse der Videoframes durchführt), sollten Sie diese Eigenschaft auf „true“ festlegen. Dann kopiert das System für Sie die Frameeingabe in die Frameausgabe.
+Die [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792)-Eigenschaft teilt dem System mit, ob Ihr Effekt in die Ausgabe des Effekts schreibt. Wenn Ihre App die Videoframes nicht ändert (z. B. ein Effekt, der nur eine Analyse der Videoframes durchführt), sollten Sie diese Eigenschaft auf „true“ festlegen. Dann kopiert das System für Sie die Frameeingabe in die Frameausgabe.
 
 > [!TIP]
 > Wenn die [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792)-Eigenschaft auf „true“ festgelegt ist, kopiert das System den Eingabeframe in den Ausgabeframe, bevor [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) aufgerufen wird. Das Festlegen der **IsReadOnly**-Eigenschaft auf „true“ schränkt Sie nicht darin ein, in die Ausgabeframes in **ProcessFrame** zu schreiben.
@@ -86,7 +86,7 @@ Das System ruft [**SetEncodingProperties**](https://msdn.microsoft.com/library/w
 
 ### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties-Eigenschaft
 
-Das System überprüft die [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) Eigenschaft, um festzustellen, welche Codierungseigenschaften von dem Effekt unterstützt werden. Beachten Sie Folgendes: Wenn der Nutzer Ihres Effekts das Video mit den von Ihnen angegebenen Eigenschaften nicht codieren kann, wird [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) für den Effekt aufgerufen und er wird aus der Videopipeline entfernt.
+Das System überprüft die [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799)-Eigenschaft, um festzustellen, welche Codierungseigenschaften von dem Effekt unterstützt werden. Beachten Sie Folgendes: Wenn der Nutzer Ihres Effekts das Video mit den von Ihnen angegebenen Eigenschaften nicht codieren kann, wird [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) für den Effekt aufgerufen und er wird aus der Videopipeline entfernt.
 
 
 [!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
@@ -166,7 +166,7 @@ Das Erstellen eines benutzerdefinierten Videoeffekts mit der Hardwareverarbeitun
 
 Führen Sie die folgenden Schritte aus, um das Win2D-NuGet-Paket zu dem Projekt hinzuzufügen, das Sie wie im Abschnitt **Hinzufügen eines benutzerdefinierten Effekts zu Ihrer App** zu Beginn dieses Artikels beschrieben erstellt haben.
 
-**So fügen Sie das Win2D-NuGet-Paket zum Effektprojekt hinzu**
+**Auf das Win2D-NuGet-Paket Ihrem Projekt Effekt hinzufügen**
 
 1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **VideoEffectComponent**, und wählen Sie **NuGet-Pakete verwalten** aus.
 2.  Wählen Sie oben im Fenster die Registerkarte **Durchsuchen** aus.
@@ -230,7 +230,7 @@ Nachdem der Effekt hinzugefügt wurde, wird [**StartPreviewAsync**](https://msdn
 
 
 
-### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Hinzufügen Ihres benutzerdefinierten Effekts zu einem Clip in einer Medienkomposition
+### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Hinzufügen Ihres benutzerdefinierten Effekts zu einem Clip in einer MediaComposition
 
 Allgemeine Informationen zum Erstellen von Medienkompositionen aus Videoclips finden Sie unter [Medienkompositionen und -bearbeitung](media-compositions-and-editing.md). Der folgende Codeausschnitt zeigt das Erstellen einer einfachen Medienkomposition, die einen benutzerdefinierten Videoeffekt verwendet. Durch Aufruf von [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607) wird ein [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596)-Objekt erstellt. Dabei wird eine Videodatei übergeben, die von dem Benutzer mit einer [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) ausgewählt wurde, und der Clip wird zu einer neuen [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) hinzugefügt. Als Nächstes wird ein neues [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055)-Objekt erstellt, wobei der Namespace und der Klassenname für Ihren Effekt an den Konstruktor übergeben wird. Schließlich wird die Effektdefinition zur [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643)-Sammlung des **MediaClip**-Objekts hinzugefügt.
 
@@ -239,7 +239,7 @@ Allgemeine Informationen zum Erstellen von Medienkompositionen aus Videoclips fi
 
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Einfacher Zugriff auf die Kameravorschau](simple-camera-preview-access.md)
+* [Zugriff auf die einfache Kamera-Vorschau](simple-camera-preview-access.md)
 * [Medienkompositionen und -bearbeitung](media-compositions-and-editing.md)
 * [Win2D-Dokumentation](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Medienwiedergabe](media-playback.md)

@@ -1,21 +1,21 @@
 ---
-Description: Use content links to embed rich data in your text controls.
+Description: Inhaltslinks zum Einbetten von umfangreichen Daten in Ihrem Text-Steuerelemente verwenden.
 title: Links zu Inhalten in Textsteuerelementen
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648535"
 ---
 # <a name="content-links-in-text-controls"></a>Links zu Inhalten in Textsteuerelementen
 
@@ -23,10 +23,10 @@ Links zu Inhalten bieten eine Möglichkeit, umfangreiche Daten in Textsteuerelem
 
 Wenn der Benutzer einem Eintrag in einer RichEditBox ein kaufmännisches Und-Zeichen (@) als Präfix hinzufügt, wird eine Liste der Personen und/oder Ortsvorschläge angezeigt, die mit dem Eintrag übereinstimmen. Wenn der Benutzer dann beispielsweise einen Ort auswählt, wird ein ContentLink für diesen Ort in den Text eingefügt. Wenn der Benutzer den Link zu dem Inhalt aus der RichEditBox aufruft, werden ein Flyout mit einer Karte und zusätzliche Informationen zu dem Ort angezeigt.
 
-> **Wichtige APIs**: [ContentLink class](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo class](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange class](/uwp/api/windows.ui.text.richedittextrange)
+> **Wichtige APIs**: [ContentLink-Klasse](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo Klasse](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange-Klasse](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> Die APIs für Links zu Inhalten, die auf die folgenden Namespaces verteilt sind: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents und Windows.UI.Text.
+> Die APIs für Links zu Inhalten sind auf die folgenden Namespaces verteilt: Windows.UI.Xaml.Controls Windows.UI.Xaml.Documents und Windows.UI.Text.
 
 
 
@@ -39,14 +39,14 @@ Es gibt zwei unterschiedliche Methoden, Links zu Inhalten zu verwenden:
 
 So sehen Links zu Inhalten standardmäßig in einem RichEditBox und einem Textblock aus.
 
-![Link zu Inhalten im Rich-Edit-Feld](images/content-link-default-richedit.png)
-![Link zu Inhalten im Textblock](images/content-link-default-textblock.png)
+![Inhaltslink in RichEdit-Eingabefeld](images/content-link-default-richedit.png)
+![Inhaltslink im Textblock](images/content-link-default-textblock.png)
 
 Unterschiede bei der Verwendung, beim Rendering und beim Verhalten werden in den folgenden Abschnitten ausführlich behandelt. Diese Tabelle bietet einen kurzen Vergleich der Hauptunterschiede zwischen einem Link zu Inhalten in einem RichEditBox und einem Textblock.
 
-| Funktion   | RichEditBox | Textblock |
+| Feature   | RichEditBox | Textblock |
 | --------- | ----------- | ---------- |
-| Verwendung | ContentLinkInfo-Instanz | ContentLink-Textelement |
+| Verwendungszweck | ContentLinkInfo-Instanz | ContentLink-Textelement |
 | Cursor | Wird durch den Typ des Links zu Inhalten bestimmt, kann nicht geändert werden | Wird durch die Cursor-Eigenschaft bestimmt, standardmäßig **null** |
 | ToolTip | Nicht gerendert | Zeigt sekundären Text an |
 
@@ -129,7 +129,7 @@ Das ContentLinkInfo-Objekt enthält die Informationen, die zum Anzeigen, Aufrufe
 - **SecondaryText** – Diese Zeichenfolge wird in der QuickInfo eines gerenderten Links zu Inhalten angezeigt.
   - In einem Link zu Inhalten für Orte, der über die Auswahl erstellt wurde, enthält sie die Adresse des Ortes, falls verfügbar.
 - **URI** – Der Link zu weiteren Informationen zum Betreff des Links zu Inhalten. Mit diesem URI kann eine installierte App oder eine Website geöffnet werden.
-- **ID** – Dies ist ein schreibgeschützter Zähler für das jeweilige Steuerelement, der durch das RichEditBox-Steuerelement erstellt wird. Er dient zum Nachverfolgen dieser ContentLinkInfo, wenn beispielsweise Lösch- oder Bearbeitungsaktionen durchgeführt werden. Wenn das ContentLinkInfo-Objekt ausgeschnitten und wieder in das Steuerelement eingefügt wird, erhält es eine neue ID. ID-Werte sind inkrementell.
+- **ID** – Dies ist ein schreibgeschützter Zähler für das jeweilige Steuerelement, der durch das RichEditBox-Steuerelement erstellt wird. Er dient zum Nachverfolgen dieser ContentLinkInfo, wenn beispielsweise Lösch- oder Bearbeitungsaktionen durchgeführt werden. Wenn die ContentLinkInfo wird ausgeschnitten und zurück in das Steuerelement einfügen, erhalten sie eine neue Id. ID-Werte sind inkrementell.
 - **LinkContentKind** – Eine Zeichenfolge, die den Typ des Links zu Inhalten beschreibt. Die integrierten Inhaltstypen sind _Orte_ und _Kontakte_. Beim Wert wird die Groß-/Kleinschreibung berücksichtigt.
 
 #### <a name="link-content-kind"></a>Art des Links zu Inhalten
@@ -154,7 +154,7 @@ Die Ortsauswahl erstellt ContentLinkInfo mit dem URI-Stamm https://maps.windows.
 - Wenn LinkContentKind nicht „Orte“ entspricht, wird versucht, die **Karten**-App am angegebenen Speicherort zu öffnen. Dies kann beispielsweise der Fall sein, wenn Sie die LinkContentKind im ContentLinkChanged-Ereignishandler geändert haben.
 - Wenn der URI nicht in der Karten-App geöffnet werden kann, wird die Karte im Standardbrowser geöffnet. Dies ist in der Regel dann der Fall, wenn die _Apps für Websites_-Einstellungen des Benutzers das Öffnen der URI mit der **Karten**-App nicht zulassen.
 
-##### <a name="people"></a>Personen
+##### <a name="people"></a>People
 
 Die Personenauswahl erstellt eine ContentLinkInfo mit einem Uri, der das **ms-People**-Protokoll verwendet.
 
@@ -162,7 +162,7 @@ Die Personenauswahl erstellt eine ContentLinkInfo mit einem Uri, der das **ms-Pe
 - Wenn LinkContentKind nicht „Personen“ entspricht, wird die **Personen**-App geöffnet. Dies kann beispielsweise der Fall sein, wenn Sie die LinkContentKind im ContentLinkChanged-Ereignishandler geändert haben.
 
 > [!TIP]
-> Weitere Informationen zum Öffnen von anderen apps und Websites über Ihre app finden Sie unter den Themen unter [Starten einer app mit einem Uri](/windows/uwp/launch-resume/launch-app-with-uri).
+> Weitere Informationen zu anderen apps und Websites aus Ihrer app öffnen, finden Sie unter den Themen unter [Starten einer app mit einem Uri](/windows/uwp/launch-resume/launch-app-with-uri).
 
 #### <a name="invoked"></a>Aufgerufen
 

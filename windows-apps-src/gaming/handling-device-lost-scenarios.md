@@ -1,38 +1,38 @@
 ---
-title: Behandeln von Szenarien mit entfernten Geräten in Direct3D11
+title: Behandeln von Szenarien mit entfernten Geräten in Direct3D 11
 description: In diesem Thema wird erläutert, wie Sie die Geräteschnittstellenkette für Direct3D und DXGI neu erstellen, wenn die Grafikkarte entfernt oder neu initialisiert wird.
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, DirectX 11, Gerät verloren gegangen
+keywords: Windows 10, UWP, Spiele, DirectX 11, Gerät verloren gegangen
 ms.localizationpriority: medium
 ms.openlocfilehash: c11bbf7657644fbf616590f50d75d93f62ed993e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947166"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646605"
 ---
-# <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Behandeln von Szenarien mit entfernten Geräten in Direct3D 11
+# <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Verarbeiten von Gerät entfernt-Szenarien in Direct3D 11
 
 
 
 In diesem Thema wird erläutert, wie Sie die Geräteschnittstellenkette für Direct3D und DXGI neu erstellen, wenn die Grafikkarte entfernt oder neu initialisiert wird.
 
-In DirectX9 kann für Anwendungen die Bedingung "[Gerät ist nicht mehr auffindbar](https://msdn.microsoft.com/library/windows/desktop/bb174714)" entstehen, bei der das D3D-Gerät nicht mehr betriebsbereit ist. Wenn eine Direct3D9-Vollbildanwendung den Fokus verliert, ist das Direct3D-Gerät „nicht mehr auffindbar“. Alle Versuche, mit einem nicht auffindbaren Gerät zu zeichnen, sind nicht erfolgreich (ohne Warnung). Für Direct3D11 werden virtuelle Grafikgerätschnittstellen verwendet, damit mehrere Programme dasselbe physische Grafikgerät nutzen können und keine Bedingungen entstehen, in denen Apps die Kontrolle über das Direct3D-Gerät verlieren. Es ist jedoch weiterhin möglich, dass sich die Verfügbarkeit der Grafikkarte ändert. Beispiel:
+In DirectX 9 kann für Anwendungen die Bedingung "[Gerät ist nicht mehr auffindbar](https://msdn.microsoft.com/library/windows/desktop/bb174714)" entstehen, bei der das D3D-Gerät nicht mehr betriebsbereit ist. Wenn eine Direct3D 9-Vollbildanwendung den Fokus verliert, ist das Direct3D-Gerät „nicht mehr auffindbar“. Alle Versuche, mit einem nicht auffindbaren Gerät zu zeichnen, sind nicht erfolgreich (ohne Warnung). Für Direct3D 11 werden virtuelle Grafikgerätschnittstellen verwendet, damit mehrere Programme dasselbe physische Grafikgerät nutzen können und keine Bedingungen entstehen, in denen Apps die Kontrolle über das Direct3D-Gerät verlieren. Es ist jedoch weiterhin möglich, dass sich die Verfügbarkeit der Grafikkarte ändert. Zum Beispiel:
 
 -   Der Grafiktreiber wird aktualisiert.
 -   Das System führt eine Umstellung von einer energiesparenden Grafikkarte auf eine Grafikkarte mit hoher Leistung durch.
 -   Das Grafikgerät reagiert nicht mehr und wird zurückgesetzt.
 -   Eine Grafikkarte wird physisch angeschlossen oder entfernt.
 
-Unter diesen Umständen wird von DXGI ein Fehlercode zurückgegeben, der angibt, dass das Direct3D-Gerät neu initialisiert werden muss und die Geräteressourcen neu erstellt werden müssen. In dieser exemplarischen Vorgehensweise wird erläutert, wie Direct3D11-Apps und -Spiele Fälle, in denen die Grafikkarte zurückgesetzt, entfernt oder geändert wird, erkennen und darauf reagieren kann. Codebeispiele sind in der Vorlage DirectX 11-App (Universal Windows) in Microsoft Visual Studio2015 enthalten.
+Unter diesen Umständen wird von DXGI ein Fehlercode zurückgegeben, der angibt, dass das Direct3D-Gerät neu initialisiert werden muss und die Geräteressourcen neu erstellt werden müssen. In dieser exemplarischen Vorgehensweise wird erläutert, wie Direct3D 11-Apps und -Spiele Fälle, in denen die Grafikkarte zurückgesetzt, entfernt oder geändert wird, erkennen und darauf reagieren kann. Codebeispiele werden über die DirectX 11-App (Universelles Windows)-Vorlage, die mit Microsoft Visual Studio 2015 bereitgestellten bereitgestellt.
 
 ## <a name="instructions"></a>Anweisungen
 
-### <a name="spanspanstep-1"></a><span></span>Schritt1:
+### <a name="spanspanstep-1"></a><span></span>Schritt 1:
 
-Fügen Sie eine Überprüfung auf den Fehler „Gerät entfernt“ in die Renderschleife ein. Stellen Sie den Frame dar, indem Sie [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (bzw. [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) usw.) aufrufen. Prüfen Sie anschließend, ob [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) or **DXGI\_ERROR\_DEVICE\_RESET** zurückgegeben wurde.
+Fügen Sie eine Überprüfung auf den Fehler „Gerät entfernt“ in die Renderschleife ein. Stellen Sie den Frame dar, indem Sie [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (bzw. [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) usw.) aufrufen. Klicken Sie dann überprüfen, ob sie zurückgegeben [ **DXGI\_Fehler\_Gerät\_entfernt** ](https://msdn.microsoft.com/library/windows/desktop/bb509553) oder **DXGI\_Fehler\_Gerät \_Zurücksetzen**.
 
 Zuerst wird in der Vorlage der HRESULT-Wert gespeichert, der von der DXGI-Swapchain zurückgegeben wird:
 
@@ -55,9 +55,9 @@ else
 }
 ```
 
-### <a name="step-2"></a>Schritt2:
+### <a name="step-2"></a>Schritt 2:
 
-Fügen Sie auch eine Überprüfung auf den Fehler „Gerät entfernt“ ein, wenn Sie auf Änderungen der Fenstergröße reagieren. Dies ist aus mehreren Gründen ein guter Zeitpunkt zum Prüfen auf [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) oder **DXGI\_ERROR\_DEVICE\_RESET**:
+Fügen Sie auch eine Überprüfung auf den Fehler „Gerät entfernt“ ein, wenn Sie auf Änderungen der Fenstergröße reagieren. Dies ist ein guter Ausgangspunkt zu prüfen, [ **DXGI\_Fehler\_Gerät\_entfernt** ](https://msdn.microsoft.com/library/windows/desktop/bb509553) oder **DXGI\_Fehler\_Gerät\_ Zurücksetzen** verschiedene Ursachen haben:
 
 -   Das Ändern der Größe der Swapchain erfordert das Aufrufen des zugrunde liegenden DXGI-Adapters, von dem der Fehler „Gerät entfernt“ zurückgegeben werden kann.
 -   Möglicherweise wurde die App auf einen Monitor verschoben, der an ein anderes Grafikgerät angeschlossen ist.
@@ -90,9 +90,9 @@ else
 }
 ```
 
-### <a name="step-3"></a>Schritt3:
+### <a name="step-3"></a>Schritt 3:
 
-Wenn die App den Fehler [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) empfängt, muss sie das Direct3D-Gerät neu initialisieren und alle geräteabhängigen Ressourcen neu erstellen. Geben Sie alle Verweise auf Ressourcen des Grafikgeräts frei, die mit dem vorherigen Direct3D-Gerät erstellt wurden. Diese Ressourcen sind jetzt ungültig, und alle Verweise auf die Swapchain müssen freigegeben werden, bevor eine neue erstellt werden kann.
+Jedes Mal, die Ihre app empfängt die [ **DXGI\_Fehler\_Gerät\_entfernt** ](https://msdn.microsoft.com/library/windows/desktop/bb509553) Fehler muss alle geräteabhängigen neu zu erstellen und initialisieren Sie das Direct3D-Gerät erneut Ressourcen zu. Geben Sie alle Verweise auf Ressourcen des Grafikgeräts frei, die mit dem vorherigen Direct3D-Gerät erstellt wurden. Diese Ressourcen sind jetzt ungültig, und alle Verweise auf die Swapchain müssen freigegeben werden, bevor eine neue erstellt werden kann.
 
 Die HandleDeviceLost-Methode gibt die Swapchain frei und weist die App-Komponenten an, die Geräteressourcen freizugeben:
 
@@ -133,21 +133,21 @@ if (m_deviceNotify != nullptr)
 
 Wenn die HandleDeviceLost-Methode beendet wird, geht die Steuerung wieder auf die Renderschleife über, die dann mit dem Zeichnen des nächsten Frames fortfährt.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 
 ### <a name="investigating-the-cause-of-device-removed-errors"></a>Untersuchen der Ursache für Fehler vom Typ „Gerät entfernt“
 
 Wiederkehrende Probleme mit dem DXGI-Fehler „Gerät entfernt“ können darauf hinweisen, dass von Ihrem Grafikcode während einer Zeichenroutine ungültige Bedingungen erstellt werden. Außerdem können sie auf einen Hardwarefehler oder einen Fehler in der Grafikkarte hinweisen. Rufen Sie zum Untersuchen der Fehler vom Typ „Gerät entfernt“ [**ID3D11Device::GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) auf, bevor Sie das Direct3D-Gerät freigeben. Diese Methode gibt einen von sechs möglichen DXGI-Fehlercodes zurück, um die Ursache des Fehlers „Gerät entfernt“ anzugeben:
 
--   **DXGI\_ERROR\_DEVICE\_HUNG**: Der Grafiktreiber reagiert nicht mehr aufgrund einer ungültigen Kombination von Grafikbefehlen, die von der App gesendet wurden. Wenn Sie diesen Fehler häufiger erhalten, ist dies ein Hinweis darauf, dass Ihre App zum Hängen des Geräts geführt hat und ein Debugvorgang durchgeführt werden muss.
--   **DXGI\_ERROR\_DEVICE\_REMOVED**: Das Grafikgerät wurde physisch entfernt oder ausgeschaltet, oder es wurde ein Treiberupgrade durchgeführt. Dies geschieht von Zeit zu Zeit und ist normal. Die App bzw. das Spiel sollte die Geräteressourcen wie in diesem Thema beschrieben neu erstellen.
--   **DXGI\_ERROR\_DEVICE\_RESET**: Für das Grafikgerät ist aufgrund eines falsch formatierten Befehls ein Fehler aufgetreten. Wenn Sie diesen Fehler häufig erhalten, kann dies bedeuten, dass vom Code ungültige Zeichenbefehle gesendet werden.
--   **DXGI\_ERROR\_DRIVER\_INTERNAL\_ERROR**: Der Grafiktreiber hat einen Fehler erkannt und das Gerät zurückgesetzt.
--   **DXGI\_ERROR\_INVALID\_CALL**: Die Anwendung hat ungültige Parameterdaten bereitgestellt. Auch wenn Sie diesen Fehler nur einmal erhalten, bedeutet dies, dass Ihr Code die Bedingung „Gerät entfernt“ verursacht hat und ein Debugvorgang durchgeführt werden muss.
--   **S\_OK**: Wird zurückgegeben, wenn ein Grafikgerät aktiviert, deaktiviert oder zurückgesetzt wird, ohne das aktuelle Grafikgerät ungültig zu machen. Dieser Fehler kann beispielsweise zurückgegeben werden, wenn eine App die [Windows Advanced Rasterization Platform (WARP)](https://msdn.microsoft.com/library/windows/desktop/gg615082) verwendet und ein Hardwareadapter verfügbar wird.
+-   **DXGI\_FEHLER\_GERÄT\_ABGESTÜRZTER**: Der Grafiktreiber reagiert aufgrund eine ungültige Kombination von Grafikbefehle, die von der app gesendet. Wenn Sie diesen Fehler häufiger erhalten, ist dies ein Hinweis darauf, dass Ihre App zum Hängen des Geräts geführt hat und ein Debugvorgang durchgeführt werden muss.
+-   **DXGI\_FEHLER\_GERÄT\_ENTFERNT**: Das Grafikgerät physisch entfernt wurde, deaktiviert ist, oder ein treiberupgrade ist aufgetreten. Dies geschieht von Zeit zu Zeit und ist normal. Die App bzw. das Spiel sollte die Geräteressourcen wie in diesem Thema beschrieben neu erstellen.
+-   **DXGI\_FEHLER\_GERÄT\_ZURÜCKSETZEN**: Das Grafikgerät Fehler aufgrund ungültiger-Befehls. Wenn Sie diesen Fehler häufig erhalten, kann dies bedeuten, dass vom Code ungültige Zeichenbefehle gesendet werden.
+-   **DXGI\_FEHLER\_TREIBER\_INTERN\_FEHLER**: Der Grafiktreiber ist ein Fehler aufgetreten, und das Gerät zurückgesetzt.
+-   **DXGI\_FEHLER\_UNGÜLTIGE\_AUFRUFEN**: Die Anwendung bereitgestellte Daten für ungültige Parameter. Auch wenn Sie diesen Fehler nur einmal erhalten, bedeutet dies, dass Ihr Code die Bedingung „Gerät entfernt“ verursacht hat und ein Debugvorgang durchgeführt werden muss.
+-   **S\_OK**: Zurückgegeben, wenn ein Grafikgerät wurde aktiviert, deaktiviert oder zurücksetzen, ohne die aktuellen-Grafikgerät für ungültig zu erklären. Dieser Fehler kann beispielsweise zurückgegeben werden, wenn eine App die [Windows Advanced Rasterization Platform (WARP)](https://msdn.microsoft.com/library/windows/desktop/gg615082) verwendet und ein Hardwareadapter verfügbar wird.
 
-Mit dem folgenden Code wird der Fehlercode [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) abgerufen und in der Debugkonsole ausgegeben. Fügen Sie diesen Code am Anfang der HandleDeviceLost-Methode hinzu:
+Der folgende Code Ruft die [ **DXGI\_Fehler\_Gerät\_entfernt** ](https://msdn.microsoft.com/library/windows/desktop/bb509553) Fehler code, und klicken Sie in der Debugging-Konsole ausgeben. Fügen Sie diesen Code am Anfang der HandleDeviceLost-Methode hinzu:
 
 ```cpp
     HRESULT reason = m_d3dDevice->GetDeviceRemovedReason();
@@ -160,10 +160,10 @@ Mit dem folgenden Code wird der Fehlercode [**DXGI\_ERROR\_DEVICE\_REMOVED**](ht
 #endif
 ```
 
-Ausführlichere Informationen finden Sie unter [**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) und [**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553).
+Weitere Informationen finden Sie unter [ **GetDeviceRemovedReason** ](https://msdn.microsoft.com/library/windows/desktop/ff476526) und [ **DXGI\_Fehler**](https://msdn.microsoft.com/library/windows/desktop/bb509553).
 
 ### <a name="testing-device-removed-handling"></a>Testgerät hat Behandlung entfernt
 
-Die Developer-Eingabeaufforderung für Visual Studio unterstützt das Befehlszeilenprogramm „dxcap“ für die Direct3D-Ereigniserfassung und -Wiedergabe im Zusammenhang mit der Visual Studio-Grafikdiagnose. Sie können die Befehlszeilenoption „-forcetdr“ verwenden, während Ihre App ausgeführt wird, die ein GPU-Timeout-Erkennungs- und Wiederherstellungsereignis erzwingt, wodurch DXGI\_ERROR\_DEVICE\_REMOVED ausgelöst wird und Sie Ihren Code zur Fehlerbehandlung testen können.
+Die Developer-Eingabeaufforderung für Visual Studio unterstützt das Befehlszeilenprogramm „dxcap“ für die Direct3D-Ereigniserfassung und -Wiedergabe im Zusammenhang mit der Visual Studio-Grafikdiagnose. Können Sie die Befehlszeilenoption folgender Option "-Forcetdr" während Ihrer app die zwingt, ein GPU-Timeouterkennungs- und Wiederherstellungsfunktion-Ereignis ausgeführt wird, wodurch auslösen DXGI\_Fehler\_Gerät\_entfernt und dadurch können Sie den Fehler zu testen. Verarbeitung von Code.
 
 > **Hinweis** DXCap und die Unterstützungs-DLLs werden unter „system32/syswow64“ als Teil der Grafiktools für Windows 10 installiert, die nicht mehr über das Windows SDK verteilt werden. Stattdessen werden sie über das bei Bedarf verfügbare Feature „Grafiktools“ bereitgestellt. Dies ist eine optionale Betriebssystemkomponente, die installiert sein muss, um die Grafiktools unter Windows 10 zu aktivieren und zu verwenden. Weitere Informationen zum Installieren der Grafiktools für Windows 10 finden Sie hier: <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>

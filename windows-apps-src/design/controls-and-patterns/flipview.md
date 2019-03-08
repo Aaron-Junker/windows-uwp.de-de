@@ -1,22 +1,22 @@
 ---
-Description: Displays images in a collection, such as photos in an album or items in a product details page, one image at a time.
+Description: Dient zum Anzeigen von Bildern in einer Sammlung, z. B. Fotos in einem Album oder Elementen auf einer Seite mit den Produktdetails, wobei jeweils ein Bild angezeigt wird.
 title: Richtlinien für Flip-Ansicht-Steuerelemente
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4e5bb7c761ad6661647cb88f831ffa652b6241
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048800"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662425"
 ---
 # <a name="flip-view"></a>Flip-Ansicht
 
@@ -40,8 +40,8 @@ Die Flip-Ansicht ist zum Durchblättern von Bildern in kleinen bis mittelgroßen
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/FlipView">die App zu öffnen und FlipView in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -110,7 +110,7 @@ flipView1.SelectionChanged += FlipView_SelectionChanged;
 stackPanel1.Children.Add(flipView1);
 ```
 
-Sie können auch die ItemsSource-Eigenschaft an eine Sammlung in XAML binden. Weitere Informationen finden Sie unter [Datenbindung mit XAML](../../data-binding/data-binding-quickstart.md).
+Sie können die ItemsSource-Eigenschaft auch an eine Sammlung in XAML binden. Weitere Informationen finden Sie unter [Datenbindung mit XAML](../../data-binding/data-binding-quickstart.md).
 
 Hier wird die ItemsSource an eine [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) mit dem Namen `itemsViewSource` gebunden. 
 
@@ -220,14 +220,14 @@ Beispielcode, der veranschaulicht, wie Sie einem FlipView-Element eine Kontextan
 
 <table>
 <tr>
-<th>Aspekte der Bidirektionalität</th><td>Verwenden Sie die standardmäßige Spiegelung für Rechts-nach-links-Sprachen. Die Steuerelemente „Zurück“ und „Vorwärts“ sollten auf der Richtung der Schrift beruhen. Bei Rechts-nach-links-Schriften sollte daher die rechte Schaltfläche die Rückwärtsnavigation und die linke Schaltfläche die Vorwärtsnavigation ermöglichen.</td>
+<th>Überlegungen hinsichtlich der Bidirektionalität</th><td>Verwenden Sie die standardmäßige Spiegelung für Rechts-nach-links-Sprachen. Die Steuerelemente „Zurück“ und „Vorwärts“ sollten auf der Richtung der Schrift beruhen. Bei Rechts-nach-links-Schriften sollte daher die rechte Schaltfläche die Rückwärtsnavigation und die linke Schaltfläche die Vorwärtsnavigation ermöglichen.</td>
 </tr>
 
 </table>
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementkatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

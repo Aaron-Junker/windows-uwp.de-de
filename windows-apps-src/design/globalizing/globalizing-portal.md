@@ -1,5 +1,5 @@
 ---
-Description: Learn about the benefits of globalizing and localizing your app, and exactly what these terms mean.
+Description: Erfahren Sie mehr über die Vorteile der Globalisieren und Lokalisieren von Ihrer app, und genau was diese Begriffe bedeuten.
 Search.SourceType: Video
 title: Globalisierung und Lokalisierung
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
@@ -10,17 +10,17 @@ ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e9e0f6305a99b6e3ab83cb3b560754f2e4d310f
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035421"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648225"
 ---
 # <a name="globalization-and-localization"></a>Globalisierung und Lokalisierung
 
 Windows wird auf der ganzen Welt in verschiedenen Märkten und von Anwendern unterschiedlicher Kulturen, Herkunft und Sprachen verwendet. Ihre Benutzer sprechen eine Vielzahl verschiedener Sprachen in vielen verschiedenen Ländern und Regionen. Einige Benutzer sprechen mehr als eine Sprache. Ihre App wird also auf Konfigurationen ausgeführt, die viele Systemeinstellungen für Sprache, Region und Kultur beinhalten. Sie können die Marktchancen Ihrer App erweitern, indem Sie mithilfe von *Globalisierung* und *Lokalisierung* eine variable App entwickeln.
 
-Das folgende Video enthält eine kurze Einführung dazu, wie Sie Ihre App für die weltweite Verbreitung vorbereiten: [Einführung in die Globalisierung und Lokalisierung](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
+Dieses Video bietet eine kurze Einführung zum Vorbereiten Ihrer app für die Welt: [Einführung in die Globalisierung und Lokalisierung](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 
 **Globalisierung** ist der Vorgang, bei dem Sie Ihre App so entwerfen und entwickeln, dass sie auf verschiedenen globalen Märkten (auf Systemen mit unterschiedlichen Sprach- und Kulturkonfigurationen) angemessen funktioniert, ohne dass kulturspezifische Änderungen oder Anpassungen erforderlich sind.
 
@@ -38,7 +38,7 @@ Ihr Code muss in allen Kulturen, für die Sie Ihre App vorgesehen haben, gleich 
 - Sortierregeln
 
 >[!NOTE]
-> Eine Liste der standardmäßigen Länder-/Regionscodes von Microsoft verwendet finden Sie in der [Liste der offiziellen Land/Region](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
+> Eine Liste der standardmäßigen Länder-/Regionscodes von Microsoft verwendet, finden Sie unter den [Land/Region Liste](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
 
 
 **Lokalisierbarkeit** ist das Ergebnis des Prozess der Vorbereitung der Lokalisierung einer globalisierten App und/oder der Überprüfung, ob die App für die Lokalisierung bereit ist. Die korrekte Herstellung der Lokalisierbarkeit einer App bedeutet, dass der spätere Lokalisierungsprozess keine funktionalen Mängel in der App aufdeckt. Die wichtigste Eigenschaft einer lokalisierbaren App ist, dass ihr ausführbarer Code sauber von den lokalisierbaren Ressourcen der App getrennt ist.
@@ -58,15 +58,15 @@ Die meisten Lokalisierungsteams verwenden spezielle Tools, um den Prozess zu unt
 
 | Artikel | Beschreibung |
 |---------|-------------|
-| [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md) | Entwerfen und entwickeln Sie Ihre App so, dass sie auf Systemen mit unterschiedlichen Sprach- und Kulturkonfigurationen ordnungsgemäß funktioniert. |
-| [Benutzerprofilsprachen und App-Manifest-Sprachen verstehen](manage-language-and-region.md) | In diesem Thema werden die Begriffe „Benutzerprofil-Sprachenliste”, „App-Manifest-Sprachenliste” und „App-Laufzeit-Sprachenliste” definiert. Wir verwenden diese Begriffe in diesem Thema und in anderen Themen in diesem Featurebereich. Daher ist es wichtig zu wissen, was sie bedeuten. |
-| [Globalisieren von Datum, Uhrzeit und Zahlenformaten](use-global-ready-formats.md) | Gestalten Sie Ihre App so, dass sie global einsetzbar ist, indem Sie Datum, Uhrzeit, Telefonnummern und Währungen entsprechend formatieren. Dadurch können Sie Ihre App später zur weltweiten Vermarktung für weitere Kulturkreise, Regionen und Sprachen anpassen. |
-| [Muster zum Formatieren von Datum und Uhrzeit verwenden](use-patterns-to-format-dates-and-times.md) | Verwenden Sie Klassen im Namespace [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live)mit benutzerdefinierten Vorlagen und Mustern, um Daten und Zeiten im gewünschten Format anzuzeigen. |
-| [Layout und Schriften anpassen und RTL unterstützen](adjust-layout-and-fonts--and-support-rtl.md) | Entwerfen Sie Ihre App so, dass die Layouts und Schriften mehrerer Sprachen unterstützen – beispielsweise auch den Textfluss von rechts nach links (right-to-left, RTL). |
-| [NumeralSystem-Werte](glob-numeralsystem-values.md) | In diesem Thema werden die für die **NumeralSystem**-Eigenschaft von verschiedenen Klassen im [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live)-Namespace verfügbaren Werte aufgeführt. |
-| [App lokalisierbar machen](prepare-your-app-for-localization.md) | Eine lokalisierte App kann in anderen Märkten, Sprachen oder Regionen lokalisiert werden, ohne dass funktionale Mängel in der App auftreten. Die wichtigste Eigenschaft einer lokalisierbaren App ist, dass ihr ausführbarer Code sauber von den lokalisierbaren Ressourcen der App getrennt ist. |
-| [Internationale Schriften](loc-international-fonts.md) | Dieses Thema enthält eine Liste der für UWP-Apps verfügbaren Schriften, die in andere Sprachen als Englisch (USA) lokalisiert sind. |
-| [App für bidirektionalen Text entwerfen](design-for-bidi-text.md) | Entwerfen Sie Ihre App so, dass bidirektionale Textunterstützung (BiDi) bereitgestellt wird, sodass Sie Texte aus links und rechtsbündigen Schreibsystemen kombinieren können. |
-| [Verwenden des Multilingual App Toolkit 4.0](use-mat.md) | Das Multilingual App Toolkit (MAT) 4.0 integriert sich in Microsoft Visual Studio 2017, um Übersetzungsunterstützung, Übersetzungsdateiverwaltung und Editortools für UWP-Apps bereitzustellen. |
-| [Multilingual App Toolkit 4.0 – Fragen und Antworten sowie Problembehandlung](mat-faq-troubleshooting.md) | Dieses Thema enthält Antworten auf häufig gestellte Fragen und Probleme in Bezug auf das Multilingual App Toolkit (MAT) 4.0. |
-| [Machen Sie Ihre Anwendung startklar für den Wechsel der japanischen Ära](japanese-era-change.md) | Informationen Sie zu den Wechsel der japanischen Ära Mai 2019 und wie Sie Ihre Anwendung vorbereiten. |
+| [Richtlinien für die Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md) | Entwerfen und entwickeln Sie Ihre App so, dass sie auf Systemen mit unterschiedlichen Sprach- und Kulturkonfigurationen ordnungsgemäß funktioniert. |
+| [Grundlegendes zu Benutzersprachen-Profil und app-manifest-Sprachen](manage-language-and-region.md) | In diesem Thema werden die Begriffe „Benutzerprofil-Sprachenliste”, „App-Manifest-Sprachenliste” und „App-Laufzeit-Sprachenliste” definiert. Wir verwenden diese Begriffe in diesem Thema und in anderen Themen in diesem Featurebereich. Daher ist es wichtig zu wissen, was sie bedeuten. |
+| [Globalisieren Sie Ihrer Formate für Datum/Uhrzeit/Anzahl](use-global-ready-formats.md) | Gestalten Sie Ihre App so, dass sie global einsetzbar ist, indem Sie Datum, Uhrzeit, Telefonnummern und Währungen entsprechend formatieren. Dadurch können Sie Ihre App später zur weltweiten Vermarktung für weitere Kulturkreise, Regionen und Sprachen anpassen. |
+| [Verwenden Sie Vorlagen und Muster zum Formatieren von Datums- und Uhrzeitangaben](use-patterns-to-format-dates-and-times.md) | Verwenden Sie Klassen im Namespace [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) mit benutzerdefinierten Vorlagen und Mustern, um Daten und Zeiten im gewünschten Format anzuzeigen. |
+| [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](adjust-layout-and-fonts--and-support-rtl.md) | Entwerfen Sie Ihre App so, dass die Layouts und Schriften mehrerer Sprachen unterstützen – beispielsweise auch den Textfluss von rechts nach links (right-to-left, RTL). |
+| [NumeralSystem Werte](glob-numeralsystem-values.md) | In diesem Thema werden die für die **NumeralSystem**-Eigenschaft von verschiedenen Klassen im [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live)-Namespace verfügbaren Werte aufgeführt. |
+| [Stellen Sie Ihre app lokalisierbar](prepare-your-app-for-localization.md) | Eine lokalisierte App kann in anderen Märkten, Sprachen oder Regionen lokalisiert werden, ohne dass funktionale Mängel in der App auftreten. Die wichtigste Eigenschaft einer lokalisierbaren App ist, dass ihr ausführbarer Code sauber von den lokalisierbaren Ressourcen der App getrennt ist. |
+| [Internationale Schriftarten](loc-international-fonts.md) | Dieses Thema listet die Schriftarten, die für die UWP-apps, die in anderen Sprachen als USA lokalisiert sind verfügbar Englisch. |
+| [Entwerfen Sie Ihre app für bidirektionalen text](design-for-bidi-text.md) | Entwerfen Sie Ihre App so, dass bidirektionale Textunterstützung (BiDi) bereitgestellt wird, sodass Sie Texte aus links und rechtsbündigen Schreibsystemen kombinieren können. |
+| [Mit dem Multilingual App Toolkit 4.0](use-mat.md) | Das Multilingual App Toolkit (MAT) 4.0 integriert sich in Microsoft Visual Studio 2017, um Übersetzungsunterstützung, Übersetzungsdateiverwaltung und Editortools für UWP-Apps bereitzustellen. |
+| [Multilingual App Toolkit 4.0 – häufig gestellte Fragen und Problembehandlung](mat-faq-troubleshooting.md) | Dieses Thema enthält Antworten auf häufig gestellte Fragen und Probleme in Bezug auf das Multilingual App Toolkit (MAT) 4.0. |
+| [Vorbereiten Sie Ihrer Anwendung auf die japanischen Era-Änderung](japanese-era-change.md) | Hier erhalten Sie Informationen zum im Mai 2019 anstehenden Wechsel der japanischen Ära, und wie Sie Ihre Anwendung darauf entsprechend vorbereiten können. |

@@ -1,37 +1,37 @@
 ---
-Description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
+Description: In diesem Tutorial erläutert, wie eine einfache Anwendung-Benutzeroberfläche zu erstellen. Es erläutert und veranschaulicht die Verwendung von Grid und StackPanel, zwei der häufigsten XAML-Elemente.
 title: Verwenden Sie Grid und StackPanel, um eine einfache Wetter-App zu erstellen.
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931249"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646535"
 ---
-# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutorial: Verwenden Sie Grid und StackPanel, um eine einfache Wetter-App zu erstellen.
+# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutorial: Raster verwenden "und" StackPanel ", um eine einfache Wetter-app zu erstellen.
 
-Verwenden Sie zum Erstellen des Layouts für eine einfache Wetter-App mit XAML die Elemente **Grid** und **StackPanel**. Mit diesen Tools können Sie hervorragend aussehende Apps erstellen, die auf jedem Gerät mit Windows10 funktionieren. Dieses Lernprogramm dauert 10 bis 20Minuten.
+Verwenden Sie zum Erstellen des Layouts für eine einfache Wetter-App mit XAML die Elemente **Grid** und **StackPanel**. Mit diesen Tools können Sie hervorragend aussehende Apps erstellen, die auf jedem Gerät mit Windows 10 funktionieren. Dieses Lernprogramm dauert 10 bis 20 Minuten.
 
 > **Wichtige APIs**: [Grid-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [StackPanel-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>Voraussetzungen
-- Windows 10 und Microsoft Visual Studio 2015 oder höher. (Neueste Visual Studio empfohlen für die aktuelle Entwicklung und Security Updates) [Klicken Sie hier, um zu erfahren, wie Sie mit Visual Studio einrichten](../../get-started/get-set-up.md).
+- Windows 10 und Microsoft Visual Studio 2015 oder höher. (Neueste Visual Studio, die für die aktuelle Entwicklung "und" Security Updates empfohlen werden) [Hier klicken, um zu erfahren, wie Sie mit Visual Studio Einrichtung](../../get-started/get-set-up.md).
 - Kenntnisse im Erstellen einer einfachen „Hello, World“-App mit XAML und C#. Wenn Sie diese noch nicht besitzen [klicken Sie hier, um zu erfahren, wie Sie eine „Hello World“-App erstellen](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
-## <a name="step-1-create-a-blank-app"></a>Schritt1: Erstellen Sie eine leere App.
+## <a name="step-1-create-a-blank-app"></a>Schritt 1: Erstellen einer leeren app
 1. Wählen Sie in Visual Studio **Datei** > **Neues Projekt** aus.
-2. Wählen Sie im linken Bereich des Dialogfelds **Neues Projekt** **Visual C#** > **Windows** > **Universell** oder **Visual C++** > **Windows** > **Universell** aus.
+2. Wählen Sie im linken Bereich des Dialogfelds **Neues Projekt****Visual C#** > **Windows** > **Universell** oder **Visual C++** > **Windows** > **Universell** aus.
 3. Wählen Sie im mittleren Bereich **Blank App** aus.
-4. Geben Sie im Feld **Name** **WeatherPanel** ein, und wählen Sie **OK** aus.
+4. Geben Sie im Feld **Name****WeatherPanel** ein, und wählen Sie **OK** aus.
 5. Wählen Sie zum Ausführen des Programms im Menü **Debugging** > **Debugging starten** aus, oder drücken Sie F5.
 
-## <a name="step-2-define-a-grid"></a>Schritt2: Definieren eines Rasters
+## <a name="step-2-define-a-grid"></a>Schritt 2: Definieren Sie ein Raster
 In XAML besteht ein **Raster** aus einer Reihe von Zeilen und Spalten. Durch Angabe der Zeile und Spalte eines Elements innerhalb eines **Rasters** können Sie andere Elemente in einer Benutzeroberfläche platzieren und anordnen. Zeilen und Spalten werden mit den Elementen **RowDefinition** und **ColumnDefinition** definiert.
 
 Um mit dem Erstellen eines Layouts zu beginnen, öffnen Sie **MainPage.xaml** mithilfe des **Projektmappen-Explorers** und ersetzen das automatisch generierte **Grid**-Element durch diesen Code.
@@ -49,13 +49,13 @@ Um mit dem Erstellen eines Layouts zu beginnen, öffnen Sie **MainPage.xaml** mi
 </Grid>
 ```
 
-Das neue **Raster** erstellt eine Reihe von zwei Zeilen und Spalten, die das Layout der App-Oberfläche definieren. Die erste Spalte hat eine **Breite** von "3\*", während die zweite Spalte eine Breite von "5\*" hat. Der horizontale Abstand zwischen den beiden Spalten wird hierdurch im Verhältnis 3:5 geteilt. Auf die gleiche Weise haben die beiden Zeilen eine **Höhe** von "2\*" bzw. "\*", damit **Grid** der ersten Zeile zwei Mal so viel Platz zuteilt wie der zweiten Zeile ("\*" bedeutet "1\*"). Diese Seitenverhältnisse werden bewahrt, auch wenn die Fenstergröße oder das Gerät geändert werden.
+Das neue **Raster** erstellt eine Reihe von zwei Zeilen und Spalten, die das Layout der App-Oberfläche definieren. Die erste Spalte enthält eine **Breite** der "3\*", während die zweite "5\*", den horizontalen Abstand zwischen den beiden Spalten bei einem Verhältnis von 3:5 geteilt. Auf die gleiche Weise, die zwei Zeilen verfügen eine **Höhe** von "2\*"und"\*", also die **Raster** reserviert zwei Mal so viel Speicherplatz für die erste Zeile wie bei der zweiten ("\*"ist identisch mit" 1\*"). Diese Seitenverhältnisse werden bewahrt, auch wenn die Fenstergröße oder das Gerät geändert werden.
 
 Informationen zu weiteren Methoden für die Größeneinstellung von Zeilen und Spalten finden Sie unter [Definieren von Layouts mit XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties).
 
 Wenn Sie die Anwendung jetzt ausführen, wird Ihnen lediglich eine leere Seite angezeigt, da keiner der **Raster**-Bereiche Inhalte enthält. Um das **Raster** anzuzeigen, fügen wir Farbe hinzu.
 
-## <a name="step-3-color-the-grid"></a>Schritt3: Färben des Rasters
+## <a name="step-3-color-the-grid"></a>Schritt 3: Farbe des Rasters
 Um dem **Raster** Farbe hinzuzufügen, fügen wir drei **Border**-Elemente mit jeweils einer anderen Hintergrundfarbe hinzu. Jedes Element wird darüber hinaus einer Zeile und Spalte im übergeordneten **Grid** zugewiesen. Dies erfolgt mithilfe der Attribute **Grid.Row** und **Grid.Column**. Die Werte dieser Attribute sind standardmäßig 0. Daher müssen Sie diese dem ersten **Border** nicht zuweisen. Fügen Sie dem **Grid**-Element nach den Zeilen- und Spaltendefinitionen den folgenden Code hinzu.
 
 ```xml
@@ -70,10 +70,10 @@ Wenn Sie die App ausführen, sieht das Ergebnis wie folgt aus.
 
 ![Färben des Rasters](images/grid-weather-1.png)
 
-## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>Schritt4: Organisieren von Inhalten mithilfe von StackPanel-Elementen
+## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>Schritt 4: Organisieren Sie Inhalte mithilfe von StackPanel-Elementen
 **StackPanel** ist das zweite UI-Element, das wir verwenden, um die Wetter-App zu erstellen. **StackPanel** ist ein grundlegender Bestandteil zahlreicher Basislayouts von Apps, mit dem Sie Elemente vertikal oder horizontal stapeln können.
 
-Im folgenden Code erstellen wir zwei **StackPanel**-Elemente und füllen jedes mit drei **TextBlocks**. Fügen Sie diese **StackPanel**-Elemente dem **Grid** unterhalb der **Border**-Elemente aus Schritt3 hinzu. Dies bewirkt, dass die **TextBlock**-Elemente auf dem zuvor erstellten farbigen **Grid** gerendert werden.
+Im folgenden Code erstellen wir zwei **StackPanel**-Elemente und füllen jedes mit drei **TextBlocks**. Fügen Sie diese **StackPanel**-Elemente dem **Grid** unterhalb der **Border**-Elemente aus Schritt 3 hinzu. Dies bewirkt, dass die **TextBlock**-Elemente auf dem zuvor erstellten farbigen **Grid** gerendert werden.
 
 ```xml
 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
@@ -95,7 +95,7 @@ Wenn Sie die App jetzt ausführen, wird sie Ihnen ungefähr wie folgt angezeigt.
 
 ![Hinzufügen von StackPanels](images/grid-weather-2.png)
 
-## <a name="step-5-add-an-image-icon"></a>Schritt5: Hinzufügen eines Bildsymbols
+## <a name="step-5-add-an-image-icon"></a>Schritt 5: Fügen Sie ein Image-Symbol hinzu.
 
 Zum Schluss füllen Sie den leeren Abschnitt im **Grid** mit einem Bild, das das Wetter von heute zeigt – ein Bild, das einen teilweise bewölkten Himmel anzeigt.
 
@@ -103,9 +103,9 @@ Laden Sie das Bild unten herunter, und speichern Sie es als PNG-Datei mit dem Na
 
 ![Teilweise bewölkt](images/partially-cloudy.PNG)
 
-Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf den Ordner **Ressourcen**, und wählen Sie **Hinzufügen** -> **Vorhandenes Element...** aus. Suchen Sie im nun angezeigten Browser die Datei „Teilweise-bewölkt“, wählen Sie die Datei aus, und klicken Sie auf **Hinzufügen**.
+In der **Projektmappen-Explorer**, klicken Sie mit der rechten Maustaste auf die **Assets** Ordner, und wählen **hinzufügen** -> **vorhandenes Element...** Suchen von teilweise cloudy.png im Browser, die eingeblendet, wählen Sie sie und klicken Sie auf **hinzufügen**.
 
-Fügen Sie als Nächstes in **"MainPage.xaml"** das folgende **Image**-Element unterhalb der StackPanels aus Schritt4 hinzu.
+Fügen Sie als Nächstes in **"MainPage.xaml"** das folgende **Image**-Element unterhalb der StackPanels aus Schritt 4 hinzu.
 
 ```xml
 <Image Margin="20" Source="Assets/partially-cloudy.png"/>

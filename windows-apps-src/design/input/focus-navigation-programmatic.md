@@ -1,5 +1,5 @@
 ---
-Description: Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a UWP app.
+Description: Erfahren Sie, wie Sie den Fokusnavigation mit der Tastatur, Gamepad und Tools für Barrierefreiheit in einer UWP-app programmgesteuert zu verwalten.
 title: Programmgesteuerte Fokusnavigation mit Tastatur, Gamepad und Bedienungshilfen
 label: Programmatic focus navigation
 keywords: Tastatur, Gamecontroller, Fernbedienung, Navigation, Navigationsstrategie, Eingabe, Benutzerinteraktion, Bedienungshilfen, Verwendbarkeit
@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d25896a490b0a6b1d65075852f44dfb89c2e53
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075133"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662715"
 ---
 # <a name="programmatic-focus-navigation"></a>Programmgesteuerte Fokusnavigation
 
@@ -26,7 +26,7 @@ Verwenden Sie die [FocusManager.TryMoveFocus](https://docs.microsoft.com/uwp/api
 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) versucht, den Fokus von dem Element mit Fokus auf das nächste fokussierbare Element in der angegebenen Richtung zu ändern, während [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) das Element abruft (als [DependencyObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject)), das den Fokus basierend auf der angegebenen Navigationsrichtung erhalten wird (nur direktionale Navigation, kann nicht verwendet werden, um die TAB-Navigation zu emulieren).
 
 > [!NOTE]
-> Wir empfehlen die Verwendung der [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_)-Methode anstelle von [FindNextFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextFocusableElement_Windows_UI_Xaml_Input_FocusNavigationDirection_), da FindNextFocusableElement ein UIElement abruft, das Null zurückgibt, wenn das nächste fokussierbare Element kein UIElement ist (z.B. ein Hyperlink-Objekt). 
+> Wir empfehlen die Verwendung der [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_)-Methode anstelle von [FindNextFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextFocusableElement_Windows_UI_Xaml_Input_FocusNavigationDirection_), da FindNextFocusableElement ein UIElement abruft, das Null zurückgibt, wenn das nächste fokussierbare Element kein UIElement ist (z. B. ein Hyperlink-Objekt). 
 
 ## <a name="find-a-focus-candidate-within-a-scope"></a>Suche nach einem Fokuskandidaten in einem Bereich
 
@@ -143,7 +143,7 @@ Wenn der Fokus auf Element B liegt, identifiziert FindNextElement bei der Naviga
 
 ![Benutzerdefiniertes Fokusnavigationsverhalten mithilfe von Navigationshinweisen](images/keyboard/navigation-hints.png)
 
-*Benutzerdefiniertes Fokusnavigationsverhalten mithilfe von Navigationshinweisen*
+*Benutzerdefinierte Fokus Navigationsverhalten verwenden Navigation Hinweise*
 
 ## <a name="navigation-focus-events"></a>Navigationsfokusereignisse
 
@@ -211,7 +211,7 @@ Die folgende Abbildung zeigt, wie beim Verschieben nach rechts von A XYFocus B4 
 
 ![Ändern des Fokusnavigationsziels bei einem GettingFocus-Ereignis](images/keyboard/focus-events.png)
 
-*Ändern des Fokusnavigationsziels bei einem GettingFocus-Ereignis*
+*Ändern den Fokus Navigationsziel GettingFocus-Ereignis*
 
 Im Folgenden erfahren Sie, wie Sie das [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus)-Ereignis verarbeiten und den Fokus umleiten.
 
@@ -327,6 +327,6 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Fokusnavigation für Tastatur, Gamepad, Fernbedienung und Bedienungshilfen](focus-navigation.md)
-- [Tastaturinteraktionen](keyboard-interactions.md)
+- [Fokusnavigation für Tastatur, Gamepad, Remotesteuerung und Tools für Barrierefreiheit](focus-navigation.md)
+- [Tastenkombinationen](keyboard-interactions.md)
 - [Barrierefreiheit der Tastaturnavigation](../accessibility/keyboard-accessibility.md)

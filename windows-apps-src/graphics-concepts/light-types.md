@@ -1,6 +1,6 @@
 ---
 title: Lichttypen
-description: 'Die Lichttyp-Eigenschaft bestimmt, welche Art von Lichtquelle Sie verwenden. In Direct3D gibt es drei Lichttypen: Punktlichter, Spotlights und gerichtetes Licht.'
+description: 'Mit der Eigenschaft „Lichttyp“ legen Sie fest, welchen Lichtquellentyp Sie verwenden. In Direct3D gibt es drei Lichttypen: Punktlichter, Spotlights und gerichtetes Licht.'
 ms.assetid: 57748CAF-6F08-4D1D-9ED6-8FAA8C5FE314
 keywords:
 - Lichttypen
@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1815f0956fbc175fec5ca892dbeeec92b2f939ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926798"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594695"
 ---
 # <a name="light-types"></a>Lichttypen
 
 
-Die Lichttyp-Eigenschaft bestimmt, welche Art von Lichtquelle Sie verwenden. In Direct3D gibt es drei Lichttypen: Punktlichter, Spotlights und gerichtetes Licht. Mit variierendem Rechenaufwand beleuchtet jeder Lichttyp die Objekte in einer Szene unterschiedlich.
+Mit der Eigenschaft „Lichttyp“ legen Sie fest, welchen Lichtquellentyp Sie verwenden. In Direct3D gibt es drei Lichttypen: Punktlichter, Spotlights und gerichtetes Licht. Mit variierendem Rechenaufwand beleuchtet jeder Lichttyp die Objekte in einer Szene unterschiedlich.
 
-## <a name="span-idpointlightspanspan-idpointlightspanspan-idpointlightspanpoint-light"></a><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>Punklichter
+## <a name="span-idpointlightspanspan-idpointlightspanspan-idpointlightspanpoint-light"></a><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>Punktuelles Licht
 
 
 Punktlichter haben in einer Szene Farben und Positionen, aber keine Richtung. Sie geben das Licht, wie in der folgenden Abbildung dargestellt, in alle Richtungen ab.
@@ -33,7 +33,7 @@ Eine Glühbirne ist ein gutes Beispiel für ein Punktlicht. Punktlichter werden 
 
 Gerichtetes Licht hat zwar Farbe und Richtung, aber keine Position. Es strahlt paralleles Licht ab. Das bedeutet, dass die durch gerichtetes Licht erzeugte Beleuchtung sich in der gleichen Richtung durch eine Szene bewegt. Stellen Sie sich ein gerichtetes Licht als Lichtquelle in nahezu unendlich weiter Entfernung vor, beispielsweise die Sonne. Gerichtetes Licht wird nicht von Dämpfung und Reichweite beeinflusst, so dass die von Ihnen angegebene Richtung und Farbe die einzigen Faktoren bilden, die Direct3D bei der Berechnung der Scheitelpunktfarben berücksichtigt. Durch die geringe Anzahl von Beleuchtungsfaktoren handelt es sich hierbei um die Beleuchtung mit dem geringsten Rechenaufwand.
 
-## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>Spotlight
+## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>SpotLight
 
 
 Spotlights haben Farbe, Position und Richtung, in der sie Licht abstrahlen. Das von einem Spotlight abgestrahlte Licht besteht aus einem hellen inneren Kegel und einem größeren äußeren Kegel, mit abnehmender Lichtintensität dazwischen, wie in der folgenden Abbildung dargestellt.
@@ -62,7 +62,7 @@ Wenn das Skalarprodukt der Vektoren L und D kleiner oder gleich dem Kosinus des 
 
 ![Formel für Lichtintensität am Scheitelpunkt, nach Farbverlauf](images/falloff.png)
 
-wobei gilt:
+Dabei gilt Folgendes:
 
 -   I<sub>f</sub> ist die Lichtintensität nach dem Farbverlauf
 -   Alpha ist der Winkel zwischen den Vektoren L und D
@@ -79,7 +79,7 @@ Die Auswirkung unterschiedlicher Farbverlaufwerte auf die tatsächliche Beleucht
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Lampen und Material](lights-and-materials.md)
+[Lichter und Materialien](lights-and-materials.md)
 
  
 

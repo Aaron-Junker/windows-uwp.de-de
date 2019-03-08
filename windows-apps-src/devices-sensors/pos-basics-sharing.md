@@ -1,28 +1,28 @@
 ---
 title: PointOfService gemeinsame Nutzung von Geräten
-description: PointOfService-Peripheriegeräte Teilen mit anderen
+description: PointOfService-Peripheriegeräte für andere Benutzer freigeben
 ms.date: 06/14/2018
 ms.topic: article
-keywords: Windows 10, UWP, Point of Service, POS
+keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 53dc22b2aa35b5e69854f6fb489ff6a454c73bf6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926445"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618945"
 ---
 # <a name="pointofservice-device-sharing"></a>PointOfService gemeinsame Nutzung von Geräten
 
-Erfahren Sie mehr über das Netzwerk oder verbundenen Bluetooth-Peripheriegeräte mit anderen Computern in einer Umgebung Teilen, in denen mehrere PCs auf Peripheriegeräte anstatt dedizierten auf jeden Computer angeschlossenen Peripheriegeräte verlassen.
+Erfahren Sie mehr über das Netzwerk oder verbundene Bluetooth-Peripheriegeräte mit anderen Computern in einer Umgebung gemeinsam nutzen, in denen mehrere PCs freigegebene Peripheriegeräte anstelle von dedizierten, auf jedem Computer angeschlossenen Peripheriegeräten abhängen.
 
 ## <a name="device-sharing"></a>Gemeinsame Nutzung von Geräten
 
-Netzwerk- und Bluetooth verbundenen PointOfService-Peripheriegeräte normalerweise verwendet werden, in einer Umgebung Wheere teilen sich mehrere Client-Geräte die gleichen Peripheriegeräte ganzen Tag.  In einer beschäftigt Einzelhandel oder Essen Services-Umgebung wirkt sich Verzögerung in die Möglichkeit für ein Clientgerät an ein Peripheriegerät Anfügen auf die Effizienz, in der ein zuordnen kann schließen eine Transaktion mit dem Kunden und auf die weiter. In einem schnellen Service Restaurant-Szenario, in denen eine Belegdrucker als Küche Drucker verwendet wird, um die Details der Bestellung des Kunden in die Küche ist immer zur Vorbereitung übertragen, werden mehrere Client-Geräte, die Kunden Aufträge verliert.  Nach Abschluss die Reihenfolge sollte jedes Client-Gerät beanspruchen, den freigegebenen Drucker und die Reihenfolge für die Küche ist immer sofort drucken können.
+Netzwerk- und Bluetooth-verbundenen PointOfService-Peripheriegeräte normalerweise verwendet werden, in einer Umgebung Wheere sind mehrere Client-Geräte die gleichen Peripheriegeräten im Laufe des Tages freigeben.  In einer Umgebung mit hoher Auslastung Einzelhandels- oder Food-Services hat eine Verzögerung bei der die Möglichkeit, dass ein Clientgerät zum Anfügen an ein Peripheriegerät Auswirkungen auf die Effizienz, die in der eine Zuordnung eine Transaktion mit dem Kunden zu schließen und zur nächsten fortfahren kann. In einem schnellen Service Restaurant-Szenario, in denen ein Receipt-Drucker als eine Küche Drucker verwendet wird, um die Details der Bestellung eines Kunden in der Küche für die datenvorbereitung übertragen, werden mehrere Client-Geräte, die die Bestellungen von Kunden.  Sobald der Auftrag abgeschlossen ist. sollte jedem Clientgerät Lage Anspruch der freigegebenen Drucker und die Reihenfolge für die Küche sofort zu drucken.
 
-In diesen Umgebungen ist es wichtig, für die Anwendung von vollständig **Löschen** das Geräteobjekt, damit eine andere dasselbe Gerät geltend machen kann.
+In diesen Umgebungen ist es wichtig für die Anwendung vollständig **dispose** des Geräts Objekts, sodass eine andere auf demselben Gerät beanspruchen kann.
 
-Löschen des einen PosPrinter am Ende einer "mit" blockieren
+Freigeben von einem PosPrinter am Ende eine "using"-Block
 
 ```Csharp 
 using Windows.Devices.PointOfService;
@@ -39,7 +39,7 @@ using(PosPrinter printer = await PosPrinter.FromIdAsync("Device ID"))
 ```
 
 
-Löschen des einen PosPrinter durch Aufrufen von Dispose() explizit
+Von einem PosPrinter verworfen durch explizites Aufrufen von Dispose()
 
 ```Csharp 
 using Windows.Devices.PointOfService;
@@ -52,7 +52,7 @@ if (printer != null)
 }
 ```
 
-## <a name="api-methods-used"></a>API-Methoden verwendet 
+## <a name="api-methods-used"></a>API-Methoden 
 
 + [BarcodeScanner.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
 + [CashDrawer.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 

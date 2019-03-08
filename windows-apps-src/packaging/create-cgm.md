@@ -1,29 +1,29 @@
 ---
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
-title: Erstellen und konvertieren Sie eine Quellinhalt-Gruppenzuordnung.
+title: Erstellen und Konvertieren einer Quellinhalt-Gruppenzuordnung
 description: Um Ihre Universelle Windows-Plattform (UWP)-App für die UWP-App-Streaming-Installation vorzubereiten, müssen Sie eine Inhalts-Gruppenzuordnung erstellen. Dieser Artikel hilft Ihnen mit den Einzelheiten für das Erstellen und Konvertieren einer Inhalts-Gruppenzuordnung und bietet gleichzeitig einige Tipps und Tricks.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: Windows10, Uwp, Inhalt-Gruppenzuordnung, Streaming-Installation, Uwp-App-Streaming-Installation, Quellinhalt-Gruppenzuordnung
+keywords: Windows 10, Uwp, Inhalt-Gruppenzuordnung, Streaming-Installation, Uwp-App-Streaming-Installation, Quellinhalt-Gruppenzuordnung
 ms.localizationpriority: medium
 ms.openlocfilehash: 882db0a6a97c5ee203a072156ca3eb82615607bb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115867"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647945"
 ---
-# <a name="create-and-convert-a-source-content-group-map"></a>Erstellen und konvertieren Sie eine Quellinhalt-Gruppenzuordnung.
+# <a name="create-and-convert-a-source-content-group-map"></a>Erstellen und Konvertieren einer Quellinhalt-Gruppenzuordnung
 
 Um Ihre Universelle Windows-Plattform (UWP)-App für die UWP-App-Streaming-Installation vorzubereiten, müssen Sie eine Inhalts-Gruppenzuordnung erstellen. Dieser Artikel hilft Ihnen mit den Einzelheiten für das Erstellen und Konvertieren einer Inhalts-Gruppenzuordnung und bietet gleichzeitig einige Tipps und Tricks.
 
 ## <a name="creating-the-source-content-group-map"></a>Erstellen der Quellinhalt-Gruppenzuordnung
 
-Sie müssen eine `SourceAppxContentGroupMap.xml`-Datei erstellen, und entweder Visual Studio oder das **MakeAppx.exe**-Tool verwenden, um diese Datei auf die endgültige Version zu konvertieren: `AppxContentGroupMap.xml`. Ist es möglich, einen Schrittzu überspringen, indem Sie den `AppxContentGroupMap.xml` von Grund auf neu erstellen. Es wird jedoch empfohlen (und es ist in der Regel einfacher), den `SourceAppxContentGroupMap.xml` zu erstellen und ihn zu konvertieren, da Platzhalter in der `AppxContentGroupMap.xml` nicht zulässig sind (und sie sind sehr nützlich). 
+Sie müssen eine `SourceAppxContentGroupMap.xml`-Datei erstellen, und entweder Visual Studio oder das **MakeAppx.exe**-Tool verwenden, um diese Datei auf die endgültige Version zu konvertieren: `AppxContentGroupMap.xml`. Ist es möglich, einen Schritt zu überspringen, indem Sie den `AppxContentGroupMap.xml` von Grund auf neu erstellen. Es wird jedoch empfohlen (und es ist in der Regel einfacher), den `SourceAppxContentGroupMap.xml` zu erstellen und ihn zu konvertieren, da Platzhalter in der `AppxContentGroupMap.xml` nicht zulässig sind (und sie sind sehr nützlich). 
 
 Betrachten wir ein einfaches Szenario, in dem eine UWP-App-Streaming-Installation von Vorteil ist. 
 
-Angenommen Sie haben ein UWP-Spiel erstellt, aber die Größe der endgültigen App ist mehr als 100GB. Wird nicht, die eine lange dauern download aus dem Microsoft Store, was sehr umständlich sein kann. Wenn Sie sich für die UWP-App-Streaming-Installation entscheiden, können Sie die Reihenfolge angeben, in der die Dateien der App heruntergeladen werden. Indem der Benutzer dem Store anordnet, dass zunächst essenzielle Dateien heruntergeladen werden sollen, wird er Ihre App schneller ausprobieren können, während andere nicht unbedingt erforderlichen Dateien im Hintergrund heruntergeladen werden.
+Angenommen Sie haben ein UWP-Spiel erstellt, aber die Größe der endgültigen App ist mehr als 100 GB. Dafür eine lange dauern, aus dem Microsoft Store herunterladen, die als unpraktisch erweisen kann. Wenn Sie sich für die UWP-App-Streaming-Installation entscheiden, können Sie die Reihenfolge angeben, in der die Dateien der App heruntergeladen werden. Indem der Benutzer dem Store anordnet, dass zunächst essenzielle Dateien heruntergeladen werden sollen, wird er Ihre App schneller ausprobieren können, während andere nicht unbedingt erforderlichen Dateien im Hintergrund heruntergeladen werden.
 
 > [!NOTE]
 > Die Verwendung der UWP-App-Streaming-Installation hängt stark von der Dateiorganisation Ihrer App ab. Es wird empfohlen, dass Sie sich so früh wie möglich Gedanken zum Layout des Inhalts in Bezug auf die UWP-App-Streaming-Installation machen, um das Segmentieren Ihrer App-Dateien zu vereinfachen.
@@ -58,7 +58,7 @@ Es gibt zwei Hauptkomponenten in einer Inhalts-Gruppenzuordnung: der **erforderl
 
 Die erforderliche Inhaltsgruppe ist eine einzelne Inhaltsgruppe innerhalb des `<Required>`-Elements von der `SourceAppxContentGroupMap.xml`. Eine erforderliche Inhaltsgruppe sollte alle wichtigen Dateien zum Starten der App mit minimaler Benutzererfahrung enthalten. Aufgrund der .NET Native-Kompilierung muss der gesamte Code (ausführbare Anwendung) Teil der erforderlichen Gruppe sein. Ressourcen und andere Dateien werden den automatischen Gruppen überlassen.
 
-Wenn Ihre App beispielsweise ein Spiel ist, kann die erforderliche Gruppe z.B. Dateien umfassen, die im Hauptmenü oder auf der Startseite des Spiels verwendet werden.
+Wenn Ihre App beispielsweise ein Spiel ist, kann die erforderliche Gruppe z. B. Dateien umfassen, die im Hauptmenü oder auf der Startseite des Spiels verwendet werden.
 
 Hier ist der Ausschnitt aus der ursprünglichen `SourceAppxContentGroupMap.xml`-Beispieldatei: 
 ```xml
@@ -92,7 +92,7 @@ Wenn Sie Ihre App mit Visual Studio entwickelt haben, empfiehlt es sich, dass Si
 <File Name="Assets\*SplashScreen*"/>
 ```
 
-Die einzelnen hinzugefügten Platzhalter-Dateinamen werden Datei umfassen, die dem Projektverzeichnis aus Visual Studio hinzugefügt wurden, wie z.B. die ausführbare App oder DLL-Dateien. Die WinMetadata- und Eigenschaften-Ordner müssen die anderen Ordner enthalten, die Visual Studio generiert. Die Platzhalterressourcen müssen die Logo- und SplashScreen-Bilder wählen, die für die Installation der App erforderlich sind.
+Die einzelnen hinzugefügten Platzhalter-Dateinamen werden Datei umfassen, die dem Projektverzeichnis aus Visual Studio hinzugefügt wurden, wie z. B. die ausführbare App oder DLL-Dateien. Die WinMetadata- und Eigenschaften-Ordner müssen die anderen Ordner enthalten, die Visual Studio generiert. Die Platzhalterressourcen müssen die Logo- und SplashScreen-Bilder wählen, die für die Installation der App erforderlich sind.
 
 Beachten Sie, dass Sie das doppelte Platzhalterzeichen nicht, "**", im Stamm der Dateistruktur verwenden können, um alle Dateien im Projekt einzuschließen, da dies bei der Konvertierung der `SourceAppxContentGroupMap.xml` auf das endgültige `AppxContentGroupMap.xml` fehlschlagen wird.
 
@@ -143,7 +143,7 @@ Sie können auch Platzhalter mit Text für Dateinamen verwenden. Wenn beispielsw
 
 ## <a name="convert-sourceappxcontentgroupmapxml-to-appxcontentgroupmapxml"></a>Konvertieren von SourceAppxContentGroupMap.xml in AppxContentGroupMap.xml
 
-Um die `SourceAppxContentGroupMap.xml` in die endgültige Version `AppxContentGroupMap.xml` zu konvertieren, können Sie Visual Studio2017 oder das **MakeAppx.exe**-Befehlszeilentool verwenden.
+Um die `SourceAppxContentGroupMap.xml` in die endgültige Version `AppxContentGroupMap.xml` zu konvertieren, können Sie Visual Studio 2017 oder das **MakeAppx.exe**-Befehlszeilentool verwenden.
 
 Verwenden von Visual Studio für die Konvertierung Ihrer Inhaltsgruppen-Zuordnung:
 1. Fügen Sie die `SourceAppxContentGroupMap.xml` zu Ihrem Projektordner hinzu.
@@ -166,4 +166,4 @@ Für weitere Informationen zu den Optionen, die Sie mit **MakeAppx.exe** verwend
 MakeAppx convertCGM /?
 ```
 
-Das ist alles, was Sie brauchen, um Ihre endgültige `AppxContentGroupMap.xml` für Ihre App vorzubereiten! Es gibt noch viel zu tun, bevor Ihre app für den Microsoft Store bereit ist. Weitere Informationen zum gesamten Prozess für das Hinzufügen der UWP-App-Streaming-Installationsfunktion für Ihre App finden Sie in [diesem Blogbeitrag](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).
+Das ist alles, was Sie brauchen, um Ihre endgültige `AppxContentGroupMap.xml` für Ihre App vorzubereiten! Es gibt noch mehr durchführen müssen, bevor die app für den Microsoft Store vollständig bereit ist. Weitere Informationen zum gesamten Prozess für das Hinzufügen der UWP-App-Streaming-Installationsfunktion für Ihre App finden Sie in [diesem Blogbeitrag](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).

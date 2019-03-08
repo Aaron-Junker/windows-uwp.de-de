@@ -1,23 +1,23 @@
 ---
 title: Handbücher zum Portieren von Spielen
-description: Hier finden Sie Anleitungen zum Portieren von vorhandenen Spielen zu Direct3D 11, universelle Windows-Plattform (UWP) und Windows 10.
+description: Enthält Anleitungen für Ihre vorhandenen Spiele Direct3D 11, universelle Windows-Plattform (UWP) und Windows 10 portieren.
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Portieren, Direct3D 11
+keywords: Windows 10, UWP, Spiele, Portieren, Direct3D 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eaa057c700c69621fd66090618ca7c945522d57
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942574"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621345"
 ---
 # <a name="game-porting-guides"></a>Handbücher zum Portieren von Spielen
 
 
 
-Hier finden Sie Anleitungen zum Portieren von vorhandenen Spielen zu Direct3D 11, universelle Windows-Plattform (UWP) und Windows 10.
+Enthält Anleitungen für Ihre vorhandenen Spiele Direct3D 11, universelle Windows-Plattform (UWP) und Windows 10 portieren.
 
 <table>
 <colgroup>
@@ -32,7 +32,7 @@ Hier finden Sie Anleitungen zum Portieren von vorhandenen Spielen zu Direct3D 11
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">Portieren von DirectX9 zur universellen Windows-Plattform</a></p></td>
+<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">Portieren von DirectX 9 zu universellen Windows-Plattform</a></p></td>
 <td align="left"><p>Dieser Abschnitt enthält Artikel, Übersichten und exemplarische Vorgehensweisen zum Portieren von DirectX 9-Spielen zu UWP.</p></td>
 </tr>
 <tr class="even">

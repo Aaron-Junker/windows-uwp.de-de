@@ -3,22 +3,22 @@ description: Gibt in XAML-Markup einen Standardmodus für x:Bind an.
 title: xDefaultBindMode-Attribut
 ms.date: 02/08/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c8917b09f04206a5466797f48414defeb35baf5e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929558"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647605"
 ---
 # <a name="xdefaultbindmode-attribute"></a>x:DefaultBindMode-Attribut
 
 Gibt in XAML-Markup einen Standardmodus für x:Bind an.
 
-**x:DefaultBindMode** ist ab Windows10, Version 1607 (Anniversary Update), SDK-Version 14393, verfügbar.
+**x:DefaultBindMode** ist ab Windows 10, Version 1607 (Anniversary Update), SDK-Version 14393, verfügbar.
 
-## <a name="xaml-attribute-usage"></a>XAML-Attributverwendung
+## <a name="xaml-attribute-usage"></a>XAML-Attributsyntax
 
 ``` syntax
 <object x:DefaultBindMode="OneTime \| OneWay \| TwoWay" .../>
@@ -30,4 +30,4 @@ Gibt in XAML-Markup einen Standardmodus für x:Bind an.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [x:Bind-Markuperweiterung](x-bind-markup-extension.md)
+* [X: Bind-Markuperweiterung](x-bind-markup-extension.md)

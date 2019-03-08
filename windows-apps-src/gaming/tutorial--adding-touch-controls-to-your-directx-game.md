@@ -4,14 +4,14 @@ description: Hier erfahren Sie, wie Sie Ihrem C++-Spiel für die universelle Win
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Touch, Steuerelemente, Directx, Eingabe
+keywords: Windows 10, UWP, Spiele, Touch, Steuerelemente, Directx, Eingabe
 ms.localizationpriority: medium
 ms.openlocfilehash: e8892219b485d320bb77f90ac0d172e8e2403392
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934495"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618735"
 ---
 # <a name="touch-controls-for-games"></a>Toucheingabesteuerelemente für Spiele
 
@@ -19,9 +19,9 @@ ms.locfileid: "8934495"
 
 Hier erfahren Sie, wie Sie Ihrem C++-Spiel für die universelle Windows-Plattform (UWP) mit DirectX einfache touchbasierte Steuerelemente hinzufügen. Wir zeigen Ihnen, wie Sie touchbasierte Steuerelemente hinzufügen, um eine Kamera mit fester Ebene in einer Direct3D-Umgebung zu bewegen, indem die Kameraperspektive durch Bewegen des Fingers oder Eingabestifts geändert wird.
 
-Sie können diese Steuerungen in Spiele integrieren, bei denen der Spieler in einer 3D-Umgebung (z.B. einer Karte oder einem Spielfeld) einen Bildlauf ausführen oder die Ansicht schwenken soll. Bei einem Strategie- oder Puzzlespiel kann der Spieler mit diesen Steuerungen z.B. durch Schwenken nach links oder rechts eine Spielumgebung anzeigen, die größer als der Bildschirm ist.
+Sie können diese Steuerungen in Spiele integrieren, bei denen der Spieler in einer 3D-Umgebung (z. B. einer Karte oder einem Spielfeld) einen Bildlauf ausführen oder die Ansicht schwenken soll. Bei einem Strategie- oder Puzzlespiel kann der Spieler mit diesen Steuerungen z. B. durch Schwenken nach links oder rechts eine Spielumgebung anzeigen, die größer als der Bildschirm ist.
 
-> **Hinweis:** unser Code kann auch mit der Maus-basierte Steuerelemente von verschieben. Die zeigerbezogenen Ereignisse werden von den Windows-Runtime-APIs abstrahiert, sodass sie toucheingabe- oder mausbasierte Zeigerereignisse behandeln können.
+> **Beachten Sie**  unser Code funktioniert auch mit Maus-basierte schwenkansicht Steuerelemente. Die zeigerbezogenen Ereignisse werden von den Windows-Runtime-APIs abstrahiert, sodass sie toucheingabe- oder mausbasierte Zeigerereignisse behandeln können.
 
  
 
@@ -33,7 +33,7 @@ Sie können diese Steuerungen in Spiele integrieren, bei denen der Spieler in ei
 ## <a name="set-up-the-basic-touch-event-infrastructure"></a>Einrichten der grundlegenden Infrastruktur für Toucheingabeereignisse
 
 
-Als Erstes definieren wir den grundlegenden Controllertyp – in diesem Fall: **CameraPanController**. Der Controller wird hier als abstrakte Idee definiert, d.h. als Satz von Verhaltensweisen, die der Benutzer ausführen kann.
+Als Erstes definieren wir den grundlegenden Controllertyp – in diesem Fall: **CameraPanController**. Der Controller wird hier als abstrakte Idee definiert, d. h. als Satz von Verhaltensweisen, die der Benutzer ausführen kann.
 
 Die **CameraPanController**-Klasse ist eine regelmäßig aktualisierte Sammlung von Informationen zum Zustand des Kameracontrollers und bietet der App die Möglichkeit, diese Informationen aus ihrer Aktualisierungsschleife abzurufen.
 
@@ -104,12 +104,12 @@ public:
 
 Die privaten Felder enthalten den aktuellen Zustand des Kameracontrollers. Ihre Funktion wird im Folgenden erläutert.
 
--   **m\_position** ist die Position der Kamera im Szenenbereich. In diesem Beispiel ist der Wert der Z-Koordinate unveränderlich auf„0“ festgelegt. Dieser Wert könnte mit „DirectX::XMFLOAT2“ dargestellt werden, für dieses Beispiel – und um zukünftige Erweiterungen zu ermöglichen – verwenden wir hier aber „DirectX::XMFLOAT3“. Diesen Wert übergeben wir mit der **get\_Position**-Eigenschaft an die App, damit sie den Viewport entsprechend aktualisieren kann.
--   **m\_panInUse** ist ein boolescher Wert, der angibt, ob ein Schwenkvorgang aktiv ist (also ob der Spieler den Bildschirm berührt und die Kamera bewegt).
--   **m\_panPointerID** ist eine eindeutige ID für den Zeiger. Obwohl die ID im Beispiel nicht verwendet wird, empfiehlt es sich, der Controllerzustandsklasse immer einen bestimmten Zeiger zuzuordnen.
--   **m\_panFirstDown** ist der Punkt, an dem der Spieler während des Kameraschwenks erstmals den Bildschirm berührt oder mit der Maus geklickt hat. Dieser Wert wird später verwendet, um einen inaktiven Bereich festzulegen, damit die Ansicht nicht flimmert, wenn der Bildschirm berührt oder die Maus leicht bewegt wird.
--   **m\_panPointerPosition** ist der Punkt auf dem Bildschirm, an den der Spieler den Zeiger gerade bewegt hat. Dieser Wert wird mit **m\_panFirstDown** verglichen, um die beabsichtigte Bewegungsrichtung des Spielers zu bestimmen.
--   **m\_panCommand** ist der berechnete endgültige Befehl für den Kameracontroller: nach oben, nach unten, nach links oder nach rechts. Da die Kamerabewegung hier auf die X-Y-Ebene beschränkt ist, könnte stattdessen ein DirectX::XMFLOAT2-Wert verwendet werden.
+-   **m\_Position** ist die Position der Kamera im Bereich der Szene. In diesem Beispiel ist der Wert der Z-Koordinate unveränderlich auf „0“ festgelegt. Dieser Wert könnte mit „DirectX::XMFLOAT2“ dargestellt werden, für dieses Beispiel – und um zukünftige Erweiterungen zu ermöglichen – verwenden wir hier aber „DirectX::XMFLOAT3“. Wir übergeben Sie diesen Wert über die **erhalten\_Position** Eigenschaft, um die app selbst, damit den Viewport entsprechend aktualisiert werden können.
+-   **m\_PanInUse** ist ein boolescher Wert, der angibt, ob ein Pan-Vorgang aktiv ist; oder, genauer gesagt, ob der Spieler den Bildschirm berühren und Bewegen der Kamera.
+-   **m\_PanPointerID** ist eine eindeutige ID für den Zeiger. Obwohl die ID im Beispiel nicht verwendet wird, empfiehlt es sich, der Controllerzustandsklasse immer einen bestimmten Zeiger zuzuordnen.
+-   **m\_PanFirstDown** ist der Punkt, auf dem Bildschirm, in denen berührt des Bildschirms der Spieler zunächst oder die Maus geklickt, während der Kamera Pan-Aktion. Dieser Wert wird später verwendet, um einen inaktiven Bereich festzulegen, damit die Ansicht nicht flimmert, wenn der Bildschirm berührt oder die Maus leicht bewegt wird.
+-   **m\_PanPointerPosition** ist der Punkt, auf dem Bildschirm, in dem der Spieler hat den Zeiger derzeit verschoben. Wir verwenden, um welche Richtung bestimmen möchten, dass der Spieler verschieben, indem er sie relativ zum Untersuchen **m\_PanFirstDown**.
+-   **m\_PanCommand** ist der endgültige berechnete-Befehl für den Controller Kamera: oben, unten, links oder rechts. Da die Kamerabewegung hier auf die X-Y-Ebene beschränkt ist, könnte stattdessen ein DirectX::XMFLOAT2-Wert verwendet werden.
 
 Mit den folgenden drei Ereignishandlern aktualisieren wir die Informationen zum Zustand des Kameracontrollers.
 
@@ -121,8 +121,8 @@ Die folgenden Methoden und Eigenschaften verwenden wir, um die Zustandsinformati
 
 -   **Initialize** ist ein Ereignishandler, den die App aufruft, um die Steuerelemente zu initialisieren und an das [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Objekt anzufügen, das das Anzeigefenster beschreibt.
 -   **SetPosition** ist eine Methode, die die App aufruft, um die Koordinaten (X, Y und Z) der Steuerungen im Szenenbereich festzulegen. Beachten Sie, dass die Z-Koordinate in diesem Lernprogramm immer Null ist.
--   **get\_Position** ist eine Eigenschaft, auf die die App zugreift, um die aktuelle Position der Kamera im Szenenbereich abzurufen. Diese Eigenschaft wird verwendet, um der App die aktuelle Kameraposition mitzuteilen.
--   **get\_FixedLookPoint** ist eine Eigenschaft, auf die die App zugreift, um den aktuellen Punkt abzurufen, auf den die Kamera gerichtet ist. In diesem Beispiel ist der Punkt auf die Normale der X-Y-Ebene beschränkt.
+-   **erste\_Position** ist eine Eigenschaft, die unsere app zugreift, um die aktuelle Position der Kamera im Bereich der Szene zu erhalten. Diese Eigenschaft wird verwendet, um der App die aktuelle Kameraposition mitzuteilen.
+-   **erste\_FixedLookPoint** ist eine Eigenschaft, die unsere app zugreift, um den aktuellen Punkt zu erhalten, zu dem die Controller-Kamera sind aufgetreten. In diesem Beispiel ist der Punkt auf die Normale der X-Y-Ebene beschränkt.
 -   **Update** ist eine Methode, die den Controllerzustand liest und die Kameraposition aktualisiert. &lt;Etwas&gt; wird in der Hauptschleife der App kontinuierlich aufgerufen, um die Kameracontrollerdaten und die Kameraposition im Szenenbereich zu aktualisieren.
 
 Jetzt haben Sie alle Komponenten, die Sie zum Implementieren von Toucheingabesteuerungen benötigen. Sie können feststellen, wann und wo die Fingereingabe- oder Mauszeigerereignisse stattgefunden haben und um welche Aktion es sich dabei handelt. Sie können die Position und Ausrichtung der Kamera in Bezug zum Szenenbereich festlegen und die Änderungen nachverfolgen. Und schließlich können Sie die neue Kameraposition der aufrufenden App mitteilen.
@@ -132,7 +132,7 @@ Als Nächstes setzen wir diese Teile zusammen.
 ## <a name="create-the-basic-touch-events"></a>Erstellen der grundlegenden Fingereingabeereignisse
 
 
-Der Ereignisverteiler der Windows-Runtime stellt dreiEreignisse bereit, die von der App behandelt werden sollen:
+Der Ereignisverteiler der Windows-Runtime stellt drei Ereignisse bereit, die von der App behandelt werden sollen:
 
 -   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
 -   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
@@ -170,7 +170,7 @@ void CameraPanController::OnPointerPressed(
 }
 ```
 
-Mit diesem Handler teilen wir der aktuellen **CameraPanController**-Instanz mit, dass der Kameracontroller als aktiv behandelt werden soll. Hierzu wird **m\_panInUse** auf „true“ festgelegt. Auf diese Weise verwendet die App die aktuellen Positionsdaten zum Aktualisieren des Viewports, wenn sie **Update** aufruft.
+Wir verwenden diesen Handler können Sie die aktuelle **CameraPanController** Instanz kennen, Kamera Controller behandelt werden als aktiv festlegen **m\_PanInUse** auf "true". Auf diese Weise verwendet die App die aktuellen Positionsdaten zum Aktualisieren des Viewports, wenn sie **Update** aufruft.
 
 Nachdem wir die Basiswerte für die Kamerabewegung beim Berühren des Bildschirms oder Klicken im Anzeigefenster eingerichtet haben, müssen wir bestimmen, was passieren soll, wenn der Benutzer den Finger auf dem Bildschirm bewegt oder die Maus mit gedrückter Maustaste bewegt.
 
@@ -190,7 +190,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Abschließend müssen wir den Kameraschwenk deaktivieren, wenn der Spieler aufhört, den Bildschirm zu berühren. Dazu verwenden wir **OnPointerReleased**. Dieser Ereignishandler wird aufgerufen, wenn [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) ausgelöst wird, um **m\_panInUse** auf „false“ festzulegen, den Kameraschwenk zu deaktivieren und die Zeiger-ID auf Null zu festzulegen.
+Abschließend müssen wir den Kameraschwenk deaktivieren, wenn der Spieler aufhört, den Bildschirm zu berühren. Wir verwenden **OnPointerReleased**, die aufgerufen wird, wenn [ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279) ausgelöst wird, entsprechend **m\_PanInUse** auf "false" und Deaktivieren der Kamera Pan-Bewegung und die ID der Zeiger auf 0 festgelegt.
 
 **OnPointerReleased**
 
@@ -212,7 +212,7 @@ void CameraPanController::OnPointerReleased(
 
 Jetzt verbinden wir die Ereignisse und initialisieren alle grundlegenden Zustandsfelder des Kameracontrollers.
 
-**Initialize**
+**Initialisieren**
 
 ```cpp
 void CameraPanController::Initialize( _In_ CoreWindow^ window )
@@ -271,14 +271,14 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 
 **SetPosition** ist eine öffentliche Methode, die wir in der App aufrufen können, wenn wir die Position des Kameracontrollers auf einen bestimmten Punkt festlegen müssen.
 
-**get\_Position** ist die wichtigste öffentliche Eigenschaft: Mit dieser Eigenschaft ruft die App die aktuelle Position des Kameracontrollers im Szenenbereich ab, damit sie den Viewport entsprechend aktualisieren kann.
+**erste\_Position** ist die wichtigste öffentliche Eigenschaft: Dies ist die Möglichkeit, unsere app Ruft die aktuelle Position der Kamera-Controllers im Bereich der Szene, damit den Viewport entsprechend aktualisiert werden können.
 
-**get\_FixedLookPoint** ist eine öffentliche Eigenschaft, die in diesem Beispiel einen Blickpunkt senkrecht zur X-Y-Ebene abruft. Sie können diese Methode ändern, um die Berechnung der X-, Y- und Z-Koordinatenwerte mit den trigonometrischen Funktionen Sinus und Kosinus durchzuführen, wenn Sie schrägere Winkel für die feste Kamera verwenden möchten.
+**erste\_FixedLookPoint** ist eine öffentliche Eigenschaft, die in diesem Beispiel einem Blick Punkt abruft senkrecht zur x-und y-Ebene. Sie können diese Methode ändern, um die Berechnung der X-, Y- und Z-Koordinatenwerte mit den trigonometrischen Funktionen Sinus und Kosinus durchzuführen, wenn Sie schrägere Winkel für die feste Kamera verwenden möchten.
 
 ## <a name="updating-the-camera-controller-state-information"></a>Aktualisieren der Zustandsinformationen des Kameracontrollers
 
 
-Jetzt führen wir die Berechnungen aus, mit denen die in **m\_panPointerPosition** erfassten Zeigerkoordinaten in neue Koordinaten für den 3D-Szenenbereich konvertiert werden. Die App ruft diese Methode bei jeder Aktualisierung der Hauptschleife auf. Dabei werden die neuen, an die App zu übergebenden Positionsinformationen berechnet, die zum Aktualisieren der Ansichtsmatrix vor der Projektion in den Viewport verwendet werden.
+Nun führen wir unsere Berechnungen, die die Informationen der Zeiger-Koordinate in nachverfolgt konvertieren **m\_PanPointerPosition** in neuen-Koordinate Informationen, die jeweiligen unsere 3D-Szene Speicherplatz. Die App ruft diese Methode bei jeder Aktualisierung der Hauptschleife auf. Dabei werden die neuen, an die App zu übergebenden Positionsinformationen berechnet, die zum Aktualisieren der Ansichtsmatrix vor der Projektion in den Viewport verwendet werden.
 
 ```cpp
 
@@ -321,12 +321,12 @@ void CameraPanController::Update( CoreWindow ^window )
 }
 ```
 
-Damit die Bewegung bei Verwendung der Finger- oder Mauseingabe nicht "zittert" und die Schwenkbewegung der Kamera dadurch ruckartig wird, legen wir einen inaktiven Bereich mit einem Durchmesser von 32Pixel um den Zeiger fest. Außerdem haben wir einen Geschwindigkeitswert – in diesem Fall 1:1 – für die Zeigerbewegung außerhalb des inaktiven Bereichs. Sie können dieses Verhalten anpassen, um die Geschwindigkeitsrate zu erhöhen oder zu verringern.
+Damit die Bewegung bei Verwendung der Finger- oder Mauseingabe nicht "zittert" und die Schwenkbewegung der Kamera dadurch ruckartig wird, legen wir einen inaktiven Bereich mit einem Durchmesser von 32 Pixel um den Zeiger fest. Außerdem haben wir einen Geschwindigkeitswert – in diesem Fall 1:1 – für die Zeigerbewegung außerhalb des inaktiven Bereichs. Sie können dieses Verhalten anpassen, um die Geschwindigkeitsrate zu erhöhen oder zu verringern.
 
 ## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>Aktualisieren der Ansichtsmatrix mit der neuen Kameraposition
 
 
-Jetzt können wir eine Koordinate des Szenenbereichs abrufen, auf die die Kamera ausgerichtet ist und die jedes Mal aktualisiert wird, wenn die App dazu angewiesen wird (z.B. alle 60Sekunden in der Hauptschleife der App). Dieser Pseudocode zeigt das Aufrufverhalten, das Sie implementieren können:
+Jetzt können wir eine Koordinate des Szenenbereichs abrufen, auf die die Kamera ausgerichtet ist und die jedes Mal aktualisiert wird, wenn die App dazu angewiesen wird (z. B. alle 60 Sekunden in der Hauptschleife der App). Dieser Pseudocode zeigt das Aufrufverhalten, das Sie implementieren können:
 
 ```cpp
  myCameraPanController->Update( m_window ); 
@@ -339,7 +339,7 @@ Jetzt können wir eine Koordinate des Szenenbereichs abrufen, auf die die Kamera
         );  
 ```
 
-Herzlichen Glückwunsch! Sie haben in Ihrem Spiel einen einfachen Satz mit Toucheingabesteuerungen zum Schwenken einer Kamera implementiert.
+Gratulation! Sie haben in Ihrem Spiel einen einfachen Satz mit Toucheingabesteuerungen zum Schwenken einer Kamera implementiert.
 
 
  

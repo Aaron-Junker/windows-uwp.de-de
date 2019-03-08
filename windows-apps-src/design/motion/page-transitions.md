@@ -1,19 +1,19 @@
 ---
-Description: Learn how to use page transitions in your UWP apps.
+Description: Erfahren Sie, wie Seitenübergänge in Ihren UWP-apps verwenden.
 title: Seitenübergänge in UWP-Apps
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942242"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646455"
 ---
 # <a name="page-transitions"></a>Seitenübergänge
 
@@ -23,7 +23,7 @@ Für die Navigation zwischen Seiten in einer App stehen zwei verschiedene Animat
 
 ## <a name="page-refresh"></a>Seite aktualisieren
 
-Seitenaktualisierung ist eine Kombination aus einer Slide-Up-Animation und einer Einblendungsanimation für den eingehenden Inhalt. Verwenden Sie die Seitenaktualisierung, wenn der Benutzer an den Anfang eines Navigationsstapels gebracht wird, z. B. beim Navigieren zwischen Registerkarten oder Navigationselementen auf der linken Navigationsleiste.
+Die Seitenaktualisierung ist eine Kombination aus einer Folie Animation und eine Überblendung in die Animation für den eingehenden Inhalt. Verwenden Sie die Seitenaktualisierung, wenn der Benutzer an den Anfang eines Navigationsstapels gebracht wird, z. B. beim Navigieren zwischen Registerkarten oder Navigationselementen auf der linken Navigationsleiste.
 
 Der gewünschte Effekt ist ein Neubeginn für den Benutzer.
 
@@ -37,7 +37,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**Hinweis:**: Ein [**Frame**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) verwendet automatisch [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) zur Animation der Navigation zwischen zwei Seiten. Standardmäßig ist die Animation eine Seitenaktualisierung.
+**Hinweis**: Ein [ **Frame** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) verwendet automatisch die [ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) Navigation zwischen zwei Seiten animiert. Standardmäßig ist die Animation eine Seitenaktualisierung.
 
 ## <a name="drill"></a>Drill
 
@@ -54,11 +54,11 @@ Die Drill-Animation wird durch die Klasse [**DrillInNavigationTransitionInfo**](
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 ```
 
-## <a name="horizontal-slide"></a>Horizontale Ziehen
+## <a name="horizontal-slide"></a>Horizontale Folie
 
-Verwenden Sie horizontale ziehen, um anzuzeigen, dass geschwisterseiten nebeneinander angezeigt werden. Das [NavigationView](../controls-and-patterns/navigationview.md) -Steuerelement verwendet diese Animation automatisch für den oberen, aber wenn Sie Ihre eigenen horizontalen Navigationsfunktionalität erstellen, Sie können implementieren horizontale Ziehen mit SlideNavigationTransitionInfo.
+Verwenden Sie horizontale Folie, um anzuzeigen, dass gleichgeordneten Seiten nebeneinander angezeigt werden. Die [NavigationView](../controls-and-patterns/navigationview.md) Steuerelement wird automatisch diese Animation für Top Nav verwendet, aber wenn Sie Ihre eigenen horizontale Navigationserlebnis erstellen, dann können Sie implementieren horizonal Folie mit SlideNavigationTransitionInfo.
 
-Der gewünschte Effekt ist, dass die Benutzer zwischen Seiten navigieren, die nebeneinander befinden. 
+Die gewünschte Gefühl ist, dass der Benutzer Navigieren zwischen Seiten, die nebeneinander befinden. 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
@@ -87,5 +87,5 @@ Dies kann nützlich sein, wenn Sie das Navigationsverhalten dynamisch an die Bil
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Navigieren zwischen zwei Seiten](../basics/navigate-between-two-pages.md)
-- [Bewegung in UWP-Apps](index.md)
+- [Navigieren Sie zwischen zwei Seiten](../basics/navigate-between-two-pages.md)
+- [Während der Übertragung in UWP-apps](index.md)

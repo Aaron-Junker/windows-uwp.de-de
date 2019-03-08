@@ -1,16 +1,16 @@
 ---
 title: Neuigkeiten in der Windows-Dokumentation im September 2017 – Entwicklung von UWP-Apps
-description: Neue Features, Videos und Entwicklerleitfäden in der Entwicklerdokumentation für Windows10 im September2017
-keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows10, 1709
+description: Neue Features, Videos und Entwicklerleitfäden in der Entwicklerdokumentation für Windows 10 im September 2017
+keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a296cc877279292f73b591a86ede9136b0d9758
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044168"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645195"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im September 2017
 
@@ -18,15 +18,15 @@ Die Entwicklerdokumentation für die Windows-Plattform wird ständig mit Informa
 
 Natürlich steht das Fall Creators Update direkt vor der Tür. Weitere Dokumentation folgen in einigen Monaten!
 
-Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/your-first-app.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
+Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/your-first-app.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
 ## <a name="features"></a>Features
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live Creators-Programm
 
-Das Xbox Live Creators-Programm ist jetzt live, damit Sie ganz einfach UWP-Spiele erstellen und veröffentlichen können, die auf Windows10-PCs und Xbox One-Konsolen ausgeführt werden. Weitere Informationen finden Sie unter [Erste Schritte mit dem Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+Das Xbox Live Creators-Programm ist jetzt live, damit Sie ganz einfach UWP-Spiele erstellen und veröffentlichen können, die auf Windows 10-PCs und Xbox One-Konsolen ausgeführt werden. Weitere Informationen finden Sie unter [Erste Schritte mit dem Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
-## <a name="developer-guidance"></a>Anleitungen für Entwickler
+## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
 ### <a name="xaml-basics-tutorials"></a>XAML-Grundlernprogramme
 
@@ -36,10 +36,10 @@ Wir haben vier [XAML-Grundlernprogramme](https://docs.microsoft.com/en-us/window
 
 Hier ist eine kurze Übersicht über die neuen Artikel:
 
-+ [**Erstellen von Benutzeroberflächen**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui) veranschaulicht, wie eine Standard-Benutzeroberfläche in der Photo Gallery erstellt wird.
-+ [**Erstellen von Datenbindungen**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding) veranschaulicht, wie Datenbindungen der Fotogalerie hinzugefügt werden und füllt diese mit realen Bilddaten.
-+ [**Erstellen von benutzerdefinierten Formaten**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style) veranschaulicht, wie Sie dem Menü zum Bearbeiten von Fotos benutzerdefinierte Stile hinzufügen.
-+ [**Erstellen adaptiver Layouts**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout) veranschaulicht, wie das Gallery-Layout adaptiv gestaltet werden kann, damit es auf jedem Gerät und bei jeder Bildschirmgröße gut aussieht.
++ [**Erstellen von Benutzeroberflächen** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui) wird gezeigt, wie die Benutzeroberfläche der einfachen Foto-Katalog erstellen.
++ [**Erstellen von datenbindungen** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding) veranschaulicht das Hinzufügen von datenbindungen, die Fotogalerie, Befüllen mit echten Image-Daten.
++ [**Erstellen Sie benutzerdefinierte Stile** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style) zeigt, wie das Menü zum Bearbeiten von Fotos mit Effekten benutzerdefinierte Stile hinzugefügt.
++ [**Erstellen von Layouts für adaptive** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout) veranschaulicht, wie des kataloglayouts angepasst werden, sodass sie auf jedem Gerät und der Bildschirm Größe gut aussieht.
 
 ### <a name="get-started-tutorials"></a>Erste Schritte – Lernprogramme
 

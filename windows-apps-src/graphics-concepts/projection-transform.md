@@ -1,6 +1,6 @@
 ---
 title: Projektionstransformation
-description: Ein Projektionstransformation steuert die internen Elemente der Kamera, z.B. die Auswahl einer Linse für eine Kamera. Dies ist der komplizierteste der drei Transformationstypen.
+description: Ein Projektionstransformation steuert die internen Elemente der Kamera, z. B. die Auswahl einer Linse für eine Kamera. Dies ist der komplizierteste der drei Transformationstypen.
 ms.assetid: 378F205D-3800-4477-9820-5EBE6528B14A
 keywords:
 - Projektionstransformation
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f0806c0aa7a130a080457f4361d17f64451846f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931216"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634545"
 ---
 # <a name="projection-transform"></a>Projektionstransformation
 
 
-Eine *Projektionstransformation* steuert die internen Elemente der Kamera, z.B. die Auswahl eines Objektivs für eine Kamera. Dies ist der komplizierteste der drei Transformationstypen.
+Eine *Projektionstransformation* steuert die internen Elemente der Kamera, z. B. die Auswahl eines Objektivs für eine Kamera. Dies ist der komplizierteste der drei Transformationstypen.
 
 Die Projektionsmatrix ist in der Regel eine Skalierung und perspektivische Projektion. Die Projektionstransformation konvertiert das Ansichtsfrustum in eine Quaderform. Da das nähergelegene Ende des Ansichtsfrustrums kleiner als das weiter entfernt liegende Ende, hat dies die Wirkung, dass näher bei der Kamera liegende Objekte erweitert werden. So wird Perspektive auf die Szene angewandt.
 
@@ -29,7 +29,7 @@ Die Ansichtsmatrix verschiebt die Kamera an den Ursprung, indem um -D in die z-R
 
 ![Abbildung der Verschiebungsmatrix](images/projmat2.png)
 
-Wenn die Verschiebungsmatrix mit der Projektionsmatrix multipliziert wird (T\*P), ergibt dies die zusammengesetzte Projektionsmatrix, wie in der folgenden Abbildungdargestellt.
+Die translationsmatrix durch die Projektionsmatrix Multiplikation (T\*P) können Sie die zusammengesetzte Projektionsmatrix, wie in der folgenden Abbildung dargestellt.
 
 ![Abbildung der zusammengesetzten Projektionsmatrix](images/projmat3.png)
 
@@ -55,12 +55,12 @@ In diesen Formeln steht Zₙ für die Position der vorderen Clippingebene, und d
 
 Unabhängig von der Formel, für die Sie sich entscheiden, sollten Sie den Zₙ-Wert so groß wie möglich festlegen, da sehr nahe bei der Kamera liegende Z-Werte kaum variieren. Das erschwert Tiefenvergleiche mit 16-Bit-z-Puffern.
 
-## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>Für w günstige Projektionsmatrix
+## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>Eine w-freundliche Projektionsmatrix
 
 
 Direct3D kann die w-Komponente eines Scheitelpunkts, der durch die Welt-, Ansichts- und Projektionsmatrizen umgewandelt wurde, für tiefenbasierte Berechnungen im Tiefenpuffer oder bei Nebeleffekten einsetzen. Für derartige Berechnungen muss Ihre Projektionsmatrix w so normalisieren, dass es dem Welt-Bereich z entspricht. Wenn Ihre Projektionsmatrix also einen (3,4)-Koeffizienten enthält, der nicht 1 ist, müssen Sie alle Koeffizienten mit dem umgekehrten Wert des (3,4)-Koeffizienten skalieren, um eine korrekte Matrix zu erhalten. Wenn Sie keine kompatible Matrix bereitstellen, werden Nebeleffekte und Tiefenpufferung nicht ordnungsgemäß angewendet.
 
-Die folgende Abbildungzeigt eine nicht kompatible Projektionsmatrix und die gleiche Matrix so skaliert, dass Nebel im Bezug zum Auge ermöglicht wird.
+Die folgende Abbildung zeigt eine nicht kompatible Projektionsmatrix und die gleiche Matrix so skaliert, dass Nebel im Bezug zum Auge ermöglicht wird.
 
 ![Abbildungen einer nicht kompatiblen Projektionsmatrix und einer Matrix mit Nebel im Bezug zum Auge](images/eyerlmx.png)
 

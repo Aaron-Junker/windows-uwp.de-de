@@ -1,19 +1,19 @@
 ---
-title: Portieren von DirectX9 zur Universellen Windows-Plattform (UWP)
+title: Portieren von DirectX 9 zur Universellen Windows-Plattform (UWP)
 description: Dieser Abschnitt enthält Artikel, Übersichten und exemplarische Vorgehensweisen zum Portieren von DirectX 9-Spielen zur Universellen Windows-Plattform (UWP).
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Directx 9, Directx 11, Portieren
+keywords: Windows 10, UWP, Spiele, DirectX 9, DirectX 11, Portierung
 ms.localizationpriority: medium
 ms.openlocfilehash: 68c80f0fbe83d0a9a931a8437b5125c064bbe438
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933118"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644385"
 ---
-# <a name="port-from-directx-9-to-universal-windows-platform-uwp"></a>Portieren von DirectX9 zur Universellen Windows-Plattform (UWP)
+# <a name="port-from-directx-9-to-universal-windows-platform-uwp"></a>Portieren von DirectX 9 zur Universellen Windows-Plattform (UWP)
 
 
 
@@ -23,8 +23,8 @@ Dieser Abschnitt enthält Artikel, Übersichten und exemplarische Vorgehensweise
 
 
 -   Erreichen der UWP-Zielgruppe, um mit dem Spiel Geld zu verdienen
--   Erreichen einer großen Zahl von Geräten, auf denen jeweils mindestens die Direct3D9.1-Grafikfeatures unterstützt werden
--   Erlernen wertvoller neuer Fähigkeiten zur Entwicklung von Windows-Spielen, z.B. Direct3D11, vereinheitlichte Shadermodelle, Windows-APIs, XAudio2, Toucheingabe, C++/CX usw.
+-   Erreichen einer großen Zahl von Geräten, auf denen jeweils mindestens die Direct3D 9.1-Grafikfeatures unterstützt werden
+-   Erlernen wertvoller neuer Fähigkeiten zur Entwicklung von Windows-Spielen, z. B. Direct3D 11, vereinheitlichte Shadermodelle, Windows-APIs, XAudio2, Toucheingabe, C++/CX usw.
 
 ## <a name="where-do-i-start"></a>Wo soll ich beginnen?
 

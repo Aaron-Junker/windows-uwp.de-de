@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, UWP, ExtendedJsonData, Store-Produkte, Schema
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937668"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656105"
 ---
 # <a name="data-schemas-for-store-products"></a>Datenschemata für Store-Produkte
 
-Wenn Sie ein Produkt wie z.B. eine App oder ein Add-On im Store einreichen, verwaltet der Informationsspeicher einen umfassenden Satz von Daten für das Produkt und dessen Lizenzen. In Ihrem App-Code können Sie programmgesteuerten Zugriff auf einige dieser Daten mithilfe der Eigenschaften im [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) Namespace nutzen. Zum Beispiel können Sie die Beschreibung und den Preis für die aktuelle App oder ein Add-On für die aktuelle App mithilfe der [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) und [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) Eigenschaften abrufen.
+Wenn Sie ein Produkt wie z. B. eine App oder ein Add-On im Store einreichen, verwaltet der Informationsspeicher einen umfassenden Satz von Daten für das Produkt und dessen Lizenzen. In Ihrem App-Code können Sie programmgesteuerten Zugriff auf einige dieser Daten mithilfe der Eigenschaften im [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) Namespace nutzen. Zum Beispiel können Sie die Beschreibung und den Preis für die aktuelle App oder ein Add-On für die aktuelle App mithilfe der [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) und [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) Eigenschaften abrufen.
 
 Viele Daten für Produkte im Store sind jedoch ist nicht über vordefinierte Eigenschaften im [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) Namespace verfügbar. Um auf die vollständigen Daten für ein Produkt in Ihrem Code zuzugreifen, können Sie die folgenden allgemeinen Eigenschaften verwenden:
 
@@ -71,9 +71,9 @@ Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StoreP
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
-* [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)
-* [Abrufen von Lizenzinformationen zu Apps und Add-Ons](get-license-info-for-apps-and-add-ons.md)
-* [Aktivieren von In-App-Käufen von Apps und Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Unterstützen von Käufen konsumierbarer Add-Ons](enable-consumable-add-on-purchases.md)
-* [Implementieren einer Testversion Ihrer App](implement-a-trial-version-of-your-app.md)
+* [In-app-Käufe und Testversionen](in-app-purchases-and-trials.md)
+* [Abrufen von Produktinformationen für apps und -Add-Ons](get-product-info-for-apps-and-add-ons.md)
+* [Abrufen von Lizenzinformationen für apps und -Add-Ons](get-license-info-for-apps-and-add-ons.md)
+* [Aktivieren von in-app-Käufe von apps und -Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Aktivieren Sie nutzbar Add-on-Käufe](enable-consumable-add-on-purchases.md)
+* [Implementieren Sie eine Testversion von Ihrer app](implement-a-trial-version-of-your-app.md)

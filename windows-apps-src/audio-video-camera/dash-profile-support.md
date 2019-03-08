@@ -4,14 +4,14 @@ description: Dieser Artikel enthält eine Liste der Dynamic Adaptive Streaming o
 title: Dynamic Adaptive Streaming over HTTP (DASH)-Profilunterstützung
 ms.date: 02/15/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d680f7d4a3510f66cba74d1c8b30d8883b07369a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926060"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627205"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>Dynamic Adaptive Streaming over HTTP (DASH)-Profilunterstützung
 
@@ -19,7 +19,7 @@ ms.locfileid: "8926060"
 ## <a name="supported-dash-profiles"></a>Unterstützte DASH-Profile
 In der folgenden Tabelle sind die DASH-Profile aufgeführt, die für UWP-Apps unterstützt werden.
 
-|Tag | Manifesttyp | Hinweise|Juliversion von Windows 10|Windows 10, Version 1511|Windows 10, Version 1607 |Windows 10, Version 1607 |Windows 10, Version 1703|
+|Tag | Manifesttyp | Anmerkungen|Juliversion von Windows 10|Windows 10, Version 1511|Windows 10, Version 1607 |Windows 10, Version 1607 |Windows 10, Version 1703|
 |----------------|------|-------|-----------|--------------|---------|-------|--------|
 |urn:mpeg&#58;dash:profile:isoff-live:2011 | Statisch |     |Unterstützt            |  Unterstützt              | Unterstützt        |Unterstützt| Unterstützt|
 |urn:mpeg&#58;dash:profile:isoff-main:2011 |        | Beste Leistung | Unterstützt            |  Unterstützt              | Unterstützt        |Unterstützt| Unterstützt|
@@ -38,7 +38,7 @@ Profile, die nicht in der obigen Tabelle aufgeführt sind, werden nicht unterst�
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Medienwiedergabe](media-playback.md)
-* [Adaptives Streaming](adaptive-streaming.md)
+* [Adaptives streaming](adaptive-streaming.md)
  
 
  

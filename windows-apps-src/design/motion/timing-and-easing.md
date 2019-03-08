@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion uses timing and easing functions.
+Description: Erfahren Sie, wie Fluent Motion verwendet Zeitsteuerungssystem und Beschleunigungsfunktionen.
 title: Timing und Geschwindigkeitsverlauf – Animation in UWP-Apps
 label: Timing and easing
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945491"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645265"
 ---
 # <a name="timing-and-easing"></a>Timing und Geschwindigkeitsverlauf
 
@@ -204,5 +204,5 @@ CubicBezierEasingFunction standard =
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Übersicht über Bewegungen](index.md)
-- [Direktionalität und Schwerkraft](directionality-and-gravity.md)
+- [Motion-Übersicht](index.md)
+- [Direktionalität und die Schwerkraft](directionality-and-gravity.md)

@@ -4,14 +4,14 @@ title: Manuelles Verpacken von Apps
 description: Dieser Abschnitt enthält Artikel oder Links zum manuellen Verpacken von UWP (Universelle Windows-Plattform)-Apps.
 ms.date: 04/30/2018
 ms.topic: article
-keywords: Windows10, UWP, Verpacken
+keywords: Windows 10, UWP, Verpacken
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c429c3c88b0ae23cb518a59cab2e5a3c4f380a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928494"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658195"
 ---
 # <a name="manual-app-packaging"></a>Manuelles Verpacken von Apps
 
@@ -26,13 +26,13 @@ Dieser Abschnitt enthält Artikel oder Links zum manuellen Verpacken von UWP (Un
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](create-app-package-with-makeappx-tool.md) | MakeAppx.exe erstellt, verschlüsselt, entschlüsselt und extrahiert Dateien aus App-Paketen und -Bündeln. |
-| [Erstellen von Zertifikaten für die Paketsignatur](create-certificate-package-signing.md) | Erstellen und Exportieren eines Zertifikats für die App-Paketsignatur mit PowerShell-Tools. |
-| [Signieren eines App-Pakets mit SignTool](sign-app-package-using-signtool.md) | Verwenden von SignTool zur manuellen Signatur eines App-Pakets mit einem Zertifikat. |
+| [Erstellen Sie ein app-Paket mit dem Tool MakeAppx.exe](create-app-package-with-makeappx-tool.md) | MakeAppx.exe erstellt, verschlüsselt, entschlüsselt und extrahiert Dateien aus App-Paketen und -Bündeln. |
+| [Erstellen Sie ein Zertifikat zum Signieren des Pakets](create-certificate-package-signing.md) | PowerShell-Tools helfen bei der Erstellung und beim Export eines App-Paketsignaturzertifikats. |
+| [Melden Sie ein app-Paket mithilfe von SignTool](sign-app-package-using-signtool.md) | Verwenden Sie SignTool, um ein App-Paket manuell mit einem Zertifikat zu signieren. |
 
 ### <a name="advanced-topics"></a>Fortgeschrittene Themen
 
-Dieser Abschnittenthält fortgeschrittene Themen zum Aufschlüsseln einer großen und/oder komplexen App für eine effizientere Verpackung und Installation. 
+Dieser Abschnitt enthält fortgeschrittene Themen zum Aufschlüsseln einer großen und/oder komplexen App für eine effizientere Verpackung und Installation. 
 
 > [!IMPORTANT]
 > Wenn Sie Ihre App an den Store übermitteln möchten, müssen Sie sich an den [Windows-Support für Entwickler](https://developer.microsoft.com/windows/support) wenden und eine Genehmigung für die Verwendung der erweiterten Funktionen in diesem Abschnitt erhalten.
@@ -40,7 +40,7 @@ Dieser Abschnittenthält fortgeschrittene Themen zum Aufschlüsseln einer große
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Einführung zu Bestandspaketen](asset-packages.md) | Asset-Pakete sind ein Pakettyp, der als zentraler Speicherort für die gemeinsamen Dateien einer Anwendung fungiert. Dadurch wird die Notwendigkeit doppelter Dateien in allen Architekturpaketen effektiv eliminiert. |
-| [Entwickeln mit Bestandspaketen und Paketfaltung](package-folding.md) | Hier erfahren Sie, wie Sie Ihre App mit Bestandspaketen und Paketfaltung effizient organisieren. |
-| [Flat-Bundle App-Pakete](flat-bundles.md) | Beschreibt, wie Sie ein flat Bundle für Ihre app-Paket-Dateien erstellen. |
-| [Paketerstellung mit dem Verpackungslayout](packaging-layout.md) | Das Verpackungslayout ist ein Dokument, das die Verpackungsstruktur der App beschreibt. Es gibt die Bündel einer App („primär” und „optional”), die Pakete in den Bündeln sowie die Dateien in den Paketen an. |
+| [Einführung in Asset-Pakete](asset-packages.md) | Asset-Pakete sind ein Pakettyp, der als zentraler Speicherort für die gemeinsamen Dateien einer Anwendung fungiert. Dadurch wird die Notwendigkeit doppelter Dateien in allen Architekturpaketen effektiv eliminiert. |
+| [Entwickeln mit ressourcenpakete und das Paket zu falten](package-folding.md) | Hier erfahren Sie, wie Sie Ihre App mit Bestandspaketen und Paketfaltung effizient organisieren. |
+| [Flatfile-Paket-app-Pakete](flat-bundles.md) | Beschreibt, wie ein Flatfile-Paket für die Dateien Ihrer app-Paket zu erstellen. |
+| [Erstellen von Paketen mit dem Layout für die paketerstellung](packaging-layout.md) | Das Verpackungslayout ist ein Dokument, das die Verpackungsstruktur der App beschreibt. Es gibt die Bündel einer App („primär” und „optional”), die Pakete in den Bündeln sowie die Dateien in den Paketen an. |

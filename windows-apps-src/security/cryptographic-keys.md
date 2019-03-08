@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, Uwp, Sicherheit
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918613"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658355"
 ---
 # <a name="cryptographic-keys"></a>Kryptografische Schlüssel
 
@@ -71,7 +71,7 @@ Es ist häufig erforderlich, zusätzliche Schlüssel von einem gemeinsamen gehei
 
 | Objekt                                                                            | Beschreibung                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Erstellt ein KeyDerivationParameters-Objekt zur Verwendung in der kennwortbasierten Funktion2 zum Ableiten von Schlüsseln (Password-Based Key Derivation Function 2, PBKDF2).                                 |
+| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Erstellt ein KeyDerivationParameters-Objekt zur Verwendung in der kennwortbasierten Funktion 2 zum Ableiten von Schlüsseln (Password-Based Key Derivation Function 2, PBKDF2).                                 |
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | Erstellt ein KeyDerivationParameters-Objekt zur Verwendung in einer Funktion zum Ableiten von Schlüsseln im Zählermodus mit einem Hash-basierten Nachrichtenauthentifizierungscode (Hash-based Message Authentication Code, HMAC). |
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | Erstellt ein KeyDerivationParameters-Objekt zur Verwendung in der Funktion SP800-56A zum Ableiten von Schlüsseln.                                                 |
 

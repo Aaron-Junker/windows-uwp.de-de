@@ -3,19 +3,19 @@ title: Lernpfad – Erstellen und Konfigurieren eines Formulars
 description: Erfahren Sie, was Sie tun müssen, um ein robustes Formular in Ihrer App zu erstellen.
 ms.date: 05/07/2018
 ms.topic: article
-keywords: Erste Schritte, UWP, Windows10, Lernpfad, Layout, Formular
+keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Layout, Formular
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 45c4acda953808a85363d1cec7c623dd79cc08f1
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058531"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656445"
 ---
 # <a name="create-and-customize-a-form"></a>Erstellen und Anpassen eines Formulars
 
-Wenn Sie eine App erstellen, in die Benutzer eine erhebliche Menge an Informationen eingeben müssen, werden Sie wahrscheinlich ein Formular erstellen wollen, das Benutzer ausfüllen können. In diesem Artikel wird erläutert, was Sie wissen müssen, um ein Formular zu erstellen, die hilfreich und robust ist.
+Wenn Sie eine app erstellen, die Benutzer eine erhebliche Menge an Informationen eingeben müssen, ist es wahrscheinlich, dass Sie ein Formular zu füllen Sie erstellen möchten. In diesem Artikel zeigt Ihnen, was müssen Sie wissen, um ein Formular erstellen, die nützlich und stabiler ist.
 
 Dies ist kein Lernprogramm. Wenn Sie ein Lernprogramm suchen, sehen Sie sich unser [Lernprogramm zum adaptiven Layout](../design/basics/xaml-basics-adaptive-layout.md) an, in dem Sie schrittweise Anleitungen finden.
 
@@ -45,9 +45,9 @@ Lesen Sie [diese Dokumentation zu Layoutpanels](../design/layout/layout-panels.m
 
 ## <a name="what-goes-in-a-form"></a>Was gehört in ein Formular?
 
-Sie müssen Ihr Formular mit verschiedenen [XAML-Steuerelementen](../design/controls-and-patterns/controls-and-events-intro.md) füllen. Wahrscheinlich sind Sie mit diesen vertraut, lesen Sie jedoch gerne weiter, wenn Sie eine Auffrischung benötigen. Sie benötigen insbesondere Steuerelemente, mit denen Benutzer Text eingeben oder Optionen aus einer Liste von Werten auswählen können. Dies ist eine einfache Liste der Optionen, die Sie hinzufügen können – Sie müssen nicht alles darüber, lesen nur so viel, dass Sie verstehen, wie sie Aussehen und funktionieren.
+Sie müssen Ihr Formular mit verschiedenen [XAML-Steuerelementen](../design/controls-and-patterns/controls-and-events-intro.md) füllen. Wahrscheinlich sind Sie mit diesen vertraut, lesen Sie jedoch gerne weiter, wenn Sie eine Auffrischung benötigen. Sie benötigen insbesondere Steuerelemente, mit denen Benutzer Text eingeben oder Optionen aus einer Liste von Werten auswählen können. Dies ist eine einfache Liste der Optionen, die Sie hinzufügen können – Sie müssen nicht alles über die sie genug, damit Sie verstehen, wie sie Aussehen und ihre Funktionsweise zu lesen.
 
-* [TextBox](../design/controls-and-patterns/text-box.md) können einen Benutzer eingegebenen Text in Ihrer app.
+* [Textfeld](../design/controls-and-patterns/text-box.md) können Sie ein Eingabetext für Benutzer in Ihrer app.
 * Mit [ToggleSwitch](../design/controls-and-patterns/toggles.md) kann ein Benutzer zwischen zwei Optionen auswählen.
 * Mit [DatePicker](../design/controls-and-patterns/date-picker.md) kann ein Benutzer einen Datumswert auswählen.
 * Mit [TimePicker](../design/controls-and-patterns/time-picker.md) kann ein Benutzer einen Zeitwert auswählen.
@@ -133,7 +133,7 @@ Wenn Sie komplexere Layouts mit mehr visuellen Elementen erstellen, finden Sie w
 
 ## <a name="going-further"></a>Vertiefung
 
-Auch wenn Sie hier ein Formular erstellt haben, gelten die Konzepte von Layouts und Steuerelementen für alle XAML-Benutzeroberflächen, die Sie möglicherweise erstellen. Passen Sie die Dokumente durcharbeiten, wir haben Sie verknüpft und mit dem Formular haben Sie neue Benutzeroberflächenfeatures hinzufügen und die Benutzeroberfläche eingrenzen, das zu experimentieren. Wenn Sie die schrittweise Anleitung zu detaillierteren Layoutfeatures möchten, finden Sie unsere [Lernprogramm zu adaptiven Layouts](../design/basics/xaml-basics-adaptive-layout.md)
+Auch wenn Sie hier ein Formular erstellt haben, gelten die Konzepte von Layouts und Steuerelementen für alle XAML-Benutzeroberflächen, die Sie möglicherweise erstellen. Die Dokumentation zurückkehren, wir haben Sie verknüpft, und experimentieren Sie mit dem Formular hinzufügen von neuen Funktionen der Benutzeroberfläche und die benutzerfreundlichkeit weiter zu optimieren und welche, können. Wenn Sie eine schrittweise Anleitung durch ausführlichere Layoutfunktionen möchten, finden Sie unter unserem [adaptive Layout-Tutorial](../design/basics/xaml-basics-adaptive-layout.md)
 
 Formulare existieren außerdem nicht in einem Vakuum – Sie können einen Schritt weiter gehen und Ihres in ein [Master-/Detailmuster](../design/controls-and-patterns/master-details.md) oder [Pivot-Steuerelement](../design/controls-and-patterns/pivot.md) einbetten. Oder wenn Sie an dem CodeBehind für Ihr Formular arbeiten möchten, finden Sie die ersten Schritte in unserer [Übersicht über Ereignisse](../xaml-platform/events-and-routed-events-overview.md).
 
@@ -145,8 +145,8 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weiterer nütz
 
 | API | Beschreibung |
 |------|---------------|
-| [Für Formulare nützliche Steuerelemente](../design/controls-and-patterns/forms.md#input-controls) | Eine Liste nützlicher Eingabesteuerelemente für das Erstellen von Formularen und ein allgemeiner Überblick zu ihrer Verwendung |
-| [Raster](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | Ein Panel zum Anordnen von Elementen in Layouts mit mehreren Zeilen und Spalten |
+| [Steuerelemente, die nützlich für Formulare](../design/controls-and-patterns/forms.md#input-controls) | Eine Liste nützlicher Eingabesteuerelemente für das Erstellen von Formularen und ein allgemeiner Überblick zu ihrer Verwendung |
+| [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | Ein Panel zum Anordnen von Elementen in Layouts mit mehreren Zeilen und Spalten |
 | [RelativePanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | Ein Panel zum Anordnen von Elementen in Bezug auf andere Elemente und die Grenzen des Panels |
 | [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | Ein Panel zum Anordnen von Elementen in einer einzigen horizontalen oder vertikalen Linie |
 | [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) | Ermöglicht die Festlegung des Erscheinungsbilds von Benutzeroberflächenelementen, wenn sich diese in bestimmten Zuständen befinden |
@@ -156,21 +156,21 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weiterer nütz
 | Thema | Beschreibung |
 |-------|----------------|
 | [Barrierefreiheit im Überblick](../design/accessibility/accessibility-overview.md) | Eine umfassende Übersicht über Optionen für die Barrierefreiheit in Apps |
-| [Prüfliste für die Barrierefreiheit](../design/accessibility/accessibility-checklist.md) | Eine praktische Prüfliste, um sicherzustellen, dass Ihre App Standards für die Barrierefreiheit erfüllt |
+| [Checkliste für die Barrierefreiheit](../design/accessibility/accessibility-checklist.md) | Eine praktische Prüfliste, um sicherzustellen, dass Ihre App Standards für die Barrierefreiheit erfüllt |
 | [Übersicht über Ereignisse](../xaml-platform/events-and-routed-events-overview.md) | Details zum Hinzufügen und Strukturieren von Ereignissen zur Verarbeitung von Benutzeroberflächenaktionen |
 | [Formulare](../design/controls-and-patterns/forms.md) | Allgemeine Anweisungen zum Erstellen von Formularen |
 | [Layoutpanels](../design/layout/layout-panels.md) | Übersicht über die Arten von Layoutpanels und ihre Verwendung |
-| [Master/Details-Muster](../design/controls-and-patterns/master-details.md) | Ein Entwurfsmuster, das rund um ein oder mehrere Formulare implementiert werden kann |
+| [Master-/Detail-Musters](../design/controls-and-patterns/master-details.md) | Ein Entwurfsmuster, das rund um ein oder mehrere Formulare implementiert werden kann |
 | [Pivot-Steuerelement](../design/controls-and-patterns/pivot.md) | Ein Steuerelement, das ein oder mehrere Formulare enthalten kann |
-| [Dynamisches Design](../design/layout/responsive-design.md) | Eine Übersicht über Prinzipien für das umfangreiche dynamische Design | 
-| [Dynamische Layouts mit XAML](../design/layout/layouts-with-xaml.md) | Spezifische Informationen zu visuellen Zuständen und anderen Implementierungen des dynamischen Designs |
-| [Bildschirmgrößen für das dynamische Design](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | Anweisungen, welche Bildschirmgrößen für dynamische Layouts festgelegt werden sollten |
+| [Reaktionsfähiges design](../design/layout/responsive-design.md) | Eine Übersicht über Prinzipien für das umfangreiche dynamische Design | 
+| [Reaktionsfähige Layouts mit XAML](../design/layout/layouts-with-xaml.md) | Spezifische Informationen zu visuellen Zuständen und anderen Implementierungen des dynamischen Designs |
+| [Bildschirmgrößen für reaktionsfähiges design](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | Anweisungen, welche Bildschirmgrößen für dynamische Layouts festgelegt werden sollten |
 
 ## <a name="useful-code-samples"></a>Nützliche Codebeispiele
 
 | Codebeispiel | Beschreibung |
 |-----------------|---------------|
-| [Lernprogramm zu adaptiven Layouts](../design/basics/xaml-basics-adaptive-layout.md) | Eine schrittweise geführte Anleitung zu adaptiven Layouts und zum dynamischen Design | 
-| [Datenbank für Kundenaufträge](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Layout und Formulare in Aktion in einem mehrseitigen Unternehmensbeispiel |
-| [XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) | Eine Auswahl von XAML-Steuerelementen und Informationen zu deren Implementierung |
+| [Adaptive Layout-tutorial](../design/basics/xaml-basics-adaptive-layout.md) | Eine schrittweise geführte Anleitung zu adaptiven Layouts und zum dynamischen Design | 
+| [Customer-Orders-Datenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Layout und Formulare in Aktion in einem mehrseitigen Unternehmensbeispiel |
+| [XAML-Steuerelementsammlungen](https://github.com/Microsoft/Xaml-Controls-Gallery) | Eine Auswahl von XAML-Steuerelementen und Informationen zu deren Implementierung |
 | [Weitere Codebeispiele](https://developer.microsoft.com//windows/samples) | Wählen Sie **Steuerelemente, Layout und Text** in der Dropdownliste „Kategorie“ aus, um verwandte Codebeispiele anzuzeigen. |

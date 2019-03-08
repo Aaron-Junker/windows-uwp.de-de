@@ -1,36 +1,36 @@
 ---
-title: Texturmischung
-description: Direct3D kann bis zu acht Texturen auf Grundtypen in einer einzigen Übergabe auf Grundtypen mischen.
+title: Texturvermischung
+description: Direct3D kann bis zu acht Texturen auf Grundtypen in einem einzigen Durchlauf auf Grundtypen mischen.
 ms.assetid: 9AD388FA-B2B9-44A9-B73E-EDBD7357ACFB
 keywords:
-- Texturmischung
+- Texturvermischung
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c40c7d3bd080bd927fc52cb7f740e1dc4a6358c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948002"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620805"
 ---
-# <a name="texture-blending"></a>Texturmischung
+# <a name="texture-blending"></a>Texturvermischung
 
 
 Direct3D kann bis zu acht Texturen auf Grundtypen in einem einzigen Durchlauf auf Grundtypen mischen. Die Verwendung von mehreren gemischten Texturen kann die Framerate einer Direct3D-Anwendung erheblich erhöhen. Eine Anwendung verwendet mehrere Texturmischungen zur Anwendung von Texturen, Schatten, glänzender Beleuchtung, diffuser Beleuchtung und anderer Spezialeffekte in einem einzigen Durchgang.
 
 Um die Texturmischung verwenden zu können, muss Ihre Anwendung zuerst prüfen, ob dies von der Hardware des Benutzers unterstützt wird.
 
-## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>Texturphasen und Texturmischungskaskade
+## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>Textur-Phasen und die Kombination von Cascade Textur
 
 
 Direct3D unterstützt die mehrfache Texturmischung in einem Durchgang durch die Verwendung von Texturphasen. Eine Texturphase nimmt zwei Argumente und führt darauf einen Mischvorgang aus; das Ergebnis wird dann zur weiteren Verarbeitung oder zur Rasterisierung weitergegeben. Eine Texturphase kann wie im folgenden Diagramm gezeigt visualisiert werden.
 
 ![Diagramm einer Texturphase](images/texstg.png)
 
-Wie das obige Diagramm zeigt, mischen Texturphasen zwei Argumente unter Verwendung eines angegebenen Operators. Häufig ausgeführte Vorgänge sind u.a. die einfache Modulation oder Hinzufügung der Farb- oder Alphakomponenten der Argumente, insgesamt werden jedoch mehr als zwei Dutzend Vorgänge unterstützt. Die Argumente für eine Phase können eine zugeordnete Textur, der iterierte Farb- oder Alphawert (iteriert im Rahmen der Gouraud-Schattierung), ein beliebiger Farb- oder Alphawert oder das Ergebnis der vorherigen Texturphase sein.
+Wie das obige Diagramm zeigt, mischen Texturphasen zwei Argumente unter Verwendung eines angegebenen Operators. Häufig ausgeführte Vorgänge sind u. a. die einfache Modulation oder Hinzufügung der Farb- oder Alphakomponenten der Argumente, insgesamt werden jedoch mehr als zwei Dutzend Vorgänge unterstützt. Die Argumente für eine Phase können eine zugeordnete Textur, der iterierte Farb- oder Alphawert (iteriert im Rahmen der Gouraud-Schattierung), ein beliebiger Farb- oder Alphawert oder das Ergebnis der vorherigen Texturphase sein.
 
-**Hinweis:**  Direct3D farbmischung von der alphamischung. Anwendungen stellen Mischvorgänge und Argumente für Farbe und Alpha einzeln ein, und die Ergebnisse dieser Einstellungen sind voneinander unabhängig.
+**Beachten Sie**    Direct3D unterscheidet, Farbe, die aus der alpha-blending blending. Anwendungen stellen Mischvorgänge und Argumente für Farbe und Alpha einzeln ein, und die Ergebnisse dieser Einstellungen sind voneinander unabhängig.
 
  
 
@@ -42,7 +42,7 @@ Jede Phase in einem Gerät hat einen nullbasierten Index. Direct3D erlaubt bis z
 
 Verwenden Sie nur die Anzahl der Phasen, die Sie benötigen. die nicht verwendeten Mischungsphasen sind standardmäßig deaktiviert. Wenn Ihre Anwendung nur die ersten beiden Phasen verwendet, müssen daher nur Vorgänge und Argumente für Phase 0 und 1 festgelegt werden. Das System mischt die beiden Phasen und berücksichtigt die deaktivierten Phasen nicht.
 
-Wenn Ihre Anwendung für unterschiedliche Situationen unterschiedlich viele Phasen verwendet – z.B. vier Phasen für einige Objekte und nur zwei für andere -, müssen Sie nicht alle vorher verwendeten Phasen explizit deaktivieren. Eine Möglichkeit besteht darin, den Farbvorgang für die erste nicht verwendete Phase zu deaktivieren; dann werden alle Phasen mit einem höheren Index nicht angewendet. Eine weitere Möglichkeit ist, die Texturzuordnung ganz zu deaktivieren, indem Sie den Farbvorgang für die erste Texturphase (Phase 0) in den deaktivierten Zustand versetzen.
+Wenn Ihre Anwendung für unterschiedliche Situationen unterschiedlich viele Phasen verwendet – z. B. vier Phasen für einige Objekte und nur zwei für andere -, müssen Sie nicht alle vorher verwendeten Phasen explizit deaktivieren. Eine Möglichkeit besteht darin, den Farbvorgang für die erste nicht verwendete Phase zu deaktivieren; dann werden alle Phasen mit einem höheren Index nicht angewendet. Eine weitere Möglichkeit ist, die Texturzuordnung ganz zu deaktivieren, indem Sie den Farbvorgang für die erste Texturphase (Phase 0) in den deaktivierten Zustand versetzen.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>In diesem Abschnitt
 
@@ -60,12 +60,12 @@ Wenn Ihre Anwendung für unterschiedliche Situationen unterschiedlich viele Phas
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="blending-stages.md">Mischungsphasen</a></p></td>
-<td align="left"><p>Eine Mischungsphase ist ein Satz von Texturvorgängen und ihren Argumenten, die festlegen, wie Texturen gemischt werden.</p></td>
+<td align="left"><p><a href="blending-stages.md">Kombination von Phasen</a></p></td>
+<td align="left"><p>Eine Vermischungsstufe ist ein Satz von Texturvorgängen und ihren Argumenten, die festlegen, wie Texturen vermischt werden.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="multipass-texture-blending.md">Mehrstufige Texturmischung</a></p></td>
-<td align="left"><p>Direct3D-Anwendungen können durch die Anwendung verschiedener Texturen auf einen Grundtyp im Laufe von mehreren Berechnungs- und Ausgabedurchläufen zahlreiche Spezialeffekte erzielen. Der allgemeine Begriff dafür ist <em>Mehrstufige Texturmischung</em>. Eine typische Anwendung der mehrstufigen Texturmischung ist die Nachbildung der Effekte komplexer Beleuchtungs- und Schattierungsmodelle durch die Anwendung mehrerer Farben aus mehreren unterschiedlichen Texturen. Eine solche Anwendung heißt <em>Lichtzuordnung</em>.</p></td>
+<td align="left"><p><a href="multipass-texture-blending.md">Kombination von Renderingdurchläufen Textur</a></p></td>
+<td align="left"><p>Direct3D-Apps können durch die Anwendung verschiedener Texturen auf eine Primitive im Laufe von mehreren Berechnungs- und Ausgabedurchläufen zahlreiche Spezialeffekte erzielen. Der allgemeine Begriff dafür ist <em>Mehrstufige Texturmischung</em>. Eine typische Anwendung für die mehrstufige Texturvermischung liegt in der Nachbildung der Effekte von komplexen Beleuchtungs- und Verschattungsmodellen durch die Anwendung mehrerer Farben aus mehreren unterschiedlichen Texturen. Eine solche Anwendung heißt <em>Lichtzuordnung</em>.</p></td>
 </tr>
 </tbody>
 </table>

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c5e1c294da2b4ef24ff8f62b686890cb8c69c06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942942"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646285"
 ---
 # <a name="input-assembler-ia-stage"></a>Eingabeassemblerphase (IA)
 
@@ -57,10 +57,10 @@ Die IA-Phase stellt die Daten zu Grundtypen zusammen und hängt systemgenerierte
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="primitive-topologies.md">Primitive Topologien</a></p></td>
-<td align="left"><p>Direct3D unterstützt mehrere primitive Topologien, die definieren, wie Scheitelpunkte, z.B. Punktlisten, Linienlisten und Dreieckstreifen von der Pipeline interpretiert und gerendert werden.</p></td>
+<td align="left"><p>Direct3D unterstützt mehrere primitive Topologien, die definieren, wie Scheitelpunkte, z. B. Punktlisten, Linienlisten und Dreieckstreifen von der Pipeline interpretiert und gerendert werden.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="using-system-generated-values.md">Verwenden von systemgenerierten Werten</a></p></td>
+<td align="left"><p><a href="using-system-generated-values.md">Verwenden von vom System generierte Werte</a></p></td>
 <td align="left"><p>Systemgenerierte Werte werden von der Eingabeassemblerphase (IA) generiert (basierend auf vom Benutzer bereitgestellten Eingaben <a href="https://msdn.microsoft.com/library/windows/desktop/bb509647">Semantiken</a>), um bestimmte Effizienzvorteile in Shaderabläufen zu ermöglichen. Durch das Anhängen von Daten, wie beispielsweise der Instanz-ID (sichtbar für die <a href="vertex-shader-stage--vs-.md">Vertexshaderphase (VS)</a>), einer Scheitelpunkt-ID (sichtbar für VS) oder einer Grundtypen-ID (sichtbar für die <a href="geometry-shader-stage--gs-.md">Geometrieshaderphase (GS)</a>/<a href="pixel-shader-stage--ps-.md">Pixelshaderphase (PS)</a>), kann eine nachfolgende Shaderphase nach diesen Systemwerten suchen, um die Verarbeitung in dieser Phase zu verbessern.</p></td>
 </tr>
 </tbody>

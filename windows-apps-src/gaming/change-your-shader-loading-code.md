@@ -1,19 +1,19 @@
 ---
-title: Vergleich der OpenGLES2.0-Shaderpipeline mit Direct3D
-description: Vom Konzept her ist die Direct3D 11-Shaderpipeline der in OpenGL ES 2.0 sehr ähnlich.
+title: Vergleichen der OpenGL ES 2.0-Shaderpipeline mit Direct3D
+description: Vom Konzept her ist die Direct3D 11-Shaderpipeline der in OpenGL ES 2.0 sehr ähnlich.
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, OpenGL, Direct3D, Shaderpipeline
+keywords: Windows 10, UWP, Spiele, OpenGL, Direct3D, Shaderpipeline
 ms.localizationpriority: medium
 ms.openlocfilehash: f02b365175909b5038e5eb117f12851be9f14e3a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942136"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653695"
 ---
-# <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>Vergleichen der OpenGLES2.0-Shaderpipeline mit Direct3D
+# <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>Vergleichen der OpenGL ES 2.0-Shaderpipeline mit Direct3D
 
 
 
@@ -22,32 +22,32 @@ ms.locfileid: "8942136"
 
 -   [Eingabe-Assembler-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205116)
 -   [Vertex-Shader-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage)
--   [Pixelshader-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage)
+-   [Pixel-Shader-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage)
 
-Vom Konzept her ist die Direct3D11-Shaderpipeline der in OpenGLES2.0 sehr ähnlich. Hinsichtlich des API-Entwurfs sind die Hauptkomponenten für die Erstellung und Verwaltung der Shaderstufen jedoch Teile der zwei primären Schnittstellen [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) und [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). In diesem Thema versuchen wir, allgemeine Muster der OpenGLES2.0-Shaderpipeline-API den Direct3D11-Entsprechungen in diesen Schnittstellen zuzuordnen.
+Vom Konzept her ist die Direct3D 11-Shaderpipeline der in OpenGL ES 2.0 sehr ähnlich. Hinsichtlich des API-Entwurfs sind die Hauptkomponenten für die Erstellung und Verwaltung der Shaderstufen jedoch Teile der zwei primären Schnittstellen [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) und [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). In diesem Thema versuchen wir, allgemeine Muster der OpenGL ES 2.0-Shaderpipeline-API den Direct3D 11-Entsprechungen in diesen Schnittstellen zuzuordnen.
 
-## <a name="reviewing-the-direct3d-11-shader-pipeline"></a>Die Direct3D11-Shaderpipeline
+## <a name="reviewing-the-direct3d-11-shader-pipeline"></a>Die Direct3D 11-Shaderpipeline
 
 
 Die Shaderobjekte werden mit Methoden der [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)-Schnittstelle wie [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) und [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) erstellt.
 
-Die Direct3D11-Grafikpipeline wird von Instanzen der [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)-Schnittstelle verwaltet und umfasst die folgenden Stufen:
+Die Direct3D 11-Grafikpipeline wird von Instanzen der [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)-Schnittstelle verwaltet und umfasst die folgenden Stufen:
 
--   [Eingabe-Assembler-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205116). Die Eingabe-Assembler-Stufe stellt Daten (Dreiecke, Linien und Punkte) für die Pipeline bereit. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)-Methoden, die diese Stufe unterstützen, haben das Präfix „IA“.
--   [Vertex-Shader-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage). Die Vertex-Shader-Stufe verarbeitet Scheitelpunkte und führt dabei in der Regel Vorgänge wie Transformationen, das Anwenden von Skins und Beleuchtung aus. Ein Vertex-Shader verarbeitet immer einen einzigen Eingabescheitelpunkt und erzeugt daraus einen einzigen Ausgabescheitelpunkt. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)-Methoden, die diese Stufe unterstützen, haben das Präfix „VS“.
--   [Datenstrom-Ausgabe-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205121). Die Datenstrom-Ausgabe-Stufe streamt Grundtypdaten auf dem Weg zum Rasterizer aus der Pipeline in den Arbeitsspeicher. Daten können "ausgestreamt" und/oder in den Rasterizer übergeben werden. In den Arbeitsspeicher gestreamte Daten können als Eingabedaten wieder der Pipeline zugeführt oder von der CPU eingelesen werden. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)-Methoden, die diese Stufe unterstützen, haben das Präfix „SO“.
--   [Rasterizer-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205125). Der Rasterizer beschneidet Grundtypen, bereitet Grundtypen für den Pixelshader vor und bestimmt, wie Pixelshader aufgerufen werden. Sie können die Rasterung deaktivieren, indem Sie die Pipeline anweisen, dass kein Pixelshader vorhanden ist (setzen Sie die Pixelshader-Stufe mit [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) auf NULL), und die Tiefen- und Schablonentests deaktivieren (setzen Sie „DepthEnable“ und „StencilEnable“ in [**D3D11\_DEPTH\_STENCIL\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110) auf FALSE). Wenn die Rasterung deaktiviert ist, werden damit zusammenhängende Pipelinezähler nicht aktualisiert.
--   [Pixelshader-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage). Die Pixelshader-Stufe empfängt interpolierte Daten für einen Grundtyp und generiert Pro-Pixel-Daten (z.B. die Farbe). [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)-Methoden, die diese Stufe unterstützen, haben das Präfix „PS“.
--   [Ausgabezusammenführungs-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205120). Die Ausgabezusammenführungs-Stufe kombiniert verschiedene Ausgabedaten (Pixelshaderwerte, Tiefen- und Schabloneninformationen) mit dem Inhalt des Renderziels und Tiefen-/Schablonenpuffern, um das endgültige Pipelineergebnis zu generieren. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)-Methoden, die diese Stufe unterstützen, haben das Präfix „OM“.
+-   [Eingabe-Assembler-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205116). Die Eingabe-Assembler-Stufe stellt Daten (Dreiecke, Linien und Punkte) für die Pipeline bereit. [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) Methoden, die dieser Phase unterstützen "IA" vorangestellt.
+-   [Vertex-Shader-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage). Die Vertex-Shader-Stufe verarbeitet Scheitelpunkte und führt dabei in der Regel Vorgänge wie Transformationen, das Anwenden von Skins und Beleuchtung aus. Ein Vertex-Shader verarbeitet immer einen einzigen Eingabescheitelpunkt und erzeugt daraus einen einzigen Ausgabescheitelpunkt. [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) Methoden, die dieser Phase unterstützen "Im Vergleich" vorangestellt.
+-   [Datenstrom-Ausgabe-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205121). Die Datenstrom-Ausgabe-Stufe streamt Grundtypdaten auf dem Weg zum Rasterizer aus der Pipeline in den Arbeitsspeicher. Daten können "ausgestreamt" und/oder in den Rasterizer übergeben werden. In den Arbeitsspeicher gestreamte Daten können als Eingabedaten wieder der Pipeline zugeführt oder von der CPU eingelesen werden. [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) Methoden, die dieser Phase unterstützen "Usw." vorangestellt.
+-   [Rasterizer-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205125). Der Rasterizer beschneidet Grundtypen, bereitet Grundtypen für den Pixelshader vor und bestimmt, wie Pixelshader aufgerufen werden. Sie können die Rasterung Deaktivieren von wird, dass der Pipeline gibt es kein PixelShader (Legen Sie die Pixel-Shader-Stufe, auf NULL mit [ **ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)), und Deaktivieren von Tiefe und Schablone (testen Legen Sie DepthEnable und StencilEnable auf "false" in [ **D3D11\_Tiefe\_SCHABLONE\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110)). Wenn die Rasterung deaktiviert ist, werden damit zusammenhängende Pipelinezähler nicht aktualisiert.
+-   [Pixelshader-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage). Die Pixelshader-Stufe empfängt interpolierte Daten für einen Grundtyp und generiert Pro-Pixel-Daten (z. B. die Farbe). [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) Methoden, die Unterstützung dieser Phase haben das Präfix "PS".
+-   [Ausgabezusammenführungs-Stufe](https://msdn.microsoft.com/library/windows/desktop/bb205120). Die Ausgabezusammenführungs-Stufe kombiniert verschiedene Ausgabedaten (Pixelshaderwerte, Tiefen- und Schabloneninformationen) mit dem Inhalt des Renderziels und Tiefen-/Schablonenpuffern, um das endgültige Pipelineergebnis zu generieren. [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) Methoden, die dieser Phase unterstützen "OM" vorangestellt.
 
-(Es gibt auch Stufen für Geometrie-Shader, Hüllen-Shader, Tesselator und Domain-Shader, aber da es dafür in OpenGL ES 2.0 keine Äquivalente gibt, gehen wir hier nicht weiter darauf ein.) Eine vollständige Liste der Methoden für diese Stufen finden Sie auf den Referenzseiten [ **ID3D11DeviceContext** ](https://msdn.microsoft.com/library/windows/desktop/ff476385) und [ **ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598). **ID3D11DeviceContext1** erweitert **ID3D11DeviceContext** für Direct3D11.
+(Es gibt auch Stufen für Geometry-Shader, Hull-Shader, Tesselator und Domain-Shader. Diese haben aber keine Äquivalente in OpenGL ES 2.0 und werden hier daher nicht behandelt.) Eine vollständige Liste der Methoden für diese Stufen finden Sie auf den Referenzseiten zu [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) und [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). **ID3D11DeviceContext1** erweitert **ID3D11DeviceContext** für Direct3D 11.
 
 ## <a name="creating-a-shader"></a>Erstellen eines Shaders
 
 
-In Direct3D werden Shaderressourcen nicht vor dem Kompilieren und Laden erstellt. Stattdessen wird die Ressource beim Laden der HLSL-Datei erstellt. Es gibt daher keine direkt analoge Funktion für „glCreateShader“, die eine initialisierte Shaderressource eines bestimmten Typs erstellt (z.B. GL\_VERTEX\_SHADER oder GL\_FRAGMENT\_SHADER). Shader werden stattdessen nach dem Laden der HLSL-Datei mit spezifischen Funktionen wie [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) und [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) erstellt, für die der Typ und die kompilierte HLSL-Datei als Parameter verwendet werden.
+In Direct3D werden Shaderressourcen nicht vor dem Kompilieren und Laden erstellt. Stattdessen wird die Ressource beim Laden der HLSL-Datei erstellt. Daher besteht keine direkte Analog Funktion zur GlCreateShader, die ein initialisiertes Shaderressource eines bestimmten Typs erstellt (z. B. GL\_VERTEX\_Shader- oder GL\_FRAGMENT\_SHADER). Shader werden stattdessen nach dem Laden der HLSL-Datei mit spezifischen Funktionen wie [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) und [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) erstellt, für die der Typ und die kompilierte HLSL-Datei als Parameter verwendet werden.
 
-| OpenGL ES2.0  | Direct3D11                                                                                                                                                                                                                                                             |
+| OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                                             |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | glCreateShader | Nachdem das kompilierte Shaderobjekt (Compiled Shader Object, CSO) geladen wurde, rufen Sie [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) und [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) auf. Übergeben Sie die CSO-Datei dabei als Puffer. |
 
@@ -56,21 +56,21 @@ In Direct3D werden Shaderressourcen nicht vor dem Kompilieren und Laden erstellt
 ## <a name="compiling-a-shader"></a>Kompilieren eines Shaders
 
 
-Direct3D-Shader müssen in UWP-Apps (Universelle Windows-Plattform) als CSO-Dateien vorkompiliert und mit einer der Windows-Runtime-Datei-APIs geladen werden. (Desktop-Apps können die Shader zur Laufzeit aus Textdateien oder Zeichenfolgen kompilieren.) Die CSO-Dateien werden aus beliebigen HLSL-Dateien des Microsoft Visual Studio-Projekts erstellt und behalten ihre Namen (jedoch mit der Dateierweiterung „.cso“). Stellen Sie sicher, dass Sie in Ihrem gelieferten Paket enthalten sind!
+Direct3D-Shader müssen in UWP-Apps (Universelle Windows-Plattform) als CSO-Dateien vorkompiliert und mit einer der Windows-Runtime-Datei-APIs geladen werden. (Desktop-apps können die Shader aus Textdateien oder Zeichenfolge zur Laufzeit Kompilieren). Die CSO-Dateien werden aus .hlsl Dateien erstellt, die Teil des Microsoft Visual Studio-Projekts und behalten die gleichen Namen, nur mit der Erweiterung .cso. Stellen Sie sicher, dass Sie in Ihrem gelieferten Paket enthalten sind!
 
-| OpenGL ES2.0                          | Direct3D11                                                                                                                                                                   |
+| OpenGL ES 2.0                          | Direct3D 11                                                                                                                                                                   |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glCompileShader                        | Nicht verfügbar Kompilieren Sie die Shader in Visual Studio in CSO-Dateien, und fügen Sie sie Ihrem Paket hinzu.                                                                                     |
-| Verwenden von "glGetShaderiv" für den Kompilierungsstatus | Nicht verfügbar Überprüfen Sie, ob die Kompilierungsausgabe des FX-Compilers (FXC) von Visual Studio Fehler enthält. Bei erfolgreicher Kompilierung wird eine entsprechende CSO-Datei erstellt. |
+| glCompileShader                        | Nicht zutreffend. Kompilieren Sie die Shader in Visual Studio in CSO-Dateien, und fügen Sie sie Ihrem Paket hinzu.                                                                                     |
+| Verwenden von "glGetShaderiv" für den Kompilierungsstatus | Nicht zutreffend. Überprüfen Sie, ob die Kompilierungsausgabe des FX-Compilers (FXC) von Visual Studio Fehler enthält. Bei erfolgreicher Kompilierung wird eine entsprechende CSO-Datei erstellt. |
 
  
 
 ## <a name="loading-a-shader"></a>Laden eines Shaders
 
 
-Wie im Abschnitt zum Erstellen eines Shaders erwähnt, erstellt Direct3D11 den Shader, wenn die entsprechende CSO-Datei in einen Puffer geladen und an eine der Methoden in der folgenden Tabelle übergeben wird.
+Wie im Abschnitt zum Erstellen eines Shaders erwähnt, erstellt Direct3D 11 den Shader, wenn die entsprechende CSO-Datei in einen Puffer geladen und an eine der Methoden in der folgenden Tabelle übergeben wird.
 
-| OpenGL ES2.0 | Direct3D11                                                                                                                                                                                                                           |
+| OpenGL ES 2.0 | Direct3D 11                                                                                                                                                                                                                           |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ShaderSource  | Nachdem das kompilierte Shaderobjekt geladen wurde, rufen Sie [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) und [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) auf. |
 
@@ -79,13 +79,13 @@ Wie im Abschnitt zum Erstellen eines Shaders erwähnt, erstellt Direct3D11 den S
 ## <a name="setting-up-the-pipeline"></a>Einrichten der Pipeline
 
 
-In OpenGLES2.0 wird das "Shaderprogrammobjekt" verwendet, das mehrere Shader für die Ausführung enthält. Einzelne Shader werden an das Shaderprogrammobjekt angefügt. In Direct3D11 arbeiten Sie jedoch direkt mit dem Renderkontext ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) und erstellen Shader für den Kontext.
+In OpenGL ES 2.0 wird das "Shaderprogrammobjekt" verwendet, das mehrere Shader für die Ausführung enthält. Einzelne Shader werden an das Shaderprogrammobjekt angefügt. In Direct3D 11 arbeiten Sie jedoch direkt mit dem Renderkontext ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) und erstellen Shader für den Kontext.
 
-| OpenGL ES2.0   | Direct3D11                                                                                   |
+| OpenGL ES 2.0   | Direct3D 11                                                                                   |
 |-----------------|-----------------------------------------------------------------------------------------------|
-| glCreateProgram | Nicht verfügbar In Direct3D11 wird die Shaderprogrammobjekt-Abstraktion nicht verwendet.                          |
-| glLinkProgram   | Nicht verfügbar In Direct3D11 wird die Shaderprogrammobjekt-Abstraktion nicht verwendet.                          |
-| glUseProgram    | Nicht verfügbar In Direct3D11 wird die Shaderprogrammobjekt-Abstraktion nicht verwendet.                          |
+| glCreateProgram | Nicht zutreffend. In Direct3D 11 wird die Shaderprogrammobjekt-Abstraktion nicht verwendet.                          |
+| glLinkProgram   | Nicht zutreffend. In Direct3D 11 wird die Shaderprogrammobjekt-Abstraktion nicht verwendet.                          |
+| glUseProgram    | Nicht zutreffend. In Direct3D 11 wird die Shaderprogrammobjekt-Abstraktion nicht verwendet.                          |
 | glGetProgramiv  | Verwenden Sie den erstellten Verweis auf [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). |
 
  
@@ -115,9 +115,9 @@ D3D11CreateDevice(
 ## <a name="setting-the-viewports"></a>Festlegen der Viewports
 
 
-Das Festlegen eines Viewports funktioniert in Direct3D11 und OpenGLES2.0 ähnlich. In Direct3D11 rufen Sie [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) mit einer konfigurierten [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722)-Klasse auf.
+Das Festlegen eines Viewports funktioniert in Direct3D 11 und OpenGL ES 2.0 ähnlich. Rufen Sie in Direct3D 11, [ **ID3D11DeviceContext::RSSetViewports** ](https://msdn.microsoft.com/library/windows/desktop/ff476480) mit einem konfigurierten [ **CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722).
 
-Direct3D11: Festlegen eines Viewports.
+Direct3D 11: Wenn einen Viewport an.
 
 ``` syntax
 CD3D11_VIEWPORT viewport(
@@ -129,7 +129,7 @@ CD3D11_VIEWPORT viewport(
 m_d3dContext->RSSetViewports(1, &viewport);
 ```
 
-| OpenGL ES2.0 | Direct3D11                                                                                                                                  |
+| OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
@@ -138,9 +138,9 @@ m_d3dContext->RSSetViewports(1, &viewport);
 ## <a name="configuring-the-vertex-shaders"></a>Konfigurieren der Vertex-Shader
 
 
-Die Konfiguration eines Vertex-Shaders erfolgt in Direct3D11 beim Laden des Shaders. Uniform-Variablen werden als Konstantenpuffer mit [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795) übergeben.
+Die Konfiguration eines Vertex-Shaders erfolgt in Direct3D 11 beim Laden des Shaders. Uniform-Variablen werden als Konstantenpuffer mit [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795) übergeben.
 
-| OpenGL ES2.0                    | Direct3D11                                                                                               |
+| OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524)                       |
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
@@ -151,9 +151,9 @@ Die Konfiguration eines Vertex-Shaders erfolgt in Direct3D11 beim Laden des Shad
 ## <a name="configuring-the-pixel-shaders"></a>Konfigurieren der Pixelshader
 
 
-Die Konfiguration eines Pixelshaders erfolgt in Direct3D11 beim Laden des Shaders. Uniform-Variablen werden als Konstantenpuffer mit [**ID3D11DeviceContext1::PSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404649) übergeben.
+Die Konfiguration eines Pixelshaders erfolgt in Direct3D 11 beim Laden des Shaders. Uniform-Variablen werden als Konstantenpuffer mit [**ID3D11DeviceContext1::PSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404649) übergeben.
 
-| OpenGL ES2.0                    | Direct3D11                                                                                               |
+| OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)                         |
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
@@ -164,11 +164,11 @@ Die Konfiguration eines Pixelshaders erfolgt in Direct3D11 beim Laden des Shader
 ## <a name="generating-the-final-results"></a>Generieren der endgültigen Ergebnisse
 
 
-Wenn die Pipeline abgeschlossen ist, zeichnen Sie die Ergebnisse der Shaderstufen in den Hintergrundpuffer. In Direct3D11 wird dazu wie in OpenGLES2.0 ein Zeichnen-Befehl aufgerufen, um die Ergebnisse als Farbzuordnung in den Hintergrundpuffer auszugeben. Dieser Hintergrundpuffer wird anschließend an die Anzeige gesendet.
+Wenn die Pipeline abgeschlossen ist, zeichnen Sie die Ergebnisse der Shaderstufen in den Hintergrundpuffer. In Direct3D 11 wird dazu wie in OpenGL ES 2.0 ein Zeichnen-Befehl aufgerufen, um die Ergebnisse als Farbzuordnung in den Hintergrundpuffer auszugeben. Dieser Hintergrundpuffer wird anschließend an die Anzeige gesendet.
 
-| OpenGL ES2.0  | Direct3D11                                                                                                                                                                                                                                         |
+| OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (oder andere Draw\*-Methoden für [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
+| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [ **ID3D11DeviceContext1::DrawIndexed** ](https://msdn.microsoft.com/library/windows/desktop/ff476409) (oder andere Draw\* Methoden [  **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
 
  
@@ -176,12 +176,12 @@ Wenn die Pipeline abgeschlossen ist, zeichnen Sie die Ergebnisse der Shaderstufe
 ## <a name="porting-glsl-to-hlsl"></a>Portieren von GLSL zu HLSL
 
 
-GLSL und HLSL unterscheiden sich abgesehen von der Unterstützung komplexer Typen und einiger allgemeiner Syntaxteile nur wenig. Für viele Entwickler besteht die einfachste Methode für die Portierung zwischen den beiden Programmiersprachen darin, Aliase für allgemeine OpenGLES2.0-Anweisungen und -Definitionen zu erstellen und sie ihrem HLSL-Äquivalent zuzuordnen. Beachten Sie, dass Direct3D die Shadermodellversion verwendet, um die von einer Grafikschnittstelle unterstützte HLSL-Funktionsgruppe darzustellen. In OpenGL wird eine andere Versionsspezifikation für HLSL verwendet. Die folgende Tabelle soll Ihnen– in Bezug auf die Version– eine ungefähre Vorstellung von den für Direct3D11 und OpenGLES2.0 definierten Funktionsgruppen der Shaderprogrammiersprachen geben.
+GLSL und HLSL unterscheiden sich abgesehen von der Unterstützung komplexer Typen und einiger allgemeiner Syntaxteile nur wenig. Für viele Entwickler besteht die einfachste Methode für die Portierung zwischen den beiden Programmiersprachen darin, Aliase für allgemeine OpenGL ES 2.0-Anweisungen und -Definitionen zu erstellen und sie ihrem HLSL-Äquivalent zuzuordnen. Beachten Sie, dass Direct3D die Shadermodellversion verwendet, um die von einer Grafikschnittstelle unterstützte HLSL-Funktionsgruppe darzustellen. In OpenGL wird eine andere Versionsspezifikation für HLSL verwendet. Die folgende Tabelle soll Ihnen – in Bezug auf die Version – eine ungefähre Vorstellung von den für Direct3D 11 und OpenGL ES 2.0 definierten Funktionsgruppen der Shaderprogrammiersprachen geben.
 
 | Shaderprogrammiersprache           | GLSL-Funktionsversion                                                                                                                                                                                                      | Direct3D-Shadermodell |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| Direct3D11 HLSL          | ~4.30                                                                                                                                                                                                                    | SM5.0                |
-| GLSLES für OpenGLES2.0 | 1.40. Ältere Implementierungen von GLSLES für OpenGLES2.0 verwenden möglicherweise die Versionen1.10 bis1.30. Überprüfen Sie den ursprünglichen Code mit „glGetString(GL\_SHADING\_LANGUAGE\_VERSION)“ oder „glGetString(SHADING\_LANGUAGE\_VERSION“, um festzustellen, ob dies der Fall ist. | ~SM2.0               |
+| Direct3D 11 HLSL          | ~4.30                                                                                                                                                                                                                    | SM 5.0                |
+| GLSL ES für OpenGL ES 2.0 | 1.40. Ältere Implementierungen von GLSL ES für OpenGL ES 2.0 verwenden möglicherweise die Versionen 1.10 bis 1.30. Überprüfen Sie den ursprünglichen Code mit GlGetString (GL\_SCHATTIERUNG\_Sprache\_VERSION) oder GlGetString (SCHATTIERUNG\_Sprache\_VERSION) fest. | ~SM 2.0               |
 
  
 
@@ -190,25 +190,25 @@ Weitere Informationen zu den Unterschieden zwischen den beiden Shaderprogrammier
 ## <a name="porting-the-opengl-intrinsics-to-hlsl-semantics"></a>Portieren der systeminternen OpenGL-Funktionen zu HLSL-Semantik
 
 
-Bei der Direct3D11-HLSL-Semantik handelt es sich um Zeichenfolgen, die wie eine Uniform-Variable oder ein Attributname zum Identifizieren eines zwischen der App und einem Shaderprogramm übergebenen Werts verwendet werden. Obwohl viele verschiedene Zeichenfolgen möglich sind, empfiehlt es sich, eine Zeichenfolge wie POSITION oder COLOR zu verwenden, aus der der Verwendungszweck hervorgeht. Sie weisen diese Semantik zu, wenn Sie einen Konstantenpuffer oder ein Puffereingabelayout erstellen. Sie können auch eine Zahl zwischen 0und7 an die Semantik anfügen, wenn Sie separate Register für ähnliche Werte verwenden möchten. Beispiel: COLOR0, COLOR1, COLOR2...
+Bei der Direct3D 11-HLSL-Semantik handelt es sich um Zeichenfolgen, die wie eine Uniform-Variable oder ein Attributname zum Identifizieren eines zwischen der App und einem Shaderprogramm übergebenen Werts verwendet werden. Obwohl viele verschiedene Zeichenfolgen möglich sind, empfiehlt es sich, eine Zeichenfolge wie POSITION oder COLOR zu verwenden, aus der der Verwendungszweck hervorgeht. Sie weisen diese Semantik zu, wenn Sie einen Konstantenpuffer oder ein Puffereingabelayout erstellen. Sie können auch eine Zahl zwischen 0 und 7 an die Semantik anfügen, wenn Sie separate Register für ähnliche Werte verwenden möchten. Zum Beispiel: FARBE0, COLOR1, COLOR2...
 
-Bei einer Semantik mit dem Präfix "SVß_" handelt es sich um eine Systemwertsemantik, in die das Shaderprogramm schreibt und die nicht von der App selbst (ausgeführt in der CPU) geändert werden kann. In der Regel enthält diese Semantik Werte, die Ein- oder Ausgaben einer anderen Shaderstufe in der Grafikpipeline sind oder komplett von der GPU generiert werden.
+Semantik, die mit dem Präfix "SV\_" Wertsemantik System sind, die in der von Ihrem shaderprogramm geschrieben werden; der app selbst (die auf der CPU ausgeführt wird) nicht geändert werden können. In der Regel enthält diese Semantik Werte, die Ein- oder Ausgaben einer anderen Shaderstufe in der Grafikpipeline sind oder komplett von der GPU generiert werden.
 
-Zudem weist die SV\_-Semantik ein anderes Verhalten auf, wenn damit die Eingabe für eine Shaderstufe oder die Ausgabe einer Shaderstufe angegeben wird. SV\_POSITION (Ausgabe) enthält z.B. die während der Vertex-Shader-Stufe transformierten Vertexdaten. SV\_POSITION (Eingabe) enthält die während der Rasterung interpolierten Pixelpositionswerte.
+Darüber hinaus SV\_ Semantik haben unterschiedliche Verhaltensweisen auf, wenn sie verwendet werden, geben Sie eine Eingabe, oder die Ausgabe einer Shader-Stufe. Z. B. SV\_POSITION (Ausgabe) enthält die Vertexdaten, die während der Vertexshader-Stufe und SV transformiert\_POSITION (Eingabe) enthält die Position Pixelwerte während der Rasterung interpoliert.
 
-Die folgende Tabelle enthält einige Zuordnungen für allgemeine systeminterne OpenGLES2.0-Shaderfunktionen:
+Die folgende Tabelle enthält einige Zuordnungen für allgemeine systeminterne OpenGL ES 2.0-Shaderfunktionen:
 
 | OpenGL-Systemwert | Verwenden Sie diese HLSL-Semantik:                                                                                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| gl\_Position        | POSITION(n) für Scheitelpunkt-Pufferdaten. SV\_POSITION stellt eine Pixelposition für den Pixelshader bereit und kann nicht von der App geschrieben werden.                                        |
+| gl\_Position        | POSITION(n) für Scheitelpunkt-Pufferdaten. SV\_POSITION bietet eine Pixelposition, an dem PixelShader und kann nicht geschrieben werden, von Ihrer app.                                        |
 | gl\_Normal          | NORMAL(n) für vom Scheitelpunktpuffer bereitgestellte Normalendaten.                                                                                                                 |
 | gl\_TexCoord\[n\]   | TEXCOORD(n) für Textur-UV-Koordinatendaten (ST in manchen OpenGL-Dokumentationen), die an einen Shader übergeben werden.                                                                       |
 | gl\_FragColor       | COLOR(n) für RGBA-Farbdaten, die an einen Shader übergeben werden. Diese Daten werden wie Koordinatendaten behandelt. Durch die Semantik können Sie nur leichter erkennen, dass es sich um Farbdaten handelt. |
-| gl\_FragData\[n\]   | SV\_Target\[n\] zum Schreiben aus einem Pixelshader in eine Zieltextur oder einen anderen Pixelpuffer.                                                                               |
+| gl\_FragData\[n\]   | SV\_Ziel\[n\] zum Schreiben von einem Pixel-Shader auf eine Textur oder andere pixelpuffer.                                                                               |
 
  
 
-Die Methode zum Codieren der Semantik unterscheidet sich von der Verwendung systeminterner Funktionen in OpenGLES2.0. In OpenGL können Sie auf viele der systeminternen Funktionen direkt ohne Konfiguration oder Deklaration zugreifen. In Direct3D müssen Sie ein Feld in einem bestimmten Konstantenpuffer deklarieren, um eine bestimmte Semantik verwenden zu können, oder es als Rückgabewert für die **main()**-Methode eines Shaders deklarieren.
+Die Methode zum Codieren der Semantik unterscheidet sich von der Verwendung systeminterner Funktionen in OpenGL ES 2.0. In OpenGL können Sie auf viele der systeminternen Funktionen direkt ohne Konfiguration oder Deklaration zugreifen. In Direct3D müssen Sie ein Feld in einem bestimmten Konstantenpuffer deklarieren, um eine bestimmte Semantik verwenden zu können, oder es als Rückgabewert für die **main()**-Methode eines Shaders deklarieren.
 
 Das folgende Beispiel zeigt die Verwendung einer Semantik in einer Konstantenpufferdefinition:
 
@@ -239,7 +239,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-In diesem Fall ist SV\_TARGET die Position des Renderziels, in das die Pixelfarbe (definiert als Vektor mit vier Floatwerten) bei Abschluss der Shaderausführung geschrieben wird.
+In diesem Fall SV\_Ziel ist der Speicherort des Renderziels, die in die Pixelfarbe (definiert als die eines Vektors mit vier Gleitkommawerten) geschrieben werden, wenn der Shader Ausführung abgeschlossen ist.
 
 Ausführliche Informationen zur Verwendung der Semantik mit Direct3D finden Sie unter [HLSL-Semantik](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 

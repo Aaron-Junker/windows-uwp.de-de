@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b5d245247d33f3c04839620615f2778ef7dfb59
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944676"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660025"
 ---
 # <a name="light-mapping-with-textures"></a>Lichtzuordnung mit Texturen
 
 
-Eine Lichtzuordnung ist eine Textur oder Texturgruppe, die Informationen über das Licht in einer 3D-Szene enthält. Lichtzuordnungen ordnen Licht- und Schattenbereiche Grundtypen zu. Multipass und das Mischen mehrerer Texturen ermöglichen Ihrer Anwendung, Szenen mit einer realistischeren Darstellung zu rendern als mit Schattierungstechniken.
+Eine Lichtzuordnung ist eine Textur oder Texturgruppe, die Informationen über Licht in der 3D-Szene enthält. Lichtzuordnungen ordnen Licht- und Schattenbereiche Grundtypen zu. Multipass und das Mischen mehrerer Texturen ermöglichen Ihrer Anwendung, Szenen mit einer realistischeren Darstellung zu rendern als mit Schattierungstechniken.
 
 Damit eine Anwendung eine 3D-Szene realistisch rendern kann, muss der Effekt von Lichtquellen in der Darstellung der Szene berücksichtigt werden. Obwohl Techniken wie Flat und Gouraud Shading in dieser Hinsicht wertvolle Tools darstellen, sind sie für Ihre Anforderungen möglicherweise unzureichend. Direct3D unterstützt auch Multipass und das Mischen mehrerer Texturen. Mit diesen Funktionen kann Ihre Anwendung Szenen in einer realistischeren Darstellung rendern als nur mit Shading-Techniken gerenderte Szenen. Durch die Anwendung einer oder mehrerer Lichtzuordnungen kann Ihre Anwendung Licht- und Schattenbereiche ihren Grundtypen zuordnen.
 
-Eine Lichtzuordnung ist eine Textur oder Texturgruppe, die Informationen über Licht in einer 3D-Szene enthält. Sie können Lichtinformationen in den Alpha-Werten der Lichtzuordnung, in den Farbwerten oder in beiden speichern.
+Eine Lichtzuordnung ist eine Textur oder Texturgruppe, die Informationen über Licht in der 3D-Szene enthält. Sie können Lichtinformationen in den Alpha-Werten der Lichtzuordnung, in den Farbwerten oder in beiden speichern.
 
 Wenn Sie die Lichtzuordnung mithilfe eine mehrstufigen Texturverblendung implementieren, sollte Ihre Anwendung die Lichtzuordnung zu seinen Grundtypen beim ersten Durchlauf rendern. Im zweiten Durchlauf sollte sie die Basistextur rendern. Die Ausnahme bildet die Glanzlichtzuordnung. Rendern Sie in diesem Fall zuerst die Basistextur und fügen Sie dann die Lichtzuordnung hinzu.
 
@@ -47,19 +47,19 @@ Informationen zur Verwendung der Texturverblendung in Direct3D zum Ausführen ei
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="monochrome-light-maps.md">Monochrome Lichtzuordnungen</a></p></td>
-<td align="left"><p>Durch die monochrome Lichtzuordnung sind ältere Adapter in der Lage, eine mehrstufige Texturverblendung auszuführen, wenn eine ältere 3D-Beschleunigerkarte die Texturverblendung unter Verwendung der Alpha-Werte des Zielpixels nicht unterstützt.</p></td>
+<td align="left"><p><a href="monochrome-light-maps.md">Monochrome Licht zugeordnet wird.</a></p></td>
+<td align="left"><p>Die einfarbige Lichtzuordnung ermöglicht älteren Adaptern das Ausführen der Vermischung von mehrlagigen Texturen, wenn eine ältere 3D-Beschleunigungsplatine die Texturvermischung mit dem Alphawert des Zielpixels nicht unterstützt.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="color-light-maps.md">Farblichtzuordnung</a></p></td>
+<td align="left"><p><a href="color-light-maps.md">Helle Farbe-Zuordnungen</a></p></td>
 <td align="left"><p>Eine farbige Lichtzuordnung verwendet für die Beleuchtungsinformationen RGB-Daten in der Lichtzuordnung. Eine Anwendung rendert 3D-Szenen in der Regel realistischer, wenn farbige Lichtzuordnungen verwendet werden.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="specular-light-maps.md">Glanzlichtzuordnungen</a></p></td>
+<td align="left"><p><a href="specular-light-maps.md">Glänzende Licht zugeordnet wird.</a></p></td>
 <td align="left"><p>Glänzende Objekte aus hochreflektieRendern Materialien erhalten durch das Beleuchten mit einer Lichtquelle Glanzlichter. Manchmal erhalten Sie genauere Glanzlichter, wenn Sie eine Glanzlichtzuordnung zu den Grundtypen anwenden, statt die vom Beleuchtungsmodul erzeugten Glanzlichter zu verwenden.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="diffuse-light-maps.md">Diffuse Lichtzuordnungen</a></p></td>
+<td align="left"><p><a href="diffuse-light-maps.md">Diffuses Licht Zuordnungen</a></p></td>
 <td align="left"><p>Matte Oberflächen haben eine diffuse Lichtreflektion. Die Helligkeit von diffusem Licht ist von der Entfernung zur Lichtquelle und dem Winkel zwischen der Oberflächennormale und dem Richtungsvektor der Lichtquelle abhängig. Texturlichtzuordnungen können komplexe diffuse Beleuchtung simulieren.</p></td>
 </tr>
 </tbody>

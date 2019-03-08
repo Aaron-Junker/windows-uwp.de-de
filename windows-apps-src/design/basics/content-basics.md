@@ -1,5 +1,5 @@
 ---
-Description: An overview of common page patterns and UI elements for displaying content in your UWP app.
+Description: Eine Übersicht über häufige Muster von Seite und die Elemente der Benutzeroberfläche für das Anzeigen von Inhalten in Ihre UWP-app.
 title: Grundlagen des Inhaltsdesigns für UWP-Apps (Universelle Windows-Plattform)
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
@@ -7,14 +7,14 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 12/1/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004606"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594585"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>Grundlagen des Inhaltsdesigns für UWP-Apps
 
@@ -80,7 +80,7 @@ Um diese Seitenmuster zu erstellen, müssen Sie eine Kombination aus einzelnen I
 <tr class="odd">
 <td align="left">Audio und Video<br/><br/>
     <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left"><a href="../controls-and-patterns/media-playback.md">Steuerelemente für Medienwiedergabe und -transport</a></td>
+<td align="left"><a href="../controls-and-patterns/media-playback.md">Wiedergabe und Transport mediensteuerelementen</a></td>
 <td align="left">Gibt Audio- und Videoinhalte wieder.</td>
 </tr>
 <tr class="even">
@@ -90,9 +90,9 @@ Um diese Seitenmuster zu erstellen, müssen Sie eine Kombination aus einzelnen I
 <td align="left">Zeigt Bilder an. Die „Flip-Ansicht“ zeigt Bilder nacheinander in einer Sammlung an, wie etwa Fotos in einem Album oder Elemente auf einer Produktdetailseite.</td>
 </tr>
 <tr class="odd">
-<td align="left">Collections <br/><br/>
+<td align="left">Sammlungen <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">Listenansicht und Rasteransicht</a></td>
+<td align="left"><a href="../controls-and-patterns/lists.md">Listenansicht und der Rasteransicht</a></td>
 <td align="left">Stellt Elemente in einer interaktiven Liste oder einem Raster dar. Verwenden Sie diese Elemente, um Benutzern die Auswahl eines Films aus einer Liste mit Neuerscheinungen oder die Verwaltung von Inventar zu ermöglichen.</td>
 </tr>
 <tr class="even">

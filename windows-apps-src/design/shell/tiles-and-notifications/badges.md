@@ -1,19 +1,19 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+Description: Erfahren Sie, wie Sie mithilfe von Kacheln, Signalen, Popups und Benachrichtigungen Einstiegspunkte in Ihre App bereitstellen und Benutzer auf dem neuesten Stand halten können.
 title: Signalbenachrichtigungen für UWP-Apps
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920285"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649085"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>Signalbenachrichtigungen für UWP-Apps
 
@@ -35,7 +35,7 @@ Benachrichtigungssignale werden unabhängig davon, ob die App gerade ausgeführt
 <table>
     <tr>
         <th>Wert</th>
-        <th>Signal</th>
+        <th>Badge</th>
         <th>XML</th>
     </tr>
     <tr>
@@ -128,7 +128,7 @@ Anstelle einer Zahl kann in einem Signal eine der nicht erweiterbaren Statusglyp
 
 ## <a name="create-a-badge"></a>Erstellen eines Signals
 
-Diese Beispiele zeigen, wie eine signalaktualisierung erstellt.
+Diese Beispiele zeigen, wie ein Badge-Update zu erstellen.
 
 ### <a name="create-a-numeric-badge"></a>Erstellen eines numerischen Signals
 
@@ -196,7 +196,7 @@ private void clearBadge()
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-* [Benachrichtigungsbeispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Zeigt, wie Sie Live-Kacheln erstellen, Signalupdates senden und Popupbenachrichtigungen anzeigen können. 
+* [Notifications-Beispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Zeigt, wie Sie Live-Kacheln erstellen, Signalupdates senden und Popupbenachrichtigungen anzeigen können. 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

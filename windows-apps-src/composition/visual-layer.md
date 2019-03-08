@@ -4,18 +4,18 @@ title: Visuelle Ebene
 description: Die Windows.UI.Composition-API ermöglicht den Zugriff auf die Kompositionsebene zwischen der Frameworkebene (XAML) und der Grafikebene (DirectX).
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927601"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626405"
 ---
 # <a name="visual-layer"></a>Visuelle Ebene
 
-Die visuelle Ebene bietet eine hohe Leistung, Speichermodus-API für Grafiken, Effekte und Animationen und ist die Grundlage für alle UI-Elemente für Windows-Geräte.Sie definieren die UI auf einfache Weise und die visuelle Ebene nutzt Hardwarebeschleunigungsgrafiken, um sicherzustellen, dass Ihre Inhalte, Effekte und Animationen reibungslos, störungsfrei und unabhängig vom UI-Thread der App gerendert werden.
+Die visuelle Ebene bietet eine hohe Leistung, Speichermodus-API für Grafiken, Effekte und Animationen und ist die Grundlage für alle UI-Elemente für Windows-Geräte. Sie definieren die UI auf einfache Weise und die visuelle Ebene nutzt Hardwarebeschleunigungsgrafiken, um sicherzustellen, dass Ihre Inhalte, Effekte und Animationen reibungslos, störungsfrei und unabhängig vom UI-Thread der App gerendert werden.
 
 Wichtige Highlights:
 
@@ -32,13 +32,13 @@ Die Windows-UWP-Apps verwenden bereits die visuelle Ebene über eines der UI-Fra
 
 Die wichtigsten Funktionen der visuellen Ebene sind:
 
-1. **Inhalt**: Einfache Zusammensetzung des benutzerdefinierten gezeichneten Inhalts
-1. **Effekte**: UI-Effektsystem in Echtzeit, dessen Effekte animiert, verkettet und angepasst werden können
-1. **Animationen**: Ausdrucksstarke, Framework-agnostische Animationen, die unabhängig vom UI-Thread ausgeführt werden
+1. **Inhalt**: Einfache zusammensetzen von benutzerdefinierten gezeichneten Inhalt
+1. **Effekte**: Echtzeit-Benutzeroberfläche Effekte System, dessen Auswirkungen animiert, verkettet und angepasst werden kann
+1. **Animationen**: Ausdrucksbasierte, dem Framework unabhängig Animationen, die unabhängig von der UI-Thread ausgeführt
 
 ### <a name="content"></a>Inhalt
 
-Inhalt wird vom Animations- und Effektsystem mit visuellen Elementen für die Verwendung gehostet, transformiert und zur Verfügung gestellt. An der Basis der Klassenhierarchie befindet sich die [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)-Klasse, ein leichter Thread-Agile-Proxy im App-Prozess zum visuellen Zustand im Kompositor. Unterklassen der Visual [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) für untergeordnete Elemente erstellen Strukturen von visuellen Elementen und [**spritevisual-Element**](https://msdn.microsoft.com/library/windows/apps/Mt589433) , das enthält enthalten und können mit Volltonfarben, benutzerdefinierten gezeichneten Inhalten oder visuellen Effekten gezeichnet werden. Zusammen bilden diese Visual-Typen die visuelle Struktur für die 2D-UI und stützen die meisten sichtbaren XAML-FrameworkElements.
+Inhalt wird vom Animations- und Effektsystem mit visuellen Elementen für die Verwendung gehostet, transformiert und zur Verfügung gestellt. An der Basis der Klassenhierarchie befindet sich die [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)-Klasse, ein leichter Thread-Agile-Proxy im App-Prozess zum visuellen Zustand im Kompositor. Untergeordnete Klassen visuellen  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) für untergeordnete Elemente, Strukturen, von Visualisierungen erstellen können und [ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) , Inhalt enthält, und können mit beiden Volltonfarben, benutzerdefinierte gezeichneten Inhalt oder visuellen Effekte gezeichnet werden. Zusammen bilden diese Visual-Typen die visuelle Struktur für die 2D-UI und stützen die meisten sichtbaren XAML-FrameworkElements.
 
 Weitere Informationen finden Sie in der Übersicht [Visuelle Kompositionseffekte](composition-visual-tree.md).
 
@@ -52,7 +52,7 @@ Weitere Informationen finden Sie in der Übersicht [Kompositionseffekte](composi
 
 ### <a name="animations"></a>Animationen
 
-Das Animationssystem in der visuellen Ebene ermöglicht das Verschieben von visuellen Elementen, Animieren von Effekten und Erstellen von Transformationen, Clips und anderen Eigenschaften.Es ist ein Framework-agnostisches System, das durchgehend im Hinblick auf hohe Leistung entwickelt wurde.Es wird unabhängig vom UI-Thread ausgeführt, um Gleichmäßigkeit und Skalierbarkeit sicherzustellen.Während es Ihnen ermöglicht, mithilfe vertrauter KeyFrame-Animationen Eigenschaften im Laufe der Zeit zu ändern, ermöglicht es auch das Aufstellen von mathematischen Beziehungen zwischen unterschiedlichen Eigenschaften, z.B. Benutzereingaben, mit denen Sie direkt nahtlos choreographierte Umgebungen erstellen können.
+Das Animationssystem in der visuellen Ebene ermöglicht das Verschieben von visuellen Elementen, Animieren von Effekten und Erstellen von Transformationen, Clips und anderen Eigenschaften.  Es ist ein Framework-agnostisches System, das durchgehend im Hinblick auf hohe Leistung entwickelt wurde.  Es wird unabhängig vom UI-Thread ausgeführt, um Gleichmäßigkeit und Skalierbarkeit sicherzustellen.  Während es Ihnen ermöglicht, mithilfe vertrauter KeyFrame-Animationen Eigenschaften im Laufe der Zeit zu ändern, ermöglicht es auch das Aufstellen von mathematischen Beziehungen zwischen unterschiedlichen Eigenschaften, z. B. Benutzereingaben, mit denen Sie direkt nahtlos choreographierte Umgebungen erstellen können.
 
 Weitere Informationen finden Sie in der Übersicht [Kompositionsanimationen](composition-animation.md).
 
@@ -66,6 +66,6 @@ Weitere Informationen finden Sie in der Übersicht [Benutzung der visuellen Eben
 
 * [**Vollständige Referenzdokumentation für die API**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
 * Erweiterte UI und Kompositionsbeispiele in dem [WindowsUIDevLabs-GitHub](https://github.com/microsoft/windowsuidevlabs).
-* [Windows.UI.Composition-Beispielgalerie](https://aka.ms/winuiapp)
-* [@windowsui Twitter-Feed ](https://twitter.com/windowsui)
-* Lesen Sie den MSDN-Artikel von Kenny Kerr zu dieser API: [Grafiken und Animationen – Windows Composition wird 10](https://msdn.microsoft.com/magazine/mt590968)
+* [Windows.UI.Composition-Beispielkatalog](https://aka.ms/winuiapp)
+* [@windowsui Twitter-feed ](https://twitter.com/windowsui)
+* Kerrs MSDN-Artikel auf diese API zu lesen: [Grafiken und Animation – Windows-Kompositionsmodul wird 10](https://msdn.microsoft.com/magazine/mt590968)

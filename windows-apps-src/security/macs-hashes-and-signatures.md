@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, Uwp, Sicherheit
 ms.localizationpriority: medium
 ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922321"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651235"
 ---
 # <a name="macs-hashes-and-signatures"></a>MACs, Hashes und Signaturen
 
@@ -27,7 +27,7 @@ Die Verschlüsselung hilft dabei, nicht autorisierte Personen davon abzuhalten, 
 
 -   Sven und Andrea geben einander einen geheimen Schlüssel weiter und einigen sich darauf, die MAC-Funktion zu nutzen.
 -   Sven schreibt eine Nachricht und gibt sie zusammen mit dem geheimen Schlüssel in eine MAC-Funktion ein, um einen MAC-Wert zu erhalten.
--   Sven sendet die (nicht verschlüsselte) Nachricht und den MAC-Wert über ein Netzwerk an Andrea.
+-   Bob sendet die \[unverschlüsselte\] Meldung und dem MAC Wert Alice über ein Netzwerk.
 -   Andrea gibt den geheimen Schlüssel und die Nachricht ebenfalls in eine MAC-Funktion ein. Sie vergleicht den MAC-Wert, den sie erhält, mit dem MAC-Wert, den Sie von Sven erhalten hat. Stimmen die Werte überein, wurde die Nachricht beim Verwenden nicht manipuliert.
 
 Beachten Sie, dass Eve, die den Austausch zwischen Sven und Andrea heimlich mitverfolgt, die Nachricht so nicht manipulieren kann. Eve hat keinen Zugriff auf den privaten Schlüssel und kann daher keinen MAC-Wert generieren, der die manipulierte Nachricht bei Andrea als unverändert erscheinen lassen könnte.
@@ -132,7 +132,7 @@ Eine kryptografische Hashfunktion gibt für einen an sie übergebenen Datenblock
 
 -   Sven und Andrea geben einander einen geheimen Schlüssel weiter und einigen sich darauf, die MAC-Funktion zu nutzen.
 -   Sven schreibt eine Nachricht und gibt sie zusammen mit dem geheimen Schlüssel in eine MAC-Funktion ein, um einen MAC-Wert zu erhalten.
--   Sven sendet die (nicht verschlüsselte) Nachricht und den MAC-Wert über ein Netzwerk an Andrea.
+-   Bob sendet die \[unverschlüsselte\] Meldung und dem MAC Wert Alice über ein Netzwerk.
 -   Andrea gibt den geheimen Schlüssel und die Nachricht ebenfalls in eine MAC-Funktion ein. Sie vergleicht den MAC-Wert, den sie erhält, mit dem MAC-Wert, den Sie von Sven erhalten hat. Stimmen die Werte überein, wurde die Nachricht beim Verwenden nicht manipuliert.
 
 Beachten Sie, dass Andrea eine unverschlüsselte Nachricht gesendet hat. Nur der Hash war verschlüsselt. Durch das Verfahren wird nur sichergestellt, dass die ursprüngliche Nachricht nicht verändert wurde und – durch die Verwendung von Andreas öffentlichem Schlüssel – dass der Nachrichtenhash von jemandem mit Zugriff auf Andreas privaten Schlüssel signiert wurde (wahrscheinlich von Andrea).

@@ -1,21 +1,21 @@
 ---
 title: Windows Hello
-description: In diesem Artikel wird die neue Windows-Hello-Technologie beschrieben, die im Lieferumfang des Windows10-Betriebssystems enthalten ist. Zudem wird erörtert, wie Entwickler diese Technologie implementieren können, um ihre UWP (Universelle Windows-Plattform)-Apps und Back-End-Dienste zu schützen. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows10-Einführung entworfen und bereitgestellt werden.
+description: In diesem Artikel wird die neue Windows-Hello-Technologie beschrieben, die im Lieferumfang des Windows 10-Betriebssystems enthalten ist. Zudem wird erörtert, wie Entwickler diese Technologie implementieren können, um ihre UWP (Universelle Windows-Plattform)-Apps und Back-End-Dienste zu schützen. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows 10-Einführung entworfen und bereitgestellt werden.
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Sicherheit
 ms.localizationpriority: medium
 ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049447"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651545"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
-Dieser Artikel beschreibt die neue Windows Hello-Technologie, die im Lieferumfang des Betriebssystems Windows 10 und erläutert, wie Entwickler diese Technologie, um ihre universelle Windows-Plattform (UWP)-Apps und Back-End-Dienste zu schützen implementiert werden können. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows10-Einführung entworfen und bereitgestellt werden.
+Dieser Artikel beschreibt die neue Windows Hello Technologie, die ist im Lieferumfang des Betriebssystems Windows 10 und erläutert, wie Entwickler diese Technologie zum Schutz ihrer apps der universellen Windows-Plattform (UWP) und Back-End-Dienste implementieren können. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows 10-Einführung entworfen und bereitgestellt werden.
 
 Beachten Sie, dass der Schwerpunkt dieses Artikels auf der App-Entwicklung liegt. Weitere Informationen zu den Architektur- und Implementierungsdetails von Windows Hello finden Sie unter [Windows-Hello-Anleitung auf TechNet](https://technet.microsoft.com/library/mt589441.aspx).
 
@@ -33,7 +33,7 @@ Seit der Mitte der 1960er Jahre, als Fernando Corbató und sein Team im Massachu
 
 #### <a name="111-credential-theft"></a>1.1.1. Diebstahl von Anmeldeinformationen
 
-Das größte Risiko in Bezug auf Kennwörtern ist: Ein Angreifer kann sie leicht stehlen. Jeder Ort, an dem ein Kennwort eingegeben, verarbeitet oder gespeichert wird, ist anfällig. So kann ein Angreifer beispielsweise eine Sammlung an Kennwörtern oder Hashwerten von einem Authentifizierungsserver stehlen, indem er Lauschangriffe auf Netzwerkdatenverkehr eines Anwendungsservers ausführt, Schadsoftware in eine Anwendung oder auf einem Gerät einschleust, die Benutzertastaturanschläge auf einem Gerät aufzeichnet oder dem Benutzer zusieht, welche Zeichen er eingibt. Diese sind nur die häufigsten Angriffsmethoden.
+Das größte Risiko von Kennwörtern ist einfach: Ein Angreifer kann sie leicht stehlen. Jeder Ort, an dem ein Kennwort eingegeben, verarbeitet oder gespeichert wird, ist anfällig. So kann ein Angreifer beispielsweise eine Sammlung an Kennwörtern oder Hashwerten von einem Authentifizierungsserver stehlen, indem er Lauschangriffe auf Netzwerkdatenverkehr eines Anwendungsservers ausführt, Schadsoftware in eine Anwendung oder auf einem Gerät einschleust, die Benutzertastaturanschläge auf einem Gerät aufzeichnet oder dem Benutzer zusieht, welche Zeichen er eingibt. Diese sind nur die häufigsten Angriffsmethoden.
 
 Ein weiteres verwandtes Risiko besteht im sogenannten „Credential Replay“ (Wiedergabe von Anmeldeinformationen). Hierbei erfasst ein Angreifer gültige Anmeldeinformationen, indem er einen Lauschangriff auf ein unsicheres Netzwerk ausführt und die Anmeldeinformationen später wiedergibt, um einen gültigen Benutzer zu imitieren. Die meisten Authentifizierungsprotokolle (einschließlich Kerberos und OAuth) schützen vor Replay-Angriffen, indem ein Zeitstempel im Anmeldeinformationsaustauschprozess eingefügt wird. Dadurch wird jedoch nur das Token geschützt, das vom Authentifizierungssystem ausgestellt wird, nicht aber das Kennwort, das vom Benutzer bereitgestellt wird, um sich ursprünglich anzumelden.
 
@@ -43,7 +43,7 @@ Der häufige Ansatz, eine E-Mail-Adresse als den Benutzernamen zu verwenden, ver
 
 ### <a name="12-solving-credential-problems"></a>1.3 Beheben von Anmeldeinformationsproblemen
 
-Das Lösen von Problemen, die Kennwörter mit sich bringen, ist nicht einfach. Die Verschärfung von Kennwortrichtlinien allein wird das Problem nicht beheben: Die Benutzer könnten ihre Kennwörter einfach wiederverwenden, teilen oder aufschreiben. Auch wenn Benutzerschulungen für die Authentifizierungssicherheit wichtig sind, wird das Problem durch die Schulung allein ebenfalls nicht beseitigt.
+Das Lösen der Probleme, die Kennwörter mit sich bringen, ist nicht einfach. Die Verschärfung von Kennwortrichtlinien allein wird das Problem nicht beheben: Die Benutzer könnten ihre Kennwörter einfach wiederverwenden, teilen oder aufschreiben. Auch wenn Benutzerschulungen für die Authentifizierungssicherheit wichtig sind, wird das Problem durch die Schulung allein ebenfalls nicht beseitigt.
 
 Windows Hello ersetzt Kennwörter durch eine sichere zweistufige Authentifizierung (2FA). Dabei werden vorhandene Anmeldeinformationen überprüft und gerätespezifische Anmeldeinformationen erstellt, die durch eine Benutzergeste (Biometrie- oder PIN-basiert) geschützt sind. 
 
@@ -62,13 +62,13 @@ Bei Windows Hello handelt es sich jedoch nicht um einen bloßen Ersatz für herk
 
 ### <a name="22-how-windows-hello-works"></a>2.2 Wie funktioniert Windows Hello
 
-Wenn Benutzer Windows Hello auf ihrem Computer einrichten, generiert es ein neues Schlüsselpaar bestehend aus öffentlichem und privatem Schlüssel auf dem Gerät. Das [Trusted Platform Module](https://technet.microsoft.com/itpro/windows/keep-secure/trusted-platform-module-overview) (TPM) generiert und schützt diesen privaten Schlüssel. Wenn das Gerät nicht über einen TPM-Chip verfügt, wird der private Schlüssel verschlüsselt und durch Software geschützt. Zusätzlich generieren TPM-aktivierte Geräte einen Datenblock, der für die Bestätigung verwendet werden kann, dass ein Schlüssel an TPM gebunden ist. Die Nachweisinformationen können in Ihrer Lösung verwendet werden, um z. B. zu entscheiden, ob dem Benutzer eine andere Berechtigungsstufe gewährt wird.
+Wenn Benutzer Windows Hello auf ihrem Computer einrichten, generiert es ein neues Schlüsselpaar bestehend aus öffentlichem und privatem Schlüssel auf dem Gerät. Das [Trusted Platform Module](https://technet.microsoft.com/itpro/windows/keep-secure/trusted-platform-module-overview) (TPM) generiert und schützt diesen privaten Schlüssel. Wenn das Gerät nicht über einen TPM-Chip verfügt, wird der private Schlüssel verschlüsselt und durch Software geschützt. Zusätzlich generieren TPM-aktivierte Geräte einen Datenblock, der für die Bestätigung verwendet werden kann, dass ein Schlüssel an TPM gebunden ist. Die Nachweisinformationen können in Ihrer Lösung verwendet werden, um z. B. zu entscheiden, ob dem Benutzer eine andere Autorisierungsstufe gewährt wird.
 
-Zum Aktivieren von Windows Hello auf einem Gerät muss der Benutzer entweder sein AzureActiveDirectory-Konto oder sein Microsoft-Konto in den Windows-Einstellungen verbinden.
+Zum Aktivieren von Windows Hello auf einem Gerät muss der Benutzer entweder sein Azure Active Directory-Konto oder sein Microsoft-Konto in den Windows-Einstellungen verbinden.
 
 #### <a name="221-how-keys-are-protected"></a>2.2.1 Schutz von Schlüsseln
 
-Bei jedem Generieren von Schlüsselmaterialien muss dieses gegen Angriffe geschützt werden. Die zuverlässigste Möglichkeit bietet spezialisierte Hardware. Lange Zeit wurden Hardwaresicherheitsmodule (Hardware Security Modules, HSMs) verwendet, um Schlüssel für sicherheitskritische Anwendungen zu generieren, zu speichern und zu verarbeiten. Bei Smartcards handelt es sich um einen besonderen HSM-Typ, ebenso wie Geräte, die mit dem Trusted Computing Group TPM-Standard konform sind. Nach Möglichkeit profitiert die Windows-Hello-Implementierung von der integrierten TPM-Hardware, um Schlüssel zu generieren, zu speichern und zu verarbeiten. Allerdings benötigen Windows Hello und Windows Hello for Work kein integriertes TPM.
+Bei jedem Generieren von Schlüsselmaterialien muss dieses gegen Angriffe geschützt werden. Die zuverlässigste Möglichkeit diesbezüglich ist über spezialisierte Hardware möglich. Lange Zeit wurden Hardwaresicherheitsmodule (Hardware Security Modules, HSMs) verwendet, um Schlüssel für sicherheitskritische Anwendungen zu generieren, zu speichern und zu verarbeiten. Bei Smartcards handelt es sich um einen besonderen HSM-Typ, ebenso wie Geräte, die mit dem Trusted Computing Group TPM-Standard konform sind. Nach Möglichkeit profitiert die Windows-Hello-Implementierung von der integrierten TPM-Hardware, um Schlüssel zu generieren, zu speichern und zu verarbeiten. Allerdings benötigen Windows Hello und Windows Hello for Work kein integriertes TPM.
 
 Microsoft empfiehlt, nach Möglichkeit TPM-Hardware zu verwenden. Das TPM schützt vor einer Vielzahl von unbekannten und potenziellen Angriffen einschließlich Brute-Force-Angriffen auf die PIN. Das TPM stellt auch nach einer Kontosperre eine zusätzliche Schutzebene bereit. Wenn das Schlüsselmaterial von TPM gesperrt wurde, muss der Benutzer die PIN zurücksetzen. Beim Zurücksetzen der PIN werden alle mit dem alten Schlüsselmaterial verschlüsselten Schlüssel und Zertifikate entfernt.
 
@@ -82,15 +82,15 @@ Eine Anwendung kann niemals die Schlüssel einer anderen Anwendung bzw. ein Benu
 
 Nachdem wir nun ein grundlegendes Verständnis der Arbeitsweise von Windows Hello besitzen, befassen wir uns damit, wie wir sie in unseren eigenen Anwendungen implementieren.
 
-Es gibt verschiedene Szenarien, die mithilfe von Windows Hello implementiert werden können. Beispielsweise die Anmeldung bei der App auf einem Gerät. Das andere häufige Szenario wäre dagegen die Authentifizierung bei einem Dienst. Anstelle von Benutzernamen und Kennwort verwenden Sie Windows Hello. In den folgenden Kapiteln besprechen wir die Implementierung einiger verschiedener Szenarien, z.B. die Authentifizierung gegenüber Diensten mit Windows Hello und die Umwandlung eines vorhandenen Benutzername-/Kennwortsystems in ein Windows-Hello-System.
+Es gibt verschiedene Szenarien, die mithilfe von Windows Hello implementiert werden können. Beispielsweise die Anmeldung bei der App auf einem Gerät. Das andere häufige Szenario wäre dagegen die Authentifizierung bei einem Dienst. Anstelle von Benutzernamen und Kennwort verwenden Sie Windows Hello. In den folgenden Kapiteln besprechen wir die Implementierung einiger verschiedener Szenarien, z. B. die Authentifizierung gegenüber Diensten mit Windows Hello und die Umwandlung eines vorhandenen Benutzername-/Kennwortsystems in ein Windows-Hello-System.
 
-Beachten Sie schließlich, dass die Windows-Hello-API die Verwendung des Windows-10-SDKs erfordern, die dem Betriebssystem entspricht, unter dem die App verwendet wird. Mit anderen Worten: Das Windows-SDK10.0.10240 muss für Apps verwendet werden, die unter Windows10 bereitgestellt werden, und 10.0.10586 muss für Apps verwendet werden, die für Windows10, Version1511 bereitgestellt werden.
+Beachten Sie schließlich, dass die Windows-Hello-API die Verwendung des Windows-10-SDKs erfordern, die dem Betriebssystem entspricht, unter dem die App verwendet wird. Mit anderen Worten: Das Windows-SDK 10.0.10240 muss für Apps verwendet werden, die unter Windows 10 bereitgestellt werden, und 10.0.10586 muss für Apps verwendet werden, die für Windows 10, Version 1511 bereitgestellt werden.
 
 ## <a name="3-implementing-windows-hello"></a>3 Implementieren von Windows Hello
 
 In diesem Kapitel beginnen wir mit einem „frischen“ Szenario ohne vorhandenes Authentifizierungssystem und erläutern die Implementierung von Windows Hello.
 
-Im nächsten Abschnitt wird die Migration von einem vorhandenem Benutzername-/Kennwort-System behandelt. Auch wenn Sie am nächsten Kapitel mehr interessiert sind, sollten Sie sich dieses ansehen, um ein grundlegendes Verständnis des Prozesses und des erforderlichen Codes zu erhalten.
+Im nächsten Abschnitt wird die Migration von einem System mit vorhandenem Benutzernamen/Kennwort behandelt. Auch wenn Sie am nächsten Kapitel mehr interessiert sind, sollten Sie sich dieses ansehen, um ein grundlegendes Verständnis des Prozesses und des erforderlichen Codes zu erhalten.
 
 ### <a name="31-enrolling-new-users"></a>3.1 Registrieren neuer Benutzer
 
@@ -100,7 +100,7 @@ Im ersten Schritt wird sichergestellt, dass der Benutzer Windows Hello verwenden
 
 Zum Aktivieren von Windows Hello muss der Benutzer lediglich eine PIN unter Windows-Einstellungen einrichten, es sei denn, der Benutzer hat diese bereits auf der Willkommensseite (Out of Box Experience, OOBE) eingerichtet.
 
-Die folgenden Codezeilen zeigen eine einfache Methode zum Überprüfen, ob der BenutzerWindows Hello eingerichtet hat.
+Die folgenden Codezeilen zeigen eine einfache Methode zum Überprüfen, ob der Benutzer Windows Hello eingerichtet hat.
 
 ```csharp
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
@@ -124,9 +124,9 @@ var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-[**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) ist der Teil, durch den öffentlicher und privater Schlüssel erstellt werden. Wenn das Gerät über den richtigen TPM-Chip verfügt, fordern die APIs den TPM-Chip zum Erstellen des privaten und öffentlichen Schlüssels an und speichern das Ergebnis. Wenn kein TPM-Chip verfügbar ist, erstellt das Betriebssystem das Schlüsselpaar im Code. Die App hat keine Möglichkeit, direkt auf die erstellten privaten Schlüssel zuzugreifen. Bei der Erstellung von Schlüsselpaaren geht es auch um die resultierenden Nachweisinformationen. (Weitere Informationen zu Nachweisen finden Sie im nächsten Abschnitt.)
+[  **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) ist der Teil, durch den öffentlicher und privater Schlüssel erstellt werden. Wenn das Gerät über den richtigen TPM-Chip verfügt, fordern die APIs den TPM-Chip zum Erstellen des privaten und öffentlichen Schlüssels an und speichern das Ergebnis. Wenn kein TPM-Chip verfügbar ist, erstellt das Betriebssystem das Schlüsselpaar im Code. Die App hat keine Möglichkeit, direkt auf die erstellten privaten Schlüssel zuzugreifen. Bei der Erstellung von Schlüsselpaaren geht es auch um die resultierenden Nachweisinformationen. (Weitere Informationen zu Nachweisen finden Sie im nächsten Abschnitt.)
 
-Nachdem das Schlüsselpaar und die Nachweisinformationen auf dem Gerät erstellt wurden, müssen der öffentliche Schlüssel, die optionalen Nachweisinformationen und der eindeutige Bezeichner (z.B. die E-Mail-Adresse) an den Back-End-Registrierungsdienst gesendet und im Back-End gespeichert werden.
+Nachdem das Schlüsselpaar und die Nachweisinformationen auf dem Gerät erstellt wurden, müssen der öffentliche Schlüssel, die optionalen Nachweisinformationen und der eindeutige Bezeichner (z. B. die E-Mail-Adresse) an den Back-End-Registrierungsdienst gesendet und im Back-End gespeichert werden.
 
 Damit der Benutzer über mehrere Geräte auf die App zugreifen kann, muss der Back-End-Dienst mehrere Schlüssel für denselben Benutzer speichern können. Jeder Schlüssel ist für jedes Gerät eindeutig. Deshalb werden alle Schüssel gespeichert, die demselben Benutzer zugeordnet sind. Ein Gerätebezeichner dient zur Optimierung der Serverseite bei der Benutzerauthentifizierung. Darauf gehen wir im nächsten Kapitel genauer ein.
 
@@ -138,7 +138,7 @@ Die Registrierungslogik kann wie folgt aussehen:
 
 ![Windows Hello-Registrierungslogik](images/passport-registration.png)
 
-Die von Ihnen erfassten Registrierungsinformationen umfassen natürlich viel mehr Identifikationsinformationen, als wir in dieses einfache Szenario einbinden. Wenn Ihre App beispielsweise auf einen gesicherten Dienst – z.B. Onlinebanking– zugreift, müssen Sie beim Anmeldevorgang einen Identitätsnachweis und andere Dinge anfordern. Nachdem alle Bedingungen erfüllt wurden, wird der öffentliche Schlüssel dieses Benutzers im Back-End gespeichert und für Überprüfungszwecke verwendet, wenn der Benutzer den Dienst das nächste Mal verwendet.
+Die von Ihnen erfassten Registrierungsinformationen umfassen natürlich viel mehr Identifikationsinformationen, als wir in dieses einfache Szenario einbinden. Wenn Ihre App beispielsweise auf einen gesicherten Dienst – z. B. Onlinebanking – zugreift, müssen Sie beim Anmeldevorgang einen Identitätsnachweis und andere Dinge anfordern. Nachdem alle Bedingungen erfüllt wurden, wird der öffentliche Schlüssel dieses Benutzers im Back-End gespeichert und für Überprüfungszwecke verwendet, wenn der Benutzer den Dienst das nächste Mal verwendet.
 
 ```csharp
 using System;
@@ -239,7 +239,7 @@ Wenn eine App versucht, auf einen geschützten Back-End-Dienst zuzugreifen, send
 
 Neben der Schlüsselüberprüfung kann der Dienst auch den Schlüsselnachweis überprüfen, um festzustellen, ob Beschränkungen hinsichtlich der Speicherung der Schlüssel auf dem Gerät bestehen. Wenn das Gerät beispielsweise TPM zum Schützen der Schlüssel verwendet, ist die Sicherheit höher als bei Geräten, auf denen Schlüssel ohne TPM gespeichert werden. Die Back-End-Logik könnte z. B. festlegen, dass der Benutzer Geld nur bis zu einer bestimmten Höhe überweisen darf, wenn kein TPM zur Risikominderung eingesetzt wird.
 
-Ein Nachweis ist nur für Geräte mit einem TPM-Chip der Version2.0 oder höher verfügbar. Daher müssen Sie berücksichtigen, dass diese Informationen nicht immer auf jedem Gerät zur Verfügung stehen.
+Ein Nachweis ist nur für Geräte mit einem TPM-Chip der Version 2.0 oder höher verfügbar. Daher müssen Sie berücksichtigen, dass diese Informationen nicht immer auf jedem Gerät zur Verfügung stehen.
 
 Der Clientworkflow sieht ggf. wie das folgende Diagramm aus:
 
@@ -275,9 +275,9 @@ In diesem Sequenzdiagramm ist ein grundlegender Abfrage/Rückmeldungsablauf darg
 
 ![Windows Hello-Abfrage/Rückmeldung](images/passport-challenge-response.png)
 
-Als nächstes muss der Server die Signatur überprüfen. Wenn Sie den öffentlichen Schlüssel anfordern und senden es an den Server zur späteren Überprüfung verwenden, ist es in ein ASN. 1-codiertes PublicKeyInfo-BLOB-Blob. Wenn Sie das [Windows Hello-Codebeispiel auf GitHub](https://go.microsoft.com/fwlink/?LinkID=717812)betrachten, sehen Sie, dass Hilfsklassen die Crypt32-Funktionen, um das ASN. 1-codierte Blob in ein CNG-Blob zu übersetzen gängigeres ist vorhanden sind. Das BLOB enthält den Algorithmus des öffentlichen Schlüssels, also RSA, und den öffentlichen RSA-Schlüssel.
+Als nächstes muss der Server die Signatur überprüfen. Wenn Sie den öffentlichen Schlüssel anfordern, und senden es an den Server zur zukünftigen Überprüfung verwenden, ist es in einem Blob ASN. 1-codierte PublicKeyInfo. Bei Betrachtung der [Windows Hello-Codebeispiel auf GitHub](https://go.microsoft.com/fwlink/?LinkID=717812), sehen Sie, dass es sind Hilfsklassen zum Umschließen Crypt32-Funktionen, um der ASN. 1-codierte Blob in ein Blob CNG zu übersetzen, die häufiger verwendet wird. Das BLOB enthält den Algorithmus des öffentlichen Schlüssels, also RSA, und den öffentlichen RSA-Schlüssel.
 
-Im Beispiel ist der Grund, die wir das ASN. 1-codierte Blob in ein CNG-Blob konvertieren, damit es mit CNG (/ Windows/Desktop/SecCNG/Cng-Portal) werden kann und die BCrypt-API. Wenn Sie das CNG-Blob suchen, wird es zeigen Sie auf die zugehörige [BCRYPT_KEY_BLOB-Struktur](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob). Diese API-Oberfläche kann für die Authentifizierung und Verschlüsselung in Windows-Anwendungen verwendet werden. ASN. 1 ist ein dokumentierten Standard für die Kommunikation Datenstrukturen, die serialisiert werden können, und es wird häufig in Kryptografie mit öffentlichem Schlüssel und Zertifikate verwendet. Deshalb Informationen des öffentliche Schlüssels wird auf diese Weise zurückgegeben. Der öffentliche Schlüssel ist ein RSA-Schlüssel. und das ist der Algorithmus, den Windows Hello verwendet, wenn sie Daten signiert.
+In diesem Beispiel ist der Grund konvertieren wir die ASN. 1-codierte-Blob in ein Blob von CNG, damit es mit CNG verwendet (/ Windows/Desktop/SecCNG/Cng-Portal) sein kann und die BCrypt-API. Wenn Sie sich das Blob CNG ansehen, zeigen sie Sie auf den zugehörigen [BCRYPT_KEY_BLOB Struktur](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob). Dieser API-Oberfläche kann für die Authentifizierung und Verschlüsselung in Windows-Anwendungen verwendet werden. ASN. 1 ist ein dokumentierten Standard für die Kommunikation von Datenstrukturen, die serialisiert werden können, und sie wird häufig verwendet, in der Kryptografie mit öffentlichem Schlüssel und Zertifikate. Daher Informationen des öffentliche Schlüssels wird auf diese Weise zurückgegeben. Der öffentliche Schlüssel ist ein RSA-Schlüssel. und der Algorithmus, den Windows Hello verwendet, wenn sie die Daten signiert wird.
 
 Sobald das CNG-BLOB verfügbar ist, müssen Sie die signierte Abfrage mit dem öffentlichen Schlüssel des Benutzers abgleichen. Da jeder seine eigene System- oder Back-End-Technologie verwendet, gibt es keine allgemeine Vorgehensweise zur Implementierung dieser Logik. Wir verwenden SHA256 als Hashalgorithmus und Pkcs1 für SignaturePadding, um sicherzustellen, dass Sie diese Funktionen zur Überprüfung der signierten Antwort vom Client verwenden. An dieser Stelle verweisen wir erneut auf das Beispiel, in dem die Vorgehensweise mit .NET 4.6 auf dem Server beschrieben wird. In der Regel werden jedoch etwa folgende Schritte ausgeführt:
 
@@ -344,7 +344,7 @@ Bei Verwendung von Windows Hello erstellt jedes Gerät eine eindeutige Kombinati
 
 Die Registrierung eines weiteren Geräts funktioniert fast genauso wie die erstmalige Registrierung eines Benutzers. Sie müssen weiterhin sicherstellen, dass es sich bei dem Benutzer, der sich für dieses neue Gerät registriert, tatsächlich um den Benutzer handelt, der er zu sein vorgibt. Sie können dazu einen beliebigen aktuellen Mechanismus für die zweistufige Authentifizierung verwenden. Es gibt mehrere Möglichkeiten zur sicheren Umsetzung dieses Schritts. Die Vorgehensweise hängt vom jeweiligen Szenario ab.
 
-Wenn Sie z.B. immer noch Anmeldenamen und Kennwort verwenden, können Sie den Benutzer darüber authentifizieren und ihn zur Verwendung einer seiner Überprüfungsmethoden wie SMS oder E-Mail auffordern. Wenn Sie keinen Benutzernamen und kein Kennwort besitzen, können Sie auch eines der bereits registrierten Geräte verwenden, um eine Benachrichtigung an die App auf dem Gerät zu senden. Ein Beispiel dafür ist die MSA-Authentifikator-App. Kurz gesagt: Sie sollten einen gängigen 2FA-Mechanismus verwenden, um zusätzliche Geräte für den Benutzer zu registrieren.
+Wenn Sie z. B. immer noch Anmeldenamen und Kennwort verwenden, können Sie den Benutzer darüber authentifizieren und ihn zur Verwendung einer seiner Überprüfungsmethoden wie SMS oder E-Mail auffordern. Wenn Sie keinen Benutzernamen und kein Kennwort besitzen, können Sie auch eines der bereits registrierten Geräte verwenden, um eine Benachrichtigung an die App auf dem Gerät zu senden. Ein Beispiel dafür ist die MSA-Authentifikator-App. Kurz gesagt: Sie sollten einen gängigen 2FA-Mechanismus verwenden, um zusätzliche Geräte für den Benutzer zu registrieren.
 
 Der Code zum Registrieren des neuen Geräts entspricht daher genau dem Code, der für die erstmalige Registrierung des Benutzers (innerhalb der App) verwendet wird.
 
@@ -397,7 +397,7 @@ Der letzte Schritt bei der Migration zu einem vollständigen Windows-Hello-Szena
 
 Mit Windows 10 wird eine höhere Sicherheitsebene eingeführt, die außerdem einfach umzusetzen ist. Windows Hello bietet ein neues biometrisches Anmeldesystem, das den Benutzer erkennt und alle Versuche, die Identifizierung zu umgehen, aktiv verhindert. Es kann dann mehrere Ebenen für Schlüssel und Zertifikate bieten, die nie eingeblendet oder außerhalb des TPMs verwendet werden können. Eine weitere Sicherheitsebene wird außerdem durch die optionale Verwendung von Attestation Identity Keys (AIK) und Zertifikaten bereitgestellt.
 
-Dieser Leitfaden enthält Informationen zum Entwurf und zur Bereitstellung dieser Technologien. Damit können Sie als Entwickler Ihre Windows 10-Rollouts im Handumdrehen mit sicherer Authentifizierung ausstatten, die den Schutz von Apps und Back-End-Diensten gewährleistet. Der erforderliche Code ist überschaubar und leicht verständlich. Die eigentliche Arbeit überlassen Sie einfach Windows10.
+Dieser Leitfaden enthält Informationen zum Entwurf und zur Bereitstellung dieser Technologien. Damit können Sie als Entwickler Ihre Windows 10-Rollouts im Handumdrehen mit sicherer Authentifizierung ausstatten, die den Schutz von Apps und Back-End-Diensten gewährleistet. Der erforderliche Code ist überschaubar und leicht verständlich. Die eigentliche Arbeit überlassen Sie einfach Windows 10.
 
 Flexible Implementierungsoptionen ermöglichen Windows Hello, das vorhandene Authentifizierungssystem zu ersetzen oder es einzubinden. Der Bereitstellung erfolgt schnell und kosteneffizient. Zur Bereitstellung von Windows 10-Sicherheit ist keine zusätzliche Infrastruktur erforderlich. Durch die Integration von Microsoft Hello in das Betriebssystem ist Windows 10 die sicherste Antwort auf Authentifizierungsprobleme, mit denen Entwickler heute konfrontiert sind.
 
@@ -407,8 +407,8 @@ Mission erfüllt! Sie haben das Internet gerade sicherer gemacht!
 
 ### <a name="61-articles-and-sample-code"></a>6.1 Artikel und Beispielcode
 
-- [Übersicht über WindowsHello](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
-- [Implementierungsdetails für Windows Hello](https://msdn.microsoft.com/library/mt589441)
+- [Windows Hello-Übersicht](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+- [Details zur Implementierung für Windows Hello](https://msdn.microsoft.com/library/mt589441)
 - [Windows Hello-Codebeispiel auf GitHub](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 Terminologie
@@ -424,5 +424,5 @@ Mission erfüllt! Sie haben das Internet gerade sicherer gemacht!
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Windows Hello-Anmelde-App](microsoft-passport-login.md)
+* [Windows Hello Login-app](microsoft-passport-login.md)
 * [Windows Hello-Anmeldedienst](microsoft-passport-login-auth-service.md)

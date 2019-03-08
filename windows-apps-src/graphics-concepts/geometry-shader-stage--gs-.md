@@ -1,20 +1,20 @@
 ---
-title: Geometry-Shader-Stufe (GS-Stufe)
+title: Geometryshaderphase (GS)
 description: Die Geometry-Shader-Stufe (GS-Stufe) verarbeitet vollständige Grundformen (Dreiecke, Linien und Punkte) zusammen mit deren angrenzenden Vertices.
 ms.assetid: 8A1350DD-B006-488F-9DAF-14CD2483BA4E
 keywords:
-- Geometry-Shader-Stufe (GS-Stufe)
+- Geometryshaderphase (GS)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 63c678f4b2dde1a5e35c0131b5154493c9703951
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942664"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623375"
 ---
-# <a name="geometry-shader-gs-stage"></a>Geometry-Shader-Stufe (GS-Stufe)
+# <a name="geometry-shader-gs-stage"></a>Geometryshaderphase (GS)
 
 
 Die Geometry-Shader-Stufe (GS-Stufe) verarbeitet vollständige Grundformen (Dreiecke, Linien und Punkte) zusammen mit deren angrenzenden Vertices. Sie ist nützlich für Algorithmen wie Point Sprite Expansion, Dynamic Particle Systems, und Shadow Volume Generation. Sie unterstützt Geometrieverstärkung und -abschwächung.
@@ -45,7 +45,7 @@ Die Geometry-Shader-Stufe ist besonders geeignet für folgende Algorithmen:
 
 Die Geometry-Shader-Stufe führt anwendungsspezifischen Shadercode aus, mit vollständigen Grundformen als Eingabe und der Fähigkeit, Vertices als Ausgabe zu generieren. Im Gegensatz zu den Eingaben für einen Vertex-Shader, der einen einzelnen Vertex verarbeitet, sind die Eingaben für einen Geometry-Shader die Vertices vollständiger Grundformen (drei Vertices für ein Dreieck, zwei Vertices für eine Linie oder ein Vertex für einen Punkt). Geometry-Shader können auch die Vertexdaten für die am Rand anschließenden Grundformen als Eingabe übernehmen (drei zusätzliche Vertices für ein Dreieck, zwei zusätzliche Vertices für eine Line).
 
-Die Geometry-Shader-Stufe kann den systemgenerierten **SV\_PrimitiveID**-Wert übernehmen, der automatisch von der [Input-Assembler-Stufe (IA-Stufe)](input-assembler-stage--ia-.md) generiert wird. Damit können Grundformdaten abgerufen oder bei Bedarf verarbeitet werden.
+Die Geometrie-Shader-Stufe nutzen kann die **SV\_PrimitiveID** vom System generierter Wert, der automatisch generierten durch die [Eingabe-Assembler (IA) Phase](input-assembler-stage--ia-.md). Damit können Grundformdaten abgerufen oder bei Bedarf verarbeitet werden.
 
 Wenn ein Geometry-Shader aktiv ist, wird er einmal für jede Grundform aufgerufen, die übergeben oder weiter oben in der Pipeline generiert wurde. Für jeden Aufruf des Geometry-Shaders dienen Daten der aufrufenden Grundform (ein einzelner Punkt, eine einzelne Line oder ein einzelnes Dreieck) als Eingabe. Ein Dreieckstrip von weiter oben in die Pipeline würde für jedes einzelne Dreieck im Strip zum Aufruf des Geometry-Shaders führen (so als würde der Strip in eine Dreiecksliste erweitert). Alle Eingabedaten für jeden Vertex in der einzelnen Grundform sind verfügbar ist (also 3 Vertices für ein Dreieck), dazu die Daten angrenzender Vertices (falls vorhanden und verfügbar).
 
@@ -70,9 +70,9 @@ Eine Geometry-Shader-Ausgabe kann über die Streamausgabestufe in eine Rasterize
 
 Ein Geometry-Shader gibt jeweils Daten für einen Vertex aus, der einem Ausgabestreamobjekt angefügt wird. Die Topologie der Streams wird durch eine Deklaration festgelegt, wobei ein **TriangleStream**, **LineStream** oder **PointStream** als Ausgabe einer GS-Stufe vorgegeben werden kann.
 
-Es gibt drei Arten von Streamobjekten: **TriangleStream**, **LineStream** und **PointStream**. Alle sind Vorlagenobjekte. Die Topologie der Ausgabe wird durch ihren jeweiligen Objekttyp bestimmt, während das Format der in den Datenstrom angefügten Vertices durch den Vorlagentyp bestimmt wird.
+Es gibt drei Arten von Streamobjekten verfügbar: **TriangleStream**, **LineStream** und **PointStream**, die alle auf Vorlagen basierende Objekte sind. Die Topologie der Ausgabe wird durch ihren jeweiligen Objekttyp bestimmt, während das Format der in den Datenstrom angefügten Vertices durch den Vorlagentyp bestimmt wird.
 
-Wenn eine Geometry-Shader-Ausgabe als System Interpreted Value festgelegt ist (beispielsweise **SV\_RenderTargetArrayIndex** oder **SV\_Position**), erkennt die Hardware diese Daten und führt, abhängig vom Wert, bestimmte Schritte aus, bevor die Daten selbst als Eingabe für die nächste Shaderstufe übergeben werden. Wenn solche Ausgabedaten des Geometry-Shaders für die Hardware eine grundformbezogene Bedeutung haben (z.B. **SV\_RenderTargetArrayIndex** oder **SV\_ViewportArrayIndex**) statt einer vertexbezogenen (z.B. **SV\_ClipDistance\[n\]** oder **SV\_Position**), werden die grundformbezogenen Daten dem führenden Vertex entnommen, der für die Grundform ausgegeben wird.
+Wenn eine Geometrie-Shader-Ausgabe als einen Wert für die System-interpretiert identifiziert wird (z. B. **SV\_RenderTargetArrayIndex** oder **SV\_Position**), Hardware untersucht diese Daten und führt einige Verhalten hängt von dem Wert, sondern um die Daten selbst in die nächste shaderstufe für die Eingabe übergeben. Wenn solche Daten aus der Geometrie-Shader Bedeutung für die Hardware pro primitiven aufweist (z. B. **SV\_RenderTargetArrayIndex** oder **SV\_ViewportArrayIndex**), statt auf einer pro-Vertex-Basis (z. B. **SV\_ClipDistance\[n\]**  oder **SV\_Position**), die primitiven Daten erstellt aus der führende Vertex ausgegeben, für den primitiven Typ.
 
 Vom Geometry-Shader können unvollständige Grundformen ausgegeben werden, wenn der Geometry-Shader beendet wird, bevor die Grundform fertig ist. Solche unvollständigen Grundformen werden ohne Rückmeldung verworfen. Das entspricht der Art und Weise, in der ein Input-Assembler (IA) unvollständige Grundformen behandelt.
 

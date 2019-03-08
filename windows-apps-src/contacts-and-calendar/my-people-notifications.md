@@ -3,14 +3,14 @@ title: Meine Kontakte – Benachrichtigungen
 description: Erläutert das Erstellen und Verwenden von Benachrichtigungen für Meine Kontakte, eine neue Art Popups.
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058721"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630565"
 ---
 # <a name="my-people-notifications"></a>Meine Kontakte – Benachrichtigungen
 
@@ -20,7 +20,7 @@ ms.locfileid: "9058721"
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows10 und Microsoft Visual Studio2017 Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 und Microsoft Visual Studio 2017 Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Sie sollten über Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache verfügen. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="how-it-works"></a>Funktionsweise
@@ -34,7 +34,7 @@ Als Alternative zur generischen Popupbenachrichtigungen können Sie jetzt Benach
 + Spritesheet (nur vertikal)
 
 > [!NOTE]
-> Ein Spritesheet ist eine Animation, die von einem statischen Bild (JPEG- oder PNG) abgeleitet wird. Einzelne Frames werden vertikal angeordnet, so dass sich das erste Bild im Vordergrund befindet (Sie können eine andere Startframe in der Nutzlast der Popupbenachrichtigung angeben). Jedes Frame muss die gleiche Höhe haben, damit das Programm diese wiederholt, um eine animierte Sequenz zu erstellen (z.B. wie ein Flipbook mit seinen Seiten, die vertikal angeordnet sind). Ein Beispiel für ein Spritesheet wird unten gezeigt.
+> Ein Spritesheet ist eine Animation, die von einem statischen Bild (JPEG- oder PNG) abgeleitet wird. Einzelne Frames werden vertikal angeordnet, so dass sich das erste Bild im Vordergrund befindet (Sie können eine andere Startframe in der Nutzlast der Popupbenachrichtigung angeben). Jedes Frame muss die gleiche Höhe haben, damit das Programm diese wiederholt, um eine animierte Sequenz zu erstellen (z. B. wie ein Flipbook mit seinen Seiten, die vertikal angeordnet sind). Ein Beispiel für ein Spritesheet wird unten gezeigt.
 
 ![Spritesheet in Regenbogenfarben](images/shoulder-tap-rainbow-spritesheet.png)
 
@@ -68,11 +68,11 @@ Die Image-Knoten in der Bindung sollten die folgenden Parameter enthalten:
 Darüber hinaus muss der Knoten der obersten Ebene Popups **hint-people**-Parameter enthalten, um den Absender-Kontakt anzugeben. Dieser Parameter kann folgende Werte haben:
 
 + **E-Mail-Adresse** 
-    + z.B. mailto:johndoe@mydomain.com
+    + z. B. mailto:johndoe@mydomain.com
 + **Telefonnummer** 
-    + z.B. Tel:888-888-8888
+    + z. B. Tel:888-888-8888
 + **Remote-ID** 
-    + z.B. remoteid:1234
+    + z. B. remoteid:1234
 
 > [!NOTE]
 > Falls Ihre App die [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) verwendet und auf dem Smartphone gespeicherte Kontakte mithilfe der [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId)-Eigenschaft mit remote gespeicherten Kontakten verknüpft, muss der Wert für die RemoteId-Eigenschaft unbedingt stabil und eindeutig sein. Die Remote-ID muss also durchweg ein einzelnes Benutzerkonto identifizieren und ein eindeutiges Tag enthalten, um zu verhindern, dass sich Konflikte mit den Remote-IDs anderer Kontakte auf dem PC ergeben. Hierzu zählen auch Kontakte von anderen Apps.
@@ -150,8 +150,8 @@ Es gibt einige Fälle, wo eine Benachrichtigung über „Meine Kontakte” statt
 
 Wenn eine Benachrichtigung für „Meine Kontakte” erneut auf eine Popupbenachrichtigung zurückfällt, wird die zweite spezifische Bindung für „Meine Kontakte” ignoriert, und nur die erste Bindung wird verwendet, um das Popup anzuzeigen. Deshalb ist es wichtig, eine Fallback-Nutzlast in der ersten Popupbindung bereitzustellen.
 
-## <a name="see-also"></a>Weitere Informationen:
-+ [Beispiel zu „Meine Kontakte”-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [Hinzufügen von Support für „Meine Kontakte”](my-people-support.md)
+## <a name="see-also"></a>Siehe auch
++ [Meine Benutzer Notifications-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [Hinzufügen von Meine Benutzer zu unterstützen.](my-people-support.md)
 + [Adaptive Popupbenachrichtigungen](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 + [ToastNotification-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)

@@ -1,28 +1,28 @@
 ---
 title: Einführung in Zertifikate
-description: In diesem Artikel wird die Verwendung von Zertifikaten in UWP-Apps (Universelle Windows-Plattform) beschrieben.
+description: In diesem Artikel wird die Verwendung von Zertifikaten in Apps für die universelle Windows-Plattform (UWP) beschrieben.
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Sicherheit
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937415"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624355"
 ---
 # <a name="intro-to-certificates"></a>Einführung in Zertifikate
 
 
 
 
-In diesem Artikel wird die Verwendung von Zertifikaten in UWP-Apps (Universelle Windows-Plattform) beschrieben. Mit digitalen Zertifikaten wird ein öffentlicher Schlüssel in der Kryptografie für öffentliche Schlüssel an eine Person, an einen Computer oder an eine Organisation gebunden. Die gebundenen Identitäten werden meist dazu verwendet, eine Entität für die andere zu authentifizieren. Zertifikate werden z. B. häufig dazu verwendet, einen Webserver für einen Benutzer und einen Benutzer für einen Webserver zu authentifizieren. Sie können Zertifikatanforderungen erstellen und ausgestellte Zertifikate installieren oder importieren. Außerdem können Sie ein Zertifikat in einer Zertifikathierarchie registrieren.
+In diesem Artikel wird die Verwendung von Zertifikaten in Apps für die universelle Windows-Plattform (UWP) beschrieben. Mit digitalen Zertifikaten wird ein öffentlicher Schlüssel in der Kryptografie für öffentliche Schlüssel an eine Person, an einen Computer oder an eine Organisation gebunden. Die gebundenen Identitäten werden meist dazu verwendet, eine Entität für die andere zu authentifizieren. Zertifikate werden z. B. häufig dazu verwendet, einen Webserver für einen Benutzer und einen Benutzer für einen Webserver zu authentifizieren. Sie können Zertifikatanforderungen erstellen und ausgestellte Zertifikate installieren oder importieren. Außerdem können Sie ein Zertifikat in einer Zertifikathierarchie registrieren.
 
 ### <a name="shared-certificate-stores"></a>Freigegebene Zertifikatspeicher
 
-UWP-apps verwenden das neue isolationsanwendungsmodell in Windows8 eingeführt. In diesem Modell werden Apps in einem Low-Level-Betriebssystemkonstrukt ausgeführt, das App-Container genannt wird. In diesem Konstrukt wird verhindert, dass die App auf Ressourcen oder Dateien zugreift, die außerhalb des eigenen Umfangs liegen, wobei der Zugriff auch ausdrücklich erlaubt und dadurch ermöglicht werden kann. In den folgenden Abschnitten werden die Auswirkungen auf die Public Key-Infrastruktur (PKI) erläutert.
+UWP-apps verwenden Sie das neue isolationistencliquen-Anwendungsmodell in Windows 8 eingeführt wurde. In diesem Modell werden Apps in einem Low-Level-Betriebssystemkonstrukt ausgeführt, das App-Container genannt wird. In diesem Konstrukt wird verhindert, dass die App auf Ressourcen oder Dateien zugreift, die außerhalb des eigenen Umfangs liegen, wobei der Zugriff auch ausdrücklich erlaubt und dadurch ermöglicht werden kann. In den folgenden Abschnitten werden die Auswirkungen auf die Public Key-Infrastruktur (PKI) erläutert.
 
 ### <a name="certificate-storage-per-app-container"></a>Zertifikatspeicher pro App-Container
 
@@ -76,24 +76,24 @@ Ein X.509-Zertifikat der Version 2 enthält die grundlegenden Felder, die in Ver
 | Issuer Unique Identifier | Enthält einen eindeutigen Wert, mit dem der X.500-Name der Zertifizierungsstelle eindeutig festgelegt werden kann, wenn dieser im Lauf der Zeit von verschiedenen Entitäten wiederverwendet wird. |
 | Issuer Unique Identifier | Enthält einen eindeutigen Wert, mit dem der X.500-Name des Zertifikatantragstellers eindeutig festgelegt werden kann, wenn dieser im Lauf der Zeit von verschiedenen Entitäten wiederverwendet wird. |
 
-### <a name="version-3-extensions"></a>Erweiterungen für Version3
+### <a name="version-3-extensions"></a>Erweiterungen für Version 3
 
 Ein X.509-Zertifikat der Version 3 enthält die Felder, die in Version 1 und Version 2 definiert sind, und es werden Zertifikaterweiterungen hinzugefügt.
 
 | Feld  | Beschreibung |
 |--------|-------------|
-| Authority Key Identifier | Gibt den öffentlichen Schlüssel der Zertifizierungsstelle an, der dem privaten Schlüssel der Zertifizierungsstelle entspricht, mit dem das Zertifikat signiert wird. |
-| Basic Constraints | Gibt an, ob die Entität als Zertifizierungsstelle fungieren kann, und wenn dies der Fall ist, wie viele untergeordnete Zertifizierungsstellen in der Zertifikatkette darunter vorhanden sein können. |
-| Certificate Policies | Gibt die Richtlinien an, unter denen das Zertifikat ausgestellt wurde, sowie die Zwecke, für die es genutzt werden kann. |
+| Zertifizierungsstellenschlüssel-ID | Gibt den öffentlichen Schlüssel der Zertifizierungsstelle an, der dem privaten Schlüssel der Zertifizierungsstelle entspricht, mit dem das Zertifikat signiert wird. |
+| Basiseinschränkungen. | Gibt an, ob die Entität als Zertifizierungsstelle fungieren kann, und wenn dies der Fall ist, wie viele untergeordnete Zertifizierungsstellen in der Zertifikatkette darunter vorhanden sein können. |
+| Zertifikatrichtlinien | Gibt die Richtlinien an, unter denen das Zertifikat ausgestellt wurde, sowie die Zwecke, für die es genutzt werden kann. |
 | CRL Distribution Points | Enthält den URI der Basis-Zertifikatsperrliste (Certificate Revocation List, CRL). |
-| Enhanced Key Usage | Gibt die Art und Weise an, in welcher der öffentliche Schlüssel im Zertifikat verwendet werden kann. |
+| Erweiterte Schlüsselverwendung | Gibt die Art und Weise an, in welcher der öffentliche Schlüssel im Zertifikat verwendet werden kann. |
 | Issuer Alternative Name | Gibt einen oder mehrere alternative Namen für den Aussteller der Zertifikatanforderung an. |
-| Key Usage | Gibt die Einschränkungen für die Vorgänge an, die durch den öffentlichen Schlüssel im Zertifikat ausgeführt werden können.|
+| Schlüsselverwendung | Gibt die Einschränkungen für die Vorgänge an, die durch den öffentlichen Schlüssel im Zertifikat ausgeführt werden können.|
 | Name Constraints  | Gibt den Namespace an, in dem alle Antragstellernamen in einer Zertifikathierarchie liegen müssen. Die Erweiterung wird lediglich in einem Zertifizierungsstellenzertifikat verwendet. |
 | Policy Constraints | Schränkt die Zertifikatüberprüfung ein, indem die Richtlinienzuordnung untersagt oder gefordert wird, dass jedes Zertifikat in der Hierarchie eine akzeptable Richtlinienkennung aufweisen muss. Die Erweiterung wird lediglich in einem Zertifizierungsstellenzertifikat verwendet. |
 | Policy Mappings | Gibt die Richtlinien in einer untergeordneten Zertifizierungsstelle an, die Richtlinien in der ausstellenden Zertifizierungsstelle entsprechen. |
 | Private Key Usage Period | Gibt einen anderen Gültigkeitszeitraum für den privaten Schlüssel als für das Zertifikat an, dem der private Schlüssel zugeordnet ist. |
-| Subject Alternative Name | Gibt einen oder mehrere alternative Namen für den Antragsteller der Zertifikatanforderung an. Beispiele für alternative Namen sind E-Mail-Adressen, DNS-Namen, IP-Adressen und URIs. |
+| Alternativer Antragstellername | Gibt einen oder mehrere alternative Namen für den Antragsteller der Zertifikatanforderung an. Beispiele für alternative Namen sind E-Mail-Adressen, DNS-Namen, IP-Adressen und URIs. |
 | Subject Directory Attributes | Vermittelt identifizierende Attribute, beispielsweise die Nationalität des Zertifikatantragstellers. Der Erweiterungswert ist eine Folge von OID-Wertepaaren. |
-| Subject Key Identifier | Unterscheidet zwischen mehreren öffentlichen Schlüsseln im Besitz des Zertifikatantragstellers. Der Erweiterungswert ist normalerweise ein SHA-1-Hash des Schlüssels. |
+| Schlüsselkennung des Antragstellers | Unterscheidet zwischen mehreren öffentlichen Schlüsseln im Besitz des Zertifikatantragstellers. Der Erweiterungswert ist normalerweise ein SHA-1-Hash des Schlüssels. |
 

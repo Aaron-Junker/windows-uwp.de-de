@@ -4,14 +4,14 @@ description: Erste Schritte mit der DirectX-Programmierung.
 ms.assetid: 7e7b95ef-faf9-48e1-8b53-a143be3b08e9
 ms.date: 06/23/2017
 ms.topic: article
-keywords: Windows10, UWP, DirectX
+keywords: Windows 10, UWP, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 127d600b840c21eb78c3f6b98a100b7639ea25bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929143"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660225"
 ---
 # <a name="directx-getting-started"></a>DirectX: Erste Schritte
 
@@ -36,15 +36,15 @@ Im Thema „Starten und Reaktivieren von Apps” wird erläutert, wie Sie die Ak
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">Das App-Objekt und DirectX</a></p></td>
+<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">Die app-Objekt und DirectX</a></p></td>
 <td align="left"><p>Greifen Sie direkt auf das App-Objekt zu, um damit zu interagieren.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">Projektvorlagen und Tools für Spiele</a></p></td>
-<td align="left"><p>Vorbereiten der Entwicklungsumgebung für die Entwicklung von UWP-DirectX-Spielen.</p></td>
+<td align="left"><p>Bereiten Sie die Entwicklungsumgebung für die Entwicklung von UWP-DirectX-Spielen vor.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">Starten und Reaktivieren von Apps</a></p></td>
+<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">Starten und Fortsetzen von apps</a></p></td>
 <td align="left"><p>Starten Sie Ihr UWP-DirectX-Spiel, halten Sie es an, und setzen Sie es fort.</p></td>
 </tr>
 </tbody>

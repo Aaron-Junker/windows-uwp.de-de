@@ -1,17 +1,17 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Aktivieren Ihres Geräts für die Entwicklung
-description: Konfigurieren Sie Ihr Windows10-Gerät für die Entwicklung und das Debugging.
+description: Konfigurieren Sie Ihr Windows 10-Gerät für die Entwicklung und das Debugging.
 keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät aktivieren
 ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 90ff8e8c0d11e58d251e9c2f5bfb00f3b8aedf1a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044943"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618955"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
@@ -35,7 +35,7 @@ Wenn dieses Dialogfeld angezeigt wird, klicken Sie auf **Einstellungen für Entw
 So aktivieren Sie den Entwicklermodus und greifen auf andere Einstellungen zu:
 
 1.  Wählen Sie im Dialogfeld **Für Entwickler** die Zugriffsebene aus, die Sie benötigen.
-2.  Lesen Sie den Haftungsausschluss für die ausgewählte Einstellung, und klicken Sie dann auf **Ja**, um die Änderung zu übernehmen.
+2.  Lesen Sie den Haftungsausschluss für die ausgewählte Einstellung, und klicken Sie dann auf **Ja** um die Änderung zu übernehmen.
 
 > [!NOTE]
 > Für das Aktivieren des Entwicklermodus ist Administratorzugriff erforderlich. Wenn Ihr Gerät einem Unternehmen gehört, ist diese Option möglicherweise von Ihrer Organisation deaktiviert.
@@ -56,13 +56,13 @@ Standardmäßig können Sie nur UWP-Apps (Universelle Windows-Plattform) aus dem
 
 ### <a name="sideload-apps"></a>Querladen von Apps
 
-Das Querladen von apps Einstellung wird meist von Unternehmen Schulen, die benutzerdefinierte apps auf verwalteten Geräten installieren, ohne dass über den Microsoft Store oder auf alle Personen, die apps aus nicht-Microsoft-Quellen ausgeführt werden muss. In diesem Fall wird im Unternehmen häufig eine Richtlinie erzwungen, mit der die Einstellung *UWP-Apps* deaktiviert wird, wie oben in der Abbildung der Einstellungsseite dargestellt. Die Organisation stellt außerdem das erforderliche Zertifikat und den Installationsspeicherort zum Querladen von Apps bereit. Weitere Informationen finden Sie in den TechNet-Artikeln [Querladen von Branchen-Apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) und [Erste Schritte mit der Bereitstellung von Apps in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+Das Querladen von apps festlegen wird in der Regel von Unternehmen oder Schulen, die benutzerdefinierte apps auf verwalteten Geräten zu installieren, ohne Umweg über den Microsoft Store müssen oder Personen andere, die zum Ausführen von apps aus nicht-Microsoft-Quellen verwendet. In diesem Fall wird im Unternehmen häufig eine Richtlinie erzwungen, mit der die Einstellung *UWP-Apps* deaktiviert wird, wie oben in der Abbildung der Einstellungsseite dargestellt. Die Organisation stellt außerdem das erforderliche Zertifikat und den Installationsspeicherort zum Querladen von Apps bereit. Weitere Informationen finden Sie in den TechNet-Artikeln [Querladen von Branchen-Apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) und [Erste Schritte mit der Bereitstellung von Apps in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
 
 Spezifische Informationen für Gerätefamilien
 
--   Desktopgeräte: Sie können ein App-Paket (APPX-Datei) und jedes Zertifikat, das zur Ausführung der App benötigt wird, mit dem Windows PowerShell-Skript installieren, das mit dem Paket erstellt wird („Add-AppDevPackage.ps1“). Weitere Informationen finden Sie unter [Verpacken von UWP-Apps](../packaging/packaging-uwp-apps.md).
+-   Desktopgeräte: Sie können ein app-Paket (.appx) installieren, und alle Zertifikate, die benötigt werden, um die app auszuführen, indem Sie dem Windows PowerShell-Skript ausführen, wird mit dem Paket ("Add-appdevpackage. ps1") erstellt. Weitere Informationen finden Sie unter [Verpacken von UWP-Apps](../packaging/packaging-uwp-apps.md).
 
--   Mobilgeräte: Wenn das erforderliche Zertifikat bereits installiert ist, tippen Sie auf die Datei, um beliebige APPX-Dateien zu installieren, die Sie über eine E-Mail oder eine SD-Karte erhalten haben.
+-   Mobilgeräte: Wenn das erforderliche Zertifikat bereits installiert ist, können Sie die Datei, um alle an Sie gesendet werden, per e-Mail oder auf einer SD-Karte AppX-Datei installieren tippen.
 
 
 Das **Querladen von Apps** ist eine sicherere Option als der Entwicklermodus, da Sie Apps ohne vertrauenswürdiges Zertifikat nicht auf dem Gerät installieren können.
@@ -84,19 +84,19 @@ Wenn Sie den Entwicklermodus auf dem Desktop aktivieren, wird ein Paket mit Funk
 
 Für jede Gerätefamilie können zusätzliche Entwicklerfeatures verfügbar sein. Diese Features sind nur verfügbar, wenn der Entwicklermodus auf dem Gerät aktiviert ist, und können sich abhängig von der verwendeten Betriebssystemversion unterscheiden.
 
-Diese Abbildung zeigt Entwicklerfeatures für Windows10:
+Diese Abbildung zeigt Entwicklerfeatures für Windows 10:
 
 ![Optionen des Entwicklermodus](images/devmode-mob-options.png)
 
-### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>Geräteportal
+### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>Device-Portal
 
 Weitere Informationen zum Device Portal finden Sie in der [Übersicht über das Windows-Geräteportal](../debug-test-perf/device-portal.md).
 
 Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
-- [Geräteportal für Desktop](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
+- [Für Desktop-Geräteportal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
 - [Geräteportal für HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
-- [Device Portal für IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
-- [Device Portal für Mobilgeräte](../debug-test-perf/device-portal-mobile.md)
+- [Für IoT-Geräteportal](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
+- [Device-Portal für mobile Geräte](../debug-test-perf/device-portal-mobile.md)
 - [Geräteportal für Xbox](../debug-test-perf/device-portal-xbox.md)
 
 Wenn Sie Probleme beim Aktivieren des Entwicklermodus oder des Geräteportals haben, finden Sie im Forum [Bekannte Probleme](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) Problemumgehungen für diese Probleme. Suchen Sie andernfalls unter [Fehler beim Installieren des Entwicklermoduspakets](#failure-to-install-developer-mode-package) nach zusätzlichen Detail und welche WSUS KBs zugelassen werden, um das Paket im Entwicklermodus zu erlauben oder zu entsperren.
@@ -129,12 +129,12 @@ Die Gerätesuche sollte nur aktiviert werden, wenn das Gerät ein Bereitstellung
 
 
 ## <a name="notes"></a>Anmerkungen
-In früheren Versionen von Windows10 Mobile gab es die Option „Absturzabbild” im Menü "Entwicklereinstellungen".  Dieses Feature wurde auf das [Geräteportal](../debug-test-perf/device-portal.md) verschoben, damit sie per Remotezugriff, anstatt nur über USB verwendet werden kann.  
+In früheren Versionen von Windows 10 Mobile gab es die Option „Absturzabbild” im Menü "Entwicklereinstellungen".  Dieses Feature wurde auf das [Geräteportal](../debug-test-perf/device-portal.md) verschoben, damit sie per Remotezugriff, anstatt nur über USB verwendet werden kann.  
 
-Es gibt verschiedene Tools, mit denen Sie eine App von einem Windows10-PC auf einem Gerät bereitstellen können. Beide Geräte müssen über eine kabelgebundene oder drahtlose Verbindung mit dem gleichen Subnetz des Netzwerks verbunden sein oder über USB verbunden werden. Mit beiden aufgeführten Methoden wird nur das App-Paket (.appx/.appxbundle) installiert, nicht die Zertifikate.
+Es gibt verschiedene Tools, mit denen Sie eine App von einem Windows 10-PC auf einem Gerät bereitstellen können. Beide Geräte müssen über eine kabelgebundene oder drahtlose Verbindung mit dem gleichen Subnetz des Netzwerks verbunden sein oder über USB verbunden werden. Mit beiden aufgeführten Methoden wird nur das App-Paket (.appx/.appxbundle) installiert, nicht die Zertifikate.
 
--   Verwenden Sie das Tool für die Windows10-Anwendungsbereitstellung (WinAppDeployCmd). Weitere Informationen zum [Tool WinAppDeployCmd](https://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
--   Im [Geräteportal](../debug-test-perf/device-portal.md) ist die Bereitstellung aus Ihrem Browser auf einem mobilen Gerät unter Windows10, Version 1511 oder höher, möglich. Im Geräteportal können Sie auf der Seite **[Apps](../debug-test-perf/device-portal.md#apps-manager)** ein App-Paket (APPX) hochladen und auf dem Gerät installieren.
+-   Verwenden Sie das Tool für die Windows 10-Anwendungsbereitstellung (WinAppDeployCmd). Weitere Informationen zum [Tool WinAppDeployCmd](https://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
+-   Im [Geräteportal](../debug-test-perf/device-portal.md) ist die Bereitstellung aus Ihrem Browser auf einem mobilen Gerät unter Windows 10, Version 1511 oder höher, möglich. Im Geräteportal können Sie auf der Seite **[Apps](../debug-test-perf/device-portal.md#apps-manager)** ein App-Paket (APPX) hochladen und auf dem Gerät installieren.
 
 ## <a name="failure-to-install-developer-mode-package"></a>Fehler beim Installieren des Entwicklermoduspakets
 In manchen Fällen wird der Entwicklermodus aufgrund von Problemen mit dem Netzwerk oder dem Administrator nicht ordnungsgemäß installiert. Das Entwicklermoduspaket ist für die **dezentrale** Bereitstellungen auf diesem PC erforderlich – verwenden Sie Device Portal über einen Browser oder Device Discovery SSH – aber nicht für die lokale Entwicklung.  Selbst wenn diese Probleme auftreten, können Sie Ihre App weiterhin mithilfe von Visual Studio oder von diesem Gerät auf ein anderes Gerät bereitstellen.
@@ -142,7 +142,7 @@ In manchen Fällen wird der Entwicklermodus aufgrund von Problemen mit dem Netzw
 Im Forum zu den [bekannten Problemen](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) finden Sie entsprechende Problemumgehungen und vieles mehr.
 
 > [!NOTE]
-> Aktivieren des Entwicklermodus ordnungsgemäß installiert, empfehlen wir Ihnen eine Anforderung Feedback in die Datei. Klicken Sie in der **Feedback-Hub** -app wählen Sie **Hinzufügen neuer Feedback**, und wählen Sie die **Entwicklerplattform** Kategorie und Unterkategorie **Entwicklermodus** . Senden von Feedback hilft Microsoft, die das Problem aufgetreten ist.
+> Wenn Sie den Entwicklermodus nicht ordnungsgemäß installiert werden, empfehlen wir Ihnen in der Datei einer feedbackanforderung. In der **Feedback Hub** app, und wählen **neues Feedback übermitteln**, und wählen Sie die **Entwicklerplattform** Kategorie und die **Entwicklermodus** Unterkategorie. Senden von Feedback hilft Microsoft, die das Problem zu beheben, aufgetreten ist.
 
 ### <a name="failed-to-locate-the-package"></a>Das Paket konnte nicht gefunden werden
 
@@ -154,7 +154,7 @@ So beheben Sie dieses Problem:
 
 1. Stellen Sie sicher, dass Ihr Computer mit dem Internet verbunden ist.
 2. Wenn Sie einen in eine Domäne eingebundenen Computer verwenden, sprechen Sie mit dem Netzwerkadministrator. Das Entwicklermoduspaket ist genau wie alle anderen Features standardmäßig in WSUS blockiert.
-2.1. Um das Entwicklermoduspaket in der aktuellen und vorherigen Versionen zu entsperren, sollte die folgenden KBs in WSUS zugelassen werden: 4016509, 3180030, 3197985  
+2.1. Zum Aufheben der Blockierung des Entwicklermodus-Pakets in der aktuellen und vorherigen Versionen sollten die folgenden KBs in WSUS zugelassen werden: 4016509, 3180030, 3197985  
 3. Suchen nach Windows-Updates in den Einstellungen > Updates und Sicherheit > Windows-Updates.
 4. Stellen Sie sicher, dass das Windows-Entwicklermoduspaket in den Einstellungen > System > Apps und Features > Optionale Features verwalten > Feature hinzufügen vorhanden ist. Wenn es nicht vorhanden ist, kann Windows das richtige Paket für Ihren Computer nicht finden.
 
@@ -175,28 +175,28 @@ So beheben Sie dieses Problem:
 
 ## <a name="use-group-policies-or-registry-keys-to-enable-a-device"></a>Verwenden von Gruppenrichtlinien oder Registrierungsschlüsseln zum Aktivieren von Geräten
 
-Entwickler sollten meist die Einstellungs-Apps verwenden, um Geräte für das Debuggen zu aktivieren. In bestimmten Szenarien wie z.B. bei automatisierten Tests stehen weitere Möglichkeiten zum Aktivieren Ihres Windows10-Desktopgeräts für die Entwicklung zur Verfügung.  Beachten Sie, dass diese Schritte nicht den SSH-Server aktivieren oder ermöglichen, dass das Gerät Ziel einer Remote-Bereitstellung und Debugging ist.
+Entwickler sollten meist die Einstellungs-Apps verwenden, um Geräte für das Debuggen zu aktivieren. In bestimmten Szenarien wie z. B. bei automatisierten Tests stehen weitere Möglichkeiten zum Aktivieren Ihres Windows 10-Desktopgeräts für die Entwicklung zur Verfügung.  Beachten Sie, dass diese Schritte nicht den SSH-Server aktivieren oder ermöglichen, dass das Gerät Ziel einer Remote-Bereitstellung und Debugging ist.
 
-Sie können mithilfe von „gpedit.msc“ die Gruppenrichtlinien für die Geräteaktivierung festlegen (es sei denn, Sie verwenden Windows10 Home). In Windows10 Home müssen die Registrierungsschlüssel für die Geräteaktivierung direkt mithilfe von regedit oder von PowerShell-Befehlen festgelegt werden.
+Sie können mithilfe von „gpedit.msc“ die Gruppenrichtlinien für die Geräteaktivierung festlegen (es sei denn, Sie verwenden Windows 10 Home). In Windows 10 Home müssen die Registrierungsschlüssel für die Geräteaktivierung direkt mithilfe von regedit oder von PowerShell-Befehlen festgelegt werden.
 
-**Aktivieren des Geräts mithilfe von „gpedit“**
+**Verwenden Sie Gpedit, um Ihr Gerät zu aktivieren.**
 
 1.  Führen Sie **Gpedit.msc** aus.
 2.  Navigieren Sie zu „Richtlinie für "Lokaler Computer" &gt; Computerkonfiguration &gt; Administrative Vorlagen &gt; Windows-Komponenten &gt; App-Paketbereitstellung.
 3.  Bearbeiten Sie zum Aktivieren des Querladens die folgenden Richtlinien:
 
-    -   **Zulassen, dass alle vertrauenswürdigen Apps installiert werden**
+    -   **Installation aller vertrauenswürdigen Anwendungen zulassen**
 
     - ODER
 
     Bearbeiten Sie zum Aktivieren des Entwicklermodus die Richtlinien, um beide zu aktivieren:
 
-    -   **Zulassen, dass alle vertrauenswürdigen Apps installiert werden**
-    -   **Hiermit wird die Entwicklung von UWP-Apps und Ihre Installation aus einer integrierten Entwicklungsumgebung (IDE) zugelassen.**
+    -   **Installation aller vertrauenswürdigen Anwendungen zulassen**
+    -   **Ermöglicht die Entwicklung von UWP-apps und sie über eine integrierte Entwicklungsumgebung (IDE) installieren**
 
 4.  Starten Sie Ihren Computer neu.
 
-**Aktivieren des Geräts mithilfe von „regedit“**
+**Verwenden Sie "regedit", um Ihr Gerät aktivieren**
 
 1.  Führen Sie **regedit** aus.
 2.  Legen Sie diesen DWORD-Wert auf 1 fest, um das Querladen zu aktivieren.
@@ -209,7 +209,7 @@ Sie können mithilfe von „gpedit.msc“ die Gruppenrichtlinien für die Gerät
 
     -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
-**Aktivieren des Geräts mithilfe von PowerShell**
+**Verwenden von PowerShell zum Aktivieren Ihres Geräts**
 
 1.  Führen Sie PowerShell mit Administratorrechten aus.
 2.  Führen Sie zum Aktivieren des Querladens diesen Befehl aus:
@@ -220,26 +220,26 @@ Sie können mithilfe von „gpedit.msc“ die Gruppenrichtlinien für die Gerät
 
     Führen Sie zum Aktivieren des Entwicklermodus diesen Befehl aus:
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
+    -   **PS: C:\\WINDOWS\\"System32"&gt; Reg hinzufügen "HKEY\_lokalen\_Computer\\SOFTWARE\\Microsoft\\Windows\\" CurrentVersion "\\ AppModelUnlock"/ t / REG\_DWORD/f/v"AllowDevelopmentWithoutDevLicense"/ d"1"**
 
 ## <a name="upgrade-your-device-from-windows-81-to-windows-10"></a>Aktualisieren Ihres Geräts von Windows 8.1 auf Windows 10
 
-Wenn Sie Apps auf Ihrem Windows8.1-Gerät erstellen oder querladen, müssen Sie eine Entwicklerlizenz installieren. Beim Upgrade Ihres Geräts von Windows8.1 auf Windows10 bleiben diese Informationen erhalten. Führen Sie den folgenden Befehl aus, um diese Informationen von Ihrem aktualisierten Windows10-Gerät zu entfernen. Dieser Schritt ist nicht erforderlich, wenn Sie ein Upgrade von Windows8.1 direkt auf Windows10, Version1511 oder höher, ausführen.
+Wenn Sie Apps auf Ihrem Windows 8.1-Gerät erstellen oder querladen, müssen Sie eine Entwicklerlizenz installieren. Beim Upgrade Ihres Geräts von Windows 8.1 auf Windows 10 bleiben diese Informationen erhalten. Führen Sie den folgenden Befehl aus, um diese Informationen von Ihrem aktualisierten Windows 10-Gerät zu entfernen. Dieser Schritt ist nicht erforderlich, wenn Sie ein Upgrade von Windows 8.1 direkt auf Windows 10, Version 1511 oder höher, ausführen.
 
-**So heben Sie die Registrierung einer Entwicklerlizenz auf**
+**Beim Aufheben der Registrierung einer Entwicklerlizenz**
 
 1.  Führen Sie PowerShell mit Administratorrechten aus.
 2.  Führen Sie folgenden Befehl aus: **unregister-windowsdeveloperlicense**.
 
 Danach müssen Sie Ihr Gerät wie in diesem Thema beschrieben für die Entwicklung aktivieren, damit Sie weiterhin auf diesem Gerät entwickeln können. Andernfalls erhalten Sie möglicherweise eine Fehlermeldung, wenn Sie Ihre App debuggen oder versuchen, ein Paket dafür zu erstellen. Hier ist ein Beispiel für diesen Fehler:
 
-Fehler : DEP0700 : Registrierung der App fehlgeschlagen.
+Fehler: DEP0700 : Fehler beim Registrieren der app.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-* [Ihre erste App](your-first-app.md)
+* [Ihre erste app](your-first-app.md)
 * [Veröffentlichen Sie Ihre UWP-App](https://developer.microsoft.com/store/publish-apps).
-* [Anleitungen zur Entwicklung von UWP-Apps](https://developer.microsoft.com/windows/apps/develop)
+* [Anleitungen zum Entwickeln von UWP-apps](https://developer.microsoft.com/windows/apps/develop)
 * [Codebeispiele für UWP-Entwickler](https://developer.microsoft.com/windows/samples)
 * [Was ist eine UWP-App?](universal-application-platform-guide.md)
-* [Für Windows-Konto anmelden](sign-up.md)
+* [Für Windows-Konto registrieren](sign-up.md)

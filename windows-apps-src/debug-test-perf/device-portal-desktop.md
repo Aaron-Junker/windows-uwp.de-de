@@ -1,21 +1,21 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Geräteportal für Windows-Desktop
-description: Hier erfahren Sie, wie das Windows Device Portal die Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
+description: Hier erfahren Sie, wie das Windows Device Portal Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
 ms.date: 02/6/2019
 ms.topic: article
-keywords: Windows 10, Uwp, geräteportal
+keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fe1f2a51199dd12cd1d285c17c5d48c9a25b969
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117800"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654525"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
 
-Im Windows-Geräteportal können Sie Diagnoseinformationen anzeigen und über HTTP aus dem Browserfenster mit Ihrem Desktop interagieren. Sie haben im Geräteportal folgende Möglichkeiten:
+Im Windows-Geräteportal können Sie Diagnoseinformationen anzeigen und über HTTP aus dem Browserfenster mit Ihrem Desktop interagieren. Sie haben im Device Portal folgende Möglichkeiten:
 - Anzeigen und Bearbeiten einer Liste laufender Prozesse
 - Installieren, Löschen, Starten und Beenden von Apps
 - Ändern von WLAN-Profilen und Anzeigen der Signalstärke und der ipconfig
@@ -47,12 +47,12 @@ Diese Links bieten zwei Möglichkeiten, sich mit dem Geräteportal zu verbinden:
 
 Um eine Verbindung über einen lokalen Host herzustellen, öffnen Sie ein Browserfenster und geben Sie die hier angezeigte Adresse für den von Ihnen verwendeten Verbindungstyp ein.
 
-* Localhost: `http://127.0.0.1:<PORT>` oder `http://localhost:<PORT>`
-* Local Network: `https://<IP address of the desktop>:<PORT>`
+* "Localhost": `http://127.0.0.1:<PORT>` oder `http://localhost:<PORT>`
+* Lokales Netzwerk: `https://<IP address of the desktop>:<PORT>`
 
 Für die Authentifizierung und sichere Kommunikation ist HTTPS erforderlich.
 
-Sie können die Authentifizierung deaktivieren, wenn Sie Geräteportal in einer geschützten Umgebung verwenden, z.B. in einem Testlabor, in dem Sie allen im lokalen Netzwerk vertrauen, keine persönlichen Informationen auf dem Gerät gespeichert haben und in dem spezielle Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse Ihres Computers kennt, kann sich verbinden und es steuern.
+Sie können die Authentifizierung deaktivieren, wenn Sie Geräteportal in einer geschützten Umgebung verwenden, z. B. in einem Testlabor, in dem Sie allen im lokalen Netzwerk vertrauen, keine persönlichen Informationen auf dem Gerät gespeichert haben und in dem spezielle Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse Ihres Computers kennt, kann sich verbinden und es steuern.
 
 ## <a name="device-portal-content-on-windows-desktop"></a>Geräteportal-Inhalte auf dem Windows-Desktop
 
@@ -66,31 +66,31 @@ Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführlic
 - Ereignisablaufverfolgung für Windows (ETW)
 - Leistungsüberwachung
 - Geräte-Manager
-- Networking
+- Netzwerk
 - Absturzdaten
 - Features
 - Mixed Reality
 - Streaming Install-Debugger
-- Speicherort
+- Pfad
 - Entwurf
 
 ## <a name="more-device-portal-options"></a>Weitere Optionen für das Geräteportal
 
 ### <a name="registry-based-configuration-for-device-portal"></a>Registrierungsbasierte Konfiguration für das Geräteportal
 
-Wenn Sie Portnummern für Geräteportal auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
+Wenn Sie Portnummern für Device Portal auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
 
-- Under `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts`: Ein erforderlicher DWORD-Wert. Legen Sie den Wert auf 0 fest, um die von Ihnen ausgewählten Portnummern beizubehalten.
-    - `HttpPort`: Ein erforderlicher DWORD-Wert. Enthält die Portnummer, an der Geräteportal nach HTTP-Verbindungen lauscht.    
-    - `HttpsPort`: Ein erforderlicher DWORD-Wert. Enthält die Portnummer, an der Geräteportal nach HTTPS-Verbindungen lauscht.
+- Klicken Sie unter `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
+    - `UseDynamicPorts`: Einen DWORD-Wert erforderlich. Legen Sie den Wert auf 0 fest, um die von Ihnen ausgewählten Portnummern beizubehalten.
+    - `HttpPort`: Einen DWORD-Wert erforderlich. Enthält die Portnummer, an der Device Portal nach HTTP-Verbindungen lauscht.    
+    - `HttpsPort`: Einen DWORD-Wert erforderlich. Enthält die Portnummer, an der Device Portal nach HTTPS-Verbindungen lauscht.
     
 Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderung deaktivieren:
-- `UseDefaultAuthorizer` - `0` für deaktiviert, `1` für aktiviert.  
+- `UseDefaultAuthorizer` - `0` für deaktiviert `1` für aktiviert.  
     - Dies steuert sowohl die grundlegende Authentifizierungsanforderung für jede Verbindung als auch die Weiterleitung von HTTP nach HTTPS.  
     
 ### <a name="command-line-options-for-device-portal"></a>Befehlszeilenoptionen für das Geräteportal
-Über eine administrative Eingabeaufforderung können Sie Teile des Geräteportal aktivieren und konfigurieren. Um den neuesten Satz von Befehlen zu sehen, die von Ihrem Build unterstützt werden, können Sie Folgendes ausführen `webmanagement /?`
+Über eine administrative Eingabeaufforderung können Sie Teile des Geräteportal aktivieren und konfigurieren. Um den aktuellen Satz von Befehlen, die auf Ihrem Build unterstützt anzuzeigen, können Sie ausführen `webmanagement /?`
 
 - `sc start webmanagement` oder `sc stop webmanagement` 
     - Schalten Sie den Dienst ein oder aus. Dazu muss ebenfalls der Entwicklermodus aktiviert sein. 
@@ -107,29 +107,29 @@ Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderun
 
 ## <a name="common-errors-and-issues"></a>Häufige Fehler und Probleme
 
-Im folgenden sind einige häufige Fehler, die auftreten können, wenn Sie Device Portal einrichten.
+Im folgenden sind einige häufige Fehler, die bei der Einrichtung des Device Portal auftreten können.
 
-### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch gibt ungültige Anzahl von Updates (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch returns invalid number of updates (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
 
-Sie können diesen Fehler erhalten, bei dem Versuch, die Entwickler-Pakete auf einem Pre-Release-Build von Windows 10 zu installieren. Diese Features bei Bedarf (FoD)-Pakete auf Windows Update gehostet werden, und Herunterladen auf pre-Release-Builds erfordert, dass Sie in Test-flighting deaktivieren. Wenn die Installation nicht in Paketen für die richtigen Build und Ring Kombination deaktiviert ist, kann die Nutzlast nicht herunterladen. Überprüfen Sie Folgendes:
+Sie können diese Fehlermeldung beim Versuch, die Entwickler-Pakete auf einer Vorabversion Build von Windows 10 installiert. Diese Features bei Bedarf (Feature-On) Pakete werden über Windows Update gehostet, und sie für Builds von Vorabversionen handelt herunterzuladen erfordert, dass Sie in Test-flighting entscheiden. Wenn die Installation in Test-flighting für die richtige Build- und die Kombination der Ring nicht aktiviert ist, wird die Nutzlast nicht heruntergeladen werden. Überprüfen Sie Folgendes:
 
-1. Navigieren Sie zu **Einstellungen > Update & Sicherheit > Windows-Insider-Programm** , und stellen Sie sicher, dass der **Windows-Insider-Konto** -Abschnitt der richtigen Kontoinformationen hat. Wenn Sie diesen Abschnitt, wählen Sie die **Windows-Insider-Konto verknüpfen**nicht angezeigt wird, Ihre e-Mail-Konto hinzufügen, und stellen Sie sicher, dass es unter der Überschrift **Windows-Insider-Konto** angezeigt wird (Sie müssen möglicherweise **Windows-Insider-Konto verknüpfen** ein zweites Mal zum Auswählen tatsächlich verknüpfen Sie neu hinzugefügte-Konto).
+1. Navigieren Sie zu **Einstellungen > Update und Sicherheit > Windows-Insider-Programm** und überprüfen Sie, ob die **Windows Insider-Konto** Abschnitt hat die richtigen Kontoinformationen. Wenn Sie diesen Abschnitt nicht sehen, wählen Sie **Verknüpfen eines Windows-Insider-Kontos**Ihr e-Mail-Konto hinzu, und vergewissern Sie sich, dass er unter wird angezeigt der **Windows Insider-Konto** Überschrift (müssen Sie möglicherweise auswählen**Verknüpfen eines Windows-Insider-Kontos** ein zweites Mal tatsächlich Link eine neu hinzugefügte Konto).
  
-2. Unter **welche Art von Inhalt Sie empfangen möchten?**, stellen Sie sicher, **aktiven Entwicklung von Windows** aktiviert ist.
+2. Klicken Sie unter **welchen Inhalt Sie erhalten möchten?**, stellen Sie sicher, dass **aktiven Entwicklung von Windows** ausgewählt ist.
  
-3. Unter **welche Tempo möchten Sie neue Builds zu erhalten?**, stellen Sie sicher, dass **Windows Insider Fast** ausgewählt ist.
+3. Klicken Sie unter **welchem Zeitrahmen dies geschehen soll neue Builds erhalten?**, stellen Sie sicher, dass **Windows Insider Fast** ausgewählt ist.
  
-4. Sie sollten jetzt die FOD-Dateien installieren können. Wenn Sie bestätigt haben, dass Sie verwenden Windows-Insider-Fast und weiterhin kann nicht die FOD-Dateien zu installieren, geben Sie Feedback und die Protokolldateien unter **C:\Windows\Logs\CBS**anhängen.
+4. Sie sollten jetzt die FoDs installieren können. Wenn Sie bestätigt haben, sind auf Windows-Insider Fast und noch nicht die FoDs installiert, bitte Ihr Feedback und fügen Sie die Log-Dateien unter **C:\Windows\Logs\CBS**.
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC] Methode: OpenService FAILED 1060: der angegebene Dienst ist nicht als installierter Dienst vorhanden
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC] StartService: OpenService Fehler 1060: Der angegebene Dienst ist nicht als installierter Dienst vorhanden.
 
-Sie können diesen Fehler erhalten, wenn die Entwickler-Pakete installiert sind. Ohne den Entwickler-Paketen besteht kein Web Management Service. Versuchen Sie erneut, die Entwickler-Pakete zu installieren.
+Sie erhalten diesen Fehler, die Developer-Pakete nicht installiert werden. Ohne die Developer-Pakete ist es keine Web-Management-Dienst. Versuchen Sie es erneut, die Entwickler-Pakete zu installieren.
 
-### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>CBS kann nicht Download gestartet werden, da das System in getakteten Netzwerk (CBS_E_METERED_NETWORK) ist
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>CBS kann nicht Download gestartet werden, da das System in getakteten Netzwerken (CBS_E_METERED_NETWORK) ist.
 
-Sie können diesen Fehler erhalten, wenn Sie sich auf eine getaktete Verbindung zum Internet befinden. Sie wird nicht die Entwickler-Pakete für eine getaktete Verbindung herunterladen können.
+Sie können diese Fehlermeldung, wenn Sie mit einer getakteten Internetverbindung sind. Sie wird nicht auf die Developer-Pakete auf einer getakteten Verbindung herunterladen können.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
-* [Übersicht über das Windows Geräteportal](device-portal.md)
-* [Referenz zu Kern-APIs des Geräteportal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Übersicht über die Windows Device Portal](device-portal.md)
+* [Device Portal-Core-API-Referenz](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

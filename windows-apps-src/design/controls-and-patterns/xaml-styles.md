@@ -11,11 +11,11 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f0bed73a3b0d21329c5195be0772538f3a99bdcd
-ms.sourcegitcommit: e83f30486d899401debc782de891c388ba5fc03b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "9062462"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648425"
 ---
 # <a name="xaml-styles"></a>XAML-Formatvorlagen
 
@@ -107,7 +107,7 @@ In diesem Beispiel besitzt der erste Stil ein [x:Key](../../xaml-platform/x-key-
 
 ## <a name="use-based-on-styles"></a>Verwenden abgeleiteter Stile
 
-Um die Verwaltung von Stilen zu vereinfachen und die Wiederverwendung zu optimieren, können Sie Stile erstellen, die von anderen Stilen erben. Verwenden Sie die [BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852)-Eigenschaft, um abgeleitete Stile zu erstellen. Stile, die von anderen Stilen erben, müssen als Ziel denselben Steuerelementtyp haben oder ein Steuerelement, das von dem Typ abgeleitet wird, auf den der Basisstil verweist. Wenn das Ziel des Basisstils z.B. [ContentControl](https://msdn.microsoft.com/library/windows/apps/br209365) ist, können die von diesem abgeleiteten Stile **ContentControl** als Ziel haben oder Typen, die von **ContentControl** abgeleitet sind, z.B. [Button](https://msdn.microsoft.com/library/windows/apps/br209265) und [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527). Wenn ein Wert im abgeleiteten Stil nicht festgelegt wurde, wird er vom Basisstil vererbt. Möchten Sie den Wert vom Basisstil ändern, können Sie ihn im abgeleiteten Stil überschreiben. Das nächste Beispiel zeigt einen **Button** und ein [CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316) mit Stilen, die von demselben Basisstil abgeleitet sind.
+Um die Verwaltung von Stilen zu vereinfachen und die Wiederverwendung zu optimieren, können Sie Stile erstellen, die von anderen Stilen erben. Verwenden Sie die [BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852)-Eigenschaft, um abgeleitete Stile zu erstellen. Stile, die von anderen Stilen erben, müssen als Ziel denselben Steuerelementtyp haben oder ein Steuerelement, das von dem Typ abgeleitet wird, auf den der Basisstil verweist. Wenn das Ziel des Basisstils z. B. [ContentControl](https://msdn.microsoft.com/library/windows/apps/br209365) ist, können die von diesem abgeleiteten Stile **ContentControl** als Ziel haben oder Typen, die von **ContentControl** abgeleitet sind, z. B. [Button](https://msdn.microsoft.com/library/windows/apps/br209265) und [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527). Wenn ein Wert im abgeleiteten Stil nicht festgelegt wurde, wird er vom Basisstil vererbt. Möchten Sie den Wert vom Basisstil ändern, können Sie ihn im abgeleiteten Stil überschreiben. Das nächste Beispiel zeigt einen **Button** und ein [CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316) mit Stilen, die von demselben Basisstil abgeleitet sind.
 
 ![Formatierte Schaltflächen mit abgeleiteten Stilen](images/styles-buttons-based-on.png)
 
@@ -165,7 +165,7 @@ Das Überschreiben der Systempinsel geschieht grundsätzlich auf App- oder Seite
 </Page.Resources>
 ```
 
-Für Zustände wie PointerOver (Mauszeiger über der Schaltfläche), **PointerPressed** (Schaltfläche betätigt) oder Deaktiviert (Schaltfläche erlaubt keine Interaktion). Diese Endungen werden an die ursprünglichen einfachen Formatnahmen angehängt: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled** usw. Wenn Sie auch diese Pinsel modifizieren, stellen Sie sicher, dass Ihre Steuerelemente konsistent gemäß dem Thema Ihrer App gestaltet sind.
+Für Zustände wie PointerOver (Mauszeiger über der Schaltfläche), **PointerPressed** (Schaltfläche betätigt) oder Deaktiviert (Schaltfläche erlaubt keine Interaktion). Diese Zeilenenden werden auf die ursprünglichen einfache Stile Namen angefügt: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**, etc. Ändern die stellt Pinsel auch sicher, dass die Steuerelemente einheitlich zu Ihrer app-Design farblich dargestellt werden.
 
 Die Verwendung dieser Pinselüberschreibungen auf der **App.Resources**-Ebene verändert alle Schaltflächen in der gesamten App und nicht nur auf einer Seite.
 

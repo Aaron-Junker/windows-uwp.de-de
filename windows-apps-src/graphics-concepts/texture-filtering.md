@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 449a31d92235efc50119bcd0db11b3532f523cd2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930869"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633725"
 ---
 # <a name="texture-filtering"></a>Texturfilterung
 
@@ -27,7 +27,7 @@ Direct3D vereinfacht den komplexen Vorgang der Texturfilterung. Es bietet Ihnen 
 
 Jede Art der Texturfilterung hat Vor- und Nachteile. So kann die lineare Texturfilterung etwa zu gezackten Rändern oder einem ungleichmäßigen Erscheinungsbild des fertigen Biĺdes führen. Andererseits ist dies eine Texturfilterungsmethode, die nur geringe Rechenleistung erfordert. Die Filterung mit Mipmaps liefert gewöhnlich die besten Ergebnisse, besonders wenn dazu noch die anisotropische Filterung verwendet wird. Dies ist jedoch von allen Techniken, die Direct3D unterstützt, die mit dem größten Speicherbedarf.
 
-## <a name="span-idtypes-of-texture-filteringspanspan-idtypes-of-texture-filteringspanspan-idtypes-of-texture-filteringspantypes-of-texture-filtering"></a><span id="Types-of-texture-filtering"></span><span id="types-of-texture-filtering"></span><span id="TYPES-OF-TEXTURE-FILTERING"></span>Arten der Texturfilterung
+## <a name="span-idtypes-of-texture-filteringspanspan-idtypes-of-texture-filteringspanspan-idtypes-of-texture-filteringspantypes-of-texture-filtering"></a><span id="Types-of-texture-filtering"></span><span id="types-of-texture-filtering"></span><span id="TYPES-OF-TEXTURE-FILTERING"></span>Typen von texturfilterung
 
 
 Direct3D unterstützt die folgenden Verfahren für die Texturfilterung.
@@ -48,19 +48,19 @@ Direct3D unterstützt die folgenden Verfahren für die Texturfilterung.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="nearest-point-sampling.md">Sampling am nächstgelegenen Punkt</a></p></td>
-<td align="left"><p>Anwendungen müssen nicht die Texturfilterung verwenden. Direct3D kann so eingerichtet werden, dass es die Texeladresse berechnet, die häufig nicht auf ganze Zahlen geschätzt wird, und die Farbe des Texels mit der nächstgelegenen ganzzahligen Adresse kopiert. Dieser Prozess wird bezeichnet als <em>Sampling am nächstgelegenen Punkt</em>.</p></td>
+<td align="left"><p><a href="nearest-point-sampling.md">Nächste Point-sampling</a></p></td>
+<td align="left"><p>Apps müssen nicht die Texturfilterung verwenden. Direct3D kann so eingerichtet werden, dass es die Texel-Adresse berechnet, die häufig nicht auf ganze Zahlen geschätzt wird, und die Farbe des Texels mit der nächstgelegenen ganzzahligen Adresse kopiert. Dieser Prozess wird bezeichnet als <em>Sampling am nächstgelegenen Punkt</em>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="bilinear-texture-filtering.md">Bilineare Texturfilterung</a></p></td>
-<td align="left"><p>Die <em>bilineare Filterung</em> berechnet den gewichteten Durchschnitt der 4Texel, die dem Sampling-Punkt am nächsten liegen. Diese Filtermethode ist präziser und gängiger als das Filtern am nächstgelegenen Punkt. Dieser Ansatz ist effizient, da er in moderner Grafikhardware implementiert ist.</p></td>
+<td align="left"><p><a href="bilinear-texture-filtering.md">Bilineare texturfilterung</a></p></td>
+<td align="left"><p>Die <em>bilineare Filterung</em> berechnet den gewichteten Durchschnitt der 4 Texel, die dem Sampling-Punkt am nächsten liegen. Diese Filtermethode ist präziser und gängiger als das Filtern am nächstgelegenen Punkt. Dieser Ansatz ist effizient, da er in moderner Grafikhardware implementiert wird.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="anisotropic-texture-filtering.md">Anisotropische Texturfilterung</a></p></td>
-<td align="left"><p><em>Anisotropie</em> ist die sichtbare Verzerrung bei Texeln eines 3D-Objekts, dessen Oberfläche gegenüber der Bildschirmebene in einem Winkel ausgerichtet ist. Wenn ein Pixel eines anisotropischen Grundtyps einem Texel zugeordnet ist, wird die Form verzerrt.</p></td>
+<td align="left"><p><a href="anisotropic-texture-filtering.md">Anisotrope texturfilterung</a></p></td>
+<td align="left"><p><em>Anisotropie</em> ist die sichtbare Verzerrung bei Texeln eines 3D-Objekts, dessen Oberfläche gegenüber der Bildschirmebene in einem Winkel ausgerichtet ist. Wenn der Pixel eines anisotropischen Grundtyps einem Texel zugeordnet ist, wird die Form verzerrt.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="texture-filtering-with-mipmaps.md">Texturfilterung mit Mipmaps</a></p></td>
+<td align="left"><p><a href="texture-filtering-with-mipmaps.md">Textur mit Mipmaps filtern</a></p></td>
 <td align="left"><p>Ein <em>Mipmap</em> ist eine Sequenz von Texturen, von denen jede eine Darstellung desselben Bildes mit schrittweise niedrigerer Auflösung ist. Höhe und Breite der einzelnen Bilder bzw. Ebenen des Mipmaps sind jeweils um eine Zweierpotenz geringer als die der vorherigen Ebene.</p></td>
 </tr>
 </tbody>

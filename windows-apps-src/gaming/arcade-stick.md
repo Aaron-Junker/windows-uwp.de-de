@@ -4,14 +4,14 @@ description: Verwenden Sie die Windows.Gaming.Input-Arcade-Joystick-APIs zum Erk
 ms.assetid: 2E52232F-3014-4C8C-B39D-FAC478BA3E01
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Arcade-Joysticks, Eingabe
+keywords: Windows 10, UWP, Spiele, Arcade-Joysticks, Eingabe
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9e3ff29dfb17b6e2a07df52153013b5266206e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933815"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593145"
 ---
 # <a name="arcade-stick"></a>Arcade-Joystick
 
@@ -22,23 +22,23 @@ Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 * Erstellen einer Liste der verbundenen Arcade-Joysticks und ihrer Benutzer
 * Ermitteln, ob ein Arcade-Joystick hinzugefügt oder entfernt wurde
 * Lesen der Eingabe von einem oder mehreren Arcade-Joysticks
-* Verhalten von Arcade-Joysticks als Benutzeroberflächen-Navigationsgeräte
+* Verhalten von Arcade-Sticks als UI-Navigation-Geräte
 
 ## <a name="arcade-stick-overview"></a>Übersicht über Arcade-Joysticks
 
-Bei Arcade-Joysticks handelt es sich um Eingabegeräte, die den Eindruck klassischer Arcade-Automaten vermitteln und aufgrund ihrer äußerst präzisen digitalen Steuerelemente geschätzt werden. Arcade-Joysticks sind das ideale Eingabegerät für Kampfspiele und andere Spiele im Arcade-Stil und eignen sich für alle Spiele mit komplett digitaler Steuerung. Arcade-Joysticks werden in Windows10- und Xbox One-UWP-Apps durch den Namespace [Windows.Gaming.Input][] unterstützt.
+Bei Arcade-Joysticks handelt es sich um Eingabegeräte, die den Eindruck klassischer Arcade-Automaten vermitteln und aufgrund ihrer äußerst präzisen digitalen Steuerelemente geschätzt werden. Arcade-Joysticks sind das ideale Eingabegerät für Kampfspiele und andere Spiele im Arcade-Stil und eignen sich für alle Spiele mit komplett digitaler Steuerung. Arcade-Joysticks werden in Windows 10- und Xbox One-UWP-Apps durch den Namespace [Windows.Gaming.Input][] unterstützt.
 
-Xbox One-Arcade-Joysticks sind mit einem digitalen 8-Wege-Joystick, **sechs Aktionsschaltflächen (A1 a6 in der Abbildung unten dargestellt)** und zwei **spezielle** Schaltflächen (dargestellt als S1 und S2); ausgestattet. Sie sind reine digitale Eingabegeräte, die keine analoge Steuerung oder Vibration unterstützen. Xbox One-Arcade-Joysticks sind auch mit ** **Ansichts-** und** Schaltflächen zur Unterstützung der Benutzeroberflächennavigation ausgestattet, aber sie sind nicht für die Unterstützung von Befehlen im Spiel vorgesehen und können nicht ohne weiteres als Joystick-Tasten zugegriffen werden.
+Xbox One Arcade-Sticks verfügen über eine 8-Wege-Joystick digitale, sechs **Aktion** Schaltflächen (A1-a6 in der folgenden Abbildung dargestellt), und zwei **spezielle** Schaltflächen (dargestellt als S1 und S2); sie sind alle digitale Eingabegeräte, die analogen Steuerelemente oder Vibration nicht unterstützen. Xbox One Arcade-Sticks verfügen auch über **Ansicht** und **Menü** Schaltflächen, die zur Unterstützung der Navigation in der Benutzeroberfläche verwendet, aber sie werden nicht unterstützt von Gaming-Befehle und nicht ohne weiteres möglich als Joystick-Schaltflächen .
 
-![Arcade-Joystick mit 4-Wege-Joystick, 6 Aktionsschaltflächen (A1 A6) und 2 spezielle Schaltflächen (S1 und S2)](images/arcade-stick-1.png)
+![Arcade-Speicherstick mit 4-Wege-Joystick, 6 Aktionsschaltflächen (A1-A6) und 2 besondere Schaltflächen (S1 und S2)](images/arcade-stick-1.png)
 
 ### <a name="ui-navigation"></a>Benutzeroberflächennavigation
 
-Um den Aufwand für die Unterstützung vieler unterschiedlicher Eingabegeräte für die Benutzeroberflächennavigation zu verringern und die Konsistenz zwischen Spielen und Geräten zu fördern, dienen die meisten _physischen_ Eingabegeräte gleichzeitig als getrennte _logische_ Eingabegeräte, die als [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) bezeichnet werden. Der Benutzeroberflächen-Navigationscontroller stellt über verschiedene Eingabegeräte hinweg ein gemeinsames Vokabular für Benutzeroberflächen-Navigationsbefehle bereit.
+Um den Aufwand für die Unterstützung vieler unterschiedlicher Eingabegeräte für die Benutzeroberflächennavigation zu verringern und die Konsistenz zwischen Spielen und Geräten zu fördern, dienen die meisten _physischen_ Eingabegeräte gleichzeitig als getrennte _logische_ Eingabegeräte, die als [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) bezeichnet werden. Der Benutzeroberflächen-Navigationscontroller stellt ein gemeinsames Vokabular für Benutzeroberflächen-Navigationsbefehle über verschiedene Eingabegeräte hinweg bereit.
 
-Als Benutzeroberflächen-navigationscontroller ordnen Sie Arcade-Joysticks die [erforderlichen Satz](ui-navigation-controller.md#required-set) von Navigationsbefehlen dem Joystick und Schaltflächen **Ansicht**, **Menü**, **Aktion 1**und **2 Aktion** .
+Als einen UI-navigationscontroller sticks Arcade Zuordnung der [erforderliche Satz](ui-navigation-controller.md#required-set) der Navigationsbefehle aus, um den Joystick und **anzeigen**, **Menü**, **Aktion 1**, und **Aktion 2** Schaltflächen.
 
-| Navigationsbefehl | Eingabe des Arcade-Joysticks  |
+| Navigationsbefehl | Eingabe per Arcade-Joystick  |
 | ------------------:| ------------------- |
 |                 Nach oben | Joystick nach oben            |
 |               Nach unten | Joystick nach unten          |
@@ -46,14 +46,14 @@ Als Benutzeroberflächen-navigationscontroller ordnen Sie Arcade-Joysticks die [
 |              Nach rechts | Joystick nach rechts         |
 |               Ansicht | Ansicht-Taste         |
 |               Menü | Menü-Taste         |
-|             Annehmen | Taste für Aktion1     |
-|             Abbrechen | Taste für Aktion2     |
+|             Annehmen | Taste für Aktion 1     |
+|             Abbrechen | Taste für Aktion 2     |
 
 Arcade-Joysticks ordnen keines der [optionalen Sätze](ui-navigation-controller.md#optional-set) mit Navigationsbefehlen zu.
 
 ## <a name="detect-and-track-arcade-sticks"></a>Ermitteln und Nachverfolgen von Arcade-Joysticks
 
-Erkennen und Tracking Arcade Steuerknüppeln funktioniert auf genau die gleiche Weise wie für Gamepads, außer bei der [ArcadeStick][] -Klasse anstelle der [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) -Klasse. Weitere Informationen finden Sie unter [Gamepad und Vibration](gamepad-and-vibration.md).
+Erkennen und Nachverfolgen von Arcade-Sticks funktioniert auf genau die gleiche Weise wie für Gamepads, außer mit dem [ArcadeStick][] -Klasse anstelle der [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) Klasse. Weitere Informationen finden Sie unter [Gamepad und Vibration](gamepad-and-vibration.md).
 
 <!-- Arcade sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected arcades sticks and events to notify you when an arcade stick is added or removed.
 
@@ -121,7 +121,7 @@ Each arcade stick can be associated with a user account to link their identity t
 
 ## <a name="reading-the-arcade-stick"></a>Lesen des Arcade-Joysticks
 
-Nachdem Sie den Arcade-Joystick identifiziert haben, für den Sie sich interessieren, können Sie Eingaben von ihm erfassen. Anders als im Fall anderer Eingaben, die Sie möglicherweise kennen, teilen Arcade-Joysticks Zustandsänderungen jedoch nicht durch das Auslösen von Ereignissen mit. Stattdessen müssen Sie regelmäßig ihren aktuellen Status lesen, indem Sie sie _abfragen_.
+Nachdem Sie den Arcade-Joystick identifiziert haben, für den Sie sich interessieren, können Sie Eingaben von ihm erfassen. Anders als im Fall anderer Eingaben, die Sie möglicherweise kennen, teilen Arcade-Joysticks Zustandsänderungen jedoch nicht durch das Auslösen von Ereignissen mit. Stattdessen müssen Sie den aktuellen Status regelmäßig lesen, indem Sie ihn _abrufen_.
 
 ### <a name="polling-the-arcade-stick"></a>Abfragen des Arcade-Joysticks
 
@@ -137,18 +137,18 @@ auto arcadestick = myArcadeSticks[0];
 ArcadeStickReading reading = arcadestick->GetCurrentReading();
 ```
 
-Zusätzlich zum Zustand des Arcade-Joysticks enthält jede Ablesung einen Zeitstempel, der den genauen Zeitpunkt angibt, zu dem der Zustand abgerufen wurde. Der Zeitstempel ist nützlich, um einen Bezug zu den Zeitpunkten vorheriger Werte oder zum Zeitpunkt der Spielsimulation herzustellen.
+Zusätzlich zum Zustand des Arcade-Joysticks enthält jede Ablesung einen Zeitstempel, der den genauen Zeitpunkt angibt, zu dem der Zustand abgerufen wurde. Der Zeitstempel ist nützlich, um einen Bezug zu den Zeitpunkten vorheriger Ablesungen oder zum Zeitpunkt der Spielsimulation herzustellen.
 
-### <a name="reading-the-buttons"></a>Lesen der Tasten
+### <a name="reading-the-buttons"></a>Lesen der Tastenwerte
 
-Die Schaltflächen für Arcade-Joystick&mdash;die vier Richtungen des der Joystick, **sechs Aktionsschaltflächen** und zwei **spezielle** Schaltflächen&mdash;liefert einen digitalen Wert, der angibt, ob sie gedrückt (unten) oder freigegeben (oben). Aus Effizienzgründen werden nicht Effizienzgründen als einzelne boolesche Werte dargestellt. Stattdessen können sie alle in einem einzelnen Bitfeld verpackt, die von der [ArcadeStickButtons][] -Enumeration dargestellt wird.
+Die Schaltflächen für Arcade Stick&mdash;die vier Anweisungen von den Joystick, sechs **Aktion** Schaltflächen und die beiden **spezielle** Schaltflächen&mdash;bietet einen lesen digitalen Inhalte, der angibt, ob Es wurde gedrückt () oder (nach oben) veröffentlicht. Für Effizienz sind nicht Schaltfläche Messwerten als einzelne boolesche Werte dargestellt werden. stattdessen diese sind alle verteilt in ein einzelnes Bitfeld, das durch dargestellt ist die [ArcadeStickButtons][] Enumeration.
 
 > [!NOTE]
-> Arcade-Joysticks besitzen zusätzliche Tasten für die Benutzeroberflächennavigation, z. B. die ** **Ansichts-** und** Schaltflächen. Diese Tasten sind nicht in der Enumeration `ArcadeStickButtons` enthalten und können nur gelesen werden, wenn auf den Arcade-Joystick als Benutzeroberflächen-Navigationsgerät zugegriffen wird. Weitere Informationen finden Sie unter [Benutzeroberflächen-Navigationsgerät](ui-navigation-controller.md).
+> Arcade-Sticks verfügen über zusätzliche Schaltflächen, die für die Navigation in der Benutzeroberfläche verwendet, z. B. die **Ansicht** und **Menü** Schaltflächen. Diese Tasten sind nicht in der Enumeration `ArcadeStickButtons` enthalten und können nur gelesen werden, wenn auf den Arcade-Joystick als Benutzeroberflächen-Navigationsgerät zugegriffen wird. Weitere Informationen finden Sie unter [Benutzeroberflächen-Navigationsgerät](ui-navigation-controller.md).
 
 Die Schaltflächenwerte werden von der `Buttons`-Eigenschaft der [ArcadeStickReading][]-Struktur gelesen. Da diese Eigenschaft ein Bitfeld ist, wird eine bitweise Maskierung verwendet, um den Wert der Taste zu isolieren, an der Sie interessiert sind, Die Taste ist gedrückt (unten), wenn das entsprechende Bit festgelegt ist. Andernfalls ist sie nicht gedrückt (oben).
 
-Im folgenden Beispiel wird bestimmt, ob die Taste für **Aktion 1** gedrückt ist.
+Im folgende Beispiel wird bestimmt, ob die **Aktion 1** gedrückt wird.
 
 ```cpp
 if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action1))
@@ -157,7 +157,7 @@ if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action
 }
 ```
 
-Im folgenden Beispiel wird bestimmt, ob die Taste für **Aktion 1** losgelassen wurde.
+Im folgende Beispiel wird bestimmt, ob die **Aktion 1** losgelassen wird.
 
 ```cpp
 if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
@@ -166,17 +166,17 @@ if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
 }
 ```
 
-In einigen Fällen möchten Sie vielleicht ermitteln, ob eine Taste von „gedrückt“ zu „nicht gedrückt“ bzw. umgekehrt wechselt, oder ob mehrere Tasten gedrückt bzw. nicht gedrückt oder in bestimmter Weise angeordnet sind&mdash;einige gedrückt, andere nicht. Weitere Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) und [Erkennen von komplexen Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
+In einigen Fällen möchten Sie vielleicht ermitteln, ob eine Taste von „gedrückt“ zu „nicht gedrückt“ bzw. umgekehrt wechselt, oder ob mehrere Tasten gedrückt bzw. nicht gedrückt oder in bestimmter Weise angeordnet sind&mdash;einige gedrückt, andere nicht. Weitere Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) und [Erkennen von komplexen Tastenanordungen](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 ## <a name="run-the-inputinterfacing-sample"></a>Ausführen des InputInterfacing-Beispiels
 
 Das [InputInterfacingUWP-Beispiel _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) veranschaulicht, wie Arcade-Joysticks und verschiedene Arten von Eingabegeräten zusammen verwendet werden und wie diese Eingabegeräte sich bei der Verwendung als Benutzeroberflächen-Navigationcontrollern verhalten.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 * [Windows.Gaming.Input.UINavigationController][]
 * [Windows.Gaming.Input.IGameController][]
-* [Eingabemethoden für Spiele](input-practices-for-games.md)
+* [Eingabe-Methoden für Spiele](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx

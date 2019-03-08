@@ -1,5 +1,5 @@
 ---
-Description: Receive, process, and manage input data from pointing devices such as touch, mouse, pen/stylus, and touchpad, in your Universal Windows Platform (UWP) applications.
+Description: Empfangen, verarbeiten, und Verwalten von Eingabedaten aus Zeigegeräte wie Fingereingabe, Maus, Stift/Stift- und Touchpad, in Ihren Anwendungen für die universelle Windows-Plattform (UWP).
 title: Behandeln von Zeigereingaben
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 596e9221fac686964b4faaa8a75f112dbb8ddf5a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048397"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619365"
 ---
 # <a name="handle-pointer-input"></a>Behandeln von Zeigereingaben
 
@@ -65,7 +65,7 @@ UWP-Apps können die folgenden Zeigerereignisse überwachen:
 <td align="left"><p>Tritt auf, wenn ein Zeiger von der Plattform abgebrochen wird. Dies kann unter den folgenden Umständen auftreten.</p>
 <ul>
 <li>Touchzeiger werden abgebrochen, wenn ein Zeichenstift innerhalb des Bereichs der Eingabeoberfläche erkannt wird.</li>
-<li>Für mehr als 100ms wird kein aktiver Kontakt erkannt.</li>
+<li>Für mehr als 100 ms wird kein aktiver Kontakt erkannt.</li>
 <li>Monitor/Anzeige wird geändert (Auflösung, Einstellungen, Konfigurationen mit mehreren Bildschirmen).</li>
 <li>Der Desktop ist gesperrt, oder der Benutzer hat sich abgemeldet.</li>
 <li>Die Anzahl gleichzeitiger Kontakte hat die vom Gerät unterstützte Anzahl überschritten.</li>
@@ -75,7 +75,7 @@ UWP-Apps können die folgenden Zeigerereignisse überwachen:
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn ein anderes Benutzeroberflächenelement den Zeiger erfasst, der Zeiger freigegeben wurde oder ein anderer Zeiger programmgesteuert erfasst wurde.</p>
 <div class="alert">
-<strong>Hinweis:</strong>es gibt kein entsprechendes zeigererfassungsereignis.
+<strong>Beachten Sie</strong>  es gibt kein entsprechendes Zeiger-Capture-Ereignis.
 </div>
 <div>
  
@@ -131,7 +131,7 @@ Nachfolgend sehen Sie einige Codeausschnitt aus einer einfachen Zeigerverfolgung
 
 ![Benutzeroberfläche der Zeigeranwendung](images/pointers/pointers1.gif)
 
-**Laden Sie dieses Beispiel aus [Beispiel für die Zeigereingabe (einfach)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip) herunter.**
+**Laden Sie dieses Beispiel von [Zeiger Eingabe sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)**
 
 ### <a name="create-the-ui"></a>Erstellen der Benutzeroberfläche
 
@@ -196,7 +196,7 @@ Im Folgenden ist der XAML-Code (Extensible Application Markup Language) für die
 
 In den meisten Fällen wird empfohlen, Zeigerinformationen über die [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) des Ereignishandlers abzurufen.
 
-Wenn das Ereignisargument die erforderlichen zeigerdetails nicht, erhalten Sie Zugriff auf erweiterte [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) Informationen über die [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) und [**GetIntermediatePoints**] verfügbar gemachthttps://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) Methoden der [** PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs).
+Wenn das Ereignisargument die Zeiger-Details, die erforderlich sind verfügbar macht, erhalten Sie Zugriff auf erweiterte [ **PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) Informationen verfügbar gemacht werden, über die [ **GetCurrentPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) und [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) Methoden [ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs).
 
 Der folgende Code richtet das globale Verzeichnisobjekt für die Verfolgung jedes aktiven Zeigers ein und identifiziert die verschiedenen Zeigerereignislistener für das Zielobjekt.
 
@@ -243,7 +243,7 @@ Im nächsten Schritt wird UI-Feedback verwendet, um die Verwendung einfacher Zei
 -   Der folgende Handler kontrolliert das [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)-Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird zum aktiven Zeigerverzeichnis hinzugefügt, und die Zeigerdetails werden angezeigt.
 
     > [!NOTE]
-    > Die Ereignisse [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) und [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) treten nicht immer paarweise auf. Die App sollte auf jedes Ereignis lauschen und dieses behandeln, das einen Zeiger nach unten beenden könnte (beispielsweise [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) und [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).      
+    > [**PointerPressed** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) und [ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) Ereignisse treten nicht immer paarweise auf. Die App sollte auf jedes Ereignis lauschen und dieses behandeln, das einen Zeiger nach unten beenden könnte (beispielsweise [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) und [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).      
 
 ```csharp
 /// <summary>
@@ -531,7 +531,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   Der folgende Handler kontrolliert das [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)-Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus dem Zeigerarray entfernt, und die Zeigerdetails werden aktualisiert.
 
     > [!NOTE]
-    > [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) kann anstelle von [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) eintreten. Die Zeigererfassung kann aus verschiedenen Gründen verloren gehen, darunter eine Benutzerinteraktion, die programmgesteuerte Erfassung von einem anderen Zeiger, das Aufrufen von [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
+    > [**PointerCaptureLost** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) ist möglich, anstelle von [ **PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased). Die Zeigererfassung kann aus verschiedenen Gründen verloren gehen, darunter eine Benutzerinteraktion, die programmgesteuerte Erfassung von einem anderen Zeiger, das Aufrufen von [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
 
 ```csharp
 /// <summary>
@@ -572,7 +572,7 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### <a name="get-pointer-properties"></a>Abrufen von Zeigereigenschaften
 
-Wie bereits erwähnt, müssen Sie die erweiterten Zeigerinformationen von einem [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) -Objekt abgerufen und die [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) [**GetIntermediatePoints**] erhaltenhttps://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) Methoden der [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs). Die folgenden Codeausschnitte zeigen, wie.
+Wie bereits erwähnt, müssen Sie die erweiterten Zeiger Informationen aus Abrufen einer [ **Windows.UI.Input.PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) Objekt abgerufen wird, über die [ **GetCurrentPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) und [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) Methoden [ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs). Die folgenden Codeausschnitte zeigen, wie.
 
 -   Zuerst wird ein neues [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Objekt für jeden Zeiger erstellt.
 
@@ -696,13 +696,13 @@ Diese bestimmte App verwendet Farbe und Animation, um den primären Zeiger hervo
 
 ![Zeigeranwendung mit animiertem visuellem Feedback](images/pointers/pointers-usercontrol-animation.gif)
 
-**Laden Sie dieses Beispiel aus [Beispiel für die Zeigereingabe (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip) herunter.**
+**Laden Sie dieses Beispiel von [Zeiger Eingabebeispiel (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
 
 ### <a name="visual-feedback"></a>Visuelles Feedback
 
 Wir definieren eine **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** basierend auf einem XAML-**[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)**-Objekt, die hervorhebt, an welcher Stelle sich jeder Zeiger im Zeichenbereich befindet, und ein **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** verwendet, um die Ellipse zu animieren, die dem primären Zeiger entspricht.
 
-**Im Folgenden sehen Sie die XAML:**
+**Hier ist die XAML aus:**
 
 ```xaml
 <UserControl
@@ -949,20 +949,20 @@ Schließlich definieren wir unsere einfachen Zeigerereignishandler in der CodeBe
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-**Themenbeispiele**
-* [Beispiel für Zeigereingabe (einfach)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
-* [Beispiel für Zeigereingabe (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
+**Beispiele für Thema**
+* [Eingabebeispiel Zeiger (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
+* [Eingabebeispiel für Zeiger (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
-**Andere Beispiele**
-* [Einfaches Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Beispiel für Eingabe mit niedriger Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+**Weitere Beispiele**
+* [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archivbeispiele**
-* [Eingabe: Beispiel für XAML-Benutzereingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Eingabe: Beispiel für Gerätefunktionen](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Eingabe: Beispiel für Bearbeitungen und Bewegungen (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Eingabe: Beispiel für Fingereingabe-Treffertests](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Beispiel für XAML-Bildlauf, -Verschiebung und -Zoom](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Eingabe: vereinfachtes Freihandbeispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Eingabe: XAML-benutzerbeispiel Eingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Eingabe: Manipulationen und Beispiel für Bewegungen (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [Eingabe: Beispiel zu Leistungstests in Touch Treffer](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML Bildlauf, schwenken und Zoomen Beispiel](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Eingabe: Vereinfachte Freihand-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)

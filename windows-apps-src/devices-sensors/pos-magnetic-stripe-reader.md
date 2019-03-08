@@ -1,27 +1,27 @@
 ---
 title: Magnetstreifenleser
-description: Indexthema für die Magnetstreifenleser UWP-Dokumentation.
+description: Thema des Index für die Magnetstreifenleser UWP-Dokumentation.
 ms.date: 10/04/2018
 ms.topic: article
-keywords: Windows 10, Uwp, zeigen Sie Service, pos, Magnetstreifenleser
+keywords: Zeigen Sie die Windows 10, Uwp, Service, pos, Magnetstreifenleser
 ms.localizationpriority: medium
 ms.openlocfilehash: ed1fb5b393f96a793ff90ec0df354e04de270ccf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922540"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643435"
 ---
 # <a name="magnetic-stripe-reader"></a>Magnetstreifenleser
 
-Ein Magnetstreifenleser kann bestimmte Arten von Karten scannen, die eine Magnetstreifen, z. B. Kreditkarten, Lizenzen des Treibers, und Treuekarten speichern. Sie haben eine wahrscheinlich auftreten, wenn Sie etwas in einem Store kaufen.
+Eine Magnetstreifenleser kann bestimmte Typen von Karten gescannt werden, die eine magnetstreifens, z. B. Kreditkarteninformationen, des Treibers-Lizenzen, und Treuekarten zu speichern. Sie haben wahrscheinlich eine beim ist etwas in einem Speicher zu erwerben.
 
-Mit einem Magnetstreifenleser in Ihrer Anwendung für die universelle Windows-Plattform (UWP) ist ähnlich wie alle anderen POS-Geräte, müssen Sie die verfügbaren Geräte auflisten, erstellen Sie das Gerät und das Gerät beanspruchen, bevor Sie sie verwenden können. Führen Sie die Dokumentation unter [Erste Schritte mit Point of Service](pos-basics.md) für Weitere Informationen.
+Mithilfe einer Magnetstreifenleser in Ihrer Anwendung für die universelle Windows-Plattform (UWP) ist vergleichbar mit der Verwendung einer beliebigen Stelle der Dienst und Geräten, müssen Sie die verfügbaren Geräte auflisten, das Geräteobjekt erstellen und das Gerät anfordern, bevor Sie ihn verwenden können. Befolgen Sie die Dokumentation unter [erste Schritte mit Point-of-Service-](pos-basics.md) für Weitere Informationen.
 
-Die folgenden Themen enthalten weitere Informationen zur Verwendung einer Magnetstreifenleser in Ihrer Anwendung.
+Die folgenden Themen bieten weitere Informationen zur Verwendung einer Magnetstreifenleser in Ihrer Anwendung.
 
-## <a name="in-this-section"></a>In diesem Abschnitt
+## <a name="in-this-section"></a>Inhalt dieses Abschnitts
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Abrufen und Verstehen von Magnetstreifendaten](../devices-sensors/pos-magnetic-stripe-reader-data.md) | Informationen Sie zum Erhalt und interpretiert die Daten aus einer Magnetstreifenleser. |
+| [Abrufen und Verstehen von magnetstreifens-Daten](../devices-sensors/pos-magnetic-stripe-reader-data.md) | Informationen Sie zum Abrufen und Interpretieren der Daten aus einer magnetstreifens. |

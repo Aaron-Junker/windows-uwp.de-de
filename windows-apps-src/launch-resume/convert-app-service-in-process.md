@@ -3,15 +3,15 @@ title: Umwandeln eines App-Diensts für die Ausführung im gleichen Prozess wie 
 description: Konvertieren Sie App-Dienstcode, der in einem separaten Hintergrundvorgang auf Code gestoßen ist, der im selben Prozess wie Ihr App-Dienstanbieter ausgeführt wird.
 ms.date: 11/03/2017
 ms.topic: article
-keywords: Windows 10, Uwp, app-Dienst
+keywords: Windows 10, Uwp, app service
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a976ac69d289a5582c2f3546227adba707ac5297
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927112"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643415"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Umwandeln eines App-Diensts für die Ausführung im gleichen Prozess wie die Host-App
 
@@ -38,13 +38,13 @@ Um einen Out-of-Process-App-Dienst in ein In-Process-Modell zu konvertieren, sin
 >   </Applications>
 > ```
 
-Entfernen Sie die `EntryPoint` -Attribut aus der `<Extension>` Element ist nun [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) der Einstiegspunkt, der verwendet wird, wenn die app-Dienst aufgerufen wird.
+Entfernen Sie die `EntryPoint` -Attribut aus der `<Extension>` Element da jetzt [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) ist der Einstiegspunkt, der verwendet wird, wenn die app Service aufgerufen wird.
 
 Die zweite Änderung besteht darin, die Dienstlogik aus ihrem eigenen Hintergrundaufgabenprojekt in Methoden zu verschieben, die über **OnBackgroundActivated()** aufgerufen werden können.
 
 Jetzt kann Ihre Anwendung den App-Dienst direkt ausführen. Z. B. in "App.Xaml.cs":
 
-[!NOTE] Der folgende Code unterscheidet sich z. B. 1 (Out-of-Process-Dienst) bereitgestellt. Der folgende Code wird nur zur Veranschaulichung bereitgestellt und sollte nicht als Teil des Beispiel 2 (in-Process-Dienst) verwendet werden.  Um weiterhin im Artikel Übergang aus dem Beispiel weiterhin 1 (Out-of-Process-Dienst) in Beispiel 2 (in-Process-Service) den Code bereitgestellt werden, z. B. 1 anstelle der Veranschaulichung der folgende Code zu verwenden.
+[!NOTE] Der folgende Code ist nicht angegeben wird, z. B. 1 (Out-of-Process-Dienst). Der folgende Code dient lediglich zur Veranschaulichung und sollte nicht als Teil von Beispiel 2 (in-Process-Dienst) verwendet werden.  Zum Fortsetzen des Artikels Übergang aus Beispiel weiterhin verwenden den Code, z. B. 1 anstelle der Veranschaulichung der folgende Code 1 (Out-of-Process-Dienst) in Beispiel 2 (in-Process-Dienst).
 
 ``` cs
 using Windows.ApplicationModel.AppService;

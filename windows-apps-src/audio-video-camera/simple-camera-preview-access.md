@@ -4,14 +4,14 @@ description: Dieser Artikel beschreibt, wie Sie in einer UWP (Universelle Window
 title: Anzeigen der Kameravorschau
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b2885597599607ca405e858a9f713f5a6af4c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938532"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644875"
 ---
 # <a name="display-the-camera-preview"></a>Anzeigen der Kameravorschau
 
@@ -22,11 +22,11 @@ Informationen zum Schreiben einer Kamera-App, die Fotos oder Videos aufnimmt, fi
 
 ## <a name="add-capability-declarations-to-the-app-manifest"></a>Hinzufügen von Funktionsdeklarationen zum App-Manifest
 
-Damit Ihre App auf die Kamera eines Geräts zugreifen kann, müssen Sie deklarieren, dass die App *webcam*- und *microphone*-Gerätefunktionen verwendet. 
+Damit Ihre App auf die Kamera eines Geräts zugreifen kann, müssen Sie die Verwendung der *webcam*- und *microphone*-Gerätefunktionen durch Ihre App deklarieren. 
 
-**Hinzufügen von Funktionen zum App-Manifest**
+**Hinzufügen von Funktionen zu app-manifest**
 
-1.  Öffnen Sie in MicrosoftVisual Studio im **Projektmappen-Explorer** den Designer für das Anwendungsmanifest, indem Sie auf das Element **package.appxmanifest** doppelklicken.
+1.  Öffnen Sie in Microsoft Visual Studio im **Projektmappen-Explorer** den Designer für das Anwendungsmanifest, indem Sie auf das Element **package.appxmanifest** doppelklicken.
 2.  Wählen Sie die Registerkarte **Funktionen** aus.
 3.  Aktivieren Sie die Kontrollkästchen für **Webcam** und **Mikrofon**.
 
@@ -56,22 +56,22 @@ Deklarieren Sie eine Variable vom Typ [**DisplayRequest**](https://msdn.microsof
 
 Erstellen Sie eine Hilfsmethode zum Starten der Kameravorschau, die in diesem Beispiel **StartPreviewAsync** genannt wird. Je nach App-Szenario können Sie dies vom **OnNavigatedTo**-Ereignishandler aufrufen, der aufgerufen wird, wenn die Seite geladen wird, oder warten und starten Sie die Vorschau als Reaktion auf UI-Ereignisse.
 
-Erstellen Sie eine neue Instanz der **MediaCapture**-Klasse, und rufen Sie [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) auf, um das Aufnahmegerät zu initialisieren. Diese Methode schlägt u.U. fehl, beispielsweise auf Geräten ohne Kamera, daher sollte der Aufruf aus einem **try**-Block erfolgen. Beim Versuch, die Kamera zu initialisieren, wird eine **UnauthorizedAccessException** ausgelöst, wenn der Benutzer in den Datenschutzeinstellungen des Geräts den Kamerazugriff deaktiviert hat. Diese Ausnahme tritt auch während der Entwicklung auf, wenn Sie Ihrem App-Manifest nicht die richtigen Funktionen hinzugefügt haben.
+Erstellen Sie eine neue Instanz der **MediaCapture**-Klasse, und rufen Sie [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) auf, um das Aufnahmegerät zu initialisieren. Diese Methode schlägt u. U. fehl, beispielsweise auf Geräten ohne Kamera, daher sollte der Aufruf aus einem **try**-Block erfolgen. Beim Versuch, die Kamera zu initialisieren, wird eine **UnauthorizedAccessException** ausgelöst, wenn der Benutzer in den Datenschutzeinstellungen des Geräts den Kamerazugriff deaktiviert hat. Diese Ausnahme tritt auch während der Entwicklung auf, wenn Sie Ihrem App-Manifest nicht die richtigen Funktionen hinzugefügt haben.
 
-**Wichtig:** Bei einigen Gerätefamilien wird dem Benutzer eine Aufforderung zur Zustimmung des Benutzers angezeigt, bevor Ihrer App der Zugriff auf die Kamera des Geräts gewährt wird. Aus diesem Grund müssen Sie nur [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) aus dem Hauptthread der Benutzeroberfläche aufrufen. Der Versuch, die Kamera von einem anderen Thread aus zu initialisieren, kann zum einem Initialisierungsfehler führen.
+**Wichtig** Bei einigen Gerätefamilien wird dem Benutzer eine Aufforderung zur Zustimmung des Benutzers angezeigt, bevor Ihrer App der Zugriff auf die Kamera des Geräts gewährt wird. Aus diesem Grund müssen Sie nur [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) aus dem Hauptthread der Benutzeroberfläche aufrufen. Der Versuch, die Kamera von einem anderen Thread aus zu initialisieren, kann zum einem Initialisierungsfehler führen.
 
-Verbinden Sie das **MediaCapture**-Objekt mit der **CaptureElement**-Klasse, indem Sie die [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280)-Eigenschaft festlegen. Starten Sie die Vorschau durch Aufrufen von [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613). Diese Methode löst eine **FileLoadException** aus, wenn eine andere App exklusive Kontrolle über das Aufnahmegerät hat. Der nächste Abschnitterläutert, wie Zustandsänderungen bei exklusiver Kontrolle überwacht werden.
+Verbinden Sie das **MediaCapture**-Objekt mit der **CaptureElement**-Klasse, indem Sie die [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280)-Eigenschaft festlegen. Starten Sie die Vorschau durch Aufrufen von [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613). Diese Methode löst eine **FileLoadException** aus, wenn eine andere App exklusive Kontrolle über das Aufnahmegerät hat. Der nächste Abschnitt erläutert, wie Zustandsänderungen bei exklusiver Kontrolle überwacht werden.
 
 Rufen Sie [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestActive) auf, um sicherzustellen, dass das Gerät während der Ausführung der Vorschau nicht in den Standbymodus wechselt. Legen Sie abschließend die [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences)-Eigenschaft auf [**Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations) fest, um zu verhindern, dass die sich Benutzeroberfläche und das **CaptureElement** drehen, wenn der Benutzer die Ausrichtung des Geräts ändert. Weitere Informationen zum Behandeln von Änderungen an der Geräteausrichtung finden Sie unter [**Handhaben der Geräte- und Bildschirmausrichtung mit „MediaCapture“**](handle-device-orientation-with-mediacapture.md).  
 
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
 ## <a name="handle-changes-in-exclusive-control"></a>Behandeln von Änderungen bei exklusiver Kontrolle
-Wie im vorherigen Abschnitterwähnt, löst der Aufruf **StartPreviewAsync** eine **FileLoadException** aus, wenn eine andere App exklusive Kontrolle über das Aufnahmegerät hat. Ab Windows10 Version 1703 können Sie einen Handler für das [MediaCapture.CaptureDeviceExclusiveControlStatusChanged](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture.CaptureDeviceExclusiveControlStatusChanged)-Ereignis registrieren, das bei jeder Statusänderung der exklusiven Kontrolle des Geräts ausgelöst wird. Um den aktuellen Status anzuzeigen, rufen Sie im Handler dieses Ereignisses die Eigenschaft [MediaCaptureDeviceExclusiveControlStatusChangedEventArgs.Status](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs.Status) ab. Wenn der neue Status **SharedReadOnlyAvailable** lautet, können Sie die Vorschau derzeit nicht starten und sollten Ihren Benutzer auf der UI informieren. Wenn der neue Status **ExclusiveControlAvailable** lautet, versuchen Sie die Kameravorschau erneut zu starten.
+Wie im vorherigen Abschnitt erwähnt, löst der Aufruf **StartPreviewAsync** eine **FileLoadException** aus, wenn eine andere App exklusive Kontrolle über das Aufnahmegerät hat. Ab Windows 10 Version 1703 können Sie einen Handler für das [MediaCapture.CaptureDeviceExclusiveControlStatusChanged](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture.CaptureDeviceExclusiveControlStatusChanged)-Ereignis registrieren, das bei jeder Statusänderung der exklusiven Kontrolle des Geräts ausgelöst wird. Um den aktuellen Status anzuzeigen, rufen Sie im Handler dieses Ereignisses die Eigenschaft [MediaCaptureDeviceExclusiveControlStatusChangedEventArgs.Status](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs.Status) ab. Wenn der neue Status **SharedReadOnlyAvailable** lautet, können Sie die Vorschau derzeit nicht starten und sollten Ihren Benutzer auf der UI informieren. Wenn der neue Status **ExclusiveControlAvailable** lautet, versuchen Sie die Kameravorschau erneut zu starten.
 
 [!code-cs[ExclusiveControlStatusChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetExclusiveControlStatusChanged)]
 
-## <a name="shut-down-the-preview-stream"></a>Beenden des Vorschaustreams
+## <a name="shut-down-the-preview-stream"></a>Beenden des Vorschaudatenstroms
 
 Wenn Sie den Vorschaudatenstrom nicht mehr benötigen, sollten Sie ihn stets beenden und die dazugehörigen Ressourcen ordnungsgemäß löschen, um sicherzustellen, dass die Kamera für andere Apps auf dem Gerät verfügbar ist. Folgende Schritte sind zum Beenden des Vorschaudatenstroms erforderlich:
 
@@ -99,5 +99,5 @@ Stellen Sie im **Suspending**-Ereignishandler zunächst sicher, dass die Seite i
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
-* [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Abrufen eines Vorschauframes](get-a-preview-frame.md)
+* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Erhalten Sie einen Frame (Vorschau)](get-a-preview-frame.md)

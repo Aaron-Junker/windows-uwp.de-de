@@ -1,18 +1,18 @@
 ---
-title: „Meine Kontakte” freigeben
+title: Freigeben von „Meine Kontakte”
 description: Erläutert das Hinzufügen von Support für das Freigeben von „Meine Kontakte”
 ms.date: 06/28/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945396"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597825"
 ---
-# <a name="my-people-sharing"></a>„Meine Kontakte” freigeben
+# <a name="my-people-sharing"></a>Freigeben von „Meine Kontakte”
 
 Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakten an die Taskleiste, damit sie überall über Windows in Kontakt bleiben können unabhängig von der Anwendung, durch die sie verbunden sind. Jetzt können Benutzer Inhalte für ihre angeheftete Kontakte freigeben, indem sie Dateien aus dem Datei-Explorer auf die Startseite von „Meine Kontakte” anheften. Sie können Inhalte ebenfalls für alle Kontakte im Kontaktspeicher von Windows über den standardmäßigen Charms "Teilen" freigeben. Nachfolgend erhalten Sie weitere Informationen zum Aktivieren Ihrer Anwendung als Freigabeziel für Meine Kontakte.
 
@@ -20,15 +20,15 @@ Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakte
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows10 und Microsoft Visual Studio2017 Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 und Microsoft Visual Studio 2017 Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Sie sollten über Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache verfügen. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Übersicht
 
 Es gibt drei Schritte, die Sie ausführen müssen, um die Anwendung als Freigabeziel für „Meine Kontakte” zu verwenden:
 
-1. [Unterstützung für den „ShareTarget”-Aktivierungsvertrag im Anwendungsmanifest bekannt geben.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Versehen Sie die Kontakte, die der Benutzer auf Ihre freigeben kann mit Kommentaren.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Unterstützung für die "sharetarget" aktivierungskontrakt im Anwendungsmanifest deklariert werden.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Kommentieren Sie die Kontakte, die die Benutzer freigeben können, um Ihre App ein.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3. Unterstützen Sie mehrere Instanzen der Anwendung, die zur gleichen Zeit ausgeführt werden.  Benutzer müssen mit einer vollständigen Version Ihrer Anwendung interagieren und diese auch für andere Personen freigeben können. Sie können diese in mehreren Freigabefenstern gleichzeitig verwenden. Um dies zu unterstützen, muss Ihre Anwendung mehrere Ansichten gleichzeitig ausführen können. Weitere Informationen hierzu finden Sie im Artikel ["Anzeigen mehrerer Ansichten für eine App"](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
 
 Wenn Sie dies getan haben, wird die Anwendung als Freigabeziel im Freigabefenster „Meine Kontakte” angezeigt, das auf zwei Arten gestartet werden kann:
@@ -40,7 +40,7 @@ Wenn Sie dies getan haben, wird die Anwendung als Freigabeziel im Freigabefenste
 Um Unterstützung für die Anwendung als Freigabeziel zu deklarieren, öffnen Sie die Anwendung zunächst in Visual Studio. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei **Package.appxmanifest** und wählen Sie **Öffnen mit** aus. Wählen Sie aus dem Menü anschließend **XML (Text)-Editor**, und klicken Sie auf **OK**. Nehmen Sie danach folgenden Änderungen am Manifest vor.
 
 
-**Vorher**
+**Vor dem**
 ```xml
 <Applications>
     <Application Id="MyApp"
@@ -50,7 +50,7 @@ Um Unterstützung für die Anwendung als Freigabeziel zu deklarieren, öffnen Si
 </Applications>
 ```
 
-**Nachher**
+**After**
 
 ```xml
 <Applications>
@@ -103,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-Die “appId” ist der Paketfamilienname, gefolgt von ‘!’ und einer aktivierbaren Klassen-ID. Um den Paketfamiliennamen zu suchen, öffnen Sie **"Package.appxmanifest"** mithilfe des Standard-Editors und suchen Sie auf der Registerkarte "Verpacken". Hier ist "App" die aktivierbare Klasse, die der zielfreigabeansicht entspricht.
+Die “appId” ist der Paketfamilienname, gefolgt von ‘!’ und einer aktivierbaren Klassen-ID. Um den Paketfamiliennamen zu such, öffnen Sie **Package.appxmanifest** mithilfe des Standard-Editors und suchen Sie auf der Registerkarte "Verpacken". Hier ist "App" die aktivierbare Klasse, die der Zielfreigabeansicht entspricht.
 
 ## <a name="running-as-a-my-people-share-target"></a>Ausführung als Freigabeziel für „Meine Kontakte”
 
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen:
-+ [Hinzufügen von Support für „Meine Kontakte”](my-people-support.md)
-+ [ShareTarget-Klasse](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
-+ [Beispiel für die Visitenkartenintegration](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
+## <a name="see-also"></a>Siehe auch
++ [Hinzufügen von Meine Benutzer zu unterstützen.](my-people-support.md)
++ ["Sharetarget"-Klasse](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
++ [Wenden Sie sich an Karte-integrationsbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

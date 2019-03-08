@@ -1,19 +1,19 @@
 ---
-Description: This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio.
+Description: In diesem Thema werden die bewährten Methoden für barrierefreien Text in Apps beschrieben. Damit stellen Sie sicher, dass der Kontrast zwischen Farben und Hintergründen ausreichend hoch ist.
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Anforderungen für barrierefreien Text
 label: Accessible text requirements
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f474ec0c3017c3834d3eadb6f1caa989fc188a7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050743"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653335"
 ---
 # <a name="accessible-text-requirements"></a>Anforderungen für barrierefreien Text  
 
@@ -26,18 +26,18 @@ In diesem Thema werden die bewährten Methoden für barrierefreien Text in Apps 
 <span id="CONTRAST_RATIONS"/>
 
 ## <a name="contrast-ratios"></a>Kontrastverhältnisse  
-Obwohl Benutzer immer die Möglichkeit haben, die Anzeige auf einen Modus mit hohem Kontrast umzuschalten, sollten Sie diese Option in Ihrem App-Design für Text möglichst nicht verwenden. Stellen Sie stattdessen sicher, dass der App-Text bestimmte Richtlinien für die Kontraststufe zwischen Text und seinem Hintergrund erfüllt. Die Bewertung der Kontraststufe basiert auf deterministischen Techniken, bei denen der Farbton nicht berücksichtigt wird. Wenn Sie z.B. roten Text auf grünem Hintergrund haben, ist dieser Text für einen farbenblinden Benutzer möglicherweise nicht lesbar. Durch eine Überprüfung und Korrektur des Kontrastverhältnisses können Sie solche Probleme bezüglich der Barrierefreiheit vermeiden.
+Obwohl Benutzer immer die Möglichkeit haben, die Anzeige auf einen Modus mit hohem Kontrast umzuschalten, sollten Sie diese Option in Ihrem App-Design für Text möglichst nicht verwenden. Stellen Sie stattdessen sicher, dass der App-Text bestimmte Richtlinien für die Kontraststufe zwischen Text und seinem Hintergrund erfüllt. Die Bewertung der Kontraststufe basiert auf deterministischen Techniken, bei denen der Farbton nicht berücksichtigt wird. Wenn Sie z. B. roten Text auf grünem Hintergrund haben, ist dieser Text für einen farbenblinden Benutzer möglicherweise nicht lesbar. Durch eine Überprüfung und Korrektur des Kontrastverhältnisses können Sie solche Probleme bezüglich der Barrierefreiheit vermeiden.
 
-Die hier dokumentierten Empfehlungen für den Textkontrast basieren auf einem Standard für Barrierefreiheit im Internet, [G18: Sicherstellen eines Kontrastverhältnisses von mindestens 4,5:1 zwischen Text (und Textbildern) und dem Texthintergrund](https://go.microsoft.com/fwlink/p/?linkid=221823). Dieser Leitfaden ist in der *W3C-Spezifikation für die Techniken für WCAG 2.0* enthalten.
+Die Empfehlungen für Text Kontrast, die hier dokumentiert basieren auf ein standard, Webzugriff [G18: Um sicherzustellen, dass ein Kontrastverhältnis von mindestens 4.5:1 vorhanden ist, zwischen Text (und Bilder von Text) und den Hintergrund des Texthintergrunds](https://go.microsoft.com/fwlink/p/?linkid=221823). Dieser Leitfaden ist in der *W3C-Spezifikation für die Techniken für WCAG 2.0* enthalten.
 
-Damit sichtbarer Text als barrierefreier Text gilt, muss er ein Leuchtdichte-Kontrastverhältnis von mindestens 4,5:1 bezogen auf den Hintergrund aufweisen. Ausnahmen sind Logos und nebensächlicher Text (z.B. Text, der Teil einer inaktiven Benutzeroberflächenkomponente ist).
+Damit sichtbarer Text als barrierefreier Text gilt, muss er ein Leuchtdichte-Kontrastverhältnis von mindestens 4,5:1 bezogen auf den Hintergrund aufweisen. Ausnahmen sind Logos und nebensächlicher Text (z. B. Text, der Teil einer inaktiven Benutzeroberflächenkomponente ist).
 
 Für dekorativen Text, der keine Informationen liefert, gilt diese Anforderung nicht. Wenn beispielsweise zufällige Wörter zum Erstellen eines Hintergrunds verwendet werden und die Wörter ohne Bedeutungsänderung neu angeordnet oder ersetzt werden können, gelten die Wörter als dekorative Elemente und müssen dieses Kriterium nicht erfüllen.
 
 Überprüfen Sie mit den Farbkontrasttools, ob das Kontrastverhältnis von sichtbarem Text in Ordnung ist. Tools zum Testen des Kontrastverhältnisses finden Sie unter [Techniken für WCAG 2.0 G18 (Abschnitt Ressourcen)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
-> Einige der unter den Techniken für WCAG2.0G18 aufgeführten Tools können bei einer UWP-App nicht interaktiv verwendet werden. Sie müssen möglicherweise die Werte für Vordergrund- und Hintergrundfarben manuell in das Tool eingeben oder Bildschirmaufnahmen der App-UI erstellen und anschließend das Kontrastverhältnistool für das aufgenommene Bild ausführen.
+> Einige der unter den Techniken für WCAG 2.0 G18 aufgeführten Tools können bei einer UWP-App nicht interaktiv verwendet werden. Sie müssen möglicherweise die Werte für Vordergrund- und Hintergrundfarben manuell in das Tool eingeben oder Bildschirmaufnahmen der App-UI erstellen und anschließend das Kontrastverhältnistool für das aufgenommene Bild ausführen.
 
 <span id="Text_element_roles"/>
 <span id="text_element_roles"/>
@@ -46,14 +46,14 @@ Für dekorativen Text, der keine Informationen liefert, gilt diese Anforderung n
 ## <a name="text-element-roles"></a>Textelementrollen  
 In einer UWP-App können die folgenden Standardelemente (meist als *Textelemente* oder *textedit-Steuerelemente* bezeichnet) verwendet werden:
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): Rolle ist [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683): Rolle ist [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (und Überlaufklasse [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): Rolle ist [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): Rolle ist [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): Rolle [ **Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**Textfeld**](https://msdn.microsoft.com/library/windows/apps/BR209683): Rolle [ **bearbeiten**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichTextBlock** ](https://msdn.microsoft.com/library/windows/apps/BR227565) (und overflow Klasse [ **RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): die Rolle ist [ **Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): Rolle [ **bearbeiten**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
 Wenn ein Steuerelement meldet, dass ihm die Rolle [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182) zugewiesen ist, gehen Hilfstechnologien davon aus, dass Benutzer die Werte ändern können. Falls Sie also statischen Text in einem [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) platzieren, wird die Rolle falsch gemeldet, wodurch auch die Struktur der App falsch für einen Benutzer gemeldet wird, der Barrierefreiheitsfeatures verwendet.
 
-In den Textmodellen für XAML sind zwei Elemente enthalten, die hauptsächlich für statischen Text, [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)-Elemente und [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)-Elemente verwendet werden. Bei keinem dieser Elemente handelt es sich um eine [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390)-Unterklasse, sodass sie auch nicht den Tastaturfokus erhalten oder in der Aktivierreihenfolge erscheinen können. Dies bedeutet jedoch nicht, dass sie von Hilfstechnologien nicht gelesen werden bzw. gelesen werden können. Sprachausgaben sind in der Regel für die Unterstützung mehrerer Modi zum Ausgeben der Inhalte einer App ausgelegt und verfügen beispielsweise über einen dedizierten Lesemodus oder Navigationsmuster, die über den Fokus und die Aktivierreihenfolge hinausgehen, z.B. einen „virtuellen Cursor“. Fügen Sie Ihren statischen Text also nicht nur deswegen in Container ein, die den Fokus erhalten können, damit Benutzer über die Aktivierreihenfolge darauf zugreifen können. Benutzer von Hilfstechnologien erwarten, dass über die Aktivierreihenfolge verfügbare Inhalte interaktiv sind. Wenn sie darin auf statischen Text treffen, ist dies eher verwirrend als hilfreich. Testen Sie dies selbst mit der Sprachausgabe, um einen Eindruck der Benutzeroberfläche Ihrer App zu gewinnen, wenn eine Sprachausgabe zum Untersuchen des statischen Texts der App verwendet wird.
+In den Textmodellen für XAML sind zwei Elemente enthalten, die hauptsächlich für statischen Text, [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)-Elemente und [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)-Elemente verwendet werden. Bei keinem dieser Elemente handelt es sich um eine [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390)-Unterklasse, sodass sie auch nicht den Tastaturfokus erhalten oder in der Aktivierreihenfolge erscheinen können. Dies bedeutet jedoch nicht, dass sie von Hilfstechnologien nicht gelesen werden bzw. gelesen werden können. Sprachausgaben sind in der Regel für die Unterstützung mehrerer Modi zum Ausgeben der Inhalte einer App ausgelegt und verfügen beispielsweise über einen dedizierten Lesemodus oder Navigationsmuster, die über den Fokus und die Aktivierreihenfolge hinausgehen, z. B. einen „virtuellen Cursor“. Fügen Sie Ihren statischen Text also nicht nur deswegen in Container ein, die den Fokus erhalten können, damit Benutzer über die Aktivierreihenfolge darauf zugreifen können. Benutzer von Hilfstechnologien erwarten, dass über die Aktivierreihenfolge verfügbare Inhalte interaktiv sind. Wenn sie darin auf statischen Text treffen, ist dies eher verwirrend als hilfreich. Testen Sie dies selbst mit der Sprachausgabe, um einen Eindruck der Benutzeroberfläche Ihrer App zu gewinnen, wenn eine Sprachausgabe zum Untersuchen des statischen Texts der App verwendet wird.
 
 <span id="Auto-suggest_accessibility"/>
 <span id="auto-suggest_accessibility"/>
@@ -70,8 +70,8 @@ Die Sprachausgabe wurde aktualisiert und stellt diese Funktion nun mit einem spe
 * Sie können den Fokus der Sprachausgabe in die Liste verschieben.
 * Sie können mit allen anderen Lesemodi durch einen Vorschlag navigieren.
 
-![Vorschlagsliste](images/autosuggest-list.png)<br/>
-_Beispiel für eine Vorschlagsliste_
+![Mit Vorschlägen](images/autosuggest-list.png)<br/>
+_Beispiel für eine Liste der Vorschläge_
 
 <span id="Implementing_auto-suggest"/>
 <span id="implementing_auto-suggest"/>
@@ -85,14 +85,14 @@ Für den Zugriff auf diese Funktion müssen das Eingabefeld und die Liste in der
 **Standardauswahl**  
 Wenn in der Liste eine Standardauswahl getroffen wird, sucht die Sprachausgabe ein [**UIA_SelectionItem_ElementSelectedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223)-Ereignis in einer Desktop-App oder das [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents)-Ereignis, um es in einer UWP-App auszulösen. Jedes Mal, wenn sich die Auswahl ändert, wenn der Benutzer einen weiteren Buchstaben eingibt und die Vorschläge aktualisiert wurden oder wenn ein Benutzer durch die Liste navigiert, sollte das **ElementSelected**-Ereignis ausgelöst werden.
 
-![Liste mit Standardauswahl](images/autosuggest-default-selection.png)<br/>
-_Beispiel mit Standardauswahl_
+![Liste mit einer Standardauswahl](images/autosuggest-default-selection.png)<br/>
+_Beispiel für eine Standardauswahl vorhanden ist_
 
-**Keine Standardauswahl**  
+**Keine Standardeinstellung.**  
 Wenn keine Standardauswahl vorhanden ist, beispielsweise im Standortfeld der Wetter-App, sucht die Sprachausgabe das [**UIA_LayoutInvalidatedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223 )-Desktopereignis oder das [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents)-UWP-Ereignis, das bei jeder Listenaktualisierung für die Liste ausgelöst werden muss.
 
-![Liste ohne Standardauswahl](images/autosuggest-no-default-selection.png)<br/>
-_Beispiel ohne Standardauswahl_
+![Liste mit nicht standardmäßigen-Auswahl](images/autosuggest-no-default-selection.png)<br/>
+_Beispiel, es keine Standardauswahl ist_
 
 ### <a name="xaml-implementation"></a>XAML-Implementierung  
 Wenn Sie die standardmäßige [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox)-Klasse in XAML verwenden, ist diese Funktionalität bereits integriert. Wenn Sie mithilfe von [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) und einer Liste eine eigene Funktion für automatische Vorschläge erstellen, müssen Sie die Liste für **TextBox** auf [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) festlegen. Sie müssen das **AutomationPropertyChanged**-Ereignis jedes Mal für die [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)-Eigenschaft auslösen, wenn Sie diese Eigenschaft hinzufügen oder entfernen, und abhängig vom verwendeten Szenario auch Ihre eigenen [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents)-Ereignisse oder [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents)-Ereignisse auslösen, wie zuvor in diesem Artikel erläutert.
@@ -122,23 +122,23 @@ Verwenden Sie nach Möglichkeit keinen Text in Grafiken. Text, den Sie der in de
 <span id="text_font_size"/>
 <span id="TEXT_FONT_SIZE"/>
 
-## <a name="text-font-size-and-scale"></a>Schriftgrad des Texts und Skalierung
+## <a name="text-font-size-and-scale"></a>Text Schriftgrad und Skalierung
 
-Benutzer haben Probleme beim Lesen von Text in einer app, wenn die Schriftarten verwendet, einfach werden zu klein, stellen Sie daher sicher, dass Text in Ihrer Anwendung eine angemessene Größe in erster Linie ist.
+Benutzer haben schwierigkeiten beim Lesen von Text in einer app, wenn die Schriftarten verwendet, einfach werden zu gering, achten Sie also einen beliebigen Text in Ihrer Anwendung ist eine vernünftige Größe im vornherein.
 
-Nachdem Sie die offensichtlich getan haben, enthält Windows verschiedene Bedienungshilfen und Einstellungen, die Benutzer an ihre eigenen Anforderungen und Einstellungen für das Lesen von Text anpassen und nutzen können. Dazu zählen:
+Nachdem Sie das Offensichtliche hinausblicken durchgeführt haben, umfasst Windows verschiedene Tools für Barrierefreiheit und Einstellungen, die Benutzer nutzen können, und passen Sie ihre eigenen Anforderungen und die Einstellungen für das Lesen von Text. Dazu gehören:
 
-* Die Bildschirmlupe, die einen ausgewählten Bereich der UI vergrößert. Sie sollten sicherstellen, dass das Layout der Text in Ihrer app zum Verwenden der Bildschirmlupe zum Lesen erschweren nicht.
-* Globale Skalierung und Auflösung Einstellungen im **Einstellungen->System->Display->Scale und Layout**. Genau können Optionen für die größenanpassung variieren, da dies nach den Funktionen des Anzeigegeräts richtet.
-* Text Größe Einstellungen im **Einstellungen->Ease von Access->Display**. Anpassen der **größeren Schrift** Einstellung, um nur die Größe von Text in die Steuerelemente für alle Anwendungen und Bildschirme (alle UWP-Textsteuerelemente unterstützen den Skalierung Erfahrung ohne Anpassung oder Templating Text) unterstützt. 
+* Das Bildschirmlupe-Tool, das die Benutzeroberfläche ein ausgewählten Bereichs vergrößert. Sie sollten sicherstellen, dass das Layout von Text in Ihrer app verwenden Sie Bildschirmlupe zum Lesen erschweren nicht.
+* Globale Skalierung und Auflösung von Einstellungen in **Einstellungen -> System -> Anzeige & gt; Skalierung und Layout**. Genau die Größenanpassungsoptionen zur verfügbar sind, können variieren, wie die Funktionen des Anzeigegeräts sowie.
+* Die Einstellungen für Text in **erleichterte Bedienung "Einstellungen ->" -> Anzeige**. Anpassen der **vergrößern Text** Einstellung, um nur die Größe des Texts in die Steuerelemente für alle Anwendungen und Bildschirme (alle UWP-Text-Steuerelemente unterstützen den Text, der Skalierung ohne Anpassung oder Vorlagen) unterstützen. 
 > [!NOTE]
-> Die Einstellung **Alles größer machen** kann Benutzer ihre bevorzugte Größe für Text und apps in der Regel ihre primäre nur auf Bildschirm angeben.
+> Die **korrektes größere** Einstellung ermöglicht es einem Benutzer in der Regel geben Sie ihre bevorzugte Größe für Text- und apps auf ihre primären Bildschirm nur.
 
-Verschiedene Textelemente und Steuerelemente verfügen über eine [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled)-Eigenschaft. Diese Eigenschaft weist standardmäßig den Wert **true** auf. Wenn kann **"true"**, die Größe der Text im Element skaliert werden. Die Skalierung wirkt sich auf Text mit einer kleinen **FontSize** deutlicher aus als sie Text wirkt sich auf, die eine große **FontSize**wurde aus. Sie können die automatische Größe ändern, indem Sie die Eigenschaft eines Elements **IsTextScaleFactorEnabled** auf **"false"** deaktivieren. 
+Verschiedene Textelemente und Steuerelemente verfügen über eine [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled)-Eigenschaft. Diese Eigenschaft weist standardmäßig den Wert **true** auf. Wenn **"true"**, die Größe des Texts in diesem Element skaliert werden kann. Die Skalierung wirkt sich auf Text mit einem kleinen **FontSize** in höherem Maß als Text beeinflusst, die eine große **FontSize**. Sie können die automatische Größenänderung durch Festlegen eines Elements deaktivieren **IsTextScaleFactorEnabled** Eigenschaft **"false"**. 
 
-Weitere Informationen finden Sie in der [Text skalieren](https://docs.microsoft.com/windows/uwp/design/input/text-scaling) .
+Finden Sie unter [Text skalieren](https://docs.microsoft.com/windows/uwp/design/input/text-scaling) Weitere Details.
 
-Fügen Sie das folgende Markup für eine app, und führen Sie es aus. Passen Sie die **Textgröße** -Einstellung, und sehen Sie, was auf jeder **TextBlock**geschieht.
+Fügen Sie das folgende Markup für eine app, und führen Sie ihn aus. Anpassen der **Textgröße** festlegen, und sehen, was geschieht, auf die einzelnen **TextBlock**.
 
 XAML
 ```xml
@@ -149,7 +149,7 @@ XAML
     Style="{StaticResource BodyTextBlockStyle}" IsTextScaleFactorEnabled="False"/>
 ```  
 
-Es wird nicht empfohlen, dass Sie Text zu skalieren, wie Skalierung UI-Text universell in allen apps eine wichtige Erfahrung für Benutzer deaktivieren.
+Es wird nicht empfohlen, zu deaktivieren, Text horizontale Skalierung Benutzeroberflächentext global für alle apps ein Zugriff auf wichtige Erfahrung für Benutzer ist.
 
 Sie können auch das [**TextScaleFactorChanged**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)-Ereignis und die [**TextScaleFactor**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor)-Eigenschaft verwenden, um Informationen zu Änderungen der Einstellung **Textgröße** auf dem Smartphone zu erhalten. Gehen Sie wie folgt vor:
 
@@ -169,23 +169,23 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-Der Wert des **TextScaleFactor** ist ein Double in den Bereich \[1,2.25\]. Der kleinste Text wird um diesen Wert vergrößert. Unter Umständen können Sie den Wert verwenden, um beispielsweise Grafiken passend zum Text zu skalieren. Denken Sie jedoch daran, dass nicht der gesamte Text um denselben Faktor skaliert wird. Allgemein gilt: Je größer der Text, desto geringer sind die Auswirkungen der Skalierung.
+Der Wert des **TextScaleFactor** ein Double-Wert im Bereich von \[1,2.25\]. Der kleinste Text wird um diesen Wert vergrößert. Unter Umständen können Sie den Wert verwenden, um beispielsweise Grafiken passend zum Text zu skalieren. Denken Sie jedoch daran, dass nicht der gesamte Text um denselben Faktor skaliert wird. Allgemein gilt: Je größer der Text, desto geringer sind die Auswirkungen der Skalierung.
 
 Diese Typen verfügen über eine **IsTextScaleFactorEnabled**-Eigenschaft:  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
-* [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) und abgeleitete Klassen
+* [**Steuerelement** ](https://msdn.microsoft.com/library/windows/apps/BR209390) und abgeleitete Klassen
 * [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
 * [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
-* [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) und abgeleitete Klassen
+* [**Das TextElement** ](https://msdn.microsoft.com/library/windows/apps/BR209967) und abgeleitete Klassen
 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>Verwandte Themen  
 
-* [Textskalierung](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
-* [Barrierefreiheit](accessibility.md)
-* [Grundlegende Barrierefreiheitsinformationen](basic-accessibility-information.md)
-* [Beispiel für die XAML-Textanzeige](https://go.microsoft.com/fwlink/p/?linkid=238579)
-* [Beispiel für die XAML-Textbearbeitung](https://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML-Beispiel für Barrierefreiheit](https://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [Skalieren von Text](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
+* [Bedienungshilfen](accessibility.md)
+* [Informationen zur grundlegenden Barrierefreiheit](basic-accessibility-information.md)
+* [Beispiel für XAML Text anzeigen](https://go.microsoft.com/fwlink/p/?linkid=238579)
+* [Bearbeiten der XAML-Textbeispiel](https://go.microsoft.com/fwlink/p/?linkid=251417)
+* [Beispiel für XAML-Barrierefreiheit](https://go.microsoft.com/fwlink/p/?linkid=238570) 

@@ -1,19 +1,19 @@
 ---
-Description: Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
+Description: Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nicht anzuzeigen. Die beiden üblichen Animationen dieser Art sind das Einblenden und das Ausblenden.
 title: Ein-und Ausblendungsanimationen in UWP-Apps
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d3fee78f3608466f588a79d2811f1464e27a0ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940139"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620415"
 ---
 # <a name="fade-animations"></a>Ein- und Ausblendungsanimationen
 
@@ -35,10 +35,10 @@ Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nich
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animieren von Ein- und Ausblendungen](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Animieren von wird ausgeblendet](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**FadeInThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210298)
-* [**FadeOutThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210302)
+* [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
  
 

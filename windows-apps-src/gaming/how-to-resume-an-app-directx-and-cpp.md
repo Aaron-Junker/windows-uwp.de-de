@@ -4,22 +4,22 @@ description: In diesem Thema erfahren Sie, wie wichtige Anwendungsdaten wiederhe
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, fortsetzen, DirectX
+keywords: Windows 10, UWP, fortsetzen, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: f0aa60061ae9fc14392bfe4beb0693ba50fda0df
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947341"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601605"
 ---
-# <a name="how-to-resume-an-app-directx-and-c"></a>So wird's gemacht - Fortsetzen einer App (DirectX und C++)
+# <a name="how-to-resume-an-app-directx-and-c"></a>So wird's gemacht - Reaktivieren einer App (DirectX und C++)
 
 
 
 In diesem Thema erfahren Sie, wie wichtige Anwendungsdaten wiederhergestellt werden, wenn das System Ihre DirectX-App für die Universelle Windows-Plattform (UWP) fortsetzt.
 
-## <a name="register-the-resuming-event-handler"></a>Registrieren des resuming-Ereignishandlers
+## <a name="register-the-resuming-event-handler"></a>Registrieren des „resuming“-Ereignishandlers
 
 
 Registrieren Sie die Behandlung des [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859)-Ereignisses, mit dem angegeben wird, dass der Benutzer aus der App und wieder zurück gewechselt hat.
@@ -83,15 +83,15 @@ void App::Run()
 }
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 
-Das System hält Ihre App an, wenn der Benutzer zu einer anderen App oder zum Desktop wechselt. Wenn der Benutzer wieder zu Ihrer App wechselt, wird die App fortgesetzt. Beim Fortsetzen der App haben die Variablen und Datenstrukturen den gleichen Inhalt wie vor der Unterbrechung. Das System stellt die App exakt so wieder her, wie sie unterbrochen wurde. Dadurch entsteht für den Benutzer der Eindruck, die App wäre im Hintergrund weiter ausgeführt worden. Da die App jedoch unter Umständen längere Zeit angehalten war, müssen sämtliche angezeigten Inhalte, die sich möglicherweise in der Zwischenzeit geändert haben, aktualisiert werden, und alle Rendering- und Audioverarbeitungs-Threads müssen neu gestartet werden. Wenn Sie während eines vorherigen Anhalteereignisses Spielstände gespeichert haben, müssen Sie diese nun wiederherstellen.
+Das System hält Ihre App an, wenn der Benutzer zu einer anderen App oder zum Desktop wechselt. Wenn der Benutzer wieder zu Ihrer App wechselt, wird diese vom System fortgesetzt. Beim Fortsetzen der App haben die Variablen und Datenstrukturen den gleichen Inhalt wie vor der Unterbrechung. Das System stellt die App exakt so wieder her, wie sie unterbrochen wurde. Dadurch entsteht für den Benutzer der Eindruck, die App wäre im Hintergrund weiter ausgeführt worden. Da die App jedoch unter Umständen längere Zeit angehalten war, müssen sämtliche angezeigten Inhalte, die sich möglicherweise in der Zwischenzeit geändert haben, aktualisiert werden, und alle Rendering- und Audioverarbeitungs-Threads müssen neu gestartet werden. Wenn Sie während eines vorherigen Anhalteereignisses Spielstände gespeichert haben, müssen Sie diese nun wiederherstellen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [So wird's gemacht: Anhalten einer App (DirectX und C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [So wird's gemacht: Aktivieren einer App (DirectX und C++)](how-to-activate-an-app-directx-and-cpp.md)
+* [Gewusst wie: Anhalten eine app (DirectX und C++)](how-to-suspend-an-app-directx-and-cpp.md)
+* [Gewusst wie: Aktivieren Sie eine app (DirectX und C++)](how-to-activate-an-app-directx-and-cpp.md)
 
  
 

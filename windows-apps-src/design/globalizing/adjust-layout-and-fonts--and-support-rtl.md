@@ -1,6 +1,6 @@
 ---
-Description: Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
-title: Layout und Schriften anpassen und RTL unterstützen
+Description: Entwerfen Sie Ihre App so, dass die Layouts und Schriften mehrerer Sprachen unterstützen – beispielsweise auch den Textfluss von rechts nach links (right-to-left, RTL).
+title: Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: Windows 10, UWP, Lokalisierbarkeit, Lokalisierung, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930461"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645305"
 ---
-# <a name="adjust-layout-and-fonts-and-support-rtl"></a>Layout und Schriften anpassen und RTL unterstützen
+# <a name="adjust-layout-and-fonts-and-support-rtl"></a>Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“
 Entwerfen Sie Ihre App so, dass die Layouts und Schriften mehrerer Sprachen unterstützen – beispielsweise auch den Textfluss von rechts nach links (right-to-left, RTL). Die Textflussrichtung ist die Richtung, in der ein Text geschrieben und angezeigt wird, und die UI-Elemente auf der Seite werden entsprechend gelesen.
 
 ## <a name="layout-guidelines"></a>Layoutrichtlinien
@@ -29,10 +29,9 @@ Die empfohlene Methode ist ein dynamisches Layout, das in den meisten Fällen an
 <TextBlock x:Uid="TitleText">
 ```
 
-Weitere Informationen zu Zeichenfolgenressourcen-Bezeichner und Ressourcendateien (.resw) finden Sie unter Lokalisieren der Zeichenfolge im Paketmanifest der Benutzeroberfläche und der App.
-Weitere Informationen zu Ressourcendateien (.resw), Eigenschaften-IDs und **x:Uid** finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md).
+Weitere Informationen zu Zeichenfolgenressourcen-Bezeichner und Ressourcendateien (.resw) finden Sie unter Lokalisieren der Zeichenfolge im Paketmanifest der Benutzeroberfläche und der App.Weitere Informationen zu Ressourcendateien (.resw), Eigenschaften-IDs und **x:Uid** finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md).
 
-## <a name="fonts"></a>Schriften
+## <a name="fonts"></a>Schriftarten
 Verwenden Sie die [**LanguageFont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)-Schriftzuordnungsklasse für den programmgesteuerten Zugriff auf die empfohlene Familie und Breite und den empfohlenen Grad und Schnitt der Schriftart für eine spezielle Sprache. Die **LanguageFont**-Klasse ermöglicht den Zugriff auf die richtigen Schriftartinformationen für verschiedene Inhaltskategorien: UI-Kopfzeilen, Benachrichtigungen, Textkörper und Schriften für den Textkörper, die vom Benutzer bearbeitet werden können.
 
 ## <a name="mirroring-images"></a>Spiegeln von Bildern
@@ -54,7 +53,7 @@ Wenn Ihre App für Rechts-Links-Sprachen (RTL) lokalisiert wird, verwenden Sie d
 Legen Sie **FlowDirection** im Stammlayoutpanel (oder Frame) der Seite oder auf der Seite selbst fest. Dadurch erben alle enthaltenen Steuerelemente dieses Eigenschaft.
 
 > [!IMPORTANT]
-> Allerdings wird **FlowDirection** *nicht* automatisch basierend auf der vom Benutzer in den Windows-Einstellungen ausgewählten Anzeigesprache festgelegt, und die Eigenschaft ändert sich auch nicht dynamisch, wenn der Benutzer die Anzeigesprache wechselt. Stellt der Benutzer beispielsweise die Windows-Einstellungen von Englisch auf Arabisch um, ändert sich die **FlowDirection**-Eigenschaft *nicht* automatisch von links nach rechts zu rechts nach links. Als App-Entwickler müssen Sie **FlowDirection** für die Sprache festlegen, die gerade angezeigt wird.
+> Allerdings wird **FlowDirection***nicht* automatisch basierend auf der vom Benutzer in den Windows-Einstellungen ausgewählten Anzeigesprache festgelegt, und die Eigenschaft ändert sich auch nicht dynamisch, wenn der Benutzer die Anzeigesprache wechselt. Stellt der Benutzer beispielsweise die Windows-Einstellungen von Englisch auf Arabisch um, ändert sich die **FlowDirection**-Eigenschaft *nicht* automatisch von links nach rechts zu rechts nach links. Als App-Entwickler müssen Sie **FlowDirection** für die Sprache festlegen, die gerade angezeigt wird.
 
 Die programmatische Technik besteht darin, die Eigenschaft `LayoutDirection` der bevorzugten Benutzeranzeigesprache zu verwenden, um die Eigenschaft [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) festzulegen (siehe Codebeispiel unten). Die meisten Steuerelemente in Windows verwenden **FlowDirection** bereits. Wenn Sie ein benutzerdefiniertes Steuerelement implementieren, sollte es **FlowDirection** verwenden, um entsprechende Layoutänderungen für RTL- und LTR-Sprachen vorzunehmen.
 
@@ -125,6 +124,6 @@ Statt von einer einzelnen Codezeile für alle Sprachen sind Sie nun davon abhän
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im Paketmanifest der App](../../app-resources/localize-strings-ui-manifest.md)
-* [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und andere Eigenschaften](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [Benutzerprofilsprachen und App-Manifest-Sprachen verstehen](manage-language-and-region.md)
+* [Lokalisieren von Zeichenfolgen in Ihre Benutzeroberfläche und app-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
+* [Passen Sie Ihre Ressourcen für die Sprache, Skalierung und andere Kennzeichner](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Grundlegendes zu Benutzersprachen-Profil und app-manifest-Sprachen](manage-language-and-region.md)

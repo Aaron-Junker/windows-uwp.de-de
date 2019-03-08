@@ -1,5 +1,5 @@
 ---
-title: 3D-Drucken in der App
+title: 3D-Druck über Ihre App
 description: Erfahren Sie, wie Sie Ihrer universellen Windows-App 3D-Druckfunktionen hinzufügen. In diesem Thema wird erläutert, wie das 3D-Drucken-Dialogfeld aufgerufen wird, nachdem Sie sich vergewissert haben, dass das 3D-Modell gedruckt werden kann und im richtigen Format vorliegt.
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 ms.date: 02/08/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, Uwp, 3dprinting, 3D-Druck
 ms.localizationpriority: medium
 ms.openlocfilehash: 4013341a3e4e44d6ac2df66d58d4114313573d2a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048267"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652245"
 ---
 # <a name="3d-printing-from-your-app"></a>3D-Druck über Ihre App
 
@@ -19,7 +19,7 @@ ms.locfileid: "9048267"
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169)
 
-Erfahren Sie, wie Sie Ihrer Universellen Windows-App 3D-Druckfunktionen hinzufügen. In diesem Thema wird erläutert, wie Sie 3D-Geometriedaten in Ihre App laden und das 3D-Druckdialogfeld starten, nachdem Sie sichergestellt haben, dass Ihr 3D-Modell druckbar ist und das richtige Format hat. Ein Beispiel wie dieses Verfahren funktioniert, finden Sie unter [Beispiel für 3D-Druck– UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting).
+Erfahren Sie, wie Sie Ihrer universellen Windows-App 3D-Druckfunktionen hinzufügen. In diesem Thema wird erläutert, wie Sie 3D-Geometriedaten in Ihre App laden und das 3D-Druckdialogfeld starten, nachdem Sie sichergestellt haben, dass Ihr 3D-Modell druckbar ist und das richtige Format hat. Ein Beispiel wie dieses Verfahren funktioniert, finden Sie unter [Beispiel für 3D-Druck – UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting).
 
 > [!NOTE]
 > Im Beispielcode in dieser Anleitung wurde das Melden und Verarbeiten von Fehlern stark vereinfacht, um den Code möglichst einfach zu halten.
@@ -89,11 +89,11 @@ Das **Printing3DModel**-Objekt wurde repariert und kann jetzt gedruckt werden. W
 ## <a name="execute-printing-task-create-a-taskrequested-handler"></a>Ausführen des Druckvorgangs: Erstellen eines TaskRequested-Handlers
 
 
-Später, wenn das 3D-Druckdialogfeld für den Benutzer angezeigt wird und dieser einen Druckvorgang startet, muss die App die gewünschten Parameter an die 3D-Druckpipeline übergeben. Die 3D-Druck-API löst das **[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)**-Ereignis aus. Sie müssen eine Methode schreiben, mit der dieses Ereignis richtig behandelt wird. Die Handlermethode muss wie üblich den gleichen Typ wie das zugeordnete Ereignis aufweisen: Das **TaskRequested**-Ereignis verfügt über [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029) (Verweis auf das Absenderobjekt) und ein [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051)-Objekt als Parameter, in dem die meisten relevanten Informationen enthalten sind.
+Später, wenn das 3D-Druckdialogfeld für den Benutzer angezeigt wird und dieser einen Druckvorgang startet, muss die App die gewünschten Parameter an die 3D-Druckpipeline übergeben. Die 3D-Druck-API löst das **[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)**-Ereignis aus. Sie müssen eine Methode schreiben, mit der dieses Ereignis richtig behandelt wird. Die Ereignishandlermethode muss denselben Typ wie das Ereignis wie immer aufweisen: Die **TaskRequested** Ereignis verfügt über Parameter [ **Print3DManager** ](https://msdn.microsoft.com/library/windows/apps/dn998029) (ein Verweis auf die Sender-Objekt) und ein [  **Print3DTaskRequestedEventArgs** ](https://msdn.microsoft.com/library/windows/apps/dn998051) -Objekt, das meisten relevanten Informationen enthält.
 
 [!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
 
-Der grundlegende Zweck dieser Methode besteht darin, mit dem *args*-Parameter ein **Printing3D3MFPackage** entlang der Pipeline zu senden. Der **Print3DTaskRequestedEventArgs**-Typ verfügt über eine Eigenschaft: [**Request**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx). Diese hat den Typ [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) und stellt eine Druckauftrag-Anforderung dar. Die zugehörige [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx)-Methode ermöglicht es dem Programm, die richtigen Informationen für den Druckauftrag zu senden. Es wird ein Verweis auf das **Print3DTask**-Objekt zurückgegeben, das an die 3D-Druckpipeline gesendet wurde.
+Der grundlegende Zweck dieser Methode besteht darin, mit dem *args*-Parameter ein **Printing3D3MFPackage** entlang der Pipeline zu senden. Die **Print3DTaskRequestedEventArgs** Typ verfügt über eine Eigenschaft: [**Anforderung**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx). Diese hat den Typ [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) und stellt eine Druckauftrag-Anforderung dar. Die zugehörige [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx)-Methode ermöglicht es dem Programm, die richtigen Informationen für den Druckauftrag zu senden. Es wird ein Verweis auf das **Print3DTask**-Objekt zurückgegeben, das an die 3D-Druckpipeline gesendet wurde.
 
 **CreateTask** weist die folgenden Eingabeparameter auf: einen string für den Namen des Druckauftrags, einen string für die ID des zu verwendenden Druckers sowie einen [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx)-Delegaten. Der Delegat wird automatisch aufgerufen, wenn das **3DTaskSourceRequested**-Ereignis ausgelöst wird (dies erfolgt durch die API selbst). Zu beachten ist unbedingt, dass dieser Delegat beim Initiieren eines Druckauftrags aufgerufen wird. Er ist dafür zuständig, das richtige 3D-Druckpaket bereitzustellen.
 
@@ -132,7 +132,7 @@ Außerdem empfiehlt es sich noch, die Registrierung der Ereignishandler aufzuheb
 ## <a name="related-topics"></a>Verwandte Themen
 
 [Generieren eines 3MF-Pakets](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
-[Beispiel für 3D-Druck– UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
+[3D drucken UWP-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  

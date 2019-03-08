@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, app-installer, AppInstaller, querladen
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aa7622fe408fcbc1f8da4c0fe0c6b8d54dd2cd6
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115774"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648485"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Erstellen einer App-Installer-Datei mit Visual Studio
 
-Ab Windows 10, Version 1803 und Visual Studio 2017, Update 15.7, quergeladenen apps können so konfiguriert werden Empfang von Automatische Updates mithilfe einer `.appinstaller` Datei. Visual Studio unterstützt das Aktivieren dieser Updates.
+Ab Windows 10, Version 1803 und Visual Studio 2017 Update 15.7, mittels sideload übertragenen apps können so konfiguriert werden Empfang automatischer Updates, die mit einem `.appinstaller` Datei. Visual Studio unterstützt das Aktivieren dieser Updates.
 
 ## <a name="app-installer-file-location"></a>Speicherort der App-Installer-Datei
 Die `.appinstaller`-Datei in kann an einem freigegebenen Speicherort wie einem HTTP-Endpunkt oder einem freigegebenen UNC-Ordner gehostet werden, und enthält den Pfad zum Suchen der zu installierenden App-Pakete. Benutzer installieren die App vom freigegebenen Speicherort und aktivieren regelmäßige Überprüfungen auf neue Updates. 
@@ -30,7 +30,7 @@ Sie können die `TargetPlatformMinVersion`-Eigenschaft entweder beim Erstellen d
 
 ### <a name="create-packages"></a>Erstellen von Paketen
 
-Um eine app über querladen zu verteilen, müssen Sie Erstellen einer app-Paket (.appx/.msix) oder app-Bündel (.appxbundle/.msixbundle) und es an einem freigegebenen Speicherort veröffentlichen.
+Zum Verteilen einer Apps per sideload müssen Sie eine app-Paket (.appx/.msix) oder einen app-Bündel (.appxbundle/.msixbundle) erstellen und veröffentlichen es in einem freigegebenen Speicherort.
 
 Verwenden Sie dazu den Assistenten **App-Pakete erstellen** in Visual Studio mit den folgenden Schritten.
 
@@ -44,7 +44,7 @@ Der Assistent **App-Pakete erstellen** wird angezeigt.
 
 ![Dialogfeld „Ihre Pakete erstellen“](images/select-sideloading.png)  
 
-Die Option **Automatische Updates aktivieren** ist nur aktiviert, wenn die `TargetPlatformMinVersion` des Projekts auf die richtige Version von Windows10 festgelegt ist.
+Die Option **Automatische Updates aktivieren** ist nur aktiviert, wenn die `TargetPlatformMinVersion` des Projekts auf die richtige Version von Windows 10 festgelegt ist.
 
 3. Im Dialogfeld **Auswählen und Konfigurieren von Paketen** können Sie die unterstützten Architekturkonfigurationen auswählen. Wenn Sie ein Bündel auswählen, wird ein einzelnes Installationsprogramm generiert. Wenn Sie jedoch kein Bündel wünschen und ein Paket pro Architektur bevorzugen, erhalten Sie auch eine Installationsdatei pro Architektur.  Wenn Sie nicht sicher sind, welche Architektur(en) Sie auswählen sollen, oder wenn Sie mehr darüber erfahren möchten, welche Architekturen von verschiedenen Geräten verwendet werden, finden Sie weitere Informationen unter [App-Paketarchitekturen](device-architecture.md).
 
@@ -64,11 +64,11 @@ Um die Anwendung verfügbar zu machen, müssen die generierten Dateien am angege
 
 #### <a name="publish-to-shared-folders-unc"></a>Veröffentlichung in freigegebenen Ordnern (UNC)
 
-Wenn Sie Ihre Pakete über freigegebene UNC (Universal Naming Convention)-Ordner veröffentlichen möchten, konfigurieren Sie den Ausgabeordner des App-Pakets sowie die Installations-URL (Details finden Sie unter Schritt6) im selben Pfad. Der Assistent generiert die Dateien am richtigen Speicherort, und Benutzer erhalten sowohl die App, als auch die zukünftigen Updates vom selben Pfad.
+Wenn Sie Ihre Pakete über freigegebene UNC (Universal Naming Convention)-Ordner veröffentlichen möchten, konfigurieren Sie den Ausgabeordner des App-Pakets sowie die Installations-URL (Details finden Sie unter Schritt 6) im selben Pfad. Der Assistent generiert die Dateien am richtigen Speicherort, und Benutzer erhalten sowohl die App, als auch die zukünftigen Updates vom selben Pfad.
 
 #### <a name="publish-to-a-web-location-http"></a>Veröffentlichung an einem Webspeicherort (HTTP)
 
-Für die Veröffentlichung an einem Webspeicherort ist ein Zugriff erforderlich, damit Inhalte auf dem Webserver veröffentlicht werden können. Dabei muss sichergestellt werden, dass die endgültige URL der im Assistenten definierten Installations-URL entspricht (Details finden Sie unter Schritt6). In der Regel werden das File Transfer Protocol (FTP) oder das SSH-File Transfer Protocol (SFTP) zum Hochladen der Dateien verwendet, es gibt aber je nach Ihrem Web-Provider auch andere Veröffentlichungsmethoden wie MSDeploy, SSH oder Blob Storage.
+Für die Veröffentlichung an einem Webspeicherort ist ein Zugriff erforderlich, damit Inhalte auf dem Webserver veröffentlicht werden können. Dabei muss sichergestellt werden, dass die endgültige URL der im Assistenten definierten Installations-URL entspricht (Details finden Sie unter Schritt 6). In der Regel werden das File Transfer Protocol (FTP) oder das SSH-File Transfer Protocol (SFTP) zum Hochladen der Dateien verwendet, es gibt aber je nach Ihrem Web-Provider auch andere Veröffentlichungsmethoden wie MSDeploy, SSH oder Blob Storage.
 
 Um den Webserver zu konfigurieren, müssen Sie die MIME-Typen überprüfen, die für die verwendeten Dateitypen verwendet werden. Dies ist ein Beispiel aus `web.config` für Internetinformationsdienste (IIS):
 

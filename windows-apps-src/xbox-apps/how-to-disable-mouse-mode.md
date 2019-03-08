@@ -1,17 +1,17 @@
 ---
 title: Deaktivieren des Mausmodus
-description: Anleitungen zum Deaktivieren des Standardmausmodus
+description: Anleitungen zum Deaktivieren des Standardmausmodus.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e4b8868f416494daf978d65d4a4ccde02d6ccf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931573"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656625"
 ---
 # <a name="how-to-disable-mouse-mode"></a>Deaktivieren des Mausmodus
 Der Mausmodus ist standardmäßig für alle Anwendungen aktiviert. Das bedeutet, dass alle Anwendungen, für die die Option nicht deaktiviert wurde, einen Mauszeiger erhalten (ähnlich dem Zeiger im Edge-Browser auf der Konsole). Es wird nachdrücklich empfohlen, diese Option zu deaktivieren und die direktionale Navigation über den Controller zu optimieren.   
@@ -46,7 +46,7 @@ public App() {
 ## <a name="cdirectx"></a>C++/DirectX   
 Wenn Sie eine C++-/DirectX-App schreiben, müssen Sie keine Schritte ausführen. Der Mausmodus gilt nur für HTML- und XAML-Anwendungen.
 
-## <a name="see-also"></a>Weitere Informationen
-- [Bewährte Methoden für Xbox](tailoring-for-xbox.md)
-- [UWP auf XboxOne](index.md)
+## <a name="see-also"></a>Siehe auch
+- [Bewährte Methoden für die Xbox](tailoring-for-xbox.md)
+- [UWP auf Xbox One](index.md)
 

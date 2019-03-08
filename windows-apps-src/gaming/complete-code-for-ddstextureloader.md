@@ -1,17 +1,17 @@
 ---
-title: Vollständiger Code für „DDSTextureLoader“
+title: Vollständiger Code für DDSTextureLoader
 description: Vollständiger Code für eine Klasse und Methode, die eine DDS-Textur aus dem Speicher lädt.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, DDSTextureLoader
+keywords: Windows 10, UWP, Spiele, DDSTextureLoader
 ms.localizationpriority: medium
 ms.openlocfilehash: 1501a13b188a995d591b7348202792dfbfd27ac8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941653"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662445"
 ---
 # <a name="complete-code-for-ddstextureloader"></a>Vollständiger Code für DDSTextureLoader
 
@@ -23,11 +23,11 @@ Weitere Informationen über Texturen und die Verwendung dieses Beispiels finden 
 Dieses Thema enthält die folgenden Abschnitte:
 
 -   [Technologien](#technologies)
--   [Anforderungen](#requirements)
--   [Anzeigen des Codes (C++)](#view-the-code-c)
+-   [Anforderungen an](#requirements)
+-   [Zeigen Sie den Code (C++)](#view-the-code-c)
 
 
-## <a name="download-location"></a>Downloadort
+## <a name="download-location"></a>Downloadpfad
 
 
 Dieses Beispiel kann nicht heruntergeladen werden.

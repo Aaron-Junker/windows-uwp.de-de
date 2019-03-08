@@ -1,19 +1,19 @@
 ---
-Description: Use the reposition animation to move an element or elements into a new position.
+Description: Verwenden Sie die Animation für das Ändern der Position, um eines oder mehrere Elemente an eine neue Position zu verschieben.
 title: Animationen für Positionsänderungen in UWP-Apps
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e2a96169f44802c62f341029b9bc1c5eb7e31de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920470"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647725"
 ---
 # <a name="reposition-animations"></a>Animationen für Positionsänderungen
 
@@ -21,7 +21,7 @@ ms.locfileid: "8920470"
 
 Verwenden Sie die Animation für das Ändern der Position, um eines oder mehrere Elemente an eine neue Position zu verschieben.
 
-> **Wichtige APIs**: [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421), [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
+> **Wichtige APIs**: [**RepositionThemeAnimation Klasse**](https://msdn.microsoft.com/library/windows/apps/br210421), [ **RepositionThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
@@ -32,8 +32,8 @@ Verwenden Sie die Animation für das Ändern der Position, um eines oder mehrere
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animieren von Änderungen der Position](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
-* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Animieren von ordnet](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**RepositionThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210421)
 * [**RepositionThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210429)
 

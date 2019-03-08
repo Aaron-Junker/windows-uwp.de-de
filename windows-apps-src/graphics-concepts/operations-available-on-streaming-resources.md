@@ -1,23 +1,23 @@
 ---
-title: Vorgänge für Streaming-Ressourcen
-description: Dieser Abschnittenthält Vorgänge, die Sie auf Streaming-Ressourcen ausführen können.
+title: Vorgänge für Streamingressourcen
+description: Dieser Abschnitt enthält Vorgänge, die Sie auf Streaming-Ressourcen ausführen können.
 ms.assetid: 700D8C54-0E20-4B2B-BEA3-20F6F72B8E24
 keywords:
-- Vorgänge für Streaming-Ressourcen
+- Vorgänge für Streamingressourcen
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 922798fad97754421541297a5434a81e9c660b2b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937369"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655515"
 ---
-# <a name="operations-available-on-streaming-resources"></a>Vorgänge für Streaming-Ressourcen
+# <a name="operations-available-on-streaming-resources"></a>Vorgänge für Streamingressourcen
 
 
-Dieser Abschnittenthält Vorgänge, die Sie auf Streaming-Ressourcen ausführen können.
+Dieser Abschnitt enthält Vorgänge, die Sie auf Streaming-Ressourcen ausführen können.
 
 -   Aktualisieren von Kachelzuordnungen, die "ungültig" zurückgeben, und Kopiere von Kachelzuordnungen, die "ungültig" zurückgeben - diese Vorgänge verweisen Kachelspeicherorte in einer Streaming-Ressource auf Speicherorte in Kachelpools oder auf NULL oder auf beide. Diese Vorgänge können eine getrennte Teilmenge der Kachelverweise aktualisieren.
 -   Kopieren und Aktualisieren von Vorgängen - Alle API, die Daten in eine und aus einer Standard-Pooloberfläche kopieren können, arbeiten für Streaming-Ressourcen. Lesen von nicht zugeordneten Kacheln erzeugt 0 und Einträge in nicht zugeordnete Kacheln werden gelöscht.
@@ -29,7 +29,7 @@ Kachelsteuerelemente sind auf unmittelbare oder verzögerte Kontexte verfügbar 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Erstellen von Streamingressourcen](creating-streaming-resources.md)
+[Erstellen von streaming-Ressourcen](creating-streaming-resources.md)
 
  
 

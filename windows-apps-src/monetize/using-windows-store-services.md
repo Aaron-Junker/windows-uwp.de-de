@@ -1,31 +1,31 @@
 ---
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
-description: Im Microsoft Store stellt mehrere Dienste, die Sie über REST-APIs, um programmgesteuert auf bestimmte Datentypen für apps zuzugreifen, die für Ihre oder das Ihrer Organisation Partner Center-Konto registriert sind aufrufen können.
+description: Die Microsoft Store stellt mehrere Dienste, die Sie aufrufen können, über REST-APIs programmgesteuert auf bestimmte Arten von Daten für apps zugreifen, die für Ihre oder Ihre Organisation Partner Center-Konto registriert werden.
 title: Microsoft Store-Dienste
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Store-Dienste
+keywords: Windows 10, UWP, Store-Dienste
 ms.localizationpriority: medium
 ms.openlocfilehash: 0557120afc324986fcab4fbe8e75f8819be004b3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932362"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661495"
 ---
 # <a name="microsoft-store-services"></a>Microsoft Store-Dienste
 
-Im Microsoft Store stellt mehrere Dienste, die Sie über REST-APIs, um programmgesteuert auf bestimmte Datentypen für apps zuzugreifen, die für Ihre oder das Ihrer Organisation Partner Center-Konto registriert sind aufrufen können.
+Die Microsoft Store stellt mehrere Dienste, die Sie aufrufen können, über REST-APIs programmgesteuert auf bestimmte Arten von Daten für apps zugreifen, die für Ihre oder Ihre Organisation Partner Center-Konto registriert werden.
 
-## <a name="in-this-section"></a>In diesem Abschnitt
+## <a name="in-this-section"></a>Inhalt dieses Abschnitts
 
 
 | Thema            | Beschreibung                 |
 |------------------|-----------------------------|
-| [Zugriff auf Analysedaten](access-analytics-data-using-windows-store-services.md) | Verwenden Sie die *Microsoft Store-Analyse-API* , um programmgesteuert Analysedaten für Ihre apps abzurufen. Mit dieser API können Sie Daten für App- und Add-on- (auch als In-App-Produkte oder IAP bezeichnet) Abrufe, App-Ausfälle, App-Bewertungen und Rezensionen sowie Leistungsdaten für In-App-Anzeigen und Werbeanzeigekampagnen abrufen. |
-| [Reagieren auf Rezensionen](respond-to-reviews-using-windows-store-services.md) | Verwenden Sie die *Microsoft Store-Rezensionen-API*, um programmgesteuert auf Rezensionen Ihrer App im Store zu reagieren. Diese API ist besonders nützlich für Entwickler, die gleichzeitig auf zahlreiche Rezensionen reagieren, ohne zu Partner Center verwenden.  |
-| [Ausführen von Anzeigenkampagnen](run-ad-campaigns-using-windows-store-services.md) | Verwenden Sie die *Microsoft Store-werbungs-API* können Sie programmgesteuert werbeanzeigenkampagnen für Ihre apps verwalten. Mit dieser API können Sie Ihre Kampagnen und andere zugehörige Ressourcen, z.B. Zielgruppen und Werbemittel, erstellen, aktualisieren und überwachen. Diese API ist besonders nützlich für Entwickler, die umfangreiche Kampagnen erstellen und dies nicht über Partner Center-Dashboard ausführen möchten. |
-| [Erstellen und Verwalten von Übermittlungen](create-and-manage-submissions-using-windows-store-services.md) | Verwenden Sie die *Microsoft Store-Übermittlungs-API* , um programmgesteuert abzufragen und Übermittlungen für apps, Add-ons und Flight-Pakete für Ihre oder das Ihrer Organisation Partner Center-Konto erstellen. Diese API ist hilfreich, wenn über Ihr Konto viele Apps oder Add-Ons verwaltet werden und Sie den Übermittlungsprozess für diese Ressourcen automatisieren und optimieren möchten. |
-| [Verwalten von gezielten Angeboten ](manage-targeted-offers-using-windows-store-services.md) | Verwenden Sie die *Microsoft Store für gezielte Angebote API* , um programmgesteuert auf ein gezieltes Angebot beantragen, das den erfolgreichen Kauf des Add-Ons in Ihrer app zugeordnet ist. |
-| [Verwalten von Produktansprüchen aus einem Dienst](view-and-grant-products-from-a-service.md)  | Wenn Sie einen Katalog mit apps und Add-ons im Store verfügen, können Sie mithilfe des *Microsoft Store-Sammlungs-API* und *Microsoft Store-Einkaufs-API* Besitzerinformationen zu diesen Produkten aus Ihren Diensten, melden ein verbrauchsprodukts als erfüllt für einen Benutzer und gewähren eine Berechtigung für ein kostenloses Produkt für einen Benutzer.  |
-| [App-Metadaten-API für Anzeigennetzwerke](app-metadata-api-for-advertising-networks.md)  | Anzeigennetzwerke kann diese API verwenden Sie zum programmgesteuerten Abrufen von Metadaten zu apps im Microsoft Store, einschließlich Details wie die Beschreibung und Kategorie für Store-Eintrag der app und gibt an, ob die app für Kinder unter 13 Jahren vorgesehen ist. Der Zugriff auf die API beschränkt sich derzeit auf Entwickler, die von Microsoft eine Berechtigung erhalten haben.  |
+| [Access-Analytics-Daten](access-analytics-data-using-windows-store-services.md) | Verwenden der *Microsoft Store-Textanalyse-API* programmgesteuert abrufen von Analysedaten für Ihre apps. Mit dieser API können Sie Daten für App- und Add-on- (auch als In-App-Produkte oder IAP bezeichnet) Abrufe, App-Ausfälle, App-Bewertungen und Rezensionen sowie Leistungsdaten für In-App-Anzeigen und Werbeanzeigekampagnen abrufen. |
+| [Reagieren auf Rezensionen](respond-to-reviews-using-windows-store-services.md) | Verwenden Sie die *Microsoft Store-Rezensionen-API*, um programmgesteuert auf Rezensionen Ihrer App im Store zu reagieren. Diese API ist besonders nützlich, für Entwickler möchten auf vielen Überprüfungen zu reagieren, ohne Verwendung von Partner Center.  |
+| [Ausführen von Ad-Kampagnen](run-ad-campaigns-using-windows-store-services.md) | Verwenden der *Erweiterungen für Microsoft Store-API-* Aktionspreise Anzeigenkampagnen für Ihre apps programmgesteuert zu verwalten. Mit dieser API können Sie Ihre Kampagnen und andere zugehörige Ressourcen, z. B. Zielgruppen und Werbemittel, erstellen, aktualisieren und überwachen. Diese API ist besonders nützlich für Entwickler, die große Mengen von Kampagnen erstellen und wünschen, müssen Sie über Partner Center-Dashboard. |
+| [Erstellen und Verwalten von Übermittlungen](create-and-manage-submissions-using-windows-store-services.md) | Verwenden der *Microsoft Store-Übermittlung API* Flügen, programmgesteuert abgefragt und erstellt Übermittlungen für apps, Add-ons und -Paket für Ihre oder Ihre Organisation Partner Center-Konto. Diese API ist hilfreich, wenn über Ihr Konto viele Apps oder Add-Ons verwaltet werden und Sie den Übermittlungsprozess für diese Ressourcen automatisieren und optimieren möchten. |
+| [Verwalten von zielgerichteten angeboten ](manage-targeted-offers-using-windows-store-services.md) | Verwenden der *Microsoft Store-Ziel bietet API* programmgesteuert eine gezielte Angebot in Anspruch nehmen, die die erfolgreiche Kauf eines Add-Ons in Ihrer app zugeordnet ist. |
+| [Verwalten von Product-Berechtigungen von einem Dienst](view-and-grant-products-from-a-service.md)  | Wenn Sie einen Katalog von apps und -Add-Ons in der Store verfügen, können Sie mithilfe der *Sammlung der Microsoft Store-API-* und *Microsoft Store-Einkauf-API* den Zugriff auf den Besitz von Informationen für diese Produkte aus Ihrer Dienste, melden ein Produkt genutzt werden, wie für einen Benutzer erfüllt und einem Benutzer eine Berechtigung für ein kostenloses Produkt erteilen.  |
+| [App-Metadaten-API für die Ankündigung von Netzwerken](app-metadata-api-for-advertising-networks.md)  | Ankündigen Netzwerke kann diese API verwenden, um programmgesteuert abrufen von Metadaten zu apps in der Microsoft Store, einschließlich Details wie z. B. die Beschreibung und Kategorie für das Angebot "Store" der app und gibt an, ob die app für Kinder unter 13 vorgesehen ist. Der Zugriff auf die API beschränkt sich derzeit auf Entwickler, die von Microsoft eine Berechtigung erhalten haben.  |

@@ -1,23 +1,23 @@
 ---
-Description: Lists display and enable interaction with collection-based content.
+Description: Listen zeigen und ermöglichen die Interaktion mit sammlungsbasierten Inhalten.
 title: Listen
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 pm-contact: predavid
 design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: eb9c600e58be04d8ce967eb119777d6746507fbe
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004586"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636365"
 ---
 # <a name="lists"></a>Listen
 
@@ -34,10 +34,10 @@ Für jedes Listenmuster sind Entwurfsrichtlinien, Features und Beispiele aufgef�
 
 
 > <div id="main">
-> <strong>Windows10 Fall Creators Update – Änderung des Verhaltens</strong>
+> <strong>Windows 10 Fall Creators Update - verhaltensänderung</strong>
 > </div>
-> Beim Schwenken/Bildlauf in der Liste der UWP-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z.B. Toucheingabe, Touchpad und passiver Stift).
-> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Informationen finden Sie unter der API-Referenzthema für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.
+> Beim Schwenken/Bildlauf in der Liste der UWP-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
+> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Informationen finden Sie die API-Referenz für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.
 
 ## <a name="list-views"></a>Listenansichten
 
@@ -76,23 +76,23 @@ Dies ist eine einfache Listenansicht mit gruppierten Daten auf einem Telefon.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">Listenansicht und Rasteransicht</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">Listenansicht und der Rasteransicht</a></p></td>
 <td align="left"><p>Lernen Sie die Grundlagen der Verwendung einer Listen- oder Rasteransicht in Ihrer App kennen.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="item-containers-templates.md">Elementcontainer und Vorlagen</a></p></td>
-<td align="left"><p>Die Elemente, die Sie in einer Liste oder Raster anzeigen, können eine wichtige Rolle für das Gesamtdesign Ihrer App spielen. Ändern Sie Steuerelementvorlagen und Datenvorlagen, um das Erscheinungsbild der Elemente zu definieren, damit Ihre App ansprechend aussieht.</p></td>
+<td align="left"><p>Die Elemente, die Sie in einer Liste oder Raster anzeigen, können eine wichtige Rolle für das Gesamtdesign Ihrer App spielen. Ändern Sie Steuerelementvorlagen und Datenvorlagen, um das Erscheinungsbild der Elemente zu definieren, damit Ihre App gut aussieht.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="item-templates-listview.md">Elementvorlagen für Listenansicht</a></p></td>
 <td align="left"><p>Verwenden Sie diese Beispiel-Elementvorlagen für eine ListView, um das Erscheinungsbild gängiger App-Typen abzurufen.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="inverted-lists.md">Invertierte Listen</a></p></td>
-<td align="left"><p>Bei invertierten Listen werden neue Elemente am Ende hinzugefügt, z.B. bei einer Chat-App. Befolgen Sie diese Richtlinien, um in Ihrer App eine invertierte Liste zu verwenden.</p></td>
+<td align="left"><p><a href="inverted-lists.md">Umgekehrte Listen</a></p></td>
+<td align="left"><p>Bei invertierten Listen werden neue Elemente am Ende hinzugefügt, z. B. bei einer Chat-App. Befolgen Sie diese Richtlinien, um in Ihrer App eine invertierte Liste zu verwenden.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pull-to-refresh.md">Aktualisieren durch Ziehen</a></p></td>
+<td align="left"><p><a href="pull-to-refresh.md">Zum Aktualisieren ziehen</a></p></td>
 <td align="left"><p>Dank des Musters „Aktualisieren durch Ziehen“ können Benutzer aktuelle Daten in einer Liste durch das Ausführen einer Ziehbewegung von oben nach unten auf der Liste abrufen. Verwenden Sie diese Anleitung, um „Aktualisieren durch Ziehen“ in der Listenansicht zu implementieren.</p></td>
 </tr>
 <tr class="even">
@@ -143,7 +143,7 @@ Eine Rasteransicht eignet sich ideal für eine Inhaltsbibliothek, die häufig ve
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">Listenansicht und Rasteransicht</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">Listenansicht und der Rasteransicht</a></p></td>
 <td align="left"><p>Lernen Sie die Grundlagen der Verwendung einer Listen- oder Rasteransicht in Ihrer App kennen.</p></td>
 </tr>
 <tr class="even">
@@ -189,8 +189,8 @@ Wenn die Liste in einem Kombinationsfeld lang genug ist, wird eine Bildlaufleist
 ### <a name="recommendations"></a>Empfehlungen
 
 -   Schränken Sie den Textinhalt von Kombinationsfeldelementen auf eine einzelne Zeile ein.
--   Sortieren Sie die Elemente in einem Kombinationsfeld in der logischsten Reihenfolge. Gruppieren Sie verwandte Optionen, und platzieren Sie die am häufigsten verwendeten Optionen oben in der Liste. Sortieren Sie Namen in alphabetischer Reihenfolge, Zahlen in numerischer Reihenfolge und Datumsangaben in chronologischer Reihenfolge.
--   Um ein Kombinationsfeld zu erstellen, das live aktualisiert wird, wenn der Benutzer die Pfeiltasten (z.B. eine Dropdown-Liste für die Schriftauswahl) verwendet, müssen Sie SelectionChangedTrigger auf „Immer“ einstellen.  
+-   Sortieren Sie die Elemente in einem Kombinationsfeld in der logischsten Reihenfolge. Gruppieren Sie verwandte Optionen, und platzieren Sie die am häufigsten verwendeten Optionen oben in der Liste. Sortieren Sie Namen in alphabetischer Reihenfolge, Nummern in numerischer Reihenfolge und Datumsangaben in chronologischer Reihenfolge.
+-   Um ein Kombinationsfeld zu erstellen, das live aktualisiert wird, wenn der Benutzer die Pfeiltasten (z. B. eine Dropdown-Liste für die Schriftauswahl) verwendet, müssen Sie SelectionChangedTrigger auf „Immer“ einstellen.  
 
 ### <a name="text-search"></a>Textsuche
 
@@ -229,9 +229,9 @@ Mit dem Auswahlmodus können Benutzer ein einzelnes oder mehrere Elemente auswä
 
 Es gibt drei verschiedene Auswahlmodi:
 
--   Einzeln: Dabei kann der Benutzer jeweils nur ein Element auswählen.
--   Mehrfach: Der Benutzer kann mehrere Elemente ohne Modifizierer auswählen.
--   Erweitert: Dabei kann der Benutzer mit Zusatztasten mehrere Elemente auswählen, z.B. durch Gedrückthalten der UMSCHALTTASTE.
+-   Einzelne: Der Benutzer kann nur ein Element gleichzeitig auswählen.
+-   Mehrere: Der Benutzer kann mehrere Elemente auswählen, ohne einen Modifizierer.
+-   Erweitert: Der Benutzer kann mehrere Elemente mit einem Modifizierer, wie Sie die UMSCHALTTASTE gedrückt halten, auswählen.
 
 Durch Tippen auf ein Element wird es ausgewählt. Das Tippen auf die Aktion auf der Befehlsleiste wirkt sich auf alle ausgewählten Elemente aus. Wenn kein Element ausgewählt ist, sind die Aktionen auf der Befehlsleiste mit Ausnahme von „Alle auswählen“ in der Regel inaktiv.
 
@@ -265,7 +265,7 @@ Empfehlungen für die Befehlsleiste finden Sie unter [Richtlinien für Befehlsle
 - [Master/Details](master-details.md)
 - [Navigationsbereich](navigationview.md)
 - [Semantischer Zoom](semantic-zoom.md)
-- [Drag&Drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Drag & Drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Miniaturbilder](../../files/thumbnails.md)
 
 **Für Entwickler**

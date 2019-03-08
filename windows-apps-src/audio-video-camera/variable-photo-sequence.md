@@ -4,25 +4,25 @@ description: In diesem Artikel wird erläutert, wie Sie eine variable Fotosequen
 title: Variable Fotosequenz
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 208a61b565c0522d3e9ce88f3938f57dfa1fbddd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945195"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644845"
 ---
 # <a name="variable-photo-sequence"></a>Variable Fotosequenz
 
 
 
-In diesem Artikel wird erläutert, wie Sie eine variable Fotosequenz aufnehmen, um mehrere Frames von Bildern in schneller Folge aufzunehmen und jeden Frame so zu konfigurieren, dass unterschiedliche Einstellungen für Fokus, Blitz, ISO, Belichtung und Belichtungskorrektur verwendet werden. Mit diesem Feature können Sie z.B. HDR-Bilder (High Dynamic Range) erstellen.
+In diesem Artikel wird erläutert, wie Sie eine variable Fotosequenz aufnehmen, um mehrere Frames von Bildern in schneller Folge aufzunehmen und jeden Frame so zu konfigurieren, dass unterschiedliche Einstellungen für Fokus, Blitz, ISO, Belichtung und Belichtungskorrektur verwendet werden. Mit diesem Feature können Sie z. B. HDR-Bilder (High Dynamic Range) erstellen.
 
 Wenn Sie HDR-Bilder aufnehmen, aber nicht Ihre eigenen Algorithmen zur Bildverarbeitung implementieren möchten, können Sie mithilfe der [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) API die in Windows integrierten HDR-Funktionen verwenden. Weitere Informationen finden Sie unter [HDR-Fotoaufnahmen (High Dynamic Range)](high-dynamic-range-hdr-photo-capture.md).
 
 > [!NOTE] 
-> Dieser Artikel baut auf Konzepten und Codebeispielen auf, die unter [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md) erläutert werden. Dort werden die Schritte für die Implementierung einer grundlegenden Foto- und Videoaufnahme beschrieben. Es wird empfohlen, dass Sie sich mit dem grundlegenden Muster für die Medienerfassung in diesem Artikel vertraut machen, bevor Sie in fortgeschrittene Aufnahmeszenarien einsteigen. Bei dem Code in diesem Artikel wird davon ausgegangen, dass Ihre App bereits eine Instanz von MediaCapture aufweist, die ordnungsgemäß initialisiert wurde.
+> Dieser Artikel baut auf Konzepten und Code auf, die unter [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md) erläutert werden. Dort werden die Schritte für die Implementierung einer grundlegenden Foto- und Videoaufnahme beschrieben. Es wird empfohlen, dass Sie sich mit dem grundlegenden Muster für die Medienerfassung in diesem Artikel vertraut machen, bevor Sie in fortgeschrittene Aufnahmeszenarien einsteigen. Der Code in diesem Artikel setzt voraus, dass Ihre App bereits über eine korrekt initialisierte MediaCapture-Instanz verfügt.
 
 ## <a name="set-up-your-app-to-use-variable-photo-sequence-capture"></a>Einrichten Ihrer App mithilfe der Aufnahme einer variablen Fotosequenz
 
@@ -30,7 +30,7 @@ Neben den Namespaces für die grundlegende Medienerfassung sind für die Impleme
 
 [!code-cs[VPSUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSUsing)]
 
-Deklarieren Sie eine Membervariable, um das [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564)-Objekt zu speichern, das verwendet wird, um die Aufnahme der Fotosequenz zu initiieren. Deklarieren Sie ein Array von [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358)-Objekten, um die einzelnen aufgenommenen Bilder in der Sequenz zu speichern. Deklarieren Sie außerdem ein Array, um das [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020)-Objekt für jeden Frame zu speichern. Dazu können Sie Ihren Algorithmus zur Bildverarbeitung verwenden, um zu ermitteln, welche Einstellungen zum Aufnehmen der einzelnen Frames verwendet wurden. Abschließend deklarieren Sie einen Index, mit dem Sie nachverfolgen können, welches Bild in der Sequenz gerade erfasst wird.
+Deklarieren Sie eine Membervariable, um das [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564)-Objekt zu speichern, das verwendet wird, um die Aufnahme der Fotosequenz zu initiieren. Deklarieren Sie ein Array von [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358)-Objekten, um die einzelnen aufgenommenen Bilder in der Sequenz zu speichern. Deklarieren Sie außerdem ein Array, um das [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020)-Objekt für jeden Frame zu speichern. Dazu können Sie Ihren Algorithmus zur Bildverarbeitung verwenden, um zu ermitteln, welche Einstellungen zum Aufnehmen der einzelnen Frames verwendet wurden. Abschließend deklarieren Sie einen Index, mit dem Sie nachverfolgen können, welches Bild in der Sequenz gerade aufgenommen wird.
 
 [!code-cs[VPSMemberVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSMemberVariables)]
 
@@ -40,12 +40,12 @@ Nachdem Sie [MediaCapture](capture-photos-and-video-with-mediacapture.md) initia
 
 [!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
-Rufen Sie ein [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548)-Objekt von dem Controller der variablen Fotosequenz ab. Dieses Objekt besitzt eine Eigenschaft für jede Einstellung, die pro Frame einer Fotosequenz konfiguriert werden kann. Dazu zählen:
+Rufen Sie ein [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548)-Objekt von dem Controller der variablen Fotosequenz ab. Dieses Objekt besitzt eine Eigenschaft für jede Einstellung, die pro Frame einer Fotosequenz konfiguriert werden kann. Dazu gehören:
 
--   [**Exposure**](https://msdn.microsoft.com/library/windows/apps/dn652552)
+-   [**Offenlegung**](https://msdn.microsoft.com/library/windows/apps/dn652552)
 -   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
 -   [**Flash**](https://msdn.microsoft.com/library/windows/apps/dn652566)
--   [**Focus**](https://msdn.microsoft.com/library/windows/apps/dn652570)
+-   [**Fokus**](https://msdn.microsoft.com/library/windows/apps/dn652570)
 -   [**IsoSpeed**](https://msdn.microsoft.com/library/windows/apps/dn652574)
 -   [**PhotoConfirmation**](https://msdn.microsoft.com/library/windows/apps/dn652578)
 
@@ -63,7 +63,7 @@ Erstellen Sie ein [**ImageEncodingProperties**](https://msdn.microsoft.com/libra
 
 ## <a name="start-the-variable-photo-sequence-capture"></a>Starten der Aufnahme einer variablen Fotosequenz
 
-Rufen Sie zum Starten der Aufnahme der variablen Fotosequenz [**VariablePhotoSequenceCapture.StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn652577) auf. Achten Sie darauf, dass Sie Arrays zum Speichern der aufgenommenen Bilder und Werte des Frame-Steuerelements initialisieren und den aktuellen Index auf 0 festlegen. Legen Sie für Ihre App die Aufnahmestatusvariable fest und aktualisieren Sie Ihre Benutzeroberfläche, um das Starten einer weiteren Aufnahme zu deaktivieren, während diese Aufnahme läuft.
+Rufen Sie zum Starten der Aufnahme der variablen Fotosequenz [**VariablePhotoSequenceCapture.StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn652577) auf. Achten Sie darauf, dass Sie Arrays zum Speichern der aufgenommenen Bilder und Werte des Frame-Steuerelements initialisieren und den aktuellen Index auf 0 festlegen. Legen Sie für Ihre App die Aufnahmezustandsvariable fest, und aktualisieren Sie Ihre Benutzeroberfläche, um das Starten einer weiteren Aufnahme zu deaktivieren, während diese Aufnahme läuft.
 
 [!code-cs[StartVPSCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartVPSCapture)]
 
@@ -75,7 +75,7 @@ Das [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573
 
 ## <a name="handle-the-completion-of-the-variable-photo-sequence-capture"></a>Abschluss der Aufnahme der variablen Fotosequenz
 
-Das [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585)-Ereignis wird ausgelöst, nachdem alle Frames in der Sequenz aufgenommen wurden. Aktualisieren Sie den Aufnahmestatus Ihrer App und Ihre Benutzeroberfläche, damit Benutzer neue Aufzeichnungen initiieren können. An dieser Stelle können Sie die aufgenommenen Bilder und Werte von Frame-Steuerelementen an Ihren Bildverarbeitungscode übergeben.
+Das [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585)-Ereignis wird ausgelöst, nachdem alle Frames in der Sequenz aufgenommen wurden. Aktualisieren Sie den Aufnahmestatus Ihrer App und Ihre Benutzeroberfläche, damit Benutzer neue Aufzeichnungen initiieren können. An dieser Stelle können Sie die aufgenommenen Bilder und Werte des Frame-Steuerelements an Ihren Bildverarbeitungscode übergeben.
 
 [!code-cs[OnStopped](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnStopped)]
 
@@ -94,7 +94,7 @@ Bereinigen Sie nach der Aufnahme variabler Fotosequenzen oder nach dem Anhalten 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
-* [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

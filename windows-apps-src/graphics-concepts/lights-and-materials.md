@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 012b0bae7c0abdacba352a3e8f60bcfd0aa1dd54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935211"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646325"
 ---
 # <a name="lighting"></a>Beleuchtung
 
 
-Lichter werden verwendet, um Objekte in einer Szene zu beleuchten. Die Farbe jedes Objektscheitelpunkts basiert auf der aktuellen Texturzuordnung, Scheitelpunktfarben und Lichtquellen.
+Lichter werden verwendet, um Objekte in einer Szene zu beleuchten. Die Farbe eines Objekt-Vertex basiert auf der aktuellen Texturmap, Vertexfarben und Lichtquellen.
 
-**Hinweis:**  dieser Abschnitt gilt nur für die Pipeline mit fester Funktion. Programmierbare Shader führen jede Beleuchtung explizit aus.
+**Beachten Sie**    in diesem Abschnitt wird nur für die Pipeline-Funktion. Programmierbare Shader führen jede Beleuchtung explizit aus.
 
  
 
@@ -43,15 +43,15 @@ Lichter werden verwendet, um Objekte in einer Szene zu beleuchten. Die Farbe jed
 <td align="left"><p>Wenn Sie Direct3D-Beleuchtung verwenden, erlauben Sie es Direct3D, die Details der Beleuchtung für Sie zu übernehmen. Fortgeschrittene Benutzer können die Beleuchtung bei Bedarf selbst ausführen.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="light-types.md">Lichttypen</a></p></td>
-<td align="left"><p>Die Lichttyp-Eigenschaft bestimmt, welche Art von Lichtquelle Sie verwenden. Es gibt drei Arten von Licht in Direct3D: Punktlicht, Scheinwerferlicht und gerichtetes Licht.</p></td>
+<td align="left"><p><a href="light-types.md">Einfache Typen</a></p></td>
+<td align="left"><p>Mit der Eigenschaft „Lichttyp“ legen Sie fest, welchen Lichtquellentyp Sie verwenden. In Direct3D gibt es drei Lichttypen: Punktlichter, Spotlights und gerichtetes Licht.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="light-properties.md">Lichteigenschaften</a></p></td>
-<td align="left"><p>Lichteigenschaften beschreiben den Typ einer Lichtquelle (punktuelles, gerichtetes oder Scheinwerferlicht), Dämpfung, Farbe, Richtung, Position und Reichweite.</p></td>
+<td align="left"><p>Lichteigenschaften beschreiben die Art (Punktlicht, gerichtetes Licht, Spotlight), Dämpfung, Farbe, Richtung, Position und Reichweite einer Lichtquelle.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="mathematics-of-lighting.md">Beleuchtungsmathematik</a></p></td>
+<td align="left"><p><a href="mathematics-of-lighting.md">Mathematik der Beleuchtung</a></p></td>
 <td align="left"><p>Das Direct3D-Beleuchtungsmodell deckt Umgebungs-, diffuse, spiegelnde und ausstrahlende Beleuchtung ab. Dies bietet eine ausreichende Flexibilität zum Lösen einer breiten Palette an Beleuchtungssituationen. Die Gesamtmenge an Licht in einer Szene wird als <em>globale Beleuchtung</em> bezeichnet.</p></td>
 </tr>
 </tbody>
@@ -62,7 +62,7 @@ Lichter werden verwendet, um Objekte in einer Szene zu beleuchten. Die Farbe jed
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Direct3D-Grafik-Lernanleitung](index.md)
+[Schulungsleitfaden für Direct3D-Grafiken](index.md)
 
  
 

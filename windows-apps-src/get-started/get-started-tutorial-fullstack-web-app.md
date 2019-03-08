@@ -6,15 +6,15 @@ ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117720"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624625"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Erstellen einer Web-App mit einer einzelnen Seite mit REST API-Backend
 
-**Erstellen einer gehosteten Web-App für den Microsoft Store mit gängigen Fullstack-Webtechnologien**
+**Gehostete Web-App für den Microsoft Store mit beliebten Fullstack webtechnologien erstellen.**
 
 ![Einfaches Arbeitsspeicherspiel als Einzelseiten-Web-App](images/fullstack.png)
 
@@ -28,7 +28,7 @@ Wenn Sie diese Ressourcen nicht bereits auf dem Computer besitzen, folgen Sie de
 
  - [Node.js](https://nodejs.org/en/download/) – Stellen Sie sicher, dass Sie die Option für das Hinzufügen eines Knotens zu Ihrem PATH ausgewählt haben.
 
- - [Express-Generator](https://expressjs.com/en/starter/generator.html)– nach der Installation des Knotens mit Express installieren `npm install express-generator -g`
+ - [Express Generator](https://expressjs.com/en/starter/generator.html)– nach der Installation von Knoten, Installieren von Express mit `npm install express-generator -g`
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -40,7 +40,7 @@ Wenn Sie den Azure-Teil beenden (oder verschieben) möchten, überspringen Sie e
 
 Zunächst erstellen wir eine einfache Speicherspiel-API, um unsere Arbeitsspeicherspiele-Web-App anzutreiben. Wir verwenden [Swagger](https://swagger.io/), um unsere API zu definieren und Gerüst-Code und eine Web-Benutzeroberfläche für das manuelle Testen zu generieren.
 
-Wenn Sie diesen Abschnittüberspringen und direkt zu [Teil II: Erstellen einer Einzelseiten-Web-Anwendung](#part-ii-build-a-single-page-web-application) fortfahren möchten, gelangen Sie hier zum [fertigen Code für Teil I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Folgen Sie den Anweisungen der *Infodatei*, um den Code lokal auszuführen, oder finden Sie weitere Informationen unter *5. Ihren API-Dienst in Azure hosten und CORS* aktivieren, um ihn in Azure auszuführen.
+Wenn Sie möchten, überspringen Sie diesen Teil, und gehen direkt in [Teil II: Erstellen einer Single-Page-Webanwendung](#part-ii-build-a-single-page-web-application), hier ist die [Code Teil I beendet](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Führen Sie die *Infodatei* Anweisungen zum Abrufen der Programmieren und lokal ausgeführt oder finden Sie unter *5. Hosten Sie Ihren API-Dienst in Azure, und aktivieren Sie CORS* für die Ausführung von Azure.
 
 ### <a name="game-overview"></a>Spielübersicht
 
@@ -67,7 +67,7 @@ Die Datenstruktur für ein Arbeitsspeicherspiel besteht einfach aus einem Array 
 ]
 ```
 
-Wenn das Brett-Array an den Client übergeben wurde, werden die Werteschlüssel aus dem Array entfernt, um Täuschungen zu verhindern (z.B. Untersuchen des HTTP-Antworttexts mit Browser-Entwicklertools (F12)). So würde das gleiche neue Spiel für einen Client aussehen, der den **GET /game**-REST-Endpunkt aufruft:
+Wenn das Brett-Array an den Client übergeben wurde, werden die Werteschlüssel aus dem Array entfernt, um Täuschungen zu verhindern (z. B. Untersuchen des HTTP-Antworttexts mit Browser-Entwicklertools (F12)). So würde das gleiche neue Spiel für einen Client aussehen, der den **GET /game**-REST-Endpunkt aufruft:
 
 ```json
 [{ "cleared":"false"},{ "cleared":"false"},{ "cleared":"false"},{ "cleared":"false"}]
@@ -91,7 +91,7 @@ Initialisiert eine neues Spielbrett in der angegebenen Größe (# der Übereinst
 #### <a name="get-game"></a>GET /game
 Ruft den aktuellen Zustand des Arbeitsspeicherspiels ab.
 
-*Keine Parameter*
+*Ohne Parameter*
 
 | Antwort | Beschreibung |
 |----------|-------------|
@@ -102,18 +102,18 @@ Gibt eine Karte an, die aufgedeckt werden soll, und prüft nach einer Übereinst
 
 | Parameter | Beschreibung |
 |-----------|-------------|
-| Int *Karte* | Karten-ID (Index im Array des Spielbretts) der Karte zum Aufdecken. Jede abgeschlossene „Vermutung” besteht aus zwei angegebenen Karten (z.B. zwei Aufrufe für **/erraten** mit gültigen und eindeutigen *Karten*-Werten). Beispiel: `http://memorygameapisample/guess?card=0`|
+| Int *Karte* | Karten-ID (Index im Array des Spielbretts) der Karte zum Aufdecken. Jede abgeschlossene „Vermutung” besteht aus zwei angegebenen Karten (z. B. zwei Aufrufe für **/erraten** mit gültigen und eindeutigen *Karten*-Werten). Beispiel: `http://memorygameapisample/guess?card=0`|
 
 | Antwort | Beschreibung |
 |----------|-------------|
 | 200 OK | Gibt JSON mit gibt der **ID** und **Wert** der angegebenen Karte zurück. Beispiel: `[{"id":0,"value":1}]`|
 | 400 BAD REQUEST |  Fehler bei der angegebenen Karte. Weitere Details finden Sie im HTTP-Antworttext.|
 
-### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. API-Spezifikationen und Generieren von Codestubs
+### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. Den API-Spezifikation und Codestubs generieren
 
 Wir verwenden [Swagger](https://swagger.io/), um den Entwurf unseres Speicherspiel-APIs in funktionieRendern Node.js-Server-Code umzuwandeln. Hier erfahren Sie, wie Sie unsere [Speicherspiel-APIs als Swagger-Metadaten](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json) definieren können. Wir werden dies benutzen, um Server-Code-Stubs zu generieren.
 
-1. Erstellen Sie (z.B. in Ihrem lokalen *GitHub*-Verzeichnis) einen neuen Ordner, und laden die Datei [**API.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) herunter, die unsere Speicherspiel-API-Definitionen enthält. Stellen Sie sicher, dass der Ordnername keine Leerzeichen enthält.
+1. Erstellen Sie (z. B. in Ihrem lokalen *GitHub*-Verzeichnis) einen neuen Ordner, und laden die Datei [**API.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) herunter, die unsere Speicherspiel-API-Definitionen enthält. Stellen Sie sicher, dass der Ordnername keine Leerzeichen enthält.
 
 2. Öffnen Sie Ihre Lieblings-Shell ([, oder verwenden Sie das integrierte Terminal von Visual Studio Code!](https://code.visualstudio.com/docs/editor/integrated-terminal)) in dem Ordner, und führen Sie folgenden Knoten-Paket-Manager-Befehl (NPM-Befehl) aus, um das [Yeoman](https://yeoman.io/)-Code-Gerüst-Tool (yo) und Swagger-Generator für die globale (**-g**) Knotenumgebung zu installieren:
 
@@ -144,7 +144,7 @@ Wir verwenden [Swagger](https://swagger.io/), um den Entwurf unseres Speicherspi
 
     Starten Sie nun den VS-Code und **Datei** > **Ordner öffnen...**, und wechseln Sie zum Verzeichnis MemoryGameAPI. Dies ist der Node.js-API-Server, den Sie gerade erstellt haben! Er verwendet das beliebte [ExpressJS](https://expressjs.com/en/4x/api.html)-Web-Anwendungsframework zum Strukturieren und Ausführung Ihres Projekts.
 
-### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. Servercode und Setup-Debugging anpassen
+### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. Anpassen der Servercode und das Setup zu debuggen
 
 Die *Server.js*-Datei in Ihrem Projektstammverzeichnis fungiert als die „Hauptfunktion” des Servers. Öffnen Sie sie im VS-Code, und fügen Sie Folgendes ein. Die vom generierten Code geänderten Zeilen sind mit weiteren Erläuterung versehen.
 
@@ -211,9 +211,9 @@ Damit ist es Zeit, den Server auszuführen! Richten wir nun Visual Studio Code f
 
 Drücken Sie nun F5, und öffnen Sie Ihren Browser zu [https://localhost:8000](https://localhost:8000). Die Seite sollte zur Swagger-Benutzeroberfläche unserer Speicherspiel-API geöffnet werden, und von dort aus können Sie die Details und die Eingabefelder für die einzelnen Methoden erweitern. Sie können sogar versuchen, die APIs aufzurufen. Deren Antworten werden jedoch nur Pseudo-Daten enthalten (bereitgestellt durch das [Swagmock](https://www.npmjs.com/package/swagmock)-Modul). Es ist Zeit, unsere Spiellogik hinzuzufügen, um diese APIs real zu machen.
 
-### <a name="3-set-up-your-route-handlers"></a>3. Richten Sie Ihre Routen-Handler ein.
+### <a name="3-set-up-your-route-handlers"></a>3. Richten Sie die Routenhandler
 
-Die Swagger-Datei (config\swagger.json) weist unseren Server an, wie verschiedene HTTP-Clientanforderungen durch die Zuordnung der einzelnen von ihm festgelegten URL-Pfade zu einer Handler-Datei (in \handlers) behandelt werden, und jede für den Pfad definierte Methode (z.B. **abrufen**, **POST**) zu einer `operationId` (Funktion) in der Handler-Datei.
+Die Swagger-Datei (config\swagger.json) weist unseren Server an, wie verschiedene HTTP-Clientanforderungen durch die Zuordnung der einzelnen von ihm festgelegten URL-Pfade zu einer Handler-Datei (in \handlers) behandelt werden, und jede für den Pfad definierte Methode (z. B. **abrufen**, **POST**) zu einer `operationId` (Funktion) in der Handler-Datei.
 
 In dieser Ebene unsere Programms werden wir Eingabeüberprüfungen hinzufügen, bevor wir die verschiedenen Clientanforderungen an unser Datenmodell übergeben. Herunterladen (oder kopieren und einfügen):
 
@@ -221,9 +221,9 @@ In dieser Ebene unsere Programms werden wir Eingabeüberprüfungen hinzufügen, 
  - Dieser [guess.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/handlers/guess.js?token=ACEfkswel02rHVr0e61bVsNdpv_i1Rtuks5ZFhXPwA%3D%3D)-Code für Ihre **handlers\guess.js**-Datei
  - Dieser [new.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/handlers/new.js?token=ACEfkgk2QXJeRc0aaLzY5ulFsAR4Juidks5ZFhXawA%3D%3D)-Code für Ihre **handlers\new.js**-Datei
 
- Sie können die Kommentare in diesen Dateien für weitere Details zu den Änderungen überfliegen, aber im Wesentlichen prüfen sie nach grundlegenden Eingabefehlern (z.B. der Client fordert ein neues Spiel mit weniger als eine Übereinstimmung an) und senden bei Bedarf aussagekräftige Fehlermeldungen. Die Handler leiten außerdem gültige Clientanforderungen an die entsprechenden Datendateien (in \data) zur weiteren Verarbeitung weiter. Lassen Sie uns nun mit diesen Dateien weiterarbeiten.
+ Sie können die Kommentare in diesen Dateien für weitere Details zu den Änderungen überfliegen, aber im Wesentlichen prüfen sie nach grundlegenden Eingabefehlern (z. B. der Client fordert ein neues Spiel mit weniger als eine Übereinstimmung an) und senden bei Bedarf aussagekräftige Fehlermeldungen. Die Handler leiten außerdem gültige Clientanforderungen an die entsprechenden Datendateien (in \data) zur weiteren Verarbeitung weiter. Lassen Sie uns nun mit diesen Dateien weiterarbeiten.
 
-### <a name="4-set-up-your-data-model"></a>4. Richten Sie Ihr Datenmodell ein
+### <a name="4-set-up-your-data-model"></a>4. Richten Sie Ihr Datenmodell
 
 Es ist Zeit, den Platzhalter für den imitieRendern Dienst mit einem echten Datenmodell für unser Speicherspielbrett auszutauschen.
 
@@ -233,7 +233,7 @@ Diese Ebene unseres Programms stellt die Speicherkarten selbst dar und bietet de
  - Dieser [guess.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/guess.js?token=ACEfkvY69Zr1AZQ4iXgfCgDxeinT21bBks5ZFhYBwA%3D%3D)-Code für Ihre **data\guess.js**-Datei
  - Dieser [new.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/new.js?token=ACEfkiqeDN0HjZ4-gIKRh3wfVZPSlEmgks5ZFhYPwA%3D%3D)-Code für Ihre **data\new.js**-Datei
 
-Der Einfachheit halber speichern wir unser Spielbrett in einer globalen Variable (`global.board`) auf dem Serverknoten. Aber realistisch gesehen würden Sie Cloud-Speicher (z.B. Google [Cloud-Datenspeicher](https://cloud.google.com/datastore/) oder Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) verwenden, um die Funktion in eine geeignete Speicherspiel-API-Dienst zu verwandeln, der gleichzeitig mehrere Spiele und Spieler unterstützt.
+Der Einfachheit halber speichern wir unser Spielbrett in einer globalen Variable (`global.board`) auf dem Serverknoten. Aber realistisch gesehen würden Sie Cloud-Speicher (z. B. Google [Cloud-Datenspeicher](https://cloud.google.com/datastore/) oder Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) verwenden, um die Funktion in eine geeignete Speicherspiel-API-Dienst zu verwandeln, der gleichzeitig mehrere Spiele und Spieler unterstützt.
 
 Stellen Sie sicher, dass Sie alle Änderungen in VS-Code gespeichert haben. Führen Sie den Server erneut aus (F5 in VS-Code oder `npm start` von Shell, und navigieren Sie dann zu [https://localhost:8000](https://localhost:8000)), um die Spiele-APIs zu testen.
 
@@ -270,17 +270,17 @@ for (var i=0; i < board.length; i++){
 
 Mit dieser Änderung wird die **GET /game**-Methode alle Kartenwerte (einschließlich diejenigen, die noch nicht gelöscht wurden) zurückgeben. Hierbei handelt es sich um einen hilfreichen Debug-Hack, den Sie beim Erstellen des Front-Ends Ihres Spiels aufbewahren können.
 
-### <a name="5-optional-host-your-api-service-on-azure-and-enable-cors"></a>5. (Optional) Hosten Sie Ihren API-Dienst in Azure und aktivieren Sie CORS
+### <a name="5-optional-host-your-api-service-on-azure-and-enable-cors"></a>5. (Optional) Hosten Sie Ihren API-Dienst in Azure, und Aktivieren von CORS
 
 Mit der Azure-Dokumentation begleitet Sie beim:
 
- - [Registrieren einer neuen *API-App* mit Azure-Portal](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [Registrieren eines neuen *API-App* mit Azure-Portal](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
  - [Einrichten von Git-Bereitstellung für Ihre API-App](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git), und
- - [Bereitstellen von API-App-Code in Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
+ - [Bereitstellen des API-app-Codes in Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 Versuchen Sie bei der Registrierung Ihrer App Ihren *App-Namen* zu differenzieren (zum Vermeiden von Überschneidungen mit anderen, die Varianten unter *http://memorygameapi.azurewebsites.net* URL anfordern).
 
-Wenn sie es bis hier hin geschafft haben und Azure jetzt die Swagger-Benutzeroberfläche anzeigt, gibt nur noch einen letzten Schrittfür das Arbeitsspeicherspiel-Back-End. Von [Azure-Portal](https://portal.azure.com), wählen Sie den neu erstellten *App-Dienst* und dann wählen oder suchen Sie nach der **CORS**-Option (Cross-Origin Resource Sharing). Fügen Sie unter **Zulässige Ursprünge** ein Sternchen (`*`) hinzu und klicken Sie auf **Speichern**. Auf diese Weise können Sie ursprungsübergreifende Aufrufe Ihrer API-Dienste aus dem Arbeitsspeicherspiel-Front-End während der Entwicklung auf dem lokalen Computer durchführen. Nach dem Abschließen des Speicherspiel-Front-Ends und das Bereitstellen auf Azure können Sie diesen Eintrag mit der bestimmten URL Ihrer Web-App ersetzen.
+Wenn sie es bis hier hin geschafft haben und Azure jetzt die Swagger-Benutzeroberfläche anzeigt, gibt nur noch einen letzten Schritt für das Arbeitsspeicherspiel-Back-End. Von [Azure-Portal](https://portal.azure.com), wählen Sie den neu erstellten *App-Dienst* und dann wählen oder suchen Sie nach der **CORS**-Option (Cross-Origin Resource Sharing). Fügen Sie unter **Zulässige Ursprünge** ein Sternchen (`*`) hinzu und klicken Sie auf **Speichern**. Auf diese Weise können Sie ursprungsübergreifende Aufrufe Ihrer API-Dienste aus dem Arbeitsspeicherspiel-Front-End während der Entwicklung auf dem lokalen Computer durchführen. Nach dem Abschließen des Speicherspiel-Front-Ends und das Bereitstellen auf Azure können Sie diesen Eintrag mit der bestimmten URL Ihrer Web-App ersetzen.
 
 ### <a name="going-further"></a>Vertiefung
 
@@ -288,13 +288,13 @@ Um die Speicherspiel-API als einen geeigneten Back-End-Dienst für eine Produkti
 
 Hier sind einige nützliche Ressourcen für die weiterfühRendern Schritte:
 
- - [Erweitertes Node.js-Debugging mit Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
+ - [Erweiterte Node.js Debuggen mit Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + Mobile Dokumente](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Azure-Web + Mobile-Dokumentation](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
 
- - [Azure DocumentDB-Dokumente](https://docs.microsoft.com/en-us/azure/documentdb/index)
+ - [Azure DocumentDB-Dokumentation](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## <a name="part-ii-build-a-single-page-web-application"></a>Teil II: Erstellen einer Einzelseiten-Web-Anwendungs
+## <a name="part-ii-build-a-single-page-web-application"></a>Teil II: Erstellen einer Single-Page-Webanwendung
 
 Nun, da Sie mit dem Erstellen (oder [Herunterladen](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) des [REST-API-Back-Ends](#part-i-build-a-rest-api-backend) aus Teil I fertig sind, sind Sie bereit, um das Einzelseiten-Speicherspiel-Front-End mit [Knoten](https://nodejs.org/en/), [Express](https://expressjs.com/), und [Bootstrap](https://getbootstrap.com/) zu erstellen.
 
@@ -307,7 +307,7 @@ Teil II dieses Lernprogramms wird Ihnen folgende Kenntnisse übermitteln:
 * [Bootstrap](https://getbootstrap.com/): für das dynamische Layout
 * [Visual Studio Code](https://code.visualstudio.com/): Für das Schreiben von Code, Anzeigen des Markdowns und das Debugging
 
-### <a name="1-create-a-nodejs-application-by-using-express"></a>1. Erstellen Sie eine Node.js-Anwendung mit Express
+### <a name="1-create-a-nodejs-application-by-using-express"></a>1. Erstellen Sie eine Node.js-Anwendung mithilfe von Express
 
 Beginnen wir mit der Erstellung des Node.js-Projekts mithilfe von Express.
 
@@ -345,7 +345,7 @@ Beginnen wir mit der Erstellung des Node.js-Projekts mithilfe von Express.
 
 7. Beenden Sie Ihre App zum Aktualisieren der App und zum Anzeigen Ihres neues Titels durch Drücken von **STRG+C**, **Y** in der Befehlszeile, und starten Sie sie mit `npm start` neu.
 
-### <a name="2-add-client-side-game-logic-code"></a>2. Fügen Sie die clientseitigen Spiellogik-Code hinzu
+### <a name="2-add-client-side-game-logic-code"></a>2. Fügen Sie Code für die clientseitige Spiellogik
 Sie finden die Dateien, die Sie für diese Hälfte des Lernprogramms benötigen, im [Start](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Start)-Ordner. Wenn Sie sich verirren, steht der fertige Code im [endgültigen](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Final) Ordner zur Verfügung. 
 
 1. Kopieren Sie die Datei scripts.js in den [Start](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Start)-Ordner und fügen Sie ihn in memory\public\javascripts ein. Diese Datei enthält die gesamte Spiellogik, die zum Ausführen des Spiels erforderlich ist, einschließlich:
@@ -464,17 +464,17 @@ Sie finden die Dateien, die Sie für diese Hälfte des Lernprogramms benötigen,
 > [!TIP] 
 > Wenn Sie Visual Studio Code verwenden, wählen Sie alle Codezeilen aus, bei denen Sie die Kommentare löschen möchten, und drücken Sie STRG+K, U.
 
-Hier verwenden wir [`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) und die **PLATZIEREN**[`/guess`](#part-i-build-a-rest-api-backend)-Methode, die wir in Teil I erstellt haben. 
+Hier verwenden wir [ `jQuery.ajax()` ](https://api.jquery.com/jQuery.ajax/) und **PUT** [ `/guess` ](#part-i-build-a-rest-api-backend) in Teil I erstellten Methode. 
 
 Dieser Code wird in der folgenden Reihenfolge ausgeführt.
 
-* Die `id` der ersten vom Benutzer ausgewählten Karte wird als erster Wert in das SelectedCards[]-Array hinzugefügt: `selectedCards[0]` 
+* Die `id` der ersten Karte vom Benutzer ausgewählten als der erste Wert in das SelectedCards []-Array hinzugefügt wird: `selectedCards[0]` 
 * Der Wert (`id`) in `selectedCards[0]` wird an den Server anhand der [`/guess`](#part-i-build-a-rest-api-backend)-Methode gesendet.
 * Der Server antwortet mit dem `value` der Karte (eine ganze Zahl).
-* Ein [Bootstrap Glyphicon](https://getbootstrap.com/components/) wird an die Rückseite der Karte hinzugefügt, deren `id` folgendermaßen lautet. `selectedCards[0]`
+* Ein [Bootstrap Glyphicon](https://getbootstrap.com/components/) wurde in den Hintergrund der Karte, deren `id` ist `selectedCards[0]`
 * Der `value` der ersten Karte (vom Server) ist im `selectedCardsValues[]`-Array: `selectedCardsValues[0]` gespeichert. 
 
-Der zweite Versuch des Benutzers folgt derselben Logik. Wenn die vom Benutzer ausgewählten Karten die gleichen IDs besitzen (z.B. `selectedCards[0] == selectedCards[1]`), stimmen die Karten überein! Die CSS-Klasse `.matched` wird den übereinstimmenden Karten hinzugefügt (wodurch sie grün werden), und die Karten bleiben aufgedeckt.
+Der zweite Versuch des Benutzers folgt derselben Logik. Wenn die vom Benutzer ausgewählten Karten die gleichen IDs besitzen (z. B. `selectedCards[0] == selectedCards[1]`), stimmen die Karten überein! Die CSS-Klasse `.matched` wird den übereinstimmenden Karten hinzugefügt (wodurch sie grün werden), und die Karten bleiben aufgedeckt.
 
 Nun müssen wir Logik hinzufügen, um zu überprüfen, ob der Benutzer alle übereinstimmenden Karten gefunden und das Spiel gewonnen hat. Fügen Sie in der `flipCard()`-Funktion die folgenden Codezeilen unter dem `//check if the user won the game`-Kommentar hinzu. 
 
@@ -487,10 +487,10 @@ if (cardsFlipped == gameBoardSize) {
 }   
 ```
 
-Wenn die Anzahl der aufgedeckten Karten die Größe des Spielbretts entspricht (z.B. `cardsFlipped == gameBoardSize`), gibt keine weiteren Karten, die aufgedeckt werden können, und der Benutzer hat das Spiel gewonnen. Wir fügen einige einfache HTML-Codezeilen zur `div` hinzu mit `id="game-board"`, damit der Benutzer weiß, dass er gewonnen hat und erneut spielen kann.  
+Wenn die Anzahl der aufgedeckten Karten die Größe des Spielbretts entspricht (z. B. `cardsFlipped == gameBoardSize`), gibt keine weiteren Karten, die aufgedeckt werden können, und der Benutzer hat das Spiel gewonnen. Wir fügen einige einfache HTML-Codezeilen zur `div` hinzu mit `id="game-board"`, damit der Benutzer weiß, dass er gewonnen hat und erneut spielen kann.  
 
-### <a name="3-create-the-user-interface"></a>3. Erstellen einer Benutzeroberfläche 
-Jetzt sehen wir uns diesen Code in Aktion an, indem wir die Benutzeroberfläche erstellen. In diesem Lernprogramm verwenden wir das Vorlagenmodul [Pug](https://pugjs.org/) (formell Jade).  *Pug* ist eine saubere Syntax zum Schreiben von HTML-Code, die auf Leerzeichen achtet. Beispiel: 
+### <a name="3-create-the-user-interface"></a>3. Erstellen der Benutzeroberfläche 
+Jetzt sehen wir uns diesen Code in Aktion an, indem wir die Benutzeroberfläche erstellen. In diesem Lernprogramm verwenden wir das Vorlagenmodul [Pug](https://pugjs.org/) (formell Jade).  *Pug* ist eine saubere Syntax zum Schreiben von HTML-Code, die auf Leerzeichen achtet. Hier sehen Sie ein Beispiel. 
 
 ```
 body
@@ -537,13 +537,13 @@ Diese Datei erweitert die Datei layout.pug und wird unser Spiel rendern. Fügen 
     ```
 
 > [!TIP] 
-> Denken Sie daran: Pug beachtet Leerzeichen. Stellen Sie sicher, dass alle Ihre Einzüge richtig sind!
+> merken: Pug ist ein Leerraum vertrauliche. Stellen Sie sicher, dass alle Ihre Einzüge richtig sind!
 
-### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4. Verwenden Sie das Rastersystem von Bootstrap, um ein dynamisches Layout zu erstellen.
+### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4. Verwenden von Bootstrap-Rastersystem zu ein reaktionsfähigen Layout erstellen
 Das [Rastersystem](https://getbootstrap.com/css/#grid) von Bootstrap ist ein dynamisches Rastersystem, das ein Raster beim Ändern eines Geräte-Viewports skaliert. Die Karten in diesem Spiel verwenden die vordefinierten Rastersystemklassen von Bootstrap für das Layout, einschließlich:
-* `.container-fluid`: Gibt den dynamischen Container für das Raster an
-* `.row-fluid`: Gibt die dynamischen Zeilen an
-* `.col-xs-3`: Gibt die Anzahl von Spalten an
+* `.container-fluid`: Gibt den flüssigen Container für das Raster
+* `.row-fluid`: Gibt an, die fließende Zeilen
+* `.col-xs-3`: Gibt die Anzahl von Spalten
 
 Mit dem Rastersystem von Bootstrap kann ein Rastersystem in eine vertikalen Spalte zusammengeklappt werden, wie bei einem Navigationsmenü eines mobilen Geräts.  Da wir jedoch bei unserem Spiel immer Spalten haben sollen, verwenden wir die vordefinierte Klasse `.col-xs-3`, die jederzeit für ein horizontales Raster sorgt. 
 
@@ -572,7 +572,7 @@ Das Rastersystem ermöglicht bis zu 12 Spalten. Da wir nur 4 Spalten in unserem 
                 script restoreGame();
     ```
 
-### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5. Fügen Sie eine Karten-Flip-Animation mit CSS-Transformationen hinzu
+### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5. Hinzufügen einer Karte-Flip-Animation mit CSS-Transformationen
 Ersetzen Sie die Datei style.css im Verzeichnis memory\public\stylesheets mit der Datei style.css aus dem Ordner „Start”.
 
 Das Hinzufügen einer Flip-Bewegung mit [CSS-Transformationen](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms) verleiht den Karten eine realistische 3D-Flip-Bewegung. Die Karten im Spiel werden anhand der folgenden HTML-Struktur erstellt und dem Spielbrett programmgesteuert hinzugefügt (in der zuvor gezeigten `drawGameBoard()`-Funktion).
@@ -592,7 +592,7 @@ Das Hinzufügen einer Flip-Bewegung mit [CSS-Transformationen](https://docs.micr
     perspective: 1000px; 
     ```
 
-2. Fügen Sie jetzt die folgenden Eigenschaften der `.cards`-Klasse in style.css hinzu. Das `.cards` `div` ist das Element, das die Flip-Animation tatsächlich ausführt und entweder die Vorder- oder Rückseite der Karte aufdeckt. 
+2. Fügen Sie jetzt die folgenden Eigenschaften der `.cards`-Klasse in style.css hinzu. Die `.cards` `div` ist das Element, das tatsächlich die Kipp Animation, die angezeigt wird, entweder im Vordergrund oder am Ende der Karte. 
 
     ``` css
     transform-style: preserve-3d;
@@ -613,12 +613,12 @@ Das Hinzufügen einer Flip-Bewegung mit [CSS-Transformationen](https://docs.micr
     $(card).toggleClass("flip");
     ```
 
-    Wenn ein Benutzer nun auf eine Karte klickt, wird die Karte um 180Grad gedreht.
+    Wenn ein Benutzer nun auf eine Karte klickt, wird die Karte um 180 Grad gedreht.
 
-### <a name="6-test-and-play"></a>6. Testen und spielen
-Herzlichen Glückwunsch! Sie haben die Web-App erfolgreich erstellt! Testen wir sie. 
+### <a name="6-test-and-play"></a>6. Play-Test
+Gratulation! Sie haben die Web-App erfolgreich erstellt! Testen wir sie. 
 
-1. Öffnen Sie eine Eingabeaufforderung im Arbeitsspeicherverzeichnis, und geben Sie den folgenden Befehl ein: `npm start`
+1. Öffnen Sie eine Eingabeaufforderung im Verzeichnis Arbeitsspeicher aus, und geben Sie den folgenden Befehl aus: `npm start`
 
 2. Rufen Sie in Ihrem Browser [https://localhost:3000/](https://localhost:3000/) auf und spielen Sie ein Spiel!
 
@@ -626,11 +626,11 @@ Herzlichen Glückwunsch! Sie haben die Web-App erfolgreich erstellt! Testen wir 
 
     Sie können auch Ihren Code mit dem im letzten Ordner zur Verfügung gestellten Code vergleichen.
 
-4. Geben Sie zum Beenden des Spiels in das Eingabeaufforderungsfenster Folgendes ein: **STRG+C**, **Y**. 
+4. So beenden Sie das Spiel, in der Eingabeaufforderung Folgendes: **Ctrl + C**, **Y**. 
 
 ### <a name="going-further"></a>Vertiefung
 
-Sie können jetzt Sie Ihre App in Azure (oder einen anderen Cloud-Hostingdienst) zum Testen auf verschiedenen Geräteformfaktoren, z.B. Mobile, Tablet und PC, bereitstellen. (Vergessen Sie nicht, Ihre App in verschiedenen Browsern zu testen!) Sobald Ihre App für die Produktion bereit ist, können Sie sie ganz einfach als eine *gehostete Web-App* (Hosted Web App, HWA) für die *Universelle Windows-Plattform* (UWP) verpacken und sie aus dem Microsoft Store verteilen.
+Sie können jetzt Sie Ihre App in Azure (oder einen anderen Cloud-Hostingdienst) zum Testen auf verschiedenen Geräteformfaktoren, z. B. Mobile, Tablet und PC, bereitstellen. (Vergessen Sie nicht, für verschiedene Browser testen!) Sobald Ihre app für die Produktion bereit ist, Sie können problemlos Verpacken als eine *gehostete Web-App* (HWA) für die *universelle Windows-Plattform* (UWP) und verteilen Sie sie aus dem Microsoft Store.
 
 Die grundlegenden Schritte für die Veröffentlichung auf dem Microsoft Store sind:
 
@@ -640,8 +640,8 @@ Die grundlegenden Schritte für die Veröffentlichung auf dem Microsoft Store si
 
 Hier sind einige nützliche Ressourcen für die weiterfühRendern Schritte:
 
- - [Stellen Sie Ihr App-Entwicklungsprojekt für Azure-Websites bereit.](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
+ - [Bereitstellen Sie Ihres Anwendungsentwicklungsprojekts auf Azure-Websites](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [Konvertieren Ihrer Webanwendung in eine App für die Universelle Windows-Plattform (UWP).](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
+ - [Konvertieren Sie Ihre Webanwendung in einer app für die universelle Windows-Plattform (UWP)](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
 
- - [Veröffentlichen von Windows-Apps](https://developer.microsoft.com/en-us/store/publish-apps)
+ - [Veröffentlichen von Windows-apps](https://developer.microsoft.com/en-us/store/publish-apps)

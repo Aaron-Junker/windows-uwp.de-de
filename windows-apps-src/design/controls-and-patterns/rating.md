@@ -4,18 +4,18 @@ title: Bewertungssteuerelement
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 pm-contact: abarlow
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036902"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644925"
 ---
 # <a name="rating-control"></a>Bewertungssteuerelement
 
@@ -34,8 +34,8 @@ Das Bewertungssteuerelement ermöglicht Benutzern das Anzeigen und Festlegen von
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/RatingControl">die App zu öffnen und RatingControl in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -43,7 +43,7 @@ Das Bewertungssteuerelement ermöglicht Benutzern das Anzeigen und Festlegen von
 
 ### <a name="editable-rating-with-placeholder-value"></a>Bearbeitbare Bewertung mit Platzhalterwert
 
-Das Bewertungssteuerelement wird wahrscheinlich am häufigsten eingesetzt, um eine durchschnittliche Bewertung anzuzeigen, wobei dem Benutzer dennoch erlaubt wird, seine eigene Bewertung einzugeben. In diesem Szenario wird das Bewertungssteuerelement anfänglich so festgelegt, dass es die durchschnittliche Zufriedenheitsbewertung aller Benutzer eines bestimmten Dienstes oder einer Art von Inhalt (z.B. Musik, Videos, Bücher usw.) widerspiegelt. Es bleibt in diesem Zustand, bis ein Benutzer mit dem Steuerelement mit dem Ziel interagiert, ein Element persönlich zu bewerten. Durch diese Interaktion wird der Zustand des Bewertungssteuerelements entsprechend der persönlichen Zufriedenheitsbewertung des Benutzers geändert.
+Das Bewertungssteuerelement wird wahrscheinlich am häufigsten eingesetzt, um eine durchschnittliche Bewertung anzuzeigen, wobei dem Benutzer dennoch erlaubt wird, seine eigene Bewertung einzugeben. In diesem Szenario wird das Bewertungssteuerelement anfänglich so festgelegt, dass es die durchschnittliche Zufriedenheitsbewertung aller Benutzer eines bestimmten Dienstes oder einer Art von Inhalt (z. B. Musik, Videos, Bücher usw.) widerspiegelt. Es bleibt in diesem Zustand, bis ein Benutzer mit dem Steuerelement mit dem Ziel interagiert, ein Element persönlich zu bewerten. Durch diese Interaktion wird der Zustand des Bewertungssteuerelements entsprechend der persönlichen Zufriedenheitsbewertung des Benutzers geändert.
 
 #### <a name="initial-average-rating-state"></a>Anfänglicher durchschnittlicher Bewertungszustand
 ![Anfänglicher durchschnittlicher Bewertungszustand](images/rating_rs2_doc_movie_aggregate.png)
@@ -73,7 +73,7 @@ private void RatingChanged(RatingControl sender, object args)
 
 ### <a name="read-only-rating-mode"></a>Schreibgeschützter Bewertungsmodus
 
-Manchmal müssen Sie Bewertungen von sekundärem Inhalt anzeigen, z.B. Bewertungen, die in empfohlenem Inhalt angezeigt werden, oder wenn eine Liste von Kommentaren und die entsprechenden Bewertungen angezeigt werden. In diesem Fall sollte der Benutzer die Bewertung nicht bearbeiten können. Daher können Sie für das Steuerelement den schreibgeschützten Modus festlegen.
+Manchmal müssen Sie Bewertungen von sekundärem Inhalt anzeigen, z. B. Bewertungen, die in empfohlenem Inhalt angezeigt werden, oder wenn eine Liste von Kommentaren und die entsprechenden Bewertungen angezeigt werden. In diesem Fall sollte der Benutzer die Bewertung nicht bearbeiten können. Daher können Sie für das Steuerelement den schreibgeschützten Modus festlegen.
 Das Bewertungssteuerelement sollte auch dann im schreibgeschützten Modus verwendet werden, wenn es in sehr großen virtualisierten Listen mit Inhalt, für UI-Design und aus Leistungsgründen, eingesetzt wird.
 
 ![Schreibgeschützte lange Liste](images/rating_rs2_doc_reviews.png)

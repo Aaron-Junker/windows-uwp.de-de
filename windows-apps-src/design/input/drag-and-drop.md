@@ -4,26 +4,26 @@ title: Drag & Drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e508feb8a530f29b40d5a3839df573cb2ce89896
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932171"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634395"
 ---
 # <a name="drag-and-drop"></a>Drag & Drop
 
 Drag&Drop ist eine intuitive Methode zum Übertragen von Daten in einer Anwendung oder zwischen Anwendungen auf dem Windows-Desktop. Per Drag&Drop können Benutzer Daten zwischen Anwendungen oder innerhalb einer Anwendung mit einer Standardgeste übertragen (Drücken, Halten und Ziehen mit dem Finger bzw. Drücken und Ziehen mit der Maus oder einem Stift.)
 
-> **Wichtige APIs**: [CanDrag property](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag), [AllowDrop property](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
+> **Wichtige APIs**: ["CanDrag"-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag), ["AllowDrop"-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
 
 Die Ziehquelle, d. h die Anwendung oder der Bereich, in der bzw. dem die Ziehbewegung ausgelöst wird, stellt die zu übertragenden Daten bereit, indem ein Datenpaketobjekt gefüllt wird, das Standarddatenformate enthalten kann, einschließlich Text, RTF, HTML, Bitmaps, Speicherelemente oder benutzerdefinierte Datenformate. Die Quelle gibt auch die Art von Vorgängen an, die unterstützt werden: Kopieren, Verschieben oder Verknüpfen. Wenn der Zeiger losgelassen wird, werden die Daten abgelegt. Das Ablageziel, d. h. die Anwendung oder der Bereich unter dem Zeiger, verarbeitet das Datenpaket und gibt den ausgeführten Vorgangstyp zurück.
 
 Während des Drag&Drop-Vorgangs stellt die Ziehbenutzeroberfläche eine visuelle Anzeige des stattfindenden Drag&Drop-Vorgangstyps bereit. Dieses visuelle Feedback wird anfangs von der Quelle bereitgestellt, kann aber von den Zielen geändert werden, wenn der Mauszeiger über diese bewegt wird.
 
-Modernes Drag&Drop ist auf allen Geräten verfügbar, die UWP unterstützen. Es ermöglicht Datenübertragungen zwischen oder innerhalb von jeder Art von Anwendung, einschließlich klassischen Windows-Apps. Der Schwerpunkt dieses Artikels liegt jedoch auf der XAML-API für modernes Drag&Drop. Nach der Implementierung stehen Drag&Drop-Vorgänge für sämtliche Richtungen (App zu App, App zu Desktop und Desktop zu App) zur Verfügung.
+Modernes Drag&Drop ist auf allen Geräten verfügbar, die UWP unterstützen. Es ermöglicht Datenübertragungen zwischen oder innerhalb von jeder Art von Anwendung, einschließlich klassischen Windows-Apps. Der Schwerpunkt dieses Artikels liegt jedoch auf der XAML-API für modernes Drag&Drop. Nach der Implementierung stehen Drag & Drop-Vorgänge für sämtliche Richtungen (App zu App, App zu Desktop und Desktop zu App) zur Verfügung.
 
 Nachfolgend finden Sie ein Überblick darüber, was Sie tun müssen, um Drag&Drop in Ihrer App zu aktivieren:
 
@@ -50,7 +50,7 @@ Sie müssen keine weiteren Aktionen durchführen, um das Ziehen zu ermöglichen,
 ## <a name="construct-a-data-package"></a>Zusammensetzen eines Datenpakets 
 
 In den meisten Fällen stellt das System ein Datenpaket für Sie zusammen. Das System behandelt Folgendes automatisch:
-* Bilder
+* Abbilder
 * Text 
 
 Für andere Inhalte müssen Sie die Ereignisse **DragStarted** und **DragCompleted** bearbeiten und verwenden, um ein eigenes [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage) zusammenzustellen.
@@ -78,7 +78,7 @@ Der Einfachheit halber wird im folgenden Beispiel angenommen, dass der Benutzer 
 
 ## <a name="customize-the-ui"></a>Anpassen der Benutzeroberfläche
 
-Das System bietet eine Standardbenutzeroberfläche für Drag&Drop. Sie können jedoch auch verschiedene Teile der Benutzeroberfläche anpassen, indem Sie benutzerdefinierte Beschriftungen und Symbole festlegen oder angeben, dass keine Benutzeroberfläche angezeigt werden soll. Verwenden Sie zum Anpassen der Benutzeroberfläche die [**DragEventArgs.DragUIOverride**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DragUIOverride)-Eigenschaft.
+Das System bietet eine Standardbenutzeroberfläche für Drag & Drop. Sie können jedoch auch verschiedene Teile der Benutzeroberfläche anpassen, indem Sie benutzerdefinierte Beschriftungen und Symbole festlegen oder angeben, dass keine Benutzeroberfläche angezeigt werden soll. Verwenden Sie zum Anpassen der Benutzeroberfläche die [**DragEventArgs.DragUIOverride**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DragUIOverride)-Eigenschaft.
 
 [!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
 
@@ -86,8 +86,8 @@ Das System bietet eine Standardbenutzeroberfläche für Drag&Drop. Sie können j
 
 Bei der Toucheingabe erfordern das Ziehen eines [**UI-Elements**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement) und das Öffnen des Kontextmenüs ähnliche Touchgesten. Beide beginnen mit Drücken und Halten. Hier erfahren Sie, wie das System zwischen den beiden Aktionen für Elemente unterscheidet, die beide unterstützen: 
 
-* Wenn der Benutzer ein Element drückt und hält und es innerhalb von 500Millisekunden zu ziehen beginnt, wird es gezogen. Das Kontextmenü wird nicht angezeigt. 
-* Wenn der Benutzer drückt und hält, jedoch nicht innerhalb von 500Millisekunden zieht, wird das Kontextmenü geöffnet. 
+* Wenn der Benutzer ein Element drückt und hält und es innerhalb von 500 Millisekunden zu ziehen beginnt, wird es gezogen. Das Kontextmenü wird nicht angezeigt. 
+* Wenn der Benutzer drückt und hält, jedoch nicht innerhalb von 500 Millisekunden zieht, wird das Kontextmenü geöffnet. 
 * Wenn der Benutzer bei geöffnetem Kontextmenü versucht, das Element zu ziehen (ohne den Finger anzuheben), wird das Kontextmenü geschlossen und das Ziehen gestartet.
 
 ## <a name="designate-an-item-in-a-listview-or-gridview-as-a-folder"></a>Festlegen eines Elements in einer ListView oder GridView als Ordner
@@ -98,7 +98,7 @@ Das System zeigt automatisch die entsprechenden Animationen zum Ablegen in einen
 
 ## <a name="implementing-custom-drag-and-drop"></a>Implementieren von benutzerdefiniertem Drag&Drop
 
-Die [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)-Klasse übernimmt die meiste Arbeit bei der Implementierung von Drag&Drop für Sie. Aber wenn Sie möchten, können Sie eine eigene Version implementieren, indem Sie mithilfe der APIs im [Windows.ApplicationModel.DataTransfer.DragDrop.Core-Namespace](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
+Die [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)-Klasse übernimmt die meiste Arbeit bei der Implementierung von Drag&Drop für Sie. Aber wenn Sie möchten, können Sie Ihre eigene Version implementieren, indem Sie mithilfe der APIs in der [Windows.ApplicationModel.DataTransfer.DragDrop.Core Namespace](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
 
 | Funktion | WinRT-API |
 | --- | --- |
@@ -109,14 +109,14 @@ Die [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)-Kl
 
 
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
 * [App-zu-App-Kommunikation](index.md)
 * [AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
 * [CanDrag](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
 * [DragOver](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)
 * [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
-* [DataView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
+* ["DataView"](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
 * [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
 * [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
 * [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)

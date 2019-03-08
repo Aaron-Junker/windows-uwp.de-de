@@ -4,14 +4,14 @@ title: Verwenden des Ausrichtungssensors
 description: Hier erfahren Sie, wie Sie mithilfe der Ausrichtungssensoren die Ausrichtung des Geräts ermitteln.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4426cbc2e2d3c6e7d980b0733b6deb5178025abb
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114616"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624095"
 ---
 # <a name="use-the-orientation-sensor"></a>Verwenden des Ausrichtungssensors
 
@@ -24,16 +24,16 @@ ms.locfileid: "9114616"
 
 **Beispiele**
 
--   [Beispiel für einen Ausrichtungssensor](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
--   [Beispiel für einen einfachen Ausrichtungssensor](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
+-   [Ausrichtung Sensor-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
+-   [Beispiel für einfache Ausrichtung-sensor](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
 
 Hier erfahren Sie, wie Sie mithilfe der Ausrichtungssensoren die Ausrichtung des Geräts ermitteln.
 
-Der [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)-Namespace enthält zwei unterschiedliche Arten von Ausrichtungssensor-APIs: [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) und [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). Zwar handelt es sich bei beiden Sensoren um Ausrichtungssensoren, sie werden jedoch für vollkommen unterschiedliche Zwecke verwendet. Aber da beide Ausrichtungssensoren sind, werden auch beide in diesem Artikel behandelt.
+Es gibt zwei verschiedene Arten von APIs, die in enthaltenen ausrichtungssensor der [ **Windows.Devices.Sensors** ](https://msdn.microsoft.com/library/windows/apps/BR206408) Namespace: [**OrientationSensor** ](https://msdn.microsoft.com/library/windows/apps/BR206371) und [ **SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). Zwar handelt es sich bei beiden Sensoren um Ausrichtungssensoren, sie werden jedoch für vollkommen unterschiedliche Zwecke verwendet. Aber da beide Ausrichtungssensoren sind, werden auch beide in diesem Artikel behandelt.
 
-Die [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)-API wird in 3D-Apps verwendet, um eine Quaternionen- und eine Drehungsmatrix zu erhalten. Eine Quaternion können Sie sich am einfachsten als Drehung eines Punkts \[x,y,z\] um eine beliebige Achse vorstellen (im Gegensatz zu einer Drehungsmatrix, die Drehungen um drei Achsen darstellt). Die Mathematik hinter Quaternions ist recht exotisch, da sie die geometrischen Eigenschaften komplexer Zahlen und die mathematischen Eigenschaften imaginärer Zahlen umfasst. Das Arbeiten mit ihnen ist jedoch einfach, und sie werden von Frameworks wie DirectX unterstützt. Eine komplexe 3D-App kann mithilfe des Ausrichtungssensors die Perspektive des Benutzers anpassen. Dieser Sensor kombiniert Eingaben von Beschleunigungssensor, Gyrometer und Kompass.
+Die [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)-API wird in 3D-Apps verwendet, um eine Quaternionen- und eine Drehungsmatrix zu erhalten. Eine Quaternion kann am einfachsten verstanden werden, wie eine Drehung mit einem Punkt \[X, y, Z\] über eine beliebige Achse (Gegenüberstellung mit einer Drehung-Matrix, die nacheinander um drei Achsen darstellt). Die Mathematik hinter Quaternions ist recht exotisch, da sie die geometrischen Eigenschaften komplexer Zahlen und die mathematischen Eigenschaften imaginärer Zahlen umfasst. Das Arbeiten mit ihnen ist jedoch einfach, und sie werden von Frameworks wie DirectX unterstützt. Eine komplexe 3D-App kann mithilfe des Ausrichtungssensors die Perspektive des Benutzers anpassen. Dieser Sensor kombiniert Eingaben von Beschleunigungssensor, Gyrometer und Kompass.
 
-Die [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)-API dient zum Ermitteln der aktuellen Ausrichtung des Geräts gemäß Definitionen wie „portrait up“, „portrait down“, „landscape left“ und „landscape right“. Außerdem kann sie erkennen, ob die Oberseite des Geräts nach oben oder nach unten zeigt. Dieser Sensor gibt keine Eigenschaften wie „portrait up“ oder „landscape left“, sondern Rotationswerte wie „Not rotated“, „Rotated90DegreesCounterclockwise“ usw. zurück. In der folgenden Tabelle werden die allgemeinen Ausrichtungseigenschaften den entsprechenden Sensorwerten zugeordnet.
+Die [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)-API dient zum Ermitteln der aktuellen Ausrichtung des Geräts gemäß Definitionen wie „portrait up“, „portrait down“, „landscape left“ und „landscape right“. Außerdem kann sie erkennen, ob die Oberseite des Geräts nach oben oder nach unten zeigt. Dieser Sensor zurückgegebene Drehungswert aus und gibt die Eigenschaften wie "Hochformat" oder "Querformat links", nicht: "Nicht gedreht", "Rotated90DegreesCounterclockwise" und So weiter. In der folgenden Tabelle werden die allgemeinen Ausrichtungseigenschaften den entsprechenden Sensorwerten zugeordnet.
 
 | Ausrichtung     | Entsprechender Sensorwert      |
 |-----------------|-----------------------------------|
@@ -44,7 +44,7 @@ Die [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR20
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Sie sollten mit Extensible Application Markup Language (XAML), Microsoft für VisualC++- und Ereignissen vertraut sein.
+Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
 
 Das verwendete Gerät oder der Emulator muss einen Ausrichtungssensor unterstützen.
 
@@ -54,7 +54,7 @@ Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnit
 
 ###  <a name="instructions"></a>Anweisungen
 
--   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **VisualC#** die Option **Leere App (Universelle Windows-App)** aus.
+-   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
 -   Öffnen Sie die Projektdatei „MainPage.xaml.cs“, und ersetzen Sie den vorhandenen Code durch den folgenden Code.
 
@@ -129,7 +129,7 @@ Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnit
     }
 ```
 
-Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen ersetzen, den Sie für Ihr Projekt angegeben haben. Wenn Sie z.B. ein Projekt mit dem Namen **OrientationSensorCS** erstellt haben, ersetzen Sie `namespace App1` durch `namespace OrientationSensorCS`.
+Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen ersetzen, den Sie für Ihr Projekt angegeben haben. Wenn Sie z. B. ein Projekt mit dem Namen **OrientationSensorCS** erstellt haben, ersetzen Sie `namespace App1` durch `namespace OrientationSensorCS`.
 
 -   Öffnen Sie die Datei „MainPage.xaml“, und ersetzen Sie den ursprünglichen Inhalt durch den folgenden XML-Code.
 
@@ -175,7 +175,7 @@ Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen erset
     </Page>
 ```
 
-Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z.B. ein Projekt mit dem Namen **OrientationSensorCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="OrientationSensorCS.MainPage"`. Außerdem sollten Sie `xmlns:local="using:App1"` durch `xmlns:local="using:OrientationSensorCS"` ersetzen.
+Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z. B. ein Projekt mit dem Namen **OrientationSensorCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="OrientationSensorCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:OrientationSensorCS"`.
 
 -   Drücken Sie F5 oder wählen Sie **Debuggen** > **Debugging starten** aus, um die App zu erstellen, bereitzustellen und auszuführen.
 
@@ -193,7 +193,7 @@ Die App stellt eine Verbindung mit dem Standardausrichtungssensor in der **MainP
 _sensor = OrientationSensor.GetDefault();
 ```
 
-Die App legt das Berichtsintervall in der **MainPage**-Methode fest. Mit diesem Code wird das vom Gerät unterstützte Mindestintervall abgerufen und mit einem angeforderten Intervall von 16 Millisekunden verglichen (entspricht etwa einer Aktualisierungsrate von 60Hz). Wenn das unterstützte Mindestintervall größer als das angeforderte Intervall ist, legt der Code den Wert auf das Minimum fest. Andernfalls wird der Wert auf das angeforderte Intervall festgelegt.
+Die App legt das Berichtsintervall in der **MainPage**-Methode fest. Mit diesem Code wird das vom Gerät unterstützte Mindestintervall abgerufen und mit einem angeforderten Intervall von 16 Millisekunden verglichen (entspricht etwa einer Aktualisierungsrate von 60 Hz). Wenn das unterstützte Mindestintervall größer als das angeforderte Intervall ist, legt der Code den Wert auf das Minimum fest. Andernfalls wird der Wert auf das angeforderte Intervall festgelegt.
 
 ```csharp
 uint minReportInterval = _sensor.MinimumReportInterval;
@@ -216,7 +216,7 @@ Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnit
 
 ### <a name="instructions"></a>Anweisungen
 
--   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **VisualC#** die Option **Leere App (Universelle Windows-App)** aus.
+-   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
 -   Öffnen Sie die Projektdatei „MainPage.xaml.cs“, und ersetzen Sie den vorhandenen Code durch den folgenden Code.
 
@@ -299,7 +299,7 @@ Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnit
     }
 ```
 
-Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen ersetzen, den Sie für Ihr Projekt angegeben haben. Wenn Sie z.B. ein Projekt mit dem Namen **SimpleOrientationCS** erstellt haben, ersetzen Sie `namespace App1` durch `namespace SimpleOrientationCS`.
+Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen ersetzen, den Sie für Ihr Projekt angegeben haben. Wenn Sie z. B. ein Projekt mit dem Namen **SimpleOrientationCS** erstellt haben, ersetzen Sie `namespace App1` durch `namespace SimpleOrientationCS`.
 
 -   Öffnen Sie die Datei „MainPage.xaml“, und ersetzen Sie den ursprünglichen Inhalt durch den folgenden XML-Code.
 
@@ -321,7 +321,7 @@ Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen erset
     </Page>
 ```
 
-Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z.B. ein Projekt mit dem Namen **SimpleOrientationCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="SimpleOrientationCS.MainPage"`. Außerdem sollten Sie `xmlns:local="using:App1"` durch `xmlns:local="using:SimpleOrientationCS"` ersetzen.
+Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z. B. ein Projekt mit dem Namen **SimpleOrientationCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="SimpleOrientationCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:SimpleOrientationCS"`.
 
 -   Drücken Sie F5 oder wählen Sie **Debuggen** > **Debugging starten** aus, um die App zu erstellen, bereitzustellen und auszuführen.
 

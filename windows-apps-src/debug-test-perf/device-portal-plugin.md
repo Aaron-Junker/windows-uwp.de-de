@@ -4,16 +4,16 @@ title: Schreiben eines benutzerdefinierten Plug-Ins für das Device Portal
 description: Hier erfahren Sie, wie Sie eine UWP-App schreiben, die mit dem Windows Device Portal eine Webseite hostet und Diagnoseinformationen bereitstellt.
 ms.date: 03/24/2017
 ms.topic: article
-keywords: Windows 10, Uwp, geräteportal
+keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
 ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919326"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644465"
 ---
-# <a name="write-a-custom-plugin-for-device-portal"></a>Schreiben eines benutzerdefinierten Plug-Ins für das Device Portal
+# <a name="write-a-custom-plugin-for-device-portal"></a>Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
 
 Hier erfahren Sie, wie Sie eine UWP-App schreiben, die mit dem Windows Device Portal eine Webseite hostet und Diagnoseinformationen bereitstellt.
 
@@ -60,7 +60,7 @@ Um zu deklarieren, dass die App ein Device Portal-Anbieter ist, müssen Sie eine
 ...
 ```
 
-Das `HandlerRoute`-Attribut verweist auf den REST-Namespace, der von Ihrer App in Anspruch genommen wird. Alle HTTP-Anforderungen für diesen Namespace (implizit gefolgt von einem Platzhalter), die der Device Portal-Dienst empfängt, werden zur Behandlung an Ihre App gesendet. In diesem Fall wird jede erfolgreich authentifizierte HTTP-Anforderung für `<ip_address>/MyNamespace/api/*` an Ihre App gesendet. Konflikte zwischen Handler-Routen werden anhand einer Überprüfung nach dem Prinzip „die längste gewinnt“ aufgelöst: die Route mit der größten Übereinstimmung mit den Anforderungen wird ausgewählt. Eine Anforderung für „/MyNamespace/api/foo“ wird also z.B. dem Anbieter „/MyNamespace/api“ anstatt „/MyNamespace“ zugeordnet.  
+Das `HandlerRoute`-Attribut verweist auf den REST-Namespace, der von Ihrer App in Anspruch genommen wird. Alle HTTP-Anforderungen für diesen Namespace (implizit gefolgt von einem Platzhalter), die der Device Portal-Dienst empfängt, werden zur Behandlung an Ihre App gesendet. In diesem Fall wird jede erfolgreich authentifizierte HTTP-Anforderung für `<ip_address>/MyNamespace/api/*` an Ihre App gesendet. Konflikte zwischen Handler-Routen werden anhand einer Überprüfung nach dem Prinzip „die längste gewinnt“ aufgelöst: die Route mit der größten Übereinstimmung mit den Anforderungen wird ausgewählt. Eine Anforderung für „/MyNamespace/api/foo“ wird also z. B. dem Anbieter „/MyNamespace/api“ anstatt „/MyNamespace“ zugeordnet.  
 
 Damit dies ausgeführt werden kann, sind zwei neue Funktionen erforderlich. Diese Funktionen müssen ebenfalls der *package.appxmanifest*-Datei hinzugefügt werden.
 
@@ -108,7 +108,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-Es gibt zwei Ereignisse, die von der app, um die anforderungsbehandlungsschleife abzuschließen behandelt werden müssen: **Closed**für Wenn Device Portal-Dienst beendet wird und [**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), sodass eingehende HTTP angezeigt Anfragen und bietet die Main Funktionalität des Device Portal-Anbieters. 
+Es gibt zwei Ereignisse, die von der app zum Abschließen der anforderungsverarbeitung Schleife verarbeitet werden müssen: **Geschlossen**für jedes Mal, wenn der Dienst Device Portal heruntergefahren und [ **RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), welche Flächen eingehende HTTP-Anforderungen und bietet die wichtigste Funktionen des Device Portal Anbieter. 
 
 ## <a name="handle-the-requestreceived-event"></a>Behandeln des „RequestReceived“-Ereignisses
 Das **RequestReceived**-Ereignis wird einmal für jede HTTP-Anforderung ausgelöst, die für die angegebene Handler-Route Ihres Plug-Ins erfolgt. Die Anforderungsbehandlungsschleife für Device Portal-Anbieter ähnelt der in NodeJS Express: die Anforderungs- und Antwortobjekte werden zusammen mit dem Ereignis bereitgestellt, und der Handler reagiert, indem er das Antwortobjekt ausfüllt. In Device Portal-Anbietern verwenden das **RequestReceived**-Ereignis und seine Handler [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httprequestmessage)- und [**HttpResponseMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpresponsemessage)-Objekte.   
@@ -136,7 +136,7 @@ private void DevicePortalConnection_RequestReceived(DevicePortalConnection sende
 }
 ```
 
-In diesem Beispiel für einen Anforderungshandler rufen wir zunächst die Anforderungs- und Antwortobjekte aus dem *Args*-Parameter ab, erstellen dann eine Zeichenfolge mit der Anforderungs-URL und einige weitere HTML-Formatierungen. Dies wird in das Antwortobjekt als [**HttpStringContent**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpstringcontent)-Instanz eingefügt. Andere [**IHttpContent**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.ihttpcontent)-Klassen, z.B. diejenigen für „String” und „Buffer”, sind ebenfalls zulässig.
+In diesem Beispiel für einen Anforderungshandler rufen wir zunächst die Anforderungs- und Antwortobjekte aus dem *Args*-Parameter ab, erstellen dann eine Zeichenfolge mit der Anforderungs-URL und einige weitere HTML-Formatierungen. Dies wird in das Antwortobjekt als [**HttpStringContent**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpstringcontent)-Instanz eingefügt. Andere [**IHttpContent**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.ihttpcontent)-Klassen, z. B. diejenigen für „String” und „Buffer”, sind ebenfalls zulässig.
 
 Die Antwort wird dann als HTTP-Antwort festgelegt und der Statuscode 200 (OK) zugeordnet. In dem Browser, der den ursprünglichen Aufruf vorgenommen hat, sollte dies wie erwartet gerendert werden. Wenn der **RequestReceived**-Ereignishandler zurückkehrt, wird die Antwortnachricht automatisch an den Benutzer-Agent zurückgegeben: es ist keine zusätzliche „send“-Methode erforderlich.
 
@@ -188,7 +188,7 @@ Um die Hintergrundaufgabe zu debuggen, müssen Sie die Art und Weise ändern, wi
 2.  Aktivieren Sie auf der Registerkarte „Debuggen“ im Abschnitt „Startaktion“ das Kontrollkästchen „Eigenen Code zunächst nicht starten, sondern debuggen“.  
 ![Versetzen des Plug-Ins in den Debugmodus](images/device-portal/plugin-debug-mode.png)
 3.  Setzen Sie in der RequestReceived-Handlerfunktion einen Haltepunkt.
-![Haltepunkt beim requestreceived-Handler](images/device-portal/plugin-requestreceived-breakpoint.png)
+![Haltepunkt beim Requestreceived-Ereignishandler](images/device-portal/plugin-requestreceived-breakpoint.png)
 > [!NOTE] 
 > Stellen Sie sicher, dass die Build-Architektur genau mit der Architektur des Ziels übereinstimmt. Wenn Sie einen 64-Bit-PC verwenden, müssen Sie einen AMD64-Build bereitstellen. 
 4.  Drücken Sie F5, um Ihre App bereitzustellen.
@@ -196,7 +196,7 @@ Um die Hintergrundaufgabe zu debuggen, müssen Sie die Art und Weise ändern, wi
 6.  Öffnen Sie in Ihrem Browser den Namespace des Anbieters, und der Haltepunkt sollte erreicht werden.
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Übersicht über das Windows Device Portal](device-portal.md)
-* [Erstellen und Verwenden eines App-Diensts](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [Übersicht über die Windows Device Portal](device-portal.md)
+* [Erstellen Sie und nutzen Sie einen app service](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
 
 

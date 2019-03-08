@@ -1,6 +1,6 @@
 ---
 title: Kopieren und Zugreifen auf Ressourcendaten
-description: Nutzungsflags geben an, wie die Anwendung Ressourcendaten nutzen will, um Ressourcen nach Möglichkeit in den leistungsfähigsten Speicherbereich zu platzieren. Ressourcendaten werden von allen Ressourcen kopiert, damit CPU oder GPU ohne eine Beeinträchtigung der Leistung darauf zugreifen können.
+description: Nutzungskennzeichen geben an, wie die Anwendung Ressourcendaten verwendet, um die Ressourcen im leistungsfähigsten Speicherbereich zu platzieren. Ressourcendaten werden von allen Ressourcen kopiert, damit CPU oder GPU ohne eine Beeinträchtigung der Leistung darauf zugreifen können.
 ms.assetid: 6A09702D-0FF2-4EA6-A353-0F95A3EE34E2
 keywords:
 - Kopieren und Zugreifen auf Ressourcendaten
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d4364bf9973b69587ae042a809d026b553ee2ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932145"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662315"
 ---
 # <a name="copying-and-accessing-resource-data"></a>Kopieren und Zugreifen auf Ressourcendaten
 
 
-Nutzungsflags geben an, wie die Anwendung Ressourcendaten nutzen will, um Ressourcen nach Möglichkeit in den leistungsfähigsten Speicherbereich zu platzieren. Ressourcendaten werden von allen Ressourcen kopiert, damit CPU oder GPU ohne eine Beeinträchtigung der Leistung darauf zugreifen können.
+Nutzungskennzeichen geben an, wie die Anwendung Ressourcendaten verwendet, um die Ressourcen im leistungsfähigsten Speicherbereich zu platzieren. Ressourcendaten werden von allen Ressourcen kopiert, damit CPU oder GPU ohne eine Beeinträchtigung der Leistung darauf zugreifen können.
 
 Sie brauchen dabei weder zu berücksichtigen, ob die Ressourcen im Videospeicher oder im Systemspeicher erstellt werden, noch müssen Sie entscheiden, ob die Runtime den Speicher verwalten soll. Mit der Architektur von WDDM (Windows Display Driver Model) erstellen Apps Direct3D-Ressourcen mit verschiedenen Nutzungskennzeichen, um anzugeben, wie die Anwendung die Ressourcendaten verwendet. Das Treibermodell virtualisiert den von den Ressourcen verwendeten Speicher. Es liegt an der Verantwortung des Betriebssystem-/Treiber-/Speicher-Managers, die Ressourcen je nach erwarteter Verwendung in den leistungsfähigsten Speicherbereichen unterzubringen.
 
@@ -38,11 +38,11 @@ Es gibt zwei Haupttypen von Ressourcen: zuordbare und nicht zuordbare Ressourcen
 
 Das Kopieren von Daten auf nicht-zuordbare Ressourcen geht sehr schnell, da dies am häufigsten der Fall ist und optimiert wurde, um gute Ergebnisse zu liefern. Da die CPU nicht auf diese Ressourcen direkt zugreifen kann, werden diese optimiert, damit die GPU diese schnell ändern kann.
 
-Das Kopieren von Daten zwischen zuordbaren Ressourcen ist schwieriger, da die Leistung von der Verwendung abhängt, für die die Ressource erstellt wurde. Die GPU kann z.B. eine dynamische Ressource relativ schnell lesen, aber nicht darauf schreiben, während die GPU auf Staging-Ressourcen weder direkt schreiben noch diese lesen kann.
+Das Kopieren von Daten zwischen zuordbaren Ressourcen ist schwieriger, da die Leistung von der Verwendung abhängt, für die die Ressource erstellt wurde. Die GPU kann z. B. eine dynamische Ressource relativ schnell lesen, aber nicht darauf schreiben, während die GPU auf Staging-Ressourcen weder direkt schreiben noch diese lesen kann.
 
 Anwendungen, die Daten aus einer Ressource mit standardmäßiger Verwendung auf eine Ressource mit Staging-Verwendung kopieren möchten (damit die CPU die Daten lesen kann – ein sogenanntes GPU Readback Problem), müssen dabei vorsichtig sein. Weitere Informationen finden Sie unter [Zugreifen auf Ressourcendaten](#accessing) weiter unten.
 
-## <a name="span-idaccessingspanspan-idaccessingspanspan-idaccessingspanaccessing-resource-data"></a><span id="Accessing"></span><span id="accessing"></span><span id="ACCESSING"></span>Zugreifen auf Ressourcendaten
+## <a name="span-idaccessingspanspan-idaccessingspanspan-idaccessingspanaccessing-resource-data"></a><span id="Accessing"></span><span id="accessing"></span><span id="ACCESSING"></span>Zugreifen auf Ressourcen
 
 
 Der Zugriff auf eine Ressource erfordert die Zuordnung der Ressource. „Zuordnen” bedeutet, dass die Anwendung der CPU Zugriff auf den Speicher gewähren möchte. Der Prozess des Zuordnens einer Ressource, damit die CPU auf den zugrunde liegenden Speicher zugreifen kann, kann zu Leistungsengpässen führen. Aus diesem Grunde muss bei der Ausführung der Aufgabe besondere Vorsicht walten.
@@ -51,7 +51,7 @@ Die Leistung kann zum Stillstand kommen, wenn die Anwendung versucht, eine Resso
 
 Das Ausführen einer Zuordnung zur falschen Zeit kann möglicherweise zu schwerwiegenden Leistungseinbußen führen, da die GPU und die CPU zur Synchronisierung gezwungen werden. Diese Synchronisierung erfolgt, wenn die Anwendung auf eine Ressource zugreift, bevor die GPU den Kopiervorgang in eine Ressource beendet hat, die der CPU zugeordnet werden kann.
 
-### <a name="span-idperformanceconsiderationsspanspan-idperformanceconsiderationsspanspan-idperformanceconsiderationsspanperformance-considerations"></a><span id="Performance_Considerations"></span><span id="performance_considerations"></span><span id="PERFORMANCE_CONSIDERATIONS"></span>Leistungsaspekte
+### <a name="span-idperformanceconsiderationsspanspan-idperformanceconsiderationsspanspan-idperformanceconsiderationsspanperformance-considerations"></a><span id="Performance_Considerations"></span><span id="performance_considerations"></span><span id="PERFORMANCE_CONSIDERATIONS"></span>Überlegungen zur Leistung
 
 Sehen Sie den PC am besten als einen Computer, der eine parallele Architektur mit zwei Haupttypen von Prozessoren ausführt: eine oder mehrere CPUs und eine oder mehrere GPUs. Wie bei jeder parallelen Architektur wird die beste Leistung dann erzielt, wenn genügend Aufgaben für jeden Prozessor geplant sind, damit kein Leerlauf entsteht und wenn die Arbeit eines Prozessors nicht auf die Arbeit des anderen wartet.
 

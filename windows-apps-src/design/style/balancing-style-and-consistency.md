@@ -4,20 +4,20 @@ title: Stil und Konsistenz im Gleichgewicht (UWP-App-Design)
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ecb511fad1aa4e1605d83090a5e4e8d98efff1be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929726"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620795"
 ---
 # <a name="balancing-style-and-consistency"></a>Stil und Konsistenz im Gleichgewicht
 
  
 
-> Hinweis: Dieser Artikel ist ein früher Entwurf für Windows10 RS2. Featurenamen, Terminologie und Funktionen sind nicht endgültig.
+> Hinweis: In diesem Artikel handelt es sich um einen frühen Entwurf für Windows 10 RS2. Featurenamen, Terminologie und Funktionen sind nicht endgültig.
 
 Wenn Sie ein Produkt entwerfen, tun Sie das für die Kunden. Wir sind alle bemüht, das Design zu entwickeln, das unseren Absichten am besten entspricht. In diesem Artikel wird das Verhältnis zwischen dem Einhalten von Konventionen zum Erstellen einer konsistenten Benutzeroberfläche und dem Erstellen von einzigartigen Features und Funktionen, die Ihre App von anderen abhebt, untersucht. 
 
@@ -59,17 +59,17 @@ In diesem Modell stellen die Basisebenen eine bewährte Grundlage für die Konsi
 ## <a name="design-principles"></a>Designprinzipien
 Um dieses Modell effektiv nutzen zu können, benötigen wir eine Reihe von Designprinzipien, die uns dabei helfen, die richtigen Entscheidungen zu treffen. Dies sind unsere Arbeitsprinzipien zum Erreichen von Designkonsistenz:
 
-**Wenn es gleich aussieht, soll es sich auch gleich verhalten**
+**Wenn sie genauso aussieht, stellen sie verhalten sich gleich**
 -   Wenn Benutzer ein Textfeld, oder das Hamburger-Steuerelement, sehen, erwarten sie wahrscheinlich, dass dieses sich auf verschiedenen Geräten auf die gleiche Weise verhält. Wenn gute Gründe dafür bestehen, von einer etablierten Verhaltensweise abzuweichen, sollte auch ein Unterschied erkennbar sein, damit die Erwartungen der Benutzer entsprechend angepasst werden.
 
-**Wenn ein Element eine große Ähnlichkeit mit einem vorhandenen Element oder einer bestehenden Konvention aufweist, sollten diese auch gleich aussehen.**
+**Wenn ein Element einem vorhandenen Element oder eine Konvention sehr ähnlich aussieht, versuchen Sie es mit dem**
 -   Sie benötigen ein Symbol für „neues Dokument”. Warum ein neues entwerfen, das sich nur wenig unterscheidet, wenn Sie eins verwenden können, das die Benutzer bereits kennen.
 
-**Benutzerfreundlichkeit übertrumpft Konsistenz**
+**Benutzerfreundlichkeit Vorrang vor Konsistenz**
 -   Es ist besser, benutzerfreundlich als konsistent zu sein. In einigen Fällen müssen Sie möglicherweise neue Steuerelemente oder Verhaltensweisen entwickeln, um die Benutzerfreundlichkeit zu fördern. Das Benutzen eines Telefons mit nur einer Hand weist besondere Herausforderungen auf. Dasselbe gilt für Arbeiten mit einem 80-Zoll-Bildschirm. Ein gutes Design gibt dem Benutzer das Gefühl, ein Experte zu sein. 
 
 **Engagement ist wichtig**
 -   Es sollte nicht langweilig sein. Wenn alles flach ist und nur aus einer Farbe mit Quadraten besteht: Werden unsere Kunden dies annehmen und verwenden? Sorgen Sie für Begeisterung. Führen Sie neue Elemente ein, die Überraschungen beinhalten, ohne die Lernförderlichkeit einzuschränken. 
 
-**Verhaltensweisen ändern sich**
+**Entwickeln von Verhaltensweisen**
 -   Dies ist der schwierige Teil: Wenn sich die Branche ändert, entstehen neue Verhaltensweisen. Es besteht die Möglichkeit, dass aktuelle Verhaltensweisen verschwinden und unsere konsistenten Verhaltensweisen neue Standards annehmen müssen. Sehen Sie sich das Zoomen durch Zusammenführen an. Früher galt die Erwartung, dass das Vergrößern/Verkleinern von Bereichen über die UI +/- ausgeführt wird. In der modernen UI gilt jedoch die Erwartung, dass das Zoomen durch Zusammenführen der Finger ausgeführt wird. Sehen Sie sich neue Oberflächenparadigmen an, und nehmen Sie Weiterentwicklungen vor. 

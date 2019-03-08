@@ -4,14 +4,14 @@ description: Planen von UWP-Spielen.
 ms.assetid: 25e104da-7b79-48b2-ae15-614ba41ca90c
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiel, planen, Barrierefreiheit, Cloud, Monetarisierung, Paket, Technologie, Konzept, Genehmigung
+keywords: Windows 10, UWP, Spiel, planen, Barrierefreiheit, Cloud, Monetarisierung, Paket, Technologie, Konzept, Genehmigung
 ms.localizationpriority: medium
 ms.openlocfilehash: 47f613ff814788df947ee39590af0e01b7e3622f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946002"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653775"
 ---
 # <a name="planning-for-uwp-games"></a>Planen von UWP-Spielen
 
@@ -30,11 +30,11 @@ Dieser Abschnitt enthält Informationen zur Planung Ihres UWP-Spiels.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="game-development-platform-guide.md">Spieletechnologien</a></p></td>
+<td align="left"><p><a href="game-development-platform-guide.md">Spiele-Technologien</a></p></td>
 <td align="left"><p>Eine Liste der Technologien, die Sie beim Entwickeln von Spielen unterstützen.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="accessibility-for-games.md">Barrierefreiheit von Spielen</a></p></td>
+<td align="left"><p><a href="accessibility-for-games.md">Barrierefreiheit für Spiele</a></p></td>
 <td align="left"><p>Lernen Sie, wie Sie die Barrierefreiheit von Spielen verbessern.</p></td>
 </tr>
 <tr class="odd">
@@ -42,15 +42,15 @@ Dieser Abschnitt enthält Informationen zur Planung Ihres UWP-Spiels.
 <td align="left"><p>Verwenden Sie die Cloud für Spiele.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="monetization-for-games.md">Monetarisierung für Spiele</a></p></td>
+<td align="left"><p><a href="monetization-for-games.md">Die Möglichkeit zur Vermarktung für Spiele</a></p></td>
 <td align="left"><p>Monetarisierungsmöglichkeiten für Ihr Spiel.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="package-your-windows-store-directx-game.md">Packen Ihres Spiels</a></p></td>
+<td align="left"><p><a href="package-your-windows-store-directx-game.md">Packen Sie Ihr Spiel</a></p></td>
 <td align="left"><p>Bereiten Sie Ihr Spielpaket für den Microsoft Store vor.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="concept-approval.md">Konzeptgenehmigung</a></p></td>
+<td align="left"><p><a href="concept-approval.md">Konzept Genehmigung</a></p></td>
 <td align="left"><p>Lassen Sie Ihr Spielkonzept genehmigen.</p></td>
 </tr>
 </tbody>

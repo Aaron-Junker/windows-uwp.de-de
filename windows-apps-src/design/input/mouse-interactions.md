@@ -1,19 +1,19 @@
 ---
-Description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
+Description: Reagieren Sie in Ihren Apps auf Mauseingaben, indem Sie die gleichen einfachen Zeigerereignisse behandeln, die Sie für Touch- und Stifteingaben verwenden.
 title: Mausinteraktionen
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f81634fdb0f9382b1f660394764e5555189783e4
-ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999913"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622355"
 ---
 # <a name="mouse-interactions"></a>Mausinteraktionen
 
@@ -21,9 +21,9 @@ Optimieren Sie das Design Ihrer UWP-Apps für die Toucheingabe, und freuen Sie s
 
 ![Maus](images/input-patterns/input-mouse.jpg)
 
-Die Mauseingabe eignet sich am besten für Benutzerinteraktionen, die Präzision beim Zeigen und Klicken erfordern. Naturgemäß unterstützt die Benutzeroberfläche von Windows diese Präzision, auch wenn sie für die ungenaue Toucheingabe optimiert wurde.
+Die Mauseingabe eignet sich am besten für Benutzerinteraktionen, die Präzision beim Zeigen und Klicken erfordern. Die Benutzeroberfläche von Windows unterstützt diese Präzision, auch wenn sie für die ungenauere Toucheingabe optimiert wurde.
 
-Die Maus- und Toucheingabe unterscheiden sich dahingehend, dass bei der Toucheingabe die direkte Manipulation von UI-Elementen auf dem Bildschirm durch physische Gesten für diese Objekte (z.B. Streifen, Ziehen, Drehen usw.) emuliert werden kann. Manipulationen mit der Maus erfordern in der Regel einigen UI-Aufwand, wie z. B. die Verwendung von Handles für das Anpassen der Größe oder Drehen eines Objekts.
+Die Maus- und Toucheingabe unterscheiden sich dahingehend, dass bei der Toucheingabe die direkte Manipulation von UI-Elementen auf dem Bildschirm durch physische Gesten für diese Objekte (z. B. Streifen, Ziehen, Drehen usw.) emuliert werden kann. Manipulationen mit der Maus erfordern in der Regel einigen UI-Aufwand, wie z. B. die Verwendung von Handles für das Anpassen der Größe oder Drehen eines Objekts.
 
 In diesem Thema werden Designüberlegungen für Mausinteraktionen behandelt.
 
@@ -38,7 +38,7 @@ Ein kompakter Satz von Mausinteraktionen wird durchgängig im ganzen System verw
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Benennung</th>
+<th align="left">Begriff</th>
 <th align="left">Beschreibung</th>
 </tr>
 </thead>
@@ -49,7 +49,7 @@ Ein kompakter Satz von Mausinteraktionen wird durchgängig im ganzen System verw
 </tr>
 <tr class="even">
 <td align="left"><p>Linksklick, um primäre Aktion auszuführen</p></td>
-<td align="left"><p>Klicken Sie mit der linken Maustaste auf ein Element, um dessen primäre Aktion aufzurufen (z.B. das Starten einer App oder das Ausführen eines Befehls).</p></td>
+<td align="left"><p>Klicken Sie mit der linken Maustaste auf ein Element, um dessen primäre Aktion aufzurufen (z. B. das Starten einer App oder das Ausführen eines Befehls).</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Bildlauf, um Ansicht zu ändern</p></td>
@@ -59,7 +59,7 @@ Ein kompakter Satz von Mausinteraktionen wird durchgängig im ganzen System verw
 <td align="left"><p>Rechtsklick, um Auswahl zu treffen und Befehl auszuwählen</p></td>
 <td align="left"><p>Klicken Sie mit der rechten Maustaste, um die Navigationsleiste (sofern verfügbar) und die App-Leiste mit globalen Befehlen anzuzeigen. Klicken Sie mit der rechten Maustaste auf ein Element, um es auszuwählen und die App-Leiste mit Kontextbefehlen für das ausgewählte Element anzuzeigen.</p>
 <div class="alert">
-<strong>Hinweis:</strong>mit der rechten Maustaste, um ein Kontextmenü anzuzeigen, wenn die Auswahl oder der app-Leiste verfügbaren Befehle nicht gewünschte Benutzeroberflächenverhalten. Wir empfehlen jedoch ausdrücklich, die App-Leiste für alle Befehlsverhalten zu verwenden.
+<strong>Beachten Sie</strong>  mit der rechten Maustaste ein Kontextmenü angezeigt wird, wenn die Auswahl oder app-Leiste-Befehle nicht Benutzeroberflächenverhalten geeignet sind. Wir empfehlen jedoch ausdrücklich, die App-Leiste für alle Befehlsverhalten zu verwenden.
 </div>
 <div>
  
@@ -67,7 +67,7 @@ Ein kompakter Satz von Mausinteraktionen wird durchgängig im ganzen System verw
 </tr>
 <tr class="odd">
 <td align="left"><p>Benutzeroberflächenbefehle zum Zoomen</p></td>
-<td align="left"><p>Zeigen Sie Benutzeroberflächenbefehle auf der App-Leiste an (z.B. "+" und "-"), oder drücken Sie STRG und drehen Sie das Mausrad, um Zusammendrück- und Aufziehbewegungen zum Zoomen zu emulieren.</p></td>
+<td align="left"><p>Zeigen Sie Benutzeroberflächenbefehle auf der App-Leiste an (z. B. "+" und "-"), oder drücken Sie STRG und drehen Sie das Mausrad, um Zusammendrück- und Aufziehbewegungen zum Zoomen zu emulieren.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Benutzeroberflächenbefehle zum Drehen</p></td>
@@ -84,9 +84,9 @@ Ein kompakter Satz von Mausinteraktionen wird durchgängig im ganzen System verw
 </tbody>
 </table>
 
-## <a name="mouse-input-events"></a>Mauseingabeereignisse
+## <a name="mouse-input-events"></a>Mauseingabeereignissen
 
-Die meisten Mauseingabe kann über die allgemeine Routingereignisse Eingabeereignisse von allen [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) -Objekten unterstützt behandelt werden. Dazu zählen:
+Die meisten Maus Eingabe verarbeitet werden können, über die allgemeinen weitergeleitete Eingabe Ereignisse, die von allen unterstützten [ **"UIElement"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) Objekte. Dazu gehören:
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -101,7 +101,7 @@ Die meisten Mauseingabe kann über die allgemeine Routingereignisse Eingabeereig
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**Gedrückt halten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
@@ -124,17 +124,17 @@ Die meisten Mauseingabe kann über die allgemeine Routingereignisse Eingabeereig
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**Tippen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-Allerdings können Sie die Funktionen der einzelnen Geräte (z. B. die Ereignisse rad) mit dem Zeiger, Bewegung, Manipulationsereignisse in [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)nutzen.
+Allerdings profitieren Sie von den spezifischen Funktionen jedes Geräts (z. B. Mausereignisse für rad) mit den Zeiger, Geste und Manipulation-Ereignissen in [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
 
-**Beispiele:** Finden Sie unsere [BasicInput Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302).
+**Beispiele:** Finden Sie in unserem [BasicInput Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302), für die.
 
 ## <a name="guidelines-for-visual-feedback"></a>Richtlinien für visuelles Feedback
 
 - Wenn eine Maus erkannt wird (durch Bewegungs- oder Daraufzeigen-Ereignisse), zeigen Sie eine für Mausinteraktionen spezifische Benutzeroberfläche an, um auf vom Element verfügbar gemachte Funktionen hinzuweisen. Wenn die Maus für eine bestimmte Zeit nicht bewegt wird oder der Benutzer eine Fingereingabeinteraktion auslöst, blenden Sie die für Mausinteraktionen spezifische Benutzeroberfläche schrittweise aus. Somit bleibt die Benutzeroberfläche sauber und aufgeräumt.
 - Verwenden Sie nicht den Cursor für Zeigefeedback, das Feedback des Elements reicht aus (siehe Cursor unten).
-- Zeigen Sie kein visuelles Feedback an, wenn ein Element keine Interaktionen unterstützt (z.B. statischer Text).
+- Lassen Sie kein visuelles Feedback anzeigen, wenn ein Element keine Interaktionen unterstützt (z. B. statischer Text).
 - Verwenden Sie keine Fokusrechtecke für Mausinteraktionen. Diese sind ausschließlich für Tastaturinteraktionen vorgesehen.
 - Zeigen Sie für alle Elemente, die das gleiche Eingabeziel darstellen, das gleiche visuelle Feedback an.
 - Stellen Sie Schaltflächen (z. B. „+“ und „-“) zur Verfügung, um fingereingabebasierte Manipulationen wie etwa Schwenken, Drehen, Zoomen usw. zu emulieren.
@@ -143,9 +143,9 @@ Allgemeine Informationen zum visuellen Feedback finden Sie unter [Richtlinien f�
 
 ## <a name="cursors"></a>Cursor
 
-Für einen Mauszeiger ist eine Reihe von Standardcursor verfügbar. Diese geben die primäre Aktion eines Elements an.
+Für einen Mauszeiger ist eine Reihe von Standardcursor verfügbar. Diese Cursor werden verwendet, um die primäre Aktion eines Elements anzugeben.
 
-Jedem Standardcursor ist ein entsprechendes Standardbild zugewiesen. Benutzer einer App können das Standardbild, das einem Standardcursor zugewiesen ist, jederzeit ändern. Geben Sie über die [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273)-Funktion die Abbildung eines Cursors an.
+Jedem Standardcursor ist ein entsprechendes Standardbild zugewiesen. Benutzer einer App können das einem Standardcursor zugewiesene Standardbild jederzeit ändern. Geben Sie über die [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273)-Funktion die Abbildung eines Cursors an.
 
 Beachten Sie beim Anpassen des Mauszeigers Folgendes:
 
@@ -163,7 +163,7 @@ Beachten Sie beim Anpassen des Mauszeigers Folgendes:
 
 ### <a name="samples"></a>Beispiele
 
-- [Einfaches Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [Beispiel für Eingabe mit niedriger Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 - [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)

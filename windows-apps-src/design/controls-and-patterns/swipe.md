@@ -3,26 +3,26 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: Swipe commanding is a touch accelerator for context menus.
-title: Wischen
+Description: Wischen Befehle ist ein Touch-Beschleuniger für Kontextmenüs.
+title: Swipe
 label: Swipe
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d575eb25d9a013aa999cf304db6d83faeb87765
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037322"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626655"
 ---
-# <a name="swipe"></a>Wischen
+# <a name="swipe"></a>Swipe
 
 Wischgestenbasierte Befehle sind ein Beschleuniger für Kurzbefehlmenüs. Sie ermöglichen es Benutzern per Toucheingabe, häufig verwendete Aktionen auszuführen, ohne Zustände innerhalb der App zu ändern.
 
-> **Wichtige APIs**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **Wichtige APIs**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![Anzeige- und Ausführungsdesigns](images/LightThemeSwipe.png)
 
@@ -46,8 +46,8 @@ Wischgestenbasierte Befehle sollten verwendet werden, wenn Sie über eine große
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/SwipeControl">die App zu öffnen und SwipeControl in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -59,7 +59,7 @@ Wischgestenbasierte Befehle sollten verwendet werden, wenn Sie über eine große
 
 ## <a name="how-does-swipe-work"></a>Wie funktioniert das Wischen?
 
-UWP-Wischgestenbasierte Befehle verfügen über zwei Modi: [Anzeigen](/uwp/api/windows.ui.xaml.controls.swipemode) und [Ausführen](/uwp/api/windows.ui.xaml.controls.swipemode). Außerdem werden vier verschiedene Wischrichtungen unterstützt: nach oben, unten, links und rechts.Wischen Richtungen: nach oben, unten, links und rechts.
+UWP Wischen Befehle verfügt über zwei Modi: [Offenlegen](/uwp/api/windows.ui.xaml.controls.swipemode) und [ausführen](/uwp/api/windows.ui.xaml.controls.swipemode). Außerdem werden vier verschiedene Wischrichtungen unterstützt: nach oben, unten, links und rechts.Wischen Richtungen: nach oben, unten, links und rechts.
 
 ### <a name="reveal-mode"></a>Anzeigemodus
 
@@ -95,8 +95,8 @@ Beispielsweise sind zwei [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecont
 
 Wischbefehle verfügen über zwei Komponenten, die Sie definieren müssen:
 
-- [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), das Inhalte umschließt. In einer Sammlung, z.B. eine ListView, befindet sich diese innerhalb der DataTemplate.
-- Die Elemente des Menüs „Wischen“, bei denen es sich um mindestens ein [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)-Objekt handelt, das in direktionalen Containern des Steuerelements „Wischen“ platziert ist: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems) oder [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
+- [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), das Inhalte umschließt. In einer Sammlung, z. B. eine ListView, befindet sich diese innerhalb der DataTemplate.
+- Die Menüelemente Wischen, d.h. ein oder mehrere [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) Objekte in der wischsteuerelement direktionale Containern platziert: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems), oder [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
 
 Inhalte zum Wischen können als Inline-Inhalte platziert oder im Abschnitt „Ressourcen“ Ihrer Seite oder App platziert werden.
 
@@ -182,7 +182,7 @@ Hier ist eine ListView mit der SwipeControl, die im DataTemplate-Element angewen
 
 ## <a name="handle-an-invoked-swipe-command"></a>Behandeln eines aufgerufenen Wischbefehls
 
-Um auf einen Wischbefehl zu reagieren, behandeln Sie dessen [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked)-Ereignis. (Weitere Informationen dazu, wie ein Benutzer einen Befehl aufruft, finden Sie im Abschnitt _Funktionsweise von Wischen_ weiter oben in diesem Artikel.) Ein Wischbefehl befindet sich in der Regel in einer ListView oder in einem listenähnlichen Szenario. Wenn dann ein Befehl aufgerufen wird, können Sie eine Aktion für das gezogene Element ausführen.
+Um auf einen Wischbefehl zu reagieren, behandeln Sie dessen [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked)-Ereignis. (Für Weitere Informationen kann ein Benutzer einen Befehl aufrufen, überprüfen Sie die _wie Wischen funktioniert?_ weiter oben in diesem Artikel.) In der Regel ist ein Streifen-Befehl in einer ListView oder Liste-ähnliches Szenario ein. Wenn dann ein Befehl aufgerufen wird, können Sie eine Aktion für das gezogene Element ausführen.
 
 Gehen Sie zum Behandeln des Invoked-Ereignisses für das zuvor erstellte Wischelement _delete_ wie folgt vor.
 
@@ -235,10 +235,10 @@ Hier wird ein Wischelement vom Typ _Antwort_ so festgelegt, dass es nach dem Auf
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementkatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Listenansicht und Rasteransicht](listview-and-gridview.md)
+- [Listenansicht und der Rasteransicht](listview-and-gridview.md)
 - [Elementcontainer und Vorlagen](item-containers-templates.md)
-- [Aktualisieren durch Ziehen](pull-to-refresh.md)
+- [Zum Aktualisieren nach unten ziehen](pull-to-refresh.md)

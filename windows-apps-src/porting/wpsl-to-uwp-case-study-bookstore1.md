@@ -1,58 +1,58 @@
 ---
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: Dieses Thema enthält eine Fallstudie für das Portieren einer sehr einfachen WindowsPhone Silverlight-app zu einer app für Windows 10 universelle Windows-Plattform (UWP).
-title: WindowsPhone Silverlight zu UWP – Fallstudie, Bookstore1
+description: Dieses Thema enthält eine Fallstudie, der eine sehr einfache Windows Phone Silverlight-app für eine app für Windows 10 universelle Windows-Plattform (UWP) portieren.
+title: Windows Phone Silverlight, UWP Case Study Bookstore1
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b9f8de488ad0baea1de9aea5c911f2519385d25
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049567"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653865"
 ---
-# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>WindowsPhone Silverlight zu UWP – Fallstudie: Bookstore1
+# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight, UWP-Fallstudie: Bookstore1
 
 
-Dieses Thema enthält eine Fallstudie für das Portieren einer sehr einfachen WindowsPhone Silverlight-app zu einer app Windows10Universal Windows-Plattform (UWP). Mit Windows 10, können Sie ein einzelnes app-Paket erstellen, die Ihre Kunden auf einer Vielzahl von Geräten installieren können, und was wir in dieser Fallstudie tun. Weitere Informationen finden Sie unter [Anleitung für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+Dieses Thema enthält eine Fallstudie, der eine sehr einfache Windows Phone Silverlight-app für eine app für Windows 10 universelle Windows-Plattform (UWP) portieren. Unter Windows 10 können Sie eine einzelne app-Paket erstellen, die Ihre Kunden können auf eine Vielzahl von Geräten installieren, und das ist in dieser Fallstudie dazu. Weitere Informationen finden Sie unter [Anleitung für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
 Die portierte App besteht aus einem **ListBox**-Element, das an ein Ansichtsmodell gebunden ist. Das Ansichtsmodell verfügt über eine Liste mit Büchern, für die Titel, Autor und Bucheinband angezeigt werden. Für die Bucheinbandbilder ist **Buildvorgang** auf **Inhalt** und **In Ausgabeverzeichnis kopieren** auf **Nicht kopieren** festgelegt.
 
 Die vorherigen Themen in diesem Abschnitt beschreiben die Unterschiede zwischen den Plattformen und bieten umfassende Informationen und Anleitungen zum Portierungsprozess für verschiedene Aspekte einer App, vom XAML-Markup über die Bindung an ein Ansichtsmodell bis hin zum Zugreifen auf Daten. Dieser Leitfaden soll anhand einer Fallstudie ergänzt werden, indem ein praktisches Beispiel vorgestellt wird. Bei den Fallstudien wird davon ausgegangen, dass Sie die Anleitung gelesen haben. Sie wird nicht wiederholt.
 
-**Hinweis:**  Wenn beim Öffnen von Bookstore1Universal\_10 in Visual Studio die Meldung "Visual Studio-Update erforderlich", dann die Schritte zum Auswählen einer Zielplattform-Versionsverwaltung in [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md).
+**Beachten Sie**    beim Öffnen von Bookstore1Universal\_10 in Visual Studio, wenn die Meldung "Visual Studio-Update erforderlich", klicken Sie dann die Schritte zum Auswählen einer Ziel-Plattform-Versionsverwaltung in [ TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md).
 
 ## <a name="downloads"></a>Downloads
 
-[Download der Bookstore1WPSL8 WindowsPhone Silverlight-app](https://go.microsoft.com/fwlink/?linkid=517053).
+[Herunterladen der Bookstore1WPSL8 Windows Phone Silverlight-app](https://go.microsoft.com/fwlink/?linkid=517053).
 
-[Laden der Bookstore1Universal\_10 Windows 10-app](https://go.microsoft.com/fwlink/?linkid=532950).
+[Herunterladen der Bookstore1Universal\_10 Windows 10-app](https://go.microsoft.com/fwlink/?linkid=532950).
 
-## <a name="the-windowsphone-silverlight-app"></a>Die WindowsPhone Silverlight-app
+## <a name="the-windowsphone-silverlight-app"></a>Die Windows Phone Silverlight-app
 
 So sieht „Bookstore1WPSL8“ aus – die App, die wir portieren werden. Es handelt sich dabei einfach um ein Listenfeld mit Büchern mit vertikalem Bildlauf unter der Überschrift des App-Namens und dem Seitentitel.
 
 ![Erscheinungsbild von „Bookstore1WPSL8“](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## <a name="porting-to-a-windows10-project"></a>Portieren auf ein Windows 10-Projekt
+## <a name="porting-to-a-windows10-project"></a>Portieren auf einem Windows 10-Projekt
 
-Das Erstellen eines neuen Projekts in Visual Studio geht sehr schnell: Kopieren Sie Dateien aus „Bookstore1WPSL8“, und fügen Sie die kopierten Dateien in das neue Projekt ein. Erstellen Sie zunächst ein neues Projekt vom Typ „Leere Anwendung“ (Windows Universal). Geben Sie ihm den Namen „Bookstore1Universal\_10“. Dies sind die Dateien, die von „Bookstore1WPSL8“ nach „Bookstore1Universal\_10“ kopiert werden sollen.
+Das Erstellen eines neuen Projekts in Visual Studio geht sehr schnell: Kopieren Sie Dateien aus „Bookstore1WPSL8“, und fügen Sie die kopierten Dateien in das neue Projekt ein. Erstellen Sie zunächst ein neues Projekt vom Typ „Leere Anwendung“ (Windows Universal). Nennen Sie sie Bookstore1Universal\_10. Hierbei handelt es sich um die Dateien aus Bookstore1WPSL8 in Bookstore1Universal kopieren\_10.
 
--   Kopieren Sie den Ordner mit den PNG-Dateien für das Bucheinbandbild (Ordner „\\Assets\\CoverImages“). Vergewissern Sie sich nach dem Kopieren des Ordners im **Projektmappen-Explorer**, dass **Alle Dateien anzeigen** aktiviert ist. Klicken Sie mit der rechten Maustaste auf den kopierten Ordner, und klicken Sie dann auf **Zu Projekt hinzufügen**. Mit „Einschließen“ von Dateien oder Ordnern in einem Projekt meinen wir diesen Befehl. Klicken Sie jedes Mal, wenn Sie eine Datei oder einen Ordner kopieren, im **Projektmappen-Explorer** auf **Aktualisieren**, und schließen Sie dann die Datei oder den Ordner in das Projekt ein. Dies ist nicht für Dateien erforderlich, die Sie am Ziel ersetzen.
--   Kopieren Sie den Ordner mit der Ansichtsmodell-Quelldatei (Ordner „\\ViewModel“).
+-   Kopieren Sie den Ordner mit den Buch Cover PNG-Dateien (der Ordner ist \\Assets\\CoverImages). Vergewissern Sie sich nach dem Kopieren des Ordners im **Projektmappen-Explorer**, dass **Alle Dateien anzeigen** aktiviert ist. Klicken Sie mit der rechten Maustaste auf den kopierten Ordner, und klicken Sie dann auf **Zu Projekt hinzufügen**. Mit „Einschließen“ von Dateien oder Ordnern in einem Projekt meinen wir diesen Befehl. Klicken Sie jedes Mal, wenn Sie eine Datei oder einen Ordner kopieren, im **Projektmappen-Explorer** auf **Aktualisieren**, und schließen Sie dann die Datei oder den Ordner in das Projekt ein. Dies ist nicht für Dateien erforderlich, die Sie am Ziel ersetzen.
+-   Kopieren Sie den Ordner, die die Quelldatei des Ansicht-Modell enthält (der Ordner ist \\"ViewModel").
 -   Kopieren Sie „MainPage.xaml“, und ersetzen Sie die Datei am Ziel.
 
-Wir können die Datei "App.xaml" und "App.Xaml.cs", die Visual Studio für uns im Windows 10-Projekt generierten beibehalten.
+Wir können beibehalten, der "App.xaml", und klicken Sie auf "App.Xaml.cs", die Visual Studio im Windows 10-Projekt für uns erstellt.
 
-Bearbeiten Sie den Quellcode und die Markupdateien, die Sie gerade kopiert haben, und ändern Sie alle Verweise auf den Namespace „Bookstore1WPSL8“ in „Bookstore1Universal\_10“. Eine schnelle Möglichkeit dafür ist die Verwendung des Features **In Dateien ersetzen**. Im imperativen Code in der Ansichtsmodell-Quelldatei sind die folgenden Portierungsänderungen erforderlich:
+Bearbeiten Sie die Quelldateien von Code und Markup, das Sie gerade kopiert haben und ändern Sie alle Verweise auf den Namespace Bookstore1WPSL8 in Bookstore1Universal\_10. Eine schnelle Möglichkeit dafür ist die Verwendung des Features **In Dateien ersetzen**. Im imperativen Code in der Ansichtsmodell-Quelldatei sind die folgenden Portierungsänderungen erforderlich:
 
 -   Ändern Sie `System.ComponentModel.DesignerProperties` in `DesignMode`, und wenden Sie dann den Befehl **Auflösen** darauf an. Löschen Sie die `IsInDesignTool`-Eigenschaft, und fügen Sie mithilfe von IntelliSense den richtigen Eigenschaftsnamen hinzu: `DesignModeEnabled`.
 -   Wenden Sie den Befehl **Auflösen** auf `ImageSource` an.
 -   Wenden Sie den Befehl **Auflösen** auf `BitmapImage` an.
 -   Löschen Sie using `System.Windows.Media;` und `using System.Windows.Media.Imaging;`.
--   Ändern Sie den von der **Bookstore1Universal\_10.BookstoreViewModel.AppName**-Eigenschaft zurückgegebenen Wert von „BOOKSTORE1WPSL8“ in „BOOKSTORE1UNIVERSAL“.
+-   Ändern Sie den Rückgabewert von der **Bookstore1Universal\_10.BookstoreViewModel.AppName** -Eigenschaft von "BOOKSTORE1WPSL8" in "BOOKSTORE1UNIVERSAL".
 
 In „MainPage.xaml“ führen Sie die folgenden Portierungsänderungen aus:
 
@@ -76,9 +76,9 @@ Die Ansicht und das Ansichtsmodell arbeiten ordnungsgemäß zusammen, und das **
 
 ## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>Zurückzahlen der Schulden und erste Formatierungen
 
-Standardmäßig werden alle Ausrichtungen unterstützt. Die WindowsPhone Silverlight-app explizit auf die Ausrichtung Hochformat beschränkt, jedoch so Schulden \#1 1 und \#2 bezahlt werden, indem Sie in der app-Paketmanifest in das neue Projekt **Hochformat** unter **unterstützte Ausrichtungen**überprüfen.
+Standardmäßig werden alle Ausrichtungen unterstützt. Die Windows Phone Silverlight-app wird explizit beschränkt sich auf reinen Hochformatansicht, jedoch so schuldenbereiche \#1 und \#2 gelohnt werden, indem Sie in der app-Paket-Manifest im neuen Projekt und überprüfen **Hochformat**unter **unterstützten Ausrichtungen**.
 
-Für diese App zählt Element\#3 nicht zu den Schulden, da die Statusleiste (ehemals die Taskleiste) standardmäßig angezeigt wird. Für Elemente \#4 und \#5 müssen wir vier universelle Windows-Plattform (UWP)- **TextBlock** -Stile zu suchen, die die WindowsPhone Silverlight-Stilen entsprechen, die wir verwenden. Sie können die WindowsPhone Silverlight-app im Emulator ausführen und vergleichen es Side-by-Side mit der Abbildung im Abschnitt [Text](wpsl-to-uwp-porting-xaml-and-ui.md) . Aufgrund dieser Vorgehensweise und anhand der Eigenschaften der WindowsPhone Silverlight-Systemstile können wir in der folgenden Tabelle erstellen.
+Für diese app Element \#3 ist keine Schulden, da die Statusleiste (früher die Taskleiste genannt) wird standardmäßig angezeigt wird. Für Elemente \#4 und \#5, müssen wir vier universelle Windows-Plattform (UWP) finden **TextBlock** Stile, die die Windows Phone Silverlight-Formaten entsprechen, die wir verwendet haben. Sie können die Windows Phone Silverlight-app im Emulator ausführen und vergleichen Sie ihn die Seite-an-Seite mit der Abbildung in der [Text](wpsl-to-uwp-porting-xaml-and-ui.md) Abschnitt. Aus diese Weise und durch die Eigenschaften der Windows Phone Silverlight-Systemstile betrachten können wir in dieser Tabelle vornehmen.
 
 | Windows Phone Silverlight-Stilschlüssel | UWP-Stilschlüssel          |
 |-------------------------------------|------------------------|
@@ -87,11 +87,11 @@ Für diese App zählt Element\#3 nicht zu den Schulden, da die Statusleiste (ehe
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-Zum Festlegen dieser Stile können Sie sie einfach in den Markup-Editor eingeben oder die Visual Studio-XAML-Tools verwenden und sie festlegen, ohne etwas einzugeben. Klicken Sie dazu mit der rechten Maustaste auf **TextBlock** und dann auf **Stil bearbeiten** &gt; **Ressource anwenden**. Um dies für die **TextBlock**-Elemente in der Elementvorlage auszuführen, klicken Sie mit der rechten Maustaste auf das **ListBox**-Element und klicken dann auf **Weitere Vorlagen bearbeiten** &gt; **Erstellte Elemente bearbeiten (ItemTemplate)**.
+Zum Festlegen dieser Stile können Sie sie einfach in den Markup-Editor eingeben oder die Visual Studio-XAML-Tools verwenden und sie festlegen, ohne etwas einzugeben. Zu diesem Zweck Sie mit der rechten Maustaste ein **TextBlock** , und klicken Sie auf **Stil bearbeiten** &gt; **Ressource anwenden**. Dies mit der **TextBlock**s in der Elementvorlage, mit der rechten Maustaste die **ListBox** , und klicken Sie auf **zusätzliche Vorlagen bearbeiten** &gt; **bearbeiten Generierte Elemente (ItemTemplate)**.
 
-Die Elemente sind mit einem weißen Hintergrund mit 80% Deckkraft unterlegt, da der Standardstil des **ListBox**-Steuerelements den Hintergrund auf die `ListBoxBackgroundThemeBrush`-Systemressource festlegt. Legen Sie `Background="Transparent"` für das **ListBox**-Element fest, um den Hintergrund zu löschen. Zur Linksausrichtung der **TextBlock**-Elemente in der Elementvorlage bearbeiten Sie sie erneut wie oben beschrieben und legen unter **Margin** für beide **TextBlock**-Elemente den Wert `"9.6,0"` fest.
+Die Elemente sind mit einem weißen Hintergrund mit 80 % Deckkraft unterlegt, da der Standardstil des **ListBox**-Steuerelements den Hintergrund auf die `ListBoxBackgroundThemeBrush`-Systemressource festlegt. Legen Sie `Background="Transparent"` für das **ListBox**-Element fest, um den Hintergrund zu löschen. Zur Linksausrichtung der **TextBlock**-Elemente in der Elementvorlage bearbeiten Sie sie erneut wie oben beschrieben und legen unter **Margin** für beide **TextBlock**-Elemente den Wert `"9.6,0"` fest.
 
-Anschließend müssen wir aufgrund der [Änderungen im Zusammenhang mit Anzeigepixeln](wpsl-to-uwp-porting-xaml-and-ui.md) alle Dimensionen fester Größe, die wir noch nicht geändert haben (Ränder, Breite, Höhe, usw.), überprüfen und mit 0,8 multiplizieren. Die Bilder sollten z.B. von 70x70px in 56x56px geändert werden.
+Anschließend müssen wir aufgrund der [Änderungen im Zusammenhang mit Anzeigepixeln](wpsl-to-uwp-porting-xaml-and-ui.md) alle Dimensionen fester Größe, die wir noch nicht geändert haben (Ränder, Breite, Höhe, usw.), überprüfen und mit 0,8 multiplizieren. Die Bilder sollten z. B. von 70x70px in 56x56px geändert werden.
 
 Lassen Sie uns jedoch die Bilder rendern, bevor wir die Ergebnisse Ihrer Formatierung anzeigen.
 
@@ -123,16 +123,16 @@ Bei einer komplexeren App müssten wir an diesem Punkt den Leitfaden unter [Port
 
 Informationen dazu, wie Sie das Design Ihrer App steuern, finden Sie unter [Designänderungen](wpsl-to-uwp-porting-xaml-and-ui.md).
 
-![Die portierte Windows10-App](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
+![Die portierte Windows 10-App](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-Die portierte Windows 10-app auf einem mobilen Gerät
+Der portierten Windows 10-app auf einem mobilen Gerät ausgeführt wird
 
 ## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>Eine optionale Anpassung des Listenfelds für Mobilgeräte
 
 Wenn die App auf einem Mobilgerät ausgeführt wird, ist der Hintergrund eines Listenfelds standardmäßig in beiden Designs hell. Vielleicht ist dies der von Ihnen bevorzugte Stil. Falls dies so ist, gibt es nichts mehr zu tun. Aber die Steuerelemente sind so konzipiert, dass Sie das Aussehen anpassen können, ohne ihr Verhalten zu ändern. Wenn das Listenfeld im dunklen Design dunkel sein soll, wie in der ursprünglichen App vorgesehen, hilft Ihnen [diese Anleitung](w8x-to-uwp-case-study-bookstore1.md) unter „Eine optionale Anpassung“ weiter.
 
-## <a name="conclusion"></a>Fazit
+## <a name="conclusion"></a>Abschluss
 
-In dieser Fallstudie wurde der Prozess zum Portieren einer einfachen App gezeigt– einer zugegebenermaßen unrealistisch einfachen App. Beispielsweise können Listensteuerelemente für die Auswahl oder für die Herstellung eines Kontexts für die Navigation verwendet werden. Die App navigiert zu einer Seite mit weiteren Details zum ausgewählten Element. Diese bestimmte App führt keine Aktionen mit der Auswahl des Benutzers aus und verfügt nicht über Navigation. Dennoch diente die Fallstudie dazu, den Portierungsprozess vorzustellen und wichtige Techniken zu veranschaulichen, die Sie in echten UWP-Apps verwenden können.
+In dieser Fallstudie wurde der Prozess zum Portieren einer einfachen App gezeigt – einer zugegebenermaßen unrealistisch einfachen App. Beispielsweise können Listensteuerelemente für die Auswahl oder für die Herstellung eines Kontexts für die Navigation verwendet werden. Die App navigiert zu einer Seite mit weiteren Details zum ausgewählten Element. Diese bestimmte App führt keine Aktionen mit der Auswahl des Benutzers aus und verfügt nicht über Navigation. Dennoch diente die Fallstudie dazu, den Portierungsprozess vorzustellen und wichtige Techniken zu veranschaulichen, die Sie in echten UWP-Apps verwenden können.
 
 Die nächste Fallstudie ist [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md), in der wir den Zugriff auf und die Anzeige von gruppierten Daten behandeln.

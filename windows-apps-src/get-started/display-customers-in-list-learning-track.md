@@ -1,17 +1,17 @@
 ---
-title: Lernpfad– Anzeigen von Kunden in einer Liste
+title: Lernpfad – Anzeigen von Kunden in einer Liste
 description: Hier erfahren Sie, was Sie tun müssen, um eine Sammlung von Kundenobjekten in einer Liste anzuzeigen.
 ms.date: 05/07/2018
 ms.topic: article
-keywords: Erste Schritte, UWP, Windows10, Lernpfad, Datenbindung, Liste
+keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Datenbindung, Liste
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947742"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651375"
 ---
 # <a name="display-customers-in-a-list"></a>Anzeigen von Kunden in einer Liste
 
@@ -32,8 +32,8 @@ Jede Bindung besteht aus zwei Teilen:
 
 Um eine Datenbindung zu implementieren, müssen Sie der Quelle, die die Daten für die Bindung bereitstellt, Code hinzufügen. Sie müssen auch eine der beiden Markuperweiterungen zu Ihrem XAML-Code hinzufügen, um die Eigenschaften der Datenquelle anzugeben. Dies ist der wichtigste Unterschied zwischen beiden Erweiterungen:
 
-* [**x:Bind**](../xaml-platform/x-bind-markup-extension.md) ist stark typisiert und generiert Code zum Zeitpunkt der Kompilierung, um die Leistung zu verbessern. Standardmäßig wird für x:Bind eine einmalige Bindung verwendet, die die schnelle Anzeige von schreibgeschützten Daten optimiert, die sich nicht ändern.
-* [**Binding**](../xaml-platform/binding-markup-extension.md) ist schwach typisiert und wird zur Laufzeit zusammengesetzt. Dies führt zu einer schlechteren Leistung als bei x:Bind. In fast allen Fällen sollten Sie x:Bind anstelle von Bindung verwenden. Allerdings ist Binding wahrscheinlich noch in älterem Code zu finden. Bei Binding wird standardmäßig eine unidirektionale Datenübertragung verwendet, die für schreibgeschützte Daten optimiert ist, die sich an der Quelle ändern können.
+* [**X: Bind** ](../xaml-platform/x-bind-markup-extension.md) ist stark typisiert, und generiert Code zum Zeitpunkt der Kompilierung für eine bessere Leistung. Standardmäßig wird für x:Bind eine einmalige Bindung verwendet, die die schnelle Anzeige von schreibgeschützten Daten optimiert, die sich nicht ändern.
+* [**Binden von** ](../xaml-platform/binding-markup-extension.md) ist SQLite schwach typisiert und zur Laufzeit zusammengestellt. Dies führt zu einer schlechteren Leistung als bei x:Bind. In fast allen Fällen sollten Sie x:Bind anstelle von Bindung verwenden. Allerdings ist Binding wahrscheinlich noch in älterem Code zu finden. Bei Binding wird standardmäßig eine unidirektionale Datenübertragung verwendet, die für schreibgeschützte Daten optimiert ist, die sich an der Quelle ändern können.
 
 Wir empfehlen, immer möglichst **x:Bind** zu verwenden. Dies wird in diesem Artikel anhand von Codeausschnitten veranschaulicht. Weitere Informationen zu den Unterschieden finden Sie unter [Vergleich der Features von {x:Bind} und {Binding}](../data-binding/data-binding-in-depth.md#xbind-and-binding-feature-comparison).
 
@@ -104,9 +104,9 @@ Schauen Sie sich gern noch einmal die Dokumente zur [Listenansicht](../design/co
 
 Sie haben Kunden in einer Liste angezeigt, aber die Datenbindung bietet noch mehr Möglichkeiten. Was wäre, wenn Sie Ihre Daten direkt über die Benutzeroberfläche bearbeiten könnten? Zu diesem Zweck müssen wir zunächst über die drei Modi der Datenbindung sprechen:
 
-* *Einmalig*: Diese Datenbindung wird nur einmal aktiviert. Sie reagiert nicht auf Änderungen.
-* *Unidirektional*: Diese Datenbindung aktualisiert die Benutzeroberfläche mit allen Änderungen, die an der Datenquelle vorgenommen werden.
-* *Bidirektional*: Diese Datenbindung aktualisiert die Benutzeroberfläche mit allen Änderungen, die an der Datenquelle vorgenommen wurden, und aktualisiert die Daten außerdem mit allen Änderungen auf der Benutzeroberfläche.
+* *Einmalige*: Dieser Datenbindung wird nur einmal aktiviert, und nicht auf Änderungen reagieren.
+* *Unidirektionale*: Dieser Datenbindung wird die Benutzeroberfläche mit Änderungen an der Datenquelle aktualisiert werden.
+* *Two-Way*: Dieser Datenbindung wird die Benutzeroberfläche mit Änderungen an der Datenquelle aktualisiert, und aktualisieren Sie die Daten auch mit den Änderungen, die auf der Benutzeroberfläche vorgenommen.
 
 Wenn Sie die Codeausschnitte von vorher befolgt haben, verwendet Ihre Bindung x:Bind und gibt keinen Modus an; folglich handelt es sich um eine einmalige Bindung. Wenn Sie Ihre Kunden direkt über die Benutzeroberfläche bearbeiten möchten, müssen Sie die Bindung in eine bidirektionale Bindung ändern, damit die Änderungen von den Daten zurück an die Kundenobjekte übergeben werden. Weitere Informationen finden Sie unter [Datenbindung im Detail](../data-binding/data-binding-in-depth.md).
 
@@ -168,8 +168,8 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weiterer nütz
 | [Datenvorlage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | Beschreibt die visuelle Struktur eines Datenobjekts, was die Anzeige bestimmter Elementen auf der Benutzeroberfläche ermöglicht. |
 | [x:Bind](../xaml-platform/x-bind-markup-extension.md) | Dokumentation zur empfohlenen x:Bind-Markuperweiterung. |
 | [Binding](../xaml-platform/binding-markup-extension.md) | Dokumentation zur älteren Binding-Markuperweiterung. |
-| [ListView (Listenansicht)](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | Stellt ein UI-Steuerelement dar, das Datenelemente in einem vertikalen Stapel anzeigt. |
-| [TextBox (Textfeld)](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Stellt ein einfaches Text-Steuerelement zum Anzeigen bearbeitbarer Textdaten auf der Benutzeroberfläche dar. |
+| [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | Stellt ein UI-Steuerelement dar, das Datenelemente in einem vertikalen Stapel anzeigt. |
+| [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Stellt ein einfaches Text-Steuerelement zum Anzeigen bearbeitbarer Textdaten auf der Benutzeroberfläche dar. |
 | [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | Schnittstelle, um Daten feststellbar („observable“) zu machen und für eine Datenbindung bereitzustellen. |
 | [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | Die **ItemsSource**-Eigenschaft dieser Klasse ermöglicht die Bindung einer Listenansicht an eine Datenquelle. |
 
@@ -177,14 +177,14 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weiterer nütz
 
 | Thema | Beschreibung |
 |-------|----------------|
-| [Datenbindung im Detail](../data-binding/data-binding-in-depth.md) | Eine grundlegende Übersicht über die Prinzipien der Datenbindung |
-| [Übersicht über Datenbindung](../data-binding/data-binding-quickstart.md) | Ausführliche konzeptionelle Informationen zur Datenbindung. |
+| [Die Datenbindung im Detail](../data-binding/data-binding-in-depth.md) | Eine grundlegende Übersicht über die Prinzipien der Datenbindung |
+| [Übersicht über die Datenbindung](../data-binding/data-binding-quickstart.md) | Ausführliche konzeptionelle Informationen zur Datenbindung. |
 | [Listenansicht](../design/controls-and-patterns/listview-and-gridview.md) | Informationen zum Erstellen und Konfigurieren einer Listenansicht, einschließlich der Implementierung einer Datenvorlage (**DataTemplate**) |
 
 ## <a name="useful-code-samples"></a>Nützliche Codebeispiele
 
 | Codebeispiel | Beschreibung |
 |-----------------|---------------|
-| [Datenbindungs-Tutorial](../data-binding/xaml-basics-data-binding.md) | Eine schrittweise Anleitung durch die Grundlagen der Datenbindung. |
-| [Listenansicht und Rasteransicht](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) | Erkunden Sie ausführlichere Listenansichten mit Datenbindung. |
+| [Data Binding-Lernprogramm](../data-binding/xaml-basics-data-binding.md) | Eine schrittweise Anleitung durch die Grundlagen der Datenbindung. |
+| [ListView und GridView](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) | Erkunden Sie ausführlichere Listenansichten mit Datenbindung. |
 | [QuizGame](https://github.com/Microsoft/Windows-appsample-networkhelper) | Hier sehen Sie die Datenbindung in Aktion, einschließlich der **BindableBase**-Klasse (im Ordner „Common“) für eine Standardimplementierung von **INotifyPropertyChanged**. |

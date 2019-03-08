@@ -7,23 +7,23 @@ ms.topic: article
 keywords: Windows 10, UWP, Spiele, Schattenmaps, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e661065f86ac173a6ce323281c80fc964d0a4c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928159"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646365"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>Unterstützen von Schattenmaps für unterschiedliche Hardware
 
 
 
 
-Rendern Sie Schatten in noch besserer Qualität auf schnelleren Geräten und schnellere Schatten auf weniger leistungsfähigen Geräten. Teil4 von [Exemplarische Vorgehensweise: Implementieren von Schattenvolumes mithilfe von Tiefenpuffern in Direct3D11](implementing-depth-buffers-for-shadow-mapping.md).
+Rendern Sie Schatten in noch besserer Qualität auf schnelleren Geräten und schnellere Schatten auf weniger leistungsfähigen Geräten. Teil 4 von [Exemplarische Vorgehensweise: Implementieren Sie mithilfe von Tiefenpuffern in Direct3D 11 Schattenvolumen](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="comparison-filter-types"></a>Arten von Vergleichsfiltern
 
 
-Verwenden Sie die lineare Filterung nur, wenn das Gerät die Leistungseinbußen verkraften kann. Im Allgemeinen verfügen Geräte mit Direct3D-Featureebene9\_1 nicht über eine ausreichende Leistung, um einen Teil davon für die lineare Filterung von Schatten bereitstellen zu können. Nutzen Sie auf diesen Geräten stattdessen die Punktfilterung. Passen Sie beim Verwenden der linearen Filterung den Pixelshader so an, dass die Schattenkanten ineinander verlaufen.
+Verwenden Sie die lineare Filterung nur, wenn das Gerät die Leistungseinbußen verkraften kann. Im Allgemeinen Direct3D-Funktionsebene 9\_1 Geräte nicht ausreichend Leistung, für die lineare Filterung auf Schatten übrig haben. Nutzen Sie auf diesen Geräten stattdessen die Punktfilterung. Passen Sie beim Verwenden der linearen Filterung den Pixelshader so an, dass die Schattenkanten ineinander verlaufen.
 
 Erstellen Sie den Vergleichssampler für die Punktfilterung:
 
@@ -108,17 +108,17 @@ return float4(input.color * (light + shadow), 1.f);
 ## <a name="shadow-buffer-size"></a>Schattenpuffergröße
 
 
-Größere Schattenmaps sehen weniger "eckig" aus, aber sie nehmen mehr Speicherplatz im Grafikspeicher ein. Experimentieren Sie im Spiel mit unterschiedlichen Größen von Schattenmaps, und beobachten Sie, welche Ergebnisse Sie für unterschiedliche Arten von Geräten und unterschiedliche Anzeigegrößen erzielen. Erwägen Sie eine Optimierung, z.B. mithilfe von kaskadierenden Schattenmaps, um bessere Ergebnisse mit geringerem Grafikspeicheraufwand zu erhalten. Weitere Informationen finden Sie unter [Häufig verwendete Methoden zur Verbesserung von Tiefenmaps für Schatten](https://msdn.microsoft.com/library/windows/desktop/ee416324).
+Größere Schattenmaps sehen weniger "eckig" aus, aber sie nehmen mehr Speicherplatz im Grafikspeicher ein. Experimentieren Sie im Spiel mit unterschiedlichen Größen von Schattenmaps, und beobachten Sie, welche Ergebnisse Sie für unterschiedliche Arten von Geräten und unterschiedliche Anzeigegrößen erzielen. Erwägen Sie eine Optimierung, z. B. mithilfe von kaskadierenden Schattenmaps, um bessere Ergebnisse mit geringerem Grafikspeicheraufwand zu erhalten. Weitere Informationen finden Sie unter [Häufig verwendete Methoden zur Verbesserung von Tiefenmaps für Schatten](https://msdn.microsoft.com/library/windows/desktop/ee416324).
 
 ## <a name="shadow-buffer-depth"></a>Schattenpuffertiefe
 
 
-Eine höhere Präzision im Schattenpuffer führt zu genaueren Ergebnissen bei Tiefentests. Dies trägt zur Verhinderung von Problemen bei, z.B. von Z-Bufferkonflikten. Wie bei größeren Schattenmaps auch wird bei einer höheren Präzision mehr Speicher belegt. Experimentieren Sie mit unterschiedlichen Arten von Tiefenpräzision (DXGI\_FORMAT\_R24G8\_TYPELESS im Gegensatz zu DXGI\_FORMAT\_R16\_TYPELESS), und beobachten Sie die Geschwindigkeit und Qualität auf unterschiedlichen Featureebenen.
+Eine höhere Präzision im Schattenpuffer führt zu genaueren Ergebnissen bei Tiefentests. Dies trägt zur Verhinderung von Problemen bei, z. B. von Z-Bufferkonflikten. Wie bei größeren Schattenmaps auch wird bei einer höheren Präzision mehr Speicher belegt. Experimentieren Sie mit verschiedenen Tiefe Genauigkeit Typen in Ihrem Spiel - DXGI\_FORMAT\_R24G8\_TYPELESS im Vergleich zur DXGI\_FORMAT\_R16\_TYPELESS - und beobachten Sie die Geschwindigkeit und Qualität auf verschiedene Funktionsebenen.
 
 ## <a name="optimizing-precompiled-shaders"></a>Optimieren vorkompilierter Shader
 
 
-UWP-Apps (Universelle Windows-Plattform) können eine dynamische Shaderkompilierung nutzen, die Verwendung einer dynamischen Shaderverknüpfung ist jedoch schneller. Sie können auch Compilerdirektiven und `#ifdef`-Blöcke verwenden, um unterschiedliche Versionen von Shadern zu laden. Dazu wird die VisualStudio-Projektdatei in einem Text-Editor geöffnet, und es werden mehrere `<FxcCompiler>`-Einträge für den HLSL-Code hinzugefügt (jeweils mit den passenden Präprozessordefinitionen). Beachten Sie, dass hierzu unterschiedliche Dateinamen erforderlich sind. In diesem Fall hängt Visual Studio an unterschiedliche Versionen des Shaders „\_point and \_linear“ an.
+UWP-Apps (Universelle Windows-Plattform) können eine dynamische Shaderkompilierung nutzen, die Verwendung einer dynamischen Shaderverknüpfung ist jedoch schneller. Sie können auch Compilerdirektiven und `#ifdef`-Blöcke verwenden, um unterschiedliche Versionen von Shadern zu laden. Dazu wird die Visual Studio-Projektdatei in einem Text-Editor geöffnet, und es werden mehrere `<FxcCompiler>`-Einträge für den HLSL-Code hinzugefügt (jeweils mit den passenden Präprozessordefinitionen). Beachten Sie, dass dies auf einen andere Dateinamen aktualisiert. In diesem Fall fügt Visual Studio \_zeigen und \_linear zu den verschiedenen Versionen des Shaders.
 
 Im Projektdateieintrag für die linear gefilterte Version des Shaders wird LINEAR definiert:
 

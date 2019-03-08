@@ -1,21 +1,21 @@
 ---
-Description: Learn to develop accessible Windows 10 UWP apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+Description: Hier erfahren Sie, wie Sie barrierefreie UWP-Apps für Windows 10 entwickeln, die Tastaturnavigation, Farb- und Kontrasteinstellungen und Unterstützung für Hilfstechnologien enthalten.
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: Entwickeln von barrierefreien Windows 10-Apps
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 58e9ab90115566059fb79220b7b8c0b9c5ce677e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047967"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649725"
 ---
-# <a name="developing-inclusive-windows-apps"></a>Entwickeln von inklusiven Windows-Apps  
+# <a name="developing-inclusive-windows-apps"></a>Entwickeln von barrierefreien Windows-Apps  
 
 In diesem Artikel wird beschrieben, wie barrierefreie UWP-Apps (Universelle Windows-Plattform) entwickelt werden können. Insbesondere wird vorausgesetzt, dass Sie wissen, wie Sie die logische Hierarchie für Ihre App entwerfen können. Hier erfahren Sie, wie Sie barrierefreie UWP-Apps für Windows 10 entwickeln, die Tastaturnavigation, Farb- und Kontrasteinstellungen und Unterstützung für Hilfstechnologien enthalten.
 
@@ -64,9 +64,9 @@ Weitere Informationen finden Sie unter [Designs mit hohem Kontrast](high-contras
 
 Beachten Sie diese Richtlinien, wenn Sie sich entschieden haben, Ihr eigenes Farbdesign anstelle von Systemfarben zu verwenden:  
 
-**Farbkontrastverhältnis:** Der aktualisierte Abschnitt508 des Gesetzes für Amerikaner mit Behinderung (Americans with Disability Act) sowie andere Rechtsvorschriften erfordern, dass der standardmäßige Farbkontrast zwischen Text und Hintergrund ein Verhältnis von5:1 besitzt. Für großen Text (Schriftgröße 18 oder 14 fett markiert) beträgt das erforderliche Kontrastverhältnis 3:1.  
+**Farbkontrastverhältnis** – Der aktualisierte Abschnitt 508 des Gesetzes für Amerikaner mit Behinderung (Americans with Disability Act) sowie andere Rechtsvorschriften erfordern, dass der standardmäßige Farbkontrast zwischen Text und Hintergrund das Verhältnis 5:1 aufweisen muss. Für großen Text (Schriftgröße 18 oder 14 fett markiert) beträgt das erforderliche Kontrastverhältnis 3:1.  
 
-**Farbkombinationen:** Bei etwa sieben Prozent der Männer (und weniger als einem Prozent der Frauen) liegt eine Form von Farbwahrnehmungsstörung vor. Benutzer mit Farbenblindheit haben Probleme bei der Unterscheidung zwischen bestimmten Farben. Es ist daher wichtig, dass niemals nur Farben verwendet werden, um Status oder Bedeutung in einer Anwendung zu vermitteln. Für dekorative Bilder (wie Symbole oder Hintergründe) sollten Farbkombinationen so gewählt werden, dass die Wahrnehmung des Bilds durch den farbenblinden Benutzer maximiert wird.  
+**Farbkombinationen** – Etwa 7 Prozent des Männer (und weniger als 1 Prozent der Frauen) weisen ein Farbdefizit auf. Benutzer mit Farbenblindheit haben Probleme bei der Unterscheidung zwischen bestimmten Farben. Es ist daher wichtig, dass niemals nur Farben verwendet werden, um Status oder Bedeutung in einer Anwendung zu vermitteln. Für dekorative Bilder (wie Symbole oder Hintergründe) sollten Farbkombinationen so gewählt werden, dass die Wahrnehmung des Bilds durch den farbenblinden Benutzer maximiert wird.  
 
 ## <a name="accessibility-checklist"></a>Prüfliste für die Barrierefreiheit  
 Es folgt nun eine gekürzte Version der Prüfliste für die Barrierefreiheit:
@@ -75,15 +75,15 @@ Es folgt nun eine gekürzte Version der Prüfliste für die Barrierefreiheit:
 2. Implementieren Sie Barrierefreiheit für den Tastaturzugriff.
 3. Schauen Sie sich die Benutzeroberfläche an, um sicherzustellen, dass der Textkontrast ausreicht, Elemente in Designs mit hohem Kontrast richtig dargestellt werden und Farben korrekt verwendet werden.
 4. Führen Sie Tools zum Testen der Barrierefreiheit aus. Behandeln Sie gemeldete Probleme und überprüfen Sie die Qualität der Sprachausgabe. (Mehr über Testen der Barrierefreiheit erfahren)
-5. Stellen Sie sicher, dass die App-Manifesteinstellungen den Richtlinien für Barrierefreiheit entsprechen.
+5. Stellen Sie sicher, dass die Einstellungen für das App-Manifest den Richtlinien für Barrierefreiheit entsprechen.
 6. Deklarieren Sie Ihre App im Microsoft Store als barrierefrei. (Siehe das Thema [Eingabehilfen im Store](accessibility-in-the-store.md))
 
 Weitere Details finden Sie im vollständigen Thema [Prüfliste für die Barrierefreiheit](accessibility-checklist.md).
 
 ## <a name="related-topics"></a>Verwandte Themen  
 * [Entwerfen von barrierefreier Software](designing-inclusive-software.md)  
-* [Inklusives Design](https://design.microsoft.com/inclusive)
-* [Nicht empfehlenswerte Praktiken für die Barrierefreiheit](practices-to-avoid.md)
-* [Entwickeln von barrierefreier Software](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Microsoft-Hub für die barrierefreie Entwicklung](https://msdn.microsoft.com/enable)
-* [Barrierefreiheit](accessibility.md)
+* [Inklusive Entwurf](https://design.microsoft.com/inclusive)
+* [Barrierefreiheit zu vermeidende Praktiken](practices-to-avoid.md)
+* [Engineeringsoftware für den Zugriff auf](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Microsoft Accessibility Developer hub](https://msdn.microsoft.com/enable)
+* [Bedienungshilfen](accessibility.md)

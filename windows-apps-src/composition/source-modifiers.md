@@ -3,14 +3,14 @@ title: Pull-to-Refresh mit Source-Modifiern
 description: Erstellen Sie benutzerdefinierte Pull-to-Refresh-Steuerelemente mit SourceModifiern
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, Uwp, animation
+keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932596"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649865"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>Pull-to-Refresh mit Source-Modifiern
 
@@ -20,9 +20,9 @@ In diesem Artikel gehen wir näher auf die Verwendung des SourceModifier-Feature
 
 Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
 
-- [Eingabegesteuerte Animationen](input-driven-animations.md)
-- [Angepasste Manipulation mit InteractionTracker](interaction-tracker-manipulations.md)
-- [Relationsbasierte Animationen](relation-animations.md)
+- [Eingabe-driven Animationen](input-driven-animations.md)
+- [Benutzerdefinierte Bearbeitung Erfahrungen mit InteractionTracker](interaction-tracker-manipulations.md)
+- [Beziehung basierend Animationen](relation-animations.md)
 
 ## <a name="what-is-a-sourcemodifier-and-why-are-they-useful"></a>Was sind SourceModifier und warum sind sie nützlich?
 
@@ -67,7 +67,7 @@ ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.IsScrollInertiaEnabled="F
 </StackPanel>
 ```
 
-Da es sich bei dem ListView (`ThumbnailList`) um ein XAML-Steuerelement handelt, das bereits scrollt, müssen Sie das Scrolling mit dem übergeordneten Element (`ContentPanel`) verknüpfen, wenn es das oberste Element erreicht und nicht mehr scrollen kann. (ContentPanel ist der Ort, an dem Sie die Source-Modifier anwenden werden.) Dazu müssen Sie ScrollViewer.IsVerticalScrollChainingEnabled im ListView-Markup auf **true** setzen. Außerdem müssen Sie den Verkettungsmodus in VisualInteractionSource auf **Always** setzen.
+Da es sich bei dem ListView (`ThumbnailList`) um ein XAML-Steuerelement handelt, das bereits scrollt, müssen Sie das Scrolling mit dem übergeordneten Element (`ContentPanel`) verknüpfen, wenn es das oberste Element erreicht und nicht mehr scrollen kann. ("ContentPanel" ist, in dem Sie die Modifizierer für die Quelle angewendet wird.) Um dies zu ermöglichen, müssen Sie ScrollViewer.IsVerticalScrollChainingEnabled festlegen, um **"true"** im ListView-Markup. Außerdem müssen Sie den Verkettungsmodus in VisualInteractionSource auf **Always** setzen.
 
 Sie müssen den PointerPressedEvent-Handler mit dem _handlingEventsToo_-Parameter auf **true** setzen. Ohne diese Option wird PointerPressedEvent nicht mit ContentPanel verkettet, da das ListView-Steuerelement diese Ereignisse als behandelt markiert und sie nicht über die visuelle Verkettung gesendet werden.
 

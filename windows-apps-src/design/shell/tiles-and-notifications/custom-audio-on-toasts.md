@@ -1,22 +1,22 @@
 ---
-Description: Learn how to use custom audio on your toast notifications.
+Description: Erfahren Sie, wie Sie benutzerdefinierte Audio in Ihre Popupbenachrichtigungen zu verwenden.
 title: Benutzerdefiniertes Audio auf Popups
 label: Custom audio on toasts
 template: detail.hbs
 ms.date: 12/15/2017
 ms.topic: article
-keywords: Windows10, UWP, Popup, benutzerdefiniertes Audio, Benachrichtigungen, Audio, Sound
+keywords: Windows 10, UWP, Popup, benutzerdefiniertes Audio, Benachrichtigungen, Audio, Sound
 ms.localizationpriority: medium
 ms.openlocfilehash: 982340901d13f17945c1e7ffa11099f52732f619
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944699"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644065"
 ---
 # <a name="custom-audio-on-toasts"></a>Benutzerdefiniertes Audio auf Popups
 
-Popupbenachrichtigungen können benutzerdefiniertes Audio verwenden, wodurch Ihre App Ihrer Marke eindeutige Soundeffekte hinzufügt. Z.B. kann eine Nachrichten-App ihren eigenen Nachrichten-Sound in deren Popupbenachrichtigungen haben, damit der Benutzer sofort ermitteln kann, dass eine Benachrichtigung von der App erhalten wurde, anstatt die generische Benachrichtigung.
+Popupbenachrichtigungen können benutzerdefiniertes Audio verwenden, wodurch Ihre App Ihrer Marke eindeutige Soundeffekte hinzufügt. Z. B. kann eine Nachrichten-App ihren eigenen Nachrichten-Sound in deren Popupbenachrichtigungen haben, damit der Benutzer sofort ermitteln kann, dass eine Benachrichtigung von der App erhalten wurde, anstatt die generische Benachrichtigung.
 
 ## <a name="install-uwp-community-toolkit-nuget-package"></a>Installieren des UWP Community Toolkit NuGet-Pakets
 
@@ -27,7 +27,7 @@ Installieren Sie [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/pac
 
 ## <a name="add-namespace-declarations"></a>Hinzufügen von Namespacedeklarationen
 
-`Windows.UI.Notifications` Enthält die Kachel- und Popup-API. `Microsoft.Toolkit.Uwp.Notifications` enthält die Benachrichtigungsbibliothek.
+`Windows.UI.Notifications` enthält die Kachel "und die Popupbenachrichtigungs-API. `Microsoft.Toolkit.Uwp.Notifications` enthält die Benachrichtigungen-Bibliothek.
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
@@ -54,7 +54,7 @@ ToastContent toastContent = new ToastContent()
 
 Windows Mobile unterstützt jederzeit benutzerdefinierte Audio-Popupbenachrichtigungen. Allerdings wurde dem Desktop die Unterstützung für benutzerdefiniertes Audio erst in Version 1511 (Build 10586) hinzugefügt. Wenn Sie eine Popupbenachrichtigung senden, die benutzerdefinierte Audiodaten auf einem Desktopgerät vor der Version 1511 enthält, wird das Popup lautlos ausgeführt. Aus diesem Grund sollten Sie für Desktop vor der Version 1511 kein benutzerdefiniertes Audio für Ihre Popupbenachrichtigung enthalten, damit die Benachrichtigung mindestens den Standard-Benachrichtigungssound verwenden.
 
-**Bekanntes Problem**: Wenn Sie Desktop-Version 1511 verwenden, funktioniert die benutzerdefinierte Audiooptionen nur, wenn Ihre App über den Store installiert ist. Dies bedeutet, dass die Ihr benutzerdefiniertes Audio vor der Übermittlung an den Store nicht auf Desktop lokal testen können - die Audiowiedergabe funktioniert allerdings einwandfrei nach der Installation aus dem Store. Wir haben dieses Problem im Anniversary Update behoben, damit benutzerdefiniertes Audio über die lokal bereitgestellte App ordnungsgemäß funktioniert.
+**Bekanntes Problem**: Wenn Sie Desktop-Version 1511 verwenden, funktioniert das benutzerdefinierte Toast-Audio nur, wenn Ihre app über den Store installiert ist. Dies bedeutet, dass die Ihr benutzerdefiniertes Audio vor der Übermittlung an den Store nicht auf Desktop lokal testen können - die Audiowiedergabe funktioniert allerdings einwandfrei nach der Installation aus dem Store. Wir haben dieses Problem im Anniversary Update behoben, damit benutzerdefiniertes Audio über die lokal bereitgestellte App ordnungsgemäß funktioniert.
 
 ```csharp
 ?
@@ -102,6 +102,6 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
-- [Lokale Popups senden](send-local-toast.md)
-- [Dokumentation zu Popupinhalt](adaptive-interactive-toasts.md)
+- [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
+- [Senden Sie einen lokalen toast](send-local-toast.md)
+- [Toast-Content-Dokumentation](adaptive-interactive-toasts.md)

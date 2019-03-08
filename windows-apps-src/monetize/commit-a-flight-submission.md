@@ -1,21 +1,21 @@
 ---
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
-description: Verwenden Sie diese Methode in der Microsoft Store-Übermittlungs-API, um eine neue oder aktualisierte Flight-Paketübermittlung in Partner Center zu übernehmen.
-title: Ausführen eines Commit für eine Flight-Paket-Übermittlung
+description: Verwenden Sie diese Methode in die Übermittlung zum Microsoft Store-API, um einen neuen oder aktualisierten Pakets-Flight-Übermittlung an Partner Center zu übernehmen.
+title: Ausführen eines Commit für eine Flight-Paketübermittlung
 ms.date: 04/17/2018
 ms.topic: article
-keywords: Windows10, UWP, Microsoft Store-Übermittlungs-API, Übernehmen einer Flight-Übermittlung
+keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Übernehmen einer Flight-Übermittlung
 ms.localizationpriority: medium
 ms.openlocfilehash: 820e10695cce2d6242a51b0017d2fe3981cf77b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921914"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603475"
 ---
-# <a name="commit-a-package-flight-submission"></a>Ausführen eines Commit für eine Flight-Paket-Übermittlung
+# <a name="commit-a-package-flight-submission"></a>Ausführen eines Commit für eine Flight-Paketübermittlung
 
-Verwenden Sie diese Methode in der Microsoft Store-Übermittlungs-API, um eine neue oder aktualisierte Flight-Paketübermittlung in Partner Center zu übernehmen. Die übernahmeaktion Partner Center, dass die Übermittlungsdaten (darunter alle zugehörigen Pakete) hochgeladen wurden. Als Reaktion übernimmt Partner Center die Änderungen der Übermittlungsdaten zur Aufnahme und Veröffentlichung. Nachdem der Übernahmevorgang erfolgreich ausgeführt wurde, werden die Änderungen an der Übermittlung im Partner Center angezeigt.
+Verwenden Sie diese Methode in die Übermittlung zum Microsoft Store-API, um einen neuen oder aktualisierten Pakets-Flight-Übermittlung an Partner Center zu übernehmen. Das Commit Aktion Warnungen Partner Center, dass die Sendungsdaten (einschließlich alle zugehörigen Pakete) hochgeladen wurde. Im Gegenzug übernimmt Partner Center die Änderungen an den Daten der Übermittlung für die Erfassung und Veröffentlichung an. Nachdem der Commitvorgang erfolgreich ist, werden die Änderungen an der Übermittlung im Partner Center angezeigt.
 
 Weitere Informationen dazu, wie der Übernahmevorgang in den Prozess zum Erstellen einer Flight-Paketübermittlung mit der Microsoft Store-Übermittlungs-API passt, finden Sie unter [Verwalten von Flight-Paketübermittlungen](manage-flight-submissions.md).
 
@@ -24,10 +24,10 @@ Weitere Informationen dazu, wie der Übernahmevorgang in den Prozess zum Erstell
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken abgerufen haben, können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 * [Erstellen Sie eine Flight-Paketübermittlung](create-a-flight-submission.md), und [aktualisieren Sie die Übermittlung](update-a-flight-submission.md) mit allen erforderlichen Änderungen der Übermittlungsdaten.
 
-## <a name="request"></a>Anforderung
+## <a name="request"></a>Anfordern
 
 Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie Verwendungsbeispiele und Beschreibungen des Header und Anforderungstexts.
 
@@ -40,16 +40,16 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
+| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App, die die Flight-Paketübermittlung enthält, die Sie übernehmen möchten. Die Store-ID für die app ist im Partner Center verfügbar.  |
-| flightId | String | Erforderlich. Die ID des Flight-Pakets, das die zu übernehmende Übermittlung enthält. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines Flight-Pakets](create-a-flight.md) und zum [Abrufen von Flight-Paketen für eine App](get-flights-for-an-app.md) enthalten. Für einen Flight, der im Partner Center erstellt wurde, ist diese ID auch in der URL für die Test-Flight-Seite im Partner Center verfügbar.  |
-| submissionId | String | Erforderlich. Die ID der zu übernehmenden Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer Flight-Paket-Übermittlung](create-a-flight-submission.md) verfügbar. Für eine Übermittlung, die im Partner Center erstellt wurde, ist diese ID auch in der URL für die übermittlungsseite im Partner Center verfügbar.  |
+| applicationId | string | Erforderlich. Die Store-ID der App, die die Flight-Paketübermittlung enthält, die Sie übernehmen möchten. Die Store-ID für die app ist im Partner Center verfügbar.  |
+| flightId | string | Erforderlich. Die ID des Flight-Pakets, das die zu übernehmende Übermittlung enthält. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines Flight-Pakets](create-a-flight.md) und zum [Abrufen von Flight-Paketen für eine App](get-flights-for-an-app.md) enthalten. Für einen Flug, der im Partner Center erstellt wurde, ist diese ID auch in der URL für die Seite "aktiv" im Partner Center verfügbar.  |
+| submissionId | string | Erforderlich. Die ID der zu übernehmenden Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer Flight-Paket-Übermittlung](create-a-flight-submission.md) verfügbar. Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -79,7 +79,7 @@ Das folgende Beispiel veranschaulicht den JSON-Antworttext für einen erfolgreic
 
 | Wert      | Typ   | Beschreibung                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
+| status           | string  | Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>  |
 
 
 ## <a name="error-codes"></a>Fehlercodes
@@ -90,15 +90,15 @@ Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die A
 |--------|------------------|
 | 400  | Die Anforderungsparameter sind ungültig. |
 | 404  | Die angegebene Übermittlung konnte nicht gefunden werden. |
-| 409  | Die angegebene Übermittlung wurde gefunden, aber es konnte nicht in ihrem aktuellen Zustand übernommen werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht von der Microsoft Store-Übermittlungs-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported)wird. |
+| 407  | Die angegebene Übermittlung wurde gefunden, aber konnte nicht im aktuellen Zustand ausgeführt werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen und Verwalten von Übermittlungen mit Microsoft Store-Diensten](create-and-manage-submissions-using-windows-store-services.md)
-* [Verwalten von Flight-Paketübermittlungen](manage-flight-submissions.md)
-* [Abrufen einer Flight-Paketübermittlung](get-a-flight-submission.md)
-* [Erstellen einer Flight-Paketübermittlung](create-a-flight-submission.md)
-* [Aktualisieren einer Flight-Paket-Übermittlung](update-a-flight-submission.md)
-* [Löschen einer Flight-Paketübermittlung](delete-a-flight-submission.md)
-* [Abrufen des Status einer Flight-Paketübermittlung](get-status-for-a-flight-submission.md)
+* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Verwalten von Paket-Flight-Übermittlungen](manage-flight-submissions.md)
+* [Erhalten Sie eine Paket-Flight-Eingabe](get-a-flight-submission.md)
+* [Erstellen Sie eine Paket-Flight-Eingabe](create-a-flight-submission.md)
+* [Aktualisieren Sie eine Paket-Flight-Eingabe](update-a-flight-submission.md)
+* [Löschen Sie eine Paket-Flight-Eingabe](delete-a-flight-submission.md)
+* [Abrufen des Status einer Paket-Flight-Übermittlung](get-status-for-a-flight-submission.md)

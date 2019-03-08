@@ -4,14 +4,14 @@ title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.date: 06/03/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdad8f3405420e0548974c734ad23bfd44f2c6b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046756"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648825"
 ---
 # <a name="sockets"></a>Sockets
 Sockets sind eine einfache Datenübertragungstechnologie, auf der viele Netzwerkprotokolle implementiert sind. UWP bietet TCP- und UDP-Socketklassen für Client-Server oder Peer-to-Peer-Anwendungen, unabhängig davon, ob Verbindungen langlebig sind oder keine bestehende Verbindung erforderlich ist.
@@ -39,7 +39,7 @@ Erstellen Sie einen [**StreamSocketListener**](/uwp/api/Windows.Networking.Socke
 
 Erstellen Sie desweiteren einen [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket), stellen Sie eine Verbindung mit dem Server her, senden Sie eine Anforderung und empfangen Sie eine Antwort.
 
-Erstellen Sie eine neue **Seite** namens `StreamSocketAndListenerPage`. Fügen Sie das XAML-Markup in `StreamSocketAndListenerPage.xaml` ein, und stellen Sie dann den imperativen Code innerhalb der `StreamSocketAndListenerPage`-Klasse bereit.
+Erstellen Sie eine neue **Seite** namens `StreamSocketAndListenerPage`. Fügen Sie das XAML-Markup in `StreamSocketAndListenerPage.xaml` ein und stellen Sie dann den imperativen Code innerhalb der `StreamSocketAndListenerPage`-Klasse bereit.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -505,7 +505,7 @@ private:
 > [!NOTE]
 > Wenn Sie C++/WinRT Coroutinen verwenden und Parameter nach Wert übergeben, gilt dieses Problem nicht. Empfehlungen zu Parameterübergaben finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing).
 
-Ein [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) bleibt solange aktiv, bis ein aktiver Lese-/Schreibzugriff auf seinem Ein-/Ausgabedatenstrom vorhanden ist (z.B. das [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket), auf das Sie in Ihrem [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)-Ereignishandler zugreifen können). Wenn Sie [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (oder `ReadAsync/WriteAsync/StoreAsync`) aufrufen, enthält es einen Verweis auf das Socket (über den Eingabedatenstrom des Sockets), bis der **Abschlusshandler** (falls vorhanden) von **LoadAsync** die Ausführung abgeschlossen hat.
+Ein [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) bleibt solange aktiv, bis ein aktiver Lese-/Schreibzugriff auf seinem Ein-/Ausgabedatenstrom vorhanden ist (z. B. das [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket), auf das Sie in Ihrem [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)-Ereignishandler zugreifen können). Wenn Sie [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (oder `ReadAsync/WriteAsync/StoreAsync`) aufrufen, enthält es einen Verweis auf das Socket (über den Eingabedatenstrom des Sockets), bis der **Abschlusshandler** (falls vorhanden) von **LoadAsync** die Ausführung abgeschlossen hat.
 
 Standardmäßig werden in der Parallel Patterns Library (PPL) keine Aufgabenfortsetzungen inline geplant. Mit anderen Worten garantiert das Hinzufügen einer Fortsetzungsaufgabe (mit `task::then()`) nicht, dass die Fortsetzungsaufgabe inline als Abschlusshandler ausgeführt wird.
 
@@ -1002,7 +1002,7 @@ Sie können den Socket-Broker und Steuerkanaltrigger verwenden, um sicherzustell
 ## <a name="batched-sends"></a>Sendevorgänge im Batch
 Immer wenn Sie in den Datenstrom schreiben, der einem Socket zugeordnet ist, erfolgt ein Übergang vom Benutzermodus (Ihrem Code) zum Kernelmodus (wo sich der Netzwerkstapel befindet). Wenn Sie gleichzeitig viele Puffer schreiben, ergeben diese wiederholten Übergänge einen erheblichen Mehraufwand. Durch die Batchverarbeitung Ihrer Sendevorgänge können Sie mehrere Datenpuffer zusammen senden und diesen Mehraufwand vermeiden. Dies ist besonders hilfreich, wenn Ihre App VoIP, VPN oder andere Aufgaben ausführt, die mit dem effizienten Verschieben großer Datenmengen verbunden sind.
 
-In diesem Abschnittwerden einige Batchverarbeitungsmethoden gezeigt, die Sie mit [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) oder einem verbundenen [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) verwenden können.
+In diesem Abschnitt werden einige Batchverarbeitungsmethoden gezeigt, die Sie mit [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) oder einem verbundenen [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) verwenden können.
 
 Sehen wir uns zunächst an, wie eine große Anzahl von Puffern auf eine ineffiziente Art und Weise gesendet werden kann. Hier ist eine kleine Demo, die ein **StreamSocket** verwendet.
 
@@ -1202,7 +1202,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-Dieses nächste Beispiel ist für jede UWP-Sprache geeignet, nicht nur für C#. Es basiert auf dem Verhalten in [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) und [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream), das Sendevorgänge zusammen in Batches vornimmt. Die Methode ruft [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) auf diesem Ausgabedatenstrom, die ab Windows 10 garantiert erst zurückgegeben, nachdem alle Vorgänge im Ausgabedatenstrom abgeschlossen sind.
+Dieses nächste Beispiel ist für jede UWP-Sprache geeignet, nicht nur für C#. Es basiert auf dem Verhalten in [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) und [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream), das Sendevorgänge zusammen in Batches vornimmt. Die Methode ruft [ **FlushAsync** ](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) , Ausgabestream, die ab Windows 10, garantiert ist, zurückgegeben, wenn alle Vorgänge für den Ausgabestream abgeschlossen wurden.
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1276,14 +1276,14 @@ Es gibt einige wichtige Einschränkungen, die für Sendevorgänge im Batch in Ih
 
 -   Sie können den Inhalt der zu schreibenden **IBuffer**-Instanzen nicht ändern, bis der asynchrone Schreibvorgang abgeschlossen ist.
 -   Das **FlushAsync**-Muster funktioniert nur bei **StreamSocket.OutputStream** und **DatagramSocket.OutputStream**.
--   Die **FlushAsync** -Muster funktioniert nur in Windows 10.
+-   Die **FlushAsync** Muster funktioniert nur unter Windows 10 und gerechnet.
 -   Verwenden Sie in anderen Fällen [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) statt des **FlushAsync**-Musters.
 
 ## <a name="port-sharing-for-datagramsocket"></a>Portfreigabe für DatagramSocket
 Sie können ein [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) für die Koexistenz mit anderen Win32- oder UWP-Multicast Sockets konfigurieren, die an die gleiche Adresse oder den gleichen Port gebunden sind. Legen Sie hierzu [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) auf `true` fest, bevor Sie die Bindung oder die Verbindung für das Socket festlegen. Sie greifen auf eine Instanz von **DatagramSocketControl** aus dem **DatagramSocket**-Objekt selbst über seine [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control)-Eigenschaft zu.
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Bereitstellen eines Clientzertifikats mit der StreamSocket-Klasse
-[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) unterstützt die Verwendung von SSL/TLS zum Authentifizieren des Servers, mit dem der Client kommuniziert. In einigen Fällen muss die Client-App selbst mit einem SSL/TLS-Clientzertifikat am Server authentifiziert werden. Sie können ein Clientzertifikat mit der [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate)-Eigenschaft bereitstellen, bevor Sie die Bindung oder die Verbindung für das Socket festlegen (dies muss festgelegt werden, bevor der SSL/TLS-Handshake gestartet wird). Sie greifen auf eine Instanz von **StreamSocketControl** aus dem **StreamSocket**-Objekt selbst über seine [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control)-Eigenschaft zu. Wenn der Server das Clientzertifikat anfordert, reagiert Windows mit dem Clientzertifikat, das Sie bereitgestellt haben.
+[**StreamSocket** ](/uwp/api/Windows.Networking.Sockets.StreamSocket) unterstützt die Verwendung von SSL/TLS zum Authentifizieren des Servers, der die Client-app kommuniziert. In einigen Fällen muss die Client-App selbst mit einem SSL/TLS-Clientzertifikat am Server authentifiziert werden. Sie können ein Clientzertifikat mit der [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate)-Eigenschaft bereitstellen, bevor Sie die Bindung oder die Verbindung für das Socket festlegen (dies muss festgelegt werden, bevor der SSL/TLS-Handshake gestartet wird). Sie greifen auf eine Instanz von **StreamSocketControl** aus dem **StreamSocket**-Objekt selbst über seine [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control)-Eigenschaft zu. Wenn der Server das Clientzertifikat anfordert, reagiert Windows mit dem Clientzertifikat, das Sie bereitgestellt haben.
 
 Verwenden Sie eine Außerkraftsetzung der [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync), die ein [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel) annimmt, wie in diesem Beispiel mit minimalem Code dargestellt.
 
@@ -1344,9 +1344,9 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 ## <a name="handling-exceptions"></a>Behandeln von Ausnahmen
 Ein Fehler in einem [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)-, [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket)- oder [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener)-Vorgang wird als **HRESULT**-Wert zurückgegeben. Sie können diesen **HRESULT**-Wert der [**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus) -Methode übergeben, um ihn in einen [**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus)-Enumerationswert zu konvertieren.
 
-Die meisten **SocketErrorStatus**-Enumerationswerte entsprechen einem vom systemeigenen WindowsSockets-Vorgang zurückgegebenen Fehler. Ihre App kann bestimmte **SocketErrorStatus**-Enumerationswerte einschalten, um das App-Verhalten je nach Ausnahmeursache zu ändern.
+Die meisten **SocketErrorStatus**-Enumerationswerte entsprechen einem vom systemeigenen Windows Sockets-Vorgang zurückgegebenen Fehler. Ihre App kann bestimmte **SocketErrorStatus**-Enumerationswerte einschalten, um das App-Verhalten je nach Ausnahmeursache zu ändern.
 
-Bei Parameterprüfungsfehlern können Sie den **HRESULT**-Wert aus der Ausnahme verwenden, um ausführlichere Informationen zum Fehler zu erhalten. Mögliche **HRESULT**-Werte sind in `Winerror.h` aufgelistet; dies finden Sie in Ihrer SDK-Installation (z.B. im Ordner `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`). Für die meisten Parameterüberprüfungsfehler wird der **HRESULT**-Wert **E_INVALIDARG** zurückgegeben.
+Bei Parameterprüfungsfehlern können Sie den **HRESULT**-Wert aus der Ausnahme verwenden, um ausführlichere Informationen zum Fehler zu erhalten. Mögliche **HRESULT**-Werte sind in `Winerror.h` aufgelistet; dies finden Sie in Ihrer SDK-Installation (z. B. im Ordner `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`). Für die meisten Parameterüberprüfungsfehler wird der **HRESULT**-Wert **E_INVALIDARG** zurückgegeben.
 
 Der [**HostName**](/uwp/api/Windows.Networking.HostName)-Konstruktor kann eine Ausnahme auslösen, wenn die übergebene Zeichenfolge kein gültiger Hostname ist. Beispielsweise enthält es Zeichen, die nicht zulässig sind, was wahrscheinlich ist, wenn der Hostname in Ihrer App vom Benutzer eingegeben wird. Erstellen Sie einen **HostName** in einem try/catch-Block. Auf diese Weise kann die App, wenn eine Ausnahme ausgelöst wird, den Benutzer benachrichtigen und einen neuen Hostnamen anfordern.
 
@@ -1378,10 +1378,10 @@ Der [**HostName**](/uwp/api/Windows.Networking.HostName)-Konstruktor kann eine A
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [App zu App-Kommunikation](/windows/uwp/app-to-app/index)
-* [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [So wird's gemacht: Festlegen von Netzwerkfunktionen](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [App-zu-App-Kommunikation](/windows/uwp/app-to-app/index)
+* [Parallelität und asynchrone Vorgänge mit C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [Gewusst wie: Festlegen von Netzwerkfunktionen](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
+* [Windows Sockets (Winsock)-2](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 ## <a name="samples"></a>Beispiele
-* [StreamSocket-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620609)
+* [Beispiel für StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609)

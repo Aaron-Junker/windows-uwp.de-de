@@ -1,65 +1,65 @@
 ---
-Description: Distribute a packaged desktop application (Desktop Bridge)
+Description: Verteilen einer App-Pakete desktop-Anwendung (Desktop-Brücke)
 Search.Product: eADQiWindows 10XVcnh
-title: Veröffentlichen Sie Ihre verpackte desktop-Anwendung auf den Microsoft Store oder querladen es auf einem oder mehreren Geräten.
+title: Veröffentlichen Sie Ihre App-Pakete Desktopanwendung an den Microsoft Store oder per sideload übertragen sie auf einem oder mehreren Geräten.
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: 8968864a0ff4bcf9e27f75a44a0a500736bb54b8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049188"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619695"
 ---
-# <a name="distribute-a-packaged-desktop-application"></a>Verteilen einer verpackten desktop-Anwendungs
+# <a name="distribute-a-packaged-desktop-application"></a>Verteilen einer App-Pakete desktop-Anwendung
 
-Veröffentlichen Sie Ihre verpackte desktop-Anwendung auf den Microsoft Store oder querladen es auf einem oder mehreren Geräten.  
+Veröffentlichen Sie Ihre App-Pakete Desktopanwendung an den Microsoft Store oder per sideload übertragen sie auf einem oder mehreren Geräten.  
 
 > [!NOTE]
-> Haben Sie einen Plan, wie Sie Benutzer Übergang auf die verpackte Anwendung ermöglichen können? Schauen Sie sich den Abschnitt [Umstellung von Benutzern auf Ihre verpackte App](#transition-users) dieses Handbuchs an, um eine Vorstellung davon zu bekommen, bevor Sie Ihre App verteilen.
+> Haben Sie einen Plan für die wie Benutzer der gepackten Anwendung Umstellung kann? Schauen Sie sich den Abschnitt [Umstellung von Benutzern auf Ihre verpackte App](#transition-users) dieses Handbuchs an, um eine Vorstellung davon zu bekommen, bevor Sie Ihre App verteilen.
 
-## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>Verteilen Sie Ihre Anwendung, indem sie an den Microsoft Store veröffentlichen.
+## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>Verteilen Sie Ihre Anwendung durch das Veröffentlichen auf dem Microsoft Store
 
 Der [Microsoft Store](https://www.microsoft.com/store/apps) ist eine bequeme Möglichkeit für Kunden, Ihre App zu beziehen.
 
-Veröffentlichen Sie Ihre Anwendung an den Microsoft Store, um die größtmögliche Zielgruppe zu erreichen. Darüber hinaus können Unternehmenskunden Ihre Anwendung intern in ihren Organisationen über den [Microsoft Store für Unternehmen](https://www.microsoft.com/business-store)verteilen erwerben.
+Veröffentlichen Sie Ihre Anwendung auf dem Microsoft Store das breiteste Publikum zu erreichen. Darüber hinaus erhalten Organisation Kunden Ihrer Anwendung intern in der eigenen Organisation durch Verteilen der [Microsoft Store für Unternehmen](https://www.microsoft.com/business-store).
 
-Wenn Sie eine Veröffentlichung im Microsoft Store planen, werden Ihnen als Teil des Übermittlungsprozesses einige zusätzliche Fragen gestellt. Der Grund dafür ist, dass Ihr Paketmanifest eine eingeschränkte Funktion mit dem Namen **runFullTrust** deklariert und wir die Verwendung dieser Funktion durch Ihre Anwendung genehmigen müssen. Weitere Informationen zu dieser Anforderung finden Sie hier: [Eingeschränkte Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+Wenn Sie eine Veröffentlichung im Microsoft Store planen, werden Ihnen als Teil des Übermittlungsprozesses einige zusätzliche Fragen gestellt. Der Grund dafür ist, dass Ihr Paketmanifest eine eingeschränkte Funktion mit dem Namen **runFullTrust** deklariert und wir die Verwendung dieser Funktion durch Ihre Anwendung genehmigen müssen. Erfahren Sie mehr zu dieser Anforderung hier: [Eingeschränkte Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
-Sie müssen Ihre Anwendung zu signieren, bevor Sie sie an den Store übermitteln.
+Sie müssen die Anwendung zu signieren, bevor Sie sie an den Store übermitteln.
 
 >[!IMPORTANT]
-> Wenn Sie Ihre Anwendung an den Microsoft Store veröffentlichen möchten, stellen Sie sicher, dass Ihre Anwendung korrekt auf Geräten unter Windows 10 s ausgeführt Dies ist eine Anforderung des Stores. Weitere Informationen finden Sie unter [Testen Ihrer Windows-App für Windows10 S](desktop-to-uwp-test-windows-s.md).
+> Wenn Sie Ihre Anwendung in der Microsoft Store veröffentlichen möchten, stellen Sie sicher, dass Ihre Anwendung auf Geräten, auf denen Windows 10 s ausgeführt, ordnungsgemäß ausgeführt wird Dies ist eine Store-Anforderung. Weitere Informationen finden Sie unter [Testen Ihrer Windows-App für Windows 10 S](desktop-to-uwp-test-windows-s.md).
 
 <a id="side-load" />
 
-## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Verteilen Sie Ihre Anwendung, ohne sie auf dem Microsoft Store
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Vertrieb Ihrer Anwendung, ohne dass es auf dem Microsoft Store
 
-Wenn Sie lieber Ihre Anwendung verteilen veröffentlichen, ohne den Store verwenden, können Sie apps auf einem oder mehreren Geräten manuell verteilen.
+Wenn Sie Ihre Anwendung stattdessen ohne Verwendung der Store verteilen würde, können Sie manuell ein oder mehrere Geräte-apps verteilen.
 
 Dies eignet sich ggf., wenn Sie eine bessere Kontrolle über die Verteilung haben oder sich nicht mit dem Microsoft Store-Zertifizierungsprozess auseinandersetzen möchten.
 
-Um Ihre Anwendung auf anderen Geräten ohne sie im Store zu verteilen, müssen Sie ein Zertifikat benötigen, Signieren Ihre Anwendung mithilfe von das Zertifikat, und klicken Sie dann den querladen Ihrer Anwendung auf diesen Geräten.
+Um Ihre Anwendung mit anderen Geräten ohne ablegen, damit er in den Store zu verteilen, müssen Sie ein Zertifikat zu erhalten, melden Sie sich Ihre Anwendung mit diesem Zertifikat und dann per sideload übertragen Ihrer Anwendung auf diesen Geräten.
 
-Sie können [ein Zertifikat erstellen](../packaging/create-certificate-package-signing.md) oder eines von einem beliebten Anbieter wie z.B. [Verisign](https://www.verisign.com/) erhalten.
+Sie können [ein Zertifikat erstellen](../packaging/create-certificate-package-signing.md) oder eines von einem beliebten Anbieter wie z. B. [Verisign](https://www.verisign.com/) erhalten.
 
-Wenn die Anwendung auf Geräte zu verteilen, auf denen Windows 10 S ausgeführt werden soll, kann die Anwendung vom Microsoft Store signiert werden, daher müssen Sie die Store-Übermittlung durchlaufen, bevor Sie Ihre Anwendung auf diesen Geräte vertreiben können.
+Wenn die Anwendung auf Geräte zu verteilen, auf denen Windows 10 S ausgeführt werden sollen, muss Ihre Anwendung von der Microsoft Store signiert werden, daher müssen Sie den Store Übermittlung-Prozess durchlaufen zu lassen, bevor Sie Ihre Anwendung auf diesen Geräten verteilen können.
 
 Wenn Sie ein Zertifikat zu erstellen, müssen Sie es im Zertifikatspeicher **Vertrauenswürdiger Stamm** oder **Vertrauenswürdige Personen** von jedem Gerät installieren, auf dem Ihre App ausgeführt wird. Wenn Sie ein Zertifikat von einem beliebten Anbieter erhalten, müssen Sie auf anderen Systemen neben Ihrer App nichts weiteres installieren.  
 
 > [!IMPORTANT]
 > Stellen Sie sicher, dass der Name des Herausgebers auf dem Zertifikat dem Namen des Herausgebers Ihrer App entspricht.
 
-Um Ihre Anwendung mit einem Zertifikat zu signieren, finden Sie in der [Anmeldung eines Anwendungspakets mithilfe von SignTool](../packaging/sign-app-package-using-signtool.md).
+Um Ihre Anwendung mit einem Zertifikat zu signieren, finden Sie unter [melden Sie ein Anwendungspaket mithilfe von SignTool](../packaging/sign-app-package-using-signtool.md).
 
-Querladen Ihrer Anwendung auf anderen Geräten finden Sie unter [Querladen von Branchen-apps in Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10).
+Zum querladen Ihrer Anwendung auf anderen Geräten finden Sie unter [Querladen von branchenanwendungen in Windows 10-](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10).
 
 **Videos**
 
-|Veröffentlichen Sie die Anwendung in der Microsoft Store |Verteilen Sie eine Enterprise-Anwendung  |
+|Veröffentlichen Sie Ihre Anwendung in der Microsoft Store |Verteilen Sie eine Enterprise-Anwendung  |
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
@@ -70,21 +70,21 @@ Querladen Ihrer Anwendung auf anderen Geräten finden Sie unter [Querladen von B
 Bevor Sie Ihre App verteilen, sollten Sie das Hinzufügen einiger Erweiterungen zu Ihrem Paketmanifest in Betracht ziehen, damit sich Benutzer daran gewöhnen, Ihre verpackte App zu verwenden. Hier sind einige Dinge, die Sie tun können.
 
 * Verweisen Sie mit vorhandenen Startkacheln und Taskleistenschaltflächen auf Ihre verpackte App.
-* Ihres Anwendungspakets einer Gruppe von Dateitypen zuordnen.
-* Stellen Sie die verpackte Anwendung, die bestimmte Dateitypen standardmäßig öffnet.
+* Ordnen Sie einen Satz von Dateitypen mit der gepackten Anwendung.
+* Stellen Sie der gepackten Anwendung bestimmte Arten von Dateien, die standardmäßig geöffnet.
 
 Eine vollständige Liste der Erweiterungen und die Richtlinien für deren Verwendung finden Sie unter [Umstellung von Benutzern auf Ihre App](desktop-to-uwp-extensions.md#transition-users-to-your-app).
 
-Erwägen Sie außerdem das Hinzufügen von Code zu Ihrer verpackten Anwendung, die folgenden Aufgaben erledigt:
+Berücksichtigen Sie auch das Hinzufügen von Code zu der gepackten Anwendung, die diese Aufgaben erledigt:
 
-* Migrieren von Benutzerdaten, die Ihre desktop-Anwendung zu den entsprechenden Ordnerspeicherorten Ihrer verpackten App zugeordnet.
+* Migrieren von Benutzerdaten, die die desktop-Anwendung zu den entsprechenden Ordnern von Ihrem app-Paket zugeordnet.
 * Bereitstellung der Option für Benutzer, die Desktopversion Ihrer App zu deinstallieren
 
 Erfahren wir mehr über diese einzelnen Aufgaben. Wir beginnen mit der Migration von Benutzerdaten.
 
 ### <a name="migrate-user-data"></a>Migrieren von Benutzerdaten
 
-Wenn Sie vorhaben, Code hinzufügen, der migriert Benutzerdaten, empfiehlt es sich, diesen Code nur ausgeführt, wenn die Anwendung das erste Mal gestartet wird. Bevor Sie die Benutzerdaten migrieren, zeigen Sie dem Benutzer ein Dialogfeld an, das erläutert, was passiert, warum es empfohlen wird und was mit den vorhandenen Daten geschehen wird.
+Wenn Sie vorhaben, Code hinzufügen, die Daten des Benutzers migriert werden, empfiehlt es sich um diesen Code nur ausgeführt, wenn die Anwendung zuerst gestartet wird. Bevor Sie die Benutzerdaten migrieren, zeigen Sie dem Benutzer ein Dialogfeld an, das erläutert, was passiert, warum es empfohlen wird und was mit den vorhandenen Daten geschehen wird.
 
 Hier ist ein Beispiel, wie Sie dies in einer NET-basierten verpackten App erreichen können.
 
@@ -123,7 +123,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>Deinstallieren Sie die Desktopversion Ihrer App.
 
-Es ist besser, die Benutzer-desktop-Anwendung ohne diese Berechtigung nicht deinstallieren. Zeigen Sie ein Dialogfeld an, das den Benutzer nach dieser Berechtigung fragt. Benutzer möchten gegebenenfalls die Desktop-Version Ihrer App nicht deinstallieren. In diesem Fall müssen Sie entscheiden, ob Sie die Nutzung der desktop-Anwendung blockieren oder die Side-by-Side-Nutzung beider Apps unterstützen möchten.
+Es empfiehlt sich nicht um die Benutzer-desktop-Anwendung zu deinstallieren, ohne diese Berechtigung aufzufordern. Zeigen Sie ein Dialogfeld an, das den Benutzer nach dieser Berechtigung fragt. Benutzer möchten gegebenenfalls die Desktop-Version Ihrer App nicht deinstallieren. In diesem Fall müssen Sie entscheiden, ob blockiert die Verwendung von desktop-Anwendung oder die Seite-an-Seite-Verwendung von sowohl apps unterstützt werden sollen.
 
 Hier ist ein Beispiel, wie Sie dies in einer NET-basierten verpackten App erreichen können.
 
@@ -173,12 +173,12 @@ private void RemoveDesktopApp()
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Finden Sie Antworten auf Ihre Fragen**
+**Hier finden Sie Antworten auf Ihre Fragen**
 
 Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Fragen Sie uns [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
 Wenn beim Veröffentlichen Ihrer Anwendung an den Store Probleme auftreten, enthält dieser [Blogbeitrag](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/) einige hilfreiche Tipps.
 
-**Geben Sie Feedback oder Verbesserungsvorschläge**
+**Geben Sie Feedback oder Vorschläge für Features**
 
 Weitere Informationen finden Sie unter [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

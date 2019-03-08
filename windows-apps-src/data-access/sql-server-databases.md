@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, SQL Server, datenbank
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976927"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621155"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Verwenden einer SQL Server-Datenbank in einer UWP-App
 Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) speichern und abrufen.
@@ -29,7 +29,7 @@ Um Ihre App direkt mit einer SQL Server-Datenbank zu verbinden, stellen Sie sich
 
 Öffnen Sie die Datei **Package.appxmanifest** Ihres UWP-Projekts im Manifest-Designer.
 
-Aktivieren Sie in der Registerkarte " **Funktionen** " das **Unternehmensauthentifizierung** Kontrollkästchen, wenn Sie Windows-Authentifizierung für die Authentifizierung von SQL Server verwenden.
+In der **Funktionen** Registerkarte die **Unternehmensauthentifizierung** Kontrollkästchen, wenn Sie Windows-Authentifizierung zum Authentifizieren Ihrer SQL Server verwenden.
 
 ![Funktion Unternehmensauthentifizierung](images/enterprise-authentication.png)
 
@@ -39,15 +39,15 @@ Aktivieren Sie in der Registerkarte " **Funktionen** " das **Unternehmensauthent
 
 In diesem Abschnitt werden wir diese Dinge tun:
 
-:one: Fügen Sie eine Verbindungszeichenfolge hinzu.
+: ein: Fügen Sie eine Verbindungszeichenfolge hinzu.
 
-:two: Legen Sie eine Klasse für Produktdaten an.
+: zwei: Erstellen Sie eine Klasse zum Speichern von Produktdaten.
 
-:three: Rufen Sie Produkte aus der SQL Server-Datenbank ab.
+: drei: Abrufen von Produkten aus der SQL Server-Datenbank.
 
-:four: Fügen Sie eine einfache Benutzeroberfläche hinzu.
+: vier: Fügen Sie eine einfache Benutzeroberfläche hinzu.
 
-:five: Füllen Sie das UI mit Produkten.
+: fünf: Füllen Sie die Benutzeroberfläche mit Produkten.
 
 >[!NOTE]
 > Dieser Abschnitt zeigt eine Möglichkeit, Ihren Datenzugriffscode zu organisieren. Es ist nur als Beispiel gedacht, wie Sie [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) zum Speichern und Abrufen von Daten aus einer SQL Server-Datenbank verwenden können. Sie können Ihren Code auf jede Art und Weise organisieren, die für das Design Ihrer App am sinnvollsten ist.
@@ -236,14 +236,14 @@ Stellen Sie dann sicher, dass Ihr SQL Server-Browser-Dienst ausgeführt wird.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Verwenden einer einfachen Datenbank, um Daten auf dem Gerät des Benutzers zu speichern**
+**Verwenden Sie eine einfache Datenbank zum Speichern von Daten auf dem Gerät des Benutzers**
 
 Weitere Infos finden Sie unter [Verwenden Sie eine SQLite-Datenbank in einer UWP-App](sqlite-databases.md).
 
-**Nutzen Sie Code zwischen verschiedenen Apps auf verschiedenen Plattformen**
+**Freigeben von Code zwischen den verschiedenen apps auf verschiedenen Plattformen**
 
 Weitere Informationen finden Sie unter [Teilen von Code zwischen einer Desktop-App und einer UWP-App](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)
 
-**Hinzufügen von Master-Detailseiten mit Azure SQL-Backends**
+**Hinzufügen von master-Detail-Seiten mit Azure SQL-Back-ends**
 
 Mehr unter [Beispiel einer Kundenauftragsdatenbank.](https://github.com/Microsoft/Windows-appsample-customers-orders-database)

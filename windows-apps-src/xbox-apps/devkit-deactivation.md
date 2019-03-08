@@ -3,15 +3,15 @@ title: Deaktivierung des Xbox One-Entwicklermodus
 description: In diesem Artikel wird das Deaktivieren des Entwicklermodus beschrieben.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
 ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947301"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651775"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Deaktivierung des Xbox One-Entwicklermodus
 
@@ -60,21 +60,21 @@ Führen Sie zum Zurücksetzen der Konsole die folgenden Schritte aus:
 
 3.  Wechseln Sie im rechten Bereich zu **System**, und wählen Sie dann im linken Bereich **Konsoleninfo** aus.   
    
-    ![Konsoleninfo & Updates](images/devkit-deactivation-2.png)  
+    ![Console info and updates](images/devkit-deactivation-2.png)  
     
 4.  Wählen Sie **Konsole zurücksetzen** aus.
     
-    ![Konsole zurücksetzen](images/devkit-deactivation-3.png)
+    ![Reset console](images/devkit-deactivation-3.png)
     
 5.  Klicken Sie anschließend auf **Zurücksetzen und alles entfernen**. Mit dieser Option wird die Konsole in den ursprünglichen Einzelhandelszustand zurückgesetzt.  Alle Apps, Spiele und lokal gespeicherten Daten werden gelöscht. Beachten Sie, dass die Konsole nicht aus dem Entwicklerprogramm gelöscht wird, wenn Sie die andere Option, **Reset and keep my games & apps**, auswählen.  
    
     ![Reset and remove everything](images/devkit-deactivation-4.png)
 
-## <a name="deactivate-your-console-using-partner-center"></a>Deaktivieren der Konsole mit der Partner Center
+## <a name="deactivate-your-console-using-partner-center"></a>Deaktivieren Sie die Konsole mit der Partner Center
 
-Wenn Sie die Konsole aus irgendeinem Grund keinen Zugriff auf sind, können Sie mithilfe der Partner Center auch den Entwicklermodus auf der Konsole deaktivieren.
+Wenn Sie auf der Konsole aus irgendeinem Grund nicht möglich sind, können Sie auch den Entwicklermodus auf Ihrer Konsole deaktivieren, über Partner Center.
 
-1. Navigieren Sie zum [Verwalten von Xbox One-Konsolen](https://partner.microsoft.com/xboxdevices) -Seite im Partner Center. Möglicherweise werden Sie zur Anmeldung aufgefordert.
+1. Navigieren Sie zu der [verwalten deiner Xbox One Konsolen](https://partner.microsoft.com/xboxdevices) Seite im Partner Center. Sie können zur Anmeldung aufgefordert werden.
 
 2. Suchen Sie in der Liste der Konsolen die Konsole, die Sie deaktivieren möchten, anhand der Seriennummer, Konsolen-ID oder Geräte-ID.  
 
@@ -84,6 +84,6 @@ Wenn Sie die Konsole aus irgendeinem Grund keinen Zugriff auf sind, können Sie 
 
 Wenn Sie die Xbox One Konsole noch nicht in den Einzelhandelsmodus zurückgesetzt haben, holen Sie dies jetzt nach wie unter [Wechseln zum Einzelhandelsmodus](#switch-to-retail-mode) beschrieben.
 
-## <a name="see-also"></a>Weitere Informationen
-- [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md)
-- [UWP auf Xbox One](index.md)
+## <a name="see-also"></a>Siehe auch
+- [Ein Xbox-Entwickler-Modus-Aktivierung](devkit-activation.md)
+- [UWP auf Xbox One](index.md)

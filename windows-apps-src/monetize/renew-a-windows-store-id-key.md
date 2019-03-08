@@ -4,38 +4,38 @@ description: Verwenden Sie diese Microsoft zum Verlängern eines Microsoft Store
 title: Verlängern eines Microsoft Store-ID-Schlüssels
 ms.date: 03/19/2018
 ms.topic: article
-keywords: Windows10, UWP, Microsoft Store-Sammlungs-API, Microsoft Store-Einkaufs-API, Microsoft Store-ID-Schlüssel, verlängern
+keywords: Windows 10, UWP, Microsoft Store-Sammlungs-API, Microsoft Store-Einkaufs-API, Microsoft Store-ID-Schlüssel, verlängern
 ms.localizationpriority: medium
 ms.openlocfilehash: fd4d7ce26e12f7ff939ced8d456390b97d0c8a0d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116036"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620485"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>Verlängern eines Microsoft Store-ID-Schlüssels
 
 
-Verwenden Sie diese Microsoft zum Verlängern eines Microsoft Store-Schlüssels. Wenn Sie einen [Microsoft Store-ID-Schlüssel generieren](view-and-grant-products-from-a-service.md#step-4), ist dieser 90Tage lang gültig. Nach Ablauf des Schlüssels können Sie anhand des abgelaufenen Schlüssels einen neuen Schlüssel aushandeln, indem Sie diese Methode anwenden.
+Verwenden Sie diese Microsoft zum Verlängern eines Microsoft Store-Schlüssels. Wenn Sie einen [Microsoft Store-ID-Schlüssel generieren](view-and-grant-products-from-a-service.md#step-4), ist dieser 90 Tage lang gültig. Nach Ablauf des Schlüssels können Sie anhand des abgelaufenen Schlüssels einen neuen Schlüssel aushandeln, indem Sie diese Methode anwenden.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 
 Zur Verwendung dieser Methode benötigen Sie:
 
-* Ein AzureAD-Zugriffstoken, das mit dem Zielgruppen-URI `https://onestore.microsoft.com` erstellt wurde.
-* Ein abgelaufener MicrosoftStore-ID-Schlüssel, der [aus clientseitigem Code in Ihrer App generiert wurde](view-and-grant-products-from-a-service.md#step-4).
+* Ein Azure AD-Zugriffstoken, das mit dem Zielgruppen-URI `https://onestore.microsoft.com` erstellt wurde.
+* Ein abgelaufener Microsoft Store-ID-Schlüssel, der [aus clientseitigem Code in Ihrer App generiert wurde](view-and-grant-products-from-a-service.md#step-4).
 
 Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus einem Dienst](view-and-grant-products-from-a-service.md).
 
-## <a name="request"></a>Anforderung
+## <a name="request"></a>Anfordern
 
 ### <a name="request-syntax"></a>Anforderungssyntax
 
 | Schlüsseltyp    | Methode | Anforderungs-URI                                              |
 |-------------|--------|----------------------------------------------------------|
 | Sammlungen | POST   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
-| Einkauf    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
+| Kauf    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
 
 
 ### <a name="request-header"></a>Anforderungsheader
@@ -44,7 +44,7 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | Host           | string | Muss auf den Wert **collections.mp.microsoft.com** oder **purchase.mp.microsoft.com** festgelegt werden.           |
 | Content-Length | number | Die Länge des Anforderungstexts.                                                                       |
-| Inhaltstyp   | string | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
+| Content-Type   | string | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -108,7 +108,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [Verwalten von Produktansprüchen aus einem Dienst](view-and-grant-products-from-a-service.md)
-* [Produktabfrage](query-for-products.md)
-* [Melden von Verbrauchsprodukten als erfüllt](report-consumable-products-as-fulfilled.md)
-* [Gewähren kostenloser Produkte](grant-free-products.md)
+* [Verwalten von Product-Berechtigungen von einem Dienst](view-and-grant-products-from-a-service.md)
+* [Abfrage von Produkten](query-for-products.md)
+* [Verbrauchsartikeln gemeldet werden, weil erfüllt](report-consumable-products-as-fulfilled.md)
+* [Gewähren Sie kostenlose Produkte](grant-free-products.md)
