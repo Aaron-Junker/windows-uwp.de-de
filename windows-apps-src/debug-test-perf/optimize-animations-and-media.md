@@ -4,14 +4,14 @@ title: Optimieren von Animationen, Medien und Bildern
 description: Erstellen Sie UWP-Apps (Universelle Windows-Plattform) mit flüssigen Animationen, hoher Bildfrequenz und leistungsstarker Medienaufzeichnung und -wiedergabe.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b26274dd005813fe5c8ced2d90f6380e4d7f21
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946524"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640795"
 ---
 # <a name="optimize-animations-media-and-images"></a>Optimieren von Animationen, Medien und Bildern
 
@@ -37,7 +37,7 @@ Alle diese Animationsarten sind garantiert unabhängig:
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
     -   [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d)
-    -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
+    -   [**Projektion**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
     -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 
 Abhängige Animationen wirken sich auf das Layout aus und können nicht ohne zusätzliche Angaben aus dem UI-Thread berechnet werden. Abhängige Animationen umfassen Änderungen an Eigenschaften wie [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) und [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height). Abhängige Animationen werden standardmäßig nicht ausgeführt und erfordern die Zustimmung des App-Entwicklers. Werden sie aktiviert, laufen sie flüssig ab, solange der UI-Thread nicht blockiert wird. Ist das Framework oder die App dagegen stark mit anderen Vorgängen des UI-Threads ausgelastet, beginnen die Animationen zu ruckeln.
@@ -54,7 +54,7 @@ Webinhalte innerhalb eines [**WebView**](https://msdn.microsoft.com/library/wind
 
 Auch das Animieren eines [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)-Objekts ist nicht empfehlenswert. Abgesehen von den Leistungsbeeinträchtigungen kann dies im wiedergegebenen Videoinhalt zu Bildstörungen und anderen Artefakten führen.
 
-> **Hinweis:**  die Empfehlungen in diesem Artikel für **MediaPlayerElement** gelten auch für [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). **MediaPlayerElement** ist nur in Windows10, Version 1607 verfügbar. Wenn Sie daher eine App für eine frühere Version von Windows verwenden, müssen Sie **MediaElement** verwenden.
+> **Beachten Sie**    die Empfehlungen in diesem Artikel **MediaPlayerElement** gelten auch für [ **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). **MediaPlayerElement** ist nur in Windows 10, Version 1607 verfügbar. Wenn Sie daher eine App für eine frühere Version von Windows verwenden, müssen Sie **MediaElement** verwenden.
 
 ### <a name="use-infinite-animations-sparingly"></a>Setzen Sie Endlosanimationen sparsam ein.
 
@@ -64,9 +64,9 @@ Das Hinzufügen eines Handlers für [**CompositionTarget.Rendering**](https://ms
 
 ### <a name="use-the-animation-library"></a>Nutzen Sie die Animationsbibliothek.
 
-Der [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232)-Namespace umfasst eine Bibliothek mit schnellen Hochleistungsanimationen, deren Erscheinungsbild mit anderen Windows-Animation konsistent ist. Die relevanten Klassen enthalten „Design“ in ihrem Namen und werden in [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/Mt187350) beschrieben. Diese Bibliothek unterstützt viele gängige Animationsszenarien, z.B. die Animation der ersten Ansicht einer App oder die Erstellung von Zustands- und Inhaltsübergängen. Wir empfehlen, die Animationsbibliothek so oft wie möglich zu nutzen, um die Leistung und Konsistenz für UWP-UI zu verbessern.
+Der [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232)-Namespace umfasst eine Bibliothek mit schnellen Hochleistungsanimationen, deren Erscheinungsbild mit anderen Windows-Animation konsistent ist. Die relevanten Klassen enthalten „Design“ in ihrem Namen und werden in [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/Mt187350) beschrieben. Diese Bibliothek unterstützt viele gängige Animationsszenarien, z. B. die Animation der ersten Ansicht einer App oder die Erstellung von Zustands- und Inhaltsübergängen. Wir empfehlen, die Animationsbibliothek so oft wie möglich zu nutzen, um die Leistung und Konsistenz für UWP-UI zu verbessern.
 
-> **Hinweis:**  die animationsbibliothek kann nicht alle mögliche Eigenschaften animiert. Informationen zu XAML-Szenarien, bei denen die Animationsbibliothek nicht verwendet werden kann, finden Sie unter [Storyboardanimationen](https://msdn.microsoft.com/library/windows/apps/Mt187354).
+> **Beachten Sie**    die animationsbibliothek nicht alle mögliche Eigenschaften animieren. Informationen zu XAML-Szenarien, bei denen die Animationsbibliothek nicht verwendet werden kann, finden Sie unter [Storyboardanimationen](https://msdn.microsoft.com/library/windows/apps/Mt187354).
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>Eigenständiges Animieren von CompositeTransform3D-Eigenschaften
@@ -99,7 +99,7 @@ Um Energie zu sparen und den Akku zu schonen, wird empfohlen, [**DisplayRequest.
 
 Unten sind einige Situationen aufgeführt, in denen Sie die Displayanforderung freigeben sollten:
 
--   Die Videowiedergabe wird angehalten, z.B. per Benutzeraktion, wird gepuffert oder aufgrund begrenzter Bandbreite angepasst.
+-   Die Videowiedergabe wird angehalten, z. B. per Benutzeraktion, wird gepuffert oder aufgrund begrenzter Bandbreite angepasst.
 -   Die Wiedergabe wird gestoppt. Beispielsweise ist die Wiedergabe des Videos beendet oder die Darstellung vorüber.
 -   Ein Wiedergabefehler ist aufgetreten. Es können beispielsweise Probleme mit der Netzwerkverbindung bestehen, oder eine Datei kann beschädigt sein.
 
@@ -127,7 +127,7 @@ Durch Festlegen von [**MediaPlayerElement.PosterSource**](https://msdn.microsoft
 
 Bei Medienplattformen ist es immer eine besondere Herausforderung, dafür zu sorgen, dass das Scrubbing möglichst gut reagiert. Üblicherweise wird hierzu der Wert eines Schiebereglers geändert. Im Folgenden finden Sie einige Tipps für eine möglichst effiziente Verwendung:
 
--   Aktualisieren Sie den Wert des [**Schiebereglers**](https://msdn.microsoft.com/library/windows/apps/BR209614) basierend auf einem Timer, der die [**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx) auf [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) abfragt. Stellen Sie sicher, dass Sie eine geeignete Aktualisierungsfrequenz für den Timer verwenden. Die Eigenschaft **Position** wird während der Wiedergabe nur alle 250Millisekunden aktualisiert.
+-   Aktualisieren Sie den Wert des [**Schiebereglers**](https://msdn.microsoft.com/library/windows/apps/BR209614) basierend auf einem Timer, der die [**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx) auf [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) abfragt. Stellen Sie sicher, dass Sie eine geeignete Aktualisierungsfrequenz für den Timer verwenden. Die Eigenschaft **Position** wird während der Wiedergabe nur alle 250 Millisekunden aktualisiert.
 -   Die Größe der Schrittfrequenz für den Schieberegler muss gemäß der Videolänge skaliert werden.
 -   Abonnieren Sie die Ereignisse [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx) und [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) für den Schieberegler, um die [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx)-Eigenschaft auf „0“ festzulegen, wenn der Benutzer den Ziehpunkt des Schiebereglers bewegt.
 -   Legen Sie die Medienposition im [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx)-Ereignishandler manuell auf den Wert der Schiebereglerposition fest, um beim Scrubbing eine optimale Ziehpunktausrichtung zu gewährleisten.
@@ -177,7 +177,7 @@ Wenn DecodePixelWidth/DecodePixelHeight explizit kleiner als die Bilddarstellung
 
 In einigen Fällen, in denen es nicht möglich ist, die passende Decodierungsgröße im Voraus zu bestimmen, sollten Sie die automatische Decodierung von XAML auf die richtige Größe nutzen. Dabei wird nach Möglichkeit versucht, das Bild in der passenden Größe zu decodieren, wenn keine explizite DecodePixelWidth/DecodePixelHeight angegeben ist.
 
-Es wird empfohlen, eine explizite Decodierungsgröße festzulegen, wenn Sie die Größe des Bildinhalts bereits vorab kennen. Legen Sie gleichzeitig [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) auf **Logical** fest, wenn die angegebene Decodierungsgröße in Bezug auf andere XAML-Elementgrößen relativ ist. Wenn Sie z.B. die Inhaltsgröße explizit mit Image.Width und Image.Height festlegen, legen Sie DecodePixelType auf DecodePixelType.Logical fest, um die gleichen logischen Pixeldimensionen wie ein Bildsteuerelement zu verwenden, und verwenden sie dann explizit BitmapImage.DecodePixelWidth und/oder BitmapImage.DecodePixelHeight, um die Größe des Bilds zu steuern und potenziell mehr Arbeitsspeicher einzusparen.
+Es wird empfohlen, eine explizite Decodierungsgröße festzulegen, wenn Sie die Größe des Bildinhalts bereits vorab kennen. Legen Sie gleichzeitig [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) auf **Logical** fest, wenn die angegebene Decodierungsgröße in Bezug auf andere XAML-Elementgrößen relativ ist. Wenn Sie z. B. die Inhaltsgröße explizit mit Image.Width und Image.Height festlegen, legen Sie DecodePixelType auf DecodePixelType.Logical fest, um die gleichen logischen Pixeldimensionen wie ein Bildsteuerelement zu verwenden, und verwenden sie dann explizit BitmapImage.DecodePixelWidth und/oder BitmapImage.DecodePixelHeight, um die Größe des Bilds zu steuern und potenziell mehr Arbeitsspeicher einzusparen.
 
 Beachten Sie, dass Image.Stretch beim Bestimmen der Größe des decodierten Inhalts berücksichtigt werden sollte.
 
@@ -195,9 +195,9 @@ Wenn Sie keine explizite Decodierungsgröße festlegen, versucht XAML, möglich 
 
 In den oben genannten Szenarien ist das Festlegen einer expliziten Decodierungsgröße die einzige Möglichkeit, um Arbeitsspeichereinsparungen zu erzielen.
 
-Fügen Sie stets ein [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235)-Objekt an die Live-Struktur an, bevor Sie die Quelle festlegen. Dies erfolgt jedes Mal automatisch, wenn ein Bildelement oder ein Pinsel in Markup angegeben wird. Beispiele finden Sie weiter unten im Abschnitt „Live-Struktur-Beispiele“. Vermeiden Sie beim Festlegen einer Datenstromquelle stets die Verwendung von [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255), und verwenden Sie stattdessen [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522). Zudem ist es sinnvoll, das Ausblenden von Bildinhalten (entweder durch eine Deckkraft von null oder die Sichtbarkeitseinstellung „Collapsed“) zu vermeiden, während Sie darauf warten, dass das [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx)-Ereignis ausgelöst wird. Wägen Sie Ihre Entscheidung ab. Sie können in diesem Fall die Vorteile der automatischen Decodierung in der richtigen Größe nicht nutzen. Wenn Ihre App Bilder anfänglich ausblenden muss, sollte nach Möglichkeit auch die Decodierungsgröße explizit festgelegt werden.
+Fügen Sie stets ein [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235)-Objekt an die Live-Struktur an, bevor Sie die Quelle festlegen. Dies erfolgt jedes Mal automatisch, wenn ein Bildelement oder ein Pinsel im Markupcode angegeben wird. Beispiele finden Sie weiter unten im Abschnitt „Live-Struktur-Beispiele“. Vermeiden Sie beim Festlegen einer Datenstromquelle stets die Verwendung von [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255), und verwenden Sie stattdessen [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522). Zudem ist es sinnvoll, das Ausblenden von Bildinhalten (entweder durch eine Deckkraft von null oder die Sichtbarkeitseinstellung „collapsed“) zu vermeiden, während Sie darauf warten, dass das [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx)-Ereignis ausgelöst wird. Wägen Sie Ihre Entscheidung ab. Sie können in diesem Fall die Vorteile der automatischen Decodierung in der richtigen Größe nicht nutzen. Wenn Ihre App Bilder anfänglich ausblenden muss, sollte nach Möglichkeit auch die Decodierungsgröße explizit festgelegt werden.
 
-**Live-Struktur-Beispiele**
+**Beispiele für die Live-Struktur**
 
 Beispiel 1 (gut): URI (Uniform Resource Identifier) in Markup angegeben.
 
@@ -219,7 +219,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Beispiel 2 – CodeBehind (schlecht): Festlegen der UriSource von BitmapImage, bevor es mit der Struktur verbunden.
+Beispiel 2-Code-Behind (schlecht) – die "BitmapImage" UriSource festlegen, bevor sie mit der Struktur.
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -263,7 +263,7 @@ Ihre App sollte [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/
 
 ### <a name="use-getthumbnailasync-for-thumbnails"></a>Verwenden von „GetThumbnailAsync“ für Miniaturansichten
 
-Ein Anwendungsfall für die Bildskalierung ist die Erstellung von Miniaturansichten. Sie könnten kleine Bildversionen zwar auch mit [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) und [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) bereitstellen, aber die Universelle Windows-Plattform (UWP) bietet noch effizientere APIs zum Abrufen von Miniaturansichten. [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) stellt die Miniaturansichten für Bilder bereit, bei denen das Dateisystem bereits zwischengespeichert wurde. Dadurch erhalten Sie eine noch bessere Leistung als bei den XAML-APIs, da das Bild weder geöffnet noch decodiert werden muss.
+Ein Anwendungsfall für die Bildskalierung ist die Erstellung von Miniaturansichten. Sie könnten kleine Bildversionen zwar auch mit [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) und [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) bereitstellen, aber die Universelle Windows-Plattform (UWP) bietet noch effizientere APIs zum Abrufen von Miniaturansichten. [**GetThumbnailAsync** ](https://msdn.microsoft.com/library/windows/apps/BR227210) bietet die Miniaturansichten für Bilder, die im Dateisystem, die bereits im Cache haben. Dadurch erhalten Sie eine noch bessere Leistung als bei den XAML-APIs, da das Bild weder geöffnet noch decodiert werden muss.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

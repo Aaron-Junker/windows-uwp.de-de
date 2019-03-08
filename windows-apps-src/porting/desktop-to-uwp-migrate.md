@@ -1,21 +1,21 @@
 ---
-Description: Share code between a desktop application and a UWP app
+Description: Freigeben von Code für eine desktop-Anwendung und einer UWP-app
 Search.Product: eADQiWindows 10XVcnh
-title: Teilen von Code zwischen einer desktop-Anwendung und eine UWP-app
+title: Freigeben von Code für eine desktop-Anwendung und einer UWP-app
 ms.date: 10/03/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 151584f15013c9d4ab7d9566e175b957a7a84149
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9045739"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644345"
 ---
-# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Teilen von Code zwischen einer desktop-Anwendung und eine UWP-app
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Freigeben von Code für eine desktop-Anwendung und einer UWP-app
 
-Sie können den Code in .NET Standardbibliotheken übertragen und so eine universelle Windows-Plattform (UWP)-App erstellen, um alle Windows10-Geräten zu erreichen. Obwohl kein Tool existiert, das eine Desktopanwendung in eine UWP-App konvertieren kann, können Sie einen Großteil Ihres vorhandenen Codes wiederverwenden und so die Kosten der Programmierung verringern. Die entsprechende Vorgehensweise wird in dieser Anleitung beschrieben.
+Sie können den Code in .NET Standardbibliotheken übertragen und so eine universelle Windows-Plattform (UWP)-App erstellen, um alle Windows 10-Geräten zu erreichen. Obwohl kein Tool existiert, das eine Desktopanwendung in eine UWP-App konvertieren kann, können Sie einen Großteil Ihres vorhandenen Codes wiederverwenden und so die Kosten der Programmierung verringern. Die entsprechende Vorgehensweise wird in dieser Anleitung beschrieben.
 
 ## <a name="share-code-in-a-net-standard-20-library"></a>Teilen von Code in Bibliotheken für .NET Standard 2.0
 
@@ -61,9 +61,9 @@ Wenn Ihr Code nicht mit dem Standard kompatibel ist, ziehen Sie weitere Möglich
 
 Ein Teil Ihres Codes ist plattformspezifisch und muss in Ihrem Desktopanwendungsprojekt verbleiben.
 
-### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Beispiel: Migrieren von Datenzugriffscode auf eine Bibliothek für .NET Standard 2.0
+### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Beispiel: Migrieren von Datenzugriffscode in einer .NET Standard 2.0-Bibliothek
 
-Angenommen, Sie haben wir eine sehr einfache Windows Forms-Anwendung, die Kunden aus unserer Northwind-Beispieldatenbank anzeigt.
+Nehmen wir an, dass wir eine sehr einfache Windows Forms-Anwendung verfügen, die Kunden unsere Northwind-Beispieldatenbank anzeigt.
 
 ![Windows Forms-App](images/desktop-to-uwp/win-forms-app.png)
 
@@ -157,7 +157,7 @@ Jetzt können Sie der Lösung eine UWP-App hinzuzufügen.
 
 ![Abbildung der Desktop-zu-UWP-Brücke](images/desktop-to-uwp/adaptive-ui.png)
 
-Sie müssen allerdings noch die Seiten der Benutzeroberfläche in XAML erstellen und den für jedes Gerät oder jede Plattform spezifischen Code schreiben. Wenn Sie damit fertig sind, können Sie den gesamten Umfang der Windows10-Geräte erreichen und Ihre App-Seiten werden modern dargestellt und eignen sich so gut für unterschiedliche Bildschirmgrößen und -Auflösungen.
+Sie müssen allerdings noch die Seiten der Benutzeroberfläche in XAML erstellen und den für jedes Gerät oder jede Plattform spezifischen Code schreiben. Wenn Sie damit fertig sind, können Sie den gesamten Umfang der Windows 10-Geräte erreichen und Ihre App-Seiten werden modern dargestellt und eignen sich so gut für unterschiedliche Bildschirmgrößen und -Auflösungen.
 
 Ihre App reagiert auf andere Eingabemechanismen als nur Tastatur und Maus, und die Funktionen und Einstellungen sind auf allen Geräten intuitiv. Dies bedeutet, dass Benutzer lernen, Aufgaben nur einmal durchzuführen. Dies funktioniert in vertrauter Art und Weise und ist vom Gerät unabhängig.
 
@@ -268,10 +268,10 @@ Informationen zu den ersten Schritten mit Android-, iOS- und plattformübergreif
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Finden Sie Antworten auf Ihre Fragen**
+**Hier finden Sie Antworten auf Ihre Fragen**
 
 Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Fragen Sie uns [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Geben Sie Feedback oder Verbesserungsvorschläge**
+**Geben Sie Feedback oder Vorschläge für Features**
 
 Weitere Informationen finden Sie unter [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

@@ -7,33 +7,33 @@ ms.topic: article
 keywords: Windows 10, Uwp, Sicherheit
 ms.localizationpriority: medium
 ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927930"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593975"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Erstellen einer Windows Hello-Anmelde-App
 
 Dies ist der erste Teil einer umfassenden Schritt-für-Schritt-Lösung zum Erstellen einer Windows 10-App für die Universelle Windows-Plattform (UWP), die Windows Hello als Alternative zu herkömmlichen Authentifizierungssystemen mit Benutzername und Kennwort verwendet. Die App verwendet einen Benutzernamen für die Anmeldung und erstellt einen Hello-Schlüssel für jedes Konto. Diese Konten werden durch die PIN geschützt, die in den Windows-Einstellungen beim Konfigurieren von Windows Hello eingerichtet wird.
 
-Diese Schritt-für-Schritt-Lösung ist in zwei Teile aufgeteilt: Erstellen der App und Herstellen der Verbindung mit dem Back-End-Dienst. Fahren Sie nach Abschluss dieses Artikels mit Teil2 fort: [Windows-Hello-Anmeldedienst](microsoft-passport-login-auth-service.md).
+Diese exemplarischen Vorgehensweise ist in zwei Teile aufgeteilt: Erstellen der App und Herstellen der Verbindung mit dem Back-End-Dienst. Wenn Sie fertig sind, fahren Sie mit Teil 2 fort: [Windows Hello-Anmeldedienst](microsoft-passport-login-auth-service.md).
 
 Machen Sie sich in der Übersicht [Windows Hello](microsoft-passport.md) zunächst mit grundlegenden Informationen zur Funktionsweise von Windows Hello vertraut.
 
-## <a name="get-started"></a>Erste Schritte
+## <a name="get-started"></a>Beginnen
 
 
-Die Erstellung dieses Projekts setzt Erfahrung mit C# und XAML voraus. Sie müssen auch Visual Studio 2015 verwenden (Community Edition oder höher), oder einer neueren Version von Visual Studio auf einem Windows 10-Computer. Während der Visual Studio 2015 die mindestens erforderliche Version ist, empfehlen wir, dass Sie die neueste Version von Visual Studio für die neuesten Updates für Entwickler und Sicherheit verwenden.
+Die Erstellung dieses Projekts setzt Erfahrung mit C# und XAML voraus. Sie müssen außerdem verwendet Visual Studio 2015 (Community Edition oder höher), oder eine neuere Version von Visual Studio auf einem Windows 10-Computer. Obwohl Visual Studio 2015, die mindestens erforderliche Version ist, empfehlen wir, dass Sie die neueste Version von Visual Studio, um die neuesten Entwickler und Sicherheit verwenden.
 
--   Öffnen Sie Visual Studio, und wählen Sie Datei > Neu > Projekt.
+-   Öffnen Sie Visual Studio, und wählen Sie die Datei > Neu > Projekt.
 -   Din Fenster für ein neues Projekt wird geöffnet. Navigieren Sie zu „Vorlagen“ > „Visual C#“.
 -   Wählen Sie „ Leere App (Universelle Windows-App)“ aus, und nennen Sie die Anwendung „PassportLogin“.
 -   Erstellen Sie die neue Anwendung, und führen Sie sie aus (F5). Anschließend sollte Ihnen auf dem Bildschirm ein leeres Fenster angezeigt werden. Schließen Sie die Anwendung.
 
 ![Neue Windows-Hello-Projekt](images/passport-login-1.png)
 
-## <a name="exercise-1-login-with-microsoft-passport"></a>Übung1: Anmelden mit Microsoft Passport
+## <a name="exercise-1-login-with-microsoft-passport"></a>Übung 1: Melden Sie sich mit Microsoft Passport
 
 
 In dieser Übung lernen Sie, wie Sie prüfen, ob Windows Hello auf dem Computer eingerichtet ist, und wie Sie sich mit Windows Hello bei einem Konto anmelden.
@@ -51,7 +51,7 @@ In dieser Übung lernen Sie, wie Sie prüfen, ob Windows Hello auf dem Computer 
     -   TextBlock-Element für einen Titel.
     -   TextBlock-Element für Fehlermeldungen.
     -   TextBox-Element für die Eingabe des Benutzernamens.
-    -   Schaltfläche für die Navigation zu einer Registrierungsseite.
+    -   Button-Element für die Navigation zu einer Registrierungsseite.
     -   TextBlock-Element für den Status von Windows Hello.
     -   TextBlock-Element zur Erläuterung der Anmeldeseite, da kein Back-End und keine konfigurierten Benutzer vorhanden sind.
 
@@ -163,7 +163,7 @@ In dieser Übung lernen Sie, wie Sie prüfen, ob Windows Hello auf dem Computer 
     ![Passport – Erstellen von Helferklassen](images/passport-login-5.png)
 
 -   Klicken Sie mit der rechten Maustaste auf den Ordner „Utils“, und wählen Sie „Hinzufügen“ > „Klasse“ aus. Nennen Sie die Klasse „MicrosoftPassportHelper.cs“.
--   Definieren Sie „MicrosoftPassportHelper“ als öffentliche, statische Klasse, und fügen Sie anschließend die folgende Methode hinzu, um den Benutzer darüber zu informieren, ob Windows Hello verwendungsbereit ist. Sie müssen die erforderlichen Namensräume hinzufügen.
+-   Definieren Sie „MicrosoftPassportHelper“ als öffentliche, statische Klasse, und fügen Sie anschließend die folgende Methode hinzu, um den Benutzer darüber zu informieren, ob Windows Hello verwendungsbereit ist. Sie müssen die erforderlichen Namespaces hinzufügen.
 
     ```cs
     using System;
@@ -205,7 +205,7 @@ In dieser Übung lernen Sie, wie Sie prüfen, ob Windows Hello auf dem Computer 
     using PassportLogin.Utils;
     ```
 
--   Erstellen Sie die Anwendung und führen Sie sie aus (F5). Sie werden auf die Anmeldeseite weitergeleitet, und das Windows-Hello-Banner gibt Aufschluss darüber, ob Hello verwendungsbereit ist. Das Banner ist entweder grün oder blau und gibt den Status von Windows Hello auf Ihrem Computer an.
+-   Erstellen Sie die Anwendung, und führen Sie sie aus (F5). Sie werden auf die Anmeldeseite weitergeleitet, und das Windows-Hello-Banner gibt Aufschluss darüber, ob Hello verwendungsbereit ist. Das Banner ist entweder grün oder blau und gibt den Status von Windows Hello auf Ihrem Computer an.
 
     ![Windows Hello - Anmeldebildschirm bereit](images/passport-login-6.png)
 
@@ -486,10 +486,10 @@ In dieser Übung lernen Sie, wie Sie prüfen, ob Windows Hello auf dem Computer 
 
     ![Windows-Hello-Anmelde-Pin-Aufforderung](images/passport-login-8.png)
 
-## <a name="exercise-2-welcome-and-user-selection-pages"></a>Übung2: Begrüßungs- und Benutzerauswahlseiten
+## <a name="exercise-2-welcome-and-user-selection-pages"></a>Übung 2: Willkommen beim und Benutzer-Auswahl-Seiten
 
 
-Diese Übung baut direkt auf der vorherigen Übung auf. Nach erfolgreicher Anmeldung soll der Benutzer auf eine Begrüßungsseite weitergeleitet werden, auf der er sich abmelden oder sein Konto löschen kann. Da von Windows Hello ein computerspezifischer Schlüssel erstellt wird, kann ein Benutzerauswahlbildschirm erstellt werden, der alle Benutzer anzeigt, die auf diesem Computer angemeldet waren. Ein Benutzer kann dann eines dieser Konten auswählen, um direkt und ohne erneute Kennworteingabe zur Willkommensseite zu gelangen, da er bereits für den Zugriff auf den Computer authentifiziert wurde.
+Diese Übung baut direkt auf der vorherigen Übung auf. Nach erfolgreicher Anmeldung soll der Benutzer auf eine Willkommensseite weitergeleitet werden, auf der er sich abmelden oder sein Konto löschen kann. Da von Windows Hello ein computerspezifischer Schlüssel erstellt wird, kann ein Benutzerauswahlbildschirm erstellt werden, der alle Benutzer anzeigt, die auf diesem Computer angemeldet waren. Ein Benutzer kann dann eines dieser Konten auswählen, um direkt und ohne erneute Kennworteingabe zur Willkommensseite zu gelangen, da er bereits für den Zugriff auf den Computer authentifiziert wurde.
 
 -   Fügen Sie im Ordner „Views“ eine neue leere Seite namens „Welcome.xaml“ hinzu. Fügen Sie zur Vervollständigung der Benutzeroberfläche den folgenden XAML-Code hinzu. Dadurch werden ein Titel, der Benutzername des angemeldeten Benutzers und zwei Schaltflächen angezeigt. Über eine der Schaltflächen gelangt der Benutzer wieder zur Benutzerliste (die Sie später noch erstellen), die andere Schaltfläche dient zum Löschen des Benutzers.
 
@@ -872,7 +872,7 @@ Diese Übung baut direkt auf der vorherigen Übung auf. Nach erfolgreicher Anmel
 
     ![Windows Hello - Benutzerliste auswählen](images/passport-login-10.png)
 
-## <a name="exercise-3-registering-a-new-windows-hello-user"></a>Übung 3: Registrieren eines neuen Windows-Hello-Benutzers
+## <a name="exercise-3-registering-a-new-windows-hello-user"></a>Übung 3: Registrieren eines neuen Windows Hello-Benutzers
 
 
 In dieser Übung erstellen Sie eine neue Seite für die Erstellung eines neuen Windows-Hello-Kontos. Das funktioniert ähnlich wie bei der Anmeldeseite. Die Anmeldeseite wird für einen vorhandenen Benutzer implementiert, der für die Verwendung von Windows Hello migriert wird. Eine PassportRegister-Seite erstellt die Windows-Hello-Registrierung für einen neuen Benutzer.
@@ -957,13 +957,13 @@ In dieser Übung erstellen Sie eine neue Seite für die Erstellung eines neuen W
     }
     ```
 
--   Erstellen Sie die Anwendung, und führen Sie sie aus. Versuchen Sie, einen neuen Benutzer zu registrieren. Kehren Sie anschließend zur Benutzerliste zurück und vergewissern Sie sich, dass Sie den Benutzer auswählen und sich anmelden können.
+-   Erstellen Sie die Anwendung, und führen Sie sie aus. Versuchen Sie, einen neuen Benutzer zu registrieren. Kehren Sie anschließend zur Benutzerliste zurück, und vergewissern Sie sich, dass Sie den Benutzer auswählen und sich anmelden können.
 
     ![Windows Hello - Registrieren neuer Benutzer](images/passport-login-11.png)
 
-In dieser Übung wurden die Grundlagen für die Verwendung der neuen Windows-Hello-API zum Authentifizieren vorhandener Benutzer und zum Erstellen von Konten für neue Benutzer vermittelt. Dank dieser neuen Kenntnisse müssen sich die Benutzer bald keine Kennwörter für Ihre Anwendung mehr merken, während gleichzeitig der Schutz durch die Benutzerauthentifizierung erhalten bleibt. Windows10 verwendet die neue Authentifizierung-Technologie von Windows Hello zur Unterstützung der biometrischen Anmeldungsoptionen.
+In dieser Übung wurden die Grundlagen für die Verwendung der neuen Windows-Hello-API zum Authentifizieren vorhandener Benutzer und zum Erstellen von Konten für neue Benutzer vermittelt. Dank dieser neuen Kenntnisse müssen sich die Benutzer bald keine Kennwörter für Ihre Anwendung mehr merken, während gleichzeitig der Schutz durch die Benutzerauthentifizierung erhalten bleibt. Windows 10 verwendet die neue Authentifizierung-Technologie von Windows Hello zur Unterstützung der biometrischen Anmeldungsoptionen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Windows Hello](microsoft-passport.md)
-* [Windows-Hello-Anmeldedienst](microsoft-passport-login-auth-service.md)
+* [Windows Hello-Anmeldedienst](microsoft-passport-login-auth-service.md)

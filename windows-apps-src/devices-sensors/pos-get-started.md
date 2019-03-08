@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 518529fecff9f25a83a03847b1623bf9f09a8145
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116000"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661155"
 ---
 # <a name="getting-started-with-point-of-service"></a>Erste Schritte mit Point Of Service-Geräten
 
@@ -23,7 +23,7 @@ In dieser Anleitung lernen Sie die Grundlagen der Anbindung an POS-Geräte mithi
 Bevor ein POS-Gerät von einer App verwendet werden kann, muss es mit dem PC gekoppelt werden, auf dem die App ausgeführt wird. Es gibt verschiedene Möglichkeiten, Verbindungen mit POS-Geräten herzustellen, entweder programmgesteuert oder über die App „Einstellungen”.
 
 ### <a name="connecting-to-devices-by-using-the-settings-app"></a>Herstellen einer Verbindung mit Geräten mithilfe der App „Einstellungen”
-Wenn Sie ein POS-Gerät, z.B. einen Strichcodescanner, an einen PC anschließen, wird es wie jedes anderes Gerät angezeigt. Sie finden es im Abschnitt **Geräte > Bluetooth- & andere Geräte** der App „Einstellungen”. Hier können Sie POS-Geräte koppeln, indem Sie **Bluetooth- oder anderes Gerät hinzufügen** wählen.
+Wenn Sie ein POS-Gerät, z. B. einen Strichcodescanner, an einen PC anschließen, wird es wie jedes anderes Gerät angezeigt. Sie finden es im Abschnitt **Geräte > Bluetooth- & andere Geräte** der App „Einstellungen”. Hier können Sie POS-Geräte koppeln, indem Sie **Bluetooth- oder anderes Gerät hinzufügen** wählen.
 
 Einige POS-Geräte werden möglicherweise erst dann in den Einstellungen angezeigt, nachdem sie mithilfe der POS-APIs programmgesteuert aufgelistet wurden.
 
@@ -43,7 +43,7 @@ Nachdem dieses Standardgerät gefunden wurde, kann das abgerufene Geräteobjekt 
 
 ### <a name="enumerating-a-collection-of-devices-with-findallasync"></a>Auflisten von Geräten mit FindAllAsync
 
-Sind mehrere Gerät angeschlossen, müssen Sie die Auflistung **PointOfService** durchsuchen, um das Geräteobjekt zu finden, das Sie beanspruchen möchten. Der folgende Code erstellt z.B. eine Auflistung aller aktuell verbundenen Strichcodescanner und durchsucht die Auflistung dann nach einem Scanner mit einem bestimmten Namen.
+Sind mehrere Gerät angeschlossen, müssen Sie die Auflistung **PointOfService** durchsuchen, um das Geräteobjekt zu finden, das Sie beanspruchen möchten. Der folgende Code erstellt z. B. eine Auflistung aller aktuell verbundenen Strichcodescanner und durchsucht die Auflistung dann nach einem Scanner mit einem bestimmten Namen.
 
 ```Csharp
 using Windows.Devices.Enumeration;
@@ -97,7 +97,7 @@ void DeviceWatcher_Updated(DeviceWatcher sender, DeviceInformationUpdate args)
 ```
 
 ## <a name="checking-the-capabilities-of-a-point-of-service-device"></a>Überprüfen der Funktionalität eines POS-Geräts
-Sogar innerhalb einer Geräteklasse (z.B. der Strichcodescanner) können die Attribute der einzelnen Geräte modellbedingt erheblich variieren. Wenn für Ihre App ein bestimmtes Geräteattribut erforderlich ist, sollten Sie jedes verbundene Gerätobjekt überprüfen, um festzustellen, ob das Attribut unterstützt wird. Beispielsweise könnte es für Ihr Unternehmen erforderlich sein, dass Bezeichnungen mit einem bestimmten Strichcodemuster versehen sind. Im Folgenden wird gezeigt, wie Sie überprüfen können, ob ein verbundener Strichcodescanner eine Symbologie unterstützt. 
+Sogar innerhalb einer Geräteklasse (z. B. der Strichcodescanner) können die Attribute der einzelnen Geräte modellbedingt erheblich variieren. Wenn für Ihre App ein bestimmtes Geräteattribut erforderlich ist, sollten Sie jedes verbundene Gerätobjekt überprüfen, um festzustellen, ob das Attribut unterstützt wird. Beispielsweise könnte es für Ihr Unternehmen erforderlich sein, dass Bezeichnungen mit einem bestimmten Strichcodemuster versehen sind. Im Folgenden wird gezeigt, wie Sie überprüfen können, ob ein verbundener Strichcodescanner eine Symbologie unterstützt. 
 
 > [!NOTE]
 > Eine Symbologie ist die Sprache, die zum Codieren von Nachrichten in einem Strichcode verwendet wird.
@@ -152,7 +152,7 @@ catch (Exception ex)
 ```
 
 ### <a name="retaining-the-device"></a>Aufrechthalten des Geräteanspruchs
-Wenn Sie ein POS-Gerät über eine Netzwerk- oder Bluetooth-Verbindung verwenden, möchten Sie das Gerät möglicherweise mit anderen Apps im Netzwerk teilen. (Weitere Informationen hierzu finden Sie unter [Teilen von Geräten](#sharing-a-device-between-apps).) In anderen Fällen möchten Sie vielleicht die Gerätenutzung verlängern. In diesem Beispiel wird veranschaulicht, wie der Anspruch auf einen Strichcodescanner aufrechterhalten wird, wenn eine andere App fordert, das Gerät freizugegeben.
+Wenn Sie ein POS-Gerät über eine Netzwerk- oder Bluetooth-Verbindung verwenden, möchten Sie das Gerät möglicherweise mit anderen Apps im Netzwerk teilen. (Weitere Informationen hierzu finden Sie unter [Geräte freigeben](#sharing-a-device-between-apps).) In anderen Fällen möchten möglicherweise für ausgedehnte Verwendung auf dem Gerät warten. In diesem Beispiel wird veranschaulicht, wie der Anspruch auf einen Strichcodescanner aufrechterhalten wird, wenn eine andere App fordert, das Gerät freizugegeben.
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
@@ -207,10 +207,10 @@ if (claimedBarcodeScanner != null)
 > [!NOTE]
 > Sowohl die beanspruchten als auch die nicht beanspruchten POS-Geräteklassen implementieren die [IClosable-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable). Wenn ein Gerät über ein Netzwerk oder Bluetooth mit einer App verbunden ist, müssen sowohl die beanspruchten als auch die nicht beanspruchten Objekte freigegeben werden, bevor eine andere App eine Verbindung herstellen kann.
 
-## <a name="see-also"></a>Weitere Informationen
-+ [Beispiel für Strichcodescanner](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [Beispiel für Kassenschubladen]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
-+ [Beispiel für Zeilenanzeigen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
-+ [Beispiel für Magnetstreifenleser](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
-+ [Beispiel für POS-Drucker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
+## <a name="see-also"></a>Siehe auch
++ [Barcode Scanner-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
++ [Bargeld Drawer-Beispiel]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [Beispiel für Zeile anzeigen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
++ [Magnetstreifens Reader-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
++ [POSPrinter-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 279e650532505467f3c0dbabf3814618b893aedb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927880"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637025"
 ---
 # <a name="depth-buffers"></a>Tiefenpuffer
 
 
 Ein *Tiefenpuffer* oder *Z-Puffer* speichert Tiefeninformationen. Diese steuern, welche Bereiche von Polygonen dargestellt werden.
 
-## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>Übersicht
+## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>Übersicht über die
 
 
 Ein Tiefenpuffer oder auch Z-Puffer bzw. W-Puffer ist ein Element des Geräts, das Tiefeninformationen für die Nutzung durch Direct3D speichert. Beim Rendern einer Szene auf eine Zieloberfläche durch Direct3D kann der Speicher für den einer Oberfläche zugeordneten Tiefenpuffer als Arbeitsbereich zur Bestimmung der Überlagerung der gerasterten Pixel von Polygonen genutzt werden. Direct3D verwendet eine Direct3D-Oberfläche außerhalb des Bildschirms als Ziel zum Schreiben der endgültigen Farbwerte. Die Tiefenpufferoberfläche, die der Renderzieloberfläche zugeordnet ist, wird verwendet, um Tiefeninformationen zu speichern. Diese zeigen Direct3D, wie tief jedes sichtbare Pixel in der Szene angeordnet ist.
@@ -32,14 +32,14 @@ Wenn er sich überschneidet, wird der Tiefenwert (die Z-Koordinate in einem Z-Pu
 
 ![Diagramm zum Testen von Tiefenwerten](images/zbuffer.png)
 
-## <a name="span-idbufferingtechniquesspanspan-idbufferingtechniquesspanspan-idbufferingtechniquesspanbuffering-techniques"></a><span id="Buffering_techniques"></span><span id="buffering_techniques"></span><span id="BUFFERING_TECHNIQUES"></span>Pufferungs-Techniken
+## <a name="span-idbufferingtechniquesspanspan-idbufferingtechniquesspanspan-idbufferingtechniquesspanbuffering-techniques"></a><span id="Buffering_techniques"></span><span id="buffering_techniques"></span><span id="BUFFERING_TECHNIQUES"></span>Pufferung Techniken
 
 
 Obwohl die meisten Anwendungen dieses Feature nicht verwenden, ist es möglich, den von Direct3D zur Bestimmung der in den Tiefenpuffer und in die Renderzieloberfläche zu schreibenden Werte verwendeten Vergleich zu ändern. Auf bestimmter Hardware ist es möglich, das die Änderung der Vergleichsfunktion das Testen von hierarchischen Z-Werten deaktiviert.
 
 Fast alle im Markt verfügbaren Hardwarebeschleuniger unterstützten die Z-Pufferung. Die Z-Pufferung ist daher heute der am häufigsten verwendeten Tiefenpuffer-Typ. Trotz ihrer breitflächigen Nutzung haben Z-Puffer Nachteile. Aufgrund der erforderlichen Berechnungen tendieren die generierten Z-Werte in einem Z-Puffer zu einer ungleichmäßigen Verteilung auf den Z-Puffer-Bereich (in der Regel zwischen 0,0 und 1,0 – einschließlich dieser beiden Randwerte).
 
-Besonders das Verhältnis zwischen den entfernten und nahen Clippingebenen wirkt sich stark auf die ungleichmäßige Verteilung der Z-Werte aus. Mit einem Distanzverhältnis von 100 zwischen entfernter Ebene und naher Ebene wird 90 Prozent des Pufferbereichs für die ersten 10Prozent des Tiefenbereichs der Szene genutzt. Standardanwendungen im Unterhaltungsbereich oder visuelle Simulationen mit Szenen in Außenbereichen erfordern häufig ein Verhältnis zwischen entfernter und naher Ebene, das zwischen 1.000 und 10.000 liegt. Bei einem Verhältnis von 1.000 wird 98Prozent des Bereichs für die erste 2Prozent des Tiefenbereichs genutzt. Bei höheren Verhältnissen wird die Verteilung noch schlechter. Dies kann zu versteckten Oberflächenartefakten bei entfernten Objekten führen – insbesondere bei der Verwendung von 16-Bit-Tiefenpuffern (die am häufigsten unterstützten Bittiefe).
+Besonders das Verhältnis zwischen den entfernten und nahen Clippingebenen wirkt sich stark auf die ungleichmäßige Verteilung der Z-Werte aus. Mit einem Distanzverhältnis von 100 zwischen entfernter Ebene und naher Ebene wird 90 Prozent des Pufferbereichs für die ersten 10 Prozent des Tiefenbereichs der Szene genutzt. Standardanwendungen im Unterhaltungsbereich oder visuelle Simulationen mit Szenen in Außenbereichen erfordern häufig ein Verhältnis zwischen entfernter und naher Ebene, das zwischen 1.000 und 10.000 liegt. Bei einem Verhältnis von 1.000 wird 98 Prozent des Bereichs für die erste 2 Prozent des Tiefenbereichs genutzt. Bei höheren Verhältnissen wird die Verteilung noch schlechter. Dies kann zu versteckten Oberflächenartefakten bei entfernten Objekten führen – insbesondere bei der Verwendung von 16-Bit-Tiefenpuffern (die am häufigsten unterstützten Bittiefe).
 
 Bei einem W-basierten Tiefenpuffer ist die Verteilung zwischen den nahen und entfernten Clippingebenen hingegen häufig gleichmäßiger als bei einem Z-Puffer. Der wichtigste Vorteil ist, dass das Entfernungsverhältnis zwischen den entfernten und nahen Clippingebenen kein Problem mehr darstellt. Anwendungen können so mit großen Maximalbereichen arbeiten und erhalten trotzdem eine relativ präzise Tiefenpufferung für nahe Punkte. Ein W-basierter Tiefenpuffer ist jedoch auch nicht perfekt. Manchmal kann es zu versteckten Oberflächenartefakten bei nahen Objekten kommen. Ein weiterer Nachteil des W-gepufferten Ansatzes liegt in der Hardwareunterstützung: Die W-Pufferung wird nicht so weitflächig unterstützt wie die Z-Pufferung.
 
@@ -50,7 +50,7 @@ Die tatsächlichen Interpretation eines Tiefenwerts ist je nach Renderer untersc
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Tiefen- und Schablonenpuffer](depth-and-stencil-buffers.md)
+[Tiefe und Schablone Puffer](depth-and-stencil-buffers.md)
 
  
 

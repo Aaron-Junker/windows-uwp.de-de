@@ -4,14 +4,14 @@ description: Dieser Artikel enthält eine Liste mit den DeviceInformation-Eigens
 title: Audiogeräte-Informationseigenschaften
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 443bcc3c0280aca85de31d8c9f3704302432cb76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925877"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627175"
 ---
 # <a name="audio-device-information-properties"></a>Audiogeräte-Informationseigenschaften
 
@@ -20,17 +20,17 @@ Dieser Artikel enthält eine Liste mit den Geräteinformationseigenschaften für
 
 |Name|Typ|Beschreibung|
 |------------------------------------------------------------|------------|------------------------------------------------------|
-|**System.Devices.AudioDevice.Microphone.SensitivityInDbfs**|Double|Gibt die Empfindlichkeit des Mikrofons in Dezibel relativ zu Full-Scale-Einheiten (dBFS) an.|
+|**System.Devices.AudioDevice.Microphone.SensitivityInDbfs**|Double|Gibt die Empfindlichkeit des Mikrofons in Dezibel relativ zu Full-Scale-Einheiten (dB FS) an.|
 |**System.Devices.AudioDevice.Microphone.SignalToNoiseRatioInDb**|Double|Gibt für das Mikrofon das Signal-Rausch-Verhältnis (SNR) in Dezibeleinheiten (dB) an.|
-|**System.Devices.AudioDevice.SpeechProcessingSupported**|Boolean|Gibt an, ob das Audiogerät die Verarbeitung von Sprache unterstützt.|
-|**System.Devices.AudioDevice.RawProcessingSupported**|Boolean|Gibt an, ob das Audiogerät die Verarbeitung von Rohdaten unterstützt.|
+|**System.Devices.AudioDevice.SpeechProcessingSupported**|Boolesch|Gibt an, ob das Audiogerät die Verarbeitung von Sprache unterstützt.|
+|**System.Devices.AudioDevice.RawProcessingSupported**|Boolesch|Gibt an, ob das Audiogerät die Verarbeitung von Rohdaten unterstützt.|
 |**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|Geometriedaten für ein Mikrofonarray.|
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Auflisten von Geräten](../devices-sensors/enumerate-devices.md)
-* [Geräteinformationseigenschaften](../devices-sensors/device-information-properties.md)
-* [Erstellen einer Geräteauswahl](../devices-sensors/build-a-device-selector.md)
+* [Aufzählen von Geräten](../devices-sensors/enumerate-devices.md)
+* [Eigenschaften für Geräte](../devices-sensors/device-information-properties.md)
+* [Erstellen Sie eine Geräteauswahl](../devices-sensors/build-a-device-selector.md)
 * [Medienwiedergabe](media-playback.md)
 
 

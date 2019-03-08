@@ -4,20 +4,20 @@ description: In diesem Thema erfahren Sie, wie mit dem FaceDetector Gesichter in
 title: Erkennen von Gesichtern in Bildern oder Videos
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045931"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640835"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Erkennen von Gesichtern in Bildern oder Videos
 
 
 
-\[Einige Informationen beziehen sich auf die Vorabversion, die vor der kommerziellen Freigabe möglicherweise wesentlich geändert wird. Microsoft übernimmt keine Garantie, weder ausdrücklicher noch impliziter Art, für die hier bereitgestellten Informationen.\]
+\[Einige Informationen beziehen sich auf einer Vorabversion eines Produkts die vor der markteinführung grundlegend geändert werden kann. Microsoft übernimmt keine Garantien, ausdrücklich oder konkludent, in Bezug auf die hier bereitgestellten Informationen.\]
 
 In diesem Thema erfahren Sie, wie mit dem [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) Gesichter in einem Bild erkannt werden. Der [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) ist für die Verfolgung von Gesichtern im zeitlichen Verlauf einer Sequenz von Videoframes optimiert.
 
@@ -97,9 +97,9 @@ Rufen Sie [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Szenenanalyse für die Medienaufnahme](scene-analysis-for-media-capture.md)
-* [Beispiel „Basic Face Detection“](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Beispiel „Basic Face Tracking“](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Analyse der Szene für medienaufzeichnung](scene-analysis-for-media-capture.md)
+* [Beispiel eines grundlegenden Gesichtserkennung](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [Grundlegende Gesichtserkennungs-überwachungsbeispiel](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [Kamera](camera.md)
-* [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Medienwiedergabe](media-playback.md)

@@ -6,18 +6,18 @@ label: Contextual commanding in collections
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925612"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658595"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Kontextbefehle für Sammlungen und Listen
 
@@ -25,7 +25,7 @@ ms.locfileid: "8925612"
 
 Viele Apps enthalten Sammlungen von Inhalten in Form von Listen, Rastern und Strukturen, auf die der Benutzer Aktionen anwenden kann. Beispielsweise kann er Elemente löschen, umbenennen, kennzeichnen oder aktualisieren. In diesem Artikel wird beschrieben, wie Sie mithilfe von Kontextbefehlen derartige Aktionen so implementieren können, dass bei allen Eingabearten die jeweils bestmögliche Benutzererfahrung gewährleistet ist.  
 
-> **Wichtige APIs:** [Schnittstelle „ICommand“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [Eigenschaft „UIElement.ContextFlyout“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [Schnittstelle „INotifyPropertyChanged“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **Wichtige APIs**: [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![Ausführen des Befehls „Als Favorit speichern“ mittels verschiedener Eingabearten](images/ContextualCommand_AddFavorites.png)
 
@@ -39,13 +39,13 @@ In der Tabelle unten sind einige typische Befehle für Sammlungen aufgeführt so
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Element löschen      | Kontextmenü   | Hoverschaltfläche      | ENTF-Taste              | Löschen per Wischen   |
 | Element kennzeichnen        | Kontextmenü   | Hoverschaltfläche      | STRG+UMSCHALT+G         | Kennzeichnen per Wischen     |
-| Daten aktualisieren     | Kontextmenü   | –               | F5-Taste               | Aktualisieren durch Ziehen   |
+| Daten aktualisieren     | Kontextmenü   | n. a.               | F5-Taste               | Aktualisierung durch Ziehen   |
 | Element als Favorit speichern | Kontextmenü   | Hoverschaltfläche      | F-Taste, STRG+S            | Als Favorit speichern per Wischen |
 
 
-* **Grundsätzlich sollten Sie sämtliche Befehle für ein Element im [Kontextmenü](menus.md) des Elements verfügbar machen.** Kontextmenüs sind für den Benutzer bei jeder Eingabeart verfügbar und sollten alle Kontextbefehle enthalten, die er ausführen darf.
+* **Im Allgemeinen Sie sollte verfügbar machen, alle Befehle für ein Element des Elements [Kontextmenü](menus.md).** Kontextmenüs sind für den Benutzer bei jeder Eingabeart verfügbar und sollten alle Kontextbefehle enthalten, die er ausführen darf.
 
-* **Für häufig verwendete Befehle empfiehlt sich die Implementierung von Eingabebeschleunigern.** Eingabebeschleuniger basieren auf dem jeweiligen Eingabegerät und erlauben es dem Benutzer, Aktionen schnell auszuführen. Zu den Eingabebeschleunigern gehören:
+* **Erwägen Sie für häufig verwendete Befehle in der Eingabe Accelerators verwenden.** Eingabebeschleuniger basieren auf dem jeweiligen Eingabegerät und erlauben es dem Benutzer, Aktionen schnell auszuführen. Zu den Eingabebeschleunigern gehören:
     - Aktionsausführung per Wischen (Beschleuniger für die Toucheingabe)
     - Datenaktualisierung per Ziehen (Beschleuniger für die Toucheingabe)
     - Tastenkombinationen (Beschleuniger für die Tastatureingabe)
@@ -55,7 +55,7 @@ In der Tabelle unten sind einige typische Befehle für Sammlungen aufgeführt so
 > [!NOTE]
 > Benutzer sollten immer auf sämtliche Befehle zugreifen können, ganz gleich, welches Gerät sie verwenden. Wenn Sie die Befehle Ihrer App beispielsweise nur in Form von Hoverschaltflächen für eine beschleunigte Eingabe über Zeigegeräte verfügbar machen, haben Benutzer von Touchsystemen keinen Zugriff auf sie. Implementieren Sie zumindest ein Kontextmenü, in dem alle Befehle verfügbar sind.  
 
-## <a name="example-the-podcastobject-data-model"></a>Beispiel: Datenmodell „PodcastObject“
+## <a name="example-the-podcastobject-data-model"></a>Beispiel: Das Datenmodell PodcastObject
 
 Zur Verdeutlichung unserer Empfehlungen für die Befehlsimplementierung erstellen wir im Rahmen dieses Artikels eine Liste von Podcasts für eine Podcast-App. Der Beispielcode demonstriert, wie Sie es Benutzern ermöglichen können, bestimmte Podcasts aus der Liste als Favoriten zu speichern.
 
@@ -234,15 +234,15 @@ Kontextmenüs zeigen bei Aufruf durch den Benutzer eine Liste von Befehlen oder 
 
 Benutzer können Kontextmenüs über die folgenden „Kontextaktionen“ aufrufen:
 
-| Eingabeart    | Kontextaktion                          |
+| Input    | Kontextaktion                          |
 | -------- | --------------------------------------- |
 | Maus    | Rechtsklick                             |
 | Tastatur | UMSCHALT+F10, Menütaste                  |
-| Toucheingabe    | Langes Drücken auf das Element                      |
+| Touch    | Langes Drücken auf das Element                      |
 | Stift      | Drücken der Drucktaste, langes Drücken auf das Element |
-| Gamepad  | Menütaste                             |
+| Gamepad  | Menü-Taste                             |
 
-**Da Kontextmenüs über jede Eingabeart geöffnet werden können, sollten sie sämtliche Kontextbefehle enthalten, die für das jeweilige Listenelement verfügbar sind.**
+**Da der Benutzer ein Kontextmenü angezeigt, unabhängig vom Eingabetyp öffnen kann, sollte Ihr Kontextmenü alle Kontextbefehle für das Element der Liste enthalten.**
 
 ### <a name="contextflyout"></a>ContextFlyout
 
@@ -273,13 +273,13 @@ Für jedes Element in einer Sammlung sollte ein Kontextmenü mit allen verfügba
 
 In unserer Podcast-App ist der Befehl „Als Favorit speichern“ einer der am häufigsten ausgeführten Befehle.
 
-### <a name="keyboard-accelerators"></a>Beschleuniger für die Tastatureingabe
+### <a name="keyboard-accelerators"></a>Zugriffstasten
 
 #### <a name="shortcuts-and-direct-key-handling"></a>Behandeln von Tastenkombinationen und Einzeltasten
 
 ![Aktionsausführung per STRG oder F-Taste](images/ContextualCommand_Keyboard.png)
 
-Je nach Art des Inhalts können Sie bestimmte Tastenkombinationen für die Ausführung einer Aktion festlegen. In einer E-Mail-App beispielsweise könnten sich ausgewählte E-Mails über die ENTF-Taste löschen lassen. In einer Podcast-App könnte die Tastenkombination STRG+S oder eine der F-Tasten einen Podcast als Favorit zur späteren Wiedergabe speichern. Obwohl einige Befehle allgemein bekannte Standardtasten bzw. Standardtastenkombinationen haben (z.B. ENTF zum Löschen), sind die Tasten und Tastenkombinationen anderer Befehle jeweils App-spezifisch oder domänenspezifisch. Verwenden Sie falls möglich allgemein bekannte Tasten und Tastenkombinationen, oder zeigen Sie für den Benutzer eine kurze QuickInfo mit der Taste oder Tastenkombination für den jeweiligen Befehl an.
+Je nach Art des Inhalts können Sie bestimmte Tastenkombinationen für die Ausführung einer Aktion festlegen. In einer E-Mail-App beispielsweise könnten sich ausgewählte E-Mails über die ENTF-Taste löschen lassen. In einer Podcast-App könnte die Tastenkombination STRG+S oder eine der F-Tasten einen Podcast als Favorit zur späteren Wiedergabe speichern. Obwohl einige Befehle allgemein bekannte Standardtasten bzw. Standardtastenkombinationen haben (z. B. ENTF zum Löschen), sind die Tasten und Tastenkombinationen anderer Befehle jeweils App-spezifisch oder domänenspezifisch. Verwenden Sie falls möglich allgemein bekannte Tasten und Tastenkombinationen, oder zeigen Sie für den Benutzer eine kurze QuickInfo mit der Taste oder Tastenkombination für den jeweiligen Befehl an.
 
 Über das Ereignis [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) kann Ihre App auf einen Tastendruck des Benutzers reagieren. In der Regel gehen die Benutzer davon aus, dass die App beim ersten Tastendruck reagiert, nicht erst, wenn sie die Taste wieder loslassen.
 
@@ -366,17 +366,17 @@ protected override void OnPointerExited(PointerRoutedEventArgs e)
 }
 ```
 
-Die im Hoverzustand angezeigten Schaltflächen sind nur bei der Eingabe über Zeigegeräte verfügbar. Da diese Schaltflächen ausschließlich für die Eingabe über Zeigegeräte zur Verfügung stehen, möchten Sie zur Optimierung der Zeigereingabe möglicherweise den Abstand um das jeweilige Schaltflächensymbol minimieren oder vollständig entfernen. Wenn Sie sich dazu entscheiden, muss die Schaltfläche mindestens 20×20px groß sein, damit sie mit Stift und Maus noch gut bedienbar ist.
+Die im Hoverzustand angezeigten Schaltflächen sind nur bei der Eingabe über Zeigegeräte verfügbar. Da diese Schaltflächen ausschließlich für die Eingabe über Zeigegeräte zur Verfügung stehen, möchten Sie zur Optimierung der Zeigereingabe möglicherweise den Abstand um das jeweilige Schaltflächensymbol minimieren oder vollständig entfernen. Wenn Sie sich dazu entscheiden, muss die Schaltfläche mindestens 20 × 20 px groß sein, damit sie mit Stift und Maus noch gut bedienbar ist.
 
 ### <a name="touch-accelerators"></a>Beschleuniger für die Toucheingabe
 
-#### <a name="swipe"></a>Wischgesten
+#### <a name="swipe"></a>Swipe
 
 ![Aufrufen eines Befehls per Wischgeste](images/ContextualCommand_Swipe.png)
 
 Wischgestenbasierte Befehle sind ein Beschleuniger für die Toucheingabe. Sie ermöglichen es Benutzern von Touchgeräten, häufig verwendete sekundäre Aktionen per Touchgeste auszuführen. Mithilfe von Wischgesten können Benutzer auf Touchgeräten schnell und natürlich mit Inhalten interagieren. So können sie beispielsweise gängige Aktionen wie „Löschen per Wischen“ oder „Aufrufen per Wischen“ durchführen. Weitere Informationen finden Sie im Artikel zum Thema [Wischgestenbasierte Befehle](swipe.md).
 
-Zur Integration von Wischgesten in Ihre Sammlung sind zwei Komponenten erforderlich: „SwipeItems" als Host für die Befehle und „SwipeControl“ als Element-Wrapper, der Interaktionen per Wischgeste möglich macht.
+Um das Wischen in Ihrer Sammlung zu integrieren, benötigen Sie zwei Komponenten: SwipeItems, die die Befehle hostet; und ein SwipeControl, dient als Wrapper für das Element, und ermöglicht die streifeninteraktion.
 
 „SwipeItems“ kann als Ressource in „PodcastUserControl“ definiert werden. In diesem Beispiel enthält „SwipeItems" einen Befehl, über den sich ein Element als Favorit speichern lässt.
 
@@ -432,13 +432,13 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 }
 ```
 
-#### <a name="pull-to-refresh"></a>Aktualisieren durch Ziehen
+#### <a name="pull-to-refresh"></a>Aktualisierung durch Ziehen
 
 Mithilfe der Aktion „Aktualisieren durch Ziehen“ können Benutzer eine Datensammlung per Touchgeste nach unten ziehen, um weitere Daten abzurufen. Weitere Informationen finden Sie im Artikel zum Thema [Aktualisieren durch Ziehen](pull-to-refresh.md).
 
 ### <a name="pen-accelerators"></a>Beschleuniger für die Stifteingabe
 
-Die Eingabe per Stift ist ebenso präzise wie die Eingabe per Zeigegerät. Mit stiftbasierten Beschleunigern können Benutzer gängige Aktionen wie beispielsweise das Öffnen von Kontextmenüs durchführen. Zum Öffnen eines Kontextmenüs kann der Benutzer mit gedrückter Drucktaste auf das Display tippen oder alternativ lange auf den Inhalt drücken. Er kann den Stift auch über Inhalten platzieren, um ähnlich wie mit der Maus Details zur Benutzeroberfläche (z.B. QuickInfos) aufzurufen oder sekundäre Hoveraktionen anzuzeigen.
+Die Eingabe per Stift ist ebenso präzise wie die Eingabe per Zeigegerät. Mit stiftbasierten Beschleunigern können Benutzer gängige Aktionen wie beispielsweise das Öffnen von Kontextmenüs durchführen. Zum Öffnen eines Kontextmenüs kann der Benutzer mit gedrückter Drucktaste auf das Display tippen oder alternativ lange auf den Inhalt drücken. Er kann den Stift auch über Inhalten platzieren, um ähnlich wie mit der Maus Details zur Benutzeroberfläche (z. B. QuickInfos) aufzurufen oder sekundäre Hoveraktionen anzuzeigen.
 
 Wie Sie Ihre App für die Stifteingabe optimieren können, erfahren Sie im Artikel zum Thema [Interaktion per Eingabestift](../input/pen-and-stylus-interactions.md).
 
@@ -451,9 +451,9 @@ Wie Sie Ihre App für die Stifteingabe optimieren können, erfahren Sie im Artik
 * Verwenden Sie zur Implementierung von Befehlen die [Schnittstelle „ICommand“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand). 
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Schnittstelle „ICommand“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
+* [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
 * [Menüs und Kontextmenüs](menus.md)
-* [Wischgesten](swipe.md)
-* [Aktualisieren durch Ziehen](pull-to-refresh.md)
-* [Interaktion per Eingabestift](../input/pen-and-stylus-interactions.md)
-* [App-Optimierung für Gamepads und Xbox](../devices/designing-for-tv.md)
+* [Wischen](swipe.md)
+* [Zum Aktualisieren nach unten ziehen](pull-to-refresh.md)
+* [Stift- und Stift-Interaktion](../input/pen-and-stylus-interactions.md)
+* [Ihre App für Gamepad und Xbox](../devices/designing-for-tv.md)

@@ -1,19 +1,19 @@
 ---
-Description: This section contains user experience guidelines for presenting app settings and storing those settings as app data.
+Description: Dieser Abschnitt enthält Richtlinien für die Darstellung von App-Einstellungen auf der Benutzeroberfläche und das Speichern dieser Einstellungen als App-Daten.
 title: App-Einstellungen und Daten
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5790e9fcd05cb873958e53786e3282094ec0a3d4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938431"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639895"
 ---
 # <a name="app-settings-and-data"></a>App-Einstellungen und Daten
 
@@ -43,7 +43,7 @@ App-Daten werden von der App selbst erstellt und verwaltet. Sie beinhalten den L
 <td align="left"><p>Bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="store-and-retrieve-app-data.md">Speichern und Abrufen von App-Daten</a></p></td>
+<td align="left"><p><a href="store-and-retrieve-app-data.md">Store und Abrufen von app-Daten</a></p></td>
 <td align="left"><p>Hier erfahren Sie, wie Sie lokale, Roaming- und temporäre App-Daten speichern und abrufen können.</p></td>
 </tr>
 </tbody>

@@ -1,36 +1,36 @@
 ---
-Description: To view performance data for the ad units in your apps, use the advertising performance report in Partner Center.
+Description: Zum Anzeigen von Leistungsdaten für die Ad-Einheiten in Ihren apps verwenden Sie den Leistungsbericht für die Werbung im Partner Center.
 title: Bericht zur Anzeigenleistung
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a96f6f6593a8ccc6714f67b6f825a6416750b432
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944127"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640275"
 ---
 # <a name="advertising-performance-report"></a>Bericht zur Anzeigenleistung
 
 
-Der **Bericht zur anzeigen Leistung** im [Partner Center](https://partner.microsoft.com/dashboard) zeigt, wie Ihre [anzeigeneinheiten](in-app-ads.md) durchführen, einschließlich der Community-anzeigen. Dieser Bericht enthält Daten mehrerer Anzeigenanbieter in UWP-Apps, die die [Anzeigenvermittlung](in-app-ads.md#mediation) verwenden.
+Die **ankündigen Leistungsbericht** in [Partner Center](https://partner.microsoft.com/dashboard) zeigt, wie Ihre [Werbeeinheiten](in-app-ads.md) durchführen, einschließlich der Community anzeigen. Dieser Bericht enthält Daten mehrerer Anzeigenanbieter in UWP-Apps, die die [Anzeigenvermittlung](in-app-ads.md#mediation) verwenden.
 
-Erweitern Sie zum Anzeigen dieses Berichts im linken Navigationsmenü **Analysieren** und wählen Sie dann **Anzeigenleistung** aus. Sie können diese Daten im Partner Center anzeigen oder die Berichtsdaten offline anzeigen, indem Sie auf die Pfeilsymbole auf der Seite. Sie können diese Daten alternativ auch programmgesteuert mit der Methode [Abrufen von Anzeigenleistungsdaten](../monetize/get-ad-performance-data.md) unserer [Analyse-REST-API](../monetize/access-analytics-data-using-windows-store-services.md) abrufen.
+Erweitern Sie zum Anzeigen dieses Berichts im linken Navigationsmenü **Analysieren** und wählen Sie dann **Anzeigenleistung** aus. Sie können diese Daten im Partner Center anzeigen oder Herunterladen der Berichtsdaten offline anzeigen, indem Sie auf den Pfeilsymbole auf der Seite. Sie können diese Daten alternativ auch programmgesteuert mit der Methode [Abrufen von Anzeigenleistungsdaten](../monetize/get-ad-performance-data.md) unserer [Analyse-REST-API](../monetize/access-analytics-data-using-windows-store-services.md) abrufen.
 
-Wenn Sie die Anzeigenvermittlungsberichte ansehen, ist es wichtig zu beachten, dass sich die Berichtsdaten für die letzten drei Tage sich unter Umständen ändern, wenn wir neue Daten aus verschiedenen Quellen erhalten und verarbeiten. Datenanpassungen können außerdem rückwirkend für bis zu 90Tage vorgenommen werden.
+Wenn Sie die Anzeigenvermittlungsberichte ansehen, ist es wichtig zu beachten, dass sich die Berichtsdaten für die letzten drei Tage sich unter Umständen ändern, wenn wir neue Daten aus verschiedenen Quellen erhalten und verarbeiten. Datenanpassungen können außerdem rückwirkend für bis zu 90 Tage vorgenommen werden.
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
 
-Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist 30D (30Tage), aber Sie können Daten für 3, 6 oder 12Monate anzeigen, oder für einen benutzerdefinierten Zeitraum, den Sie angeben.
+Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist 30D (30 Tage), aber Sie können Daten für 3, 6 oder 12 Monate anzeigen, oder für einen benutzerdefinierten Zeitraum, den Sie angeben.
 
 Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite nach Anzeigeneinheit, App, Anzeigenanbieter und Gerätetyp zu filtern. Folgende Optionen stehen zur Auswahl:
 
-* **Aggregation**: Wählen Sie aus, wie diese Daten zusammengefasst werden und wie sie weitere gefiltert werden können. Standardmäßig ist dieser Filter auf **allen Anzeigeeinheiten** festgelegt. Sie können optional dieses Filter auf **alle Apps** oder **alle Anzeigenanbieter** festlegen, oder Sie können das Aggregieren nach einer bestimmten App auswählen, in der Sie Werbung verwenden.
-* **Anzeigenanbieter**: Filtern Sie den Bericht nach Performance-Daten für bestimmte [Anzeigenanbieter](in-app-ads.md#paid-networks). In der Standardeinstellung zeigt der Bericht Daten von allen Ad-Anbietern an. Diese Option wird deaktiviert, wenn Sie **Alle Ad-Anbieter** aus der Dropdownliste **Aggregation** auswählen.
-* **Gerät**: Filtern Sie den Bericht nach Leistungsdaten für bestimmte Gerätetypen. In der Standardeinstellung zeigt der Bericht Daten für alle Gerätetypen an.
+* **Aggregation**: Wählen Sie wie die Daten des Berichts aggregiert werden und wie Daten weiter gefiltert werden können. Standardmäßig ist dieser Filter auf **allen Anzeigeeinheiten** festgelegt. Sie können optional dieses Filter auf **alle Apps** oder **alle Anzeigenanbieter** festlegen, oder Sie können das Aggregieren nach einer bestimmten App auswählen, in der Sie Werbung verwenden.
+* **AD-Anbietern**: Filtern Sie den Bericht aus, um auf die Daten für bestimmte [Ad Anbieter](in-app-ads.md#paid-networks). In der Standardeinstellung zeigt der Bericht Daten von allen Ad-Anbietern an. Diese Option wird deaktiviert, wenn Sie **Alle Ad-Anbieter** aus der Dropdownliste **Aggregation** auswählen.
+* **Gerät**: Filtern Sie den Bericht aus, um auf die Daten für bestimmte Gerätetypen. In der Standardeinstellung zeigt der Bericht Daten für alle Gerätetypen an.
 
 ## <a name="overall-performance"></a>Gesamtleistung
 
@@ -53,20 +53,20 @@ Der Bericht **Anzeigenleistung** enthält Daten für die folgenden Leistungsmetr
 |----------|---------------|
 | Geschätzter Umsatz  |  Die geschätzten Einnahmen, die Sie mit den Anzeigen in Ihrer App erzielen. |
 | eCPM  |  Die effektiven Kosten pro tausend Anzeigenaufrufen. |
-| Anforderungen  | Die Anzahl der von Ihrer App gesendeten Anzeigenanforderungen.  |
+| Requests  | Die Anzahl der von Ihrer App gesendeten Anzeigenanforderungen.  |
 | Aufrufe  | Gibt an, wie häufig eine Anzeige in Ihrer App angezeigt wurde.  |
 | Füllrate  | Gibt den Prozentsatz der von Ihrer App gesendeten Anzeigenanforderungen an, bei denen eine Anzeige angezeigt wurde.  |
 | Klicks  |  Gibt an, wie häufig in Ihrer App auf eine Anzeige geklickt wurde. |
 | CTR  |  Gibt an, wie häufig auf eine Anzeige geklickt wurde – geteilt durch die Anzahl von Anzeigenaufrufen. |
-| Die Sichtbarkeit | Der Prozentsatz der anzeigenaufrufe, die in Ihrer app angezeigt werden. Weitere Informationen darüber, wie dieser Wert berechnet wird finden Sie unter [Optimieren der Sichtbarkeit von anzeigeneinheiten](../monetize/optimize-ad-unit-viewability.md). |
+| Viewability | Der Prozentsatz der anzeigenaufrufe, die in Ihrer app angezeigt werden. Weitere Informationen dazu, wie dieser Wert berechnet wird, finden Sie unter [optimieren die Viewability Ihre Ad-Einheiten](../monetize/optimize-ad-unit-viewability.md). |
 | Erworbenes Guthaben  | Bei [Community](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)-Kampagnen gibt dies das Guthaben an, das Sie durch Anzeigen von Community-Anzeigen in Ihrer App für Werbefläche erworben haben.  |
 | Beanspruchtes Guthaben  | Bei [Community](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)-Kampagnen gibt dies das für Ihre App beanspruchte Anzeigenguthaben an.  |
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-App-Anzeigen](in-app-ads.md)
-* [Zeigt Werbung mithilfe der Microsoft Advertising-SDK in Ihrer App an](../monetize/display-ads-in-your-app.md)
-* [Optimieren der Sichtbarkeit von Anzeigeneinheiten](../monetize/optimize-ad-unit-viewability.md)
+* [In-app-Werbung](in-app-ads.md)
+* [Anzeigen von Werbung in Ihrer app mit dem Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md)
+* [Optimieren der Viewability Ihre Ad-Einheiten](../monetize/optimize-ad-unit-viewability.md)
 
 
  

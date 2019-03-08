@@ -1,32 +1,32 @@
 ---
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
-title: Installieren von Apps mit dem Tool WinAppDeployCmd.exe
-description: Windows-Anwendungsbereitstellung (WinAppDeployCmd.exe) ist ein Befehlszeilentool, mit denen eine app (universelle Windows Plattform) von einem Windows 10-PC auf einem Gerät mit Windows 10 bereitstellen.
+title: Installieren von Apps mit dem Tool „WinAppDeployCmd.exe“
+description: Bereitstellung von Windows-Anwendung (WinAppDeployCmd.exe) ist ein Befehlszeilentool, mit denen eine universelle Windows-Plattform (UWP)-app aus einem Windows 10-PC zu Windows 10-Geräten bereitstellen.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 479c4410384613b22ba86bc976a360125bb73c3a
-ms.sourcegitcommit: d6bc0c73df105482cab00c41e80c7c98d6834874
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "9079773"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632805"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Installieren von Apps mit dem Tool „WinAppDeployCmd.exe“
 
 
-Windows-Anwendungsbereitstellung (WinAppDeployCmd.exe) ist ein Befehlszeilentool, mit denen eine app (universelle Windows Plattform) von einem Windows 10-PC auf einem Gerät mit Windows 10 bereitstellen. Sie können dieses Tool verwenden, um ein app-Paket bereitzustellen, wenn das Windows 10-Gerät über USB verbunden ist oder sich im gleichen Subnetz verfügbar ist, ohne Sie Microsoft Visual Studio oder die Projektmappe für diese app. Sie können die App auch bereitstellen, ohne sie zuerst zu einem Remote-PC oder zu Xbox One zu verpacken. Dieser Artikel beschreibt, wie UWP-Apps mit diesem Tool installiert werden.
+Bereitstellung von Windows-Anwendung (WinAppDeployCmd.exe) ist ein Befehlszeilentool, mit denen eine universelle Windows-Plattform (UWP)-app aus einem Windows 10-PC zu Windows 10-Geräten bereitstellen. Sie können dieses Tool verwenden, um ein app-Paket bereitzustellen, wenn das Windows 10-Gerät über USB verbunden bzw. das sich im gleichen Subnetz verfügbar ist, ohne Microsoft Visual Studio oder die Lösung für die app. Sie können die App auch bereitstellen, ohne sie zuerst zu einem Remote-PC oder zu Xbox One zu verpacken. Dieser Artikel beschreibt, wie UWP-Apps mit diesem Tool installiert werden.
 
-Sie benötigen nur das Windows 10-SDK installiert haben, um das Tool WinAppDeployCmd über eine Befehlszeile oder eine Skriptdatei auszuführen. Wenn Sie eine app mit WinAppDeployCmd.exe installieren, verwendet diese die.appx/.msix Datei oder AppxManifest (für lose Dateien) zu Ihrer app auf einem Windows 10-Gerät querzuladen. Mit diesem Befehl wird nicht das für Ihre App erforderliche Zertifikat installiert. Um die app ausführen, muss das Windows 10-Gerät im Entwicklermodus oder bereits über das Zertifikat verfügen.
+Sie benötigen nur das Windows 10-SDK installiert wird, führen Sie das WinAppDeployCmd-Tool über eine Eingabeaufforderung oder eine Skriptdatei an. Wenn Sie eine app mit WinAppDeployCmd.exe installieren, verwendet diese die.appx/.msix-Datei oder das AppxManifest (für lose Dateien) zu Ihrer app auf einem Windows 10-Gerät querladen. Mit diesem Befehl wird nicht das für Ihre App erforderliche Zertifikat installiert. Führen Sie die app muss das Windows 10-Gerät im Entwicklermodus oder bereits über das installierte Zertifikat verfügen.
 
 Um eine Bereitstellung auf mobilen Geräten auszuführen, müssen Sie zunächst ein Paket erstellen. Weitere Informationen finden Sie [hier](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-Das **WinAppDeployCmd.exe** Tool befindet sich auf Ihrem Windows 10-PC: **C:\\Program Files (x86) \\Windows Kits\\10\\bin\\&lt;SDK-Version&gt;\\x86\\WinAppDeployCmd.exe** (abhängig vom Installationspfad für das SDK). 
+Die **WinAppDeployCmd.exe** Tool befindet sich auf Ihrem Windows 10-PC: **"C:"\\Programmdateien (x86)\\Windows-Kits\\10\\Bin\\&lt;SDK-Version&gt;\\X86\\WinAppDeployCmd.exe** () basierend auf dem Installationspfad für das SDK). 
 > [!NOTE]
 > In Version 15063 und höher des SDK ist das SDK nebeneinander in versionsspezifischen Ordnern installiert.  Frühere SDKs (vor und einschließlich 14393) werden direkt in den übergeordneten Ordner geschrieben.
 
-Zunächst, verbinden Sie das Windows 10-Gerät mit dem gleichen Subnetz oder es direkt mit Ihrem Windows 10-Computer über eine USB-Verbindung. Verwenden Sie anschließend die folgende Syntax und die Beispiele zu diesem Befehl weiter unten in diesem Artikel, um die UWP-App bereitzustellen:
+Verbinden Sie Ihres Windows 10-Geräts mit dem gleichen Subnetz zum ersten Mal, oder direkt mit Ihrem Windows 10-Computer mit einem USB-Verbindung verbinden. Verwenden Sie anschließend die folgende Syntax und die Beispiele zu diesem Befehl weiter unten in diesem Artikel, um die UWP-App bereitzustellen:
 
 ## <a name="winappdeploycmd-syntax-and-options"></a>Syntax und Optionen für WinAppDeployCmd
 
@@ -63,8 +63,8 @@ Die folgende Tabelle enthält die Befehle für **WinAppDeployCmd.exe**.
 | **Befehl**  | **Beschreibung**                                                     |
 |--------------|---------------------------------------------------------------------|
 | Geräte      | Zeigt die Liste verfügbarer Netzwerkgeräte an.                         |
-| install      | Installiert ein UWP-App-Paket auf dem Zielgerät.                     |
-| update       | Aktualisiert eine UWP-App, die bereits auf dem Zielgerät installiert ist.    |
+| installieren      | Installiert ein UWP-App-Paket auf dem Zielgerät.                     |
+| Update       | Aktualisiert eine UWP-App, die bereits auf dem Zielgerät installiert ist.    |
 | list         | Zeigt die Liste der auf dem angegebenen Zielgerät installierten UWP-Apps an. |
 | uninstall    | Deinstalliert das angegebene App-Paket vom Zielgerät.         |
 | deployfiles  | Kopiert die App mit loser Datei am Zielpfad zum relativen Remotepfad auf dem Gerät.|
@@ -120,19 +120,19 @@ Zeigt die für die Bereitstellung verfügbaren Geräte an. Der Befehl verursacht
 WinAppDeployCmd devices 3
 ```
 
-Installiert die app aus dem Paket "MyApp.AppX", die im Downloadverzeichnis Ihres PCs, auf einem Windows 10-Gerät mit der IP-Adresse 192.168.0.1 mit einer PIN A1B2C3, eine Verbindung mit dem Gerät herzustellen.
+Installiert die app aus dem Paket MyApp.appx, die in Ihrer PC Downloads-Verzeichnis auf einem Windows 10-Gerät mit einer IP-Adresse 192.168.0.1, klicken Sie mit einer PIN A1B2C3 zum Herstellen einer Verbindung mit dem Gerät ist.
 
 ``` syntax
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 ```
 
-Deinstalliert das angegebene Paket (unter Verwendung des vollständigen Namens) von einem Windows10-Gerät mit der IP-Adresse 192.168.0.1. Mit dem list-Befehl können Sie die vollständigen Namen aller Pakete anzeigen, die auf einem Gerät installiert sind.
+Deinstalliert das angegebene Paket (unter Verwendung des vollständigen Namens) von einem Windows 10-Gerät mit der IP-Adresse 192.168.0.1. Mit dem list-Befehl können Sie die vollständigen Namen aller Pakete anzeigen, die auf einem Gerät installiert sind.
 
 ``` syntax
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-Aktualisiert die app, die bereits auf dem Windows 10-Gerät mit der IP-Adresse 192.168.0.1, die mit dem angegebenen app-Paket installiert ist.
+Aktualisiert die app, die bereits auf dem Windows 10-Gerät mit einer IP-Adresse 192.168.0.1, die mit dem angegebenen app-Paket installiert ist.
 
 ``` syntax
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1

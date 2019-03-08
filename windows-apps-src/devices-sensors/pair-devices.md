@@ -4,14 +4,14 @@ title: Koppeln von Geräten
 description: Einige Geräte müssen gekoppelt werden, bevor sie verwendet werden können. Der Windows.Devices.Enumeration-Namespace unterstützt drei verschiedene Verfahren zum Koppeln von Geräten
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050433"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653385"
 ---
 # <a name="pair-devices"></a>Koppeln von Geräten
 
@@ -27,7 +27,7 @@ Einige Geräte müssen gekoppelt werden, bevor sie verwendet werden können. Der
 -   Einfache Kopplung
 -   Benutzerdefinierte Kopplung
 
-**Tipp:** einige Geräte müssen nicht gekoppelt werden, um verwendet werden. Dies wird im Abschnitt zur automatischen Kopplung behandelt.
+**Tipp**  einige Geräte müssen nicht gekoppelt werden, damit Sie verwendet werden. Dies wird im Abschnitt zur automatischen Kopplung behandelt.
 
  
 

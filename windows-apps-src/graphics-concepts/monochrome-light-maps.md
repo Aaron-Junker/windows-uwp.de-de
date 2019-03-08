@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b81838393d7b2692e6fd04b7ce535f58dc773780
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930326"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641265"
 ---
 # <a name="monochrome-light-maps"></a>Einfarbige Lichtzuordnungen
 
@@ -26,7 +26,7 @@ Für eine einfarbige Lichtzuordnung speichert eine Anwendung die Beleuchtungsinf
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Lichtzuordnung mit Texturen](light-mapping-with-textures.md)
+[Einfache Zuordnung mit Texturen](light-mapping-with-textures.md)
 
  
 

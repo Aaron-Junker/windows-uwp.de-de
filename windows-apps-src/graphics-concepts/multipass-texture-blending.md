@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d6b1e8958874ede50a18f2d2446c8f156361210e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932056"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589895"
 ---
 # <a name="multipass-texture-blending"></a>Mehrstufige Texturvermischung
 
 
-Direct3D-Anwendungen können durch die Anwendung verschiedener Texturen auf einen Grundtyp im Laufe von mehreren Berechnungs- und Ausgabedurchläufen zahlreiche Spezialeffekte erzielen. Der allgemeine Begriff dafür ist *Mehrstufige Texturmischung*. Eine typische Anwendung der mehrstufigen Texturmischung ist die Nachbildung der Effekte komplexer Beleuchtungs- und Schattierungsmodelle durch die Anwendung mehrerer Farben aus mehreren unterschiedlichen Texturen. Eine solche Anwendung heißt *Lichtzuordnung*. Siehe [Lichtzuordnung mit Texturen](light-mapping-with-textures.md).
+Direct3D-Apps können durch die Anwendung verschiedener Texturen auf eine Primitive im Laufe von mehreren Berechnungs- und Ausgabedurchläufen zahlreiche Spezialeffekte erzielen. Der allgemeine Begriff dafür ist *Mehrstufige Texturmischung*. Eine typische Anwendung für die mehrstufige Texturvermischung liegt in der Nachbildung der Effekte von komplexen Beleuchtungs- und Verschattungsmodellen durch die Anwendung mehrerer Farben aus mehreren unterschiedlichen Texturen. Eine solche Anwendung heißt *Lichtzuordnung*. Siehe [Lichtzuordnung mit Texturen](light-mapping-with-textures.md).
 
-**Hinweis:**  einige Geräte können mehrere Texturen auf primitive in einem einzigen Durchgang anwenden. Siehe [Texturvermischung](texture-blending.md).
+**Beachten Sie**    einige Geräte sind mehrere Strukturen, primitive Typen in einem einzelnen Durchlauf anwenden kann. Siehe [Texturvermischung](texture-blending.md).
 
  
 
@@ -32,12 +32,12 @@ Durchführen der mehrstufigen Texturvermischung in einer C/C++-Anwendung:
 3.  Berechnen Sie die entsprechenden 3D-Objekte in der Szene und geben Sie diese aus.
 4.  Setzen Sie die nächste Textur in Texturphase 0.
 5.  Setzen Sie die Berechnungs- und Ausgabezustände, um die Ursprungs- und Zielvermischungsfaktoren nach Bedarf anzupassen. Das System vermischt die neuen Texturen mit den vorhandenen Pixeln in der Ziel-Ausgeben-Oberfläche gemäß dieser Parameter.
-6.  Wiederholen Sie die Schritte3, 4 und 5 mit so vielen Texturen wie gewünscht.
+6.  Wiederholen Sie die Schritte 3, 4 und 5 mit so vielen Texturen wie gewünscht.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Texturvermischung](texture-blending.md)
+[Textur blending](texture-blending.md)
 
  
 

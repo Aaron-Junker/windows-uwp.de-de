@@ -1,18 +1,18 @@
 ---
-Description: Learn how to create multi-step interactions in your notifications.
+Description: Erfahren Sie, wie Sie mit mehreren Schritte Interaktionen in Ihren Benachrichtigungen erstellen.
 title: Popups mit ausstehenden Updates in Aktion
 label: Toast with pending update activation
 template: detail.hbs
 ms.date: 12/14/2017
 ms.topic: article
-keywords: Windows10, UWP, Popup, ausstehende Updates, ausstehendes Update, Interaktivität aus mehreren Schritten, Interaktivitäten aus mehreren Schritten
+keywords: Windows 10, UWP, Popup, ausstehende Updates, ausstehendes Update, Interaktivität aus mehreren Schritten, Interaktivitäten aus mehreren Schritten
 ms.localizationpriority: medium
 ms.openlocfilehash: b1574ee2913bd2889af204aae1089dc170df95b8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940735"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648555"
 ---
 # <a name="toast-with-pending-update-activation"></a>Popups mit ausstehenden Updates in Aktion
 
@@ -21,15 +21,15 @@ Verwenden Sie das **PendingUpdate** zum Erstellen der Interaktivität aus mehrer
 ![Popup mit ausstehendem Update](images/toast-pendingupdate.gif)
 
 > [!IMPORTANT]
-> **Erfordert Desktop Creators Update und 2.0.0 der Benachrichtigungsbibliothek**: Sie müssen Desktop Build 16299 oder höher ausführen, um ausstehende Updates zu sehen. Sie müssen Version 2.0.0 oder höher der [UWP Community Toolkit Benachrichtigungen NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um **PendingUpdate** auf Ihre Schaltflächen anzuwenden. **PendingUpdate** wird nur auf Desktop unterstützt und auf anderen Geräten ignoriert.
+> **Erfordert Desktop Fall Creators Update und 2.0.0 des benachrichtigungsbibliothek**: Sie müssen Desktop Build 16299 oder höher, um die ausstehende Arbeit aktualisieren finden Sie unter ausgeführt werden. Sie müssen Version 2.0.0 oder höher der [UWP Community Toolkit Benachrichtigungen NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um **PendingUpdate** auf Ihre Schaltflächen anzuwenden. **PendingUpdate** wird nur auf Desktop unterstützt und auf anderen Geräten ignoriert.
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 Dieser Artikel erfordert Grundkenntnisse in...
 
-- [Erstellen von Popupinhalt](adaptive-interactive-toasts.md)
-- [Senden von Popups und behandeln der Hintergrundaktivierung](send-local-toast.md)
+- [Erstellen von toasts Inhalt](adaptive-interactive-toasts.md)
+- [Ein Popup senden und Behandeln von Hintergrund-Aktivierung](send-local-toast.md)
 
 
 ## <a name="overview"></a>Übersicht
@@ -116,7 +116,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
-- [Senden einer lokalen Popupbenachrichtigung und Behandeln der Aktivierung](send-local-toast.md)
-- [Dokumentation zu Popupinhalt](adaptive-interactive-toasts.md)
-- [Popup-Statusanzeige](toast-progress-bar.md)
+- [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
+- [Senden Sie eine lokale Popup- und Handle-Aktivierung](send-local-toast.md)
+- [Toast-Content-Dokumentation](adaptive-interactive-toasts.md)
+- [Toast-Statusanzeige](toast-progress-bar.md)

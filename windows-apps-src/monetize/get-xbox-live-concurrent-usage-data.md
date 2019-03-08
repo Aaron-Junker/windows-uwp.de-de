@@ -1,21 +1,21 @@
 ---
 description: Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um Xbox Live gleichzeitige Nutzungsdaten abzurufen.
-title: Abrufen von Xbox Live gleichzeitigen Nutzungsdaten
+title: Abrufen von Xbox Live-Daten zur gleichzeitigen Nutzung
 ms.date: 06/04/2018
 ms.topic: article
-keywords: Windows10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Live-Analyse, gleichzeitige Nutzung
+keywords: Windows 10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Live-Analyse, gleichzeitige Nutzung
 ms.localizationpriority: medium
 ms.openlocfilehash: 40d35b45065566db22aef791a94faa1cc0fa5c62
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937638"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655655"
 ---
-# <a name="get-xbox-live-concurrent-usage-data"></a>Abrufen von Xbox Live gleichzeitigen Nutzungsdaten
+# <a name="get-xbox-live-concurrent-usage-data"></a>Abrufen von Xbox Live-Daten zur gleichzeitigen Nutzung
 
 
-Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um fast in Echtzeit die Nutzungsdaten (mit 5-15-Minuten-Latenz) über die durchschnittliche Anzahl der Kunden abzurufen, die Ihr [Xbox Live-fähiges Spiel](../xbox-live/index.md) jede Minute, Stunde oder Tag während eines angegebenen Zeitraums spielen. Diese Informationen sind auch in der [Xbox Analysebericht](../publish/xbox-analytics-report.md) im Partner Center verfügbar.
+Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um fast in Echtzeit die Nutzungsdaten (mit 5-15-Minuten-Latenz) über die durchschnittliche Anzahl der Kunden abzurufen, die Ihr [Xbox Live-fähiges Spiel](../xbox-live/index.md) jede Minute, Stunde oder Tag während eines angegebenen Zeitraums spielen. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
 
 > [!IMPORTANT]
 > Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](../xbox-live/developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](../xbox-live/developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
@@ -25,9 +25,9 @@ Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um fast in Echtz
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store-Analyse-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken abgerufen haben, können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-## <a name="request"></a>Anforderung
+## <a name="request"></a>Anfordern
 
 
 ### <a name="request-syntax"></a>Anforderungssyntax
@@ -41,7 +41,7 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
+| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
@@ -49,11 +49,11 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 | Parameter        | Typ   |  Beschreibung      |  Erforderlich  
 |---------------|--------|---------------|------|
-| applicationId | String | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie die Xbox Live gleichzeitigen Nutzungsdaten abrufen möchten.  |  Ja  |
-| metricType | String | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live Analysedaten angibt. Geben Sie für diese Methode den Wert **concurrency** an.  |  Ja  |
+| applicationId | string | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie die Xbox Live gleichzeitigen Nutzungsdaten abrufen möchten.  |  Ja  |
+| metricType | string | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **concurrency** an.  |  Ja  |
 | startDate | date | Das Startdatum im Datumsbereich der gleichzeitigen Nutzungsdaten, die abgerufen werden sollen. Weitere Informationen finden Sie unter der *aggregationLevel*-Beschreibung für das Standardverhalten. |  Nein  |
 | endDate | date | Das Enddatum im Datumsbereich der gleichzeitigen Nutzungsdaten, die abgerufen werden sollen. Weitere Informationen finden Sie unter der *aggregationLevel*-Beschreibung für das Standardverhalten. |  Nein  |
-| aggregationLevel | string | Gibt den Zeitraum an, für den aggregierte Daten abgerufen werden sollen. Dies kann eine der folgenden Zeichenfolgen sein: **minute**, **hour** oder **day**. Wenn keine Angabe erfolgt, lautet der Standardwert **day**. <p/><p/>Wenn Sie kein *startDate* oder *endDate* angeben, ist der Antworttext standardmäßig wie folgt: <ul><li>**minute**: Die letzten 60 Einträge an verfügbaren Daten.</li><li>**hour**: Die letzten 24 Einträge an verfügbaren Daten.</li><li>**day**: Die letzten 7 Einträge an verfügbaren Daten.</li></ul><p/>Die folgenden Aggregationsebenen haben Größenbegrenzungen hinsichtlich der Anzahl von Datensätzen, die zurückgegeben werden können. Die Datensätze werden abgeschnitten, wenn die angeforderte Zeitspanne zu groß ist. <ul><li>**minute**: Bis zu 1440 Datensätze (24 Stunden an Daten).</li><li>**hour**: Bis zu 720 Datensätze (30 Tage an Daten).</li><li>**day**: Bis zu 60 Datensätze (60 Tage an Daten).</li></ul>  |  Nein  |
+| aggregationLevel | string | Gibt den Zeitraum an, für den aggregierte Daten abgerufen werden sollen. Dies kann eine der folgenden Zeichenfolgen sein: **minute**, **hour** oder **day**. Wenn keine Angabe erfolgt, lautet der Standardwert **day**. <p/><p/>Wenn Sie kein *startDate* oder *endDate* angeben, ist der Antworttext standardmäßig wie folgt: <ul><li>**Minute**: Die letzten 60 Datensätze der verfügbaren Daten.</li><li>**Stunde**: Die letzten 24 Einträge der verfügbaren Daten.</li><li>**day**: Die letzte 7 Datensätze der verfügbaren Daten.</li></ul><p/>Die folgenden Aggregationsebenen haben Größenbegrenzungen hinsichtlich der Anzahl von Datensätzen, die zurückgegeben werden können. Die Datensätze werden abgeschnitten, wenn die angeforderte Zeitspanne zu groß ist. <ul><li>**Minute**: Bis zu 1440 Datensätze (24 Stunden Daten).</li><li>**Stunde**: Bis zu 720 Datensätze (Daten 30 Tage).</li><li>**day**: Bis zu 60 Datensätze (Daten 60 Tage).</li></ul>  |  Nein  |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
@@ -72,8 +72,8 @@ Der Antworttext enthält ein Array von Objekten, die jeweils einen Satz von glei
 | Wert      | Typ   | Beschreibung                  |
 |------------|--------|-------------------------------------------------------|
 | Anzahl      | number  | Die durchschnittliche Anzahl der Kunden, die Ihr Xbox Live-fähiges Spiel für die angegebene Minute, Stunde oder Tag spielen. <p/><p/>**Hinweis:**&nbsp;&nbsp;Ein Wert von 0 gibt an, dass entweder keine gleichzeitigen Benutzer während des angegebenen Intervalls spielten, oder dass beim Sammeln von gleichzeitigen Benutzerdaten für das Spiel während des angegebenen Intervalls ein Fehler aufgetreten ist. |
-| Date  | String | Das Datum und Uhrzeit, die die Minute, Stunde oder Tag angeben, während dessen die gleichzeitigen Nutzungsdaten auftraten.  |
-| SeriesName | String    | Dies hat immer den Wert **UserConcurrency**. |
+| Datum  | string | Das Datum und Uhrzeit, die die Minute, Stunde oder Tag angeben, während dessen die gleichzeitigen Nutzungsdaten auftraten.  |
+| SeriesName | string    | Dies hat immer den Wert **UserConcurrency**. |
 
 
 ### <a name="response-example"></a>Antwortbeispiel
@@ -107,10 +107,10 @@ Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Zugreifen auf Analysedaten mit MicrosoftStore-Diensten](access-analytics-data-using-windows-store-services.md)
-* [Abrufen von Xbox Live Analysedaten](get-xbox-live-analytics.md)
-* [Abrufen von Xbox Live Erfolgsdaten](get-xbox-live-achievements-data.md)
-* [Abrufen von Xbox Live Integritätsdaten](get-xbox-live-health-data.md)
-* [Abrufen von Xbox Live Spielehubdaten](get-xbox-live-game-hub-data.md)
-* [Abrufen von Xbox Live Clubdaten](get-xbox-live-club-data.md)
-* [Abrufen von Xbox Live Multiplayerdaten](get-xbox-live-multiplayer-data.md)
+* [Access-Analytics-Daten mithilfe von Microsoft Store services](access-analytics-data-using-windows-store-services.md)
+* [Abrufen von Xbox Live-Analytics-Daten](get-xbox-live-analytics.md)
+* [Abrufen von Daten für Xbox Live Erfolge](get-xbox-live-achievements-data.md)
+* [Abrufen von Xbox Live-Health-Daten](get-xbox-live-health-data.md)
+* [Abrufen von Xbox Live-Spiele-Hub-Daten](get-xbox-live-game-hub-data.md)
+* [Abrufen von Xbox Live-Club-Daten](get-xbox-live-club-data.md)
+* [Abrufen von Xbox Live Multiplayer-Daten](get-xbox-live-multiplayer-data.md)

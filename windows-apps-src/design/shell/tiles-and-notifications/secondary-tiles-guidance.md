@@ -1,18 +1,18 @@
 ---
-Description: Learn about when and where you should use secondary tiles in your UWP app.
+Description: Hier erfahren Sie, wann und wo sekundäre Kacheln in Ihrer UWP-App verwendet werden sollen.
 title: Sekundäre Kacheln
 label: Secondary tiles
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
-keywords: Windows10, UWP, sekundäre Kacheln, Richtlinien, Richtlinien, bewährte Methoden
+keywords: Windows 10, UWP, sekundäre Kacheln, Richtlinien, Richtlinien, bewährte Methoden
 ms.localizationpriority: medium
 ms.openlocfilehash: de3bfa94de1152b3945d42169143a5ae36328c75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943316"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625345"
 ---
 # <a name="secondary-tile-guidance"></a>Anleitung für sekundäre Kacheln
 
@@ -32,8 +32,8 @@ Beachten Sie die folgenden Empfehlungen zur Aktivierung von sekundären Kacheln 
 * Falls der Inhalt mit dem Fokus bereits angeheftet ist, sollte auf der App-Leiste anstelle der Schaltfläche „An "Start" anheften” die Schaltfläche „Von "Start" lösen” angezeigt werden. Die Schaltfläche „Von "Start" lösen” sollte die vorhandene sekundäre Kachel entfernen.
 * Wenn der Inhalt mit dem Fokus nicht angeheftet werden kann, sollte auch die Schaltfläche „An "Start" anheften” nicht zu sehen sein (oder die Schaltfläche „An "Start" anheften” sollte deaktiviert sein).
 * Verwenden Sie die vom System bereitgestellten Symbole für die Schaltflächen „An "Start" anheften” und „Von "Start" lösen” (siehe Member zum Anheften und Lösen unter Windows.UI.Xaml.Controls.Symbol bzw. WinJS.UI.AppBarIcon).
-* Verwenden Sie auch den standardmäßigen Schaltflächentext: "An "Start" anheften" und "Von "Start" lösen". Beim Nutzen der vom System bereitgestellten Glyphen für das Anheften und Lösen müssen Sie den Standardtext überschreiben.
-* Verwenden Sie eine sekundäre Kachel nicht als virtuelle Befehlsschaltfläche, um mit der übergeordneten App zu interagieren, z.B. eine Kachel "Zum nächsten Titel springen".
+* Verwenden Sie den Text der Schaltfläche "standard": "An Start anheften" und "Lösen von Anfang". Beim Nutzen der vom System bereitgestellten Glyphen für das Anheften und Lösen müssen Sie den Standardtext überschreiben.
+* Verwenden Sie eine sekundäre Kachel nicht als virtuelle Befehlsschaltfläche, um mit der übergeordneten App zu interagieren, z. B. eine Kachel "Zum nächsten Titel springen".
 
 
 ## <a name="additional-usage-guidance-for-devs"></a>Weitere Richtlinien für Entwickler
@@ -47,8 +47,8 @@ Beachten Sie die folgenden Empfehlungen zur Aktivierung von sekundären Kacheln 
 
 ## <a name="related"></a>Verwandte Themen
 
-* [Übersicht über sekundäre Kacheln](secondary-tiles.md)
+* [Übersicht über die sekundäre Kacheln](secondary-tiles.md)
 * [Sekundäre Kacheln anheften](secondary-tiles-pinning.md)
-* [Kachelressourcen](app-assets.md)
-* [Dokumentation für den Kachelinhalt](create-adaptive-tiles.md)
+* [Kachel "-Objekte](app-assets.md)
+* [Kachel "Content-Dokumentation](create-adaptive-tiles.md)
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)

@@ -4,14 +4,14 @@ description: Erfahren Sie, wie Sie barrierefreie Spiele erstellen. Verwenden Sie
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
 ms.date: 11/09/2017
 ms.topic: article
-keywords: Windows10, UWP, Bedienungshilfen, Spiele
+keywords: Windows 10, UWP, Bedienungshilfen, Spiele
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046333"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592935"
 ---
 #  <a name="making-games-accessible"></a>Erstellen barrierefreier Spiele
 
@@ -33,7 +33,7 @@ Grundsätzlich betrachtet, ist es nicht schwierig, die Entwicklung barrierefreie
 
 Sie multiplizieren die Zahl der Benutzer, die Ihr Spiel spielen können, mit der Qualität Ihres Spiels und erhalten so die Verkaufszahlen für Ihr Spiel.
 
-Wenn Sie ein beeindruckendes Spiel entwickelt haben, das so kompliziert oder komplex ist, dass es nur von sehr wenigen Menschen gespielt werden kann, begrenzen Sie Ihre Verkaufszahlen. Und wenn Sie ein Spiel entwickeln, das von Menschen mit physischen, sensorischen oder kognitiven Behinderungen nicht gespielt werden kann, entgehen Ihnen ebenfalls mögliche Umsätze. Angesichts der Tatsache, dass [19 % der Bevölkerung in den Vereinigten Staaten über eine Art von Behinderung verfügen](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [ungefähr 14% aller Erwachsener in den USA Probleme haben](https://nces.ed.gov/naal/estimates/overview.aspx) und [ungefähr 10% der Männer über eine Form von Farbenblindheit verfügen](https://www.aao.org/eye-health/diseases/color-blindness-risk), kann dies potenziell einen großen Einfluss auf den Umsatz Ihres Titels haben. 
+Wenn Sie ein beeindruckendes Spiel entwickelt haben, das so kompliziert oder komplex ist, dass es nur von sehr wenigen Menschen gespielt werden kann, begrenzen Sie Ihre Verkaufszahlen. Und wenn Sie ein Spiel entwickeln, das von Menschen mit physischen, sensorischen oder kognitiven Behinderungen nicht gespielt werden kann, entgehen Ihnen ebenfalls mögliche Umsätze. Angesichts der Tatsache, dass [19 % der Bevölkerung in den Vereinigten Staaten über eine Art von Behinderung verfügen](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [ungefähr 14 % aller Erwachsener in den USA Probleme haben](https://nces.ed.gov/naal/estimates/overview.aspx) und [ungefähr 10 % der Männer über eine Form von Farbenblindheit verfügen](https://www.aao.org/eye-health/diseases/color-blindness-risk), kann dies potenziell einen großen Einfluss auf den Umsatz Ihres Titels haben. 
 
 Weitere geschäftliche Begründungen finden Sie unter [Erstellen barrierefreier Videospiele](https://msdn.microsoft.com/library/windows/desktop/ee415219).
 
@@ -69,7 +69,7 @@ Wenn Sie die meisten Fragen mit „nein“ beantwortet haben oder die Antwort au
 
 ## <a name="defining-disability"></a>Definition von Behinderungen
 
-Behinderungen werden als „fehlende Übereinstimmung zwischen den Bedürfnissen einer Person und dem Service, dem Produkt oder der Umgebung, die angeboten werden“ definiert. ([Video zum Inklusivprinzip](https://www.microsoft.com/design/inclusive), Microsoft.com.) Dies bedeutet, dass jeder Benutzer eine Behinderung erfahren kann und dies ein kurzfristiger oder situationsbedingter Zustand sein kann. Stellen Sie sich die Herausforderungen vor, denen sich Spieler in einer derartigen Lage gegenübersehen, wenn sie Ihr Spiel spielen, und überlegen Sie, wie Sie Ihr Spiel für diese Personen verbessern können. Im Folgenden finden Sie einige Behinderungen, an die Sie denken sollten:
+Behinderungen werden als „fehlende Übereinstimmung zwischen den Bedürfnissen einer Person und dem Service, dem Produkt oder der Umgebung, die angeboten werden“ definiert. ([Inklusive Video](https://www.microsoft.com/design/inclusive), "Microsoft.com".) Dies bedeutet, dass jeder Benutzer eine Behinderung auftreten kann, und eine Bedingung kurz- oder erhalten werden. Stellen Sie sich die Herausforderungen vor, denen sich Spieler in einer derartigen Lage gegenübersehen, wenn sie Ihr Spiel spielen, und überlegen Sie, wie Sie Ihr Spiel für diese Personen verbessern können. Im Folgenden finden Sie einige Behinderungen, an die Sie denken sollten:
 
 ### <a name="vision"></a>Sehvermögen
 
@@ -91,7 +91,7 @@ Behinderungen werden als „fehlende Übereinstimmung zwischen den Bedürfnissen
 * Medizinische langfristige Bedingungen wie Dyslexie, Epilepsie, Aufmerksamkeitsdefizitstörung (ADHD), Demenz und Amnesie
 * Kurzfristige situationsbedingte Zustände wie Alkohol, Schlafmangel oder temporäre Ablenkungen wie Sirenen eines Einsatzfahrzeugs, das am Haus vorbeifährt
 
-### <a name="speech"></a>Sprechvermögen
+### <a name="speech"></a>Spracherkennung
 
 * Medizinische langfristige Bedingen wie beschädigte Stimmbänder, Dysarthrie und Apraxie
 * Kurzfristige situationsbedingte Zustände wie zahnärztliche Behandlungen oder Essen und Trinken
@@ -99,45 +99,45 @@ Behinderungen werden als „fehlende Übereinstimmung zwischen den Bedürfnissen
 
 ## <a name="how-to-make-games-more-accessible"></a>Wie können Sie die Barrierefreiheit von Spielen verbessern?
 
-### <a name="design-shift-inclusive-game-design-approach"></a>Änderung des Designansatzes: inklusives Spieledesign
+### <a name="design-shift-inclusive-game-design-approach"></a>Design-Shift: Spiele-Entwurfsansatz inklusive
 
 Das inklusive Design konzentriert sich auf das Erstellen von Produkten und Diensten, die für ein breiteres Spektrum von Verbrauchern besser zugänglich sind, darunter auch Menschen mit Behinderungen.
 
-Um erfolgreich zu sein, müssen die Spieledesigner von heute über die Entwicklung von unterhaltsamen Spielen hinaus denken, was Spaß macht. Spieledesigner müssen die Auswirkungen ihrer Designentscheidungen auf die allgemeine Barrierefreiheit des Spiels berücksichtigen, d.h. die Spielbarkeit des Spiels für ihre potenzielle Zielgruppe insgesamt, einschließlich Menschen mit Behinderungen.
+Um erfolgreich zu sein, müssen die Spieledesigner von heute über die Entwicklung von unterhaltsamen Spielen hinaus denken, was Spaß macht. Spieledesigner müssen die Auswirkungen ihrer Designentscheidungen auf die allgemeine Barrierefreiheit des Spiels berücksichtigen, d. h. die Spielbarkeit des Spiels für ihre potenzielle Zielgruppe insgesamt, einschließlich Menschen mit Behinderungen.
 
 Es muss daher ein Paradigmenwechsel vom herkömmlichen Spieledesign hin zum inklusiven Konzept für das Design von Spielen stattfinden. Das inklusive Spieledesign geht über das einfache Spieledesign hinaus, das der Zielgruppe Unterhaltung bietet. Es bedeutet, zusätzliche oder geänderte Personas zu entwickeln, um eine breitere Gruppe von Spielern anzusprechen. Sie müssen beim Entwerfen von Hindernissen in Ihrem Spiel nachdenken und sicher stellen, dass sie nicht unnötig Hindernisse hinzuzufügen, die den Spaß der vorgesehenen Umgebung mindern.
 
 Indem Sie diese Lücken identifizieren, können Sie das ursprüngliche Designkonzept optimieren, überarbeiten und verbessern, damit mehr Menschen Ihre Vision entdecken. Wenn Sie sich Zeit nehmen und den inklusiven Designansatz für Ihr Spiel berücksichtigen, wird Ihr Spiel letzten Endes besser zugänglich. Kein Spiel gefällt jedem, die Definition eines Spiels umfasst eine gewisse Herausforderung, aber durch die Berücksichtigung der Barrierefreiheit können Sie sicherstellen, dass niemand unnötigerweise ausgeschlossen wird.
 
-### <a name="empower-gamers-give-gamers-options"></a>Optionen für Spieler
+### <a name="empower-gamers-give-gamers-options"></a>Ermöglichen Sie es Spielern ermöglichen: Optionen für die es Spielern ermöglichen erteilen
 
 Nahezu jede Eingabehilfen-Lösung hängt von zwei Prinzipien ab. Geben Sie als erstes Spielern Optionen, um ihre Spielumgebung anzupassen. Wenn Sie bereits eine großer Fanbasis haben, gibt es möglicherweise eine erhebliche Zahl von Spielern, die nicht möchten, dass die Umgebung auch nur minimal geändert wird. Das ist in Ordnung. Ermöglichen Sie Ihren Spielern, diese Features zu aktivieren und zu deaktivieren, und ermöglichen Sie die individuelle Konfiguration von Features. Sie müssen Spielern die Möglichkeit geben, ihre eigenen Anforderungen und Einstellungen am geeignetsten auszuprobieren.
 
-### <a name="reinforce-communicate-information-in-more-than-one-way"></a>Wichtig: Kommunizieren Sie Informationen auf mehr als nur eine Art und Weise
+### <a name="reinforce-communicate-information-in-more-than-one-way"></a>Verstärken: Informationen in mehr als eine Möglichkeit zu kommunizieren
 
 Das zweite Prinzip umfasst das Konzept des universellen Designs in einem einheitlichen Ansatz, der nicht nur mehr Spieler anzieht sondern auch die Benutzerfreundlichkeit für alle verbessert. Beispielsweise, ein Bild mit Text, ein Symbol mit Farbe. Eine Karte, die auf eine Reihe von verschiedenfarbigen Markern basiert ist nicht nur für farbenblinde Spieler unmöglich, sondern auch frustrierend für alle anderen Benutzer, die sich alles entsprechend merken müssen. Das Hinzufügen von Symbolen ist optimal für alle Benutzer.
 
-### <a name="innovate-be-creative"></a>Innovationen: Seien Sie kreativ
+### <a name="innovate-be-creative"></a>Innovation: Seien Sie kreativ
 
 Es gibt viele kreative Möglichkeiten, um die Barrierefreiheit Ihres Spiels zu verbessern. Werden Sie kreativ, und lernen Sie von anderen barrierefreien Spielen auf dem Markt. Wenn Sie bereits ein Spiel entwickelt haben, sollten Sie versuchen, aktuelle Features Ihres Spiels zu identifizieren, die verbessert werden können, ohne das ursprüngliche Design der zentralen Spielmechanismen und der Spielerfahrung zu verändern. Wie bereits erwähnt, geht es bei der Barrierefreiheit von Spielen darum, Spielern Optionen für die Anpassung ihrer Spielerfahrung bereitzustellen. Dies kann durch das Unterstreichen oder die Weitergabe von Informationen auf mehre Arten geschehen. 
 
 Sehen Sie die Barrierefreiheit als Ansatz für ein neues Design und möglicherweise Ideen, an die Sie nicht anderweitig gedacht hätten. Dieser Ansatz zum Entwurf ergibt nicht nur interessante Konzepte sondern Produkte für die weitere Verbreitung oder die Massenvermarktung für den wirtschaftlichen Erfolg. Beispiele umfassen die Textvorhersage, Spracherkennung, weniger Beschränkungen, die Lautsprecher, die Schreibmaschine und optische Zeichenerkennung (OCR). Ideen für diese Produkte stammen von Personen, die die Herangehensweise für Lösungen für die Eingabehilfen überdacht haben.
 
-### <a name="adopt-quality-means-accessible-features"></a>Übernehmen: Qualität bedeutet zugängliche Features
+### <a name="adopt-quality-means-accessible-features"></a>Übernehmen: Qualität bedeutet zugänglich features
 
 Barrierefreiheit bedeutet Qualität. Es muss eine Funktionsanforderung sein und nicht nur ein funktionierendes Element. "Anpassbarer Minikarte für Farbenblindheit" gilt beispielsweise nicht als Arbeitsaufgabe mit niedriger Priorität, das Sie einführen, wenn Sie zusätzliche Zeit haben. Wenn dieses Element nicht abgeschlossen ist, bedeutet dies einfach, dass das gesamte Minikarten-Feature nicht vollständig ist und nicht versendet werden kann.
 
-### <a name="evangelize-make-accessibility-a-priority-in-your-game-studio"></a>Werben Sie: Machen Sie die Barrierefreiheit in Ihrem Spielestudio zu einer Priorität
+### <a name="evangelize-make-accessibility-a-priority-in-your-game-studio"></a>Übertragen: Stellen Sie Zugriff auf eine Priorität in Ihrer game studio
 
 Für die Spieleentwicklung gibt es stets einen engen Terminplan. Wenn Sie die Barrierefreiheit zur Priorität erklären, wird es einfacher. Eine Möglichkeit besteht darin, das Spiel von Anfang an im Gedanken an Barrierefreiheit zu entwerfen. Je früher Sie die Eingabehilfen berücksichtigen, desto einfacher und kostengünstiger wird die Arbeit. 
 
 Teilen Sie Ihr Wissen über Barrierefreiheit mit Ihrem Team, Ihre geschäftlichen Gründe und zersträuen Sie Missverständnisse – dass viele Benutzer davon nicht profitieren, es die Mechanik hindert und schwierig und teuer zu implementieren ist.
 
-### <a name="review-constantly-evaluate-your-game"></a>Überprüfen Sie: Bewerten Sie Ihr Spiel laufend
+### <a name="review-constantly-evaluate-your-game"></a>Lesen Sie: Bewerten Sie Ihr Spiel ständig
 
 Sie können einen Überprüfungsprozess während der Entwicklung einführen, um sicherzustellen, dass die Barrierefreiheit bei jedem Schritt berücksichtigt wird. Erstellen Sie eine Checkliste wie die unten gezeigte, um Ihrem Team zu helfen, laufend zu überprüfen, ob die entwickelten Features barrierefrei sind.
 
-| Checkliste                                         | Barrierefreiheitsfeatures                                                                                                         |
+| Prüfliste                                         | Barrierefreiheitsfeatures                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Kinoeffekte im Spiel                                | Hat Untertitel und Untertitelungen, ist auf Fotosensibilität getestet                                                                           |
 | Grafiken im Allgemeinen (2D- und 3D-Grafiken)              | Für farbenblinde Spieler geeignete Farben und Optionen, keine ausschließliche Abhängigkeit von Farben für die Identifizierung, sondern auch von Formen und Mustern|
@@ -146,13 +146,13 @@ Sie können einen Überprüfungsprozess während der Entwicklung einführen, um 
 | HUD-Anzeige                                       | Anpassbare Bildschirmposition, anpassbarer Schriftgrad, Einstellungen für farbenblinde Spieler                                                  |        
 | Steuerelementeingabe                                     | Möglichkeit, Steuerelemente dem Eingabegerät zuzuordnen, benutzerdefinierte Controller-Unterstützung, Zulässigkeit vereinfachter Eingaben im Spiel                               |        
 
-### <a name="playtest-and-iterate-get-gamers-feedback"></a>Spieletests und Überarbeitungen: Bitten Sie Spieler um Feedback
+### <a name="playtest-and-iterate-get-gamers-feedback"></a>Playtest und durchlaufen: Erhalten Sie Feedback von Spielern
 
 Laden Sie Spieletester mit Behinderungen, für die bei der Spieleentwicklung berücksichtigt wurden, zu den Spieletests ein. Denken Sie daran, Fragen zur Eingabehilfe in die Beta-Tests Fragebögen hinzuzufügen. Lokale Behindertengruppen sind eine hervorragende Informationsquelle als Teilnehmer. Achten Sie darauf, wie sie spielen, und bitten Sie sie um Feedback. Stellen Sie fest, welche Änderungen vorgenommen werden müssen, um das Spiel zu verbessern.
 
 Verwenden Sie soziale Netzwerke und das Forum des Spiels, um Informationen über die Eingabehilfefunktionen zu erhalten, die am wichtigsten sind und wie sie implementiert werden sollten. 
 
-### <a name="shout-it-out-let-the-world-know-your-game-is-accessible"></a>Erzählen Sie es jedem: Lassen Sie die Welt wissen, dass Ihr Spiel barrierefrei ist
+### <a name="shout-it-out-let-the-world-know-your-game-is-accessible"></a>Rufen Sie es heraus: Ermöglichen der ganzen Welt wissen, dass Ihr Spiel zugegriffen werden.
 
 Verbraucher möchten wissen, ob Ihr Spiel von Spielern mit Behinderungen gespielt werden kann. Geben Sie die Barrierefreiheit des Spiels auf der Website des Spiels und über Pressemitteilungen und auf der Verpackung an, um sicherzustellen, dass Verbraucher beim Kauf Ihres Spiels wissen, was sie erwarten können. Denken Sie daran, auch die Website und alle Vertriebskanäle für das Spiel barrierefrei zu gestalten. An wichtigsten ist jedoch, dass Sie die Community von Spielern mit Behinderungen über Ihr Spiel informieren.
 
@@ -170,8 +170,8 @@ Da eine reduzierte Empfindlichkeit für blaues Licht seltener ist, werden bei de
  
   + Verwenden Sie Farbkombinationen, die von Benutzern unterschieden werden können, die rotes/grünes Licht nicht wahrnehmen können:
   
-    * Ähnliche Farben: alle Abstufungen von Rot und Grün sowie von Braun und Orange
-    * Farben, die sich abheben: Blau und Gelb
+    * Farben, die ähnlich wie angezeigt werden: Alle grauschattierungen Rot-Grün einschließlich Brown "und" Orange "
+    * Farben, die herausstellen: Blau und Gelb
     
   + Verlassen Sie sich nicht ausschließlich auf Farben, um zu kommunizieren oder um Spielobjekte zu unterscheiden. Verwenden Sie ebenfalls Formen und Muster.
   + Wenn Sie sich nur auf Farben verlassen, gruppieren Sie die Einstellungen mit einer kostenlosen Auswahl an Farben, damit das Spiel vollständig durch den Spieler angepasst werden kann, der diese benötigt, und keine zusätzliche Arbeit für Spieler darstellt, die diese nicht benötigen.
@@ -187,8 +187,8 @@ Im Folgenden werden einige einfache Anleitungen aufgelistet, die Sie beim Design
 *   Wählen Sie einen ausreichend großen Schriftgrad, oder stellen Sie eine Option für die Anpassung des Schriftgrads bereit, um größere Flexibilität zu bieten. (Der ideale Schriftgrad ist von der Bildschirmgröße, dem Abstand vom Bildschirm usw. abhängig.)
 *   Schaffen Sie einen hohen Kontrast zwischen Hintergrund und Schriftfarbe. Verwenden Sie starke Gliederungen und Schatten für den Text. Verwenden Sie eine dunkle Hintergrundüberlagerung für die Untertitel, und denken Sie daran, Optionen für das Aktivieren und Deaktivieren bereitzustellen. (Weitere Informationen hierzu finden Sie unter [Informationen zum Kontrastverhältnis](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements).)
 * Zeigen Sie kurze Sätze auf dem Bildschirm an, maximal 38 Zeichen pro Zeile und maximal 2 bis 3 Zeilen zur gleichen Zeit. (Denken Sie daran, nicht zu viel über das Spiel zu verraten, indem Sie den Text anzeigen, bevor das Ereignis eintritt.)
-*   Stellen Sie klar, aus welcher Quelle der Audioeffekt stammt oder wer gerade spricht. (Beispiel: „Daniel: Hallo!“.)
-*   Bieten Sie die Möglichkeit, Untertitelungen und Untertitel ein- und auszuschalten. (Zusätzliches Feature: Bieten Sie die Möglichkeit an, anhand der Bedeutung auszuwählen, wie viele Audioinformationen angezeigt werden.)
+*   Stellen Sie klar, aus welcher Quelle der Audioeffekt stammt oder wer gerade spricht. (Beispiel: "Daniel: Hallo!")
+*   Bieten Sie die Möglichkeit, Untertitelungen und Untertitel ein- und auszuschalten. (Zusätzliche Features: Möglichkeit, auszuwählen, wie viel fundierter Informationen angezeigt werden basiert Bedeutung.)
 
 ### <a name="game-chat-transcription"></a>Spiele-Chat-Transkription
 
@@ -204,12 +204,12 @@ Audio- oder Soundeffekte bieten dem Spieler Feedback, zusätzlich zum visuellen 
 
 *   Verwenden Sie 3D-Audiohinweise, um zusätzliche räumliche Informationen bereitzustellen.
 * Trennen Sie Musik-, Sprach- und Audio- bzw. Soundeffekte.
-*   Gestalten Sie die Sprachhinweise so, dass sie den Spielern nützliche Informationen bieten. (Beispiel: „Die Feinde nähern sich“ im Gegensatz zu „Die Feinde nähern sich von der Hintertür aus“.)
+*   Gestalten Sie die Sprachhinweise so, dass sie den Spielern nützliche Informationen bieten. (Beispiel: "Feinde nähern" im Vergleich zu "Feinde werden von Hintertür eingeben.")
 *   Stellen Sie sicher, dass die Sprachhinweise mit einer akzeptablen Geschwindigkeit gesprochen werden, und ermöglichen Sie die Steuerung der Geschwindigkeit, um eine bessere Barrierefreiheit zu erzielen.
 
 ### <a name="fully-mappable-controls"></a>Vollständig zuordbare Steuerelemente
 
-Es gibt Unternehmen und Organisationen wie z.B. [Special Effect](https://www.specialeffect.org.uk/), die benutzerdefinierte Steuergeräte für Spiele entwickeln, die mit verschiedenen Gamingsystemen wie Windows und Xbox One verwendet werden können. Diese Anpassung ermöglicht Benutzern mit unterschiedlichen Arten von Behinderungen, Spiele zu spielen, die sie andernfalls möglicherweise nicht spielen könnten. Weitere Informationen zu Personen, die nun mithilfe angepasster Steuergeräte eigenständig Spiele spielen können, finden Sie unter [Unterstützte Personen](https://www.specialeffect.org.uk/who-we-helped).
+Es gibt Unternehmen und Organisationen wie z. B. [Special Effect](https://www.specialeffect.org.uk/), die benutzerdefinierte Steuergeräte für Spiele entwickeln, die mit verschiedenen Gamingsystemen wie Windows und Xbox One verwendet werden können. Diese Anpassung ermöglicht Benutzern mit unterschiedlichen Arten von Behinderungen, Spiele zu spielen, die sie andernfalls möglicherweise nicht spielen könnten. Weitere Informationen zu Personen, die nun mithilfe angepasster Steuergeräte eigenständig Spiele spielen können, finden Sie unter [Unterstützte Personen](https://www.specialeffect.org.uk/who-we-helped).
 
 Als Spieleentwickler können Sie die Barrierefreiheit Ihres Spiels verbessern, indem Sie die vollständige Zuordbarkeit von Steuerelemente ermöglichen, damit Spieler ihre benutzerdefinierten Steuergeräte anschließen und die Tasten entsprechend ihren Bedürfnissen zuordnen können.
 
@@ -232,16 +232,16 @@ Es gibt viele Faktoren, die beim Spielen von Videospielen eine lichtempfindliche
 Viele Benutzer finden heraus, dass sie Epilepsie haben, wenn sie einen epileptischen Anfall haben. Spieler können, und haben, ihre ersten Anfälle über Videospiele, was zum Schaden der Person führen kann Als Entwickler finden Sie hier einige Tipps für das Entwerfen eines Spiels, das auch von Spielern gespielt werden kann, die zur Lichtempfindlichkeitsepilepsie neigen.
 
 Vermeiden Sie Folgendes:
-* Licht, das mit einer Frequenz von 5 bis 30Blitzen pro Sekunde (Hertz) aufblitzt, da blitzendes Licht in diesem Bereich am wahrscheinlichsten Anfälle auslöst.
+* Licht, das mit einer Frequenz von 5 bis 30 Blitzen pro Sekunde (Hertz) aufblitzt, da blitzendes Licht in diesem Bereich am wahrscheinlichsten Anfälle auslöst.
 * Licht, das über eine Frequenz von 5 Blitzen pro Sekunde dauert
-* Mehr als drei Blitze in einer einzigen Sekunde über mehr als 25% des Bildschirms
-* Verschieben wiederholter Muster oder uniformen Texts über mehr als 25% des Bildschirms
-* Statisch wiederholte Muster oder uniformer Text über mehr als 40% des Bildschirms
+* Mehr als drei Blitze in einer einzigen Sekunde über mehr als 25 % des Bildschirms
+* Verschieben wiederholter Muster oder uniformen Texts über mehr als 25 % des Bildschirms
+* Statisch wiederholte Muster oder uniformer Text über mehr als 40 % des Bildschirms
 * Eine unmittelbare hohe Änderung in Helligkeit/Kontrast (einschließlich schneller Schnitte) oder in der Farbe Rot
-* Mehr als fünf gleichmäßige wiederholte Streifen mit hohem Kontrast – Zeilen oder Spalten wie Raster und Schachbrettmuster, die aus kleineren Elementen wie z.B. Tupfen zusammengesetzt sind
+* Mehr als fünf gleichmäßige wiederholte Streifen mit hohem Kontrast – Zeilen oder Spalten wie Raster und Schachbrettmuster, die aus kleineren Elementen wie z. B. Tupfen zusammengesetzt sind
 * Mehr als fünf Zeilen Text in Großbuchstaben ohne viel Abstand zwischen den Buchstaben und Zeilenabstände, die genauso hoch wie die Zeilen selbst sind, effektives Umwandeln in hohen Kontrast mit gleichmäßig alternieRendern Zeilen
 
-Verwenden Sie ein automatisiertes System, um das Spiel auf Reize zu überprüfen, die einen Anfall von Lichtempfindlichkeitsepilepsie auslösen können. (Beispiel: [The Harding Test](https://www.hardingtest.com/index.php?page=test) und [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/) von Cambridge Research System Ltd und Professor Graham Harding.) 
+Verwenden Sie ein automatisiertes System, um das Spiel auf Reize zu überprüfen, die einen Anfall von Lichtempfindlichkeitsepilepsie auslösen können. (Beispiel: [Die Harding Test](https://www.hardingtest.com/index.php?page=test) und [Harding Flash und Muster Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/) von Cambridge Research System Ltd. und Professor Graham Harding entwickelt wurde.) 
 
 Fügen Sie **ein- und ausblenden** als Einstellung hinzu und legen Sie **Blitz** standardmäßig auf **Aus** fest. Dadurch schützen Sie Spieler, die noch nicht wissen, dass sie für Anfälle anfällig sind.
 
@@ -252,24 +252,24 @@ Planen Sie Pausen zwischen Spiellevels ein, damit Spieler nicht ohne Unterbrechu
 Im Folgenden finden Sie einige externe Websites, die zusätzliche Informationen in Bezug auf barrierefreie Spiele bereitstellen.
 
 ### <a name="game-accessibility-guidelines"></a>Anleitungen für die Barrierefreiheit von Spielen
-* [Anleitungen für die Barrierefreiheit von Spielen](https://gameaccessibilityguidelines.com/)
-* [Anleitungen der AbleGamers Foundation](https://www.includification.com/)
-* [Universell zugängliche Spiele (Universally Accessible (UA)-Spiele)](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [Richtlinien für Spiele Eingabehilfen](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation-Richtlinien](https://www.includification.com/)
+* [Entwerfen Sie allgemein verfügbar (UA)-Spiele](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>Benutzerdefinierte Eingabesteuergeräte
-* [Special Effect](https://www.specialeffect.org.uk/)
-* [Warfighter Engaged](https://www.warfighterengaged.org/)
+* [Spezieller Effekt](https://www.specialeffect.org.uk/)
+* [War Kämpfer aktiviert](https://www.warfighterengaged.org/)
 
 ## <a name="references-used"></a>Verwendete Quellen
-* [Anleitungen für die Barrierefreiheit von Spielen](https://gameaccessibilityguidelines.com/)
-* [Anleitungen der AbleGamers Foundation](https://www.includification.com/)
-* [Color Blind Awareness, a Community Interest Company](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [How to do subtitles well (Anleitung für das Erstellen von Untertiteln) – Blogbeitrag auf Gamasutra von Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [Innovation for All Programme](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [Epilepsie Foundation](https://www.epilepsy.com/)
+* [Richtlinien für Spiele Eingabehilfen](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation-Richtlinien](https://www.includification.com/)
+* [Farbe, die Blind Sensibilisierung können Unternehmen Interesse-Community](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [Wie Sie Untertitel gut – einen Blog-Artikel auf Gamasutra von Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [Innovationen für alle Programms](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [Leiden, Anfälle auslösen foundation](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>Verwandte Links
-* [Inklusives Design](https://www.microsoft.com/design/inclusive)
+* [Inklusive Entwurf](https://www.microsoft.com/design/inclusive)
 * [Microsoft Accessibility Developer Hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Entwickeln von barrierefreien UWP-Apps](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
-* [E-Book: Engineering Software For Accessibility (Entwickeln von barrierefreier Software)](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Entwickeln von UWP-apps zugegriffen werden kann](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
+* [E-Book Engineering-Software für Barrierefreiheit](https://www.microsoft.com/download/details.aspx?id=19262)
