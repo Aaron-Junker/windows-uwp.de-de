@@ -1,19 +1,19 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Geräteportal für Xbox
-description: Hier erfahren Sie, wie Sie das Device Portal für Xbox One aktivieren.
+description: Hier erfahren Sie, wie Sie das Geräteportal für Xbox One aktivieren.
 ms.date: 02/12/2017
 ms.topic: article
-keywords: Windows 10, Uwp, geräteportal
+keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
 ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047272"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635715"
 ---
-# <a name="device-portal-for-xbox"></a>Device Portal für Xbox
+# <a name="device-portal-for-xbox"></a>Geräteportal für Xbox
 
 ## <a name="set-up-device-portal-on-xbox"></a>Einrichten des Geräteportals für Xbox
 
@@ -37,9 +37,9 @@ Die folgenden Schritte zeigen, wie Sie das Xbox-Geräteportal aktivieren, das Ih
 
 7. Sie erhalten eine Warnung zum Zertifikat, das bereitgestellt wurde, ähnlich der Warnung in der folgenden Abbildung. Klicken Sie in Edge auf **Details** und auf **Weiter zur Webseite**, um auf das Xbox-Geräteportal zuzugreifen. Geben Sie in dem sich öffnenden Dialog den Benutzernamen und das Kennwort ein, die Sie zuvor auf Ihrer Xbox eingegeben haben.
 
-    ![Fehler beim Zertifikat für das Geräteportal](images/device-portal-xbox-3.png)
+    ![Fehler beim Zertifikat für das Device Portal](images/device-portal-xbox-3.png)
 
-## <a name="device-portal-pages"></a>Seiten des Geräteportals
+## <a name="device-portal-pages"></a>Seiten von Device Portal
 
 Das Xbox-Geräteportal bietet eine Reihe von Standardseiten ähnlich dem, was im Windows-Geräteportal verfügbar ist. Dazu gibt es mehrere Seiten, die einzigartig sind. Ausführliche Beschreibungen der gemeinsamen Seiten finden Sie unter [Übersicht über das Windows-Geräteportal](device-portal.md). Die folgenden Abschnitte beschreiben die Seiten, die es nur im Xbox-Geräteportal gibt.
 
@@ -67,7 +67,7 @@ Der HTTP-Monitor ermöglicht es Ihnen, den entschlüsselten HTTP- und HTTPS-Date
 
 Um ihn zu aktivieren, öffnen Sie Dev Home auf Ihrer Xbox One, gehen Sie auf die Registerkarte **Einstellungen** und aktivieren Sie im Feld **HTTP-Monitor-Einstellungen** die Option **HTTP-Monitor aktivieren**.
 
-![Dev Home: Networking](images/device-portal-xbox-14.png)
+![Dev-Startseite: Netzwerk](images/device-portal-xbox-14.png)
 
 Sobald aktiviert, können Sie im Xbox-Geräteportal den HTTP- und HTTPS-Datenverkehr **stoppen**, **löschen** und **speichern**, indem Sie die entsprechenden Schaltflächen auswählen.
 
@@ -75,7 +75,7 @@ Sobald aktiviert, können Sie im Xbox-Geräteportal den HTTP- und HTTPS-Datenver
 
 Die Seite **Netzwerk** im Xbox-Geräteportal ist fast identisch mit der Seite **Networking** im Windows-Geräteportal. **Fiddler-Nachverfolgung** gibt es jedoch nur im Xbox-Geräteportal. Dadurch können Sie Fiddler auf Ihrem PC ausführen, um den HTTP- und HTTPS-Datenverkehr zwischen Ihrer Xbox One und dem Internet zu protokollieren und zu überprüfen. Weitere Informationen finden Sie unter [Verwendung von Fiddler mit Xbox One bei der Entwicklung für UWP](../xbox-apps/uwp-fiddler.md).
 
-![Netzwerk](images/device-portal-xbox-19.png)
+![Network](images/device-portal-xbox-19.png)
 
 ### <a name="media-capture"></a>Medienaufzeichnung
 
@@ -95,93 +95,93 @@ Es gibt mehrere Abschnitte mit unterschiedlichen Einstellungen zum Anzeigen und/
 
 #### <a name="device-information"></a>Geräteinformationen
 
-* **Gerätename**: Der Name des Gerätes. Zum Bearbeiten ändern Sie den Namen im Feld und wählen Sie **Speichern** aus.
+* **Name des Geräts**: Der Name des Geräts. Zum Bearbeiten ändern Sie den Namen im Feld und wählen Sie **Speichern** aus.
 
-* **BS-Version**: Schreibgeschützt. Die Versionsnummer des Betriebssystems.
+* **Version des Betriebssystems**: Schreibgeschützt. Die Versionsnummer des Betriebssystems.
 
-* **BS-Edition**: Schreibgeschützt. Der Name der Hauptversion des Betriebssystems.
+* **Betriebssystemedition**: Schreibgeschützt. Der Name der Hauptversion des Betriebssystems.
 
 * **Xbox Live-Geräte-ID**: Schreibgeschützt.
 
-* **Konsolen-ID**: Schreibgeschützt.
+* **-Konsole ID**: Schreibgeschützt.
 
 * **Seriennummer**: Schreibgeschützt.
 
-* **Konsolentyp**: Schreibgeschützt. Der Typ des Xbox One-Geräts (Xbox One, Xbox One S oder Xbox One X).
+* **-Konsole Typ**: Schreibgeschützt. Der Typ des Xbox One-Geräts (Xbox One, Xbox One S oder Xbox One X).
 
 * **Dev-Modus**: Schreibgeschützt. Der Entwicklermodus, in dem sich das Gerät befindet.
 
 #### <a name="audio-settings"></a>Audioeinstellungen
 
-* **Audio-Bitstream-Format**: Das Format der Audiodaten.
+* **Audio bitstromformat**: Das Format der Audiodaten.
 
-* **HDMI-Audio**: Die Art des Audiosignals über den HDMI-Anschluss.
+* **HDMI-Audio**: Der Typ der Audio über den HDMI-Port.
 
-* **Headset-Format**: Das Format des Audiosignals, das über Kopfhörer kommt.
+* **Kopfhörer Format**: Das Format des Audios, die über die Kopfhörer geliefert wird.
 
-* **Optisches Audio**: Die Art des Audiosignals über den optischen Anschluss.
+* **Optische Audio**: Der Typ der Audio über den optischen Port.
 
-* **Verwenden eines HDMI- oder optischen Audio-Headsets**: Aktivieren Sie dieses Kontrollkästchen, wenn Sie ein Headset verwenden, das über HDMI oder optisch angeschlossen ist.
+* **Verwenden Sie HDMI- oder optischen audio Kopfhörer**: Aktivieren Sie dieses Kontrollkästchen, wenn Sie einen Kopfhörer über HDMI verbundenen oder optischen verwenden.
 
 #### <a name="display-settings"></a>Anzeigeeinstellungen
 
-* **Farbtiefe**: Die Anzahl der Bits, die für jede Farbkomponente eines einzelnen Pixels verwendet werden.
+* **Farbtiefe**: Die Anzahl der Bits, die für jede Farbkomponente eines einzelnen Pixels verwendet.
 
-* **Farbraum**: Der dem Display zur Verfügung stehende Farbraum.
+* **Farbraum**: Die Farbskala für die Anzeige verfügbar.
 
-* **Bildschirmauflösung**: Die Auflösung des Displays.
+* **Bildschirmauflösung**: Die Auflösung der Anzeige.
 
-* **Display-Verbindung**: Die Art der Verbindung zum Display.
+* **Anzeigen der Verbindung**: Der Typ der Verbindung mit der Anzeige.
 
-* **High Dynamic Range (HDR) zulassen**: Aktiviert von HDR auf dem Display. Nur für kompatible Displays verfügbar.
+* **Zulassen der hoch dynamischen Bereichs (HDR)**: HDR ermöglicht auf die Anzeige. Nur für kompatible Displays verfügbar.
 
-* **4K zulassen**: Aktiviert die 4K-Auflösung auf dem Display. Nur für kompatible Displays verfügbar.
+* **Zulassen von 4K**: Ermöglicht die Auflösung von 4K auf die Anzeige. Nur für kompatible Displays verfügbar.
 
-* **Variable Aktualisierungsrate (VRR) zulassen**: Aktivieren von VRR auf dem Display. Nur für kompatible Displays verfügbar.
+* **Variable Aktualisierungsrate (VRR) ermöglichen**: Aktivieren Sie auf der Anzeige VRR. Nur für kompatible Displays verfügbar.
 
 #### <a name="kinect-settings"></a>Kinect Einstellungen
 
 Um diese Einstellungen zu ändern, muss ein Kinect-Sensor an die Konsole angeschlossen werden.
 
-* **Kinect aktivieren**: Aktivieren des angeschlossenen Kinect-Sensors.
+* **Aktivieren von Kinect**: Aktivieren Sie den angefügten Kinect-Sensor.
 
-* **Kinect-Neuladen bei App-Änderung erzwingen**: Neuladen des angeschlossenen Kinect-Sensors, wenn eine andere App oder ein anderes Spiel ausgeführt wird.
+* **Force Kinect, die bei Änderung der app erneut laden**: Laden Sie die angefügten Kinect-Sensor neu, wenn eine andere app oder Ihrem Spiel ausgeführt wird.
 
 #### <a name="localization-settings"></a>Lokalisierungseinstellungen
 
-* **Geographische Region**: Die geographische Region, auf die das Gerät eingestellt ist. Muss ein spezifischer, zweistellige Ländercode sein (z. B. **DE** für Deutschland).
+* **Geografische Region**: Die geografische Region, die das Gerät festgelegt ist. Muss ein spezifischer, zweistellige Ländercode sein (z. B. **DE** für Deutschland).
 
-* **Bevorzugte Sprache(n)**: Die Sprache, auf die das Gerät eingestellt ist.
+* **Bevorzugte Sprache(n)**: Die Sprache, die das Gerät festgelegt ist.
 
-* **Zeitzone**: Die Zeitzone, auf die das Gerät eingestellt ist.
+* **Zeitzone**: Die Zeitzone, die das Gerät festgelegt ist.
 
 #### <a name="network-settings"></a>Netzwerkeinstellungen
 
-* **Funkeinstellungen**: Die Funkeinstellungen des Geräts (unabhängig davon, ob bestimmte Aspekte wie WLAN ein- oder ausgeschaltet sind).
+* **Radio drahtloseinstellungen**: Die drahtlose Einstellungen des Geräts (gibt an, ob bestimmte Aspekte, z. B. w-LAN aktiviert oder deaktiviert sind).
 
 #### <a name="power-settings"></a>Energieeinstellungen
 
-* **Im Ruhezustand den Bildschirm nach (Minuten) dimmen**: Der Bildschirm wird abgedunkelt, nachdem das Gerät für diese Zeit im Leerlauf war. Auf **0** setzen, um den Bildschirm nie zu dimmen.
+* **Wenn im Leerlauf dim Bildschirm nach (Minuten)**: Der Bildschirm abgeblendet, wenn das Gerät für diesen Zeitraum im Leerlauf befunden hat. Auf **0** setzen, um den Bildschirm nie zu dimmen.
 
-* **Im Leerlauf ausschalten nach**: Das Gerät schaltet sich nach dieser Zeit im Leerlauf ab.
+* **Wenn im Leerlauf ist, deaktivieren Sie nach dem**: Das Gerät wird heruntergefahren, nachdem sie für diesen Zeitraum im Leerlauf befunden hat.
 
-* **Energiesparmodus**: Der Energiesparmodus des Gerätes. Weitere Informationen finden Sie unter [Informationen zum Energiesparmodus und schnellen Hochfahren](https://support.xbox.com/xbox-one/console/learn-about-power-modes).
+* **Energiesparmodus**: Der Energiesparmodus des Geräts. Weitere Informationen finden Sie unter [Informationen zum Energiesparmodus und schnellen Hochfahren](https://support.xbox.com/xbox-one/console/learn-about-power-modes).
 
-* **Automatisches Booten der Konsole beim Anschluss an das Stromnetz**: Das Gerät schaltet sich automatisch ein, wenn es an eine Stromquelle angeschlossen ist.
+* **Automatisch Startkonsole beim Verbinden mit Power**: Das Gerät wird automatisch einschalten, wenn er mit einer Stromquelle verbunden ist.
 
 #### <a name="preference-settings"></a>Präferenzeinstellungen
 
-* **Standard-Startoberfläche**: Legt fest, welcher Startbildschirm beim Einschalten des Geräts angezeigt wird.
+* **Standard Zuhause**: Legt fest, welche home-Bildschirm wird angezeigt, wenn das Gerät eingeschaltet wird.
 
-* **Verbindungen von der Xbox-App zulassen**: Die Xbox-App auf einem anderen Gerät (z. B. einem Windows 10 PC) kann sich mit dieser Konsole verbinden.
+* **Zulassen von Verbindungen von der Xbox App**: Die Xbox App auf einem anderen Gerät (z. B. eines Windows 10-PCs) kann in dieser Konsole eine Verbindung herstellen.
 
-* **UWP-App standardmäßig als Spiele behandeln**: Spiele und Apps erhalten auf der Xbox verschiedene Ressourcen zugewiesen. Wenn Sie dieses Kontrollkästchen aktivieren, werden alle UWP-Pakete als Spiele identifiziert und erhalten somit mehr Ressourcen.
+* **Behandeln von UWP-apps als Spiele standardmäßig**: Spiele und apps erhalten verschiedene Ressourcen, die sie auf der Xbox zugeordnet. Wenn Sie dieses Kontrollkästchen aktivieren, werden alle UWP-Pakete als Spiele identifiziert und erhalten somit mehr Ressourcen.
 
 #### <a name="user-settings"></a>Benutzereinstellungen
 
-* **Benutzer automatisch anmelden**: Automatische Anmeldung des ausgewählten Benutzers beim Einschalten des Geräts.
+* **Melden Sie sich die Benutzer automatisch**: In den ausgewählten Benutzer automatisch angemeldet, wenn das Gerät eingeschaltet wird.
 
-* **Benutzer-Controller automatisch anmelden**: Verknüpft automatisch einen bestimmten Controllertyp mit einem bestimmten Benutzer.
+* **Automatische Anmeldung der Benutzer Controller**: Ein bestimmter Domänencontroller ordnet automatisch zu einem bestimmten Benutzer.
 
 #### <a name="xbox-live-sandbox"></a>Xbox Live-Sandbox
 
@@ -193,13 +193,13 @@ Dies ist ein leerer Arbeitsbereich, den Sie nach Belieben anpassen können. Sie 
 
 ![Tools zum Arbeitsbereich hinzufügen](images/device-portal-xbox-13.png)
 
-### <a name="game-event-data"></a>Spiel Ereignisdaten
+### <a name="game-event-data"></a>Spielereignisdaten
 
-Auf der Seite **Spiel Ereignisdaten** können Sie ein Diagramm in Echtzeit, Streams der Anzahl der derzeit auf Ihrer Xbox One aufgezeichnete Ereignisse der Event Tracing for Windows (ETW)-Spiel anzeigen. Wenn game-Ereignisse auf dem System vorhanden sind, können Sie auch Details (Ereignisnamen, Ereignis vorkommen und den Titel des Spiels) anzeigen, die jedes Ereignis in einer Tabelle unter der Diagramm-Daten beschreiben. In der Tabelle ist nur verfügbar, wenn Ereignisse aufgezeichnet vorhanden sind.
+Auf der **spielen Ereignisdaten** Seite sehen Sie ein, die Datenströme in Echtzeit-Diagramm in die Anzahl der derzeit auf Ihre Xbox One erfassten Ereignisse der Ereignisablaufverfolgung für Windows (ETW)-Spiele. Wenn es sich bei Spielen Ereignisse aufgezeichnet, auf dem System vorhanden sind, können Sie auch Details (Ereignisname, ereignisvorkommen und den Titel des Spiels) anzeigen, die jedes Ereignis in einer Datentabelle, unter dem Datendiagramm beschreibt. In der Tabelle ist nur verfügbar, wenn Ereignisse aufgezeichnet vorhanden sind.
 
-![Spiel Ereignisdaten](images/device-portal-xbox-22.PNG)
+![Spielereignisdaten](images/device-portal-xbox-22.PNG)
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
-* [Übersicht über das Windows Geräteportal](device-portal.md)
-* [Referenz zu Kern-APIs des Geräteportal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Übersicht über die Windows Device Portal](device-portal.md)
+* [Device Portal-Core-API-Referenz](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

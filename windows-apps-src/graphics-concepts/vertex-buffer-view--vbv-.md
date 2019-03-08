@@ -1,5 +1,5 @@
 ---
-title: Scheitelpunktpuffer- (VBV) und Indexpufferansicht (IBV)
+title: Vertexpuffer- (VBV) und Indexpufferansicht (IBV)
 description: Ein Scheitelpunktpuffer enthält Daten für eine Liste von Scheitelpunkten.
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
 keywords:
@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cfb92c4f876d85388ce325f151408fe7b9e8d8b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945426"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636245"
 ---
-# <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>Scheitelpunktpuffer- (VBV) und Indexpufferansicht (IBV)
+# <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>Vertexpuffer- (VBV) und Indexpufferansicht (IBV)
 
 
 Ein Scheitelpunktpuffer enthält Daten für eine Liste von Scheitelpunkten. Die Daten für jeden Scheitelpunkt können Position, Farbe, Normalvektor, Texturkoordinaten u. dgl. beinhalten. Ein Indexpuffer enthält Ganzzahlindizes (Offsets) für einen Scheitelpunktpuffer und wird verwendet, um ein Objekt, das aus einem Teil der Liste aller Scheitelpunkte besteht, zu definieren und zu rendern.

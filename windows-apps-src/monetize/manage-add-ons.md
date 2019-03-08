@@ -1,21 +1,21 @@
 ---
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
-description: Verwenden Sie diese Methoden in der Microsoft Store-Übermittlungs-API, um Add-ons für apps zu verwalten, die für Ihr Partner Center-Konto registriert wurden.
+description: Verwenden Sie diese Methoden in der Microsoft Store-Übermittlung API zum Verwalten von Add-ons für apps, die mit Ihrem Partner Center-Konto registriert sind.
 title: Verwalten von Add-Ons
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Microsoft Store-Übermittlungs-API, Add-Ons, In-App-Produkt, IAP
+keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Add-Ons, In-App-Produkt, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c940fffde3c770f397999e566570410528a1e8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918646"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617825"
 ---
 # <a name="manage-add-ons"></a>Verwalten von Add-Ons
 
-Mithilfe der folgenden Methoden in der Microsoft Store-Übermittlungs-API können Sie Add-Ons für Ihre Apps verwalten. Eine Einführung in die Microsoft Store-Übermittlungs-API einschließlich der Voraussetzungen für die Verwendung der API finden Sie unter [Erstellen und Verwalten von Übermittlungen mit MicrosoftStore-Diensten](create-and-manage-submissions-using-windows-store-services.md).
+Mithilfe der folgenden Methoden in der Microsoft Store-Übermittlungs-API können Sie Add-Ons für Ihre Apps verwalten. Eine Einführung in die Microsoft Store-Übermittlungs-API einschließlich der Voraussetzungen für die Verwendung der API finden Sie unter [Erstellen und Verwalten von Übermittlungen mit Microsoft Store-Diensten](create-and-manage-submissions-using-windows-store-services.md).
 
 Diese Methoden können nur verwendet werden, um Add-Ons abzurufen, zu erstellen oder zu löschen. Um Übermittlungen für Add-Ons zu erstellen, verwenden Sie die Methoden in [Verwalten von Add-On-Übermittlungen](manage-add-on-submissions.md).
 
@@ -36,7 +36,7 @@ Diese Methoden können nur verwendet werden, um Add-Ons abzurufen, zu erstellen 
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
-<td align="left"><a href="get-all-add-ons.md">Abrufen aller Add-Ons für Ihre Apps</a></td>
+<td align="left"><a href="get-all-add-ons.md">Alle Add-Ons für Ihre apps</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
@@ -46,12 +46,12 @@ Diese Methoden können nur verwendet werden, um Add-Ons abzurufen, zu erstellen 
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
-<td align="left"><a href="create-an-add-on.md">Erstellen eines Add-Ons</a></td>
+<td align="left"><a href="create-an-add-on.md">Ein Add-on erstellen</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
-<td align="left"><a href="delete-an-add-on.md">Löschen eines Add-Ons</a></td>
+<td align="left"><a href="delete-an-add-on.md">Add-on löschen</a></td>
 </tr>
 </tbody>
 </table>
@@ -102,7 +102,7 @@ Die Ressource hat die folgenden Werte.
 | applications      | array  | Ein Array mit genau einer [Anwendungsressource](#application-object), die die App darstellt, der dieses Add-On zugeordnet ist. In diesem Array wird nur ein Element unterstützt.  |
 | id | string  | Die Store-ID des Add-Ons. Dieser Wert wird vom Store bereitgestellt. Beispiel für eine Store-ID: 9NBLGGH4TNMP.  |
 | productId | string  | Die Produkt-ID des Add-Ons. Dies ist die ID, die vom Entwickler während der Erstellung des Add-Ons angegeben wurde. Weitere Informationen finden Sie unter [Festlegen von Produkttyp und Produkt-ID für das IAP](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
-| productType | string  | Der Produkttyp des Add-Ons. Die folgenden Werte werden unterstützt: **Durable** und **Consumable**.  |
+| productType | string  | Der Produkttyp des Add-Ons. Die folgenden Werte werden unterstützt: **Dauerhafte** und **nutzbar**.  |
 | lastPublishedInAppProductSubmission       | object | Eine [Übermittlungsressource](#submission-object) mit Informationen über die letzte veröffentlichte Übermittlung für das Add-On.         |
 | pendingInAppProductSubmission        | object  |  Eine [Übermittlungsressource](#submission-object) mit Informationen über die aktuelle ausstehende Übermittlung für das Add-On.  |   |
 
@@ -159,9 +159,9 @@ Die Ressource hat die folgenden Werte.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen und Verwalten von Übermittlungen mit Microsoft Store-Diensten](create-and-manage-submissions-using-windows-store-services.md)
-* [Verwalten von Add-On-Übermittlungen mithilfe der Microsoft Store-Übermittlungs-API](manage-add-on-submissions.md)
-* [Abrufen aller Add-Ons](get-all-add-ons.md)
-* [Abrufen eines Add-Ons](get-an-add-on.md)
-* [Erstellen eines Add-Ons](create-an-add-on.md)
-* [Löschen eines Add-Ons](delete-an-add-on.md)
+* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Verwenden die Übermittlung zum Microsoft Store-API-Add-On-Übermittlungen verwalten](manage-add-on-submissions.md)
+* [Alle Add-ons zu erhalten](get-all-add-ons.md)
+* [Ein Add-on abzurufen](get-an-add-on.md)
+* [Ein Add-on erstellen](create-an-add-on.md)
+* [Add-on löschen](delete-an-add-on.md)

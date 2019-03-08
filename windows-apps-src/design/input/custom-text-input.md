@@ -1,5 +1,5 @@
 ---
-Description: The core text APIs in the Windows.UI.Text.Core namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices.
+Description: Mit den Core-Text-APIs im Windows.UI.Text.Core-Namespace kann eine UWP-App (Universelle Windows-Plattform) Texteingaben von beliebigen Textdiensten empfangen, die auf Windows-Geräten unterstützt werden.
 title: Übersicht über benutzerdefinierte Texteingabe
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
@@ -9,17 +9,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dfb2a5203d2a8e5c497fa427c6a2a7ed5fe2302d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046180"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638705"
 ---
 # <a name="custom-text-input"></a>Benutzerdefinierte Texteingabe
 
 
 
-Mit den Core-Text-APIs im [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)-Namespace kann eine UWP-App (Universelle Windows-Plattform) Texteingaben von beliebigen Textdiensten empfangen, die auf Windows-Geräten unterstützt werden. Die APIs sind den [Textdienstframework](https://msdn.microsoft.com/library/windows/desktop/ms629032)-APIs dahingehend ähnlich, dass die App keine detaillierten Kenntnisse über die Textdienste benötigt. Auf diese Weise kann die App Text in einer beliebigen Sprache und von einem beliebigen Eingabegerät wie Tastatur, Sprache oder Stift empfangen.
+Mit den Core-Text-APIs im [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)-Namespace kann eine UWP-App (Universelle Windows-Plattform) Texteingaben von beliebigen Textdiensten empfangen, die auf Windows-Geräten unterstützt werden. Die APIs sind den [Textdienstframework](https://msdn.microsoft.com/library/windows/desktop/ms629032)-APIs dahingehend ähnlich, dass die App keine detaillierten Kenntnisse über die Textdienste benötigt. Auf diese Weise kann die App Text in einer beliebigen Sprache und von einem beliebigen Eingabegerät empfangen, wie Tastatur, Sprache oder Stift.
 
 > **Wichtige APIs**: [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
@@ -30,7 +30,7 @@ Für zahlreiche Apps sind die XAML- oder HTML-Textfeld-Steuerelemente für Texte
 
 Verwenden Sie stattdessen die [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)-APIs, wenn Sie ein benutzerdefiniertes Textbearbeitungssteuerelement erstellen müssen. Diese APIs sind so konzipiert, dass sie Ihnen ein hohes Maß an Flexibilität bei der Verarbeitung von Texteingaben in allen Sprachen bieten. Sie können daher Textverarbeitung so gestalten, wie dies für Ihre App am besten ist. Texteingabe- und Textbearbeitungssteuerelemente, die mit den Core-Text-APIs erstellt wurde, können Texteingaben von allen vorhandenen Texteingabemethoden auf Windows-Geräten empfangen, von [Textdienstframework](https://msdn.microsoft.com/library/windows/desktop/ms629032)-basierten Eingabemethoden-Editoren (IMEs) und Handschrift auf PCs bis hin zu der WordFlow-Tastatur (die AutoKorrektur, Vorhersage und Diktat bereitstellt) auf mobilen Geräten.
 
-## <a name="architecture"></a>Architektur
+## <a name="architecture"></a>Architecture
 
 
 Im Folgenden finden Sie eine einfache Darstellung des Texteingabesystems.
@@ -61,7 +61,7 @@ Textbereiche und -auswahlen werden anhand der [**CoreTextRange**](https://msdn.m
 
  
 
-In dem zuvor dargestellten Textbereich gibt der Bereich \[0, 5\] beispielsweise das Wort „Hello“ an. **StartCaretPosition** muss stets kleiner oder gleich der **EndCaretPosition** sein. Der Bereich \[5, 0\] ist ungültig.
+Z. B. in den Textbereich des Bereichs von zuvor gezeigte \[0, 5\] gibt an, das Wort "Hello". **StartCaretPosition** muss stets kleiner oder gleich der **EndCaretPosition** sein. Der Bereich \[5, 0\] ist ungültig.
 
 ### <a name="insertion-point"></a>Einfügemarke
 
@@ -73,7 +73,7 @@ Einige Bearbeitungssteuerelemente unterstützen nicht zusammenhängende Auswahle
 
 Betrachten Sie beispielsweise den folgenden Textstream:
 
-![Beispieldiagramm für einen Textstream](images/coretext/stream-2.png) Es gibt zwei Auswahlen: \[0, 1\] und \[6, 11\]. Das Bearbeitungssteuerelement muss nur eine von diesen melden: \[0, 1\] oder \[6, 11\].
+![Beispieldiagramm für Text-Stream](images/coretext/stream-2.png) stehen zwei Optionen: \[0, 1\] und \[6, 11\]. Das Bearbeitungssteuerelement muss nur eine davon Bericht. entweder \[0, 1\] oder \[6, 11\].
 
 ## <a name="working-with-text"></a>Arbeiten mit Text
 
@@ -94,11 +94,11 @@ Ihr Bearbeitungssteuerelement sollte in der Regel Textaktualisierungsanforderung
 2.  Platzieren der Auswahl an der in [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) angegebenen Position
 3.  Benachrichtigen des Systems, dass das Update erfolgreich war, indem [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) auf [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237) festgelegt wird
 
-Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der Benutzer „d“ eingibt. Die Einfügemarke befindet sich bei \[10, 10\].
+Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der Benutzer „d“ eingibt. Die Einfügemarke befindet sich am \[10, 10\].
 
-![Beispieldiagramm für einen Textstream](images/coretext/stream-3.png) Wenn der Benutzer „d“ eingibt, wird ein [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176)-Ereignis mit den folgenden [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229)-Daten ausgelöst:
+![Beispieldiagramm für Text-Stream](images/coretext/stream-3.png) , wenn der Benutzer "d" gibt einen [ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176) Ereignis wird ausgelöst, durch den folgenden [ **CoreTextTextUpdatingEventArgs** ](https://msdn.microsoft.com/library/windows/apps/dn958229) Daten:
 
--   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+-   [**Bereich**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
 -   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
 -   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
@@ -115,11 +115,11 @@ Angenommen, Sie haben ein Bearbeitungssteuerelement, das nur eine E-Mail-Adresse
 
 Manchmal nimmt das Bearbeitungssteuerelement Änderungen am Text vor, wenn beispielsweise Text eingefügt oder automatische korrigiert wird. In diesen Fällen müssen Sie die Textdienste über diese Änderungen benachrichtigen, indem Sie die [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)-Methode aufrufen.
 
-Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der Benutzer „World“ einfügt. Die Einfügemarke befindet sich bei \[6, 6\].
+Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der Benutzer „World“ einfügt. Die Einfügemarke befindet sich am \[6, 6\].
 
-![Beispieldiagramm für einen Textstream](images/coretext/stream-5.png) Der Benutzer führt die Einfügeaktion durch, und das Bearbeitungssteuerelement endet mit dem folgenden Text:
+![Beispieldiagramm für Text-Stream](images/coretext/stream-5.png) der Benutzer führt die Einfügeaktion und das Bearbeitungssteuerelement letztendlich mit dem folgenden Text:
 
-![Beispieldiagramm für einen Textstream](images/coretext/stream-4.png) In diesem Fall sollten Sie [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) mit diesen Argumenten aufrufen:
+![Beispieldiagramm für Text-Stream](images/coretext/stream-4.png) in diesem Fall sollten Sie aufrufen [ **NotifyTextChanged** ](https://msdn.microsoft.com/library/windows/apps/dn958172) mit diesen Argumenten:
 
 -   *modifiedRange* = \[6, 6\]
 -   *newLength* = 5
@@ -131,13 +131,13 @@ Es folgt mindestens ein [**TextRequested**](https://msdn.microsoft.com/library/w
 
 Vielleicht möchten Sie in Ihrem Bearbeitungssteuerelement eine Textaktualisierung überschreiben, um AutoKorrektur-Funktionen bereitzustellen.
 
-Angenommen, Sie haben ein Bearbeitungssteuerelement, das eine Korrekturfunktion bereitstellt, das kontrahierte Schreibweisen formalisiert. Dies ist der Zustand des Bearbeitungssteuerelements, bevor der Benutzer die Leertaste drückt, um die Korrektur auszulösen. Die Einfügemarke befindet sich bei \[3, 3\].
+Angenommen, Sie haben ein Bearbeitungssteuerelement, das eine Korrekturfunktion bereitstellt, das kontrahierte Schreibweisen formalisiert. Dies ist der Zustand des Bearbeitungssteuerelements, bevor der Benutzer die Leertaste drückt, um die Korrektur auszulösen. Die Einfügemarke befindet sich am \[3, 3\].
 
-![Beispieldiagramm für einen Textstream](images/coretext/stream-6.png) Der Benutzer drückt die Leertaste, und ein entsprechendes [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176)-Ereignis wird ausgelöst. Das Bearbeitungssteuerelement akzeptiert die Textaktualisierung. Dies ist der Zustand des Bearbeitungssteuerelements für einen kurzen Moment, bevor die Korrektur abgeschlossen ist. Die Einfügemarke befindet sich bei \[4, 4\].
+![Beispieldiagramm für Text-Stream](images/coretext/stream-6.png) der Benutzer drückt die LEERTASTE und einen entsprechenden [ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176) Ereignis wird ausgelöst. Das Bearbeitungssteuerelement akzeptiert die Textaktualisierung. Dies ist der Zustand des Bearbeitungssteuerelements für einen kurzen Moment, bevor die Korrektur abgeschlossen ist. Die Einfügemarke befindet sich am \[4, 4\].
 
-![Beispieldiagramm für einen Textstream](images/coretext/stream-7.png) Außerhalb des [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176)-Ereignishandlers nimmt das Bearbeitungssteuerelement die folgende Korrektur vor. Dies ist der Zustand des Bearbeitungssteuerelements nach Abschluss der Korrektur. Die Einfügemarke befindet sich bei \[5, 5\].
+![Beispieldiagramm für Text-Stream](images/coretext/stream-7.png) außerhalb von den [ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176) -Ereignishandler der Edit-Steuerelement stellt die folgende Korrektur. Dies ist der Zustand des Bearbeitungssteuerelements nach Abschluss der Korrektur. Die Einfügemarke befindet sich am \[5, 5\].
 
-![Beispieldiagramm für einen Textstream](images/coretext/stream-8.png) In diesem Fall sollten Sie [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) mit diesen Argumenten aufrufen:
+![Beispieldiagramm für Text-Stream](images/coretext/stream-8.png) in diesem Fall sollten Sie aufrufen [ **NotifyTextChanged** ](https://msdn.microsoft.com/library/windows/apps/dn958172) mit diesen Argumenten:
 
 -   *modifiedRange* = \[1, 2\]
 -   *newLength* = 2
@@ -154,8 +154,8 @@ Gelegentlich gibt [**Range**](https://msdn.microsoft.com/library/windows/apps/dn
 ## <a name="related-articles"></a>Verwandte Artikel
 
 **Beispiele**
-* [Beispiel für ein benutzerdefiniertes Bearbeitungssteuerelement](https://go.microsoft.com/fwlink/?linkid=831024) 
- **Archivbeispiele**
-* [Beispiel für die XAML-Textbearbeitung](https://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [Beispiel für die benutzerdefinierte Steuerelement bearbeiten](https://go.microsoft.com/fwlink/?linkid=831024)  
+ **Beispiele archivieren**
+* [Bearbeiten der XAML-Textbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=251417)
 
 

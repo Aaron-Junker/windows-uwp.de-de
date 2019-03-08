@@ -1,19 +1,19 @@
 ---
 description: Sie können die PropertyPath-Klasse und die Zeichenfolgensyntax verwenden, um einen PropertyPath-Wert entweder in XAML oder in Code zu instanziieren.
-title: Eigenschaftspfadsyntax
+title: PropertyPath-Syntax
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919296"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632365"
 ---
-# <a name="property-path-syntax"></a>Eigenschaftspfadsyntax
+# <a name="property-path-syntax"></a>PropertyPath-Syntax
 
 
 Sie können die [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)-Klasse und die Zeichenfolgensyntax verwenden, um einen **PropertyPath**-Wert entweder in XAML oder in Code zu instanziieren. **PropertyPath**-Werte werden von Datenbindungen genutzt. Eine ähnliche Syntax kommt für die Ausrichtung von Storyboardanimationen zum Einsatz. In beiden Szenarien beschreibt ein Eigenschaftspfad eine Traversierung von einer oder mehreren Objekt-Eigenschaft-Beziehungen, die schließlich in einer einzelnen Eigenschaft aufgelöst werden.
@@ -50,11 +50,11 @@ Bei jedem dieser Schritte wird der Wert als Objekt behandelt. Der Typ des Ergebn
 
 ### <a name="indexers"></a>Indexer
 
-Ein Eigenschaftspfad für Datenbindungen kann Verweise auf indizierte Eigenschaften aufweisen. Das ermöglicht die Bindung an geordnete Listen/Vektoren oder Wörterbücher/Karten. Verwenden Sie eckige Klammern „\[\]“, um eine indizierte Eigenschaft anzugeben. Diese Klammern können entweder eine ganze Zahl (für eine geordnete Liste) oder eine Zeichenfolge ohne Anführungszeichen (für Wörterbücher) enthalten. Darüber hinaus ist die Bindung an ein Wörterbuch möglich, bei der der Schlüssel eine ganze Zahl ist. Sie können verschiedene indizierte Eigenschaften im selben Pfad verwenden und die Objekteigenschaft mit einem Punkt abtrennen.
+Ein Eigenschaftspfad für Datenbindungen kann Verweise auf indizierte Eigenschaften aufweisen. Das ermöglicht die Bindung an geordnete Listen/Vektoren oder Wörterbücher/Karten. Verwenden Sie eckige Klammern "\[\]" Zeichen, um eine indizierte Eigenschaft anzugeben. Diese Klammern können entweder eine ganze Zahl (für eine geordnete Liste) oder eine Zeichenfolge ohne Anführungszeichen (für Wörterbücher) enthalten. Darüber hinaus ist die Bindung an ein Wörterbuch möglich, bei der der Schlüssel eine ganze Zahl ist. Sie können verschiedene indizierte Eigenschaften im selben Pfad verwenden und die Objekteigenschaft mit einem Punkt abtrennen.
 
-Nehmen wir zum Beispiel ein Geschäftsobjekt, bei dem es eine Liste von „Teams“ gibt (geordnete Liste), von denen jedes ein Wörterbuch von „Players“ aufweist, wobei als Schlüssel für jeden Spieler der Nachname verwendet wird. Ein Beispiel eines Eigenschaftspfads zu einem bestimmen Spieler im zweiten Team lautet: „Teams\[1\].Players\[Smith\]“. (Sie verwenden 1, um das zweite Element in „Teams“ anzugeben, da die Liste nullindiziert ist.)
+Nehmen wir zum Beispiel ein Geschäftsobjekt, bei dem es eine Liste von „Teams“ gibt (geordnete Liste), von denen jedes ein Wörterbuch von „Players“ aufweist, wobei als Schlüssel für jeden Spieler der Nachname verwendet wird. Ein Beispielpfad-Eigenschaft an einen bestimmten Player im zweiten-Team ist: "Teams\[1\]. Spieler\[Smith\]". (Sie verwenden 1, um das zweite Element in „Teams“ anzugeben, da die Liste nullindiziert ist.)
 
-**Hinweis:** Unterstützung der Indizierung für C++-Datenquellen ist beschränkt; finden Sie unter [der Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Beachten Sie**  Indizierung-Unterstützung für C++-Datenquellen ist beschränkt; Siehe [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 ### <a name="attached-properties"></a>Angefügte Eigenschaften
 
@@ -84,15 +84,15 @@ Sie können eine Eigenschaft animieren, bei der es sich um eine Untereigenschaft
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>Angeben eines bestimmten untergeordneten Elements in einer Sammlung
 
-Sie können einen numerischen Indexer dazu verwenden, ein untergeordnetes Element in einer Sammlungseigenschaft anzugeben. Verwenden Sie für den Ganzzahl-Indexwert eckige Klammern „\[\]“. Sie können nur geordnete Listen aber keine Wörterbücher referenzieren. Da es sich bei einer Sammlung nicht um einen Wert handelt, der animiert werden kann, kann eine Indexerverwendung nie die Endeigenschaft in einem Eigenschaftspfad sein.
+Sie können einen numerischen Indexer dazu verwenden, ein untergeordnetes Element in einer Sammlungseigenschaft anzugeben. Verwenden Sie eckige Klammern "\[\]"-Indexwert für Zeichen, um die ganze Zahl. Sie können nur geordnete Listen aber keine Wörterbücher referenzieren. Da es sich bei einer Sammlung nicht um einen Wert handelt, der animiert werden kann, kann eine Indexerverwendung nie die Endeigenschaft in einem Eigenschaftspfad sein.
 
-Mithilfe des folgenden Eigenschaftspfads können Sie beispielsweise angeben, dass die erste Farbe oder Stoppfarbe in einem [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108)-Objekt, das auf die [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)-Eigenschaft eines Steuerelements angewendet wird, animiert werden soll: „(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)“. Achten Sie darauf, dass der Indexer nicht der letzte Schritt im Pfad ist und dass vor allem der letzte Schritt die [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094)-Eigenschaft des Elements 0 in der Sammlung referenzieren muss, um einen animierten [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)-Wert darauf anzuwenden.
+Z. B. beenden die erste Farbe an, dass Sie animieren möchten Farbe in eine [ **LinearGradientBrush** ](https://msdn.microsoft.com/library/windows/apps/br210108) eines Steuerelements angewendeten [ **Hintergrund** ](https://msdn.microsoft.com/library/windows/apps/br209395) -Eigenschaft, dies ist der Eigenschaftenpfad: "(Control.Background). (GradientBrush.GradientStops) \[0\]. () GradientStop.Color) ". Achten Sie darauf, dass der Indexer nicht der letzte Schritt im Pfad ist und dass vor allem der letzte Schritt die [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094)-Eigenschaft des Elements 0 in der Sammlung referenzieren muss, um einen animierten [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)-Wert darauf anzuwenden.
 
 ## <a name="animating-an-attached-property"></a>Animieren einer angefügten Eigenschaft
 
 Wenn auch dies selten vorkommt, kann eine angefügte Eigenschaft animiert werden, sofern die angefügte Eigenschaft einen Eigenschaftswert aufweist, der mit einem Animationstyp übereinstimmt. Da der Bezeichnername einer angefügten Eigenschaft bereits einen Punkt enthält, muss ein Name für die angefügte Eigenschaft in runden Klammern hinzugefügt werden, damit der Punkt nicht als Objekteigenschaftsschritt interpretiert wird. Verwenden Sie beispielsweise für die Zeichenfolge, die zum Animieren der angefügten [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)-Eigenschaft auf einem Objekt angegeben werden muss, den Eigenschaftspfad „(Grid.Row)“.
 
-**Hinweis:** in diesem Beispiel ist der Wert der [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) ein **Int32** -Eigenschaftstyp. Daher ist die Animation mit einer **Double**-Animation nicht möglich. Definieren Sie stattdessen eine [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)-Klasse, die über [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132)-Komponenten verfügt, wobei [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) auf eine ganze Zahl wie „0“ oder „1“ festgelegt wird.
+**Beachten Sie**  für dieses Beispiel den Wert der [ **Grid.Row** ](https://msdn.microsoft.com/library/windows/apps/hh759795) ist ein **Int32** Eigenschaftentyp. Daher ist die Animation mit einer **Double**-Animation nicht möglich. Definieren Sie stattdessen eine [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)-Klasse, die über [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132)-Komponenten verfügt, wobei [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) auf eine ganze Zahl wie „0“ oder „1“ festgelegt wird.
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>Regeln für die Eigenschaften in einem Animationsausrichtungs-Eigenschaftspfad
 
@@ -107,16 +107,15 @@ Die [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
 
 Meistens ist es in XAML möglich, eine [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)-Klasse ohne jeglichen Code anzuwenden. In einigen Fällen ist es jedoch sinnvoll, ein **PropertyPath**-Objekt mithilfe von Code zu definieren und dieses zur Laufzeit einer Eigenschaft zuzuordnen.
 
-[**PropertyPath**
-            ](https://msdn.microsoft.com/library/windows/apps/br244259) verfügt über einen [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261)-Konstruktor und hat keinen Standardkonstruktor. Die Zeichenfolge, die Sie diesem Konstruktor übergeben, wird mithilfe der zuvor beschriebenen Eigenschaftspfadsyntax definiert. Dies ist dieselbe Zeichenfolge, mit der Sie [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) als XAML-Attribut zuweisen können. Die einzige andere API der **PropertyPath**-Klasse ist die schreibgeschützte [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260)-Eigenschaft. Sie können diese Eigenschaft als Konstruktionszeichenfolge für eine andere **PropertyPath**-Instanz verwenden.
+[**"PropertyPath"** ](https://msdn.microsoft.com/library/windows/apps/br244259) verfügt über eine [ **PropertyPath(String)** ](https://msdn.microsoft.com/library/windows/apps/br244261) -Konstruktor, und nicht über einen Standardkonstruktor verfügen. Die Zeichenfolge, die Sie diesem Konstruktor übergeben, wird mithilfe der zuvor beschriebenen Eigenschaftspfadsyntax definiert. Dies ist dieselbe Zeichenfolge, mit der Sie [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) als XAML-Attribut zuweisen können. Die einzige andere API der **PropertyPath**-Klasse ist die schreibgeschützte [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260)-Eigenschaft. Sie können diese Eigenschaft als Konstruktionszeichenfolge für eine andere **PropertyPath**-Instanz verwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [Storyboardanimationen](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [Die Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Niedergeschrieben Animationen](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [{Binding}-Markuperweiterung](binding-markup-extension.md)
 * [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
 * [**Bindung**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**Binding-Konstruktor**](https://msdn.microsoft.com/library/windows/apps/br209825)
+* [**Bindung-Konstruktor**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
 

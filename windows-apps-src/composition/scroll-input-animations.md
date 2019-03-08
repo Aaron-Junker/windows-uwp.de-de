@@ -3,14 +3,14 @@ title: Erweitern vorhandener ScrollViewer-Erfahrungen
 description: Lernen Sie, wie Sie mit einem XAML-ScrollViewer und ExpressionAnimations dynamische, eingabegesteuerte Bewegungserlebnisse erzeugen können.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, Uwp, animation
+keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932689"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635065"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>Erweitern vorhandener ScrollViewer-Erfahrungen
 
@@ -20,8 +20,8 @@ Dieser Artikel erklärt, wie Sie mit einem XAML-ScrollViewer und ExpressionAnima
 
 Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
 
-- [Eingabegesteuerte Animationen](input-driven-animations.md)
-- [Relationsbasierte Animationen](relation-animations.md)
+- [Eingabe-driven Animationen](input-driven-animations.md)
+- [Beziehung basierend Animationen](relation-animations.md)
 
 ## <a name="why-build-on-top-of-scrollviewer"></a>Warum auf ScrollViewer aufbauen?
 

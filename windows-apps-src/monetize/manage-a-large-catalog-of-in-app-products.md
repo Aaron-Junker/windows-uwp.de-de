@@ -4,21 +4,21 @@ description: Wenn Ihre App einen großen In-App-Produktkatalog enthält, können
 title: Verwalten eines großen Katalogs von In-App-Produkten
 ms.date: 08/25/2017
 ms.topic: article
-keywords: Windows10, UWP, In-App-Käufe, IAPs, Add-Ons, Katalog, Windows.ApplicationModel.Store
+keywords: Windows 10, UWP, In-App-Käufe, IAPs, Add-Ons, Katalog, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 2335e09253570d09c33422d2f5ba4179697e4ea7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922572"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637355"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Verwalten eines großen Katalogs von In-App-Produkten
 
-Wenn Ihre App einen großen In-App-Produktkatalog enthält, können Sie optional das in diesem Thema beschriebene Verfahren zum Verwalten des Katalogs ausführen. In Versionen vor Windows10 galt eine Store-Einschränkung von 200Produkteinträgen pro Entwicklerkonto. Das in diesem Thema beschriebene Verfahren kann zur Umgehung dieser Einschränkung verwendet werden. Ab Windows 10, im Store verfügt über keine Beschränkung der Anzahl von produkteinträgen pro Entwicklerkonto, und das in diesem Artikel beschriebene Verfahren ist nicht mehr erforderlich.
+Wenn Ihre App einen großen In-App-Produktkatalog enthält, können Sie optional das in diesem Thema beschriebene Verfahren zum Verwalten des Katalogs ausführen. In Versionen vor Windows 10 galt eine Store-Einschränkung von 200 Produkteinträgen pro Entwicklerkonto. Das in diesem Thema beschriebene Verfahren kann zur Umgehung dieser Einschränkung verwendet werden. Ab Windows 10, der Store gibt es keine Beschränkung der Anzahl der Produktlisten pro Developer-Konto, und der in diesem Artikel beschriebene Prozess ist nicht mehr erforderlich.
 
 > [!IMPORTANT]
-> In diesem Artikel wird veranschaulicht, wie Mitglieder des [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace verwendet werden. Dieser Namespace wird nicht mehr mit neuen Funktionen aktualisiert, daher wird empfohlen, dass Sie stattdessen den [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) Namespace verwenden. Der **Windows.Services.Store** -Namespace unterstützt die neuesten Add-on-Typen, wie Store-verwaltete Endverbraucher-Add-Ons und Abonnements, und wurde entwickelt, um die Kompatibilität mit künftigen Arten von Produkten und Features von Partner Center und dem Store unterstützt werden. Der **Windows.Services.Store**-Namespace wurde in Windows10, Version 1607, eingeführt und kann nur in Projekten für die **Windows10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Weitere Informationen finden Sie unter [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md).
+> In diesem Artikel wird veranschaulicht, wie Mitglieder des [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace verwendet werden. Dieser Namespace wird nicht mehr mit neuen Funktionen aktualisiert, daher wird empfohlen, dass Sie stattdessen den [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) Namespace verwenden. Die **Windows.Services.Store** Namespace unterstützt die neuesten-Add-On-Typen, z. B. nutzbar-Add-Ons Store verwaltete und Abonnements, und mit zukünftige Arten von Produkten und Funktionen, die vom Partner unterstützten kompatibel sein soll Mittelpunkt und dem Store. Der **Windows.Services.Store**-Namespace wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Weitere Informationen finden Sie unter [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md).
 
 Um diese Funktionalität zu aktivieren, erstellen Sie einige wenige Produkteinträge für bestimmte Preisniveaus. Jeder kann Hunderte von Produkten innerhalb eines Katalogs repräsentieren. Sie verwenden die [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)-Methodenüberladung, die ein App-definiertes Angebot angibt, das mit einem im Store aufgelisteten In-App-Produkt verknüpft ist. Zusätzlich zur Angabe einer Verknüpfung von Angebot und Produkt während des Aufrufs sollte Ihre App auch ein [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384)-Objekt übergeben, das die Angebotsdetails des großen Katalogs enthält. Wenn diese Details nicht angegeben sind, werden stattdessen die Details für das gelistete Produkt verwendet.
 
@@ -27,7 +27,7 @@ Der Store verwendet nur die *offerId* aus der Kaufanforderung im entsprechenden 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 -   In diesem Thema wird die Store-Unterstützung für die Darstellung mehrerer In-App-Angebote mithilfe eines einzelnen im Store aufgeführten In-App-Produkts erläutert. Wenn Sie mit In-App-Käufen noch nicht vertraut sind, lesen Sie [Aktivieren von In-App-Produktkäufen](enable-in-app-product-purchases.md). Dort finden Sie Lizenzinformationen und eine Anleitung zur richtigen Eintragung Ihres In-App-Kaufs im Store.
--   Wenn Sie zum ersten Mal Code für neue In-App-Angebote schreiben und testen, müssen Sie anstelle des [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779766)-Objekts das [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779765)-Objekt verwenden. Auf diese Weise können Sie überprüfen, ob die Lizenzlogik simulierte Aufrufe an den Lizenzserver und nicht an den Liveserver verwendet. Dazu müssen Sie die Datei mit dem Namen „WindowsStoreProxy.xml“ in %userprofile%\\AppData\\local\\packages\\&lt;Paketname&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData anpassen. Diese Datei wird vom Simulator in Microsoft Visual Studio erstellt, wenn Sie Ihre App zum ersten Mal ausführen. Sie können jedoch auch eine benutzerdefinierte Version dieser Datei zur Laufzeit laden. Weitere Informationen finden Sie unter [Verwenden der Datei „WindowsStoreProxy.xml“ mit CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
+-   Wenn Sie zum ersten Mal Code für neue In-App-Angebote schreiben und testen, müssen Sie anstelle des [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779766)-Objekts das [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779765)-Objekt verwenden. Auf diese Weise können Sie überprüfen, ob die Lizenzlogik simulierte Aufrufe an den Lizenzserver und nicht an den Liveserver verwendet. Zu diesem Zweck müssen Sie die Datei mit dem Namen WindowsStoreProxy.xml in % USERPROFILE% anpassen\\AppData\\lokalen\\Pakete\\&lt;Paketname&gt;\\LocalState\\ Microsoft\\Windows Store\\ApiData. Diese Datei wird vom Simulator in Microsoft Visual Studio erstellt, wenn Sie Ihre App zum ersten Mal ausführen. Sie können jedoch auch eine benutzerdefinierte Version dieser Datei zur Laufzeit laden. Weitere Informationen finden Sie unter [Verwenden der Datei „WindowsStoreProxy.xml“ mit CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
 -   In diesem Thema wird auch auf Codebeispiele verwiesen, die im [Store-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store) zu finden sind. Dieses Beispiel bietet eine hervorragende Möglichkeit, die verschiedenen Monetarisierungsoptionen zu testen, die für universelle Windows-Plattform (UWP)-Apps verfügbar sind.
 
 ## <a name="make-the-purchase-request-for-the-in-app-product"></a>Durchführen der Kaufanforderung für das In-App-Produkt
@@ -50,8 +50,8 @@ Der folgende Code veranschaulicht den Erfüllungsaufruf sowie ein Muster für Me
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Unterstützen des Kaufs von In-App-Produkten](enable-in-app-product-purchases.md)
-* [Käufe von konsumierbaren In-App-Produkten aktivieren](enable-consumable-in-app-product-purchases.md)
-* [Store-Beispiel (zeigt Testversionen und In-App-Einkäufe)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
+* [Aktivieren von In-App-Produktkäufen](enable-in-app-product-purchases.md)
+* [Unterstützen von Käufen konsumierbarer In-App-Produkte](enable-consumable-in-app-product-purchases.md)
+* [Store-Beispiel (veranschaulicht das Testversionen und in-app-Käufe)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382)
 * [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384)

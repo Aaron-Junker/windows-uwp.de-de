@@ -1,31 +1,31 @@
 ---
-Description: Learn how to use headers to visually group your toast notifications in Action Center.
+Description: Erfahren Sie, wie Header verwenden, um Ihre Popupbenachrichtigungen im Wartungscenter visuell zu gruppieren.
 title: Popup-Header
 label: Toast headers
 template: detail.hbs
 ms.date: 12/7/2017
 ms.topic: article
-keywords: Windows10, UWP, Popup, Header, Popup-Header, Benachrichtigungen, Gruppen-Popups, Info-Center
+keywords: Windows 10, UWP, Popup, Header, Popup-Header, Benachrichtigungen, Gruppen-Popups, Info-Center
 ms.localizationpriority: medium
 ms.openlocfilehash: 361b161b8cf323596a3b07665819300c78f1dcc5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946092"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612105"
 ---
 # <a name="toast-headers"></a>Popup-Header
 
 Sie können eine Reihe verwandter Benachrichtigungen visuell im Info-Center mit einem Popup-Header für Ihre Benachrichtigungen gruppieren.
 
 > [!IMPORTANT]
-> **Erfordert Desktop Creators Update und 1.4.0 der Benachrichtigungsbibliothek**: Sie müssen Desktop Build 15063 oder höher ausführen, um Popup-Header zu sehen. Sie müssen Version 1.4.0 oder höher der [UWP Community Toolkit Benachrichtigungen NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um den Header der Popup-Inhalte zu erstellen. Header werden nur auf Desktop unterstützt.
+> **Erfordert die Desktop Creators Update und 1.4.0 von benachrichtigungsbibliothek**: Sie müssen es sich um Desktop-Build 15063 oder höher, um das Popup finden Sie unter Header ausgeführt werden. Sie müssen Version 1.4.0 oder höher der [UWP Community Toolkit Benachrichtigungen NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um den Header der Popup-Inhalte zu erstellen. Header werden nur auf Desktop unterstützt.
 
 Wie unten dargestellt wird, ist diese Gruppenunterhaltung unter einer einzelnen Kopfzeile vereint: "Camping!!". Jede einzelne Nachricht in der Unterhaltung ist eine separate Popupbenachrichtigung, die die gemeinsame Nutzung des gleichen Popup-Headers teilt.
 
 <img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
 
-Sie können auch auswählen, Ihre Benachrichtigungen visuell nach Kategorie zu gruppieren, z.B. Test-Flight-Erinnerungen, Paketverfolgung und mehr.
+Sie können auch auswählen, Ihre Benachrichtigungen visuell nach Kategorie zu gruppieren, z. B. Test-Flight-Erinnerungen, Paketverfolgung und mehr.
 
 ## <a name="add-a-header-to-a-toast"></a>Hinzufügen eines Headers zu einem Popup
 
@@ -68,7 +68,7 @@ Zusammenfassung...
 1. Fügen Sie den **Header** zu Ihrem **ToastContent** hinzu
 2. Weisen Sie die erforderlichen Eigenschaften zu, wie **ID**, **Titel** und **Argumente**
 3. Senden der Benachrichtigung ([Hier erfahren Sie mehr](send-local-toast.md))
-4. Verwenden Sie auf einer anderen Benachrichtigung die gleiche Überschrift-**ID**, um diese unter dem Header zu vereinheitlichen. Die **ID** ist die einzige Eigenschaft, die bestimmt, ob die Benachrichtigungen gruppiert werden sollen, d.h. dass **Titel** und **Argumente** unterschiedlich sein können. Es werden die **Titel** und **Argumente** aus der letzten Benachrichtigung innerhalb einer Gruppe verwendet. Wenn die Benachrichtigung entfernt wird, greifen **Titel** und **Argumente** auf die nächste aktuelle Benachrichtigung zurück.
+4. Verwenden Sie auf einer anderen Benachrichtigung die gleiche Überschrift-**ID**, um diese unter dem Header zu vereinheitlichen. Die **ID** ist die einzige Eigenschaft, die bestimmt, ob die Benachrichtigungen gruppiert werden sollen, d. h. dass **Titel** und **Argumente** unterschiedlich sein können. Es werden die **Titel** und **Argumente** aus der letzten Benachrichtigung innerhalb einer Gruppe verwendet. Wenn die Benachrichtigung entfernt wird, greifen **Titel** und **Argumente** auf die nächste aktuelle Benachrichtigung zurück.
 
 
 ## <a name="handle-activation-from-a-header"></a>Behandeln der Aktivierung über einen Header
@@ -77,7 +77,7 @@ Header können von Benutzern angeklickt werden, damit der Benutzer den Header an
 
 Daher können Apps **Argumente** im Header enthalten, ähnlich wie die Startargumente des Popup.
 
-Die Aktivierung wird identisch behandelt wie eine [normale Popup-Aktivierung](send-local-toast.md#handling-activation-1), d.h., Sie können diese Argumente in der **OnActivated**-Methode der `App.xaml.cs` genauso abrufen, als ob der Benutzer auf den Text des Popups oder die Schaltfläche des Popup klickt.
+Die Aktivierung wird identisch behandelt wie eine [normale Popup-Aktivierung](send-local-toast.md#handling-activation-1), d. h., Sie können diese Argumente in der **OnActivated**-Methode der `App.xaml.cs` genauso abrufen, als ob der Benutzer auf den Text des Popups oder die Schaltfläche des Popup klickt.
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
@@ -96,9 +96,9 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 Der Header trennt und gruppiert visuell Gruppenbenachrichtigungen. Dadurch ändert sich die andere Logistik über die maximalen Anzahl der Benachrichtigungen und das Verhalten der Reihenfolge der Benachrichtigungsliste nicht, über die eine App verfügen kann (20).
 
-Die Reihenfolge der Benachrichtigungen im Header sind wie folgt: Für eine bestimmte App wird die aktuelle Benachrichtigung aus der App angezeigt (und die gesamte Header-Gruppe, wenn sie Teil eines Headers ist).
+Die Reihenfolge der Benachrichtigungen im Header werden wie folgt... Für eine bestimmte app wird die neueste Benachrichtigung von der app (und den gesamten Header-Gruppe, wenn ein Teil eines Headers) angezeigt.
 
-Die **ID** kann eine beliebige Zeichenfolge sein, die Sie auswählen. Es gelten keine Beschränkung für die Länge- oder die Zeichensätze auf den Eigenschaften des **ToastHeaders**. Die einzige Einschränkung besteht darin, dass der gesamte XML-Popupinhalt nicht größer als 5KB sein kann.
+Die **ID** kann eine beliebige Zeichenfolge sein, die Sie auswählen. Es gelten keine Beschränkung für die Länge- oder die Zeichensätze auf den Eigenschaften des **ToastHeaders**. Die einzige Einschränkung besteht darin, dass der gesamte XML-Popupinhalt nicht größer als 5 KB sein kann.
 
 Das Erstellen der Überschriften ändert die Anzahl der angezeigten Benachrichtigungen im Info-Center nicht, bevor die Schaltfläche "Weitere" angezeigt wird (diese Nummer ist standardmäßig 3 und kann vom Benutzer für jede App in den Systemeinstellungen für Benachrichtigungen konfiguriert werden).
 
@@ -107,5 +107,5 @@ Das Klicken auf die Überschrift, genau wie das Klicken auf den App-Titel, lösc
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Senden einer lokalen Popupbenachrichtigung und Behandeln der Aktivierung](send-local-toast.md)
-- [Dokumentation zu Popupinhalt](adaptive-interactive-toasts.md)
+- [Senden Sie eine lokale Popup- und Handle-Aktivierung](send-local-toast.md)
+- [Toast-Content-Dokumentation](adaptive-interactive-toasts.md)

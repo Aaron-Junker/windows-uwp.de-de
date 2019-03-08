@@ -1,5 +1,5 @@
 ---
-Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
+Description: Identifizieren Sie die Eingabegeräte, die mit einem Gerät für die universelle Windows-Plattform (UWP) verbunden sind, sowie deren Funktionen und Attribute.
 title: Identifizieren von Eingabegeräten
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d37a830ffd0735d69046aa7e9495cfe6fa943f97
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048497"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638525"
 ---
 # <a name="identify-input-devices"></a>Identifizieren von Eingabegeräten
 
@@ -27,7 +27,7 @@ Identifizieren Sie die Eingabegeräte, die mit einem Gerät für die universelle
 
 Der [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)-Namespace enthält die [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)-Klasse, mit der Sie die Eigenschaften abrufen können, die von einer oder mehreren angeschlossenen Mäusen bereitgestellt werden. Erstellen Sie einfach ein neues **MouseCapabilities**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
 
-**Hinweis:** die von den hier beschriebenen Eigenschaften zurückgegebenen Werte basieren auf allen ermittelten Mäusen: boolesche Eigenschaften geben ungleich NULL zurück, wenn mindestens eine Maus eine bestimmte Funktion unterstützt, während numerische Eigenschaften den größten Wert eine zurückgeben Maus.
+**Beachten Sie**  die von den hier behandelten Eigenschaften zurückgegebenen Werte basieren auf alle erkannten Mäuse: Boolesche Eigenschaften, die zurück ungleich NULL, wenn mindestens eine Maus, einer bestimmten Funktion unterstützt und numerische Eigenschaften, des maximalen Werts, der von einer Maus, die verfügbar gemacht werden zurück.
 
  
 
@@ -65,7 +65,7 @@ private void GetKeyboardProperties()
 
 Der [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)-Namespace enthält die [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644)-Klasse, mit der Sie ermitteln können, ob Touchdigitalisierungsgeräte angeschlossen sind. Erstellen Sie einfach ein neues **TouchCapabilities**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
 
-**Hinweis:** die von den hier beschriebenen Eigenschaften zurückgegebenen Werte basieren auf allen ermittelten touchdigitalisierungsgeräten: boolesche Eigenschaften geben ungleich 0 zurück, wenn mindestens ein Digitalisierungsgerät eine bestimmte Funktion unterstützt, während numerische Eigenschaften den größten Wert zurückgeben von eines verfügbar gemacht werden.
+**Beachten Sie**  die von den hier behandelten Eigenschaften zurückgegebenen Werte auf allen erkannten Digitalisierungsgeräte basieren: Boolesche Eigenschaften, die zurück ungleich NULL, wenn mindestens ein Digitizer einer bestimmten Funktion unterstützt und numerische Eigenschaften, des maximalen Werts von jedem eine Digitizer verfügbar gemacht werden zurück.
 
  
 
@@ -85,7 +85,7 @@ private void GetTouchProperties()
 
 Der [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)-Namespace enthält die [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633)-Klasse, mit der Sie abrufen können, ob eines der erkannten Geräte Zeigereingaben (Toucheingabe, Stift oder Maus) unterstützt. Erstellen Sie einfach ein neues **PointerDevice**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
 
-**Hinweis:** die von den hier beschriebenen Eigenschaften zurückgegebenen Werte basieren auf allen ermittelten Zeigegeräten: boolesche Eigenschaften geben ungleich 0 zurück, wenn mindestens ein Gerät eine bestimmte Funktion unterstützt, während numerische Eigenschaften den größten Wert zurückgeben von jedem Gerät einen Zeiger.
+**Beachten Sie**  die von den hier behandelten Eigenschaften zurückgegebenen Werte basieren auf allen erkannten Zeiger-Geräten: Boolesche Eigenschaften, die zurück ungleich NULL, wenn mindestens ein Gerät eine bestimmte Funktion unterstützt, und numerische Eigenschaften, des maximalen Werts, der von einem beliebigen Gerät für einen Zeiger verfügbar gemacht werden zurück.
 
 Der folgende Code zeigt in einer Tabelle die Eigenschaften und Werte der einzelnen Zeigergeräte an.
 
@@ -178,12 +178,12 @@ private void GetPointerDevices()
 
 
 **Beispiele**
-* [Einfaches Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Beispiel für Eingabe mit niedriger Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 
 **Archivbeispiele**
-* [Eingabe: Beispiel für Gerätefunktionen](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Bekannte Probleme, Problembehandlung
 ms.localizationpriority: medium
 ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049178"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641065"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Bekannte Probleme und Informationen zur Problembehandlung von Anzeigen in Apps
 
 Erfahren Sie in diesem Thema mehr über bekannte Probleme mit der aktuellen Version des Microsoft Advertising-SDKs. Weitere Erläuterungen zur Problembehandlung finden Sie unter folgenden Themen.
 
-* [Anleitung zur Problembehandlung für HTML und JavaScript](html-and-javascript-troubleshooting-guide.md)
-* [Handbuch zur Problembehandlung für XAML und C#](xaml-and-c-troubleshooting-guide.md)
+* [HTML und JavaScript-Handbuch zur Problembehandlung](html-and-javascript-troubleshooting-guide.md)
+* [XAML und C# Handbuch zur Problembehandlung](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>AdControl-Schnittstelle in XAML nicht bekannt
 
@@ -32,7 +32,7 @@ Wenn es einen **lastError** aus der vorherigen Anzeigenanforderung gibt, wird da
 
 Auf Telefonen (oder Emulatoren), die über Softwareschaltflächen für **Zurück**, **Start** und **Suche** anstelle von Hardwaretasten verfügen, werden die Countdown-Timer und Klickschaltflächen für Interstitialanzeigen möglicherweise verdeckt.
 
-## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>Vor Kurzem erstellte Anzeigen werden Ihrer App nicht bereitgestellt
+## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>Vor kurzem erstellte Anzeigen werden Ihrer App nicht bereitgestellt
 
 Wenn Sie vor kurzem (weniger als einem Tag) eine Anzeige erstellt haben, ist diese möglicherweise nicht sofort verfügbar. Wenn die Anzeige hinsichtlich ihrer redaktionellen Inhalte genehmigt wurde, wird sie bereitgestellt, nachdem der Anzeigenserver sie verarbeitet hat und die Anzeige als Bestand verfügbar ist.
 
@@ -40,25 +40,25 @@ Wenn Sie vor kurzem (weniger als einem Tag) eine Anzeige erstellt haben, ist die
 
 Es gibt viele Gründe, warum möglicherweise keine Anzeigen angezeigt werden, einschließlich Netzwerkfehlern. Andere Gründe können sein:
 
-* Auswahl einer anzeigeneinheit im Partner Center mit einer Größe, die größer oder kleiner als die Größe der **AdControl** in Ihrem app Code ist.
+* Wählen eine Werbeeinheit in Partner Center mit einer Größe, die größer oder kleiner als die Größe des ist der **adcontrol-Element** im Code Ihrer app.
 
 * Anzeigen werden nicht angezeigt, wenn Sie einen [Testmoduswert](set-up-ad-units-in-your-app.md#test-ad-units) für Ihre Anzeigeneinheiten-ID verwenden, wenn eine Live-App ausgeführt wird.
 
 * Wenn Sie in der letzten halben Stunde eine neue Anzeigeneinheiten-ID erstellt haben, wird eine Anzeige möglicherweise erst angezeigt, wenn der Server neue Daten durch das System propagiert hat. Vorhandene IDs, die zuvor bereits Anzeigen angezeigt haben, sollten Anzeigen sofort anzeigen.
 
-Wenn Sie in der App Testanzeigen sehen können, funktioniert Ihr Code und kann Anzeigen anzeigen. Bei Problemen wenden Sie sich an den [Produktsupport](https://developer.microsoft.com/en-us/windows/support). Wählen Sie auf dieser Seite **wenden Sie sich an uns**.
+Wenn Sie in der App Testanzeigen sehen können, funktioniert Ihr Code und kann Anzeigen anzeigen. Bei Problemen wenden Sie sich an den [Produktsupport](https://developer.microsoft.com/en-us/windows/support). Wählen Sie auf dieser Seite **kontaktieren Sie uns**.
 
 Sie können auch im [Forum](https://go.microsoft.com/fwlink/p/?LinkId=401266) eine Frage stellen.
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>In Ihrer App werden Testanzeigen anstelle von Liveanzeigen angezeigt.
 
-Testanzeigen können angezeigt werden, auch wenn Sie Liveanzeigen erwarten. Dies kann in den folgenden Szenarien vorkommen:
+Testanzeigen können angezeigt werden, auch wenn Sie Liveanzeigen erwarten. Dies kann in den folgenden Situationen geschehen:
 
-* Unsere Werbeplattform kann die Liveanwendungs-ID nicht überprüfen oder finden, die im Store verwendet wird. Wenn eine Anzeigeneinheit von einem Benutzer erstellt wird, kann in diesem Fall der Status als live (Nicht-Test) beginnen, jedoch innerhalb von 6Stunden nach der ersten Anzeigenanforderung in den Teststatus wechseln. Er wechselt zurück zum Livestatus, wenn es 10Tage keine Anforderungen von Test-Apps gibt.
+* Unsere Werbeplattform kann die Liveanwendungs-ID nicht überprüfen oder finden, die im Store verwendet wird. Wenn eine Anzeigeneinheit von einem Benutzer erstellt wird, kann in diesem Fall der Status als live (Nicht-Test) beginnen, jedoch innerhalb von 6 Stunden nach der ersten Anzeigenanforderung in den Teststatus wechseln. Er wechselt zurück zum Livestatus, wenn es 10 Tage keine Anforderungen von Test-Apps gibt.
 
 * Quergeladene Apps oder im Emulator ausgeführte Apps zeigen keine Liveanzeigen an.
 
-Wenn eine liveanzeigeneinheit testanzeigen bereitstellt, wird zeigt Status der Anzeigeeinheit **aktiv und testanzeigen bereitstellend** im Partner Center. Dies gilt zurzeit nicht für Telefon-Apps.
+Bei einer live Werbeeinheit Test Ads eingesetzt wird, zeigt der Werbeeinheit Status **aktiv und der Bereitstellung testen Ads** im Partner Center. Dies gilt zurzeit nicht für Telefon-Apps.
 
 
 <span id="reference_errors"/>
@@ -67,7 +67,7 @@ Wenn eine liveanzeigeneinheit testanzeigen bereitstellt, wird zeigt Status der A
 
 Wenn Sie die Microsoft Advertising-SDK verwenden, können Sie in Ihrem Projekt als Ziel nicht **Any CPU** angeben. Wenn Ihr Projekt auf die Plattform **Any CPU** ausgerichtet ist, wird Ihnen möglicherweise eine Warnung angezeigt, nachdem Sie einen Verweis wie diesen hinzugefügt haben.
 
-![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
+![ReferenceError\-Solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
 Um diese Warnung zu entfernen, müssen Sie eine architekturspezifische Buildausgabe verwenden (beispielsweise **x86**) und das Projekt entsprechend aktualisieren. Verwenden Sie den **Konfigurations-Manager**, um die Plattformziele für Debug- und Releasekonfigurationen festzulegen.
 
@@ -81,7 +81,7 @@ Achten Sie darauf, die beabsichtigten Architekturen einzuschließen, wenn Sie Ap
 
 ## <a name="z-order-in-javascripthtml-apps"></a>Z-Reihenfolge in JavaScript/HTML-Apps
 
-JavaScript/HTML-Apps müssen Elemente nicht in den reservierten MAX10-Bereich der Z-Reihenfolge platzieren. Die einzigen Ausnahmen sind Interrupt-Overlays wie eingehende Anrufbenachrichtigungen für Skype-Apps.
+JavaScript/HTML-Apps müssen Elemente nicht in den reservierten MAX 10-Bereich der Z-Reihenfolge platzieren. Die einzigen Ausnahmen sind Interrupt-Overlays wie eingehende Anrufbenachrichtigungen für Skype-Apps.
 
 <span id="bkmk-ui"/>
 

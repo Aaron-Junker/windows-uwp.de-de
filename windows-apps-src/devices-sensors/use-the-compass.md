@@ -4,14 +4,14 @@ title: Verwenden des Kompasses
 description: Hier erfahren Sie, wie Sie mithilfe des Kompasses die aktuelle Richtung ermitteln.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c1cc6e17d95f55cc97af7695c12b374edcaaa8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936388"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632885"
 ---
 # <a name="use-the-compass"></a>Verwenden des Kompasses
 
@@ -31,7 +31,7 @@ Apps können die aktuelle Richtung anhand des magnetischen oder geografischen No
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Sie sollten mit Extensible Application Markup Language (XAML), Microsoft für VisualC++ c# und Ereignissen vertraut sein.
+Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
 
 Das verwendete Gerät oder der Emulator muss einen Kompass unterstützen.
 
@@ -41,9 +41,9 @@ Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnit
 
 ### <a name="instructions"></a>Anweisungen
 
--   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **VisualC#** die Option **Leere App (Universelle Windows-App)** aus.
+-   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
--   Öffnen Sie die Projektdatei „MainPage.xaml.cs“, und ersetzen Sie den vorhandenen Code durch den folgenden Code:
+-   Öffnen Sie die Projektdatei „MainPage.xaml.cs“, und ersetzen Sie den vorhandenen Code durch den folgenden Code.
 
 ```csharp
     using System;
@@ -132,7 +132,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-Ersetzen Sie im obigen Codeausschnitt den ersten Teil des Klassennamens durch den Namespace Ihrer App. Wenn Sie z.B. ein Projekt mit dem Namen **CompassCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="CompassCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:CompassCS"`.
+Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z. B. ein Projekt mit dem Namen **CompassCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="CompassCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:CompassCS"`.
 
 -   Drücken Sie F5 oder wählen Sie **Debuggen** > **Debugging starten** aus, um die App zu erstellen, bereitzustellen und auszuführen.
 
@@ -150,7 +150,7 @@ Die App stellt eine Verbindung mit dem Standardkompass in der **MainPage**-Metho
 _compass = Compass.GetDefault(); // Get the default compass object
 ```
 
-Die App legt das Berichtsintervall in der **MainPage**-Methode fest. Mit diesem Code wird das vom Gerät unterstützte Mindestintervall abgerufen und mit einem angeforderten Intervall von 16 Millisekunden verglichen (entspricht etwa einer Aktualisierungsrate von 60Hz). Wenn das unterstützte Mindestintervall größer als das angeforderte Intervall ist, legt der Code den Wert auf das Minimum fest. Andernfalls wird der Wert auf das angeforderte Intervall festgelegt.
+Die App legt das Berichtsintervall in der **MainPage**-Methode fest. Mit diesem Code wird das vom Gerät unterstützte Mindestintervall abgerufen und mit einem angeforderten Intervall von 16 Millisekunden verglichen (entspricht etwa einer Aktualisierungsrate von 60 Hz). Wenn das unterstützte Mindestintervall größer als das angeforderte Intervall ist, legt der Code den Wert auf das Minimum fest. Andernfalls wird der Wert auf das angeforderte Intervall festgelegt.
 
 ```csharp
 uint minReportInterval = _compass.MinimumReportInterval;

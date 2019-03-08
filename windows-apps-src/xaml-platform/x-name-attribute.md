@@ -4,19 +4,19 @@ title: xName-Attribut
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef1a6047a7c462961f40ae8913881125e2331bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946881"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618265"
 ---
 # <a name="xname-attribute"></a>x:Name-Attribut
 
 
-Dient zum eindeutigen Identifizieren von Objektelementen für den Zugriff auf das instanziierte Objekt aus CodeBehind oder allgemeinem Code. Nach Anwendung auf ein zugrunde liegendes Programmiermodell kann **x:Name** als Äquivalent der Variablen mit einem Objektverweis betrachtet werden (gemäß Rückgabe von einem Konstruktor).
+Dient zum eindeutigen Identifizieren von Objektelementen für den Zugriff auf das instanziierte Objekt aus CodeBehind- oder allgemeinem Code. Nach Anwendung auf ein zugrunde liegendes Programmiermodell kann **x:Name** als Äquivalent der Variablen mit einem Objektverweis betrachtet werden (gemäß Rückgabe von einem Konstruktor).
 
 ## <a name="xaml-attribute-usage"></a>XAML-Attributsyntax
 
@@ -26,11 +26,11 @@ Dient zum eindeutigen Identifizieren von Objektelementen für den Zugriff auf da
 
 ## <a name="xaml-values"></a>XAML-Werte
 
-| Benennung | Beschreibung |
+| Begriff | Beschreibung |
 |------|-------------|
 | XAMLNameValue | Eine Zeichenfolge, die den Einschränkungen der XamlName-Grammatik entspricht. |
 
-##  <a name="xamlname-grammar"></a> XamlName-Grammatik
+##  <a name="xamlname-grammar"></a>XamlName-Grammatik
 
 Im Anschluss finden Sie die maßgebende Grammatik für eine Zeichenfolge, die in dieser XAML-Implementierung als Schlüssel verwendet wird:
 
@@ -43,9 +43,9 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   Die Zeichen sind auf den unteren ASCII-Bereich beschränkt – genauer: auf Groß- und Kleinbuchstaben des lateinischen Alphabets sowie auf Ziffern und den Unterstrich (\_).
+-   Zeichen sind eingeschränkt, auf den niedrigeren ASCII-Bereich und genauer gesagt mit lateinischen Alphabet in Großbuchstaben und Kleinbuchstaben, Ziffern und Unterstriche (\_) Zeichen.
 -   Der Unicode-Zeichenbereich wird nicht unterstützt.
--   Ein Name darf nicht mit einer Ziffer beginnen. Einige Toolimplementierungen stellen einer Zeichenfolge einen Unterstrich (\_) voran, wenn der Benutzer als erstes Zeichen eine Ziffer angibt, oder das Tool generiert automatisch **x:Name**-Werte auf Grundlage anderer Werte, die Ziffern enthalten.
+-   Ein Name darf nicht mit einer Ziffer beginnen. Bei einigen Implementierungen Tool einen Unterstrich voran (\_) in eine Zeichenfolge, wenn der Benutzer eine Ziffer als das erste Zeichen oder das Tool automatisch bereitstellt **X: Name** Werte basierend auf andere Werte, die Ziffern enthalten.
 
 ## <a name="remarks"></a>Hinweise
 
@@ -55,19 +55,19 @@ Jedes definierte **x:Name**-Attribut muss innerhalb eines XAML-Namescopes eindeu
 
 Entwurfstools erzeugen oft automatisch **x:Name**-Werte für Elemente, wenn diese auf der Entwurfsoberfläche eingeführt werden. Welches Schema für die automatische Generierung verwendet wird, hängt zwar davon ab, welchen Designer Sie verwenden, ein häufig verwendetes Schema ist jedoch die Generierung einer Zeichenfolge, die mit dem zugrunde liegenden Klassennamen des Elements beginnt und im Anschluss daran mit einer laufenden ganzen Zahl versehen wird. Wenn Sie also beispielsweise das erste [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)-Element im Designer einführen, besitzt dieses Element in XAML unter Umständen für das **x:Name**-Attribut den Wert „Button1“.
 
-**x:Name** kann nicht in der XAML-Eigenschaftselementsyntax oder in Code mit [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) festgelegt werden. **x:Name** kann nur über die XAML-Attributsyntax für Elemente festgelegt werden.
+**x:Name** kann nicht in der XAML-Eigenschaftselementsyntax oder in Code mit [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) verwendet werden. **x:Name** kann nur über die XAML-Attributsyntax für Elemente festgelegt werden.
 
-**Hinweis:** speziell bei C++ / CX-apps kein Sicherungsfeld für einen Verweis **X: Name** wird für das Stammelement einer XAML-Datei oder-Seite nicht erstellt. Wenn Sie in C++-CodeBehind auf das Stammobjekt verweisen müssen, verwenden Sie andere APIs oder eine Strukturtraversierung. Sie können beispielsweise erst [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) für ein bekanntes benanntes Unterelement und anschließend [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) aufrufen.
+**Beachten Sie**  speziell für C++ / CX-apps, ein dahinter liegendes Feld für eine **X: Name** Verweis wird nicht für das Stammelement einer XAML-Datei oder eine Seite erstellt. Wenn Sie in C++-CodeBehind auf das Stammobjekt verweisen müssen, verwenden Sie andere APIs oder eine Strukturtraversierung. Sie können beispielsweise erst [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) für ein bekanntes benanntes Unterelement und anschließend [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) aufrufen.
 
 ### <a name="xname-and-other-name-properties"></a>x:Name und andere Name-Eigenschaften
 
 Einige in UWP-XAML verwendete Typen verfügen auch über die Eigenschaft **Name**. Beispiele: [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) und [**TextElement.Name**](https://msdn.microsoft.com/library/windows/apps/hh702125).
 
-Falls **Name** als einstellbare Eigenschaft für ein Element verfügbar ist, können **Name** und **x:Name** in XAML synonym verwendet werden. Werden allerdings beide Attribute für das gleiche Element angegeben, tritt ein Fehler auf. In einigen Fällen ist zwar eine **Name**-Eigenschaft vorhanden, diese ist jedoch schreibgeschützt (z.B. [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031)). In diesem Fällen verwenden Sie immer **Name** zum Benennen dieses Elements im XAML, und die schreibgeschützte **Name** ist für seltener verwendete Codeszenarien vorhanden.
+Falls **Name** als einstellbare Eigenschaft für ein Element verfügbar ist, können **Name** und **x:Name** in XAML synonym verwendet werden. Werden allerdings beide Attribute für das gleiche Element angegeben, tritt ein Fehler auf. In einigen Fällen ist zwar eine **Name**-Eigenschaft vorhanden, diese ist jedoch schreibgeschützt (z. B. [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031)). In diesem Fällen verwenden Sie immer **Name** zum Benennen dieses Elements im XAML, und die schreibgeschützte **Name** ist für seltener verwendete Codeszenarien vorhanden.
 
-**Hinweis:** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) sollte als eine Möglichkeit, die ursprünglich durch **X: Name-** Werte ändern, es gibt jedoch einige Szenarien, die Ausnahmen von dieser Regel sind in der Regel nicht verwendet werden. In typischen Szenarien handelt es sich bei der Erstellung und Definition von XAML-Namescopes um Vorgänge des XAML-Prozessors. Das Ändern von **FrameworkElement.Name** zur Laufzeit kann einen inkonsistenten XAML-Namescope bzw. eine inkonsistente Benennungsausrichtung privater Felder zur Folge haben, was im CodeBehind nur schwer nachvollziehbar ist.
+**Hinweis**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) sollte im Allgemeinen nicht zum Ändern von Werten verwendet werden, die ursprünglich von **x:Name** festgelegt wurde. Einige Szenarien bilden jedoch Ausnahmen zu dieser Regel. In typischen Szenarien handelt es sich bei der Erstellung und Definition von XAML-Namescopes um Vorgänge des XAML-Prozessors. Das Ändern von **FrameworkElement.Name** zur Laufzeit kann einen inkonsistenten XAML-Namescope bzw. eine inkonsistente Benennungsausrichtung privater Felder zur Folge haben, was im CodeBehind nur schwer nachvollziehbar ist.
 
 ### <a name="xname-and-xkey"></a>x:Name und x:Key
 
-**x:Name** kann als Attribut auf Elemente innerhalb von [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) angewendet werden, um als Ersatz für das [x:Key-Attribut](x-key-attribute.md) zu dienen. (Es gilt die Regel, dass alle Elemente in einem **ResourceDictionary** ein x:Key- oder x:Name-Attribut besitzen müssen.) Bei [Storyboardanimationen](https://msdn.microsoft.com/library/windows/apps/mt187354) ist dies häufig der Fall. Weitere Informationen finden Sie im entsprechenden Abschnitt unter [ResourceDictionary- und XAML-Ressourcenverweise](https://msdn.microsoft.com/library/windows/apps/mt187273).
+**x:Name** kann als Attribut auf Elemente innerhalb von [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) angewendet werden, um als Ersatz für das [x:Key-Attribut](x-key-attribute.md) zu dienen. (Es ist eine Regel, die alle Elemente in einem **ResourceDictionary** muss ein X: Key "oder" X: Name-Attribut aufweisen.) Dies tritt häufig bei [niedergeschrieben Animationen](https://msdn.microsoft.com/library/windows/apps/mt187354). Weitere Informationen finden Sie im entsprechenden Abschnitt unter [ResourceDictionary- und XAML-Ressourcenverweise](https://msdn.microsoft.com/library/windows/apps/mt187273).
 

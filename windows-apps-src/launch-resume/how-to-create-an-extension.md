@@ -6,11 +6,11 @@ ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a7bb6f719f95766c07c1e5f92b50148cf0f2cce
-ms.sourcegitcommit: b589795bedbff993867ddce16ed1f1a4a4b39e8c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9070341"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642365"
 ---
 # <a name="create-and-host-an-app-extension"></a>Erstellen und Hosten einer App-Erweiterung
 
@@ -19,19 +19,19 @@ In diesem Artikel wird erläutert, wie Sie eine UWP-App-Erweiterung erstellen un
 Dieser Artikel wird zusammen mit einem Codebeispiel angezeigt:
 - Laden Sie [Math Extension-Codebeispiel](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)herunter und entzippen Sie die Dateien.
 - Öffnen Sie in Visual Studio 2017 MathExtensionSample.sln. Legen Sie den Buildtyp auf x86 fest (**Build** > **Konfigurationsmanager**, ändern Sie dann **Plattform** auf **x86** für beide Projekte).
-- Stellen Sie die Lösung bereit: **Build** > **Lösung bereitstellen**.
+- Bereitstellen der Lösung an: **Erstellen Sie** > **Lösung bereitstellen**.
 
 ## <a name="introduction-to-app-extensions"></a>Einführung in App-Erweiterungen
 
-In einer App für die Universelle Windows-Plattform (UWP) stellen Erweiterungen Funktionen bereit, die mit Plug-Ins, Add-Ins und Add-Ons auf anderen Plattformen vergleichbar sind. Microsoft Edge-Erweiterungen sind beispielsweise UWP-App-Erweiterungen. UWP-App-Erweiterungen wurden in der Windows10 Anniversary-Edition (Version 1607, Build 10.0.14393) eingeführt.
+In einer App für die Universelle Windows-Plattform (UWP) stellen Erweiterungen Funktionen bereit, die mit Plug-Ins, Add-Ins und Add-Ons auf anderen Plattformen vergleichbar sind. Microsoft Edge-Erweiterungen sind beispielsweise UWP-App-Erweiterungen. UWP-App-Erweiterungen wurden in der Windows 10 Anniversary-Edition (Version 1607, Build 10.0.14393) eingeführt.
 
 UWP-App-Erweiterungen sind UWP-Apps mit einer Erweiterungsdeklaration, die ihnen ermöglicht, Inhalte und Bereitstellungsereignisse mit einer Host-App zu teilen. Eine App-Erweiterung stellt mehrere Erweiterungen bereit.
 
 Da App-Erweiterungen UWP-Apps sind, sind sie auch voll funktionsfähige Apps, Host-Erweiterungen und bieten Erweiterungen für andere Apps an – ohne dabei separate App-Pakete zu erstellen.
 
-Wenn Sie einen App-Erweiterungshost erstellen, bieten Sie die Möglichkeit, ein Ökosystem in Ihrer App zu entwickeln, in dem anderen Entwickler Ihre App auf für Sie möglicherweise unerwartet Weise oder mit unerwarteten Ressourcen verbessern können. Denken Sie an Erweiterungen für Microsoft Office, Visual Studio oder für Browser. Diese erstellen attraktivere Umgebungen für Apps, die die Funktionen übersteigen, die ursprünglich im Lieferumfang enthalten waren. Erweiterungen können der App mehr Wert und eine längere Lebensdauer bieten.
+Wenn Sie einen App-Erweiterungshost erstellen, bieten Sie die Möglichkeit, ein Ökosystem in Ihrer App zu entwickeln, in dem anderen Entwickler Ihre App auf für Sie möglicherweise unerwartet Weise oder mit unerwarteten Ressourcen verbessern können. Sollten Sie Microsoft Office-Erweiterungen, Visual Studio-Erweiterungen, Browsererweiterungen usw. ein. Umfangreichere Funktionen für diese apps, die die Funktionalität hinausgehen, die, denen Sie im Lieferumfang, erstellen. Erweiterungen können der App mehr Wert und eine längere Lebensdauer bieten.
 
-**Übersicht**
+**Übersicht über die**
 
 Allgemein gesagt, muss zum Einrichten einer App-Erweiterungsbeziehung folgendes ausgeführt werden:
 
@@ -41,7 +41,7 @@ Allgemein gesagt, muss zum Einrichten einer App-Erweiterungsbeziehung folgendes 
 4. Es wird festgelegt, wie die Hosts und die Erweiterungen kommunizieren.
 5. Verwenden Sie die [Windows.ApplicationModel.AppExtensions](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppExtensions)-API in der Host-App, um auf die Erweiterungen zuzugreifen.
 
-Sehen wir uns diese Vorgehensweise durch Untersuchen des [Math Extension-Codebeispiels](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip) an, das einen hypothetischen Rechner implementiert, für den Sie mithilfe der Erweiterungen neue Funktionen hinzufügen können. Laden Sie in Microsoft Visual Studio2017 **MathExtensionSample.sln** aus dem Codebeispiel.
+Sehen wir uns diese Vorgehensweise durch Untersuchen des [Math Extension-Codebeispiels](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip) an, das einen hypothetischen Rechner implementiert, für den Sie mithilfe der Erweiterungen neue Funktionen hinzufügen können. Laden Sie in Microsoft Visual Studio 2017 **MathExtensionSample.sln** aus dem Codebeispiel.
 
 ![Math Extension-Codebeispiel](images/mathextensionhost-calctab.png)
 
@@ -49,7 +49,7 @@ Sehen wir uns diese Vorgehensweise durch Untersuchen des [Math Extension-Codebei
 
 Eine App identifiziert sich selbst durch das Deklarieren des `<AppExtensionHost>`-Elements in der Datei "Package.appxmanifest" als App-Erweiterungshost. Weitere Informationen finden Sie in der **Package.appxmanifest**-Datei im **MathExtensionHost**-Projekts, um zu sehen wie es funktioniert.
 
-_"Package.appxmanifest" im „MathExtensionHost”-Projekt_
+_Datei "Package.appxmanifest" im Projekt MathExtensionHost_
 ```xml
 <Package
   ...
@@ -74,7 +74,7 @@ _"Package.appxmanifest" im „MathExtensionHost”-Projekt_
 
 Beachten Sie `xmlns:uap3="http://..."` und `uap3` in `IgnorableNamespaces`. Diese sind erforderlich, da wir den uap3-Namespace verwenden.
 
-`<uap3:Extension Category="windows.appExtensionHost">` identifiziert diese App als Erweiterungshost.
+`<uap3:Extension Category="windows.appExtensionHost">` Diese app identifiziert als erweiterungshost für eine.
 
 Das Element **Name** im `<uap3:AppExtensionHost>` ist der _Erweiterungsvertrags_name. Wenn eine Erweiterung den gleichen Erweiterungsvertragsnamen angibt, kann der Host diese finden. Üblicherweise empfehlen wir, den Namen der App oder den Namen des Herausgebers als Erweiterungsvertragsnamen zu verwenden, um potenzielle Konflikte mit anderen Erweiterungsvertragsnamen zu vermeiden.
 
@@ -84,7 +84,7 @@ Sie können mehrere Hosts und mehrere Erweiterungen in derselben App definieren.
 
 Eine App identifiziert sich selbst durch das Deklarieren des `<uap3:AppExtension>`-Elements in der Datei **Package.appxmanifest** als App-Erweiterung. Öffnen Sie die **Package.appxmanifest**-Datei im **MathExtension**-Projekt, um zu sehen wie es funktioniert.
 
-_"Package.appxmanifest" im „MathExtension”-Projekt:_
+_"Package.appxmanifest" im Projekt MathExtension:_
 ```xml
 <Package
   ...
@@ -116,7 +116,7 @@ _"Package.appxmanifest" im „MathExtension”-Projekt:_
 
 Beachten Sie erneut die Zeile `xmlns:uap3="http://..."` und `uap3` in `IgnorableNamespaces`. Diese sind erforderlich, weil wir den `uap3`-Namespace verwenden.
 
-`<uap3:Extension Category="windows.appExtension">` identifiziert diese App als Erweiterung.
+`<uap3:Extension Category="windows.appExtension">` Diese app identifiziert als eine Erweiterung.
 
 Die `<uap3:AppExtension>`-Attribute haben folgende Bedeutungen:
 
@@ -128,7 +128,7 @@ Die `<uap3:AppExtension>`-Attribute haben folgende Bedeutungen:
 |**Beschreibung** | Kann von der Host-App verwendet werden, um die Erweiterung für den Benutzer zu beschreiben. Ist abfragbar vom und verwendet das [Neue Ressourcenverwaltungssystem](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) für die Lokalisierung. Der lokalisierte Inhalt wird vom App-Erweiterungspaket und nicht von der Host-App geladen. | |
 |**PublicFolder**|Der Name eines Ordners, relativ zum Stammverzeichnis des Pakets, in dem Sie Inhalte mit dem Erweiterungshost teilen können. Üblicherweise ist der Name "Public", Sie können allerdings einen beliebigen Namen verwenden, der einem Ordner in der Erweiterung entspricht.| :heavy_check_mark: |
 
-`<uap3:Properties>` ist ein optionales Element, das benutzerdefinierte Metadaten enthält, die Hosts zur Laufzeit lesen können. Im Codebeispiel ist die Erweiterung als App-Dienst implementiert, damit der Host den Namen des App-Diensts abrufen kann und ihn damit aufrufen kann. Der Name des App-Diensts ist im <Service>-Element definiert, das wir definiert haben (der Name spielt dabei keine Rolle). Der Host im Codebeispiel sucht zur Laufzeit nach dieser Eigenschaft, um den Namen des App-Diensts zu erfahren.
+`<uap3:Properties>` ist ein optionales Element, das benutzerdefinierte Metadaten enthält, den Hosts zur Laufzeit gelesen werden können. Im Codebeispiel ist die Erweiterung als App-Dienst implementiert, damit der Host den Namen des App-Diensts abrufen kann und ihn damit aufrufen kann. Der Name des App-Diensts ist im <Service>-Element definiert, das wir definiert haben (der Name spielt dabei keine Rolle). Der Host im Codebeispiel sucht zur Laufzeit nach dieser Eigenschaft, um den Namen des App-Diensts zu erfahren.
 
 ## <a name="decide-how-you-will-implement-the-extension"></a>Entscheiden Sie, wie Sie die Erweiterung implementiert möchten.
 
@@ -145,7 +145,7 @@ In diesem Beispiel wird ein App-Dienst verwendet, um die Erweiterung zu implemen
 
 Hier ist der Hostcode, der den App-Dienst der Erweiterung aufruft:
 
-_ExtensionManager.cs im MathExtensionHost-Projekt_
+_ExtensionManager.cs im Projekt MathExtensionHost_
 ```cs
 public async Task<double> Invoke(ValueSet message)
 {
@@ -195,7 +195,7 @@ Dies ist der übliche Code zum Aufrufen eines App-Diensts. Weitere Informationen
 
 Beachten Sie, wie der Name des aufzurufenden App-Diensts bestimmt wird. Da der Host keine Informationen über die Implementierung der Erweiterung besitzt, muss die Erweiterung den Namen des App-Diensts angeben. Im Codebeispiel deklariert die Erweiterung den Namen des App-Diensts in ihrer Datei im `<uap3:Properties>`-Element:
 
-_"Package.appxmanifest" im „MathExtension”-Projekt_
+_Datei "Package.appxmanifest" im Projekt MathExtension_
 ```xml
     ...
     <uap3:Extension Category="windows.appExtension">
@@ -211,7 +211,7 @@ Definieren Sie Ihren eigenen XML-Code im `<uap3:Properties>`-Element. In diesem 
 
 Wenn der Host eine Erweiterung lädt, extrahiert ein solcher Code den Namen des Diensts aus den Eigenschaften, die in der Erweiterung "Package.appxmanifest" definiert wurden:
 
-_`Update()` in ExtensionManager.cs im MathExtensionHost-Projekt_
+_`Update()` in ExtensionManager.cs, im Projekt MathExtensionHost_
 ```cs
 ...
 var properties = await ext.GetExtensionPropertiesAsync() as PropertySet;
@@ -233,13 +233,13 @@ if (_properties != null)
 
 Dank dem Namen des App-Diensts, der in `_serviceName` gespeichert ist, kann der Host diesen zum Aufrufen des App-Diensts verwenden.
 
-Das Aufrufen von App-Diensten erfordert auch den Familiennamen des Pakets, das den App-Dienst enthält. Glücklicherweise liefert die API der App-Erweiterung diese Informationen, die in folgender Zeile abgerufen wird: `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
+Das Aufrufen von App-Diensten erfordert auch den Familiennamen des Pakets, das den App-Dienst enthält. Glücklicherweise bietet die API-app-Erweiterung diese Informationen, die in der Zeile abgerufen wird: `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
 
 ### <a name="define-how-the-host-and-the-extension-will-communicate"></a>Festlegen, wie der Host und die Erweiterung kommunizieren
 
 App-Dienste verwenden [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) zum Austauschen von Informationen. Als Autor des Hosts müssen Sie ein Protokoll für die Kommunikation mit Erweiterungen anbieten, das flexibel ist. Im Codebeispiel bedeutet dies, Erweiterungen zu berücksichtigen, die in Zukunft 1, 2 oder mehr Argumente annehmen können.
 
-In diesem Beispiel ist das Protokoll für die Argumente ein **ValueSet**, das die Schlüssel-Wert-Paare mit dem Namen "Argument" und der Anzahl der Argumente enthält, z.B. `Arg1` und `Arg2`. Der Host übergibt alle Argumente im **ValueSet**, und die Erweiterung verwendet diejenigen, die es benötigt. Wenn die Erweiterung das Ergebnis berechnen kann, erwarte der Host, dass das on der Erweiterung zurückgegebene **ValueSet** einen Schlüssel namens `Result` mit dem Wert der Berechnung enthält. Wenn dieser Schlüssel nicht vorhanden ist, geht der Host davon aus, dass die Erweiterung die Berechnung nicht abschließen konnte.
+In diesem Beispiel ist das Protokoll für die Argumente ein **ValueSet**, das die Schlüssel-Wert-Paare mit dem Namen "Argument" und der Anzahl der Argumente enthält, z. B. `Arg1` und `Arg2`. Der Host übergibt alle Argumente im **ValueSet**, und die Erweiterung verwendet diejenigen, die es benötigt. Wenn die Erweiterung das Ergebnis berechnen kann, erwarte der Host, dass das on der Erweiterung zurückgegebene **ValueSet** einen Schlüssel namens `Result` mit dem Wert der Berechnung enthält. Wenn dieser Schlüssel nicht vorhanden ist, geht der Host davon aus, dass die Erweiterung die Berechnung nicht abschließen konnte.
 
 ### <a name="extension-app-service-code"></a>App-Dienstcode der Erweiterung
 
@@ -247,7 +247,7 @@ Im Codebeispiel wird der App-Dienst der Erweiterung nicht als Hintergrundaufgabe
 
 Das System stellt `OnBackgroundActivate()` bereit, wenn der App-Dienst aktiviert ist. Dieser Code übernimmt die Ereignishandler zum Behandeln des eigentlichen App-Dienstaufrufs, wenn dieser eingeht (`OnAppServiceRequestReceived()`), und geht mit Wartungsaufgaben-Ereignissen um, wie mit Verzögerungsobjekten für das Behandeln oder Schließen eines Ereignisses.
 
-_App.xaml.cs im MathExtension-Projekt._
+_"App.Xaml.cs" im Projekt MathExtension._
 ```cs
 protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 {
@@ -271,7 +271,7 @@ protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 
 Der Code, der die Arbeit der Erweiterung durchführt befindet sich in `OnAppServiceRequestReceived()`. Diese Funktion wird aufgerufen, wenn der App-Dienst zum Durchführen einer Berechnung aufgerufen wird. Sie extrahiert die erforderlichen Werte aus dem **ValueSet**. Wenn die Berechnung durchgeführt werden kann, wird das Ergebnis unter einem Schlüssel mit dem Namen **Ergebnis**im **ValueSet** an den Host zurückgegeben. Denken Sie daran, dass entsprechend der im Protokoll definierten Kommunikation zwischen diesem Host und seinen Erweiterungen das Vorhandensein eines **Ergebnis**-Schlüssels den Erfolg oder Misserfolg angibt.
 
-_App.xaml.cs im MathExtension-Projekt_
+_"App.Xaml.cs" im Projekt MathExtension._
 ```cs
 private async void OnAppServiceRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
 {
@@ -316,7 +316,7 @@ public ExtensionManager(string extensionContractName)
 
 Wenn ein Erweiterungspaket installiert ist, sammelt der `ExtensionManager` Informationen über die Erweiterungen im Paket, die den gleichen Erweiterungsvertragsnamen wie der Host haben. Eine Installation kann ein Update sein, wodurch möglicherweise die betroffenen Erweiterungsinformationen aktualisiert werden. Bei der Deinstallation eines Erweiterungspakets entfernt der `ExtensionManager` Informationen zu den betroffenen Erweiterungen, damit der Benutzer weiß, welche Erweiterungen nicht mehr verfügbar sind.
 
-Die `Extension`-Klasse (im **ExtensionManager.cs** des **MathExtensionHost**-Projekts definiert) wurde für das Codebeispiel erstellt, um die ID, Beschreibung, das Logo und die App-spezifischen Informationen der Erweiterung zu beschreiben wie z.B., ob der Benutzer die Erweiterung aktiviert hat.
+Die `Extension`-Klasse (im **ExtensionManager.cs** des **MathExtensionHost**-Projekts definiert) wurde für das Codebeispiel erstellt, um die ID, Beschreibung, das Logo und die App-spezifischen Informationen der Erweiterung zu beschreiben wie z. B., ob der Benutzer die Erweiterung aktiviert hat.
 
 Wenn die Erweiterung geladen wird (siehe `Load()` im **ExtensionManager.cs**), bedeutet dies, dass der Paketstatus in Ordnung ist und die ID, das Logo, die Beschreibung und öffentlichen Ordner erhalten wurden (die wir nicht in diesem Beispiel verwenden, hier wird nur gezeigt nur, wie Sie diese Informationen erhalten). Das Erweiterungspaket selbst wird nicht geladen.
 
@@ -342,7 +342,7 @@ Oftmals sind der Erweiterungshost und die Erweiterung nicht Teil der gleichen L�
 Sie können jetzt Haltepunkte auf dem Host und in der Erweiterung treffen.
 Wenn Sie die Erweiterungs-App selbst debuggen, wird ein leeres Fenster für die App angezeigt. Wenn kein leeres Fenster angezeigt werden sollen, können Sie die Debugeinstellungen für das Erweiterungsprojekt ändern, um die App nicht zu starten, sondern sie stattdessen beim Start zu debuggen (klicken Sie mit der rechten Maustaste auf das Erweiterungsprojekt **Eigenschaften** > **Debuggen** > wählen Sie **Eigenen Code zunächst nicht starten, sondern debuggen**). Sie müssen das Erweiterungsprojekt trotzdem debuggen (**F5**). Dies wartet allerdings so lange, bis der Host die Erweiterung aktiviert. Danach wird der Haltepunkt getroffen.
 
-**Debuggen des Codebeispiels**
+**Debuggen Sie das Codebeispiel**
 
 Im Codebeispiel befinden sich der Host und die Erweiterung in der gleichen Lösung. So gehen Sie zum Debuggen vor:
 
@@ -353,11 +353,11 @@ Im Codebeispiel befinden sich der Host und die Erweiterung in der gleichen Lösu
 5. Starten Sie mit dem Debuggen des **MathExtension**-Projekts (klicken Sie mit der rechten Maustaste auf das **MathExtension**-Projekt **Debuggen > Neue Instanz starten**). Dadurch wird es bereitgestellt und das Installationsereignis des Pakets auf dem Host ausgelöst.
 6. In der **MathExtensionHost**-App, wechseln Sie zur Seite **Berechnung**, und klicken Sie auf **x^y**, um die Erweiterung zu aktivieren. Der `Invoke()`-Haltepunkt wird zuerst getroffen und Sie sehen, dass der App-Dienstaufruf der Erweiterungen durchgeführt wird. Danach wird die `OnAppServiceRequestReceived()`-Methode in der Erweiterung erreicht, und Sie sehen, wie der App-Diensts das Ergebnis berechnet und zurückgibt.
 
-**Problembehandlung bei Erweiterungen, die als App-Dienst implementiert wurden**
+**Problembehandlung bei Erweiterungen, die implementiert werden, als app service**
 
 Wenn Ihre Erweiterungshost Probleme beim Herstellen einer Verbindung mit dem App-Dienst für die Erweiterung hat, stellen Sie sicher, dass das `<uap:AppService Name="...">`-Attribut Ihrer Eingabe des `<Service>`-Elements entspricht. Wenn diese nicht übereinstimmen, wird der Dienstname, den Ihre Erweiterung an den Host bereitgestellt nicht mit dem implementierten Namen des App-Dienstnamens übereinstimmen, und der Hosts kann Ihre Erweiterung nicht aktivieren.
 
-_Package.appxmanifest im MathExtension-Projekt:_
+_"Package.appxmanifest" im Projekt MathExtension:_
 ```xml
 <Extensions>
    <uap:Extension Category="windows.appService">
@@ -386,7 +386,7 @@ Wenn Sie nach der Entwicklung eines Erweiterungshosts diesen testen möchten, um
 - Führen Sie den Host aus, und ersetzen Sie die Erweiterungs-App anschließend durch eine neuere Version.
     - Übernimmt der Host die Änderung und entlädt die alten Versionen der Erweiterung ordnungsgemäß?  
 
-**Erweiterte Testszenarien:**
+**Erweiterte Szenarien testen:**
 
 - Führen Sie den Host aus, verschieben Sie die Erweiterungs-App auf Wechselmedien, entfernen Sie das Medium
     - Erkennt der Host die Änderung des Paketstatus und deaktiviert die Erweiterungen?
@@ -407,7 +407,7 @@ Der Hauptunterschied zwischen [optionalen Paketen](https://docs.microsoft.com/wi
 
 App-Erweiterungen sind Teil eines offenen Ökosystems. Wenn Ihre App-Erweiterungen hosten kann, kann jeder Benutzer eine Erweiterung für den Host schreiben, solange er die Methode des Übergebens und Empfangens von Informationen aus der Erweiterung verwendet. Dies unterscheidet sich von optionalen Paketen, die Teil eines geschlossenen Ökosystem sind. Dort entscheidet der Herausgeber, wer ein optionales Paket erstellen darf, das mit der App verwendet werden kann.
 
-App-Erweiterungen sind unabhängige Pakete und eigenständige Apps. Sie dürfen keine Abhängigkeit in puncto Bereitstellung auf einer anderen App besitzen.Bei optionalen Paketen ist das primäre Pakets erforderlich und diese können nicht ohne ausgeführt werden.
+App-Erweiterungen sind unabhängige Pakete und eigenständige Apps. Sie dürfen keine Abhängigkeit in puncto Bereitstellung auf einer anderen App besitzen. Bei optionalen Paketen ist das primäre Pakets erforderlich und diese können nicht ohne ausgeführt werden.
 
 Ein Erweiterungspaket für ein Spiel wäre ein guter Kandidat für ein optionales Paket, da es eng mit dem Spiel verbunden ist und nicht unabhängig auf dem Spiel ausgeführt werden kann. Erweiterungspakete sollten nicht von beliebigen Entwickler im Ökosystem erstellt werden.
 
@@ -415,14 +415,14 @@ Hätte das gleiche Spiel anpassbare UI-Add-Ons oder Designs, wäre eine App-Erwe
 
 ## <a name="remarks"></a>Hinweise
 
-Dieses Thema stellt eine Einführung zur App-Erweiterungen bereit. Die wichtigsten Punkte sind die Erstellung des Hosts und das Markieren in der Datei "Package.appxmanifest", das Erstellen der Erweiterung und das Markieren als solche in der Datei "Package.appxmanifest", festzulegen, wie die Erweiterung implementiert wird (z.B. als App-Dienst, als Hintergrundaufgaben oder anderweitig), zu definieren, wie der Host mit den Erweiterungen kommunizieren soll, und das Verwenden der [AppExtensions API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) für den Zugriff und das Verwalten der Erweiterungen.
+Dieses Thema stellt eine Einführung zur App-Erweiterungen bereit. Die wichtigsten Punkte sind die Erstellung des Hosts und das Markieren in der Datei "Package.appxmanifest", das Erstellen der Erweiterung und das Markieren als solche in der Datei "Package.appxmanifest", festzulegen, wie die Erweiterung implementiert wird (z. B. als App-Dienst, als Hintergrundaufgaben oder anderweitig), zu definieren, wie der Host mit den Erweiterungen kommunizieren soll, und das Verwenden der [AppExtensions API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) für den Zugriff und das Verwalten der Erweiterungen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Einführung in App-Erweiterungen](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
-* [Build 2016-Sitzung zu App-Erweiterungen](https://channel9.msdn.com/Events/Build/2016/B808)
-* [Build 2016 App-Erweiterung – Codebeispiel](https://github.com/Microsoft/App-Extensibility-Sample)
+* [Einführung in die App-Erweiterungen](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
+* [Build 2016-Veranstaltung zu app-Erweiterungen](https://channel9.msdn.com/Events/Build/2016/B808)
+* [Codebeispiel der Build 2016-app-Erweiterung](https://github.com/Microsoft/App-Extensibility-Sample)
 * [Unterstützen Ihrer App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md)
 * [Erstellen und Nutzen eines App-Diensts](how-to-create-and-consume-an-app-service.md).
-* [AppExtensions-Namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)
-* [Bauen Sie Ihre App mit Diensten, Erweiterungen und Paketen aus](https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages)
+* [Anwendungserweiterungen-namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)
+* [Erweitern Sie Ihre app mit Diensten, Erweiterungen und Pakete](https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages)

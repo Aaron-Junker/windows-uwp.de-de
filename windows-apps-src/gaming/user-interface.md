@@ -4,14 +4,14 @@ description: Hier erhalten Sie Informationen zu den Vorlagen zum Erstellen eines
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Directx, Vorlagen
+keywords: Windows 10, UWP, Spiele, Directx, Vorlagen
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a4491fe9a3bb97a73652c40a2968f2f53c377b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933368"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634245"
 ---
 # <a name="directx-game-project-templates"></a>DirectX-Spielprojektvorlagen
 
@@ -24,16 +24,16 @@ Mit Vorlagen für DirectX und die universelle Windows-Plattform (UWP) können Si
 
 Gehen Sie wie folgt vor, um das Projekt zu erstellen:
 
--   [Microsoft Visual Studio2015 herunterladen](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio2015 verfügt über Tools für die Programmierung, z. B. Tools zum Debuggen. Eine Übersicht über DirectX-Grafik- und -Spielefeatures/-tools finden Sie unter [VisualStudio-Tools für die Entwicklung von DirectX-Spielen](set-up-visual-studio-for-game-development.md).
+-   [Herunterladen von Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio 2015 ist die Tools für die Grafikprogrammierung, z. B. Tools zum Debuggen. Eine Übersicht über DirectX-Grafik- und -Spielefeatures/-tools finden Sie unter [Visual Studio-Tools für die Entwicklung von DirectX-Spielen](set-up-visual-studio-for-game-development.md).
 
 ## <a name="choosing-a-template"></a>Auswählen einer Vorlage
 
 
-Visual Studio2015 umfasst drei Vorlagen für DirectX und UWP:
+Visual Studio 2015 enthält drei DirectX und UWP-Vorlagen:
 
--   DirectX 11-App (Universelle Windows-App): Mit der Vorlage "DirectX 11-App (Universelle Windows-App)" wird ein UWP-Projekt erstellt, das direkt in einem App-Fenster mit DirectX11 gerendert wird.
--   DirectX 12-App (Universelle Windows-App): Mit der Vorlage "DirectX 12-App (Universelle Windows-App)" wird ein UWP-Projekt erstellt, das direkt in einem App-Fenster mit DirectX12 gerendert wird.
--   DirectX11- und XAML-App (Universelle Windows-App): Mit der Vorlage „DirectX11- und XAML-App (Universelle Windows-App)“ wird ein UWP-Projekt erstellt, das direkt in einem XAML-Steuerelement mit DirectX11 gerendert wird. Diese Vorlage verwendet ein [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)-Element und ermöglicht so die Verwendung von XAML-UI-Steuerelementen. Dies kann zwar das Hinzufügen von Benutzeroberflächenelementen vereinfachen, die Verwendung der XAML-Vorlage beeinträchtigt aber unter Umständen die Leistung.
+-   DirectX 11-App (Universelle Windows-App): Mit der Vorlage "DirectX 11-App (Universelle Windows-App)" wird ein UWP-Projekt erstellt, das direkt in einem App-Fenster mit DirectX 11 gerendert wird.
+-   DirectX 12-App (Universelle Windows-App): Mit der Vorlage "DirectX 12-App (Universelle Windows-App)" wird ein UWP-Projekt erstellt, das direkt in einem App-Fenster mit DirectX 12 gerendert wird.
+-   DirectX 11- und XAML-App (Universelle Windows-App): Mit der Vorlage „DirectX 11- und XAML-App (Universelle Windows-App)“ wird ein UWP-Projekt erstellt, das direkt in einem XAML-Steuerelement mit DirectX 11 gerendert wird. Diese Vorlage verwendet ein [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)-Element und ermöglicht so die Verwendung von XAML-UI-Steuerelementen. Dies kann zwar das Hinzufügen von Benutzeroberflächenelementen vereinfachen, die Verwendung der XAML-Vorlage beeinträchtigt aber unter Umständen die Leistung.
 
 Die Entscheidung für eine Vorlage hängt von der Leistung und von den gewünschten Technologien ab.
 
@@ -44,15 +44,15 @@ Die DirectX-UWP-Vorlagen enthalten die folgenden Dateien:
 
 -   "pch.h" und "pch.cpp": Unterstützung für vorkompilierte Headerdateien.
 -   Package.appxmanifest: Die Eigenschaften des Bereitstellungspakets für die App.
--   \*.pfx: Zertifikate für die Anwendung.
+-   \*PFX - Zertifikate für die Anwendung.
 -   Externe Abhängigkeiten: Links zu externen Dateien, die vom Projekt verwendet werden.
--   „\*Main.h“ und „\*Main.cpp“: Methoden zum Verwalten von Anwendungsressourcen, zum Upgrade des Anwendungszustands und zum Rendern des Frames.
--   "App.h" und "App.cpp": Haupteinstiegspunkt für die Anwendung. Verbindet die App mit der Windows-Shell und behandelt App-Lebenszyklusereignisse. Diese Dateien werden nur in den Vorlagen „DirectX11-App (Universelle Windows-App)“ und „DirectX12-App (Universelle Windows-App)“ angezeigt.
+-   \*"Main.h" und \*"Main.cpp" - Methoden zum Verwalten von Anwendungsressourcen, Anwendungszustand zu aktualisieren und den Frame zu rendern.
+-   "App.h" und "App.cpp": Haupteinstiegspunkt für die Anwendung. Verbindet die App mit der Windows-Shell und behandelt App-Lebenszyklusereignisse. Diese Dateien werden nur in den Vorlagen „DirectX 11-App (Universelle Windows-App)“ und „DirectX 12-App (Universelle Windows-App)“ angezeigt.
 -   "App.Xaml", "App.Xaml.cpp" und "App.Xaml.h": Haupteinstiegspunkt für die Anwendung. Verbindet die App mit der Windows-Shell und behandelt App-Lebenszyklusereignisse. Diese Dateien werden nur in der Vorlage "DirectX 11- und XAML-App (Universelle Windows-App)" angezeigt.
 -   "DirectXPage.xaml", "DirectXPage.xaml.cpp" und "DirectXPage.xaml.h": Eine Seite, die ein DirectX-SwapChainPanel hostet. Diese Dateien werden nur in der Vorlage "DirectX 11- und XAML-App (Universelle Windows-App)" angezeigt.
 -   Inhalt
     -   Sample3DSceneRenderer.h und Sample3DSceneRenderer.cpp – Ein Beispielrenderer, der eine grundlegende Renderingpipeline instanziiert.
-    -   SampleFpsTextRenderer.h und SampleFpsTextRenderer.cpp – Rendert den aktuellen FPS-Wert mit Direct2D und DirectWrite rechts unten auf dem Bildschirm. Diese Dateien werden nur in den Vorlagen „DirectX11-App (Universelle Windows-App)“ und „DirectX11- und XAML-App (Universelle Windows-App)“ angezeigt.
+    -   SampleFpsTextRenderer.h und SampleFpsTextRenderer.cpp – Rendert den aktuellen FPS-Wert mit Direct2D und DirectWrite rechts unten auf dem Bildschirm. Diese Dateien werden nur in den Vorlagen „DirectX 11-App (Universelle Windows-App)“ und „DirectX 11- und XAML-App (Universelle Windows-App)“ angezeigt.
     -   SamplePixelShader.hlsl – Ein einfacher Beispiel-Pixelshader.
     -   SampleVertexShader.hlsl – Ein einfacher Beispiel-Vertex-Shader.
     -   ShaderStructures.h – Zum Senden von Daten an den Beispiel-Vertex-Shader verwendete Strukturen.
@@ -66,14 +66,14 @@ Die DirectX-UWP-Vorlagen enthalten die folgenden Dateien:
 ## <a name="next-steps"></a>Nächste Schritte
 
 
-Erweitern Sie basierend auf diesen Grundkenntnissen Ihr Wissen im Bereich der Spielentwicklung und speziell die Fähigkeiten für die Entwicklung von MicrosoftStore-Spielen.
+Erweitern Sie basierend auf diesen Grundkenntnissen Ihr Wissen im Bereich der Spielentwicklung und speziell die Fähigkeiten für die Entwicklung von Microsoft Store-Spielen.
 
 Wenn Sie ein vorhandenes Spiel portieren, sind die folgenden Themen hilfreich:
 
 -   [Portieren von OpenGL ES 2.0 zu Direct3D 11.1](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [Portieren von DirectX9 zur universellen Windows-Plattform](porting-your-directx-9-game-to-windows-store.md)
+-   [Portieren von DirectX 9 zu universellen Windows-Plattform](porting-your-directx-9-game-to-windows-store.md)
 
 Wenn Sie ein neues DirectX-Spiel erstellen, sind die folgenden Themen hilfreich.
 
 -   [Erstellen eines einfachen UWP-Spiels mit DirectX](tutorial--create-your-first-uwp-directx-game.md)
--   [Entwickeln von Marble Maze, einem Spiel für die universelle Windows-Plattform in C++ und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [Entwickeln von Marble Maze, eine universelle Windows-Plattform-Spiel in C++ und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

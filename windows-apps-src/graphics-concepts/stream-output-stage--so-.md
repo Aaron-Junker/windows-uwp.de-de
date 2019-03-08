@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936474"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605045"
 ---
 # <a name="stream-output-so-stage"></a>Streamausgabephase (SO)
 
@@ -41,14 +41,14 @@ Vertexdaten aus einer vorherigen Shaderphase.
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Ausgabe
 
 
-Die Streamoutputstufe (SO-Stufe) liefert (streamt) kontinuierlich Vertexdaten aus der vorherigen aktiven Stufe (z.B. der Geometry-Shader-Stufe (GS-Stufe) ) in einen oder mehrere Puffer im Speicher. Wenn die Geometrieshaderphase (GS) inaktiv ist, gibt die Streamoutputstufe (SO) kontinuierlich Vertexdaten aus der Domänen-Shaderphase (DS)-Phase in Puffer im Speicher (oder wenn DS auch inaktiv ist, aus der Vertex-Shader (VS) Phase ist).
+Die Streamoutputstufe (SO-Stufe) liefert (streamt) kontinuierlich Vertexdaten aus der vorherigen aktiven Stufe (z. B. der Geometry-Shader-Stufe (GS-Stufe) ) in einen oder mehrere Puffer im Speicher. Die Phase des Geometrie-Shader (GS) inaktiv ist, wird ausgegeben die Stream-Ausgabe (SO)-Phase kontinuierlich Vertexdaten, von der Stufe Domain-Shader (DS), um Puffer im Arbeitsspeicher (oder wenn DS auch inaktiv ist, von der Vertex-Shader (VS)-Stufe ist).
 
-Wenn ein Dreiecks- oder zeilenstrip an die Phase Eingabe-Assembler (IA) gebunden ist, wird jeder Strip in eine Liste konvertiert, bevor er gestreamt werden. Vertices werden immer als vollständige Grundtypen (z. B. 3 Vertices für Dreiecke gleichzeitig); ausgegeben. Unvollständige Grundtypen werden niemals gestreamt. Angrenzende Grundtypen verwerfen die angrenzenden Daten vor dem streaming.
+Wenn ein Dreiecks- oder Zeilenstrip an die Eingabeassemblerphase (IA) gebunden ist, wird jeder Strip in eine Liste konvertiert, bevor er gestreamt wird. Vertices werden immer als vollständige Grundtypen (z. B. gleichzeitig 3 Vertices für Dreiecke) ausgegeben. Unvollständige Grundtypen werden niemals gestreamt. Angrenzende Grundtypen verwerfen vor dem Streaming die angrenzenden Daten.
 
-Die Streamausgabephase unterstützt gleichzeitig bis zu 4Puffer.
+Die Streamausgabephase unterstützt gleichzeitig bis zu 4 Puffer.
 
--   Wenn Sie Daten in mehrere Puffer streamen, kann jeder Puffer nur ein einzelnes Element (bis zu 4Komponenten) pro Vertexdaten erfassen, mit einem impliziten Datenversatz, der der Elementbreite im jedem Puffer entspricht (kompatibel mit der Art, wie einzelne Elementpuffer für die Eingabe in Shaderphasen gebunden werden können). Wenn Puffer unterschiedliche Größen haben, wird darüber hinaus der Schreibvorgang angehalten, sobald einer der Puffer voll ist.
--   Wenn Sie Daten in einen einzelnen Puffer streamen, kann der Puffer bis zu 64skalare Komponenten pro Vertexdaten erfassen (256Byte oder weniger) oder der Vertexversatz kann bis zu 2048Byte betragen.
+-   Wenn Sie Daten in mehrere Puffer streamen, kann jeder Puffer nur ein einzelnes Element (bis zu 4 Komponenten) pro Vertexdaten erfassen, mit einem impliziten Datenversatz, der der Elementbreite im jedem Puffer entspricht (kompatibel mit der Art, wie einzelne Elementpuffer für die Eingabe in Shaderphasen gebunden werden können). Wenn Puffer unterschiedliche Größen haben, wird darüber hinaus der Schreibvorgang angehalten, sobald einer der Puffer voll ist.
+-   Wenn Sie Daten in einen einzelnen Puffer streamen, kann der Puffer bis zu 64 skalare Komponenten pro Vertexdaten erfassen (256 Byte oder weniger) oder der Vertexversatz kann bis zu 2048 Byte betragen.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 

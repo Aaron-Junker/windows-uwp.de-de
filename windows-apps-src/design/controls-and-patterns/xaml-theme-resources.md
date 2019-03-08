@@ -1,5 +1,5 @@
 ---
-Description: Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.
+Description: Bei Designressourcen in XAML handelt es sich um einen Satz von Ressourcen, die abhängig vom aktiven Systemdesign verschiedene Werte anwenden.
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,20 +9,20 @@ label: XAML theme resources
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117610"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634645"
 ---
 # <a name="xaml-theme-resources"></a>XAML-Designressourcen
 
-Bei Designressourcen in XAML handelt es sich um einen Satz von Ressourcen, die abhängig vom aktiven Systemdesign verschiedene Werte anwenden. Es gibt drei Designs, die das XAML-Framework unterstützt: „Light“, „Dark“ und „HighContrast“.
+Bei Designressourcen in XAML handelt es sich um einen Satz von Ressourcen, die abhängig vom aktiven Systemdesign verschiedene Werte anwenden. Es gibt 3 Designs, die XAML-Framework unterstützt: "Hell", "Dunkel" und "Hohem Kontrast".
 
-**Prerequisites**: In diesem Thema wird vorausgesetzt, dass Sie [ResourceDictionary- und XAML-Ressourcenreferenzen](resourcedictionary-and-xaml-resource-references.md) gelesen haben.
+**Erforderliche Komponenten**: In diesem Thema wird vorausgesetzt, dass Sie [ResourceDictionary- und XAML-Ressourcenreferenzen](resourcedictionary-and-xaml-resource-references.md) gelesen haben.
 
 ## <a name="theme-resources-v-static-resources"></a>Designressourcen im Vergleich zu statischen Ressourcen
 
@@ -34,7 +34,7 @@ Für eine [{StaticResource}-Markuperweiterung](../../xaml-platform/staticresourc
 
 ## <a name="theme-resources-in-the-resource-dictionary-structure"></a>Designressourcen in der Ressourcenverzeichnisstruktur
 
-Jede Designressource ist Teil der XAML-Datei „themeresources.xaml“. Zu Designzwecken steht „themeresources.xaml“ im Order „\\(Programme)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic“ aus einer Windows Software Development Kit (SDK)-Installation zur Verfügung. Die Ressourcenverzeichnisse in „themeresources.xaml“ werden auch in „generic.xaml“ im selben Verzeichnis reproduziert.
+Jede Designressource ist Teil der XAML-Datei „themeresources.xaml“. Aus Gründen der Entwurf themeresources.xaml steht in der \\(Programmdateien)\\Windows-Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP \\ &lt;SDK-Version&gt;\\Ordner "Allgemein" von einer Installation von Windows Software Development Kit (SDK). Die Ressourcenverzeichnisse in „themeresources.xaml“ werden auch in „generic.xaml“ im selben Verzeichnis reproduziert.
 
 Die Windows-Runtime verwendet diese physischen Dateien nicht für die Runtime-Suche. Daher befinden sie sich in einem speziellen DesignTime-Ordner und werden nicht standardmäßig in Apps kopiert. Stattdessen sind die Ressourcenverzeichnisse als Teil der Windows-Runtime selbst im Speicher vorhanden, und die XAML-Ressource Ihrer App verweist auf Designressourcen (oder Systemressourcen), die dort zu Laufzeit aufgelöst werden.
 
@@ -44,11 +44,11 @@ Halten Sie sich an die folgenden Richtlinien, wenn Sie Ihre eigenen benutzerdefi
 
 - Geben Sie zusätzlich zum Verzeichnis „HighContrast“ jeweils ein Designverzeichnis für „Light“ und „Dark“ an. Sie können zwar ein [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794)-Element mit „Default“ als Schlüssel erstellen, es empfiehlt sich jedoch, explizit vorzugehen und stattdessen „Light“, „Dark“ und „HighContrast“ zu verwenden.
 
-- Verwenden Sie die [{ThemeResource}-Markuperweiterung](../../xaml-platform/themeresource-markup-extension.md) in Stilen, Settern, Steuerelementvorlagen, Settern für Eigenschaften und Animationen.
+- Verwenden der [{ThemeResource}-Markuperweiterung](../../xaml-platform/themeresource-markup-extension.md) in: Stile und Setter, Vorlagen, Eigenschaften-Settern und Animationen zu steuern.
 
 - Verwenden Sie die [{ThemeResource}-Markuperweiterung](../../xaml-platform/themeresource-markup-extension.md) nicht in Ihren Ressourcendefinitionen in [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807). Verwenden Sie stattdessen die [{StaticResource}-Markuperweiterung](../../xaml-platform/staticresource-markup-extension.md).
 
-    AUSNAHME: Sie können die [{ThemeResource}-Markuperweiterung](../../xaml-platform/themeresource-markup-extension.md) verwenden, um auf Ressourcen zu verweisen, die in Bezug auf das App-Design in [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807) agnostisch sind. Beispiele für diese Ressourcen sind Akzentfarbenressourcen wie `SystemAccentColor` oder Systemfarbenressourcen, die normalerweise das Präfix „SystemColor“ haben, z.B. `SystemColorButtonFaceColor`.
+    AUSNAHME: Können Sie die [{ThemeResource}-Markuperweiterung](../../xaml-platform/themeresource-markup-extension.md) Ressourcen zu verweisen, die unabhängig von der app-Designs in Ihre [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807). Beispiele für diese Ressourcen sind Akzentfarbenressourcen wie `SystemAccentColor` oder Systemfarbenressourcen, die normalerweise das Präfix „SystemColor“ haben, z. B. `SystemColorButtonFaceColor`.
 
 > [!CAUTION]
 > Wenn Sie diesen Richtlinien nicht folgen, kann ein unerwartetes Verhalten im Zusammenhang mit Designs in Ihrer App auftreten. Weitere Informationen finden Sie im Abschnitt [Problembehandlung für Designressourcen](#troubleshooting-theme-resources).
@@ -63,9 +63,9 @@ Weitere Informationen dazu, wie Sie die Farbe in der UWP-App anwenden, finden Si
 
 Das XAML-Framework stellt eine Gruppe von benannten [Color](/uwp/api/Windows.UI.Color)-Ressourcen mit Werten bereiten, die speziell auf die Designs „Light“ und „Dark“ zugeschnitten sind. Die Schlüssel, die Sie zum Verweisen verwenden, haben folgendes Namensformat: `System[Simple Light/Dark Name]Color`.
 
-Diese Tabelle enthält den Schlüssel, den einfachen Namen und die Zeichenfolgendarstellung der Farbe (mit dem \#aarrggbb-Format) für die Ressourcen „Light“ und „Dark“, die vom XAML-Framework bereitgestellt werden. Der Schlüssel wird verwendet, um auf die Ressource in einer App zu verweisen. Der einfache Name für hell/dunkel dient als Teil der Pinselbenennungskonvention, die später erläutert wird.
+Diese Tabelle enthält die Schlüssel, einfachen Namen, und die Zeichenfolgendarstellung der Farbe (mithilfe der \#Aarrggbb-Format) für die "Dunklen" und "Hell"-Ressourcen, die von der XAML-Framework bereitgestellt werden. Der Schlüssel wird verwendet, um auf die Ressource in einer App zu verweisen. Der einfache Name für hell/dunkel dient als Teil der Pinselbenennungskonvention, die später erläutert wird.
 
-| Schlüssel                             | Einfacher Name für hell/dunkel | Light      | Dark       |
+| Schlüssel                             | Einfacher Name für hell/dunkel | Hell      | Dunkel       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -123,7 +123,7 @@ Diese Tabelle enthält den Schlüssel, den einfachen Namen und die Zeichenfolgen
     :::column-end:::
 :::row-end:::
 
-#### <a name="list"></a>Liste
+#### <a name="list"></a>List
 
 :::row:::
     :::column:::
@@ -191,18 +191,18 @@ Wenn dieser Pinsel auf ein XAML-Element angewendet wird, wird die Farbe zur Lauf
 
 | Design        | Einfacher Farbname | Farbressource             | Laufzeitwert                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| Light        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
-| Dark         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
+| Hell        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| Dunkel         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
 | HighContrast | Hintergrund        | SystemColorButtonFaceColor | Die in den Einstellungen für den Hintergrund der Schaltfläche angegebene Farbe. |
 
-Sie können das Benennungsschema `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` verwenden, um zu bestimmen, welcher Pinsel auf Ihre eigenen XAML-Elemente angewendet werden soll.
+Sie können das `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`-Benennungsschema verwenden, um zu bestimmen, welcher Pinsel auf Ihre eigenen XAML-Elemente angewendet wird.
 
 <!--
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
 > [!NOTE]
-> Nicht jede Kombination aus \[*Einfacher Name für HighContrast*\]\[*Einfacher Name für hell/dunkel*\] wird als Pinselressource bereitgestellt.
+> Nicht jede Kombination von \[ *einfache hohem Kontrast Namen*\]\[*einfachen hellen/dunklen Namen* \] dient als eine Pinselressource.
 
 ## <a name="the-xaml-type-ramp"></a>Die XAML-Typhierarchie
 
@@ -375,7 +375,7 @@ Stellt die gemeinsamen Eigenschaften für alle anderen [RichTextBlock](https://m
 </Style>
 ```
 
-**Hinweis**: die [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) -Stile verfügen nicht über alle Text Typhierarchie Stile, die [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) der Fall ist, liegt hauptsächlich daran, da das blockbasierte Dokumentobjektmodell für **RichTextBlock** Festlegen von Attributen für die einzelnen Text erleichtert Elemente. Außerdem entsteht, wenn Sie [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) mit der XAML-Inhaltseigenschaft festlegen, eine Situation, in der kein zu formatierendes Textelement vorhanden ist und Sie daher den Container formatieren müssen. Das ist für **RichTextBlock** kein Problem, da sein Textinhalt immer in spezifischen Textelementen wie [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) enthalten sein muss, in denen Sie XAML-Stile für die Kopfzeile, die Seitenunterüberschrift und ähnliche Texthierarchiedefinitionen festlegen können.
+**Hinweis**:  Die [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) Stile nicht der gesamte Text haben Ramp formatiert, die [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) der Fall ist, hauptsächlich deshalb, weil die Block-basiertes Dokument-Objektmodell für **RichTextBlock** vereinfacht einfacher Attribute für die einzelne Elemente festlegen. Außerdem entsteht, wenn Sie [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) mit der XAML-Inhaltseigenschaft festlegen, eine Situation, in der kein zu formatierendes Textelement vorhanden ist und Sie daher den Container formatieren müssen. Das ist für **RichTextBlock** kein Problem, da sein Textinhalt immer in spezifischen Textelementen wie [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) enthalten sein muss, in denen Sie XAML-Stile für die Kopfzeile, die Seitenunterüberschrift und ähnliche Texthierarchiedefinitionen festlegen können.
 
 ## <a name="miscellaneous-named-styles"></a>Sonstige benannte Stile
 
@@ -420,7 +420,7 @@ Es sieht ungefähr so aus:
 
 **TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-Dieser [Style](https://msdn.microsoft.com/library/windows/apps/br208849) stellt eine vollständige Vorlage für ein [Button](https://msdn.microsoft.com/library/windows/apps/br209265)-Element bereit, bei der es sich um die Navigationsschaltfläche „Zurück“ für eine Navigations-App handeln kann. Sie ähnelt **NavigationBackButtonNormalStyle**, aber die Größe beträgt 30x30 Pixel.
+Dieser [Style](https://msdn.microsoft.com/library/windows/apps/br208849) stellt eine vollständige Vorlage für ein [Button](https://msdn.microsoft.com/library/windows/apps/br209265)-Element bereit, bei der es sich um die Navigationsschaltfläche „Zurück“ für eine Navigations-App handeln kann. Sie ähnelt **NavigationBackButtonNormalStyle**, aber die Größe beträgt 30 x 30 Pixel.
 
 Dies ist ein [Button](https://msdn.microsoft.com/library/windows/apps/br209265)-Element mit der angewendeten **NavigationBackButtonSmallStyle**-Ressource.
 

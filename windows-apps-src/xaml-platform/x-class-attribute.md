@@ -4,19 +4,19 @@ title: xClass-Attribut
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8eb1238499355cf37b3f5113dbb10c456de55961
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943635"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624765"
 ---
 # <a name="xclass-attribute"></a>x:Class-Attribut
 
 
-Konfiguriert die XAML-Kompilierung, um partielle Klassen zwischen Markup und CodeBehind beizutreten. Die partielle Codeklasse wird in einer separaten Codedatei definiert, die partielle Markupklasse wird von der Codegenerierung während der XAML-Kompilierung erstellt.
+Konfiguriert die XAML-Kompilierung, um partielle Klassen zwischen Markup und CodeBehind zu verknüpfen. Die partielle Codeklasse wird in einer separaten Codedatei definiert, die partielle Markupklasse wird von der Codegenerierung während der XAML-Kompilierung erstellt.
 
 ## <a name="xaml-attribute-usage"></a>XAML-Attributsyntax
 
@@ -29,14 +29,14 @@ Konfiguriert die XAML-Kompilierung, um partielle Klassen zwischen Markup und Cod
 
 ## <a name="xaml-values"></a>XAML-Werte
 
-| Benennung | Beschreibung |
+| Begriff | Beschreibung |
 |------|-------------|
 | Namespace | Optional. Gibt einen Namespace an, der die partielle Klasse gemäß Angabe durch _classname_. Wenn _Namespace_ angegeben ist, werden _namespace_ und _classname_ durch einen Punkt getrennt. Ist kein _namespace_ angegeben, wird davon ausgegangen, dass _classname_ keinen Namespace besitzt. |
 | classname | Erforderlich. Gibt den Namen der partiellen Klasse an, die das geladene XAML und Ihr CodeBehind für dieses XAML verbindet. | 
 
 ## <a name="remarks"></a>Hinweise
 
-**x:Class** kann als Attribut für ein beliebiges Element deklariert werden, das als Stamm einer XAML-Datei-/-Objektstruktur fungiert und durch Buildvorgänge kompiliert wird, oder für den [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324)-Stamm in der Anwendungsdefinition einer kompilierten Anwendung. Wenn Sie **x:Class** für ein Element, bei dem es sich nicht um einen Stammknoten handelt, oder unter beliebigen Umständen für eine nicht mit der Buildaktion **Seite** kompilierte XAML-Datei deklarieren, tritt zur Kompilierzeit ein Fehler auf.
+**x:Class** kann als Attribut für ein beliebiges Element, das als Stamm einer XAML-Datei-/-Objektstruktur fungiert und durch Erstellungsaktionen kompiliert wird, oder für den [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324)-Stamm in der Anwendungsdefinition einer kompilierten Anwendung deklariert werden. Wenn Sie **x:Class** für ein Element, bei dem es sich nicht um einen Stammknoten handelt, oder unter beliebigen Umständen für eine nicht mit der Buildaktion **Seite** kompilierte XAML-Datei deklarieren, tritt zur Kompilierzeit ein Fehler auf.
 
 Die als **x:Class** verwendete Klasse darf keine geschachtelte Klasse sein.
 

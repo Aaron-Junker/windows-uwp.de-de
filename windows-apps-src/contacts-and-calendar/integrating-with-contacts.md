@@ -8,15 +8,15 @@ keywords: Windows 10, UWP, Kontakte, Visitenkarte, Anmerkung
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920398"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616435"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Verbinden der App mit Aktionen auf einer Visitenkarte
 
-Ihre App kann neben Aktionen auf einer Visitenkarte oder kleinen Kontaktkarte angezeigt werden. Benutzer können Ihre App auswählen, um eine Aktion auszuführen, z. B. eine Profilseite zu öffnen, einen Anruf zu tätigen oder eine Nachricht zu senden.
+Ihre App kann neben Aktionen auf einer Visitenkarte oder kleinen Kontaktkarte angezeigt werden. Benutzer können Ihre App auswählen, um eine Aktion auszuführen, z. B. eine Profilseite zu öffnen, einen Anruf zu tätigen oder eine Nachricht zu senden.
 
 ![Visitenkarte und kleine Kontaktkarte](images/all-contact-cards.png)
 
@@ -185,7 +185,7 @@ Genau wie die Visitenkarte wird für jede Registerkarte die App vermerkt, die de
 
 Überschreiben Sie in dem Code für die Datei der Seite, die [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx)-Methode. Die Visitenkarte übergibt dieser Methode den Namen des Vorgangs und die ID des Benutzers.
 
-Informationen zum Starten eines Video- oder Audioanrufs finden Sie in dem [VoIP-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Sie finden die vollständige API im Namespace [Windows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
+Um ein video oder audio-Aufruf zu starten, finden Sie in diesem Beispiel aus: [VoIP-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Sie finden die vollständige API im Namespace [Windows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
 
 Informationen zur Vereinfachung des Messaging finden Sie im Namespace [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx).
 

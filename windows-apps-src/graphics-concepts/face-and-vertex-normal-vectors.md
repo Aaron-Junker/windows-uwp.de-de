@@ -1,39 +1,39 @@
 ---
-title: Normalvektoren für Flächen und Vertices
-description: Jede Fläche in einem Gitter verfügt über einen normalen Einheitsvektor im rechten Winkel. Der Richtung des Vektors ist festgelegt durch die Reihenfolge, in der die Vertices definiert sind, und durch die Händigkeit des Koordinatensystem (rechts- oder linkshändig).
+title: Seiten- und Scheitelnormalenvektoren
+description: Jede Fläche in einem Gitter verfügt über einen normalen Einheitsvektor im rechten Winkel. Die Richtung des Vektors wird von der Reihenfolge bestimmt, in der die Scheitelpunkte definiert sind und ist abhängig davon, ob das Koordinatensystem rechts - oder linkshändig ist.
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords:
-- Normalvektoren für Flächen und Vertices
+- Seiten- und Scheitelnormalenvektoren
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929891"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636555"
 ---
-# <a name="face-and-vertex-normal-vectors"></a>Normalvektoren für Flächen und Vertices
+# <a name="face-and-vertex-normal-vectors"></a>Seiten- und Scheitelnormalenvektoren
 
 
-Jede Fläche in einem Gitter verfügt über einen normalen Einheitsvektor im rechten Winkel. Der Richtung des Vektors ist festgelegt durch die Reihenfolge, in der die Vertices definiert sind, und durch die Händigkeit des Koordinatensystem (rechts- oder linkshändig).
+Jede Fläche in einem Gitter verfügt über einen normalen Einheitsvektor im rechten Winkel. Die Richtung des Vektors wird von der Reihenfolge bestimmt, in der die Scheitelpunkte definiert sind und ist abhängig davon, ob das Koordinatensystem rechts - oder linkshändig ist.
 
-## <a name="span-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>Senkrechter Einheitsnormalvektor für eine Vorderseite
+## <a name="span-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>Senkrecht Einheit Normalenvektor für eine Vorderseite
 
 
-Jede Fläche in einem Gittermodell besitzt einen senkrecht stehenden Einheitsnormalvektor. Der Richtung des Vektors ist festgelegt durch die Reihenfolge, in der die Vertices definiert sind, und durch die Händigkeit des Koordinatensystem (rechts- oder linkshändig). Der Fußpunkt des Normalvektors einer Fläche liegt auf ihrer Vorderseite. In Direct3D ist nur die Vorderseite einer Fläche sichtbar. Eine Vorderseite ist dadurch gekennzeichnet, dass auf ihr die Vertices im Uhrzeigersinn definiert sind.
+Jede Fläche in einem Gitter verfügt über einen normalen Einheitsvektor im rechten Winkel. Die Richtung des Vektors wird von der Reihenfolge bestimmt, in der die Scheitelpunkte definiert sind und ist abhängig davon, ob das Koordinatensystem rechts - oder linkshändig ist. Der Fußpunkt des Normalvektors einer Fläche liegt auf ihrer Vorderseite. In Direct3D ist nur die Vorderseite einer Fläche sichtbar. Eine Vorderseite ist dadurch gekennzeichnet, dass auf ihr die Vertices im Uhrzeigersinn definiert sind.
 
 Die folgende Abbildung zeigt einen Normalvektor für eine Vorderseite:
 
 ![ein Normalvektor für eine Vorderseite](images/nrmlvect.png)
 
-## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>Entfernen von Rückseiten (Backface Culling)
+## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>Gesichter Culling zurück
 
 
 Jede Fläche, die keine Vorderseite ist, ist eine Rückseite. Direct3D unterstützt Rückseitenentfernung, d.°h. Rückseiten werden nicht immer gerendert. Bei der Rückseitenentfernung werden die Rückseiten nicht gerendert. Sie können den Cullingmodus ändern, um Rückseiten doch zu rendern. Weitere Informationen finden Sie unter [Culling-Status](https://msdn.microsoft.com/library/windows/desktop/bb204882).
 
-## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>Vertexeinheitsnormale
+## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>Flächenspezifische-Einheit
 
 
 Direct3D verwendet die Vertexeinheitsnormalen für Gouraud-Schattierung, Beleuchtung und Textureffekte.
@@ -44,7 +44,7 @@ Die folgende Abbildung zeigt die Vertexnormalen:
 
 Beim Anwenden von Gouraud-Schattierung auf ein Polygon verwendet Direct3D die Vertexnormalen, um den Winkel zwischen Lichtquelle und Oberfläche zu berechnen. Die Farb- und Intensitätswerte für die Vertices werden berechnet und für jeden Punkt auf allen Grundformoberflächen interpoliert. Direct3D berechnet den Lichtintensitätswert mithilfe des Winkels. Je größer der Winkel, desto weniger fällt auf die Oberfläche.
 
-## <a name="span-idflatsurfacesspanspan-idflatsurfacesspanspan-idflatsurfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>Flache Oberflächen
+## <a name="span-idflatsurfacesspanspan-idflatsurfacesspanspan-idflatsurfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>Flache Flächen
 
 
 Wenn Sie ein flaches Objekt erstellen, legen Sie die Vertexnormalen so fest, das sie im rechten Winkel zur Oberfläche stehen.
@@ -53,7 +53,7 @@ Die folgende Abbildung zeigt eine flache Oberfläche, die aus zwei Dreiecken mit
 
 ![Flache Oberfläche, bestehend aus zwei Dreiecken mit Vertexnormalen](images/flatvert.png)
 
-## <a name="span-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>Übergangslose Schattierung für ein nicht flaches Objekt
+## <a name="span-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>Sanfter Übergang auf eine nicht-flache-Objekt
 
 
 Wahrscheinlich ist Ihr Objekt jedoch nicht plan, sondern besteht aus Dreieckstrips, die nicht koplanar sind. Eine einfache Methode, um übergangslose Schattierung über alle Dreiecke im Strip zu erzielen, besteht darin, zuerst den Oberflächennormalvektor für jede polygonale Fläche zu berechnen, welcher der Vertex zugeordnet ist. Die Vertexnormale kann so festgelegt werden, dass sie mit jeder Oberflächennormalen den gleichen Winkel bildet. Diese Methode ist aber für komplexe Grundformen möglicherweise nicht effizient genug.

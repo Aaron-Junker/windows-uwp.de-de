@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 7543b41c6ee1d9c07f4540012f84dccc10bb4d76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922780"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638005"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Fordert Bereitstellungsinformationen für ein oder mehrere installierte Pakete an.
 
@@ -25,7 +25,7 @@ POST | /ext/app/deployinfo
 
 **Anforderungsheader**
 
-- Keiner
+- Keine
 
 **Anforderungstext**
 
@@ -35,7 +35,7 @@ Ein JSON-Array im folgenden Format:
   * PackageFullName: Name des Pakets, zu dem wir Informationen anfordern
   * OverlayFolder: Optionaler Pfad zu einem Overlay-Ordnerpfad, wenn dieses Feature verwendet wird
 
-###<a name="response"></a>Response
+###<a name="response"></a>Antwort
 
 **Antworttext**
 
@@ -49,17 +49,17 @@ Ein JSON-Array in folgendem Format (einige Felder sind optional):
   * DeploySizeInBytes: Die Größe des Pakets in Byte für die entsprechenden Bereitstellungstypen
   * OverlayFolder: Der Overlay-Ordner für Bereitstellungen, die dieses Feature unterstützen
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-200 | Erfolg
+200 | Möglich
 4XX | Fehlercodes
 5XX | Fehlercodes
 <br />
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Xbox

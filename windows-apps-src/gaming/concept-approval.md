@@ -4,14 +4,14 @@ description: Hier erfahren Sie, wie Sie Ihr Produkt zur Konzeptgenehmigung über
 ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
 ms.date: 06/23/2017
 ms.topic: article
-keywords: Windows10, UWP, Konzeptgenehmigung
+keywords: Windows 10, UWP, Konzeptgenehmigung
 ms.localizationpriority: medium
 ms.openlocfilehash: 289da691766e0f2f78bd40aff2ac294ac6852463
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050453"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637175"
 ---
 # <a name="concept-approval"></a>Konzeptgenehmigung
 
@@ -21,7 +21,7 @@ Konzeptgenehmigung ist der Prozess der Übermittlung eines Vorschlags für ein S
 
 Dieser Vorgang ist nur dann erforderlich, wenn Sie ein Spiel auf Xbox durch [ID@Xbox](https://www.xbox.com/Developers/id) oder als verwaltete Partner veröffentlichen. Sie müssen diese Schritte nicht ausführen, wenn Sie dem [Xbox Live Creators-Programm](https://developer.microsoft.com/games/xbox/xboxlive/creator) beitreten und ein Universal Windows Platform (UWP)-Spiel entwickeln, das Sie anschließend selbst an Xbox veröffentlichen. Spiele, die über dieses Programm entwickelt werden, werden jedoch in einem separaten Abschnitt des Store angeboten. Wenn Ihr Spiel zusammen mit großen AAA-Spielen angeboten werden soll oder wenn Sie ein umfassenderes Spiel mit dem Xbox Development Kit (XDK) entwickeln möchten, benötigen Sie eine Konzeptgenehmigung.
 
-Sie benötigen ebenfalls keine Konzeptgenehmigung, wenn Sie ein UWP-Spiel für Windows-Desktopgeräte oder -Mobilgeräte entwickeln(oder wenn Sie eine UWP-App für alle Geräte veröffentlichen, die *kein* Spiel ist). Sie benötigen lediglich ein [Entwicklerkonto](https://go.microsoft.com/fwlink/?LinkId=817223), und Sie können frei konfigurieren und Ihre app über Partner Center an den Store übermitteln.
+Sie benötigen ebenfalls keine Konzeptgenehmigung, wenn Sie ein UWP-Spiel für Windows-Desktopgeräte oder -Mobilgeräte entwickeln(oder wenn Sie eine UWP-App für alle Geräte veröffentlichen, die *kein* Spiel ist). Sie benötigen lediglich ein [Entwicklerkonto](https://go.microsoft.com/fwlink/?LinkId=817223), und Sie können frei konfigurieren und übermitteln Ihrer app an den Store über das Partner Center.
 
 ## <a name="submit-your-concept-for-approval"></a>Übermitteln des Konzepts zur Genehmigung
 

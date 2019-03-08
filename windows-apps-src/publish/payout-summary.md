@@ -1,17 +1,17 @@
 ---
-Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
+Description: Die Auszahlungsübersicht enthält Details zu den mit Ihren Apps und Add-Ons erzielten Erlösen. Sie werden auch darüber informiert, wann Sie Zahlungen erhalten und wie hoch diese Zahlungen sind.
 title: Auszahlungsübersicht
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10 UWP, Auszahlungszusammenfassung, Anweisung, Zahlungen, Einnahmen, Auszahlung, Einnahmen
+keywords: Windows 10 UWP, Auszahlungszusammenfassung, Anweisung, Zahlungen, Einnahmen, Auszahlung, Einnahmen
 ms.localizationpriority: medium
 ms.openlocfilehash: e9ab2d2d096c6c0a639a831bb7d09f6d1d044a0c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046240"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629735"
 ---
 # <a name="payout-summary"></a>Auszahlungsübersicht
 
@@ -27,13 +27,13 @@ Wenn Sie Produkte im Azure Marketplace verkaufen, werden Ihnen in der **Auszahlu
 >
 > Zahlungen erfolgen monatlich (vorausgesetzt, der entsprechenden Zahlungsschwellenwert wird erreicht). In der Regel senden wir Zahlungen, die in einem bestimmten Monat fällig sind, bis zum 15. Tag dieses Monats. Beachten Sie, dass Zahlungen in der Regel zwischen drei und zehn zusätzliche Werktage benötigen, um Ihr Konto zu erreichen. Weitere Informationen finden Sie unter [Auszahlungsschwellenwerte, Methoden und Zeiträume](payment-thresholds-methods-and-timeframes.md).
 
-Um die **Auszahlungsübersicht**anzuzeigen, klicken Sie auf die **Auszahlung** -Symbol, das in der Nähe der oberen rechten Ecke im Partner Center angezeigt wird, und wählen Sie dann **Auszahlungszusammenfassung**.
+Anzeigen Ihrer **auszahlungszusammenfassung**, klicken Sie auf die **Auszahlung** wählen Sie in der Nähe der oberen rechten Ecke im Partner Center angezeigte Symbol ab **auszahlungszusammenfassung**.
 
 ## <a name="current-proceeds-and-payments"></a>Aktuelle Erlöse und Auszahlungen
 
-Oben auf der Seite finden Sie den Bereich **Aktuelle Einnahmen und Zahlungen**, der drei Abschnitte enthält: **Reserviert**, **Anstehende Zahlungen** und **Letzte Zahlung**.
+Finden Sie im oberen Bereich der Seite Ihrer **aktuelle fortgesetzt und Zahlungen**, enthält drei Abschnitte: **Reservierte**, **anstehende Zahlungen**, und **letzte Zahlung**.
 
--   Unter **Reserviert** wird der Betrag angezeigt, der sich auf Ihrem Konto angesammelt hat, für den jedoch noch keine Auszahlung geplant ist. Darin sind Erlöse aus Werbung enthalten. (Azure Marketplace-Erlöse werden nicht im Abschnitt **Reserviert** angezeigt. Wenn Sie nur am Azure Marketplace teilnehmen, sehen Sie hier 0,00 Euro.) Erlöse aus Ihren letzten Werbungs- und App-Verkäufen bleiben ausstehend und können erst nach ca. 30 Tagen ausgezahlt werden. Danach wird die Auszahlung für den folgenden Monat geplant (vorausgesetzt, der [Zahlungsschwellenwert](payment-thresholds-methods-and-timeframes.md) wurde erreicht). Beim Versuch einer Zahlung wird Ihr reservierter Kontostand um den Zahlungsbetrag verringert, und der Betrag wird in **Anstehende Zahlungen** angezeigt. Beachten Sie, dass der in **Reserviert** angezeigte Betrag nur ein Schätzwert ist, da die Wechselkurse für Verkäufe in anderen Währungen vor dem Erstellen der eigentlichen Zahlung schwanken können. Unter Umständen bemerken Sie, dass sich Ihr reservierter Kontostand am Anfang jedes Monats jeweils leicht ändert. Der reservierte Kontostand wird monatlich aktualisiert, um die monatlichen Wechselkurse widerzuspiegeln, damit eine präzisere Schätzung möglich ist. Sie können auf **Details anzeigen** klicken, um weitere Informationen anzuzeigen, oder auf den Link **Reservierte Transaktionen herunterladen**, um eine CSV-Datei mit Ihren gesamten **Reservierten** Transaktionen anzuzeigen.
+-   Unter **Reserviert** sehen Sie den Betrag, der sich auf Ihrem Konto angesammelt hat, für den jedoch noch keine Auszahlung geplant ist. Darin sind Erlöse aus Werbung enthalten. (Azure Marketplace wird fortgesetzt, erscheinen nicht in der **reserviert** Abschnitt, wenn Sie nur im Azure Marketplace teilnehmen, werden 0,00 US-Dollar hier angezeigt.) Wird von der letzten app, für die Sales im Status "Ausstehend" für etwa 30 Tage bleibt, bevor sie für die Auszahlungen geeignet sind. Danach wird die Auszahlung für den folgenden Monat geplant (vorausgesetzt, der [Zahlungsschwellenwert](payment-thresholds-methods-and-timeframes.md) wurde erreicht). Beim Versuch einer Zahlung wird Ihr reservierter Kontostand um den Zahlungsbetrag verringert, und der Betrag wird in **Anstehende Zahlungen** angezeigt. Beachten Sie, dass der in **Reserviert** angezeigte Betrag nur ein Schätzwert ist, da die Wechselkurse für Verkäufe in anderen Währungen vor dem Erstellen der eigentlichen Zahlung schwanken können. Unter Umständen bemerken Sie, dass sich Ihr reservierter Kontostand am Anfang jedes Monats jeweils leicht ändert. Der reservierte Kontostand wird monatlich aktualisiert, um die monatlichen Wechselkurse widerzuspiegeln, damit eine präzisere Schätzung möglich ist. Sie können auf **Details anzeigen** klicken, um weitere Informationen anzuzeigen, oder auf den Link **Reservierte Transaktionen herunterladen**, um eine CSV-Datei mit Ihren gesamten **Reservierten** Transaktionen anzuzeigen.
 -   Unter **Anstehende Zahlungen** wird die Anzahl von bevorstehenden Auszahlungen, der Betrag Ihrer nächsten Auszahlung und das Erstellungsdatum der Auszahlung angezeigt. Haben Ihre Erlöse den [Auszahlungsschwellenwert](payment-thresholds-methods-and-timeframes.md) noch nicht erreicht, wird hier keine bevorstehende Auszahlung angezeigt. Wählen Sie **Details anzeigen**, um weitere Informationen, einschließlich Auszahlungsbeträgen und die jeweilige Einnahmequelle, anzuzeigen. Wenn ein Betrag angezeigt um Abschnitt **Anstehende Zahlungen** angezeigt wird, sehen Sie einen temporären Links zu **Transaktionen herunterladen**.  Wenn Sie auf den Link klicken, sehen Sie eine .csv-Datei mit allen Transaktionen, die zu Ihren anstehenden Zahlungen beitragen.  Beachten Sie: Wenn sich der Betrag der **anstehenden Zahlungen** zu **Letzte Zahlung** bewegt, wird der Link **Transaktionen herunterladen** nicht mehr angezeigt.
 -   Unter **Letzte Zahlung** wird der Betrag des letzten Auszahlungsversuchs angezeigt. Wenn die Zahlung erfolgreich war, wird der Link **Details anzeigen** blau dargestellt, und Sie können auf den Link klicken, um die Details für jede Zahlung anzuzeigen. Wenn mehrere Auszahlungen versucht wurden und nur eine Auszahlung erfolgreich war, wird hier nur der Betrag der erfolgreichen Auszahlung angezeigt. Ist bei mindestens einer Auszahlung ein Fehler aufgetreten, wird der Link **Details anzeigen** rot dargestellt, und die Anzahl fehlgeschlagener Auszahlungen wird angezeigt. Klicken Sie auf **Details anzeigen**, um weitere Details zum Problem anzuzeigen, damit Sie es beheben können.
 
@@ -77,10 +77,10 @@ Oben in jeder Aufstellung sehen Sie den Link **Download transactions** (Transakt
 
 In der folgenden Tabelle werden die Felder der CSV-Datei erläutert. Beachten Sie, dass die angezeigten Felder variieren können, wenn wir die Berichte aktualisieren.
 
-| Feldname              | Beschreibung                                                                                                                              |
+| Name des Felds              | Beschreibung                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | Umsatzquelle          | Die Quelle der Umsätze, basierend auf dem Transaktionsort (z. B. Microsoft Store, Windows Phone Store, Microsoft Store 8, Werbung usw.). |
-| Bestellnummer                |  Eindeutiger Bezeichner für die Bestellung. Anhand dieser ID können Sie kaufbezogene Transaktionen und die entsprechenden Transaktionen, die sich nicht auf Käufe beziehen (z.B. Erstattungen, Rückvergütungen usw.), ermitteln. Beide Arten von Transaktionen besitzen die gleiche Bestell-ID. Im Fall einer aufgeteilten Belastung, bei der mehrere Zahlungsmethoden für einen einzelnen Einkauf verwendet wurden, können Sie die kaufbezogenen Transaktionen verknüpfen.                                                                                                          |
+| Bestellnummer                |  Eindeutiger Bezeichner für die Bestellung. Anhand dieser ID können Sie kaufbezogene Transaktionen und die entsprechenden Transaktionen, die sich nicht auf Käufe beziehen (z. B. Erstattungen, Rückvergütungen usw.), ermitteln. Beide Arten von Transaktionen besitzen die gleiche Bestell-ID. Im Fall einer aufgeteilten Belastung, bei der mehrere Zahlungsmethoden für einen einzelnen Einkauf verwendet wurden, können Sie die kaufbezogenen Transaktionen verknüpfen.                                                                                                          |
 | Transaktions-ID          |       Eindeutige Transaktions-ID.  |
 | Datum/Uhrzeit der Transaktion   | Das Datum und die Uhrzeit der Transaktion (UTC).                                                                                        |
 | Übergeordnete Produkt-ID       | Eindeutige übergeordnete Produkt-ID. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet die ID des übergeordneten Produkts „Produkt-ID“. |
@@ -89,8 +89,8 @@ In der folgenden Tabelle werden die Felder der CSV-Datei erläutert. Beachten Si
 | Produktname            | Name des Produkts.                                                                                                                     |
 | Produkttyp            | Art des Produkts (z. B. App, Add-On, Spiel usw.)                                                                                        |
 | Anzahl                | Wenn die Umsatzquelle „Microsoft Store für Unternehmen“ ist, gibt die Menge die Anzahl der erworben Lizenzen an. Für alle anderen Umsatzquellen ist die Menge immer 1. Hinweis: Auch wenn eine Transaktion in zwei Positionen unterteilt wird, weil zwei verschiedene Zahlungsmethoden verwendet wurden, wird für jede Position die Menge 1 angezeigt.    |
-| Transaktionstyp        | Art der Transaktion (z.B. Einkauf, Erstattung, Rückbuchung, Ausgleich usw.)                                                                |
-| Zahlungsmethode          | Kundenzahlungsmittel, das für die Transaktion verwendet wird (z.B. Kreditkarte, Mobilfunkanbieterrechnung, PayPal usw.)                                 |
+| Transaktionstyp        | Art der Transaktion (z. B. Einkauf, Erstattung, Rückbuchung, Ausgleich usw.)                                                                |
+| Zahlungsmethode          | Kundenzahlungsmittel, das für die Transaktion verwendet wird (z. B. Kreditkarte, Mobilfunkanbieterrechnung, PayPal usw.)                                 |
 | Land/Region        | Land/Region, in dem die Transaktion durchgeführt wurde.                                                                                            |
 | Lokaler Anbieter/Verkäufer | Eingetragener lokaler Anbieter/Verkäufer.                                                                                                          |
 | Transaktionswährung    | Währung der Transaktion.                                                                                                              |

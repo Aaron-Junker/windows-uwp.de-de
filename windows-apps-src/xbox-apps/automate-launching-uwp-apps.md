@@ -1,15 +1,15 @@
 ---
-title: Automatisieren des Starts für Apps der universellen Windows Plattform (UWP) in Windows10
+title: Automatisieren des Starts für Apps der universellen Windows Plattform (UWP) in Windows 10
 description: Mit der Protokoll- und Startaktivierung können Entwickler ihre UWP-Apps oder Spiele für automatisierte Tests automatisch starten.
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
 ms.openlocfilehash: fb68b4bbd1b751591e9f336efe5dad3c22b3bf92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937199"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618305"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Automatisieren des Starts von UWP-Apps unter Windows 10
 
@@ -101,7 +101,7 @@ Uri(URI));
        }
 }
 ```
-Für die Protokollaktivierung mit der Startanwendung gelten dieselben Einschränkungen für Argumente wie für die Protokollaktivierung mit der Befehlszeile. Beide unterstützen Unicode-Zeichen bis maximal 2038Zeichen auf dem unformatierten URI. 
+Für die Protokollaktivierung mit der Startanwendung gelten dieselben Einschränkungen für Argumente wie für die Protokollaktivierung mit der Befehlszeile. Beide unterstützen Unicode-Zeichen bis maximal 2038 Zeichen auf dem unformatierten URI. 
 
 ## <a name="launch-activation"></a>Startaktivierung
 
@@ -210,6 +210,6 @@ void OnActivated(IActivatedEventArgs^ args)
 ## <a name="summary"></a>Zusammenfassung
 Zusammenfassend lässt sich sagen, dass für den Start der UWP-App verschiedene Methoden zur Verfügung stehen. Je nach Anforderungen und Anwendungsfällen können manche Methoden besser geeignet sein als andere. 
 
-## <a name="see-also"></a>Weitere Informationen
-- [UWP auf Xbox One](index.md)
+## <a name="see-also"></a>Siehe auch
+- [UWP auf Xbox One](index.md)
 

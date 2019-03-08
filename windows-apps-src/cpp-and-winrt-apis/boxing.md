@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, XAML, steuerelement, boxing, einzelwert
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c86d1ac8ce83ea092ce0e2730ea0e9d4a201b94
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927311"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639675"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Boxing und Unboxing von Einzelwerten für IInspectable mit C++/WinRT
  
@@ -18,7 +18,7 @@ Die [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspecta
 
 Mit anderen Worten, eine Funktion, die **IInspectable** erwartet, kann eine Instanz einer beliebigen Laufzeitklasse übergeben werden. Sie können aber nicht direkt einen Einzelwert, wie z. B. einen Zahlen- oder Textwert, an eine solche Funktion übergeben. Stattdessen muss ein Einzelwert in ein Objekt der Referenzklasse gepackt werden. Dieser Wrapping-Prozess wird als *Boxing* des Wertes bezeichnet.
 
-[C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) bietet die [**WinRT:: box_value**](/uwp/cpp-ref-for-winrt/box-value) -Funktion, die einen Einzelwert entgegennimmt und den boxed-Wert in einer **IInspectable**gibt. Um ein **IInspectable** wieder in einen Einzelwert zu entpacken, gibt es die Funktionen [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) und [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or).
+[C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) bietet die [ **winrt::box_value** ](/uwp/cpp-ref-for-winrt/box-value) -Funktion, die einen skalaren Wert akzeptiert, und gibt den Wert, der mittels Boxing konvertiert in eine **"iinspectable"**. Um ein **IInspectable** wieder in einen Einzelwert zu entpacken, gibt es die Funktionen [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) und [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or).
 
 ## <a name="examples-of-boxing-a-value"></a>Beispiele für das Boxen eines Wertes
 Die Zugriffsfunktion [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) gibt einen [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) zurück, der ein Einzelwert ist. Wir können diesen **hstring**-Wert einpacken und an eine Funktion übergeben, die so ein **IInspectable** erwartet.
@@ -64,7 +64,7 @@ WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType:
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [IInspectable-Schnittstelle](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [winrt::box_value Funktionsvorlage](/uwp/cpp-ref-for-winrt/box-value)
-* [winrt::hstring Struktur](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::unbox_value Funktionsvorlage](/uwp/cpp-ref-for-winrt/unbox-value)
-* [winrt::unbox_value_or Funktionsvorlage](/uwp/cpp-ref-for-winrt/unbox-value-or)
+* [Vorlage für WinRT::box_value-Funktion](/uwp/cpp-ref-for-winrt/box-value)
+* [WinRT::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
+* [Vorlage für WinRT::unbox_value-Funktion](/uwp/cpp-ref-for-winrt/unbox-value)
+* [Vorlage für WinRT::unbox_value_or-Funktion](/uwp/cpp-ref-for-winrt/unbox-value-or)

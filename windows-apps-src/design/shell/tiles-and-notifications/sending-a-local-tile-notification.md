@@ -1,23 +1,23 @@
 ---
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
+Description: In diesem Artikel wird beschrieben, wie Sie mit adaptiven Kachelvorlagen eine lokale Benachrichtigung an eine primäre Kachel und an eine sekundäre Kachel senden.
 title: Senden einer lokalen Kachelbenachrichtigung
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946315"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636105"
 ---
 # <a name="send-a-local-tile-notification"></a>Senden einer lokalen Kachelbenachrichtigung
  
 
-Primäre app-Kacheln in Windows 10 werden in Ihrem app-Manifest definiert, während sekundäre Kacheln programmgesteuert erstellt und vom app-Code definiert. In diesem Artikel wird beschrieben, wie Sie eine lokale Benachrichtigung an eine primäre Kachel und an eine sekundäre Kachel mit adaptiven Kachelvorlagen senden. (Eine lokale Benachrichtigung wird vom App-Code gesendet, im Gegensatz zu Benachrichtigungen, die ein Webserver per Push oder Pull sendet.)
+Primären app-Kacheln in Windows 10 werden in app-Manifest definiert, während sekundäre Kacheln sind programmgesteuert erstellt und von Ihrem app-Code definiert. In diesem Artikel wird beschrieben, wie Sie mit adaptiven Kachelvorlagen eine lokale Benachrichtigung an eine primäre Kachel und an eine sekundäre Kachel senden. (Eine lokale Benachrichtigung wird vom App-Code gesendet, im Gegensatz zu Benachrichtigungen, die ein Webserver per Push oder Pull sendet.)
 
 ![Standardkachel und Kachel mit Benachrichtigung](images/sending-local-tile-01.png)
 
@@ -46,7 +46,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>Erstellen des Benachrichtigungsinhalts
 
 
-In Windows 10 werden kachelnutzlasten mit Vorlagen für adaptive Kacheln, die Ihnen ermöglichen, erstellen Sie benutzerdefinierte visuelle Layouts für Ihre Benachrichtigungen definiert. (Informationen darüber, was mit adaptiven Kacheln möglich ist, finden Sie unter [Erstellen adaptiver Kacheln und Vorlagen für adaptive Kacheln](create-adaptive-tiles.md).)
+In Windows 10 werden die Kachel-Nutzlasten mit adaptive Vorlagen, die Ihnen ermöglichen, erstellen Sie benutzerdefinierte visual Layouts für Ihre Benachrichtigungen definiert. (Informationen darüber, was mit adaptiven Kacheln möglich ist, finden Sie unter [Erstellen adaptiver Kacheln und Vorlagen für adaptive Kacheln](create-adaptive-tiles.md).)
 
 Dieses Codebeispiel erstellt adaptive Kachelinhalte für mittelgroße und breite Kacheln.
 
@@ -164,7 +164,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 
 **Sekundäre Kachel**
 
-Um eine Benachrichtigung an eine sekundäre Kachel zu senden, müssen Sie zuerst sicherstellen Sie, dass die sekundäre Kachel vorhanden ist. Wenn Sie versuchen, eine Kachelaktualisierung für eine sekundäre Kachel zu erstellen, die nicht vorhanden ist (z.B. wenn der Benutzer die sekundäre Kachel gelöst hat), wird eine Ausnahme ausgelöst. Sie können mit [**SecondaryTile.Exists**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId) ermitteln, ob die sekundäre Kachel angeheftet ist, und dann eine Kachelaktualisierung für eine sekundäre Kachel erstellen und die Benachrichtigung senden.
+Um eine Benachrichtigung an eine sekundäre Kachel zu senden, müssen Sie zuerst sicherstellen Sie, dass die sekundäre Kachel vorhanden ist. Wenn Sie versuchen, eine Kachelaktualisierung für eine sekundäre Kachel zu erstellen, die nicht vorhanden ist (z. B. wenn der Benutzer die sekundäre Kachel gelöst hat), wird eine Ausnahme ausgelöst. Sie können mit [**SecondaryTile.Exists**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId) ermitteln, ob die sekundäre Kachel angeheftet ist, und dann eine Kachelaktualisierung für eine sekundäre Kachel erstellen und die Benachrichtigung senden.
 
 Mit diesem Codebeispiel wird eine Benachrichtigung an eine sekundäre Kachel gesendet.
 
@@ -202,11 +202,11 @@ Durch regelmäßige oder Push-Benachrichtigungen können nur neue Benachrichtigu
 ## <a name="next-steps"></a>Nächste Schritte
 
 
-**Verwenden der Benachrichtigungswarteschlange**
+**Verwenden die Benachrichtigungswarteschlange**
 
 Nachdem Sie Ihre erste Kachelaktualisierung ausgeführt haben, können Sie die Funktionalität der Kachel erweitern, indem Sie eine [Benachrichtigungswarteschlange](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234) aktivieren.
 
-**Andere Methoden für die Benachrichtigungsübermittlung**
+**Andere Methoden zur Übermittlung von Benachrichtigungen**
 
 In diesem Artikel wird erläutert, wie die Kachelaktualisierung als Benachrichtigung gesendet werden kann. Informationen zu anderen Methoden der Benachrichtigungsübermittlung, einschließlich geplanter, regelmäßiger und Push-Benachrichtigungen, finden Sie unter [Zustellen von Benachrichtigungen](choosing-a-notification-delivery-method.md).
 
@@ -287,12 +287,12 @@ var notification = new TileNotification(doc);
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen adaptiver Kacheln](create-adaptive-tiles.md)
-* [Kachelinhaltsschema](../tiles-and-notifications/tile-schema.md)
+* [Inhaltsschema Kachel](../tiles-and-notifications/tile-schema.md)
 * [Benachrichtigungsbibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
-* [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
-* [**Windows.UI.Notifications-Namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [So wird’s gemacht: Verwenden der Benachrichtigungswarteschlange (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
-* [Zustellen von Benachrichtigungen](choosing-a-notification-delivery-method.md)
+* [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [**Windows.UI.Notifications-namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
+* [Gewusst wie: Verwenden Sie die Benachrichtigungswarteschlange (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [Übermittlung von Benachrichtigungen](choosing-a-notification-delivery-method.md)
  
 
  

@@ -1,26 +1,26 @@
 ---
-title: Kommunikation mit einem App-Remotedienst
+title: Kommunizieren mit einem App-Remotedienst
 description: Tauschen Sie Nachrichten mit einem App-Dienst aus, der auf einem Remotegerät mit Project Rome ausgeführt wird.
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, verbundenen Geräten, remote-Systemen, Rome, Project Rome, Hintergrundaufgabe, app-Dienst
+keywords: Windows 10, Uwp, verbundene Geräte, Remotesysteme, "ROME", Projekt "ROME", Hintergrundtasks, app service
 ms.localizationpriority: medium
 ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939458"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612935"
 ---
-# <a name="communicate-with-a-remote-app-service"></a>Kommunikation mit einem App-Remotedienst
+# <a name="communicate-with-a-remote-app-service"></a>Kommunizieren mit einem App-Remotedienst
 
 Sie können nicht nur eine App auf einem Remotegerät mithilfe eines URI starten, sondern auch *App-Dienste* auf Remotegeräten ausführen und mit ihnen kommunizieren. Jedes Windows-basierte Gerät kann als Client- oder Hostgerät verwendet werden. Dies bietet Ihnen eine nahezu unbegrenzte Anzahl von Möglichkeiten zur Interaktion mit verbundenen Geräten, ohne eine App in den Vordergrund bringen zu müssen.
 
 ## <a name="set-up-the-app-service-on-the-host-device"></a>Einrichten des App-Diensts auf dem Hostgerät
 Um einen App-Dienst auf einem Remotegerät ausführen zu können, muss bereits ein Anbieter dieses App-Diensts auf dem Hostgerät installiert sein. In dieser Anleitung wird die CSharp-Version des [Beispiels für den App-Dienst für die Generierung von Zufallszahlen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices) verwendet, das im [universellen Windows-Beispielrepository](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices) verfügbar ist. Anleitungen zum Schreiben eines eigenen App-Diensts finden Sie unter [Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md).
 
-Gleichgültig, ob Sie einen bereits erstellten App-Dienst verwenden oder einen eigenen schreiben, Sie müssen einige Änderungen vornehmen, um den Dienst mit Remotesystemen kompatibel zu machen. Wechseln Sie in Visual Studio zum Projekt des App-Dienstanbieters (im Beispiel „AppServicesProvider”genannt), und wählen Sie die Datei _Package.appxmanifest_ aus. Klicken Sie mit der rechten Maustaste, und wählen Sie **Code anzeigen** aus, um den gesamten Inhalt der Datei anzuzeigen. Erstellen Sie ein " **Extensions** "-Element innerhalb **der wichtigsten Anwendungselement** (oder finden Sie es, wenn sie bereits vorhanden ist). Erstellen Sie eine **Erweiterung** , um das Projekt als app-Dienst definieren und das übergeordnete Projekt verweisen.
+Gleichgültig, ob Sie einen bereits erstellten App-Dienst verwenden oder einen eigenen schreiben, Sie müssen einige Änderungen vornehmen, um den Dienst mit Remotesystemen kompatibel zu machen. Wechseln Sie in Visual Studio zum Projekt des App-Dienstanbieters (im Beispiel „AppServicesProvider”genannt), und wählen Sie die Datei _Package.appxmanifest_ aus. Klicken Sie mit der rechten Maustaste, und wählen Sie **Code anzeigen** aus, um den gesamten Inhalt der Datei anzuzeigen. Erstellen Sie eine **Erweiterungen** -Element innerhalb der Hauptseite **Anwendung** Element (oder suchen sie nach, wenn sie bereits vorhanden ist). Erstellen Sie dann eine **Erweiterung** definieren das Projekt als app Service und seine übergeordneten Projekt zu verweisen.
 
 ``` xml
 ...
@@ -32,7 +32,7 @@ Gleichgültig, ob Sie einen bereits erstellten App-Dienst verwenden oder einen e
 ...
 ```
 
-Fügen Sie neben der **AppService** -Element das Attribut **SupportsRemoteSystems** :
+Neben der **AppService** -Element, fügen die **SupportsRemoteSystems** Attribut:
 
 ``` xml
 ...
@@ -40,7 +40,7 @@ Fügen Sie neben der **AppService** -Element das Attribut **SupportsRemoteSystem
 ...
 ```
 
-Um Elemente in diesem **uap3** -Namespace verwenden, müssen Sie die Namespacedefinition am Anfang der manifest-Datei hinzufügen, wenn es nicht bereits vorhanden ist.
+Um Elemente zu verwenden, in diesem **uap3** -Namespace, müssen Sie Hinzufügen der Namespacedefinition am Anfang der manifest-Datei, wenn er nicht bereits vorhanden ist.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -53,7 +53,7 @@ Um Elemente in diesem **uap3** -Namespace verwenden, müssen Sie die Namespacede
 </Package>
 ```
 
-Dann erstellen Sie Ihr app-dienstanbieterprojekt, und Bereitstellen Sie es auf die Host-Geräte.
+Anschließend erstellen Sie Ihr app Service-Anbieter-Projekt, und für die Host-Geräte bereitstellen.
 
 ## <a name="target-the-app-service-from-the-client-device"></a>Aufrufen des App-Diensts vom Clientgerät
 Das Gerät, von dem der App-Remotedienst aufgerufen werden soll, muss über eine App mit Remotesystemfunktionen verfügen. Diese können der gleichen App hinzugefügt werden, die den App-Dienst auf dem Hostgerät bereitstellt (in diesem Fall installieren Sie gleiche App auf beiden Geräten), oder in einer völlig anderen App implementiert werden.
@@ -86,8 +86,8 @@ Sie haben jetzt eine Verbindung zu einem App-Dienst auf einem aufgerufenen Hostg
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-[Übersicht über verbundene Apps und Geräte (Project Rome)](connected-apps-and-devices.md)  
-[Starten einer Remote-App](launch-a-remote-app.md)  
-[Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md)  
-[API-Referenz für Remotesysteme](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[Verbundene apps und Geräten (Projekt "ROME") (Übersicht)](connected-apps-and-devices.md)  
+[Starten Sie eine remote-app](launch-a-remote-app.md)  
+[Erstellen Sie und nutzen Sie einen app service](how-to-create-and-consume-an-app-service.md)  
+[Remote-Systemen-API-Referenz](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [Beispiel für Remotesysteme](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

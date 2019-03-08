@@ -1,22 +1,22 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-Description: The TextBox control lets a user enter text into an app.
+Description: Mit dem TextBox-Steuerelement können Benutzer Text in eine App eingeben.
 title: Textfeld
 label: Text box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e3faf82ab9786f6ba079e44d79b6ed49394b881
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117790"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602685"
 ---
 # <a name="text-box"></a>Textfeld
 
@@ -28,7 +28,7 @@ TextBox bietet eine Reihe von Features, mit denen die Texteingabe vereinfacht we
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Ein **TextBox**-Steuerelement ermöglicht es Benutzern, unformatierten Text einzugeben und zu bearbeiten, z.B. in einem Formular. Mit der [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)-Eigenschaft können Sie den Text in einem TextBox abrufen und festlegen.
+Ein **TextBox**-Steuerelement ermöglicht es Benutzern, unformatierten Text einzugeben und zu bearbeiten, z. B. in einem Formular. Mit der [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)-Eigenschaft können Sie den Text in einem TextBox abrufen und festlegen.
 
 Sie können das TextBox-Element als schreibgeschützt festlegen, dies sollte aber nur ein temporärer, bedingter Zustand sein. Wenn der Text nie bearbeitbar sein soll, ziehen Sie stattdessen die Verwendung eines [TextBlock](text-block.md)-Elements in Erwägung.
 
@@ -49,8 +49,8 @@ Weitere Informationen zur Auswahl des passenden Textsteuerelements finden Sie im
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/TextBox">die App zu öffnen und TextBox in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -83,7 +83,7 @@ Dieser XAML-Code führt zu folgendem Textfeld.
 
 Üblicherweise wird ein Textfeld verwendet, um die Dateneingabe in ein Formular zu ermöglichen, wobei die [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)-Eigenschaft dazu dient, die vollständige Textzeichenfolge aus dem Textfeld abzurufen. Zum Zugriff auf die Text-Eigenschaft nutzen Sie in der Regel ein Ereignis wie etwa eine Schaltfläche, Sie können jedoch auch ein [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx)- oder [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx)-Ereignis verwenden, wenn bei einer Textänderung eine Aktion ausgeführt werden muss.
 
-Dieses Beispiel zeigt, wie Sie abrufen und Festlegen des aktuellen Inhalts eines Textfelds.
+Dieses Beispiel zeigt, wie Sie abrufen, und legen Sie den aktuellen Inhalt eines Textfelds.
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -95,7 +95,7 @@ string sampleText = SampleTextBox.Text;
 SampleTextBox.Text = "Sample text retrieved";
 ```
 
-Sie können dem Textfeld eine [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx)-Eigenschaft (oder eine Beschriftung) und eine [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx)-Eigenschaft (oder ein Wasserzeichen) hinzufügen, um Benutzern einen Hinweis bezüglich des Verwendungszwecks zu geben. Um das Erscheinungsbild der Überschrift anzupassen, können Sie anstelle der Header-Eigenschaft die [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx)-Eigenschaft festlegen. *Informationen zum Design finden Sie unter „Richtlinien für Beschriftungen“*.
+Sie können dem Textfeld eine [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx)-Eigenschaft (oder eine Beschriftung) und eine [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx)-Eigenschaft (oder ein Wasserzeichen) hinzufügen, um Benutzern einen Hinweis bezüglich des Verwendungszwecks zu geben. Um das Erscheinungsbild der Überschrift anzupassen, können Sie anstelle der Header-Eigenschaft die [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx)-Eigenschaft festlegen. *Informationen zum Design finden Sie unter „Richtlinien für Beschriftungen”*.
 
 Sie können die Anzahl der Zeichen, die der Benutzer eingeben darf, beschränken, indem Sie die [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx)-Eigenschaft festlegen. MaxLength beschränkt jedoch nicht die Länge des eingefügten Texts. Verwenden Sie das [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx)-Ereignis, um eingefügten Text zu bearbeiten, wenn dies für Ihre App von Bedeutung ist.
 
@@ -108,10 +108,10 @@ Die „Alles löschen”-Schaltfläche wird nur für bearbeitbare, einzeilige Te
 In den folgenden Fällen wird die „Alles löschen”-Schaltfläche nicht angezeigt:
 
 - **IsReadOnly** hat den Wert **true**.
-- **AcceptsReturn** hat den Wert **true**.
+- **AcceptsReturn** ist **true**.
 - **TextWrap** hat einen anderen Wert als **NoWrap**.
 
-Dieses Beispiel zeigt, wie Sie abrufen und Festlegen des aktuellen Inhalts eines Textfelds.
+Dieses Beispiel zeigt, wie Sie abrufen, und legen Sie den aktuellen Inhalt eines Textfelds.
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -128,7 +128,7 @@ SampleTextBox.Text = "Sample text retrieved";
 
 Sie können ein Textfeld auf schreibgeschützt festlegen, indem Sie die [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx)-Eigenschaft auf **true** festlegen. Diese Eigenschaft werden Sie in Ihrem App-Code üblicherweise basierend auf den Bedingungen in Ihrer App umschalten. Wenn Text immer schreibgeschützt sein soll, ziehen Sie stattdessen die Verwendung eines TextBlock-Elements in Erwägung.
 
-Sie können ein TextBox-Element auf schreibgeschützt festlegen, indem Sie die IsReadOnly-Eigenschaft auf true festlegen. Sie können z.B. ein Textfeld bereitstellen, in das Benutzer Kommentare eingeben können und das nur unter bestimmten Bedingungen aktiviert wird. Sie können das Textfeld als schreibgeschützt festlegen, bis die Bedingungen erfüllt sind. Wenn Text nur angezeigt werden soll, ziehen Sie stattdessen die Verwendung eines TextBlock- oder RichtTextBlock-Elements in Erwägung.
+Sie können ein TextBox-Element auf schreibgeschützt festlegen, indem Sie die IsReadOnly-Eigenschaft auf true festlegen. Sie können z. B. ein Textfeld bereitstellen, in das Benutzer Kommentare eingeben können und das nur unter bestimmten Bedingungen aktiviert wird. Sie können das Textfeld als schreibgeschützt festlegen, bis die Bedingungen erfüllt sind. Wenn Text nur angezeigt werden soll, ziehen Sie stattdessen die Verwendung eines TextBlock- oder RichtTextBlock-Elements in Erwägung.
 
 Ein schreibgeschütztes Textfeld sieht genauso aus wie ein Textfeld zum Lesen/Schreiben, was auf Benutzer verwirrend wirken könnte.
 Ein Benutzer kann Text auswählen und kopieren.
@@ -171,7 +171,7 @@ Das Textfeld sieht nach dem Hinzufügen von Text folgendermaßen aus.
 
 Verwenden Sie die [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment)-Eigenschaft, um Text innerhalb eines Textfelds auszurichten. Verwenden Sie zum Ausrichten des Textfelds innerhalb des Seitenlayouts die Eigenschaften [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) und [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx).
 
-Obwohl das TextBox-Element nur unformatierten Text unterstützt, können Sie zur Anpassung an das Branding Ihrer App festlegen, wie der Text im Textfeld angezeigt wird. Sie können Standardeigenschaften von [Steuerelementen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx), z.B. [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx), [FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx), [FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx), [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx), [Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) und [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx), festlegen, um das Erscheinungsbild des Texts zu ändern. Diese Eigenschaften beeinflussen nur die lokale Anzeige des Texts im Textfeld. Wenn Sie den Text kopieren und z.B. in ein Rich-Text-Steuerelement einfügen, wird daher keine Formatierung angewendet.
+Obwohl das TextBox-Element nur unformatierten Text unterstützt, können Sie zur Anpassung an das Branding Ihrer App festlegen, wie der Text im Textfeld angezeigt wird. Sie können Standardeigenschaften von [Steuerelementen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx), z. B. [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx), [FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx), [FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx), [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx), [Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) und [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx), festlegen, um das Erscheinungsbild des Texts zu ändern. Diese Eigenschaften beeinflussen nur die lokale Anzeige des Texts im Textfeld. Wenn Sie den Text kopieren und z. B. in ein Rich-Text-Steuerelement einfügen, wird daher keine Formatierung angewendet.
 
 In diesem Beispiel wird ein schreibgeschütztes TextBox-Element mit mehreren festgelegten Eigenschaften zur Anpassung des Erscheinungsbilds des Textes dargestellt.
 
@@ -207,7 +207,7 @@ Das resultierende Textfeld sieht wie folgt aus.
 
 Standardmäßig hängen die im Kontextmenü des Textfelds angezeigten Befehle vom Zustand des Textfelds ab. Die folgenden Befehle können zum Beispiel angezeigt werden, wenn das Textfeld bearbeitbar ist.
 
-Befehl | Angezeigt, wenn...
+Befehl | Angezeigt, wenn ...
 ------- | -------------
 Kopieren | Text ausgewählt ist.
 Ausschneiden | Text ausgewählt ist.
@@ -221,7 +221,7 @@ Um die im Kontextmenü angezeigten Befehle zu ändern, müssen Sie das [ContextM
 
 Sie können markierten Text in einem TextBox-Element [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx)-Eigenschaft abrufen und festlegen. Verwenden Sie die Eigenschaften [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) und [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) sowie die Methoden [Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) und [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx), um die Textauswahl zu bearbeiten. Behandeln Sie das [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx)-Ereignis, um eine Aktion auszuführen, wenn der Benutzer Text markiert oder die Markierung aufhebt. Durch Festlegen der [SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx)-Eigenschaft können Sie die zum Hervorheben von ausgewähltem Text verwendete Farbe ändern.
 
-TextBox unterstützt standardmäßig das Kopieren und Einfügen. Sie können eine benutzerdefinierte Behandlung des [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx)-Ereignisses für Steuerelemente für editierbaren Text Ihrer App ermöglichen. Sie könnten z.B. die Zeilenumbrüche aus einer mehrzeiligen Adresse entfernen, die in ein einzeiliges Suchfeld eingegeben wird. Oder Sie überprüfen die Länge des eingefügten Texts und warnen den Benutzer, wenn die maximale Textlänge, die in einer Datenbank gespeichert werden kann, überschritten ist. Weitere Informationen und Beispiele finden Sie im [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx)-Ereignis.
+TextBox unterstützt standardmäßig das Kopieren und Einfügen. Sie können eine benutzerdefinierte Behandlung des [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx)-Ereignisses für Steuerelemente für editierbaren Text Ihrer App ermöglichen. Sie könnten z. B. die Zeilenumbrüche aus einer mehrzeiligen Adresse entfernen, die in ein einzeiliges Suchfeld eingegeben wird. Oder Sie überprüfen die Länge des eingefügten Texts und warnen den Benutzer, wenn die maximale Textlänge, die in einer Datenbank gespeichert werden kann, überschritten ist. Weitere Informationen und Beispiele finden Sie im [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx)-Ereignis.
 
 Hier sehen Sie ein Beispiel für diese verwendeten Eigenschaften und Methoden. Wenn Sie im ersten Textfeld Text markieren, wird dieser im zweiten Textfeld, welches schreibgeschützt ist, angezeigt. Die Werte der Eigenschaften [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) und [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) werden in zwei Textblöcken angezeigt. Dies erfolgt durch Verwendung des [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx)-Ereignisses.
 
@@ -257,9 +257,9 @@ Um Benutzern die Eingabe von Daten mit der Bildschirmtastatur oder dem Soft Inpu
 
 Die Bildschirmtastatur kann für die Texteingabe verwendet werden, wenn Ihre App auf einem Gerät mit Touchscreen ausgeführt wird. Die Bildschirmtastatur wird aufgerufen, wenn der Benutzer auf ein bearbeitbares Eingabefeld wie etwa ein TextBox oder RichEditBox tippt. Benutzer können Daten in Ihre App schneller und einfacher eingeben, wenn Sie den Eingabeumfang des Textsteuerelements an die Art der Daten anpassen, die der Benutzer vermutlich eingeben wird. Der Eingabeumfang bietet dem System einen Hinweis auf die Art von Text, die vermutlich über das Steuerelement eingegeben wird. Auf diese Weise kann das System ein spezielles Bildschirmtastaturlayout für den Eingabetyp bereitstellen.
 
-Wird ein Textfeld beispielsweise nur verwendet, um eine vierstellige PIN einzugeben, legen Sie die [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx)-Eigenschaft auf **Number** fest. Dies weist das System an, das Layout der Zehnertastatur anzuzeigen, das dem Benutzer die Eingabe der PIN erleichtert.
+Wird ein Textfeld beispielsweise nur verwendet, um eine vierstellige PIN einzugeben, legen Sie die [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx)-Eigenschaft auf **Number** fest. Dadurch wird das System angewiesen, die Zehnertastatur anzuzeigen, was dem Benutzer die Eingabe der PIN erleichtert.
 
-> **Wichtig**&nbsp;&nbsp;Durch den Eingabeumfang wird keine Eingabeüberprüfung durchgeführt, und der Benutzer kann Eingaben über eine Hardwaretastatur oder ein anderes Eingabegerät vornehmen. Bei Bedarf müssen Sie dennoch die Benutzereingabe in Ihrem Code überprüfen.
+> **Wichtig**&nbsp;&nbsp;Durch den Eingabeumfang wird keine Eingabeüberprüfung durchgeführt, und der Benutzer kann Eingaben über eine Hardwaretastatur oder ein anderes Eingabegerät vornehmen. Die Benutzereingabe muss je nach Bedarf trotzdem in Ihrem Code überprüft werden.
 
 Weitere Eigenschaften, die sich auf die Bildschirmtastatur beziehen, sind [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx), [IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) und [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx). (IsSpellCheckEnabled wirkt sich auch auf TextBox aus, wenn eine Hardware-Tastaur verwendet wird.)
 
@@ -271,14 +271,14 @@ Weitere Informationen und Beispiele finden Sie unter [Verwenden des Eingabeumfan
 - Verleihen Sie dem Textfeld eine entsprechende Breite für den Bereich der Werte, die eingegeben werden können. Die Wortlänge variiert zwischen den einzelnen Sprachen. Sie sollten also die Lokalisierung berücksichtigen, wenn Ihre App global verwendet werden soll.
 - Ein Texteingabefeld ist normalerweise einzeilig (`TextWrap = "NoWrap"`). Wenn Benutzer eine lange Zeichenfolge eingeben oder bearbeiten müssen, sollten Sie ein mehrzeiliges Texteingabefeld festlegen (`TextWrap = "Wrap"`).
 - Im Allgemeinen wird ein Texteingabefeld für bearbeitbaren Text verwendet. Sie können ein Texteingabefeld jedoch auch als schreibgeschützt festlegen, sodass der Feldinhalt gelesen, ausgewählt und kopiert, jedoch nicht bearbeitet werden kann.
-- Um eine unübersichtliche Darstellung in einer Ansicht zu vermeiden, können Sie festlegen, dass ein Teil der Texteingabefelder nur angezeigt wird, wenn ein entsprechendes Kontrollkästchen aktiviert wird. Sie können den Aktivierungszustand eines Texteingabefelds auch an ein Steuerelement binden, z.B. an ein Kontrollkästchen.
+- Um eine unübersichtliche Darstellung in einer Ansicht zu vermeiden, können Sie festlegen, dass ein Teil der Texteingabefelder nur angezeigt wird, wenn ein entsprechendes Kontrollkästchen aktiviert wird. Sie können den Aktivierungszustand eines Texteingabefelds auch an ein Steuerelement binden, z. B. an ein Kontrollkästchen.
 - Legen Sie das gewünschte Verhalten eines Texteingabefelds fest, wenn dieses einen Wert enthält, und ein Benutzer auf das Feld tippt. Als Standardverhalten empfiehlt es sich, dass der Wert bearbeitet werden kann und nicht ersetzt wird. Der Einfügepunkt wird zwischen den Wörtern platziert, und es wird keine Auswahl getroffen. Wenn „Ersetzen“ der am häufigsten verwendete Anwendungsfall für ein bestimmtes Texteingabefeld ist, können Sie den gesamten Text im Feld auswählen, wenn das Steuerelement den Fokus erhält. Durch die Benutzereingabe wird die Auswahl entfernt.
 
 ### <a name="single-line-input-boxes"></a>Einzeilige Eingabefelder
 
 - Verwenden Sie mehrere einzeilige Textfelder, um viele kleine Textinformationsteile zu erfassen. Wenn die Textfelder ähnliche Merkmale aufweisen, gruppieren Sie diese.
 
-- Legen Sie die Größe der einzeiligen Textfelder etwas breiter fest als die längste erwartete Eingabe. Dadurch wird das Steuerelement zu breit, und es wird in zwei Steuerelemente aufgeteilt. Beispielsweise können Sie eine einzelne Adresseingebe in „Adresszeile1” und „Adresszeile2” aufteilen.
+- Legen Sie die Größe der einzeiligen Textfelder etwas breiter fest als die längste erwartete Eingabe. Dadurch wird das Steuerelement zu breit, und es wird in zwei Steuerelemente aufgeteilt. Beispielsweise können Sie eine einzelne Adresseingebe in „Adresszeile 1” und „Adresszeile 2” aufteilen.
 - Legen Sie eine maximale Länge für die Zeichen fest, die eingegeben werden können. Wenn die zugrunde liegende Datenquelle keine lange Eingabezeichenfolge zulässt, beschränken Sie die Eingabe, und verwenden Sie ein Popupfenster zur Bestätigung, um die Benutzer bei Erreichen der Beschränkung zu benachrichtigen.
 - Verwenden Sie einzeilige Texteingabesteuerelemente, um kleinere Textmengen der Benutzer zu erfassen.
 
@@ -296,7 +296,7 @@ Weitere Informationen und Beispiele finden Sie unter [Verwenden des Eingabeumfan
 
 ### <a name="multi-line-text-input-controls"></a>Mehrzeilige Texteingabesteuerelemente
 
-- Wenn Sie ein Rich-Text-Feld erstellen, stellen Sie Stilschaltflächen bereit, und implementieren Sie die zugehörigen Aktionen.
+- Wenn Sie ein Rich-Text-Feld erstellen, sollten Sie Stilschaltflächen bereitstellen und die entsprechenden Aktionen implementieren.
 - Verwenden Sie eine Schriftart, die mit dem Stil der App konsistent ist.
 - Legen Sie die Höhe des Textsteuerelements so fest, dass genügend Platz für typische Einträge vorhanden ist.
 - Verwenden Sie für die Erfassung von langen Textabschnitten mit einer maximalen Zeichen- oder Wörteranzahl ein Nur-Text-Feld, und stellen Sie einen Live-Zähler bereit, der dem Benutzer anzeigt, wie viele Zeichen bzw. Wörter bis zum Erreichen der Grenze verbleiben. Den Zähler müssen Sie selbst erstellen. Platzieren Sie ihn unter dem Textfeld, und aktualisieren Sie ihn dynamisch, während der Benutzer die einzelnen Zeichen oder Wörter eingibt.
@@ -309,7 +309,7 @@ Weitere Informationen und Beispiele finden Sie unter [Verwenden des Eingabeumfan
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementkatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -319,4 +319,4 @@ Weitere Informationen und Beispiele finden Sie unter [Verwenden des Eingabeumfan
 - [Richtlinien für die Texteingabe](text-controls.md)
 - [TextBox-Klasse](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [PasswordBox-Klasse](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [StringLength-Eigenschaft](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [String.Length-Eigenschaft](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

@@ -4,14 +4,14 @@ description: In diesem Artikel wird beschrieben, wie Sie den MediaProcessingTrig
 title: Verarbeiten von Mediendateien im Hintergrund
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0194ccba43e2ba5270b9ff8eacf045ca140af6cb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934715"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611905"
 ---
 # <a name="process-media-files-in-the-background"></a>Verarbeiten von Mediendateien im Hintergrund
 
@@ -19,12 +19,12 @@ ms.locfileid: "8934715"
 
 In diesem Artikel wird beschrieben, wie Sie [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) und eine Hintergrundaufgabe verwenden, um Mediendateien im Hintergrund zu verarbeiten.
 
-Mit der in diesem Artikel beschriebenen Beispiel-App kann der Benutzer eine zu transcodierende Eingabemediendatei auswählen und eine Ausgabedatei für das Transcodierungsergebnis angeben. Anschließend wird eine Hintergrundaufgabe gestartet, um den Transcodierungsvorgang auszuführen. [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) unterstützt außer der Transcodierung noch viele andere Medienverarbeitungsszenarien, einschließlich Rendern von Medienkompositionen auf Datenträger und Hochladen von verarbeiteten Mediendateien nach Abschluss der Verarbeitung.
+Mit der in diesem Artikel beschriebenen Beispiel-App kann der Benutzer eine zu transcodierende Eingabemediendatei auswählen und eine Ausgabedatei für das Transcodierungsergebnis angeben. Anschließend wird eine Hintergrundaufgabe gestartet, um den Transcodierungsvorgang auszuführen. [  **MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) unterstützt außer der Transcodierung noch viele andere Medienverarbeitungsszenarien, einschließlich Rendern von Medienkompositionen auf Datenträger und Hochladen von verarbeiteten Mediendateien nach Abschluss der Verarbeitung.
 
 Ausführlichere Informationen zu den verschiedenen universellen Windows-App-Features in diesem Beispiel finden Sie unter:
 
 -   [Transcodieren von Mediendateien](transcode-media-files.md)
--   [Starten, Fortsetzen und Hintergrundaufgaben](https://msdn.microsoft.com/library/windows/apps/mt227652)
+-   [Fortsetzen und Hintergrundaufgaben starten](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [Kacheln, Signale und Benachrichtigungen](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
 ## <a name="create-a-media-processing-background-task"></a>Erstellen einer Hintergrundaufgabe für die Medienverarbeitung
@@ -124,13 +124,13 @@ Registrieren Sie die Hintergrundaufgabe durch Aufrufen von [**Register**](https:
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-Eine typische app wird die Hintergrundaufgabe registriert, wenn die app anfänglich gestartete, z. B. das **OnNavigatedTo** -Ereignis wird.
+Eine typische app wird die Hintergrundaufgabe registrieren, wenn die app zuerst gestartet werden, z. B. in der **OnNavigatedTo** Ereignis.
 
 Starten Sie die Hintergrundaufgabe durch Aufrufen der [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071)-Methode des **MediaProcessingTrigger**-Objekts. Das von dieser Methode zurückgegebene [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007)-Objekt informiert Sie darüber, ob die Hintergrundaufgabe erfolgreich gestartet wurde. Zudem teilt es Ihnen bei einem Fehler mit, warum die Hintergrundaufgabe nicht gestartet wurde. 
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
 
-Eine typische app wird die Hintergrundaufgabe in Reaktion auf Benutzerinteraktionen, z. B. in das Ereignis **Klicken Sie auf** ein UI-Steuerelement gestartet werden.
+Eine typische app startet die Hintergrundaufgabe als Reaktion auf Benutzerinteraktionen, z. B. der **klicken Sie auf** Ereignis ein UI-Steuerelement.
 
 Der **OnProgress**-Ereignishandler wird aufgerufen, wenn die Hintergrundaufgabe den Vorgangsstatus aktualisiert. Sie können diese Möglichkeit nutzen, um die Benutzeroberfläche mit Statusinformationen zu aktualisieren.
 

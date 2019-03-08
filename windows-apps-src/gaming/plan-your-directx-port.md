@@ -4,14 +4,14 @@ description: Planen Sie das Portieren des Spiels von DirectX 9 zu DirectX 11 und
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Portieren von Windows10, UWP, Directx
+keywords: Portieren von Windows 10, UWP, Directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 6779fd95d4fd1964a8ca19aa4a7a9f9c29a6179b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044381"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602125"
 ---
 # <a name="plan-your-directx-port"></a>Planen der DirectX-Portierung
 
@@ -20,8 +20,8 @@ ms.locfileid: "9044381"
 **Zusammenfassung**
 
 -   Planen der DirectX-Portierung
--   [Wichtige Änderungen beim Wechsel von Direct3D9 zu Direct3D11](understand-direct3d-11-1-concepts.md)
--   [Featurezuordnung](feature-mapping.md)
+-   [Wichtige Änderungen von Direct3D 9 zu Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   [Feature-Zuordnung](feature-mapping.md)
 
 
 Planen Sie das Portieren des Spiels von DirectX 9 zu DirectX 11 und zur Universellen Windows-Plattform (UWP): Führen Sie ein Upgrade des Grafikcodes durch, und fügen Sie das Spiel in die Windows-Runtime-Umgebung ein.
@@ -31,17 +31,17 @@ Planen Sie das Portieren des Spiels von DirectX 9 zu DirectX 11 und zur Universe
 
 Bevor Sie mit der Portierung des Spiels für UWP beginnen, müssen Sie sicherstellen, dass das Spiel keine Überbleibsel aus Direct3D 8 mehr aufweist. Vergewissern Sie sich, dass im Spiel keine Reste der Pipeline mit festen Funktionen vorhanden sind. Eine vollständige Liste der veralteten Features, einschließlich der Pipeline mit festen Funktionen, finden Sie unter [Veraltete Features](https://msdn.microsoft.com/library/windows/desktop/cc308047).
 
-Das Upgrade von Direct3D9 auf Direct3D11 ist mehr als nur ein Suchen-und-Ersetzen-Vorgang. Sie müssen für Direct3D den Unterschied zwischen Gerät, Gerätekontext und Grafikinfrastruktur kennen und sich mit den anderen wichtigen Änderungen vertraut machen, die seit Direct3D9 vorgenommen wurden. Sie können damit beginnen, indem Sie sich die Informationen in den anderen Themen dieses Abschnitts durchlesen.
+Das Upgrade von Direct3D 9 auf Direct3D 11 ist mehr als nur ein Suchen-und-Ersetzen-Vorgang. Sie müssen für Direct3D den Unterschied zwischen Gerät, Gerätekontext und Grafikinfrastruktur kennen und sich mit den anderen wichtigen Änderungen vertraut machen, die seit Direct3D 9 vorgenommen wurden. Sie können damit beginnen, indem Sie sich die Informationen in den anderen Themen dieses Abschnitts durchlesen.
 
 Ersetzen Sie die Hilfsbibliotheken D3DX und DXUT durch Ihre eigenen Hilfsbibliotheken oder durch Communitytools. Weitere Informationen finden Sie im Abschnitt [Featurezuordnung](feature-mapping.md).
 
-> **Hinweis:**  können Sie mithilfe der [DirectX-Toolkit](https://go.microsoft.com/fwlink/p/?LinkID=248929) oder [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) um einige Funktionen zu ersetzen, die bisher von D3DX und DXUT bereitgestellt wurden.
+> **Beachten Sie**    können Sie die [DirectX-Toolkit](https://go.microsoft.com/fwlink/p/?LinkID=248929) oder [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) , einige Funktionen zu ersetzen, die zuvor von D3DX und DXUT bereitgestellt wurden.
 
  
 
-In Assemblysprache geschriebene Shader sollten mit den Funktionen des Shadermodells 4 (Ebene 9_1 oder 9_3) auf HLSL aktualisiert werden. Für die Effektbibliothek geschriebene Shader müssen auf eine neuere Version der HLSL-Syntax aktualisiert werden. Weitere Informationen finden Sie im Abschnitt [Featurezuordnung](feature-mapping.md).
+Shader in der Assemblysprache geschrieben müssen aktualisiert werden, um HLSL-Shader 4 Modellebene 9 mit\_1 oder 9\_3-Funktionen und Shader für muss auf eine neuere Version der HLSL-Syntax aktualisiert werden, der effektbibliothek geschrieben wurden. Weitere Informationen finden Sie im Abschnitt [Featurezuordnung](feature-mapping.md).
 
-Machen Sie sich mit den verschiedenen [Direct3D-Featureebenen](https://msdn.microsoft.com/library/windows/desktop/ff476876) vertraut. Mithilfe von Featureebenen wird ein großer Bereich von Videohardware klassifiziert, indem Gruppen bekannter Funktionen definiert werden. Jede Gruppe entspricht grob den Versionen von Direct3D, und zwar von9.1 bis11.2. Für alle Featureebenen wird die DirectX11-API verwendet.
+Machen Sie sich mit den verschiedenen [Direct3D-Featureebenen](https://msdn.microsoft.com/library/windows/desktop/ff476876) vertraut. Mithilfe von Featureebenen wird ein großer Bereich von Videohardware klassifiziert, indem Gruppen bekannter Funktionen definiert werden. Jede Gruppe entspricht grob den Versionen von Direct3D, und zwar von 9.1 bis 11.2. Für alle Featureebenen wird die DirectX 11-API verwendet.
 
 ## <a name="plan-to-port-win32-ui-code-to-corewindow"></a>Planen der Portierung des Win32-UI-Codes zu CoreWindow
 

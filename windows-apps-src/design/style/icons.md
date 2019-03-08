@@ -1,22 +1,22 @@
 ---
-Description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
+Description: Gute Symbole harmonieren mit der Typografie und der übrigen Gestaltungssprache. Sie verwenden keine Metaphern und geben einfach und schnell nur die erforderlichen Informationen weiter.
 title: Symbole
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 ms.date: 05/02/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: fb97f69ccdffcec86dfdaf5fa6c5f817644ebd61
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947573"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612445"
 ---
 # <a name="icons-for-uwp-apps"></a>Symbole für UWP-Apps
 
@@ -81,7 +81,7 @@ Symbole können Platz sparen, aber wann ist eine Verwendung sinnvoll?
 
 ## <a name="using-the-right-type-of-icon"></a>Verwendung der richtigen Art von Symbol
 
-Es gibt viele Möglichkeiten, ein Symbol zu erstellen. Sie können eine Symbolschriftart wie Segoe MDL2 Assets verwenden. Sie können Ihr eigenes vektorbasiertes Bild erstellen. Sie können sogar ein Bitmap-Bild verwenden, auch wenn das nicht empfohlen wird. Hier ist eine Übersicht über die verschiedenen Möglichkeiten zum Hinzufügen eines Symbols zu Ihrer App. 
+Es gibt viele Möglichkeiten, ein Symbol zu erstellen. Sie können eine Symbolschriftart wie Segoe MDL2 Assets verwenden. Sie können Ihre eigenen vektorbasiertes Bild erstellen. Sie können sogar ein Bitmap-Bild verwenden, auch wenn das nicht empfohlen wird. Hier ist eine Übersicht über die verschiedenen Möglichkeiten zum Hinzufügen eines Symbols zu Ihrer App. 
 
 ### <a name="use-a-predefined-icon"></a>Verwenden eines vordefinierten Symbols
 :::row:::
@@ -136,7 +136,7 @@ Es gibt viele Möglichkeiten, ein Symbol zu erstellen. Sie können eine Symbolsc
 
 ## <a name="make-the-icon-do-something"></a>Festlegen einer Aktion für das Symbol
 
-Wenn Sie ein Symbol haben, besteht der nächste Schritt wird eine Aktion ausführen, indem Sie Befehl oder eine Navigationsaktion zuordnen. Die beste Möglichkeit hierzu ist das Symbol für eine Schaltfläche oder Befehlsleiste hinzufügen. 
+Nachdem Sie ein Symbol haben, besteht der nächste Schritt, um einen Befehl oder einer Navigationsaktion zuordnen Zweck zu erleichtern. Die beste Möglichkeit hierzu ist das Symbol auf eine Schaltfläche oder eine Befehlsleiste hinzufügen. 
 
 ![Befehlsleistenbild](images/icons/app-bar-desktop.svg)
 
@@ -193,7 +193,7 @@ Es gibt verschiedene Möglichkeiten, ein Symbol zu einer Schaltfläche hinzuzuf�
     :::column-end:::
 :::row-end:::
 
-Die einfachste Möglichkeit ist die Verwendung der von uns bereitgestellten Liste vordefinierter Symbole: Geben Sie einfach den Namen des Symbols an, z.B. „Zurück“ oder „Beenden“, und das System zeichnet das entsprechende Symbol: 
+Die einfachste Möglichkeit ist die Verwendung der von uns bereitgestellten Liste vordefinierter Symbole: Geben Sie einfach den Namen des Symbols an, z. B. „Zurück“ oder „Beenden“, und das System zeichnet das entsprechende Symbol: 
 
 ``` xaml
 <CommandBar>
@@ -221,4 +221,4 @@ Weitere Informationen zu Befehlszeilen finden Sie im [Artikel zu Befehlsleisten]
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Richtlinien für die Ressourcen für Kacheln und Symbole](../shell/tiles-and-notifications/app-assets.md)
+* [Richtlinien für die Kachel "und" Symbol-Objekte](../shell/tiles-and-notifications/app-assets.md)

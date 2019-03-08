@@ -1,17 +1,17 @@
 ---
 title: Erstellen eines UWP-Spiels in JavaScript
-description: Ein einfaches UWP-Spiel für den Microsoft Store, geschrieben in JavaScript und CreateJS
+description: Eine einfache UWP-Spiel für den Microsoft Store, geschrieben in JavaScript und CreateJS
 ms.date: 02/09/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d10dbf52f0ed01d46f9e5cba83cd14d48bfc88d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114556"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639175"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Erstellen eines UWP-Spiels in JavaScript
 
@@ -24,20 +24,20 @@ ms.locfileid: "9114556"
 ## <a name="introduction"></a>Einführung
 
 
-Veröffentlichen einer app auf der Microsoft Store bedeutet, dass Sie können freigeben (oder verkaufen!) mit Millionen von Menschen auf vielen verschiedenen Geräten.  
+Veröffentlichen einer app auf dem Microsoft Store-Sie können freigegeben werden (oder verkaufen Sie es!) mit Millionen von Menschen auf vielen verschiedenen Geräten.  
 
-Um Ihre app an den Microsoft Store veröffentlichen müssen sie als UWP (universelle Windows-Plattform)-app geschrieben werden. UWP ist jedoch extrem flexibel und unterstützt eine Vielzahl von Sprachen und Frameworks. Dieses Beispiel ist ein einfaches Spiel, das in JavaScript geschrieben ist und mehrere CreateJS-Bibliotheken nutzt. Es veranschaulicht, wie Sprites gezeichnet werden, eine Spielschleife erstellt wird, Tastatur und Maus unterstützt werden und die Anpassung an verschiedene Bildschirmgrößen erfolgt.
+Um Ihre Anwendung für den Microsoft Store veröffentlichen müssen sie als UWP (universelle Windows-Plattform)-app geschrieben werden. UWP ist jedoch extrem flexibel und unterstützt eine Vielzahl von Sprachen und Frameworks. Dieses Beispiel ist ein einfaches Spiel, das in JavaScript geschrieben ist und mehrere CreateJS-Bibliotheken nutzt. Es veranschaulicht, wie Sprites gezeichnet werden, eine Spielschleife erstellt wird, Tastatur und Maus unterstützt werden und die Anpassung an verschiedene Bildschirmgrößen erfolgt.
 
 Dieses Projekt wurde mit JavaScript unter Verwendung von Visual Studio erstellt. Mit einigen geringfügigen Änderungen kann es auch auf einer Website gehostet oder an andere Plattformen angepasst werden. 
 
-**Hinweis:** Dies ist kein Spiel abgeschlossen (oder gutes!); Dieses Skript dient zu zeigen, wie mit JavaScript und eine dritte Partei Bibliothek stellen eine app im Microsoft Store veröffentlichen.
+**Hinweis:** Dies ist keines Spiels (oder bei einem guten!); Es soll veranschaulichen die Verwendung der Bibliothek für JavaScript und eine dritte Partei um eine app auf dem Microsoft Store veröffentlichen.
 
 
 ## <a name="requirements"></a>Anforderungen
 
 Um dieses Projekt auszuprobieren, benötigen Sie Folgendes:
 
-* Einen Windows-Computer (oder einen virtuellen Computer) mit der aktuellen Version von Windows10.
+* Einen Windows-Computer (oder einen virtuellen Computer) mit der aktuellen Version von Windows 10.
 * Eine Kopie von Visual Studio. Die kostenlose Visual Studio Community Edition kann von der [Visual Studio-Homepage](https://visualstudio.com) heruntergeladen werden.
 
 Dieses Projekt verwendet das CreateJS-JavaScript-Framework. Bei CreateJS handelt es sich um einen kostenlosen Satz von Tools mit MIT-Lizenz, welche die Erstellung Sprite-basierter Spiele erleichtern sollen. Die CreateJS-Bibliotheken sind bereits im Projekt vorhanden (suchen Sie nach *js/easeljs-0.8.2.min.js* und *js/preloadjs-0.6.2.min.js* in der Projektmappen-Explorer-Ansicht). Weitere Informationen zu CreateJS finden Sie unter der [CreateJS-Startseite](https://www.createjs.com).
@@ -61,7 +61,7 @@ Nachdem die Projektmappe in Visual Studio geladen wurde, sehen Sie mehrere Datei
 
 Jetzt können Sie das Spiel ausführen!
 
-Drücken Sie **F5** zum Ausführen der App. Ein Fenster geöffnet, und unseren vertrauten Dinosaurier in einer (idyllischen Wenn auch kargen) Landschaft sollte angezeigt werden. Wir werden jetzt die App untersuchen, einige wichtige Teile erklären und währenddessen den Rest der Features entsperren.
+Drücken Sie **F5** zum Ausführen der App. Daraufhin sollte ein Fenster geöffnet, und unsere vertraut Godzilla Position in einer Landschaft (bei mit geringer Dichte). Wir werden jetzt die App untersuchen, einige wichtige Teile erklären und währenddessen den Rest der Features entsperren.
 
 ![Ein ganz normaler Dinosaurier mit einer Ninja-Katze auf seinem Rücken](images/JS2D_3.png)
 
@@ -69,9 +69,9 @@ Drücken Sie **F5** zum Ausführen der App. Ein Fenster geöffnet, und unseren v
 
 ## <a name="walkthough"></a>Exemplarische Vorgehensweise
 
-Wenn Sie das Spiel mit F5 gestartet haben, wundern Sie sich vielleicht, was gerade passiert. Und die Antwort lautet "nicht viel", da ein Großteil des Codes derzeit auskommentiert ist. Bisher alles, was Sie sehen, ist der Dinosaurier und unwirksame darauf, die LEERTASTE zu drücken. 
+Wenn Sie das Spiel mit F5 gestartet haben, wundern Sie sich vielleicht, was gerade passiert. Und die Antwort ist „nicht viel“, da ein Großteil des Codes derzeit auskommentiert ist. Alles, was Sie sehen, ist der Dinosaurier und eine unwirksame Aufforderung, die Leertaste zu drücken. 
 
-### <a name="1-setting-the-stage"></a>1. Festlegen der Phase
+### <a name="1-setting-the-stage"></a>1. Schaffen optimaler Voraussetzungen
 
 Wenn Sie **index.html** öffnen und untersuchen, sehen Sie, dass die Datei fast leer ist. Diese Datei ist die Standardwebseite, die unsere App enthält, und erledigt nur zwei wichtige Dinge. Sie enthält zuerst den JavaScript-Quellcode für die CreateJS-Bibliotheken **EaselJS** und **PreloadJS**, und zudem **main.js** (unsere eigene Quellcodedatei).
 Zweitens definiert sie ein &lt;Canvas&gt;-Tag, in dem all unsere Grafiken angezeigt werden. Ein &lt;Canvas&gt; ist eine Standardkomponente eines HTML5-Dokuments. Wir geben ihm einen Namen (gameCanvas), damit unser Code **main.js** darauf verweisen kann. Wenn Sie Ihr eigenes JavaScript-Spiel von Grund auf neu schreiben möchten, müssen Sie die Dateien **EaselJS** und **PreloadJS** in Ihre Projektmappe kopieren und dann ein Canvas-Objekt erstellen.
@@ -86,9 +86,9 @@ Sie sehen, dass diese Codezeile mehrmals in **main.js** angezeigt wird
 
 Jetzt ist ein guter Zeitpunkt zum Öffnen von **main.js**.
 
-### <a name="2-loading-the-bitmaps"></a>2. Laden der Bitmaps
+### <a name="2-loading-the-bitmaps"></a>2. Laden die bitmaps
 
-EaselJS bietet verschiedene Arten von Grafikobjekten. Wir können einfache Formen (z.B. das blaue Rechteck für den Himmel) oder Bitmaps (z.B. die Wolken, die wir hinzufügen möchten), Textobjekte und Sprites erstellen. Sprites verwenden ein (SpriteSheet) [https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: eine einzelne Bitmap, die mehrere Bilder enthält. Beispielsweise verwenden wir dieses SpriteSheet zum Speichern des anderen Frames der Dinosaurier-Animation:
+EaselJS bietet verschiedene Arten von Grafikobjekten. Wir können einfache Formen (z. B. das blaue Rechteck für den Himmel) oder Bitmaps (z. B. die Wolken, die wir hinzufügen möchten), Textobjekte und Sprites erstellen. Sprites einsetzen einer (SpriteSheet) [https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: eine einzelne Bitmap, die mehrere Abbilder enthält. Beispielsweise verwenden wir dieses SpriteSheet zum Speichern des anderen Frames der Dinosaurier-Animation:
 
 ![Sprite-Blatt für laufenden Dino](images/JS2D_4.png)
 
@@ -124,7 +124,7 @@ Jetzt werden wir einige kleine Wolken zur Bühne hinzufügen. Wenn das Spiel aus
 
 Sehen Sie sich **main.js** an, bis Sie die Funktion **init()** finden. Diese wird aufgerufen, wenn das Spiel gestartet wird, und dort beginnen wir mit der Einrichtung unserer Grafikobjekte.
 
-Suchen Sie den folgenden Code, und entfernen Sie die Kommentare (\\) aus der Zeile, die auf das Wolkenbild verweist.
+Suchen Sie den folgenden Code, und entfernen Sie die Kommentare (\\) über die Befehlszeile, die auf das Cloud-Image verweist.
 
 ```
  manifest = [
@@ -160,14 +160,13 @@ Dieser Code erstellt drei Cloudobjekte, die jeweils das vorab geladene Bild verw
 
 Führen Sie die App erneut aus (durch Drücken von F5), und Sie werden sehen, dass unsere Wolken angezeigt werden.
 
-### <a name="3-moving-the-clouds"></a>3. Bewegen der Wolken
+### <a name="3-moving-the-clouds"></a>3. Verschieben Sie die clouds
 
 Jetzt werden wir die Wolken bewegen. Das Geheimnis für das Bewegen der Wolken – und aller anderen Elemente – ist, eine [Ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html)-Funktion einzurichten, die wiederholt mehrmals pro Sekunde aufgerufen wird. Jedes Mal, wenn diese Funktion aufgerufen wird, wird die Grafik an einem etwas anderen Ort neu gezeichnet.
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">Sehen Sie sich den Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS – Animieren von Wolken</a> von Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) auf <a href="https://codepen.io">CodePen</a> an.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
- 
-Der Code dazu ist bereits in der Datei **main.js** vorhanden, die von der CreateJS-Bibliothek EaselJS bereitgestellt wird. Es sieht ungefähr so aus:
+  Der Code hierfür befindet sich bereits in der **"Main.js"** Datei, die von der Bibliothek CreateJS, EaselJS bereitgestellt. Es sieht ungefähr so aus:
 
 ```
     // Set up the game loop and keyboard handler.
@@ -240,7 +239,7 @@ Wenn der Dinosaurier nicht springt und das Fass in der Nähe ist, ändert der Co
 
 So sind die wichtigsten Mechanismen unseres Spiels abgeschlossen.
 
-### <a name="5-resizing-support"></a>5. Unterstützen der Größenanpassung
+### <a name="5-resizing-support"></a>5. Ändern der Größe von support
 
 Wir sind jetzt fast fertig! Zuvor gibt es noch ein lästiges Problem, das wir zuerst lösen müssen. Versuchen Sie, die Größe des Fensters anzupassen, wenn das Spiel ausgeführt wird. Sie sehen, dass das Spiel schnell durcheinandergerät und Objekte nicht länger dort sind, wo sie sein sollen. Wir können dies beheben, indem wir einen Handler für das Fenstergrößeänderungsereignis erstellen, das generiert wird, wenn der Spieler die Fenstergröße ändert oder das Gerät vom Quer- ins Hochformat gedreht wird.
 
@@ -255,9 +254,9 @@ Kommentieren Sie diese Zeile einfach aus, um die Funktion aufrufen, wenn das Bil
 
 Wenn Sie die App erneut ausführen, sollten Sie jetzt die Größe des Fensters anpassen können und bessere Ergebnisse erhalten.
 
-## <a name="publishing-to-the-microsoft-store"></a>Veröffentlichung im Microsoft Store
+## <a name="publishing-to-the-microsoft-store"></a>Veröffentlichung in den Microsoft Store
 
-Nachdem Sie nun eine UWP-app haben, ist es möglich, die Sie veröffentlichen, an den Microsoft Store (vorausgesetzt, dass Sie diese zunächst verbessert haben!) 
+Nachdem Sie eine UWP-app verfügen, ist es möglich, die in den Microsoft Store (vorausgesetzt, dass Sie es zunächst verbessert haben!) veröffentlichen 
 
 Dazu müssen Sie einige Schritte durchführen.
 
@@ -265,11 +264,11 @@ Dazu müssen Sie einige Schritte durchführen.
 2. Verwenden Sie die [Prüfliste für App-Übermittlung](https://msdn.microsoft.com/windows/uwp/publish/app-submissions).
 3. Die App muss zur [Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
 
-Weitere Informationen finden Sie in [Ihrer UWP-app veröffentlichen](https://developer.microsoft.com/en-us/store/publish-apps).
+Weitere Informationen finden Sie unter [Veröffentlichen Ihrer UWP-app](https://developer.microsoft.com/en-us/store/publish-apps).
 
 ## <a name="suggestions-for-other-features"></a>Vorschläge für andere Features.
 
-Was jetzt? Hier sind einige Vorschläge für Features, die Sie zu Ihrer (hoffentlich bald) preisgekrönten App hinzufügen können.
+Was tue ich jetzt? Hier sind einige Vorschläge für Features, die Sie zu Ihrer (hoffentlich bald) preisgekrönten App hinzufügen können.
 
 1. Soundeffekte Die CreateJS-Bibliothek bietet Audiounterstützung mit einer Bibliothek namens [SoundJS](https://www.createjs.com/soundjs).
 2. Gamepad-Unterstützung. Es gibt eine [verfügbare API](https://gamedevelopment.tutsplus.com/tutorials/using-the-html5-gamepad-api-to-add-controller-support-to-browser-games--cms-21345).
@@ -277,7 +276,7 @@ Was jetzt? Hier sind einige Vorschläge für Features, die Sie zu Ihrer (hoffent
 
 ## <a name="other-links"></a>Weitere Links
 
-* [Erstellen Sie ein einfaches Windows-Spiel mit JavaScript](https://www.sitepoint.com/creating-a-simple-windows-8-game-with-javascript-game-basics-createjseaseljs/)
-* [Auswählen einer HTML/JS-Spielengine](https://html5gameengine.com/)
-* [Verwenden von CreateJS in Ihrem JS-basierten Spiel](https://blogs.msdn.microsoft.com/cbowen/2012/09/19/using-createjs-in-your-javascript-based-windows-8-game/)
-* [Spielentwicklungskurse auf LinkedIn Learning](https://www.linkedin.com/learning/topics/game-development)
+* [Stellen Sie ein einfaches Windows-Spiel mit JavaScript](https://www.sitepoint.com/creating-a-simple-windows-8-game-with-javascript-game-basics-createjseaseljs/)
+* [Wählen eine HTML/JS-Spiele-engine](https://html5gameengine.com/)
+* [Verwendung von CreateJS in Ihre JS-basierten Spiel](https://blogs.msdn.microsoft.com/cbowen/2012/09/19/using-createjs-in-your-javascript-based-windows-8-game/)
+* [Kursen zur Spielentwicklung auf LinkedIn Learning](https://www.linkedin.com/learning/topics/game-development)

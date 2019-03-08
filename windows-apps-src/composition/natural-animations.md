@@ -3,14 +3,14 @@ title: Natürliche Bewegungsanimationen
 description: Lernen Sie natürliche Animationen und deren Nutzung in der App-Benutzeroberfläche kennen.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, Uwp, animation
+keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937163"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630375"
 ---
 # <a name="natural-motion-animations"></a>Natürliche Bewegungsanimationen
 
@@ -22,9 +22,9 @@ Tolle Apps sind solche, die Erlebnisse schaffen, die die Aufmerksamkeit der Benu
 
 Eine Möglichkeit dabei ist durch Bewegung Erfahrungen zu schaffen, die vertraut aussehen und sich vertraut anfühlen. Die Benutzer haben eine unbewusste Erwartung, wie sie Bewegungen wahrnehmen, die auf realen Lebenserfahrungen basieren. Wir sehen, wie Gegenstände über den Boden rutschen, vom Tisch fallen, ineinander hüpfen und mit einer Feder oszillieren. Bewegung, die diese Erwartung nutzt, indem sie auf der realen Welt der Physik basiert, sehen und fühlen sich natürlicher an. Die Bewegung wird natürlicher und interaktiver. Aber noch wichtiger ist, dass das gesamte Erlebnis unvergesslicher und angenehmer wird.
 
-![Skalierungsbewegung ohne Animation](images/animation/scale-no-animation.gif)
-![Skalierungsbewegung Cubic-Bezier](images/animation/scale-cubic-bezier.gif)
-![Skalierungsbewegung mit Federanimation](images/animation/scale-spring.gif)
+![Skalieren Sie während der Übertragung ohne Animation](images/animation/scale-no-animation.gif)
+![Skalierung während der Übertragung mit kubische Bezier](images/animation/scale-cubic-bezier.gif)
+![Skalierung während der Übertragung mit Spring-Animation](images/animation/scale-spring.gif)
 
 Das Ergebnis ist eine höhere Bindung und Bindung der Nutzer an die App.
 

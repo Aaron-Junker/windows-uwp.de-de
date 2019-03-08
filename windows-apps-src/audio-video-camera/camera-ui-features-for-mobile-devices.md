@@ -4,16 +4,16 @@ description: Dieser Artikel beschreibt, wie Sie spezielle Kamera-UI-Features nut
 title: Kamera-UI-Features für mobile Geräte
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf27de9c9b1bce2b35918b2a9d1357d2f3ba20b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0c0da215cad867a498527b475422c4026cc65ce3
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942866"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640695"
 ---
-#<a name="camera-ui-features-for-mobile-devices"></a>Kamera-UI-Features für mobile Geräte
+# <a name="camera-ui-features-for-mobile-devices"></a>Kamera-UI-Features für mobile Geräte
 
 Dieser Artikel beschreibt, wie Sie spezielle Kamera-UI-Features nutzen, die nur auf mobilen Geräten vorhanden sind. 
 
@@ -21,7 +21,7 @@ Dieser Artikel beschreibt, wie Sie spezielle Kamera-UI-Features nutzen, die nur 
 
 Um diese Features zu verwenden, müssen Sie einen Verweis auf das Microsoft Mobile Extension SDK für die Universelle App-Plattform zu Ihrem Projekt hinzufügen.
 
-**So fügen Sie einen Verweis auf das mobile Erweiterungs-SDK für die Unterstützung einer Hardwaretaste an der Kamera hinzu**
+**Um einen Verweis auf das mobile Erweiterungs-SDK für die Unterstützung für Serverhardware Kamera Schaltfläche hinzufügen**
 
 1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen** aus.
 
@@ -58,7 +58,7 @@ Wenn die App heruntergefahren wird oder der Benutzer die Medienaufnahmeseite der
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
-* [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 
 
 

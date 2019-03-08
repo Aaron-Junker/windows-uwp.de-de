@@ -4,18 +4,18 @@ title: Übersicht über angefügte Eigenschaften
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.openlocfilehash: 265a99e7abbb9b2f4c3341f90aecc3661ce3ffbf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922454"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614855"
 ---
 # <a name="attached-properties-overview"></a>Übersicht über angefügte Eigenschaften
 
@@ -36,7 +36,7 @@ In XAML legen Sie angefügte Eigenschaften mithilfe der Syntax _AttachedProperty
 ```
 
 > [!NOTE]
-> Wir verwenden gerade [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) als, die angefügte Beispieleigenschaft ohne vollständige Erklärung, warum Sie sie verwenden würden. Weitere Informationen darüber, wozu **Canvas.Left** dient und wie [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) untergeordnete Layoutelemente handhabt, finden Sie im Referenzthema zu [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) oder unter [Definieren von Layouts mit XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
+> Wir verwenden einfach [ **Canvas.Left** ](https://msdn.microsoft.com/library/windows/apps/hh759771) als Beispiel die Eigenschaft ohne vollständig erläutert, warum Sie es nutzen würden angefügt. Weitere Informationen darüber, wozu **Canvas.Left** dient und wie [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) untergeordnete Layoutelemente handhabt, finden Sie im Referenzthema zu [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) oder unter [Definieren von Layouts mit XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
 
 ## <a name="why-use-attached-properties"></a>Gründe für die Verwendung von angefügten Eigenschaften
 
@@ -72,7 +72,7 @@ Wenn Sie den Wert einer angefügten Eigenschaft im Code abrufen möchten, rufen 
 
 ### <a name="using-the-xaml-accessor-pattern"></a>Verwenden des XAML-Accessormusters
 
-Ein XAML-Prozessor muss Werte von angefügten Eigenschaften festlegen können, wenn XAML in einer Objektstruktur analysiert wird. Der Besitzertyp der angefügten Eigenschaft muss dedizierte Accessormethoden in Form implementieren **erhalten *** PropertyName* und **festlegen *** PropertyName*. Diese dedizierten Accessormethoden stellen auch eine Möglichkeit dar, die angefügte Eigenschaft in Code abzurufen oder festzulegen. Im Hinblick auf den Code ähnelt eine angefügte Eigenschaft einem Sicherungsfeld, das anstelle von Eigenschaftenaccessoren über Methodenaccessoren verfügt, und dieses Sicherungsfeld kann für jedes Objekt vorhanden sein und muss nicht speziell definiert werden.
+Ein XAML-Prozessor muss Werte von angefügten Eigenschaften festlegen können, wenn XAML in einer Objektstruktur analysiert wird. Der Besitzertyp der angefügten Eigenschaft muss dedizierte Accessormethoden bereit, die mit dem Namen in das Formular implementieren **erhalten *** PropertyName* und **festgelegt *** PropertyName*. Diese dedizierten Accessormethoden stellen auch eine Möglichkeit dar, die angefügte Eigenschaft in Code abzurufen oder festzulegen. Im Hinblick auf den Code ähnelt eine angefügte Eigenschaft einem Sicherungsfeld, das anstelle von Eigenschaftenaccessoren über Methodenaccessoren verfügt, und dieses Sicherungsfeld kann für jedes Objekt vorhanden sein und muss nicht speziell definiert werden.
 
 Im folgenden Beispiel ist dargestellt, wie Sie über die XAML-Accessor-API eine angefügte Eigenschaft in Code festlegen können. In diesem Beispiel ist `myCheckBox` eine Instanz der [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)-Klasse. Die letzte Zeile ist der Code, der den Wert tatsächlich festlegt. Mit den Zeilen davor werden nur die Instanzen und ihre Beziehungen der untergeordneten Elemente eingerichtet. Die unkommentierte letzte Zeile ist die Syntax, wenn Sie das Eigenschaftensystem verwenden. Die kommentierte letzte Zeile ist die Syntax, wenn Sie das XAML-Accessormuster verwenden.
 
@@ -120,12 +120,12 @@ Codebeispiele zum Definieren benutzerdefinierter angefügter Eigenschaften und w
 
 Der Punkt im Namen einer angefügten Eigenschaft ist ein wichtiger Teil des Identifikationsmusters. Es gibt manchmal Mehrdeutigkeiten, wenn eine Syntax oder Situation den Punkt mit einer anderen Bedeutung interpretiert. Ein Punkt wird beispielsweise als Objektmodellausnahme für einen Bindungspfad behandelt. In vielen Fällen solcher Mehrdeutigkeiten gibt es eine spezielle Syntax für eine angefügte Eigenschaft, womit der innere Punkt dennoch als das _owner_**.**_property_-Trennzeichen einer angefügten Eigenschaft analysiert wird.
 
-- Wenn Sie eine angefügte Eigenschaft als Teil des Zielpfads für eine Animation angeben möchten, schließen Sie den Namen der angefügten Eigenschaft in Klammern („()“) ein, beispielsweise „(Canvas.Left)“. Weitere Informationen finden Sie unter [PropertyPath-Syntax](property-path-syntax.md).
+- Wenn Sie eine angefügte Eigenschaft als Teil des Zielpfads für eine Animation angeben möchten, schließen Sie den Namen der angefügten Eigenschaft in Klammern („()“) ein, beispielsweise „(Canvas.Left)“. Weitere Informationen finden Sie unter [Property-path-Syntax](property-path-syntax.md).
 
 > [!WARNING]
-> Eine Beschränkung der XAML-Implementierung der Windows Runtime: Sie können keine benutzerdefinierten angefügten Eigenschaften animieren.
+> Eine vorhandene Einschränkung der Windows-Runtime-XAML-Implementierung ist, dass Sie eine benutzerdefinierte, angefügte Eigenschaft animieren nicht möglich.
 
-- Wenn Sie eine angefügte Eigenschaft als Zieleigenschaft für einen Ressourcenverweis aus einer Ressourcendatei zu **x:Uid** angeben möchten, verwenden Sie eine spezielle Syntax, die eine vollqualifizierte **using:**-Deklaration in eckigen Klammern („\[\]“) im Codestil einfügt, um einen absichtlichen Umfangsumbruch zu erstellen. Beispielsweise wird vorausgesetzt, gibt es ein Element vorhanden ist `<TextBlock x:Uid="Title" />`, der Ressourcenschlüssel in der Ressourcendatei, die den **Canvas.Top** Wert für diese Instanz ausgerichtet ist, ist "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top". Weitere Informationen zu Ressourcendateien und XAML finden Sie unter [Schnellstart: Übersetzen von UI-Ressourcen](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+- So geben Sie eine angefügte Eigenschaft als die Zieleigenschaft für einen Ressourcenverweis aus einer Ressourcendatei, an **X: Uid-**, verwenden eine spezielle Syntax, die eine Code-Format, vollständig qualifizierter fügt **verwenden:** Deklaration innerhalb eckige Klammern ("\[\]"), um eine Unterbrechung absichtliche Bereich zu erstellen. Angenommen, es ist ein Element vorhanden `<TextBlock x:Uid="Title" />`, den Ressourcenschlüssel in der Ressourcendatei, dessen Ziel die **Canvas.Top** Wert für diese Instanz ist "Title.\[ Using:Windows.UI.Xaml.Controls\]Canvas.Top ". Weitere Informationen zu Ressourcendateien und XAML finden Sie unter [Schnellstart: Übersetzen von UI-Ressourcen](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
 
 ## <a name="related-topics"></a>Verwandte Themen
 

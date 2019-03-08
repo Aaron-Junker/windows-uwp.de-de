@@ -3,24 +3,24 @@ title: Installieren einer verwandten Gruppe mithilfe einer App-Installer-Datei
 description: In diesem Abschnitt überprüfen wir die erforderlichen Schritte, damit die Installation von verwandten Gruppen über den App-Installer möglich ist. Wir durchlaufen ebenfalls die notwendigen Schritte zum Erstellen einer *.appinstaller-Datei, die Ihre verwandten Gruppen definieren.
 ms.date: 01/04/2018
 ms.topic: article
-keywords: Windows10, UWP, App-Installer, AppInstaller, querladen, verwandte Gruppe, optionale Pakete
+keywords: Windows 10, UWP, App-Installer, AppInstaller, querladen, zugehörige Gruppe, optionale Pakete
 ms.localizationpriority: medium
 ms.openlocfilehash: 946c0ae2251d1f75ea250d43881b29b172b9ad1d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116162"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637145"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>Installieren einer verwandten Gruppe mithilfe einer App-Installer-Datei
 
 Wenn Sie am Anfang der Entwicklung mit optionalen UWP-Paketen oder verwandten Gruppen sind, sind die folgenden Artikel gute Ressourcen für den Einstieg. 
 
-1.  [Erweitern der Anwendung mit optionalen Paketen](https://blogs.msdn.microsoft.com/appinstaller/2017/04/05/uwpoptionalpackages/)
-2.  [Erstellen Ihres ersten optionalen Pakets](https://blogs.msdn.microsoft.com/appinstaller/2017/05/09/build-your-first-optional-package/)
+1.  [Erweitern Sie Ihre Anwendung, die Verwendung von optionalen Paketen](https://blogs.msdn.microsoft.com/appinstaller/2017/04/05/uwpoptionalpackages/)
+2.  [Erstellen Sie Ihrer ersten optionalen Pakets](https://blogs.msdn.microsoft.com/appinstaller/2017/05/09/build-your-first-optional-package/)
 3.  [Laden von Code über ein optionales Paket](https://blogs.msdn.microsoft.com/appinstaller/2017/05/11/loading-code-from-an-optional-package/)
-4.  [Tool zum Erstellen einer verwandten Gruppe](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)
-5.  [Optionale Pakete und die Erstellung zugehöriger Sets](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)
+4.  [Tools zum Erstellen einer verknüpften festlegen](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)
+5.  [Optionale Pakete und die zugehörigen erstellen](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)
 
 Mit dem Windows 10 Fall Creators Update können verwandte Gruppen jetzt über App-Installer installiert werden. Dies ermöglicht die Verteilung und Bereitstellung der mit App-Paketen verwandten Gruppen für die Benutzer. 
 
@@ -72,10 +72,10 @@ Während der Bereitstellung wird die App-Installer-Datei mit den App-Paketen im 
 
 Um die verwandte Gruppe als eine Entität zu verteilen, erstellen Sie eine App-Installer-Datei im [Appinstaller-Schema](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file), die die erforderlichen Elemente enthält.
 
-### <a name="step-1-create-the-appinstaller-file"></a>Schritt 1. Erstellen der *.appinstaller-Datei
+### <a name="step-1-create-the-appinstaller-file"></a>Schritt 1: Erstellen Sie die Datei *.appinstaller
 Verwenden Sie einen Text-Editor, um eine Datei zu erstellen (die XML enthält), und nennen Sie sie &lt;Dateiname&gt;.appinstaller. 
 
-### <a name="step-2-add-the-basic-template"></a>Schritt 2: Hinzufügen der einfachen Vorlage
+### <a name="step-2-add-the-basic-template"></a>Schritt 2: Fügen Sie der grundlegenden Vorlage hinzu.
 Die einfache Vorlage enthält die Informationen der App-Installer-Datei. 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -86,8 +86,8 @@ Die einfache Vorlage enthält die Informationen der App-Installer-Datei.
 </AppInstaller>
 ```
 
-### <a name="step-3-add-the-main-package-information"></a>Schritt3: Hinzufügen der Hauptpaket-Informationen 
-Wenn das Haupt-app-Paket eine .appxbundle oder .msixbundle-Datei ist, verwenden Sie die `<MainBundle>` unten dargestellt. Wenn das Haupt-app-Paket eine .appx oder .msix-Datei ist, verwenden Sie `<MainPackage>` anstelle von `<MainBundle>` im Codeausschnitt. 
+### <a name="step-3-add-the-main-package-information"></a>Schritt 3: Fügen Sie die Informationen des Hauptpakets 
+Wenn die Haupt-app-Paket eine .appxbundle oder .msixbundle Datei handelt, verwenden Sie die `<MainBundle>` unten. Wenn das Haupt-app-Paket eine AppX-Datei oder .msix-Datei ist, verwenden Sie `<MainPackage>` anstelle von `<MainBundle>` im Ausschnitt. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -106,7 +106,7 @@ Wenn das Haupt-app-Paket eine .appxbundle oder .msixbundle-Datei ist, verwenden 
 ```
 Die Informationen des `<MainBundle>` oder `<MainPackage>`-Attributs sollte mit dem [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)-Element im App-Bündelmanifest oder im App-Paket-Manifest übereinstimmen. 
 
-### <a name="step-4-add-the-optional-packages"></a>Schritt4: Hinzufügen von optionalen Paketen 
+### <a name="step-4-add-the-optional-packages"></a>Schritt 4: Fügen Sie die optionalen Pakete hinzu. 
 Ähnlich wie beim Haupt-App-Paket-Attribut, wenn das optionale Paket entweder ein App-Paket oder ein App-Bündel ist, sollte das untergeordnete Element innerhalb des `<OptionalPackages>`-Attributs ein `<Package>` oder `<Bundle>` sein. Die Paketinformationen in den untergeordneten Elementen sollten mit dem identity-Element im Bündel oder im Paketmanifest übereinstimmen. 
 
 ``` xml
@@ -146,7 +146,7 @@ Die Informationen des `<MainBundle>` oder `<MainPackage>`-Attributs sollte mit d
 </AppInstaller>
 ```
 
-### <a name="step-5-add-dependencies"></a>Schritt 5: Hinzufügen von Abhängigkeiten 
+### <a name="step-5-add-dependencies"></a>Schritt 5: Hinzufügen von Abhängigkeiten 
 Si können im Element der Abhängigkeiten das erforderliche Framework-Pakete für das Hauptpaket oder die optionalen Pakete angeben. 
 
 ``` xml
@@ -192,7 +192,7 @@ Si können im Element der Abhängigkeiten das erforderliche Framework-Pakete fü
 </AppInstaller>
 ```
 
-### <a name="step-6-add-update-setting"></a>Schritt6: Hinzufügen von Update-Einstellungen 
+### <a name="step-6-add-update-setting"></a>Schritt 6: Update-Einstellung hinzufügen 
 Die App-Installer-Datei kann auch Update-Einstellung angeben, damit die verwandten Gruppen automatisch aktualisiert werden können, wenn eine neuere App-Installer-Datei veröffentlicht wird. **<UpdateSettings>** ist ein optionales Element. In **<UpdateSettings>** gibt die OnLaunch Option an, dass Update-Prüfungen beim Start der App durchgeführt werden sollen, und HoursBetweenUpdateChecks="12" gibt an, dass alle 12 Stunden eine Update-Prüfung durchgeführt werden soll. Wenn „HoursBetweenUpdateChecks” nicht angegeben ist, beträgt das Standardintervall für die Suche nach Updates 24 Stunden.
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -245,5 +245,5 @@ Alle Details für das XML-Schema finden Sie unter [Referenz für die App-Install
 
 > [!NOTE]
 > 
-> Der Typ der App-Installer-Datei ist neu im Windows 10 Fall Creators Update. Es ist keine Unterstützung für die Bereitstellung von UWP-Apps durch eine App-Installer-Datei für frühere Versionen von Windows10.
+> Der Typ der App-Installer-Datei ist neu im Windows 10 Fall Creators Update. Es ist keine Unterstützung für die Bereitstellung von UWP-Apps durch eine App-Installer-Datei für frühere Versionen von Windows 10.
 > Außerdem muss darauf hingewiesen werden, dass das **HoursBetweenUpdateChecks**-Element im nächsten wichtigen Update für Windows 10 neu ist.

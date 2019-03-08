@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 499d361bddbecef50ee8cdf44b56530a98cfccd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936120"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627585"
 ---
 # <a name="rasterizer-rs-stage"></a>Rasterizerphase (RS)
 
@@ -33,9 +33,9 @@ Siehe [Regeln für die Rasterung](rasterization-rules.md).
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Eingabe
 
 
-Vertices (x,y,z,w), die in die Rasterizerphase gelangen, werden als in einem homogenen Clipraum angesehen. In diesem Koordinatenbereich weist die x-Achse nach rechts, Y nach oben und Z von der Kamera weg.
+Vertices (x,y,z,w), die in die Rasterizerphase gelangen, werden als in einem homogenen Clipraum angesehen. In diesem Koordinatenraum zeigt die X-Achse nach rechts, die Y-Achse nach oben und die Z-Achse von der Kamera weg.
 
-Die Rasterizerphase (RS) ist eine feste Funktion und speist sich aus der Streamausgabephase und/oder der vorherigen Pipelinephase, z.B. der [Geometrieshaderphase (GS)](geometry-shader-stage--gs-.md). Wenn die GS nicht verwendet wird, wird die RS aus der [Domänenshaderphase (DS)](domain-shader-stage--ds-.md) gespeist. Wenn auch die DS nicht verwendet wird, speist sich die RS aus der [Vertexshaderphase (VS)](vertex-shader-stage--vs-.md).
+Die Rasterizerphase (RS) ist eine feste Funktion und speist sich aus der Streamausgabephase und/oder der vorherigen Pipelinephase, z. B. der [Geometrieshaderphase (GS)](geometry-shader-stage--gs-.md). Wenn die GS nicht verwendet wird, wird die RS aus der [Domänenshaderphase (DS)](domain-shader-stage--ds-.md) gespeist. Wenn auch die DS nicht verwendet wird, speist sich die RS aus der [Vertexshaderphase (VS)](vertex-shader-stage--vs-.md).
 
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Ausgabe
 
@@ -45,7 +45,7 @@ Die Verwendung der Pixelshaderphase (PS) ist optional. Von der Rasterizerphase k
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Regeln für die Rasterung](rasterization-rules.md)
+[Rasterization Regeln](rasterization-rules.md)
 
 [Grafikpipeline](graphics-pipeline.md)
 

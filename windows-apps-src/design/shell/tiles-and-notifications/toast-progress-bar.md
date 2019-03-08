@@ -1,29 +1,29 @@
 ---
-Description: Learn how to use a progress bar within your toast notification.
+Description: Erfahren Sie, wie eine Statusanzeige in Ihrer Toast-Benachrichtigung verwenden.
 title: Popup-Statusanzeige und Datenbindungen
 label: Toast progress bar and data binding
 template: detail.hbs
 ms.date: 12/7/2017
 ms.topic: article
-keywords: Windows10, UWP, Popup, Statusanzeige, Popup-Statusanzeige, Benachrichtigungen, Datenbindung der Popups
+keywords: Windows 10, UWP, Popup, Statusanzeige, Popup-Statusanzeige, Benachrichtigungen, Datenbindung der Popups
 ms.localizationpriority: medium
 ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
-ms.sourcegitcommit: 88265a8c9f6a77a0508a0c9d89b6ab0a6238a1da
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8969057"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624825"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Popup-Statusanzeige und Datenbindungen
 
-Durch die Verwendung einer Statusanzeige innerhalb Ihrer Popupbenachrichtigung können Sie den Status der zeitintensiven Vorgänge für den Benutzer vermitteln, z.B. Downloads, Videowiedergabe, Übungen und vieles mehr.
+Durch die Verwendung einer Statusanzeige innerhalb Ihrer Popupbenachrichtigung können Sie den Status der zeitintensiven Vorgänge für den Benutzer vermitteln, z. B. Downloads, Videowiedergabe, Übungen und vieles mehr.
 
 > [!IMPORTANT]
-> **Erfordert Creators Update und 1.4.0 der Benachrichtigungsbibliothek**: Sie müssen als Ziel SDK 15063 und Build 15063 oder höher ausführen, um Statusanzeigen auf Popups zu verwenden. Sie müssen Version 1.4.0 oder höher der [UWP Community Toolkit Benachrichtigungen NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um die Statusanzeige der Popup-Inhalte zu erstellen.
+> **Erfordert die Creators Update und 1.4.0 von benachrichtigungsbibliothek**: Sie müssen SDK 15063 ausgerichtet und Build 15063 oder höher, um Statusanzeigen für Popups verwenden ausgeführt werden. Sie müssen Version 1.4.0 oder höher der [UWP Community Toolkit Benachrichtigungen NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um die Statusanzeige der Popup-Inhalte zu erstellen.
 
-Eine Statusanzeige in einem Popup kann entweder "unbestimmt" (ohne spezifischen Wert, ein Vorgang erfolgt animierter Punkte angibt) oder "exakt" (ein bestimmtes Prozentsatz der Leiste wird gefüllt, z. B. 60 %).
+Eine Statusanzeige in einem Popup kann entweder "unbestimmt" sein (keine bestimmten Wert, animierte Punkte als Hinweis auf ein Vorgang stattfindet) oder "bestimmte" (einem angegebenen Prozentsatz des Balkens wird aufgefüllt, z. B. 60 %).
 
-> **Wichtige APIs**: [NotificationData-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update Methode](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **Wichtige APIs**: [NotificationData Klasse](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update Methode](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > Nur Desktop unterstützt Statusanzeigen in Popupbenachrichtigungen. Auf anderen Geräten wird die Statusanzeige aus der Benachrichtigung gelöscht.
@@ -34,10 +34,10 @@ Die folgende Abbildung zeigt eine exakte Statusanzeige mit allen entsprechenden 
 
 | Eigenschaft | Typ | Erforderlich | Beschreibung |
 |---|---|---|---|
-| **Titel** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | Falsch | Ruft einen optionalen Zeichenfolgetitel auf oder legt diesen fest. Unterstützt die Datenbindung. |
-| **Wert** | doppelt oder [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) oder [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | Falsch | Ruft den Wert der Statusanzeige auf oder legt diesen fest. Unterstützt die Datenbindung. Die Standardeinstellung ist 0. Kann entweder ein Double zwischen 0,0 und 1,0, `AdaptiveProgressBarValue.Indeterminate` oder `new BindableProgressBarValue("myProgressValue")` sein. |
-| **ValueStringOverride** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | Falsch | Ruft eine optionale Zeichenfolge auf oder legt diese fest, damit sie anstelle der Standardzeichenfolge in Prozent angezeigt wird. Wenn dies nicht bereitgestellt ist, wird etwas wie "70 %" angezeigt. |
-| **Status** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | Wahr | Ruft eine Statuszeichenfolge auf oder legt diese fest (erforderlich), die unter der Statusanzeige auf der linken Seite angezeigt wird. Diese Zeichenfolge sollte den Status des Vorgangs widerspiegeln, z.B. "Herunterladen..." oder "Installieren von..." |
+| **Titel** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | false | Ruft einen optionalen Zeichenfolgetitel auf oder legt diesen fest. Unterstützt die Datenbindung. |
+| **Wert** | doppelt oder [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) oder [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | Ruft den Wert der Statusanzeige auf oder legt diesen fest. Unterstützt die Datenbindung. Die Standardeinstellung ist 0. Kann entweder ein Double zwischen 0,0 und 1,0, `AdaptiveProgressBarValue.Indeterminate` oder `new BindableProgressBarValue("myProgressValue")` sein. |
+| **ValueStringOverride** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | false | Ruft eine optionale Zeichenfolge auf oder legt diese fest, damit sie anstelle der Standardzeichenfolge in Prozent angezeigt wird. Wenn dies nicht bereitgestellt ist, wird etwas wie "70 %" angezeigt. |
+| **Status** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | true | Ruft eine Statuszeichenfolge auf oder legt diese fest (erforderlich), die unter der Statusanzeige auf der linken Seite angezeigt wird. Diese Zeichenfolge sollte den Status des Vorgangs widerspiegeln, z. B. "Herunterladen..." oder "Installieren von..." |
 
 
 So würde die oben dargestellte Benachrichtigung generiert...
@@ -97,7 +97,7 @@ Das Verwenden der Datenbindung umfasst die folgenden Schritte...
 4. Senden Sie das Popup
 5. Nutzen Sie **Tag** und **Gruppe** zum Aktualisieren der **Daten** mit neuen Werten
 
-Der folgende Codeausschnitt zeigt die Schritte1 bis 4. Der nächste Codeausschnitt zeigt, wie das Popup **Daten**werte aktualisiert.
+Der folgende Codeausschnitt zeigt die Schritte 1 bis 4. Der nächste Codeausschnitt zeigt, wie das Popup **Daten**werte aktualisiert.
 
 ```csharp
 using Windows.UI.Notifications;
@@ -188,7 +188,7 @@ public void UpdateProgress()
 
 Statt das gesamte Popup zu ersetzen, sorgt die **Update**-Methode dafür, dass die Popupbenachrichtigung in der gleichen Position im Info-Center bleibt und nicht nach oben oder unten verschoben wird. Es wäre verwirrend für den Benutzer, wenn das Popup alle paar Sekunden an den Anfang des Info-Centers verschoben würde, während die Statusanzeige gefüllt wird.
 
-Die **Update**-Methode gibt eine Enumeration wieder, [**NotificationUpdateResult**](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationupdateresult), und teilt Ihnen mit, ob das Update erfolgreich war oder ob die Benachrichtigung nicht gefunden werden konnte (d.h. der Benutzer hat möglicherweise die Benachrichtigung geschlossen und Sie müssen aufhören, Updates zu senden). Es wird nicht empfohlen, ein anderes Popup einzublenden, bis der Vorgang abgeschlossen ist (z.B. wenn der Download abgeschlossen ist).
+Die **Update**-Methode gibt eine Enumeration wieder, [**NotificationUpdateResult**](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationupdateresult), und teilt Ihnen mit, ob das Update erfolgreich war oder ob die Benachrichtigung nicht gefunden werden konnte (d. h. der Benutzer hat möglicherweise die Benachrichtigung geschlossen und Sie müssen aufhören, Updates zu senden). Es wird nicht empfohlen, ein anderes Popup einzublenden, bis der Vorgang abgeschlossen ist (z. B. wenn der Download abgeschlossen ist).
 
 
 ## <a name="elements-that-support-data-binding"></a>Elemente, die die Datenbindung unterstützen
@@ -200,27 +200,27 @@ Folgende Elemente in Popupbenachrichtigungen unterstützen die Datenbindung
 
 ## <a name="update-or-replace-a-notification"></a>Aktualisieren oder Ersetzen einer Benachrichtigung
 
-Ab Windows10 könnten Sie immer eine Benachrichtigung **ersetzen**, indem Sie eine neue Popupbenachrichtigung mit dem gleichen **Tag** und der gleichen **Gruppe** senden. Worin liegt der Unterschied zwischen dem **Ersetzen** des Popups und dem **Aktualisieren** der Popupdaten?
+Ab Windows 10 könnten Sie immer eine Benachrichtigung **ersetzen**, indem Sie eine neue Popupbenachrichtigung mit dem gleichen **Tag** und der gleichen **Gruppe** senden. Worin liegt der Unterschied zwischen dem **Ersetzen** des Popups und dem **Aktualisieren** der Popupdaten?
 
 | | Ersetzen | Aktualisieren |
 | -- | -- | --
 | **Position im Info-Center** | Verschiebt die Benachrichtigung oben auf das Info-Center. | Behält die Stelle der Benachrichtigung im Info-Center bei. |
-| **Ändern des Inhalts** | Alle Inhalte/Layout des Popups können dadurch vollständig geändert werden. | Kann nur Eigenschaften ändern, die die Datenbindung unterstützen (Statusanzeige und Text der obersten Ebene). |
-| **Erneutes Anzeigen als Popup** | Kann als Popup eingeblendet werden, wenn Sie **SuppressPopup** auf `false` festgelegt haben (oder auf „wahr”, um es lautlos im Hintergrund an das Info-Center zu senden) | Wird nicht erneut als Popup angezeigt; die Popup-Daten werden im Info-Center automatisch aktualisiert. |
-| **Vom Benutzer verworfen** | Unabhängig davon, ob der Benutzer die vorherige Benachrichtigung verworfen hat, wird der Popup-Ersatz immer gesendet | Wenn der Benutzer das Popup verworfen hat, schlägt das Popup-Update fehl |
+| **Ändern von Inhalt** | Alle Inhalte/Layout des Popups können dadurch vollständig geändert werden. | Kann nur Eigenschaften ändern, die die Datenbindung unterstützen (Statusanzeige und Text der obersten Ebene). |
+| **Wieder als Popup angezeigt.** | Kann als Popup eingeblendet werden, wenn Sie **SuppressPopup** auf `false` festgelegt haben (oder auf „wahr”, um es lautlos im Hintergrund an das Info-Center zu senden) | Wird nicht erneut als Popup angezeigt; die Popup-Daten werden im Info-Center automatisch aktualisiert. |
+| **Benutzer, die geschlossen** | Unabhängig davon, ob der Benutzer die vorherige Benachrichtigung verworfen hat, wird der Popup-Ersatz immer gesendet | Wenn der Benutzer das Popup verworfen hat, schlägt das Popup-Update fehl |
 
 Allgemein: **Aktualisierung ist besonders nützlich für...**
 
 - Informationen, die sich häufig und in kurzer Zeit ändern und die nicht die Aufmerksamkeit des Benutzers erfordern
-- Kleine Verbesserungen am Popupinhalt, z.B. das Ändern von 50% auf 65%
+- Kleine Verbesserungen am Popupinhalt, z. B. das Ändern von 50 % auf 65 %
 
-Nachdem die Sequenz der Updates abgeschlossen ist, (z.B. die Datei heruntergeladen wurden) empfehlen wir den letzten Schritt zu ersetzen, da...
+Nachdem die Sequenz der Updates abgeschlossen ist, (z. B. die Datei heruntergeladen wurden) empfehlen wir den letzten Schritt zu ersetzen, da...
 
-- Die letzte Benachrichtigung hat wahrscheinlich drastische Layoutänderungen, z.B. ein Entfernen der Statusanzeige, das Hinzufügen neuer Schaltflächen usw.
+- Die letzte Benachrichtigung hat wahrscheinlich drastische Layoutänderungen, z. B. ein Entfernen der Statusanzeige, das Hinzufügen neuer Schaltflächen usw.
 - Der Benutzer hat möglicherweise die ausstehenden Statusbenachrichtigung verworfen, da er den Download nicht ansehen möchte, er sollte allerdings weiterhin über ein Popup benachrichtigt werden, wenn der Vorgang abgeschlossen ist
 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-progress-bar)
-- [Dokumentation zu Popupinhalt](adaptive-interactive-toasts.md)
+- [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-progress-bar)
+- [Toast-Content-Dokumentation](adaptive-interactive-toasts.md)

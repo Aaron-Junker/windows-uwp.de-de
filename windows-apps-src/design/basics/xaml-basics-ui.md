@@ -6,18 +6,18 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923107"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640815"
 ---
-# <a name="tutorial-create-a-user-interface"></a>Erstellen einer einfachen Benutzeroberfläche – Tutorial
+# <a name="tutorial-create-a-user-interface"></a>Tutorial: Erstellen einer Benutzeroberfläche
 
 In diesem Tutorial lernen Sie, wie Sie eine grundlegende Benutzeroberfläche für ein Bildbearbeitungsprogramm erstellen: 
 
-+ Unter Verwendung des XAML-Tools in Visual Studio, z.B. XAML-Designer, Toolbox, XAML-Editor Eigenschaftenpanel und Dokumentgliederung können Sie Steuerelemente und Inhalte auf der Benutzeroberfläche hinzufügen
-+ Unter Verwendung einiger der häufigsten XAML-Layoutpanels, z.B. RelativePanel, Grid und StackPanel-Element.
++ Unter Verwendung des XAML-Tools in Visual Studio, z. B. XAML-Designer, Toolbox, XAML-Editor Eigenschaftenpanel und Dokumentgliederung können Sie Steuerelemente und Inhalte auf der Benutzeroberfläche hinzufügen
++ Unter Verwendung einiger der häufigsten XAML-Layoutpanels, z. B. RelativePanel, Grid und StackPanel-Element.
 
 Das Bildbearbeitungsprogramm hat zwei Seiten/Bildschirme:
 
@@ -32,21 +32,21 @@ Die **Detailsseite** zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-* Visual Studio 2017: [Visual Studio 2017 Community herunterladen (kostenlos)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Windows 10 SDK (10.0.15063.468 oder höher): [Neuestes Windows SDK herunterladen (kostenlos)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Visual Studio 2017: [Visual Studio 2017 Community (kostenlos) herunterladen](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10 SDK (10.0.15063.468 oder höher):  [Das aktuelle Windows-SDK (kostenlos) herunterladen](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
-## <a name="part-0-get-the-starter-code-from-github"></a>Teil 0: Startcode von Github holen
+## <a name="part-0-get-the-starter-code-from-github"></a>Teil 0: Den Startcode von Github abrufen
 
 Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Beispiels. 
 
-1. Wechseln Sie zu [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). Sie gelangen auf die GitHub-Seite für das Beispiel. 
+1. Wechseln Sie zu [ https://github.com/Microsoft/Windows-appsample-photo-lab ](https://github.com/Microsoft/Windows-appsample-photo-lab). Sie gelangen auf die GitHub-Seite für das Beispiel. 
 2. Als nächstes müssen Sie das Beispiel klonen oder herunterladen. Klicken Sie auf die Schaltfläche **Clone or download**. Ein Untermenü erscheint.
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
         <figcaption>Das <b>Clone or download</b>-Menü auf der GitHub-Seite des Fotolbeispiels.</figcaption>
     </figure>
 
-    **Wenn Sie mit GitHub nicht vertraut sind:**
+    **Wenn Sie nicht mit GitHub vertraut sind:**
     
     a. Klicken Sie auf **Download ZIP** und speichern Sie die Datei lokal. Es wird eine ZIP-Datei heruntergeladen, die alle benötigten Projektdateien enthält.
     b. Entpacken Sie die Datei. Verwenden Sie den Datei-Explorer, um zu der gerade heruntergeladenen ZIP-Datei zu navigieren, klicken Sie mit der rechten Maustaste darauf und wählen Sie **Alle extrahieren...** aus. c. Navigieren Sie zu Ihrer lokalen Kopie des Beispiels und wechseln Sie zum `Windows-appsample-photo-lab-master\xaml-basics-starting-points\user-interface`-Verzeichnis.    
@@ -58,7 +58,7 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
 
 3. Öffnen Sie das Projekt durch einen Klick auf `Photolab.sln`.
 
-## <a name="part-1-add-a-textblock-using-xaml-designer"></a>Teil 1: Hinzufügen eines TextBlock-Steuerelements mit XAML-Designer
+## <a name="part-1-add-a-textblock-using-xaml-designer"></a>Teil 1: Fügen Sie ein TextBlock-Element mit dem XAML-Designer
 
 Visual Studio bietet verschiedene Tools zum leichteren Erstellen der XAML-UI. Mit XAML-Designer können Sie Steuerelemente auf die Designoberfläche ziehen und vor dem Ausführen der App anschauen. Mit dem Eigenschaftenpanel können Sie alle Eigenschaften des Steuerelements, die im Designer aktiv sind, ansehen und einstellen. Die Dokumentgliederung zeigt die über- und untergeordnete Struktur der visuellen XAML-Struktur für Ihre Benutzeroberfläche. Mit dem XAML-Editor können Sie das XAML-Markup direkt eingeben und ändern.
 
@@ -68,7 +68,7 @@ Hier ist die Visual Studio-UI mit den bezeichneten Tools.
 
 Diese Tools helfen Ihnen beim einfachen Erstellen der Benutzeroberfläche, deshalb werden sie alle in diesem Lernprogramm verwendet. Beginnen Sie mit XAML-Designer zum Hinzufügen eines Steuerelements. 
 
-**Hinzufügen eines Steuerelements mithilfe von XAML-Designer:**
+**Fügen Sie ein Steuerelement mit dem XAML-Designer hinzu:**
 
 1. Doppelklicken Sie im Projektmappen-Explorer auf die Datei **MainPage.xaml**, um sie zu öffnen. Dies zeigt die Hauptseite der App an, ohne das ein UI-Element hinzugefügt wurde.
 
@@ -137,7 +137,7 @@ Diese Tools helfen Ihnen beim einfachen Erstellen der Benutzeroberfläche, desha
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. Geben Sie im Bereich Eigenschaften **textwrapping** in das Suchfeld ein, um die Eigenschaft der **TextWrapping** ganz leicht zu finden. Klicken Sie auf den _Eigenschaftsmarker_ für den **TextWrapping**, um das Menü zu öffnen. (Der _Eigenschaftsmarker_ ist das kleine rechteckige Symbol rechts neben jedem Eigenschaftswert. Der _Eigenschaftsmarker_ ist schwarz, um anzuzeigen, dass die Eigenschaft nicht auf einen Standardwert festgelegt ist.) Wählen Sie im Menü **Eigenschaften** **Zurücksetzen** aus, um die Eigenschaften von TextWrapping zurückzusetzen.
+9. Geben Sie im Bereich Eigenschaften **textwrapping** in das Suchfeld ein, um die Eigenschaft der **TextWrapping** ganz leicht zu finden. Klicken Sie auf den _Eigenschaftsmarker_ für den **TextWrapping**, um das Menü zu öffnen. (Der _Eigenschaftsmarker_ ist das kleine rechteckige Symbol rechts neben jedem Eigenschaftswert. Die _Eigenschaftenmarker_ ist schwarz, um anzugeben, dass die Eigenschaft auf einen nicht standardmäßigen Wert festgelegt ist.) Auf der **Eigenschaft** , wählen Sie im Menü **zurücksetzen** zum Zurücksetzen der TextWrapping-Eigenschaft.
 
     Visual Studio fügt diese Eigenschaft hinzu, aber sie ist bereits in der Formatvorlage festgelegt, die Sie angewendet haben und Sie ist hier überflüssig.
 
@@ -148,7 +148,7 @@ Haben Sie bemerkt, dass Ihre App im XAML-Designer weißen Text auf schwarzem Hin
 > [!NOTE]
 > In diesem Teil des Lernprogramms haben Sie ein Steuerelement durch Ziehen und Ablegen hinzugefügt. Sie können ebenfalls ein Steuerelement hinzufügen, indem Sie auf die Toolbox doppelklicken. Probieren Sie es aus, und sehen Sie die Unterschiede im XAML-Code, den Visual Studio generiert.
 
-## <a name="part-2-add-a-gridview-control-using-the-xaml-editor"></a>Teil 2: Hinzufügen eines GridView-Steuerelements mit dem XAML-Editor
+## <a name="part-2-add-a-gridview-control-using-the-xaml-editor"></a>Teil 2: Hinzufügen einer GridView-Steuerelement, das mit dem XAML-editor
 
 In Teil 1 haben Sie einen Einblick auf die Verwendung von XAML-Designer und einige der von Visual Studio bereitgestellten Tools erhalten. Hier verwenden Sie den XAML-Editor, um direkt mit XAML-Markup zu arbeiten. Wenn Sie mit XAML vertraut sind, finden Sie unter Umständen, dass es sich um eine effiziente Art und Weise der Arbeit handelt.
 
@@ -156,11 +156,11 @@ Ersetzen Sie zuerst das Stammlayout-[Raster](https://docs.microsoft.com/uwp/api/
 
 Fügen Sie dann ein [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)-Steuerelement zum Anzeigen Ihrer Daten hinzu.
 
-**Hinzufügen eines Steuerelements mit dem XAML-Editor**
+**Hinzufügen eines Steuerelements, die mit dem XAML-editor**
 
 1. Ändern Sie im XAML-Editor das Stamm-**Raster** zu einem **RelativePanel**.
 
-    **Vorher**
+    **Vor dem**
     ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
           <TextBlock x:Name="TitleTextBlock"
@@ -170,7 +170,7 @@ Fügen Sie dann ein [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xam
     </Grid>
     ```
 
-    **Nachher**
+    **After**
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
@@ -182,9 +182,9 @@ Fügen Sie dann ein [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xam
 
     Weitere Informationen zum Layout mit einem **RelativePanel** finden Sie unter [Layoutpanels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel).
 
-2. Fügen Sie unterhalb des **TextBlock**-Elements ein **GridView-Steuerelements** mit dem Namen 'ImageGridView' hinzu. Legen Sie die _angefügte Eigenschaften_ des **RelativePanels**, um das Steuerelement unter dem Titeltext zu platzieren und erstrecken Sie es über die gesamte Breite des Bildschirms.
+2. Fügen Sie unterhalb des **TextBlock**-Elements ein **GridView-Steuerelements** mit dem Namen 'ImageGridView' hinzu. Legen Sie die **"relativepanel"** _angefügte Eigenschaften_ platzieren Sie das Steuerelement unterhalb des Titeltexts und die gesamte Breite des Bildschirms erstreckt.
 
-    **Diesen XAML-Code hinzufügen**
+    **Fügen Sie diesem XAML hinzu.**
 
     ```xaml
     <GridView x:Name="ImageGridView"
@@ -194,7 +194,7 @@ Fügen Sie dann ein [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xam
               RelativePanel.Below="TitleTextBlock"/>
     ```
 
-    **Nach dem TextBlock**
+    **Nach dem TextBlock-Element**
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
@@ -228,25 +228,25 @@ Sie werden feststellen, dass in der App noch keine Bilder angezeigt werden. Stan
 > [!NOTE]
 > Sie finden weitere Informationen zur Verwendung des Layouts eines **RelativePanel** im Artikel [Layoutpanels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel). Schauen Sie mal nach und experimentieren Sie dann mit einigen anderen Layouts, indem Sie die angefügten Eigenschaften des RelativePanel auf **TextBlock** und **GridView** festlegen.
 
-## <a name="part-3-add-a-datatemplate-to-display-your-data"></a>Teil 3: Hinzufügen eines DataTemplates zum Anzeigen Ihrer Daten
+## <a name="part-3-add-a-datatemplate-to-display-your-data"></a>Teil 3: Hinzufügen von einem DataTemplate zum Anzeigen Ihrer Daten
 
 Erstellen Sie jetzt ein [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate), das GridView mitteilt, wie Ihre Daten angezeigt werden. Eine ausführliche Erläuterung der Datenvorlagen finden Sie unter [Elementcontainer und Vorlagen](../controls-and-patterns/item-containers-templates.md).
 
 Zunächst müssen Sie nur Platzhalter hinzufügen, die Ihnen beim Erstellen des gewünschten Layouts helfen. Im Lernprogramm [XAML-Datenbindung](../../data-binding/xaml-basics-data-binding.md) können Sie diese Platzhalter durch echte Daten aus der **ImageFileInfo**-Klasse ersetzen. Sie können jetzt die ImageFileInfo.cs-Datei öffnen, wenn Sie überprüfen möchten, wie das Datenobjekt aussieht.
 
-**Hinzufügen einer Datenvorlage zu einer Rasteransicht**
+**Fügen Sie eine Vorlage in eine Rasteransicht**
 
 1. Öffnen Sie MainPage.xaml.
 
 2. Wenn die Bewertung anzeigen möchten, verwenden Sie das **RadRating**-Steuerelement aus dem [Telerik UI für UWP](https://github.com/telerik/UI-For-UWP)-NuGet-Paket. Fügen Sie einen XAML-Namespace-Verweis hinzu, der den Namespace für das Telerik-Steuerelemente angibt. Fügen Sie ihn dem Starttag **Seite** hinzu, direkt nach den anderen ' Xmlns:'-Einträgen.
 
-    **Diesen XAML-Code hinzufügen**
+    **Fügen Sie diesem XAML hinzu.**
 
     ```xaml
     xmlns:telerikInput="using:Telerik.UI.Xaml.Controls.Input"
     ```
 
-    **Nach dem letzten ' Xmlns:'-Eintrag**
+    **Nach dem letzten "Xmlns:' Eintrag**
 
     ```xaml
     <Page x:Name="page"
@@ -263,7 +263,7 @@ Zunächst müssen Sie nur Platzhalter hinzufügen, die Ihnen beim Erstellen des 
 
     Weitere Informationen zu XAML-Namespaces finden Sie unter [XAML-Namespaces und Namespacezuordnung](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping).
 
-3. Klicken Sie mit der rechten Maustaste unter Dokumentgliederung auf **ImageGridView**. Wählen Sie im Kontextmenü die Option **Weitere Vorlagen bearbeiten > Generierten Inhalt bearbeiten (ItemTemplate) > Leere ... erstellen **. Dies öffnet das Dialogfeld **Ressource erstellen**.
+3. Klicken Sie mit der rechten Maustaste unter Dokumentgliederung auf **ImageGridView**. Wählen Sie im Kontextmenü des **zusätzliche Vorlagen bearbeiten > generierte Elemente bearbeiten (ItemTemplate) > leere erstellen...** . Die **Ressource erstellen** Dialogfeld wird geöffnet.
 
 4. Ändern Sie im Dialogfeld den Wert des Namens (Schlüssel) zu **ImageGridView_DefaultItemTemplate** und klicken Sie dann auf **OK**.
 
@@ -296,12 +296,12 @@ Zunächst müssen Sie nur Platzhalter hinzufügen, die Ihnen beim Erstellen des 
 
 5. In der **ImageGridView_DefaultItemTemplate**-Ressource, geben Sie dem Stamm-**Raster** eine Höhe und Breite von **300**, und einen Rand von **8**. Fügen Sie dann zwei Zeilen hinzu und legen Sie die Höhe der zweiten Zeile auf **Auto** fest.
 
-    **Vorher**
+    **Vor dem**
     ```xaml
     <Grid/>
     ```
 
-    **Nachher**
+    **After**
     ```xaml
     <Grid Height="300"
           Width="300"
@@ -380,13 +380,13 @@ Führen Sie die App jetzt aus, um **GridView** mit der Elementvorlage anzuzeigen
 
 ![App-UI-Prüfpunkt 2](images/xaml-basics/layout-1.png)
 
-## <a name="part-4-modify-the-item-container-style"></a>Teil 4: Ändern des Elementcontainerstils
+## <a name="part-4-modify-the-item-container-style"></a>Teil 4: Ändern des Stils der Element-container
 
-Eine Steuerelementvorlage für ein Element enthält die optischen Elemente zur Anzeige des Zustands wie Auswahl, Zeiger und Fokus. Diese visuellen Elemente werden über oder unter der Datenvorlage gerendert. Hier ändern Sie die **Hintergrund**- und **Rand**-Eigenschaften der Steuerelementvorlage, um dem **GridView**-Elemente einen grauen Hintergrund hinzuzufügen.
+Eine Steuerelementvorlage für ein Element enthält die optischen Elemente zur Anzeige des Zustands wie Auswahl, Draufzeigen und Fokus. Diese visuellen Elemente werden über oder unter der Datenvorlage gerendert. Hier ändern Sie die **Hintergrund**- und **Rand**-Eigenschaften der Steuerelementvorlage, um dem **GridView**-Elemente einen grauen Hintergrund hinzuzufügen.
 
-**Ändern des Elementcontainers**
+**Ändern Sie den Elementcontainer**
 
-1. Klicken Sie mit der rechten Maustaste unter Dokumentgliederung auf **ImageGridView**. Wählen Sie im Kontextmenü die Option **Weitere Vorlagen bearbeiten > Generierten Containerinhalt bearbeiten (ItemContainerStyle) > Kopie erstellen...**. Dies öffnet das Dialogfeld **Ressource erstellen**.
+1. Klicken Sie mit der rechten Maustaste unter Dokumentgliederung auf **ImageGridView**. Wählen Sie im Kontextmenü des **zusätzliche Vorlagen bearbeiten > erstellten Elementcontainer bearbeiten (ItemContainerStyle) > Kopie bearbeiten...** . Die **Ressource erstellen** Dialogfeld wird geöffnet.
 
 2. Ändern Sie im Dialogfeld den Wert des Namens (Schlüssel) zu **ImageGridView_DefaultItemContainerStyle** und klicken Sie dann auf **OK**.
 
@@ -440,24 +440,24 @@ Eine Steuerelementvorlage für ein Element enthält die optischen Elemente zur A
 
 3. Ändern Sie den Wert der **Hintergrund**-Eigenschaft auf **Grau**.
 
-    **Vorher**
+    **Vor dem**
     ```xaml
         <Setter Property="Background" Value="{ThemeResource GridViewItemBackground}"/>
     ```
 
-    **Nachher**
+    **After**
     ```xaml
         <Setter Property="Background" Value="Gray"/>
     ```
 
 4. Ändern Sie den Wert der **Rand**-Eigenschaft auf **8**.
 
-    **Vorher**
+    **Vor dem**
     ```xaml
         <Setter Property="Margin" Value="0,0,4,4"/>
     ```
 
-    **Nachher**
+    **After**
     ```xaml
         <Setter Property="Margin" Value="8"/>
     ```
@@ -469,7 +469,7 @@ Führen Sie die App aus, um herauszufinden, wie sie bisher aussieht. Skalieren d
 > [!Note]
 > Wenn Sie experimentieren möchten, versuchen Sie, die Hintergrund- und Rand-Eigenschaften mit unterschiedlichen Werten festzulegen und welche Auswirkung dies hat.
 
-## <a name="part-5-apply-some-final-adjustments-to-the-layout"></a>Teil 5: Anwenden einiger abschließender Anpassungen am Layout
+## <a name="part-5-apply-some-final-adjustments-to-the-layout"></a>Teil 5: Wenden Sie einige abschließende Anpassungen vornehmen, auf das layout
 
 Um die Bilder auf der Seite zu zentrieren, müssen Sie die Ausrichtung des Rasters auf der Seite anpassen. Oder möchten Sie die Ausrichtung der Bilder in **GridView** anpassen? Ist es wichtig? Mal sehen.
 
@@ -481,7 +481,7 @@ Weitere Informationen zur Anpassung finden Sie unter [Ausrichtung, Ränder und A
 
 1. Legen Sie in **Gridview** die **HorizontalAlignment**-Eigenschaft auf **Center** fest.
 
-    **Vorher**
+    **Vor dem**
     ```xaml
         <GridView x:Name="ImageGridView"
                   Margin="0,0,0,8"
@@ -492,7 +492,7 @@ Weitere Informationen zur Anpassung finden Sie unter [Ausrichtung, Ränder und A
                   ItemContainerStyle="{StaticResource ImageGridView_DefaultItemContainerStyle}"/>
     ```
 
-    **Nachher**
+    **After**
     ```xaml
         <GridView x:Name="ImageGridView"
                   Margin="0,0,0,8"
@@ -510,7 +510,7 @@ Weitere Informationen zur Anpassung finden Sie unter [Ausrichtung, Ränder und A
 
 3. Entfernen Sie die **HorizontalAlignment**-Einstellung aus dem vorherigen Schritt.
 
-4. Klicken Sie mit der rechten Maustaste unter Dokumentgliederung auf **ImageGridView**. Wählen Sie im Kontextmenü die Option **Weitere Vorlagen bearbeiten > Layout der Elemente bearbeiten (ItemsPanel) > Kopie erstellen...**. Dies öffnet das Dialogfeld **Ressource erstellen**.
+4. Klicken Sie mit der rechten Maustaste unter Dokumentgliederung auf **ImageGridView**. Wählen Sie im Kontextmenü des **zusätzliche Vorlagen bearbeiten > Layout der Elemente bearbeiten (ItemsPanel) > Kopie bearbeiten...** . Die **Ressource erstellen** Dialogfeld wird geöffnet.
 
 5. Ändern Sie im Dialogfeld den Wert des Namens (Schlüssel) zu **ImageGridView_ItemsPanelTemplate** und klicken Sie dann auf **OK**.
 
@@ -526,14 +526,14 @@ Weitere Informationen zur Anpassung finden Sie unter [Ausrichtung, Ränder und A
 
 6. Legen Sie in **ItemsWrapGrid** die **HorizontalAlignment**-Eigenschaft auf **Center** fest.
 
-    **Vorher**
+    **Vor dem**
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal" />
     </ItemsPanelTemplate>
     ```
 
-    **Nachher**
+    **After**
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal"
@@ -557,5 +557,5 @@ Nachdem Sie nun die grundlegende Benutzeroberfläche erstellt haben, können Sie
 
 ## <a name="get-the-final-version-of-the-photolab-sample"></a>Abrufen der finalen Version des PhotoLab-Beispiels
 
-In diesem Lernprogramm lernen Sie nicht das Erstellen der vollständigen App. Lesen Sie daher die [endgültige Version](https://github.com/Microsoft/Windows-appsample-photo-lab) zu Features durch wie z.B. benutzerdefinierte Animationen und Support für Ihre Telefon.
+In diesem Lernprogramm lernen Sie nicht das Erstellen der vollständigen App. Lesen Sie daher die [endgültige Version](https://github.com/Microsoft/Windows-appsample-photo-lab) zu Features durch wie z. B. benutzerdefinierte Animationen und Support für Ihre Telefon.
 

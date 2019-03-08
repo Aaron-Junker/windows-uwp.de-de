@@ -6,24 +6,24 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, fehler, behandlung, ausnahme
 ms.localizationpriority: medium
 ms.openlocfilehash: c6f7135e85ab63ddfe92bd0de8c656b58fb1a020
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937508"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626575"
 ---
 # <a name="error-handling-with-cwinrt"></a>Fehlerbehandlung bei C++/WinRT
 
-In diesem Thema wird erläutert, Strategien zur Behandlung von Fehlern bei der Programmierung mit [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Weitere allgemeine Informationen sowie Hintergrundinformationen finden Sie unter [Fehler- und Ausnahmebehandlung (modernes C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
+In diesem Thema wird erläutert, die Strategien zur Behandlung von Fehlern beim Programmieren mit [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Weitere allgemeine Informationen sowie Hintergrundinformationen finden Sie unter [Fehler- und Ausnahmebehandlung (modernes C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
 
 ## <a name="avoid-catching-and-throwing-exceptions"></a>Vermeiden des Abfangens und Auslösens von Ausnahmen
 Es wird empfohlen, weiterhin [ausnahmesicheren Code](/cpp/cpp/how-to-design-for-exception-safety) zu schreiben, aber auch nach Möglichkeit zu vermeiden, dass Ausnahmen abgefangen und ausgelöst werden. Wenn kein Handler für eine Ausnahme vorhanden ist, generiert Windows automatisch einen Fehlerbericht (einschließlich eines Minidumps des Absturzes). Dieser hilft Ihnen dabei, zu ermitteln, wo das Problem liegt.
 
-Lösen Sie keine Ausnahme aus, die erwartungsgemäß abgefangen wird. Und verwenden Sie keine Ausnahmen für erwartete Fehler. Lösen Sie eine Ausnahme *nur dann aus, wenn ein unerwarteter Laufzeitfehler auftritt*, und behandeln Sie alles andere mit Fehler-/Ergebniscodes– direkt und in der Nähe der Fehlerquelle. So wissen Sie, wenn eine Ausnahme *ausgelöst wird*, dass die Ursache entweder ein Fehler im Code oder ein außergewöhnlicher Fehlerstatus im System ist.
+Lösen Sie keine Ausnahme aus, die erwartungsgemäß abgefangen wird. Und verwenden Sie keine Ausnahmen für erwartete Fehler. Lösen Sie eine Ausnahme *nur dann aus, wenn ein unerwarteter Laufzeitfehler auftritt*, und behandeln Sie alles andere mit Fehler-/Ergebniscodes – direkt und in der Nähe der Fehlerquelle. So wissen Sie, wenn eine Ausnahme *ausgelöst wird*, dass die Ursache entweder ein Fehler im Code oder ein außergewöhnlicher Fehlerstatus im System ist.
 
 Betrachten Sie das Szenario beim Zugreifen auf die Windows-Registrierung. Wenn Ihre App einen Wert aus der Registrierung nicht lesen kann, ist dies zu erwarten und Sie sollten dies ordnungsgemäß handhaben. Lösen Sie keine Ausnahme aus. Geben Sie stattdessen einen `bool`- oder `enum`-Wert zurück, der darauf hinweist, dass der Wert nicht gelesen wurde, und ggf. auch den Grund dafür angibt. Kann ein Wert nicht in die Registrierung *geschrieben* werden, weist dies wahrscheinlich darauf hin, dass ein größeres Problem vorliegt, als Sie sinnvoll in Ihrer Anwendung behandeln könnten. In solch einem Fall sollte Ihre Anwendung nicht fortgesetzt werden. Folglich ist eine Ausnahme, die zu einem Fehlerbericht führt, die schnellste Möglichkeit zu verhindern, dass Ihre Anwendung Schäden verursacht.
 
-Stellen Sie sich als weiteres Beispiel vor, dass ein Miniaturbild von einem Aufruf an [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync#Windows_Storage_StorageFile_GetThumbnailAsync_Windows_Storage_FileProperties_ThumbnailMode_) abgerufen und an [**BitmapSource.SetSourceAsync **](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync#Windows_UI_Xaml_Media_Imaging_BitmapSource_SetSourceAsync_Windows_Storage_Streams_IRandomAccessStream_) übergeben wird. Wenn diese Abfolge von Aufrufen bewirkt, dass `nullptr` an **SetSourceAsync** übergeben wird (die Bilddatei kann nicht gelesen werden; z.B. könnte die Dateierweiterung darauf hinweisen, dass sie Bilddaten enthält, was tatsächlich aber nicht der Fall ist), dann lösen Sie eine Ausnahme für einen ungültigen Zeiger aus. Wenn Sie einen solchen Fall in Ihrem Code entdecken, sollten Sie, anstatt den Fall als Ausnahme abzufangen und zu handhaben, stattdessen prüfen, ob `nullptr` von **GetThumbnailAsync ** zurückgegeben wurde.
+Stellen Sie sich als weiteres Beispiel vor, dass ein Miniaturbild von einem Aufruf an [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync#Windows_Storage_StorageFile_GetThumbnailAsync_Windows_Storage_FileProperties_ThumbnailMode_) abgerufen und an [**BitmapSource.SetSourceAsync** ](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync#Windows_UI_Xaml_Media_Imaging_BitmapSource_SetSourceAsync_Windows_Storage_Streams_IRandomAccessStream_) übergeben wird. Wenn diese Abfolge von Aufrufen bewirkt, dass `nullptr` an **SetSourceAsync** übergeben wird (die Bilddatei kann nicht gelesen werden; z. B. könnte die Dateierweiterung darauf hinweisen, dass sie Bilddaten enthält, was tatsächlich aber nicht der Fall ist), dann lösen Sie eine Ausnahme für einen ungültigen Zeiger aus. Wenn Sie einen solchen Fall in Ihrem Code entdecken, sollten Sie, anstatt den Fall als Ausnahme abzufangen und zu handhaben, stattdessen prüfen, ob `nullptr` von **GetThumbnailAsync**  zurückgegeben wurde.
 
 Das Auslösen von Ausnahmen ist für gewöhnlich langsamer als die Verwendung von Fehlercodes. Wenn Sie eine Ausnahme nur bei schwerwiegenden Fehlern auslösen, geht dies, wenn alles gut läuft, nie zu Lasten der Leistung.
 
@@ -75,7 +75,7 @@ winrt::check_bool(::SetEvent(h.get()));
 Wenn der Wert, den Sie an [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) übergeben, falsch ist, findet die folgende Abfolge von Aktionen statt.
 
 - **winrt::check_bool** ruft die Funktion [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) auf.
-- **WinRT:: throw_last_error** ruft [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) , um den aufrufenden Thread letzten Fehlercodewert abzurufen, und ruft dann die [**WinRT:: throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) -Funktion.
+- **WinRT::throw_last_error** Aufrufe [ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360) zum Abrufen des aufrufenden Threads den Wert des letzten Fehlers, und ruft dann die [ **winrt::throw_ HRESULT** ](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) Funktion.
 - **winrt::throw_hresult** löst eine Ausnahme unter Verwendung eines [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)-Objekts (oder eines Standardobjekts) aus, das diesen Fehlercode darstellt.
 
 Da Windows-APIs Laufzeitfehler mit verschiedenen Rückgabewerttypen melden, stehen zusätzlich zu **winrt::check_bool** einige weitere nützliche Hilfsfunktionen zur Verfügung, um Werte zu überprüfen und Ausnahmen auszulösen.
@@ -105,7 +105,7 @@ HRESULT DoWork() noexcept
 }
 ```
 
-[**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) behandelt Ausnahmen, die von **std::exception** und [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) und deren abgeleiteten Typen abgeleitet wurden. In Ihrer Implementierung sollten Sie **winrt::hresult_error** oder einen abgeleiteten Typ bevorzugen, sodass Nutzer Ihrer API ausführliche Fehlerinformationen erhalten. **std::exception** (was E_FAIL entspricht) wird unterstützt, wenn Ausnahmen aus der Verwendung der Standardvorlagenbibliothek entstehen.
+[**WinRT::to_hresult** ](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) behandelt Ausnahmen, die von abgeleiteten **Std:: Exception**, und [ **winrt::hresult_error** ](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) und seine abgeleiteten Typen. In Ihrer Implementierung sollten Sie **winrt::hresult_error** oder einen abgeleiteten Typ bevorzugen, sodass Nutzer Ihrer API ausführliche Fehlerinformationen erhalten. **std::exception** (was E_FAIL entspricht) wird unterstützt, wenn Ausnahmen aus der Verwendung der Standardvorlagenbibliothek entstehen.
 
 ## <a name="assertions"></a>Assertionen
 Für interne Annahmen in Ihrer Anwendung gibt es Assertionen. Bevorzugen Sie möglichst **static_assert** für die Überprüfung während der Kompilierung. Verwenden Sie für Laufzeitbedingungen WINRT_ASSERT mit einen booleschen Ausdruck.
@@ -124,17 +124,17 @@ WINRT_VERIFY_(TRUE, ::CloseHandle(value));
 ```
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [winrt::check_bool-Funktionsvorlage](/uwp/cpp-ref-for-winrt/error-handling/check-bool)
-* [winrt::check_hresult-Funktion](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
-* [winrt::check_nt-Funktionsvorlage](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
-* [winrt::check_pointer-Funktionsvorlage](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
-* [winrt::check_win32-Funktionsvorlage](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
-* [winrt::handle-Struktur](/uwp/cpp-ref-for-winrt/handle)
-* [winrt::hresult_error-Struktur](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
-* [winrt::throw_hresult-Funktion](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
-* [winrt::throw_last_error-Funktion](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
-* [winrt::to_hresult-Funktion](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
+* [Vorlage für WinRT::check_bool-Funktion](/uwp/cpp-ref-for-winrt/error-handling/check-bool)
+* [WinRT::check_hresult-Funktion](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
+* [Vorlage für WinRT::check_nt-Funktion](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
+* [Vorlage für WinRT::check_pointer-Funktion](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
+* [Vorlage für WinRT::check_win32-Funktion](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
+* [WinRT::Handle-Struktur](/uwp/cpp-ref-for-winrt/handle)
+* [WinRT::hresult_error-Struktur](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [WinRT::throw_hresult-Funktion](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
+* [WinRT::throw_last_error-Funktion](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
+* [winrt::to_hresult function](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Fehler- und Ausnahmebehandlung (modernes C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)
-* [Vorgehensweise: Entwurf für die Ausnahmesicherheit](/cpp/cpp/how-to-design-for-exception-safety)
+* [So wird es gemacht: Entwurf für sichere Ausnahmebehandlung](/cpp/cpp/how-to-design-for-exception-safety)

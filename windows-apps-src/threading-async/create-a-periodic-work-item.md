@@ -4,14 +4,14 @@ title: Erstellen einer regelmäßigen Arbeitsaufgabe
 description: Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die regelmäßig wiederholt wird.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, regelmäßige Arbeitsaufgabe, Threading, Timer
+keywords: Windows 10, UWP, regelmäßige Arbeitsaufgabe, Threading, Timer
 ms.localizationpriority: medium
 ms.openlocfilehash: 05ed3b4bc4fa6dbe1119dca40d22107e94cea576
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981544"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636905"
 ---
 # <a name="create-a-periodic-work-item"></a>Erstellen einer regelmäßigen Arbeitsaufgabe
 
@@ -27,13 +27,13 @@ Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die regelmäßig wiede
 
 Verwenden Sie die [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)-Methode, um eine regelmäßige Arbeitsaufgabe zu erstellen. Stellen Sie eine Lambda-Funktion zum Ausführen der Arbeit bereit, und geben Sie mit dem *period*-Parameter das Intervall zwischen den Übermittlungen an. Das Intervall wird anhand einer [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996)-Struktur angegeben. Nach jedem Verstreichen des Intervalls wird die Arbeitsaufgabe erneut gesendet. Stellen Sie daher sicher, dass es lang genug ist, um die Arbeit auszuführen.
 
-[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) gibt ein [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)-Objekt zurück. Speichern Sie das Objekt für den Fall, dass der Timer abgebrochen werden muss.
+[**CreateTimer** ](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) gibt eine [ **ThreadPoolTimer** ](https://msdn.microsoft.com/library/windows/apps/BR230587) Objekt. Speichern Sie das Objekt für den Fall, dass der Timer abgebrochen werden muss.
 
-> **Hinweis:** vermeiden Sie es, der den Wert 0 (null) (oder ein Wert kleiner als eine Millisekunde) für das Intervall. Andernfalls verhält sich der regelmäßige Timer wie ein einmaliger Timer.
+> **Beachten Sie**  vermeiden Sie dabei den Wert 0 (null) (oder ein Wert kleiner als eine Millisekunde) für das Intervall. Andernfalls verhält sich der regelmäßige Timer wie ein einmaliger Timer.
 
-> **Hinweis:** Sie können [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) verwenden, um auf die Benutzeroberfläche zuzugreifen und den Status der Arbeitsaufgabe anzuzeigen.
+> **Beachten Sie**  können [ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317) auf die Benutzeroberfläche zugreifen und Anzeigen des Status von der Arbeitsaufgabe.
 
-Das folgende Beispiel erstellt eine Arbeitsaufgabe, die alle 60Sekunden ausgeführt wird:
+Das folgende Beispiel erstellt eine Arbeitsaufgabe, die alle 60 Sekunden ausgeführt wird:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -89,7 +89,7 @@ Das folgende Beispiel erstellt eine Arbeitsaufgabe, die alle 60Sekunden ausgefü
 
 Bei Bedarf können Sie den Abbruch des regelmäßigen Timers mit einem [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926)-Element verarbeiten. Stellen Sie mithilfe der [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)-Überladung eine zusätzliche Lambda-Funktion bereit, die den Abbruch der regelmäßigen Arbeitsaufgabe behandelt.
 
-Das folgende Beispiel erstellt eine regelmäßige Arbeitsaufgabe, die alle 60Sekunden wiederholt wird, und stellt außerdem einen Abbruchhandler bereit:
+Das folgende Beispiel erstellt eine regelmäßige Arbeitsaufgabe, die alle 60 Sekunden wiederholt wird, und stellt außerdem einen Abbruchhandler bereit:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -184,7 +184,7 @@ Das folgende Beispiel erstellt eine regelmäßige Arbeitsaufgabe, die alle 60Sek
 >         }));
 > ```
 
-## <a name="cancel-the-timer"></a>Abbrechen des Timers
+## <a name="cancel-the-timer"></a>Abbrechen des Zeitgebers
 
 Rufen Sie ggf. die [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx)-Methode auf, um die Wiederholung der regelmäßigen Arbeitsaufgabe zu beenden. Falls die Arbeitsaufgabe beim Abbruch des regelmäßigen Timers ausgeführt wird, kann sie noch abgeschlossen werden. Das [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926)-Element (sofern verwendet) wird aufgerufen, wenn alle Instanzen der regelmäßigen Arbeitsaufgabe abgeschlossen wurden.
 

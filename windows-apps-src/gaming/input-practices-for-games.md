@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Spiele, Eingabe
 ms.localizationpriority: medium
 ms.openlocfilehash: 73e0ba3e563b57c2e392809097567b7e6739c90d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927830"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634945"
 ---
 # <a name="input-practices-for-games"></a>Eingabemethoden für Spiele
 
@@ -25,11 +25,11 @@ Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 
 ## <a name="choosing-an-input-device-class"></a>Auswählen einer Eingabegeräteklasse
 
-Es sind viele verschiedene Arten von Eingabe-APIs verfügbar, z.B. [ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick), und [Gamepad](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad). Wie entscheiden Sie, welche API Sie für Ihr Spiel verwenden?
+Es sind viele verschiedene Arten von Eingabe-APIs verfügbar, z. B. [ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick), und [Gamepad](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad). Wie entscheiden Sie, welche API Sie für Ihr Spiel verwenden?
 
 Sie sollten die API wählen, die für Ihr Spiel die am besten geeigneten Eingaben bietet. Wenn Sie z. B. Spiele für 2D-Plattformen entwickeln, können Sie wahrscheinlich nur die **Gamepad**-Klasse verwenden, ohne die zusätzlichen Funktionalitäten anderer Klassen zu berücksichtigen. Das Spiel wäre damit auf die Unterstützung von Gamepads beschränkt; seine einheitliche Oberfläche würde aber mit vielen Gamepads funktionieren, ohne weiteren Code zu benötigen.
 
-Andererseits sollten Sie für komplexe Flug- und Renn-Simulationen alle [RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)-Objekte als Grundlage auflisten, um auch weniger bekannte Geräte zu unterstützen, die manche Spieler noch vereinzelt verwenden, z.B. separate Pedale, Drosselklappen usw. 
+Andererseits sollten Sie für komplexe Flug- und Renn-Simulationen alle [RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)-Objekte als Grundlage auflisten, um auch weniger bekannte Geräte zu unterstützen, die manche Spieler noch vereinzelt verwenden, z. B. separate Pedale, Drosselklappen usw. 
 
 Anschließend können Sie mithilfe einer Eingabeklasse-Methode wie **FromGameController** bzw. [Gamepad.FromGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.fromgamecontroller) feststellen, ob aktuelle Ansichten für das Gerät verfügbar sind. Wenn das Gerät z. B. auch ein **Gamepad** ist, können Sie die Schaltflächenzuordnungen der Benutzeroberfläche entsprechend anpassen, um die Standardtasten sinnvoller zuzuordnen. (Wenn Sie im Gegensatz dazu nur **RawGameController** verwenden, muss der Spieler seine Gamepad-Eingaben manuell konfigurieren.) 
 
@@ -37,9 +37,9 @@ Alternativ können Sie auch die Anbieter-ID (VID) und Produkt-ID (PID) des **Raw
 
 ## <a name="keeping-track-of-connected-controllers"></a>Nachverfolgen von angeschlossenen Controllern
 
-Während jeder Controllertyp eine Liste der verbundenen Domänencontroller enthält (z.B. [Gamepad.Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.Gamepads)), empfiehlt es sich, Ihre eigene Liste von Domänencontrollern zu verwalten. Weitere Informationen finden Sie unter [die Gamepadliste](gamepad-and-vibration.md#the-gamepads-list) (jeder Controllertyp hat einen ähnlichen Namensabschnittfür sein eigenes Thema).
+Während jeder Controllertyp eine Liste der verbundenen Domänencontroller enthält (z. B. [Gamepad.Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.Gamepads)), empfiehlt es sich, Ihre eigene Liste von Domänencontrollern zu verwalten. Weitere Informationen finden Sie unter [die Gamepadliste](gamepad-and-vibration.md#the-gamepads-list) (jeder Controllertyp hat einen ähnlichen Namensabschnitt für sein eigenes Thema).
 
-Was geschieht jedoch, wenn der Spieler den Controller trennt oder einen neuen installiert? Sie müssen diese Ereignisse behandeln, und die Liste entsprechend zu aktualisieren. Weitere Informationen finden Sie unter [Hinzufügen und Entfernen von Gamepads](gamepad-and-vibration.md#adding-and-removing-gamepads) (jeder Controllertyp hat einen ähnlichen Namensabschnittfür sein eigenes Thema).
+Was geschieht jedoch, wenn der Spieler den Controller trennt oder einen neuen installiert? Sie müssen diese Ereignisse behandeln, und die Liste entsprechend zu aktualisieren. Weitere Informationen finden Sie unter [Hinzufügen und Entfernen von Gamepads](gamepad-and-vibration.md#adding-and-removing-gamepads) (jeder Controllertyp hat einen ähnlichen Namensabschnitt für sein eigenes Thema).
 
 Da die hinzugefügten und entfernten Ereignisse asynchron ausgelöst werden, könnten Sie beim Umgang mit der Liste der Domänencontroller falsche Ergebnisse erhalten. Wenn Sie daher auf die Liste der Domänencontroller zugreifen, sperren Sie diese, damit nur ein Thread zu jedem Zeitpunkt darauf zugreifen kann. Dies kann mit [Concurrency Runtime](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime) geschehen, insbesondere der [Critical_section-Klasse](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class)im **&lt;ppl.h&gt;**.
 
@@ -47,7 +47,7 @@ Die Liste der angeschlossenen Controller ist anfänglich leer, und dauert ein od
 
 Um dieses Problem zu beheben, müssen Sie eine Methode durchführen, die den wichtigsten Gamepad "aktualisiert" (in einem Spiel mit Einzelspieler; Multiplayer-Spiele erfordern anspruchsvollere Lösungen). Sie sollten diese Methode von beiden Controller-Ereignishandlern aufrufen, dem hinzugefügten und dem entfernten Controller oder in der Update-Methode.
 
-Die folgende Methode gibt den ersten Gamepad der Liste zurück (oder **nullptr**, wenn die Liste leer ist). Denken Sie daran, **nullptr** jedes Mal zu überprüfen, wenn Sie mit dem Controller eine Aktion durchführen. Es liegt an Ihnen, ob Sie Spiele blockieren, wenn es kein Domänencontroller verbunden ist (z.B. durch das Anhalten des Spiels) oder einfach Spiele weiter spielen und die Eingabe ignorieren.
+Die folgende Methode gibt den ersten Gamepad der Liste zurück (oder **nullptr**, wenn die Liste leer ist). Denken Sie daran, **nullptr** jedes Mal zu überprüfen, wenn Sie mit dem Controller eine Aktion durchführen. Es liegt an Ihnen, ob Sie Spiele blockieren, wenn es kein Domänencontroller verbunden ist (z. B. durch das Anhalten des Spiels) oder einfach Spiele weiter spielen und die Eingabe ignorieren.
 
 ```cpp
 #include <ppl.h>
@@ -164,9 +164,9 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 }
 ```
 
-## <a name="tracking-users-and-their-devices"></a>Nachverfolgen von Benutzern und Geräten
+## <a name="tracking-users-and-their-devices"></a>Nachverfolgen von Benutzern und ihren Geräten
 
-Alle Eingabegeräte sind einem [Benutzer](https://docs.microsoft.com/uwp/api/windows.system.user) zugeordnet, damit seine Identität mit seinem Spiel, seinen Erfolgen, geänderten Einstellungen und anderen Aktivitäten verknüpft werden kann. Da sich Benutzer nach Belieben an- und abmelden können, ist es normal, dass sich andere Benutzer auf einem mit dem System verbundenen Eingabegerät anmelden, nachdem sich ein vorheriger Benutzer abgemeldet hat. Wenn sich ein Benutzer an- oder abmeldet, wird das [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged)-Ereignis ausgelöst. Sie können für diesen Fall einen Ereignishandler registrieren, um die Spieler und von ihnen verwendeten Geräte nachzuverfolgen.
+Alle Eingabegeräte sind einem [Benutzer](https://docs.microsoft.com/uwp/api/windows.system.user) zugeordnet, damit seine Identität mit seinem Spiel, seinen Erfolgen, geänderten Einstellungen und anderen Aktivitäten verknüpft werden kann. Da sich Benutzer nach Belieben an- und abmelden können, ist es normal, dass sich andere Benutzer auf einem mit dem System verbundenen Eingabegerät anmelden, nachdem sich ein vorheriger Benutzer abgemeldet hat. Wenn sich ein Benutzer an- oder abmeldet, wird das [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged)-Ereignis ausgelöst. Sie können einen Ereignishandler für dieses Ereignis registrieren, um Spieler und die von ihnen verwendeten Geräte nachzuverfolgen.
 
 Die Benutzeridentität dient auch dazu, Eingabegeräte einem [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) zuzuordnen.
 
@@ -231,7 +231,7 @@ Diese beiden Funktionen leiten zuerst den booleschen Zustand der Tastenauswahl v
 
 ## <a name="detecting-complex-button-arrangements"></a>Erkennen komplexer Tastenanordnungen
 
-Jede Taste eines Eingabegeräts liefert einen digitalen Wert, der angibt, ob sie im gedrückten Zustand (unten) oder losgelassenen Zustand (oben) ist. Aus Effizienzgründen werden die Ablesewerte der Tasten nicht als einzelne boolesche Werte dargestellt, sondern in Bitfeldern zusammengefasst, die durch gerätespezifische Enumerationen wie [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) dargestellt werden. Zum Ablesen bestimmter Tasten wird eine bitweise Maskierung verwendet, um die relevanten Werte zu isolieren. Eine Taste ist gedrückt (unten), wenn ihr Bit entsprechend festgelegt ist, andernfalls ist sie losgelassen (oben).
+Jede Taste eines Eingabegeräts liefert einen digitalen Wert, der angibt, ob sie im gedrückten Zustand (unten) oder losgelassenen Zustand (oben) ist. Aus Effizienzgründen werden die Ablesewerte der Tasten nicht als einzelne boolesche Werte dargestellt, sondern in Bitfeldern zusammengefasst, die durch gerätespezifische Enumerationen wie [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) dargestellt werden. Zum Lesen bestimmter Tastenwerte wird eine bitweise Maskierung verwendet, um die für Sie relevanten Werte zu isolieren. Eine Taste ist gedrückt (unten), wenn ihr Bit entsprechend festgelegt ist, andernfalls ist sie losgelassen (oben).
 
 So wird der Gedrückt- oder Losgelassen-Zustand für einzelne Tasten bestimmt; hier anhand von Gamepads, aber das gleiche Prinzip gilt ebenso für andere Eingabegeräte wie Arcade-Joysticks, Rennlenkräder usw.
 
@@ -294,7 +294,7 @@ if (buttonArrangement == buttonSelection)
 }
 ```
 
-Diese Formel kann zum Testen beliebig vieler Tasten, Anordnungen und Zustände verwendet werden.
+Die Formel kann zum Testen einer beliebigen Anzahl von Tasten in einer beliebigen Anordnung ihrer Zustände verwendet werden.
 
 ## <a name="get-the-state-of-the-battery"></a>Abrufen des Akkustatus
 
@@ -313,10 +313,10 @@ Für Gamecontroller, die detaillierte Berichte für den Akku unterstützen, erha
     * 40 % (Niedrig)
     * 10 % (Kritisch)
 
-Wenn Ihr Code eine Aktion (z.B. das Zeichnen der UI) basierend auf dem Prozentsatz der verbleibende Akkulebensdauer ausführt, stellen Sie sicher, dass er den oben genannten Werten entspricht. Wenn Sie beispielsweise den Spieler warnen möchten, dass der Controller-Akku fast leer ist, wenn dieser 10% erreicht.
+Wenn Ihr Code eine Aktion (z. B. das Zeichnen der UI) basierend auf dem Prozentsatz der verbleibende Akkulebensdauer ausführt, stellen Sie sicher, dass er den oben genannten Werten entspricht. Wenn Sie beispielsweise den Spieler warnen möchten, dass der Controller-Akku fast leer ist, wenn dieser 10 % erreicht.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
-* [Windows.System.User-Klasse](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [Windows.Gaming.Input.IGameController-Benutzeroberfläche](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows.Gaming.Input.GamepadButtons-Enum.](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Windows.System.User class](https://docs.microsoft.com/uwp/api/windows.system.user)
+* [Windows.Gaming.Input.IGameController-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Windows.Gaming.Input.GamepadButtons-Enumeration](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)

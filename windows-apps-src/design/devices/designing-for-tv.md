@@ -1,5 +1,5 @@
 ---
-Description: Design your app so that it looks good and functions well on your television.
+Description: Entwerfen Sie Ihre App so, dass sie auf Fernsehgeräten gut aussieht und ordnungsgemäß funktioniert.
 title: Entwerfen für Xbox und Fernsehgeräte
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
@@ -14,26 +14,26 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117580"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616655"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Entwerfen für Xbox und Fernsehgeräte
 
 Entwerfen Sie Ihre App für die Universelle Windows-Plattform (UWP) so, dass sie auf Xbox One- und Fernsehbildschirmen gut aussieht und optimal funktioniert.
 
-Hinweise zur interaktionserfahrungen in UWP-Anwendungen in der *10-Fuß* -Erfahrung finden Sie unter [Interaktionen mit Gamepad und Fernbedienung zu erhalten](../input/gamepad-and-remote-interactions.md) .
+Finden Sie unter [Gamepad und Remotesteuerung Interaktionen](../input/gamepad-and-remote-interactions.md) Anleitung zur Interaktion-Funktionalität in UWP-Anwendungen in der *10-Fuß* auftreten.
 
 ## <a name="overview"></a>Übersicht
 
-Dank der universellen Windows-Plattform können Sie großartige Benutzeroberflächen für verschiedene Windows10-Geräte erstellen.
+Dank der universellen Windows-Plattform können Sie großartige Benutzeroberflächen für verschiedene Windows 10-Geräte erstellen.
 Die Mehrzahl der durch das UWP Framework bereitgestellten Funktionen ermöglichen Apps, auf diesen Geräten ohne zusätzlichen Aufwand die gleiche Benutzeroberfläche (UI) zu verwenden.
 Das Anpassen und Optimieren Ihrer App an Xbox One- und Fernsehbildschirme erfordert jedoch besondere Überlegungen.
 
 Die Erfahrung, die Sie machen, wenn Sie auf dem Sofa sitzen und mittels eines Gamepads oder einer Fernbedienung mit Ihrem Fernsehgerät interagieren, wird als **3-Meter-Erfahrung** (10-Fuß-Erfahrung) bezeichnet.
-Der Name kommt daher, dass sich der Benutzer im Allgemeinen ungefähr 3Meter (10Fuß) vom Bildschirm entfernt befindet.
+Der Name kommt daher, dass sich der Benutzer im Allgemeinen ungefähr 3 Meter (10 Fuß) vom Bildschirm entfernt befindet.
 Dies stellt eine besondere Herausforderung dar, die beispielsweise bei einer *50-cm-Erfahrung* (2-Fuß-Erfahrung) oder bei der Interaktion mit einem PC nicht vorhanden ist.
 Wenn Sie eine App für Xbox One oder ein anderes Gerät entwickeln, das Inhalte auf einem Fernsehbildschirm ausgibt und eine Steuerung verwendet, sollten Sie dies stets bedenken.
 
@@ -54,7 +54,7 @@ Ordnen Sie Inhalte so an, dass Verschiebungen auf dem Bildschirm konsistent und 
 
 ![Xbox One-Film-App](images/designing-for-tv/xbox-movies-app.png)
 
-_**Alle im Screenshot gezeigten Filme sind auf Microsoft Filme & TV verfügbar.**_  
+_**Alle Filme im Screenshot gezeigten sind auf Microsoft Movies & TV-verfügbar.**_  
 
 ### <a name="captivating"></a>Fesselnd
 
@@ -68,22 +68,22 @@ Da Sie nun mit den Grundsätzen eines guten UWP-App-Designs für die 10-Fuß-Erf
 
 | Feature        | Beschreibung           |
 | -------------------------------------------------------------- |--------------------------------|
-| [Anpassen von Benutzeroberflächenelementen](#ui-element-sizing)  | Die Universelle Windows-Plattform verwendet [Skalierung und effektive Pixel](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), um die Benutzeroberfläche gemäß dem Anzeigeabstand zu skalieren. Wenn Sie verstehen, wie Sie Größen anpassen und auf Ihre Benutzeroberfläche anwenden, hilft Ihnen dies, Ihre App für die 10-Fuß-Umgebung zu optimieren.  |
-|  [Fernsehsicherer Bereich](#tv-safe-area) | Die UWP vermeidet automatisch und standardmäßig die Anzeige von Benutzeroberflächenelementen in nicht fernsehsicheren Bereichen (nahe dem Bildschirmrand). Dies führt jedoch zu einem „Schachteleffekt“, so dass die Benutzeroberfläche einem Briefkastenschlitz ähnelt. Damit Ihre App auf Fernsehgeräten wirklich immersiv ist, müssen Sie diese so anpassen, dass sie sich auf Fernsehgeräten, die dies unterstützen, bis zu den Rändern erweitert wird. |
+| [Größe der UI-element](#ui-element-sizing)  | Die Universelle Windows-Plattform verwendet [Skalierung und effektive Pixel](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), um die Benutzeroberfläche gemäß dem Anzeigeabstand zu skalieren. Wenn Sie verstehen, wie Sie Größen anpassen und auf Ihre Benutzeroberfläche anwenden, hilft Ihnen dies, Ihre App für die 10-Fuß-Umgebung zu optimieren.  |
+|  [TV-Safe-Bereich](#tv-safe-area) | Die UWP vermeidet automatisch und standardmäßig die Anzeige von Benutzeroberflächenelementen in nicht fernsehsicheren Bereichen (nahe dem Bildschirmrand). Dies führt jedoch zu einem „Schachteleffekt“, so dass die Benutzeroberfläche einem Briefkastenschlitz ähnelt. Damit Ihre App auf Fernsehgeräten wirklich immersiv ist, müssen Sie diese so anpassen, dass sie sich auf Fernsehgeräten, die dies unterstützen, bis zu den Rändern erweitert wird. |
 | [Farben](#colors)  |  Die UWP unterstützt Farbdesigns. Daher wird eine App, die das Systemdesign berücksichtigt, auf Xbox One standardmäßig auf **dark** festgelegt. Wenn Ihre App ein bestimmtes Farbdesign verwendet, sollten Sie daran denken, dass sich einige Farben nicht gut für Fernsehbildschirme eignen und daher vermieden werden sollten. |
 | [Sound](../style/sound.md)    | Sounds spielen bei der 10 Fuß-Erfahrung eine wichtige Rolle. Sie helfen den Benutzern sich zu vertiefen und liefern Feedback. Die UWP bietet Funktionen, mit denen Sounds für allgemeine Steuerelemente automatisch aktiviert werden, wenn die App auf Xbox One ausgeführt wird. Erfahren Sie mehr über die in der Universellen Windows-Plattform integrierte Unterstützung von Sound, und erfahren Sie, wie Sie davon profitieren.    |
-| [Richtlinien für Benutzeroberflächensteuerelemente](#guidelines-for-ui-controls)  |  Es gibt mehrere Benutzeroberflächen-Steuerelemente, die auf mehreren Geräten gut funktionieren. Wenn diese jedoch auf Fernsehgeräten verwendet werden, müssen bestimmte Aspekte berücksichtigt werden. Informieren Sie sich über einige bewährte Methoden für die Verwendung dieser Steuerelemente beim Entwerfen für die 10 Fuß-Erfahrung. |
-| [Benutzerdefinierter visueller Zustandsauslöser für Xbox](#custom-visual-state-trigger-for-xbox) | Um Ihre UWP-App an die 10-Fuß-Erfahrung anzupassen, empfehlen wir Ihnen, einen benutzerdefinierten *visuellen Zustandsauslöser* zu verwenden, um das Layout zu ändern, wenn die App erkennt, dass sie auf einer Xbox-Konsole gestartet wurde. |
+| [Richtlinien für die UI-Steuerelemente](#guidelines-for-ui-controls)  |  Es gibt mehrere Benutzeroberflächen-Steuerelemente, die auf mehreren Geräten gut funktionieren. Wenn diese jedoch auf Fernsehgeräten verwendet werden, müssen bestimmte Aspekte berücksichtigt werden. Informieren Sie sich über einige bewährte Methoden für die Verwendung dieser Steuerelemente beim Entwerfen für die 10 Fuß-Erfahrung. |
+| [Benutzerdefinierten visuellen Zustand Trigger für Xbox](#custom-visual-state-trigger-for-xbox) | Um Ihre UWP-App an die 10-Fuß-Erfahrung anzupassen, empfehlen wir Ihnen, einen benutzerdefinierten *visuellen Zustandsauslöser* zu verwenden, um das Layout zu ändern, wenn die App erkennt, dass sie auf einer Xbox-Konsole gestartet wurde. |
 
-Zusätzlich zu den vorherigen Entwurf und Layout Aspekte gibt es eine Reihe von [Gamepad und Fernbedienung Interaktion](../input/gamepad-and-remote-interactions.md) Optimierungen, die Sie berücksichtigen sollten, wenn Sie Ihre app zu erstellen.
+Neben den obigen Entwurf und die Überlegungen zum Layout, es gibt diverse [Gamepad und Remotesteuerung Interaktion](../input/gamepad-and-remote-interactions.md) Optimierungen, Sie beim Erstellen Ihrer app sollten.
 
 | Feature        | Beschreibung           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY-Fokusnavigation und -interaktion](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **XY-Fokusnavigation** können die Benutzer auf Benutzeroberfläches Ihrer app navigieren. Dies begrenzt Benutzer jedoch auf eine Navigation nach oben, unten, links und rechts. In diesem Abschnitt finden Sie Empfehlungen für den Umgang mit diesen und anderen Überlegungen. |
-| [Mausmodus](../input/gamepad-and-remote-interactions.md#mouse-mode)|XY-Fokusnavigation ist nicht praktisch, oder auch möglich, für einige Arten von Anwendungen, z. B. Karten oder Zeichnen und Zeichnen von apps. In diesen Fällen können **mausmodus** Benutzer, die mit einem Gamepad oder Fernbedienung zu erhalten, wie eine Maus auf einem PC frei navigieren.|
-| [Fokusanzeige](../input/gamepad-and-remote-interactions.md#focus-visual)  | Die Fokusanzeige ist ein Rahmen, der das aktuell fokussierte Element der Benutzeroberfläche hervorhebt. Dadurch wird den Benutzer die Benutzeroberfläche schnell zu erkennen, sie zu navigieren oder interagieren.  |
-| [Fokusaktivierung](../input/gamepad-and-remote-interactions.md#focus-engagement) | Fokusaktivierung erfordert, dass den Benutzer, drücken die Schaltfläche " **A" oder "Select** " auf einem Gamepad oder Fernbedienung zu erhalten, wenn ein UI-Element den Fokus hat, um mit ihm zu interagieren. |
-| [Hardwaretasten](../input/gamepad-and-remote-interactions.md#hardware-buttons) | Bieten das Gamepad und Fernbedienung unterscheiden sich Tasten und Konfigurationen. |
+| [XY Fokusnavigation und Interaktion](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **XY-Fokusnavigation** ermöglicht es dem Benutzer, um die UI Ihrer app zu navigieren. Dies begrenzt Benutzer jedoch auf eine Navigation nach oben, unten, links und rechts. In diesem Abschnitt finden Sie Empfehlungen für den Umgang mit diesen und anderen Überlegungen. |
+| [Mausmodus](../input/gamepad-and-remote-interactions.md#mouse-mode)|XY-Fokusnavigation ist es nicht zweckmäßig oder möglich, für einige Typen von Anwendungen, z. B. Zuordnungen oder Zeichnen und apps zu zeichnen. In diesen Fällen **mausmodus** können Benutzer navigieren frei mit einer Gamepad oder die Remotesteuerung, wie eine Maus auf einem PC.|
+| [Visuelle Fokuselement](../input/gamepad-and-remote-interactions.md#focus-visual)  | Das visuelle Fokuselement ist ein Rahmen, der das derzeit fokussierte Element der Benutzeroberfläche werden hervorgehoben. Dadurch wird den Benutzer die Benutzeroberfläche schnell zu identifizieren, sie Navigieren durch oder interagieren.  |
+| [Fokus engagement](../input/gamepad-and-remote-interactions.md#focus-engagement) | Fokus Engagement erfordert, dass den Benutzer drückt die **ein/Select** Schaltfläche auf einem Gamepad oder die Remotesteuerung, wenn ein UI-Element den Fokus besitzt, um damit zu interagieren. |
+| [Hardwaretasten](../input/gamepad-and-remote-interactions.md#hardware-buttons) | Geben Sie den Gamepad und Remotesteuerung sehr unterschiedliche Schaltflächen und Konfigurationen. |
 
 > [!NOTE]
 > Die meisten Codeausschnitte in diesem Thema wurden in XAML/C# verfasst. Die Grundsätze und Konzepte gelten jedoch für alle UWP-Apps. Wenn Sie eine HTML/JavaScript-UWP-App für Xbox entwickeln, steht Ihnen die hervorragende [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki)-Bibliothek auf GitHub zur Verfügung.
@@ -101,14 +101,14 @@ Diese Einstellung ist auch auf Mobiltelefonen vorhanden, wenn das Gerät diese u
 
 ![Ändern der Größe von Text, Apps und anderen Elementen](images/designing-for-tv/ui-scaling.png)
 
-Auf Xbox One gibt es diese Systemeinstellung nicht. UWP-UI-Elemente, die für Fernsehgeräte angepasst werden, werden jedoch standardmäßig auf **200%** für XAML-Apps und **150%** für HTML-Apps skaliert.
+Auf Xbox One gibt es diese Systemeinstellung nicht. UWP-UI-Elemente, die für Fernsehgeräte angepasst werden, werden jedoch standardmäßig auf **200 %** für XAML-Apps und **150 %** für HTML-Apps skaliert.
 Solange Benutzeroberflächenelemente für andere Geräte korrekt angepasst werden, werden sie auch für Fernsehgeräte angepasst.
-Xbox One rendert Ihre App mit 1080p (1920 x 1080 Pixel). Stellen Sie daher mittels [adaptiver Techniken](../layout/screen-sizes-and-breakpoints-for-responsive-design.md) sicher, dass die UI bei 960x540px und einer Skalierung von 100% (oder bei 1280x720px und einer Skalierung von 100% für HTML-Apps) gut aussieht, wenn Sie eine App von anderen Geräten wie PCs übertragen.
+Xbox One rendert Ihre App mit 1080p (1920 x 1080 Pixel). Stellen Sie daher mittels [adaptiver Techniken](../layout/screen-sizes-and-breakpoints-for-responsive-design.md) sicher, dass die UI bei 960 x 540 px und einer Skalierung von 100 % (oder bei 1280 x 720 px und einer Skalierung von 100 % für HTML-Apps) gut aussieht, wenn Sie eine App von anderen Geräten wie PCs übertragen.
 
-Das Entwerfen für Xbox unterscheidet sich etwas vom Entwerfen für PCs, da Sie lediglich eine Auflösung von 1920x1080 berücksichtigen müssen.
+Das Entwerfen für Xbox unterscheidet sich etwas vom Entwerfen für PCs, da Sie lediglich eine Auflösung von 1920 x 1080 berücksichtigen müssen.
 Es spielt keine Rolle, ob der Benutzer ein Fernsehgerät mit einer besseren Auflösung besitzt&mdash;UWP-Apps werden stets auf 1080p skaliert.
 
-Bei der Ausführung auf Xbox One werden darüber hinaus korrekte Ressourcengrößen aus dem Satz mit 200% (oder 150% für HTML-Apps) für Ihre App aufgerufen, unabhängig von der Auflösung des Fernsehgeräts.
+Bei der Ausführung auf Xbox One werden darüber hinaus korrekte Ressourcengrößen aus dem Satz mit 200 % (oder 150 % für HTML-Apps) für Ihre App aufgerufen, unabhängig von der Auflösung des Fernsehgeräts.
 
 ### <a name="content-density"></a>Inhaltsdichte
 
@@ -116,29 +116,29 @@ Denken Sie beim Entwerfen Ihrer App daran, dass Benutzer die Benutzeroberfläche
 
 #### <a name="sizes-of-ui-controls"></a>Größen von Benutzeroberflächensteuerelementen
 
-Interaktive Benutzeroberflächenelemente sollten eine Mindesthöhe von 32epx (effektive Pixel) besitzen. Dies ist die Standardeinstellung für allgemeine UWP-Steuerelemente. Wenn diese bei einer Skalierung von 200% verwendet wird, ist sichergestellt, dass Benutzeroberflächenelemente aus der Entfernung erkennbar sind. Darüber hinaus trägt dies zur Reduzierung der Inhaltsdichte bei.
+Interaktive Benutzeroberflächenelemente sollten eine Mindesthöhe von 32 epx (effektive Pixel) besitzen. Dies ist die Standardeinstellung für allgemeine UWP-Steuerelemente. Wenn diese bei einer Skalierung von 200 % verwendet wird, ist sichergestellt, dass Benutzeroberflächenelemente aus der Entfernung erkennbar sind. Darüber hinaus trägt dies zur Reduzierung der Inhaltsdichte bei.
 
-![UWP-Schaltfläche bei einer Skalierung von 100% und 200%](images/designing-for-tv/button-100-200.png)
+![UWP-Schaltfläche bei einer Skalierung von 100 % und 200 %](images/designing-for-tv/button-100-200.png)
 
 #### <a name="number-of-clicks"></a>Anzahl der Klicks
 
 Um Ihre Benutzeroberfläche zu vereinfachen, sollten Benutzer nicht mehr als **sechs Klicks** benötigen, wenn sie von einem Rand des Fernsehbildschirms zum anderen navigieren. Auch hier gilt der Grundsatz der **Einfachheit**. 
 
-![6Symbole insgesamt](images/designing-for-tv/six-clicks.png)
+![6 Symbole insgesamt](images/designing-for-tv/six-clicks.png)
 
 ### <a name="text-sizes"></a>Textgrößen
 
 Wenden Sie die folgenden Faustregeln an, damit Ihre Benutzeroberfläche aus der Entfernung erkennbar ist:
 
-* Haupttext und Lesen von Inhalten: mindestens 15epx
-* Nicht kritische Texte und ergänzende Inhalte: mindestens 12epx
+* Haupttext und Lesen von Inhalten: 15 Epx minimum
+* Kein kritisches Text und zusätzliche Inhalte: 12 Epx minimum
 
 Wenn Sie in der Benutzeroberfläche einen größeren Text verwenden, sollten Sie eine Größe wählen, die die verfügbare Bildschirmfläche nicht zu sehr begrenzt, indem sie Platz beansprucht, der potenziell von anderen Inhalten ausgefüllt werden kann.
 
 ### <a name="opting-out-of-scale-factor"></a>Deaktivieren des Skalierungsfaktors
 
 Wir empfehlen Ihnen, für Ihre App die Vorteile der Skalierungsfaktorunterstützung zu nutzen. Dies trägt dazu bei, dass sie auf allen Geräten korrekt ausgeführt wird, indem sie für jeden Gerätetyp skaliert wird.
-Es ist jedoch möglich, dieses Verhalten zu deaktivieren und alle Benutzeroberflächenelemente für eine Skalierung von 100 % zu entwerfen. Beachten Sie, dass Sie den Skalierungsfaktor nicht in einen anderen Wert als 100% ändern können.
+Es ist jedoch möglich, dieses Verhalten zu deaktivieren und alle Benutzeroberflächenelemente für eine Skalierung von 100 % zu entwerfen. Beachten Sie, dass Sie den Skalierungsfaktor nicht in einen anderen Wert als 100 % ändern können.
 
 Sie können den Skalierungsfaktor für HTML-Apps deaktivieren, indem Sie den folgenden Codeausschnitt verwenden:
 
@@ -187,10 +187,10 @@ Dies ist nicht optimal, da dies der App einen „Schachteleffekt“ verleiht. Te
 
 Wir empfehlen Ihnen, bestimmte Benutzeroberflächenelemente zu verwenden, um die Benutzeroberfläche bis an die Ränder des Bildschirms zu erweitern und Benutzern eine immersivere Umgebung zu bieten. Dazu gehören [ScrollViewers](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [Navigationsbereiche](../controls-and-patterns/navigationview.md) und [CommandBars](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar).
 
-Es ist jedoch auch wichtig, dass interaktive Elemente und Texte stets die Bildschirmränder vermeiden, um sicherzustellen, dass sie auf bestimmten Fernsehgeräten nicht abgeschnitten werden. Wir empfehlen Ihnen, nur nicht essentielle visuelle Elemente bis zu 5% von den Rändern des Bildschirms entfernt zu zeichnen. Wie in [Anpassen von Benutzeroberflächenelementen](#ui-element-sizing) bereits erwähnt, nutzt eine UWP-App, die den Xbox One-Standardskalierungsfaktor von 200% verwendet, einen Bereich von 960 x 540epx. Sie sollten es daher vermeiden, in der Benutzeroberfläche Ihrer App essentielle Benutzerflächenelemente in den folgenden Bereichen zu platzieren:
+Es ist jedoch auch wichtig, dass interaktive Elemente und Texte stets die Bildschirmränder vermeiden, um sicherzustellen, dass sie auf bestimmten Fernsehgeräten nicht abgeschnitten werden. Wir empfehlen Ihnen, nur nicht essentielle visuelle Elemente bis zu 5 % von den Rändern des Bildschirms entfernt zu zeichnen. Wie in [Anpassen von Benutzeroberflächenelementen](#ui-element-sizing) bereits erwähnt, nutzt eine UWP-App, die den Xbox One-Standardskalierungsfaktor von 200 % verwendet, einen Bereich von 960 x 540 epx. Sie sollten es daher vermeiden, in der Benutzeroberfläche Ihrer App essentielle Benutzerflächenelemente in den folgenden Bereichen zu platzieren:
 
-- 27epx vom oberen und unteren Rand
-- 48epx vom linken und rechten Rand
+- 27 epx vom oberen und unteren Rand
+- 48 epx vom linken und rechten Rand
 
 In den folgenden Abschnitten wird beschrieben, wie Sie Ihr UI bis an die Ränder des Bildschirms erweitern.
 
@@ -241,7 +241,7 @@ Mit dem folgenden Codeausschnitt wird dieser Effekt erzielt:
 
 [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) ist ein weiteres Beispiel für einen Bereich, der häufig in der Nähe eines oder mehrerer Ränder der App positioniert ist. Daher sollte dessen Hintergrund auf Fernsehbildschirmen bis an die Ränder des Bildschirms erweitert werden. In der Regel gibt es auf der rechten Seite die Schaltfläche **Mehr** (dargestellt durch „...“), die weiter im fernsehsicheren Bereich angezeigt werden sollte. Im Folgenden finden Sie einige unterschiedliche Strategien, um die gewünschten Interaktionen und visuellen Effekte zu erzielen.
 
-**Option1**: Festlegen der `CommandBar`-Hintergrundfarbe auf transparent oder auf die Farbe des Seitenhintergrunds:
+**Option 1**: Ändern der `CommandBar` Hintergrundfarbe auf transparente oder die gleiche Farbe wie der Hintergrund:
 
 ```xml
 <CommandBar x:Name="topbar"
@@ -252,7 +252,7 @@ Mit dem folgenden Codeausschnitt wird dieser Effekt erzielt:
 
 Hierdurch sieht die `CommandBar` aus, als ob sie auf dem gleichen Hintergrund wie der Rest der Seite angezeigt wird, sodass sich der Hintergrund nahtlos bis an den Rand des Bildschirms erstreckt.
 
-**Option2**: Hinzufügen eines Hintergrundrechtecks, dessen Füllung die gleiche Farbe wie der `CommandBar`-Hintergrund hat und das unter der `CommandBar` und über dem Rest der Seite liegt:
+**Option 2**: Fügen Sie ein Hintergrundrechteck, dessen Füllung die gleiche Farbe hat, wie die `CommandBar` im Hintergrund, und es liegen unter der `CommandBar` und auf den Rest der Seite:
 
 ```xml
 <Rectangle VerticalAlignment="Top"
@@ -333,7 +333,7 @@ Sie platzieren den zuvor angezeigten Codeausschnitt entweder in die Seitenressou
 > [!NOTE]
 > Dieser Codeausschnitt gilt speziell für `ListView`-Elemente. Legen Sie bei einem `GridView`-Stil das [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)-Attribut für [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) und [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) auf `GridView` fest.
 
-Für eine genauere Kontrolle über das sind Elemente eingeblendet, wenn die Anwendung, Version 1803 abzielt oder höher, können Sie das [Ereignis UIElement.BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden. Sie können es auf [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) platzieren, für die **ListView**/**GridView** abzufangen, bevor die internen **ScrollViewer** , wie in den folgenden Codeausschnitten ist:
+Genauer abgestufte Steuerung, wie Elemente in der Ansicht, aktualisiert werden, wenn die Anwendung, Version 1803 abzielt oder höher, können Sie verwenden die [UIElement.BringIntoViewRequested Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Können Sie es in Einfügen der [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) für die **ListView**/**GridView** abzufangen, bevor Sie die interne **ScrollViewer** der Fall ist, wie in den folgenden Codeausschnitten:
 
 ```xaml
 <GridView x:Name="gridView">
@@ -413,7 +413,7 @@ Beachten Sie bei der Entwicklung von Apps für Fernsehgeräte, dass Farben sehr 
 
 ### <a name="tv-safe-colors"></a>Fernsehsichere Farben
 
-Die RGB-Werte einer Farbe stellen die Intensität für Rot, Grün und Blau dar. Fernseher kommen mit extremen Intensitäten nicht sehr gut zurecht. Sie können einen seltsamen Bandeffekt erzeugen oder auf bestimmten Fernsehern verwaschen erscheinen. Darüber hinaus verursachen Farben mit hoher Intensität möglicherweise ein „Blooming“, d.h., Pixel in der Nähe beginnen, die gleichen Farben aufzurufen. Die Ansichten darüber, was als fernsehsichere Farben gelten kann, gehen zwar auseinander. Im Allgemeinen können Farben mit RGB-Werten zwischen 16 und 235 (oder 10-EB hexadezimal) jedoch sicher für Fernsehgeräte verwendet werden.
+Die RGB-Werte einer Farbe stellen die Intensität für Rot, Grün und Blau dar. Fernseher kommen mit extremen Intensitäten nicht sehr gut zurecht. Sie können einen seltsamen Bandeffekt erzeugen oder auf bestimmten Fernsehern verwaschen erscheinen. Darüber hinaus verursachen Farben mit hoher Intensität möglicherweise ein „Blooming“, d. h., Pixel in der Nähe beginnen, die gleichen Farben aufzurufen. Die Ansichten darüber, was als fernsehsichere Farben gelten kann, gehen zwar auseinander. Im Allgemeinen können Farben mit RGB-Werten zwischen 16 und 235 (oder 10-EB hexadezimal) jedoch sicher für Fernsehgeräte verwendet werden.
 
 ![Fernsehsicherer Farbbereich](images/designing-for-tv/tv-safe-colors-2.png)
 
@@ -462,7 +462,7 @@ Zwar funktionieren die Standard-UWP-Schaltflächen sehr gut auf TV-Bildschirmen,
 
 Eine geschachtelte Benutzeroberfläche (User Interface, UI) verfügt über geschachtelte Elemente mit ausführbaren Aktionen, die in einem Container eingeschlossen sind, sodass sowohl die geschachtelten Elemente als auch die Container unabhängig voneinander den Fokus erhalten können.
 
-Geschachtelte UI eignet sich für einige Eingabetypen, jedoch nicht immer für Gamepads und Fernbedienungen, da diese eine XY-Navigation erfordern. Beachten Sie die unter diesem Thema angeführten Richtlinien, um sicherzustellen, dass die Benutzeroberfläche für die 10-Fuß-Umgebung optimiert ist, und dass die Benutzer mühelos auf alle interaktiven Elemente zugreifen können. Eine gängige Lösung besteht, platzieren Sie geschachtelte UI-Elemente in einem `ContextFlyout`.
+Geschachtelte UI eignet sich für einige Eingabetypen, jedoch nicht immer für Gamepads und Fernbedienungen, da diese eine XY-Navigation erfordern. Beachten Sie die unter diesem Thema angeführten Richtlinien, um sicherzustellen, dass die Benutzeroberfläche für die 10-Fuß-Umgebung optimiert ist, und dass die Benutzer mühelos auf alle interaktiven Elemente zugreifen können. Eine gängige Lösung besteht in geschachtelten Elemente der Benutzeroberfläche platziert eine `ContextFlyout`.
 
 Weitere Informationen zur geschachtelten UI finden Sie unter [Geschachtelte UI bei Listenelementen](../controls-and-patterns/nested-ui.md).
 
@@ -482,7 +482,7 @@ Das [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.
 
 Weitere Informationen zum Hinzufügen von Medien zu Ihrer App finden Sie unter [Medienwiedergabe](../controls-and-patterns/media-playback.md).
 
-> ![HINWEIS:] `MediaPlayerElement` steht erst ab der Windows10-Version1607 zur Verfügung. Bei Apps für niedrigere Windows10-Versionen muss stattdessen [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) verwendet werden. Die hier angegebenen Empfehlungen gelten auch für `MediaElement`, und der Zugriff auf die `TransportControls`-Eigenschaft erfolgt auf die gleiche Weise.
+> ![HINWEIS:] `MediaPlayerElement` steht erst ab der Windows 10-Version 1607 zur Verfügung. Bei Apps für niedrigere Windows 10-Versionen muss stattdessen [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) verwendet werden. Die hier angegebenen Empfehlungen gelten auch für `MediaElement`, und der Zugriff auf die `TransportControls`-Eigenschaft erfolgt auf die gleiche Weise.
 
 ### <a name="search-experience"></a>Suchvorgang
 
@@ -566,6 +566,6 @@ Beim Entwerfen für die 10 Fuß-Erfahrung müssen einige besondere Punkte berüc
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Einführung der Geräte für UWP-Apps (Universelle Windows-Plattform)](index.md)
-- [Interaktionen mit Gamepad und Fernbedienung](../input/gamepad-and-remote-interactions.md)
-- [Sound in UWP-Apps](../style/sound.md)
+- [Gerät Primer für apps der universellen Windows-Plattform (UWP)](index.md)
+- [Gamepad und Remotesteuerung Interaktionen](../input/gamepad-and-remote-interactions.md)
+- [Sound in UWP-apps](../style/sound.md)

@@ -4,14 +4,14 @@ description: In diesem Artikel wird beschrieben, wie das .NET Framework Aufrufe 
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
-keywords: Windows10, UWP, Timer, Threads
+keywords: Windows 10, UWP, Timer, Threads
 ms.localizationpriority: medium
 ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058501"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631215"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Verwenden von Windows-Runtime-Objekten in einer Multithread-Umgebung
 In diesem Artikel wird beschrieben, wie das .NET Framework Aufrufe von C#- und Visual Basic-Code auf Objekte verarbeitet, die von der Windows-Runtime oder von Komponenten für Windows-Runtime bereitgestellt werden.
@@ -161,6 +161,6 @@ Standardmäßig sind die Klassen in der Komponente, die aktiviert werden kann, a
 Für Objekte, die im UI-Thread ausgeführt werden und Ausnahmen auslösen, wenn sie von einem anderen Thread als dem UI-Thread aufgerufen werden, können Sie das [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029)-Objekt des UI-Threads verwenden, um den Aufruf zu verteilen.
 
 ## <a name="see-also"></a>Weitere Informationen
-[C#-Handbuch](/dotnet/csharp/)
+[C#Anleitung](/dotnet/csharp/)
 
-[Visual Basic-Handbuch](/dotnet/visual-basic/)
+[Leitfaden für Visual Basic](/dotnet/visual-basic/)

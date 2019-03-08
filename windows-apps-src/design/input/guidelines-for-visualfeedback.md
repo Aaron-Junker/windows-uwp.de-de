@@ -1,5 +1,5 @@
 ---
-Description: Use visual feedback to show users when their interactions with a UWP app are detected, interpreted, and handled.
+Description: Verwenden Sie visuelles Feedback Benutzern angezeigt, wenn deren Interaktionen mit einer UWP-app erkannt, interpretiert und verarbeitet werden.
 title: Visuelles Feedback
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
@@ -9,17 +9,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b043ec71eb7d5883a1b22c4f0d8f43824034d454
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929282"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640785"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Richtlinien für visuelles Feedback
 
 Zeigen Sie Benutzern durch visuelles Feedback, wenn ihre Interaktionen ermittelt, interpretiert und behandelt werden. Visuelles Feedback ist hilfreich für Benutzer und kann sie zur Interaktion ermutigen. Es weist auf erfolgreiche Interaktionen hin, was für den Benutzer das Gefühl der Kontrolle verstärkt. Darüber hinaus informiert es über den Systemstatus und verringert die Fehlerzahl.
 
-> **Wichtige APIs**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+> **Wichtige APIs**:  [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
 
 ## <a name="recommendations"></a>Empfehlungen
 
@@ -40,9 +40,9 @@ Durch die Verwendung der Standardsteuerelemente für die XAML-Plattform stellen 
 > [!Important]
 > Das Interaktionsverhalten der integrierten Gesten sollte nicht geändert werden.
 
-**Feedback auf allen Geräten**
+**Feedback auf Geräten**
 
-Das visuelle Feedback ist im Allgemeinen vom Eingabegerät abhängig (Toucheingabe, Touchpad, Maus, Stift, Tastatur usw.). Das integrierte Feedback für die Maus z.B. beinhaltet normalerweise eine Bewegung und Änderung des Cursors, während für Touch- und Stifteingabe Berührungsvisualisierungen erforderlich sind und für die Eingabe und Navigation per Tastatur Fokusrechtecke und Hervorhebung verwendet werden.
+Das visuelle Feedback ist im Allgemeinen vom Eingabegerät abhängig (Toucheingabe, Touchpad, Maus, Stift, Tastatur usw.). Das integrierte Feedback für die Maus z. B. beinhaltet normalerweise eine Bewegung und Änderung des Cursors, während für Touch- und Stifteingabe Berührungsvisualisierungen erforderlich sind und für die Eingabe und Navigation per Tastatur Fokusrechtecke und Hervorhebung verwendet werden.
 
 Verwenden Sie [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969), um das Feedbackverhalten für die Plattformgesten festzulegen.
 
@@ -58,14 +58,14 @@ Im Folgenden finden Sie einige Beispiele für integrierte Kontaktvisualisierunge
 
 Alle Windows-Apps zeigen ein stärker definiertes visuelles Fokuselement um interaktive Steuerelemente innerhalb der Anwendung herum. Diese neuen visuellen Fokuselemente können vollständig angepasst und auch gelöscht werden, wenn nötig.
 
-Für das **10-Fuß-TV-Erlebnis**, das typisch für die Xbox und TV-Nutzung ist, unterstützt Windows **Einblendungen mit Fokus**, einen Lichteffekt, der den Rahmen fokussierbarer Elemente wie z.B. eine Schaltfläche animiert, wenn sie über Gamepads oder Tastatureingaben anfokussiert werden. Weitere Informationen finden Sie unter [Entwerfen für Xbox und Fernsehgeräte](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv#reveal-focus).
+Für das **10-Fuß-TV-Erlebnis**, das typisch für die Xbox und TV-Nutzung ist, unterstützt Windows **Einblendungen mit Fokus**, einen Lichteffekt, der den Rahmen fokussierbarer Elemente wie z. B. eine Schaltfläche animiert, wenn sie über Gamepads oder Tastatureingaben anfokussiert werden. Weitere Informationen finden Sie unter [Entwerfen für Xbox und Fernsehgeräte](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv#reveal-focus).
 
 ## <a name="color-branding--customizing"></a>Farbbranding und -anpassung
 
 **Rahmeneigenschaften**
 
-Es gibt zwei Elemente bei den visuellen Fokuselementen mit hoher Sichtbarkeit: der primäre und der sekundäre Rahmen. Der primäre Rahmen ist **2Pixel** breit und verläuft an der *Außenseite* des sekundären Rahmens. Der sekundäre Rahmen ist **1Pixel** breit und verläuft an der *Innenseite* des primären Rahmens.
-![Redlines visueller Fokuselemente mit hoher Sichtbarkeit](images/FocusRectRedlines.png)
+Es gibt zwei Elemente bei den visuellen Fokuselementen mit hoher Sichtbarkeit: der primäre und der sekundäre Rahmen. Der primäre Rahmen ist **2 Pixel** breit und verläuft an der *Außenseite* des sekundären Rahmens. Der sekundäre Rahmen ist **1 Pixel** breit und verläuft an der *Innenseite* des primären Rahmens.
+![Hohe Transparenz Fokusindikator redlines](images/FocusRectRedlines.png)
 
 Um die Breite der beiden Rahmentypen (primär oder sekundär) zu ändern, verwenden Sie **FocusVisualPrimaryThickness** bzw. **FocusVisualSecondaryThickness**:
 ```XAML
@@ -73,15 +73,15 @@ Um die Breite der beiden Rahmentypen (primär oder sekundär) zu ändern, verwen
 ```
 ![Randbreiten visueller Fokuselemente mit hoher Sichtbarkeit](images/FocusMargin.png)
 
-Der Rand ist eine Eigenschaft des Typs [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness) und kann daher so angepasst werden, dass er nur an bestimmten Seiten des Steuerelements angezeigt wird. Weitere Informationen siehe unten: ![Randbreite visueller Fokuselemente mit hoher Sichtbarkeit nur unten](images/FocusThicknessSide.png)
+Der Rand ist eine Eigenschaft des Typs [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness) und kann daher so angepasst werden, dass er nur an bestimmten Seiten des Steuerelements angezeigt wird. Siehe unten: ![Hohe Transparenz Fokus visual Rand Stärke nur unten](images/FocusThicknessSide.png)
 
-Der Rand ist der Abstand zwischen den visuellen Grenzen des Steuerelements und dem Beginn des *sekundären Rahmens* der visuellen Fokuselemente. Der standardmäßige Rand hat eine Breite von **1Pixel** außerhalb der Grenzen des Steuerelements. Sie können diesen Rand pro Steuerelement bearbeiten, indem Sie die Eigenschaft **FocusVisualMargin** ändern:
+Der Rand ist der Abstand zwischen den visuellen Grenzen des Steuerelements und dem Beginn des *sekundären Rahmens* der visuellen Fokuselemente. Der standardmäßige Rand hat eine Breite von **1 Pixel** außerhalb der Grenzen des Steuerelements. Sie können diesen Rand pro Steuerelement bearbeiten, indem Sie die Eigenschaft **FocusVisualMargin** ändern:
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
 ![Randunterschiede visueller Fokuselemente mit hoher Sichtbarkeit](images/FocusPlusMinusMargin.png)
 
-*Ein negativer Rand verschiebt den Rahmen weiter weg von der Mitte des Steuerelements. Ein positiver Rand verschiebt den Rahmen näher zur Mitte des Steuerelements.*
+*Ein negativer Rand überträgt den Rahmen von der Mitte des Steuerelements, und ein positiver Rand wird näher den Rahmen verschieben, in der Mitte des Steuerelements.*
 
 Um die visuellen Fokuselemente für ein Steuerelement vollständig zu deaktivieren, deaktivieren Sie einfach **UseSystemFocusVisuals**:
 ```XAML
@@ -90,7 +90,7 @@ Um die visuellen Fokuselemente für ein Steuerelement vollständig zu deaktivier
 
 Die Breite, der Rand oder die vollständige Entfernung der visuellen Fokuselemente durch den App-Entwickler werden pro Steuerelement festgelegt.
 
-**Farbeigenschaften**
+**Farbformatierung**
 
 Es gibt nur zwei Farbeigenschaften für die visuellen Fokuselemente; die primäre Rahmenfarbe und die sekundäre Rahmenfarbe. Diese Rahmenfarben für visuelle Fokuselemente können pro Steuerelement auf Seitenebene und global auf App-Ebene geändert werden:
 
@@ -109,26 +109,26 @@ Um die Farben pro Steuerelement zu ändern, bearbeiten Sie einfach die Eigenscha
 ## <a name="related-articles"></a>Verwandte Artikel
 
 **Für Designer**
-* [Anleitungen für das Verschieben](guidelines-for-panning.md)
+* [Richtlinien für Verschiebung](guidelines-for-panning.md)
 
 **Für Entwickler**
 * [Benutzerdefinierte Benutzerinteraktionen](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
 **Beispiele**
-* [Einfaches Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Beispiel für Eingabe mit niedriger Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archivbeispiele**
-* [Eingabe: Beispiel für XAML-Benutzereingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Eingabe: Beispiel für Gerätefunktionen](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Eingabe: Beispiel für Fingereingabe-Treffertests](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Beispiel für XAML-Bildlauf, -Verschiebung und -Zoom](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Eingabe: vereinfachtes Freihandbeispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Eingabe: Beispiel für Windows8-Bewegungen](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Eingabe: Beispiel für Manipulationen und Gesten (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Beispiel für die DirectX-Fingereingabe](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Eingabe: XAML-benutzerbeispiel Eingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Eingabe: Beispiel zu Leistungstests in Touch Treffer](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML Bildlauf, schwenken und Zoomen Beispiel](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Eingabe: Vereinfachte Freihand-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Eingabe: Beispiel für Windows 8-Gesten](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Eingabe: Manipulationen und Beispiel für Bewegungen (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX-Touch-Eingabe-Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

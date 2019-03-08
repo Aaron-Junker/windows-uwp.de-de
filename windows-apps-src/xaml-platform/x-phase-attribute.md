@@ -4,14 +4,14 @@ description: Verwenden Sie xPhase mit der xBind-Markuperweiterung zum inkremente
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6def088b3e7f6410f12d1b2e411bcb547c90a09a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918561"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613285"
 ---
 # <a name="xphase-attribute"></a>x:Phase-Attribut
 
@@ -28,11 +28,11 @@ Verwenden Sie **x:Phase** mit der [{x:Bind}-Markuperweiterung](x-bind-markup-ext
 ## <a name="xaml-values"></a>XAML-Werte
 
 
-| Benennung | Beschreibung |
+| Begriff | Beschreibung |
 |------|-------------|
 | PhaseValue | Eine Zahl, die die Phase gibt an, in der das Element verarbeitet wird. Der Standardwert ist 0. | 
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 Wenn eine Liste mit Toucheingabe oder mit dem Mausrad schnell verschoben wird, ist die Liste je nach Komplexität der Datenvorlage möglicherweise nicht in der Lage, Elemente schnell genug zu rendern, um mit der Geschwindigkeit des Bildlaufs Schritt zu halten. Das gilt besonders für ein tragbares Gerät mit einer energieeffizienten CPU, z. B. ein Telefon oder ein Tablet.
 
@@ -79,5 +79,5 @@ Phasennummern müssen nicht fortlaufend sein und sind mit den Wert der [**Contai
 
 Phasing wirkt sich nur auf [{x:Bind}](x-bind-markup-extension.md) -Bindungen aus, nicht auf [{Binding}](binding-markup-extension.md)-Bindungen.
 
-Phasing gilt nur, wenn die Elementvorlage mithilfe eines Steuerelements gerendert wird, das Phasing erkennt. Für Windows 10 bedeutet, dass [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) und [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Phasing gilt nicht für Datenvorlagen, die in anderen Elementsteuerelementen verwendet werden, oder für andere Szenarien, wie zum Beispiel die Abschnitte [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) oder [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) – in diesen Fällen werden alle UI-Elemente auf einmal an Daten gebunden.
+Phasing gilt nur, wenn die Elementvorlage mithilfe eines Steuerelements gerendert wird, das Phasing erkennt. Für Windows 10, also [ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br242878) und [ **GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Phasing gilt nicht für Datenvorlagen, die in anderen Elementsteuerelementen verwendet werden, oder für andere Szenarien, wie zum Beispiel die Abschnitte [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) oder [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) – in diesen Fällen werden alle UI-Elemente auf einmal an Daten gebunden.
 

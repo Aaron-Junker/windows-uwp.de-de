@@ -4,18 +4,18 @@ description: In diesem Artikel wird aufgeführt, welche Audio- und Videocodecs u
 title: Unterstützte Codecs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d8c67c92a070fbeaaab81ef6c5145dec90e411
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929232"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631355"
 ---
 # <a name="supported-codecs"></a>Unterstützte Codecs
 
-In diesem Artikel ist die Verfügbarkeit von Audio-, Video- und Bild-Codecs und -Formaten für UWP-Apps standardmäßig für jede Gerätefamilie aufgeführt. Beachten Sie, dass diese Tabellen die Codecs enthalten, die in der Windows10-Installation für die angegebene Gerätefamilie enthalten sind. Benutzer und Apps können zusätzliche Codecs installieren, die unter Umständen zur Verwendung zur Verfügung stehen. Sie können zur Laufzeit den Satz von Codecs abfragen, die derzeit für ein bestimmtes Gerät verfügbar sind. Weitere Informationen finden Sie unter [Abfragen von auf einem Gerät installierten Codecs](codec-query.md).
+Dieser Artikel beschreibt die standardmäßig verfügbaren Audio-, Video- und Bild-Codecs sowie Formate für UWP-Apps für jede Gerätefamilie. Beachten Sie, dass diese Tabellen die Codecs enthalten, die in der Windows 10-Installation für die angegebene Gerätefamilie enthalten sind. Benutzer und Apps können zusätzliche Codecs installieren, die unter Umständen zur Verwendung zur Verfügung stehen. Sie können zur Laufzeit den Satz von Codecs abfragen, die derzeit für ein bestimmtes Gerät verfügbar sind. Weitere Informationen finden Sie unter [Abfragen von auf einem Gerät installierten Codecs](codec-query.md).
 
 In den folgenden Tabellen steht „D“ für Decoderunterstützung und „E“ für Encoderunterstützung.
 
@@ -65,7 +65,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -80,7 +80,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -125,7 +125,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">EAC3 / EC3</td>
+<td align="left">EAC3/EC3</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -339,7 +339,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 
  
 
-### <a name="mobile"></a>Mobilgerät
+### <a name="mobile"></a>Mobile
 
 <table>
 <colgroup>
@@ -376,7 +376,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -391,7 +391,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -436,7 +436,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">EAC3 / EC3</td>
+<td align="left">EAC3/EC3</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -687,7 +687,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -702,7 +702,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -747,7 +747,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">EAC3 / EC3</td>
+<td align="left">EAC3/EC3</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -998,7 +998,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1013,7 +1013,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1309,7 +1309,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1324,7 +1324,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1369,7 +1369,7 @@ In den folgenden Tabellen wird die Unterstützung von Audiocodecs und Formaten f
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">EAC3 / EC3</td>
+<td align="left">EAC3/EC3</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -1812,7 +1812,7 @@ In den folgenden Tabellen wird die Unterstützung von Videocodecs und Formaten f
 
  
 
-### <a name="mobile"></a>Mobilgerät
+### <a name="mobile"></a>Mobile
 
 <table>
 <colgroup>

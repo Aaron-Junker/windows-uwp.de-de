@@ -1,17 +1,17 @@
 ---
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: Verwenden des Neigungsmessers
-description: Hier erfahren Sie, wie Sie mithilfe des Neigungsmessers Werte für Stampf-, Roll- und Gierwinkel ermitteln.
+description: Hier erfahren Sie, wie Sie mithilfe des Neigungsmessers Werte für Nick-, Roll- und Gierwinkel ermitteln.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bfd617c3c08cdcb7815010648c6036a5f39ee3ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932659"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623805"
 ---
 # <a name="use-the-inclinometer"></a>Verwenden des Neigungsmessers
 
@@ -25,13 +25,13 @@ ms.locfileid: "8932659"
 
 -   Eine umfassendere Implementierung finden Sie unter [Beispiel für einen Neigungsmesser](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
 
-Hier erfahren Sie, wie Sie mithilfe des Neigungsmessers Werte für Gier-, Roll- und Nickwinkel ermitteln.
+Hier erfahren Sie, wie Sie mithilfe des Neigungsmessers Werte für Nick-, Roll- und Gierwinkel ermitteln.
 
 Bei einigen 3D-Spielen wird ein Neigungsmesser als Eingabegerät benötigt. Ein gängiges Beispiel hierfür ist ein Flugsimulator, der die drei Achsen des Neigungsmessers (X, Y und Z) dem Höhenleitwerk sowie dem Quer- und Seitenruder eines Flugzeugs zuordnet.
 
  ## <a name="prerequisites"></a>Voraussetzungen
 
-Sie sollten mit Extensible Application Markup Language (XAML), Microsoft für VisualC++ c# und Ereignissen vertraut sein.
+Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
 
 Das verwendete Gerät oder der Emulator muss einen Neigungsmesser unterstützen.
 
@@ -41,7 +41,7 @@ Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnit
 
 ###  <a name="instructions"></a>Anweisungen
 
--   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **VisualC#** die Option **Leere App (Universelle Windows-App)** aus.
+-   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
 -   Öffnen Sie die Projektdatei „MainPage.xaml.cs“, und ersetzen Sie den vorhandenen Code durch den folgenden Code.
 
@@ -108,7 +108,7 @@ Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnit
     }
 ```
 
-Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen ersetzen, den Sie für Ihr Projekt angegeben haben. Wenn Sie z.B. ein Projekt mit dem Namen **InclinometerCS** erstellt haben, ersetzen Sie `namespace App1` durch `namespace InclinometerCS`.
+Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen ersetzen, den Sie für Ihr Projekt angegeben haben. Wenn Sie z. B. ein Projekt mit dem Namen **InclinometerCS** erstellt haben, ersetzen Sie `namespace App1` durch `namespace InclinometerCS`.
 
 -   Öffnen Sie die Datei „MainPage.xaml“, und ersetzen Sie den ursprünglichen Inhalt durch den folgenden XML-Code.
 
@@ -134,7 +134,7 @@ Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen erset
     </Page>
 ```
 
-Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z.B. ein Projekt mit dem Namen **InclinometerCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="InclinometerCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:InclinometerCS"`.
+Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z. B. ein Projekt mit dem Namen **InclinometerCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="InclinometerCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:InclinometerCS"`.
 
 -   Drücken Sie F5 oder wählen Sie **Debuggen** > **Debugging starten** aus, um die App zu erstellen, bereitzustellen und auszuführen.
 
@@ -152,7 +152,7 @@ Die App stellt eine Verbindung mit dem Standardneigungsmesser in der **MainPage*
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-Die App legt das Berichtsintervall in der **MainPage**-Methode fest. Mit diesem Code wird das vom Gerät unterstützte Mindestintervall abgerufen und mit einem angeforderten Intervall von 16 Millisekunden verglichen (entspricht etwa einer Aktualisierungsrate von 60Hz). Wenn das unterstützte Mindestintervall größer als das angeforderte Intervall ist, legt der Code den Wert auf das Minimum fest. Andernfalls wird der Wert auf das angeforderte Intervall festgelegt.
+Die App legt das Berichtsintervall in der **MainPage**-Methode fest. Mit diesem Code wird das vom Gerät unterstützte Mindestintervall abgerufen und mit einem angeforderten Intervall von 16 Millisekunden verglichen (entspricht etwa einer Aktualisierungsrate von 60 Hz). Wenn das unterstützte Mindestintervall größer als das angeforderte Intervall ist, legt der Code den Wert auf das Minimum fest. Andernfalls wird der Wert auf das angeforderte Intervall festgelegt.
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;

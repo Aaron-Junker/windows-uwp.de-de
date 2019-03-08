@@ -4,19 +4,19 @@ description: Enthält Informationen zu den Daten, die Sie der Registrierung Ihre
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.date: 06/25/2018
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Eingabe, Registrierung, benutzerdefiniert
+keywords: Windows 10, UWP, Spiele, Eingabe, Registrierung, benutzerdefiniert
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936975"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633605"
 ---
 # <a name="registry-data-for-game-controllers"></a>Registrierungsdaten für Spielecontroller
 
 > [!NOTE]
-> Dieses Thema für Hersteller von Windows10-kompatiblen Spielecontroller vorgesehen und gilt nicht für die meisten Entwickler.
+> Dieses Thema für Hersteller von Windows 10-kompatiblen Spielecontroller vorgesehen und gilt nicht für die meisten Entwickler.
 
 Der [Windows.Gaming.Input-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input) ermöglicht unabhängigen Hardwareanbietern (IHVs) das Hinzufügen von Daten an die PC-Registrierung, damit ihre Geräte als [Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.flightstick) und [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) entsprechend angezeigt werden. Alle IHVs sollten diese Daten für ihre kompatiblen Controller hinzufügen. Auf diese Weise können alle UWP-Spiele (und alle Desktop-Spiele, die WinRT-API verwenden) Ihren Spielecontroller unterstützen.
 
@@ -42,8 +42,8 @@ In der folgenden Tabelle wird der erwartete Werte im Stammverzeichnis des Gerät
         <td>
             <p>Gibt an, dass dieses Gerät deaktiviert werden soll.</p>
             <ul>
-                <li><b>0</b>: Das Gerät ist nicht deaktiviert.</li>
-                <li><b>1</b>: Das Gerät ist deaktiviert.</li>
+                <li><b>0</b>: Gerät ist nicht deaktiviert werden.</li>
+                <li><b>1</b>: Gerät wurde deaktiviert.</li>
             </ul>
         </td>
     </tr>
@@ -90,7 +90,7 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
         <td>Ja</td>
     </tr>
     <tr>
-        <td>Y</td>
+        <td>„Y“ zugeordnet ist</td>
         <td>Ja</td>
     </tr>
     <tr>
@@ -303,7 +303,7 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
         <td>Nein</td>
     </tr>
     <tr>
-        <td>Wheel</td>
+        <td>Rad</td>
         <td>Ja</td>
         <td rowspan="5" style="vertical-align: middle;">Siehe <a href="#axis-mapping">Achsenzuordnung</a></td>
     </tr>
@@ -562,7 +562,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Taste zuzuo
         <th>Wert-Info</th>
     </tr>
     <tr>
-        <td>Taste</td>
+        <td>Schaltfläche</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
         <td>Ja</td>
@@ -592,12 +592,12 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Taste zuzuo
         <td>DWORD</td>
         <td>Ja</td>
         <td>
-            <p>Definiert die Größe eines Fensters um den <b>ThresholdPercent</b>-Wert, der verwendet wird, um den Zustand der gemeldeten Taste zu entprellen. Der gültige Wertebereich liegt zwischen 0 bis 100. Statusübergänge der Tasten können nur auftreten, wenn der Achsenwert den oberen oder unteren Rand der Entprellfenster überschreitet. Ist beispielsweise der <b>ThresholdPercent</b>-Wert 50 und der <b>DebouncePercent</b>-Wert 10, liegt die Entprellgrenze bei 45% und 55% für den gesamten Achsenwert. Die Taste kann nicht zum gedrückten Zustand übergehen, bis der Achsenwert 55% oder höher erreicht, und es kann nicht in den endgültigen Zustand übergehen, bis der Achsenwert 45% oder darunter erreicht.</p>
-            <p>Die berechneten Entprellfenstergrenzen liegen zwischen 0% und 100%. Z.B. ergibt eine Schwellenwert von 5% und ein Entprellfenster von 20% eine Entprellfenstergrenze von 0% und 15%. Der Zustand der Taste für einen Achsenwerte von 0% und 100% ist immer als gedrückt oder losgelassen gemeldet, unabhängig von den Schwellen- und Entprellwerten.</p>
+            <p>Definiert die Größe eines Fensters um den <b>ThresholdPercent</b>-Wert, der verwendet wird, um den Zustand der gemeldeten Taste zu entprellen. Der gültige Wertebereich liegt zwischen 0 bis 100. Statusübergänge der Tasten können nur auftreten, wenn der Achsenwert den oberen oder unteren Rand der Entprellfenster überschreitet. Ist beispielsweise der <b>ThresholdPercent</b>-Wert 50 und der <b>DebouncePercent</b>-Wert 10, liegt die Entprellgrenze bei 45 % und 55 % für den gesamten Achsenwert. Die Taste kann nicht zum gedrückten Zustand übergehen, bis der Achsenwert 55 % oder höher erreicht, und es kann nicht in den endgültigen Zustand übergehen, bis der Achsenwert 45 % oder darunter erreicht.</p>
+            <p>Die berechneten Entprellfenstergrenzen liegen zwischen 0 % und 100 %. Z. B. ergibt eine Schwellenwert von 5 % und ein Entprellfenster von 20 % eine Entprellfenstergrenze von 0 % und 15 %. Der Zustand der Taste für einen Achsenwerte von 0 % und 100 % ist immer als gedrückt oder losgelassen gemeldet, unabhängig von den Schwellen- und Entprellwerten.</p>
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Schalter</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Ja</td>
@@ -610,13 +610,13 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Taste zuzuo
         <td>
             <p>Gibt die Switchposition an, die bewirkt, dass die zugeordnete Schaltfläche meldet, dass darauf geklickt wird. Die Positionswerte können eine der folgenden Zeichenfolgen sein:</p>
             <ul>
-                <li>Up</li> 
+                <li>Nach oben</li> 
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>Nach rechts</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>Nach unten</li>
                 <li>DownLeft</li>
-                <li>Left</li>
+                <li>Nach links</li>
                 <li>UpLeft</li>
             </ul>
         </td>
@@ -624,7 +624,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Taste zuzuo
     <tr>
         <td>IncludeAdjacent</td>
         <td>DWORD</td>
-        <td>Nein.</td>
+        <td>Nein</td>
         <td>Gibt die Switchposition daneben an, die ebenfalls bewirkt, dass die zugeordnete Schaltfläche meldet, dass darauf geklickt wird.</td>
     </tr>
 </table>
@@ -642,10 +642,10 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
         <th>Wert-Info</th>
     </tr>
     <tr>
-        <td rowspan="2" style="vertical-align: middle;">Taste</td>
+        <td rowspan="2" style="vertical-align: middle;">Schaltfläche</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
-        <td>Ja.</td>
+        <td>Ja</td>
         <td>
             <p>Index des <b>RawGameController</b>-Tastenarrays, das als zugeordneter unidirektionaler Achsenwert übersetzt wird.</p>
             <table>
@@ -667,7 +667,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
     <tr>
         <td>MinValueButtonIndex</td>
         <td>DWORD</td>
-        <td>Nein.</td>
+        <td>Nein</td>
         <td>
             <p>Gibt an, dass die zugeordnete Achse bidirektional ist. Werte von <b>MaxButton</b> und <b>MinButton</b> werden in einer einzelnen bidirektionalen Achse kombiniert, wie unten dargestellt.</p>
             <table>
@@ -709,11 +709,11 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
     <tr>
         <td>Invertierung</td>
         <td>DWORD</td>
-        <td>Nein.</td>
+        <td>Nein</td>
         <td>Gibt an, dass der zugeordnete Achsenwert umgekehrt werden soll, bevor es zurückgegeben wird.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Schalter</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Ja</td>
@@ -722,17 +722,17 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
     <tr>
         <td>MaxValueSwitchPosition</td>
         <td>REG_SZ</td>
-        <td>Ja.</td>
+        <td>Ja</td>
         <td>
             <p>Eine der folgenden Zeichenfolgen:</p>
             <ul>
-                <li>Up</li>
+                <li>Nach oben</li>
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>Nach rechts</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>Nach unten</li>
                 <li>DownLeft</li>
-                <li>Left</li>
+                <li>Nach links</li>
                 <li>UpLeft</li>
             </ul>
             <p>Es gibt die Position des Switchs an, bei dem der zugeordnete Achsenwert als 1,0 gemeldet werden soll. Die entgegengesetzte Richtung der <b>MaxValueSwitchPosition</b> wird als 0,0 behandelt. Wenn beispielsweise <b>MaxValueSwitchPosition</b> auf <b>Up</b> festgelegt ist, ist die Achsenwert-Übersetzung wie unten gezeigt:</p>
@@ -742,15 +742,15 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up</td>
+                    <td>Nach oben</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
-                    <td>Center</td>
+                    <td>Mitte</td>
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>Nach unten</td>
                     <td>0.0</td>
                 </tr>
             </table>
@@ -759,7 +759,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
     <tr>
         <td>IncludeAdjacent</td>
         <td>DWORD</td>
-        <td>Nein.</td>
+        <td>Nein</td>
         <td>
             <p>Gibt die Schalterposition daneben an, die ebenfalls bewirkt, dass die zugeordnete Achse 1,0 meldet. Wenn im obigen Beispiel <b>IncludeAdjacent</b> festgelegt ist, wird die Achsen-Übersetzung wie folgt durchgeführt:</p>
             <table>
@@ -768,7 +768,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up</td>
+                    <td>Nach oben</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
@@ -780,11 +780,11 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
                     <td>1.0</td>
                 </tr>
                 <tr>
-                    <td>Center</td>
+                    <td>Mitte</td>
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>Nach unten</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -812,7 +812,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
         <th>Wert-Info</th>
     </tr>
     <tr>
-        <td rowspan="10" style="vertical-align: middle;">Taste</td>
+        <td rowspan="10" style="vertical-align: middle;">Schaltfläche</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2, 4 oder 8</td>
@@ -820,7 +820,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b> oder <b>EightWay</b>
+        <td><b>"TwoWay"</b>, <b>FourWay</b>, oder <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,10 +898,10 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Schalter</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
-        <td>Index im <b>RawGameController</b>-Schalterarray.
+        <td>Index im <b>RawGameController</b>-Switcharray.
     </tr>
     <tr>
         <td>Invertierung</td>
@@ -926,7 +926,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>Right</td>
+                    <td>Nach rechts</td>
                     <td>1</td>
                     <td>2</td>
                 </tr>
@@ -936,7 +936,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>Up</td>
+                    <td>Nach oben</td>
                     <td>3</td>
                     <td>0</td>
                 </tr>
@@ -946,7 +946,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
                     <td>7</td>
                 </tr>
                 <tr>
-                    <td>Left</td>
+                    <td>Nach links</td>
                     <td>5</td>
                     <td>6</td>
                 </tr>
@@ -956,7 +956,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
                     <td>5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>Nach unten</td>
                     <td>7</td>
                     <td>4</td>
                 </tr>
@@ -966,7 +966,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
 
 #### <a name="buttonindex-values"></a>*ButtonIndex values
 
-\*ButtonIndex-Werte legt Index auf den Tastenarray **RawGameController** fest:
+\*ButtonIndex Werte indiziert, in der **RawGameController**der Schaltfläche "-Array:
 
 <table>
     <tr>
@@ -1041,13 +1041,13 @@ Hierbei handelt es sich um statische Zuordnungswerte für verschiedene Zuordnung
         <td>RacingWheel</td>
         <td>MaxWheelAngle</td>
         <td>DWORD</td>
-        <td>Gibt den maximalen physischen Winkel des Lenkrads an, der vom Lenkrad in einer Richtung unterstützt wird. Beispielsweise würde ein Lenkrad mit einer mögliche Drehung von -90Grad bis 90Grad 90Grad angeben.</td>
+        <td>Gibt den maximalen physischen Winkel des Lenkrads an, der vom Lenkrad in einer Richtung unterstützt wird. Beispielsweise würde ein Lenkrad mit einer mögliche Drehung von -90 Grad bis 90 Grad 90 Grad angeben.</td>
     </tr>
 </table>
 
 ## <a name="labels"></a>Beschriftungen
 
-Beschriftungen sollten unter dem **Beschriftungen**-Schlüssel unter dem Stammverzeichnis des Geräts vorhanden sein. **Beschriftungen** können 3 Unterschlüssel enthalten: **Tasten**, **Achsen**, und **Switches**.
+Beschriftungen sollten unter dem **Beschriftungen**-Schlüssel unter dem Stammverzeichnis des Geräts vorhanden sein. **Bezeichnungen** 3 Unterschlüssel haben: **Schaltflächen**, **Achsen**, und **Switches**.
 
 ### <a name="button-labels"></a>Schaltflächenbeschriftungen
 
@@ -1345,8 +1345,8 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
-* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF-Dateien](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

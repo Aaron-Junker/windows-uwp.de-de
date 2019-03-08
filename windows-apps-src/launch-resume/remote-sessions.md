@@ -4,18 +4,18 @@ description: Ermöglichen Sie die gemeinsame Nutzung auf verbundenen Geräten, i
 ms.assetid: 1c8dba9f-c933-4e85-829e-13ad784dd3e2
 ms.date: 06/28/2017
 ms.topic: article
-keywords: Windows 10, Uwp, verbundenen Geräten, remote-Systemen, "ROME" Projekt "ROME"
+keywords: Windows 10, Uwp, verbundene Geräte "," Remotesystemen "," ROM "," Projekt "ROME"
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dd23603df1f1c3fac151da2aea2f8435b3ee423
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932626"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633415"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>Verbinden von Geräten über Remotesitzungen
 
-Die Remotesitzungsfunktion ermöglicht einer App, eine Verbindung mit anderen Geräten über eine Sitzung herzustellen, entweder für explizite App-Nachrichten oder für im Broker gespeicherte ausgetauschte Daten, die vom System verwaltet werden, wie z.B. der **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** für ein eine gemeinsame holografische Nutzung von Windows Holographic-Geräten.
+Die Remotesitzungsfunktion ermöglicht einer App, eine Verbindung mit anderen Geräten über eine Sitzung herzustellen, entweder für explizite App-Nachrichten oder für im Broker gespeicherte ausgetauschte Daten, die vom System verwaltet werden, wie z. B. der **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** für ein eine gemeinsame holografische Nutzung von Windows Holographic-Geräten.
 
 Remotesitzungen können von jedem Windows-Gerät erstellt werden, und jedes Windows-Gerät kann einen Beitritt anfordern (obwohl Sitzungen ausschließlich per Einladung aufgerufen werden können), einschließlich Geräte, auf denen andere Benutzer angemeldet sind. Dieses Handbuch enthält einen grundlegenden Beispielcode für alle wichtigen Szenarien, die Remotesitzungen verwenden. Dieser Code kann in ein vorhandenes App-Projekt integriert und nach Bedarf geändert werden. Informationen über eine End-to-End-Implementierung finden Sie unter [Beispiel-App für ein Quizspiel](https://github.com/microsoft/Windows-appsample-remote-system-sessions)).
 
@@ -321,5 +321,5 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 ```
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Verbundene Apps und Geräte (Projekt „Rome”)](connected-apps-and-devices.md)
-* [API-Referenz für Remotesysteme](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [Verbundene apps und Geräten (Projekt "ROME")](connected-apps-and-devices.md)
+* [Remote-Systemen-API-Referenz](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)

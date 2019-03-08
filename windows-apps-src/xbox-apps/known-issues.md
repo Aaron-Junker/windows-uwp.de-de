@@ -1,23 +1,23 @@
 ---
-title: Bekannte Probleme mit UWP im Zusammenhang mit dem Xbox One-Entwicklerprogramm
+title: Bekannte Probleme mit UWP im Zusammenhang mit dem Xbox-Entwicklerprogramm
 description: Beschreibt die bekannten Probleme für UWP im Xbox Developer-Programm.
 ms.date: 03/29/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
 ms.openlocfilehash: 01bc72051e9efa69adbbab574b932da829c83e72
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046533"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626635"
 ---
-# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Bekannte Probleme mit UWP im Zusammenhang mit dem Xbox One-Entwicklerprogramm
+# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Bekannte Probleme mit UWP im Zusammenhang mit dem Xbox-Entwicklerprogramm
 
 Dieses Thema beschreibt bekannte Probleme im Zusammenhang mit dem Xbox One-Entwicklerprogramm. Weitere Informationen zu diesem Programm finden Sie unter [UWP auf Xbox](index.md). 
 
-\[Wenn Sie über einen Link in einem API-Referenzthema hierher gelangten und nach Informationen zu APIs für die Universal-Gerätefamilie suchen, lesen Sie bitte [UWP-Funktionen, die noch nicht auf Xbox One unterstützt werden](https://go.microsoft.com/fwlink/?LinkID=760755).\]
+\[Wenn Sie einen Link in einer API-Referenzthema hier stammt, und Suchen nach Informationen zu Softwarefamilien universellen-API, finden Sie unter [UWP-Features, die auf der Xbox noch unterstützt werden](https://go.microsoft.com/fwlink/?LinkID=760755).\]
 
 In der folgenden Liste werden einige bekannte Probleme aufgelistet, die auftreten können. Diese Liste ist jedoch nicht vollständig. 
 
@@ -56,7 +56,7 @@ Dies kann sich auf Xbox-Entwickler auswirken, die Dateien kopieren möchten, die
 
 ## <a name="blocked-networking-ports-on-xbox-one"></a>Gesperrte Netzwerkports auf Xbox One
 
-Bindungen an Ports im Bereich [57344, 65535] (einschließlich) sind für Apps für die universelle Windows-Plattform (UWP) auf Xbox One-Geräten nicht möglich. Obwohl die Bindung an diese Ports während der Laufzeit erfolgreich zu sein scheint, kann Netzwerkdatenverkehr im Hintergrund gelöscht werden, bevor er Ihre App erreicht. Ihre App sollte an den Port0 gebunden werden, wann immer möglich. Dieser ermöglicht dem System die Auswahl des lokalen Ports. Wenn Sie einen bestimmten Port verwenden müssen, muss sich die Portnummer im Bereich [1025, 49151] befinden, und Sie sollten Konflikte mit der IANA-Registrierung überprüfen und vermeiden. Weitere Informationen finden Sie in [Dienstname und Transportprotokoll-Portnummer-Registrierung](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
+Bindungen an Ports im Bereich [57344, 65535] (einschließlich) sind für Apps für die universelle Windows-Plattform (UWP) auf Xbox One-Geräten nicht möglich. Obwohl die Bindung an diese Ports während der Laufzeit erfolgreich zu sein scheint, kann Netzwerkdatenverkehr im Hintergrund gelöscht werden, bevor er Ihre App erreicht. Ihre App sollte an den Port 0 gebunden werden, wann immer möglich. Dieser ermöglicht dem System die Auswahl des lokalen Ports. Wenn Sie einen bestimmten Port verwenden müssen, muss sich die Portnummer im Bereich [1025, 49151] befinden, und Sie sollten Konflikte mit der IANA-Registrierung überprüfen und vermeiden. Weitere Informationen finden Sie in [Dienstname und Transportprotokoll-Portnummer-Registrierung](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
 ## <a name="uwp-api-coverage"></a>UWP-API-Abdeckung
 
@@ -117,4 +117,4 @@ namespace TestDNLA {
 
 ## <a name="see-also"></a>Siehe auch
 - [Häufig gestellte Fragen](frequently-asked-questions.md)
-- [UWP auf XboxOne](index.md)
+- [UWP auf Xbox One](index.md)

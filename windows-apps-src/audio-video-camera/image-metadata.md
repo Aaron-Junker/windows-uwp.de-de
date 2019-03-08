@@ -4,14 +4,14 @@ description: In diesem Artikel werden das Lesen und Schreiben von Eigenschaften 
 title: Bildmetadaten
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ab1279a8744d6dc9cddc88abaa064058f1259c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943076"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631805"
 ---
 # <a name="image-metadata"></a>Bildmetadaten
 
@@ -19,7 +19,7 @@ ms.locfileid: "8943076"
 
 In diesem Artikel werden das Lesen und Schreiben von Eigenschaften von Bildmetadaten und das Hinzufügen von Geomarkierungen zu Dateien mithilfe der [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683)-Hilfsklasse erläutert.
 
-## <a name="image-properties"></a>Bildeigenschaften
+## <a name="image-properties"></a>Abbildeigenschaften
 
 Die [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225)-Eigenschaft gibt ein [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642)-Objekt zurück, das Zugriff auf inhaltsbezogene Informationen zur Datei bietet. Rufen Sie die bildspezifischen Eigenschaften durch Aufruf von [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) ab. Das zurückgegebene [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718)-Objekt macht Member verfügbar, die Felder mit grundlegenden Bildmetadaten enthalten, z. B. den Titel des Bilds und das Aufnahmedatum.
 
@@ -69,7 +69,7 @@ Nachdem Sie über den Decoder verfügen, erstellen Sie eine Liste mit Zeichenfol
 
 -   Informationen über die WIC-Metadatenabfragesprache und die unterstützten Eigenschaften finden Sie unter [WIC-Metadatenabfragen für native Bildformate](https://msdn.microsoft.com/library/windows/desktop/ee719904).
 
--   Viele Metadateneigenschaften werden nur von einer Teilmenge aller Bildtypen unterstützt. [Bei Ausführung von **GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) tritt ein Fehler mit Fehlercode 0x88982F41 auf, wenn eine der angeforderten Eigenschaften von dem dem Decoder zugeordneten Bild nicht unterstützt wird, und mit Fehlercode 0x88982F81, wenn das Bild überhaupt keine Metadaten unterstützt. Die diesen Fehlercodes zugeordneten Konstanten sind WINCODEC\_ERR\_PROPERTYNOTSUPPORTED und WINCODEC\_ERR\_UNSUPPORTEDOPERATION und werden in der Headerdatei „winerror.h“ definiert.
+-   Viele Metadateneigenschaften werden nur von einer Teilmenge aller Bildtypen unterstützt. [**GetPropertiesAsync** ](https://msdn.microsoft.com/library/windows/apps/br226250) schlägt mit dem Fehlercode 0x88982F41 fehl, wenn eine der angeforderten Eigenschaften nicht unterstützt wird, von dem Abbild, das der Decoder und 0x88982F81 zugeordnet, wenn das Image Metadaten überhaupt nicht unterstützt. Die Konstanten, die diese Fehlercodes zugeordnet sind, WINCODEC\_ERR\_PROPERTYNOTSUPPORTED und WINCODEC\_ERR\_UNSUPPORTEDOPERATION definiert sind in der Headerdatei "Winerror.h".
 -   Da ein Bild nicht unbedingt einen Wert für eine bestimmte Eigenschaft enthält, überprüfen Sie mithilfe von **IDictionary.ContainsKey**, ob eine Eigenschaft in den Ergebnissen vorhanden ist, bevor Sie versuchen, darauf zuzugreifen.
 
 Um Bildmetadaten in den Datenstrom zu schreiben, muss der Bildausgabedatei ein **BitmapEncoder** zugeordnet sein.
@@ -80,11 +80,11 @@ Erstellen Sie ein [**BitmapPropertySet**](https://msdn.microsoft.com/library/win
 
 -   Ausführliche Informationen dazu, welche Eigenschaften für welche Bilddateitypen unterstützt werden, finden Sie unter [Windows-Eigenschaften](https://msdn.microsoft.com/library/windows/desktop/dd561977), [Richtlinien zu Fotometadaten](https://msdn.microsoft.com/library/windows/desktop/ee872003) und [WIC-Metadatenabfragen für systemeigene Bildformate](https://msdn.microsoft.com/library/windows/desktop/ee719904).
 
--   [Für **SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) tritt ein Fehler mit dem Fehlercode 0x88982F41 auf, wenn das dem Encoder zugeordnete Bild eine der angeforderten Eigenschaften nicht unterstützt.
+-   [**SetPropertiesAsync** ](https://msdn.microsoft.com/library/windows/apps/br226252) schlägt mit dem Fehlercode 0x88982F41 fehl, wenn eine der angeforderten Eigenschaften durch das der Encoder zugeordnete Bild nicht unterstützt wird.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Bildverarbeitung](imaging.md)
+* [Abbilderstellung](imaging.md)
  
 
  

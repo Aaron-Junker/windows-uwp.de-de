@@ -4,14 +4,14 @@ description: Mithilfe der APIs im Windows.Media.Editing-Namespace können Sie sc
 title: Medienkompositionen und -bearbeitung
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e342094509dd5d8fb06657d147ac6468a5f8cd6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926049"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618105"
 ---
 # <a name="media-compositions-and-editing"></a>Medienkompositionen und -bearbeitung
 
@@ -74,7 +74,7 @@ Rufen Sie für das **MediaComposition**-Objekt die [**GeneratePreviewMediaStream
 
 -   Die **MediaComposition** muss mindestens einen Medienclip enthalten, bevor [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) aufgerufen wird; andernfalls ist das zurückgegebene Objekt NULL.
 
--   Die **MediaElement**-Zeitachse wird nicht automatisch mit den Änderungen an der Komposition aktualisiert. Es wird empfohlen, sowohl die Eigenschaft **GeneratePreviewMediaStreamSource** als auch **MediaPlayerElement** **Source** jedes Mal aufzurufen, wenn Sie eine Reihe von Änderungen an der Komposition vornehmen und die Benutzeroberfläche aktualisieren möchten.
+-   Die **MediaElement**-Zeitachse wird nicht automatisch mit den Änderungen an der Komposition aktualisiert. Es wird empfohlen, dass Sie beide rufen **GeneratePreviewMediaStreamSource** und legen Sie die **MediaPlayerElement** **Quelle** Eigenschaft jedes Mal, wenn Sie eine Gruppe von Änderungen machen die Komposition und möchten die Benutzeroberfläche zu aktualisieren.
 
 Es wird empfohlen, das **MediaStreamSource**-Objekt und die [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419)-Eigenschaft von **MediaPlayerElement** auf Null festzulegen, wenn der Benutzer die Seite verlässt, um die zugehörigen Ressourcen freizugeben.
 
@@ -90,7 +90,7 @@ Nachdem Sie dem Benutzer die Auswahl einer Ausgabedatei mit einem [**FileSavePic
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
--   [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) ermöglicht es Ihnen, der Geschwindigkeit des Transcodierungvorgangs Vorrang vor der Genauigkeit der Kürzung benachbarter Medienclips zu geben. **Fast** bewirkt eine schnellere Transcodierung mit weniger genauer Kürzung, **Precise** bewirkt eine langsamere Transcodierung mit genauerer Kürzung.
+-   [  **MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) ermöglicht es Ihnen, der Geschwindigkeit des Transcodierungvorgangs Vorrang vor der Genauigkeit der Kürzung benachbarter Medienclips zu geben. **Fast** bewirkt eine schnellere Transcodierung mit weniger genauer Kürzung, **Precise** bewirkt eine langsamere Transcodierung mit genauerer Kürzung.
 
 ## <a name="trim-a-video-clip"></a>Kürzen eines Videoclips
 
@@ -109,7 +109,7 @@ Um einer Komposition einen Hintergrundtitel hinzuzufügen, laden Sie eine Audiod
 
 [!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
 
--   Eine **MediaComposition** unterstützt Hintergrundaudiotitel in den folgenden Formaten: MP3, WAV, FLAC.
+-   Ein **MediaComposition** unterstützt Hintergrund Audiospuren in den folgenden Formaten: MP3, WAV, FLAC
 
 -   Ein Hintergrundaudiotitel
 

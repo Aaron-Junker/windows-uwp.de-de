@@ -1,23 +1,23 @@
 ---
 title: Multisampling in UWP-Apps (Apps für die universelle Windows-Plattform)
-description: Hier erfahren Sie, wie Sie Multisampling in UWP-Apps (Apps für die Universelle Windows-Plattform) verwenden, die mit Direct3D erstellt wurden.
+description: Hier erfahren Sie, wie Sie Multisampling in UWP-Apps (Apps für die universelle Windows-Plattform) verwenden, die mit Direct3D erstellt wurden.
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Multisampling, Direct3D
+keywords: Windows 10, UWP, Spiele, Multisampling, Direct3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c1634af8589a97f5070ff85909fe12ab16bf8d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924916"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610855"
 ---
-# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in UWP-Apps (Apps für die Universelle Windows-Plattform)
+# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in universellen Windows-apps-Plattform (UWP)
 
 
 
-Hier erfahren Sie, wie Sie Multisampling in Windows-Runtime-Apps verwenden, die mit Direct3D erstellt wurden. Das Multisampling, das auch als Multiple Sample Antialiasing bezeichnet wird, ist ein Grafikverfahren, das treppenförmige Kanten reduziert. Dazu werden mehr Pixel gezeichnet, als im endgültigen Renderziel tatsächlich enthalten sind, und anschließend wird der Mittelwert der Werte gebildet, um in bestimmten Pixeln die Darstellung einer "partiellen" Kante zu erreichen. Eine ausführliche Beschreibung der Funktionsweise des Multisamplings in Direct3D finden Sie unter [Regeln für die Rasterung beim Multiple Sample Antialiasing](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample).
+Hier erfahren Sie, wie Sie Multisampling in UWP-Apps (Apps für die universelle Windows-Plattform) verwenden, die mit Direct3D erstellt wurden. Das Multisampling, das auch als Multiple Sample Antialiasing bezeichnet wird, ist ein Grafikverfahren, das treppenförmige Kanten reduziert. Dazu werden mehr Pixel gezeichnet, als im endgültigen Renderziel tatsächlich enthalten sind, und anschließend wird der Mittelwert der Werte gebildet, um in bestimmten Pixeln die Darstellung einer "partiellen" Kante zu erreichen. Eine ausführliche Beschreibung der Funktionsweise des Multisamplings in Direct3D finden Sie unter [Regeln für die Rasterung beim Multiple Sample Antialiasing](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample).
 
 ## <a name="multisampling-and-the-flip-model-swap-chain"></a>Multisampling und die Flipmodell-Swapchain
 
@@ -28,11 +28,11 @@ Für UWP-Apps, die DirectX nutzen, müssen Flipmodell-Swapchains verwendet werde
 
 Direct3D-Featureebenen stellen die Unterstützung für spezielle Mindestfunktionen für die Beispielanzahl sicher, und es sind bestimmte Pufferformate verfügbar, die das Multisampling unterstützen. Grafikgeräte unterstützen häufig einen weiteren Bereich von Formaten und Beispielanzahlen als das erforderliche Minimum. Sie können die Multisampling-Unterstützung zur Laufzeit bestimmen. Prüfen Sie zu diesem Zweck die Featureunterstützung für das Multisampling mit bestimmten DXGI-Formaten und anschließend die Beispielanzahlen, die Sie für die einzelnen unterstützten Formate verwenden können.
 
-1.  Ermitteln Sie per Aufruf von [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497), welche DXGI-Formate in Verbindung mit dem Multisampling verwendet werden können. Geben Sie die Renderzielformate an, die vom Spiel verwendet werden können. Sowohl für das Renderziel als auch das Auflösungsziel muss das gleiche Format genutzt werden. Prüfen Sie daher sowohl [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) als auch **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
+1.  Ermitteln Sie per Aufruf von [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497), welche DXGI-Formate in Verbindung mit dem Multisampling verwendet werden können. Geben Sie die Renderzielformate an, die vom Spiel verwendet werden können. Sowohl die Renderziel als auch beheben müssen, verwenden das gleiche Format überprüfen Sie daher für beide [ **D3D11\_FORMAT\_Unterstützung\_MULTISAMPLE\_renderTarget-Klasse** ](https://msdn.microsoft.com/library/windows/desktop/ff476134) und **D3D11\_FORMAT\_Unterstützung\_MULTISAMPLE\_beheben**.
 
-    **Featureebene 9:** Auch wenn die Featureebene 9 Geräte [Unterstützung für renderzielformate](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), wird die Unterstützung für auflösungsziele nicht garantiert. Diese Überprüfung ist also erforderlich, bevor versucht wird, das in diesem Thema beschriebene Multisampling-Verfahren anzuwenden.
+    **Funktionsebene 9:  ** Obwohl die Feature-Ebene 9-Geräten [garantieren Sie Unterstützung für Multisampling-renderzielformate](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), Unterstützung ist für für Multisampling Resolve-Ziele nicht garantiert. Diese Überprüfung ist also erforderlich, bevor versucht wird, das in diesem Thema beschriebene Multisampling-Verfahren anzuwenden.
 
-    Mit dem folgenden Code wird die Multisampling-Unterstützung für alle DXGI\_FORMAT-Werte überprüft:
+    Der folgende Code überprüft multisampling-Unterstützung für alle der DXGI\_FORMATIERUNG von Werten:
 
     ```cpp
     // Determine the format support for multisampling.
@@ -82,11 +82,11 @@ Direct3D-Featureebenen stellen die Unterstützung für spezielle Mindestfunktion
     }
     ```
 
-    > **Hinweis:**  verwenden [**id3d11device2:: checkmultisamplequalitylevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494) stattdessen Wenn Multisampling-Unterstützung für überprüfen müssen unterteilte Ressourcen Puffer.
+    > **Beachten Sie**    verwenden [ **ID3D11Device2::CheckMultisampleQualityLevels1** ](https://msdn.microsoft.com/library/windows/desktop/dn280494) stattdessen bei Bedarf für Multisampling-Unterstützung für die unterteilten Ressourcen Puffer zu überprüfen.
 
      
 
-3.  Erstellen Sie einen Puffer und eine Renderzielansicht mit der gewünschten Beispielanzahl. Verwenden Sie dieselbe DXGI\_FORMAT-Struktur, Breite und Höhe wie für die Swapchain, aber geben Sie eine Beispielanzahl an, die größer als 1 ist, und verwenden Sie eine Texturdimension mit Multisampling (z. B. **D3D11\_RTV\_DIMENSION\_TEXTURE2DMS**). Bei Bedarf können Sie die Swapchain mit für das Multisampling optimalen Einstellungen neu erstellen.
+3.  Erstellen Sie einen Puffer und eine Renderzielansicht mit der gewünschten Beispielanzahl. Verwenden Sie die gleichen DXGI\_FORMAT, Breite und Höhe der SwapChain, aber geben Sie eine Beispiel-Anzahl größer als 1 und verwenden eine Dimension Multisampling-Textur (**D3D11\_RTV\_DIMENSION\_TEXTURE2DMS** z. B.). Bei Bedarf können Sie die Swapchain mit für das Multisampling optimalen Einstellungen neu erstellen.
 
     Mit dem folgenden Code wird ein Renderziel mit Multisampling erstellt:
 

@@ -5,27 +5,27 @@ template: detail.hbs
 label: Parallax View
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 pm-contact: trestar
 design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044647"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638935"
 ---
 # <a name="person-picture-control"></a>Personenbild-Steuerelement
 
-Das Personenbild-Steuerelement zeigt das Avatar-Bild für eine Person an, sofern ein solches Bild verfügbar ist. Andernfalls werden die Initialen der Person oder eine allgemeine Glyphe angezeigt. Sie können das Steuerelement zum Anzeigen eines [Contact-Objekts](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)– eines Objekts, das die Kontaktinformationen einer Person verwaltet– verwenden, oder Sie können manuell Kontaktinformationen wie einen Anzeigenamen und ein Profilbild angeben.  
+Das Personenbild-Steuerelement zeigt das Avatar-Bild für eine Person an, sofern ein solches Bild verfügbar ist. Andernfalls werden die Initialen der Person oder eine allgemeine Glyphe angezeigt. Sie können das Steuerelement zum Anzeigen eines [Contact-Objekts](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) – eines Objekts, das die Kontaktinformationen einer Person verwaltet – verwenden, oder Sie können manuell Kontaktinformationen wie einen Anzeigenamen und ein Profilbild angeben.  
 
-> **Wichtige APIs**: [PersonPicture-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [Contact-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **Wichtige APIs**: [PersonPicture Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [wenden Sie sich an der Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
-Diese Abbildungzeigt zwei Steuerelement für Bilder von Personen zusammen mit zwei [TextBlock](text-block.md)-Elementen, die Namen der Benutzer anzeigen. 
-![Das Personenbild-Steuerelement](images/person-picture/person-picture_hero.png)
+Diese Abbildung zeigt zwei Steuerelement für Bilder von Personen zusammen mit zwei [TextBlock](text-block.md)-Elementen, die Namen der Benutzer anzeigen. 
+![Das Steuerelement für die person](images/person-picture/person-picture_hero.png)
 
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
@@ -36,7 +36,7 @@ Verwenden Sie das Personenbild, wenn Sie eine Person und deren Kontaktinformatio
 * Zur Anzeige des Absenders einer Nachricht 
 * Zur Anzeige eines Social-Media-Kontakts
 
-Die Abbildungzeigt das Personenbild-Steuerelement in einer Kontaktliste: ![das Personenbild-Steuerelement](images/person-picture/person-picture-control.png)
+Die Abbildung zeigt Person den Bildsteuerelement in einer Liste von Kontakten: ![Das Steuerelement für die person](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>Beispiele
 
@@ -47,8 +47,8 @@ Die Abbildungzeigt das Personenbild-Steuerelement in einer Kontaktliste: ![das P
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/PersonPicture">die App zu öffnen und PersonPicture in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -185,9 +185,9 @@ Ist kein Bild vorhanden, zeigt das Steuerelement den Namen oder die Initialen de
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementkatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Kontakte und Kalender](../../contacts-and-calendar/index.md)
-* [Beispiel für Visitenkarten](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [Kontaktkarten-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=624040)

@@ -1,23 +1,23 @@
 ---
 title: Anhänge
-description: In diesen Abschnitten werden ausführliche technische Details beschrieben.
+description: Diese Abschnitte enthalten tiefergehende technische Details.
 ms.assetid: 461CCE6F-BAF0-4965-90A5-FD36B511F72C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f4cd2e17754dc5b5958e8bca208e30b87718cdd8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922863"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632495"
 ---
 # <a name="appendices"></a>Anhänge
 
-In diesen Abschnitten werden ausführliche technische Details beschrieben.
+Diese Abschnitte enthalten tiefergehende technische Details.
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Inhalt dieses Abschnitts
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>In diesem Abschnitt
 
 
 <table>
@@ -33,20 +33,20 @@ In diesen Abschnitten werden ausführliche technische Details beschrieben.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="floating-point-rules.md">Gleitkommaregeln</a></p></td>
-<td align="left"><p>Direct3D unterstützt mehrere Gleitkommadarstellungen. Alle Gleitkommaberechnungen werden unter einer festgelegten Teilmenge der IEEE 754-Richtlinie der 32-Bit-Gleitkommaregel mit einfacher Genauigkeit ausgeführt.</p></td>
+<td align="left"><p><a href="floating-point-rules.md">Gleitkomma-Regeln</a></p></td>
+<td align="left"><p>Direct3D unterstützt verschiedene Gleitkommadarstellungen. Alle Gleitkommaberechnungen arbeiten unter einer definierten Teilmenge von IEEE 754, 32-Bit-Gleitkommaregeln mit einfacher Genauigkeit.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="data-type-conversion.md">Konvertieren von Datentypen</a></p></td>
-<td align="left"><p>In den folgenden Abschnitten wird beschrieben, wie Direct3D Konvertierungen zwischen Datentypen verarbeitet.</p></td>
+<td align="left"><p><a href="data-type-conversion.md">Datentypkonvertierung</a></p></td>
+<td align="left"><p>In den folgenden Abschnitten wird beschrieben, wie Direct3D Konvertierungen zwischen Datentypen behandelt.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="rasterization-rules.md">Regeln für die Rasterung</a></p></td>
+<td align="left"><p><a href="rasterization-rules.md">Rasterization Regeln</a></p></td>
 <td align="left"><p>Die Regeln für die Rasterung legen fest, wie Vektordaten Rasterdaten zugeordnet werden. Rasterdaten werden als Ganzzahl-Positionen angedockt, die dann ausgewählt und gekürzt werden (um eine minimale Anzahl der Pixel zu ergeben). Attribute pro Pixel werden interpoliert (von Attributen pro Scheitelpunkt), bevor diese an einen Pixel-Shader weitergeleitet werden.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="texture-block-compression.md">Texturblockkomprimierung</a></p></td>
-<td align="left"><p>Die Unterstützung der Blockkomprimierung (BC) für Texturen wurde in Direct3D11 erweitert, um BC6H- und BC7-Algorithmen anzubieten. BC6H unterstützt HDR-Farb-Quelldaten und BC7 bietet überdurchschnittliche Qualität bei der Komprimierung mit weniger Artefakte für Standard-RGB-Quelldaten.</p></td>
+<td align="left"><p><a href="texture-block-compression.md">Block-texturkomprimierung</a></p></td>
+<td align="left"><p>Die Unterstützung der Blockkomprimierung (BC) für Texturen wurde in Direct3D 11 erweitert, um BC6H- und BC7-Algorithmen anzubieten. BC6H unterstützt HDR-Farb-Quelldaten und BC7 bietet überdurchschnittliche Qualität bei der Komprimierung mit weniger Artefakte für Standard-RGB-Quelldaten.</p></td>
 </tr>
 </tbody>
 </table>
@@ -56,7 +56,7 @@ In diesen Abschnitten werden ausführliche technische Details beschrieben.
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Direct3D-Grafik-Lernanleitung](index.md)
+[Schulungsleitfaden für Direct3D-Grafiken](index.md)
 
  
 

@@ -4,14 +4,14 @@ description: Programmieren von UWP-Spielen mit DirectX.
 ms.assetid: ba77b081-b8c0-4674-b8bf-7a94466a67f7
 ms.date: 06/23/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiel, Übersicht, Programmierung, DirectX
+keywords: Windows 10, UWP, Spiel, Übersicht, Programmierung, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ac401892761e1e6433d337babbce00dc559b98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923959"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608845"
 ---
 # <a name="directx-programming"></a>DirectX-Programmierung
 
@@ -42,19 +42,19 @@ Dieser Abschnitt enthält Informationen zum Entwickeln von UWP-Spielen mit Direc
 <td align="left"><p>Erläutert die grundlegenden Programmierkonzepte zu DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="directx-add-features.md">Hinzufügen von Features</a></p></td>
+<td align="left"><p><a href="directx-add-features.md">Hinzufügen von Funktionen</a></p></td>
 <td align="left"><p>Beschreibt, wie Sie Ihrem DirectX-Spiel verschiedene Spielefeatures hinzufügen.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-optimization-and-advanced-topics.md">Optimierung und fortgeschrittene Themen</a></p></td>
+<td align="left"><p><a href="directx-optimization-and-advanced-topics.md">Optimierung und Weiterführende Themen</a></p></td>
 <td align="left"><p>Erfahren Sie mehr über die Optimierung und andere fortgeschrittene Themen.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">Portieren von DirectX 9 zu UWP</a></p></td>
-<td align="left"><p>Enthält Informationen zum Portieren von DirectX9-Spielen auf UWP.</p></td>
+<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">Port DirectX 9 auf UWP</a></p></td>
+<td align="left"><p>Enthält Informationen zum Portieren von DirectX 9-Spielen auf UWP.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Portieren von OpenGL zu Direct3D</a></p></td>
+<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Port OpenGL, Direct3D</a></p></td>
 <td align="left"><p>Enthält Informationen zum Portieren von OpenGL ES 2.0-Spielen auf Direct3D 11.</p></td>
 </tr>
 </tbody>

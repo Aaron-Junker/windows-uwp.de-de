@@ -1,5 +1,5 @@
 ---
-Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
+Description: Verwenden Sie Cortana-Sprachbefehle, Spracherkennung und Sprachsynthese zum Integrieren von Sprache in Ihre Apps.
 title: Spracherkennungsinteraktionen
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050813"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637075"
 ---
 # <a name="speech-interactions"></a>Spracherkennungsinteraktionen
 
@@ -21,7 +21,7 @@ Integrieren Sie Spracherkennung und Text-zu-Sprache (auch als Text-to-Speech, TT
 
 **Spracherkennung:** Die Spracherkennung konvertiert vom Benutzer gesprochene Wörter in Text für die Formulareingabe, für die Diktierfunktion, zum Angeben einer Aktion oder eines Befehls und zum Ausführen von Aufgaben. Unterstützt werden sowohl vordefinierte Grammatiken für das Freitext-Diktieren und die Websuche als auch benutzerdefinierte Grammatiken, die mithilfe von Speech Recognition Grammar Specification (SRGS) Version 1.0 erstellt werden.
 
-**TTS:** TTS verwendet ein Sprachsynthesemodul (Sprache), um eine Textzeichenfolge in gesprochene Wörter zu konvertieren. Bei der Eingabezeichenfolge kann es sich um einfachen, schlichten Text oder komplexere Speech Synthesis Markup Language (SSML) handeln. SSML stellt eine Standardmethode zum Steuern der Eigenschaften der Sprachausgabe bereit, z.B. Aussprache, Lautstärke, Stimmlage, Rate bzw. Geschwindigkeit und Betonung.
+**TTS:** TTS verwendet ein Sprachsynthesemodul (Sprache), um eine Textzeichenfolge in gesprochene Wörter zu konvertieren. Bei der Eingabezeichenfolge kann es sich um einfachen, schlichten Text oder komplexere Speech Synthesis Markup Language (SSML) handeln. SSML stellt eine Standardmethode zum Steuern der Eigenschaften der Sprachausgabe bereit, z. B. Aussprache, Lautstärke, Stimmlage, Rate bzw. Geschwindigkeit und Betonung.
 
 **Andere sprachrelevante Komponenten:**
 **Cortana** in Windows-Anwendungen nutzt angepasste Sprachbefehle (gesprochen oder eingegeben), um Ihre App im Vordergrund zu starten (die App erhält wie beim Starten über das Startmenü den Fokus) oder als Hintergrunddienst zu aktivieren (**Cortana** behält den Fokus, es werden aber Ergebnisse aus der App angezeigt). Weitere Hinweise, um App-Funktionen in der **Cortana**-UI verfügbar machen, finden Sie in den [Richtlinien zu Cortana-Sprachbefehlen](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd).
@@ -41,20 +41,20 @@ Beachten Sie Folgendes, wenn Sie Sprachinteraktionen in Ihrer App unterstützen 
 -   Durch welche Ausdrücke wird eine Aktion oder ein Verhalten initiiert? Müssen die Ausdrücke und Aktionen auf dem Bildschirm aufgelistet werden?
 -   Sind Bildschirme zur Eingabeaufforderung, Bestätigung und Begriffsklärung oder TTS erforderlich?
 -   Wie sieht der Interaktionsdialog zwischen App und Benutzer aus?
--   Ist für den Kontext Ihrer App benutzerdefiniertes oder eingeschränktes Vokabular erforderlich (z.B. medizinisches, wissenschaftliches oder gebietsspezifisches Vokabular)?
+-   Ist für den Kontext Ihrer App benutzerdefiniertes oder eingeschränktes Vokabular erforderlich (z. B. medizinisches, wissenschaftliches oder gebietsspezifisches Vokabular)?
 -   Ist Netzwerkkonnektivität erforderlich?
 
 ## <a name="text-input"></a>Texteingabe
 
 Bei der Sprache für die Texteingabe kann es sich um Kurzformen (einzelne Wörter oder Ausdrücke) oder Langformen (fortlaufendes Diktat) handeln. Die Eingabe in Kurzform darf maximal zehn Sekunden dauern, während eine Sitzung zur Eingabe in Langform bis zu zwei Minuten lang sein kann. (Die Eingabe in Langform kann ohne Eingreifen des Benutzers neu gestartet werden, damit der Eindruck eines fortlaufenden Diktats entsteht.)
 
-Informieren Sie den Benutzer durch einen visuellen Hinweis darüber, dass die Spracherkennung unterstützt wird und ihm zur Verfügung steht, und geben Sie an, ob die Funktion vom Benutzer aktiviert werden muss. Sie können z.B. eine Befehlsleistenschaltfläche mit einer Mikrofonglyphe (siehe [Befehlsleisten](../controls-and-patterns/app-bars.md)) verwenden, um die Verfügbarkeit und den Status der Funktion anzuzeigen.
+Informieren Sie den Benutzer durch einen visuellen Hinweis darüber, dass die Spracherkennung unterstützt wird und ihm zur Verfügung steht, und geben Sie an, ob die Funktion vom Benutzer aktiviert werden muss. Sie können z. B. eine Befehlsleistenschaltfläche mit einer Mikrofonglyphe (siehe [Befehlsleisten](../controls-and-patterns/app-bars.md)) verwenden, um die Verfügbarkeit und den Status der Funktion anzuzeigen.
 
 Stellen Sie laufend Erkennungsfeedback bereit, damit nicht der Eindruck entsteht, die Spracherkennung würde nicht reagieren.
 
 Bieten Sie Benutzern die Möglichkeit, den Erkennungstext per Tastatureingabe zu überarbeiten, und stellen Sie Eingabeaufforderungen zur Begriffsklärung, Vorschläge oder eine zusätzliche Spracherkennung bereit.
 
-Beenden Sie die Erkennung, wenn eine Eingabe von einem anderen Gerät als der Spracherkennung erkannt wird, z.B. Touch- oder Tastatureingabe. Dies weist in der Regel darauf hin, dass der Benutzer sich mit einer anderen Aufgabe beschäftigt, z.B. der Korrektur des Erkennungstexts oder der Interaktion mit anderen Formularfeldern.
+Beenden Sie die Erkennung, wenn eine Eingabe von einem anderen Gerät als der Spracherkennung erkannt wird, z. B. Touch- oder Tastatureingabe. Dies weist in der Regel darauf hin, dass der Benutzer sich mit einer anderen Aufgabe beschäftigt, z. B. der Korrektur des Erkennungstexts oder der Interaktion mit anderen Formularfeldern.
 
 Legen Sie die Dauer fest, nach der das Ausbleiben einer Spracheingabe als Beendigung der Spracherkennung interpretiert wird. Starten Sie die Erkennung nach dieser Dauer nicht automatisch neu. Meist weist das Ausbleiben einer Spracheingabe darauf hin, dass der Benutzer die Interaktion mit Ihrer App beendet hat.
 
@@ -70,7 +70,7 @@ Versuchen Sie, Ihre Fragen so zu formulieren, dass sie eine möglichst spezifisc
 
 Fordern Sie die Bestätigung des Benutzers an, wenn die Treffgenauigkeit der Spracherkennung gering ist. Wenn die Absichten des Benutzers unklar sind, ist es besser, seine Wünsche zu klären, als eine unbeabsichtigte Aktion zu initiieren.
 
-Informieren Sie den Benutzer durch einen visuellen Hinweis darüber, dass die Spracherkennung unterstützt wird und ihm zur Verfügung steht, und geben Sie an, ob die Funktion vom Benutzer aktiviert werden muss. Sie können z.B. eine Befehlsleistenschaltfläche mit einer Mikrofonglyphe (siehe [Richtlinien für Befehlsleisten](../controls-and-patterns/app-bars.md)) verwenden, um die Verfügbarkeit und den Status der Funktion anzuzeigen.
+Informieren Sie den Benutzer durch einen visuellen Hinweis darüber, dass die Spracherkennung unterstützt wird und ihm zur Verfügung steht, und geben Sie an, ob die Funktion vom Benutzer aktiviert werden muss. Sie können z. B. eine Befehlsleistenschaltfläche mit einer Mikrofonglyphe (siehe [Richtlinien für Befehlsleisten](../controls-and-patterns/app-bars.md)) verwenden, um die Verfügbarkeit und den Status der Funktion anzuzeigen.
 
 Wenn die Spracherkennung normalerweise nicht sichtbar ist, können Sie ggf. im Inhaltsbereich der App eine Statusanzeige hinzufügen.
 
@@ -130,11 +130,11 @@ Zeigen Sie ggf. Beispiele für unterstützte Ausdrücke an. Da der Benutzer eine
 
 Zeigen Sie eine Liste potenzieller Übereinstimmungen an, in der der Benutzer eine Auswahl treffen kann. Dies kann wesentlich effizienter sein, als den Erkennungsprozess zu wiederholen.
 
-Unterstützen Sie immer alternative Eingabetypen. Dies ist insbesondere dann hilfreich, wenn wiederholte Erkennungsfehler auftreten. Sie können dem Benutzer z.B. vorschlagen, über die Tastatur, per Toucheingabe oder mit der Maus ein Wort in einer Liste potenzieller Übereinstimmungen auszuwählen.
+Unterstützen Sie immer alternative Eingabetypen. Dies ist insbesondere dann hilfreich, wenn wiederholte Erkennungsfehler auftreten. Sie können dem Benutzer z. B. vorschlagen, über die Tastatur, per Toucheingabe oder mit der Maus ein Wort in einer Liste potenzieller Übereinstimmungen auszuwählen.
 
 Verwenden Sie die integrierte Sprechererkennungsfunktion. Sie enthält Bildschirme, auf denen der Benutzer über Fehler bei der Spracherkennung informiert wird und die Möglichkeit erhält, es noch einmal zu versuchen.
 
-Achten Sie auf Probleme mit der Audioeingabe, und versuchen Sie, diese zu beheben. Die Spracherkennung kann Probleme mit der Audioqualität erkennen, die die Genauigkeit der Spracherkennung beeinträchtigen. Sie können die von der Spracherkennung bereitgestellten Informationen verwenden, um den Benutzer über das Problem zu informieren und ihm die Möglichkeit zu bieten, Korrekturen vorzunehmen. Ist die Lautstärkeeinstellung des Mikrofons z.B. zu niedrig, können Sie den Benutzer auffordern, lauter zu sprechen oder die Lautstärke zu erhöhen.
+Achten Sie auf Probleme mit der Audioeingabe, und versuchen Sie, diese zu beheben. Die Spracherkennung kann Probleme mit der Audioqualität erkennen, die die Genauigkeit der Spracherkennung beeinträchtigen. Sie können die von der Spracherkennung bereitgestellten Informationen verwenden, um den Benutzer über das Problem zu informieren und ihm die Möglichkeit zu bieten, Korrekturen vorzunehmen. Ist die Lautstärkeeinstellung des Mikrofons z. B. zu niedrig, können Sie den Benutzer auffordern, lauter zu sprechen oder die Lautstärke zu erhöhen.
 
 ## <a name="constraints"></a>Einschränkungen
 
@@ -148,7 +148,7 @@ Mit vordefinierten Diktier- und Websuchgrammatiken können Sie eine Spracherkenn
 -   Die Grammatik für die Websuche enthält wie die Diktiergrammatik eine große Anzahl von Wörtern und Ausdrücken, die Benutzer sagen können. Sie ist allerdings für die Erkennung von Begriffen optimiert, die beim Suchen im Web häufig verwendet werden.
 
 > [!NOTE]
-> Da vordefinierte Diktier- und Websuchgrammatiken sehr umfangreich sein können und online bereitgestellt werden (nicht auf dem Gerät), ist die Leistung u.U. nicht so gut wie bei einer lokal auf dem Gerät installierten benutzerdefinierten Grammatik.
+> Da vordefinierte Diktier- und Websuchgrammatiken sehr umfangreich sein können und online bereitgestellt werden (nicht auf dem Gerät), ist die Leistung u. U. nicht so gut wie bei einer lokal auf dem Gerät installierten benutzerdefinierten Grammatik.
 
 Diese vordefinierten Grammatiken können zum Erkennen von bis zu zehn Sekunden Spracheingabe verwendet werden. Sie müssen dazu keinen Code selbst erstellen. Sie erfordern jedoch eine Netzwerkverbindung.
 
@@ -157,16 +157,16 @@ Diese vordefinierten Grammatiken können zum Erkennen von bis zu zehn Sekunden S
 Eine benutzerdefinierte Grammatik ist eine von Ihnen entworfene und erstellte Grammatik, die mit Ihrer App installiert wird. Die Spracherkennung anhand einer benutzerdefinierten Einschränkung wird auf dem Gerät ausgeführt.
 
 -   Einschränkungen per programmgesteuerter Liste sind eine unkomplizierte Methode für die Erstellung einfacher Grammatiken in Form einer Liste von Wörtern und Ausdrücken. Eine Einschränkungsliste eignet sich gut für die Erkennung kurzer, einzelner Ausdrücke. Das explizite Angeben aller Wörter in einer Grammatik verbessert auch die Erkennungsgenauigkeit, da das Spracherkennungsmodul nur eine Übereinstimmung bestätigen muss. Die Liste kann auch programmgesteuert aktualisiert werden.
--   Eine SRGS-Grammatik ist ein statisches Dokument, das im Gegensatz zu einer Einschränkung per programmgesteuerter Liste das in [SRGS Version1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) definierte XML-Format verwendet. Eine SRGS-Grammatik bietet die höchstmögliche Kontrolle über die Spracherkennungsfunktion, da Sie mehrere semantische Bedeutungen in einem einzigen Erkennungsvorgang erfassen können.
+-   Eine SRGS-Grammatik ist ein statisches Dokument, das im Gegensatz zu einer Einschränkung per programmgesteuerter Liste das in [SRGS Version 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) definierte XML-Format verwendet. Eine SRGS-Grammatik bietet die höchstmögliche Kontrolle über die Spracherkennungsfunktion, da Sie mehrere semantische Bedeutungen in einem einzigen Erkennungsvorgang erfassen können.
 
     Hier einige Tipps für das Erstellen von SRGS-Grammatiken:
 
     -   Halten Sie jede Grammatik klein. Grammatiken, die weniger zu vergleichende Ausdrücke enthalten, bieten eine bessere Erkennungsgenauigkeit als größere Grammatiken mit vielen Ausdrücken. Es empfiehlt sich, anstelle einer einzigen Grammatik für die gesamte App mehrere kleinere Grammatiken für bestimmte Szenarien zu verwenden.
     -   Informieren Sie den Benutzer darüber, was er im jeweiligen App-Kontext sagen kann, und aktivieren bzw. deaktivieren Sie Grammatiken nach Bedarf.
-    -   Entwerfen Sie jede Grammatik so, dass der Benutzer einen Befehl auf verschiedene Arten sprechen kann. Sie können z.B. die **GARBAGE**-Regel verwenden, um Spracheingaben abzugleichen, die in Ihrer Grammatik nicht definiert sind. So kann der Benutzer zusätzliche Wörter verwenden, die für Ihre App keine Bedeutung haben, beispielsweise "gib mir", "und", "äähm", "vielleicht" usw.
+    -   Entwerfen Sie jede Grammatik so, dass der Benutzer einen Befehl auf verschiedene Arten sprechen kann. Sie können z. B. die **GARBAGE**-Regel verwenden, um Spracheingaben abzugleichen, die in Ihrer Grammatik nicht definiert sind. So kann der Benutzer zusätzliche Wörter verwenden, die für Ihre App keine Bedeutung haben, beispielsweise "gib mir", "und", "äähm", "vielleicht" usw.
     -   Verwenden Sie das [sapi:subset](https://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx)-Element, um den Vergleich von Spracheingaben zu erleichtern. Dies ist eine Microsoft-Erweiterung der SRGS-Spezifikation, die den Abgleich von Teilausdrücken ermöglicht.
     -   Definieren Sie in Ihrer Grammatik nach Möglichkeit keine einsilbigen Ausdrücke. Die Erkennung funktioniert bei Ausdrücken mit zwei oder mehr Silben meist genauer.
-    -   Vermeiden Sie Ausdrücke, die ähnlich klingen. Ausdrücke wie „Geld“, „Held“ und „fällt“ können das Erkennungsmodul z.B. verwirren und zu einer schlechten Erkennungsgenauigkeit führen.
+    -   Vermeiden Sie Ausdrücke, die ähnlich klingen. Ausdrücke wie „Geld“, „Held“ und „fällt“ können das Erkennungsmodul z. B. verwirren und zu einer schlechten Erkennungsgenauigkeit führen.
 
 > [!NOTE]
 > Der von Ihnen verwendete Einschränkungstyp richtet sich nach der Komplexität der Erkennungsfunktion, die Sie erstellen möchten. Für eine bestimmte Erkennungsaufgabe kann jeweils einer der Ansätze am besten geeignet sein, und vielleicht haben Sie in Ihrer App sogar für alle Einschränkungsarten Verwendung.
@@ -179,9 +179,9 @@ Für eine kleine Liste von Wörtern und Ausdrücken oder eine Liste selten verwe
 
 Für größere Listen von Wörtern und Ausdrücken oder häufig verwendete Wörter und Ausdrücke können Sie separate Dokumente mit Aussprachewörterbüchern erstellen. Weitere Informationen dazu finden Sie unter [Info zu Lexika und phonetischen Alphabeten](https://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx).
 
-## <a name="testing"></a>Testen
+## <a name="testing"></a>Testing
 
-Testen Sie die Genauigkeit der Spracherkennung und jede UI, die die Spracherkennung unterstützt, mit der Zielgruppe Ihrer App. So können Sie am besten herausfinden, wie effektiv die Sprachinteraktionsfunktion in Ihrer App ist. Erhalten Benutzer z.B. schlechte Erkennungsergebnisse, weil Ihre App nicht auf einen gängigen Ausdruck lauscht?
+Testen Sie die Genauigkeit der Spracherkennung und jede UI, die die Spracherkennung unterstützt, mit der Zielgruppe Ihrer App. So können Sie am besten herausfinden, wie effektiv die Sprachinteraktionsfunktion in Ihrer App ist. Erhalten Benutzer z. B. schlechte Erkennungsergebnisse, weil Ihre App nicht auf einen gängigen Ausdruck lauscht?
 
 Ändern Sie die Grammatik entweder so, dass der Ausdruck unterstützt wird, oder stellen Sie eine Liste der unterstützten Ausdrücke für den Benutzer bereit. Falls Sie bereits eine Liste der unterstützten Begriffe verwenden, stellen Sie sicher, dass sie leicht zu finden ist.
 
@@ -207,20 +207,20 @@ Beide Probleme können durch Verwendung von SSML anstelle von Nur-Text als Synth
 | Thema | Beschreibung |
 | --- | --- |
 | [Spracherkennung](speech-recognition.md) | Nutzen Sie die Spracherkennung als Eingabemöglichkeit oder zum Ausführen einer Aktion, eines Befehls oder einer Aufgabe. |
-| [Festlegen der Sprache für die Spracherkennung](specify-the-speech-recognizer-language.md) | Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen. |
-| [Festlegen von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md) | Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können. |
-| [Aktivieren des kontinuierlichen Diktierens](enable-continuous-dictation.md) |Hier erfahren Sie, wie Sie die Erfassung und Erkennung langer Spracheingaben für kontinuierliches Diktieren ermöglichen. |
-| [Verwalten von Problemen bei der Audioeingabe](manage-issues-with-audio-input.md) | Hier erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
-| [Festlegen von Timeouts für die Spracherkennung](set-speech-recognition-timeouts.md) | Legen Sie fest, wie lange eine Spracherkennung Stille oder nicht erkennbare Geräusche (Störgeräusche) ignoriert und weiterhin auf Spracheingabe wartet. |
+| [Geben Sie die Spracherkennung zu erkennende Sprache](specify-the-speech-recognizer-language.md) | Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen. |
+| [Definieren von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md) | Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können. |
+| [Ermöglichen kontinuierlicher Diktate](enable-continuous-dictation.md) |Hier erfahren Sie, wie Sie die Erfassung und Erkennung langer Spracheingaben für kontinuierliches Diktieren ermöglichen. |
+| [Behandeln von Problemen mit der Audioeingabe](manage-issues-with-audio-input.md) | Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
+| [Festlegen von Timeouts für Speech recognition](set-speech-recognition-timeouts.md) | Legen Sie fest, wie lange eine Spracherkennung Stille oder nicht erkennbare Geräusche (Störgeräusche) ignoriert und weiterhin auf Spracheingabe wartet. |
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Spracherkennungsinteraktionen](https://msdn.microsoft.com/library/windows/apps/mt185614)
+* [Sprachinteraktionen](https://msdn.microsoft.com/library/windows/apps/mt185614)
 * [Cortana-Interaktionen](https://msdn.microsoft.com/library/windows/apps/mt185598)
 
  **Beispiele**
 
-* [Beispiel zu Spracherkennung und Sprachsynthese](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Die Spracherkennung und-Synthese sprachmuster](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

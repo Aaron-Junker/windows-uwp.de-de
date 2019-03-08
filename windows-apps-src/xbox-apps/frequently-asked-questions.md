@@ -1,17 +1,17 @@
 ---
 title: Häufig gestellte Fragen
-description: Häufig gestellte Fragen zu UWP auf Xbox
+description: Häufig gestellte Fragen zu UWP auf Xbox.
 ms.date: 03/29/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ms.openlocfilehash: 38b5144d9b70e6e2825ef11a64be8873ec5b7d63
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046949"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614555"
 ---
 # <a name="frequently-asked-questions"></a>Häufig gestellte Fragen
 
@@ -23,7 +23,7 @@ Wenn Ihre Spiele und Apps nicht funktionieren oder Sie keinen Zugriff auf den St
 
 ### <a name="why-cant-i-connect-to-my-xbox-one-using-visual-studio"></a>Warum kann ich über Visual Studio keine Verbindung zu meiner Xbox One herstellen?
 
-Vergewissern Sie sich zunächst, dass der Entwicklermodus und nicht der Einzelhandelsmodus aktiviert ist. Im Einzelhandelsmodus können Sie keine Verbindung mit der Xbox One herstellen. Um festzustellen, in welchem Modus Sie sich gerade befinden, drücken Sie die **Startseitentaste** auf dem Controller. Wenn anstelle von Dev Home Gold-/Live-Inhalte angezeigt werden, befinden sich im Einzelhandelsmodus und müssen die DevMode-Aktivierungs-App ausführen, um in den Entwicklermodus zu wechseln.
+Vergewissern Sie sich zunächst, dass der Entwicklermodus und nicht der Einzelhandelsmodus aktiviert ist. Im Einzelhandelsmodus können Sie keine Verbindung mit der Xbox One herstellen. Um festzustellen, in welchem Modus Sie sich gerade befinden, drücken Sie die **Startbildschirmtaste** auf dem Controller. Wenn anstelle von Dev Home Gold-/Live-Inhalte angezeigt werden, befinden sich im Einzelhandelsmodus und müssen die DevMode-Aktivierungs-App ausführen, um in den Entwicklermodus zu wechseln.
 
 > [!NOTE]
 > Damit Sie eine App bereitstellen können, muss ein Benutzer angemeldet sein.
@@ -44,7 +44,7 @@ Um festzustellen, in welchem Modus Sie sich gerade befinden, drücken Sie die **
 
 ### <a name="will-my-games-and-apps-still-work-if-i-activate-developer-mode"></a>Funktionieren meine Spiele und Apps auch, wenn ich den Entwicklermodus aktiviere?
 
-Ja, Sie können vom Entwicklermodus in den Einzelhandelsmodus wechseln, in dem Sie Ihre Spiele spielen können. Weitere Informationen finden Sie auf der Seite [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md). 
+Ja, Sie können vom Entwicklermodus in den Einzelhandelsmodus wechseln, in dem Sie Ihre Spiele spielen können. Weitere Informationen finden Sie auf der Seite zur [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md). 
 
 ### <a name="can-i-develop-and-publish-x86-apps-for-xbox"></a>Kann x86-Apps für Xbox entwickeln und veröffentlichen?
 Xbox unterstützt die Entwicklung von x86 Apps oder deren Übermittlung an den Store nicht mehr. 
@@ -59,15 +59,15 @@ Weitere Informationen dazu, wie Sie das Entwicklerprogramm verlassen, finden Sie
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>Ich habe meine Xbox One verkauft und im Entwicklermodus belassen. Wie deaktiviere ich den Entwicklermodus?
 
-Wenn Sie nicht mehr Zugriff auf Ihre Xbox One haben, können Sie es im Windows Partner Center deaktivieren. Informationen finden Sie im Abschnitt " **Deaktivieren der Konsole mit Partner Center** " im Thema [Developer Mode Deaktivierung des Xbox One](devkit-deactivation.md#deactivate-your-console-using-partner-center) . 
+Wenn Sie keinen Zugriff mehr auf Ihre Xbox One haben, können Sie es im Partner Center von Windows deaktivieren. Weitere Informationen finden Sie unter der **deaktivieren Sie die Konsole mit der Partner Center** im Abschnitt der [Xbox eine Developer-Modus Deaktivierung](devkit-deactivation.md#deactivate-your-console-using-partner-center) Thema. 
 
-### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>Ich habe das Entwicklerprogramm mithilfe von Partner Center, aber weiterhin Entwicklermodus verlassen. Wie gehe ich vor?
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>Bin ich immer noch den Entwicklermodus, aber ich links im Developer-Programm, das über Partner Center. Wie gehe ich vor?
 
 Starten Sie Dev Home, und wählen Sie die Schaltfläche **Leave developer mode** aus. Dadurch wird die Konsole im Einzelhandelsmodus neu gestartet. 
 
 ### <a name="can-i-publish-my-app"></a>Kann ich meine App veröffentlichen?
 
-Sie können über das Partner Center [Veröffentlichen von apps](../publish/index.md) , wenn Sie ein [Entwicklerkonto](https://developer.microsoft.com/store/register)haben. Die auf einer Xbox One im Einzelhandelsmodus erstellten und getesteten UWP-Apps durchlaufen denselben Aufnahme-, Überprüfungs- und Veröffentlichungsprozess, den Windows heutzutage durchführt. Mithilfe zusätzlicher Überprüfungen werden die aktuellen Xbox One-Standards erfüllt.
+Sie können [Veröffentlichen von apps](../publish/index.md) über Partner Center, wenn Sie haben eine [Developer-Konto](https://developer.microsoft.com/store/register). Die auf einer Xbox One im Einzelhandelsmodus erstellten und getesteten UWP-Apps durchlaufen denselben Aufnahme-, Überprüfungs- und Veröffentlichungsprozess, den Windows heutzutage durchführt. Mithilfe zusätzlicher Überprüfungen werden die aktuellen Xbox One-Standards erfüllt.
 
 ### <a name="can-i-publish-my-game"></a>Kann ich mein Spiel veröffentlichen?
 
@@ -112,11 +112,11 @@ Wenn Visual Studio keine Verbindung mit Ihrer Xbox One herstellen kann:
 
 ### <a name="if-im-building-an-app-using-htmljavascript-how-do-i-enable-gamepad-navigation"></a>Wie kann ich beim Erstellen einer App mit HTML/JavaScript die Gamepad-Navigation aktivieren?
 
-TVHelpers ist ein Satz von JavaScript- und XAML-/C#-Beispielen und -Bibliotheken, mit denen Sie großartige Xbox One-Inhalte und TV-Inhalte in JavaScript und C# erstellen können. TVJS ist eine Bibliothek, mit der Sie Premium-UWP-Apps für Xbox One erstellen können. TVJS bietet u. a. Unterstützung für die automatische Controllernavigation, Rich-Media-Wiedergabe und Suche. Sie können TVJS mit einer gehosteten Web-App genauso einfach wie mit einer gepackten UWP-Web-App mit vollständigem Zugriff auf Windows-Runtime-APIs verwenden.
+TVHelpers ist ein Satz von JavaScript- und XAML-/C#-Beispielen und -Bibliotheken, mit denen Sie großartige Xbox One-Inhalte und TV-Inhalte in JavaScript und C# erstellen können. TVJS ist eine Bibliothek, mit der Sie Premium-UWP-Apps für Xbox One erstellen können. TVJS bietet u. a. Unterstützung für die automatische Controllernavigation, Rich-Media-Wiedergabe und Suche. Sie können TVJS mit einer gehosteten Web-App genauso einfach wie mit einer gepackten UWP-Web-App mit vollständigem Zugriff auf Windows-Runtime-APIs verwenden.
 
 Weitere Informationen finden Sie im Projekt [TVHelpers](https://github.com/Microsoft/TVHelpers) und im Projekt [wiki](https://github.com/Microsoft/TVHelpers/wiki).
 
-## <a name="see-also"></a>Weitere Informationen
-- [Bekannte Probleme mit UWP auf Xbox One](known-issues.md)
-- [UWP auf Xbox One](index.md)
-- [UWP auf XboxOne](index.md)
+## <a name="see-also"></a>Siehe auch
+- [Bekannte Probleme mit der UWP für Xbox One](known-issues.md)
+- [UWP auf Xbox One](index.md)
+- [UWP auf Xbox One](index.md)
