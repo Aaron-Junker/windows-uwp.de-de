@@ -1,28 +1,28 @@
 ---
-title: Was ist eine Universelle Windows-Plattform (UWP)-App?
+title: Was ist eine App der universellen Windows-Plattform (UWP)?
 description: Erfahren Sie mehr über Apps für die Universelle Windows-Plattform (UWP), die auf einer Vielzahl von Geräten unter Windows 10 ausgeführt werden können.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 05/07/2018
 ms.topic: article
-keywords: Windows 10, UWP, universal
+keywords: Windows 10, Uwp, universal
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a43cdd5c16e4ab7ec254c263df75c182ce3faba
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117630"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618175"
 ---
-# <a name="whats-a-universal-windows-platform-uwp-app"></a>Was ist eine Universelle Windows-Plattform (UWP)-App?
+# <a name="whats-a-universal-windows-platform-uwp-app"></a>Was ist eine App der universellen Windows-Plattform (UWP)?
 
-![Universelle Windows-Plattform-apps auf einer Vielzahl von Geräten ausführen, unterstützen adaptive Benutzeroberflächen, natürliche Benutzereingaben, einen Store, Partnercenter und Clouddienste.](images/universalapps-overview.png)
+![Apps der universellen Windows-Plattform auf einer Vielzahl von Geräten ausgeführt, adaptive Benutzeroberfläche, natürlichen, Geschäft, Partnercenter zu unterstützen und cloud-Dienste](images/universalapps-overview.png)
 
 Eine UWP-App ist:
 
-- Sicher: UWP-Apps deklarieren, auf welche Geräteressourcen und Daten sie zugreifen. Der Benutzer muss den Zugriff autorisieren.
-- Fähig, eine allgemeine API auf allen Geräten zu verwenden, auf denen Windows10 ausgeführt wird.
-- Fähig, bestimmte Gerätefunktionen zu verwenden und die UI auf verschiedene Geräte-Bildschirmgrößen, Auflösungen und DPI-Werte anzupassen.
-- Verfügbar aus dem Microsoft Store für alle Geräte (oder nur solche, die Sie angeben), auf denen Windows10 ausgeführt wird. Das Microsoft Store bietet mehrere Möglichkeiten, mit Ihrer App Geld zu verdienen.
+- Sichern: UWP-apps deklarieren, welche Ressourcen und Daten, die sie zugreifen. Der Benutzer muss den Zugriff autorisieren.
+- Fähig, eine allgemeine API auf allen Geräten zu verwenden, auf denen Windows 10 ausgeführt wird.
+- Können bestimmte Gerätefunktionen verwenden und Anpassen der Benutzeroberflächenautomatisierungs auf anderes Gerät Bildschirmgrößen, Auflösungen und DPI-Wert.
+- Verfügbar aus dem Microsoft Store für alle Geräte (oder nur solche, die Sie angeben), auf denen Windows 10 ausgeführt wird. Das Microsoft Store bietet mehrere Möglichkeiten, mit Ihrer App Geld zu verdienen.
 - Fähig, ohne Risiko für den Computer oder Maschinenschaden installiert und deinstalliert zu werden.
 - Ansprechend: Verwenden Sie Live-Kacheln, Pushbenachrichtigungen und Benutzeraktivitäten, um mit der Windows-Zeitachse und Cortana „Begonnene Aufgaben” zu interagieren und Benutzer zu erreichen.
 - Programmierbar in C#, C++, Visual Basic und Javascript. Verwenden Sie für die Benutzeroberfläche XAML, HTML oder DirectX.
@@ -31,19 +31,19 @@ Betrachten wir dies im Detail.
 
 ## <a name="secure"></a>Secure
 
-UWP-Apps deklarieren im Manifest die Gerätefunktionen, die sie benötigen wie z.B. den Zugriff auf das Mikrofon, Standort, Webcam, USB-Geräte, Dateien usw. Der Benutzer muss den Zugriff bestätigen und autorisieren, bevor die App die Funktion nutzen kann.
+UWP-Apps deklarieren im Manifest die Gerätefunktionen, die sie benötigen wie z. B. den Zugriff auf das Mikrofon, Standort, Webcam, USB-Geräte, Dateien usw. Der Benutzer muss den Zugriff bestätigen und autorisieren, bevor die App die Funktion nutzen kann.
 
 ## <a name="a-common-api-surface-across-all-devices"></a>Es gibt eine gemeinsame API-Oberfläche für alle Geräte
 
-Windows 10 führt die universelle Windows-Plattform (UWP), die eine gemeinsame app-Plattform auf jedem Gerät bereitstellt, die Windows 10 ausgeführt wird. Die wichtigsten UWP-APIs sind auf allen Windows-Geräten identisch. Wenn Ihre app nur die zentralen APIs verwendet, wird sie auf jedem Windows 10-Gerät unabhängig davon, ob Sie einen desktop-PC, Xbox, Mixed Reality-Kopfhörer, als Ziel und so weiter ausgeführt.
+Windows 10 stellt die universelle Windows-Plattform (UWP), der eine allgemeine app-Plattform auf jedem Gerät bereitstellt, die Windows 10 ausgeführt wird. Die wichtigsten UWP-APIs sind auf allen Windows-Geräten identisch. Wenn Ihre app nur die Kern-APIs verwendet, wird es auf Windows 10-Geräten unabhängig davon, ob das Ziel eines desktop-PCs, Xbox, Mixed Reality-Kopfhörer, werden ausgeführt und so weiter.
 
 Eine UWP-App die in C++ /WinRT oder C++ /CX geschrieben wurde, hat Zugriff auf die Win32 APIs, die Teil der universellen Windows-Plattform (UWP) sind. Diese Win32-APIs werden von allen Windows 10-Geräten implementiert.
 
 ## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>Erweiterungs-SDKs bieten die einzigartigen Funktionen der jeweiligen Gerätetypen
 
-Wenn Sie die universellen APIs verwenden, kann Ihre App auf allen Geräten ausgeführt werden, die Windows10 ausführen. Wenn Sie Ihre UWP-App für gerätespezifische APIs nutzen möchten, ist dies möglich.
+Wenn Sie die universellen APIs verwenden, kann Ihre App auf allen Geräten ausgeführt werden, die Windows 10 ausführen. Wenn Sie Ihre UWP-App für gerätespezifische APIs nutzen möchten, ist dies möglich.
 
-Mit Erweiterungs-SDKs können Sie spezielle APIs für verschiedene Geräte aufrufen. Wenn Ihre UWP-App ein IoT-Gerät als Ziel hat, können Sie z.B. das IoT-Erweiterungs-SDK auf das Projekt hinzufügen, um spezifische Funktionen anzuvisieren, die speziell für IoT-Geräten gelten. Weitere Informationen zum Hinzufügen von Erweiterungs-SDKs finden Sie unter im Abschnitt **Erweiterungs-SDKs** unter [Übersicht über die Gerätefamilien](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#extension-sdks).
+Mit Erweiterungs-SDKs können Sie spezielle APIs für verschiedene Geräte aufrufen. Wenn Ihre UWP-App ein IoT-Gerät als Ziel hat, können Sie z. B. das IoT-Erweiterungs-SDK auf das Projekt hinzufügen, um spezifische Funktionen anzuvisieren, die speziell für IoT-Geräten gelten. Weitere Informationen zum Hinzufügen von Erweiterungs-SDKs finden Sie unter im Abschnitt **Erweiterungs-SDKs** unter [Übersicht über die Gerätefamilien](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#extension-sdks).
 
 Sie können Ihre App so entwerfen, dass sie nur auf einem bestimmten Gerätetyp ausgeführt werden kann, und den Verteilungspunkt aus dem Microsoft Store nur auf einen Gerätetyp beschränken. Oder Sie können bedingt testen, ob eine API zur Laufzeit vorhanden ist und das Verhalten Ihrer App entsprechend anpassen. Weitere Informationen finden Sie im Abschnitt **Schreiben von Code** unter [Übersicht über die Gerätefamilien](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code).<br>
 
@@ -52,7 +52,7 @@ Das folgende Video bietet einen kurzen Überblick über die Gerätefamilien und 
 
 ## <a name="adaptive-controls-and-input"></a>Adaptive Steuerelemente und Eingaben
 
-UI-Elemente reagieren auf die Größe und DPI-Werte des Fensters der App, indem Sie das Layout und die Skalierung anpassen. UWP-Apps funktionieren außerdem mit mehreren Arten von Eingaben, z.B. Tastatur, Maus, Touch, Stift und Xbox One-Controller. Wenn Sie die Benutzeroberfläche auf eine bestimmte Bildschirmgröße oder ein bestimmtes Gerät anpassen müssen, helfen Ihnen neue Layoutbereiche und Tools dabei, die Benutzeroberfläche auf den Geräten so zu erstellen, dass sie auf die verschiedenen Geräte und Formfaktoren angepasst werden kann, auf denen Ihre App möglicherweise ausgeführt wird.
+UI-Elemente reagieren auf die Größe und DPI-Werte des Fensters der App, indem Sie das Layout und die Skalierung anpassen. UWP-Apps funktionieren außerdem mit mehreren Arten von Eingaben, z. B. Tastatur, Maus, Touch, Stift und Xbox One-Controller. Wenn Sie die Benutzeroberfläche auf eine bestimmte Bildschirmgröße oder ein bestimmtes Gerät anpassen müssen, helfen Ihnen neue Layoutbereiche und Tools dabei, die Benutzeroberfläche auf den Geräten so zu erstellen, dass sie auf die verschiedenen Geräte und Formfaktoren angepasst werden kann, auf denen Ihre App möglicherweise ausgeführt wird.
 
 ![Windows-Geräte](images/1894834-hig-device-primer-01-500.png)
 
@@ -66,11 +66,11 @@ Einige Aspekte der App-UI Ihrer App werden automatisch auf allen Geräten angepa
 
 ## <a name="theres-one-store-for-all-devices"></a>Es gibt einen Store für alle Geräte
 
-Ein einheitlicher app-Store stellt Ihre app auf Windows 10-Geräten wie PC, Tablet, Xbox, HoloLens, Surface Hub und Internet der Dinge (IoT) zur Verfügung. Sie können Ihre App an den Store übermitteln und auf für Geräte aller Art oder nur für bestimmte Geräte zur Verfügung stellen. Sie übermitteln und verwalten alle Ihre Apps für Windows-Geräte an einem zentralen Ort. Sie haben eine mit C++ entwickelte Desktop-App, die Sie mit UWP-Features modernisieren und im Microsoft Store verkaufen möchten? Das ist auch möglich.
+Ein einheitliche app-Store stellt Ihre app für Windows 10-Geräte wie etwa PC, Tablet, Xbox, HoloLens, Surface Hub und Internet der Dinge (IoT) Geräte zur Verfügung. Sie können Ihre App an den Store übermitteln und auf für Geräte aller Art oder nur für bestimmte Geräte zur Verfügung stellen. Sie übermitteln und verwalten alle Ihre Apps für Windows-Geräte an einem zentralen Ort. Sie haben eine mit C++ entwickelte Desktop-App, die Sie mit UWP-Features modernisieren und im Microsoft Store verkaufen möchten? Das ist auch möglich.
 
 UWP-Apps werden mit [Application Insights](https://azure.microsoft.com/services/application-insights/) für detaillierte Telemetrie und Analyse integriert. Dies ist ein besonders wichtiges Tool zum Verständnis der Anwender und zur Verbesserung Ihrer Apps.
 
-### <a name="monetize-your-app"></a>Monetisieren Ihrer App
+### <a name="monetize-your-app"></a>Monetisierung Ihrer App
 
 Sie können auswählen, wie Sie Ihre App vermarkten. Es gibt eine Reihe von Möglichkeiten, mit Ihren Apps Geld zu verdienen. Sie müssen nur die für Sie am besten geeignete Methode auswählen, zum Beispiel:
 
@@ -94,7 +94,7 @@ Es gibt eine Vielzahl von Möglichkeiten, um Benutzer für Ihre UWP-App zu engag
 - Benutzeraktivitäten ermöglichen Benutzern geräteübergreifend dort weiterzumachen, wo sie in Ihrer App aufgehört haben.
 - Das Info-Center organisiert Benachrichtigungen von Ihrer App.
 - Hintergrundausführung und Auslöser erwecken Ihre App zum Leben, wenn der Benutzer sie benötigt.
-- Ihre App kann Sprache und Bluetooth LE-Geräte verwenden, um Benutzer bei der Interaktion mit der Welt um sie herum zu unterstützen.
+- Per Sprache und mit Bluetooth LE-Geräten kann Ihre App Benutzern die Interaktion mit der Welt um sie herum ermöglichen.
 - Integrieren Sie Cortana für Befehl der Sprachfunktionalität von Ihrer App.
 
 ##  <a name="use-a-language-you-already-know"></a>Verwenden einer vertrauten Sprache
@@ -107,7 +107,7 @@ UWP-Apps verwenden die Windows-Runtime. Dies ist eine native, vom Betriebssystem
 
 ## <a name="links-to-help-you-get-going"></a>Links für die ersten Schritte
 
-### <a name="get-set-up"></a>Vorbereiten
+### <a name="get-set-up"></a>Einrichten
 
 Navigieren Sie zu [Vorbereiten](get-set-up.md), um die Tools herunterzuladen, die Sie benötigen, um mit dem Erstellen von Apps zu beginnen, und [schreiben Sie Ihre erste App](your-first-app.md)!
 
@@ -130,9 +130,9 @@ Zusätzlich zur Interaktion auf verschiedenen Geräten sollten Sie [Ihre App pla
 - Finden Sie heraus, wie Sie [Cortana zu Ihrer App hinzufügen können](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382), damit sie auf Sprachbefehle reagiert.
 - Beziehen Sie [Push-Benachrichtigungen](https://msdn.microsoft.com/library/windows/apps/mt187203) und [In-App-Einkäufe](https://msdn.microsoft.com/library/windows/apps/mt219684) in Ihre Planung mit ein. Diese Features sollten auf allen Geräten funktionieren.
 
-### <a name="submit-your-app-to-the-store"></a>Übermitteln Sie Ihre app an den Store
+### <a name="submit-your-app-to-the-store"></a>Übermitteln Ihrer App an den Store
 
-[Partner Center](https://partner.microsoft.com/dashboard) können Sie all Ihre Apps für Windows-Geräte an einem zentralen Ort verwalten und einreichen. Finden Sie unter [Veröffentlichen von Windows-apps und Spiele](../publish/index.md) erfahren, wie Sie Ihre apps für die Veröffentlichung im Microsoft Store übermitteln.
+[Partner Center](https://partner.microsoft.com/dashboard) ermöglicht Ihnen das Verwalten und übermitteln all Ihre apps für Windows-Geräte an einem Ort. Finden Sie unter [veröffentlichen Windows-apps und Spiele](../publish/index.md) zu erfahren, wie Sie Ihre apps für die Veröffentlichung in den Microsoft Store übermitteln.
 
 Neue Features vereinfachen Prozesse und geben Ihnen mehr Kontrolle. Sie finden dort auch detaillierte [Analyseberichte](https://msdn.microsoft.com/library/windows/apps/mt148522) in Kombination mit [Auszahlungsdetails](https://msdn.microsoft.com/library/windows/apps/dn986925), Möglichkeiten, [Ihre App zu bewerben und Kunden zu erreichen](https://msdn.microsoft.com/library/windows/apps/mt148526) und vieles mehr.
 
@@ -148,11 +148,11 @@ Weitere einführende Informationen finden Sie unter [Einführung in das Entwicke
 - [Kompilieren von apps mit .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/)
 - Erfahren Sie, wie Sie moderne Erfahrungen für Benutzer von Windows 10 für Ihre vorhandene Desktop-App hinzufügen können und diese im Microsoft Store mit [Desktop-Brücke](https://developer.microsoft.com/windows/bridges/desktop) veröffentlichen.
 
-## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>Anwendbarkeit von universellen Windows-Plattform zu Windows-Runtime-APIs
-Wenn Sie eine app (universelle Windows Plattform) erstellen, können Sie einen Großteil Kilometer und Komfort aus die Begriffe "universelle Windows-Plattform (UWP)" und "Windows-Runtime (WinRT)" als mehr oder weniger Synonyme behandelt abrufen. Aber es *ist* möglich, hinter den Kulissen der Technologie, und bestimmen nur Was ist der Unterschied zwischen diesen Ideen. Wenn Sie wissen möchten, sind, ist dieser letzten Abschnitt für Sie.
+## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>Beziehung von der universellen Windows-Plattform zu Windows-Runtime-APIs
+Wenn Sie eine app für die universelle Windows-Plattform (UWP) erstellen, können Sie viele der Unterschiede und benutzerfreundlichkeit aus behandeln die Begriffe "universelle Windows-Plattform (UWP)" und "Windows-Runtime (WinRT)" als mehr oder weniger gleichbedeutend abrufen. Sondern *ist* hinter den Kulissen von der Technologie, und bestimmen nur Was ist der Unterschied zwischen diesen Ideen möglich. Wenn Sie neugierig sind, sind, ist in diesem letzten Abschnitt für Sie.
 
-Die Windows-Runtime und WinRT-APIs sind eine Weiterentwicklung des Windows-APIs. Windows wurde ursprünglich über flach, C-Stil Win32-APIs programmiert. Zu den wurden COM-APIs ([DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) wird ein Markantes Beispiel) hinzugefügt. Zusätzlich zu ihren eigenen Methode zum Schreiben von Windows-apps und ihre eigenen Typ des API-Technologie von Windows Forms, WPF, .NET und verwalteten Sprachen verwendet. Die Windows-Runtime ist, im Hintergrund die nächste Phase des COM Ebene der Anwendung binäre Schnittstelle (ABI) werden die Stämme in COM sichtbar. Aber die Windows-Runtime wurde entwickelt, um Sie über eine große Palette von verschiedenen Programmiersprachen aufgerufen werden. Und in einer Weise, die sehr natürlich an die einzelnen Sprachen werden kann. Zu diesem Zweck ist Zugriff auf die Windows-Runtime verfügbar gemacht über was als sprachprojektionen bezeichnet werden. Es gibt eine Programmiersprache Windows-Runtime in c#, in Visual Basic, in standard C++, JavaScript und So weiter. Darüber hinaus einmal entsprechend verpackt (siehe [Desktop-Brücke](/windows/uwp/porting/desktop-to-uwp-root)), Sie über eine app eine hervorragende Bereich von Anwendungsmodellen integrierte WinRT-APIs aufrufen können: Win32, .NET, WinForms und WPF.
+Die Windows-Runtime und WinRT-APIs sind eine Weiterentwicklung der Windows-APIs. Windows wurde ursprünglich über flachen, Win32-APIs der C-Stil so programmiert. Zu den COM-APIs hinzugefügt wurden ([DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) wird ein prominentes Beispiel). Windows Forms, WPF, .NET und verwalteten Sprachen übertragen ihre eigenen Verfahren zum Erstellen von Windows-apps und ihre eigenen Flavor-API-Technologie. Die Windows-Runtime ist, im Hintergrund die nächste Phase von COM. Auf der Ebene tatsächlich verwendeten Anwendung anwendungsbinärschnittstelle (ABI) werden seine Wurzeln in COM sichtbar. Aber die Windows-Runtime wurde entworfen, um aus einer große Palette an verschiedenen Programmiersprachen aufgerufen werden können. Und auf eine Weise, die sehr intuitiv für jede dieser Sprachen ist aufgerufen. Zu diesem Zweck wird Zugriff auf die Windows-Runtime verfügbar gemacht über sprachprojektionen sogenannte. Es ist eine Windows-Runtime-sprachprojektion in C#, in Visual Basic, in standard C++, JavaScript, und So weiter. Darüber hinaus einmal ordnungsgemäß gepackt (finden Sie unter [Desktop-Brücke](/windows/uwp/porting/desktop-to-uwp-root)), können Sie WinRT-APIs von Apps in einer von einem hervorragenden Bereich Anwendungsmodelle aufrufen: Win32, .NET, WinForms und WPF.
 
-Und natürlich können Sie WinRT-APIs aufrufen, aus Ihrer UWP-app. UWP ist eine Anwendungsmodell basiert auf der Windows-Runtime. Technisch gesehen ist das Modell der UWP-Anwendung [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication), basiert auf auch dieses Detail von Ihnen, je nach Ihrer Wahl Programmiersprache verborgen werden kann. Wie in diesem Thema, aus einem Wert nutzen Sicht erläutert hat, die UWP eignet sich für für Schreiben einer einzelnen Binärdatei, die können Sie auswählen sollen, an den Microsoft Store veröffentlicht und für eine beliebige eine große Palette von Geräte-Formfaktoren ausgeführt werden. Die Gerät Reichweite Ihrer UWP-App verwendet wird, hängt die Teilmenge von UWP-APIs, dass Sie Ihre app dem aufrufenden einschränken oder bedingt aufrufen.
+Und natürlich können Sie WinRT-APIs von UWP-app aufrufen. UWP ist ein Anwendungsmodell basiert auf der Windows-Runtime. Technisch gesehen das UWP-Anwendungsmodell basiert ["coreapplication"](/uwp/api/windows.applicationmodel.core.coreapplication), obwohl diese Details aus, je nach verwendeter Programmiersprache verborgen sein kann. Wie in diesem Thema, aus einer Wert-Option der Sicht beschrieben wurde, bietet die UWP sich zum Schreiben von einer einzelnen Binärdatei, die können Sie auswählen sollten, auf dem Microsoft Store veröffentlicht werden und auf einem eine große Palette von geräteausführungen ausgeführt werden. Die geräteunterstützung der UWP-app verwendet wird, hängt die Teilmenge der UWP-APIs, dass Sie Ihre app aufrufen begrenzen oder bedingt aufrufen.
 
-Wir hoffen, dass schon in diesem Abschnitt beschreiben die Differenz zwischen der zugrunde liegenden Windows-Runtime-APIs, und der Mechanismus und Geschäftswert der universellen Windows-Plattform-Technologie erfolgreich war.
+Hoffentlich war in diesem Abschnitt beschreiben die Differenz zwischen der Technologie, die zugrunde liegenden Windows-Runtime-APIs, und der Mechanismus und Business-Wert, der universellen Windows-Plattform erfolgreich.

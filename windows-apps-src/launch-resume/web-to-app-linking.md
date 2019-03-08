@@ -1,29 +1,29 @@
 ---
-title: Aktivieren von apps für Websites mit app-URI-Handlern
-description: Fördern Sie Nutzer an Ihrer app durch die Unterstützung von Apps für Websites Feature.
+title: Aktivieren von Apps für Websites mit App-URI-Handlern
+description: Fördern Sie die Benutzerbindung an Ihre App durch die Unterstützung des Apps für Websites-Features.
 keywords: Deep-Links in Windows
 ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930501"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641075"
 ---
-# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Aktivieren von apps für Websites mit app-URI-Handlern
+# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Aktivieren von Apps für Websites mit App-URI-Handlern
 
-Apps für Websites ordnet Ihrer app mit einer Website, sodass Ihre app, wenn ein Benutzer einen Link zu Ihrer Website öffnet, statt des Browsers gestartet werden wird. Wenn Ihre app nicht installiert ist, öffnet Ihre Website wie gewohnt im Browser. Benutzer können dieser Erfahrung vertrauen, da nur Urheber verifizierten Contents registrieren können. Benutzer kann auf alle ihre registrierten Web-zu-app-Links überprüfen, indem Sie zu Einstellungen > Apps > Apps für Websites.
+Apps für Websites verknüpfen Ihre App mit einer Website. Wenn ein Benutzer also einen Link zu Ihrer Website öffnet, wird Ihre App anstelle des Browsers gestartet. Wenn Ihre App nicht installiert ist, wird Ihre Website ganz normal im Browser geöffnet. Benutzer können dieser Erfahrung vertrauen, da nur Urheber verifizierten Contents registrieren können. Benutzer können alle ihre registrierten Web-zu-App-Links überprüfen, indem sie zu Einstellungen > Apps > Apps für Websites wechseln.
 
-Um Web-zu-app Verlinkung zu aktivieren müssen:
+Um die Web-to-App Verlinkung zu aktivieren, benötigen Sie Folgendes:
 - Identifizieren Sie die URIs, die Ihrer App in der Manifestdatei behandeln wird.
-- Eine JSON-Datei, die Zuordnung zwischen Ihrer app und Ihre Website definiert. mit dem app-Paketfamiliennamen ein, im selben Stammverzeichnis wie die app-manifest Deklaration.
+- Eine JSON-Datei, die die Zuordnung zwischen Ihrer App und Ihrer Website definiert. mit dem Paketfamiliennamen der App im selben Stammverzeichnis wie die App-Manifest Deklaration.
 - Behandeln Sie die Aktivierung in der App
 
 > [!Note]
-> Ab Windows 10 Creators Update, wird unterstützten Links in Microsoft Edge geklickt die entsprechende app gestartet. Unterstützte geklickt hat, in anderen Browsern (z. B. Internet Explorer, usw.), Links, die Sie in das Browsen beibehalten wird.
+> Beginnen mit dem Windows 10 Creators Update, wird unterstützten Links in Microsoft Edge geklickt die entsprechende app gestartet. Unterstützte Links, die in anderen Browsern angeklickt werden (z. B. Internet Explorer usw.), führen Sie zum Surfen in das Internet.
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>Registrieren Sie sich, um HTTP- und Https-Links im App-Manifest zu behandeln.
 
@@ -55,7 +55,7 @@ Um sicherzustellen, dass nur Ihre App die Inhalte auf Ihrer Website öffnen kann
 >[!Important]
 > Die JSON-Datei sollte kein .json Dateisuffix aufweisen.
 
-Erstellen Sie eine JSON-Datei (ohne die Erweiterung .json) mit dem Namen **Windows-App-Web-Link** und stellen Sie den Paketfamiliennamen Ihrer App bereit. Beispiel:
+Erstellen Sie eine JSON-Datei (ohne die Erweiterung .json) mit dem Namen **Windows-App-Web-Link** und stellen Sie den Paketfamiliennamen Ihrer App bereit. Zum Beispiel:
 
 ``` JSON
 [{
@@ -71,12 +71,12 @@ Windows wird eine Https-Verbindung mit Ihrer Website herstellen und nach der ent
 
 Das obige für eine JSON-Datei veranschaulicht die Verwendung von Platzhaltern. Platzhalter erlauben es Ihnen eine Vielzahl von Links mit weniger Codezeilen zu unterstützen. Die Web-zu-App-Verknüpfung unterstützt zwei Arten von Platzhaltern in der JSON-Datei:
 
-| **Platzhalter** | **Beschreibung**               |
+| **Wildcard** | **Beschreibung**               |
 |--------------|-------------------------------|
 | **\***       | Repräsentiert eine beliebige Teilzeichenfolge      |
 | **?**        | Steht für ein einzelnes Zeichen |
 
-Beispielsweise `"excludePaths" : [ "/news/*", "/blog/*" ]` im obigen Beispiel wird Ihre app alle Pfade, die mit Ihrer Website Adresse (z. B. msn.com), **es sei denn** , die nur in beginnen unterstützen `/news/` und `/blog/`. **msn.com/weather.html** wird unterstützt, aber nicht ****msn.com/news/topnews.html****.
+Zum Beispiel, wenn `"excludePaths" : [ "/news/*", "/blog/*" ]` in dem obigen Beispiel gegeben ist, wird Ihre App alle Pfade unterstützen, die mit Ihrer Website-Adresse (z. B. msn.com) beginnen, **mit Ausnahme** der Pfade unter `/news/` und `/blog/`. **msn.com/weather.html** wird unterstützt, aber nicht ****msn.com/news/topnews.html****.
 
 ### <a name="multiple-apps"></a>Mehrere Apps
 
@@ -96,7 +96,7 @@ Wenn Sie zwei Apps haben, die Sie mit Ihrer Website verknüpfen möchten, listen
 
 Um Ihren Benutzern die bestmögliche Erfahrung zu bieten, verwenden Sie Ausschlusspfade, um sicherzustellen, dass der nur online verfügbare Inhalt von den unterstützten Pfaden in der JSON-Datei ausgenommen ist.
 
-Ausschlusspfade werden zuerst überprüft, und wenn eine Übereinstimmung vorliegt wird die entsprechende Seite mit dem Browser anstelle der angegebenen App geöffnet. Im obigen Beispiel enthält "/ News / \ *" alle Seiten unter diesem Pfad, während "/ News\ *" (keine vorwärts-Slash "news") Pfade unter "News\ *" wie "Newslocal /", "Newsinternational /" usw.. enthält.
+Ausschlusspfade werden zuerst überprüft, und wenn eine Übereinstimmung vorliegt wird die entsprechende Seite mit dem Browser anstelle der angegebenen App geöffnet. Im obigen Beispiel ist "/news/\*" enthält alle Seiten unter diesem Pfad beim "/ News\*" (kein Schrägstrich sportstrecken "News") enthält alle Pfade unter "News\*" wie z. B. "Newslocal /', ' Newsinternational /" und so weiter.
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>Behandeln Sie Links auf Aktivierung, um Links mit Inhalt zu verbinden.
 
@@ -150,7 +150,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **Wichtig** Stellen Sie sicher, dass das finale `if (rootFrame.Content == null)` logic durch `rootFrame.Navigate(deepLinkPageType, e);` ersetzt wird, wie im obigen Beispiel gezeigt wird.
 
-## <a name="test-it-out-local-validation-tool"></a>Testen Sie: Lokales Überprüfungswerkzeug
+## <a name="test-it-out-local-validation-tool"></a>Probieren Sie es aus: – Lokale Überprüfung-tool
 
 Sie können die Konfiguration Ihrer App und Website durch Ausführen des App-Host Registration Verifier Werkzeugs prüfen, der hier verfügbar ist:
 
@@ -158,24 +158,24 @@ Sie können die Konfiguration Ihrer App und Website durch Ausführen des App-Hos
 
 Testen Sie die Konfiguration Ihrer App und, indem Sie dieses Werkzeug mit folgenden Parametern ausführen.
 
-**AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*
+**AppHostRegistrationVerifier.exe** *Hostname Packagefamilyname "FilePath"*
 
 -   Hostname: Ihre Website (z. B. microsoft.com)
--   Paketfamiliennamen (PFN): Ihre App-PFN
--   Dateipfad: die JSON-Datei für die lokale Überprüfung (z. B. C:\\SomeFolder\\windows-App-Web-link)
+-   Paketfamiliennamens (PFN): Ihrer app PFN
+-   Dateipfad: Die JSON-Datei für lokale Überprüfung (z. B. "c:"\\SomeFolder\\Windows-app-Web-Link)
 
-Wenn das Tool nicht nichts zurückgibt, funktioniert die Überprüfung auf die Datei, die beim Hochladen. Wenn ein Fehlercode vorhanden ist, wird es nicht funktionieren.
+Wenn das Tool nichts zurückgibt, funktioniert die Überprüfung für diese Datei beim Hochladen. Wenn ein Fehlercode angezeigt wird, funktioniert dies nicht.
 
-Sie können den folgenden Registrierungsschlüssel Pfad Übereinstimmung für quergeladene apps als Teil der lokalen Überprüfung erzwingen aktivieren:
+Sie können folgenden Registrierungsschlüssel ausführen, um den Pfad für quergeladene Apps als Teil der lokalen Überprüfung zu erzwingen:
 
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-Schlüssel: `ForceValidation` Wert: `1`
+Schlüsselname: `ForceValidation` Wert: `1`
 
-## <a name="test-it-web-validation"></a>Testen Sie es: Web-Überprüfung
+## <a name="test-it-web-validation"></a>Testen Sie es aus: Web-Überprüfung
 
-Schließen Sie die Anwendung, um sicherzustellen, dass die App aktiviert wird, wenn Sie auf einen Link klicken. Kopieren Sie dann die Adresse eines unterstützten Pfades in Ihrer Website. Wenn Ihre Websiteadresse beispielsweise "msn.com" lautet, und einer der unterstützen Pfade "path1" ist, verwenden Sie `http://msn.com/path1`
+Schließen Sie die Anwendung, um sicherzustellen, dass die App aktiviert wird, wenn Sie auf einen Link klicken. Kopieren Sie dann die Adresse eines unterstützten Pfades in Ihrer Website. Z. B. wenn der Website-Adresse ist "msn.com" und einer der Pfade Unterstützung "path1" ist, verwenden Sie `http://msn.com/path1`
 
 Stellen Sie sicher, dass Ihre app geschlossen ist. Drücken Sie die **Windows-Taste + R** zum Öffnen des **ausführen**-Dialogfelds fügen Sie den Link im Fenster ein. Ihre app sollte anstelle des Webbrowsers gestartet werden.
 
@@ -195,7 +195,7 @@ Wenn Sie der protocol activation logic zu folgen möchten, legen Sie einen Halte
 
 ## <a name="see-also"></a>Siehe auch
 
-[Web-zu-App Beispielprojekt](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[Verknüpfung zwischen Web und App – Beispielprojet](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol-Registrierung](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 [Behandeln der URI-Aktivierung](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[Zuordnung starten Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) veranschaulicht, wie Sie des LaunchUriAsync() API.
+[Beispiel für Assoziationsstart](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustriert die Verwendung der LaunchUriAsync()-API.

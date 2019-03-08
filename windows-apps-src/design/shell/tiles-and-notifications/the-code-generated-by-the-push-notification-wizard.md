@@ -1,18 +1,18 @@
 ---
-Description: By using a wizard in Visual Studio, you can generate push notifications from a mobile service that was created with Azure Mobile Services.
+Description: Mithilfe eines Assistenten in Visual Studio können Sie Pushbenachrichtigungen über einen mobilen Dienst generieren, der unter Verwendung von Azure Mobile Services erstellt wurde.
 title: Vom Assistenten für Pushbenachrichtigungen generierter Code
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac5ca785eab39612bb3a9c6ccd58779c6241059
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049917"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596865"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>Vom Assistenten für Pushbenachrichtigungen generierter Code
  
@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>Registrierung für Pushbenachrichtigungen
 
 
-In „push.register.\*” registriert die UploadChannel-Methode des Geräts den Empfang von Pushbenachrichtigungen. Vom Store werden die installierten Instanzen Ihrer App nachverfolgt, und der Kanal für Pushbenachrichtigungen wird bereitgestellt. Siehe [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
+In push.register. \*, die UploadChannel-Methode registriert das Gerät aus, um Pushbenachrichtigungen empfangen. Vom Store werden die installierten Instanzen Ihrer App nachverfolgt, und der Kanal für Pushbenachrichtigungen wird bereitgestellt. Siehe [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
 
 Der Client-Code ist für das JavaScript-Back-End und .NET-Back-End identisch. Beim Hinzufügen von Pushbenachrichtigungen zu einem JavaScript-Back-End-Dienst wird eine benutzerdefinierte API zum NotifyAllUsers-Aufruf in der UploadChannel-Methode eingefügt.
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 Von der sendNotifications-Funktion wird eine einzelne Benachrichtigung als Popupbenachrichtigung gesendet. Sie können auch andere Arten von Pushbenachrichtigungen verwenden.
 
-**Tipp:** Informationen dazu, wie Sie Hilfe beim Bearbeiten von Skripts, finden Sie unter [Aktivieren von IntelliSense für serverseitigen JavaScript](https://go.microsoft.com/fwlink/p/?LinkId=309275).
+**Tipp**  Informationen dazu, wie Sie Hilfe beim Bearbeiten von Skripts zu erhalten, finden Sie unter [Aktivieren von IntelliSense für serverseitige JavaScript](https://go.microsoft.com/fwlink/p/?LinkId=309275).
 
  
 
@@ -216,9 +216,9 @@ Von der sendNotifications-Funktion wird eine einzelne Benachrichtigung als Popup
 
 Von Windows werden auch Benachrichtigungen unterstützt, bei denen es sich nicht um Pushbenachrichtigungen handelt. Allgemeine Informationen zu Benachrichtigungen finden Sie unter [Auswählen einer Methode für die Übermittlung von Benachrichtigungen](choosing-a-notification-delivery-method.md).
 
-Die Nutzung von Popupbenachrichtigungen ist einfach. Im "Insert.js"-Code der für Sie generierten Kanaltabelle ist dazu ein Beispiel enthalten. Wenn Sie die Verwendung von Kachel- oder Signalbenachrichtigungen planen, müssen Sie eine XML-Vorlage für die Kachel und das Signal erstellen und die Codierung der verpackten Informationen in der Vorlage angeben. Weitere Informationen finden Sie unter [Verwenden von Kachel-, Signal- und Popupbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
+Die Nutzung von Popupbenachrichtigungen ist einfach. Im "Insert.js"-Code der für Sie generierten Kanaltabelle ist dazu ein Beispiel enthalten. Wenn Sie die Verwendung von Kachel- oder Signalbenachrichtigungen planen, müssen Sie eine XML-Vorlage für die Kachel und das Signal erstellen und die Codierung der verpackten Informationen in der Vorlage angeben. Weitere Informationen finden Sie unter [Verwenden von Kacheln, Signalen und Popupbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
 
-Da Windows auf Pushbenachrichtigungen reagiert, können die meisten dieser Benachrichtigungen verarbeitet werden, wenn die App nicht ausgeführt wird. Mit einer Pushbenachrichtigung können Benutzer beispielsweise auch dann darüber informiert werden, dass eine neue E-Mail-Nachricht verfügbar ist, wenn die lokale Mail-App nicht ausgeführt wird. Von Windows wird eine Popupbenachrichtigung verarbeitet, indem eine Meldung angezeigt wird, z.B. die erste Zeile einer Textnachricht. Bei Kachel- oder Signalbenachrichtigungen aktualisiert Windows die Live-Kachel einer App, um die Anzahl neuer E-Mail-Nachrichten anzugeben. So können Sie Benutzer Ihrer App auffordern, die neuen Informationen mit der App zu prüfen. Ihre App kann unformatierte Benachrichtigungen empfangen, wenn sie ausgeführt wird, und Sie können sie verwenden, um Daten an die App zu senden. Wenn die App nicht ausgeführt wird, können Sie eine Hintergrundaufgabe zum Überwachen von Pushbenachrichtigungen einrichten.
+Da Windows auf Pushbenachrichtigungen reagiert, können die meisten dieser Benachrichtigungen verarbeitet werden, wenn die App nicht ausgeführt wird. Mit einer Pushbenachrichtigung können Benutzer beispielsweise auch dann darüber informiert werden, dass eine neue E-Mail-Nachricht verfügbar ist, wenn die lokale Mail-App nicht ausgeführt wird. Von Windows wird eine Popupbenachrichtigung verarbeitet, indem eine Meldung angezeigt wird, z. B. die erste Zeile einer Textnachricht. Bei Kachel- oder Signalbenachrichtigungen aktualisiert Windows die Live-Kachel einer App, um die Anzahl neuer E-Mail-Nachrichten anzugeben. So können Sie Benutzer Ihrer App auffordern, die neuen Informationen mit der App zu prüfen. Ihre App kann unformatierte Benachrichtigungen empfangen, wenn sie ausgeführt wird, und Sie können sie verwenden, um Daten an die App zu senden. Wenn die App nicht ausgeführt wird, können Sie eine Hintergrundaufgabe zum Überwachen von Pushbenachrichtigungen einrichten.
 
 Es ist ratsam, Pushbenachrichtigungen unter Beachtung der Richtlinien für UWP-Apps zu verwenden, weil diese Benachrichtigungen Ressourcen der Benutzer verbrauchen und bei übermäßiger Nutzung ablenken können. Weitere Informationen finden Sie unter [Richtlinien und Prüfliste für Pushbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh761462).
 
@@ -233,7 +233,7 @@ Sie können den Windows-Pushbenachrichtigungsdienst (WNS) auch direkt aufrufen, 
 
 Sie können Pushbenachrichtigungen auch senden, indem Sie in Ihrem mobilen Dienst eine geplante Aufgabe ausführen. Weitere Informationen finden Sie unter [Planen von wiederkehrenden Aufträgen in Mobile Services](https://go.microsoft.com/fwlink/p/?linkid=301694).
 
-**Warnung**Nachdem Sie den Assistenten für Pushbenachrichtigungen einmal ausgeführt haben, nicht führen Sie den Assistenten ein zweites Mal aus, um Registrierungscode für andere mobile Dienste hinzuzufügen. Wenn Sie den Assistenten mehr als einmal pro Projekt ausführen, wird Code generiert, der überlappende Aufrufe in der [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync)-Methode zur Folge hat. Dies führt zu einer Laufzeitausnahme. Wenn Sie sich für Pushbenachrichtigungen für mehr als einen mobilen Dienst registrieren möchten, führen Sie den Assistenten einmal aus. Schreiben Sie dann den Registrierungscode neu, um sicherzustellen, dass Aufrufe für **CreatePushNotificationChannelForApplicationAsync** nicht zur gleichen Zeit ausgeführt werden. Sie können dies beispielsweise umsetzen, indem Sie den vom Assistenten generierten Code in „push.register.\*” (einschließlich des Aufrufs von **CreatePushNotificationChannelForApplicationAsync**) an eine Position außerhalb des OnLaunched-Ereignisses verschieben. Die diesbezüglichen Spezifikationen hängen aber von der Architektur Ihrer App ab.
+**Warnung**  , sobald Sie einmal den pushbenachrichtigungs-Assistenten ausgeführt haben, nicht führen Sie den Assistenten ein zweites Mal Registrierungscode für einen anderen mobilen Dienst hinzufügen. Wenn Sie den Assistenten mehr als einmal pro Projekt ausführen, wird Code generiert, der überlappende Aufrufe in der [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync)-Methode zur Folge hat. Dies führt zu einer Laufzeitausnahme. Wenn Sie sich für Pushbenachrichtigungen für mehr als einen mobilen Dienst registrieren möchten, führen Sie den Assistenten einmal aus. Schreiben Sie dann den Registrierungscode neu, um sicherzustellen, dass Aufrufe für **CreatePushNotificationChannelForApplicationAsync** nicht zur gleichen Zeit ausgeführt werden. Beispielsweise können Sie dies erreichen, indem Sie den Assistenten generierte Code in push.register verschieben. \* (einschließlich des Aufrufs **CreatePushNotificationChannelForApplicationAsync**) außerhalb der OnLaunched-Ereignis, aber die Einzelheiten dieser hängt von der Architektur Ihrer app.
 
  
 
@@ -242,9 +242,9 @@ Sie können Pushbenachrichtigungen auch senden, indem Sie in Ihrem mobilen Diens
 
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
 * [Übersicht über unformatierte Benachrichtigungen](raw-notification-overview.md)
-* [Herstellen einer Verbindung mit Microsoft Azure-Mobile Dienste (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
-* [Herstellen einer Verbindung mit Microsoft Azure-Mobile Dienste (C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
-* [Schnellstart: Hinzufügen von Pushbenachrichtigungen für einen mobilen Dienst (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
+* [Herstellen einer Verbindung mit Windows Azure-Mobile Dienste (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
+* [Herstellen einer Verbindung mit Windows Azure-Mobile Dienste (C#/C+ c++ / VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
+* [Schnellstart: Hinzufügen von Pushbenachrichtigungen für einen mobile Service (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
  
 
  

@@ -3,18 +3,18 @@ title: Installation einer UWP-App von einem Azure-Webserver
 description: In diesem Lernprogramm wird gezeigt, wie Sie einen Azure-Webserver einrichten, überprüfen, ob Ihre Web-App kann App-Pakete hosten kann, und App-Installer auf effektive Weise aufrufen und verwenden.
 ms.date: 11/30/2018
 ms.topic: article
-keywords: Windows10, UWP, App-Installer, AppInstaller, querladen, zusammengehörig, optionale Pakete, Azure-Webserver
+keywords: Windows 10, UWP, App-Installer, AppInstaller, querladen, zusammengehörig, optionale Pakete, Azure-Webserver
 ms.localizationpriority: medium
 ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929687"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608795"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>Installieren einer UWP-App aus einer Azure-Web-App
 
-Mit der App-Installer-App können Entwickler und IT-Spezialisten Windows10-Apps verteilen, indem sie diese in ihrem eigenen Content Delivery Network (CDN) hosten. Das ist nützlich für Unternehmen, die ihre Apps nicht im Microsoft Store veröffentlichen möchten oder müssen, aber weiterhin die Windows10-Verpackungs- und -Bereitstellungsplattform nutzen möchten.
+Mit der App-Installer-App können Entwickler und IT-Spezialisten Windows 10-Apps verteilen, indem sie diese in ihrem eigenen Content Delivery Network (CDN) hosten. Das ist nützlich für Unternehmen, die ihre Apps nicht im Microsoft Store veröffentlichen möchten oder müssen, aber weiterhin die Windows 10-Verpackungs- und -Bereitstellungsplattform nutzen möchten.
 
 In diesem Thema sind die Schritte zum Konfigurieren eines Azure-Webservers zum Hosten von UWP-App-Paketen aufgeführt, und Sie erfahren, wie Sie die App-Installer-App verwenden, um die App-Pakete zu installieren.
 
@@ -27,10 +27,10 @@ Für eine erfolgreiche Durchführung dieses Lernprogramms benötigen Sie Folgend
 
 Optional: [Startprojekt](https://github.com/AppInstaller/MySampleWebApp) auf GitHub. Dies ist hilfreich, wenn Sie kein App-Paket oder keine Webseite zum Arbeiten verfügbar haben, aber dennoch lernen möchten, wie Sie dieses Feature verwenden.
 
-### <a name="step-1---get-an-azure-subscription"></a>Schritt1: Erwerben eines Azure-Abonnements
+### <a name="step-1---get-an-azure-subscription"></a>Schritt 1: Erwerben eines Azure-Abonnements
 Informationen zum Erwerben eines Azure-Abonnements finden Sie auf der [Azure Kontoseite](https://azure.microsoft.com/free/). Für die Zwecke dieses Lernprogramms können Sie eine kostenlose Mitgliedschaft verwenden.
 
-### <a name="step-2---create-an-azure-web-app"></a>Schritt2: Erstellen einer Azure-Web-App 
+### <a name="step-2---create-an-azure-web-app"></a>Schritt 2: Erstellen einer Azure-Web-App 
 Klicken Sie auf der Azure-Portalseite auf die Schaltfläche **+ Ressource erstellen**, und wählen Sie dann **Web-App** aus.
 
 ![erstellen](images/azure-create-app.png)
@@ -39,7 +39,7 @@ Erstellen Sie einen eindeutigen **App-Namen**, und behalten Sie für die restlic
 
 ![Erstellen einer Web-App](images/azure-create-app-2.png)
 
-### <a name="step-3---hosting-the-app-package-and-the-web-page"></a>Schritt3: Hosten des App-Pakets und der Webseite 
+### <a name="step-3---hosting-the-app-package-and-the-web-page"></a>Schritt 3: Hosten des App-Pakets und der Webseite 
 Nach die Web-App erstellt wurde, können Sie über das Dashboard im Azure-Portal darauf zugreifen. In diesem Schritt werden wir eine einfache Webseite mit der GUI des Azure-Portals erstellen.
 
 Nach Auswahl der neu erstellten Web-App über das Dashboard, verwenden Sie das Suchfeld, um nach dem **App-Dienst-Editor** zu suchen und ihn zu öffnen. 
@@ -67,7 +67,7 @@ Wenn Sie das im [Startprojekt](https://github.com/AppInstaller/MySampleWebApp) b
 </html>
 ```
 
-### <a name="step-4---configure-the-web-app-for-app-package-mime-types"></a>Schritt4: Konfigurieren der Web-App für App-Paket-MIME-Typen
+### <a name="step-4---configure-the-web-app-for-app-package-mime-types"></a>Schritt 4: Konfigurieren der Web-App für App-Paket-MIME-Typen
 
 Fügen Sie der Web-App eine neue Datei mit dem folgenden Namen hinzu: `Web.config`. Öffnen Sie die Datei `Web.config` im Explorer, und fügen Sie die folgenden Zeilen hinzu. 
 
@@ -87,9 +87,9 @@ Fügen Sie der Web-App eine neue Datei mit dem folgenden Namen hinzu: `Web.confi
 </configuration>
 ```
 
-### <a name="step-5---run-and-test"></a>Schritt5: Ausführen und Testen
+### <a name="step-5---run-and-test"></a>Schritt 5: Ausführen und Testen
 
-Um die von Ihnen erstellte Webseite zu starten, geben die URL aus Schritt3 in den Browser ein, gefolgt von `/default.html`. 
+Um die von Ihnen erstellte Webseite zu starten, geben die URL aus Schritt 3 in den Browser ein, gefolgt von `/default.html`. 
 
 ![Edge](images/edge.png)
 

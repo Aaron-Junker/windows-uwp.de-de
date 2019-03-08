@@ -3,19 +3,19 @@ title: Bildschirmgrößen und Haltepunkte für reaktionsfähiges Design
 description: Anstatt Ihre Benutzeroberfläche für die vielen Geräte im gesamten Windows 10-Ökosystem zu optimieren, empfehlen wir, ein Design für einige Schlüsselbreiten (sogenannte Breakpoints) zu erstellen.
 ms.date: 08/30/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: fce2c9230add569c4494b01546f1b3ced81d488b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048137"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612925"
 ---
-#  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Breakpoints
+#  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Haltepunkte
 
-UWP-Apps können auf jedem Gerät mit Windows 10 ausgeführt werden – z. B. Telefone, Tablets, Desktops, Fernseher und mehr. Mit einer großen Anzahl der geräteziele und Bildschirmgrößen über das Windows 10-Ökosystem, anstatt die Optimierung der Benutzeroberfläche für jedes Gerät empfehlen wir, ein Design für einige schlüsselbreiten (sogenannte "Breakpoints"): 
+UWP-Apps können auf jedem Gerät mit Windows 10 ausgeführt werden – z. B. Telefone, Tablets, Desktops, Fernseher und mehr. Bei einer riesigen Anzahl der geräteziele und Bildschirmgrößen für das Windows 10-Ökosystem, anstatt beim Optimieren der Benutzeroberfläche für jedes Gerät empfiehlt es sich um Entwerfen für einige wichtige Breite Kategorien (auch als "Haltepunkte" bezeichnet): 
 - Klein (kleiner als 640 Pixel)
 - Mittel (641 Pixel bis 1007 Pixel)
 - Groß (1008 Pixel und größer)
@@ -33,7 +33,7 @@ Diese Tabelle beschreibt die verschiedenen Größenklassen und Breakpoints.
 <tr class="header">
 <th align="left">Größenklasse</th>
 <th align="left">Breakpoints</th>
-<th align="left">Typische Bildschirmgröße (diagonal)</th>
+<th align="left">Normale Bildschirmgröße (diagonal)</th>
 <th align="left">Geräte</th>
 <th align="left">Fenstergrößen</th>
 </tr>
@@ -55,7 +55,7 @@ Diese Tabelle beschreibt die verschiedenen Größenklassen und Breakpoints.
 </tr>
 <tr class="even">
 <td style="vertical-align:top;">Groß</td>
-<td style="vertical-align:top;">1008 Pixel oder mehr</td>
+<td style="vertical-align:top;">1008 Pixel oder größer</td>
 <td style="vertical-align:top;">13&quot; und größer</td>
 <td style="vertical-align:top;">PCs, Laptops, Surface Hubs</td>
 <td style="vertical-align:top;">1024 x 640, 1366 x 768, 1920 x 1080</td>
@@ -100,6 +100,6 @@ UWP-Apps skalieren Ihre Benutzeroberfläche automatisch, um sicherzustellen, das
 - Platzieren Sie den [Navigationsbereich](../controls-and-patterns/navigationview.md) im angedockten Modus so, dass er immer angezeigt wird.
 
 >[!TIP] 
-> Mit [**Continuum für Smartphones**](https://go.microsoft.com/fwlink/p/?LinkID=699431)können Benutzer kompatible Windows 10 mobile-Geräte mit Monitor, Maus und Tastatur damit ihr Gerät wie verbinden. Berücksichtigen Sie diese neue Funktion beim Entwerfen für bestimmte Breakpoints – ein Mobiltelefon bleibt nicht immer in einer Klasse mit geringer Größe.
+> Mit [ **Continuum für Smartphones**](https://go.microsoft.com/fwlink/p/?LinkID=699431), Benutzer können eine Verbindung herstellen kompatibel Windows 10 mobile-Geräten zu überwachen, Maus- und Tastatureingabe zu ihren Telefonen funktionieren wie Laptops. Berücksichtigen Sie diese neue Funktion beim Entwerfen für bestimmte Breakpoints – ein Mobiltelefon bleibt nicht immer in einer Klasse mit geringer Größe.
 
 

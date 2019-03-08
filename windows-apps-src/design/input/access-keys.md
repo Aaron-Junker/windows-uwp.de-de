@@ -1,5 +1,5 @@
 ---
-Description: Learn how to improve both the usability and the accessibility of your UWP app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
+Description: Erfahren Sie, wie Sie Benutzerfreundlichkeit und Barrierefreiheit Ihrer UWP-App verbessern, indem Sie Benutzern eine intuitive Möglichkeit bereitstellen, schnell in der sichtbaren UI einer App über eine Tastatur statt per Eingabe mit dem Finger oder der Maus zu navigieren und zu interagieren.
 title: Zugriffstasten – Designrichtlinien
 label: Access keys design guidelines
 keywords: Tastatur, Zugriffstaste, Zugriffstasteninfo, Info zu Zugriffstasten, Barrierefreiheit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktion
@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: bd71e4715b26f9e06326690d3642b4d19e23d292
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945802"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617265"
 ---
 # <a name="access-keys"></a>Zugriffstasten
 
@@ -40,11 +40,11 @@ Zugriffstasteninfos sind Signale, die neben den Steuerelementen angezeigt werden
 
 Durch Drücken der Alt-Taste wird die Zugrifftastenfunktionalität initialisiert. Zudem werden alle derzeit verfügbaren Tastenkombinationen in Zugriffstasteninfos angezeigt. Nachfolgende Tastaturanschläge werden durch das Zugriffstasten-Framework verarbeitet, das ungültige Tasten ablehnt, bis eine gültige Zugriffstaste oder die Eingabetaste, Esc-Taste, Tabulatortaste oder Pfeiltaste gedrückt wird, um Zugriffstasten zu deaktivieren und die Behandlung von Tastaturanschlägen an die App zurückzugeben.
 
-Microsoft Office-Apps bieten umfassende Unterstützung für Zugriffstasten. Die folgende Abbildungzeigt die Registerkarte „Start“ von Word mit aktivierten Zugriffstasten. (Beachten Sie die Unterstützung für Zahlen und mehrere Tastaturanschläge.)
+Microsoft Office-Apps bieten umfassende Unterstützung für Zugriffstasten. Die folgende Abbildung zeigt die Registerkarte „Start“ von Word mit aktivierten Zugriffstasten. (Beachten Sie die Unterstützung für Zahlen und mehrere Tastaturanschläge.)
 
 ![Zugriffstasteninfo-Signale für Zugriffstasten in Microsoft Word](images/accesskeys/keytip-badges-word.png)
 
-_Zugriffstasteninfo-Signale für Zugriffstasten in Microsoft Word_
+_KeyTip-Badges für Zugriffstasten in Microsoft Word_
 
 Um eine Zugriffstaste zu einem Steuerelement hinzuzufügen, verwenden Sie die **AccessKey-Eigenschaft**. Der Wert dieser Eigenschaft gibt die Zugriffstastensequenz, die Verknüpfung (bei einem einzelnen alphanumerischen Zeichen) und die Zugriffstasteninfo an.
 
@@ -58,11 +58,11 @@ Es wird empfohlen, dass Sie Zugriffstasten überall in Ihrer UI angegeben, wo di
 
 1.  **Zugriffstasten erleichtern den Zugriff auf Ihre App** für Benutzer mit motorischen Einschränkungen, einschließlich der Benutzer, die jeweils nur eine Taste drücken können oder Probleme bei der Verwendung einer Maus haben.
 
-    Eine gut durchdachte Tastatur-UI ist ein wichtiger Aspekt für die Barrierefreiheit von Software. Sie ermöglicht es Benutzern mit einer Sehbeeinträchtigung oder mit bestimmten motorischen Einschränkungen, in einer App zu navigieren und mit deren Features zu interagieren. Diese Benutzer können u.U. keine Maus bedienen und sind auf verschiedene Hilfstechnologien wie etwa Tastaturerweiterungstools, Bildschirmtastaturen, Bildschirmlupen, Bildschirmleseprogramme oder die Möglichkeit der Spracheingabe angewiesen. Für diese Benutzer ist eine vollständige Befehlsabdeckung entscheidend.
+    Eine gut durchdachte Tastatur-UI ist ein wichtiger Aspekt für die Barrierefreiheit von Software. Sie ermöglicht es Benutzern mit einer Sehbeeinträchtigung oder mit bestimmten motorischen Einschränkungen, in einer App zu navigieren und mit deren Features zu interagieren. Diese Benutzer können u. U. keine Maus bedienen und sind auf verschiedene Hilfstechnologien wie etwa Tastaturerweiterungstools, Bildschirmtastaturen, Bildschirmlupen, Bildschirmleseprogramme oder die Möglichkeit der Spracheingabe angewiesen. Für diese Benutzer ist eine vollständige Befehlsabdeckung entscheidend.
 
 2.  **Zugriffstasten machen Ihre App benutzerfreundlicher** für erfahrene Benutzer, die über die Tastatur interagieren möchten.
 
-    Erfahrene Benutzer haben oftmals eine starke Vorliebe für die Verwendung der Tastatur, da tastaturbasierte Befehle viel schneller eingegeben werden können. Zudem ist es dafür nicht erforderlich, die Hände von der Tastatur wegzubewegen. Für diese Benutzer sind Effizienz und Konsistenz entscheidend. Die Vollständigkeit hingegen ist nur für die am häufigsten verwendeten Befehle wichtig.
+    Erfahrene Benutzer haben oftmals eine starke Vorliebe für die Verwendung der Tastatur, da tastaturbasierte Befehle viel schneller eingegeben werden können. Zudem ist es dafür nicht erforderlich, die Hände von der Tastatur wegzubewegen. Für diese Benutzer sind Effizienz und Konsistenz entscheidend. Die Vollständigkeit hingegen ist nur für am häufigsten verwendeten Befehle wichtig.
 
 ## <a name="set-access-key-scope"></a>Festlegen des Zugriffstastenbereichs
 
@@ -72,11 +72,11 @@ Microsoft Word bietet beispielsweise zwei Zugriffstastenbereiche: einen primäre
 
 Die folgenden Abbildungen zeigen die zwei Zugriffstastenbereiche in Word. Das erste Beispiel zeigt die primären Zugriffstasten, mit denen ein Benutzer eine Registerkarte und andere Befehle auf oberster Ebene auswählen kann. Das zweite zeigt die sekundären Zugriffstasten für die Registerkarte „Start“.
 
-![Primäre Zugriffstasten in Microsoft Word](images/accesskeys/primary-access-keys-word.png)
-_Primäre Zugriffstasten in Microsoft Word_
+![Primären Zugriffsschlüssel in Microsoft Word](images/accesskeys/primary-access-keys-word.png)
+_primären Zugriffsschlüssel in Microsoft Word_
 
-![Sekundäre Zugriffstasten in Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
-_Sekundäre Zugriffstasten in Microsoft Word_
+![Sekundären Zugriffsschlüssel in Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
+_sekundären Zugriffsschlüssel in Microsoft Word_
 
 Zugriffstasten können für Elemente in verschiedenen Bereichen dupliziert werden. Im obigen Beispiel ist „2“ die Zugriffstaste für „Rückgängig“ im primären Bereich und „Kursiv“ im sekundären Bereich.
 
@@ -110,15 +110,15 @@ Hier erfahren Sie, wie Sie einen Zugriffstastenbereich definieren.
 
 ![Primäre Zugriffstasten für Befehlsleiste](images/accesskeys/primary-access-keys-commandbar.png)
 
-_Primärer Bereich der Befehlsleiste und unterstützte Zugriffstasten_
+_Primäre Bereich CommandBar und unterstützten Zugriffsschlüssel_
 
 ![Sekundäre Zugriffstasten für Befehlsleiste](images/accesskeys/secondary-access-keys-commandbar.png)
 
-_Sekundärer Bereich der Befehlsleiste und unterstützte Zugriffstasten_
+_Sekundäre Bereich CommandBar und unterstützten Zugriffsschlüssel_
 
 ### <a name="windows-10-creators-update-and-older"></a>Windows 10 Creators Update oder älter
 
-Vor dem Windows10 Fall Creators Update boten einige Steuerelemente wie die Befehlsleiste keine Unterstützung für integrierte Zugriffstastenbereiche.
+Vor dem Windows 10 Fall Creators Update boten einige Steuerelemente wie die Befehlsleiste keine Unterstützung für integrierte Zugriffstastenbereiche.
 
 Im folgenden Beispiel ist gezeigt, wie Sie die sekundären Befehle der Befehlsleiste mit Zugriffstasten unterstützen, die verfügbar sind, sobald ein übergeordneter Befehl aufgerufen wird (vergleichbar mit dem Menüband in Word).
 
@@ -202,7 +202,7 @@ Zugriffstastenkonflikte treten auf, wenn zwei oder mehr Elemente im selben Berei
 
 Das System löst duplizierte Zugriffstasten auf, indem die Zugriffstaste des ersten zur visuellen Struktur hinzugefügten Elements verarbeitet wird und alle anderen ignoriert werden.
 
-Wenn mehrere Zugriffstasten mit demselben Zeichen (z.B. „A“, „A1“ und „AB“) beginnen, verarbeitet das System die Zugriffstaste mit einem einzelnen Zeichen und ignoriert alle anderen.
+Wenn mehrere Zugriffstasten mit demselben Zeichen (z. B. „A“, „A1“ und „AB“) beginnen, verarbeitet das System die Zugriffstaste mit einem einzelnen Zeichen und ignoriert alle anderen.
 
 Vermeiden Sie Konflikte durch die Verwendung eindeutiger Zugriffstasten oder die Bereichsdefinition für Befehle.
 
@@ -213,7 +213,7 @@ Berücksichtigen Sie Folgendes, wenn Sie Zugriffstasten wählen:
 -   Verwenden Sie ein einzelnes Zeichen zur Minimierung von Tastaturanschlägen und unterstützen Sie standardmäßig Tastenkombinationen (Alt + Zugriffstaste).
 -   Vermeiden Sie die Verwendung von mehr als zwei Zeichen.
 -   Vermeiden Sie Zugriffstastenkonflikte.
--   Vermeiden Sie Zeichen, die nur schwer von anderen Zeichen zu unterscheiden sind, z.B. den Buchstaben „I“ und die Zahl „1“ oder den Buchstaben „O“ und die Zahl „0“.
+-   Vermeiden Sie Zeichen, die nur schwer von anderen Zeichen zu unterscheiden sind, z. B. den Buchstaben „I“ und die Zahl „1“ oder den Buchstaben „O“ und die Zahl „0“.
 -   Verwenden Sie bekannte Vorgänger anderer beliebter Apps wie Word („D“ für „Datei“, „S“ für „Startseite“ usw.).
 -   Verwenden Sie das erste Zeichen des Befehlsnamens oder ein Zeichen mit einer engen Assoziation zum Befehl, das man sich gut merken kann.
     -   Wenn der erste Buchstaben bereits zugewiesen ist, verwenden Sie einen Buchstaben, der dem ersten Buchstaben des Befehlsnamens so nah wie möglich ist („I“ für Einfügen).
@@ -233,13 +233,13 @@ Ressourcen für die einzelnen Sprachen werden in entsprechenden Zeichenfolgenord
 
 ![Ressourcen-Zeichenfolgenordner für Englisch und Spanisch](images/accesskeys/resource-string-folders.png)
 
-_Ressourcen-Zeichenfolgenordner für Englisch und Spanisch_
+_Englisch und Spanisch Zeichenfolge Ressourcenordner_
 
 Lokalisierte Zugriffstasten werden in der Datei projects resources.resw angegeben:
 
 ![Geben Sie die AccessKey-Eigenschaft an, die in der Datei resources.resw angegeben ist.](images/accesskeys/resource-resw-file.png)
 
-_Geben Sie die AccessKey-Eigenschaft an, die in der Datei resources.resw angegeben ist._
+_Geben Sie die AccessKey-Eigenschaft, die in der Datei "Resources.resw" angegeben_
 
 Weitere Informationen finden Sie unter [Übersetzen von UI-Ressourcen ](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx).
 
@@ -251,21 +251,21 @@ In der Regel ist die Standardposition der Zugriffstasteninfo ausreichend und bie
 
 ![Beispiel für die automatische Platzierung der Zugriffstasteninfo](images/accesskeys/auto-keytip-position.png)
 
-_Beispiel für die automatische Platzierung der Zugriffstasteninfo_
+_Beispiel für die automatische Zugriffstasteninfo-Platzierung_
 
 Falls Sie jedoch mehr Kontrolle über die Positionierung der Zugriffstasteninfo benötigen, empfehlen wir Folgendes:
 
-1.  **Offensichtliches Zuordnungsprinzip**: Der Benutzer kann das Steuerelement auf einfache Weise der Zugriffstasteninfo zuordnen.
+1.  **Prinzip der offensichtliche Zuordnung**: Der Benutzer kann das Steuerelement Zugriffstasteninfo leicht zuordnen.
 
     a.  Die Zugriffstasteninfo sollte sich **in der Nähe** des Elements mit der Zugriffstaste befinden (Besitzer).  
     b.  Die Zugriffstasteninfo sollte **aktivierte Elemente nicht verdecken**, die Zugriffstasten aufweisen.   
     c.  Wenn eine Zugriffstasteninfo nicht in der Nähe des Besitzers platziert werden kann, sollte sie mit dem Besitzer überlappen. 
 
-2.  **Auffindbarkeit**: Der Benutzer kann das Steuerelement mit der Zugriffstasteninfo schnell auffinden.
+2.  **Erkennbarkeit**: Der Benutzer kann das Steuerelement mit Zugriffstasteninfo schnell ermitteln.
 
     a.  Die Zugriffstasteninfo sollte andere Zugriffstasteninfos nie **überlappen**.  
 
-3.  **Lesbarkeit:** Der Benutzer kann die Zugriffstasteninfos einfach überfliegen.
+3.  **Einfache Überprüfung:** Der Benutzer kann die Zugriffstasteninfos einfach zu erfassen.
 
     a.  Zugriffstasteninfos sollten aneinander und am UI-Element **ausgerichtet** sein.
     b.  Zugriffstasteninfos sollten so weitgehend wie möglich **gruppiert** sein. 
@@ -274,11 +274,11 @@ Falls Sie jedoch mehr Kontrolle über die Positionierung der Zugriffstasteninfo 
 
 Verwenden Sie die Eigenschaft **KeyTipPlacementMode**, um die Platzierung der Zugriffstasteninfo auf Element- oder Gruppenbasis anzupassen.
 
-Die Platzierungsmodi sind: Top, Bottom, Right, Left, Hidden, Center und Auto.
+Die Platzierungsmodi sind: Oben, unten, rechts, links, ausgeblendet, Center und automatisch.
 
 ![Platzierungsmodi für Zugriffstasteninfo](images/accesskeys/keytip-postion-modes.png)
 
-_Platzierungsmodi für Zugriffstasteninfo_
+_Modi der Zugriffstasteninfos-Platzierung_
 
 Die Mittellinie des Steuerelements wird verwendet, um die vertikale und horizontale Ausrichtung der Zugriffstasteninfo zu berechnen.
 
@@ -320,7 +320,7 @@ Die Position einer Zugriffstasteninfo wird automatisch am Bildschirmrand ausgeri
 
 ![Platzierungsmodi für Zugriffstasteninfo](images/accesskeys/keytips-screen-edge.png)
 
-_Der Bildschirmrand bewirkt, dass sich die Zugriffstasteninfo automatisch selbst neu positioniert._
+_Am Bildschirmrand führt dazu, dass es sich bei Zugriffstasteninfo zu selbst automatisch neu_
 
 ## <a name="key-tip-style"></a>Zugriffstasteninfoformat
 
@@ -330,7 +330,7 @@ Wenn Sie Ihre eigenen Formate für Zugriffstasteninfos angeben müssen, verwende
 
 ![Platzierungsmodi für Zugriffstasteninfo](images/accesskeys/keytip-customization.png)
 
-_Zugriffstasteninfo – Anpassungsoptionen_
+_Optionen für die Anpassung von Zugriffstasteninfos_
 
 In diesem Beispiel wird veranschaulicht, wie Sie diese Anwendungsressourcen ändern:
 
@@ -353,14 +353,14 @@ In diesem Beispiel wird veranschaulicht, wie Sie diese Anwendungsressourcen änd
 
 Das XAML-Framework stellt Automatisierungseigenschaften bereit, mit denen UI-Automatisierungsclients Informationen zu Elementen in der Benutzeroberfläche ermitteln können.
 
-Wenn Sie die AccessKey-Eigenschaft für ein UIElement- oder TextElement-Steuerelement angeben, können Sie mithilfe der [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763)-Eigenschaft diesen Wert abrufen. Barrierefreiheitclients, z.B. die Sprachausgabe, lesen den Wert dieser Eigenschaft jedes Mal, wenn ein Element den Fokus erhält.
+Wenn Sie die AccessKey-Eigenschaft für ein UIElement- oder TextElement-Steuerelement angeben, können Sie mithilfe der [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763)-Eigenschaft diesen Wert abrufen. Barrierefreiheitclients, z. B. die Sprachausgabe, lesen den Wert dieser Eigenschaft jedes Mal, wenn ein Element den Fokus erhält.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Tastaturinteraktionen](keyboard-interactions.md)
+* [Tastenkombinationen](keyboard-interactions.md)
 * [Zugriffstasten](keyboard-accelerators.md)
 
 **Beispiele**
-* [XAML-Steuerelementekatalog (auch bekannt als XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [XAML-Steuerelementsammlungen (auch bekannt als XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 

@@ -4,21 +4,21 @@ title: CustomResource-Markuperweiterung
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7eabcb188aa1687d36d4b4e6f432783aa68969de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934047"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613245"
 ---
 # <a name="customresource-markup-extension"></a>{CustomResource}-Markuperweiterung
 
 
 Stellt einen Wert für ein beliebiges XAML-Attribut bereit, indem ein Verweis auf eine Ressource aus einer benutzerdefinierten Ressourcennachschlage-Implementierung untersucht wird. Das Nachschlagen der Ressource erfolgt mithilfe einer Implementierung der [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)-Klasse.
 
-## <a name="xaml-attribute-usage"></a>XAML-Attributverwendung
+## <a name="xaml-attribute-usage"></a>XAML-Attributsyntax
 
 ``` syntax
 <object property="{CustomResource key}" .../>
@@ -26,9 +26,9 @@ Stellt einen Wert für ein beliebiges XAML-Attribut bereit, indem ein Verweis au
 
 ## <a name="xaml-values"></a>XAML-Werte
 
-| Benennung | Beschreibung |
+| Begriff | Beschreibung |
 |------|-------------|
-| Schlüssel | Der Schlüssel für die angeforderte Ressource. Die ursprüngliche Zuweisung des Schlüssels ist abhängig von der Implementierung der [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)-Klasse, die aktuell zur Verwendung registriert wurde. |
+| key | Der Schlüssel für die angeforderte Ressource. Die ursprüngliche Zuweisung des Schlüssels ist abhängig von der Implementierung der [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)-Klasse, die aktuell zur Verwendung registriert wurde. |
 
 ## <a name="remarks"></a>Hinweise
 
@@ -44,11 +44,11 @@ Eine `{CustomResource}`-Syntax funktioniert standardmäßig nicht (die Basisimpl
 2.  Legen Sie [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) fest, um auf Ihre Klasse in der Initialisierungslogik zu verweisen. Dies muss erfolgen, bevor XAML-Code auf Seitenebene geladen wird, der die `{CustomResource}`-Erweiterungssyntax enthält. Eine Stelle, an der **CustomXamlResourceLoader.Current** festgelegt werden kann, ist im [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324)-Unterklassenkonstruktor, der in den App.xaml-CodeBehind-Vorlagen für Sie generiert wird.
 3.  Jetzt können Sie `{CustomResource}`-Erweiterungen in dem XAML-Code, den Ihre App als Seiten lädt, oder in XAML-Ressourcenverzeichnissen verwenden.
 
-**CustomResource** ist eine Markuperweiterung. Markuperweiterungen werden in der Regel implementiert, wenn für Attributwerte Escapezeichen verwendet werden müssen, damit sie keine Literalwerte oder Handlernamen darstellen, und es nicht ausreicht, Typkonverter für bestimmte Typen oder Eigenschaften zu verwenden. Alle Markuperweiterungen in XAML verwenden die Zeichen „\{” und „\}” in ihrer Attributsyntax. Anhand dieser Konvention erkennt ein XAML-Prozessor, dass eine Markuperweiterung das Attribut verarbeiten muss.
+**CustomResource** ist eine Markuperweiterung. Markuperweiterungen werden in der Regel implementiert, wenn für Attributwerte Escapezeichen verwendet werden müssen, damit sie keine Literalwerte oder Handlernamen darstellen, und es nicht ausreicht, Typkonverter für bestimmte Typen oder Eigenschaften zu verwenden. Alle Markuperweiterungen in XAML verwenden die "\{"und"\}" Zeichen in der Attributsyntax, dies ist die Konvention mit dem ein XAML-Prozessor erkannt wird, dass das Attribut von eine Markuperweiterung verarbeitet werden muss.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [ResourceDictionary- und XAML-Ressourcenreferenzen](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [ResourceDictionary und XAML Ressourcenverweise](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
 * [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340)
 

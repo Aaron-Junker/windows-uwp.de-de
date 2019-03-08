@@ -1,24 +1,24 @@
 ---
-Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
-title: Einführung in das App-Design (Windows-Apps) für die Universelle Windows-Plattform (UWP)
+Description: Die universelle Entwurfsfunktionen, die in der Hilfe zu jedem UWP-app enthalten, erstellen Sie apps, die über eine Vielzahl von Geräten hinweg reibungslose skalieren.
+title: Einführung in das UWP-App-Design (Universelle Windows-Plattform) (Windows-Apps)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 32838e2c3369535928c9e9311f62654eba54e4e0
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058781"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611755"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Einführung in das UWP-App-Design
 
 ![Beispiel für eine Beleuchtungs-App](images/introUWP-header.jpg)
 
-Der Designleitfaden für die Universelle Windows-Plattform (UWP) ist eine Ressource, um ansprechende, optimierte Apps zu entwerfen und erstellen.
+Der Designleitfaden für die Universelle Windows-Plattform (UWP) ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann.
 
 Es ist keine Liste von Vorschriften, sondern ein lebendiges Dokument, das entwickelt wurde, um sich entsprechend unseres [Fluent Design-Systems](../fluent-design-system/index.md) sowie der Bedürfnisse unserer App-Entwicklungs-Community zu entwickeln.
 
@@ -26,11 +26,11 @@ Diese Einführung bietet einen Überblick über die universellen Designfunktione
 
 ## <a name="effective-pixels-and-scaling"></a>Effektive Pixel und Skalierung
 
-UWP-apps, die auf allen [Windows 10-Geräte](../devices/index.md), seien es TV Tablets oder PCs ausgeführt werden. Wie also entwerfen Sie eine Benutzeroberfläche, die auf einer Vielzahl von Geräten und Bildschirmgrößen gut aussieht?
+Führen Sie die UWP-apps auf allen [Windows 10-Geräte](../devices/index.md), von Ihr Fernsehgerät praktisch auf Ihrem Tablet oder PC. Wie entwerfen Sie eine Benutzeroberfläche, die auf einer Vielzahl von Geräten und Bildschirmgrößen in Ordnung ist?
 
 ![Dieselbe App auf verschiedenen Geräten](images/universal-image-1.jpg)
 
-UWP unterstützt, indem die UI-Elemente automatisch angepasst, sodass sie lesbar und leicht zu interagieren auf allen Geräten und Bildschirmgrößen sind.
+UWP kann, indem Sie die Elemente der Benutzeroberfläche automatisch anpassen, sodass sie lesbar und auf allen Geräten und Bildschirmgrößen mit Interaktion einfach sind.
 
 Wenn Ihre App auf einem Gerät ausgeführt wird, verwendet das System einen Algorithmus, um die Art der Anzeige der UI-Elemente auf dem Bildschirm zu normalisieren. Dieser Skalierungsalgorithmus berücksichtigt den Abstand zum Bildschirm und die Bildschirmdichte (Pixel pro Zoll), um die wahrgenommene Größe (anstelle der physischen Größe) zu optimieren. Mit dem Skalierungsalgorithmus wird sichergestellt, dass der Schriftgrad 24 Pixel auf einem 3 Meter entfernten Surface Hub genauso für den Benutzer lesbar ist wie der Schriftgrad 24 Pixel auf einem 5-Zoll-Smartphone, das nur einige Zentimeter entfernt ist.
 
@@ -104,7 +104,7 @@ Die UWP-Designplattform bietet eine Reihe von allgemeinen Steuerelementen, die a
 
 Eine vollständige Liste der UWP-Steuerelemente und der -Muster, die Sie aus ihnen erstellen können, finden Sie im Abschnitt [Steuerelemente und Muster](../controls-and-patterns/index.md).
 
-## <a name="style"></a>Stil
+## <a name="style"></a>Format
 
 Die allgemeinen Steuerelemente übernehmen automatisch das Systemdesign und die Akzentfarbe, arbeiten mit allen Eingabetypen und skalieren auf allen Geräten. Auf diese Weise spiegeln sie das Fluent Design System wider – sie sind anpassungsfähig, einfühlsam und schön. Allgemeine Steuerelemente verwenden Licht, Bewegung und Tiefe in ihren Standarddesigns. Durch die Verwendung dieser Steuerelemente integrieren Sie also unser Fluent Design-System in Ihre App.
 
@@ -144,7 +144,7 @@ Allgemeine Steuerelemente sind zudem sehr anpassbar. Sie können die Vordergrund
 
 Obwohl UWP Ihre App automatisch auf verschiedene Geräte skaliert, können Sie Ihre [UWP-App trotzdem für bestimmte Geräte optimieren](../devices/index.md).
 
-## <a name="usability"></a>Benutzerfreundlichkeit
+## <a name="usability"></a>Nutzbarkeit
 
 <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
 
@@ -170,7 +170,7 @@ Wir bieten eine Vielzahl von Werkzeugen zur Unterstützung Ihres Designprozesses
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
 
-## <a name="next-fluent-design-system"></a>Nächstes Thema: Fluent Design-System
+## <a name="next-fluent-design-system"></a>nächster: Fluent Design-System
 
 Wenn Sie weitere Informationen zu der Prinzipien hinter Fluent Design (das Design-System von Microsoft) und weitere Features für Ihre UWP-App kennenlernen möchten, fahren Sie mit dem Artikel [Fluent Design-System](../fluent-design-system/index.md) fort.
 
@@ -178,4 +178,4 @@ Wenn Sie weitere Informationen zu der Prinzipien hinter Fluent Design (das Desig
 
 - [Was ist eine UWP-App?](../../get-started/universal-application-platform-guide.md)
 - [Fluent Design-System](../fluent-design-system/index.md)
-- [XAML-Plattformübersicht](../../xaml-platform/index.md)
+- [Übersicht über die XAML-Plattform](../../xaml-platform/index.md)

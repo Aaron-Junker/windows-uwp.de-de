@@ -1,31 +1,31 @@
 ---
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Erfahren Sie mehr über Lösungen für allgemeine Entwicklungsprobleme mit den Microsoft Advertising-Bibliotheken in JavaScript/HTML-Apps.
-title: Anleitung zur Problembehandlung für HTML und JavaScript
+title: Handbuch zur Problembehandlung für HTML und JavaScript
 ms.date: 08/23/2017
 ms.topic: article
-keywords: Windows10, UWP, Anzeigen, Werbung, AdControl, Problembehandlung, HTML, Javascript
+keywords: Windows 10, UWP, Anzeigen, Werbung, AdControl, Problembehandlung, HTML, Javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919630"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633235"
 ---
-# <a name="html-and-javascript-troubleshooting-guide"></a>Anleitung zur Problembehandlung für HTML und JavaScript
+# <a name="html-and-javascript-troubleshooting-guide"></a>Handbuch zur Problembehandlung für HTML und JavaScript
 
 Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Microsoft Advertising-Bibliotheken in JavaScript/HTML-Apps.
 
 * [HTML](#html)
-  * [AdControl wird nicht angezeigt](#html-notappearing)
-  * [Blackbox blinkt und wird ausgeblendet](#html-blackboxblinksdisappears)
-  * [Anzeigen werden nicht aktualisiert](#html-adsnotrefreshing)
+  * [Adcontrol-Element nicht angezeigt](#html-notappearing)
+  * [Blackbox blinkt und ausgeblendet wird](#html-blackboxblinksdisappears)
+  * [Anzeigen, die nicht aktualisiert](#html-adsnotrefreshing)
 
 * [JavaScript](#js)
-  * [AdControl wird nicht angezeigt](#js-adcontrolnotappearing)
-  * [Blackbox blinkt und wird ausgeblendet](#js-blackboxblinksdisappears)
-  * [Anzeigen werden nicht aktualisiert](#js-adsnotrefreshing)
+  * [Adcontrol-Element nicht angezeigt](#js-adcontrolnotappearing)
+  * [Blackbox blinkt und ausgeblendet wird](#js-blackboxblinksdisappears)
+  * [Anzeigen, die nicht aktualisiert](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -46,7 +46,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     </head>
     ```
 
-3.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und anzeigeneinheits-ID, die Sie im Partner Center erhalten haben. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und die Ad-Einheit-ID, die Sie im Partner Center zu erhalten. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -271,7 +271,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     });  
     ```
 
-4.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und anzeigeneinheits-ID, die Sie im Partner Center erhalten haben. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
+4.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und die Ad-Einheit-ID, die Sie im Partner Center zu erhalten. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript

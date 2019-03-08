@@ -4,18 +4,18 @@ description: Hier erfahren Sie, wie Ihre App den von einer Hintergrundaufgabe ge
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Hintergrundaufgabe, für die
+keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 5417a2cded6dab98747569acc4e6e92356361482
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050823"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595815"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Überwachen des Status und Abschlusses von Hintergrundaufgaben
 
@@ -29,14 +29,14 @@ Erfahren Sie, wie Ihre App einen von einer ausgeführten Out-of-Process-Hintergr
 
 Der Status und Abschluss von Hintergrundaufgaben kann durch App-Code überwacht werden. Hierzu abonniert die App Ereignisse der Hintergrundaufgabe(n), die sie im System registriert hat.
 
-- In diesem Thema wird vorausgesetzt, dass Sie über eine App verfügen, die Hintergrundaufgaben registriert. Um schnell mit dem Erstellen einer Hintergrundaufgabe zu beginnen, lesen Sie [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb des Prozesses](create-and-register-an-inproc-background-task.md) oder [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb des Prozesses](create-and-register-a-background-task.md). Ausführlichere Informationen zu Bedingungen und Triggern finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md).
+- In diesem Thema wird vorausgesetzt, dass Sie über eine App verfügen, die Hintergrundaufgaben registriert. Um schnell mit dem Erstellen einer Hintergrundaufgabe zu beginnen, lesen Sie [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb von Prozessen](create-and-register-an-inproc-background-task.md) oder [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md). Ausführlichere Informationen zu Bedingungen und Triggern finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md).
 
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>Erstellen Sie einen Ereignishandler zum Behandeln abgeschlossener Hintergrundaufgaben.
 
 ### <a name="step-1"></a>Schritt 1
-Erstellen Sie eine Ereignishandlerfunktion zum Behandeln abgeschlossener Hintergrundaufgaben. Dieser Code muss einem bestimmten Profil nimmt ein Objekt [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) und ein [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) -Objekt.
+Erstellen Sie eine Ereignishandlerfunktion zum Behandeln abgeschlossener Hintergrundaufgaben. Dieser Code muss einem bestimmten Ort zur Verfügung, die akzeptiert eine [ **IBackgroundTaskRegistration** ](https://msdn.microsoft.com/library/windows/apps/br224803) Objekt und ein [ **BackgroundTaskCompletedEventArgs** ](https://msdn.microsoft.com/library/windows/apps/br224778) Objekt.
 
-Verwenden Sie das folgende Profil für die **OnCompleted** Hintergrund Ereignishandlermethode.
+Verwenden Sie die folgenden Speicherbedarf für die **OnCompleted** Aufgabe Ereignishandlermethode im Hintergrund.
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -64,7 +64,7 @@ auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskComplete
 ### <a name="step-2"></a>Schritt 2
 Fügen Sie dem Ereignishandler Code zum Behandeln des Abschlusses der Hintergrundaufgabe hinzu.
 
-Das [Beispiel für eine Hintergrundaufgabe](https://go.microsoft.com/fwlink/p/?LinkId=618666) aktualisiert z.B. die Benutzeroberfläche.
+Das [Beispiel für eine Hintergrundaufgabe](https://go.microsoft.com/fwlink/p/?LinkId=618666) aktualisiert z. B. die Benutzeroberfläche.
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -288,15 +288,15 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb des Prozesses](create-and-register-an-inproc-background-task.md)
-* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb des Prozesses](create-and-register-a-background-task.md)
-* [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
-* [Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md)
-* [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
-* [Reagieren auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
-* [Festlegen von Bedingungen zum Ausführen einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md)
-* [Aktualisieren einer Live-Kachel über eine Hintergrundaufgabe](update-a-live-tile-from-a-background-task.md)
-* [Verwenden eines Wartungsauslösers](use-a-maintenance-trigger.md)
-* [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)
+* [Erstellen Sie und registrieren Sie eine Out-of-Process-Hintergrundaufgabe](create-and-register-a-background-task.md)
+* [Deklarieren Sie Hintergrundtasks im Manifest Anwendung](declare-background-tasks-in-the-application-manifest.md)
+* [Eine abgebrochene Hintergrundaufgabe verarbeiten](handle-a-cancelled-background-task.md)
+* [Eine Hintergrundaufgabe registrieren](register-a-background-task.md)
+* [Reagieren Sie auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
+* [Festlegen von Bedingungen für die Ausführung einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md)
+* [Live-Kachel aus einem Hintergrundtask aktualisiert](update-a-live-tile-from-a-background-task.md)
+* [Verwenden Sie einen Wartungstrigger](use-a-maintenance-trigger.md)
+* [Führen Sie eine Hintergrundaufgabe über einen timer](run-a-background-task-on-a-timer-.md)
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
-* [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-* [So wird’s gemacht: Auslösen von Anhalte-, Fortsetzungs- und Hintergrundereignissen in UWP-Apps (beim Debuggen)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Eine Hintergrundaufgabe Debuggen](debug-a-background-task.md)
+* [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps (beim debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)

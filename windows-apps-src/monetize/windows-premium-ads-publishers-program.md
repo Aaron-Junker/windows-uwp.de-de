@@ -1,48 +1,48 @@
 ---
-description: Die Windows-Programm für Herausgeber von Premium-Anzeigen einer zusammengestellten Sammlung von Ad-fähige apps besteht aus, die Partner-Anzeigennetzwerken mit Premium, bestimmt sind, können hoher Kapazität anzeigen. In diesem Programm Apps, die in Bezug auf die Nutzung, Engagement und Erfahrung-Klasse am besten geeignet sind.
+description: Das Programm für Herausgeber von Windows Premium-Anzeigen besteht aus einer Sammlung von-Apps mit Anzeigenunterstützung, auf die Partner-Anzeigennetzwerke mit Premium, hocheffizienten Anzeigen abzielen. Apps, die an diesem Programm teilnehmen, sind erstklassig in Bezug auf die Nutzung, das Engagement und die Erfahrung.
 title: Programm für Herausgeber von Windows Premium-Anzeigen
 ms.date: 09/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Anzeigen, Werbung
+keywords: Windows 10, UWP, Anzeigen, Werbung
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d747d35148965480cb34714cde7859203a7424d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050753"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634375"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Programm für Herausgeber von Windows Premium-Anzeigen
 
-Als Teil des kontinuierlichen setzen zu Windows-Entwickler ihre apps über anzeigen monetisierung bieten wir das [Programm für Herausgeber von Windows Premium anzeigen](https://www.windowspremiumapps.com). Dies ist eine zusammengestellten Sammlung von Ad-fähige apps und Spiele, die in Bezug auf die Nutzung, Engagement und Erfahrung-Klasse am besten geeignet sind. Diese apps und Spiele sind Sichtbarkeit zertifiziert und eine Global verteilte Zielgruppe der identifizierbare Benutzer, die sehr gemeinschaftlich beteiligt sind.
+Als Teil unserer fortlaufenden Bemühungen, Windows-Entwicklern dabei zu helfen, ihre Apps durch Anzeigen zu monetarisieren, bieten wir das [Programm für Herausgeber von Windows Premium-Anzeigen](https://www.windowspremiumapps.com) an. Dies ist eine kuratierte Sammlung von Apps und Spielen mit Anzeigen, die in Bezug auf Nutzung, Interaktion und Erfahrung die beste Leistung bieten. Diese Apps und Spiele sind Anzeigbarkeits-zertifiziert und haben eine global verteilte Zielgruppe identifizierbarer Benutzer, die besonders engagiert sind.
 
-Werbekunden aus unserer Partner-Anzeigennetzwerken können diese apps separat identifizieren und schalten Premium, hoher Kapazität anzeigen exklusiv für diese apps für den höchsten Return on Investment ihre Kampagnen. Für Entwickler bedeutet dies, dass apps, die Teil dieses Programms werden weitere Umsatz verdienen können.
+Werbekunden unserer Partner-Anzeigennetzwerke können diese Apps separat identifizieren und primäre, hocheffiziente Anzeigen ausschließlich für diese Apps anbieten, mit besonders hoher Rentabilität für ihre Kampagnen. Für Entwickler bedeutet dies, dass Apps, die Teil dieses Programms sind, weiteren Umsatz verdienen können.
 
-## <a name="how-does-microsoft-add-apps-to-this-program"></a>Hinzufügen Microsoft apps wie folgt? 
+## <a name="how-does-microsoft-add-apps-to-this-program"></a>Wie fügt Microsoft diesem Programm Apps hinzu? 
 
-Wir prüfen kontinuierlich apps im Store mit den [berechtigten Kriterien](#what-are-the-criteria-for-apps-in-the-program). Apps, die die berechtigten Kriterien erfüllen sind platzieren Sie über ein Verfahren mit strengen manuelle Überprüfung für eine glatte, klar umrissener Bedarf benutzererfahrung zu überprüfen und um sicherzustellen, dass anzeigen auch platziert werden, um unbeabsichtigte Klicks zu vermeiden. Apps, die die automatische und manuelle Prozess Ausblenden deaktivieren werden dann in das Programm hinzugefügt.
+Wir überprüfen kontinuierlich Apps im Store auf deren [Qualifizierungskriterien](#what-are-the-criteria-for-apps-in-the-program). Apps, die den Qualifizierungskriterien entsprechen, unterliegen einer strengen manuellen Überprüfung, um eine reibungslose, klar definierte Erfahrung anzubieten und sicherzustellen, dass Anzeigen perfekt platziert werden, um unbeabsichtigte Klicks zu vermeiden. Apps, die die automatische und manuelle Überprüfung bestehen, werden dem Programm hinzugefügt.
 
-Dies ist derzeit ein Programm ausschließlich per Einladung und lediglich Besprechung berechtigten Kriterien nicht automatisch ein Anrecht eine app Teil des Programms Premium.Wenn Sie weitere Informationen zu verbessern Ihre app-Erfahrung, um sich zu qualifizieren für das Programm wissen möchten, wenden Sie sich an uns am aiacare@microsoft.com.
+Das Programm ist derzeit nur auf Einladung erhältlich und selbst wenn es den Qualifizierungskriterien entspricht, bedeutet dies nicht automatisch, dass die App in das Premium-Programm integriert wird. Weitere Informationen zum Verbessern der App-Erfahrung und um sich für das Programm zu qualifizieren finden Sie unter aiacare@microsoft.com.
 
-## <a name="what-are-the-criteria-for-apps-in-the-program"></a>Was sind die Kriterien für apps im Programm?
+## <a name="what-are-the-criteria-for-apps-in-the-program"></a>Was sind die Kriterien für Apps in diesem Programm?
 
-In diesem Programm Apps müssen die folgenden Kriterien erfüllen:
+Apps, die an diesem Programm teilnehmen, müssen die folgenden Kriterien erfüllen:
 
-* Minimum gewährleistet täglichen Ad Anforderung Volume. 
-* Hohe sichtbarkeitsrate für Aufrufe. 
-* Guter Qualität klickt auf Ihren Beitrag zu eine minimale Click-through--Rate über alle Anzeigeformate hinweg. 
-* Befolgen Sie Interactive Advertising Bureau (IAB) standard Größen und Platzierungsmethoden. Keine ausgeblendeten anzeigen.
-* Klare Platzierung von Banneranzeigen (z. B. anzeigen sind nicht nebeneinander Wert).
-* Anzeigeeinheiten werden an mehrere apps nicht verwendet.
-* [Ablauf der klar definierten Benutzer](https://blogs.windows.com/buildingapps/2017/08/31/best-practices-using-video-ads-windows-apps/) bis zu dem Punkt, in denen der video bzw. interstitial Ad Banner, wird angezeigt. Videoanzeigen werden nicht vorab zwischengespeichert. 
-* Ad-Aktualisierungsverhalten gesteuert, damit die anzeigen, die vom Server anzeigenvermittlung zurückgegebene immer wiedergegeben werden.
-* Gut Store Vorhandensein mit deaktivieren Sie app-Beschreibungen, High-Fidelity-Screenshots und Symbole, die an den Store hochgeladen. Videotrailer werden dringend empfohlen.
-* Keine betrügerische Aktivität.
+* Garantierter Mindestwert für ein tägliches Anzeigenanforderungsvolumen. 
+* Hohe Anzeigbarkeitsrate für Anzeigenaufrufe. 
+* Gute Qualitätsaufrufe mit einer Mindestklickanzahl für alle Anzeigenformate. 
+* Folgen den standardmäßigen Interactive Advertising Bureau (IAB) Größen und Platzierungsmethoden. Keine ausgeblendeten Anzeigen.
+* Reine Platzierung von Banneranzeigen (z. B. Anzeigen liegen nicht nebeneinander).
+* Anzeigeneinheiten werden nicht in mehreren Apps verwendet.
+* [Klar definierte Benutzerabläufe](https://blogs.windows.com/buildingapps/2017/08/31/best-practices-using-video-ads-windows-apps/), bis zur Anzeige der Video- und/oder Interstitialwerbung. Videoanzeigen sind nicht zwischengespeichert. 
+* Ein kontrolliertes Anzeigen-Aktualisierungsverhalten, damit die vom Anzeigenvermittlungsserver zurückgegebenen Anzeigen immer wiedergegeben werden.
+* Großartiger Auftritt im Store mit klarer App-Beschreibungen, hoher Genauigkeit der Bildschirmfotos und Symbolen, die im Store hochgeladen sind. Videotrailer werden dringend empfohlen.
+* Keine betrügerischen Handlungen.
 
-## <a name="can-apps-get-removed-from-the-program"></a>Können apps aus dem Programm entfernt?
+## <a name="can-apps-get-removed-from-the-program"></a>Können Apps aus dem Programm entfernt werden?
 
-In regelmäßigen Abständen um sicherzustellen, dass sie weiterhin die berechtigten Kriterien erfüllen, werden Apps in der Anwendung überwacht. Um eine tägliche Ad Anforderung Mindestmenge tolerieren, stellen Sie sicher, dass Ihre app-Nutzung im Laufe der Zeit erheblich nicht gelöscht werden. Eine hervorragende Möglichkeit hierzu ist durch [Ausführen von regulären Werbekampagnen](https://developer.microsoft.com/en-us/store/promote-your-apps).
+Apps in der Anwendung werden in regelmäßigen Abständen überwacht, um sicherzustellen, dass sie weiterhin die Qualifizierungskriterien erfüllen. Um den Mindestwert für ein tägliches Anzeigenanforderungsvolumen aufrecht zu erhalten, stellen Sie sicher, dass Ihre App-Nutzung nicht mit der Zeit deutlich zurückgeht. Eine effiziente Vorgehensweise dafür besteht darin, [reguläre Werbekampagnen für Apps durchzuführen](https://developer.microsoft.com/en-us/store/promote-your-apps).
 
-## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>Kann ich zusätzliche Marketingmaterialien um meine app in der Anwendung zu präsentieren Geben? 
+## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>Kann ich zusätzliche Marketingmaterialien bereitstellen, um meine App im Programm zu präsentieren? 
 
-Alle Inhalte, die als Teil der Store-Übermittlungs hochgeladen wird automatisch verwendet, um Premium-apps zu bewerben. Darüber hinaus, wenn Sie weitere app oder Spiel Screenshots, Trailer für Spiele und rich Beschreibungen verwenden möchten, wenden Sie sich an uns am aiacare@microsoft.com.
+Alle Inhalte, die als Teil der Store-Übermittlung hochgeladen werden, werden automatisch verwendet, um die Premium-Apps zu präsentieren. Wenn Sie darüber hinaus weitere Bildschirmfotos für Apps oder Spiele, Trailer für Spiele und umfassende Beschreibungen verwenden möchten, wenden Sie sich an uns unter aiacare@microsoft.com.

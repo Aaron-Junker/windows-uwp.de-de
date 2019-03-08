@@ -1,23 +1,23 @@
 ---
-Description: Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
+Description: Sound vervollständigt die Benutzerumgebung einer Anwendung und trägt zur Vermittlung des Windows-Feelings auf allen Plattformen bei.
 label: Sound
 title: Sound
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 pm-contact: kisai
 design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058511"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614375"
 ---
 # <a name="sound"></a>Sound
 
@@ -33,7 +33,7 @@ Der [**ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-Der **ElementSoundPlayer** verfügt über drei Zustände: **Ein**, **Aus** und **Auto**.
+Die **ElementSoundPlayer** verfügt über drei Zustände: **Auf** **aus** und **automatisch**.
 
 In der Einstellung **Aus** wird unabhängig davon, wo Ihre App ausgeführt wird, niemals Sound wiedergegeben. In der Einstellung **Ein** werden für Sounds für Ihre App auf jeder Plattform wiedergegeben.
 
@@ -44,9 +44,9 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ```
 
 Die **SpatialAudioMode**-Eigenschaft kann diese Werte erhalten: 
-- **Automatische**: räumliches Audio wird eingeschaltet, wenn der Ton eingeschaltet ist. 
-- **Deaktiviert**: räumliches Audio ist immer ausgeschaltet, selbst wenn Sound eingeschaltet ist.
-- **Ein**: räumliches Audio wird immer wiedergegeben.
+- **Auto**: Räumliche Audio wird eingeschaltet, wenn der sound ist. 
+- **Deaktiviert**: Räumliche Audio ist immer aus, selbst wenn Sie sound ist.
+- **Ein**: Räumliche Audio wird immer wiedergegeben.
 
 Weitere Informationen zu räumlichem Audio und wie XAML diesen behandelt finden Sie unter [AudioGraph – räumliches Audio](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
 
@@ -69,7 +69,7 @@ Wobei die maximale Lautstärke (relativ zur Systemlautstärke) 1,0 ist und die m
 
 Wenn der Standardsound eines Steuerelements nicht erwünscht ist, kann er deaktiviert werden. Dies erfolgt über die **ElementSoundMode**-Option für das Steuerelement.
 
-Die **ElementSoundMode**-Option verfügt über zwei Zustände: **Aus** und **Standard**. Wenn nichts festgelegt wird, hat sie den Zustand **Standard**. In der Einstellung **Aus** wird jeder Sound, der durch das Steuerelement wiedergegeben werden soll, stumm geschaltet, *außer der Fokus*.
+Die **ElementSoundMode** verfügt über zwei Zustände: **Off** und **Standard**. Wenn nichts festgelegt wird, hat sie den Zustand **Standard**. In der Einstellung **Aus** wird jeder Sound, der durch das Steuerelement wiedergegeben werden soll, stumm geschaltet, *außer der Fokus*.
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -118,7 +118,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>Navigation innerhalb einer Seite
 
-Beim Navigieren zwischen Bereichen oder Ansichten innerhalb einer app Seite (siehe [Registerkarten und Pivots](../controls-and-patterns/pivot.md)), besteht in der Regel bidirektionale Bewegung. Das bedeutet, dass Sie zur nächsten Ansicht bzw. zum nächsten Bereich (oder zur/zum vorherigen) wechseln können, ohne die aktuelle App-Seite zu verlassen, auf der Sie sich befinden.
+Beim Navigieren zwischen den Bereichen oder Ansichten innerhalb der app-Seite (finden Sie unter [Registerkarten und pivotiert](../controls-and-patterns/pivot.md)), besteht in der Regel bidirektionalen verschieben. Das bedeutet, dass Sie zur nächsten Ansicht bzw. zum nächsten Bereich (oder zur/zum vorherigen) wechseln können, ohne die aktuelle App-Seite zu verlassen, auf der Sie sich befinden.
 
 Das Audioerlebnis für dieses Navigationskonzept wird durch die **MovePrevious**- und **MoveNext**-Sounds umgesetzt.
 
@@ -149,7 +149,7 @@ ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 
 Der **Focus**-Sound ist der einzige implizite Sound in unserem System. Das heißt, dass ein Benutzer nicht mit irgendetwas direkt interagiert, jedoch trotzdem einen Sound hört.
 
-Das Fokussieren geschieht, wenn ein Benutzer durch eine App navigiert– dies kann mit dem Gamepad, der Tastatur, der Fernbedienung oder mit Kinect geschehen. In der Regel wird der **Focus**-Sound *bei PointerEntered- oder Mauszeigeereignissen nicht wiedergegeben*.
+Das Fokussieren geschieht, wenn ein Benutzer durch eine App navigiert – dies kann mit dem Gamepad, der Tastatur, der Fernbedienung oder mit Kinect geschehen. In der Regel wird der **Focus**-Sound *bei PointerEntered- oder Mauszeigeereignissen nicht wiedergegeben*.
 
 Um ein Steuerelement zur Wiedergabe des **Focus**-Sounds einzurichten, wenn Ihr Steuerelement den Fokus erhält, rufen Sie auf:
 

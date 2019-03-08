@@ -1,22 +1,22 @@
 ---
 title: Neuigkeiten in der Windows-Dokumentation im Februar 2018 – Entwicklung von UWP-Apps
-description: Neue Features, Videos und Entwicklerleitfäden in der Entwicklerdokumentation für Windows10 im Februar2018
-keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows10, Februar
+description: Neue Features, Videos und Entwicklerleitfäden in der Entwicklerdokumentation für Windows 10 im Februar 2018
+keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 10, Februar
 ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115837"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632865"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Februar 2018
 
 Die Entwicklerdokumentation für die Windows-Plattform wird ständig mit Informationen über neue Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden und Videos wurden im Januar bereitgestellt und enthalten neue oder aktualisierte Informationen für Windows-Entwickler.
 
-Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
+Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
 
 ## <a name="features"></a>Features
@@ -41,7 +41,7 @@ Wir haben unsere [XAML-Seitenlayout](../design/layout/layouts-with-xaml.md)-Doku
 
 ### <a name="subscription-add-ons-are-now-available-to-all-developers"></a>Abonnement-Add-Ons sind jetzt für alle Entwickler verfügbar
 
-Erstellen und veröffentlichen Sie Abonnement-Add-Ons, um digitale Produkte in Ihrer App und Ihren Spielen zu verkaufen (z.B. App-Features oder digitale Inhalte), die mit einer automatisierten wiederkehrenden Abrechnung arbeiten. Weitere Details finden Sie unter [Abonnement-Add-Ons für Ihre App aktivieren](../monetize/enable-subscription-add-ons-for-your-app.md).
+Erstellen und veröffentlichen Sie Abonnement-Add-Ons, um digitale Produkte in Ihrer App und Ihren Spielen zu verkaufen (z. B. App-Features oder digitale Inhalte), die mit einer automatisierten wiederkehrenden Abrechnung arbeiten. Weitere Details finden Sie unter [Abonnement-Add-Ons für Ihre App aktivieren](../monetize/enable-subscription-add-ons-for-your-app.md).
 
 ## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
@@ -55,17 +55,17 @@ Wir haben den [Content-Design-Grundlagen](../design/basics/content-basics.md) ei
 
 ### <a name="writing-style"></a>Schreibstil
 
-Wir haben unseren Artikel über Ausdrucksweise und Tonfall aktualisiert und erweitert und diesen in eine [Schreibstilanleitung](../design/style/writing-style.md) umgewandelt. Diese neue Information enthält Prinzipien zur Erstellung von effektivem Text in Ihrer App sowie bewährte Methoden für das Schreiben von Steuerelementen wie z.B. Fehlermeldungen oder Dialogfelder.
+Wir haben unseren Artikel über Ausdrucksweise und Tonfall aktualisiert und erweitert und diesen in eine [Schreibstilanleitung](../design/style/writing-style.md) umgewandelt. Diese neue Information enthält Prinzipien zur Erstellung von effektivem Text in Ihrer App sowie bewährte Methoden für das Schreiben von Steuerelementen wie z. B. Fehlermeldungen oder Dialogfelder.
 
 ### <a name="getting-started-for-game-development"></a>Erste Schritte bei der Spiele-Entwicklung
 
-Möchten Sie Spiele für Windows10 entwickeln? Die neue Seite [Erste Schritte bei der Spiele-Entwicklung](../gaming/getting-started.md) ermöglicht einen vollständigen Überblick darüber, wie Sie sich vorbereiten, registriert und Ihre Apps und Spiele übermitteln.
+Möchten Sie Spiele für Windows 10 entwickeln? Die neue Seite [Erste Schritte bei der Spiele-Entwicklung](../gaming/getting-started.md) ermöglicht einen vollständigen Überblick darüber, wie Sie sich vorbereiten, registriert und Ihre Apps und Spiele übermitteln.
 
 ## <a name="videos"></a>Videos
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live Creators-Programm
 
-Mit dem Xbox Live Creators-Programm können Entwickler schnell ihre UWP-Spiele auf Xbox One und Windows10 veröffentlichen. [Sehen Sie sich das Video](https://www.youtube.com/watch?v=zpFfHHBkVq4) für weitere Informationen zu dem Programm an, und gehen Sie zu [dieser Seite](https://www.xbox.com/developers/creators-program), um zu beginnen.
+Mit dem Xbox Live Creators-Programm können Entwickler schnell ihre UWP-Spiele auf Xbox One und Windows 10 veröffentlichen. [Sehen Sie sich das Video](https://www.youtube.com/watch?v=zpFfHHBkVq4) für weitere Informationen zu dem Programm an, und gehen Sie zu [dieser Seite](https://www.xbox.com/developers/creators-program), um zu beginnen.
 
 ### <a name="creating-3d-app-launchers-for-windows-mixed-reality"></a>Erstellen von 3D-Anwendungsstartern für Windows Mixed Reality
 

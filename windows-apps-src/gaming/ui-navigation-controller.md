@@ -4,14 +4,14 @@ description: Verwenden Sie die Windows.Gaming.Input-Benutzeroberflächen-Navigat
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, UI, Navigation
+keywords: Windows 10, UWP, Spiele, UI, Navigation
 ms.localizationpriority: medium
 ms.openlocfilehash: ec5ba9d893a622e256030601cca204abab35045f
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059711"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599925"
 ---
 # <a name="ui-navigation-controller"></a>Benutzeroberflächen-Navigationscontroller
 
@@ -88,25 +88,25 @@ Die folgende Tabelle fasst zusammen, wie der _erforderliche Satz_ der Navigation
 |              Nach rechts | Linker Ministick nach rechts/Steuerkreuz nach rechts | Joystick nach rechts        | Steuerkreuz nach rechts        |
 |               Ansicht | Ansicht-Taste                         | Ansicht-Taste        | Ansicht-Taste        |
 |               Menü | Menü-Taste                         | Menü-Taste        | Menü-Taste        |
-|             Annehmen | A-Taste                            | Taste für Aktion1    | A-Taste           |
-|             Abbrechen | B-Taste                            | Taste für Aktion2    | B-Taste           |
+|             Annehmen | A-Taste                            | Taste für Aktion 1    | A-Taste           |
+|             Abbrechen | B-Taste                            | Taste für Aktion 2    | B-Taste           |
 
 Die folgende Tabelle fasst zusammen, wie der _optionale Satz_ der Navigationsbefehle verschiedenen Eingabegeräten zugeordnet wird.
 
 | Navigationsbefehl | Gamepad-Eingabe          | Eingabe per Arcade-Joystick | Rennlenkrad-Eingabe    |
 | ------------------:| ---------------------- | ------------------ | --------------------- |
-|             BildAuf | Linker Trigger           | _nicht unterstützt_    | _variiert_              |
-|           BildAb | Rechter Trigger          | _nicht unterstützt_    | _variiert_              |
-|           PageLeft | Linker Bumper            | _nicht unterstützt_    | _variiert_              |
-|          PageRight | Rechter Bumper           | _nicht unterstützt_    | _variiert_              |
-|           ScrollUp | Rechter Ministick nach oben    | _nicht unterstützt_    | _variiert_              |
-|         ScrollDown | Rechter Ministick nach unten  | _nicht unterstützt_    | _variiert_              |
-|         ScrollLeft | Rechter Ministick nach links  | _nicht unterstützt_    | _variiert_              |
-|        ScrollRight | Rechter Ministick nach rechts | _nicht unterstützt_    | _variiert_              |
-|           Context1 | X-Taste               | _nicht unterstützt_    | X-Taste (_gängig_) |
-|           Context2 | Y-Taste               | _nicht unterstützt_    | Y-Taste (_gängig_) |
-|           Context3 | Linken Ministick drücken  | _nicht unterstützt_    | _variiert_              |
-|           Context4 | Rechten Ministick drücken | _nicht unterstützt_    | _variiert_              |
+|             BildAuf | Linker Trigger           | _Nicht unterstützt_    | _variiert nach_              |
+|           BildAb | Rechter Trigger          | _Nicht unterstützt_    | _variiert nach_              |
+|           PageLeft | Linker Bumper            | _Nicht unterstützt_    | _variiert nach_              |
+|          PageRight | Rechter Bumper           | _Nicht unterstützt_    | _variiert nach_              |
+|           ScrollUp | Rechter Ministick nach oben    | _Nicht unterstützt_    | _variiert nach_              |
+|         ScrollDown | Rechter Ministick nach unten  | _Nicht unterstützt_    | _variiert nach_              |
+|         ScrollLeft | Rechter Ministick nach links  | _Nicht unterstützt_    | _variiert nach_              |
+|        ScrollRight | Rechter Ministick nach rechts | _Nicht unterstützt_    | _variiert nach_              |
+|           Context1 | X-Taste               | _Nicht unterstützt_    | X-Taste (_gängig_) |
+|           Context2 | Y-Taste               | _Nicht unterstützt_    | Y-Taste (_gängig_) |
+|           Context3 | Linken Ministick drücken  | _Nicht unterstützt_    | _variiert nach_              |
+|           Context4 | Rechten Ministick drücken | _Nicht unterstützt_    | _variiert nach_              |
 
 
 ## <a name="detect-and-track-ui-navigation-controllers"></a>Benutzeroberflächen-Navigationscontroller erkennen und nachverfolgen
@@ -213,7 +213,7 @@ In einigen Fällen möchten Sie möglicherweise ermitteln, ob eine Taste von „
 
 Das [InputInterfacingUWP-Beispiel _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) veranschaulicht, wie sich verschiedene Eingabegeräte als Benutzeroberflächen-Navigationscontroller verhalten.
 
-## <a name="see-also"></a>Weitere Informationen finden Sie unter
+## <a name="see-also"></a>Siehe auch
 [Windows.Gaming.Input.Gamepad][]
 [Windows.Gaming.Input.ArcadeStick][]
 [Windows.Gaming.Input.RacingWheel][]

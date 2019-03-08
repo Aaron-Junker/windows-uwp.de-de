@@ -3,24 +3,24 @@ title: Geräteportal – API-Referenz für Fiddler
 description: Erfahren Sie, wie Sie die Fiddler-Ablaufverfolgung programmgesteuert aktivieren/deaktivieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937811"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603335"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler-Einstellungen – API-Referenz   
 Sie können die Fiddler-Netzwerkablaufverfolgung für Ihr Dev Kit mittels dieser REST-API aktivieren und deaktivieren.
 
-## <a name="determine-if-fiddler-tracing-is-enabled"></a>Ermitteln Sie, ob der Fiddler-Ablaufverfolgung aktiviert ist.
+## <a name="determine-if-fiddler-tracing-is-enabled"></a>Ermitteln, ob die Fiddler-Ablaufverfolgung aktiviert ist
 
 **Anforderung**
 
-Sie können überprüfen, um festzustellen, ob der Fiddler-Ablaufverfolgung mithilfe der folgenden Anforderung für das Gerät aktiviert ist.
+Sie können mit der folgenden Anforderung überprüfen, ob die Fiddler-Ablaufverfolgung auf dem Gerät aktiviert ist.
 
 Methode      | Anforderungs-URI
 :------     | :-----
@@ -40,15 +40,15 @@ GET | /ext/fiddler
 
 **Antwort**   
 
-- JSON Bool Eigenschaft IsProxyEnabled welche Bezeichner gibt an, ob der Proxy aktiviert ist oder nicht.
+- Die boolesche JSON-Eigenschaft „ IsProxyEnabled“ gibt an, ob der Proxy aktiviert ist.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-200 | Erfolg
+200 | Möglich
 4XX | Fehlercodes
 5XX | Fehlercodes
 
@@ -85,7 +85,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 - Keine  
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -121,7 +121,7 @@ DELETE | /ext/fiddler
 
 - Keine 
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -132,10 +132,10 @@ HTTP-Statuscode      | Beschreibung
 5XX | Fehlercodes
 
 <br />
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Xbox
 
 ## <a name="see-also"></a>Siehe auch
-- [Konfigurieren von Fiddler für UWP auf Xbox](uwp-fiddler.md)
+- [Konfigurieren von Fiddler für UWP für Xbox](uwp-fiddler.md)
 

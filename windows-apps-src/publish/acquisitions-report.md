@@ -1,76 +1,76 @@
 ---
-Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
+Description: Akquisitionen Bericht im Partner Center können Sie sehen, wer erhalten und Ihre app, demografische Informationen installiert hat und plattformdetails.
 title: Bericht „Käufe“
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, Käufe, App-Verkäufe, App-Downloads, Installationen, Trichter, Käufe, Konvertierungen, Kanal, App-Seitenaufrufe
+keywords: Windows 10, UWP, Käufe, App-Verkäufe, App-Downloads, Installationen, Trichter, Käufe, Konvertierungen, Kanal, App-Seitenaufrufe
 ms.localizationpriority: medium
 ms.openlocfilehash: 33d5885c5161793807bf32f62ff2df4bab5b2c1d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918726"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653065"
 ---
 # <a name="acquisitions-report"></a>Bericht „Käufe“
 
 
-Der Bericht " **Käufe** " im [Partner Center](https://partner.microsoft.com/dashboard) können Sie sehen, hat, die erworben und installiert die app, und Sie können demografische und plattformspezifische Details einsehen und zeigt Informationen dazu, wie Kunden unter Windows 10 (einschließlich Xbox) zum Eintrag Ihrer app gelangt sind. Sie können auch in der Nähe in Echtzeit Kaufdaten für den letzten oder 70-zwei Stunden-Zeitraum anzeigen. 
+Die **Akquisitionen** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) können Sie anzeigen, die erhalten und Ihre app, demografische Informationen installiert hat und plattformdetails und zeigt Informationen dazu, wie Kunden mit Windows 10 (einschließlich Xbox) bei Ihrer app-Liste erreicht haben. Sie können auch near Real-Time Kaufdaten für den letzten oder 70-zwei-Stunden-Zeitraum anzeigen. 
 
-Sie können diese Daten im Partner Center oder [den Bericht herunterladen](download-analytic-reports.md) offline anzeigen anzeigen. Sie können diese Daten aber auch programmgesteuert mit unseren [REST-API für Analysen](../monetize/access-analytics-data-using-windows-store-services.md) abrufen.
+Sie können diese Daten anzeigen, im Partner Center oder [Bericht herunterladen](download-analytic-reports.md) offline anzeigen. Sie können diese Daten aber auch programmgesteuert mit unseren [REST-API für Analysen](../monetize/access-analytics-data-using-windows-store-services.md) abrufen.
 
-In diesem Bericht steht **Kauf** für einen neuen Kunden, der eine Lizenz Ihrer App erworben hat (entweder für eine kostenpflichtige oder eine kostenlose App). **Installieren** bezieht sich auf die App, die auf einem Windows10-Gerät installiert wird.
+In diesem Bericht steht **Kauf** für einen neuen Kunden, der eine Lizenz Ihrer App erworben hat (entweder für eine kostenpflichtige oder eine kostenlose App). **Installieren** bezieht sich auf die App, die auf einem Windows 10-Gerät installiert wird.
 
 > [!IMPORTANT]
-> Im Bericht **Käufe** sind keine Daten über Erstattungen, Rückbuchungen, Rückvergütungen usw. enthalten. Um die Erträge aus Ihren Apps zu schätzen, besuchen Sie [Auszahlungszusammenfassung](payout-summary.md). Klicken Sie im Abschnitt **Reserviert** auf den Link **Reservierte Transaktionen herunterladen**.
+> Die **Akquisitionen** Bericht enthält keine Daten über Rückerstattungen, Rückbuchungen, eine verbrauchsbasierte kostenzuteilung. Um Ihre app-Erlöse schätzen zu können, finden Sie unter [auszahlungszusammenfassung](payout-summary.md). Klicken Sie im Abschnitt **Reserviert** auf den Link **Reservierte Transaktionen herunterladen**.
 >
 > Mit Ausnahme von Informationen zu den Seitenaufrufen (wie unten beschrieben) enthält dieser Bericht keine Daten im Zusammenhang mit Kunden, die eine App erwerben, ohne auf einem Microsoft-Konto angemeldet zu sein.
 
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
 
-Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **30D** (30Tage), aber Sie können Daten für 3, 6 oder 12Monate anzeigen, oder für einen benutzerdefinierten Zeitraum, den Sie angeben. In der Nähe Echtzeit Daten für alle Optionen angezeigt werden (außer in **App insgesamt** Daten). Die **1 H** und **72 Stunden** Zeit gelten nur Punkte, die **täglich App** -Registerkarte des Diagramms **Käufe** und auf der Registerkarte " **Käufe** " des Diagramms **Märkte** . 
+Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **30D** (30 Tage), aber Sie können Daten für 3, 6 oder 12 Monate anzeigen, oder für einen benutzerdefinierten Zeitraum, den Sie angeben. Daten werden nahezu in Echtzeit für alle Optionen angezeigt werden (außer in **Kumulativer App** Daten). Die **1H** und **72H** Zeiträume gelten nur für die **App täglich** Registerkarte die **Akquisitionen** Diagramm und die  **Akquisitionen** Registerkarte die **Märkte** Diagramm. 
 
 Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite nach Markt und/oder Gerätetyp zu filtern.
 
--   **Markt**: der Standardfilter lautet **Alle Märkte**, aber Sie können die Daten für Verkäufe auf einen oder mehrere Märkte begrenzen.
--   **Gerätetyp**: Die Standardeinstellung ist **Alle Geräte**. Wenn Daten für Käufe nur für einen bestimmten Gerätetyp angezeigt werden sollen (beispielsweise PCs, Konsolen oder Tablets), können Sie hier einen bestimmten angeben.
+-   **Markt**: Der Standardfilter ist **alle Märkte**, aber Sie können die Daten, Übernahmen ein oder mehrere Märkte einschränken.
+-   **Gerätetyp**: Die Standardeinstellung ist **alle Geräte**. Wenn Daten für Käufe nur für einen bestimmten Gerätetyp angezeigt werden sollen (beispielsweise PCs, Konsolen oder Tablets), können Sie hier einen bestimmten Typ auswählen.
 
 Die Informationen in allen unten angezeigten Diagrammen beziehen sich auf den ausgewählten Zeitraum und alle von Ihnen ausgewählten Filter. In einigen Abschnitten können Sie zusätzliche Filter anwenden.
 
 
 ## <a name="acquisitions"></a>Käufe
 
-Das Diagramm **Käufe** zeigt, wie oft Ihre Käufe (ein neuer Kunde, der eine Lizenz für Ihre App ausgewählt hat) im ausgewählten Zeitraum pro Tag oder Woche gekauft wurde. (Wenn Sie **Filter anwenden** zum Anzeigen von Daten für eine längere Dauer verwenden, werden die Kaufdaten nach Woche gruppiert.) Nur Käufe von Kunden, die auf einem gültigen Microsoft-Konto angemeldet sind, sind in diesem Diagramm enthalten. 
+Das Diagramm **Käufe** zeigt, wie oft Ihre Käufe (ein neuer Kunde, der eine Lizenz für Ihre App ausgewählt hat) im ausgewählten Zeitraum pro Tag oder Woche gekauft wurde. (Wenn Sie die Daten über einen längeren Zeitraum mithilfe von **Filter anwenden** anzeigen, werden die Erwerbsdaten nach Woche gruppiert.) Nur die Übernahmen, die von Kunden, die mit einem gültigen Microsoft-Konto angemeldet sind, sind in diesem Diagramm enthalten. 
 
-Standardmäßig zeigen wir die **täglich App** -Ansicht, die in der Nähe Echtzeit-Daten enthält. Sie können auch anzeigen, wie oft die App während ihrer gesamten Lebensdauer gekauft wurde, indem Sie **App Insgesamt** auswählen. Zeigt den kumulierten Gesamtwert aller Käufe an (ab der ersten Veröffentlichung Ihrer App).
+Standardmäßig wird die **App täglich** Ansicht, die nahe-Echtzeit-Daten enthält. Sie können auch anzeigen, wie oft die App während ihrer gesamten Lebensdauer gekauft wurde, indem Sie **App Insgesamt** auswählen. Zeigt den kumulierten Gesamtwert aller Käufe an (ab der ersten Veröffentlichung Ihrer App).
 
-**Bruttoumsatz** für Ihre app (über den Oktober 2016 - vorhanden) stehen auch in diesem Diagramm mit den Gesamtbetrag erzielt aus app-Verkäufen (in US-Dollar). Beachten Sie, dass dieser Betrag für alle Erstattungen, Rückbuchungen, Ausgleich usw. nicht berücksichtigt.
+**Bruttoumsatz** für Ihre app (ab Oktober 2016 - vorhanden) finden Sie auch in diesem Diagramm, zeigt die Gesamtmenge von app-Verkäufe (in US-Dollar), die durch. Beachten Sie, dass diese Menge nicht für alle Rückerstattungen, Rückbuchungen, Chargeback usw. berücksichtigt wird.
 
 Sie können optional die Ergebnisse danach filtern, ob die Übernahme vom Client oder einem webbasierten Store und/oder Betriebssystemversion stammt.
 
 > [!NOTE]
 > Sie können diese Daten auch programmgesteuert mit der Methode [Abrufen von App-Käufen](../monetize/get-app-acquisitions.md) unserer [Analyse-REST-API](../monetize/access-analytics-data-using-windows-store-services.md) abrufen.
 
-In der **App täglich** Wenn der **30d** Zeitraum ausgewählt wird, möglicherweise Kreis angezeigt. Diese stellen eine erhebliche Erhöhung oder einen bestimmten Wert, die wir glauben, dass Sie kennen sollten verringern. Das Datum, an dem die Kreis angezeigt wird, stellt am Ende der Woche, in der wir eine erhebliche Erhöhung oder Verringerung, die im Vergleich zu Woche festgestellt, dar. Um weitere Informationen zu Änderungen zu sehen, zeigen Sie auf den Kreis.  
+In der **App täglich** anzeigen, wenn die **30D** Zeitraum ausgewählt ist, wird möglicherweise Kreis Marker wird angezeigt. Dies eine erhebliche Leistungssteigerung darstellen, oder verringern Sie in einem angegebenen Wert, den wir glauben, dass Sie wissen möchten. Das Datum, die auf dem der Kreis angezeigt wird, stellt das Ende der Woche, die in der wir eine beträchtliche Zunahme oder verringern, die im Vergleich zu die Woche vor, die erkannt dar. Zeigen Sie auf den Kreis, um weitere Details zu Änderungen anzuzeigen.  
 
 > [!TIP]
-> Sie können weitere Einblicke im Zusammenhang mit erhebliche Änderungen an der letzten 30 Tage im [Bericht](insights-report.md)anzeigen.
+> Sehen Sie weitere Informationen zu wesentlichen Änderungen in den letzten 30 Tagen in den [Insights-Bericht](insights-report.md).
 
 ## <a name="installs"></a>Installiert
 
-Das Diagramm **Installiert** zeigt an, wie häufig festgestellt wurde, dass ein Kunde Ihre App über den ausgewählten Zeitraum erfolgreich auf Windows10-Geräten (einschließlich Xbox One Konsolen) installiert hat. Es wird die Gesamtanzahl zusammen mit einem Diagramm dargestellt, das die Installation pro Tag oder Woche anzeigt (abhängig von der Dauer, die Sie ausgewählt haben). Optional können Sie die Ergebnisse nach Paketversion filtern.
+Das Diagramm **Installiert** zeigt an, wie häufig festgestellt wurde, dass ein Kunde Ihre App über den ausgewählten Zeitraum erfolgreich auf Windows 10-Geräten (einschließlich Xbox One Konsolen) installiert hat. Es wird die Gesamtanzahl zusammen mit einem Diagramm dargestellt, das die Installation pro Tag oder Woche anzeigt (abhängig von der Dauer, die Sie ausgewählt haben). Optional können Sie die Ergebnisse nach Paketversion filtern.
 
 Zur Gesamtübersicht der Installationen gehören:
--   **Installationen auf mehreren Windows 10-Geräten.** Wenn derselbe Kunde Ihre App beispielsweise aus zwei Windows 10-PCs und einer Xbox One Konsole installiert, werden drei Installationen gezählt.
--   **Erneute Installationen.** Wenn eine Kunde Ihre App beispielsweise heute installiert, morgen deinstalliert und im nächsten Monat erneut installiert, werden zwei Installationen gezählt.
+-   **Auf mehreren Windows 10-Geräten installiert werden.** Wenn derselbe Kunde Ihre App beispielsweise aus zwei Windows 10-PCs und einer Xbox One Konsole installiert, werden drei Installationen gezählt.
+-   **Neu installiert werden.** Wenn eine Kunde Ihre App beispielsweise heute installiert, morgen deinstalliert und im nächsten Monat erneut installiert, werden zwei Installationen gezählt.
 
 Von der Gesamtansicht der Installationen sind ausgenommen:
--   **Installationen auf Nicht-Windows 10-Geräten.** Wenn Ihre App frühere Betriebssystemversionen z.B. Windows8.x oder Windows Phone8.x unterstützt, zählen wir keine Installationen auf diesen Geräten.
--   **Deinstallationen.** Wenn ein Kunde Ihre App vom Gerät deinstalliert, wird diese nicht von der Gesamtanzahl der Installationen abgezogen.
--   **Updates.** Wenn ein Kunde Ihre App beispielsweise heute installiert und eine Woche später eine App-Aktualisierung installiert, zählt dies nur als eine Installation.
--   **Vorinstallationen.** Wenn ein Kunde ein Gerät kauft, auf dem Ihre App vorinstalliert wurde, zählt dies nicht als Installation.
+-   **Auf nicht - Windows 10-Geräten installiert werden.** Wenn Ihre App frühere Betriebssystemversionen z. B. Windows 8.x oder Windows Phone 8.x unterstützt, zählen wir keine Installationen auf diesen Geräten.
+-   **Wird deinstalliert.** Wenn ein Kunde Ihre App vom Gerät deinstalliert, wird diese nicht von der Gesamtanzahl der Installationen abgezogen.
+-   **Aktualisiert.** Wenn ein Kunde Ihre App beispielsweise heute installiert und eine Woche später eine App-Aktualisierung installiert, zählt dies nur als eine Installation.
+-   **Sind bereits vorinstalliert.** Wenn ein Kunde ein Gerät kauft, auf dem Ihre App vorinstalliert wurde, zählt dies nicht als Installation.
 -   **Vom System initiierte Installationen.** Wenn Windows aus irgendeinem Grund Ihre App automatisch installiert, zählt dies nicht als Installation.
 
 > [!NOTE]
@@ -78,17 +78,17 @@ Von der Gesamtansicht der Installationen sind ausgenommen:
 
 ## <a name="acquisition-funnel"></a>App-Erwerbstrichter
 
-Der **Erwerbstrichter** zeigt an, wie viele Kunden jeden Schrittdes Trichters ausgeführt hat, von der Store-Seite mit der App bis hin zur Anzeige des Wechselkurses. Diese Daten helfen Ihnen Bereiche zu identifizieren, in denen Sie mehr investieren möchten, um die Käufe, Installationen oder Nutzung zu erhöhen.
+Der **Erwerbstrichter** zeigt an, wie viele Kunden jeden Schritt des Trichters ausgeführt hat, von der Store-Seite mit der App bis hin zur Anzeige des Wechselkurses. Diese Daten helfen Ihnen Bereiche zu identifizieren, in denen Sie mehr investieren möchten, um die Käufe, Installationen oder Nutzung zu erhöhen.
 
 > [!IMPORTANT]
 > Der **Erwerbstrichter** zeigt nur Daten für Kunden auf Windows 10 (einschließlich Xbox) über die letzten 90 Tage an.
 
 Die Schritte im Trichter sehen folgendermaßen aus:
 
-- **Seitenaufrufe**: Dieser Wert gibt die Gesamtanzahl der Store-Einträge Ihrer App an, einschließlich der Kontakte, die nicht mit einem Microsoft-Konto angemeldet sind. Dies umfasst nicht die Daten von Kunden, die diese Informationen nicht an Microsoft weitergeben möchten.
-- **Käufe**: die Anzahl der neuen Kunden, die eine Lizenz für Ihre App (Wenn sie mit ihrem Microsoft-Konto angemeldet sind) innerhalb von 48 Stunden nach Ansicht im Store-Eintrag erhalten haben.
-- **Installiert**: die Anzahl der Kunden, die die App nach dem Erwerb installiert haben.
-- **Verwendung**: die Anzahl der Kunden, die die App nach der Installation genutzt haben.
+- **Seitenaufrufe**: Dieser Wert gibt die Gesamtanzahl der Aufrufe Ihrer app Store-Auflistung an, z. B. Personen, die nicht mit einem Microsoft-Konto angemeldet sind. Dies umfasst nicht die Daten von Kunden, die diese Informationen nicht an Microsoft weitergeben möchten.
+- **Akquisitionen**: Die Anzahl von neuen Kunden, die eine Lizenz für Ihre app (Wenn Sie sich mit ihrem Microsoft-Konto mit Vorzeichen) innerhalb von 48 Stunden zum Anzeigen der Store-Liste abgerufen.
+- **Installiert**: Die Anzahl der Kunden, die die app nach dem Erwerb von es installiert.
+- **Nutzung**: Die Anzahl der Kunden, die app nach der Installation verwendet, haben.
 
 Sie können optional die Ergebnisse nach Geschlecht und/oder Altersgruppe filtern, sowie durch benutzerdefinierte Kampagnen-ID
 
@@ -107,21 +107,21 @@ Sie können diese Daten in einer visuellen **Karte** anzeigen, oder die Einstell
 Das Diagramm **Kundendemografie** zeigt demografische Informationen zu den Personen, die Ihre App erworben haben. Sie können sehen, wie viele Käufe (im ausgewählten Zeitraum) von Personen einer bestimmten Altersgruppe getätigt wurden und welches Geschlecht die Käufer hatten.
 
 > [!NOTE]
-> Einige Kunden haben festgelegt, dass sie diese Informationen nicht freigeben möchten. Falls die Altersgruppe oder das Geschlecht nicht ermittelt werden konnten, wird der Kauf als **Unbekannt** kategorisiert.
+> Einige Kunden haben festgelegt, dass sie diese Informationen nicht freigeben möchten. Falls die Altergruppe oder das Geschlecht nicht ermittelt werden konnten, wird der Kauf als **Unbekannt** kategorisiert.
 
  
 
 ## <a name="app-page-views-and-conversions-by-channel"></a>App-Seitenaufrufe und Konvertierungen nach -Kanal
 
-Das **App-Seitenaufrufe und Konvertierungen nach-Kanal** Diagramm können Sie sehen, wie Kunden unter Windows 10 zum Eintrag Ihrer app über den ausgewählten Zeitraum gelangt.
+Die **App Seitenaufrufe und Konvertierungen vom Kanal** Diagramm können Sie sehen, wie Kunden mit Windows 10 auf Ihrer app-Liste über den ausgewählten Zeitraum empfangen.
 
-In diesem Diagramm bezieht sich ein *Kanal* auf die Methode, über die ein Kunde zu der Eintragsseite für Ihre App gelangt ist (z.B. durch Browsen und Suchen im Store, über einen Link von einer externen Website oder einen Link aus einer Ihrer benutzerdefinierten Kampagnen usw.). Die folgenden Kanaltypen sind enthalten:
+In diesem Diagramm bezieht sich ein *Kanal* auf die Methode, über die ein Kunde zu der Eintragsseite für Ihre App gelangt ist (z. B. durch Browsen und Suchen im Store, über einen Link von einer externen Website oder einen Link aus einer Ihrer benutzerdefinierten Kampagnen usw.). Die folgenden Kanaltypen sind enthalten:
 
--   **Store-Verkehr:** Der Kunde hat den Store durchsucht und ist dabei auf den Eintrag Ihrer App aufmerksam geworden.
--   **Benutzerdefinierte Kampagne:** Der Kunde ist einem Link gefolgt, der eine [benutzerdefinierte Kampagnen-ID](create-a-custom-app-promotion-campaign.md) verwendet.
--   **Sonstiges:** Der Kunde ist einem externen Link von einer Website (ohne benutzerdefinierte Kampagnen-ID) zu Ihrem App-Eintrag gefolgt oder der Kunde ist einem Link zu Ihrem App-Eintrag gefolgt, der von einer Onlinesuchmaschine zurückgegeben wurde.
+-   **Store-Datenverkehr:** Der Kunde war durchsuchen oder Suchen in den Store, wenn sie Ihrer app-Liste angezeigt.
+-   **Benutzerdefinierte Kampagne:** Der Kunde folgen, einen Link, der verwendet eine [benutzerdefinierte Kampagnen-ID](create-a-custom-app-promotion-campaign.md).
+-   **Andere:** Der Kunde gefolgt einen externen Link (ohne alle benutzerdefinierten Kampagnen-ID) auf einer Website zu Ihrer app-Angebot oder der Kunde gefolgt einen Link von einer Suchmaschine für eine Auflistung von Ihrer app.
 
-Eine *Seitenansicht* bedeutet, dass ein Kunde Ihre app Store-Eintragsseite, entweder über den webbasierten Store oder über angezeigt die Store-app auf Windows 10. Dies umfasst Kontakte, die nicht mit einem Microsoft-Konto angemeldet sind. Einige Kunden haben festgelegt, das sie Microsoft diese Informationen nicht zur Verfügung stellen möchten.
+Ein *Seitenansicht* bedeutet, dass ein Kunde Angebotsseite Ihrer app-Store,, entweder über die Web-basierte Store oder in angezeigt der Store-app auf Windows 10. Dies umfasst Kontakte, die nicht mit einem Microsoft-Konto angemeldet sind. Einige Kunden haben festgelegt, das sie Microsoft diese Informationen nicht zur Verfügung stellen möchten.
 
 *Konvertierung* bedeutet, dass ein Kunde (der mit einem Microsoft-Konto angemeldet ist) eine Lizenz für Ihre App (entweder für eine kostenpflichtige oder eine kostenlose App) neu erworben hat.
 

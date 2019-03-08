@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 38a65a3532fe401f31fbf0da656aff1a141fa71a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940659"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636305"
 ---
 # <a name="mathematics-of-lighting"></a>Beleuchtungsmathematik
 
@@ -27,9 +27,9 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 
 [Umgebungsbeleuchtung](ambient-lighting.md) ist konstante Beleuchtung. Umgebungsbeleuchtung ist in alle Richtungen konstant und färbt alle Pixel eines Objekts identisch. Sie lässt sich schnell berechnen, bewirkt jedoch, dass Objekte flach und unrealistisch aussehen.
 
-[Diffuse Beleuchtung](diffuse-lighting.md) hängt sowohl von der Richtung des Lichts als auch von der Flächennormalen des Objektes ab. Diffuse Beleuchtung ist auf der Oberfläche eines Objekts durch die Änderung der Richtung des Lichts und den sich ändernden Oberflächenzahlvektor unterschiedlich. Es dauert länger, diffuse Beleuchtung zu berechnen, da sie sich für jeden Eckpunkt des Objektes ändert; der Vorteil der Verwendung liegt jedoch darin, dass sie Objekten einen Schatten und eine dreidimensionale (3D) Tiefe verleiht.
+[Diffuse Beleuchtung](diffuse-lighting.md) hängt sowohl von der Richtung des Lichts als auch von der Flächennormalen des Objekts ab. Diffuse Beleuchtung ist auf der Oberfläche eines Objekts durch die Änderung der Richtung des Lichts und den sich ändernden Oberflächenzahlvektor unterschiedlich. Es dauert länger, diffuse Beleuchtung zu berechnen, da sie sich für jeden Eckpunkt des Objektes ändert; der Vorteil der Verwendung liegt jedoch darin, dass sie Objekten einen Schatten und eine dreidimensionale (3D) Tiefe verleiht.
 
-[Spiegelnde Beleuchtung](specular-lighting.md) bezeichnet die hellen spiegelnden hellsten Bildteile, die auftreten, wenn Licht auf eine Objektfläche trifft und in Richtung der Kamera reflektiert wird. Spiegelnde Beleuchtung ist intensiver als diffuses Licht und fällt über die Objektoberfläche schneller ab. Die Berechnung von spiegelnder Beleuchtung ist zeitaufwendiger als die für diffuse Beleuchtung; der Vorteil der Anwendung liegt jedoch darin, dass die Oberfläche erheblich detailreicher wird.
+[Spiegelnde Beleuchtung](specular-lighting.md) bezeichnet die glänzenden spiegelnden hellsten Bildteile, die auftreten, wenn Licht auf eine Objektfläche trifft und in Richtung der Kamera reflektiert wird. Spiegelnde Beleuchtung ist intensiver als diffuses Licht und fällt über die Objektoberfläche schneller ab. Die Berechnung von spiegelnder Beleuchtung ist zeitaufwendiger als die für diffuse Beleuchtung; der Vorteil der Anwendung liegt jedoch darin, dass die Oberfläche erheblich detailreicher wird.
 
 [Ausstrahlende Beleuchtung](emissive-lighting.md) ist Licht, das ein Objekt ausstrahlt; beispielsweise ein Leuchten. Durch das Ausstrahlen erscheint ein angezeigtes Objekt als selbstleuchtend. Die Ausstrahlung wirkt sich auf die Farbe des Objekts aus und kann beispielsweise ein dunkles Material heller erscheinen lassen und einen Teil der ausgestrahlten Farbe annehmen.
 
@@ -41,7 +41,7 @@ Die Beleuchtung wird im Kameraraum berechnet. Siehe [Kameraraumtransformationen]
 
 Alle Beleuchtungsberechnungen erfolgen im Modellraum durch Ändern von Position und Richtung der Lichtquelle, sowie der Kameraposition, um den Raum unter Verwendung des Gegenteils der Weltmatrix zu modellieren. Die resultierende Beleuchtung kann daher, wenn die Welt- oder Ansichtsmatrizen eine ungleichmäßige Skalierung einführen, unter Umständen ungenau sein.
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Inhalt dieses Abschnitts
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>In diesem Abschnitt
 
 
 <table>
@@ -52,12 +52,12 @@ Alle Beleuchtungsberechnungen erfolgen im Modellraum durch Ändern von Position 
 <thead>
 <tr class="header">
 <th align="left">Thema</th>
-<th align="left">Description</th>
+<th align="left">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="ambient-lighting.md">Umgebungslicht</a></p></td>
+<td align="left"><p><a href="ambient-lighting.md">Umgebenden Beleuchtung</a></p></td>
 <td align="left"><p>Umgebungsbeleuchtung bietet konstante Beleuchtung für eine Szene. Sie leuchtet alle Objekteckpunkte gleich aus, da sie nicht von anderen Beleuchtungsfaktoren abhängig ist, wie der Eckpunktnormalen, der Richtung des Lichts, der Position der Lichtquelle, der Reichweite oder Abschwächung des Lichts. Umgebungsbeleuchtung ist in alle Richtungen konstant und färbt alle Pixel eines Objekts identisch. Sie lässt sich schnell berechnen, bewirkt jedoch, dass Objekte flach und unrealistisch aussehen.</p></td>
 </tr>
 <tr class="even">
@@ -65,19 +65,19 @@ Alle Beleuchtungsberechnungen erfolgen im Modellraum durch Ändern von Position 
 <td align="left"><p><em>Diffuse Beleuchtung</em> hängt sowohl von der Richtung des Lichts als auch von der Flächennormalen des Objekts ab. Diffuse Beleuchtung ist auf der Oberfläche eines Objekts durch die Änderung der Richtung des Lichts und den sich ändernden Oberflächenzahlvektor unterschiedlich. Es dauert länger, diffuse Beleuchtung zu berechnen, da sie sich für jeden Eckpunkt des Objektes ändert; der Vorteil der Verwendung liegt jedoch darin, dass sie Objekten einen Schatten und eine dreidimensionale (3D) Tiefe verleiht.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="specular-lighting.md">Spiegelnde Beleuchtung</a></p></td>
+<td align="left"><p><a href="specular-lighting.md">Glanzlicht</a></p></td>
 <td align="left"><p><em>Spiegelnde Beleuchtung</em> bezeichnet die glänzenden spiegelnden hellsten Bildteile, die auftreten, wenn Licht auf eine Objektfläche trifft und in Richtung der Kamera reflektiert wird. Spiegelnde Beleuchtung ist intensiver als diffuses Licht und fällt über die Objektoberfläche schneller ab. Die Berechnung von spiegelnder Beleuchtung ist zeitaufwendiger als die für diffuse Beleuchtung; der Vorteil der Anwendung liegt jedoch darin, dass die Oberfläche erheblich detailreicher wird.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="emissive-lighting.md">Ausstrahlende Beleuchtung</a></p></td>
+<td align="left"><p><a href="emissive-lighting.md">Selbstleuchtendes Beleuchtung</a></p></td>
 <td align="left"><p><em>Ausstrahlende Beleuchtung</em> ist Licht, das ein Objekt ausstrahlt; beispielsweise ein Leuchten. Durch das Ausstrahlen erscheint ein angezeigtes Objekt als selbstleuchtend. Die Ausstrahlung wirkt sich auf die Farbe des Objekts aus und kann beispielsweise ein dunkles Material heller erscheinen lassen und einen Teil der ausgestrahlten Farbe annehmen.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="camera-space-transformations.md">Kameraraumtransformationen</a></p></td>
+<td align="left"><p><a href="camera-space-transformations.md">Kamera Speicherplatz Transformationen</a></p></td>
 <td align="left"><p>Eckpunkte im Kameraraum werden durch das Wandeln der Objekteckpunkte mit der Weltansichtsmatrix berechnet.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="attenuation-and-spotlight-factor.md">Abschwächungs- und Spotlicht-Faktor</a></p></td>
+<td align="left"><p><a href="attenuation-and-spotlight-factor.md">Attenuation und Spotlight-Faktor</a></p></td>
 <td align="left"><p>Die diffusen und spiegelnden Beleuchtungskomponenten der globalen Beleuchtungsgleichung enthalten Begriffe, die die Abschwächung des Lichts und den Spotlicht-Kegel beschreiben.</p></td>
 </tr>
 </tbody>
@@ -88,7 +88,7 @@ Alle Beleuchtungsberechnungen erfolgen im Modellraum durch Ändern von Position 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Lampen und Material](lights-and-materials.md)
+[Lichter und Materialien](lights-and-materials.md)
 
  
 

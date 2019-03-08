@@ -1,5 +1,5 @@
 ---
-Description: This topic defines the terms user profile language list, app manifest language list, and app runtime language list. We'll be using these terms in this topic and other topics in this feature area, so it's important to know what they mean.
+Description: In diesem Thema definiert die Bedingungen Sprache benutzerprofilliste, app-manifest Sprachenliste und Liste von app-Runtime-Sprache. Wir verwenden diese Begriffe in diesem Thema und in anderen Themen in diesem Featurebereich. Daher ist es wichtig zu wissen, was sie bedeuten.
 title: Benutzerprofilsprachen und App-Manifest-Sprachen verstehen
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
 ms.openlocfilehash: d782e8cd64cb976df964c72199964c1d349d527e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045659"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605575"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Benutzerprofilsprachen und App-Manifest-Sprachen verstehen
 Ein Windows-Benutzer kann mit **Einstellungen** > **Zeit und Sprache** > **und Region und Sprache** eine geordnete Liste der bevorzugten Anzeigesprachen oder nur eine bevorzugte Anzeigesprache konfigurieren. Zu einer Sprache kann es eine regionale Variante geben. Zum Beispiel können Sie u. a. ein Spanisch wählen, das entweder in Spanien, in Mexiko oder in den USA gesprochen wird.
@@ -25,14 +25,14 @@ Einzelheiten zu Sprachtags finden Sie auch unter [IANA Language Subtag Registry]
 
 In den folgenden drei Abschnitten werden die Begriffe „Benutzerprofil-Sprachenliste”, „App-Manifest-Sprachenliste” und „App-Laufzeit-Sprachenliste” definiert. Wir verwenden diese Begriffe in diesem Thema und in anderen Themen in diesem Featurebereich. Daher ist es wichtig zu wissen, was sie bedeuten.
 
-## <a name="user-profile-language-list"></a>Benutzerprofil-Sprachenliste
+## <a name="user-profile-language-list"></a>Sprachliste für Benutzerprofile
 Die Benutzerprofil-Sprachenliste ist der Name der Liste, die vom Benutzer unter **Einstellungen** > **Zeit und Sprache** > **Region und Sprache** > **Sprachen** konfiguriert wird. Im Code können Sie die Eigenschaft [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) verwenden, um auf die Benutzerprofilsprachenliste als schreibgeschützte Liste von Zeichenfolgen zuzugreifen, wobei jede Zeichenfolge ein einzelnes [BCP-47-Sprachentag](https://go.microsoft.com/fwlink/p/?linkid=227302) wie „en-US” oder „ja-JP” ist.
 
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
 ```
 
-## <a name="app-manifest-language-list"></a>App-Manifest-Sprachenliste
+## <a name="app-manifest-language-list"></a>Sprachenliste für App-Manifest
 Die App-Manifest-Sprachenliste ist die Liste der Sprachen, deren Unterstützung in der App deklariert wird. Diese Liste wächst, wenn Sie Ihre App im Entwicklungslebenszyklus bis hin zur Lokalisierung weiterentwickeln.
 
 Die Liste wird zur Kompilierungszeit festgelegt. Sie haben zwei Möglichkeiten, um genau zu steuern, wie dies geschehen soll. Eine Möglichkeit besteht darin, Visual Studio die Liste aus den Dateien Ihres Projekts ermitteln zu lassen. Definieren Sie dazu zunächst die **Standardsprache** für Ihre App auf der Registerkarte **Anwendung** in der Quelldatei des App-Paketmanifests (`Package.appxmanifest`). Bestätigen Sie dann, dass die gleiche Datei diese Konfiguration enthält (was standardmäßig der Fall ist).
@@ -70,7 +70,7 @@ Die dritte Sprachenliste von Interesse ist eine Überschneidung der beiden Liste
 
 Genauer gesagt besteht die Sprachenliste für die App-Laufzeit aus diesen Elementen.
 
-1.  **Überschreibung der primären Sprache (optional)**. [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) ist eine einfache Überschreibungseinstellung für Apps, in denen die Benutzer eine eigene unabhängige Sprachauswahl treffen können, oder für Apps, bei denen die Standardsprachauswahl aus irgend einem Grund überschrieben werden sollte. Weitere Informationen dazu finden Sie unter [Anwendungsressourcen und Lokalisierung – Beispiel](https://go.microsoft.com/fwlink/p/?linkid=231501).
+1.  **Überschreibung der primären Sprache (optional)**. [  **PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) ist eine einfache Überschreibungseinstellung für Apps, in denen die Benutzer eine eigene unabhängige Sprachauswahl treffen können, oder für Apps, bei denen die Standardsprachauswahl aus irgend einem Grund überschrieben werden sollte. Weitere Informationen dazu finden Sie unter [Anwendungsressourcen und Lokalisierung – Beispiel](https://go.microsoft.com/fwlink/p/?linkid=231501).
 2.  **Die von der App unterstützten Sprachen des Benutzers**. Dies ist die Benutzerprofil-Sprachenliste, gefiltert nach der App-Manifest-Sprachenliste. Das Filtern der Benutzersprachen anhand der von der App unterstützten Sprachen sorgt für dauerhafte Konsistenz zwischen den Software Development Kits (SDKs), Klassenbibliotheken, abhängigen Frameworkpaketen und der App.
 3.  **Wenn 1 und 2 leer sind, die Standardsprache oder die erste von der App unterstützte Sprache.** Wenn die Sprachenliste des Benutzerprofils keine von der App unterstützten Sprachen enthält, ist die App-Laufzeitsprache die erste von der App unterstützte Sprache.
 
@@ -93,29 +93,29 @@ Die Liste der App-Laufzeitsprachen bestimmt die Ressourcen, die Windows für Ihr
 **Hinweis:** Sind die Benutzerprofilsprache und die App-Manifestsprache regionale Varianten voneinander, wird die regionale Variante des Benutzers als App-Laufzeitsprache verwendet. Wenn der Benutzer beispielsweise „en-GB” bevorzugt, die App jedoch „en-US” unterstützt, ist „en-GB ”die App-Laufzeitsprache. Dadurch wird sichergestellt, dass Datumsangaben, Uhrzeiten und Zahlen den Erwartungen des Benutzers entsprechend formatiert werden („en-GB“), die lokalisierten Ressourcen aber dank des Sprachabgleichs trotzdem in der von der App unterstützten Sprache („en-US“) geladen werden.
 
 ## <a name="qualify-resource-files-with-their-language"></a>Ressourcendateien mit Sprachqualifizierern benennen
-Benennen Sie die Ressourcendateien oder ihre Ordner mit Qualifizierern für Sprachressourcen. Weitere Informationen über Ressourcenqualifizierer finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und andere Eigenschaften](../../app-resources/tailor-resources-lang-scale-contrast.md)). Eine Ressourcendatei kann ein Bild (oder eine Ressource), oder es kann ein Container-Ressourcendatei, z. B. eine *.resw* , die Zeichenfolgen enthält.
+Benennen Sie die Ressourcendateien oder ihre Ordner mit Qualifizierern für Sprachressourcen. Weitere Informationen über Ressourcenqualifizierer finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und andere Eigenschaften](../../app-resources/tailor-resources-lang-scale-contrast.md)). Eine Ressourcendatei kann ein Bild (oder andere Asset) sein oder darf eine Ressourcendatei für die Container, z. B. eine *resw* , die Zeichenfolgen enthält.
 
-**Hinweis:** Auch Ressourcen in der Standardsprache Ihrer app müssen sprachqualifizierer angeben. Beispielsweise, wenn Ihre app-Standardsprache Englisch (USA) ist, qualifizieren Ihre Ressourcen als `\Assets\Images\en-US\logo.png`.
+**Beachten Sie** auch Ressourcen in Ihrer app-Standardsprache müssen den sprachqualifizierer angeben. Z. B. wenn es sich bei Ihrer app-Standardsprache Englisch (Vereinigte Staaten) ist, dann qualifizieren Sie Ihre Assets als `\Assets\Images\en-US\logo.png`.
 
-- Windows führt komplexe Vergleiche, über regionale Varianten wie "En-US" und "En-GB". Und fügen Sie das untergeordnete Regionstag nach Bedarf. Siehe [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md).
-- Geben Sie eine untergeordnete Skript Sprachtag in der Qualifizierer, wenn es keine Unterdrücken von Skripts Wert für die Sprache definiert. Verwenden zum Beispiel statt Zh-CN oder "Zh-TW", "Zh-Hant", "Zh-Hant-TW" oder "Zh-Hans" (Weitere Details finden Sie unter der [IANA Language Subtag Registry](https://go.microsoft.com/fwlink/p/?linkid=227303)).
-- Für Sprachen, die einem einzelnen Standarddialekt, besteht nicht erforderlich, den Qualifizierer Region enthalten. Verwenden Sie z. B. ja anstelle ja-JP.
+- Windows führt komplexe übereinstimmt, etwa für die regionale Varianten, z. B. En-US "und" En-GB. Daher enthalten Sie die untergeordneten Region-Tag nach Bedarf. Siehe [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md).
+- Geben Sie untergeordnete Sprachkennzeichen für das Skript in der Qualifizierer, wenn kein unterdrücken-Script-für die Sprache definiert Wert. Verwenden beispielsweise anstatt Zh-CN oder Zh-TW, Zh-Hant oder Zh-Hant-TW, Zh-Hans (Weitere Einzelheiten finden Sie in der [IANA Language-Sprachtags Registrierung](https://go.microsoft.com/fwlink/p/?linkid=227303)).
+- Für Sprachen, die einen einzelnen standardbuild-Dialekt, ist es nicht erforderlich, die den Region-Qualifizierer enthalten. Verwenden Sie z. B. Japan statt ja-JP.
 - Für einige Tools und Komponenten wie Übersetzungsprogramme können spezielle Sprachtags, beispielsweise Informationen zu regionalen Dialekten, für das Verständnis der Daten hilfreich sein.
 
 ### <a name="not-all-resources-need-to-be-localized"></a>Nicht alle Ressourcen lokalisiert werden müssen
 
 Lokalisierung möglicherweise nicht für alle Ressourcen erforderlich.
 
-- Implementieren Sie zumindest stellen Sie sicher, dass alle Ressourcen in der Standardsprache vorhanden sind.
-- Eine Teilmenge der Ressourcen unter Umständen für eine eng verwandt Sprache (teilweise Lokalisierung) ausreichend. Beispielsweise muss nicht die gesamte Benutzeroberfläche einer App ins Katalanische lokalisiert werden, wenn die App über einen vollständigen Satz von Ressourcen auf Spanisch verfügt. Ein Benutzer Katalanisch und dann Spanisch spricht, werden die, die nicht auf Katalanisch verfügbaren Ressourcen auf Spanisch angezeigt.
-- Einige Ressourcen möglicherweise Ausnahmen für bestimmte Sprachen, während die meisten anderen Ressourcen-Zuordnung zu einer gemeinsamen Ressource. In diesem Fall markieren Sie die Ressource, die für alle Sprachen mit dem unbestimmte Sprachtag "Und" verwendet werden soll. Windows interpretiert das Sprachtag „und“ ähnlich wie den Platzhalter „\*“, d. h., spezifische Entsprechungen haben Vorrang vor der Hauptsprache der Anwendung. Wenn beispielsweise einige Ressourcen für Finnisch verschieden sind, der Rest der Ressourcen aber für alle Sprachen übereinstimmt, sollte die Ressource für Finnisch mit dem Sprachtag für Finnisch und die übrigen mit „und” markiert werden.
-- Verwenden Sie für Ressourcen, die auf einem Sprachskript, z. B. eine Schriftart oder eine Texthöhe, basieren die unbestimmte Sprachtag mit einem angegebenen Skript: ' und-&lt;Skript&gt;". Verwenden Sie beispielsweise `und-Latn\\fonts.css` für lateinische Schriften und `und-Cryl\\fonts.css` für kyrillische Schriften.
+- Stellen Sie zumindest sicher, dass alle Ressourcen in der standardmäßigen Sprache vorhanden sind.
+- Eine Teilmenge der einige Ressourcen möglicherweise für eine eng miteinander verwandten Sprache (partielle Lokalisierung) ausreichend sein. Beispielsweise muss nicht die gesamte Benutzeroberfläche einer App ins Katalanische lokalisiert werden, wenn die App über einen vollständigen Satz von Ressourcen auf Spanisch verfügt. Für Benutzer, die Katalanisch, und klicken Sie dann Spanisch sprechen, werden Sie die Ressourcen, die in Katalanisch nicht verfügbar sind in Spanisch angezeigt.
+- Einige Ressourcen möglicherweise Ausnahmen für bestimmte Sprachen, während die meisten anderen Ressourcen-Karte, um eine gemeinsame Ressource. In diesem Fall kennzeichnen Sie die Ressource, die für alle Sprachen, mit dem Sprachtag unbestimmten 'Und' verwendet werden soll. Windows interpretiert den Sprach-Tag "Und" als Platzhalter (ähnlich wie "\*"), sie nach der alle anderen bestimmte Übereinstimmung klicken und die Top-app-Sprache übereinstimmt. Wenn beispielsweise einige Ressourcen für Finnisch verschieden sind, der Rest der Ressourcen aber für alle Sprachen übereinstimmt, sollte die Ressource für Finnisch mit dem Sprachtag für Finnisch und die übrigen mit „und” markiert werden.
+- Für Ressourcen, die auf eine Sprache-Skripts, z. B. eine Schriftart oder die Höhe des Texts, basieren die unbestimmten Sprach-Tag mit einem angegebenen Skript verwenden: "Und -&lt;Skript&gt;". Verwenden Sie beispielsweise `und-Latn\\fonts.css` für lateinische Schriften und `und-Cryl\\fonts.css` für kyrillische Schriften.
 
 ## <a name="set-the-http-accept-language-request-header"></a>Festlegen des HTTP-Headers „Accept-Language“.
 Bedenken Sie, ob die von Ihnen aufgerufenen Webdienste im selben Umfang lokalisiert sind wie Ihre App. HTTP-Anforderungen in UWP- und Desktop-Apps sowie XMLHttpRequest (XHR) verwenden den HTTP-Standardheader „Accept-Language“. Dieser HTTP-Header wird der Liste der Benutzersprofilsprachen standardmäßig hinzugefügt. Jede Sprache in der Liste wird zudem um die regionsneutralen Varianten der Sprache sowie um eine Gewichtung (q) erweitert. Beispielsweise ergibt eine Benutzersprachenliste, die aus „fr-FR“ und „en-US“ besteht, einen„Accept-Language“-Anforderungsheader (HTTP) mit „fr-FR“, „fr“, „en-US“, „en“ („fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3“). Aber wenn Ihre App eine Benutzeroberfläche in Französisch (Frankreich) anzeigt, die erste Sprache des Benutzers in dessen Präferenzenliste jedoch Deutsch ist, müssen Sie Französisch (Frankreich) explizit vom Dienst anfordern, um in der App konsistent zu bleiben.
 
 ## <a name="apis-in-the-windowsglobalization-namespace"></a>APIs im Namespace Windows.Globalization
-In der Regel verwenden die APIs im Namespace [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) die Liste der App-Laufzeitsprachen zur Bestimmung der Sprache. Hat keine der Sprachen ein übereinstimmendes Format, wird das Benutzergebietsschema verwendet. Hierbei handelt es sich um das von der Systemuhr verwendete Gebietsschema. Das Benutzergebietsschema ist unter **Einstellungen** > **Zeit und Sprache** > **Region und Sprache** > **Zusätzliche Datums-, Uhrzeit- und Ländereinstellungen** > **Region: Datums-, Uhrzeit- oder Zahlenformat ändern** verfügbar. Die **Windows.Globalization**-APIs akzeptieren auch eine Überschreibung, wenn Sie eine Liste mit Sprachen angeben möchten, die anstelle der App-Laufzeit-Sprachenliste verwendet werden soll.
+In der Regel verwenden die APIs im Namespace [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) die Liste der App-Laufzeitsprachen zur Bestimmung der Sprache. Hat keine der Sprachen ein übereinstimmendes Format, wird das Benutzergebietsschema verwendet. Hierbei handelt es sich um das von der Systemuhr verwendete Gebietsschema. Das Gebietsschema des Benutzers steht über **Einstellungen** > **Zeit & Sprache** > **Region und Sprache**  >  **Zusätzliche Datum, Uhrzeit und regionale Einstellungen** > **Region: Ändern Sie Datum, Uhrzeit oder Zahlenformate**. Die **Windows.Globalization**-APIs akzeptieren auch eine Überschreibung, wenn Sie eine Liste mit Sprachen angeben möchten, die anstelle der App-Laufzeit-Sprachenliste verwendet werden soll.
 
 Mithilfe der Klasse [**Language**](/uwp/api/windows.globalization.language?branch=live) können Sie die Details einer bestimmten Sprache überprüfen, wie das Skript der Sprache, den Anzeigenamen und den systemeigenen Namen.
 
@@ -152,48 +152,48 @@ Die folgende Tabelle enthält Beispiele für die Elemente, die dem Benutzer unte
 <td align="left">Englisch (GB)</td>
 <td align="left">keine</td>
 <td align="left">Englisch (GB)</td>
-<td align="left">UI: Englisch (GB)<br>Datum/Uhrzeit/Zahlen: Englisch (GB)</td>
+<td align="left">UI: Englisch (GB)<br>Datumsangaben/Uhrzeiten/Zahlen: Englisch (GB)</td>
 </tr>
 <tr>
 <td align="left">Deutsch (Deutschland) (Standard); Französisch (Frankreich); Italienisch (Italien)</td>
 <td align="left">Französisch (Österreich)</td>
 <td align="left">keine</td>
 <td align="left">Französisch (Österreich)</td>
-<td align="left">UI: Französisch (Frankreich) (Fallback aus Französisch (Österreich))<br>Datum/Uhrzeit/Zahlen: Französisch (Österreich)</td>
+<td align="left">UI: Französisch (Frankreich) (Fallback für Französisch (Österreich))<br>Datumsangaben/Uhrzeiten/Zahlen: Französisch (Österreich)</td>
 </tr>
 <tr>
 <td align="left">Englisch (US) (Standard); Französisch (Frankreich); Englisch (GB)</td>
 <td align="left">Englisch (Kanada); Französisch (Kanada)</td>
 <td align="left">keine</td>
 <td align="left">Englisch (Kanada); Französisch (Kanada)</td>
-<td align="left">UI: Englisch (USA) (Fallback aus Englisch (Kanada))<br>Datum/Uhrzeit/Zahlen: Englisch (Kanada)</td>
+<td align="left">UI: Englisch (USA) (Fallback für Englisch (Kanada))<br>Datumsangaben/Uhrzeiten/Zahlen: Englisch (Kanada)</td>
 </tr>
 <tr>
 <td align="left">Spanisch (Spanien) (Standard); Spanisch (Mexiko); Spanisch (Lateinamerika); Portugiesisch (Brasilien)</td>
 <td align="left">Englisch (USA)</td>
 <td align="left">keine</td>
 <td align="left">Spanisch (Spanien)</td>
-<td align="left">UI: Spanisch (Spanien) (verwendet „Standard“ da kein Fallback für Englisch verfügbar ist)<br>Datum/Uhrzeit/Zahlen Spanisch (Spanien)</td>
+<td align="left">UI: Spanisch (Spanien) (verwendet seit kein Fallback verfügbar für Englisch)<br>Datum/Uhrzeit/Zahlen Spanisch (Spanien)</td>
 </tr>
 <tr>
 <td align="left">Katalanisch (Standard); Spanisch (Spanien); Französisch (Frankreich)</td>
 <td align="left">Katalanisch; Französisch (Frankreich)</td>
 <td align="left">keine</td>
 <td align="left">Katalanisch; Französisch (Frankreich)</td>
-<td align="left">UI: Vorwiegend Katalanisch, etwas Französisch (Frankreich), da nicht alle Zeichenfolgen in Katalanisch vorhanden sind<br>Datum/Uhrzeit/Zahlen: Katalanisch</td>
+<td align="left">UI: Vor allem Katalanisch und einige Französisch (Frankreich), da nicht alle Zeichenfolgen in Katalanisch sind<br>Datumsangaben/Uhrzeiten/Zahlen: Katalanisch</td>
 </tr>
 <tr>
 <td align="left">Englisch (GB) (Standard); Französisch (Frankreich); Deutsch (Deutschland)</td>
 <td align="left">Deutsch (Deutschland); Englisch (GB)</td>
 <td align="left">Englisch (GB) (vom Benutzer in der App-UI ausgewählt)</td>
 <td align="left">Englisch (GB); Deutsch (Deutschland)</td>
-<td align="left">UI: Englisch (GB) (Sprachüberschreibung)<br>Datum/Uhrzeit/Zahlen Englisch (GB)</td>
+<td align="left">UI: Englisch (GB) (Language-Außerkraftsetzung)<br>Datum/Uhrzeit/Zahlen Englisch (GB)</td>
 </tr>
 </tbody>
 </table>
 
 >[!NOTE]
-> Eine Liste der standardmäßigen Länder-/Regionscodes von Microsoft verwendet finden Sie in der [Liste der offiziellen Land/Region](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
+> Eine Liste der standardmäßigen Länder-/Regionscodes von Microsoft verwendet, finden Sie unter den [Land/Region Liste](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
@@ -203,17 +203,17 @@ Die folgende Tabelle enthält Beispiele für die Elemente, die dem Benutzer unte
 * [ResourceContext.Languages](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.Languages)
 * [ApplicationLanguages.Languages](/uwp/api/windows.globalization.applicationlanguages.Languages)
 * [Windows.Globalization](/uwp/api/windows.globalization?branch=live)
-* [Sprachen](/uwp/api/windows.globalization.language?branch=live)
+* [Sprache](/uwp/api/windows.globalization.language?branch=live)
 * [GlobalizationPreferences.HomeGeographicRegion](/uwp/api/windows.system.userprofile.globalizationpreferences.HomeGeographicRegion)
 * [GeographicRegion](/uwp/api/windows.globalization.geographicregion?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [BCP-47-Sprachtag](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [IANA Language Subtag Registry](https://go.microsoft.com/fwlink/p/?linkid=227303)
-* [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und andere Eigenschaften](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [BCP-47-Sprachtag.](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [IANA Language-Sprachtags Registrierung](https://go.microsoft.com/fwlink/p/?linkid=227303)
+* [Passen Sie Ihre Ressourcen für die Sprache, Skalierung, hoher Kontrast und anderen Qualifizierer](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Unterstützte Sprachen](../../publish/supported-languages.md)
-* [Globalisieren von Datum, Uhrzeit und Zahlenformaten](use-global-ready-formats.md)
-* [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md)
+* [Globalisieren Sie Ihrer Formate für Datum/Uhrzeit/Anzahl](use-global-ready-formats.md)
+* [Wie das Ressourcenverwaltungssystem Sprachtags übereinstimmt](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>Beispiele
-* [Anwendungsressourcen und Lokalisierung – Beispiel](https://go.microsoft.com/fwlink/p/?linkid=231501)
+* [Anwendungsressourcen und Lokalisierungsbeispiel](https://go.microsoft.com/fwlink/p/?linkid=231501)

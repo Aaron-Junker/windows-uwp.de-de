@@ -4,14 +4,14 @@ description: Für die Universelle Windows-Plattform (UWP) mit DirectX-Spielen we
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, DirectX, App-Objekt
+keywords: Windows 10, UWP, DirectX, App-Objekt
 ms.localizationpriority: medium
 ms.openlocfilehash: e12ad6ce221440e8840006b3883980721b899ae6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922975"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616975"
 ---
 # <a name="the-app-object-and-directx"></a>Das App-Objekt und DirectX
 
@@ -19,7 +19,7 @@ ms.locfileid: "8922975"
 
 Für die Universelle Windows-Plattform (UWP) mit DirectX-Spielen werden nur wenige der UI-Elemente und -objekte der Windows-Benutzeroberfläche genutzt. Da sie auf einer niedrigeren Ebene des Windows-Runtime-Stapels ausgeführt werden, müssen sie stattdessen auf eine grundlegendere Weise mit dem Benutzeroberflächenframework interagieren, und zwar indem sie direkt auf das App-Objekt zugreifen und mit diesem interagieren. Im Folgenden erfahren Sie, zu welchem Zeitpunkt und auf welche Weise eine solche Interaktion erfolgt und wie Sie dieses Modell als DirectX-Entwickler beim Entwickeln von UWP-Apps effizient nutzen können.
 
-Finden Sie unter der [Direct3D-Grafiken Glossar](../graphics-concepts/index.md) Informationen Grafiken unbekannte Begriffe und Konzepte, die Sie beim Lesen auftreten.
+Finden Sie unter den [Direct3D Grafiken Glossar](../graphics-concepts/index.md) Informationen zu unbekannten Grafiken Begriffe oder Konzepte, die während des Lesens auftreten.
 
 ## <a name="the-important-core-user-interface-namespaces"></a>Die wichtigen Benutzeroberflächen-Hauptnamespaces
 
@@ -32,7 +32,7 @@ Zunächst sind die Windows-Runtime-Namespaces zu erwähnen, die Sie (mit **using
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **Hinweis:**  , wenn Sie nicht über eine UWP-app entwickeln, verwenden Sie die Komponenten der Benutzeroberfläche in den JavaScript - XAML-spezifische Bibliotheken und Namespaces anstelle der Typen in diesen Namespaces bereitgestellt bereitgestellt.
+> **Beachten Sie**    , wenn Sie eine UWP-app nicht entwickeln, verwenden Sie die Komponenten der Benutzeroberfläche bereitgestellt, die im JavaScript - oder XAML-spezifischen Bibliotheken und Namespaces anstelle der Typen, die in diesen Namespaces bereitgestellt.
 
  
 
@@ -61,7 +61,7 @@ Im Folgenden werden die grundlegenden Schritte zum Abrufen eines Fensters mit de
 
 3.  Übergeben Sie eine Instanz des Ansichtsanbieters an [**CoreApplication.Run**](https://msdn.microsoft.com/library/windows/apps/hh700469) aus **main**.
 
-Da Sie sich nun mit den Grundlagen vertraut gemacht haben, betrachten Sie nun weitere verfügbare Optionen, mit denen Sie diesen Ansatz ausweiten können.
+Da Sie jetzt mit den Grundlagen vertraut sind, betrachten Sie nun weitere verfügbare Optionen, mit denen Sie diesen Ansatz ausweiten können.
 
 ## <a name="core-user-interface-types"></a>Zentrale Benutzeroberflächentypen
 
@@ -76,7 +76,7 @@ Mit diesen Typen können Sie auf die Ansicht der App zugreifen, insbesondere auf
 
 Die Ansicht Ihrer App wird durch den Ansichtsanbieter für das App-Fenster generiert und in den meisten Fällen durch ein spezifisches Frameworkpaket oder direkt vom System implementiert, sodass Sie die Implementierung nicht selbst ausführen müssen. Für DirectX müssen Sie wie zuvor beschrieben einen kompakten Ansichtsanbieter implementieren. Zwischen den folgenden Komponenten und Verhalten besteht eine spezifische 1:1-Beziehung:
 
--   Die Ansicht einer App, die durch den [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)-Typ dargestellt wird und die die Methode(n) zum Upgrade des Fensters definiert.
+-   Die Ansicht einer App, die durch den [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)-Typ dargestellt wird und die die Methode(n) zum Aktualisieren des Fensters definiert.
 -   Ein ASTA, dessen Attribute das Threadingverhalten der App definieren. Sie können keine Instanzen von STA-attributierten COM-Typen für ein ASTA erstellen.
 -   Ein Ansichtsanbieter, den Ihre App vom System erhält oder der von Ihnen implementiert wird.
 -   Ein übergeordnetes Fenster, das durch den [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Typ dargestellt wird.
@@ -87,14 +87,14 @@ Dies lässt sich wie folgt zusammenfassen: Das App-Objekt stellt eine Ansichtsan
 ## <a name="coreapplicationview-behaviors-and-properties"></a>CoreApplicationView – Verhalten und Eigenschaften
 
 
-[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) stellt die aktuelle App-Ansicht dar. Das App-Singleton erstellt die App-Ansicht während der Initialisierung; die Ansicht bleibt jedoch so lange ruhend, bis sie aktiviert wird. Sie können das [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) abrufen, in dem die Ansicht angezeigt wird, indem Sie auf die zugehörige [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019)-Eigenschaft zugreifen: Sie können Aktivierungs- und Deaktivierungsereignisse für die Ansicht behandeln, indem Sie Delegaten beim [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018)-Ereignis registrieren.
+[**CoreApplicationView** ](https://msdn.microsoft.com/library/windows/apps/br225017) stellt die aktuelle app-Ansicht dar. Das App-Singleton erstellt die App-Ansicht während der Initialisierung; die Ansicht bleibt jedoch so lange ruhend, bis sie aktiviert wird. Sie können das [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) abrufen, in dem die Ansicht angezeigt wird, indem Sie auf die zugehörige [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019)-Eigenschaft zugreifen: Sie können Aktivierungs- und Deaktivierungsereignisse für die Ansicht behandeln, indem Sie Delegaten beim [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018)-Ereignis registrieren.
 
 ## <a name="corewindow-behaviors-and-properties"></a>CoreWindow – Verhalten und Eigenschaften
 
 
 Das übergeordnete Fenster, das eine [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Instanz darstellt, wird erstellt und an den Ansichtsanbieter übergeben, wenn das App-Objekt initialisiert wird. Wenn die App über ein anzuzeigendes Fenster verfügt, wird dieses angezeigt. Andernfalls wird lediglich die Ansicht initialisiert.
 
-[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) stellt eine Reihe von Ereignissen bereit, die spezifisch für das Eingabeverhalten und das grundlegende Fensterverhalten sind. Sie können diese Ereignisse behandeln, indem Sie eigene Delegaten für diese registrieren.
+[**"Corewindow"** ](https://msdn.microsoft.com/library/windows/apps/br208225) bietet eine Anzahl von Ereignissen für Eingabe- und grundlegende Fensterverhalten. Sie können diese Ereignisse behandeln, indem Sie eigene Delegaten für diese registrieren.
 
 Sie können auch den Fensterereignisverteiler für das Fenster abrufen, indem Sie auf die [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264)-Eigenschaft zugreifen, die eine Instanz von [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) bereitstellt.
 
@@ -131,7 +131,7 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-Wenn das App-Objekt für Ihre UWP DirectX-App aktiviert wird, erstellt es ein ASTA, das für die UI-Ansicht verwendet wird. Der neue ASTA-Thread ruft die Factory für Ihren Ansichtsanbieter auf, um den Ansichtsanbieter für Ihr App-Objekt zu erstellen. Der Code für Ihren Ansichtsanbieter wird dann in dem ASTA-Thread ausgeführt.
+Wenn das App-Objekt für Ihre UWP-DirectX-App aktiviert wird, erstellt es ein ASTA, das für die UI-Ansicht verwendet wird. Der neue ASTA-Thread ruft die Factory für Ihren Ansichtsanbieter auf, um den Ansichtsanbieter für Ihr App-Objekt zu erstellen. Der Code für Ihren Ansichtsanbieter wird dann in dem ASTA-Thread ausgeführt.
 
 Alle Threads, die aus einem ASTA ausgegliedert werden, müssen sich außerdem in einem MTA befinden. Beachten Sie, dass es durch ausgelagerte MTA-Threads weiterhin zu Eintrittsinvarianzen und somit zu Sperren kommen kann.
 

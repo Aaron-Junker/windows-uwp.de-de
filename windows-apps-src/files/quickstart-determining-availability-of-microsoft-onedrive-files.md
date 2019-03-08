@@ -1,36 +1,36 @@
 ---
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-title: Ermitteln der Verfügbarkeit von Microsoft OneDrive-Dateien
+title: Ermitteln der Verfügbarkeit von Microsoft OneDrive-Dateien
 description: Ermitteln Sie mithilfe der StorageFile.IsAvailable-Eigenschaft, ob eine Microsoft OneDrive-Datei verfügbar ist.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 26eb371e767f0c1e7f3d5855cf68728958c0cda3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044993"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608935"
 ---
-# <a name="determining-availability-of-microsoft-onedrive-files"></a>Ermitteln der Verfügbarkeit von MicrosoftOneDrive-Dateien
+# <a name="determining-availability-of-microsoft-onedrive-files"></a>Ermitteln der Verfügbarkeit von Microsoft OneDrive-Dateien
 
 
 **Wichtige APIs**
 
 -   [**FileIO-Klasse**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
--   [**StorageFile-Klasse**](https://msdn.microsoft.com/library/windows/apps/BR227171)
+-   [**"Storagefile"-Klasse**](https://msdn.microsoft.com/library/windows/apps/BR227171)
 -   [**StorageFile.IsAvailable-Eigenschaft**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
 Ermitteln Sie mithilfe der [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)-Eigenschaft, ob eine Microsoft OneDrive-Datei verfügbar ist.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
--   **Verstehen der asynchronen Programmierung für UWP-Apps (Universelle Windows-Plattform)**
+-   **Verstehen Sie die asynchrone Programmierung für apps der universellen Windows-Plattform (UWP)**
 
     Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
 
--   **Deklaration der App-Funktionen**
+-   **Deklarationen der App capabilty**
 
     Weitere Informationen finden Sie unter [Berechtigungen für den Dateizugriff](file-access-permissions.md).
 
@@ -38,12 +38,12 @@ Ermitteln Sie mithilfe der [**StorageFile.IsAvailable**](https://msdn.microsoft.
 
 Benutzer können OneDrive-Dateien als „Offline verfügbar“ (Standardeinstellung) oder „Nur online verfügbar“ kennzeichnen. Diese Funktion bietet Benutzern die Möglichkeit, große Dateien (z. B. Bilder und Videos) in ihren OneDrive-Speicher zu verschieben, als nur online verfügbar zu kennzeichnen und so Speicherplatz auf der Festplatte zu sparen (lokal wird nur eine Datei mit Metadaten gespeichert).
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) wird verwendet, um zu ermitteln, ob eine Datei zurzeit verfügbar ist. Die folgende Tabelle zeigt den Wert der **StorageFile.IsAvailable**-Eigenschaft in verschiedenen Szenarien.
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx), wird verwendet, um zu bestimmen, ob eine Datei derzeit verfügbar ist. Die folgende Tabelle zeigt den Wert der **StorageFile.IsAvailable**-Eigenschaft in verschiedenen Szenarien.
 
 | Dateityp                              | Online | Getaktetes Netzwerk        | Offline |
 |-------------------------------------------|--------|------------------------|---------|
-| Lokale Datei                                | Wahr   | Wahr                   | Wahr    |
-| Als "Offline verfügbar" gekennzeichnete OneDrive-Datei | Wahr   | Wahr                   | Wahr    |
+| Lokale Datei                                | True   | True                   | True    |
+| Als "Offline verfügbar" gekennzeichnete OneDrive-Datei | True   | True                   | True    |
 | Als "Nur online verfügbar" gekennzeichnete OneDrive-Datei       | True   | Basierend auf Benutzereinstellungen | False   |
 | Netzwerkdatei                              | True   | Basierend auf Benutzereinstellungen | False   |
 

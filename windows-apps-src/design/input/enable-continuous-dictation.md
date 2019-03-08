@@ -1,5 +1,5 @@
 ---
-Description: Learn how to capture and recognize long-form, continuous dictation speech input.
+Description: Hier erfahren Sie, wie Sie die Erfassung und Erkennung langer Spracheingaben für kontinuierliches Diktieren ermöglichen.
 title: Aktivieren des kontinuierlichen Diktierens
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0865b229faad646901ab76f46982e738b2830035
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046643"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606255"
 ---
 # <a name="continuous-dictation"></a>Kontinuierliches Diktieren
 
@@ -23,10 +23,10 @@ Hier erfahren Sie, wie Sie die Erfassung und Erkennung langer Spracheingaben fü
 
 In [Spracherkennung](speech-recognition.md) haben Sie gelernt, wie Sie mithilfe der Methoden [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) oder [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) eines [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)-Objekts verhältnismäßig kurze Spracheingaben erfassen und erkennen. Beispiele hierfür sind das Verfassen einer SMS oder das Stellen einer Frage.
 
-Bei längeren, kontinuierlichen Spracherkennungssitzungen (z.B. für Diktate oder E-Mails) wird hingegen die [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)-Eigenschaft eines [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)-Objekts verwendet, um ein [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)-Objekt zu erhalten.
+Bei längeren, kontinuierlichen Spracherkennungssitzungen (z. B. für Diktate oder E-Mails) wird hingegen die [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)-Eigenschaft eines [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)-Objekts verwendet, um ein [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)-Objekt zu erhalten.
 
 > [!NOTE]
-> Diktat sprachunterstützung hängt von dem [Gerät](https://docs.microsoft.com/windows/uwp/design/devices/) , in denen Ihre app ausgeführt wird. Für PCs und Laptops wird nur "En-US" erkannt, während Xbox und Telefone alle Sprachen, die von der Spracherkennung unterstützt erkennen können. Weitere Informationen finden Sie unter [angeben Sprache für die Spracherkennung](specify-the-speech-recognizer-language.md).
+> Diktat sprachunterstützung hängt die [Gerät](https://docs.microsoft.com/windows/uwp/design/devices/) , in denen Ihre app ausgeführt wird. Für PCs und Laptops wird nur für En-US erkannt, während der Xbox und Smartphones alle von der Spracherkennung unterstützte Sprachen erkennen können. Weitere Informationen finden Sie unter [Geben Sie die Spracherkennung zu erkennende Sprache](specify-the-speech-recognizer-language.md).
 
 ## <a name="set-up"></a>Einrichtung
 
@@ -68,12 +68,12 @@ Während der Initialisierung der kontinuierlichen Spracherkennung müssen folgen
 - Abrufen des Verteilers für den UI-Thread, wenn Sie die Benutzeroberfläche Ihrer App in den Ereignishandlern für die kontinuierliche Erkennung aktualisieren.
 - Initialisieren der Spracherkennung.
 - Kompilieren der integrierten Diktiergrammatik.
-    **Hinweis:**  die Spracherkennung benötigt mindestens eine Einschränkung, um erkennbares Vokabular zu definieren. Wenn Sie keine Einschränkung angeben, wird eine vordefinierte Diktiergrammatik verwendet. Siehe [Spracherkennung](speech-recognition.md).
+    **Beachten Sie**    Spracherkennung muss mindestens eine Einschränkung, um ein erkennbarer Vokabular zu definieren. Wenn Sie keine Einschränkung angeben, wird eine vordefinierte Diktiergrammatik verwendet. Siehe [Spracherkennung](speech-recognition.md).
 - Einrichten der Listener für Erkennungsereignisse.
 
 In diesem Beispiel wird die Spracherkennung im [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508)-Seitenereignis initialisiert.
 
-1. Da die von der Spracherkennung ausgelösten Ereignisse in einem Hintergrundthread auftreten, muss für die Aktualisierung des UI-Threads ein Verweis auf den Verteiler erstellt werden. [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) wird stets im UI-Thread aufgerufen.
+1. Da die von der Spracherkennung ausgelösten Ereignisse in einem Hintergrundthread auftreten, muss für die Aktualisierung des UI-Threads ein Verweis auf den Verteiler erstellt werden. [**OnNavigatedTo** ](https://msdn.microsoft.com/library/windows/apps/br227508) wird immer im UI-Thread aufgerufen.
 ```csharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
@@ -105,15 +105,15 @@ Anschließend wird die [**ContinuousRecognitionSession**](https://msdn.microsoft
 
 Zwei Ereignisse sind besonders wichtig:
 
-- [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) tritt ein, wenn die Erkennung Ergebnisse generiert hat.
-- [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) tritt ein, wenn die kontinuierliche Erkennungssitzung beendet ist.
+- [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900), der auftritt, wenn die Erkennung einige Ergebnisse generiert hat.
+- [**Abgeschlossen**](https://msdn.microsoft.com/library/windows/apps/dn913899), der auftritt, wenn die kontinuierliche Erkennung-Sitzung beendet wurde.
 
 Das [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)-Ereignis wird ausgelöst, während der Benutzer spricht. Die Erkennung hört kontinuierlich auf den Benutzer und löst in regelmäßigen Abständen ein Ereignis aus, das einen Teil der Spracheingabe übergibt. Die Spracheingabe muss mit der [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895)-Eigenschaft des Ereignisarguments untersucht werden. Außerdem muss im Ereignishandler eine geeignete Aktion ausgeführt werden, um den Text beispielsweise einem StringBuilder-Objekt anzufügen.
 
-Als Instanz von [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) ist die Eigenschaft [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) nützlich, um zu ermitteln, ob die Spracheingabe akzeptiert werden soll. [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) stellt hierfür zwei Eigenschaften bereit:
+Als Instanz von [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) ist die Eigenschaft [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) nützlich, um zu ermitteln, ob die Spracheingabe akzeptiert werden soll. [  **SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) stellt hierfür zwei Eigenschaften bereit:
 
-- [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) gibt an, ob die Erkennung erfolgreich war. Die Erkennung kann aus unterschiedlichen Gründen scheitern.
-- [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) gibt die relative Wahrscheinlichkeit dafür an, dass die Wörter von der Erkennung korrekt verstanden wurden.
+- [**Status** ](https://msdn.microsoft.com/library/windows/apps/dn631440) gibt an, ob die Erkennung erfolgreich war. Die Erkennung kann aus unterschiedlichen Gründen scheitern.
+- [**Vertrauen** ](https://msdn.microsoft.com/library/windows/apps/dn631434) gibt das relative vertrauen, dass die Erkennung die Wörter richtig verstanden.
 
 Dies sind die grundlegenden Schritte für die kontinuierliche Erkennung:  
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  Anschließend wird die Eigenschaft [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) überprüft. Wenn der Wert von Confidence [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) oder besser ist, wird der Text an das StringBuilder-Objekt angefügt. Während der Eingabeerfassung wird auch die Benutzeroberfläche aktualisiert.
 
-    **Hinweis:** das [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) -Ereignis wird ausgelöst, in einem Hintergrundthread, die die Benutzeroberfläche nicht direkt aktualisieren kann. Wenn ein Handler die UI aktualisieren muss (wie dies beim \[Sprach- und TTS-Beispiel\] der Fall ist), müssen die Aktualisierungen über die [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317)-Methode des Verteilers an den UI-Thread übergeben werden.
+    **Beachten Sie**  der [ **ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900) Ereignis wird ausgelöst, in einem Hintergrundthread, der die Benutzeroberfläche kann nicht direkt aktualisiert werden. Wenn ein Handler die Benutzeroberfläche zu aktualisieren muss (als die \[Sprach- und TTS Beispiel\] ist), müssen Sie die Updates für den UI-Thread durch Verteilen der [ **RunAsync** ](https://msdn.microsoft.com/library/windows/apps/hh750317) -Methode des Dispatchers.
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -165,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  Der Ereignishandler überprüft die Status-Eigenschaft, um zu ermitteln, ob die Erkennung erfolgreich war. Er behandelt auch den Fall, dass ein Benutzer nicht mehr spricht. Häufig wird [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) als erfolgreiche Erkennung betrachtet, da der Benutzer aufgehört hat, zu sprechen. Behandeln Sie diesen Fall in Ihrem Code, um die Benutzerfreundlichkeit zu verbessern.
 
-    **Hinweis:** das [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) -Ereignis wird ausgelöst, in einem Hintergrundthread, die die Benutzeroberfläche nicht direkt aktualisieren kann. Wenn ein Handler die UI aktualisieren muss (wie dies beim \[Sprach- und TTS-Beispiel\] der Fall ist), müssen die Aktualisierungen über die [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317)-Methode des Verteilers an den UI-Thread übergeben werden.
+    **Beachten Sie**  der [ **ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900) Ereignis wird ausgelöst, in einem Hintergrundthread, der die Benutzeroberfläche kann nicht direkt aktualisiert werden. Wenn ein Handler die Benutzeroberfläche zu aktualisieren muss (als die \[Sprach- und TTS Beispiel\] ist), müssen Sie die Updates für den UI-Thread durch Verteilen der [ **RunAsync** ](https://msdn.microsoft.com/library/windows/apps/hh750317) -Methode des Dispatchers.
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -244,8 +244,8 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 
 Die Erkennung kann auf zwei Arten beendet werden:
 
--   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) wartet, bis alle ausstehenden Erkennungsereignisse abgeschlossen sind. ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) wird weiter ausgelöst, bis alle ausstehenden Erkennungsvorgänge abgeschlossen wurden).
--   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) beendet die Erkennungssitzung umgehend und verwirft alle ausstehenden Ergebnisse.
+-   [**StopAsync** ](https://msdn.microsoft.com/library/windows/apps/dn913908) können Sie alle ausstehenden spracherkennungsereignisse abgeschlossen ([**ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900) weiterhin ausgelöst werden soll, bis alle ausstehenden Anerkennung Vorgänge abgeschlossen wurden).
+-   [**"CancelAsync"** ](https://msdn.microsoft.com/library/windows/apps/dn913898) die Anerkennung Sitzung sofort beendet und ausstehende Ergebnisse verworfen.
 
 Nach der Überprüfung des Zustands der Spracherkennung wird die Sitzung durch Aufrufen der [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898)-Methode der [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)-Spracherkennungseigenschaft beendet.
 
@@ -269,7 +269,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 * [Sprachinteraktionen](speech-interactions.md)
 
 **Beispiele**
-* [Beispiel zu Spracherkennung und Sprachsynthese](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Die Spracherkennung und-Synthese sprachmuster](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

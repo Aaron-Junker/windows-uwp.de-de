@@ -1,23 +1,23 @@
 ---
-Description: Provides a list by function of some of the controls that you can use in your apps.
+Description: Stellt eine nach Funktionen geordnete Liste einiger Steuerelemente bereit, die Sie in Ihren Apps verwenden können.
 title: Steuerelemente nach Funktion
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a0a267385668a276fc776c5f5d495b27ae72a2b3
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037302"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611515"
 ---
 # <a name="controls-by-function"></a>Steuerelemente nach Funktion
 
-Das XAML-Benutzeroberflächenframework für Windows bietet eine umfangreiche Bibliothek von Steuerelementen, welche die Entwicklung von Benutzeroberflächen unterstützen. Einige dieser Steuerelemente weisen eine visuelle Darstellung auf. Andere fungieren als Container für andere Steuerelemente oder Inhalte (z.B. Bilder und Medien). 
+Das XAML-Benutzeroberflächenframework für Windows bietet eine umfangreiche Bibliothek von Steuerelementen, welche die Entwicklung von Benutzeroberflächen unterstützen. Einige dieser Steuerelemente weisen eine visuelle Darstellung auf. Andere fungieren als Container für andere Steuerelemente oder Inhalte (z. B. Bilder und Medien). 
 
 Laden Sie das [Beispiel für XAML-UI-Grundlagen](https://go.microsoft.com/fwlink/p/?LinkId=619992) herunter, um sich zahlreiche Windows-UI-Steuerelemente in Aktion anzusehen.
 
@@ -26,10 +26,10 @@ Laden Sie das [Beispiel für XAML-UI-Grundlagen](https://go.microsoft.com/fwlink
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie die <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> -app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/NavigationView">die app zu öffnen und finden Sie unter der NavigationView in Aktion zu sehen</a> </p>
+    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/NavigationView">öffnen Sie die app, und sehen Sie die NavigationView in Aktion</a> </p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -52,23 +52,23 @@ Eine Schaltfläche, die Befehle in Form einer App-Leiste anzeigt.
 
 Referenz: [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx), [BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx), [FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx), [PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx) 
 
-Design und Vorgehensweise: [App-Leiste und Befehlsleiste](app-bars.md) 
+Entwurf und Anleitungen: [App-Leiste und die Befehlsleiste für Anleitung zur Benutzerkontensteuerung](app-bars.md) 
 
-Beispielcode: [Beispiel für XAML-Befehle](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+Beispielcode: [Befehle der XAML-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-separator"></a>Trennzeichen der App-Leiste
 Trennt Befehlsgruppen in einer Befehlsleiste grafisch.
 
 Referenz: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
-Beispielcode: [Beispiel für XAML-Befehle](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+Beispielcode: [Befehle der XAML-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-toggle-button"></a>Umschaltfläche der App-Leiste
 Eine Schaltfläche zum Wechseln zwischen den Befehlen in einer Befehlsleiste.
 
 Referenz: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
-Beispielcode: [Beispiel für XAML-Befehle](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+Beispielcode: [Befehle der XAML-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="command-bar"></a>Befehlsleiste
 Eine spezielle App-Leiste zum Ändern der Größe von Schaltflächenelementen auf der App-Leiste.
@@ -84,13 +84,13 @@ Eine spezielle App-Leiste zum Ändern der Größe von Schaltflächenelementen au
 ```
 Referenz: [CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 
 
-Design und Vorgehensweise: [App-Leiste und Befehlsleiste](app-bars.md)
+Entwurf und Anleitungen: [App-Leiste und die Befehlsleiste für Anleitung zur Benutzerkontensteuerung](app-bars.md)
 
-Beispielcode: [Beispiel für XAML-Befehle](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+Beispielcode: [Befehle der XAML-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="buttons"></a>Schaltflächen
 
-### <a name="button"></a>Button
+### <a name="button"></a>Schaltfläche
 Ein Steuerelement, das auf Benutzereingaben reagiert und ein **Click**-Ereignis auslöst.
 
 ![Standardschaltfläche](images/controls/button.png)
@@ -102,7 +102,7 @@ Ein Steuerelement, das auf Benutzereingaben reagiert und ein **Click**-Ereignis 
 
 Referenz: [Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Schaltflächen](buttons.md) 
+Entwurf und Anleitungen: [Leitfaden für Schaltflächen-Steuerelement](buttons.md) 
 
 ### <a name="hyperlink"></a>Hyperlink
 Siehe „Linkschaltfläche“.
@@ -119,7 +119,7 @@ Eine Schaltfläche, die als markierter Text dargestellt wird und den angegebenen
 
 Referenz: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Hyperlinks](hyperlinks.md)
+Entwurf und Anleitungen: [Handbuch für Links-Benutzerkontensteuerung](hyperlinks.md)
 
 ### <a name="repeat-button"></a>Wiederholungsschaltfläche
 Eine Schaltfläche, die ihr **Click**-Ereignis auslöst, das andauert, solange die Schaltfläche betätigt wird. 
@@ -131,9 +131,9 @@ Eine Schaltfläche, die ihr **Click**-Ereignis auslöst, das andauert, solange d
               Click="RepeatButton_Click" />
 ```
 
-Referenz: [RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 
+Referenz: [RepeatButton-Elements](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Schaltflächen](buttons.md) 
+Entwurf und Anleitungen: [Leitfaden für Schaltflächen-Steuerelement](buttons.md) 
 
 ## <a name="collectiondata-controls"></a>Sammlungs-/Datensteuerelemente
 
@@ -150,7 +150,7 @@ Ein Steuerelement, das eine Sammlung von Elementen darstellt, durch die der Benu
 
 Referenz: [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Flip-Ansicht](flipview.md) 
+Entwurf und Anleitungen: [Kippen von Steuerelement-Handbuch anzeigen](flipview.md) 
 
 ### <a name="grid-view"></a>Rasteransicht
 Ein Steuerelement, das eine Sammlung von Elementen in Zeilen und Spalten darstellt, für die ein vertikaler Bildlauf durchgeführt werden kann.
@@ -164,7 +164,7 @@ Ein Steuerelement, das eine Sammlung von Elementen in Zeilen und Spalten darstel
 
 Referenz: [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 
 
-Design und Vorgehensweise: [Listen](lists.md) 
+Entwurf und Anleitungen: [Listen](lists.md) 
 
 Beispielcode: [ListView-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
@@ -189,7 +189,7 @@ Ein Steuerelement, das eine Sammlung von Elementen in einer Liste darstellt, fü
 
 Referenz: [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 
 
-Design und Vorgehensweise: [Listen](lists.md) 
+Entwurf und Anleitungen: [Listen](lists.md) 
 
 Beispielcode: [ListView-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
@@ -206,7 +206,7 @@ Ein Steuerelement, mit dem Benutzer ein Datum über eine Kalender-Dropdownanzeig
 
 Referenz: [CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Datums- und Uhrzeitsteuerelemente](date-and-time.md)
+Entwurf und Anleitungen: [Kalender, Datums- und Zeitauswahl](date-and-time.md)
  
 ### <a name="calendar-view"></a>Kalenderansicht
 Eine konfigurierbare Kalenderanzeige, in der Benutzer ein einzelnes Datum oder mehrere Daten auswählen können.
@@ -217,7 +217,7 @@ Eine konfigurierbare Kalenderanzeige, in der Benutzer ein einzelnes Datum oder m
 
 Referenz: [CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Datums- und Uhrzeitsteuerelemente](date-and-time.md) 
+Entwurf und Anleitungen: [Kalender, Datums- und Zeitauswahl](date-and-time.md) 
 
 ### <a name="date-picker"></a>Datumsauswahl
 Ein Steuerelement, mit dem ein Benutzer ein Datum auswählen kann.
@@ -228,11 +228,11 @@ Ein Steuerelement, mit dem ein Benutzer ein Datum auswählen kann.
 <DatePicker Header="Arrival Date"/>
 ```
 
-Referenz: [DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx) 
+Referenz: ["DatePicker"](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Datums- und Uhrzeitsteuerelemente](date-and-time.md)
+Entwurf und Anleitungen: [Kalender, Datums- und Zeitauswahl](date-and-time.md)
  
-### <a name="time-picker"></a>Uhrzeitauswahl
+### <a name="time-picker"></a>Zeitauswahl
 Ein Steuerelement, mit dem ein Benutzer einen Zeitwert auswählen kann.
 
 ![TimePicker-Steuerelement](images/controls/time-picker.png) 
@@ -243,7 +243,7 @@ Ein Steuerelement, mit dem ein Benutzer einen Zeitwert auswählen kann.
 
 Referenz: [TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Datums- und Uhrzeitsteuerelemente](date-and-time.md)
+Entwurf und Anleitungen: [Kalender, Datums- und Zeitauswahl](date-and-time.md)
 
 ## <a name="flyouts"></a>Flyouts
 
@@ -266,7 +266,7 @@ Zeigt eine Meldung an, die einen Benutzereingriff erfordert. (Im Gegensatz zu ei
 
 Referenz: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-Design und Vorgehensweise: [Flyouts](dialogs-and-flyouts/flyouts.md) 
+Entwurf und Anleitungen: [Flyouts](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>Menü-Flyout
 Zeigt vorübergehend eine Liste der Befehle oder Optionen im Kontext der Benutzeraktion an.
@@ -286,16 +286,16 @@ Zeigt vorübergehend eine Liste der Befehle oder Optionen im Kontext der Benutze
 
 Referenz: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-Design und Vorgehensweise: [Menüs und Kontextmenüs](menus.md) 
+Entwurf und Anleitungen: [Menüs und Kontextmenüs](menus.md) 
 
-Beispielcode: [Beispiel für XAML-Kontextmenü](https://go.microsoft.com/fwlink/p/?LinkId=620021)
+Beispielcode: [Kontextmenü für die XAML-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>Popupmenü
 Ein benutzerdefiniertes Menü mit von Ihnen angegebenen Befehlen.
 
 Referenz: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-Design und Vorgehensweise: [Dialogfelder](dialogs-and-flyouts/dialogs.md) 
+Entwurf und Anleitungen: [Dialogs](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>QuickInfo
 Ein Popupfenster, das Informationen zu einem Element anzeigt. 
@@ -309,11 +309,11 @@ Ein Popupfenster, das Informationen zu einem Element anzeigt.
 
 Referenz: [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx), [ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
 
-Design und Vorgehensweise: Richtlinien für QuickInfos 
+Entwurf und Anleitungen: Richtlinien für QuickInfos 
 
-## <a name="images"></a>Bilder
+## <a name="images"></a>Abbilder
 
-### <a name="image"></a>Image
+### <a name="image"></a>Bild
 Ein Steuerelement, das ein Bild darstellt.
 
 ```xaml
@@ -322,9 +322,9 @@ Ein Steuerelement, das ein Bild darstellt.
 
 Referenz: [Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 
 
-Design und Vorgehensweise: [Image und ImageBrush](images-imagebrushes.md) 
+Entwurf und Anleitungen: [Image und "ImageBrush"](images-imagebrushes.md) 
 
-Beispielcode: [Beispiel für XAML-Bilder](https://go.microsoft.com/fwlink/p/?linkid=226867)
+Beispielcode: [Beispiel für XAML-images](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
 ## <a name="graphics-and-ink"></a>Grafiken und Freihandstriche
 
@@ -340,8 +340,8 @@ Referenz: [InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windo
 ### <a name="shapes"></a>Formen
 Verschiedene grafische Speichermodusobjekte, die als Ellipsen, Rechtecke, Linien, Bézierpfade usw. dargestellt werden können.
 
-![Ein Polygon](images/controls/shapes-polygon.png) 
-![Ein Pfad](images/controls/shapes-path.png) 
+![Polygon](images/controls/shapes-polygon.png) 
+![Pfad](images/controls/shapes-path.png) 
 
 ```xaml
 <Ellipse/>
@@ -349,11 +349,11 @@ Verschiedene grafische Speichermodusobjekte, die als Ellipsen, Rechtecke, Linien
 <Rectangle/>
 ```
 
-Referenz: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
+Referenz: [Formen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
 
-So wird's gemacht: [Zeichnen von Formen](../../graphics/drawing-shapes.md) 
+Ausführung [Zeichnen von Formen](../../graphics/drawing-shapes.md) 
 
-Beispielcode: [Beispiel für vektorbasierte XAML-Zeichnung](https://go.microsoft.com/fwlink/p/?linkid=226866)
+Beispielcode: [XAML vektorbasierte zeichnen (Beispiel)](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## <a name="layout-controls"></a>Layoutsteuerelemente
 
@@ -389,7 +389,7 @@ Ein Layoutpanel, das die absolute Positionierung untergeordneter Elemente relati
 </Canvas>
 ```
 
-Referenz: [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
+Referenz: [Zeichenbereich](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
  
 ### <a name="grid"></a>Raster
 Ein Layoutpanel, das die Anordnung von untergeordneten Elementen in Zeilen und Spalten unterstützt.
@@ -451,9 +451,9 @@ Ein Containersteuerelement, mit dem der Benutzer Inhalte verschieben und vergrö
 
 Referenz: [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)
 
-Design und Vorgehensweise: [Bildlaufleisten](scroll-controls.md) 
+Entwurf und Anleitungen: [Leitfaden zu scrollen und Schwenken Steuerelemente](scroll-controls.md) 
 
-Beispielcode: [Beispiel für XAML-Bildlauf, -Verschiebung und -Zoom](https://go.microsoft.com/fwlink/p/?linkid=238577)
+Beispielcode: [XAML Bildlauf, schwenken und Zoomen-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### <a name="stack-panel"></a>StackPanel
 Ein Layoutpanel, das untergeordnete Elemente in einer einzelnen Zeile anordnet. Die Zeile kann horizontal oder vertikal ausgerichtet werden.
@@ -527,7 +527,7 @@ Ein Steuerelement, das Audio- und Videoinhalte wiedergibt.
 
 Referenz: [MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Mediaplayer](media-playback.md)
+Entwurf und Anleitungen: [Handbuch für Media-Element-Benutzerkontensteuerung](media-playback.md)
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 Ein Steuerelement, das Wiedergabesteuerelemente für eine „MediaElement“-Klasse bereitstellt.
@@ -540,9 +540,9 @@ Ein Steuerelement, das Wiedergabesteuerelemente für eine „MediaElement“-Kla
 
 Referenz: [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Mediaplayer](media-playback.md) 
+Entwurf und Anleitungen: [Handbuch für Media-Element-Benutzerkontensteuerung](media-playback.md) 
 
-Beispielcode: [Beispiel für die Steuerelemente für den Medientransport](https://go.microsoft.com/fwlink/p/?LinkId=620023)
+Beispielcode: [Beispiel für Media-Transport-Steuerelemente](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
 ### <a name="video"></a>Video
 Siehe „Medienelement“.
@@ -551,11 +551,11 @@ Siehe „Medienelement“.
 
 ### <a name="navigationview"></a>NavigationView
 
-Eine anpassungsfähige Container und flexible Navigationsmodell, der linken Navigationsbereich angezeigt, oberen Navigationsleiste und registerkartenmuster implementiert.
+Eine anpassbare Container, und flexible Navigationsmodell, der im Navigationsbereich links, oben im Navigationsbereich und Registerkarten-Muster implementiert.
 
 Referenz: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-Design und Vorgehensweise: [Feldsteuerelement NavigationView](navigationview.md)
+Entwurf und Anleitungen: [NavigationView-Steuerelement-Handbuch](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
 
@@ -576,7 +576,7 @@ Ein Containersteuerelement mit zwei Ansichten: einer Ansicht für den Hauptinhal
 
 Referenz: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für das Steuerelement für die geteilte Ansicht](split-view.md)
+Entwurf und Anleitungen: [Handbuch für Split anzeigen-Steuerelement](split-view.md)
 
 ### <a name="web-view"></a>Webansicht
 
@@ -589,7 +589,7 @@ Ein Containersteuerelement, das Webinhalt hostet.
 
 Referenz: [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
 
-Design und Vorgehensweise: Richtlinien für Webansichten 
+Entwurf und Anleitungen: Richtlinien für die Web-Ansichten 
 
 Beispielcode: [Beispiel für XAML-WebView-Steuerelement](https://go.microsoft.com/fwlink/p/?linkid=238582)
 
@@ -610,9 +610,9 @@ Ein Containersteuerelement, das es dem Benutzer ermöglicht, zwischen zwei Ansic
 
 Referenz: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für den semantischen Zoom](semantic-zoom.md)
+Entwurf und Anleitungen: [Der semantische Zoom-Steuerelement-Handbuch](semantic-zoom.md)
 
-Beispielcode: [Beispiel für XAML-GridView-Gruppierung und -SemanticZoom](https://go.microsoft.com/fwlink/p/?linkid=226564)
+Beispielcode: [XAML-GridView-Gruppierung und SemanticZoom-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>Statussteuerelemente
 
@@ -637,7 +637,7 @@ Eine Fortschrittsleiste, die einen unbestimmten Fortschritt anzeigt.
 
 Referenz: [ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Statussteuerelemente](progress-controls.md) 
+Entwurf und Anleitungen: [Statussteuerelemente geführt.](progress-controls.md) 
 
 ### <a name="progress-ring"></a>Statusring
 Ein Steuerelement, das den Status durch Anzeigen eines Rings angibt. 
@@ -650,7 +650,7 @@ Ein Steuerelement, das den Status durch Anzeigen eines Rings angibt.
 
 Referenz: [ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Statussteuerelemente](progress-controls.md) 
+Entwurf und Anleitungen: [Statussteuerelemente geführt.](progress-controls.md) 
 
 ## <a name="text-controls"></a>Textsteuerelemente
 
@@ -661,9 +661,9 @@ Ein Texteingabefeld, das Text vorschlägt, während der Benutzer Zeichen eingibt
 
 Referenz: [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
 
-Design und Vorgehensweise: [Textsteuerelemente](text-controls.md), [Richtlinien für Feldsteuerelement mit automatischen Vorschlägen](auto-suggest-box.md)
+Entwurf und Anleitungen: [Textsteuerelemente](text-controls.md), [automatischer Vorschlag Kontrollkästchen-Steuerelement-Handbuch](auto-suggest-box.md)
 
-Beispielcode: [Beispiel für AutoSuggestBox-Migration](https://go.microsoft.com/fwlink/p/?LinkId=619996)
+Beispielcode: [Beispiel für AutoSuggestBox-migration](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
 ### <a name="multi-line-text-box"></a>Mehrzeiliges Textfeld
 Siehe „Textfeld“.
@@ -680,9 +680,9 @@ Ein Steuerelement für die Kennworteingabe.
 
 Referenz: [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx) 
 
-Design und Vorgehensweise: [Textsteuerelemente](text-controls.md), [Richtlinien für Kennwortfelder](password-box.md) 
+Entwurf und Anleitungen: [Textsteuerelemente](text-controls.md), [Kennwort Kontrollkästchen-Steuerelement-Handbuch](password-box.md) 
 
-Beispielcode: [Beispiel für die XAML-Textanzeige](https://go.microsoft.com/fwlink/p/?linkid=238579), [Beispiel für die XAML-Textbearbeitung](https://go.microsoft.com/fwlink/p/?linkid=251417)
+Beispielcode: [XAML-Anzeige Textbeispiel](https://go.microsoft.com/fwlink/p/?linkid=238579), [Textbearbeitung XAML-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### <a name="rich-edit-box"></a>Rich-Edit-Feld
 Ein Steuerelement, mit dem der Benutzer Rich-Text-Dokumente mit Inhalten wie formatiertem Text, Links und Bildern bearbeiten kann.
@@ -693,9 +693,9 @@ Ein Steuerelement, mit dem der Benutzer Rich-Text-Dokumente mit Inhalten wie for
 
 Referenz: [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 
 
-Design und Vorgehensweise: [Textsteuerelemente](text-controls.md), [Richtlinien für RichEditBox-Steuerelement](rich-edit-box.md)
+Entwurf und Anleitungen: [Textsteuerelemente](text-controls.md), [Rich-edit-Kontrollkästchen-Steuerelement-Handbuch](rich-edit-box.md)
 
-Beispielcode: [Beispiel für XAML-Text](https://go.microsoft.com/fwlink/p/?linkid=238578)
+Beispielcode: [XAML-Text (Beispiel)](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="search-box"></a>Suchfeld
 Siehe „Feld mit automatischen Vorschlägen“.
@@ -717,9 +717,9 @@ Ein Steuerelement, das Text angezeigt.
 
 Referenz: [TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx) 
 
-Design und Vorgehensweise: [Textsteuerelemente](text-controls.md), [TextBlock](text-block.md), [Richtlinie für Rich-Text-Blocksteuerelemente](rich-text-block.md)
+Entwurf und Anleitungen: [Textsteuerelemente](text-controls.md), [Handbuch für Text-Block Benutzerkontensteuerung](text-block.md), [Handbuch für Rich-Text-Block-Benutzerkontensteuerung](rich-text-block.md)
 
-Beispielcode: [Beispiel für XAML-Text](https://go.microsoft.com/fwlink/p/?linkid=238578)
+Beispielcode: [XAML-Text (Beispiel)](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="text-box"></a>Textfeld
 Ein einzeiliges oder mehrzeiliges Nur-Text-Feld.
@@ -733,9 +733,9 @@ Ein einzeiliges oder mehrzeiliges Nur-Text-Feld.
 
 Referenz: [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
 
-Design und Vorgehensweise: [Textsteuerelemente](text-controls.md), [TextBox](text-box.md) 
+Entwurf und Anleitungen: [Textsteuerelemente](text-controls.md), [Text Box-Steuerelement-Handbuch](text-box.md) 
 
-Beispielcode: [Beispiel für XAML-Text](https://go.microsoft.com/fwlink/p/?linkid=238578)
+Beispielcode: [XAML-Text (Beispiel)](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ## <a name="selection-controls"></a>Auswahlsteuerelemente
 
@@ -751,7 +751,7 @@ Ein Steuerelement, das der Benutzer aktivieren und deaktivieren kann.
 
 Referenz: [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Kontrollkästchen](checkbox.md) 
+Entwurf und Anleitungen: [Handbuch für Kontrollkästchen-Steuerelement](checkbox.md) 
 
 ### <a name="combo-box"></a>Kombinationsfeld
 Eine Dropdownliste mit Elementen, in der ein Benutzer eine Auswahl treffen kann.
@@ -769,7 +769,7 @@ Eine Dropdownliste mit Elementen, in der ein Benutzer eine Auswahl treffen kann.
 
 Referenz: [ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
 
-Design und Vorgehensweise: [Listen](lists.md) 
+Entwurf und Anleitungen: [Listen](lists.md) 
 
 ### <a name="list-box"></a>Listenfeld
 Ein Steuerelement, das eine Inlineliste mit Elementen darstellt, aus der ein Benutzer eine Auswahl treffen kann. 
@@ -787,7 +787,7 @@ Ein Steuerelement, das eine Inlineliste mit Elementen darstellt, aus der ein Ben
 
 Referenz: [ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
 
-Design und Vorgehensweise: [Listen](lists.md) 
+Entwurf und Anleitungen: [Listen](lists.md) 
 
 ### <a name="radio-button"></a>Optionsfeld
 Ein Steuerelement, das es einem Benutzer ermöglicht, eine einzelne Option aus einer Gruppe von Optionen auszuwählen. Gruppierte Optionsfelder schließen sich gegenseitig aus.
@@ -805,9 +805,9 @@ Ein Steuerelement, das es einem Benutzer ermöglicht, eine einzelne Option aus e
 
 Referenz: [RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Optionsfelder](radio-button.md)
+Entwurf und Anleitungen: [Handbuch für Optionsfeld Schaltfläche Benutzerkontensteuerung](radio-button.md)
  
-### <a name="slider"></a>Schieberegler
+### <a name="slider"></a>Slider
 Ein Steuerelement, über das der Benutzer aus einer Reihe von Werten auswählen kann, indem er ein Schiebereglersteuerelement über einen Bereich verschiebt.
 
 ![Schiebereglersteuerelement](images/controls/slider.png)
@@ -816,9 +816,9 @@ Ein Steuerelement, über das der Benutzer aus einer Reihe von Werten auswählen 
 <Slider x:Name="slider1" Width="100" ValueChanged="Slider_ValueChanged" />
 ```
 
-Referenz: [Slider](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 
+Referenz: [Schieberegler](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Schieberegler](slider.md) 
+Entwurf und Anleitungen: [Schieberegler-Steuerelement-Handbuch](slider.md) 
 
 ### <a name="toggle-button"></a>Umschalter
 Eine Schaltfläche, mit der zwischen zwei Zuständen gewechselt werden kann.
@@ -830,7 +830,7 @@ Eine Schaltfläche, mit der zwischen zwei Zuständen gewechselt werden kann.
 
 Referenz: [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)
 
-Design und Vorgehensweise: [Richtlinien für Umschaltsteuerelemente](toggles.md) 
+Entwurf und Anleitungen: [Umschalten-Steuerelement-Handbuch](toggles.md) 
 
 ### <a name="toggle-switch"></a>Umschalter
 Ein Schalter, mit dem zwischen zwei Zuständen hin und her geschaltet werden kann.
@@ -845,4 +845,4 @@ Ein Schalter, mit dem zwischen zwei Zuständen hin und her geschaltet werden kan
 
 Referenz: [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
 
-Design und Vorgehensweise: [Richtlinien für Umschaltsteuerelemente](toggles.md) 
+Entwurf und Anleitungen: [Umschalten-Steuerelement-Handbuch](toggles.md) 

@@ -4,14 +4,14 @@ description: Eingaben für Ihr DirectX-Spiel.
 ms.assetid: 4c7dff42-978b-475e-a1a6-88c99bf2350a
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiel, Directx, Eingabe, Maus, Touch, Steuerelement
+keywords: Windows 10, UWP, Spiel, Directx, Eingabe, Maus, Touch, Steuerelement
 ms.localizationpriority: medium
 ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936163"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599455"
 ---
 # <a name="game-input-for-directx-games"></a>Eingaben für DirectX-Spiele
 
@@ -36,15 +36,15 @@ Im Thema „Toucheingabesteuerelemente für Spiele” wird erläutert, wie Sie t
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">Bewegungs-/Blicksteuerungen für Spiele</a></p></td>
+<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">Move-suchen-Steuerelemente für Spiele</a></p></td>
 <td align="left"><p>Fügen Sie Bewegungs-/Blicksteuerungen hinzu.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="relative-mouse-movement.md">Relative Mausbewegung</a></p></td>
+<td align="left"><p><a href="relative-mouse-movement.md">Relative mausbewegung</a></p></td>
 <td align="left"><p>Behandeln Sie die relative Mausbewegung.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">Toucheingabesteuerelemente für Spiele</a></p></td>
+<td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">Fingereingabe-Steuerelemente für Spiele</a></p></td>
 <td align="left"><p>Fügen Sie Ihrem Spiel einfache touchbasierte Steuerelemente hinzu.</p></td>
 </tr>
 </tbody>

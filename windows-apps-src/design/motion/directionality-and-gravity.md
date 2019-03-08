@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion uses directionality and gravity.
+Description: Erfahren Sie, wie Fluent Motion verwendet direktionalität und die Schwerkraft.
 title: Direktionalität und Schwerkraft – Animation in UWP-Apps
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4bb6f0ba60e89720a6daa37604cbe93696fb2bb7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922651"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603075"
 ---
 # <a name="directionality-and-gravity"></a>Direktionalität und Schwerkraft
 
@@ -112,5 +112,5 @@ Im Folgenden wird ein Element aus der oberen Reihe des Gitters durch die Schwerk
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Übersicht über Bewegungen](index.md)
-- [Timing und Geschwindigkeitsverlauf](timing-and-easing.md)
+- [Motion-Übersicht](index.md)
+- [Zeitsteuerungssystem und vereinfachen der](timing-and-easing.md)

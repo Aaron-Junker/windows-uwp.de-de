@@ -1,29 +1,29 @@
 ---
-Description: Learn how to send a local toast notification and handle the user clicking the toast.
+Description: Hier erfahren Sie, wie Sie eine lokale Popupbenachrichtigung senden und mit dem Benutzer umgehen, der auf das Popup klickt.
 title: Senden einer lokalen Popupbenachrichtigung
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP, Senden von Popupbenachrichtigungen, Benachrichtigungen, Benachrichtigungen senden, Popupbenachrichtigungen, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, exemplarische Vorgehensweise
+keywords: Windows 10, UWP, Senden von Popupbenachrichtigungen, Benachrichtigungen, Benachrichtigungen senden, Popupbenachrichtigungen, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, exemplarische Vorgehensweise
 ms.localizationpriority: medium
 ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946145"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605925"
 ---
 # <a name="send-a-local-toast-notification"></a>Senden einer lokalen Popupbenachrichtigung
 
 
-Eine Popupbenachrichtigung ist eine Nachricht, die eine App erstellen und an den Benutzer übermitteln kann, während diese(r) Ihre App aktuell nicht verwendet. Diese Schnellstartanleitung führt Sie durch die Schritteder Erstellung, Übermittlung und Anzeige einer Windows10-Popupbenachrichtigung mit den neuen adaptiven Vorlagen und interaktiven Aktionen. Diese Aktionen werden mit einer lokalen Benachrichtigung demonstriert– der einfachsten Benachrichtigung, die Sie implementieren können.
+Eine Popupbenachrichtigung ist eine Nachricht, die eine App erstellen und an den Benutzer übermitteln kann, während diese(r) Ihre App aktuell nicht verwendet. Diese Schnellstartanleitung führt Sie durch die Schritte der Erstellung, Übermittlung und Anzeige einer Windows 10-Popupbenachrichtigung mit den neuen adaptiven Vorlagen und interaktiven Aktionen. Diese Aktionen werden mit einer lokalen Benachrichtigung demonstriert – der einfachsten Benachrichtigung, die Sie implementieren können.
 
 > [!IMPORTANT]
 > Desktopanwendungen (Desktop-Brücke- und klassische Win32-Apps) haben verschiedene Schritte zum Senden von Benachrichtigungen und Behandeln der Aktivierung. Weitere Informationen zum Implementieren von Popups finden Sie in der Dokumentation zu [Desktop-Apps](toast-desktop-apps.md).
 
-Wir werden die folgenden Schrittedurchlaufen:
+Wir werden die folgenden Schritte durchlaufen:
 
 ### <a name="sending-a-toast"></a>Senden eines Popups
 
@@ -39,35 +39,35 @@ Wir werden die folgenden Schrittedurchlaufen:
 * Behandeln der Vordergrundaktivierung
 * Behandeln der Hintergrundaktivierung
 
-> **Wichtige APIs**: [ToastNotification-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **Wichtige APIs**: [ToastNotification Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 Um dieses Thema vollständig zu verstehen, ist Folgendes hilfreich...
 
-* Ein grundlegendes Verständnis der Begriffe und Konzepte rund um Popupbenachrichtigungen. Weitere Informationen finden Sie in der[Popup und Info-center (Übersicht)](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
-* Kenntnisse in Bezug auf den Inhalt von Windows10-Popupbenachrichtigungen. Weitere Informationen finden Sie in der [Dokumentation zu Popup-Inhalt](adaptive-interactive-toasts.md).
-* Ein Windows10-UWP-App-Projekt
+* Ein grundlegendes Verständnis der Begriffe und Konzepte rund um Popupbenachrichtigungen. Weitere Informationen finden Sie unter [Popup- und Aktion center Overview](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
+* Kenntnisse in Bezug auf den Inhalt von Windows 10-Popupbenachrichtigungen. Weitere Informationen finden Sie in der [Dokumentation zu Popup-Inhalt](adaptive-interactive-toasts.md).
+* Ein Windows 10-UWP-App-Projekt
 
 > [!NOTE]
-> Im Gegensatz zu Windows8/8.1 müssen Sie in Ihrem App-Manifest nicht mehr deklarieren, dass Ihre App Popupbenachrichtigungen anzeigen kann. Alle Apps können Popupbenachrichtigungen senden und anzeigen.
+> Im Gegensatz zu Windows 8/8.1 müssen Sie in Ihrem App-Manifest nicht mehr deklarieren, dass Ihre App Popupbenachrichtigungen anzeigen kann. Alle Apps können Popupbenachrichtigungen senden und anzeigen.
 
 > [!NOTE]
-> **Windows8/8.1-Apps**: Verwenden Sie die [archivierte Dokumentation](https://msdn.microsoft.com/library/windows/apps/xaml/hh868254.aspx).
+> **Windows 8/8.1-apps**: Verwenden Sie die [archivierte Dokumentation](https://msdn.microsoft.com/library/windows/apps/xaml/hh868254.aspx).
 
 
 ## <a name="install-nuget-packages"></a>Installieren von NuGet-Paketen
 
 Wir empfehlen die Installation der beiden folgenden NuGet-Pakete für Ihr Projekt. In unserem Codebeispiel werden diese Pakete verwendet. Am Ende des Artikels finden Sie die „Vanilla“-Codeausschnitte, die keine NuGet-Pakete verwenden.
 
-* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Generieren von Popup-Nutzlasten über Objekte anstelle von unformatiertem XML.
-* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/): Generieren und Analysieren von Abfragezeichenfolgen mit C#
+* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Toast-Nutzlasten über Objekte anstelle von unformatierten XML-Daten zu generieren.
+* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/): Generieren und Analysieren von Abfragezeichenfolgen mitC#
 
 
 ## <a name="add-namespace-declarations"></a>Hinzufügen von Namespacedeklarationen
 
-`Windows.UI.Notifications` enthält die Popup-APIs.
+`Windows.UI.Notifications` enthält den Toast-APIs.
 
 ```csharp
 using Windows.UI.Notifications;
@@ -78,16 +78,16 @@ using Microsoft.QueryStringDotNET; // QueryString.NET
 
 ## <a name="send-a-toast"></a>Senden eines Popups
 
-In Windows10 wird der Inhalt der Popupbenachrichtigung mithilfe einer adaptiven Sprache beschrieben, die eine sehr flexible Darstellung Ihrer Benachrichtigung erlaubt. Weitere Informationen finden Sie in der [Dokumentation zu Popupinhalt](adaptive-interactive-toasts.md).
+In Windows 10 wird der Inhalt der Popupbenachrichtigung mithilfe einer adaptiven Sprache beschrieben, die eine sehr flexible Darstellung Ihrer Benachrichtigung erlaubt. Weitere Informationen finden Sie in der [Dokumentation zu Popupinhalt](adaptive-interactive-toasts.md).
 
 ### <a name="constructing-the-visual-part-of-the-content"></a>Erstellen des visuellen Teils des Inhalts
 
 Beginnen wir mit der Erstellung des visuellen Teils des Inhalts, der den Text und Bilder umfasst, der dem Benutzer angezeigt werden soll.
 
-Dank der benachrichtigungsbibliothek ist das Generierung des XML-Inhalts einfach. Wenn Sie die Benachrichtigungsbibliothek von NuGet nicht installieren, müssen Sie den XML-Code manuell erstellen, was zu Fehlern führen kann.
+Dank der Benachrichtigungen-Bibliothek ist das Generieren von XML-Inhalt einfach. Wenn Sie die Benachrichtigungsbibliothek von NuGet nicht installieren, müssen Sie den XML-Code manuell erstellen, was zu Fehlern führen kann.
 
 > [!NOTE]
-> Die verwendeten Bilder können aus dem App-Paket, dem lokalen Speicher der App oder aus dem Web stammen. Im Fall Creators Update kann die Größe der Webbilder 3MB für normale Verbindungen und 1MB für getaktete Verbindungen betragen. Auf Geräten, die noch nicht das Fall Creators Update haben, dürfen Webbilder nicht größer als 200KB sein.
+> Die verwendeten Bilder können aus dem App-Paket, dem lokalen Speicher der App oder aus dem Web stammen. Im Fall Creators Update kann die Größe der Webbilder 3 MB für normale Verbindungen und 1 MB für getaktete Verbindungen betragen. Auf Geräten, die noch nicht das Fall Creators Update haben, dürfen Webbilder nicht größer als 200 KB sein.
 
 ```csharp
 // In a real app, these would be initialized with actual data
@@ -222,12 +222,12 @@ var toast = new ToastNotification(toastContent.GetXml());
 
 ## <a name="set-an-expiration-time"></a>Festlegen einer Ablaufzeit
 
-In Windows10 werden alle Popupbenachrichtigungen ins Info-Center verschoben, nachdem sie vom Benutzer geschlossen oder ignoriert wurden, sodass Benutzer sich Ihre Benachrichtigung ansehen können, nachdem das Popup ausgeblendet wurde.
+In Windows 10 werden alle Popupbenachrichtigungen ins Info-Center verschoben, nachdem sie vom Benutzer geschlossen oder ignoriert wurden, sodass Benutzer sich Ihre Benachrichtigung ansehen können, nachdem das Popup ausgeblendet wurde.
 
-Wenn die Nachricht in Ihrer Benachrichtigung jedoch nur für einen bestimmten Zeitraum relevant ist, sollten Sie für die Popupbenachrichtigung eine Ablaufzeit festlegen, damit dem Benutzer keine veralteten Informationen von Ihrer App angezeigt werden. Wenn beispielsweise ein Angebot nur 12 Stunden gültig ist, legen Sie die Ablaufzeit auf 12 Stunden fest. Im folgenden Code legen wir die Ablaufzeit auf 2Tage fest.
+Wenn die Nachricht in Ihrer Benachrichtigung jedoch nur für einen bestimmten Zeitraum relevant ist, sollten Sie für die Popupbenachrichtigung eine Ablaufzeit festlegen, damit dem Benutzer keine veralteten Informationen von Ihrer App angezeigt werden. Wenn beispielsweise ein Angebot nur 12 Stunden gültig ist, legen Sie die Ablaufzeit auf 12 Stunden fest. Im folgenden Code legen wir die Ablaufzeit auf 2 Tage fest.
 
 > [!NOTE]
-> Die standardmäßige und maximale Ablaufzeit für lokale Popupbenachrichtigungen ist 3Tage.
+> Die standardmäßige und maximale Ablaufzeit für lokale Popupbenachrichtigungen ist 3 Tage.
 
 ```csharp
 toast.ExpirationTime = DateTime.Now.AddDays(2);
@@ -238,9 +238,9 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 Wenn Sie die Benachrichtigung, die Sie senden, programmgesteuert entfernen oder ersetzen möchten, müssen Sie die Tag-Eigenschaft (und optional die Group-Eigenschaft) verwenden, um einen primären Schlüssel für die Benachrichtigung anzugeben. Sie können diesen primären Schlüssel dann zukünftig verwenden, um die Benachrichtigung zu entfernen oder zu ersetzen.
 
-Weitere Informationen zum Ersetzen/Entfernen bereits übermittelter Popupbenachrichtigungen finden Sie unter [Schnellstart: Verwalten von Popupbenachrichtigungen im Info-Center (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+Weitere Informationen zum Ersetzen/entfernen bereits übermittelt, Popupbenachrichtigungen finden Sie unter [Schnellstart: Verwalten von Popupbenachrichtigungen im Info-Center (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
 
-Tag und Group fungieren kombiniert als ein zusammengesetzter primärer Schlüssel. Group ist die allgemeinere ID, wobei Sie Gruppen wie „WallPosts“, „Nachrichten“, „FriendRequests“ etc. zuweisen können. Und Tag sollte dann die Benachrichtigung selbst innerhalb der Gruppe eindeutig identifizieren. Unter Verwendung einer allgemeinen Gruppe können Sie dann mithilfe der [RemoveGroup-API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) alle Benachrichtigungen aus dieser Gruppe entfernen.
+Tag und Group fungieren kombiniert als ein zusammengesetzter primärer Schlüssel. Die Gruppe ist dem generischen Bezeichner, in denen Sie Gruppen wie "WallPosts", "Messages", "FriendRequests" zuweisen. Ein, und klicken Sie dann Tag sollte die Benachrichtigung selbst aus, in der Gruppe eindeutig identifiziert. Unter Verwendung einer allgemeinen Gruppe können Sie dann mithilfe der [RemoveGroup-API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) alle Benachrichtigungen aus dieser Gruppe entfernen.
 
 ```csharp
 toast.Tag = "18365";
@@ -270,23 +270,23 @@ Hier ist ein Beispiel dafür, was eine Nachrichten-App tun sollte...
 3. Die App öffnet die Unterhaltung und löscht dann alle Popups für die Unterhaltung (mithilfe von [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) für die von der App bereitgestellte Gruppe für diese Unterhaltung)
 4. Im Info-Center des Benutzers wird jetzt ordnungsgemäß der Zustand der Benachrichtigung angegeben, da im Info-Center keine veralteten Benachrichtigungen für die Unterhaltung vorhanden sind.
 
-Informationen zum Löschen aller Benachrichtigungen oder Entfernen bestimmter Benachrichtigungen finden Sie unter [Schnellstart: Verwalten von Popupbenachrichtigungen im Info-Center (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+Weitere Informationen zu aller Benachrichtigungen zu deaktivieren oder bestimmte Benachrichtigungen zu entfernen, finden Sie unter [Schnellstart: Verwalten von Popupbenachrichtigungen im Info-Center (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
 
 
 ## <a name="handling-activation"></a>Behandeln der Aktivierung
 
-Wenn der Benutzer in Windows10 auf das Popup klickt, haben Sie zwei Möglichkeiten der Aktivierung Ihrer App durch das Popup...
+Wenn der Benutzer in Windows 10 auf das Popup klickt, haben Sie zwei Möglichkeiten der Aktivierung Ihrer App durch das Popup...
 
 * Vordergrundaktivierung
 * Hintergrundaktivierung
 
 > [!NOTE]
-> Wenn Sie die älteren Popupvorlagen von Windows8.1 verwenden, wird statt **OnActivated** **OnLaunched** aufgerufen. Die folgende Dokumentation gilt nur für moderne Windows10-Benachrichtigungen, die die Benachrichtigungsbibliothek (oder die ToastGeneric-Vorlage bei Verwendung von XML-Rohdaten) verwenden.
+> Wenn Sie die älteren Popupvorlagen von Windows 8.1 verwenden, wird statt **OnActivated****OnLaunched** aufgerufen. Die folgende Dokumentation gilt nur für moderne Windows 10-Benachrichtigungen, die die Benachrichtigungsbibliothek (oder die ToastGeneric-Vorlage bei Verwendung von XML-Rohdaten) verwenden.
 
 
 ### <a name="handling-foreground-activation"></a>Behandeln der Vordergrundaktivierung
 
-Wenn ein Benutzer in Windows10 auf ein modernes Popup (oder eine Schaltfläche im Popup) klickt, wird anstelle von **OnLaunched** **OnActivated** mit der neuen Art der Aktivierung– **ToastNotification**– aufgerufen. Dadurch kann der Entwickler eine Popupaktivierung auf einfache Weise erkennen und Aufgaben entsprechend ausführen.
+Wenn ein Benutzer in Windows 10 auf ein modernes Popup (oder eine Schaltfläche im Popup) klickt, wird anstelle von **OnLaunched****OnActivated** mit der neuen Art der Aktivierung – **ToastNotification** – aufgerufen. Dadurch kann der Entwickler eine Popupaktivierung auf einfache Weise erkennen und Aufgaben entsprechend ausführen.
 
 Im Beispiel unten können Sie die Argumentzeichenfolge abrufen, die Sie ursprünglich im Popupinhalt angegeben haben. Sie können auch die Eingabe des Benutzers in Ihren Textfeldern und Auswahlfeldern abrufen.
 
@@ -501,7 +501,7 @@ var toast = new ToastNotification(toastXml);
 
 ## <a name="resources"></a>Ressourcen
 
-* [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast)
-* [Dokumentation zu Popupinhalt](adaptive-interactive-toasts.md)
+* [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast)
+* [Toast-Content-Dokumentation](adaptive-interactive-toasts.md)
 * [ToastNotification-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 * [ToastNotificationActivatedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)

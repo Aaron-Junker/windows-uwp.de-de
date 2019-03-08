@@ -2,20 +2,20 @@
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: Erfahren Sie, wie Sie den Windows.Services.Store-Namespace verwenden, um eine App oder ein Add-on zu erwerben.
 title: Aktivieren von In-App-Käufen von Apps und Add-Ons
-keywords: windows10, uwp, add-ons, in-app-käufe, IAPs, Windows.Services.Store
+keywords: windows 10, uwp, add-ons, in-app-käufe, IAPs, Windows.Services.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929083"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661725"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>Aktivieren von In-App-Käufen von Apps und Add-Ons
 
-In diesem Artikel wird veranschaulicht, wie Sie Mitglieder im [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)-Namespace verwenden, um für den Benutzer den Kauf der aktuellen App oder eines ihrer Add-Ons anzufordern. Wenn der Benutzer beispielsweise aktuell über eine Testversion der App verfügt, können Sie diesen Vorgang verwenden, um für den Benutzer eine Volllizenz zu erwerben. Alternativ können Sie diesen Prozess auch verwenden, um für den Benutzer ein Add-On wie z.B. ein neues Gamelevel zu erwerben.
+In diesem Artikel wird veranschaulicht, wie Sie Mitglieder im [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)-Namespace verwenden, um für den Benutzer den Kauf der aktuellen App oder eines ihrer Add-Ons anzufordern. Wenn der Benutzer beispielsweise aktuell über eine Testversion der App verfügt, können Sie diesen Vorgang verwenden, um für den Benutzer eine Volllizenz zu erwerben. Alternativ können Sie diesen Prozess auch verwenden, um für den Benutzer ein Add-On wie z. B. ein neues Gamelevel zu erwerben.
 
 Um den Kauf einer App oder eines Add-Ons anzufordern, bietet der [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)-Namespace verschiedene Methoden:
 * Wenn Sie die [Store-ID](in-app-purchases-and-trials.md#store_ids) der App bzw. des Add-Ons kennen, verwenden Sie die [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync)-Methode der [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx)-Klasse.
@@ -24,18 +24,18 @@ Um den Kauf einer App oder eines Add-Ons anzufordern, bietet der [Windows.Servic
 Jede Methode zeigt dem Benutzer eine Standardbenutzeroberfläche für den Einkauf an und führt den Vorgang nach Abschluss der Transaktion asynchron aus. Die Methode gibt ein Objekt zurück, das angibt, ob die Transaktion erfolgreich war.
 
 > [!NOTE]
-> Der **Windows.Services.Store**-Namespace wurde in Windows10, Version 1607, eingeführt und kann nur in Projekten für die **Windows10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Wenn Ihre App für eine frühere Version von Windows 10 geeignet ist, müssen Sie den [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace anstelle des **Windows.Services.Store**-Namespace verwenden. Weitere Informationen finden Sie in [diesem Artikel](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+> Der **Windows.Services.Store**-Namespace wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Wenn Ihre App für eine frühere Version von Windows 10 geeignet ist, müssen Sie den [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace anstelle des **Windows.Services.Store**-Namespace verwenden. Weitere Informationen finden Sie in [diesem Artikel](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 Für dieses Beispiel gelten die folgenden Voraussetzungen:
 * Ein Visual Studio-Projekt für eine UWP (Universelle Windows-Plattform)-App, die für **Windows 10 Anniversary Edition (10.0; Build 14393)** oder höher, geeignet ist.
-* Sie haben [eine app-Übermittlung erstellt haben](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) , im Partner Center und diese app im Store veröffentlicht ist. Optional können Sie die App so konfigurieren, daher sie während der Tests im Store nicht auffindbar ist. Weitere Informationen finden Sie unter [Hinweise für Tests](in-app-purchases-and-trials.md#testing).
-* Wenn Sie in-app-Käufe für ein Add-on für die app aktivieren möchten, müssen Sie auch [das Add-on im Partner Center erstellen](../publish/add-on-submissions.md).
+* Sie haben [erstellt eine app-Einsendung](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) im Partner Center und diese app wird in den Store veröffentlicht. Optional können Sie die App so konfigurieren, daher sie während der Tests im Store nicht auffindbar ist. Weitere Informationen finden Sie unter [Hinweise für Tests](in-app-purchases-and-trials.md#testing).
+* Wenn Sie in-app-Käufe für ein Add-on für die app aktivieren möchten, müssen Sie auch [erstellen Sie das Add-on im Partner Center](../publish/add-on-submissions.md).
 
 Der Code in diesem Beispiel geht von folgenden Voraussetzungen aus:
 * Die Ausführung des Codes erfolgt im Kontext einer [Seite](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), die einen [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) mit dem Namen ```workingProgressRing``` und einen [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) mit dem Namen ```textBlock``` enthält. Diese Objekte werden verwendet, um anzugeben, dass ein asynchroner Vorgang ausgeführt wird, bzw. um Ausgabemeldungen anzuzeigen.
-* Die Codedatei enthält eine **using**-Anweisung für den **Windows.Services.Store**-Namespace.
+* Die Codedatei enthält eine **using**-Anweisung für den Namespace **Windows.Services.Store**.
 * Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Weitere Informationen finden Sie unter [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md#api_intro).
 
 > [!NOTE]
@@ -57,9 +57,9 @@ Sehen Sie sich das folgende Video mit einer Übersicht über In-App-Käufe in Ih
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
-* [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)
-* [Abrufen von Lizenzinformationen zu Apps und Add-Ons](get-license-info-for-apps-and-add-ons.md)
-* [Unterstützen von Käufen konsumierbarer Add-Ons](enable-consumable-add-on-purchases.md)
-* [Implementieren einer Testversion der App](implement-a-trial-version-of-your-app.md)
+* [In-app-Käufe und Testversionen](in-app-purchases-and-trials.md)
+* [Abrufen von Produktinformationen für apps und -Add-Ons](get-product-info-for-apps-and-add-ons.md)
+* [Abrufen von Lizenzinformationen für apps und -Add-Ons](get-license-info-for-apps-and-add-ons.md)
+* [Aktivieren Sie nutzbar Add-on-Käufe](enable-consumable-add-on-purchases.md)
+* [Implementieren Sie eine Testversion von Ihrer app](implement-a-trial-version-of-your-app.md)
 * [Store-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

@@ -1,18 +1,18 @@
 ---
-Description: You can programmatically pin your own app's primary tile to Start, just like you can pin secondary tiles. And you can check whether it's currently pinned.
+Description: Sie können die primäre Kachel Ihrer eigenen App programmgesteuert an die Startseite anheften, genauso wie Sie sekundäre Kacheln anheften können. Und Sie können prüfen, ob sie derzeit angeheftet ist.
 title: Primäre Kachel-APIs
 label: Primary tile API's
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP, StartScreenManager, primäre Kachel anheften, primäre Kachel-APIs, überprüfen, ob die Kachel angeheftet ist, Live-Kachel
+keywords: Windows 10, UWP, StartScreenManager, primäre Kachel anheften, primäre Kachel-APIs, überprüfen, ob die Kachel angeheftet ist, Live-Kachel
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d7c66b358a3a465522ad3b56d8ae926358ae57
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922935"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596195"
 ---
 # <a name="primary-tile-apis"></a>Primärkachel-APIs
  
@@ -20,9 +20,9 @@ ms.locfileid: "8922935"
 Mit Primärkachel-APIs können Sie überprüfen, ob die App auf der Startseite angeheftet ist und anfragen, ob Ihre App an die primäre Kachel der App angeheftet werden kann.
 
 > [!IMPORTANT]
-> **** Erfordert das Fall Creators Update: Sie müssen als Ziel Insider SDK 15063 angeben und Insider-Builds 15063 oder höher ausführen, um die Primärkachel-API zu verwenden.
+> **Erfordert Creators Update**: Sie müssen SDK 15063 ausgerichtet und Build 15063 oder höher, um die primäre Kachel APIs verwenden ausgeführt werden.
 
-> **Wichtige APIs**: [**StartScreenManager Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager), [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_), [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
+> **Wichtige APIs**: [**StartScreenManager class**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager), [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_), [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
 
 
 ## <a name="when-to-use-primary-tile-apis"></a>Verwendung von Primärkachel-APIs
@@ -38,7 +38,7 @@ Sie haben großen Aufwand betrieben, um die primäre Kachel Ihrer App benutzerfr
 
 ## <a name="checking-whether-the-apis-exist"></a>Überprüfen, ob die APIs vorhanden sind
 
-Wenn Ihre App ältere Versionen von Windows10 unterstützt, müssen Sie überprüfen, ob diese Primärkachel-APIs verfügbar sind. Verwenden Sie dazu ApiInformation. Wenn die Primärkachel-APIs nicht verfügbar sind, vermeiden Sie, Aufrufe an die APIs durchzuführen.
+Wenn Ihre App ältere Versionen von Windows 10 unterstützt, müssen Sie überprüfen, ob diese Primärkachel-APIs verfügbar sind. Verwenden Sie dazu ApiInformation. Wenn die Primärkachel-APIs nicht verfügbar sind, vermeiden Sie, Aufrufe an die APIs durchzuführen.
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.StartScreen.StartScreenManager"))
@@ -84,7 +84,7 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 Wenn die primäre Kachel aktuell nicht angeheftet ist und die Kachel von der Startseite unterstützt wird, sollten Sie Benutzern den Tipp anzeigen, dass die primäre Kachel angeheftet werden kann.
 
 > [!NOTE]
-> Sie müssen diese API über einen UI-Thread aufrufen, während Ihre app im Vordergrund, und rufen Sie nur diese Benutzer absichtlich die primäre Kachel Bepinned (z. B. nach der Benutzer geklickt hat, in Ihrem Tipp zum Anheften der Kachel Ja) angefordert hat APIafterthe.
+> Sie müssen diese API über eine UI-Thread aufrufen, während Ihre app im Vordergrund, und Sie diese API nur aufrufen sollten, nachdem der Benutzer absichtlich angefordert hat die primäre Kachel angeheftet werden (z. B. nach dem der Benutzer auf Ja, Ihre Tipp zum Anheften der Kachel geklickt haben).
 
 Klickt der Benutzer auf Ihre Schaltfläche, um die primäre Kachel anzuheften, würden Sie dann die Methode [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) aufrufen, um anzufordern, dass die Kachel an die Startseite angeheftet wird. Dadurch wird ein Dialogfeld angezeigt, das den Benutzer auffordert zu bestätigen, dass Ihre Kachel an die Startseite angeheftet werden soll.
 
@@ -99,9 +99,9 @@ bool isPinned = await StartScreenManager.GetDefault().RequestAddAppListEntryAsyn
 ```
 
 
-## <a name="resources"></a>Resources
+## <a name="resources"></a>Ressourcen
 
-* [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-pin-primary-tile)
-* [An Taskleiste anheften](../pin-to-taskbar.md)
-* [Kacheln, Badges und Benachrichtigungen](index.md)
-* [Dokumentation zu adaptiven Kacheln](create-adaptive-tiles.md)
+* [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-pin-primary-tile)
+* ["An Taskleiste anheften"](../pin-to-taskbar.md)
+* [Kacheln, Signale und Benachrichtigungen](index.md)
+* [Kachel "Adaptive"-Dokumentation](create-adaptive-tiles.md)

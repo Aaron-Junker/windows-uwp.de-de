@@ -1,19 +1,19 @@
 ---
-Description: If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.
+Description: Wenn Ihre App keine barrierefreie Bedienung mit der Tastatur ermöglicht, können Benutzer, die blind oder in ihrer Beweglichkeit eingeschränkt sind, Schwierigkeiten bei der Verwendung Ihrer App haben oder Ihre App möglicherweise überhaupt nicht nutzen.
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Barrierefreiheit der Tastaturnavigation
 label: Keyboard accessibility
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ad64c2a0d4d7569ec2c0c0a44f9236fc4b2819f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045519"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602065"
 ---
 # <a name="keyboard-accessibility"></a>Barrierefreiheit der Tastaturnavigation  
 
@@ -58,16 +58,16 @@ Alle Elemente, die im Fokus stehen können, sind normalerweise standardmäßig i
 
 Unabhängig davon, ob Sie [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461)-Werte anpassen oder die Standardreihenfolge verwenden, gelten folgende Regeln:
 
-* UI-Elemente, bei denen [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) gleich0 ist, werden der Aktivierreihenfolge basierend auf der Deklarierungsreihenfolge in XAML-Collections oder untergeordneten Collections hinzugefügt.
-* UI-Elemente, bei denen [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) größer als0 ist, werden der Aktivierreihenfolge basierend auf dem Wert **TabIndex** hinzugefügt.
-* UI-Elemente, bei denen [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) kleiner als0 ist, werden der Aktivierreihenfolge hinzugefügt und werden vor allen Elementen mit NULL-Werten angezeigt. Dies ist unter Umständen anders als bei der Verarbeitung des Attributs **tabindex** in HTML. (Ein negativer **tabindex** wurde in älteren HTML-Spezifikationen nicht unterstützt.)
+* UI-Elemente, bei denen [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) gleich 0 ist, werden der Aktivierreihenfolge basierend auf der Deklarierungsreihenfolge in XAML-Collections oder untergeordneten Collections hinzugefügt.
+* UI-Elemente, bei denen [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) größer als 0 ist, werden der Aktivierreihenfolge basierend auf dem Wert **TabIndex** hinzugefügt.
+* UI-Elemente, bei denen [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) kleiner als 0 ist, werden der Aktivierreihenfolge hinzugefügt und werden vor allen Elementen mit NULL-Werten angezeigt. Dies ist unter Umständen anders als bei der Verarbeitung des Attributs **tabindex** in HTML. (Ein negativer **tabindex** wurde in älteren HTML-Spezifikationen nicht unterstützt.)
 
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
 <span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"/>
 
 ## <a name="keyboard-navigation-within-a-ui-element"></a>Navigation innerhalb eines Benutzeroberflächenelements mithilfe der Tastatur  
-Bei zusammengesetzten Elementen ist es wichtig, eine korrekte interne Navigation zwischen den enthaltenen Elementen sicherzustellen. Ein zusammengesetztes Element kann seine derzeit aktiven untergeordneten Elemente verwalten, wodurch der Mehraufwand reduziert wird, der entsteht, wenn alle untergeordneten Elemente fokussierbar sein müssen. Ein solches zusammengesetztes Element ist in der Aktivierreihenfolge enthalten und behandelt Tastaturnavigationsereignisse selbst. Viele der zusammengesetzten Steuerelemente verfügen bereits über eine in ihre Ereignisbehandlung integrierte Navigationslogik. Das Durchlaufen von Elementen mit den Pfeiltasten ist z.B. standardmäßig für die Elemente eines [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)-, [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview)-, [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868)- und [**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678)-Steuerelements aktiviert.
+Bei zusammengesetzten Elementen ist es wichtig, eine korrekte interne Navigation zwischen den enthaltenen Elementen sicherzustellen. Ein zusammengesetztes Element kann seine derzeit aktiven untergeordneten Elemente verwalten, wodurch der Mehraufwand reduziert wird, der entsteht, wenn alle untergeordneten Elemente fokussierbar sein müssen. Ein solches zusammengesetztes Element ist in der Aktivierreihenfolge enthalten und behandelt Tastaturnavigationsereignisse selbst. Viele der zusammengesetzten Steuerelemente verfügen bereits über eine in ihre Ereignisbehandlung integrierte Navigationslogik. Das Durchlaufen von Elementen mit den Pfeiltasten ist z. B. standardmäßig für die Elemente eines [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)-, [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview)-, [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868)- und [**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678)-Steuerelements aktiviert.
 
 <span id="keyboard_activation"/>
 <span id="KEYBOARD_ACTIVATION"/>
@@ -75,7 +75,7 @@ Bei zusammengesetzten Elementen ist es wichtig, eine korrekte interne Navigation
 ## <a name="keyboard-alternatives-to-pointer-actions-and-events-for-specific-control-elements"></a>Tastaturalternativen für Zeigeraktionen und Ereignisse für bestimmte Steuerelemente  
 Stellen Sie sicher, dass UI-Elemente, auf die geklickt werden kann, auch über die Tastatur aufgerufen werden können. Um die Tastatur für ein UI-Element verwenden zu können, muss das Element im Fokus stehen. Nur von [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) abgeleitete Klassen unterstützen den Fokus und die TAB-Navigation.
 
-Implementieren Sie für UI-Elemente, die aufgerufen werden können, Tastatur-Ereignishandler für die LEERTASTE und die EINGABETASTE. So machen Sie die Unterstützung für die Barrierefreiheit des Tastaturzugriffs komplett und ermöglichen es Benutzern, einfache App-Szenarien nur über die Tastatur auszuführen – d.h. Benutzer können über die Tastatur alle interaktiven UI-Elemente erreichen und die Standardfunktionen aktivieren.
+Implementieren Sie für UI-Elemente, die aufgerufen werden können, Tastatur-Ereignishandler für die LEERTASTE und die EINGABETASTE. So machen Sie die Unterstützung für die Barrierefreiheit des Tastaturzugriffs komplett und ermöglichen es Benutzern, einfache App-Szenarien nur über die Tastatur auszuführen – d. h. Benutzer können über die Tastatur alle interaktiven UI-Elemente erreichen und die Standardfunktionen aktivieren.
 
 Wenn ein Element, das Sie in der UI verwenden möchten, nicht im Fokus stehen kann, können Sie ein eigenes benutzerdefiniertes Steuerelement erstellen. Sie müssen die Eigenschaft [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) auf **true** festlegen, damit das Element im Fokus stehen kann, und Sie müssen eine visuelle Anzeige des fokussierten Zustands bereitstellen, indem Sie einen visuellen Zustand erstellen, der für eine Fokusanzeige auf der UI sorgt. Oft ist es allerdings einfacher, die Steuerelementkomposition zu verwenden, damit die Unterstützung für TAB-Navigation, Fokus und Microsoft-Benutzeroberflächenautomatisierungs-Peers und -Muster von dem Steuerelement behandelt werden kann, in dem Sie den Inhalt zusammensetzen.
 
@@ -175,7 +175,7 @@ Im Allgemeinen implementieren Sie die benutzerdefinierte Tastenverarbeitung für
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>Beispiel für einen Ansichtszustand für eine Fokusanzeige  
 Wie bereits erwählt sollte jedes benutzerdefinierte Steuerelement, mit dem Benutzer fokussieren können, über eine visuelle Fokusanzeige verfügen. In der Regel kann diese Fokusanzeige einfach durch Zeichnen eines Rechtecks direkt um das normale umgebende Rechteck des Steuerelements erzeugt werden. Das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element für visuellen Fokus ist ein Peerelement der übrigen Zusammenstellung des Steuerelements in einer Steuerelementvorlage, wird jedoch anfänglich mit dem [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992)-Wert **Collapsed** festgelegt, da das Steuerelement noch nicht fokussiert ist. Wenn das Steuerelement im Fokus steht, wird ein visueller Zustand aufgerufen, der die **Visibility** des visuellen Fokus speziell auf **Visible** festlegt. Sobald der Fokus verschoben wird, wird ein anderer visueller Zustand auf gerufen, und die **Visibility** wird zu **Collapsed**.
 
-Alle standardmäßigen XAML-Steuerelemente weisen eine entsprechende visuelle Fokusanzeige auf, wenn sie im Fokus stehen (sofern dies möglich ist). Es gibt auch potenziell unterschiedliche Designs je nach ausgewähltem Design des Benutzers (insbesondere wenn der Benutzer einen hohen Kontrast verwendet). Wenn Sie die XAML-Steuerelemente in Ihrer UI verwenden und nicht die Steuerelementvorlagen ersetzen, sind für visuelle Fokusanzeigen für Steuerelemente, die korrekt funktionieren und angezeigt werden, keine weiteren Schritte erforderlich sind. Wenn Sie aber eine neue Vorlage für ein Steuerelement verwenden möchten oder sich fragen, wie XAML-Steuerelemente ihre Fokusanzeigen bereitstellen, wird im restlichen Teil dieses Abschnitts erläutert, wie Sie dies in XAML und in der Steuerelementlogik erreichen.
+Alle standardmäßigen XAML-Steuerelemente weisen eine entsprechende visuelle Fokusanzeige auf, wenn sie im Fokus stehen (sofern dies möglich ist). Es gibt auch unterschiedliche sieht je nach ausgewählten Designs des Benutzers (insbesondere, wenn der Benutzer einen Modus mit hohem Kontrast verwendet.) Wenn Sie die XAML-Steuerelemente in der Benutzeroberfläche und ersetzen die Vorlagen nicht verwenden, müssen Sie nichts zusätzlich zum Abrufen von visuellen fokusindikatoren für Steuerelemente, die Verhalten und richtig angezeigt werden. Wenn Sie aber eine neue Vorlage für ein Steuerelement verwenden möchten oder sich fragen, wie XAML-Steuerelemente ihre Fokusanzeigen bereitstellen, wird im restlichen Teil dieses Abschnitts erläutert, wie Sie dies in XAML und in der Steuerelementlogik erreichen.
 
 Im Folgenden finden Sie eine Beispiel-XAML, die aus der standardmäßigen XAML-Vorlage für [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) stammt.
 
@@ -232,7 +232,7 @@ XAML
 </ControlTemplate>
 ```
 
-Nur einer der benannten Zustände passt [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) direkt an, während die anderen scheinbar leer sind. Die Funktionsweise visueller Zustände besteht darin, dass bei Verwendung eines anderen Zustands aus derselben [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/BR209014) durch das Steuerelement alle im vorhergehenden Zustand angewendeten Animationen sofort abgebrochen werden. Dies bedeutet, dass das Rechteck nicht angezeigt wird, da die Standard-**Visibility** aus der Zusammensetzung **Collapsed** ist. Die Logik des Steuerelements steuert dies durch Überwachen von Fokusereignissen wie z.B. [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/BR208927) und Ändern der Status mit [**GoToState**](https://msdn.microsoft.com/library/windows/apps/BR209025). Bei Verwendung eines Standardsteuerelements oder bei einer Anpassung, die auf einem Steuerelement mit diesem Verhalten basiert, wird dieser Schritt oftmals automatisch für Sie erledigt.
+Nur einer der benannten Zustände passt [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) direkt an, während die anderen scheinbar leer sind. Die Funktionsweise visueller Zustände besteht darin, dass bei Verwendung eines anderen Zustands aus derselben [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/BR209014) durch das Steuerelement alle im vorhergehenden Zustand angewendeten Animationen sofort abgebrochen werden. Dies bedeutet, dass das Rechteck nicht angezeigt wird, da die Standard-**Visibility** aus der Zusammensetzung **Collapsed** ist. Die Logik des Steuerelements steuert dies durch Überwachen von Fokusereignissen wie z. B. [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/BR208927) und Ändern der Status mit [**GoToState**](https://msdn.microsoft.com/library/windows/apps/BR209025). Bei Verwendung eines Standardsteuerelements oder bei einer Anpassung, die auf einem Steuerelement mit diesem Verhalten basiert, wird dieser Schritt oftmals automatisch für Sie erledigt.
 
 <span id="Keyboard_accessibility_and_Windows_Phone"/>
 <span id="keyboard_accessibility_and_windows_phone"/>
@@ -246,8 +246,8 @@ Tastenkombinationen sind für Windows Phone-Apps in der Regel nicht relevant, da
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>Verwandte Themen  
-* [Barrierefreiheit](accessibility.md)
-* [Tastaturinteraktionen](https://msdn.microsoft.com/library/windows/apps/Mt185607)
-* [Beispiel für die Bildschirmtastatur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML-Beispiel für Barrierefreiheit](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Bedienungshilfen](accessibility.md)
+* [Tastenkombinationen](https://msdn.microsoft.com/library/windows/apps/Mt185607)
+* [Touch-Tastatur – Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+* [Beispiel für XAML-Barrierefreiheit](https://go.microsoft.com/fwlink/p/?linkid=238570)
 

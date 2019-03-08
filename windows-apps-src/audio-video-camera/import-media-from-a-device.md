@@ -4,14 +4,14 @@ description: In diesem Artikel wird beschrieben, wie Medien von einem Gerät imp
 title: Importieren von Medien
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c08612e48eec7989f3b56fba41a17e1c149b2058
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925705"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603465"
 ---
 # <a name="import-media-from-a-device"></a>Importieren von Medien von einem Gerät
 

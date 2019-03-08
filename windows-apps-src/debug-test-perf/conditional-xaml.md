@@ -3,16 +3,16 @@ title: Bedingtes XAML
 description: Verwenden neuer APIs in XAML-Markup bei gleichzeitiger Gewährleistung der Kompatibilität mit früheren Versionen
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a3133508a0cb8919994543845412ef71a8d463fe
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050843"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611765"
 ---
-# <a name="conditional-xaml"></a>Bedingte XAML
+# <a name="conditional-xaml"></a>Bedingtes XAML
 
 *Bedingte XAML* bietet eine Möglichkeit, die Methode [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) in XAML-Markup zu verwenden. Sie sind damit in der Lage, im Markup nur dann Eigenschaften festzulegen und Objekte zu initialisieren, wenn die entsprechende API vorhanden ist, ohne Code-Behind zu verwenden. Elemente oder Attribute werden selektiv analysiert, um zu bestimmen, ob sie zur Laufzeit zur Verfügung stehen. Bedingte Anweisungen werden zur Laufzeit ausgewertet, und Elemente, die mit einem bedingten XAML-Tag gekennzeichnet sind, werden analysiert, wenn ihre Auswertung **true** ergibt. Andernfalls werden sie ignoriert.
 
@@ -112,7 +112,7 @@ Im vorherigen Beispiel wird die Eigenschaft Text nur gesetzt, wenn die App mit F
 
 Dies funktioniert, wenn sie mit Creators Update ausgeführt wird, aber wenn sie mit Fall Creators Update ausgeführt wird, erhalten Sie eine Fehlermeldung, dass die Text-Eigenschaft mehr als einmal gesetzt ist.
 
-Um unterschiedliche Texte festzulegen für den Fall, dass die App unter verschiedenen Versionen von Windows10 ausgeführt wird, benötigen Sie eine andere Bedingung. Bedingte XAML bietet eine Umkehrung jeder unterstützten ApiInformation-Methode, damit Sie wie folgt if/else-Szenarien erstellen können.
+Um unterschiedliche Texte festzulegen für den Fall, dass die App unter verschiedenen Versionen von Windows 10 ausgeführt wird, benötigen Sie eine andere Bedingung. Bedingte XAML bietet eine Umkehrung jeder unterstützten ApiInformation-Methode, damit Sie wie folgt if/else-Szenarien erstellen können.
 
 Die Methode IsApiContractPresent liefert **true**, wenn das aktuelle Gerät die angegebene Vertrags- und Versionsnummer enthält. Wenn Ihre App beispielsweise unter dem Creators-Update ausgeführt wird, hat der universelle API-Vertrag die Versionsnummer 4.
 
@@ -183,7 +183,7 @@ Sie können bedingte Qualifizierer mit unterschiedlichen Arten von [XAML-Syntax 
 </Rectangle>
 ```
 
-Wenn Sie eine Eigenschaft an eine anderen Eigenschaft binden, die von einem bedingten Namespace abhängig ist, müssen Sie dieselbe Bedingung für beide Eigenschaften verwenden. Hier hängt `colorPicker.Color` vom bedingten Namespace „contract5Present” ab. Daher müssen Sie das Präfix „contract5Present” auf die Eigenschaft SolidColorBrush.Color setzen. (Oder verwenden Sie das Präfix „contract5Present” mit der Eigenschaft SolidColorBrush statt mit der Color-Eigenschaft.) Andernfalls tritt während der Kompilierung ein Fehler auf.
+Wenn Sie eine Eigenschaft an eine anderen Eigenschaft binden, die von einem bedingten Namespace abhängig ist, müssen Sie dieselbe Bedingung für beide Eigenschaften verwenden. Hier hängt `colorPicker.Color` vom bedingten Namespace „contract5Present” ab. Daher müssen Sie das Präfix „contract5Present” auf die Eigenschaft SolidColorBrush.Color setzen. (Oder Sie können das Präfix "contract5Present" platzieren, auf die SolidColorBrush statt auf die Color-Eigenschaft.) Wenn Sie dies nicht tun, erhalten Sie einen Fehler während der Kompilierung.
 
 ```xaml
 <SolidColorBrush contract5Present:Color="{x:Bind colorPicker.Color, Mode=OneWay}"/>
@@ -245,5 +245,5 @@ Wenn die App unter Fall Creators Update ausgeführt wird, verwenden Sie einen Co
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Anleitung für UWP-Apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [Dynamically detecting features with API contracts (Dynamisches Erkennen von Features mithilfe von API-Verträgen)](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [Dynamisch Erkennen von Funktionen mit API-Verträgen](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API-Verträge](https://channel9.msdn.com/Events/Build/2015/3-733) (Video für Build 2015)

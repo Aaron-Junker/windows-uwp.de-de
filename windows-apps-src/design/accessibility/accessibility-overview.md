@@ -1,21 +1,21 @@
 ---
-Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
+Description: Dieser Artikel bietet eine Übersicht über die Konzepte und Technologien in Barrierefreiheitsszenarien für Apps der universellen Windows-Plattform (UWP).
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Barrierefreiheit im Überblick
 label: Accessibility overview
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d0c3bea228cae8d9482a8e0cb24c958e36992848
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046573"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649735"
 ---
-# <a name="accessibility-overview"></a>Übersicht über die Barrierefreiheit  
+# <a name="accessibility-overview"></a>Barrierefreiheit im Überblick  
 
 
 
@@ -59,7 +59,7 @@ Hilfstechnologieprodukte umfassen eine breite Palette an Software und Hardware. 
 * Spracherkennungssoftware, mit der Sprache in geschriebenen Text konvertiert werden kann.
 * Bildschirmleseprogramme, die Text in Sprache oder andere Formate wie Braille konvertieren.
 * Die Sprachausgabe, die Teil von Windows ist. Die Sprachausgabe verfügt über einen Touchmodus, mit dem die Sprachausgabe anhand von Toucheingabe gesteuert werden kann, für Situationen, in denen keine Tastatur verfügbar ist.
-* Programme oder Einstellungen, mit denen die Anzeige oder bestimmte Bereiche der Anzeige angepasst werden, z.B. Designs mit hohem Kontrast, DPI (Dots per Inch)-Einstellungen der Anzeige oder die Bildschirmlupe.
+* Programme oder Einstellungen, mit denen die Anzeige oder bestimmte Bereiche der Anzeige angepasst werden, z. B. Designs mit hohem Kontrast, DPI (Dots per Inch)-Einstellungen der Anzeige oder die Bildschirmlupe.
 
 Apps mit guter Tastatur- und Bildschirmleseprogrammunterstützung funktionieren normalerweise ohne Probleme mit unterschiedlichen Hilfstechnologieprodukten. In vielen Fällen kann eine UWP-App ohne zusätzliche Anpassung der Informationen oder Struktur mit diesen Produkten verwendet werden. Es kann jedoch empfehlenswert sein, einige Einstellungen anzupassen, um eine optimale Barrierefreiheit zu erzielen oder um weitere Unterstützung zu implementieren.
 
@@ -83,7 +83,7 @@ Es sind einige andere Automatisierungseigenschaften verfügbar (einschließlich 
 <span id="KEYBOARD_SUPPORT"/>
 
 ## <a name="keyboard-support"></a>Tastaturunterstützung  
-Um eine gute Tastaturunterstützung bereitzustellen, müssen Sie dafür sorgen, dass jeder Teil Ihrer Anwendung mit einer Tastatur verwendet werden kann. Wenn Ihre App hauptsächlich die Standardsteuerelemente und keine benutzerdefinierten Steuerelemente verwendet, ist das meiste schon getan. Das grundlegende XAML-Steuerelementmodell bietet integrierte Tastaturunterstützung, einschließlich Unterstützung für die TAB-Navigation, Texteingaben und steuerelementspezifischer Unterstützung. Die Elemente, die als Layoutcontainer dienen (z.B. Panels), verwenden die Layoutreihenfolge, um eine Standardaktivierreihenfolge festzulegen. Diese Reihenfolge ist häufig die richtige Aktivierreihenfolge zur barrierefreien Darstellung der UI. Wenn Sie die Steuerelemente [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) und [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) zum Anzeigen von Daten verwenden, bieten diese Steuerelemente eine integrierte Unterstützung für die Navigation mittels Pfeiltasten. Oder wenn Sie ein [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)-Steuerelement verwenden, werden die LEERTASTE oder EINGABETASTE bereits zur Schaltflächenaktivierung behandelt.
+Um eine gute Tastaturunterstützung bereitzustellen, müssen Sie dafür sorgen, dass jeder Teil Ihrer Anwendung mit einer Tastatur verwendet werden kann. Wenn Ihre App hauptsächlich die Standardsteuerelemente und keine benutzerdefinierten Steuerelemente verwendet, ist das meiste schon getan. Das grundlegende XAML-Steuerelementmodell bietet integrierte Tastaturunterstützung, einschließlich Unterstützung für die TAB-Navigation, Texteingaben und steuerelementspezifischer Unterstützung. Die Elemente, die als Layoutcontainer dienen (z. B. Panels), verwenden die Layoutreihenfolge, um eine Standardaktivierreihenfolge festzulegen. Diese Reihenfolge ist häufig die richtige Aktivierreihenfolge zur barrierefreien Darstellung der UI. Wenn Sie die Steuerelemente [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) und [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) zum Anzeigen von Daten verwenden, bieten diese Steuerelemente eine integrierte Unterstützung für die Navigation mittels Pfeiltasten. Oder wenn Sie ein [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)-Steuerelement verwenden, werden die LEERTASTE oder EINGABETASTE bereits zur Schaltflächenaktivierung behandelt.
 
 Weitere Informationen zu allen Aspekten der Tastaturunterstützung, einschließlich Aktivierreihenfolge und tastenbasierter Aktivierung oder Navigation, finden Sie unter [Barrierefreiheit der Tastaturnavigation](keyboard-accessibility.md).
 
@@ -193,6 +193,6 @@ Auf in einer XAML-Benutzeroberfläche gehostete Microsoft DirectX-Inhalte (mit [
 ## <a name="related-topics"></a>Verwandte Themen  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [Entwerfen für Barrierefreiheit](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [XAML-Beispiel für Barrierefreiheit](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Beispiel für XAML-Barrierefreiheit](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Bedienungshilfen](accessibility.md)
 * [Erste Schritte mit der Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

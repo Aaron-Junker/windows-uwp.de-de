@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the new Windows UI for selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these new selection and manipulation mechanisms in your UWP app.
+Description: Dieses Thema beschreibt die neuen Windows-Benutzeroberfläche zum auswählen und Bearbeiten von Text, Bildern und Steuerelementen sowie Richtlinien zur benutzerfreundlichkeit, die berücksichtigt werden sollten, wenn diese neuen Auswahl und Manipulation Mechanismen in Ihre UWP-app verwenden.
 title: Auswählen von Text und Bildern
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939005"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612505"
 ---
 # <a name="selecting-text-and-images"></a>Auswählen von Text und Bildern
 
@@ -27,7 +27,7 @@ In diesem Artikel wird das Auswählen und Bearbeiten von Text, Bildern und Steue
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
 
--   Verwenden Sie Schriftartglyphen, wenn Sie Ihre eigene Ziehelement-UI implementieren. Das Ziehelement ist eine Kombination aus zwei systemweit verfügbaren SegoeUI-Schriftarten. Die Verwendung von Schriftressourcen vereinfacht das Rendering bei unterschiedlichen DPI-Einstellungen und funktioniert gut mit den verschiedenen UI-Skalierungsebenen. Ihre Ziehelemente sollten alle die folgenden Benutzeroberflächenmerkmale aufweisen:
+-   Verwenden Sie Schriftartglyphen, wenn Sie Ihre eigene Ziehelement-UI implementieren. Das Ziehelement ist eine Kombination aus zwei systemweit verfügbaren Segoe UI-Schriftarten. Die Verwendung von Schriftressourcen vereinfacht das Rendering bei unterschiedlichen DPI-Einstellungen und funktioniert gut mit den verschiedenen UI-Skalierungsebenen. Ihre Ziehelemente sollten alle die folgenden Benutzeroberflächenmerkmale aufweisen:
 
     -   Kreisform
     -   Sichtbar auf jedem Hintergrund
@@ -47,22 +47,22 @@ Für die Auswahl und Manipulation von Text ergeben sich durch Fingereingabeinter
 
 **Überlegungen und Empfehlungen**
 
-Verwenden Sie die integrierten Steuerelemente der sprachframeworks in Windowsto-Build-apps, die die vollständige Plattform interaktionsmöglichkeiten für Benutzer, einschließlich Auswahl- und manipulationsverhalten – zu bieten. Die Interaktionsfunktionen der integrierten Steuerelemente sollten daher für die meisten UWP-Apps ausreichen.
+Verwenden Sie die integrierten Steuerelemente, die über die Sprachen-Frameworks in Windows verfügbar gemacht werden, um apps zu erstellen, die die vollständige Plattform Interaktion benutzerfreundlichkeit, einschließlich der Auswahl und-Bearbeitung Verhalten bereitstellen. Die Interaktionsfunktionen der integrierten Steuerelemente sollten daher für die meisten UWP-Apps ausreichen.
 
 Bei Verwendung der standardmäßigen UWP-Textsteuerelemente können die in diesem Thema beschriebenen Auswahlverhalten und visuellen Elemente nicht angepasst werden.
 
 **Textauswahl**
 
-Wenn Ihre app eine benutzerdefinierte Benutzeroberfläche, die die Textauswahl unterstützt erfordert, empfehlen wir, dass die Windowsselection hier beschriebenen Auswahlverhalten.
+Wenn Ihre app eine benutzerdefinierte Benutzeroberfläche, die Textauswahl unterstützt erfordert, empfehlen wir, dass Sie die hier beschriebenen Windows-Auswahlverhalten befolgen.
 
-**Bearbeitbare und nicht bearbeitbare Inhalte**
+**Bearbeitbare und nicht-bearbeitbaren Inhalt**
 
 
-Bei der Fingereingabe werden Auswahlinteraktionen hauptsächlich durch Bewegungen ausgeführt, z.B. Tippen, um einen Einfügecursor zu setzen oder ein Wort auszuwählen, und Ziehen, um eine Auswahl zu ändern. Wie bei anderen Interaktionen Windowstouch zeitlich festgelegte Interaktionen sind beschränkt auf das Drücken und Gedrückthaltebewegung Anzeigen einer informationsbenutzeroberfläche auf. Weitere Informationen finden Sie unter [Richtlinien für visuelles Feedback](guidelines-for-visualfeedback.md).
+Bei der Fingereingabe werden Auswahlinteraktionen hauptsächlich durch Bewegungen ausgeführt, z. B. Tippen, um einen Einfügecursor zu setzen oder ein Wort auszuwählen, und Ziehen, um eine Auswahl zu ändern. Wie mit anderen Windows touch Interaktionen, wird zeitgesteuerte Interaktionen sind auf das Drücken und halten die Eingabeaktion, die nur zu Informationszwecken Benutzeroberfläche angezeigt. Weitere Informationen finden Sie unter [Richtlinien für visuelles Feedback](guidelines-for-visualfeedback.md).
 
-Windowsrecognizes zwei möglichen Zustände für Auswahl Interaktionen, bearbeitbare und nicht bearbeitbare und Auswahl-UI, Feedback und Funktionalität entsprechend angepasst.
+Windows erkennt zwei mögliche Zustände für die Auswahl Interaktionen, bearbeitbare und nicht bearbeitbare und passt die Benutzeroberfläche zur Auswahl, Feedback und Funktionen entsprechend.
 
-**Bearbeitbare Inhalte**
+**Bearbeitbarer Inhalt**
 
 Durch Tippen in der linken Hälfte eines Worts wird der Cursor links neben dem Wort platziert, durch Tippen in der rechten Hälfte wird er rechts neben dem Wort platziert.
 
@@ -78,11 +78,11 @@ Im folgenden Bild wird veranschaulicht, wie Sie das Kontextmenü aufrufen, indem
 
 ![Tippen (oder drücken und halten) Sie in die Auswahl oder auf ein Ziehelement, um das Kontextmenü aufzurufen.](images/textselection-show-context.png)
 
-**Hinweis:** weichen diese Interaktionen etwas bei einem falsch geschriebenen Wort. Wenn Sie auf ein Wort tippen, das als falsch geschrieben gekennzeichnet ist, wird das gesamte Wort hervorgehoben. Außerdem wird das Kontextmenü mit der vorgeschlagenen Schreibweise aufgerufen.
+**Beachten Sie**  diese Interaktionen, unterscheiden sich geringfügig bei ein falsch geschriebenes Wort. Wenn Sie auf ein Wort tippen, das als falsch geschrieben gekennzeichnet ist, wird das gesamte Wort hervorgehoben. Außerdem wird das Kontextmenü mit der vorgeschlagenen Schreibweise aufgerufen.
 
  
 
-**Nicht bearbeitbare Inhalte**
+**Nicht-bearbeitbaren Inhalt**
 
 Im folgenden Bild wird veranschaulicht, wie Sie ein Wort auswählen, indem Sie in das Wort tippen (die anfängliche Auswahl enthält keine Leerzeichen).
 
@@ -90,19 +90,19 @@ Im folgenden Bild wird veranschaulicht, wie Sie ein Wort auswählen, indem Sie i
 
 Gehen Sie für bearbeitbaren Test genauso vor, um die Auswahl anzupassen und das Kontextmenü anzuzeigen.
 
-**Objektmanipulation**
+**Bearbeitung des Objekts**
 
 Verwenden Sie beim Implementieren einer benutzerdefinierten Objektmanipulation in einer UWP-App nach Möglichkeit die gleichen (oder ähnliche) Ziehelementressourcen wie für die Textauswahl. Auf diese Weise kann ein einheitliches Interaktionsverhalten für die gesamte Plattform bereitgestellt werden.
 
-Zielelemente können wie in den folgenden Abbildungen dargestellt z.B. auch in Bildverarbeitungs-Apps verwendet werden, die Größenänderungen und Zuschneiden unterstützen, oder in Media-Player-Apps mit anpassbaren Statusanzeigen.
+Zielelemente können wie in den folgenden Abbildungen dargestellt z. B. auch in Bildverarbeitungs-Apps verwendet werden, die Größenänderungen und Zuschneiden unterstützen, oder in Media-Player-Apps mit anpassbaren Statusanzeigen.
 
 ![Media-Player mit Statusziehelement](images/gripper-mediaplayer.png)
 
-*Media-Player mit anpassbarer Statusanzeige*
+*Media-Player mit anpassbaren Statusanzeige angezeigt.*
 
 ![Bild mit Ziehelementen zum Zuschneiden](images/gripper-imagemanip.png)
 
-*Bild-Editor mit Ziehelementen zum Zuschneiden*
+*Bild-Editor mit ziehelemente zuschneiden.*
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -112,20 +112,20 @@ Zielelemente können wie in den folgenden Abbildungen dargestellt z.B. auch in B
 * [Benutzerdefinierte Benutzerinteraktionen](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
 **Beispiele**
-* [Einfaches Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Beispiel für Eingabe mit niedriger Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archivbeispiele**
-* [Eingabe: Beispiel für XAML-Benutzereingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Eingabe: Beispiel für Gerätefunktionen](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Eingabe: Beispiel für Fingereingabe-Treffertests](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Beispiel für XAML-Bildlauf, -Verschiebung und -Zoom](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Eingabe: vereinfachtes Freihandbeispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Eingabe: Beispiel für Windows8-Bewegungen](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Eingabe: Beispiel für Manipulationen und Gesten (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Beispiel für die DirectX-Fingereingabe](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Eingabe: XAML-benutzerbeispiel Eingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Eingabe: Beispiel zu Leistungstests in Touch Treffer](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML Bildlauf, schwenken und Zoomen Beispiel](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Eingabe: Vereinfachte Freihand-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Eingabe: Beispiel für Windows 8-Gesten](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Eingabe: Manipulationen und Beispiel für Bewegungen (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX-Touch-Eingabe-Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

@@ -1,5 +1,5 @@
 ---
-Description: Explains how to define a ResourceDictionary element and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package.
+Description: Erläutert die Definition von ResourceDictionary-Elementen und Schlüsselressourcen sowie den Bezug von XAML-Ressourcen zu anderen Ressourcen, die Sie als Teil Ihrer App oder Ihres App-Pakets definieren.
 MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,14 +9,14 @@ label: ResourceDictionary and XAML resource references
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 51461df47fe92c296fee198a6f2ed1c34e833cd7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939769"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634925"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary- und XAML-Ressourcenreferenzen
 
@@ -26,7 +26,7 @@ Sie können die UI oder Ressourcen für Ihre App mit XAML definieren. Bei Ressou
 
 Zu den XAML-Elementen, die besonders häufig als XAML-Ressourcen deklariert werden, zählen [Style](https://msdn.microsoft.com/library/windows/apps/br208849), [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391), Animationskomponenten und [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush)-Unterklassen. Hier erläutern wir die Definition von [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794)-Elementen und Schlüsselressourcen sowie den Bezug von XAML-Ressourcen zu anderen Ressourcen, die Sie als Teil Ihrer App oder Ihres App-Pakets definieren. Außerdem werden die erweiterten Features des Ressourcenverzeichnisses wie etwa [MergedDictionaries](https://msdn.microsoft.com/library/windows/apps/br208801) und [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807) beschrieben.
 
-**Voraussetzungen**
+**Erforderliche Komponenten**
 
 Es wird vorausgesetzt, dass Sie über Kenntnisse im Bereich XAML-Markup verfügen und die [Übersicht über XAML](https://msdn.microsoft.com/library/windows/apps/mt185595) gelesen haben.
 
@@ -51,9 +51,9 @@ XAML-Ressourcen sind Objekte, auf die mehrmals im Markup verwiesen wird. Ressour
 
 Für dieses Beispiel gilt Folgendes:
 
--   `<Page.Resources>…</Page.Resources>` – Definiert das Ressourcenverzeichnis
--   `<x:String>` – Definiert die Ressource mit dem Schlüssel „greeting“
--   `{StaticResource greeting}` – Sucht nach der Ressource mit dem Schlüssel „greeting“, die der [Text](https://msdn.microsoft.com/library/windows/apps/br209676)-Eigenschaft des [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) zugeordnet ist.
+-   `<Page.Resources>…</Page.Resources>` – Definiert das Ressourcenverzeichnis.
+-   `<x:String>` – Definiert die Ressource mit dem Schlüssel „greeting“.
+-   `{StaticResource greeting}` – Sucht nach der Ressource mit dem Schlüssel "greeting", der zugewiesen wird die [Text](https://msdn.microsoft.com/library/windows/apps/br209676) Eigenschaft der [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652).
 
 > **Hinweis**&nbsp;&nbsp;Die Konzepte für [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) dürfen nicht mit dem Buildvorgang **Resource**, mit Ressourcendateien (.resw) oder mit anderen Ressourcen verwechselt werden, die im Zusammenhang mit der Strukturierung des Codeprojekts zur Generierung Ihres App-Pakets erwähnt werden.
 
@@ -112,7 +112,7 @@ Weitere Informationen zu impliziten Stilen und zu ihrer Funktionsweise finden Si
 Der Zugriff auf Member des Ressourcenverzeichnisses erfolgt auf die gleiche Weise wie bei allen anderen Verzeichnissen.
 
 > [!WARNING]
-> Wenn Sie im Code eine Ressourcensuche durchführen, werden nur die Ressourcen im `Page.Resources`-Verzeichnis berücksichtigt. Im Gegensatz zur [StaticResource-Markuperweiterung](../../xaml-platform/staticresource-markup-extension.md) erfolgt kein Fallback auf das `Application.Resources`-Verzeichnis, falls die Ressourcen im ersten Verzeichnis nicht gefunden werden.
+> Wenn Sie eine Ressourcensuche ausführen, im Code wird nur die Ressourcen in der `Page.Resources` Wörterbuch betrachtet werden. Im Gegensatz zur [StaticResource-Markuperweiterung](../../xaml-platform/staticresource-markup-extension.md) erfolgt kein Fallback auf das `Application.Resources`-Verzeichnis, falls die Ressourcen im ersten Verzeichnis nicht gefunden werden.
 
  
 
@@ -202,7 +202,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) ist eine Basisklasse zum Steuern der Vererbung, und sie verfügt über eine [Resources](https://msdn.microsoft.com/library/windows/apps/br208740)-Eigenschaft. Sie können also jedem **FrameworkElement**-Element ein lokales Ressourcenverzeichnis hinzufügen.
 
-Hier verfügen sowohl das [Page](https://msdn.microsoft.com/library/windows/apps/br227503)-Element als auch das [Border](https://msdn.microsoft.com/library/windows/apps/br209250)-Element über Ressourcenwörterbücher, und beide Elemente weisen eine Ressource mit dem Namen „greeting“ auf. [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) mit dem Namen "textBlock2" ist in den **Rahmen**, also die Ressourcensuche zuerst den **Rahmen**Ressourcen, Ressourcen der **Seite**und dann die [Anwendung](https://msdn.microsoft.com/library/windows/apps/br242324) Ressourcen nach. Das **TextBlock**-Element enthält „Hola mundo“.
+Hier verfügen sowohl das [Page](https://msdn.microsoft.com/library/windows/apps/br227503)-Element als auch das [Border](https://msdn.microsoft.com/library/windows/apps/br209250)-Element über Ressourcenwörterbücher, und beide Elemente weisen eine Ressource mit dem Namen „greeting“ auf. Die [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) mit dem Namen "textBlock2" befindet sich innerhalb der **Rahmen**, sodass die Ressourcensuche der ersten sieht die **Rahmen**des Ressourcen, die **Seite**der Ressourcen, und klicken Sie dann die [Anwendung](https://msdn.microsoft.com/library/windows/apps/br242324) Ressourcen. Das **TextBlock**-Element enthält „Hola mundo“.
 
 Verwenden Sie die Resources-Eigenschaft dieses Elements, um über den Code auf die [Ressourcen](https://msdn.microsoft.com/library/windows/apps/br208740) dieses Elements zuzugreifen. Beim Zugreifen auf die Ressourcen eines [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706)-Elements im Code, anstatt per XAML, wird nur im entsprechenden Verzeichnis gesucht, nicht in den Verzeichnissen des übergeordneten Elements.
 
@@ -377,7 +377,7 @@ In diesem Beispiel legen Sie den Vordergrund eines [TextBlock](https://msdn.micr
 
 Bei Designverzeichnissen ändert sich das für die Ressourcensuche zu verwendende aktive Verzeichnis dynamisch, wenn mit einer [ThemeResource-Markuperweiterung](../../xaml-platform/themeresource-markup-extension.md) ein Verweis erstellt wird und das System eine Designänderung erkennt. Das Suchverhalten des Systems basiert auf der Zuordnung des aktiven Designs zum [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787)-Element eines spezifischen Designverzeichnisses.
 
-Eine Untersuchung der Strukturierung der Designverzeichnisse in den XAML-Standarddesignressourcen kann sehr hilfreich sein. Die XAML-Standarddesignressourcen entsprechen den Vorlagen, die die Windows-Runtime standardmäßig für ihre Steuerelemente verwendet. Öffnen Sie die XAML-Dateien in „\\(Programme)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK-Version&gt;\\Generic“ mit einem Text-Editor oder Ihrer IDE. Beachten Sie, dass die Designverzeichnisse zuerst in „generic.xaml“ definiert und von den einzelnen Designverzeichnissen jeweils die gleichen Schlüssel definiert werden. Alle diese Schlüssel werden anschließend von Kompositionselementen in den verschiedenen Schlüsselelementen referenziert, die sich außerhalb der Designverzeichnisse befinden und später im XAML definiert werden. Außerdem gibt es eine separate Datei „themeresources.xaml“ für Designs, die nur die Designressourcen und zusätzlichen Vorlagen enthält, aber nicht die standardmäßigen Steuerelementvorlagen. Die Designbereiche sind Duplikate der Bereiche in „generic.xaml“.
+Eine Untersuchung der Strukturierung der Designverzeichnisse in den XAML-Standarddesignressourcen kann sehr hilfreich sein. Die XAML-Standarddesignressourcen entsprechen den Vorlagen, die die Windows-Runtime standardmäßig für ihre Steuerelemente verwendet. Öffnen Sie die XAML-Dateien in \\(Programmdateien)\\Windows-Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK Version&gt;\\generisch mit einem Text-Editor oder in Ihrer IDE. Beachten Sie, dass die Designverzeichnisse zuerst in „generic.xaml“ definiert und von den einzelnen Designverzeichnissen jeweils die gleichen Schlüssel definiert werden. Alle diese Schlüssel werden anschließend von Kompositionselementen in den verschiedenen Schlüsselelementen referenziert, die sich außerhalb der Designverzeichnisse befinden und später im XAML definiert werden. Außerdem gibt es eine separate Datei „themeresources.xaml“ für Designs, die nur die Designressourcen und zusätzlichen Vorlagen enthält, aber nicht die standardmäßigen Steuerelementvorlagen. Die Designbereiche sind Duplikate der Bereiche in „generic.xaml“.
 
 Wenn Sie Kopien von Stilen oder Vorlagen mit XAML-Designtools bearbeiten, extrahieren die Designtools Abschnitte der XAML-Designressourcenverzeichnisse und platzieren diese als lokale Kopien von XAML-Verzeichniselementen, die Teil Ihrer App und Ihres Projekts sind.
 
@@ -430,7 +430,7 @@ Ein [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br20879
 -   [Matrix](https://msdn.microsoft.com/library/windows/apps/br210127) und [Matrix3D](https://msdn.microsoft.com/library/windows/apps/br243266)
 -   [Point](https://msdn.microsoft.com/library/windows/apps/br225870)-Werte
 -   Bestimmte andere UI-bezogene Strukturen wie [Thickness](https://msdn.microsoft.com/library/windows/apps/br208864) und [CornerRadius](https://msdn.microsoft.com/library/windows/apps/br242343)
--   [Systeminterne XAML-Datentypen](https://msdn.microsoft.com/library/windows/apps/mt186448)
+-   [XAML-systeminterne Datentypen](https://msdn.microsoft.com/library/windows/apps/mt186448)
 
 Sie können auch benutzerdefinierte Typen als freigabefähige Ressource verwenden, wenn Sie die erforderlichen Implementierungsmuster einhalten. Solche Klassen werden im zugrunde liegenden Code (oder in einbezogene Laufzeitkomponenten) definiert und dann in XAML als Ressource instantiiert. Beispiele dafür sind Objektdatenquellen und [IValueConverter](https://msdn.microsoft.com/library/windows/apps/br209903)-Implementierungen für die Datenbindung.
 
@@ -449,7 +449,7 @@ Sie können ein [ResourceDictionary](https://msdn.microsoft.com/library/windows/
 
 Die meisten Szenarien für ein [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) werden ausschließlich im XAML-Code behandelt. Sie deklarieren den **ResourceDictionary**-Container und die darin enthaltenen Ressourcen als XAML-Datei oder Gruppe von XAML-Knoten in einer UI-Definitionsdatei. Anschließend nutzen Sie XAML-Ressourcenverweise, um diese Ressourcen aus anderen Teilen des XAML-Codes anzufordern. Es gibt trotzdem noch bestimmte Fälle, in denen die App den Inhalt eines **ResourceDictionary**-Elements mithilfe von Code anpassen sollte, der bei laufender App ausgeführt wird, oder in denen wenigstens der Inhalt eines **ResourceDictionary**-Elements daraufhin abgefragt werden sollte, ob eine Ressource bereits definiert ist. Diese Codeaufrufe werden für eine **ResourceDictionary**-Instanz erstellt. Daher müssen Sie eine Instanz abrufen, und zwar entweder ein direktes **ResourceDictionary** in der Objektstruktur durch Abrufen von [FrameworkElement.Resources](https://msdn.microsoft.com/library/windows/apps/br208740) oder `Application.Current.Resources`.
 
-In C\#- oder Microsoft Visual Basic-Code können Sie in einem bestimmten [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) mithilfe des Indexers ([Item](https://msdn.microsoft.com/library/windows/apps/jj603134)) auf eine Ressource verweisen. Bei einem **ResourceDictionary** handelt es sich um ein Verzeichnis mit Zeichenfolgenschlüsseln, sodass vom Indexer anstelle eines Ganzzahlindex der Zeichenfolgenschlüssel verwendet wird. In für VisualC++-komponentenerweiterungen (C++ / CX) verwenden [Suche](https://msdn.microsoft.com/library/windows/apps/br208800).
+In C\# oder Microsoft Visual Basic-Code auf eine Ressource in einer bestimmten [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) mithilfe des Indexers ([Element](https://msdn.microsoft.com/library/windows/apps/jj603134)). Bei einem **ResourceDictionary** handelt es sich um ein Verzeichnis mit Zeichenfolgenschlüsseln, sodass vom Indexer anstelle eines Ganzzahlindex der Zeichenfolgenschlüssel verwendet wird. In Visual C++-komponentenerweiterungen (C++ / CX) codieren, verwenden Sie [Lookup](https://msdn.microsoft.com/library/windows/apps/br208800).
 
 Bei der Verwendung von Code zum Untersuchen oder Ändern eines [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794)-Elements wechselt das Verhalten für APIs wie [Lookup](https://msdn.microsoft.com/library/windows/apps/br208800) oder [Item](https://msdn.microsoft.com/library/windows/apps/jj603134) nicht von direkten Ressourcen zu App-Ressourcen. Dies ist das Verhalten eines XAML-Parsers, das nur beim Laden von XAML-Seiten auftritt. Zur Laufzeit gilt der Bereich für Schlüssel eigenständig für die **ResourceDictionary**-Instanz, die Sie gerade verwenden. Der Bereich wird jedoch auf [MergedDictionaries](https://msdn.microsoft.com/library/windows/apps/br208801) erweitert.
 
@@ -457,9 +457,9 @@ Wenn Sie zudem einen Schlüssel anfordern, der im [ResourceDictionary](https://m
 
 Zusammengeführte Ressourcenverzeichnisse werden in den Indexbereich des primären Ressourcenverzeichnisses einbezogen, das zur Laufzeit auf das zusammengeführte Verzeichnis verweist. Das heißt, dass Sie **Item** oder [Lookup](https://msdn.microsoft.com/library/windows/apps/br208800) des primären Verzeichnisses zum Suchen von Objekten verwenden können, die tatsächlich im zusammengeführten Verzeichnis definiert wurden. In diesem Fall ähnelt das Suchverhalten dem XAML-Suchverhalten zur Analysezeit: Wenn zusammengeführte Verzeichnisse mit dem gleichen Schlüssel mehrere Objekte enthalten, wird das Objekt des zuletzt hinzugefügten Verzeichnisses zurückgegeben.
 
-Sie können einem vorhandenen [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794)-Element Elemente hinzufügen, indem Sie **Add** (C\# oder Visual Basic) oder [Insert](https://msdn.microsoft.com/library/windows/apps/br208799) (C++/CX) aufrufen. Die Elemente können sowohl direkten Ressourcen als auch App-Ressourcen hinzugefügt werden. Für jeden dieser API-Aufrufe ist ein Schlüssel erforderlich, um die Anforderung zu erfüllen, dass jedes Element in einem **ResourceDictionary**-Element über einen Schlüssel verfügen muss. Elemente, die Sie einem **ResourceDictionary**-Element zur Laufzeit hinzufügen, sind für XAML-Ressourcenverweise allerdings nicht relevant. Die erforderliche Suche nach XAML-Ressourcenverweisen wird durchgeführt, wenn der XAML-Code beim Laden der App (oder bei Ermittlung einer Designänderung) zum ersten Mal analysiert wird. Ressourcen, die Sammlungen zur Laufzeit hinzugefügt wurden, waren zu diesem Zeitpunkt noch nicht verfügbar. Eine Änderung des **ResourceDictionary**-Elements führt nicht dazu, dass eine daraus bereits abgerufene Ressource auch dann nicht ungültig wird, wenn Sie den Wert dieser Ressource ändern.
+Sie sind berechtigt, Hinzufügen von Elementen zu einer vorhandenen [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) durch Aufrufen von **hinzufügen** (C\# oder Visual Basic) oder [einfügen](https://msdn.microsoft.com/library/windows/apps/br208799) (C++ / CX). Die Elemente können sowohl direkten Ressourcen als auch App-Ressourcen hinzugefügt werden. Für jeden dieser API-Aufrufe ist ein Schlüssel erforderlich, um die Anforderung zu erfüllen, dass jedes Element in einem **ResourceDictionary**-Element über einen Schlüssel verfügen muss. Elemente, die Sie einem **ResourceDictionary**-Element zur Laufzeit hinzufügen, sind für XAML-Ressourcenverweise allerdings nicht relevant. Die erforderliche Suche nach XAML-Ressourcenverweisen wird durchgeführt, wenn der XAML-Code beim Laden der App (oder bei Ermittlung einer Designänderung) zum ersten Mal analysiert wird. Ressourcen, die Sammlungen zur Laufzeit hinzugefügt wurden, waren zu diesem Zeitpunkt noch nicht verfügbar. Eine Änderung des **ResourceDictionary**-Elements führt nicht dazu, dass eine daraus bereits abgerufene Ressource auch dann nicht ungültig wird, wenn Sie den Wert dieser Ressource ändern.
 
-Sie haben auch die Möglichkeit, zur Laufzeit Elemente aus einem [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) zu entfernen, Kopien von einigen oder allen Elementen zu erstellen und andere Vorgänge auszuführen. Die Elementliste für **ResourceDictionary** gibt an, welche APIs verfügbar sind. Da das **ResourceDictionary** eine projizierte API zur Unterstützung der zugrunde liegenden Sammlungsschnittstelle aufweist, gilt es zu beachten, dass Ihre API-Optionen je nach Verwendung von C\# oder Visual Basic anstelle von C++/CX variieren.
+Sie haben auch die Möglichkeit, zur Laufzeit Elemente aus einem [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) zu entfernen, Kopien von einigen oder allen Elementen zu erstellen und andere Vorgänge auszuführen. Die Elementliste für **ResourceDictionary** gibt an, welche APIs verfügbar sind. Beachten Sie, dass **ResourceDictionary** verfügt über eine projizierte API zur Unterstützung der zugrunde liegenden Auflistungsschnittstellen, die API-Optionen unterscheiden sich, je nachdem, ob Sie C# verwenden,\# oder Visual Basic und C++ / CX.
 
 ## <a name="resourcedictionary-and-localization"></a>ResourceDictionary und Lokalisierung
 
@@ -479,7 +479,7 @@ Für erweiterte Szenarien können Sie eine Klasse implementieren, die von dem hi
 * [ThemeResource-Markuperweiterung](../../xaml-platform/themeresource-markup-extension.md)
 * [XAML-Designressourcen](xaml-theme-resources.md)
 * [Formatieren von Steuerelementen](xaml-styles.md)
-* [x:Key-Attribut](https://msdn.microsoft.com/library/windows/apps/mt204787)
+* [X: Key-Attribut](https://msdn.microsoft.com/library/windows/apps/mt204787)
 
  
 

@@ -1,19 +1,19 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: Geräteportal für mobile Geräte
+title: Geräteportal für Mobilgeräte
 description: Hier erfahren Sie, wie Sie mit dem Windows Device Portal Ihr mobiles Gerät per Fernzugriff konfigurieren und verwalten können.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, geräteportal
+keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
 ms.openlocfilehash: 879f4b9fd8806565eedeabda95f0c24c5b7931d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925231"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597225"
 ---
-# <a name="device-portal-for-mobile"></a>Device Portal für Mobilgeräte
+# <a name="device-portal-for-mobile"></a>Geräteportal für Mobilgeräte
 
 Ab Windows 10, Version 1511, sind weitere Entwicklerfeatures für Mobilgeräte verfügbar. Diese Features sind nur verfügbar, wenn der Entwicklermodus auf dem Gerät aktiviert ist.
 
@@ -31,21 +31,21 @@ Wenn Sie das erste Mal eine Verbindung mit dem Geräteportal herstellen, werden 
 
 ![Einstellungen für die Geräteerkennung im Entwicklermodus](images/device-portal/mob-dev-mode-pairing.png)
 
-Sie haben 3 Möglichkeiten zum Herstellen einer Verbindung mit dem Geräteportal: USB, über einen lokalen Host und über das lokale Netzwerk (einschließlich VPN und Tethering).
+Sie können aus 3 Möglichkeiten für Verbindungen mit Device Portal auswählen: USB, lokalen Host und über das lokale Netzwerk (einschließlich VPN und tethering).
 
-**So erstellen Sie eine Verbindung mit dem Geräteportal**
+**Verbindung mit dem Device Portal**
 
 1. Geben Sie in Ihrem Browser die hier angegebene Adresse für den verwendeten Verbindungstyp ein.
 
-    - USB:  `http://127.0.0.1:10080`
+    - USB: `http://127.0.0.1:10080`
 
     Verwenden Sie diese Adresse, wenn das Smartphone über USB mit einem PC verbunden ist. Auf beiden Geräten muss Windows 10, Version 1511 oder höher, ausgeführt werden.
     
-    - Lokaler Host:  `http://127.0.0.1`
+    - Lokaler Host: `http://127.0.0.1`
 
     Verwenden Sie diese Adresse, um das Geräteportal lokal auf dem Smartphone in Microsoft Edge für Windows 10 Mobile anzuzeigen.
     
-    - Lokales Netzwerk:  `https://<The IP address or hostname of the phone>`
+    - Lokales Netzwerk: `https://<The IP address or hostname of the phone>`
 
     Verwenden Sie diese Adresse, um die Verbindung über ein lokales Netzwerk herzustellen.
 
@@ -59,13 +59,13 @@ Sie haben 3 Möglichkeiten zum Herstellen einer Verbindung mit dem Geräteportal
 
 Dies ist der Geräteportalabschnitt auf der Seite mit den Entwicklerseiten in Windows Phone.
 
-![Einstellungen im Geräteportal](images/device-portal/mob-dev-mode-portal.png)
+![Device Portal-Einstellungen](images/device-portal/mob-dev-mode-portal.png)
 
-Sie können die Authentifizierung deaktivieren, wenn Sie Device Portal in einer geschützten Umgebung verwenden, z.B. in einem Testlabor, in dem Sie allen im lokalen Netzwerk vertrauen, keine persönlichen Informationen auf dem Gerät gespeichert haben und in dem spezielle Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse Ihres Smartphones kennt, kann es steuern.
+Sie können die Authentifizierung deaktivieren, wenn Sie Device Portal in einer geschützten Umgebung verwenden, z. B. in einem Testlabor, in dem Sie allen im lokalen Netzwerk vertrauen, keine persönlichen Informationen auf dem Gerät gespeichert haben und in dem spezielle Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse Ihres Smartphones kennt, kann es steuern.
 
 ## <a name="tool-notes"></a>Anmerkungen zu Tools
 
-## <a name="device-portal-pages"></a>Seiten des Geräteportals
+## <a name="device-portal-pages"></a>Seiten von Device Portal
 ### <a name="processes"></a>Prozesse
 
 Im Windows Mobile Device Portal ist es nicht möglich, beliebige Prozesse zu beenden. 
@@ -81,7 +81,7 @@ Das Geräteportal für mobile Geräte enthält den Standardsatz der Seiten. Ausf
 - Geräte
 - Netzwerk
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
-* [Übersicht über das Windows Geräteportal](device-portal.md)
-* [Referenz zu Kern-APIs des Geräteportal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Übersicht über die Windows Device Portal](device-portal.md)
+* [Device Portal-Core-API-Referenz](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

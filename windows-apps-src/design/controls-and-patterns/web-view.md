@@ -1,19 +1,19 @@
 ---
-Description: A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
+Description: Mithilfe eines Webansichtssteuerelements betten Sie eine Ansicht in Ihre App ein, die Webinhalte mit dem Microsoft Edge-Renderingmodul rendert. In einem Webansichtssteuerelement können auch Links angezeigt und verwendet werden.
 title: Webansicht
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af61b7d442fee7eff6399a7a5d143adb53fb560
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058551"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610635"
 ---
 # <a name="web-view"></a>Webansicht
  
@@ -36,11 +36,11 @@ Verwenden Sie ein Webansichtssteuerelement zum Anzeigen von grafisch ansprechend
 - Legen Sie zum Steuern der Deckkraft der Webansicht die [Opacity](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx)-Eigenschaft fest.
 - Legen Sie zum Angeben einer Farbe, die als Webseitenhintergrund verwendet wird, wenn der HTML-Inhalt keine Farbe vorgibt, die [DefaultBackgroundColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx)-Eigenschaft fest. 
 
-**Abrufen des Webseitentitels**
+**Titel der Webseite abrufen**
 
 Sie können den Titel des momentan in der Webansicht angezeigten HTML-Dokuments mithilfe der [DocumentTitle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx)-Eigenschaft abrufen. 
 
-**Eingabeereignisse und Aktivierreihenfolge**
+**Eingabeereignisse und Tab-Reihenfolge**
 
 Obwohl WebView keine Control-Unterklasse ist, erhält sie den Tastatureingabefokus und ist Teil der Aktivierreihenfolge. Sie stellt eine [Focus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx)-Methode sowie ein [GotFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx)-Ereignis und ein [LostFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx)-Ereignis bereit, enthält aber keine registerkartenbezogenen Eigenschaften. Ihre Position in der Aktivierreihenfolge ist identisch mit ihrer Position in der XAML-Dokumentreihenfolge. Die Aktivierreihenfolge enthält alle Elemente im Webansichtsinhalt, die den Eingabefokus erhalten können. 
 
@@ -48,7 +48,7 @@ Wie in der Events-Tabelle auf der Seite zur [WebView](https://msdn.microsoft.com
 
 ### <a name="navigating-to-content"></a>Navigieren zum Inhalt
 
-Die Webansicht stellt mehrere APIs zur grundlegenden Navigation zur Verfügung: [GoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [GoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [Stop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [CanGoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx) und [CanGoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). Mit diesen APIs können Sie Ihrer App typische Funktionen für das Webbrowsen hinzufügen. 
+Webansicht bietet mehrere APIs für die grundlegende Navigation: [GoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [GoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [beenden](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [aktualisieren](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [CanGoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx), und [CanGoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). Mit diesen APIs können Sie Ihrer App typische Funktionen für das Webbrowsen hinzufügen. 
 
 Legen Sie zum Einrichten des anfänglichen Inhalts der Webansicht die [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx)-Eigenschaft in XAML fest. Der XAML-Parser konvertiert die Zeichenfolge automatisch in einen [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx). 
 
@@ -63,7 +63,7 @@ Legen Sie zum Einrichten des anfänglichen Inhalts der Webansicht die [Source](h
 <WebView x:Name="webView3" Source="ms-appx-web:///help/about.html"/>
 ```
 
-Die Source-Eigenschaft kann theoretisch im Code festgelegt werden, üblicherweise verwenden Sie jedoch eine der **Navigate**-Methoden, um Inhalt in den Code zu laden. 
+Die Source-Eigenschaft kann grundsätzlich im Code festgelegt werden. In der Regel verwenden Sie jedoch eine der **Navigate**-Methoden, um Inhalt in den Code zu laden. 
 
 Verwenden Sie zum Laden des Webinhalts die [Navigate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx)-Methode mit einem **Uri**, der das HTTP- oder HTTPS-Schema verwendet. 
 
@@ -91,7 +91,7 @@ Sie können lokalen Inhalt über einen benutzerdefinierten Resolver laden, indem
 
 ### <a name="responding-to-navigation-events"></a>Reagieren auf Navigationsereignisse
 
-Das Webansichtssteuerelement stellt mehrere Ereignisse bereit, mit denen Sie auf Zustände bei der Navigation und beim Laden von Inhalten reagieren können. Die Ereignisse treten in der folgenden Reihenfolge für den Webansichtsinhalt im Stammpfad auf: [NavigationStarting](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [ContentLoading](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [DOMContentLoaded](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [NavigationCompleted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
+Das Webansichtssteuerelement stellt mehrere Ereignisse bereit, mit denen Sie auf Zustände bei der Navigation und beim Laden von Inhalten reagieren können. Es treten die Ereignisse in der folgenden Reihenfolge für den anzuzeigenden Webinhalt Stammverzeichnis: [NavigationStarting](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [ContentLoading](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [DOMContentLoaded](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [NavigationCompleted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
 
 
 **NavigationStarting** – tritt ein, bevor die Webansicht zu neuem Inhalt navigiert. Sie können die Navigation in einem Handler für dieses Ereignis abbrechen, indem Sie die WebViewNavigationStartingEventArgs.Cancel-Eigenschaft auf „true“ festlegen. 
@@ -137,7 +137,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** – tritt ein, nachdem die Webansicht das Laden des aktuellen Inhalts beendet hat oder ein Navigationsfehler aufgetreten ist. Um festzustellen, ob ein Navigationsfehler aufgetreten ist, überprüfen Sie die [IsSuccess](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx)-Eigenschaft und die [WebErrorStatus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx)-Eigenschaft der [WebViewNavigationCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx)-Klasse. 
+**NavigationCompleted** – Tritt ein, nachdem die Webansicht das Laden des aktuellen Inhalts beendet hat oder ein Navigationsfehler aufgetreten ist. Um festzustellen, ob ein Navigationsfehler aufgetreten ist, überprüfen Sie die [IsSuccess](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx)-Eigenschaft und die [WebErrorStatus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx)-Eigenschaft der [WebViewNavigationCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx)-Klasse. 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -258,7 +258,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Skripts im Webansichtsinhalt können **window.external.notify** mit einem Zeichenfolgenparameter verwenden, um Informationen zurück an Ihre App zu senden. Behandeln Sie zum Empfangen dieser Nachrichten das [ScriptNotify](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx)-Ereignis. 
 
-Damit eine externe Webseite das **ScriptNotify**-Ereignis beim Aufrufen von „window.external.notify“ auslösen kann, müssen Sie den URI der Seite in den **ApplicationContentUriRules**-Abschnitt des App-Manifests einfügen. (Verwenden Sie dazu in Microsoft Visual Studio die Registerkarte „Inhalts-URIs“ im Designer „Package.appxmanifest“.) Die URIs in dieser Liste müssen HTTPS verwenden und dürfen Unterdomänenplatzhalter (z. B. `https://*.microsoft.com`) enthalten. Sie dürfen jedoch keine Domänenplatzhalter (z. B. `https://*.com` und `https://*.*`) enthalten. Die Manifestanforderung gilt nicht für Inhalte, die aus dem App-Paket stammen, die einen URI vom Typ „ms-local-stream:// URI“ verwenden, oder die mit [NavigateToString](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) geladen werden. 
+Damit eine externe Webseite das **ScriptNotify**-Ereignis beim Aufrufen von „window.external.notify“ auslösen kann, müssen Sie den URI der Seite in den **ApplicationContentUriRules**-Abschnitt des App-Manifests einfügen. (Sie können in Microsoft Visual Studio auf der Registerkarte "Inhalts-URIs" die Datei "Package.appxmanifest" Designer dazu.) Die URIs in dieser Liste müssen HTTPS verwenden, wobei Unterdomäne Platzhalter enthalten kann (z. B. `https://*.microsoft.com`), aber sie darf keine Domäne-Platzhalter enthalten (z. B. `https://*.com` und `https://*.*`). Die Manifestanforderung gilt nicht für Inhalte, die aus dem App-Paket stammen, die einen URI vom Typ „ms-local-stream:// URI“ verwenden, oder die mit [NavigateToString](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) geladen werden. 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>Zugreifen auf die Windows-Runtime in einer Webansicht
 

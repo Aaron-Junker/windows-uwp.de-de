@@ -1,23 +1,23 @@
 ---
-Description: Learn how to register your UWP app to receive push notifications that you send from Partner Center.
-title: Konfigurieren Ihrer App für benutzerorientierte Pushbenachrichtigungen
+Description: Informationen Sie zum Registrieren Ihrer UWP-app, um Pushbenachrichtigungen empfangen, die Sie vom Partner Center zu senden.
+title: Konfigurieren der App für benutzerorientierte Pushbenachrichtigungen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Microsoft Store Services SDK, benutzerorientierte Pushbenachrichtigungen, Partner Center
+keywords: Windows 10, Uwp, Microsoft Store Services SDK, Ziel, Pushbenachrichtigungen, Partner Center
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: f60780186256e7f78a9596c979c79bfc704ae4c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935296"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660165"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Konfigurieren der App für benutzerorientierte Pushbenachrichtigungen
 
-Sie können **Pushbenachrichtigungen** Seite im Partner Center direkt mit Kunden interagieren, durch das Senden von benutzerorientierten Pushbenachrichtigungen auf den Geräten, auf denen Ihre app (universelle Windows Plattform) installiert ist. So können Sie beispielsweise Ihre Kunden mithilfe von benutzerorientierten Pushbenachrichtigungen auffordern, aktiv zu werden, etwa Ihre App zu bewerten oder ein neues Feature auszuprobieren. Sie können verschiedene Arten von Pushbenachrichtigungen verwenden, darunter Popupbenachrichtigungen, Kachelbenachrichtigungen und reine XML-Benachrichtigungen. Sie können auch die Rate der App-Starts nachverfolgen, die durch Ihre Pushbenachrichtigungen ausgelöst wurden. Weitere Informationen zu diesem Feature finden Sie unter [Senden von Pushbenachrichtigungen an den Kunden Ihrer App](../publish/send-push-notifications-to-your-apps-customers.md).
+Sie können die **Pushbenachrichtigungen** Seite im Partner Center zu direkt Kontakt zu Kunden durch Senden von aufzunehmen Ziel von Pushbenachrichtigungen an die Geräte, auf denen Ihre app für die universelle Windows-Plattform (UWP) installiert ist. So können Sie beispielsweise Ihre Kunden mithilfe von benutzerorientierten Pushbenachrichtigungen auffordern, aktiv zu werden, etwa Ihre App zu bewerten oder ein neues Feature auszuprobieren. Sie können verschiedene Arten von Pushbenachrichtigungen verwenden, darunter Popupbenachrichtigungen, Kachelbenachrichtigungen und reine XML-Benachrichtigungen. Sie können auch die Rate der App-Starts nachverfolgen, die durch Ihre Pushbenachrichtigungen ausgelöst wurden. Weitere Informationen zu diesem Feature finden Sie unter [Senden von Pushbenachrichtigungen an den Kunden Ihrer App](../publish/send-push-notifications-to-your-apps-customers.md).
 
-Bevor Sie benutzerorientierte Pushbenachrichtigungen an Ihre Kunden aus dem Partner Center senden können, müssen Sie eine Methode der Klasse [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) im Microsoft Store Services SDK verwenden, um Ihre app zum Empfangen von Benachrichtigungen zu registrieren. Sie können weitere Methoden dieser Klasse verwenden, um das Partner Center zu benachrichtigen, dass Ihre app in Reaktion auf eine benutzerorientierte Pushbenachrichtigung gestartet wurde (Wenn Sie die Rate der app-Starts Ihrer Benachrichtigungen aufgrund nachverfolgen möchten) und den Erhalt von Benachrichtigungen.
+Bevor Sie gezielte Pushbenachrichtigungen an Ihre Kunden von Partner Center senden können, müssen Sie eine Methode zum Verwenden der [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) Klasse in der Microsoft Store Services SDK zum Registrieren Ihrer app empfangen Benachrichtigungen. Sie können zusätzliche Methoden dieser Klasse verwenden, um Partner Center zu benachrichtigen, dass Ihre app als Reaktion auf einer gezielten Pushbenachrichtigung gestartet wurde (Wenn Sie möchten die Rate der app-Startvorgänge zu verfolgen, die bei Ihrer Benachrichtigungen) und den Empfang von Benachrichtigungen beenden.
 
 ## <a name="configure-your-project"></a>Konfigurieren des Projekts
 
@@ -31,22 +31,22 @@ Gehen Sie vor dem Schreiben von Code wie folgt vor, um in Ihrem Projekt einen Ve
 
 ## <a name="register-for-push-notifications"></a>Registrierung für Pushbenachrichtigungen
 
-So registrieren Sie Ihre app für benutzerorientierte Pushbenachrichtigungen von Partner Center zu erhalten:
+So registrieren Sie Ihre app, um gezielte Pushbenachrichtigungen von Partner Center zu erhalten:
 
 1. Suchen Sie in Ihrem Projekt einen Codeabschnitt, der während des Starts ausgeführt wird und in dem Sie Ihre App zum Empfangen von Benachrichtigungen registrieren können.
 2. Fügen Sie zu Beginn der Codedatei die folgende Anweisung ein:
 
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#EngagementNamespace)]
 
-3. Rufen Sie ein [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)-Objekt ab, und rufen Sie eine der [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)-Überladungen in dem vorher identifizierten Startcode auf. Diese Methode sollte bei jedem Start Ihrer App aufgerufen werden.
+3. Rufen Sie ein [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)-Objekt ab, und rufen Sie eine der [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)-Überladungen in dem zuvor identifizierten Startcode auf. Diese Methode sollte bei jedem Start Ihrer App aufgerufen werden.
 
-  * Wenn Sie Partner Center, um einen eigenen Kanal-URI für die Benachrichtigungen erstellen möchten, rufen Sie die Überladung [RegisterNotificationChannelAsync()](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) .
+  * Wenn Sie Partner Center einen eigenen Kanal-URI für die Benachrichtigungen erstellen möchten, rufen Sie die [RegisterNotificationChannelAsync()](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) überladen.
 
       [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync1)]
       > [!IMPORTANT]
       > Wenn Ihre App auch [CreatePushNotificationChannelForApplicationAsync](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) zur Erstellung eines Benachrichtigungskanals für WNS aufruft, achten Sie darauf, dass Ihr Code nicht gleichzeitig die Überladungen [CreatePushNotificationChannelForApplicationAsync](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) und [RegisterNotificationChannelAsync()](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) aufruft. Wenn Sie beide Methoden aufrufen müssen, stellen Sie sicher, dass Sie sie nacheinander aufrufen und dass die Rückgabe einer der Methoden abgewartet wird, bevor die andere aufgerufen wird.
 
-  * Wenn Sie angeben, den Kanal-URI für benutzerorientierte Pushbenachrichtigungen von Partner Center verwenden möchten, rufen Sie die Überladung [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) . Sie sollten dies beispielsweise tun, wenn Ihre App den Windows-Pushbenachrichtigungsdienst (WNS) bereits verwendet und Sie dieselbe Kanal-URI verwenden möchten. Erstellen Sie zuerst ein [StoreServicesNotificationChannelParameters](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters)-Objekt, und weisen Sie die [CustomNotificationChannelUri](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri)-Eigenschaft dem Kanal-URI zu.
+  * Wenn Sie den Kanal-URI für die Verwendung für gezielte Pushbenachrichtigungen von Partner Center Aufruf angeben möchten, die [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) überladen. Sie sollten dies beispielsweise tun, wenn Ihre App den Windows-Pushbenachrichtigungsdienst (WNS) bereits verwendet und Sie dieselbe Kanal-URI verwenden möchten. Erstellen Sie zuerst ein [StoreServicesNotificationChannelParameters](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters)-Objekt, und weisen Sie die [CustomNotificationChannelUri](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri)-Eigenschaft dem Kanal-URI zu.
 
       [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
 
@@ -57,13 +57,13 @@ So registrieren Sie Ihre app für benutzerorientierte Pushbenachrichtigungen von
 
 ### <a name="how-targeted-push-notifications-are-routed-to-customers"></a>Wie benutzerorientierte Pushbenachrichtigungen an Kunden weitergeleitet werden
 
-Wenn Ihre App **RegisterNotificationChannelAsync** aufruft, erfasst diese Methode das Microsoft-Konto des Kunden, der derzeit bei dem Gerät angemeldet ist. Wenn Sie eine benutzerorientierte Pushbenachrichtigung an ein Segment, die diesen Kunden enthält senden, sendet Partner Center die Benachrichtigung später an Geräte, die mit Microsoft-Konto dieses Kunden verknüpft sind.
+Wenn Ihre App **RegisterNotificationChannelAsync** aufruft, erfasst diese Methode das Microsoft-Konto des Kunden, der derzeit bei dem Gerät angemeldet ist. Beim Senden einer gezielten Pushbenachrichtigung an ein Segment, das dieses Kunden enthält, sendet Partner Center die Benachrichtigung später für Geräte, die diese Kunden Microsoft-Konto zugeordnet sind.
 
 Beachten Sie Folgendes: Wenn der Kunde, der Ihre App gestartet hat, das Gerät an eine anderen Person übergibt, jedoch noch mit seinem Microsoft-Konto bei diesem Gerät angemeldet ist, sieht die andere Person möglicherweise die Benachrichtigung, die für den ursprünglichen Kunden bestimmt war. Dies kann unerwünschte Folgen nach sich ziehen, insbesondere im Fall von Apps, die Dienste anbieten, für deren Nutzung Kunden sich anmelden müssen. Um zu verhindern, dass andere Benutzer in diesem Szenario Ihre benutzerorientierte Benachrichtigungen sehen können, rufen Sie die [UnregisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync)-Methode auf, wenn Kunden sich von Ihrer App abmelden. Weitere Informationen finden Sie unter [Aufheben der Registrierung für Pushbenachrichtigungen](#unregister) weiter unten in diesem Artikel.
 
 ### <a name="how-your-app-responds-when-the-user-launches-your-app"></a>Reaktionsweise Ihrer App, wenn der Benutzer die App startet
 
-Nachdem Ihre app zum Empfangen von Benachrichtigungen und [Senden Sie eine Pushbenachrichtigung an die Kunden Ihrer app aus dem Partner Center](../publish/send-push-notifications-to-your-apps-customers.md)registriert wurde, wird eine der folgenden Einstiegspunkte in Ihrer app aufgerufen, wenn der Benutzer Ihre app in Reaktion auf Ihre Pushbenachrichtigung startet. Benachrichtigung. Wenn Sie Code haben, der ausgeführt werden soll, wenn der Benutzer die App startet, können Sie ihn einem dieser Einstiegspunkte in Ihrer App hinzufügen.
+Nach dem Registrieren Ihrer app zum Empfangen von Benachrichtigungen und Sie [Senden einer Pushbenachrichtigung an Ihre app Kunden in Partner Center](../publish/send-push-notifications-to-your-apps-customers.md), eine der folgenden Einstiegspunkte in Ihrer app wird aufgerufen, wenn der Benutzer eine app als Reaktion startet. mit Ihrer Pushbenachrichtigung. Wenn Sie Code haben, der ausgeführt werden soll, wenn der Benutzer die App startet, können Sie ihn einem dieser Einstiegspunkte in Ihrer App hinzufügen.
 
   * Hat die Pushbenachrichtigung einen Vordergrund-Aktivierungstyp, übergehen Sie die [OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)-Methode der **App**-Klasse in Ihrem Projekt, und fügen Sie Ihren Code dieser Methode hinzu.
 
@@ -71,11 +71,11 @@ Nachdem Ihre app zum Empfangen von Benachrichtigungen und [Senden Sie eine Pushb
 
 So können Sie beispielsweise die Benutzer Ihrer App, die kostenpflichtige Add-Ons gekauft haben, mit einem kostenlosen Add-On belohnen. In diesem Fall können Sie eine Pushbenachrichtigung an ein [Kundensegment](../publish/create-customer-segments.md) senden, die auf diese Benutzer ausgerichtet ist. Dann können Sie in einem der oben aufgeführten Einstiegspunkte Code hinzufügen, um diesen Kunden einen kostenlosen [In-App-Kauf](in-app-purchases-and-trials.md) zu gewähren.
 
-## <a name="notify-partner-center-of-your-app-launch"></a>Benachrichtigen des Partner Centers über den Start Ihrer app
+## <a name="notify-partner-center-of-your-app-launch"></a>Benachrichtigen von Partner Center von Ihrer app starten
 
-Wenn Sie die Option **Track app Launch Rate** für Ihre benutzerorientierte Pushbenachrichtigung im Partner Center auswählen, rufen Sie die [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) -Methode aus dem entsprechenden Einstiegspunkt in Ihrer app zum Partner Center zu benachrichtigen, die Ihre app wurde in Reaktion auf eine Pushbenachrichtigung gestartet.
+Bei Auswahl der **nachverfolgen app-Start-Rate** Option für Ihre gezielten Pushbenachrichtigung im Partner Center Aufruf der [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) Methode aus den entsprechenden Einstiegspunkt in Ihre app Partner Center zu benachrichtigen, dass Ihre app als Reaktion auf eine Pushbenachrichtigung gestartet wurde.
 
-Diese Methode gibt auch die ursprünglichen Startargumente für Ihre App zurück. Wenn Sie die app-startrate für Ihre Pushbenachrichtigung möchten, eine nicht transparente nachverfolgungs, die ID hinzugefügt wird den startargumenten verfolgen, die app im Partner Center. Sie müssen die Startargumente für Ihre app an die [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) -Methode übergeben, und diese Methode sendet die Tracking-ID für das Partner Center, entfernt die Tracking-ID aus den startargumenten und gibt die ursprünglichen Startargumente für Ihre Code.
+Diese Methode gibt auch die ursprünglichen Startargumente für Ihre App zurück. Bei der Auswahl des app-Start-Satzes für Ihrer Pushbenachrichtigung nachverfolgen, starten Sie ein nicht transparenter Überwachung, die ID hinzugefügt wird die Startargumente verfolgen, die app im Partner Center. Sie müssen die Startargumente für Ihre App übergeben die [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) -Methode, und diese Methode sendet die nachverfolgungs-ID zum Partner Center, entfernt die nachverfolgungs-ID aus den Argumenten starten und gibt die ursprüngliche Starten Sie die Argumente, die Ihren Code.
 
 Die Art und Weise des Aufrufs der Methode hängt von dem Aktivierungstyp der Pushbenachrichtigung ab.
 
@@ -91,15 +91,15 @@ Die Art und Weise des Aufrufs der Methode hängt von dem Aktivierungstyp der Pus
 
 ## <a name="unregister-for-push-notifications"></a>Aufheben der Registrierung für Pushbenachrichtigungen
 
-Wenn Sie Ihre app keine benutzerorientierte Pushbenachrichtigungen von Partner Center möchten, rufen Sie die [UnregisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) -Methode.
+Wenn Ihre app den Empfang von beenden soll als Ziel Pushbenachrichtigungen von Partner Center Aufruf der [UnregisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) Methode.
 
 [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#UnregisterNotificationChannelAsync)]
 
-Beachten Sie, dass diese Methode den Kanal, der für Benachrichtigungen verwendet wird, ungültig macht, damit die App keine Pushbenachrichtigungen *irgendwelcher* Dienste mehr empfängt. Nachdem er geschlossen wurde, kann nicht mehr der Kanal für alle Dienste, einschließlich benutzerorientierter Pushbenachrichtigungen von Partner Center und anderer Benachrichtigungen über WNS verwendet werden. Damit wieder Pushbenachrichtigungen an diese App gesendet werden können, muss die App einen neuen Kanal anfragen.
+Beachten Sie, dass diese Methode den Kanal, der für Benachrichtigungen verwendet wird, ungültig macht, damit die App keine Pushbenachrichtigungen *irgendwelcher* Dienste mehr empfängt. Nachdem es geschlossen wurde, kann nicht der Kanal erneut für alle Dienste, einschließlich gezielte Pushbenachrichtigungen über Partner Center und andere Benachrichtigungen, die Verwendung von WNS verwendet werden. Damit wieder Pushbenachrichtigungen an diese App gesendet werden können, muss die App einen neuen Kanal anfragen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Senden von Pushbenachrichtigungen an die Kunden Ihrer App](../publish/send-push-notifications-to-your-apps-customers.md)
+* [Senden von Pushbenachrichtigungen zu Ihrer app-Kunden](../publish/send-push-notifications-to-your-apps-customers.md)
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
-* [So wird's gemacht: Anfordern, Erstellen und Speichern eines Benachrichtigungskanals](https://docs.microsoft.com/previous-versions/windows/apps/hh868221(v=win.10))
+* [Wie Sie anfordern, erstellen und speichern einen Benachrichtigungskanal](https://docs.microsoft.com/previous-versions/windows/apps/hh868221(v=win.10))
 * [Microsoft Store Services SDK](https://docs.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

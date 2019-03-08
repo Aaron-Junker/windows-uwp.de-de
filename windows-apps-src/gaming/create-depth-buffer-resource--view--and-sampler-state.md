@@ -4,21 +4,21 @@ description: Hier erfahren Sie, wie Sie die zum Unterstützen von Tiefentests f�
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Direct3D, Tiefenpuffer
+keywords: Windows 10, UWP, Spiele, Direct3D, Tiefenpuffer
 ms.localizationpriority: medium
 ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946743"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613695"
 ---
 # <a name="create-depth-buffer-device-resources"></a>Erstellen von Tiefenpuffer-Geräteressourcen
 
 
 
 
-Hier erfahren Sie, wie Sie die zum Unterstützen von Tiefentests für Schattenvolumen erforderlichen Direct3D-Geräteressourcen erstellen. Teil 1 von [Exemplarische Vorgehensweise: Implementieren von Schattenvolumen mithilfe von Tiefenpuffern in Direct3D11](implementing-depth-buffers-for-shadow-mapping.md).
+Hier erfahren Sie, wie Sie die zum Unterstützen von Tiefentests für Schattenvolumen erforderlichen Direct3D-Geräteressourcen erstellen. Teil 1 von [Exemplarische Vorgehensweise: Implementieren Sie mithilfe von Tiefenpuffern in Direct3D 11 Schattenvolumen](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="resources-youll-need"></a>Erforderliche Ressourcen
 
@@ -38,7 +38,7 @@ Beachten Sie, dass die Erstellung dieser Ressourcen in eine geräteabhängige Re
 ## <a name="check-feature-support"></a>Überprüfen unterstützter Features
 
 
-Rufen Sie vor dem Erstellen der Tiefenkarte die [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497)-Methode für das Direct3D-Gerät auf, fordern Sie **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** an, und stellen Sie eine [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569)-Struktur bereit.
+Rufen Sie vor dem Erstellen der Depth-Zuordnung, die [ **CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497) Methode auf dem Direct3D-Gerät anfordern **D3D11\_FEATURE\_D3D9\_ SCHATTEN\_Unterstützung**, und geben Sie einen [ **D3D11\_FEATURE\_Daten\_D3D9\_SCHATTEN\_Unterstützung** ](https://msdn.microsoft.com/library/windows/desktop/jj247569) Struktur.
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -55,14 +55,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-Wenn dieses Feature nicht unterstützt wird, dürfen Sie nicht versuchen, Shader zu laden, die für das Shadermodell 4 Ebene 9\_x kompiliert wurden, bei dem Samplevergleichsfunktionen aufgerufen werden. Eine fehlende Unterstützung für dieses Feature bedeutet in vielen Fällen, dass es sich bei der GPU um ein älteres Gerät mit einem Treiber handelt, der nicht zur Unterstützung von mindestens WDDM 1.2 aktualisiert wurde. Wenn das Gerät mindestens die Featureebene 10\_0 unterstützt, können Sie stattdessen einen Samplevergleichsshader laden, der für das Shadermodell 4\_0 kompiliert ist.
+Diese Funktion nicht unterstützt wird, versuchen Sie nicht zum Laden von Shadern, die für Shader Model 4 Level 9 kompiliert\_X, das Aufrufen von Vergleichsfunktionen Beispiel. Eine fehlende Unterstützung für dieses Feature bedeutet in vielen Fällen, dass es sich bei der GPU um ein älteres Gerät mit einem Treiber handelt, der nicht zur Unterstützung von mindestens WDDM 1.2 aktualisiert wurde. Wenn das Gerät unterstützt mindestens Stufe 10 feature\_0, und Sie können einen Beispiel-Vergleich-Shader für Shader Model 4 kompiliert laden\_0 stattdessen.
 
 ## <a name="create-depth-buffer"></a>Erstellen des Tiefenpuffers
 
 
-Versuchen Sie als Erstes, die Tiefenkarte in einem Tiefenformat mit einer höheren Genauigkeit zu erstellen. Richten Sie zuerst die entsprechenden Eigenschaften der Shaderressourcenansicht ein. Falls die Erstellung der Ressource fehlschlägt (z.B. weil zu wenig Gerätespeicher verfügbar ist oder ein Format von der Hardware nicht unterstützt wird), können Sie es mit einem Format mit geringerer Genauigkeit probieren und die Eigenschaften entsprechend ändern.
+Versuchen Sie als Erstes, die Tiefenkarte in einem Tiefenformat mit einer höheren Genauigkeit zu erstellen. Richten Sie zuerst die entsprechenden Eigenschaften der Shaderressourcenansicht ein. Falls die Erstellung der Ressource fehlschlägt (z. B. weil zu wenig Gerätespeicher verfügbar ist oder ein Format von der Hardware nicht unterstützt wird), können Sie es mit einem Format mit geringerer Genauigkeit probieren und die Eigenschaften entsprechend ändern.
 
-Dieser Schritt ist optional, wenn Sie nur ein Format mit geringerer Genauigkeit benötigen (z.B. wenn Sie auf Geräten mit Direct3D-Funktionsebene9\_1 und mittlerer Auflösung rendern).
+Dieser Schritt ist optional, wenn Sie nur ein Format mit geringer Genauigkeit Tiefe, z. B. beim Rendern auf mittlere Auflösung Direct3D-Funktionsebene 9\_1 Geräte.
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-Erstellen Sie anschließend die Ressourcenansichten. Legen Sie den Mip-Slice für die Ansicht der Tiefenschablone auf null und die Mip-Ebenen für die Shaderressourcenansicht auf 1 fest. Beide haben die Texturdimension TEXTURE2D und müssen ein entsprechendes [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059) verwenden.
+Erstellen Sie anschließend die Ressourcenansichten. Legen Sie den Mip-Slice für die Ansicht der Tiefenschablone auf null und die Mip-Ebenen für die Shaderressourcenansicht auf 1 fest. Verfügen beide über eine Dimension der Textur des TEXTURE2D, und beide müssen mit einem entsprechenden [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -113,11 +113,11 @@ hr = pD3DDevice->CreateShaderResourceView(
 ## <a name="create-comparison-state"></a>Erstellen eines Vergleichsstatus
 
 
-Erstellen Sie jetzt das Vergleichs-Samplerstatusobjekt. Auf Featureebene 9\_1 wird nur D3D11\_COMPARISON\_LESS\_EQUAL unterstützt. Die Filterungsoptionen werden ausführlicher unter [Unterstützen von Schattenkarten auf unterschiedlicher Hardware](target-a-range-of-hardware.md) erläutert. Oder Sie setzen einfach Punktfilterung ein, um schnellere Schattenkarten zu erhalten.
+Erstellen Sie jetzt das Vergleichs-Samplerstatusobjekt. Die Funktionsebene 9\_1 unterstützt nur D3D11\_Vergleich\_weniger\_gleich. Die Filterungsoptionen werden ausführlicher unter [Unterstützen von Schattenkarten auf unterschiedlicher Hardware](target-a-range-of-hardware.md) erläutert. Oder Sie setzen einfach Punktfilterung ein, um schnellere Schattenkarten zu erhalten.
 
-Hinweis: Sie können den D3D11\_TEXTURE\_ADDRESS\_BORDER-Adressmodus angeben und auf Geräten mit Funktionsebene9\_1 verwenden. Dies gilt für Pixelshader, die vor dem Tiefentest nicht testen, ob sich das Pixel im Ansichtsfrustum der Beleuchtung befindet. Wenn Sie für jeden Rand 0 oder 1 angeben, können Sie steuern, ob Pixel außerhalb des Lichtkegels den Tiefentest bestehen – was bedeutet, ob sie beleuchtet werden oder sich im Schatten befinden.
+Beachten Sie, dass Sie, die D3D11 angeben können\_TEXTUR\_Adresse\_Adressmodus Rahmen und funktioniert auf Funktionsebene 9\_1 Geräte. Dies gilt für Pixelshader, die vor dem Tiefentest nicht testen, ob sich das Pixel im Ansichtsfrustum der Beleuchtung befindet. Wenn Sie für jeden Rand 0 oder 1 angeben, können Sie steuern, ob Pixel außerhalb des Lichtkegels den Tiefentest bestehen – was bedeutet, ob sie beleuchtet werden oder sich im Schatten befinden.
 
-Auf Funktionsebene9\_1 müssen Sie sicherstellen, dass folgende erforderliche Werte festgelegt sind: **MinLOD** ist auf NULL festgelegt, **MaxLOD** ist auf **D3D11\_FLOAT32\_MAX** festgelegt, und **MaxAnisotropy** ist auf NULL festgelegt.
+Feature level 9\_1, die folgenden erforderlichen Werte festgelegt werden müssen: **MinLOD** nastaven NA hodnotu NULL, **MaxLOD** nastaven NA hodnotu **D3D11\_FLOAT32\_MAX**, und **MaxAnisotropy** auf 0 (null) festgelegt ist.
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -152,7 +152,7 @@ DX::ThrowIfFailed(
 ## <a name="create-render-states"></a>Erstellen von Renderstatus
 
 
-Erstellen Sie jetzt einen Renderstatus, den Sie zum Aktivieren von Frontface-Culling verwenden können. Beachten Sie, dass **DepthClipEnable** bei Geräten mit Funktionsebene9\_1 auf **true** festgelegt werden muss.
+Erstellen Sie jetzt einen Renderstatus, den Sie zum Aktivieren von Frontface-Culling verwenden können. Beachten Sie, Funktionsebene 9\_1 Geräte erfordern **DepthClipEnable** festgelegt **"true"**.
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;
@@ -188,7 +188,7 @@ DX::ThrowIfFailed(
 ## <a name="create-constant-buffers"></a>Erstellen von Konstantenpuffern
 
 
-Denken Sie daran, einen Konstantenpuffer für das Rendering aus der Perspektive der Beleuchtung zu erstellen. Mit diesem Konstantenpuffer können Sie die Beleuchtungsposition für den Shader angeben. Verwenden Sie für punktuelles Licht eine perspektivische Matrix und für gerichtetes Licht (z.B. Sonnenlicht) eine orthogonale Matrix.
+Denken Sie daran, einen Konstantenpuffer für das Rendering aus der Perspektive der Beleuchtung zu erstellen. Mit diesem Konstantenpuffer können Sie die Beleuchtungsposition für den Shader angeben. Verwenden Sie für punktuelles Licht eine perspektivische Matrix und für gerichtetes Licht (z. B. Sonnenlicht) eine orthogonale Matrix.
 
 ```cpp
 DX::ThrowIfFailed(

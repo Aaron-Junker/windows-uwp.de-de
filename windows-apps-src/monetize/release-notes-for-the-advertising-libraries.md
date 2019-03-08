@@ -4,21 +4,21 @@ description: Überprüfen Sie die Versionshinweise für die Microsoft Advertisin
 title: Versionshinweise für die Advertising-Bibliotheken
 ms.date: 08/23/2017
 ms.topic: article
-keywords: Windows10, UWP, Anzeigen, Werbung, Versionshinweise
+keywords: Windows 10, UWP, Anzeigen, Werbung, Versionshinweise
 ms.localizationpriority: medium
 ms.openlocfilehash: d7a250880d148dd4ca3ced522312904f2786715e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050863"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601225"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Versionshinweise für die Advertising-Bibliotheken
 
 
 
 
-Dieser Abschnittenthält Versionshinweise für die aktuelle Version der Microsoft Advertising-Bibliotheken. Diese Bibliotheken unterstützt XAML- und JavaScript/HTML-apps für Windows 10, Windows8.1, Windows Phone 8.1 und WindowsPhone8.
+Dieser Abschnitt enthält Versionshinweise für die aktuelle Version der Microsoft Advertising-Bibliotheken. Diese Bibliotheken unterstützen die XAML und JavaScript/HTML-apps für Windows 10, Windows 8.1, Windows Phone 8.1 und Windows Phone 8.
 
 ## <a name="installation"></a>Installation
 

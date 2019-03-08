@@ -4,7 +4,7 @@ description: Erfahren Sie, wie Sie die App-Aktivierung durch Überschreiben der 
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ms.date: 07/02/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,19 +12,19 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929351"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626595"
 ---
 # <a name="handle-app-activation"></a>Behandeln der App-Aktivierung
 
-Hier erfahren Sie, wie Sie app-Aktivierung durch Überschreiben der [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) -Methode behandeln.
+Erfahren Sie, wie zum Verarbeiten der app-Aktivierung durch Überschreiben der [ **Application.OnLaunched** ](/uwp/api/windows.ui.xaml.application.onlaunched) Methode.
 
 ## <a name="override-the-launch-handler"></a>Überschreiben des Starthandlers
 
-Wenn eine app, aus irgendeinem Grund aktiviert wird, sendet das System das [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) -Ereignis. Eine Liste der Aktivierungstypen finden Sie in der [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)-Enumeration.
+Beim Aktivieren einer Anwendung aus irgendeinem Grund das System sendet das [ **CoreApplicationView.Activated** ](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) Ereignis. Eine Liste der Aktivierungstypen finden Sie in der [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)-Enumeration.
 
 Die [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324)-Klasse definiert Methoden, die außer Kraft gesetzt werden können, um die verschiedenen Aktivierungstypen zu behandeln. Verschiedene Aktivierungstypen verfügen über eine spezifische Methode, die außer Kraft gesetzt werden kann. Setzen Sie für die übrigen Aktivierungstypen die [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)-Methode außer Kraft.
 
@@ -40,7 +40,7 @@ Definieren Sie die Klasse für Ihre Anwendung.
 Überschreiben Sie die [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)-Methode. Diese Methode wird immer dann aufgerufen, wenn der Benutzer die App startet. Der [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731)-Parameter enthält den vorherigen Status der App sowie die Aktivierungsargumente.
 
 > [!NOTE]
-> Unter Windows nicht das Starten einer angehaltenen app über die Kachel oder die app-Liste diese Methode aufrufen.
+> Auf Windows nicht das Starten von Start-Kachel oder eines app-Liste einer angehaltenen app diese Methode aufrufen.
 
 ```csharp
 using System;
@@ -261,17 +261,17 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 Wenn der Wert von [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) gleich **NotRunning** ist, konnten die Anwendungsdaten von der App nicht erfolgreich gespeichert werden. Die App muss in diesem Fall neu gestartet werden, als ob sie erstmalig gestartet wird.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 > [!NOTE]
-> Apps können die Initialisierung überspringen, wenn für das aktuelle Fenster bereits Inhalte festgelegt wurden. Sie können überprüfen, dass die [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) -Eigenschaft, um zu ermitteln, ob die app über eine primäre oder sekundäre Kachel gestartet wurde, und basierend auf dieser Information, entscheiden Sie, ob Sie ein neuer stellen oder Fortsetzen der app-Erfahrung.
+> Apps können die Initialisierung überspringen, wenn für das aktuelle Fenster bereits Inhalte festgelegt wurden. Sehen Sie sich die [ **LaunchActivatedEventArgs.TileId** ](https://msdn.microsoft.com/library/windows/apps/br224736) Eigenschaft, um zu bestimmen, ob die app wurde von einer primären als auch eine sekundäre Kachel gestartet und, auf diesen Informationen basierend entscheiden Sie, ob sollten Sie Stellen Sie eine neue oder fortsetzen Sie der app-Erfahrung.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Behandeln des Anhaltens von Apps](suspend-an-app.md)
-* [Behandeln der App-Fortsetzung](resume-an-app.md)
-* [Richtlinien für das Anhalten und Fortsetzen von Apps](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [Handle-app anhalten](suspend-an-app.md)
+* [Behandeln von app-fortsetzen](resume-an-app.md)
+* [Richtlinien für die app anhalten und fortsetzen](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [App-Lebenszyklus](app-lifecycle.md)

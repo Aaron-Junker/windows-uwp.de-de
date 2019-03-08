@@ -1,23 +1,23 @@
 ---
-Description: Some kinds of apps (multilingual dictionaries, translation tools, etc.) need to override the default behavior of an app bundle, and build resources into the app package instead of having them in separate resource packages. This topic explains how to do that.
+Description: Einige Arten von Apps (mehrsprachige Wörterbücher, Übersetzungstools usw.) müssen das Standardverhalten von einem App Bundle überschreiben und Ressourcen im App-Paket und nicht in separaten Ressourcenpaketen integrieren. In diesem Thema wird erläutert, wie das geht.
 title: Integrieren von Ressourcen im App-Paket und nicht in einem Ressourcenpaket
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
-keywords: Windows10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
+keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938493"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627285"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>Integrieren von Ressourcen im App-Paket und nicht in einem Ressourcenpaket
 
 Einige Arten von Apps (mehrsprachige Wörterbücher, Übersetzungstools usw.) müssen das Standardverhalten von einem App Bundle überschreiben und Ressourcen im App-Paket und nicht in separaten Ressourcenpaketen (oder Ressourcenpaketen) integrieren. In diesem Thema wird erläutert, wie das geht.
 
-Wenn Sie standardmäßig ein [App Bundle (.appxbundle)](../packaging/packaging-uwp-apps.md) erstellen, werden nur Ihre Standardressourcen für Sprache, Skalierung und DirectX-Featureebene im App-Paket integriert. Die übersetzten Ressourcen– und Ihre Ressourcen speziell für nicht standardmäßige Skalierungen und/oder DirectX-Featureebenen– sind in Ressourcenpakete integriert und werden nur auf Geräte heruntergeladen, die sie benötigen. Wenn ein Kunde Ihre App vom Microsoft Store mit einem Gerät erwirbt, auf dem die bevorzugte Sprache auf Spanisch festgelegt ist, werden nur Ihre App sowie das spanische Ressourcenpaket heruntergeladen und installiert. Wenn derselbe Benutzer seine bevorzugte Sprache später unter **Einstellungen** in Französisch ändert, wird das französische Ressourcenpaket für Ihre App heruntergeladen und installiert. Ähnliches passiert mit den Ressourcen, die für die Skalierung und DirectX-Featureebene qualifiziert sind. Bei den meisten Apps bedeutet dieses Verhalten mehr Effizienz, und dies ist genau das, was Sie und der Kunde *wünschen*.
+Wenn Sie standardmäßig ein [App Bundle (.appxbundle)](../packaging/packaging-uwp-apps.md) erstellen, werden nur Ihre Standardressourcen für Sprache, Skalierung und DirectX-Featureebene im App-Paket integriert. Die übersetzten Ressourcen – und Ihre Ressourcen speziell für nicht standardmäßige Skalierungen und/oder DirectX-Featureebenen – sind in Ressourcenpakete integriert und werden nur auf Geräte heruntergeladen, die sie benötigen. Wenn ein Kunde Ihre App vom Microsoft Store mit einem Gerät erwirbt, auf dem die bevorzugte Sprache auf Spanisch festgelegt ist, werden nur Ihre App sowie das spanische Ressourcenpaket heruntergeladen und installiert. Wenn derselbe Benutzer seine bevorzugte Sprache später unter **Einstellungen** in Französisch ändert, wird das französische Ressourcenpaket für Ihre App heruntergeladen und installiert. Ähnliches passiert mit den Ressourcen, die für die Skalierung und DirectX-Featureebene qualifiziert sind. Bei den meisten Apps bedeutet dieses Verhalten mehr Effizienz, und dies ist genau das, was Sie und der Kunde *wünschen*.
 
 Wenn Ihre App aber dem Benutzer das Ändern der Sprache direkt über die App erlaubt (statt über **Einstellungen**), ist dieses Standardverhalten nicht korrekt. Sie möchten, dass alle Ihre Sprachressourcen zusammen mit der App bedingungslos einmal heruntergeladen und installiert werden und dann auf dem Gerät verbleiben. Sie möchten, dass diese Ressourcen in das App-Paket und nicht in separaten Ressourcenpaketen integriert werden.
 
@@ -25,11 +25,11 @@ Wenn Ihre App aber dem Benutzer das Ändern der Sprache direkt über die App erl
 
 Sie können Visual Studio so konfigurieren, dass Ressourcen in Ihrem App-Paket auf eine von zwei Weisen integriert werden. Sie können entweder eine Konfigurationsdatei zu Ihrem Projekt hinzufügen oder Ihre Projektdatei direkt bearbeiten. Verwenden Sie die Option, mit der Sie am besten vertraut sind oder die mit Ihrem Buildsystem am besten funktioniert.
 
-## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>Option1: Verwenden von „priconfig.packaging.xml“, um Ressourcen in Ihrem App-Paket zu erstellen
+## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>Option 1: Verwenden von „priconfig.packaging.xml“, um Ressourcen in Ihrem App-Paket zu erstellen
 
 1. Fügen Sie in Visual Studio ein neues Element zu Ihrem Projekt hinzu. Wählen Sie „XML-Datei“, und nennen Sie die Datei `priconfig.packaging.xml`.
 2. Wählen Sie im Projektmappen-Explorer `priconfig.packaging.xml` aus, und überprüfen Sie das Eigenschaftenfenster. Die Buildaktion der Datei sollte auf „Keine” und „In Ausgabeverzeichnis kopieren” sollte auf „Nicht kopieren” festgelegt sein.
-3. Ersetzen Sie den Inhalt der Datei mit dieser XML.
+3. Ersetzen Sie den Inhalt der Datei durch diese XML.
    ```xml
    <packaging>
       <autoResourcePackage qualifier="Language" />
@@ -37,7 +37,7 @@ Sie können Visual Studio so konfigurieren, dass Ressourcen in Ihrem App-Paket a
       <autoResourcePackage qualifier="DXFeatureLevel" />
    </packaging>
    ```
-4. Jedes `<autoResourcePackage>`-Element weist Visual Studio an, automatisch die Ressourcen für den angegebenen Qualifizierernamen in separate Ressourcenpakete aufzuteilen. Dies wird als *automatische Aufteilung* bezeichnet. Mit den bisherigen Dateiinhalten haben Sie das Visual Studio-Verhalten noch nicht wirklich geändert. Anders ausgedrückt: Visual Studio *verhält sich bereits so, als ob* diese Datei mit diesem Inhalt vorhanden wäre, da dies der Standard ist. Wenn Sie nicht möchten, dass Visual Studio automatisch nach Qualifizierername aufteilt, löschen Sie dieses `<autoResourcePackage>`-Element aus der Datei. Hier sehen Sie, wie die Datei aussehen würde, wenn alle Ihre Sprachressourcen im App-Paket integriert werden sollen, anstatt sie automatisch in separate Ressourcenpakete aufzuteilen.
+4. Jedes `<autoResourcePackage>`-Element weist Visual Studio an, automatisch die Ressourcen für den angegebenen Qualifizierernamen in separate Ressourcenpakete aufzuteilen. Dies wird als *automatische Aufteilung* bezeichnet. Mit den bisherigen Dateiinhalten haben Sie das Visual Studio Verhalten noch nicht wirklich geändert. Anders ausgedrückt: Visual Studio *verhält sich bereits so, als ob* diese Datei mit diesem Inhalt vorhanden wäre, da dies der Standard ist. Wenn Sie nicht möchten, dass Visual Studio automatisch nach Qualifizierername aufteilt, löschen Sie dieses `<autoResourcePackage>`-Element aus der Datei. Hier sehen Sie, wie die Datei aussehen würde, wenn alle Ihre Sprachressourcen im App-Paket integriert werden sollen, anstatt sie automatisch in separate Ressourcenpakete aufzuteilen.
    ```xml
    <packaging>
       <autoResourcePackage qualifier="Scale" />
@@ -71,9 +71,9 @@ Wenn Sie die Datei `priconfig.packaging.xml` nennen, wird sie von Visual Studio 
 
 Ersetzen Sie `FILE-PATH-AND-NAME` durch den Pfad zur und den Namen der Datei.
 
-## <a name="option-2-use-your-project-file-to-build-resources-into-your-app-package"></a>Option2: Verwenden der Projektdatei, um Ressourcen im App-Paket zu integrieren
+## <a name="option-2-use-your-project-file-to-build-resources-into-your-app-package"></a>Option 2: Verwenden der Projektdatei, um Ressourcen im App-Paket zu integrieren
 
-Dies ist eine Alternative zu Option1. Sobald Sie mit der Funktionsweise von Option1 vertraut sind, können Sie stattdessen Option2 wählen, sollte dies besser zu Ihrem Entwicklungs- und/oder Buildworkflow passen.
+Dies ist eine Alternative zu Option 1. Sobald Sie mit der Funktionsweise von Option 1 vertraut sind, können Sie stattdessen Option 2 wählen, sollte dies besser zu Ihrem Entwicklungs- und/oder Buildworkflow passen.
 
 Fügen Sie diese XML-Datei in Ihrer Projektdatei zwischen dem öffnenden und schließenden Tag des ersten `<PropertyGroup>`-Elements hinzu.
 
@@ -97,6 +97,6 @@ Es gibt noch einen letzten Schritt, den Sie durchführen müssen. **Aber nur, we
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Verpacken einer UWP-App mit Visual Studio](../packaging/packaging-uwp-apps.md)
-* [Manuelles Kompilieren von Ressourcen mit MakePri.exe](compile-resources-manually-with-makepri.md)
-* [Angeben der von der App verwendeten Standardressourcen](specify-default-resources-installed.md)
+* [Packen einer UWP-app mit Visual Studio](../packaging/packaging-uwp-apps.md)
+* [Kompilieren von Ressourcen mit MakePri.exe manuell](compile-resources-manually-with-makepri.md)
+* [Angeben von Standardressourcen, die Ihre app verwendet.](specify-default-resources-installed.md)

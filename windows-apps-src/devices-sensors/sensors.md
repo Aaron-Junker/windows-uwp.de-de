@@ -4,33 +4,33 @@ title: Sensoren
 description: Mithilfe von Sensoren können Apps die Beziehung zwischen einem Gerät und der physischen Umgebung ermitteln. Sensoren können für die App die Richtung, Ausrichtung und Bewegung des Geräts erfassen.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c29673a0b41b4f071d438f0c03255c2d73831dc5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946871"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626795"
 ---
 # <a name="sensors"></a>Sensoren
 
 
 
-Mithilfe von Sensoren können Apps die Beziehung zwischen einem Gerät und der physischen Umgebung ermitteln. Sensoren können für die App die Richtung, Ausrichtung und Bewegung des Geräts erfassen. Diese Sensoren können Ihre Spiel-, Augmented Reality- oder Dienstprogramm-App hilfreicher und interaktiver machen, indem sie eine spezielle Eingabeform bereitstellen. So können z.B. durch Bewegen des Geräts die Zeichen auf dem Bildschirm angepasst werden, oder das Gerät kann als virtuelles Lenkrad verwendet werden.
+Mithilfe von Sensoren können Apps die Beziehung zwischen einem Gerät und der physischen Umgebung ermitteln. Sensoren können für die App die Richtung, Ausrichtung und Bewegung des Geräts erfassen. Diese Sensoren können Ihre Spiel-, Augmented Reality- oder Dienstprogramm-App hilfreicher und interaktiver machen, indem sie eine spezielle Eingabeform bereitstellen. So können z. B. durch Bewegen des Geräts die Zeichen auf dem Bildschirm angepasst werden, oder das Gerät kann als virtuelles Lenkrad verwendet werden.
 
 Im Allgemeinen sollten Sie im Vorfeld entscheiden, ob die App ausschließlich auf Sensorsteuerung beruhen soll oder ob mit den Sensoren lediglich ein zusätzlicher Steuermechanismus bereitgestellt wird. Ein Rennspiel, bei dem ein Gerät als virtuelles Lenkrad genutzt wird, kann beispielsweise auch über eine GUI auf dem Bildschirm gesteuert werden. Die App funktioniert dann unabhängig von den Sensoren, die für das System zur Verfügung stehen. Andererseits könnte ein Murmel-Kipplabyrinth ausschließlich für die Funktion mit Systemen mit entsprechenden Sensoren geschrieben werden. Sie müssen die strategische Entscheidung treffen, ob ausschließlich Sensoren verwendet werden sollen. Dabei ist zu beachten, dass ein Ansatz mit Steuerung per Maus oder Touchfunktion eine bessere Kontrolle ermöglicht, was jedoch zu Lasten des Immersionseffekts geht.
 
 | Thema                                                       | Beschreibung  |
 |-------------------------------------------------------------|--------------|
-| [Kalibrieren von Sensoren](calibrate-sensors.md)                   | Für Sensoren in einem auf dem Magnetometer – Kompass, Neigungsmesser und Ausrichtungssensor – basieRendern Gerät kann aufgrund von Umweltfaktoren eine Kalibrierung erforderlich sein. Falls für Ihr Gerät eine Kalibrierung erforderlich ist, kann die [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552)-Aufzählung helfen, die nächsten Schritte festzulegen. |
-| [Sensorausrichtung](sensor-orientation.md)                 | Sensordaten der [<strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371)-Klassen sind durch ihre Referenzachsen definiert. Diese Achsen werden durch das Querformat des Geräts bestimmt und drehen sich mit dem Gerät, wenn es vom Benutzer gedreht wird. |
-| [Verwenden des Beschleunigungsmessers](use-the-accelerometer.md)           | Hier erfahren Sie, wie Sie mithilfe des Beschleunigungsmessers auf Benutzerbewegungen reagieren können. |
+| [Kalibrieren Sensoren](calibrate-sensors.md)                   | Für Sensoren in einem auf dem Magnetometer – Kompass, Neigungsmesser und Ausrichtungssensor – basierenden Gerät kann aufgrund von Umweltfaktoren eine Kalibrierung erforderlich sein. Falls für Ihr Gerät eine Kalibrierung erforderlich ist, kann die [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552)-Aufzählung helfen, die nächsten Schritte festzulegen. |
+| [Sensor-Ausrichtung](sensor-orientation.md)                 | Sensordaten der [<strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371)-Klassen sind durch ihre Referenzachsen definiert. Diese Achsen werden durch das Querformat des Geräts bestimmt und drehen sich mit dem Gerät, wenn es vom Benutzer gedreht wird. |
+| [Verwenden Sie den Beschleunigungsmesser](use-the-accelerometer.md)           | Hier erfahren Sie, wie Sie mithilfe des Beschleunigungsmessers auf Benutzerbewegungen reagieren können. |
 | [Verwenden des Kompasses](use-the-compass.md)                       | Hier erfahren Sie, wie Sie mithilfe des Kompasses die aktuelle Richtung ermitteln. |
-| [Verwenden des Gyrometers](use-the-gyrometer.md)                   | Hier erfahren Sie, wie Sie mithilfe des Gyrometers Bewegungsänderungen des Benutzers erkennen. | 
-| [Verwenden des Neigungsmessers](use-the-inclinometer.md)             | Hier erfahren Sie, wie Sie mithilfe des Neigungsmessers Werte für Gier-, Roll- und Nickwinkel ermitteln. |
-| [Verwenden des Lichtsensors](use-the-light-sensor.md)             | Hier erfahren Sie, wie Sie mithilfe des Umgebungslichtsensors veränderte Lichtverhältnisse erkennen. |
-| [Verwenden des Ausrichtungssensors](use-the-orientation-sensor.md) | Hier erfahren Sie, wie Sie mithilfe der Ausrichtungssensoren die Ausrichtung des Geräts ermitteln.|
+| [Verwenden Sie die gyrometer](use-the-gyrometer.md)                   | Hier erfahren Sie, wie Sie mithilfe des Gyrometers Bewegungsänderungen des Benutzers erkennen. | 
+| [Verwenden Sie die neigungsmesser](use-the-inclinometer.md)             | Hier erfahren Sie, wie Sie mithilfe des Neigungsmessers Werte für Nick-, Roll- und Gierwinkel ermitteln. |
+| [Der lichtsensor verwenden](use-the-light-sensor.md)             | Hier erfahren Sie, wie Sie mithilfe des Umgebungslichtsensors veränderte Lichtverhältnisse erkennen. |
+| [Verwenden der ausrichtungssensor](use-the-orientation-sensor.md) | Hier erfahren Sie, wie Sie mithilfe der Ausrichtungssensoren die Ausrichtung des Geräts ermitteln.|
 
 ## <a name="sensor-batching"></a>Sensorbatchverarbeitung
 
@@ -48,7 +48,7 @@ Falls ein Sensor die Batchberichterstellung verwendet, wird durch Aufruf von [**
 
 ## <a name="accelerometer"></a>Beschleunigungsmesser
 
-Mit dem [**Beschleunigungsmesser**](https://msdn.microsoft.com/library/windows/apps/BR225687) -Sensor werden Schwerkraftwerte entlang der X-, Y- und Z-Achse des Geräts gemessen. Er eignet sich gut für einfache Anwendungen, die auf Bewegung basieren. Beachten Sie, dass für die Beschleunigungskraftwerte die Schwerkraft berücksichtigt wird. Wenn das Gerät für das **FaceUp**-Element den Wert [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) auf einem Tisch aufweist, ermittelt der Beschleunigungsmesser für die Z-Achse den Wert -1 G. Mit Beschleunigungsmessern wird also nicht unbedingt nur die Koordinatenbeschleunigung (Veränderung der Geschwindigkeit) gemessen. Bei Verwendung eines Beschleunigungsmessers sollten Sie zwischen dem schwerkraftbezogenen Vektor der Schwerkraft und dem linearen Beschleunigungsvektor für die Bewegung unterscheiden. Beachten Sie, dass der Gravitationsvektor für ein stationäres Gerät auf den Wert1 normalisiert werden sollte.
+Mit dem [**Beschleunigungsmesser**](https://msdn.microsoft.com/library/windows/apps/BR225687) -Sensor werden Schwerkraftwerte entlang der X-, Y- und Z-Achse des Geräts gemessen. Er eignet sich gut für einfache Anwendungen, die auf Bewegung basieren. Beachten Sie, dass für die Beschleunigungskraftwerte die Schwerkraft berücksichtigt wird. Wenn das Gerät für das **FaceUp**-Element den Wert [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) auf einem Tisch aufweist, ermittelt der Beschleunigungsmesser für die Z-Achse den Wert -1 G. Mit Beschleunigungsmessern wird also nicht unbedingt nur die Koordinatenbeschleunigung (Veränderung der Geschwindigkeit) gemessen. Bei Verwendung eines Beschleunigungsmessers sollten Sie zwischen dem schwerkraftbezogenen Vektor der Schwerkraft und dem linearen Beschleunigungsvektor für die Bewegung unterscheiden. Beachten Sie, dass der Gravitationsvektor für ein stationäres Gerät auf den Wert 1 normalisiert werden sollte.
 
 Die folgenden Diagramme veranschaulichen Folgendes:
 
@@ -100,7 +100,7 @@ Ein Beispiel für eine App, in der der Gyrometersensor verwendet werden kann, is
 
 Eine Beispiel für eine Implementierung finden Sie unter [Beispiel für ein Gyrometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Gyrometer).
 
-## <a name="inclinometer"></a>Neigungssensor
+## <a name="inclinometer"></a>Neigungsmesser
 
 Mit dem [**Neigungssensor**](https://msdn.microsoft.com/library/windows/apps/BR225766) -Sensor gibt Gier-, Nick- und Rollwinkel des Geräts an und funktioniert optimal mit Apps, die die Stellung des Geräts im dreidimensionalen Raum berücksichtigen. Neige- und Rollwinkel werden anhand der Daten des Schwerkraftvektors des Beschleunigungsmessers und der Daten des Gyrometers berechnet. Der Schwenkwert wird durch die Daten des Magnetometers und des Gyrometers (entsprechend der Kompassrichtung) bestimmt. Neigungssensoren bieten erweiterte Ausrichtungsdaten auf eine leicht verständliche Art und Weise. Verwenden Sie Neigungsmesser, wenn Sie Geräteausrichtungswerte benötigen, aber die Sensordaten nicht verarbeiten möchten.
 
@@ -108,7 +108,7 @@ Mit dem [**Neigungssensor**](https://msdn.microsoft.com/library/windows/apps/BR2
 
 Für Apps, bei denen die Ansicht der Ausrichtung des Geräts entsprechend geändert werden soll, kann der Neigungssensor verwendet werden. Eine App, bei der Nick-, Gier- und Rollwinkel eines Flugzeugs angezeigt werden, würde ebenfalls Neigungsmesserdaten verwenden.
 
-Ein Beispiel einer Implementierung, finden Sie unter neigungssensors [https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
+Ein beispielimplementierung finden Sie im Beispiel neigungsmesser [ https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
 
 ## <a name="light-sensor"></a>Belichtungssensor
 
@@ -118,7 +118,7 @@ Eine Beispiel für eine Implementierung finden Sie unter [Beispiel für einen Be
 
 ## <a name="orientation-sensor"></a>Ausrichtungssensor
 
-Die Geräteausrichtung wird durch die Quaternionen- und Drehungsmatrizen ausgedrückt. Der [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) bietet einen hohen Genauigkeitsgrad bei der Bestimmung der Position des Geräts im dreidimensionalen Raum unter Berücksichtigung der absoluten Richtung. Die **OrientationSensor**-Daten werden vom Beschleunigungsmesser, Gyrometer und Magnetometer abgeleitet. Auch die Neigungsmesser- und die Kompasssensorendaten können von den Quaternionenwerten abgeleitet werden. Quaternion- und Rotationsmatrizes sind für erweiterte mathematische Manipulationen geeignet und werden oft bei der grafischen Programmierung verwendet. Für Apps, die komplexe Manipulation verwenden, sollten die Ausrichtungssensoren verwendet werden, da viele Transformationen auf Quaternion- und Rotationsmatrizes beruhen.
+Die Geräteausrichtung wird durch die Quaternionen- und Drehungsmatrizes ausgedrückt. Der [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) bietet einen hohen Genauigkeitsgrad bei der Bestimmung der Position des Geräts im dreidimensionalen Raum unter Berücksichtigung der absoluten Richtung. Die **OrientationSensor**-Daten werden vom Beschleunigungsmesser, Gyrometer und Magnetometer abgeleitet. Auch die Neigungsmesser- und die Kompasssensorendaten können von den Quaternionenwerten abgeleitet werden. Quaternion- und Rotationsmatrizes sind für erweiterte mathematische Manipulationen geeignet und werden oft bei der grafischen Programmierung verwendet. Für Apps, die komplexe Manipulation verwenden, sollten die Ausrichtungssensoren verwendet werden, da viele Transformationen auf Quaternion- und Rotationsmatrizes beruhen.
 
 ![Ausrichtungssensordaten](images/orientation-sensor.png)
 

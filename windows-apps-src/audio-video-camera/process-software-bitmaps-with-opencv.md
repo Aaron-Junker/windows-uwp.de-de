@@ -4,14 +4,14 @@ description: In diesem Artikel wird erläutert, wie Sie die SoftwareBitmap-Klass
 title: Prozess-Bitmaps mit OpenCV
 ms.date: 03/19/2018
 ms.topic: article
-keywords: Windows10, UWP, Opencv, softwarebitmap
+keywords: Windows 10, UWP, Opencv, softwarebitmap
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce41a495297870f512f0694e4f2b63eedebbc37
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114596"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616965"
 ---
 # <a name="process-bitmaps-with-opencv"></a>Prozess-Bitmaps mit OpenCV
 
@@ -29,15 +29,15 @@ Die Beispiele in diesem Artikel erläutern das Erstellen eines systemeigenen der
 
 ## <a name="create-a-helper-windows-runtime-component-for-opencv-interop"></a>Erstellen Sie eine Helferkomponente für Windows-Runtime für die Interoperabilität mit OpenCV
 
-### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. Fügen Sie Ihrem Projekt einen systemeigenen Code für die Komponente für Windows-Runtime hinzu.
+### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. Fügen Sie ein neues systemeigenen Code-Komponente für Windows-Runtime-Projekt zur Projektmappe
 
 1. Fügen Sie der Lösung in Visual Studio ein neues Projekt hinzu, indem Sie mit der rechten Maustaste auf den Projektmappen-Explorer klicken und **Hinzufügen -> Neues Projekt** auswählen. 
-2. Wählen Sie in der Kategorie **Visual C++** **Komponente für Windows-Runtime (Universal Windows)** aus. Geben Sie in diesem Beispiel den Namen "OpenCVBridge" ein und klicken Sie auf **OK**. 
+2. Wählen Sie in der Kategorie **Visual C++****Komponente für Windows-Runtime (Universal Windows)** aus. Geben Sie in diesem Beispiel den Namen "OpenCVBridge" ein und klicken Sie auf **OK**. 
 3. Wählen Sie im Dialogfeld **Neues universelles Windows-Projekt** das Ziel und die Mindestbetriebssystemversion für Ihre App aus und klicken Sie dann auf **OK**.
 4. Klicken Sie mit der rechten Maustaste auf die automatisch erstellte Datei „Class1.cpp” im Projektmappen-Explorer, und wählen Sie **Entfernen**, wenn das Bestätigungsdialogfeld angezeigt wird. Wählen Sie anschließend **Löschen** aus. Löschen Sie dann die Headerdatei "Class1.h".
-5. Klicken Sie mit der rechten Maustaste auf das Symbol für das OpenCVBridge-Projekt und wählen Sie **Hinzufügen -> Klasse... ** aus. Geben Sie im Dialogfeld **Klasse hinzufügen** "OpenCVHelper" als **Klassennamen** ein, und klicken Sie dann auf **OK**. Der Code wird der erstellten Klassendateien in einem späteren Schritt hinzugefügt.
+5. Mit der rechten Maustaste in des Symbols des OpenCVBridge-Projekt, und wählen Sie **hinzufügen -> Klasse...** . In der **Klasse hinzufügen** Dialogfeld Eingabe "OpenCVHelper" in der **Klassenname** ein, und klicken Sie dann auf **OK**. Der Code wird der erstellten Klassendateien in einem späteren Schritt hinzugefügt.
 
-### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. Fügen Sie Ihrem Komponentenprojekt das OpenCV NuGet-Pakete hinzu
+### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. Die OpenCV-NuGet-Pakete Ihrem Komponentenprojekt hinzufügen
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt OpenCVBridge, und wählen Sie **NuGet-Pakete verwalten** aus.
 2. Wenn das Dialogfeld "NuGet-Paket-Manager" geöffnet wird, wählen Sie die Registerkarte **Durchsuchen** aus, und geben Sie "OpenCV.Win" in das Suchfeld ein.
@@ -63,7 +63,7 @@ Nach den Include-Direktiven, fügen Sie die folgenden **using**-Direktiven hinzu
 
 Fügen Sie als nächstes zu OpenCVHelper.cpp die Methode **GetPointerToPixelData** hinzu. Diese Methode akzeptiert ein **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** und ruft durch eine Reihe von Konvertierungen eine COM-Schnittstellendarstellung der Pixeldaten ab, mit deren Hilfe wir einen Zeiger auf den zugrunde liegenden Datenpuffer als **Zeichen**-Array abrufen. 
 
-Als erstes wird ein **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** mit Pixeldaten abgerufen, der **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** aufruft und einen Lese-/Schreibzugriff zu Puffern anfordert, damit die OpenCV/Bibliothek die Pixeldaten bearbeiten kann.  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** wird zum Erstellen eines **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)**-Objekts aufgerufen. Als Nächstes wird die **IMemoryBufferByteAccess**-Schnittstelle in ein **IInspectable** umgewandelt, die Basisschnittstelle aller Windows-Runtime-Klassen, und **[QueryInterface ](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** wird aufgerufen, um eine **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)**-COM-Schnittstelle aufzurufen, mit der wir den Pixeldatenpuffer als **Zeichen**-Array erhalten können. Füllen Sie anschließend das **Zeichen**-Array durch Aufrufen des **[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)**. Wenn einer der Konvertierungsschritte in dieser Methode fehlschlägt, gibt die Methode **false** an, was bedeutet, dass eine weitere Verarbeitung nicht fortgesetzt werden kann.
+Als erstes wird ein **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** mit Pixeldaten abgerufen, der **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** aufruft und einen Lese-/Schreibzugriff zu Puffern anfordert, damit die OpenCV/Bibliothek die Pixeldaten bearbeiten kann.  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)**  wird aufgerufen, um das Abrufen einer **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** Objekt. Als Nächstes wird die **IMemoryBufferByteAccess**-Schnittstelle in ein **IInspectable** umgewandelt, die Basisschnittstelle aller Windows-Runtime-Klassen, und **[QueryInterface ](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** wird aufgerufen, um eine **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)**-COM-Schnittstelle aufzurufen, mit der wir den Pixeldatenpuffer als **Zeichen**-Array erhalten können. Füllen Sie anschließend das **Zeichen**-Array durch Aufrufen des **[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)**. Wenn einer der Konvertierungsschritte in dieser Methode fehlschlägt, gibt die Methode **false** an, was bedeutet, dass eine weitere Verarbeitung nicht fortgesetzt werden kann.
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
@@ -82,7 +82,7 @@ Schließlich implementiert diese Beispielhilfsklasse eine einzelne Bildverarbeit
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>Ein einfaches Beispiel für SoftwareBitmap OpenCV mit Helferkomponenten
-Nachdem die Komponente OpenCVBridge erstellt wurde, erstellen wir eine einfache C#-App, die die OpenCV-**Weichzeichner**-Methode zum Ändern einer **SoftwareBitmap** verwendet. Um auf die Komponente für Windows-Runtime von Ihrer UWP-App zuzugreifen, müssen Sie zunächst einen Verweis auf die Komponente hinzufügen. Klicken Sie mit der rechten Maustaste im Projektmappen-Explorer auf den Knoten **Verweise** unter Ihrem UWP-App-Projekt und wählen Sie **Verweis hinzufügen... ** aus. Wählen Sie im Dialogfeld "Verweis-Manager" **Solution-Projekte >** aus. Aktivieren Sie das Kontrollkästchen neben dem OpenCVBridge-Projekt, und klicken Sie auf **OK**.
+Nachdem die Komponente OpenCVBridge erstellt wurde, erstellen wir eine einfache C#-App, die die OpenCV-**Weichzeichner**-Methode zum Ändern einer **SoftwareBitmap** verwendet. Um auf die Komponente für Windows-Runtime von Ihrer UWP-App zuzugreifen, müssen Sie zunächst einen Verweis auf die Komponente hinzufügen. Klicken Sie im Projektmappen-Explorer mit der Maustaste der **Verweise** unter Ihrer UWP-app-Projekt, und wählen den Knoten **Verweis hinzufügen...** . Wählen Sie in das Dialogfeld "Verweis-Manager" **Projekte -> Projektmappe**. Aktivieren Sie das Kontrollkästchen neben dem OpenCVBridge-Projekt, und klicken Sie auf **OK**.
 
 Der nachfolgende Beispielcode ermöglicht es dem Benutzer, eine Bilddatei auszuwählen und verwendet dann **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** zum Erstellen einer **SoftwareBitmap** -Darstellung des Bilds. Weitere Informationen zur Verwendung von **SoftwareBitmap** finden Sie im Artikel [Erstellen, Bearbeiten und Speichern von Bitmapbildern](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging).
 
@@ -97,7 +97,7 @@ Es wird eine neue Instanz von **OpenCVHelper** erstellt, die **Weichzeichner**-M
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Referenz zu BitmapEncoder-Optionen](bitmapencoder-options-reference.md)
+* [Referenz für "BitmapEncoder"-Optionen](bitmapencoder-options-reference.md)
 * [Bildmetadaten](image-metadata.md)
  
 

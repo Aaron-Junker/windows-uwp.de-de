@@ -1,20 +1,20 @@
 ---
 description: Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um Xbox Live Erfolgsdaten abzurufen.
-title: Abrufen von Xbox Live Erfolgsdaten
+title: Abrufen von Xbox Live-Erfolgsdaten
 ms.date: 06/04/2018
 ms.topic: article
-keywords: Windows10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Live-Analyse, Erfolge
+keywords: Windows 10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Live-Analyse, Erfolge
 ms.localizationpriority: medium
 ms.openlocfilehash: 23a99c637dfd466ba21169626315803dec60e4e8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945166"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607815"
 ---
-# <a name="get-xbox-live-achievements-data"></a>Abrufen von Xbox Live Erfolgsdaten
+# <a name="get-xbox-live-achievements-data"></a>Abrufen von Xbox Live-Erfolgsdaten
 
-Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um die Anzahl der Kunden zu erhalten, die jeden Erfolg für Ihr [Xbox Live-fähiges Spiel](../xbox-live/index.md) freigeschaltet haben, und zwar während des letzten Tages, für den Erfolgsdaten verfügbar sind, für die vorherigen 30Tage vor diesem Tag und über die gesamte Lebensdauer des Spiels bis zu diesem Tag. Diese Informationen sind auch in der [Xbox Analysebericht](../publish/xbox-analytics-report.md) im Partner Center verfügbar.
+Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um die Anzahl der Kunden zu erhalten, die jeden Erfolg für Ihr [Xbox Live-fähiges Spiel](../xbox-live/index.md) freigeschaltet haben, und zwar während des letzten Tages, für den Erfolgsdaten verfügbar sind, für die vorherigen 30 Tage vor diesem Tag und über die gesamte Lebensdauer des Spiels bis zu diesem Tag. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
 
 > [!IMPORTANT]
 > Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](../xbox-live/developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](../xbox-live/developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
@@ -24,9 +24,9 @@ Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um die Anzahl de
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store-Analyse-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken abgerufen haben, können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-## <a name="request"></a>Anforderung
+## <a name="request"></a>Anfordern
 
 
 ### <a name="request-syntax"></a>Anforderungssyntax
@@ -40,7 +40,7 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
+| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
@@ -48,10 +48,10 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 | Parameter        | Typ   |  Beschreibung      |  Erforderlich  
 |---------------|--------|---------------|------|
-| applicationId | String | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie die Xbox Live Erfolgsdaten abrufen möchten.  |  Ja  |
-| metricType | String | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **achievements** an.  |  Ja  |
-| top | int | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Wenn die Abfrage keine weiteren Zeilen enthält, entält der Antworttext den Link „Weiter“, den Sie verwenden können, um die nächste Seite mit Daten anzufordern. |  Nein  |
-| skip | int | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000Datenzeilen usw. |  Nein  |
+| applicationId | string | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie die Xbox Live Erfolgsdaten abrufen möchten.  |  Ja  |
+| metricType | string | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **achievements** an.  |  Ja  |
+| top | int | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
+| skip | int | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. |  Nein  |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
@@ -68,8 +68,8 @@ Authorization: Bearer <your access token>
 
 | Wert      | Typ   | Beschreibung                  |
 |------------|--------|-------------------------------------------------------|
-| Wert      | Array  | Ein Array von Objekten, die Daten für jeden Erfolg in Ihrem Spiel enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.                                                                                                                      |
-| @nextLink  | String | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 100 festgelegt ist, es jedoch mehr als 100 Zeilen mit Daten für die Abfrage gibt. |
+| Wert      | array  | Ein Array von Objekten, die Daten für jeden Erfolg in Ihrem Spiel enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.                                                                                                                      |
+| @nextLink  | string | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 100 festgelegt ist, es jedoch mehr als 100 Zeilen mit Daten für die Abfrage gibt. |
 | TotalCount | int    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.  |
 
 
@@ -77,10 +77,10 @@ Elemente im Array *Value* enthalten die folgenden Werte.
 
 | Wert               | Typ   | Beschreibung                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | String | Die Store-ID des Spiels, für das Sie Erfolgsdaten abrufen.     |
-| reportDateTime     | String |  Das Datum für die Erfolgsdaten.    |
+| applicationId       | string | Die Store-ID des Spiels, für das Sie Erfolgsdaten abrufen.     |
+| reportDateTime     | string |  Das Datum für die Erfolgsdaten.    |
 | achievementId          | number |  Die ID des Erfolges. |
-| achievementName           | String | Der Name des Erfolges.  |
+| achievementName           | string | Der Name des Erfolges.  |
 | gamerscore           | number |  Die Gamerscore-Prämie für den Erfolg.  |
 | dailyUnlocks           | number |  Die Anzahl der Kunden, die den Erfolg für den Tag entsperrt haben, der durch *reportDateTime* angegeben wird.  |
 | monthlyUnlocks              | number |  Die Anzahl der Kunden, die den Erfolg in den 30 Tagen vor dem Tag entsperrt haben, der durch *reportDateTime* angegeben wird.   |
@@ -132,9 +132,9 @@ Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Zugreifen auf Analysedaten mit MicrosoftStore-Diensten](access-analytics-data-using-windows-store-services.md)
-* [Abrufen von Xbox Live Analysedaten](get-xbox-live-analytics.md)
-* [Abrufen von Xbox Live Integritätsdaten](get-xbox-live-health-data.md)
-* [Abrufen von Xbox Live Spielehubdaten](get-xbox-live-game-hub-data.md)
-* [Abrufen von Xbox Live-Clubdaten](get-xbox-live-club-data.md)
-* [Abrufen von Xbox Live Multiplayerdaten](get-xbox-live-multiplayer-data.md)
+* [Access-Analytics-Daten mithilfe von Microsoft Store services](access-analytics-data-using-windows-store-services.md)
+* [Abrufen von Xbox Live-Analytics-Daten](get-xbox-live-analytics.md)
+* [Abrufen von Xbox Live-Health-Daten](get-xbox-live-health-data.md)
+* [Abrufen von Xbox Live-Spiel Hub-Daten](get-xbox-live-game-hub-data.md)
+* [Abrufen von Xbox Live-Club-Daten](get-xbox-live-club-data.md)
+* [Abrufen von Xbox Live Multiplayer-Daten](get-xbox-live-multiplayer-data.md)

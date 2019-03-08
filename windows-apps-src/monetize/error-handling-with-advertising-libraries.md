@@ -4,14 +4,14 @@ description: Hier erfahren Sie, wie Sie mit Fehlern umgehen, die in den Microsof
 title: Behandeln von Fehlern bei Anzeigen
 ms.date: 05/11/2018
 ms.topic: article
-keywords: Windows10, UWP, Anzeige, Werbung, Fehlerbehandlung, Javascript, XAML, C#
+keywords: Windows 10, UWP, Anzeige, Werbung, Fehlerbehandlung, Javascript, XAML, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e2e1c019497fc22e8d922ba5f0a02a30034b65
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050663"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617755"
 ---
 # <a name="handle-ad-errors"></a>Behandeln von Fehlern bei Anzeigen
 

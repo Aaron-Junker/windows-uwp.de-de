@@ -1,5 +1,5 @@
 ---
-Description: Design your app so that it looks good and functions well in Mixed Reality.
+Description: Entwerfen Sie Ihre app, damit sie Ihren vorstellungen entspricht, und gut in Mixed Reality funktioniert.
 title: Design für Mixed Reality
 ms.assetid: ''
 label: Designing for Mixed Reality
@@ -14,11 +14,11 @@ dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116212"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610495"
 ---
 # <a name="designing-for-mixed-reality"></a>Design für Mixed Reality
 
@@ -34,7 +34,7 @@ Fast alle existierenden UWP-Apps laufen in der Mixed Reality-Umgebung ohne Ände
 
 Sowohl HoloLens als auch die Windows Mixed Reality-Headsets unterstützen Anwendungen, die auf der UWP-Plattform laufen. Beide unterstützen zwei verschiedene Arten von Erfahrungen. 
 
-### <a name="2d-vs-immersive-experience"></a>2D-Erfahrungen und immersive Erfahrung
+### <a name="2d-vs-immersive-experience"></a>2D im Vergleich zu Eintauchen
 
 Eine immersive App übernimmt die gesamte für den Benutzer sichtbare Anzeige und stellt sie in den Mittelpunkt einer von der App erstellten Ansicht. Zum Beispiel könnte ein immersives Spiel den Benutzer auf die Oberfläche eines fremden Planeten bringen, oder eine Reiseleiter-App könnte den Beutzer in ein südamerikanisches Dorf bringen. Die Erstellung einer immersiven App erfordert 3D-Grafiken oder aufgenommene stereografische Videos. Immersive Apps werden oft mit einer Drittanbieter-Game-Engine wie Unity oder mit DirectX entwickelt.
 
@@ -84,7 +84,7 @@ Mehrere neuartige Eingabemethoden wurden speziell für den Einsatz mit Mixed Rea
 * [Klick-Gerät](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (nur HoloLens)
 * [Motion-Controller](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (nur Mixed Reality-Geräte, siehe oben)
 
-Diese Controller lassen die Interaktion mit virtuellen Objekten natürlich und präzise erscheinen. Einige der Interaktionen erhalten Sie kostenlos. Beispielsweise wählen-Geste von HoloLens, oder klicken Sie auf die Motion-Controller-Windows-Taste oder der Trigger wird die Eingabe Antwort, die Sie, erneut erwarten würden und ohne Programmierung ihrerseits generiert.
+Diese Controller lassen die Interaktion mit virtuellen Objekten natürlich und präzise erscheinen. Einige der Interaktionen erhalten Sie kostenlos. Beispielsweise wählen Sie die HoloLens Geste oder durch Klicken auf die Motion-Controller-Windows-Schlüssel oder einem Trigger wird die Eingabe Antwort erwarten Sie, die erneut, ohne Codierung ihrerseits generiert.
 
 Manchmal werden Sie trotzdem Code hinzufügen wollen, um die Vorteile der zusätzlichen Informationen und Eingaben zu nutzen. Mit den Motion Controllern können z. B. Objekte präzise manipuliert werden, wenn Sie Code schreiben, der deren Position und Tastendruck berücksichtigt.
 
@@ -92,7 +92,7 @@ Manchmal werden Sie trotzdem Code hinzufügen wollen, um die Vorteile der zusät
 > Fazit: Das Leitmotiv sollte sein, dem Anwender immer eine möglichst natürliche und reibungslose Eingabemethode zur Verfügung zu stellen.
 
 
-## <a name="2d-app-design-considerations-functionality"></a>Überlegungen zum 2D-App-Design: Funktionalität
+## <a name="2d-app-design-considerations-functionality"></a>Direct2D-App-Design-Überlegungen: Funktion
 
 Bei der Erstellung einer UWP-App, die möglicherweise auf einer Mixed Reality-Plattform verwendet wird, sind einige Dinge zu beachten.
 
@@ -105,7 +105,7 @@ Bei der Erstellung einer UWP-App, die möglicherweise auf einer Mixed Reality-Pl
 * Eine 2D-App wird automatisch mit einer [App-Leiste](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box) versehen, damit der Benutzer sie in der virtuellen Umgebung verschieben und skalieren kann. Die Ansichten können vertikal oder unter Beibehaltung des gleichen Seitenverhältnisses in der Größe verändert werden.
 
 
-## <a name="2d-app-design-considerations-uiux"></a>Überlegungen zur Gestaltung von 2D-Apps: UI/UX
+## <a name="2d-app-design-considerations-uiux"></a>Überlegungen zum Entwurf der Direct2D-app: UI/UX
 
 * XAML-Steuerelemente, die das [Fluent Design-System](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/) (z. B. die [Navigationsansicht](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) und Effekte wie [Acrylic ](https://docs.microsoft.com/windows/uwp/design/style/acrylic)) implementieren, funktionieren besonders gut in 2D-Mixed Reality-Apps.
 
@@ -115,7 +115,7 @@ Bei der Erstellung einer UWP-App, die möglicherweise auf einer Mixed Reality-Pl
 
 * [Ihr Blick dient als Maus](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). Wenn der Benutzer etwas ansieht, wird dies wie ein **Touch-Hover**-Ereignis behandelt, sodass ein einfaches Betrachten eines Objekts ein versehentliches Popup oder eine andere unerwünschte Interaktion auslösen kann. Möglicherweise müssen Sie feststellen, ob die App derzeit in Mixed Reality läuft, und dieses Verhalten ändern. Weitere Informationen finden Sie unter **Laufzeitunterstützung** unten. 
 
-* Wenn ein Benutzer mit einem Motion Controller auf etwas zeigt oder etwas anvisiert, wird ein **Touch-Hover**-Ereignis ausgelöst. Dieser besteht aus einem **PointerPoint**, wobei **PointerType** **Touch** ist, aber **IsInContact** **false** ist. Wenn irgendeine Form der Bestätigung auftritt (z. B. wird eine Taste des Gamepads gedrückt, ein Klick-Gerät gedrückt, ein Motion Controller-Trigger gedrückt oder die Spracherkennung löst „Select” aus), erfolgt ein **touch press**, wobei der **PointerPoint** den **IsInContact**-Wert **true** hat. Weitere Informationen zu diesen Eingabe-Ereignissen finden Sie unter [Touch-Interaktionen](https://docs.microsoft.com/windows/uwp/design/input/touch-interactions).
+* Wenn ein Benutzer mit einem Motion Controller auf etwas zeigt oder etwas anvisiert, wird ein **Touch-Hover**-Ereignis ausgelöst. Dieser besteht aus einem **PointerPoint**, wobei **PointerType****Touch** ist, aber **IsInContact****false** ist. Wenn irgendeine Form der Bestätigung auftritt (z. B. wird eine Taste des Gamepads gedrückt, ein Klick-Gerät gedrückt, ein Motion Controller-Trigger gedrückt oder die Spracherkennung löst „Select” aus), erfolgt ein **touch press**, wobei der **PointerPoint** den **IsInContact**-Wert **true** hat. Weitere Informationen zu diesen Eingabe-Ereignissen finden Sie unter [Touch-Interaktionen](https://docs.microsoft.com/windows/uwp/design/input/touch-interactions).
 
 * Denken Sie daran: das Anvisieren ist nicht so genau wie das Zeigen mit der Maus. Kleinere Mausziele oder Schaltflächen können zu Frustration bei Ihren Benutzern führen. Also passen Sie die Größe der Steuerelemente entsprechend an. Wenn sie für die Touch ausgelegt sind, funktionieren sie in Mixed Reality. Sie können sich jedoch auch dafür entscheiden, einige Schaltflächen zur Laufzeit zu vergrößern. Weitere Informationen finden Sie unter [Aktualisieren Ihrer bestehenden universellen App für Hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens).
 
@@ -163,9 +163,9 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>Verwandte Artikel
 
 
-* [Aktuelle Einschränkungen für Apps, die APIs aus der Shell verwenden](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [Erstellen von 2D-Apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
-* [HoloLens: Erstellen von UWP-2D-Apps für Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
-* [Bedingtes XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
+* [Aktuelle Einschränkungen für apps mithilfe von APIs in der Befehlsshell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [Erstellen von Direct2D-apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [HoloLens: Erstellen von 2D-UWP-Apps für Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
+* [Conditional XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 
 

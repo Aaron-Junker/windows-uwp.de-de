@@ -4,14 +4,14 @@ description: In diesem Artikel sind die Codierungsoptionen aufgeführt, die mit 
 title: Referenz zu BitmapEncoder-Optionen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 07f5c6ef180cb4abe90a705e73be8d99ecbd2ca7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947083"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603185"
 ---
 # <a name="bitmapencoder-options-reference"></a>Referenz zu BitmapEncoder-Optionen
 
@@ -26,18 +26,18 @@ In diesem Artikel sind die Codierungsoptionen aufgeführt, die mit [**BitmapEnco
 | InterlaceOption         | boolean      | Gibt an, ob der Interlacemodus für das Bild verwendet wird                                                                    | PNG           |
 | FilterOption            | uint8        | Verwenden Sie die [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389)-Enumeration.                                | PNG           |
 | TiffCompressionMethod   | uint8        | Verwenden Sie die [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399)-Enumeration.                    | TIFF          |
-| Luminance               | uint32Array  | Ein Array mit 64Elementen, das die Quantifizierungskonstanten für die Leuchtdichte enthält                               | JPEG          |
-| Chrominance             | uint32Array  | Ein Array mit 64Elementen, das die Quantifizierungskonstanten für die Chrominanz enthält                             | JPEG          |
+| Luminance               | uint32Array  | Ein Array mit 64 Elementen, das die Quantifizierungskonstanten für die Leuchtdichte enthält                               | JPEG          |
+| Chrominance             | uint32Array  | Ein Array mit 64 Elementen, das die Quantifizierungskonstanten für die Chrominanz enthält                             | JPEG          |
 | JpegYCrCbSubsampling    | uint8        | Verwenden Sie die [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386)-Enumeration                    | JPEG          |
 | SuppressApp0            | boolean      | Gibt an, ob die Erstellung eines App0-Metadatenblocks unterdrückt wird                                        | JPEG          |
-| EnableV5Header32bppBGRA | boolean      | Gibt an, ob die Codierung als Version5 des BMP-Formats erfolgen soll, die Alphawerte unterstützt.                                         | BMP           |
+| EnableV5Header32bppBGRA | boolean      | Gibt an, ob die Codierung als Version 5 des BMP-Formats erfolgen soll, die Alphawerte unterstützt.                                         | BMP           |
 
  
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen, Bearbeiten und Speichern von Bitmapbildern](imaging.md)
-* [Unterstützte Codecs](supported-codecs.md)
+* [Erstellen, bearbeiten und Speichern von Bitmaps](imaging.md)
+* [Unterstützte codecs](supported-codecs.md)
 
  
 

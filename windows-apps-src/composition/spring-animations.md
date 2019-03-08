@@ -3,14 +3,14 @@ title: Feder-Animationen
 description: Lernen Sie, wie natürliche Spring-Bewegungsanimationen verwenden.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, Uwp, animation
+keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e00aa383bcce17b7cd6b67514647c2f6137cc32
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947664"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601945"
 ---
 # <a name="spring-animations"></a>Feder-Animationen
 
@@ -20,14 +20,14 @@ Der Artikel zeigt, wie man Feder-NaturalMotionAnimations verwendet.
 
 Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
 
-- [Natürliche Bewegungsanimationen](natural-animations.md)
+- [Natürliche Animationen](natural-animations.md)
 
 ## <a name="why-springs"></a>Warum Federanimationen?
 
 Federanimationen sind ein allgemeines Bewegungserlebnis, das wir alle irgendwann einmal in unserem Leben erlebt haben; von Spielzeug bis hin zum Physikunterricht mit einem Federblock. Die oszillierende Bewegung einer Feder löst oft eine spielerische und heitere emotionale Reaktion der Betrachter aus. Das Ergebnis ist, dass die Bewegung einer Feder sich gut in eine Benutzeroberfläche für die Anwendung übersetzen lässt, die ein lebendigeres Bewegungserlebnis schaffen möchte, das dem Endbenutzer mehr überzeugt als eine traditionelle Cubic-Bezier-Animation. In diesen Fällen sorgt die Federbewegung nicht nur für ein lebendigeres Bewegungserlebnis, sondern kann auch die Aufmerksamkeit auf neue oder gerade animierte Inhalte lenken. Je nach Anwendungs-Branding oder Bewegungssprache ist die Federbewegung ausgeprägter und sichtbarer und in anderen Fällen subtiler.
 
-![Bewegung mit Federanimation](images/animation/offset-spring.gif)
-![Bewegung mit Cubic-Bezier-Animation](images/animation/offset-cubic-bezier.gif)
+![Während der Übertragung mit Spring-Animation](images/animation/offset-spring.gif)
+![während der Übertragung mit kubische Bezier-Animation](images/animation/offset-cubic-bezier.gif)
 
 ## <a name="using-springs-in-your-ui"></a>Verwendung von Federbewegungen in Ihrem UI
 
@@ -152,9 +152,9 @@ Zusammenfassend sehen die Schritte zur Verwendung von Federanimationen so aus:
 1. Erstellen Sie Ihre SpringAnimation aus Ihrem Compositor.
 1. Definieren Sie Eigenschaften der SpringAnimation, wenn Sie nicht die Standardwerte wünschen:
     - DampingRatio
-    - Period
+    - Zeitraum
     - Final Value
-    - Initial Value
+    - Anfangswert
     - Initial Velocity
 1. Zum Ziel zuweisen.
     - Wenn Sie eine CompositionObject-Eigenschaft animieren, übergeben Sie SpringAnimation als Parameter an StartAnimation.

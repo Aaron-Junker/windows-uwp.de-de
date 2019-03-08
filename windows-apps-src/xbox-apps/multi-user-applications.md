@@ -3,23 +3,23 @@ title: Einführung in Anwendungen mit mehreren Benutzern
 description: Eine einfache allgemeine Einführung in das Xbox-Mehrbenutzermodell.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 ms.localizationpriority: medium
 ms.openlocfilehash: b56140f9a71c8233d2832c2b0da6ed927b5a19ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922245"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607715"
 ---
 # <a name="introduction-to-multi-user-applications"></a>Einführung in Anwendungen mit mehreren Benutzern
 
 Dieses Thema dient als einfache allgemeine Einführung in das Xbox-Mehrbenutzermodell.
 
-Das Xbox One-Benutzermodell erfüllt die Anforderungen einer Spielkonsole, auf der mehrere Benutzer gemeinsam auf einem einzigen Gerät spielen können. Sie bietet mehreren Benutzer die Möglichkeit, sich mit je einem eigenen Controller gleichzeitig in einer interaktiven Sitzung auf der Konsole anzumelden. Dies unterscheidet sich von anderen Windows-Geräten. Beispiel:
+Das Xbox One-Benutzermodell erfüllt die Anforderungen einer Spielkonsole, auf der mehrere Benutzer gemeinsam auf einem einzigen Gerät spielen können. Sie bietet mehreren Benutzer die Möglichkeit, sich mit je einem eigenen Controller gleichzeitig in einer interaktiven Sitzung auf der Konsole anzumelden. Dies unterscheidet sich von anderen Windows-Geräten. Zum Beispiel:
 * **Windows-Desktop-PCs** bieten mehreren Benutzern die Möglichkeit, dasselbe Gerät zu verwenden. Dabei hat jedoch jeder Benutzer eine eigene interaktive Sitzung, die von den anderen Sitzungen auf dem Gerät unabhängig ist.
-* **Windows-Telefone** bieten nur einem einzelnen Benutzer die Möglichkeit, das Gerät zu verwenden. Dieser Benutzer wird während auf der Windows-Willkommensseite festgelegt. Er kann sich nach der Anmeldung nicht wieder abmelden. Wenn ein anderer Benutzer das Gerät verwenden möchte, muss dieses sogar zurückgesetzt werden. 
+* **Windows Phones** bieten nur einem einzelnen Benutzer die Möglichkeit, das Gerät zu verwenden. Dieser Benutzer wird während auf der Windows-Willkommensseite festgelegt. Er kann sich nach der Anmeldung nicht wieder abmelden. Wenn ein anderer Benutzer das Gerät verwenden möchte, muss dieses sogar zurückgesetzt werden. 
 * **Xbox One** ermöglicht die zeitgleiche Anmeldung mehrerer Benutzer, die das Gerät gemeinsam in einer interaktiven Sitzung nutzen.
 
 Im Xbox One-Benutzermodell wird für jeden Benutzer ein lokales Benutzerkonto angelegt. Diese lokale Benutzerkonto ist mit einem Xbox Live-Konto (und somit einem Microsoft-Konto) verknüpft. Dadurch ergibt sich eine strenge 1: 1-Zuordnung eines Xbox-Benutzerkontos zu einem Xbox Live-Konto sowie zu einem Microsoft-Konto.
@@ -51,4 +51,4 @@ Weitere Informationen finden Sie im Thema [KeyRoutedEventArgs.DeviceId](https://
 Alle UWP-Apps und die Mehrzahl der Einzelbenutzerspiele können als Einzelbenutzeranwendungen (SUAs) geschrieben werden. Vorzugsweise sollten nur kooperative Multiplayerspiele das Xbox One-Mehrbenutzermodell auswählen können.
 
 ## <a name="see-also"></a>Siehe auch
-- [UWP auf Xbox One](index.md)
+- [UWP auf Xbox One](index.md)

@@ -1,17 +1,17 @@
 ---
 title: Deklarieren von Hintergrundaufgaben im Anwendungsmanifest
-description: Aktivieren Sie die Verwendung von Hintergrundaufgaben, indem Sie diese im Anwendungsmanifest als Erweiterungen deklarieren.
+description: Sie können die Verwendung von Hintergrundaufgaben aktivieren, indem Sie diese im App-Manifest als Erweiterungen deklarieren.
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Hintergrundaufgabe, für die
+keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b30cd39a4440a1ade1ea0dda5a35d3f7c15f963
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114516"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615675"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Deklarieren von Hintergrundaufgaben im Anwendungsmanifest
 
@@ -90,9 +90,9 @@ Kopieren Sie diesen Code in das "Extensions"-Element (Attribute werden in den fo
 
 2.  Ändern Sie die Liste der Aufgabentypenattribute, um den für diese Hintergrundaufgabe verwendeten Typ der Aufgabenregistrierung anzugeben. Wenn die Hintergrundaufgabe mit mehreren Triggertypen registriert wird, fügen Sie für jeden Typ zusätzliche Task-Elemente und Type-Attribute hinzu.
 
-    **Hinweis:** Vergewissern Sie sich zum Auflisten aller Triggertypen Sie, oder wenn die Hintergrundaufgabe wird nicht mit Triggertypen (die Methode [**Registrieren**](https://msdn.microsoft.com/library/windows/apps/br224772) fehl und löst eine Ausnahme) registriert.
+    **Beachten Sie**  prüfen Sie zum Auflisten aller Triggertypen Sie verwenden, und die Hintergrundaufgabe wird nicht mit den nicht deklarierten Triggertypen registriert (die [ **registrieren** ](https://msdn.microsoft.com/library/windows/apps/br224772) wird fehl und löst eine Ausnahme).
 
-    Dieses Beispiel veranschaulicht die Verwendung von Systemereignistriggern und Pushbenachrichtigungen:
+    Dieses Beispiel für einen Codeausschnitt gibt die Verwendung von Systemereignistriggern und Pushbenachrichtigungen an:
 
 ```xml
 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
@@ -159,7 +159,7 @@ Sie können angeben, wo Ihre Hintergrundaufgaben ausführt werden sollen:
 
 ### <a name="run-in-the-same-process-as-your-foreground-application"></a>Die Ausführung erfolgt im gleichen Prozess wie Ihre Anwendung im Vordergrund.
 
-In diesem XML-Beispiel wird eine Hintergrundaufgabe deklariert, die im gleichen Prozess wie die Anwendung im Vordergrund ausgeführt wird.
+Hier finden Sie ein XML-Beispiel, mit dem eine Hintergrundaufgabe deklariert wird, die im gleichen Prozess wie die Anwendung im Vordergrund ausgeführt wird.
 
 ```xml
 <Extensions>
@@ -209,7 +209,7 @@ Hier finden Sie ein XML-Beispiel, mit dem eine Hintergrundaufgabe deklariert wir
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Ausführen in einem neuen Prozess, jedes Mal, wenn ein Trigger mit dem Attribut „SupportsMultipleInstances“ ausgelöst wird
 
-In diesem Beispiel wird eine Hintergrundaufgabe deklariert, die in einem neuen Prozess ausgeführt wird, der, jedes Mal, wenn ein neuer Trigger ausgelöst wird, eigene Ressourcenbeschränkungen (Arbeitsspeicher und CPU) erhält. Beachten Sie die Verwendung von `SupportsMultipleInstances`, zur Aktivierung dieses Verhalten. Um dieses Attribut verwenden, Sie müssen als Ziel die SDK-Version "10.0.15063" (Windows 10 Creators Update) oder höher.
+In diesem Beispiel wird eine Hintergrundaufgabe deklariert, die in einem neuen Prozess ausgeführt wird, der, jedes Mal, wenn ein neuer Trigger ausgelöst wird, eigene Ressourcenbeschränkungen (Arbeitsspeicher und CPU) erhält. Beachten Sie die Verwendung von `SupportsMultipleInstances`, zur Aktivierung dieses Verhalten. Um dieses Attribut verwenden, müssen Sie als Ziel SDK, Version "10.0.15063" (Windows 10 Creators Update) oder höher.
 
 ```xml
 <Package
@@ -234,6 +234,6 @@ In diesem Beispiel wird eine Hintergrundaufgabe deklariert, die in einem neuen P
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-* [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
+* [Eine Hintergrundaufgabe Debuggen](debug-a-background-task.md)
+* [Eine Hintergrundaufgabe registrieren](register-a-background-task.md)
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)

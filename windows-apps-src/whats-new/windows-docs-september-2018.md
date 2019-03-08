@@ -1,66 +1,66 @@
 ---
-title: Neuigkeiten in Windows-Dokumentation im September 2018 – Entwicklung von UWP-apps
-description: Neue Features, Videos, Beispiele und entwicklerleitfäden wurden in der Windows 10-Entwicklerdokumentation für September 2018 hinzugefügt.
-keywords: Neues in, Update, Features, Anleitungen für Entwickler, Windows 10, September
+title: 'Neuerungen in Windows-Dokumentation im September 2018: Entwickeln von UWP-apps'
+description: Neue Features, Videos, Beispielen und Anleitungen für Entwickler haben die Windows 10-Entwicklerdokumentation für September 2018 hinzugefügt wurde.
+keywords: neues, Update, Funktionen, die Anleitung für Entwickler, Windows 10, September
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0876b2d9b65143cde2387a42e221460cc617cf0b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046736"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618255"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im September 2018
+# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Was ist neu in der Windows-Entwickler-Dokumentation im September 2018
 
-Die Entwicklerdokumentation für die Windows-Plattform wird ständig mit Informationen über neue Features für Entwickler aktualisiert. Die folgenden Featureübersichten, entwicklerleitfäden und Videos wurden im Monat September zur Verfügung gestellt wurden.
+Die Entwicklerdokumentation für die Windows-Plattform wird ständig mit Informationen über neue Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Anleitung für Entwickler und Videos haben in der Monat September zur Verfügung gestellt wurde.
 
-Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
+Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
 ## <a name="features"></a>Features
 
 ### <a name="windows-machine-learning"></a>Windows Machine Learning
 
-[Die Windows Machine Learning-Dokumentation](https://docs.microsoft.com/windows/ai/) jetzt auf ihre eigenen Website befinden, und sind für das aktuelle Windows-Insider-SDK aktualisiert. Es gibt Desktop und UWP-Lernprogramme in C++ und c#, die Ihnen helfen, erste Schritte WinML Ihrer Anwendung hinzufügen.
+[Die Windows Machine Learning-Dokumentation](https://docs.microsoft.com/windows/ai/) nun auf ihrem eigenen Standort befinden, und für das aktuelle Windows-Insider-SDK aktualisiert werden. Stehen Desktop und in C++ UWP-Tutorials und C# können Sie beginnen, Ihre Anwendung WinML hinzugefügt.
 
-[Die Windows.AI.MachineLearning-API-Referenz](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) wurde für das aktuelle Windows-Insider-SDK aktualisiert.
+[Die Windows.AI.MachineLearning API-Referenz](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) wurde für das aktuelle Windows-Insider-SDK aktualisiert.
 
-[Die Windows-Computer-Learning GitHub-Repository](https://github.com/Microsoft/Windows-Machine-Learning) wurde mit neuen Beispiele aktualisiert, mit denen das aktuelle SDK zusammenarbeiten.
+[Das Windows-Machine-Learning-GitHub-Repository](https://github.com/Microsoft/Windows-Machine-Learning) wurde mit neuen Beispiele, die mit dem aktuellen SDK funktionieren aktualisiert.
 
 ![Windows Machine Learning-Grafik](images/winml-graphic.png)
 
-### <a name="windows-ui-library"></a>Windows-UI-Bibliothek
+### <a name="windows-ui-library"></a>UI-Bibliothek für Windows
 
-[Die Windows-UI-Bibliothek](https://aka.ms/winui-docs) ist ein Satz von NuGet-Pakete, die Steuerelemente und andere Elemente der Benutzeroberfläche für UWP-apps bereitstellen. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, damit Ihre app funktioniert, auch wenn Ihre Benutzer die neueste Version des Betriebssystems besitzen.
+[Die Windows-UI-Bibliothek](https://aka.ms/winui-docs) ist ein Satz von NuGet-Pakete, die von Steuerelementen und andere Elemente der Benutzeroberfläche für UWP-apps bereitstellen. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, damit Ihre app funktioniert, auch wenn Ihre Benutzer nicht über die neuste Version verfügen.
 
-Weitere Informationen zu der Windows-UI-Bibliothek, finden Sie unter [Diese Liste mit API-Namespaces, die in das NuGet-Paket enthalten.](https://docs.microsoft.com/uwp/api/overview/winui/)
+Weitere Informationen zu den Windows-UI-Bibliothek, finden Sie unter [diese Liste mit API-Namespaces, die im NuGet-Paket enthalten.](https://docs.microsoft.com/uwp/api/overview/winui/)
 
-## <a name="developer-guidance"></a>Anleitungen für Entwickler
+## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
-### <a name="how-blur-effects-work"></a>Wie Weichzeichnen Effekte Arbeit
+### <a name="how-blur-effects-work"></a>Wie Weichzeichner Effekte Arbeit
 
-Einer unserer Autoren, die esteemed Mike Jacobs hat eine Reihe von Artikeln in Mittel zur Weichzeichner aus Vision, Foto, bei dem Entwerfen der Apps und spielen begonnen. Wenn Sie mehr über diese weit verbreitete Grafikeffekt interessiert sind, sehen Sie sich [im ersten Artikel auf Vision und Foto](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) und [das zweite Anti-Aliasing in Grafiken.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+Eines unserer Autoren, die unseres geschätzten Mike Jacobs hat eine Reihe von Artikeln im Mittel zum Weichzeichnen, über die Vision Fotografie-Apps und spielen Entwurf begonnen. Wenn Sie mehr über diese allgegenwärtige visueller Effekt interessieren, lesen Sie [im ersten Artikel für maschinelles sehen und Fotografie](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) und [die zweite Anti-Aliasing in Grafiken.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
-![Weichzeichner in Aktion zu sehen](images/blur-example.jpg)
+![Blur in Aktion](images/blur-example.jpg)
 
-### <a name="contributing-guidance"></a>Beitragenden Richtlinien
+### <a name="contributing-guidance"></a>Anleitungen beitragen
 
-Wir haben [unsere Beitragenden Anleitung](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) für unsere Dokumentation UWP aktualisiert. Diese neue Anleitungen verdeutlicht Workflow und Erwartungen an externe Beiträge unserer Dokumente.
+Wir haben aktualisiert [Anleitungen Beitragenden](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) für unsere UWP-Dokumentation. Diesen neuen Leitfaden wird ermittelt, Workflows und Anforderungen an die externe Beiträge zur Dokumentation.
 
 ## <a name="videos"></a>Videos
 
-### <a name="one-dev-question"></a>One Dev Frage
+### <a name="one-dev-question"></a>Eine Frage für Entwickler
 
-In der eine Dev Frage video aus der Reihe behandelt seit Microsoft-Entwicklern eine Reihe von Fragen zur Windows-Entwicklung, Teamkultur, und zum Verlauf. Hier ist die neueste Fragen, die wir beantwortet haben!
+In der Videoreihe Dev Frage behandeln langjährigen Microsoft-Entwicklern eine Reihe von Fragen zu Windows-Entwicklung, Teams und Verlauf. Hier ist die neueste Fragen, die wir beantwortet haben!
 
 Aaron Gustafson:
 
-* [6 Videos auf Progressive Web-Apps](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [6-Videos auf Progressive Web-Apps](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
 
 Chris Heilmann
 
-* [4 Videos für das Webhint-tool](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [4-Videos auf das Tool webhint](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
 
 Larry Osterman:
 

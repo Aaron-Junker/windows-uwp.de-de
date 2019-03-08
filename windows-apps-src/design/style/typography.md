@@ -3,15 +3,15 @@ description: Erfahren Sie, wie Sie die Typografie in Ihrer App verwenden, um Ben
 title: Typografie in UWP-Apps
 ms.date: 04/06/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944722"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610025"
 ---
 # <a name="typography"></a>Typografie
 
@@ -23,7 +23,7 @@ Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprach
 
 Verwenden Sie eine Schriftart in der gesamten Benutzeroberfläche Ihrer App. Es wird empfohlen, wenn möglich, die Standardschriftart für UWP-Apps **Segoe UI** zu verwenden. Sie wurde entwickelt, um eine optimale Lesbarkeit für Größe und Pixeldichte zu wahren und bietet eine klare, ansprechende und offene Ästhetik, die den Inhalt des Systems ergänzt.
 
-![Beispieltext für die Schriftart „SegoeUI“](images/type/segoe-sample.svg)
+![Beispieltext für die Schriftart „Segoe UI“](images/type/segoe-sample.svg)
 
 Weitere Informationen zum Anzeigen anderer Sprachen als Englisch oder um eine andere Schriftart für Ihre App auszuwählen finden Sie unter [Sprachen](#Languages) und [Schriftarten](#Fonts) für unsere empfohlenen Schriftarten für UWP-Apps.
 
@@ -154,7 +154,7 @@ Wenn die Textmenge den verfügbaren Speicherplatz überschreitet, wird empfohlen
     :::column-end:::
 :::row-end:::
 
-**Hinweis**: Bei Containern, die nicht klar definiert sind (also sich etwa nicht durch eine andere Hintergrundfarbe abheben) oder wenn ein Link zu mehr Text existiert, kann eine Ellipse verwendet werden.
+**Hinweis**: Wenn der Container nicht klar definiert sind (z. B. keine unterscheidenden Hintergrundfarbe), oder wenn es ist ein Link zum Anzeigen weiterer Text mehr aus, klicken Sie dann die Schaltfläche mit Auslassungszeichen.
 
 ## <a name="languages"></a>Sprachen 
 
@@ -171,7 +171,7 @@ Verwenden Sie die [LanguageFont-Schriftartenersetzungs-APIs](https://docs.micros
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Hinweise</th>
+<th align="left">Anmerkungen</th>
 </tr>
 </thead>
 <tbody>
@@ -186,7 +186,7 @@ Verwenden Sie die [LanguageFont-Schriftartenersetzungs-APIs](https://docs.micros
 <td align="left">Benutzeroberflächen-Schriftart für nordamerikanische Schriften (Kanadische Silbenschrift, Cherokee).</td>
 </tr>
 <tr class="odd">
-<td align="left" style="font-family: Leelawadee UI;">LeelawadeeUI</td>
+<td align="left" style="font-family: Leelawadee UI;">Leelawadee UI</td>
 <td align="left">Normal, Semilight, fett</td>
 <td align="left">Benutzeroberflächen-Schriftart für südostasiatische Schriften (Buginesisch, Laotisch, Khmer, Thailändisch).</td>
 </tr>
@@ -244,7 +244,7 @@ Serifenlose Schriftarten eignen sich für Überschriften und UI-Elemente.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Hinweise</th>
+<th align="left">Anmerkungen</th>
 </tr>
 </thead>
 <tbody>
@@ -272,7 +272,7 @@ Serifenlose Schriftarten eignen sich für Überschriften und UI-Elemente.
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">Normal, Semilight, Light, fett, Semibold</td>
-<td align="left">Open-Source-Schriftart, die metrisch kompatibel mit SegoeUI ist. Vorgesehen für Apps auf anderen Plattformen, auf denen SegoeUI nicht verfügbar ist. <a href="https://github.com/Microsoft/Selawik">Laden Sie Selawik über GitHub herunter.</a></td>
+<td align="left">Open-Source-Schriftart, die metrisch kompatibel mit Segoe UI ist. Vorgesehen für Apps auf anderen Plattformen, auf denen Segoe UI nicht verfügbar ist. <a href="https://github.com/Microsoft/Selawik">Rufen Sie Selawik auf GitHub.</a></td>
 </tr>
 
 </tbody>
@@ -287,7 +287,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Hinweise</th>
+<th align="left">Anmerkungen</th>
 </tr>
 </thead>
 <tbody>
@@ -302,7 +302,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 <td align="left">Serifenschriftart mit fester Breite und Unterstützung für europäische und nahöstliche Schriften (Lateinisch, Griechisch, Kyrillisch, Arabisch, Armenisch und Hebräisch).</td>
 </tr>
 <tr class="odd">
-<td style="font-family: Georgia;">Georgia</td>
+<td style="font-family: Georgia;">Georgien</td>
 <td align="left">Normal, kursiv, fett, fett kursiv</td>
 <td align="left">Unterstützung für europäische Schriften (Lateinisch, Griechisch und Kyrillisch).</td>
 </tr>
@@ -323,7 +323,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Hinweise</th>
+<th align="left">Anmerkungen</th>
 </tr>
 </thead>
 <tbody>
@@ -349,5 +349,5 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 
 * [Textsteuerelemente](../controls-and-patterns/text-controls.md)
 * [XAML-Designressourcen](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
-* [XAML-Formatvorlagen](../controls-and-patterns/xaml-styles.md)
-* [Microsoft Typografie](https://docs.microsoft.com/typography/)
+* [XAML-Stile](../controls-and-patterns/xaml-styles.md)
+* [Microsoft-Typografie](https://docs.microsoft.com/typography/)

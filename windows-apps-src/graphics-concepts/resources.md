@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c31dcbcc3019538d769118b018c693174b17b4c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922922"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631475"
 ---
 # <a name="resources"></a>Ressourcen
 
 
-Eine Ressource ist ein Bereich im Speicher, auf den die Direct3D-Pipeline zugreifen kann. Damit die Pipeline effizient auf den Speicher zugreifen kann, müssen für die Pipeline bereitgestellte Daten (wie z.B. Input-Geometrie, Shader-Ressourcen und Texturen) in einer Ressource gespeichert werden. Es gibt zwei Arten von Ressourcen, aus denen alle Direct3D-Ressourcen abgeleitet sind: ein Puffer oder eine Textur. Bis zu 128 Ressourcen können für jede Pipeline-Phase aktiv sein.
+Eine Ressource ist ein Bereich im Speicher, auf den die Direct3D-Pipeline zugreifen kann. Damit die Pipeline effizient auf den Speicher zugreifen kann, müssen für die Pipeline bereitgestellte Daten (wie z. B. Input-Geometrie, Shader-Ressourcen und Texturen) in einer Ressource gespeichert werden. Es gibt zwei Arten von Ressourcen, aus denen alle Direct3D-Ressourcen abgeleitet sind: ein Puffer oder eine Textur. Bis zu 128 Ressourcen können für jede Pipeline-Phase aktiv sein.
 
 Jede Anwendung wird in der Regel viele Ressourcen erstellen. Beispiele für Ressourcen sind unter anderem: Vertexpuffer, Indexpuffer, Konstantenpuffer, Texturen und Shader-Ressourcen. Es gibt mehrere Optionen, die bestimmen, wie Ressourcen verwendet werden können. Sie können Ressourcen erstellen, die stark typisiert sind oder weniger typisieren; sie können steuern, ob Ressourcen sowohl Lese- als auch Schreibzugriff erhalten; sie können Ressourcen nur für die CPU, nur die GPU oder beide zugänglich machen. Natürlich wird es einen Geschwindigkeit-Funktionalität-Kompromiss geben - je mehr Funktionen Sie einer Ressource gewähren, desto weniger Leistung sollten Sie erwarten.
 
@@ -25,7 +25,7 @@ Da eine Anwendung oft viele Texturen verwendet, hat Direct3D ferner das Konzept 
 
 Nachdem Sie die Ressourcen erstellt haben, die Ihre Anwendung verwenden wird, verbinden oder binden Sie jede Ressource mit der/an die Pipelinephasen, die diese verwenden. Dies geschieht durch Aufrufen einer Bindungs-API, die einen Zeiger auf die Ressource verwendet. Da mehr als eine Pipelinephase Zugriff auf dieselbe Ressource benötigen kann, hat Direct3D das Konzept einer Ressourcenansicht. Eine Ansicht identifiziert den Teil einer Ressource, auf den zugegriffen werden kann. Sie können *m* Ansichten oder eine Ressource erstellen und diese an *n* Pipelinephasen binden, vorausgesetzt, dass Sie die Bindungsregeln für freigegebene Ressourcen einhalten (die Runtime generiert Fehler zur Kompilierzeit, falls dies nicht der Fall ist).
 
-Eine Ressourcenansicht bietet ein allgemeines Modell für den Zugriff auf eine Ressource (z.B. Texturen oder Puffer). Da Sie der Runtime über eine Ansicht mitteilen können, auf welche Daten diese wie zugreifen kann, können Sie durch Ressourcenansichten weniger Ressourcen typisieren. Das heißt Sie können Ressourcen für eine bestimmte Größe zur Kompilierzeit erstellen und dann den Datentyp in der Ressource erklären, wenn die Ressource an die Pipeline gebunden wird. Ansichten zeichnen sich durch viele Funktionen für die Verwendung von Ressourcen aus, z. B. die Fähigkeit, Tiefe-/Schablonenoberflächen im Shader wiederzugeben, das Generieren von dynamischen Cubemaps in einem Durchgang und das gleichzeitige Berechnen und Ausgeben mehrerer Segmente eines Volumens.
+Eine Ressourcenansicht bietet ein allgemeines Modell für den Zugriff auf eine Ressource (z. B. Texturen oder Puffer). Da Sie der Runtime über eine Ansicht mitteilen können, auf welche Daten diese wie zugreifen kann, können Sie durch Ressourcenansichten weniger Ressourcen typisieren. Das heißt Sie können Ressourcen für eine bestimmte Größe zur Kompilierzeit erstellen und dann den Datentyp in der Ressource erklären, wenn die Ressource an die Pipeline gebunden wird. Ansichten zeichnen sich durch viele Funktionen für die Verwendung von Ressourcen aus, z. B. die Fähigkeit, Tiefe-/Schablonenoberflächen im Shader wiederzugeben, das Generieren von dynamischen Cubemaps in einem Durchgang und das gleichzeitige Berechnen und Ausgeben mehrerer Segmente eines Volumens.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>In diesem Abschnitt
 
@@ -47,12 +47,12 @@ Eine Ressourcenansicht bietet ein allgemeines Modell für den Zugriff auf eine R
 <td align="left"><p>Die verschiedenen Ressourcentypen haben unterschiedliche Layouts (bzw. unterschiedliche Speicheranforderungen). Alle von der Direct3D-Pipeline verwendeten Ressourcen sind von zwei grundlegenden Ressourcentypen abgeleitet: <a href="resource-types.md#buffer-resources">Puffer</a> und <a href="resource-types.md#texture-resources">Texturen</a>. Ein Puffer ist eine Sammlung von Rohdaten (Elemente); eine Textur ist eine Sammlung von Texeln (Textur-Elementen).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="choosing-a-resource.md">Auswählen einer Ressource</a></p></td>
-<td align="left"><p>Eine Ressource ist eine Sammlung von Daten, die von der 3D-Pipeline verwendet werden. Das Erstellen von Ressourcen und das Definieren des Verhaltens ist der erste Schritt zur Programmierung Ihrer Anwendung. Dieses Handbuch enthält grundlegende Themen für die Auswahl der Ressourcen, die Ihre Anwendung erfordert.</p></td>
+<td align="left"><p><a href="choosing-a-resource.md">Eine Ressource auswählen</a></p></td>
+<td align="left"><p>Eine Ressource ist eine von der 3D-Pipeline verwendete Datensammlung. Das Erstellen von Ressourcen und das Definieren des Verhaltens ist der erste Schritt zur Programmierung Ihrer Anwendung. Dieses Handbuch enthält grundlegende Informationen zur Auswahl der von Ihrer Anwendung erforderlichen Ressourcen.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="copying-and-accessing-resource-data.md">Kopieren und Zugreifen auf Ressourcendaten</a></p></td>
-<td align="left"><p>Nutzungsflags geben an, wie die Anwendung Ressourcendaten nutzen will, um Ressourcen nach Möglichkeit in den leistungsfähigsten Speicherbereich zu platzieren. Ressourcendaten werden über Ressourcen kopiert, so dass die CPU- oder GPU darauf zugreifen kann, ohne eine Beeinträchtigung der Leistung herbeizuführen.</p></td>
+<td align="left"><p><a href="copying-and-accessing-resource-data.md">Kopieren und den Zugriff auf Ressourcen</a></p></td>
+<td align="left"><p>Nutzungskennzeichen geben an, wie die Anwendung Ressourcendaten verwendet, um die Ressourcen im leistungsfähigsten Speicherbereich zu platzieren. Ressourcendaten werden von allen Ressourcen kopiert, damit CPU oder GPU ohne eine Beeinträchtigung der Leistung darauf zugreifen können.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="texture-views.md">Texturansichten</a></p></td>
@@ -68,8 +68,8 @@ Eine Ressourcenansicht bietet ein allgemeines Modell für den Zugriff auf eine R
 
 [Koordinatensysteme](coordinate-systems.md)
 
-[Lernanleitung für Direct3D-Grafiken](index.md)
+[Schulungsleitfaden für Direct3D-Grafiken](index.md)
 
-[Gleitkommaregeln](floating-point-rules.md)
+[Gleitkomma-Regeln](floating-point-rules.md)
 
-[Konvertieren von Datentypen](data-type-conversion.md)
+[Datentypkonvertierung](data-type-conversion.md)

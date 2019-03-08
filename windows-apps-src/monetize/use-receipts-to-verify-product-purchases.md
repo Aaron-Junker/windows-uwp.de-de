@@ -4,23 +4,23 @@ description: Jede Microsoft Store-Transaktion, die zu einem erfolgreichen Produk
 title: Überprüfen von Produktkäufen anhand von Belegen
 ms.date: 04/16/2018
 ms.topic: article
-keywords: Windows10, UWP, In-App-Einkäufe, IAPs, Belege, Windows.ApplicationModel.Store
+keywords: Windows 10, UWP, In-App-Einkäufe, IAPs, Belege, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047252"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605725"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Überprüfen von Produktkäufen anhand von Belegen
 
 Jede Microsoft Store-Transaktion, die zu einem erfolgreichen Produktkauf führt, kann optional einen Transaktionsbeleg zurückgeben. Dieser Beleg enthalten Informationen zum gelisteten Produkt und zu den Kosten für den Kunden.
 
-Der Zugriff auf diese Informationen unterstützt Szenarien, in denen Ihre App überprüfen muss, ob ein Benutzer Ihre App oder ein Add-On (auch als In-App-Produkt oder IAP bezeichnet) im MicrosoftStore gekauft hat. Das kann zum Beispiel bei einem Spiel der Fall sein, für das Inhalte heruntergeladen werden können. Wenn der Benutzer, der die Spielinhalte gekauft hat, das Spiel auf einem anderen Gerät spielen möchte, müssen Sie überprüfen, ob der Benutzer die Inhalte bereits besitzt. Gehen Sie dazu wie folgt vor.
+Der Zugriff auf diese Informationen unterstützt Szenarien, in denen Ihre App überprüfen muss, ob ein Benutzer Ihre App oder ein Add-On (auch als In-App-Produkt oder IAP bezeichnet) im Microsoft Store gekauft hat. Das kann zum Beispiel bei einem Spiel der Fall sein, für das Inhalte heruntergeladen werden können. Wenn der Benutzer, der die Spielinhalte gekauft hat, das Spiel auf einem anderen Gerät spielen möchte, müssen Sie überprüfen, ob der Benutzer die Inhalte bereits besitzt. Gehen Sie dazu wie folgt vor:
 
 > [!IMPORTANT]
-> Dieser Artikel beschreibt, wie Sie Mitglieder des [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)-Namespace verwenden, um einen Beleg für einen In-App-Kauf abzurufen und zu überprüfen. Wenn Sie den [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store)-Namespace für In-App-Käufe verwenden (eingeführt in Windows 10, Version 1607, und für Projekte verfügbar, die die **Windows 10 Anniversary Edition (10.0; Build 14393)** oder eine spätere Freigabe in Visual Studio verwenden), müssen Sie beachten, dass dieser Namespace keine API zum Abrufen von Kaufbelegen für In-App-Käufen enthält. Sie können jedoch eine REST-Methode in der Microsoft Store-Sammlungs-API verwenden, um Daten für eine Kauftransaktion abzurufen. Weitere Informationen finden Sie unter [Belege für In-App-Käufe](in-app-purchases-and-trials.md#receipts).
+> Dieser Artikel beschreibt, wie Sie Mitglieder des [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)-Namespace verwenden, um einen Beleg für einen In-App-Kauf abzurufen und zu überprüfen. Wenn Sie den [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store)-Namespace -Namespace für In-App-Käufe verwenden (eingeführt in **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer höheren Version in Visual Studio), müssen Sie beachten, dass dieser Namespace keine API zum Abrufen von Kaufbelegen für In-App-Einkäufe enthält. Sie können jedoch eine REST-Methode in der Microsoft Store-Sammlungs-API verwenden, um Daten für eine Kauftransaktion abzurufen. Weitere Informationen finden Sie unter [Belege für In-App-Käufe](in-app-purchases-and-trials.md#receipts).
 
 ## <a name="requesting-a-receipt"></a>Anfordern eines Belegs
 
@@ -104,11 +104,11 @@ In diesem Abschnitt werden die Elemente und Attribute in einen Beleg beschrieben
 
 Das Stammelement dieser Datei ist das Element **Receipt**, das Informationen zu App- und In-App-Käufen enthält. Dieses Element enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Menge  |  Beschreibung   |
+|  Element  |  Erforderlich  |  Anzahl  |  Beschreibung   |
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    Nein        |  0 oder 1  |  Enthält Kaufinformationen für die aktuelle App.            |
 |  [ProductReceipt](#productreceipt)  |     Nein       |  0 oder mehr    |   Enthält Informationen zu einem In-App-Kauf für die aktuelle App.     |
-|  Signature  |      Ja      |  1   |   Dieses Element ist ein standardmäßiges [XML-DSIG-Konstrukt](https://go.microsoft.com/fwlink/p/?linkid=251093). Es enthält ein **SignatureValue**-Element, das die Signatur enthält, die Sie für die Überprüfung des Belegs verwenden können, und ein **SignedInfo**-Element.      |
+|  Signatur  |      Ja      |  1   |   Dieses Element ist ein standardmäßiges [XML-DSIG-Konstrukt](https://go.microsoft.com/fwlink/p/?linkid=251093). Es enthält ein **SignatureValue**-Element, das die Signatur enthält, die Sie für die Überprüfung des Belegs verwenden können, und ein **SignedInfo**-Element.      |
 
 **Receipt** hat die folgenden Attribute.
 

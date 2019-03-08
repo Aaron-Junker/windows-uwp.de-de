@@ -4,14 +4,14 @@ title: IDs der AEP-Dienstklasse
 description: Die AEP-Dienste (Zuordnungsendpunkt) bieten einen Programmierungsvertrag für Dienste, die von einem Gerät über ein bestimmtes Protokoll unterstützt werden. Für mehrere dieser Dienste sind Bezeichner festgelegt, die verwendet werden sollen, wenn auf sie verwiesen wird.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048297"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598215"
 ---
 # <a name="aep-service-class-ids"></a>IDs der AEP-Dienstklasse
 
@@ -23,7 +23,7 @@ ms.locfileid: "9048297"
 
 Die AEP-Dienste (Zuordnungsendpunkt) bieten einen Programmierungsvertrag für Dienste, die von einem Gerät über ein bestimmtes Protokoll unterstützt werden. Für mehrere dieser Dienste sind Bezeichner festgelegt, die verwendet werden sollen, wenn auf sie verwiesen wird. Diese Verträge werden durch die **System.Devices.AepService.ServiceClassId**-Eigenschaft gekennzeichnet. In diesem Abschnitt sind einige bekannte IDs der AEP-Dienstklasse aufgeführt. Die Klassen-ID des AEP-Diensts gilt auch für Protokolle mit benutzerdefinierten Klassen-IDs.
 
-App-Entwickler sollten auf Basis der Klassen-IDs erweiterte Abfragesyntaxfilter (Advanced Query Syntax, AQS) verwenden, um ihre Abfragen auf die zu verwendenden AEP-Dienste zu beschränken. Dadurch werden sowohl die Abfrageergebnisse auf die betreffenden Dienste beschränkt als auch Leistung, Akkulaufzeit und Dienstqualität für das Gerät erheblich verbessert. Eine Anwendung kann z.B. diese Dienstklassen-IDs verwenden, um ein Gerät für die Miracast-Synchronisierung oder als DLNA-DMR (Digital Media-Renderer) zu verwenden. Weitere Informationen zur Interaktion zwischen Geräten und Diensten finden Sie unter [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991).
+App-Entwickler sollten auf Basis der Klassen-IDs erweiterte Abfragesyntaxfilter (Advanced Query Syntax, AQS) verwenden, um ihre Abfragen auf die zu verwendenden AEP-Dienste zu beschränken. Dadurch werden sowohl die Abfrageergebnisse auf die betreffenden Dienste beschränkt als auch Leistung, Akkulaufzeit und Dienstqualität für das Gerät erheblich verbessert. Eine Anwendung kann z. B. diese Dienstklassen-IDs verwenden, um ein Gerät für die Miracast-Synchronisierung oder als DLNA-DMR (Digital Media-Renderer) zu verwenden. Weitere Informationen zur Interaktion zwischen Geräten und Diensten finden Sie unter [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991).
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Bluetooth- und Bluetooth LE-Dienste
 

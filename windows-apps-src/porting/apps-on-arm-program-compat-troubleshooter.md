@@ -3,20 +3,20 @@ title: Problembehandlung für die Programmkompatibilität auf ARM
 description: Anleitung zum Anpassen der Kompatibilitätseinstellungen, wenn Ihre App auf ARM nicht korrekt funktioniert
 ms.date: 02/15/2018
 ms.topic: article
-keywords: windows10 s, always connected, problembehandlung für die programmkompatibilität, windows auf ARM
+keywords: windows 10 s, always connected, problembehandlung für die programmkompatibilität, windows auf ARM
 ms.localizationpriority: medium
 ms.openlocfilehash: 763b00a5790274d81b6daa2838ef926936e458db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946368"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647615"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>Problembehandlung für die Programmkompatibilität auf ARM
 Emulation zur Unterstützung von x86-Anwendungen ist ein neues Feature, das für Windows 10 auf ARM64 erstellt wurde. Manchmal führt die Emulation Optimierungen durch, die nicht zu den besten Ergebnissen führen. Sie können die Problembehandlung für die Programmkompatibilität verwenden, um die Emulationseinstellungen für Ihre x86-App umzuschalten, wodurch die Standardoptimierungen reduziert und die Kompatibilität möglicherweise erhöht wird.
 
 ## <a name="start-the-program-compatibility-troubleshooter"></a>Starten der Problembehandlung für die Programmkompatibilität
-Die [Problembehandlung für die Programmkompatibilität](https://support.microsoft.com/en-us/help/15078/windows-make-older-programs-compatible) wird manuell auf allen Windows10 PCs auf die gleiche Weise gestartet: Klicken Sie mit der rechten Maustaste auf eine ausführbare Datei (.exe) und wählen Sie **Behebung von Kompatibilitätsproblemen** aus. Der folgende Bildschirm wird angezeigt.
+Die [Problembehandlung für die Programmkompatibilität](https://support.microsoft.com/en-us/help/15078/windows-make-older-programs-compatible) wird manuell auf allen Windows 10 PCs auf die gleiche Weise gestartet: Klicken Sie mit der rechten Maustaste auf eine ausführbare Datei (.exe) und wählen Sie **Behebung von Kompatibilitätsproblemen** aus. Der folgende Bildschirm wird angezeigt.
 
 ![Screenshot der Option „Behebung von Kompatibilitätsproblemen”](images/arm/Capture4.png)
 
@@ -32,7 +32,7 @@ Alle Optionen aktivieren die Einstellungen, die für alle Windows 10-Desktop-PCs
 
 Sie können die Emulationseinstellungen umschalten, indem Sie mit der rechten Maustaste auf die ausführbare Datei klicken und **Eigenschaften** auswählen.
 
-Auf ARM-Geräten steht auf der Registerkarte **Kompatibilität** ein Abschnittmit dem Titel **Windows10 auf ARM** zur Verfügung. Klicken Sie auf **Ändern von Emulationseinstellungen**, um wie hier gezeigt, ein zweites Fenster zu öffnen.
+Auf ARM, ein Abschnitt mit dem Titel **Windows 10 auf ARM** stehen in der **Kompatibilität** Registerkarte. Klicken Sie auf **ändern emulationseinstellungen** um ein zweites Fenster wie hier zu starten.
 
 ![Screenshot von „Ändern der Emulationseinstellungen”](images/arm/Capture.png)
 

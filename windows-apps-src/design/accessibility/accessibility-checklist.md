@@ -1,19 +1,19 @@
 ---
-Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: Bietet eine Prüfliste, mit der Sie sicherstellen können, dass Ihre App für die Universelle Windows-Plattform (UWP) barrierefrei ist.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Prüfliste für die Barrierefreiheit
 label: Accessibility checklist
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c9ff9760b3ae9b852fe1ae1b86d1cc48e49c5dd4
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990483"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602445"
 ---
 # <a name="accessibility-checklist"></a>Prüfliste für die Barrierefreiheit
 
@@ -23,9 +23,9 @@ Hier finden Sie eine Prüfliste, die Sie verwenden können, um den Zugriff auf I
 
 1. Legen Sie den Namen (erforderlich) und die Beschreibung (optional) zur Verwendung durch Bildschirmleseprogramme für den Inhalt und die interaktiven UI-Elemente Ihrer App fest.
 
-    Ein barrierefreier Name ist eine kurze, beschreibende Textzeichenfolge, mit der die Sprachausgabe ein UI-Element ansagt. Einige UI-Elemente wie [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) und [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) unterstützen ihren Textinhalt als standardmäßigen Namen für Bildschirmleseprogramme (siehe [Grundlegende Informationen zur Barrierefreiheit](basic-accessibility-information.md#name_from_inner_text)).
+    Der Name zur Verwendung durch Screenreader-Software ist eine kurze, beschreibende Textzeichenfolge, mit der die Sprachausgabe ein UI-Element ansagt. Einige UI-Elemente wie [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) und [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) unterstützen ihren Textinhalt als standardmäßigen Namen für Bildschirmleseprogramme (siehe [Grundlegende Informationen zur Barrierefreiheit](basic-accessibility-information.md#name_from_inner_text)).
 
-    Für Bilder oder andere Steuerelemente, bei denen der innere Text nicht als impliziter Name für Bildschirmleseprogramme verwendet werden kann, muss der Name explizit festgelegt werden. Verwenden Sie Bezeichnungen für Formularelemente, damit der Bezeichnungstext als [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769)-Ziel im Microsoft-Benutzeroberflächenautomatisierungs-Modell zum Korrelieren von Bezeichnungen und Eingaben verwendet werden kann. Wenn Sie mehr Informationen und Anweisungen zur Benutzeroberfläche für Benutzer bereitstellen möchten als normalerweise im Namen für Bildschirmleseprogramme enthalten sind, können Sie Beschreibungen und QuickInfos für Bildschirmleseprogramme implementieren.
+    Für Bilder oder andere Steuerelemente, bei denen der innere Text nicht als impliziter Name zur Verwendung durch Screenreader-Software verwendet werden kann, muss der Name explizit festgelegt werden. Verwenden Sie Bezeichnungen für Formularelemente, damit der Bezeichnungstext als [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769)-Ziel im Microsoft-Benutzeroberflächenautomatisierungs-Modell zum Korrelieren von Bezeichnungen und Eingaben verwendet werden kann. Wenn Sie mehr Informationen und Anweisungen zur Benutzeroberfläche für Benutzer bereitstellen möchten als normalerweise im Namen für Bildschirmleseprogramme enthalten sind, können Sie Beschreibungen und QuickInfos für Bildschirmleseprogramme implementieren.
 
     Weitere Informationen finden Sie unter [Name zur Verwendung durch Bildschirmleseprogramme](basic-accessibility-information.md#accessible_name) und [Beschreibung zur Verwendung durch Bildschirmleseprogramme](basic-accessibility-information.md).
 
@@ -39,14 +39,14 @@ Hier finden Sie eine Prüfliste, die Sie verwenden können, um den Zugriff auf I
 
     Weitere Informationen finden Sie unter [Tastaturinteraktionen](https://msdn.microsoft.com/library/windows/apps/Mt185607).
 
-3. Stellen Sie sicher, dass der Text eine lesbare Größe ist
+3. Stellen Sie sicher, dass Text um eine lesbare Größe beträgt
 
-    * Windows enthält verschiedene Bedienungshilfen und Einstellungen, die Benutzer auf ihre eigenen Anforderungen und Einstellungen für das Lesen von Text anpassen und nutzen können. Dazu zählen:
-        * Die Bildschirmlupe, die einen ausgewählten Bereich der UI vergrößert. Sie sollten sicherstellen, dass das Layout der Text in Ihrer app zum Verwenden der Bildschirmlupe zum Lesen erschweren nicht.
-        * Globale Einstellungen für Skalierung und Auflösung in **-Einstellungen -> System Anzeige -> ->, Skalierung und Layout**. Genau können Optionen für die größenanpassung variieren, da dies nach den Funktionen des Anzeigegeräts richtet.
-        * Text Größe Einstellungen in **-Einstellungen -> erleichterte Bedienung Anzeige ->**. Passen Sie die **Formatieren von Text, die größer als** Einstellung, um nur die Größe von Text in die Steuerelemente für alle Anwendungen und Bildschirme (alle UWP-Textsteuerelemente unterstützen die Skalierung Umgebung ohne Anpassung oder Vorlagen Text) unterstützt.
+    * Windows umfasst verschiedene Tools für Barrierefreiheit und Einstellungen, die Benutzer nutzen können, und passen Sie ihre eigenen Anforderungen und die Einstellungen für das Lesen von Text. Dazu gehören:
+        * Das Bildschirmlupe-Tool, das die Benutzeroberfläche ein ausgewählten Bereichs vergrößert. Sie sollten sicherstellen, dass das Layout von Text in Ihrer app verwenden Sie Bildschirmlupe zum Lesen erschweren nicht.
+        * Globale Skalierung und Auflösung von Einstellungen in **Einstellungen -> System -> Anzeige & gt; Skalierung und Layout**. Genau die Größenanpassungsoptionen zur verfügbar sind, können variieren, wie die Funktionen des Anzeigegeräts sowie.
+        * Die Einstellungen für Text in **erleichterte Bedienung "Einstellungen ->" -> Anzeige**. Anpassen der **vergrößern Text** Einstellung, um nur die Größe des Texts in die Steuerelemente für alle Anwendungen und Bildschirme (alle UWP-Text-Steuerelemente unterstützen den Text, der Skalierung ohne Anpassung oder Vorlagen) unterstützen.
         > [!NOTE]
-        > Die Einstellung **Alles größer machen** kann Benutzer ihre bevorzugte Größe für Text und apps in der Regel nur auf ihre angeben.
+        > Die **korrektes größere** Einstellung ermöglicht es einem Benutzer in der Regel geben Sie ihre bevorzugte Größe für Text- und apps auf ihre primären Bildschirm nur.
 
 4. Schauen Sie sich die Benutzeroberfläche an, um sicherzustellen, dass der Textkontrast ausreicht, Elemente in Designs mit hohem Kontrast richtig dargestellt werden und Farben korrekt verwendet werden.
 
@@ -56,13 +56,13 @@ Hier finden Sie eine Prüfliste, die Sie verwenden können, um den Zugriff auf I
 
     Weitere Informationen finden Sie unter [Designs mit hohem Kontrast](high-contrast-themes.md) und [Anforderungen für barrierefreien Text](accessible-text-requirements.md).
 
-5. Führen Sie Tools zum Testen der Barrierefreiheit aus. Behandeln Sie gemeldete Probleme, und überprüfen Sie die Qualität der Sprachausgabe.
+5. Führen Sie Tools zum Testen der Barrierefreiheit aus. Behandeln Sie gemeldete Probleme und überprüfen Sie die Qualität der Sprachausgabe.
 
     Überprüfen Sie mithilfe von Tools wie [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) den programmgesteuerten Zugriff, führen Sie Diagnosetools wie [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) aus, um allgemeine Fehler zu ermitteln, und überprüfen Sie die Qualität der Sprachausgabe.
 
     Weitere Informationen finden Sie unter [Barrierefreiheitstests](accessibility-testing.md).
 
-6. Stellen Sie sicher, dass die App-Manifesteinstellungen den Richtlinien für Barrierefreiheit entsprechen.
+6. Stellen Sie sicher, dass die Einstellungen für das App-Manifest den Richtlinien für Barrierefreiheit entsprechen.
 
 7. Deklarieren Sie Ihre App im Microsoft Store als barrierefrei.
 
@@ -73,7 +73,7 @@ Hier finden Sie eine Prüfliste, die Sie verwenden können, um den Zugriff auf I
 ## <a name="related-topics"></a>Verwandte Themen  
 
 * [Anforderungen für barrierefreien Text](accessible-text-requirements.md)
-* [Textskalierung](../input/text-scaling.md)
-* [Barrierefreiheit](accessibility.md)
+* [Skalieren von Text](../input/text-scaling.md)
+* [Bedienungshilfen](accessibility.md)
 * [Entwerfen für Barrierefreiheit](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [Nicht empfehlenswerte Methoden](practices-to-avoid.md)

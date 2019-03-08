@@ -1,27 +1,27 @@
 ---
 title: Auslösen von Ereignissen in Komponenten für Windows-Runtime
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
-description: Wie Sie ein Ereignis eines benutzerdefinierten Delegattyps in einem Hintergrundthread auslösen, damit JavaScript das Ereignis empfangen kann.
+description: Vorgehensweise zum Auslösen eines Ereignisses eines benutzerdefinierten Delegattyps in einem Hintergrundthread, sodass JavaScript das Ereignis empfangen kann.
 ms.date: 07/19/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 851f8a25055c90dfd592d5a68c733258bcd5f7b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922500"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605955"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>Auslösen von Ereignissen in Komponenten für Windows-Runtime
 > [!NOTE]
-> Informationen zum Auslösen von Ereignissen in einer [C++ / WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Komponente für Windows-Runtime, finden Sie unter [Erstellen von Ereignissen in C++ / WinRT](../cpp-and-winrt-apis/author-events.md).
+> Erfahren, wie zum Auslösen von Ereignissen in eine [C++ / WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows-Runtime-Komponente, finden Sie unter [Erstellen von Ereignissen in C++ / WinRT](../cpp-and-winrt-apis/author-events.md).
 
 Wenn die Komponente für Windows-Runtime ein Ereignis eines benutzerdefinierten Delegattyps in einem Hintergrundthread (Arbeitsthread) auslöst und JavaScript in der Lage sein soll, das Ereignis zu empfangen, können Sie es auf eine der folgenden Weisen implementieren und/oder auslösen:
 
--   (Option1) Lösen Sie das Ereignis mit dem [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) aus, um das Ereignis an den JavaScript-Threadkontext zu marshallen. Dies ist in der Regel zwar die beste Option, erzielt in manchen Szenarien aber möglicherweise nicht die schnellste Leistung.
--   (Option 2) Verwenden Sie [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt;, allerdings mit Verlust von Ereignistypinformationen. Falls Option1 nicht möglich oder die Leistung nicht ausreichend ist, bietet diese Option eine gute Alternative, wenn der Verlust von Typinformationen akzeptabel ist.
--   (Option3) Erstellen Sie einen eigenen Proxy und Stub für die Komponente. Diese Option ist am schwierigsten zu implementieren, behält aber die Typinformationen bei und erzielt in anspruchsvollen Szenarien unter Umständen eine bessere Leistung als Option1.
+-   (Option 1) Lösen Sie das Ereignis mit dem [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) aus, um das Ereignis an den JavaScript-Threadkontext zu marshallen. Dies ist in der Regel zwar die beste Option, erzielt in manchen Szenarien aber möglicherweise nicht die schnellste Leistung.
+-   (Option 2) Verwenden Sie [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt;, allerdings mit Verlust von Ereignistypinformationen. Falls Option 1 nicht möglich oder die Leistung nicht ausreichend ist, bietet diese Option eine gute Alternative, wenn der Verlust von Typinformationen akzeptabel ist.
+-   (Option 3) Erstellen Sie einen eigenen Proxy und Stub für die Komponente. Diese Option ist am schwierigsten zu implementieren, behält aber die Typinformationen bei und erzielt in anspruchsvollen Szenarien unter Umständen eine bessere Leistung als Option 1.
 
 Wenn Sie nur ein Ereignis in einem Hintergrundthread ohne eine dieser Optionen auslösen, wird das Ereignis von einem JavaScript-Client nicht empfangen.
 
@@ -31,7 +31,7 @@ Bei allen Komponenten und Apps für Windows-Runtime handelt es sich im Grunde um
 
 Die meisten Objekte in der Windows-API sind entweder agil oder verfügen über integrierte Proxys und Stubs. Allerdings können Proxys und Stubs nicht für generische Typen wie Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) erstellt werden, da sie erst vollständige Typen sind, wenn das Typargument bereitgestellt ist. Fehlende Proxys oder Stubs stellen nur bei JavaScript-Clients ein Problem dar. Wenn die Komponente aber sowohl in JavaScript als auch in C++ oder einer .NET-Sprache verwendet werden soll, müssen Sie eine der drei folgenden Optionen verwenden.
 
-## <a name="option-1-raise-the-event-through-the-coredispatcher"></a>Option1) Auslösen des Ereignisses mit dem CoreDispatcher-Ereignis
+## <a name="option-1-raise-the-event-through-the-coredispatcher"></a>Option 1) Auslösen des Ereignisses mit dem CoreDispatcher-Ereignis
 
 Sie können Ereignisse eines benutzerdefinierten Delegattyps mit [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) senden, und JavaScript kann diese Ereignisse empfangen. Wenn Sie nicht sicher sind, welche Option Sie verwenden sollen, versuchen Sie es zunächst mit dieser ersten Option. Wenn die Wartezeit zwischen dem Auslösen von Ereignissen und der Ereignisbehandlung ein Problem darstellt, versuchen Sie es mit einer der anderen Optionen.
 
@@ -116,11 +116,11 @@ toastCompletedEventHandler: function (event) {
 }
 ```
 
-## <a name="option-3-create-your-own-proxy-and-stub"></a>(Option3) Erstellen eines eigenen Proxys und Stubs
+## <a name="option-3-create-your-own-proxy-and-stub"></a>(Option 3) Erstellen eines eigenen Proxys und Stubs
 
 Um bei benutzerdefinierten Ereignistypen mit vollständig beibehaltenen Typinformationen potenzielle Leistungszuwächse zu erreichen, müssen Sie eigene Proxy- und Stub-Objekte erstellen und diese in das App-Paket einbetten. In der Regel wird diese Option nur selten verwendet und zwar, wenn keine der beiden anderen Optionen geeignet ist. Außerdem ist nicht gewährleistet, dass mit dieser Option eine bessere Leistung erzielt wird als mit den anderen beiden Optionen. Die tatsächliche Leistung hängt von vielen Faktoren ab. Verwenden Sie den Visual Studio-Profiler oder andere Profilerstellungstools, um die tatsächliche Leistung der Anwendung zu messen und um festzustellen, ob das Ereignis tatsächlich einen Engpass darstellt.
 
-Im weiteren Verlauf dieses Artikels wird gezeigt, wie eine grundlegende Komponente für Windows-Runtime in C# und anschließend eine DLL für Proxy und Stub in C++ erstellt werden, sodass JavaScript ein Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;-Ereignis nutzen kann, das von der Komponente in einem asynchronen Vorgang ausgelöst wird. (Sie können die Komponente auch in C++ oder Visual Basic erstellen. Die Schritte zum Erstellen der Proxys und Stubs sind identisch.) Diese exemplarische Vorgehensweise basiert auf dem Artikel „Erstellen einer prozessinternen Komponente für Windows-Runtime (C++/CX) – Beispiel”, dessen Zielsetzungen näher erläutert werden.
+Im weiteren Verlauf dieses Artikels wird gezeigt, wie eine grundlegende Komponente für Windows-Runtime in C# und anschließend eine DLL für Proxy und Stub in C++ erstellt werden, sodass JavaScript ein Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;-Ereignis nutzen kann, das von der Komponente in einem asynchronen Vorgang ausgelöst wird. (Sie können die Komponente auch in C++ oder Visual Basic erstellen. Die Schritte, die im Zusammenhang mit der Erstellung der Proxys und Stubs sind identisch.) Diese exemplarische Vorgehensweise basiert auf erstellen ein Beispiel für die Windows-Runtime in-Process-Komponente (C++ / CX) und hilft bei der Erläuterung der Zielsetzungen.
 
 Diese exemplarische Vorgehensweise besteht aus folgenden Teilen:
 
@@ -134,11 +134,11 @@ Diese exemplarische Vorgehensweise besteht aus folgenden Teilen:
 
 Klicken Sie in Visual Studio auf der Menüleiste auf **Datei &gt; Neues Projekt**. Erweitern Sie im Dialogfeld **Neues Projekt** die Option **JavaScript &gt; Universal Windows**, und wählen Sie dann **Leere App** aus. Geben Sie als Projektnamen „ToasterApplication“ ein, und klicken Sie dann auf die Schaltfläche **OK**.
 
-Fügen Sie der Projektmappe eine C#-Komponente für Windows-Runtime hinzu: Öffnen Sie im Projektmappen-Explorer das Kontextmenü für die Projektmappe, und wählen Sie dann **Hinzufügen &gt; Neues Projekt** aus. Erweitern Sie **Visual C#- &gt; Microsoft Store** und wählen Sie dann die **Windows-Runtime-Komponente**. Geben Sie als Projektnamen „ToasterComponent“ ein, und klicken Sie dann auf die Schaltfläche **OK**. ToasterComponent ist der Stammnamespace für die Komponenten, die Sie in späteren Schritten erstellen.
+Hinzufügen einer C# Windows-Runtime-Komponente auf die Projektmappe: Klicken Sie im Projektmappen-Explorer das Kontextmenü für die Projektmappe öffnen, und wählen Sie dann **hinzufügen &gt; neues Projekt**. Erweitern Sie **Visual C# &gt; Microsoft Store** und wählen Sie dann **Komponente für Windows-Runtime**. Geben Sie als Projektnamen „ToasterComponent“ ein, und klicken Sie dann auf die Schaltfläche **OK**. ToasterComponent ist der Stammnamespace für die Komponenten, die Sie in späteren Schritten erstellen.
 
 Öffnen Sie im Projektmappen-Explorer das Kontextmenü für die Projektmappe, und wählen Sie dann **Eigenschaften** aus. Wählen Sie im Dialogfeld **Eigenschaftenseiten** im linken Bereich **Konfigurationseigenschaften** aus, und legen Sie dann oben im Dialogfeld die **Konfiguration** auf **Debuggen** und die **Plattform** auf „x86”, „x64” oder „ARM” fest. Klicken Sie auf die Schaltfläche **OK**.
 
-**Wichtige**Plattform = Any CPU funktioniert nicht, da sie nicht für die Win32-DLL in systemeigenem Code gültig ist, die Sie später der Projektmappe hinzufügen können.
+**Wichtige** Plattform = Any CPU funktioniert nicht, da sie nicht für die Win32-DLL von systemeigenem Code gültig ist, die Sie an die Lösung später hinzufügen.
 
 Benennen Sie im Projektmappen-Explorer die Datei „class1.cs” in „ToasterComponent.cs” um, sodass sie dem Namen des Projekts entspricht. Visual Studio benennt die Klasse in der Datei entsprechend dem neuen Dateinamen automatisch um.
 
@@ -146,7 +146,7 @@ Fügen Sie der CS-Datei eine using-Direktive für den Namespace Windows.Foundati
 
 Wenn Sie Proxys und Stubs benötigen, muss die Komponente mit Schnittstellen ihre öffentlichen Member verfügbar machen. Definieren Sie in „ToasterComponent.cs” eine Schnittstelle für den Toaster und eine andere für den „Toast” (Popup), den der Toaster erzeugt.
 
-**Hinweis:** In c# können Sie diesen Schritt überspringen. Erstellen Sie stattdessen zuerst eine Klasse, öffnen Sie das Kontextmenü, und wählen Sie **Umgestalten &gt; Schnittstelle extrahieren** aus. Ordnen Sie den Schnittstellen im generierten Code manuell öffentlichen Zugriff zu.
+**Beachten Sie** In C# können Sie diesen Schritt überspringen. Erstellen Sie stattdessen zuerst eine Klasse, öffnen Sie das Kontextmenü, und wählen Sie **Umgestalten &gt; Schnittstelle extrahieren** aus. Ordnen Sie den Schnittstellen im generierten Code manuell öffentlichen Zugriff zu.
 
 ```csharp
     public interface IToaster
@@ -161,7 +161,7 @@ Wenn Sie Proxys und Stubs benötigen, muss die Komponente mit Schnittstellen ihr
         }
 ```
 
-Die IToast-Schnittstelle hat eine Zeichenfolge, die abgerufen werden kann, um den Typ des Popups zu beschreiben. Die IToaster-Schnittstelle verfügt eine Methode, um das Popup zu erstellen, und über ein Ereignis, das angibt, dass das Popup erstellt wird. Da dieses Ereignis einen bestimmten Teil (d.h. den Typ) des Popups zurückgibt, wird es als typisiertes Ereignis bezeichnet.
+Die IToast-Schnittstelle hat eine Zeichenfolge, die abgerufen werden kann, um den Typ des Popups zu beschreiben. Die IToaster-Schnittstelle verfügt eine Methode, um das Popup zu erstellen, und über ein Ereignis, das angibt, dass das Popup erstellt wird. Da dieses Ereignis einen bestimmten Teil (d. h. den Typ) des Popups zurückgibt, wird es als typisiertes Ereignis bezeichnet.
 
 Als Nächstes müssen Klassen angelegt werden, die diese Schnittstellen implementieren. Diese Klassen müssen öffentlich und versiegelt sein, damit die JavaScript-App, die Sie später programmieren, darauf zugreifen kann.
 
@@ -214,7 +214,7 @@ Als Nächstes müssen Klassen angelegt werden, die diese Schnittstellen implemen
 
 Im vorhergehenden Code wird das Popup erstellt und eine Arbeitsaufgabe im Threadpool ausgeführt, um die Benachrichtigung auszulösen. Auch wenn die IDE vorschlagen sollte, das „await“-Schlüsselwort dem asynchronen Aufruf zuzuweisen, ist dies in diesem Fall nicht nötig, da die Methode keine Aktionen ausführt, die von den Ergebnissen des Vorgangs abhängig sind.
 
-**Hinweis:** der asynchrone Aufruf im vorhergehenden Code verwendet ThreadPool.RunAsync ausschließlich, um eine einfache Möglichkeit, das Ereignis in einem Hintergrundthread auslösen zu veranschaulichen. Sie könnten diese spezielle Methode auch schreiben wie im folgenden Beispiel gezeigt. Dies funktioniert, da der .NET-Taskplaner automatisch „async/await“-Aufrufe zurück an den UI-Thread marshallt.
+**Beachten Sie** der asynchrone Aufruf im vorangehenden Code verwendet die ThreadPool.RunAsync lediglich, um eine einfache Möglichkeit zum Auslösen des Ereignisses in einem Hintergrundthread zu veranschaulichen. Sie könnten diese spezielle Methode auch schreiben wie im folgenden Beispiel gezeigt. Dies funktioniert, da der .NET-Taskplaner automatisch „async/await“-Aufrufe zurück an den UI-Thread marshallt.
   
 ```csharp
     public async void MakeToast(string message)
@@ -229,7 +229,7 @@ Wenn Sie das Projekt jetzt erstellen, sollte dies ordnungsgemäß ausgeführt we
 
 ## <a name="to-program-the-javascript-app"></a>So programmieren Sie die JavaScript-App
 
-Jetzt können Sie der JavaScript-App eine Schaltfläche hinzufügen, damit sie die Klasse verwendet, die Sie gerade zum Erstellen des Popups definiert haben. Vorher müssen Sie einen Verweis auf das ToasterComponent-Projekt hinzufügen, das Sie gerade erstellt haben. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Projekt "toasterapplication" ein, wählen Sie **Hinzufügen &gt; Verweise**, und klicken Sie dann auf **Neuen Verweis hinzufügen** . Wählen Sie im Dialogfeld „Verweis hinzufügen” im linken Bereich unter „Projektmappe” das Komponentenprojekt aus, und wählen Sie dann im mittleren Bereich „ToasterComponent” aus. Klicken Sie auf die Schaltfläche **OK**.
+Jetzt können Sie der JavaScript-App eine Schaltfläche hinzufügen, damit sie die Klasse verwendet, die Sie gerade zum Erstellen des Popups definiert haben. Vorher müssen Sie einen Verweis auf das ToasterComponent-Projekt hinzufügen, das Sie gerade erstellt haben. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das ToasterApplication-Projekt, wählen Sie **Hinzufügen &gt; Verweise** und anschließend die Schaltfläche **Neuen Verweis hinzufügen** aus. Wählen Sie im Dialogfeld „Verweis hinzufügen” im linken Bereich unter „Projektmappe” das Komponentenprojekt aus, und wählen Sie dann im mittleren Bereich „ToasterComponent” aus. Klicken Sie auf die Schaltfläche **OK**.
 
 Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das ToasterApplication-Projekt, und wählen Sie **Als Startprojekt festlegen** aus.
 
@@ -269,19 +269,19 @@ Die makeToast-Funktion muss mit einer Schaltfläche verknüpft werden. Aktualisi
     </body>
 ```
 
-Ohne TypedEventHandler könnte die App schon auf dem lokalen Computer ausgeführt und auf die Schaltfläche zum Erstellen des Popups geklickt werden. In dieser App passiert aber nichts. Um herauszufinden, woran das liegt, wird der verwaltete Code gedebuggt, der ToastCompletedEvent auslöst. Halten Sie das Projekt, und wählen Sie dann auf der Menüleiste **Debuggen &gt; Toaster Anwendungseigenschaften**. Ändern Sie den **Debuggertyp** in **Nur verwaltet**. Wählen Sie erneut auf der Menüleiste **Debuggen &gt; Ausnahmen**, und wählen Sie dann die **Common Language Runtime-Ausnahmen**.
+Ohne TypedEventHandler könnte die App schon auf dem lokalen Computer ausgeführt und auf die Schaltfläche zum Erstellen des Popups geklickt werden. In dieser App passiert aber nichts. Um herauszufinden, woran das liegt, wird der verwaltete Code gedebuggt, der ToastCompletedEvent auslöst. Beenden Sie das Projekt, und wählen Sie dann in der Menüleiste **Debuggen &gt; Toaster-Anwendungseigenschaften** aus. Ändern Sie den **Debuggertyp** in **Nur verwaltet**. Wählen Sie nun in der Menüleiste **Debuggen &gt; Ausnahmen** und dann **Common Language Runtime-Ausnahmen** aus.
 
 Führen Sie die App jetzt aus, und klicken Sie auf die Schaltfläche zum Erstellen des Popups. Der Debugger fängt die Ausnahme „ungültige Umwandlung” ab. Obwohl dies nicht aus der Meldung ersichtlich ist, wird diese Ausnahme ausgelöst, weil Proxys für diese Schnittstelle fehlen.
 
-![Fehlende Proxys](./images/debuggererrormissingproxy.png)
+![Fehlender Proxy](./images/debuggererrormissingproxy.png)
 
 Der erste Schritt zum Erstellen eines Proxys und Stubs für eine Komponente besteht darin, den Schnittstellen eine eindeutige ID oder GUID hinzufügen. Das zu verwendende GUID-Format hängt davon ab, ob Sie in C#, Visual Basic, einer anderen .NET-Sprache oder in C++ programmieren.
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>So generieren Sie GUIDs für die Schnittstellen der Komponente (C#- oder andere .NET-Sprachen)
 
-Wählen Sie auf der Menüleiste Tools &gt; GUID erstellen. Wählen Sie im Dialogfeld „5. \[GUID ("Xxxxxxxx-Xxxx Xxxx) \]. Klicken Sie auf die Schaltfläche „Neue GUID” und dann auf die Schaltfläche „Kopieren”.
+Wählen Sie in der Menüleiste „Extras &gt; GUID erstellen” aus. Wählen Sie im Dialogfeld „5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. Klicken Sie auf die Schaltfläche „Neue GUID” und dann auf die Schaltfläche „Kopieren”.
 
-![GUID-Generator-tool](./images/guidgeneratortool.png)
+![GUID-Generator-Tool](./images/guidgeneratortool.png)
 
 Wechseln Sie zurück zur Schnittstellendefinition, und fügen Sie die neue GUID direkt vor der IToaster-Schnittstelle ein, wie im folgenden Beispiel gezeigt. (Verwenden Sie nicht die GUID aus dem Beispiel. Jede eindeutige Schnittstelle sollte eine eigene GUID haben.)
 
@@ -296,7 +296,7 @@ Wiederholen Sie diese Schritte für die IToast-Schnittstelle.
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c"></a>So generieren Sie GUIDs für die Schnittstellen der Komponente (C++)
 
-Wählen Sie auf der Menüleiste Tools &gt; GUID erstellen. Wählen Sie im Dialogfeld „3. Struktur-GUID mit statischem Konstruktor = { ... }” aus. Klicken Sie auf die Schaltfläche „Neue GUID” und dann auf die Schaltfläche „Kopieren”.
+Wählen Sie in der Menüleiste „Extras &gt; GUID erstellen” aus. Wählen Sie im Dialogfeld „3. Struktur-GUID mit statischem Konstruktor = { ... }” aus. Klicken Sie auf die Schaltfläche „Neue GUID” und dann auf die Schaltfläche „Kopieren”.
 
 Fügen Sie die GUID direkt vor der Definition der IToaster-Schnittstelle ein. Nach dem Einfügen sollte die GUID dem folgenden Beispiel ähneln: (Verwenden Sie nicht die GUID aus dem Beispiel. Jede eindeutige Schnittstelle sollte eine eigene GUID haben.)
 ```cpp
@@ -326,10 +326,10 @@ winmdidl /outdir:output "$(TargetPath)"
 midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid "$(ProjectDir)$(TargetName)_i.c" /env win32 /h "$(ProjectDir)$(TargetName).h" /winmd "Output\$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(ProjectDir)dlldata.c" /proxy "$(ProjectDir)$(TargetName)_p.c" "Output\$(TargetName).idl"
 ```
 
-**Wichtige**für eine ARM oder X64 Projekt-Konfiguration, ändern Sie den MIDL/env Parameter X64 oder arm32.
+**Wichtige**  für ein ARM oder X64 Projektkonfiguration, ändern Sie den Parameter der MIDL-/ env X64 oder arm32.
 
-Um sicherzustellen, dass die IDL-Datei ist neu generiert, jedes Mal, wenn die winmd-Datei geändert wird, ändern, **Führen Sie das Postbuildereignis** **bei der Build für die Projektausgabe updates.**
-Die Eigenschaftenseite Buildereignisse sollte wie folgt aussehen: ![Buildereignisse](./images/buildevents.png)
+Um sicherzustellen, dass die IDL-Datei bei jeder Änderung der WINMD-Datei neu generiert wird, ändern Sie **Postbuildereignis ausführen** in **Wenn der Build die Projektausgabe aktualisiert**.
+Die Eigenschaftenseite "Buildereignisse", sollte dieser ähneln: ![Buildereignisse](./images/buildevents.png)
 
 Erstellen Sie die Projektmappe neu, um die IDL zu generieren und zu kompilieren.
 
@@ -337,11 +337,11 @@ Sie können überprüfen, ob MIDL die Projektmappe ordnungsgemäß kompiliert ha
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>So kompilieren Sie den Proxy- und Stubcode in eine DLL-Datei
 
-Nachdem Sie nun über die erforderlichen Dateien verfügen, können Sie diese kompilieren, um eine DLL (C++-Datei) zu erstellen. Um dies so einfach wie möglich zu machen, fügen Sie ein neues Projekt hinzu, um das Erstellen der Proxys zu unterstützen. Öffnen Sie das Kontextmenü für die ToasterApplication-Projektmappe, und wählen Sie dann **Hinzufügen > Neues Projekt** aus. Erweitern Sie im linken Bereich des Dialogfelds **Neues Projekt** **Visual C++ &gt; Windows &gt; universellen Windows**, und wählen Sie im mittleren Bereich **DLL (UWP-apps)**. (Beachten Sie, dass dies ein C++-Komponente für Windows-Runtime-Projekt nicht ist.) Geben Sie dem Projekt Proxys, und klicken Sie dann auf **OK** . Diese Dateien werden bei Änderungen der C#-Klasse von den Postbuildereignissen aktualisiert.
+Nachdem Sie nun über die erforderlichen Dateien verfügen, können Sie diese kompilieren, um eine DLL (C++-Datei) zu erstellen. Um dies so einfach wie möglich zu machen, fügen Sie ein neues Projekt hinzu, um das Erstellen der Proxys zu unterstützen. Öffnen Sie das Kontextmenü für die ToasterApplication-Projektmappe, und wählen Sie dann **Hinzufügen > Neues Projekt** aus. Im linken Bereich die **neues Projekt** Dialogfeld erweitern Sie **Visual C++ &gt; Windows &gt; universellen Windows**, und wählen Sie dann im mittleren Bereich **DLL (UWP-apps)** . (Beachten Sie, dass dies kein C++-Komponente für Windows-Runtime-Projekt). Nennen Sie das Projekt Proxys, und wählen Sie dann die **OK** Schaltfläche. Diese Dateien werden bei Änderungen der C#-Klasse von den Postbuildereignissen aktualisiert.
 
 Standardmäßig generiert das Proxies-Projekt Headerdateien (.h) und C++-Dateien (.cpp). Da die DLL aus den Dateien erstellt wird, die von MIDL generiert werden, sind die H- und CPP-Dateien nicht erforderlich. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für diese Dateien, wählen Sie **Entfernen**, und bestätigen Sie dann die Löschung.
 
-Da das Projekt nun leer ist, können Sie die von MIDL generierten Dateien wieder hinzufügen. Öffnen Sie das Kontextmenü für das Projekt Proxys, und wählen Sie dann **Hinzufügen > Vorhandenes Element.** Navigieren Sie im Dialogfeld zum ToasterComponent-Projektverzeichnis, und wählen Sie die folgenden Dateien aus: ToasterComponent.h, ToasterComponent_i.c, ToasterComponent_p.c, und dlldata.c. Klicken Sie auf die Schaltfläche **Hinzufügen**.
+Da das Projekt nun leer ist, können Sie die von MIDL generierten Dateien wieder hinzufügen. Öffnen Sie das Kontextmenü für das Proxies-Projekt, und wählen Sie dann **Hinzufügen > Vorhandenes Element** aus. Klicken Sie im Dialogfeld navigieren Sie zum ToasterComponent-Projektverzeichnis, und wählen Sie diese Dateien: ToasterComponent.h, ToasterComponent_i.c, ToasterComponent_p.c und dlldata.c-Dateien. Klicken Sie auf die Schaltfläche **Hinzufügen**.
 
 Erstellen Sie im Proxies-Projekt eine DEF-Datei, um die DLL-Exporte zu definieren, die in dlldata.c beschrieben sind. Öffnen Sie das Kontextmenü für das Projekt, und wählen Sie dann **Hinzufügen > Neues Element**. Wählen Sie im linken Bereich des Dialogfelds „Code” aus, und wählen Sie dann im mittleren Bereich „Moduldefinitionsdatei” aus. Nennen Sie die Datei „proxies.def”, und klicken Sie dann auf die Schaltfläche **Hinzufügen**. Öffnen Sie diese DEF-Datei und bearbeiten Sie sie, um die EXPORTS einzuschließen, die in dlldata.c definiert sind:
 
@@ -351,7 +351,7 @@ EXPORTS
     DllGetClassObject       PRIVATE
 ```
 
-Wenn Sie das Projekt jetzt erstellen, tritt ein Fehler auf. Damit dieses Projekt ordnungsgemäß kompiliert wird, müssen Sie die Einstellungen für die Kompilierung und Verknüpfung des Projekts ändern. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Proxies-Projekt, und wählen Sie dann **Eigenschaften** aus. Ändern Sie die Eigenschaftenseiten wie folgt.
+Wenn Sie das Projekt jetzt erstellen, tritt ein Fehler auf. Damit dieses Projekt ordnungsgemäß kompiliert wird, müssen Sie die Einstellungen für die Kompilierung und Verknüpfung des Projekts ändern. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Proxies-Projekt, und wählen Sie dann **Eigenschaften** aus. Ändern Sie die Eigenschaftenseiten wie folgt:
 
 Wählen Sie im linken Bereich **C/C++ > Präprozessor** und dann im rechten Bereich **Präprozessordefinitionen** aus, klicken Sie auf die Schaltfläche mit dem Pfeil nach unten und dann auf **Bearbeiten**. Fügen Sie diese Definitionen in das Feld ein:
 
@@ -360,7 +360,7 @@ WIN32;_WINDOWS
 ```
 Ändern Sie unter **C/C++ > Vorkompilierte Header** die Option **Vorkompilierter Header** in **Vorkompilierte Header nicht verwenden**, und klicken Sie dann auf die Schaltfläche **Übernehmen**.
 
-Unter **Linker > Allgemein**, **Importbibliothek ignorieren** zu **Ye**s ändern, und wählen Sie dann die Schaltfläche " **anwenden** ".
+Ändern Sie unter **Linker > Allgemein** die Option **Importbibliothek ignorieren** in **Ja**, und klicken Sie dann auf die Schaltfläche **Übernehmen**.
 
 Wählen Sie unter **Linker > Eingabe** die Option **Zusätzliche Abhängigkeiten** aus, klicken Sie auf die Schaltfläche mit dem Pfeil nach unten, und klicken Sie dann auf **Bearbeiten**. Fügen Sie diesen Text in das Feld ein:
 
@@ -381,7 +381,7 @@ Stellen Sie sicher, dass die Projektmappe ordnungsgemäß erstellt wird, indem S
 
 ## <a name="to-register-the-proxy-and-stub"></a>So registrieren Sie den Proxy und den Stub
 
-Öffnen Sie im ToasterApplication-Projekt das Kontextmenü für „package.appxmanifest”, und wählen Sie dann **Öffnen mit** aus. Wählen Sie im Dialogfeld Öffnen mit die Option **XML-Text-Editor** aus, und klicken Sie dann auf die Schaltfläche **OK**. Um eine windows.activatableClass.proxyStub-Erweiterungsregistrierung bereitzustellen, wird XML-Code eingefügt, der auf den GUIDs im Proxy basiert. Öffnen Sie „ToasterComponent_i.c”, um die GUIDs für die .appxmanifest-Datei zu suchen. Suchen Sie Einträge, die denen im folgenden Beispiel ähneln Beachten Sie außerdem die Definitionen für IToast, IToaster sowie für eine dritte Schnittstelle – einen typisierten Ereignishandler mit den beiden Parametern: Toaster und Toast. Dies entspricht dem Ereignis, das in der Toaster-Klasse definiert ist. Die GUIDs für IToast und IToaster stimmen mit den GUIDs überein, die für die Schnittstellen in der C#-Datei definiert sind. Da die typisierte Ereignishandlerschnittstelle automatisch generiert wird, wird die GUID für diese Schnittstelle ebenfalls automatisch generiert.
+Öffnen Sie im ToasterApplication-Projekt das Kontextmenü für „package.appxmanifest”, und wählen Sie dann **Öffnen mit** aus. Wählen Sie im Dialogfeld „Öffnen mit” die Option **XML-Text-Editor** aus, und klicken Sie dann auf die Schaltfläche **OK**. Um eine windows.activatableClass.proxyStub-Erweiterungsregistrierung bereitzustellen, wird XML-Code eingefügt, der auf den GUIDs im Proxy basiert. Öffnen Sie „ToasterComponent_i.c”, um die GUIDs für die .appxmanifest-Datei zu suchen. Suchen Sie Einträge, die denen im folgenden Beispiel ähneln Beachten Sie außerdem die Definitionen für IToast, IToaster sowie für eine dritte Schnittstelle – einen typisierten Ereignishandler mit den beiden Parametern: Toaster und Toast. Dies entspricht dem Ereignis, das in der Toaster-Klasse definiert ist. Die GUIDs für IToast und IToaster stimmen mit den GUIDs überein, die für die Schnittstellen in der C#-Datei definiert sind. Da die typisierte Ereignishandlerschnittstelle automatisch generiert wird, wird die GUID für diese Schnittstelle ebenfalls automatisch generiert.
 
 ```cpp
 MIDL_DEFINE_GUID(IID, IID___FITypedEventHandler_2_ToasterComponent__CToaster_ToasterComponent__CToast,0x1ecafeff,0x1ee1,0x504a,0x9a,0xf5,0xa6,0x8c,0x6f,0xb2,0xb4,0x7d);
@@ -406,15 +406,15 @@ Die GUIDs werden jetzt kopiert, in einen hinzugefügten Knoten mit Namen „Exte
       </Extensions>
 ```
 
-Fügen Sie den „Extensions”-XML-Knoten als direkt dem Package-Knoten untergeordnetes Element und einen Peer, z.B. den „Resources”-Knoten, ein.
+Fügen Sie den „Extensions”-XML-Knoten als direkt dem Package-Knoten untergeordnetes Element und einen Peer, z. B. den „Resources”-Knoten, ein.
 
-Bevor Sie fortfahren, muss Folgendes sichergestellt sein: 
+Bevor Sie fortfahren, muss Folgendes sichergestellt sein:
 
--   ProxyStub ClassId wird auf die erste GUID in der Datei ToasterComponent\_i.c festgelegt. Verwenden Sie die erste GUID, die in dieser Datei für die classId definiert ist. (Diese ist möglicherweise mit der GUID für „ITypedEventHandler2” identisch.)
+-   Die ProxyStub-ClassId ist auf die erste GUID in der ToasterComponent festgelegt\_i.c-Datei. Verwenden Sie die erste GUID, die in dieser Datei für die ClassId definiert ist. (Diese ist möglicherweise mit der GUID für „ITypedEventHandler2” identisch.)
 -   „Path” ist der relative Pfad des Pakets der Proxybinärdatei. (In dieser exemplarischen Vorgehensweise befindet sich „proxies.dll” im gleichen Ordner wie „ToasterApplication.winmd”.)
 -   Die GUIDs haben das richtige Format. (Hier können leicht Fehler passieren.)
--   Die Schnittstellen-IDs im Manifest übereinstimmen, die IIDs in ToasterComponent\_i.c-Datei.
--   Die Namen der Schnittstellen sind im Manifest eindeutig. Da diese nicht vom System verwendet werden, können Sie die Werte festlegen. Es sollten Schnittstellennamen gewählt werden, die eindeutig mit Schnittstellen übereinstimmen, die Sie definiert haben. Bei generierten Schnittstellen sollten die Namen auf die generierten Schnittstellen schließen lassen. Die ToasterComponent\_i.c-Datei können Sie die Namen der Schnittstellen zu generieren.
+-   Die Schnittstellen-IDs im Manifest entsprechen den IIDs in ToasterComponent\_i.c-Datei.
+-   Die Namen der Schnittstellen sind im Manifest eindeutig. Da diese nicht vom System verwendet werden, können Sie die Werte festlegen. Es sollten Schnittstellennamen gewählt werden, die eindeutig mit Schnittstellen übereinstimmen, die Sie definiert haben. Bei generierten Schnittstellen sollten die Namen auf die generierten Schnittstellen schließen lassen. Sie können die ToasterComponent\_i.c-Datei, die Ihnen das Generieren von Schnittstellennamen helfen.
 
 Wenn Sie die Projektmappe jetzt auszuführen versuchen, erhalten Sie eine Fehlermeldung, die angibt, dass „proxies.dll” nicht Teil der Nutzlast ist. Öffnen Sie im ToasterApplication-Projekt das Kontextmenü für den Ordner **Verweise**, und wählen Sie **Verweis hinzufügen** aus. Aktivieren Sie das Kontrollkästchen neben dem Proxies-Projekt. Stellen Sie außerdem sicher, dass auch das Kontrollkästchen neben „ToasterComponent” aktiviert ist. Klicken Sie auf die Schaltfläche **OK**.
 
@@ -422,4 +422,4 @@ Das Projekt sollte nun erstellt werden. Führen Sie das Projekt aus, und überpr
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen von Komponenten für Windows-Runtime in C++](creating-windows-runtime-components-in-cpp.md)
+* [Erstellen von Windows-Runtime-Komponenten in C++](creating-windows-runtime-components-in-cpp.md)

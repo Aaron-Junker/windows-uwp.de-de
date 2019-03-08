@@ -1,21 +1,21 @@
 ---
-Description: Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts.
+Description: Ihre Kacheln und Popups können Zeichenfolgen und Bilder laden, die speziell auf die Sprache, den Skalierungsfaktor für die Anzeige, das Design, den hohen Kontrast und anderen Laufzeitkontexte angepasst wurden.
 title: Unterstützte Kachel- und Popupbenachrichtigungen für Sprache, Skalierungsfaktor und hohen Kontrast
 template: detail.hbs
 ms.date: 10/12/2017
 ms.topic: article
-keywords: Windows10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
+keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: aa6e93196d30c15374129eee7714604cfab7b82e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942906"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601475"
 ---
-# <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Kachel- und Toast-Mitteilungsunterstützung für Sprache, Skalierung und hohen Kontrast
+# <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Unterstützte Kachel- und Popupbenachrichtigungen für Sprache, Skalierungsfaktor und hohen Kontrast
 
-Ihre Kacheln und Popups können Zeichenfolgen und Bilder laden, die speziell auf die Sprache, den [Skalierungsfaktor für die Anzeige](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), das Design, den hohen Kontrast und anderen Laufzeitkontexte angepasst wurden. Hintergrundinformationen zur Verwendung von Qualifizierern in den Namen der Ressourcendateien finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung und anderen](../../../app-resources/tailor-resources-lang-scale-contrast.md) und [App-Symbole und Logos](/windows/uwp/design/style/app-icons-and-logos).
+Ihre Kacheln und Popups können Zeichenfolgen und Bilder laden, die speziell auf die Sprache, den [Skalierungsfaktor für die Anzeige](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), das Design, den hohen Kontrast und anderen Laufzeitkontexte angepasst wurden. Hintergrundinformationen zur Verwendung von Qualifizierern in den Namen der Ressourcendateien finden Sie unter [passen Sie Ihre Ressourcen für die Sprache, Skalierung und andere Kennzeichner](../../../app-resources/tailor-resources-lang-scale-contrast.md) und [-App-Symbole und Logos](/windows/uwp/design/style/app-icons-and-logos).
 
 Weitere Informationen zu einer Werterhöhung Ihrer App durch Lokalisierung finden Sie unter [Globalisierung und Lokalisierung](../../globalizing/globalizing-portal.md).
 
@@ -39,7 +39,7 @@ Wenn Sie das `ms-resource`-URI-Schema weglassen ist der Textkörper nur ein Zeic
 
 In der Kachel- oder Popupbenachrichtigungsvorlage können Sie auf eine Bildressource mithilfe des `ms-appx`-URI (Uniform Resource Identifier)-Schemas verweisen, gefolgt vom Namen der Bildressource. Dies entspricht der Art und Weise, in der Sie in XAML-Markup eine Bildressource referenzieren (weitere Informationen finden Sie unter [Referenzieren eines Bilds oder eines anderen Elements in XAML-Markup und Code](../../../app-resources/images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)).
 
-Sie können z.B. Ordner wie folgt benennen.
+Sie können z. B. Ordner wie folgt benennen.
 
 ```
 \Assets\Images\contrast-standard\welcome.png
@@ -56,7 +56,7 @@ Beachten Sie, wie auf die Beispielschema-URI ("`ms-appx`") "`://`" folgt, das ei
 
 ## <a name="hosting-and-loading-images-in-the-cloud"></a>Hosten und Laden von Bildern in der Cloud
 
-Die `ms-resource` und `ms-appx`-URI-Schemen führen einen automatischen Qualifiziererabgleich aus, um die Ressource zu suchen, die für den aktuellen Kontext am besten geeignet ist. Web-URI-Schemen (z.B. `http`, `https`  und `ftp`) führen keinen derartigen automatischen Abgleich durch.
+Die `ms-resource` und `ms-appx`-URI-Schemen führen einen automatischen Qualifiziererabgleich aus, um die Ressource zu suchen, die für den aktuellen Kontext am besten geeignet ist. Web-URI-Schemen (z. B. `http`, `https`  und `ftp`) führen keinen derartigen automatischen Abgleich durch.
 
 Fügen Sie stattdessen auf den URI des Bilds eine Abfragezeichenfolge hinzu, die den angeforderten Qualifiziererwert oder die Werte enthält.
 
@@ -74,7 +74,7 @@ Hier sind die Abfragezeichenfolgen, die Sie verwenden können.
 | --------- | ------------ | ------- |
 | Skalierung | ms-scale  | ?ms-scale=400  |
 | Sprache | ms-lang  | ?ms-lang=en-US  |
-| Kontrast | ms-contrast  | ?ms-contrast=high |
+| Vergleichen Sie | ms-contrast  | ?ms-contrast=high |
 
 Eine Referenztabelle aller möglichen Qualifiziererwerte, die Sie in der Abfragezeichenfolgen verwenden können, finden Sie unter [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
 
@@ -84,12 +84,12 @@ Eine Referenztabelle aller möglichen Qualifiziererwerte, die Sie in der Abfrage
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Bildschirmgrößen und Haltepunkte für reaktionsfähiges Design](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
-* [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung und andere Eigenschaften](../../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Bildschirmgrößen und Haltepunkte für reaktionsfähiges design](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
+* [Passen Sie Ihre Ressourcen für die Sprache, Skalierung und andere Kennzeichner](../../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Richtlinien für die Ressourcen für Kacheln und Symbole](app-assets.md)
 * [Globalisierung und Lokalisierung](../../globalizing/globalizing-portal.md)
-* [Lokalisieren von Zeichenfolgen im Paketmanifest der Benutzeroberfläche und der App](../../../app-resources/localize-strings-ui-manifest.md)
-* [Referenzieren eines Bilds oder eines anderen Elements in XAML-Markup und Code](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
+* [Lokalisieren von Zeichenfolgen in Ihre Benutzeroberfläche und app-Paketmanifest](../../../app-resources/localize-strings-ui-manifest.md)
+* [Verweisen auf ein Bild oder eine andere Anlage aus XAML-Markup und code](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
 * [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
-* [Kachelschema](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
-* [Schema für Popups](/uwp/schemas/tiles/toastschema/schema-root?branch=live)
+* [Kachel "-schema](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
+* [Toast-schema](/uwp/schemas/tiles/toastschema/schema-root?branch=live)

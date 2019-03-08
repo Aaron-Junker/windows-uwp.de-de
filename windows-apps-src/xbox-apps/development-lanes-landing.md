@@ -3,15 +3,15 @@ title: Portieren vorhandener Spiele zu Xbox
 description: Portieren vorhandener Spiele zu Xbox mit UWP.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 ms.localizationpriority: medium
 ms.openlocfilehash: 11af5f09d9c66fc9103b36dc80eae8b8bbc88854
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945356"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595165"
 ---
 # <a name="bringing-existing-games-to-xbox"></a>Portieren vorhandener Spiele zu Xbox
 
@@ -23,10 +23,10 @@ Abhängig von den im Spiel verwendeten Technologien können Sie Ihr Spiel mithil
 
 | Engine      | Beschreibung |
 |------------|-------------|
-|[Angepasstes C++](development-lanes-custom-cpp.md)| Informationen zur C++-Spieleentwicklung auf Xbox mit UWP. |
+|[Benutzerdefinierte C++](development-lanes-custom-cpp.md)| Informationen zur C++-Spieleentwicklung auf Xbox mit UWP. |
 |[Unity](development-lanes-unity.md)| Lernprogramm, das Ihnen dabei hilft, vorhandene Spiele von Unity zu Xbox zu portieren. |
-|[HTML/JS](development-lanes-html.md)| Informationen zur HTML-Spieleentwicklung auf Xbox. |
+|[HTML / JS](development-lanes-html.md)| Informationen zur HTML-Spieleentwicklung auf Xbox. |
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-- [UWP auf Xbox One](index.md)
+- [UWP auf Xbox One](index.md)

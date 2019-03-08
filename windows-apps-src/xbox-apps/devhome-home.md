@@ -1,31 +1,31 @@
 ---
 ms.assetid: 94bb7ad9-cf50-61a8-ad42-48b9bdb9ed36
 title: Startseite (Dev Home)
-description: Enthält Informationen zu der Startseite der Dev Home-app für Xbox One.
+description: Enthält Informationen über die Startseite auf der Dev Home-App für Xbox One.
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 2be7bdfc04fdd09636251000347499e2f2a37ce4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932464"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618415"
 ---
 # <a name="home-page-dev-home"></a>Startseite (Dev Home)
    
   
-**Die Startseite der Dev Home** bietet einen schnellen Zugriff auf die Aufgaben, die die Entwicklung auf einer routinemäßig ausgeführt werden.   
- ![Dev Home-Startseite](images/devhome_home.png)   
+Die **Startseite** von Dev Home bietet einen schnellen Zugriff auf die Aufgaben, die auf Entwicklungskonsolen regelmäßig durchgeführt werden.   
+ ![Startseite des Dev-Startseite](images/devhome_home.png)   
   
-**Die Startseite** enthält die folgenden Bereiche:   
+Die **Startseite** enthält die folgenden Bereiche:   
  
    *  [Schnelle Aktionen](#ID4EEB)  
    *  [Spiele und apps](#ID4EPC)  
    *  [Testkonten](#ID4EQD)  
-   *  [Verbinden mit Ihrem browser](#ID4EFE)  
+   *  [Herstellen einer Verbindung mit Ihrem browser](#ID4EFE)  
 
  
 <a id="ID4EEB"></a>
@@ -35,30 +35,30 @@ ms.locfileid: "8932464"
 ## <a name="quick-actions"></a>Schnelle Aktionen  
    
   
-Die **schnelle Aktionen** -Bereich enthält die folgenden Schaltflächen, die einen schnellen Zugriff auf häufig ausgeführte Aktionen bereitstellen:   
+Der Bereich **Schnelle Aktionen** bietet die folgenden Schaltflächen für einen schnellen Zugriff auf häufig ausgeführte Aktionen:   
  
-   *  **Visual Studio-Pin anzeigen:** Zeigt einen Code, den Sie verwenden können, um die entwicklungskonsole mit der Installation von Visual Studio auf Ihrem Computer koppeln.   
-   *  **Änderung Sandbox:** Ermöglicht Ihnen, welche Sandbox ändern Sie in die Konsole ist.   
-   *  **Neustart-Verwaltungskonsole:** Startet die entwicklungskonsole neu.   
-   *  **Entwicklermodus:** Gibt die Konsole in den einzelhandelsmodus zurück, und startet die Konsole neu.   
-   *  **Starten Home:** Startet die Startseite für den Einzelhandel.   
-   *  **Ein Spiel aus einem freigegebenen Speicherort im Netzwerk zu registrieren:** Registriert ein Spiel aus einem freigegebenen Speicherort im Netzwerk.   
+   *  **Visual Studio-Pin anzeigen:** Zeigt einen Code, den Sie verwenden können, um die entwicklungskonsole mit Visual Studio-Installation auf Ihrem Computer zu koppeln.   
+   *  **Ändern Sie die Sandbox:** Ermöglicht Ihnen, welche Sandbox zu ändern, in die Konsole ist.   
+   *  **Starten Sie die Konsole neu:** Startet die entwicklungskonsole neu.   
+   *  **Lassen Sie die Developer-Modus:** Gibt die Konsole in den Modus für im Einzelhandel aus, und startet die Konsole.   
+   *  **Launch-Startseite:** Startet die Retail-Startbildschirm an.   
+   *  **Registrieren Sie ein Spiel von einer Netzwerkfreigabe:** Registriert ein Spiel in einen freigegebenen Netzwerkpfad an.   
 
   
 <a id="ID4EPC"></a>
 
    
 
-## <a name="games--apps"></a>Spiele und apps   
+## <a name="games--apps"></a>Spiele und Apps   
    
   
-Der Bereich **Spiele und apps** kann verwendet werden, um die folgenden Aktionen ausführen:   
+Im Bereich **Spiele und Apps** können Sie die folgenden Aktionen ausführen:   
  
-   *  Zeigen Sie die Liste der Spiele und apps, die auf die entwicklungskonsole installiert.  
-   *  Spiele und apps schnell zu starten.  
-   *  Anzeigen des PLM-Status von Spielen und apps.  
-   *  Ändern Sie PLM-Status in einem Kontextmenü.  
-   *  Registrieren und einen Titel von einer Netzwerkfreigabe remote ausführen.
+   *  Die Liste der Spiele und Apps anzeigen, die auf der Entwicklungskonsole installiert sind.  
+   *  Spiele und Apps schnell starten.  
+   *  Den PLM-Status von Spielen und Apps anzeigen.  
+   *  Den PLM-Status über ein Kontextmenü ändern.  
+   *  Titel aus einer Remote-Netzwerkfreigabe registrieren und ausführen.
 
   
 <a id="ID4EQD"></a>
@@ -68,28 +68,28 @@ Der Bereich **Spiele und apps** kann verwendet werden, um die folgenden Aktionen
 ## <a name="test-accounts"></a>Testkonten  
    
   
-Bereich **Testkonten** kann verwendet werden, um die folgenden Aktionen ausführen:   
+Im Bereich **Testkonten** können Sie die folgenden Aktionen ausführen:   
  
-   *  Zeigen Sie die Liste der registrierten Benutzer auf der Konsole.  
-   *  Melden Sie sich einen Benutzer an- oder mit einem einzigen Mausklick.  
+   *  Die Liste der Benutzer anzeigen, die auf der Konsole registriert sind.  
+   *  Benutzer mit einem einzigen Mausklick an- oder abmelden.  
    *  Benutzer und Gastkonten hinzufügen.  
-   *  Hier werden Details der Benutzer und Gastkonten.  
+   *  Details zu Benutzern und Gastkonten anzeigen.  
 
   
 <a id="ID4EFE"></a>
 
    
 
-## <a name="connect-with-your-browser"></a>Verbinden mit Ihrem browser  
+## <a name="connect-with-your-browser"></a>Verbindung zum Browser herstellen  
    
   
-Im **Herstellen einer Verbindung mit Ihrem Browser** wird die IP-Adresse und den Port, die Sie verwenden können, um die Konsole über einen Webbrowser zu verwalten.   
+Auf der Seite **Connect with your browser** werden die IP-Adresse und der Port angezeigt, die Sie zur Verwaltung Ihrer Konsole über einen Browser verwenden können.   
   
 <a id="ID4EPE"></a>
 
    
 
-## <a name="see-also"></a>Weitere Informationen:  
- [Entwickler-Startbildschirm auf der Konsole (Dev Home)](dev-home.md)
+## <a name="see-also"></a>Siehe auch  
+ [Entwickler-Homepage in der Konsole (Dev-Startseite)](dev-home.md)
 
   

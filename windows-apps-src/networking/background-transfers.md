@@ -4,19 +4,19 @@ title: Hintergrundübertragungen
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ms.date: 03/23/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 20662a562e67ee836feb1da73a71c76228a550cb
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058681"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643815"
 ---
 # <a name="background-transfers"></a>Hintergrundübertragungen
-Verwenden Sie die Hintergrundübertragungs-API zum zuverlässigen Kopieren von Dateien im Netzwerk. Die Hintergrundübertragungs-API bietet erweiterte Upload- und Downloadfeatures, die bei angehaltener App im Hintergrund ausgeführt werden und auch nach Beendigung der App aktiv bleiben. Die API überwacht den Netzwerkstatus und kann Übertragungen automatisch anhalten und fortsetzen, wenn die Verbindung unterbrochen wird. Übertragungen sind außerdem akkuabhängig – die Downloadaktivität wird also basierend auf dem aktuellen Verbindungs- und Geräteakkustatus angepasst. Die API ist ideal für das Hoch- und Herunterladen von großen Dateien über HTTP(S) geeignet. FTP wird auch unterstützt, allerdings nur für Downloads.
+Verwenden Sie die Hintergrundübertragungs-API zum zuverlässigen Kopieren von Dateien im Netzwerk. Die Hintergrundübertragungs-API bietet erweiterte Upload- und Downloadfeatures, die bei angehaltener App im Hintergrund ausgeführt werden und auch nach Beendigung der App aktiv bleiben. Die API überwacht den Netzwerkstatus und kann Übertragungen automatisch anhalten und fortsetzen, wenn die Verbindung unterbrochen wird. Übertragungen sind außerdem daten- und akkuabhängig – die Downloadaktivität wird also basierend auf dem aktuellen Verbindungs- und Geräteakkustatus angepasst. Die API ist ideal für das Hoch- und Herunterladen von großen Dateien über HTTP(S) geeignet. FTP wird auch unterstützt, allerdings nur für Downloads.
 
-Hintergrundübertragungen werden getrennt von der aufrufenden App ausgeführt und wurden hauptsächlich für lange Übertragungen von Ressourcen wie Videos, Musik und großen Bildern entwickelt. Für diese Szenarien ist die Verwendung der Hintergrundübertragung unverzichtbar, da Downloads im Hintergrund fortgesetzt werden– selbst dann, wenn die App angehalten wurde.
+Hintergrundübertragungen werden getrennt von der aufrufenden App ausgeführt und wurden hauptsächlich für lange Übertragungen von Ressourcen wie Videos, Musik und großen Bildern entwickelt. Für diese Szenarien ist die Verwendung der Hintergrundübertragung unverzichtbar, da Downloads im Hintergrund fortgesetzt werden – selbst dann, wenn die App angehalten wurde.
 
 Wenn Sie kleine Ressourcen herunterladen, deren Download in der Regel schnell abgeschlossen ist, sollten Sie anstelle der Hintergrundübertragung [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)-APIs verwenden.
 
@@ -28,7 +28,7 @@ Wenn eine App die Hintergrundübertragung verwendet, um eine Übertragung zu ini
 > [!NOTE]
 > Aufgrund von Ressourcenbeschränkungen pro App sollte eine App nicht mehr als 200 Übertragungen (DownloadOperations + UploadOperations) zu einem bestimmten Zeitpunkt verfügen. Dieses Limit zu überschreiten kann die App-Übertragungswarteschlange in einen nicht wiederherstellbaren Zustand lassen.
 
-Wenn eine Anwendung gestartet wird, muss er [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) für alle vorhandenen [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation) und [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadoperation) -Objekte aufrufen. Dies nicht zu tun bewirkt, dass den Verlust von Übermittlungen bereits abgeschlossen und schließlich rendert die Verwendung des Features Hintergrundübertragung nutzlos.
+Wenn eine Anwendung gestartet wird, muss er Aufrufen [ **AttachAsync** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) auf allen vorhandenen [ **DownloadOperation** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation) und [  **UploadOperation** ](/uwp/api/windows.networking.backgroundtransfer.uploadoperation) Objekte. Nicht auf diese Weise führt dazu, dass der Verlust von Übertragungen bereits abgeschlossenen und schließlich rendert die Verwendung des Features Hintergrundübertragung nutzlos.
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>Durchführen authentifizierter Dateianforderungen mit Hintergrundübertragung
 Das Feature für die Hintergrundübertragung stellt Methoden bereit, die allgemeine Server- und Proxyanmeldeinformationen, Cookies sowie die Verwendung von benutzerdefinierten HTTP-Headern (mithilfe von [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) für einzelne Übertragungen unterstützen.
@@ -40,33 +40,33 @@ Beispielsweise kann die für einen Vorgang definierte Kostenrichtlinie vorsehen,
 
 Obwohl das Feature für die Hintergrundübertragung über eigene Mechanismen zur Behandlung von Netzwerkstatusänderungen verfügt, müssen bei mit einem Netzwerk verbundenen Apps einige allgemeine Punkte im Zusammenhang mit der Konnektivität beachtet werden. Weitere Informationen finden Sie unter [Zugreifen auf den Netzwerkverbindungsstatus und Verwalten von Netzwerkkosten (HTML)](https://msdn.microsoft.com/library/windows/apps/hh452983).
 
-> **Hinweis:** für apps, die auf mobilen Geräten ausgeführt werden, stehen die folgenden Features, die dem Benutzer ermöglichen, überwachen und Einschränken der Datenmenge, die übertragen wird basierend auf dem Typ der Verbindung, roaming Status und die Daten des Benutzers zu planen. Aus diesem Grund können Hintergrundübertragungen auf dem Telefon auch dann angehalten werden, wenn die Übertragung gemäß dem [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138)-Wert fortgesetzt werden sollte.
+> **Beachten Sie**  für apps, die auf mobilen Geräten ausgeführt werden, stehen die folgenden Funktionen, die durch den Benutzer überwachen und beschränken die Menge der Daten, die übertragen werden, basierend auf den Typ der Verbindung, Status, roaming zulassen, und Planen Sie die Daten des Benutzers. Aus diesem Grund können Hintergrundübertragungen auf dem Telefon auch dann angehalten werden, wenn die Übertragung gemäß dem [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138)-Wert fortgesetzt werden sollte.
 
 Die folgende Tabelle zeigt für jeden [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138)-Wert, wann Hintergrundübertragungen basierend auf dem aktuellen Status des Telefons zulässig sind. Sie können den aktuellen Status des Telefons auch mithilfe der [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244)-Klasse ermitteln.
 
-| Gerätestatus                                                                                                                      | UnrestrictedOnly | Standard | Always |
+| Gerätestatus                                                                                                                      | UnrestrictedOnly | Standard | Immer |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
 | Mit WLAN verbunden                                                                                                                 | Zulassen            | Zulassen   | Zulassen  |
-| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits nicht zu erwarten                                                   | Verweigern             | Zulassen   | Zulassen  |
-| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits zu erwarten                                                       | Verweigern             | Verweigern    | Zulassen  |
-| Getaktete Verbindung, Roaming, unter dem Datenlimit                                                                                     | Verweigern             | Verweigern    | Zulassen  |
-| Getaktete Verbindung, Roaming, über dem Datenlimit. Dieser Status tritt nur auf, wenn der Benutzer in der Data Sense-Benutzeroberfläche die Option „Datennutzung im Hintergrund einschränken“ aktiviert. | Verweigern             | Verweigern    | Verweigern   |
+| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits nicht zu erwarten                                                   | Deny             | Zulassen   | Zulassen  |
+| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits zu erwarten                                                       | Deny             | Deny    | Zulassen  |
+| Getaktete Verbindung, Roaming, unter dem Datenlimit                                                                                     | Deny             | Deny    | Zulassen  |
+| Getaktete Verbindung, Roaming, über dem Datenlimit. Dieser Status tritt nur auf, wenn der Benutzer in der Data Sense-Benutzeroberfläche die Option „Datennutzung im Hintergrund einschränken“ aktiviert. | Deny             | Deny    | Deny   |
 
 ## <a name="uploading-files"></a>Hochladen von Dateien
-Bei der Hintergrundübertragung erfolgt der Upload als [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224). Dabei wird eine Reihe von Steuerungsmethoden zum Neustarten oder Abbrechen des Vorgangs verfügbar gemacht. App-Ereignisse (z.B. Anhalten oder Beenden) und Konnektivitätsänderungen werden vom System automatisch durch **UploadOperation** behandelt. Uploads werden bei Anhalten oder Unterbrechen einer App und auch nach dem Beenden der App fortgesetzt. Außerdem wird durch Festlegen der [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018)-Eigenschaft angegeben, ob die App Uploads startet, wenn für die Internetkonnektivität ein getaktetes Netzwerk verwendet wird.
+Bei der Hintergrundübertragung erfolgt der Upload als [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224). Dabei wird eine Reihe von Steuerungsmethoden zum Neustarten oder Abbrechen des Vorgangs verfügbar gemacht. App-Ereignisse (z. B. Anhalten oder Beenden) und Konnektivitätsänderungen werden vom System automatisch durch **UploadOperation** behandelt. Uploads werden bei Anhalten oder Unterbrechen einer App und auch nach dem Beenden der App fortgesetzt. Außerdem wird durch Festlegen der [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018)-Eigenschaft angegeben, ob die App Uploads startet, wenn für die Internetkonnektivität ein getaktetes Netzwerk verwendet wird.
 
 In den folgenden Beispielen werden die Erstellung und Initialisierung eines einfachen Uploads sowie das Aufzählen und Fortsetzen von in einer vorherigen App-Sitzung gespeicherten Vorgängen erläutert.
 
 ### <a name="uploading-a-single-file"></a>Hochladen einer Datei
 Die Erstellung eines Uploads beginnt mit [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). Mit dieser Klasse werden die Methoden bereitgestellt, womit die App den Upload konfigurieren kann, bevor die resultierende [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224)-Instanz erstellt wird. Im folgenden Beispiel wird gezeigt, wie dies mit den erforderlichen [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) und [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)-Objekten gemacht wird.
 
-**Identifizieren der Datei und des Ziels für den Upload**
+**Identifizieren Sie die Datei und das Ziel für den upload**
 
 Vor dem Erstellen einer [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) müssen wir den URI des Speicherorts für den Upload und die hochzuladende Datei bestimmen. Im folgenden Beispiel wird der *uriString*-Wert mit einer Zeichenfolge aus der Benutzeroberflächeneingabe und der *file*-Wert mit dem [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)-Objekt gefüllt, das von einem [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275)-Vorgang zurückgegeben wird.
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "Identify the file and destination for the upload")]
 
-**Erstellen und Initialisieren des Uploadvorgangs**
+**Erstellen Sie und initialisieren Sie den Uploadvorgang**
 
 Im vorherigen Schritt wurden die Werte *uriString* und *file* an eine Instanz von „UploadOp“ aus dem nächsten Beispiel übergeben. Dort werden sie zum Konfigurieren und Starten des neuen Uploadvorgangs verwendet. Zunächst wird *uriString* analysiert, um das erforderliche [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)-Objekt zu erstellen.
 
@@ -85,7 +85,7 @@ promise = upload.startAsync().then(complete, error, progress);
 Nach dem Async-Methodenaufruf folgt eine then-Anweisung, die von der App definierte Methoden angibt, die aufgerufen werden, wenn ein Ergebnis aus dem Async-Methodenaufruf zurückgegeben wird. Weitere Informationen zu diesem Programmierungsmuster finden Sie unter [Asynchrone Programmierung in JavaScript mit Zusagen](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
 ### <a name="uploading-multiple-files"></a>Hochladen mehrerer Dateien
-**Identifizieren der Dateien und des Ziels für den Upload**
+**Identifizieren Sie die Dateien und das Ziel für den upload**
 
 In einem Szenario, in dem mehrere Dateien mit einer einzelnen [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) übertragen werden, beginnt der Vorgang wie üblich mit der Angabe des erforderlichen Ziel-URI und der lokalen Dateiinformationen. Ähnlich wie in dem Beispiel im vorherigen Abschnitt wird der URI als Zeichenfolge vom Endbenutzer angegeben, und mit [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) kann auch das Auswählen von Dateien über die Benutzeroberfläche ermöglicht werden. In diesem Szenario muss die App allerdings stattdessen die [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851)-Methode aufrufen, um die Auswahl mehrerer Dateien über die Benutzeroberfläche zu ermöglichen.
 
@@ -110,7 +110,7 @@ function uploadFiles() {
     }
 ```
 
-**Erstellen von Objekten für die verfügbaren Parameter**
+**Erstellen von Objekten für den angegebenen Parametern**
 
 In den nächsten beiden Beispielen wird Code in einer Beispielmethode namens **startMultipart** verwendet, die am Ende des letzten Schritts aufgerufen wurde. Für diese Anleitung wurde der Code in der Methode, der ein Array mit [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029)-Objekten erstellt, von dem Code getrennt, der die resultierende [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) erstellt.
 
@@ -130,7 +130,7 @@ Zuerst wird die vom Benutzer angegebene URI-Zeichenfolge als [**Uri**](https://m
             });
 ```
 
-**Erstellen und Initialisieren des mehrteiligen Uploadvorgangs**
+**Erstellen Sie und initialisieren Sie die mehrteiligen Uploadvorgang**
 
 Nachdem das contentParts-Array mit allen [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029)-Objekten aufgefüllt wurde, die jeweils eine [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) zum Hochladen darstellen, kann [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) mit dem [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) aufgerufen werden, um das Ziel für die Anforderung anzugeben.
 
@@ -161,7 +161,7 @@ Bei Abschluss oder Abbruch von [**UploadOperation**](https://msdn.microsoft.com/
     [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "Enumerate persisted operations")]
 
 ## <a name="downloading-files"></a>Herunterladen von Dateien
-Bei der Hintergrundübertragung erfolgt jeder Download als [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154). Dabei werden eine Reihe von Steuerungsmethoden zum Anhalten, Fortsetzen, Neustarten und Abbrechen des Vorgangs verfügbar gemacht. App-Ereignisse (z.B. Anhalten oder Beenden) und Konnektivitätsänderungen werden vom System automatisch durch **DownloadOperation** behandelt. Downloads werden bei Anhalten oder Unterbrechen einer App und auch nach dem Beenden der App fortgesetzt. In Szenarien für mobile Netzwerke wird außerdem durch Festlegen der [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018)-Eigenschaft angegeben, ob die App Downloads startet oder fortsetzt, wenn für die Internetkonnektivität ein getaktetes Netzwerk verwendet wird.
+Bei der Hintergrundübertragung erfolgt jeder Download als [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154). Dabei werden eine Reihe von Steuerungsmethoden zum Anhalten, Fortsetzen, Neustarten und Abbrechen des Vorgangs verfügbar gemacht. App-Ereignisse (z. B. Anhalten oder Beenden) und Konnektivitätsänderungen werden vom System automatisch durch **DownloadOperation** behandelt. Downloads werden bei Anhalten oder Unterbrechen einer App und auch nach dem Beenden der App fortgesetzt. In Szenarien für mobile Netzwerke wird außerdem durch Festlegen der [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018)-Eigenschaft angegeben, ob die App Downloads startet oder fortsetzt, wenn für die Internetkonnektivität ein getaktetes Netzwerk verwendet wird.
 
 Wenn Sie kleine Ressourcen herunterladen, deren Download in der Regel schnell abgeschlossen ist, sollten Sie anstelle der Hintergrundübertragung [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)-APIs verwenden.
 
@@ -172,7 +172,7 @@ Das folgende Beispiel veranschaulicht, wie mit Zeichenfolgen, die einen URI und 
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_A)]
 
-Beachten Sie die asynchronen Methodenaufrufe, die mit JavaScript-Zusagen definiert sind. Aus Zeile17 des vorherigen Codebeispiels geht Folgendes hervor:
+Beachten Sie die asynchronen Methodenaufrufe, die mit JavaScript-Zusagen definiert sind. Aus Zeile 17 des vorherigen Codebeispiels geht Folgendes hervor:
 
 ```javascript
 promise = download.startAsync().then(complete, error, progress);
@@ -199,7 +199,7 @@ Bei Abschluss oder Abbruch von [**DownloadOperation**](https://msdn.microsoft.co
 1.  Die mit Daten aufgefüllte Liste kann nun zum Neustarten ausstehender Vorgänge verwendet werden.
 
 ## <a name="post-processing"></a>Nachverarbeitung
-Ein neues Feature in Windows 10 ist die Möglichkeit, den Anwendungscode auszuführen, den Abschluss einer hintergrundübertragung auch, wenn die app nicht ausgeführt wird. Ihre App möchte z.B. eine Liste der verfügbaren Filme aktualisieren, nachdem ein Film heruntergeladen wurde, statt bei jedem Start nach neuen Filmen zu suchen. Ihre App möchte ggf. eine fehlerhafte Dateiübertragung behandeln, indem diese unter Verwendung eines anderes Servers oder Ports wiederholt wird. Nachbearbeitung wird für erfolgreiche und nicht erfolgreiche Übertragungen aufgerufen, damit Sie sie zum Implementieren benutzerdefinierter Fehlerbehandlung und Wiederholungslogik verwenden können.
+Ein neues Feature in Windows 10 ist die Möglichkeit zum Ausführen von Anwendungscode nach Abschluss des eine hintergrundübertragung, selbst wenn die app nicht ausgeführt wird. Ihre App möchte z. B. eine Liste der verfügbaren Filme aktualisieren, nachdem ein Film heruntergeladen wurde, statt bei jedem Start nach neuen Filmen zu suchen. Ihre App möchte ggf. eine fehlerhafte Dateiübertragung behandeln, indem diese unter Verwendung eines anderes Servers oder Ports wiederholt wird. Nachbearbeitung wird für erfolgreiche und nicht erfolgreiche Übertragungen aufgerufen, damit Sie sie zum Implementieren benutzerdefinierter Fehlerbehandlung und Wiederholungslogik verwenden können.
 
 Nachbearbeitung verwendet die vorhandene Hintergrundaufgaben-Infrastruktur. Erstellen Sie eine Hintergrundaufgabe, und ordnen Sie sie Ihren Übertragungen zu, bevor Sie die Übertragung starten. Die Übertragungen werden dann im Hintergrund ausgeführt, und wenn sie abgeschlossen sind, wird die Hintergrundaufgabe aufgerufen, um die Nachbearbeitung auszuführen.
 
@@ -260,7 +260,7 @@ Es müssen zwei primäre Szenarien zu Verbindungszeitüberschreitungen berücksi
 
 -   Nach dem Herstellen einer Verbindung wird eine HTTP-Anforderungsnachricht abgebrochen, auf die nicht innerhalb von zwei Minuten reagiert wurde.
 
-> **Hinweis:** In beiden Szenarien, vorausgesetzt, es besteht eine Internetverbindung Hintergrundübertragung wiederholt eine Anforderung bis zu drei Mal automatisch. Wenn keine Internetkonnektivität erkannt wird, warten zusätzliche Anforderungen, bis Konnektivität vorhanden ist.
+> **Beachten Sie**  In beiden Szenarios vorausgesetzt, es wird die Internetverbindung, Hintergrundübertragung wird eine Anforderung bis zu drei Mal automatisch wiederholt. Wenn keine Internetkonnektivität erkannt wird, warten zusätzliche Anforderungen, bis Konnektivität vorhanden ist.
 
 ## <a name="debugging-guidance"></a>Debugging-Leitfaden
 Das Beenden einer Debugsitzung in Microsoft Visual Studio ist mit dem Schließen der App vergleichbar; PUT-Uploads werden angehalten und POST-Uploads werden beendet. Auch beim Debuggen sollte die App alle beibehaltenen Uploads auflisten und dann neu starten oder abbrechen. Sie können beispielsweise aufgelistete beibehaltene Uploadvorgänge beim App-Start durch die App abbrechen lassen, wenn kein Interesse an vorherigen Operationen für diese Debugsitzung besteht.
@@ -269,20 +269,20 @@ Während Downloads/Uploads beim App-Start in einer Debugsitzung aufgelistet werd
 
 Bei der Verwendung von Hintergrundübertragungen während der Entwicklung kann es vorkommen, dass die internen Caches aktiver und abgeschlossener Übertragungsvorgänge nicht mehr synchron sind. Dies kann zur Folge haben, dass keine neuen Übertragungsvorgänge gestartet werden können, oder dass keine Interaktion mit vorhandenen Vorgängen und [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030)-Objekten mehr möglich ist. In einigen Fällen wird durch den Versuch einer Interaktion mit vorhandenen Vorgängen ein Absturz ausgelöst. Dies kann vorkommen, wenn die [**TransferBehavior**](https://msdn.microsoft.com/library/windows/apps/dn279033)-Eigenschaft auf **Parallel** festgelegt ist. Dieses Problem tritt nur bei bestimmten Szenarien während der Entwicklung auf und betrifft nicht die Endbenutzer Ihrer App.
 
-Vier Szenarien mit VisualStudio können dieses Problem auslösen.
+Vier Szenarien mit Visual Studio können dieses Problem auslösen.
 
--   Sie erstellen ein neues Projekt mit demselben App-Namen wie ein vorhandenes Projekt, jedoch einer anderen Sprache (z.B. C# statt C++).
--   Sie ändern die Zielarchitektur (z.B. von x86 zu x64) in einem vorhandenen Projekt.
--   Sie ändern die Kultur (z.B. von neutral zu en-US) in einem vorhandenen Projekt.
--   Sie fügen in einem vorhandenen Projekt eine Funktion im Paketmanifest (z.B. **Unternehmensauthentifizierung**) hinzu oder entfernen eine.
+-   Sie erstellen ein neues Projekt mit demselben App-Namen wie ein vorhandenes Projekt, jedoch einer anderen Sprache (z. B. C# statt C++).
+-   Sie ändern die Zielarchitektur (z. B. von x86 zu x64) in einem vorhandenen Projekt.
+-   Sie ändern die Kultur (z. B. von neutral zu en-US) in einem vorhandenen Projekt.
+-   Sie fügen in einem vorhandenen Projekt eine Funktion im Paketmanifest (z. B. **Unternehmensauthentifizierung**) hinzu oder entfernen eine.
 
-Normale App-Wartungen wie z.B. Manifestaktualisierungen, bei denen Funktionen hinzugefügt oder entfernt werden, lösen dieses Problem in den Bereitstellungen Ihrer App für Endbenutzer nicht aus.
+Normale App-Wartungen wie z. B. Manifestaktualisierungen, bei denen Funktionen hinzugefügt oder entfernt werden, lösen dieses Problem in den Bereitstellungen Ihrer App für Endbenutzer nicht aus.
 Umgehen Sie dieses Problem, indem Sie alle Versionen der App vollständig deinstallieren und sie mit der neuen Sprache, Architektur, Kultur oder Funktion erneut bereitstellen. Dies ist auf der **Startseite** oder mithilfe von PowerShell und dem **Remove-AppxPackage**-Cmdlet möglich.
 
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Ausnahmen in Windows.Networking.BackgroundTransfer
 Eine Ausnahme wird ausgelöst, wenn eine ungültige Zeichenfolge für einen Uniform Resource Identifier (URI) an den Konstruktor für das [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)-Objekt übergeben wird.
 
-**NET:** Der [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)-Typ wird in C# und VB als [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) angezeigt.
+**.NET:** Die [ **Windows.Foundation.Uri** ](https://msdn.microsoft.com/library/windows/apps/br225998) Typ wird als [ **System.Uri** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) in C# und VB.
 
 In C# und Visual Basic kann dieser Fehler vermieden werden, indem die [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)-Klasse in .NET 4.5 und eine der [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx)-Methoden zum Testen der vom App-Benutzer erhaltenen Zeichenfolge verwendet wird, bevor der URI erstellt wird.
 
@@ -292,7 +292,7 @@ Der [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/libra
 
 Ein Fehler in einer asynchronen Methode im [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)-Namespace wird als ein **HRESULT**-Wert zurückgegeben. Mit der [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093)-Methode wird ein Netzwerkfehler aus einem Hintergrundübertragungsvorgang in einen [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818)-Enumerationswert konvertiert. Die meisten **WebErrorStatus**-Enumerationswerte entsprechen einem vom systemeigenen HTTP- oder FTP-Clientvorgang zurückgegebenen Fehler. Eine App kann nach bestimmten **WebErrorStatus**-Enumerationswerten filtern, um das App-Verhalten je nach Ausnahmeursache zu ändern.
 
-Bei Parameterprüfungsfehlern kann eine App den **HRESULT**-Wert aus der Ausnahme auch verwenden, um ausführlichere Informationen zum zugehörigen Fehler zu erhalten. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Für die meisten Parameterüberprüfungsfehler wird der **HRESULT**-Wert **E\_INVALIDARG** zurückgegeben.
+Bei Parameterprüfungsfehlern kann eine App den **HRESULT**-Wert aus der Ausnahme auch verwenden, um ausführlichere Informationen zum zugehörigen Fehler zu erhalten. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Für die meisten Parameter Validierungsfehler die **HRESULT** zurückgegebene **E\_INVALIDARG**.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [**Windows.Networking.BackgroundTransfer**](/uwp/api/windows.networking.backgroundtransfer)

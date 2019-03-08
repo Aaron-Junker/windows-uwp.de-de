@@ -1,25 +1,25 @@
 ---
-Description: This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
-title: Internationale Schriften
+Description: Dieses Thema listet die Schriftarten, die für die UWP-apps, die in anderen Sprachen als USA lokalisiert sind verfügbar Englisch.
+title: Internationale Schriftarten
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046653"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601135"
 ---
-# <a name="international-fonts"></a>Internationale Schriften
+# <a name="international-fonts"></a>Internationale Schriftarten
 
-Dieses Thema enthält eine Liste der für UWP-Apps verfügbaren Schriften, die in andere Sprachen als Englisch (USA) lokalisiert sind.
+Dieses Thema listet die Schriftarten, die für die UWP-apps, die in anderen Sprachen als USA lokalisiert sind verfügbar Englisch.
 
 In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag](https://go.microsoft.com/fwlink/p/?linkid=227302) der Sprache angegeben. Eine Liste mit speziell vom Microsoft Store unterstützten Sprachtags finden Sie unter [Unterstützte Sprachen](../../publish/supported-languages.md).
 
-| Sprachen | Sprachtag | In Windows verwendete Schriftart |
+| Sprache | Sprachtag | In Windows verwendete Schriftart |
 | --------- | ----------- | -------------------- |
 | Afrikaans | af-ZA | Segoe UI |
 | Albanisch | sq-AL | Segoe UI |
@@ -29,17 +29,17 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Assamesisch | as-IN | Nirmala UI |
 | Aserbaidschanisch (Lateinisch) | az-Latn-AZ | Segoe UI |
 | Bangla (Bangladesch) | bn-BD | Nirmala UI |
-| Bangla (Indien) | bn-IN | NirmalaUI |
-| Baskisch (Baskisch) | eu-ES | Segoe UI |
+| Bangla (Indien) | bn-IN | Nirmala UI |
+| Baskisch (Baskenland) | eu-ES | Segoe UI |
 | Belarussisch | be-BY | Segoe UI |
 | Bosnisch (Lateinisch) | bs-Latn-BA | Segoe UI |
 | Bulgarisch | bg-BG | Segoe UI |
 | Katalanisch | ca-ES | Segoe UI |
 | Zentralkurdisch (Arabisch) | ku-ARAB-IQ | Segoe UI |
 | Cherokee (Cherokee) | chr-CHER-US | Gadugi |
-| Chinesisch vereinfacht | zh-CN | MSYaHei UI |
-| Chinesisch (traditionell, Hongkong SAR) | zh-HK | MSJhengHei UI |
-| Chinesisch (traditionell, Taiwan) | zh-TW | MSJhengHei UI |
+| Chinesisch (vereinfacht) | zh-CN | MS YaHei UI |
+| Chinesisch (traditionell, Hongkong SAR) | zh-HK | MS JhengHei UI |
+| Chinesisch (traditionell, Taiwan) | zh-TW | MS JhengHei UI |
 | Kroatisch | hr-HR | Segoe UI |
 | Tschechisch | cs-CZ | Segoe UI |
 | Dänisch | da-DK | Segoe UI |
@@ -50,7 +50,7 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Filipino | fil-PH | Segoe UI |
 | Finnisch | fi-FI | Segoe UI |
 | Französisch | fr-FR | Segoe UI |
-| Galicisch | gl-ES | SegoeUI |
+| Galicisch | gl-ES | Segoe UI |
 | Georgisch | ka-GE | Segoe UI |
 | Deutsch | de-DE | Segoe UI |
 | Griechisch | el-GR | Segoe UI |
@@ -66,12 +66,12 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | isi Xhosa | xh-ZA | Segoe UI |
 | isi Zulu | zu-ZA | Segoe UI |
 | Italienisch | it-IT | Segoe UI |
-| Japanisch | ja-JP | MeiryoUI (siehe unten stehende Anmerkungen) |
+| Japanisch | ja-JP | Meiryo UI (siehe unten stehende Anmerkungen) |
 | Kannada | kn-IN | Nirmala UI |
 | Kasachisch | kk-KZ | Segoe UI |
-| Khmer | km-KH | LeelawadeeUI |
+| Khmer | km-KH | Leelawadee UI |
 | K'iche' | qut-GT | Segoe UI |
-| Rwanda | rw-RW | Segoe UI |
+| Kinyarwanda | rw-RW | Segoe UI |
 | Kisuaheli | sw-KE | Segoe UI |
 | Konkani | kok-IN | Nirmala UI |
 | Koreanisch | ko-KR | Malgun Gothic |
@@ -81,14 +81,14 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Luxemburgisch | lb-LU | Segoe UI |
 | Mazedonisch | mk-MK | Segoe UI |
 | Malaiisch | ms-MY | Segoe UI |
-| Malayalam | ml-IN | NirmalaUI |
+| Malayalam | ml-IN | Nirmala UI |
 | Maltesisch | mt-MT | Segoe UI |
-| Maori | mi-NZ | SegoeUI |
+| Maori | mi-NZ | Segoe UI |
 | Marathi | mr-IN | Nirmala UI |
 | Mongolisch (Kyrillisch) | mn-MN | Segoe UI |
 | Nepali | ne-NP | Nirmala UI |
 | Norwegisch (Bokmal) | nb-NO | Segoe UI |
-| Norwegisch (Nynorsk)  | nn-NO | Segoe UI |
+| Norwegisch (Nynorsk) | nn-NO | Segoe UI |
 | Odia | or-IN | Nirmala UI |
 | Persisch | fa-IR | Segoe UI |
 | Polnisch | pl-PL | Segoe UI |
@@ -112,12 +112,12 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Spanisch | es-ES | Segoe UI |
 | Schwedisch | sv-SE | Segoe UI |
 | Tadschikisch (Kyrillisch) | tg-Cyrl-TJ | Segoe UI |
-| Tamil | ta-IN | NirmalaUI |
+| Tamil | ta-IN | Nirmala UI |
 | Tatarisch | tt-RU | Segoe UI |
-| Telugu | te-IN | NirmalaUI |
-| Thailändisch | th-TH | LeelawadeeUI |
+| Telugu | te-IN | Nirmala UI |
+| Thailändisch | th-TH | Leelawadee UI |
 | Tigrinya | ti-ET | Ebrima |
-| Türkisch | tr-TR | SegoeUI |
+| Türkisch | tr-TR | Segoe UI |
 | Turkmenisch | tk-TM | Segoe UI |
 | Ukrainisch | uk-UA | Segoe UI |
 | Urdu | ur-PK | Segoe UI |
@@ -125,15 +125,15 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Usbekisch (Lateinisch) | uz-Latn-UZ | Segoe UI |
 | Valencianisch | ca-ES-valencia | Segoe UI |
 | Vietnamesisch | vi-VN | Segoe UI |
-| Walisisch | cy-GB | SegoeUI |
-| Wolof | wo-SN | SegoeUI |
+| Walisisch | cy-GB | Segoe UI |
+| Wolof | wo-SN | Segoe UI |
 | Yoruba | yo-NG | Segoe UI |
 
 ## <a name="japanese-fonts"></a>Japanische Schriften
 
-Die Schriftart MeiryoUI wird in Windows verwendet Windows enthält Yu Gothic und Yu Mincho, zwei Schriftfamilien zur Unterstützung der Anzeige und Bearbeitung japanischer Dokumente. Yu Gothic wird für App-UIs nicht empfohlen.
+Die Schriftart Meiryo UI wird in Windows verwendet Windows enthält Yu Gothic und Yu Mincho, zwei Schriftfamilien zur Unterstützung der Anzeige und Bearbeitung japanischer Dokumente. Yu Gothic wird für App-UIs nicht empfohlen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [BCP-47-Sprachtag](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47-Sprachtag.](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Unterstützte Sprachen](../../publish/supported-languages.md)

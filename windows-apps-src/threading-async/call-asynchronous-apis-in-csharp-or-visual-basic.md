@@ -4,14 +4,14 @@ title: Aufrufen asynchroner APIs in C# oder Visual Basic
 description: Die Universelle Windows-Plattform (UWP) enthält viele asynchrone APIs. Diese sorgen dafür, dass Ihre App reaktionsfähig bleibt, wenn sie über einen längeren Zeitraum mit einer Aufgabe beschäftigt ist.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, C#, Visual Basic, asynchron
+keywords: Windows 10, UWP, C#, Visual Basic, asynchron
 ms.localizationpriority: medium
 ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940946"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632615"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>Aufrufen asynchroner APIs in C# oder Visual Basic
 
@@ -38,7 +38,7 @@ In diesem Beispiel wird durch Aufrufen der asynchronen Methode [**SyndicationCli
 
 Zu diesem Beispiel gibt es eine Reihe wichtiger Dinge anzumerken. Zunächst verwendet die Zeile `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` den **await**-Operator mit dem Aufruf der asynchronen Methode [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460). Der **await**-Operator teilt dem Compiler gewissermaßen mit, dass Sie eine asynchrone Methode aufrufen. Der Compiler übernimmt daraufhin einen Teil der Arbeit für Sie. Als Nächstes enthält die Deklaration des Ereignishandlers das Schlüsselwort **async**. Sie müssen dieses Schlüsselwort in der Methodendeklaration aller Methoden angeben, in denen Sie den **await**-Operator verwenden.
 
-Dieses Thema beschäftigt sich nicht detailliert damit, was der Compiler mit dem **await**-Operator ausführt, sondern damit, wie Ihre App asynchron und reaktionsfähig bleibt. Überlegen Sie, was geschieht, wenn Sie synchronen Code verwenden. Angenommen, es gibt eine Methode namens `SyndicationClient.RetrieveFeed`, die synchron ist. (So eine Methode gibt es nicht, aber wir stellen es uns einfach mal vor.) Wenn Ihre App anstelle von `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` die Zeile `SyndicationFeed feed = client.RetrieveFeed(feedUri)` enthielte, würde die Ausführung der App beendet, bis der Rückgabewert von `RetrieveFeed` verfügbar ist. Während Ihre App auf den Abschluss der Methode wartet, kann sie nicht auf andere Ereignisse reagieren, z.B. auf ein weiteres [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737)-Ereignis. Ihre App wäre also blockiert, bis `RetrieveFeed` zurückgegeben wird.
+Dieses Thema beschäftigt sich nicht detailliert damit, was der Compiler mit dem **await**-Operator ausführt, sondern damit, wie Ihre App asynchron und reaktionsfähig bleibt. Überlegen Sie, was geschieht, wenn Sie synchronen Code verwenden. Angenommen, es gibt eine Methode namens `SyndicationClient.RetrieveFeed`, die synchron ist. (Keine solche Methode vorhanden ist, aber stellen Sie sich vor, dass vorhanden ist.) Wenn Ihre app auf die Zeile enthalten `SyndicationFeed feed = client.RetrieveFeed(feedUri)`, anstelle von `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`, Ausführung der app wird beendet, bis der Rückgabewert von `RetrieveFeed` verfügbar ist. Während Ihre App auf den Abschluss der Methode wartet, kann sie nicht auf andere Ereignisse reagieren, z. B. auf ein weiteres [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737)-Ereignis. Ihre App wäre also blockiert, bis `RetrieveFeed` zurückgegeben wird.
 
 Rufen Sie aber `client.RetrieveFeedAsync` auf, initiiert die Methode den Abruf und wird sofort zurückgegeben. Wenn Sie **await** mit [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) verwenden, beendet die App den Ereignishandler vorübergehend. Sie kann dann die anderen Ereignisse verarbeiten, während **RetrieveFeedAsync** asynchron ausgeführt wird. Hierdurch bleibt die App für den Benutzer reaktionsfähig. Wenn **RetrieveFeedAsync** abgeschlossen und [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) verfügbar ist, macht die App im Ereignishandler im Grunde an der Stelle weiter, wo sie aufgehört hat, und zwar nach `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`, und beendet den Rest der Methode.
 
@@ -66,11 +66,11 @@ Die Tabelle hier enthält Beispiele asynchroner Methoden sowie den Rückgabetyp 
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
 | [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)                                                                                                           | **void**                                          |
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120), eine benutzerdefinierte Ergebnisklasse, die **IAsyncOperation&lt;UInt32&gt;** implementiert. | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
+| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120), eine benutzerdefinierte führt die Klasse, die implementiert **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
  
 
-In [**.NET for UWP apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) definierte asynchrone Methoden besitzen den Rückgabetyp [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) oder [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx). Methoden, die **Task** zurückgeben, ähneln den asynchronen Methoden der Universellen Windows-Plattform, die [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) zurückgeben. In jedem Fall ist das Ergebnis der asynchronen Methode **void**. Der Rückgabetyp **Task&lt;TResult&gt;** gleicht [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) dahingehend, dass es sich beim Ergebnis der asynchronen Methode um den gleichen Typ handelt wie beim `TResult`-Typparameter, wenn die Aufgabe ausgeführt wird. Weitere Informationen zum Verwenden von **.NET for UWP apps** und Aufgaben finden Sie unter [.NET für Windows-Runtime-Apps– Übersicht](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx).
+In [**.NET for UWP apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) definierte asynchrone Methoden besitzen den Rückgabetyp [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) oder [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx). Methoden, die **Task** zurückgeben, ähneln den asynchronen Methoden der Universellen Windows-Plattform, die [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) zurückgeben. In jedem Fall ist das Ergebnis der asynchronen Methode **void**. Der Rückgabetyp **Task&lt;TResult&gt;** gleicht [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) dahingehend, dass es sich beim Ergebnis der asynchronen Methode um den gleichen Typ handelt wie beim `TResult`-Typparameter, wenn die Aufgabe ausgeführt wird. Weitere Informationen zum Verwenden von **.NET for UWP apps** und Aufgaben finden Sie unter [.NET für Windows-Runtime-Apps – Übersicht](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx).
 
 ## <a name="handling-errors"></a>Behandeln von Fehlern
 
@@ -79,7 +79,7 @@ Wenn Sie Ihre Ergebnisse mit dem **await**-Operator aus einer asynchronen Method
 
 Werden asynchrone Methoden von anderen asynchronen Methoden aufgerufen, wird jede Methode, die zu einer Ausnahme führt, an die äußeren Methoden weitergegeben. Folglich können Sie die äußerste Methode mit einem **try/catch**-Block versehen, um Fehler für die geschachtelten asynchronen Methoden abzufangen. Auch hier werden Ausnahmen ähnlich wie bei synchronen Methoden erfasst. **await** kann aber nicht im **catch**-Block verwendet werden.
 
-**Tipp:** ab c# in Microsoft Visual Studio2005, können **await** im **catch** -Block.
+**Tipp**  ab C# in Microsoft Visual Studio 2005 können Sie **"await"** in die **catch** Block.
 
 ## <a name="summary-and-next-steps"></a>Zusammenfassung und nächste Schritte
 

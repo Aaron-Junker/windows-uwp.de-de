@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: aba44cec7081d05f66e90b2540f0e9609b87ab83
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934296"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596875"
 ---
 # <a name="pointofservice-device-objects"></a>PointOfService-Geräteobjekte
 
@@ -44,7 +44,7 @@ In Windows 8 wurde mit UWP-Apps ein neues Anwendungsmodell eingeführt. Auf ober
 Mit einem <DeviceObject>.Closed-Ereignishandler können Sie erkennen, wann ein Objekt aus irgendeinem Grund geschlossen wird. Notieren Sie sich dann die Geräte-ID, um die Verbindung in der Zukunft wiederherzustellen.   Alternativ möchten Sie dies ggf. mit einer Benachrichtigung zum Anhalten der App handhaben, um die Geräte-IDs zur Wiederherstellung der Geräteverbindungen bei Benachrichtigung zum Fortsetzen der App zu speichern.  Stellen Sie sicher, dass Sie die Ereignishandler nicht duplizieren und keine doppelten Aktionen für das Geräteobjekt für <DeviceObject>.Closed und App Suspend ausgeführt werden.
 
 > [!TIP]
-> Weitere Informationen zum Anwendungslebenszyklus für die Universelle Windows-Plattform (UWP) in Windows10 finden Sie in den folgenden Themen:
-> - [Lebenszyklus von Windows 10-UWP-Apps (Universelle Windows-Plattform)](../launch-resume/app-lifecycle.md)
-> - [Behandeln des Anhaltens von Apps](../launch-resume/suspend-an-app.md)
-> - [Behandeln der App-Fortsetzung](../launch-resume/resume-an-app.md)
+> Weitere Informationen zum Anwendungslebenszyklus für die Universelle Windows-Plattform (UWP) in Windows 10 finden Sie in den folgenden Themen:
+> - [App-Lebenszyklus von Windows 10 universelle Windows-Plattform (UWP)](../launch-resume/app-lifecycle.md)
+> - [Behandeln Sie die app anhalten](../launch-resume/suspend-an-app.md)
+> - [Behandeln von app-fortsetzen](../launch-resume/resume-an-app.md)

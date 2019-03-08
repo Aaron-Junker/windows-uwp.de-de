@@ -3,14 +3,14 @@ description: Erfahren Sie, wie Sie native Anzeigen zu Ihrer UWP-App hinzufügen.
 title: Native Anzeigen
 ms.date: 05/11/2018
 ms.topic: article
-keywords: Windows10, UWP, Anzeigen, Werbung, Ad-Steuerelement, native Anzeige
+keywords: Windows 10, UWP, Anzeigen, Werbung, Ad-Steuerelement, native Anzeige
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e9df87cd214d3d03f25c674ec80a73fedf53d6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045243"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628065"
 ---
 # <a name="native-ads"></a>Native Anzeigen
 
@@ -19,39 +19,39 @@ Eine native Anzeige ist ein komponentenbasiertes Anzeigenformat, in denen jedes 
 Für Werbekunden bieten native anzeigen perfekte Platzierungen, da Anzeigen-Umgebung eng in die App integriert ist und die Benutzer daher dazu neigen, mehr Interaktion mit diesen Arten von anzeigen durchzuführen.
 
 > [!NOTE]
-> Native Anzeigen werden derzeit nur für XAML-basierte UWP-Apps für Windows10 unterstützt. Die Unterstützung für UWP-Apps mit HTML und JavaScript ist für eine zukünftige Version des Microsoft Advertising-SDK geplant.
+> Native Anzeigen werden derzeit nur für XAML-basierte UWP-Apps für Windows 10 unterstützt. Die Unterstützung für UWP-Apps mit HTML und JavaScript ist für eine zukünftige Version des Microsoft Advertising-SDK geplant.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-* Installieren Sie das [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) mit Visual Studio2015 oder einer neueren Version von Visual Studio. Installationsanweisungen finden Sie in [diesem Artikel](install-the-microsoft-advertising-libraries.md).
+* Installieren Sie das [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) mit Visual Studio 2015 oder einer neueren Version von Visual Studio. Installationsanweisungen finden Sie in [diesem Artikel](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="integrate-a-native-ad-into-your-app"></a>Native Anzeigen in Ihrer App integrieren
 
 Befolgen Sie diesen Anweisungen, um eine native Anzeige in Ihrer App zu integrieren und vergewissern Sie sich, dass der Implementierung der nativen Anzeige eine Test-Anzeige angezeigt.
 
-1. Öffnen Sie in Visual Studio Ihr Projekt oder erstellen Sie ein neues Projekt.
+1. Öffnen Sie in Visual Studio Ihr Projekt, oder erstellen Sie ein neues Projekt.
     > [!NOTE]
     > Wenn Sie ein vorhandenes Projekt verwenden, öffnen Sie die Datei "Package.appxmanifest" in Ihrem Projekt, und stellen sicher, dass die **Internet (Client)**-Funktion aktiviert ist. Ihre App benötigt diese Funktion, um Testanzeigen und Live-Werbung zu erhalten.
 
-2. Sollte in Ihrem Projekt die Zielplattform **Any CPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z.B. **x86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
+2. Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **X86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 3. Hinzufügen eines Verweises auf die Microsoft Advertising-SDK in Ihrem Projekt:
 
     1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen...** aus.
-    2.  Erweitern Sie im **Verweis-Manager** den Knoten **Universal Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising-SDK für XAML** (Version 10.0).
+    2.  Erweitern Sie im **Verweis-Manager** den Knoten **Universal Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising SDK für XAML** (Version 10.0).
     3.  Klicken Sie im **Verweis-Manager** auf „OK“.
 
-4. Fügen Sie in der geeigneten Codedatei in Ihrer App (z.B. in „MainPage.xaml.cs“ oder einer Codedatei für eine andere Seite) den folgenden Namespaceverweis hinzu.
+4. Fügen Sie in der geeigneten Codedatei in Ihrer App (z. B. in „MainPage.xaml.cs“ oder einer Codedatei für eine andere Seite) den folgenden Namespaceverweis hinzu.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
-5.  Deklarieren Sie an einer geeigneten Stelle in Ihrer App (z.B. in ```MainPage``` oder einer anderen Seite) ein [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2)-Objekt und mehrere Zeichenfolgenfelder, die die Anwendungs-ID und Anzeigeneinheits-ID für die native Anzeige darstellen. Im folgenden Codebeispiel werden die Felder `myAppId` und `myAdUnitId` den [Testwerten](set-up-ad-units-in-your-app.md#test-ad-units) für native Anzeigen zugewiesen.
+5.  Deklarieren Sie an einer geeigneten Stelle in Ihrer App (z. B. in ```MainPage``` oder einer anderen Seite) ein [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2)-Objekt und mehrere Zeichenfolgenfelder, die die Anwendungs-ID und Anzeigeneinheits-ID für die native Anzeige darstellen. Im folgenden Codebeispiel werden die Felder `myAppId` und `myAdUnitId` den [Testwerten](set-up-ad-units-in-your-app.md#test-ad-units) für native Anzeigen zugewiesen.
     > [!NOTE]
-    > Jedes **NativeAdsManagerV2**-Objekt verfügt über eine entsprechende *Anzeigeneinheit*, die durch unsere Dienste zum Anzeigen des nativen Anzeigensteuerelements verwendet wird, und jede Anzeigeneinheit besteht aus einer *Anzeigeneinheits-ID* und *Anwendungs-ID*. In den folgenden Schritten weisen Sie dem Steuerelement eine Anzeigeneinheits-ID und Anwendungs-ID zu. Dieser Test Werte können nur in einer Testversion Ihrer App verwendet werden. Bevor Sie Ihre app im Store veröffentlichen, müssen Sie [Ersetzen Testwerte mit den live-Werten](#release) aus dem Partner Center.
+    > Jedes **NativeAdsManagerV2**-Objekt verfügt über eine entsprechende *Anzeigeneinheit*, die durch unsere Dienste zum Anzeigen des nativen Anzeigensteuerelements verwendet wird, und jede Anzeigeneinheit besteht aus einer *Anzeigeneinheits-ID* und *Anwendungs-ID*. In den folgenden Schritten weisen Sie dem Steuerelement eine Anzeigeneinheits-ID und Anwendungs-ID zu. Dieser Test Werte können nur in einer Testversion Ihrer App verwendet werden. Bevor Sie Ihre app in den Store veröffentlichen, müssen Sie [ersetzen Sie diese Werte mit live-Werte testen](#release) von Partner Center.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
-6.  Instanziieren Sie in Code, der beim Start ausgeführt wird (z.B. im Konstruktor der Seite) das **NativeAdsManagerV2**-Objekt, und verbinden Sie Ereignishandler für die Ereignisse **AdReady** und **ErrorOccurred** des Objekts.
+6.  Instanziieren Sie in Code, der beim Start ausgeführt wird (z. B. im Konstruktor der Seite) das **NativeAdsManagerV2**-Objekt, und verbinden Sie Ereignishandler für die Ereignisse **AdReady** und **ErrorOccurred** des Objekts.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
@@ -63,7 +63,7 @@ Befolgen Sie diesen Anweisungen, um eine native Anzeige in Ihrer App zu integrie
     > [!NOTE]
     > Einige Elemente der nativen Anzeige sind erforderlich und müssen immer in Ihrer App angezeigt werden. Weitere Informationen finden Sie in unseren [Richtlinien für native Anzeigen](ui-and-user-experience-guidelines.md#guidelines-for-native-ads).
 
-    Nehmen wir beispielsweise an, Ihre App enthält eine ```MainPage``` (oder eine andere Seite) mit dem folgenden **StackPanel**. Dies **StackPanel** enthält eine Reihe von Steuerelementen, die verschiedenen Elemente einer nativen Anzeige darstellen (z.B. Titel, Beschreibung, Bilder, *unterstützt von*-Text und eine Schaltfläche, die den *Handlungsaufforderung*-Text darstellt).
+    Nehmen wir beispielsweise an, Ihre App enthält eine ```MainPage``` (oder eine andere Seite) mit dem folgenden **StackPanel**. Dies **StackPanel** enthält eine Reihe von Steuerelementen, die verschiedenen Elemente einer nativen Anzeige darstellen (z. B. Titel, Beschreibung, Bilder, *unterstützt von*-Text und eine Schaltfläche, die den *Handlungsaufforderung*-Text darstellt).
 
     ``` xml
     <StackPanel x:Name="NativeAdContainer" Background="#555555" Width="Auto" Height="Auto"
@@ -109,17 +109,17 @@ Nachdem Sie bestätigt, dass der Implementierung der nativen Anzeige erfolgreich
 
 1.  Stellen Sie sicher, dass die Implementierung der nativen Anzeigen den [Richtlinien für native Anzeigen](ui-and-user-experience-guidelines.md#guidelines-for-native-ads) folgt.
 
-2.  Wechseln Sie zu der Seite [In-app-anzeigen](../publish/in-app-ads.md) und [Erstellen Sie eine anzeigeneinheit](set-up-ad-units-in-your-app.md#live-ad-units), im Partner Center. Geben Sie als Einheitentyp **Native** an. Notieren Sie die Anzeigeneinheits-ID und die Anwendungs-ID.
+2.  Navigieren Sie im Partner Center zu den [In-app-Werbung](../publish/in-app-ads.md) Seite und [erstellen Sie eine Werbeeinheit](set-up-ad-units-in-your-app.md#live-ad-units). Geben Sie als Einheitentyp **Native** an. Notieren Sie sich die Anzeigeneinheits-ID und die Anwendungs-ID.
     > [!NOTE]
-    > Die Anwendungs-IDs für Test-Anzeigeneinheiten und Live-UWP-Anzeigeneinheiten besitzen unterschiedliche Formate. Testanwendungs-ID sind GUIDs. Wenn Sie eine live-UWP-anzeigeneinheit im Partner Center erstellen, entspricht der Anwendung-ID-Wert für die anzeigeneinheit immer die Store-ID für Ihre app (der ein Beispiel für Store-ID-Wert ist 9nblggh4r315).).
+    > Die Anwendungs-IDs für Test-Anzeigeneinheiten und Live-UWP-Anzeigeneinheiten besitzen unterschiedliche Formate. Testanwendungs-ID sind GUIDs. Bei der Erstellung einer UWP-Ad liveunittests im Partner Center entspricht der Wert der Anwendungs-ID für die Ad-Einheit immer die Store-ID für Ihre app (ein Beispiel für Store-ID-Wert ist 9NBLGGH4R315 dargestellt).
 
 3. Sie können optional die Anzeigenvermittlung für die native Anzeige durch Konfigurieren der Einstellungen im Abschnitt [Vermittlungseinstellungen](../publish/in-app-ads.md#mediation) auf der [In-App-Anzeigen](../publish/in-app-ads.md)-Seite aktivieren. Mit der Anzeigenvermittlung können Sie Ihren Anzeigenumsatz und Funktionalitäten zur App-Bewerbung durch die Darstellung von Anzeigen aus mehreren Anzeigennetzwerken verbessern.
 
-4.  Ersetzen Sie in Ihrem Code die Testwerte der anzeigeneinheit (d. h. die *ApplicationId* und *AdUnitId* Parameter für den Konstruktor [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) ) mit den live-Werten, die Sie im Partner Center generiert.
+4.  Ersetzen Sie in Ihrem Code die Testwerte des Ad-Einheit (, also die *ApplicationId* und *AdUnitId* Parameter der [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) Konstruktor) mit der live Werte Sie im Partner Center generiert.
 
-5.  [Übermitteln Ihrer app](../publish/app-submissions.md) mithilfe der Partner Center an den Store.
+5.  [Senden Sie Ihre app](../publish/app-submissions.md) auf den Store mit Partner Center.
 
-6.  Überprüfen Sie Ihre [Berichte zur anzeigenleistung](../publish/advertising-performance-report.md) im Partner Center.
+6.  Überprüfen Sie Ihre [ankündigen Leistungsberichte](../publish/advertising-performance-report.md) im Partner Center.
 
 ## <a name="manage-ad-units-for-multiple-native-ads-in-your-app"></a>Verwalten von Anzeigeeinheiten für mehrere native Anzeigen in Ihrer App
 
@@ -130,6 +130,6 @@ Können mehrere native Platzierung von Werbung in einer einzelnen App verwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Richtlinien für native Anzeigen](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
-* [In-App-Anzeigen](../publish/in-app-ads.md)
-* [Einrichten von Anzeigeneinheiten für die App](set-up-ad-units-in-your-app.md)
+* [Richtlinien für die native anzeigen](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
+* [In-app-Werbung](../publish/in-app-ads.md)
+* [Ad-Einheiten für Ihre app einrichten](set-up-ad-units-in-your-app.md)

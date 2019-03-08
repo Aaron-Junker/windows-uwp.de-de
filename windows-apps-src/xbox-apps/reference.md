@@ -1,19 +1,19 @@
 ---
-title: Geräteportal für Xbox– REST-API
+title: Geräteportal für Xbox – REST-API
 description: API-Referenz für UWP auf Xbox One.
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 5ae8e953-0465-487b-81dd-54a85c904daf
 ms.localizationpriority: medium
 ms.openlocfilehash: d8fdcf01d7d1f72624d73acf2d10ce28dfb75e04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945832"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656995"
 ---
-# <a name="xbox-device-portal-rest-api"></a>Geräteportal für Xbox– REST-API
+# <a name="xbox-device-portal-rest-api"></a>Geräteportal für Xbox – REST-API
 
 Dieser Abschnitt enthält Referenzthemen für die REST-API für das Xbox-Geräteportal. Diese wird verwendet, um Ihre Konsole per Fernzugriff zu konfigurieren und zu verwalten.
 
@@ -21,7 +21,7 @@ Dieser Abschnitt enthält Referenzthemen für die REST-API für das Xbox-Geräte
 |------------|-------------|
 |[/api/app/packagemanager/register](wdp-loose-folder-register-api.md)| Registriert eine App, die in einem losen Ordner enthalten ist. |
 |[/api/app/packagemanager/upload](wdp-folder-upload.md)| Lädt einen ganzen Ordner zur Konsole hoch. |
-|[/ext/App/sshpins](uwp-sshpins-api.md)| Löschen Sie alle vertrauenswürdigen SSH-PINs per Fernzugriff. Dies erfordert die erneute PIN-Kopplung für die UWP-Entwicklung in Visual Studio. |
+|[/ext/app/sshpins](uwp-sshpins-api.md)| Löschen Sie alle vertrauenswürdigen SSH-PINs per Fernzugriff. Dies erfordert die erneute PIN-Kopplung für die UWP-Entwicklung in Visual Studio. |
 |[/ext/app/deployinfo](uwp-deployinfo-api.md)| Fordert Bereitstellungsinformationen für ein oder mehrere installierte Pakete an. |
 |[/ext/fiddler](wdp-fiddler-api.md)| Zum Aktivieren und Deaktivieren der Fiddler-Netzwerkablaufverfolgung |
 |[/ext/httpmonitor/sessions](wdp-httpMonitor-api.md)| Abrufen des HTTP-Datenverkehrs aus der fokussierten App auf der Xbox |
@@ -31,11 +31,11 @@ Dieser Abschnitt enthält Referenzthemen für die REST-API für das Xbox-Geräte
 |[/ext/screenshot](wdp-media-capture-api.md)| Erfasst eine PNG-Darstellung des Bildschirms, der zurzeit auf der Konsole angezeigt wird. |
 |[/ext/settings](wdp-xboxsettings-api.md)| Greift auf Xbox One-Entwicklereinstellungen zu. |
 |[/ext/smb/developerfolder](wdp-smb-api.md)| Greift über den Datei-Explorer auf Ihrem Entwicklungscomputer auf den Entwicklerordner auf Ihrer Konsole zu. |
-|[/ext/user](wdp-user-management.md)| Verwaltet Benutzer auf der Xbox One Konsole. |
+|[/ext/user](wdp-user-management.md)| Verwaltet Benutzer auf der Xbox One-Konsole. |
 |[/ext/xbox/info](wdp-xboxinfo-api.md)| Bietet Informationen zum Xbox One-Gerät |
 |[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| Verwaltet Ihren Xbox Live-Sandkasten. |
 
 ## <a name="see-also"></a>Siehe auch
 
-- [UWP auf Xbox One](index.md)
-- [Windows-Geräteportal](../debug-test-perf/device-portal.md)
+- [UWP auf Xbox One](index.md)
+- [Windows Device Portal](../debug-test-perf/device-portal.md)

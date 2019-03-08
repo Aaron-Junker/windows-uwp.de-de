@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 86b8627461251a5d43762facc18c8a414a117fc9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941407"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604125"
 ---
 # <a name="light-properties"></a>Lichteigenschaften
 
@@ -24,11 +24,11 @@ Die Eigenschaften Position, Reichweite und Dämpfung definieren die Position ein
 ## <a name="span-idlightattenuationspanspan-idlightattenuationspanspan-idlightattenuationspanlight-attenuation"></a><span id="Light_Attenuation"></span><span id="light_attenuation"></span><span id="LIGHT_ATTENUATION"></span>Lichtdämpfung
 
 
-Die Dämpfung steuert, wie die Intensität eines Lichts gegenüber der maximalen Entfernung, angegeben durch die Eigenschaft „Reichweite“, abnimmt. Manchmal werden drei Gleitkommawerte verwendet, um die Lichtdämpfung darzustellen: Dämpfung0, Dämpfung1 und Dämpfung2. Diese Gleitkommawerte reichen von 0,0 bis unendlich und steuern die Lichtdämpfung. Einige Anwendungen stellen den Wert Dämpfung1 auf 1,0 und die anderen Werte, aufgrund der sich ändernden Lichtintensität bei 1 / D, wobei D die Entfernung der Lichtquelle zum Scheitelpunkt darstellt, auf 0,0 ein. Die maximale Lichtintensität befindet sich an der Quelle und nimmt nach 1 / (Leuchtweite) bei der Reichweite des Lichts ab.
+Die Dämpfung steuert, wie die Intensität eines Lichts gegenüber der maximalen Entfernung, angegeben durch die Eigenschaft „Reichweite“, abnimmt. Drei für Gleitkommawerte werden manchmal verwendet, um lichtdämpfung darzustellen: Attenuation0 Attenuation1 und Attenuation2. Diese Gleitkommawerte reichen von 0,0 bis unendlich und steuern die Lichtdämpfung. Einige Anwendungen stellen den Wert Dämpfung1 auf 1,0 und die anderen Werte, aufgrund der sich ändernden Lichtintensität bei 1 / D, wobei D die Entfernung der Lichtquelle zum Scheitelpunkt darstellt, auf 0,0 ein. Die maximale Lichtintensität befindet sich an der Quelle und nimmt nach 1 / (Leuchtweite) bei der Reichweite des Lichts ab.
 
-Deshalb stellt eine Anwendung den Wert Dämpfung0 in der Regel auf 0,0, den Wert Dämpfung1 auf einen konstanten Wert und Dämpfung2 auf 0,0 ein. Variierende Lichteffekte können durch Änderung der Werte erreicht werden. Sie können die Dämpfungswerte kombinieren, um komplexere Dämpfungseffekte zu erzielen. Sie können die Werte auch außerhalb des Normalbereichs einstellen, um noch außergewöhnlichere Dämpfungseffekte zu erzielen. Negative Dämpfungswerte sind jedoch nicht zulässig. Siehe [Dämpfungs- und Spotlight-Faktor](attenuation-and-spotlight-factor.md).
+Deshalb stellt eine Anwendung den Wert Dämpfung0 in der Regel auf 0,0, den Wert Dämpfung1 auf einen konstanten Wert und Dämpfung2 auf 0,0 ein. Variierende Lichteffekte können durch Änderung der Werte erreicht werden. Sie können die Dämpfungswerte kombinieren, um komplexere Dämpfungseffekte zu erzielen. Sie können die Werte auch außerhalb des Normalbereichs einstellen, um noch außergewöhnlichere Dämpfungseffekte zu erzielen. Negative Dämpfungswerte sind jedoch nicht zulässig. Siehe [Abschwächungs- und Spotlicht-Faktor](attenuation-and-spotlight-factor.md).
 
-## <a name="span-idlightcolorspanspan-idlightcolorspanspan-idlightcolorspanlight-color"></a><span id="Light_Color"></span><span id="light_color"></span><span id="LIGHT_COLOR"></span>Lichtfarbe
+## <a name="span-idlightcolorspanspan-idlightcolorspanspan-idlightcolorspanlight-color"></a><span id="Light_Color"></span><span id="light_color"></span><span id="LIGHT_COLOR"></span>Helle Farbe
 
 
 Licht in Direct3D strahlt drei Farben ab, die unabhängig voneinander in der Lichtberechnung des Systems verwendet werden: diffuse Farbe, Umgebungsfarbe und Glanzfarbe. Alle drei Farben sind im Direct3D-Lichtmodul integriert und interagieren mit einem Gegenwert des aktuellen Materials, um eine finale, für das Rendering verwendete Farbe zu erzeugen. Die diffuse Farbe interagiert mit der Eigenschaft „diffuse Reflektion“ des aktuellen Materials, die Glanzfarbe mit der Eigenschaft „Glanzreflektion“ des Materials usw. Einzelheiten darüber, wie Direct3D diese Farben anwendet, finden Sie unter [Beleuchtungsmathematik](mathematics-of-lighting.md).
@@ -56,12 +56,12 @@ Stellen Sie die Lichtrichtung als Vektor ein. Richtungsvektoren werden als Entfe
 
 Obwohl Sie den Richtungsvektor eines Lichts nicht normalisieren müssen, sollten Sie immer sicherstellen, dass eine Größe angegeben ist. Mit anderen Worten, verwenden Sie niemals einen Richtungsvektor mit den Werten &lt;0,0,0&gt;.
 
-## <a name="span-idlightpositionspanspan-idlightpositionspanspan-idlightpositionspanlight-position"></a><span id="Light_Position"></span><span id="light_position"></span><span id="LIGHT_POSITION"></span>Lichtposition
+## <a name="span-idlightpositionspanspan-idlightpositionspanspan-idlightpositionspanlight-position"></a><span id="Light_Position"></span><span id="light_position"></span><span id="LIGHT_POSITION"></span>Position der Lichtquelle
 
 
 Die Lichtposition wird mithilfe einer Vektorstruktur beschrieben. Es wird angenommen, dass sich die X-, Y- und Z-Koordinaten im Weltraum befinden. Gerichtetes Licht ist die einzige Lichtart, für die die Eigenschaft „Position“ nicht verwendet wird.
 
-## <a name="span-idlightrangespanspan-idlightrangespanspan-idlightrangespanlight-range"></a><span id="Light_Range"></span><span id="light_range"></span><span id="LIGHT_RANGE"></span>Leuchtweite
+## <a name="span-idlightrangespanspan-idlightrangespanspan-idlightrangespanlight-range"></a><span id="Light_Range"></span><span id="light_range"></span><span id="LIGHT_RANGE"></span>Light-Bereich
 
 
 Mit der Eigenschaft „Reichweite“ des Lichts wird die Entfernung im Weltraum bestimmt, bei der Gitter in einer Szene nicht länger vom Licht beleuchtet werden, das von einem Objekt abgestrahlt wird. Für gerichtetes Licht wird die Eigenschaft „Reichweite“ nicht verwendet.
@@ -69,7 +69,7 @@ Mit der Eigenschaft „Reichweite“ des Lichts wird die Entfernung im Weltraum 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Lampen und Material](lights-and-materials.md)
+[Lichter und Materialien](lights-and-materials.md)
 
  
 

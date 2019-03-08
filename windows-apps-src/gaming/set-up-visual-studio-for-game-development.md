@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Spiele, Visual Studio, Tools, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924644"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653475"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Visual Studio-Tools für die Spieleprogrammierung
 
@@ -19,7 +19,7 @@ ms.locfileid: "8924644"
 
 **Zusammenfassung**
 
--   [Erstellen eines DirectX-Spieleprojekts aus einer Vorlage](user-interface.md)
+-   [Erstellen Sie ein DirectX-Spiele-Projekt aus einer Vorlage](user-interface.md)
 -   Visual Studio-Tools für die Programmierung von DirectX-Spielen
 
 
@@ -45,7 +45,7 @@ Erstellen Sie [Buildanpassungsdateien](#build-customizations-for-3d-assets), um 
 
 Weitere Informationen finden Sie unter [Arbeiten mit Texturen und Bildern](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
 
-> **Hinweis:** der Grafik-Editor ist kein Ersatz für eine bildbearbeitungs app gedacht, aber für viele einfache Anzeige- und bearbeitungsfälle geeignet ist.
+> **Beachten Sie**  der Bild-Editor dient kein Ersatz für eine vollständige Funktion Image app bearbeiten, jedoch ist für viele einfach anzeigen und Bearbeiten von Szenarien geeignet.
 
  
 
@@ -64,7 +64,7 @@ Dies ist ein Screenshot eines Modells im Editor, auf das Beleuchtungsfunktionen 
 
 Weitere Informationen finden Sie unter [Arbeiten mit 3D-Modellen](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
 
-> **Hinweis:** der Modell-Editor ist kein Ersatz für eine modellbearbeitungs app gedacht, aber für viele einfache Anzeige- und bearbeitungsfälle geeignet ist.
+> **Beachten Sie**  der Modell-Editor dient kein Ersatz für eine vollständige Funktionsmodell app bearbeiten, aber für viele einfach anzeigen und Bearbeiten von Szenarien geeignet ist.
 
  
 
@@ -116,10 +116,10 @@ Weitere Informationen finden Sie unter [Arbeiten mit Shadern](https://msdn.micro
 
 Sie können dem Projekt Buildanpassungen hinzufügen, sodass Ressourcen von Visual Studio in nutzbare Formate konvertiert werden. Danach können Sie die Objekte in die App laden und verwenden, indem Sie DirectX-Ressourcen wie in jeder anderen DirectX-App auch erstellen und füllen.
 
-Zum Hinzufügen von Buildanpassungen klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer** , und wählen Sie **Anpassungen erstellen**. Sie können die folgenden Arten von Buildanpassungen zu Ihrem Projekt hinzufügen.
+Zum Hinzufügen von Buildanpassungen klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt und wählen die Option **Buildanpassungen...**. Sie können dem Projekt die folgenden Arten von Buildanpassungen hinzufügen:
 
 -   Von der Bildinhaltpipeline werden Bilddateien als Eingaben verwendet und DirectDraw Surface-Dateien (.dds) ausgegeben.
--   Von der Gitterinhaltpipeline werden Gitterdateien (z.B. FBX) als Eingabe verwendet und CMO-Gitterdateien ausgegeben.
+-   Von der Gitterinhaltpipeline werden Gitterdateien (z. B. FBX) als Eingabe verwendet und CMO-Gitterdateien ausgegeben.
 -   Von der Shaderinhaltpipeline werden visuelle Shaderdiagramme (.dgsl) aus dem Shader-Editor von Visual Studio verwendet und kompilierte Shaderausgabedateien (.cso) ausgegeben.
 
 Weitere Informationen finden Sie unter [Verwenden von 3D-Objekten im Spiel oder in der App](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).

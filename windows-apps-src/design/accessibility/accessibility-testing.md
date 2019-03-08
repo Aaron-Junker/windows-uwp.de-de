@@ -1,19 +1,19 @@
 ---
-Description: Testing procedures to follow to ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: Testverfahren, mit denen Sie sicherstellen können, dass Ihre App für die universelle Windows-Plattform (UWP) barrierefrei ist.
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Barrierefreiheitstests
 label: Accessibility testing
 template: detail.hbs
 ms.date: 05/18/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d84683544628a9b6df0eafb2999fabb134465ea8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049627"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635565"
 ---
 # <a name="accessibility-testing"></a>Barrierefreiheitstests  
 
@@ -33,17 +33,16 @@ Sie können die Tools zum Testen der Barrierefreiheit entweder über die Eingabe
 <span id="accscope"/>
 <span id="ACCSCOPE"/>
 
-### **<a name="accscope"></a>EH-Viewer (AccScope)**  
+### <a name="accscope"></a>**EH-Viewer (AccScope)**  
 
 Mit dem Tool [**EH-Viewer**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) können Entwickler und Tester die Barrierefreiheit der App während ihrer Entwicklungs- und Entwurfsphase auswerten. Dies wird meist in frühen Prototypphasen und nicht in den letzten Testphasen des Entwicklungszyklus einer App durchgeführt. Das Hauptziel besteht im Testen von Barrierefreiheitsszenarien in Verbindung mit der Sprachausgabe für die App.
 
 <span id="inspect"/>
 <span id="INSPECT"/>
 
-### **<a name="inspect"></a>Inspect**  
+### <a name="inspect"></a>**Prüfen**  
 
-[
-              Im Tool **Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) können Sie ein beliebiges Benutzeroberflächenelement auswählen und Daten zu seiner Barrierefreiheit anzeigen. Sie können Eigenschaften und Steuerelementmuster der Microsoft-Benutzeroberflächenautomatisierung anzeigen und die Navigationsstruktur der Automatisierungselemente im Benutzeroberflächenautomatisierungs-Baum testen. Verwenden Sie beim Entwickeln der Benutzeroberfläche **Inspect**, um zu überprüfen, wie die Barrierefreiheitsattribute in der Benutzeroberflächenautomatisierung verfügbar gemacht werden. In einigen Fällen stammen die Attribute aus der Unterstützung der Benutzeroberflächenautomatisierung, die für Standard-XAML-Steuerelemente bereits implementiert wurde. In anderen Fällen stammen die Attribute aus bestimmten Werten, die Sie im XAML-Markup als an [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) angefügte Eigenschaften festgelegt haben.
+[**Überprüfen Sie** ](https://msdn.microsoft.com/library/windows/desktop/Dd318521) ermöglicht es Ihnen, wählen ein UI-Element, und zeigen die barrierefreiheitsdaten. Sie können Eigenschaften und Steuerelementmuster der Microsoft-Benutzeroberflächenautomatisierung anzeigen und die Navigationsstruktur der Automatisierungselemente im Benutzeroberflächenautomatisierungs-Baum testen. Verwenden Sie beim Entwickeln der Benutzeroberfläche **Inspect**, um zu überprüfen, wie die Barrierefreiheitsattribute in der Benutzeroberflächenautomatisierung verfügbar gemacht werden. In einigen Fällen stammen die Attribute aus der Unterstützung der Benutzeroberflächenautomatisierung, die für Standard-XAML-Steuerelemente bereits implementiert wurde. In anderen Fällen stammen die Attribute aus bestimmten Werten, die Sie im XAML-Markup als an [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) angefügte Eigenschaften festgelegt haben.
 
 Die folgende Abbildung zeigt das [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521)-Tool, mit dem die Benutzeroberflächenautomatisierungseigenschaften des Menübefehls **Bearbeiten** in Editor abgefragt werden.
 
@@ -52,21 +51,20 @@ Die folgende Abbildung zeigt das [**Inspect**](https://msdn.microsoft.com/librar
 <span id="ui_accessibility_checker"/>
 <span id="UI_ACCESSIBILITY_CHECKER"/>
 
-### **<a name="ui-accessibility-checker"></a>UI Accessibility Checker**  
+### <a name="ui-accessibility-checker"></a>**UI Accessibility Checker**  
 Mithilfe der **UI-Barrierefreiheitsprüfung (AccChecker)** können Sie Probleme hinsichtlich der Barrierefreiheit zur Laufzeit erkennen. Wenn die Benutzeroberfläche vollständig und funktionsfähig ist, können Sie **AccChecker** verwenden, um verschiedene Szenarien zu testen, die Richtigkeit von Laufzeit-Barrierefreiheitsinformationen zu überprüfen und Laufzeitprobleme zu ermitteln. Sie können **AccChecker** im Benutzeroberflächen- oder Befehlszeilenmodus ausführen. Öffnen Sie zum Ausführen des Tools für den Benutzeroberflächenmodus das Verzeichnis **AccChecker** im bin-Verzeichnis des Windows SDK, führen Sie „acccheckui.exe“ aus, und klicken Sie auf das Menü **Hilfe**.
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
 
-### **<a name="ui-automation-verify"></a>Benutzeroberflächenautomatisierungs-Überprüfung**  
+### <a name="ui-automation-verify"></a>**Benutzeroberflächenautomatisierungs-Überprüfung**  
 Die **Benutzeroberflächenautomatisierungs-Überprüfung (UIA Verify)** ist ein automatisiertes Test- und Überprüfungsframework für Implementierungen der Benutzeroberflächenautomatisierung. **UIA Verify** kann in den Testcode integriert werden. Somit können regelmäßige automatisierte Tests oder Stichprobenkontrollen der Benutzeroberflächenautomatisierungs-Szenarien ausgeführt werden. Um **UIA Verify** auszuführen, führen Sie „VisualUIAVerifyNative.exe“ aus dem Unterverzeichnis „UIAVerify“ aus.
 
 <span id="accessible_event_watcher"/>
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
-### **<a name="accessible-event-watcher"></a>Überwachung für barrierefreie Ereignisse**  
-[
-              Mit der **Überwachung für barrierefreie Ereignisse (AccEvent)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) wird getestet, ob die UI-Elemente einer App korrekte Benutzeroberflächenautomatisierungs- und Microsoft Active Accessibility-Ereignisse auslösen, wenn Änderungen an der Benutzeroberfläche auftreten. Änderungen an der Benutzeroberfläche können auftreten, wenn sich der Fokus ändert, ein Benutzeroberflächenelement aufgerufen oder ausgewählt wird oder sich sein Zustand oder seine Eigenschaft ändert.
+### <a name="accessible-event-watcher"></a>**Überwachung für barrierefreie Ereignisse**  
+[**Zugänglich-Ereignisüberwachung (AccEvent)** ](https://msdn.microsoft.com/library/windows/desktop/Dd317979) testet, ob die Elemente der Benutzeroberfläche der app ausgelöst, entsprechenden-Benutzeroberflächenautomatisierung und Microsoft Active Accessibility-Ereignisse beim Auftreten von Änderungen an der Benutzeroberfläche werden. Änderungen an der Benutzeroberfläche können auftreten, wenn sich der Fokus ändert, ein Benutzeroberflächenelement aufgerufen oder ausgewählt wird oder sich sein Zustand oder seine Eigenschaft ändert.
 
 > [!NOTE]
 > Die meisten in dieser Dokumentation erwähnten Tools zum Testen der Barrierefreiheit können auf einem PC, aber nicht auf einem Mobiltelefon ausgeführt werden. Sie können einige dieser Tools ausführen, während Sie entwickeln und einen Emulator verwenden, aber die meisten dieser Tools können den Benutzeroberflächenautomatisierungs-Baum im Emulator nicht bereitstellen.
@@ -84,20 +82,20 @@ Die beste Methode, um die Barrierefreiheit der Tastaturnavigation zu testen, bes
 Überprüfen Sie mit den Farbkontrasttools, ob das Kontrastverhältnis von sichtbarem Text in Ordnung ist. Zu den Ausnahmen zählen inaktive UI-Elemente und Logos oder dekorativer Text, der keine Informationen enthält und neu angeordnet werden kann, ohne dadurch seine Bedeutung zu verändern. Weitere Informationen zum Kontrastverhältnis sowie zu Ausnahmen finden Sie unter [Anforderungen für barrierefreien Text](accessible-text-requirements.md). Tools zum Testen des Kontrastverhältnisses finden Sie unter [Techniken für WCAG 2.0 G18 (Abschnitt Ressourcen)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
-> Einige der unter den Techniken für WCAG2.0G18 aufgeführten Tools können bei einer UWP-App nicht interaktiv verwendet werden. Möglicherweise müssen Sie die Farbwerte für den Vorder- und Hintergrund im Tool manuell eingeben, Bildschirmaufnahmen der App-Benutzeroberfläche anfertigen und dann das Kontrastverhältnistool für die Bildschirmaufnahme ausführen. Es kann auch erforderlich sein, dass Sie das Tool beim Öffnen der Quellbitmapdateien in einem Bildbearbeitungsprogramm ausführen, und nicht während des Ladens eines Bilds durch die App.
+> Einige der unter den Techniken für WCAG 2.0 G18 aufgeführten Tools können bei einer UWP-App nicht interaktiv verwendet werden. Möglicherweise müssen Sie die Farbwerte für den Vorder- und Hintergrund im Tool manuell eingeben, Bildschirmaufnahmen der App-Benutzeroberfläche anfertigen und dann das Kontrastverhältnistool für die Bildschirmaufnahme ausführen. Es kann auch erforderlich sein, dass Sie das Tool beim Öffnen der Quellbitmapdateien in einem Bildbearbeitungsprogramm ausführen, und nicht während des Ladens eines Bilds durch die App.
 
 <span id="verify_your_app_in_high_contrast"/>
 <span id="VERIFY_YOUR_APP_IN_HIGH_CONTRAST"/>
 
 ## <a name="verify-your-app-in-high-contrast"></a>Überprüfen der App mit hohem Kontrast  
-Verwenden Sie die App mit einem Design mit hohem Kontrast, um sicherzustellen, dass alle UI-Elemente korrekt angezeigt werden. Der gesamte Text muss lesbar sein, und alle Bilder müssen deutlich zu erkennen sein. Passen Sie die XAML-Designverzeichnisressourcen oder Steuerelementvorlagen an, um durch Steuerelemente verursachte Designprobleme zu beheben. Wenn schwerwiegende Probleme mit hohem Kontrast nicht durch Designs oder Steuerelemente (z.B. durch Bilddateien) verursacht werden, stellen Sie separate Versionen bereit, die verwendet werden, wenn ein Design mit hohem Kontrast aktiv ist.
+Verwenden Sie die App mit einem Design mit hohem Kontrast, um sicherzustellen, dass alle UI-Elemente korrekt angezeigt werden. Der gesamte Text muss lesbar sein, und alle Bilder müssen deutlich zu erkennen sein. Passen Sie die XAML-Designverzeichnisressourcen oder Steuerelementvorlagen an, um durch Steuerelemente verursachte Designprobleme zu beheben. Wenn schwerwiegende Probleme mit hohem Kontrast nicht durch Designs oder Steuerelemente (z. B. durch Bilddateien) verursacht werden, stellen Sie separate Versionen bereit, die verwendet werden, wenn ein Design mit hohem Kontrast aktiv ist.
 
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
 
 ## <a name="verify-your-app-with-display-settings"></a>Überprüfen der App mit Anzeigeeinstellungen  
 
-Verwenden Sie die Systemanzeigeoptionen, die den DPI-Wert der Anzeige anpassen, und stellen Sie sicher, dass Ihre App-UI bei einer Änderung des DPI-Werts richtig skaliert wird. (Einige Benutzer ändern DPI-Werte als Barrierefreiheitsoption; sie ist wie auch Anzeigeeigenschaften unter **Erleichterte Bedienung** verfügbar.) Falls Sie Probleme feststellen, befolgen Sie die [Richtlinien zur Layoutskalierung](https://msdn.microsoft.com/library/windows/apps/Dn611863), und stellen Sie zusätzliche Ressourcen für unterschiedliche Skalierungsfaktoren bereit.
+Verwenden Sie die Systemanzeigeoptionen, die den DPI-Wert der Anzeige anpassen, und stellen Sie sicher, dass Ihre App-UI bei einer Änderung des DPI-Werts richtig skaliert wird. (Einige Benutzer ändern die dpi-Werte als Zugriffsoption auf diese Klasse steht in **erleichterte Bedienung** auch als Eigenschaften anzuzeigen.) Wenn Sie auf Probleme stoßen, führen Sie die [Richtlinien zum Skalieren Layouts](https://msdn.microsoft.com/library/windows/apps/Dn611863) und geben Sie zusätzliche Ressourcen für andere Skalierungsfaktoren.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -107,8 +105,8 @@ Verwenden Sie die Sprachausgabe, um die Qualität der Bildschirmtexterkennung f�
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player]
 
-**Gehen Sie wie folgt vor, um Ihre App mithilfe der Sprachausgabe unter Verwendung von Maus und Tastatur zu testen:**
-1.  Starten Sie die Sprachausgabe, indem Sie _Windows-Logo-Taste+STRG+EINGABETASTE_ drücken. In Versionen vor der Version 1607 von Windows10 verwenden Sie _Windows-Logo-Taste + EINGABETASTE_ zum Starten der Sprachausgabe.
+**Verwenden Sie diese Schritte zum Testen Ihrer app, einer Tastatur und Maus mit Sprachausgabe:**
+1.  Starten Sie die Sprachausgabe, indem Sie _Windows-Logo-Taste+STRG+EINGABETASTE_ drücken. In Versionen vor der Version 1607 von Windows 10 verwenden Sie _Windows-Logo-Taste + EINGABETASTE_ zum Starten der Sprachausgabe.
 2.  Bedienen Sie Ihre App über die Tastatur mit der _TAB_-TASTE, den PFEILTASTEN und _FESTSTELLTASTE+PFEILTASTEN_.
 3.  Hören Sie sich an, wie die Sprachausgabe Elemente der Benutzeroberfläche vorliest, während Sie die App bedienen, und achten Sie auf Folgendes:
     * Achten Sie bei allen Steuerelementen darauf, dass die Sprachausgabe korrekt für alle sichtbaren Inhalte erfolgt. Stellen Sie zudem sicher, dass die Sprachausgabe jeweils den Namen, alle relevanten Zustände (aktiviert, ausgewählt usw.) und den Typ des Steuerelements (Schaltfläche, Kontrollkästchen, Listenelement usw.) vorliest.
@@ -118,29 +116,29 @@ Verwenden Sie die Sprachausgabe, um die Qualität der Bildschirmtexterkennung f�
 4.  Drücken Sie _FESTSTELL+UMSCHALT+EINGABE_, um Ihre App zu durchsuchen und zu überprüfen, ob alle Steuerelemente in der Suchliste erscheinen und ob die Namen der Steuerelemente lokalisiert und lesbar sind.
 5.  Schalten Sie den Monitor aus und versuchen Sie, die Hauptszenarien für Ihre App durchzuspielen, indem Sie nur Tastatur und Maus verwenden. Eine umfassende Liste aller Befehle und Tastenkombinationen erhalten Sie, indem Sie _FESTSTELL+F1_ drücken.
 
-Ab Windows10, Version1607, wurde in der Sprachausgabe ein neuer Entwicklermodus eingeführt. Aktivieren Sie den Entwicklermodus, wenn die Sprachausgabe bereits ausgeführt wird, indem Sie _FESTSTELL+UMSCHALT+F12_ drücken. Bei aktiviertem Entwicklermodus wird der Bildschirm maskiert, und es werden nur die zugänglichen Objekte und der dazugehörige Text hervorgehoben, der für die Sprachausgabe programmgesteuert verfügbar gemacht wird. So erhalten Sie eine gute visuelle Darstellung der Informationen, die für die Sprachausgabe verfügbar sind.
+Ab Windows 10, Version 1607, wurde in der Sprachausgabe ein neuer Entwicklermodus eingeführt. Aktivieren Sie den Entwicklermodus, wenn die Sprachausgabe bereits ausgeführt wird, indem Sie _FESTSTELL+UMSCHALT+F12_ drücken. Bei aktiviertem Entwicklermodus wird der Bildschirm maskiert, und es werden nur die zugänglichen Objekte und der dazugehörige Text hervorgehoben, der für die Sprachausgabe programmgesteuert verfügbar gemacht wird. So erhalten Sie eine gute visuelle Darstellung der Informationen, die für die Sprachausgabe verfügbar sind.
 
-**Gehen Sie wie folgt vor, um Ihre App mithilfe des Toucheingabemodus der Sprachausgabe zu testen:**
+**Verwenden Sie diese Schritte, um Ihrer app mithilfe des Microsoft-Sprachausgabe fingereingabemodus zu testen:**
 
 > [!NOTE]
 > Die Sprachausgabe wechselt auf Geräten, die mehr als 4 Kontakte unterstützen, automatisch in den Toucheingabemodus. Die Sprachausgabe unterstützt keine Szenarien mit mehreren Monitoren oder Digitalisierungsgeräte mit Multitouch auf dem Hauptbildschirm.
 
 1.  Machen Sie sich mit der Benutzeroberfläche vertraut und nehmen Sie das Layout in Augenschein.
 
-    * **Navigieren Sie per Wischbewegung mit einem Finger durch die Benutzeroberfläche.** Wischen Sie nach links oder rechts, um zwischen Elementen hin und her zu wechseln, und nach oben und unten, um die Kategorie der zu durchsuchenden Elemente zu ändern. Zu den Kategorien gehören alle Elemente, Links, Tabellen, Überschriften usw. Das Navigieren per Wischen mit einem Finger gestaltet sich so ähnlich wie das Navigieren mithilfe von _FESTSTELL+PFEILTASTE_.
-    * **Navigieren Sie mit Tippbewegungen durch Elemente, die den Fokus erhalten können.** Wenn Sie mit drei Fingern nach rechts oder links wischen, hat dies denselben Effekt wie das Drücken von _TAB_ und _UMSCHALT+TAB_ auf einer Tastatur.
-    * **Überprüfen Sie die Benutzeroberfläche flächendeckend mit einem Finger.** Führen Sie einen Finger nach oben und unten oder links und rechts, um sich von der Sprachausgabe die Elemente unter Ihrem Finger vorlesen zu lassen. Alternativ können Sie auch eine Maus dazu nutzen, da bei ihr dieselbe Zugriffstestlogik zum Einsatz kommt wie beim Ziehen Ihres Fingers.
-    * **Lassen Sie sich das ganze Fenster und alle Inhalte vorlesen, indem Sie mit drei Fingern nach oben wischen**. Diese Bewegung entspricht der Tastenkombination _FESTSTELL+W_.
+    * **Navigieren Sie über die Benutzeroberfläche mit einem Finger wischbewegungen.** Wischen Sie nach links oder rechts, um zwischen Elementen hin und her zu wechseln, und nach oben und unten, um die Kategorie der zu durchsuchenden Elemente zu ändern. Zu den Kategorien gehören alle Elemente, Links, Tabellen, Überschriften usw. Das Navigieren per Wischen mit einem Finger gestaltet sich so ähnlich wie das Navigieren mithilfe von _FESTSTELL+PFEILTASTE_.
+    * **Verwenden Sie Registerkarte zum Navigieren durch die Elemente der Fokus erhalten kann.** Wenn Sie mit drei Fingern nach rechts oder links wischen, hat dies denselben Effekt wie das Drücken von _TAB_ und _UMSCHALT+TAB_ auf einer Tastatur.
+    * **Untersuchen Sie die Benutzeroberfläche mit einem einzelnen Finger räumlich.** Führen Sie einen Finger nach oben und unten oder links und rechts, um sich von der Sprachausgabe die Elemente unter Ihrem Finger vorlesen zu lassen. Alternativ können Sie auch eine Maus dazu nutzen, da bei ihr dieselbe Zugriffstestlogik zum Einsatz kommt wie beim Ziehen Ihres Fingers.
+    * **Lassen Sie sich das ganze Fenster und alle Inhalte vorlesen, indem Sie mit drei Fingern eine Wischbewegung nach oben durchführen**. Diese Bewegung entspricht der Tastenkombination _FESTSTELL+W_.
 
     Sollten wichtige Elemente der UI nicht erreichbar sein, liegt vielleicht ein Fehler bei der Barrierefreiheit vor.
 
 2.  Interagieren Sie mit Steuerelementen, um deren primäre und sekundäre Aktionen und Bildlaufverhalten zu testen.
 
-    Primäre Aktionen sind zum Beispiel die Aktivierung einer Schaltfläche, das Einfügen eines Caretzeichens und das Legen des Fokus auf das Steuerelement. Unter sekundäre Aktionen fallen z.B. Aktionen wie die Auswahl eines Listenelements oder das Erweitern einer Schaltfläche, die mehrere Optionen anbietet.
+    Primäre Aktionen sind zum Beispiel die Aktivierung einer Schaltfläche, das Einfügen eines Caretzeichens und das Legen des Fokus auf das Steuerelement. Unter sekundäre Aktionen fallen z. B. Aktionen wie die Auswahl eines Listenelements oder das Erweitern einer Schaltfläche, die mehrere Optionen anbietet.
 
-    * So testen Sie eine primäre Aktion: Doppeltippen oder mit einem Finger drücken und mit einem anderen tippen.
-    * So testen Sie eine sekundäre Aktion: Dreimal Tippen oder mit einem Finger drücken und mit einem anderen doppeltippen.
-    * So testen Sie das Bildlaufverhalten: Mit zwei Fingern eine Wischbewegung in die gewünschte Richtung durchführen.
+    * So testen Sie eine primäre Aktion: Double Tippen Sie, oder drücken Sie die mit einem Finger, und tippen Sie auf, mit einem anderen.
+    * So testen Sie eine sekundäre Aktion: Tripleresolutionimage-tippen oder mit einem Finger und Doppeltippen mit einem anderen drücken.
+    * So testen Sie das Scrollverhalten: Verwenden Sie zwei-Finger-Kundenkarte, um in die gewünschte Richtung zu scrollen.
 
     Einige Steuerelemente bieten zusätzliche Aktionen. Rufen Sie eine vollständige Liste auf, indem Sie mit vier Fingern einmal tippen.
 
@@ -162,8 +160,8 @@ Außerdem können Sie testen, ob in der Elementansicht der Benutzeroberflächena
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>Verwandte Themen  
-* [Barrierefreiheit](accessibility.md)
+* [Bedienungshilfen](accessibility.md)
 * [Nicht empfehlenswerte Methoden](practices-to-avoid.md)
 * [Benutzeroberflächenautomatisierung](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Barrierefreiheit unter Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Barrierefreiheit in Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
 * [Erste Schritte mit der Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

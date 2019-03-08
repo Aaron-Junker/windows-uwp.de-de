@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion fundamentals come together in your app.
+Description: Erfahren Sie, wie Fluent Motion-Grundlagen in Ihrer app zusammenkommen.
 title: Bewegung in der Praxis – Animationen in UWP-Apps
 label: Motion in practice
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058561"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599405"
 ---
 # <a name="bringing-it-together"></a>Alles zusammenführen
 
@@ -42,7 +42,7 @@ Im Folgenden finden Sie 3 Möglichkeiten, die Grundlagen für fließende Bewegun
     :::column-end:::
 :::row-end:::
 
-**Beispielübergang**
+**Transition-Beispiel**
 
 ![funktionelle Animation](images/pageRefresh.gif)
 
@@ -63,7 +63,7 @@ Im Folgenden finden Sie 3 Möglichkeiten, die Grundlagen für fließende Bewegun
     :::column-end:::
 :::row-end:::
 
-**Objektbeispiel**
+**Beispiel für ein Wertobjekt**
 
  ![300 ms Bewegung](images/control.gif)
 
@@ -80,25 +80,25 @@ Im Folgenden finden Sie 3 Möglichkeiten, die Grundlagen für fließende Bewegun
 
 ## <a name="implicit-animations"></a>Implizite Animationen
 
-> Implizite Animationen erfordert Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher.
+> Implizite Animationen müssen Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher.
 
 
-Implizite Animationen sind eine einfache Möglichkeit, fließende Bewegung zu erzielen, indem Sie automatisch zwischen der alten und neuen Werte während einer Parameter interpoliert.
+Implizite Animationen sind, eine einfache Möglichkeit, Fluent während der Übertragung zu erzielen, indem Sie automatisch interpolieren zwischen den alten und neuen Werte während der Parameter geändert wird.
 
-Sie können implizit animieren, Änderungen an die folgenden Eigenschaften:
+Sie können implizit animieren, Änderungen an den folgenden Eigenschaften:
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
   - **Drehung**
-  - **Skalierung**
+  - **Skalieren**
   - **Translation**
 
-- [Rahmen](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)oder [Panel](/uwp/api/windows.ui.xaml.controls.panel)
+- [Rahmen](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), oder [Bereich](/uwp/api/windows.ui.xaml.controls.panel)
   - **Hintergrund**
 
-Jede Eigenschaft, die Änderungen, die implizit animiert haben, können verfügt über eine entsprechende _Übergang_ -Eigenschaft. Um die Eigenschaft zu animieren, weisen Sie einen Übergangstyp auf die entsprechende _Übergang_ -Eigenschaft. In der folgenden Tabelle zeigt die Eigenschaften der _Übergang_ und den Übergangstyp jeweils verwenden.
+Jede Eigenschaft, die Änderungen, die implizit animiert haben, kann verfügt über eine entsprechende _Übergang_ Eigenschaft. Zum Animieren der Eigenschaft, weisen Sie ein Übergang in das entsprechende _Übergang_ Eigenschaft. In dieser Tabelle sind die _Übergang_ Eigenschaften und den Übergangstyp für jede einzelne verwenden.
 
-| Animierten Eigenschaft | Übergang-Eigenschaft | Implizite Übergangstyp |
+| Animierte Eigenschaft | Transition-Eigenschaft | Implizite Übergangstyp |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
@@ -108,7 +108,7 @@ Jede Eigenschaft, die Änderungen, die implizit animiert haben, können verfügt
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-Dieses Beispiel zeigt, wie die Opacity-Eigenschaft und Übergang zu einer Schaltfläche eingeblendet, wenn das Steuerelement aktiviert ist und ausblenden, wenn es deaktiviert ist.
+Dieses Beispiel zeigt, wie Sie mit die Opacity-Eigenschaft und der Übergang auf eine Schaltfläche eingeblendet, wenn das Steuerelement aktiviert ist und ausblenden, wenn sie deaktiviert ist.
 
 ```xaml
 <Button x:Name="SubmitButton"
@@ -129,6 +129,6 @@ public double OpaqueIfEnabled(bool IsEnabled)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Übersicht über Bewegungen](index.md)
-- [Timing und Geschwindigkeitsverlauf](timing-and-easing.md)
-- [Direktionalität und Schwerkraft](directionality-and-gravity.md)
+- [Motion-Übersicht](index.md)
+- [Zeitsteuerungssystem und vereinfachen der](timing-and-easing.md)
+- [Direktionalität und die Schwerkraft](directionality-and-gravity.md)

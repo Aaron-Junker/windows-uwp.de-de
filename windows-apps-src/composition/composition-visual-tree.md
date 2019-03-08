@@ -4,16 +4,16 @@ title: Visuelle Kompositionselemente
 description: Visuelle Kompositionselemente bilden die visuelle Struktur, die die Grundlage für alle anderen Features der Composition-API bildet und von diesen verwendet wird. Die API ermöglicht es Entwicklern, visuelle Objekte zu definieren und zu erstellen, die jeweils für einen einzelnen Knoten in einer visuellen Struktur stehen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b1c0b78ca45d98428f38518b337b5889f595c49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943378"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602435"
 ---
-# <a name="composition-visual"></a>Visuelle Komposition
+# <a name="composition-visual"></a>Visuelle Kompositionselemente
 
 Visuelle Kompositionselemente bilden die visuelle Struktur, die die Grundlage für alle anderen Features der Composition-API bildet und von diesen verwendet wird. Die API ermöglicht es Entwicklern, visuelle Objekte zu definieren und zu erstellen, die jeweils für einen einzelnen Knoten in einer visuellen Struktur stehen.
 
@@ -21,9 +21,9 @@ Visuelle Kompositionselemente bilden die visuelle Struktur, die die Grundlage f�
 
 Es gibt drei Arten visueller Elemente, aus denen sich die visuelle Struktur zusammensetzt, sowie eine grundlegende Pinselklasse mit mehreren Unterklassen, die Einfluss auf den Inhalt eines visuellen Elements hat:
 
-- [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – Basisobjekt; umfasst den Großteil der Eigenschaften. Diese werden von anderen visuellen Objekten geerbt.
-- [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – Abgeleitet von [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Fügt die Fähigkeit zum Erstellen von untergeordneten Elementen hinzu.
-- [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Abgeleitet von [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810). Bietet zudem die Möglichkeit, einen Pinsel zuzuordnen, sodass das Visual-Element Pixel, einschließlich Bilder, Effekte oder Volltonfarbe, rendern kann.
+- [**Visual** ](https://msdn.microsoft.com/library/windows/apps/Dn706858) – Basis Objekts, die meisten Eigenschaften sind hier und von den anderen visuellen Objekten geerbt.
+- [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) – leitet sich von [ **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), und fügt die Möglichkeit zum Erstellen von untergeordneten Elementen hinzu.
+- [**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) – leitet sich von [ **ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) und fügt die Fähigkeit zum Zuordnen ein Pinsels, damit das visuelle Element Pixel, die Bilder, einschließlich Rendern kann Effekte oder einen soliden hinzu. Farbe.
 
 Sie können Inhalte und Effekte für SpriteVisuals mit [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) und deren Unterklassen, wie [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush),[**CompositionSurfaceBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) und [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush), festlegen. Weitere Informationen zu Pinseln finden Sie unter [**CompositionBrush-Überblick**](https://docs.microsoft.com/windows/uwp/composition/composition-brushes).
 
@@ -31,7 +31,7 @@ Sie können Inhalte und Effekte für SpriteVisuals mit [**CompositionBrush**](ht
 
 Hier betrachten wir einige Codebeispiele für die zuvor aufgeführten drei Arten visueller Elemente. Dieses Beispiel veranschaulicht keine Konzepte wie Animationen oder komplexere Effekte. Es enthält die Bausteine, die alle diese Systeme verwenden. (Den vollständigen Beispielcode finden Sie am Ende dieses Artikels.)
 
-Im Beispiel sehen Sie eine Reihe farbiger Quadrate, die Sie anklicken und über den Bildschirm ziehen können. Durch Klicken auf ein Quadrat gelangt dieses in den Vordergrund, dreht sich um 45Grad und wird während der Bewegung undurchsichtig.
+Im Beispiel sehen Sie eine Reihe farbiger Quadrate, die Sie anklicken und über den Bildschirm ziehen können. Durch Klicken auf ein Quadrat gelangt dieses in den Vordergrund, dreht sich um 45 Grad und wird während der Bewegung undurchsichtig.
 
 Es zeigt einige grundlegenden Konzepte für die Arbeit mit der API, einschließlich:
 
@@ -59,11 +59,11 @@ var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-Diese wenigen Zeilen Code veranschaulichen ein leistungsfähiges Konzept: [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)-Objekte sind das Herzstück des Effektesystems. Das **SpriteVisual**-Element ermöglicht hohe Flexibilität und Interaktion bei der Farb-, Bild- und Effektgestaltung. **SpriteVisual** ist das einzige visuelle Element, das ein 2D-Rechteck mit einem Pinsel füllen kann, in diesem Fall mit einer Volltonfarbe.
+Obwohl dies nur ein paar Codezeilen erforderlich ist, wird es ein leistungsstarkes Konzept veranschaulicht: [**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) Objekte sind das Herzstück des Systems Auswirkungen. Das **SpriteVisual**-Element ermöglicht hohe Flexibilität und Interaktion bei der Farb-, Bild- und Effektgestaltung. **SpriteVisual** ist das einzige visuelle Element, das ein 2D-Rechteck mit einem Pinsel füllen kann, in diesem Fall mit einer Volltonfarbe.
 
 ## <a name="clipping-a-visual"></a>Beschneiden eines visuellen Elements
 
-[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) kann auch zum Beschneiden eines [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)-Objekts verwendet werden. Im folgenden Beispiel werden mit [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) die Seiten des visuellen Elements gekürzt:
+[  **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) kann auch zum Beschneiden eines [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)-Objekts verwendet werden. Im folgenden Beispiel werden mit [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) die Seiten des visuellen Elements gekürzt:
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -76,7 +76,7 @@ _currentVisual.Clip = clip;
 
 Auf die Eigenschaften von [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) können wie auch auf andere Objekte in der API Animationen angewendet werden.
 
-## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Drehen von Clips
+## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Drehen einen Clip
 
 Ein [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)-Objekt kann mit einer Drehung transformiert werden. Beachten Sie, dass [**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) Radianten und Grad unterstützt. Der Standardwert ist „Radianten“. Wie im folgenden Codeausschnitt dargestellt, ist es jedoch ganz einfach, einen Wert in Grad anzugeben:
 
@@ -88,7 +88,7 @@ Drehung ist nur ein Beispiel für eine Reihe von Transformationskomponenten, die
 
 ## <a name="setting-opacity"></a>Festlegen der Deckkraft
 
-Das Festlegen der Deckkraft eines visuellen Elements ist mit einem Float-Wert unproblematisch. In diesem Beispiel haben alle Quadrate anfangs eine Deckkraft von0,8:
+Das Festlegen der Deckkraft eines visuellen Elements ist mit einem Float-Wert unproblematisch. In diesem Beispiel haben alle Quadrate anfangs eine Deckkraft von 0,8:
 
 ```cs
 visual.Opacity = 0.8f;

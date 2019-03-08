@@ -4,14 +4,14 @@ description: Dieser Artikel bietet Unterstützung für Apps mit dem Legacy-Hinte
 title: Medienwiedergabe im Hintergrund (Legacy)
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927644"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616615"
 ---
 # <a name="legacy-background-media-playback"></a>Medienwiedergabe im Hintergrund (Legacy)
 
@@ -19,7 +19,7 @@ ms.locfileid: "8927644"
 In diesem Artikel wird das ältere Modell zur Unterstützung von Hintergrundaudio für Ihre UWP-App beschrieben, das zwei Prozesse umfasst. Ab Windows 10, Version 1607, wird ein Modell für die Audiowiedergabe im Hintergrund verwendet, das nur einen Prozess umfasst und sehr viel einfacher zu implementieren ist. Weitere Informationen zu den aktuellen Empfehlungen für Hintergrundaudio finden Sie unter [Wiedergeben von Medien im Hintergrund](background-audio.md). Dieser Artikel bietet Hilfe bei der Unterstützung von Apps, die unter Verwendung des älteren Modells mit zwei Prozessen entwickelt wurden.
 
 > [!NOTE]
-> Ab Windows, Version 1703, **BackgroundMediaPlayer** ist veraltet und möglicherweise nicht in zukünftigen Versionen von Windows zur Verfügung.
+> Beginnend mit Windows, Version 1703, **BackgroundMediaPlayer** ist veraltet und kann nicht zur Verfügung, in zukünftigen Versionen von Windows.
 
 ## <a name="background-audio-architecture"></a>Architektur von Hintergrundaudio
 
@@ -27,7 +27,7 @@ Eine App für die Hintergrundwiedergabe besteht aus zwei Prozessen. Der erste Pr
 
 Das folgende Diagramm ist eine Übersicht des Systemdesigns.
 
-![Architektur der Windows10-Hintergrundaudio](images/backround-audio-architecture-win10.png)
+![Architektur der Windows 10-Hintergrundaudio](images/backround-audio-architecture-win10.png)
 ## <a name="mediaplayer"></a>Media Player
 
 Der [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562)-Namespace enthält APIs, die zum Wiedergeben von Audio im Hintergrund verwendet werden. Es gibt eine einzige Instanz von [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) pro App, über die die Wiedergabe erfolgt. Ihre Hintergrundaudio-App ruft Methoden auf und legt Eigenschaften für die **MediaPlayer**-Klasse zum Festlegen des aktuellen Titels, zum Starten der Wiedergabe, zum Anhalten, zum schnellen Vor- und Zurückspulen usw. fest. Der Zugriff auf die Media Player-Objektinstanz erfolgt immer über die [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528)-Eigenschaft.
@@ -58,7 +58,7 @@ Unter Umständen möchten Sie, dass die beiden Prozesse einer Hintergrund-App mi
 
 Über einen einfachen Kommunikationsmechanismus werden Ereignisse sowohl im Vordergrundprozess als auch im Hintergrundprozess ausgelöst. Die Methoden [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) und [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) rufen jeweils Ereignisse in dem entsprechenden Prozess auf. Nachrichten können durch Abonnieren der Ereignisse [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) und [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) empfangen werden.
 
-Daten können als Argument an die Methoden zum Senden einer Nachricht übergeben werden, die dann an die „MessageReceived“-Ereignishandler übergeben werden. Übergeben Sie Daten mit der [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)-Klasse. Bei dieser Klasse handelt es sich um ein Wörterbuch, das eine Zeichenfolge als Schlüssel und andere Werttypen als Werte enthält. Sie können einfache Werttypen übergeben, z.B. ganze Zahlen, Zeichenfolgen und booleschen Werte.
+Daten können als Argument an die Methoden zum Senden einer Nachricht übergeben werden, die dann an die „MessageReceived“-Ereignishandler übergeben werden. Übergeben Sie Daten mit der [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)-Klasse. Bei dieser Klasse handelt es sich um ein Wörterbuch, das eine Zeichenfolge als Schlüssel und andere Werttypen als Werte enthält. Sie können einfache Werttypen übergeben, z. B. ganze Zahlen, Zeichenfolgen und booleschen Werte.
 
 ## <a name="background-task-life-cycle"></a>Lebenszyklus von Hintergrundaufgaben
 
@@ -114,11 +114,11 @@ Beachten Sie jedoch, dass dies nicht bedeutet, dass der Vordergrund vom Hintergr
 
 In der folgenden Tabelle ist aufgeführt, welche Richtlinie auf welchen Gerätetypen erzwungen werden.
 
-| Unterrichtlinie             | Desktop  | Mobilgerät   | Sonstiges    |
+| Unterrichtlinie             | Desktop  | Mobile   | Andere    |
 |------------------------|----------|----------|----------|
-| **Exklusivität**        | Deaktiviert | Aktiviert  | Aktiviert  |
-| **Zeitüberschreitung nach Inaktivität** | Deaktiviert | Aktiviert  | Deaktiviert |
-| **Freigegebene Lebensdauer**    | Aktiviert  | Deaktiviert | Deaktiviert |
+| **Exklusivität**        | Deaktiviert | Enabled  | Enabled  |
+| **Timeout bei Inaktivität** | Deaktiviert | Enabled  | Deaktiviert |
+| **Freigegebenen Lebensdauer**    | Enabled  | Deaktiviert | Deaktiviert |
 
 
  

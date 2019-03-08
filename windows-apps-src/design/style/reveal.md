@@ -1,32 +1,32 @@
 ---
 description: Einblendungen sind neue Lichteffekte, welche die interaktiven Elemente in Ihrer App mit Tiefe und Fokus versehen kann.
-title: Reveal-Highlight
+title: Markierung anzeigen
 template: detail.hbs
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 pm-contact: kisai
 design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116402"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628665"
 ---
-# <a name="reveal-highlight"></a>Reveal-Highlight
+# <a name="reveal-highlight"></a>Markierung anzeigen
 
 ![Favoritenbild](images/header-reveal-highlight.svg)
 
-Reveal-Highlight sind Lichteffekte, die wie z. B. Befehlsleisten, interaktive Elemente hervorhebt, wenn der Benutzer den Zeiger Nähe bewegt. 
+Zeigen Sie, dass die Hervorhebung eines Effekts Beleuchtung ist, das interaktive Elemente, z. B. Befehlsleisten, hervorgehoben, wenn der Benutzer den Zeiger in der Nähe sie. 
 
-> **Wichtige APIs**: [RevealBrush-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **Wichtige APIs**: [RevealBrush Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Funktionsweise
-Reveal-Highlight Aufrufe hebt interaktive Elemente zeigt Sie der Container des Elements, wenn der Mauszeiger nähert, wie in der folgenden Abbildung dargestellt:
+Zeigen Sie Hervorhebung Aufrufe Aufmerksamkeit interaktiven Elementen von des Elements Container offenlegen, wenn der Zeiger in der Nähe, wie in dieser Abbildung gezeigt wird:
 
 ![Reveal Visual](images/Nav_Reveal_Animation.gif)
 
@@ -41,8 +41,8 @@ Da durch Einblendungen die ausgeblendeten Rahmen um Objekte herum angezeigt werd
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/Reveal">die App zu öffnen und Einblendungen in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -54,7 +54,7 @@ Da durch Einblendungen die ausgeblendeten Rahmen um Objekte herum angezeigt werd
 
 ## <a name="how-to-use-it"></a>Verwendung
 
-„Reveal” funktioniert automatisch bei einigen Steuerelementen. Für andere Steuerelemente können Sie "Reveal" aktivieren, indem Sie das Steuerelement einen speziellen Stil zuweisen, wie in den Abschnitten [Aktivieren "Reveal", für andere Steuerelemente](#enabling-reveal-on-other-controls) und [Aktivieren von "Reveal", für benutzerdefinierte Steuerelemente](#enabling-reveal-on-custom-controls) dieses Artikels beschrieben.
+„Reveal” funktioniert automatisch bei einigen Steuerelementen. Für andere Steuerelemente, Sie können anzeigen durch Aktivieren einer speziellen Format zuzuweisen, an das Steuerelement, wie in beschrieben die [aktivieren anzuzeigen, für andere Steuerelemente](#enabling-reveal-on-other-controls) und [aktivieren anzuzeigen, zu benutzerdefinierten Steuerelementen](#enabling-reveal-on-custom-controls) Abschnitten dieses Artikel.
 
 ## <a name="controls-that-automatically-use-reveal"></a>Steuerelemente, die „Reveal” automatisch verwenden
 
@@ -65,7 +65,7 @@ Da durch Einblendungen die ausgeblendeten Rahmen um Objekte herum angezeigt werd
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-Diese Abbildung zeigt "einblenden" markieren, auf verschiedenen Steuerelementen:
+Diese Abbildungen zeigen markieren anzuzeigen, klicken Sie auf verschiedene Steuerelemente:
 
 ![Beispiele für „Reveal”](images/RevealExamples_Collage.png)
 
@@ -78,7 +78,7 @@ Diese Steuerelemente verfügen nicht standardmäßig über Einblendungen, da sie
 
 | Name des Steuerelements   | Ressourcenname |
 |----------|:-------------:|
-| Button |  ButtonRevealStyle |
+| Schaltfläche |  ButtonRevealStyle |
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
@@ -113,7 +113,7 @@ Oder ändern Sie das „TargetTheme” des „RevealBorderBrush” auf Dunkel. B
 
 ## <a name="enabling-reveal-on-custom-controls"></a>Aktivieren von „Reveal” für benutzerdefinierte Steuerelemente
 
-Sie können „Reveal” für benutzerdefinierte Steuerelemente hinzufügen. Bevor Sie dies tun, ist es hilfreich, etwas mehr über die Funktionsweise des Effekts "Reveal". „Reveal” besteht aus zwei separaten Effekten: **Reveal border** (Rahmen) und **Reveal hover** (Draufzeigen).
+Sie können „Reveal” für benutzerdefinierte Steuerelemente hinzufügen. Bevor Sie dies tun, ist es hilfreich, ein wenig mehr wissen über die Funktionsweise des anzeigen-Effekt. Anzeigen besteht aus zwei separaten Auswirkungen: **Anzeigen von Rahmen** und **Hover anzeigen**.
 
 - **Rahmen** zeigt die Rahmen der interaktiven Elemente an, wenn sich ein Zeiger nähert. Dadurch können Objekte in der Nähe ähnliche Aktionen wie das aktuell fokussierte Objekt durchführen.
 - Durch **Draufzeigen** wird die angedeutete oder fokussierte Form mit einem leichten Schein umgeben und beim Anklicken wird eine gedrückte Animation angezeigt. 
@@ -130,8 +130,8 @@ Sie können „Reveal” für benutzerdefinierte Steuerelemente hinzufügen. Bev
 
 
 Diese Effekte werden durch zwei Pinselelemente definiert: 
-* "Rahmen einblenden" wird durch **"revealborderbrush"** definiert.
-* "Reveal Hover" wird durch **RevealBackgroundBrush** definiert.
+* Rahmen anzeigen wird definiert, indem **RevealBorderBrush**
+* Zeigen Sie anzeigen wird definiert, indem **RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -141,7 +141,7 @@ In den meisten Fällen wird „Reveal” für bestimmte Steuerelemente von uns a
 
 ### <a name="when-to-add-reveal"></a>Wann sollte „Reveal” hinzugefügt werden
 Sie können „Reveal” auf Ihre benutzerdefinierten Steuerelemente hinzufügen – es empfiehlt allerdings, den Typ des Steuerelements und sein Verhalten vorher festzulegen. 
-* Wenn Ihr benutzerdefiniertes Steuerelement ein interaktives Element ist und keine ähnlichen Steuerelemente auf der gleichen Oberfläche angezeigt werden (wie z.B. Menüelemente), benötigt das benutzerdefinierte Steuerelement wahrscheinlich keine Einblendung.  
+* Wenn Ihr benutzerdefiniertes Steuerelement ein interaktives Element ist und keine ähnlichen Steuerelemente auf der gleichen Oberfläche angezeigt werden (wie z. B. Menüelemente), benötigt das benutzerdefinierte Steuerelement wahrscheinlich keine Einblendung.  
 * Besitzen Sie eine Gruppe von verwandten interaktiven Inhalten oder Elementen, benötigen die Bereiche der App wahrscheinlich die Einblendung – dies wird häufig als [Steuerung](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding) der Oberfläche bezeichnet.
 
 Eine allein angezeigte Schaltfläche muss keine Einblendung verwenden, aber eine Reihe von Schaltflächen in einer Befehlsleiste sollte „Reveal” verwenden.
@@ -166,7 +166,7 @@ Es ist wichtig zu beachten, dass zur Einblendung sowohl ein Pinsel als auch Sett
 
 Weitere Informationen zum Ändern von Steuerelementvorlagen finden Sie im Artikel [XAML-Steuerelementvorlagen](../controls-and-patterns/control-templates.md) Artikel.
 
-Wir haben eine Reihe von System-Reveal-Pinsels erstellt, mit denen Sie die Vorlagen anpassen können. Sie können z.B. den Pinsel **ButtonRevealBackground** zum Erstellen eines Hintergrunds für eine benutzerdefinierte Schaltfläche oder den Pinsel **ListViewItemRevealBackground** für benutzerdefinierte Listen und so weiter verwenden. (Informationen zur Funktionsweise von Ressourcen in XAML finden Sie im Artikel [Xaml-Ressourcenverzeichnis](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).)
+Wir haben eine Reihe von System-Reveal-Pinsels erstellt, mit denen Sie die Vorlagen anpassen können. Sie können z. B. den Pinsel **ButtonRevealBackground** zum Erstellen eines Hintergrunds für eine benutzerdefinierte Schaltfläche oder den Pinsel **ListViewItemRevealBackground** für benutzerdefinierte Listen und so weiter verwenden. (Informationen zur Funktionsweise von Ressourcen in XAML finden Sie im Artikel [Xaml-Ressourcenverzeichnis](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).)
 
 ### <a name="full-template-example"></a>Vollständiges Vorlagenbeispiel
 
@@ -255,14 +255,14 @@ Hier sehen Sie eine gesamte Vorlage und wie eine Schaltfläche zum Einblenden au
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>Optimieren des Effekts von „Reveal” für ein benutzerdefiniertes Steuerelement 
 
-Wenn Sie "Reveal" für ein benutzerdefiniertes oder neues Steuerelement oder eine benutzerdefinierte Befehlsoberfläche aktivieren, können diese Tipps den Effekt optimieren ermöglicht Folgendes:
+Wenn Sie auf das benutzerdefinierte oder Re-Vorlagen-Steuerelement oder eine benutzerdefinierte Eingabeereignisse Oberfläche anzeigen aktivieren, können Sie die Auswirkungen zu optimieren diese Tipps helfen:
  
-* Auf benachbarten Elementen mit einer Größe, die nicht in Höhe oder Breite (insbesondere in Listen) ausgerichtet ist: entfernen Sie das Verhalten des Rahmens und aktivieren Sie die Rahmen nur für das Draufzeigen.
-* Für Befehlselemente, die häufig aktiviert oder deaktiviert werden: platzieren Sie den Pinsel für den Rahmen auf die Backplates der Elemente sowie deren Rahmen, um ihren Zustand zu betonen.
-* Für benachbarte Steuerelemente, die sich fast berühren: Fügen Sie einen Rand von einem Pixel zwischen den beiden Elementen hinzu. 
+* Benachbarte Elemente mit Größen, die nicht in die Höhe oder Breite (insbesondere in Listen) aneinander ausgerichtet: Entfernen Sie das Verhalten des Rahmens Ansatz, und halten Sie die Rahmen, wenn darauf gezeigt wird nur angezeigt.
+* Eingabeereignisse Elemente finden Sie unter, die häufig ein-und den deaktivierten Zustand: Ort der Rahmenpinsel Ansatz, der Elemente Backplates als auch der Rahmen um den Zustand zu bezeichnen.
+* Tippen Sie sie an für angrenzende sind Elemente, die so dicht beieinander liegen: Fügen Sie eine von 1px-Rand zwischen den beiden Elementen hinzu. 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
-### <a name="do"></a>tun:
+### <a name="do"></a>Führen Sie aus:
 - Verwenden Sie „Reveal” für Elemente, in denen der Benutzer viele Aktionen (CommandBars, Navigationsmenüs) ausführt
 - Verwenden Sie „Reveal” bei der Gruppierung von interaktiven Elementen, die nicht standardmäßig visuelle Trennzeichen haben (Listen, Menübänder)
 - Verwenden Sie „Reveal” in Bereichen mit vielen interaktiven Elementen (Befehlszenarios)
@@ -278,7 +278,7 @@ Wenn Sie "Reveal" für ein benutzerdefiniertes oder neues Steuerelement oder ein
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementkatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="reveal-and-the-fluent-design-system"></a>„Reveal” und das Fluent Design-System
 
@@ -287,8 +287,8 @@ Wenn Sie "Reveal" für ein benutzerdefiniertes oder neues Steuerelement oder ein
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [RevealBrush-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [Acryl](acrylic.md)
-- [Kompositionseffekte](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Acrylic](acrylic.md)
+- [Auswirkungen der Komposition](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Fluent Design für UWP](../fluent-design-system/index.md)
-- [Wissenschaft im System: Fluent Design und Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
-- [Wissenschaft im System: Fluent Design und Licht](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)
+- [Die Wissenschaft im System: Fluent Design und der Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [Die Wissenschaft im System: Fluent Design und Licht](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

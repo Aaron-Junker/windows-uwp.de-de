@@ -1,39 +1,39 @@
 ---
-Description: The Health report in Partner Center lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
+Description: Der Bericht zur Integrität im Partner Center können Sie die Daten, die im Zusammenhang mit Leistung und Qualität Ihrer App, einschließlich abstürzen und nicht reagierenden Ereignissen abzurufen.
 title: Integritätsbericht
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, Integrität, Abstürze, reagiert nicht, App-Integrität, Integritätsdaten, Stapelüberwachung, CAB-Datei, Fehler, Fehler, Pdb, Symbole
+keywords: Windows 10, UWP, Integrität, Abstürze, reagiert nicht, App-Integrität, Integritätsdaten, Stapelüberwachung, CAB-Datei, Fehler, Fehler, Pdb, Symbole
 ms.localizationpriority: medium
 ms.openlocfilehash: c547cc933247e69fd208e8d3c297572815a5f2ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937094"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635835"
 ---
 # <a name="health-report"></a>Integritätsbericht
 
-Der Bericht " **Integrität** " im [Partner Center](https://partner.microsoft.com/dashboard) können Sie die Daten zur Leistung und Qualität Ihrer App, einschließlich abstürzen abrufen. Sie können diese Daten im Partner Center oder [den Bericht herunterladen](download-analytic-reports.md) offline anzeigen anzeigen. Bei Bedarf können Sie Stapelüberwachungen und/oder CAB-Dateien für weitere Debugzwecke anzeigen.
+Die **Integrität** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) können Sie Daten, die im Zusammenhang mit Leistung und Qualität Ihrer App, einschließlich abstürzen und nicht reagierenden Ereignissen abrufen. Sie können diese Daten anzeigen, im Partner Center oder [Bericht herunterladen](download-analytic-reports.md) offline anzeigen. Bei Bedarf können Sie Stapelüberwachungen und/oder CAB-Dateien für weitere Debugzwecke anzeigen.
 
 Sie können die Daten in diesem Bericht aber auch programmgesteuert mit der [Microsoft Store-REST-API für Analysen](../monetize/access-analytics-data-using-windows-store-services.md) abrufen.
 
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
 
-Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **72 H** (72 Stunden), Sie können stattdessen aber auch **30D** auswählen, um die Daten der letzten 30Tage anzuzeigen. Beachten Sie, dass Daten in Ihre lokale Zeitzone für die Ansicht **72 Stunden** und in UTC für die **30d** -Ansicht angezeigt werden.
+Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **72 H** (72 Stunden), Sie können stattdessen aber auch **30D** auswählen, um die Daten der letzten 30 Tage anzuzeigen. Beachten Sie, dass die Daten in der lokalen Zeitzone für dargestellt ist die **72H** anzeigen und im UTC-Zeit für die **30D** anzeigen.
 
 Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite nach Paketversion, Markt und/oder Gerätetyp zu filtern.
 
--   **Paketversion**: Die Standardeinstellung ist **Alle**. Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
--   **Markt**: der Standardfilter lautet **Alle Märkte**, aber Sie können die Daten auf einen oder mehrere Märkte begrenzen.
--   **Gerätetyp**: Die Standardeinstellung ist **Alle**, Sie können jedoch festlegen, dass nur Daten für einen bestimmten Gerätetyp angezeigt werden. Beachten Sie, dass die Kategorie **Andere** Geräte enthält, für die der Hersteller/ das Modell erkannt wird, wir diese allerdings nicht in eine der vordefinierten Kategorien einbeziehen, die in diesem Filter angezeigt werden. Für diese Geräte kann das Modells im Abschnitt **Fehlerprotokoll** des Berichts **Fehlerdetails** angezeigt werden.  
--   **Betriebssystemversion**: Die Standardeinstellung lautet **Alle BS-Versionen**, Sie können jedoch eine bestimmte Version des Betriebssystems auswählen.
--   **Betriebssystemversion**: Die Standardeinstellung lautet **Alle BS-Versionen**. Sie können jedoch eine bestimmte Version des **Betriebssystems** auswählen.
--   **Sandbox**: der Standardwert ist **Einzelhandel**. Für Produkte, die eine Sandbox mit mehreren Entwicklungen verwenden (z.B. Spiele mit Xbox Live), können Sie hier einen spezifischen Wert auswählen. (Wenn Ihr Produkt keine Sandboxes verwendet, zeigt dieser Filter nur **Einzelhandel** an und ist nicht anwendbar.)
--   **Architektur**: Die Standardeinstellung lautet **Alle Architekturen**. Sie können jedoch einen bestimmten Typ der Systemarchitektur auswählen. Dieser Filter ist nur verfügbar, wenn **30D** ausgewählt ist.
--   **PRAID**: die Standardeinstellung ist **Alle**. Wenn Sie bei der Erstellung Ihres App-Pakets mehrere App-IDs relativ zu den Paketen definieren (PRAIDs), können Sie festlegen, dass nur Daten im Zusammenhang mit einem PRAID angezeigt werden. Dieser Filter wird nicht angezeigt, wenn Sie nicht mehrere PRAIDs definiert haben.
+-   **Paketversion**: Die Standardeinstellung ist **alle**. Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
+-   **Markt**: Der Standardfilter ist **alle Märkte**, aber Sie können die Daten auf eine oder mehrere einschränken.
+-   **Gerätetyp**: Die Standardeinstellung ist **alle**, aber Sie können auswählen, um Daten für nur ein bestimmtes Gerät anzuzeigen. Beachten Sie, dass die Kategorie **Andere** Geräte enthält, für die der Hersteller/ das Modell erkannt wird, wir diese allerdings nicht in eine der vordefinierten Kategorien einbeziehen, die in diesem Filter angezeigt werden. Für diese Geräte kann das Modells im Abschnitt **Fehlerprotokoll** des Berichts **Fehlerdetails** angezeigt werden.  
+-   **Version des Betriebssystems**: Der Standardwert ist **alle Betriebssystemversionen**, aber Sie können eine bestimmte Betriebssystemversion auswählen.
+-   **Betriebssystem-Releaseversion**: Der Standardwert ist **aller OS-Versionen**, aber Sie können eine bestimmte Version von den ausgewählten **Betriebssystemversion**.
+-   **Sandbox**: Der Standardwert ist **Retail**, aber für Produkte, die mehrere Entwicklung Sandboxes (z. B. Spiele Xbox Live integriert) verwenden, können Sie hier ein bestimmtes Abonnement auswählen. (Wenn Ihr Produkt keine Sandboxes verwendet, zeigt dieser Filter nur **Einzelhandel** an und ist nicht anwendbar.)
+-   **Architektur**: Der Standardwert ist **alle Architekturen**, aber Sie können einen bestimmte Architektur Systemtyp auswählen. Dieser Filter ist nur verfügbar, wenn **30D** ausgewählt ist.
+-   **PRAID**: Die Standardeinstellung ist **alle**, aber wenn Sie mehrere relative Paket-app IDs (PRAIDs) beim Erstellen des app-Pakets definiert haben, können Sie nur Daten, die im Zusammenhang mit einem PRAID angezeigt werden. Dieser Filter wird nicht angezeigt, wenn Sie nicht mehrere PRAIDs definiert haben.
 
 Die Informationen in allen unten angezeigten Diagrammen beziehen sich auf den ausgewählten Zeitraum und alle von Ihnen ausgewählten Filter. In einigen Abschnitten können Sie zusätzliche Filter anwenden.
 
@@ -42,10 +42,10 @@ Die Informationen in allen unten angezeigten Diagrammen beziehen sich auf den au
 
 Das Diagramm **Fehlertreffer** zeigt die Anzahl von täglichen Abstürzen und Ereignissen, die Kunden bei der Nutzung Ihrer App im ausgewählten Zeitraum festgestellt haben. Jeder Ereignistyp, der in der App aufgetreten ist, wird separat überwacht: Abstürze, Blockaden, JavaScript-Ausnahmen und Speicherfehler.
 
-Wenn der **30d** Zeitraum ausgewählt wird, wird möglicherweise Kreis angezeigt. Diese stellen eine erhebliche Erhöhung oder einen bestimmten Wert, die wir glauben, dass Sie kennen sollten verringern. Das Datum, an dem die Kreis angezeigt wird, stellt am Ende der Woche, in der wir eine erhebliche Erhöhung oder Verringerung, die im Vergleich zu Woche festgestellt, dar. Um weitere Informationen zu Änderungen zu sehen, zeigen Sie auf den Kreis.  
+Wenn die **30D** Zeitraum ausgewählt ist, wird möglicherweise Kreis Marker wird angezeigt. Dies eine erhebliche Leistungssteigerung darstellen, oder verringern Sie in einem angegebenen Wert, den wir glauben, dass Sie wissen möchten. Das Datum, die auf dem der Kreis angezeigt wird, stellt das Ende der Woche, die in der wir eine beträchtliche Zunahme oder verringern, die im Vergleich zu die Woche vor, die erkannt dar. Zeigen Sie auf den Kreis, um weitere Details zu Änderungen anzuzeigen.  
 
 > [!TIP]
-> Sie können weitere Einblicke im Zusammenhang mit erhebliche Änderungen an der letzten 30 Tage im [Bericht](insights-report.md)anzeigen.
+> Sehen Sie weitere Informationen zu wesentlichen Änderungen in den letzten 30 Tagen in den [Insights-Bericht](insights-report.md).
 
 ## <a name="failure-hits-by-market"></a>Fehlertreffer nach Markt
 
@@ -70,18 +70,18 @@ Das Diagramm **Fehler** zeigt die Gesamtanzahl von Abstürzen und Ereignissen im
 Wählen Sie zum Anzeigen der **Fehlerdetails** für einen bestimmten Fehler den Fehlernamen aus. Wenn Sie Symboldateien eingefügt haben, beinhaltet der Bericht **Fehlerdetails** die Anzahl der Fehlertreffer im letzten Monat sowie ein Fehlerprotokoll, in dem die entsprechenden Details (Datum, Paketversion, Gerätetyp, Gerätemodell, Betriebssystembuild) sowie ein Link zu der Ablaufverfolgung und/oder einer CAB-Datei, wenn verfügbar, aufgeführt werden.
 
 > [!TIP]
-> CAB-Dateien sind nur verfügbar, wenn Fehler auf einem Computer mit einer Windows-Insider-Build auftreten, daher haben nicht alle Fehler die Option zum Herunterladen einer CAB-Datei. Aktivieren Sie **Fehler mit Downloads** im Abschnitt Filter, um nur Fehler anzuzeigen, die CAB-Dateien verfügen. Sie können auch klicken Sie auf die **Links** im **Fehlerprotokoll** zum Sortieren der Ergebnisse, sodass Fehler, die CAB-Dateien enthalten am oberen Rand der Liste angezeigt werden.
+> CAB-Dateien sind nur verfügbar, wenn Fehler auf einem Computer mit einer Windows-Insider-Build auftreten, daher haben nicht alle Fehler die Option zum Herunterladen einer CAB-Datei. Wählen Sie zum Anzeigen, die CAB-Dateien nur der Fehlschläge **Fehler mit Downloads** im Abschnitt Filter. Sie können auch klicken die **Links** -Header in der **Fehlerprotokoll** zum Sortieren der Ergebnisse, sodass Fehler aufgetreten, die CAB-Dateien sind am oberen Rand der Liste angezeigt werden.
 
-Auf der Seite **Fehlerdetails** Sie sehen außerdem die **Verbreitung der Stapel** Diagramm oben gestapelt, beigetragen hat, auf den Fehler, der angezeigt wird, sortiert nach dem Prozentsatz, und das Diagramm **Gerätekonfiguration (30 D)** , die Details zu den Konfiguration von Geräten, die der Fehler aufgetreten ist. 
+Auf der **Fehlerdetails** Seite, und Sie sehen auch die **Stack Verbreitung** Diagramms, das die Top-Stapel, die auf den Fehler zeigt, sortiert nach Prozent beigetragen haben und die **Gerät Konfiguration (30D)** Diagramm, das den Fehler aufgetreten. Details zur Konfiguration von Geräten bereitstellt. 
 
 
-## <a name="crash-free-sessions-and-devices-30d"></a>Absturz-freie Sitzungen und Geräte (30D)
+## <a name="crash-free-sessions-and-devices-30d"></a>Sitzungen ohne Abstürze und Geräten (30D)
 
-Das **Sitzungen Absturz frei und Geräte** -Diagramm zeigt den Prozentsatz der Geräte und benutzersitzungen, die nicht in den letzten 30 Tagen abgestürzt. Diese Informationen können Sie die zu verstehen, wie Allgemein Ihre Abstürze Benutzer auswirken. Beispielsweise kann eine app 10.000 Abstürze in einem Tag verfügen. Wenn 90 % der Geräte betroffen sind, dann können Sie wahrscheinlich, die als wichtige klassifizieren und sofort Lösung fungieren. Wenn, die nur 5 % der Geräte, die Ihre App darstellt, möglicherweise die Priorität jedoch niedriger sein.
+Die **Sitzungen ohne Abstürze und Geräte** Diagramm zeigt den Prozentsatz der Geräte oder benutzersitzungen, die nicht in der letzten 30 Tage abgestürzt. Diese Informationen können Sie nachvollziehen, grob wie Ihre Abstürze Ihre Benutzer auswirken. Beispielsweise könnte eine app 10.000 Abstürze an einem Tag enthalten. Wenn 90 % der Geräte betroffen sind, würde dann wahrscheinlich klassifizieren, die als wichtig und reagieren, um es unverzüglich zu beseitigen. Wenn, die nur auf 5 % der Geräte, die Ihre App darstellt, kann die Priorität jedoch niedriger sein.
 
-Dieses Diagramm enthält zwei Registerkarten:
-- **Absturz-freie Geräte**: Zeigt den Prozentsatz der eindeutigen Geräte, die jedoch auf jeden Tag (in den letzten 30 Tagen) tritt kein Fehler auf.
-- **Absturz-freie Sitzungen**: Zeigt den Prozentsatz von benutzersitzungen, die jedoch auf jeden Tag (in den letzten 30 Tagen) tritt kein Fehler auf.
+In diesem Diagramm verfügt über zwei Registerkarten:
+- **Geräte ohne Abstürze**: Zeigt den Prozentsatz der eindeutigen Geräte, die jedoch an jedem Tag (während der letzten 30 Tage) tritt kein Fehler auf.
+- **Ohne Sitzungen durch Abstürze**: Zeigt den Prozentsatz der eindeutigen Benutzer-Sitzungen, die jedoch an jedem Tag (während der letzten 30 Tage) tritt kein Fehler auf.
 
 
  

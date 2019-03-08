@@ -1,17 +1,17 @@
 ---
-title: Erstellen und Registrieren einer In-Process-Hintergrundaufgabe
+title: Erstellen und Registrieren einer Hintergrundaufgabe innerhalb von Prozessen
 description: Erstellen und registrieren Sie eine In-Process-Aufgabe, die im gleichen Prozess wie die Vordergrund-App ausgeführt wird.
 ms.date: 11/03/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Hintergrundaufgabe, für die
+keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 50e818059436cf7653bf7ac7b2203b0761b93377
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045043"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615795"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Erstellen und Registrieren einer Hintergrundaufgabe innerhalb von Prozessen
 
@@ -29,7 +29,7 @@ Beachten Sie, dass Hintergrundaktivitäten auch bei Ausführung innerhalb des Vo
 
 ## <a name="fundamentals"></a>Grundlagen
 
-Das In-Process-Modell erweitert den Anwendungslebenszyklus um verbesserte Benachrichtigungen, wenn sich die App im Vordergrund oder im Hintergrund befindet. Zwei neue Ereignisse sind vom Anwendungsobjekt für diese Übergänge verfügbar: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) und [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Diese Ereignisse passen je nach Sichtbarkeitszustand der Anwendung in den Anwendungslebenszyklus. Weitere Informationen zu diesen Ereignissen und deren Auswirkungen auf den Anwendungslebenszyklus finden Sie unter [App-Lebenszyklus](app-lifecycle.md).
+Das In-Process-Modell erweitert den Anwendungslebenszyklus um verbesserte Benachrichtigungen, wenn sich die App im Vordergrund oder im Hintergrund befindet. Zwei neue Ereignisse werden aus dem Anwendungsobjekt für diese Übergänge verfügbar: [**EnteredBackground** ](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) und [ **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Diese Ereignisse passen je nach Sichtbarkeitszustand der Anwendung in den Anwendungslebenszyklus. Weitere Informationen zu diesen Ereignissen und deren Auswirkungen auf den Anwendungslebenszyklus finden Sie unter [App-Lebenszyklus](app-lifecycle.md).
 
 Auf oberer Ebene behandeln Sie das **EnteredBackground**-Ereignis zum Ausführen von Code bei der Ausführung der App im Hintergrund und das **LeavingBackground**-Ereignis, um zu erfahren, wann Ihre App in den Vordergrund verschoben wurde.
 
@@ -53,7 +53,7 @@ In-Process-Hintergrundaktivitäten werden ähnlich wie Out-of-Process-Hintergrun
 
 In-Process-Hintergrundaktivitäten erfolgen ohne das Festlegen von `TaskEntryPoint.` Bleibt dieser Wert leer, wird der Standardeinstiegspunkt aktiviert, eine neue geschützte Methode für das Application-Objekt namens [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
 
-Sobald ein Trigger registriert ist, wird er basierend auf dem in der [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx)-Methode festgelegten Triggertyp ausgelöst. Im obigen Beispiel wird ein [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx) verwendet, der 15Minuten nach dem Registrierungszeitpunkt ausgelöst wird.
+Sobald ein Trigger registriert ist, wird er basierend auf dem in der [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx)-Methode festgelegten Triggertyp ausgelöst. Im obigen Beispiel wird ein [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx) verwendet, der 15 Minuten nach dem Registrierungszeitpunkt ausgelöst wird.
 
 ## <a name="add-a-condition-to-control-when-your-task-will-run-optional"></a>Hinzufügen einer Bedingung, die bestimmt, wann Ihre Aufgabe ausgeführt wird (optional)
 
@@ -68,7 +68,7 @@ Der folgende Beispielcode weist eine Bedingung zu, die die Anwesenheit des Benut
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>Platzieren des Codes der Hintergrundaktivität in „OnBackgroundActivated()“
 
-Platzieren Sie den Code der Hintergrundaktivität in [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) , auf dem Hintergrund-Trigger zu reagieren, wenn dieser ausgelöst wird. **OnBackgroundActivated** kann genau wie [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)behandelt werden. Die Methode verfügt über einen [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) -Parameter, der alles enthält, die die **Run** -Methode bereitstellt. Z. B. in "App.Xaml.cs":
+Fügen Sie Ihren Hintergrund Aktivität-Code in [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) auf den Hintergrund-Trigger reagieren, wenn es ausgelöst wird. **OnBackgroundActivated** kann wie [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) behandelt werden. Die Methode verfügt über eine [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) Parameter, der alles enthält, die die **ausführen** Methode bietet. Z. B. in "App.Xaml.cs":
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -88,7 +88,7 @@ sealed partial class App : Application
 }
 ```
 
-Beispielsweise eine umfangreichere **OnBackgroundActivated** finden Sie unter [Konvertieren eines app-Diensts für die Ausführung im gleichen Prozess wie seine Host-app](convert-app-service-in-process.md).
+Für eine umfangreichere **OnBackgroundActivated** Beispiel finden Sie unter [konvertieren eine app Service in demselben Prozess wie der Host-app ausführen](convert-app-service-in-process.md).
 
 ## <a name="handle-background-task-progress-and-completion"></a>Behandeln des Status und Abschlusses von Hintergrundaufgaben
 
@@ -110,25 +110,25 @@ Eine API-Referenz, konzeptionelle Richtlinien zu Hintergrundaufgaben und ausfüh
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-**Ausführliche Themen mit Anweisungen zu Hintergrundaufgaben**
+**Ausführliche Hintergrundinformationen Aufgabe Anweisungsthemen**
 
-* [Konvertieren einer Out-of-Process-Hintergrundaufgabe in eine In-Process-Hintergrundaufgabe](convert-out-of-process-background-task.md)
-* [Erstellen und Registrieren einer Out-of-Process-Hintergrundaufgabe](create-and-register-a-background-task.md)
+* [Konvertieren Sie eine Out-of-Process-Hintergrundaufgabe in einem in-Process-Hintergrundaufgabe](convert-out-of-process-background-task.md)
+* [Erstellen Sie und registrieren Sie eine Out-of-Process-Hintergrundaufgabe](create-and-register-a-background-task.md)
 * [Wiedergeben von Medien im Hintergrund](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [Reagieren auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
-* [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
-* [Festlegen von Bedingungen zum Ausführen einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md)
-* [Verwenden eines Wartungsauslösers](use-a-maintenance-trigger.md)
-* [Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md)
-* [Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md)
-* [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)
+* [Reagieren Sie auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
+* [Eine Hintergrundaufgabe registrieren](register-a-background-task.md)
+* [Festlegen von Bedingungen für die Ausführung einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md)
+* [Verwenden Sie einen Wartungstrigger](use-a-maintenance-trigger.md)
+* [Eine abgebrochene Hintergrundaufgabe verarbeiten](handle-a-cancelled-background-task.md)
+* [Überwachen von Aufgabenstatus Hintergrund und Abschluss](monitor-background-task-progress-and-completion.md)
+* [Führen Sie eine Hintergrundaufgabe über einen timer](run-a-background-task-on-a-timer-.md)
 
-**Ratschläge zu Hintergrundaufgaben**
+**Hintergrund-Task-Leitfaden**
 
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
-* [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-* [So wird’s gemacht: Auslösen von Anhalte-, Fortsetzungs- und Hintergrundereignissen in UWP-Apps (beim Debuggen)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Eine Hintergrundaufgabe Debuggen](debug-a-background-task.md)
+* [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps (beim debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**Hintergrundaufgabe – API-Referenz**
+**Hintergrund Task-API-Referenz**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)

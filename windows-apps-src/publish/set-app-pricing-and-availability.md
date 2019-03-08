@@ -1,17 +1,17 @@
 ---
-Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
+Description: Auf der Seite „Preise und Verfügbarkeit“ des App-Übermittlungsprozesses können Sie festlegen, wie viel Ihre App kosten soll, ob Sie eine kostenlose Testversion anbieten und wie, wann und wo sie für Kunden verfügbar ist.
 title: Festlegen der Preise und Verfügbarkeit von Apps
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, Preis, verfügbar, sichtbar, kostenlose Testversion, Testversionen, Testversion, Apps, Veröffentlichungsdatum
+keywords: Windows 10, UWP, Preis, verfügbar, sichtbar, kostenlose Testversion, Testversionen, Testversion, Apps, Veröffentlichungsdatum
 ms.localizationpriority: medium
 ms.openlocfilehash: d5fa6c3e23516a5255f8bd3252f6ded233101625
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922093"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640165"
 ---
 # <a name="set-app-pricing-and-availability"></a>Festlegen der Preise und Verfügbarkeit von Apps
 
@@ -21,21 +21,21 @@ Auf der Seite **Preise und Verfügbarkeit** des [App-Übermittlungsprozesses](ap
 
 ## <a name="markets"></a>Märkte
 
-Der Microsoft Store erreicht Kunden in über 200Ländern und Regionen in aller Welt. Standardmäßig werden Ihre App in allen möglichen Märkten angeboten. Falls gewünscht, können Sie die spezifischen Märkte auswählen, in denen Sie Ihre App anbieten möchten. 
+Der Microsoft Store erreicht Kunden in über 200 Ländern und Regionen in aller Welt. Standardmäßig werden Ihre App in allen möglichen Märkten angeboten. Falls gewünscht, können Sie die spezifischen Märkte auswählen, in denen Sie Ihre App anbieten möchten. 
 
 Weitere Informationen erhalten Sie unter [Festlegen der Marktauswahl](define-pricing-and-market-selection.md).
 
 
 ## <a name="visibility"></a>Sichtbarkeit
 
-Im Abschnitt **Sichtbarkeit** können Sie Einschränkungen festlegen, wie die App ermittelt und erworben werden kann, z.B., ob Benutzer Ihre App im Store oder im Store-Eintrag überhaupt finden können.
+Im Abschnitt **Sichtbarkeit** können Sie Einschränkungen festlegen, wie die App ermittelt und erworben werden kann, z. B., ob Benutzer Ihre App im Store oder im Store-Eintrag überhaupt finden können.
 
 Weitere Informationen finden Sie unter [Sichtbarkeitsoptionen auswählen](choose-visibility-options.md).
 
 
 ## <a name="schedule"></a>Zeitplan
 
-Standardmäßig (es sei denn, Sie haben eine der Optionen für **Make this app available but not discoverable in the Store** im Abschnitt [Sichtbarkeit](choose-visibility-options.md#discoverability) ausgewählt) wird Ihre App für Kunden zur Verfügung gestellt, sobald sie die Zertifizierung bestanden und den Veröffentlichungsprozess abgeschlossen hat. Um ein anderes Datum auszuwählen, wählen Sie **Optionen anzeigen**, um diesen Abschnittzu erweitern. 
+Standardmäßig (es sei denn, Sie haben eine der Optionen für **Make this app available but not discoverable in the Store** im Abschnitt [Sichtbarkeit](choose-visibility-options.md#discoverability) ausgewählt) wird Ihre App für Kunden zur Verfügung gestellt, sobald sie die Zertifizierung bestanden und den Veröffentlichungsprozess abgeschlossen hat. Um ein anderes Datum auszuwählen, wählen Sie **Optionen anzeigen**, um diesen Abschnitt zu erweitern. 
 
 Weitere Informationen finden Sie unter [Konfigurieren des genauen Veröffentlichungszeitplans](configure-precise-release-scheduling.md).
 
@@ -55,9 +55,9 @@ Es gibt zwei Arten von Testversionen, die Sie auswählen können, und Sie haben 
 
 ### <a name="time-limited"></a>Zeitlich begrenzt
 
-Wählen Sie **Zeitlich begrenzt**, um es Benutzern zu ermöglichen, Ihre App für eine bestimmte Anzahl von Tagen kostenlos zu testen: **1 Tag**, **7 Tage**, **15 Tage** oder **30 Tage**. Sie können Features durch Hinzufügen von Code zum [Ausschließen oder Beschränken von Features in der Testversion](../monetize/in-app-purchases-and-trials.md) einschränken oder Kunden den Zugriff auf die vollständigen Funktionen während dieses Zeitraums gewähren. 
+Wählen Sie **zeitlich begrenzte** können Kunden Ihre app für eine bestimmte Anzahl von Tagen kostenlos zu testen: **1 Tag**, **7 Tage**, **15 Tage**, oder **30 Tage**. Sie können Features durch Hinzufügen von Code zum [Ausschließen oder Beschränken von Features in der Testversion](../monetize/in-app-purchases-and-trials.md) einschränken oder Kunden den Zugriff auf die vollständigen Funktionen während dieses Zeitraums gewähren. 
 > [!NOTE]
-> Zeitlich begrenzte Testversionen werden für Kunden unter Windows 10 Build 10.0.10586 oder früheren Versionen bzw. für Kunden unter Windows Phone8.1 und früheren Versionen nicht angezeigt.
+> Zeitlich begrenzte Testversionen sind nicht für Kunden, die unter Windows 10 Build 10.0.10586 angezeigt oder früher, oder für Kunden, die auf Windows Phone 8.1 und früher.
 
 ### <a name="unlimited"></a>Unbegrenzt
 
@@ -68,12 +68,12 @@ Wählen Sie **Unbegrenzt**, damit Kunden unbegrenzte Zeit kostenlos auf Ihre App
 Standardmäßig wird Ihre Testversion verfügbar, sobald Ihre App veröffentlicht wurde, und ihre Bereitstellung wird nie beendet. Wenn Sie möchten, können Sie das Datum und die Uhrzeit angeben, an dem bzw. zu der mit der Bereitstellung der Testversion begonnen und an dem bzw. zu der ihre Bereitstellung beendet werden soll. 
 
 >[!NOTE]
-> Diese Datumsangabe gilt nur für Kunden mit Windows10 (inklusive Xbox). Wenn Ihre App für Kunden mit früheren Betriebssystemversionen verfügbar ist, wird die Testversion für diese Kunden angeboten, solange Ihr Produkt verfügbar ist. 
+> Diese Datumsangabe gilt nur für Kunden mit Windows 10 (inklusive Xbox). Wenn Ihre App für Kunden mit früheren Betriebssystemversionen verfügbar ist, wird die Testversion für diese Kunden angeboten, solange Ihr Produkt verfügbar ist. 
 
-Zum Festlegen des Datums für das Anbieten der Testversion für Kunden von Windows 10 ändern Sie die Angabe im Dropdownfeld **Starts on** und/oder **Ends on** in **at** und wählen anschließend Datum und Uhrzeit. In diesem Fall können Sie entweder **UTC** auswählen, sodass die ausgewählte Uhrzeit UTC-Zeit (Universal Coordinated Time, Koordinierte Weltzeit) ist, oder **Lokal** festlegen, damit diese Uhrzeiten in jeder Zeitzone für einen Markt verwendet werden. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.) Sie können **für die einzelnen Märkte anpassen** auswählen, wenn Sie ein anderes Datum für alle Märkte festlegen möchten.
+Zum Festlegen des Datums für das Anbieten der Testversion für Kunden von Windows 10 ändern Sie die Angabe im Dropdownfeld **Starts on** und/oder **Ends on** in **at** und wählen anschließend Datum und Uhrzeit. In diesem Fall können Sie entweder **UTC** auswählen, sodass die ausgewählte Uhrzeit UTC-Zeit (Universal Coordinated Time, Koordinierte Weltzeit) ist, oder **Lokal** festlegen, damit diese Uhrzeiten in jeder Zeitzone für einen Markt verwendet werden. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.) Sie können auswählen, **für bestimmte Märkte anpassen** , wenn Sie ein anderes Datum für alle Märkte festlegen möchten.
 
 
-## <a name="sale-pricing"></a>Sonderpreise
+## <a name="sale-pricing"></a>Sonderangebotsverkaufspreise
 
 Wenn Sie Ihre App zu einem reduzierten Preis für einen begrenzten Zeitraum anbieten möchten, können Sie ein Sonderangebot erstellen und planen.
 

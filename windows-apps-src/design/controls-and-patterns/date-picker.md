@@ -1,5 +1,5 @@
 ---
-Description: The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
+Description: Mit der Datumsauswahl verfügen Sie über eine standardisierte Methode, Benutzern die Möglichkeit zu bieten, einen lokalisierten Datumswert per Touch-, Maus- oder Tastatureingabe auszuwählen.
 title: Datumsauswahl
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
@@ -7,18 +7,18 @@ label: Date picker
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a51705b1e74508d89328ce5ace3d7fd869aa0940
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037312"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606395"
 ---
 # <a name="date-picker"></a>Datumsauswahl
 
@@ -26,7 +26,7 @@ ms.locfileid: "9037312"
 
 Mit der Datumsauswahl verfügen Sie über eine standardisierte Methode, Benutzern die Möglichkeit zu bieten, einen lokalisierten Datumswert per Touch-, Maus- oder Tastatureingabe auszuwählen. 
 
-> **Wichtige APIs:** [Klasse „DatePicker“](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx), [Eigenschaft „Date“](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
+> **Wichtige APIs**: [DatePicker-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx), [Date-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
@@ -43,8 +43,8 @@ Weitere Informationen zur Auswahl des richtigen Datumssteuerelements finden Sie 
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/DatePicker">die App zu öffnen und DatePicker in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -75,7 +75,7 @@ Die fertige Datumsauswahl sieht wie folgt aus:
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementkatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

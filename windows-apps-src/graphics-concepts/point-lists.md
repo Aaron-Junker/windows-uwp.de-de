@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 84a08d480070e4a23147679dd9b5dda1f8c9cca1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937658"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605495"
 ---
 # <a name="point-lists"></a>Punktelisten
 
@@ -22,9 +22,9 @@ Eine Punkteliste ist eine Sammlung von Scheitelpunkten, die als isolierte Punkte
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Beispiel
 
 
-Die folgende Abbildungzeigt eine gerenderte Punkteliste.
+Die folgende Abbildung zeigt eine gerenderte Punkteliste.
 
-![Abbildungeiner Punkteliste](images/pointlst.png)
+![Abbildung einer Punkteliste](images/pointlst.png)
 
 Die Anwendung kann Materialien und Texturen auf eine Punkteliste anwenden. Die Farben im Material oder der Textur werden nur bei dem gezeichneten Punkt angezeigt, nicht an anderen Stellen zwischen den Punkten.
 
@@ -60,7 +60,7 @@ d3dDevice->DrawPrimitive( D3DPT_POINTLIST, 0, 6 );
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Grundtypen](primitives.md)
+[Primitive Typen](primitives.md)
 
  
 

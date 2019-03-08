@@ -3,14 +3,14 @@ title: Eingabegesteuerte Animationen
 description: Erfahren Sie, wie Sie Eingabeanimationen in Ihrer App-Benutzeroberfläche verwenden.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, Uwp, animation
+keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 94d15fc7f2443475020aa7e134c076b833db46a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926326"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597755"
 ---
 # <a name="input-driven-animations"></a>Eingabegesteuerte Animationen
 
@@ -20,7 +20,7 @@ Dieser Artikel enthält eine Einführung in die InputAnimation-API und empfiehlt
 
 Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
 
-- [Relationsbasierte Animationen](relation-animations.md)
+- [Beziehung basierend Animationen](relation-animations.md)
 
 ## <a name="smooth-motion-driven-from-user-interactions"></a>Reibungslose Bewegungsabläufe durch Benutzerinteraktion
 

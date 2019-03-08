@@ -6,24 +6,24 @@ ms.topic: article
 keywords: Windows 10, UWP, SQLite, Datenbank
 ms.localizationpriority: medium
 ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075143"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635665"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Verwenden einer SQLite-Datenbank in einer UWP-App
 Sie können SQLite verwenden, um Daten in einer einfachen Datenbank auf dem Gerät des Benutzers zu speichern und abzurufen. Dieser Leitfaden zeigt Ihnen wie.
 
 ## <a name="some-benefits-of-using-sqlite-for-local-storage"></a>Einige Vorteile der Verwendung von SQLite für die lokale Speicherung
 
-:heavy_check_mark: SQLite ist einfach und eigenständig. Es ist eine Code-Bibliothek ohne weitere Abhängigkeiten. Es gibt nichts zu konfigurieren.
+:heavy_check_mark: SQLite ist leicht und eigenständig. Es ist eine Code-Bibliothek ohne weitere Abhängigkeiten. Es gibt nichts zu konfigurieren.
 
-:heavy_check_mark: Es gibt keinen Datenbankserver. Client und der Server laufen im selben Prozess.
+:heavy_check_mark: Keine Datenbankserver-ist. Client und der Server laufen im selben Prozess.
 
-:heavy_check_mark: SQLite ist öffentlich zugänglich, so dass Sie es mit Ihrer App frei verwenden und verteilen können.
+:heavy_check_mark: SQLite ist in der öffentlichen Domäne ein, damit Sie frei und verteilen Sie sie mit Ihrer app.
 
-:heavy_check_mark: SQLite arbeitet plattform- und architekturübergreifend.
+:heavy_check_mark: SQLite funktioniert auf Plattformen und Architekturen.
 
 Mehr über SQLite [erfahren Sie hier](https://sqlite.org/about.html).
 
@@ -83,13 +83,13 @@ Es gibt eine Reihe von Vorteilen, um die Mindestversion Ihres UWP-Projekts auf d
 
 Zunächst einmal können Sie .NET Standard 2.0-Bibliotheken anstelle von regulären Klassenbibliotheken verwenden. Das bedeutet, dass Sie Ihren Datenzugriffscode mit jeder anderen .NET-basierten Anwendung wie WPF, Windows Forms, Android, iOS oder ASP.NET teilen können.
 
-Zweitens hat Ihre app keinen SQLite-Bibliotheken zu verpacken. Stattdessen kann Ihre App die Version von SQLite verwenden, die mit Windows installiert wird. Das hilft Ihnen in mehrfacher Hinsicht.
+Zweitens muss Ihre app keine SQLite-Bibliotheken zu verpacken. Stattdessen kann Ihre App die Version von SQLite verwenden, die mit Windows installiert wird. Das hilft Ihnen in mehrfacher Hinsicht.
 
-:heavy_check_mark: Reduziert die Größe Ihrer App, da Sie die SQLite-Binärdatei nicht herunterladen und dann als Teil Ihrer App verpacken müssen.
+:heavy_check_mark: Die Größe der Anwendung verringert, da Sie nicht die binären SQLite herunterladen und dann es als Teil Ihrer Anwendung gepackt werden.
 
-:heavy_check_mark: Verhindert, dass Sie eine neue Version Ihrer App an Benutzer weitergeben müssen, falls SQLite kritische Fehlerbehebungen und Sicherheitslücken in SQLite veröffentlicht. Die Windows-Version von SQLite wird von Microsoft in Abstimmung mit SQLite.org gepflegt.
+:heavy_check_mark: Verhindert, dass Sie eine neue Version Ihrer App an Benutzer senden, für den Fall, dass SQLite wichtige Updates zu Fehlern und Sicherheitslücken in SQLite veröffentlicht. Die Windows-Version von SQLite wird von Microsoft in Abstimmung mit SQLite.org gepflegt.
 
-:heavy_check_mark: Die Ladezeit der App kann kürzer sein, da die SDK-Version von SQLite wahrscheinlich bereits in den Speicher geladen wird.
+:heavy_check_mark: Ladezeit für die App hat das Potenzial, schneller ausgeführt, weil in den meisten Fällen die SDK-Version von SQLite bereits in den Arbeitsspeicher geladen werden.
 
 Beginnen wir mit dem Hinzufügen einer .NET Standard 2.0-Klassenbibliothek zu Ihrer Lösung. Es ist nicht notwendig, dass Sie eine Klassenbibliothek verwenden, um Ihren Datenzugriffscode zu enthalten, aber wir verwenden eine in unserem Beispiel. Wir nennen die Bibliothek **DataAccessLibrary** und die Klasse in der Bibliothek **DataAccess**.
 
@@ -125,15 +125,15 @@ Sie müssen dies nicht tun. Wenn Sie jedoch einen Grund haben, eine bestimmte Ve
 
 Wir werden die folgenden Dinge durchführen:
 
-:one: Bereiten Sie die Datenzugriffsklasse vor.
+: ein: Bereiten Sie vor der Datenzugriffsklasse.
 
-:two: Initialisieren Sie die SQLite-Datenbank.
+: zwei: Initialisieren Sie die SQLite-Datenbank.
 
-:three: Fügen Sie Daten in die SQLite-Datenbank ein.
+: drei: Einfügen von Daten in der SQLite-Datenbank.
 
-:four: Rufen Sie Daten aus der SQLite-Datenbank ab.
+: vier: Abrufen von Daten aus der SQLite-Datenbank.
 
-:five: Fügen Sie eine einfache Benutzeroberfläche hinzu.
+: fünf: Fügen Sie eine einfache Benutzeroberfläche hinzu.
 
 ### <a name="prepare-the-data-access-class"></a>Vorbereitung der Datenzugriffsklasse
 
@@ -147,7 +147,7 @@ Fügen Sie die folgende ``using``-Anweisung zu den Dateien **App.xaml.cs** und *
 using DataAccessLibrary;
 ```
 
-Öffnen Sie die **DataAccess**-Klasse in Ihrer **DataAccessLibrary**-Lösung, und deklarieren Sie diese Klasse als statisch.
+Öffnen Sie die **DataAccess**-Klasse in Ihrer **DataAccessLibrary**-Lösung deklarieren Sie diese Klasse als statisch.
 
 >[!NOTE]
 >Unser Beispiel platziert den Datenzugriffscode in einer statischen Klasse. Dies ist jedoch nur eine Designentscheidung und völlig optional.
@@ -317,14 +317,14 @@ Das war's. Erkunden Sie [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotne
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Verbinden Sie Ihre App direkt mit einer SQL Server-Datenbank.**
+**Verbinden Sie Ihre app direkt in einer SQL Server-Datenbank**
 
 Mehr unter [Verwenden einer SQL Server-Datenbank in einer UWP-App](sql-server-databases.md).
 
-**Nutzen Sie Code zwischen verschiedenen Apps auf verschiedenen Plattformen**
+**Freigeben von Code zwischen den verschiedenen apps auf verschiedenen Plattformen**
 
 Weitere Informationen finden Sie unter [Teilen von Code zwischen einer Desktop-App und einer UWP-App](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)
 
-**Hinzufügen von Master-Detailseiten mit Azure SQL-Backends**
+**Hinzufügen von master-Detail-Seiten mit Azure SQL-Back-ends**
 
 Mehr unter [Beispiel einer Kundenauftragsdatenbank.](https://github.com/Microsoft/Windows-appsample-customers-orders-database)

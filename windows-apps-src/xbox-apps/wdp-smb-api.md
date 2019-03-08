@@ -3,15 +3,15 @@ title: Device Portal - Referenz zu SMB-APIs
 description: Erfahren Sie, wie Sie programmgesteuert auf die SMB-APIs zugreifen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
 ms.localizationpriority: medium
 ms.openlocfilehash: e248a6ff666efe7dca262daa81a21ab44a4dc5aa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922945"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617705"
 ---
 # <a name="developer-folder-api-reference"></a>Referenz zur API für den Entwicklerordner   
 Für den Zugriff auf Dateien auf Ihrer Xbox One, die sich auf die Entwicklung beziehen, können Sie einen standardmäßigen Datei-Explorer verwenden. Dadurch können Sie problemlos Dateien von Ihrem PC anzeigen und auf der Konsole ersetzen.
@@ -44,7 +44,7 @@ Path: Der Pfad zur Dateifreigabe mit den Entwicklerdateien.
 Username: Der Benutzername für den Zugriff auf die Freigabe mit den Entwicklerdateien.   
 Password: Das Kennwort für den Zugriff auf die Freigabe mit den Entwicklerdateien.   
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -54,6 +54,6 @@ HTTP-Statuscode      | Beschreibung
 4XX | Fehlercodes
 5XX | Fehlercodes
 <br />
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Xbox

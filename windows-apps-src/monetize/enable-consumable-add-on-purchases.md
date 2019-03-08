@@ -1,24 +1,24 @@
 ---
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
 description: Erfahren Sie, wie Sie den Windows.Services.Store-Namespace verwenden, um mit Endverbraucher-Add-Ons zu arbeiten.
-title: Unterstützen von Käufen konsumierbarer Add-Ons
-keywords: windows10, uwp, verbrauchbar, add-ons, in-app-käufe, IAPs, Windows.Services.Store
+title: Unterstützen von Endverbraucher-Add-On-Käufen
+keywords: windows 10, uwp, verbrauchbar, add-ons, in-app-käufe, IAPs, Windows.Services.Store
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0446269fcbde87dfa25b7bff25f7160335950fba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928587"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636725"
 ---
-# <a name="enable-consumable-add-on-purchases"></a>Unterstützen von Käufen konsumierbarer Add-Ons
+# <a name="enable-consumable-add-on-purchases"></a>Unterstützen von Endverbraucher-Add-On-Käufen
 
 Dieser Artikel veranschaulicht die Verwendung von Methoden der [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx)-Klasse im [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)-Namespace, um die Erfüllung des Benutzers von Endverbraucher-Add-Ons in Ihren UWP-Apps zu verwalten. Verwenden Sie Endverbraucher-Add-ons für Artikel, die gekauft, verwendet und erneut gekauft werden können. Dies ist besonders nützlich für Dinge wie spielinterne Währungen (Gold, Münzen usw.), die gekauft und dann zum Erwerben bestimmter Power-Ups verwendet werden können.
 
 > [!NOTE]
-> Der **Windows.Services.Store**-Namespace wurde in Windows10, Version 1607, eingeführt und kann nur in Projekten für die **Windows10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Wenn Ihre App für eine frühere Version von Windows 10 geeignet ist, müssen Sie den [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace anstelle des **Windows.Services.Store**-Namespace verwenden. Weitere Informationen finden Sie in [diesem Artikel](enable-consumable-in-app-product-purchases.md).
+> Der **Windows.Services.Store**-Namespace wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Wenn Ihre App für eine frühere Version von Windows 10 geeignet ist, müssen Sie den [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace anstelle des **Windows.Services.Store**-Namespace verwenden. Weitere Informationen finden Sie in [diesem Artikel](enable-consumable-in-app-product-purchases.md).
 
 ## <a name="overview-of-consumable-add-ons"></a>Übersicht über Endverbraucher-Add-ons
 
@@ -30,9 +30,9 @@ Apps können zwei Arten von Endverbraucher-Add-Ons anbieten, die sich auf die Ar
 
 * **Vom Store verwalteter Verbrauchsartikel**. Bei dieser Art von Verbrauchsartikel verfolgt der Store das Guthaben des Benutzers an Elementen, die das Add-On darstellt. Wenn der Benutzer Elemente nutzt, sind Sie verantwortlich dafür, diese Elemente dem Store als erfüllt zu melden, und der Store aktualisiert das Guthaben des Benutzers. Der Benutzer kann das Add-On beliebig oft kaufen (er muss die Elemente nicht zuerst verwenden). Ihre App kann das aktuelle Guthaben für den Benutzer jederzeit im Store abfragen.
 
-  Wenn das Add-On beispielsweise eine anfängliche Menge von 100 Münzen in einem Spiel darstellt und der Benutzer 50 Münzen nutzt, meldet die App dem Store, dass 50 Einheiten des Add-Ons erfüllt wurden, und der Store aktualisiert den Restbetrag. Wenn der Benutzer dann Ihr Add-on erneut kauft, um 100 weitere Münzen zu erhalten, hat er jetzt 150 Münzen insgesamt.
+  Wenn das Add-On beispielsweise eine anfängliche Menge von 100 Münzen in einem Spiel darstellt und der Benutzer 50 Münzen nutzt, meldet die App dem Store, dass 50 Einheiten des Add-Ons verwendet wurden, und der Store aktualisiert den Restbetrag. Wenn der Benutzer dann Ihr Add-on erneut kauft, um 100 weitere Münzen zu erhalten, hat er jetzt 150 Münzen insgesamt.
     > [!NOTE]
-    > Vom Store verwaltete Endverbraucher-Add-Ons sind in Windows10, Version1607 verfügbar.
+    > Vom Store verwaltete Endverbraucher-Add-Ons sind in Windows 10, Version 1607 verfügbar.
 
 Um einem Benutzer ein Endverbraucher-Add-on anzubieten, befolgen Sie dieses allgemeine Verfahren:
 
@@ -45,12 +45,12 @@ Auch das [Abrufen des Restbetrags](enable-consumable-add-on-purchases.md#get_bal
 
 Für diese Beispiele gelten die folgenden Voraussetzungen:
 * Ein Visual Studio-Projekt für eine UWP (Universelle Windows-Plattform)-App, die für **Windows 10 Anniversary Edition (10.0; Build 14393)** oder höher, geeignet ist.
-* Sie haben [eine app-Übermittlung erstellt haben](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) , im Partner Center und diese app im Store veröffentlicht ist. Optional können Sie die App so konfigurieren, daher sie während der Tests im Store nicht auffindbar ist. Weitere Informationen finden Sie unter [Hinweise für Tests](in-app-purchases-and-trials.md#testing).
-* Sie haben [erstellt ein Endverbraucher-Add-On für die app](../publish/add-on-submissions.md) im Partner Center.
+* Sie haben [erstellt eine app-Einsendung](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) im Partner Center und diese app wird in den Store veröffentlicht. Optional können Sie die App so konfigurieren, daher sie während der Tests im Store nicht auffindbar ist. Weitere Informationen finden Sie unter [Hinweise für Tests](in-app-purchases-and-trials.md#testing).
+* Sie haben [erstellt einen verwendbaren-Add-On für die app](../publish/add-on-submissions.md) im Partner Center.
 
 Der Code in diesen Beispielen geht von Folgendem aus:
 * Die Ausführung des Codes erfolgt im Kontext einer [Seite](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), die einen [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) mit dem Namen ```workingProgressRing``` und einen [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) mit dem Namen ```textBlock``` enthält. Diese Objekte werden verwendet, um anzugeben, dass ein asynchroner Vorgang ausgeführt wird, bzw. um Ausgabemeldungen anzuzeigen.
-* Die Codedatei enthält eine **using**-Anweisung für den **Windows.Services.Store**-Namespace.
+* Die Codedatei enthält eine **using**-Anweisung für den Namespace **Windows.Services.Store**.
 * Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Weitere Informationen finden Sie unter [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md#api_intro).
 
 Eine vollständige Beispielanwendung finden Sie im [Store-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
@@ -86,9 +86,9 @@ Dieses Beispiel zeigt, wie die [GetConsumableBalanceRemainingAsync](https://docs
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
-* [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)
-* [Abrufen von Lizenzinformationen zu Apps und Add-Ons](get-license-info-for-apps-and-add-ons.md)
-* [Unterstützen von In-App-Einkäufen von Apps und Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Implementieren einer Testversion der App](implement-a-trial-version-of-your-app.md)
+* [In-app-Käufe und Testversionen](in-app-purchases-and-trials.md)
+* [Abrufen von Produktinformationen für apps und -Add-Ons](get-product-info-for-apps-and-add-ons.md)
+* [Abrufen von Lizenzinformationen für apps und -Add-Ons](get-license-info-for-apps-and-add-ons.md)
+* [Aktivieren von in-app-Käufe von apps und -Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Implementieren Sie eine Testversion von Ihrer app](implement-a-trial-version-of-your-app.md)
 * [Store-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

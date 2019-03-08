@@ -1,5 +1,5 @@
 ---
-Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
+Description: Die Navigation in UWP-Apps (Apps für die universelle Windows-Plattform) basiert auf einem flexiblen Modell aus Navigationsstrukturen, Navigationselementen und Funktionen auf Systemebene.
 title: Navigationsgrundlagen für UWP-Apps
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
@@ -7,15 +7,15 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 07/16/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116242"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636095"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Navigationsdesigngrundlagen für UWP-Apps
 
@@ -49,13 +49,13 @@ Es gibt zwar kein einheitliches Navigationsdesign, das für jede App funktionier
 
 Beginnen wir mit den Grundprinzipien eines guten Navigationsdesigns:
 
-- **Konsistenz:** Erfüllen Sie die Erwartungen der Anwender.
-- **Einfachheit:** Nicht mehr als notwendig.
-- **Klarheit:** Bieten Sie klare Wege und Optionen.
+- **Konsistenz:** Erfüllt die Erwartungen der Benutzer.
+- **Einfachheit:** Nicht mehr als erforderlich.
+- **Klarheit:** Geben Sie eindeutigen Pfaden und Optionen.
 
 ### <a name="consistency"></a>Konsistenz
 
-Die Navigation sollte den Erwartungen der Benutzer entsprechen. [Standardsteuerelemente](#use-the-right-controls) , dass der Benutzer mit vertraut sind und die folgenden Standardkonventionen für Symbole verwenden, nehmen Position und Formatierungen Navigation vorhersehbar und intuitiv für Benutzer.
+Die Navigation sollte den Erwartungen der Benutzer entsprechen. Mithilfe von [Standardsteuerelemente](#use-the-right-controls) , dass Benutzer verstehen und mit der folgenden Standardkonventionen für Symbole, Speicherort, und formatieren Navigation vorhersagbarste und intuitivste für Benutzer veranlasst.
 
 ![Bild mit Seitenkomponenten](images/nav/page-components.svg)
 
@@ -96,7 +96,7 @@ Nehmen wir nun unsere Gestaltungsprinzipien – Konsistenz, Einfachheit und Klar
 
 1. Denken Sie an Ihre Benutzer. Verfolgen Sie typische Pfade, die sie durch Ihre App nehmen könnten, und überlegen Sie für jede Seite, warum der Benutzer dort ist und wohin er gehen möchte.
 
-2. Vermeiden Sie Tiefe Navigationshierarchien. Wenn Sie über drei Navigationsebenen hinausgehen, riskieren Sie, Ihren Benutzer in einer tiefen Hierarchie zu verlieren, die er nur schwer verlassen kann.
+2. Vermeiden Sie umfassende Navigationshierarchien. Wenn Sie über drei Navigationsebenen hinausgehen, riskieren Sie, Ihren Benutzer in einer tiefen Hierarchie zu verlieren, die er nur schwer verlassen kann.
 
 3. Vermeiden Sie „Pogo Sticking”. Pogo Sticking tritt auf, wenn der Benutzer für die Navigation zu zugehörigen Inhalten eine Ebene nach oben und erneut eine nach unten navigieren muss.
 
@@ -184,13 +184,13 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
         
         Use top navigation when:
 
-        - Alle Navigationsoptionen auf dem Bildschirm angezeigt werden sollen.
-        - Sie möchten mehr Platz für den Inhalt Ihrer app.
-        - Symbole können nicht Ihre Navigationskategorien beschreiben.
+        - Möchten Sie alle Navigationsoptionen für die auf dem Bildschirm anzuzeigen.
+        - Sie verlangen mehr Speicherplatz für den Inhalt Ihrer app.
+        - Symbole können nicht Ihre Navigationskategorien klar beschreiben.
         
-        Verwendung Registerkarten, wenn:
+        Mit Registerkarten, wenn:
 
-        - Verlauf und Seite Navigationszustand beibehalten werden soll.
+        - Navigationszustand Seite und der Verlauf beibehalten werden sollen.
         - Sie erwarten, dass Benutzer häufig Registerkarten wechseln.
 
 :::row-end:::
@@ -205,7 +205,7 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
         Displays a vertical list of links to top-level pages. Use when:
         
         - Die Seiten befinden sich auf der obersten Ebene.
-        - Es gibt viele Navigationselemente (mehr als 5)
+        - Es gibt viele Navigationselementen (mehr als 5)
         - Sie erwarten nicht, dass Benutzer häufig zwischen Seiten wechseln werden.
         
 :::row-end:::
@@ -235,6 +235,6 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::
 
-## <a name="next-add-navigation-code-to-your-app"></a>Nächster Schritt: Hinzufügen von Navigationscode zu Ihrer App
+## <a name="next-add-navigation-code-to-your-app"></a>nächster: Hinzufügen von Navigations-Code zu Ihrer app
 
 Im nächsten Artikel, [Implementierung grundlegender Navigation,](navigate-between-two-pages.md), lernen Sie den Code kennen, die für die Verwendung von Frame-Steuerelementen zur Bereitstellung einer grundlegenden Navigation zwischen zwei Seiten in Ihrer App erforderlich ist.

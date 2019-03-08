@@ -6,17 +6,17 @@ ms.topic: article
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 11937934230b2c977e8e328fae0e693e8c1ab95a
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116422"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615455"
 ---
 # <a name="posprinter"></a>POSPrinter
 
-Dieser Abschnittenthält Anleitungen zur Erstellung von universellen Windows-Plattform (UWP)-Apps, die einen POSPrinter verwenden.
+Dieser Abschnitt enthält Anleitungen zur Erstellung von universellen Windows-Plattform (UWP)-Apps, die einen POSPrinter verwenden.
 
-## <a name="in-this-section"></a>In diesem Abschnitt
+## <a name="in-this-section"></a>Inhalt dieses Abschnitts
 |Thema |Beschreibung |
 |------|------------|
 | [Epson ESC/POS mit Formatierung](epson-esc-pos-with-formatting.md) | Erfahren Sie, wie Sie die ESC/POS-Befehlssprache zum Formatieren von Text, z. B. in Fett und mit doppelter Größe, für Ihren Point of Service-Drucker verwenden. |

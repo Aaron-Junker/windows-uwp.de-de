@@ -1,19 +1,19 @@
 ---
 ms.assetid: ''
 description: Enthält Informationen zum Aufzeichnen von Audio-, Video- und Metadaten aus Spielen in einer UWP-App.
-title: Aufzeichnen von Screenshots sowie von Audio-, Video- und Metadaten eines Spiels
+title: Aufzeichnen von Screenshots, Audio-, Video- und Metadaten eines Spiels
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, spiel, aufzeichnen, audio, video, metadaten
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921832"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601935"
 ---
-# <a name="capture-game-audio-video-screenshots-and-metadata"></a>Aufzeichnen von Screenshots sowie von Audio-, Video- und Metadaten eines Spiels
+# <a name="capture-game-audio-video-screenshots-and-metadata"></a>Aufzeichnen von Screenshots, Audio-, Video- und Metadaten eines Spiels
 In diesem Artikel wird beschrieben, wie Audio- und Videosequenzen sowie Screenshots aufgezeichnet und Metadaten von Spielen übermittelt werden, die das System in aufgezeichnete und übertragene Videostreams einbettet. So kann Ihre App dynamische Erfahrungen erstellen, die mit Spielereignissen synchronisiert sind. 
 
 Es gibt zwei Möglichkeiten, den Spielverlauf in einer UWP-App zu erfassen. Der Benutzer kann die Aufzeichnung mithilfe der integrierten Systembenutzeroberfläche initiieren. Medien, die auf diese Weise erfasst werden, werden in das Microsoft-Ökosystem für Spiele aufgenommen, können über Erstanbietererfahrungen wie die XBox App angezeigt und weitergegeben werden und stehen Ihrer App oder Nutzern nicht direkt zur Verfügung. In den ersten Abschnitten dieses Artikels erfahren Sie, wie Sie die vom System implementierte Erfassung mit der App aktivieren und deaktivieren, und wie Sie Benachrichtigungen erhalten, wenn die App eine Aufzeichnung startet oder beendet.
@@ -52,12 +52,12 @@ Die APIs im Namespace **[Windows.Media.AppRecording](https://docs.microsoft.com/
 4. Klicken Sie auf **OK**.
 
 ## <a name="get-an-instance-of-apprecordingmanager"></a>Abrufen einer AppRecordingManager-Instanz
-Die Klasse **[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** ist die zentrale API zum Verwalten von App-Aufzeichnungen. Sie können eine Instanz dieser Klasse durch einen Aufruf der Factorymethode **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** abrufen. Vor der Verwendung von APIs aus dem Namespace **Windows.Media.AppRecording** sollten Sie deren Vorhandensein auf dem aktuellen Gerät überprüfen. Die APIs sind nur auf Geräten verfügbar, auf denen Version 1709 (oder höher) von Windows10 ausgeführt wird. Statt die Version des Betriebssystems zu überprüfen, können Sie die Methode **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** verwenden, um festzustellen, ob Version 1.0 von *Windows.Media.AppBroadcasting.AppRecordingContract* vorhanden ist. Wenn dieser Vertrag vorhanden ist, sind die Aufnahme-APIs auf dem Gerät verfügbar. Der Beispielcode in diesem Artikel sucht zunächst nach den APIs und prüft dann, ob **AppRecordingManager** Null ist, bevor weitere Operationen ausgeführt werden.
+Die Klasse **[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** ist die zentrale API zum Verwalten von App-Aufzeichnungen. Sie können eine Instanz dieser Klasse durch einen Aufruf der Factorymethode **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** abrufen. Vor der Verwendung von APIs aus dem Namespace **Windows.Media.AppRecording** sollten Sie deren Vorhandensein auf dem aktuellen Gerät überprüfen. Die APIs sind nur auf Geräten verfügbar, auf denen Version 1709 (oder höher) von Windows 10 ausgeführt wird. Statt die Version des Betriebssystems zu überprüfen, können Sie die Methode **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** verwenden, um festzustellen, ob Version 1.0 von *Windows.Media.AppBroadcasting.AppRecordingContract* vorhanden ist. Wenn dieser Vertrag vorhanden ist, sind die Aufnahme-APIs auf dem Gerät verfügbar. Der Beispielcode in diesem Artikel sucht zunächst nach den APIs und prüft dann, ob **AppRecordingManager** Null ist, bevor weitere Operationen ausgeführt werden.
 
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>Ermitteln, ob die App momentan aufzeichnen kann
-Es gibt verschiedene Gründe dafür, dass Ihre App momentan möglicherweise keine Audio- oder Videoaufzeichnungen erstellen kann. Beispielsweise könnte das aktuelle Gerät nicht den Hardwareanforderungen für Aufnahmen entsprechen oder eine andere App gerade Daten übertragen. Vor dem Initiieren einer Aufzeichnung können Sie überprüfen, ob Ihre App momentan aufzeichnen kann. Rufen Sie die Methode **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** des Objekts **AppRecordingManager** auf, und überprüfen Sie dann die Eigenschaft **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** des zurückgegebenen Objekts **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)**. Wenn **CanRecord** **"false"** gibt, was bedeutet, dass die app momentan aufzeichnen kann nicht, können Sie die **[Details](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** -Eigenschaft, um die Ursache festzustellen überprüfen. Je nach Ursache sollten Sie dem Benutzer den Status oder Anweisungen zum Aktivieren der App-Aufzeichnung anzeigen.
+Es gibt verschiedene Gründe dafür, dass Ihre App momentan möglicherweise keine Audio- oder Videoaufzeichnungen erstellen kann. Beispielsweise könnte das aktuelle Gerät nicht den Hardwareanforderungen für Aufnahmen entsprechen oder eine andere App gerade Daten übertragen. Vor dem Initiieren einer Aufzeichnung können Sie überprüfen, ob Ihre App momentan aufzeichnen kann. Rufen Sie die Methode **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** des Objekts **AppRecordingManager** auf, und überprüfen Sie dann die Eigenschaft **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** des zurückgegebenen Objekts **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)**. Wenn **CanRecord** gibt **"false"**, was bedeutet, dass es sich bei Ihrer app derzeit nicht aufzeichnen kann, sehen Sie sich die **[Details](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** Eigenschaft, um zu bestimmen Der Grund. Je nach Ursache sollten Sie dem Benutzer den Status oder Anweisungen zum Aktivieren der App-Aufzeichnung anzeigen.
 
 
 
@@ -143,7 +143,7 @@ Durch Aufrufen von **[StopAllStates](https://docs.microsoft.com/uwp/api/windows.
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>Verwalten des Limits für den Metadaten-Zwischenspeicher
-Die Metadaten, die Sie mit **AppCaptureMetadataWriter** schreiben, werden vom System zwischengespeichert, bis sie in den zugehörigen Datenstrom geschrieben werden. Das System definiert ein Limit für die Größe des Metadaten-Zwischenspeichers jeder App. Sobald diese Limit erreicht ist, beginnt das System mit dem Löschen von zwischengespeicherten Metadaten. Das System löscht Metadaten, die vor dem Löschen von Metadaten mit der Priorität **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** mit **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** Prioritätswert geschrieben wurde.
+Die Metadaten, die Sie mit **AppCaptureMetadataWriter** schreiben, werden vom System zwischengespeichert, bis sie in den zugehörigen Datenstrom geschrieben werden. Das System definiert ein Limit für die Größe des Metadaten-Zwischenspeichers jeder App. Sobald diese Limit erreicht ist, beginnt das System mit dem Löschen von zwischengespeicherten Metadaten. Das System löscht Metadaten, die mit geschrieben wurde **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** Priority-Wert vor dem Löschen von Metadaten mit den **[ AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** Priorität.
 
 Zu jedem Zeitpunkt können Sie durch Aufruf von **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** die Anzahl der verfügbaren Bytes Metadaten-Zwischenspeicher der App ermitteln. Sie können auch selbst einen Schwellenwert für die App festlegen, um nach dessen Erreichen die Menge der Metadaten zu reduzieren, die Sie in den Zwischenspeicher schreiben. Das folgende Beispiel zeigt eine einfache Implementierung dieses Musters.
 
@@ -152,7 +152,7 @@ Zu jedem Zeitpunkt können Sie durch Aufruf von **[RemainingStorageBytesAvailabl
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>Empfangen von Benachrichtigungen, wenn das System Metadaten löscht
-Sie können eine Benachrichtigung erhalten, wenn das System beginnt mit dem Löschen von Metadaten für Ihre app registrieren Sie einen Handler für das Ereignis **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** registrieren.
+Sie können registrieren, um eine Benachrichtigung zu erhalten, wenn das System beginnt, Löschen von Metadaten für Ihre app durch Registrieren eines Handlers für die **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** Ereignis.
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

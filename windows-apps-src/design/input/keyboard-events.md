@@ -1,5 +1,5 @@
 ---
-Description: Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.
+Description: Reagieren Sie in Ihren Apps auf Tastaturaktionen von Hardware- oder Softwaretastaturen, indem Sie sowohl Tastatur- als auch Klassen-Ereignishandler verwenden.
 title: Tastaturereignisse
 ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
@@ -13,11 +13,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ff4e7d01d907112558993f52c8a214c91f7d499
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047069"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610455"
 ---
 # <a name="keyboard-events"></a>Tastaturereignisse
 
@@ -49,7 +49,7 @@ Standardmäßig entspricht die Aktivierreihenfolge von Steuerelementen der Reihe
 Ein Eingabe-Ereignishandler implementiert einen Delegaten, der die folgenden Informationen bereitstellt:
 
 -   Den Sender des Ereignisses. Der Sender meldet das Objekt, dem der Ereignishandler angefügt ist.
--   Ereignisdaten. Bei Tastaturereignissen sind diese Daten eine Instanz von [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072). [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904) ist der Delegat für Handler. Die wichtigsten Eigenschaften von **KeyRoutedEventArgs** für die meisten Handler-Szenarien sind [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) und möglicherweise [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075).
+-   Ereignisdaten. Bei Tastaturereignissen sind diese Daten eine Instanz von [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072). [  **KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904) ist der Delegat für Handler. Die wichtigsten Eigenschaften von **KeyRoutedEventArgs** für die meisten Handler-Szenarien sind [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) und möglicherweise [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075).
 -   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810). Da es sich bei Tastaturereignissen um Routingereignisse handelt, stellen die Ereignisdaten **OriginalSource** bereit. Wenn Sie bewusst das Bubbling von Ereignissen in der Objektstruktur zulassen, ist **OriginalSource** manchmal eher das fragliche Objekt als der Sender. Das hängt jedoch vom Design ab. Weitere Informationen dazu, wie Sie **OriginalSource** anstelle des Senders verwenden können, finden Sie im Abschnitt „Routingereignisse der Tastatur“ in diesem Thema oder unter [Übersicht über Ereignisse und Routingereignisse](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
 ### <a name="attaching-a-keyboard-event-handler"></a>Anfügen eines Tastaturereignishandlers
@@ -94,14 +94,14 @@ void MyProject::MainPage::Grid_KeyUp(
 
 Alle Tastaturereignisse verwenden [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) für Ereignisdaten. **KeyRoutedEventArgs** enthält die folgenden Eigenschaften:
 
--   [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074)
+-   [**Schlüssel**](https://msdn.microsoft.com/library/windows/apps/hh943074)
 -   [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)
--   [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073)
--   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) (geerbt von [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809))
+-   [**Behandelt**](https://msdn.microsoft.com/library/windows/apps/hh943073)
+-   [**OriginalSource** ](https://msdn.microsoft.com/library/windows/apps/br208810) (geerbt von [ **RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809))
 
-### <a name="key"></a>Key
+### <a name="key"></a>Schlüssel
 
-Das Ereignis [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) wird ausgelöst, wenn eine Taste gedrückt wird. Entsprechend wird das Ereignis [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) ausgelöst, wenn eine Taste losgelassen wird. In der Regel lauschen Sie auf Ereignisse, um einen bestimmten Tastenwert zu verarbeiten. Überprüfen Sie den Wert [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) in den Ereignisdaten, um die gedrückte oder losgelassene Taste zu ermitteln. **Key** gibt einen [**VirtualKey**](https://msdn.microsoft.com/library/windows/apps/br241812)-Wert zurück. Die **VirtualKey**-Enumeration umfasst alle unterstützten Tasten.
+Das [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941)-Ereignis wird ausgelöst, wenn eine Taste gedrückt wird. Entsprechend wird das [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)-Ereignis ausgelöst, wenn eine Taste losgelassen wird. In der Regel lauschen Sie auf Ereignisse, um einen bestimmten Tastenwert zu verarbeiten. Überprüfen Sie den Wert [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) in den Ereignisdaten, um die gedrückte oder losgelassene Taste zu ermitteln. **Key** gibt einen [**VirtualKey**](https://msdn.microsoft.com/library/windows/apps/br241812)-Wert zurück. Die **VirtualKey**-Enumeration umfasst alle unterstützten Tasten.
 
 ### <a name="modifier-keys"></a>Zusatztasten
 
@@ -284,9 +284,9 @@ End Sub
 ## <a name="keyboard-routed-events"></a>Routingereignisse der Tastatur
 
 
-Bestimmte Ereignisse gelten als Routingereignisse, wie z.B. [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) und [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942). Routingereignisse verwenden die Bubbling-Routingstrategie. Bei der Bubbling-Routingstrategie geht ein Ereignis von einem untergeordneten Objekt aus und wird jeweils an die übergeordneten Objekte in der Struktur weitergeleitet. Dadurch ergibt sich eine weitere Möglichkeit, dasselbe Ereignis zu behandeln und mit denselben Ereignisdaten zu interagieren.
+Bestimmte Ereignisse gelten als Routingereignisse, wie z. B. [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) und [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942). Routingereignisse verwenden die Bubbling-Routingstrategie. Bei der Bubbling-Routingstrategie geht ein Ereignis von einem untergeordneten Objekt aus und wird jeweils an die übergeordneten Objekte in der Struktur weitergeleitet. Dadurch ergibt sich eine weitere Möglichkeit, dasselbe Ereignis zu behandeln und mit denselben Ereignisdaten zu interagieren.
 
-Im folgenden XAML-Beispiel werden [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)-Ereignisse für ein [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)-Objekt und zwei [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)-Objekte definiert. Wenn Sie in diesem Fall eine Taste loslassen, während der Fokus auf einem der **Button**-Objekte liegt, wird das Ereignis **KeyUp** ausgelöst. Das Ereignis wird per Bubbling an die übergeordnete **Canvas** weitergeleitet.
+Im folgenden XAML-Beispiel werden [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)-Ereignisse für ein [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)-Objekt und zwei [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)-Objekte definiert. Wenn Sie in diesem Fall eine Taste loslassen, während der Fokus auf einem der **Button**-Objekte liegt, wird das **KeyUp**-Ereignis ausgelöst. Das Ereignis wird per Bubbling an die übergeordnete **Canvas** weitergeleitet.
 
 ```xaml
 <StackPanel KeyUp="StackPanel_KeyUp">
@@ -317,15 +317,15 @@ Der Zweck der Eigenschaft [**Handled**](https://msdn.microsoft.com/library/windo
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>"AddHandler " und bereits behandelte Tastaturereignisse
 
-Sie können eine spezielle Technik verwenden, um Handler anzufügen, die auf bereits als verarbeitet markierte Ereignisse reagieren können. Bei dieser Technik wird mit der Methode [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) ein Handler registriert, und es werden keine XAML-Attribute und keine sprachspezifische Syntax verwendet, die Handler wie „+=“ in C\# hinzufügen.
+Sie können eine spezielle Technik verwenden, um Handler anzufügen, die auf bereits als verarbeitet markierte Ereignisse reagieren können. Diese Technik verwendet den [ **AddHandler** ](https://msdn.microsoft.com/library/windows/apps/hh702399) Methode zum Registrieren eines Handlers, anstatt XAML-Attribute oder sprachspezifische Syntax beim Hinzufügen von Handlern, z. B. += in C\#.
 
 Eine generelle Einschränkung dieser Technik besteht darin, dass die API **AddHandler** einen Parameter vom Typ [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) verwendet, der das fragliche Routingereignis identifiziert. Nicht alle Routingereignisse bieten einen **RoutedEvent**-Bezeichner. Dieser Umstand wirkt sich somit darauf aus, welche Routingereignisse im Fall [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) noch verarbeitet werden können. Die Ereignisse [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) und [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) haben Routingereignisbezeichner ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) und [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418)) in [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Andere Texteingabe-Ereignisse, wie [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706), besitzen jedoch keine Routingereignisbezeichner und können deshalb für die Technik **AddHandler** nicht verwendet werden.
 
 ### <a name="overriding-keyboard-events-and-behavior"></a>Überschreiben von Tastaturereignissen und Verhalten
 
-Sie können die wichtigsten Ereignisse für bestimmte Steuerelemente überschreiben (z.B. [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)), um eine konsistente Fokusnavigation für verschiedene Eingabegeräte (darunter Tastatur und Gamepad) bereitzustellen.
+Sie können die wichtigsten Ereignisse für bestimmte Steuerelemente überschreiben (z. B. [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)), um eine konsistente Fokusnavigation für verschiedene Eingabegeräte (darunter Tastatur und Gamepad) bereitzustellen.
 
-Im folgenden Beispiel wird das Steuerelement und überschreiben das KeyDown-Verhalten Fokus zum GridView Inhalte, wenn eine Pfeiltaste gedrückt wird.
+Im folgenden Beispiel wir Unterklasse des Steuerelements und außer Kraft setzen das KeyDown-Verhalten, das Fokus zu verschieben, an die GridView zu Inhalt, wenn beliebige Pfeiltaste gedrückt wird.
 
 ```csharp
 public class CustomGridView : GridView
@@ -345,7 +345,7 @@ public class CustomGridView : GridView
 ```
 
 > [!NOTE]
-> Wenn ein GridView nur für Layoutzwecke verwendet wird, sollten Sie möglicherweise andere Steuerelemente verwenden, wie z.B. [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl) mit [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsWrapGrid).
+> Wenn ein GridView nur für Layoutzwecke verwendet wird, sollten Sie möglicherweise andere Steuerelemente verwenden, wie z. B. [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl) mit [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsWrapGrid).
 
 ## <a name="commanding"></a>Befehle
 
@@ -363,7 +363,7 @@ Trotzdem können Sie generell einer [**TextBox**](https://msdn.microsoft.com/lib
 
 Beispielsweise verarbeitet [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736) (die Basisklasse von [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)) [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) so, dass eine Überprüfung für die LEERTASTE oder für die EINGABETASTE durchgeführt werden kann. **ButtonBase** verarbeitet **KeyUp** analog zu einem Ereignis für das Drücken der linken Maustaste, um ein [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737)-Ereignis auszulösen. Diese Verarbeitung des Ereignisses wird beim Überschreiben der virtuellen Methode [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983) durch **ButtonBase** erreicht. In der Implementierung wird [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) auf **true** festgelegt. Als Ergebnis empfängt kein übergeordnetes Element einer Schaltfläche, die bei der LEERTASTE auf ein Tastaturereignis lauscht, das bereits verarbeitete Element für seine eigenen Handler.
 
-[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) ist ein weiteres Beispiel. Einige Tasten, wie die Pfeiltasten, werden von **TextBox** nicht als Text angesehen und gelten stattdessen als spezifisch für das UI-Steuerelementverhalten **TextBox** markiert diese Ereignisse als verarbeitet.
+[  **TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) ist ein weiteres Beispiel. Einige Tasten, wie die Pfeiltasten, werden von **TextBox** nicht als Text angesehen und gelten stattdessen als spezifisch für das UI-Steuerelementverhalten **TextBox** markiert diese Ereignisse als verarbeitet.
 
 Benutzerdefinierte Steuerelemente können ein ähnliches eigenes Überschreibungsverhalten für Tastaturereignisse implementieren und [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) / [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983) überschreiben. Wenn Ihr benutzerdefiniertes Steuerelement bestimmte Zugriffstasten verarbeitet oder ein Steuerelement- oder Fokusverhalten besitzt, das mit dem für [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) geschilderten Szenario vergleichbar ist, sollten Sie diese Logik in Ihre eigenen **OnKeyDown** / **OnKeyUp**-Überschreibungen aufnehmen.
 
@@ -382,25 +382,25 @@ Benutzer können Daten in Ihre App schneller und einfacher eingeben, wenn Sie de
 ## <a name="related-articles"></a>Verwandte Artikel
 
 **Entwickler**
-* [Tastaturinteraktionen](keyboard-interactions.md)
+* [Tastenkombinationen](keyboard-interactions.md)
 * [Identifizieren von Eingabegeräten](identify-input-devices.md)
-* [Reagieren auf das Vorhandensein der Bildschirmtastatur](respond-to-the-presence-of-the-touch-keyboard.md)
+* [Reagieren Sie auf das Vorhandensein der Bildschirmtastatur](respond-to-the-presence-of-the-touch-keyboard.md)
 
 **Designer**
 * [Tastaturentwurfsrichtlinien](https://msdn.microsoft.com/library/windows/apps/hh972345)
 
 **Beispiele**
-* [Beispiel für die Bildschirmtastatur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Einfaches Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Beispiel für Eingabe mit niedriger Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Touch-Tastatur – Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+* [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archivbeispiele**
 * [Eingabebeispiel](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Eingabe: Beispiel für Gerätefunktionen](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Eingabe: Beispiel für die Bildschirmtastatur](https://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Beispiel für die Reaktion auf die Anzeige der Bildschirmtastatur](https://go.microsoft.com/fwlink/p/?linkid=231633)
-* [Beispiel für die XAML-Textbearbeitung](https://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Eingabe: Touch-Tastatur – Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246019)
+* [Reagieren auf die Darstellung der Bildschirmtastatur Beispiel](https://go.microsoft.com/fwlink/p/?linkid=231633)
+* [Bearbeiten der XAML-Textbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  

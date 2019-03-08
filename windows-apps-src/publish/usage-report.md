@@ -1,57 +1,57 @@
 ---
-Description: The Usage report in Partner Center lets you see how customers are using your app.
+Description: Der Bericht zu den im Partner Center können Sie sehen, wie Kunden Ihre app verwenden.
 title: Nutzungsbericht
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, Uwp, Verwendung, benutzerdefiniertes Ereignis, Bericht, Telemetrie, Benutzersitzungen
+keywords: Windows 10, Uwp, Verwendung, benutzerdefiniertes Ereignis, Bericht, Telemetrie, Benutzersitzungen
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d0be1399ebc00ffda57ecf27a72be994fa994ce
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943493"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610905"
 ---
 # <a name="usage-report"></a>Nutzungsbericht
 
 
-Der Bericht " **Nutzung** " im [Partner Center](https://partner.microsoft.com/dashboard) können Sie sehen, wie Kunden unter Windows 10 (einschließlich Xbox) Ihre app verwenden, und zeigt Informationen über benutzerdefinierte Ereignisse, die Sie definiert haben. Sie können diese Daten im Partner Center oder [den Bericht herunterladen](download-analytic-reports.md) offline anzeigen anzeigen.
+Die **Nutzung** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) können Sie sehen, wie Kunden unter Windows 10 (einschließlich Xbox) Ihrer app verwenden, und zeigt Informationen zu benutzerdefinierten Ereignissen, die Sie definiert haben. Sie können diese Daten anzeigen, im Partner Center oder [Bericht herunterladen](download-analytic-reports.md) offline anzeigen.
 
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
 
-Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **30D** (30Tage), aber Sie können Daten für 3, 6 oder 12Monate anzeigen, oder für einen benutzerdefinierten Zeitraum, den Sie angeben.
+Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **30D** (30 Tage), aber Sie können Daten für 3, 6 oder 12 Monate anzeigen, oder für einen benutzerdefinierten Zeitraum, den Sie angeben.
 
 Sie können ebenfalls **Filter** erweitern, um Daten auf dieser Seite nach Paketversion, Markt und/oder Gerätetyp zu filtern.
 
--   **Paketversion**: Die Standardeinstellung ist **Alle**. Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
--   **Markt**: der Standardfilter lautet **Alle Märkte**, aber Sie können die Daten auf einen oder mehrere Märkte begrenzen.
--   **Gerätetyp**: Die Standardeinstellung ist **Alle**, Sie können jedoch festlegen, dass nur Daten für einen bestimmten Gerätetyp (PC, Konsole, Tablet etc.) angezeigt werden.
+-   **Paketversion**: Die Standardeinstellung ist **alle**. Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
+-   **Markt**: Der Standardfilter ist **alle Märkte**, aber Sie können die Daten auf eine oder mehrere einschränken.
+-   **Gerätetyp**: Die Standardeinstellung ist **alle**, aber Sie können auch Daten für nur einen bestimmten Gerätetyp (PC, Konsole, Tablet, usw.) angezeigt.
 
 Die Informationen in allen unten angezeigten Diagrammen spiegelt den Zeitraum und die ausgewählten Filter wider (mit Ausnahme von **Neue Benutzer** im Diagramm **Nutzung**, das nicht angezeigt wird, wenn keine Filter ausgewählt sind). In einigen Abschnitten können Sie zusätzliche Filter anwenden.
 
 > [!IMPORTANT]
-> Dieser Bericht enthält nur Nutzungsdaten von Kunden unter Windows10 (inklusive Xbox), die die Bereitstellung von Telemetriedaten nicht deaktiviert haben. Die Nutzungsdaten für Xbox-Spiele werden unabhängig von der Anmeldung des Kunden bei Xbox Live angezeigt. 
+> Dieser Bericht enthält nur Nutzungsdaten von Kunden unter Windows 10 (inklusive Xbox), die die Bereitstellung von Telemetriedaten nicht deaktiviert haben. Die Nutzungsdaten für Xbox-Spiele werden unabhängig von der Anmeldung des Kunden bei Xbox Live angezeigt. 
 
 
-## <a name="usage"></a>Nutzung
+## <a name="usage"></a>Verwendungszweck
 
-Das Diagramm **Nutzung** zeigt im Detail, wie Kunden Ihre App über den ausgewählten Zeitraum verwenden. In diesem Diagramm werden individuelle Benutzer Ihrer App oder Benutzersitzungen nicht einzeln nachverfolgt (d.h., ein Benutzer wird in diesem Diagramm unabhängig davon dargestellt, ob er Ihre App nur einmal oder mehrmals verwendet hat).
+Das Diagramm **Nutzung** zeigt im Detail, wie Kunden Ihre App über den ausgewählten Zeitraum verwenden. In diesem Diagramm werden individuelle Benutzer Ihrer App oder Benutzersitzungen nicht einzeln nachverfolgt (d. h., ein Benutzer wird in diesem Diagramm unabhängig davon dargestellt, ob er Ihre App nur einmal oder mehrmals verwendet hat).
 
-Dieses Diagramm enthält separate Registerkarten, die Sie anzeigen Nutzung pro Tag oder Woche anzeigt (abhängig von der Dauer, die Sie ausgewählt haben).
+In diesem Diagramm verfügt über separate Registerkarten, die Sie anzeigen können, mit der Nutzung von Tag oder Woche (je nach der Dauer, die Sie ausgewählt haben).
 
-- **Benutzer**: Zeigt die Gesamtanzahl der **Benutzersitzungen** über den ausgewählten Zeitraum an. Jede Benutzersitzung stellt einen unterschiedlichen Zeitraum dar und beginnt, wenn die App gestartet wird (Prozessbeginn) und endet bei Prozessende oder nach einer bestimmten Zeit der Inaktivität. Aus diesem Grund kann ein einzelner Kunde mehrere Benutzersitzungen am gleichen Tag oder in der gleichen Woche haben. Die Gesamtanzahl der **aktiven Benutzer** (alle Kunden, die die App an diesem Tag oder in dieser Woche nutzen) und **neuen Benutzer** (ein Kunde, der Ihre App das erste Mal an diesem Tag oder in der Woche nutzt) wird ebenfalls angezeigt. Wenn Sie Filter auf der Seite angewendet haben, werden **neue Benutzer** in diesem Diagramm nicht angezeigt.
-- **Geräte**: Zeigt die Anzahl der täglichen Geräte an, die von allen Benutzern zur Interaktion mit Ihrer App verwendet werden.
-- **Dauer**: Zeigt die Gesamtanzahl der aktiven Stunden an (Stunden, in denen ein Benutzer aktiv Ihrer App verwendet).
-- **Engagement**: Zeigt die durchschnittliche verbundene Minuten pro Benutzer (durchschnittliche Dauer alle benutzersitzungen). 
-- **Beibehaltung**: Zeigt die Gesamtanzahl der **DAU/MAU** (tägliche aktive Benutzer/monatliche aktive Benutzer) über den ausgewählten Zeitraum an.
-- **Änderungsumfang-Vorhersage**: Zeigt, wie viele Benutzer nutzen sind wahrscheinlich nicht mehr mit Ihrer app bald, basierend auf der aktuellen Verwendung.
+- **Benutzer**: Zeigt die Gesamtanzahl der **benutzersitzungen** über den ausgewählten Zeitraum an. Jede Benutzersitzung stellt einen unterschiedlichen Zeitraum dar und beginnt, wenn die App gestartet wird (Prozessbeginn) und endet bei Prozessende oder nach einer bestimmten Zeit der Inaktivität. Aus diesem Grund kann ein einzelner Kunde mehrere Benutzersitzungen am gleichen Tag oder in der gleichen Woche haben. Die Gesamtanzahl der **aktiven Benutzer** (alle Kunden, die die App an diesem Tag oder in dieser Woche nutzen) und **neuen Benutzer** (ein Kunde, der Ihre App das erste Mal an diesem Tag oder in der Woche nutzt) wird ebenfalls angezeigt. Wenn Sie Filter auf der Seite angewendet haben, werden **neue Benutzer** in diesem Diagramm nicht angezeigt.
+- **Geräte**: Zeigt die Anzahl der täglichen Geräte, die von allen Benutzern Interaktion mit Ihrer app verwendet.
+- **Dauer**: Zeigt die gesamten Engagement-Stunden (Stunden, in denen ein Benutzer Ihre app aktiv verwendet wird).
+- **Engagement**: Zeigt die durchschnittliche Engagement Minuten pro Benutzer (durchschnittliche Dauer der Sitzung des Benutzers). 
+- **Aufbewahrung**: Zeigt die Gesamtanzahl der **täglich aktive Benutzer/MAU** (aktive Benutzer/monatlich aktive Benutzer/Tag) über den ausgewählten Zeitraum an.
+- **Churn Prediction**: Zeigt, wie viele Benutzer, die wir Vorhersagen wahrscheinlich beenden werden, anhand Ihrer app in Kürze mit ihre letzte Nutzung.
 
-Bei der **30d** Zeitraum aktiviert ist, möglicherweise Kreis angezeigt, wenn der **Benutzer**oder **Geräte**, **Dauer** Registerkarten anzeigen. Diese stellen eine erhebliche Erhöhung oder einen bestimmten Wert, die wir glauben, dass Sie kennen sollten verringern. Das Datum, an dem die Kreis angezeigt wird, stellt am Ende der Woche, in der wir eine erhebliche Erhöhung oder Verringerung, die im Vergleich zu Woche festgestellt, dar. Um weitere Informationen zu Änderungen zu sehen, zeigen Sie auf den Kreis.  
+Wenn die **30D** Zeitraum ausgewählt ist, wird möglicherweise beim Anzeigen von Kreis Marker angezeigt der **Benutzer**, **Geräte**, oder **Dauer** Registerkarten. Dies eine erhebliche Leistungssteigerung darstellen, oder verringern Sie in einem angegebenen Wert, den wir glauben, dass Sie wissen möchten. Das Datum, die auf dem der Kreis angezeigt wird, stellt das Ende der Woche, die in der wir eine beträchtliche Zunahme oder verringern, die im Vergleich zu die Woche vor, die erkannt dar. Zeigen Sie auf den Kreis, um weitere Details zu Änderungen anzuzeigen.  
 
 > [!TIP]
-> Sie können weitere Einblicke im Zusammenhang mit erhebliche Änderungen an der letzten 30 Tage im [Bericht](insights-report.md)anzeigen.
+> Sehen Sie weitere Informationen zu wesentlichen Änderungen in den letzten 30 Tagen in den [Insights-Bericht](insights-report.md).
 
 
 ## <a name="user-sessions"></a>Benutzersitzungen

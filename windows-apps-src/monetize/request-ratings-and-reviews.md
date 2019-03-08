@@ -1,16 +1,16 @@
 ---
-Description: Learn about several ways you can programmatically enable customers to rate and review your app.
+Description: Erfahren Sie mehr über mehrere Methoden können Sie programmgesteuert Kunden zu bewerten, und überprüfen Ihre app aktivieren.
 title: Anfordern von Bewertungen und Prüfungen für Ihre App
 ms.date: 01/22/2019
 ms.topic: article
-keywords: Windows10, UWP, Bewertungen, Rezensionen
+keywords: Windows 10, UWP, Bewertungen, Rezensionen
 ms.localizationpriority: medium
 ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
-ms.sourcegitcommit: 7a1899358cd5ce9d2f9fa1bd174a123740f98e7a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042636"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601305"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Anfordern von Bewertungen und Prüfungen für Ihre App
 
@@ -18,14 +18,14 @@ Sie können Code zu Ihrer Universellen Windows-Plattform (UWP)-App hinzufügen, 
 * Sie können ein Bewertungs- und Rezensionsdialogfeld direkt im Kontext Ihrer App anzeigen.
 * Sie können programmgesteuert die Bewertungs- und Rezensionsseite für Ihre App im Microsoft Store öffnen.
 
-Wenn Sie Ihre bewertungs- und rezensionsdaten analysieren möchten, können die Daten im Partner Center anzeigen oder der Microsoft Store-Analyse-API zum programmgesteuerten Abrufen dieser Daten verwenden.
+Wenn Sie Ihre Bewertungen und Rezensionen Daten analysieren möchten, können Sie Anzeigen der Daten im Partner Center oder verwenden den Microsoft Store-Textanalyse-API, um diese Daten programmgesteuert abzurufen.
 
 > [!IMPORTANT]
-> Wenn Sie eine Bewertung-Funktion in Ihrer app hinzufügen, müssen alle Rezensionen der Benutzer auf den Store Bewertung Mechanismen, unabhängig von der Bewertung ausgewählte Star senden. Wenn Sie Feedback oder Kommentare von Benutzern erfassen, muss es deutlich gemacht werden, dass er bezieht sich nicht auf die app-Bewertung oder Rezensionen im Store jedoch direkt an die app-Entwickler gesendet. Finden Sie unter den Entwickler Verhaltensregeln für Weitere Informationen im Zusammenhang mit [Fraudulent oder unehrlichen Aktivitäten](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
+> Wenn Sie eine Bewertung-Funktion in Ihrer app hinzufügen, müssen alle Bewertungen der Benutzer auf die Store Bewertung die Mechanismen, unabhängig von Star-Bewertung ausgewählten senden. Wenn Sie Feedback oder Kommentare von Benutzern sammeln, muss offensichtlich sein, dass er sich nicht auf die app-Bewertung oder zugriffsüberprüfungen in den Store bezieht, sondern direkt an den app-Entwickler gesendet. Weitere Informationen zu verwandten finden Sie die Developer-Verhaltenskodex [Fraudulent oder unehrliche Aktivitäten](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Ein Bewertungs- und Rezensionsdialogfeld in Ihrer App anzeigen
 
-Wenn Sie programmgesteuert ein Dialogfeld von Ihrer app anzeigen möchten, die Ihre Kunden auffordert zu Ihrer app zu bewerten und eine Rezension zu senden, rufen Sie die [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) -Methode im [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) -Namespace. 
+Um programmgesteuert ein Dialogfeld aus Ihrer app anzuzeigen, die bittet Ihr Kunde, bewerten Ihre app und senden eine Überprüfung, rufen die [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) -Methode in der die [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) Namespace. 
 
 > [!IMPORTANT]
 > Die Anforderung zum Anzeigen des Bewertungs- und Rezensionsdialogfelds muss im UI-Thread in Ihrer App aufgerufen werden.
@@ -101,11 +101,11 @@ private async Task PromptUserToRateApp()
 }
 ```
 
-Die **RequestRateAndReviewAppAsync** -Methode wurde in Windows 10, Version 1809, eingeführt und kann nur in Projekten für die **Windows 10 October 2018 verwendet werden Update (10.0; Build 17763)** oder einer neueren Version in Visual Studio.
+Die **RequestRateAndReviewAppAsync** Methode wurde in Windows 10, Version 1809, eingeführt und kann nur in Projekten, die als Ziel verwendet werden **Windows 10 Oktober 2018 Update (10.0; Erstellen Sie 17763)** oder eine neuere Version in Visual Studio.
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>Antwortdaten für die Bewertungs- und Rezensionsanforderung
 
-Nach Übermittlung die Anforderung zum Anzeigen eines bewertungs- und rezensionsdialogfeldes, enthält die [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) -Eigenschaft der [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) -Klasse eine JSON-formatierte Zeichenfolge, die angibt, ob die Anforderung erfolgreich war.
+Nach dem Senden der Anforderung an die Bewertung angezeigt, und überprüfen im Dialogfeld die [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) Eigenschaft der [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) -Klasse enthält eine JSON-formatierte Zeichenfolge, der angibt, ob die Anforderung war erfolgreich.
 
 Das folgende Beispiel veranschaulicht den Rückgabewert für diese Anforderung, nachdem der Kunde erfolgreich eine Bewertung oder Rezension übermittelt hat.
 
@@ -149,11 +149,11 @@ Weitere Informationen finden Sie unter [Die Microsoft Store App starten](../laun
 ## <a name="analyze-your-ratings-and-reviews-data"></a>Ihre Bewertungs- und Rezensionsdaten analysieren
 
 Sie haben mehrere Optionen, um die Bewertungs- und Rezensionsdaten von Ihren Kunden zu analysieren:
-* Sie können den Bericht ["Rezensionen"](../publish/reviews-report.md) im Partner Center verwenden, um die Bewertungen und Prüfungen von Ihren Kunden anzuzeigen. Sie können diesen Bericht auch herunterladen, um ihn offline zu sehen.
+* Sie können die [überprüft](../publish/reviews-report.md) Bericht im Partner Center, um die Bewertungen und Rezensionen Ihrer Kunden finden Sie unter. Sie können diesen Bericht auch herunterladen, um ihn offline zu sehen.
 * Sie können die [Abrufen von App-Bewertungen](get-app-ratings.md)- und [Abrufen von App-Rezensionen](get-app-reviews.md)-Methoden in der Store-Analyse-API zum programmgesteuerten Abrufen der Bewertungen und Prüfungen von Ihren Kunden im JSON-Format verwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Senden von Anfragen an den Store](send-requests-to-the-store.md)
-* [Starten der Microsoft Store-App](../launch-resume/launch-store-app.md)
+* [Senden Sie Anforderungen an den Store](send-requests-to-the-store.md)
+* [Starten Sie die Microsoft Store-app](../launch-resume/launch-store-app.md)
 * [Rezensionsbericht](../publish/reviews-report.md)

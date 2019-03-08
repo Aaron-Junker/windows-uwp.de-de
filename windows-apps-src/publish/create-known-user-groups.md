@@ -1,26 +1,26 @@
 ---
-Description: Learn how to create known user groups to use for package flighting and more.
+Description: Enthält Informationen zum Erstellen von bekannten Benutzergruppen für Flight-Pakete und vieles mehr.
 title: Erstellen bekannter Benutzergruppen
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, Zielgruppe, Kunden, Flight-Gruppe, Benutzergruppen, bekannte Benutzer
+keywords: Windows 10, UWP, Zielgruppe, Kunden, Flight-Gruppe, Benutzergruppen, bekannte Benutzer
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fcb111121511553bba22cef55f94125d47e9f21
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938265"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605285"
 ---
 # <a name="create-known-user-groups"></a>Erstellen bekannter Benutzergruppen
 
 Mit bekannten Benutzergruppen können Sie bestimmte Kontakte zu einer Gruppe hinzufügen, indem Sie die E-Mail-Adresse deren Microsoft-Kontos verwenden. Diese bekannten Benutzergruppen werden oft verwendet, um spezifische Pakete an eine ausgewählte Benutzergruppe mit [Flight-Paketen](package-flights.md) zu verteilen, oder für die Verteilung einer Übermittlung an eine [private Zielgruppe](choose-visibility-options.md#audience). Sie können für Interaktionskampagne verwendet werden, um [benutzerorientierte Benachrichtigungen](send-push-notifications-to-your-apps-customers.md) zu senden oder [benutzerorientierte Angebote](use-targeted-offers-to-maximize-engagement-and-conversions.md) an eine spezifische Gruppe von Kunden zu senden.
 
-Um als Mitglied der Gruppe gezählt zu werden, muss jede Person mit dem Store mithilfe der E-Mail-Adresse des Microsoft-Kontos authentifiziert werden, die Sie bereitstellen. Um die App mit dem Test-Flighting-Paket herunterzuladen, müssen Mitglieder eine Version von Windows10 verwenden, die Flight-Pakete unterstützt (Windows.Desktop Build 10586 oder höher, Windows.Mobile Build 10586.63 oder höher, oder Xbox One). Bei Übermittlungen an private Zielgruppen müssen Mitglieder Windows10, Version 1607 oder höher (einschließlich Xbox One) verwenden.
+Um als Mitglied der Gruppe gezählt zu werden, muss jede Person mit dem Store mithilfe der E-Mail-Adresse des Microsoft-Kontos authentifiziert werden, die Sie bereitstellen. Um die App mit dem Test-Flighting-Paket herunterzuladen, müssen Mitglieder eine Version von Windows 10 verwenden, die Flight-Pakete unterstützt (Windows.Desktop Build 10586 oder höher, Windows.Mobile Build 10586.63 oder höher, oder Xbox One). Bei Übermittlungen an private Zielgruppen müssen Mitglieder Windows 10, Version 1607 oder höher (einschließlich Xbox One) verwenden.
 
 ## <a name="to-create-a-known-user-group"></a>So erstellen Sie eine bekannte Benutzergruppe
 
-1. Erweitern Sie im linken Navigationsmenü **einbeziehen** , und wählen Sie **Kundengruppen**, im [Partner Center](https://partner.microsoft.com/dashboard). 
+1. In [Partner Center](https://partner.microsoft.com/dashboard), erweitern Sie **einbinden** im linken Navigationsmenü, und klicken Sie dann wählen **Kundengruppen**. 
 2. Wählen Sie im Abschnitt **Meine Kundengruppen** die Option **Neue Gruppe erstellen**.
 3. Geben Sie auf der nächsten Seite im Feld **Gruppennamen** einen Namen für die bekannte Benutzergruppe ein.
 4. Stellen Sie sicher, dass das Optionsfeld **Neue Benutzergruppe** ausgewählt ist.
@@ -36,7 +36,7 @@ Sie können auch eine bekannte Benutzergruppe erstellen, indem Sie **Flight-Grup
 
 ## <a name="to-edit-a-known-user-group"></a>So bearbeiten Sie eine bekannte Benutzergruppe
 
-Sie können keine bekannte Benutzergruppe aus dem Partner Center entfernen (oder den Namen ändern), nachdem sie erstellt wurde, aber Sie können die Mitgliedschaft zu jedem beliebigen Zeitpunkt bearbeiten.
+Sie können keine bekannten Benutzergruppe von Partner Center zu entfernen (oder ändern Sie den Namen), nachdem dieses erstellt wurde, aber Sie die Mitgliedschaft, zu einem beliebigen Zeitpunkt bearbeiten können.
 
 Um Ihre bekannten Benutzergruppen zu überprüfen und zu bearbeiten, erweitern Sie das Menü **Einbeziehen** im linken Navigationsmenü und wählen Sie **Kundengruppen** aus. Wählen Sie unter **Meine Kundengruppen** den Namen der Gruppe aus, die Sie bearbeiten möchten. Sie können ebenfalls eine bekannte Benutzergruppe in der Erstellungsseite für Flight-Pakete bearbeiten, indem Sie **Vorhandene Gruppen anzeigen und verwalten** beim Erstellen eines neuen Test-Flights auswählen oder den Namen der Test-Flight-Gruppe in der Übersicht eines Flight-Pakets auswählen. 
 
@@ -44,7 +44,7 @@ Nachdem Sie die Gruppe, die Sie bearbeiten möchten, ausgewählt haben, können 
 
 Wählen Sie für größere Änderungen **Export .csv** aus, um die Mitgliedschafts-Gruppeninformationen in einer CSV-Datei zu speichern. Nehmen Sie in dieser Datei Ihre Änderungen vor, und klicken Sie dann auf **CSV importieren**, um die Gruppenmitgliedschaft mit der neuen Version zu aktualisieren.
 
-Beachten Sie, dass es bis zu 30Minuten dauern kann, bis Änderungen an der Mitgliedschaft implementiert werden. Sie müssen keine neue Übermittlung veröffentlichen, damit neue Mitglieder der Gruppe Zugriff auf Ihre Übermittlung über das Flight-Pakete oder über private Zielgruppen haben. Diese haben Zugriff, sobald die Änderungen implementiert sind. 
+Beachten Sie, dass es bis zu 30 Minuten dauern kann, bis Änderungen an der Mitgliedschaft implementiert werden. Sie müssen keine neue Übermittlung veröffentlichen, damit neue Mitglieder der Gruppe Zugriff auf Ihre Übermittlung über das Flight-Pakete oder über private Zielgruppen haben. Diese haben Zugriff, sobald die Änderungen implementiert sind. 
 
 
 

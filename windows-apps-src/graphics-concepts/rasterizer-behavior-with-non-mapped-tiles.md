@@ -1,6 +1,6 @@
 ---
 title: Rasterizerverhalten bei nicht zugeordneten Kacheln
-description: Dieser Abschnittbeschreibt Rasterizerverhalten bei nicht zugeordneten Kacheln.
+description: Dieser Abschnitt beschreibt Rasterizerverhalten bei nicht zugeordneten Kacheln.
 ms.assetid: AC7B818D-E52B-4727-AEA2-39CFDC279CE7
 keywords:
 - Rasterizerverhalten bei nicht zugeordneten Kacheln
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e3089444820f990644526eaafb7f2ef9007fa70a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929901"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631885"
 ---
-# <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Rasterizerverhalten bei nicht zugeordneten Kacheln
+# <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Verhalten des Rasterizers, mit Kacheln, die nicht zugeordnete
 
 
-Dieser Abschnittbeschreibt Rasterizerverhalten bei nicht zugeordneten Kacheln.
+Dieser Abschnitt beschreibt Rasterizerverhalten bei nicht zugeordneten Kacheln.
 
 ## <a name="span-iddepthstencilviewspanspan-iddepthstencilviewspanspan-iddepthstencilviewspandepthstencilview"></a><span id="DepthStencilView"></span><span id="depthstencilview"></span><span id="DEPTHSTENCILVIEW"></span>DepthStencilView
 
@@ -42,7 +42,7 @@ Lesevorgänge aus RTVs geben 0 für fehlende Kacheln zurück, und Schreibvorgän
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Pipelinezugriff auf Streamingressourcen](pipeline-access-to-streaming-resources.md)
+[Pipeline-Zugriff auf Ressourcen streaming](pipeline-access-to-streaming-resources.md)
 
  
 

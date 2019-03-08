@@ -1,157 +1,157 @@
 ---
-title: Bewährte Methoden für das Schreiben von Dateien
-description: Hier erfahren Sie bewährte Methoden für die Verwendung von verschiedenen Datei Schreiben von Methoden der Klassen FileIO und PathIO.
+title: Bewährte Methoden zum Schreiben in Dateien
+description: Erlernen Sie bewährte Methoden für die Verwendung von verschiedenen Methoden der Klassen FileIO und PathIO Datei aus.
 ms.date: 02/06/2019
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115707"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605835"
 ---
-# <a name="best-practices-for-writing-to-files"></a>Bewährte Methoden für das Schreiben von Dateien
+# <a name="best-practices-for-writing-to-files"></a>Bewährte Methoden zum Schreiben in Dateien
 
 **Wichtige APIs**
 
 * [**FileIO-Klasse**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
 * [**PathIO-Klasse**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)
 
-Entwickler treten eine Reihe von allgemeinen Problemen in einigen Fällen aus, wenn die Methoden **Schreiben** , der Klassen [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) zum System e/a-Dateivorgänge durchführen. Beispielsweise enthalten häufige Probleme:
+Entwickler, die gelegentlich in einen Satz von allgemeinen Problemen führen, bei Verwendung der **schreiben** Methoden der [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio) Klassen für Datei e/a-Vorgänge. Beispielsweise enthalten häufig auftretende Probleme:
 
-• Die app eine Ausnahme empfängt, wenn eine der Methoden aufrufen wird teilweise • eine Datei geschrieben. • Die Vorgänge bleiben. TMP-Dateien mit dem Namen den Namen der Zieldatei ähnelt.
+• Eine Datei teilweise geschrieben, dass • die app eine Ausnahme empfängt, wenn eine der Methoden aufrufen. • Die Vorgänge hinter sich lassen. TMP-Dateien mit einem Dateinamen, die den Zieldateinamen ähnelt.
 
-Die Methoden **Schreiben** , der Klassen [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) umfassen Folgendes:
+Die **schreiben** Methoden der [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio) Klassen umfassen Folgendes:
 
 * **WriteBufferAsync**
 * **WriteBytesAsync**
 * **WriteLinesAsync**
 * **WriteTextAsync**
 
- Dieser Artikel enthält Informationen zur Funktionsweise dieser Methoden strukturiert besser wann und deren Verwendung verstehen. Dieser Artikel enthält Richtlinien und versucht nicht, eine Lösung für alle möglichen Datei-e/a-Probleme bereitzustellen. 
+ Dieser Artikel enthält Details zur Funktionsweise dieser Methoden so Entwickler besser wann und wie deren Verwendung verstehen. Dieser Artikel enthält Richtlinien und wird nicht versucht, eine Lösung für alle möglichen Datei-e/a-Probleme bereitzustellen. 
 
 > [!NOTE]
-> Dieser Artikel befasst sich der Methoden der **FileIO** Beispiele und Diskussionen. Allerdings die **PathIO** Methoden folgen einem ähnlichen Muster und die meisten der in diesem Artikel gilt für diese Methoden zu. 
+> Dieser Artikel konzentriert sich auf die **FileIO** Methoden in den Beispielen und Diskussionen. Allerdings die **PathIO** Methoden folgen einem ähnlichen Muster und der Großteil der Anleitung in diesem Artikel gilt für diese Methoden zu. 
 
 ## <a name="conveience-vs-control"></a>Conveience im Vergleich zu Steuerelement
 
-Ein [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) -Objekt ist keine Datei-Handle, wie das systemeigene Win32-Programmiermodell. Stattdessen wird ein [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) eine Darstellung einer Datei mit Methoden auf, um den Inhalt zu bearbeiten.
+Ein [ **"storagefile"** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) Objekt ist kein Dateihandle, wie das systemeigene Win32-Programmiermodell. Stattdessen eine [ **"storagefile"** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) ist eine Darstellung einer Datei mit den Methoden, um den Inhalt zu bearbeiten.
 
-Grundlegendes zu diesem Konzept ist nützlich, wenn e/a mit einer **StorageFile**durchführen. Im Abschnitt [Schreiben einer Datei](quickstart-reading-and-writing-files.md#writing-to-a-file) enthält z. B. drei Methoden zum Schreiben in eine Datei:
+Dieses Konzept zu verstehen ist nützlich, beim Durchführen von e/as mit einem **"storagefile"**. Z. B. die [Schreiben in eine Datei](quickstart-reading-and-writing-files.md#writing-to-a-file) Abschnitt werden drei Möglichkeiten, die in eine Datei schreiben:
 
-* Verwenden die [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync) -Methode.
-* Durch Erstellen eines Puffers aus, und anschließend die [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync) -Methode aufrufen.
-* Die vier Schritten-Modell mit einem Stream:
-  1. [Öffnen](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) der Datei in einen Datenstrom abzurufen.
-  2. [Erhalten](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) Sie einen Ausgabedatenstrom.
-  3. Erstellen Sie ein [**DataWriter**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) -Objekt, und rufen Sie die entsprechende Methode **Schreiben** .
-  4. [Übernehmen](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync) der Daten in den Daten Writer und den Ausgabedatenstrom zu [leeren](https://docs.microsoft.com/uwp/api/windows.storage.streams.ioutputstream.flushasync) .
+* Mithilfe der [ **FileIO.WriteTextAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync) Methode.
+* Durch Erstellen eines Puffers und dem anschließenden Aufrufen der [ **FileIO.WriteBufferAsync** ](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync) Methode.
+* Das Modell für die vier Schritten mithilfe eines Streams:
+  1. [Open](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) Datei, die einen Datenstrom zu erhalten.
+  2. [Erste](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) einen Ausgabestream.
+  3. Erstellen Sie eine [ **DataWriter** ](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) Objekt aus, und rufen Sie die entsprechende **schreiben** Methode.
+  4. [Commit](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync) die Daten in den Datenschreiber und [leeren](https://docs.microsoft.com/uwp/api/windows.storage.streams.ioutputstream.flushasync) den Ausgabestream.
 
-Die ersten beiden Szenarien werden am häufigsten von apps verwendet. Schreiben in die Datei in einem einzigen Vorgang ist einfacher, code und verwalten, und die Verantwortung der app auch aus Umgang mit vielen der die Komplexität der e/a-Datei entfernt. Jedoch erreichen Ihren Preis: den Verlust der Kontrolle über den gesamten Vorgang und die Möglichkeit zum Abfangen von Fehlern an bestimmten Punkten.
+Die ersten beiden Szenarios sind die am häufigsten verwendeten Apps. Schreiben in die Datei in einem einzigen Vorgang ist einfacher zu programmieren und pflegen, und es entfernt auch die Verantwortung für die app über den Umgang mit den Großteil der Komplexität der Datei-e/a. Aber diese Vereinfachung ist mit Nachteilen verbunden: der Verlust der Kontrolle über den gesamten Vorgang sowie die Möglichkeit zum Abfangen von Fehlern an bestimmten Punkten.
 
-## <a name="the-transactional-model"></a>Das Transaktions-Modell
+## <a name="the-transactional-model"></a>Das transaktionale Modell
 
-Die Methoden **Schreiben** , der Klassen [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) umschließen Sie die Schritte im dritten Schreib-Modell mit eine zusätzliche Sicherheitsschicht oben beschrieben. Diese Ebene ist in einer Transaktion Speicher eingekapselt.
+Die **schreiben** Methoden der [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio) Klassen zu umschließen die Schritte auf der dritten Schreibvorgang Modell mit einer hinzugefügten oben beschriebenen. Diese Ebene wird in eine Speichertransaktion gekapselt.
 
-Um die Integrität der ursprünglichen Datei für den Fall, dass ein Fehler auftritt, während die Daten zu schützen, verwenden die **Schreiben** ein Transaktions-Modell durch Öffnen der Datei mit [**OpenTransactedWriteAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.opentransactedwriteasync). Dieser Prozess erstellt ein [**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction) -Objekt. Nachdem dieses Transaktionsobjekt erstellt wurde, Schreiben Sie die APIs die Daten, ähnlich wie im Beispiel [Für den Zugriff auf](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) oder im Codebeispiel wird im Artikel [**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction) .
+Um die Integrität der ursprünglichen Datei zu schützen, falls etwas schief, beim Schreiben von Daten geht, die **schreiben** Methoden verwenden ein Modell für Transaktions-, öffnen Sie die Datei mit [ **OpenTransactedWriteAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.opentransactedwriteasync). Dieser Vorgang erstellt eine [ **StorageStreamTransaction** ](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction) Objekt. Nach diesem Transaktionsobjekt erstellt wurde, Schreiben Sie die APIs die Daten, die ähnlich wie folgt die [Dateizugriff](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) Beispieldaten oder das Codebeispiel in die [ **StorageStreamTransaction** ](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction) Artikel.
 
-Das folgende Diagramm zeigt die zugrunde liegenden Aufgaben durch die die **WriteTextAsync** -Methode in einem erfolgreichen Schreibvorgang. Diese Abbildung zeigt eine vereinfachte Ansicht des Vorgangs. Beispielsweise überspringt Schritte, z. B. Text-Codierung und asynchronen Abschluss in verschiedenen Threads.
+Das folgende Diagramm veranschaulicht den zugrunde liegenden Tasks ausgeführt werden, durch die die **WriteTextAsync** -Methode in einer erfolgreichen Schreibvorgang. Die folgende Abbildung bietet eine vereinfachte Ansicht des Vorgangs. Beispielsweise wird in verschiedenen Threads Schritte aus, z. B. das Text-Codierung "und" Async-abschließen übersprungen.
 
 ![UWP-API-Aufruf Sequenzdiagramm zum Schreiben in eine Datei](images/file-write-call-sequence.svg)
 
-Die Vorteile der Verwendung von Methoden **Schreiben** der Klassen [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) anstelle des komplexeren vier Schritten Modells mit einem Stream sind:
+Die Vorteile der Verwendung der **schreiben** Methoden der [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio) stattdessen die Klassen das komplexere vier Schritten-Modell mithilfe eines Datenstroms sind:
 
-* Ein API-Aufruf, alle temporären Schritte, einschließlich Fehlern zu behandeln.
-* Die ursprüngliche Datei wird beibehalten, wenn ein Fehler auftritt.
-* Der Systemstatus versucht, möglichst sauber gehalten werden.
+* Ein API-Aufruf, alle Zwischenschritte, aus, einschließlich Fehler zu behandeln.
+* Die ursprüngliche Datei bleibt, wenn ein Fehler auftritt.
+* Der Systemstatus versucht, möglichst sauber beibehalten werden.
 
-Mit so vielen möglichen intermediate Fehlerquellen gibt es jedoch eine höhere Wahrscheinlichkeit des Fehlers. Wenn ein Fehler auftritt, kann es schwierig sein zu verstehen, wo der Prozess fehlgeschlagen ist. Den folgenden Abschnitten werden einige der der Fehler, die Sie möglicherweise auftreten, wenn die Methoden **Schreiben** verwenden und mögliche Lösungen.
+Mit so vielen möglichen intermediate Fehlerquellen ist es jedoch eine höhere Wahrscheinlichkeit eines Ausfalls. Tritt ein Fehler ist es möglicherweise schwierig zu verstehen, in dem der Vorgang fehlgeschlagen ist. Die folgenden Abschnitte enthalten einige der Fehler auftreten, wenn Sie mit der **schreiben** Methoden und bieten mögliche Lösungen.
 
-## <a name="common-error-codes-for-write-methods-of-the-fileio-and-pathio-classes"></a>Allgemeine Fehlercodes für Methoden zum Schreiben der FileIO und PathIO
+## <a name="common-error-codes-for-write-methods-of-the-fileio-and-pathio-classes"></a>Allgemeine Fehlercodes für Write-Methoden der Klassen FileIO und PathIO
 
-In dieser Tabelle sind allgemeine Fehlercodes, die app-Entwickler auftreten, wenn Sie die Methoden **Schreiben** zu verwenden. Die Schritte in der Tabelle zu den Schritten im vorherigen Diagramm entsprechen.
+Diese Tabelle enthält allgemeine Fehlercodes, die app-Entwickler auftreten, wenn Sie verwenden die **schreiben** Methoden. Die Schritte in der Tabelle entsprechen den Schritten in der vorherigen Abbildung.
 
-|  Fehler Name (Wert)  |  Schritte  |  Ursachen  |  Lösungen  |
+|  Fehlernamen (Wert)  |  Schritte  |  Ursachen  |  Lösungen  |
 |----------------------|---------|----------|-------------|
-|  ERROR_ACCESS_DENIED (0 X 80070005)  |  5  |  Die ursprüngliche Datei möglicherweise zum Löschen, möglicherweise aus einer vorherigen Vorgangs gekennzeichnet.  |  Sie wiederholt den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
-|  ERROR_SHARING_VIOLATION (0 X 80070020)  |  5  |  Die ursprüngliche Datei wird durch ein weiteres exklusive Schreiben geöffnet.   |  Sie wiederholt den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  19-20  |  Die ursprüngliche Datei (file.txt) konnte nicht ersetzt werden, da es verwendet wird. Einen anderen Prozess oder Vorgang befragt Zugriff auf die Datei, bevor sie ersetzt werden konnte.  |  Sie wiederholt den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
-|  ERROR_DISK_FULL (0X80070070)  |  7, 14, 16, 20  |  Das durchgeführte Modell wird eine zusätzliche Datei erstellt, und diese zusätzlichen Speicher verbraucht.  |    |
-|  ERROR_OUTOFMEMORY (0X8007000E)  |  14, 16  |  Dies kann passieren, aufgrund von mehreren ausstehenden e/a-Vorgänge oder große Dateien.  |  Eine präzisere Vorgehensweise, indem Sie den Datenstrom steuern möglicherweise den Fehler beheben.  |
-|  E_FAIL (0 X 80004005) |  Any  |  Verschiedenes  |  Sie wiederholt den Vorgang. Wenn weiterhin ein Fehler auftritt, es ist möglicherweise ein Plattform-Fehler, und die app sollte beendet werden, da es in einen inkonsistenten Zustand ist. |
+|  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  Die ursprüngliche Datei kann zum Löschen, möglicherweise aus einem vorherigen Vorgang markiert werden.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
+|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  Die ursprüngliche Datei wird von einem anderen exklusiven Schreibzugriff geöffnet.   |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  Die ursprüngliche Datei (file.txt) konnte nicht ersetzt werden, da er verwendet wird. Einem anderen Prozess oder Vorgang wurde Zugriff auf die Datei, bevor es ersetzt werden kann.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
+|  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  Transaktive Modell wird eine zusätzliche Datei erstellt, und diese zusätzlichen Speicherplatz beansprucht.  |    |
+|  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  Dies kann aufgrund von mehrere ausstehende e/a-Vorgänge oder großen Dateien geschehen.  |  Durch das Steuern von Streams ein präziser Ansatz möglicherweise den Fehler zu beheben.  |
+|  E_FAIL (0x80004005) |  Beliebig  |  Sonstiges  |  Wiederholen Sie den Vorgang. Wenn es weiterhin fehlschlägt, ist es möglicherweise eine Platform-Fehler, und die app beendet werden soll, da es in einem inkonsistenten Zustand ist. |
 
-## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>Weitere Aspekte für Datei Zustände, die zu Fehlern führen kann
+## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>Weitere Überlegungen für Datei-Zustände, die zu Fehlern führen kann
 
-Abgesehen vom Fehler zurückgegebene **Schreiben** müssen Sie hier einige Richtlinien auf, was eine app beim Schreiben in eine Datei erwarten kann sind.
+Abgesehen von zurückgegebenen Fehler von der **schreiben** Methoden, hier sind einige Richtlinien auf, was eine app, beim Schreiben in eine Datei erwarten kann.
 
-### <a name="data-was-written-to-the-file-if-and-only-if-operation-completed"></a>Daten wurde in die Datei geschrieben, wenn es sich bei Vorgang abgeschlossen
+### <a name="data-was-written-to-the-file-if-and-only-if-operation-completed"></a>Daten wurde in die Datei geschrieben, wenn es abgeschlossen wurde
 
-Ihre app sollte keine Annahme über Daten in der Datei erstellen, während ein Schreibvorgang ausgeführt wird. Versuchen, auf die Datei zuzugreifen, bevor ein Vorgang abgeschlossen ist, kann zu Datenverlust führen. Ihre app sollte der laufenden ausstehenden e/as verantwortlich.
+Ihre app sollten keine vermutungen über Daten in der Datei vornehmen, während ein Schreibvorgang ausgeführt wird. Versuch, den Zugriff auf die Datei, bevor ein Vorgang abgeschlossen ist, kann zu inkonsistenten Daten führen. Ihre app sollte der nachverfolgung von ausstehenden e/as verantwortlich sein.
 
 ### <a name="readers"></a>Leser
 
-Wenn die Datei geschrieben wird auch von einem polite Reader verwendet wird (d. h. mit [**FileAccessMode.Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode)geöffnet, nachfolgende Lesevorgänge tritt ein Fehler ERROR_OPLOCK_HANDLE_CLOSED (0x80070323). In einigen Fällen wiederholen Sie apps Öffnen der Datei zum Lesen erneut während des Vorgangs **Schreiben** ausgeführt wird. Dies kann eine Racebedingung führen auf dem **Schreiben** letztendlich schlägt fehl, bei dem Versuch, die ursprüngliche Datei überschrieben werden, da es nicht ersetzt werden kann.
+Wenn die Datei geschrieben wird auch von einem Netzwerkschnittstellenbibliothek Reader verwendet wird (d. h. mit geöffnet [ **FileAccessMode.Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode), nachfolgende Lesevorgänge werden beim Auftreten eines Fehlers ERROR_OPLOCK_HANDLE_CLOSED (0x80070323). Manchmal apps wiederholen Sie die Datei zum Lesen und erneut öffnen. die **schreiben** Vorgang wird ausgeführt. Dadurch kann eine Racebedingung auf dem die **schreiben** letztendlich versagt, wenn Sie versuchen, auf die ursprüngliche Datei überschrieben werden, da er nicht ersetzt werden kann.
 
 ### <a name="files-from-knownfolders"></a>Dateien aus KnownFolders
 
-Ihre app möglicherweise nicht die einzige app, die versucht, auf eine Datei auf eines der [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)zuzugreifen. Es ist nicht garantiert werden, wenn der Vorgang erfolgreich ist, den Inhalt, die eine app in die Datei schreibt konstant bleiben werden, das nächste Mal versucht wird, die Datei zu lesen. Freigabe oder Zugriff verweigert auch, Fehler, die immer häufiger unter diesem Szenario.
+Ihre app möglicherweise nicht die einzige app, die versucht, eine Datei zuzugreifen, die auf einem der befinden die [ **KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders). Es gibt keine Garantie, dass wenn der Vorgang erfolgreich ist, den Inhalt, die eine app auf die Datei geschrieben habe, konstant bleibt das nächste Mal versucht wird, die Datei zu lesen. Freigeben oder Zugriff verweigert darüber hinaus werden in diesem Szenario häufiger Fehler auf.
 
-### <a name="conflicting-io"></a>In Konflikt stehenden e/a
+### <a name="conflicting-io"></a>In Konflikt stehende e/a
 
-Die Wahrscheinlichkeit, dass Parallelitätsfehler können gesenkt werden, wenn die app die Methoden **Schreiben** für Dateien in der lokalen Daten verwendet, aber Vorsicht jedoch weiterhin erforderlich ist. Wenn mehrere **Schreiben** Vorgänge gleichzeitig auf die Datei gesendet werden, besteht keine Garantie, über welche Daten in der Datei endet. Um dies zu verringern, wird empfohlen, dass Ihre app **Schreiben** Vorgänge in die Datei serialisiert.
+Die Wahrscheinlichkeit von Parallelitätsfehlern können verringert werden, wenn unsere app verwendet die **schreiben** Methoden für die Dateien in die lokalen Daten, aber Vorsicht ist weiterhin erforderlich. Wenn mehrere **schreiben** Vorgänge gesendet werden gleichzeitig in der Datei, es gibt keine Garantie dafür, welche Daten in der Datei endet. Um dies zu vermeiden, wird empfohlen, dass Ihre app serialisiert **schreiben** Vorgänge in der Datei.
 
 ### <a name="tmp-files"></a>~ TMP-Dateien
 
-Es kann vorkommen, wenn Erzwingen der Vorgang abgebrochen wird (z. B., wenn die app wurde angehalten oder beendet, durch das Betriebssystem wurde), die Transaktion nicht übernommen oder entsprechend geschlossen. Diese lassen sich hinter Dateien mit einer (. ~ TMP) Erweiterung. Sollten Sie diese temporären Dateien löschen, (Wenn sie in der app lokale Daten vorhanden sind) bei der Behandlung von der app-Aktivierungs.
+In einigen Fällen, wenn das der Vorgang abgebrochen wurde (z. B., wenn die app wurde angehalten oder wird, vom Betriebssystem beendet), die Transaktion kein Commit oder ordnungsgemäß geschlossen. Dadurch lassen sich hinter der Dateien mit einem (. ~ TMP) Erweiterung. Erwägen Sie diese temporären Dateien zu löschen (Wenn sie in der app lokale Daten vorhanden sind) bei der Verarbeitung der app-Aktivierung.
 
-## <a name="considerations-based-on-file-types"></a>Basierend auf Dateitypen Aspekte
+## <a name="considerations-based-on-file-types"></a>Überlegungen zur basierend auf Dateitypen
 
-Einige Fehler können je nach Art der Dateien, die Häufigkeit, die auf der auf sie zugegriffen werden und die Dateigröße häufiger werden. Es gibt in der Regel drei Kategorien von Dateien, die Ihre app zugreifen kann:
+Einige Fehler können je nach Art der Dateien, die Häufigkeit an, auf denen sie Zugriff auf, und die Dateigröße weiter verbreitet werden. Es gibt im Allgemeinen drei Kategorien von Dateien aus, die Ihre app zugreifen kann:
 
-* Dateien erstellt und in den Ordner Ihrer Anwendung lokale Daten vom Benutzer bearbeitet. Diese erstellt und nur bei der Verwendung von Ihrer app bearbeitet werden, und sie nur innerhalb der app vorhanden sind.
-* App-Metadaten. Ihre app verwendet diese Dateien, um den eigenen Zustand nachzuverfolgen.
-* Andere Dateien an Speicherorten des Dateisystems, in denen Ihre app Funktionen zum Zugreifen auf deklariert hat. Diese befinden sich am häufigsten in eines der [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders).
+* Dateien erstellt und bearbeitet werden, indem der Benutzer in Ihrer app lokale Datenordner. Diese werden erstellt und bearbeitet, die nur bei der Verwendung Ihrer app, und sie nur innerhalb der app vorhanden sind.
+* App-Metadaten. Die app verwendet diese Dateien zum Nachverfolgen seinen eigenen Status.
+* Andere Dateien an Speicherorten File System, in dem Ihre app Funktionen, die Zugriff auf deklariert wurde. Diese befinden sich am häufigsten in eines der [ **KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders).
 
-Ihrer app hat Vollzugriff auf den ersten zwei Kategorien von Dateien, da sie Teil Ihrer app-Paket-Dateien sind und ausschließlich von der app zugegriffen werden. Für Dateien in der letzten Kategorie muss Ihre app achten, dass die anderen apps und Diensten Betriebssystem die Dateien gleichzeitig möglicherweise auf zugreifen.
+Ihrer app hat vollständige Kontrolle über die ersten beiden Kategorien von Dateien, da sie Teil der app-Paketdateien und ausschließlich von Ihrer app zugegriffen werden. Für Dateien in der letzten Kategorie muss Ihrer app bewusst sein, dass andere apps und die Betriebssystemdienste Dateien gleichzeitig zugreifen können.
 
-Abhängig von der app kann den Zugriff auf die Dateien auf Häufigkeit variieren:
+Abhängig von der app kann Zugriff auf die Dateien nach Häufigkeit abweichen:
 
-* Sehr gering. Hierbei handelt es sich in der Regel um Dateien, die geöffnet werden, nachdem die app-Starts und werden beim Speichern, wenn die app angehalten wird.
-* Niedrig. Hierbei handelt es sich um Dateien, die der Benutzer ausdrücklich eine Aktion (z. behandelt wird b. speichern oder laden).
-* Mittel "oder" Hoch ". Hierbei handelt es sich um Dateien, in denen die app ständig Daten (z. B. Automatisches Speichern Features oder Konstante Metadaten tracking) aktualisieren muss.
+* Sehr niedrig. In der Regel sind dies Dateien, die geöffnet werden, sobald die app startet und Sie werden beim Speichern, wenn die app angehalten wird.
+* Niedrig. Hierbei handelt es sich um Dateien, die der Benutzer speziell eine Aktion (z. behandelt wird b. speichern oder laden).
+* Mittel oder hoch. Hierbei handelt es sich um Dateien, die in denen die app Daten (z. B. Autosave-Funktionen oder Konstanten Metadaten nachverfolgen) ständig aktualisieren muss.
 
-Sollten Sie für die Dateigröße die Performance-Daten in der folgenden Tabelle für die **WriteBytesAsync** -Methode. In diesem Diagramm werden die Zeit für einen Vorgang Vs-Dateigröße, über eine durchschnittliche Leistung der 10000 Vorgänge pro Dateigröße in einer kontrollierten Umgebung verglichen.
+Dateigröße, erwägen Sie die Leistungsdaten in der folgenden Tabelle sind die **WriteBytesAsync** Methode. In diesem Diagramm vergleicht die Zeit für einen Vorgang Vs-Dateigröße, über eine durchschnittliche Leistung von 10.000 Vorgänge pro Dateigröße in einer kontrollierten Umgebung.
 
 ![WriteBytesAsync-Leistung](images/writebytesasync-performance.png)
 
-Die Zeitwerte auf der y-Achse werden von diesem Diagramm absichtlich ausgelassen, da andere Hardware und Konfigurationen unterschiedliche absoluten Zeitwerte ergibt. Allerdings haben wir haben diese Trends bei unseren Tests konsistent beobachtet:
+Die Time-Werten auf der y-Achse werden aus dem Diagramm absichtlich ausgelassen, da unterschiedliche Hardware und Konfigurationen verschiedene absolute Zeitwerte ergeben. Allerdings haben wir diese Trends konsistent bei unseren Tests untersucht:
 
-* Für sehr kleine Dateien (< = 1 MB): die Zeit bis zum Abschluss des Vorgangs beendet ist konsistent schnell.
-* Für größere Dateien (> 1 MB): die Zeit bis zum Abschluss des Vorgangs beendet wird gestartet, um exponentiell zu erhöhen.
+* Für sehr kleine Dateien (< = 1 MB): Die Zeit zum Durchführen der Vorgänge ist konsistent schnelle.
+* Für größere Dateien (> 1 MB): Die Zeit zum Abschluss der Vorgänge startet exponentiell steigen.
 
-## <a name="io-during-app-suspension"></a>E/a, während des Anhaltens von Apps
+## <a name="io-during-app-suspension"></a>E/a während der Unterbrechung der app
 
-Ihre app muss entwickelt, um anhalten zu behandeln, wenn Sie die Reaktionsfähigkeit Zustandsinformationen oder Metadaten für den Einsatz in späteren Sitzungen möchten. Hintergrundinformationen zum Anhalten der app finden Sie in der [App-Lebenszyklus](../launch-resume/app-lifecycle.md) und [in diesem Blogbeitrag](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97).
+Ihre app muss entworfen, Unterbrechung zu verarbeiten, wenn zum Beibehalten von Zustandsinformationen oder Metadaten für die Verwendung in späteren Sitzungen werden sollen. Hintergrundinformationen zum Anhalten der app, finden Sie unter [App-Lebenszyklus](../launch-resume/app-lifecycle.md) und [in diesem Blogbeitrag](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97).
 
-Es sei denn, das Betriebssystem erweiterten Ausführung Ihrer App gewährt, wenn Ihre app angehalten wird, hat es 5 Sekunden, um alle seine Ressourcen freizugeben, und speichern die Daten. Treten Sie für die besten Zuverlässigkeit und Benutzer auf, immer davon ausgehen Sie, dass die Zeit zum Anhalten Aufgaben begrenzt ist. Bedenken Sie die folgenden Richtlinien während der 5-Sekunden-Zeitraum für die Behandlung von anhalten Aufgaben:
+Wenn das Betriebssystem erweiterten Ausführung zu Ihrer app gewährt, wenn Ihre app angehalten wird sie 5 Sekunden, um alle ihre Ressourcen freizugeben, und speichern Sie ihre Daten hat. Treten Sie für optimale Zuverlässigkeit und Benutzer auf, wird immer davon ausgehen Sie, dass die Zeit, die Sie anhalten Aufgaben behandeln müssen, beschränkt ist. Bedenken Sie die folgenden Richtlinien während der 5-Minuten-Zeitraum für die Behandlung von Unterbrechung Aufgaben:
 
-* Versuchen Sie, halten e/a auf ein Minimum zu leeren und Version Vorgänge zurückzuführen Racebedingungen zu vermeiden.
-* Vermeiden Sie das Schreiben von Dateien, die Hunderte von Millisekunden oder mehr schreiben erfordern.
-* Wenn Ihre app die Methoden **Schreiben** , Bedenken Sie alle intermediate Schritte, die diese Methoden erfordern.
+* Versuchen Sie es zu e/a auf ein Minimum zu leeren und Release-Vorgänge zurückzuführen Racebedingungen zu vermeiden.
+* Vermeiden Sie das Schreiben von Dateien, die mehrere hundert Millisekunden oder mehr schreiben zu müssen.
+* Wenn Ihre app verwendet die **schreiben** Methoden sollten Sie Bedenken alle Zwischenschritte, aus, die diese Methoden erfordern.
 
-Wenn Ihre app auf eine kleine Menge an Zustandsdaten während der Unterbrechung ausgeführt wird, in den meisten Fällen können die Methoden **Schreiben** Sie um die Daten zu leeren. Wenn Ihre app eine große Menge an Zustandsdaten verwendet, sollten Sie jedoch Streams, dass Ihre Daten direkt gespeichert. Dies kann helfen, die Verzögerung vom Transaktions-Modell der Methoden **Schreiben** , die zu reduzieren. 
+Wenn Ihre app auf eine kleine Menge von Daten während der Unterbrechung ausgeführt wird, in den meisten Fällen können Sie mithilfe der **schreiben** Methoden, die Daten zu leeren. Wenn Ihre app eine große Menge von Daten verwendet, sollten Sie jedoch Datenströme, um die Daten direkt zu speichern. Dies kann helfen, die vom transaktionalen Modell der Verzögerung zu reduzieren die **schreiben** Methoden. 
 
-Ein Beispiel finden Sie unter der [BasicSuspension](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicSuspension) .
+Ein Beispiel finden Sie unter den [BasicSuspension](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicSuspension) Beispiel.
 
-## <a name="other-examples-and-resources"></a>Andere Beispiele und Ressourcen
+## <a name="other-examples-and-resources"></a>Weitere Beispiele und Ressourcen
 
-Hier sind einige Beispiele und weitere Ressourcen für bestimmte Szenarien.
+Hier sind einige Beispiele für und andere Ressourcen für bestimmte Szenarien.
 
-### <a name="code-example-for-retrying-file-io-example"></a>Codebeispiel für die Wiederholung der Datei-e/a-Beispiel
+### <a name="code-example-for-retrying-file-io-example"></a>Codebeispiel für die Wiederholung von e/a-Beispiel
 
-Nachfolgend finden Sie eine Pseudocode Beispiel zum Wiederholen eines Schreibvorgangs (c#), vorausgesetzt, dass der Schreibvorgang durchgeführt werden, nachdem der Benutzer eine Datei für die Speicherung auswählt ist:
+Im folgenden finden eine Pseudocode für die Vorgehensweise beim Wiederholen eines Schreibvorgangs (C#), sofern der Write ausgeführt werden, nachdem der Benutzer eine Datei zum Speichern ausgewählt werden:
 
 ```csharp
 Windows.Storage.Pickers.FileSavePicker savePicker = new Windows.Storage.Pickers.FileSavePicker();
@@ -188,10 +188,10 @@ else
 }
 ```
 
-### <a name="synchronize-access-to-the-file"></a>Synchronisierung des Zugriffs auf die Datei
+### <a name="synchronize-access-to-the-file"></a>Synchronisieren des Zugriffs auf die Datei
 
-Die [Parallele Programmierung mit .NET Blog](https://blogs.msdn.microsoft.com/pfxteam/) ist eine hervorragende Ressource für Leitfaden für die parallele Programmierung. Insbesondere beschreibt die [post über AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) exklusiven Zugriff auf eine Datei für Schreibvorgänge, während weiterhin eine gleichzeitige Lesezugriff zu verwalten. Denken Sie daran, die e/a auswirkt, serialisieren Leistung.
+Die [zur parallelen Programmierung mit .NET Blog](https://blogs.msdn.microsoft.com/pfxteam/) ist eine großartige Quelle für Anleitungen zur parallelen Programmierung. Insbesondere die [Posten Sie über AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) beschreibt, wie Sie exklusiven Zugriff auf eine Datei als Schreibvorgängen, während gleichzeitig der Lesezugriff ermöglichen zu gewährleisten. Bedenken Sie, dass das Serialisieren, die sich auf die e/a auswirken Leistung.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
-* [Erstellen, Schreiben und Lesen einer Datei](quickstart-reading-and-writing-files.md)
+* [Erstellen, schreiben und Lesen einer Datei](quickstart-reading-and-writing-files.md)

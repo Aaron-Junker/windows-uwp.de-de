@@ -1,19 +1,19 @@
 ---
-Description: The following article describes all of the properties and elements within the toast content XML payload.
+Description: Im folgenden Artikel werden alle Eigenschaften und Elemente in der XML-Nutzlast des Popupinhalts beschrieben.
 title: XML-Schema des Popupinhalts
 ms.assetid: AF49EFAC-447E-44C3-93C3-CCBEDCF07D22
 label: Toast content XML schema
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934389"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612775"
 ---
 # <a name="toast-content-xml-schema"></a>XML-Schema des Popupinhalts
 
@@ -43,7 +43,7 @@ In den folgenden XML-Schemas bedeutet das Suffix „?“, dass ein Attribut opti
 </toast>
 ```
 
-**Attribut in &lt;Popup&gt;**
+**Attribute in &lt;Toast&gt;**
 
 launch?
 
@@ -75,7 +75,7 @@ scenario?
 -   Sie benötigen es nur, wenn es sich bei Ihrem Szenario um einen Alarm, eine Erinnerung oder einen eingehenden Anruf handelt.
 -   Verwenden Sie es nicht, um die Benachrichtigung dauerhaft auf dem Bildschirm anzuzeigen.
 
-**Attribut in &lt;Visual&gt;**
+**Attribute in &lt;visual&gt;**
 
 lang?
 
@@ -89,11 +89,11 @@ addImageQuery?
 
 -   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
-**Attribut in &lt;Bindung&gt;**
+**Attribute in &lt;Bindung&gt;**
 
 template?
 
--   \[Important\] template? = "ToastGeneric"
+-   \[Wichtige\] Vorlage? = "ToastGeneric"
 -   Wenn Sie eines der neuen Features für adaptive und interaktive Benachrichtigungen verwenden, stellen Sie sicher, dass Sie mit der Vorlage „ToastGeneric“ statt mit der Legacyvorlage beginnen.
 -   Möglicherweise können Sie die Legacyvorlagen mit den neuen Aktionen verwenden, aber da dies nicht der gewünschte Anwendungsfall ist, können wir keinen Erfolg garantieren.
 
@@ -109,13 +109,13 @@ addImageQuery?
 
 -   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
-**Attribut in &lt;Text&gt;**
+**Attribute in &lt;Text&gt;**
 
 lang?
 
 -   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
-**Attribut in &lt;Bild&gt;**
+**Attribute in &lt;Image&gt;**
 
 src
 
@@ -144,7 +144,7 @@ hint-crop?
 -   „none“ ist der Standardwert, sodass kein Zuschneiden möglich ist.
 -   „circle“ schneidet das Bild in Kreisform. Verwenden Sie diese Option für Profilbilder eines Kontakts, Bilder einer Person usw.
 
-**Attribut in &lt;Audio&gt;**
+**Attribute in &lt;audio&gt;**
 
 src?
 
@@ -177,7 +177,7 @@ In den folgenden XML-Schemas bedeutet das Suffix „?“, dass ein Attribut opti
 </toast>
 ```
 
-**Attribut in &lt;Eingabe&gt;**
+**Attribute in &lt;Eingabe&gt;**
 
 id
 
@@ -210,7 +210,7 @@ defaultInput?
 -   Beim Eingabetyp „text“ wird dieser als Zeichenfolgeneingabe behandelt.
 -   Lautet der Eingabetyp „selection“, wird angenommen, dass dieser die ID einer der verfügbaren Auswahl in diesen Eingabeelementen ist.
 
-**Attribut in &lt;Auswahl&gt;**
+**Attribute in &lt;Auswahl&gt;**
 
 id
 
@@ -220,7 +220,7 @@ content
 
 -   Dieses Attribut ist erforderlich. Es enthält die Zeichenfolge, die für dieses Auswahlelement angezeigt werden soll.
 
-**Attribut in &lt;Aktion&gt;**
+**Attribute in &lt;Aktion&gt;**
 
 content
 
@@ -255,7 +255,7 @@ hint-inputId
 
 Das System kann Aktionen für die Funktionen zum erneuen Erinnern und zum Schließen von Benachrichtigungen auslösen, wenn Sie nicht wünschen, dass Ihre App das erneute Erinnern/Neuplanen von Benachrichtigungen im Hintergrund ausführt. Systemgesteuerte Aktionen können kombiniert (oder einzeln festgelegt) werden. Wir raten jedoch davon ab, eine erneute Erinnerung ohne Möglichkeit zum Schließen zu implementieren.
 
-Kombinationsfeld für Systembefehle: SnoozeAndDismiss
+Kombinationsfeld für System-Befehle: SnoozeAndDismiss
 
 ```
 <toast>
@@ -299,4 +299,4 @@ Gehen Sie wie folgt vor, um individuelle Aktionen zum erneuten Erinnern und Schl
         -   Stimmen Sie die ID der Eingabe auf den Wert für „hint-inputId“ der Aktion für das erneute Erinnern ab: : &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
         -   Legen Sie für die Auswahl-ID eine positive ganze Zahl (nonNegativeInteger) fest, die dem Intervall für das erneute Erinnern in Minuten entspricht: &lt;selection id="240" /&gt; bedeutet, dass die erneute Erinnerung in vier Stunden erfolgt.
         -   Stellen Sie sicher, dass der Wert für „defaultInput“ in &lt;input&gt; einer der IDs der untergeordneten &lt;selection&gt; -Elemente entspricht.
-        -   Sie können bis zu (aber nicht mehr als) 5 &lt;selection&gt;-Werte bereitstellen
+        -   Sie können bis zu (jedoch nicht mehr als) 5 &lt;selection&gt;-Werte bereitstellen

@@ -1,17 +1,17 @@
 ---
 title: "So wird's gemacht: Anhalten einer App (DirectX und C++)"
-description: In diesem Thema wird gezeigt, wie wichtige Systemzustände und App-Daten gespeichert werden, wenn das System Ihre DirectX-App für die Universelle Windows-Plattform (UWP) anhält.
+description: In diesem Thema wird gezeigt, wie wichtige Systemzustände und App-Daten gespeichert werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) anhält.
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, anhalten, DirectX
+keywords: Windows 10, UWP, Spiele, anhalten, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b588d6bf6e7cbf43651d94a7fd46e9a767c6f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945712"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656035"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>So wird's gemacht: Anhalten einer App (DirectX und C++)
 
@@ -19,7 +19,7 @@ ms.locfileid: "8945712"
 
 In diesem Thema wird gezeigt, wie wichtige Systemzustände und App-Daten gespeichert werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) anhält.
 
-## <a name="register-the-suspending-event-handler"></a>Registrieren des suspending-Ereignishandlers
+## <a name="register-the-suspending-event-handler"></a>Registrieren des Suspending-Ereignishandlers
 
 
 Registrieren Sie zuerst die Behandlung des [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860)-Ereignisses, das ausgelöst wird, wenn die App durch eine Aktion des Benutzers oder des Systems in den angehaltenen Zustand versetzt wird.
@@ -97,7 +97,7 @@ void App::Run()
 ## <a name="call-trim"></a>Aufrufen von „Trim()“
 
 
-Ab Windows8.1, müssen alle DirectX-UWP-apps [**Idxgidevice3**](https://msdn.microsoft.com/library/windows/desktop/dn280346) aufrufen, wenn angehalten. Dieser Aufruf weist den Grafiktreiber an, alle für die App zugeordneten temporären Puffer freizugeben. Dadurch wird die Wahrscheinlichkeit verringert, dass die angehaltene App beendet wird, um Arbeitsspeicherressourcen freizugeben. Dies ist eine zertifizierungsanforderung für Windows8.1.
+Ab Windows 8.1, alle DirectX-UWP-apps müssen Aufrufen [ **IDXGIDevice3::Trim** ](https://msdn.microsoft.com/library/windows/desktop/dn280346) beim Anhalten. Dieser Aufruf weist den Grafiktreiber an, alle für die App zugeordneten temporären Puffer freizugeben. Dadurch wird die Wahrscheinlichkeit verringert, dass die angehaltene App beendet wird, um Arbeitsspeicherressourcen freizugeben. Dies ist eine zertifizierungsanforderung für Windows 8.1.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -134,19 +134,19 @@ void DX::DeviceResources::Trim()
 
 Wenn Ihre App das [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860)-Ereignis behandelt, hat sie auch die Möglichkeit, exklusive Ressourcen und Dateihandles freizugeben. Durch die explizite Freigabe von Ressourcen und Dateihandles kann sichergestellt werden, dass andere Apps auf die Ressourcen und Dateihandles zugreifen können, wenn Ihre App sie nicht verwendet. Wenn die App nach der Beendigung aktiviert ist, sollte sie ihre exklusiven Ressourcen und Dateihandles öffnen.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 
-Das System hält Ihre App an, wenn der Benutzer zu einer anderen App oder zum Desktop wechselt. Wenn der Benutzer wieder zu Ihrer App wechselt, wird die App fortgesetzt. Beim Fortsetzen der App haben die Variablen und Datenstrukturen den gleichen Inhalt wie vor der Unterbrechung. Das System stellt die App exakt so wieder her, wie sie unterbrochen wurde. Dadurch entsteht für den Benutzer der Eindruck, die App wäre im Hintergrund weiter ausgeführt worden.
+Das System hält Ihre App an, wenn der Benutzer zu einer anderen App oder zum Desktop wechselt. Wenn der Benutzer wieder zu Ihrer App wechselt, wird diese vom System fortgesetzt. Beim Fortsetzen der App haben die Variablen und Datenstrukturen den gleichen Inhalt wie vor der Unterbrechung. Das System stellt die App exakt so wieder her, wie sie unterbrochen wurde. Dadurch entsteht für den Benutzer der Eindruck, die App wäre im Hintergrund weiter ausgeführt worden.
 
-Das System versucht, die App und die dazugehörigen Daten zu speichern, während sie angehalten ist. Wenn das System aber nicht über die notwendigen Ressourcen verfügt, um die App im Arbeitsspeicher zu behalten, beendet es die App. Wenn der Benutzer wieder zu einer angehaltenen App wechselt, die beendet wurde, sendet das System ein [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018)-Ereignis und sollte die App-Daten im Handler für das **CoreApplicationView::Activated**-Ereignis wiederherstellen.
+Das System versucht, die App und die zugehörigen Daten im Arbeitsspeicher beizubehalten, während sie angehalten ist. Wenn das System aber nicht über die notwendigen Ressourcen verfügt, um die App im Arbeitsspeicher zu behalten, beendet es die App. Wenn der Benutzer wieder zu einer angehaltenen App wechselt, die beendet wurde, sendet das System ein [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018)-Ereignis und sollte die App-Daten im Handler für das **CoreApplicationView::Activated**-Ereignis wiederherstellen.
 
 Das System benachrichtigt eine App nicht, wenn sie beendet wird. Wenn Ihre App angehalten wird, muss sie daher die App-Daten speichern und die exklusiven Ressourcen und Dateihandles freigeben, damit diese beim erneuten Aktivieren der App nach der Beendigung wiederhergestellt werden können.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [So wird's gemacht: Reaktivieren einer App (DirectX und C++)](how-to-resume-an-app-directx-and-cpp.md)
-* [So wird's gemacht: Aktivieren einer App (DirectX und C++)](how-to-activate-an-app-directx-and-cpp.md)
+* [Fortsetzen eine app (DirectX und C++)](how-to-resume-an-app-directx-and-cpp.md)
+* [Gewusst wie: Aktivieren Sie eine app (DirectX und C++)](how-to-activate-an-app-directx-and-cpp.md)
 
  
 

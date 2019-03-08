@@ -1,19 +1,19 @@
 ---
-Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
+Description: Beim Master/Details-Muster werden eine Masterliste und die Details für das derzeit ausgewählte Element angezeigt. Dieses Muster wird häufig für E-Mails und Kontaktlisten/Adressbücher verwendet.
 title: Master/Details
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940639"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601255"
 ---
 # <a name="masterdetails-pattern"></a>Master/Details-Muster
 
@@ -23,7 +23,7 @@ Das Master/Details-Muster verfügt über einen Masterbereich (in der Regel mit e
 
 > **Wichtige APIs**: [ListView-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
-![Beispiel für das Master/Detail-Muster](images/HIGSecOne_MasterDetail.png)
+![Beispiel für das Master/Details-Muster](images/HIGSecOne_MasterDetail.png)
 
 ## <a name="is-this-the-right-pattern"></a>Ist dies das richtige Muster?
 
@@ -39,8 +39,8 @@ Beim Implementieren des Master/Details-Musters ist es ratsam, je nach Größe de
 
 | Verfügbare Fensterbreite | Empfohlenes Format |
 |------------------------|-------------------|
-| 320Epx - 640Epx        | Gestapelt           |
-| 641Epx oder breiter       | Nebeneinander      |
+| 320 Epx - 640 Epx        | Gestapelt           |
+| 641 Epx oder breiter       | Nebeneinander      |
 
  
 ## <a name="stacked-style"></a>Gestapeltes Format
@@ -93,16 +93,16 @@ Um ein adaptives Layout zu erstellen, definieren Sie verschiedene [**VisualState
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
 In den folgenden Beispielen implementieren Sie das Master/Detail-Muster mit adaptiven Layouts und veranschaulichen das Binden von Daten an statische, Datenbank- und Online-Ressourcen: 
-- [Master/Details-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [Beispiel für Master/Details sowie Auswahl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Master/Detail-Beispiel für Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
-- [Beispieldatenbank Kundenbestellung](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+- [Master/Detail-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
+- [Master-/Detail- plus -Auswahl-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Windows Vorlage Studio Master/Detail-Beispiel](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
+- [Customer-Orders-Datenbank-Beispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS-Reader-Beispiel](https://github.com/Microsoft/Windows-appsample-rssreader)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Listen](lists.md)
 - [Suche](search.md)
-- [App- und Befehlsleisten](app-bars.md)
+- [App "und" Befehl Balken](app-bars.md)
 - [ListView-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [SplitView-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
