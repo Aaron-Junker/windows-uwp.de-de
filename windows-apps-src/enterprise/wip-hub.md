@@ -1,20 +1,20 @@
 ---
-Description: This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
+Description: Dies ist ein Übersichtsthema mit umfassenden Informationen für Entwickler zum Zusammenhang zwischen der Windows Information Protection (WIP) und Dateien, Puffern, der Zwischenablage, dem Netzwerk, Hintergrundaufgaben und dem Schutz von Daten bei Sperre.
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows Information Protection (WIP)
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, Uwp, Windows Information Protection, Unternehmensdaten, Schutz von Unternehmensdaten, edp, optimierte Apps
+keywords: Windows 10, Uwp, Windows Information Protection, Unternehmensdaten, Schutz von Unternehmensdaten, edp, optimierte Apps
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
 ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049497"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595475"
 ---
 # <a name="windows-information-protection-wip"></a>Windows Information Protection (WIP)
 
@@ -42,7 +42,7 @@ Wenn Benutzer die Registrierung ihres Geräts im MDM-System der Organisation auf
 ![WIP-Lebenszyklus](images/wip-lifecycle.png)
 
 > **Weitere Informationen zu WIP** <br>
-* [Einführung in Windows Information Protection](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
+* [Einführung in Windows Informationen Protection](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
 * [Schützen von Unternehmensdaten mit Windows Information Protection (WIP)](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
 
 Wenn Ihre App auf der Liste der zugelassenen Apps steht, unterliegen alle von der App erstellten Daten den Einschränkungen der Richtlinien. Das bedeutet: Wenn Administratoren den Zugriff des Benutzers auf Unternehmensdaten widerrufen, geht dem Benutzer der Zugriff auf alle Daten verloren, die Ihre App erstellt hat.
@@ -61,11 +61,11 @@ Beispiel: Wenn die Richtlinie Benutzern erlaubt, Unternehmensdaten in einem priv
 
 Wenn Sie bereit sind, die App zu optimieren, sehen Sie sich eines dieser Handbücher an:
 
-**Für universelle Windows-Plattform (UWP)-apps, die Sie erstellen, indem Sie mithilfe von c#**
+**Für universelle Windows-Plattform (UWP)-apps, die Sie, indem Sie mithilfe von erstellenC#**
 
 [Entwicklerhandbuch für Windows Information Protection (WIP)](wip-dev-guide.md)
 
-**Für Desktop-Apps, die Sie mit C++ erstellen**
+**Für Desktop-apps, die Sie erstellen mithilfe C++**
 
 [Entwicklerhandbuch für Windows Information Protection (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)
 

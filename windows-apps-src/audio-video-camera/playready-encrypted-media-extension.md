@@ -1,43 +1,43 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: In diesem Abschnitt wird beschrieben, wie zum Ändern Ihrer PlayReady-Web-app, um die Änderungen, die aus der vorherigen Version Windows8.1 in die Windows 10-Version unterstützt wird.
+description: In diesem Abschnitt wird beschrieben, wie so ändern Sie Ihre PlayReady-Web-app, um die Änderungen, die aus der vorherigen Version von Windows 8.1, Windows 10-Version unterstützt wird.
 title: Verschlüsselte Medienerweiterung von PlayReady
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047292"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598615"
 ---
 # <a name="playready-encrypted-media-extension"></a>Verschlüsselte Medienerweiterung von PlayReady
 
 
 
-In diesem Abschnitt wird beschrieben, wie zum Ändern Ihrer PlayReady-Web-app, um die Änderungen, die aus der vorherigen Version Windows8.1 in die Windows 10-Version unterstützt wird.
+In diesem Abschnitt wird beschrieben, wie so ändern Sie Ihre PlayReady-Web-app, um die Änderungen, die aus der vorherigen Version von Windows 8.1, Windows 10-Version unterstützt wird.
 
 Die Verwendung von PlayReady-Medienelementen in Internet Explorer ermöglicht Entwicklern das Erstellen von Web-Apps, die PlayReady-geschützte Inhalte für den Benutzer bereitstellen und gleichzeitig vom Inhaltsanbieter definierte Regeln erzwingen können. In diesem Abschnitt wird beschrieben, wie Sie Ihren vorhandenen Web-Apps PlayReady-Medienelemente hinzufügen, indem Sie nur HTML5 und JavaScript verwenden.
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>Neuigkeiten in der verschlüsselten Medienerweiterung von PlayReady
 
-Dieser Abschnitt enthält eine Liste der Änderungen, die PlayReady verschlüsselten Extension (EME) an die PlayReady-Inhaltsschutz unter Windows 10 bereitzustellen.
+Dieser Abschnitt enthält eine Liste der Änderungen auf die PlayReady Encrypted Media Extension (EME) PlayReady Content Protection auf Windows 10 zu aktivieren.
 
-Die folgende Liste beschreibt die neuen Features und Änderungen an verschlüsselten Medienerweiterung von PlayReady für Windows 10:
+Die folgende Liste beschreibt die neuen Features und Änderungen an PlayReady verschlüsselt Media-Erweiterung für Windows 10:
 
 -   Hardwarebasierte Verwaltung digitaler Rechte (Digital Rights Management, DRM) wurde hinzugefügt.
 
-    Die Unterstützung für hardwarebasierten Inhaltsschutz ermöglicht die sichere Wiedergabe von High-Definition (HD)- und Ultra-High-Definition (UHD)-Inhalten auf mehreren Geräteplattformen. Schlüsselmaterial (einschließlich privater Schlüssel, Inhaltsschlüssel und anderer Schlüsselmaterialien zum Ableiten oder Entsperren dieser Schlüssel) sowie entschlüsselte komprimierte und nicht komprimierte Videobeispiele werden durch Hardwaresicherheit geschützt.
+    Die Unterstützung für hardwarebasierten Inhaltsschutz ermöglicht die sichere Wiedergabe von High-Definition (HD)- und Ultra-High-Definition (UHD)-Inhalten auf mehreren Geräteplattformen. Schlüsselmaterial (einschließlich privater Schlüssel, Inhaltsschlüssel und anderer Schlüsselmaterialien zum Ableiten oder Entsperren dieser Schlüssel) sowie entschlüsselte komprimierte und nicht komprimierte Videobeispiele werden durch Hardwaresicherheit geschützt.
 
 -   Unterstützt das proaktive Abrufen nicht persistenter Lizenzen.
 -   Unterstützt das Abrufen mehrerer Lizenzen in einer Nachricht.
 
-    Sie können entweder ein PlayReady-Objekt mit mehreren schlüsselkennungen (KeyIDs) wie bei Windows8.1 verwenden oder [Inhalten Entschlüsselung Modell-Daten (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) mit mehreren KeyIDs verwenden.
+    Sie können eine PlayReady-Objekt mit mehreren Schlüssel-IDs (KeyIDs) wie Windows 8.1 verwenden, oder verwenden Sie [Inhaltsdaten Entschlüsselung Modell (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) mit mehreren KeyIDs.
 
     > [!NOTE]
-    > In Windows 10 werden mehrere schlüsselkennungen unter unterstützt &lt;KeyID&gt; in CDMData.
+    > Mehrere IDs werden in Windows 10 unter unterstützt &lt;KeyID&gt; in CDMData.
 
 -   Unterstützung für den Echtzeitablauf, d. h. einer Lizenz mit begrenzter Dauer (Limited Duration License, LDL), wurde hinzugefügt.
 
@@ -61,7 +61,7 @@ Die folgende Liste beschreibt die neuen Features und Änderungen an verschlüsse
 
 In diesem Abschnitt wird die Version der verschlüsselten Medienerweiterungen von W3C beschrieben, die von PlayReady unterstützt werden.
 
-PlayReady für Web-Apps ist derzeit an die Entwurfsversion vom 10.Mai2013 ([W3C Encrypted Media Extension (EME) draft of May 10, 2013](https://www.w3.org/TR/2013/WD-encrypted-media-20130510/)) gebunden. Für zukünftige Versionen von Windows wird diese Unterstützung in die aktualisierte EME-Spezifikation geändert.
+PlayReady für Web-Apps ist derzeit an die Entwurfsversion vom 10. Mai 2013 ([W3C Encrypted Media Extension (EME) draft of May 10, 2013](https://www.w3.org/TR/2013/WD-encrypted-media-20130510/)) gebunden. Für zukünftige Versionen von Windows wird diese Unterstützung in die aktualisierte EME-Spezifikation geändert.
 
 ## <a name="use-hardware-drm"></a>Verwenden des Hardware-DRM
 
@@ -83,7 +83,7 @@ Dank des sicheren Beendens kann ein PlayReady-Gerät einem Medienstreamingdienst
 Es gibt zwei primäre Szenarien für das Senden einer Abfrage für sicheres Beenden:
 
 -   Wenn die Mediendarstellung beendet wird, weil das Ende des Inhalts erreicht wurde, oder wenn die Mediendarstellung vor ihrem Ende vom Benutzer beendet wurde.
--   Wenn die vorherige Sitzung unerwartet beendet wurde (z.B. aufgrund eines System- oder App-Absturzes). Die App muss beim Starten oder Herunterfahren alle ausstehenden Sitzungen für sicheres Beenden abfragen und von anderen Medienwiedergaben getrennte Abfragen senden.
+-   Wenn die vorherige Sitzung unerwartet beendet wurde (z. B. aufgrund eines System- oder App-Absturzes). Die App muss beim Starten oder Herunterfahren alle ausstehenden Sitzungen für sicheres Beenden abfragen und von anderen Medienwiedergaben getrennte Abfragen senden.
 
 In den folgenden Verfahren wird beschrieben, wie Sie das sichere Beenden für verschiedene Szenarien einrichten.
 
@@ -97,7 +97,7 @@ So richten Sie das sichere Beenden für den Fall ein, dass der Benutzer die Seit
 
 -   Zum Aufzeichnen des Beendigungszustands ist keine App-Aktion erforderlich. Der Zustand wird automatisch aufgezeichnet.
 
-So richten Sie das sichere Beenden für benutzerdefinierte Steuerelemente oder Benutzeraktionen ein (z.B. benutzerdefinierte Navigationsschaltflächen oder das Starten einer neuen Mediendarstellung vor Abschluss der aktuellen Mediendarstellung)
+So richten Sie das sichere Beenden für benutzerdefinierte Steuerelemente oder Benutzeraktionen ein (z. B. benutzerdefinierte Navigationsschaltflächen oder das Starten einer neuen Mediendarstellung vor Abschluss der aktuellen Mediendarstellung)
 
 -   Wenn die benutzerdefinierte Aktion stattfindet, muss die App die Quelle auf **NULL** festlegen, damit Media Foundation die Topologie unterbricht, die Decryptors zerstört und den Beendigungszustand festlegt.
 
@@ -262,13 +262,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> Für die Sitzungs-ID `<SessionID>B64 encoded session ID</SessionID>` der Daten für sicheres Beenden im obigen Beispiel kann ein Sternchen (\*) angegeben werden. Das Sternchen ist ein Platzhalter für alle aufgezeichneten Sitzungen für sicheres Beenden. Beim **SessionID**-Tag kann es sich also um eine bestimmte Sitzung oder einen Platzhalter (\*) zur Auswahl aller Sitzungen für sicheres Beenden handeln.
+> Der Daten des sicheren beenden `<SessionID>B64 encoded session ID</SessionID>` im obigen Beispiel kann ein Sternchen sein (\*), dies ist ein Platzhalter für alle sicheren beenden Sitzungen aufgezeichnet. D. h. die **SessionID** Tag kann es sich um eine bestimmte Sitzung oder einen Platzhalter (\*), wählen Sie alle sicheren Stop-Sitzungen.
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>Überlegungen zur Programmierung für verschlüsselte Medienerweiterungen (Encrypted Media Extensions, EME)
 
-Dieser Abschnitt enthält Hinweise zur Programmierung, die Sie beim Erstellen Ihrer PlayReady-fähigen Web-app für Windows 10 berücksichtigt werden sollten.
+Dieser Abschnitt enthält die Programmiersprachen Überlegungen, die berücksichtigt werden sollten, wenn Sie Ihre PlayReady-fähigen Web-app für Windows 10 zu erstellen.
 
-Die von Ihrer App erstellten Objekte **MSMediaKeys** und **MSMediaKeySession** müssen aktiv bleiben, bis die App geschlossen wird. Eine Möglichkeit, um sicherzustellen, dass diese Objekte aktiv bleiben, ist deren Zuweisung als globale Variablen (die Variablen würden den Gültigkeitsbereich verlassen und der Garbage Collection zugeführt, wenn sie innerhalb einer Funktion als lokale Variable deklariert werden). Im folgende Beispiel werden z. B. die Variablen *g\_msMediaKeys* und *g\_mediaKeySession* als globale Variablen zugewiesen, die dann den Objekten **MSMediaKeys** und **MSMediaKeySession** in der Funktion zugewiesen werden.
+Die von Ihrer App erstellten Objekte **MSMediaKeys** und **MSMediaKeySession** müssen aktiv bleiben, bis die App geschlossen wird. Eine Möglichkeit, um sicherzustellen, dass diese Objekte aktiv bleiben, ist deren Zuweisung als globale Variablen (die Variablen würden den Gültigkeitsbereich verlassen und der Garbage Collection zugeführt, wenn sie innerhalb einer Funktion als lokale Variable deklariert werden). Im folgende Beispiel weist z. B. die Variablen *g\_MsMediaKeys* und *g\_MediaKeySession* als globale Variablen werden dann zugewiesen, die **MSMediaKeys** und **MSMediaKeySession** Objekte in der Funktion.
 
 ``` syntax
 var g_msMediaKeys;
@@ -299,7 +299,7 @@ function foo() {
 Weitere Informationen finden Sie in den [Beispielanwendungen](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
 
 ## <a name="see-also"></a>Siehe auch
-- [PlayReady DRM](playready-client-sdk.md)
+- [PlayReady-DRM](playready-client-sdk.md)
 
 
 

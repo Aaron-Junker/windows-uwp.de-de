@@ -1,35 +1,35 @@
 ---
-title: Flat-Bundle App-Pakete
+title: Flat-Bundle-App-Pakete
 description: Beschreibt, wie ein Flat-Bundle erstellt wird, um die .appx-Paketdateien Ihrer App mit Verweisen auf App-Pakete zu bündeln.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: windows10, verpacken, paketkonfiguration, flat bundle
+keywords: windows 10, verpacken, paketkonfiguration, flat bundle
 ms.localizationpriority: medium
 ms.openlocfilehash: b7066b7f2e5bd72ebee3169e03c7940b6fef4dba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921634"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638485"
 ---
-# <a name="flat-bundle-app-packages"></a>Flat-Bundle App-Pakete 
+# <a name="flat-bundle-app-packages"></a>Flat-Bundle-App-Pakete 
 
 > [!IMPORTANT]
 > Wenn Sie Ihre App an den Store übermitteln möchten, müssen Sie sich an den [Windows-Support für Entwickler](https://developer.microsoft.com/windows/support) wenden und eine Genehmigung für die Verwendung von Flat Bundles erhalten.
 
-Flat Bundles sind eine bessere Möglichkeit, Ihre app-Paket-Dateien zu bündeln. Eine typische Windows app-Bündel-Datei eine mehrstufige Verpackungsstruktur verwendet in der app-Paketdateien im Bündel enthalten sein müssen, flat Bundles entfällt diese Notwendigkeit, indem Sie nur einen Verweis auf die app-Paket-Dateien, sodass sich diese außerhalb des app-Bündels befinden. Da die app-Paket-Dateien nicht mehr im Bündel enthalten sind, sie können werden parallel verarbeitet, wodurch Zeit, schnellere Veröffentlichung (da jede app-Paketdatei gleichzeitig verarbeitet werden kann) und letztendlich zu schnelleren Entwicklung Iterationen.
+Flatfile-Pakete sind eine verbesserte Möglichkeit, die Ihrer app-Paket gebündelt. Eine typische Windows app-Paketdatei eine Struktur mit mehreren Ebenen paketerstellung verwendet, in der die app-Paketdateien im Paket enthalten sein müssen, entfällt flache Paketen diese Aufgabe durch Verweisen auf nur die app-Paket-Dateien, sodass sie sich außerhalb der app-Bundle. Da die app-Paketdateien im Paket nicht mehr enthalten sind, werden können parallel verarbeitet, die führt zu geringeren Zeit, schnellere Veröffentlichung (da jede app-Paketdatei, die gleichzeitig verarbeitet werden kann) hochladen und letztlich schneller Entwicklung Iterationen.
 
 ![Flat Bundle-Diagramm](images/bundle-combined.png)
 
-Ein weiterer Vorteil von Flat Bundles ist, dass weniger Pakete erstellt werden müssen. Da app-Paketdateien nur verwiesen werden, können zwei Versionen der app die gleiche Paketdatei verweisen, wenn das Paket in den beiden Versionen nicht geändert hat. Dadurch müssen Sie beim Erstellen der Pakete für die nächste Version Ihrer App lediglich die App-Pakete erstellen, die geändert wurden.
-Standardmäßig verweisen die flat Bundles app-Paketdateien im gleichen Ordner wie selbst. Diese Referenz kann jedoch in andere Pfade (relative Pfade, Netzwerkfreigaben und http-Speicherorte) geändert werden. Dazu müssen Sie während des Erstellens des Flat Bundles ein **BundleManifest** direkt bereitstellen. 
+Ein weiterer Vorteil von Flat Bundles ist, dass weniger Pakete erstellt werden müssen. Da app-Paket-Dateien nur verwiesen wird, können zwei Versionen der app die gleiche Paketdatei verweisen, wenn das Paket nicht über die beiden Versionen geändert hat. Dadurch müssen Sie beim Erstellen der Pakete für die nächste Version Ihrer App lediglich die App-Pakete erstellen, die geändert wurden.
+Standardmäßig werden die Flatfile-Bündel-Paket-app-Dateien im selben Ordner wie Sie selbst verweisen. Diese Referenz kann jedoch in andere Pfade (relative Pfade, Netzwerkfreigaben und http-Speicherorte) geändert werden. Dazu müssen Sie während des Erstellens des Flat Bundles ein **BundleManifest** direkt bereitstellen. 
 
 ## <a name="how-to-create-a-flat-bundle"></a>So erstellen Sie ein Flat Bundle
 
 Ein Flat Bundle kann mithilfe des MakeAppx.exe-Tools erstellt werden. Sie können auch das Verpackungslayout verwenden, um die Struktur Ihres Bundles zu definieren.
 
 ### <a name="using-makeappxexe"></a>Verwenden der MakeAppx.exe
-Um ein flat Bundle mit MakeAppx.exe zu erstellen, verwenden Sie den Befehl "MakeAppx.exe Bundle" wie gewohnt jedoch mit dem/FB-Switch um die flache app-Bundle-Datei generieren (die extrem klein ist, da sie nur verweist auf die app-Paket-Dateien und enthält keine tatsächlichen Nutzlasten enthält ). 
+Um eine Flatfile-Bundles mithilfe MakeAppx.exe zu erstellen, verwenden Sie den "MakeAppx.exe Bundle" Befehl wie üblich, aber mit dem Schalter /fb um die Flatfile-app-Paketdatei zu generieren (die sehr gering sein wird, da es nur verweist auf die Dateien der app-Paket, und keine tatsächlichen Nutzlasten enthält ). 
 
 Hier sehen Sie ein Beispiel für die Befehlssyntax:
 
@@ -43,4 +43,4 @@ Weitere Informationen zur Verwendung von MakeApp.exe finden Sie unter [Erstellen
 Alternativ können Sie ein Flat Bundle mit dem Verpackungslayout erstellen. Legen Sie dazu das **FlatBundle**-Attribut im **PackageFamily**-Element Ihres App-Bündelmanifests auf **true** fest. Weitere Informationen zum Verpackungslayout finden Sie unter [Erstellen eines Pakets mit dem Verpackungslayout](packaging-layout.md).
 
 ## <a name="how-to-deploy-a-flat-bundle"></a>So stellen Sie ein Flat Bundle bereit 
-Bevor ein Flat Bundle bereitgestellt werden kann, muss jedes App-Paket (zusätzlich zu den App-Bündeln) mit demselben Zertifikat signiert werden. Dies ist, da alle app-Paket-Dateien (.appx/.msix) nun unabhängige Dateien und nicht in der app-Bündel (.appxbundle/.msixbundle)-Datei nicht mehr enthalten sind. Nachdem die Pakete signiert sind, verwenden Sie das [Add-AppxPackage-Cmdlet](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) in PowerShell, zeigen Sie auf der app-Bündel-Datei und Bereitstellen der app (vorausgesetzt, dass die app-Pakete sind, in dem das app-Bündel erwartet). 
+Bevor ein Flat Bundle bereitgestellt werden kann, muss jedes App-Paket (zusätzlich zu den App-Bündeln) mit demselben Zertifikat signiert werden. Dies ist daran, dass alle von der app-Paketdateien (.appx/.msix) jetzt unabhängige Dateien sind und nicht in der app-Paketdatei (.appxbundle/.msixbundle) nicht mehr enthalten sind. Nachdem die Pakete signiert sind, verwenden Sie die [Cmdlet Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) in PowerShell, um zeigen Sie auf die app-Paketdatei und Bereitstellen der app (app-Pakete sind, bei denen das app-Bündel zu erwartet vorausgesetzt). 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
-description: Erfahren Sie mehr über Richtlinien für die Benutzeroberfläche und Benutzerumgebung für Anzeigen in Apps.
+description: Erfahren Sie mehr über UI- und Benutzererfahrungsrichtlinien in App-Anzeigen.
 title: Richtlinien für die Benutzeroberfläche und Benutzerumgebung für Anzeigen
 ms.date: 05/11/2018
 ms.topic: article
-keywords: Windows10, UWP, Anzeigen, Werbung, Richtlinien, bewährte Methoden
+keywords: Windows 10, UWP, Anzeigen, Werbung, Richtlinien, bewährte Methoden
 ms.localizationpriority: medium
 ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930751"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639145"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Richtlinien für die Benutzeroberfläche und Benutzerumgebung für Anzeigen
 
@@ -33,7 +33,7 @@ Bevor Sie unsere Richtlinien für die unterschiedlichen Arten von Werbung in die
 
 ## <a name="guidelines-for-banner-ads"></a>Richtlinien für Banneranzeigen
 
-Die folgenden Abschnitte enthalten Empfehlungen für das Implementieren von [Banneranzeigen](banner-ads.md) in Ihrer App mithilfe von [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) sowie Beispiele für Implementierungen, die einen Verstoß gegen [Richtlinie 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) der Microsoft Store-Richtlinien darstellen.
+Die folgenden Abschnitte enthalten Empfehlungen für das Implementieren von [Banneranzeigen](banner-ads.md) in Ihrer App mithilfe von [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) und Beispiele für Implementierungen, die einen Verstoß gegen [Richtlinie 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) der Microsoft Store-Richtlinien darstellen.
 
 ### <a name="best-practices"></a>Empfohlene Methoden
 
@@ -71,11 +71,11 @@ Dieser Abschnitt enthält Beispiele für Szenarien mit Banneranzeigen, die einen
 
 * Beliebig geartetes Umgehen des integrierten minimalen Zeitgebers für die Aktualisierung der Banneranzeigen, einschließlich (aber nicht beschränkt auf) Austauschen von [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)-Objekten oder Erzwingen einer Seitenaktualisierung ohne Eingreifen des Benutzers.
 
-* Verwenden live-anzeigeneinheiten (d. h. anzeigeneinheiten, die Sie aus dem Partner Center erhalten) während der Entwicklungs- und Testphase oder in einem Emulator.
+* Mithilfe von live-Ad-Einheiten (d. h. Ad Einheiten, die Sie von Partner Center abrufen) während der Entwicklung und Tests, oder in einem Emulator.
 
 * Schreiben oder Verteilen von Code, der Anzeigendienste auf andere Weise aufruft als die Microsoft Advertising-Bibliotheken, die im Zusammenhang mit Ihrer App ausgeführt werden.
 
-* Interagieren mit nicht dokumentierten Schnittstellen oder untergeordneten Objekten, die von den Microsoft Advertising-Bibliotheken erstellt wurden, z.B. **WebView** oder **MediaElement**.
+* Interagieren mit nicht dokumentierten Schnittstellen oder untergeordneten Objekten, die von den Microsoft Advertising-Bibliotheken erstellt wurden, z. B. **WebView** oder **MediaElement**.
 
 <span id="interstitialbestpractices10" />
 
@@ -97,7 +97,7 @@ Wir empfehlen diese Methoden beim Implementieren von Interstitialanzeigen in Ihr
 
     * Zusätzliche Zeit, um eine Ebene auszuführen.
 
-    * Benutzerdefinierte Avatar-Features, wie ein Tattoo oder ein Hut.
+    * Benutzerdefinierte Avatar-Features, wie ein Tattoo oder einen Hut.
 
 * Sollte es bei Ihrer App erforderlich sein, eine Videointerstitialanzeige bis zum Schluss anzusehen, dann erwähnen Sie diese Regel im Vorfeld, damit die Benutzer beim Schließen nicht von einer Fehlermeldung überrascht werden.
 
@@ -133,7 +133,7 @@ Wir empfehlen folgende Methoden beim Implementieren von Interstitialanzeigen in 
 
 * Rufen Sie Interstitialvideos nicht mehr als 5 Minuten vor dem Aufrufen von [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) ab. Gutes Inventar wird die Konvertierung von vorab abgerufenen Anzeigen in berechenbare Anzeigenaufrufe maximieren.
 
-* Bestrafen Sie Benutzer nicht für Probleme bei der Anzeigenbereitstellung, d.h., wenn beispielsweise keine Anzeigen verfügbar sind. Wenn Sie beispielsweise eine UI-Option anzeigen, die lautet „Sehen Sie sich eine Anzeige an und erhalten Sie *xxx*“, dann sollten Sie *xxx* auch tatsächlich bereitstellen, wenn der Benutzer seinen Teil erfüllt. Berücksichtigen Sie die folgenden beiden Optionen:
+* Bestrafen Sie Benutzer nicht für Probleme bei der Anzeigenbereitstellung, d. h., wenn beispielsweise keine Anzeigen verfügbar sind. Wenn Sie beispielsweise eine UI-Option anzeigen, die lautet „Sehen Sie sich eine Anzeige an und erhalten Sie *xxx*“, dann sollten Sie *xxx* auch tatsächlich bereitstellen, wenn der Benutzer seinen Teil erfüllt. Berücksichtigen Sie die folgenden beiden Optionen:
 
     * Bieten Sie die Option nur an, wenn das [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready)-Ereignis bereits ausgelöst wurde.
 
@@ -155,11 +155,11 @@ Dieser Abschnitt enthält Beispiele für Szenarien mit Interstitialanzeigen, die
 
 * Das Anfordern von Interstitialanzeigen, nur um eine Sicherungsanzeige für eine Wasserfallfolge von Anzeigen zu erhalten. Wenn Sie eine Interstitialanzeige anfordern und anschließend das [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready)-Ereignis erhalten, muss die nächste Interstitialanzeige in Ihrer App die Anzeige sein, die für die Anzeige über die Methode [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) bereit ist.
 
-* Verwenden live-anzeigeneinheiten (d. h. anzeigeneinheiten, die Sie aus dem Partner Center erhalten) während der Entwicklungs- und Testphase oder in einem Emulator.
+* Mithilfe von live-Ad-Einheiten (d. h. Ad Einheiten, die Sie von Partner Center abrufen) während der Entwicklung und Tests, oder in einem Emulator.
 
 * Schreiben oder Verteilen von Code, der Anzeigendienste auf andere Weise aufruft als die Microsoft Advertising-Bibliotheken, die im Zusammenhang mit Ihrer App ausgeführt werden.
 
-* Interagieren mit nicht dokumentierten Schnittstellen oder untergeordneten Objekten, die von den Microsoft Advertising-Bibliotheken erstellt wurden, z.B. **WebView** oder **MediaElement**.
+* Interagieren mit nicht dokumentierten Schnittstellen oder untergeordneten Objekten, die von den Microsoft Advertising-Bibliotheken erstellt wurden, z. B. **WebView** oder **MediaElement**.
 
 ## <a name="guidelines-for-native-ads"></a>Richtlinien für native Anzeigen
 
@@ -183,13 +183,13 @@ Sie müssen mindestens folgenden Elemente der native Anzeigenelemente für den B
 2. Zeigen Sie immer mindestens eines der folgenden Elemente an, um die native Anzeige vom Rest der App klar zu unterscheiden und die Herkunft der Inhalte von einem Werbepartner herauszustellen:
     * Das eindeutige *ad*-Symbol (verfügbar in der **AdIcon**-Eigenschaft). Dieses Symbol wird von Microsoft bereitgestellt.
     * Der *unterstützt von*-Text (verfügbar in der **SponsoredBy**-Eigenschaft). Dieser Text wird vom Werbepartner bereitgestellt.
-    * Als Alternative zum *unterstützt von*-Text können Sie einige andere Text anzeigen, die die native Anzeige vom Rest der App abgrenzen (z.B. „Gesponsert Inhalt“, „Werbeinhalte“, „Empfohlene Inhalte“).
+    * Als Alternative zum *unterstützt von*-Text können Sie einige andere Text anzeigen, die die native Anzeige vom Rest der App abgrenzen (z. B. „Gesponsert Inhalt“, „Werbeinhalte“, „Empfohlene Inhalte“).
 
-### <a name="user-experience"></a>Benutzerfreundlichkeit
+### <a name="user-experience"></a>Benutzererfahrung
 
 Ihre native Anzeige sollte von den restlichen Ihrer App klar abgegrenzt werden und mit einem Rand versehentliche Klicks verhindern. Verwenden Sie Rahmen, andere Hintergründen und andere UI-Elemente, um die Inhalte vom Rest der App zu trennen. Bedenken Sie, dass versehentlich Anzeigen-Klicks auf lange Sicht nicht für den Umsatz mit Anzeigen oder Ihre Endbenutzererfahrung von Vorteil sind.
 
-### <a name="description"></a>Description
+### <a name="description"></a>Beschreibung
 
 Wenn Sie die Beschreibung für die Anzeige anzeigen möchten (verfügbar in der **Description**-Eigenschaft des **NativeAdV2**-Objekts), bieten Sie ausreichend Platz zum Anzeigen von mindestens 75 Zeichen. Es wird empfohlen, dass Sie eine Animation verwenden, um den gesamten Inhalt der Anzeigenbeschreibung anzuzeigen.
 
@@ -197,6 +197,6 @@ Wenn Sie die Beschreibung für die Anzeige anzeigen möchten (verfügbar in der 
 
 Der *Handlungsaufforderung*-Text (verfügbar in der **CallToAction**-Eigenschaft des **NativeAdV2**-Objekts) ist eine wichtige Komponente der Anzeige. Wenn Sie diesen Text anzeigen möchten, befolgen Sie diese Richtlinien:
 
-* Zeigen Sie den *Handlungsaufforderung*-Text immer auf einen klickbaren Steuerelemente (z.B. eine Schaltfläche oder einen Link) für den Benutzer an.
+* Zeigen Sie den *Handlungsaufforderung*-Text immer auf einen klickbaren Steuerelemente (z. B. eine Schaltfläche oder einen Link) für den Benutzer an.
 * Zeigen Sie den *Handlungsaufforderung*-Text immer vollständig an.
 * Stellen Sie sicher, dass der *Handlungsaufforderung*-Text vom restlichen Werbetext des Werbepartners getrennt ist.

@@ -1,32 +1,32 @@
 ---
-Description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
+Description: Kachel "Adaptive" Vorlagen sind ein neues Feature in Windows 10, dadurch können Sie eigene Kachel Benachrichtigungsinhalt, mit der eine einfache und flexible Markupsprache, die an verschiedene bildschirmdichten anpasst entwerfen.
 title: Erstellen adaptiver Kacheln
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945527"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639605"
 ---
 # <a name="create-adaptive-tiles"></a>Erstellen adaptiver Kacheln
 
-Vorlagen für Adaptive Kacheln sind ein neues Feature in Windows 10, sodass Sie Entwurf eigener Inhalte für kachelbenachrichtigungen mithilfe einer einfachen, flexiblen Markupsprache, die sich an unterschiedliche bildschirmdichten anpasst. Dieser Artikel beschreibt, wie Sie adaptive Live-Kacheln für Ihre UWP-App (Universelle Windows-Plattform) erstellen. Die vollständige Liste adaptiver Elemente und Attribute finden Sie unter [Adaptives Kachelschema](../tiles-and-notifications/tile-schema.md).
+Kachel "Adaptive" Vorlagen sind ein neues Feature in Windows 10, dadurch können Sie eigene Kachel Benachrichtigungsinhalt, mit der eine einfache und flexible Markupsprache, die an verschiedene bildschirmdichten anpasst entwerfen. Dieser Artikel beschreibt, wie Sie adaptive Livekacheln für Ihre App für die Universelle Windows-Plattform (UWP) erstellen. Die vollständige Liste adaptiver Elemente und Attribute finden Sie unter [Adaptives Kachelschema](../tiles-and-notifications/tile-schema.md).
 
-(Wenn Sie möchten, können Sie weiterhin die voreingestellten Vorlagen aus der [Windows8 Kachel Katalogs für einstellungsvorlagen](https://msdn.microsoft.com/library/windows/apps/hh761491) verwenden beim Entwerfen von Benachrichtigungen für Windows 10.)
+(Wenn Sie möchten, können Sie weiterhin verwenden, auf die vordefinierten Vorlagen aus dem [Windows 8-kachelvorlagenkatalog](https://msdn.microsoft.com/library/windows/apps/hh761491) beim Entwerfen für Windows 10.)
 
 
 ## <a name="getting-started"></a>Erste Schritte
 
-**Installieren Sie die Benachrichtigungsbibliothek.** Wenn Sie C# anstelle von XML verwenden möchten, um Benachrichtigungen zu generieren, installieren Sie das NuGet-Paket mit dem Namen [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). (Suchen Sie nach „Benachrichtigungen UWP“.) Die in diesem Artikel bereitgestellten C#-Beispiele verwenden Version 1.0.0 des NuGet-Pakets.
+**Installieren Sie Benachrichtigungen-Bibliothek.** Wenn Sie C# anstelle von XML verwenden möchten, um Benachrichtigungen zu generieren, installieren Sie das NuGet-Paket mit dem Namen [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). (Suchen Sie nach „Benachrichtigungen UWP“.) Die in diesem Artikel bereitgestellten C#-Beispiele verwenden Version 1.0.0 des NuGet-Pakets.
 
-**Installieren Sie den Notifications Visualizer.** Diese kostenlose UWP-App erleichtert das Entwerfen adaptiver Live-Kacheln, indem Ihre Kachel während der Bearbeitung in einer sofortigen visuellen Vorschau dargestellt wird, die mit dem XAML-Editor bzw. der Entwurfsansicht in Visual Studio vergleichbar ist. Weitere Informationen finden Sie unter [Notifications Visualizer](notifications-visualizer.md) oder [Notifications Visualizer aus dem Store herunterladen](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
+**Installieren Sie Benachrichtigungen Schnellansicht.** Diese kostenlose UWP-App erleichtert das Entwerfen adaptiver Live-Kacheln, indem Ihre Kachel während der Bearbeitung in einer sofortigen visuellen Vorschau dargestellt wird, die mit dem XAML-Editor bzw. der Entwurfsansicht in Visual Studio vergleichbar ist. Weitere Informationen finden Sie unter [Notifications Visualizer](notifications-visualizer.md) oder [Notifications Visualizer aus dem Store herunterladen](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
 
 ## <a name="how-to-send-a-tile-notification"></a>Senden einer Kachelbenachrichtigung
@@ -208,7 +208,7 @@ TileContent content = new TileContent()
 
 Sie können das Branding am unteren Rand einer Live-Kachel (den Anzeigenamen und das Cornerlogo) mit dem branding-Attribut in der Benachrichtigungsnutzlast steuern. Mit „none“ wird nichts angezeigt, mit „name“ nur der Name, mit „logo“ nur das Logo, und mit „nameAndLogo“ werden Name und Logo angezeigt.
 
-**Hinweis:** Windows Mobile kein unter Mobile unterstützt die Ecke Logo, dies der Fall ist "Logo" und "NameAndLogo" standardmäßig "Name".
+**Beachten Sie**  Windows Mobile nicht unterstützt, die Ecke-Logo, also "-Logo" und "NameAndLogo" Standardwert "Name" auf dem Mobiltelefon.
 
  
 
@@ -274,13 +274,13 @@ TileContent content = new TileContent()
 };
 ```
 
-**Ergebnis bei Standardbranding:**
+**Standard-branding-Ergebnis:**
 
 ![Standardbranding für Kacheln](images/adaptive-tiles-defaultbranding.png)
 
 Wenn Sie in der Benachrichtigungsnutzlast kein Branding angeben, wird das Branding durch die Eigenschaften der Basiskachel bestimmt. Wenn auf der Basiskachel der Anzeigename dargestellt ist, wird für das Branding standardmäßig „name“ verwendet. Wenn kein Anzeigename vorhanden ist, wird für das Branding standardmäßig „none“ verwendet.
 
-**Hinweis:**  Dies ist eine Änderung von Windows8.x, in denen das standardbranding "Logo" lautete.
+**Beachten Sie**    Dies ist eine Änderung gegenüber Windows 8.x, in dem das Standard-branding wurde "-Logo."
 
  
 
@@ -381,7 +381,7 @@ new AdaptiveText()
 ## <a name="text-styles"></a>Textstile
 
 
-Stile steuern den Schriftgrad, die Schriftfarbe und Schriftbreite von text-Elementen. Es sind mehrere Stile verfügbar. Zusätzlich gibt es leichte („subtle“) Variationen jedes Stils, durch die die Deckkraft auf 60% festgelegt und die Textfarbe normalerweise in einem hellgrauen Farbton angezeigt wird.
+Stile steuern den Schriftgrad, die Schriftfarbe und Schriftbreite von text-Elementen. Es sind mehrere Stile verfügbar. Zusätzlich gibt es leichte („subtle“) Variationen jedes Stils, durch die die Deckkraft auf 60 % festgelegt und die Textfarbe normalerweise in einem hellgrauen Farbton angezeigt wird.
 
 ```xml
 <text hint-style="base">Header content</text>
@@ -406,26 +406,26 @@ new AdaptiveText()
 
 ![Textstile adaptiver Kacheln](images/adaptive-tiles-textstyles.png)
 
-**Hinweis:** den Stil standardmäßig "Caption" Wenn Hint-Style nicht angegeben ist.
+**Beachten Sie**  styl Beschriftung standardmäßig, wenn die Hinweis-Stil nicht angegeben ist.
 
  
 
-**Allgemeine Textstile**
+**Grundlegende Textformate**
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
 | &lt;text hint-style="\*" /&gt; | Zeichenhöhe               | Schriftbreite |
 | caption                        | 12 effektive Pixel (epx) | Regular     |
-| body                           | 15Epx                    | Regular     |
-| base                           | 15Epx                    | Semibold    |
-| subtitle                       | 20Epx                    | Regular     |
-| title                          | 24Epx                    | Semilight   |
-| subheader                      | 34Epx                    | Light       |
-| header                         | 46Epx                    | Light       |
+| body                           | 15 Epx                    | Regular     |
+| base                           | 15 Epx                    | Semibold    |
+| subtitle                       | 20 Epx                    | Regular     |
+| title                          | 24 Epx                    | Semilight   |
+| subheader                      | 34 Epx                    | Hell       |
+| header                         | 46 Epx                    | Hell       |
 
  
 
-**Numerische Variationen des Textstils**
+**Varianten für Ziffern Text-Stil**
 
 Durch diese Variationen wird die Zeilenhöhe verringert, sodass der Abstand zu Inhalten über und unter der Zeile deutlich kleiner wird.
 
@@ -437,9 +437,9 @@ Durch diese Variationen wird die Zeilenhöhe verringert, sodass der Abstand zu I
 
  
 
-**Leichte Variationen des Textstils**
+**Feine Text-Format-Varianten**
 
-Jeder Stil weist eine leichte Variation auf, durch die der Text eine 60%-ige Deckkraft erhält und normalerweise in einem hellgrauen Farbton angezeigt wird.
+Jeder Stil weist eine leichte Variation auf, durch die der Text eine 60 %-ige Deckkraft erhält und normalerweise in einem hellgrauen Farbton angezeigt wird.
 
 |                        |
 |------------------------|
@@ -485,7 +485,7 @@ Mit Gruppen können Sie semantisch deklarieren, dass sich Inhalte in der Gruppe 
 
 Um optimale Ergebnisse auf unterschiedlichen Geräten und Bildschirmen zu erzielen, sollten Sie mehrere Gruppen bereitstellen. Mit mehreren Gruppen kann sich die Kachel an größere Bildschirme anpassen.
 
-**Hinweis:** das einzige gültige untergeordnete Element einer Gruppe ist eine Untergruppe.
+**Beachten Sie**  nur gültige untergeordnetes Element einer Gruppe ist eine Untergruppe.
 
  
 
@@ -635,7 +635,7 @@ Um eine Spalte doppelt so groß wie eine andere Spalte darzustellen, weisen Sie 
 </tr>
 <tr class="odd">
 <td align="left">2</td>
-<td align="left">66,7 %</td>
+<td align="left">66,7 %</td>
 </tr>
 <tr class="even">
 <td align="left">Gesamtgewichtung: 3</td>
@@ -648,7 +648,7 @@ Um eine Spalte doppelt so groß wie eine andere Spalte darzustellen, weisen Sie 
 
 ![Untergruppen, eine Spalte ist doppelt so groß wie die andere](images/adaptive-tiles-subgroups02.png)
 
-Wenn Ihre erste Spalte 20% und die zweite Spalte 80% der gesamten Breite einnehmen soll, weisen Sie der ersten Gewichtung 20 und der zweiten Gewichtung 80 zu. Wenn die Gewichtungen insgesamt 100 ergeben, werden sie prozentual ausgedrückt.
+Wenn Ihre erste Spalte 20 % und die zweite Spalte 80 % der gesamten Breite einnehmen soll, weisen Sie der ersten Gewichtung 20 und der zweiten Gewichtung 80 zu. Wenn die Gewichtungen insgesamt 100 ergeben, werden sie prozentual ausgedrückt.
 
 <table>
 <colgroup>
@@ -666,7 +666,7 @@ Wenn Ihre erste Spalte 20% und die zweite Spalte 80% der gesamten Breite einnehm
 </tr>
 <tr class="odd">
 <td align="left">80</td>
-<td align="left">80%</td>
+<td align="left">80 %</td>
 </tr>
 <tr class="even">
 <td align="left">Gesamtgewichtung: 100</td>
@@ -679,7 +679,7 @@ Wenn Ihre erste Spalte 20% und die zweite Spalte 80% der gesamten Breite einnehm
 
 ![Untergruppen mit einer Gesamtgewichtung von 100](images/adaptive-tiles-subgroups03.png)
 
-**Hinweis:** zwischen Spalten wird automatisch ein Rand von 8 Pixel eingefügt.
+**Beachten Sie**  ein 8-Pixel-Rand wird automatisch zwischen den Spalten hinzugefügt.
 
  
 
@@ -787,13 +787,13 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ![Beispiel für eine Wetter-Kachel](images/adaptive-tiles-weathertile.png)
 
-## <a name="images"></a>Bilder
+## <a name="images"></a>Abbilder
 
 
 Mithilfe des &lt;image&gt;-Elements werden Bilder auf der Kachelbenachrichtigung angezeigt. Bilder können als Inlinebilder im Kachelinhalt (Standard), als Hintergrundbild hinter dem Inhalt oder als animiertes Vorschaubild, das von oben in die Benachrichtigung hineingleitet, konfiguriert werden.
 
 > [!NOTE]
-> Die verwendeten Bilder können aus dem App-Paket, dem lokalen Speicher der App oder aus dem Web stammen. Im Fall Creators Update kann die Größe der Webbilder 3MB für normale Verbindungen und 1MB für getaktete Verbindungen betragen. Auf Geräten, die noch nicht das Fall Creators Update haben, dürfen Webbilder nicht größer als 200KB sein.
+> Die verwendeten Bilder können aus dem App-Paket, dem lokalen Speicher der App oder aus dem Web stammen. Im Fall Creators Update kann die Größe der Webbilder 3 MB für normale Verbindungen und 1 MB für getaktete Verbindungen betragen. Auf Geräten, die noch nicht das Fall Creators Update haben, dürfen Webbilder nicht größer als 200 KB sein.
 
  
 
@@ -1179,7 +1179,7 @@ TileWide = new TileBinding()
 
 ![Beispiele für Vorschaubilder](images/adaptive-tiles-imagepeeking.png)
 
-**Kreisförmiges Zuschneiden für Vorschau- und Hintergrundbilder**
+**Kreis Zuschneiden für Peek und Hintergrundbilder**
 
 Wenden Sie das hint-crop-Attribut auf Vorschau- und Hintergrundbilder an, um einen kreisförmigen Zuschnitt zu erhalten:
 
@@ -1199,7 +1199,7 @@ Das Ergebnis sieht wie folgt aus:
 
 ![Kreisförmiges Zuschneiden für Vorschau- und Hintergrundbilder](images/circlecrop-image.png)
 
-**Verwenden eines Vorschau- und eines Hintergrundbilds**
+**Sowohl Peek und das Hintergrundbild verwenden**
 
 Zur Verwendung eines Vorschau- und eines Hintergrundbilds auf einer Kachelbenachrichtigung geben Sie in der Benachrichtigungsnutzlast sowohl ein Vorschau- als auch ein Hintergrundbild an.
 
@@ -1212,9 +1212,9 @@ Das Ergebnis sieht wie folgt aus:
 
 Sie können mit **hint-overlay** eine schwarze Überlagerung für Hintergrund- und Vorschaubild festlegen. Das Attribut akzeptiert ganze Zahlen von 0 bis 100, wobei 0 keine Überlagerung und 100 eine vollständige schwarze Überlagerung angibt. Sie können das Overlay verwenden, um sicherzustellen, dass der Text auf der Kachel lesbar ist.
 
-**Verwenden von „hint-overlay“ für ein Hintergrundbild**
+**Verwenden Sie die Hinweis-Overlay auf ein Hintergrundbild**
 
-Das Hintergrundbild wird standardmäßig auf eine Überlagerung von 20% festgelegt, solange es in der Nutzlast Textelemente gibt. (Andernfalls wird standardmäßig eine Überlagerung von 0% festgelegt.)
+Das Hintergrundbild wird standardmäßig auf eine Überlagerung von 20 % festgelegt, solange es in der Nutzlast Textelemente gibt. (Andernfalls wird standardmäßig eine Überlagerung von 0 % festgelegt.)
 
 ```xml
 <binding template="TileWide">
@@ -1239,13 +1239,13 @@ TileWide = new TileBinding()
 }
 ```
 
-**Ergebnis von „hint-overlay“:**
+**Hinweis-Overlay-Ergebnis:**
 
 ![Beispiel für ein Bild mit angewendetem „hint-overlay“](images/adaptive-tiles-image-hintoverlay.png)
 
-**Verwenden von „hint-overlay“ für ein Vorschaubild**
+**Verwenden Sie die Hinweis-Overlay auf einem Peek-image**
 
-In Version 1511 von Windows10 unterstützen wir Überlagerungen für Vorschaubilder, genau wie für Hintergrundbilder. Geben Sie „hint-overlay“ für das Vorschaubildelement als ganze Zahl von 0 bis 100 an. Die Standardüberlagerung für Vorschaubilder ist 0 (keine Überlagerung).
+In Version 1511 von Windows 10 unterstützen wir Überlagerungen für Vorschaubilder, genau wie für Hintergrundbilder. Geben Sie „hint-overlay“ für das Vorschaubildelement als ganze Zahl von 0 bis 100 an. Die Standardüberlagerung für Vorschaubilder ist 0 (keine Überlagerung).
 
 ```xml
 <binding template="TileMedium">
@@ -1269,7 +1269,7 @@ TileMedium = new TileBinding()
 }
 ```
 
-Dieses Beispiel zeigt ein Vorschaubild mit 20% Deckkraft (links) und 0% Deckkraft (rechts):
+Dieses Beispiel zeigt ein Vorschaubild mit 20 % Deckkraft (links) und 0 % Deckkraft (rechts):
 
 ![„hint-overlay“ für ein Vorschaubild](images/hintoverlay.png)
 
@@ -1390,11 +1390,11 @@ TileWide = new TileBinding()
 ```
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Kachelinhaltsschema](../tiles-and-notifications/tile-schema.md)
+* [Inhaltsschema Kachel](../tiles-and-notifications/tile-schema.md)
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
 * [Spezielle Kachelvorlagen](special-tile-templates-catalog.md)
-* [UWP Community Toolkit – Benachrichtigung](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
-* [Windows-Benachrichtigung auf GitHub](https://github.com/WindowsNotifications)
+* [UWP Communitytoolkit – Benachrichtigungen](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Windows-Benachrichtigungen auf GitHub](https://github.com/WindowsNotifications)
 
  
 

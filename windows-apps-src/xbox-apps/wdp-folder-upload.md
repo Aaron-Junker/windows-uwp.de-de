@@ -3,15 +3,15 @@ title: Device Portal - Referenz zu den APIs zum Hochladen von Ordnern
 description: Erfahren Sie, wie Sie programmgesteuert auf die APIs zum Hochladen von Ordnern zugreifen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
 ms.openlocfilehash: 0805dbeedcf66bc3596f3d284f51e8f177608396
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946175"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617605"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>Hochladen eines Ordners in das Entwicklungsverzeichnis
 
@@ -42,17 +42,17 @@ destinationFolder (erforderlich) | Der Name des Zielordners für den Ordner, der
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-200 | Erfolg
+200 | Möglich
 4XX | Fehlercodes
 5XX | Fehlercodes
 <br />
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Xbox
 

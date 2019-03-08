@@ -3,33 +3,33 @@ title: Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“
 description: MakeAppx.exe erstellt, verschlüsselt, entschlüsselt und extrahiert Dateien aus App-Paketen und -Bündeln.
 ms.date: 01/02/2019
 ms.topic: article
-keywords: windows10, uwp, verpackung
+keywords: Windows 10, UWP, Verpacken
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3c6958491092498451743085af38b2d0fa6bdf8a
-ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991606"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634655"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“
 
 
-**MakeAppx.exe** erstellt (.msix oder AppX)-app-Pakete und app-Bündel (".msixbundle" oder ".appxbundle"). **MakeAppx.exe** extrahiert darüber hinaus Dateien aus einem App-Paket oder -Bündel und verschlüsselt und entschlüsselt App-Pakete und App-Bündel. Dieses Tool ist im Windows10 SDK enthalten und kann über eine Eingabeaufforderung oder eine Skriptdatei verwendet werden.
+**MakeAppx.exe** erstellt sowohl die app-Pakete (.msix oder AppX-Datei) als auch die app Package-Pakete (.msixbundle oder .appxbundle). **MakeAppx.exe** extrahiert darüber hinaus Dateien aus einem App-Paket oder -Bündel und verschlüsselt und entschlüsselt App-Pakete und App-Bündel. Dieses Tool ist im Windows 10 SDK enthalten und kann über eine Eingabeaufforderung oder eine Skriptdatei verwendet werden.
 
 > [!IMPORTANT]
 > Wenn Sie Visual Studio zum Entwickeln der App verwendet haben, wird empfohlen, dass Sie den Visual Studio-Assistenten zum Erstellen des App-Pakets verwenden. Weitere Informationen finden Sie unter [Verpacken einer UWP-App mit Visual Studio](packaging-uwp-apps.md).
 
 > [!IMPORTANT]
-> Beachten Sie, dass **MakeAppx.exe** kein [app-Paket hochladen-Datei (".appxupload" oder ".msixupload")](packaging-uwp-apps.md#types-of-app-packages), erstellt der empfohlenen gültige app-Paket für [Übermittlungen an Partner Center](../publish/upload-app-packages.md)ist. Die app-paketuploaddatei ist in der Regel [als Teil des Visual Studio-verpackungsvorgangs erstellt](packaging-uwp-apps.md#create-an-app-package-upload-file), obwohl sie auch manuell erstellt werden kann.
+> Beachten Sie, dass **MakeAppx.exe** erstellt kein [app hochladen-Paketdatei (.appxupload oder .msixupload)](packaging-uwp-apps.md#types-of-app-packages), ist der empfohlene Typ gültiges app-Pakets für [Übermittlungen an den Partner Center ](../publish/upload-app-packages.md). App-Paketdatei Hochladen ist in der Regel [als Teil des Visual Studio-Verpackungsprozesses erstellt](packaging-uwp-apps.md#create-an-app-package-upload-file), obwohl er auch manuell erstellt werden kann.
 
 ## <a name="using-makeappxexe"></a>Verwenden der MakeAppx.exe
 
-Abhängig vom Installationspfad des SDK befindet sich **MakeAppx.exe** an folgenden Speicherorten auf Ihrem Windows10-PC:
-- X86: C:\Program Files (x86) \Windows Kits\10\bin\\&lt;build-Nummer&gt;\x86\makeappx.exe
-- X64: C:\Program Files (x86) \Windows Kits\10\bin\\&lt;build-Nummer&gt;\x64\makeappx.exe
+Abhängig vom Installationspfad des SDK befindet sich **MakeAppx.exe** an folgenden Speicherorten auf Ihrem Windows 10-PC:
+- x86: C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\bin\\&lt;Buildnummer&gt;\x86\makeappx.exe
+- x64: C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\bin\\&lt;Buildnummer&gt;\x64\makeappx.exe
 
 Es gibt keine ARM-Version dieses Tools.
 
@@ -73,14 +73,14 @@ Die folgende Liste enthält mögliche Argumente:
 
 | **Argument**                          | **Beschreibung**                       |
 |---------------------------------------|---------------------------------------|
-| &lt;output package name&gt;           | Der Name des erstellten Pakets. Dies ist der Dateiname mit .msix oder AppX angefügt. |
-| &lt;encrypted output package name&gt; | Der Name des erstellten verschlüsselten Pakets. Dies ist der Dateiname mit .emsix oder eappx angefügt. |
-| &lt;input package name&gt;            | Der Name des Pakets. Dies ist der Dateiname mit .msix oder AppX angefügt. |
-| &lt;encrypted input package name&gt;  | Der Name des verschlüsselten Pakets. Dies ist der Dateiname mit .emsix oder eappx angefügt. |
+| &lt;output package name&gt;           | Der Name des erstellten Pakets. Dies ist der Dateiname mit .msix oder AppX-Datei angefügt. |
+| &lt;encrypted output package name&gt; | Der Name des erstellten verschlüsselten Pakets. Dies ist der Dateiname mit .emsix oder .eappx angefügt. |
+| &lt;input package name&gt;            | Der Name des Pakets. Dies ist der Dateiname mit .msix oder AppX-Datei angefügt. |
+| &lt;encrypted input package name&gt;  | Der Name des verschlüsselten Pakets. Dies ist der Dateiname mit .emsix oder .eappx angefügt. |
 | &lt;output bundle name&gt;            | Der Name des erstellten Bündels. Dies ist der Dateiname mit .msixbundle oder .appxbundle angefügt. |
-| &lt;encrypted output bundle name&gt;  | Der Name des erstellten verschlüsselten Bündels. Dies ist der Dateiname mit .emsixbundle oder eappxbundle angefügt. |
+| &lt;encrypted output bundle name&gt;  | Der Name des erstellten verschlüsselten Bündels. Dies ist der Dateiname mit .emsixbundle oder .eappxbundle angefügt. |
 | &lt;input bundle name&gt;             | Der Name des Bündels. Dies ist der Dateiname mit .msixbundle oder .appxbundle angefügt. |
-| &lt;encrypted input bundle name&gt;   | Der Name des verschlüsselten Bündels. Dies ist der Dateiname mit .emsixbundle oder eappxbundle angefügt. |
+| &lt;encrypted input bundle name&gt;   | Der Name des verschlüsselten Bündels. Dies ist der Dateiname mit .emsixbundle oder .eappxbundle angefügt. |
 | &lt;content directory&gt;             | Der Pfad für den Inhalt des App-Pakets oder -Bündels. |
 | &lt;mapping file&gt;                  | Der Name der Datei, der Paketquelle und -ziel angibt. |
 | &lt;output directory&gt;              | Der Pfad zum Verzeichnis für Ausgabepakete und -bündel. |
@@ -90,7 +90,7 @@ Die folgende Liste enthält mögliche Argumente:
 
 ### <a name="create-an-app-package"></a>Erstellen eines App-Pakets
 
-Ein app-Paket ist ein vollständiger Satz von app Dateien, verpackt in einer .msix oder AppX-Paketdatei. Um ein App-Paket mit dem Befehl **pack** zu erstellen, müssen Sie entweder ein Inhaltsverzeichnis oder eine Zuordnungsdati für den Speicherort des Pakets angeben. Sie können ein Paket auch während des Erstellens verschlüsseln. Wenn Sie das Paket verschlüsseln möchten, müssen Sie /ep verwenden und angeben, ob Sie eine Schlüsseldatei (/kf) oder den globalen Testschlüssel (/kt) verwenden. Weitere Informationen zum Erstellen eines verschlüsselten Pakets finden Sie unter [Verschlüsseln oder Entschlüsseln von Paketen oder Bündeln](#encrypt-or-decrypt-a-package-or-bundle).
+Ein app-Paket handelt es sich um einen vollständigen Satz von der app-Dateien, die in in einer Paketdatei .msix oder AppX-Datei verpackt. Um ein App-Paket mit dem Befehl **pack** zu erstellen, müssen Sie entweder ein Inhaltsverzeichnis oder eine Zuordnungsdati für den Speicherort des Pakets angeben. Sie können ein Paket auch während des Erstellens verschlüsseln. Wenn Sie das Paket verschlüsseln möchten, müssen Sie /ep verwenden und angeben, ob Sie eine Schlüsseldatei (/kf) oder den globalen Testschlüssel (/kt) verwenden. Weitere Informationen zum Erstellen eines verschlüsselten Pakets finden Sie unter [Verschlüsseln oder Entschlüsseln von Paketen oder Bündeln](#encrypt-or-decrypt-a-package-or-bundle).
 
 Optionen, die für den Befehl **pack** spezifisch sind:
 
@@ -133,7 +133,7 @@ Optionen, die für den **bundle**-Befehl spezifisch sind:
 
 | **Option**    | **Beschreibung**                       |
 |---------------|---------------------------------------|
-| /bv           | Gibt die Versionsnummer des Bündels an. Die Versionsnummer muss aus vier Teilen bestehen, getrennt durch Punkte: &lt;Hauptversion&gt;.&lt;Unterversion&gt;.&lt;Build&gt;.&lt;Überarbeitung&gt;. |
+| /bv           | Gibt die Versionsnummer des Bündels an. Die Versionsnummer muss vier Teile, getrennt durch einen Punkt in der Form sein: &lt;Wichtige&gt;.&lt; Kleinere&gt;.&lt; Erstellen Sie&gt;.&lt; Revision&gt;. |
 | /f            | Gibt die Zuordnungsdatei an.           |
 
 Beachten Sie, dass die Bündelversion mit dem aktuellen Datum und der aktuellen Uhrzeit erstellt wird, wenn die Bündelversion nicht angegeben oder auf „0.0.0.0“ festgelegt ist.
@@ -247,7 +247,7 @@ Beispiel für eine Zuordnungsdatei (ohne Option /m):
 "CustomManifest.xml"                    "AppxManifest.xml"
 ```
 
-Wenn Sie eine Zuordnungsdatei verwenden, können Sie wählen, ob Sie die Option /m verwenden möchten oder nicht. Mithilfe der Option /m können Benutzer die Ressourcenmetadaten in der Zuordnungsdatei angeben, die im generierten Manifest eingeschlossen werden sollen. Wenn Sie die Option /m verwenden, muss die Zuordnungsdatei einen Abschnittenthalten, der mit der Zeile „[ResourceMetadata]“ beginnt, gefolgt von Zeilen, die „ResourceDimensions“ und „ResourceId“ angeben. App-Pakete können mehrere „ResourceDimensions“ enthalten kann, jedoch stets nur eine „ResourceId“.
+Wenn Sie eine Zuordnungsdatei verwenden, können Sie wählen, ob Sie die Option /m verwenden möchten oder nicht. Mithilfe der Option /m können Benutzer die Ressourcenmetadaten in der Zuordnungsdatei angeben, die im generierten Manifest eingeschlossen werden sollen. Wenn Sie die Option /m verwenden, muss die Zuordnungsdatei einen Abschnitt enthalten, der mit der Zeile „[ResourceMetadata]“ beginnt, gefolgt von Zeilen, die „ResourceDimensions“ und „ResourceId“ angeben. App-Pakete können mehrere „ResourceDimensions“ enthalten kann, jedoch stets nur eine „ResourceId“.
 
 Beispiel für eine Zuordnungsdatei (mit Option /m):
 
@@ -268,6 +268,6 @@ Beispiel für eine Zuordnungsdatei (mit Option /m):
 Diese Überprüfung stellt Folgendes sicher:
 - Alle Dateien, auf die im Paketmanifest verwiesen wird, sind im App-Paket enthalten.
 - Die Anwendung besitzt nicht zwei identische Schlüssel.
-- Die Anwendung registriert sich nicht für ein untersagtes Protokoll aus der folgenden Liste: SMB, FILE, MS-WWA-WEB, MS-WWA.
+- Eine Anwendung ist nicht für ein Protokoll, die aus dieser Liste unzulässiger registrieren: SMB, FILE, MS-WWA-WEB, MS-WWA.
 
 Dies ist keine vollständige semantische Überprüfung, da sie lediglich häufige Fehler erfassen soll. Es wird nicht garantiert, dass von **MakeAppx.exe** erstellte Pakete installiert werden können.

@@ -1,26 +1,26 @@
 ---
-Description: A button gives the user a way to trigger an immediate action.
+Description: Eine Schaltfläche ermöglicht dem Benutzer das unmittelbare Auslösen einer Aktion.
 title: Visitenkarte
 ms.date: 03/07/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 pm-contact: kele
 design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117600"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638825"
 ---
 # <a name="contact-card"></a>Visitenkarte
 
 Die Visitenkarte zeigt Kontaktinformationen wie Name, Telefonnummer und Adresse für einen [Kontakt](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (der Mechanismus, den UWP zum Darstellen von Personen und Unternehmen verwendet).  Die Visitenkarte ermöglicht dem Benutzer auch die Bearbeitung von Kontaktinformationen. Sie können eine kompakte Visitenkarte oder eine vollständige Visitenkarte anzeigen, die zusätzliche Informationen enthält.
 
-> **Wichtige APIs**: [ShowContactCard-Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard),   [ShowFullContactCard-Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_),  [IsShowContactCardSupported-Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported),  [Contact-Klasse](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **Wichtige APIs**: [ShowContactCard Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [ShowFullContactCard Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_), [IsShowContactCardSupported Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [wenden Sie sich an der Klasse](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 Es gibt zwei Möglichkeiten, die Visitenkarte anzuzeigen:  
 * Als standardmäßige Visitenkarte, die in einem ausblendbaren Flyout angezeigt wird (die Visitenkarte wird ausgeblendet, wenn der Benutzer auf eine Stelle außerhalb der Visitenkarte klickt). 
@@ -88,7 +88,7 @@ Verwenden Sie die Visitenkarte, wenn Kontaktinformationen zu einem Kontakt angez
 
     ```
 
-3. Verwenden Sie die in Schritt1 erstellte Hilfsfunktion, um die Grenzen des Steuerelements abzurufen, von dem das Ereignis ausgelöst wurde (damit es nicht von der Visitenkarte verdeckt wird).
+3. Verwenden Sie die in Schritt 1 erstellte Hilfsfunktion, um die Grenzen des Steuerelements abzurufen, von dem das Ereignis ausgelöst wurde (damit es nicht von der Visitenkarte verdeckt wird).
 
     ```csharp
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
@@ -181,5 +181,5 @@ Die Beispiele in diesem Artikel zeigen die Erstellung eines einfachen Kontakts. 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [Kontakte und Kalender](/windows/uwp/contacts-and-calendar/)
-- [Beispiel für Visitenkarten](https://go.microsoft.com/fwlink/p/?LinkId=624040)
-- [Personenbild-Steuerelement](/windows/uwp/controls-and-patterns/person-picture/)
+- [Kontaktkarten-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [Steuerelement für Personen](/windows/uwp/controls-and-patterns/person-picture/)

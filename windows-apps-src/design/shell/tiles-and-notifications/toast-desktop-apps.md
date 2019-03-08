@@ -1,24 +1,24 @@
 ---
-Description: Discover the different options desktop Win32 apps have for sending toast notifications
+Description: Ermitteln Sie die verschiedenen Optionen, die Win32-desktop-apps verfügen, für das Senden von toastbenachrichtigungen
 title: Popupbenachrichtigungen über Desktop-Apps
 label: Toast notifications from desktop apps
 template: detail.hbs
 ms.date: 05/01/2018
 ms.topic: article
-keywords: Windows10, UWP, Win32, Desktop, Popupbenachrichtigungen, Desktop-Brücke, Optionen zum Senden von Popups, COM-Server, COM-Aktivator, COM, gefälschter COM, kein COM, ohne COM, Senden von Popupbenachrichtigungen
+keywords: Windows 10, UWP, Win32, Desktop, Popupbenachrichtigungen, Desktop-Brücke, Optionen zum Senden von Popups, COM-Server, COM-Aktivator, COM, gefälschter COM, kein COM, ohne COM, Senden von Popupbenachrichtigungen
 ms.localizationpriority: medium
 ms.openlocfilehash: bab89962bdc7986f7653e39c7e5967a493421f05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933881"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636085"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Popupbenachrichtigungen über Desktop-Apps
 
-Desktop-Apps (Desktop-Brücke-Apps und klassische Win32-Apps) können interaktive Popupbenachrichtigungen wie Universelle Windows-Plattform (UWP)-Apps senden. Es gibt jedoch verschiedene Optionen für Desktop-Apps aufgrund der verschiedenen Aktivierungsschemata.
+Desktop-Apps (Desktop-Brücke und klassische Win32) können interaktive Popupbenachrichtigungen wie Universelle Windows-Plattform (UWP)-Apps senden. Es gibt jedoch verschiedene Optionen für Desktop-Apps aufgrund der verschiedenen Aktivierungsschemata.
 
-In diesem Artikel sind die Optionen zum Senden einer Popupbenachrichtigung unter Windows10 aufgeführt. Jede Option bietet vollständige Unterstützung für...
+In diesem Artikel sind die Optionen zum Senden einer Popupbenachrichtigung unter Windows 10 aufgeführt. Jede Option bietet vollständige Unterstützung für ...
 
 * Beibehaltung im Info-Center
 * Aktivierbar vom Popup und innerhalb des Info-Centers
@@ -30,8 +30,8 @@ Die nachfolgende Tabelle enthält die Optionen für die Unterstützung von Popup
 
 | Option | Visuelle Elemente | Aktionen | Eingaben | Aktiviert im Prozess |
 | -- | -- | -- | -- | -- |
-| [COM-Aktivator](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
-| [Kein COM/Stub-CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
+| [COM-Aktivierung](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
+| [Keine COM / Stub-CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
 
 
 ## <a name="preferred-option---com-activator"></a>Bevorzugte Option – COM-Aktivator
@@ -59,7 +59,7 @@ Informationen zur Verwendung dieser Option finden Sie unter [Senden von Popupben
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>Alternative Option – kein COM/Stub-CLSID
 
-Dies ist eine alternative Option, wenn Sie keinen COM-Aktivator implementieren können. Sie müssen dabei allerdings auf neue Features verzichten, wie z.B. die Eingabeunterstützung (Textfelder in Popups) und die Aktivierung im Prozess.<br/><br/>
+Dies ist eine alternative Option, wenn Sie keinen COM-Aktivator implementieren können. Sie müssen dabei allerdings auf neue Features verzichten, wie z. B. die Eingabeunterstützung (Textfelder in Popups) und die Aktivierung im Prozess.<br/><br/>
 
 | Visuelle Elemente | Aktionen | Eingaben | Aktiviert im Prozess |
 | -- | -- | -- | -- |
@@ -81,6 +81,6 @@ Richten Sie für klassische Win32-Apps die AUMID so ein, dass Sie Popupbenachric
 
 ## <a name="resources"></a>Ressourcen
 
-* [Senden von Popupbenachrichtigungen über C#-Apps](send-local-toast-desktop.md)
-* [Senden von Popupbenachrichtigungen über C++ WRL-Apps](send-local-toast-desktop-cpp-wrl.md)
-* [Dokumentation zu Popupinhalt](adaptive-interactive-toasts.md)
+* [Senden Sie eine lokale Toast-Benachrichtigung von Remotedesktop C# apps](send-local-toast-desktop.md)
+* [Senden Sie eine lokale Toast-Benachrichtigung über Remotedesktop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md)
+* [Toast-Content-Dokumentation](adaptive-interactive-toasts.md)

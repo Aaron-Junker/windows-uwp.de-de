@@ -1,38 +1,38 @@
 ---
 title: Neuigkeiten in der Windows-Dokumentation im August 2017 – Entwicklung von UWP-Apps
-description: Neue Features, Videos und Entwicklerleitfäden in der Entwicklerdokumentation für Windows10 im August2017
-keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows10, 1708
+description: Neue Features, Videos und Entwicklerleitfäden in der Entwicklerdokumentation für Windows 10 im August 2017
+keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050783"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614865"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im August 2017
 
 Die Entwicklerdokumentation für die Windows-Plattform wird ständig mit Informationen über neue Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden und Videos wurden erst kürzlich bereitgestellt und enthalten neue oder aktualisierte Informationen für Windows-Entwickler.
 
-Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/your-first-app.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
+Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/your-first-app.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
 ## <a name="features"></a>Features
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Verwenden Sie die neue Erweiterung [Windows Template Studio](https://aka.ms/wtsinstall) für Visual Studio2017, um UWP-Apps mit den gewünschten Seiten, Frameworks und Features zu erstellen. Diese assistentenbasierte Umgebung implementiert bewährte Methoden und Muster, damit Sie Zeit sparen, wenn Sie Ihrer App Features hinzufügen.
+Verwenden Sie die neue Erweiterung [Windows Template Studio](https://aka.ms/wtsinstall) für Visual Studio 2017, um UWP-Apps mit den gewünschten Seiten, Frameworks und Features zu erstellen. Diese assistentenbasierte Umgebung implementiert bewährte Methoden und Muster, damit Sie Zeit sparen, wenn Sie Ihrer App Features hinzufügen.
 
 ![Windows Template Studio](images/template-studio.png)
 
-### <a name="conditional-xaml"></a>Bedingte XAML
+### <a name="conditional-xaml"></a>Bedingtes XAML
 
 Sie können jetzt [bedingte XAML](../debug-test-perf/conditional-xaml.md) ausprobieren, um [versionsadaptive Apps](../debug-test-perf/version-adaptive-apps.md) zu erstellen. Mit bedingter XAML können Sie die Methode ApiInformation.IsApiContractPresent im XAML-Markup verwenden. Damit sind Sie in der Lage, im Markup nur dann Eigenschaften festzulegen und Objekte zu initialisieren, wenn die entsprechende API vorhanden ist, ohne Code-Behind zu verwenden.
 
 ### <a name="game-mode"></a>Spielmodus
 
-Mithilfe der [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808)-APIs für die Universelle Windows-Plattform (UWP) sorgen Sie für ein optimiertes Spielerlebnis, indem Sie den Spielmodus in Windows10 nutzen. Diese APIs befinden sich im Header **&lt;expandedresources.h&gt;**.
+Mithilfe der [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808)-APIs für die Universelle Windows-Plattform (UWP) sorgen Sie für ein optimiertes Spielerlebnis, indem Sie den Spielmodus in Windows 10 nutzen. Diese APIs befinden sich im Header **&lt;expandedresources.h&gt;**.
 
 ![Spielmodus](images/game-mode.png)
 
@@ -41,17 +41,17 @@ Mithilfe der [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt80
 Die [Microsoft Store-Übermittlungs-API](../monetize/create-and-manage-submissions-using-windows-store-services.md) ermöglicht Ihnen jetzt, [Videotrailer](../monetize/manage-app-submissions.md#trailer-object) und [Spieloptionen](../monetize/manage-app-submissions.md#gaming-options-object) mit Ihrer App zu übermitteln.
 
 
-## <a name="developer-guidance"></a>Anleitungen für Entwickler
+## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
 ### <a name="data-schemas-for-store-products"></a>Datenschemata für Store-Produkte
 
-Wir haben den Artikel [Datenschemata für Store-Produkte](../monetize/data-schemas-for-store-products.md) hinzugefügt. Dieser Artikel enthält Schemata für auf den Store bezogenen Daten für mehrere Objekte im Namespace [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), z.B. [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) und [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
+Wir haben den Artikel [Datenschemata für Store-Produkte](../monetize/data-schemas-for-store-products.md) hinzugefügt. Dieser Artikel enthält Schemata für auf den Store bezogenen Daten für mehrere Objekte im Namespace [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), z. B. [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) und [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
 
 ### <a name="desktop-bridge"></a>Desktop-Brücke
 
-Wir haben zwei Anleitungen hinzugefügt, mit deren Hilfe Sie für Benutzer von Windows10 die neuen Möglichkeiten moderner Umgebungen bereitstellen können.
+Wir haben zwei Anleitungen hinzugefügt, mit deren Hilfe Sie für Benutzer von Windows 10 die neuen Möglichkeiten moderner Umgebungen bereitstellen können.
 
-Informieren Sie sich im Artikel [Verbessern Sie Ihre Desktop-Anwendung für Windows10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance) über die richtigen Dateien, und schreiben Sie dann Code, um die UWP-Erfahrung für Windows10-Benutzer zu verbessern.  
+Informieren Sie sich im Artikel [Verbessern Sie Ihre Desktop-Anwendung für Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance) über die richtigen Dateien, und schreiben Sie dann Code, um die UWP-Erfahrung für Windows 10-Benutzer zu verbessern.  
 
 Im Artikel [Erweitern Sie Ihre Desktop-Anwendung mit modernen UWP-Komponenten](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend) erfahren Sie, wie Sie moderne XAML-Benutzeroberflächen und andere UWP-Funktionen verwenden, die in einem UWP-App-Container ausgeführt werden müssen.
 

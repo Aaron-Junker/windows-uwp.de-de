@@ -1,20 +1,20 @@
 ---
-Description: View multiple parts of your app in separate windows.
+Description: Zeigen Sie mehrere Teile Ihrer app in separaten Fenstern.
 title: Anzeigen mehrerer Ansichten für eine App
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed69dc912e916f7964c125550621c22dfcd9555
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049062"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607625"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Anzeigen mehrerer Ansichten für eine App
 
-![Drahtmodell einer App mit mehreren Fenstern](images/multi-view.gif)
+![Drahtmodell, das eine App mit mehreren Fenstern zeigt.](images/multi-view.gif)
 
 Sie können Ihren Benutzern zu mehr Produktivität verhelfen, indem Sie ihnen ermöglichen, unabhängige Teile der App in separaten Fenstern anzuzeigen. Wenn Sie für eine App mehrere Fenster erstellen, verhält sich jedes Fenster anders. Auf der Taskleiste wird jedes Fenster separat angezeigt. Die Benutzer können App-Fenster unabhängig voneinander verschieben, deren Größe ändern, Fenster anzeigen und ausblenden und zwischen App-Fenstern wechseln, als würde es sich um separate Apps handeln. Jedes Fenster agiert in seinem eigenen Thread.
 
@@ -44,7 +44,7 @@ Entsprechend umschließt das XAML-Framework das [**CoreWindow**](https://msdn.mi
 
 Während jedes App-Layout einzigartig ist, empfehlen wir Ihnen, eine Schaltfläche für ein „Neues Fenster” an einem geeigneten Ort zu platzieren, wie etwa die obere rechte Ecke des Inhalts, der in einem neuen Fenster geöffnet werden kann. Erwägen Sie außerdem, die Kontextmenüoption „In einem neuen Fenster öffnen” einzufügen.
 
-Sehen wir uns die Schrittezum Erstellen einer neuen Ansicht an. Die neue Ansicht wird hier als Reaktion auf das Anklicken einer Schaltfläche gestartet.
+Sehen wir uns die Schritte zum Erstellen einer neuen Ansicht an. Die neue Ansicht wird hier als Reaktion auf das Anklicken einer Schaltfläche gestartet.
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -65,7 +65,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**So zeigen Sie eine neue Ansicht an**
+**Um eine neue Ansicht anzuzeigen.**
 
 1.  Rufen Sie [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297291) auf, um ein neues Fenster und einen Thread für den anzuzeigenden Inhalt zu erstellen.
 
@@ -85,7 +85,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
     Mithilfe der [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317)-Methode können Sie die Arbeit am UI-Thread für die neue Ansicht planen. Mithilfe eines [Lambdaausdrucks](https://go.microsoft.com/fwlink/p/?LinkId=389615) übergeben Sie eine Funktion als Argument an die **RunAsync**-Methode. Die in der Lambdafunktion ausgeführten Arbeiten finden im Thread der neuen Ansicht statt.
 
-    In XAML fügen Sie der [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051)-Eigenschaft von [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) in der Regel einen [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) hinzu und navigieren dann den **Frame** zu einer XAML-[**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), auf der Sie den App-Inhalt definiert haben. Weitere Informationen finden Sie unter [Peer-zu-Peer-Navigation zwischen zwei Seiten](../basics/navigate-between-two-pages.md).
+    In XAML fügen Sie der [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051)-Eigenschaft von [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) in der Regel einen [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) hinzu und navigieren dann den **Frame** zu einer XAML-[**Seite**](https://msdn.microsoft.com/library/windows/apps/br227503), auf der Sie den App-Inhalt definiert haben. Weitere Informationen finden Sie unter [Peer-zu-Peer-Navigation zwischen zwei Seiten](../basics/navigate-between-two-pages.md).
 
     Nachdem das neue [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) aufgefüllt wurde, müssen Sie die [**Activate**](https://msdn.microsoft.com/library/windows/apps/br209046)-Methode von **Window** aufrufen, um das **Window** später anzuzeigen. Diese Arbeit findet im Thread der neuen Ansicht statt, sodass das neue **Window** aktiviert ist.
 
@@ -117,7 +117,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Die erste Ansicht, die beim Starten der App erstellt wird, wird als *Hauptansicht* bezeichnet. Diese Ansicht ist in der [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465)-Eigenschaft gespeichert und ihre [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452)-Eigenschaft ist „true“. Diese Ansicht wird nicht von Ihnen, sondern von der App erstellt. Der Thread der Hauptansicht dient als Manager für die App und alle App-Aktivierungsereignisse werden in diesem Thread übermittelt.
 
-Wenn sekundäre Ansichten geöffnet sind, kann das Fenster der Hauptansicht ausgeblendet werden, z. B. durch Klicken auf die Schaltfläche „Schließen“ (X) in der Fenstertitelleiste. Der Thread bleibt jedoch aktiv. Durch Aufrufen von [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) im [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) der Hauptansicht wird eine **InvalidOperationException** ausgelöst. (Verwenden Sie [**Application.Exit**](https://msdn.microsoft.com/library/windows/apps/br242327), um Ihre App zu schließen.) Sobald der Thread der Hauptansicht beendet wird, wird die App geschlossen.
+Wenn sekundäre Ansichten geöffnet sind, kann das Fenster der Hauptansicht ausgeblendet werden, z. B. durch Klicken auf die Schaltfläche „Schließen“ (X) in der Fenstertitelleiste. Der Thread bleibt jedoch aktiv. Durch Aufrufen von [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) im [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) der Hauptansicht wird eine **InvalidOperationException** ausgelöst. (Verwenden [ **Application.Exit** ](https://msdn.microsoft.com/library/windows/apps/br242327) zu Ihrer app zu schließen.) Wenn die Hauptansicht der Thread beendet wird, wird die app geschlossen.
 
 ## <a name="secondary-views"></a>Sekundäre Ansichten
 

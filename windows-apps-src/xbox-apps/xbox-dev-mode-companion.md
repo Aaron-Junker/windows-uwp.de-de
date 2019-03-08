@@ -3,17 +3,17 @@ title: Begleitung für Xbox-Entwicklermodus
 description: Enthält Informationen über die App „Begleitung für Xbox-Entwicklermodus“.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
 ms.localizationpriority: medium
 ms.openlocfilehash: b04272c99d9062be2eaea27aa5b107e6078872f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940745"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616825"
 ---
-# <a name="xbox-dev-mode-companion"></a>Begleitung für den Xbox-Entwicklermodus
+# <a name="xbox-dev-mode-companion"></a>Begleitung für Xbox-Entwicklermodus
 
 Mit „Begleitung für Xbox-Entwicklermodus“ können Sie eine Remoteverbindung mit einer Xbox One-Konsole herstellen und diese steuern. Dieses Tool wurde für Entwickler erstellt, die den Xbox-Entwicklermodus verwenden.
 
@@ -33,15 +33,15 @@ Nachdem die Verbindung hergestellt wurde, können Sie auf Streaming Steuerelemen
 * Die Konsole ein- und ausschalten.
 * Trennen.
 
-## <a name="input"></a>Eingabe
+## <a name="input"></a>Input
 Um Eingaben für die Konsole über die App zu senden, können Sie einen Xbox One-Controller an den PC anschließen.   
     
 Sie können auch mithilfe der Pfeiltasten, der Eingabetaste und der Escape-Taste Elemente und Apps, die Tastaturnavigation unterstützen, auf der Konsole bedienen. Auf der Hilfeseite finden Sie eine vollständige Tastaturzuordnung.   
    
 Sie können mit der Tastatur in Textfelder eingeben, um Text an die Konsole zu senden.   
 
-## <a name="help"></a>Hilfe
+## <a name="help"></a>Help
 Sie können die Hilfeseite anzeigen, indem Sie im Verbindungsdialogfeld oder auf der Befehlsleiste auf das ?- Symbol klicken.
 
-## <a name="see-also"></a>Weitere Informationen finden Sie unter
-- [UWP auf Xbox One](index.md)
+## <a name="see-also"></a>Siehe auch
+- [UWP auf Xbox One](index.md)

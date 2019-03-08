@@ -4,26 +4,26 @@ description: Verwenden Sie diese Methode in der Microsoft Store-Angebots-API, um
 title: Verwalten von Anzeigenkampagnen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP, Microsoft Store Werbungs-API, Anzeigenkampagnen
+keywords: Windows 10, UWP, Microsoft Store Werbungs-API, Anzeigenkampagnen
 ms.localizationpriority: medium
 ms.openlocfilehash: 6529c1a21865b2997d36e9b254b19f971f620490
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947697"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633225"
 ---
 # <a name="manage-ad-campaigns"></a>Verwalten von Anzeigenkampagnen
 
 Verwenden Sie diese Methoden in der [Microsoft Store-Angebots-API-](run-ad-campaigns-using-windows-store-services.md), um werbende Anzeigenkampagnen zu erstellen, zu bearbeiten und abzurufen. Jede Kampagne, die Sie erstellen, mit dieser Methode kann nur eine App zugeordnet werden.
 
->**Hinweis:**&nbsp;&nbsp;können Sie auch erstellen und Verwalten von Anzeigenkampagnen mit Partner Center und Kampagnen, die Sie programmgesteuert erstellen, können im Partner Center zugreifen. Weitere Informationen zum Verwalten von Anzeigenkampagnen im Partner Center finden Sie unter [Erstellen einer Anzeigenkampagne für Ihre app](../publish/create-an-ad-campaign-for-your-app.md).
+>**Beachten Sie**&nbsp;&nbsp;können auch erstellen und Verwalten von Ad-Kampagnen über Partner Center und Kampagnen, die Sie programmgesteuert erstellen im Partner Center erfolgen können. Weitere Informationen zum Verwalten von Ad-Kampagnen in Partner Center finden Sie unter [erstellen Sie eine Ad-Kampagne für Ihre app](../publish/create-an-ad-campaign-for-your-app.md).
 
 Wenn Sie eine Kampagne mit dieser Methode erstellen oder aktualisieren, rufen Sie in der Regel auch eine oder mehrere der folgenden Methoden zum Verwalten der *Lieferpositionen*, *Zielgruppenprofile*, und *Werbemittel* ab, die der Kampagne zugeordnet sind. Weitere Informationen über die Beziehung zwischen Kampagnen, Lieferpositionen, Zielgruppenprofilen und Werbemitteln finden Sie unter [Anzeigenkampagnen mit Microsoft Store-Diensten ausführen](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
-* [Verwalten von Lieferpositionen für Anzeigenkampagnen](manage-delivery-lines-for-ad-campaigns.md)
-* [Verwalten von Zielgruppenprofilen für Anzeigenkampagnen](manage-targeting-profiles-for-ad-campaigns.md)
-* [Verwalten von Werbemitteln für Anzeigenkampagnen](manage-creatives-for-ad-campaigns.md)
+* [Übermittlung Zeilen für Ad-Kampagnen verwalten](manage-delivery-lines-for-ad-campaigns.md)
+* [Für die Zielgruppenadressierung Profile für Ad-Kampagnen verwalten](manage-targeting-profiles-for-ad-campaigns.md)
+* [Verwalten von Werbemitteln für Ad-Kampagnen](manage-creatives-for-ad-campaigns.md)
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -31,9 +31,9 @@ Zur Verwendung dieser Methoden sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](run-ad-campaigns-using-windows-store-services.md#prerequisites) für die Microsoft Store-Werbungs-API.
 
-  >**Hinweis:**&nbsp;&nbsp;als Teil der erforderlichen Komponenten, achten Sie darauf, Sie [mindestens eine kostenpflichtige Anzeigenkampagne im Partner Center erstellen](../publish/create-an-ad-campaign-for-your-app.md) und, die Sie hinzufügen mindestens ein Zahlungsmittel für die Anzeigenkampagne im Partner Center. Lieferpositionen für Anzeigenkampagnen, die Sie mithilfe dieser API erstellen, werden automatisch die Standard-Zahlungsmittel ausgewählt, auf der Seite **Anzeigenkampagnen** im Partner Center in Rechnung gestellt.
+  >**Beachten Sie**&nbsp;&nbsp;als Teil der erforderlichen Komponenten, achten Sie darauf, die Sie [erstellen Sie mindestens eine kostenpflichtige Ad Kampagne im Partner Center](../publish/create-an-ad-campaign-for-your-app.md) und Sie mindestens eine Zahlungsmethode für die Ad-Kampagne Partner hinzufügen Im Mittelpunkt. Übermittlung von Zeilen für Ad-Kampagnen, die Sie erstellen diese API verwenden berechnet automatisch die standardmäßigen Zahlungsmethode, die ausgewählt werden, auf die **Anzeigenkampagnen** Seite im Partner Center.
 
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token), das in der Anforderungskopfzeile für diese Methoden verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token), das in der Anforderungskopfzeile für diese Methoden verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
 
 ## <a name="request"></a>Anfordern
@@ -50,9 +50,9 @@ Diese Methoden haben die folgenden URIs.
 
 ### <a name="header"></a>Header
 
-| Kopfzeile        | Typ   | Beschreibung         |
+| Header        | Typ   | Beschreibung         |
 |---------------|--------|---------------------|
-| Autorisierung | String | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*-Token*&gt;. |
+| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 | Tracking-ID   | GUID   | Optional. Eine ID, die den Abfrageablauf verfolgt.                                  |
 
 
@@ -64,12 +64,12 @@ Die GET-Methode zum Abfragen für Anzeigenkampagnen unterstützt die folgenden o
 
 | Name        | Typ   |  Beschreibung      |    
 |-------------|--------|---------------|------|
-| skip  |  int   | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „fetch=10“ und „skip=0“ die ersten 10 Datenzeilen ab, „top=10“ und „skip=10“ die nächsten 10Datenzeilen usw.    |       
+| skip  |  int   | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „fetch=10“ und „skip=0“ die ersten 10 Datenzeilen ab, „top=10“ und „skip=10“ die nächsten 10 Datenzeilen usw.    |       
 | fetch  |  int   | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen.    |       
-| campaignSetSortColumn  |  Zeichenfolge   | Sortiert die Objekte der [Kampagne](#campaign) im Antworttext nach dem angegebenen Feld. Die Syntax lautet <em>CampaignSetSortColumn = field</em>, wobei der Parameter <em>field</em> eine der folgenden Zeichenfolgen sein kann:</p><ul><li><strong>ID</strong></li><li><strong>createdDateTime</strong></li></ul><p>Der Standardwert ist **createdDateTime**.     |     
-| isDescending  |  Boolean   | Sortiert die Objekte der [Kampagne](#campaign) im Antworttext in absteigender oder aufsteigender Reihenfolge.   |         
-| storeProductId  |  String   | Verwenden Sie diesen Wert, um nur die Anzeigenkampagnen zurückgegeben, die der App mit der angegebenen ID zugeordnet sind [Store-ID](in-app-purchases-and-trials.md#store-ids). Ein Beispiel für eine Store-ID eines Produkts ist 9nblggh42cfd.   |         
-| Beschriftung  |  Zeichenfolge   | Verwenden Sie diesen Wert nur Anzeigenkampagnen zurückgegeben, die der angegebenen enthalten *Bezeichnung* in der [Kampagne](#campaign) Objekt.    |       |    
+| campaignSetSortColumn  |  string   | Sortiert die Objekte der [Kampagne](#campaign) im Antworttext nach dem angegebenen Feld. Die Syntax lautet <em>CampaignSetSortColumn = field</em>, wobei der Parameter <em>field</em> eine der folgenden Zeichenfolgen sein kann:</p><ul><li><strong>id</strong></li><li><strong>createdDateTime</strong></li></ul><p>Der Standardwert ist **createdDateTime**.     |     
+| isDescending  |  Boolesch   | Sortiert die Objekte der [Kampagne](#campaign) im Antworttext in absteigender oder aufsteigender Reihenfolge.   |         
+| storeProductId  |  string   | Verwenden Sie diesen Wert, um nur die Anzeigenkampagnen zurückgegeben, die der App mit der angegebenen ID zugeordnet sind [Store-ID](in-app-purchases-and-trials.md#store-ids). Ein Beispiel für eine Store-ID eines Produkts ist 9nblggh42cfd.   |         
+| label  |  string   | Verwenden Sie diesen Wert nur Anzeigenkampagnen zurückgegeben, die der angegebenen enthalten *Bezeichnung* in der [Kampagne](#campaign) Objekt.    |       |    
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -143,27 +143,27 @@ Diese Methoden geben je nach aufgerufener Methode einen JSON-Antworttext mit ein
 
 ## <a name="campaign-object"></a>Kampagnenobjekt
 
-Die Anforderungs- und Antworttexte für diese Methoden enthalten die folgenden Felder. Die folgende Tabelle zeigt, welche Felder schreibgeschützt sind (d.h. sie können in der PUT-Methode nicht geändert werden) und welche Felder in dem Anforderungstext für die POST-Methode erforderlich sind.
+Die Anforderungs- und Antworttexte für diese Methoden enthalten die folgenden Felder. Die folgende Tabelle zeigt, welche Felder schreibgeschützt sind (d. h. sie können in der PUT-Methode nicht geändert werden) und welche Felder in dem Anforderungstext für die POST-Methode erforderlich sind.
 
 | Feld        | Typ   |  Beschreibung      |  Schreibgeschützt  | Standard  | Erforderlich für POST |  
 |--------------|--------|---------------|------|-------------|------------|
-|  ID   |  Ganzzahl   |  Die ID der Anzeigenkampagne.     |   Ja.    |      |  Nein     |       
-|  Name   |  string   |   Der Name der Anzeigenkampagne.    |    Nein   |      |  Ja     |       
-|  configuredStatus   |  String   |  Einer der folgenden Werte, der den Status der vom Entwickler angegebenen Anzeigenkampagne angibt: <ul><li>**Aktiv**</li><li>**Inaktiv**</li></ul>     |  Nein     |  Aktiv    |   Ja    |       
-|  effectiveStatus   |  String   |   Einer der folgenden Werte, der den effektiven Status der Anzeigenkampagne basierend auf der Systemüberprüfung angibt: <ul><li>**Active**</li><li>**Inaktiv**</li><li>**Verarbeitung**</li></ul>    |    Ja   |      |   Nein      |       
-|  effectiveStatusReasons   |  Array   |  Einer oder mehrere der folgenden Werte, die den Grund für den effektive Status der Anzeigenkampagne angeben: <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**Fehlgeschlagen**</li></ul>      |  Ja     |     |    Nein     |       
-|  storeProductId   |  String   |  Die [Store-ID](in-app-purchases-and-trials.md#store-ids) der App, der diese Anzeigenkampagne zugeordnet ist. Ein Beispiel für eine Store-ID eines Produkts ist 9nblggh42cfd.     |   Ja    |      |  Ja     |       
-|  Beschriftungen   |  Array   |   Eine oder mehrere Zeichenfolgen, die benutzerdefinierte Beschriftungen für die Kampagne darstellen. Diese Beschriftungen werden für das Suchen und Kennzeichnen von Kampagnen verwendet.    |   Nein    |  Null    |    Nein     |       
-|  Typ   | String    |  Einer der folgenden Werte, der den Kampagnentyp angibt: <ul><li>**Kostenpflichtig**</li><li>**Haus**</li><li>**Community**</li></ul>      |   Ja    |      |   Ja    |       
-|  Ziel   |  String   |  Einer der folgenden Werte, der das Ziel der Kampagne angibt: <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   Nein    |  DriveInstall    |   Ja    |       
-|  Zeilen   |  Array   |   Ein oder mehrere Objekte, die die [Lieferpositionen](manage-delivery-lines-for-ad-campaigns.md#line) identifizieren, die der Kampagne zugeordnet sind. Jedes Objekt in diesem Feld umfasst ein Feld *ID* und *Name*, das die ID und den Namen der Lieferposition angibt.     |   Nein    |      |    Nein     |       
-|  createdDate   |  String   |  Das Datum und die Uhrzeit, zu dem die Anzeigenkampagne erstellt wurde (im ISO8601-Format).     |  Ja     |      |     Nein    |       |
+|  id   |  Ganzzahl   |  Die ID der Anzeigenkampagne.     |   Ja    |      |  Nein     |       
+|  name   |  string   |   Der Name der Anzeigenkampagne.    |    Nein   |      |  Ja     |       
+|  configuredStatus   |  string   |  Einer der folgenden Werte, der den Status der vom Entwickler angegebenen Anzeigenkampagne angibt: <ul><li>**aktiv**</li><li>**inaktiv**</li></ul>     |  Nein     |  Aktiv    |   Ja    |       
+|  effectiveStatus   |  string   |   Einer der folgenden Werte, der den effektiven Status der Anzeigenkampagne basierend auf der Systemüberprüfung angibt: <ul><li>**aktiv**</li><li>**inaktiv**</li><li>**Verarbeitung**</li></ul>    |    Ja   |      |   Nein      |       
+|  effectiveStatusReasons   |  array   |  Einer oder mehrere der folgenden Werte, die den Grund für den effektive Status der Anzeigenkampagne angeben: <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**Fehlgeschlagen**</li></ul>      |  Ja     |     |    Nein     |       
+|  storeProductId   |  string   |  Die [Store-ID](in-app-purchases-and-trials.md#store-ids) der App, der diese Anzeigenkampagne zugeordnet ist. Ein Beispiel für eine Store-ID eines Produkts ist 9nblggh42cfd.     |   Ja    |      |  Ja     |       
+|  Beschriftungen   |  array   |   Eine oder mehrere Zeichenfolgen, die benutzerdefinierte Beschriftungen für die Kampagne darstellen. Diese Beschriftungen werden für das Suchen und Kennzeichnen von Kampagnen verwendet.    |   Nein    |  Null    |    Nein     |       
+|  type   | string    |  Einer der folgenden Werte, der den Kampagnentyp angibt: <ul><li>**Paid**</li><li>**House**</li><li>**Community**</li></ul>      |   Ja    |      |   Ja    |       
+|  Ziel   |  string   |  Einer der folgenden Werte, der das Ziel der Kampagne angibt: <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   Nein    |  DriveInstall    |   Ja    |       
+|  Zeilen   |  array   |   Ein oder mehrere Objekte, die die [Lieferpositionen](manage-delivery-lines-for-ad-campaigns.md#line) identifizieren, die der Kampagne zugeordnet sind. Jedes Objekt in diesem Feld umfasst ein Feld *ID* und *Name*, das die ID und den Namen der Lieferposition angibt.     |   Nein    |      |    Nein     |       
+|  createdDate   |  string   |  Das Datum und die Uhrzeit, zu dem die Anzeigenkampagne erstellt wurde (im ISO 8601-Format).     |  Ja     |      |     Nein    |       |
 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Ausführen von Anzeigenkampagnen mit Microsoft Store-Diensten](run-ad-campaigns-using-windows-store-services.md)
-* [Verwalten von Lieferpositionen für Anzeigenkampagnen](manage-delivery-lines-for-ad-campaigns.md)
-* [Verwalten von Zielgruppenprofilen für Anzeigenkampagnen](manage-targeting-profiles-for-ad-campaigns.md)
-* [Verwalten von Werbemitteln für Anzeigenkampagnen](manage-creatives-for-ad-campaigns.md)
-* [Abrufen der Leistungsdaten einer Anzeigenkampagne](get-ad-campaign-performance-data.md)
+* [Ausführen von Ad-Kampagnen, die mithilfe von Microsoft Store Services](run-ad-campaigns-using-windows-store-services.md)
+* [Übermittlung Zeilen für Ad-Kampagnen verwalten](manage-delivery-lines-for-ad-campaigns.md)
+* [Für die Zielgruppenadressierung Profile für Ad-Kampagnen verwalten](manage-targeting-profiles-for-ad-campaigns.md)
+* [Verwalten von Werbemitteln für Ad-Kampagnen](manage-creatives-for-ad-campaigns.md)
+* [Ad-Kampagne-Leistungsdaten abrufen](get-ad-campaign-performance-data.md)

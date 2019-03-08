@@ -1,5 +1,5 @@
 ---
-Description: Design your app to provide bidirectional text support (BiDi) so that you can combine script from left-to-right (LTR) and right-to-left (RTL) writing systems, which generally contain different types of alphabets.
+Description: Entwerfen Sie Ihre app Unterstützung für bidirektionalen Text (BiDi) bereitstellen, damit Sie kombinieren können Skripts von links nach rechts (LNR) und rechts-nach-links (RTL) Schreibsysteme, die in der Regel verschiedene Arten von Buchstaben enthalten.
 title: Entwerfen einer App für bidirektionalen Text
 template: detail.hbs
 ms.date: 11/10/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: 66a158a96fcab5391030f4517b6420ba4585bf04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942023"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641125"
 ---
-# <a name="design-your-app-for-bidirectional-text"></a>Entwerfen der App für bidirektionalen Text
+# <a name="design-your-app-for-bidirectional-text"></a>Entwerfen einer App für bidirektionalen Text
 
 Entwerfen Sie Ihre App so, dass bidirektionale Textunterstützung (BiDi) bereitgestellt wird, sodass Sie Texte von rechts nach links (RTL) und von links nach rechts (LTR) kombinieren können, die im Allgemeinen unterschiedliche Alphabete enthalten.
 
@@ -42,8 +42,8 @@ Windows unterstützt vier BiDi-Gestaltungselemente. Wir betrachten nun einige de
 
 Windows passt die Richtung des typografischen Rasters so an, dass es von rechts nach links verläuft, d. h. die erste Kachel im Raster befindet sich in der oberen rechten Ecke und die letzte Kachel unten links. Dies entspricht dem RTL-Muster von gedruckten Publikationen wie Büchern und Zeitschriften. Darin wird auch von rechts oben nach links unten gelesen.
 
-![BiDi-Startmenü](images/56283_BIDI_01_startscreen_resized.png)
-![BiDi-Startmenü mit Charms](images/56283_BIDI_02_startscreen_charm_resized.png)
+![Menü "start" BiDi](images/56283_BIDI_01_startscreen_resized.png)
+![BiDi Menü "start" mit Charms](images/56283_BIDI_02_startscreen_charm_resized.png)
 
 Um einen einheitlichen Benutzeroberflächenfluss sicherzustellen, behalten die Kachelinhalte im Raster immer ihre Ausrichtung von rechts nach links bei. Der Name Ihrer App und das Logo werden daher unabhängig von der Sprache der Benutzeroberfläche Ihrer App immer rechts unten auf der Kachel angezeigt.
 
@@ -65,10 +65,10 @@ Kacheln unterstützen gemischte Texte. Der Benachrichtigungsbereich weist eine i
 
 Alle Elemente der Benutzeroberfläche von Windows sind mit der RTL-Ausrichtung kompatibel. Charms und Flyouts wurden auf der linken Seite des Bildschirms platziert, um das Überlappen von Suchergebnissen oder eine Beeinträchtigung der Toucheingabe zu vermeiden. Sie sind leicht mit dem Daumen erreichbar.
 
-![BiDi-Screenshot](images/56286_BIDI_05_search_flyout_resized.png)
+![Bildschirmabbildung von BiDi](images/56286_BIDI_05_search_flyout_resized.png)
 ![BiDi-Screenshot](images/56286_BIDI_06_print_flyout_resized.png)
 
-![BiDi-Screenshot](images/56286_BIDI_07_settings_flyout_resized.png)
+![Bildschirmabbildung von BiDi](images/56286_BIDI_07_settings_flyout_resized.png)
 ![BiDi-Screenshot](images/56286_BIDI_08_app_bars_resized.png)
 
 ### <a name="text-input-in-any-direction"></a>Texteingabe in beliebiger Richtung
@@ -99,14 +99,14 @@ Dank der Einführung des BiDi-Klammeralgorithmus (BiDi Parenthesis Algorithm, BP
 
 Windows verwendet die Schrift „Segoe UI” für alle BiDi-Sprachen. Diese Schrift wird für die Windows-Benutzeroberfläche angepasst und skaliert.
 
-![Schrift „Segoe UI” für BiDi-Sprachen](images/56290_BIDI_13_start_screen_segoe.png)
-![Schrift „Segoe UI” für BiDi-Sprachen](images/56290_BIDI_13_start_screen_segoe_arabic.png)
+![Segoe UI-Schriftart für BiDi-Sprachen](images/56290_BIDI_13_start_screen_segoe.png)
+![Segoe UI-Schriftart für BiDi-Sprachen](images/56290_BIDI_13_start_screen_segoe_arabic.png)
 
-## <a name="case-study-1-a-bidi-music-app"></a>Fallstudie 1: BiDi-Musik-App
+## <a name="case-study-1-a-bidi-music-app"></a>#1-Fallstudie: Eine BiDi-Musik-app
 
 ### <a name="overview"></a>Übersicht
 
-Multimediale Apps stellen eine interessante Herausforderung hinsichtlich der Gestaltung dar. Von den Steuerelementen für entsprechende Medien wird i.d.R. ein Layout mit ähnlicher Ausrichtung (links-nach-rechts) wie bei Nicht-BiDi-Sprachen erwartet.
+Multimediale Apps stellen eine interessante Herausforderung hinsichtlich der Gestaltung dar. Von den Steuerelementen für entsprechende Medien wird i. d. R. ein Layout mit ähnlicher Ausrichtung (links-nach-rechts) wie bei Nicht-BiDi-Sprachen erwartet.
 
 ![Mediensteuerelemente (links nach rechts)](images/56291_BIDI_1415_music_player_layouts_left-withcallouts.png)
 
@@ -130,8 +130,8 @@ Die Änderung der Ausrichtung innerhalb der App mag recht unkompliziert wirken, 
 
 | | Englische Zeichenfolge (LTR) | Hebräische Zeichenfolge (RTL) |
 | -------------- | ------------------- | ------------------- |
-| **Linksbündig** | Hello, World! | בוקר טוב! |
-| **Rechtsbündig** | !Hello, World | !בוקר טוב |
+| **Left-alignment** | Hello, World! | בוקר טוב! |
+| **Right-alignment** | !Hello, World | !בוקר טוב |
 
 Um sicherzustellen, dass die Informationen zum jeweiligen Künstler in der Musik-App fehlerfrei angezeigt werden, wurden die Eigenschaften für das Textlayout und die Ausrichtung vom Entwicklungsteam getrennt behandelt. Mit anderen Worten: Die Informationen über den Künstler werden zwar möglicherweise in vielen Fällen rechtsbündig dargestellt, die Layoutausrichtung wird jedoch auf der Grundlage einer angepassten Hintergrundverarbeitung festgelegt. Die Hintergrundverarbeitung bestimmt die auf Basis des Zeichenfolgeninhalts das am besten geeignete Ausrichtungslayout.
 
@@ -182,7 +182,7 @@ string NormalizeTextDirection(string data)
 
 Die hinzugefügten Unicode-Zeichen sind Nullbreitenzeichen und wirken sich daher nicht auf die Zeichenfolgenabstände aus. Dieser Code beeinträchtigt unter Umständen die Leistung, da die Zeichenfolge zum Erkennen der Richtung durchlaufen werden muss, bis ein nicht neutrales Zeichen gefunden wird. Da jedes Zeichen, dessen Neutralität überprüft wird, zunächst mit mehreren Unicode-Bereichen abgeglichen wird, handelt es sich um eine umfangreiche Prüfung.
 
-## <a name="case-study-2-a-bidi-mail-app"></a>Fallstudie Nr. 2: BiDi-Mail-App
+## <a name="case-study-2-a-bidi-mail-app"></a>#2-Fallstudie: Eine BiDi-Mail-app
 
 ### <a name="overview"></a>Übersicht
 
@@ -200,7 +200,7 @@ Auch die Ausrichtung zusätzlicher Elemente wurde an den allgemeinen Benutzerobe
 
 ### <a name="text-handling"></a>Textverarbeitung
 
-#### <a name="ui"></a>Benutzeroberfläche
+#### <a name="ui"></a>UI
 
 Texte auf der Benutzeroberfläche sind im Allgemeinen rechtsbündig ausgerichtet. Dies gilt auch für den Ordner- und Elementbereich. Der Elementbereich ist auf zwei Textzeilen (Adresse und Titel) begrenzt. Dies ist wichtig, um die Rechts-nach-links-Ausrichtung beizubehalten, ohne dass ein Textblock entsteht, der nur schwer zu lesen ist, wenn die Inhaltsrichtung nicht der Flussrichtung der Benutzeroberfläche entspricht.
 

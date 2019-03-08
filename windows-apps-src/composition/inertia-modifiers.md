@@ -3,14 +3,14 @@ title: Verwenden von Inertia-Modifiern zum Erstellen von Einrastpunkten
 description: Lernen Sie, wie man mit dem InertiaModifier-Feature eines InteractionTracker Bewegungserlebnisse erzeugen kann, die an einem bestimmten Punkt einrasten.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, Uwp, animation
+keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943931"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639635"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>Erstellen von Einrastpunkten mit Inertia-Modifiern
 
@@ -20,9 +20,9 @@ In diesem Artikel gehen wir näher darauf ein, wie man mit dem InertiaModifier-F
 
 Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
 
-- [Eingabegesteuerte Animationen](input-driven-animations.md)
-- [Angepasste Manipulation mit InteractionTracker](interaction-tracker-manipulations.md)
-- [Relationsbasierte Animationen](relation-animations.md)
+- [Eingabe-driven Animationen](input-driven-animations.md)
+- [Benutzerdefinierte Bearbeitung Erfahrungen mit InteractionTracker](interaction-tracker-manipulations.md)
+- [Beziehung basierend Animationen](relation-animations.md)
 
 ## <a name="what-are-snap-points-and-why-are-they-useful"></a>Was sind Einrastpunkte und warum sind sie nützlich?
 

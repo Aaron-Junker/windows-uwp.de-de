@@ -3,15 +3,15 @@ title: Speichern und Laden von Einstellungen in einer UWP-App
 description: Erfahren Sie, wie Sie App-Einstellungen in Apps für die Universelle Windows-Plattform speichern und laden.
 ms.date: 05/07/2018
 ms.topic: article
-keywords: Erste Schritte, UWP, Windows10, Lernpfad, Einstellungen, Einstellungen speichern, Einstellungen laden
+keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Einstellungen, Einstellungen speichern, Einstellungen laden
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931898"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614635"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Speichern und Laden von Einstellungen in einer UWP-App
 
@@ -95,11 +95,11 @@ Nachfolgend finden Sie eine kurze Zusammenfassung der APIs und anderer nützlich
 
 | Thema | Beschreibung |
 |-------|----------------|
-| [Richtlinien für App-Einstellungen](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | Erläutert bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen. |
+| [Richtlinien zum app-Einstellungen](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | Erläutert bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen. |
 | [Speichern und Abrufen von Einstellungen und anderen App-Daten](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | Exemplarische Vorgehensweise zum Speichern und Abrufen von Einstellungen, einschließlich der Roamingeinstellungen. |
 
 ## <a name="useful-code-samples"></a>Nützliche Codebeispiele
 
 | Codebeispiel | Beschreibung |
 |-----------------|---------------|
-| [Beispiel für Anwendungsdaten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | Szenarien 2-4 mit Fokus auf Einstellungen |
+| [Anwendungsbeispiel für Daten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | Szenarien 2-4 mit Fokus auf Einstellungen |

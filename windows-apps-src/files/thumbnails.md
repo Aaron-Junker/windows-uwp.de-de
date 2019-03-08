@@ -1,18 +1,18 @@
 ---
-Description: How to use thumbnail images to help users preview files in UWP apps.
+Description: So Miniaturbilder zu verwenden, um Benutzern, die Vorschau von Dateien in UWP-apps zu helfen.
 title: Richtlinien für Miniaturbilder in UWP-Apps
 label: Thumbnail images
 template: detail.hbs
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980348"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642005"
 ---
 # <a name="thumbnail-images"></a>Miniaturbilder
 
@@ -66,16 +66,16 @@ Empfohlene [Miniaturansichtsmodi](https://docs.microsoft.com/uwp/api/windows.sto
 <tr>
 <td> Bilder<br /> Videos </td>
 <td> PicturesView <br />VideosView </td>
-<td> <b>Größe</b>: Mittel, vorzugsweise mindestens 190 (bei einer Bildgröße von 190x130) <br />
-<b>Seitenverhältnis</b>:Gleichmäßiges, breites Seitenverhältnis von ca. 0,7 (190x130 bei einer Größe von 190) <br />
+<td> <b>Größe</b>: "Mittel", vorzugsweise mindestens 190 (wenn die Größe des Abbilds 190 x 130 ist) <br />
+<b>Seitenverhältnis</b>: Einheitliche, breit Seitenverhältnis von ca..7 (190 x 130 ist die Größe 190) <br />
 Zugeschnitten für die Vorschau <br /> 
 Gute Ausrichtung von Bildern in einem Raster durch einheitliches Seitenverhältnis  </td>
 </tr>
 <tr>
 <td> Dokumente<br />Musik </td>
 <td> DocumentsView <br />MusicView <br /> ListView</td>
-<td> <b>Größe</b>: Klein, vorzugsweise mindestens 40 x 40 Pixel <br />
-<b>Seitenverhältnis:</b> Einheitliches, quadratisches Seitenverhältnis  <br />
+<td> <b>Größe</b>: Kleine, vorzugsweise mindestens 40 x 40 Pixel <br />
+<b>Seitenverhältnis</b>:  Einheitliche, quadratische Seitenverhältnis  <br />
 Aufgrund des quadratischen Seitenverhältnisses gut geeignet für die Vorschau von Albumcovern <br /> 
 Dokumente sehen ebenso aus wie in einem Dateiauswahlfenster (Verwendung derselben Symbole). </td>
 </tr>
@@ -83,8 +83,8 @@ Dokumente sehen ebenso aus wie in einem Dateiauswahlfenster (Verwendung derselbe
 <tr>
 <td> Alle einzelnen Elemente (unabhängig vom Dateityp) </td>
 <td> SingleItem </td>
-<td> <b>Größe</b>: Klein, vorzugsweise mindestens 40 x 40 Pixel <br />
-<b>Seitenverhältnis:</b> Einheitliches, quadratisches Seitenverhältnis  <br />
+<td> <b>Größe</b>: Kleine, vorzugsweise mindestens 40 x 40 Pixel <br />
+<b>Seitenverhältnis</b>:  Einheitliche, quadratische Seitenverhältnis  <br />
 Aufgrund des quadratischen Seitenverhältnisses gut geeignet für die Vorschau von Albumcovern <br /> 
 Dokumente sehen ebenso aus wie in einem Dateiauswahlfenster (Verwendung derselben Symbole). </td>
 </tr>
@@ -165,6 +165,6 @@ Andernfalls wird keine Miniaturansicht abgerufen.</td>
 ## <a name="related-topics"></a>Verwandte Themen
 - [ThumbnailMode-Enumeration](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
 - [StorageItemThumbnail-Klasse](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
-- [StorageFile-Klasse](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
-- [Beispiel für Datei- und Ordnerminiaturansicht (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
-- [Listen- und Rasteransicht](../design/controls-and-patterns/lists.md)
+- ["Storagefile"-Klasse](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
+- [Datei- und Miniaturansicht-Beispiel (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
+- [Liste und die Rasteransicht](../design/controls-and-patterns/lists.md)

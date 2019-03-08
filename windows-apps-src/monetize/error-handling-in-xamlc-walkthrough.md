@@ -4,14 +4,14 @@ description: Hier erfahren Sie, wie AdControl-Fehler in Ihrer App aufgefangen we
 title: Exemplarische Vorgehensweise zur Fehlerbehandlung in XAML/C#
 ms.date: 05/11/2018
 ms.topic: article
-keywords: Windows10, UWP, Anzeige, Werbung, Fehlerbehandlung, XAML, C#
+keywords: Windows 10, UWP, Anzeige, Werbung, Fehlerbehandlung, XAML, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: fe01a01dc97b67c339d015a260288176a5ba57da
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047049"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642145"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>Exemplarische Vorgehensweise zur Fehlerbehandlung in XAML/C#
 
@@ -75,4 +75,4 @@ In diesen Beispielen wird davon ausgegangen, dass Sie eine XAML/C#-App haben, di
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Anzeigenbeispiele bei GitHub](https://aka.ms/githubads)
+* [Anzeigenbeispiele auf GitHub](https://aka.ms/githubads)

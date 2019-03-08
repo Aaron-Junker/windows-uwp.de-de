@@ -1,25 +1,25 @@
 ---
-title: Xbox-Portal Geräteinformationen-API-Referenz
-description: Erfahren Sie, wie auf Xbox-Informationen zugreifen.
+title: Referenz zur API des Geräteportals für Xbox-Informationen
+description: Erfahren Sie, wie Sie auf Xbox-Geräteinformationen zugreifen.
 ms.date: 11/072017
 ms.topic: article
-keywords: Windows 10, Uwp, Xbox, geräteportal
+keywords: Windows 10 "," Uwp "," Xbox "," Device-portal
 ms.localizationpriority: medium
 ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115980"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617495"
 ---
-# <a name="xbox-info-api-reference"></a>Xbox-Info-API-Referenz   
-Sie können die Xbox One Geräteinformationen mithilfe dieser API zugreifen.
+# <a name="xbox-info-api-reference"></a>Referenz zur API für Xbox-Informationen   
+Sie können mit dieser API auf die Xbox One-Geräteinformationen zugreifen.
 
-## <a name="get-xbox-one-device-information"></a>Abrufen von Xbox One Geräteinformationen
+## <a name="get-xbox-one-device-information"></a>Abrufe von Xbox One-Geräteinformationen
 
 **Anforderung**
 
-Sie erhalten Informationen über Ihre Xbox One.
+Sie können Geräteinformationen zu Ihrer Xbox One abrufen.
 
 Methode      | Anforderungs-URI
 :------     | :-----
@@ -31,7 +31,7 @@ GET | /ext/xbox/info
 
 **Anforderungsheader**
 
-- Keiner
+- Keine
 
 **Anforderungstext**
 
@@ -40,16 +40,16 @@ GET | /ext/xbox/info
 **Antwort**   
 Ein JSON-Objekt mit den folgenden Feldern:
 
-* OsVersion - (Zeichenfolge) die Version des Betriebssystems.
-* OsEdition - (Zeichenfolge) die Edition des Betriebssystems, z. B. "März 2017" oder "März 2017 QFE 1".
-* ConsoleId - (Zeichenfolge) die Konsole des-ID.
-* Geräte-ID - (Zeichenfolge) die Konsole des Xbox Live Gerät ID
-* Seriennummer - (Zeichenfolge) die Konsole des Seriennummer.
-* DevMode - (Zeichenfolge) die Konsole des aktuellen Entwicklermodus, z. B. "None" oder "Retail".
-* ConsoleType - (Zeichenfolge) die Konsole des Typ, z. B. "Xbox One" oder "Xbox One S".
-* DevkitCertificateExpirationTime – (Number) der UTC-Zeit in Sekunden, wenn die Konsole Developer Kit Zertifikat abläuft.
+* OsVersion (Zeichenfolge): Die Version des Betriebssystems.
+* OsEdition (Zeichenfolge): Die Edition des Betriebssystems, z. B. „März 2017“ oder „März 2017 QFE 1“.
+* ConsoleId (Zeichenfolge): Die ID der Konsole.
+* DeviceId (Zeichenfolge): Die Xbox Live-Geräte-ID der Konsole.
+* SerialNumber (Zeichenfolge): Die Seriennummer der Konsole.
+* DevMode (Zeichenfolge): Der aktuelle Entwicklermodus der Konsole, z. B. „Keiner“ oder „Einzelhandel“.
+* ConsoleType (Zeichenfolge): Der Konsolentyp, z. B. „Xbox One“ oder „Xbox One S“.
+* DevkitCertificateExpirationTime (Zahl): Die UTC-Zeit in Sekunden, zu der das Developer Kit-Zertifikat der Konsole abläuft.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -60,6 +60,6 @@ HTTP-Statuscode      | Beschreibung
 5XX | Fehlercodes
 
 <br />
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Xbox

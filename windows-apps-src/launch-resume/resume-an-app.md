@@ -4,7 +4,7 @@ description: Erfahren Sie, wie Sie den angezeigten Inhalt aktualisieren, wenn da
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: f424a274d3e96b58f32875620f3165ccfac82ba6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939358"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612465"
 ---
 # <a name="handle-app-resume"></a>Behandeln der App-Fortsetzung
 
@@ -73,9 +73,9 @@ MainPage::MainPage()
 
 Das System hält Ihre App ein paar Sekunden an, nachdem der Benutzer zu einer anderen App oder zum Desktop wechselt. Wenn der Benutzer wieder zu Ihrer App wechselt, wird diese vom System fortgesetzt. Beim Fortsetzen der App haben die Variablen und Datenstrukturen den gleichen Inhalt wie vor der Unterbrechung. Das System stellt die App an der Stelle wieder her. Für den Benutzer sieht es so aus, als ob die App im Hintergrund ausgeführt wurde.
 
-Wenn Ihre App das [**Resuming** ](https://msdn.microsoft.com/library/windows/apps/br242339)-Ereignis handhabt, wird sie möglicherweise für Stunden oder Tage angehalten. Sie sollte alle Inhalte aktualisieren, die während des Anhaltens der App ggf. veraltet sind, z.B. Newsfeeds oder der Standort des Benutzers.
+Wenn Ihre App das [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)-Ereignis handhabt, wird sie möglicherweise für Stunden oder Tage angehalten. Sie sollte alle Inhalte aktualisieren, die während des Anhaltens der App ggf. veraltet sind, z. B. Newsfeeds oder der Standort des Benutzers.
 
-Dies ist auch ein guter Zeitpunkt, um alle exklusiven Ressourcen wiederzuherstellen, die Sie freigegeben haben, als Ihre App angehalten wurde, z.B. Dateihandles, Kameras, E/A-Geräte, externe Geräte und Netzwerkressourcen.
+Dies ist auch ein guter Zeitpunkt, um alle exklusiven Ressourcen wiederzuherstellen, die Sie freigegeben haben, als Ihre App angehalten wurde, z. B. Dateihandles, Kameras, E/A-Geräte, externe Geräte und Netzwerkressourcen.
 
 ```csharp
 partial class MainPage
@@ -116,9 +116,9 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ```
 
 > [!NOTE]
-> Da das [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) -Ereignis nicht vom UI-Thread ausgelöst wird, muss ein Dispatcher in Ihrem Handler verwendet werden, um Aufrufe für Ihre UI zu verteilen.
+> Da die [ **wird fortgesetzt** ](https://msdn.microsoft.com/library/windows/apps/br242339) -Ereignis nicht vom UI-Thread ausgelöst wird, muss ein Verteiler in Ihrem Ereignishandler verwendet werden, um alle Aufrufe an die Benutzeroberfläche senden.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 Wenn Ihre App an den Visual Studio-Debugger gebunden ist, wird sie nicht angehalten. Sie können sie aber vom Debugger anhalten und dann ein **Resume**-Ereignis senden, damit Sie den Code debuggen können. Sorgen Sie dafür, dass die Symbolleiste **Debugspeicherort** angezeigt wird, und klicken Sie auf das Dropdownelement neben dem Symbol **Anhalten**. Wählen Sie dann **Fortsetzen** aus.
 
@@ -127,5 +127,5 @@ Für Windows Phone Store-Apps folgt auf das [**Resuming**](https://msdn.microsof
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [App-Lebenszyklus](app-lifecycle.md)
-* [Behandeln der App-Aktivierung](activate-an-app.md)
-* [Behandeln des Anhaltens von Apps](suspend-an-app.md)
+* [Behandeln von app-Aktivierung](activate-an-app.md)
+* [Handle-app anhalten](suspend-an-app.md)

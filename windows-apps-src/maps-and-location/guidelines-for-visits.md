@@ -1,17 +1,17 @@
 ---
-Description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
+Description: Erfahren Sie, wie Sie die leistungsstarke „Visits Tracking”-Funktion (besuchte Standorte) für eine praktischere Standortnachverfolgung verwenden können.
 title: Richtlinien für die Verwendung von Visits Tracking
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.date: 05/18/2017
 ms.topic: article
-keywords: Windows10, UWP, Karte, Standort, Geovisit, geovisits
+keywords: Windows 10, UWP, Karte, Standort, Geovisit, geovisits
 ms.localizationpriority: medium
 ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927539"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640775"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>Richtlinien für die Verwendung von Visits Tracking
 
@@ -134,7 +134,7 @@ Sie können ebenfalls die Überwachung der Besuche als Hintergrundaufgabe implem
 Dieses Handbuch verwendet das unter [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb des Prozesses](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) beschriebene Modell, in dem die Hauptanwendungsdateien sich in einem Projekt befindet und die Hintergrundaufgabendatei sich in einem separaten Projekt in der gleichen Lösung befindet. Wenn Sie nicht mit dem Implementieren von Hintergrundaufgaben vertraut sind, empfiehlt es sich, dass Sie dieser Anleitung vorwiegend folgen und die erforderlichen Ersetzungen durchführen, um eine Aufgabe als Hintergrundaufgabe zu erstellen, die die Besuche behandelt.
 
 > [!NOTE]
-> In den folgenden Codeausschnitten wurden einige wichtige Funktionen wie z.B. die Fehlerbehandlung und das lokale Speichern aus Gründen der Einfachheit weggelassen. Eine robuste Implementierung der Behandlung der Besuche im Hintergrund finden Sie in der [Beispiel-App](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation).
+> In den folgenden Codeausschnitten wurden einige wichtige Funktionen wie z. B. die Fehlerbehandlung und das lokale Speichern aus Gründen der Einfachheit weggelassen. Eine robuste Implementierung der Behandlung der Besuche im Hintergrund finden Sie in der [Beispiel-App](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation).
 
 
 Stellen Sie zunächst sicher, dass Ihre App die Berechtigung für Hintergrundaufgaben deklariert hat. Fügen Sie dem `Application/Extensions`-Element Ihrer *"Package.appxmanifest"*-Datei die folgende Erweiterung hinzu (fügen Sie ein `Extensions`-Element hinzu, wenn es nicht bereits existiert).
@@ -269,6 +269,6 @@ Dadurch wird festgelegt, dass eine Hintergrundaufgabenklasse mit dem Namen `Visi
 Ihre App sollte nun das Registrieren der Hintergrundaufgabe für Besuche behandeln können, und diese Aufgabe sollte aktiviert werden, sobald das Gerät eine Änderung im Zusammenhang mit einem Besuch protokolliert. Sie müssen die Logik in Ihrer Hintergrundaufgabenklasse ausfüllen, welche Aktion mit dieser Zustandsänderungsinformation ausgeführt werden soll.
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb des Prozesses](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [Erstellen Sie und registrieren Sie eine Out-of-Process-Hintergrundaufgabe](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
 * [Abrufen der Position eines Benutzers](get-location.md)
-* [Windows.Devices.Geolocation namespace](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
+* [Windows.Devices.Geolocation-namespace](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

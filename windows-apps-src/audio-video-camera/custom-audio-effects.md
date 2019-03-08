@@ -1,17 +1,17 @@
 ---
-Description: This article describes how to create a Windows Runtime component that implements the IBasicAudioEffect interface to allow you to create custom effects for audio streams.
+Description: In diesem Artikel wird beschrieben, wie Sie eine Windows-Runtime-Komponente erstellen, die die IBasicAudioEffect-Schnittstelle implementiert, mit der Sie benutzerdefinierte Effekte für Audiostreams erstellen können.
 title: Benutzerdefinierte Audioeffekte
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
 ms.openlocfilehash: e04b3a764c170fa3e3e0ce1372e72b73795b5b12
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049327"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617955"
 ---
 # <a name="custom-audio-effects"></a>Benutzerdefinierte Audioeffekte
 
@@ -22,14 +22,14 @@ In diesem Artikel wird beschrieben, wie Sie eine Windows-Runtime-Komponente erst
 
 Sie definieren einen benutzerdefinierte Audioeffekt in einer Klasse, die die [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect)-Schnittstelle implementiert. Diese Klasse kann nicht direkt in Ihr App-Projekt integriert werden. Stattdessen müssen Sie eine Windows-Runtime-Komponente verwenden, um Ihre Audioeffektklasse zu hosten.
 
-**Hinzufügen einer Windows-Runtime-Komponente für den Audioeffekt**
+**Hinzufügen einer Komponente für Windows-Runtime für Ihre Audioeffekts**
 
 1.  Wechseln Sie in Microsoft Visual Studio bei geöffneter Projektmappe zum Menü **Datei**, und wählen Sie **Hinzufügen-&gt;Neues Projekt** aus.
 2.  Wählen Sie den Projekttyp **Komponente für Windows-Runtime (Universal Windows)** aus.
 3.  Nennen Sie das Projekt in diesem Beispiel *AudioEffectComponent*. Auf diesen Namen wird später im Code verwiesen.
 4.  Klicken Sie auf **OK**.
 5.  Die Projektvorlage erstellt eine Klasse namens „Class1.cs“. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Symbol für „Class1.cs“, und wählen Sie **Umbenennen** aus.
-6.  Benennen Sie die Datei in *ExampleAudioEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. Klicken Sie auf **Ja**.
+6.  Benennen Sie die Datei in *ExampleAudioEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. klicken Sie auf **Ja**.
 7.  Öffnen Sie **ExampleAudioEffect.cs**, und aktualisieren Sie die Definition der Klasse, um die [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect)-Schnittstelle zu implementieren.
 
 
@@ -45,7 +45,7 @@ Der Audioeffekt muss alle Methoden und Eigenschaften der [**IBasicAudioEffect**]
 
 ### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties-Eigenschaft
 
-Das System überprüft die [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect.SupportedEncodingProperties)-Eigenschaft, um festzustellen, welche Codierungseigenschaften von dem Effekt unterstützt werden. Beachten Sie Folgendes: Wenn der Nutzer Ihres Effekts das Audio mit den von Ihnen angegebenen Eigenschaften nicht codieren kann, ruft das System [**Schließen**](https://msdn.microsoft.com/library/windows/apps/dn764782) für den Effekt auf, worauf dieser aus der Audiopipeline entfernt wird. In diesem Beispiel werden [**AudioEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.AudioEncodingProperties)-Objekte erstellt und der Ausgabeliste hinzugefügt, um die 32-Bit-Float-Mono-Codierung mit 44,1kHz und 48kHz zu unterstützen.
+Das System überprüft die [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect.SupportedEncodingProperties)-Eigenschaft, um festzustellen, welche Codierungseigenschaften von dem Effekt unterstützt werden. Beachten Sie Folgendes: Wenn der Nutzer Ihres Effekts das Audio mit den von Ihnen angegebenen Eigenschaften nicht codieren kann, ruft das System [**Schließen**](https://msdn.microsoft.com/library/windows/apps/dn764782) für den Effekt auf, worauf dieser aus der Audiopipeline entfernt wird. In diesem Beispiel werden [**AudioEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.AudioEncodingProperties)-Objekte erstellt und der Ausgabeliste hinzugefügt, um die 32-Bit-Float-Mono-Codierung mit 44,1 kHz und 48 kHz zu unterstützen.
 
 [!code-cs[SupportedEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSupportedEncodingProperties)]
 
@@ -93,7 +93,7 @@ Nun, da die Datenpuffer abgerufen wurden, können Sie aus dem Eingabepuffer lese
 
 ### <a name="close-method"></a>Close-Methode
 
-Das System ruft die [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) [**Schließen**](https://msdn.microsoft.com/library/windows/apps/dn764782)-Methode für die Klasse auf, wenn der Effekt ausgeschaltet werden soll. Sie sollten diese Methode verwenden, um alle Ressourcen, die Sie erstellt haben, zu löschen. Das Argument der Methode ist ein [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason), der Ihnen mitteilt, ob der Effekt normal geschlossen wurde, ob ein Fehler aufgetreten ist oder ob der Effekt das erforderliche Codierungsformat nicht unterstützt.
+Das System Ruft die [ **schließen** ](https://msdn.microsoft.com/library/windows/apps/dn764782) [ **schließen** ](https://msdn.microsoft.com/library/windows/apps/dn764782) -Methode für die Klasse, wenn der Effekt heruntergefahren werden soll. Sie sollten diese Methode verwenden, um alle Ressourcen, die Sie erstellt haben, zu löschen. Das Argument der Methode ist ein [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason), der Ihnen mitteilt, ob der Effekt normal geschlossen wurde, ob ein Fehler aufgetreten ist oder ob der Effekt das erforderliche Codierungsformat nicht unterstützt.
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
@@ -145,7 +145,7 @@ Der folgende Codeausschnitt veranschaulicht das Hinzufügen des benutzerdefinier
 
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Einfacher Zugriff auf die Kameravorschau](simple-camera-preview-access.md)
+* [Zugriff auf die einfache Kamera-Vorschau](simple-camera-preview-access.md)
 * [Medienkompositionen und -bearbeitung](media-compositions-and-editing.md)
 * [Win2D-Dokumentation](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Medienwiedergabe](media-playback.md)
