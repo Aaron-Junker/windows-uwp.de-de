@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, Xbox One, Tools
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
 ms.openlocfilehash: ed106095d83ed0c6e055d22a1a0cf229380cff71
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945892"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609325"
 ---
 # <a name="introduction-to-xbox-one-tools"></a>Einführung in Xbox One-Tools
 
@@ -52,10 +52,10 @@ So aktivieren Sie das Xbox-Geräteportal auf Ihrer Xbox One Konsole
 
 8. Melden Sie sich mit den Anmeldeinformationen an, die Sie konfiguriert haben.
 
-## <a name="xbox-dev-mode-companion"></a>Begleitung für den Xbox-Entwicklermodus
+## <a name="xbox-dev-mode-companion"></a>Begleitung für Xbox-Entwicklermodus
 Die Begleitung für den Xbox-Entwicklermodus ist ein Tool, mit dessen Hilfe Sie auf der Konsole arbeiten können, ohne den PC verlassen zu müssen. Die App ermöglicht Ihnen die Anzeige des Konsolenbildschirms und das Senden von Eingaben an diesen. Weitere Informationen finden Sie unter [Begleitung für den Xbox-Entwicklermodus](xbox-dev-mode-companion.md).
 
 ## <a name="see-also"></a>Siehe auch
-- [Verwenden von Fiddler mit Xbox One bei der Entwicklung für UWP](uwp-fiddler.md)
-- [Übersicht über das Windows Device Portal](../debug-test-perf/device-portal.md)
-- [UWP auf XboxOne](index.md)
+- [Wie Sie Fiddler mit Xbox One verwenden, bei der Entwicklung für UWP](uwp-fiddler.md)
+- [Übersicht über die Windows Device Portal](../debug-test-perf/device-portal.md)
+- [UWP auf Xbox One](index.md)

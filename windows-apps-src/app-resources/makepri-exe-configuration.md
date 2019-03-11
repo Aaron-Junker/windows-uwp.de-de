@@ -1,24 +1,24 @@
 ---
-Description: This topic describes the schema of the MakePri.exe XML configuration file.
+Description: In diesem Thema wird das Schema der XML-Konfigurationsdatei für MakePri.exe beschrieben.
 title: Konfigurationsdatei für MakePri.exe
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
-keywords: Windows10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
+keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: ef0e8834310e77084c0bb4a8aad22786a89fb312
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927125"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607795"
 ---
-# <a name="makepriexe-configuration-file"></a>Konfigurationsdatei für MakePRI.exe
+# <a name="makepriexe-configuration-file"></a>Konfigurationsdatei für MakePri.exe
 
 In diesem Thema wird das Schema der XML-Konfigurationsdatei (auch PRI-Konfigurationsdatei genannt) für [MakePri.exe](compile-resources-manually-with-makepri.md) beschrieben. Das Tool MakePri.exe verfügt über den Befehl [createconfig](makepri-exe-command-options.md#createconfig-command), der eine neue, initialisierte PRI-Konfigurationsdatei erstellt.
 
 > [!NOTE]
-> MakePri.exe wird installiert, wenn Sie die Option **Windows SDK für verwalteten UWP-Apps** während der Installation von Windows Software Development Kit überprüfen. Es installiert ist, um den Pfad `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ebenso wie in den Ordnern für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe installiert ist, wenn Sie aktivieren die **Windows SDK für verwaltete UWP-Apps** Option während der Installation von Windows Software Development Kit. Es wird auf den Pfad installiert `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (sowie in Ordnern, die mit dem Namen für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 Die PRI-Konfigurationsdatei steuert, welche Ressourcen wie indiziert werden. Die XML-Konfigurationsdatei muss folgendem Schema entsprechen:
 
@@ -226,7 +226,7 @@ MakePri.exe fügt den Wert von `isDeploymentMergeable` der Dumpdatei hinzu, wenn
 
 Der Standardwert für dieses Attribut ist 1. Wenn Sie einen expliziten Wert angeben und auch die veraltete Befehlszeilenoption `/VersionMajor(vma)` für das MakePri.exe-Tool verwenden, hat der Wert in der Konfigurationsdatei Vorrang.
 
-Beispiel:
+Hier sehen Sie ein Beispiel.
 
 ```xml
 <resources majorVersion="2">
@@ -244,10 +244,10 @@ Gibt die Zielbetriebssystemversion an. Die folgenden Tabelle enthält die unters
 | Wert | Bedeutung |
 | ----- | ------- |
 | 10.0.0 | Windows 10 |
-| 6.3.0 (Standard) | Windows 8.1 |
+| 6.3.0 (Standard) | Windows 8.1 |
 | 6.2.1 | Windows 8 |
 
-Beispiel:
+Hier sehen Sie ein Beispiel.
 
 ```xml
 <resources targetOsVersion="10.0.0">
@@ -278,23 +278,23 @@ MakePri.exe fügt den Wert von `targetOsVersion` der Dumpdatei hinzu, wenn `make
 
 Hier einige Beispiele für Fehlerbedingungen und die entsprechenden Fehlermeldungen:
 
-| Bedingung | Schweregrad | Meldung |
+| Bedingung | Nach Schweregrad | Meldung |
 | --------- | -------- | ------- |
-| Für targetOsVersion ist keiner der unterstützten Werte angegeben. | Fehler | Ungültige Konfiguration: Die Angabe für targetOsVersion ist ungültig. |
-| Für targetOsVersion wurde der Wert „6.2.1 ”angegeben, und es ist ein `packaging`-Element vorhanden. | Fehler | Ungültige Konfiguration: Knoten „Packaging” wird von dieser targetOsVersion nicht unterstützt. |
+| Für targetOsVersion ist keiner der unterstützten Werte angegeben. | Fehler | Ungültige Konfiguration: Ungültige TargetOsVersion angegeben. |
+| Für targetOsVersion wurde der Wert „6.2.1 ”angegeben, und es ist ein `packaging`-Element vorhanden. | Fehler | Ungültige Konfiguration: "Verpackung"-Knoten wird mit diesem TargetOsVersion nicht unterstützt. |
 | In der Konfiguration wurde mehr als ein Modus gefunden. Beispielsweise wurde "Manual" und "AutoResourcePackage" angegeben. | Fehler | Ungültige Konfiguration: Knoten „Packaging” unterstützt nur einen Betriebsmodus. |
 | Für das Ressourcenpaket ist ein Standardqualifizierer angegeben. | Fehler | Ungültige Konfiguration: <Qualifiername>=<QualifierValue> ist ein Standardqualifizierer, und seine Kandidaten können nicht zu einem Ressourcenpaket hinzugefügt werden. |
-| Der Qualifizierer AutoResourcePackage enthält mehrere Qualifizierer. Beispiel: language_scale. | Fehler | Invalid Configuration: AutoResourcePackage with multiple qualifiers is not supported. |
-| ResourcePackage QualifierSet enthält mehrere Qualifizierer. Beispiel: language-en-us_scale-100. | Fehler | Invalid Configuration: QualifierSet with multiple qualifiers is not supported. |
-| Es wurde ein doppelter Ressourcenpaketname gefunden. | Fehler | Ungültige Konfiguration: Doppelter Ressourcenpaketname <rpname>. |
-| In zwei Ressourcenpaketen wurde der gleiche Satz von Qualifizierern definiert. | Fehler | Ungültige Konfiguration: Es wurden mehrere QualifierSet-Instanzen von „<qualifier tags>” gefunden. |
-| Für das für den Knoten "ResourcePackage" aufgelistete QualifierSet-Element wurden keine Kandidaten gefunden. | Warnung | Ungültige Konfiguration: Für <Resource Package Name> wurden keine Kandidaten gefunden. |
-| Für den unter dem Knoten "AutoResourcePackage" aufgeführten Qualifizierer wurden keine Kandidaten gefunden. | Warnung | Ungültige Konfiguration: Für den Qualifizierer <qualifier name> wurden keine Kandidaten gefunden. Das Ressourcenpaket wurde nicht generiert |
-| Es wurde kein Modus gefunden. Es wurde also ein leerer Knoten "packaging" gefunden. | Warnung | Ungültige Konfiguration: Kein Verpackungsmodus angegeben. |
+| Der Qualifizierer AutoResourcePackage enthält mehrere Qualifizierer. Beispiel: language_scale. | Fehler | Ungültige Konfiguration: AutoResourcePackage mit mehrere Qualifizierer wird nicht unterstützt. |
+| ResourcePackage QualifierSet enthält mehrere Qualifizierer. Beispiel: language-en-us_scale-100. | Fehler | Ungültige Konfiguration: QualifierSet mit mehrere Qualifizierer wird nicht unterstützt. |
+| Es wurde ein doppelter Ressourcenpaketname gefunden. | Fehler | Ungültige Konfiguration: Doppelte Ressourcennamen für Pack <rpname>. |
+| In zwei Ressourcenpaketen wurde der gleiche Satz von Qualifizierern definiert. | Fehler | Ungültige Konfiguration: Mehrere Instanzen von QualifierSet "<qualifier tags>" gefunden. |
+| Für das für den Knoten "ResourcePackage" aufgelistete QualifierSet-Element wurden keine Kandidaten gefunden. | Warnung | Ungültige Konfiguration: Keine Kandidaten für gefunden <Resource Package Name>. |
+| Für den unter dem Knoten "AutoResourcePackage" aufgeführten Qualifizierer wurden keine Kandidaten gefunden. | Warnung | Ungültige Konfiguration: Keine Kandidaten gefunden wurden, für den Qualifizierer für <qualifier name>. Das Ressourcenpaket wurde nicht generiert |
+| Es wurde kein Modus gefunden. Es wurde also ein leerer Knoten "packaging" gefunden. | Warnung | Ungültige Konfiguration: Packaging-Modus wurde nicht angegeben. |
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Manuelles Kompilieren von Ressourcen mit MakePri.exe](compile-resources-manually-with-makepri.md)
-* [Befehlszeilenoptionen von MakePri.exe&mdash;createconfig-Befehl](makepri-exe-command-options.md#createconfig-command)
-* [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](tailor-resources-lang-scale-contrast.md)
+* [Kompilieren von Ressourcen mit MakePri.exe manuell](compile-resources-manually-with-makepri.md)
+* [MakePri.exe-Befehlszeilenoptionen&mdash;Createconfig-Befehl](makepri-exe-command-options.md#createconfig-command)
+* [Passen Sie Ihre Ressourcen für die Sprache, Skalierung, hoher Kontrast und anderen Qualifizierer](tailor-resources-lang-scale-contrast.md)
 * [Ressourcenverwaltungssystem&mdash;ResourceContext](resource-management-system.md#resourcecontext)

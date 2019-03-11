@@ -4,14 +4,14 @@ title: Übersicht über Abhängigkeitseigenschaften
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 52ab0dfba6261a5e278a42f38ea13c632df400f9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050773"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637385"
 ---
 # <a name="dependency-properties-overview"></a>Übersicht über Abhängigkeitseigenschaften
 
@@ -21,16 +21,16 @@ In diesem Thema wird das Abhängigkeitseigenschaftensystem erläutert, das Ihnen
 
 Eine Abhängigkeitseigenschaft ist eine spezielle Art von Eigenschaft. Es handelt sich um eine Eigenschaft, bei der der Eigenschaftswert von einem dedizierten Eigenschaftensystem nachverfolgt und beeinflusst wird, das Teil der Windows-Runtime ist.
 
-Damit eine Abhängigkeitseigenschaft unterstützt wird, muss das die Eigenschaft definierende Objekt ein [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) sein, d.h. eine Klasse, die irgendwo in der Vererbung die **DependencyObject**-Basisklasse enthält. Viele der Typen, die Sie für Ihre UI-Definitionen für eine UWP-app mit XAML zu verwenden ist eine Unterklasse **DependencyObject** und Unterstützung von Abhängigkeitseigenschaften. Alle Typen, die aus einem Windows-Runtime-Namespace stammen, dessen Name nicht „XAML“ enthält, unterstützen jedoch keine Abhängigkeitseigenschaften. Eigenschaften dieses Typs sind gewöhnliche Eigenschaften, die nicht über das Abhängigkeitsverhalten des Eigenschaftensystems verfügen.
+Damit eine Abhängigkeitseigenschaft unterstützt wird, muss das die Eigenschaft definierende Objekt ein [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) sein, d. h. eine Klasse, die irgendwo in der Vererbung die **DependencyObject**-Basisklasse enthält. Viele der Typen, die Sie für Ihre UI-Definitionen verwenden für eine UWP-app mit XAML kann eine **DependencyObject** -Unterklasse, die Abhängigkeitseigenschaften unterstützen. Alle Typen, die aus einem Windows-Runtime-Namespace stammen, dessen Name nicht „XAML“ enthält, unterstützen jedoch keine Abhängigkeitseigenschaften. Eigenschaften dieses Typs sind gewöhnliche Eigenschaften, die nicht über das Abhängigkeitsverhalten des Eigenschaftensystems verfügen.
 
 Der Zweck von Abhängigkeitseigenschaften besteht darin, es zu ermöglichen, den Wert einer Eigenschaft anhand anderer Eingaben systembedingt zu berechnen (andere Eigenschaften, Ereignisse und Zustände, die während der Ausführung der App eintreten). Zu diesen anderen Eingaben gehören:
 
 -  Externe Eingabe wie Benutzereinstellung
-- Just-In-Time-Mechanismen zur Ermittlung von Eigenschaften, z.B. Datenbindung, Animationen und Storyboards
-- Vorlagen zur mehrfachen Verwendung, z.B. Ressourcen und Stile
+- Just-In-Time-Mechanismen zur Ermittlung von Eigenschaften, z. B. Datenbindung, Animationen und Storyboards
+- Vorlagen zur mehrfachen Verwendung, z. B. Ressourcen und Stile
 - Werte, die aufgrund von Beziehungen mit anderen Elementen in der Elementstruktur bekannt sind (übergeordnete und untergeordnete Elemente).
 
-Eine Abhängigkeitseigenschaft repräsentiert oder unterstützt ein spezifisches Feature des Programmiermodells zum Definieren einer Windows-Runtime-app mit XAML für die UI und c#, Microsoft Visual Basic oder für VisualC++-komponentenerweiterungen (C++ / CX) für Code. Zu diesen Features gehören:
+Eine Abhängigkeitseigenschaft darstellt, oder ein bestimmtes Feature des Programmiermodells für das Definieren einer Windows-Runtime-app mit XAML für die Benutzeroberfläche unterstützt und C#, Microsoft Visual Basic oder Visual C++-komponentenerweiterungen (C++ / CX) für Code. Verfügbare Features:
 
 - Datenbindung
 - Stile
@@ -43,7 +43,7 @@ Eine Abhängigkeitseigenschaft repräsentiert oder unterstützt ein spezifisches
 
 Mit Abhängigkeitseigenschaften werden die grundlegenden Windows-Runtime-Eigenschaftsfunktionen erweitert, indem ein globaler, interner Eigenschaftenspeicher bereitgestellt wird, in dem alle Abhängigkeitseigenschaften einer App zur Laufzeit gesichert werden. Dies ist eine Alternative zur Standardvorgehensweise, bei der die Eigenschaft mit einem privaten Feld abgesichert wird, das in der Eigenschaftsdefinitionsklasse als privat festgelegt ist. Sie können sich diesen internen Eigenschaftenspeicher als einen Satz von Bezeichnern und Werten vorstellen, der für jedes einzelne Objekt vorhanden ist (sofern es sich um ein [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)-Element handelt). Die einzelnen Eigenschaften werden im Speicher nicht anhand des Namens identifiziert, sondern durch eine [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)-Instanz. Vom Eigenschaftensystem wird dieses Implementierungsdetail jedoch meist ausgeblendet: Sie können auf Abhängigkeitseigenschaften normalerweise über einen einfachen Namen (den programmgesteuerten Eigenschaftsnamen in der verwendeten Codesprache oder beim Schreiben von XAML-Code mithilfe eines Attributnamens) zugreifen.
 
-Der Basistyp, der dem Abhängigkeitseigenschaftensystem zugrunde liegt, ist [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Mit **DependencyObject** werden Methoden definiert, die auf die Abhängigkeitseigenschaft zugreifen können. Instanzen einer abgeleiteten **DependencyObject**-Klasse stellen die interne Unterstützung des bereits erwähnten Eigenschaftenspeicherkonzepts bereit.
+Der Basistyp, der dem Abhängigkeitseigenschaftensystem zugrunde liegt, ist [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Mit **DependencyObject** werden Methoden definiert, die auf die Abhängigkeitseigenschaft zugreifen können. Instanzen einer abgeleiteten **DependencyObject** -Klasse stellen die interne Unterstützung des bereits erwähnten Eigenschaftenspeicherkonzepts bereit.
 
 Im Folgenden finden Sie einen Überblick über die Terminologie, die für die Beschreibung der Abhängigkeitseigenschaften verwendet wird:
 
@@ -74,10 +74,9 @@ public bool IsSpinning
 ```
 
 > [!NOTE]
-> Das Beispiel oben ist keine vollständige Anleitung zum Erstellen einer benutzerdefinierten Abhängigkeitseigenschaft. Damit sollen die Konzepte von Abhängigkeitseigenschaften für alle Personen verdeutlicht werden, die es vorziehen, Konzepte über den Code zu erlernen. Ein vollständigeres Beispiel finden Sie unter [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md).
+> Im vorherige Beispiel ist als das vollständige Beispiel zum Erstellen eine benutzerdefinierten Abhängigkeitseigenschaft nicht vorgesehen. Damit sollen die Konzepte von Abhängigkeitseigenschaften für alle Personen verdeutlicht werden, die es vorziehen, Konzepte über den Code zu erlernen. Ein vollständigeres Beispiel finden Sie unter [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md).
 
 ## <a name="dependency-property-value-precedence"></a>Rangfolge von Abhängigkeitseigenschaftswerten 
-
 
 Wenn Sie den Wert einer Abhängigkeitseigenschaft abrufen, erhalten Sie einen Wert, der für diese Eigenschaft mithilfe einer der Eingaben festgelegt wurde, die Teil des Windows-Runtime-Eigenschaftensystems sind. Die Rangfolge von Abhängigkeitseigenschaftswerten wird genutzt, damit vom Windows-Runtime-Eigenschaftensystem Werte auf vorhersehbare Weise berechnet werden können. Es ist auch wichtig, dass Sie mit der grundlegenden Reihenfolge vertraut sind, die für die Rangfolge gilt. Andernfalls kann es passieren, dass Sie eine Eigenschaft auf einer Rangfolgenebene festlegen möchten, während diese von einer anderen Komponente (System, Aufrufe von Dritten, Ihr eigener Code) auf einer anderen Ebene festgelegt wird. Sie sind dann frustriert, weil Sie herausfinden müssen, welcher Eigenschaftswert verwendet wird und woher dieser Wert stammt.
 
@@ -85,14 +84,13 @@ Zum Beispiel sind Stile und Vorlagen als gemeinsamer Ausgangspunkt zum Festlegen
 
 ### <a name="dependency-property-precedence-list"></a>Rangfolgeliste für Abhängigkeitseigenschaften 
 
-
 Im Folgenden wird die maßgebliche Rangfolge beschrieben, die beim Zuweisen des Laufzeitwerts für eine Abhängigkeitseigenschaft im Eigenschaftensystem verwendet wird. Die höchste Priorität befindet sich an erster Stelle der Liste. Eine ausführlichere Erklärung folgt nach dieser Liste.
 
-1. **Animierte Werte:** Aktive Animationen, Animationen von Ansichtszuständen oder Animationen mit [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306)-Verhalten. Eine auf eine Eigenschaft angewendete Animation muss Vorrang vor dem Basiswert (nicht animiert) haben, auch wenn dieser Wert lokal festgelegt wurde, um die Wirksamkeit der Animation sicherzustellen.
-1. **Lokaler Wert:** Ein lokaler Wert kann ganz bequem über den Eigenschaftenwrapper festgelegt werden, was dem Festlegen eines Werts als Attribut oder Eigenschaftselement in XAML gleichkommt. Eine weitere Möglichkeit ist das Aufrufen der [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)-Methode über die Eigenschaft einer bestimmten Instanz. Wenn Sie einen lokalen Wert anhand einer Bindung oder einer statischen Ressource festlegen, werden die Bindung und die statische Ressource in der Rangfolge jeweils als festgelegter lokaler Wert behandelt. Somit werden Referenzen zu Bindungen oder Ressourcen gelöscht, wenn ein neuer lokaler Wert festgelegt wird.
-1. **Auf Vorlagen basierende Eigenschaften:** Ein Element verfügt über diese Eigenschaften, wenn es als Teil einer Vorlage erstellt wurde (über [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) oder [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)).
-1. **Style Setters (Stilsetter):** Werte aus einem [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817)-Element innerhalb der Stile von Seiten- oder Anwendungsressourcen.
-1. **Standardwert:** Eine Abhängigkeitseigenschaft kann in ihren Metadaten einen Standardwert enthalten.
+1. **Animierte Werte:** Aktive Animationen, visuelle Status Animationen oder Animationen mit einem [ **HoldEnd** ](https://msdn.microsoft.com/library/windows/apps/br210306) Verhalten. Eine auf eine Eigenschaft angewendete Animation muss Vorrang vor dem Basiswert (nicht animiert) haben, auch wenn dieser Wert lokal festgelegt wurde, um die Wirksamkeit der Animation sicherzustellen.
+1. **Lokaler Wert:** Ein lokaler Wert festgelegt werden kann, über die Vorteile des Eigenschaftenwrapper, was auch Einstellung als ein Attribut oder Eigenschaftenelement in XAML oder durch einen Aufruf von entspricht dem [ **SetValue** ](https://msdn.microsoft.com/library/windows/apps/br242361) Methode, die mithilfe einer Eigenschaft eine bestimmte Instanz. Wenn Sie einen lokalen Wert anhand einer Bindung oder einer statischen Ressource festlegen, werden die Bindung und die statische Ressource in der Rangfolge jeweils als festgelegter lokaler Wert behandelt. Somit werden Referenzen zu Bindungen oder Ressourcen gelöscht, wenn ein neuer lokaler Wert festgelegt wird.
+1. **Auf Vorlagen basierende Eigenschaften:** Ein Element hat diese, wenn es als Teil einer Vorlage erstellt wurde (über eine [ **"ControlTemplate"** ](https://msdn.microsoft.com/library/windows/apps/br209391) oder [ **DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)).
+1. **Stil-Setter:** Werte aus einer [ **Setter** ](https://msdn.microsoft.com/library/windows/apps/br208817) innerhalb von Stilen einer Seite oder Anwendung Ressourcen.
+1. **Standardwert:** Eine Abhängigkeitseigenschaft kann es sich um einen Standardwert als Teil der Metadaten verfügen.
 
 ### <a name="templated-properties"></a>Auf Vorlagen basierende Eigenschaften
 
@@ -127,9 +125,9 @@ Das Erstellen eines Standardwerts für eine Abhängigkeitseigenschaft mit einem 
 
 Abhängigkeitseigenschaften verfügen auch über Standardwerte, wenn diese Standardwerte in den Metadaten der Eigenschaft nicht explizit definiert wurden. Sofern sie von den Metadaten nicht geändert wurden, können die Standardwerte für die Windows-Runtime-Abhängigkeitseigenschaften in der Regel wie folgt lauten:
 
-- Eine Eigenschaft, die ein Laufzeitobjekt oder den grundlegenden **Object**-Typ (einen *Verweistyp*) verwendet, hat den Standardwert **null**. So ist beispielsweise [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) **null**, bis dafür ein anderer Wert festgelegt oder geerbt wird.
-- Eine Eigenschaft, die einen Basiswert verwendet, z.B. Zahlen oder einen booleschen Wert (einen *Werttyp*), nutzt für diesen Wert eine erwartete Standardangabe. Beispiel: 0für ganze Zahlen und Gleitkommazahlen und **false** für einen booleschen Wert.
-- Eine Eigenschaft, die eine Windows-Runtime-Struktur verwendet, verfügt über einen Standardwert, der per Aufruf des impliziten Standardkonstruktors der Struktur abgerufen wird. Dieser Konstruktor nutzt die Standardangaben für die Basiswertfelder der Struktur. Eine Standardangabe für einen [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)-Wert wird beispielsweise mit den Werten **X** und **Y** als0 initialisiert.
+- Eine Eigenschaft, die ein Laufzeitobjekt oder den grundlegenden **Object**-Typ (einen *Verweistyp*) verwendet, hat den Standardwert **null**. So ist beispielsweise [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)**null**, bis dafür ein anderer Wert festgelegt oder geerbt wird.
+- Eine Eigenschaft, die einen Basiswert verwendet, z. B. Zahlen oder einen booleschen Wert (einen *Werttyp*), nutzt für diesen Wert eine erwartete Standardangabe. Beispiel: 0 für ganze Zahlen und Gleitkommazahlen und **false** für einen booleschen Wert.
+- Eine Eigenschaft, die eine Windows-Runtime-Struktur verwendet, verfügt über einen Standardwert, der per Aufruf des impliziten Standardkonstruktors der Struktur abgerufen wird. Dieser Konstruktor nutzt die Standardangaben für die Basiswertfelder der Struktur. Eine Standardangabe für einen [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)-Wert wird beispielsweise mit den Werten **X** und **Y** als 0 initialisiert.
 - Eine Eigenschaft, die eine Enumeration verwendet, verfügt über einen Standardwert des ersten Members dieser Enumeration. In der Referenz können Sie die Standardwerte der einzelnen Enumerationen einsehen.
 - Eine Eigenschaft, die eine Zeichenfolge verwendet ([**System.String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) für .NET, [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) für C++/CX), verfügt als Standardwert über eine leere Zeichenfolge (**""**).
 - Sammlungseigenschaften werden in der Regel nicht als Abhängigkeitseigenschaften implementiert. Die Gründe hierfür werden weiter unten in diesem Thema erläutert. Wenn Sie jedoch eine benutzerdefinierte Sammlungseigenschaft implementieren und sie als Abhängigkeitseigenschaft verwenden möchten, vermeiden Sie unbedingt ein *unbeabsichtigtes Singleton*. Eine Beschreibung finden Sie am Ende von [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md).
@@ -151,7 +149,7 @@ Im folgenden Beispiel wird der [**Text**](https://msdn.microsoft.com/library/win
 Sie können Datenbindungen auch mit Code anstatt mit XAML erstellen. Informationen finden Sie unter [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257).
 
 > [!NOTE]
-> Bindungen dieser Art werden als lokaler Wert behandelt, um eine Rangfolge von Abhängigkeitseigenschaftswerten zu ermöglichen. Wenn Sie für eine Eigenschaft, für die ursprünglich ein [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)-Wert festgelegt wurde, einen anderen lokalen Wert festlegen, überschreiben Sie die Bindung damit vollständig, und nicht ihren Laufzeitwert. {x:Bind}-Bindungen werden unter Verwendung von generiertem Code implementiert, der einen lokalen Wert für die Eigenschaft festlegt. Wenn Sie für eine Eigenschaft, die {x:Bind} verwendet, einen lokalen Wert festlegen, wird dieser beim nächsten Auswerten der Bindung ersetzt, z.B. wenn eine Eigenschaftsänderung an dessen Quellobjekt erkannt wird.
+> Bindungen wie folgt, werden als ein lokaler Wert zum Zweck der Abhängigkeitseigenschaftswerten behandelt. Wenn Sie für eine Eigenschaft, für die ursprünglich ein [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)-Wert festgelegt wurde, einen anderen lokalen Wert festlegen, überschreiben Sie die Bindung damit vollständig, und nicht ihren Laufzeitwert. {x:Bind}-Bindungen werden unter Verwendung von generiertem Code implementiert, der einen lokalen Wert für die Eigenschaft festlegt. Wenn Sie für eine Eigenschaft, die {x:Bind} verwendet, einen lokalen Wert festlegen, wird dieser beim nächsten Auswerten der Bindung ersetzt, z. B. wenn eine Eigenschaftsänderung an dessen Quellobjekt erkannt wird.
 
 ### <a name="binding-sources-binding-targets-the-role-of-frameworkelement"></a>Bindungsquellen, Bindungsziele und die Rolle von FrameworkElement
 
@@ -164,11 +162,11 @@ Beachten Sie sowohl bei der Verwendung von Code als auch bei XAML, dass [**DataC
 Das Verknüpfen der Bindung ist für die meisten Datenbindungsszenarien nicht die einzige Anforderung. Für eine effektive Bindung in eine oder zwei Richtungen muss die Quelleigenschaft Änderungsbenachrichtigungen unterstützen, die an das Bindungssystem und somit an das Ziel weitergegeben werden. Für benutzerdefinierte Bindungsquellen bedeutet dies, dass die Eigenschaft eine Abhängigkeitseigenschaft sein muss, oder dass das Objekt [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) unterstützt. Sammlungen sollten die Schnittstelle [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) unterstützen. Bestimmte Klassen unterstützen diese Schnittstellen in ihren Implementierungen, sodass sie sich als Basisklasse für Datenbindungen anbieten. Ein Beispiel für eine solche Klasse ist [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx). Weitere Informationen zu Datenbindungen und zum Zusammenhang zwischen Datenbindungen und dem Eigenschaftensystem finden Sie unter [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 > [!NOTE]
-> Von den hier aufgeführten Typen werden Microsoft .NET-Datenquellen unterstützt. C++/CX-Datenquellen nutzen andere Schnittstellen für Änderungsbenachrichtigungen oder feststellbares Verhalten. Weitere Informationen finden Sie unter [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946).
+> Die Typen aufgelisteten hier Unterstützung Microsoft .NET Datenquellen. C++/CX-Datenquellen nutzen andere Schnittstellen für Änderungsbenachrichtigungen oder feststellbares Verhalten. Weitere Informationen finden Sie unter [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 ### <a name="styles-and-templates"></a>Stile und Vorlagen
 
-Stile und Vorlagen sind zwei Szenarien für Eigenschaften, die als Abhängigkeitseigenschaften definiert sind. Stile sind für das Festlegen von Eigenschaften geeignet, mit denen die UI der App definiert wird. Stile werden als Ressourcen in XAML festgelegt, und zwar entweder als Eintrag in einer [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)-Sammlung oder in separaten XAML-Dateien, z.B. Designressourcenwörterbüchern. Stile interagieren mit dem Eigenschaftensystem, da sie sog. „Setter“ für Eigenschaften enthalten. Die wichtigste Eigenschaft hier ist die Eigenschaft [**Control.Template**](https://msdn.microsoft.com/library/windows/apps/br209465) einer Klasse [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390): Diese Eigenschaft definiert den größten Teil der visuellen Darstellung und des visuellen Zustands der Klasse **Control**. Weitere Informationen zu Stilen und XAML-Beispiele, in denen [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) definiert und Setter verwendet werden, finden Sie unter [Formatieren von Steuerelementen](https://msdn.microsoft.com/library/windows/apps/mt210950).
+Stile und Vorlagen sind zwei Szenarien für Eigenschaften, die als Abhängigkeitseigenschaften definiert sind. Stile sind für das Festlegen von Eigenschaften geeignet, mit denen die UI der App definiert wird. Stile werden als Ressourcen in XAML festgelegt, und zwar entweder als Eintrag in einer [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)-Sammlung oder in separaten XAML-Dateien, z. B. Designressourcenwörterbüchern. Stile interagieren mit dem Eigenschaftensystem, da sie sog. „Setter“ für Eigenschaften enthalten. Die wichtigste Eigenschaft hier ist die Eigenschaft [**Control.Template**](https://msdn.microsoft.com/library/windows/apps/br209465) einer Klasse [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390): Diese Eigenschaft definiert den größten Teil der visuellen Darstellung und des visuellen Zustands der Klasse **Control**. Weitere Informationen zu Stilen und XAML-Beispiele, in denen [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) definiert und Setter verwendet werden, finden Sie unter [Formatieren von Steuerelementen](https://msdn.microsoft.com/library/windows/apps/mt210950).
 
 Werte, die aus Stilen oder Vorlagen stammen, sind zurückgestellte Werte (ähnlich wie bei Bindungen). So können Benutzer von Steuerelementen neue Vorlagen für Steuerelemente erstellen oder Stile neu definieren. Aus diesem Grund können Eigenschaftensetter in Stilen nur für Abhängigkeitseigenschaften und nicht für normale Eigenschaften verwendet werden.
 
@@ -186,11 +184,11 @@ Das Prinzip des Zustandsautomaten liegt der Verwendung von Storyboardanimationen
 
 Aufgrund des Verhaltens bei einem „PropertyChanged“-Ereignis wird eine Abhängigkeitseigenschaft überhaupt erst Abhängigkeitseigenschaft genannt. Die Erhaltung der Gültigkeit von Eigenschaftswerten in Konstellationen, in denen andere Eigenschaften den Wert der ersten Eigenschaft beeinflussen können, ist bei vielen Frameworks eine komplexe Herausforderung bei der Entwicklung. Im Windows-Runtime-Eigenschaftensystem kann jede Abhängigkeitseigenschaft ein Callback festlegen, das aufgerufen wird, sobald sich der Eigenschaftswert ändert. Mit diesem Callback können zugehörige Eigenschaften in der Regel synchron benachrichtigt oder deren Werte geändert werden. Viele bestehende Abhängigkeitseigenschaften haben ein Verhalten bei einem "PropertyChanged"-Ereignis. Sie können auch ein ähnliches Callback-Verhalten für Abhängigkeitseigenschaften festlegen und Ihre eigenen PropertyChanged-Callbacks implementieren. Unter [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md) finden Sie ein entsprechendes Beispiel.
 
-Mit Windows10 wird die Methode [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) eingeführt. Dadurch kann Anwendungscode für Benachrichtigungen registriert werden, wenn die angegebene Abhängigkeitseigenschaft für eine Instanz von [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) geändert wird.
+Mit Windows 10 wird die Methode [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) eingeführt. Dadurch kann Anwendungscode für Benachrichtigungen registriert werden, wenn die angegebene Abhängigkeitseigenschaft für eine Instanz von [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) geändert wird.
 
 ### <a name="default-value-and-clearvalue"></a>Standardwert und **ClearValue**
 
-Für eine Abhängigkeitseigenschaft kann ein Standardwert als Teil der Metadaten der jeweiligen Eigenschaft definiert werden. Für eine Abhängigkeitseigenschaft wird ihr Standardwert nicht irrelevant, nachdem die Eigenschaft zum ersten Mal festgelegt wurde. Der Standardwert gilt zur Laufzeit möglicherweise jeweils erneut, wenn eine andere Determinante in der Wertrangfolge entfernt wird. (Der Vorrang von Abhängigkeitseigenschaftenwerten wird im nächsten Abschnitt erläutert). Zum Beispiel entfernen Sie unter Umständen zwar bewusst einen Formatwert oder eine Animation, der/die für eine Eigenschaft gilt, möchten aber, dass der Wert weiterhin ein angemessener Standardwert ist. Der Standardwert der Abhängigkeitseigenschaft kann diesen Wert bereitstellen, ohne dass die Werte der einzelnen Eigenschaften zusätzlich festgelegt werden müssen.
+Für eine Abhängigkeitseigenschaft kann ein Standardwert als Teil der Metadaten der jeweiligen Eigenschaft definiert werden. Für eine Abhängigkeitseigenschaft wird ihr Standardwert nicht irrelevant, nachdem die Eigenschaft zum ersten Mal festgelegt wurde. Der Standardwert gilt zur Laufzeit möglicherweise jeweils erneut, wenn eine andere Determinante in der Wertrangfolge entfernt wird. (Abhängigkeitseigenschaftswerten wird im nächsten Abschnitt erläutert.) Beispielsweise werden Sie möglicherweise absichtlich entfernen, ein Style-Wert oder eine Animation, die auf eine Eigenschaft angewendet wird, jedoch den Wert auf einen geeigneten Standardwert ist, nachdem Sie dies tun werden sollen. Der Standardwert der Abhängigkeitseigenschaft kann diesen Wert bereitstellen, ohne dass die Werte der einzelnen Eigenschaften zusätzlich festgelegt werden müssen.
 
 Sie können eine Eigenschaft auch dann absichtlich auf den Standardwert festlegen, wenn die Eigenschaft bereits einem lokalen Wert zugewiesen wurde. Rufen Sie die [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)-Methode auf, um einen Wert auf den Standardwert zurückzusetzen und andere Teilnehmer in der Rangfolge zu aktivieren, die den Standardwert, nicht aber einen lokalen Wert außer Kraft setzen können (verweisen Sie auf die zu löschende Eigenschaft als Methodenparameter). Sie möchten nicht in allen Fällen, dass die Eigenschaft genau den Standardwert verwendet. Das Löschen des lokalen Werts und das Zurücksetzen auf den Standardwert kann jedoch zur Aktivierung eines anderen Elements in der Rangfolge führen, das sofort behandelt werden soll, z. B. bei der Verwendung des Werts aus einem Style Setter in einer Steuerelementvorlage.
 
@@ -206,12 +204,12 @@ Die Threadingmerkmale von [**DependencyObject**](https://msdn.microsoft.com/libr
 
 - [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md)
 - [Übersicht über angefügte Eigenschaften](attached-properties-overview.md)
-- [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
-- [Storyboardanimationen](https://msdn.microsoft.com/library/windows/apps/mt187354)
-- [Erstellen von Windows-Runtime-Komponenten](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-- [XAML-Benutzer und benutzerdefinierte Steuerelemente](https://go.microsoft.com/fwlink/p/?linkid=238581)
+- [Die Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
+- [Niedergeschrieben Animationen](https://msdn.microsoft.com/library/windows/apps/mt187354)
+- [Erstellen Windows-Runtime-Komponenten](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
+- [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://go.microsoft.com/fwlink/p/?linkid=238581)
 
-## <a name="apis-related-to-dependency-properties"></a>APIs für Abhängigkeitseigenschaften
+## <a name="apis-related-to-dependency-properties"></a>APIs im Zusammenhang mit Abhängigkeitseigenschaften
 
 - [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 - [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)

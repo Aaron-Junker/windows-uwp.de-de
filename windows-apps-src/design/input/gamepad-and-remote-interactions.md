@@ -1,57 +1,57 @@
 ---
-Description: Optimize your app for input from Xbox gamepad and remote control.
-title: Interaktionen von Gamepad und Fernbedienung
+Description: Optimieren Sie Ihre app für die Eingabe von Xbox-Gamepad und Remotesteuerung.
+title: Interaktionen mit Gamepad und Fernbedienung
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1292051362b9751d41b530f6b47f226d36228252
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059744"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592805"
 ---
-# <a name="gamepad-and-remote-control-interactions"></a>Interaktionen von Gamepad und Fernbedienung
+# <a name="gamepad-and-remote-control-interactions"></a>Interaktionen mit Gamepad und Fernbedienung
 
 ![Bild von Tastatur und Gamepad](images/keyboard/keyboard-gamepad.jpg)
 
-***Bei vielen interaktionsfunktionen werden von der Tastatur, Gamepad und Fernbedienung gemeinsam verwendet.***
+***Viele Interaktion Oberflächen werden von der Tastatur, Gamepad und Remotesteuerung gemeinsam genutzt.***
 
-Erstellen Sie die interaktionserfahrungen in Ihrer universellen Windows-Plattform (UWP)-Anwendung, die sicherstellen, dass Ihre app verwendet werden und über beide die herkömmlichen Eingabetypen des PCs, Laptops und Tablets (Maus, Tastatur, Fingereingabe und So weiter) als auch die Eingabetypen zugänglich ist typisch für die TV und Xbox *10 Fuß -* Erfahrung, z. B. Gamepad und Fernbedienung zu erhalten.
+Erstellen Sie die Interaktion von Funktionen in Ihren universellen Windows-Plattform (UWP)-Anwendungen, die sicherstellen, dass Ihre app verwendet werden und über beide dem herkömmlichen Eingabetyp von PCs, Laptops und Tablets (Maus, Tastatur, Touch, usw.) als auch die Eingabetypen zugänglich ist typische der Xbox und TV- *10-Fuß* auftreten, z. B. die Gamepad und Remotesteuerung.
 
-Allgemeine Design-Anleitung für UWP-Anwendungen in der *10-Fuß* -Erfahrung finden Sie unter [Entwerfen für Xbox und Fernsehgeräte](../devices/designing-for-tv.md) .
+Finden Sie unter [Entwerfen für Xbox und TV-](../devices/designing-for-tv.md) für die allgemeinen Entwurfsrichtlinien für UWP-Anwendungen in der *10-Fuß* auftreten.
 
 ## <a name="overview"></a>Übersicht
 
-In diesem Thema besprochen, was Sie sollten berücksichtigen Sie beim Entwurf für die steuerelementinteraktion (oder was nicht, wenn die Plattform für Sie danach sucht,), und stellen Richtlinien, Empfehlungen und Vorschläge zum Erstellen von UWP-Anwendungen, die zu unabhängig von Geräte-, Eingabetyp, oder Benutzer Fähigkeiten und Voreinstellungen.
+In diesem Thema wird erläutert, was sollten Sie berücksichtigen, die in Ihrem Entwurf Interaktion (oder was nicht, wenn die Plattform für Sie danach sucht,), und Anleitungen, Empfehlungen und Vorschläge zum Erstellen von UWP-Anwendungen, die zu unabhängig von Gerät "," Eingabetyp "oder" Benutzer Zugehörigkeit "und" Einstellungen ".
 
-Fazit, Ihre Anwendung sollte intuitiv und benutzerfreundlich in der *2-Fuß* -Umgebung wie in der *10-Fuß* -Umgebung (und umgekehrt). Unterstützen Sie bevorzugte Geräte des Benutzers zu, stellen Sie sicher, dass die Benutzeroberfläche konzentrieren Sie sich einen klaren und unverkennbaren, ordnen Sie Inhalte so Navigation konsistent und vorhersagbar sind, und stellen Benutzern den kürzesten Weg, was sie tun möchten.
+Kernpunkt ist, Ihre Anwendung sollte sein, so intuitiv und einfach zu verwenden, in der *2-Fuß* Umgebung, wie er befindet sich in der *10-Fuß* Umgebung (und umgekehrt). Unterstützen Sie bevorzugte Geräte des Benutzers zu, können Sie die Benutzeroberfläche deaktivieren und unverkennbaren konzentrieren, Anordnen von Inhalt, also Navigation konsistenter und verlässlicher und Benutzern den kürzesten Pfad, was sie tun möchten.
 
 > [!NOTE]
 > Die meisten Codeausschnitte in diesem Thema wurden in XAML/C# verfasst. Die Grundsätze und Konzepte gelten jedoch für alle UWP-Apps. Wenn Sie eine HTML/JavaScript-UWP-App für Xbox entwickeln, steht Ihnen die hervorragende [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki)-Bibliothek auf GitHub zur Verfügung.
 
 
-## <a name="optimize-for-both-2-foot-and-10-foot-experiences"></a>Optimieren Sie für sowohl 2-Fuß- und 10-Fuß-Umgebungen
+## <a name="optimize-for-both-2-foot-and-10-foot-experiences"></a>Optimieren der 2-Fuß, und 10 Fuß Umgebungen
 
-Implementieren Sie zumindest wird empfohlen, dass Sie testen Sie Ihre Anwendungen, um sicherzustellen, dass sie gut in 2-Fuß- und 10-Fuß-Szenarien ausgeführt werden, und alle Funktionen sichtbar und für die Xbox [-Gamepad und Fernbedienung](#gamepad-and-remote-control)zugänglich ist.
+Zumindest wird empfohlen, dass Sie Ihre Anwendungen aus, um sicherzustellen, dass sie funktionieren gut in 2-Fuß und 10-Fuß Szenarien testen und, dass alle Funktionen auffindbar und zugegriffen werden kann, für die Xbox [Gamepad und Remotesteuerung](#gamepad-and-remote-control).
 
-Hier sind einige andere Möglichkeiten, die Sie Ihre app für die Verwendung in sowohl 2-Fuß- und 10-Fuß-Umgebungen und mit alle Eingabegeräte (jede Links zu den entsprechenden Abschnitt in diesem Thema) optimieren können.
+Hier sind einige weitere Möglichkeiten, die Sie Ihrer app für die Verwendung in 2-Fuß, und 10 Fuß Benutzeroberfläche und mit allen Eingabegeräte (jede Links in den entsprechenden Abschnitt in diesem Thema) optimieren können.
 
 > [!NOTE]
-> Da Xbox-Gamepads und Fernbedienungen viele UWP-Tastaturverhalten und Funktionen zu unterstützen, sind diese Empfehlungen für beide Eingabetypen geeignet. Ausführlichere Informationen der Tastatur finden Sie unter [Tastaturinteraktionen](keyboard-interactions.md) .
+> Da Xbox Gamepads und fernsteuerungen viele Verhalten für UWP-Tastatur und Erfahrungen unterstützen, sind diese Empfehlungen für beide Eingabetypen geeignet. Finden Sie unter [Tastatur Interaktionen](keyboard-interactions.md) Ausführlichere Informationen der Tastatur.
 
 | Feature        | Beschreibung           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY-Fokusnavigation und -interaktion](#xy-focus-navigation-and-interaction) | **XY-Fokusnavigation** können die Benutzer auf Benutzeroberfläches Ihrer app navigieren. Dies begrenzt Benutzer jedoch auf eine Navigation nach oben, unten, links und rechts. In diesem Abschnitt finden Sie Empfehlungen für den Umgang mit diesen und anderen Überlegungen. |
-| [Mausmodus](#mouse-mode)|XY-Fokusnavigation ist nicht praktisch, oder auch möglich, für einige Arten von Anwendungen, z. B. Karten oder Zeichnen und Zeichnen von apps. In diesen Fällen können **mausmodus** Benutzer, die mit einem Gamepad oder Fernbedienung zu erhalten, wie eine Maus auf einem PC frei navigieren.|
-| [Fokusanzeige](#focus-visual)  | Die Fokusanzeige ist ein Rahmen, der das aktuell fokussierte Element der Benutzeroberfläche hervorhebt. Dadurch wird den Benutzer die Benutzeroberfläche schnell zu erkennen, sie zu navigieren oder interagieren.  |
-| [Fokusaktivierung](#focus-engagement) | Fokusaktivierung erfordert, dass den Benutzer, drücken die Schaltfläche " **A" oder "Select** " auf einem Gamepad oder Fernbedienung zu erhalten, wenn ein UI-Element den Fokus hat, um mit ihm zu interagieren. |
-| [Hardwaretasten](#hardware-buttons) | Bieten das Gamepad und Fernbedienung unterscheiden sich Tasten und Konfigurationen. |
+| [XY Fokusnavigation und Interaktion](#xy-focus-navigation-and-interaction) | **XY-Fokusnavigation** ermöglicht es dem Benutzer, um die UI Ihrer app zu navigieren. Dies begrenzt Benutzer jedoch auf eine Navigation nach oben, unten, links und rechts. In diesem Abschnitt finden Sie Empfehlungen für den Umgang mit diesen und anderen Überlegungen. |
+| [Mausmodus](#mouse-mode)|XY-Fokusnavigation ist es nicht zweckmäßig oder möglich, für einige Typen von Anwendungen, z. B. Zuordnungen oder Zeichnen und apps zu zeichnen. In diesen Fällen **mausmodus** können Benutzer navigieren frei mit einer Gamepad oder die Remotesteuerung, wie eine Maus auf einem PC.|
+| [Visuelle Fokuselement](#focus-visual)  | Das visuelle Fokuselement ist ein Rahmen, der das derzeit fokussierte Element der Benutzeroberfläche werden hervorgehoben. Dadurch wird den Benutzer die Benutzeroberfläche schnell zu identifizieren, sie Navigieren durch oder interagieren.  |
+| [Fokus engagement](#focus-engagement) | Fokus Engagement erfordert, dass den Benutzer drückt die **ein/Select** Schaltfläche auf einem Gamepad oder die Remotesteuerung, wenn ein UI-Element den Fokus besitzt, um damit zu interagieren. |
+| [Hardwaretasten](#hardware-buttons) | Geben Sie den Gamepad und Remotesteuerung sehr unterschiedliche Schaltflächen und Konfigurationen. |
 
 ## <a name="gamepad-and-remote-control"></a>Gamepad und Remotesteuerung
 
@@ -71,7 +71,7 @@ Wie Sie im Diagramm erkennen können, werden einige Schaltflächen auf Gamepads 
 
 Die folgende Tabelle enthält eine Liste aller Hardwaretasten, die von UWP-Apps unterstützt werden, sowie Angaben dazu, welche Eingabegeräte diese unterstützen.
 
-| Taste                    | Gamepad   | Fernbedienung    |
+| Schaltfläche                    | Gamepad   | Fernbedienung    |
 |---------------------------|-----------|-------------------|
 | A/Auswahl-Taste           | Ja       | Ja               |
 | B/Zurück-Taste             | Ja       | Ja               |
@@ -96,11 +96,11 @@ Die UWP ordnet automatisch das vorhandene Tastatureingabeverhalten den Gamepad- 
 | Tastatur              | Gamepad/Fernbedienung                        |
 |-----------------------|---------------------------------------|
 | Pfeiltasten            | Steuerkreuz (D-Pad; auch linker Stick auf Gamepads)    |
-| Leertaste              | A/Auswahl-Taste                       |
-| Eingabe                 | A/Auswahl-Taste                       |
-| Escape                | B/Zurück-Taste*                        |
+| LEERTASTE              | A/Auswahl-Taste                       |
+| EINGABETASTE                 | A/Auswahl-Taste                       |
+| Beenden                | B/Zurück-Taste*                        |
 
-\*Wenn für die B-Taste weder das [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)- noch das [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignis von der App behandelt werden, wird das [SystemNavigationManager.BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested)-Ereignis ausgelöst, das zu einer Rückwärtsnavigation innerhalb der App führen sollte. Dieses Verhalten müssen Sie allerdings selbst implementieren, wie im folgenden Codeausschnitt gezeigt:
+\*Wenn weder die [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) noch [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) Ereignisse für die Schaltfläche "B" von der Anwendung behandelt den [SystemNavigationManager.BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) Ereignis wird ausgelöst, welche Führen Sie im Navigation in der app ein. Dieses Verhalten müssen Sie allerdings selbst implementieren, wie im folgenden Codeausschnitt gezeigt:
 
 ```csharp
 // This code goes in the MainPage class
@@ -159,10 +159,10 @@ Die folgende Tabelle zeigt die in die UWP integrierte Beschleunigerunterstützun
 |---------------|------------|--------------|----------------|------------------|
 | Bild auf/Bild ab  | Bild auf/Bild ab | Linker/rechter Trigger | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Ansichten, die den vertikalen Bildlauf unterstützen
 | Seite nach links/rechts | Keine | Linker/rechter Bumper | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Ansichten, die den horizontalen Bildlauf unterstützen
-| Vergrößern/Verkleinern        | STRG +/- | Linker/rechter Trigger | Keine | `ScrollViewer`, Ansichten, die das Vergrößern/Verkleinern unterstützen |
+| Vergrößern/Verkleinern        | STRG +/- | Linker/rechter Trigger | Keine | `ScrollViewer`, Ansichten, die Unterstützung von vergrößern und verkleinern |
 | Navigationsbereich öffnen/schließen | Keine | Ansicht | Keine | Navigationsbereiche |
 | [Suche](#search-experience) | Keine | Y-Taste | Keine | Verknüpfung mit der Hauptsuchfunktion in der App |
-| [Öffnen Sie das Kontextmenü](#commandbar-and-contextflyout) | Klicken Sie mit der rechten Maustaste auf | Menü-Taste | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Kontextmenüs |
+| [Kontextmenü öffnen](#commandbar-and-contextflyout) | Rechtsklick | Menü-Taste | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Kontextmenüs |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>XY-Fokusnavigation und -interaktion
 
@@ -269,7 +269,7 @@ Mithilfe dieser `XYFocus`-Eigenschaften kann ein übergeordnetes Steuerelement a
 </StackPanel>
 ```
 
-Im obigen Beispiel gilt: Wenn `Button`2 den Fokus besitzt und der Benutzer nach rechts navigiert, ist `Button`4 der beste Fokuskandidat. Der Fokus wechselt jedoch zu `Button`3, da das übergeordnete `UserControl`-Element dies erzwingt, wenn die visuelle Struktur verlassen wird.
+Im obigen Beispiel gilt: Wenn `Button` 2 den Fokus besitzt und der Benutzer nach rechts navigiert, ist `Button` 4 der beste Fokuskandidat. Der Fokus wechselt jedoch zu `Button` 3, da das übergeordnete `UserControl`-Element dies erzwingt, wenn die visuelle Struktur verlassen wird.
 
 ### <a name="path-of-least-clicks"></a>Pfad der wenigsten Klicks
 
@@ -284,15 +284,15 @@ Durch das einfache Neuanordnen der Benutzeroberfläche, sodass sich nicht notwen
 
 ### <a name="commandbar-and-contextflyout"></a>CommandBar und ContextFlyout
 
-Bei Verwendung einer [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) müssen Sie das Problem hinsichtlich Bildläufen durch Listen berücksichtigen, wie in [Problem: Benutzeroberflächenelemente nach langen bildlauffähigen Listen/Rastern](#problem-ui-elements-located-after-long-scrolling-list-grid) beschrieben. Die folgende Abbildung zeigt ein Benutzeroberflächenlayout mit `CommandBar` am Ende einer Liste/eines Rasters. Der Benutzer müsste einen Bildlauf ganz nach unten durch die Liste/das Rasters ausführen, um zu `CommandBar` zu gelangen.
+Bei Verwendung einer [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar), Bedenken Sie das Problem durch eine Liste blättern, siehe [Problem: Elemente der Benutzeroberfläche befindet sich nach der langen Liste/Bildlauf](#problem-ui-elements-located-after-long-scrolling-list-grid). Die folgende Abbildung zeigt ein Benutzeroberflächenlayout mit `CommandBar` am Ende einer Liste/eines Rasters. Der Benutzer müsste einen Bildlauf ganz nach unten durch die Liste/das Rasters ausführen, um zu `CommandBar` zu gelangen.
 
 ![CommandBar am unteren Ende einer Liste/eines Rasters](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-Was geschieht, wenn Sie `CommandBar` an einer Stelle *oberhalb* der Liste/des Rasters platzieren? Auch wenn ein Benutzer, der einen Bildlauf nach unten durch die Liste/das Raster ausführt, einen Bildlauf zurück nach oben ausführen müsste, um zu `CommandBar` zu gelangen, bedeutet dies etwas weniger Navigationsaufwand als bei der vorherigen Konfiguration. Beachten Sie, dass dies voraussetzt, dass sich der anfängliche Fokus Ihrer App neben oder oberhalb von `CommandBar` befindet. Dieser Ansatz funktioniert weniger gut, wenn sich der anfängliche Fokus unterhalb der Liste/des Rasters befindet. Wenn diese `CommandBar`-Elemente globale Aktionselemente sind, auf die nicht sehr häufig zugegriffen werden muss (beispielsweise eine **Sync**-Schaltfläche), ist es möglicherweise zulässig, diese oberhalb der Liste/des Rasters zu platzieren.
+Was geschieht, wenn Sie platzieren die `CommandBar` *oben* Liste/Raster? Auch wenn ein Benutzer, der einen Bildlauf nach unten durch die Liste/das Raster ausführt, einen Bildlauf zurück nach oben ausführen müsste, um zu `CommandBar` zu gelangen, bedeutet dies etwas weniger Navigationsaufwand als bei der vorherigen Konfiguration. Beachten Sie, dass dies voraussetzt, dass sich der anfängliche Fokus Ihrer App neben oder oberhalb von `CommandBar` befindet. Dieser Ansatz funktioniert weniger gut, wenn sich der anfängliche Fokus unterhalb der Liste/des Rasters befindet. Wenn diese `CommandBar`-Elemente globale Aktionselemente sind, auf die nicht sehr häufig zugegriffen werden muss (beispielsweise eine **Sync**-Schaltfläche), ist es möglicherweise zulässig, diese oberhalb der Liste/des Rasters zu platzieren.
 
 Zwar ist das vertikale Stapeln der `CommandBar`-Elemente nicht möglich, die Platzierung gegen die Bildlaufrichtung (etwa links oder rechts von einer vertikal laufenden Liste oder über/unter einer horizontal laufenden Liste) ist eine weitere Option, die Sie nutzen können, wenn dies gut zu Ihrem Benutzeroberflächenlayout passt.
 
-Wenn Ihre App eine `CommandBar` umfasst, auf deren Elemente die Benutzer zugreifen müssen, sollten Sie diese Elemente möglicherweise innerhalb einer [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)-Eigenschaft platzieren und sie aus der `CommandBar` entfernen. `ContextFlyout` ist eine Eigenschaft von [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) und stellt das dem Element zugeordnete [Kontextmenü](../controls-and-patterns/dialogs-and-flyouts/index.md) dar. Wenn Sie auf einem PC mit der rechten Maustaste auf ein Element mit einem `ContextFlyout` klicken, wird das Kontextmenü eingeblendet. Auf Xbox One geschieht dies beim Drücken der **Menü**-Taste, während ein entsprechendes Element den Fokus hat.
+Wenn Ihre App eine `CommandBar` umfasst, auf deren Elemente die Benutzer zugreifen müssen, sollten Sie diese Elemente möglicherweise innerhalb einer [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)-Eigenschaft platzieren und sie aus der `CommandBar` entfernen. `ContextFlyout` ist eine Eigenschaft des ["UIElement"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) und die [Kontextmenü](../controls-and-patterns/dialogs-and-flyouts/index.md) mit diesem Element verknüpft sind. Wenn Sie auf einem PC mit der rechten Maustaste auf ein Element mit einem `ContextFlyout` klicken, wird das Kontextmenü eingeblendet. Auf Xbox One geschieht dies beim Drücken der **Menü**-Taste, während ein entsprechendes Element den Fokus hat.
 
 ### <a name="ui-layout-challenges"></a>Herausforderungen beim UI-Layout
 
@@ -305,21 +305,21 @@ Um dies zu verdeutlichen, sehen wir uns eine imaginäre App an, die einige diese
 
 Nachfolgend sehen Sie eine fiktive Immobilien-App, die eine Liste zum Verkauf stehender Häuser, eine Karte, Beschreibungen von Immobilien sowie weitere Informationen anzeigt. Diese App stellt Sie vor drei Herausforderungen, denen Sie mit den folgenden Techniken begegnen können:
 
-- [Neuanordnung der UI](#ui-rearrange)
-- [Fokusaktivierung](#engagement)
+- [Neuanordnen der Benutzeroberfläche](#ui-rearrange)
+- [Fokus engagement](#engagement)
 - [Mausmodus](#mouse-mode)
 
 ![Fiktive Immobilien-App](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
 
-#### Problem: UI-Elemente, die sich hinter einer langen Bildlaufliste oder einem Raster befinden <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
+#### Problem: Elemente der Benutzeroberfläche befindet sich hinter einer langen Liste/Bildlauf <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-Die [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) der Eigenschaften in der folgenden Abbildung ist eine sehr lange Bildlaufliste. Wenn [Engagement](#focus-engagement) *nicht* für die `ListView` erforderlich ist, wenn der Benutzer zu der Liste navigiert, wird der Fokus auf das erste Element in der Liste gesetzt. Damit der Benutzer zur Schaltfläche **Zurück** oder **Weiter** gelangen kann, muss er alle Elemente der Liste durchlaufen. In Fällen wie diese, bei denen der Benutzer die gesamte Liste mühsam durchlaufen muss – d.h. wenn die Liste ganz einfach zu lang ist, um noch akzeptablen Benutzerkomfort zu ermöglichen – sollten Sie andere Optionen erwägen.
+Die [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) der Eigenschaften in der folgenden Abbildung ist eine sehr lange Bildlaufliste. Wenn [Engagement](#focus-engagement)*nicht* für die `ListView` erforderlich ist, wenn der Benutzer zu der Liste navigiert, wird der Fokus auf das erste Element in der Liste gesetzt. Damit der Benutzer zur Schaltfläche **Zurück** oder **Weiter** gelangen kann, muss er alle Elemente der Liste durchlaufen. In Fällen wie diese, bei denen der Benutzer die gesamte Liste mühsam durchlaufen muss – d.h. wenn die Liste ganz einfach zu lang ist, um noch akzeptablen Benutzerkomfort zu ermöglichen – sollten Sie andere Optionen erwägen.
 
 ![Immobilien-App: Eine Liste mit 50 Elementen erfordert 51 Klicks, bis die Schaltflächen am Ende erreicht sind](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
 #### <a name="solutions"></a>Lösungen
 
-**Neuanordnung der UI <a name="ui-rearrange"></a>**
+**Neuanordnen der Benutzeroberfläche <a name="ui-rearrange"></a>**
 
 Sofern nicht der anfängliche Fokus auf das Ende der Seite gesetzt ist, sind über einer langen Bildlaufliste platzierte UI-Elemente typischerweise einfacher erreichbar, als solche unterhalb einer solchen Liste.
 Wenn dieses neue Layout für andere Geräte funktioniert, kann das Ändern des Layouts für alle Gerätefamilien kostengünstiger sein als das Vornehmen spezieller UI-Änderungen nur für die Xbox One.
@@ -327,20 +327,20 @@ Weiterhin gilt, dass die Platzierung von UI-Elementen gegen die Bildlaufrichtung
 
 ![Immobilien-App: Platzieren von Schaltflächen oberhalb einer langen Bildlaufliste](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-**Fokusaktivierung <a name="engagement"></a>**
+**Fokus engagement <a name="engagement"></a>**
 
 Ist die Aktivierung *erforderlich*, wird die gesamte `ListView` zu einem einzigen Fokusziel. Der Benutzer kann die Inhalte der Liste übergehen, um zum nächsten fokussierbaren Element zu gelangen. Erfahren Sie mehr darüber, welche Steuerelemente die Aktivierung unterstützen, und wie Sie sie in der [Fokusaktivierung](#focus-engagement) verwenden können.
 
 ![Immobilien-App: Einstellen der Aktivierung als erforderlich, damit die Schaltflächen „Zurück/Weiter“ mit nur einem Klick erreicht werden können](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
 
-#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>Problem: ScrollViewer ohne fokussierbare Elemente
+#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>Problem: ScrollViewer-Element ohne Fokus Elemente
 
 Da die XY-Fokusnavigation darauf basiert, dass jeweils zu einem fokussierbaren UI-Element navigiert wird, kann ein [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) ohne fokussierbare Elemente (etwa einer, der, wie der in diesem Beispiel, nur Text enthält) ein Szenario verursachen, in dem der Benutzer nicht alle Inhalte in dem `ScrollViewer` anzeigen kann.
 Lösungen für dieses und ähnliche Szenarien finden Sie unter [Fokusaktivierung](#focus-engagement).
 
-![Immobilien-App: ScrollViewer mit lediglich Text](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
+![Immobilien-app: ScrollViewer mit nur-text](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
-#### <a name="problem-free-scrolling-ui"></a>Problem: UI mit freiem Bildlauf
+#### <a name="problem-free-scrolling-ui"></a>Problem: UI-Rollen
 
 Wenn Ihre App eine UI mit freiem Bildlauf benötigt, etwa eine Zeichenoberfläche oder, wie in diesem Beispiel, eine Karte, ist die XY-Fokus-Navigation ganz einfach nicht geeignet.
 In solchen Fällen können Sie den [Mausmodus](#mouse-mode) aktivieren, damit der Benutzer in einem UI-Element frei navigieren kann.
@@ -432,7 +432,7 @@ Dadurch wird der Cursor nicht angezeigt, wenn Inhalte im Vollbildmodus angezeigt
 
 Die Fokusanzeige ist der Rahmen um das Benutzeroberflächenelement, das zurzeit den Fokus besitzt. Dies hilft Benutzern, sich zu orientieren, damit sie in Ihrer Benutzeroberfläche einfach navigieren können, ohne die Orientierung zu verlieren.
 
-Dank der Hinzufügung einer Anzeigenaktualisierung und zahlreicher Anpassungsoptionen zur Fokusanzeige können Entwickler darauf vertrauen, dass eine einzelne Fokusanzeige gut auf PCs und Xbox One und allen anderen Windows10-Geräten funktioniert, die Tastaturen und/oder Gamepads/Fernbedienungen unterstützen.
+Dank der Hinzufügung einer Anzeigenaktualisierung und zahlreicher Anpassungsoptionen zur Fokusanzeige können Entwickler darauf vertrauen, dass eine einzelne Fokusanzeige gut auf PCs und Xbox One und allen anderen Windows 10-Geräten funktioniert, die Tastaturen und/oder Gamepads/Fernbedienungen unterstützen.
 
 Während die gleiche Fokusanzeige auf verschiedenen Plattformen verwendet werden kann, unterscheidet sich der Kontext, in dem der Benutzer diese antrifft, für die 10-Fuß-Erfahrung etwas. Sie sollten davon ausgehen, dass der Benutzer nicht dem gesamten Fernsehbildschirm seine volle Aufmerksamkeit schenkt und es daher wichtig ist, dass das aktuell fokussierte Element für den Benutzer jederzeit deutlich erkennbar ist, um eine frustrierende Suche nach der Anzeige zu vermeiden.
 
@@ -450,7 +450,7 @@ Eine Fokusanzeige sollte stets auf dem Bildschirm sichtbar sein, damit Benutzer 
 
 Eine Ausnahme von dieser Regel wären die Vollbild-Funktionen wie das Abspielen von Videos oder das Anzeigen von Bildern. In diesen Fällen sollte die Fokusanzeige nicht sichtbar sein.
 
-### <a name="reveal-focus"></a>Einblendungen mit Fokus
+### <a name="reveal-focus"></a>Reveal-Fokus
 
 Reveal-focus sind Lichteffekte, die den Rahmen des fokussierbaren Elementes animieren, wenn der Benutzer den Fokus des Gamepad oder der Tastatur darauf lenken. Durch die Animation des Scheins um den Rand der fokussierten Elemente, gibt Reveal-Focus dem Benutzer ein besseres Verständnis, wo der Fokus liegt und wohin der Fokus geht.
 
@@ -538,9 +538,9 @@ Dadurch können Benutzer die `ListView` schnell überspringen, indem sie einfach
 
 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) unterscheidet sich etwas von diesen Steuerelementen. Es weist spezifische Besonderheiten auf, die Sie berücksichtigen müssen. Wenn Sie ein `ScrollViewer`-Steuerelement mit fokussierbarem Inhalt besitzen, können Sie standardmäßig durch Navigieren zum `ScrollViewer`-Steuerelement durch dessen fokussierbare Elemente navigieren. Wie in einer `ListView`, müssen Sie einen Bildlauf über alle Elemente ausführen, um von `ScrollViewer` weg zu navigieren.
 
-Wenn `ScrollViewer` *keine* fokussierbaren Inhalte besitzt, also beispielsweise lediglich Text enthält, können Sie `IsFocusEngagementEnabled="True"` festlegen, sodass Benutzer `ScrollViewer` mithilfe der **A/Auswahl**-Taste aktivieren können. Nach der Aktivierung können sie mit dem **Steuerkreuz (D-Pad)/linken Stick** einen Bildlauf durch den Text ausführen und anschließend die **B/Back**-Taste (Zurück-Taste) drücken, um das Steuerelement zu deaktivieren, wenn sie den Vorgang abgeschlossen haben.
+Wenn `ScrollViewer`*keine* fokussierbaren Inhalte besitzt, also beispielsweise lediglich Text enthält, können Sie `IsFocusEngagementEnabled="True"` festlegen, sodass Benutzer `ScrollViewer` mithilfe der **A/Auswahl**-Taste aktivieren können. Nach der Aktivierung können sie mit dem **Steuerkreuz (D-Pad)/linken Stick** einen Bildlauf durch den Text ausführen und anschließend die **B/Back**-Taste (Zurück-Taste) drücken, um das Steuerelement zu deaktivieren, wenn sie den Vorgang abgeschlossen haben.
 
-Ein weiterer Ansatz besteht darin, `IsTabStop="True"` für `ScrollViewer` festzulegen, damit der Benutzer das Steuerelement nicht aktivieren muss. Er kann in diesem Fall einfach den Fokus auf das Steuerelement setzen und anschließend mit dem **Steuerkreuz (D-Pad)/linken Stick** einen Bildlauf ausführen, wenn es innerhalb von `ScrollViewer` keine fokussierbaren Elemente gibt..
+Ein weiterer Ansatz besteht darin, `IsTabStop="True"` für `ScrollViewer` festzulegen, damit der Benutzer das Steuerelement nicht aktivieren muss. Er kann in diesem Fall einfach den Fokus auf das Steuerelement setzen und anschließend mit dem **Steuerkreuz (D-Pad)/linken Stick** einen Bildlauf ausführen, wenn es innerhalb von `ScrollViewer` keine fokussierbaren Elemente gibt.
 
 ### <a name="focus-engagement-defaults"></a>Standardeinstellungen in Bezug auf die Fokusaktivierung
 
@@ -549,21 +549,21 @@ Einige Steuerelemente führen häufig genug dazu, dass Benutzer in einem Steuere
 | Steuerelement               | Standardeinstellung in Bezug auf die Fokusaktivierung  |
 |-----------------------|---------------------------|
 | CalendarDatePicker    | Ein                        |
-| FlipView              | Aus                       |
-| GridView              | Aus                       |
-| ListBox               | Aus                       |
-| ListView              | Aus                       |
-| ScrollViewer          | Aus                       |
-| SemanticZoom          | Aus                       |
+| FlipView              | Deaktiviert                       |
+| GridView              | Deaktiviert                       |
+| ListBox               | Deaktiviert                       |
+| ListView              | Deaktiviert                       |
+| ScrollViewer          | Deaktiviert                       |
+| SemanticZoom          | Deaktiviert                       |
 | Slider                | Ein                        |
 
 Alle anderen UWP-Steuerelemente zeigen keine Änderungen in Bezug auf Verhalten oder Anzeige, wenn `IsFocusEngagementEnabled="True"` festgelegt wird.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Sie können UWP-Anwendungen, die für ein bestimmtes Gerät oder Erfahrung optimiert sind erstellen, die universelle Windows-Plattform ermöglicht aber auch Sie apps erstellen, die erfolgreich auf allen Geräten, sowohl die 2-Fuß-als auch die 10-Fuß-Umgebungen und unabhängig von der Eingabe verwendet werden kann Gerät oder Benutzer Möglichkeit. Verwenden die Empfehlungen in diesem Artikel können Sie sicherstellen, dass Ihre app so gut wie möglich auf dem Fernseher und einen PC.
+Sie können UWP-Anwendungen, die für ein bestimmtes Gerät oder benutzerfreundlichkeit optimiert werden, jedoch die universelle Windows-Plattform auch können Sie apps erstellen, die auf Geräten, die in 2-Fuß, und 10-Fuß Erfahrungen und unabhängig von der Eingabe erfolgreich verwendet werden kann Gerät oder einen Benutzer die Möglichkeit. Mithilfe der Empfehlungen in diesem Artikel können Sie sicherstellen, dass Ihre app ist so gut, wie es auf den Fernseher und einen PC sein kann.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Entwerfen für Xbox und Fernsehgeräte](../devices/designing-for-tv.md)
-- [Einführung der Geräte für UWP-Apps (Universelle Windows-Plattform)](index.md)
+- [Gerät Primer für apps der universellen Windows-Plattform (UWP)](index.md)

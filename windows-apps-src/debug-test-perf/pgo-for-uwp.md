@@ -1,25 +1,25 @@
 ---
 title: Ausführung der Profile Guided Optimization (PGO) auf Universal Windows Platform- (UWP) Apps
-description: Eine schrittweise Anleitung zum Anwenden von Profile Guided Optimization (PGO) auf Universal Windows-Plattform (UWP) apps.
+description: Eine schrittweise Anleitung für die profilgesteuerte Optimierung (PGO) für apps der universellen Windows-Plattform (UWP) angewendet werden soll.
 ms.date: 02/08/2017
 ms.localizationpriority: medium
 ms.topic: article
 ms.openlocfilehash: 8c19ea1701c6b5e82e66a54223620dace57de4b6
-ms.sourcegitcommit: e83f30486d899401debc782de891c388ba5fc03b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "9062482"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632915"
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>Ausführung der Profile Guided Optimization auf Universal Windows Platform-Apps 
  
-Dieses Thema enthält eine schrittweise Anleitung zum Anwenden von Profile Guided Optimization (PGO) auf Universal Windows Platform- (UWP) Apps. Nicht alle Schrittefür klassische Win32-Anwendungen sind für UWP-Apps verfügbar, wir verfolgen daher das Ziel, den Prozess zu erläutern, der zur Einbeziehung von PGO erforderlich ist, um die Optimierung einfacher und zugänglicher für UWP-Entwickler zu machen.
+Dieses Thema enthält eine schrittweise Anleitung zum Anwenden von Profile Guided Optimization (PGO) auf Universal Windows Platform- (UWP) Apps. Nicht alle Schritte für klassische Win32-Anwendungen sind für UWP-Apps verfügbar, wir verfolgen daher das Ziel, den Prozess zu erläutern, der zur Einbeziehung von PGO erforderlich ist, um die Optimierung einfacher und zugänglicher für UWP-Entwickler zu machen.
 
-Im folgenden finden eine grundlegende exemplarische Vorgehensweise für die Anwendung von PGO für die Standard-DirectX11-App (UWP)-Vorlage mit Visual Studio2015 Update 3.
+Im folgenden finden eine grundlegende exemplarische Vorgehensweise für die Anwendung von PGO für die Standard-DirectX 11-App (UWP)-Vorlage mit Visual Studio 2015 Update 3.
  
-Die Bildschirmfotos in dieser Anleitung basieren auf dem folgenden neuen Projekt: ![Dialogfeld „Neues Projekt“](images/pgo-001.png)
+Die Screenshots in diesem Leitfaden basieren auf dem folgenden neuen Projekt: ![Dialogfeld "Neues Projekt"](images/pgo-001.png)
 
-So wenden Sie PGO auf die DirectX11-App-Vorlage an:
+So wenden Sie PGO auf die DirectX 11-App-Vorlage an:
 
 1. Legen Sie die Lösungskonfiguration auf **Freigabe** fest, oder wählen Sie eine Lösungskonfiguration, in der Sie zur Freigabe bestimmten optimierten Code generieren. Zwar können Sie PGO theoretisch auf einem Debug-Build ausführen, es wäre jedoch ineffektiv, PGO für die Optimierung eines ansonsten nicht optimierten Builds zu verwenden. 
  
@@ -47,7 +47,7 @@ So wenden Sie PGO auf die DirectX11-App-Vorlage an:
 
  `C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\AppX\`
 
- Dieser Schrittist erforderlich, da UWP-Apps nur Bibliotheken laden können, die in ihrem Paket vorhanden sind.
+ Dieser Schritt ist erforderlich, da UWP-Apps nur Bibliotheken laden können, die in ihrem Paket vorhanden sind.
 
  ![Dialogfeld „Neues Projekt“](images/pgo-006.png)
  
@@ -67,9 +67,9 @@ So wenden Sie PGO auf die DirectX11-App-Vorlage an:
   pgosweep.exe App1.exe “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!1.pgc”
   ```
  
-  Die weitere Sammlung könnte auch `App1!CoreScenario.pgc`, `App1!UseCase5.pgc` u.dgl. sein. Wenn die .pgc-Dateien auf diese Weise benannt werden und sich zusammen mit der .pgd-Datei am Build-Speicherort befinden, werden Sie bei der Verknüpfung in Schritt 9 automatisch verknüpft.
+  Weitere werden ermittelt unter Umständen liegen auch `App1!CoreScenario.pgc`, `App1!UseCase5.pgc`usw. Wenn die PGC-Dateien auf diese Weise, und klicken Sie im Ausgabespeicherort Builds, zusammen mit der PGD identisch sind, werden sie beim Verknüpfen von in Schritt 9 automatisch zusammengeführt.
  
-8. OPTIONAL: Standardmäßig werden alle .pgc-Dateien, die wie in Schritt 7 angegeben benannt und neben der .pgd-Datei abgelegt sind, bei der Verknüpfung zusammengeführt und gleich gewichtet, Sie können jedoch weiter steuern, wie bestimmte Durchläufe gewichtet werden. Zu diesem Zweck verwenden Sie das **pgomgr.exe**-Tool, das sich im selben Ordner befindet, in dem Sie zuerst die Kopie von `pgort140.dll` gefunden haben. Um beispielsweise den `CoreScenario`-Durchlauf mit der dreifachen Priorität anderer Durchläufe zusammenzuführen, kann der folgende Befehl verwendet werden:
+8. OPTIONAL: Standardmäßig werden alle PGC-Dateien, die mit dem Namen, wie in Schritt 7 angegebenen und aufgenommen werden neben der PGD zusammengeführt, beim Verknüpfen und gleichmäßig gewichtete, aber Sie können auch mehr besitzen steuern, wie bestimmte Läufen gewichtet werden. Zu diesem Zweck verwenden Sie das **pgomgr.exe**-Tool, das sich im selben Ordner befindet, in dem Sie zuerst die Kopie von `pgort140.dll` gefunden haben. Um beispielsweise den `CoreScenario`-Durchlauf mit der dreifachen Priorität anderer Durchläufe zusammenzuführen, kann der folgende Befehl verwendet werden:
  
  ```
  pgomgr.exe -merge:3 “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!CoreScenario.pgc” “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1.pgd”

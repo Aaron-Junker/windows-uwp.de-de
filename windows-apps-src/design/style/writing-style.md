@@ -1,17 +1,17 @@
 ---
 title: Schreibstil
 description: Die Verwendung der richtigen Sprache und Tonfall ist entscheidend dafür, dass der Text Ihrer App als natürlicher Teil des Designs erscheint.
-keywords: UWP, Windows10, Text, schreiben, Sprache, Tonfall, Design, Benutzeroberfläche, UX
+keywords: UWP, Windows 10, Text, schreiben, Sprache, Tonfall, Design, Benutzeroberfläche, UX
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: aaaf13c455d3d05d5ccfac6b2bd61418f3e8e5bb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116202"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662345"
 ---
 # <a name="writing-style"></a>Schreibstil
 
@@ -246,7 +246,7 @@ Ihre App kann eine größere Zielgruppe erreichen, wenn sie die Bedienungshilfen
 
 ## <a name="techniques-for-non-writers"></a>Verfahren für Nicht-Autoren
 
-Sie müssen kein geschulter oder erfahrener Autor sein, um Ihren Benutzern ein hohes Maß an Benutzerfreundlichkeit bereitzustellen. Wählen Sie die Wörter, die angenehm für Sie klingen – sie werden anderen ebenfalls angenehm sein.. Aber manchmal ist das nicht so einfach, wie es klingt. Wenn Sie Probleme haben, können Ihnen die folgenden Techniken helfen. 
+Sie müssen kein geschulter oder erfahrener Autor sein, um Ihren Benutzern ein hohes Maß an Benutzerfreundlichkeit bereitzustellen. Wählen Sie die Wörter, die angenehm für Sie klingen – sie werden anderen ebenfalls angenehm sein. Aber manchmal ist das nicht so einfach, wie es klingt. Wenn Sie Probleme haben, können Ihnen die folgenden Techniken helfen. 
 
 * Angenommen, Sie sprechen mit einem Freund über Ihre App. Wie würden Sie Ihm die App erklären? Wie würden Sie über die Funktionen sprechen oder Anweisungen geben? Besser noch, sprechen Sie mit einer Person über die App, die diese noch nie verwendet hat. 
 
