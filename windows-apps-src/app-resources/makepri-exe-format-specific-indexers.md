@@ -1,24 +1,24 @@
 ---
-Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
+Description: In diesem Thema werden die formatspezifischen Indexer beschrieben, die das Tool MakePri.exe verwendet, um seinen Ressourcenindex zu generieren.
 title: Formatspezifische Indexer für MakePri.exe
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
-keywords: Windows10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
+keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044627"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645875"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Formatspezifische Indexer für MakePri.exe
 
 In diesem Thema werden die formatspezifischen Indexer beschrieben, die das Tool [MakePri.exe](compile-resources-manually-with-makepri.md) verwendet, um seinen Ressourcenindex zu generieren.
 
 > [!NOTE]
-> MakePri.exe wird installiert, wenn Sie im **Windows SDK für UWP-Apps verwaltet** Option während der Installation im Windows Software Development Kit aktivieren. Es installiert ist, auf den Pfad `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ebenso wie in den Ordnern für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe installiert ist, wenn Sie aktivieren die **Windows SDK für verwaltete UWP-Apps** Option während der Installation von Windows Software Development Kit. Es wird auf den Pfad installiert `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (sowie in Ordnern, die mit dem Namen für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 MakePri.exe wird in der Regel mit den Befehlen `new`, `versioned` oder `resourcepack` verwendet. Siehe [Befehlszeilenoptionen für MakePri.exe](makepri-exe-command-options.md). In diesen Fällen indiziert das Tool Quelldateien und generiert einen Ressourcenindex. MakePri.exe verwendet eine Reihe individueller Indexer, um die verschiedenen Quellressourcendateien oder Ressourcencontainer zu lesen. Der einfachste Indexer ist der Ordnerindexer. Er indiziert den Inhalt eines Ordners, beispielsweise `.jpg`- oder `.png`-Bilder.
 
@@ -26,7 +26,7 @@ Formatspezifische Indexer werden durch Angabe von `<indexer-config>`-Elementen i
 
 Bei Ressourcencontainern, die während der Indizierung vorgefunden werden, wird der Inhalt indiziert. Die Container selbst werden dem Index nicht hinzugefügt. Beispielsweise werden vom Ordnerindexer gefundene `.resjson`-Dateien von einem `.resjson`-Indexer im Detail indiziert. Die `.resjson`-Datei ist in diesem Fall nicht im Index enthalten. **Hinweis:** Dazu muss ein `<indexer-config>`-Element für den Indexer, der diesem Container zugeordnet ist, in der Konfigurationsdatei enthalten sein.
 
-Die für eine Containerentität wie einen Ordner oder eine &mdash;-Datei gefundenen Qualifizierer werden normalerweise auf alle enthaltenen Ressourcen angewendet, also beispielsweise auf die Dateien im Ordner oder die Zeichenfolgen in der `.resw`-Datei.
+Die für eine Containerentität&mdash;  wie einen Ordner oder `.resw` eine &mdash;-Datei gefundenen Qualifizierer werden normalerweise auf alle enthaltenen Ressourcen angewendet, also beispielsweise auf die Dateien im Ordner oder die Zeichenfolgen in der `.resw`-Datei.
 
 ## <a name="folder"></a>Ordner
 
@@ -264,7 +264,7 @@ Hier ein Beispiel für eine gültige Ressource vom Typ „Path” aus einer Dump
 
 ## <a name="resfiles"></a>ResFiles
 
-Der ResFiles-Indexer wird mit dem `type`-Attribut RESFILES angegeben. Er indiziert die Inhalte einer `.resfiles`-Datei. Der zugehörige Konfigurationselement entspricht dem folgenden Schema.
+Der ResFiles-Indexer wird mit dem `type`-Attribut RESFILES angegeben. Er indiziert die Inhalte einer `.resfiles`-Datei. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
 
 ```xml
 <xs:schema id=\"resx\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
@@ -282,7 +282,7 @@ Der ResFiles-Indexer wird mit dem `type`-Attribut RESFILES angegeben. Er indizie
 </xs:schema>\
 ```
 
-Die `.resfiles`-Datei ist eine Textdatei mit einer flachen Liste von Dateipfaden. Eine `.resfiles`-Datei kann Kommentare mit Schrägstrichen ("//") enthalten. Beispiel:
+Die `.resfiles`-Datei ist eine Textdatei mit einer flachen Liste von Dateipfaden. Eine `.resfiles`-Datei kann Kommentare mit Schrägstrichen ("//") enthalten. Hier sehen Sie ein Beispiel.
 
 ```
 Strings\component1\fr\elements.resjson
@@ -293,7 +293,7 @@ Images\logo.scale-180.png
 
 ## <a name="resjson"></a>ResJSON
 
-Der ResJSON-Indexer wird mit dem `type`-Attribut RESJSON angegeben. Er indiziert die Inhalte einer `.resjson`-Datei, bei der es sich um eine Zeichenfolgen-Ressourcendatei handelt. Der zugehörige Konfigurationselement entspricht dem folgenden Schema.
+Der ResJSON-Indexer wird mit dem `type`-Attribut RESJSON angegeben. Er indiziert die Inhalte einer `.resjson`-Datei, bei der es sich um eine Zeichenfolgen-Ressourcendatei handelt. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
 
 ```xml
 <xs:schema id=\"resjson\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
@@ -317,11 +317,11 @@ JSON-Eigenschaften, deren Name mit einem Unterstrich (_) beginnt, werden nicht i
 
 Die Datei kann auch „// ”-Kommentare enthalten. Diese werden bei der Analyse ignoriert.
 
-Das `initialPath`-Attribut platziert alle Ressourcen unter diesem Anfangspfad. Zu diesem Zweck wird das Attribut dem Namen der Ressource vorangestellt. Diese Vorgehensweise findet normalerweise bei der Indizierung der Ressourcen von Klassenbibliotheken Anwendung. Der Standardwert ist leer.
+Das `initialPath`-Attribut platziert alle Ressourcen unter diesem Anfangspfad. Zu diesem Zweck wird das Attribut dem Namen der Ressource vorangestellt. Diese Vorgehensweise findet normalerweise bei der Indizierung der Ressourcen von Klassenbibliotheken Anwendung. Die Standardeinstellung ist leer.
 
 ## <a name="resw"></a>ResW
 
-Der ResW-Indexer wird mit dem `type`-Aattribut RESW angegeben. Er indiziert die Inhalte einer `.resw`-Datei, bei der es sich um eine Zeichenfolgen-Ressourcendatei handelt. Der zugehörige Konfigurationselement entspricht dem folgenden Schema.
+Der ResW-Indexer wird mit dem `type`-Aattribut RESW angegeben. Er indiziert die Inhalte einer `.resw`-Datei, bei der es sich um eine Zeichenfolgen-Ressourcendatei handelt. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
 
 ```xml
 <xs:schema id=\"resw\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
@@ -393,11 +393,11 @@ Eine `.resw`-Datei ist eine XML-Datei, die dem folgendem Schema entspricht.
 
 Das Attribut `convertDotsToSlashes` bewirkt, dass alle Punkte (.) in Ressourcennamen (Namensattribute von Datenelementen) in einen Schrägstrich (/) konvertiert werden. Dies gilt jedoch nicht für Punkte zwischen eckigen Klammern ([ und ]).
 
-Das `initialPath`-Attribut platziert alle Ressourcen unter diesem Anfangspfad. Zu diesem Zweck wird das Attribut dem Namen der Ressource vorangestellt. Diese Vorgehensweise findet normalerweise bei der Indizierung der Ressourcen von Klassenbibliotheken Anwendung. In der Standardeinstellung ist kein Wert angegeben.
+Das `initialPath`-Attribut platziert alle Ressourcen unter diesem Anfangspfad. Zu diesem Zweck wird das Attribut dem Namen der Ressource vorangestellt. Diese Vorgehensweise findet normalerweise bei der Indizierung der Ressourcen von Klassenbibliotheken Anwendung. Die Standardeinstellung ist leer.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Manuelles Kompilieren von Ressourcen mit MakePri.exe](compile-resources-manually-with-makepri.md)
-* [Befehlszeilenoptionen für MakePri.exe](makepri-exe-command-options.md)
-* [Konfigurationsdatei für MakePri.exe](makepri-exe-configuration.md)
-* [Anwendungs-/JSON-Medientyp für JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)
+* [Kompilieren von Ressourcen mit MakePri.exe manuell](compile-resources-manually-with-makepri.md)
+* [MakePri.exe-Befehlszeilenoptionen](makepri-exe-command-options.md)
+* [MakePri.exe-Konfigurationsdatei](makepri-exe-configuration.md)
+* [Die Anwendung/Json Medientyp für JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)
