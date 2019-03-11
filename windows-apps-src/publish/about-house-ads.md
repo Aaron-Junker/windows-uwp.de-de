@@ -1,26 +1,26 @@
 ---
-Description: You can create an ad to promote one of your apps in your other apps, for free. We call these house ads.
+Description: Sie haben die Möglichkeit, eine Anzeige zu erstellen, um eine Ihrer Apps in Ihren anderen Apps zu bewerben – und das kostenlos. Wir bezeichnen dies als Eigenwerbung.
 title: Über Eigenwerbung
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f5a42d6c4a4de15105afdec2bc9bc0b4cb27c94
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940989"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649845"
 ---
 # <a name="about-house-ads"></a>Über Eigenwerbung
 
 
 Sie haben die Möglichkeit, eine Anzeige zu erstellen, um eine Ihrer Apps in Ihren anderen Apps zu bewerben – und das kostenlos. Wir bezeichnen dies als *Eigenwerbung*.
 
-Eigenwerbung werden nur in Ihren eigenen apps angezeigt, die zum [Anzeigen von Microsoft](../monetize/display-ads-in-your-app.md)konfiguriert sind.
+Haus werbeeinblendungen werden nur angezeigt, in Ihren eigenen apps, die so konfiguriert sind [Werbung von Microsoft anzeigen](../monetize/display-ads-in-your-app.md).
 
-Zum Einrichten von Eigenwerbung müssen Sie beim [Erstellen einer Anzeigenkampagne](create-an-ad-campaign-for-your-app.md) den Kampagnentyp**** **Eigenwerbung** auswählen. Die Anzeige kann daraufhin in jeder Ihrer Apps angezeigt werden, die die folgenden Kriterien erfüllt:
+Zum Einrichten von Eigenwerbung müssen Sie beim [Erstellen einer Anzeigenkampagne](create-an-ad-campaign-for-your-app.md) den **Kampagnentyp** **Eigenwerbung** auswählen. Die Anzeige kann daraufhin in jeder Ihrer Apps angezeigt werden, die die folgenden Kriterien erfüllt:
 
 -   Die App muss für den gleichen Gerätetyp vorgesehen sein wie die beworbene App.
 -   Für die App muss mindestens eine Anzeigeneinheit eingerichtet sein.
@@ -35,5 +35,5 @@ Wenn Eigenwerbung für App A in App B erscheint, wird der Aufruf weder in Rechnu
 ### <a name="related-topics"></a>Verwandte Themen
 
 
-* [Erstellen einer Anzeigenkampagne für Ihre App](create-an-ad-campaign-for-your-app.md)
-* [Allgemeine Fragen](common-questions.md)
+* [Erstellen Sie eine Ad-Kampagne für Ihre app](create-an-ad-campaign-for-your-app.md)
+* [Häufig gestellte Fragen](common-questions.md)

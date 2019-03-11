@@ -4,26 +4,26 @@ description: Verwenden Sie die Microsoft Store-API für gezielte Angebote, um di
 title: Verwalten von gezielten Angeboten mithilfe von Store-Diensten
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, UWP, Store-Dienste, Microsoft Store-API für gezielte Angebote, gezielte Angebote
+keywords: Windows 10, UWP, Store-Dienste, Microsoft Store-API für gezielte Angebote, gezielte Angebote
 ms.localizationpriority: medium
 ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045023"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615685"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>Verwalten von gezielten Angeboten mithilfe von Store-Diensten
 
-Wenn Sie eine *gezielte Angebot* auf der Seite **beauftragen > erstellen, gezielte Angebote,** für Ihre app im Partner Center verwenden, die der *Microsoft Store für gezielte Angebote API* in Ihrem app Code, um Informationen abzurufen, die Ihnen bei der Implementierung der in-app-Umgebung für die gezielten Angebots. Weitere Informationen zu gezielten Angeboten und Anleitungen zu deren Erstellung im Dashboard finden Sie unter [Verwenden Sie gezielte Angebote, um Interaktionen und Abschlüsse zu maximieren.](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
+Bei der Erstellung eine *gezielte Angebot* in die **einbinden > Ziel Angebote** für Ihre app im Partner Center verwenden die *Microsoft Store-Ziel bietet API* in Code zu Ihrer app Rufen Sie Informationen, die Sie die in-app-Funktionalität für das gezielte Angebot implementieren kann. Weitere Informationen zu gezielten Angeboten und Anleitungen zu deren Erstellung im Dashboard finden Sie unter [Verwenden Sie gezielte Angebote, um Interaktionen und Abschlüsse zu maximieren](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
 
-Die Gezielte-Angebote-API ist eine einfache REST-API, mit der Sie gezielte Angebote abrufen können, die für den aktuellen Benutzer verfügbar sind– basierend darauf, ob der Benutzer zum Kundensegment für das gezielte Angebot gehört. Gehen Sie folgendermaßen vor, um diese API in Ihrem App-Code zu verwenden:
+Die Gezielte-Angebote-API ist eine einfache REST-API, mit der Sie gezielte Angebote abrufen können, die für den aktuellen Benutzer verfügbar sind – basierend darauf, ob der Benutzer zum Kundensegment für das gezielte Angebot gehört. Gehen Sie folgendermaßen vor, um diese API in Ihrem App-Code zu verwenden:
 
 1.  [Rufen Sie ein Microsoft-Kontotoken](#obtain-a-microsoft-account-token) für den aktuell angemeldeten Benutzer Ihrer App ab.
 2.  [Rufen Sie die gezielten Angebote für den aktuellen Benutzer ab](#get-targeted-offers).
 3.  Implementieren Sie die In-App-Kaufumgebung für das Add-On, das einem der gezielten Angebote zugeordnet ist. Weitere Informationen zur Implementierung von In-App-Käufen finden Sie in [diesem Artikel](enable-in-app-purchases-of-apps-and-add-ons.md).
 
-Ein vollständiges Codebeispiel, das alle diese Schritteveranschaulicht, finden Sie unter der [Codebeispiel](#code-example) am Ende dieses Artikels. Die folgenden Abschnitte enthalten weitere Details zu den einzelnen Schritten.
+Ein vollständiges Codebeispiel, das alle diese Schritte veranschaulicht, finden Sie unter der [Codebeispiel](#code-example) am Ende dieses Artikels. Die folgenden Abschnitte enthalten weitere Details zu den einzelnen Schritten.
 
 <span id="obtain-a-microsoft-account-token" />
 
@@ -65,5 +65,5 @@ Dieses Beispiel erfordert die [Json.NET](https://www.newtonsoft.com/json)-Biblio
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Verwenden Sie zielgerichtete Angebote, um Interaktionen und Abschlüsse zu maximieren.](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
-* [Abrufen gezielter Angebote](get-targeted-offers.md)
+* [Verwenden Sie gezielte Angebote zum Maximieren der Engagement und Konvertierungen](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
+* [Abrufen von zielgerichteten angeboten](get-targeted-offers.md)

@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, Spiele, Rennlenkrad, Kraftrückmeldung
 ms.localizationpriority: medium
 ms.openlocfilehash: ab7c5bc15b149d5f469b7fc5e6b6285986569b22
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981554"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608835"
 ---
 # <a name="racing-wheel-and-force-feedback"></a>Rennlenkräder und Kraftrückmeldung
 
-Diese Seite beschreibt die Grundlagen der Programmierung für Xbox One-rennlenkräder beschrieben, die mit [Windows.Gaming.Input.RacingWheel] [ racingwheel] und verwandter APIs für die universelle Windows-Plattform (UWP).
+Auf dieser Seite werden die Grundlagen der Programmierung für Xbox One racing Rädern mithilfe [Windows.Gaming.Input.RacingWheel] [ racingwheel] und zugehörigen APIs für die universelle Windows-Plattform (UWP).
 
-Auf dieser Seite erfahren Sie:
+Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 
 * Wie Sie eine Liste der verbundenen Rennlenkräder und ihrer Benutzer erstellen
 * Wie Sie feststellen, dass ein Rennlenkrad hinzugefügt oder entfernt wurde
@@ -27,19 +27,19 @@ Auf dieser Seite erfahren Sie:
 
 ## <a name="racing-wheel-overview"></a>Übersicht über Rennlenkräder
 
-Rennlenkräder sind Eingabegeräte, die Benutzern das Gefühl vermitteln, in einem echten Rennwagencockpit zu sitzen. Rennlenkräder sind das ideale Eingabegerät für Rennsportspiele im Arcade- und Simulationsstil, die Autos oder Trucks enthalten. Rennlenkräder werden in Windows10- und Xbox One-UWP-Apps durch den Namespace [Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) unterstützt.
+Rennlenkräder sind Eingabegeräte, die Benutzern das Gefühl vermitteln, in einem echten Rennwagencockpit zu sitzen. Rennlenkräder sind das ideale Eingabegerät für Rennsportspiele im Arcade- und Simulationsstil, die Autos oder Trucks enthalten. Rennlenkräder werden in Windows 10- und Xbox One-UWP-Apps durch den Namespace [Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) unterstützt.
 
 Xbox One-Rennlenkräder werden zu verschiedenen Preisen angeboten. In der Regel verfügen Rennlenkräder über mehr und bessere Eingabe- und Kraftrückmeldungsfunktionen, je höher ihr Preis liegt. Alle Rennlenkräder besitzen ein analoges Lenkrad, analoge Gas- und Bremsensteuerelemente sowie einige Lenkradtasten. Einige Rennlenkräder sind zusätzlich mit analogen Kupplungs- und Handbremsensteuerelementen, einer analogen Gangschaltung sowie Kraftrückmeldungsfunktionen ausgestattet. Nicht alle Rennlenkräder besitzen die gleichen Features. Darüber hinaus unterscheiden sie sich möglicherweise hinsichtlich der Unterstützung für bestimmte Features. Beispielsweise können Lenkräder unterschiedliche Drehbereiche und Gangschaltungen eine unterschiedliche Zahl von Gängen unterstützen.
 
 ### <a name="device-capabilities"></a>Gerätefunktionen
 
-Verschiedenen Xbox One-rennlenkräder bieten unterschiedliche optionale Gerätefunktionen und einen unterschiedlichen Grad an Unterstützung für diese Funktionen. Dieser Grad an abweichungen ein einzelnes Eingabegerät ist unter den Geräten unterstützt, indem Sie die [Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) -API-eindeutig. Darüber hinaus unterstützen die meisten Geräte, denen Sie begegnen werden, zumindest einige optionale Funktionen oder andere Abweichungen. Daher ist es wichtig, die Funktionen der verbundenen Rennlenkräder einzeln zu ermitteln und die gesamte Bandbreite der für Ihr Spiel sinnvollen Funktionen zu unterstützen.
+Verschiedene Xbox One Rennspiels Räder bieten unterschiedliche optionale Gerätefunktionen und verschiedene Ebenen der Unterstützung für diese Funktionen; Diese Ebene der Abweichung zwischen eine einzelne Art von Eingabegerät ist für die Geräte, die eindeutig die [Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) API. Darüber hinaus unterstützen die meisten Geräte, denen Sie begegnen werden, zumindest einige optionale Funktionen oder andere Abweichungen. Daher ist es wichtig, die Funktionen der verbundenen Rennlenkräder einzeln zu ermitteln und die gesamte Bandbreite der für Ihr Spiel sinnvollen Funktionen zu unterstützen.
 
 Weitere Informationen finden Sie unter [Ermitteln von Rennlenkradfunktionen](#determining-racing-wheel-capabilities).
 
 ### <a name="force-feedback"></a>Kraftrückmeldung
 
-Einige Xbox One-Rennlenkräder stellen eine echte Kraftrückmeldung und nicht einfach nur Vibrationen bereit, d.h., sie können echte Kräfte auf eine Steuerungsachse wie das Lenkrad ausüben. Spiele verwenden diese Fähigkeit, um ein besseres Spielerlebnis zu vermitteln (_simulierte Unfallschäden_, „Gefühl für die Straße“) und die Anforderungen in Bezug auf gutes Fahren zu erhöhen.
+Einige Xbox One-Rennlenkräder stellen eine echte Kraftrückmeldung und nicht einfach nur Vibrationen bereit, d. h., sie können echte Kräfte auf eine Steuerungsachse wie das Lenkrad ausüben. Spiele verwenden diese Fähigkeit, um ein besseres Spielerlebnis zu vermitteln (_simulierte Unfallschäden_, „Gefühl für die Straße“) und die Anforderungen in Bezug auf gutes Fahren zu erhöhen.
 
 Weitere Informationen finden Sie unter [Übersicht über die Kraftrückmeldung](#force-feedback-overview).
 
@@ -47,7 +47,7 @@ Weitere Informationen finden Sie unter [Übersicht über die Kraftrückmeldung](
 
 Um den Aufwand für die Unterstützung unterschiedlicher Eingabegeräte für die Benutzeroberflächennavigation zu verringern und die Konsistenz zwischen Spielen und Geräten zu fördern, dienen die meisten _physischen_ Eingabegeräte gleichzeitig als getrennte _logische_ Eingabegeräte, die als [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) bezeichnet werden. Der Benutzeroberflächen-Navigationscontroller stellt ein gemeinsames Vokabular für Benutzeroberflächen-Navigationsbefehle über verschiedene Eingabegeräte hinweg bereit.
 
-Aufgrund der spezifischen Ausrichtung auf analoge Steuerungen und des Umfangs der Abweichungen zwischen den verschiedenen Rennlenkrädern verfügen diese in der Regel über Steuerkreuz, **Ansicht** **Menü** und die Tasten **A**, **B**, **X** und **Y**, die den Tasten eines [Gamepad](gamepad-and-vibration.md) ähnlich sind. Diese Tasten sind jedoch nicht für die Unterstützung von Befehlen im Spiel vorgesehen und können nicht direkt als Rennlenkradtasten verwendet werden.
+Aufgrund der spezifischen Ausrichtung auf analoge Steuerungen und des Umfangs der Abweichungen zwischen den verschiedenen Rennlenkrädern verfügen diese in der Regel über Steuerkreuz, **Ansicht****Menü** und die Tasten **A**, **B**, **X** und **Y**, die den Tasten eines [Gamepad](gamepad-and-vibration.md) ähnlich sind. Diese Tasten sind jedoch nicht für die Unterstützung von Befehlen im Spiel vorgesehen und können nicht direkt als Rennlenkradtasten verwendet werden.
 
 Als Benutzeroberflächen-Navigationscontroller ordnen Rennlenkräder den [erforderlichen Satz](ui-navigation-controller.md#required-set) von Navigationsbefehlen dem linken Ministick, dem Steuerkreuz, der **Ansicht**, dem **Menü** sowie den Tasten **A** und **B** zu.
 
@@ -55,8 +55,8 @@ Als Benutzeroberflächen-Navigationscontroller ordnen Rennlenkräder den [erford
 | ------------------:| ------------------ |
 |                 Nach oben | Steuerkreuz nach oben           |
 |               Nach unten | Steuerkreuz nach unten         |
-|               Links | Steuerkreuz nach links         |
-|              Rechts | Steuerkreuz nach rechts        |
+|               Nach links | Steuerkreuz nach links         |
+|              Nach rechts | Steuerkreuz nach rechts        |
 |               Ansicht | Ansicht-Taste        |
 |               Menü | Menü-Taste        |
 |             Annehmen | A-Taste           |
@@ -66,18 +66,18 @@ Darüber hinaus ordnen einige Rennlenkräder möglicherweise einige [optionale](
 
 | Navigationsbefehl | Rennlenkradeingabe    |
 | ------------------:| --------------------- |
-|            Seite nach oben | _Unterschiedlich_              |
-|          Seite nach unten | _Unterschiedlich_              |
-|          Seite nach links | _Unterschiedlich_              |
-|         Seite nach rechts | _Unterschiedlich_              |
-|          Bildlauf nach oben | _Unterschiedlich_              |
-|        Bildlauf nach unten | _Unterschiedlich_              |
-|        Bildlauf nach links | _Unterschiedlich_              |
-|       Bildlauf nach rechts | _Unterschiedlich_              |
+|            Seite nach oben | _variiert nach_              |
+|          Seite nach unten | _variiert nach_              |
+|          Seite nach links | _variiert nach_              |
+|         Seite nach rechts | _variiert nach_              |
+|          Bildlauf nach oben | _variiert nach_              |
+|        Bildlauf nach unten | _variiert nach_              |
+|        Bildlauf nach links | _variiert nach_              |
+|       Bildlauf nach rechts | _variiert nach_              |
 |          Kontext 1 | X-Taste (_in der Regel_) |
 |          Kontext 2 | Y-Taste (_in der Regel_) |
-|          Kontext 3 | _Unterschiedlich_              |
-|          Kontext 4 | _Unterschiedlich_              |
+|          Kontext 3 | _variiert nach_              |
+|          Kontext 4 | _variiert nach_              |
 
 ## <a name="detect-and-track-racing-wheels"></a>Erkennen und Nachverfolgen von Rennlenkrädern
 
@@ -130,11 +130,11 @@ RacingWheel::RacingWheelRemoved += ref new EventHandler<RacingWheel^>(Platform::
 
 Each racing wheel can be associated with a user account to link their identity to their gameplay, and can have a headset attached to facilitate voice chat or in-game features. To learn more about working with users and headsets, see [Tracking users and their devices](input-practices-for-games.md#tracking-users-and-their-devices) and [Headset](headset.md). -->
 
-## <a name="reading-the-racing-wheel"></a>Auslesen der Rennlenkradwerte
+## <a name="reading-the-racing-wheel"></a>Lesen der Rennlenkradwerte
 
 Nachdem Sie die Rennlenkräder identifiziert haben, für die Sie sich interessieren, können Sie Eingaben von diesen erfassen. Anders als im Fall anderer Eingaben, die Sie möglicherweise kennen, teilen Rennlenkräder Zustandsänderungen jedoch nicht durch das Auslösen von Ereignissen mit. Stattdessen müssen Sie die aktuellen Zustände regelmäßig _auslesen_ (Polling).
 
-### <a name="polling-the-racing-wheel"></a>Abrufen von Rennlenkrad-Daten
+### <a name="polling-the-racing-wheel"></a>Abrufen von Rennlenkrädern
 
 Durch den Abruf wird eine Momentaufnahme des Rennlenkrads zu einem genau festgelegten Zeitpunkt erfasst. Dieser Ansatz zum Erfassen von Eingaben ist für die meisten Spiele geeignet, da deren Logik üblicherweise in einer deterministischen Schleife ausgeführt wird und nicht ereignisgesteuert ist. Es ist in der Regel auch einfacher, Befehle in Spielen anhand von Eingaben zu interpretieren, die alle gemeinsam erfasst werden, als anhand zahlreicher Eingaben, die im Laufe der Zeit erfasst werden.
 
@@ -173,7 +173,7 @@ if (racingwheel->HasPatternShifter)
 }
 ```
 
-Die Steuerelemente, deren Funktionalität variieren kann, sind das Lenkrad und die Gangschaltung. Das Lenkrad kann hinsichtlich des Umfangs der physischen Drehung variieren, die durch das tatsächliche Lenkrad unterstützt wird. Die Gangschaltung kann hinsichtlich der Zahl der einzelnen Vorwärtsgänge variieren, die unterstützt werden. Sie können den größten, durch das tatsächliche Lenkrad unterstützten Drehwinkel ermitteln, indem Sie die Eigenschaft `MaxWheelAngle` des Rennlenkrads lesen. Dessen Wert entspricht dem maximal unterstützten physischen Winkel im Uhrzeigersinn, ausgedrückt in Grad (positive Gradangabe). Der gleiche Drehwinkel wird in der dem Uhrzeigersinn entgegengesetzten Richtung unterstützt (negative Gradangabe). Sie können den höchsten, durch die Gangschaltung unterstützten Vorwärtsgang ermitteln, indem Sie die Eigenschaft des Rennlenkrads lesen. Dessen Wert entspricht dem höchsten unterstützten Vorwärtsgang (einschließlich): Wenn der Wert 4 ist, unterstützt die Gangschaltung einen Rückwärtsgang, einen Leerlaufgang sowie einen ersten, zweiten, dritten und vierten Gang.
+Die Steuerelemente, deren Funktionalität variieren kann, sind das Lenkrad und die Gangschaltung. Das Lenkrad kann hinsichtlich des Umfangs der physischen Drehung variieren, die durch das tatsächliche Lenkrad unterstützt wird. Die Gangschaltung kann hinsichtlich der Zahl der einzelnen Vorwärtsgänge variieren, die unterstützt werden. Sie können den größten, durch das tatsächliche Lenkrad unterstützten Drehwinkel ermitteln, indem Sie die Eigenschaft `MaxWheelAngle` des Rennlenkrads lesen. Dessen Wert entspricht dem maximal unterstützten physischen Winkel im Uhrzeigersinn, ausgedrückt in Grad (positive Gradangabe). Der gleiche Drehwinkel wird in der dem Uhrzeigersinn entgegengesetzten Richtung unterstützt (negative Gradangabe). Sie können den höchsten, durch die Gangschaltung unterstützten Vorwärtsgang ermitteln, indem Sie die Eigenschaft `MaxPatternShifterGear`des Rennlenkrads lesen. Dessen Wert entspricht dem höchsten unterstützten Vorwärtsgang&mdash; (einschließlich): Wenn der Wert 4 ist, unterstützt die Gangschaltung einen Rückwärtsgang, einen Leerlaufgang sowie einen ersten, zweiten, dritten und vierten Gang.
 
 ```cpp
 auto maxWheelDegrees = racingwheel->MaxWheelAngle;
@@ -191,7 +191,7 @@ if (racingwheel->WheelMotor != nullptr)
 
 Weitere Informationen dazu, wie Sie die Kraftrückmeldungsfunktion der Rennlenkräder verwenden, die dies unterstützen, finden Sie unter [Übersicht über die Kraftrückmeldung](#force-feedback-overview).
 
-### <a name="reading-the-buttons"></a>Auslesen der Tasten
+### <a name="reading-the-buttons"></a>Lesen der Tastenwerte
 
 Jede Rennlenkradtaste&mdash;die vier Richtungen des Steuerkreuzes, die Tasten **Vorheriger Gang** und **Nächster Gang** und 16 zusätzliche Tasten&mdash;stellt eine digitalen Wert bereit, der angibt, ob sie gedrückt (unten) oder freigegeben (oben) ist. Aus Effizienzgründen werden die Ablesewerte der Tasten nicht als einzelne boolesche Werte angezeigt, sondern in einem einzelnen Bitfeld zusammengefasst, dargestellt durch die Enumeration [RacingWheelButtons](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelbuttons).
 
@@ -218,7 +218,7 @@ if (RacingWheelButtons::None == (reading.Buttons & RacingWheelButtons::NextGear)
 }
 ```
 
-In einigen Fällen möchten Sie vielleicht ermitteln, ob eine Taste von „gedrückt“ zu „nicht gedrückt“ bzw. umgekehrt wechselt, oder ob mehrere Tasten gedrückt bzw. nicht gedrückt oder in bestimmter Weise angeordnet sind&mdash;einige gedrückt, andere nicht. Weitere Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) und [Erkennen von komplexen Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
+In einigen Fällen möchten Sie vielleicht ermitteln, ob eine Taste von „gedrückt“ zu „nicht gedrückt“ bzw. umgekehrt wechselt, oder ob mehrere Tasten gedrückt bzw. nicht gedrückt oder in bestimmter Weise angeordnet sind&mdash;einige gedrückt, andere nicht. Weitere Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) und [Erkennen von komplexen Tastenanordungen](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 ### <a name="reading-the-wheel"></a>Lesen der Lenkradwerte
 
@@ -230,7 +230,7 @@ float wheel = reading.Wheel;  // returns a value between -1.0 and +1.0.
 
 Auch wenn die Lenkradwerte dem Grad der physischen Drehung des tatsächlichen Lenkrads entsprechen, abhängig vom durch das physische Rennlenkrad unterstützten Drehbereich, sollten Sie die Lenkradwerte nicht skalieren. Lenkräder, die einen größeren Drehbereich unterstützen, bieten lediglich eine größere Genauigkeit.
 
-### <a name="reading-the-throttle-and-brake"></a>Auslesen der Gas- und Bremsensteuerelementwerte
+### <a name="reading-the-throttle-and-brake"></a>Lesen der Gas- und Bremsensteuerelementwerte
 
 Die Gas- und Bremsensteuerelemente sind erforderliche Steuerelemente, die jeweils analoge Ablesewerte zwischen 0,0 (vollständig freigegeben) und 1,0 (vollständig gedrückt) bereitstellen, dargestellt als Gleitkommawerte. Der Wert für das Gassteuerelement wird aus der Eigenschaft `Throttle` der Struktur [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading) gelesen. Der Wert für das Bremsensteuerelement wird aus der Eigenschaft `Brake` gelesen.
 
@@ -260,7 +260,7 @@ if(racingwheel->HasClutch)
 
 ### <a name="reading-the-pattern-shifter"></a>Lesen der Gangschaltungswerte
 
-Die Gangschaltung ist ein optionales Steuerelement, das einen digitalen Wert zwischen -1 und [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) bereitstellt, dargestellt als ganze Zahl mit Vorzeichen. Der Wert -1 bzw. 0 entspricht dem _Rückwärtsgang_ bzw. dem _Leerlaufgang_. Aufsteigende positive Werte entsprechen den jeweiligen höheren Vorwärtsgängen bis einschließlich **MaxPatternShifterGear**. Der Wert für die Gangschaltung wird aus der [PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear) -Eigenschaft der Struktur [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading) gelesen.
+Die Gangschaltung ist ein optionales Steuerelement, das einen digitalen Wert zwischen -1 und [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) bereitstellt, dargestellt als ganze Zahl mit Vorzeichen. Der Wert -1 bzw. 0 entspricht dem _Rückwärtsgang_ bzw. dem _Leerlaufgang_. Aufsteigende positive Werte entsprechen den jeweiligen höheren Vorwärtsgängen bis einschließlich **MaxPatternShifterGear**. Ist der Wert des Pattern-verschieben Auslesen der [PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear) Eigenschaft der [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading) Struktur.
 
 ```cpp
 if (racingwheel->HasPatternShifter)
@@ -278,7 +278,7 @@ Das [InputInterfacingUWP-Beispiel _(github)_](https://github.com/Microsoft/Xbox-
 
 ## <a name="force-feedback-overview"></a>Übersicht über die Kraftrückmeldung
 
-Viele Rennlenkräder besitzen eine Kraftrückmeldungsfunktion, um ein umfassenderes und stärker herausforderndes Fahrerlebnis bereitzustellen. Rennlenkräder, die die Kraftrückmeldung unterstützen, besitzen in der Regel einen einzelnen Motor, der entlang einer einzelnen Achse (der Achse der Lenkraddrehung) Kraft auf das Lenkrad ausübt. Kraftrückmeldung wird in Windows 10 und Xbox One-UWP-apps durch den Namespace [Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback) unterstützt.
+Viele Rennlenkräder besitzen eine Kraftrückmeldungsfunktion, um ein umfassenderes und stärker herausforderndes Fahrerlebnis bereitzustellen. Rennlenkräder, die die Kraftrückmeldung unterstützen, besitzen in der Regel einen einzelnen Motor, der entlang einer einzelnen Achse (der Achse der Lenkraddrehung) Kraft auf das Lenkrad ausübt. Force Feedback wird in Windows 10 und Xbox One-UWP-apps unterstützt die [Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback) Namespace.
 
 > [!NOTE]
 > Die Kraftrückmeldungs-APIs können mehrere Krafteinwirkungsachsen unterstützen. Xbox One-Rennlenkräder unterstützen zurzeit jedoch nur die Lenkraddrehungsachse als Kraftrückmeldungsachse.
@@ -289,7 +289,7 @@ In den folgenden Abschnitten werden die Grundlagen der Programmierung von Kraftr
 
 ### <a name="determining-force-feedback-capabilities"></a>Ermitteln der Kraftrückmeldungsfunktionalität
 
-Sie können ermitteln, ob ein verbundenes Rennlenkrad die Kraftrückmeldung unterstützt, indem Sie die Eigenschaft [WheelMotor](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) des Rennlenkrads lesen. Die Kraftrückmeldung wird nicht unterstützt, wenn `WheelMotor` **null** ist. Andernfalls wird die Kraftrückmeldung unterstützt, und Sie können mit der Ermittlung der spezifischen Kraftrückmeldungsfunktionalität des Motors fortfahren, beispielsweise der Achsen, auf die Kraft ausgeübt werden kann.
+Sie können ermitteln, ob ein verbundenes Rennlenkrad die Kraftrückmeldung unterstützt, indem Sie die Eigenschaft [WheelMotor](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) des Rennlenkrads lesen. Die Kraftrückmeldung wird nicht unterstützt, wenn `WheelMotor`**null** ist. Andernfalls wird die Kraftrückmeldung unterstützt, und Sie können mit der Ermittlung der spezifischen Kraftrückmeldungsfunktionalität des Motors fortfahren, beispielsweise der Achsen, auf die Kraft ausgeübt werden kann.
 
 ```cpp
 if (racingwheel->WheelMotor != nullptr)
@@ -315,7 +315,7 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="loading-force-feedback-effects"></a>Laden der Kraftrückmeldungseffekte
 
-Die Kraftrückmeldungseffekte werden in das Rückmeldungsgerät geladen, auf dem sie autonom nach den Regeln Ihres Spiels „gespielt“ werden. Es werden eine Reihe von bereitgestellt. Benutzerdefinierte Effekte können über eine Klasse erstellt werden, die die [IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect) -Schnittstelle implementiert.
+Die Kraftrückmeldungseffekte werden in das Rückmeldungsgerät geladen, auf dem sie autonom nach den Regeln Ihres Spiels „gespielt“ werden. Eine Anzahl von grundlegenden Auswirkungen werden bereitgestellt wird. Benutzerdefinierte Effekte können erstellt werden, über eine Klasse, implementiert die [IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect) Schnittstelle.
 
 | Effektklasse         | Effektbeschreibung                                                                     |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -369,11 +369,11 @@ else
 
 Sie können das gesamte Kraftrückmeldungssystem auf einem bestimmten Rennlenkrad jederzeit asynchron aktivieren, deaktivieren oder zurücksetzen.
 
-## <a name="see-also"></a>Weitere Informationen finden Sie unter
+## <a name="see-also"></a>Siehe auch
 
 * [Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Windows.Gaming.Input.IGameController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.igamecontroller)
-* [Eingabemethoden für Spiele](input-practices-for-games.md)
+* [Eingabe-Methoden für Spiele](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx

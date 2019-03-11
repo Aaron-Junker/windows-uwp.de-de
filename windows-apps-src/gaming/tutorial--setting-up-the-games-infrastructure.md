@@ -4,14 +4,14 @@ description: Im ersten Schritt für die Erstellung Ihres Spiels richten Sie ein 
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ms.date: 10/24/2017
 ms.topic: article
-keywords: Windows10, UWP, Spiele, Einrichtung, directx
+keywords: Windows 10, UWP, Spiele, Einrichtung, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944584"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608705"
 ---
 # <a name="set-up-the-game-project"></a>Einrichten des Spieleprojekts
 
@@ -33,14 +33,14 @@ Wenn Sie Erfahrung mit der Entwicklung von UWP haben, empfehlen wir die Verwendu
 
 ### <a name="use-directx-template-to-create-a-project"></a>Verwenden Sie DirectX-Vorlagen, um ein Projekt zu erstellen
 
-Eine Visual Studio-Vorlage ist eine Sammlung von Einstellungen und Codedateien, die abhängig von der bevorzugten Sprache und Technologie auf eine bestimmte Art von App ausgerichtet sind. In Microsoft Visual Studio2017 finden Sie eine Reihe von Vorlagen, die deutlich Spiels und der Grafik-app-Entwicklung vereinfachen können. Ohne Verwendung einer Vorlage müssen Sie einen Großteil des grundlegenden Rendering- und Anzeigeframeworks für die Grafik selbst entwickeln, was insbesondere für neue Spieleentwickler recht mühsam sein kann.
+Eine Visual Studio-Vorlage ist eine Sammlung von Einstellungen und Codedateien, die abhängig von der bevorzugten Sprache und Technologie auf eine bestimmte Art von App ausgerichtet sind. In Microsoft Visual Studio 2017 finden Sie eine Reihe von Vorlagen, die erheblich Spiele- und Grafik-app-Entwicklung vereinfachen können. Ohne Verwendung einer Vorlage müssen Sie einen Großteil des grundlegenden Rendering- und Anzeigeframeworks für die Grafik selbst entwickeln, was insbesondere für neue Spieleentwickler recht mühsam sein kann.
 
 Die richtige Vorlage für dieses Tutorial ist die Vorlage **DirectX 11 App (Universal Windows)**. 
 
-Schritte zum Erstellen eines DirectX 11-Spieleprojekts in Visual Studio11:
-1.  Wählen Sie **Datei...** &gt; **Neu**  &gt; **Projekt...**
-2.  Wählen Sie im linken Bereich **installiert**&gt; **Vorlagen** &gt; **Visual C++** &gt; **universelle Windows-Apps**
-3.  Wählen Sie im mittleren Bereich **DirectX11-App (universelle Windows-App)** aus
+Schritte zum Erstellen eines DirectX 11-Spieleprojekts in Visual Studio 11:
+1.  Wählen Sie **Datei...** &gt; **Neue** &gt; **Projekt...** 
+2.  Wählen Sie im linken Bereich **installiert** &gt; **Vorlagen** &gt; **Visual C++** &gt; **Windows Universal**
+3.  Wählen Sie im mittleren Bereich **DirectX 11-App (universelle Windows-App)** aus
 4.  Geben Sie Ihrem Spieleprojekt einen Namen, und klicken Sie auf **OK**.
 
 ![Bildschirmfoto, das zeigt, wie die DirectX11-Vorlage zum Erstellen eines neuen Spieleprojekts ausgewählt wird](images/simple-dx-game-setup-new-project.png)
@@ -53,7 +53,7 @@ Die **App**-Klasse beerbt die **IFrameworkView**-Klasse.
 
 ### <a name="inspect-apph"></a>Überprüfen Sie **App.h**.
 
-erstellen Sie die folgenden fünf Methoden in **App.h** &mdash; [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), and [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) bei der Implementierung der [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469)-Schnittstelle, die den Ansichtsanbieter definiert. Diese Methoden werden vom App-Singleton ausgeführt, der beim Spielstart erstellt wird. Sie laden alle vom Spiel benötigten Ressourcen und stellen eine Verbindung zwischen den entsprechenden Ereignishandlern her.
+Wir betrachten kurz, wie die 5-Methoden in **App.h** &mdash; [ **initialisieren**](https://msdn.microsoft.com/library/windows/apps/hh700495), [ **"SetWindow"** ](https://msdn.microsoft.com/library/windows/apps/hh700509), [ **Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [ **ausführen**](https://msdn.microsoft.com/library/windows/apps/hh700505), und [ **deinitialisieren** ](https://msdn.microsoft.com/library/windows/apps/hh700523) beim Implementieren der [ **"iframeworkview"** ](https://msdn.microsoft.com/library/windows/apps/hh700469) Schnittstelle, die ein sichtanbieter definiert. Diese Methoden werden vom App-Singleton ausgeführt, der beim Spielstart erstellt wird. Sie laden alle vom Spiel benötigten Ressourcen und stellen eine Verbindung zwischen den entsprechenden Ereignishandlern her.
 
 ```cpp
     // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
@@ -118,7 +118,7 @@ void App::Run()
 }
 ```
 
-So funktioniert die Methode: Wenn das Fenster Ihres Spiels nicht geschlossen wird, werden hiermit alle Ereignisse gesendet, der Timer wird aktualisiert, und die Ergebnisse der Grafikpipeline werden gerendert und angezeigt. Wir befassen uns ausführlicher damit unter [Definieren der UWP-App-Framework](tutorial--building-the-games-uwp-app-framework.md), [Rendering-Framework I: Einführung in das Rendering](tutorial--assembling-the-rendering-pipeline.md), und [Rendering-Framework II: Spiel-Rendering](tutorial-game-rendering.md). Damit dürften Sie ein gewisses Gespür für die grundlegende Codestruktur eines UWP-DirectX-Spiels entwickelt haben.
+Was hat diese Methode: Wenn das Fenster für Ihr Spiel nicht geschlossen ist, alle Ereignisse sendet, aktualisiert den Timer, klicken Sie dann rendert und präsentiert die Ergebnisse Ihrer Pipeline Grafiken. Beschäftigen wir uns dies ausführlicher [definieren Sie das UWP-app-Framework](tutorial--building-the-games-uwp-app-framework.md), [Rendering-Framework I: Einführung in Rendering](tutorial--assembling-the-rendering-pipeline.md), und [Rendering-Framework II: Rendern von Spielen](tutorial-game-rendering.md). Damit dürften Sie ein gewisses Gespür für die grundlegende Codestruktur eines UWP-DirectX-Spiels entwickelt haben.
 
 ## <a name="review-and-update-the-packageappxmanifest-file"></a>Prüfen und Aktualisieren der Datei „package.appxmanifest“
 
@@ -133,7 +133,7 @@ Weitere Informationen zur Datei **package.appxmanifest** und zum Packen finden S
 
 ![Screenshot der Standardfunktionen einer Direct3D-App](images/simple-dx-game-setup-capabilities.png)
 
-Wenn Sie die von Ihrem Spiel genutzten Funktionen (etwa den Zugriff auf das Internet**** für eine globale Bestenliste) nicht auswählen, können Sie nicht auf die entsprechenden Ressourcen oder Features zugreifen. Achten Sie beim Erstellen eines neuen Spiels darauf, die Funktionen auszuwählen, die Ihr Spiel für die Ausführung benötigt.
+Wenn Sie die von Ihrem Spiel genutzten Funktionen (etwa den Zugriff auf das **Internet** für eine globale Bestenliste) nicht auswählen, können Sie nicht auf die entsprechenden Ressourcen oder Features zugreifen. Achten Sie beim Erstellen eines neuen Spiels darauf, die Funktionen auszuwählen, die Ihr Spiel für die Ausführung benötigt.
 
 Kommen wir nun zu den restlichen Dateien der Vorlage **DirectX 11-App (Universelle Windows-App)**.
 
@@ -144,20 +144,20 @@ Ein paar Dateien haben wir uns für den Schluss aufgehoben. Diese Dateien bieten
 | Quelldatei der Vorlage         | Dateiordner            | Beschreibung |
 |------------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DeviceResources.h/.cpp       | Allgemein                 | Definiert ein Klassenobjekt, das [Geräteressourcen](tutorial--assembling-the-rendering-pipeline.md#resource) von DirectX steuert. Darüber hinaus enthält es eine Schnittstelle für die Anwendung, die DeviceResources besitzt, um benachrichtigt zu werden, wenn das Gerät verloren geht oder erstellt wird.                                                |
-| DirectXHelper.h              | Allgemein                 | Implementiert Methoden wie z.B. **DX::ThrowIfFailed**, **ReadDataAsync**, und ** ConvertDipsToPixels. **DX::ThrowIfFailed**konvertiert die von DirectX Win32-APIs zurückgegebenen HRESULT-Fehlerwerte in Ausnahmen der Windows-Runtime konvertiert. Verwenden Sie diese Methode, um einen Haltepunkt zum Debuggen von DirectX-Fehlern zu setzen. Weitere Informationen finden Sie unter [ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed). **ReadDataAsync** liest asynchron aus einer binären Datei. **ConvertDipsToPixels** konvertiert eine Länge in geräteunabhängige Pixel (DIPs) auf eine Länge in physische Pixel. |
+| DirectXHelper.h              | Allgemein                 | Implementiert Methoden wie z. B. **DX::ThrowIfFailed**, **ReadDataAsync**, und ** ConvertDipsToPixels. **DX::ThrowIfFailed**konvertiert die von DirectX Win32-APIs zurückgegebenen HRESULT-Fehlerwerte in Ausnahmen der Windows-Runtime konvertiert. Verwenden Sie diese Methode, um einen Haltepunkt zum Debuggen von DirectX-Fehlern zu setzen. Weitere Informationen finden Sie unter [ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed). **ReadDataAsync** liest asynchron aus einer binären Datei. **ConvertDipsToPixels** konvertiert eine Länge in geräteunabhängige Pixel (DIPs) auf eine Länge in physische Pixel. |
 | StepTimer.h                  | Allgemein                 | Definiert einen Timer mit hoher Auflösung, der sich besonders für Spiele oder Apps mit interaktivem Rendering eignet.   |
 | Sample3DSceneRenderer.h/.cpp | Inhalt                | Definiert ein Klassenobjekt, um eine grundlegende Renderingpipeline zu instanziieren. Erstellt eine einfache Renderimplementierung, die eine Direct3D-Swapchain und einen Grafikadapter mit Ihrem UWP-DirectX-Spiel verbindet.   |
 | SampleFPSTextRenderer.h/.cpp | Inhalt                | Definiert ein Klassenobjekt, das den aktuellen FPS-Wert mit Direct2D und DirectWrite rechts unten auf dem Bildschirm rendert.  |
 | SamplePixelShader.hlsl       | Inhalt                | Enthält den Code der High-Level-Shader-Language (HLSL) für einen sehr einfachen Pixel-Shader.                                            |
 | SampleVertexShader.hlsl      | Inhalt                | Enthält den Code der High-Level Shader Language (HLSL) für einen sehr einfachen Vertex-Shader.                                           |
 | ShaderStructures.h           | Inhalt                | Enthält die Shader-Strukturen, die zum Senden von MVP-Matrizen und Vertex-Daten an den Vertexshader verwendet werden können.  |
-| pch.h/.cpp                   | Main                   | Enthält alles, was das Windows-System für die von einer Direct3D-App genutzten APIs (einschließlich DirectX11-APIs) enthält.| 
+| pch.h/.cpp                   | Main                   | Enthält alles, was das Windows-System für die von einer Direct3D-App genutzten APIs (einschließlich DirectX 11-APIs) enthält.| 
 
 ### <a name="next-steps"></a>Nächste Schritte
 
-Hier haben Sie gelernt, wie Sie ein UWP-DirectX-Spieleprojekts mithilfe der **DirectX11-App (Universal Windows)**-Vorlage erstellen und haben einige Komponenten und Dateien eingeführt, die von diesem Projekt bereitgestellt werden.
+Hier haben Sie gelernt, wie Sie ein UWP-DirectX-Spieleprojekts mithilfe der **DirectX 11-App (Universal Windows)**-Vorlage erstellen und haben einige Komponenten und Dateien eingeführt, die von diesem Projekt bereitgestellt werden.
 
-Der nächste Abschnittist [Definieren des UWP-App-Frameworks für das Spiel](tutorial--building-the-games-uwp-app-framework.md). Wir untersuchen, wie dieses Spiel viele der Konzepte und Komponenten verwendet und erweitert, die die Vorlage bereitstellt.
+Der nächste Abschnitt ist [Definieren des UWP-App-Frameworks für das Spiel](tutorial--building-the-games-uwp-app-framework.md). Wir untersuchen, wie dieses Spiel viele der Konzepte und Komponenten verwendet und erweitert, die die Vorlage bereitstellt.
 
  
 

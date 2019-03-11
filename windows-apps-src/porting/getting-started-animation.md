@@ -1,26 +1,26 @@
 ---
 title: Erste Schritte mit Animationen
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-description: In diesem Projekt verschieben wir ein Rechteck, wenden einen Ausblendeeffekt an und blenden das Rechteck wieder ein
+description: In diesem Projekt verschieben wir ein Rechteck, wenden einen Ausblendeeffekt an und blenden es wieder ein
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: dc5e107fd343798698f5957c26d87a0d3ffe6625
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929209"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608625"
 ---
-# <a name="getting-started-animation"></a>Erste Schritte: Animationen
+# <a name="getting-started-animation"></a>Erste Schritte: Animation
 
 
 ## <a name="adding-animations"></a>Hinzufügen von Animationen
 
-In iOS werden Animationseffekte meist programmgesteuert erstellt. Sie könnten beispielsweise Animationen verwenden, die von den blockbasierten **animateWithDuration**-Methoden der **UIView**-Klasse oder den älteren, nicht blockbasierten Methoden bereitgestellt werden. Sie können auch explizit die **CALayer**-Klasse verwenden, um Ebenen zu animieren. Animationen in Windows-Apps können programmgesteuert erstellt werden. Sie können jedoch auch deklarativ mittels der Extensible Application Markup Language (XAML) definiert werden. Sie können Microsoft Visual Studio zum direkten Bearbeiten von XAML-Code verwenden oder auch das Visual Studio-Tool **Blend**, das XAML-Code beim Arbeiten mit Animationen in einem Designer erstellt. Mit Blend können Sie komplette VisualStudio-Projekte öffnen, entwerfen, erstellen und ausführen. In der folgenden exemplarischen Vorgehensweise können Sie diese Methode testen.
+In iOS werden Animationseffekte meist programmgesteuert erstellt. Sie könnten beispielsweise Animationen verwenden, die von den blockbasierten **animateWithDuration**-Methoden der **UIView**-Klasse oder den älteren, nicht blockbasierten Methoden bereitgestellt werden. Sie können auch explizit die **CALayer**-Klasse verwenden, um Ebenen zu animieren. Animationen in Windows-Apps können programmgesteuert erstellt werden. Sie können jedoch auch deklarativ mittels der Extensible Application Markup Language (XAML) definiert werden. Sie können Microsoft Visual Studio zum direkten Bearbeiten von XAML-Code verwenden oder auch das Visual Studio-Tool **Blend**, das XAML-Code beim Arbeiten mit Animationen in einem Designer erstellt. Mit Blend können Sie komplette Visual Studio-Projekte öffnen, entwerfen, erstellen und ausführen. In der folgenden exemplarischen Vorgehensweise können Sie diese Methode testen.
 
-Erstellen Sie eine neue Universal Windows Platform (UWP)-App, und nennen Sie sie z.B. „SimpleAnimation“. In diesem Projekt verschieben wir ein Rechteck, wenden einen Ausblendeeffekt an und blenden es wieder ein In XAML basieren Animationen auf dem Konzept von *Storyboards* (nicht mit iOS-Storyboards zu verwechseln). Bei Storyboards werden Änderungen von Eigenschaften mithilfe von *Keyframes* animiert.
+Erstellen Sie eine neue Universal Windows Platform (UWP)-App, und nennen Sie sie z. B. „SimpleAnimation“. In diesem Projekt verschieben wir ein Rechteck, wenden einen Ausblendeeffekt an und blenden es wieder ein In XAML basieren Animationen auf dem Konzept von *Storyboards* (nicht mit iOS-Storyboards zu verwechseln). Bei Storyboards werden Änderungen von Eigenschaften mithilfe von *Keyframes* animiert.
 
 Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf den Namen des Projekts, während das Projekt geöffnet ist, und wählen Sie **In Blend öffnen** oder **In Blend entwerfen** aus wie in der folgenden Abbildung gezeigt. Die Ausführung von Visual Studio wird im Hintergrund fortgesetzt.
 
@@ -40,7 +40,7 @@ Tippen Sie im Fenster **Objekte und Zeitachsen** auf das Plussymbol (**Neu**) un
 
 ![Hinzufügen eines Storyboards](images/ios-to-uwp/blend-3.png)
 
-Ein Storyboard wird im Fenster **Objekte und Zeitachsen** angezeigt (möglicherweise müssen Sie die Größe der Ansicht anpassen, damit es ordnungsgemäß angezeigt wird). Die Anzeige der **Designansicht** ändert sich, um anzuzeigen, dass die Zeitachsenaufzeichnung für Storyboard1 aktiviert ist****. Tippen Sie im Fenster **Objekte und Zeitachsen** über dem gelben Pfeil auf die Schaltfläche **Keyframe aufzeichnen**, um den aktuellen Status des Rechtecks zu erfassen, wie in der folgenden Abbildung gezeigt.
+Ein Storyboard wird im Fenster **Objekte und Zeitachsen** angezeigt (möglicherweise müssen Sie die Größe der Ansicht anpassen, damit es ordnungsgemäß angezeigt wird). Die Anzeige der **Designansicht** ändert sich, um anzuzeigen, dass die Zeitachsenaufzeichnung für **Storyboard1 aktiviert ist**. Tippen Sie im Fenster **Objekte und Zeitachsen** über dem gelben Pfeil auf die Schaltfläche **Keyframe aufzeichnen**, um den aktuellen Status des Rechtecks zu erfassen, wie in der folgenden Abbildung gezeigt.
 
 ![Aufzeichnen eines Keyframes](images/ios-to-uwp/blend-4.png)
 
@@ -48,13 +48,13 @@ Lassen Sie uns das Rechteck nun verschieben und ausblenden. Ziehen Sie dazu den 
 
 ![Fenster „Eigenschaften“ und Schaltfläche „Wiedergeben“](images/ios-to-uwp/blend-5.png)
 
-Als Nächstes möchten wir das Rechteck wieder einblenden. Doppelklicken Sie im Fenster **Objekte und Zeitachsen** auf **Storyboard1**. Wählen Sie dann wie in der folgenden Abbildung gezeigt im Fenster **Eigenschaften** im Bereich **Allgemein** **AutoReverse** aus.
+Als Nächstes möchten wir das Rechteck wieder einblenden. Doppelklicken Sie im Fenster **Objekte und Zeitachsen** auf **Storyboard1**. Wählen Sie dann wie in der folgenden Abbildung gezeigt im Fenster **Eigenschaften** im Bereich **Allgemein****AutoReverse** aus.
 
 ![Auswählen eines Storyboards](images/ios-to-uwp/blend-6.png)
 
 Klicken Sie schließlich auf die Schaltfläche **Wiedergeben**, um das Ergebnis zu überprüfen.
 
-Sie können das Projekt erstellen und ausführen, indem Sie auf die grüne Schaltfläche „Ausführen“ am oberen Rand des Fensters klicken (oder F5 drücken). Wenn Sie dies tun, wird das Projekt tatsächlich erstellt und ausgeführt, das grüne Rechteck ist jedoch weiterhin vorhanden. Zum Starten der Animation müssen Sie dem Projekt eine Zeile mit Code hinzufügen. Gehen Sie dazu wie folgt vor.
+Sie können das Projekt erstellen und ausführen, indem Sie auf die grüne Schaltfläche „Ausführen“ am oberen Rand des Fensters klicken (oder F5 drücken). Wenn Sie dies tun, wird das Projekt tatsächlich erstellt und ausgeführt, das grüne Rechteck ist jedoch weiterhin vorhanden. Zum Starten der Animation müssen Sie dem Projekt eine Zeile mit Code hinzufügen. Gehen Sie dazu wie folgt vor:
 
 Speichern Sie das Projekt, indem Sie das Menü **Datei** Menü öffnen und **MainPage.xaml speichern** wählen. Kehren Sie zu Visual Studio zurück. Wenn in Visual Studio ein Dialogfeld mit der Frage angezeigt wird, ob Sie die geänderte Datei erneut laden möchten, wählen Sie **Ja**. Doppelklicken Sie zum Öffnen auf die Datei **MainPage.xaml.cs** unter **MainPage.xaml**, und fügen Sie folgenden Code direkt über der public MainPage()-Methode hinzu:
 
@@ -126,8 +126,8 @@ Wenn Sie die Datei MainPage.xaml in der **XAML**-Ansicht öffnen, können Sie de
 
 Sie können diesen XAML-Code manuell bearbeiten oder zu Blend zurückkehren, um dort weiter an diesem zu arbeiten. Mit Blend können Sie spielerisch interessante Benutzeroberflächen erstellen und sie mit einem Grafiktool animieren, was die Entwicklung erheblich beschleunigt. Weitere Informationen zu Animationen finden Sie unter [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/mt187350).
 
-**Hinweis:** Informationen zu Animationen für <span class="legacy-term">UWP-apps mit JavaScript und HTML</span>finden Sie unter [Animieren der Benutzeroberfläche (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**Beachten Sie**  Informationen zu Animationen für <span class="legacy-term">UWP-apps mit JavaScript und HTML</span>, finden Sie unter [animieren Ihre Benutzeroberfläche (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
 
 ### <a name="next-step"></a>Nächster Schritt
 
-[Erste Schritte: Was kommt als Nächstes?](getting-started-what-next.md)
+[Erste Schritte: Was kommt als nächstes?](getting-started-what-next.md)
