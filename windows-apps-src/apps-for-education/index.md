@@ -1,20 +1,14 @@
 ---
 title: Entwickeln Sie Apps für das Bildungswesen.
-description: In diesem Abschnitt werden die Ressourcen für universelle Windows-Apps beschrieben, die Ihnen zum Erstellen von Bildungs-Apps für die Windows10-Plattform zur Verfügung stehen.
+description: "In diesem Abschnitt werden die Ressourcen für universelle Windows-Apps beschrieben, die Ihnen zum Erstellen von Bildungs-Apps für die Windows\_10-Plattform zur Verfügung stehen."
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, education
+keywords: 'Windows 10, UWP, Bildung'
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943986"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Entwickeln von universellen Windows-Apps für das Bildungswesen
-![Screenshot der app "Prüfung"-a-test](images/take-a-test-screen-small.png)
+![Screenshot der Prüfungs-App](images/take-a-test-screen-small.png)
 
 Die folgenden Ressourcen unterstützen Sie beim Erstellen universeller Windows-Apps für das Bildungswesen.
 
@@ -34,7 +28,7 @@ Benutzereingaben sind ein wichtiger Bestandteil von Apps für Bildungszwecke. Di
 Die Windows Ink-Plattform kann Apps für Bildungszwecke unterstützen, indem diese an ein Eingabeverfahren angepasst werden, mit dem die Lernenden gut vertraut sind. Eine umfassende Anleitung zur Implementierung von Windows Ink in Ihrer App finden Sie unter [Zeichenstiftinteraktionen und Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) und den darauf folgenden Themen. Die folgenden Beispiel-Apps illustrieren diese API.
 - [Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Ink) demonstriert die Verwendung der Freihandfunktion (Erfassung, Manipulation und Interpretation von Freihandstrichen) in universellen Windows-Apps mit JavaScript.
 - Das [einfache Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) veranschaulicht die Verwendung der Freihandfunktion (beispielsweise das Erfassen von Freihandeingaben des Benutzers und Durchführen der Schrifterkennung für Freihandstriche) in universellen Windows-Apps mit C#.
-- Das [komplexe Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) veranschaulicht die Verwendung der erweiterten InkPresenter-Funktion zum Überlappen von Freihandeingaben mit anderen Objekten, Auswählen der Freihandeingabe, Kopieren/Einfügen und Behandeln von Ereignissen. Es basiert auf der universellen Windows-Plattform in C++ und kann auf Windows10-SKUs für Desktops und mobile Geräte ausgeführt werden.
+- Das [komplexe Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) veranschaulicht die Verwendung der erweiterten InkPresenter-Funktion zum Überlappen von Freihandeingaben mit anderen Objekten, Auswählen der Freihandeingabe, Kopieren/Einfügen und Behandeln von Ereignissen. Es basiert auf der universellen Windows-Plattform in C++ und kann auf Windows 10-SKUs für Desktops und mobile Geräte ausgeführt werden.
 
 
 ### <a name="microsoft-store"></a>Microsoft Store

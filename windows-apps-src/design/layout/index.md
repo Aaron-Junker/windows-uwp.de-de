@@ -1,21 +1,15 @@
 ---
-description: Erfahren Sie, wie Sie eine UWP-App entwerfen und kodieren, die eine einfache Navigation besitzt und auf vielen Geräten und Bildschirmen verschiedener Größen großartig aussieht.
+description: 'Erfahren Sie, wie Sie eine UWP-App entwerfen und kodieren, die eine einfache Navigation besitzt und auf vielen Geräten und Bildschirmen verschiedener Größen großartig aussieht.'
 title: Layoutüberblick für UWP-Apps
-keywords: Layout von UWP-Apps, Universelle Windows-Plattform, App-Design, Schnittstelle
-ms.date: 3/7/2018
+keywords: 'Layout von UWP-Apps, universelle Windows-Plattform, App-Design, Schnittstelle'
+ms.date: 03/07/2018
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: 826fb141fd636ae899fff9696108965d94187f8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920991"
 ---
 # <a name="layout"></a>Layout
 
-![Favoritenbild](images/header-layout2.jpg)
+![Herobild](images/header-layout2.jpg)
 
 Diese Artikel unterstützen Sie beim Erstellen einer flexiblen Benutzeroberfläche, die auch bei verschiedenen Bildschirmgrößen, Fenstergrößen, Auflösungen und Ausrichtungen hervorragend aussieht.
 

@@ -1,13 +1,11 @@
 ---
 layout: HubPage
-hide_bc: True
+hide_bc: true
+ms.prod: windows
 title: Windows-Dokumentation
-description: "Suchen Sie Entwickler-, Hardware- und ITPro-Dokumente, die Ihnen beim Erstellen und Verwalten Ihrer Windows-Lösung helfen."
-ms.openlocfilehash: 3837a3649acd5b9656c3d1b76973fca9f26ba740
-ms.sourcegitcommit: d6cf700ed2771c7a88f32972abdd0e192ae71b73
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2017
+description: "Suchen Sie Entwickler-, Hardware- und IT\_Pro-Dokumente, die Ihnen beim Erstellen und Verwalten Ihrer Windows-Lösung helfen."
+ms.technology: hub
+localizationpriority: medium
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -23,7 +21,7 @@ ms.lasthandoff: 07/14/2017
                                   </div>
                               </div>
                               <div class="cardText">
-                                  <h3>Testen Sie Windows10 auf virtuellen Computern</h3>
+                                  <h3>Testen Sie Windows 10 auf virtuellen Computern</h3>
                               </div>
                           </div>
                       </div>
@@ -49,7 +47,7 @@ ms.lasthandoff: 07/14/2017
               </a>
           </li>
           <li>
-              <a href="https://mva.microsoft.com/">
+              <a href="/learn/browse/?roles=developer&products=windows">
                   <div class="cardSize">
                       <div class="cardPadding">
                           <div class="card">
@@ -59,7 +57,7 @@ ms.lasthandoff: 07/14/2017
                                   </div>
                               </div>
                               <div class="cardText">
-                                  <h3>Lernen Sie Microsoft Virtual Academy kennen</h3>
+                                  <h3>Erkunden von Microsoft Learn</h3>
                               </div>
                           </div>
                       </div>
@@ -75,195 +73,160 @@ ms.lasthandoff: 07/14/2017
             <a data-default="true" href="#developer">Entwickler</a>
             <ul id="developer">
                 <li>
-                    <a href="#developer-all">Alle</a>
-                    <ul id="developer-all" class="cardsF">
-                        <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-1.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>UWP-Apps</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/apps/getstarted">Erste Schritte</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/apps/design">Entwerfen</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/develop">Entwickeln</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://msdn.microsoft.com/windows/uwp/publish/index">Veröffentlichen</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">Monetarisierung</a>
-                                            </p>
-                                            <p>
-                                                <a href="/uwp/">API-Referenz</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <a href="#developer-all">alle</a>
+                    <ul id="developer-all" class="cardsC">
+<li>
+                            <div class="container intro">
+                                <p>Entwickeln für Windows 10</p>
                             </div>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-2.svg" alt="" />
+                            <a href="https://docs.microsoft.com/windows/uwp/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-uwp.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Desktop</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/getstarted">Erste Schritte</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/design">Entwerfen</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/develop">Entwickeln</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/app-compatibility">Kompatibilität</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/test-deploy">Testen und Bereitstellen</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>UWP-Apps</h3>
+                                                <p>Entwickeln Sie Apps für beliebige Windows-Geräte – PCs, Smartphones, Xbox One, HoloLens und mehr –, und veröffentlichen Sie diese im Store. </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-3.svg" alt="" />
+                            <a href="https://docs.microsoft.com/en-us/windows/desktop">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-desktop.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Spiele</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/games/uwp">UWP</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/games/xbox/xboxlive">Xbox Live</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/games/support">Support</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>Desktopanwendungen</h3>
+                                                <p>Laden Sie die Tools herunter, und erfahren Sie, welche Technologie am besten für Sie geeignet ist und wie Sie Desktopanwendungen auf der Plattform Ihrer Wahl entwickeln.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-4.svg" alt="" />
+                            <a href="https://developer.microsoft.com/games">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-games.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>IoT</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Docs">Dokumentation</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Downloads">Downloads</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/samples">Beispiele</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Community">Community</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://www.windowsforiotdevices.com/">Kommerzialisierung</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>Spiele</h3>
+                                                <p>Erstellen Sie UWP-Spiele für Windows 10-Geräte – PC, Xbox und Mixed Reality.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-5.svg" alt="" />
+                            <a href="https://docs.microsoft.com/windows/iot-core/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-iot.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Mixed Reality</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/academy">Academy</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/development">Entwicklung</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/design">Entwerfen</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/community">Community und Support</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>Windows-IoT</h3>
+                                                <p>Informationen zur Entwicklung auf der Grundlage von Windows 10 IoT Core Das Betriebssystem für Ihr Internet der Dinge</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>                            
-                        <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-6.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Edge</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/platform/documentation/">Microsoft Edge-Dokumente</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/tools/">Tools</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/testdrive/">Demos</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </a>
                         </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/windows/mixed-reality">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-mixed-reality.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Mixed Reality</h3>
+                                                <p>Erfahren Sie, wie Sie Mixed-Reality-Erlebnisse für HoloLens und immersive Headsets entwickeln.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/microsoft-edge/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-edge.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Web</h3>
+                                                <p>Gestalten Sie Umgebungen, die von Microsoft Edge und den neuesten Webstandards unterstützt werden.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/windows/ai/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/windows-ai.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Windows AI</h3>
+                                                <p>Erstellen Sie intelligente Apps für Windows und Windows-Geräte.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                       <li>
                     </ul>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="#hardware-dev">Hardwareentwicklung</a>
+            <a href="#hardware-dev">Hardware-Entwicklung</a>
             <ul id="hardware-dev">
                 <li>
                     <a href="#hardware-dev1"></a>
                     <ul id="hardware-dev1" class="cardsC">
                         <li>
                             <div class="container intro">
-                                <p>Schaffen Sie mit Windows10 innovative und individuelle Geräte.</p>
+                                <p>Schaffen Sie mit Windows 10 innovative und individuelle Geräte.</p>
                             </div>
                         </li>
                         <li>
@@ -277,8 +240,8 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Erste Schritte</h3>
-                                                <p>Neu bei der Herstellung von Geräten für Windows10?</p>
+                                                <h3>Beginnen</h3>
+                                                <p>Neu bei der Herstellung von Geräten für Windows 10?</p>
                                             </div>
                                         </div>
                                     </div>
@@ -296,7 +259,7 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Entwerfen</h3>
+                                                <h3>Entwurf</h3>
                                                 <p>Erstellen Sie ansprechende Benutzeroberflächen mit einem beliebigen Formfaktor.</p>
                                             </div>
                                         </div>
@@ -305,7 +268,7 @@ ms.lasthandoff: 07/14/2017
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/windows-hardware/drivers/develop/">
+                            <a href="https://docs.microsoft.com/windows-hardware/drivers/index">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -316,7 +279,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Entwicklung</h3>
-                                                <p>Entwickeln, testen und implementieren Sie Treiber.</p>
+                                                <p>Mit dem Windows-Treiberkit (Windows Driver Kit, WDK) können Sie Treiber entwickeln, testen und bereitstellen.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -335,7 +298,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Anpassung</h3>
-                                                <p>Wenden Sie Einstellungen, Sprachen und Treiber auf Windows10-Images an.</p>
+                                                <p>Wenden Sie Einstellungen, Sprachen und Treiber auf Windows 10-Images an.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -373,7 +336,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Herstellung</h3>
-                                                <p>Erstellen und implementieren Sie Windows10.</p>
+                                                <p>Erstellen und implementieren Sie Windows 10.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -415,7 +378,7 @@ ms.lasthandoff: 07/14/2017
                             </div>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows-server/windows-server-2016">
+                            <a href="https://docs.microsoft.com/windows-server/index">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -425,8 +388,8 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows Server 2016</h3>
-                                                <p>Erhalten Sie Informationen zum Planen, Bereitstellen, Sichern und Skalieren von Windows Server2016.</p>
+                                                <h3>Windows Server 2019 und Windows Server 2016</h3>
+                                                <p>Hier erhalten Sie Informationen zum Planen, Bereitstellen, Sichern und Skalieren von Windows Server 2019 und Windows Server 2016.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -444,8 +407,8 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows10 und Windows 10Mobile</h3>
-                                                <p>Erhalten Sie Informationen Sie zum Planen, Bereitstellen, Verwalten und Sichern von Windows10 und Windows10 Mobile.</p>
+                                                <h3>Windows 10 und Windows 10 Mobile</h3>
+                                                <p>Erhalten Sie Informationen Sie zum Planen, Bereitstellen, Verwalten und Sichern von Windows 10 und Windows 10 Mobile.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -464,7 +427,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Windows für Bildungseinrichtungen</h3>
-                                                <p>Informationen zur Verwendung von Windows10 in Schulen.</p>
+                                                <p>Erhalten Sie Informationen zur Verwendung von Windows 10 Education in Bildungseinrichtungen.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -483,7 +446,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Microsoft Store für Unternehmen</h3>
-                                                <p>Informationen zum Suchen, Erwerben, Verteilen und Verwalten von Apps für Ihr Unternehmen mit Microsoft Store für Unternehmen.</p>
+                                                <p>Informationen zum Suchen, Erwerben, Verteilen und Verwalten von Apps für Ihr Unternehmen mit Microsoft Store für Unternehmen</p>
                                             </div>
                                         </div>
                                     </div>
@@ -502,7 +465,26 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Microsoft Store für Bildungseinrichtungen</h3>
-                                                <p>Informationen zum Suchen, Erwerben, Verteilen und Verwalten von Apps für Ihre Schule mit Microsoft Store für Bildungseinrichtungen.</p>
+                                                <p>Informationen zum Suchen, Erwerben, Verteilen und Verwalten von Apps für Ihre Schule mit Microsoft Store für Bildungseinrichtungen</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/en-us/windows/privacy">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/illustrations/dynamics-gdpr-center.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Windows-Datenschutz</h3>
+                                                <p>Hier finden Sie Informationen zum Datenschutz unter Windows sowie zur Vorbereitung auf die DSGVO (Datenschutz-Grundverordnung).</p>
                                             </div>
                                         </div>
                                     </div>
@@ -521,7 +503,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Microsoft Edge</h3>
-                                                <p>Informationen zum Bereitstellen und Verwalten von Microsoft Edge und Internet Explorer11.</p>
+                                                <p>Erhalten Sie Informationen Sie zum Bereitstellen und Verwalten von Microsoft Edge und Internet Explorer 11.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -559,7 +541,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Surface Hub</h3>
-                                                <p>Informationen zum Einrichten und Verwalten von Surface Hub.</p>
+                                                <p>Erhalten Sie Informationen Sie zum Einrichten und Verwalten von Surface Hub.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -578,7 +560,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>HoloLens</h3>
-                                                <p>Informationen zum Einrichten und Verwalten der HoloLens Commercial Suite.</p>
+                                                <p>Erhalten Sie Informationen zum Einrichten und Verwalten der HoloLens Commercial Suite.</p>
                                             </div>
                                         </div>
                                     </div>

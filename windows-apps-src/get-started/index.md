@@ -1,21 +1,15 @@
 ---
 layout: LandingPage
-description: Erste Schritte mit der universellen Windows-Plattform (UWP) und der App-Entwicklung für Windows10.
+description: "Erste Schritte mit der universellen Windows-Plattform (UWP) und der App-Entwicklung für Windows\_10"
 title: Erste Schritte mit der universellen Windows-Plattform (UWP)
 ms.date: 03/23/2018
 ms.topic: article
-keywords: Erste Schritte, Windows 10, UWP, XAML, c#
+keywords: 'Erste Schritte, Windows 10, UWP, XAML, C#'
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934725"
 ---
-# <a name="get-started-with-windows-10-apps"></a>Erste Schritte mit Windows 10-Apps 
+# <a name="get-started-with-windows-10-apps"></a>Erste Schritte mit Windows 10-Apps 
  
-Entwickeln von Apps, die auf allen Windows10-Geräten funktionieren, oder Ihre vorhandenen Apps mit neuen und aktualisierten Features zu verbessern.  
+Entwickeln Sie Apps, die auf allen Windows 10-Geräten funktionieren, oder optimieren Sie Ihre vorhandenen Apps mit neuen und aktualisierten Features.  
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -28,8 +22,8 @@ Entwickeln von Apps, die auf allen Windows10-Geräten funktionieren, oder Ihre v
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Informationen zu Windows10-Apps</h3>
-                        <p>Mit Windows10 und der universellen Windows-Plattform können Sie Apps erstellen, die über alle Windows-Gerätetypen großartig funktionieren und aussehen, oder vorhandene Apps mit modernen Funktionen aktualisieren.</p>
+                        <h3>Informationen zu Windows 10-Apps</h3>
+                        <p>Mit Windows 10 und der universellen Windows-Plattform können Sie Apps erstellen, die auf allen Windows-Gerätetypen einwandfrei funktionieren und aussehen, oder vorhandene Apps mit modernen Funktionen aktualisieren.</p>
                         <ul>
                           <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Was ist eine UWP-App?</a></li>
                         </ul>
@@ -48,10 +42,10 @@ Entwickeln von Apps, die auf allen Windows10-Geräten funktionieren, oder Ihre v
                         </div>
                     </div>
                     <div class="cardText">
-                    <h3>Vorbereiten</h3>
-                    <p>Mit Visual Studio Community und Windows 10 SDK erhalten Sie alles, was Sie zum Entwickeln herausragender Apps benötigen – kostenlos!</p>
+                    <h3>Einrichten</h3>
+                    <p>Mit Visual Studio Community und dem Windows 10 SDK erhalten Sie alles, was Sie zum Entwickeln herausragender Apps benötigen – kostenlos!</p>
                     <ul>
-                        <li><a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">Herunterladen der Tools und SDK</a></li>
+                        <li><a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">Herunterladen der Tools und des SDK</a></li>
                     </ul>
                   </div>
                 </div>
@@ -69,9 +63,9 @@ Entwickeln von Apps, die auf allen Windows10-Geräten funktionieren, oder Ihre v
                     </div>
                     <div class="cardText">
                         <h3>Beginnen Sie mit der Codierung</h3>
-                        <p>Ob Sie ein erfahrener Entwickler sind oder Ihrer erste App entwickeln, hier erhalten Sie praktische Erfahrungen mit der Windows10-Plattform und der Dokumentation.</p>
+                        <p>Ob Sie ein erfahrener Entwickler sind oder Ihrer erste App entwickeln – hier sammeln Sie praktische Erfahrungen mit der Windows 10-Plattform und der Dokumentation.</p>
                         <ul>
-                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Beginnen mit der Codierung</a></li>
+                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Beginnen Sie mit der Codierung</a></li>
                         </ul>
                     </div>
                 </div>
@@ -92,11 +86,11 @@ Entwickeln von Apps, die auf allen Windows10-Geräten funktionieren, oder Ihre v
                 </div>
                 <div class="cardText">
                     <h3>Lernprogramme</h3>
-                    <p>Suchen Sie nach einer Anleitung zur Lernerfahrung? Diese Lernprogramme helfen Ihnen.</p>
+                    <p>Suchen Sie nach einer Anleitung zur Lernerfahrung? Diese Tutorials unterstützen Sie.</p>
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">Grundlagen der Benutzeroberfläche</a></p>
                     <p><a href="//docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding">Datenbindung</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-style">Benutzerdefinierte Stils</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-style">Benutzerdefinierte Stile</a></p>
                 </div>
             </div>
         </div>
@@ -113,12 +107,12 @@ Entwickeln von Apps, die auf allen Windows10-Geräten funktionieren, oder Ihre v
                 </div>
                 <div class="cardText">
                     <h3>Beispiele</h3>
-                    <p>Erfahren Sie praxisnah die Windows10-Plattform und APIs in Aktion.</p>
+                    <p>Machen Sie sich mit der Windows 1010-Plattform vertraut, und sehen Sie sich APIs in Aktion an.</p>
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Verwenden der UWP-Apps-Beispiele</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">Datenbank für Kundenaufträge</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">Quizspiel (Project Rome)</a></p>
-                    <p><a href="//developer.microsoft.com/windows/samples">Portal für Codebeispiele für Windows</a></p>
+                    <p><a href="//developer.microsoft.com/windows/samples">Portal für Windows-Codebeispiele</a></p>
                 </div>
             </div>
         </div>
@@ -134,11 +128,11 @@ Entwickeln von Apps, die auf allen Windows10-Geräten funktionieren, oder Ihre v
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>Neuigkeiten</h3>
-                    <p>Erweitern Sie Ihren Horizont, und entdecken Sie die neusten Ergänzungen auf Windows10.</p>
+                    <h3>Neuigkeiten:</h3>
+                    <p>Erweitern Sie Ihre Möglichkeiten, und entdecken Sie die neusten Ergänzungen für Windows 10.</p>
                     <br>
                     <p><a href="//developer.microsoft.com/windows/windows-10-for-developers">Highlights der aktuellen Version von Windows 10</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">Neues bei Windows10 für Entwickler</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">Neuigkeiten für Entwickler in Windows 10</a></p>
                 </div>
             </div>
         </div>
@@ -215,7 +209,7 @@ Entwickeln von Apps, die auf allen Windows10-Geräten funktionieren, oder Ihre v
                     <div class="cardText">
                         <h3>Entwicklungstools</h3>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows-Community-Toolkit</a></p>
-                        <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtuelle Computer</a></p>
+                        <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtuelle Computer.</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu unter Windows</a></p>
                         </div>
                     </div>
@@ -240,7 +234,7 @@ Entwickeln von Apps, die auf allen Windows10-Geräten funktionieren, oder Ihre v
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Erkunden Sie zugehörige Dokumente</h3>
+                        <h3>Erkunden Sie zugehörige Dokumente.</h3>
                         <p><a href="//docs.microsoft.com/dotnet/csharp/index">C#-Handbuch</a></p>
                         <p><a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                     </div>

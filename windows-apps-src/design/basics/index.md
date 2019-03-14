@@ -1,26 +1,26 @@
 ---
 description: 'Erfahren Sie, wie Sie eine UWP-App entwerfen und kodieren, die eine einfache Navigation besitzt und auf vielen Geräten und Bildschirmen verschiedener Größen großartig aussieht.'
 title: Designgrundlagen
-keywords: 'Layout von UWP-Apps, Universelle Windows-Plattform, App-Design, Schnittstelle'
+keywords: 'Layout von UWP-Apps, universelle Windows-Plattform, App-Design, Schnittstelle'
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ---
 # <a name="design-basics-for-uwp-apps"></a>Designgrundlagen für UWP-Apps
 
-![Favoritenbild](images/header-design-basics.svg)
+![Herobild](images/header-design-basics.svg)
 
-Der Designleitfaden für die Universelle Windows-Plattform (UWP) ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Es ist keine Liste von Vorschriften, sondern ein lebendiges Dokument, das entwickelt wurde, um sich entsprechend unseres Fluent Design-Systems sowie der Bedürfnisse unserer App-Entwicklungs-Community zu entwickeln. 
+Der Designleitfaden für die universelle Windows-Plattform (UWP) ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Es handelt sich dabei nicht um eine Liste von Vorschriften, sondern ein lebendiges Dokument, das entwickelt wurde, um sich an unser Fluent Design-System sowie die Bedürfnisse unserer App-Entwicklungs-Community anzupassen. 
 
 ## <a name="overview"></a>Übersicht
 
 [**Einführung in das UWP-App-Design**](design-and-ui-intro.md)
 
-Eine Reihe von UWP-Features in Kombination mit bewährten Verfahrensweisen für die Erstellung von Apps, die auf allen Arten von Windows-basierten Geräten hervorragend funktionieren.
+Hier finden Sie eine Einführung in die UWP-Features sowie bewährte Methoden für die Erstellung von Apps, die sich auf allen Arten von Windows-basierten Geräten wunderbar skalieren lassen.
 
 [**Fluent Design-System**](../fluent-design-system/index.md)
 
-Unsere Ziele und Prinzipien für die Erstellung adaptiver, einfühlsamer und schöner Benutzeroberflächen sind im Fluent Design-System zusammengefasst.
+Unsere Ziele und Prinzipien für die Erstellung adaptiver, intuitiver und ansprechender Benutzeroberflächen sind im Fluent Design-System zusammengefasst.
 
 ## <a name="basics"></a>Grundlagen
 
@@ -30,11 +30,11 @@ Die Navigation in UWP-Apps basiert auf einem flexiblen Modell aus Navigationsstr
 
 [**Befehlsgrundlagen**](commanding-basics.md)
 
-Befehlselementen sind die interaktiven UI-Elemente, mit denen der Benutzer Aktionen ausführen kann, um beispielsweise eine E-Mail zu senden, ein Element zu löschen oder ein Formular zu übermitteln. Dieser Artikel beschreibt Befehlselemente wie Schaltflächen und Kontrollkästchen, die unterstützten Interaktionen sowie die Befehlsoberflächen (wie etwa Befehlsleisten und Kontextmenüs), auf denen sie sich befinden können.
+Befehlselementen sind die interaktiven UI-Elemente, mit denen der Benutzer Aktionen ausführen kann, um beispielsweise eine E-Mail zu senden, ein Element zu löschen oder ein Formular zu übermitteln. Dieser Artikel beschreibt Befehlselemente wie Schaltflächen und Kontrollkästchen, die von diesen unterstützten Interaktionen sowie die Befehlsoberflächen (wie Befehlsleisten und Kontextmenüs), auf denen sie sich befinden können.
 
 [**Inhaltsgrundlagen**](content-basics.md)
 
-Der Hauptzweck jeder App ist das Bereitstellen von Zugriff auf Content: In einer Fotobearbeitungs-App sind Fotos der Content, in einer Reise-App Karten und Informationen über die Reiseziele usw. Dieser Artikel stellt Empfehlungen für das Design von Inhalten für die drei Inhaltsszenarien bereit: Nutzung, Erstellung und Interaktion.
+Der Hauptzweck jeder App ist das Bereitstellen von Zugriff auf Inhalte: In einer Fotobearbeitungs-App stellen Fotos den Inhalt dar, in einer Reise-App stellen Karten und Informationen über die Reiseziele den Inhalt dar, usw. Dieser Artikel stellt Empfehlungen für das Design von Inhalten für die drei Inhaltsszenarien bereit: Nutzung, Erstellung und Interaktion.
 
 ## <a name="tutorials"></a>Lernprogramme
 
@@ -51,4 +51,4 @@ Versehen Sie die Bildbearbeitungsanwendung mit einem adaptiven Layout.
 
 [**3. Erstellen eigener Stile**](xaml-basics-style.md)
 
-Geben Sie unseren UWP-Steuerelementen ein Erscheinungsbild nach Ihren Vorstellungen, indem Sie benutzerdefinierte Stile erstellen.
+Gestalten Sie unsere UWP-Steuerelemente nach Ihren Vorstellungen, indem Sie benutzerdefinierte Stile erstellen.

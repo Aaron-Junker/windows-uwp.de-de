@@ -1,22 +1,16 @@
 ---
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: Dieser Abschnitt enthält Themen, in denen das XAML-Framework für Universelle Windows-Plattform (UWP)-Apps erläutert wird.
+description: 'Dieser Abschnitt enthält Themen, in denen das XAML-Framework für UWP-Apps (Universelle Windows-Plattform) erläutert wird.'
 title: XAML-Plattform
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: 'Windows 10, UWP'
 ms.localizationpriority: medium
-ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924302"
 ---
 # <a name="xaml-platform"></a>XAML-Plattform
 
 
-Dieser Abschnitt enthält Themen, in denen Programmierkonzepte werden, in der Regel gilt für alle Apps, die Sie schreiben erläutert, wenn Sie c#, Microsoft Visual Basic oder für VisualC++-komponentenerweiterungen (C++ / CX) als Programmiersprache und XAML-Code für die Benutzeroberfläche Definition. Dazu gehören auch grundlegende Begriffe der Programmierung, z.B. die Verwendung von Eigenschaften und Ereignissen, und deren Anwendbarkeit für die Programmierung von UWP-Apps (Universelle Windows-Plattform). Mit der universellen Windows-Plattform (UWP) werden C#-, Visual Basic- oder C++/CX-Konzepte von Eigenschaften und ihren Werten erweitert, indem das Abhängigkeitseigenschaftensystem hinzugefügt wird. In den Themen dieses Abschnitts wird auch die Verwendung der XAML-Sprache durch die UWP dokumentiert. Außerdem werden grundlegende Szenarien und erweiterte Themen behandelt, um zu erläutern, wie Sie XAML zum Definieren der Benutzeroberfläche für Ihre UWP-App verwenden.
+Dieser Abschnitt enthält Themen, in denen Programmierkonzepte erläutert werden, die generell für alle von Ihnen geschriebenen Apps gelten, wenn Sie C#-, Microsoft Visual Basic- oder Visual C++-Komponentenerweiterungen (C++/CX) als Programmiersprache und XAML für Ihre UI-Definition verwenden. Dazu gehören auch grundlegende Begriffe der Programmierung, z. B. die Verwendung von Eigenschaften und Ereignissen, und deren Anwendbarkeit für die Programmierung von UWP-Apps (Universelle Windows-Plattform). Mit der universellen Windows-Plattform (UWP) werden C#-, Visual Basic- oder C++/CX-Konzepte von Eigenschaften und ihren Werten erweitert, indem das Abhängigkeitseigenschaftensystem hinzugefügt wird. In den Themen dieses Abschnitts wird auch die Verwendung der XAML-Sprache durch die UWP dokumentiert. Außerdem werden grundlegende Szenarien und erweiterte Themen behandelt, um zu erläutern, wie Sie XAML zum Definieren der Benutzeroberfläche für Ihre UWP-App verwenden.
 
 | Thema | Beschreibung |
 |-------|-------------|
@@ -25,5 +19,5 @@ Dieser Abschnitt enthält Themen, in denen Programmierkonzepte werden, in der Re
 | [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md) | Hier wird erläutert, wie Sie benutzerdefinierte Abhängigkeitseigenschaften für eine Windows-Runtime-App mit C++, C# oder Visual Basic definieren und implementieren können. |
 | [Übersicht über angefügte Eigenschaften](attached-properties-overview.md) | Erläutert das Konzept einer angefügten Eigenschaft in XAML und bietet einige Beispiele. |
 | [Benutzerdefinierte angefügte Eigenschaften](custom-attached-properties.md) | Erläutert, wie eine angefügte XAML-Eigenschaft als Abhängigkeitseigenschaft implementiert und die Accessorkonvention definiert wird, die erforderlich ist, damit die angefügte Eigenschaft in XAML verwendet werden kann. |
-| [Übersicht über Ereignisse und Routingereignisse](events-and-routed-events-overview.md) | Wir beschreiben das Programmierkonzept von Ereignissen in einer Windows-Runtime-App bei Verwendung von C#, VisualBasic oder VisualC++/CX als Programmiersprache und XAML für die UI-Definition. Sie können im Rahmen der Deklarationen für UI-Elemente Handler für Ereignisse in XAML zuweisen. Alternativ können Sie Handler im Code hinzufügen. Die Windows-Runtime unterstützt **Routingereignisse**: Bestimmte Eingabeereignisse und Datenereignisse können von anderen Objekten behandelt werden als dem Objekt, von dem das Ereignis ausgelöst wurde. Routingereignisse sind hilfreich, wenn Sie Steuerelementvorlagen definieren oder Seiten oder Layoutcontainer verwenden. |
-|[Host-UWP-Steuerelemente in WPF- und Windows Forms-Anwendungen](xaml-host-controls.md)| Es wird erläutert, wie UWP-XAML-Steuerelemente verwendet werden, um die Benutzeroberfläche einer Windows Forms- oder WPF-Desktopanwendung zu verbessern.|
+| [Übersicht über Ereignisse und Routingereignisse](events-and-routed-events-overview.md) | Wir beschreiben das Programmierkonzept von Ereignissen in einer Windows-Runtime-App bei Verwendung von C#, Visual Basic oder Visual C++/CX als Programmiersprache und XAML für die UI-Definition. Sie können im Rahmen der Deklarationen für UI-Elemente Handler für Ereignisse in XAML zuweisen. Alternativ können Sie Handler im Code hinzufügen. Die Windows-Runtime unterstützt **Routingereignisse**: Bestimmte Eingabeereignisse und Datenereignisse können von anderen Objekten behandelt werden als dem Objekt, von dem das Ereignis ausgelöst wurde. Routingereignisse sind hilfreich, wenn Sie Steuerelementvorlagen definieren oder Seiten oder Layoutcontainer verwenden. |
+|[Host-UWP-Steuerelemente in WPF- und Windows Forms-Anwendungen](xaml-host-controls.md)| Hier wird erläutert, wie Sie mit UWP-XAML-Steuerelementen die Benutzeroberfläche einer Windows Forms- oder WPF-Desktopanwendung optimieren.|

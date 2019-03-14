@@ -4,14 +4,8 @@ title: Threading und asynchrone Programmierung
 description: Mithilfe von Threading und der asynchronen Programmierung kann Ihre App Aufgaben asynchron in parallelen Threads ausführen.
 ms.date: 05/14/2018
 ms.topic: article
-keywords: Windows 10, UWP, asynchron, Threads, Threading
+keywords: 'Windows 10, UWP, asynchron, Threads, Threading'
 ms.localizationpriority: medium
-ms.openlocfilehash: 22c151b90be30b39da7decd9a0ce3109e29b7fb7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937379"
 ---
 # <a name="threading-and-async-programming"></a>Threading und asynchrone Programmierung
 Mithilfe von Threading und der asynchronen Programmierung kann Ihre App Aufgaben asynchron in parallelen Threads ausführen.
@@ -30,10 +24,10 @@ Der Threadpool bietet eine höhere Effizienz beim Verwalten von Threads, da der 
 
 | Thema                                                                                                          | Beschreibung                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [Asynchrone Programmierung (UWP-Apps)](asynchronous-programming-universal-windows-platform-apps.md)              | In diesem Thema wird beschrieben, asynchrone Programmierung in die universelle Windows-Plattform (UWP) und ihre Darstellung in c#, Microsoft Visual Basic, für VisualC++-komponentenerweiterungen (C++ / CX), und JavaScript. |
-| [Asynchrone Programmierung in C++/CX (UWP-Apps)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| In diesem Artikel wird die empfohlene Vorgehensweise zur Verwendung asynchroner Methoden in C++/CX mithilfe der <code>task</code>-Klasse beschrieben, die im <code>concurrency</code>-Namespace in „ppltasks.h“ definiert wird. |
+| [Asynchrone Programmierung (UWP-Apps)](asynchronous-programming-universal-windows-platform-apps.md)              | In diesem Thema werden die asynchrone Programmierung auf der universellen Windows-Plattform (UWP) und ihre Darstellung in C#, Microsoft Visual Basic .NET, Visual C++-Komponentenerweiterungen (C++/CX) und JavaScript erläutert. |
+| [Asynchrone Programmierung in C++/CX (UWP-Apps)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| In diesem Artikel wird die empfohlene Vorgehensweise zur Verwendung asynchroner Methoden in C++/CX mithilfe der <code>task</code><code>concurrency</code>-Klasse beschrieben, die im -Namespace in „ppltasks.h“ definiert wird. |
 | [Bewährte Methoden zum Verwenden des Threadpools](best-practices-for-using-the-thread-pool.md)                         | In diesem Thema werden bewährte Methoden für die Verwendung des Threadpools beschrieben. |
 | [Aufrufen asynchroner APIs in C# oder Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | Die Universelle Windows-Plattform (UWP) enthält viele asynchrone APIs. Diese sorgen dafür, dass Ihre App reaktionsfähig bleibt, wenn sie über einen längeren Zeitraum mit einer Aufgabe beschäftigt ist. In diesem Thema wird die Verwendung asynchroner Methoden aus der Universellen Windows-Plattform (UWP) in C# oder Microsoft Visual Basic erläutert. |
 | [Erstellen einer regelmäßigen Arbeitsaufgabe](create-a-periodic-work-item.md)                                                   | Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die regelmäßig wiederholt wird. |
-| [Senden einer Arbeitsaufgabe an den Threadpool](submit-a-work-item-to-the-thread-pool.md)                               | Hier erfahren Sie, wie Sie Arbeit in einem separaten Thread erledigen können, indem Sie eine Arbeitsaufgabe an den Threadpool senden. |
-| [Senden einer Arbeitsaufgabe mithilfe eines Timers](use-a-timer-to-submit-a-work-item.md)                                       | Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Zeitgebers ausgeführt wird. |
+| [Senden einer Arbeitsaufgabe an den Threadpool](submit-a-work-item-to-the-thread-pool.md)                               | Hier erfahren Sie, wie Sie Arbeit in einem separaten Thread erledigen können, indem Sie eine Arbeitsaufgabe an den Threadpool übermitteln. |
+| [Senden einer Arbeitsaufgabe mithilfe eines Timers](use-a-timer-to-submit-a-work-item.md)                                       | Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Timers ausgeführt wird. |

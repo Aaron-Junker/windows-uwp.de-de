@@ -1,37 +1,31 @@
 ---
 title: Programmierung von Spielen
-description: Die Universelle Windows-Plattform (UWP) bietet neue Möglichkeiten zum Erstellen, Verteilen und Monetisieren von Spielen. Hier erhalten Sie Informationen zum Starten eines neuen Spiels oder Portieren eines vorhandenen Spiels.
+description: 'Die Universelle Windows-Plattform (UWP) bietet neue Möglichkeiten zum Erstellen, Verteilen und Monetisieren von Spielen. Hier erhalten Sie Informationen zum Starten eines neuen Spiels oder Portieren eines vorhandenen Spiels.'
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ms.date: 06/13/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, DirectX
+keywords: 'Windows 10, UWP, Spiele, DirectX'
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dddead7dcc2eedbe4e32fa4bfd749bed60ba796
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941593"
 ---
 # <a name="game-programming"></a>Programmierung von Spielen
 
-Die Universelle Windows-Plattform (UWP) bietet neue Möglichkeiten zum Erstellen, Verteilen und Monetisieren von Spielen. Informationen Sie zum Erstellen eines Spiels für Windows10.
+Die Universelle Windows-Plattform (UWP) bietet neue Möglichkeiten zum Erstellen, Verteilen und Monetisieren von Spielen. Hier erhalten Sie Informationen zum Erstellen eines Spiels für Windows 10.
 
 | Thema | Beschreibung |
 |---------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Handbuch zur Entwicklung von Spielen unter Windows10](e2e.md) | Ein umfassender Leitfaden für Ressourcen und Informationen zur Entwicklung von UWP-Spielen. |
-| [Planen](planning.md) | Dieses Thema enthält eine Liste der Artikel für die Phase der Spieleplanung. |
-| [UWP-Programmierung](uwp-programming.md) | Erfahren Sie, wie Sie Windows-Runtime-APIs zum Entwickeln von UWP-Spielen verwenden können. |
-| [Entwicklung von Spielen (Video)](game-development-videos.md) | Eine Sammlung von Videos zur Spieleentwicklung von wichtigen Konferenzen und Veranstaltungen. |
+| [Handbuch zur Entwicklung von Spielen unter Windows 10](e2e.md) | Ein umfassender Leitfaden für Ressourcen und Informationen zur Entwicklung von UWP-Spielen. |
+| [Planung](planning.md) | Dieses Thema enthält eine Liste der Artikel für die Spieleplanungphase. |
+| [UWP-Programmierung](uwp-programming.md) | Hier erfahren Sie, wie Sie Windows-Runtime-APIs zum Entwickeln von UWP-Spielen verwenden. |
+| [Videos zur Entwicklung von Spielen](game-development-videos.md) | Eine Sammlung mit Videos zur Spieleentwicklung von wichtigen Konferenzen und Veranstaltungen. |
 
 Weitere Informationen zum Entwickeln von UWP-Spielen mit DirectX finden Sie unter [DirectX-Programmierung ](directx-programming.md).
 
 Damit Sie die Übersichten und Lernprogramme zur Spieleentwicklung optimal nutzen können, sollten Sie mit den folgenden Themen vertraut sein:
 
--   Microsoft C++ mit Komponentenerweiterungen (C++/CX). Dies ist ein Update für MicrosoftC++, das die automatische Verweiszählung einführt. Außerdem handelt es sich hierbei um die Sprache für die Entwicklung eines UWP-Spiels mit DirectX11.1 oder einer höheren Version
+-   Microsoft C++ mit Komponentenerweiterungen (C++/CX). Dies ist ein Update für Microsoft C++, das die automatische Verweiszählung umfasst. Außerdem handelt es sich hierbei um die Sprache für die Entwicklung eines UWP-Spiels mit DirectX 11.1 oder einer höheren Version.
 -   Grundlegende Terminologie für die Grafikprogrammierung
 -   Grundlegende Konzepte der Windows-Programmierung
--   Grundlegende Kenntnisse der APIs von Direct3D 9 oder 11
+-   Grundlegende Kenntnisse der APIs von Direct3D 9 oder 11
 
  
 

@@ -1,6 +1,6 @@
 ---
-description: Erfahren Sie, wie Sie Ihre App inklusiv entwickeln und für Personen auf der ganzen Welt zugänglich machen.
-keywords: Eingabehilfen für UWP-Apps, Globalisierung, Apps mit inklusivem Design, Anforderungen für App-Eingabehilfen
+description: 'Erfahren Sie, wie Sie Ihre App inklusiv entwickeln und für Personen auf der ganzen Welt zugänglich machen.'
+keywords: 'Eingabehilfen für UWP-Apps, Globalisierung, Apps mit inklusivem Design, Anforderungen für App-Eingabehilfen'
 title: Benutzerfreundlichkeit in UWP-Apps – Entwicklung von Windows-Apps
 layout: LandingPage
 template: detail.hbs
@@ -8,12 +8,6 @@ ms.date: 10/18/2017
 ms.topic: landing-page
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937934"
 ---
 # <a name="usability-for-uwp-apps"></a>Benutzerfreundlichkeit in UWP-Apps
 
@@ -34,7 +28,7 @@ Bei der Barrierefreiheit geht es darum, die App so zu gestalten, dass sie auch v
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-overview.md">Übersicht über die Barrierefreiheit</a></b> <br/> Dieser Artikel bietet eine Übersicht über die Konzepte und Technologien im Zusammenhang mit Barrierefreiheitsszenarien für UWP-Apps.</p>
+<p><b><a href="../accessibility/accessibility-overview.md">Barrierefreiheit im Überblick</a></b> <br/> Dieser Artikel bietet eine Übersicht über die Konzepte und Technologien im Zusammenhang mit Barrierefreiheitsszenarien für UWP-Apps.</p>
                     </div>
                 </div>
             </div>
@@ -45,7 +39,7 @@ Bei der Barrierefreiheit geht es darum, die App so zu gestalten, dass sie auch v
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/designing-inclusive-software.md">Entwerfen von inklusiver Software</a></b><br/>Erfahren Sie mehr über das Entwerfen inklusiver Apps für die Universelle Windows-Plattform (UWP) für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.</p>
+<p><b><a href="../accessibility/designing-inclusive-software.md">Entwerfen von barrierefreier Software</a></b><br/>Erfahren Sie mehr über das Entwerfen inklusiver Apps für die Universelle Windows-Plattform (UWP) für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +50,7 @@ Bei der Barrierefreiheit geht es darum, die App so zu gestalten, dass sie auch v
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">Entwickeln von inklusiven Windows-Apps</a></b><br/> Dieser Artikel dient als Orientierungshilfe bei der Entwicklung barrierefreier UWP-Apps.</p>
+<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">Entwickeln von barrierefreien Windows-Apps</a></b><br/> Dieser Artikel dient als Orientierungshilfe bei der Entwicklung barrierefreier UWP-Apps.</p>
                     </div>
                 </div>
             </div>
@@ -67,7 +61,7 @@ Bei der Barrierefreiheit geht es darum, die App so zu gestalten, dass sie auch v
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-testing.md">Barrierefreiheitstests</a> </b><br/>Testverfahren, mit denen Sie sicherstellen können, dass Ihre UWP-App barrierefrei ist.</p>
+<p><b><a href="../accessibility/accessibility-testing.md">Testen der Barrierefreiheit</a> </b><br/>Testverfahren, mit denen Sie sicherstellen können, dass Ihre UWP-App barrierefrei ist.</p>
                     </div>
                 </div>
             </div>
@@ -78,7 +72,7 @@ Bei der Barrierefreiheit geht es darum, die App so zu gestalten, dass sie auch v
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-in-the-store.md">Barrierefreiheit im Store</a></b><br/>Hier werden die Anforderungen beschrieben, die Sie erfüllen müssen, wenn Sie Ihre UWP-App im MicrosoftStore als barrierefrei deklarieren möchten.</p>
+<p><b><a href="../accessibility/accessibility-in-the-store.md">Barrierefreiheit im Store</a></b><br/>Hier werden die Anforderungen beschrieben, die Sie erfüllen müssen, wenn Sie Ihre UWP-App im Microsoft Store als barrierefrei deklarieren möchten.</p>
                     </div>
                 </div>
             </div>
@@ -155,7 +149,7 @@ Bei der Barrierefreiheit geht es darum, die App so zu gestalten, dass sie auch v
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/custom-automation-peers.md">Benutzerdefinierte Automatisierungspeers</a></b><br/>Beschreibt das Konzept von Automatisierungspeers für die Benutzeroberflächenautomatisierung und erläutert, wie Sie Unterstützung zur Benutzeroberflächenautomatisierung für eigene benutzerdefinierte UI-Klassen bereitstellen können.</p>                    
+<p><b><a href="../accessibility/custom-automation-peers.md">Benutzerdefinierte Automatisierungs-Peers</a></b><br/>Beschreibt das Konzept von Automatisierungspeers für die Benutzeroberflächenautomatisierung und erläutert, wie Sie Unterstützung zur Benutzeroberflächenautomatisierung für eigene benutzerdefinierte UI-Klassen bereitstellen können.</p>                    
                     </div>
                 </div>
             </div>
@@ -177,7 +171,7 @@ Bei der Barrierefreiheit geht es darum, die App so zu gestalten, dass sie auch v
 
 ## <a name="globalization-and-localization"></a>Globalisierung und Lokalisierung
 
-Windows wird auf der ganzen Welt in verschiedenen Märkten und von Anwendern unterschiedlicher Kulturen, Herkunft und Sprachen verwendet. Ihre Benutzer sprechen eine Vielzahl verschiedener Sprachen in vielen verschiedenen Ländern und Regionen. Einige Benutzer sprechen mehr als eine Sprache. Ihre App wird also auf Konfigurationen ausgeführt, die viele Systemeinstellungen für Sprache, Region und Kultur beinhalten. Sie können die Marktchancen Ihrer App erweitern, indem Sie mithilfe der *Globalisierung* und *Lokalisierung* eine variable App entwickeln.
+Windows wird auf der ganzen Welt von Anwendern unterschiedlicher Sprachen, Kulturen und Herkunft verwendet. Ihre Benutzer sprechen eine Vielzahl verschiedener Sprachen in vielen verschiedenen Ländern und Regionen. Einige Benutzer sprechen mehrere Sprachen. Ihre App wird also auf Konfigurationen ausgeführt, die viele Systemeinstellungen für Sprache, Region und Kultur beinhalten. Sie können das Marktpotenzial Ihrer App steigern, indem Sie mithilfe von *Globalisierung* und *Lokalisierung* eine variable App entwickeln.
 
 <a href="../globalizing/globalizing-portal.md">Globalisierungs- und Lokalisierungsportal</a>
 
@@ -191,7 +185,7 @@ Mithilfe von App-Einstellungen kann der Benutzer Ihre App anpassen und entsprech
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/guidelines-for-app-settings.md">Anleitungen</a></b><br/>Bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.</p>
+<p><b><a href="../app-settings/guidelines-for-app-settings.md">Richtlinien</a></b><br/>Bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.</p>
                     </div>
                 </div>
             </div>
@@ -220,7 +214,7 @@ Unabhängig davon, wie optimal Sie Ihre App gestaltet haben, werden einige Benut
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/guidelines-for-app-help.md">Anleitungen für die App-Hilfe</a></b><br/>Anwendungen können sehr komplex sein. Sie können die Erfahrung für die Benutzer durch die Bereitstellung einer effektiven Hilfe erheblich verbessern.
+<p><b><a href="../in-app-help/guidelines-for-app-help.md">Anleitungen für die App-Hilfe</a></b><br/>Anwendungen können sehr komplex sein, und Sie können die Erfahrung für die Benutzer durch Bereitstellen einer effektiven Hilfe erheblich verbessern.
 </p>
                     </div>
                 </div>
@@ -232,7 +226,7 @@ Unabhängig davon, wie optimal Sie Ihre App gestaltet haben, werden einige Benut
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/instructional-ui.md">Benutzeroberfläche mit Anleitungen</a></b><br/>Manchmal kann es hilfreich sein, Anleitungen bereitzustellen, um Benutzern Funktionen in Ihrer App zu zeigen, die möglicherweise nicht offensichtlich sind, z.B. bestimmte Touchinteraktionen. In diesen Fällen müssen Sie Anleitungen auf der Benutzeroberfläche für die Benutzer bereitstellen, damit sie diese Funktionen, die sie möglicherweise übersehen haben, finden und nutzen können.</p>
+<p><b><a href="../in-app-help/instructional-ui.md">Benutzeroberfläche mit Anweisungen</a></b><br/>Manchmal kann es hilfreich sein, Anleitungen bereitzustellen, um Benutzern die Funktionen in Ihrer App zu demonstrieren, die möglicherweise nicht offensichtlich sind, z. B. bestimmte Touchinteraktionen. In diesen Fällen müssen Sie Anleitungen auf der Benutzeroberfläche für die Benutzer bereitstellen, damit sie diese Funktionen, die sie möglicherweise übersehen haben, finden und nutzen können.</p>
                     </div>
                 </div>
             </div>

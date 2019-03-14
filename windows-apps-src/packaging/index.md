@@ -4,14 +4,8 @@ title: Verpacken von Apps
 description: Dieser Abschnitt enthält Artikel oder Links zum Verpacken von UWP (Universelle Windows-Plattform)-Apps.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: Windows10, UWP, Verpacken
+keywords: "Windows\_10, UWP, Verpacken"
 ms.localizationpriority: medium
-ms.openlocfilehash: 04736c9ac4de5adf162d32191ff30f7a981d6a6f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919166"
 ---
 # <a name="packaging-apps"></a>Verpacken von Apps
 
@@ -22,14 +16,14 @@ Dieser Abschnitt enthält Artikel oder Links zum Verpacken von UWP (Universelle 
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Verpacken einer UWP-App mit Visual Studio](packaging-uwp-apps.md) | Um Ihre UWP-App (Universelle Windows-Plattform) zu vertreiben und zu verkaufen, müssen Sie ein App-Paket erstellen. |
+| [Verpacken einer UWP-App mit Visual Studio](packaging-uwp-apps.md) | Sie müssen ein App-Paket erstellen, damit Sie Ihre UWP-App (Universelle Windows-Plattform) vertreiben oder verkaufen können. |
 | [Manuelles Verpacken von Apps](manual-packaging-root.md) | Wenn Sie ein App-Paket erstellen und signieren möchten, für die Entwicklung der App aber nicht Visual Studio verwendet haben, müssen Sie die Tools für die manuelle App-Verpackung verwenden. |
-| [App-Paketarchitektur](device-architecture.md) | Hier erfahren Sie mehr über die Prozessorarchitekturen, die beim Erstellen des UWP-App-Pakets verwendet werden sollten. |
-| [UWP-App-Streaming-Installation](streaming-install.md) | Durch die Installation des Universelle Windows Plattform (UWP)-App-Streaming können Sie angeben, welche Teile der App der Microsoft Store zuerst herunterladen soll. Wenn die wichtigen Dateien der App zuerst heruntergeladen werden, können Benutzer die App starten und mit dieser interagieren, während der Rest noch im Hintergrund heruntergeladen wird. |
-| [Optionale Pakete und die Erstellung zugehöriger Sets](optional-packages.md) | Optionale Pakete enthalten Inhalte, die in ein Hauptpaket integriert werden können. Diese sind nützlich für herunterladbare Inhalte (DLC), da große Apps so im Hinblick auf Größenbeschränkungen geteilt werden, oder auch, um zusätzliche Inhalte getrennt von der ursprünglichen App zu liefern. |
-| [Optionale Pakete mit ausführbarem Code](optional-packages-with-executable-code.md) | Erfahren Sie, wie Sie Visual Studio verwenden, um ein optionales Paket mit ausführbarem Code zu erstellen. |
+| [App-Paketarchitekturen](device-architecture.md) | Hier erfahren Sie mehr über die Prozessorarchitekturen, die beim Erstellen des UWP-App-Pakets verwendet werden sollten. |
+| [Installieren von UWP-App-Streaming](streaming-install.md) | Durch die Installation des UWP-App-Streamings (Universelle Windows-Plattform) können Sie angeben, welche Teile der App der Microsoft Store zuerst herunterladen soll. Wenn die wichtigen Dateien der App zuerst heruntergeladen werden, können Benutzer die App starten und mit dieser interagieren, während der Rest noch im Hintergrund heruntergeladen wird. |
+| [Optionale Pakete und die Erstellung zugehöriger Sets](optional-packages.md) | Optionale Pakete enthalten Inhalte, die in ein Hauptpaket integriert werden können. Diese sind nützlich für herunterladbare Inhalte (DLC), da große Apps so im Hinblick auf Größenbeschränkungen geteilt werden. Sie sind außerdem praktisch, wenn Sie zusätzliche Inhalte getrennt von der ursprünglichen App ausliefern möchten. |
+| [Optionale Pakete mit ausführbarem Code](optional-packages-with-executable-code.md) | Hier erfahren Sie, wie Sie Visual Studio verwenden, um ein optionales Paket mit ausführbarem Code zu erstellen. |
 | [Installieren von UWP-Apps mit dem App-Installer](appinstaller-root.md) | Mit dem App-Installer können UWP-Apps durch Doppelklicken auf das App-Paket installiert werden. |
-| [Installieren von Apps mit dem Tool WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows-Anwendungsbereitstellung (WinAppDeployCmd.exe) ist ein Befehlszeilentool, mit denen eine UWP-app von einem Windows 10-Computer auf beliebigen Windows 10 Mobile-Geräten bereitstellen. Sie können dieses Tool verwenden, um ein app-Paket bereitstellen, wenn das Windows 10 Mobile-Gerät über USB verbunden ist oder sich im gleichen Subnetz verfügbar ist, ohne Microsoft Visual Studio oder die Projektmappe für diese app. Dieser Artikel beschreibt, wie UWP-Apps mit diesem Tool installiert werden. |
+| [Installieren von Apps mit dem Tool „WinAppDeployCmd.exe“](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Die Windows-Anwendungsbereitstellung (WinAppDeployCmd.exe) ist ein Befehlszeilentool, mit dem Sie eine UWP-App über einen Windows 10-Computer auf beliebigen Windows 10 Mobile-Geräten bereitstellen können. Dieses Tool ermöglicht die Bereitstellung eines APPX-Pakets, wenn das Windows 10 Mobile-Gerät über USB angeschlossen ist oder sich im selben Subnetz befindet, ohne dass Microsoft Visual Studio oder die Projektmappe für diese App erforderlich ist. Dieser Artikel beschreibt, wie UWP-Apps mit diesem Tool installiert werden. |
 | [Einrichten automatisierter Builds für UWP-Apps](auto-build-package-uwp-apps.md) | Wenn Sie Ihre App als Teil eines automatisierten Buildprozesses packen möchten, erfahren Sie hier, wie Sie Visual Studio Team Services (VSTS) dazu verwenden können. |
-| [Deklarationen der App-Funktionen](app-capability-declarations.md) | Funktionen müssen im [Paketmanifest](https://msdn.microsoft.com/library/windows/apps/BR211474) der UWP-App für den Zugriff auf bestimmte APIs oder Ressourcen deklariert werden, z.B. Bilder, Musik oder Geräte wie die Kamera oder das Mikrofon. |
-| [Herunterladen und Installieren von Paketupdates aus dem Store](self-install-package-updates.md) | Ihre UWP-App kann programmgesteuert nach Paketupdates suchen und die Updates installieren. Ihre app kann auch Abfragen für Pakete, die im Partner Center als obligatorisch gekennzeichnet wurden und Funktionen deaktivieren, bis das erforderliche Update installiert ist.  |
+| [Deklarationen von App-Funktionen](app-capability-declarations.md) | Funktionen müssen im [Paketmanifest](https://msdn.microsoft.com/library/windows/apps/BR211474) der UWP-App für den Zugriff auf bestimmte APIs oder Ressourcen deklariert werden, z. B. Bilder, Musik oder Geräte wie die Kamera oder das Mikrofon. |
+| [Herunterladen und Installieren von Paketupdates aus dem Store](self-install-package-updates.md) | Ihre UWP-App kann programmgesteuert nach Paketupdates suchen und die Updates installieren. Ihre App kann auch Abfragen für Pakete ausführen, die in Partner Center als obligatorisch gekennzeichnet wurden, und Funktionen deaktivieren, bis das erforderliche Update installiert wurde.  |

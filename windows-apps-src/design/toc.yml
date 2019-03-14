@@ -3,7 +3,7 @@ items:
   items:
   - name: Übersicht
     href: basics/index.md
-  - name: Einführung in das Design von Apps
+  - name: Einführung in das App-Design
     href: basics/design-and-ui-intro.md
   - name: Fluent Design-System
     href: fluent-design-system/index.md
@@ -33,7 +33,7 @@ items:
     href: layout/index.md
   - name: Seitenlayout
     href: layout/page-layout.md
-  - name: Bildschirmgrößen und Breakpoints
+  - name: Bildschirmgrößen und Haltepunkte
     href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
   - name: Reaktionsfähige Designtechniken
     href: layout/responsive-design.md
@@ -47,9 +47,9 @@ items:
     items:
     - name: Übersicht
       href: layout/layout-panels.md
-    - name: 'Lernprogramm: Verwenden von Layoutpanels'
+    - name: 'Tutorial: Verwenden von Layoutpanels'
       href: layout/grid-tutorial.md
-    - name: Geteilte Darstellung
+    - name: Geteilte Ansicht
       href: controls-and-patterns/split-view.md
     - name: Benutzerdefinierte Panels
       href: layout/custom-panels-overview.md
@@ -59,7 +59,7 @@ items:
     items:
     - name: Übersicht
       href: layout/transforms.md
-    - name: Effekte mit 3D-Perspektiven
+    - name: 3D-Perspektiven-Effekte
       href: layout/3-d-perspective-effects.md
 - name: Steuerelemente
   items:
@@ -67,7 +67,7 @@ items:
     href: controls-and-patterns/index.md
   - name: Einführung in Steuerelemente und Ereignisse
     href: controls-and-patterns/controls-and-events-intro.md
-  - name: Einführung in die Steuerung
+  - name: Einführung in Befehle
     href: controls-and-patterns/commanding.md
   - name: Index der Steuerelemente nach Funktion
     href: controls-and-patterns/controls-by-function.md
@@ -81,13 +81,13 @@ items:
       href: controls-and-patterns/combo-box.md
     - name: Hyperlinks
       href: controls-and-patterns/hyperlinks.md
-    - name: Optionsschaltfläche
+    - name: Optionsfeld
       href: controls-and-patterns/radio-button.md
     - name: Bewertungssteuerelement
       href: controls-and-patterns/rating.md
-    - name: Schieberegler
+    - name: Slider
       href: controls-and-patterns/slider.md
-    - name: Umschalter
+    - name: Ein-/Ausschalten
       href: controls-and-patterns/toggles.md
   - name: Sammlungen
     items:
@@ -112,7 +112,7 @@ items:
       href: controls-and-patterns/nested-ui.md
     - name: Sammlungssteuerung
       href: controls-and-patterns/collection-commanding.md
-    - name: Wischen
+    - name: Swipe
       href: controls-and-patterns/swipe.md
     - name: Strukturansicht
       href: controls-and-patterns/tree-view.md
@@ -156,7 +156,7 @@ items:
       href: controls-and-patterns/navigationview.md
     - name: Pivot
       href: controls-and-patterns/pivot.md
-  - name: Personen
+  - name: People
     items:
     - name: Visitenkarte
       href: controls-and-patterns/contact-card.md
@@ -164,7 +164,7 @@ items:
       href: controls-and-patterns/person-picture.md
   - name: Auswahlsteuerelemente
     items:
-    - name: Farbwähler
+    - name: Farbauswahl
       href: controls-and-patterns/color-picker.md
     - name: Datums- und Uhrzeitsteuerelemente
       href: controls-and-patterns/date-and-time.md
@@ -174,7 +174,7 @@ items:
       href: controls-and-patterns/calendar-view.md
     - name: Datumsauswahl
       href: controls-and-patterns/date-picker.md
-    - name: Uhrzeitauswahl
+    - name: Zeitauswahl
       href: controls-and-patterns/time-picker.md
   - name: Bildlauf
     items:
@@ -186,7 +186,7 @@ items:
     href: controls-and-patterns/search.md
   - name: Status und Informationen
     items:
-    - name: Fortschritt
+    - name: Status
       href: controls-and-patterns/progress-controls.md
     - name: QuickInfo
       href: controls-and-patterns/tooltips.md
@@ -198,15 +198,15 @@ items:
       href: controls-and-patterns/auto-suggest-box.md
     - name: Textblock
       href: controls-and-patterns/text-block.md
-    - name: Rich-Textblock
+    - name: Rich-Text-Block
       href: controls-and-patterns/rich-text-block.md
     - name: Textfeld
       href: controls-and-patterns/text-box.md
-    - name: Rich-Textfeld
+    - name: Rich-Edit-Feld
       href: controls-and-patterns/rich-edit-box.md
     - name: Kennwortfeld
       href: controls-and-patterns/password-box.md
-    - name: Bezeichnungen
+    - name: Beschriftungen
       href: controls-and-patterns/labels.md
     - name: Links zu Inhalten
       href: controls-and-patterns/content-links.md
@@ -230,9 +230,9 @@ items:
       href: style/segoe-ui-symbol-font.md
   - name: Acryl
     href: style/acrylic.md
-  - name: Reveal-Highlight
+  - name: Reveal Highlight
     href: style/reveal.md
-  - name: Reveal-Fokus
+  - name: Reveal Focus
     href: style/reveal-focus.md
   - name: Sound
     href: style/sound.md
@@ -253,7 +253,7 @@ items:
   items:
   - name: Übersicht
     href: motion/index.md
-  - name: Timing und Geschwindigkeitsverlauf
+  - name: Timing und Beschleunigung
     href: motion/timing-and-easing.md
   - name: Direktionalität und Schwerkraft
     href: motion/directionality-and-gravity.md
@@ -268,9 +268,9 @@ items:
   - name: Animationen in XAML
     href: motion/xaml-animation.md
     items:
-    - name: Eigenschafts-Animationen
+    - name: Eigenschaftsanimationen
       href: motion/xaml-property-animations.md
-    - name: Storyboard-Animationen
+    - name: Storyboardanimationen
       href: motion/storyboarded-animations.md
     - name: Keyframeanimationen und Animationen für Beschleunigungsfunktionen
       href: motion/key-frame-and-easing-function-animations.md
@@ -282,9 +282,9 @@ items:
     - name: Sekundäre Kacheln
       href: shell/tiles-and-notifications/secondary-tiles.md
       items:
-      - name: Anleitung
+      - name: Leitlinien
         href: shell/tiles-and-notifications/secondary-tiles-guidance.md
-      - name: An "Start" anheften
+      - name: An „Start“ anheften
         href: shell/tiles-and-notifications/secondary-tiles-pinning.md
       - name: An Taskleiste anheften
         href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
@@ -300,9 +300,9 @@ items:
       href: shell/tiles-and-notifications/sending-a-local-tile-notification.md
     - name: Verfolgbare Kachelbenachrichtigungen
       href: shell/tiles-and-notifications/chaseable-tile-notifications.md
-    - name: Primärkachel-APIs
+    - name: Primäre Kachel-APIs
       href: shell/tiles-and-notifications/primary-tile-apis.md
-    - name: Kachel, Popup-Benachrichtigungsunterstützung für Sprache, Skalierung und Kontrast
+    - name: Kachel, Popupbenachrichtigungsunterstützung für Sprache, Skalierung und Kontrast
       href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
   - name: Anheften einer App an die Taskleiste
     href: shell/pin-to-taskbar.md
@@ -312,13 +312,13 @@ items:
     items:
     - name: Popupbenachrichtigungen
       items:
-      - name: UX-Richtlinien
+      - name: Erläuterungen zur Benutzeroberfläche
         href: shell/tiles-and-notifications/toast-ux-guidance.md
       - name: Popupinhalt
         href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
       - name: Popupinhaltsschema
         href: shell/tiles-and-notifications/toast-schema.md
-      - name: Lokale Popups senden
+      - name: Senden lokaler Popups
         href: shell/tiles-and-notifications/send-local-toast.md
         items:
         - name: Desktop-Apps
@@ -330,7 +330,7 @@ items:
             href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
       - name: Benutzerdefiniertes Audio
         href: shell/tiles-and-notifications/custom-audio-on-toasts.md
-      - name: Statusanzeige
+      - name: Statusleiste
         href: shell/tiles-and-notifications/toast-progress-bar.md
       - name: Ausstehendes Update
         href: shell/tiles-and-notifications/toast-pending-update.md
@@ -346,7 +346,7 @@ items:
         href: shell/tiles-and-notifications/notification-mirroring.md
       - name: Universelles Schließen
         href: shell/tiles-and-notifications/universal-dismiss.md
-    - name: Badge-Benachrichtigungen
+    - name: Signalbenachrichtigungen
       href: shell/tiles-and-notifications/badges.md
     - name: Notifications Visualizer
       href: shell/tiles-and-notifications/notifications-visualizer.md
@@ -376,20 +376,20 @@ items:
     href: input/input-primer.md
   - name: Zeigereingaben
     href: input/handle-pointer-input.md
-  - name: Blickeingabe
+  - name: Anvisieren
     href: input/gaze-interactions.md
   - name: Stift und Windows Ink
     href: input/pen-and-stylus-interactions.md
     items:
-    - name: 'Lernprogramm: Freihand-Unterstützung für App hinzufügen'
+    - name: 'Tutorial: Hinzufügen der Freihandunterstützung zur App'
       href: input/ink-walkthrough.md
     - name: Erkennen von Freihandstrichen
       href: input/convert-ink-to-text.md
     - name: Speichern und Abrufen von Freihandstrichen
       href: input/save-and-load-ink.md
-    - name: Hinzufügen einer InkToolbar
+    - name: Hinzufügen eines InkToolbar-Elements
       href: input/ink-toolbar.md
-  - name: Toucheingabe
+  - name: Touch
     href: input/touch-interactions.md
   - name: Maus
     href: input/mouse-interactions.md
@@ -406,25 +406,25 @@ items:
       href: input/focus-navigation-programmatic.md
     - name: Tastaturereignisse
       href: input/keyboard-events.md
-    - name: Reagieren auf das Vorhandensein der Bildschirmtastatur
+    - name: Reagieren auf die Anzeige der Bildschirmtastatur
       href: input/respond-to-the-presence-of-the-touch-keyboard.md
-    - name: Ändern der Bildschirmtastatur mithilfe von InputScope
+    - name: Verwenden des Eingabeumfangs zum Ändern der Bildschirmtastatur
       href: input/use-input-scope-to-change-the-touch-keyboard.md
-  - name: Gamepad und Fernbedienung
+  - name: Gamepad und Remotesteuerung
     href: input/gamepad-and-remote-interactions.md
   - name: Touchpad
     href: input/touchpad-interactions.md
   - name: Surface Dial
     href: input/windows-wheel-interactions.md
     items:
-    - name: 'Lernprogramm: Surface Dial-Unterstützung für App hinzufügen'
+    - name: 'Tutorial: Hinzufügen der Surface Dial-Unterstützung zur App'
       href: input/radialcontroller-walkthrough.md
   - name: Spracherkennungsinteraktionen
     href: input/speech-interactions.md
     items:
     - name: Spracherkennung
       href: input/speech-recognition.md
-    - name: Angeben der Sprache für die Spracherkennung
+    - name: Festlegen der Sprache für die Spracherkennung
       href: input/specify-the-speech-recognizer-language.md
     - name: Festlegen von benutzerdefinierten Erkennungseinschränkungen
       href: input/define-custom-recognition-constraints.md
@@ -461,11 +461,11 @@ items:
     href: input/custom-text-input.md
   - name: Textskalierung
     href: input/text-scaling.md
-  - name: Drag&Drop
+  - name: Drag & Drop
     href: input/drag-and-drop.md
   - name: Optischer Zoom und Größenänderung
     href: input/guidelines-for-optical-zoom.md
-  - name: Schwenken
+  - name: Verschieben
     href: input/guidelines-for-panning.md
   - name: Drehung
     href: input/guidelines-for-rotation.md
@@ -483,7 +483,7 @@ items:
     href: devices/designing-for-tv.md
   - name: Mixed Reality
     href: devices/designing-for-MR.md
-- name: Benutzerfreundlichkeit
+- name: Nutzbarkeit
   items:
   - name: Übersicht
     href: usability/index.md
@@ -504,7 +504,7 @@ items:
       href: accessibility/accessibility-checklist.md
     - name: Verfügbarmachen von grundlegenden Informationen zur Barrierefreiheit
       href: accessibility/basic-accessibility-information.md
-    - name: Barrierefreiheit bei Tastaturnavigation
+    - name: Barrierefreiheit der Tastaturnavigation
       href: accessibility/keyboard-accessibility.md
     - name: Orientierungspunkte und Überschriften
       href: accessibility/landmarks-and-headings.md
@@ -522,7 +522,7 @@ items:
   - name: App-Einstellungen
     href: app-settings/app-settings-and-data.md
     items:
-    - name: Anleitungen
+    - name: Richtlinien
       href: app-settings/guidelines-for-app-settings.md
     - name: Speichern und Abrufen von App-Einstellungen und -Daten
       href: app-settings/store-and-retrieve-app-data.md
@@ -531,32 +531,32 @@ items:
     items:
     - name: Richtlinien für Globalisierung
       href: globalizing/guidelines-and-checklist-for-globalizing-your-app.md
-    - name: Informationen über Sprachen für Benutzerprofil und App-Manifest
+    - name: Grundlegendes zu Sprachen für Benutzerprofil und App-Manifest
       href: globalizing/manage-language-and-region.md
-    - name: Globalisieren von Datum, Uhrzeit und Zahlenformaten
+    - name: Globalisieren von Datums-, Uhrzeit- und Zahlenformaten
       href: globalizing/use-global-ready-formats.md
-    - name: Verwenden von Mustern zum Formatieren von Datums- und Uhrzeitwerten
+    - name: Verwenden von Vorlagen und Mustern zum Formatieren von Datums- und Uhrzeitwerten
       href: globalizing/use-patterns-to-format-dates-and-times.md
-    - name: Anpassen von Layout und Schriften, RTL-Unterstützung
+    - name: Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“
       href: globalizing/adjust-layout-and-fonts--and-support-rtl.md
     - name: NumeralSystem-Werte
       href: globalizing/glob-numeralsystem-values.md
     - name: App lokalisierbar machen
       href: globalizing/prepare-your-app-for-localization.md
-    - name: Internationale Schriften
+    - name: Internationale Schriftarten
       href: globalizing/loc-international-fonts.md
     - name: Entwerfen einer App für bidirektionalen Text
       href: globalizing/design-for-bidi-text.md
     - name: Verwenden des Multilingual App Toolkit 4.0
       href: globalizing/use-mat.md
-    - name: Multilingual App Toolkit 4.0 – Häufig gestellte Fragen und Problembehandlung
+    - name: 'Multilingual App Toolkit 4.0: häufig gestellte Fragen und Problembehandlung'
       href: globalizing/mat-faq-troubleshooting.md
-    - name: Machen Sie Ihre Anwendung startklar für den Wechsel der japanischen Ära
+    - name: Vorbereiten Ihrer Anwendung auf den Wechsel der japanischen Ära
       href: globalizing/japanese-era-change.md
-  - name: Anleitungen für App-Hilfe
+  - name: Anleitungen für die App-Hilfe
     href: in-app-help/guidelines-for-app-help.md
     items:
-    - name: Selbsterklärende UI
+    - name: Benutzeroberfläche mit Anleitungen
       href: in-app-help/instructional-ui.md
     - name: In-App-Hilfe
       href: in-app-help/in-app-help.md
@@ -565,8 +565,8 @@ items:
 - name: Design-Toolkits
   href: downloads/index.md
 ms.openlocfilehash: b6430ee5f121d672282513fa524a50e7788f404c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117449"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582852"

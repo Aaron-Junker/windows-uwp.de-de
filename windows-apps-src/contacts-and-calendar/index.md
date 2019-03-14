@@ -1,17 +1,11 @@
 ---
-description: Erfahren Sie, wie Kontakte und Kalenderinformationen in Ihrer UWP-App verwendet werden.
+description: 'Erfahren Sie, wie Kontakte und Kalenderinformationen in Ihrer UWP-App verwendet werden.'
 title: Kontakte und Kalender
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.date: 05/18/2018
 ms.topic: article
-keywords: Windows 10, UWP, Kontakte, Kalender, Termine, E-Mail-Nachrichten
+keywords: 'Windows 10, UWP, Kontakte, Kalender, Termine, E-Mail-Nachrichten'
 ms.localizationpriority: medium
-ms.openlocfilehash: 239dbaa7799d9991a63223d1cd8706d34445a16b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048237"
 ---
 # <a name="contacts-my-people-and-calendar"></a>Kontakte, Meine Kontakte und Kalender
 
@@ -26,10 +20,10 @@ Die folgenden Themen enthalten Informationen zu verschiedenen Verfahren, wie Ihr
 | [Senden von E-Mails](sending-email.md) | Hier erfahren Sie, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten, damit Benutzer eine E-Mail senden können. Sie können die Felder der E-Mail vor dem Anzeigen des Dialogfelds mit Daten füllen. Die Nachricht wird erst gesendet, wenn Benutzer auf die Schaltfläche „Senden“ tippen. |
 | [Senden einer SMS](sending-an-sms-message.md) | In diesem Thema erfahren Sie, wie Sie das Dialogfeld zum Verfassen einer SMS starten, damit Benutzer eine SMS senden können. Sie können die Felder der SMS vor dem Anzeigen des Dialogfelds mit Daten füllen. Die Nachricht wird erst gesendet, wenn Benutzer auf die Schaltfläche „Senden“ tippen. |
 | [Verwalten von Terminen](managing-appointments.md) | Mit dem [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359)-Namespace können Sie in der Kalender-App eines Benutzers Termine erstellen und verwalten. Hier erfahren Sie, wie Sie einen Termin erstellen, einer Kalender-App hinzufügen, in der Kalender-App ersetzen und aus der Kalender-App entfernen. Außerdem wird erläutert, wie Sie eine Zeitspanne für eine Kalender-App anzeigen und ein Terminwiederholungsobjekt erstellen. |
-| [Verbinden der App mit Aktionen auf einer Visitenkarte](integrating-with-contacts.md) | Zeigt, wie Ihre App neben Aktionen auf einer Visitenkarte oder einer kleinen Visitenkarte angezeigt werden kann. Benutzer können Ihre App auswählen, um eine Aktion auszuführen, z. B. eine Profilseite zu öffnen, einen Anruf zu tätigen oder eine Nachricht zu senden. |
-| [Support für Meine Kontakte zu einer Anwendung hinzufügen](my-people-support.md) | Zeigt, wie Sie einer Anwendung Support für „Meine Kontakte” hinzufügen, und wie Sie Kontakte auf der Taskleiste anheften und trennen. |
-| [„Meine Kontakte” freigeben](my-people-sharing.md) | Zeigt, wie Sie Unterstützung für die Freigabe von „Meine Kontakte” hinzufügen, sodass Benutzer Inhalte für ihre angehefteten Kontakte freigeben können, indem sie Dateien aus dem Datei-Explorer auf die Startseite von „Meine Kontakte” anheften. |
-| [Meine Kontakte – Benachrichtigungen](my-people-notifications.md) | Zeigt, wie Sie Benachrichtigungen für Meine Kontakte erstellen und verwenden. Dies ist eine neue Art von Popupbenachrichtigungen, die von einem angehefteten Kontakt gesendet werden. |
+| [Verbinden der App mit Aktionen auf einer Visitenkarte](integrating-with-contacts.md) | Zeigt, wie Ihre App neben Aktionen auf einer Visitenkarte oder einer kleinen Visitenkarte angezeigt werden kann. Benutzer können Ihre App auswählen, um eine Aktion auszuführen, z. B. eine Profilseite zu öffnen, einen Anruf zu tätigen oder eine Nachricht zu senden. |
+| [Hinzufügen von Unterstützung für „Meine Kontakte“ zu einer Anwendung](my-people-support.md) | Hier wird gezeigt, wie Sie einer Anwendung Unterstützung für „Meine Kontakte” hinzufügen und wie Sie Kontakte auf der Taskleiste anheften und lösen. |
+| [Freigeben von „Meine Kontakte”](my-people-sharing.md) | Hier wird gezeigt, wie Sie Unterstützung für die Freigabe von „Meine Kontakte” hinzufügen, sodass Benutzer Inhalte für ihre angehefteten Kontakte freigeben können, indem sie Dateien aus dem Datei-Explorer auf die angeheftete Instanz von „Meine Kontakte” ziehen. |
+| [Benachrichtigungen für „Meine Kontakte“](my-people-notifications.md) | Hier erfahren Sie, wie Sie Benachrichtigungen für „Meine Kontakte“ erstellen und verwenden. Dies ist eine neue Art von Popupbenachrichtigungen, die von einem angehefteten Kontakt gesendet werden. |
 
  
 

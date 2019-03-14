@@ -1,72 +1,72 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: Diese Roadmap enthält eine Übersicht über wichtige Unternehmensfeatures für Windows 10 und universelle Windows-Plattform (UWP)-apps.
-title: Enterprise
+description: "Diese Roadmap enthält eine Übersicht über wichtige Unternehmensfeatures für Windows\_10-Apps und Apps für die Universelle Windows-Plattform (UWP)."
+title: Unternehmen
 ms.date: 08/30/2018
 ms.topic: article
-keywords: 'Windows10, UWP'
+keywords: 'Windows 10, UWP'
 ms.localizationpriority: medium
 ---
-# <a name="enterprise"></a>Enterprise
+# <a name="enterprise"></a>Unternehmen
 
-Dieser Artikel enthält eine Übersicht über wichtige Unternehmensfeatures durch die universelle Windows-Plattform (UWP) für Windows 10-apps bereitgestellt. Ein Video, das einige dieser Features ausführlich veranschaulicht, finden Sie [Schnell erstellen LOB Applications mit UWP und Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502).
+Dieser Artikel enthält eine Übersicht über die wichtigsten Unternehmensfeatures, die von der Universellen Windows-Plattform (UWP) für Windows 10-Apps bereitgestellt werden. Ein Video, in dem einige dieser Features vorgestellt werden, finden Sie unter [Rapidly Construct LOB Applications with UWP and Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502) (Schnelles Erstellen von Branchenanwendungen mit UWP und Visual Studio).
 
 <a id="template-studio" />
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Windows Template Studio ist eine Visual Studio-2017-Erweiterung, die die Erstellung von neue universelle Windows-Plattform (UWP)-apps, die eine Umgebung mit beschleunigt. Das resultierende UWP-Projekt ist wohlgeformte, lesbaren Codes, die die neuesten Windows 10-Features mit bewährten Muster und bewährten Methoden implementieren.
+Windows Template Studio ist eine Visual Studio 2017-Erweiterung, die mit einer assistentenbasierten Oberfläche die Erstellung neuer UWP-Apps (Universelle Windows-Plattform) beschleunigt. Das resultierende UWP-Projekt ist wohlgeformter lesbarer Code, der die neuesten Windows 10-Features enthält und dabei bewährte Muster und bewährte Methoden implementiert.
 
 ![Windows Template Studio](images/windows-template-studio.png)
 
-Finden Sie unter [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio)
+Weitere Informationen finden Sie unter [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio).
 
 <a id="desktop-style-UI" />
 
-### <a name="controls-to-create-desktop-style-uis"></a>Erstellen von Benutzeroberflächen, die Desktop-Stil-Steuerelemente
+### <a name="controls-to-create-desktop-style-uis"></a>Steuerelemente zum Erstellen von Benutzeroberflächen im Desktopstil
 
-Wir haben neue UWP-XAML-Steuerelemente zur Verfügung, die die Lücke zwischen einer herkömmlichen Desktopanwendung UI und eine UWP-UI.
+Wir haben neue UWP-XAML-Steuerelemente veröffentlicht, mit denen die Lücke zwischen der Benutzeroberfläche einer herkömmlichen Desktopanwendung und einer UWP-Benutzeroberfläche gefüllt wird.
 
-Z. B. die neuen [Menüleiste](/windows/uwp/design/controls-and-patterns/menus), [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)und [CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout) Steuerelemente bieten Ihnen die flexiblere Methoden, die Befehle verfügbar zu machen, und lassen Sie uns der Benutzer eingeben der [EditableComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) Werte, die nicht genannt sind in einer vordefinierten Liste von Optionen.
+Mit den neuen Steuerelementen [MenuBar](/windows/uwp/design/controls-and-patterns/menus), [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) und [CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout) können Sie Befehle beispielsweise flexibler verfügbar machen. Mit [EditableComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) können Benutzer Werte eingeben, die nicht in einer vordefinierten Liste mit Optionen aufgeführt sind.
 
-![Menüleiste](images/menu-bar.png)
+![MenuBar](images/menu-bar.png)
 
 <a id="enterprise" />
 
-### <a name="controls-to-support-enterprise-scenarios"></a>Steuerelemente zur Unterstützung von Enterprise-Szenarien
+### <a name="controls-to-support-enterprise-scenarios"></a>Steuerelemente zur Unterstützung von Unternehmensszenarien
 
-[DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) bietet eine flexible Möglichkeit zum Anzeigen einer Sammlung von Daten in Zeilen und Spalten.
+[DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) ermöglicht das flexible Anzeigen einer Sammlung mit Daten in Zeilen und Spalten.
 
-Die [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) ermöglicht eine hierarchieauflistung mit Knoten, die geschachtelten Elementen erlauben aus- und einblenden. Es kann verwendet werden, um eine Ordnerstruktur oder geschachtelte Beziehungen zwischen Elementen in der Benutzeroberfläche zu veranschaulichen.
+[TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) ermöglicht eine Hierarchieauflistung mit Knoten, die das Aus- und Einblenden von geschachtelten Elementen erlauben. Das Steuerelement kann verwendet werden, um eine Ordnerstruktur oder geschachtelte Beziehungen zwischen Elementen in der Benutzeroberfläche zu veranschaulichen.
 
 ![DataGrid-Steuerelement](images/DataGrid.gif)
 
 
 ### <a name="windows-ui-library"></a>Windows-UI-Bibliothek
 
-Der Windows-UI-Bibliothek ist ein Satz von NuGet-Pakete, die Steuerelemente und andere Elemente der Benutzeroberfläche für UWP-apps bereitstellen. Darüber hinaus ermöglicht Sie älter Kompatibilität mit früheren Versionen von Windows 10, damit Ihre app funktioniert, auch wenn der Benutzer nicht über das neueste Betriebssystem verfügen.
+Die Windows-UI-Bibliothek umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Darüber hinaus wird die Abwärtskompatibilität mit früheren Versionen von Windows 10 ermöglicht, damit Ihre App auch funktioniert, wenn Benutzer nicht über das aktuelle Betriebssystem verfügen.
 
 ![Windows-UI-Bibliothek](images/win-ui.png)
 
-Finden Sie unter [Windows-UI-Bibliothek (Preview-Version)](https://docs.microsoft.com/uwp/toolkits/winui/).
+Informationen hierzu finden Sie unter [Windows UI Library (Preview Version)](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek (Vorschauversion)).
 
 <a id="xaml-islands" />
 
 ### <a name="uwp-controls-in-desktop-applications"></a>UWP-Steuerelemente in Desktopanwendungen
 
-Windows 10 können jetzt Sie UWP-Steuerelemente in WPF, Windows Forms und C++ Win32-desktop-Apps zu verwenden. Dies bedeutet, dass Sie das Erscheinungsbild, und Funktionen von Ihren vorhandenen desktop-Apps mit den neuesten Windows 10-UI-Funktionen, die nur über UWP-Steuerelemente, z. B. Windows Ink und Steuerelemente, die das Fluent Design System unterstützen verbessern können. Dieses Feature wird XAML-Inseln aufgerufen.
+Windows 10 ermöglicht Ihnen jetzt die Verwendung von UWP-Steuerelementen in WPF-, Windows Forms- und C++-Win32-Desktopanwendungen. Dies bedeutet, dass Sie das Aussehen, das Erscheinungsbild und die Funktionalität Ihrer vorhandenen Desktopanwendungen mit den aktuellen Windows 10-Benutzeroberflächenfeatures erweitern können, die nur über UWP-Steuerelemente verfügbar sind, z. B. Windows Ink und Steuerelemente, die das Fluent Design-System unterstützen. Dieses Feature wird als „XAML-Inseln“ bezeichnet.
 
-Finden Sie in [UWP-Steuerelemente in desktopanwendungen](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls).
+Informationen hierzu finden Sie unter [UWP-Steuerelemente in Desktopanwendungen](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls).
 
 <a id="standard" />
 
 ### <a name="net-standard-20"></a>.NET Standard 2.0
 
-Die .NET Standard enthält über 20.000 weitere APIs als .NET Standard 1.x. Dadurch sehr viel einfacher zu migrieren von vorhandenen .NET Framework-Bibliotheken und dann über verschiedene .NET Applications einschließlich Ihrer UWP-Anwendung zu verwenden.
+.NET Standard 2.0 enthält über 20.000 APIs mehr als .NET Standard 1.x. Dies ist eine deutliche Vereinfachung beim Migrieren von vorhandenen .NET Framework-Bibliotheken und ihrer anschließenden Nutzung für verschiedene .NET-Anwendungen, z. B. Ihre UWP-Anwendung.
 
-![NET-standard](images/dot-net-standard-project-template.png)
+![net-standard](images/dot-net-standard-project-template.png)
 
-[Freigeben von Code zwischen einer desktop-app und einer UWP-app](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)wird angezeigt.
+Weitere Informationen finden Sie unter [Teilen von Code zwischen einer Desktop-App und einer UWP-App](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
 
 <a id="sql-server" />
 
@@ -74,31 +74,31 @@ Die .NET Standard enthält über 20.000 weitere APIs als .NET Standard 1.x. Dadu
 
 Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN&view=netframework-4.7.2) speichern und abrufen.
 
-Mehr unter [Verwenden einer SQL Server-Datenbank in einer UWP-App](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases).
+Informationen hierzu finden Sie unter [Verwenden einer SQL Server-Datenbank in einer UWP-App](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases).
 
 <a id="MSIX" />
 
 ### <a name="msix-deployment"></a>MSIX-Bereitstellung
 
-MSIX ist das Windows-app-Paket-Format, das eine moderne Verpackung für alle Windows-apps gewährleistet. Das MSIX-Paketformat behält die Funktionalität der vorhandenen app-Pakete und Dateien zusätzlich zum Aktivieren von neuen, modernen paketerstellungs und -Features für Win32, WPF und Windows Forms-apps installieren.
+MSIX ist das moderne Paketformat für alle Windows-Apps. Beim MSIX-Paket wird die Funktionalität von vorhandenen App-Paketen und Installationsdateien beibehalten, und es werden neue, moderne Verpackungs- und Bereitstellungsfeatures für Win32-, WPF- und Windows Forms-Apps ermöglicht.
 
-MSIX ist eine-Paketformat erstellt, um sicher, sicher und zuverlässig, basierend auf einer Kombination von MSI, AppX, App-V und ClickOnce Installation Technologien.
+MSIX ist ein Paketformat, das auf Sicherheit, Schutz und Zuverlässigkeit ausgelegt ist und auf einer Kombination aus .msi-, .appx-, App-V- und ClickOnce-Installationstechnologien basiert.
 
-![MSIX-Symbol](images/MSIX-App-Package.ico)
+![Symbol „MSIX“](images/MSIX-App-Package.ico)
 
-Finden Sie unter [MSIX-Dokumentation](https://docs.microsoft.com/windows/msix/).
+Informationen hierzu finden Sie in der [MSIX-Dokumentation](https://docs.microsoft.com/windows/msix/).
 
 <a id="distribution" />
 
 ## <a name="security"></a>Sicherheit
 
-Windows 10 bietet eine Suite von Sicherheitsfeatures für app-Entwickler zum Schutz der Identität der Benutzer, die Sicherheit von Unternehmensnetzwerken und auf Geräten gespeicherten Unternehmensdaten. Neue für Windows 10 ist Microsoft Passport, eine einfach bereitzustellende zweistufige Kennwort Alternative, auf die zugegriffen werden über eine PIN oder Windows Hello, die Sicherheit im Unternehmen und unterstützt Fingerabdrücken, gesichtserkennung, und irisscans basiert.
+Windows 10 umfasst eine Suite mit Sicherheitsfeatures für App-Entwickler zum Schutz der Identität der Benutzer, der Sicherheit von Unternehmensnetzwerken und auf Geräten gespeicherten Unternehmensdaten. Neu bei Windows 10 ist Microsoft Passport, eine einfach bereitzustellende, alternative zweistufige Authentifizierungsmethode, die über eine PIN oder Windows Hello zugänglich ist. Dies sorgt für Sicherheit im Unternehmen und unterstützt eine Authentifizierung auf Basis von Fingerabdrücken, Gesichtserkennung und Irisscans.
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Einführung in die Entwicklung sicherer Windows-Apps](https://msdn.microsoft.com/library/windows/apps/mt622741) | Dieser einführende Artikel erläutert verschiedene Windows-Sicherheitsfeatures, die auf verschiedenen Stufen verfügbar sind, d.h. Authentifizierung, In-Flight-Daten und At-Rest-Daten. Außerdem wird hier beschrieben, wie Sie diese Stufen in Ihren Apps integrieren können. Er umfasst eine Vielzahl an Themen und enthält in erster Linie weitere Informationen für App-Architekten zu den Windows-Features, die die Entwicklung von Universellen Windows-Plattform-Apps beschleunigen. |
-| [Authentifizierung und Benutzeridentität](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP-Apps verfügen über verschiedene Optionen zur Benutzerauthentifizierung, die in diesem Artikel beschrieben werden. Für Unternehmen wird dringend das neue Microsoft Passport-Feature empfohlen. MicrosoftPassport ersetzt Kennwörter mit der sicheren zweistufigen Authentifizierung (Two-Factor Authentication, 2FA), indem vorhandene Anmeldeinformationen überprüft und gerätespezifische Anmeldeinformationen erstellt werden, die eine Benutzergeste (entweder Biometrie- oder PIN-basiert) schützen, und schafft so eine bequeme und sichere Umgebung. |
-| [Kryptografie](https://msdn.microsoft.com/library/windows/apps/mt270191) | Der Abschnitt „Kryptografie“ bietet eine Übersicht über die für UWP-Apps verfügbaren Kryptografie-Features. Die Artikel reichen von einführenden exemplarischen Vorgehensweisen zum einfachen Verschlüsseln sensibler Daten bis hin zu erweiterten Themen, z.B. Bearbeiten von kryptografischen Schlüsseln und Arbeiten mit MACs, Hashes und Signaturen. |
+| [Einführung in die Entwicklung sicherer Windows-Apps](https://msdn.microsoft.com/library/windows/apps/mt622741) | Dieser einführende Artikel erläutert verschiedene Windows-Sicherheitsfeatures, die auf verschiedenen Stufen verfügbar sind, d. h. Authentifizierung, In-Flight-Daten und At-Rest-Daten. Außerdem wird hier beschrieben, wie Sie diese Stufen in Ihren Apps integrieren können. Er umfasst eine Vielzahl an Themen und enthält in erster Linie weitere Informationen für App-Architekten zu den Windows-Features, die die Entwicklung von Universellen Windows-Plattform-Apps beschleunigen. |
+| [Authentifizierung und Benutzeridentität](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP-Apps verfügen über verschiedene Optionen zur Benutzerauthentifizierung, die in diesem Artikel beschrieben werden. Für Unternehmen wird dringend das neue Microsoft Passport-Feature empfohlen. Microsoft Passport ersetzt Kennwörter mit der sicheren zweistufigen Authentifizierung (Two-Factor Authentication, 2FA), indem vorhandene Anmeldeinformationen überprüft und gerätespezifische Anmeldeinformationen erstellt werden, die eine Benutzergeste (entweder Biometrie- oder PIN-basiert) schützen, und schafft so eine bequeme und sichere Umgebung. |
+| [Kryptografie](https://msdn.microsoft.com/library/windows/apps/mt270191) | Der Abschnitt „Kryptografie“ bietet eine Übersicht über die für UWP-Apps verfügbaren Kryptografie-Features. Die Artikel reichen von einführenden exemplarischen Vorgehensweisen zum einfachen Verschlüsseln sensibler Daten bis hin zu erweiterten Themen, z. B. Bearbeiten von kryptografischen Schlüsseln und Arbeiten mit MACs, Hashes und Signaturen. |
 | [Windows Information Protection (WIP)](wip-hub.md) | Dies ist ein Übersichtsthema mit umfassenden Informationen für Entwickler zum Zusammenhang zwischen der Windows Information Protection (WIP) und Dateien, Puffern, der Zwischenablage, dem Netzwerk, Hintergrundaufgaben und dem Schutz von Daten bei Sperre. |
 
 ## <a name="data-binding-and-databases"></a>Datenbindung und Datenbanken
@@ -108,7 +108,7 @@ Die Datenbindung ist eine Methode, mit der die Benutzeroberfläche Ihrer App Dat
 | Thema | Beschreibung |
 |-------|-------------|
 | [Übersicht über Datenbindung](https://msdn.microsoft.com/library/windows/apps/mt269383) | In diesem Thema erfahren Sie, wie Sie in einer UWP-App (Universelle Windows-Plattform) ein Steuerelement (oder ein anderes Benutzeroberflächenelement) an ein einzelnes Element oder ein Elementsteuerelement an eine Sammlung von Elementen binden. Darüber hinaus wird erläutert, wie Sie die Anzeige von Elementen steuern, eine Detailansicht auf Grundlage einer Auswahl implementieren und Daten für die Anzeige umwandeln. |
-| [Entity Framework 7 für UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Das Durchführen komplexer Abfragen für große Datensätze ist mit Entity Framework 7, mit Unterstützung für UWP, wesentlich einfacher. In dieser exemplarischen Vorgehensweise wird eine UWP-App erstellt, die auf grundlegende Daten der lokalen SQLite-Datenbank mithilfe von Entity Framework zugreift. |
+| [Entity Framework 7 für UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Das Durchführen komplexer Abfragen für große Datensätze ist mit Entity Framework 7, mit Unterstützung für UWP, wesentlich einfacher. In dieser exemplarischen Vorgehensweise wird eine UWP-App erstellt, die auf grundlegende Daten der lokalen SQLite-Datenbank mithilfe von Entity Framework zugreift. |
 | [Lokale SQLite-Datenbank](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | Dieses Video enthält ein umfassendes Entwicklerhandbuch zur Verwendung von SQLite, der empfohlenen Lösung für lokale App-Datenbanken. Laden Sie die neueste Version für UWP unter [SQLite](https://www.sqlite.org/download.html) herunter oder verwenden Sie die Version, die im Lieferumfang des Windows 10 SDK enthalten ist. |
 
 ## <a name="networking-and-data-serialization"></a>Netzwerke und Datenserialisierung
@@ -135,34 +135,34 @@ Für die Integration in branchenspezifischen Tools, z. B. Drucker, Strichcodesca
 
 ## <a name="device-targeting"></a>Ausrichten an Geräte
 
-Viele Benutzer bringen in der heutigen Zeit ihre eigenen Telefone oder Tablets zur Arbeit mit, die unterschiedliche Formfaktoren und Bildschirmgrößen aufweisen. Mit der Universellen Windows-Plattform (UWP) können Sie branchenspezifische Apps entwickeln, die problemlos auf allen Arten von Geräten ausgeführt werden können, u.a. Desktop-PCs und PPI-Displays, und können so die Reichweite Ihrer Apps und die Effizienz des Codes maximieren.
+Viele Benutzer bringen in der heutigen Zeit ihre eigenen Telefone oder Tablets zur Arbeit mit, die unterschiedliche Formfaktoren und Bildschirmgrößen aufweisen. Mit der Universellen Windows-Plattform (UWP) können Sie branchenspezifische Apps entwickeln, die problemlos auf allen Arten von Geräten ausgeführt werden können, u. a. Desktop-PCs und PPI-Displays, und können so die Reichweite Ihrer Apps und die Effizienz des Codes maximieren.
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Anleitung für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/dn894631) | In dieser Anleitung können Sie sich mit der UWP-Plattform unter Windows10 vertraut machen. Sie erhalten u. a. Informationen dazu, was eine Gerätefamilie ist, wie Sie entscheiden, auf welche Ihre Apps abzielen sollen, Informationen zu neuen UI-Steuerelementen und Bereichen, mit denen Sie Ihre Benutzeroberfläche für verschiedene Geräte-Formfaktoren anpassen können, sowie zur für Ihre App verfügbaren API-Oberfläche und wie Sie diese steuern können. |
+| [Anleitung für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/dn894631) | In dieser Anleitung können Sie sich mit der UWP-Plattform unter Windows 10 vertraut machen. Sie erhalten u. a. Informationen dazu, was eine Gerätefamilie ist, wie Sie entscheiden, auf welche Ihre Apps abzielen sollen, Informationen zu neuen UI-Steuerelementen und Bereichen, mit denen Sie Ihre Benutzeroberfläche für verschiedene Geräte-Formfaktoren anpassen können, sowie zur für Ihre App verfügbaren API-Oberfläche und wie Sie diese steuern können. |
 | [Adaptives XAML-UI-Codebeispiel](https://go.microsoft.com/fwlink/p/?LinkId=619992) | Dieses Codebeispiel zeigt die möglichen Layoutoptionen und Steuerelemente für Ihre App, unabhängig von der Art des Geräts, und veranschaulicht eine Interaktion mit den Bereichen, um das gewünschte Layout zu erzielen. Neben der Reaktion der Steuerelemente und der App selbst auf verschiedene Formfaktoren, werden die verschiedenen Methoden zum Erzielen einer adaptiven Benutzeroberfläche aufgezeigt. |
-| [Xamarin-Thema](/xamarin/) | Xamarin für für phone |
+| [Xamarin-Thema](/xamarin/) | Xamarin für Telefone |
 
 ## <a name="deployment"></a>Bereitstellung
 
-Es stehen verschiedene Optionen für die Verteilung von Apps für die Benutzer in Ihrer Organisation zur Verfügung. Sie können Microsoft Store für Unternehmen, die vorhandene mobile geräteverwaltung oder können Sie apps auf Geräte querladen. Sie können auch Ihren apps auf der allgemeinen öffentlichen durch Veröffentlichung im Microsoft Store zur Verfügung.
+Es stehen verschiedene Optionen für die Verteilung von Apps für die Benutzer in Ihrer Organisation zur Verfügung. Sie können Microsoft Store für Unternehmen oder die vorhandene mobile Geräteverwaltung nutzen oder Apps auf Geräte querladen. Sie können Ihre Apps auch der Öffentlichkeit zur Verfügung stellen, indem Sie sie im Microsoft Store veröffentlichen.
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Verteilen von branchenspezifischen Apps an Unternehmen](https://msdn.microsoft.com/library/windows/apps/mt608995) | Sie können Branchen-apps direkt für Unternehmen Volumenlizenzen über den Microsoft Store für Unternehmen veröffentlichen, ohne die apps Allgemein zur Verfügung für der Öffentlichkeit. |
+| [Verteilen von branchenspezifischen Apps an Unternehmen](https://msdn.microsoft.com/library/windows/apps/mt608995) | Über den Microsoft Store für Unternehmen können Sie branchenspezifische Apps direkt für Unternehmen veröffentlichen, damit diese Volumenlizenzen erwerben können, ohne die Apps allgemein zur Verfügung zu stellen. |
 | [Querladen von Apps](https://technet.microsoft.com/library/mt269549) | Wenn Sie eine App querladen, stellen Sie ein signiertes App-Paket auf einem Gerät bereit. Das Signieren, Hosten und Bereitstellen dieser Apps wird beibehalten. Der Prozess zum Querladen von Apps ist für Windows 10 optimiert.             |
-| [Veröffentlichen von apps im Microsoft Store](https://dev.windows.com/publish) | Im einheitlichen Microsoft Store können Sie die veröffentlichen und verwalten alle Ihre apps für alle Windows-Geräte. Passen Sie die Verfügbarkeit Ihrer App mit marktspezifischen Preisen, Steuerelementen für Verteilung und Sichtbarkeit und weiteren Optionen an. |
+| [Veröffentlichen von Apps im Microsoft Store](https://dev.windows.com/publish) | Im einheitlichen Microsoft Store können Sie Ihre gesamten Apps für alle Windows-Geräte verwalten und veröffentlichen. Passen Sie die Verfügbarkeit Ihrer App mit marktspezifischen Preisen, Steuerelementen für Verteilung und Sichtbarkeit und weiteren Optionen an. |
 
-## <a name="enterprise-uwp-samples"></a>Enterprise-UWP-Beispiele
+## <a name="enterprise-uwp-samples"></a>Beispiele für UWP-Apps für Unternehmen
 
 | Thema |  Beschreibung |
 |------ |--------------|
-| [VanArsdel Inventar-Beispiel](https://github.com/Microsoft/InventorySample) | Eine UWP-Beispiel-app, die Line-of-Business-Szenarien werden. Im Beispiel ist beim Erstellen und Verwalten von Kunden, Aufträge und Produkte für die fiktive Firma VanArsdel rund. |
-| [Beispieldatenbank Kundenbestellung](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Eine UWP-Beispiel-app, die an, wie die Azure Active Directory (AAD)-Authentifizierung, UI-Steuerelemente (inklusive des Datenrasters), Sqlite und Azure SQL-Datenbank-Integration, Entity Framework und API-Clouddienste nützliche Funktionen werden. Um die Erstellung und Verwaltung von Kundenkonten, Aufträge und Produkte für die fiktive Unternehmen Contoso ist das Beispiel basiert. |
+| [VanArsdel-Bestandsbeispiel](https://github.com/Microsoft/InventorySample) | Eine UWP-Beispiel-App, mit der Branchenszenarien veranschaulicht werden. Das Beispiel basiert auf dem Erstellen und Verwalten von Kunden, Bestellungen und Produkten für das fiktive Unternehmen VanArsdel. |
+| [Beispieldatenbank für Kundenbestellung](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Eine UWP-Beispiel-App, mit der hilfreiche Features für Entwickler in Unternehmen veranschaulicht werden, z. B. AAD-Authentifizierung (Azure Active Directory), Benutzeroberflächen-Steuerelemente (inklusive des Datenrasters), Sqlite- und SQL Azure-Datenbankintegration, Entity Framework und API-Clouddienste. Das Beispiel basiert auf dem Erstellen und Verwalten von Kundenkonten, Bestellungen und Produkten für das fiktive Unternehmen Contoso. |
 
 ## <a name="patterns-and-practices"></a>Muster und Methoden
 
-Eine Codebasis für umfangreiche Apps im Unternehmen kann schwer zu handhaben sein. Prism ist ein Framework zum Erstellen von lose gekoppelter, verwaltbaren und getestet werden XAML-Anwendungen in WPF, Windows 10 UWP und in Xamarin Forms. Prism stellt eine Implementierung einer Sammlung von Entwurfsmustern bereit, die beim Schreiben von gut strukturierten und verwaltbaren XAML-Anwendungen hilfreich sind, u.a. MVVM, Einfügen von Abhängigkeiten, Befehle und EventAggregator.
+Eine Codebasis für umfangreiche Apps im Unternehmen kann schwer zu handhaben sein. Prism ist ein Framework zum Erstellen von lose gekoppelten, verwaltbaren und testbaren XAML-Anwendungen in WPF, der Universellen Windows-Plattform unter Windows 10 und in Xamarin Forms. Prism stellt eine Implementierung einer Sammlung von Entwurfsmustern bereit, die beim Schreiben von gut strukturierten und verwaltbaren XAML-Anwendungen hilfreich sind, u. a. MVVM, Einfügen von Abhängigkeiten, Befehle und EventAggregator.
 
 Weitere Informationen zu Prism finden Sie im [GitHub-Repository](https://github.com/PrismLibrary/Prism).
 

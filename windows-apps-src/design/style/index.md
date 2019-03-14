@@ -1,24 +1,18 @@
 ---
-description: Erfahren Sie, wie Sie mithilfe der UWP-Formatvorlage Farbe, Typografie und Symbole verwenden können, um Ihrer UWP-App einen eigenen Charakter zu geben.
-keywords: UWP-Formatanleitungen, Designanleitungen, Typografie, Bewegung, Ton, Bewegung, App-Entwicklung
-title: Stile für UWP-Apps
+description: 'Hier erfahren Sie, wie Sie mithilfe der UWP-Gestaltungsrichtlinien Farbe, Typografie und Symbole verwenden können, um den Charakter Ihrer UWP-App zu definieren.'
+keywords: 'UWP-Formatanleitungen, Designanleitungen, Typografie, Bewegung, Ton, Bewegung, App-Entwicklung'
+title: Stil für UWP-Apps
 ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946619"
 ---
-# <a name="style-for-uwp-apps"></a>Stile für UWP-Apps
+# <a name="style-for-uwp-apps"></a>Stil für UWP-Apps
 
-![Favoritenbild](images/header-style.svg)
+![Herobild](images/header-style.svg)
 
-Durch einen besonderen Stil können Sie Ihre App auszeichnen. Die Gestaltungsrichtlinien in diesem Abschnitt unterstützen Sie beim Erstellen eines Fluent Design durch Farbe, Typografie und neue Funktionen wie Acrylmaterial und Glanzlicht.
+Durch einen besonderen Stil fällt Ihre App auf. Mithilfe der Gestaltungsrichtlinien in diesem Abschnitt erstellen Sie ein Fluent Design mit Farben, Typografie und neuen Features wie Acrylmaterial und „Reveal Highlight“.
 
 :::row:::
     :::column:::
@@ -29,7 +23,7 @@ Durch einen besonderen Stil können Sie Ihre App auszeichnen. Die Gestaltungsric
     :::column:::
         ![hero image](images/header-typography.svg)
         ### [Typography](typography.md)
-       Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprache dient. Ihr Stil darf diesem Ziel nie im Wege stehen. Die folgenden Richtlinien konzentrieren, wie Sie die Typografie verwenden, um Benutzern Inhalte leicht verständlich zu erleichtern. 
+       Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprache dient. Ihr Stil darf diesem Ziel nie im Wege stehen. Die folgenden Richtlinien konzentrieren sich darauf, wie Sie Typografie nutzen können, damit Benutzer Inhalte leichter verstehen. 
     :::column-end:::
 :::row-end:::
 

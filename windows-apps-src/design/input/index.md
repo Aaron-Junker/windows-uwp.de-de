@@ -1,7 +1,7 @@
 ---
-description: Optimieren Sie Ihre App für den Stift, Surface Dial und andere Eingabetypen.
+description: 'Optimieren Sie Ihre App für Stift, Surface Dial und andere Eingabetypen.'
 title: Eingabe und Interaktionen
-keywords: App-Eingaben, Anpassen einer UWP-Anwendung
+keywords: 'App-Eingaben, Anpassen einer UWP-Anwendung'
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,12 +9,6 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918978"
 ---
 # <a name="input-and-interactions"></a>Eingabe und Interaktionen
 
@@ -23,7 +17,7 @@ ms.locfileid: "8918978"
   <img src="images/input-interactions/icons-inputdevices03.png" />
 </div> -->
 
-UWP-Apps verarbeiten automatisch eine Vielzahl von Eingaben und können auf zahlreichen Geräten ausgeführt werden. Sie müssen daher keine zusätzlichen Schritte zum Aktivieren der Toucheingabe ausführen. Unter Umständen möchten Sie jedoch Ihre App für bestimmte Eingabe- oder Gerätearten optimieren. Beim Erstellen einer Zeichen-App möchten Sie vielleicht die Behandlung der Stifteingabe anpassen.
+UWP-Apps verarbeiten automatisch eine Vielzahl von Eingaben und können auf zahlreichen Geräten ausgeführt werden. Sie müssen daher beispielsweise keine zusätzlichen Schritte zum Aktivieren der Toucheingabe ausführen. Unter Umständen möchten Sie jedoch Ihre App für bestimmte Eingabe- oder Gerätearten optimieren. Beim Erstellen einer Zeichen-App möchten Sie vielleicht die Behandlung der Stifteingabe anpassen.
 
 Die Design- und Codierungsanweisungen in diesem Abschnitt unterstützen Sie beim Anpassen Ihrer UWP-App für bestimmte Eingabetypen.
 
@@ -40,7 +34,7 @@ Die Design- und Codierungsanweisungen in diesem Abschnitt unterstützen Sie beim
                         </div>
                     </div>  -->
                     <div class="cardText">
-                        <h3><a href="input-primer.md">Einführung in Eingaben</a></h3>
+                        <h3><a href="input-primer.md">Einführung in die Eingabe</a></h3>
                         <p>Machen Sie sich mit den verschiedenen Arten von Eingabegeräten sowie ihren Verhaltensweisen, Möglichkeiten und Einschränkungen in Verbindung mit bestimmten Formfaktoren vertraut.</p>
                     </div>
                 </div>
@@ -59,8 +53,8 @@ Die Design- und Codierungsanweisungen in diesem Abschnitt unterstützen Sie beim
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="gaze-interactions.md">NEU! Eingabe via Anvisieren</a></h3>
-                        <p>Sie können den Blick eines Benutzers anhand von Ort und Bewegung von Augen und Kopf verfolgen.</p>
+                        <h3><a href="gaze-interactions.md">NEU! Eingabe über Anvisieren</a></h3>
+                        <p>Sie können den Blick eines Benutzers anhand von Position und Bewegung von Augen und Kopf verfolgen.</p>
                     </div>
                 </div>
             </div>
@@ -80,7 +74,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
             <div style="display:block" class="cardPadding">
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
-                        <h3>Eingabe</h3>
+                        <h3>Input</h3>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Identifizieren von Eingabegeräten</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">Zeiger</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Stift und Windows Ink</a></p>
@@ -90,7 +84,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                         <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">Gamepad und Fernbedienung</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">Touchpad</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Mehrfacheingaben</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Mehrere Eingaben</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">Eingabeeinfügung</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Benutzerdefinierte Texteingabe</a></p>                        
                     </div>
@@ -104,8 +98,8 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Interaktionen</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">Drag&Drop</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">Verschiebung</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">Drag & Drop</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">Schwenken</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">Drehung</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-textselection">Auswählen von Text und Bildern</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-targeting">Zielbestimmung</a></p>
@@ -121,7 +115,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Sprache und KI</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Sprache</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Spracherkennung</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/cortana-interactions">Cortana</a></p>  
                     </div>
                 </div>

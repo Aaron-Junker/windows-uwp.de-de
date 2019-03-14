@@ -1,22 +1,16 @@
 ---
 layout: LandingPage
-Description: See how to publish your Windows apps to the Microsoft Store.
+Description: 'Erfahren Sie, wie Sie Ihre Windows-Apps im Microsoft Store veröffentlichen.'
 title: Veröffentlichen von Windows-Apps
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows10, UWP, Veröffentlichung, veröffentlichen, Verkauf, verkaufen, Verteilung, verteilen, Store, Dashboard
+keywords: "Windows\_10, UWP, Veröffentlichung, veröffentlichen, Verkauf, verkaufen, verteilen, Verteilung, Store, Dashboard"
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980308"
 ---
 # <a name="publish-windows-apps-and-games"></a>Veröffentlichen von Windows-Apps und -Spielen  
  
-[Partner Center](https://partner.microsoft.com/dashboard) können Sie Ihre apps und Spiele im Microsoft Store veröffentlichen. <a href="//developer.microsoft.com/store/register">Registrieren Sie sich noch heute.</a>
+Veröffentlichen Sie mit [Partner Center](https://partner.microsoft.com/dashboard) Ihre Apps und Spiele im Microsoft Store. <a href="//developer.microsoft.com/store/register">Registrieren Sie sich noch heute.</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -29,7 +23,7 @@ ms.locfileid: "8980308"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>App-Übermittlung</h3>
+                        <h3>App-Übermittlungen</h3>
                         <p>Erfahren Sie, was Sie zum Erstellen einer Übermittlung und zum Zertifizieren Ihrer App benötigen.</p>
                         <ul>
                         <li><a href="app-submissions.md">Prüfliste für die App-Übermittlung</a></li>
@@ -55,7 +49,7 @@ ms.locfileid: "8980308"
                     <p>Passen Sie die Verfügbarkeit Ihrer App an, indem Sie marktspezifische Verkaufspreise, Planung, Sichtbarkeitsoptionen und vieles mehr nutzen.</p>
                     <ul>
                         <li><a href="define-pricing-and-market-selection.md">Auswählen der Märkte</a></li>
-                        <li><a href="set-and-schedule-app-pricing.md">Planen und Festlegen der Preisgestaltung </a></li>
+                        <li><a href="set-and-schedule-app-pricing.md">Planen und Festlegen der Preisgestaltung</a></li>
                         <li><a href="configure-precise-release-scheduling.md">Konfigurieren der genauen Veröffentlichungsdaten</a></li>
                         <li><a href="set-app-pricing-and-availability.md">Anzeigen aller Verfügbarkeitsoptionen</a></li>
                     </ul>
@@ -79,7 +73,7 @@ ms.locfileid: "8980308"
                         <ul>
                             <li><a href="create-app-store-listings.md">Übersicht der Store-Einträge</a></li>
                             <li><a href="app-screenshots-and-images.md">Screenshots, Bilder und Trailer</a></li>
-                              <li><a href="import-and-export-store-listings.md">Verwalten mehrerer Einträge </a></li>
+                              <li><a href="import-and-export-store-listings.md">Massenverwalten von Einträgen </a></li>
                         </ul>
                     </div>
                 </div>
@@ -100,7 +94,7 @@ ms.locfileid: "8980308"
                 </div>
                 <div class="cardText">
                     <h3>Zahlungen und Berichte</h3>                  
-                    <p><a href="getting-paid-apps.md">Regelung der Bezahlung</a></p>
+                    <p><a href="getting-paid-apps.md">Bezahlung</a></p>
                     <p><a href="in-app-ads.md">In-App-Anzeigen</a></p>
                     <p><a href="analytics.md">Analyseberichte</a></p>                   
                 </div>

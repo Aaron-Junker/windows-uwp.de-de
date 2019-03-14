@@ -1,12 +1,12 @@
 items:
 - name: Erste Schritte
   href: ../gaming/getting-started.md
-- name: Handbuch zur Entwicklung von Spielen unter Windows10
+- name: Handbuch zur Entwicklung von Spielen unter Windows 10
   href: ../gaming/e2e.md
 - name: Programmierung von Spielen
   href: ../gaming/index.md
   items:
-  - name: Planung
+  - name: Planen
     href: ../gaming/planning.md
     items:
     - name: Spieletechnologien
@@ -29,9 +29,9 @@ items:
     - name: Übertragen und Aufzeichnen von Spielen
       href: ../gaming/game-broadcast-and-capture.md
       items:
-      - name: Übertragung von Spielen verwalten
+      - name: Verwalten der Spielübertragung
         href: ../gaming/manage-game-broadcasting.md
-      - name: Aufzeichnen von Screenshots, Audio-, Video- und Metadaten eines Spiels
+      - name: Aufzeichnen von Screenshots sowie Audio-, Video- und Metadaten eines Spiels
         href: ../gaming/capture-game-audio-video-screenshots-and-metadata.md
     - name: Eingaben für Spiele
       href: ../gaming/input-for-games.md
@@ -56,14 +56,14 @@ items:
         href: ../gaming/registry-data-for-game-controllers.md
     - name: Fehlende .NET-APIs in Unity und UWP
       href: ../gaming/missing-dot-net-apis-in-unity-and-uwp.md
-    - name: Networking für Spiele
+    - name: Netzwerk für Spiele
       href: ../gaming/work-with-networking-in-your-directx-game.md
-  - name: Entwicklung von Spielen (Video)
+  - name: Videos zur Entwicklung von Spielen
     href: ../gaming/game-development-videos.md
 - name: DirectX-Programmierung
   href: ../gaming/directx-programming.md
   items:
-  - name: Erste Schritte
+  - name: Beginnen
     href: ../gaming/directx-getting-started.md
     items:
     - name: App-Objekt
@@ -100,9 +100,9 @@ items:
         href: ../gaming/tutorial-game-flow-management.md
       - name: Hauptobjekt für das Spiel
         href: ../gaming/tutorial--defining-the-main-game-loop.md
-      - name: Rendering-Framework I
+      - name: Renderingframework I
         href: ../gaming/tutorial--assembling-the-rendering-pipeline.md
-      - name: Rendering-Framework II
+      - name: Renderingframework II
         href: ../gaming/tutorial-game-rendering.md
       - name: Hinzufügen der UI
         href: ../gaming/tutorial--adding-a-user-interface.md
@@ -123,7 +123,7 @@ items:
         href: ../gaming/adding-visual-content-to-the-marble-maze-sample.md
       - name: Hinzufügen von Eingaben und Interaktivität
         href: ../gaming/adding-input-and-interactivity-to-the-marble-maze-sample.md
-      - name: Hinzufügen von Audioinhalt
+      - name: Hinzufügen von Audio
         href: ../gaming/adding-audio-to-the-marble-maze-sample.md
   - name: Direct3D-Grafikkonzepte
     href: ../graphics-concepts/index.md
@@ -401,11 +401,11 @@ items:
       - name: Ebenen der Features von Streamingressourcen
         href: ../graphics-concepts/streaming-resources-features-tiers.md
         items:
-        - name: Ebene1
+        - name: Ebene 1
           href: ../graphics-concepts/tier-1.md
-        - name: Ebene2
+        - name: Ebene 2
           href: ../graphics-concepts/tier-2.md
-        - name: Ebene3
+        - name: Ebene 3
           href: ../graphics-concepts/tier-3.md
     - name: Anhänge
       href: ../graphics-concepts/appendix.md
@@ -435,11 +435,11 @@ items:
         href: ../gaming/setting-up-directx-resources.md
       - name: Zeichnen von Grundtypen
         href: ../gaming/creating-shaders-and-drawing-primitives.md
-      - name: Verwenden von Tiefe und Effekten
+      - name: Verwenden von Tiefen und Effekten
         href: ../gaming/using-depth-and-effects-on-primitives.md
       - name: Anwenden von Texturen
         href: ../gaming/applying-textures-to-primitives.md
-      - name: Erstellen einfachen Gitter
+      - name: Erstellen einfacher Gittermodelle
         href: ../gaming/create-a-basic-mesh.md
     - name: Laden von Ressourcen
       href: ../gaming/load-a-game-asset.md
@@ -479,12 +479,12 @@ items:
       href: ../gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md
     - name: Reduzieren der Latenz mit Swapchains
       href: ../gaming/reduce-latency-with-dxgi-1-3-swap-chains.md
-    - name: Swapchain-Skalierung und Einblendungen
+    - name: Swapchainskalierung und Überlagerungen
       href: ../gaming/multisampling--scaling--and-overlay-swap-chains.md
   - name: Portieren von DirectX 9 zu UWP
     href: ../gaming/porting-your-directx-9-game-to-windows-store.md
     items:
-    - name: DirectX9 zu DirectX11.1
+    - name: DirectX 9 zu DirectX 11.1
       href: ../gaming/porting-considerations.md
       items:
       - name: Planen der Portierung
@@ -496,7 +496,7 @@ items:
     - name: Einfache exemplarische Vorgehensweise
       href: ../gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md
       items:
-      - name: Initialisieren von Direct3D11
+      - name: Initialisieren von Direct3D 11
         href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md
       - name: Konvertieren des Renderingframeworks
         href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-2--rendering.md
@@ -525,7 +525,7 @@ items:
         href: ../gaming/compare-opengl-es-2-0-api-design-to-directx.md
       - name: EGL und DXGI
         href: ../gaming/moving-from-egl-to-dxgi.md
-      - name: Puffer, uniform-Variablen, Scheitelpunkte
+      - name: Puffer, uniform-Elemente, Scheitelpunkte
         href: ../gaming/porting-uniforms-and-attributes.md
       - name: Shaderpipeline
         href: ../gaming/change-your-shader-loading-code.md
@@ -534,29 +534,29 @@ items:
       items:
       - name: Shaderobjekte
         href: ../gaming/port-the-shader-config.md
-      - name: Vertexpuffer und -daten
+      - name: Scheitelpunktpuffer und -daten
         href: ../gaming/port-the-vertex-buffers-and-data-config.md
       - name: GLSL
         href: ../gaming/port-the-glsl.md
-      - name: Zeichnen auf Bildschirm
+      - name: Zeichnen auf dem Bildschirm
         href: ../gaming/draw-to-the-screen.md
-    - name: OpenGL zu Direct3D – Referenz
+    - name: 'OpenGL zu Direct3D: Referenz'
       href: ../gaming/opengl-es-2-0-to-directx-11-1-reference.md
       items:
       - name: GLSL zu HLSL
         href: ../gaming/glsl-to-hlsl-reference.md
-- name: UWP auf Xbox One
+- name: UWP auf Xbox One
   href: ../xbox-apps/index.md
   items:
   - name: Erste Schritte
     href: ../xbox-apps/getting-started.md
-  - name: Neuigkeiten
+  - name: 'Neuigkeiten:'
     href: ../xbox-apps/whats-new.md
-  - name: Aktivierung des Entwicklermodus auf Xbox One
+  - name: Aktivierung des Xbox One-Entwicklermodus
     href: ../xbox-apps/devkit-activation.md
   - name: Deaktivieren des Entwicklermodus auf Xbox One
     href: ../xbox-apps/devkit-deactivation.md
-  - name: Einrichten der Entwicklungsumgebung
+  - name: Einrichtung der Entwicklungsumgebung
     href: ../xbox-apps/development-environment-setup.md
   - name: Beispiele
     href: ../xbox-apps/samples.md
@@ -578,11 +578,11 @@ items:
         href: ../xbox-apps/devhome-settings.md
       - name: Seite „Medienerfassung”
         href: ../xbox-apps/devhome-capture.md
-      - name: Netzwerkseite
+      - name: Seite „Networking“
         href: ../xbox-apps/devhome-networking.md
-      - name: Seite „Performance“
+      - name: Seite „Leistung“
         href: ../xbox-apps/devhome-performance.md
-    - name: Begleitung für den Xbox-Entwicklermodus
+    - name: Begleitung für Xbox-Entwicklermodus
       href: ../xbox-apps/xbox-dev-mode-companion.md
     - name: Fiddler
       href: ../xbox-apps/uwp-fiddler.md
@@ -591,7 +591,7 @@ items:
     items:
     - name: Deaktivieren des Mausmodus
       href: ../xbox-apps/how-to-disable-mouse-mode.md
-    - name: "So wird's gemacht: Deaktivieren der Skalierung"
+    - name: So deaktivieren Sie die Skalierung
       href: ../xbox-apps/disable-scaling.md
     - name: "So wird's gemacht: Deaktivieren des Overscans"
       href: ../xbox-apps/turn-off-overscan.md
@@ -599,7 +599,7 @@ items:
     href: ../xbox-apps/system-resource-allocation.md
   - name: Einführung in Anwendungen mit mehreren Benutzern
     href: ../xbox-apps/multi-user-applications.md
-  - name: Portieren vorhandener Spiele auf Xbox
+  - name: Portieren vorhandener Spiele zu Xbox
     href: ../xbox-apps/development-lanes-landing.md
     items:
     - name: Benutzerdefinierter C++-Code
@@ -608,7 +608,7 @@ items:
       href: ../xbox-apps/development-lanes-unity.md
     - name: HTML/JS
       href: ../xbox-apps/development-lanes-html.md
-  - name: Geräteportal für Xbox– REST-API
+  - name: 'Xbox-Geräteportal: REST-API'
     href: ../xbox-apps/reference.md
     items:
     - name: /api/app/packagemanager/register
@@ -644,8 +644,8 @@ items:
 - name: Xbox Live
   href: ../xbox-live/TOC.md
 ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962582"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582873"

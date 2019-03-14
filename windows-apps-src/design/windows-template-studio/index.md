@@ -1,25 +1,19 @@
 ---
-description: Windows Template Studio ist eine Visual Studio-Erweiterung für das schnelle Erstellen von UWP-apps.
+description: "Windows Template Studio ist eine Visual\_Studio-Erweiterung für die schnelle Erstellung von UWP-Apps."
 title: Windows Template Studio
 template: detail.hbs
 ms.date: 05/10/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: 'Windows 10, UWP'
 pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfb593508ef6e366e133b04e7c47344e09d33dd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919339"
 ---
 # <a name="windows-template-studio"></a>Windows Template Studio
 
-![Favoritenbild](images/wts1.png)
+![Herobild](images/wts1.png)
 
-Windows Template Studio (WTS) ist eine Visual Studio-2017-Erweiterung, die die Erstellung des neuen universellen Windows-Plattform (UWP)-apps, die mit einer Umgebung beschleunigt. Das resultierende UWP-Projekt ist wohlgeformte, lesbar Code, der die neuesten Windows 10-Features mit bewährten Muster und bewährten Methoden implementieren. Der generierte Code sämtlichen müssen wir Links-Dokumentation, Stack Overflow und Blogs Einblicke hilfreich. WTS unterstützt die Entwicklung von apps in c# oder Visual Basic.
+Windows Template Studio (WTS) ist eine Visual Studio 2017-Erweiterung, die mit einer assistentenbasierten Oberfläche die Erstellung neuer UWP-Apps (Universelle Windows-Plattform) beschleunigt. Das resultierende UWP-Projekt ist wohlgeformter lesbarer Code, der die neuesten Windows 10-Features enthält und dabei bewährte Muster und bewährte Methoden implementiert. Der generierte Code enthält Links zu Dokumenten, Stack Overflow and Blogs mit nützlichen Informationen. WTS unterstützt die Erstellung von Apps in C# oder Visual Basic.
 
-Weitere Informationen finden Sie auf das [Projekt-Repository auf GitHub](https://github.com/microsoft/windowsTemplateStudio).
+Weitere Informationen finden Sie im [Projektrepository auf GitHub](https://github.com/microsoft/windowsTemplateStudio).
 

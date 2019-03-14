@@ -1,48 +1,48 @@
 ---
 description: Lernen Sie das Fluent Design und dessen Integration in Ihre Apps kennen.
-title: Fluent Design System für Windows
-keywords: 'Layout von UWP-Apps, universelle Windows-Plattform, App-Design, Schnittstelle, fluent design system'
+title: Fluent Design-System für Windows
+keywords: 'Layout von UWP-Apps, Universelle Windows-Plattform, App-Design, Benutzeroberfläche, Fluent Design-System'
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# <a name="the-fluent-design-system-for-windows-app-creators"></a>Das Fluent Design System für Windows-app-creators
+# <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design-System für Ersteller von Windows-Apps
 
-![Fluent Design-header](images/fluentdesign-app-header.jpg)
+![Fluent Design-Header](images/fluentdesign-app-header.jpg)
 
 ## <a name="introduction"></a>Einführung
 
-Das Fluent Design System ist unser System zur Erstellung adaptiver, empathischer und schöner Benutzeroberflächen.
+Das Fluent Design-System ist unser System zum Erstellen adaptiver, einfühlsamer und schöner Benutzeroberflächen.
 
 ## <a name="principles"></a>Prinzipien
 
-**Adaptiv: Fluent-Erlebnisse fühlen sich auf jedem Gerät natürlich an.**
+**Adaptiv: Fluent-Benutzeroberflächen fühlen sich auf jedem Gerät natürlich an.**
 
-Fluent-Erlebnisse passen sich an die Umgebung an. Ein Fluent-Erlebnis fühlt sich auf einem Tablet, desktop-PCs und einer Xbox – es funktioniert sogar hervorragend auf einem Mixed Reality-Kopfhörer. Und wenn Sie mehr Hardware hinzufügen, wie z. B. einen zusätzlichen Monitor für Ihren PC, nutzt ein Fluent-Erlebnis diese Vorteile.
+Fluent-Benutzeroberflächen passen sich an die Umgebung an. Eine Fluent-Benutzeroberfläche fühlt sich auf einem Tablet, einem Desktop-PC und einer Xbox gut an. Sie funktioniert sogar mit einem Mixed Reality-Headset hervorragend. Und wenn Sie mehr Hardware hinzufügen, z. B. einen zusätzlichen Monitor für Ihren PC, wird sie für ein Fluent-Erlebnis genutzt.
 
-**Empathisch: Fluent-Erlebnisse sind intuitiv und kraftvoll.**
+**Einfühlsam: Fluent-Benutzeroberflächen sind intuitiv und kraftvoll.**
 
-Fluent-Erlebnisse passen sich dem Verhalten und der Absicht an – sie verstehen und antizipieren, was nötig ist. Sie vereinen Menschen und Ideen, egal ob sie sich auf gegenüberliegenden Seiten der Welt befinden oder direkt nebeneinander stehen.
+Fluent-Benutzeroberflächen passen sich dem Verhalten und der Absicht an – sie verstehen und antizipieren, was nötig ist. Sie vereinen Menschen und Ideen, egal ob diese sich auf gegenüberliegenden Seiten der Erde befinden oder direkt nebeneinander stehen.
 
-**Wunderschön: Fluent-Erlebnisse sind einnehmend und immersiv.**
+**Wunderschön: Fluent-Benutzeroberflächen sind einnehmend und immersiv.**
 
-Durch das Einbeziehen von Elementen der physischen Welt erschließt sich ein Fluent-Erlebniss etwas Grundsätzliches. Es nutzt Licht, Schatten, Bewegung, Tiefe und Textur, um Informationen intuitiv und instinktiv zu organisieren.
+Durch das Einbeziehen von Elementen der physischen Welt erschließt sich eine Fluent-Benutzeroberfläche etwas Grundsätzliches. Sie nutzt Licht, Schatten, Bewegung, Tiefe und Textur, um Informationen intuitiv und instinktiv zu organisieren.
 
 
-## <a name="applying-fluent-design-to-your-app-with-uwp"></a>Umsetzung des Fluent Designs für Ihre app mit UWP
+## <a name="applying-fluent-design-to-your-app-with-uwp"></a>Umsetzung von Fluent Design für Ihre App mit UWP
 
-![Fluent Design-logo](images/fluentdesign_header.png)
+![Fluent Design-Logo](images/fluentdesign_header.png)
 
-Unseren Designrichtlinien wird erläutert, wie apps Fluent-Entwurfsprinzipien zuweisen. Welche Art von apps? Während viele unserer Richtlinien auf jeder Plattform angewendet werden können, haben wir Windows-Plattform (die Universal) zur Unterstützung der Fluent Design.
+In unseren Entwurfsrichtlinien wird beschrieben, wie Sie Fluent Design-Prinzipien auf Apps anwenden. Welche Art von Apps? Viele unserer Richtlinien können zwar auf jede beliebige Plattform angewendet werden, aber wir haben die Universelle Windows-Plattform (UWP) zur Unterstützung von Fluent Design erstellt.
 
-Fluent Design-Features sind in UWP integriert. Einige dieser Funktionen – wie effektive Pixel und das universelle Eingabesystem – arbeiten automatisch. Sie müssen keinen zusätzlichen Code schreiben, um sie zu nutzen. Andere Funktionen, wie z. B. Acryl, sind optional. Sie nehmen sie in Ihre Anwendung auf, indem Sie Code schreiben.
+Fluent Design-Features sind in UWP integriert. Einige dieser Funktionen – z. B. effektive Pixel und das universelle Eingabesystem – arbeiten automatisch. Sie müssen keinen zusätzlichen Code schreiben, um sie zu nutzen. Andere Funktionen, z. B. Acryl, sind optional. Sie nehmen sie in Ihre Anwendung auf, indem Sie Code schreiben.
 
-> Wir bringen UWP-Steuerelemente auf den Desktop, damit Sie das Aussehen, Verhalten und die Funktionalität Ihrer vorhandenen WPF- oder Windows-Anwendungen mit Fluent Design-Features verbessern können. Weitere Informationen hierzu finden Sie in der [Host-UWP-Steuerelemente in WPF- oder Windows Forms-Anwendung](/windows/uwp/xaml-platform/xaml-host-controls).
+> Wir bringen UWP-Steuerelemente auf den Desktop, damit Sie das Aussehen, Verhalten und die Funktionalität Ihrer vorhandenen WPF- oder Windows-Anwendungen mit Fluent Design-Features verbessern können. Weitere Informationen finden Sie unter [Hosten von UWP-Steuerelementen in WPF- und Windows Forms-Anwendungen](/windows/uwp/xaml-platform/xaml-host-controls).
 
 <!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
 
-Zusätzlich zu designanleitungen zeigen unserer Fluent Design-Artikel auch Ihnen, wie Sie Code schreiben, der Ihre Entwürfe passieren erheblich vereinfacht. UWP verwendet XAML, eine Markup-basierte Sprache, die leichter Benutzeroberflächen erstellen kann. Beispiel:
+Zusätzlich zu einer Entwurfsanleitung wird in unseren Fluent Design-Artikeln auch beschrieben, wie Sie den Code für Ihre Entwürfe schreiben. Für UWP wird XAML verwendet. Dies ist eine auf Markup basierende Sprache, mit der die Erstellung von Benutzeroberflächen vereinfacht wird. Beispiel:
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4">
@@ -53,11 +53,11 @@ Zusätzlich zu designanleitungen zeigen unserer Fluent Design-Artikel auch Ihnen
 ![](images/xaml-example.png)
 
 
-> Wenn Sie die Entwicklung für UWP sind, sehen Sie sich unsere [Erste Schritte mit UWP-Seite](https://developer.microsoft.com/windows/apps/getstarted).
+> Falls die UWP-Entwicklung neu für Sie ist, helfen Ihnen die Informationen auf unserer [Seite mit den ersten Schritte für UWP](https://developer.microsoft.com/windows/apps/getstarted) weiter.
 
-## <a name="find-a-natural-fit"></a>Eine natürliche Form finden
+## <a name="find-a-natural-fit"></a>Finden einer natürlichen Form
 
-Wie gestaltet man eine App auf einer Vielzahl von Geräten natürlich? Indem sie sich so anfühlt, als wäre sie für jedes einzelne Gerät entwickelt worden. Ein UI-Layout, das sich an verschiedene Bildschirmgrößen anpasst (ohne vergeudeten Platz oder Überladung) schafft ein natürliches Erlebnis – als ob es für dieses Gerät entwickelt wurde.
+Wie gestaltet man eine App auf einer Vielzahl von Geräten natürlich? Indem sie sich so anfühlt, als wäre sie für jedes einzelne Gerät entwickelt worden. Ein UI-Layout, das sich an verschiedene Bildschirmgrößen anpasst (ohne vergeudeten Platz oder Überladung), schafft ein natürliches Erlebnis – als ob es für dieses Gerät entwickelt wurde.
 
 :::row:::
     :::column:::
@@ -109,13 +109,13 @@ Wie gestaltet man eine App auf einer Vielzahl von Geräten natürlich? Indem sie
         [Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
 :::row-end:::
 
-## <a name="make-it-intuitive"></a>Stellen sie intuitiv
+## <a name="make-it-intuitive"></a>Sicherstellen der Intuitivität
 
-Ein Erlebnis fühlt sich intuitiv, wenn es sich um die Art und Weise verhält, wie der Benutzer es erwartet. Durch die Verwendung etablierter Steuerelemente und Muster und die Nutzung der Plattformunterstützung für die Zugänglichkeit und Globalisierung schaffen Sie eine reibungsloses Erlebnis, mit dem die Benutzer produktiver sind.
+Eine Benutzeroberfläche fühlt sich intuitiv an, wenn sie sich so verhält, wie der Benutzer es erwartet. Durch die Verwendung etablierter Steuerelemente und Muster und die Nutzung der Plattformunterstützung für die Barrierefreiheit und Globalisierung schaffen Sie eine reibungslose Benutzeroberfläche, mit der Benutzer produktiver sein können.
 
-Empathie bedeutet, das Richtige zur richtigen Zeit zu tun.
+Beim Einfühlungsvermögen geht es darum, das Richtige zur richtigen Zeit zu tun.
 
-Fluent-Erlebnisse verwenden Steuerelement und Muster konsequent, sodass sie sich so verhalten, wie es der Benutzer erwartet hat. Fluent-Erlebnisse sind für Menschen mit einem breiten Spektrum an körperlichen Fähigkeiten zugänglich und umfassen Globalisierungsfunktionen für Menschen auf der ganzen Welt.
+Für Fluent-Benutzeroberflächen werden Steuerelemente und Muster konsistent eingesetzt, damit sie sich so verhalten, wie es der Benutzer erwartet. Fluent-Benutzeroberflächen sind für Menschen mit einem breiten Spektrum an körperlichen Fähigkeiten zugänglich und umfassen Globalisierungsfunktionen für Menschen auf der ganzen Welt.
 
 :::row:::
     :::column:::
@@ -164,11 +164,11 @@ Fluent-Erlebnisse verwenden Steuerelement und Muster konsequent, sodass sie sich
         [Learn about Usability](/windows/uwp/design/usability/)
 :::row-end:::
 
-## <a name="be-engaging-and-immersive"></a>Gestalten Sie ansprechend und immersiv
+## <a name="be-engaging-and-immersive"></a>Gestalten auf ansprechende und immersive Weise
 
-Beim Fluent Design geht es nicht um auffällige Effekte. Es beinhaltet physikalische Effekte, die das Benutzererlebnis wirklich verbessern. Es emuliert Erlebnisse, die unser Gehirn effizient verarbeiten kann.
+Bei Fluent Design geht es nicht um auffällige Effekte. Es werden physikalische Effekte genutzt, die das Benutzererlebnis wirklich verbessern. Hierdurch werden Benutzeroberflächen emuliert, die unser Gehirn effizient verarbeiten kann.
 
-## <a name="use-light"></a>Verwendung von Licht
+## <a name="use-light"></a>Verwenden von Licht
 
 Licht kann unsere Aufmerksamkeit auf sich ziehen. Es schafft Atmosphäre und Raumgefühl und ist ein praktisches Werkzeug, um Informationen zu beleuchten.
 
@@ -196,7 +196,7 @@ Bringen Sie Licht in Ihre UWP-App:
 
 ## <a name="create-a-sense-of-depth"></a>Schaffen Sie ein Gefühl von Tiefe
 
-Wir leben in einer dreidimensionalen Welt. Durch die gezielte Integration von Tiefe in das UI verwandeln wir eine flache, 2D-Schnittstelle in etwas, das Informationen und Konzepte durch eine visuelle Hierarchie effizient präsentiert. Es erfindet neu, wie sich die Dinge in einer geschichteten, physikalischen Umgebung zueinander verhalten.
+Wir leben in einer dreidimensionalen Welt. Durch die gezielte Integration von Tiefe in die Benutzeroberfläche verwandeln wir eine flache, 2D-Schnittstelle in eine Oberfläche, auf der Informationen und Konzepte durch eine visuelle Hierarchie effizient präsentiert werden. Es wird neu erfunden, wie sich die Dinge in einer mehrschichtigen, physikalischen Umgebung zueinander verhalten.
 
 Bringen Sie Tiefe in Ihre UWP-App:
 
@@ -212,7 +212,7 @@ Bringen Sie Tiefe in Ihre UWP-App:
 
 ## <a name="incorporate-motion"></a>Integrieren von Bewegung
 
-Stellen Sie sich Motion-Design wie einen Film vor. Nahtlose Übergänge halten Sie auf die Geschichte konzentriert und erwecken Erlebnisse zum Leben. Wir können dieses Gefühl in unsere Entwürfe einbringen und Menschen von einer Aufgabe zur nächsten führen.
+Stellen Sie sich Motion-Design wie einen Film vor. Nahtlose Übergänge halten Sie auf die Geschichte konzentriert und erwecken Erlebnisse zum Leben. Wir können dieses Gefühl in unsere Entwürfe einbringen und Menschen quasi filmisch leicht von einer Aufgabe zur nächsten führen.
 
 Bringen Sie Bewegung in Ihre UWP-App:
 
@@ -228,7 +228,7 @@ Bringen Sie Bewegung in Ihre UWP-App:
 
 ## <a name="build-it-with-the-right-material"></a>Verwenden Sie das richtige Material
 
-Die Dinge, die uns in der realen Welt umgeben, sind sinnlich und belebend. Sie biegen, strecken, prallen, zerspringen und gleiten. Diese materiellen Qualitäten übersetzen sich in digitale Umgebungen, die Menschen dazu bringen, unsere Entwürfe zu berühren und zu erreichen.
+Die Dinge, die uns in der realen Welt umgeben, sind sinnlich und belebend. Sie können sich biegen, strecken, prallen, zerspringen und gleiten. Diese Materialqualitäten übersetzen sich in digitale Umgebungen, die bewirken, dass Menschen unsere Entwürfe berühren möchten.
 
 Bringen Sie Material in Ihre UWP-App:
 
@@ -244,7 +244,7 @@ Bringen Sie Material in Ihre UWP-App:
 
 ## <a name="design-toolkits-and-code-samples"></a>Design-Toolkits und Codebeispiele
 
-Sie möchten Ihre eigenen Apps mit Fluent Design erstellen? Unsere Toolkits für Adobe XD, Adobe Illustrator, Adobe Photoshop, Framer und Sketch helfen Ihnen, Ihre Entwürfe zu beschleunigen. Mit unseren Beispielen können Sie schneller entwickeln.
+Sie möchten Ihre eigenen Apps mit Fluent Design erstellen? Unsere Toolkits für Adobe XD, Adobe Illustrator, Adobe Photoshop, Framer und Sketch dienen Ihnen als Hilfe bei Ihrer Entwurfsarbeit, und mit unseren Beispielen können Sie schneller entwickeln.
 
 :::row:::
     :::column:::

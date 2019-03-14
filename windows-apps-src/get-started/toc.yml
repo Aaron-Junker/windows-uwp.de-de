@@ -3,14 +3,14 @@ items:
   href: index.md
 - name: Was ist eine UWP-App?
   href: ../get-started/universal-application-platform-guide.md
-- name: Vorbereitung
+- name: Einrichten
   href: ../get-started/get-set-up.md
   items:
-  - name: Gerät für die Entwicklung aktivieren
+  - name: Aktivieren Ihres Geräts für die Entwicklung
     href: ../get-started/enable-your-device-for-development.md
-  - name: Entwicklerkonto erstellen
+  - name: Erstellen eines Entwicklerkontos
     href: ../get-started/sign-up.md
-- name: Beginnen mit der Codierung
+- name: Beginnen Sie mit der Codierung
   href: ../get-started/create-uwp-apps.md
   items:
   - name: Erstellen eines Formulars
@@ -28,15 +28,15 @@ items:
       href: ../get-started/create-a-hello-world-app-xaml-universal.md
     - name: Erstellen der App „Hello, world“ (C++)
       href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
-    - name: Erstellen der App „Hello, world” (JS)
+    - name: Erstellen der App „Hello, world“ (JS)
       href: ../get-started/create-a-hello-world-app-js-uwp.md
   - name: Erstellen einer komplexen App
     href: ../get-started/plan-your-app.md
 - name: Beispiele für UWP-Apps abrufen
   href: ../get-started/get-uwp-app-samples.md
 ms.openlocfilehash: 6d2635bec653e5c9f409ff6a5249ee0215276225
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962442"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582818"

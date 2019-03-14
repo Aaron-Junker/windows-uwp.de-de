@@ -13,9 +13,9 @@ items:
 - name: Verwalten von Kontobenutzern
   href: ../publish/manage-account-users.md
   items:
-  - name: Zuordnen von AzureAD zu Ihrem Partner Center-Konto
+  - name: Zuordnen von Azure AD zu Ihrem Partner Center-Konto
     href: ../publish/associate-azure-ad-with-partner-center.md
-  - name: Hinzufügen von Benutzern, Gruppen und Azure AD-Apps
+  - name: Hinzufügen von Benutzern, Gruppen und Azure AD-Anwendungen
     href: ../publish/add-users-groups-and-azure-ad-applications.md
   - name: Festlegen von Rollen und benutzerdefinierten Berechtigungen
     href: ../publish/set-custom-permissions-for-account-users.md
@@ -29,13 +29,13 @@ items:
     items:
     - name: Festlegen der Marktauswahl
       href: ../publish/define-market-selection.md
-    - name: Sichtbarkeitsoptionen auswählen
+    - name: Auswählen von Sichtbarkeitsoptionen
       href: ../publish/choose-visibility-options.md
     - name: Konfigurieren des genauen Veröffentlichungszeitplans
       href: ../publish/configure-precise-release-scheduling.md
     - name: Festlegen und Planen von App-Preisen
       href: ../publish/set-and-schedule-app-pricing.md
-    - name: Optionen für die Organisationslizenzierung
+    - name: Organisatorische Lizenzierungsoptionen
       href: ../publish/organizational-licensing.md
   - name: Eingeben von App-Eigenschaften
     href: ../publish/enter-app-properties.md
@@ -57,7 +57,7 @@ items:
       href: ../publish/package-version-numbering.md
     - name: Unterstützte Sprachen
       href: ../publish/supported-languages.md
-    - name: Leitfaden für die Verwaltung von App-Paketen
+    - name: Leitfaden für die App-Paketverwaltung
       href: ../publish/guidance-for-app-package-management.md
   - name: Erstellen von Store-Einträgen für Apps
     href: ../publish/create-app-store-listings.md
@@ -73,7 +73,7 @@ items:
   - name: Verwalten der Übermittlungsoptionen
     href: ../publish/manage-submission-options.md
     items:
-    - name: Hinweise zur Zertifizierung
+    - name: Hinweise für Zertifizierung
       href: ../publish/notes-for-certification.md
   - name: Der App-Zertifizierungsprozess
     href: ../publish/the-app-certification-process.md
@@ -84,7 +84,7 @@ items:
       href: ../publish/avoid-common-certification-failures.md
   - name: Flight-Pakete
     href: ../publish/package-flights.md
-  - name: Schrittweises Paketrollout
+  - name: Schrittweiser Paketrollout
     href: ../publish/gradual-package-rollout.md
   - name: Betatests und zielgerichtete Verteilung
     href: ../publish/beta-testing-and-targeted-distribution.md
@@ -152,7 +152,7 @@ items:
     href: ../publish/respond-to-customer-reviews.md
   - name: Reagieren auf Kundenfeedback
     href: ../publish/respond-to-customer-feedback.md
-  - name: Senden von Benachrichtigungen an App-Kunden
+  - name: Senden von Benachrichtigungen an Ihre App-Kunden
     href: ../publish/send-push-notifications-to-your-apps-customers.md
   - name: Verwenden zielgerichteter Angebote
     href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
@@ -173,26 +173,26 @@ items:
     href: ../publish/reviews-report.md
   - name: Feedbackbericht
     href: ../publish/feedback-report.md
-  - name: Bericht der Xbox Analyse
+  - name: Xbox-Analysebericht
     href: ../publish/xbox-analytics-report.md
-  - name: Bericht über Geschäftsverlauf
+  - name: Datenbericht
     href: ../publish/insights-report.md
   - name: Bericht zur Anzeigenleistung
     href: ../publish/advertising-performance-report.md
-  - name: Werbekampagnen-Bericht
+  - name: Werbekampagnenbericht
     href: ../publish/ad-campaign-report.md
   - name: Herunterladen von Analyseberichten
     href: ../publish/download-analytic-reports.md
 - name: Bezahlung
   href: ../publish/getting-paid-apps.md
   items:
-  - name: Einrichten von Auszahlungskonten und Steuerformularen.
+  - name: Einrichten von Auszahlungskonten und Steuerformularen
     href: ../publish/setting-up-your-payout-account-and-tax-forms.md
   - name: Auszahlungsschwellenwerte, Methoden und Zeiträume
     href: ../publish/payment-thresholds-methods-and-timeframes.md
   - name: Auszahlungsübersicht
     href: ../publish/payout-summary.md
-  - name: Steuerdetails
+  - name: Steuerinformationen
     href: ../publish/tax-details-for-paid-apps.md
   - name: Kennenlernen der IRS-Steuerformulare
     href: ../publish/understand-irs-tax-forms.md
@@ -200,7 +200,7 @@ items:
     href: ../publish/mobile-operator-billing.md
   - name: Umsatzsteuerinfo
     href: ../publish/vat-info.md
-- name: Richtlinien und Verhaltensregeln für Microsoft Store
+- name: Microsoft Store-Richtlinien und -Verhaltensregeln
   href: https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct
   items:
   - name: Microsoft Store-Richtlinien
@@ -213,8 +213,8 @@ items:
   - name: Verhaltensregeln für Entwickler
     href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
 ms.openlocfilehash: d44affff4838b8799bfd2e82e4f57058d60e657b
-ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042470"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582469"

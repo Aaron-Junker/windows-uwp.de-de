@@ -1,26 +1,20 @@
 ---
-description: Hier finden Sie einen Designleitfaden und Codierungsanweisungen für das Hinzufügen von Steuerelementen und Mustern zu Ihrer UWP-App. Sie finden mehr als 45leistungsstarke Steuerelemente für die Verwendung mit Ihrer App.
+description: "Hier finden Sie einen Designleitfaden und Codierungsanweisungen für das Hinzufügen von Steuerelementen und Mustern zu Ihrer UWP-App. Sie finden mehr als 45\_leistungsstarke Steuerelemente für die Verwendung mit Ihrer App."
 title: UWP-Steuerelemente und -Muster – Entwicklung von Windows-Apps
-keywords: UWP-Steuerelemente, Benutzeroberfläche, App-Steuerelemente
+keywords: 'UWP-Steuerelemente, Benutzeroberfläche, App-Steuerelemente'
 label: Controls & patterns
 template: detail.hbs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044281"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Steuerelemente und Muster für UWP-Apps
  
 
 In der UWP-App-Entwicklung ist ein <i>Steuerelement</i> ein UI-Element, das Inhalte anzeigt oder Interaktionen ermöglicht. Steuerelemente sind die Bausteine der Benutzeroberfläche. Ein <i>Muster</i> ist eine Anleitung zum Kombinieren verschiedener Steuerelemente, um etwas Neues zu erstellen.
 
-Wir stellen Ihnen mehr als 45Steuerelemente bereit, angefangen bei einfachen Schaltflächen bis hin zu leistungsstarken Datensteuerelementen wie der Rasteransicht.  Diese Steuerelemente sind Teil des Fluent Design-Systems und können Ihnen bei der Erstellung einer ansprechenden, skalierbaren UI helfen, die auf allen Geräten und Bildschirmgrößen großartig aussieht. 
+Wir stellen Ihnen mehr als 45 Steuerelemente bereit, angefangen bei einfachen Schaltflächen bis hin zu leistungsstarken Datensteuerelementen wie der Rasteransicht.  Diese Steuerelemente sind Teil des Fluent Design-Systems und können Ihnen bei der Erstellung einer ansprechenden, skalierbaren UI helfen, die auf allen Geräten und Bildschirmgrößen großartig aussieht. 
 
 Die Artikel in diesem Abschnitt enthalten Designrichtlinien und Codierungsanweisungen für das Hinzufügen von Steuerelementen und Mustern zu Ihrer UWP-App. 
 
@@ -31,16 +25,16 @@ Allgemeine Anweisungen und Codebeispiele für das Hinzufügen und Formatieren vo
 :::row:::
     :::column:::
       <p><b><a href="controls-and-events-intro.md">Hinzufügen von Steuerelementen und Verarbeiten von Ereignissen</a></b> <br/>
-Es gibt 3 wichtige Schritte, die Sie ausführen müssen, um Ihrer App Steuerelemente hinzuzufügen: das Hinzufügen eines Steuerelements zu Ihrer App-UI, das Festlegen der Eigenschaften für das Steuerelement und das Hinzufügen von Code zu den Ereignishandlern des Steuerelements, sodass dieses eine Aktion ausführt.</p>
+Es gibt drei wichtige Schritte zum Hinzufügen von Steuerelementen zur App: Hinzufügen eines Steuerelements zu Ihrer App-UI, Festlegen der Eigenschaften für das Steuerelement und Hinzufügen von Code zu den Ereignishandlern des Steuerelements, sodass dieses eine Aktion ausführt.</p>
     :::column-end:::
     :::column:::
       <p><b><a href="xaml-styles.md">Formatieren von Steuerelementen</a></b> <br/>
-Das XAML-Framework bietet zahlreiche Anpassungsmöglichkeiten für die App-Darstellung. Sie können mit Formaten die Steuerelementeigenschaften festlegen und diese Einstellungen dann für andere Steuerelemente wiederverwenden, um ein einheitliches Erscheinungsbild zu erzielen.</p>
+Das XAML-Framework bietet zahlreiche Anpassungsmöglichkeiten für die App-Darstellung. Sie können mit Stilen die Steuerelementeigenschaften festlegen und diese Einstellungen dann für andere Steuerelemente übernehmen, um so für ein einheitliches Erscheinungsbild zu sorgen.</p>
     :::column-end:::
 :::row-end:::
 
 ## <a name="get-the-windows-ui-library"></a>Abrufen der Windows-UI-Bibliothek
-Einige Steuerelemente sind nur verfügbar, in der Windows-UI-Bibliothek. Um es zu erhalten, finden Sie in der [UI-Bibliothek für Windows-Übersicht und Installation-Anweisungen](/uwp/toolkits/winui/).
+Einige Steuerelemente sind nur in der Windows-UI-Bibliothek verfügbar. Informationen dazu, wie Sie diese abrufen, finden Sie im Artikel mit der [Übersicht über die Windows-UI-Bibliothek und Installationsanweisungen](/uwp/toolkits/winui/).
 
 ## <a name="alphabetical-index"></a>Alphabetischer Index 
 
@@ -56,7 +50,7 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 
 <li style="list-style-type: none;"><a href="checkbox.md">Kontrollkästchen </a></li>
 
-<li style="list-style-type: none;"><a href="color-picker.md">Farbwähler</a></li>
+<li style="list-style-type: none;"><a href="color-picker.md">Farbauswahl</a></li>
 
 <li style="list-style-type: none;"><a href="contact-card.md">Visitenkarte</a></li>
 
@@ -92,7 +86,7 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 
 <li style="list-style-type: none;"><a href="progress-controls.md">Statussteuerelemente</a></li>
 
-<li style="list-style-type: none;"><a href="radio-button.md">Optionsschaltfläche</a></li>
+<li style="list-style-type: none;"><a href="radio-button.md">Optionsfeld</a></li>
 
 <li style="list-style-type: none;"><a href="rating.md">Bewertungssteuerelement</a></li>
 
@@ -111,7 +105,7 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 <li style="list-style-type: none;"><a href="text-controls.md">Textsteuerelemente</a></li>
 
 
-<li style="list-style-type: none;"><a href="toggles.md">Umschalten</a></li>
+<li style="list-style-type: none;"><a href="toggles.md">Ein-/Ausschalten</a></li>
 <li style="list-style-type: none;"><a href="tooltips.md">QuickInfos</a></li>
 
 <li style="list-style-type: none;"><a href="tree-view.md">Strukturansicht</a></li>
@@ -122,16 +116,16 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 
 ## <a name="xaml-controls-gallery"></a>XAML-Steuerelementekatalog
 
-Rufen Sie die _XAML-Steuerelementekatalog_-App aus dem Microsoft Store ab, um diese Steuerelemente und das Fluent Design-System in Aktion zu sehen. Die App ist eine interaktive Ergänzung zu dieser Website. Wenn Sie sie installiert haben, können Sie Links auf einzelnen Steuerungsseiten verwenden, um die App zu starten und das Steuerelement in Aktion zu sehen.
+Rufen Sie die _XAML-Steuerelementekatalog_-App aus dem Microsoft Store ab, um diese Steuerelemente und das Fluent Design-System in Aktion zu sehen. Die App ist eine interaktive Ergänzung zu dieser Website. Wenn Sie sie installiert haben, können Sie Links auf einzelnen Steuerungsseiten verwenden, um die App zu starten und das Steuerelement in Aktion zu sehen.
 
-<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a>
+<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a>
 
-<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a>
 
 <img src="images/xaml-controls-gallery.png" alt="XAML Controls Gallery screen" />
 
 ## <a name="additional-controls"></a>Zusätzliche Steuerelemente
 
-Zusätzliche Steuerelemente für die UWP-Entwicklung werden von Unternehmen wie <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> und <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> bereitgestellt. Diese Steuerelemente bieten zusätzliche Unterstützung für Unternehmen und .NET-Entwickler, indem sie die Steuerelemente des Standardsystem mit benutzerdefinierten Steuerelementen und Diensten erweitern.  
+Zusätzliche Steuerelemente für die UWP-Entwicklung werden von Unternehmen wie <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> und <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> bereitgestellt. Diese Steuerelemente bieten zusätzliche Unterstützung für Unternehmen und .NET-Entwickler, indem sie die Steuerelemente des Standardsystems um benutzerdefinierte Steuerelemente und Dienste erweitern.  
 
-Wenn Sie mehr über diese Steuerelemente erfahren möchten, sehen Sie sich das Beispiel <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customer Orders Database</a> in GitHub an. In diesem Beispiel werden die Steuerelemente Datenrasten und Dateneingabe von Telerik verwendet, die Teil der UI für die UWP-Suite sind. Die UI für die UWP-Suite besteht aus einer Sammlung von über 20 Steuerelementen, die als Open Source-Projekt über die .NET-Foundation verfügbar sind.
+Wenn Sie mehr über diese Steuerelemente erfahren möchten, sehen Sie sich auf GitHub das Beispiel <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customer Orders Database</a> (Datenbank für Kundenaufträge) an. In diesem Beispiel werden das Rastersteuerelement und die Validierung der Dateneingabe von Telerik verwendet, die Teil der UI für die UWP-Suite sind. Die UI für die UWP-Suite besteht aus einer Sammlung von über 20 Steuerelementen, die als Open-Source-Projekt über die .NET Foundation verfügbar sind.

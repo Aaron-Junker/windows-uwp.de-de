@@ -1,59 +1,53 @@
 ---
-Description: Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
+Description: 'Gut gestaltete Bewegungen lassen Apps lebhaft und realistisch erscheinen. Helfen Sie Benutzern dabei, Kontextänderungen zu verstehen, und verbinden Sie Interaktionen mit visuellen Übergängen.'
 title: Bewegung und Animation in UWP-Apps
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: 'Windows 10, UWP'
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936909"
 ---
 # <a name="motion-for-uwp-apps"></a>Bewegung für UWP-Apps
 
-![Favoritenbild](images/header-motion2.svg)
+![Herobild](images/header-motion2.svg)
 
-In einer App sind fließende Bewegungen wichtig. Sie geben intelligentes Feedback basierend auf dem Verhalten des Benutzers, halten ein lebendiges Gefühl für die Benutzeroberfläche aufrecht und leiten die Navigation durch die App. Fließende Bewegung bewirkt eine emotionale Verbindung zwischen dem Benutzer und seiner digitalen Erfahrung. Wir gehen von grundlegenden natürlichen Bewegungen aus, die der Benutzer bereits aus der physischen Welt kennt, und wir erweitern unser System von dort aus.
+In einer App sind fließende Bewegungen wichtig. Sie geben intelligentes Feedback basierend auf dem Verhalten des Benutzers, lassen die Benutzeroberfläche lebendig wirken und unterstützen den Benutzer bei der Navigation in der App. Durch fließende Bewegungen entsteht eine gewisse emotionale Verbindung zwischen einem Benutzer und der digitalen Benutzeroberfläche. Wir gehen von grundlegenden natürlichen Bewegungen aus, die der Benutzer bereits aus der physischen Welt kennt, und erweitern unser System darauf aufbauend.
 
 ## <a name="fluent-motion-principles"></a>Prinzipien fließender Bewegungen
 
-### <a name="physical"></a>Physisch
+### <a name="physical"></a>Physikalisch
 
-Bewegte Objekte verhalten sich wie Objekte in der realen Welt. Durch fließende, reaktionsfähige Bewegungen wirken Benutzeroberflächen natürlich, und sie sorgen dafür, dass emotionale Verbindungen mit der Oberfläche entstehen.
+Bewegte Objekte verhalten sich wie Objekte in der realen Welt. Fließende, dynamische Bewegungen ermöglichen eine natürliche Verwendung der Benutzeroberfläche und verleihen ihr eine persönliche Note, durch die eine gewisse emotionale Verbindung entsteht.
 
-![UI-Beispiel für fließende Bewegung](images/Physical.gif)
-> Wenn Sie per Toucheingabe mit der UI interagieren, entspricht die Bewegung auf der Benutzeroberfläche direkt der Geschwindigkeit der Interaktion. Und weil die Toucheingabe eine direkte Manipulation ist, wirkt sich das Objekt, mit dem Sie interagieren, auf die umgebenden Objekte aus.
+![UI-Beispiel für physische Bewegung](images/Physical.gif)
+> Wenn Sie per Toucheingabe mit der UI interagieren, entspricht die Bewegung auf der Benutzeroberfläche der Geschwindigkeit der Interaktion. Die Toucheingabe ist eine direkte Eingabe. Daher beeinflusst das Objekt, mit dem Sie interagieren, die umgebenden Objekte.
 
 ### <a name="functional"></a>Funktionell
 
-Bewegung dient einem Zweck und muss überzeugend sein. Sie führt den Benutzer durch die Komplexität und hilft beim Aufbau der Hierarchie. Bewegung vermittelt den Eindruck verbesserter Leistung und optimiert das Benutzererlebnis, da keine Latenz wahrgenommen wird.
+Bewegung dient einem Zweck und muss überzeugend sein. Sie unterstützt den Benutzer in komplexen Umgebungen und hilft beim Festlegen der Hierarchie. Bewegung vermittelt den Eindruck einer besseren Leistung und optimiert das Benutzererlebnis, da keine Latenz wahrgenommen wird.
 
 ![UI-Beispiel für funktionelle Bewegung](images/functional.gif)
-> Seitenübergänge sind bewusst gestaltet. Sie geben Hinweise darauf, wie Seiten miteinander in Beziehung stehen sind. Sie verschieben Seiten in einer Weise, die selbst dann als schnell empfunden wird, wenn die Leistung nicht optimal ist.
+> Seitenübergänge sind zweckorientiert gestaltet. Sie geben Hinweise darauf, wie Seiten zusammenhängen. Sie erfolgen auf eine Weise, die selbst dann als schnell empfunden wird, wenn die Leistung nicht optimal ist.
 
 ### <a name="continuous"></a>Kontinuierlich
 
-Eine fließende Bewegung von Punkt zu Punkt zieht auf natürliche Weise den Blick auf sich und führt den Benutzer. Sie fügt die Aufgabe eines Benutzers elegant zusammen, so dass sie sich konsumierbarer und freundlicher anfühlt.
+Durch fließende Bewegungen wird die Aufmerksamkeit des Benutzers geschickt auf bestimmte Punkte gelenkt. Dadurch werden die einzelnen Schritte einer Aufgabe elegant miteinander verknüpft, um den Benutzer bei der Ausführung zu unterstützen.
 
 ![UI-Beispiel für kontinuierliche Bewegung](images/continuous3.gif)
-> Objekte können von Szene zu Szene wandern oder in einer Szene morphen, um Kontinuität zu schaffen und dem Benutzer dabei zu helfen, den Kontext zu erhalten.
+> Objekte können sich von Szene zu Szene bewegen oder in einer Szene die Gestalt ändern, um Kontinuität zu schaffen und den Kontext für Benutzer aufrechtzuerhalten.
 
 ### <a name="contextual"></a>Kontextbezogen
 
-Intelligente Bewegung liefert dem Benutzer eine Rückmeldung in einer Weise, die sich danach richtet, wie der Benutzer die Benutzeroberfläche manipuliert hat. Interaktion ist um den Benutzer herum zentriert. Bewegung muss dem Formfaktor angemessen und dem Szenario entsprechend gestaltet sein. Sie sollte für jeden Benutzer vertraut sein.
+Dank intelligenter Bewegung erhält der Benutzer eine Rückmeldung, die sich an seiner Interaktion mit der Benutzeroberfläche orientiert. Die Interaktion ist auf den Benutzer ausgerichtet. Die Bewegung muss dem Formfaktor angemessen und dem Szenario entsprechend gestaltet sein. Sie sollte jedem Benutzer vertraut sein.
 
 ![UI-Beispiel für kontextuelle Bewegung](images/Contextual.gif)
-> Eine Animation sollte mit der Benutzerinteraktion verknüpft sein. Ein Kontextmenü wird an dem Punkt bereitgestellt, an dem es der Benutzer aktiviert. 
+> Eine Animation sollte mit der Benutzerinteraktion verknüpft sein. Ein Kontextmenü wird dort bereitgestellt, wo es vom Benutzer aktiviert wurde. 
 
 ## <a name="motion-articles"></a>Artikel zu Bewegungen
 

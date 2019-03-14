@@ -1,19 +1,13 @@
 ---
-Description: Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
+Description: 'Wenn Sie sich mit den Geräten vertraut machen, die UWP-Apps (Universelle Windows-Plattform) unterstützen, können Sie für jeden Formfaktor die bestmögliche Benutzerfreundlichkeit bieten.'
 title: Einführung der Geräte für UWP-Apps (Universelle Windows-Plattform)
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
-keywords: Gerät, Eingabe, Interaktion
+keywords: 'Gerät, Eingabe, Interaktion'
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049907"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>Einführung der Geräte für UWP-Apps (Universelle Windows-Plattform)
 
@@ -43,11 +37,11 @@ Hinweise zur Benutzeroberfläche
 
 -   Die Zurück-Schaltfläche des Systems ist optional. Wenn ein App-Entwickler diese anzeigen möchte, wird sie in der App-Titelleiste angezeigt.
 
-Eingabemöglichkeiten
+Eingaben
 -   Maus
 -   Tastatur
 -   Toucheingabe auf Laptops und All-in-One-Desktops.
--   Es werden auch Gamepads verwendet, z.B. der Xbox-Controller.
+-   Es werden auch Gamepads verwendet, z. B. der Xbox-Controller.
 
 Typische Gerätefunktionen
 -   Kamera
@@ -59,8 +53,8 @@ Typische Gerätefunktionen
 Extrem leichte Tablet PCs sind mit Touchscreens, Kameras, Mikrofonen und Beschleunigungsmessern ausgestattet. Die Größe der Bildschirme von Tablets reicht normalerweise von 7 bis 13,3 Zoll. 2-in-1-Geräte können abhängig von der Konfiguration als Tablet oder Laptop mit einer Tastatur und Maus verwendet werden (in der Regel wird hierzu der Bildschirm aufgestellt oder nach hinten geklappt).
 
 Bildschirmgrößen
-- 7 bis 13,3Zoll bei Tablets
-- 13,3Zoll und größer bei 2-in-1-Geräten
+- 7 bis 13,3 Zoll bei Tablets
+- 13,3 Zoll und größer bei 2-in-1-Geräten
 
 ![Tabletgerät](images/device-primer/device-primer-tablet.png)
 
@@ -74,8 +68,8 @@ Hinweise zur Benutzeroberfläche
 -   Auf Tablets können sowohl im Querformat als auch im Hochformat jeweils zwei Frames angezeigt werden.
 -   Die Zurück-Schaltfläche des Systems befindet sich in der Navigationsleiste.
 
-Eingabemöglichkeiten
--   Toucheingabe
+Eingaben
+-   Touch
 -   Eingabestift
 -   Externe Tastatur (gelegentlich)
 -   Maus (gelegentlich)
@@ -92,12 +86,12 @@ Typische Gerätefunktionen
 
 ## <a name="xbox-and-tv"></a>Xbox und Fernsehgeräte
 
-Die Erfahrung, die Sie machen, wenn Sie auf dem Sofa sitzen und mittels eines Gamepads oder einer Fernbedienung mit Ihrem Fernsehgerät interagieren, wird als **3-Meter-Erfahrung** (10-Fuß-Erfahrung) bezeichnet. Der Name kommt daher, dass sich der Benutzer im Allgemeinen ungefähr 3Meter (10Fuß) vom Bildschirm entfernt befindet. Dies stellt eine besondere Herausforderung dar, die beispielsweise bei einer *50-cm-Erfahrung* (2-Fuß-Erfahrung) oder bei der Interaktion mit einem PC nicht vorhanden ist. Wenn Sie eine App für Xbox One oder ein anderes Gerät entwickeln, das an einen Fernsehbildschirm angeschlossen ist und unter Umständen ein Gamepad oder Fernbedienung für die Eingabe verwendet, sollten Sie dies stets bedenken.
+Die Erfahrung, die Sie machen, wenn Sie auf dem Sofa sitzen und mittels eines Gamepads oder einer Fernbedienung mit Ihrem Fernsehgerät interagieren, wird als **3-Meter-Erfahrung** (10-Fuß-Erfahrung) bezeichnet. Der Name kommt daher, dass sich der Benutzer im Allgemeinen ungefähr 3 Meter (10 Fuß) vom Bildschirm entfernt befindet. Dies stellt eine besondere Herausforderung dar, die beispielsweise bei einer *50-cm-Erfahrung* (2-Fuß-Erfahrung) oder bei der Interaktion mit einem PC nicht vorhanden ist. Wenn Sie eine App für Xbox One oder ein anderes Gerät entwickeln, das an einen Fernsehbildschirm angeschlossen ist und unter Umständen ein Gamepad oder Fernbedienung für die Eingabe verwendet, sollten Sie dies stets bedenken.
 
 Die Schritte beim Entwickeln einer UWP-App für die 3-Meter-Erfahrung unterscheiden sich stark von der Entwicklung für eine der hier aufgeführten Gerätekategorien. Weitere Informationen finden Sie unter [Entwerfen für Xbox und Fernsehgeräte](designing-for-tv.md).
 
 Bildschirmgrößen
-- 24Zoll und größer
+- 24 Zoll und größer
 
 ![Xbox und Fernsehgeräte](images/device-primer/device-primer-tv-and-xbox.png)
 
@@ -112,10 +106,10 @@ Typische Verwendung
 Hinweise zur Benutzeroberfläche
 - Apps behalten in der Regel die gleiche Größe, es sei denn, eine andere App ist an der Seite angedockt.
 - Die Zurück-Schaltfläche des Systems ist eine nützliche Funktion, die in den meisten Xbox-Apps zur Verfügung steht und auf die mit der B-Taste auf dem Gamepad zugegriffen wird.
-- Da der Kunde etwa 3Meter (10 Fuß) vom Bildschirm entfernt sitzt, stellen Sie sicher, dass die Benutzeroberfläche groß genug und klar sichtbar ist.
+- Da der Kunde etwa 3 Meter (10 Fuß) vom Bildschirm entfernt sitzt, stellen Sie sicher, dass die Benutzeroberfläche groß genug und klar sichtbar ist.
 
 Eingaben
-- Gamepad (z.B. Xbox-Controller)
+- Gamepad (z. B. Xbox-Controller)
 - Fernbedienung
 - Sprache (gelegentlich, falls der Kunde Kinect oder ein Headset besitzt)
 
@@ -129,7 +123,7 @@ Typische Gerätefunktionen
 
 Smartphones sind mittlerweile die am häufigsten genutzten Geräte und bieten auch bei begrenzter Bildschirmfläche und eingeschränkten Eingabeverfahren viele Möglichkeiten. Smartphones sind in zahlreichen verschiedenen Größen verfügbar. Größere Handys werden als Phablets bezeichnet. App-Benutzeroberflächen auf Phablets ähneln den Benutzeroberflächen auf Smartphones, aber die größere Bildschirmfläche von Phablets ermöglicht einige wichtige Änderungen bei der Nutzung von Inhalten.
 
-Mit Continuum für Smartphones, einer neuen Funktion für kompatible Windows 10 mobile Geräte, können Benutzer ihre Smartphones an einen Bildschirm anschließen und sogar Maus und Tastatur verwenden, damit ihr Gerät wie einen Laptop. (Weitere Informationen finden Sie im [Artikel zu Continuum für Smartphones](https://go.microsoft.com/fwlink/p/?LinkID=699431).)
+Mit Continuum für Smartphones, einem neuen Angebot für kompatible mobile Windows 10-Geräte, können Benutzer ihre Smartphones an einen Bildschirm anschließen und sogar mit Maus und Tastatur auf Ihren Smartphones wie auf einem Laptop arbeiten. (Weitere Informationen finden Sie im [Artikel zu Continuum für Smartphones](https://go.microsoft.com/fwlink/p/?LinkID=699431).)
 
 Bildschirmgrößen
 -   4 bis 5 Zoll bei Smartphones
@@ -152,8 +146,8 @@ Hinweise zur Benutzeroberfläche
 
 -   Achten Sie darauf, dass sowohl im Querformat als auch im Hochformat genügend Bildschirmfläche für die App-Leiste vorhanden ist, wenn die Bildschirmtastatur aktiviert ist.
 
-Eingabemöglichkeiten
--   Toucheingabe
+Eingaben
+-   Touch
 -   Spracheingabe
 
 Typische Gerätefunktionen
@@ -164,7 +158,7 @@ Typische Gerätefunktionen
 
  
 
-## <a name="surface-hub-devices"></a>SurfaceHub-Geräte
+## <a name="surface-hub-devices"></a>Surface Hub-Geräte
 
 
 Microsoft Surface Hub ist ein Gerät für die Zusammenarbeit mit großem Bildschirm, der für die gleichzeitige Verwendung durch mehrere Benutzer konzipiert ist.
@@ -185,7 +179,7 @@ Hinweise zur Benutzeroberfläche
 -   Die Zurück-Schaltfläche des Systems ist optional. Wenn ein App-Entwickler diese anzeigen möchte, wird sie in der App-Titelleiste angezeigt.
 
 Eingaben
--   Toucheingabe
+-   Touch
 -   Stift
 -   Spracheingabe
 -   Tastatur (Bildschirm-/Remotetastatur)
@@ -197,10 +191,10 @@ Typische Gerätefunktionen
 
  
 
-## <a name="windows-iot-devices"></a>WindowsIoT-Geräte
+## <a name="windows-iot-devices"></a>Windows IoT-Geräte
 
 
-Bei WindowsIoT-Geräten handelt es sich um eine neue Klasse von Geräten, bei denen das Einbetten von kleinen elektronischen Geräten, Sensoren und Verbindungen in physische Objekte im Mittelpunkt steht. Diese Geräte sind in der Regel über ein Netzwerk oder das Internet verbunden, um die erfassten realen Daten zu melden und in manchen Fällen auf diese Daten zu reagieren. Geräte können entweder keinen Bildschirm besitzen („monitorlose“ Geräte) oder an einen kleinen Bildschirm mit maximal 3,5 Zoll angeschlossen sein (Geräte mit Monitor).
+Bei Windows IoT-Geräten handelt es sich um eine neue Klasse von Geräten, bei denen das Einbetten von kleinen elektronischen Geräten, Sensoren und Verbindungen in physische Objekte im Mittelpunkt steht. Diese Geräte sind in der Regel über ein Netzwerk oder das Internet verbunden, um die erfassten realen Daten zu melden und in manchen Fällen auf diese Daten zu reagieren. Geräte können entweder keinen Bildschirm besitzen („monitorlose“ Geräte) oder an einen kleinen Bildschirm mit maximal 3,5 Zoll angeschlossen sein (Geräte mit Monitor).
 
 Bildschirmgrößen
 -   3,5 Zoll oder kleiner
@@ -219,7 +213,7 @@ Hinweise zur Benutzeroberfläche
 -   Die Anzeige bei Geräten mit Monitor ist sehr klein. Aufgrund der begrenzten Bildschirmfläche und der eingeschränkten Funktionen werden nur notwendige Inhalte angezeigt.
 -   Die Ausrichtung ist in den meisten Fällen gesperrt, sodass Sie bei Ihrer App nur eine Anzeigerichtung berücksichtigen müssen.
 
-Eingabemöglichkeiten
+Eingaben
 -   Variabel, abhängig vom Gerät
 
 Typische Gerätefunktionen
