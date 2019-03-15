@@ -35,7 +35,7 @@ Die folgenden Schritte zeigen, wie Sie das Xbox-Geräteportal aktivieren, das Ih
 
 6. Geben Sie die URL in Ihrem Browser ein, und melden Sie sich mit den Anmeldeinformationen an, die Sie konfiguriert haben.
 
-7. Sie erhalten eine Warnung zum Zertifikat, das bereitgestellt wurde, ähnlich der Warnung in der folgenden Abbildung. Klicken Sie in Edge auf **Details** und auf **Weiter zur Webseite**, um auf das Xbox-Geräteportal zuzugreifen. Geben Sie in dem sich öffnenden Dialog den Benutzernamen und das Kennwort ein, die Sie zuvor auf Ihrer Xbox eingegeben haben.
+7. Sie erhalten eine Warnung zum Zertifikat, das bereitgestellt wurde, ähnlich der Warnung in der folgenden Abbildung. Klicken Sie in Microsoft Edge auf **Details** und auf **Weiter zur Webseite**, um auf das Xbox-Geräteportal zuzugreifen. Geben Sie in dem sich öffnenden Dialog den Benutzernamen und das Kennwort ein, die Sie zuvor auf Ihrer Xbox eingegeben haben.
 
     ![Fehler beim Zertifikat für das Device Portal](images/device-portal-xbox-3.png)
 

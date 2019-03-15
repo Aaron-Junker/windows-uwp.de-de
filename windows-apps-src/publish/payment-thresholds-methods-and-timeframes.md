@@ -630,7 +630,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mazedonien (ehem. jugoslawische Republik Mazedonien)</td>
+    <td>Nordmazedonien</td>
     <td>200 USD</td>
     <td>Überweisung</td>
     <td>n. a.</td>
@@ -1692,7 +1692,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mazedonien (ehem. jugoslawische Republik Mazedonien)</td>
+    <td>Nordmazedonien</td>
     <td>50 USD</td>
     <td>Überweisung</td>
     <td>n. a.</td>
@@ -2747,7 +2747,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Mazedonien (ehem. jugoslawische Republik Mazedonien)</td>
+    <td>Nordmazedonien</td>
     <td>200 USD</td>
     <td>Überweisung</td>
     <td>n. a.</td>
@@ -3752,7 +3752,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mazedonien (ehem. jugoslawische Republik Mazedonien)</td>
+    <td>Nordmazedonien</td>
     <td>200 USD</td>
     <td>Überweisung</td>
     <td>n. a.</td>

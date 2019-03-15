@@ -20,7 +20,7 @@ Wir verwenden den Begriff *ARM* hier als eine Kurzform für PCs, auf denen die D
 ## <a name="apps-and-experiences-on-arm"></a>Apps und Funktionen auf ARM
 
 ### <a name="built-in-windows-10-experiences-apps-and-drivers"></a>Integrierte Windows 10-Funktionen, Apps und Treiber
-Die integrierten Windows 10-Funktionen wie z. B. Edge, Cortana, Startmenü und Explorer sind alle nativ und werden als ARM64 (oder ARM32) ausgeführt. Dies beinhaltet auch alle Gerätetreiber wie z. B. Grafik, Netzwerk oder die Festplatte. Dies gewährleistet, dass Sie die beste Benutzererfahrung und Akkulaufzeit Ihres Geräts mit der vollen nativen Geschwindigkeit des Qualcomm Snapdragon-Prozessors erhalten.
+Die integrierten Windows 10-Funktionen wie z. B. Microsoft Edge, Cortana, Startmenü und Explorer sind alle nativ und werden als ARM64 (oder ARM32) ausgeführt. Dies beinhaltet auch alle Gerätetreiber wie z. B. Grafik, Netzwerk oder die Festplatte. Dies gewährleistet, dass Sie die beste Benutzererfahrung und Akkulaufzeit Ihres Geräts mit der vollen nativen Geschwindigkeit des Qualcomm Snapdragon-Prozessors erhalten.
 
 ### <a name="universal-windows-platform-uwp-apps"></a>Apps für die Universelle Windows-Plattform (UWP)
 Windows 10 auf ARM ausgeführt wird, alle X86, ARM64 und ARM32 [UWP-apps](../get-started/universal-application-platform-guide.md) aus dem Microsoft Store. ARM32 und ARM64-apps nativ ausführen, ohne jegliche Emulation, while X86, die Ausführung von apps unter Emulation. Wenn Sie eine UWP-Entwickler sind, stellen Sie bitte sicher, dass Sie ein ARM-Paket für Ihre App übermitteln, da dies die beste Benutzererfahrung für das Gerät bietet. Weitere Informationen finden Sie unter [App-Paket-Architekturen](../packaging/device-architecture.md).

@@ -41,7 +41,7 @@ Ihre Anzeige erscheint in Apps, die der Altersfreigabe und der Betriebssystemver
 
 Anzeigenkampagnen werden derzeit in folgenden Ländern und Regionen unterstützt:
 
-Ägypten, Algerien, Argentinien, Australien, Bahamas, Bahrain, Barbados, Belgien, Belize, Bolivien, Brasilien, Chile, China, Dänemark, Dominikanische Republik, Ecuador, El Salvador, Finnland, Frankreich, Großbritannien, Guatemala, Haiti, Honduras, Hongkong, Indien, Indonesien, Irak, Irland, Italien, Jamaika, Jordan, Kanada, Katar, Kolumbien, Kuwait, Libanon, Malaysia, Marokko, Mexiko, Neuseeland, Nicaragua, Niederlande, Norwegen, Oman, Österreich, Panama, Paraguay, Peru, Philippinen, Puerto Rico, Saudi-Arabien, Schweden, Schweiz, Singapur, Spanien, Südafrika, Taiwan, Thailand, Trinidad und Tobago, Tunesien, Uruguay, Venezuela, Vereinigte Arabische Emirate, Vereinigte Staaten, Vietnam.
+Ägypten, Algerien, Argentinien, Australien, Bahamas, Bahrain, Barbados, Belgien, Belize, Bolivien, Brasilien, Chile, China, Dänemark, Dominikanische Republik, Ecuador, El Salvador, Finnland, Frankreich, Vereinigtes Königreich, Guatemala, Haiti, Honduras, Hongkong, Indien, Indonesien, Irak, Irland, Italien, Jamaika, Jordan, Kanada, Katar, Kolumbien, Kuwait, Libanon, Malaysia, Marokko, Mexiko, Neuseeland, Nicaragua, Niederlande, Norwegen, Oman, Österreich, Panama, Paraguay, Peru, Philippinen, Puerto Rico, Saudi-Arabien, Schweden, Schweiz, Singapur, Spanien, Südafrika, Taiwan, Thailand, Trinidad und Tobago, Tunesien, Uruguay, Venezuela, Vereinigte Arabische Emirate, Vereinigte Staaten, Vietnam.
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>Welche Sprachen werden für Anzeigenkampagnen unterstützt?
 

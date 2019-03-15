@@ -8,7 +8,7 @@ keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57657755"
@@ -105,7 +105,7 @@ Sprachcodes, die hier nicht aufgeführt sind, werden von der Store nicht unterst
 | Quechua               | quz, quz-bo, quz-ec, quz-pe                                                                                                                                                                           |
 | Rumänisch              | ro, ro-ro                                                                                                                                                                                             |
 | Russisch               | ru, ru-ru                                                                                                                                                                                            |
-| Schottisch-Gälisch       | gd-gb, gd-latn                                                                                                                                                                                        |
+| Schottisches Gälisch       | gd-gb, gd-latn                                                                                                                                                                                        |
 | Serbisch (Lateinisch)       | sr-Latn, sr-latn-cs, sr, sr-latn-ba, sr-latn-me, sr-latn-rs                                                                                                                                           |
 | Serbisch (Kyrillisch)    | sr-cyrl, sr-cyrl-ba, sr-cyrl-cs, sr-cyrl-me, sr-cyrl-rs                                                                                                                                               |
 | Sesotho sa Leboa      | nso, nso-za                                                                                                                                                                                           |

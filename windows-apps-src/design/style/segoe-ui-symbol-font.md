@@ -40,7 +40,7 @@ Alle Glyphen in **Segoe MDL2 Assets** haben dieselbe feste Breite mit einer kons
 
 ![Verwenden von Glyphen mit der Breite 0](images/segoe-ui-symbol-layering.png)
 
-Viele der Symbole verfügen zudem über gespiegelte Formen, die in Sprachen verwendet werden können, in denen die Rechts-nach-Links-Ausrichtung verwendet wird, beispielsweise Arabisch, Farsi und Hebräisch.
+Viele der Symbole verfügen zudem über gespiegelte Formen, die in Sprachen verwendet werden können, in denen die Rechts-nach-Links-Ausrichtung verwendet wird, beispielsweise Arabisch, Persisch und Hebräisch.
 
 ## <a name="using-the-icons"></a>Verwenden der Symbole
 Wenn Sie eine app in entwickeln C#/VB/C++ und XAML, können Sie angegebenen Symbole aus Segoe MDL2 Assets mit den [Symbol Enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 

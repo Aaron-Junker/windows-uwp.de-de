@@ -57,7 +57,7 @@ Darüber hinaus haben wir die folgenden Seiten mit völlig neue Informationen zu
 
 App-Installer-Dateien können jetzt mit Visual Studio 2017 Update 15.7 erstellt werden. [Erfahren Sie, wie Sie Visual Studio verwenden, um eine App-Installer-Datei erstellen](../packaging/create-appinstallerfile-vs.md) und automatische Updates für Ihre apps aktivieren. Wenn Sie Probleme ausführen, finden Sie unter [Problembehandlung bei der Installation mit der App-Installer-Datei](../packaging/troubleshoot-appinstaller-issues.md) um häufig auftretende Probleme und Lösungen anzuzeigen.
 
-### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Edge-WebView-Steuerelement für Windows Forms und WPF-Anwendungen
+### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Microsoft Edge-WebView-Steuerelement für Windows Forms und WPF-Anwendungen
 
 Anzeigen von Webinhalten in Ihrer desktop-Anwendung mithilfe der WebView-Steuerelement, das zuvor nur für UWP-Anwendungen verfügbar. Dieses Steuerelement verwendet, der rendering-Engine eine Ansicht einbetten, rendert die HTML aufwändig formatierten Inhalt von einem Remotewebserver, dynamisch generiertem Code oder Inhaltsdateien Microsoft Edge. Suchen Sie das WebView-Steuerelement in der neuesten Version von der [Community-Toolkit für Windows.](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)
 

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Steuern, App-Steuern, Steuergesetze, E-Commerce-Erwe
 ms.localizationpriority: medium
 ms.openlocfilehash: e5ada027b835e852d1db728ef124a798540abdf7
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57607665"
@@ -152,8 +152,8 @@ Um zu verstehen Ihrer Steuer-Überlegungen zum Preis Auswahl, und steuern die Au
 | Liechtenstein                    | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern. Steuern werden vor der Auszahlung vom Preis abgezogen.              | 70 % des festgelegten Preises abzgl. 8% Steuer  | Microsoft          |
 | Litauen                        | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern. Steuern werden vor der Auszahlung vom Preis abgezogen.              | 70 % des festgelegten Preises abzgl. 21 % Steuer | Microsoft          |
 | Luxemburg                       | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern. Steuern werden vor der Auszahlung vom Preis abgezogen.              | 70 % des festgelegten Preises abzgl. 17 % Steuer | Microsoft          |
-| Macau SAR                        | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern.                                                                   | 70 % des festgelegten Preises                 | Entwickler          |
-| Mazedonien (ehem. jugoslawische Republik Mazedonien)                | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern.                                                                   | 70 % des festgelegten Preises                 | Entwickler          |
+| Macau (SAR)                        | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern.                                                                   | 70 % des festgelegten Preises                 | Entwickler          |
+| Nordmazedonien                | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern.                                                                   | 70 % des festgelegten Preises                 | Entwickler          |
 | Madagaskar                       | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern.                                                                   | 70 % des festgelegten Preises                 | Entwickler          |
 | Malawi                           | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern.                                                                   | 70 % des festgelegten Preises                 | Entwickler          |
 | Malaysia                         | Der festgelegte Preis ist der endgültige Verkaufspreis und enthält alle jeweils gültigen Steuern.                                                                   | 70 % des festgelegten Preises                 | Entwickler          |

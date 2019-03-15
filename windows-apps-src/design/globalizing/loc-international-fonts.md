@@ -99,7 +99,7 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Quechua | quz-PE | Segoe UI |
 | Rumänisch | ro-RO | Segoe UI |
 | Russisch | ru-RU | Segoe UI |
-| Schottisch-Gälisch | gd-GB | Segoe UI |
+| Schottisches Gälisch | gd-GB | Segoe UI |
 | Serbisch (Kyrillisch, Bosnien und Herzegowina) | sr-Cyrl-BA | Segoe UI |
 | Serbisch (Kyrillisch, Serbien) | sr-Cyrl-CS | Segoe UI |
 | Serbisch (Lateinisch) | sr-Latn-CS | Segoe UI |

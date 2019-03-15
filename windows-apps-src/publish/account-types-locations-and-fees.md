@@ -161,8 +161,8 @@ In der Spalte **PayPal** wird angegeben, ob PayPal als Zahlungsmethode für Ihr 
 |  Liechtenstein | 17 CHF | 93 CHF | CHF, Auszahlung per Banküberweisung | Ja | 
 |  Litauen | 14 EUR | 75 EUR | EUR, Auszahlung per Banküberweisung | Nein | 
 |  Luxemburg | 14 EUR | 75 EUR | EUR, Auszahlung per Banküberweisung | Ja | 
-|  Macau SAR | 19 USD | 99 USD | Keine Auszahlung | Nein | 
-|  Mazedonien (ehem. jugoslawische Republik Mazedonien) | 19 USD | 99 USD | USD, Auszahlung per Banküberweisung | Nein | 
+|  Macau (SAR) | 19 USD | 99 USD | Keine Auszahlung | Nein | 
+|  Nordmazedonien | 19 USD | 99 USD | USD, Auszahlung per Banküberweisung | Nein | 
 |  Madagaskar | 19 USD | 99 USD | USD, Auszahlung per Banküberweisung | Nein | 
 |  Malawi | 19 USD | 99 USD | MWK, Auszahlung per Banküberweisung | Nein | 
 |  Malaysia | 62 MYR | 300 MYR | USD, Auszahlung per Banküberweisung | Nein | 
