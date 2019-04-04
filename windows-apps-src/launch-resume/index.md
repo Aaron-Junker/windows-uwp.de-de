@@ -1,11 +1,17 @@
 ---
-title: 'Starten, Fortsetzen und Hintergrundaufgaben'
-description: 'In diesem Abschnitt wird beschrieben, was passiert, wenn eine UWP-App (Universelle Windows-Plattform) gestartet, angehalten, fortgesetzt und beendet wird.'
+title: Starten, Fortsetzen und Hintergrundaufgaben
+description: In diesem Abschnitt wird beschrieben, was passiert, wenn eine UWP-App (Universelle Windows-Plattform) gestartet, angehalten, fortgesetzt und beendet wird.
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ms.date: 10/04/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, Hintergrundaufgabe, App-Dienst, verbundene Geräte, Remotesysteme'
+keywords: Windows 10, UWP, Hintergrundaufgabe, App-Dienst, verbundene Geräte, Remotesysteme
 ms.localizationpriority: medium
+ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582826"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Starten, Fortsetzen und Hintergrundaufgaben
 

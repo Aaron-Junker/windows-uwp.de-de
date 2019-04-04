@@ -1,11 +1,17 @@
 ---
 title: Komponenten für Windows-Runtime
-description: 'Komponenten für Windows-Runtime sind unabhängige Objekte, die Sie instanziieren und von jeder Sprache aus verwenden können, einschließlich C#, Visual Basic, JavaScript und C++.'
+description: Komponenten für Windows-Runtime sind unabhängige Objekte, die Sie instanziieren und von jeder Sprache aus verwenden können, einschließlich C#, Visual Basic, JavaScript und C++.
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.openlocfilehash: 2c018c890f8fcab2cb0c778c8c91840911f158c9
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582640"
 ---
 # <a name="windows-runtime-components"></a>Komponenten für Windows-Runtime
 Komponenten für Windows-Runtime sind unabhängige Objekte, die Sie instanziieren und von jeder Sprache aus verwenden können, einschließlich C#, Visual Basic, JavaScript und C++.

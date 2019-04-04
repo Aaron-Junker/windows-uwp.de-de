@@ -1,11 +1,17 @@
 ---
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
-title: 'Geräte, Sensoren und Leistung'
-description: 'Damit Ihren Benutzern umfangreiche Einsatzmöglichkeiten geboten werden können, ist es möglicherweise erforderlich, externe Geräte oder Sensoren in die App zu integrieren.'
+title: Geräte, Sensoren und Leistung
+description: Damit Ihren Benutzern umfangreiche Einsatzmöglichkeiten geboten werden können, ist es möglicherweise erforderlich, externe Geräte oder Sensoren in die App zu integrieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.openlocfilehash: 06dd8355cd0afd3889c0db2c337c93b5fbedf0fa
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582742"
 ---
 # <a name="devices-sensors-and-power"></a>Geräte, Sensoren und Leistung
 

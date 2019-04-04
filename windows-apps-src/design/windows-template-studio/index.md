@@ -1,13 +1,19 @@
 ---
-description: "Windows Template Studio ist eine Visual\_Studio-Erweiterung für die schnelle Erstellung von UWP-Apps."
+description: Windows Template Studio ist eine Visual Studio-Erweiterung für die schnelle Erstellung von UWP-Apps.
 title: Windows Template Studio
 template: detail.hbs
 ms.date: 05/10/2018
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
+ms.openlocfilehash: 6cfb593508ef6e366e133b04e7c47344e09d33dd
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582930"
 ---
 # <a name="windows-template-studio"></a>Windows Template Studio
 

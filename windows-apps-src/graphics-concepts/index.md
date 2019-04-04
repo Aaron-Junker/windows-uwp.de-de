@@ -3,10 +3,16 @@ title: Glossar für Direct3D-Grafiken
 description: Hier finden Sie eine Definition der von Microsoft Direct3D verwendeten Grafikbegriffe.
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
-  - Glossar für Direct3D-Grafiken
+- Glossar für Direct3D-Grafiken
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582697"
 ---
 # <a name="direct3d-graphics-glossary"></a>Glossar für Direct3D-Grafiken
 

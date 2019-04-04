@@ -1,15 +1,20 @@
 ---
 layout: LandingPage
-description: 'Diese Seite enthält die Informationen, die Sie zum Entwickeln von ARM64 Win32- und UWP-Apps benötigen.'
-title: "Windows\_10 auf ARM"
+description: Diese Seite enthält die Informationen, die Sie zum Entwickeln von ARM64 Win32- und UWP-Apps benötigen.
+title: Windows 10 auf ARM
 author: msatranjr
 ms.author: misatran
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.topic: article
-keywords: 'Windows 10 auf ARM, ARM, Erstellen mit ARM64 Win32-Apps, Erstellen von ARM64-Treibern'
+keywords: Windows 10 auf ARM, ARM, Erstellen mit ARM64 Win32-Apps, Erstellen von ARM64-Treibern
+ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582751"
 ---
-
 # <a name="windows-10-on-arm"></a>Windows 10 auf ARM
 Windows 10 wird auf PCs mit ARM-Prozessoren ausgeführt. Diese Seite enthält die Informationen, mit denen Sie sich eingehender mit der Plattform vertraut machen und in die Entwicklung von Apps einsteigen können. Wir empfehlen Ihnen auch, uns über die unten auf der Seite angegebenen Links Feedback zu senden.
 

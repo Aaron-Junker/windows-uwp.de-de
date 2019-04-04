@@ -1,11 +1,17 @@
 ---
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: 'Dieser Abschnitt enthält Themen, in denen das XAML-Framework für UWP-Apps (Universelle Windows-Plattform) erläutert wird.'
+description: Dieser Abschnitt enthält Themen, in denen das XAML-Framework für UWP-Apps (Universelle Windows-Plattform) erläutert wird.
 title: XAML-Plattform
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582790"
 ---
 # <a name="xaml-platform"></a>XAML-Plattform
 

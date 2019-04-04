@@ -1,16 +1,22 @@
 ---
-Description: 'Dialogfelder und Flyouts zeigen vorübergehende UI-Elemente an, die angezeigt werden, wenn der Benutzer sie anfordert oder eine Aktion erfolgt, die eine Benachrichtigung oder Genehmigung erfordert.'
+Description: Dialogfelder und Flyouts zeigen vorübergehende UI-Elemente an, die angezeigt werden, wenn der Benutzer sie anfordert oder eine Aktion erfolgt, die eine Benachrichtigung oder Genehmigung erfordert.
 title: Dialogfelder und Flyouts
 template: detail.hbs
 ms.date: 07/06/2018
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
+ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582718"
 ---
 # <a name="dialogs-and-flyouts"></a>Dialogfelder und Flyouts
 

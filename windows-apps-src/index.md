@@ -1,14 +1,20 @@
 ---
 author: mijacobs
 layout: LandingPage
-description: "Mit der Universellen Windows-Plattform (UWP) können Sie Apps für beliebige Windows-Geräte entwickeln – z.\_B. PCs, Smartphones, Xbox One, HoloLens und mehr – und im Store veröffentlichen."
+description: Mit der Universellen Windows-Plattform (UWP) können Sie Apps für beliebige Windows-Geräte entwickeln – z. B. PCs, Smartphones, Xbox One, HoloLens und mehr – und im Store veröffentlichen.
 title: 'Dokumentation für UWP: Entwickler von UWP-Apps | Microsoft-Dokumentation'
 ms.topic: landing-page
 ms.author: mijacobs
 ms.date: 08/4/2017
-keywords: 'Windows UWP, Universelle Windows-Plattform, Windows-Runtime-APIs, Windows-API, Windows-API-Referenz, WinRT-API, Referenz Windows-API, UWP-API, UWP-API-Referenz, UWP entwickeln, UWP entwerfen, UWP veröffentlichen'
+keywords: Windows UWP, Universelle Windows-Plattform, Windows-Runtime-APIs, Windows-API, Windows-API-Referenz, WinRT-API, Referenz Windows-API, UWP-API, UWP-API-Referenz, UWP entwickeln, UWP entwerfen, UWP veröffentlichen
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
+ms.openlocfilehash: ce1923fa071344a848b4b0c4fab1ed6da6da48f7
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582924"
 ---
 # <a name="universal-windows-platform-documentation"></a>Dokumentation für die universelle Windows-Plattform
 Mit der universellen Windows-Plattform (UWP) können Sie Apps für beliebige Windows-Geräte entwickeln – z. B. PCs, Smartphones, Xbox One, HoloLens und mehr – und im Microsoft Store veröffentlichen.

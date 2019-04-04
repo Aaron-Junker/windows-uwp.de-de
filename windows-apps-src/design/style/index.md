@@ -1,12 +1,18 @@
 ---
-description: 'Hier erfahren Sie, wie Sie mithilfe der UWP-Gestaltungsrichtlinien Farbe, Typografie und Symbole verwenden können, um den Charakter Ihrer UWP-App zu definieren.'
-keywords: 'UWP-Formatanleitungen, Designanleitungen, Typografie, Bewegung, Ton, Bewegung, App-Entwicklung'
+description: Hier erfahren Sie, wie Sie mithilfe der UWP-Gestaltungsrichtlinien Farbe, Typografie und Symbole verwenden können, um den Charakter Ihrer UWP-App zu definieren.
+keywords: UWP-Formatanleitungen, Designanleitungen, Typografie, Bewegung, Ton, Bewegung, App-Entwicklung
 title: Stil für UWP-Apps
 ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582963"
 ---
 # <a name="style-for-uwp-apps"></a>Stil für UWP-Apps
 

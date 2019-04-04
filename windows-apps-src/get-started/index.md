@@ -1,11 +1,17 @@
 ---
 layout: LandingPage
-description: "Erste Schritte mit der universellen Windows-Plattform (UWP) und der App-Entwicklung für Windows\_10"
+description: Erste Schritte mit der universellen Windows-Plattform (UWP) und der App-Entwicklung für Windows 10
 title: Erste Schritte mit der universellen Windows-Plattform (UWP)
 ms.date: 03/23/2018
 ms.topic: article
-keywords: 'Erste Schritte, Windows 10, UWP, XAML, C#'
+keywords: Erste Schritte, Windows 10, UWP, XAML, C#
 ms.localizationpriority: medium
+ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582954"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Erste Schritte mit Windows 10-Apps 
  

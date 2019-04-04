@@ -1,17 +1,23 @@
 ---
-Description: 'Gut gestaltete Bewegungen lassen Apps lebhaft und realistisch erscheinen. Helfen Sie Benutzern dabei, Kontextänderungen zu verstehen, und verbinden Sie Interaktionen mit visuellen Übergängen.'
+Description: Gut gestaltete Bewegungen lassen Apps lebhaft und realistisch erscheinen. Helfen Sie Benutzern dabei, Kontextänderungen zu verstehen, und verbinden Sie Interaktionen mit visuellen Übergängen.
 title: Bewegung und Animation in UWP-Apps
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582794"
 ---
 # <a name="motion-for-uwp-apps"></a>Bewegung für UWP-Apps
 

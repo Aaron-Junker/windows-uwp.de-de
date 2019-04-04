@@ -1,10 +1,16 @@
 ---
-description: 'Erfahren Sie, wie Sie eine UWP-App entwerfen und kodieren, die eine einfache Navigation besitzt und auf vielen Geräten und Bildschirmen verschiedener Größen großartig aussieht.'
+description: Erfahren Sie, wie Sie eine UWP-App entwerfen und kodieren, die eine einfache Navigation besitzt und auf vielen Geräten und Bildschirmen verschiedener Größen großartig aussieht.
 title: Designgrundlagen
-keywords: 'Layout von UWP-Apps, universelle Windows-Plattform, App-Design, Schnittstelle'
+keywords: Layout von UWP-Apps, universelle Windows-Plattform, App-Design, Schnittstelle
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 6afaada45c3f332085135212be39e43bb1c3fe8f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582592"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Designgrundlagen für UWP-Apps
 

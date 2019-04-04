@@ -1,12 +1,18 @@
 ---
 layout: LandingPage
-Description: 'Erfahren Sie, wie Sie Ihre Windows-Apps im Microsoft Store veröffentlichen.'
+Description: Erfahren Sie, wie Sie Ihre Windows-Apps im Microsoft Store veröffentlichen.
 title: Veröffentlichen von Windows-Apps
 ms.date: 10/31/2018
 ms.topic: article
-keywords: "Windows\_10, UWP, Veröffentlichung, veröffentlichen, Verkauf, verkaufen, verteilen, Verteilung, Store, Dashboard"
+keywords: Windows 10, UWP, Veröffentlichung, veröffentlichen, Verkauf, verkaufen, verteilen, Verteilung, Store, Dashboard
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
+ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582568"
 ---
 # <a name="publish-windows-apps-and-games"></a>Veröffentlichen von Windows-Apps und -Spielen  
  

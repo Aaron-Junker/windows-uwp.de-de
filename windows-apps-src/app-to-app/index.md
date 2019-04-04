@@ -1,11 +1,17 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: "In diesem Abschnitt wird erläutert, wie Sie Daten für UWP-Apps (Universelle Windows-Plattform) freigeben. Dabei geht es unter anderem um den Freigabe-Vertrag, das Kopieren und Einfügen und Drag\_&\_Drop."
+description: In diesem Abschnitt wird erläutert, wie Sie Daten für UWP-Apps (Universelle Windows-Plattform) freigeben. Dabei geht es unter anderem um den Freigabe-Vertrag, das Kopieren und Einfügen und Drag & Drop.
 title: App-zu-App-Kommunikation
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.openlocfilehash: 9dfd86d53805573d002984aaf33ba5f1bf17241c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582553"
 ---
 # <a name="app-to-app-communication"></a>App-zu-App-Kommunikation
 

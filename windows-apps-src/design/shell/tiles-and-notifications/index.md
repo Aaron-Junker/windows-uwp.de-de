@@ -1,13 +1,19 @@
 ---
-Description: 'Erfahren Sie, wie Sie mithilfe von Kacheln, Signalen, Popups und Benachrichtigungen Einstiegspunkte in Ihre App bereitstellen und Benutzer auf dem neuesten Stand halten können.'
-title: 'Kacheln, Signale und Benachrichtigungen'
+Description: Erfahren Sie, wie Sie mithilfe von Kacheln, Signalen, Popups und Benachrichtigungen Einstiegspunkte in Ihre App bereitstellen und Benutzer auf dem neuesten Stand halten können.
+title: Kacheln, Signale und Benachrichtigungen
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
-label: 'Tiles, badges, and notifications'
+label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.openlocfilehash: 8a87fe2bbff1768da43d6cb366b173077555270f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582767"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>Kacheln, Signale und Benachrichtigungen für UWP-Apps
  

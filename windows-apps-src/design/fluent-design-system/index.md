@@ -1,11 +1,17 @@
 ---
 description: Lernen Sie das Fluent Design und dessen Integration in Ihre Apps kennen.
 title: Fluent Design-System für Windows
-keywords: 'Layout von UWP-Apps, Universelle Windows-Plattform, App-Design, Benutzeroberfläche, Fluent Design-System'
+keywords: Layout von UWP-Apps, Universelle Windows-Plattform, App-Design, Benutzeroberfläche, Fluent Design-System
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: e8a650fcb1edfcd937ed6e42dacc4473627d853f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582763"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design-System für Ersteller von Windows-Apps
 

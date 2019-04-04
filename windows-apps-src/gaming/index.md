@@ -1,11 +1,17 @@
 ---
 title: Programmierung von Spielen
-description: 'Die Universelle Windows-Plattform (UWP) bietet neue Möglichkeiten zum Erstellen, Verteilen und Monetisieren von Spielen. Hier erhalten Sie Informationen zum Starten eines neuen Spiels oder Portieren eines vorhandenen Spiels.'
+description: Die Universelle Windows-Plattform (UWP) bietet neue Möglichkeiten zum Erstellen, Verteilen und Monetisieren von Spielen. Hier erhalten Sie Informationen zum Starten eines neuen Spiels oder Portieren eines vorhandenen Spiels.
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ms.date: 06/13/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, Spiele, DirectX'
+keywords: Windows 10, UWP, Spiele, DirectX
 ms.localizationpriority: medium
+ms.openlocfilehash: 2dddead7dcc2eedbe4e32fa4bfd749bed60ba796
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582706"
 ---
 # <a name="game-programming"></a>Programmierung von Spielen
 

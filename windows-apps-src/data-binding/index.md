@@ -1,11 +1,17 @@
 ---
 ms.assetid: 83b4be37-6613-4d00-a48a-0451a24a30fb
 title: Datenbindung
-description: 'Die Datenbindung ist eine Methode, mit der die Benutzeroberfläche Ihrer App Daten anzeigen und diese Daten optional synchronisieren kann.'
+description: Die Datenbindung ist eine Methode, mit der die Benutzeroberfläche Ihrer App Daten anzeigen und diese Daten optional synchronisieren kann.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.openlocfilehash: eb9283e336cb13d733098c139edc36d1216b2727
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582799"
 ---
 # <a name="data-binding"></a>Datenbindung
 

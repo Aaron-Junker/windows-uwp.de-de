@@ -6,6 +6,12 @@ keywords: UWP App Entwicklung Threading asynchron Plattform Übersicht Portal en
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 2f8390ddafdb20032ea7a96d52534e4dcfaa6bf0
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582733"
 ---
 <div> 
 <h1>Entwickeln von UWP-Apps</h1>

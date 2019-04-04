@@ -1,11 +1,17 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: "Diese Roadmap enthält eine Übersicht über wichtige Unternehmensfeatures für Windows\_10-Apps und Apps für die Universelle Windows-Plattform (UWP)."
+description: Diese Roadmap enthält eine Übersicht über wichtige Unternehmensfeatures für Windows 10-Apps und Apps für die Universelle Windows-Plattform (UWP).
 title: Unternehmen
 ms.date: 08/30/2018
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.openlocfilehash: fae4d5b57ac5cfb5c47fca1a2f3476cd16a56534
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582631"
 ---
 # <a name="enterprise"></a>Unternehmen
 

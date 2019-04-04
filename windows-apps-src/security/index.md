@@ -1,11 +1,17 @@
 ---
 title: Sicherheit
-description: "Dieser Abschnitt enthält Artikel zum Erstellen sicherer Apps für die universelle Windows-Plattform (UWP) für Windows\_10."
+description: Dieser Abschnitt enthält Artikel zum Erstellen sicherer Apps für die universelle Windows-Plattform (UWP) für Windows 10.
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, Sicherheit'
+keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
+ms.openlocfilehash: 88e45740f457086a925674b37baacc8fc7b4e9b6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582864"
 ---
 # <a name="security"></a>Sicherheit
 

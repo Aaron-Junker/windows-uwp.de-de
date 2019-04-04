@@ -1,11 +1,17 @@
 ---
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
-title: 'Debugging, Tests und Leistung'
-description: "Verwenden Sie Microsoft Visual Studio und weitere Tools, um Ihre App zu debuggen und zu testen und für den Microsoft\_Store-Zertifizierungsprozess vorzubereiten."
+title: Debugging, Tests und Leistung
+description: Verwenden Sie Microsoft Visual Studio und weitere Tools, um Ihre App zu debuggen und zu testen und für den Microsoft Store-Zertifizierungsprozess vorzubereiten.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.openlocfilehash: 757de9201d1cb7f753419024271f2be5c1aa67f4
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582724"
 ---
 # <a name="debugging-testing-and-performance"></a>Debugging, Tests und Leistung
 

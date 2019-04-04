@@ -1,12 +1,18 @@
 ---
-Description: 'In diesem Abschnitt erfahren Sie, wie Sie Zeichenfolgen-, Bild- und Dateiressourcen Ihrer App erstellen, verpacken und verwenden.'
+Description: In diesem Abschnitt erfahren Sie, wie Sie Zeichenfolgen-, Bild- und Dateiressourcen Ihrer App erstellen, verpacken und verwenden.
 title: App-Ressourcen und das Ressourcenverwaltungssystem
 label: Intro
 template: detail.hbs
 ms.date: 10/20/2017
 ms.topic: article
-keywords: "Windows\_10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer"
+keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
+ms.openlocfilehash: a5af904c099b92e399f169221cae3122f358be19
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582487"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>App-Ressourcen und das Ressourcenverwaltungssystem
 

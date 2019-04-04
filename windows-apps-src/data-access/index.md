@@ -4,8 +4,14 @@ title: Datenzugriff
 description: In diesem Abschnitt wird das Speichern von Daten auf dem Gerät in einer privaten Datenbank und die Verwendung der objektrelationalen Zuordnung in UWP-Apps (Universelle Windows-Plattform) erläutert.
 ms.date: 11/13/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, Daten, Datenbank, relational, Tabellen, SQLite'
+keywords: Windows 10, UWP, Daten, Datenbank, relational, Tabellen, SQLite
 ms.localizationpriority: medium
+ms.openlocfilehash: eb5adbdd3ae12d039d934e8d0cbe468ae5c1187c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582712"
 ---
 # <a name="data-access"></a>Datenzugriff
 

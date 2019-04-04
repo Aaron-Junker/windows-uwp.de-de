@@ -4,8 +4,14 @@ title: Verpacken von Apps
 description: Dieser Abschnitt enthält Artikel oder Links zum Verpacken von UWP (Universelle Windows-Plattform)-Apps.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: "Windows\_10, UWP, Verpacken"
+keywords: Windows 10, UWP, Verpacken
 ms.localizationpriority: medium
+ms.openlocfilehash: 04736c9ac4de5adf162d32191ff30f7a981d6a6f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582867"
 ---
 # <a name="packaging-apps"></a>Verpacken von Apps
 

@@ -1,11 +1,17 @@
 ---
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
-title: 'Dateien, Ordner und Bibliotheken'
-description: "Hier erhalten Sie Informationen zum Lesen und Schreiben von App-Einstellungen, zur Datei- und Ordnerauswahl und zu speziellen Speicherorten im Sandkasten, wie z.\_B. Video-/Musikbibliothek."
+title: Dateien, Ordner und Bibliotheken
+description: Hier erhalten Sie Informationen zum Lesen und Schreiben von App-Einstellungen, zur Datei- und Ordnerauswahl und zu speziellen Speicherorten im Sandkasten, wie z. B. Video-/Musikbibliothek.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP'
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.openlocfilehash: 01efd2cfd88143f99bf9058e8140308eb6afe458
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582757"
 ---
  # <a name="files-folders-and-libraries"></a>Dateien, Ordner und Bibliotheken
 

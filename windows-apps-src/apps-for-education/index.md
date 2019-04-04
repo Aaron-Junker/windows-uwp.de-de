@@ -1,11 +1,17 @@
 ---
 title: Entwickeln Sie Apps für das Bildungswesen.
-description: "In diesem Abschnitt werden die Ressourcen für universelle Windows-Apps beschrieben, die Ihnen zum Erstellen von Bildungs-Apps für die Windows\_10-Plattform zur Verfügung stehen."
+description: In diesem Abschnitt werden die Ressourcen für universelle Windows-Apps beschrieben, die Ihnen zum Erstellen von Bildungs-Apps für die Windows 10-Plattform zur Verfügung stehen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, Bildung'
+keywords: Windows 10, UWP, Bildung
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
+ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582783"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Entwickeln von universellen Windows-Apps für das Bildungswesen
 ![Screenshot der Prüfungs-App](images/take-a-test-screen-small.png)

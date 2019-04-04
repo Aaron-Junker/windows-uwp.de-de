@@ -1,13 +1,19 @@
 ---
-description: "Hier finden Sie einen Designleitfaden und Codierungsanweisungen für das Hinzufügen von Steuerelementen und Mustern zu Ihrer UWP-App. Sie finden mehr als 45\_leistungsstarke Steuerelemente für die Verwendung mit Ihrer App."
+description: Hier finden Sie einen Designleitfaden und Codierungsanweisungen für das Hinzufügen von Steuerelementen und Mustern zu Ihrer UWP-App. Sie finden mehr als 45 leistungsstarke Steuerelemente für die Verwendung mit Ihrer App.
 title: UWP-Steuerelemente und -Muster – Entwicklung von Windows-Apps
-keywords: 'UWP-Steuerelemente, Benutzeroberfläche, App-Steuerelemente'
+keywords: UWP-Steuerelemente, Benutzeroberfläche, App-Steuerelemente
 label: Controls & patterns
 template: detail.hbs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
+ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582610"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Steuerelemente und Muster für UWP-Apps
  
