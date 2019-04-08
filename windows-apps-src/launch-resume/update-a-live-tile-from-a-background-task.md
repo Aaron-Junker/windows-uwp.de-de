@@ -19,7 +19,7 @@ ms.locfileid: "57650535"
 **Wichtige APIs**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**"Backgroundtaskbuilder"**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
 Verwenden Sie eine Hintergrundaufgabe, um die Live-Kachel Ihrer App mit neuen Inhalten zu aktualisieren.
 
@@ -256,8 +256,8 @@ Legen Sie zum Debuggen der Hintergrundaufgabe in der Run-Methode der Aufgabe ein
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
-* [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
+* [**"Backgroundtaskbuilder"**](https://msdn.microsoft.com/library/windows/apps/br224768)
+* [**"Tileupdatemanager"**](https://msdn.microsoft.com/library/windows/apps/br208622)
 * [**"Tilenotification"**](https://msdn.microsoft.com/library/windows/apps/br208616)
 * [Unterstützen Ihrer App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md)
 * [Richtlinien und Prüfliste für Kacheln und Signale](https://msdn.microsoft.com/library/windows/apps/hh465403)

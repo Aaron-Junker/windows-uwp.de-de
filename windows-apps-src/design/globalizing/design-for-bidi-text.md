@@ -130,8 +130,8 @@ Die Änderung der Ausrichtung innerhalb der App mag recht unkompliziert wirken, 
 
 | | Englische Zeichenfolge (LTR) | Hebräische Zeichenfolge (RTL) |
 | -------------- | ------------------- | ------------------- |
-| **Left-alignment** | Hello, World! | בוקר טוב! |
-| **Right-alignment** | !Hello, World | !בוקר טוב |
+| **Ausrichtung von links** | Hello, World! | בוקר טוב! |
+| **Rechts-Ausrichtung** | !Hello, World | !בוקר טוב |
 
 Um sicherzustellen, dass die Informationen zum jeweiligen Künstler in der Musik-App fehlerfrei angezeigt werden, wurden die Eigenschaften für das Textlayout und die Ausrichtung vom Entwicklungsteam getrennt behandelt. Mit anderen Worten: Die Informationen über den Künstler werden zwar möglicherweise in vielen Fällen rechtsbündig dargestellt, die Layoutausrichtung wird jedoch auf der Grundlage einer angepassten Hintergrundverarbeitung festgelegt. Die Hintergrundverarbeitung bestimmt die auf Basis des Zeichenfolgeninhalts das am besten geeignete Ausrichtungslayout.
 

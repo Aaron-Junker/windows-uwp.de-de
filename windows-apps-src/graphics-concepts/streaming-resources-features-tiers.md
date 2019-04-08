@@ -62,7 +62,7 @@ In den Versionen von Direct3D sind Abfragefunktionen zum Überprüfen der Hardwa
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Streaming von Ressourcen](streaming-resources.md)
+[Streamingressourcen](streaming-resources.md)
 
  
 

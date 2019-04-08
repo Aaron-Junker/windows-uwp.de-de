@@ -287,7 +287,7 @@ var notification = new TileNotification(doc);
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen adaptiver Kacheln](create-adaptive-tiles.md)
-* [Inhaltsschema Kachel](../tiles-and-notifications/tile-schema.md)
+* [Kachelinhaltsschema](../tiles-and-notifications/tile-schema.md)
 * [Benachrichtigungsbibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications-namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)

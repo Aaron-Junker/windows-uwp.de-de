@@ -8,7 +8,7 @@ ms.date: 11/01/2018
 ms.author: kbridge
 ms.openlocfilehash: 32d5005f9965b14d5080344832eb185f0e711689
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646525"
@@ -99,7 +99,7 @@ In diesem Beispiel erfahren, wie eine grundlegende Verbesserung [ListView](listv
 > [!NOTE]
 > Dieses Beispiel erfordert das Microsoft.UI.Xaml.Controls-NuGet-Paket, ein Teil der [Microsoft Windows UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-**Xaml:**
+**XAML:**
 
 Das Beispiel, das eine Benutzeroberfläche enthält eine [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) mit fünf Elementen. Der Löschvorgang [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) gebunden ist eine [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), und [ ContextFlyout Menü](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
 
@@ -329,7 +329,7 @@ Viele Plattformsteuerelemente verwenden Sie die XamlUICommand-Eigenschaften im H
 > [!NOTE]
 > Dieses Beispiel erfordert das Microsoft.UI.Xaml.Controls-NuGet-Paket, ein Teil der [Microsoft Windows UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-**Xaml:**
+**XAML:**
 
 Das Beispiel, das eine Benutzeroberfläche enthält eine [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) mit fünf Elementen. Die benutzerdefinierte [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) löschen gebunden ist eine [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), und [ ContextFlyout Menü](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
 

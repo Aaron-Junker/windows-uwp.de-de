@@ -111,10 +111,10 @@ Meistens ist es in XAML möglich, eine [**PropertyPath**](https://msdn.microsoft
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Die Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [Niedergeschrieben Animationen](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [{Binding}-Markuperweiterung](binding-markup-extension.md)
-* [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
+* [**"PropertyPath"**](https://msdn.microsoft.com/library/windows/apps/br244259)
 * [**Bindung**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**Bindung-Konstruktor**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)

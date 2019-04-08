@@ -18,7 +18,7 @@ ms.locfileid: "57649115"
 
 **Wichtige APIs**
 
--   [**PointofService Printer**](https://msdn.microsoft.com/library/windows/apps/Mt426652)
+-   [**PointofService-Drucker**](https://msdn.microsoft.com/library/windows/apps/Mt426652)
 -   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
 Erfahren Sie, wie Sie die ESC/POS-Befehlssprache zum Formatieren von Text, z. B. in Fett und mit doppelter Größe, für Ihren Point of Service-Drucker verwenden.

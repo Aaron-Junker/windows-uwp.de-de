@@ -45,7 +45,7 @@ Führen Sie den Test auf einem PC mit ausreichend großem Bildschirm aus.
 Falls die App nicht gestartet werden kann, obwohl die Testplattform die Voraussetzungen für [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) erfüllt, können Sie das Problem mithilfe des Aktivierungsereignisprotokolls beheben. So finden Sie die Einträge im Ereignisprotokoll:
 
 1.  Eventvwr.exe und navigieren Sie zu der Anwendung und Services Log\\Microsoft\\Windows\\Immersive-Shell-Ordner.
-2.  Filtern Sie die Ansicht, um die Ereignis-Ids anzuzeigen: 5900-6000.
+2.  Filtern Sie die Ansicht, um die Ereignis-Ids anzuzeigen: 5900 – 6000.
 3.  Prüfen Sie die Protokolleinträge, um zu ermitteln, weshalb die App nicht gestartet wurde.
 
 Führen Sie für die Datei mit dem Problem eine Problembehandlung durch, um das Problem zu identifizieren und zu beheben. Erstellen Sie die App neu, und wiederholen Sie den Test. Sie können auch überprüfen, ob im Protokollordner des Zertifizierungskits für Windows-Apps eine Dumpdatei erstellt wurde, die zum Debuggen Ihrer App verwendet werden kann.

@@ -1,5 +1,5 @@
 ---
-description: Dieses Thema führt Sie durch die Schritte zum Erstellen eines einfachen benutzerdefinierten Steuerelements mit der Verwendung von C++ / WinRT. Sie können auf die Informationen zum Erstellen eigener funktionsreiche und anpassbare Benutzeroberflächen-Steuerelemente erstellen.
+description: In diesem Thema werden die Schritte zum Erstellen eines einfachen benutzerdefinierten Steuerelements mit C++/WinRT beschrieben. Sie können diese Informationen nutzen, um Ihre eigenen Benutzeroberflächen-Steuerelemente mit vielen Funktionen und Anpassungsmöglichkeiten zu erstellen.
 title: Benutzerdefinierte (vorlagenbasierte) XAML-Steuerelemente mit C++ / WinRT
 ms.date: 10/03/2018
 ms.topic: article

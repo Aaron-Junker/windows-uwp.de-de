@@ -142,7 +142,7 @@ Weitere Informationen zu den Werten im Antworttext finden Sie in der folgenden T
 | iconUrls           | array  |  Ein Array von einer oder mehreren Zeichenfolgen, die die relativen Pfade zu den Symbol-URLs enthalten, die der App zugeordnet sind. Um die Symbole abzurufen, stellen Sie den URLs *http* oder *https* voran.  |
 | type           | string  | Eine der folgenden Zeichenfolgen: **App** oder **Spiel**.  |
 | Geräte           |  array  | Ein Array von einem oder mehreren der folgenden Zeichenfolgen, die die Gerätetypen festlegen, die die app unterstützt: **PC**, **Phone**, **Xbox**, **IoT**, **Server**, und **Holographic**.  |
-| platformVersions           | array  |  Ein Array von einem oder mehreren der folgenden Zeichenfolgen, die die Plattformen anzugeben, die die app unterstützt: **Windows.Universal**, **Windows.Windows8x**, and **Windows.WindowsPhone8x**.  |
+| platformVersions           | array  |  Ein Array von einem oder mehreren der folgenden Zeichenfolgen, die die Plattformen anzugeben, die die app unterstützt: **Windows.Universal**, **Windows.Windows8x**, und **Windows.WindowsPhone8x**.  |
 | screenshotUrls           | array  | Ein Array von einer oder mehreren Zeichenfolgen, die die relativen Pfade zu den Screenshot-URLs für diese App enthalten. Um die Screenshots abzurufen, stellen Sie den URLs *http* oder *https* voran.  |
 
 <span/>

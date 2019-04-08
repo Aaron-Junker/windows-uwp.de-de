@@ -50,7 +50,7 @@ Die tatsächlichen Interpretation eines Tiefenwerts ist je nach Renderer untersc
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Tiefe und Schablone Puffer](depth-and-stencil-buffers.md)
+[Tiefen- und Schablonenpuffer](depth-and-stencil-buffers.md)
 
  
 

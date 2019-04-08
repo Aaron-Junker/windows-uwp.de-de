@@ -1,5 +1,5 @@
 ---
-description: In diesem Thema verwendet ein vollständiges Beispiel für die Codes von Direct2D veranschaulichen, wie Sie mithilfe von C++ / WinRT auf COM-Klassen und Schnittstellen zu nutzen.
+description: In diesem Thema wird anhand eines vollständigen Direct2D-Codebeispiels verdeutlicht, wie Sie C++/WinRT für die Nutzung von COM-Klassen und -Schnittstellen verwenden.
 title: Verwenden von COM-Komponenten mit C++ / WinRT
 ms.date: 07/23/2018
 ms.topic: article
@@ -7,7 +7,7 @@ keywords: Windows 10, Uwp, Standard, c++, Cpp, Winrt, COM, Komponente, Klasse, S
 ms.localizationpriority: medium
 ms.openlocfilehash: 129477689e12de2634b422a0fc4487b283e3bf03
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644805"
@@ -485,4 +485,4 @@ Wie Sie sehen können, C++ / WinRT bietet Unterstützung für implementieren und
 ## <a name="important-apis"></a>Wichtige APIs
 * [WinRT::check_hresult-Funktion](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
 * [Vorlage für WinRT::com_ptr-Struktur](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [WinRT::Windows::Foundation::IUnknown-Struktur](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)

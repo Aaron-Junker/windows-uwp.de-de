@@ -40,7 +40,7 @@ Standardmäßig werden in der Benutzeroberfläche für die Druckvorschau die Dru
 -   [**InputBin**](https://msdn.microsoft.com/library/windows/apps/BR226482)
 -   [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483)
 -   [**MediaType**](https://msdn.microsoft.com/library/windows/apps/BR226484)
--   [**NUp**](https://msdn.microsoft.com/library/windows/apps/BR226485)
+-   [**Reinigungsskript**](https://msdn.microsoft.com/library/windows/apps/BR226485)
 -   [**PrintQuality**](https://msdn.microsoft.com/library/windows/apps/BR226487)
 -   [**Klammer**](https://msdn.microsoft.com/library/windows/apps/BR226488)
 

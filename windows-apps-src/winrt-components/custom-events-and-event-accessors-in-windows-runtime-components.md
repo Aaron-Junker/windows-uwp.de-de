@@ -122,7 +122,7 @@ Visual Basic-Benutzer: In .NET Framework ist ein Ereignis lediglich ein Multicas
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Events (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
+* [Ereignisse (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
 * [Ereignisse (C#-Programmierhandbuch)](https://msdn.microsoft.com/library/awbftdfh.aspx)
 * [.NET für UWP-apps – Übersicht](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [.NET für UWP-apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)

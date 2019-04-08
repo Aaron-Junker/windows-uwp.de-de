@@ -67,15 +67,15 @@ Hier erfahren Sie Folgendes:
 
 Doppelklicken Sie zum Anzeigen und Bearbeiten einer Datei im Projekt im **Projektmappen-Explorer** auf die gewünschte Datei. 
 
-*default.css*
+*"default.CSS"*
 
 -  Der von der App verwendete Standard-Stylesheet.
 
-*main.js*
+*"Main.js"*
 
 - Die JavaScript-Datei „default.js“ Auf sie wird in der Datei index.html verwiesen.
 
-*index.html*
+*"Index.HTML"*
 
 - Die Website der App, die beim Start der App geladen und angezeigt wird.
 

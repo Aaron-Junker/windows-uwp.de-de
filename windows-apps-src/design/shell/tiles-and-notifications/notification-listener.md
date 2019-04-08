@@ -23,7 +23,7 @@ Der Notification-Listener ermöglicht den Zugriff auf die Benachrichtigungen ein
 > **Erfordert Anniversary Update**: Sie müssen SDK 14393 ausgerichtet und Build 14393 oder höher, um Listener für Benutzerbenachrichtigungen verwenden ausgeführt werden.
 
 
-> **Wichtige APIs**: [UserNotificationListener Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **Wichtige APIs:** [UserNotificationListener Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>Aktivieren des Listeners durch Hinzufügen der User Notification-Funktion 

@@ -107,8 +107,8 @@ Befassen wir uns zuerst mit den Projektdateien.
 
 -   **"App.xaml", "App.xaml.h, App.xaml.cpp:** Stellen Sie die Application-Objekt, das ist der Einstiegspunkt der app-dar. „App.xaml“ enthält kein seitenspezifisches UI-Markup, Sie können jedoch UI-Formate und andere Elemente hinzufügen, die auf allen Seiten verfügbar sein sollen. Die CodeBehind-Dateien enthalten Handler für die Ereignisse **OnLaunched** und **OnSuspending**. In der Regel können Sie hier benutzerdefinierten Code hinzufügen, um Ihre App zu initialisieren, wenn sie gestartet wird, und eine Bereinigung durchzuführen, wenn sie unterbrochen oder beendet wird.
 -   **MainPage.xaml, MainPage.xaml.h, MainPage.xaml.cpp:** Enthalten das XAML-Markup und den CodeBehind für die standardmäßige Startseite in einer App. Sie bietet keine Unterstützung für Navigation oder integrierte Steuerelemente.
--   **pch.h, pch.cpp:** Eine vorkompilierte Headerdatei und die Datei, die sie in Ihrem Projekt enthält. In „pch.h“ können Sie alle Header einfügen, die sich nur selten ändern und sich in anderen Dateien in der Lösung befinden.
--   **Package.appxmanifest:** Eine XML-Datei, die die Gerätefunktionen, die Ihre app benötigt beschreibt, und die Informationen des app-Version und andere Metadaten. Doppelklicken Sie auf die Datei, um sie im **Manifest-Designer** zu öffnen.
+-   **"PCH.h" "," pch.cpp ":** Eine vorkompilierte Headerdatei und die Datei, die sie in Ihrem Projekt enthält. In „pch.h“ können Sie alle Header einfügen, die sich nur selten ändern und sich in anderen Dateien in der Lösung befinden.
+-   **Datei "Package.appxmanifest":** Eine XML-Datei, die die Gerätefunktionen, die Ihre app benötigt beschreibt, und die Informationen des app-Version und andere Metadaten. Doppelklicken Sie auf die Datei, um sie im **Manifest-Designer** zu öffnen.
 -   **HelloWorld\_TemporaryKey.pfx:** ein Schlüssel, der Bereitstellung der app auf diesem Computer und aus Visual Studio ermöglicht.
 
 ## <a name="a-first-look-at-the-code"></a>Ein erster Blick auf den Code

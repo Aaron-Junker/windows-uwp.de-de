@@ -161,6 +161,6 @@ Standardmäßig sind die Klassen in der Komponente, die aktiviert werden kann, a
 Für Objekte, die im UI-Thread ausgeführt werden und Ausnahmen auslösen, wenn sie von einem anderen Thread als dem UI-Thread aufgerufen werden, können Sie das [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029)-Objekt des UI-Threads verwenden, um den Aufruf zu verteilen.
 
 ## <a name="see-also"></a>Weitere Informationen
-[C#Anleitung](/dotnet/csharp/)
+[C#-Handbuch](/dotnet/csharp/)
 
 [Leitfaden für Visual Basic](/dotnet/visual-basic/)

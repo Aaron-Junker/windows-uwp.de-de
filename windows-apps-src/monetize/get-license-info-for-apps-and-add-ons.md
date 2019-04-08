@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Lizenzen, Apps, Add-Ons, In-App-Einkäufe, IAPs, Win
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7c832907af17436d588f0fac6c5039d4affa82
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57641915"
@@ -48,7 +48,7 @@ Eine vollständige Beispielanwendung finden Sie im [Store-Beispiel](https://gith
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-app-Käufe und Testversionen](in-app-purchases-and-trials.md)
+* [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Produktinformationen für apps und -Add-Ons](get-product-info-for-apps-and-add-ons.md)
 * [Aktivieren von in-app-Käufe von apps und -Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Aktivieren Sie nutzbar Add-on-Käufe](enable-consumable-add-on-purchases.md)

@@ -317,6 +317,6 @@ Wenn Ihr Code eine Aktion (z. B. das Zeichnen der UI) basierend auf dem Prozent
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Windows.System.User class](https://docs.microsoft.com/uwp/api/windows.system.user)
+* [Windows.System.User-Klasse](https://docs.microsoft.com/uwp/api/windows.system.user)
 * [Windows.Gaming.Input.IGameController-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
 * [Windows.Gaming.Input.GamepadButtons-Enumeration](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)

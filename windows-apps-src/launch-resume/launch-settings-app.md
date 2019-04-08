@@ -80,7 +80,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Geschäfts- oder Schulkonto öffnen | ms-settings:workplace |
 | E-Mail- & App-Konten  | ms-settings:emailandaccounts |
 | Familie und andere Personen | ms-settings:otherusers |
-| Richten Sie ein kiosk | ms-settings:assignedaccess |
+| Richten Sie ein kiosk | MS-Einstellungen: Assignedaccess |
 | Anmeldeoptionen | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
 | Synchronisieren von Einstellungen | ms-settings:sync |
 | Einrichten von Windows Hello | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
@@ -106,7 +106,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Berechtigungen für & Verlauf | ms-settings:cortana-permissions |
 | Weitere Details | ms-settings:cortana-moredetails |
 | Cortana auf allen meinen Geräten | ms-settings:cortana-notifications |
-| Sprechen mit Cortana | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
+| Sprechen mit Cortana | ms-settings:cortana-language<br/>MS-Einstellungen: Cortana<br/>MS-Einstellungen: Cortana-Talktocortana |
 
 > [!NOTE] 
 > In diesem Abschnitt "Einstellungen" auf Desktop wird Suche aufgerufen werden, wenn der PC in Regionen festgelegt wird, Cortana ist zurzeit nicht verfügbar oder Cortana wurde deaktiviert. Cortana-spezifische Seiten (Cortana auf meinen Geräten), und sich an Cortana werden in diesem Fall nicht aufgeführt. 
@@ -135,8 +135,8 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | Untertitel | ms-settings:easeofaccess-closedcaptioning |
-| Filter "Farbe" | ms-settings:easeofaccess-colorfilter |
-| Größe des Cursors & Zeiger | ms-settings:easeofaccess-cursorandpointersize |
+| Filter "Farbe" | MS-Einstellungen: Easeofaccess-Colorfilter |
+| Größe des Cursors & Zeiger | MS-Einstellungen: Easeofaccess-Cursorandpointersize |
 | Anzeige | ms-settings:easeofaccess-display |
 | Augensteuerung | ms-settings:easeofaccess-eyecontrol |
 | Schriftarten | ms-settings:fonts |
@@ -188,7 +188,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Mobiler Hotspot | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Proxy | ms-settings:network-proxy |
-| Status | ms-settings:network-status<br/>ms-settings:network |
+| Status | ms-settings:network-status<br/>MS-Einstellungen: Netzwerk |
 | VPN | ms-settings:network-vpn |
 | WLAN | ms-settings:network-wifi (nur verfügbar, wenn das Gerät über einen WLAN-Adapter verfügt) |
 | WLAN-Anruf | ms-settings:network-wificalling (nur verfügbar, wenn WLAN-Anruf aktiviert ist) |
@@ -199,7 +199,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 |-------------|-----|
 | Hintergrund | ms-settings:personalization-background |
 | Ordner auswählen, die im Menü „Start“ angezeigt werden | ms-settings:personalization-start-places |
-| Farben | ms-settings:personalization-colors<br/>ms-settings:colors |
+| Farben | ms-settings:personalization-colors<br/>MS-Einstellungen: Farben |
 | Blick | MS-Einstellungen: Personalisierung-Blick (**in Windows 10, Version 1809 und höher veraltet**) |
 | Sperrbildschirm | ms-settings:lockscreen |
 | Navigationsleiste | MS-Einstellungen: Personalisierung-Navigationsleiste (**in Windows 10, Version 1809 und höher veraltet**) |
@@ -212,7 +212,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 |Seite „Einstellungen“| URI |
 |-------------|-----|
-| Ihr Smartphone | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>MS-Einstellungen: Mobile-Geräte-Addphone-direct (öffnet **Ihr Telefon** app) |
+| Ihr Smartphone | ms-settings:mobile-devices<br/>MS-Einstellungen: Mobile-Geräte-Addphone<br/>MS-Einstellungen: Mobile-Geräte-Addphone-direct (öffnet **Ihr Telefon** app) |
 
 ## <a name="privacy"></a>Vertraulichkeit
 
@@ -267,7 +267,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Stromsparmodus | ms-settings:batterysaver (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
 | Einstellungen „Stromsparmodus” | ms-settings:batterysaver-settings (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
 | Akkubetrieb | ms-settings:batterysaver-usagedetails (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
-| Zwischenablage | ms-settings:clipboard |
+| Zwischenablage | MS-Einstellungen für Zwischenablage: |
 | Anzeige | ms-settings:display |
 | Standard-Speicherorte | ms-settings:savelocations |
 | Anzeige | ms-settings:screenrotation |
@@ -288,7 +288,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Remotedesktop | Einstellungen „Remotedesktop” |
 | Phone | MS-Einstellungen: Phone (**in Windows 10, Version 1809 und höher veraltet**) |
 | Ein/Aus und Standbymodus | ms-settings:powersleep |
-| Sound | ms-settings:sound |
+| Sound | MS-Einstellungen: Sound |
 | Speicher | ms-settings:storagesense |
 | Speicheroptimierung | ms-settings:storagepolicies |
 
@@ -298,7 +298,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 |-------------|-----|
 | Datum und Uhrzeit | ms-settings:dateandtime |
 | Japan IME-Einstellungen | ms-settings:regionlanguage-jpnime (nur verfügbar, wenn der Eingabemethodeneditor „Microsoft Japan” installiert ist) |
-| Sprache | ms-settings:keyboard<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
+| Sprache | MS-Einstellungen: Tastenkombinationen<br/>ms-settings:regionlanguage<br/>MS-Einstellungen: Regionlanguage-Bpmfime<br/>MS-Einstellungen: Regionlanguage-Cangjieime<br/>MS-Einstellungen: Regionlanguage-Chsime-Pinyin-Domainlexicon<br/>MS-Einstellungen: Regionlanguage-Chsime-Pinyin-Keyconfig<br/>MS-Einstellungen: Regionlanguage-Chsime-Pinyin-Udp<br/>MS-Einstellungen: Regionlanguage-Chsime-Wubi – Udp<br/>MS-Einstellungen: Regionlanguage-Quickime |
 | Pinyin-IME-Einstellungen | ms-settings:regionlanguage-chsime-pinyin (nur verfügbar, wenn der Eingabemethodeneditor „Microsoft Pinyin” installiert ist) |
 | Spracherkennung | ms-settings:speech |
 | Wubi-IME-Einstellungen  | ms-settings:regionlanguage-chsime-wubi (nur verfügbar, wenn der Eingabemethodeneditor „Microsoft Wubi” installiert ist) |
@@ -315,7 +315,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Wiederherstellung | ms-settings:recovery |
 | Problembehandlung | ms-settings:troubleshoot |
 | Windows-Sicherheit | ms-settings:windowsdefender |
-| Windows-Insider-Programm | ms-settings:windowsinsider (nur verfügbar, wenn der Benutzer bei WIP registriert ist)<br/>ms-settings:windowsinsider-optin |
+| Windows-Insider-Programm | ms-settings:windowsinsider (nur verfügbar, wenn der Benutzer bei WIP registriert ist)<br/>MS-Einstellungen: Windowsinsider-Optin |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update-Advanced options | ms-settings:windowsupdate-options |
 | Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |

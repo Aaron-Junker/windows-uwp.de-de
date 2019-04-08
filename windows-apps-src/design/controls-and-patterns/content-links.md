@@ -23,7 +23,7 @@ Links zu Inhalten bieten eine Möglichkeit, umfangreiche Daten in Textsteuerelem
 
 Wenn der Benutzer einem Eintrag in einer RichEditBox ein kaufmännisches Und-Zeichen (@) als Präfix hinzufügt, wird eine Liste der Personen und/oder Ortsvorschläge angezeigt, die mit dem Eintrag übereinstimmen. Wenn der Benutzer dann beispielsweise einen Ort auswählt, wird ein ContentLink für diesen Ort in den Text eingefügt. Wenn der Benutzer den Link zu dem Inhalt aus der RichEditBox aufruft, werden ein Flyout mit einer Karte und zusätzliche Informationen zu dem Ort angezeigt.
 
-> **Wichtige APIs**: [ContentLink-Klasse](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo Klasse](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange-Klasse](/uwp/api/windows.ui.text.richedittextrange)
+> **Wichtige APIs:** [ContentLink-Klasse](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo Klasse](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange-Klasse](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
 > Die APIs für Links zu Inhalten sind auf die folgenden Namespaces verteilt: Windows.UI.Xaml.Controls Windows.UI.Xaml.Documents und Windows.UI.Text.

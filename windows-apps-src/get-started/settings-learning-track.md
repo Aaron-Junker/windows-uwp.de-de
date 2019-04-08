@@ -88,8 +88,8 @@ Nachfolgend finden Sie eine kurze Zusammenfassung der APIs und anderer nützlich
 |------|---------------|
 | [ApplicationData.LocalSettings](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.temporaryfolder) | Ruft den Container der Anwendungseinstellungen aus dem lokalen App-Datenspeicher ab. |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | Ruft den Container der Anwendungseinstellungen aus dem Roaming-App-Datenspeicher ab. |
-| [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | Ein Container für App-Einstellungen, der das Erstellen, Löschen, Aufzählen und Durchlaufen der Containerhierarchie unterstützt. |
-| [Windows.UI.ApplicationSettings Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Stellt Klassen bereit, mit denen Sie die App-Einstellungen definieren, die im Einstellungsbereich der Windows-Shell angezeigt werden. |
+| ["Applicationdatacontainer"](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | Ein Container für App-Einstellungen, der das Erstellen, Löschen, Aufzählen und Durchlaufen der Containerhierarchie unterstützt. |
+| [Windows.UI.ApplicationSettings-Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Stellt Klassen bereit, mit denen Sie die App-Einstellungen definieren, die im Einstellungsbereich der Windows-Shell angezeigt werden. |
 
 ### <a name="useful-docs"></a>Nützliche Dokumente
 

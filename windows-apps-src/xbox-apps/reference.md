@@ -19,23 +19,23 @@ Dieser Abschnitt enthält Referenzthemen für die REST-API für das Xbox-Geräte
 
 | URI        | Beschreibung |
 |------------|-------------|
-|[/api/app/packagemanager/register](wdp-loose-folder-register-api.md)| Registriert eine App, die in einem losen Ordner enthalten ist. |
-|[/api/app/packagemanager/upload](wdp-folder-upload.md)| Lädt einen ganzen Ordner zur Konsole hoch. |
-|[/ext/app/sshpins](uwp-sshpins-api.md)| Löschen Sie alle vertrauenswürdigen SSH-PINs per Fernzugriff. Dies erfordert die erneute PIN-Kopplung für die UWP-Entwicklung in Visual Studio. |
-|[/ext/app/deployinfo](uwp-deployinfo-api.md)| Fordert Bereitstellungsinformationen für ein oder mehrere installierte Pakete an. |
-|[/ext/fiddler](wdp-fiddler-api.md)| Zum Aktivieren und Deaktivieren der Fiddler-Netzwerkablaufverfolgung |
-|[/ext/httpmonitor/sessions](wdp-httpMonitor-api.md)| Abrufen des HTTP-Datenverkehrs aus der fokussierten App auf der Xbox |
-|[/ext/networkcredential](uwp-networkcredentials-api.md)| Hinzufügen, Entfernen oder Aktualisieren der Netzwerkanmeldeinformationen |
-|[/ext/remoteinput](uwp-remoteinput-api.md)| Senden von Tastatur-, Maus- oder Controllereingaben auf einer Xbox per Fernzugriff |
-|[/ext/remoteinput/controllers](uwp-remoteinput-controllers-api.md)| Abrufen der Anzahl der angeschlossenen physischen Controller oder Deaktivieren aller physischen Controller |
-|[/ext/screenshot](wdp-media-capture-api.md)| Erfasst eine PNG-Darstellung des Bildschirms, der zurzeit auf der Konsole angezeigt wird. |
-|[/ext/settings](wdp-xboxsettings-api.md)| Greift auf Xbox One-Entwicklereinstellungen zu. |
-|[/ext/smb/developerfolder](wdp-smb-api.md)| Greift über den Datei-Explorer auf Ihrem Entwicklungscomputer auf den Entwicklerordner auf Ihrer Konsole zu. |
-|[/ext/user](wdp-user-management.md)| Verwaltet Benutzer auf der Xbox One-Konsole. |
-|[/ext/xbox/info](wdp-xboxinfo-api.md)| Bietet Informationen zum Xbox One-Gerät |
-|[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| Verwaltet Ihren Xbox Live-Sandkasten. |
+|[/API/App/packagemanager/Register](wdp-loose-folder-register-api.md)| Registriert eine App, die in einem losen Ordner enthalten ist. |
+|[/API/App/packagemanager/Upload](wdp-folder-upload.md)| Lädt einen ganzen Ordner zur Konsole hoch. |
+|[/ext/App/sshpins](uwp-sshpins-api.md)| Löschen Sie alle vertrauenswürdigen SSH-PINs per Fernzugriff. Dies erfordert die erneute PIN-Kopplung für die UWP-Entwicklung in Visual Studio. |
+|[/ext/App/deployinfo](uwp-deployinfo-api.md)| Fordert Bereitstellungsinformationen für ein oder mehrere installierte Pakete an. |
+|[/ Ext/fiddler](wdp-fiddler-api.md)| Zum Aktivieren und Deaktivieren der Fiddler-Netzwerkablaufverfolgung |
+|[/ext/httpmonitor/Sessions](wdp-httpMonitor-api.md)| Abrufen des HTTP-Datenverkehrs aus der fokussierten App auf der Xbox |
+|[/ Ext/networkcredential](uwp-networkcredentials-api.md)| Hinzufügen, Entfernen oder Aktualisieren der Netzwerkanmeldeinformationen |
+|[/ Ext/remoteinput](uwp-remoteinput-api.md)| Senden von Tastatur-, Maus- oder Controllereingaben auf einer Xbox per Fernzugriff |
+|[/ext/remoteinput/Controllers](uwp-remoteinput-controllers-api.md)| Abrufen der Anzahl der angeschlossenen physischen Controller oder Deaktivieren aller physischen Controller |
+|[bildschirmabbildung von/Ext /](wdp-media-capture-api.md)| Erfasst eine PNG-Darstellung des Bildschirms, der zurzeit auf der Konsole angezeigt wird. |
+|[/ Ext/settings](wdp-xboxsettings-api.md)| Greift auf Xbox One-Entwicklereinstellungen zu. |
+|[/ext/SMB/developerfolder](wdp-smb-api.md)| Greift über den Datei-Explorer auf Ihrem Entwicklungscomputer auf den Entwicklerordner auf Ihrer Konsole zu. |
+|[/ Ext/Benutzer](wdp-user-management.md)| Verwaltet Benutzer auf der Xbox One-Konsole. |
+|[/ext/Xbox/Info](wdp-xboxinfo-api.md)| Bietet Informationen zum Xbox One-Gerät |
+|[/ext/xboxlive/Sandbox](wdp-sandbox-api.md)| Verwaltet Ihren Xbox Live-Sandkasten. |
 
 ## <a name="see-also"></a>Siehe auch
 
 - [UWP auf Xbox One](index.md)
-- [Windows Device Portal](../debug-test-perf/device-portal.md)
+- [Windows-Geräteportal](../debug-test-perf/device-portal.md)

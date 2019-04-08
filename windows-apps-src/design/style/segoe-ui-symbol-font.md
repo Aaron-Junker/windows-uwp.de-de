@@ -22,7 +22,7 @@ ms.locfileid: "57649055"
 
 In diesem Artikel werden die Symbole der Schriftart Segoe MDL2 Assets aufgeführt. 
 
-> **Wichtige APIs**: [**Symbol Enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **Wichtige APIs:** [**Symbol Enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>Informationen zu MDL2 Assets
 
@@ -2362,7 +2362,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D5.png" width="32" height="32" alt="CheckList" /></td>
   <td>E9D5</td>
-  <td>CheckList</td>
+  <td>Checkliste</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D9.png" width="32" height="32" alt="Diagnostic" /></td>
   <td>E9D9</td>
@@ -4658,7 +4658,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/F413.png" width="32" height="32" alt="CopyTo" /></td>
   <td>F413</td>
-  <td>CopyTo</td>
+  <td>CopyTo-Vorgang</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F439.png" width="32" height="32" alt="DynamicLock" /></td>
   <td>F439</td>
@@ -4893,7 +4893,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>HolePunchPortraitLeft</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F591.png" width="32" height="32" alt="HolePunchPortraitRight" /></td>
-  <td>F591</td>
+  <td>F591.</td>
   <td>HolePunchPortraitRight</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F592.png" width="32" height="32" alt="HolePunchPortraitTop" /></td>

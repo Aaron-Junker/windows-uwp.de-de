@@ -18,7 +18,7 @@ ms.locfileid: "57658635"
 **Gilt für**
 -   Windows 10
 -   Windows 10 Mobile
--   Windows 10 IoT Core 
+-   Windows 10 IoT Core 
 
 Heute basieren die Erwartungen von Benutzern häufig auf geräteorientierten Umgebungen, und vollständige Produktzyklen dürfen daher höchstens in Monaten und nicht in Jahren gemessen werden. Darüber hinaus müssen neue Versionen auf kontinuierlicher Basis verfügbar gemacht und mit minimaler Beeinträchtigung der Funktionsweise bereitgestellt werden. Microsoft hat Windows 10 so entwickelt, dass diese Anforderungen erfüllt werden, und dazu ein neues Konzept für die Entwicklung und Bereitstellung von Innovationen implementiert, das als [Windows als Dienst (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview) bezeichnet wird. Der Schlüssel zu deutlich kürzeren Produktzyklen bei gleichzeitiger Beibehaltung eines hohen Qualitätsniveaus ist ein innovatives, community-orientiertes Testkonzept, das Microsoft für Windows 10 implementiert hat. Die Community, die „Windows-Insider“, besteht aus Millionen von Benutzern auf der ganzen Welt. Wenn sich Windows-Insider an der Community beteiligen, testen sie im Laufe eines Produktzyklus viele Builds und geben Microsoft ihr Feedback im Rahmen eines iterativen Prozesses, der als Test-Flighting bezeichnet wird.
 

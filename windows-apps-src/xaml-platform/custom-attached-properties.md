@@ -48,21 +48,21 @@ Der Hauptunterschied beim Definieren einer benutzerdefinierten Eigenschaft und b
 
 Die Signatur für den **Get**_PropertyName_-Accessor lautet folgendermaßen.
 
-`public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
+`public static` _ValueType_ **erhalten**_PropertyName_ `(DependencyObject target)`
 
 Bei Microsoft Visual Basic lautet sie folgendermaßen.
 
-`Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
+`Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_ValueType_`)`
 
 Das *target*-Objekt kann in Ihrer Implementierung einen spezielleren Typ aufweisen, muss jedoch von [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) abgeleitet sein. Der *valueType*-Rückgabewert kann in Ihrer Implementierung auch einen spezielleren Typ aufweisen. Der grundlegende **Object**-Typ wird akzeptiert. Häufig soll jedoch Ihre angefügte Eigenschaft Typsicherheit erzwingen. Die Verwendung der Typisierung in den Getter- und Setter-Signaturen ist eine empfohlene Typsicherheitstechnik.
 
 Die Signatur für die **festgelegt *** PropertyName* Accessor muss wie folgt lauten.
 
-`public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
+`public static void Set`_PropertyName_` (DependencyObject target , `_ValueType_` value)`
 
 Bei Microsoft Visual Basic lautet sie folgendermaßen.
 
-`Public Shared Sub Set`_PropertyName_` (ByVal target As DependencyObject, ByVal value As `_valueType_`)`
+`Public Shared Sub Set`_PropertyName_` (ByVal target As DependencyObject, ByVal value As `_ValueType_`)`
 
 Das *target*-Objekt kann in Ihrer Implementierung einen spezielleren Typ aufweisen, muss jedoch von [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) abgeleitet sein. Das *value*-Objekt und dessen *valueType* können in Ihrer Implementierung einen spezielleren Typ aufweisen. Beachten Sie, dass der Wert für diese Methode die Eingabe ist, die vom XAML-Prozessor stammt, wenn er Ihre angefügte Eigenschaft im Markup feststellt. Die Typkonvertierung oder vorhandene Markuperweiterung muss für den von Ihnen verwendeten Typ unterstützt werden, damit der entsprechende Typ auf der Grundlage eines Attributwerts (der letztlich nur eine Zeichenfolge ist) erstellt werden kann. Der grundlegende **Object**-Typ ist akzeptabel. Häufig möchten Sie jedoch zusätzliche Typsicherheit erreichen. Versehen Sie hierzu die Accessoren mit einer Typerzwingung.
 

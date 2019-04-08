@@ -81,6 +81,6 @@ Lesen Sie sich die Informationen unter [Konzepte und Aspekte der Portierung](por
 
 **Microsoft Store**
 
-* [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+* [**Microsoft::wrl::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 * [**Handle für Objekt (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
 

@@ -23,7 +23,7 @@ ms.locfileid: "57636065"
 -   [**{X: Bind}-Markuperweiterung**](../xaml-platform/x-bind-markup-extension.md)
 -   [**Binding-Klasse**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
--   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
+-   [**"INotifyPropertyChanged"**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
 > [!NOTE]
 > In diesem Thema werden die Datenbindungsfeatures ausführlich beschrieben. Eine kurze und praktische Einführung finden Sie unter [Übersicht „Datenbindung“](data-binding-quickstart.md).
@@ -36,7 +36,7 @@ Sie können die Datenbindung einfach verwenden, um nur Werte aus einer Datenquel
 -   Konnten Sie mithilfe den unidirektionalen Modus Binden einer [ **ListView** ](https://msdn.microsoft.com/library/windows/apps/BR242878) auf eine Auflistung von in Echtzeit Nachrichtenartikel nach Zeitung Abschnitt gruppiert.
 -   Konnten Sie mithilfe den bidirektionalen Modus Binden einer [ **Textfeld** ](https://msdn.microsoft.com/library/windows/apps/BR209683) eines Kunden Namen in einem Formular.
 
-Unabhängig vom Modus, es gibt zwei Arten der Bindung, und sie sind sowohl in der Regel deklariert in UI-Markup. Sie können entweder die [{x:Bind}-Markuperweiterung](https://msdn.microsoft.com/library/windows/apps/Mt204783) oder die [{Binding}-Markuperweiterung](https://msdn.microsoft.com/library/windows/apps/Mt204782) verwenden. Sie können sogar eine Mischung aus den beiden in derselben App verwenden – sogar im gleichen Benutzeroberflächenelement. {X: Bind} ist neu in Windows 10 und eine bessere Leistung. Alle in diesem Thema beschriebenen Details gelten für beide Arten von Bindungen, es sei denn, es wird ausdrücklich auf eine Abweichung hingewiesen.
+Unabhängig vom Modus, es gibt zwei Arten der Bindung, und sie sind sowohl in der Regel deklariert in UI-Markup. Sie können entweder die [{x:Bind}-Markuperweiterung](https://msdn.microsoft.com/library/windows/apps/Mt204783) oder die [{Binding}-Markuperweiterung](https://msdn.microsoft.com/library/windows/apps/Mt204782) verwenden. Sie können sogar eine Mischung aus den beiden in derselben App verwenden – sogar im gleichen Benutzeroberflächenelement. {x:Bind} ist neu in Windows 10 und bietet eine bessere Leistung. Alle in diesem Thema beschriebenen Details gelten für beide Arten von Bindungen, es sei denn, es wird ausdrücklich auf eine Abweichung hingewiesen.
 
 **Beispiel-apps, die veranschaulichen, {X: Bind}**
 

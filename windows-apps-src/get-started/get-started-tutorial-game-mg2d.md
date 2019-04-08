@@ -689,7 +689,7 @@ Nun sind Sie fertig. Starten Sie das Spiel erneut. Wenn Sie die oben beschrieben
 
 ![Spielende](images/monogame-tutorial-4.png)
 
-## <a name="publish-to-the-microsoft-store"></a>In den Microsoft Store veröffentlichen
+## <a name="publish-to-the-microsoft-store"></a>Veröffentlichen im Microsoft Store
 Da wir das Spiel als UWP-app erstellt haben, ist es möglich, dieses Projekt in der Microsoft Store zu veröffentlichen. Dazu müssen Sie einige Schritte durchführen.
 
 Sie müssen als Windows-Entwickler [registriert](https://developer.microsoft.com/en-us/store/register) sein.
