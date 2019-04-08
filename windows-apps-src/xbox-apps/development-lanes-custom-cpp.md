@@ -28,6 +28,6 @@ Unter [Spiele und DirectX](../gaming/index.md) sowie im Leitfaden mit den [erste
 
 
 ## <a name="see-also"></a>Siehe auch
-- [Vorhandene Spiele anbieten für Xbox](development-lanes-landing.md)
+- [Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)
 - [UWP auf Xbox One](index.md)
 

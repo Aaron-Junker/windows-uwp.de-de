@@ -537,7 +537,7 @@ Direct3D 11 ist eine Reihe von APIs, mit deren Hilfe wir Grafiken für Grafik-i
 
 Für diejenigen, die noch nie damit gearbeitet haben, können Sie sich Ressourcen (auch bekannt als Geräteressourcen) als Informationen vorstellen, um ein Objekt wie Textur, Position, Farbe zu rendern. Ressourcen stellen Daten für die Pipeline bereit und definieren, was während der Szene gerendert wird. Ressourcen können von Ihren Spielmedien geladen oder zur Laufzeit dynamisch erstellt werden.
 
-Eine Ressource ist ein Bereich im Speicher, auf den die Direct3D-[Pipeline](#rendering-pipeline) zugreifen kann. Damit die Pipeline effizient auf den Speicher zugreifen kann, müssen für die Pipeline bereitgestellte Daten (wie z. B. Input-Geometrie, Shader-Ressourcen und Texturen) in einer Ressource gespeichert werden. Es gibt zwei Arten von Ressourcen, aus denen alle Direct3D-Ressourcen abgeleitet sind: ein Puffer oder eine Textur. Bis zu 128 Ressourcen können für jede Pipeline-Phase aktiv sein. Weitere Informationen finden Sie unter [Ressourcen](../graphics-concepts/resources.md).
+Eine Ressource ist ein Bereich im Speicher, auf den die Direct3D-[Pipeline](#rendering-pipeline) zugreifen kann. Damit die Pipeline effizient auf den Speicher zugreifen kann, müssen für die Pipeline bereitgestellte Daten (wie z. B. Input-Geometrie, Shader-Ressourcen und Texturen) in einer Ressource gespeichert werden. Es gibt zwei Arten von Ressourcen, aus denen alle Direct3D-Ressourcen abgeleitet sind: Puffer und Textur. Bis zu 128 Ressourcen können für jede Pipeline-Phase aktiv sein. Weitere Informationen finden Sie unter [Ressourcen](../graphics-concepts/resources.md).
 
 #### <a name="subresource"></a>Unterressourcen
 

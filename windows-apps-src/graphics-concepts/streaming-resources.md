@@ -19,7 +19,7 @@ ms.locfileid: "57598235"
 # <a name="streaming-resources"></a>Streamingressourcen
 
 
-*Streamingressourcen* sind große logische Ressourcen, die wenig physischen Speicher belegen. Anstatt die gesamte große Ressource zu übergeben, werden nur kleine Teile der Ressource bei Bedarf gestreamt. Streaming-Ressourcen wurden vorher als *unterteilte Ressourcen* bezeichnet.
+*Streamingressourcen* sind große logische Ressourcen, die wenig physischen Speicher belegen. Anstatt die gesamte umfangreiche Ressource zu übergeben, werden nur kleine Teile der Ressource nach Bedarf gestreamt. Streaming-Ressourcen wurden vorher als *unterteilte Ressourcen* bezeichnet.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>In diesem Abschnitt
 

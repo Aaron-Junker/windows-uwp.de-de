@@ -14,7 +14,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57653575"
@@ -23,7 +23,7 @@ ms.locfileid: "57653575"
 
 Mit den meisten Anwendungen können Sätze von Daten, beispielsweise eine Bildergalerie oder ein Satz von E-Mails, bearbeitet und angezeigt werden. Das XAML-Benutzeroberflächenframework bietet ListView und GridView-Steuerelemente, die das Anzeigen und Bearbeiten von Daten in Ihrer App vereinfachen.  
 
-> **Wichtige APIs**: [ListView-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [GridView-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [ItemsSource-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [-Elementeigenschaft](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
+> **Wichtige APIs:** [ListView-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [GridView-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [ItemsSource-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [-Elementeigenschaft](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
 
 ListView und GridView werden beide von der ListViewBase-Klasse abgeleitet, sodass sie die gleiche Funktionalität haben, Daten jedoch unterschiedlich anzeigen. In diesem Artikel beziehen sich Aussagen zu ListView sowohl auf die ListView- als auch die GridView-Steuerelemente, wenn nicht anders angegeben. Möglicherweise werden Klassen wie ListView oder ListViewItem genannt. Das Präfix „List“ kann jedoch durch „Grid“ für das entsprechende Rastersteuerelement ersetzt werden (GridView oder GridViewItem). 
 
@@ -48,7 +48,7 @@ Einen detaillierteren Vergleich und Anleitungen dazu, welches Steuerelement verw
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ListView">ListView</a> oder <a href="xamlcontrolsgallery:/item/GridView">GridView</a> in Aktion zu sehen.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
@@ -82,7 +82,7 @@ Hier sehen Sie eine Listenansicht mit inline in XAML definierten Elementen. Wenn
 
 Hier sehen Sie die Listenansicht in Code erstellt. Die resultierende Liste ist mit der zuvor in XAML erstellten Liste identisch.
 
-**C#**
+**C# -CODE**
 ```csharp
 // Create a new ListView and add content. 
 ListView listView1 = new ListView(); 
@@ -106,7 +106,7 @@ In der Regel verwenden Sie eine Listenansicht, um Daten aus Quellen wie einer Da
 
 Dies ist die ItemsSource der Listenansicht im Code, direkt auf eine Instanz einer Sammlung festgelegt.
 
-**C#**
+**C# -CODE**
 ```csharp 
 // Instead of hard coded items, the data could be pulled 
 // asynchronously from a database or the internet.
@@ -134,7 +134,7 @@ Hier wird ItemsSource an eine öffentliche Eigenschaft mit dem Namen `Items` geb
 <ListView x:Name="itemListView" ItemsSource="{x:Bind Items}"/>
 ```
 
-**C#**
+**C# -CODE**
 ```csharp
 private ObservableCollection<string> _items = new ObservableCollection<string>();
 
@@ -307,7 +307,7 @@ Sie können diese Eigenschaften in XAML oder im Code festlegen, wie hier gezeigt
 <GridView x:Name="myGridView" SelectionMode="None" IsItemClickEnabled="True"/> 
 ```
 
-**C#**
+**C# -CODE**
 ```csharp
 myListView.SelectionMode = ListViewSelectionMode.Multiple; 
 
@@ -382,7 +382,7 @@ In diesem Beispiel werden die Behandlung des **SelectionChanged**-Ereignisses un
 </StackPanel> 
 ```
 
-**C#**
+**C# -CODE**
 ```csharp
 private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
 {
@@ -429,7 +429,7 @@ Dies ist eine Listenansicht mit Elementen, auf die geklickt werden kann. Der Cod
 </ListView>
 ```
 
-**C#**
+**C# -CODE**
 ```csharp
 private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 {
@@ -490,7 +490,7 @@ Sie können alle Elemente in einer Sammlung auswählen, indem Sie die SelectAll-
 </StackPanel>
 ```
 
-**C#**
+**C# -CODE**
 ```csharp
 private void SelectAllButton_Click(object sender, RoutedEventArgs e)
 {

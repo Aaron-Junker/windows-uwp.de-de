@@ -18,7 +18,7 @@ ms.locfileid: "57660525"
 **Wichtige APIs**
 
 -   [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)
--   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**"Storagefile"**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
 Mithilfe von [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) können Benutzer den Namen und Speicherort zum Speichern einer Datei durch die App angeben.
 

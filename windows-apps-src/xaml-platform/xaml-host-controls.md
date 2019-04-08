@@ -37,7 +37,7 @@ Die folgenden umschlossene UWP-Steuerelemente sind derzeit für WPF- und Windows
 |-----------------|-------------------------------|-------------|
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10, Version 1803 | Verwendet die Microsoft Edge-Rendering-Engine Webinhalt angezeigt. |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Bietet eine Version von **WebView** mit mehr OS-Versionen kompatibel ist. Dieses Steuerelement verwendet wird, die Microsoft Edge-Rendering-Engine Webinhalt auf Windows 10, Version 1803 und höher angezeigt und das Internet Explorer-Renderingmodul anzuzeigenden Webinhalten in früheren Versionen von Windows 10, Windows 8.x und Windows 7. |
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, Version 1809 (build 17763) | Geben Sie eine Fläche aus, und verwandte Symbolleisten für Windows Ink-basierte Benutzerinteraktion in Ihre Windows Forms oder WPF-Desktopanwendung an. |
+| [InkCanvas-Steuerelement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, Version 1809 (build 17763) | Geben Sie eine Fläche aus, und verwandte Symbolleisten für Windows Ink-basierte Benutzerinteraktion in Ihre Windows Forms oder WPF-Desktopanwendung an. |
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, Version 1809 (build 17763) | Bettet eine Ansicht, die streams auf und rendert die Medieninhalte wie z. B. Videos in Ihre Windows Forms oder WPF-Desktopanwendung an. |
 | [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, Version 1809 (build 17763) | Können Sie eine symbolische oder fotorealistische-Karte in Ihrer Windows Forms oder WPF-Desktopanwendung anzeigen. |
 
@@ -81,24 +81,24 @@ In den meisten Fällen wird nur die Funktionalität nicht unterstützt, die in d
 
 ### <a name="whats-not-yet-supported"></a>Noch nicht unterstützt
 
-:no_entry_sign: Tools für Barrierefreiheit, die funktionieren nahtlos in die Anwendung und die gehosteten Steuerelemente.
+: No_entry_sign: Tools für Barrierefreiheit, die funktionieren nahtlos in die Anwendung und die gehosteten Steuerelemente.
 
-:no_entry_sign: Lokalisierte Inhalte in Steuerelementen, die Sie Anwendungen hinzufügen, die ein Windows-app-Paket nicht enthalten.
+: No_entry_sign: Lokalisierte Inhalte in Steuerelementen, die Sie Anwendungen hinzufügen, die ein Windows-app-Paket nicht enthalten.
 
-:no_entry_sign: Objektverweise in XAML vorgenommen werden, in Anwendungen, die ein Windows-app-Paket nicht enthalten.
+: No_entry_sign: Objektverweise in XAML vorgenommen werden, in Anwendungen, die ein Windows-app-Paket nicht enthalten.
 
-:no_entry_sign: Steuerelemente, die ordnungsgemäß reagieren auf Änderungen der DPI-Wert und Skalierung.
+: No_entry_sign: Steuerelemente, die ordnungsgemäß reagieren auf Änderungen der DPI-Wert und Skalierung.
 
-:no_entry_sign: Hinzufügen einer **WebView** Steuerelement ein benutzerdefiniertes Steuerelement, das (auf Thread, aus Threads, oder aus der Prozedur).
+: No_entry_sign: Hinzufügen einer **WebView** Steuerelement ein benutzerdefiniertes Steuerelement, das (auf Thread, aus Threads, oder aus der Prozedur).
 
-:no_entry_sign: Die [anzeigen Hervorhebung](https://docs.microsoft.com/windows/uwp/design/style/reveal) Fluent wirksam.
+: No_entry_sign: Die [anzeigen Hervorhebung](https://docs.microsoft.com/windows/uwp/design/style/reveal) Fluent wirksam.
 
-:no_entry_sign: Inline Freihand, @Places, und @People für Eingabesteuerelemente.
+: No_entry_sign: Inline Freihand, @Places, und @People für Eingabesteuerelemente.
 
-:no_entry_sign: Zuweisen von Zugriffstasten.
+: No_entry_sign: Zuweisen von Zugriffstasten.
 
-:no_entry_sign: C++-basierte Drittanbieter-Steuerelementen.
+: No_entry_sign: C++-basierte Drittanbieter-Steuerelementen.
 
-:no_entry_sign: Hosten von benutzerdefinierten Steuerelementen.
+: No_entry_sign: Hosten von benutzerdefinierten Steuerelementen.
 
 Die Elemente in dieser Liste werden sich wahrscheinlich ändern, da wir ständig daran arbeiten, Fluent auf dem Desktop zu optimieren.  

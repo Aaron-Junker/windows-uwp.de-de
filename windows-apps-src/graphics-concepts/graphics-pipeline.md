@@ -70,4 +70,4 @@ Die am häufigsten verwendeten Stufen sind die Vertex-Shader-Stufe (VS-Stufe) un
 
 - [Schulungsleitfaden für Direct3D-Grafiken](index.md)
 
-- [Compute-pipeline](compute-pipeline.md)
+- [Compute-Pipeline](compute-pipeline.md)

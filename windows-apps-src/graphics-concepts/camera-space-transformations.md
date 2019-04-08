@@ -19,7 +19,7 @@ ms.locfileid: "57655735"
 
 Eckpunkte im Kameraraum werden durch das Wandeln der Objekteckpunkte mit der Weltansichtsmatrix berechnet.
 
-V = V \* wvMatrix
+V = V \* WvMatrix
 
 Vertexspezifische Normalen im Kameraraum werden berechnet, indem die Normalen des Objekts mit der inversen Umsetzung der globalen Ansichtsmatrix transformiert werden. Eine globale Ansichtsmatrix kann entweder orthogonal sein oder nicht.
 
@@ -37,7 +37,7 @@ Lₚ = Lₚ \* vMatrix
 
 Die Richtung des Lichts im Kameraraum für gerichtetes Licht wird durch die Multiplikation der Richtung der Lichtquellen mit der Ansichtsmatrix berechnet, normalisiert und das Resultat wird negiert.
 
-L<sub>dir</sub> = -norm(L<sub>dir</sub> \* wvMatrix)
+L<sub>Dir</sub> = - Norm (L<sub>Dir</sub> \* WvMatrix)
 
 Für ein punktuelles Licht und ein Spotlight wird die Richtung der Lichtquelle wie folgt berechnet:
 

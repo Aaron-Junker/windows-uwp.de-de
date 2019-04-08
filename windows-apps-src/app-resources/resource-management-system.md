@@ -62,9 +62,9 @@ Ressourcenkandidaten werden anhand eines bestimmten [**ResourceContext**](/uwp/a
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader?branch=live)
-* [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
+* [Ressourcen-Manager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Lokalisieren von Zeichenfolgen in Ihre Benutzeroberfläche und app-Paketmanifest](localize-strings-ui-manifest.md)
-* [Laden von Bildern und Ressourcen, die speziell für die Skalierung, Design, hoher Kontrast usw.](images-tailored-for-scale-theme-contrast.md)
+* [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](localize-strings-ui-manifest.md)
+* [Laden von Bildern und Ressourcen mit Anpassung an Skalierung, Design, hohen Kontrast usw.](images-tailored-for-scale-theme-contrast.md)

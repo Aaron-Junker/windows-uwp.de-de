@@ -234,6 +234,6 @@ In diesem Beispiel wird eine Hintergrundaufgabe deklariert, die in einem neuen P
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Eine Hintergrundaufgabe Debuggen](debug-a-background-task.md)
-* [Eine Hintergrundaufgabe registrieren](register-a-background-task.md)
+* [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
+* [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)

@@ -51,15 +51,15 @@ Die Image-Knoten in der Bindung sollten die folgenden Parameter enthalten:
 
 + **src**
     + Die URI des Elements. Dies kann sowohl HTTP/HTTPS web URI, eine msappx URI oder ein Pfad zu einer lokalen Datei sein.
-+ **spritesheet-src**
++ **Spritesheet-Src-**
     + Die URI des Elements. Dies kann sowohl HTTP/HTTPS web URI, eine msappx URI oder ein Pfad zu einer lokalen Datei sein. Ist nur für Spritesheet-Animationen erforderlich.
-+ **spritesheet-height**
++ **Spritesheet Höhe**
     + Die Framehöhe (in Pixeln). Ist nur für Spritesheet-Animationen erforderlich.
-+ **spritesheet-fps**
++ **Spritesheet-f/s**
     + Frames pro Sekunde (FPS). Ist nur für Spritesheet-Animationen erforderlich. Es werden nur Werte von 1‑120 unterstützt.
-+ **spritesheet-startingFrame**
++ **Spritesheet-startingFrame**
     + Die Framenummer, um die Animation zu starten. Wird nur für Spritesheet-Animationen verwendet und hat den Standardwert 0, wenn keine Angabe erfolgt.
-+ **alt**
++ **ALT-Taste**
     + Text-Zeichenfolge, die als Bildschirmsprachausgabe verwendet wird.
 
 > [!NOTE]

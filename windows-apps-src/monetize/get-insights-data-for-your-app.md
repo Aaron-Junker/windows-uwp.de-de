@@ -49,7 +49,7 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 | applicationId | string | Die [Store ID](in-app-purchases-and-trials.md#store-ids) der app für das Insights-Daten abgerufen werden sollen. Wenn Sie diesen Parameter nicht angeben, enthält der Antworttext die Insights-Daten für alle apps, die mit Ihrem Konto registriert.  |  Nein  |
 | startDate | date | Das Startdatum in den Datumsbereich für Insights-Daten abgerufen werden soll. Der Standardwert ist 30 Tage vor dem aktuellen Datum. |  Nein  |
 | endDate | date | Das Enddatum in den Datumsbereich für Insights-Daten abgerufen werden soll. Der Standardwert ist das aktuelle Datum. |  Nein  |
-| filter | string  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede Anweisung enthält einen Feldnamen aus dem Antworttext und einen Wert, die mit den Operatoren **eq** oder **ne** verknüpft sind. Anweisungen können mit **and** oder **or** kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Z. B. *Filter = DataType-Eq "Übernahme"*. <p/><p/>Sie können die folgenden Filterfelder angeben:<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul> | Nein   |
+| filter | string  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede Anweisung enthält einen Feldnamen aus dem Antworttext und einen Wert, die mit den Operatoren **eq** oder **ne** verknüpft sind. Anweisungen können mit **and** oder **or** kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Z. B. *Filter = DataType-Eq "Übernahme"*. <p/><p/>Sie können die folgenden Filterfelder angeben:<p/><ul><li><strong>Erwerb</strong></li><li><strong>Integrität</strong></li><li><strong>Verwendung</strong></li></ul> | Nein   |
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 
@@ -78,7 +78,7 @@ Elemente im Array *Value* enthalten die folgenden Werte.
 |---------------------|--------|-------------------------------------------|
 | applicationId       | string | Die Store-ID der app für die Sie Insights-Daten abgerufen werden.     |
 | insightDate                | string | Das Datum, an dem die Änderung in einer bestimmten Metrik erkannt wurden. Dieses Datum stellt das Ende der Woche, die in der wir eine erhebliche Leistungssteigerung erkannt oder verringern Sie in einer Metrik im Vergleich zu einer Woche davor. |
-| dataType     | string | Eine der folgenden Zeichenfolgen, die den Bereich Allgemeine Analytics gibt an, dem diese Information beschreibt:<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul>   |
+| Datentyp     | string | Eine der folgenden Zeichenfolgen, die den Bereich Allgemeine Analytics gibt an, dem diese Information beschreibt:<p/><ul><li><strong>Erwerb</strong></li><li><strong>Integrität</strong></li><li><strong>Verwendung</strong></li></ul>   |
 | insightDetail          | array | Eine oder mehrere [InsightDetail Werte](#insightdetail-values) , die die Details für den aktuellen Insight darstellen.    |
 
 
@@ -88,7 +88,7 @@ Elemente im Array *Value* enthalten die folgenden Werte.
 |---------------------|--------|-------------------------------------------|
 | FactName           | string | Die folgenden Werte, die die Metrik gibt an, die den aktuellen Insight oder die aktuelle Dimension beschreibt, auf der Grundlage der **DataType** Wert.<ul><li>Für **Integrität**, dieser Wert ist immer **Trefferanzahl**.</li><li>Für **Übernahme**, dieser Wert ist immer **AcquisitionQuantity**.</li><li>Für **Nutzung**, dieser Wert kann eine der folgenden Zeichenfolgen:<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
 | SubDimensions         | array |  Ein oder mehrere Objekte, die eine einzelne Metrik für die Einblicke zu beschreiben.   |
-| PercentChange            | string |  Der Prozentsatz, den die Metrik für Ihre gesamte Kundenbasis geändert.  |
+| Prozent            | string |  Der Prozentsatz, den die Metrik für Ihre gesamte Kundenbasis geändert.  |
 | DimensionName           | string |  Der Name der Metrik in der aktuellen Dimension beschrieben. Beispiele hierfür sind **EventType**, **Markt**, **"DeviceType"**, **PackageVersion**, **AcquisitionType**, **Altersgruppe** und **Geschlecht**.   |
 | DimensionValue              | string | Der Wert der Metrik, die in der aktuellen Dimension beschrieben wird. Z. B. wenn **DimensionName** ist **EventType**, **DimensionValue** möglicherweise **Absturz** oder **hängen** .   |
 | FactValue     | string | Der Absolute Wert der Metrik auf das Datum, an das der Einblick erkannt wurde.  |

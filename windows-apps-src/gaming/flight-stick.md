@@ -225,6 +225,6 @@ The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-AT
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Windows.Gaming.Input.UINavigationController class](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
+* [Windows.Gaming.Input.UINavigationController-Klasse](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Windows.Gaming.Input.IGameController-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
 * [Eingabe-Methoden für Spiele](input-practices-for-games.md)

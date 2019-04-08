@@ -10,7 +10,7 @@ keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c834257e883d3aeb8594001344abd6ef14682c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57596565"
@@ -127,7 +127,7 @@ Unter Befehl und Steuerung wird die Verwendung von Sprachbefehlen zum Aktivieren
 
 Da Befehl und Steuerung entscheidend für eine erfolgreiche Benutzeroberfläche ist, wird ein einzelner Eingabetyp im Allgemeinen nicht empfohlen. Die Spracherkennung ist in der Regel eine von mehreren Eingabeoptionen für einen Benutzer, die von seinen Vorlieben und Hardwarefunktionen abhängen.
 
-**Dictation**
+**Diktat**
 
 Die einfachste Methode der Spracheingabe. Jede Äußerung wird in Text umgewandelt.
 

@@ -27,4 +27,4 @@ Ab Version 1709 von Windows 10 sind UWP-Apps in der Lage, Audio- und Videosequen
 
 ## <a name="see-also"></a>Weitere Informationen
 
-* [Gaming](index.md)
+* [Spiele](index.md)

@@ -74,7 +74,7 @@ Die folgenden Fehlercodes stehen im Zusammenhang mit der [Selbstinstallationen v
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-app-Käufe und Testversionen](in-app-purchases-and-trials.md)
+* [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Produktinformationen für apps und -Add-Ons](get-product-info-for-apps-and-add-ons.md)
 * [Abrufen von Lizenzinformationen für apps und -Add-Ons](get-license-info-for-apps-and-add-ons.md)
 * [Aktivieren von in-app-Käufe von apps und -Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)

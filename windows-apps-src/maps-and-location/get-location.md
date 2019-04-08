@@ -22,7 +22,7 @@ Ermitteln Sie den Standort des Benutzers, und reagieren Sie auf Änderungen des 
 
 **Tipp** Um mehr über das Zugreifen auf den Benutzerstandort in Ihrer App zu erfahren, laden Sie das folgende Beispiel aus dem [Repository Beispiele für Universelle Windows-Plattform](https://go.microsoft.com/fwlink/p/?LinkId=619979) auf GitHub herunter.
 
--   [Universelle Windows-Plattform (UWP)-Map-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>Aktivieren der Positionsfunktion
 
@@ -269,4 +269,4 @@ Bevor Ihre App auf die Position des Benutzers zugreifen kann, muss **Position** 
 
 * [UWP-Geolocation-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Entwurfsrichtlinien für geofencing](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Entwurfsrichtlinien für apps mit Standortbestimmung](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Entwurfsrichtlinien für Apps mit Positionsbestimmung](https://msdn.microsoft.com/library/windows/apps/hh465148)

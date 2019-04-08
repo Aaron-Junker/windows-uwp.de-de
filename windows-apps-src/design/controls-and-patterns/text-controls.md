@@ -25,7 +25,7 @@ Textsteuerelemente bestehen aus Texteingabefeldern, Kennwortfeldern, Feldern mit
 - Für die Anzeige von schreibgeschütztem Text stehen die Steuerelemente [TextBlock](text-block.md) und [RichTextBlock](rich-text-block.md) zur Verfügung.
 - Die Steuerelemente für die Texteingabe und Bearbeiten von sind: [Textfeld](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md), und [PasswordBox](password-box.md).
 
-> **Wichtige APIs**: [TextBlock-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [RichTextBlock-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [TextBox-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [RichEditBox Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [AutoSuggestBox Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [PasswordBox-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
+> **Wichtige APIs:** [TextBlock-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [RichTextBlock-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [TextBox-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [RichEditBox Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [AutoSuggestBox Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [PasswordBox-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -79,7 +79,7 @@ Es bestehen zahlreiche Möglichkeiten, Benutzereingaben in Ihrer App zu erhalten
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/category/Text">die App zu öffnen und Textsteuerelemente in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
@@ -103,7 +103,7 @@ Kennwortfeld
 Informationen und Beispiele für jedes Textsteuerelement finden Sie in den folgenden Artikeln.
 
 -   [AutoSuggestBox](auto-suggest-box.md)
--   [PasswordBox](password-box.md)
+-   [PasswordBox-Element](password-box.md)
 -   [RichEditBox](rich-edit-box.md)
 -   [RichTextBlock](rich-text-block.md)
 -   [TextBlock](text-block.md)
@@ -117,7 +117,7 @@ Richtlinien für Schriftarten finden Sie in den folgenden Artikeln:
 
 ## <a name="pen-input"></a>Stifteingabe
 
-**Gilt für:** TextBox, RichEditBox, AutoSuggestBox
+**Gilt für:** Textfeld RichEditBox, AutoSuggestBox
 
 Ab Windows 10, Version 1803, verfügen XAML-Texteingabefelder über eine integrierte Unterstützung für Stifteingaben mit [Windows Ink](../input/pen-and-stylus-interactions.md). Wenn ein Benutzer einen Windows-Stift für Eingaben in ein Textfeld verwendet, wird das Textfeld transformiert, sodass der Benutzer mit einem Stift direkt in das Feld schreiben kann, anstatt einen separaten Eingabebereich öffnen zu müssen.
 
@@ -127,7 +127,7 @@ Weitere Informationen finden Sie unter [Texteingabe, mit der Ansicht Handschrift
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Auswählen der richtigen Tastatur für Ihr Textsteuerelement
 
-**Gilt für:** TextBox, PasswordBox RichEditBox
+**Gilt für:** Textfeld PasswordBox RichEditBox
 
 Um Benutzern die Eingabe von Daten mit der Bildschirmtastatur oder dem Soft Input Panel (SIP) zu erleichtern, können Sie den Eingabeumfang des Textsteuerelements an die Art der Daten anpassen, die der Benutzer vermutlich eingeben wird.
 
@@ -144,7 +144,7 @@ Weitere Informationen finden Sie unter [Verwenden des Eingabeumfangs zum Ändern
 
 ## <a name="color-fonts"></a>Farbige Schriftarten
 
-**Gilt für:** TextBlock, RichTextBlock, TextBox, RichEditBox
+**Gilt für:** TextBlock-Element RichTextBlock, Textfeld RichEditBox
 
 Windows bietet bei Schriftarten die Möglichkeit, für jede Glyphe mehrere farbige Schichten zu verwenden. Die Segoe UI Emoji-Schriftart definiert z. B. farbige Versionen der Emoticon- und anderer Emoji-Zeichen.
 
@@ -174,7 +174,7 @@ Ihre App kann zwischen Textabsätzen ein Absatztrennzeichen einfügen. Die Verwe
 
 ## <a name="guidelines-for-spell-checking"></a>Richtlinien für die Rechtschreibprüfung
 
-**Gilt für:** TextBox, RichEditBox
+**Gilt für:** Textfeld RichEditBox
 
 Während der Texteingabe und -bearbeitung wird der Benutzer durch die Rechtschreibprüfung darauf aufmerksam gemacht, dass ein Wort falsch geschrieben ist, indem das Wort mit einer roten Wellenlinie unterstrichen wird. Außerdem wird dem Benutzer eine Korrekturmöglichkeit angeboten.
 

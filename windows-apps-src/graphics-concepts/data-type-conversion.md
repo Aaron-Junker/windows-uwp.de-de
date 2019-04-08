@@ -235,7 +235,7 @@ Im Rahmen von Direct3D werden Festkomma-Ganzzahl-Darstellungen auf zwei Arten ve
 <td align="left">FLOAT</td>
 <td align="left"><p>Gehen wir davon aus, dass eine bestimmte Festkommadarstellung in einen Gleitkommawert konvertiert wird, der nicht mehr als 24 Bit Informationen speichern kann und bei dem nicht mehr 23 Bits für die Nachkommakomponente reserviert sind. Nehmen wir an, die Festkommazahl fxp liegt in der Form i,f (i = Ganzahl-Bits, f = Nachkomma-Bits) vor. Die Konvertierung zu einem Gleitkommawert lässt sich in Pseudocode folgendermaßen darstellen.</p>
 <p>float Ergebnis = (float)(fxp &gt;&gt; f) + // Ganzzahl</p>
-((float)(fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); // extract fraction</td>
+((Float) (Fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); / / extract Bruch</td>
 </tr>
 </tbody>
 </table>

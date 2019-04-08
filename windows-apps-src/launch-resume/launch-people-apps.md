@@ -58,7 +58,7 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 </div>
 <div> 
 </div></td>
-<td align="left">ms-people:viewcontact?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
+<td align="left">MS-Benutzer: Viewcontact? Kontakt-ID =&lt;Contactid&gt;&amp;AggregatedId =&lt;Aggid&gt;&amp;"PhoneNumber" = &lt;Phonenum&gt;&amp;-e-Mail =&lt;-e-Mail &gt; &amp;ContactName =&lt;Namen&gt;&amp;Kontakt =&lt;Contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">Startet mit einer „Kontakt speichern“-Seite innerhalb der Kontakte-App, um den angegeben Kontakt mit der angegebenen Telefonnummer oder E-Mail-Adresse zu speichern.
@@ -255,7 +255,7 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 
 </tr>
 <tr class="even">
-<td align="left"><b>HomePhone</b></td>
+<td align="left"><b>"HomePhone"</b></td>
 <td align="left"><p>Optional.</p>
 <p>Private Telefonnummer des Kontakts.</p></td>
 </tr>
@@ -267,19 +267,19 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 </tr>
 
 <tr class="even">
-<td align="left"><b>LastName</b></td>
+<td align="left"><b>"LastName"</b></td>
 <td align="left"><p>Optional.</p>
 <p>Nachname des Kontakts.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>MiddleName</b></td>
+<td align="left"><b>middleName</b></td>
 <td align="left"><p>Optional.</p>
 <p>Zweiter Vorname des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>MobilePhone</b></td>
+<td align="left"><b>"Mobilephone"</b></td>
 <td align="left"><p>Optional.</p>
 <p>Mobiltelefonnummer des Kontakts.</p></td>
 </tr>
@@ -357,13 +357,13 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 </tr>
 
 <tr class="odd">
-<td align="left"><b>WorkEmail</b></td>
+<td align="left"><b>Geschäftlichen</b></td>
 <td align="left"><p>Optional.</p>
 <p>Geschäftliche E-Mail-Adresse des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>WorkPhone</b></td>
+<td align="left"><b>Tel_geschäftlich</b></td>
 <td align="left"><p>Optional.</p>
 <p>Geschäftliche Telefonnummer des Kontakts.</p></td>
 </tr>

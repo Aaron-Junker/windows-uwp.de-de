@@ -46,7 +46,7 @@ Hersteller bieten Geräte an, die sowohl für das Quer- als auch das Hochformat 
 | Ausrichtung | Für Querformat ausgelegt | Für Hochformat ausgelegt |
 |-------------|-----------------|----------------|
 | **Querformat** | ![Querformatgerät im Querformat](images/sensor-orientation-0.PNG) | ![Hochformatgerät im Querformat](images/sensor-orientation-1.PNG) |
-| **Portrait** | ![Querformatgerät im Hochformat](images/sensor-orientation-2.PNG) | ![Hochformatgerät im Hochformat](images/sensor-orientation-3.PNG) |
+| **Hochformat** | ![Querformatgerät im Hochformat](images/sensor-orientation-2.PNG) | ![Hochformatgerät im Hochformat](images/sensor-orientation-3.PNG) |
 | **LandscapeFlipped** | ![Querformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-4.PNG) | ![Hochformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-5.PNG) | 
 | **PortraitFlipped** | ![Querformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-6.PNG)| ![Hochformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-7.PNG) |
 
@@ -110,7 +110,7 @@ Die folgende Tabelle zeigt, wie Beschleunigungsmesser- und Gyrometerdaten für d
 | Referenzachsen        |  X |  „Y“ zugeordnet ist | Z |
 |-----------------------|----|----|---|
 | **Querformat**         |  X |  „Y“ zugeordnet ist | Z |
-| **Portrait**          |  „Y“ zugeordnet ist | -X | Z |
+| **Hochformat**          |  „Y“ zugeordnet ist | -X | Z |
 | **LandscapeFlipped**  | -X | -Y | Z |
 | **PortraitFlipped**   | -Y |  X | Z |
 
@@ -173,7 +173,7 @@ Im vorangehenden Ausdruck wird das absolute Objekt von den Sensordaten zurückge
 | Bildschirmausrichtung  | Drehung gegen den Uhrzeigersinn um Z | Referenzquaternion (Drehung in umgekehrter Richtung) | Referenzdrehungsmatrix (Drehung in umgekehrter Richtung) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
 | **Querformat**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
-| **Portrait**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
+| **Hochformat**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
-| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1 0 0<br/> 0 0 1]             |
+| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[1, 0 0<br/> 1 0 0<br/> 0 0 1]             |
 

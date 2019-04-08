@@ -1,6 +1,6 @@
 ---
 Description: Informationen zu steuerlichen Aspekten bei der Preisfestlegung, zu Auswirkungen auf Auszahlungen sowie zu Steuerpflichten finden Sie in der folgenden Tabelle unter dem Land bzw. der Region der Verteilung.
-title: Steuerdaten
+title: Steuerinformationen
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.date: 01/31/2019
 ms.topic: article

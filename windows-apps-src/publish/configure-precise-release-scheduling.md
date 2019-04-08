@@ -46,9 +46,9 @@ In der Dropdownliste **Release** können Sie festlegen, wann Ihre App im Store v
 
 Hier sind die Optionen, die Sie für den **Releasezeitplan** eines Produkts konfigurieren können:
 - **So bald wie möglich**: Das Produkt wird freigegeben, sobald es zertifiziert und veröffentlicht wird. Dies ist die Standardoption.
-- **at**: Das Produkt wird freigegeben, auf das Datum und Uhrzeit, die Sie auswählen. Ihnen stehen zwei zusätzliche Optionen zur Auswahl:
+- **am**: Das Produkt wird freigegeben, auf das Datum und Uhrzeit, die Sie auswählen. Ihnen stehen zwei zusätzliche Optionen zur Auswahl:
    - **UTC**: Die Zeit, die Sie auswählen, werden die Zeit (Universal Coordinated Time, UTC), damit die app-Releases gleichzeitig überall Zeit.
-   - **Local**: Die Zeit, die Sie auswählen, wird die Verwendung in allen Zeitzonen, die einen Markt zugeordnet sein. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
+   - **Lokale**: Die Zeit, die Sie auswählen, wird die Verwendung in allen Zeitzonen, die einen Markt zugeordnet sein. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
 - **nicht geplant**: Die app wird in der Store nicht verfügbar sein. Wenn Sie diese Option auswählen, können Sie die App im Store später zur Verfügung stellen, indem Sie eine neue Übermittlung erstellen und eine der anderen Optionen auswählen.
 
 

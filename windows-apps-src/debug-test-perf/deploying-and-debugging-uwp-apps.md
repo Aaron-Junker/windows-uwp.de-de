@@ -242,5 +242,5 @@ Einer der am häufigsten in WinDbg verwendeten Befehle ist `!analyze -v`. Er wir
 Eine vollständige Liste aller WinDbg-Befehle finden Sie unter [Debuggerbefehle](https://msdn.microsoft.com/library/ff540507).
 
 ## <a name="related-topics"></a>Verwandte Themen
-- [Test- und debugging-Tools für die Windows-Verwaltungsinstrumentation (Process Lifetime Management, PLM)](testing-debugging-plm.md)
+- [Test- und Debugtools für die Prozesslebensdauer-Verwaltung (PLM)](testing-debugging-plm.md)
 - [Debugging, Tests und Leistung](index.md)

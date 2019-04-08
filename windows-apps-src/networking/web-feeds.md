@@ -20,7 +20,7 @@ ms.locfileid: "57660305"
 
 -   [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819)
 -   [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)
--   [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632)
+-   [**"Windows.Web.Syndication"**](https://msdn.microsoft.com/library/windows/apps/br243632)
 
 Mithilfe von Fremdanbieterfeeds, die entsprechend den RSS- und Atom-Standards mit Features im [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632)-Namespace generiert werden, können Sie die aktuellsten und beliebtesten Webinhalte abrufen oder erstellen.
 

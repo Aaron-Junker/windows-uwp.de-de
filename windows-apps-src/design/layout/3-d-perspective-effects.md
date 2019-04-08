@@ -99,7 +99,7 @@ Sie können den Drehmittelpunkt mithilfe der Eigenschaften [**CenterOfRotationX*
 </Image>
 ```
 
-**CenterOfRotationY = "0.5" (default)**
+**CenterOfRotationY = "0.5" (Standard)**
 
 ![CenterOfRotationY ist "0,5"](images/3drotatexminus35.png)
 ```xml
@@ -110,7 +110,7 @@ Sie können den Drehmittelpunkt mithilfe der Eigenschaften [**CenterOfRotationX*
 </Image>
 ```
 
-**CenterOfRotationY = "0.1"**
+**CenterOfRotationY = "0,1"**
 
 ![CenterOfRotationY ist "0,1"](images/3dcenterofrotationy0point1.png)
 
@@ -124,7 +124,7 @@ Beachten Sie, wie das Bild um den Mittelpunkt gedreht wird, wenn die [**CenterOf
 </Image>
 ```
 
-**CenterOfRotationX = "0.5" (default)**
+**CenterOfRotationX = "0.5" (Standard)**
 
 ![CenterOfRotationX ist "0,5"](images/3drotateyminus35.png)
 ```xml

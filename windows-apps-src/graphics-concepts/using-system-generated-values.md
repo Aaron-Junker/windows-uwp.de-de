@@ -41,7 +41,7 @@ Die [Pixel-Shader (PS)-Phase](pixel-shader-stage--ps-.md) hat keine separate Ein
 
 Die automatische Erzeugung einer Grundtyp-ID für benachbarte Grundtypen wird nicht unterstützt. Für Grundtypen mit Nachbarschaft, etwa einen Dreieckstreifen mit Nachbarschaft, wird nur für die inneren Grundtypen (die nicht-benachbarten Grundtypen) eine Grundtyp-ID geführt, ähnlich wie der Satz der Grundtypen in einem Dreieckstreifen ohne Nachbarschaft.
 
-## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>InstanceID
+## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>Instanz-ID
 
 
 Jede Shader-Phase identifiziert anhand einer Instanz-ID die Instanz der Geometrie, die derzeit verarbeitet wird. Dies ist eine 32-Bit-Ganzzahl ohne Vorzeichen, deren Standardwert 0 ist.
@@ -62,7 +62,7 @@ Die folgenden Tabellen zeigen die vom System generierten Werte für die Instanz 
 | Scheitelpunktdaten    | C, U | D, U | E, U | F, U | G, U | H, U | I, U | J, U | K, U | L, U |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| **Instanz-ID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
  
 
@@ -71,7 +71,7 @@ Dreieckstreifen-Instanz U hat 3 Dreieck-Grundtypen, mit den folgenden vom System
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **InstanceID**  | 0   | 0   | 0   |
+| **Instanz-ID**  | 0   | 0   | 0   |
 
  
 
@@ -80,7 +80,7 @@ Die folgenden Tabellen zeigen die vom System generierten Werte für die Instanz 
 | Scheitelpunktdaten    | C, V | D, V | E, V | F, V | G, V | H, V | I, V | J, V | K, V | L, V |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
+| **Instanz-ID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
  
 
@@ -89,7 +89,7 @@ Dreieckstreifen-Instanz V hat 3 Dreieck-Grundtypen, mit den folgenden vom System
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **InstanceID**  | 1   | 1   | 1   |
+| **Instanz-ID**  | 1   | 1   | 1   |
 
  
 

@@ -22,7 +22,7 @@ Sie können Ihrer eigene App programmgesteuert an die Taskleiste anheften und [I
 > [!IMPORTANT]
 > **Erfordert Fall Creators Update-**: Sie müssen SDK 16299 ausgerichtet und Build 16299 oder höher, um die Taskleisten-APIs verwenden ausgeführt werden.
 
-> **Wichtige APIs**: [TaskbarManager-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **Wichtige APIs:** [TaskbarManager-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>Wenn bitten Sie den Benutzer Ihre App an die Taskleiste anzuheften? 

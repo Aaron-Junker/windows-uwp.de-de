@@ -78,8 +78,8 @@ In diesem Beispiel die **TextBlock.Text** -Eigenschaft ergibt **Button.Content.T
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Schnellstart: Steuerelementvorlagen](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [Die Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
+* [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [**"ControlTemplate"**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [Übersicht über XAML](xaml-overview.md)
 * [Übersicht über Abhängigkeitseigenschaften](dependency-properties-overview.md)
  

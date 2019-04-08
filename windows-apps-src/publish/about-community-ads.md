@@ -42,5 +42,5 @@ Sie müssen Ihre App nicht noch einmal veröffentlichen, nachdem Sie Ihre Auswah
 
 ### <a name="related-topics"></a>Verwandte Themen
 
-* [In-app-Werbung](in-app-ads.md)
+* [In-App-Anzeigen](in-app-ads.md)
 * [Erstellen Sie eine Ad-Kampagne für Ihre app](create-an-ad-campaign-for-your-app.md)

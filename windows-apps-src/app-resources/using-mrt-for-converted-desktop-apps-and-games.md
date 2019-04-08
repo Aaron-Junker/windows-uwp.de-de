@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, mrt, pri. Ressourcen, Spiele, Centennial, Desktop Ap
 ms.localizationpriority: medium
 ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57597015"
@@ -787,4 +787,4 @@ Dies erzeugt einen signiertes `.appxbundle` -Datei, die das Hauptpaket und alle 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Passen Sie Ihre Ressourcen für die Sprache, Skalierung, hoher Kontrast und anderen Qualifizierer](tailor-resources-lang-scale-contrast.md)
+* [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](tailor-resources-lang-scale-contrast.md)

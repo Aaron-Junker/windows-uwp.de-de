@@ -4,7 +4,7 @@ description: In diesem einführenden Artikel app Architekten und Entwicklern bes
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Sicherheit
+keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -463,29 +463,29 @@ Wenn die Daten auf dem Gerät empfangen werden, bietet das Windows-App-Modell me
 
 -   [Authentifizierung und Benutzeridentität](authentication-and-user-identity.md)
 -   [Windows Hello](microsoft-passport.md)
--   [Das Schließfach für Anmeldeinformationen](credential-locker.md)
--   [Web Authentication broker](web-authentication-broker.md)
+-   [Schließfach für Anmeldeinformationen](credential-locker.md)
+-   [Webauthentifizierungsbroker](web-authentication-broker.md)
 -   [Fingerabdruckbiometrie](fingerprint-biometrics.md)
 -   [Smartcards](smart-cards.md)
 -   [Gemeinsam genutzter Zertifikate](share-certificates.md)
 -   [Kryptografie](cryptography.md)
 -   [Zertifikate](certificates.md)
 -   [Kryptografische Schlüssel](cryptographic-keys.md)
--   [Schutz von Daten](data-protection.md)
--   [Signaturen, Hashes und Macintosh-Computer](macs-hashes-and-signatures.md)
--   [Exporteinschränkungen für Kryptografie](export-restrictions-on-cryptography.md)
--   [Kryptografie-Aufgaben](common-cryptography-tasks.md)
+-   [Datenschutz](data-protection.md)
+-   [MACs, Hashes und Signaturen](macs-hashes-and-signatures.md)
+-   [Exportbeschränkungen hinsichtlich Kryptografie](export-restrictions-on-cryptography.md)
+-   [Allgemeine Kryptografieaufgaben](common-cryptography-tasks.md)
 
 ### <a name="62-code-samples"></a>6.2 Codebeispiele
 
--   [Das Schließfach für Anmeldeinformationen](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
+-   [Schließfach für Anmeldeinformationen](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
 -   [Auswahl der Anmeldeinformationen](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
 -   [Gerätesperre mit Azure-Anmeldung](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
 -   [Unternehmensdatenschutz](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
 -   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/KeyCredentialManager)
 -   [Smartcards](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)
 -   [Web-kontoverwaltung](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
--   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
+-   [Webauthenticationbroker-Klasse](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
 
 ### <a name="63-api-reference"></a>6.3 API-Referenz
 

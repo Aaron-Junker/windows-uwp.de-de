@@ -21,7 +21,7 @@ ms.locfileid: "57644925"
 
 Das Bewertungssteuerelement ermöglicht Benutzern das Anzeigen und Festlegen von Bewertungen, die den Grad der Zufriedenheit mit Inhalten und Diensten widerspiegeln. Benutzer können per Toucheingabe, Stift, Maus, Gamepad und Tastatur mit dem Bewertungssteuerelement interagieren. Die Anleitungen zeigen, wie die Funktionen des Bewertungssteuerelements verwendet werden, um Flexibilität und Anpassung bereitzustellen.
 
-> **Wichtige APIs**: [RatingControl-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> **Wichtige APIs:** [RatingControl-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ![Beispiel für Bewertungssteuerelement](images/rating_rs2_doc_ratings_intro.png)
 
@@ -34,7 +34,7 @@ Das Bewertungssteuerelement ermöglicht Benutzern das Anzeigen und Festlegen von
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/RatingControl">die App zu öffnen und RatingControl in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>

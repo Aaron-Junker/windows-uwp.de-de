@@ -131,7 +131,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
+| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [ **ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
  
 
@@ -200,11 +200,11 @@ Die folgende Tabelle enthält einige Zuordnungen für allgemeine systeminterne O
 
 | OpenGL-Systemwert | Verwenden Sie diese HLSL-Semantik:                                                                                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| gl\_Position        | POSITION(n) für Scheitelpunkt-Pufferdaten. SV\_POSITION bietet eine Pixelposition, an dem PixelShader und kann nicht geschrieben werden, von Ihrer app.                                        |
-| gl\_Normal          | NORMAL(n) für vom Scheitelpunktpuffer bereitgestellte Normalendaten.                                                                                                                 |
-| gl\_TexCoord\[n\]   | TEXCOORD(n) für Textur-UV-Koordinatendaten (ST in manchen OpenGL-Dokumentationen), die an einen Shader übergeben werden.                                                                       |
-| gl\_FragColor       | COLOR(n) für RGBA-Farbdaten, die an einen Shader übergeben werden. Diese Daten werden wie Koordinatendaten behandelt. Durch die Semantik können Sie nur leichter erkennen, dass es sich um Farbdaten handelt. |
-| gl\_FragData\[n\]   | SV\_Ziel\[n\] zum Schreiben von einem Pixel-Shader auf eine Textur oder andere pixelpuffer.                                                                               |
+| GL\_Position        | POSITION(n) für Scheitelpunkt-Pufferdaten. SV\_POSITION bietet eine Pixelposition, an dem PixelShader und kann nicht geschrieben werden, von Ihrer app.                                        |
+| GL\_– Normal          | NORMAL(n) für vom Scheitelpunktpuffer bereitgestellte Normalendaten.                                                                                                                 |
+| GL\_TexCoord\[n\]   | TEXCOORD(n) für Textur-UV-Koordinatendaten (ST in manchen OpenGL-Dokumentationen), die an einen Shader übergeben werden.                                                                       |
+| GL\_FragColor       | COLOR(n) für RGBA-Farbdaten, die an einen Shader übergeben werden. Diese Daten werden wie Koordinatendaten behandelt. Durch die Semantik können Sie nur leichter erkennen, dass es sich um Farbdaten handelt. |
+| GL\_FragData\[n\]   | SV\_Ziel\[n\] zum Schreiben von einem Pixel-Shader auf eine Textur oder andere pixelpuffer.                                                                               |
 
  
 

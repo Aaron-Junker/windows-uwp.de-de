@@ -122,7 +122,7 @@ Die Anforderungs- und Antworttexte für diese Methoden enthalten die folgenden F
 |  width   |  Ganzzahl   |  Die Breite des Werbemittels.     |  Nein    |     |    Ja   |       
 |  landingUrl   |  string   |  Wenn Sie für die Messung von Installationsanalysen für Ihre App einen Kampagnenachverfolgungsdienst wie Kochava, AppsFlyer oder Tune verwenden, weisen Sie die Nachverfolgungs-URL in diesem Feld zu, wenn Sie die POST-Methode aufrufen (wenn angegeben; dieser Wert muss ein gültiger URI sein). Wenn Sie keinen Kampagnennachverfolgungsdienst verwenden, lassen Sie diesen Wert beim Aufruf der POST-Methode aus. (In diesem Fall wird diese URL automatisch erstellt.)   |  Nein    |     |   Ja    |       
 |  format   |  string   |   Das Anzeigenformat. Zurzeit ist **Banner** der einzige Wert, der unterstützt wird.    |   Nein    |  Banner   |  Nein     |       
-|  imageAttributes   | [ImageAttributes](#image-attributes)    |   Stellt Attribute für das Werbemittel bereit.     |   Nein    |      |   Ja    |       
+|  imageAttributes   | ["ImageAttributes"](#image-attributes)    |   Stellt Attribute für das Werbemittel bereit.     |   Nein    |      |   Ja    |       
 |  storeProductId   |  string   |   Die [Store-ID](in-app-purchases-and-trials.md#store-ids) der App, der diese Anzeigenkampagne zugeordnet ist. Ein Beispiel für eine Store-ID eines Produkts ist 9nblggh42cfd.    |   Nein    |    |  Nein     |   |  
 
 

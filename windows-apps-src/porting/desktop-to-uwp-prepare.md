@@ -14,7 +14,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57600895"
 ---
-# <a name="prepare-to-package-a-desktop-application"></a>Packen eine desktop-Anwendung vorbereiten
+# <a name="prepare-to-package-a-desktop-application"></a>Vorbereiten des Verpackens einer Desktopanwendung
 
 In diesem Artikel sind Punkte aufgeführt, die Sie vor dem Verpacken von Desktop-Apps wissen sollten. Möglicherweise nicht viel, rufen Sie die Anwendung bereit für den Prozess der paketerstellung zu tun, aber wenn keines der folgenden Elemente bezieht sich auf Ihre Anwendung müssen Sie sie vor dem Packen. Denken Sie daran, dass Lizenzierung und automatische Updates im Rahmen des Microsoft Store erfolgen, sodass Sie alle mit diesen Aufgaben verbundenen Features aus Ihrer Codebasis entfernen können.
 

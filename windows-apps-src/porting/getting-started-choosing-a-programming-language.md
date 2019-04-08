@@ -29,7 +29,7 @@ Obwohl wir uns in diesem Artikel auf C# konzentrieren, bieten die restlichen Spr
 -   [Erstellen Sie Ihrer ersten UWP-app mit JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
 **Beachten Sie**  für Anwendungen, 3D-Grafiken zu verwenden, die OpenGL und OpenGL ES-Standards sind nicht für UWP-apps nativ verfügbar. Wenn Sie Ihren OpenGL ES-Code in Microsoft DirectX nicht neu schreiben möchten, könnte **Angle** von Interesse für Sie sein. Angle ist ein laufendes Projekt, das zum Konvertieren von OpenGL in DirectX entwickelt wurde, indem OpenGL-API-Aufrufe in DirectX-API-Aufrufe übersetzt werden. Weitere Informationen hierzu finden Sie unter den folgenden Themen:
--   [Angle](https://code.google.com/p/angleproject/)
+-   [Winkel](https://code.google.com/p/angleproject/)
 -   [Erstellen Sie Ihrer ersten UWP-app mit DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [UWP-app-Beispiele, die DirectX verwenden.](https://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [Wo befindet sich das DirectX SDK?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
@@ -40,7 +40,7 @@ Als iOS-Entwickler sind Sie die Arbeit mit Objective-C und Swift gewohnt. C# ist
 
 -   [Erstellen Ihrer ersten UWP-app, über C# oder Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
 -   [Verwenden Sie UWP-app-BeispieleC#](https://go.microsoft.com/fwlink/p/?LinkId=263453)
--   [Visual C#](https://go.microsoft.com/fwlink/p/?LinkId=263450)
+-   [Visual c#](https://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 Es folgt ein Vergleich einer Klasse, die sowohl in Objective-C als auch in C# geschrieben wurde. Die Objective-C-Version wird zuerst dargestellt. Die C#-Version folgt danach.
 

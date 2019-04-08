@@ -51,7 +51,7 @@ Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite mit d
 Im Bericht finden Sie das jeweilige Feedback von Ihren Kunden. Links neben dem Feedbacktext jedes Elements wird angezeigt, wie oft das Feedback von anderen Kunden im Feedback-Hub bewertet wurde. Sie können das Feedback auf drei Arten sortieren:
 
 - **Upvoted** (Standard): Zeigt, Feedback, das Upvoted von anderen Kunden, beginnend mit dem Feedback, das die meisten Upvotes empfangen wurde.
-- **Trending**: Zeigt, Feedback, das wurde Upvoted von anderen Kunden in den letzten sieben Tagen, mit dem Feedback, das Abrufen von der letzten Aktivität ab.
+- **Trend**: Zeigt, Feedback, das wurde Upvoted von anderen Kunden in den letzten sieben Tagen, mit dem Feedback, das Abrufen von der letzten Aktivität ab.
 - **Die letzte**: Zeigt alle Feedback, das Feedback, das die zuletzt Links ab.
 
 Neben jedem Kommentar werden der Typ des Feedbacks sowie das Datum angezeigt, an dem das Feedback abgegeben wurde. Sie sehen auch die Kunden-Markt, das bestimmte Paket, die auf dem Gerät installiert wurde wurden sie verwenden, wenn sie das Feedback, das den Typ des Geräts, links und **Windows Insider** , wenn der Kunde das Feedback wird übermittelt, ein Mitglied ist das Windows-Insider-Programm.

@@ -70,7 +70,7 @@ Wenn alle Kacheln hinter einem Speicherzugriffsbedarf von einem Shader eindeutig
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Streaming von Ressourcen](streaming-resources.md)
+[Streamingressourcen](streaming-resources.md)
 
  
 

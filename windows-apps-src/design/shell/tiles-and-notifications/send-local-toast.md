@@ -39,7 +39,7 @@ Wir werden die folgenden Schritte durchlaufen:
 * Behandeln der Vordergrundaktivierung
 * Behandeln der Hintergrundaktivierung
 
-> **Wichtige APIs**: [ToastNotification Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **Wichtige APIs:** [ToastNotification Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
@@ -61,7 +61,7 @@ Um dieses Thema vollständig zu verstehen, ist Folgendes hilfreich...
 
 Wir empfehlen die Installation der beiden folgenden NuGet-Pakete für Ihr Projekt. In unserem Codebeispiel werden diese Pakete verwendet. Am Ende des Artikels finden Sie die „Vanilla“-Codeausschnitte, die keine NuGet-Pakete verwenden.
 
-* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Toast-Nutzlasten über Objekte anstelle von unformatierten XML-Daten zu generieren.
+* ["Microsoft.Toolkit.uwp.Notifications"](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Toast-Nutzlasten über Objekte anstelle von unformatierten XML-Daten zu generieren.
 * [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/): Generieren und Analysieren von Abfragezeichenfolgen mitC#
 
 

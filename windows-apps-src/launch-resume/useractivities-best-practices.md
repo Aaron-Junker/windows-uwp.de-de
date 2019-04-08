@@ -102,6 +102,6 @@ Im folgenden Beispiel die Metadaten des Inhalts JSON, befolgen die jeweiligen St
 * [Benutzeraktivitäten (Projekt "ROME" Docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Mit Adaptive cards](https://docs.microsoft.com/adaptive-cards/)
 * [Mit Adaptive Cards Visualizer, Beispiele](https://adaptivecards.io/)
-* [Behandeln von URI-Aktivierung](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [Behandeln der URI-Aktivierung](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Interagieren mit Ihren Kunden auf jeder Plattform mit der Microsoft Graph, Aktivitätsfeed und mit Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

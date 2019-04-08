@@ -17,7 +17,7 @@ ms.locfileid: "57631475"
 # <a name="resources"></a>Ressourcen
 
 
-Eine Ressource ist ein Bereich im Speicher, auf den die Direct3D-Pipeline zugreifen kann. Damit die Pipeline effizient auf den Speicher zugreifen kann, müssen für die Pipeline bereitgestellte Daten (wie z. B. Input-Geometrie, Shader-Ressourcen und Texturen) in einer Ressource gespeichert werden. Es gibt zwei Arten von Ressourcen, aus denen alle Direct3D-Ressourcen abgeleitet sind: ein Puffer oder eine Textur. Bis zu 128 Ressourcen können für jede Pipeline-Phase aktiv sein.
+Eine Ressource ist ein Bereich im Speicher, auf den die Direct3D-Pipeline zugreifen kann. Damit die Pipeline effizient auf den Speicher zugreifen kann, müssen für die Pipeline bereitgestellte Daten (etwa Eingabegeometrie, Shaderressourcen und Texturen) in einer Ressource gespeichert werden. Es gibt zwei Arten von Ressourcen, aus denen alle Direct3D-Ressourcen abgeleitet sind: Puffer und Textur. Bis zu 128 Ressourcen können für jede Pipeline-Phase aktiv sein.
 
 Jede Anwendung wird in der Regel viele Ressourcen erstellen. Beispiele für Ressourcen sind unter anderem: Vertexpuffer, Indexpuffer, Konstantenpuffer, Texturen und Shader-Ressourcen. Es gibt mehrere Optionen, die bestimmen, wie Ressourcen verwendet werden können. Sie können Ressourcen erstellen, die stark typisiert sind oder weniger typisieren; sie können steuern, ob Ressourcen sowohl Lese- als auch Schreibzugriff erhalten; sie können Ressourcen nur für die CPU, nur die GPU oder beide zugänglich machen. Natürlich wird es einen Geschwindigkeit-Funktionalität-Kompromiss geben - je mehr Funktionen Sie einer Ressource gewähren, desto weniger Leistung sollten Sie erwarten.
 

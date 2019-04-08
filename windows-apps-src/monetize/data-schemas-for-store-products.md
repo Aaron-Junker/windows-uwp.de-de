@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, ExtendedJsonData, Store-Produkte, Schema
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57656105"
@@ -71,7 +71,7 @@ Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StoreP
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-app-Käufe und Testversionen](in-app-purchases-and-trials.md)
+* [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Produktinformationen für apps und -Add-Ons](get-product-info-for-apps-and-add-ons.md)
 * [Abrufen von Lizenzinformationen für apps und -Add-Ons](get-license-info-for-apps-and-add-ons.md)
 * [Aktivieren von in-app-Käufe von apps und -Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)

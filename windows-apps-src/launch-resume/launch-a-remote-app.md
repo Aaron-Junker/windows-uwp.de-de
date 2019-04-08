@@ -76,5 +76,5 @@ Das [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/
 
 [Remote-Systemen-API-Referenz](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [Verbundene apps und Geräten (Projekt "ROME") (Übersicht)](connected-apps-and-devices.md)  
-[Ermitteln von Remotegeräten](discover-remote-devices.md)  
+[Entdecken von Remotegeräten](discover-remote-devices.md)  
 Das [Beispiel für Remotesysteme](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) zeigt die Vorgehensweise zum Erkennen eines Remotesystems, Starten einer App auf einem Remotesystem und Verwenden von App-Diensten zum Senden von Nachrichten zwischen Apps, die auf zwei Systemen ausgeführt werden.

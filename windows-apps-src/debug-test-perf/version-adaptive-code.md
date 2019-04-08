@@ -80,7 +80,7 @@ Dieses Beispiel zeigt, wie Sie überprüfen, ob der **ChatWithoutEmoji**-Enumera
 > [!TIP]
 > Verlassen Sie sich beim Prüfen einer API nicht auf .NET-Sprachfeatures, sondern verwenden Sie statische Zeichenfolgen. Andernfalls versucht Ihre App unter Umständen, auf einen nicht definierten Typ zuzugreifen, was einen Absturz zur Laufzeit zur Folge hat.
 
-**C#**
+**C# -CODE**
 ```csharp
 // Create a TextBox control for sending messages 
 // and initialize an InputScope object.
@@ -125,7 +125,7 @@ Im vorherigen Beispiel wird das TextBox-Element erstellt, und alle Eigenschaften
          Loaded="messageBox_Loaded"/>
 ```
 
-**C#**
+**C# -CODE**
 ```csharp
 private void messageBox_Loaded(object sender, RoutedEventArgs e)
 {
@@ -198,7 +198,7 @@ Dieses Beispiel zeigt, wie Sie eine App erstellen, die abhängig davon, ob der M
 </UserControl>
 ```
 
-**C#**
+**C# -CODE**
 ```csharp
 using System;
 using Windows.Media.Core;
@@ -271,7 +271,7 @@ namespace MediaApp
 
 Rufen Sie zur Laufzeit **ApiInformation.IsTypePresent** auf, um zu prüfen, ob „MediaPlayerElement“ vorhanden ist. Falls ja, wird `MediaPlayerUserControl` geladen. Andernfalls wird `MediaElementUserControl` geladen.
 
-**C#**
+**C# -CODE**
 ```csharp
 public MainPage()
 {
@@ -307,7 +307,7 @@ Verwenden Sie Zustandsauslöser nur dann für adaptiven Code, wenn lediglich ger
 
 Der erste Schritt bei der Einrichtung eines erweiterbaren Zustandsauslösers besteht in der Verwendung von Unterklassen für die [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx)-Klasse zur Erstellung eines benutzerdefinierten Auslösers, dessen Aktivierung davon abhängt, ob eine API vorhanden ist. Dieses Beispiel zeigt einen Auslöser, der aktiviert wird, wenn das Vorhandensein der Eigenschaft der in XAML festgelegten `_isPresent`-Variablen entspricht.
 
-**C#**
+**C# -CODE**
 ```csharp
 class IsPropertyPresentTrigger : StateTriggerBase
 {
@@ -375,7 +375,7 @@ Der Auslöser in diesem Beispiel überprüft, ob die Eigenschaft vorhanden ist. 
 
 Dieses Beispiel zeigt, wie Sie abhängig davon, ob ein Wert vorhanden ist, unterschiedliche Enumerationswerte festlegen. Hierbei kommt ein benutzerdefinierter Zustandsauslöser zum Einsatz, um das gleiche Ergebnis zu erhalten wie im vorherigen Chatbeispiel. In diesem Beispiel wird der neue ChatWithoutEmoji-Eingabeumfang verwendet, wenn auf dem Gerät die Windows 10-Version 1607 ausgeführt wird. Andernfalls wird der Eingabeumfang **Chat** verwendet. Die visuellen Zustände, die diesen Auslöser verwenden, werden im *if-else*-Stil eingerichtet, wobei die Wahl des Eingabeumfangs davon abhängt, ob der neue Enumerationswert vorhanden ist.
 
-**C#**
+**C# -CODE**
 ```csharp
 class IsEnumPresentTrigger : StateTriggerBase
 {

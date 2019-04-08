@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Werbung, Advertising, AdControl, Problembehandlung, 
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57615915"
@@ -22,7 +22,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
   * [Blackbox blinkt und ausgeblendet wird](#xaml-blackboxblinksdisappears)
   * [Anzeigen, die nicht aktualisiert](#xaml-adsnotrefreshing)
 
-* [C#](#csharp)
+* [C# -CODE](#csharp)
   * [Adcontrol-Element nicht angezeigt](#csharp-adcontrolnotappearing)
   * [Blackbox blinkt und ausgeblendet wird](#csharp-blackboxblinksdisappears)
   * [Anzeigen, die nicht aktualisiert](#csharp-adsnotrefreshing)

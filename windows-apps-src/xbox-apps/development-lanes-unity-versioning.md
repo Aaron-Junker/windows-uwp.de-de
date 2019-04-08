@@ -100,5 +100,5 @@ Fügen Sie Abhängigkeiten zu DLL- und WINMD-Dateien hinzu, indem Sie diese im U
 ***ScrapyardPhoenix (Universal Windows)*** ist das Projekt, dem Sie einen Verweis (etwa auf das Xbox Live SDK) hinzufügen würden.
 
 ## <a name="see-also"></a>Siehe auch
-- [Vorhandene Spiele anbieten für Xbox](development-lanes-landing.md)
+- [Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)
 - [UWP auf Xbox One](index.md)

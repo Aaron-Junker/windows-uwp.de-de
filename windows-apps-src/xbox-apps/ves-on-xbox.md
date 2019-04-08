@@ -69,11 +69,11 @@ VES berücksichtigt ein Steuerelements Handlungsbedarf, wenn sie eine der folgen
 
 - **TogglePattern** (z. b. Das Kontrollkästchen) – stellt ein Steuerelement, das eine Reihe von Zuständen durchlaufen und verwaltet einen einmal festgelegten Zustand werden kann.
 
-- **SelectionItemPattern** (eg. Kombinationsfeld) – stellt ein Steuerelement, das als Container für eine Auflistung von untergeordneten, auswählbaren Elementen dient.
+- **"SelectionItemPattern"** (z. b. Kombinationsfeld) – stellt ein Steuerelement, das als Container für eine Auflistung von untergeordneten, auswählbaren Elementen dient.
 
 - **ExpandCollapsePattern** (z. b. Kombinationsfeld) - Steuerelemente, die zum Anzeigen von Inhalt erweitert bzw. reduziert werden, um Inhalte auszublenden darstellt.
 
-- **ScrollPattern** (eg. Die Liste) – Stellt Steuerelemente, die als scrollbare Container für eine Auflistung von untergeordneten Elementen dienen.
+- **ScrollPattern** (z. b. Die Liste) – Stellt Steuerelemente, die als scrollbare Container für eine Auflistung von untergeordneten Elementen dienen.
 
 ## <a name="scrollable-containers"></a>Scrollbare Container ##
 Für bildlauffähigen Container, die den überwacht das ScrollPattern, VES für Voice unterstützen Befehle wie "einen Bildlauf nach links", "Bildlauf nach rechts" usw., und scrollen wird mit den entsprechenden Parametern aufgerufen werden, wenn der Benutzer einen der folgenden Befehle auslöst.  Scroll-Befehle werden anhand des Werts des eingefügt, die `HorizontalScrollPercent` und `VerticalScrollPercent` Eigenschaften.  Z. B. wenn `HorizontalScrollPercent` ist größer als 0, "einen Bildlauf nach links" hinzugefügt wird, wenn dieser Wert ist kleiner als 100 "Bildlauf nach rechts" hinzugefügt werden, und so weiter.

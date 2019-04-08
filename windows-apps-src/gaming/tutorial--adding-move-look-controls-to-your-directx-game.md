@@ -181,8 +181,8 @@ Die folgenden Methoden und Eigenschaften verwenden wir, um die Zustandsinformati
 -   **Initialize**. Die App ruft diesen Ereignishandler auf, um die Steuerungen zu initialisieren und an das [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Objekt anzufügen, das das Anzeigefenster beschreibt.
 -   **SetPosition**. Die App ruft diese Methode auf, um die Koordinaten (X, Y und Z) der Steuerungen im Szenenbereich festzulegen.
 -   **SetOrientation**. Die App ruft diese Methode auf, um den Nick- und Gierwinkel der Kamera festzulegen.
--   **get\_Position**. Die App greift auf diese Eigenschaft zu, um die aktuelle Position der Kamera im Szenenbereich abzurufen. Diese Eigenschaft wird verwendet, um der App die aktuelle Kameraposition mitzuteilen.
--   **get\_LookPoint**. Die App greift auf diese Eigenschaft zu, um den aktuellen Punkt abzurufen, auf den die Kamera gerichtet ist.
+-   **erste\_Position**. Die App greift auf diese Eigenschaft zu, um die aktuelle Position der Kamera im Szenenbereich abzurufen. Diese Eigenschaft wird verwendet, um der App die aktuelle Kameraposition mitzuteilen.
+-   **erste\_LookPoint**. Die App greift auf diese Eigenschaft zu, um den aktuellen Punkt abzurufen, auf den die Kamera gerichtet ist.
 -   **Update**. Diese Methode liest den Zustand der Bewegungs- und Blickcontroller und aktualisiert die Kameraposition. Diese Methode wird in der Hauptschleife der App kontinuierlich aufgerufen, um die Kameracontrollerdaten und die Kameraposition im Szenenbereich zu aktualisieren.
 
 Jetzt haben Sie alle Komponenten, die Sie zum Implementieren der Bewegungs-/Blicksteuerungen benötigen. Als Nächstes setzen wir diese Teile zusammen.
@@ -355,7 +355,7 @@ void MoveLookController::OnKeyDown(
 
 Solange eine dieser Tasten gedrückt wird, legt der Ereignishandler den entsprechenden Bewegungszustand auf „true“ fest.
 
-**OnKeyUp**
+**"OnKeyUp"**
 
 ```cpp
 void MoveLookController::OnKeyUp(

@@ -47,7 +47,7 @@ Um die Kachel zu bearbeiten, doppelklicken Sie auf die Datei **Package.appxmanif
 
 Aktualisieren Sie die folgenden Elemente:
 
--   DisplayName: Ersetzen Sie diesen Wert mit dem Namen, die auf der Kachel angezeigt werden soll.
+-   "DisplayName": Ersetzen Sie diesen Wert mit dem Namen, die auf der Kachel angezeigt werden soll.
 -   Kurzname: Da es sich bei begrenzten Platz für Ihren Anzeigenamen auf Kacheln anpassen verfügbar ist, wird empfohlen, dass Sie auch einem Kurznamen angeben, um sicherzustellen, dass den Namen Ihrer app nicht abgeschnitten.
 -   Logobilder:
 

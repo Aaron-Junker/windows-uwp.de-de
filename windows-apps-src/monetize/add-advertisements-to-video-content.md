@@ -153,8 +153,8 @@ Diese Eigenschaft ruft die Zeitplandaten vom Anzeigenserver ab. Dieses Objekt en
 Dieses Ereignis wird ausgelöst, wenn die Anzeigenwiedergabe Prüfpunktquartile erreicht. Der zweite Parameter für den Ereignishandler (*eventInfo*) ist ein JSON-Objekt mit folgenden Elementen:
 
 * **Fortschritt**: Der Status der Ad-Wiedergabe (eines der **MediaProgress** Enum-Werte, die in AdScheduler.js definiert).
-* **clip**: Der Videoclip wiedergegeben wird. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
-* **adPackage**: Ein Objekt, das den Teil der Ad-Nutzlast, die entspricht dem AD darstellt, der wiedergegeben wird. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
+* **Clip**: Der Videoclip wiedergegeben wird. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
+* **AdPackage**: Ein Objekt, das den Teil der Ad-Nutzlast, die entspricht dem AD darstellt, der wiedergegeben wird. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
 
 ### <a name="onallcomplete"></a>onAllComplete  
 
@@ -168,8 +168,8 @@ Dieses Ereignis wird ausgelöst, wenn im **AdScheduler** ein Fehler auftritt. We
 
 Dieses Ereignis wird ausgelöst, wenn eine Anzeige abgespielt wird, und gibt an, wie viel Zeit im aktuellen Pod verbleibt. Der zweite Parameter für den Ereignishandler (*eventData*) ist ein JSON-Objekt mit folgenden Elementen:
 
-* **remainingAdTime**: Die Anzahl der Sekunden, die Links für die aktuelle Anzeige.
-* **remainingPodTime**: Die Anzahl der Sekunden, die Links für den aktuellen Pod.
+* **RemainingAdTime**: Die Anzahl der Sekunden, die Links für die aktuelle Anzeige.
+* **RemainingPodTime**: Die Anzahl der Sekunden, die Links für den aktuellen Pod.
 
 > [!NOTE]
 > Ein Block (Pod) ist eine Gruppe von Anzeigen, die als Sequenz wiedergegeben werden, z. B. während einer Werbepause. Weitere Informationen finden Sie in der IAB Digital Video Ad Serving Template (VAST)-Spezifikation.
@@ -178,12 +178,12 @@ Dieses Ereignis wird ausgelöst, wenn eine Anzeige abgespielt wird, und gibt an,
 
 Dieses Ereignis wird ausgelöst, wenn ein Anzeigenblock endet. Der zweite Parameter für den Ereignishandler (*eventData*) ist ein JSON-Objekt mit folgenden Elementen:
 
-* **startTime**: Die Pod-Startzeit, in Sekunden.
-* **pod**: Ein Objekt, das den Pod darstellt. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
+* **"StartTime"**: Die Pod-Startzeit, in Sekunden.
+* **Pod**: Ein Objekt, das den Pod darstellt. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
 
 ### <a name="onpodstart"></a>onPodStart
 
 Dieses Ereignis wird ausgelöst, wenn ein Anzeigenblock startet. Der zweite Parameter für den Ereignishandler (*eventData*) ist ein JSON-Objekt mit folgenden Elementen:
 
-* **startTime**: Die Pod-Startzeit, in Sekunden.
-* **pod**: Ein Objekt, das den Pod darstellt. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
+* **"StartTime"**: Die Pod-Startzeit, in Sekunden.
+* **Pod**: Ein Objekt, das den Pod darstellt. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.

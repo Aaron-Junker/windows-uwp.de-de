@@ -23,7 +23,7 @@ Verwenden Sie ein Kombinationsfeld (auch bekannt als eine Dropdown-Liste), um ei
 
 Wenn das Kombinationsfeld geschlossen wird, sie zeigt die aktuelle Auswahl oder ist leer, wenn es kein Element ausgewählt ist. Wenn der Benutzer im Kombinationsfeld erweitert, wird die Liste der auswählbaren Elemente angezeigt.
 
-> **Wichtige APIs**: [ComboBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable-Eigenschaft](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Texteigenschaft](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted-Ereignis](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **Wichtige APIs:** [ComboBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable-Eigenschaft](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Texteigenschaft](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted-Ereignis](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 Ein Kombinationsfeld im compact Zustand mit einem Header.
 
@@ -45,7 +45,7 @@ Ein Kombinationsfeld im compact Zustand mit einem Header.
 <td>
     <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ComboBox">öffnen Sie die app, und sehen Sie das Kombinationsfeld in Aktion</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
@@ -173,13 +173,13 @@ Vor dem SDK 17763, den Wert der SelectedItem-Eigenschaft (und somit SelectedValu
 
 - SelectedItem = Null
 - SelectedValue = Null
-- SelectedIndex = -1
+- SelectedIndex =-1
 
 Im SDK 17763 und höhere Versionen den Wert der SelectedItem-Eigenschaft (und somit SelectedValue und SelectedIndex) muss nicht in die Auflistung der Elemente des Kombinationsfelds sein. Im vorherigen Beispiel, Festlegen von `colorComboBox.SelectedItem = "Pink"` führt:
 
 - SelectedItem = Pink
 - SelectedValue = Pink
-- SelectedIndex = -1
+- SelectedIndex =-1
 
 ### <a name="text-search"></a>Textsuche
 

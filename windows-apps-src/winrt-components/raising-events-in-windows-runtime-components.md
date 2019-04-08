@@ -279,7 +279,7 @@ Der erste Schritt zum Erstellen eines Proxys und Stubs für eine Komponente best
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>So generieren Sie GUIDs für die Schnittstellen der Komponente (C#- oder andere .NET-Sprachen)
 
-Wählen Sie in der Menüleiste „Extras &gt; GUID erstellen” aus. Wählen Sie im Dialogfeld „5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. Klicken Sie auf die Schaltfläche „Neue GUID” und dann auf die Schaltfläche „Kopieren”.
+Wählen Sie in der Menüleiste „Extras &gt; GUID erstellen” aus. Wählen Sie im Dialogfeld „5. \[GUID ("Xxxxxxxx-Xxxx... Xxxx)\]. Klicken Sie auf die Schaltfläche „Neue GUID” und dann auf die Schaltfläche „Kopieren”.
 
 ![GUID-Generator-Tool](./images/guidgeneratortool.png)
 
@@ -422,4 +422,4 @@ Das Projekt sollte nun erstellt werden. Führen Sie das Projekt aus, und überpr
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen von Windows-Runtime-Komponenten in C++](creating-windows-runtime-components-in-cpp.md)
+* [Erstellen von Komponenten für Windows-Runtime in C++](creating-windows-runtime-components-in-cpp.md)

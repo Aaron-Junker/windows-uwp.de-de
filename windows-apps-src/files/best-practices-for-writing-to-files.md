@@ -7,7 +7,7 @@ keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57605835"
@@ -75,12 +75,12 @@ Diese Tabelle enthält allgemeine Fehlercodes, die app-Entwickler auftreten, wen
 
 |  Fehlernamen (Wert)  |  Schritte  |  Ursachen  |  Lösungen  |
 |----------------------|---------|----------|-------------|
-|  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  Die ursprüngliche Datei kann zum Löschen, möglicherweise aus einem vorherigen Vorgang markiert werden.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
-|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  Die ursprüngliche Datei wird von einem anderen exklusiven Schreibzugriff geöffnet.   |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  Die ursprüngliche Datei (file.txt) konnte nicht ersetzt werden, da er verwendet wird. Einem anderen Prozess oder Vorgang wurde Zugriff auf die Datei, bevor es ersetzt werden kann.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
-|  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  Transaktive Modell wird eine zusätzliche Datei erstellt, und diese zusätzlichen Speicherplatz beansprucht.  |    |
-|  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  Dies kann aufgrund von mehrere ausstehende e/a-Vorgänge oder großen Dateien geschehen.  |  Durch das Steuern von Streams ein präziser Ansatz möglicherweise den Fehler zu beheben.  |
-|  E_FAIL (0x80004005) |  Beliebig  |  Sonstiges  |  Wiederholen Sie den Vorgang. Wenn es weiterhin fehlschlägt, ist es möglicherweise eine Platform-Fehler, und die app beendet werden soll, da es in einem inkonsistenten Zustand ist. |
+|  ERROR_ACCESS_DENIED (0 X 80070005)  |  5  |  Die ursprüngliche Datei kann zum Löschen, möglicherweise aus einem vorherigen Vorgang markiert werden.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
+|  ERROR_SHARING_VIOLATION (0 X 80070020)  |  5  |  Die ursprüngliche Datei wird von einem anderen exklusiven Schreibzugriff geöffnet.   |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  19 – 20  |  Die ursprüngliche Datei (file.txt) konnte nicht ersetzt werden, da er verwendet wird. Einem anderen Prozess oder Vorgang wurde Zugriff auf die Datei, bevor es ersetzt werden kann.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
+|  ERROR_DISK_FULL (0 X 80070070)  |  7, 14, 16, 20  |  Transaktive Modell wird eine zusätzliche Datei erstellt, und diese zusätzlichen Speicherplatz beansprucht.  |    |
+|  ERROR_OUTOFMEMORY (0X8007000E)  |  14, 16  |  Dies kann aufgrund von mehrere ausstehende e/a-Vorgänge oder großen Dateien geschehen.  |  Durch das Steuern von Streams ein präziser Ansatz möglicherweise den Fehler zu beheben.  |
+|  E_FAIL (0 X 80004005) |  Beliebig  |  Sonstiges  |  Wiederholen Sie den Vorgang. Wenn es weiterhin fehlschlägt, ist es möglicherweise eine Platform-Fehler, und die app beendet werden soll, da es in einem inkonsistenten Zustand ist. |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>Weitere Überlegungen für Datei-Zustände, die zu Fehlern führen kann
 
@@ -194,4 +194,4 @@ Die [zur parallelen Programmierung mit .NET Blog](https://blogs.msdn.microsoft.c
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Erstellen, schreiben und Lesen einer Datei](quickstart-reading-and-writing-files.md)
+* [Erstellen, Schreiben und Lesen einer Datei](quickstart-reading-and-writing-files.md)

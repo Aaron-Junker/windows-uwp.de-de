@@ -84,5 +84,5 @@ plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwg
 Beachten Sie, dass jeder **/enableDebug**-Aufruf später mit der Option **/disableDebug** an einen weiteren PLMDebug-Aufruf gekoppelt werden muss. Darüber hinaus muss der Pfad zu einem Debugger absolut sein (relative Pfade werden nicht unterstützt).
 
 ## <a name="related-topics"></a>Verwandte Themen
-- [Bereitstellen und Debuggen von UWP-apps](deploying-and-debugging-uwp-apps.md)
+- [Bereitstellen und Debuggen von UWP-Apps](deploying-and-debugging-uwp-apps.md)
 - [Debugging, Tests und Leistung](index.md)

@@ -21,7 +21,7 @@ ms.locfileid: "57594965"
 
 In diesem Artikel werden die Windows-Elemente für das Zoomen und die Größenänderung beschrieben. Außerdem enthält er Richtlinien für die Benutzeroberfläche, um diese Interaktionsmechanismen in Ihren Apps zu verwenden.
 
-> **Wichtige APIs**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **Wichtige APIs:** [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Eingabe (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 Mithilfe des optischen Zooms können Benutzer die Ansicht des Inhalts in einem Inhaltsbereich vergrößern (die Vergrößerung erfolgt für den gesamten Inhaltsbereich). Bei der Größenänderung hingegen können Benutzer die relative Größe eines oder mehrerer Objekte ändern, ohne die Ansicht des Inhaltsbereichs zu ändern (die Größenänderung erfolgt für die Objekte im Inhaltsbereich).
 
@@ -33,7 +33,7 @@ Die folgenden Diagramme verdeutlichen die Unterschiede zwischen Größenänderun
 
 ![Wenn die Finger aufeinander zu bewegt werden, wird der Inhaltsbereich vergrößert, beim Spreizen der Finger wird er verkleinert.](images/areazoom.png)
 
-**Resize**: Benutzer wählt ein Objekt in einem Bereich, und dieses Objekt die Größe ändert.
+**Ändern der Größe**: Benutzer wählt ein Objekt in einem Bereich, und dieses Objekt die Größe ändert.
 
 ![Wenn die Finger aufeinander zu bewegt werden, wird das Objekt verkleinert, beim Spreizen der Finger wird es vergrößert.](images/objectresize.png)
 

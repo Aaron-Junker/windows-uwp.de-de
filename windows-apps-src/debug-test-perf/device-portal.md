@@ -131,7 +131,7 @@ Die Seite "Leistung" zeigt in Echtzeit Diagramme mit System Diagnoseinformatione
 Die folgenden Metriken sind verfügbar:
 - **CPU**: Prozent der insgesamt verfügbaren CPU-Auslastung
 - **Arbeitsspeicher**: Insgesamt verwendet werden, verfügbar ist, ein Commit ausgeführt wurde, per Pager benachrichtigt, und nicht ausgelagerten
-- **I/O**: Lesen und Schreiben von Mengen von Daten
+- **E/A**: Lesen und Schreiben von Mengen von Daten
 - **Netzwerk**: Erhaltene und gesendete Daten
 - **GPU**: Prozent des insgesamt verfügbaren GPU-Engine-Auslastung
 

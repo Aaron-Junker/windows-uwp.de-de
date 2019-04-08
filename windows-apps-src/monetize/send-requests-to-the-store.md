@@ -90,9 +90,9 @@ Nach Übermittlung dieser Anforderung enthält die [Response](https://docs.micro
 
 |  Feld  |  Beschreibung  |
 |----------------------|---------------|
-|  *anonymous*                   |  Ein boolescher Wert, wobei **true** angibt, dass die Identität des Benutzers oder Geräts in der Anforderung nicht vorhanden war; **false** bedeutet, dass die Identität des Benutzers oder Geräts in der Anforderung vorhanden war.  |
+|  *Anonyme*                   |  Ein boolescher Wert, wobei **true** angibt, dass die Identität des Benutzers oder Geräts in der Anforderung nicht vorhanden war; **false** bedeutet, dass die Identität des Benutzers oder Geräts in der Anforderung vorhanden war.  |
 |  *name*                   |  Eine Zeichenfolge, die den Namen der Test-Flight-Gruppe mit dem höchsten Rang enthält, der das Gerät oder der Benutzer angehört.  |
-|  *settings*                   |  Ein Wörterbuch mit Schlüssel-Wert-Paaren, die den Namen und den Wert der Remotevariablen enthalten, die der Entwickler für die Test-Flight-Gruppe konfiguriert hat.  |
+|  *Einstellungen*                   |  Ein Wörterbuch mit Schlüssel-Wert-Paaren, die den Namen und den Wert der Remotevariablen enthalten, die der Entwickler für die Test-Flight-Gruppe konfiguriert hat.  |
 
 Das folgende Beispiel zeigt einen Rückgabewert für diese Anforderung.
 

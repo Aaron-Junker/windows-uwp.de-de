@@ -25,7 +25,7 @@ Das Besondere bei UWP-Steuerelementen ist, dass sie den Typ des Geräts erkennen
 | iOS-Steuerelement (Klasse/Protokoll) | Entsprechendes UWP-Steuerelement |
 |------------------------------|--------------------------------------|
 | Aktivitätsanzeige (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> Siehe auch [Schnellstart: Hinzufügen von Statussteuerelementen](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| Anzeigenbanner-Ansicht (**ADBannerView**) und Anzeigenbanner-Ansichtsdelegat (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> Siehe auch [Anzeigen von Werbung in Ihrer App](../monetize/display-ads-in-your-app.md) |
+| Anzeigenbanner-Ansicht (**ADBannerView**) und Anzeigenbanner-Ansichtsdelegat (**ADBannerViewDelegate**) | [Adcontrol-Element](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> Siehe auch [Anzeigen von Werbung in Ihrer App](../monetize/display-ads-in-your-app.md) |
 | Schaltfläche (UIButton) | [Button](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> Siehe auch [Schnellstart: Hinzufügen von Schaltflächen-Steuerelemente](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
 | Datumsauswahl (UIDatePicker) | ["DatePicker"](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Bildansicht (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> Siehe auch [Image und ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
@@ -55,10 +55,10 @@ Unter [Steuerelementliste](https://msdn.microsoft.com/library/windows/apps/mt185
 
 ### <a name="next-step"></a>Nächster Schritt
 
-[Erste Schritte: Navigation](getting-started-navigation.md)
+[Erste Schritte: Navigationsbereich](getting-started-navigation.md)
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [build 2014: Was ist XAML-Benutzeroberfläche und Steuerelemente?](https://go.microsoft.com/fwlink/p/?LinkID=397897)
-* [build 2014: Entwickeln von Apps mit der allgemeinen XAML UI-Frameworks](https://go.microsoft.com/fwlink/p/?LinkID=397898)
-* [build 2014: Mithilfe von Visual Studio zum Erstellen von XAML Converged Apps](https://go.microsoft.com/fwlink/p/?LinkID=397876)
+* [Build 2014: Was ist XAML-Benutzeroberfläche und Steuerelemente?](https://go.microsoft.com/fwlink/p/?LinkID=397897)
+* [Build 2014: Entwickeln von Apps mit der allgemeinen XAML UI-Frameworks](https://go.microsoft.com/fwlink/p/?LinkID=397898)
+* [Build 2014: Mithilfe von Visual Studio zum Erstellen von XAML Converged Apps](https://go.microsoft.com/fwlink/p/?LinkID=397876)

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592025"
@@ -196,7 +196,7 @@ private void RefreshUIImages()
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Passen Sie Ihre Ressourcen für die Sprache, Skalierung und andere Kennzeichner](tailor-resources-lang-scale-contrast.md)
-* [Lokalisieren von Zeichenfolgen in Ihre Benutzeroberfläche und app-Paketmanifest](localize-strings-ui-manifest.md)
+* [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](localize-strings-ui-manifest.md)
 * [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md)
 * [Kachel- und popupbildgrößen unterstützen, für die Sprache, Skalierung und hoher Kontrast](tile-toast-language-scale-contrast.md)
 * [Lokalisierbaren manifest Elementen](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)

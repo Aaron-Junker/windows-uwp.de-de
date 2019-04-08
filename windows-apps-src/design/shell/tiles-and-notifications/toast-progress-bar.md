@@ -23,7 +23,7 @@ Durch die Verwendung einer Statusanzeige innerhalb Ihrer Popupbenachrichtigung k
 
 Eine Statusanzeige in einem Popup kann entweder "unbestimmt" sein (keine bestimmten Wert, animierte Punkte als Hinweis auf ein Vorgang stattfindet) oder "bestimmte" (einem angegebenen Prozentsatz des Balkens wird aufgefüllt, z. B. 60 %).
 
-> **Wichtige APIs**: [NotificationData Klasse](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update Methode](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **Wichtige APIs:** [NotificationData Klasse](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update Methode](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > Nur Desktop unterstützt Statusanzeigen in Popupbenachrichtigungen. Auf anderen Geräten wird die Statusanzeige aus der Benachrichtigung gelöscht.

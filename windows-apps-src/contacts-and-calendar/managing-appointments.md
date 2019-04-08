@@ -569,7 +569,7 @@ Sie verfügen nun über Grundkenntnisse zur Terminverwaltung. Laden Sie die [Bei
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Termine-API-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Beispiel zur Termin-API](https://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  

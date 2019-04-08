@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57651175"
 ---
-# <a name="package-a-desktop-application-manually"></a>Packen Sie manuell eine desktop-Anwendung
+# <a name="package-a-desktop-application-manually"></a>Manuelles Verpacken einer Desktopanwendung
 
 In diesem Thema erfahren Sie, wie Sie Ihre Anwendung zu packen, ohne Verwendung von Tools wie Visual Studio oder den Desktop App Converter (DAC).
 

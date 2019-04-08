@@ -126,7 +126,7 @@ Das ListView-Steuerelement und seine untergeordneten Elemente werden nicht in de
 
 Layoutpanel verfügen über die Eigenschaft [Background](https://msdn.microsoft.com/library/windows/apps/BR227512), sodass zum Einfärben kein [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) vor dem Panel erforderlich ist.
 
-**Inefficient**
+**Ineffiziente**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -135,7 +135,7 @@ Layoutpanel verfügen über die Eigenschaft [Background](https://msdn.microsoft.
 </Grid>
 ```
 
-**Efficient**
+**Effiziente**
 
 ```xaml
 <Grid Background="Black"/>
@@ -198,7 +198,7 @@ Da _InitialPage.xaml_ in diesem Beispiel eine Ressource von _ExampleResourceDict
 
 Wenn Sie eine Ressource in der gesamten App auf vielen Seiten verwenden, ist es eine bewährte Methode, diese in der Datei _App.xaml_ zu speichern, um eine Duplizierung zu vermeiden. Aber _App.xaml_ wird beim Starten der App analysiert. Daher sollte jede Ressource, die nur auf einer Seite verwendet wird (es sei denn, diese Seite ist die Ausgangsseite), unter den lokalen Ressourcen der Seite gespeichert werden. In diesem Beispiel enthält die Datei _App.xaml_ Ressourcen, die nur von einer Seite verwendet werden (bei der es sich nicht um die Ausgangsseite handelt). Dadurch wird die Startzeit der App unnötigerweise erhöht.
 
-**App.xaml**
+**"App.xaml"**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->

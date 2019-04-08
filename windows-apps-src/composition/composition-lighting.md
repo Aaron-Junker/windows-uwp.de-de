@@ -73,7 +73,7 @@ Konzept | Details
 --- | ---
 **Umgebungslicht** | Ein nicht Umgebend Licht zu Ihrer Szene hinzufügen werden alle vorhandenen Licht deaktivieren.  Elemente, die nicht von einer nicht-Umgebungslicht betroffen werden schwarz angezeigt.  Verwenden Sie zum umgebenden Visuals, die für die das Licht auf natürliche Weise zu beleuchten, ein Umgebungslicht in Verbindung mit anderen Lichter.
 **Anzahl der Beleuchtung** | Sie können keine zwei nicht Umgebend Komposition Lichter in beliebiger Kombination verwenden, die Benutzeroberfläche als Ziel. Ambient Lichter sind nicht eingeschränkt. erkennen, sind Point und entfernten Beleuchtung.
-**Lifetime** | CompositionLight wird möglicherweise eine Lebensdauer Bedingungen (Beispiel: der Garbage Collector möglicherweise die light-Objekt wiederverwendet, bevor sie verwendet wird).  Es wird empfohlen, einen Verweis auf Ihrer Beleuchtung beibehält, durch das Hinzufügen von Licht als Mitglied die Anwendung, die Lebensdauer verwalten können.
+**Lebensdauer** | CompositionLight wird möglicherweise eine Lebensdauer Bedingungen (Beispiel: der Garbage Collector möglicherweise die light-Objekt wiederverwendet, bevor sie verwendet wird).  Es wird empfohlen, einen Verweis auf Ihrer Beleuchtung beibehält, durch das Hinzufügen von Licht als Mitglied die Anwendung, die Lebensdauer verwalten können.
 **Transformationen** | Lichter platziert werden müssen, in einem Knoten über die Benutzeroberfläche, die Effekte wie verwendet [Perspektive Transformationen](/windows/uwp/design/layout/3-d-perspective-effects) in Ihrer visuellen Struktur ordnungsgemäß gezeichnet werden soll.
 **Ziele und Koordinatenbereich** | CoordinateSpace ist der visuellen Bereich, in dem alle die Lichter-Eigenschaften festgelegt werden müssen. CompositionLight.Targets muss innerhalb der Struktur CoordinateSpace sein.
 
@@ -121,7 +121,7 @@ Eigenschaft | Beschreibung
 --- | ---
 **Normalmap** | NormalMaps erstellen Sie einen Effekt einer Textur, in denen eine normale auf das Licht hellere, und ein normaler zeigt sofort wird beleuchtet. Hinzufügen einer NormalMap für die Verwendung der entsprechenden visual eine ["compositionsurfacebrush"](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) LoadedImageSurface zum Laden einer NormalMap-Asset verwenden.
 **Ambient** | Umgebungseigenschaften werden hauptsächlich verwendet, um die gesamte Farbe Reflektion zu steuern.
-**Specular** | Glänzende Reflektion erstellt Highlights für Objekte, die somit shiny angezeigt werden. Sie können die Ebene der glänzenden Reflektion sowie die Ebene der Glanz steuern.  Diese Eigenschaften bearbeitet werden, um wesentliche Auswirkungen wie Shinny Metalle oder glänzendes Papier zu erstellen.
+**Glänzende** | Glänzende Reflektion erstellt Highlights für Objekte, die somit shiny angezeigt werden. Sie können die Ebene der glänzenden Reflektion sowie die Ebene der Glanz steuern.  Diese Eigenschaften bearbeitet werden, um wesentliche Auswirkungen wie Shinny Metalle oder glänzendes Papier zu erstellen.
 **Diffuse** | Diffuses Reflektion Streut Licht in alle Richtungen.
 **Das Reflexionsvermögen-Modell** | [Das Reflexionsvermögen Modell](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel) können Sie auswählen zwischen [Blinn Phong](https://docs.microsoft.com/visualstudio/designers/how-to-create-a-basic-phong-shader) und physisch basierten Blinn Phong.  Wählen Sie physisch basierten Blinn Phong wenn Glanzlichter komprimiert haben sollen.
 
@@ -167,4 +167,4 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 - [CompositionCapabilities API](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
 - [Mathematik der Beleuchtung](https://docs.microsoft.com/windows/uwp/graphics-concepts/mathematics-of-lighting)
 - [SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
-- [WindowsUIDevLabs GitHub Repo](https://github.com/Microsoft/WindowsUIDevLabs)
+- [WindowsUIDevLabs-GitHub-Repository](https://github.com/Microsoft/WindowsUIDevLabs)

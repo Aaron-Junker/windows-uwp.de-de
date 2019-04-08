@@ -25,7 +25,7 @@ Anzeigen-Schwerpunkt liegt eine Auswirkung der Beleuchtung für [10-Fuß Erfahru
 (Die Auswirkungen anzuzeigen markieren eine Beleuchtung auswirken, die interaktive Elemente hervorhebt finden Sie unter der [Offenlegen markieren Artikel](/windows/uwp/design/style/reveal).)
 
 
-> **Wichtige APIs**: [Application.FocusVisualKind Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind Enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals-Eigenschaft](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
+> **Wichtige APIs:** [Application.FocusVisualKind Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind Enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals-Eigenschaft](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>Funktionsweise
 Zeigen Sie Aufrufe der Aufmerksamkeit auf fokussierte Elemente durch Hinzufügen einer animierten Lichteffekts rund um den Rahmen des Elements:
@@ -43,7 +43,7 @@ Dies ist besonders hilfreich, in 10 Fuß Szenarien, in denen der Benutzer keine 
 <td>
     <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/RevealFocus">öffnen Sie die app, und zeigen den Fokus in Aktion erleben</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>

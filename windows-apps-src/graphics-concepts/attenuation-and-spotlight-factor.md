@@ -68,8 +68,8 @@ Die folgende Gleichung legt den Spotlight-Faktor fest.
 | Parameter         | Standardwert | Typ           | Beschreibung                              | Bereich                    |
 |-------------------|---------------|----------------|------------------------------------------|--------------------------|
 | rho<sub>i</sub>   | n. a.           | Gleitkomma | Kosinus(Winkel) für Spotlight i            | n. a.                      |
-| phi<sub>i</sub>   | 0.0           | Gleitkomma | Halbschatten-Winkel für Spotlight i nach Bogenmaß | \[theta<sub>i</sub>, pi) |
-| theta<sub>i</sub> | 0.0           | Gleitkomma | Kernschatten-Winkel für Spotlight i nach Bogenmaß    | \[0, pi)                 |
+| phi<sub>i</sub>   | 0.0           | Gleitkomma | Halbschatten-Winkel für Spotlight i nach Bogenmaß | \[Theta<sub>ich</sub>, Pi) |
+| theta<sub>i</sub> | 0.0           | Gleitkomma | Kernschatten-Winkel für Spotlight i nach Bogenmaß    | \[0, Pi)                 |
 | Farbverlauf           | 0.0           | Gleitkomma | Farbverlaufsfaktor                           | (-unendlich +unendlich)   |
 
  

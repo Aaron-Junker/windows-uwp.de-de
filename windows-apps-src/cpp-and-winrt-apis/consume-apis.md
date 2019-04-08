@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projiziert, projektion, im
 ms.localizationpriority: medium
 ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645145"
@@ -258,13 +258,13 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ## <a name="important-apis"></a>Wichtige APIs
 * [QueryInterface-Schnittstelle](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [RoActivateInstance-Funktion](https://msdn.microsoft.com/library/br224646)
-* [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
+* [Windows::Foundation::URI-Klasse](/uwp/api/windows.foundation.uri)
 * [Vorlage für WinRT::get_activation_factory-Funktion](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [Vorlage für WinRT::Make-Funktion](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [WinRT::Windows::Foundation::IUnknown-Struktur](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Erstellen von Ereignissen in C++ / WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [Interop zwischen C++ / WinRT und die ABI](interop-winrt-abi.md)
-* [Einführung in C++ / WinRT](intro-to-using-cpp-with-winrt.md)
-* [XAML-Steuerelemente; Binden an einen C++ / WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [Interoperabilität zwischen C++/WinRT und der ABI](interop-winrt-abi.md)
+* [Einführung in C++/WinRT](intro-to-using-cpp-with-winrt.md)
+* [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

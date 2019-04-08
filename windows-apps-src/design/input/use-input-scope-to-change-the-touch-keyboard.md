@@ -22,7 +22,7 @@ Um Benutzern die Eingabe von Daten mit der Bildschirmtastatur oder dem Soft Inpu
 
 ### <a name="important-apis"></a>Wichtige APIs
 - [InputScope](https://msdn.microsoft.com/library/windows/apps/hh702632)
-- [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
+- [inputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
 
 
 Die Bildschirmtastatur kann für die Texteingabe verwendet werden, wenn Ihre App auf einem Gerät mit Touchscreen ausgeführt wird. Die Bildschirmtastatur wird aufgerufen, wenn der Benutzer auf ein bearbeitbares Eingabefeld tippt (etwa auf ein **[TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)**- oder **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br227548)**-Element). Benutzer können Daten in Ihrer App schneller und komfortabler eingeben, wenn Sie den *Eingabeumfang* des Textsteuerelements an die Art der Daten anpassen, die der Benutzer vermutlich eingeben wird. Der Eingabeumfang bietet dem System einen Hinweis auf die Art von Text, die vermutlich über das Steuerelement eingegeben wird. Auf diese Weise kann das System ein spezielles Bildschirmtastaturlayout für den Eingabetyp bereitstellen.

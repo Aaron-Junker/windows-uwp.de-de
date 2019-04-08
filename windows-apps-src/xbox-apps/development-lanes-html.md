@@ -32,5 +32,5 @@ In diesem Video wird ausführlicher auf gepackte Web-Apps und gehostete Web-Apps
 Laden Sie zunächst die Engine Ihrer Wahl herunter, und suchen Sie nach Anweisungen für Windows 10-Apps. Lesen Sie außerdem den [Erste Schritte-Leitfaden](getting-started.md) mit Informationen dazu, wie Sie die Konsole als Development-Kit nutzen und Bereitstellungen von Visual Studio aus durchführen.
 
 ## <a name="see-also"></a>Siehe auch
-- [Vorhandene Spiele anbieten für Xbox](development-lanes-landing.md)
+- [Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)
 - [UWP auf Xbox One](index.md)

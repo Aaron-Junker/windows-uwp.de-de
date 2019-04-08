@@ -83,4 +83,4 @@ Tabelle 2: UWP-Typen, die auf .NET Framework-Typen mit dem gleichen Namen und Na
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen von Windows-Runtime-Komponenten in c# und Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

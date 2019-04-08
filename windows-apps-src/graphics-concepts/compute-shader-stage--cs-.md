@@ -26,7 +26,7 @@ Ein Computeshader ist eine [HLSL](https://msdn.microsoft.com/library/windows/des
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Compute-pipeline](compute-pipeline.md)
+[Compute-Pipeline](compute-pipeline.md)
 
 [Grafikpipeline](graphics-pipeline.md)
 

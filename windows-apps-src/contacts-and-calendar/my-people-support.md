@@ -53,7 +53,7 @@ Um Unterstützung für den Vertrag „Meine Kontakte” zu deklarieren, öffnen 
 
 ```
 
-**After**
+**Nach dem**
 
 ```xml
 <Package
@@ -121,7 +121,7 @@ Standardmäßig wird die Anwendung nur für Kontakte in der Kontaktliste angezei
 </Applications>
 ```
 
-**After**
+**Nach dem**
 
 ```Csharp
 <Applications>
@@ -249,10 +249,10 @@ async Task PinMultipleContacts(Contact[] contacts)
 **Hinweis:** 
 
 ## <a name="see-also"></a>Siehe auch
-+ [Meine Freigabe Personen](my-people-sharing.md)
++ [Freigeben von „Meine Kontakte”](my-people-sharing.md)
 + [Meine Benachrichtigungen Personen](my-people-notifications.md)
 + [Channel 9-Video zum Hinzufügen, dass meine Benutzer zu einer Anwendung zu unterstützen.](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [Meine Benutzer-integrationsbeispiel](https://aka.ms/mypeoplebuild2017)
 + [Wenden Sie sich an kartenbeispiels](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [Dokumentation zur PinnedContactManager-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [Verbinden Sie Ihrer app mit Aktionen für eine Visitenkarte](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [Verbinden der App mit Aktionen auf einer Visitenkarte](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

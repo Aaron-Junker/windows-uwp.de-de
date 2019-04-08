@@ -461,8 +461,8 @@ Im Folgenden erfahren Sie mehr über die grundlegende Vorgehensweise zum Erstell
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
-* [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041)
-* [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050)
+* ["Surfaceimagesource"](https://msdn.microsoft.com/library/windows/apps/hh702041)
+* ["Virtualsurfaceimagesource"](https://msdn.microsoft.com/library/windows/apps/hh702050)
 * [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834)
 * [ISwapChainPanelNative](https://msdn.microsoft.com/library/windows/desktop/dn302143)
 * [Programmierhandbuch für Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345)

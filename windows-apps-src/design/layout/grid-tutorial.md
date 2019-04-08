@@ -18,7 +18,7 @@ ms.locfileid: "57646535"
 
 Verwenden Sie zum Erstellen des Layouts für eine einfache Wetter-App mit XAML die Elemente **Grid** und **StackPanel**. Mit diesen Tools können Sie hervorragend aussehende Apps erstellen, die auf jedem Gerät mit Windows 10 funktionieren. Dieses Lernprogramm dauert 10 bis 20 Minuten.
 
-> **Wichtige APIs**: [Grid-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [StackPanel-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **Wichtige APIs:** [Grid-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [StackPanel-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>Voraussetzungen
 - Windows 10 und Microsoft Visual Studio 2015 oder höher. (Neueste Visual Studio, die für die aktuelle Entwicklung "und" Security Updates empfohlen werden) [Hier klicken, um zu erfahren, wie Sie mit Visual Studio Einrichtung](../../get-started/get-set-up.md).

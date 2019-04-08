@@ -22,7 +22,7 @@ ms.locfileid: "57654475"
 
 Mithilfe eines Farbwählers können Benutzer Farben suchen und auswählen. Standardmäßig können sie durch die Farben eines Farbspektrums navigieren oder eine bestimmte Farbe in einem Textfeld des Typs „Rot-Grün-Blau (RGB)“, „Wert für Farbton/Sättigung“ oder „Hexadezimal“ angeben.
 
-> **Wichtige APIs**: [ColorPicker-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [Color-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **Wichtige APIs:** [ColorPicker-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [Color-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![Eine Standard-Farbauswahl](images/color-picker-default.png)
 
@@ -42,7 +42,7 @@ Falls Ihre App zum Zeichnen oder für andere stiftbasierte Aufgaben gedacht ist,
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ColorPicker">die App zu öffnen und ColorPicker in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>

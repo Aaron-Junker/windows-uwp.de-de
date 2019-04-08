@@ -7,7 +7,7 @@ keywords: Windows 10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Li
 ms.localizationpriority: medium
 ms.openlocfilehash: 74f1a64bde32fe68a51527527a0b049d811d0853
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57662035"
@@ -55,8 +55,8 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 | endDate | date | Das Enddatum im Datumsbereich der Multiplayerdaten, die abgerufen werden sollen. Der Standardwert ist das aktuelle Datum. |  Nein  |
 | top | int | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
 | skip | int | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. |  Nein  |
-| filter | string  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede Anweisung enthält einen Feldnamen aus dem Antworttext und einen Wert, die mit den Operatoren **eq** oder **ne** verknüpft sind. Anweisungen können mit **and** oder **or** kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul> | Nein   |
-| groupby | string | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul><p/>Wenn Sie eine oder mehrere *Groupby*-Felder angeben, haben alle anderen *Groupby* Felder, die Sie nicht angeben, den Wert **All** im Antworttext. |  Nein  |
+| filter | string  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede Anweisung enthält einen Feldnamen aus dem Antworttext und einen Wert, die mit den Operatoren **eq** oder **ne** verknüpft sind. Anweisungen können mit **and** oder **or** kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>"DeviceType"</strong></li><li><strong>PackageVersion</strong></li><li><strong>Markt</strong></li><li><strong>Abonnementname</strong></li></ul> | Nein   |
+| groupby | string | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>Datum</strong></li><li><strong>"DeviceType"</strong></li><li><strong>PackageVersion</strong></li><li><strong>Markt</strong></li><li><strong>Abonnementname</strong></li></ul><p/>Wenn Sie eine oder mehrere *Groupby*-Felder angeben, haben alle anderen *Groupby* Felder, die Sie nicht angeben, den Wert **All** im Antworttext. |  Nein  |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel

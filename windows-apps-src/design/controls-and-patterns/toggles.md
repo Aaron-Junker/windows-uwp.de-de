@@ -25,7 +25,7 @@ Mit dem Umschalter stellt einen physischen Switch, der Benutzern ermöglicht, z.
 
 Um ein Umschalter-Steuerelement zu erstellen, verwenden Sie die  [ToggleSwitch-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch).
 
-> **Wichtige APIs**: [ToggleSwitch-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **Wichtige APIs:** [ToggleSwitch-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -46,7 +46,7 @@ Um den Umschalter leicht verständlich zu machen, kennzeichnen Sie ihn mit einem
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ToggleSwitch">ToggleSwitch</a> oder <a href="xamlcontrolsgallery:/item/ToggleButton">ToggleButton</a> in Aktion zu sehen.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>

@@ -85,5 +85,5 @@ Wenn Sie auf der Konsole aus irgendeinem Grund nicht möglich sind, können Sie 
 Wenn Sie die Xbox One Konsole noch nicht in den Einzelhandelsmodus zurückgesetzt haben, holen Sie dies jetzt nach wie unter [Wechseln zum Einzelhandelsmodus](#switch-to-retail-mode) beschrieben.
 
 ## <a name="see-also"></a>Siehe auch
-- [Ein Xbox-Entwickler-Modus-Aktivierung](devkit-activation.md)
+- [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md)
 - [UWP auf Xbox One](index.md)

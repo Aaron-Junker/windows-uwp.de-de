@@ -8,7 +8,7 @@ ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594805"
@@ -32,8 +32,8 @@ Weitere Informationen zur Codesignatur und zu Zertifikaten im Allgemeinen finden
 
 - **SignTool.exe**  
     Abhängig vom Installationspfad des SDK befindet sich **SignTool** an folgenden Speicherorten auf Ihrem Windows 10-PC:
-    - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
-    - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
+    - x86: C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\bin\x86\SignTool.exe
+    - x64: C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>Verwenden von SignTool
 
@@ -124,7 +124,7 @@ So suchen Sie weitere Informationen im Ereignisprotokoll
 
 Der interne Fehler 0x8007000B entspricht in der Regel einem der folgenden Werte:
 
-| **Ereignis-ID** | **Beispiel für Ereignis-Zeichenfolge** | **Suggestion** |
+| **Ereignis-ID** | **Beispiel für Ereignis-Zeichenfolge** | **Vorschlag** |
 |--------------|--------------------------|----------------|
 | 150          | Fehler 0x8007000B: Der Name der app-manifest Verleger (CN = Contoso) muss der Antragstellername des signierenden Zertifikats überein (CN = Contoso, C = US). | Der Name des Herausgebers des App-Manifests muss exakt mit dem Namen des Antragstellers der Signatur übereinstimmen.               |
 | 151          | Fehler 0x8007000B: Die Signaturmethode des Hash übereinstimmen angegebenen (SHA512) der Hash-Methode, die in der app-Paket (SHA256) verwendet.     | Der im Parameter /fd angegebene Hashalgorithmus ist falsch. Führen Sie **SignTool** erneut mit dem Hashalgorithmus aus, der mit der App-Paketblockzuordnung übereinstimmt (mit dem das App-Paket erstellt wurde).  |

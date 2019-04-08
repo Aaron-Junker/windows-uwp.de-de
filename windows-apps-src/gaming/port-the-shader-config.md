@@ -193,9 +193,9 @@ Im OpenGL ES 2.0-Beispiel wird ein **uniform**-Element für die Shaderpipeline d
 Zusätzlich zwei **attribute**-Werte für die Vertexdaten:
 
 -   **eine\_Position**: einen 4-Float-Vektor für den Modell-Koordinaten eines Scheitelpunkts.
--   **a\_color**: Ein 4-Float-Vektor für die Verbindung mit dem Vertex RGBA-Farbwert.
+-   **eine\_Farbe**: Ein 4-Float-Vektor für die Verbindung mit dem Vertex RGBA-Farbwert.
 
-Open GL ES 2.0: GLSL-Definitionen für die Uniformen und Attribute
+OpenGL ES 2.0: GLSL-Definitionen für die Uniformen und Attribute
 
 ``` syntax
 uniform mat4 u_mvpMatrix;

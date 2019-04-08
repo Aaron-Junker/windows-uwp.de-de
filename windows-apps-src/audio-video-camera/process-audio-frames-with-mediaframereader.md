@@ -80,7 +80,7 @@ Sie können Sie ein [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.
 * [Kamera](camera.md)
 * [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Beispiel für Camera-frames](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [Audio-Diagramme](audio-graphs.md)
+* [Audiodiagramme](audio-graphs.md)
  
 
 

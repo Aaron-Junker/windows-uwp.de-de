@@ -188,7 +188,7 @@ Englisch erfordert hierbei besondere Beachtung. Wenn für eine App die Lokalisie
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Wie das Ressourcenverwaltungssystem entspricht, und wählt Ressourcen](how-rms-matches-and-chooses-resources.md)
+* [Wie das Ressourcenverwaltungssystem Ressourcen zuordnet und auswählt](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Grundlegendes zu Benutzersprachen-Profil und app-manifest-Sprachen](../design/globalizing/manage-language-and-region.md)
 * [Komposition von Makro geografischen (kontinentalen) Regionen, geografische Teilregionen und ausgewählte wirtschaftlichen und anderen Gruppierungen](https://go.microsoft.com/fwlink/p/?LinkId=247929)

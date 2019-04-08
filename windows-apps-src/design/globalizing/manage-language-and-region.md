@@ -152,42 +152,42 @@ Die folgende Tabelle enthält Beispiele für die Elemente, die dem Benutzer unte
 <td align="left">Englisch (GB)</td>
 <td align="left">keine</td>
 <td align="left">Englisch (GB)</td>
-<td align="left">UI: Englisch (GB)<br>Datumsangaben/Uhrzeiten/Zahlen: Englisch (GB)</td>
+<td align="left">BENUTZEROBERFLÄCHE: Englisch (GB)<br>Datumsangaben/Uhrzeiten/Zahlen: Englisch (GB)</td>
 </tr>
 <tr>
 <td align="left">Deutsch (Deutschland) (Standard); Französisch (Frankreich); Italienisch (Italien)</td>
 <td align="left">Französisch (Österreich)</td>
 <td align="left">keine</td>
 <td align="left">Französisch (Österreich)</td>
-<td align="left">UI: Französisch (Frankreich) (Fallback für Französisch (Österreich))<br>Datumsangaben/Uhrzeiten/Zahlen: Französisch (Österreich)</td>
+<td align="left">BENUTZEROBERFLÄCHE: Französisch (Frankreich) (Fallback für Französisch (Österreich))<br>Datumsangaben/Uhrzeiten/Zahlen: Französisch (Österreich)</td>
 </tr>
 <tr>
 <td align="left">Englisch (US) (Standard); Französisch (Frankreich); Englisch (GB)</td>
 <td align="left">Englisch (Kanada); Französisch (Kanada)</td>
 <td align="left">keine</td>
 <td align="left">Englisch (Kanada); Französisch (Kanada)</td>
-<td align="left">UI: Englisch (USA) (Fallback für Englisch (Kanada))<br>Datumsangaben/Uhrzeiten/Zahlen: Englisch (Kanada)</td>
+<td align="left">BENUTZEROBERFLÄCHE: Englisch (USA) (Fallback für Englisch (Kanada))<br>Datumsangaben/Uhrzeiten/Zahlen: Englisch (Kanada)</td>
 </tr>
 <tr>
 <td align="left">Spanisch (Spanien) (Standard); Spanisch (Mexiko); Spanisch (Lateinamerika); Portugiesisch (Brasilien)</td>
 <td align="left">Englisch (USA)</td>
 <td align="left">keine</td>
 <td align="left">Spanisch (Spanien)</td>
-<td align="left">UI: Spanisch (Spanien) (verwendet seit kein Fallback verfügbar für Englisch)<br>Datum/Uhrzeit/Zahlen Spanisch (Spanien)</td>
+<td align="left">BENUTZEROBERFLÄCHE: Spanisch (Spanien) (verwendet seit kein Fallback verfügbar für Englisch)<br>Datum/Uhrzeit/Zahlen Spanisch (Spanien)</td>
 </tr>
 <tr>
 <td align="left">Katalanisch (Standard); Spanisch (Spanien); Französisch (Frankreich)</td>
 <td align="left">Katalanisch; Französisch (Frankreich)</td>
 <td align="left">keine</td>
 <td align="left">Katalanisch; Französisch (Frankreich)</td>
-<td align="left">UI: Vor allem Katalanisch und einige Französisch (Frankreich), da nicht alle Zeichenfolgen in Katalanisch sind<br>Datumsangaben/Uhrzeiten/Zahlen: Katalanisch</td>
+<td align="left">BENUTZEROBERFLÄCHE: Vor allem Katalanisch und einige Französisch (Frankreich), da nicht alle Zeichenfolgen in Katalanisch sind<br>Datumsangaben/Uhrzeiten/Zahlen: Katalanisch</td>
 </tr>
 <tr>
 <td align="left">Englisch (GB) (Standard); Französisch (Frankreich); Deutsch (Deutschland)</td>
 <td align="left">Deutsch (Deutschland); Englisch (GB)</td>
 <td align="left">Englisch (GB) (vom Benutzer in der App-UI ausgewählt)</td>
 <td align="left">Englisch (GB); Deutsch (Deutschland)</td>
-<td align="left">UI: Englisch (GB) (Language-Außerkraftsetzung)<br>Datum/Uhrzeit/Zahlen Englisch (GB)</td>
+<td align="left">BENUTZEROBERFLÄCHE: Englisch (GB) (Language-Außerkraftsetzung)<br>Datum/Uhrzeit/Zahlen Englisch (GB)</td>
 </tr>
 </tbody>
 </table>
@@ -210,10 +210,10 @@ Die folgende Tabelle enthält Beispiele für die Elemente, die dem Benutzer unte
 ## <a name="related-topics"></a>Verwandte Themen
 * [BCP-47-Sprachtag.](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [IANA Language-Sprachtags Registrierung](https://go.microsoft.com/fwlink/p/?linkid=227303)
-* [Passen Sie Ihre Ressourcen für die Sprache, Skalierung, hoher Kontrast und anderen Qualifizierer](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Unterstützte Sprachen](../../publish/supported-languages.md)
 * [Globalisieren Sie Ihrer Formate für Datum/Uhrzeit/Anzahl](use-global-ready-formats.md)
-* [Wie das Ressourcenverwaltungssystem Sprachtags übereinstimmt](../../app-resources/how-rms-matches-lang-tags.md)
+* [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>Beispiele
 * [Anwendungsressourcen und Lokalisierungsbeispiel](https://go.microsoft.com/fwlink/p/?linkid=231501)

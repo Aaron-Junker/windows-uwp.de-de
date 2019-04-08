@@ -78,7 +78,7 @@ Verwechseln Sie dieses Konzept nicht mit der Zuordnung einer Direct3D-Ressource 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Streaming von Ressourcen](streaming-resources.md)
+[Streamingressourcen](streaming-resources.md)
 
  
 

@@ -25,7 +25,7 @@ ms.locfileid: "57620125"
 
 Hier erfahren Sie, wie Sie Code für eine benutzerdefinierte [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)-Klasse schreiben. Dabei implementieren Sie die Methoden [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) und [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) und verwenden die [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514)-Eigenschaft. 
 
-> **Wichtige APIs**: [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711),[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 
+> **Wichtige APIs:** [**Bereich**](https://msdn.microsoft.com/library/windows/apps/br227511), [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711),[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 
 
 Der Beispielcode zeigt eine benutzerdefinierte Panelimplementierung. Wir gehen jedoch nicht detailliert auf die Erklärung der Layoutkonzepte ein, die Einfluss darauf haben, wie Sie ein Panel für verschiedene Layoutszenarien anpassen können. Wenn Sie weitere Informationen zu diesen Layoutkonzepten und der Anwendbarkeit auf Ihr jeweiliges Layoutszenario benötigen, lesen Sie [Übersicht über benutzerdefinierte XAML-Panels](custom-panels-overview.md).
 

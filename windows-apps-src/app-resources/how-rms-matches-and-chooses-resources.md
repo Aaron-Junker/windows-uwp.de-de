@@ -1,5 +1,5 @@
 ---
-Description: Wenn eine Ressource angefordert wird, kann es mehrere Kandidaten geben, für die sich in einem gewissen Maße eine Übereinstimmung mit dem aktuellen Ressourcenkontext ergibt. Vom Ressourcenverwaltungssystem werden alle Kandidaten analysiert, und der beste Kandidat für die Rückgabe wird ermittelt. In diesem Thema wird dieser Prozess ausführlich und anhand von Beispielen beschrieben.
+Description: Wenn eine Ressource angefordert wird, kann es mehrere Kandidaten geben, für die sich in einem gewissen Maße eine Übereinstimmung mit dem aktuellen Ressourcenkontext ergibt. Das Ressourcenverwaltungssystem analysiert alle Kandidaten und ermittelt den besten Kandidaten für die Rückgabe. In diesem Thema wird dieser Prozess ausführlich und anhand von Beispielen beschrieben.
 title: Wie das Ressourcenverwaltungssystem Ressourcen zuordnet und auswählt
 template: detail.hbs
 ms.date: 10/23/2017
@@ -135,4 +135,4 @@ de/images/contrast-standard/logo.jpg
 * [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Kompilieren von Ressourcen mit MakePri.exe manuell](compile-resources-manually-with-makepri.md)
+* [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](compile-resources-manually-with-makepri.md)

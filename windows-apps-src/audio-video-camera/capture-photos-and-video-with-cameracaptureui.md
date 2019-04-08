@@ -90,7 +90,7 @@ Erstellen Sie mit der von der Kameraaufnahme-UI zurückgegebenen Videodatei eine
 
 * [Kamera](camera.md)
 * [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
+* [**"Cameracaptureui"**](https://msdn.microsoft.com/library/windows/apps/br241030) 
  
 
  

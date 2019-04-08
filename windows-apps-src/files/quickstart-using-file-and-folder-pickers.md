@@ -17,9 +17,9 @@ ms.locfileid: "57662765"
 
 **Wichtige APIs**
 
--   [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)
+-   [**Fileopenpicker-Klasse**](https://msdn.microsoft.com/library/windows/apps/br207847)
 -   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
--   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**"Storagefile"**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
 Greifen Sie auf Dateien und Ordner zu, indem Sie Benutzern die Interaktion mit einer Auswahl ermöglichen. Mithilfe der Klassen [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) und [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) können Sie auf Dateien und mithilfe der Klasse [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) auf einen Ordner zugreifen.
 

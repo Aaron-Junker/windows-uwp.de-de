@@ -26,7 +26,7 @@ Eine geschachtelte UI ist eine Benutzeroberfläche (User Interface, UI) mit gesc
 
 Sie können dem Benutzer mit geschachtelten UIs weitere Optionen zur Verfügung stellen, mit denen sie wichtige Aktionen schneller ausführen können. Bedenken Sie jedoch, dass die Benutzeroberfläche komplizierter wird, je mehr Aktionen Sie anbieten. Wenn Sie diese Art von Benutzeroberfläche verwenden, sollten Sie besonders vorsichtig vorgehen. Dieser Artikel enthält Richtlinien, um die beste Vorgehensweise für Ihre UI zu ermitteln.
 
-> **Wichtige APIs**: [ListView-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [GridView-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **Wichtige APIs:** [ListView-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [GridView-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 In diesem Artikel erläutern wir die Erstellung von geschachtelten UIs in [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)- und in [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)-Elementen. In diesem Abschnitt werden andere Formen von geschachtelten UIs nicht berücksichtigt, aber die hier gegebenen Konzepte lassen sich auf andere UIs übertragen. Bevor Sie beginnen, sollten Sie mit der allgemeinen Richtlinie für die Verwendung von ListView- und GridView-Steuerelementen in der Benutzeroberfläche vertraut sein, die in den Artikeln [Listen](lists.md) und [Listenansicht und Rasteransicht](listview-and-gridview.md) beschrieben wird.
 

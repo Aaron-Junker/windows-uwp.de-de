@@ -111,15 +111,15 @@ Benutzereingabe-Steuerelemente sind die Elemente der Benutzeroberfläche, die Be
 Steuerelement | Verwendung | Beispiel
  - | - | -
 [TextBox](text-box.md) | Erfassen Sie eine oder mehrere Textzeilen | Namen, formfreien Antworten oder feedback
-[PasswordBox](password-box.md) | Sammeln Sie private Daten verdecken von Zeichen | Kennwörter, Sozialversicherungsnummern (SSN), PINs, Kreditkarteninformationen 
+[PasswordBox-Element](password-box.md) | Sammeln Sie private Daten verdecken von Zeichen | Kennwörter, Sozialversicherungsnummern (SSN), PINs, Kreditkarteninformationen 
 [AutoSuggestBox](auto-suggest-box.md) | Zeigen Sie Benutzer eine Liste mit Vorschlägen in einen entsprechenden Satz von Daten an, während sie eingeben | Datenbank suchen, um e-Mail-: Zeile, die vorherige Abfragen
 [RichEditBox](rich-edit-box.md) | Bearbeiten von Textdateien mit formatierten Text, links und Bilder | Datei hochladen, Vorschau und in der app bearbeiten
 
 ### <a name="selection"></a>Auswahl
 Steuerelement | Verwendung | Beispiel
 - | - | - 
-| [CheckBox](checkbox.md) | Aktivieren Sie oder deaktivieren Sie eine oder mehrere Aufgaben | Geschäftsbedingungen stimmen Sie zu, fügen Sie optionale Elemente hinzu, wählen Sie alle zutreffenden
-[RadioButton](radio-button.md) | Wählen Sie eine Option aus, aus zwei oder mehr Optionen | Wählen Sie Typ, Versand, Methode usw. an.
+| [Kontrollkästchen](checkbox.md) | Aktivieren Sie oder deaktivieren Sie eine oder mehrere Aufgaben | Geschäftsbedingungen stimmen Sie zu, fügen Sie optionale Elemente hinzu, wählen Sie alle zutreffenden
+[Optionsfeld](radio-button.md) | Wählen Sie eine Option aus, aus zwei oder mehr Optionen | Wählen Sie Typ, Versand, Methode usw. an.
 [ToggleSwitch](toggles.md) | Wählen Sie eine der zwei sich gegenseitig ausschließende Optionen | Aktivieren/Deaktivieren
 
 > **Hinweis**: Wenn fünf oder mehr Auswahlelemente vorhanden sind, verwenden Sie ein Listensteuerelement.
@@ -238,4 +238,4 @@ Dieses Beispiel verwendet die [Pivot](pivot.md) Steuerelement [Blog](../style/ac
 
 ## <a name="related-topics"></a>Verwandte Themen
 - [Benutzereingabe-Steuerelemente](controls-and-events-intro.md)
-- [Typography](../style/typography.md)
+- [Typografie](../style/typography.md)

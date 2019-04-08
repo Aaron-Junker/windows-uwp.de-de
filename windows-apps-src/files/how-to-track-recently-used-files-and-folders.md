@@ -18,7 +18,7 @@ ms.locfileid: "57601625"
 **Wichtige APIs**
 
 - [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
-- [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
+- [**Fileopenpicker-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh738369)
 
 Sie können Dateien nachverfolgen, auf die häufig zugegriffen wird, indem Sie sie der Liste mit den zuletzt verwendeten Elementen (MRU) der App hinzufügen. Die Plattform verwaltet die MRU für Sie. Dabei werden Elemente nach der Zeit und dem Ort des letzten Zugriffs sortiert und die ältesten Elemente entfernt, wenn das Limit von 25 Elementen erreicht ist. Alle Apps besitzen eine eigene MRU.
 
@@ -37,7 +37,7 @@ Ihre App-MRU-Liste wird durch die [**StorageItemMostRecentlyUsedList**](https://
 
     Weitere Informationen finden Sie unter [Berechtigungen für den Dateizugriff](file-access-permissions.md).
 
--   [Öffnen von Dateien und Ordner mit einer Auswahl](quickstart-using-file-and-folder-pickers.md)
+-   [Öffnen von Dateien und Ordnern mit einer Auswahl](quickstart-using-file-and-folder-pickers.md)
 
     Die ausgewählten Dateien sind meist diejenigen, auf die Benutzer immer wieder zugreifen.
 

@@ -38,7 +38,7 @@ using Windows.UI.StartScreen;
 Sekundäre Kacheln bestehen aus einigen wichtigen Komponenten...
 
 * **TileId**: Ein eindeutiger Bezeichner, der Sie die Kachel für die anderen sekundären Kacheln identifizieren kann.
-* **DisplayName**: Der Name, den Sie auf der Kachel angezeigt werden sollen.
+* **"DisplayName"**: Der Name, den Sie auf der Kachel angezeigt werden sollen.
 * **Argumente**: Die Argumente sollen übergebenen zurück zu Ihrer app klickt der Benutzer auf die Kachel.
 * **Square150x150Logo**: Das erforderliche Logo, das angezeigt wird, auf die mittlere Größe Kachel (und zur Kachel "klein" geändert werden, wenn kein kleines Logo angegeben).
 

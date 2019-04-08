@@ -50,7 +50,7 @@ Andere navigationsmuster finden Sie unter [Grundlagen des Berichtsentwurfs Navig
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/NavigationView">die App zu öffnen und NavigationView in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
@@ -144,7 +144,7 @@ Im Bereich von NavigationView kann Folgendes enthalten:
 
 - [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) Objekte. Der Navigationselemente zu bestimmten Seiten zu navigieren.
 - [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) Objekte. Trennzeichen für die Navigationselemente zu gruppieren. Legen Sie die [Deckkraft](/uwp/api/windows.ui.xaml.uielement.opacity) Eigenschaft auf 0, um das Trennzeichen als Leerzeichen rendern.
-- [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) objects. Die Header für die Bezeichnung von Gruppen von Elementen.
+- [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) Objekte. Die Header für die Bezeichnung von Gruppen von Elementen.
 - Eine optionale [AutoSuggestBox](auto-suggest-box.md) Steuerelement für die Suche von app-Ebene ermöglichen. Weisen Sie das Steuerelement, das die [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) Eigenschaft.
 - Ein optionaler Einstiegspunkt für [App-Einstellungen](../app-settings/app-settings-and-data.md). Um das Settings-Element auszublenden, legen die [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) Eigenschaft **"false"**.
 

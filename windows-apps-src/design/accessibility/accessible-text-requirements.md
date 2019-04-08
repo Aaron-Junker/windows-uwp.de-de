@@ -172,11 +172,11 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 Der Wert des **TextScaleFactor** ein Double-Wert im Bereich von \[1,2.25\]. Der kleinste Text wird um diesen Wert vergrößert. Unter Umständen können Sie den Wert verwenden, um beispielsweise Grafiken passend zum Text zu skalieren. Denken Sie jedoch daran, dass nicht der gesamte Text um denselben Faktor skaliert wird. Allgemein gilt: Je größer der Text, desto geringer sind die Auswirkungen der Skalierung.
 
 Diese Typen verfügen über eine **IsTextScaleFactorEnabled**-Eigenschaft:  
-* [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
+* [**ContentPresenter-Element**](https://msdn.microsoft.com/library/windows/apps/BR209378)
 * [**Steuerelement** ](https://msdn.microsoft.com/library/windows/apps/BR209390) und abgeleitete Klassen
 * [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
 * [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
+* [**TextBlock-Element**](https://msdn.microsoft.com/library/windows/apps/BR209652)
 * [**Das TextElement** ](https://msdn.microsoft.com/library/windows/apps/BR209967) und abgeleitete Klassen
 
 <span id="related_topics"/>

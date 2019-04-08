@@ -59,5 +59,5 @@ Wenn etwas anderes als ein Skript geändert wird, muss das Projekt im Editor neu
 In bestimmten Situationen müssen Teile dieses neu generierten UWP-Verzeichnisses der Versionskontrolle hinzugefügt werden. Dies ist beispielsweise der Fall, wenn Sie dem UWP-Projekt eine neue Abhängigkeit (z. B. das Xbox Live SDK) hinzufügen.  Wir betrachten dieses Beispiel unter [Versionskontrolle für Ihr UWP-Projekt](development-lanes-unity-versioning.md) ausführlich.
 
 ## <a name="see-also"></a>Siehe auch
-- [Vorhandene Spiele anbieten für Xbox](development-lanes-landing.md)
+- [Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)
 - [UWP auf Xbox One](index.md)

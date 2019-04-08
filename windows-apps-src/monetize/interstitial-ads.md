@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Anzeigen, Werbung, Anzeigensteuerelement, Interstiti
 ms.localizationpriority: medium
 ms.openlocfilehash: 9abf761aa141ef3d0c19d6d5401b6815542d4172
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57603915"
@@ -42,9 +42,9 @@ Wir bieten zwei Arten von Interstitialwerbung in Ihren Apps und Spielen an: **Vi
 
 Befolgen Sie zum Anzeigen von Interstitialwerbung in Ihrer App die Anweisungen für den jeweiligen Projekttyp:
 
-* [XAML/.NET](#interstitialadsxaml10)
+* [XAML UND .NET](#interstitialadsxaml10)
 * [HTML/JavaScript](#interstitialadshtml10)
-* [C++ (DirectX Interop)](#interstitialadsdirectx10)
+* [C++ (DirectX-Interop)](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
 

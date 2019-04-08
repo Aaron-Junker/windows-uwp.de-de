@@ -260,4 +260,4 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Verschieben von c++ / WinRT in C++ / CX](move-to-winrt-from-cx.md)
+* [Umstellen von C++/CX auf C++/WinRT](move-to-winrt-from-cx.md)

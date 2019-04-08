@@ -213,7 +213,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 Dieser Fehler tritt auf, da auf Projektmappenebene nicht eindeutig ist, welche App im Bündel enthalten sein soll.
 Um dieses Problem zu beheben, öffnen Sie jede Projektdatei und fügen am Ende des ersten `<PropertyGroup>`-Elements die folgenden Eigenschaften hinzu:
 
-|**Project**|**Eigenschaften**|
+|**Projekt**|**Eigenschaften**|
 |-------|----------|
 |App|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
@@ -358,7 +358,7 @@ Anschließend können Sie mit dem Tool „Pvk2Pfx“ eine PFX-Datei generieren, 
 
 Stellen Sie diese Zertifikate für jede Computerrolle bereit:
 
-|**Computer**|**Usage**|**Certificate**|**Certificate Store**|
+|**Computer**|**Verwendung**|**Certificate**|**Certificate Store**|
 |-----------|---------|---------------|---------------------|
 |Entwickler/Buildcomputer|Signieren von Builds|MyCert.PFX|Aktueller Benutzer/Persönlich|
 |Entwickler/Buildcomputer|Führen Sie Folgendes aus:|MyCert.cer|Lokaler Computer/Vertrauenswürdige Personen|

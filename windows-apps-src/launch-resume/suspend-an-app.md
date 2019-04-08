@@ -149,8 +149,8 @@ Durch eine Verzögerung verlängert sich nicht die Zeit, die Ihr Code ausgeführ
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [App-Lebenszyklus](app-lifecycle.md)
-* [Behandeln von app-Aktivierung](activate-an-app.md)
-* [Behandeln von app-fortsetzen](resume-an-app.md)
+* [Behandeln der App-Aktivierung](activate-an-app.md)
+* [Behandeln der App-Fortsetzung](resume-an-app.md)
 * [UX-Richtlinien für den Start, Anhalten und fortsetzen](https://msdn.microsoft.com/library/windows/apps/dn611862)
 * [Erweiterte Ausführung](run-minimized-with-extended-execution.md)
 

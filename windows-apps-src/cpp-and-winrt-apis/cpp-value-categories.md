@@ -1,5 +1,5 @@
 ---
-description: Dieses Thema beschreibt die verschiedenen Kategorien von Werten, die in C++ vorhanden sein. Sie werden ohne Zweifel auch schon von Lvalues und Rvalues, aber auch andere Arten, stehen.
+description: In diesem Thema werden die verschiedenen Kategorien von Werten beschrieben, die in C++ vorhanden sind. Sie haben sicherlich schon von „lvalues“ und „rvalues“ gehört, aber es gibt auch andere Arten.
 title: Wert Kategorien und Verweise auf diese
 ms.date: 08/11/2018
 ms.topic: article
@@ -153,7 +153,7 @@ void bar(A&& a) // a is a named rvalue reference; it's an lvalue.
 A&& get_by_rvalue_ref() { ... } // This unnamed rvalue reference is an xvalue.
 ```
 
-### <a name="im"></a>\!i\&\!m
+### <a name="im"></a>\!ich\&\!m
 Die Art des Werts, der nicht die Identität haben und nicht verschiebbar ist, die eine Kombination aus, der wir noch nicht diskutiert. Aber wir können, da dieser Kategorie nützlich, sich in der C++-Sprache nicht ignorieren.
 
 ## <a name="reference-collapsing-rules"></a>Referenz-collapsing Regeln
@@ -189,4 +189,4 @@ template <typename _Ty> void bar(_Ty&& ty) { ... }
 - Der Grund, die Weiterleitung von verweisen (z. B. `_Ty&&`) vorhanden ist *nicht* für die Optimierung, jedoch werden, was Sie an Sie übergeben und auf transparent und effizient weiterleiten. Sie sind wahrscheinlich einen Verweis für die Weiterleitung konfrontiert werden, nur dann, wenn Sie Bibliothekscode zu schreiben (oder genauer untersuchen)&mdash;z. B. einer Factory-Funktion, die auf Konstruktorargumente weiterleitet.
 
 ## <a name="sources"></a>Quellen
-* \[Stroustrup 2013\] b Stroustrup: The C++ Programming Language, Fourth Edition. Addison-Wesley. 2013.
+* \[Stroustrup 2013\] b Stroustrup: Die C++-Programmiersprache, 4. Auflage. Addison-Wesley. 2013.

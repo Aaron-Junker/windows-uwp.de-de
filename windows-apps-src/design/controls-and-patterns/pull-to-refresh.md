@@ -23,7 +23,7 @@ ms.locfileid: "57659255"
 
 Mithilfe der Aktion „Aktualisieren durch Ziehen“ können Benutzer eine Datenliste per Touchgeste nach unten ziehen, um weitere Daten abzurufen. Die Aktion „Aktualisieren durch Ziehen“ wird häufig auf Geräten mit Touchscreen verwendet. Sie können die hier gezeigten APIs zum Implementieren von „Aktualisieren durch Ziehen“ in Ihre App verwenden.
 
-> **Wichtige APIs**: [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
+> **Wichtige APIs:** [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
 ![GIF zu „Aktualisieren durch Ziehen“](images/Pull-To-Refresh.gif)
 

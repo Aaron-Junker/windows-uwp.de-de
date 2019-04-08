@@ -18,7 +18,7 @@ ms.locfileid: "57613305"
 
 <b>Wichtige APIs</b>
 
--   [**Windows.UI.Core namespace**](https://msdn.microsoft.com/library/windows/apps/BR208383)
+-   [**Windows.UI.Core-namespace**](https://msdn.microsoft.com/library/windows/apps/BR208383)
 -   [**Windows.System.Threading-namespace**](https://msdn.microsoft.com/library/windows/apps/BR229642)
 
 Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Timers ausgeführt wird.

@@ -31,9 +31,9 @@ Weitere Informationen zu Project Rome im Allgemeinen, einschließlich Ressourcen
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Starten Sie eine app auf einem Remotegerät](launch-a-remote-app.md) | Erfahren Sie, wie Sie eine App auf einem Remotegerät starten. In diesem Thema werden der einfachste Anwendungsfall und die vorläufige Einrichtung behandelt.  |
-| [Ermitteln von Remotegeräten](discover-remote-devices.md)  | Erfahren Sie, wie Sie Geräte entdecken, zu denen Sie eine Verbindung herstellen können. |
-| [Mit einem remote-app-Dienst kommunizieren](communicate-with-a-remote-app-service.md) | Erfahren Sie, wie Sie mit einer App auf einem Remotegerät interagieren. |
-| [Verbinden Sie Geräte über remote-Sitzungen](remote-sessions.md) | Ermöglichen Sie die gemeinsame Nutzung auf verbundenen Geräten, indem Sie diese in einer Remotesitzung vereinen. |
-| [Fortsetzen von Benutzeraktivitäten, sogar auf Geräten](useractivities.md)| Helfen Sie Benutzern, die fortgesetzt, wo sie auch auf mehreren Geräten in Ihrer app aufgehört haben.|
+| [Starten einer App auf einem Remotegerät](launch-a-remote-app.md) | Erfahren Sie, wie Sie eine App auf einem Remotegerät starten. In diesem Thema werden der einfachste Anwendungsfall und die vorläufige Einrichtung behandelt.  |
+| [Entdecken von Remotegeräten](discover-remote-devices.md)  | Erfahren Sie, wie Sie Geräte entdecken, zu denen Sie eine Verbindung herstellen können. |
+| [Kommunizieren mit einem App-Remotedienst](communicate-with-a-remote-app-service.md) | Erfahren Sie, wie Sie mit einer App auf einem Remotegerät interagieren. |
+| [Verbinden von Geräten über Remotesitzungen](remote-sessions.md) | Ermöglichen Sie die gemeinsame Nutzung auf verbundenen Geräten, indem Sie diese in einer Remotesitzung vereinen. |
+| [Fortsetzen von Benutzeraktivitäten (auch geräteübergreifend)](useractivities.md)| Helfen Sie Benutzern, die fortgesetzt, wo sie auch auf mehreren Geräten in Ihrer app aufgehört haben.|
 | [Bewährte Methoden für Benutzer Aktivitäten](useractivities-best-practices.md)| Erfahren Sie, die empfohlenen Methoden zum Erstellen und Aktualisieren von Benutzeraktivitäten.|

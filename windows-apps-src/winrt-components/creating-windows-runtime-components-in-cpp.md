@@ -1,6 +1,6 @@
 ---
 title: Erstellen von Komponenten für Windows-Runtime in C++
-description: In diesem Thema wird gezeigt, wie mit C++ / CX verwenden, um eine Windows-Runtime-Komponente, zu erstellen, die eine Komponente ist, die über eine universelle Windows-app mit erstellt C#, Visual Basic, C++ oder Javascript.
+description: In diesem Artikel wird beschrieben, wie Sie eine Komponente für Windows-Runtime mit C++/CX erstellen. Dabei handelt es sich um eine Komponente, die aus einer universellen Windows-App aufgerufen werden kann, die mit C#, Visual Basic, C++ oder Javascript entwickelt wurde.
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.date: 05/14/2018
 ms.topic: article
@@ -17,7 +17,7 @@ ms.locfileid: "57600865"
 > [!NOTE]
 > In diesem Thema erhalten Sie Unterstützung bei der Verwaltung Ihrer C++/CX-Anwendung. Es wird jedoch empfohlen, dass Sie [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) für neue Anwendungen nutzen. C++/WinRT ist eine vollständig standardisierte, moderne C++17 Sprachprojektion für Windows-Runtime-(WinRT)-APIs, die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet. Informationen zum Erstellen einer Windows-Runtime-Komponente mithilfe C++ / WinRT, finden Sie unter [Erstellen von Ereignissen in C++ / WinRT](../cpp-and-winrt-apis/author-events.md).
 
-In diesem Thema wird gezeigt, wie mit C++ / CX verwenden, um eine Windows-Runtime-Komponente, zu erstellen, die eine Komponente ist, die über eine universelle Windows-app mit erstellt C#, Visual Basic, C++ oder Javascript.
+In diesem Artikel wird beschrieben, wie Sie eine Komponente für Windows-Runtime mit C++/CX erstellen. Dabei handelt es sich um eine Komponente, die aus einer universellen Windows-App aufgerufen werden kann, die mit C#, Visual Basic, C++ oder Javascript entwickelt wurde.
 
 Es gibt mehrere Gründe für die Erstellung einer Windows-Runtime-Komponente.
 - Um die Leistungsvorteile von C++ für komplexe oder rechenintensive Vorgänge zu übernehmen.

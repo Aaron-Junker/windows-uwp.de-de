@@ -21,7 +21,7 @@ ms.locfileid: "57642835"
 
 Mit Listenanimationen können Sie einzelne oder mehrere Elemente in einer Sammlung wie z. B. einem Fotoalbum oder einer Liste mit Suchergebnissen einfügen oder entfernen.
 
-> **Wichtige APIs**: [**AddDeleteThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **Wichtige APIs:** [**AddDeleteThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen

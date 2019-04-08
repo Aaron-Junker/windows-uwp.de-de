@@ -24,7 +24,7 @@ ms.locfileid: "57631005"
 
 Die Suche ist eine der besten Möglichkeiten, um Inhalte in Ihrer App zu finden. In diesem Artikel werden Elemente der Suche sowie Suchbereiche, die Implementierung und Beispiele für die Suche im Kontext behandelt.
 
-> **Wichtige APIs**: [AutoSuggestBox-Klasse](https://msdn.microsoft.com/library/windows/apps/dn633874)
+> **Wichtige APIs:** [AutoSuggestBox-Klasse](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## <a name="elements-of-the-search-experience"></a>Elemente der Suche
 

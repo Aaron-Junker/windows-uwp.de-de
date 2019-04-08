@@ -32,7 +32,7 @@ Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Da
 
 Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite nach bestimmten Add-Ons, Markt und/oder Gerätetyp zu filtern.
 
--   **Add-on**: Der Standardfilter ist **alle Add-ons**, aber Sie können die Daten an eine oder mehrere Add-Ons mit der app einschränken.
+-   **Add-On**: Der Standardfilter ist **alle Add-ons**, aber Sie können die Daten an eine oder mehrere Add-Ons mit der app einschränken.
 -   **Markt**: Der Standardfilter ist **alle Märkte**, aber Sie können die Daten, Übernahmen ein oder mehrere Märkte einschränken.
 -   **Gerätetyp**: Die Standardeinstellung ist **alle Geräte**. Wenn Daten für Käufe nur für einen bestimmten Gerätetyp angezeigt werden sollen (beispielsweise PCs, Konsolen oder Tablets), können Sie hier einen bestimmten Typ auswählen.
 

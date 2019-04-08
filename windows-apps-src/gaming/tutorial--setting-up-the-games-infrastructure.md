@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Spiele, Einrichtung, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57608705"
@@ -38,7 +38,7 @@ Eine Visual Studio-Vorlage ist eine Sammlung von Einstellungen und Codedateien, 
 Die richtige Vorlage für dieses Tutorial ist die Vorlage **DirectX 11 App (Universal Windows)**. 
 
 Schritte zum Erstellen eines DirectX 11-Spieleprojekts in Visual Studio 11:
-1.  Wählen Sie **Datei...** &gt; **Neue** &gt; **Projekt...** 
+1.  Wählen Sie **Datei...** &gt; **Neue** &gt; **Projekt...**
 2.  Wählen Sie im linken Bereich **installiert** &gt; **Vorlagen** &gt; **Visual C++** &gt; **Windows Universal**
 3.  Wählen Sie im mittleren Bereich **DirectX 11-App (universelle Windows-App)** aus
 4.  Geben Sie Ihrem Spieleprojekt einen Namen, und klicken Sie auf **OK**.

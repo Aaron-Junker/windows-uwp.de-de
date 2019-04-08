@@ -26,8 +26,8 @@ Um diese Informationen zu suchen, navigieren Sie zu einer Ihrer Apps und erweite
 Die folgenden Werte müssen im Paketmanifest enthalten sein. Wenn Sie Ihre [Pakete mit Microsoft Visual Studio erstellen](../packaging/packaging-uwp-apps.md) und mit demselben Microsoft-Konto angemeldet sind, das Sie mit Ihrem Entwicklerkonto verknüpft haben, werden diese Details automatisch eingefügt. Wenn Sie Ihr Paket manuell erstellen, müssen Sie folgende Details selbst hinzufügen:
 
 -   **Paket/Identity/Name**
--   **Package/Identity/Publisher**
--   **Package/Properties/PublisherDisplayName**
+-   **/ Identity/Herausgeber des Pakets**
+-   **Paket/Eigenschaften / "publisherdisplayname" überein.**
 
 Weitere Informationen finden Sie unter [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) in der [Paketmanifestschema-Referenz](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, In-App-Einkäufe, IAPs, Add-Ons, Windows.Services.St
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57623095"
@@ -83,7 +83,7 @@ Im folgenden Beispiel werden Informationen für dauerhafte Add-Ons mit den angeg
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-app-Käufe und Testversionen](in-app-purchases-and-trials.md)
+* [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Lizenzinformationen für apps und -Add-Ons](get-license-info-for-apps-and-add-ons.md)
 * [Aktivieren von in-app-Käufe von apps und -Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Aktivieren Sie nutzbar Add-on-Käufe](enable-consumable-add-on-purchases.md)

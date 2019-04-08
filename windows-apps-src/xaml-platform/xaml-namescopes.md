@@ -83,7 +83,7 @@ Wegen der separaten XAML-NameScopes erfordert die Suche nach benannten Elementen
 * [Übersicht über XAML](xaml-overview.md)
 * [X: Name-Attribut](x-name-attribute.md)
 * [Schnellstart: Steuerelementvorlagen](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
+* [**"XamlReader.Load" zurück**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
  
 

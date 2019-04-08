@@ -102,6 +102,6 @@ Speichern und schließen Sie, und erstellen Sie das Projekt dann neu.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Passen Sie Ihre Ressourcen für die Sprache, Skalierung, hoher Kontrast und anderen Qualifizierer](tailor-resources-lang-scale-contrast.md)
+* [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](tailor-resources-lang-scale-contrast.md)
 * [BCP-47-Sprachtag.](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Kompilieren von Ressourcen mit MakePri.exe manuell](compile-resources-manually-with-makepri.md)
+* [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](compile-resources-manually-with-makepri.md)

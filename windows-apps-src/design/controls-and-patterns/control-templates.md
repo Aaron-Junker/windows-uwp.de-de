@@ -22,7 +22,7 @@ ms.locfileid: "57613515"
 
 Durch Erstellen einer Steuerelementvorlage im XAML-Framework können Sie die visuelle Struktur und das visuelle Verhalten eines Steuerelements anpassen. Steuerelemente besitzen zahlreiche Eigenschaften wie [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) und [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404). Damit können Sie verschiedene Aspekte der Steuerelementdarstellung angeben. Die Anpassungen, die Sie mit diesen Eigenschaften vornehmen können, sind jedoch begrenzt. Weitere Anpassungen können Sie durch Erstellen einer Vorlage mit der [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)-Klasse angeben. Hier erfahren Sie, wie Sie eine **ControlTemplate** erstellen, um das Erscheinungsbild eines [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)-Steuerelements anzupassen.
 
-> **Wichtige APIs**: [**ControlTemplate-Klasse**](https://msdn.microsoft.com/library/windows/apps/br209391), [ **Control.Template-Eigenschaft**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
+> **Wichtige APIs:** [**ControlTemplate-Klasse**](https://msdn.microsoft.com/library/windows/apps/br209391), [ **Control.Template-Eigenschaft**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
 
 ## <a name="custom-control-template-example"></a>Beispiel für eine benutzerdefinierte Steuerelementvorlage
 
@@ -100,7 +100,7 @@ Diese Tabelle enthält die möglichen Werte von [**IsChecked**](https://msdn.mic
 | **IsChecked**-Wert | **CheckBox**-Zustand | **CheckBox**-Darstellung |
 | **true**            | `Checked`          | Enthält ein „X“.        |
 | **false**           | `Unchecked`        | Leer.                  |
-| **null**            | `Indeterminate`    | Enthält einen Kreis.      |
+| **NULL**            | `Indeterminate`    | Enthält einen Kreis.      |
 
 
 Das Erscheinungsbild eines Steuerelements in verschiedenen Zuständen wird mithilfe von [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007)-Objekten angegeben. Eine **VisualState**-Klasse enthält eine [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817)- oder [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053)-Eigenschaft, mit der die Darstellung der Elementen in der [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)-Klasse geändert wird. Wenn das Steuerelement in den Zustand übergeht, den die [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) angibt, werden die Änderungen in der **Setter**- oder [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)-Eigenschaft angewendet. Verlässt das Steuerelement den Zustand wieder, werden die Änderungen entfernt. **VisualState**-Objekte werden [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014)-Objekten hinzugefügt. **VisualStateGroup**-Objekte werden der angefügten [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505)-Eigenschaft hinzugefügt. Diesel legen Sie im [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706)-Stammelement der **ControlTemplate**-Klasse fest.

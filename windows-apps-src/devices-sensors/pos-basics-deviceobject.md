@@ -47,4 +47,4 @@ Mit einem <DeviceObject>.Closed-Ereignishandler können Sie erkennen, wann ein O
 > Weitere Informationen zum Anwendungslebenszyklus für die Universelle Windows-Plattform (UWP) in Windows 10 finden Sie in den folgenden Themen:
 > - [App-Lebenszyklus von Windows 10 universelle Windows-Plattform (UWP)](../launch-resume/app-lifecycle.md)
 > - [Behandeln Sie die app anhalten](../launch-resume/suspend-an-app.md)
-> - [Behandeln von app-fortsetzen](../launch-resume/resume-an-app.md)
+> - [Behandeln der App-Fortsetzung](../launch-resume/resume-an-app.md)

@@ -30,7 +30,7 @@ Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?
 
 ![Windows Machine Learning-Grafik](images/winml-graphic.png)
 
-### <a name="windows-ui-library"></a>UI-Bibliothek für Windows
+### <a name="windows-ui-library"></a>Windows-UI-Bibliothek
 
 [Die Windows-UI-Bibliothek](https://aka.ms/winui-docs) ist ein Satz von NuGet-Pakete, die von Steuerelementen und andere Elemente der Benutzeroberfläche für UWP-apps bereitstellen. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, damit Ihre app funktioniert, auch wenn Ihre Benutzer nicht über die neuste Version verfügen.
 
@@ -54,11 +54,11 @@ Wir haben aktualisiert [Anleitungen Beitragenden](https://github.com/MicrosoftDo
 
 In der Videoreihe Dev Frage behandeln langjährigen Microsoft-Entwicklern eine Reihe von Fragen zu Windows-Entwicklung, Teams und Verlauf. Hier ist die neueste Fragen, die wir beantwortet haben!
 
-Aaron Gustafson:
+Aaron Gustafsonschem:
 
 * [6-Videos auf Progressive Web-Apps](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
 
-Chris Heilmann
+Christian Heilmann
 
 * [4-Videos auf das Tool webhint](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
 

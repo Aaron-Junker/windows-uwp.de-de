@@ -27,9 +27,9 @@ In diesem Artikel werden die vier Benachrichtigungsoptionen – lokal, geplant, 
 
 Es gibt vier Mechanismen, die von einer App zum Übermitteln einer Benachrichtigung verwendet werden können:
 
--   **Local**
+-   **lokale**
 -   **Geplant**
--   **Periodic**
+-   **Regelmäßige**
 -   **Pushbenachrichtigungen**
 
 In dieser Tabelle sind die Benachrichtigungsübermittlungstypen zusammengefasst.
@@ -111,7 +111,7 @@ Standardmäßig laufen lokale Popupbenachrichtigungen in drei Tagen und lokale K
 Weitere Informationen finden Sie in folgenden Themen:
 
 -   [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
--   [Eine lokale toastbenachrichtigung senden](send-local-toast.md)
+-   [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md)
 -   [Codebeispiele für die universelle Windows-Plattform (UWP) Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>Geplante Benachrichtigungen
@@ -161,7 +161,7 @@ Weitere Informationen finden Sie unter:
 
 
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
-* [Eine lokale toastbenachrichtigung senden](send-local-toast.md)
+* [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md)
 * [Richtlinien für Pushbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [Richtlinien für Popupbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [Übersicht über regelmäßige Benachrichtigungen](periodic-notification-overview.md)

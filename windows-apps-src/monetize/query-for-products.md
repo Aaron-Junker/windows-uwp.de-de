@@ -59,7 +59,7 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 | modifiedAfter     | datetime     | Falls angegeben, gibt der Dienst nur Produkte zurück, die nach diesem Datum geändert wurden.        | Nein       |
 | parentProductId   | string       | Falls angegeben, gibt der Dienst nur Add-Ons zurück, die der angegebenen App entsprechen.      | Nein       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | Falls angegeben, gibt der Dienst nur Produkte für die angegebenen Produkt-SKU-Paare zurück. Weitere Informationen finden Sie in der folgenden Tabelle.      | Nein       |
-| productTypes      | list&lt;string&gt;       | Gibt an, welche Produkte in den Abfrageergebnissen zurückgegeben. Unterstützte Produkttypen sind **Application**, **Durable** und **UnmanagedConsumable**.     | Ja       |
+| productTypes      | Liste&lt;Zeichenfolge&gt;       | Gibt an, welche Produkte in den Abfrageergebnissen zurückgegeben. Unterstützte Produkttypen sind **Application**, **Durable** und **UnmanagedConsumable**.     | Ja       |
 | validityType      | string       | Bei Festlegung auf **Alle** werden alle Produkte für einen Benutzer, einschließlich abgelaufener Elemente, zurückgegeben. Bei Festlegung auf **Valid** werden nur Produkte zurückgegeben, die zum aktuellen Zeitpunkt gültig sind (aktiver Status, Startdatum &lt; Istdatum und Enddatum &gt; Istdatum). | Nein       |
 
 

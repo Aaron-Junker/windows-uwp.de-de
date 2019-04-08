@@ -21,7 +21,7 @@ ms.locfileid: "57620415"
 
 Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nicht anzuzeigen. Die beiden üblichen Animationen dieser Art sind das Einblenden und das Ausblenden.
 
-> **Wichtige APIs**: [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298), [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
+> **Wichtige APIs:** [**FadeInThemeAnimation Klasse**](https://msdn.microsoft.com/library/windows/apps/br210298), [ **FadeOutThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -38,7 +38,7 @@ Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nich
 * [Animieren von wird ausgeblendet](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
 * [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**FadeInThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210298)
-* [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
+* [**FadeOutThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
  
 

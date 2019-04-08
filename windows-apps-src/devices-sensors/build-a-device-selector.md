@@ -44,7 +44,7 @@ Die folgende Tabelle enthält die AQS-Operatoren mit den von ihnen unterstützte
 
 | Operator                       | Unterstützte Typen                                                             |
 |--------------------------------|-----------------------------------------------------------------------------|
-| **COP\_EQUAL**                 | String, Boolean, GUID, UInt16, UInt32                                       |
+| **COP\_GLEICH**                 | String, Boolean, GUID, UInt16, UInt32                                       |
 | **COP\_NOTEQUAL**              | String, Boolean, GUID, UInt16, UInt32                                       |
 | **COP\_"LESSTHAN"**              | UInt16, UInt32                                                              |
 | **COP\_"GREATERTHAN"**           | UInt16, UInt32                                                              |
@@ -55,7 +55,7 @@ Die folgende Tabelle enthält die AQS-Operatoren mit den von ihnen unterstützte
 | **COP\_WERT\_"STARTSWITH"**     | Zeichenfolge                                                                      |
 | **COP\_WERT\_"ENDSWITH"**       | Zeichenfolge                                                                      |
 | **COP\_DOSWILDCARDS**          | Nicht unterstützt.                                                               |
-| **COP\_WORD\_EQUAL**           | Nicht unterstützt.                                                               |
+| **COP\_WORD\_GLEICH**           | Nicht unterstützt.                                                               |
 | **COP\_WORD\_"STARTSWITH"**      | Nicht unterstützt.                                                               |
 | **COP\_ANWENDUNG\_BESTIMMTE** | Nicht unterstützt.                                                               |
 

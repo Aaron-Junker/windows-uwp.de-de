@@ -136,7 +136,7 @@ In allen anderen Designverzeichnissen sind diese Pinsel ebenfalls definiert, z.�
 
 Hier ist der [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) -Wert ein weiterer **ThemeResource**-Verweis auf eine Systemressource. Wenn Sie auf eine Systemressource verweisen und diese als Reaktion auf eine Designänderung ändern möchten, sollten Sie zum Erstellen des Verweises das **ThemeResource**-Element verwenden.
 
-## <a name="windows8-behavior"></a>Windows 8 behavior
+## <a name="windows8-behavior"></a>Windows 8-Verhalten
 
 Windows 8 wurde nicht unterstützt. die **ThemeResource** Markuperweiterung, es ist ab Windows 8.1 verfügbar. Darüber hinaus wurde die Windows 8 nicht unterstützt dynamische wechseln die Design-bezogenen Ressourcen für eine Windows-Runtime-app. Die App musste neu gestartet werden, damit die Designänderung für die XAML-Vorlagen und -Formate wirksam wurde. Dies ist eine gute benutzererfahrung, nicht, sodass apps dringend empfohlen werden, neu kompilieren und Windows 8.1 als Ziel die Verwendung von Stilen mit **ThemeResource** Verwendungen und können dynamisch Designs wechseln, wenn der Benutzer ausführt. Apps, die kompiliert wurden, für Windows 8, aber auf Windows 8.1 ausgeführt weiterhin das Windows 8-Verhalten verwenden.
 

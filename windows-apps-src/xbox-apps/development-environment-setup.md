@@ -121,7 +121,7 @@ Bevor Sie eine App auf Ihrer Xbox One bereitstellen können, muss ein Benutzer a
 Herzlichen Glückwunsch! Sie haben Ihre erste UWP-App auf Xbox erfolgreich erstellt und bereitgestellt!
 
 ## <a name="see-also"></a>Siehe auch
-- [Ein Xbox-Entwickler-Modus-Aktivierung](devkit-activation.md)  
+- [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md)  
 - [Downloads und Tools für Windows 10](https://dev.windows.com/downloads)  
 - [Windows-Insider-Programm](https://go.microsoft.com/fwlink/?LinkId=780552)  
 - [Einführung in die Xbox One-tools](introduction-to-xbox-tools.md) 

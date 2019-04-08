@@ -7,7 +7,7 @@ ms.topic: article
 keywords: Windows 10, UWP, fluent
 ms.openlocfilehash: 1e2c8b7d9fb7bdc61595296a137c4448cadf52d3
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57629265"
@@ -157,7 +157,7 @@ Verwenden Sie diese Vorlage, um eine Mediensammlung mit Text-Overlay anzuzeigen.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [GridView-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [Übersicht über die Datenbindung](../../data-binding/data-binding-quickstart.md)
+- [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md)
 - [Übersicht über die Accessibililty](../accessibility/accessibility-overview.md)
 - [ListView und GridView-Beispiel (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Miniaturbilder](../../files/thumbnails.md)

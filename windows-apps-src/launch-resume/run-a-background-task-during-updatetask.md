@@ -95,4 +95,4 @@ Wenn die Hintergrundaufgabe abgeschlossen ist, können Sie in der gleichen Debug
 
 ## <a name="see-also"></a>Siehe auch
 
-[Erstellen Sie und registrieren Sie eine Out-of-Process-Hintergrundaufgabe](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+[Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

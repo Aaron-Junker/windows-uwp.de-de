@@ -58,10 +58,10 @@ Wenn Sie erfahren möchten, wie diese Methoden auf eine UWP-App angewendet werde
 
 Die folgenden Gespräche auf [Channel 9](https://channel9.msdn.com/) sind eine hervorragende Informationsquelle für beeindruckende Apps auf Xbox:
 
-- [Erstellen von hervorragende universelle Windows-Plattform (UWP)-Apps für Xbox](https://channel9.msdn.com/Events/Build/2016/B883)
-- [Passen Sie Ihre App für Xbox One und TV-](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP-Entwicklung 1: Erstellen eine Adaptive Benutzeroberfläche](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [Abgesehen von Web-Apps im Browser: Plattformübergreifende erfüllt Cross-Gerät](https://channel9.msdn.com/Events/Build/2016/B888)
+- [Erstellen von großartigen UWP-Apps (Universelle Windows-Plattform) für Xbox](https://channel9.msdn.com/Events/Build/2016/B883)
+- [Passen Sie Ihre App für die Xbox One und den Fernseher an](https://channel9.msdn.com/Events/Build/2016/T651-R1)
+- [UWP-Entwicklung 1: Erstellen einer adaptiven Benutzeroberfläche](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [Web-Apps über den Browser hinaus: plattformübergreifende und geräteübergreifende Entwicklung](https://channel9.msdn.com/Events/Build/2016/B888)
 
 ## <a name="app-dev-on-xbox"></a>App-Entwicklung auf der Xbox
 

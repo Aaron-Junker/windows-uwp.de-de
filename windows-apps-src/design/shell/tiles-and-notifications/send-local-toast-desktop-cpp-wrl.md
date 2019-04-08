@@ -102,7 +102,7 @@ Bei Verwendung der Desktop-Brücke (oder wenn Sie beide Modi unterstützen), fü
 4. **com:Extension** für den COM-Aktivator mithilfe der GUID aus Schritt 4. Stellen Sie sicher, dass `Arguments="-ToastActivated"` hinzugefügt wurde, damit Sie wissen, dass der Start über ein Popup ausgeführt wurde
 5. **desktop:Extension** für **windows.toastNotificationActivation**, um den Popup-Aktivator CLSID zu deklarieren (der GUID aus Schritt #4).
 
-**Package.appxmanifest**
+**Datei "Package.appxmanifest"**
 
 ```xml
 <Package

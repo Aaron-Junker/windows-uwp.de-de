@@ -414,7 +414,7 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;text hint-style="\*" /&gt; | Zeichenhöhe               | Schriftbreite |
+| &lt;Hinweis-Textformat = "\*" /&gt; | Zeichenhöhe               | Schriftbreite |
 | caption                        | 12 effektive Pixel (epx) | Regular     |
 | body                           | 15 Epx                    | Regular     |
 | base                           | 15 Epx                    | Semibold    |
@@ -1390,7 +1390,7 @@ TileWide = new TileBinding()
 ```
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Inhaltsschema Kachel](../tiles-and-notifications/tile-schema.md)
+* [Kachelinhaltsschema](../tiles-and-notifications/tile-schema.md)
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
 * [Spezielle Kachelvorlagen](special-tile-templates-catalog.md)
 * [UWP Communitytoolkit – Benachrichtigungen](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

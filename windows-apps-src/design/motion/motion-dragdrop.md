@@ -22,7 +22,7 @@ ms.locfileid: "57605455"
 
 Verwenden Sie Drag & Drop-Animationen, wenn Benutzer Objekte verschieben, z. B. wenn sie ein Element innerhalb einer Liste verschieben oder ein Element auf einem anderen ablegen.
 
-> **Wichtige APIs**: [**DragItemThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br243174)
+> **Wichtige APIs:** [**DragItemThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen

@@ -20,7 +20,7 @@ ms.locfileid: "57663795"
 Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wenn diese auf ein Element tippen. Bei der Animation für „Zeiger nach unten“ wird das gedrückte Element leicht verkleinert und geneigt. Sie wird wiedergegeben, wenn erstmalig auf ein Element getippt wird. Die Animation für „Zeiger nach oben“, mit der der ursprüngliche Zustand des Elements wiederhergestellt wird, wird beim Loslassen des Zeigers wiedergegeben.
 
 
-> **Wichtige APIs**: [**PointerUpThemeAnimation Klasse**](https://msdn.microsoft.com/library/windows/apps/hh969168), [ **PointerDownThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh969164)
+> **Wichtige APIs:** [**PointerUpThemeAnimation Klasse**](https://msdn.microsoft.com/library/windows/apps/hh969168), [ **PointerDownThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh969164)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen

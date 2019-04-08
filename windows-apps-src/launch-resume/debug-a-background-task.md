@@ -105,10 +105,10 @@ Weitere Informationen zur Verwendung von Visual Studio eine Hintergrundaufgabe D
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen Sie und registrieren Sie eine Out-of-Process-Hintergrundaufgabe](create-and-register-a-background-task.md)
-* [Erstellen Sie und registrieren Sie ein in-Process-Hintergrundaufgabe](create-and-register-an-inproc-background-task.md)
-* [Eine Hintergrundaufgabe registrieren](register-a-background-task.md)
-* [Deklarieren Sie Hintergrundtasks im Manifest Anwendung](declare-background-tasks-in-the-application-manifest.md)
+* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)
+* [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb von Prozessen](create-and-register-an-inproc-background-task.md)
+* [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
+* [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
 * [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Analysieren der Codequalität von UWP-apps mit Visual Studio-Codeanalyse](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)

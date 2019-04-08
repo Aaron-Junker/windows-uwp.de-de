@@ -132,7 +132,7 @@ void Simple3DGame::Initialize(
 * Verwendung [XAudio2Create](https://msdn.microsoft.com/library/windows/desktop/ee419212), eine XAudio2-API, um zwei neue XAudio2-Objekte erstellt, die die – Musik und Sound-Wirkung-Engines zu definieren. Diese Methode gibt einen Zeiger auf des Objekts des [IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908) -Schnittstelle, die alle Audiomodul verwaltet angibt, das Audio processing Thread, der Voice-Diagramm und mehr.
 * Nachdem die Engines instanziiert wurden, verwenden Sie [IXAudio2::CreateMasteringVoice](https://msdn.microsoft.com/library/windows/desktop/hh405048) eine Perfektion Stimme für die einzelnen Objekte der sound-Engine zu erstellen.
 
-Weitere Informationen finden Sie unter [Vorgehensweise: Initialize XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx).
+Weitere Informationen finden Sie unter [Vorgehensweise: Initialisieren Sie XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx).
 
 ### <a name="audiocreatedeviceindependentresources-method"></a>Audio::CreateDeviceIndependentResources-Methode
 
@@ -170,7 +170,7 @@ void Audio::CreateDeviceIndependentResources()
 
 In diesem Beispiel Spielen ist in der Code zum Lesen von audio-Format-Dateien definiert [MediaReader.h](#mediareaderh)/cpp__.  Um eine codierte WAV-Audiodatei zu lesen, rufen Sie [MediaReader::LoadMedia](#mediareaderloadmedia-method), und der Dateiname der die WAV-Datei als Eingabeparameter übergeben.
 
-### <a name="mediareaderloadmedia-method"></a>MediaReader::LoadMedia method
+### <a name="mediareaderloadmedia-method"></a>MediaReader::LoadMedia-Methode
 
 Diese Methode verwendet die [Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197)-APIs, um die WAV-Audiodatei als Pulse Code Modulation (PCM)-Puffer einzulesen.
 
@@ -477,7 +477,7 @@ Audiograph ist eine Sammlung von [XAudio2 stimmen](/windows/desktop/xaudio2/xaud
 
 ### <a name="additional-reading"></a>Zusätzliches Lesematerial
 
-* [So wird es gemacht: Initialize XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
+* [So wird es gemacht: Initialisieren Sie XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
 * [So wird es gemacht: Laden von Dateien von Audiodaten in XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
 * [So wird es gemacht: Wiedergeben von Sound mit XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787.aspx)
 

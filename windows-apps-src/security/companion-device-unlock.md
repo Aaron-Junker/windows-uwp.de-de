@@ -3,7 +3,7 @@ title: Entsperren von Windows mit Windows Hello-Begleitgeräten (IoT)
 description: Ein Windows Hello-Begleitgerät ist ein Gerät, das in Verbindung mit dem Windows 10-Desktopgerät zur Verbesserung der Benutzerauthentifizierung verwendet werden kann. Mit dem Windows Hello-Begleitgeräteframework kann ein Begleitgerät umfangreiche Funktionen für Windows Hello bereitstellen, auch wenn Biometrie nicht verfügbar ist (beispielsweise, wenn das Windows 10-Desktopgerät über keine Kamera für die Gesichtsauthentifizierung oder kein Fingerabdrucklesegerät verfügt).
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Sicherheit
+keywords: Windows 10, UWP, Sicherheit
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
 ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
@@ -216,7 +216,7 @@ Der gesamte API-Fluss sieht wie folgt aus:
 
 ### <a name="registration-and-de-registration"></a>Registrierung und Registrierungsaufhebung
 
-Zwei API-Aufrufe auf der Begleit-Authentifizierungsdienst eine Registrierung erforderlich ist: RequestStartRegisteringDeviceAsync and FinishRegisteringDeviceAsync.
+Zwei API-Aufrufe auf der Begleit-Authentifizierungsdienst eine Registrierung erforderlich ist: RequestStartRegisteringDeviceAsync und FinishRegisteringDeviceAsync.
 
 Bevor diese Aufrufe vorgenommen werden können, muss die Windows Hello-Begleitgeräte-App überprüfen, ob das Windows Hello-Begleitgerät verfügbar ist. Wenn das Windows Hello-Begleitgerät für die Generierung der HMAC-Schlüssel (Authentifizierungs- und Geräteschlüssel) zuständig ist, muss die Windows Hello-Begleitgeräte-App außerdem das Begleitgerät zur Generierung der Schlüssel auffordern, bevor einer der beiden obigen Aufrufe durchgeführt wird. Wenn die Windows Hello-Begleitgeräte-App für die Generierung der HMAC-Schlüssel zuständig ist, muss dieser Schritt vor den beiden obigen Aufrufen durchgeführt werden.
 
@@ -634,7 +634,7 @@ Fehlermeldungen werden immer angezeigt und werden angezeigt, nachdem ein Absicht
 
 Folgende Anleitungs- und Fehlermeldungen stehen zur Verfügung. Der Gerätename ist ein Parameter und wird von der Begleitgeräte-App als Teil von „ShowNotificationMessageAsync“ übergeben.
 
-**Guidance**
+**Anleitungen**
 
 - „Wischen Sie nach oben oder drücken Sie die LEERTASTE, um sich mit *Gerätename* anzumelden.“
 - „Einrichtung des Begleitgeräts. Bitte warten Sie oder verwenden Sie eine andere Anmeldeoption.“

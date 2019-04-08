@@ -169,7 +169,7 @@ Sie können die Animation dazu veranlassen, mehrere Durchläufe auszuführen. Ei
 
 Weitere Informationen zu [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411)-Werten und zur XAML-Syntax finden Sie unter [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411).
 
-### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior = "Stop"**
 
 Wenn eine Animation endet, belässt die Animation den Eigenschaftswert standardmäßig auf dem letzten per **To** oder **By** geänderten Wert. Dies gilt auch, wenn die Dauer abgelaufen ist. Wenn Sie den Wert der [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209)-Eigenschaft jedoch auf [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306) festlegen, wird der Wert des animierten Werts auf den Stand vor dem Anwenden der Animation zurückgesetzt. Genauer gesagt: Er wird auf den aktuell geltenden Wert zurückgesetzt, der vom Abhängigkeitseigenschaftensystem bestimmt wird. (Weitere Informationen zu dieser Unterscheidung finden Sie unter [Übersicht über Abhängigkeitseigenschaften](https://msdn.microsoft.com/library/windows/apps/Mt185583).)
 
@@ -239,7 +239,7 @@ Eine Animation ist unabhängig, wenn Sie diese Merkmale aufweist:
 
 -   Das [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207)-Element der Animation hat einen Wert von 0 Sekunden (siehe Warnhinweis).
 -   Die Animation hat [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) als Ziel.
--   Die Animation ausgerichtet ist, einen-Untereigenschaft Wert dieser [ **"UIElement"** ](https://msdn.microsoft.com/library/windows/apps/BR208911) Eigenschaften: [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx), [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx), [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
+-   Die Animation ausgerichtet ist, einen-Untereigenschaft Wert dieser [ **"UIElement"** ](https://msdn.microsoft.com/library/windows/apps/BR208911) Eigenschaften: [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx), [ **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), [ **Projektion**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx), [ **Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 -   Die Animation hat [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) oder [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) als Ziel.
 -   Die Animation hat einen [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)-Wert als Ziel und verwendet ein [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)-Element, für das [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) animiert wird.
 -   Die Animation ist ein [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)-Element.

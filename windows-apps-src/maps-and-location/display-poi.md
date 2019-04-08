@@ -473,11 +473,11 @@ Binden Sie in der XAML-Seite die Eigenschaft aus der Ansichtsmodellklasse, die d
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Bing Maps-Entwicklercenter](https://www.bingmapsportal.com/)
+* [Bing Karten Developer Center](https://www.bingmapsportal.com/)
 * [Beispiel für UWP-Karte](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Entwurfsrichtlinien für Karten](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015-Video: Verwenden von Karten und Position auf verschiedenen Telefon, Tablet und PC in Ihren Windows-Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Beispiel für die app von UWP-Datenverkehr](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Build 2015-Video: Nutzen von Karten und Ortung über Telefon, Tablet und PC in Ihren Windows-Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Beispiel für eine UWP-App mit Verkehrsinformationen](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
-* [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
+* [**Steuerelemente "MapPolyline"**](https://msdn.microsoft.com/library/windows/apps/dn637114)

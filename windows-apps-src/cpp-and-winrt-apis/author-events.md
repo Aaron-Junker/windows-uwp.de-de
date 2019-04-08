@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, erstellen, ere
 ms.localizationpriority: medium
 ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644485"
@@ -283,6 +283,6 @@ Die Signatur für einen Ereignishandlerdelegaten sollte bestehen aus zwei Parame
 Beachten Sie, dass diese Richtlinien nicht unbedingt angewendet werden, wenn Sie eine interne API entwerfen. Obwohl die internen APIs im Laufe der Zeit häufig öffentlich werden.
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen von APIs mit C++ / WinRT](author-apis.md)
-* [Nutzen Sie APIs mit C++ / WinRT](consume-apis.md)
+* [Erstellen von APIs mit C++/WinRT](author-apis.md)
+* [Verwenden von APIs mit C++/WinRT](consume-apis.md)
 * [Behandeln von Ereignissen mithilfe von Delegaten in C++ / WinRT](handle-events.md)

@@ -7,7 +7,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57589985"
@@ -48,7 +48,7 @@ Gehen Sie folgendermaßen vor, um den Kauf von Abonnement-Add-Ons in Ihrer App z
         > [!NOTE]
         > Jeder Kunde kann nur einmal eine kostenlose Testversion für ein Abonnement-Add-On erwerben. Nachdem ein Kunde eine kostenlose Testversion für ein Abonnement erworben hat, verhindert der Store, dass derselbe Kunde das gleiche kostenlose Testabonnement erneut erhält.
 
-    * [Visibility](../publish/set-add-on-pricing-and-availability.md#visibility): Wenn Sie einen Test-Add-On, die Sie nur zum Testen der in-app-Käufe für Ihr Abonnement verwenden erstellen, es wird empfohlen, dass Sie eine der Auswählen der **ausgeblendet, die in den Store** Optionen. Andernfalls können Sie die beste Sichtbarkeitsoption für Ihr Szenario auswählen.
+    * [Sichtbarkeit](../publish/set-add-on-pricing-and-availability.md#visibility): Wenn Sie einen Test-Add-On, die Sie nur zum Testen der in-app-Käufe für Ihr Abonnement verwenden erstellen, es wird empfohlen, dass Sie eine der Auswählen der **ausgeblendet, die in den Store** Optionen. Andernfalls können Sie die beste Sichtbarkeitsoption für Ihr Szenario auswählen.
 
     * [Preise](../publish/set-add-on-pricing-and-availability.md?#pricing): Wählen Sie den Preis für Ihr Abonnement in diesem Abschnitt. Der können den Abonnementszeitraum nach der Veröffentlichung des Add-Ons nicht mehr erhöhen. Sie können den Preis jedoch später senken.
         > [!IMPORTANT]
@@ -131,5 +131,5 @@ Die folgenden Szenarien werden für die Abonnement-Add-Ons derzeit nicht unterst
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-app-Käufe und Testversionen](in-app-purchases-and-trials.md)
+* [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Produktinformationen für apps und -Add-Ons](get-product-info-for-apps-and-add-ons.md)

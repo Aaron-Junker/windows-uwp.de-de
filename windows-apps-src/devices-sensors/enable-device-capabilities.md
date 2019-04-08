@@ -69,7 +69,7 @@ In der folgende Tabelle werden einige der Funktionen mit Windows-Runtime-APIs ve
 | Blockierte Chatnachrichten    | [**Windows.ApplicationModel.CommunicationBlocking**](https://msdn.microsoft.com/library/windows/apps/Dn974207) | 
 | Pfad                 | Weitere Informationen finden Sie unter [Übersicht über Karten und Position](https://msdn.microsoft.com/library/windows/apps/Mt219699). | 
 | Telefonanruf               | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
-| Benutzerkontoinformationen | [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/BR241881) | 
+| Benutzerkontoinformationen | [**"Windows.System.USERPROFILE"**](https://msdn.microsoft.com/library/windows/apps/BR241881) | 
 | VOIP-Anruf             | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
 | USB                      | [**Windows.Devices.Usb**](https://msdn.microsoft.com/library/windows/apps/Dn278466) | 
 | HID                      | [**Windows.Devices.HumanInterfaceDevice**](https://msdn.microsoft.com/library/windows/apps/Dn264174) | 

@@ -25,7 +25,7 @@ Der Ausgangspunkt für diese Übung befindet sich im PhotoLab-Beispielrepository
 Die PhotoLab-App besteht aus zwei Hauptseiten:
 
 **MainPage.xaml:** zeigt eine Ansicht der Foto-Galerie, zusammen mit einigen Informationen über jede Bilddatei an.
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+!["MainPage"](../basics/images/xaml-basics/mainpage.png)
 
 **DetailPage.xaml:** zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
@@ -87,7 +87,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen 
         Minimum="-2"
         Maximum="2" />
     ```
-    **After**
+    **Nach dem**
     ```xaml
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -134,7 +134,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen 
             Minimum="-1"
             Maximum="1" />
     ```
-    **After**
+    **Nach dem**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -262,7 +262,7 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
         </Grid.Resources>
     ```
 
-    **After**
+    **Nach dem**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -302,7 +302,7 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
             </Style>                            
     ```    
 
-    **After**
+    **Nach dem**
     ```XAML
             <Style TargetType="TextBlock"
                    x:Key="ValueTextBox">
@@ -325,7 +325,7 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```
 
-    **After**
+    **Nach dem**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -646,7 +646,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Grid.RowDefinitions>        
     ```
 
-    **After**
+    **Nach dem**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -691,7 +691,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Polygon>           
     ```
     
-    **After**
+    **Nach dem**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -711,7 +711,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
                     Grid.ColumnSpan="3" />          
     ```
     
-    **After**
+    **Nach dem**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Height="{ThemeResource SliderTrackThemeHeight}"
@@ -750,7 +750,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
             Template="{StaticResource FancySliderControlTemplate}"/>    
     ```
     
-    **After**
+    **Nach dem**
     ```XAML
     <Slider Header="Exposure" 
             Grid.Row="2"  Foreground="Transparent"
@@ -791,7 +791,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
             Maximum="1" />
     ```
     
-    **After**
+    **Nach dem**
     ```XAML
     <Slider Header="Temperature"
             Grid.Row="3" Foreground="Transparent"
@@ -833,7 +833,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
             Maximum="1" />
     ```
     
-    **After**
+    **Nach dem**
     ```XAML
     <Slider Header="Tint"
             Grid.Row="4" Foreground="Transparent"

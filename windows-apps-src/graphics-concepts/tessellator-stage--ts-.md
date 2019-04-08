@@ -63,7 +63,7 @@ Die Tessellatorphase (TS) arbeitet in zwei Phasen:
 
     | Partitionierungstyp | Bereich                       |
     |----------------------|-----------------------------|
-    | Fractional\_odd      | \[1...63\]                  |
+    | Sekundenbruchteile\_ungerade      | \[1... 63\]                  |
     | Sekundenbruchteile\_sogar     | TessFactor Bereich: \[2..64\] |
     | Ganze Zahl              | TessFactor Bereich: \[1..64\] |
     | Pow2                 | TessFactor Bereich: \[1..64\] |

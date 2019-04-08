@@ -276,7 +276,7 @@ Informationen zum Senden der Benachrichtigung finden Sie unter [Auswählen einer
 * [Benachrichtigungsbibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Kacheln, Signale und Benachrichtigungen](index.md)
 * [Erstellen adaptiver Kacheln](create-adaptive-tiles.md)
-* [Inhaltsschema Kachel](../tiles-and-notifications/tile-schema.md)
+* [Kachelinhaltsschema](../tiles-and-notifications/tile-schema.md)
  
 
  

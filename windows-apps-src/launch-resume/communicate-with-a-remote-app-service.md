@@ -88,6 +88,6 @@ Sie haben jetzt eine Verbindung zu einem App-Dienst auf einem aufgerufenen Hostg
 
 [Verbundene apps und Geräten (Projekt "ROME") (Übersicht)](connected-apps-and-devices.md)  
 [Starten Sie eine remote-app](launch-a-remote-app.md)  
-[Erstellen Sie und nutzen Sie einen app service](how-to-create-and-consume-an-app-service.md)  
+[Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md)  
 [Remote-Systemen-API-Referenz](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [Beispiel für Remotesysteme](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

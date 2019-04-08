@@ -50,7 +50,7 @@ Den vorherigen Zustand Ihrer App können Sie von der [LaunchActivatedEventArgs.P
 
 | ApplicationExecutionState | Erläuterung | Auszuführende Aktion |
 |-------|-------------|----------------|
-| **NotRunning** | Eine App kann diesen Zustand aufweisen, wenn sie seit dem letzten Neustart oder der letzten Anmeldung durch den Benutzer nicht gestartet wurde. Sie kann sich auch in diesem Zustand befinden, wenn sie während der Ausführung abgestürzt ist oder weil sie zuvor vom Benutzer geschlossen wurde.| Initialisieren Sie die App, als würde sie erstmalig in der aktuellen Benutzersitzung ausgeführt. |
+| **Nicht ausgeführt** | Eine App kann diesen Zustand aufweisen, wenn sie seit dem letzten Neustart oder der letzten Anmeldung durch den Benutzer nicht gestartet wurde. Sie kann sich auch in diesem Zustand befinden, wenn sie während der Ausführung abgestürzt ist oder weil sie zuvor vom Benutzer geschlossen wurde.| Initialisieren Sie die App, als würde sie erstmalig in der aktuellen Benutzersitzung ausgeführt. |
 |**Angehalten** | Der Benutzer hat die App entweder minimiert oder verlassen und ist nicht innerhalb weniger Sekunden zurückgekehrt. | Beim Anhalten der App wurde ihr Zustand im Arbeitsspeicher beibehalten. Sie müssen lediglich Dateihandles oder andere Ressourcen erneut abrufen, die beim Anhalten der App freigegeben wurden. |
 | **Beendet** | Die App wurde zuvor angehalten, dann aber irgendwann beendet, weil das System Arbeitsspeicher freigeben musste. | Stellen Sie den Zustand wieder her, in dem sich die App befand, als der Benutzer daraus gewechselt hat.|
 |**ClosedByUser** | Der Benutzer hat die App im Tablet-Modus mit der Geste zum Schließen oder mit ALT+F4 geschlossen. Wenn der Benutzer die App schließt, wird sie zunächst angehalten und anschließend beendet. | Da die App im Wesentlichen dieselben Phasen durchlaufen hat, die zum Zustand „Terminated“ führen, behandeln Sie sie genauso wie eine App im Zustand „Terminated“.|
@@ -77,7 +77,7 @@ Die [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows
 
 [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)  
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)  
-[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)[**OnFileSavePickerActivated** ](https://msdn.microsoft.com/library/windows/apps/hh701801)  
+[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
 [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)  
 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)
 
@@ -205,9 +205,9 @@ Der grundlegende Code, der für den Lebenszyklus der App relevant ist, wird in d
 
 ## <a name="key-application-lifecycle-apis"></a>Wichtige APIs für den Anwendungslebenszyklus
 
--   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) namespace
--   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) namespace
--   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) namespace
+-   [**Windows.ApplicationModel** ](https://msdn.microsoft.com/library/windows/apps/br224691) Namespace
+-   [**Windows.ApplicationModel.Activation** ](https://msdn.microsoft.com/library/windows/apps/br224766) Namespace
+-   [**Windows.ApplicationModel.Core** ](https://msdn.microsoft.com/library/windows/apps/br205865) Namespace
 -   [**Windows.UI.Xaml.Application** ](https://msdn.microsoft.com/library/windows/apps/br242324) Klasse (XAML)
 -   [**Windows.UI.Xaml.Window** ](https://msdn.microsoft.com/library/windows/apps/br209041) Klasse (XAML)
 
@@ -215,10 +215,10 @@ Der grundlegende Code, der für den Lebenszyklus der App relevant ist, wird in d
 
 * [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694)
 * [Richtlinien für die app anhalten und fortsetzen](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Der Vorabstart Handle-app](handle-app-prelaunch.md)
-* [Behandeln von app-Aktivierung](activate-an-app.md)
-* [Handle-app anhalten](suspend-an-app.md)
-* [Behandeln von app-fortsetzen](resume-an-app.md)
+* [Behandeln des Vorabstarts von Apps](handle-app-prelaunch.md)
+* [Behandeln der App-Aktivierung](activate-an-app.md)
+* [Behandeln des Anhaltens von Apps](suspend-an-app.md)
+* [Behandeln der App-Fortsetzung](resume-an-app.md)
 * [Hintergrundaktivität mit das Modell mit einem Prozess](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [Wiedergeben von Medien im Hintergrund](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 

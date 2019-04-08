@@ -25,7 +25,7 @@ ms.locfileid: "57658595"
 
 Viele Apps enthalten Sammlungen von Inhalten in Form von Listen, Rastern und Strukturen, auf die der Benutzer Aktionen anwenden kann. Beispielsweise kann er Elemente löschen, umbenennen, kennzeichnen oder aktualisieren. In diesem Artikel wird beschrieben, wie Sie mithilfe von Kontextbefehlen derartige Aktionen so implementieren können, dass bei allen Eingabearten die jeweils bestmögliche Benutzererfahrung gewährleistet ist.  
 
-> **Wichtige APIs**: [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **Wichtige APIs:** [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![Ausführen des Befehls „Als Favorit speichern“ mittels verschiedener Eingabearten](images/ContextualCommand_AddFavorites.png)
 

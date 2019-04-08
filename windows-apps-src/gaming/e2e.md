@@ -8,7 +8,7 @@ keywords: Windows 10, Uwp, Spiele, Entwickeln von Spielen
 ms.localizationpriority: medium
 ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57652325"
@@ -182,11 +182,11 @@ Für Windows 10-Spiele und -Apps stehen zahlreiche Beispiele zur Verfügung, die
     </tr>
     <tr>
         <td>Grafikbeispiele für Direct3D 12</td>
-        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX-Graphics-Samples</a></td>
+        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX-Grafiken – Beispiele</a></td>
     </tr>
     <tr>
         <td>Grafikbeispiele für Direct3D 11</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">DirectX-Sdk-Beispiele</a></td>
     </tr>
     <tr>
         <td>Beispiel für ein First-Person-Spiel mit Direct3D 11</td>
@@ -210,7 +210,7 @@ Für Windows 10-Spiele und -Apps stehen zahlreiche Beispiele zur Verfügung, die
     </tr>
     <tr>
         <td>Xbox Live-Beispiele</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples">Xbox live-Beispiele</a></td>
     </tr>
     <tr>
         <td>Beispiele für Xbox One-Spiele (XGD)</td>
@@ -910,7 +910,7 @@ Entwicklern, die bereits über ein Spiel verfügen, stehen zahlreiche Ressourcen
     </tr>
     <tr>
         <td>OpenGL ES 2.0 zu Direct3D 11 mit ANGLE</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">WINKEL</a></td>
     </tr>
     <tr>
         <td>Entsprechungen für die klassische Windows-API in der UWP</td>
@@ -1114,7 +1114,7 @@ Durch den angemessenen Einsatz von Typografie können Sie Ihr Spiel in vielerlei
     </colgroup>
     <tr>
         <td>Typografiehandbuch</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">Bewährte Methoden: Typography</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">Bewährte Methoden: Typografie</a></td>
     </tr>
 </table>
  
@@ -1343,7 +1343,7 @@ Ihr Spiel wird im Menü „Start“ durch eine Kachel dargestellt. Über Kacheln
     </tr>
     <tr>
         <td>Windows 10-App für die interaktive Entwicklung von Vorlagen für Live-Kacheln</td>
-        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">Benachrichtigungen-Schnellansicht</a></td>
+        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">Notifications Visualizer</a></td>
     </tr>
     <tr>
         <td>UWP-Erweiterung für die Generierung von Kacheln für Visual Studio</td>
@@ -1563,7 +1563,7 @@ Verwenden Sie [Partner Center](https://partner.microsoft.com/dashboard) zum Ver�
     </tr>
     <tr>
         <td>Optionale Pakete wie DLC-Spielinhalte erstellen</td>
-        <td><a href="../packaging/optional-packages.md">Optionale Pakete und die zugehörigen erstellen</a></td>
+        <td><a href="../packaging/optional-packages.md">Optionale Pakete und die Erstellung zugehöriger Sets</a></td>
     </tr>
     <tr>
         <td>Packen Ihres UWP-Spiels</td>

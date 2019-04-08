@@ -127,5 +127,5 @@ Für Windows Phone Store-Apps folgt auf das [**Resuming**](https://msdn.microsof
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [App-Lebenszyklus](app-lifecycle.md)
-* [Behandeln von app-Aktivierung](activate-an-app.md)
-* [Handle-app anhalten](suspend-an-app.md)
+* [Behandeln der App-Aktivierung](activate-an-app.md)
+* [Behandeln des Anhaltens von Apps](suspend-an-app.md)

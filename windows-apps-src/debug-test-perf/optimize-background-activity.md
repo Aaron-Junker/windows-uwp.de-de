@@ -63,6 +63,6 @@ Testen Sie Ihre App immer auf realen Geräten, wenn Sie Szenarien mit hohem Ener
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen Sie und registrieren Sie eine Out-of-Process-Hintergrundaufgabe](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [Planen für Leistung](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

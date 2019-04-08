@@ -29,7 +29,7 @@ Es ist wichtig, auf Kompatibilitätsprobleme hin zu testen, bevor der Epochenwec
 1. Navigieren Sie zu **Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras**.
 2. Wählen Sie **Bearbeiten > Neu > Zeichenfolge** aus, und weisen Sie ihr den Namen **2019 05 01** zu.
 3. Klicken Sie mit der rechten Maustaste auf den Schlüssel, und wählen Sie **Ändern** aus.
-4. In der **Wertdaten** Feld **?？\_？\_??????\_?** (Sie können den Wert der Einfachheit halber von hier kopieren und einfügen).
+4. In der **Wertdaten** Feld **??\_?\_?????? \_?** (Sie können den Wert der Einfachheit halber von hier kopieren und einfügen).
 
 Weitere Informationen finden Sie unter [Umgang mit Ären im japanischen Kalender](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar), wo Sie weitere Einzelheiten über das Format für diese Registrierungsschlüssel erhalten können.
 
@@ -69,11 +69,11 @@ Um zu überprüfen, ob Ihre Anwendung mit den neuen Ära funktioniert, müssen S
 
 ## <a name="test-your-application"></a>Testen Ihrer Anwendung
 
-Testen Sie nun, wie Ihre Anwendung mit der neuen Ära umgeht. Überprüfen Sie Stellen, an denen das Datum angezeigt wird, z. B. bei Zeitstempeln und in Datumsauswahlfeldern. Stellen Sie sicher, dass der Zeitraum vor dem 1. Mai 2019 (Heisei, 平成) und nach (? korrekt ist？).
+Testen Sie nun, wie Ihre Anwendung mit der neuen Ära umgeht. Überprüfen Sie Stellen, an denen das Datum angezeigt wird, z. B. bei Zeitstempeln und in Datumsauswahlfeldern. Stellen Sie sicher, dass der Zeitraum vor dem 1. Mai 2019 (Heisei, 平成) und nach (? korrekt ist"?").
 
 ### <a name="gannen-"></a>*Gannen* (元年)
 
-Im Allgemeinen weist das Format der japanischen Kalender  **&lt;Namen Zeitraums&gt; &lt;Jahr des Zeitraums&gt;**. Das Jahr 2018 ist z. B. **Heisei 30** (平成30年).  Das erste Jahr einer Ära ist jedoch etwas Besonderes. Anstelle von **&lt;Name der Ära&gt; 1**, hat es das Format **&lt;Name der Ära&gt; 元年** (*Gannen*). Dementsprechend wäre das erste Jahr der Heisei-Ära 平成元年 (*Heisei Gannen*). Stellen Sie sicher, dass Ihre Anwendung im erste Jahr der neuen Ära ordnungsgemäß behandelt und ordnungsgemäß gibt?？元年.
+Im Allgemeinen weist das Format der japanischen Kalender  **&lt;Namen Zeitraums&gt; &lt;Jahr des Zeitraums&gt;**. Das Jahr 2018 ist z. B. **Heisei 30** (平成30年).  Das erste Jahr einer Ära ist jedoch etwas Besonderes. Anstelle von **&lt;Name der Ära&gt; 1**, hat es das Format **&lt;Name der Ära&gt; 元年** (*Gannen*). Dementsprechend wäre das erste Jahr der Heisei-Ära 平成元年 (*Heisei Gannen*). Stellen Sie sicher, dass Ihre Anwendung im erste Jahr der neuen Ära ordnungsgemäß behandelt und ordnungsgemäß gibt?? 元年.
 
 ## <a name="related-apis"></a>Zugehörige APIs
 
@@ -120,11 +120,11 @@ Die folgenden APIs werden betroffen sein:
 
 ### <a name="win32"></a>Win32
 
-* [datetimeapi.h header](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
+* [datetimeapi.h-header](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
     * [GetDateFormatA-Funktion](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformata)
     * [GetDateFormatEx-Funktion](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatex)
     * [GetDateFormatW-Funktion](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatw)
-* [winnls.h header](https://docs.microsoft.com/windows/desktop/api/winnls/)
+* [winnls.h-header](https://docs.microsoft.com/windows/desktop/api/winnls/)
     * [EnumDateFormatsA-Funktion](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsa)
     * [EnumDateFormatsExA-Funktion](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsexa)
     * [EnumDateFormatsExEx-Funktion](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsexex)
@@ -139,6 +139,6 @@ Die folgenden APIs werden betroffen sein:
 * [Zeitraum, die Klassenbehandlung für das im japanischen Kalender](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar)
 * [Des japanischen Kalenders Y2K Moment](https://blogs.msdn.microsoft.com/shawnste/2018/04/12/the-japanese-calendars-y2k-moment/)
 * [Mithilfe der Registrierung zum Testen der neuen Ära bei japanischen für Windows](https://blogs.msdn.microsoft.com/shawnste/2018/08/07/using-the-registry-to-test-the-new-japanese-era-on-windows/)
-* [Gannen vs Ichinen](https://blogs.msdn.microsoft.com/shawnste/2018/11/12/gannen-vs-ichinen/)
+* [Gannen Vs Ichinen](https://blogs.msdn.microsoft.com/shawnste/2018/11/12/gannen-vs-ichinen/)
 * [Updates für können es sich um 2019 Japan Zeitraum ändern.](https://support.microsoft.com/help/4470918/updates-for-may-2019-japan-era-change)
 * [Behandeln eine neue Ära im japanischen Kalender in .NET](https://blogs.msdn.microsoft.com/dotnet/2018/11/14/handling-a-new-era-in-the-japanese-calendar-in-net/)

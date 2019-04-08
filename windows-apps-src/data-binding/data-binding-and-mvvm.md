@@ -53,7 +53,7 @@ Weitere Anleitungen zur Verwendung von basic "," Out-of-the-Box-MVVM finden Sie 
 
 ### <a name="topics"></a>Themen
 
-[Die Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
+[Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
 [{X: Bind}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)  
 
 ### <a name="samples"></a>Beispiele

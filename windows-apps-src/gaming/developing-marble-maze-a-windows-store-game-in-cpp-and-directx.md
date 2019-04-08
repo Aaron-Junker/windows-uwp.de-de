@@ -43,7 +43,7 @@ Marble Maze bietet dem Benutzer mehrere Möglichkeiten zur Interaktion mit dem S
 
 
 -   Aktualisieren Sie Windows 10 Creators
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
 -   Kenntnisse in der C++-Programmierung
 -   Erfahrung mit DirectX und der Terminologie von DirectX
 -   Grundkenntnisse in COM

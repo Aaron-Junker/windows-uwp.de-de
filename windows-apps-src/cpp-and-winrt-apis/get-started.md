@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, erste schrit
 ms.localizationpriority: medium
 ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602235"
@@ -166,8 +166,8 @@ Sie können jetzt kompilieren und verknüpfen und Hinzufügen von C++ / WinRT-Co
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Fehlerbehandlung mit C++ / WinRT](error-handling.md)
-* [Interop zwischen C++ / WinRT und C++ / CX](interop-winrt-cx.md)
-* [Interop zwischen C++ / WinRT und die ABI](interop-winrt-abi.md)
-* [Verschieben von c++ / WinRT in C++ / CX](move-to-winrt-from-cx.md)
+* [Fehlerbehandlung bei C++/WinRT](error-handling.md)
+* [Interoperabilität zwischen C++/WinRT und C++/CX](interop-winrt-cx.md)
+* [Interoperabilität zwischen C++/WinRT und der ABI](interop-winrt-abi.md)
+* [Umstellen von C++/CX auf C++/WinRT](move-to-winrt-from-cx.md)
 * [Zeichenfolgenbehandlung in C++ / WinRT](strings.md)

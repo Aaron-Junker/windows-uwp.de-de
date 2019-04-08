@@ -149,7 +149,7 @@ Weitere Informationen zur Programmierung mit Multithreading unter Windows finden
 
 * [DirectXLatency-Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=317361)
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309)
-* [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
+* [**Fehler bei WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
 * [**Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/br229642)
 * [Asynchrone Programmierung in C++](https://msdn.microsoft.com/library/windows/apps/mt187334)
 * [Prozesse und Threads](https://msdn.microsoft.com/library/windows/desktop/ms684841)

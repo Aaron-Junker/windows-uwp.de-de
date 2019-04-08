@@ -37,13 +37,13 @@ Zusätzlich zur UWP-apps, Windows 10 auf ARM können auch Ausführen Ihrer X86 W
 ## <a name="in-this-section"></a>Inhalt dieses Abschnitts
 |Thema | Beschreibung |
 |-----|-----|
-|[Wie X86 Netzwerkemulation auf ARM funktioniert](apps-on-arm-x86-emulation.md)|Eine Übersicht mit detaillierten Informationen dazu, wie x86-Apps auf ARM emuliert werden.|
-|[Problembehandlung bei X86 apps auf ARM](apps-on-arm-troubleshooting-x86.md)|Häufig auftretende Probleme mit x86-Apps bei der Ausführung auf ARM, und wie diese Probleme behoben werden können. |
+|[Funktionsweise der x86-Emulation auf ARM](apps-on-arm-x86-emulation.md)|Eine Übersicht mit detaillierten Informationen dazu, wie x86-Apps auf ARM emuliert werden.|
+|[Problembehandlung für x86-Apps auf ARM](apps-on-arm-troubleshooting-x86.md)|Häufig auftretende Probleme mit x86-Apps bei der Ausführung auf ARM, und wie diese Probleme behoben werden können. |
 |[Problembehandlung bei der ARM-apps auf ARM](apps-on-arm-troubleshooting-arm32.md)|Häufige Probleme mit ARM32 und ARM64-apps, bei der Ausführung auf ARM und zur Behebung dieser Probleme. |
-|[Program Compatibility-Problembehandlung auf ARM](apps-on-arm-program-compat-troubleshooter.md)|Anleitung zum Anpassen der Kompatibilitätseinstellungen, wenn Ihre App auf ARM nicht korrekt funktioniert. |
+|[Problembehandlung für die Programmkompatibilität auf ARM](apps-on-arm-program-compat-troubleshooter.md)|Anleitung zum Anpassen der Kompatibilitätseinstellungen, wenn Ihre App auf ARM nicht korrekt funktioniert. |
 
 ## <a name="related-topics"></a>Verwandte Themen
 |Thema | Beschreibung |
 |-----|-----|
-|[Erstellen von ARM64-Treiber mit WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)|Anleitung zum Erstellen eines ARM64-Treibers. |
+|[Entwickeln von ARM64-Treibern mit dem WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)|Anleitung zum Erstellen eines ARM64-Treibers. |
 | [Debuggen von X86 apps auf ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) | Anleitung für das Debuggen von x86-Apps auf ARM. |

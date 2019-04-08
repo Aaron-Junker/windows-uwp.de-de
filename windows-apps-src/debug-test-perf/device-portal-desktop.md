@@ -109,7 +109,7 @@ Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderun
 
 Im folgenden sind einige häufige Fehler, die bei der Einrichtung des Device Portal auftreten können.
 
-### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch returns invalid number of updates (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch gibt ungültige Anzahl von Updates (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
 
 Sie können diese Fehlermeldung beim Versuch, die Entwickler-Pakete auf einer Vorabversion Build von Windows 10 installiert. Diese Features bei Bedarf (Feature-On) Pakete werden über Windows Update gehostet, und sie für Builds von Vorabversionen handelt herunterzuladen erfordert, dass Sie in Test-flighting entscheiden. Wenn die Installation in Test-flighting für die richtige Build- und die Kombination der Ring nicht aktiviert ist, wird die Nutzlast nicht heruntergeladen werden. Überprüfen Sie Folgendes:
 

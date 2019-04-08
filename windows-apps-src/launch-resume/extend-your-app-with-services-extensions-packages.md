@@ -100,12 +100,12 @@ Die Installierung von Streaming ermöglicht Ihnen die Optimierung der Art und We
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Erstellen Sie und nutzen Sie einen app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
+[Erstellen und Verwenden eines App-Diensts](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
 [Einführung in Asset-Pakete](../packaging/asset-packages.md)  
 [Erstellen von Paketen mit dem Layout für die paketerstellung](../packaging/packaging-layout.md)  
-[Optionale Pakete und die zugehörigen erstellen](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
+[Optionale Pakete und die Erstellung zugehöriger Sets](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
 [Entwickeln mit ressourcenpakete und das Paket zu falten](../packaging/package-folding.md)  
-[UWP-App-Streaming-Installation](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
+[Installieren von UWP-App-Streaming](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
 [Flatfile-Paket-app-Pakete](../packaging/flat-bundles.md)  
-[Windows.ApplicationModel.AppService namespace](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService)  
+[Windows.ApplicationModel.AppService-namespace](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService)  
 [Windows.ApplicationModel.Extensions-namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)  

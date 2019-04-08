@@ -87,11 +87,11 @@ Implizite Animationen sind, eine einfache Möglichkeit, Fluent während der Übe
 
 Sie können implizit animieren, Änderungen an den folgenden Eigenschaften:
 
-- [UIElement](/uwp/api/windows.ui.xaml.uielement)
-  - **Opacity**
+- ["UIElement"](/uwp/api/windows.ui.xaml.uielement)
+  - **Deckkraft**
   - **Drehung**
   - **Skalieren**
-  - **Translation**
+  - **Übersetzung**
 
 - [Rahmen](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), oder [Bereich](/uwp/api/windows.ui.xaml.controls.panel)
   - **Hintergrund**

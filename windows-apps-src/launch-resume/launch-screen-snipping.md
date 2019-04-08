@@ -26,7 +26,7 @@ Die **ms-Screenclip:** -URI kann Ihre app automatisch starten und einen neuen Au
 | Parameter | Typ | Erforderlich | Beschreibung |
 | --- | --- | --- | --- |
 | Quelle | string | Nein | Eine Freihandform-Zeichenfolge an der Quelle, die den URI gestartet. |
-| delayInSeconds | int | Nein | Ein ganzzahliger Wert zwischen 1 und 30. Gibt die Verzögerung in vollständige Sekunden zwischen dem URI und wenn snipping beginnt. |
+| "delayinseconds" | int | Nein | Ein ganzzahliger Wert zwischen 1 und 30. Gibt die Verzögerung in vollständige Sekunden zwischen dem URI und wenn snipping beginnt. |
 | callbackformat | string | Nein | Dieser Parameter ist nicht verfügbar. |
 
 ## <a name="launching-the-snip--sketch-app"></a>Starten die folgende & Sketch-App
@@ -40,7 +40,7 @@ Die **ms-Screensketch:** URI können Sie programmgesteuert starten Sie die folge
 | sharedAccessToken | string | Nein | Ein Token, identifizieren die Datei, in der folgende & Sketch-app geöffnet. Abgerufen aus [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Wenn dieser Parameter ausgelassen wird, wird die app ohne einer geöffneten Datei gestartet werden. |
 | secondarySharedAccessToken | string | Nein | Eine Zeichenfolge, die eine JSON-Datei mit Metadaten über den Ausschnitt identifizieren. Die Metadaten enthalten möglicherweise eine **ClipPoints** Feld mit einem Array von X, y-Koordinaten, und/oder einen [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
 | Quelle | string | Nein | Eine Freihandform-Zeichenfolge an der Quelle, die den URI gestartet. |
-| isTemporary | bool | Nein | Wenn auf True festgelegt, Bildschirm Sketch versucht, die nach dem Öffnen sie die Datei zu löschen. |
+| IsTemporary | bool | Nein | Wenn auf True festgelegt, Bildschirm Sketch versucht, die nach dem Öffnen sie die Datei zu löschen. |
 
 Im folgenden Beispiel wird die [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) Methode, um ein Bild an folgende & Sketch aus der app des Benutzers zu senden.
 

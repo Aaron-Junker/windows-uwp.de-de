@@ -20,7 +20,7 @@ ms.locfileid: "57593835"
 
 Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen.
 
-> **Wichtige APIs**: [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251), [ **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250), [ **Sprache**](https://msdn.microsoft.com/library/windows/apps/br206804)
+> **Wichtige APIs:** [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251), [ **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250), [ **Sprache**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
 Im Folgenden listen wir die auf einem System installierten Sprachen auf, ermitteln die Standardsprache und wählen eine andere Sprache für die Spracherkennung aus.

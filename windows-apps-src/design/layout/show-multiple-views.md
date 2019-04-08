@@ -18,7 +18,7 @@ ms.locfileid: "57607625"
 
 Sie können Ihren Benutzern zu mehr Produktivität verhelfen, indem Sie ihnen ermöglichen, unabhängige Teile der App in separaten Fenstern anzuzeigen. Wenn Sie für eine App mehrere Fenster erstellen, verhält sich jedes Fenster anders. Auf der Taskleiste wird jedes Fenster separat angezeigt. Die Benutzer können App-Fenster unabhängig voneinander verschieben, deren Größe ändern, Fenster anzeigen und ausblenden und zwischen App-Fenstern wechseln, als würde es sich um separate Apps handeln. Jedes Fenster agiert in seinem eigenen Thread.
 
-> **Wichtige APIs**: [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+> **Wichtige APIs:** [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [ **CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
 ## <a name="when-should-an-app-use-multiple-views"></a>Wann sollte eine App mehrere Ansichten verwenden?
 Es gibt eine Reihe von Szenarien, die von mehreren Ansichten profitieren können. Hier finden Sie einige Beispiele:

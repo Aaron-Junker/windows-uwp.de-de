@@ -234,4 +234,4 @@ In diesem Szenario haben wir gezeigt, wie Sie die [APIs zur Paketressourcenindiz
 * [Ressource "Package" Indizierung (PRI)-Referenz](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Indizierung (PRI)-APIs und benutzerdefinierte Ressource "Package" zum Erstellen von Systemen](pri-apis-custom-build-systems.md)
+* [APIs für die Paketressourcenindizierung (PRI) und benutzerdefinierte Buildsysteme](pri-apis-custom-build-systems.md)

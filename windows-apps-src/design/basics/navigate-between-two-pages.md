@@ -24,7 +24,7 @@ ms.locfileid: "57616205"
 
 Hier erfahren Sie, wie Sie einen Rahmen und Seiten verwenden, um eine grundlegende Peer-to-Peer-Navigation in Ihrer App zu ermöglichen. 
 
-> **Wichtige APIs**: [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class, [**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class, [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) namespace
+> **Wichtige APIs:** [**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682) -Klasse, [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503) -Klasse, [ **Windows.UI.Xaml.Navigation** ](https://msdn.microsoft.com/library/windows/apps/br243300) Namespace
 
 ![Peer-to-Peer-Navigation](images/peertopeer.png)
 
