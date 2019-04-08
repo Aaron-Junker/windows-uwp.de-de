@@ -75,7 +75,7 @@ Ein weiteres Szenario für Streamingressourcen ist die Aktivierung mehrerer Ress
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Streaming von Ressourcen](streaming-resources.md)
+[Streamingressourcen](streaming-resources.md)
 
  
 

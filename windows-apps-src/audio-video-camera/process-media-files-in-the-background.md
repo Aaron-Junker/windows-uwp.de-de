@@ -23,7 +23,7 @@ Mit der in diesem Artikel beschriebenen Beispiel-App kann der Benutzer eine zu t
 
 Ausführlichere Informationen zu den verschiedenen universellen Windows-App-Features in diesem Beispiel finden Sie unter:
 
--   [Transcodieren von Mediendateien](transcode-media-files.md)
+-   [Transkodieren von Mediendateien](transcode-media-files.md)
 -   [Fortsetzen und Hintergrundaufgaben starten](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [Kacheln, Signale und Benachrichtigungen](https://msdn.microsoft.com/library/windows/apps/mt185606)
 

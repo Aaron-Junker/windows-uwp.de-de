@@ -122,12 +122,12 @@ Beachten Sie im vorhergehenden Beispiel, dass die Aufgabe den **task<void>**-Typ
 | | |
 |--------------------------------------------------------|---------------------|
 | Lambda-Rückgabetyp                                     | `.then`-Rückgabetyp |
-| TResult                                                | task<TResult> |
-| IAsyncOperation<TResult>^                        | task<TResult> |
-| IAsyncOperationWithProgress<TResult, TProgress>^ | task<TResult> |
-|IAsyncAction^                                           | task<void>    |
-| IAsyncActionWithProgress<TProgress>^             |task<void>     |
-| task<TResult>                                    |task<TResult>  |
+| TResult                                                | Aufgabe<TResult> |
+| IAsyncOperation<TResult>^                        | Aufgabe<TResult> |
+| IAsyncOperationWithProgress<TResult, TProgress>^ | Aufgabe<TResult> |
+|IAsyncAction^                                           | Aufgabe<void>    |
+| IAsyncActionWithProgress<TProgress>^             |Aufgabe<void>     |
+| Aufgabe<TResult>                                    |Aufgabe<TResult>  |
 
 
 ## <a name="canceling-tasks"></a>Abbrechen von Aufgaben
@@ -292,7 +292,7 @@ Methoden mit Unterstützung von [**IAsyncOperationWithProgress**](https://msdn.m
 * [Sprachreferenz zu Visual C++](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [Asynchrone Programmierung][AsyncProgramming]
 * [Aufgabenparallelität (Concurrency Runtime)][taskParallelism]
-* [concurrency::task](/cpp/parallel/concrt/reference/task-class)
+* [Concurrency:: Task](/cpp/parallel/concrt/reference/task-class)
 
 <!-- LINKS -->
 [AsyncProgramming]: <https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps> "AsyncProgramming"

@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594005"
@@ -63,8 +63,8 @@ Im folgenden findet sich das Speicherlayout für den 8-Byte-Block (64-Bit):
 |--------------|----------------|
 | 0            | Farbe\_0       |
 | 1            | Farbe\_1       |
-| 2            | Bitmap Word\_0 |
-| 3            | Bitmap Word\_1 |
+| 2            | Bitmap-Word\_0 |
+| 3            | Bitmap-Word\_1 |
 
  
 

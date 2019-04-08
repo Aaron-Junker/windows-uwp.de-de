@@ -145,7 +145,7 @@ Die empfangenen Dateien stammen unter Umständen aus einer nicht vertrauenswürd
 ### <a name="tasks"></a>Aufgaben
 
 * [Starten der Standard-App für eine Datei](launch-the-default-app-for-a-file.md)
-* [Behandeln von URI-Aktivierung](handle-uri-activation.md)
+* [Behandeln der URI-Aktivierung](handle-uri-activation.md)
 
 ### <a name="guidelines"></a>Richtlinien
 

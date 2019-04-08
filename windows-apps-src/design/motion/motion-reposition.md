@@ -21,7 +21,7 @@ ms.locfileid: "57647725"
 
 Verwenden Sie die Animation für das Ändern der Position, um eines oder mehrere Elemente an eine neue Position zu verschieben.
 
-> **Wichtige APIs**: [**RepositionThemeAnimation Klasse**](https://msdn.microsoft.com/library/windows/apps/br210421), [ **RepositionThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210429)
+> **Wichtige APIs:** [**RepositionThemeAnimation Klasse**](https://msdn.microsoft.com/library/windows/apps/br210421), [ **RepositionThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 

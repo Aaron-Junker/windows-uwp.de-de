@@ -69,7 +69,7 @@ Das UserIdentity-Objekt enthält die folgenden Parameter.
 |----------------------|--------|-------------------|----------|
 | identityType         | string | Gibt den Zeichenfolgenwert **b2b** an.    | Ja      |
 | identityValue        | string | Der [Microsoft Store-ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4), der die Identität des Benutzers darstellt, für den Sie ein Verbrauchsprodukt als erfüllt melden möchten.      | Ja      |
-| localTicketReference | string | Der angeforderte Bezeichner für die zurückgegebene Antwort. Es wird empfohlen, die Sie verwenden den gleichen Wert wie die *"UserID"*[Anspruch](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) in den Microsoft Store-ID-Schlüssel.   | Ja      |
+| localTicketReference | string | Der angeforderte Bezeichner für die zurückgegebene Antwort. Es wird empfohlen, die Sie verwenden den gleichen Wert wie die *"UserID"*[Anspruch](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) in den Microsoft Store-ID-Schlüssel. | Ja      |
 
 
 ### <a name="request-examples"></a>Anforderungsbeispiele

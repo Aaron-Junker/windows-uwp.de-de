@@ -106,7 +106,7 @@ Sie haben Kunden in einer Liste angezeigt, aber die Datenbindung bietet noch meh
 
 * *Einmalige*: Dieser Datenbindung wird nur einmal aktiviert, und nicht auf Änderungen reagieren.
 * *Unidirektionale*: Dieser Datenbindung wird die Benutzeroberfläche mit Änderungen an der Datenquelle aktualisiert werden.
-* *Two-Way*: Dieser Datenbindung wird die Benutzeroberfläche mit Änderungen an der Datenquelle aktualisiert, und aktualisieren Sie die Daten auch mit den Änderungen, die auf der Benutzeroberfläche vorgenommen.
+* *Bidirektionale*: Dieser Datenbindung wird die Benutzeroberfläche mit Änderungen an der Datenquelle aktualisiert, und aktualisieren Sie die Daten auch mit den Änderungen, die auf der Benutzeroberfläche vorgenommen.
 
 Wenn Sie die Codeausschnitte von vorher befolgt haben, verwendet Ihre Bindung x:Bind und gibt keinen Modus an; folglich handelt es sich um eine einmalige Bindung. Wenn Sie Ihre Kunden direkt über die Benutzeroberfläche bearbeiten möchten, müssen Sie die Bindung in eine bidirektionale Bindung ändern, damit die Änderungen von den Daten zurück an die Kundenobjekte übergeben werden. Weitere Informationen finden Sie unter [Datenbindung im Detail](../data-binding/data-binding-in-depth.md).
 
@@ -166,18 +166,18 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weiterer nütz
 | API | Beschreibung |
 |------|---------------|
 | [Datenvorlage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | Beschreibt die visuelle Struktur eines Datenobjekts, was die Anzeige bestimmter Elementen auf der Benutzeroberfläche ermöglicht. |
-| [x:Bind](../xaml-platform/x-bind-markup-extension.md) | Dokumentation zur empfohlenen x:Bind-Markuperweiterung. |
-| [Binding](../xaml-platform/binding-markup-extension.md) | Dokumentation zur älteren Binding-Markuperweiterung. |
+| [X: Bind](../xaml-platform/x-bind-markup-extension.md) | Dokumentation zur empfohlenen x:Bind-Markuperweiterung. |
+| [Bindung](../xaml-platform/binding-markup-extension.md) | Dokumentation zur älteren Binding-Markuperweiterung. |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | Stellt ein UI-Steuerelement dar, das Datenelemente in einem vertikalen Stapel anzeigt. |
 | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Stellt ein einfaches Text-Steuerelement zum Anzeigen bearbeitbarer Textdaten auf der Benutzeroberfläche dar. |
-| [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | Schnittstelle, um Daten feststellbar („observable“) zu machen und für eine Datenbindung bereitzustellen. |
-| [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | Die **ItemsSource**-Eigenschaft dieser Klasse ermöglicht die Bindung einer Listenansicht an eine Datenquelle. |
+| ["INotifyPropertyChanged"](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | Schnittstelle, um Daten feststellbar („observable“) zu machen und für eine Datenbindung bereitzustellen. |
+| [ItemsControl-Element](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | Die **ItemsSource**-Eigenschaft dieser Klasse ermöglicht die Bindung einer Listenansicht an eine Datenquelle. |
 
 ### <a name="useful-docs"></a>Nützliche Dokumente
 
 | Thema | Beschreibung |
 |-------|----------------|
-| [Die Datenbindung im Detail](../data-binding/data-binding-in-depth.md) | Eine grundlegende Übersicht über die Prinzipien der Datenbindung |
+| [Datenbindung im Detail](../data-binding/data-binding-in-depth.md) | Eine grundlegende Übersicht über die Prinzipien der Datenbindung |
 | [Übersicht über die Datenbindung](../data-binding/data-binding-quickstart.md) | Ausführliche konzeptionelle Informationen zur Datenbindung. |
 | [Listenansicht](../design/controls-and-patterns/listview-and-gridview.md) | Informationen zum Erstellen und Konfigurieren einer Listenansicht, einschließlich der Implementierung einer Datenvorlage (**DataTemplate**) |
 

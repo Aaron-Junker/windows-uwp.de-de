@@ -93,8 +93,8 @@ Die Symbolleiste am oberen Rand der Seite ermöglicht den Zugriff auf häufig ve
 - **Herunterfahren**: Das Gerät wird deaktiviert.
 - **Starten Sie neu**: Zyklen Einschalten des Geräts.
 - **Sicherheit**: Öffnet die Seite Sicherheit für Geräte.
-- **Cool**: Gibt die Temperatur des Geräts an.
-- **A/C**: Gibt an, ob das Gerät im Netzbetrieb befindet, und geladen.
+- **"Cool"**: Gibt die Temperatur des Geräts an.
+- **STANDARDNACHRICHTENKLASSIFIZIERUNGEN**: Gibt an, ob das Gerät im Netzbetrieb befindet, und geladen.
 - **Hilfe**: Öffnet die Dokumentationsseite für REST-Schnittstelle.
 
 Auf der Startseite werden die folgenden Informationen angezeigt:
@@ -127,8 +127,8 @@ Auf der Seite „3D View“ können Sie erkennen, wie die HoloLens Ihre Umgebung
 Auf der Seite „Mixed Reality Capture“ können Sie Mediendatenströme von der HoloLens speichern.
 - Einstellungen: Steuern Sie die Media-Datenströme, die erfasst werden, indem Sie die folgenden Einstellungen zu überprüfen:-Hologramme: Erfasst den holographic Inhalt in den video Stream an. Hologramme werden in Mono und nicht in Stereo gerendert.
 - **PV Kamera**: Erfasst den Videostream zwischen der Kamera und Fotos/Video.
-- **Mic Audio**: Erfasst die Audiodaten aus dem Mikrofon-Array.
-- **App Audio**: Erfasst die Audiodaten aus dem die derzeit ausgeführte app.
+- **MIC-Audio**: Erfasst die Audiodaten aus dem Mikrofon-Array.
+- **App-Audio**: Erfasst die Audiodaten aus dem die derzeit ausgeführte app.
 - **Live-Vorschau-Qualität**: Wählen Sie die Bildschirmauflösung, Framerate und streaming-Rate für die Livevorschau an.
 
 - Klicken oder tippen Sie auf die Schaltfläche „Live preview“, um den Aufnahmedatenstrom anzuzeigen. Mit „Stop live preview“ wird der Aufnahmedatenstrom beendet.
@@ -164,7 +164,7 @@ Beachten Sie, dass die App auch dann beim Starten ausgeführt wird, wenn der Kio
 Ermöglicht Ihnen das Aufzeichnen und Wiedergeben von Eingabedaten für Testzwecke.
 - **Erfassen Sie Raum**: Verwendet, um eine simulierte Platz-Datei herunterzuladen, die das Netz räumliche Zuordnung für die benutzerumgebung enthält. Benennen Sie den Raum, und klicken Sie auf „Aufnahme“, um die Daten als XEF-Datei auf dem PC zu speichern. Diese Raumdatei kann in den HoloLens-Emulator geladen werden.
 - **Aufzeichnung**: Überprüfen Sie die Datenströme aufzuzeichnen, Name der Aufzeichnung, und klicken bzw. Tippen Sie auf der Eintrag zum Starten der Aufzeichnung. Führen Sie mit der HoloLens Aktionen aus, und klicken Sie dann auf „Beenden“, um die Daten als XEF-Datei auf dem PC zu speichern. Diese Datei kann im HoloLens-Emulator oder auf dem Gerät geladen werden.
-- **Playback**: Klicken Sie oder tippen Sie zum auswählen eine Xef Datei von Ihrem PC und senden die Daten an die HoloLens aufzeichnen hochladen.
+- **Wiedergabe**: Klicken Sie oder tippen Sie zum auswählen eine Xef Datei von Ihrem PC und senden die Daten an die HoloLens aufzeichnen hochladen.
 - **Steuerungsmodus**: Standard oder einer Simulation in der Dropdownliste auswählen, und klicken oder tippen Sie auf die Schaltfläche "festlegen", um den Modus für die HoloLens auszuwählen. Durch Auswahl von „Simulation“ werden die realen Sensoren auf der HoloLens deaktiviert und stattdessen hochgeladene simulierte Daten verwendet. Wenn Sie zu „Simulation“ wechseln, reagiert die HoloLens nicht auf den realen Benutzer, bis Sie zurück zu „Standard“ wechseln.
 
 

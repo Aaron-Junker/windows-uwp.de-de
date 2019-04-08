@@ -1,5 +1,5 @@
 ---
-description: Die Windows-Runtime ist ein System mit referenzzählung. und in einem solchen System es wichtig, dass Sie ist wissen, über die Bedeutung und Unterscheidung zwischen, starke und schwache Verweise.
+description: Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit der Bedeutung und dem Unterschied zwischen starken und schwachen Verweisen vertraut sind.
 title: Schwache Referenzen in C++/WinRT
 ms.date: 10/03/2018
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630815"

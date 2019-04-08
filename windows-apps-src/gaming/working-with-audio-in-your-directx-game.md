@@ -75,7 +75,7 @@ XAudio2 ist die Audiomixingbibliothek für DirectX, die in erster Linie zum Entw
 <td align="left"><p>Dieses Thema bietet einen Überblick über allgemeine Audiokonzepte, mit denen ein Audioentwickler vertraut sein sollte.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415825">XAudio2 Voices</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415825">XAudio2 stimmen</a></p></td>
 <td align="left"><p>Dieses Thema bietet einen Überblick über XAudio2-Stimmen, die für Submixing und das Verarbeiten und Mastern von Audiodaten verwendet werden.</p></td>
 </tr>
 <tr class="odd">
@@ -83,7 +83,7 @@ XAudio2 ist die Audiomixingbibliothek für DirectX, die in erster Linie zum Entw
 <td align="left"><p>In diesem Thema werden die XAudio2-Rückrufe behandelt, mit denen Unterbrechungen bei der Audiowiedergabe verhindert werden.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415739">XAudio2 Audio Graphs</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415739">XAudio2 Audio-Diagramme</a></p></td>
 <td align="left"><p>In diesem Thema werden die XAudio2-Audioverarbeitungsdiagramme behandelt. Diese empfangen eine Reihe von Audiostreams vom Client als Eingabe, verarbeiten sie und übergeben das Endergebnis an ein Audiogerät.</p></td>
 </tr>
 <tr class="odd">
@@ -122,7 +122,7 @@ XAudio2 ist die Audiomixingbibliothek für DirectX, die in erster Linie zum Entw
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415779">So wird es gemacht: Initialize XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415779">So wird es gemacht: Initialisieren Sie XAudio2</a></p></td>
 <td align="left"><p>Hier erfahren Sie, wie Sie XAudio2 für die Audiowiedergabe initialisieren, indem Sie eine Instanz des XAudio2-Moduls und eine Masterstimme erstellen.</p></td>
 </tr>
 <tr class="even">

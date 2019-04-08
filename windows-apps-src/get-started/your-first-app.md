@@ -77,7 +77,7 @@ Müssen Sie Ihre Webkenntnisse auffrischen?
 
 ## <a name="see-also"></a>Weitere Informationen
 
-* [Mit Programmieren beginnen](create-uwp-apps.md)
+* [Beginnen Sie mit der Codierung](create-uwp-apps.md)
 * [Was ist eine UWP-App?](universal-application-platform-guide.md)
 * [Vorbereiten](get-set-up.md)
 * [Für Windows-Konto registrieren](sign-up.md)

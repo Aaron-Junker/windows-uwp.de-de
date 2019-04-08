@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610115"
@@ -162,7 +162,7 @@ Vor dem Start des Zertifizierungsprozesses für den Microsoft Store müssen Sie 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Lokalisieren von Zeichenfolgen in Ihre Benutzeroberfläche und app-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
+* [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
 * [Globalisierung und Lokalisierung](globalizing-portal.md)
 * [Richtlinien für die Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
 * [Stellen Sie Ihre app lokalisierbar](prepare-your-app-for-localization.md)

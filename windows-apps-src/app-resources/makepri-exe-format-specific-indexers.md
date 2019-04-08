@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645875"
@@ -397,7 +397,7 @@ Das `initialPath`-Attribut platziert alle Ressourcen unter diesem Anfangspfad. Z
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Kompilieren von Ressourcen mit MakePri.exe manuell](compile-resources-manually-with-makepri.md)
+* [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](compile-resources-manually-with-makepri.md)
 * [MakePri.exe-Befehlszeilenoptionen](makepri-exe-command-options.md)
 * [MakePri.exe-Konfigurationsdatei](makepri-exe-configuration.md)
 * [Die Anwendung/Json Medientyp für JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

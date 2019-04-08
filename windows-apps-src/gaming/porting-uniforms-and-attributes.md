@@ -141,7 +141,7 @@ glUniformMatrix4fv(renderer->mvpLoc, 1, GL_FALSE, (GLfloat*) &renderer->mvpMatri
 
 Im GLSL-Code eines Shaders sieht die entsprechende uniform-Deklaration wie folgt aus:
 
-Open GL ES 2.0: Einheitliche GLSL-Deklaration
+OpenGL ES 2.0: Einheitliche GLSL-Deklaration
 
 ``` syntax
 uniform mat4 u_mvpMatrix;

@@ -169,7 +169,7 @@ Für Szenarien, in denen Sie basierend auf den Sprach-, Regions- und Kultureinst
 
 * [Kalender, Datums- und Zeitauswahl](../controls-and-patterns/date-and-time.md)
 * [Grundlegendes zu Benutzersprachen-Profil und app-manifest-Sprachen](manage-language-and-region.md)
-* [Passen Sie Ihre Ressourcen für die Sprache, Skalierung, hoher Kontrast und anderen Qualifizierer](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>Beispiele
 

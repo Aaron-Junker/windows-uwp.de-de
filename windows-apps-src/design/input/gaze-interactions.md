@@ -27,7 +27,7 @@ Bieten Sie Unterstützung für die Verfolgung des Blicks, der Aufmerksamkeit und
 > [!NOTE]
 > Informationen zur Eingabe via Anvisieren in [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) finden Sie unter [Anvisieren](https://docs.microsoft.com/windows/mixed-reality/gaze).
 
-**Wichtige APIs**: [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**Wichtige APIs:** [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>Übersicht
 

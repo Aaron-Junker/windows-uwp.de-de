@@ -32,16 +32,16 @@ In diesem Thema werden einige der folgenden URI-Schemas beschrieben, die in Wind
 | ----------:|----------|
 |[Bingmaps:, ms-Laufwerk-to:, und ms-Walk-to: ](#maps-app-uri-schemes) | Karten-App |
 |[http:](#http-uri-scheme) | Standardwebbrowser |
-|[mailto:](#email-uri-scheme) | Standard-E-Mail-App |
-|[ms-call:](#call-app-uri-scheme) |  Anruf-App |
-|[ms-chat:](#messaging-app-uri-scheme) | Messaging-App |
-|[ms-people:](#people-app-uri-scheme) | Kontakte-App |
-|[ms-photos:](#photos-app-uri-scheme) | Fotos-App |
-|[ms-settings:](#settings-app-uri-scheme) | Einstellungs-App |
-|[ms-store:](#store-app-uri-scheme)  | Store-App |
-|[ms-tonepicker:](#tone-picker-uri-scheme) | Tonauswahl |
-|[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers-App |
-|[msnweather:](#weather-app-uri-scheme) | Wetter-app |
+|[Mailto:](#email-uri-scheme) | Standard-E-Mail-App |
+|[MS-Aufruf:](#call-app-uri-scheme) |  Anruf-App |
+|[MS-Chat:](#messaging-app-uri-scheme) | Messaging-App |
+|[MS-Personen:](#people-app-uri-scheme) | Kontakte-App |
+|[MS-Fotos:](#photos-app-uri-scheme) | Fotos-App |
+|[MS-Einstellungen:](#settings-app-uri-scheme) | Einstellungs-App |
+|[MS-Store:](#store-app-uri-scheme)  | Store-App |
+|[MS-Tonepicker:](#tone-picker-uri-scheme) | Tonauswahl |
+|[MS-Yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers-App |
+|[Msnweather:](#weather-app-uri-scheme) | Wetter-app |
 
 <br>
 Der folgende URI öffnet beispielsweise den Standardbrowser und zeigt die Bing-Website an.
@@ -217,7 +217,7 @@ Oder um ein Video zu bearbeiten: `ms-photos:videoedit?InputToken=123abc&Action=T
 |------------|--------|
 | ms-photos:viewer?fileName={filename} | Startet die Fotos-App, um das gewünschte Bild anzuzeigen. {filename} muss ein vollqualifizierter Pfadname sein. Beispiel: `c:\users\userName\Pictures\ImageToView.jpg` |
 | ms-photos:videoedit?InputToken={input token} | Startet die Fotos-App im Videobearbeitungsmodus für die Datei, die durch das Dateitoken dargestellt wird. **InputToken** ist erforderlich. Sie können den [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) verwenden, um ein Dateitoken zu erhalten. |
-| ms-photos:videoedit?Action={action} | Ein optionaler Parameter, der die Fotos-app in der angegebenen video Bearbeitungsmodus geöffnet wird, wobei {Action} gibt: **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. Wenn keine Angabe erfolgt, wird standardmäßig **Ansicht** verwendet |
+| ms-photos:videoedit?Action={action} | Ein optionaler Parameter, der die Fotos-app in der angegebenen video Bearbeitungsmodus geöffnet wird, wobei {Action} gibt: **SlowMotion**, **FrameExtraction**, **Trim**, **Ansicht**, **Freihandeingaben**. Wenn keine Angabe erfolgt, wird standardmäßig **Ansicht** verwendet |
 | ms-photos:videoedit?StartTime={timespan} | Ein optionaler Parameter, der angibt, wo die Wiedergabe des Videos beginnt. `{timespan}` muss im Format `"hh:mm:ss.ffff"`. Wenn nicht angegeben ist, wird standardmäßig `00:00:00.0000` |
 
 ### <a name="settings-app-uri-scheme"></a>URI-Schema für die Einstellungs-App
@@ -244,4 +244,4 @@ Verwenden der **Msnweather:** URI-Schema, um das Wetter-app zu starten.
 
 | URI-Schema | Ergebnisse |
 |------------|---------|
-| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | Startet die Wetter-app in der Vorhersage-Seite, die basierend auf einen Speicherort geografische Koordinaten an.<br>`latitude` bezieht sich auf der Breitengrad des Standorts.<br> `longitude` bezieht sich auf der Längengrad des Standorts.<br> |
+| Msnweather://Forecast?LA=\[Latitude\]& lo =\[Längengrad\] | Startet die Wetter-app in der Vorhersage-Seite, die basierend auf einen Speicherort geografische Koordinaten an.<br>`latitude` bezieht sich auf der Breitengrad des Standorts.<br> `longitude` bezieht sich auf der Längengrad des Standorts.<br> |

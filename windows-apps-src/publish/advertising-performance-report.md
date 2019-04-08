@@ -64,8 +64,8 @@ Der Bericht **Anzeigenleistung** enthält Daten für die folgenden Leistungsmetr
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [In-app-Werbung](in-app-ads.md)
-* [Anzeigen von Werbung in Ihrer app mit dem Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md)
+* [In-App-Anzeigen](in-app-ads.md)
+* [Anzeigen von Werbung in der App mithilfe des Microsoft Advertising-SDK](../monetize/display-ads-in-your-app.md)
 * [Optimieren der Viewability Ihre Ad-Einheiten](../monetize/optimize-ad-unit-viewability.md)
 
 

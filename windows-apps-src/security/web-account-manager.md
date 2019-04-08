@@ -3,7 +3,7 @@ title: Web Account Manager
 description: In diesem Artikel wird beschrieben, wie Sie AccountsSettingsPane verwenden, um Ihre App für die Universelle Windows-Plattform (UWP) mit externen Identitätsanbietern wie Microsoft oder Facebook zu verbinden. Dazu verwenden Sie die Web Account Manager-APIs in Windows 10.
 ms.date: 12/06/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Sicherheit
+keywords: Windows 10, UWP, Sicherheit
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: a0a16ac9a2d810f7f4cbe2be403713b5cec4997b
@@ -428,7 +428,7 @@ Einstellungsbefehle lassen sich grundsätzlich überall verwenden. Es wird jedoc
 
 [AccountsSettingsPane-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.accountssettingspane)
 
-[Web Authentication broker](web-authentication-broker.md)
+[Webauthentifizierungsbroker](web-authentication-broker.md)
 
 [Beispiel für Web-Konto-Verwaltung](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 

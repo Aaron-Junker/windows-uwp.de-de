@@ -34,7 +34,7 @@ Die folgenden Funktionen wurden hinzugefügt, das Windows Insider Preview-Builds
 
 * TreeView wurde verbessert, um die Unterstützung von [Datenbindung, Elementvorlagen, und ziehen und ablegen.](../design/controls-and-patterns/tree-view.md)
 
-### <a name="package-support-framework"></a>Paketframework-Unterstützung
+### <a name="package-support-framework"></a>Framework zur Paketunterstützung (Package Support Framework, PSF)
 
 Das Paket-Support-Framework ist ein Open-Source-Kit, mit dem Sie die anwenden Fehlerbehebungen für die Win32-Anwendung, wenn Sie keinen Zugriff auf den Quellcode haben, damit es in einem Container MSIX ausgeführt werden kann.
 

@@ -26,7 +26,7 @@ ms.locfileid: "57620345"
 Ein *Panel* ist ein Objekt, das ein Layoutverhalten für die in diesem enthaltenen untergeordneten Elemente bereitstellt, wenn das Extensible Application Markup Language (XAML)-Layoutsystem ausgeführt und die Benutzeroberfläche Ihrer App dargestellt wird. 
 
 
-> **Wichtige APIs**: [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+> **Wichtige APIs:** [**Bereich**](https://msdn.microsoft.com/library/windows/apps/br227511), [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), [ **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
 
 Sie können für ein XAML-Layout benutzerdefinierte Panels definieren, indem Sie eine benutzerdefinierte Klasse aus der [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)-Klasse ableiten. Das Verhalten für das Panel stellen Sie bereit, indem Sie die Methoden [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) und [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) überschreiben und somit eine Logik liefern, die die untergeordneten Elemente misst und anordnet.
 
@@ -87,7 +87,7 @@ Das Layoutsystem funktioniert also hauptsächlich deshalb, weil jedes Element, d
 -   [**ActualHeight** ](https://msdn.microsoft.com/library/windows/apps/br208707) und [ **ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
 -   [**Höhe** ](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) und [ **Breite**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)
 -   [**Rand**](https://msdn.microsoft.com/library/windows/apps/br208724)
--   [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) event
+-   [**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/br208722) Ereignis
 -   [**HorizontalAlignment** ](https://msdn.microsoft.com/library/windows/apps/br208720) und [ **VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
 -   [**ArrangeOverride** ](https://msdn.microsoft.com/library/windows/apps/br208711) und [ **MeasureOverride** ](https://msdn.microsoft.com/library/windows/apps/br208730) Methoden
 -   [**Ordnen Sie** ](https://msdn.microsoft.com/library/windows/apps/br208914) und [ **Measure** ](https://msdn.microsoft.com/library/windows/apps/br208952) Methoden: Diese verfügen über systemeigene Implementierungen, die auf definiert die [ **"FrameworkElement"** ](https://msdn.microsoft.com/library/windows/apps/br208706) Ebene, die die layoutaktion auf Elementebene verarbeiten

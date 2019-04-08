@@ -271,7 +271,7 @@ Wenn der Wert von [**PreviousExecutionState**](https://msdn.microsoft.com/librar
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Handle-app anhalten](suspend-an-app.md)
-* [Behandeln von app-fortsetzen](resume-an-app.md)
+* [Behandeln des Anhaltens von Apps](suspend-an-app.md)
+* [Behandeln der App-Fortsetzung](resume-an-app.md)
 * [Richtlinien für die app anhalten und fortsetzen](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [App-Lebenszyklus](app-lifecycle.md)

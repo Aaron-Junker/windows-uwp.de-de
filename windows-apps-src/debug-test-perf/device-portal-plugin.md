@@ -197,6 +197,6 @@ Um die Hintergrundaufgabe zu debuggen, müssen Sie die Art und Weise ändern, wi
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Übersicht über die Windows Device Portal](device-portal.md)
-* [Erstellen Sie und nutzen Sie einen app service](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [Erstellen und Verwenden eines App-Diensts](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
 
 

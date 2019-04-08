@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57632055"
@@ -271,6 +271,6 @@ Entwickler bestimmter Komponenten, die sich in Ebenen über dieser URI-Analyse b
 * [Verpacken von Apps](../packaging/index.md)
 * [Verweisen auf ein Bild oder eine andere Anlage aus XAML-Markup und code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md)
-* [Lokalisieren von Zeichenfolgen in Ihre Benutzeroberfläche und app-Paketmanifest](localize-strings-ui-manifest.md)
+* [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](localize-strings-ui-manifest.md)
 * [Ressourcenverwaltungssystem](https://msdn.microsoft.com/library/windows/apps/jj552947)
 * [Kachel- und popupbildgrößen benachrichtigungsunterstützung für Sprache, Skalierung und hoher Kontrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

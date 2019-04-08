@@ -50,7 +50,7 @@ Um Unterstützung für die Anwendung als Freigabeziel zu deklarieren, öffnen Si
 </Applications>
 ```
 
-**After**
+**Nach dem**
 
 ```xml
 <Applications>

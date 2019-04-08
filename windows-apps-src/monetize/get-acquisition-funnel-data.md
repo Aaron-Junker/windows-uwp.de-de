@@ -61,8 +61,8 @@ Die folgenden Filterfelder werden unterstützt. Zeichenfolgenwerte im Parameter 
 |---------------|-----------------|
 | campaignId | Die ID-Zeichenfolge für einen [Werbekampagne für benutzerdefinierte Apps](../publish/create-a-custom-app-promotion-campaign.md), die dem Kauf zugeordnet ist. |
 | market | Eine Zeichenfolge, die den ISO 3166-Ländercode des Markts enthält, in dem der Kauf erfolgte. |
-| deviceType | Eine der folgenden Zeichenfolgen, die den Typ des Geräts angibt, auf der Kauf aufgetreten ist:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Verwaltungskonsole</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unbekannt</strong></li></ul> |
-| ageGroup | Eine der folgenden Zeichenfolgen, die den Typ der Age-Group des Benutzer angibt, der den Kauf abgeschlossen hat:<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 oder höher</strong></li><li><strong>Unbekannt</strong></li></ul> |
+| deviceType | Eine der folgenden Zeichenfolgen, die den Typ des Geräts angibt, auf der Kauf aufgetreten ist:<ul><li><strong>PC</strong></li><li><strong>Telefon</strong></li><li><strong>Verwaltungskonsole</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unbekannt</strong></li></ul> |
+| ageGroup | Eine der folgenden Zeichenfolgen, die den Typ der Age-Group des Benutzer angibt, der den Kauf abgeschlossen hat:<ul><li><strong>0 – 17</strong></li><li><strong>18 bis 24</strong></li><li><strong>25: 34</strong></li><li><strong>35: 49</strong></li><li><strong>50 oder höher</strong></li><li><strong>Unbekannt</strong></li></ul> |
 | gender | Eine der folgenden Zeichenfolgen, die das Geschlecht des Benutzer angibt, der den Kauf abgeschlossen hat:<ul><li><strong>M</strong></li><li><strong>F</strong></li><li><strong>Unbekannt</strong></li></ul> |
 
 
@@ -95,7 +95,7 @@ Objekte im Array *Value* enthalten die folgenden Werte.
 
 | Wert               | Typ   | Beschreibung                           |
 |---------------------|--------|-------------------------------------------|
-| MetricType                | string | Eine der folgenden Zeichenfolgen, die angibt, die [Trichter Datentyp](../publish/acquisitions-report.md#acquisition-funnel), die in diesem Objekt enthalten ist:<ul><li><strong>PageView</strong></li><li><strong>Acquisition</strong></li><li><strong>Installieren</strong></li><li><strong>Usage</strong></li></ul> |
+| MetricType                | string | Eine der folgenden Zeichenfolgen, die angibt, die [Trichter Datentyp](../publish/acquisitions-report.md#acquisition-funnel), die in diesem Objekt enthalten ist:<ul><li><strong>PageView</strong></li><li><strong>Erwerb</strong></li><li><strong>Installieren</strong></li><li><strong>Verwendung</strong></li></ul> |
 | UserCount       | string | Die Anzahl der Benutzer, die vom angegebenen Trichter Schritt ausgeführt hat, die *MetricType* Wert.             |
 
 

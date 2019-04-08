@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, Anzeigen, Werbung, Ad-Steuerelement, native Anzeige
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e9df87cd214d3d03f25c674ec80a73fedf53d6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57628065"
@@ -131,5 +131,5 @@ Können mehrere native Platzierung von Werbung in einer einzelnen App verwenden.
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Richtlinien für die native anzeigen](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
-* [In-app-Werbung](../publish/in-app-ads.md)
+* [In-App-Anzeigen](../publish/in-app-ads.md)
 * [Ad-Einheiten für Ihre app einrichten](set-up-ad-units-in-your-app.md)

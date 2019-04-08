@@ -68,7 +68,7 @@ Bei einer vorhandenen iOS-App stehen weniger Optionen zur Verfügung. Es ist jed
 
     Eine Spielerstellungsumgebung
 
--   [Titanium Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [Titan Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
 
     Eine plattformübergreifende Erstellungsumgebung
 

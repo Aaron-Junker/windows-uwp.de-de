@@ -46,7 +46,7 @@ Weitere Informationen finden Sie unter [US Patent- und Marke Office: Grundlagen 
 
 Nein. Microsoft erlaubt Dritten die Verwendung von geschützten Logos nur über eine formale Lizenz. Eine Lizenz dieser Art ist in diesem Kontext normalerweise nicht erhältlich.
 
-Weitere Informationen finden Sie unter [US Patent- und Marke Office: Grundlagen der Trademark](https://go.microsoft.com/fwlink/p/?LinkId=225271) oder Herunterladen von [US Copyright Office: Copyright Basics](https://go.microsoft.com/fwlink/p/?LinkID=225273).
+Weitere Informationen finden Sie unter [US Patent- und Marke Office: Grundlagen der Trademark](https://go.microsoft.com/fwlink/p/?LinkId=225271) oder Herunterladen von [US Copyright Office: Copyright-Grundlagen](https://go.microsoft.com/fwlink/p/?LinkID=225273).
 
 ### <a name="5-do-i-need-to-use-registered--or-trademark--symbols-when-i-refer-to-a-microsoft-trademark-in-my-app-and-must-i-when-using-a-microsoft-trademark-place-a-trademark-attribution-notice-in-my-app-for-example-microsoft-is-a-registered-trademark-of-the-microsoft-corporation"></a>5. Muss ich mit registriert® oder Marke™ Symbole, wenn ich auf eine Microsoft-Marke in meiner app verweisen? Und muss ich, wenn ich eine Microsoft-Marke verwende, einen Markenverweis in meine App einfügen, wie etwa, „Microsoft ist eine eingetragene Marke der Microsoft Corporation“?
 

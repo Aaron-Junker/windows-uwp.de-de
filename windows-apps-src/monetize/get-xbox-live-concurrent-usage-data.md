@@ -7,7 +7,7 @@ keywords: Windows 10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Li
 ms.localizationpriority: medium
 ms.openlocfilehash: 40d35b45065566db22aef791a94faa1cc0fa5c62
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57655655"
@@ -53,7 +53,7 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 | metricType | string | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **concurrency** an.  |  Ja  |
 | startDate | date | Das Startdatum im Datumsbereich der gleichzeitigen Nutzungsdaten, die abgerufen werden sollen. Weitere Informationen finden Sie unter der *aggregationLevel*-Beschreibung für das Standardverhalten. |  Nein  |
 | endDate | date | Das Enddatum im Datumsbereich der gleichzeitigen Nutzungsdaten, die abgerufen werden sollen. Weitere Informationen finden Sie unter der *aggregationLevel*-Beschreibung für das Standardverhalten. |  Nein  |
-| aggregationLevel | string | Gibt den Zeitraum an, für den aggregierte Daten abgerufen werden sollen. Dies kann eine der folgenden Zeichenfolgen sein: **minute**, **hour** oder **day**. Wenn keine Angabe erfolgt, lautet der Standardwert **day**. <p/><p/>Wenn Sie kein *startDate* oder *endDate* angeben, ist der Antworttext standardmäßig wie folgt: <ul><li>**Minute**: Die letzten 60 Datensätze der verfügbaren Daten.</li><li>**Stunde**: Die letzten 24 Einträge der verfügbaren Daten.</li><li>**day**: Die letzte 7 Datensätze der verfügbaren Daten.</li></ul><p/>Die folgenden Aggregationsebenen haben Größenbegrenzungen hinsichtlich der Anzahl von Datensätzen, die zurückgegeben werden können. Die Datensätze werden abgeschnitten, wenn die angeforderte Zeitspanne zu groß ist. <ul><li>**Minute**: Bis zu 1440 Datensätze (24 Stunden Daten).</li><li>**Stunde**: Bis zu 720 Datensätze (Daten 30 Tage).</li><li>**day**: Bis zu 60 Datensätze (Daten 60 Tage).</li></ul>  |  Nein  |
+| aggregationLevel | string | Gibt den Zeitraum an, für den aggregierte Daten abgerufen werden sollen. Dies kann eine der folgenden Zeichenfolgen sein: **minute**, **hour** oder **day**. Wenn keine Angabe erfolgt, lautet der Standardwert **day**. <p/><p/>Wenn Sie kein *startDate* oder *endDate* angeben, ist der Antworttext standardmäßig wie folgt: <ul><li>**Minute**: Die letzten 60 Datensätze der verfügbaren Daten.</li><li>**Stunde**: Die letzten 24 Einträge der verfügbaren Daten.</li><li>**Tag**: Die letzte 7 Datensätze der verfügbaren Daten.</li></ul><p/>Die folgenden Aggregationsebenen haben Größenbegrenzungen hinsichtlich der Anzahl von Datensätzen, die zurückgegeben werden können. Die Datensätze werden abgeschnitten, wenn die angeforderte Zeitspanne zu groß ist. <ul><li>**Minute**: Bis zu 1440 Datensätze (24 Stunden Daten).</li><li>**Stunde**: Bis zu 720 Datensätze (Daten 30 Tage).</li><li>**Tag**: Bis zu 60 Datensätze (Daten 60 Tage).</li></ul>  |  Nein  |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel

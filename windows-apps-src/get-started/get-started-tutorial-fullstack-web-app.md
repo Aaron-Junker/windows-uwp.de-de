@@ -30,7 +30,7 @@ Wenn Sie diese Ressourcen nicht bereits auf dem Computer besitzen, folgen Sie de
 
  - [Express Generator](https://expressjs.com/en/starter/generator.html)– nach der Installation von Knoten, Installieren von Express mit `npm install express-generator -g`
 
- - [Visual Studio Code](https://code.visualstudio.com/)
+ - [Visual Studio-Code](https://code.visualstudio.com/)
 
 Wenn Sie die endgültigen Schritte zum Hosten Ihres API-Diensts und Ihrer Arbeitsspeicherspiele-App auf Microsoft Azure abschließen möchten, müssen [Sie ein kostenloses Azure-Konto erstellen](https://azure.microsoft.com/en-us/free/), wenn Sie dies noch nicht getan haben.
 
@@ -626,7 +626,7 @@ Gratulation! Sie haben die Web-App erfolgreich erstellt! Testen wir sie.
 
     Sie können auch Ihren Code mit dem im letzten Ordner zur Verfügung gestellten Code vergleichen.
 
-4. So beenden Sie das Spiel, in der Eingabeaufforderung Folgendes: **Ctrl + C**, **Y**. 
+4. So beenden Sie das Spiel, in der Eingabeaufforderung Folgendes: **STRG + C**, **Y**. 
 
 ### <a name="going-further"></a>Vertiefung
 

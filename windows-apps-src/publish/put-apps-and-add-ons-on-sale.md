@@ -56,7 +56,7 @@ Sonderangebote werden im Rahmen der Übermittlung für Apps oder Add-Ons geplant
    - **Segment**: An die Personen in der Customer-Segment wird, die Sie auswählen, der Verkauf angeboten. Sie können hier ein [bereits erstelltes Segment](create-customer-segments.md) verwenden. Sie können auch **First time payers** auswählen, um das Sonderangebot nur für Kunden anzubieten, die noch nie etwas im Store erworben haben. Wir bieten dieses Segment hier an, da wir festgestellt haben, dass Kunden nach ihrem ersten Store-Einkauf häufig weitere Einkäufe tätigen. Für diese Gruppe eignen sich also unter Umständen Angebotspreise sehr gut.
 6. Geben Sie das Datum und die Uhrzeit für den Start und das Ende des Angebotszeitraums ein. Wählen Sie eine der folgenden Zeitzonenoptionen aus:
    - **UTC**: Die Zeit, die Sie auswählen, werden die Zeit (Universal Coordinated Time, UTC), damit der Verkauf zur gleichen Zeit überall tritt auf.
-   - **Local**: Die Zeit, die Sie auswählen, wird die Verwendung in allen Zeitzonen, die einen Markt zugeordnet sein. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
+   - **Lokale**: Die Zeit, die Sie auswählen, wird die Verwendung in allen Zeitzonen, die einen Markt zugeordnet sein. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
 7. Wenn Sie ein weiteres Sonderangebot planen möchten, wählen Sie **Neues Angebot**. Klicken Sie andernfalls im unteren Bereich der Seite **Preise und Verfügbarkeit** auf **Speichern**, und klicken Sie dann in der Übermittlungsübersicht auf **An Store übermitteln**.
 
 > [!NOTE]

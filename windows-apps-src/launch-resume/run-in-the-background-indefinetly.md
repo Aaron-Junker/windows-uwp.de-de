@@ -27,7 +27,7 @@ Wenn Sie eine App entwickeln, die nicht für die Übermittlung an den Microsoft 
 
 Die `extendedExecutionUnconstrained`-Funktion wird als eingeschränkte Funktion im App-Manifest hinzugefügt. Weitere Informationen zu eingeschränkten Funktionen finden Sie unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
-_Package.appxmanifest_
+_Datei "Package.appxmanifest"_
 ```xml
 <Package ...>
 ...
@@ -66,7 +66,7 @@ Das Registrieren eines **gesperrten** Ereignisses ermöglicht Ihrer App alle erf
 
 In der universellen Windows-Plattform werden Hintergrundaufgaben als Prozesse bezeichnet, die im Hintergrund ohne jede Benutzeroberfläche ausgeführt werden. Hintergrundaufgaben werden in der Regel maximal 25 Sekunden ausgeführt, bevor sie abgebrochen werden. Einige zeitintensivere Aufgaben enthalten ebenfalls eine Überprüfung, um sicherzustellen, dass die Hintergrundaufgabe sich nicht im Leerlauf oder mit Speicher befindet. Im Windows Creators Update (Version 1703), wurde die eingeschränkte Funktion [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) eingeführt, um diese Einschränkungen zu entfernen. Die **extendedBackgroundTaskTime**-Funktion wird als eingeschränkte Funktion im App-Manifest hinzugefügt:
 
-_Package.appxmanifest_
+_Datei "Package.appxmanifest"_
 ```xml
 <Package ...>
    <Capabilities>  

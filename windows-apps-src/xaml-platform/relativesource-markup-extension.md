@@ -65,7 +65,7 @@ Darüber hinaus kann `RelativeSource={RelativeSource Self}` auch verwendet werde
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Übersicht über XAML](xaml-overview.md)
-* [Die Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [{Binding}-Markuperweiterung](binding-markup-extension.md)
 * [**Bindung**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)

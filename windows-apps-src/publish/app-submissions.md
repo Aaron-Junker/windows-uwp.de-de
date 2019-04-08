@@ -97,9 +97,9 @@ Sie benötigen alle erforderlichen Informationen für mindestens eine der von Ih
 | **Store-logos**               | Empfohlen. Ist für bestimmte Betriebssystemversionen erforderlich | [Store-logos](app-screenshots-and-images.md#store-logos)             |
 | **Nachspänne**                  | Optional                                    | [Nachspänne](app-screenshots-and-images.md#trailers)                | 
 | **Windows 10 und Xbox-Bild (16:9 Superheld Grafiken)**     | Empfohlen        | [Windows 10 und Xbox Bild (16:9 Superheld Grafiken)
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Xbox-images**     | Für die ordnungsgemäße Anzeige erforderlich, wenn Sie Xbox veröffentlichen        | [Xbox-images
-](app-screenshots-and-images.md#xbox-images) |
+] (app-Screenshots-und-images.md #Xbox-Images) |
 | **Zusätzliche Felder**  | Optional                                    | [Zusätzliche Felder](create-app-store-listings.md#supplemental-fields) 
 | **Suchbegriffe**              | Optional                                    | [Suchbegriffe](create-app-store-listings.md#search-terms)         |
 | **Copyright- und markenbestimmungen-Informationen** | Optional                                 | [Copyright- und markenbestimmungen-Informationen](create-app-store-listings.md#copyright-and-trademark-info) |

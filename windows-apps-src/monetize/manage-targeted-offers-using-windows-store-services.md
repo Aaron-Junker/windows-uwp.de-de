@@ -8,14 +8,14 @@ keywords: Windows 10, UWP, Store-Dienste, Microsoft Store-API für gezielte Ang
 ms.localizationpriority: medium
 ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57615685"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>Verwalten von gezielten Angeboten mithilfe von Store-Diensten
 
-Bei der Erstellung eine *gezielte Angebot* in die **einbinden > Ziel Angebote** für Ihre app im Partner Center verwenden die *Microsoft Store-Ziel bietet API* in Code zu Ihrer app Rufen Sie Informationen, die Sie die in-app-Funktionalität für das gezielte Angebot implementieren kann. Weitere Informationen zu gezielten Angeboten und Anleitungen zu deren Erstellung im Dashboard finden Sie unter [Verwenden Sie gezielte Angebote, um Interaktionen und Abschlüsse zu maximieren](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
+Bei der Erstellung eine *gezielte Angebot* in die **einbinden > Ziel Angebote** für Ihre app im Partner Center verwenden die *Microsoft Store-Ziel bietet API* in Code zu Ihrer app Rufen Sie Informationen, die Sie die in-app-Funktionalität für das gezielte Angebot implementieren kann. Weitere Informationen zu gezielten Angeboten und Anleitungen zu deren Erstellung im Dashboard finden Sie unter [Verwenden Sie gezielte Angebote, um Interaktionen und Abschlüsse zu maximieren.](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
 
 Die Gezielte-Angebote-API ist eine einfache REST-API, mit der Sie gezielte Angebote abrufen können, die für den aktuellen Benutzer verfügbar sind – basierend darauf, ob der Benutzer zum Kundensegment für das gezielte Angebot gehört. Gehen Sie folgendermaßen vor, um diese API in Ihrem App-Code zu verwenden:
 

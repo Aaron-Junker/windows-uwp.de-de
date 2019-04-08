@@ -21,7 +21,7 @@ ms.locfileid: "57638705"
 
 Mit den Core-Text-APIs im [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)-Namespace kann eine UWP-App (Universelle Windows-Plattform) Texteingaben von beliebigen Textdiensten empfangen, die auf Windows-Geräten unterstützt werden. Die APIs sind den [Textdienstframework](https://msdn.microsoft.com/library/windows/desktop/ms629032)-APIs dahingehend ähnlich, dass die App keine detaillierten Kenntnisse über die Textdienste benötigt. Auf diese Weise kann die App Text in einer beliebigen Sprache und von einem beliebigen Eingabegerät empfangen, wie Tastatur, Sprache oder Stift.
 
-> **Wichtige APIs**: [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
+> **Wichtige APIs:** [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [ **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 ## <a name="why-use-core-text-apis"></a>Gründe für die Verwendung von Core-Text-APIs
 
@@ -56,8 +56,8 @@ Textbereiche und -auswahlen werden anhand der [**CoreTextRange**](https://msdn.m
 
 | Feld                  | Datentyp                                                                 | Beschreibung                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | Die Startposition eines Bereichs ist die Textcursorposition der Anwendung unmittelbar vor dem ersten Zeichen. |
-| **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | Die Endposition eines Bereichs ist Textcursorposition der Anwendung unmittelbar nach dem letzten Zeichen.     |
+| **StartCaretPosition** | **Anzahl** \[JavaScript\] | **System. Int32** \[.NET\] | **Int32** \[C++\] | Die Startposition eines Bereichs ist die Textcursorposition der Anwendung unmittelbar vor dem ersten Zeichen. |
+| **EndCaretPosition**   | **Anzahl** \[JavaScript\] | **System. Int32** \[.NET\] | **Int32** \[C++\] | Die Endposition eines Bereichs ist Textcursorposition der Anwendung unmittelbar nach dem letzten Zeichen.     |
 
  
 
@@ -99,7 +99,7 @@ Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der 
 ![Beispieldiagramm für Text-Stream](images/coretext/stream-3.png) , wenn der Benutzer "d" gibt einen [ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176) Ereignis wird ausgelöst, durch den folgenden [ **CoreTextTextUpdatingEventArgs** ](https://msdn.microsoft.com/library/windows/apps/dn958229) Daten:
 
 -   [**Bereich**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
--   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [**Text** ](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
 -   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 Wenden Sie in Ihrem Bearbeitungssteuerelement die angegebenen Änderungen an, und legen Sie [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) auf **Succeeded** fest. Hier sehen Sie den Zustand des Steuerelements, nachdem die Änderungen angewendet wurden.
@@ -121,9 +121,9 @@ Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der 
 
 ![Beispieldiagramm für Text-Stream](images/coretext/stream-4.png) in diesem Fall sollten Sie aufrufen [ **NotifyTextChanged** ](https://msdn.microsoft.com/library/windows/apps/dn958172) mit diesen Argumenten:
 
--   *modifiedRange* = \[6, 6\]
+-   *ModifiedRange* = \[6, 6\]
 -   *newLength* = 5
--   *newSelection* = \[11, 11\]
+-   *NewSelection* = \[11, 11\]
 
 Es folgt mindestens ein [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175)-Ereignis, das Sie zum Aktualisieren des Texts behandeln, mit dem die Textdienste arbeiten.
 
@@ -139,9 +139,9 @@ Angenommen, Sie haben ein Bearbeitungssteuerelement, das eine Korrekturfunktion 
 
 ![Beispieldiagramm für Text-Stream](images/coretext/stream-8.png) in diesem Fall sollten Sie aufrufen [ **NotifyTextChanged** ](https://msdn.microsoft.com/library/windows/apps/dn958172) mit diesen Argumenten:
 
--   *modifiedRange* = \[1, 2\]
+-   *ModifiedRange* = \[1, 2\]
 -   *newLength* = 2
--   *newSelection* = \[5, 5\]
+-   *NewSelection* = \[5, 5\]
 
 Es folgt mindestens ein [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175)-Ereignis, das Sie zum Aktualisieren des Texts behandeln, mit dem die Textdienste arbeiten.
 

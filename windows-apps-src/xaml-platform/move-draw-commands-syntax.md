@@ -71,11 +71,11 @@ Gibt den Anfangspunkt einer neuen Figur an.
 
 | Syntax |
 |--------|
-| `M ` _startPoint_ <br/>- Oder -<br/>`m` _startPoint_|
+| `M ` _"StartPoint"_ <br/>- Oder -<br/>`m` _"StartPoint"_|
 
 | Begriff | Beschreibung |
 |------|-------------|
-| _startPoint_ | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>Der Anfangspunkt einer neuen Figur|
+| _"StartPoint"_ | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>Der Anfangspunkt einer neuen Figur|
 
 Der Großbuchstabe **M** gibt an, dass *startPoint* eine absolute Koordinate ist. Der Kleinbuchstabe **m** gibt an, dass *startPoint* ein Offset zum vorherigen Punkt ist. Wenn kein vorheriger Punkt vorhanden ist, wird (0,0) angegeben.
 
@@ -95,11 +95,11 @@ Erstellt eine gerade Linie zwischen dem aktuellen Punkt und dem angegebenen Endp
 
 | Syntax |
 |--------|
-| `L` _endPoint_ <br/>- Oder -<br/>`l` _endPoint_ |
+| `L` _Endpunkt_ <br/>- Oder -<br/>`l` _Endpunkt_ |
 
 | Begriff | Beschreibung |
 |------|-------------|
-| endPoint | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>Der Endpunkt der Linie|
+| endPoint | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>Der Endpunkt der Linie|
 
 **Befehl für eine horizontale Linie**
 
@@ -107,7 +107,7 @@ Erstellt eine horizontale Linie zwischen dem aktuellen Punkt und der angegebenen
 
 | Syntax |
 |--------|
-| `H ` _x_ <br/> - Oder - <br/>`h ` _x_ |
+| `H ` _X_ <br/> - Oder - <br/>`h ` _X_ |
 
 | Begriff | Beschreibung |
 |------|-------------|
@@ -119,11 +119,11 @@ Erstellt eine vertikale Linie zwischen dem aktuellen Punkt und der angegebenen y
 
 | Syntax |
 |--------|
-| `V ` _y_ <br/> - Oder - <br/> `v ` _y_ |
+| `V ` _Y_ <br/> - Oder - <br/> `v ` _Y_ |
 
 | Begriff | Beschreibung |
 |------|-------------|
-| *y* | [**Double-Wert**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Die y-Koordinate am Endpunkt der Linie |
+| *Y* | [**Double-Wert**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Die y-Koordinate am Endpunkt der Linie |
 
 **Kubische Bézier kurvenbefehl**
 
@@ -131,13 +131,13 @@ Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegeb
 
 | Syntax |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - Oder - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *Endpunkt* <br/> - Oder - <br/> `c ` *controlPoint1* *controlPoint2* *Endpunkt* |
 
 | Begriff | Beschreibung |
 |------|-------------|
-| *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der erste Kontrollpunkt der Kurve, der die Anfangstangente der Kurve bestimmt. |
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der zweite Kontrollpunkt der Kurve, der die Endtangente der Kurve bestimmt. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der Punkt, zu dem die Kurve gezeichnet wird. | 
+| *controlPoint1* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der erste Kontrollpunkt der Kurve, der die Anfangstangente der Kurve bestimmt. |
+| *controlPoint2* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der zweite Kontrollpunkt der Kurve, der die Endtangente der Kurve bestimmt. |
+| *Endpunkt* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der Punkt, zu dem die Kurve gezeichnet wird. | 
 
 **Befehl für eine quadratische Bézier**
 
@@ -149,8 +149,8 @@ Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem ang
 
 | Begriff | Beschreibung |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der Kontrollpunkt der Kurve, der die Anfangs- und Endtangente der Kurve bestimmt. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Der Punkt, zu dem die Kurve gezeichnet wird. |
+| *controlPoint* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der Kontrollpunkt der Kurve, der die Anfangs- und Endtangente der Kurve bestimmt. |
+| *Endpunkt* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Der Punkt, zu dem die Kurve gezeichnet wird. |
 
 **Smooth kubische Bézier kurvenbefehl**
 
@@ -158,12 +158,12 @@ Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegeb
 
 | Syntax |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - Oder - <br/>`s` *controlPoint2-Endpunkt* |
+| `S` *controlPoint2* *Endpunkt* <br/> - Oder - <br/>`s` *controlPoint2-Endpunkt* |
 
 | Begriff | Beschreibung |
 |------|-------------|
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der Kontrollpunkt der Kurve, der die Endtangente der Kurve bestimmt. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Der Punkt, zu dem die Kurve gezeichnet wird. |
+| *controlPoint2* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der Kontrollpunkt der Kurve, der die Endtangente der Kurve bestimmt. |
+| *Endpunkt* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Der Punkt, zu dem die Kurve gezeichnet wird. |
 
 **Smooth-Befehl für eine quadratische Bézier**
 
@@ -171,12 +171,12 @@ Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem ang
 
 | Syntax |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - Oder - <br/> `t` *controlPoint* *endPoint* |
+| `T` *ControlPoint* *Endpunkt* <br/> - Oder - <br/> `t` *ControlPoint* *Endpunkt* |
 
 | Begriff | Beschreibung |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Der Kontrollpunkt der Kurve, der die Anfangstangente der Kurve bestimmt. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Der Punkt, zu dem die Kurve gezeichnet wird. |
+| *controlPoint* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Der Kontrollpunkt der Kurve, der die Anfangstangente der Kurve bestimmt. |
+| *Endpunkt* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Der Punkt, zu dem die Kurve gezeichnet wird. |
 
 **Befehl für elliptischen Bogen**
 
@@ -184,15 +184,15 @@ Erstellt einen Ellipsenbogen zwischen dem aktuellen Punkt und dem angegebenen En
 
 | Syntax |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - Oder - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *Größe* *RotationAngle* *IsLargeArcFlag* *SweepDirectionFlag* *Endpunkt* <br/> - Oder - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | Begriff | Beschreibung |
 |------|-------------|
-| *size* | [**Größe**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Der x-Radius und y-Radius des Bogens |
+| *Größe* | [**Größe**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Der x-Radius und y-Radius des Bogens |
 | *rotationAngle* | [**Double-Wert**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Die Drehung der Ellipse in Grad |
 | *isLargeArcFlag* | Legen Sie „1“ fest, wenn der Winkel des Bogens mindestens 180 Grad entsprechen soll. Legen Sie anderenfalls „0“ fest. |
 | *sweepDirectionFlag* | Legen Sie „1“ fest, wenn der Bogen in Richtung eines positiven Winkels gezeichnet wird. Legen Sie anderenfalls „0“ fest. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der Punkt, zu dem die Kurve gezeichnet wird.|
+| *Endpunkt* | [**Zeigen Sie**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Der Punkt, zu dem die Kurve gezeichnet wird.|
  
 **Close-Befehl**
 
@@ -213,7 +213,7 @@ Beschreibt die x-Koordinate und y-Koordinate eines Punkts. Weitere Informationen
 | Begriff | Beschreibung |
 |------|-------------|
 | *x* | [**Double-Wert**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Die x-Koordinate des Punkts |
-| *y* | [**Double-Wert**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Die y-Koordinate des Punkts |
+| *Y* | [**Double-Wert**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Die y-Koordinate des Punkts |
 
 **Zusätzliche Hinweise**
 

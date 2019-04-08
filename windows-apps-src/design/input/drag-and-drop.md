@@ -17,7 +17,7 @@ ms.locfileid: "57634395"
 
 Drag&Drop ist eine intuitive Methode zum Übertragen von Daten in einer Anwendung oder zwischen Anwendungen auf dem Windows-Desktop. Per Drag&Drop können Benutzer Daten zwischen Anwendungen oder innerhalb einer Anwendung mit einer Standardgeste übertragen (Drücken, Halten und Ziehen mit dem Finger bzw. Drücken und Ziehen mit der Maus oder einem Stift.)
 
-> **Wichtige APIs**: ["CanDrag"-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag), ["AllowDrop"-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
+> **Wichtige APIs:** ["CanDrag"-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag), ["AllowDrop"-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
 
 Die Ziehquelle, d. h die Anwendung oder der Bereich, in der bzw. dem die Ziehbewegung ausgelöst wird, stellt die zu übertragenden Daten bereit, indem ein Datenpaketobjekt gefüllt wird, das Standarddatenformate enthalten kann, einschließlich Text, RTF, HTML, Bitmaps, Speicherelemente oder benutzerdefinierte Datenformate. Die Quelle gibt auch die Art von Vorgängen an, die unterstützt werden: Kopieren, Verschieben oder Verknüpfen. Wenn der Zeiger losgelassen wird, werden die Daten abgelegt. Das Ablageziel, d. h. die Anwendung oder der Bereich unter dem Zeiger, verarbeitet das Datenpaket und gibt den ausgeführten Vorgangstyp zurück.
 
@@ -103,7 +103,7 @@ Die [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)-Kl
 | Funktion | WinRT-API |
 | --- | --- |
 |  Aktivieren des Ziehens | [CoreDragOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
-|  Erstellen eines Datenpakets | [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |
+|  Erstellen eines Datenpakets | ["DataPackage"](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |
 | Übergeben des Ziehens an die Shell  | [CoreDragOperation.StartAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 | Empfangen des Drops von der Shell  | [CoreDragDropManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager)<br/>[ICoreDropOperationTarget](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.icoredropoperationtarget)    |
 
@@ -113,10 +113,10 @@ Die [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)-Kl
 
 * [App-zu-App-Kommunikation](index.md)
 * [AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
-* [CanDrag](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
-* [DragOver](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)
-* [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
+* ["CanDrag"](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
+* ["DragOver"](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)
+* ["Acceptedoperation"](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
 * ["DataView"](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
-* [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
-* [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
+* ["Draguioverride"](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
+* [Löschen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
 * [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)

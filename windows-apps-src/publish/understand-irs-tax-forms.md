@@ -35,7 +35,7 @@ Die Steuerformulare werden für Sie von folgenden Adressen gesendet:
 <table>
 <tr><th>Gruppe "Business"</th><th>Rechtliche Entität</th><th>Adresse</th></tr>
 <tr><td>Windows, Office, Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond, WA 98052, USA</td></tr>
-<tr><td>Werbung</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
+<tr><td>Werbung</td><td>Microsoft Online-Inc.</td><td>6100 Neil Straße<br>Reno, NV 89511 USA</td></tr>
 <table> 
 
 **Nicht-US-Bürger:**
@@ -43,7 +43,7 @@ Die Steuerformulare werden für Sie von folgenden Adressen gesendet:
 <tr><th>Gruppe "Business"</th><th>Rechtliche Entität</th><th>Adresse</th></tr>
 <tr><td>Windows, Office, Azure</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt von der Microsoft Corporation über Microsoft Ireland fungiert als qualifizierte Vermittler für die Microsoft Corporation)</td><td>Eine Microsoft Ort<br>Süd&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18, Ireland</td></tr>
 <tr><td>Ankündigung *</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Online-Inc. über Microsoft Ireland fungiert als Auszahlung-Agent für Microsoft Online-Inc.)</td><td>Eine Microsoft Ort<br>Süd&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18, Ireland</td></tr>
-<tr><td>Werbung</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
+<tr><td>Werbung</td><td>Microsoft Online-Inc.</td><td>6100 Neil Straße<br>Reno, NV 89511 USA</td></tr>
 <tr><td colspan="3">* Korrektes Verhalten auf den folgenden Ländern gibt an, dass Werbung Umsatz werden über Microsoft Ireland Operations Limited gezahlt werden: Österreich, Belgien, Bulgarien, Kroatien, Zypern, Tschechische Republik, Dänemark, Estland, Finnland, Frankreich, Deutschland, Griechenland, Ungarn, Irland, Insel Man, Italien, Lettland, Liechtenstein, Litauen, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Polen, Portugal, Rumänien, Slowakei, Slowenien, Südafrika, Spanien, Schweden, Schweiz, Vereinigtes Königreich</td></tr>
 </table>
 
@@ -80,7 +80,7 @@ Ich habe mindestens 600 US-Dollar an Zahlungen erhalten, die nicht im Zusammenha
   </tr>
   <tr> 
      <td valign="top">Ich habe <b>mindestens 600 US-Dollar an Zahlungen</b> für Anzeigen in Apps im entsprechenden Geschäftsjahr erhalten.</td>
-    <td valign="top"><b>1099-MISC</b>:<br>Zahler: Microsoft Online Inc<br>EMPLOYER: *** 0505<br><br><b>Wichtig</b>: Bestimmte Entitäten erhalten keine 1099-MISC Formularen die Beträge von Microsoft erhalten.  Weitere Informationen erhalten Sie bei Ihrem Steuerberater.</td>
+    <td valign="top"><b>1099-MISC</b>:<br>Zahler: Microsoft Online-Inc<br>EMPLOYER: *** 0505<br><br><b>Wichtig</b>: Bestimmte Entitäten erhalten keine 1099-MISC Formularen die Beträge von Microsoft erhalten.  Weitere Informationen erhalten Sie bei Ihrem Steuerberater.</td>
   </tr>
   <tr> 
      <td valign="top">Ich habe <b>weniger als 600 US-Dollar an Zahlungen</b> für Anzeigen in Apps entsprechenden Geschäftsjahr erhalten.</td>

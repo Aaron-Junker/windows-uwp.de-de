@@ -22,7 +22,7 @@ Mit verbundenen Animationen können Sie eine dynamische und ansprechende Navigat
 
 In einer verbundenen-Animation scheint ein Element zwischen zwei Ansichten, während eine Änderung der Inhalte der Benutzeroberfläche, über den Bildschirm aus seiner Position in der Ansicht an das Ziel in der neuen Sicht fliege "Weiter". Dies betont die gemeinsamen Inhalte zwischen den Ansichten und eine ansprechende und dynamische Auswirkungen im Rahmen eines Übergangs.
 
-> **Wichtige APIs**:  [ConnectedAnimation Klasse](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService-Klasse](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+> **Wichtige APIs:**  [ConnectedAnimation Klasse](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService-Klasse](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 ## <a name="see-it-in-action"></a>Sehen Sie es in Aktion
 

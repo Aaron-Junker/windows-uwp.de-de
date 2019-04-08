@@ -17,7 +17,7 @@ ms.locfileid: "57634865"
 
 Die [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)-Objekte werden verwendet, um Innenbereiche oder Konturen von XAML-Formen, Texten und Teilen von Steuerelementen zu zeichnen, damit das gezeichnete Objekt auf einer Benutzeroberfläche sichtbar ist. Machen Sie sich im Folgenden mit den verfügbaren Pinseln und deren Verwendung vertraut.
 
-> **Wichtige APIs**:  [Brush-Klasse](/uwp/api/Windows.UI.Xaml.Media.Brush)
+> **Wichtige APIs:**  [Brush-Klasse](/uwp/api/Windows.UI.Xaml.Media.Brush)
 
 ## <a name="introduction-to-brushes"></a>Einführung in Pinsel
 
@@ -27,7 +27,7 @@ Es gibt folgende Pinseltypen:
 -   [**AcrylicBrush**](/uwp/api/windows.ui.xaml.media.acrylicbrush)
 -   [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)
 -   [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 
--   [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)
+-   [**"ImageBrush"**](https://msdn.microsoft.com/library/windows/apps/BR210101)
 -   [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703)
 -   [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
 

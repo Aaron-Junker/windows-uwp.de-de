@@ -385,7 +385,7 @@ Dieses Element beschreibt die App-Lizenz. **App** ist ein erforderliches unterge
 
 |  Element  |  Erforderlich  |  Anzahl  | Beschreibung   |
 |-------------|------------|--------|--------|
-|  **AppId**  |    Ja   |  1   |   Die GUID, die die App im Store identifiziert. Dies kann eine beliebige GUID für Tests sein.        |
+|  **App-ID**  |    Ja   |  1   |   Die GUID, die die App im Store identifiziert. Dies kann eine beliebige GUID für Tests sein.        |
 |  **LinkUri**  |    Ja  |  1   |    Der URI der Eintragsseite im Store. Dies kann ein beliebiger URI für Tests sein.         |
 |  **CurrentMarket**  |    Ja  |  1   |    Das Land/die Region des Kunden.         |
 |  **AgeRating**  |    Ja  |  1   |     Eine ganze Zahl, die die Mindestaltersfreigabe der App darstellt. Dies ist den gleichen Wert wie den Sie im Partner Center angeben würden, wenn Sie die app senden. Die Werte, die von den Store verwendet werden: 3, 7, 12 und 16. Weitere Informationen zu diesen Bewertungen finden Sie unter [Altersfreigaben](../publish/age-ratings.md).        |
@@ -405,13 +405,13 @@ Dieses Element stellt Informationen zur App für ein bestimmtes Land oder eine b
 |  **Beschreibung**  |    Ja  |  1   |      Die Beschreibung der App für dieses Land/diese Region.       |
 |  **Preis**  |    Ja  |  1   |     Der Preis der App in diesem Land/dieser Region.        |
 |  **CurrencySymbol**  |    Ja  |  1   |     Das Währungssymbol, das in diesem Land/dieser Region verwendet wird.        |
-|  **CurrencyCode**  |    Nein  |  0 oder 1      |      Der Währungscode, der in diesem Land/dieser Region verwendet wird.         |  |
+|  **currencyCode**  |    Nein  |  0 oder 1      |      Der Währungscode, der in diesem Land/dieser Region verwendet wird.         |  |
 
 **MarketData** hat die folgenden Attribute.
 
 |  Attribut  |  Erforderlich  |  Beschreibung   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Ja        |     Gibt das Land/die Region an, für das/die die Marktdateninformationen gelten.          |  |
+|  **XML: lang**  |    Ja        |     Gibt das Land/die Region an, für das/die die Marktdateninformationen gelten.          |  |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -423,9 +423,9 @@ Dieses Element beschreibt ein Add-On für die App. **Product** ist ein optionale
 
 |  Attribut  |  Erforderlich  |  Beschreibung   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Ja        |    Enthält die Zeichenfolge, die von der App zur Identifizierung des Add-Ons verwendet wird.           |
+|  **"ProductID"**  |    Ja        |    Enthält die Zeichenfolge, die von der App zur Identifizierung des Add-Ons verwendet wird.           |
 |  **LicenseDuration**  |    Nein        |    Gibt die Anzahl der Tage an, für die die Lizenz gültig sein wird, nachdem der Artikel gekauft wurde. Das Ablaufdatum der neuen, durch einen Produktkauf erstellten Lizenz ist das Kaufdatum plus Lizenzdauer. Dieses Attribut wird nur verwendet, wenn das **ProductType**-Attribut **Durable** ist. Dieses Attribut wird für konsumierbare Add-Ons ignoriert.           |
-|  **ProductType**  |    Nein        |    Enthält einen Wert für die Identifizierung der Persistenz des In-App-Produkts. Die unterstützten Werte sind **Durable** (Standard) und **Consumable**. Zusätzliche Informationen zu Typen dauerhafter Add-Ons werden durch ein [Product](#product-child-of-licenseinformation)-Element unter [LicenseInformation](#licenseinformation) beschrieben. Zusätzliche Informationen zu Typen konsumierbarer Add-Ons werden durch ein [Product](#product-child-of-consumableinformation)-Element unter [ConsumableInformation](#consumableinformation) beschrieben.           |  |
+|  **productType**  |    Nein        |    Enthält einen Wert für die Identifizierung der Persistenz des In-App-Produkts. Die unterstützten Werte sind **Durable** (Standard) und **Consumable**. Zusätzliche Informationen zu Typen dauerhafter Add-Ons werden durch ein [Product](#product-child-of-licenseinformation)-Element unter [LicenseInformation](#licenseinformation) beschrieben. Zusätzliche Informationen zu Typen konsumierbarer Add-Ons werden durch ein [Product](#product-child-of-consumableinformation)-Element unter [ConsumableInformation](#consumableinformation) beschrieben.           |  |
 
 <span id="marketdata-child-of-product"/>
 
@@ -440,17 +440,17 @@ Dieses Element stellt Informationen zum Add-On für ein bestimmtes Land oder ein
 |  **Name**  |    Ja   |  1   |   Der Name des Add-Ons in diesem Land/dieser Region.        |
 |  **Preis**  |    Ja  |  1   |     Der Preis des Add-Ons in diesem Land/dieser Region.        |
 |  **CurrencySymbol**  |    Ja  |  1   |     Das Währungssymbol, das in diesem Land/dieser Region verwendet wird.        |
-|  **CurrencyCode**  |    Nein  |  0 oder 1      |      Der Währungscode, der in diesem Land/dieser Region verwendet wird.         |  
+|  **currencyCode**  |    Nein  |  0 oder 1      |      Der Währungscode, der in diesem Land/dieser Region verwendet wird.         |  
 |  **Beschreibung**  |    Nein  |   0 oder 1   |      Die Beschreibung des Add-Ons für dieses Land/diese Region.       |
 |  **Tag**  |    Nein  |   0 oder 1   |      Die [benutzerdefinierten Daten](../publish/enter-add-on-properties.md#custom-developer-data) (auch als „Tag“ bezeichnet) für das Add-On.       |
-|  **Keywords**  |    Nein  |   0 oder 1   |      Enthält bis zu 10 **Keyword**-Elemente, die die [Schlüsselwörter](../publish/enter-add-on-properties.md#keywords) für das Add-On enthalten.       |
-|  **ImageUri**  |    Nein  |   0 oder 1   |      Der [URI für das Bild](../publish/create-add-on-store-listings.md#icon) im Add-On-Eintrag.           |  |
+|  **Schlüsselwörter**  |    Nein  |   0 oder 1   |      Enthält bis zu 10 **Keyword**-Elemente, die die [Schlüsselwörter](../publish/enter-add-on-properties.md#keywords) für das Add-On enthalten.       |
+|  **imageUri**  |    Nein  |   0 oder 1   |      Der [URI für das Bild](../publish/create-add-on-store-listings.md#icon) im Add-On-Eintrag.           |  |
 
 **MarketData** hat die folgenden Attribute.
 
 |  Attribut  |  Erforderlich  |  Beschreibung   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Ja        |     Gibt das Land/die Region an, für das/die die Marktdateninformationen gelten.          |  |
+|  **XML: lang**  |    Ja        |     Gibt das Land/die Region an, für das/die die Marktdateninformationen gelten.          |  |
 
 <span id="licenseinformation"/>
 
@@ -485,7 +485,7 @@ Dieses Element beschreibt die App-Lizenz. **App** ist ein erforderliches unterge
 |  Element  |  Erforderlich  |  Anzahl  | Beschreibung   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Ja   |  1   |    Beschreibt den aktuellen Lizenzstatus der App. Der Wert **true** gibt an, dass die Lizenz gültig ist. Der Wert **false** gibt an, dass die Lizenz ungültig ist. Normalerweise lautet dieser Wert **true**, unabhängig davon, ob die App einen Testmodus hat oder nicht.  Legen Sie diesen Wert auf **false** fest, um zu testen, wie sich Ihre App verhält, wenn die Lizenz ungültig ist.           |
-|  **IsTrial**  |    Ja  |  1   |      Beschreibt den aktuellen Testversionsstatus der App. Der Wert **true** gibt an, dass die App während des Testzeitraums verwendet wird. Der Wert **false** gibt an, dass die App keine Testversion ist, entweder weil die App gekauft wurde oder weil der Testzeitraum abgelaufen ist.         |
+|  **isTrial**  |    Ja  |  1   |      Beschreibt den aktuellen Testversionsstatus der App. Der Wert **true** gibt an, dass die App während des Testzeitraums verwendet wird. Der Wert **false** gibt an, dass die App keine Testversion ist, entweder weil die App gekauft wurde oder weil der Testzeitraum abgelaufen ist.         |
 |  **ExpirationDate**  |    Nein  |  0 oder 1       |     Das Datum, an dem der Testzeitraum für diese App abläuft, angegeben in der koordinierten Weltzeit (UTC). Das Datum muss ausgedrückt werden als: yyyy-mm-ddThh:mm:ss.ssZ. Beispielsweise würde 05:00 Uhr am 19. Januar 2015 als 2015-01-19T05:00:00.00Z angegeben. Dieses Element ist erforderlich, wenn **IsTrial****true** ist. Andernfalls ist es nicht erforderlich.          |  |
 
 <span id="product-child-of-licenseinformation"/>
@@ -505,7 +505,7 @@ Dieses Element beschreibt den Lizenzstatus eines dauerhaften Add-Ons in der App.
 
 |  Attribut  |  Erforderlich  |  Beschreibung   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Ja        |   Enthält die Zeichenfolge, die von der App zur Identifizierung des Add-Ons verwendet wird.            |
+|  **"ProductID"**  |    Ja        |   Enthält die Zeichenfolge, die von der App zur Identifizierung des Add-Ons verwendet wird.            |
 |  **OfferId**  |     Nein       |   Enthält die Zeichenfolge, die von der App zur Identifizierung der Kategorie verwendet wird, zu der das Add-On gehört. Dies stellt Unterstützung für große Artikelkataloge bereit, wie unter [Verwalten eines großen Katalogs mit In-App-Produkten](manage-a-large-catalog-of-in-app-products.md) beschrieben.           |
 
 <span id="simulation"/>
@@ -530,7 +530,7 @@ Dieses Element beschreibt den Standardfehlercode, der von einer **CurrentAppSimu
 
 |  Attribut  |  Erforderlich  |  Beschreibung   |
 |-------------|------------|----------------|
-|  **MethodName**  |    Ja        |   Weisen Sie dieses Attribut einem der Enumerationswerte für den Typ **StoreMethodName** im [Schema](#schema) zu. Jede dieser Enumerationswerte stellt eine **CurrentAppSimulator**-Methode dar, für die Sie während der Testphase in Ihrer App einen Fehlercode-Rückgabewert simulieren möchten. Beispielsweise gibt der Wert **RequestAppPurchaseAsync_GetResult** an, dass Sie den Fehlercode-Rückgabewert der [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync)-Methode simulieren möchten.            |
+|  **Methodenname**  |    Ja        |   Weisen Sie dieses Attribut einem der Enumerationswerte für den Typ **StoreMethodName** im [Schema](#schema) zu. Jede dieser Enumerationswerte stellt eine **CurrentAppSimulator**-Methode dar, für die Sie während der Testphase in Ihrer App einen Fehlercode-Rückgabewert simulieren möchten. Beispielsweise gibt der Wert **RequestAppPurchaseAsync_GetResult** an, dass Sie den Fehlercode-Rückgabewert der [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync)-Methode simulieren möchten.            |
 |  **HResult**  |     Ja       |   Weisen Sie dieses Attribut einem der Enumerationswerte für den Typ **ResponseCodes** im [Schema](#schema) zu. Jeder dieser Enumerationswerte stellt den Fehlercode dar, den Sie für die Methode zurückgeben möchten, die Sie dem **MethodName**-Attribut für dieses **DefaultResponse**-Element zugewiesen haben.           |
 
 <span id="consumableinformation"/>
@@ -549,7 +549,7 @@ Dieses Element beschreibt ein konsumierbares Add-On. **Product** ist ein optiona
 
 |  Attribut  |  Erforderlich  |  Beschreibung   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Ja        |   Enthält die Zeichenfolge, die von der App zur Identifizierung des konsumierbaren Add-Ons verwendet wird.            |
-|  **TransactionId**  |     Ja       |   Enthält eine GUID (als Zeichenfolge), die von der App verwendet wird, um die Kauftransaktion für ein konsumierbares Add-On während der Ausführung nachzuverfolgen. Weitere Informationen finden Sie unter [Käufe von konsumierbaren In-App-Produkten aktivieren](enable-consumable-in-app-product-purchases.md).            |
+|  **"ProductID"**  |    Ja        |   Enthält die Zeichenfolge, die von der App zur Identifizierung des konsumierbaren Add-Ons verwendet wird.            |
+|  **Transaktions-ID**  |     Ja       |   Enthält eine GUID (als Zeichenfolge), die von der App verwendet wird, um die Kauftransaktion für ein konsumierbares Add-On während der Ausführung nachzuverfolgen. Weitere Informationen finden Sie unter [Käufe von konsumierbaren In-App-Produkten aktivieren](enable-consumable-in-app-product-purchases.md).            |
 |  **Status**  |      Ja      |  Enthält die Zeichenfolge, die von der App verwendet wird, um den Ausführungsstatus eines konsumierbaren Add-Ons anzugeben. Werte können **Active**, **PurchaseReverted**, **PurchasePending** oder **ServerError** sein.             |
 |  **OfferId**  |     Nein       |    Enthält die Zeichenfolge, die von der App zur Identifizierung der Kategorie verwendet wird, zu der das konsumierbare Add-On gehört. Dies stellt Unterstützung für große Artikelkataloge bereit, wie unter [Verwalten eines großen Katalogs mit In-App-Produkten](manage-a-large-catalog-of-in-app-products.md) beschrieben.           |

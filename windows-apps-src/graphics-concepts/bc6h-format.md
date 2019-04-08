@@ -143,18 +143,18 @@ Die Feldnamen in der obigen Tabelle sind wie folgt definiert:
 |-------|-------------------|
 | m     | mode              |
 | d     | shape index       |
-| rw    | endpt\[0\].A\[0\] |
-| rx    | endpt\[0\].B\[0\] |
-| ry    | endpt\[1\].A\[0\] |
-| rz    | endpt\[1\].B\[0\] |
-| gw    | endpt\[0\].A\[1\] |
-| gx    | endpt\[0\].B\[1\] |
-| gy    | endpt\[1\].A\[1\] |
-| gz    | endpt\[1\].B\[1\] |
-| bw    | endpt\[0\].A\[2\] |
+| rw    | Endpt\[0\]. Ein\[0\] |
+| rx    | Endpt\[0\]. B\[0\] |
+| ry    | Endpt\[1\]. Ein\[0\] |
+| rz    | Endpt\[1\]. B\[0\] |
+| gw    | Endpt\[0\]. Ein\[1\] |
+| gx    | Endpt\[0\]. B\[1\] |
+| gy    | Endpt\[1\]. Ein\[1\] |
+| gz    | Endpt\[1\]. B\[1\] |
+| bw    | Endpt\[0\]. Ein\[2\] |
 | bx    | Endpt\[0\]. B\[2\] |
-| by    | endpt\[1\].A\[2\] |
-| bz    | endpt\[1\].B\[2\] |
+| by    | Endpt\[1\]. Ein\[2\] |
+| bz    | Endpt\[1\]. B\[2\] |
 
  
 

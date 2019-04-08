@@ -133,19 +133,19 @@ In GLSL wenden Sie Modifizierer (Qualifizierer) auf eine globale Shadervariablen
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>uniform</strong></p>
+<td align="left"><p><strong>Symbole mit einheitlicher</strong></p>
 <p>Sie übergeben eine Uniform-Variable vom App-Code in die Vertex- und/oder Fragment-Shader. Sie müssen die Werte aller Uniform-Variablen festlegen, bevor Sie Dreiecke mit den Shadern zeichnen, damit ihre Werte gleich bleiben, während ein Dreieckgitter gezeichnet wird. Diese Werte sind einheitlich. Einige Uniform-Variablen werden für den gesamten Frame festgelegt und andere speziell für ein bestimmtes Vertex-/Pixelshaderpaar.</p>
 <p>Uniform-Variablen sind Variablen, die pro Polygon gelten.</p></td>
 <td align="left"><p>Verwenden Sie einen Konstantenpuffer.</p>
 <p>Finden Sie unter <a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">Vorgehensweise: Erstellen ein Konstantenpuffers</a> und <a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">Shaderkonstanten</a>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>varying</strong></p>
+<td align="left"><p><strong>unterschiedliche</strong></p>
 <p>Sie initialisieren eine variierende Variable im Vertex-Shader und übergeben sie an eine identisch benannte variierende Variable im Fragment-Shader. Da der Vertex-Shader nur den Wert der variierenden Variablen an jedem Scheitelpunkt festlegt, werden diese Werte vom Rasterizer (perspektivisch korrekt) interpoliert, um Pro-Fragment-Werte zu generieren, die dann in den Fragment-Shader übergeben werden. Diese Variablen sind bei jedem Dreieck unterschiedlich.</p></td>
 <td align="left">Verwenden Sie die vom Vertex-Shader zurückgegebene Struktur als Eingabe für den Pixelshader. Stellen Sie sicher, dass die Semantikwerte übereinstimmen.</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>attribute</strong></p>
+<td align="left"><p><strong>Attribut</strong></p>
 <p>Ein Attribut ist Teil der Beschreibung eines Scheitelpunkts, die Sie vom App-Code an den Vertex-Shader übergeben. Anders als bei einer Uniform-Variable legen Sie den Wert jedes Attributs für jeden Scheitelpunkt fest, sodass jeder Scheitelpunkt einen anderen Wert haben kann. Attributvariablen sind Variablen, die pro Scheitelpunkt gelten.</p></td>
 <td align="left"><p>Definieren Sie einen Scheitelpunktpuffer in Ihrem Direct3D-App-Code, und passen Sie ihn an die im Vertex-Shader definierte Scheitelpunkteingabe an. Optional können Sie einen Indexpuffer definieren. Finden Sie unter <a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">Vorgehensweise: Erstellen Sie einen Vertexpuffer</a> und <a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">Vorgehensweise: Erstellen Sie einen Indexpuffer</a>.</p>
 <p>Erstellen Sie ein Eingabelayout in Ihrem Direct3D-App-Code, und passen Sie die Semantikwerte an die Werte in der Scheitelpunkteingabe an. Siehe <a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">Erstellen des Eingabelayouts</a>.</p></td>
@@ -324,7 +324,7 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 <p>Beispiel: Farbe von float4 [4]: SV_Target;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>gl_FragData[n]</strong></p>
+<td align="left"><p><strong>Gl_FragData [n]</strong></p>
 <p>Diese Variable ist vom Typ <strong>vec4</strong>.</p>
 <p>Fragmentfarbe für die Farbzuordnung „n“</p></td>
 <td align="left"><p>SV_Target[n]</p>

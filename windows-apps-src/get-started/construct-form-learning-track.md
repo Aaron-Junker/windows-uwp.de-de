@@ -146,8 +146,8 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weiterer nütz
 | API | Beschreibung |
 |------|---------------|
 | [Steuerelemente, die nützlich für Formulare](../design/controls-and-patterns/forms.md#input-controls) | Eine Liste nützlicher Eingabesteuerelemente für das Erstellen von Formularen und ein allgemeiner Überblick zu ihrer Verwendung |
-| [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | Ein Panel zum Anordnen von Elementen in Layouts mit mehreren Zeilen und Spalten |
-| [RelativePanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | Ein Panel zum Anordnen von Elementen in Bezug auf andere Elemente und die Grenzen des Panels |
+| [Raster](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | Ein Panel zum Anordnen von Elementen in Layouts mit mehreren Zeilen und Spalten |
+| ["Relativepanel"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | Ein Panel zum Anordnen von Elementen in Bezug auf andere Elemente und die Grenzen des Panels |
 | [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | Ein Panel zum Anordnen von Elementen in einer einzigen horizontalen oder vertikalen Linie |
 | [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) | Ermöglicht die Festlegung des Erscheinungsbilds von Benutzeroberflächenelementen, wenn sich diese in bestimmten Zuständen befinden |
 
@@ -171,6 +171,6 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weiterer nütz
 | Codebeispiel | Beschreibung |
 |-----------------|---------------|
 | [Adaptive Layout-tutorial](../design/basics/xaml-basics-adaptive-layout.md) | Eine schrittweise geführte Anleitung zu adaptiven Layouts und zum dynamischen Design | 
-| [Customer-Orders-Datenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Layout und Formulare in Aktion in einem mehrseitigen Unternehmensbeispiel |
+| [Datenbank für Kundenaufträge](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Layout und Formulare in Aktion in einem mehrseitigen Unternehmensbeispiel |
 | [XAML-Steuerelementsammlungen](https://github.com/Microsoft/Xaml-Controls-Gallery) | Eine Auswahl von XAML-Steuerelementen und Informationen zu deren Implementierung |
 | [Weitere Codebeispiele](https://developer.microsoft.com//windows/samples) | Wählen Sie **Steuerelemente, Layout und Text** in der Dropdownliste „Kategorie“ aus, um verwandte Codebeispiele anzuzeigen. |

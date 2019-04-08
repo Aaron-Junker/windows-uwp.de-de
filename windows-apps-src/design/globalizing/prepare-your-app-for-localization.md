@@ -183,8 +183,8 @@ Die Sortierung folgt dem **regionalen Format der Systemsteuerung**:
 ## <a name="related-topics"></a>Verwandte Themen
 
 - [Richtlinien für die Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
-- [Lokalisieren von Zeichenfolgen in Ihre Benutzeroberfläche und app-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
-- [Passen Sie Ihre Ressourcen für die Sprache, Skalierung, hoher Kontrast und anderen Qualifizierer](../../app-resources/tailor-resources-lang-scale-contrast.md)
+- [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
+- [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](adjust-layout-and-fonts--and-support-rtl.md)
 - [Aktualisieren von Bildern als Reaktion auf den Wert des Qualifizierers change-Ereignissen](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 

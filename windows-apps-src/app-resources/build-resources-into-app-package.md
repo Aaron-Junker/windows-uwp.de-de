@@ -97,6 +97,6 @@ Es gibt noch einen letzten Schritt, den Sie durchführen müssen. **Aber nur, we
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Packen einer UWP-app mit Visual Studio](../packaging/packaging-uwp-apps.md)
-* [Kompilieren von Ressourcen mit MakePri.exe manuell](compile-resources-manually-with-makepri.md)
-* [Angeben von Standardressourcen, die Ihre app verwendet.](specify-default-resources-installed.md)
+* [Verpacken einer UWP-App mit Visual Studio](../packaging/packaging-uwp-apps.md)
+* [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](compile-resources-manually-with-makepri.md)
+* [Angeben der von der App verwendeten Standardressourcen](specify-default-resources-installed.md)

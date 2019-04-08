@@ -170,7 +170,7 @@ Fügen Sie dann ein [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xam
     </Grid>
     ```
 
-    **After**
+    **Nach dem**
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
@@ -301,7 +301,7 @@ Zunächst müssen Sie nur Platzhalter hinzufügen, die Ihnen beim Erstellen des 
     <Grid/>
     ```
 
-    **After**
+    **Nach dem**
     ```xaml
     <Grid Height="300"
           Width="300"
@@ -445,7 +445,7 @@ Eine Steuerelementvorlage für ein Element enthält die optischen Elemente zur A
         <Setter Property="Background" Value="{ThemeResource GridViewItemBackground}"/>
     ```
 
-    **After**
+    **Nach dem**
     ```xaml
         <Setter Property="Background" Value="Gray"/>
     ```
@@ -457,7 +457,7 @@ Eine Steuerelementvorlage für ein Element enthält die optischen Elemente zur A
         <Setter Property="Margin" Value="0,0,4,4"/>
     ```
 
-    **After**
+    **Nach dem**
     ```xaml
         <Setter Property="Margin" Value="8"/>
     ```
@@ -492,7 +492,7 @@ Weitere Informationen zur Anpassung finden Sie unter [Ausrichtung, Ränder und A
                   ItemContainerStyle="{StaticResource ImageGridView_DefaultItemContainerStyle}"/>
     ```
 
-    **After**
+    **Nach dem**
     ```xaml
         <GridView x:Name="ImageGridView"
                   Margin="0,0,0,8"
@@ -533,7 +533,7 @@ Weitere Informationen zur Anpassung finden Sie unter [Ausrichtung, Ränder und A
     </ItemsPanelTemplate>
     ```
 
-    **After**
+    **Nach dem**
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal"

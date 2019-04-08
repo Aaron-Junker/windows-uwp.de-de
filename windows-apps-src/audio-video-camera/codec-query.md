@@ -46,8 +46,8 @@ Im folgenden Beispiel wird abgefragt, ob ein FLAC-Audio-Encoder auf dem aktuelle
 
 * [Medienwiedergabe](media-playback.md)
 * [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Transcodieren von Mediendateien](transcode-media-files.md)
-* [Unterstützte codecs](supported-codecs.md)
+* [Transkodieren von Mediendateien](transcode-media-files.md)
+* [Unterstützte Codecs](supported-codecs.md)
  
 
  

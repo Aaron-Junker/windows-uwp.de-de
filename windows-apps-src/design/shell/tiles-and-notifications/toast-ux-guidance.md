@@ -17,7 +17,7 @@ ms.locfileid: "57615765"
 # <a name="toast-notification-ux-guidance"></a>Toast-Notification-UX-Leitfaden
 Benachrichtigungen sind ein wichtiger Bestandteil des modernen Lebens. Sie können Benutzer produktiver und engagierte mit apps und Websites als auch auf dem Laufenden bleiben mit Updates werden. Benachrichtigungen können jedoch schnell Aktivieren von nützlich, um overbearing und aufwendig, wenn sie nicht zur benutzerorientierten so entworfen wurden. Benachrichtigungen sind eine mit der rechten Maustaste außerhalb wird deaktiviert, und es ist unwahrscheinlich, nachdem sie deaktiviert sind, sie werden aktiviert, erneut.  So stellen Sie sicher, dass Ihre Benachrichtigungen geeigneten Platz auf dem Bildschirm des Benutzers und die Uhrzeit, damit Sie diesen Kanal Engagement geöffnet halten können.
 
-> **Wichtige APIs**: [Nuget-Paket für Windows-Community-Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **Wichtige APIs:** [Nuget-Paket für Windows-Community-Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 Wir haben unsere Windows-Telemetrie und andere erste sowie Drittanbieter-Fallstudien, um vier Regeln eine hervorragende Benachrichtigung Story macht träfen, analysiert.  Wir sind überzeugt, diese Regeln sind universell anwendbar ist, unabhängig von der Plattform und hilft Ihrer Benachrichtigungen auf eine positive Auswirkung auf Ihre Benutzer haben.
 

@@ -86,7 +86,7 @@ Kehren Sie wir über die verschiedenen Aufgaben.
 
 ### <a name="create-the-package-layout-folder"></a>Erstellen Sie den Paket-Layout-Ordner
 
-Wenn Sie bereits über eine .msix oder AppX-Datei verfügen, können Sie seinen Inhalt in einem Layoutordner entpacken, die als Stagingbereich für das Paket verwendet wird. Hierzu können Sie über eine Eingabeaufforderung MakeAppx-Tool basierend auf dem Installationspfad des SDK verwenden, handelt es sich, in dem Sie das Tool makeappx.exe auf Ihrem Windows 10-PC finden: X86: C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\bin\x86\makeappx.exe X64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
+Wenn Sie bereits über eine .msix oder AppX-Datei verfügen, können Sie seinen Inhalt in einem Layoutordner entpacken, die als Stagingbereich für das Paket verwendet wird. Hierzu können Sie über eine Eingabeaufforderung MakeAppx-Tool basierend auf dem Installationspfad des SDK verwenden, handelt es sich, in dem Sie das Tool makeappx.exe auf Ihrem Windows 10-PC finden: X86: C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\bin\x86\makeappx.exe X64: C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -190,10 +190,10 @@ Es folgt eine Anleitung für das Schema "config.JSON":
 |-------|-----------|-------|
 | applications | id |  Verwenden Sie den Wert der `Id` Attribut der `Application` -Element im Paketmanifest. |
 | applications | ausführbare Datei | Die Paket-Relative Pfad der ausführbaren Datei, die Sie starten möchten. In den meisten Fällen können Sie diesen Wert aus der Paketmanifestdatei abrufen, bevor Sie sie ändern. Es ist der Wert des der `Executable` Attribut der `Application` Element. |
-| applications | workingDirectory | (Optional) Ein Paket relativen Pfad als das Arbeitsverzeichnis der Anwendung verwenden, die gestartet wird. Wenn Sie diesen Wert nicht festlegen, um das Betriebssystem verwendet den `System32` Verzeichnis als Arbeitsverzeichnis der Anwendung. |
+| applications | WorkingDirectory | (Optional) Ein Paket relativen Pfad als das Arbeitsverzeichnis der Anwendung verwenden, die gestartet wird. Wenn Sie diesen Wert nicht festlegen, um das Betriebssystem verwendet den `System32` Verzeichnis als Arbeitsverzeichnis der Anwendung. |
 | Prozesse | ausführbare Datei | In den meisten Fällen werden diese den Namen des der `executable` oben mit dem Pfad und Dateierweiterungen entfernt konfiguriert. |
-| fixups | dll | Paket relativen Pfad, den der Fixup,.msix/.appx geladen. |
-| fixups | config | (Optional) Steuert das Verhalten der Fixup-Verteilerliste. Das genaue Format der dieser Wert variiert pro Fixup-von-Fixup wie jeder Korrektur dieses "Blob" interpretieren kann, wie er möchte. |
+| Korrekturen | DLL | Paket relativen Pfad, den der Fixup,.msix/.appx geladen. |
+| Korrekturen | Konfigurationsdatei | (Optional) Steuert das Verhalten der Fixup-Verteilerliste. Das genaue Format der dieser Wert variiert pro Fixup-von-Fixup wie jeder Korrektur dieses "Blob" interpretieren kann, wie er möchte. |
 
 Die `applications`, `processes`, und `fixups` Schlüssel sind Arrays. Das bedeutet, dass Sie die Datei "config.json" verwenden können, um mehr als eine Anwendung, Prozess- und Fixup-DLL anzugeben.
 
@@ -403,10 +403,10 @@ Geben Sie einen Wert für die einzelnen Schlüssel. Verwenden Sie diese Tabelle 
 |-------|-----------|-------|
 | applications | id |  Verwenden Sie den Wert der `Id` Attribut der `Application` -Element im Paketmanifest. |
 | applications | ausführbare Datei | Die Paket-Relative Pfad der ausführbaren Datei, die Sie starten möchten. In den meisten Fällen können Sie diesen Wert aus der Paketmanifestdatei abrufen, bevor Sie sie ändern. Es ist der Wert des der `Executable` Attribut der `Application` Element. |
-| applications | workingDirectory | (Optional) Ein Paket relativen Pfad als das Arbeitsverzeichnis der Anwendung verwenden, die gestartet wird. Wenn Sie diesen Wert nicht festlegen, um das Betriebssystem verwendet den `System32` Verzeichnis als Arbeitsverzeichnis der Anwendung. |
+| applications | WorkingDirectory | (Optional) Ein Paket relativen Pfad als das Arbeitsverzeichnis der Anwendung verwenden, die gestartet wird. Wenn Sie diesen Wert nicht festlegen, um das Betriebssystem verwendet den `System32` Verzeichnis als Arbeitsverzeichnis der Anwendung. |
 | Prozesse | ausführbare Datei | In den meisten Fällen werden diese den Namen des der `executable` oben mit dem Pfad und Dateierweiterungen entfernt konfiguriert. |
-| fixups | dll | Paket relativen Pfad, den der Fixup-DLL zu laden. |
-| fixups | config | (Optional) Steuert das Verhalten für der Fixup-DLL. Das genaue Format der dieser Wert variiert pro Fixup-von-Fixup wie jeder Korrektur dieses "Blob" interpretieren kann, wie er möchte. |
+| Korrekturen | DLL | Paket relativen Pfad, den der Fixup-DLL zu laden. |
+| Korrekturen | Konfigurationsdatei | (Optional) Steuert das Verhalten für der Fixup-DLL. Das genaue Format der dieser Wert variiert pro Fixup-von-Fixup wie jeder Korrektur dieses "Blob" interpretieren kann, wie er möchte. |
 
 Wenn Sie fertig sind, Ihre ``config.json`` Datei sieht etwa wie folgt.
 

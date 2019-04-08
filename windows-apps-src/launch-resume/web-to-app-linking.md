@@ -71,7 +71,7 @@ Windows wird eine Https-Verbindung mit Ihrer Website herstellen und nach der ent
 
 Das obige für eine JSON-Datei veranschaulicht die Verwendung von Platzhaltern. Platzhalter erlauben es Ihnen eine Vielzahl von Links mit weniger Codezeilen zu unterstützen. Die Web-zu-App-Verknüpfung unterstützt zwei Arten von Platzhaltern in der JSON-Datei:
 
-| **Wildcard** | **Beschreibung**               |
+| **Platzhalter** | **Beschreibung**               |
 |--------------|-------------------------------|
 | **\***       | Repräsentiert eine beliebige Teilzeichenfolge      |
 | **?**        | Steht für ein einzelnes Zeichen |
@@ -154,7 +154,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 Sie können die Konfiguration Ihrer App und Website durch Ausführen des App-Host Registration Verifier Werkzeugs prüfen, der hier verfügbar ist:
 
-%windir%\\system32\\**AppHostRegistrationVerifier.exe**
+% windir%\\"System32"\\**AppHostRegistrationVerifier.exe**
 
 Testen Sie die Konfiguration Ihrer App und, indem Sie dieses Werkzeug mit folgenden Parametern ausführen.
 

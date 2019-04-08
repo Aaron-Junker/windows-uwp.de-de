@@ -45,10 +45,10 @@ Standardmäßig speichert Visual Studio Medienobjekte Symbol in ein Unterverzeic
 | Symbolname | Angezeigt in | Medienobjekt-Dateiname |
 | ---      | ---        | --- |
 | Kleine Kachel | Startmenü |  SmallTile.png  |
-| Mittelgroße Kachel |Menü "," Start "Microsoft Store-Liste\*  |  Square150x150Logo.png |
-| Breite Kachel  | Startmenü   | Wide310x150Logo.png |
+| Mittelgroße Kachel |Menü "," Start "Microsoft Store-Liste\*  |  Square150x150Logo.PNG |
+| Breite Kachel  | Startmenü   | Wide310x150Logo.PNG |
 | Große Kachel   | Menü "," Start "Microsoft Store-Liste\* |  LargeTile.png  |
-| App-Symbol | App-Liste im Menü "Start", Taskleiste, Task-manager | Square44x44Logo.png |
+| App-Symbol | App-Liste im Menü "Start", Taskleiste, Task-manager | Square44x44Logo.PNG |
 | Begrüßungsbildschirm | Begrüßungsbildschirm der app | SplashScreen.png  |
 | Badgelogo | Ihrer app-Kacheln | BadgeLogo.png  |
 | Paket-Logo/Store-logo | App-Installer, Partner Center die Option "Eine app Report" in den Store, die Option "Rezension schreiben", in den Store | StoreLogo.png  |
@@ -181,11 +181,11 @@ Visual Studio generiert die Bilddateien und Projekt hinzugefügt. Wenn Sie Ihre 
 
 Skalierte Symbolressourcen verwenden die Dateibenennungskonvention:
 
-*filename*-scale-*scale factor*.png
+*FileName*- skalieren –*Skalierungsfaktor*PNG
 
 Beispiel:
 
-Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
+Square150x150Logo-Scale-100.png "," Square150x150Logo-Scale-200.png "," Square150x150Logo-Scale-400.png
 
 Beachten Sie, dass Visual Studio ein infoanzeigerlogo generiert standardmäßig nicht. Der Grund ist Ihre badgelogo ist eindeutig und sollte nicht stimmt nach Möglichkeit Ihre app-Symbole. Weitere Informationen finden Sie in der [Badge Benachrichtigungen für UWP-apps Artikel](/windows/uwp/design/shell/tiles-and-notifications/badges). 
 
@@ -208,11 +208,11 @@ So sieht die Liste der Zielgröße Objekte aus:
 
 | Ressourcengröße | Dateinamenbeispiel                  |
 |------------|------------------------------------|
-| 16x16\*    | Square44x44Logo.targetsize-16.png  |
-| 24x24\*    | Square44x44Logo.targetsize-24.png  |
-| 32x32\*    | Square44x44Logo.targetsize-32.png  |
-| 48x48\*    | Square44x44Logo.targetsize-48.png  |
-| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 16 x 16\*    | Square44x44Logo.targetsize-16.png  |
+| 24 x 24\*    | Square44x44Logo.targetsize-24.png  |
+| 32 x 32\*    | Square44x44Logo.targetsize-32.png  |
+| 48 x 48\*    | Square44x44Logo.targetsize-48.png  |
+| 256 x 256\*  | Square44x44Logo.targetsize-256.png |
 | 20 x 20      | Square44x44Logo.targetsize-20.png  |
 | 30 x 30      | Square44x44Logo.targetsize-30.png  |
 | 36 x 36      | Square44x44Logo.targetsize-36.png  |

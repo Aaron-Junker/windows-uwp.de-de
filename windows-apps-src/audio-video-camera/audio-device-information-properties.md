@@ -28,7 +28,7 @@ Dieser Artikel enthält eine Liste mit den Geräteinformationseigenschaften für
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Aufzählen von Geräten](../devices-sensors/enumerate-devices.md)
+* [Auflisten von Geräten](../devices-sensors/enumerate-devices.md)
 * [Eigenschaften für Geräte](../devices-sensors/device-information-properties.md)
 * [Erstellen Sie eine Geräteauswahl](../devices-sensors/build-a-device-selector.md)
 * [Medienwiedergabe](media-playback.md)

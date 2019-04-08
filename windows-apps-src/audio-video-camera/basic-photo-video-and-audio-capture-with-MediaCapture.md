@@ -163,6 +163,6 @@ Im folgenden Codebeispiel wird eine Implementierung des **SoundLevelChanged** Ha
 
 * [Aufzeichnen von Fotos und Videos mit Windows integrierten Kamera-Benutzeroberfläche](capture-photos-and-video-with-cameracaptureui.md)
 * [Geräteausrichtung mit MediaCapture behandeln](handle-device-orientation-with-mediacapture.md)
-* [Erstellen, bearbeiten und Speichern von Bitmaps](imaging.md)
+* [Erstellen, Bearbeiten und Speichern von Bitmapbildern](imaging.md)
 * [Dateien, Ordner und Bibliotheken](https://msdn.microsoft.com/windows/uwp/files/index)
 

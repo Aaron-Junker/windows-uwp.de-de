@@ -266,7 +266,7 @@ Die anderen öffentlichen Methoden dienen zum Abrufen von Eigenschaften und gebe
 Am Anfang des Codebeispiels befinden sich vier Objekte, deren Instanzen während der Ausführung der Spielschleife aktualisiert werden.
 
 -   **MoveLookController** Objekt: Stellt die Player-Eingabe. Weitere Informationen finden Sie unter [Hinzufügen von Steuerelementen](tutorial--adding-controls.md).
--   **GameRenderer** object: Stellt die Direct3D 11-Renderer abgeleitet der **DirectXBase** -Klasse, die alle gerätespezifischen Objekte und ihre Darstellung behandelt. Weitere Informationen finden Sie unter [Rendering-Framework ich](tutorial--assembling-the-rendering-pipeline.md).
+-   **GameRenderer** Objekt: Stellt die Direct3D 11-Renderer abgeleitet der **DirectXBase** -Klasse, die alle gerätespezifischen Objekte und ihre Darstellung behandelt. Weitere Informationen finden Sie unter [Rendering-Framework ich](tutorial--assembling-the-rendering-pipeline.md).
 -   **Audio** Objekt: Steuert die Audiowiedergabe für das Spiel. Weitere Informationen finden Sie unter [Hinzufügen von Sounds](tutorial--adding-sound.md).
 
 Die restlichen Spielvariablen enthalten die Listen mit den Grundtypen und die entsprechenden spielinternen Werte sowie Gameplay-spezifische Daten und Beschränkungen.

@@ -17,7 +17,7 @@ ms.lasthandoff: 03/06/2019
 ms.locfileid: "57619965"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic
-Ab .NET Framework 4.5, können Sie verwalteten Code verwenden, um Ihre eigenen Windows-Runtime-Typen zu erstellen und Packen Sie sie in einer Windows-Runtime-Komponente. Sie können Ihre Komponente verwenden, in apps für universelle Windows-Plattform (UWP), die in C++, JavaScript, Visual Basic geschrieben werden oder C#. In diesem Thema werden die Regeln zum Erstellen einer Komponente, und erläutert einige Aspekte der .NET Framework-Unterstützung für die Windows-Runtime. Im Allgemeinen ist diese Unterstützung allen .NET Framework-Programmierern klar. Wenn Sie aber eine Komponente erstellen, die mit JavaScript oder C++ verwendet werden soll, müssen Sie auf die Unterschiede bei der Unterstützung der Windows-Runtime durch diese Sprachen achten.
+Ab .NET Framework 4.5, können Sie verwalteten Code verwenden, um Ihre eigenen Windows-Runtime-Typen zu erstellen und Packen Sie sie in einer Windows-Runtime-Komponente. Sie können Ihre Komponente verwenden, in apps für universelle Windows-Plattform (UWP), die in C++, JavaScript, Visual Basic geschrieben werden oder C#. In diesem Thema werden die Regeln zum Erstellen einer Komponente und einige Aspekte der .NET Framework-Unterstützung für die Windows-Runtime erläutert. Im Allgemeinen ist diese Unterstützung allen .NET Framework-Programmierern klar. Wenn Sie aber eine Komponente erstellen, die mit JavaScript oder C++ verwendet werden soll, müssen Sie auf die Unterschiede bei der Unterstützung der Windows-Runtime durch diese Sprachen achten.
 
 Wenn Sie eine Komponente für die Verwendung nur in UWP-apps erstellen, die in Visual Basic geschrieben werden oder C#, und die Komponente enthält keine UWP-Steuerelemente, und klicken Sie dann mithilfe von Onsider der **Klassenbibliothek** Vorlage anstelle von der **Windows Runtime-Komponente** in Microsoft Visual Studio-Projektvorlage. Eine einfache Klassenbibliothek weist weniger Einschränkungen auf.
 
@@ -81,7 +81,7 @@ In der folgenden Tabelle sind die häufigsten dieser generischen Schnittstellent
 
 | Windows-Runtime                                  | .NET Framework                                    |
 |-|-|
-| IIterable&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
+| IIterable&lt;T&gt;                               | "IEnumerable"&lt;T&gt;                              |
 | IVector&lt;T&gt;                                 | IList&lt;T&gt;                                    |
 | IVectorView&lt;T&gt;                             | IReadOnlyList&lt;T&gt;                            |
 | IMap&lt;K, V&gt;                                 | IDictionary&lt;TKey, TValue&gt;                   |

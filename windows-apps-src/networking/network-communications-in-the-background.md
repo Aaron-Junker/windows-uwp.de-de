@@ -588,4 +588,4 @@ Weitere Informationen zur Verwendung von [**IXMLHTTPRequest2**](https://msdn.mic
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [SocketActivityTrigger](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)
-* [ControlChannelTrigger](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)
+* ["Controlchanneltrigger"](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)

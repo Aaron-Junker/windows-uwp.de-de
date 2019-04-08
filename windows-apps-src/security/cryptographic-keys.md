@@ -4,7 +4,7 @@ description: In diesem Artikel wird erläutert, wie Sie mithilfe standardmäßig
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Sicherheit
+keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

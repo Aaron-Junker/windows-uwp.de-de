@@ -39,7 +39,7 @@ ms.locfileid: "57663095"
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Voyager 145Xg                  | 1D / 2D¹   | USB          | Handheld     | HID POS-Scanner           |
+| Honeywell     | Voyager 145Xg                  | 1D / 2D ¹   | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Voyager 1602g                  | 2D         | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Xenon 1900g                    | 2D         | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Xenon 1902g                    | 2D         | USB          | Handheld     | HID POS-Scanner           |
@@ -82,14 +82,14 @@ ms.locfileid: "57663095"
 ### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Windows Mobile-Geräte mit integrierten Barcodescanner
 | Hersteller   | Modell | Betriebssystem |
 |----------------|-------|------------------|
-| Bluebird       | EF400 | Windows Mobile   |
-| Bluebird       | EF500 | Windows Mobile   |
-| Bluebird       | EF500R | Windows Mobile   |
+| Hüttenvogel       | EF400 | Windows Mobile   |
+| Hüttenvogel       | EF500 | Windows Mobile   |
+| Hüttenvogel       | EF500R | Windows Mobile   |
 | Honeywell      | CT50   | Windows Mobile   |
 | Honeywell      | D75e | Windows Mobile   |
 | Janam          | XT2      | Windows Mobile   |
 | Panasonic      | FZ-E1 | Windows Mobile   |
-| Panasonic      | FZ-F1 |Windows Mobile   |
+| Panasonic      | FZ + F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
 | Zebra          | TC700j | Windows Mobile   |
 | HP             | Elite X3 aus "jackets" | Windows Mobile   |

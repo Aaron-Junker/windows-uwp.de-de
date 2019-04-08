@@ -7,7 +7,7 @@ keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616415"
@@ -115,7 +115,7 @@ Hier ist eine kurze Gegenüberstellung der unterschiedlichen Arten von Kanälen:
 <th align="left"><b>API</b></th>
 <th align="left"><b>Store-Registrierung erforderlich?</b></th>
 <th align="left"><b>Kanäle</b></th>
-<th align="left"><b>Encryption</b></th>
+<th align="left"><b>Verschlüsselung</b></th>
 </tr>
 
 

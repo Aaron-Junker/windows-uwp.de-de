@@ -157,7 +157,7 @@ Im Allgemeinen sollte die Schnittstelle ausgewählt werden, die dem Typ am näch
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>Methode "{0}"hat einen Parameter vom Typ"{1}" in der Signatur. Obwohl es sich bei diesem generischen Typ nicht um einen gültigen Windows-Runtime-Typ handelt, werden von diesem Typ oder von dessen generischen Parametern Schnittstellen implementiert, die gültige Windows-Runtime-Typen sind. {2}</p>
-> **Beachten Sie**  für {2}, fügt Winmdexp.exe eine Liste von alternativen an, wie z. B. "ändern Sie den Typ ' System.Collections.Generic.List&lt;T&gt;" in der Methodensignatur zu einem der folgenden Typen Stattdessen: 'System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;'."
+> **Beachten Sie**  für {2}, fügt Winmdexp.exe eine Liste von alternativen an, wie z. B. "ändern Sie den Typ ' System.Collections.Generic.List&lt;T&gt;" in der Methodensignatur zu einem der folgenden Typen Stattdessen: "System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;". "
 </td>
 </tr>
 <tr class="even">
@@ -250,5 +250,5 @@ JavaScript-Code kann auf die Ausgabeparameter einer Methode, einschließlich des
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen von Windows-Runtime-Komponenten in c# und Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe (Windows Runtime-Metadaten-Exporttool)](https://msdn.microsoft.com/library/hh925576.aspx)

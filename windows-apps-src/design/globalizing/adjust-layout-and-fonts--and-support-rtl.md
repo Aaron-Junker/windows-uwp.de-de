@@ -124,6 +124,6 @@ Statt von einer einzelnen Codezeile für alle Sprachen sind Sie nun davon abhän
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Lokalisieren von Zeichenfolgen in Ihre Benutzeroberfläche und app-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
+* [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
 * [Passen Sie Ihre Ressourcen für die Sprache, Skalierung und andere Kennzeichner](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Grundlegendes zu Benutzersprachen-Profil und app-manifest-Sprachen](manage-language-and-region.md)

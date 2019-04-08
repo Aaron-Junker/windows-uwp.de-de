@@ -159,7 +159,7 @@ Beachten Sie, dass einige Berechtigungen nicht für Add-Ons festgelegt werden k�
     <thead>
     <tr class="header">
     <th align="left">Name der Berechtigung &nbsp;</th>
-    <th align="left">Schreibgeschützt&nbsp;</th>
+    <th align="left">Schreibgeschützt &nbsp;</th>
     <th align="left">Lese-/Schreibzugriff</th>
     <th align="left">Schreibgeschützt&nbsp;(Add-On)&nbsp; </th>
     <th align="left">Lese- und Schreibzugriff&nbsp;(Add-On)</th>
