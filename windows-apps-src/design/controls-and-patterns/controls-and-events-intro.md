@@ -19,7 +19,7 @@ ms.locfileid: "57630795"
 
 In der UWP-App-Entwicklung ist ein *Steuerelement* ein UI-Element, das Inhalte anzeigt oder Interaktionen ermöglicht. Sie erstellen die Benutzeroberfläche für Ihre App mit Steuerelementen wie Schaltflächen, Textfeldern und Kombinationsfeldern, um Daten anzuzeigen und Benutzereingaben zu erhalten.
 
-> **Wichtige APIs**: [Windows.UI.Xaml.Controls-namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **Wichtige APIs:** [Windows.UI.Xaml.Controls-namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
 Ein *Muster* ist eine Anleitung zum Ändern eines Steuerelements oder zum Kombinieren verschiedener Steuerelemente, um etwas Neues zu erstellen. Z. B. die [Master-/Detail-](master-details.md) Muster ist eine Möglichkeit, mit denen Sie eine [SplitView](split-view.md) Steuerelement für die app-Navigation. Auf ähnliche Weise können Sie die Vorlage Anpassen einer [NavigationView](navigationview.md) Steuerelement auf der Registerkarte "-Muster zu implementieren.
 

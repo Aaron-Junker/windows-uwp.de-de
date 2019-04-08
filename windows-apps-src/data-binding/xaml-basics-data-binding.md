@@ -30,7 +30,7 @@ Der Startpunkt für diese Übung befindet sich im PhotoLab-Beispiel-Repository, 
 Die PhotoLab-App besteht aus zwei Hauptseiten:
 
 **MainPage.xaml:** zeigt eine Ansicht der Foto-Galerie, zusammen mit einigen Informationen über jede Bilddatei an.
-![MainPage](../design/basics/images/xaml-basics/mainpage.png)
+!["MainPage"](../design/basics/images/xaml-basics/mainpage.png)
 
 **DetailPage.xaml:** zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 ![DetailPage](../design/basics/images/xaml-basics/detailpage.png)
@@ -220,7 +220,7 @@ In dieser Phase erstellen wir unidirektionale Bindungen von einem Steuerelement 
               Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **After**
+    **Nach dem**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -312,7 +312,7 @@ Im Gegensatz zu integrierten Steuerelement-Eigenschaften werden Ihre benutzerdef
             Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **After**
+    **Nach dem**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -596,4 +596,4 @@ Wie Sie gesehen haben, wenn Sie den Zoomfaktor auf der Detailseite ändern, wird
 Sie sollten in diesem Lernprogramm alle benötigten Informationen erhalten haben, aber wenn Sie weitere Unterstützung benötigen, sind die Datenbindungsdokumente nur einen Mausklick entfernt. Beginnen Sie hier:
 
 + [{X: Bind}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [Die Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)

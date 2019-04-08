@@ -23,9 +23,9 @@ Das Ansichtsanbieterobjekt implementiert die __IFrameworkView__-Schnittstelle, d
 
 Sie müssen diese fünf Methoden implementieren, die vom App-Singleton aufgerufen werden:
 * [__Initialisieren__](#initialize-the-view-provider)
-* [__SetWindow__](#configure-the-window-and-display-behaviors)
-* [__Load__](#load-method-of-the-view-provider)
-* [__Run__](#run-method-of-the-view-provider)
+* [__"SetWindow"__](#configure-the-window-and-display-behaviors)
+* [__Auslastungstest__](#load-method-of-the-view-provider)
+* [__Führen Sie__](#run-method-of-the-view-provider)
 * [__Die Initialisierung aufheben__](#uninitialize-method-of-the-view-provider)
 
 Die __Initialize__-Methode wird beim Starten der App aufgerufen. Die __SetWindow__-Methode wird nach __Initialize__ aufgerufen. Es wird dann __Load__ aufgerufen. Wenn das Spiel fortgesetzt wird, wird die __Run__-Methode aufgerufen. Wenn das Spiel beendet wird, wird die __Uninitialize__-Methode aufgerufen. Weitere Informationen finden Sie unter [__IFrameworkView__ API-Referenz](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview). 
@@ -386,7 +386,7 @@ Wenn der Benutzer letztendlich die Sitzung beendet, müssen wir sie bereinigen. 
 
 Klicken Sie in Windows 10 schließen das app-Fenster nicht zu beenden den Prozess der app, aber stattdessen schreibt er den Status des app-Singletons in den Speicher. Sollte eine besondere Aktion wie eine spezielle Bereinigung von Ressourcen erforderlich sein, wenn das System diesen Speicher freigeben muss, platzieren Sie den Code für diese Bereinigung in dieser Methode.
 
-### <a name="app-uninitialize"></a>App:: Uninitialize
+### <a name="app-uninitialize"></a>App: Uninitialize
 
 ```cpp
 void App::Uninitialize()

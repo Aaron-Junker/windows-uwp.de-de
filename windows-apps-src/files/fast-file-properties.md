@@ -17,7 +17,7 @@ ms.locfileid: "57630235"
 Erfahren Sie, wie Sie schnell eine Liste von Dateien und ihren Eigenschaften aus einer Bibliothek zusammenstellen und diese Eigenschaften in einer App verwenden können.  
 
 Voraussetzungen 
-- **Asynchrone Programmierung für apps der universellen Windows-Plattform (UWP)**   erfahren Sie, wie asynchrone Schreiben von apps in C# oder Visual Basic finden Sie unter [Aufrufen von asynchronen APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).     Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
+- **Asynchrone Programmierung für apps der universellen Windows-Plattform (UWP)**   erfahren Sie, wie asynchrone Schreiben von apps in C# oder Visual Basic finden Sie unter [Aufrufen von asynchronen APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
 - **Zugriffsberechtigungen für Bibliotheken**   für den Code in diesen Beispielen ist das **PicturesLibrary** -Funktion, aber den Dateispeicherort möglicherweise eine Funktion oder keine Funktion überhaupt. Weitere Informationen finden Sie unter [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
 - **Einfache Enumeration**    dieses Beispiel verwendet ["queryoptions"](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) einige erweiterte enumerationseigenschaften festlegen. Um mehr darüber zu erfahren, wie Sie eine einfache Liste von Dateien für ein kleineres Verzeichnis erhalten, lesen Sie [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
 
@@ -116,7 +116,7 @@ Apps können den Benutzer mittels [StorageLibrary.RequestAddFolderAsync](https:/
  
 ## <a name="see-also"></a>Siehe auch
 ["Queryoptions" API-Referenz](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
-[Aufzählen und Abfragen von Dateien und Ordner](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
+[Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
  
  

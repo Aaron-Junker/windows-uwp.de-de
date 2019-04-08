@@ -204,7 +204,7 @@ Die Threadingmerkmale von [**DependencyObject**](https://msdn.microsoft.com/libr
 
 - [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md)
 - [Übersicht über angefügte Eigenschaften](attached-properties-overview.md)
-- [Die Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
+- [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946)
 - [Niedergeschrieben Animationen](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [Erstellen Windows-Runtime-Komponenten](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 - [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://go.microsoft.com/fwlink/p/?linkid=238581)

@@ -1,6 +1,6 @@
 ---
 title: Bereitstellen einer App über Registrieren loser Dateien
-description: Dieses Handbuch veranschaulicht das Layout der losen verwenden, um zu überprüfen und Windows 10-apps freigeben, ohne diese zu verpacken.
+description: In dieser Anleitung wird veranschaulicht, wie Sie das Layout für lose Dateien verwenden, um Windows 10-Apps zu überprüfen und freizugeben, ohne diese zu verpacken.
 ms.date: 6/1/2018
 ms.topic: article
 keywords: Windows 10, Uwp, geräteportal, apps Manager, Bereitstellung, -sdk
@@ -14,7 +14,7 @@ ms.locfileid: "57635425"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Bereitstellen einer App über Registrieren loser Dateien 
 
-Dieses Handbuch veranschaulicht das Layout der losen verwenden, um zu überprüfen und Windows 10-apps freigeben, ohne diese zu verpacken. Lose Dateilayouts registrieren kann Entwickler ihre apps ohne die Notwendigkeit zum Packen und installieren die apps schnell zu überprüfen. 
+In dieser Anleitung wird veranschaulicht, wie Sie das Layout für lose Dateien verwenden, um Windows 10-Apps zu überprüfen und freizugeben, ohne diese zu verpacken. Lose Dateilayouts registrieren kann Entwickler ihre apps ohne die Notwendigkeit zum Packen und installieren die apps schnell zu überprüfen. 
 
 ## <a name="what-is-a-loose-file-layout"></a>Was ist eine lose Dateilayout?
 

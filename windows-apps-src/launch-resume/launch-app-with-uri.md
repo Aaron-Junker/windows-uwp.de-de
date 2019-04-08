@@ -20,15 +20,15 @@ In diesem Abschnitt wird beschrieben, wie Sie einen Uniform Resource Identifier 
 | Thema | Beschreibung |
 |-------|-------------|
 | [Starten der Standard-App für einen URI](launch-default-app.md) | Erfahren Sie, wie Sie die Standard-App für einen Uniform Resource Identifier (URI) starten. URIs ermöglichen den Start einer anderen App zum Ausführen einer bestimmten Aufgabe. Dieses Thema enthält auch eine Übersicht über die zahlreichen in Windows integrierten URI-Schemas. |
-| [Behandeln von URI-Aktivierung](handle-uri-activation.md) | Erfahren Sie, wie Sie eine App registrieren, damit sie der Standardhandler eines Uniform Resource Identifier (URI)-Schemanamens wird. |
+| [Behandeln der URI-Aktivierung](handle-uri-activation.md) | Erfahren Sie, wie Sie eine App registrieren, damit sie der Standardhandler eines Uniform Resource Identifier (URI)-Schemanamens wird. |
 | [Starten einer App für Ergebnisse](how-to-launch-an-app-for-results.md) | Erfahren Sie, wie Sie eine App über eine andere App starten und Daten zwischen den beiden Apps austauschen. Dieser Vorgang wird als Starten einer App für Ergebnisse bezeichnet. |
-| [Wählen Sie aus, und speichern Sie die Töne, die mithilfe des ms-Tonepicker-URI-Schemas](launch-ringtone-picker.md) | In diesem Thema wird das URI-Schema „ms-tonepicker“ beschrieben und wie Sie dieses verwenden können, um eine Tonauswahl anzuzeigen, Töne auszuwählen und zu speichern sowie den Anzeigenamen für Töne abzurufen. |
-| [Starten Sie den Windows app "Einstellungen"](launch-settings-app.md) | Erfahren Sie, wie Sie die Windows-Einstellungs-App aus Ihrer App starten können. In diesem Thema wird das ms-settings-URI-Schema beschrieben. Verwenden Sie dieses URI-Schema, um die Windows-Einstellungs-App mit bestimmten Einstellungsseiten zu starten. |
+| [Auswählen und Speichern von Tönen mit dem URI-Schema „ms-tonepicker“](launch-ringtone-picker.md) | In diesem Thema wird das URI-Schema „ms-tonepicker“ beschrieben und wie Sie dieses verwenden können, um eine Tonauswahl anzuzeigen, Töne auszuwählen und zu speichern sowie den Anzeigenamen für Töne abzurufen. |
+| [Starten der Einstellungs-App von Windows](launch-settings-app.md) | Erfahren Sie, wie Sie die Windows-Einstellungs-App aus Ihrer App starten können. In diesem Thema wird das ms-settings-URI-Schema beschrieben. Verwenden Sie dieses URI-Schema, um die Windows-Einstellungs-App mit bestimmten Einstellungsseiten zu starten. |
 | [Starten Sie die UWP-app](launch-store-app.md) | In diesem Thema wird das URI-Schema „ms-windows-store“ beschrieben. Ihre App kann mit diesem URI-Schema die UWP-App mit bestimmten Seiten des Store starten. |
-| [Starten Sie das Windows Maps-app](launch-maps-app.md) | Erfahren Sie, wie Sie die Windows-Karten-App aus Ihrer App starten können. |
-| [Starten Sie die Kontakte-app](launch-people-apps.md) | In diesem Thema wird das URI-Schema „ms-people“ beschrieben. Ihre App kann dieses URI-Schema verwenden, um die Kontakte-App für bestimmte Aktionen zu starten. |
+| [Starten der Windows-Karten-App](launch-maps-app.md) | Erfahren Sie, wie Sie die Windows-Karten-App aus Ihrer App starten können. |
+| [Starten der Kontakte-App](launch-people-apps.md) | In diesem Thema wird das URI-Schema „ms-people“ beschrieben. Ihre App kann dieses URI-Schema verwenden, um die Kontakte-App für bestimmte Aktionen zu starten. |
 | [Starten Sie Bildschirm snipping](launch-screen-snipping.md) | Erfahren Sie, wie URI-Schemas verwenden, um einen neuen Ausschnitt zu öffnen oder zum Öffnen der app Ausschneiden & Skizze. |
 | [Aktivieren von apps für Websites mit app-URI-Handlern](web-to-app-linking.md) | Fördern Sie die Benutzerbindung an Ihre App durch die Unterstützung des Apps für Websites-Features. |
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Starten Sie eine app auf einem Remotegerät](launch-a-remote-app.md)
+* [Starten einer App auf einem Remotegerät](launch-a-remote-app.md)

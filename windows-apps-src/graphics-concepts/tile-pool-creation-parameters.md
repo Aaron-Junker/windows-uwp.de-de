@@ -19,7 +19,7 @@ ms.locfileid: "57622795"
 
 Verwenden Sie die Parameter in diesem Abschnitt, um beim Erstellen eines Puffers den Kachelpool zu definieren.
 
-<span id="Size"></span><span id="size"></span><span id="SIZE"></span>**Size**  
+<span id="Size"></span><span id="size"></span><span id="SIZE"></span>**Größe**  
 Größe der Vergabe, als ein Vielfaches von 64 KB. 0 ist gültig, da Sie den Kachelpool später anpassen können.
 
 <span id="Supported_Resource_Misc_Flags"></span><span id="supported_resource_misc_flags"></span><span id="SUPPORTED_RESOURCE_MISC_FLAGS"></span>**Unterstützte Ressourcen Verschiedenes Flags**  

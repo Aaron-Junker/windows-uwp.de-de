@@ -67,4 +67,4 @@ In diesem Thema haben Sie erfahren, wie Sie das Dialogfeld zum Verfassen einer S
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Kontakte auswählen](selecting-contacts.md)
+* [Auswählen von Kontakten](selecting-contacts.md)

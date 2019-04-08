@@ -4,7 +4,7 @@ description: Dies ist Teil 2 der umfassenden Schritt-für-Schritt-Lösung zum Ve
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Sicherheit
+keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
 ms.openlocfilehash: de4d8fc797efe2a0dde7340f42208a97bccf0b10
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

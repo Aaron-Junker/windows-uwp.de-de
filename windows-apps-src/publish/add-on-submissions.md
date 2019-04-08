@@ -47,7 +47,7 @@ Hier finden Sie eine Liste mit den Informationen, die Sie beim Erstellen Ihrer A
 | [**Abonnementzeitraum**](enter-add-on-properties.md#subscription-period)          | Erforderlich, wenn der Produkttyp **Dauerauftrag** lautet. Gilt nicht für andere Produkttypen.       |  
 | [**Kostenlose Testversion**](enter-add-on-properties.md#free-trial)          | Erforderlich, wenn der Produkttyp **Dauerauftrag** lautet. Gilt nicht für andere Produkttypen.       |
 | [**Inhaltstyp**](enter-add-on-properties.md#content-type)          | Erforderlich    |               
-| [**Keywords**](enter-add-on-properties.md#keywords)                  | Optional (bis zu zehn Schlüsselwörter mit jeweils maximal 30 Zeichen) |
+| [**Schlüsselwörter**](enter-add-on-properties.md#keywords)                  | Optional (bis zu zehn Schlüsselwörter mit jeweils maximal 30 Zeichen) |
 | [**Benutzerdefinierte Entwickler-Daten**](enter-add-on-properties.md#custom-developer-data)   | Optional (maximal 3.000 Zeichen)            |
 
 
@@ -70,7 +70,7 @@ Ein Store-Eintrag ist erforderlich. Es wird empfohlen, für jede von der App unt
 |-------------------------------|---------------------------------------------|
 | [**Titel**](create-add-on-store-listings.md#title)                    | Erforderlich (max. 100 Zeichen)           |
 | [**Beschreibung**](create-add-on-store-listings.md#description)       | Optional (max. 200 Zeichen)            |
-| [**Icon**](create-add-on-store-listings.md#icon)                    | Optional (PNG, 300x300 Pixel)            |
+| [**Symbol "**](create-add-on-store-listings.md#icon)                    | Optional (PNG, 300x300 Pixel)            |
 
 
 Nachdem Sie diese Informationen eingegeben haben, klicken Sie auf **An Store einreichen**. In den meisten Fällen dauert der Zertifizierungsprozess etwa eine Stunde. Danach wird Ihr Add-On im Store veröffentlicht und steht für Kunden zum Kauf bereit.

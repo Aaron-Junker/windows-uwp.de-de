@@ -268,6 +268,6 @@ Beispiel für eine Zuordnungsdatei (mit Option /m):
 Diese Überprüfung stellt Folgendes sicher:
 - Alle Dateien, auf die im Paketmanifest verwiesen wird, sind im App-Paket enthalten.
 - Die Anwendung besitzt nicht zwei identische Schlüssel.
-- Eine Anwendung ist nicht für ein Protokoll, die aus dieser Liste unzulässiger registrieren: SMB, FILE, MS-WWA-WEB, MS-WWA.
+- Eine Anwendung ist nicht für ein Protokoll, die aus dieser Liste unzulässiger registrieren: SMB-","-DATEI, MS-WWA-WEB "," MS-WWA ".
 
 Dies ist keine vollständige semantische Überprüfung, da sie lediglich häufige Fehler erfassen soll. Es wird nicht garantiert, dass von **MakeAppx.exe** erstellte Pakete installiert werden können.

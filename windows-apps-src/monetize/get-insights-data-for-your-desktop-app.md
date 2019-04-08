@@ -77,7 +77,7 @@ Elemente im Array *Value* enthalten die folgenden Werte.
 |---------------------|--------|-------------------------------------------|
 | applicationId       | string | Die Produkt-ID der Desktopanwendung, die für das Insights-Daten abgerufen werden soll.     |
 | insightDate                | string | Das Datum, an dem die Änderung in einer bestimmten Metrik erkannt wurden. Dieses Datum stellt das Ende der Woche, die in der wir eine erhebliche Leistungssteigerung erkannt oder verringern Sie in einer Metrik im Vergleich zu einer Woche davor. |
-| dataType     | string | Eine Zeichenfolge, die den allgemeinen Analytics Bereich angibt, den diese Information werden soll. Diese Methode unterstützt derzeit nur die **Integrität**.    |
+| Datentyp     | string | Eine Zeichenfolge, die den allgemeinen Analytics Bereich angibt, den diese Information werden soll. Diese Methode unterstützt derzeit nur die **Integrität**.    |
 | insightDetail          | array | Eine oder mehrere [InsightDetail Werte](#insightdetail-values) , die die Details für den aktuellen Insight darstellen.    |
 
 
@@ -87,7 +87,7 @@ Elemente im Array *Value* enthalten die folgenden Werte.
 |---------------------|--------|-------------------------------------------|
 | FactName           | string | Eine Zeichenfolge, die die Metrik gibt an, der den aktuellen Insight oder die aktuelle Dimension beschreibt. Diese Methode unterstützt derzeit nur den Wert **Trefferanzahl**.  |
 | SubDimensions         | array |  Ein oder mehrere Objekte, die eine einzelne Metrik für die Einblicke zu beschreiben.   |
-| PercentChange            | string |  Der Prozentsatz, den die Metrik für Ihre gesamte Kundenbasis geändert.  |
+| Prozent            | string |  Der Prozentsatz, den die Metrik für Ihre gesamte Kundenbasis geändert.  |
 | DimensionName           | string |  Der Name der Metrik in der aktuellen Dimension beschrieben. Beispiele hierfür sind **EventType**, **Markt**, **"DeviceType"**, und **PackageVersion**.   |
 | DimensionValue              | string | Der Wert der Metrik, die in der aktuellen Dimension beschrieben wird. Z. B. wenn **DimensionName** ist **EventType**, **DimensionValue** möglicherweise **Absturz** oder **hängen** .   |
 | FactValue     | string | Der Absolute Wert der Metrik auf das Datum, an das der Einblick erkannt wurde.  |

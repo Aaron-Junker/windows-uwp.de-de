@@ -165,7 +165,7 @@ Das Überschreiben der Systempinsel geschieht grundsätzlich auf App- oder Seite
 </Page.Resources>
 ```
 
-Für Zustände wie PointerOver (Mauszeiger über der Schaltfläche), **PointerPressed** (Schaltfläche betätigt) oder Deaktiviert (Schaltfläche erlaubt keine Interaktion). Diese Zeilenenden werden auf die ursprünglichen einfache Stile Namen angefügt: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**, etc. Ändern die stellt Pinsel auch sicher, dass die Steuerelemente einheitlich zu Ihrer app-Design farblich dargestellt werden.
+Für Zustände wie PointerOver (Mauszeiger über der Schaltfläche), **PointerPressed** (Schaltfläche betätigt) oder Deaktiviert (Schaltfläche erlaubt keine Interaktion). Diese Zeilenenden werden auf die ursprünglichen einfache Stile Namen angefügt: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**usw. Ändern die stellt Pinsel auch sicher, dass die Steuerelemente einheitlich zu Ihrer app-Design farblich dargestellt werden.
 
 Die Verwendung dieser Pinselüberschreibungen auf der **App.Resources**-Ebene verändert alle Schaltflächen in der gesamten App und nicht nur auf einer Seite.
 

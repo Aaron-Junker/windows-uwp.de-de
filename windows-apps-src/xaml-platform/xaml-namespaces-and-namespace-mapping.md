@@ -55,7 +55,7 @@ Die XAML-Sprache gibt bestimmte Sprachelemente an, und jedes dieser Elemente sol
 
 Zusätzlich zum Standardnamespace und dem XAML-Namespace „x:“ der Programmiersprache XAML sind im anfänglichen standardmäßigen XAML-Code für Apps u. U. weitere zugeordnete XAML-Namespaces enthalten, die von Microsoft Visual Studio generiert wurden.
 
-### <a name="d-httpschemasmicrosoftcomexpressionblend2008"></a>**d: (`http://schemas.microsoft.com/expression/blend/2008`)**
+### <a name="d-httpschemasmicrosoftcomexpressionblend2008"></a>**"d:" (`http://schemas.microsoft.com/expression/blend/2008`)**
 
 Das Laufwerk "d:" XAML-Namespace ist für die designerunterstützung, insbesondere Designer-Unterstützung in den XAML-Entwurfsoberflächen des Microsoft Visual Studio vorgesehen. Die"d:" XAML-Namespace ermöglicht-Designer oder Entwurfszeitattribute für XAML-Elemente. Diese Designerattribute wirken sich lediglich auf die Designaspekte davon aus, wie sich XAML verhält. Die Designerattribute werden ignoriert, wenn derselbe XAML-Code vom Windows-Runtime-XAML-Parser beim Ausführen einer App geladen wird. Im Allgemeinen sind Designerattribute für alle XAML-Elemente gültig, in der Praxis bestehen jedoch nur bestimmte Szenarien, in denen die Anwendung eines Designerattributs durch Sie selbst angebracht ist. Viele der Designerattribute sind insbesondere dazu vorgesehen, eine höhere Benutzerfreundlichkeit bei der Interaktion mit Datenkontexten und Datenquellen zu gewährleisten, während Sie XAML und Code entwickeln, für die bzw. den die Datenbindung verwendet wird.
 
@@ -67,7 +67,7 @@ Das Laufwerk "d:" XAML-Namespace ist für die designerunterstützung, insbesonde
 -   **d: DesignSource-Attribut:** Gibt an, für eine Datenquelle zur Entwurfszeit eine [ **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), überschreibenden [ **Quelle**](https://msdn.microsoft.com/library/windows/apps/br209835).
 -   **d: DesignInstance "und" d: DesignData Markuperweiterungen:** Diese Markuperweiterungen werden verwendet, um die Entwurfszeit-Ressourcen bereit, der entweder **d: DataContext** oder **d: DesignSource**. Die Verwendung von Designzeit-Datenressourcen wird hier nicht vollständig erläutert. Weitere Informationen finden Sie unter [Entwurfszeitattribute](https://go.microsoft.com/fwlink/p/?LinkId=272504). Einige Verwendungsbeispiele finden Sie unter [Beispieldaten für die Entwurfsoberfläche und Prototyperstellung](https://msdn.microsoft.com/library/windows/apps/mt517866).
 
-### <a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>**mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
+### <a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>**MC: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
 „mc:“ gibt einen Markupkompatibilitätsmodus zum Lesen von XAML an und unterstützt diesen. In der Regel gehört das „d:“-Präfix zum Attribut **mc:Ignorable**. Diese Methode ermöglicht es Laufzeit-XAML-Parsern, die Designattribute in „d:“ zu ignorieren.
 
@@ -75,7 +75,7 @@ Das Laufwerk "d:" XAML-Namespace ist für die designerunterstützung, insbesonde
 
 „local:ׅ“ ist ein Präfix, das häufig innerhalb der XAML-Seiten für ein vorlagenbasiertes UWP-App-Projekt zugeordnet wird. Es wird so zugeordnet, dass es auf denselben Namespace verweist, der erstellt wird, um das [x:Class-Attribut](x-class-attribute.md) und den Code für alle XAML-Dateien aufzunehmen, einschließlich app.xaml. Wenn Sie benutzerdefinierte Klassen für die Verwendung in XAML in diesem Namespace definieren, können Sie mit dem Präfix **local:** auf Ihre benutzerdefinierten Typen in XAML verweisen. Ein zugehöriges Präfix, dass aus einem vorlagenbasierten UWP-Projekt stammt, ist **common:**. Dieses Präfix verweist auf einen geschachtelten „Common“-Namespace, der Hilfsklassen wie z. B. Konverter und Befehle enthält. Die Definitionen finden Sie im Ordner „Common“ in der **Projektmappen-Explorer**-Ansicht.
 
-### <a name="vsm"></a>**vsm:**
+### <a name="vsm"></a>**VSM:**
 
 Nicht verwenden. „vsm:“ ist ein Präfix, das manchmal in älteren XAML-Vorlagen auftaucht, die aus anderen Microsoft-Technologien importiert wurden. Der Namespace diente ursprünglich der Behebung eines Toolproblems mit älteren Namespaces. Sie sollten XAML-Namespacedefinitionen für „vsm:“ im gesamten XAML-Code löschen, den Sie für die Windows-Runtime verwenden. Zudem sollten Sie alle Präfixverwendungen für [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) und zugehörige Objekte so ändern, dass stattdessen der Standard-XAML-Namespace verwendet wird. Weitere Informationen zur XAML-Migration finden Sie unter [Migrieren von Silverlight- oder WPF-XAML-Code in eine Windows-Runtime-App](https://msdn.microsoft.com/library/windows/apps/br229571).
 

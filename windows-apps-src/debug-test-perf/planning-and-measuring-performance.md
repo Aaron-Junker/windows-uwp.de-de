@@ -79,7 +79,7 @@ Zu den bestimmten messbaren Zielen hinsichtlich der Effizienz für Ihre App geh�
 
 Sie können jetzt die Leistungsziele verwenden, um den Entwurf Ihrer App zu beeinflussen. Nachdem der Benutzer bei der Verwendung der Beispiel-App für Lebensmittel und Gastronomie zur Rezeptseite navigiert ist, können Sie festlegen, dass [Elemente inkrementell aktualisiert](optimize-gridview-and-listview.md#update-items-incrementally) werden, damit der Name des Rezepts zuerst gerendert, die Anzeige der Zutaten zurückgestellt und die Anzeige der Abbildungen noch weiter zurückgestellt wird. Dadurch bleiben die Reaktionsfähigkeit und eine flüssige Benutzeroberfläche bei der Verschiebung bzw. beim Bildlauf erhalten, wobei das Rendering mit höchster Genauigkeit dann stattfindet, nachdem sich die Interaktion auf ein Tempo verlangsamt hat, bei dem der UI-Thread mithalten kann. Im Folgenden sind einige Aspekte aufgeführt, die auch berücksichtigt werden sollten.
 
-**UI**
+**BENUTZEROBERFLÄCHE**
 
 -   Optimieren Sie die zum Analysieren und Laden erforderliche Zeit sowie die Effizienz für jede Seite der Benutzeroberfläche Ihrer App (insbesondere die Ausgangsseite), indem Sie das [XAML-Markup optimieren](optimize-xaml-loading.md). Stellen Sie kurz gesagt das Laden der Benutzeroberfläche und des Codes zurück, bis dies erforderlich ist.
 -   Weisen Sie allen [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)- und [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)-Elementen dieselbe Größe zu, und verwenden Sie möglichst viele [ListView- und GridView-Optimierungsverfahren](optimize-gridview-and-listview.md).

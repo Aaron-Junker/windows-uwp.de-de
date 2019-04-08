@@ -36,8 +36,8 @@ In diesem Artikel sind die Codierungsoptionen aufgeführt, die mit [**BitmapEnco
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen, bearbeiten und Speichern von Bitmaps](imaging.md)
-* [Unterstützte codecs](supported-codecs.md)
+* [Erstellen, Bearbeiten und Speichern von Bitmapbildern](imaging.md)
+* [Unterstützte Codecs](supported-codecs.md)
 
  
 

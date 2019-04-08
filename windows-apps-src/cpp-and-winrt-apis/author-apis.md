@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, Standard, c++, cpp, winrt, projiziert, Projektion, Im
 ms.localizationpriority: medium
 ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57626665"
@@ -403,5 +403,5 @@ Bis Sie die oben beschriebene Änderung vornehmen (um den Konstruktorparameter a
 * [WinRT::Windows::Foundation::IUnknown:: als Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Nutzen Sie APIs mit C++ / WinRT](consume-apis.md)
-* [XAML-Steuerelemente; Binden an einen C++ / WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [Verwenden von APIs mit C++/WinRT](consume-apis.md)
+* [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

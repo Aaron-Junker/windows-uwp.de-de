@@ -22,7 +22,7 @@ ms.locfileid: "57626655"
 
 Wischgestenbasierte Befehle sind ein Beschleuniger für Kurzbefehlmenüs. Sie ermöglichen es Benutzern per Toucheingabe, häufig verwendete Aktionen auszuführen, ohne Zustände innerhalb der App zu ändern.
 
-> **Wichtige APIs**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **Wichtige APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![Anzeige- und Ausführungsdesigns](images/LightThemeSwipe.png)
 
@@ -46,7 +46,7 @@ Wischgestenbasierte Befehle sollten verwendet werden, wenn Sie über eine große
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/SwipeControl">die App zu öffnen und SwipeControl in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>

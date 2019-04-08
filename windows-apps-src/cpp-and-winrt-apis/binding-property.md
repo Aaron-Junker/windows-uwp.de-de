@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, XAML, steuer
 ms.localizationpriority: medium
 ms.openlocfilehash: 4033327fa51b0801583a518a0dea055f59e57fc8
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616625"
@@ -281,5 +281,5 @@ Für die derzeit veröffentlichte Version von C++ / WinRT, damit Sie die {Bindin
 * [Vorlage für WinRT::Make-Funktion](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Nutzen Sie APIs mit C++ / WinRT](consume-apis.md)
-* [Erstellen von APIs mit C++ / WinRT](author-apis.md)
+* [Verwenden von APIs mit C++/WinRT](consume-apis.md)
+* [Erstellen von APIs mit C++/WinRT](author-apis.md)

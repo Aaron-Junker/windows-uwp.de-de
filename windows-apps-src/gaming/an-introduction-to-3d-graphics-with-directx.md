@@ -58,7 +58,7 @@ Als Nächstes erstellen wir ein Direct3D-Gerät, eine Swapchain sowie eine Rende
 
 * [Direct3D 11-Grafiken](https://msdn.microsoft.com/library/windows/desktop/ff476080)
 * [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)
-* [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)
+* ["HLSL"](https://msdn.microsoft.com/library/windows/desktop/bb509561)
 
  
 

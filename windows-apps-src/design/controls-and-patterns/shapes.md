@@ -17,7 +17,7 @@ ms.locfileid: "57610675"
 
 Erfahren Sie, wie Sie Formen wie Ellipsen, Rechtecke, Polygone und Pfade zeichnen. Mithilfe der Klasse [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) visualisieren Sie eine ziemlich komplexe vektorbasierte Zeichnungssprache in einer XAML-Benutzeroberfläche. Beispielsweise können Sie auf diese Weise Bézierkurven zeichnen.
 
-> **Wichtige APIs**: [Path-Klasse](/uwp/api/Windows.UI.Xaml.Shapes.Path), [Windows.UI.Xaml.Shapes Namespace](/uwp/api/Windows.UI.Xaml.Shapes), [Windows.UI.Xaml.Media-Namespace](/uwp/api/Windows.UI.Xaml.Media)
+> **Wichtige APIs:** [Path-Klasse](/uwp/api/Windows.UI.Xaml.Shapes.Path), [Windows.UI.Xaml.Shapes Namespace](/uwp/api/Windows.UI.Xaml.Shapes), [Windows.UI.Xaml.Media-Namespace](/uwp/api/Windows.UI.Xaml.Media)
 
 
 Zwei Sätzen von Klassen definieren Sie eine Region der Speicherplatz in XAML UI: [**Form** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) Klassen und [ **Geometrie** ](/uwp/api/Windows.UI.Xaml.Media.Geometry) Klassen. Der Hauptunterschied zwischen diesen Klassen besteht darin, dass einer **Shape**-Klasse ein Pinsel zugeordnet ist und diese auf dem Bildschirm gerendert werden kann, während eine **Geometry**-Klasse einfach einen Bereich definiert und nur gerendert wird, wenn sie Informationen zu einer anderen UI-Eigenschaft beiträgt. Sie können sich eine **Shape**-Klasse als [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) vorstellen, dessen Umrandung durch eine **Geometry**-Klasse definiert ist. In diesem Thema werden hauptsächlich die **Shape**-Klassen behandelt.

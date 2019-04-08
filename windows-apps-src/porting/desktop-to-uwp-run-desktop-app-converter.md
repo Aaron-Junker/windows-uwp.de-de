@@ -243,7 +243,7 @@ Sie können mehr über all diese Parameter in den nächsten Abschnitt erfahren.
 Hier ist die vollständige Liste der Parameter (nach Kategorie sortiert), die Sie beim Ausführen des Desktop App Converters verwenden können.
 
 * [Setup](#setup-params)
-* [Conversion](#conversion-params)
+* [Konvertierung](#conversion-params)
 * [Paketidentität](#identity-params)
 * [Das Paketmanifest](#manifest-params)
 * [Bereinigen](#cleanup-params)

@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, XAML, steuer
 ms.localizationpriority: medium
 ms.openlocfilehash: c3551ebcc59ebfe426b0be8d5bd20f7578517a25
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649205"
@@ -121,9 +121,9 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 Erstellen Sie nun das Projekt und führen Sie es aus. Klicken Sie auf die Schaltfläche, um den **Click**-Ereignis-Handler auszuführen. Wir haben gesehen, dass die Implementierung von **Append** ein Ereignis auslöst, um die Benutzeroberfläche wissen zu lassen, dass sich die Collection geändert hat. Die **ListBox** fragt die Collection erneut ab, um ihren eigenen **Items**-Wert zu aktualisieren. Nach wie vor ändert sich der Titel eines der Bücher, und diese Titeländerung wird sowohl auf der Schaltfläche als auch in der Listbox angezeigt.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+* [IObservableVector&lt;T&gt;:: VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
 * [Vorlage für WinRT::Make-Funktion](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Nutzen Sie APIs mit C++ / WinRT](consume-apis.md)
-* [Erstellen von APIs mit C++ / WinRT](author-apis.md)
+* [Verwenden von APIs mit C++/WinRT](consume-apis.md)
+* [Erstellen von APIs mit C++/WinRT](author-apis.md)

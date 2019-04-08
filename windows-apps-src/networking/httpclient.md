@@ -8,7 +8,7 @@ keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4b8c137d65339701b40027bb3230162e2c2456
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57620475"
@@ -17,7 +17,7 @@ ms.locfileid: "57620475"
 
 **Wichtige APIs**
 
--   [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)
+-   [**"HttpClient"**](https://msdn.microsoft.com/library/windows/apps/dn298639)
 -   [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
 -   [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)
 

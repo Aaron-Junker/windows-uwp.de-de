@@ -22,7 +22,7 @@ ms.locfileid: "57606365"
 
 -   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
 -   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)
--   [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
+-   [**"Corewindow"**](https://msdn.microsoft.com/library/windows/apps/br208225)
 
 Die DirectX-Grafikschnittstelle (DXGI) und verschiedene Direct3D-APIs erfüllen die gleiche Rolle wie EGL. In diesem Thema werden die DXGI und Direct3D 11 aus Sicht von EGL erläutert.
 
@@ -58,7 +58,7 @@ Sehen Sie sich zuerst an, wie die grundlegenden EGL-Objekte der Direct3D-Schnitt
 | **EGLDisplay**  | In Direct3D (für UWP-Apps) wird das Anzeigehandle über die [**Windows::UI::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-API (oder die **ICoreWindowInterop**-Schnittstelle, die HWND zur Verfügung stellt) abgerufen. Die Adapter- und Hardwarekonfiguration wird mit der COM-Schnittstelle [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) bzw. [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) festgelegt.                                                                                                                                                                                                                                                           |
 | **EGLSurface**  | In Direct3D werden Puffer und andere Fensterressourcen (sichtbar oder außerhalb des Bildschirms) unter Verwendung spezieller DXGI-Schnittstellen erstellt und konfiguriert. Hierzu zählt die [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556)-Schnittstelle (eine Factorymusterimplementierung zum Abrufen von DXGI-Ressourcen wie die [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)-Schnittstelle (Anzeigepuffer)). Die [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)-Schnittstelle zur Darstellung des Grafikgeräts und der dazugehörigen Ressourcen wird mit der [**D3D11Device::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082)-Funktion angefordert. Verwenden Sie für Renderziele die [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)-Schnittstelle. |
 | **EGLContext**  | In Direct3D verwenden Sie die [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)-Schnittstelle, um die Grafikpipeline zu konfigurieren und Befehle dafür auszugeben.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **EGLConfig**   | In Direct3D 11 erstellen und konfigurieren Sie Grafikressourcen wie Puffer, Texturen, Schablonen und Shader mit den Methoden der [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)-Schnittstelle.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **"Eglconfig" auswählen**   | In Direct3D 11 erstellen und konfigurieren Sie Grafikressourcen wie Puffer, Texturen, Schablonen und Shader mit den Methoden der [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)-Schnittstelle.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
  
 
@@ -337,7 +337,7 @@ Diese Textur kann an einen Shader übergeben werden, wenn eine Zuordnung zu eine
 
 Nachdem Sie mit dem EGLContext-Element den Puffer konfiguriert und die Daten aktualisiert haben, führen Sie daran gebundenen Shader aus. Zeichnen Sie die Ergebnisse mithilfe von glDrawElements in den Hintergrundpuffer. Sie können den Hintergrundpuffer anzeigen, indem Sie das eglSwapBuffers-Element aufrufen.
 
-Open GL ES 2.0: Auf dem Bildschirm gezeichnet.
+OpenGL ES 2.0: Auf dem Bildschirm gezeichnet.
 
 ``` syntax
 glDrawElements(GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);

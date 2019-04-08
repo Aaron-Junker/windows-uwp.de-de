@@ -201,20 +201,20 @@ Sie können mithilfe von „gpedit.msc“ die Gruppenrichtlinien für die Gerät
 1.  Führen Sie **regedit** aus.
 2.  Legen Sie diesen DWORD-Wert auf 1 fest, um das Querladen zu aktivieren.
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\"CurrentVersion"\\AppModelUnlock\\"allowalltrustedapps"**
 
     - ODER
 
     Um den Entwicklermodus zu aktivieren, legen Sie diese DWORD-Werte auf 1 fest:
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\"CurrentVersion"\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **Verwenden von PowerShell zum Aktivieren Ihres Geräts**
 
 1.  Führen Sie PowerShell mit Administratorrechten aus.
 2.  Führen Sie zum Aktivieren des Querladens diesen Befehl aus:
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   **PS: C:\\WINDOWS\\"System32"&gt; Reg hinzufügen "HKEY\_lokalen\_Computer\\SOFTWARE\\Microsoft\\Windows\\" CurrentVersion "\\ AppModelUnlock"/ t / REG\_DWORD/f/v"AllowAllTrustedApps"/ d"1"**
 
     - ODER
 
@@ -233,7 +233,7 @@ Wenn Sie Apps auf Ihrem Windows 8.1-Gerät erstellen oder querladen, müssen Si
 
 Danach müssen Sie Ihr Gerät wie in diesem Thema beschrieben für die Entwicklung aktivieren, damit Sie weiterhin auf diesem Gerät entwickeln können. Andernfalls erhalten Sie möglicherweise eine Fehlermeldung, wenn Sie Ihre App debuggen oder versuchen, ein Paket dafür zu erstellen. Hier ist ein Beispiel für diesen Fehler:
 
-Fehler: DEP0700 : Fehler beim Registrieren der app.
+Fehler: DEP0700: Fehler beim Registrieren der app.
 
 ## <a name="see-also"></a>Weitere Informationen
 

@@ -48,7 +48,7 @@ Entwerfen und entwickeln Sie Ihre App so, dass sie auf Systemen mit unterschiedl
 * [Grundlegendes zu Benutzersprachen-Profil und app-manifest-Sprachen](manage-language-and-region.md)
 * [BCP-47-Sprachtags](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [App-Ressourcen und das Ressourcenverwaltungssystem](../../app-resources/index.md)
-* [Wie das Ressourcenverwaltungssystem Sprachtags übereinstimmt](../../app-resources/how-rms-matches-lang-tags.md)
+* [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md)
 * [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](adjust-layout-and-fonts--and-support-rtl.md)
 * [Internationale Schriftarten](loc-international-fonts.md)
 * [Stellen Sie Ihre app lokalisierbar](prepare-your-app-for-localization.md)

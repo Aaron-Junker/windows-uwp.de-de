@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Bezahlung, App-Verkäufe, App-Erlöse, Auszahlung, S
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d59519e23955b53b32d2178e37e75f195fd54eb
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57596495"

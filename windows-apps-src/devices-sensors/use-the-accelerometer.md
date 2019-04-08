@@ -19,7 +19,7 @@ ms.locfileid: "57623705"
 **Wichtige APIs**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
+-   [**Beschleunigungsmesser**](https://msdn.microsoft.com/library/windows/apps/BR225687)
 
 **Beispiel**
 

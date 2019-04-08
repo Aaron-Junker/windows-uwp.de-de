@@ -134,4 +134,4 @@ Der Punkt im Namen einer angefügten Eigenschaft ist ein wichtiger Teil des Iden
 - [Definieren von Layouts mit XAML](https://msdn.microsoft.com/library/windows/apps/mt228350)
 - [Schnellstart: Übersetzen von UI-Ressourcen](https://msdn.microsoft.com/library/windows/apps/hh943060)
 - [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
-- [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
+- [**"GetValue"**](https://msdn.microsoft.com/library/windows/apps/br242359)

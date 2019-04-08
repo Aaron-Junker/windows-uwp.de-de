@@ -105,7 +105,7 @@ Details zum Windows-Update finden Sie hier:
 
 Der Herausgeber-Eintrag im Windows-App-Paket-Manifest muss dem Betreff des Zertifikats entsprechen, mit dem signiert wird.  Mit eine der folgenden Methoden können Sie den Betreff des Zertifikats anzeigen.
 
-**Option 1: Powershell**
+**Option 1: PowerShell**
 
 Führen Sie folgenden PowerShell-Befehl aus. Als Zertifikatdateien können CER- oder PFX-Dateien verwendet werden, da sie über identische Herausgeberinformationen verfügen.
 

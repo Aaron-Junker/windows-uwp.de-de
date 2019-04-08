@@ -1,5 +1,5 @@
 ---
-title: Erstellen Sie eine Kunden-datenbankanwendung
+title: Erstellen einer Kundendatenbankanwendung
 description: Erstellen Sie eine datenbankanwendung Kunden, und erfahren Sie, wie grundlegende Enterprise-app-Funktionen zu implementieren.
 keywords: Tutorial, Enterprise, Kunde, die Daten, erstellen, lesen, aktualisieren-löschen, REST,-Authentifizierung
 ms.date: 05/07/2018
@@ -7,12 +7,12 @@ ms.topic: article
 ms.localizationpriority: med
 ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57623245"
 ---
-# <a name="tutorial-create-a-customer-database-application"></a>Tutorial: Erstellen Sie eine Kunden-datenbankanwendung
+# <a name="tutorial-create-a-customer-database-application"></a>Tutorial: Erstellen einer Kundendatenbankanwendung
 
 In diesem Tutorial wird eine einfache app zum Verwalten einer Liste von Kunden erstellt. In diesem Fall führt es eine Auswahl von grundlegenden Konzepte für Unternehmens-apps in UWP. Sie erfahren Folgendes:
 

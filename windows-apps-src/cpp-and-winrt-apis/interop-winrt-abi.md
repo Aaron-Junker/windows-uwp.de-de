@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, portieren, m
 ms.localizationpriority: medium
 ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639945"
@@ -248,7 +248,7 @@ int main()
 * [QueryInterface-Funktion](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [WinRT::attach_abi-Funktion](/uwp/cpp-ref-for-winrt/attach-abi)
 * [Vorlage für WinRT::com_ptr-Struktur](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [WinRT::copy_from_abi-Funktion](/uwp/cpp-ref-for-winrt/copy-from-abi)
 * [WinRT::copy_to_abi-Funktion](/uwp/cpp-ref-for-winrt/copy-to-abi)
 * [WinRT::detach_abi-Funktion](/uwp/cpp-ref-for-winrt/detach-abi)
 * [WinRT::get_abi-Funktion](/uwp/cpp-ref-for-winrt/get-abi)

@@ -521,7 +521,7 @@ MyWinRTComponent.Proxies
 
 **C/C++-> Präprozessordefinitionen > Hinzufügen**
 
-"WIN32;\_WINDOWS;REGISTER\_PROXY\_DLL"
+"WIN32; \_WINDOWS; REGISTRIEREN SIE\_PROXY\_DLL "
 
 **C/C++-> vorkompilierten Header: Wählen Sie "Keine vorkompilierten Header verwenden"**
 

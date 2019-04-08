@@ -37,15 +37,15 @@ Diese Tabelle zeigt die Eigenschaften können Sie das Rendering eines "UIElement
 
 | Eigenschaft | Typ | Beschreibung |
 | -- | -- | -- |
-| [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Den Grad der Deckkraft des Objekts |
-| [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Verschieben Sie die X/Y/Z-Position des Elements |
-| [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | Die Transformationsmatrix, die für das Element gelten |
+| [Deckkraft](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Den Grad der Deckkraft des Objekts |
+| [Übersetzung](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Verschieben Sie die X/Y/Z-Position des Elements |
+| ["TransformMatrix"](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | Die Transformationsmatrix, die für das Element gelten |
 | [Skalieren](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | Skalieren Sie das Element, dessen Mitte sich an den CenterPoint |
 | [Drehung](/uwp/api/windows.ui.xaml.uielement.rotation) | Gleitkomma | Das Element, um die RotationAxis und Mittelpunkt gedreht. |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | Die Achse der Drehung |
 | [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | Der Mittelpunkt der Skalierung und Drehung |
 
-Der Wert der "transformMatrix"-Eigenschaft wird mit den Eigenschaften für Skalierung, Drehung und Übersetzung in der folgenden Reihenfolge kombiniert:  TransformMatrix, Scale, Rotation, Translation.
+Der Wert der "transformMatrix"-Eigenschaft wird mit den Eigenschaften für Skalierung, Drehung und Übersetzung in der folgenden Reihenfolge kombiniert:  TransformMatrix, Skalierung, Drehung, Translation.
 
 Diese Eigenschaften wirken sich nicht auf das Element des Layouts, so dass die Änderung dieser Eigenschaften nicht dazu, dass ein neues [Measure](/uwp/api/windows.ui.xaml.uielement.measure)/[anordnen](/uwp/api/windows.ui.xaml.uielement.arrange) übergeben.
 

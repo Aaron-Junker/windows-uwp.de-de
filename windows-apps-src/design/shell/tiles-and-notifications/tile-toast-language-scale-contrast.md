@@ -88,7 +88,7 @@ Eine Referenztabelle aller möglichen Qualifiziererwerte, die Sie in der Abfrage
 * [Passen Sie Ihre Ressourcen für die Sprache, Skalierung und andere Kennzeichner](../../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Richtlinien für die Ressourcen für Kacheln und Symbole](app-assets.md)
 * [Globalisierung und Lokalisierung](../../globalizing/globalizing-portal.md)
-* [Lokalisieren von Zeichenfolgen in Ihre Benutzeroberfläche und app-Paketmanifest](../../../app-resources/localize-strings-ui-manifest.md)
+* [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../../app-resources/localize-strings-ui-manifest.md)
 * [Verweisen auf ein Bild oder eine andere Anlage aus XAML-Markup und code](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
 * [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
 * [Kachel "-schema](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)

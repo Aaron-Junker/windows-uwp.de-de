@@ -162,7 +162,7 @@ Im Handler für das Ereignis **MetadataPurged** können Sie Platz im Metadaten-Z
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Gaming](index.md)
+* [Spiele](index.md)
  
 
  

@@ -21,7 +21,7 @@ ms.locfileid: "57635175"
 
 Verwenden Sie Popupanimationen, um Popup-UI-Elemente für Flyouts oder benutzerdefinierte Popup-UI-Elemente anzuzeigen und auszublenden. Popupelemente sind Container, die über dem Inhalt der App angezeigt werden und ausgeblendet werden, wenn Benutzer außerhalb des Popupelements tippen oder klicken.
 
-> **Wichtige APIs**: [**PopInThemeAnimation Klasse**](https://msdn.microsoft.com/library/windows/apps/br210383), [ **PopupThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+> **Wichtige APIs:** [**PopInThemeAnimation Klasse**](https://msdn.microsoft.com/library/windows/apps/br210383), [ **PopupThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen

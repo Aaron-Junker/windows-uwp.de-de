@@ -29,7 +29,7 @@ Mit dem semantischen Zoom können Benutzer zwischen zwei unterschiedlichen Ansic
 
 Bei der Anzeige eines Adressbuchs kann der Benutzer beispielsweise schnell zum Buchstaben „W” springen und diesen vergrößern, um die zu dem betreffenden Buchstaben gehörenden Namen anzuzeigen. 
 
-> **Wichtige APIs**: [SemanticZoom-Klasse](https://msdn.microsoft.com/library/windows/apps/hh702601), [ListView-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx), [GridView-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
+> **Wichtige APIs:** [SemanticZoom-Klasse](https://msdn.microsoft.com/library/windows/apps/hh702601), [ListView-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx), [GridView-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
 
 **Features**:
 
@@ -52,7 +52,7 @@ Der semantische Zoom ist nicht mit dem optischen Zoom zu verwechseln. Sie zeigen
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/SemanticZoom">die App zu öffnen und SemanticZoom in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>

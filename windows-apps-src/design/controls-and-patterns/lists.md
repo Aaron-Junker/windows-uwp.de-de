@@ -30,7 +30,7 @@ Listen zeigen und ermöglichen die Interaktion mit sammlungsbasierten Inhalten. 
 
 Für jedes Listenmuster sind Entwurfsrichtlinien, Features und Beispiele aufgeführt.
 
-> **Wichtige APIs**: [ListView-Klasse](https://msdn.microsoft.com/library/windows/apps/br242878), [GridView-Klasse](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox-Klasse](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **Wichtige APIs:** [ListView-Klasse](https://msdn.microsoft.com/library/windows/apps/br242878), [GridView-Klasse](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox-Klasse](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 > <div id="main">

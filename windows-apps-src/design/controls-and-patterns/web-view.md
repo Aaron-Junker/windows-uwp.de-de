@@ -20,7 +20,7 @@ ms.locfileid: "57610635"
 
 Mithilfe eines Webansichtssteuerelements betten Sie eine Ansicht in Ihre App ein, die Webinhalte mit dem Microsoft Edge-Renderingmodul rendert. In einem Webansichtssteuerelement können auch Links angezeigt und verwendet werden.
 
-> **Wichtige APIs**: [WebView-Klasse](https://msdn.microsoft.com/library/windows/apps/br227702)
+> **Wichtige APIs:** [WebView-Klasse](https://msdn.microsoft.com/library/windows/apps/br227702)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 

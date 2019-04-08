@@ -19,7 +19,7 @@ ms.locfileid: "57622015"
 
 Sie können zum Anzeigen von Bildern das **Image**-Objekt oder das **ImageBrush**-Objekt verwenden. Ein Image-Objekt rendert ein Bild. Ein ImageBrush-Objekt zeichnet ein anderes Objekt mit einem Bild. 
 
-> **Wichtige APIs**: [Image-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [Datenquelleneigenschaft](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx), [ImageBrush-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx), [ImageSource-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
+> **Wichtige APIs:** [Image-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [Datenquelleneigenschaft](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx), [ImageBrush-Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx), [ImageSource-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
 
 ## <a name="are-these-the-right-elements"></a>Sind dies die richtigen Elemente?
 Verwenden Sie ein **Image**-Element, um ein eigenständiges Bild in Ihrer App anzuzeigen.
@@ -35,7 +35,7 @@ Verwenden Sie **ImageBrush**, um ein Image auf ein anderes Objekt anzuwenden. �
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/Image">die App zu öffnen und Image in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
@@ -81,7 +81,7 @@ Hier ist die Ellipse, die von „ImageBrush“ gezeichnet wurde.
 Wenn Sie den [Width](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx)-Wert oder [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx)-Wert eines **Image**-Objekts nicht festlegen, wird es mit den von **Source** angegebenen Abmessungen des Bilds angezeigt. Durch das Festlegen von **Width** und **Height** wird ein rechteckiger Bereich erstellt, in dem das Bild angezeigt wird. Mit der [Stretch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx)-Eigenschaft können Sie festlegen, wie das Bild den Bereich ausfüllt. Die Stretch-Eigenschaft übernimmt die Werte, die durch die [Stretch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx)-Enumeration definiert werden:
 
 -   **Keine**: Die Grafik nicht gestreckt, um die Ausgabe Abmessungen füllen. Beachten Sie bei dieser Stretch-Einstellung Folgendes: Wenn das Quellbild größer als der enthaltende Bereich ist, wird das Bild abgeschnitten. Dies sollte hier normalerweise jedoch vermieden werden, da nicht gesteuert werden kann, welcher Ausschnitt angezeigt wird, wie dies bei einer absichtlichen [Clip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx)-Anwendung der Fall ist.
--   **Uniform**: Das Bild wird skaliert, entsprechend den Ausgabe. Das Seitenverhältnis des Inhalts bleibt jedoch erhalten. Dies ist der Standardwert.
+-   **Einheitliche**: Das Bild wird skaliert, entsprechend den Ausgabe. Das Seitenverhältnis des Inhalts bleibt jedoch erhalten. Dies ist der Standardwert.
 -   **UniformToFill**: Das Bild wird skaliert, sodass er vollständig den Ausgabebereich ausfüllt, jedoch die ursprünglichen Seitenverhältnisse beizubehalten behält.
 -   **Geben Sie**: Das Bild wird skaliert, entsprechend den Ausgabe. Da Höhe und Breite des Inhalts unabhängig voneinander dimensioniert werden, wird das ursprüngliche Seitenverhältnis möglicherweise nicht beibehalten. Mit anderen Worten, das Bild wird eventuell verzerrt, um den Ausgabebereich vollständig auszufüllen
 

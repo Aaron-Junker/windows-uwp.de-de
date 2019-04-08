@@ -163,8 +163,8 @@ Einige kritische Gerätevorgänge (wie etwa zeitaufwändige Firmwareupdates) kö
 
 Hintergrundaufgaben können mit Ereignissen und lokalem Speicher Fortschritt, Beendigung und Abbruch an die App melden. Eine App kann außerdem die von einer Hintergrundaufgabe ausgelösten Ausnahmen auffangen und die Registrierung von Hintergrundaufgaben während eines App-Updates verwalten. Weitere Informationen:
 
-[Eine abgebrochene Hintergrundaufgabe verarbeiten](handle-a-cancelled-background-task.md)  
-[Überwachen von Aufgabenstatus Hintergrund und Abschluss](monitor-background-task-progress-and-completion.md)
+[Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md)  
+[Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md)
 
 Überprüfen Sie die Registrierung von Hintergrundaufgaben während des App-Starts. Stellen Sie sicher, dass die nicht gruppierten Hintergrundaufgaben Ihrer App in BackgroundTaskBuilder.AllTasks vorhanden sind. Registrieren Sie nicht vorhandene Hintergrundaufgaben erneut. Heben Sie die Registrierung aller Aufgaben auf, die nicht mehr benötigt werden. Dadurch wird sichergestellt, dass alle Registrierungen von Hintergrundaufgaben bei jedem App-Start auf dem neuesten Stand sind.
 
@@ -177,23 +177,23 @@ Hintergrundaufgaben können mit Ereignissen und lokalem Speicher Fortschritt, Be
 **Anleitungen für verwandte Hintergrund-Aufgabe**
 
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
-* [Access-Sensoren und Geräten aus einem Hintergrundtask](access-sensors-and-devices-from-a-background-task.md)
-* [Erstellen Sie und registrieren Sie ein in-Process-Hintergrundaufgabe](create-and-register-an-inproc-background-task.md)
-* [Erstellen Sie und registrieren Sie eine Out-of-Process-Hintergrundaufgabe](create-and-register-a-background-task.md)
+* [Zugreifen auf Sensoren und Geräte von einer Hintergrundaufgabe aus](access-sensors-and-devices-from-a-background-task.md)
+* [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb von Prozessen](create-and-register-an-inproc-background-task.md)
+* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)
 * [Konvertieren Sie eine Out-of-Process-Hintergrundaufgabe in einem in-Process-Hintergrundaufgabe](convert-out-of-process-background-task.md)
-* [Eine Hintergrundaufgabe Debuggen](debug-a-background-task.md)
-* [Deklarieren Sie Hintergrundtasks im Manifest Anwendung](declare-background-tasks-in-the-application-manifest.md)
-* [Gruppenregistrierung von Hintergrund-Aufgabe](group-background-tasks.md)
-* [Eine abgebrochene Hintergrundaufgabe verarbeiten](handle-a-cancelled-background-task.md)
+* [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
+* [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
+* [Registrieren von Gruppen-Hintergrundaufgaben](group-background-tasks.md)
+* [Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md)
 * [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps (beim debugging)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
-* [Überwachen von Aufgabenstatus Hintergrund und Abschluss](monitor-background-task-progress-and-completion.md)
+* [Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md)
 * [Wiedergeben von Medien im Hintergrund](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [Eine Hintergrundaufgabe registrieren](register-a-background-task.md)
-* [Reagieren Sie auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
-* [Führen Sie eine Hintergrundaufgabe über einen timer](run-a-background-task-on-a-timer-.md)
+* [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
+* [Reagieren auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
+* [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)
 * [Eine Hintergrundtask ausgeführt, wenn die UWP-app aktualisiert wird](run-a-background-task-during-updatetask.md)
-* [Im Hintergrund auf unbestimmte Zeit ausgeführt](run-in-the-background-indefinetly.md)
-* [Festlegen von Bedingungen für die Ausführung einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md)
+* [Unbegrenzte Ausführung im Hintergrund](run-in-the-background-indefinetly.md)
+* [Festlegen von Bedingungen zum Ausführen einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md)
 * [Auslösen einer Hintergrundaufgabe in Ihrer app](trigger-background-task-from-app.md)
-* [Live-Kachel aus einem Hintergrundtask aktualisiert](update-a-live-tile-from-a-background-task.md)
-* [Verwenden Sie einen Wartungstrigger](use-a-maintenance-trigger.md)
+* [Aktualisieren einer Live-Kachel über eine Hintergrundaufgabe](update-a-live-tile-from-a-background-task.md)
+* [Verwenden eines Wartungsauslösers](use-a-maintenance-trigger.md)

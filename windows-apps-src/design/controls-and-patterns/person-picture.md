@@ -22,7 +22,7 @@ ms.locfileid: "57638935"
 
 Das Personenbild-Steuerelement zeigt das Avatar-Bild für eine Person an, sofern ein solches Bild verfügbar ist. Andernfalls werden die Initialen der Person oder eine allgemeine Glyphe angezeigt. Sie können das Steuerelement zum Anzeigen eines [Contact-Objekts](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) – eines Objekts, das die Kontaktinformationen einer Person verwaltet – verwenden, oder Sie können manuell Kontaktinformationen wie einen Anzeigenamen und ein Profilbild angeben.  
 
-> **Wichtige APIs**: [PersonPicture Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [wenden Sie sich an der Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **Wichtige APIs:** [PersonPicture Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [wenden Sie sich an der Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 Diese Abbildung zeigt zwei Steuerelement für Bilder von Personen zusammen mit zwei [TextBlock](text-block.md)-Elementen, die Namen der Benutzer anzeigen. 
 ![Das Steuerelement für die person](images/person-picture/person-picture_hero.png)
@@ -47,7 +47,7 @@ Die Abbildung zeigt Person den Bildsteuerelement in einer Liste von Kontakten: !
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/PersonPicture">die App zu öffnen und PersonPicture in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>

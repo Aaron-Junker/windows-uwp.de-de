@@ -22,7 +22,7 @@ Richten Sie einen [**Geofence**](https://msdn.microsoft.com/library/windows/apps
 
 **Tipp** Wenn Sie weitere Informationen zum Zugreifen auf die Position in Ihrer App erhalten möchten, laden Sie das folgende Beispiel aus den [API-Beispielen für die Universelle Windows-Plattform](https://go.microsoft.com/fwlink/p/?LinkId=619979) auf GitHub herunter.
 
--   [Universelle Windows-Plattform (UWP)-Map-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>Aktivieren der Positionsfunktion
 
@@ -483,4 +483,4 @@ Bevor Ihre App auf Positionsdaten zugreifen kann, muss **Position** auf dem Ger�
 
 * [UWP-Geolocation-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Entwurfsrichtlinien für geofencing](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Entwurfsrichtlinien für apps mit Standortbestimmung](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Entwurfsrichtlinien für Apps mit Positionsbestimmung](https://msdn.microsoft.com/library/windows/apps/hh465148)

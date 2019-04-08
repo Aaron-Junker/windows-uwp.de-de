@@ -19,7 +19,7 @@ ms.locfileid: "57596825"
 
 Mit adaptiven und interaktiven Popupbenachrichtigungen können Sie flexible Benachrichtigungen mit Text, Bildern und Schaltflächen/Eingaben erstellen.
 
-> **Wichtige APIs**: [Nuget-Paket von UWP Community Toolkit Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **Wichtige APIs:** [NuGet-Paket für UWP-Community-Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
 > Die älteren Vorlagen von Windows 8.1 und Windows Phone 8.1 finden Sie unter den [ältere popupvorlagenkatalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
@@ -43,9 +43,9 @@ Popupbenachrichtigungen sind eine Kombination aus einigen Dateneigenschaften wie
 
 Die Kernkomponenten des Popupinhalts sind...
 * **Starten Sie**: Hiermit wird definiert, welche Argumente werden zurück an Ihre app übergeben werden, klickt der Benutzer Ihre Toast, da Sie deep-Link in den richtigen Inhalt, den der Toast angezeigt. Weitere Informationen hierzu finden Sie unter [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md).
-* **visual**: Der visuelle Teil den Toast, enthält die generische Bindung dar, einschließlich Text und Bilder.
-* **actions**: Der interaktive Teil den Toast, einschließlich der Eingaben und Aktionen.
-* **audio**: Steuerelemente werden das Audio abgespielt, wenn es sich bei der Toast, die dem Benutzer angezeigt wird.
+* **Visual**: Der visuelle Teil den Toast, enthält die generische Bindung dar, einschließlich Text und Bilder.
+* **Aktionen**: Der interaktive Teil den Toast, einschließlich der Eingaben und Aktionen.
+* **Audio**: Steuerelemente werden das Audio abgespielt, wenn es sich bei der Toast, die dem Benutzer angezeigt wird.
 
 Der Popupinhalt ist in XML-Rohdaten definiert, aber Sie können unsere [NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um ein C# (oder C++)-Objektmodell für die Erstellung des Popupinhalts zu erhalten. In diesem Artikel werden alle Elemente des Popupinhalts dokumentiert.
 

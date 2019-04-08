@@ -51,7 +51,7 @@ Im Handler für das Ereignis **IsCurrentAppBroadcastingChanged** können Sie die
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Gaming](index.md)
+* [Spiele](index.md)
 
  
 

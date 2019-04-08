@@ -24,7 +24,7 @@ ms.locfileid: "57654145"
 
 Ein Label ist der Name bzw. Titel eines Steuerelements oder einer Gruppe verwandter Steuerelemente.
 
-> **Wichtige APIs**: Header-Eigenschaft, [TextBlock-Klasse](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **Wichtige APIs:** Header-Eigenschaft, [TextBlock-Klasse](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 In XAML verfügen zahlreiche Steuerelemente über eine integrierte Header-Eigenschaft, die Sie zum Anzeigen der Beschriftung verwenden. Für Steuerelemente ohne Header-Eigenschaft oder zum Beschriften von Steuerelementgruppen können Sie stattdessen ein [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)-Element verwenden.
 
@@ -50,7 +50,7 @@ In XAML verfügen zahlreiche Steuerelemente über eine integrierte Header-Eigens
 * [TimePicker.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn299286)
 * [Slider.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn252829)
 * [ComboBox.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [RichEditBox.Header property](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [RichEditBox.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn252726)
 * [TextBlock-Klasse](https://msdn.microsoft.com/library/windows/apps/br209652)
 
  

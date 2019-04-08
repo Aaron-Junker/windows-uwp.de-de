@@ -8,14 +8,14 @@ keywords: Windows 10, UWP, Demo-App für den Einzelhandel
 ms.localizationpriority: medium
 ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57596755"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>Hinzufügen von Retail-Demo (RDX)-Funktionen zu Ihrer app
 
-Enthalten Sie einen Retail-Demo-Modus in Ihrer Windows-app, damit Kunden, die Testen von PCs und Geräten in den Verkaufsraum sofort beginnen können.
+Fügen Sie einen Demomodus für den Einzelhandel in Ihre Windows-App ein, damit Kunden, die PCs und Geräte im Geschäft ausprobieren, direkt loslegen können.
 
 Wenn Kunden im Einzelhandel sind, erwarten sie, dass Sie Demos von PCs und Geräten testen können. Sie verbringen oft eine erhebliche Teil ihrer Zeit mit apps über die [retail-Demo-Umgebung (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience).
 

@@ -15,7 +15,7 @@ doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610495"
@@ -105,7 +105,7 @@ Bei der Erstellung einer UWP-App, die möglicherweise auf einer Mixed Reality-Pl
 * Eine 2D-App wird automatisch mit einer [App-Leiste](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box) versehen, damit der Benutzer sie in der virtuellen Umgebung verschieben und skalieren kann. Die Ansichten können vertikal oder unter Beibehaltung des gleichen Seitenverhältnisses in der Größe verändert werden.
 
 
-## <a name="2d-app-design-considerations-uiux"></a>Überlegungen zum Entwurf der Direct2D-app: UI/UX
+## <a name="2d-app-design-considerations-uiux"></a>Überlegungen zum Entwurf der Direct2D-app: BENUTZEROBERFLÄCHE/UX
 
 * XAML-Steuerelemente, die das [Fluent Design-System](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/) (z. B. die [Navigationsansicht](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) und Effekte wie [Acrylic ](https://docs.microsoft.com/windows/uwp/design/style/acrylic)) implementieren, funktionieren besonders gut in 2D-Mixed Reality-Apps.
 
@@ -166,6 +166,6 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 * [Aktuelle Einschränkungen für apps mithilfe von APIs in der Befehlsshell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
 * [Erstellen von Direct2D-apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens: Erstellen von 2D-UWP-Apps für Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
-* [Conditional XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
+* [Bedingte XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 
 

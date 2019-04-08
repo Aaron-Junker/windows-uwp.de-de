@@ -269,6 +269,6 @@ Dadurch wird festgelegt, dass eine Hintergrundaufgabenklasse mit dem Namen `Visi
 Ihre App sollte nun das Registrieren der Hintergrundaufgabe für Besuche behandeln können, und diese Aufgabe sollte aktiviert werden, sobald das Gerät eine Änderung im Zusammenhang mit einem Besuch protokolliert. Sie müssen die Logik in Ihrer Hintergrundaufgabenklasse ausfüllen, welche Aktion mit dieser Zustandsänderungsinformation ausgeführt werden soll.
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen Sie und registrieren Sie eine Out-of-Process-Hintergrundaufgabe](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
 * [Abrufen der Position eines Benutzers](get-location.md)
 * [Windows.Devices.Geolocation-namespace](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

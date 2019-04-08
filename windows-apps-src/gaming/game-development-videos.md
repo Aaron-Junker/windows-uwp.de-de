@@ -31,7 +31,7 @@ Was ist LiveOps? Erfahren Sie, warum Entwickler Livespiele erstellen: [Ihr Spiel
 ### <a name="azure-cloud-services"></a>Azure-Clouddiensten
 
 * [Wie der The Walking Dead No Man's Land Game erstellt wurde eine Skalierung auf Azure](https://channel9.msdn.com/Shows/Level-Up/How-The-Walking-Dead-No-Mans-Land-was-built-to-scale-on-Azure-Theater-Presentation) -Kalle Hiitola von Next Games
-* [Azure Cosmos DB: Umfassende Übersicht über](https://channel9.msdn.com/Shows/Level-Up/Azure-Cosmos-DB-Comprehensive-Overview) -Aleksey Savateyev
+* [Azure Cosmosdb: Umfassende Übersicht über](https://channel9.msdn.com/Shows/Level-Up/Azure-Cosmos-DB-Comprehensive-Overview) -Aleksey Savateyev
 * [Container, Cluster und der Cloud Gaming](https://channel9.msdn.com/Shows/Level-Up/Containers-Clusters-and-the-Cloud-for-Gaming-Theater-Presentation-1) -James Trott
 * [Rendern in Azure](https://channel9.msdn.com/Shows/Level-Up/Rendering-in-Azure-Theater-Presentation) – John Thuotte
 * [Auf einem Hyper-V](https://channel9.msdn.com/Shows/Level-Up/Running-on-a-Hypervisor-Theater-Presentation) -Andrew Farrier

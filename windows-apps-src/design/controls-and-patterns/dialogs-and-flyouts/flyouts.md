@@ -24,7 +24,7 @@ Ein Flyout ist ein einfach ausblendbarer Container, der beliebige UI als Inhalt 
 
 ![Kontextmenü geschachtelt in einem Flyout](../images/flyout-nested.png)
 
-> **Wichtige APIs**: [Flyout-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **Wichtige APIs:** [Flyout-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -41,14 +41,14 @@ Finden Sie Empfehlungen dazu, wann Sie verwendet ein Flyout im Vergleich zu eine
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> oder <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in Aktion zu sehen.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-##  <a name="how-to-create-a-flyout"></a>Vorgehensweise: Erstellen Sie ein flyout
+##  <a name="how-to-create-a-flyout"></a>Erstellen eines Flyouts
 
 
 Flyouts sind an bestimmte Steuerelemente angefügt. Sie können die [Platzierung](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) Eigenschaft, um anzugeben, wo ein Flyout angezeigt wird: Oben, links, unten, rechts oder vollständig. Wenn Sie den [vollständigen Platzierungsmodus](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) auswählen, streckt die App das Flyout und zentriert es innerhalb des App-Fensters. Einige Steuerelemente wie z. B. [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button), verfügen über eine [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout)-Eigenschaft, mit der Sie ein Flyout oder [Kontextmenü](../menus.md) zuordnen können.

@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, portieren, m
 ms.localizationpriority: medium
 ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630745"
@@ -211,9 +211,9 @@ HRESULT __stdcall DllCanUnloadNow(void)
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [Vorlage für WinRT::com_ptr-Struktur](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [WinRT::Windows::Foundation::IUnknown-Struktur](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Einführung in C++ / WinRT](intro-to-using-cpp-with-winrt.md)
-* [Verschieben von c++ / WinRT in C++ / CX](move-to-winrt-from-cx.md)
-* [Windows Runtime C++-Vorlagenbibliothek (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
+* [Einführung in C++/WinRT](intro-to-using-cpp-with-winrt.md)
+* [Umstellen von C++/CX auf C++/WinRT](move-to-winrt-from-cx.md)
+* [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

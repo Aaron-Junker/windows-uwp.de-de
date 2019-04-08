@@ -132,4 +132,4 @@ Animieren von Blur Radius | Hoch
 ## <a name="additional-resources"></a>Weitere Ressourcen
 
 - [Komposition DropShadow-API](/uwp/api/Windows.UI.Composition.DropShadow)
-- [WindowsUIDevLabs GitHub Repo](https://github.com/Microsoft/WindowsUIDevLabs)
+- [WindowsUIDevLabs-GitHub-Repository](https://github.com/Microsoft/WindowsUIDevLabs)

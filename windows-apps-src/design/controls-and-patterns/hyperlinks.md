@@ -25,7 +25,7 @@ ms.locfileid: "57606475"
 
 Über Hyperlinks können Benutzer zu einem anderen Teil der App oder zu einer anderen App navigieren oder mit einer separaten Browser-App einen bestimmten URI (Uniform Resource Identifier) starten. Sie haben zwei Möglichkeiten, einer XAML-App einen Link hinzuzufügen: über das Textelement **Link** oder das Steuerelement **HyperlinkButton**.
 
-> **Wichtige APIs**: [Text des Linkelements](https://msdn.microsoft.com/library/windows/apps/dn279356), [HyperlinkButton-Steuerung](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **Wichtige APIs:** [Text des Linkelements](https://msdn.microsoft.com/library/windows/apps/dn279356), [HyperlinkButton-Steuerung](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ![Eine Linkschaltfläche](images/controls/hyperlink-button.png)
 
@@ -49,7 +49,7 @@ Wählen Sie den richtigen Linktyp basierend auf Ihren Anforderungen:
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/HyperlinkButton">die App zu öffnen und HyperlinkButton in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
@@ -184,4 +184,4 @@ Die Standardfarbe des Links ist die Akzentfarbe des Systems. Dieses Verhalten k�
 
 **Für Entwickler (XAML)**
 - [Windows.UI.Xaml.Documents.Hyperlink-Klasse](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [Windows.UI.Xaml.Controls.HyperlinkButton class](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Windows.UI.Xaml.Controls.HyperlinkButton-Klasse](https://msdn.microsoft.com/library/windows/apps/br242739)

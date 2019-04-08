@@ -23,7 +23,7 @@ ms.locfileid: "57628665"
 
 Zeigen Sie, dass die Hervorhebung eines Effekts Beleuchtung ist, das interaktive Elemente, z. B. Befehlsleisten, hervorgehoben, wenn der Benutzer den Zeiger in der Nähe sie. 
 
-> **Wichtige APIs**: [RevealBrush Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **Wichtige APIs:** [RevealBrush Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Funktionsweise
 Zeigen Sie Hervorhebung Aufrufe Aufmerksamkeit interaktiven Elementen von des Elements Container offenlegen, wenn der Zeiger in der Nähe, wie in dieser Abbildung gezeigt wird:
@@ -41,7 +41,7 @@ Da durch Einblendungen die ausgeblendeten Rahmen um Objekte herum angezeigt werd
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/Reveal">die App zu öffnen und Einblendungen in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Abrufen der XAML-Steuerelemente Katalog-app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
@@ -287,7 +287,7 @@ Wenn Sie auf das benutzerdefinierte oder Re-Vorlagen-Steuerelement oder eine ben
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [RevealBrush-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [Acrylic](acrylic.md)
+- [Blog](acrylic.md)
 - [Auswirkungen der Komposition](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Fluent Design für UWP](../fluent-design-system/index.md)
 - [Die Wissenschaft im System: Fluent Design und der Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

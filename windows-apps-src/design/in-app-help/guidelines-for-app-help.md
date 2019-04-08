@@ -37,7 +37,7 @@ Jede Hilfe sollte unabhängig von ihrer Art folgenden Prinzipien entsprechen:
 
 -   **Einfach zu verstehen:** Hilfe, die möglicherweise Schuldgefühle, den Benutzer da ist noch gar keine Hilfe schlimmer.
 
--   **Straightforward:** Suchen nach Benutzern helfen, klare Antworten direkt an diese angezeigt werden soll.
+-   **Einfach:** Suchen nach Benutzern helfen, klare Antworten direkt an diese angezeigt werden soll.
 
 -   **Relevant:** Benutzer möchten nicht, für das spezifische Problem suchen zu müssen. Sie möchten, dass ihnen möglichst relevante Hilfe unmittelbar angezeigt wird (man spricht von „kontextbezogener Hilfe“), oder sie möchten eine leicht zu bedienende Oberfläche.
 

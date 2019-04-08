@@ -7,7 +7,7 @@ ms.topic: article
 keywords: Windows 10, UWP, fluent
 ms.openlocfilehash: 397c1d3a1502eaa352bf66b1bbf24e3fa39beff2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57593055"
@@ -130,7 +130,7 @@ Verwenden Sie diese Vorlage, um eine Elementliste mit Text in Spalten anzuzeigen
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [ListView-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
-- [Übersicht über die Datenbindung](../../data-binding/data-binding-quickstart.md)
+- [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md)
 - [Übersicht über die Accessibililty](../accessibility/accessibility-overview.md)
 - [ListView und GridView-Beispiel (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Miniaturbilder](../../files/thumbnails.md)

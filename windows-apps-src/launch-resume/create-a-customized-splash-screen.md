@@ -417,7 +417,7 @@ namespace SplashScreenExample
 }
 ```
 
-### <a name="appxamlcs"></a>App.xaml.cs
+### <a name="appxamlcs"></a>Datei "App.Xaml.cs"
 
 Dieses Projekt wurde erstellt, mit der UWP-app **leere App (XAML)** Projektvorlage in Visual Studio. Die Ereignishandler `OnNavigationFailed` und `OnSuspending` werden automatisch erstellt und müssen nicht geändert werden, um einen erweiterten Begrüßungsbildschirm zu implementieren. In diesem Thema wird nur `OnLaunched` geändert.
 
@@ -545,10 +545,10 @@ namespace SplashScreenExample
 
 **Referenz**
 
-* [Windows.ApplicationModel.Activation namespace](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [Windows.ApplicationModel.Activation-namespace](https://msdn.microsoft.com/library/windows/apps/br224766)
 * [Windows.ApplicationModel.Activation.SplashScreen-Klasse](https://msdn.microsoft.com/library/windows/apps/br224763)
 * [Windows.ApplicationModel.Activation.SplashScreen.ImageLocation-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/br224765)
-* [Windows.ApplicationModel.Core.CoreApplicationView.Activated event](https://msdn.microsoft.com/library/windows/apps/br225018)
+* [Windows.ApplicationModel.Core.CoreApplicationView.Activated-Ereignis](https://msdn.microsoft.com/library/windows/apps/br225018)
 
  
 

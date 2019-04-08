@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projiziert, projizierung, 
 ms.localizationpriority: medium
 ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602425"
@@ -240,4 +240,4 @@ Wenn Sie ein Ereignis mit einer Objektmemberfunktion behandeln oder aus in einer
 ## <a name="related-topics"></a>Verwandte Themen
 * [Erstellen von Ereignissen in C++ / WinRT](author-events.md)
 * [Parallelität und asynchrone Vorgänge mit C++ / WinRT](concurrency.md)
-* [Starke und schwache Verweise in C++ / WinRT](weak-references.md)
+* [Starke und schwache Verweise in C++/WinRT](weak-references.md)

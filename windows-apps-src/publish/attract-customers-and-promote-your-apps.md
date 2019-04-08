@@ -16,7 +16,7 @@ ms.locfileid: "57633915"
 
 Sobald Ihre app in den Microsoft Store ist, kommt es vor so viele Kunden wie möglich zu erhalten. [Partner Center](https://partner.microsoft.com/dashboard) bietet viele Features, mit denen Sie Ihre Produkte bewerben und vergrößern Sie Ihren Kundenstamm, wie z.B. Anzeigenkampagnen Aktionscodes, Verkaufspreise und vieles mehr.
 
--   [Generieren von Promotioncodes](generate-promotional-codes.md)
+-   [Generieren von Werbecodes](generate-promotional-codes.md)
 -   [Erstellen Sie eine Ad-Kampagne für Ihre app](create-an-ad-campaign-for-your-app.md)
 -   [Erstellen Sie eine benutzerdefinierte app-heraufstufung-Kampagne](create-a-custom-app-promotion-campaign.md)
 -   [Anbieten vergünstigter Apps und Add-Ons](put-apps-and-add-ons-on-sale.md)

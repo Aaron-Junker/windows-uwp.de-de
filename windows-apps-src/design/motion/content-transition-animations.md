@@ -23,7 +23,7 @@ ms.locfileid: "57649805"
 
 Mithilfe von Inhaltsübergangsanimationen können Sie den Inhalt eines Bildschirmbereichs ändern und gleichzeitig den Container oder Hintergrund unverändert lassen. Neuer Inhalt wird eingeblendet. Muss vorhandener Inhalt ersetzt werden, wird dieser Inhalt ausgeblendet.
 
-> **Wichtige APIs**: [**ContentThemeTransition-Klasse (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **Wichtige APIs:** [**ContentThemeTransition-Klasse (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 

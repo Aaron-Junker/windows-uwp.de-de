@@ -89,12 +89,12 @@ In der Regel wird der Name aller UPnP-Dienste mithilfe des in RFC 4122 definiert
 | Dienstname                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
 | Verbindungs-Manager                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
-| AV-Transport                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
+| AV-Transport                       | **deeacb78-707a-52df-B1C6-6f945e7e25bf**  |
 | Renderingkontrolle                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | Ebene-3-Weiterleitung                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
 | Konfiguration der allgemeinen WAN-Schnittstelle | **e4c1c624-c3c4-5104-b72e-ac425d9d157c**  |
 | WAP-IP-Verbindung                  | **e4ac1c23-b5ac-5c27-8814-6bd837d8832c**  |
-| WFA-WLAN-Konfiguration             | **23d5f7db-747f-5099-8f21-3ddfd0c3c688**  |
+| WFA-WLAN-Konfiguration             | **23d5f7db-747f-5099-8F21-3ddfd0c3c688**  |
 | Drucker, erweitert                   | **fb9074da-3d9f-5384-922e-9978ae51ef0c**  |
 | Drucker, grundlegend                      | **5d2a7252-d45c-5158-87a4-05212da327e1**  |
 | Medienempfängerregistrierungsstelle           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |

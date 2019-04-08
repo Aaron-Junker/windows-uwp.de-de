@@ -13,7 +13,7 @@ keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57634645"

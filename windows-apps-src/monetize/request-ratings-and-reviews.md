@@ -132,9 +132,9 @@ In der folgenden Tabelle werden die Felder in der Zeichenfolge im JSON-Format er
 
 | Feld          | Beschreibung                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *status*       | Eine Zeichenfolge, die angibt, ob der Kunde eine Bewertung oder Rezension erfolgreich gesendet hat. Die unterstützten Werte sind **success** und **aborted**. |
-| *data*         | Ein Objekt, das nur einen booleschen Wert mit dem Namen *aktualisiert* enthält. Dieser Wert gibt an, ob der Kunde eine vorhandene Bewertung oder Rezension aktualisiert hat. Das *data*-Objekt ist nur in den Erfolgsantworten enthalten. |
-| *errorDetails* | Eine Zeichenfolge, die Fehlerdetails für die Anforderung enthält.                                                                                     |
+| *Status*       | Eine Zeichenfolge, die angibt, ob der Kunde eine Bewertung oder Rezension erfolgreich gesendet hat. Die unterstützten Werte sind **success** und **aborted**. |
+| *Daten*         | Ein Objekt, das nur einen booleschen Wert mit dem Namen *aktualisiert* enthält. Dieser Wert gibt an, ob der Kunde eine vorhandene Bewertung oder Rezension aktualisiert hat. Das *data*-Objekt ist nur in den Erfolgsantworten enthalten. |
+| *ErrorDetails* | Eine Zeichenfolge, die Fehlerdetails für die Anforderung enthält.                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Die Bewertungs- und Rezensionsseite für Ihre App im Store starten
 
@@ -155,5 +155,5 @@ Sie haben mehrere Optionen, um die Bewertungs- und Rezensionsdaten von Ihren Kun
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Senden Sie Anforderungen an den Store](send-requests-to-the-store.md)
-* [Starten Sie die Microsoft Store-app](../launch-resume/launch-store-app.md)
+* [Starten der Microsoft Store-App](../launch-resume/launch-store-app.md)
 * [Rezensionsbericht](../publish/reviews-report.md)

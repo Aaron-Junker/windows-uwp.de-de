@@ -53,7 +53,7 @@ Die Kopfzeile der Dev Home-Benutzeroberfläche enthält die folgenden wichtigen 
   
 Die übrige Dev Home-Benutzeroberfläche ist in die folgenden Seiten unterteilt. Weitere Informationen zu den Tools auf diesen Seiten finden Sie in den jeweiligen Themen.   
  
-   *  [Home](devhome-home.md)  
+   *  [Startseite](devhome-home.md)  
    *  [Xbox Live](devhome-live.md)  
    *  [Einstellungen](devhome-settings.md)  
    *  [Medien erfassen](devhome-capture.md)  
