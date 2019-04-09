@@ -5,16 +5,16 @@ ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 12/1/2017
+ms.date: 12/01/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594585"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913960"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>Grundlagen des Inhaltsdesigns für UWP-Apps
 
@@ -32,7 +32,7 @@ Viele Apps verwenden einige oder alle dieser gängigen Seitenmuster, um verschie
 
 Angebotsseiten werden auch Hero-Screens genannt und werden häufig auf der obersten Ebene einer App-Erfahrung angezeigt. Die große Oberfläche dient als Bühne, um Inhalte hervorzuheben, die der Nutzer ansehen und nutzen möchte.
 
-### <a name="collections"></a>Sammlungen
+### <a name="collections"></a>Auflistungen
 
 ![Galerie](images/content-basics/gridview.png)
 
@@ -80,7 +80,7 @@ Um diese Seitenmuster zu erstellen, müssen Sie eine Kombination aus einzelnen I
 <tr class="odd">
 <td align="left">Audio und Video<br/><br/>
     <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left"><a href="../controls-and-patterns/media-playback.md">Wiedergabe und Transport mediensteuerelementen</a></td>
+<td align="left"><a href="../controls-and-patterns/media-playback.md">Steuerelemente für Medienwiedergabe und -transport</a></td>
 <td align="left">Gibt Audio- und Videoinhalte wieder.</td>
 </tr>
 <tr class="even">
@@ -90,9 +90,9 @@ Um diese Seitenmuster zu erstellen, müssen Sie eine Kombination aus einzelnen I
 <td align="left">Zeigt Bilder an. Die „Flip-Ansicht“ zeigt Bilder nacheinander in einer Sammlung an, wie etwa Fotos in einem Album oder Elemente auf einer Produktdetailseite.</td>
 </tr>
 <tr class="odd">
-<td align="left">Sammlungen <br/><br/>
+<td align="left">Auflistungen <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">Listenansicht und der Rasteransicht</a></td>
+<td align="left"><a href="../controls-and-patterns/lists.md">Listenansicht und Rasteransicht</a></td>
 <td align="left">Stellt Elemente in einer interaktiven Liste oder einem Raster dar. Verwenden Sie diese Elemente, um Benutzern die Auswahl eines Films aus einer Liste mit Neuerscheinungen oder die Verwaltung von Inventar zu ermöglichen.</td>
 </tr>
 <tr class="even">

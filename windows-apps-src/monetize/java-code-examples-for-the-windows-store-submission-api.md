@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Codebeispiele, Java
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a98584fcac446a673bf76cd3d448e05455a89bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: db87b1f8f3fdf039fe6e8ee8ca8a0bc91d26b428
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599985"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334498"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java-Beispiel: Übermittlungen für Apps, Add-Ons und Flights
 
@@ -26,7 +26,7 @@ Dieser Artikel enthält Java-Codebeispiele zeigt das Verwenden der [Microsoft St
 
 Sie können die einzelnen Beispiele durchgehen, um mehr über die jeweilige Aufgabe zu erfahren. Zudem können Sie alle Codebeispiele in diesem Artikel in eine Konsolenanwendung einbinden. Die vollständige Codeauflistung finden Sie im Abschnitt [Codeauflistung](java-code-examples-for-the-windows-store-submission-api.md#code-listing) am Ende dieses Artikels.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Für diese Beispiele werden die folgenden Bibliotheken verwendet:
 
@@ -38,7 +38,7 @@ Für diese Beispiele werden die folgenden Bibliotheken verwendet:
 
 Das folgende Beispiel zeigt die Importanweisungen, die von allen Codebeispielen verwendet werden, und implementiert ein Befehlszeilenprogramm, das die anderen Beispielmethoden aufruft.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/MainExample.java#L1-L64)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/MainExample.java#L1-L64)]
 
 <span id="token" />
 
@@ -46,7 +46,7 @@ Das folgende Beispiel zeigt die Importanweisungen, die von allen Codebeispielen 
 
 Im folgenden Beispiel wird gezeigt, wie Sie ein [Azure AD-Zugriffstoken abrufen](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), mit dem Sie Methoden in der Microsoft Store-Übermittlungs-API aufrufen können. Nach dem Abruf eines Tokens können Sie es für einen Zeitraum von 60 Minuten in Aufrufen der Microsoft Store-Übermittlungs-API verwenden, bevor es abläuft. Nach dem Ablauf des Tokens können Sie ein neues Token generieren.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L65-L95)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L65-L95)]
 
 <span id="create-add-on" />
 
@@ -54,7 +54,7 @@ Im folgenden Beispiel wird gezeigt, wie Sie ein [Azure AD-Zugriffstoken abrufen]
 
 Das folgende Beispiel zeigt, wie Sie EIN Flight-Paket [erstellen](create-an-add-on.md) und anschließend ein Add-On [löschen](delete-an-add-on.md).
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L310-L345)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L310-L345)]
 
 <span id="create-package-flight" />
 
@@ -62,13 +62,13 @@ Das folgende Beispiel zeigt, wie Sie EIN Flight-Paket [erstellen](create-an-add-
 
 Das folgende Beispiel zeigt, wie Sie EIN Flight-Paket [erstellen](create-a-flight.md) und anschließend [löschen](delete-a-flight.md).
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L185-L221)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L185-L221)]
 
 <span id="create-app-submission" />
 
 ## <a name="create-an-app-submission"></a>Erstellen einer App-Übermittlung
 
-Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Store-Übermittlungs-API verwenden, um eine App-Übermittlung zu erstellen. Zu diesem Zweck die ```SubmitNewApplicationSubmission``` -Methode erstellt eine neue Übermittlung als Klon der letzten Übermittlung veröffentlicht und anschließend aktualisiert und führt einen Commit für die geklonte Übermittlung zum Partner Center. Genauer gesagt führt die ```SubmitNewApplicationSubmission```-Methode diese Aufgaben aus:
+Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Store-Übermittlungs-API verwenden, um eine App-Übermittlung zu erstellen. Zu diesem Zweck die `SubmitNewApplicationSubmission` -Methode erstellt eine neue Übermittlung als Klon der letzten Übermittlung veröffentlicht und anschließend aktualisiert und führt einen Commit für die geklonte Übermittlung zum Partner Center. Genauer gesagt führt die `SubmitNewApplicationSubmission`-Methode diese Aufgaben aus:
 
 1. Zunächst [ruft die Methode Daten für die angegebene App ab](get-an-app.md).
 2. Als Nächstes [löscht sie die ausstehende Übermittlung für die App](delete-an-app-submission.md), wenn vorhanden.
@@ -77,13 +77,13 @@ Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Stor
 5. Als Nächstes wird es [Updates](update-an-app-submission.md) und dann [führt einen Commit für](commit-an-app-submission.md) die neue Übermittlung zum Partner Center.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-app-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
 
 <span id="create-add-on-submission" />
 
 ## <a name="create-an-add-on-submission"></a>Erstellen einer Add-On-Übermittlung
 
-Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Store-Übermittlungs-API verwenden, um eine Add-On-Übermittlung zu erstellen. Zu diesem Zweck die ```SubmitNewInAppProductSubmission``` Methode erstellt eine neue Übermittlung als Klon der letzten Übermittlung veröffentlichte, aktualisiert und führt einen Commit für die geklonte Übermittlung zum Partner Center. Genauer gesagt führt die ```SubmitNewInAppProductSubmission```-Methode diese Aufgaben aus:
+Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Store-Übermittlungs-API verwenden, um eine Add-On-Übermittlung zu erstellen. Zu diesem Zweck die `SubmitNewInAppProductSubmission` Methode erstellt eine neue Übermittlung als Klon der letzten Übermittlung veröffentlichte, aktualisiert und führt einen Commit für die geklonte Übermittlung zum Partner Center. Genauer gesagt führt die `SubmitNewInAppProductSubmission`-Methode diese Aufgaben aus:
 
 1. Zunächst [ruft die Methode Daten für das angegebene Add-On ab](get-an-add-on.md).
 2. Als Nächstes [wird die ausstehende Übermittlung für das Add-On gelöscht](delete-an-add-on-submission.md), wenn vorhanden.
@@ -92,13 +92,13 @@ Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Stor
 5. Als Nächstes wird es [Updates](update-an-add-on-submission.md) und dann [führt einen Commit für](commit-an-add-on-submission.md) die neue Übermittlung zum Partner Center.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-add-on-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]
 
 <span id="create-flight-submission" />
 
 ## <a name="create-a-package-flight-submission"></a>Erstellen einer Flight-Paket-Übermittlung
 
-Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Store-Übermittlungs-API verwenden, um eine Flight-Paket-Übermittlung zu erstellen. Zu diesem Zweck die ```SubmitNewFlightSubmission``` Methode erstellt eine neue Übermittlung als Klon der letzten Übermittlung veröffentlichte, aktualisiert und führt einen Commit für die geklonte Übermittlung zum Partner Center. Genauer gesagt führt die ```SubmitNewFlightSubmission```-Methode diese Aufgaben aus:
+Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Store-Übermittlungs-API verwenden, um eine Flight-Paket-Übermittlung zu erstellen. Zu diesem Zweck die `SubmitNewFlightSubmission` Methode erstellt eine neue Übermittlung als Klon der letzten Übermittlung veröffentlichte, aktualisiert und führt einen Commit für die geklonte Übermittlung zum Partner Center. Genauer gesagt führt die `SubmitNewFlightSubmission`-Methode diese Aufgaben aus:
 
 1. Zunächst [ruft die Methode Daten für das angegebene Flight-Paket ab](get-a-flight.md).
 2. Als Nächstes [wird die ausstehende Übermittlung für das Flight-Paket gelöscht](delete-a-flight-submission.md), wenn vorhanden.
@@ -107,7 +107,7 @@ Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Stor
 5. Als Nächstes wird es [Updates](update-a-flight-submission.md) und dann [führt einen Commit für](commit-a-flight-submission.md) die neue Übermittlung an PartnerCenter.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-a-flight-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]
 
 <span id="utilities" />
 
@@ -118,7 +118,7 @@ Die folgenden Hilfsmethoden veranschaulichen diese Aufgaben:
 * Hochladen eines ZIP-Archivs mit neuen Ressourcen für eine App- oder Add-On-Übermittlung auf Azure Blob Storage Weitere Informationen zum Hochladen eines ZIP-Archivs auf Azure Blob Storage für App- und Add-On-Übermittlungen finden Sie unter [Erstellen einer App-Übermittlung](manage-app-submissions.md#create-an-app-submission), [Erstellen einer Add-On-Übermittlung](manage-add-on-submissions.md#create-an-add-on-submission) und [Erstellen einer Flight-Paket-Übermittlung](manage-flight-submissions.md#create-a-package-flight-submission).
 * Behandeln von Anforderungsantworten
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L433-L490)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L433-L490)]
 
 <span id="code-listing" />
 
@@ -126,7 +126,7 @@ Die folgenden Hilfsmethoden veranschaulichen diese Aufgaben:
 
 Die folgende Codeauflistung enthält alle vorherigen Beispiele in einer einzigen Quelldatei organisiert.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L1-L491)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L1-L491)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

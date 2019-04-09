@@ -8,12 +8,12 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7eec51044a70b0738e246d3aa516c37643cf68
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a4eadb82de2035b931d75ff2eefa6f8bd6652c94
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608075"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343269"
 ---
 # <a name="speech-recognition"></a>Spracherkennung
 
@@ -275,9 +275,9 @@ Eine Speech Recognition Grammar Specification (SRGS)-Grammatik ist ein statische
 
 ### <a name="voice-command-constraints"></a>Einschränkungen der Voice-Befehl
 
-Verwenden Sie eine Voice Command Definition-(VCD-)XML-Datei, um die Befehle zu definieren, mit denen der Benutzer Aktionen initiieren kann, wenn er Ihre App aktiviert. Weitere Details finden Sie unter [Starten einer Vordergrund-App mit Sprachbefehlen in Cortana](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana).
+Verwenden Sie eine Voice Command Definition-(VCD-)XML-Datei, um die Befehle zu definieren, mit denen der Benutzer Aktionen initiieren kann, wenn er Ihre App aktiviert. Weitere Informationen finden Sie unter [aktivieren eine Vordergrund-app mit Sprachbefehlen durch Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
 
-Finden Sie unter [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
+See [**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 
 **Beachten Sie**  der Typ der Einschränkung, den Sie verwenden, hängt von der Komplexität der zu erstellenden zu bieten. Für eine bestimmte Erkennungsaufgabe kann jeweils einer der Ansätze am besten geeignet sein, und vielleicht haben Sie in Ihrer App sogar für alle Einschränkungsarten Verwendung.
 Informationen zu den ersten Schritten mit Einschränkungen finden Sie unter [Definieren von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md).

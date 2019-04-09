@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 437650883b4782ca02c0daf24cc8ebed01d954f6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1e76aeceafa3f75c78bd7078f57fa9a3b1edee2f
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651255"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291658"
 ---
 # <a name="bilinear-texture-filtering"></a>Bilineare Texturfilterung
-
 
 Die *bilineare Filterung* berechnet den gewichteten Durchschnitt der 4 Texel, die dem Sampling-Punkt am nächsten liegen. Diese Filtermethode ist präziser und gängiger als das Filtern am nächstgelegenen Punkt. Dieser Ansatz ist effizient, da er in moderner Grafikhardware implementiert wird.
 
@@ -37,13 +36,13 @@ Die einfachste Methode ist hier, dass der Sampler die Farbe des nächstliegenden
 
 Eine etwas genauere und häufiger verwendete Filtermethode ist das Berechnen des gewichteten Mittelwerts der 4 Texel, die dem Samplingpunkt am nächsten liegen. Dies wird als *Bilineare Filterung* bezeichnet. Der zusätzliche Rechenaufwand für die bilineare Filterung ist in der Regel unerheblich, da diese Routine in moderner Grafikhardware verwendet wird. Hier sind die Farben, die wir an verschiedenen Sampling-Punkten mit bilinearer Filterung erhalten:
 
-```
+```cpp
 UV: (0.5, 0.5)
 ```
 
 Dieser Punkt liegt genau an der Grenze zwischen roten, grünen, blauen und weißen Texel. Die vom Sampler zurückgegebene Farbe ist Grau:
 
-```
+```cpp
   0.25 * (255, 0, 0)
   0.25 * (0, 255, 0) 
   0.25 * (0, 0, 255) 
@@ -52,13 +51,13 @@ Dieser Punkt liegt genau an der Grenze zwischen roten, grünen, blauen und weiß
 = (128, 128, 128)
 ```
 
-```
+```cpp
 UV: (0.5, 0.375)
 ```
 
 Dieser Punkt liegt im Mittelwert des Grenzpunkts zwischen roten und grünen Texel. Die vom Sampler zurückgegebene Farbe ist gelb-grau (beachten Sie, dass der blaue und weiße Texel auf 0 skaliert werden):
 
-```
+```cpp
   0.5 * (255, 0, 0)
   0.5 * (0, 255, 0) 
   0.0 * (0, 0, 255) 
@@ -67,13 +66,13 @@ Dieser Punkt liegt im Mittelwert des Grenzpunkts zwischen roten und grünen Texe
 = (128, 128, 0)
 ```
 
-```
+```cpp
 UV: (0.375, 0.375)
 ```
 
 Dies ist die Adresse des rote Texels in der zurückgegebene Farbe (alle anderen Texel in der Filterberechnung werden auf 0 angepasst):
 
-```
+```cpp
   1.0 * (255, 0, 0)
   0.0 * (0, 255, 0) 
   0.0 * (0, 0, 255) 

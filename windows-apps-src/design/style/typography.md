@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610025"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244386"
 ---
 # <a name="typography"></a>Typografie
 
@@ -72,7 +72,7 @@ Aufgrund der Funktionsweise der Skalierung, entwerfen Sie in effektiven Pixeln, 
 
 Die UWP-Typhierarchie stellt wichtige Beziehungen zwischen den Schriftschnitte auf einer Seite her, damit der Benutzer den Inhalt einfach lesen kann. Alle Größen werden in effektiven Pixeln angegeben und sind für UWP-Apps optimiert, die auf allen Geräten ausgeführt werden.
 
-![Typhierarchie](images/type/type-ramp.svg)
+![Typhierarchie](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>Die Typhierarchie verwenden
 
@@ -171,7 +171,7 @@ Verwenden Sie die [LanguageFont-Schriftartenersetzungs-APIs](https://docs.micros
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Anmerkungen</th>
+<th align="left">Hinweise</th>
 </tr>
 </thead>
 <tbody>
@@ -244,7 +244,7 @@ Serifenlose Schriftarten eignen sich für Überschriften und UI-Elemente.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Anmerkungen</th>
+<th align="left">Hinweise</th>
 </tr>
 </thead>
 <tbody>
@@ -272,7 +272,7 @@ Serifenlose Schriftarten eignen sich für Überschriften und UI-Elemente.
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">Normal, Semilight, Light, fett, Semibold</td>
-<td align="left">Open-Source-Schriftart, die metrisch kompatibel mit Segoe UI ist. Vorgesehen für Apps auf anderen Plattformen, auf denen Segoe UI nicht verfügbar ist. <a href="https://github.com/Microsoft/Selawik">Rufen Sie Selawik auf GitHub.</a></td>
+<td align="left">Open-Source-Schriftart, die metrisch kompatibel mit Segoe UI ist. Vorgesehen für Apps auf anderen Plattformen, auf denen Segoe UI nicht verfügbar ist. <a href="https://github.com/Microsoft/Selawik">Laden Sie Selawik über GitHub herunter.</a></td>
 </tr>
 
 </tbody>
@@ -287,7 +287,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Anmerkungen</th>
+<th align="left">Hinweise</th>
 </tr>
 </thead>
 <tbody>
@@ -323,7 +323,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Anmerkungen</th>
+<th align="left">Hinweise</th>
 </tr>
 </thead>
 <tbody>
@@ -349,5 +349,5 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 
 * [Textsteuerelemente](../controls-and-patterns/text-controls.md)
 * [XAML-Designressourcen](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
-* [XAML-Stile](../controls-and-patterns/xaml-styles.md)
-* [Microsoft-Typografie](https://docs.microsoft.com/typography/)
+* [XAML-Formatvorlagen](../controls-and-patterns/xaml-styles.md)
+* [Microsoft Typografie](https://docs.microsoft.com/typography/)

@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, portieren, migrieren, interoperabilität, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3eee6b75d3ea86c183293ffc27289e9cae2929ce
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639945"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291678"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interoperabilität zwischen C++/WinRT und der ABI
 
@@ -21,13 +21,13 @@ Eine Windows-Runtime-Klasse (Laufzeitklasse) ist eigentlich eine Abstraktion. Di
 
 Die Windows SDK-Header im Ordner „%WindowsSdkDir%Include\10.0.17134.0\winrt” (passen Sie ggf. die SDK-Versionsnummer an) sind die Windows-Runtime-ABI-Header-Dateien. Sie wurden vom MIDL-Compiler erstellt. Hier ist ein Beispiel für die Verwendung eines dieser Header.
 
-```
+```cpp
 #include <windows.foundation.h>
 ```
 
 Und hier ist ein vereinfachtes Beispiel für einen der ABI-Typen, die Sie in diesem speziellen SDK-Header finden. Beachten Sie den **ABI**-Namespace: **Windows::Foundation** und alle anderen Windows-Namespaces werden von den SDK-Headern innerhalb des **ABI**-Namespace deklariert.
 
-```
+```cpp
 namespace ABI::Windows::Foundation
 {
     IUriRuntimeClass : public IInspectable
@@ -51,7 +51,7 @@ Wenn Sie z. B. in den Ordner „%WindowsSdkDir%Include\10.0.17134.0\cppwinrt\win
 
 Und aus diesem Header sehen Sie hier (vereinfacht) das C++/WinRT-Äquivalent zu dem ABI-Typ, den wir gerade gesehen haben.
 
-```
+```cppwinrt
 namespace winrt::Windows::Foundation
 {
     struct Uri : IUriRuntimeClass, ...
@@ -67,7 +67,7 @@ Die Schnittstelle ist modernes Standard C++. Es beseitigt **HRESULT**-Elemente (
 Dieses Thema ist für Fälle relevant, in den Sie Interoperabilität mit Code gewährleisten oder Code portieren möchten, der auf der Application Binary Interface (ABI)-Ebene funktioniert.
 
 ## <a name="converting-to-and-from-abi-types-in-code"></a>Konvertierung von und zu ABI-Typen im Code
-Zur Sicherheit und Einfachheit können Sie für Konvertierungen in beide Richtungen einfach [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function) und [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) verwenden. Hier ist ein Codebeispiel (basierend auf der Projektvorlage **Console App**), das auch zeigt, wie Sie Namespace-Aliase für die verschiedenen Inseln verwenden können, um mit anderweitigen potenziellen Namespacekonflikten zwischen der C++/WinRT-Projektion und der ABI umzugehen.
+Zur Sicherheit und Einfachheit können Sie für Konvertierungen in beide Richtungen einfach [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptras-function) und [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) verwenden. Hier ist ein Codebeispiel (basierend auf der Projektvorlage **Console App**), das auch zeigt, wie Sie Namespace-Aliase für die verschiedenen Inseln verwenden können, um mit anderweitigen potenziellen Namespacekonflikten zwischen der C++/WinRT-Projektion und der ABI umzugehen.
 
 ```cppwinrt
 // pch.h
@@ -175,7 +175,7 @@ T convert_from_abi(::IUnknown* from)
 
 Die Funktion ruft einfach [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) auf, um die Standardschnittstelle des gewünschten C++/WinRT-Typs abzufragen.
 
-Wie wir gesehen haben, ist eine Hilfsfunktion nicht erforderlich, um von einem C++/WinRT-Objekt in den entsprechenden ABI-Interface-Zeiger zu konvertieren. Verwenden Sie einfach die Funktion [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)-Mitgliedsfunktion (oder [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)), um nach der gewünschten Schnittstelle zu suchen. Die Funktionen **as** und **try_as** geben ein [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)-Wrapper-Objekt für den gewünschten ABI-Typ zurück.
+Wie wir gesehen haben, ist eine Hilfsfunktion nicht erforderlich, um von einem C++/WinRT-Objekt in den entsprechenden ABI-Interface-Zeiger zu konvertieren. Verwenden Sie einfach die Funktion [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)-Mitgliedsfunktion (oder [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)), um nach der gewünschten Schnittstelle zu suchen. Die Funktionen **as** und **try_as** geben ein [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)-Wrapper-Objekt für den gewünschten ABI-Typ zurück.
 
 ## <a name="code-example-using-convertfromabi"></a>Codebeispiel mit convert_from_abi
 Hier ist ein Codebeispiel, das diese Helferfunktion in der Praxis zeigt.
@@ -248,9 +248,9 @@ int main()
 * [QueryInterface-Funktion](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [WinRT::attach_abi-Funktion](/uwp/cpp-ref-for-winrt/attach-abi)
 * [Vorlage für WinRT::com_ptr-Struktur](/uwp/cpp-ref-for-winrt/com-ptr)
-* [WinRT::copy_from_abi-Funktion](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
 * [WinRT::copy_to_abi-Funktion](/uwp/cpp-ref-for-winrt/copy-to-abi)
 * [WinRT::detach_abi-Funktion](/uwp/cpp-ref-for-winrt/detach-abi)
 * [WinRT::get_abi-Funktion](/uwp/cpp-ref-for-winrt/get-abi)
 * [WinRT::Windows::Foundation::IUnknown:: Member-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [WinRT::Windows::Foundation::IUnknown::try_as-Member-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [WinRT::Windows::Foundation::IUnknown::try_as-Member-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)

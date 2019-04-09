@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, Bedienungshilfen, Spiele
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 38060d0a6bead360ef8a682902a433670c79b495
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592935"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162778"
 ---
 #  <a name="making-games-accessible"></a>Erstellen barrierefreier Spiele
 
@@ -196,7 +196,7 @@ Wenn Spieler in Ihrem Spieletitel über die Spracheingabe und SMS-Nachrichten mi
 
 Spieler, die kein Mikrofon mit ihren Gaming-Gerät verbunden haben, können trotzdem ein Gespräch mit einer anderen Person haben. Sie können Text in das Chatfenster eingeben und diese Nachrichten in Stimmnachrichten konvertieren. Dies ermöglicht einem Spieler, der nicht gut hört, das transkribierte Lesen von SMS von der Person, mit der sie einen Voice-Chat hat.
 
-Entwicklern in ID@Xbox und dem verwaltetem Partner-Programm stehen die Funktionen Text-zu-Sprache und Sprache-zu-Text als Teil der [Eingabehilfen für Spiele-Chat 2](../xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) im Xbox Live-Dienst zur Verfügung. Weitere Informationen finden Sie unter [Übersicht über Spiele-Chat 2](../xbox-live/multiplayer/chat/game-chat-2-overview.md).
+Entwicklern in ID@Xbox und dem verwaltetem Partner-Programm stehen die Funktionen Text-zu-Sprache und Sprache-zu-Text als Teil der [Eingabehilfen für Spiele-Chat 2](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility) im Xbox Live-Dienst zur Verfügung. Weitere Informationen finden Sie unter [Übersicht über Spiele-Chat 2](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md).
 
 ### <a name="sound-feedback"></a>Audiofeedback
 

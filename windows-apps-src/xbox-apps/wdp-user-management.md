@@ -5,16 +5,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: c934a88dd1825fb0111083d71eb25e477956d79c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 71c47767cf026b962f682fb30ca93758dbd5e227
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627365"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244076"
 ---
 #<a name="xbox-live-user-management"></a>Xbox Live-Benutzer-Management-
 
-**Anforderung**
+## <a name="request"></a>Anforderung
 
 Sie können die Liste der Benutzer auf der Konsole abrufen oder aktualisieren – Benutzer hinzufügen, entfernen, anmelden, abmelden oder vorhandene Benutzer ändern.
 
@@ -22,7 +22,7 @@ Sie können die Liste der Benutzer auf der Konsole abrufen oder aktualisieren �
 | ------------- |-----------------|
 | GET           | /ext/user |
 | PUT           | /ext/user |
-<br>
+
 
 **URI-Parameter**
 
@@ -45,7 +45,7 @@ PUT-Aufrufe müssen ein JSON-Array mit folgender Struktur enthalten:
   * SponsoredUser (optional): Ein boolescher Wert, der angibt, ob ein gesponserter Benutzer hinzugefügt werden soll.
   * (Optional) löschen: "bool", die angeben, dass dieser Benutzer aus der Konsole löschen
 
-###<a name="response"></a>Antwort ###
+## <a name="response"></a>Antwort
 
 **Antworttext**
 
@@ -60,7 +60,7 @@ GET-Aufrufe geben ein JSON-Array mit folgenden Eigenschaften zurück:
   * XboxUserId
   * SponsoredUser (optional)
   
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -70,6 +70,3 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 204                | Der PUT-Aufruf war erfolgreich, und die Benutzer auf der Konsole wurden aktualisiert. |
 | 4XX                | Verschiedene Fehler für ungültige Anforderungsdaten oder ein ungültiges Anforderungsformat |
 | 5XX                | Fehlercodes für unerwartete Fehler |
-<br>
-
-

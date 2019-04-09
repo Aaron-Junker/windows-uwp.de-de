@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ac958a93fcafbb33a9025196b49398e2e3269e55
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663645"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291838"
 ---
 # <a name="ambient-lighting"></a>Umgebungslicht
-
 
 Umgebungsbeleuchtung bietet konstante Beleuchtung für eine Szene. Sie leuchtet alle Objekteckpunkte gleich aus, da sie nicht von anderen Beleuchtungsfaktoren abhängig ist, wie der Eckpunktnormalen, der Richtung des Lichts, der Position der Lichtquelle, der Reichweite oder Abschwächung des Lichts. Umgebungsbeleuchtung ist in alle Richtungen konstant und färbt alle Pixel eines Objekts identisch. Sie lässt sich schnell berechnen, bewirkt jedoch, dass Objekte flach und unrealistisch aussehen.
 
@@ -33,7 +32,7 @@ Dabei gilt:
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | Globale Umgebungsfarbe                                                                                              |
 | Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | Dämpfung der ith-Beleuchtung. Siehe [Abschwächungs- und Spotlicht-Faktor](attenuation-and-spotlight-factor.md). |
 | Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | Spotlight-Faktor der ith-Beleuchtung. Siehe [Abschwächungs- und Spotlicht-Faktor](attenuation-and-spotlight-factor.md).  |
-| Summe               | n. a.           | n. a.           | Summe des Umgebungslichts                                                                                          |
+| Summe               | Nicht zutreffend           | Nicht zutreffend           | Summe des Umgebungslichts                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | Helle Umgebungsfarbe der ith-Beleuchtung                                                                              |
 
  
@@ -59,7 +58,7 @@ L<sub>ai</sub> ist die Umgebungsfarbe der ith-Beleuchtung in der Szene. Jedes Di
 
 In diesem Beispiel wird das Objekt durch die Farbe des Umgebungslichts der Szene und einer materiellen Umgebungsfarbe hervorgehoben.
 
-```
+```cpp
 #define GRAY_COLOR  0x00bfbfbf
 
 Ambient.r = 0.75f;

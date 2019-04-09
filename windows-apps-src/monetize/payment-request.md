@@ -4,17 +4,17 @@ title: Vereinfachen von Zahlungen mit der Payment Request-API
 ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Zahlung-Anforderung
-ms.openlocfilehash: e5fb5cead7833b8cc213c6633cae6cee0da3466b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607865"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334588"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>Vereinfachen von Zahlungen mit der Payment Request-API
 Die Zahlung anfordern-API für UWP-apps basiert auf der [W3C Zahlung: Anfordern von API-Spezifikation](https://w3c.github.io/browser-payment-api/). Er Ihnen die Möglichkeit, den Kassenvorgang in UWP-apps zu optimieren. Benutzer können über Auschecken beschleunigen, indem Zahlungsoptionen und Lieferadressen vorliegen, die bereits mit ihrem Microsoft-Konto gespeichert. Sie können Ihre Conversion-Rate zu erhöhen und verringern das Risiko von sicherheitsverletzungen von Daten, da die Zahlungsinformationen mit Token versehen werden. Ab Windows 10 Creators Update können können Benutzer ihre gespeicherten Zahlungsoptionen einfach über verschiedene Umgebungen in UWP-apps hinweg zu bezahlen.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 Bevor Sie mit der Zahlung anfordern-API beginnen, gibt es einige Dinge, die müssen Sie tun oder achten.
 
 ### <a name="getting-a-merchant-id"></a>Einen Händler-ID abrufen
@@ -30,37 +30,37 @@ In diesem Abschnitt wird veranschaulicht, wie Sie mit der [UWP Zahlung anfordern
 > [!Note]
 > Ersetzen Sie die **Händler-Id-aus--Portal des Verkäufers** Text mit der Händler-ID, die Sie aus dem Verkäufer Center empfangen.
 
-[!code-cs[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
+[!code-csharp[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
 
 ### <a name="2-pull-the-payment-details-together"></a>2. Rufen Sie die Zahlungsdetails zusammen. 
 
 Diese Details werden in der app für die Zahlung an den Benutzer angezeigt werden. 
 
-[!code-cs[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
+[!code-csharp[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
 
 ### <a name="3-include-the-sales-tax"></a>3. Enthalten Sie die Mehrwertsteuer. 
 
 > [!Important]
 > Die API nicht Elemente hinzufügen oder die Mehrwertsteuer berechnen möchten. Denken Sie daran, dass die Steuersätze variieren. Aus Gründen der Übersichtlichkeit verwenden wir einen hypothetische 9.5 % Steuersatz.
 
-[!code-cs[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
+[!code-csharp[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
 
 ### <a name="4-optional--add-discounts-or-other-modifiers-to-the-total"></a>4. (Optional)  Fügen Sie mit dem gesamten Rabatte oder andere Modifizierer hinzu. 
 
 Hier ist ein Beispiel für einen Rabatt für die Verwendung einer bestimmten Contoso Kreditkarte, die anzeigen-Elemente hinzufügen. (*Contoso* ist ein fiktiver Name.)
 
-[!code-cs[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
+[!code-csharp[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
 
 ### <a name="5-assemble-all-the-payment-details"></a>5. Zusammenstellen der Payment-Details an.
 
-[!code-cs[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
-[!code-cs[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
+[!code-csharp[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
+[!code-csharp[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
 
 ### <a name="6-submit-the-payment-request"></a>6. Die Zahlung anfordern. 
 
 Rufen Sie die **SubmitPaymentRequestAsync** Methode, um die Zahlung anfordern. Dadurch wird die Zahlung-app zeigt die verfügbaren Optionen.
 
-[!code-cs[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
+[!code-csharp[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
 
 Der Benutzer wird aufgefordert, sich mit ihrem Microsoft-Konto anzumelden.
 
@@ -70,7 +70,7 @@ Nachdem der Benutzer anmeldet, können sie auswählen, Zahlungsoptionen und Lief
 
 Ihre app wartet, bis der Benutzer tippen **Zahlen**, schließt dann die Reihenfolge.
 
-[!code-cs[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
+[!code-csharp[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
 
 Nach Abschluss der Zahlung erhält der Benutzer mit einem **Bestellung bestätigt** Bildschirm.
 

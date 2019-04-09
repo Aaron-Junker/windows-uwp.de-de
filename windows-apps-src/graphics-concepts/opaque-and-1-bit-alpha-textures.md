@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 74768202554a3eb49c0df8ee5f17a4fe5f979be8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594005"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291808"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>Nicht transparent und 1-Bit-alphatexturen
-
 
 Das Texturformat BC1 ist für Texturen, die undurchsichtig sind oder eine transparente Farbe haben.
 
@@ -29,7 +28,7 @@ Bei der Codierung mit drei Farben gibt es eine abgeleitete Farbe und der vierte 
 
 Das folgende Codebeispiel veranschaulicht den Algorithmus für die Entscheidung, ob eine Codierung mit drei oder vier Farben ausgewählt wird:
 
-```
+```cpp
 if (color_0 > color_1) 
 {
     // Four-color block: derive the other two colors. 
@@ -63,8 +62,8 @@ Im folgenden findet sich das Speicherlayout für den 8-Byte-Block (64-Bit):
 |--------------|----------------|
 | 0            | Farbe\_0       |
 | 1            | Farbe\_1       |
-| 2            | Bitmap-Word\_0 |
-| 3            | Bitmap-Word\_1 |
+| 2            | Bitmap Word\_0 |
+| 3            | Bitmap Word\_1 |
 
  
 
@@ -117,7 +116,7 @@ Bitmap-Word\_1 ist wie folgt angeordnet:
 
 Als Beispiel für die undurchsichtige Codierung wird davon ausgegangen, dass die Farben rot und schwarz an den Extremen liegen. Ist die Farbe Rot\_0 und Schwarz ist Farbe\_1. Es gibt vier interpolierte Farben, die den einheitlich verteilten Verlauf dazwischen bilden. Um die Werte für die 4x4-Bitmap zu ermitteln, werden die folgenden Berechnungen verwendet:
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 2/3 color_0 + 1/3 color_1
@@ -149,7 +148,7 @@ Wird das Bild weiß dargestellt, wäre das Texel als transparent codiert. Die RG
 
 Die Bitmap-Codierung für die Farben und die Transparenz wird unter Anwendung der folgenden Berechnungen bestimmt.
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 1/2 color_0 + 1/2 color_1

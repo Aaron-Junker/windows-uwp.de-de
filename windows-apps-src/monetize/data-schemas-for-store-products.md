@@ -5,12 +5,12 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, UWP, ExtendedJsonData, Store-Produkte, Schema
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 344052c18178a121fd9c8d133bdd1abe5a4ad886
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656105"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334839"
 ---
 # <a name="data-schemas-for-store-products"></a>Datenschemata für Store-Produkte
 
@@ -33,11 +33,11 @@ Diese Eigenschaften geben die vollständigen Daten für das entsprechende Objekt
 
 ## <a name="schema-for-storeproduct-storesku-storeavailability-and-storecollectiondata"></a>Schema für StoreProduct, StoreSku, StoreAvailability und StoreCollectionData
 
-Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) zurückgegeben wird. Die [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData), [StoreAvailability.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.ExtendedJsonData), und [StoreCollectionData.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata.ExtendedJsonData) Eigenschaften geben nur die Teile des Schemas zurück, die unter den Pfaden ```DisplaySkuAvailabilities\Sku```, ```DisplaySkuAvailabilities\Availabilities``` und ```DisplaySkuAvailabilities\Sku\CollectionData``` definiert sind.
+Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) zurückgegeben wird. Die [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData), [StoreAvailability.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.ExtendedJsonData), und [StoreCollectionData.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata.ExtendedJsonData) Eigenschaften geben nur die Teile des Schemas zurück, die unter den Pfaden `DisplaySkuAvailabilities\Sku`, `DisplaySkuAvailabilities\Availabilities` und `DisplaySkuAvailabilities\Sku\CollectionData` definiert sind.
 
 Ein Beispiel für eine JSON-formatierte Zeichenfolge von [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) finden Sie [in diesem Abschnitt](#product-example).
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json#L1-L729)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json#L1-L729)]
 
 <span id="product-example" />
 
@@ -45,15 +45,15 @@ Ein Beispiel für eine JSON-formatierte Zeichenfolge von [StoreProduct.ExtendedJ
 
 Das folgende Beispiel zeigt eine JSON-formatierte Zeichenfolge von der [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) Eigenschaft für die App.
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json#L1-L268)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json#L1-L268)]
 
 ## <a name="schema-for-storeapplicense-and-storelicense"></a>Schema für StoreAppLicense und StoreLicense
 
-Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) zurückgegeben wird. Die [StoreLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense.ExtendedJsonData) Eigenschaft gibt nur die Teile des Schemas zurück, die unter dem ```productAddOns``` Pfad definiert sind.
+Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) zurückgegeben wird. Die [StoreLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense.ExtendedJsonData) Eigenschaft gibt nur die Teile des Schemas zurück, die unter dem `productAddOns` Pfad definiert sind.
 
 Ein Beispiel für eine JSON-formatierte Zeichenfolge von [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) finden Sie [in diesem Abschnitt](#license-example).
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json#L1-L80)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json#L1-L80)]
 
 <span id="license-example" />
 
@@ -61,13 +61,13 @@ Ein Beispiel für eine JSON-formatierte Zeichenfolge von [StoreAppLicense.Extend
 
 Das folgende Beispiel zeigt eine JSON-formatierte Zeichenfolge von der [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) Eigenschaft für die App.
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json#L1-L28)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json#L1-L28)]
 
 ## <a name="schema-for-storepurchaseproperties"></a>Schema für StorePurchaseProperties
 
 Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StorePurchaseProperties.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData) zurückgegeben wird.
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640145"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291768"
 ---
 # <a name="transform-overview"></a>Übersicht über Transformationen
-
 
 Matrix-Transformationen kümmern sich um einen Großteil der einfachen Mathematik von 3D-Grafiken.
 
@@ -63,7 +62,7 @@ Matrizen werden in der Reihenfolge Zeile-Spalte geschrieben. Die folgende Matrix
 
 In C++ deklariert Direct3D Matrizen als zweidimensionale Arrays mit einer Matrix-Struktur. Das folgende Beispiel demonstriert die Initialisierung einer [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573)-Struktur zur Funktion als einheitliche Skalierungsmatrix (Skalierungsfaktor „s“.
 
-```
+```cpp
 D3DMATRIX scale = {
     5.0f,            0.0f,            0.0f,            0.0f,
     0.0f,            5.0f,            0.0f,            0.0f,
@@ -81,7 +80,7 @@ Die folgende Gleichung übersetzt den Punkt (x, y, z) zu einem neuen Punkt (x', 
 
 Sie können eine Übersetzungsmatrix manuell in C++ erstellen. Das folgende Beispiel zeigt den Quellcode für eine Funktion, die eine Matrix zum Übersetzen von Scheitelpunkten erstellt.
 
-```
+```cpp
 D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
     D3DXMATRIX ret;
 
@@ -121,7 +120,7 @@ In diesen Beispielmatrizen steht der griechische Buchstabe Theta für den Drehwi
 
 Der folgende Code zeigt eine Funktion für die Drehung um die x-Achse.
 
-```
+```cpp
     // Inputs are a pointer to a matrix (pOut) and an angle in radians.
     float sin, cos;
     sincosf(angle, &sin, &cos);  // Determine sin and cos of angle

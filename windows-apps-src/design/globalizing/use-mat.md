@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6dc07ff35cdd90deaddff06f89aa585aa63156a
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610115"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335028"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Verwenden des Multilingual App Toolkit 4.0
 
@@ -93,9 +93,7 @@ Neben der Ersetzung und Erweiterung von Zeichen stellt das Pseudo-Modul einen ei
 
 Im folgenden Textbeispiel „Hello World” wird die Pseudoübersetzung erweitert und nimmt 30 % mehr Platz auf dem Bildschirm ein. Anschließend wird die Ressourcenüberwachung angewendet.
 
-```
-"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"
-```
+`"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"`
 
 ### <a name="step-6-translate-your-app-into-selected-languages"></a>Schritt 6 Übersetzen Sie Ihre App in die ausgewählten Sprachen.
 

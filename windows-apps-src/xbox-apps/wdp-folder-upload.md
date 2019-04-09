@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
-ms.openlocfilehash: 0805dbeedcf66bc3596f3d284f51e8f177608396
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 870d203271cb75ecf5531106bb2c10b3736db9b9
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617605"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244046"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>Hochladen eines Ordners in das Entwicklungsverzeichnis
 
@@ -22,7 +22,7 @@ Sie können einen vollständigen Ordner unter der ID für bekannte Ordner in den
 Methode      | Anforderungs-URI
 :------     | :------
 POST | /api/app/packagemanager/upload 
-<br />
+
 **URI-Parameter**
 
 Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
@@ -30,7 +30,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 URI-Parameter      | Beschreibung
 :------     | :-----
 destinationFolder (erforderlich) | Der Name des Zielordners für den Ordner, der hochgeladen werden soll. Dieser Ordner wird unter „d:\developmentfiles\LooseApps“ auf der Konsole gespeichert. Der Ordnername muss base64-codiert sein, da er Pfadtrennzeichen enthalten kann, wenn der Ordner ein Unterordner unter „LooseApps“ ist.
-<br />
+
 
 **Anforderungsheader**
 
@@ -42,17 +42,17 @@ destinationFolder (erforderlich) | Der Name des Zielordners für den Ordner, der
 
 **Antwort**
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-200 | Möglich
+200 | Erfolgreich
 4XX | Fehlercodes
 5XX | Fehlercodes
-<br />
-**Gerätefamilien verfügbar**
+
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox
 

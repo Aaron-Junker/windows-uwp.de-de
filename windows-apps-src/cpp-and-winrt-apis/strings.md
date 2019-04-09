@@ -5,12 +5,12 @@ ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, string
 ms.localizationpriority: medium
-ms.openlocfilehash: 9572d9ba8b96d245b783535e159acbae9043ea3e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b6f1e12b82ec3ee41cdacc86fcc5f41d664262be
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649635"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618397"
 ---
 # <a name="string-handling-in-cwinrt"></a>String-Verarbeitung in C++/WinRT
 
@@ -26,7 +26,7 @@ public:
     Uri(winrt::hstring uri) const;
 ```
 
-Aber **hstring** hat [Konvertierungskonstruktoren](/uwp/api/windows.foundation.uri#hstringhstring-constructor), mit denen Sie damit arbeiten können, ohne sich dessen bewusst sein zu müssen. Hier ist ein Codebeispiel, das zeigt, wie man ein **Uri** aus einem Wide-String-Literal, aus einer Wide-String-Ansicht und aus einem **std::wstring** macht.
+Aber **hstring** hat [Konvertierungskonstruktoren](/uwp/cpp-ref-for-winrt/hstring#hstringhstring-constructor), mit denen Sie damit arbeiten können, ohne sich dessen bewusst sein zu müssen. Hier ist ein Codebeispiel, das zeigt, wie man ein **Uri** aus einem Wide-String-Literal, aus einer Wide-String-Ansicht und aus einem **std::wstring** macht.
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -60,7 +60,7 @@ public:
     winrt::hstring Domain();
 ```
 
-Aber auch dieses Detail ist optional (dank des [Konvertierungsoperators für **std::wstring_view**](/uwp/api/hstring#hstringoperator-stdwstringview) von **hstring**.
+Aber auch dieses Detail ist optional (dank des [Konvertierungsoperators für **std::wstring_view**](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view) von **hstring**.
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -91,7 +91,7 @@ hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
 tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
 ```
 
-Sie können die [**hstring::c_str-Funktion**](/uwp/api/windows.foundation.uri#hstringcstr-function) verwenden, um einen Standard Wide-String aus einem **hstring** zu erhalten (genau wie aus einem **std::wstring**).
+Sie können die [**hstring::c_str-Funktion**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) verwenden, um einen Standard Wide-String aus einem **hstring** zu erhalten (genau wie aus einem **std::wstring**).
 
 ```cppwinrt
 #include <iostream>
@@ -156,7 +156,7 @@ Sie werden feststellen, dass C++/WinRT-Eingabeparameter, die logisch **winrt::hs
 
 Das Ergebnis ist, dass Sie die Besonderheiten der Windows-Runtime-String-Verwaltung weitgehend ignorieren und mit dem, was Sie wissen, effizient arbeiten können. Wenn man bedenkt, wie stark Strings in der Windows-Runtime verwendet werden, ist dies sehr wichtig.
 
-# <a name="formatting-strings"></a>Strings formatieren
+## <a name="formatting-strings"></a>Strings formatieren
 Eine Option für die Stringformatierung ist **std::wstringstream**. Hier ist ein Beispiel, das eine einfache Debug-Trace-Meldung formatiert und anzeigt.
 
 ```cppwinrt

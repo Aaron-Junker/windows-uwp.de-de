@@ -6,15 +6,14 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e5ba10b8f0480f4d996840df26817e324111d8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c2f2638e93ecbe346cc5dccb503d94d926ddcdae
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613115"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335148"
 ---
 # <a name="create-and-manage-submissions"></a>Erstellen und Verwalten von Übermittlungen
-
 
 Verwenden der *Microsoft Store-Übermittlung API* Flügen, programmgesteuert abgefragt und erstellt Übermittlungen für apps, Add-ons und -Paket für Ihre oder Ihre Organisation Partner Center-Konto. Diese API ist hilfreich, wenn über Ihr Konto viele Apps oder Add-Ons verwaltet werden und Sie den Übermittlungsprozess für diese Ressourcen automatisieren und optimieren möchten. Diese API verwendet Azure Active Directory (Azure AD), um die Aufrufe von Ihrer App oder Ihrem Dienst zu authentifizieren.
 
@@ -82,7 +81,7 @@ Bevor Sie die Methoden in der Microsoft Store-Übermittlungs-API aufrufen, müss
 
 Befolgen Sie zum Abrufen des Zugriffstokens die Anweisungen unter [Aufrufe zwischen Diensten mithilfe von Clientanmeldeinformationen](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/), um eine HTTP POST-Anforderung an den ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```-Endpunkt zu senden. Hier ist ein Beispiel für eine Anforderung angegeben.
 
-```
+```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8

@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, Werbung, Advertising, AdControl, Problembehandlung, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 94af97e1e678c6ee92aaa731057c5f67185e25c5
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615915"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334658"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML- und C#-Handbuch zur Problembehandlung
 
@@ -22,7 +22,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
   * [Blackbox blinkt und ausgeblendet wird](#xaml-blackboxblinksdisappears)
   * [Anzeigen, die nicht aktualisiert](#xaml-adsnotrefreshing)
 
-* [C# -CODE](#csharp)
+* [C#](#csharp)
   * [Adcontrol-Element nicht angezeigt](#csharp-adcontrolnotappearing)
   * [Blackbox blinkt und ausgeblendet wird](#csharp-blackboxblinksdisappears)
   * [Anzeigen, die nicht aktualisiert](#csharp-adsnotrefreshing)
@@ -171,7 +171,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 2.  Stellen Sie sicher, dass **AdControl** instanziiert ist. Wenn **AdControl** nicht instanziiert wird, ist es nicht verfügbar.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
 3.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und die Ad-Einheit-ID, die Sie im Partner Center zu erhalten. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
 
@@ -236,7 +236,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     Durch diesen C#-Code wird die Fehlermeldung abgerufen und in **TextBlock** angezeigt.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
     Eine Blackbox wird am häufigsten dadurch verursacht, dass keine Anzeige verfügbar ist. Dieser Fehler bedeutet, dass durch die Anforderung keine Anzeige zurückgegeben werden kann.
 
@@ -253,7 +253,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     Das folgende Beispiel veranschaulicht, wie die **Refresh**-Methode aufgerufen wird.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
 
 3.  **AdControl** verhält sich normal. In einigen Fällen wird dieselbe Anzeige mehrmals in Folge angezeigt, wodurch der Eindruck entsteht, dass Anzeigen nicht aktualisiert werden.
 

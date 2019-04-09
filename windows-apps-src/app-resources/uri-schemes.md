@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632055"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320583"
 ---
 # <a name="uri-schemes"></a>URI-Schemen
 
@@ -98,9 +98,11 @@ ms-appx:///images/logo.png
 
 Die oben genannte URI kann tatsächlich eine Datei im aktuellen App-Paket mit folgendem physischen Dateinamen abrufen.
 
-```
+<blockquote>
+<pre>
 \Images\fr-FR\logo.scale-100_contrast-white.png
-```
+</blockquote>
+</pre>
 
 Sie können natürlich auch die gleiche physische Datei abrufen, indem Sie direkt mit dem vollständigen Namen darauf verweisen.
 

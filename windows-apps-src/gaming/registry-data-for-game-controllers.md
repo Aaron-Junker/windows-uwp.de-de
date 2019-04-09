@@ -2,16 +2,16 @@
 title: Registrierungsdaten für Spielecontroller
 description: Enthält Informationen zu den Daten, die Sie der Registrierung Ihres PCs hinzufügen können, damit der Controller UWP-Spielen verwenden kann.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 06/25/2018
+ms.date: 4/8/2019
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Eingabe, Registrierung, benutzerdefiniert
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633605"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244396"
 ---
 # <a name="registry-data-for-game-controllers"></a>Registrierungsdaten für Spielecontroller
 
@@ -555,7 +555,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Taste zuzuo
 
 <table>
     <tr>
-        <th>Quelle</th>
+        <th>Source</th>
         <th>Wertname</th>
         <th>Werttyp</th>
         <th>Erforderlich?</th>
@@ -610,7 +610,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Taste zuzuo
         <td>
             <p>Gibt die Switchposition an, die bewirkt, dass die zugeordnete Schaltfläche meldet, dass darauf geklickt wird. Die Positionswerte können eine der folgenden Zeichenfolgen sein:</p>
             <ul>
-                <li>Nach oben</li> 
+                <li>Nach oben</li>
                 <li>UpRight</li>
                 <li>Nach rechts</li>
                 <li>DownRight</li>
@@ -635,7 +635,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
 
 <table>
     <tr>
-        <th>Quelle</th>
+        <th>Source</th>
         <th>Wertname</th>
         <th>Werttyp</th>
         <th>Erforderlich?</th>
@@ -806,7 +806,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
 
 <table>
     <tr>
-        <th>Quelle</th>
+        <th>Source</th>
         <th>Wertname</th>
         <th>Werttyp</th>
         <th>Wert-Info</th>
@@ -820,7 +820,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>"TwoWay"</b>, <b>FourWay</b>, oder <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>FourWay</b> oder <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -1121,10 +1121,10 @@ Der **Achsen**-Schlüssel ordnet jeder der Achsenpositionen des **RawGameControl
 
 ### <a name="switch-labels"></a>Switch-Beschriftungen
 
-Der **Switches**-Schlüssel ordnet Switchpositionen Beschriftungen zu. Die Werte dieser Namenskonvention sind folgendermaßen: um eine Position eines Switches zu bezeichnen, dessen Index *x* im **RawGameController**-Switcharray ist, fügen Sie folgende Werte unter dem **Switch**-Unterschlüssel hinzu: 
+Der **Switches**-Schlüssel ordnet Switchpositionen Beschriftungen zu. Die Werte dieser Namenskonvention sind folgendermaßen: um eine Position eines Switches zu bezeichnen, dessen Index *x* im **RawGameController**-Switcharray ist, fügen Sie folgende Werte unter dem **Switch**-Unterschlüssel hinzu:
 
-* SwitchxUp 
-* SwitchxUpRight 
+* SwitchxUp
+* SwitchxUpRight
 * SwitchxRight
 * SwitchxDownRight
 * SwitchxDown
@@ -1132,7 +1132,7 @@ Der **Switches**-Schlüssel ordnet Switchpositionen Beschriftungen zu. Die Werte
 * SwitchxUpLeft
 * SwitchxLeft
 
-Die folgende Tabelle zeigt einen Beispielsatz an Bezeichnungen für Switchpositionen eines 4-Weg-Switches an, der auf dem Index 0 im **RawGameController** erscheint: 
+Die folgende Tabelle zeigt einen Beispielsatz an Bezeichnungen für Switchpositionen eines 4-Weg-Switches an, der auf dem Index 0 im **RawGameController** erscheint:
 
 <table>
     <tr>
@@ -1232,7 +1232,7 @@ Die folgende Tabelle zeigt einen Beispielsatz an Bezeichnungen für Switchpositi
 
 Zur Veranschaulichung, wie diese Zuordnungen und Werte gemeinsam eingesetzt werden, sehen Sie hier eine Registrierung für ein allgemeines **RacingWheel**:
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004]
@@ -1347,6 +1347,6 @@ Windows Registry Editor Version 5.00
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Windows.Gaming.Input-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF-Dateien](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

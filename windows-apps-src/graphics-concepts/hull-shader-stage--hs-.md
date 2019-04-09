@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ec132ccb3099f7b5c9f4763a2b276bf6270da859
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601055"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291648"
 ---
 # <a name="hull-shader-hs-stage"></a>Hullshaderphase (HS)
-
 
 Die Hull-Shader-Stufe ist eine der Tesselationsstufen, auf der eine durchgehende Fläche eines Modell effizient in vielen Dreiecke unterteilt wird. Die Hull-Shader-Stufe (HS-Stufe) erzeugt einen Geometriepatch (und Patchkonstanten), der jedem Eingabepatch (Quadrat, Dreieck oder Linie) entspricht. Ein Hull-Shader wird einmal pro Patch aufgerufen. Er transformiert Eingabekontrollpunkte, die eine Oberfläche niederer Ordnung definieren, in Kontrollpunkte, die einen Patch bilden. Er führt außerdem pro Patch einige Berechnungen aus, um der [Tessellatorstufe (TS-Stufe)](tessellator-stage--ts-.md) und der [Domain-Shader-Stufe (DS-Stufe)](domain-shader-stage--ds-.md) Daten bereitzustellen.
 
@@ -52,7 +51,7 @@ Ein Hull-Shader arbeitet in zwei Stufen – einer Kontrollpunktstufe und einer P
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Beispiel
 
 
-```
+```hlsl
 [patchsize(12)]
 [patchconstantfunc(MyPatchConstantFunc)]
 MyOutPoint main(uint Id : SV_ControlPointID,

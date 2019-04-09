@@ -4,170 +4,97 @@ title: Zielbestimmung
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e8425232512650d5c80bf6fee9745b261aee8d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c05b6686d31606a9510b1433339dc8829a52893
+ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646055"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59247178"
 ---
-# <a name="guidelines-for-targeting"></a>Richtlinien für die Zielbestimmung
+# <a name="guidelines-for-touch-targets"></a>Richtlinien für die Touch-Ziele
 
+Alle Elemente der interaktive Benutzeroberfläche in Ihrer Anwendung für die universelle Windows-Plattform (UWP) muss groß genug ist, damit Benutzer genau zugreifen und diese verwenden, unabhängig von Gerät-Typ oder die Eingabe-Methode.
 
-Die Touchzielbestimmung in Windows verwendet den vollständigen Kontaktbereich jedes Fingers, der von einem Touchdigitalisierungsgerät erkannt wird. Die größere und komplexere Menge an Eingabedaten, die vom Digitalisierungsgerät gemeldet wird, wird verwendet, um die Präzision bei der Ermittlung des durch den Benutzer (höchstwahrscheinlich) beabsichtigten Ziels zu erhöhen.
+Unterstützung von Touch-Eingabe (und welche relativ unpräzise die Touch-Bereich "Kontakt") eine weitere Optimierung im Hinblick auf Größe und Steuerelement Ziel-Layout erfordert, wie die umfangreicher und komplexere Satz von Eingabedaten, die durch den Touch Digitizer gemeldet verwendet wird, um zu bestimmen, die des Benutzers (oder wahrscheinlichsten) beabsichtigte Ziel.
 
-> **Wichtige APIs:** [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+Alle UWP-Steuerelemente wurden entworfen mit Standard-Touch-Ziel-Größen und Layouts, mit denen Sie zum Erstellen von visuell mit Lastenausgleich und ansprechende apps, die vertraut, einfach zu verwenden, und inspirieren vertrauen.
 
-Dieses Thema beschreibt die Verwendung von Kontaktgeometrie zur Bestimmung von Touchzielen und enthält bewährte Methoden für Ziele in UWP-Apps.
+In diesem Thema beschreiben wir dieses Standardverhalten können Sie Ihre app für maximale benutzerfreundlichkeit mit Plattformsteuerelemente und benutzerdefinierte Steuerelemente (Ihre app diese erforderlich ist) entwerfen.
 
-## <a name="measurements-and-scaling"></a>Maße und Skalierung
+> **Wichtige APIs:** [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
+## <a name="fluent-standard-sizing"></a>Fluent-Standard-größenanpassung
 
-Um die Konsistenz bei unterschiedlichen Bildschirmgrößen und Pixeldichten zu wahren, sind alle Zielgrößen in physischen Einheiten (Millimeter) angegeben. Physische Einheiten können mit der folgenden Gleichung in Pixel konvertiert werden:
+*Fluent-Standard-größenanpassung* wurde entwickelt, um ein Gleichgewicht zwischen Informationen Dichte Komfort für Benutzer bereitstellen. Richten Sie effektiv alle Elemente auf dem Bildschirm zu einem effektiven Pixeln von 40 x 40 (Epx)-Ziel, das basiert, können Sie UI-Elemente an ein Raster ausrichten und entsprechend skalieren zum Skalieren der Ebene von System.
 
-Pixel = Pixeldichte × Maße
+> [!NOTE]
+>Weitere Informationen zur effektiven Pixeln und Skalieren von Daten zu erhalten, finden Sie unter [Einführung in die UWP-app-Design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>
+> Weitere Informationen zum System Ebene skalieren finden Sie unter [Ausrichtung, Margin und Padding](../layout/alignment-margin-padding.md).
 
-Die folgenden Beispiele verwenden diese Formel, um eine Zielgröße von 9 mm auf einem Display mit 135 PPI (Pixel Per Inch, Pixel pro Zoll) und einem einfachen Skalierungsplateau in die Pixelgröße umrechnen:
+## <a name="fluent-compact-sizing"></a>Fluent-Compact-größenanpassung
 
-Pixel = 135 PPI × 9 mm
+Anwendungen können anzeigen, ein höheres Maß an informationsdichte mit *Fluent Compact größenanpassung*. Compact größenanpassung richtet die UI-Elemente für ein 32 x 32 Epx-Ziel, können Sie UI-Elemente, die an einer engeren Raster und festen Dezimalstellen, die abhängig von Ihrer System Ebene Skalierung ausgerichtet.
 
-Pixel = 135 PPI × (0,03937 Zoll pro mm × 9 mm)
+### <a name="examples"></a>Beispiele
 
-Pixel = 135 PPI × 0,35433 Zoll
+Compact größenanpassung kann auf der Seite oder Raster angewendet werden.
 
-Pixel = 48 Pixel
+### <a name="page-level"></a>Auf Seitenebene
 
-Dieses Ergebnis muss an jedes der im System definierten Skalierungsplateaus angepasst werden.
+```xaml
+<Page.Resources>
+    <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+</Page.Resources>
+```
 
-## <a name="thresholds"></a>Schwellenwerte
+### <a name="grid-level"></a>Rasterebene
 
+```xaml
+<Grid>
+    <Grid.Resources>
+        <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+    </Grid.Resources>
+</Grid>
+```
 
-Entfernungs- und Zeitschwellenwerte können verwendet werden, um das Ergebnis einer Interaktion zu ermitteln.
+## <a name="target-size"></a>Zielgröße
 
-Wenn zum Beispiel ein Aufsetzen erkannt wird, wird ein Tippen registriert, wenn das Objekt in weniger als 2,7 mm Entfernung vom Aufsetzpunkt gezogen wird und die Berührung innerhalb von 0,1 Sekunden oder kürzer vom Aufsetzen aufgehoben wird. Wenn der Finger über den Schwellenwert von 2,7 mm hinaus bewegt wird, wird das Objekt gezogen und entweder ausgewählt oder verschoben (weitere Informationen finden Sie unter [Richtlinien für Querziehen](guidelines-for-cross-slide.md)). Wenn Sie abhängig von Ihrer App den Finger länger als 0,1 Sekunde gedrückt halten, kann dadurch die Ausführung einer Interaktion mit automatischem Einblenden durch das System ausgelöst werden (weitere Informationen finden Sie unter [Richtlinien für visuelles Feedback](guidelines-for-visualfeedback.md)).
+Legen Sie im Allgemeinen die Zielgröße Touch 7,5 mm quadratischen Bereich (40 x 40 Pixel auf einem 135 PPI-Bildschirm bei einem 1,0 x Plateau Skalierung). Richten UWP-Steuerelemente in der Regel mit 7,5 mm Ziel (Dies kann basierend auf das bestimmte Steuerelement und alle gängige Verwendungsmuster variieren). Finden Sie unter [Steuern der Größe und Dichte](../style/spacing.md) Weitere Details.
 
-## <a name="target-sizes"></a>Zielgrößen
+Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jeweiligen Szenarios anpassen. Hier sind einige Punkte zu berücksichtigen:
 
-
-Verwenden Sie für Ihr Touchziel grundsätzlich mindestens eine Fläche von 9 x 9 mm (48 x 48-Pixel auf einem 135 PPI-Display bei einem Skalierungsplateau von 1,0). Verwenden Sie keine Touchziele mit weniger als 7 x 7 mm.
-
-Im folgenden Diagramm wird gezeigt, dass die Größe eines Ziels in der Regel eine Kombination aus visuellem Ziel, tatsächlicher Zielgröße und dem Abstand zwischen dem tatsächlichen Ziel und den anderen potenziellen Zielen ist.
-
-![Diagramm mit den empfohlenen Größen für visuelles Ziel, tatsächliches Ziel und Abstand](images/targeting-size.png)
-
-Die folgende Tabelle enthält die Mindestgrößen und die empfohlenen Größen für die Komponenten eines Touchziels:
-
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Zielkomponente</th>
-<th align="left">Mindestgröße</th>
-<th align="left">Empfohlene Größe</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Abstand</td>
-<td align="left">2 mm</td>
-<td align="left">Nicht zutreffend</td>
-</tr>
-<tr class="even">
-<td align="left">Visuelle Zielgröße</td>
-<td align="left">&lt;60 % der tatsächlichen Größe</td>
-<td align="left">90 – 100 % der tatsächlichen Größe
-<p>Visuelle Ziele mit weniger als 4,2 x 4,2 mm (60 % der empfohlenen Mindestgröße von 7 x 7 mm) werden von den meisten Benutzern nicht als toucheingabefähiges Element erkannt.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">Tatsächliche Zielgröße</td>
-<td align="left">7 x 7 mm</td>
-<td align="left">Mindestens 9 x 0 mm (48 x 48 Pixel @ 1x)</td>
-</tr>
-<tr class="even">
-<td align="left">Gesamtzielgröße</td>
-<td align="left">11 x 11 mm (ca. 60 px: drei 20-px-Rastereinheiten @ 1x)</td>
-<td align="left">13,5 x 13,5 mm (72 x 72 px @ 1x)
-<p>Dies impliziert, dass die Größe des tatsächlichen Ziels und des Abstands zusammen größer sein muss als die jeweiligen Mindestgrößen.</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jeweiligen Szenarios anpassen. In die Empfehlungen sind unter anderem die folgenden Überlegungen eingeflossen:
-
--   Die Häufigkeit des Workflows: Markieren Sie Ziele, die wiederholt oder häufig größer als die minimale Größe gedrückt werden.
--   Fehler-Folge: Ziele, die schwerwiegende Folgen haben, wenn der Fehler verwendete sollte größer Auffüllung und weiter von den Rand des Inhaltsbereichs platziert werden. Dies gilt insbesondere für Ziele, die häufig berührt werden.
--   Position im Inhaltsbereich
--   Formfaktor und Bildschirmgröße
--   Fingerhaltung
--   Fingereingabevisualisierungen
--   Hardware und Fingereingabe-Digitalisierungsgeräte
-
-## <a name="targeting-assistance"></a>Unterstützung bei der Zielbestimmung
-
-
-Windows unterstützt die Zielbestimmung für Szenarien, in denen die hier genannten Empfehlungen für Mindestgröße und Abstand nicht anwendbar sind. Dies gilt beispielsweise für Hyperlinks auf einer Webseite, Kalendersteuerelemente, Dropdownlisten und Kombinationsfelder oder für eine Textauswahl.
-
-Diese Verbesserungen der Zielbestimmungsplattform und des Verhaltens der Benutzeroberfläche bewirken in Kombination mit visuellem Feedback (Mehrdeutigkeitsvermeidungs-UI) mehr Genauigkeit und Sicherheit für die Benutzer. Weitere Informationen finden Sie unter [Richtlinien für visuelles Feedback](guidelines-for-visualfeedback.md).
-
-Wenn ein berührbares Element kleiner als die empfohlene Mindestzielgröße sein muss, können Sie mit den folgenden Techniken die dadurch entstehenden Probleme bei der Zielbestimmung minimieren.
-
-## <a name="tethering"></a>Anzeigen einer Verbindungslinie
-
-
-Durch Anzeigen einer Verbindungslinie (zwischen einem Kontaktpunkt und dem Begrenzungsrechteck eines Objekts) können Sie Benutzer visuell darauf hinweisen, dass sie mit einem Objekt verbunden sind und mit diesem interagieren, obwohl kein direkter Kontakt zwischen Eingabekontakt und Objekt besteht. Dies ist in folgenden Situationen möglich:
-
--   Ein Berührungskontakt wurde zuerst innerhalb eines Näherungsschwellenwerts für ein Objekt erkannt, und das Objekt wurde als wahrscheinlichstes Ziel des Kontakts identifiziert.
--   Ein Berührungskontakt wurde von einem Objekt wegbewegt, aber der Kontakt befindet sich noch innerhalb eines Näherungsschwellenwerts.
-
-Dieses Feature wird für Entwickler von UWP-Apps, die JavaScript verwenden, nicht zur Verfügung gestellt.
-
-## <a name="scrubbing"></a>Scrubbing
-
-
-Beim Scrubbing wird eine beliebige Stelle in einem Feld mit Zielen berührt, und das gewünschte Ziel wird durch Ziehen ausgewählt. Der Finger wird dabei erst gehoben, wenn er sich auf dem gewünschten Ziel befindet. Dies wird auch als "Loslassaktivierung" bezeichnet, bei der das Objekt aktiviert wird, das zuletzt berührt wurde, als der Finger vom Bildschirm gehoben wurde.
-
-Halten Sie sich an die folgenden Richtlinien, wenn Sie Scrubbinginteraktionen entwerfen:
-
--   Scrubbing wird in Verbindung mit der Mehrdeutigkeitsvermeidungs-UI verwendet. Weitere Informationen finden Sie unter [Richtlinien für visuelles Feedback](guidelines-for-visualfeedback.md).
--   Die empfohlene Mindestgröße für ein Scrubbing-Fingereingabeziel beträgt 20 px (3,75 mm @ 1x Größe).
--   Scrubbing hat Vorrang, wenn es auf einer Oberfläche ausgeführt wird, die Verschieben unterstützt (beispielsweise eine Webseite).
--   Scrubbingziele sollten nah beieinander liegen.
--   Eine Aktion wird abgebrochen, wenn Benutzer einen Finger vom Scrubbingziel wegziehen.
--   Das Anzeigen einer Verbindungslinie zu einem Scrubbingziel wird angegeben, wenn die vom Ziel ausgeführten Aktionen nicht destruktiv sind (beispielsweise das Wechseln zwischen Daten in einem Kalender).
--   Das Anzeigen von Verbindungslinien wird in einer einzigen Richtung angegeben: horizontal oder vertikal.
+- Häufigkeit von Workflows – markieren Sie Ziele, die wiederholt oder häufig größer als die minimale Größe gedrückt werden.
+- Fehler Folge - Ziele, die schwerwiegende Konsequenzen, wenn Fehler verwendete sollte größer Auffüllung und weiter von den Rand des Inhaltsbereichs platziert werden. Dies gilt insbesondere für Ziele, die häufig berührt werden.
+- Die Position im Bereich.
+- Bilden Sie Faktor und der Bildschirmgröße.
+- Sicherheitsstatus der Finger.
+- Berühren Sie Visualisierungen.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
+- [Einführung in das UWP-App-Design](../basics/design-and-ui-intro.md)
+- [Größe des Steuerelements und Dichte](../style/spacing.md)
+- [Ausrichtung, Rand, Abstand](../layout/alignment-margin-padding.md)
 
-**Beispiele**
-* [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+### <a name="samples"></a>Proben
 
-**Archivbeispiele**
-* [Eingabe: XAML-benutzerbeispiel Eingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Eingabe: Beispiel zu Leistungstests in Touch Treffer](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML Bildlauf, schwenken und Zoomen Beispiel](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Eingabe: Vereinfachte Freihand-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Eingabe: Beispiel für Windows 8-Gesten](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Eingabe: Manipulationen und Beispiel für Bewegungen (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX-Touch-Eingabe-Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+- [Einfaches Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+- [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
- 
+### <a name="archive-samples"></a>Archivbeispiele
 
-
-
-
+- [Eingabe: XAML-benutzerbeispiel Eingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
+- [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
+- [Eingabe: Beispiel zu Leistungstests in Touch Treffer](https://go.microsoft.com/fwlink/p/?linkid=231590)
+- [Beispiel für XAML-Bildlauf, -Verschiebung und -Zoom](https://go.microsoft.com/fwlink/p/?linkid=251717)
+- [Eingabe: Vereinfachte Freihand-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
+- [Eingabe: Beispiel für Windows 8-Gesten](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+- [Eingabe: Manipulationen und Beispiel für Bewegungen (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+- [Beispiel für die DirectX-Fingereingabe](https://go.microsoft.com/fwlink/p/?LinkID=231627)

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dcf0176e20e498f8c6744a542010b5197689b8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5b628c4d473c2a74eb63a17c12b17ade43c11964
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639935"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244416"
 ---
 # <a name="item-containers-and-templates"></a>Elementcontainer und Vorlagen
 
@@ -54,7 +54,7 @@ Nachstehend finden Sie den XAML-Code zur Erstellung dieser Elemente. Die Vorlage
                 <Image Source="Assets/placeholder.png" Width="44" Height="44"
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Black"
-                           FontSize="15" Grid.Column="1"
+                           FontSize="14" Grid.Column="1"
                            VerticalAlignment="Center"
                            Padding="0,0,54,0"/>
             </Grid>
@@ -73,7 +73,7 @@ Nachstehend finden Sie den XAML-Code zur Erstellung dieser Elemente. Die Vorlage
 </ListView>
 ```
  
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 - Es wird davon ausgegangen, dass Sie wissen, wie ein Listenansicht-Steuerelement verwendet wird. Weitere Informationen finden Sie in dem Artikel [ListView und GridView](listview-and-gridview.md).
 - Weiterhin wird vorausgesetzt, dass Sie die Grundlagen zu Stilen und Vorlagen kennen, auch, wie Sie einen Stil inline oder als Ressource verwenden. Weitere Informationen finden Sie unter [Formatieren von Steuerelementen](xaml-styles.md) und [Steuerelementvorlagen](control-templates.md).
@@ -86,7 +86,7 @@ Anschließend wird der **Liste** für jede benannte Farbe in der Klasse [Colors]
 
 Nachstehend finden Sie den Code, mit dem die Klasse definiert und die `NamedColors`-Liste mit Einträgen gefüllt wird.
 
-**C# -CODE**
+**C#**
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
@@ -333,12 +333,12 @@ Um andere ListViewItemPresenter-Eigenschaften zu ändern, die nicht per Vorlage 
 > [!NOTE]
 > Mit den Standardformaten von ListViewItem und GridViewItem werden zahlreiche Eigenschaften für ListViewItemPresenter festgelegt. Es wird empfohlen, mit einer Kopie des Standardstils zu beginnen und nur die Eigenschaften zu ändern, bei denen dies erforderlich ist. Andernfalls werden die visuellen Elemente wahrscheinlich nicht so wie angezeigt, die Sie es erwarten, da einige Eigenschaften nicht richtig festgelegt sein werden.
 
-**Um eine Kopie der Standardvorlage in Visual Studio erstellen**
+**So erstellen Sie eine Kopie der Standardvorlage in Visual Studio**
  
 1. Öffnen Sie das Dokumentgliederungsfenster (**Ansicht > Andere Fenster > Dokumentgliederung**).
 2. Wählen Sie das Listen- oder Rasterelement aus, das Sie ändern möchten. In diesem Beispiel ändern Sie das `colorsGridView`-Element.
 3. Klicken mit der rechten Maustaste, und wählen Sie **Weitere Vorlagen bearbeiten > Erzeugten Elementcontainer bearbeiten (ItemContainerStyle) > Kopie bearbeiten**.
-    ![Visual Studio-editor](images/listview-itemcontainerstyle-vs.png)
+    ![Visual Studio-Editor](images/listview-itemcontainerstyle-vs.png)
 4. Geben Sie im Dialogfeld „Stilressource erstellen“ einen Namen für den Stil ein. In diesem Beispiel verwenden Sie `colorsGridViewItemStyle`.
     ![Visual Studio-Dialogfeld „Stilressource erstellen“ (images/listview-style-resource-vs.png)
 
@@ -430,13 +430,13 @@ Diese Tabelle enthält häufig verwendete visuelle Zustände und Auswahlzuständ
 
 Zustand/Pinselname | Inlineformat | Overlaystil
 ------------|--------------|--------------
-<b>– Normal</b><ul><li><b>CheckBoxBrush = "Red"</b></li></ul> | ![Inlineelementauswahl (normal)](images/listview-item-normal.png) | ![Overlayelementauswahl (normal)](images/gridview-item-normal.png)
-<b>PointerOver</b><ul><li><b>PointerOverForeground = "DarkOrange"</b></li><li><b>PointerOverBackground = "MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline-Elementauswahlzeiger über](images/listview-item-pointerover.png) | ![Overlyelementauswahl (Hover)](images/gridview-item-pointerover.png)
-<b>Gedrückt</b><ul><li><b>PressedBackground = "LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Inlineelementauswahl (gedrückt)](images/listview-item-pressed.png) | ![Overlayelementauswahl (gedrückt)](images/gridview-item-pressed.png)
-<b>ausgewählt</b><ul><li><b>SelectedForeground = "Navy"</b></li><li><b>SelectedBackground = "Khaki"</b></li><li><b>CheckBrush = "Green"</b></li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inlineelementauswahl aktiviert](images/listview-item-selected.png) | ![Overlayelementauswahl aktiviert](images/gridview-item-selected.png)
-<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground = "Lavendel"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (nur Overlay)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inline-Element Auswahlzeiger über ausgewählt](images/listview-item-pointeroverselected.png) | ![Overlayelementauswahl (Hover)](images/gridview-item-pointeroverselected.png)
-<b>PressedSelected</b><ul><li><b>SelectedPressedBackground = "MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (nur Overlay)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inlineelementauswahl (markiert)](images/listview-item-pressedselected.png) | ![Overlayelementauswahl (markiert)](images/gridview-item-pressedselected.png)
-<b>Mit Fokus</b><ul><li><b>FocusBorderBrush = "Crimson"</b></li><li><b>FocusSecondaryBorderBrush = "Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inlineelementauswahl (Vordergrund)](images/listview-item-focused.png) | ![Overlayelementauswahl (Vordergrund)](images/gridview-item-focused.png)
+<b>Normal</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![Inlineelementauswahl (normal)](images/listview-item-normal.png) | ![Overlayelementauswahl (normal)](images/gridview-item-normal.png)
+<b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline-Elementauswahlzeiger über](images/listview-item-pointerover.png) | ![Overlyelementauswahl (Hover)](images/gridview-item-pointerover.png)
+<b>Gedrückt</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Inlineelementauswahl (gedrückt)](images/listview-item-pressed.png) | ![Overlayelementauswahl (gedrückt)](images/gridview-item-pressed.png)
+<b>Ausgewählt</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inlineelementauswahl aktiviert](images/listview-item-selected.png) | ![Overlayelementauswahl aktiviert](images/gridview-item-selected.png)
+<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (nur Overlay)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inline-Element Auswahlzeiger über ausgewählt](images/listview-item-pointeroverselected.png) | ![Overlayelementauswahl (Hover)](images/gridview-item-pointeroverselected.png)
+<b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (nur Overlay)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inlineelementauswahl (markiert)](images/listview-item-pressedselected.png) | ![Overlayelementauswahl (markiert)](images/gridview-item-pressedselected.png)
+<b>Im Vordergrund</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inlineelementauswahl (Vordergrund)](images/listview-item-focused.png) | ![Overlayelementauswahl (Vordergrund)](images/gridview-item-focused.png)
 
 ListViewItemPresenter hat noch andere Pinseleigenschaften für Datenplatzhalter und Drag&Drop-Zustände. Wenn Sie in der Listenansicht inkrementelles Laden oder Drag&Drop verwenden, sollten Sie überlegen, ob Sie auch diese zusätzlichen Pinseleigenschaften ändern müssen. Informationen finden Sie in der ListViewItemPresenter-Klasse mit einer vollständigen Liste der Eigenschaften, die Sie ändern können. 
 
@@ -451,7 +451,7 @@ Wie bereits erwähnt, hat die Anzahl von UIElements in einer Elementvorlage erhe
 
 Um eine erweiterte XAML-Vorlage anzupassen, müssen Sie eine Kopie von Ihrer App erstellen und die **ItemContainerStyle**-Eigenschaft auf diese Kopie festlegen.
 
-**Um die erweiterten Vorlage zu kopieren.**
+**So kopieren Sie die erweiterte Vorlage**
 1. Legen Sie die ItemContainerStyle-Eigenschaft für Ihren ListView oder GridView wie hier dargestellt fest.
     ```xaml
     <ListView ItemContainerStyle="{StaticResource ListViewItemExpanded}"/>
@@ -470,5 +470,5 @@ Eine Kopie der erweiterten Vorlage von generic.xaml wird in Ihrer App erstellt, 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Listen](lists.md)
-- [ListView und GridView](listview-and-gridview.md)
+- [ListView und Gitteransicht](listview-and-gridview.md)
 

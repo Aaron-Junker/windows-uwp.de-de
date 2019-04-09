@@ -5,12 +5,12 @@ keywords: Windows 10, UWP, Abonnements, Lizenzen, Apps, Add-Ons, In-App-Einkäu
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b937ca61110452e233061179c398cae0d047686e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589985"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335058"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Aktivieren von Abonnement-Add-Ons für die App
 
@@ -48,7 +48,7 @@ Gehen Sie folgendermaßen vor, um den Kauf von Abonnement-Add-Ons in Ihrer App z
         > [!NOTE]
         > Jeder Kunde kann nur einmal eine kostenlose Testversion für ein Abonnement-Add-On erwerben. Nachdem ein Kunde eine kostenlose Testversion für ein Abonnement erworben hat, verhindert der Store, dass derselbe Kunde das gleiche kostenlose Testabonnement erneut erhält.
 
-    * [Sichtbarkeit](../publish/set-add-on-pricing-and-availability.md#visibility): Wenn Sie einen Test-Add-On, die Sie nur zum Testen der in-app-Käufe für Ihr Abonnement verwenden erstellen, es wird empfohlen, dass Sie eine der Auswählen der **ausgeblendet, die in den Store** Optionen. Andernfalls können Sie die beste Sichtbarkeitsoption für Ihr Szenario auswählen.
+    * [Visibility](../publish/set-add-on-pricing-and-availability.md#visibility): Wenn Sie einen Test-Add-On, die Sie nur zum Testen der in-app-Käufe für Ihr Abonnement verwenden erstellen, es wird empfohlen, dass Sie eine der Auswählen der **ausgeblendet, die in den Store** Optionen. Andernfalls können Sie die beste Sichtbarkeitsoption für Ihr Szenario auswählen.
 
     * [Preise](../publish/set-add-on-pricing-and-availability.md?#pricing): Wählen Sie den Preis für Ihr Abonnement in diesem Abschnitt. Der können den Abonnementszeitraum nach der Veröffentlichung des Add-Ons nicht mehr erhöhen. Sie können den Preis jedoch später senken.
         > [!IMPORTANT]
@@ -88,14 +88,14 @@ In diesem Beispiel wird veranschaulicht, wie Sie den Kauf eines bekannten Abonne
 4. Schließlich ruft der Code die Methode [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) auf, um den Kauf des Abonnements anzufordern. Wenn eine Testversion für das Abonnement verfügbar ist, wird diese dem Kunden zum Kauf angeboten. Andernfalls wird das vollständige Abonnement zum Kauf angeboten.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
 
 ### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>Abrufen von Informationen zu Abonnement-Add-Ons für die aktuelle App
 
 In diesem Codebeispiel wird veranschaulicht, wie Sie Informationen für alle Abonnement-Add-Ons abrufen, die in Ihrer App verfügbar sind. Um diese Informationen zu erhalten, verwenden Sie zunächst die [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync)-Methode, um eine Sammlung der [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct)-Objekte für alle in der App verfügbaren Add-Ons abzurufen. Rufen Sie dann die [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) für jedes Produkt und ab und verwenden Sie die Eigenschaften [**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) und [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo), um auf die Abonnementinformationen zuzugreifen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
 
 <span id="manage-subscriptions" />
 

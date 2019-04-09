@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bd59c1d32b4f09b58b7e78281e468fbb00a777d9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629465"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291878"
 ---
 # <a name="stencil-buffers"></a>Schablonenpuffer
-
 
 Ein *Schablonenpuffer* wird verwendet, um die Pixel in einem Bild zu maskieren und Spezialeffekte zu erzeugen. Die Maske steuert, ob das Pixel gezeichnet wird oder nicht. Diese Spezialeffekte umfassen Zusammensetzungen, Auflösungen, Rasterungen, Ein- und Ausblendungen, Wischungen, Umrisse und Silhouetten sowie das Feature „zweiseitige Schablone”. Einige der häufigeren Effekte sind unten dargestellt.
 
@@ -25,7 +24,6 @@ Informationen des Schablonenpuffers sind in die Z-Pufferdaten eingebettet.
 
 ## <a name="span-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanhow-the-stencil-buffer-works"></a><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>Funktionsweise von der Stencilpuffer
 
-
 Direct3D führt einen pixelweisen Test der Inhalte des Schablonenpuffers durch. Für jedes Pixel in der Zieloberfläche wird ein Test mit dem entsprechenden Wert im Schablonenpuffer, einem Schablonenreferenzwert und einem Schablonenmaskenwert durchgeführt. Wenn der Test erfolgreich ist, führt Direct3D eine Aktion aus. Der Test wird in den folgenden Schritten ausausgeführt:
 
 1.  Durchführen einer bitweisen AND-Operation des Schablonenreferenzwerts mit der Schablonenmaske.
@@ -34,7 +32,7 @@ Direct3D führt einen pixelweisen Test der Inhalte des Schablonenpuffers durch. 
 
 Die oben aufgeführten Schritte sind in der folgenden Codezeile dargestellt:
 
-```
+```cpp
 (StencilRef & StencilMask) CompFunc (StencilBufferValue & StencilMask)
 ```
 

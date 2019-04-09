@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603335"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240018"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler-Einstellungen – API-Referenz   
 Sie können die Fiddler-Netzwerkablaufverfolgung für Ihr Dev Kit mittels dieser REST-API aktivieren und deaktivieren.
@@ -25,7 +25,8 @@ Sie können mit der folgenden Anforderung überprüfen, ob die Fiddler-Ablaufver
 Methode      | Anforderungs-URI
 :------     | :-----
 GET | /ext/fiddler
-<br />
+
+
 **URI-Parameter**
 
 - Keine
@@ -42,13 +43,13 @@ GET | /ext/fiddler
 
 - Die boolesche JSON-Eigenschaft „ IsProxyEnabled“ gibt an, ob der Proxy aktiviert ist.
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-200 | Möglich
+200 | Erfolgreich
 4XX | Fehlercodes
 5XX | Fehlercodes
 
@@ -61,7 +62,7 @@ Sie können die Fiddler-Ablaufverfolgung mittels der folgenden Anforderung für 
 Methode      | Anforderungs-URI
 :------     | :-----
 POST | /ext/fiddler
-<br />
+
 **URI-Parameter**
 
 Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
@@ -71,7 +72,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 | proxyAddress       | Die IP-Adresse oder der Hostnamen des Geräts, auf dem Fiddler ausgeführt wird. |
 | proxyPort          | Der Port, den Fiddler für die Überwachung des Datenverkehrs verwendet. Der Standardport ist 8888. |
 | updateCert (optional)| Ein boolescher Wert, der angibt, ob das Fiddler-Stammzertifikat angegeben wird. Dieser Wert muss true sein, wenn Fiddler nie zuvor für dieses Dev Kit oder für einen anderen Host konfiguriert wurde.  |
-<br>
+
 
 **Anforderungsheader**
 
@@ -85,7 +86,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 - Keine  
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -104,7 +105,7 @@ Sie können die Fiddler-Ablaufverfolgung mithilfe der folgenden Anforderung für
 Methode      | Anforderungs-URI
 :------     | :-----
 DELETE | /ext/fiddler
-<br />
+
 **URI-Parameter**
 
 - Keine
@@ -121,7 +122,7 @@ DELETE | /ext/fiddler
 
 - Keine 
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -131,11 +132,11 @@ HTTP-Statuscode      | Beschreibung
 4XX | Fehlercodes
 5XX | Fehlercodes
 
-<br />
-**Gerätefamilien verfügbar**
+
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox
 
 ## <a name="see-also"></a>Siehe auch
-- [Konfigurieren von Fiddler für UWP für Xbox](uwp-fiddler.md)
+- [Konfigurieren von Fiddler für UWP auf Xbox](uwp-fiddler.md)
 

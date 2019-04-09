@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c38259c303673c3c3c5494470d721856fcaaf6c9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620495"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291718"
 ---
 # <a name="domain-shader-ds-stage"></a>Domainshaderphase (DS)
-
 
 Die Domainshaderphase (DS) berechnet die Vertexposition eines unterteilten Punkts im Ausgabefeld. Sie Berechnet die Vertexposition, die dem jeweiligen Domainsample entspricht. Ein Domain-Shader wird einmal pro Ausgabepunkt der Tessellatorstufe ausgeführt und hat schreibgeschützten Zugriff auf die UV-Koordinaten der Ausgabe der Tessellatorstufe, den Ausgabepatch des Hull-Shaders und dessen Ausgabepatchkonstanten.
 
@@ -45,7 +44,7 @@ Nachdem der Domainshader abgeschlossen ist, wird die Tesselation abgeschlossen u
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Beispiel
 
 
-```
+```hlsl
 void main( out    MyDSOutput result, 
            float2 myInputUV : SV_DomainPoint, 
            MyDSInput DSInputs,

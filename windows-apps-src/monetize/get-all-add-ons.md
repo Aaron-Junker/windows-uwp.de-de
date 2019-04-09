@@ -6,38 +6,38 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Add-Ons, In-App-Produkte, IAPs
 ms.localizationpriority: medium
-ms.openlocfilehash: 50733bc0617d56b7e6b8596b661aff8056961f18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 84b55ea8bc62955e3556fcff4e8d608738eb59ce
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599905"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334428"
 ---
 # <a name="get-all-add-ons"></a>Abrufen aller Add-Ons
 
 Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API zum Abrufen von Daten für alle Add-ons für alle apps, die mit Ihrem Partner Center-Konto registriert sind.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie Verwendungsbeispiele und Beschreibungen des Header und Anforderungstexts.
 
 | Methode | Anforderungs-URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts` |
 
 
 ### <a name="request-header"></a>Anforderungsheader
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
@@ -58,14 +58,14 @@ Stellen Sie keinen Anforderungstext für diese Methode bereit.
 
 Im folgenden Beispiel wird veranschaulicht, wie alle Add-On-Daten für alle Apps abgerufen werden können, die für Ihr Konto registriert sind.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 Im folgenden Beispiel wird veranschaulicht, wie nur die ersten 10 Add-Ons abgerufen werden.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -133,8 +133,8 @@ Im folgenden Beispiel wird der JSON-Antworttext veranschaulicht, der von einer e
 
 | Wert      | Typ   | Beschreibung                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | string | Wenn weitere Datenseiten vorhanden sind, enthält diese Zeichenfolge einen relativen Pfad, den Sie an den Basisanforderungs-URI ```https://manage.devcenter.microsoft.com/v1.0/my/``` zum Anfordern der nächsten Datenseite anfügen können. Wenn beispielsweise der Parameter *top* des anfänglichen Anforderungstexts auf 10 festgelegt ist, für Ihr Konto jedoch 100 Add-Ons registriert wurden, enthält der Antworttext den @nextLink-Wert ```inappproducts?skip=10&top=10```, der angibt, dass Sie ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` aufrufen können, um die nächsten 10 Add-Ons anzufordern. |
-| value            | array  |  Ein Array, das die Objekte enthält, die Informationen über jedes Add-On bereitstellen. Weitere Informationen finden Sie unter [Add-On-Ressource](manage-add-ons.md#add-on-object).   |
+| @nextLink  | String | Wenn weitere Datenseiten vorhanden sind, enthält diese Zeichenfolge einen relativen Pfad, den Sie an den Basisanforderungs-URI `https://manage.devcenter.microsoft.com/v1.0/my/` zum Anfordern der nächsten Datenseite anfügen können. Wenn beispielsweise der Parameter *top* des anfänglichen Anforderungstexts auf 10 festgelegt ist, für Ihr Konto jedoch 100 Add-Ons registriert wurden, enthält der Antworttext den @nextLink-Wert `inappproducts?skip=10&top=10`, der angibt, dass Sie `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10` aufrufen können, um die nächsten 10 Add-Ons anzufordern. |
+| Wert            | array  |  Ein Array, das die Objekte enthält, die Informationen über jedes Add-On bereitstellen. Weitere Informationen finden Sie unter [Add-On-Ressource](manage-add-ons.md#add-on-object).   |
 | totalCount   | int  | Die Anzahl der App-Objekte im *value*-Array des Antworttexts.     |
 
 
@@ -145,7 +145,7 @@ Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die A
 | Fehlercode |  Beschreibung   |
 |--------|------------------|
 | 404  | Es wurden keine Add-Ons gefunden. |
-| 407  | Verwenden Sie die apps oder -Add-Ons Partner Center-Features, die [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Verwenden Sie die apps oder -Add-Ons Partner Center-Features, die [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Verwandte Themen

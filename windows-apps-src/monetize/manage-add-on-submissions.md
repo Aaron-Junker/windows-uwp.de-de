@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Add-On-Übermittlungen, In-App-Produkt, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 45fc2274ac22eee4a4c249397f25c1b0405cb856
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d3bf92e308d42b9dd93539ebbe44525067f23b6f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647215"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335128"
 ---
 # <a name="manage-add-on-submissions"></a>Verwalten von Add-On-Übermittlungen
 
@@ -85,7 +85,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Add-On zu erstelle
 
 3. Führen Sie die folgende Methode in der Microsoft Store-Übermittlungs-API aus. Diese Methode erstellt eine neue laufende Übermittlung, die eine Kopie der letzten veröffentlichten Übermittlung ist. Weitere Informationen finden Sie unter [Erstellen einer Add-On-Übermittlung](create-an-add-on-submission.md).
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
     ```
 
@@ -98,7 +98,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Add-On zu erstelle
 
 5. Aktualisieren Sie die [Add-On-Übermittlungsdaten](#add-on-submission-object) mit alle erforderlichen Änderungen für die neue Übermittlung, und führen Sie die folgende Methode aus, um die Übermittlung zu aktualisieren. Weitere Informationen finden Sie unter [Aktualisieren einer Add-On-Übermittlung](update-an-add-on-submission.md).
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -121,13 +121,13 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Add-On zu erstelle
 
 5. Führen Sie die folgende Methode aus, um die Übermittlung zu committen. Dies wird von Partner Center benachrichtigt, dass die Übermittlung abgeschlossen ist, und Ihre Änderungen jetzt auf Ihr Konto angewendet werden soll. Weitere Informationen finden Sie unter [Ausführen eines Commits einer Add-On-Übermittlung](commit-an-add-on-submission.md).
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
     ```
 
 6. Sie überprüfen den Status des Commit durch Ausführen der folgenden Methode. Weitere Informationen finden Sie unter [Abrufen des Status einer Add-On-Übermittlung](get-status-for-an-add-on-submission.md).
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
     ```
 
@@ -230,20 +230,20 @@ Die Ressource hat die folgenden Werte.
 
 | Wert      | Typ   | Beschreibung        |
 |------------|--------|----------------------|
-| id            | string  | Die ID der Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen verfügbar, um [eine Add-On-Übermittlung zu erstellen](create-an-add-on-submission.md), [alle Add-Ons abzurufen](get-all-add-ons.md) und [ein Add-On abzurufen](get-an-add-on.md). Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
-| contentType           | string  |  Der [Inhaltstyp](../publish/enter-add-on-properties.md#content-type), der im Add-On bereitgestellt wird. Folgende Werte sind möglich: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| id            | String  | Die ID der Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen verfügbar, um [eine Add-On-Übermittlung zu erstellen](create-an-add-on-submission.md), [alle Add-Ons abzurufen](get-all-add-ons.md) und [ein Add-On abzurufen](get-an-add-on.md). Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
+| contentType           | String  |  Der [Inhaltstyp](../publish/enter-add-on-properties.md#content-type), der im Add-On bereitgestellt wird. Folgende Werte sind möglich: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | keywords           | array  | Ein Array von Zeichenfolgen, das bis zu 10 [Schlüsselwörter](../publish/enter-add-on-properties.md#keywords) für das Add-On enthalten kann. Die App kann mit diesen Schlüsselwörter Add-Ons abfragen.   |
-| lifetime           | string  |  Die Lebensdauer des Add-Ons. Folgende Werte sind möglich: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
+| lifetime           | String  |  Die Lebensdauer des Add-Ons. Folgende Werte sind möglich: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | object  |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode und jeder Wert eine [Eintragsressource](#listing-object) ist, die Eintragsinformationen für das Add-On enthält.  |
 | pricing           | object  | Eine [Preisressource](#pricing-object), die Preisinformationen für das Add-On enthält.   |
-| targetPublishMode           | string  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | string  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |
-| tag           | string  |  Die [benutzerdefinierten Entwicklerdaten](../publish/enter-add-on-properties.md#custom-developer-data) für das Add-On (diese Informationen wurden zuvor als *tag* bezeichnet).   |
-| visibility  | string  |  Die Sichtbarkeit des Add-Ons. Folgende Werte sind möglich: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
-| status  | string  |  Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>   |
+| targetPublishMode           | String  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | String  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |
+| tag           | String  |  Die [benutzerdefinierten Entwicklerdaten](../publish/enter-add-on-properties.md#custom-developer-data) für das Add-On (diese Informationen wurden zuvor als *tag* bezeichnet).   |
+| visibility  | String  |  Die Sichtbarkeit des Add-Ons. Folgende Werte sind möglich: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| status  | String  |  Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | object  |  Eine [Ressource für Statusdetails](#status-details-object), die zusätzliche Details über den Status der Übermittlung enthält, einschließlich Fehlerinformationen. |
-| fileUploadUrl           | string  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete oder Bilder für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv, das die Pakete enthält, zu dieser URI hochladen. Weitere Informationen finden Sie unter [Erstellen einer Add-On-Übermittlung](#create-an-add-on-submission).  |
-| friendlyName  | string  |  Der Anzeigename der Übermittlung, wie im Partner Center angezeigt. Dieser Wert wird beim Erstellen der Übermittlung für Sie generiert.  |
+| fileUploadUrl           | String  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete oder Bilder für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv, das die Pakete enthält, zu dieser URI hochladen. Weitere Informationen finden Sie unter [Erstellen einer Add-On-Übermittlung](#create-an-add-on-submission).  |
+| friendlyName  | String  |  Der Anzeigename der Übermittlung, wie im Partner Center angezeigt. Dieser Wert wird beim Erstellen der Übermittlung für Sie generiert.  |
 
 <span id="listing-object" />
 
@@ -253,9 +253,9 @@ Diese Ressource enthält die [Eintragsinformationen für ein Add-On](../publish/
 
 | Wert           | Typ    | Beschreibung       |
 |-----------------|---------|------|
-|  description               |    string     |   Die Beschreibung für den Add-On-Eintrag.   |     
+|  description               |    String     |   Die Beschreibung für den Add-On-Eintrag.   |     
 |  Symbol               |   object      |Eine [Symbolressource](#icon-object), die Daten zum Symbol für den Add-On-Eintrag enthält.    |
-|  title               |     string    |   Der Titel für den Add-On-Eintrag.   |  
+|  title               |     String    |   Der Titel für den Add-On-Eintrag.   |  
 
 <span id="icon-object" />
 
@@ -265,8 +265,8 @@ Diese Ressource enthält Symboldaten für einen Add-On-Eintrag. Die Ressource ha
 
 | Wert           | Typ    | Beschreibung     |
 |-----------------|---------|------|
-|  fileName               |    string     |   Der Name der Symboldatei im ZIP-Archiv, das Sie für die Übermittlung hochgeladen haben. Das Symbol muss eine PNG-Datei mit exakt 300 x 300 Pixeln sein.   |     
-|  fileStatus               |   string      |  Der Status der Symboldatei. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
+|  fileName               |    String     |   Der Name der Symboldatei im ZIP-Archiv, das Sie für die Übermittlung hochgeladen haben. Das Symbol muss eine PNG-Datei mit exakt 300 x 300 Pixeln sein.   |     
+|  fileStatus               |   String      |  Der Status der Symboldatei. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />
 
@@ -278,7 +278,7 @@ Diese Ressource enthält Preisinformationen für das Add-On. Die Ressource hat d
 |-----------------|---------|------|
 |  marketSpecificPricings               |    object     |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihr Add-On in bestimmten Märkten](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *priceId* angegebenen Basispreis für den angegebenen Markt.     |     
 |  sales               |   array      |  **Veraltet** Ein Array von [Verkaufsressourcen](#sale-object), die Verkaufsinformationen für das Add-On enthalten.     |     
-|  priceId               |   string      |  Ein [Preisniveau](#price-tiers), das den [Basispreis](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) für das Add-On angibt.    |    
+|  priceId               |   String      |  Ein [Preisniveau](#price-tiers), das den [Basispreis](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) für das Add-On angibt.    |    
 |  isAdvancedPricingModel               |   boolean      |  Bei **true** hat Ihr Entwicklerkonto Zugriff auf die erweiterten Spanne von Preisstufen von 0,99 US-Dollar bis 1.999,99 US-Dollar. Bei **false** hat Ihr Entwicklerkonto Zugriff auf die ursprüngliche Spanne von Preisstufen von 0,99 US-Dollar bis 999,99 US-Dollar. Weitere Informationen zu den verschiedenen Stufen finden Sie unter [Preisstufen](#price-tiers).<br/><br/>**Hinweis**&nbsp;&nbsp;Dieses Feld ist schreibgeschützt.   |
 
 
@@ -297,10 +297,10 @@ Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung           |
 |-----------------|---------|------|
-|  name               |    string     |   Der Name des Verkaufs.    |     
-|  basePriceId               |   string      |  Das [Preisniveau](#price-tiers), das für den Basispreis des Verkaufs verwendet werden soll.    |     
-|  startDate               |   string      |   Das Startdatum für den Verkauf im Format ISO 8601.  |     
-|  endDate               |   string      |  Das Enddatum für den Verkauf im Format ISO 8601.      |     
+|  name               |    String     |   Der Name des Verkaufs.    |     
+|  basePriceId               |   String      |  Das [Preisniveau](#price-tiers), das für den Basispreis des Verkaufs verwendet werden soll.    |     
+|  startDate               |   String      |   Das Startdatum für den Verkauf im Format ISO 8601.  |     
+|  endDate               |   String      |  Das Enddatum für den Verkauf im Format ISO 8601.      |     
 |  marketSpecificPricings               |   object      |   Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihr Add-On in bestimmten Märkten](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-pricess) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *basePriceId* angegebenen Basispreis für den angegebenen Markt.    |
 
 <span id="status-details-object" />
@@ -323,8 +323,8 @@ Diese Ressource enthält weitere Informationen zu Fehlern oder Warnungen für ei
 
 | Wert           | Typ    | Beschreibung    |
 |-----------------|---------|------|
-|  code               |    string     |   Ein [Übermittlungsstatuscode](#submission-status-code), der den Fehler- oder Warnungstyp beschreibt.   |     
-|  details               |     string    |  Eine Meldung mit weiteren Details zum Problem.     |
+|  code               |    String     |   Ein [Übermittlungsstatuscode](#submission-status-code), der den Fehler- oder Warnungstyp beschreibt.   |     
+|  details               |     String    |  Eine Meldung mit weiteren Details zum Problem.     |
 
 <span id="certification-report-object" />
 
@@ -334,8 +334,8 @@ Diese Ressource stellt den Zugriff auf die Zertifizierungsberichtsdaten für ein
 
 | Wert           | Typ    | Beschreibung               |
 |-----------------|---------|------|
-|     date            |    string     |  Das Datum und Uhrzeit, die der Bericht, im ISO 8601-Format generiert wurde.    |
-|     reportUrl            |    string     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
+|     date            |    String     |  Das Datum und Uhrzeit, die der Bericht, im ISO 8601-Format generiert wurde.    |
+|     reportUrl            |    String     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
 
 ## <a name="enums"></a>Enumerationen
 

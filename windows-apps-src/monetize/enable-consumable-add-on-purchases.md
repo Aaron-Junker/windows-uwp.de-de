@@ -6,12 +6,12 @@ keywords: windows 10, uwp, verbrauchbar, add-ons, in-app-käufe, IAPs, Windows.
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0446269fcbde87dfa25b7bff25f7160335950fba
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 142c9f90161f4fd61946ccb7452af7ee91f66baa
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636725"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334818"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Unterstützen von Endverbraucher-Add-On-Käufen
 
@@ -41,7 +41,7 @@ Um einem Benutzer ein Endverbraucher-Add-on anzubieten, befolgen Sie dieses allg
 
 Auch das [Abrufen des Restbetrags](enable-consumable-add-on-purchases.md#get_balance) für einen vom Store verwalteten Verbrauchsartikel ist jederzeit möglich.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Für diese Beispiele gelten die folgenden Voraussetzungen:
 * Ein Visual Studio-Projekt für eine UWP (Universelle Windows-Plattform)-App, die für **Windows 10 Anniversary Edition (10.0; Build 14393)** oder höher, geeignet ist.
@@ -73,7 +73,7 @@ Nachdem der Benutzer den [Kauf des Add-Ons](enable-in-app-purchases-of-apps-and-
 In diesem Beispiel wird gezeigt, wie ein vom Store verwalteter Verbrauchsartikel als erfüllt gemeldet wird.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
+[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
 
 <span id="get_balance" />
 
@@ -82,7 +82,7 @@ In diesem Beispiel wird gezeigt, wie ein vom Store verwalteter Verbrauchsartikel
 Dieses Beispiel zeigt, wie die [GetConsumableBalanceRemainingAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getconsumablebalanceremainingasync)-Methode der [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx)-Klasse verwendet wird, um den Restbetrag für ein vom Store verwaltetes Endverbraucher-Add-On abzurufen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
+[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

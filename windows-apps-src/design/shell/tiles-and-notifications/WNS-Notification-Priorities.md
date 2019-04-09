@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, Uwp, WinRT-API, WNS
 localizationpriority: medium
-ms.openlocfilehash: 2c297a04786c6fbf1eb0600e63a04a6d88585864
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2719c3228c95075eb2a940d12b6c91049b67f524
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648705"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291788"
 ---
 # <a name="wns-notification-priorities"></a>WNS-Benachrichtigung-Prioritäten
 Wenn eine Benachrichtigung, die Priorität mit einem einfachen-Header auf WNS beitragsnachrichten festlegen, können Sie steuern, wie Benachrichtigungen in Akku vertrauliche Situationen übermittelt werden.
@@ -72,4 +72,3 @@ Um eine app in Stromsparmodus ausschließen möchten, müssen die Benutzer finde
 ## <a name="related-topics"></a>Verwandte Themen
 - [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
 - [Berechtigung zum Ausführen im Hintergrund ausgeführt werden](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
-- 

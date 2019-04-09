@@ -2,16 +2,16 @@
 Description: Verwalten und Anzeigen von Details für jede Ihrer apps im Partner Center an und Konfigurieren von Diensten wie z. B. ein / B-Tests und zugeordnet.
 title: App-Verwaltung und -Dienste
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610005"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334578"
 ---
 # <a name="app-management-and-services"></a>App-Verwaltung und -Dienste
 
@@ -27,7 +27,7 @@ Im Abschnitt **Dienste** können Sie verschiedene Dienste für Ihre Apps verwalt
 
 Wenn Sie ein Spiel veröffentlichen, können Sie aktivieren die [Xbox Live Creators-Programm](https://xbox.com/developers/creators-program) auf dieser Seite. Dadurch können Sie konfigurieren und Testen Xbox Live-Features zu starten, und schließlich veröffentlichen Sie Ihr Spiel Xbox Live Creators-Programm.
 
-Weitere Informationen finden Sie unter [erste Schritte mit dem Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) und [einen neuen Titel für die Xbox Live Creators-Programm zu erstellen und veröffentlichen Sie in der testumgebung](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
+Weitere Informationen finden Sie unter [erste Schritte mit dem Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) und [einen neuen Titel für die Xbox Live Creators-Programm zu erstellen und veröffentlichen Sie in der testumgebung](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
 
 ## <a name="experimentation"></a>Experimentation
 

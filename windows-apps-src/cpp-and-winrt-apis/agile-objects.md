@@ -5,12 +5,12 @@ ms.date: 10/20/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, agil, objekt, agilität, IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0b390161a4eb2c4f38fed9bce226c5a5e92c5ad8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639665"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291779"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Agile Objekte in C++ / WinRT
 
@@ -46,7 +46,7 @@ winrt::com_ptr<MyType> myimpl{ winrt::make_self<MyType>() };
 winrt::com_ptr<IAgileObject> iagileobject{ myimpl.as<IAgileObject>() };
 ```
 
-Anstatt eine Ausnahme zu verarbeiten, können Sie [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) aufrufen.
+Anstatt eine Ausnahme zu verarbeiten, können Sie [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) aufrufen.
 
 ```cppwinrt
 winrt::com_ptr<IAgileObject> iagileobject{ myimpl.try_as<IAgileObject>() };
@@ -111,18 +111,18 @@ NonAgileType nonagile_obj_again{ agile.get() };
 winrt::hstring message{ nonagile_obj_again.Message() };
 ```
 
-Der Aufruf [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) gibt einen Proxy zurück, der in dem Thread-Kontext, in dem **get** aufgerufen wird, sicher verwendet werden kann.
+Der Aufruf [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-function) gibt einen Proxy zurück, der in dem Thread-Kontext, in dem **get** aufgerufen wird, sicher verwendet werden kann.
 
 ## <a name="important-apis"></a>Wichtige APIs
 
 * [IAgileObject-Schnittstelle](https://msdn.microsoft.com/library/windows/desktop/hh802476)
-* [IMarshal-Schnittstelle](https://docs.microsoft.com/previous-versions/windows/embedded/ms887993)
+* [IMarshal-Schnittstelle](/windows/desktop/api/objidl/nn-objidl-imarshal)
 * [Vorlage für WinRT::agile_ref-Struktur](/uwp/cpp-ref-for-winrt/agile-ref)
 * [Vorlage für WinRT::Implements-Struktur](/uwp/cpp-ref-for-winrt/implements)
 * [Vorlage für WinRT::make_agile-Funktion](/uwp/cpp-ref-for-winrt/make-agile)
 * [WinRT::non_agile Marker-Struktur](/uwp/cpp-ref-for-winrt/non-agile)
 * [WinRT::Windows::Foundation::IUnknown:: als Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [WinRT::Windows::Foundation::IUnknown::try_as-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [WinRT::Windows::Foundation::IUnknown::try_as-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)
 
 ## <a name="related-topics"></a>Verwandte Themen
 

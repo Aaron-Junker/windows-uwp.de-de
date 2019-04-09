@@ -5,12 +5,12 @@ keywords: Tutorial, Enterprise, Kunde, die Daten, erstellen, lesen, aktualisiere
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: med
-ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7bd3a180762c3ef06d7c24ae001fb2c7fb7fc55e
+ms.sourcegitcommit: 6df46d7d5b5522805eab11a9c0e07754f28673c6
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623245"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58808298"
 ---
 # <a name="tutorial-create-a-customer-database-application"></a>Tutorial: Erstellen einer Kundendatenbankanwendung
 
@@ -24,7 +24,7 @@ Der Ausgangspunkt für dieses Tutorial ist eine Einzelseiten-app mit minimalen B
 
 ![Die Hauptseite der app arbeiten](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>Voraussetzungen
+### <a name="prerequisites"></a>Vorraussetzungen
 
 * [Stellen Sie sicher, dass Sie die neueste Version von Visual Studio und das Windows 10 SDK verfügen](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * [Klonen Sie oder Laden Sie das Lernprogramm für die Customer-Beispiel](https://aka.ms/customer-database-tutorial)
@@ -247,7 +247,7 @@ Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde al
         get => _newCustomer;
         set
         {
-            if {_newCustomer != value}
+            if (_newCustomer != value)
             {
                 _newCustomer = value;
                 OnPropertyChanged();
@@ -419,9 +419,9 @@ Löschen eines Kunden ist die endgültige grundlegende Funktionsweise, die Sie i
 
 ![Löschen Sie einen neuen Kunden](images/customer-database-tutorial/delete-new-customer.png)
 
-## <a name="conclusion"></a>Abschluss
+## <a name="conclusion"></a>Schlussbemerkung
 
-Gratulation! Mit all dies erfolgt hat Ihre app jetzt eine Vielzahl von Vorgängen der lokalen Datenbank. Sie erstellen, lesen, aktualisieren und Löschen von Kunden innerhalb Ihrer Benutzeroberfläche, und diese Änderungen werden in der Datenbank gespeichert und bleiben für verschiedene Start Ihrer App.
+Herzlichen Glückwunsch! Mit all dies erfolgt hat Ihre app jetzt eine Vielzahl von Vorgängen der lokalen Datenbank. Sie erstellen, lesen, aktualisieren und Löschen von Kunden innerhalb Ihrer Benutzeroberfläche, und diese Änderungen werden in der Datenbank gespeichert und bleiben für verschiedene Start Ihrer App.
 
 Nachdem Sie fertig sind, können Sie Folgendes:
 * Wenn Sie nicht bereits getan haben, sehen Sie sich die [Übersicht über app-Struktur](../enterprise/customer-database-app-structure.md) für Weitere Informationen darüber, warum ist die app erstellt, es ist.
@@ -447,7 +447,7 @@ Die erforderlichen Schritte für die Verbindung mit Ihren eigenen Remotedatenban
 * Verknüpfen Sie Ihre app mit dem Microsoft Store.
 * Kopieren Sie die [Dienstprojekt](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService) zu Ihrer app, und in Azure bereitstellen.
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Authentifizierung
 
 Sie müssen zum Erstellen einer Schaltfläche, um eine Authentifizierungssequenz ist, und ein Popupfenster oder eine separate Seite zum Sammeln von Benutzerinformationen zu starten. Nachdem Sie die, die erstellt haben, müssen Sie Code bereitstellen, die Anforderungen der Informationen eines Benutzers und wird verwendet, um ein Zugriffstoken abzurufen. Der Kunde Bestellungen-Datenbankbeispiel dient als Wrapper für Microsoft Graph-Aufrufe mit dem **Web Account Manager** Bibliothek, um ein Token abrufen und verarbeiten die Authentifizierung mit einem AAD-Konto.
 

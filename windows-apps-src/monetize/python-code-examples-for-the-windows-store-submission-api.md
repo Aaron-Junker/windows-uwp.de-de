@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Codebeispiele, Python
 ms.localizationpriority: medium
-ms.openlocfilehash: 157c11484de150d363157e5b6e5de00a35bafd5f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bc3959b4e26bd54542edc3f69666f6d97cddba26
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634405"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334828"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python-Beispiel: Übermittlungen für Apps, Add-Ons und Flights
 
@@ -30,7 +30,7 @@ Dieser Artikel enthält Python-Codebeispiele zeigt das Verwenden der [Microsoft 
 
 Im folgenden Beispiel wird gezeigt, wie Sie ein [Azure AD-Zugriffstoken abrufen](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), mit dem Sie Methoden in der Microsoft Store-Übermittlungs-API aufrufen können. Nach dem Abruf eines Tokens können Sie es für einen Zeitraum von 60 Minuten in Aufrufen der Microsoft Store-Übermittlungs-API verwenden, bevor es abläuft. Nach Ablauf des Tokens können Sie ein neues Token generieren.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
 <span id="create-add-on" />
 
@@ -38,7 +38,7 @@ Im folgenden Beispiel wird gezeigt, wie Sie ein [Azure AD-Zugriffstoken abrufen]
 
 Das folgende Beispiel zeigt, wie Sie EIN Flight-Paket [erstellen](create-an-add-on.md) und anschließend ein Add-On [löschen](delete-an-add-on.md).
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 
 <span id="create-package-flight" />
 
@@ -46,7 +46,7 @@ Das folgende Beispiel zeigt, wie Sie EIN Flight-Paket [erstellen](create-an-add-
 
 Das folgende Beispiel zeigt, wie Sie EIN Flight-Paket [erstellen](create-a-flight.md) und anschließend [löschen](delete-a-flight.md).
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
 
 <span id="create-app-submission" />
 
@@ -61,7 +61,7 @@ Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Stor
 5. Als Nächstes wird es [Updates](update-an-app-submission.md) und dann [führt einen Commit für](commit-an-app-submission.md) die neue Übermittlung zum Partner Center.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-app-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
 
 <span id="create-add-on-submission" />
 
@@ -76,7 +76,7 @@ Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Stor
 5. Als Nächstes wird es [Updates](update-an-add-on-submission.md) und dann [führt einen Commit für](commit-an-add-on-submission.md) die neue Übermittlung zum Partner Center.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-add-on-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
 
 <span id="create-flight-submission" />
 
@@ -91,7 +91,7 @@ Das folgende Beispiel zeigt, wie Sie verschiedene Methoden in der Microsoft Stor
 5. Als Nächstes wird es [Updates](update-a-flight-submission.md) und dann [führt einen Commit für](commit-a-flight-submission.md) die neue Übermittlung zum Partner Center.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-a-flight-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

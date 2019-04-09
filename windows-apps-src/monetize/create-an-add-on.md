@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Erstellen eines Add-Ons, In-App-Produkt, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8465dc7a42961a20fcd33ba8d43c71e2d73727ff
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b358eecd1799e76573cf6d254a80e7a7971bc123
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651035"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334168"
 ---
 # <a name="create-an-add-on"></a>Erstellen eines Add-Ons
 
@@ -20,27 +20,27 @@ Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API, um ein Add
 > [!NOTE]
 > Durch diese Methode wird ein Add-On ohne Übermittlungen erstellt. Verwenden Sie zum Erstellen einer Übermittlung für ein Add-On die Methoden unter [Verwalten von Add-On-Übermittlungen](manage-add-on-submissions.md).
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie Verwendungsbeispiele und Beschreibungen des Header und Anforderungstexts.
 
 | Methode | Anforderungs-URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts` |
 
 
 ### <a name="request-header"></a>Anforderungsheader
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -50,15 +50,15 @@ Der Anforderungstext hat folgende Parameter.
 |  Parameter  |  Typ  |  Beschreibung  |  Erforderlich  |
 |------|------|------|------|
 |  applicationIds  |  array  |  Ein Array, das die Store-ID der App enthält, der dieses Add-On zugeordnet ist. In diesem Array wird nur ein Element unterstützt.   |  Ja  |
-|  productId  |  string  |  Die Produkt-ID des Add-Ons. Dies ist eine ID, die im Code verwendet werden kann, um auf das Add-On zu verweisen. Weitere Informationen finden Sie unter [Festlegen von Produkttyp und Produkt-ID für das IAP](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Ja  |
-|  productType  |  string  |  Der Produkttyp des Add-Ons. Die folgenden Werte werden unterstützt: **Dauerhafte** und **nutzbar**.  |  Ja  |
+|  productId  |  String  |  Die Produkt-ID des Add-Ons. Dies ist eine ID, die im Code verwendet werden kann, um auf das Add-On zu verweisen. Weitere Informationen finden Sie unter [Festlegen von Produkttyp und Produkt-ID für das IAP](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Ja  |
+|  productType  |  String  |  Der Produkttyp des Add-Ons. Die folgenden Werte werden unterstützt: **Dauerhafte** und **nutzbar**.  |  Ja  |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 
 Im folgenden Beispiel wird gezeigt, wie Sie ein neues Endverbraucher-Add-On für eine App erstellen.
 
-```syntax
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1Q...
 Content-Type: application/json
@@ -97,7 +97,7 @@ Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die A
 | Fehlercode |  Beschreibung                                                                                                                                                                           |
 |--------|------------------|
 | 400  | Die Anforderung ist ungültig. |
-| 407  | Das Add-on konnte aufgrund von seinem aktuellen Zustand nicht erstellt werden, oder das Add-on verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Das Add-on konnte aufgrund von seinem aktuellen Zustand nicht erstellt werden, oder das Add-on verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Verwandte Themen

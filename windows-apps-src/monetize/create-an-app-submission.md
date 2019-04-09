@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Erstellen einer App-Übermittlung
 ms.localizationpriority: medium
-ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5563b8281a713b57f98c48ae04153b19062f2f12
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594445"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334938"
 ---
 # <a name="create-an-app-submission"></a>Erstellen einer App-Übermittlung
 
@@ -19,8 +19,7 @@ Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API, um eine ne
 
 Weitere Informationen dazu, wie diese Methode zum Erstellen einer App-Übermittlung mithilfe der Microsoft Store-Übermittlungs-API passt, finden Sie unter [Verwalten von App-Übermittlungen](manage-app-submissions.md).
 
-
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
@@ -28,28 +27,25 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 * Stellen Sie sicher, dass für die App bereits mindestens eine Übermittlung mit abgeschlossenen Informationen zu den [Altersfreigaben](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) vorhanden ist.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie Verwendungsbeispiele und Beschreibungen des Header und Anforderungstexts.
 
 | Methode | Anforderungs-URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` |
-
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions` |
 
 ### <a name="request-header"></a>Anforderungsheader
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
-
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Erforderlich. Die Store-ID der App, für die Sie eine Übermittlung erstellen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-
+| applicationId | String | Erforderlich. Die Store-ID der App, für die Sie eine Übermittlung erstellen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 ### <a name="request-body"></a>Anforderungstext
 
@@ -59,7 +55,7 @@ Stellen Sie keinen Anforderungstext für diese Methode bereit.
 
 Im folgenden Beispiel wird gezeigt, wie Sie eine neue Übermittlung für eine App erstellen.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -186,8 +182,7 @@ Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die A
 | Fehlercode |  Beschreibung   |
 |--------|------------------|
 | 400  | Die Übermittlung konnte nicht erstellt werden, da die Anforderung ungültig ist. |
-| 407  | Die Übermittlung konnte aufgrund des aktuellen Status der app nicht erstellt werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
+| 409  | Die Übermittlung konnte aufgrund des aktuellen Status der app nicht erstellt werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 ## <a name="related-topics"></a>Verwandte Themen
 

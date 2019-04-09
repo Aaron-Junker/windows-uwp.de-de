@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: df81348dee781d1c329562d558ed8df30fd40bc5
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610495"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244116"
 ---
 # <a name="designing-for-mixed-reality"></a>Design für Mixed Reality
 
@@ -92,7 +92,7 @@ Manchmal werden Sie trotzdem Code hinzufügen wollen, um die Vorteile der zusät
 > Fazit: Das Leitmotiv sollte sein, dem Anwender immer eine möglichst natürliche und reibungslose Eingabemethode zur Verfügung zu stellen.
 
 
-## <a name="2d-app-design-considerations-functionality"></a>Direct2D-App-Design-Überlegungen: Funktion
+## <a name="2d-app-design-considerations-functionality"></a>Direct2D-App-Design-Überlegungen: Funktionalität
 
 Bei der Erstellung einer UWP-App, die möglicherweise auf einer Mixed Reality-Plattform verwendet wird, sind einige Dinge zu beachten.
 
@@ -105,7 +105,7 @@ Bei der Erstellung einer UWP-App, die möglicherweise auf einer Mixed Reality-Pl
 * Eine 2D-App wird automatisch mit einer [App-Leiste](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box) versehen, damit der Benutzer sie in der virtuellen Umgebung verschieben und skalieren kann. Die Ansichten können vertikal oder unter Beibehaltung des gleichen Seitenverhältnisses in der Größe verändert werden.
 
 
-## <a name="2d-app-design-considerations-uiux"></a>Überlegungen zum Entwurf der Direct2D-app: BENUTZEROBERFLÄCHE/UX
+## <a name="2d-app-design-considerations-uiux"></a>Überlegungen zum Entwurf der Direct2D-app: UI/UX
 
 * XAML-Steuerelemente, die das [Fluent Design-System](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/) (z. B. die [Navigationsansicht](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) und Effekte wie [Acrylic ](https://docs.microsoft.com/windows/uwp/design/style/acrylic)) implementieren, funktionieren besonders gut in 2D-Mixed Reality-Apps.
 
@@ -151,7 +151,7 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
             {
                 // Running on desktop
                 textBlock.Text = "I'm running on the desktop.";
-                textBlock.FontSize = 16;
+                textBlock.FontSize = 14;
             }
 
 ```
@@ -163,9 +163,9 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>Verwandte Artikel
 
 
-* [Aktuelle Einschränkungen für apps mithilfe von APIs in der Befehlsshell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [Erstellen von Direct2D-apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [Aktuelle Einschränkungen für Apps, die APIs aus der Shell verwenden](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [Erstellen von 2D-Apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens: Erstellen von 2D-UWP-Apps für Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
-* [Bedingte XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
+* [Bedingtes XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 
 

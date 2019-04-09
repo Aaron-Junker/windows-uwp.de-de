@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ec2013735597efae73aee31bb4aee1a8e1413e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b74cb2b23b5fbfc7487d18be0531ff26170cbe3f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594985"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334510"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Kundengewinnung mit Microsoft Store Services SDK
 
@@ -35,7 +35,7 @@ Das Microsoft Store Services SDK unterstützt derzeit die folgenden Szenarien f�
 
 <span id="prerequisites" />
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Das Microsoft Store Services SDK erfordert:
 
@@ -62,7 +62,7 @@ So installieren Sie das Microsoft Store-Services-SDK über das MSI-Installations
 1.  Schließen Sie alle Instanzen von Visual Studio.
 
 2. Wenn Sie zuvor eine frühere Version des Microsoft Store Engagement and Monetization SDK, des Universal Ad Client SDKs oder der Ad Mediator-Erweiterung installiert haben, deinstallieren Sie diese SDKs jetzt. Öffnen Sie optional ein **Eingabeaufforderungsfenster**, und führen Sie diese Befehle aus, um alle älteren SDK-Versionen zu löschen, die möglicherweise mit Visual Studio installiert wurden und die nicht in der Liste der installierten Programme auf Ihrem Computer angezeigt werden:
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -85,7 +85,7 @@ So installieren Sie das Microsoft Store Services SDK-Bibliotheken über NuGet:
 1.  Schließen Sie alle Instanzen von Visual Studio.
 
 2. Wenn Sie zuvor eine frühere Version des Microsoft Store Engagement and Monetization SDK, des Universal Ad Client SDKs oder der Ad Mediator-Erweiterung installiert haben, deinstallieren Sie diese SDKs jetzt. Öffnen Sie optional ein **Eingabeaufforderungsfenster**, und führen Sie diese Befehle aus, um alle älteren SDK-Versionen zu löschen, die möglicherweise mit Visual Studio installiert wurden und die nicht in der Liste der installierten Programme auf Ihrem Computer angezeigt werden:
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -99,7 +99,7 @@ So installieren Sie das Microsoft Store Services SDK-Bibliotheken über NuGet:
 
 5. Geben Sie im Suchfeld den Text **Microsoft.Services.Store.Engagement** ein, und installieren Sie das Paket Microsoft.Services.Store.Engagement. Wenn das Paket fertig ist installieren, speichern Sie die Projektmappe.
     > [!NOTE]
-    > Wenn das **Ausgabe**-Fenster einen *Installationspaket*-Fehler anzeigt, der Ihnen mitteilt, dass der angegebene Pfad zu lang ist, müssen Sie NuGet möglicherweise so konfigurieren, dass es Pakete an einen anderen Speicherort mit einem kürzeren Pfad extrahiert. Fügen Sie hierzu den ```repositoryPath```-Wert einer nuget.config-Datei auf Ihrem Computer hinzu, und weisen Sie ihn einem kurzen Ordnerpfad zu, unter dem die NuGet-Pakete extrahiert werden können. Weitere Informationen finden Sie in [diesem Artikel](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in der NuGet-Dokumentation. Sie können auch versuchen, das Visual Studio-Projekt in einen anderen Ordner mit einem kürzeren Pfad zu verschieben. Das Problem kann durch den globalen Paketen auf dem Pfad zu lang wird auch verursacht werden. Fügen Sie in diesem Fall die ```globalPackagesFolder``` Wert in die Datei "NuGet.config".
+    > Wenn das **Ausgabe**-Fenster einen *Installationspaket*-Fehler anzeigt, der Ihnen mitteilt, dass der angegebene Pfad zu lang ist, müssen Sie NuGet möglicherweise so konfigurieren, dass es Pakete an einen anderen Speicherort mit einem kürzeren Pfad extrahiert. Fügen Sie hierzu den `repositoryPath`-Wert einer nuget.config-Datei auf Ihrem Computer hinzu, und weisen Sie ihn einem kurzen Ordnerpfad zu, unter dem die NuGet-Pakete extrahiert werden können. Weitere Informationen finden Sie in [diesem Artikel](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in der NuGet-Dokumentation. Sie können auch versuchen, das Visual Studio-Projekt in einen anderen Ordner mit einem kürzeren Pfad zu verschieben. Das Problem kann durch den globalen Paketen auf dem Pfad zu lang wird auch verursacht werden. Fügen Sie in diesem Fall die `globalPackagesFolder` Wert in die Datei "NuGet.config".
 
 6. Schließen Sie die Visual Studio-Lösung mit dem Projekt, und öffnen Sie die Projektmappe erneut.
 

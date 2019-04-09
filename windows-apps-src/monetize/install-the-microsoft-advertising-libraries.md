@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Installieren, SDK, Werbebibliotheken
 ms.localizationpriority: medium
-ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: baf70cc6df7b0683f3dc362436c63eb1e688e678
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658035"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334698"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installieren des Microsoft Advertising-SDK
 
@@ -29,7 +29,7 @@ So installieren Sie das Microsoft Advertising-SDK über das MSI-Installationspro
 1.  Schließen Sie alle Instanzen von Visual Studio.
 
 2. Wenn Sie zuvor eine frühere Version des Microsoft Advertising SDKs, des Universal Ad Client SDKs, der Ad Mediator-Erweiterung oder des Microsoft Store Engagement and Monetization SDKs installiert haben, deinstallieren Sie diese SDK-Versionen jetzt. Öffnen Sie optional ein **Eingabeaufforderungsfenster**, und führen Sie diese Befehle aus, um alle älteren Advertising SDK-Versionen zu löschen, die möglicherweise mit Visual Studio installiert wurden und die nicht in der Liste der installierten Programme auf Ihrem Computer angezeigt werden:
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -52,7 +52,7 @@ So installieren Sie das Microsoft Advertising-SDK für ein bestimmtes UWP-Projek
 1.  Schließen Sie alle Instanzen von Visual Studio.
 
 2.  Wenn Sie zuvor eine frühere Version des Microsoft Advertising SDKs, des Universal Ad Client SDKs, der Ad Mediator-Erweiterung oder des Microsoft Store Engagement and Monetization SDKs installiert haben, deinstallieren Sie diese SDK-Versionen jetzt. Öffnen Sie optional ein **Eingabeaufforderungsfenster**, und führen Sie diese Befehle aus, um alle älteren Advertising SDK-Versionen zu löschen, die möglicherweise mit Visual Studio installiert wurden und die nicht in der Liste der installierten Programme auf Ihrem Computer angezeigt werden:
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -66,7 +66,7 @@ So installieren Sie das Microsoft Advertising-SDK für ein bestimmtes UWP-Projek
 
 5. Geben Sie in das Suchfeld **Microsoft.Advertising.XAML** (für ein XAML-Projekt) oder **Microsoft.Advertising.JS** (für ein JavaScript/HTML-Projekt) ein, und installieren Sie das entsprechende Paket. Wenn das Paket fertig ist installieren, speichern Sie die Projektmappe.
     > [!NOTE]
-    > Wenn das **Ausgabe**-Fenster einen *Installationspaket*-Fehler anzeigt, der Ihnen mitteilt, dass der angegebene Pfad zu lang ist, müssen Sie NuGet möglicherweise so konfigurieren, dass es Pakete an einen anderen Speicherort mit einem kürzeren Pfad extrahiert. Fügen Sie hierzu den ```repositoryPath```-Wert einer nuget.config-Datei auf Ihrem Computer hinzu, und weisen Sie ihn einem kurzen Ordnerpfad zu, unter dem die NuGet-Pakete extrahiert werden können. Weitere Informationen finden Sie in [diesem Artikel](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in der NuGet-Dokumentation. Sie können auch versuchen, das Visual Studio-Projekt in einen anderen Ordner mit einem kürzeren Pfad zu verschieben.
+    > Wenn das **Ausgabe**-Fenster einen *Installationspaket*-Fehler anzeigt, der Ihnen mitteilt, dass der angegebene Pfad zu lang ist, müssen Sie NuGet möglicherweise so konfigurieren, dass es Pakete an einen anderen Speicherort mit einem kürzeren Pfad extrahiert. Fügen Sie hierzu den `repositoryPath`-Wert einer nuget.config-Datei auf Ihrem Computer hinzu, und weisen Sie ihn einem kurzen Ordnerpfad zu, unter dem die NuGet-Pakete extrahiert werden können. Weitere Informationen finden Sie in [diesem Artikel](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in der NuGet-Dokumentation. Sie können auch versuchen, das Visual Studio-Projekt in einen anderen Ordner mit einem kürzeren Pfad zu verschieben.
 
 6. Schließen Sie die Lösung und öffnen Sie es erneut.
 

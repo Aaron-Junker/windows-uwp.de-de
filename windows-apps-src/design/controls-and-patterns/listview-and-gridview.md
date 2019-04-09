@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 786c9bc4962d26c58950e06a82140e524b967db1
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653575"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240058"
 ---
 # <a name="list-view-and-grid-view"></a>Listenansicht und Rasteransicht
 
@@ -48,8 +48,8 @@ Einen detaillierteren Vergleich und Anleitungen dazu, welches Steuerelement verw
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ListView">ListView</a> oder <a href="xamlcontrolsgallery:/item/GridView">GridView</a> in Aktion zu sehen.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -82,7 +82,7 @@ Hier sehen Sie eine Listenansicht mit inline in XAML definierten Elementen. Wenn
 
 Hier sehen Sie die Listenansicht in Code erstellt. Die resultierende Liste ist mit der zuvor in XAML erstellten Liste identisch.
 
-**C# -CODE**
+**C#**
 ```csharp
 // Create a new ListView and add content. 
 ListView listView1 = new ListView(); 
@@ -106,7 +106,7 @@ In der Regel verwenden Sie eine Listenansicht, um Daten aus Quellen wie einer Da
 
 Dies ist die ItemsSource der Listenansicht im Code, direkt auf eine Instanz einer Sammlung festgelegt.
 
-**C# -CODE**
+**C#**
 ```csharp 
 // Instead of hard coded items, the data could be pulled 
 // asynchronously from a database or the internet.
@@ -134,7 +134,7 @@ Hier wird ItemsSource an eine öffentliche Eigenschaft mit dem Namen `Items` geb
 <ListView x:Name="itemListView" ItemsSource="{x:Bind Items}"/>
 ```
 
-**C# -CODE**
+**C#**
 ```csharp
 private ObservableCollection<string> _items = new ObservableCollection<string>();
 
@@ -182,7 +182,7 @@ In diesem Beispiel ist das Datenelement eine einfache Zeichenfolge. Verwenden Si
                 <Image Source="Assets/placeholder.png" Width="32" Height="32" 
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Teal" 
-                           FontSize="15" Grid.Column="1"/>
+                           FontSize="14" Grid.Column="1"/>
             </Grid> 
         </DataTemplate>
     </ListView.ItemTemplate>
@@ -290,11 +290,11 @@ In der folgenden Tabelle werden die Arten gezeigt, wie Benutzer mit einer Listen
 
 Um diese Interaktion zu ermöglichen: | Verwenden Sie diese Einstellungen: | Behandeln Sie dieses Ereignis: | Verwenden Sie diese Eigenschaft zum Abrufen des ausgewählten Elements:
 ----------------------------|---------------------|--------------------|--------------------------------------------
-Keine Interaktion | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**, [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | n. a. | n. a. 
+Keine Interaktion | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**, [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | Nicht zutreffend | Nicht zutreffend 
 Einzelauswahl | SelectionMode = **Single**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx), [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
 Mehrfachauswahl | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
 Erweiterte Auswahl | SelectionMode = **Extended**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-Klicken Sie | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | n. a. 
+Klicken Sie | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | Nicht zutreffend 
 
 > **Hinweis**&nbsp;&nbsp;Ab Windows 10 können Sie IsItemClickEnabled aktivieren, um ein ItemClick-Ereignis auszulösen, während SelectionMode ebenfalls auf Single, Multiple oder Extended festgelegt ist. Wenn Sie dies tun, wird zuerst das ItemClick-Ereignis und anschließend das SelectionChanged-Ereignis ausgelöst. In einigen Fällen, wenn Sie beispielsweise zu einer anderen Seite im ItemClick-Ereignishandler navigieren, wird das SelectionChanged-Ereignis nicht ausgelöst, und das Element wird nicht ausgewählt.
 
@@ -307,7 +307,7 @@ Sie können diese Eigenschaften in XAML oder im Code festlegen, wie hier gezeigt
 <GridView x:Name="myGridView" SelectionMode="None" IsItemClickEnabled="True"/> 
 ```
 
-**C# -CODE**
+**C#**
 ```csharp
 myListView.SelectionMode = ListViewSelectionMode.Multiple; 
 
@@ -382,7 +382,7 @@ In diesem Beispiel werden die Behandlung des **SelectionChanged**-Ereignisses un
 </StackPanel> 
 ```
 
-**C# -CODE**
+**C#**
 ```csharp
 private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
 {
@@ -429,7 +429,7 @@ Dies ist eine Listenansicht mit Elementen, auf die geklickt werden kann. Der Cod
 </ListView>
 ```
 
-**C# -CODE**
+**C#**
 ```csharp
 private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 {
@@ -490,7 +490,7 @@ Sie können alle Elemente in einer Sammlung auswählen, indem Sie die SelectAll-
 </StackPanel>
 ```
 
-**C# -CODE**
+**C#**
 ```csharp
 private void SelectAllButton_Click(object sender, RoutedEventArgs e)
 {

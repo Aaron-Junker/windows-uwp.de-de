@@ -5,12 +5,12 @@ ms.date: 07/07/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d010816b1ba4c9941aea7bdcdb4bd4c50038aca6
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616415"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59067835"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Auswählen des richtigen Kanaltypen für die Pushbenachrichtigungen
 
@@ -20,11 +20,11 @@ Dieser Artikel behandelt die drei Arten von UWP-Kanälen für die Push-Benachric
 
 ## <a name="types-of-push-channels"></a>Pushkanaltypen 
 
-Es gibt drei Arten an Pushkanälen, die zum Senden von Benachrichtigungen an eine UWP-App verwendet werden können. Diese Berichte sind: 
+Es gibt drei Arten an Pushkanälen, die zum Senden von Benachrichtigungen an eine UWP-App verwendet werden können. Die Überladungen sind: 
 
-[Primärer Kanal](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) -der "traditionelle" Pushkanal. Kann von jeder App im Store zum Senden von Popupbenachrichtigungen, Kacheln, unformatierten Benachrichtigungen oder Signalbenachrichtigungen verwendet werden (Link für Beschreibungen von Popups/Kacheln/Signalen)
+[Primärer Kanal](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) -der "traditionelle" Pushkanal. Kann von einer app im Store senden Toast, Kachel, raw, oder signalbenachrichtigungen verwendet werden. Weitere Informationen finden Sie [hier](windows-push-notification-services--wns--overview.md).
 
-[Sekundärer Kachelkanal](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - wird für Kachel-Updates im Pushverfahren für eine sekundäre Kachel verwendet. Kann nur zum Senden von Kachel- oder Signalbenachrichtigungen an eine sekundäre Kachel verwendet werden, die auf der Startseite angeheftet ist
+[Sekundäre Kachel Kanal](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - Kachel-Updates zu einer sekundären Kachel mithilfe von Push übertragen wird verwendet. Kann nur zum Senden von Kachel- oder Signalbenachrichtigungen an eine sekundäre Kachel verwendet werden, die auf der Startseite angeheftet ist
 
 [Alternativer Kanal](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) -eine neue Art von Kanal, der im Creators Update hinzugefügt wurde. Sendet unformatierte Benachrichtigungen an alle UWP-Apps, einschließlich derjenigen, die im Store nicht registriert sind. 
 
@@ -38,10 +38,10 @@ Diese Kanäle sind die derzeit am häufigsten verwendeten Kanäle auf Windows un
 
 ### <a name="what-do-primary-channels-enable"></a>Was aktivieren die primären Kanäle?
 
--   **Kachel oder eines Badge-Updates an die primäre Kachel gesendet.** Wenn der Benutzer die Kachel an die Startseite angeheftet hat, ist dies eine großartige Möglichkeit, Ihre Fertigkeit zu zeigen. Senden Sie Aktualisierungen mit nützlichen Informationen oder Erinnerungen innerhalb Ihrer App. 
--   **Senden von toastbenachrichtigungen.** Popupbenachrichtigungen sind eine Gelegenheit, dem Benutzer sofort einige Informationen zu unterbreiten. Sie werden von der Shell im Vordergrund der meisten Apps angezeigt sowie Live im Info-Center, so dass der Benutzer darauf zurückkehren und später mit ihnen interagieren kann. 
--   **Senden von unformatierten Benachrichtigungen zum Auslösen einer Hintergrundaufgabe.** Manchmal möchten Sie basierend auf einer Benachrichtigung einige Aktionen für den Benutzer ausführen. Unformatiert Benachrichtigungen ermöglichen das Ausführen der Hintergrundaufgaben Ihrer Apps 
--   **Verwenden Sie die Verschlüsselung von Nachrichten, während der Übertragung von Windows mithilfe von TLS bereitgestellt.** Nachrichten werden bei der Übertragung auf der Leitung beim Eingang auf WNS und beim Ausgang auf das Gerät des Benutzers verschlüsselt.  
+-   **Senden von Kachelaktualisierungen oder Signalupdates an die primäre Kachel.** Wenn der Benutzer die Kachel an die Startseite angeheftet hat, ist dies eine großartige Möglichkeit, Ihre Fertigkeit zu zeigen. Senden Sie Aktualisierungen mit nützlichen Informationen oder Erinnerungen innerhalb Ihrer App. 
+-   **Senden Sie Popupbenachrichtigungen.** Popupbenachrichtigungen sind eine Gelegenheit, dem Benutzer sofort einige Informationen zu unterbreiten. Sie werden von der Shell im Vordergrund der meisten Apps angezeigt sowie Live im Info-Center, so dass der Benutzer darauf zurückkehren und später mit ihnen interagieren kann. 
+-   **Von unformatierten Benachrichtigungen ausgelöste Hintergrundaufgaben** Manchmal möchten Sie basierend auf einer Benachrichtigung einige Aktionen für den Benutzer ausführen. Unformatiert Benachrichtigungen ermöglichen das Ausführen der Hintergrundaufgaben Ihrer Apps 
+-   **Nachrichtenverschlüsselung während der Übertragung durch Windows mithilfe von TLS.** Nachrichten werden bei der Übertragung auf der Leitung beim Eingang auf WNS und beim Ausgang auf das Gerät des Benutzers verschlüsselt.  
 
 ### <a name="limitations-of-primary-channels"></a>Einschränkungen der primären Kanäle
 
@@ -84,21 +84,21 @@ PushNotificationChannel channel =
 Alternativen Kanäle ermöglichen Apps, Pushbenachrichtigungen zu senden, ohne beim Microsoft Store registriert zu sein oder Pushkanäle außerhalb des primären Kanals zu verwendet, der für die App verwendet wird. 
  
 ### <a name="what-do-alternate-channels-enable"></a>Was aktivieren alternative Kanäle?
--   Senden von unformatierten Pushbenachrichtigungen an eine UWP, die auf jedem Windows-Gerät ausgeführt wird. Alternative Kanäle werden nur für unformatierte Benachrichtigungen verwendet.
+-   Senden von unformatierten Pushbenachrichtigungen an eine UWP, die auf jedem Windows-Gerät ausgeführt wird. Alternative Channels können nur für unformatierte Benachrichtigungen (jedoch Sie immer noch reaktiviert können eine Hintergrundaufgabe lokal anzeigen Toast oder kachelbenachrichtigungen).
 -   Damit können Apps mehrere unformatierte Pushkanäle für verschiedene Features innerhalb der App erstellen. Eine App kann bis zu 1.000 alternativen Kanäle erstellen und ist jeweils 30 Tage lang gültig. Jeder dieser Kanäle kann separat verwaltet oder von der App widerrufen werden.
 -   Alternative Pushkanäle können erstellt werden, ohne die App im Microsoft Store zu registrieren. Wenn Ihre App auf Geräten ohne Registrierung im Microsoft Store installiert werden soll, kann sie auch weiterhin Pushbenachrichtigungen empfangen.
 -   Server können mit W3C-Standard-REST-APIs und dem VAPID Protokoll Pushbenachrichtigungen senden. Alternative Kanäle nutzen das W3C-Standard-Protokoll. Dadurch können Sie die Serverlogik vereinfachen, die verwaltet werden muss.
 -   Vollständige Verschlüsselung von End-to-End-Nachrichten. Der primäre Kanal stellt Verschlüsselung während der Übertragung bereit. Wenn Sie eine zusätzliche Sicherheit wünschen, ermöglichen alternative Kanäle Ihrer App durch verschlüsselte Header eine Nachricht geschützt zu übertragen. 
 
 ### <a name="limitations-of-alternate-channels"></a>Einschränkungen alternativer Kanäle
--   Apps können keine Popup-, Kachel- oder Signalpushbenachrichtigungen übertragen. Der alternative Kanal beschränkt die Möglichkeit, andere Arten der Benachrichtigung zu senden. Ihre App kann auch weiterhin lokale Benachrichtigungen über Ihre Hintergrundaufgabe senden. 
+-   Ihrer app-Server kann keine Pushbenachrichtigungen senden Popupbenachrichtigungen, Kachel oder badge Typ Benachrichtigungen. Sie können die Clientpushinstallation nur unformatierte Benachrichtigungen senden. Ihre App kann auch weiterhin lokale Benachrichtigungen über Ihre Hintergrundaufgabe senden. 
 -   Erfordert eine andere REST-API als die primären oder sekundären Kachelkanäle. Die Verwendung der standardmäßigen W3C-REST-API bedeutet, dass Ihre App eine andere Logik für das Senden von Push-, Kachel- oder Popupbenachrichtigungen verwendet werden muss
 
 ### <a name="creating-an-alternate-channel"></a>Erstellen eines alternativen Kanals 
 
 ```csharp
 PushNotificationChannel webChannel = 
-    await PushNotificationChannelManager.Current.CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
+    await PushNotificationChannelManager.GetDefault().CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
 ```
 
 ## <a name="channel-type-comparison"></a>Vergleich von Kanaltypen
@@ -108,12 +108,12 @@ Hier ist eine kurze Gegenüberstellung der unterschiedlichen Arten von Kanälen:
 
 <tr class="header">
 <th align="left"><b>Typ</b></th>
-<th align="left"><b>Mithilfe von Push übertragen Popup?</b></th>
-<th align="left"><b>Migrieren Sie die Kachel "WNS/Badge?</b></th>
-<th align="left"><b>Pushbenachrichtigungen unformatierte?</b></th>
+<th align="left"><b>Popupbenachrichtigung?</b></th>
+<th align="left"><b>Kachel-/Signalbenachrichtigung?</b></th>
+<th align="left"><b>Unformatierte Pushbenachrichtigungen?</b></th>
 <th align="left"><b>Authentifizierung</b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>Store-Registrierung erforderlich?</b></th>
+<th align="left"><b>Ist eine Store-Registrierung erforderlich?</b></th>
 <th align="left"><b>Kanäle</b></th>
 <th align="left"><b>Verschlüsselung</b></th>
 </tr>
@@ -168,10 +168,10 @@ Im Allgemeinen wird empfohlen, den primären Kanal in Ihrer App zu verwenden –
 * [Senden einer lokalen Kachelbenachrichtigung](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [Adaptive und interaktive Popupbenachrichtigungen](../tiles-and-notifications/adaptive-interactive-toasts.md)
 * [Schnellstart: Eine Pushbenachrichtigung senden](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [Vorgehensweise beim Aktualisieren eines Badges durch Pushbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Wie Sie anfordern, erstellen und speichern einen Benachrichtigungskanal](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [Gewusst wie: Abfangen von Benachrichtigungen für die Ausführung von Anwendungen](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Gewusst wie: authentifizieren mit den Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Push Notification Service Anforderungs- und Antwortheader](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Richtlinien und Prüfliste für erste Schritte mit Pushbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [So wird's gemacht: Aktualisieren eines Signals durch Pushbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [So wird's gemacht: Anfordern, Erstellen und Speichern eines Benachrichtigungskanals](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [So wird's gemacht: Abfangen von Benachrichtigungen für ausgeführte Anwendungen](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [So wird's gemacht: Authentifizieren mit dem Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [Anforderungs- und Antwortheader des Pushbenachrichtigungsdiensts](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [Richtlinien und Prüfliste für Pushbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [Unformatierte Benachrichtigungen](raw-notification-overview.md)

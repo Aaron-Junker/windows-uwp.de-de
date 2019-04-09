@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, portieren, migrieren, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1d11d0dcdf13982e0754a84de00f22c02090e822
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630745"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618387"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Von WRL zu C++/WinRT wechseln
 In diesem Thema wird gezeigt, wie Sie Portieren [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) Code in den entsprechenden [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -28,7 +28,7 @@ Fügen Sie Ihrer vorkompilierten Headerdatei (in der Regel `pch.h`) `winrt/base.
 Wenn Sie alle C++/WinRT-projizierten Windows-API-Header hinzufügen (z. B. `winrt/Windows.Foundation.h`), müssen Sie so nicht explizit `winrt/base.h` einschließen, da dies automatisch erfolgt.
 
 ## <a name="porting-wrl-com-smart-pointers-microsoftwrlcomptrcppwindowscomptr-class"></a>Portieren von intelligenten WRL-COM-Zeigern ([Microsoft::WRL::ComPtr](/cpp/windows/comptr-class))
-Portieren von Code, der verwendet **Microsoft::WRL::ComPtr\<T\>**  verwenden [ **winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Im Folgenden finden Sie ein Codebeispiel für „Vorher“ und „Nachher“: In der *Nachher*-Version ruft die [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)-Mitgliedsfunktion den zugrunde liegenden Rohzeiger ab, sodass dieser definiert werden kann.
+Portieren von Code, der verwendet **Microsoft::WRL::ComPtr\<T\>**  verwenden [ **winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Im Folgenden finden Sie ein Codebeispiel für „Vorher“ und „Nachher“: In der *Nachher*-Version ruft die [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput-function)-Mitgliedsfunktion den zugrunde liegenden Rohzeiger ab, sodass dieser definiert werden kann.
 
 ```cpp
 ComPtr<IDXGIAdapter1> previousDefaultAdapter;
@@ -41,7 +41,7 @@ winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put(
 ```
 
 > [!IMPORTANT]
-> Wenn Sie haben eine [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr) , die bereits angebracht ist (die interne rohzeiger hat bereits ein Ziel) es darauf an ein anderes Objekt erneut Arbeitsplätzen werden sollen, und Sie müssen zunächst zuweisen `nullptr` Damit&mdash;wie im folgenden Codebeispiel gezeigt. Falls nicht, klicken Sie dann ein bereits angeschlossene **Com_ptr** zeichnen Sie das Problem wird Ihre Aufmerksamkeit (beim Aufrufen [ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) oder [ **Com_ptr:: Put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) durch die Assertion, dass die internen Zeiger nicht null ist.
+> Wenn Sie haben eine [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr) , die bereits angebracht ist (die interne rohzeiger hat bereits ein Ziel) es darauf an ein anderes Objekt erneut Arbeitsplätzen werden sollen, und Sie müssen zunächst zuweisen `nullptr` Damit&mdash;wie im folgenden Codebeispiel gezeigt. Falls nicht, klicken Sie dann ein bereits angeschlossene **Com_ptr** zeichnen Sie das Problem wird Ihre Aufmerksamkeit (beim Aufrufen [ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput-function) oder [ **Com_ptr:: Put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)) durch die Assertion, dass die internen Zeiger nicht null ist.
 
 ```cppwinrt
 winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;
@@ -59,7 +59,7 @@ winrt::check_hresult(
 );
 ```
 
-Im nächsten Beispiel (in der *Nachher* Version) ruft die [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)-Mitgliedfunktion den zugrunde liegenden normalen Zeiger als einen Zeiger auf einen Zeiger auf „void“ ab.
+Im nächsten Beispiel (in der *Nachher* Version) ruft die [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)-Mitgliedfunktion den zugrunde liegenden normalen Zeiger als einen Zeiger auf einen Zeiger auf „void“ ab.
 
 ```cpp
 ComPtr<ID3D12Debug> debugController;
@@ -77,7 +77,7 @@ if (SUCCEEDED(D3D12GetDebugInterface(__uuidof(debugController), debugController.
 }
 ```
 
-Ersetzen Sie **ComPtr::Get** durch [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#comptrget-function).
+Ersetzen Sie **ComPtr::Get** durch [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function).
 
 ```cpp
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
@@ -87,7 +87,7 @@ m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->G
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
 ```
 
-Sollen den zugrunde liegende unformatierten Zeiger an eine Funktion übergeben, die einen Zeiger auf erwartet **IUnknown**, verwenden Sie die [ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) kostenlose-Funktion, wie in diesem nächsten dargestellt Beispiel:.
+Sollen den zugrunde liegende unformatierten Zeiger an eine Funktion übergeben, die einen Zeiger auf erwartet **IUnknown**, verwenden Sie die [ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) kostenlose-Funktion, wie in diesem nächsten dargestellt Beispiel:.
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -211,7 +211,7 @@ HRESULT __stdcall DllCanUnloadNow(void)
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [Vorlage für WinRT::com_ptr-Struktur](/uwp/cpp-ref-for-winrt/com-ptr)
-* [WinRT::Windows::Foundation::IUnknown-Struktur](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Einführung in C++/WinRT](intro-to-using-cpp-with-winrt.md)

@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, Uwp, WinRT-API, WNS
 localizationpriority: medium
-ms.openlocfilehash: ba8630a2e877345adeac7eb443dd3e418d3ed277
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bf224b6c0997ce8af86ab2919a1d0513f619a8a3
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639525"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59067825"
 ---
 # <a name="alternate-push-channels-using-webpush-and-vapid-in-uwp"></a>Alternative Push-Kanäle mit Webpush VAPID auf UWP 
 Ab dem Fall Creators Update können können UWP-apps Web Push mit VAPID Authentifizierung Sie Pushbenachrichtigungen senden.  
@@ -45,7 +45,7 @@ private async void AppCreateVAPIDChannelAsync(string appChannelId, IBuffer appli
     //               The resulting key is an uncompressed point in ANSI X9.62 format             
     // ChannelId is an app provided value for it to identify the channel later.  
     // case of this app it is from the set { "Football", "News", "Baseball" } 
-    PushNotificationChannel webChannel = await PushNotificationChannelManager.Current.CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId); 
+    PushNotificationChannel webChannel = await PushNotificationChannelManager.GetDefault().CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId); 
  
     //Save the channel  
     AppUpdateChannelMapping(appChannelId, webChannel); 
@@ -106,8 +106,8 @@ Sie können beliebige Verschlüsselungsschema Sie hilfreich für Ihre app finden
 Wenn Sie eine andere Form der Verschlüsselung verwenden möchten, ist der Schlüssel die Verwendung der unformatierten an. Header-Eigenschaft. Sie enthält alle Verschlüsselung-Header, die in der POST-Anforderung an den Push-Server enthalten sind. Von dort aus kann Ihre app die Schlüssel zum Entschlüsseln der Nachricht verwenden.  
 
 ## <a name="related-topics"></a>Verwandte Themen
-- [Benachrichtigung Kanaltypen](channel-types.md)
-- [Windows-Pushbenachrichtigungsdienste (WNS)](windows-push-notification-services--wns--overview.md)
+- [Benachrichtigungskanaltypen](channel-types.md)
+- [Windows-Pushbenachrichtigungsdienst (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
 - [PushNotificationChannel-Klasse](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
 - [PushNotificationChannelManager-Klasse](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)
 

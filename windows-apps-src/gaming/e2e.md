@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Spiele, Entwickeln von Spielen
 ms.localizationpriority: medium
-ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ca3ed91d7250425b9a77fb09820a53952c8f3cfc
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57652325"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162735"
 ---
 # <a name="windows-10-game-development-guide"></a>Handbuch zur Entwicklung von Spielen unter Windows 10
 
@@ -50,7 +50,7 @@ In diesem Handbuch finden Sie immer wieder direkte Links zu relevanten Dokumenta
     </colgroup>
     <tr>
         <td>Hauptportal für Windows Dev Center</td>
-        <td><a href="https://dev.windows.com">Windows Dev Center</a></td>
+        <td><a href="https://dev.windows.com">Windows Developer Center</a></td>
     </tr>
     <tr>
         <td>Entwickeln von Windows-Apps</td>
@@ -86,7 +86,7 @@ In diesem Handbuch finden Sie immer wieder direkte Links zu relevanten Dokumenta
     </tr>
     <tr>
         <td>Xbox Live-Dokumentation</td>
-        <td><a href="../xbox-live/index.md">Xbox Live-Entwicklerhandbuch</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/">Xbox Live-Entwicklerhandbuch</a></td>
     </tr>
     <tr>
         <td>Xbox One – Entwicklerdokumentation (XGD)</td>
@@ -182,11 +182,11 @@ Für Windows 10-Spiele und -Apps stehen zahlreiche Beispiele zur Verfügung, die
     </tr>
     <tr>
         <td>Grafikbeispiele für Direct3D 12</td>
-        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX-Grafiken – Beispiele</a></td>
+        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX-Graphics-Samples</a></td>
     </tr>
     <tr>
         <td>Grafikbeispiele für Direct3D 11</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">DirectX-Sdk-Beispiele</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
     </tr>
     <tr>
         <td>Beispiel für ein First-Person-Spiel mit Direct3D 11</td>
@@ -210,7 +210,7 @@ Für Windows 10-Spiele und -Apps stehen zahlreiche Beispiele zur Verfügung, die
     </tr>
     <tr>
         <td>Xbox Live-Beispiele</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples">Xbox live-Beispiele</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
     </tr>
     <tr>
         <td>Beispiele für Xbox One-Spiele (XGD)</td>
@@ -910,7 +910,7 @@ Entwicklern, die bereits über ein Spiel verfügen, stehen zahlreiche Ressourcen
     </tr>
     <tr>
         <td>OpenGL ES 2.0 zu Direct3D 11 mit ANGLE</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">WINKEL</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
     </tr>
     <tr>
         <td>Entsprechungen für die klassische Windows-API in der UWP</td>
@@ -1114,7 +1114,7 @@ Durch den angemessenen Einsatz von Typografie können Sie Ihr Spiel in vielerlei
     </colgroup>
     <tr>
         <td>Typografiehandbuch</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">Bewährte Methoden: Typografie</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">Bewährte Methoden: Typography</a></td>
     </tr>
 </table>
  
@@ -1311,7 +1311,7 @@ Dies sind einige zusätzliche DirectX-Dokumentationen, die von externen Partnern
 </table>
 
 
-## <a name="production"></a>Production um
+## <a name="production"></a>Produktion
 
 
 Ihr Studio ist jetzt vollständig eingebunden und beginnt mit dem Produktionszyklus, wobei die Arbeiten auf die einzelnen Teammitglieder aufgeteilt werden. Der Prototyp wird optimiert, überarbeitet und erweitert, um ein vollständiges Spiel zu erhalten.
@@ -1742,7 +1742,7 @@ Zum Aktualisieren Ihres veröffentlichten Spiels übermitteln Sie ein neues App-
 Xbox Live ist ein erstklassiges Gaming-Netzwerk, das Millionen von Spielern weltweit verbindet. Entwickler haben Zugriff auf Xbox Live-Features, die die Spielerzielgruppe steigern, einschließlich Xbox Live, Bestenlisten, Cloudspeicherungen, Spielehubs, Clubs, Party-Chat, Game DVR und mehr.
 
 > [!Note]
-> Wenn Sie Xbox Live aktivierte Titel entwickeln möchten, stehen Ihnen verschiedene Optionen zur Verfügung. Informationen zu den verschiedenen Programmen finden Sie unter [Übersicht über das Entwickler-Programm](../xbox-live/developer-program-overview.md).
+> Wenn Sie Xbox Live aktivierte Titel entwickeln möchten, stehen Ihnen verschiedene Optionen zur Verfügung. Informationen zu den verschiedenen Programmen finden Sie unter [Übersicht über das Entwickler-Programm](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
 
 <table>
     <colgroup>
@@ -1751,19 +1751,19 @@ Xbox Live ist ein erstklassiges Gaming-Netzwerk, das Millionen von Spielern welt
     </colgroup>
     <tr>
         <td>Xbox Live – Übersicht</td>
-        <td><a href="../xbox-live/index.md">Xbox Live-Entwicklerhandbuch</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/index.md">Xbox Live-Entwicklerhandbuch</a></td>
     </tr>
     <tr>
         <td>Verstehen, welche Features je nach Programm verfügbar sind</td>
-        <td><a href="../xbox-live/developer-program-overview.md#feature-table">Übersicht über die Developer-Programm: Feature-Tabelle</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">Übersicht über die Developer-Programm: Feature-Tabelle</a></td>
     </tr>
     <tr>
         <td>Links zu nützlichen Ressourcen für die Entwicklung von Xbox Live-Spielen</td>
-        <td><a href="../xbox-live/xbox-live-resources.md">Xbox Live-Ressourcen</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/xbox-live-resources.md">Xbox Live-Ressourcen</a></td>
     </tr>
     <tr>
         <td>Erfahren Sie, wie Sie Informationen über Xbox Live-Dienste abrufen</td>
-        <td><a href="../xbox-live/introduction-to-xbox-live-apis.md">Einführung in die Xbox Live-APIs</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/introduction-to-xbox-live-apis.md">Einführung in die Xbox Live-APIs</a></td>
     </tr>
 </table>
 
@@ -1777,23 +1777,23 @@ Xbox Live ist ein erstklassiges Gaming-Netzwerk, das Millionen von Spielern welt
     </colgroup>
     <tr>
         <td>Übersicht</td>
-        <td><a href="../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Erste Schritte mit dem Xbox Live Creators-Programm</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Erste Schritte mit dem Xbox Live Creators-Programm</a></td>
     </tr>
     <tr>
         <td>Hinzufügen von Xbox Live zu Ihrem Spiel</td>
-        <td><a href="../xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Schrittweise Anleitung zum Integrieren von Xbox Live Creators-Programm</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Schrittweise Anleitung zum Integrieren von Xbox Live Creators-Programm</a></td>
     </tr>
     <tr>
         <td>Hinzufügen von Xbox Live zu Ihrem UWP-Spiel, das mit Unity erstellt wurde</td>
-        <td><a href="../xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Erste Schritte beim Entwickeln eines Titels für die Xbox Live Creators-Programm mit der Unity-Spiele-engine</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Erste Schritte beim Entwickeln eines Titels für die Xbox Live Creators-Programm mit der Unity-Spiele-engine</a></td>
     </tr>
     <tr>
         <td>Einrichten der Entwicklungs-Sandbox</td>
-        <td><a href="../xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live-Sandboxes Einführung</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live-Sandboxes Einführung</a></td>
     </tr>
     <tr>
         <td>Einrichten von Konten zum Testen</td>
-        <td><a href="../xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">Autorisieren von Xbox Live-Konten in Ihrer testumgebung</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">Autorisieren von Xbox Live-Konten in Ihrer testumgebung</a></td>
     </tr>
     <tr>
         <td>Beispiele für das Xbox Live Creators-Programm</td>
@@ -1814,26 +1814,26 @@ Xbox Live ist ein erstklassiges Gaming-Netzwerk, das Millionen von Spielern welt
     </colgroup>
     <tr>
         <td>Übersicht</td>
-        <td><a href="../xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Beginnen Sie mit der Xbox Live als verwaltete Partner oder ein ID-Entwickler</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Beginnen Sie mit der Xbox Live als verwaltete Partner oder ein ID-Entwickler</a></td>
     </tr>
     <tr>
         <td>Hinzufügen von Xbox Live zu Ihrem Spiel</td>
-        <td><a href="../xbox-live/get-started-with-partner/partners-step-by-step-guide.md">Schrittweise Anleitung zum Integrieren von Xbox Live für verwaltete Partner und ID-Member</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partners-step-by-step-guide.md">Schrittweise Anleitung zum Integrieren von Xbox Live für verwaltete Partner und ID-Member</a></td>
     </tr>
     <tr>
         <td>Hinzufügen von Xbox Live zu Ihrem UWP-Spiel, das mit Unity erstellt wurde</td>
-        <td><a href="../xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Fügen Sie Xbox Live-Unterstützung mit Unity für UWP mit Skripterstellung IL2CPP-Back-End für ID und der verwaltete Partner</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Fügen Sie Xbox Live-Unterstützung mit Unity für UWP mit Skripterstellung IL2CPP-Back-End für ID und der verwaltete Partner</a></td>
     </tr>
     <tr>
         <td>Einrichten der Entwicklungs-Sandbox</td>
-        <td><a href="../xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">Erweiterte Xbox Live-sandboxes</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">Erweiterte Xbox Live-sandboxes</a></td>
     </tr>
     <tr>
         <td>Anforderungen für Spiele mit Xbox Live (GDN)</td>
         <td><a href="https://go.microsoft.com/fwlink/?LinkId=533217">Xbox-Anforderungen für die Xbox Live für Windows 10</a></td>
     </tr>
     <tr>
-        <td>Beispiele</td>
+        <td>Proben</td>
         <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">Codebeispiele für ID@Xbox Entwickler</a></td>
     </tr>  
     <tr>

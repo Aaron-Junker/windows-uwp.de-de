@@ -7,12 +7,12 @@ keywords: Gerät, Digitalisierer, Eingabe, Interaktion, Einfügung
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602325"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343239"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simulieren der Benutzereingabe über die Eingabeeinfügung
 
@@ -169,11 +169,11 @@ In diesem Beispiel wird veranschaulicht, wie Sie die Eingabeeinfügungs-APIs ([W
     
     In diesem Codeausschnitt deklarieren wir unsere globalen Objekte und Listener für Zeigerereignisse ([AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)) innerhalb des Mauseingabebereichs, die in den Schaltflächenklickereignissen möglicherweise als verarbeitet gekennzeichnet sind.
 
-    Das [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector)-Objekt stellt das virtuelle Eingabegerät zum Senden der eingegebenen Daten dar.
+    Das [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector)-Objekt stellt das virtuelle Eingabegerät zum Senden der eingegebenen Daten dar.
 
     Im Handler `ContainerInput_PointerPressed` rufen wir die Toucheinfügungsfunktion auf.
 
-    Im Handler `ContainerInput_PointerReleased` rufen wir UninitializeTouchInjection auf, um das [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector)-Objekt zu beenden.
+    Im Handler `ContainerInput_PointerReleased` rufen wir UninitializeTouchInjection auf, um das [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector)-Objekt zu beenden.
 
     ```csharp
     public sealed partial class MainPage : Page
@@ -250,7 +250,7 @@ In diesem Beispiel wird veranschaulicht, wie Sie die Eingabeeinfügungs-APIs ([W
     ```
 3. Dies ist die Toucheingabeeinfügungsfunktion.
 
-    Zuerst rufen wir [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) auf, um das [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector)-Objekt zu instanziieren.
+    Zuerst rufen wir [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) auf, um das [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector)-Objekt zu instanziieren.
 
     Anschließend rufen wir [InitializeTouchInjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection) mit dem [InjectedInputVisualizationMode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) von `Default` auf.
 

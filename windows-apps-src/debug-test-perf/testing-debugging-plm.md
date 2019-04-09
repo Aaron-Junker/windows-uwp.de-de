@@ -1,17 +1,17 @@
 ---
 description: Tools und Verfahren zum Debuggen und Testen der Kompatibilität Ihrer App mit der Prozesslebensdauer-Verwaltung.
 title: Test- und Debugtools für die Prozesslebensdauer-Verwaltung (PLM)
-ms.date: 02/08/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b3e37d4de3a346e0f29909727a46d3b31f9d59d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 94cbad6e497ea2f5b36a07a6b039bfc293175c4c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608495"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244346"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>Test- und Debugtools für die Prozesslebensdauer-Verwaltung (PLM)
 
@@ -25,11 +25,11 @@ Der integrierte Debugger in Visual Studio 2015 kann Sie bei der Untersuchung pot
 
 ## <a name="the-plmdebug-tool"></a>Tool PLMDebug
 
-Das Befehlszeilentool „PLMDebug.exe“ ist Bestandteil des Windows SDKs und ermöglicht es Ihnen, den PLM-Zustand eines Anwendungspakets zu steuern. Nach der Installation finden Sie das Tool standardmäßig unter *C:\Programme (x86)\Windows Kits\10\Debuggers\x64*. 
+Das Befehlszeilentool „PLMDebug.exe“ ist Bestandteil des Windows SDKs und ermöglicht es Ihnen, den PLM-Zustand eines Anwendungspakets zu steuern. Nach der Installation finden Sie das Tool standardmäßig unter *C:\Programme (x86)\Windows Kits\10\Debuggers\x64*.
 
 Mithilfe von PLMDebug können Sie außerdem PLM für beliebige installierte App-Pakete deaktivieren, was für einige Debugger erforderlich ist. Durch das Deaktivieren von PLM wird verhindert, dass der Runtime Broker-Dienst Ihre App beendet, bevor Sie sie debuggen können. Verwenden Sie zum Deaktivieren von PLM die Option **/enableDebug** gefolgt vom *vollständigen Paketnamen* Ihrer UWP-App (der Kurzname, der Paketfamilienname oder die AUMID eines Pakets funktioniert nicht):
 
-```
+```cmd
 plmdebug /enableDebug [PackageFullName]
 ```
 
@@ -41,7 +41,7 @@ Optional können Sie einen absoluten Pfad zu einem Debugger angeben, der beim Ak
 
 Sie können diese Einschränkung umgehen, indem Sie ein Skript oder Tool schreiben, mit dem der Prozess Ihres Spiels identifiziert wird. Anschließend führt die Shell „VSJITDebugger.exe“ aus und übergibt die PID Ihrer UWP-App. Das folgende C#-Codebeispiel veranschaulicht einen direkten Ansatz für dieses Verfahren.
 
-```
+```cs
 using System.Diagnostics;
 
 namespace VSJITLauncher
@@ -76,13 +76,15 @@ namespace VSJITLauncher
 
 Verwendungsbeispiel für dieses Verfahren in Verbindung mit PLMDebug:
 
-```
+```cmd
 plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg "\"C:\VSJITLauncher.exe\" Game"
 ```
+
 `Game` entspricht dabei dem Prozessnamen und `279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` dem vollständigen Paketnamen des UWP-App-Pakets im Beispiel.
 
 Beachten Sie, dass jeder **/enableDebug**-Aufruf später mit der Option **/disableDebug** an einen weiteren PLMDebug-Aufruf gekoppelt werden muss. Darüber hinaus muss der Pfad zu einem Debugger absolut sein (relative Pfade werden nicht unterstützt).
 
 ## <a name="related-topics"></a>Verwandte Themen
+
 - [Bereitstellen und Debuggen von UWP-Apps](deploying-and-debugging-uwp-apps.md)
 - [Debugging, Tests und Leistung](index.md)

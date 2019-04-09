@@ -1,23 +1,23 @@
 ---
 description: Dieses Thema zeigt, wie man Event-Handling-Delegaten mit C++/WinRT registriert und widerruft.
 title: Verarbeiten von Ereignissen über Delegaten in C++/WinRT
-ms.date: 05/07/2018
+ms.date: 03/04/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projiziert, projizierung, varbeiten, ereignis, delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c647168f44ffbfc4d753700a87825b5ca7b28544
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602425"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921676"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Verarbeiten von Ereignissen über Delegaten in C++/WinRT
 
 In diesem Thema wird gezeigt, wie zum Registrieren und Sperren für die Ereignisbehandlung Delegaten mit [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Sie können ein Ereignis mit jedem Objekt verarbeiten, das einer normalen C++ Funktion entspricht.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden von C++ / WinRT Visual Studio-Erweiterung (VSIX) (die bereitstellt, projektunterstützung für die Vorlage als auch C++ / WinRT-MSBuild-Eigenschaften und Ziele) finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Installieren und Verwenden der C++WinRT Visual Studio-Erweiterung (VSIX) und das NuGet-Paket (die zusammen bieten die Projektvorlage und Buildunterstützung) finden Sie unter [Visual Studio-Unterstützung für C++"/ WinRT"](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>Einen Delegaten für die Verarbeitung eines Ereignisses registrieren
 
@@ -51,7 +51,7 @@ MainPage::MainPage()
 > [!IMPORTANT]
 > Bei der Registrierung des Delegats übergibt im obenstehenden Codebeispiel wird eine unformatierte *dies* Zeiger (zeigt auf das aktuelle Objekt). Um zu erfahren, wie Sie einen starken oder einen schwachen Verweis auf das aktuelle Objekt herzustellen, finden Sie unter den **bei Verwendung eine Memberfunktion als Delegat** Unterabschnitt im Abschnitt [problemlos den Zugriff auf die *dies* Zeiger mit einem Delegaten zur Verarbeitung von Ereignissen](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
-Es gibt andere Möglichkeiten, ein **RoutedEventHandler** zu erstellen. Unten finden Sie den Syntaxblock aus dem Dokumentationsthema für [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (wählen Sie *C++/WinRT* im Dropdown-Menü **Sprache** auf der Seite aus). Beachten Sie die verschiedenen Konstruktoren: Einer nimmt ein Lambda entgegen (ein anderer eine freie Funktion) und ein weiterer (der oben verwendete) nimmt ein Objekt und eine Pointer-to-Member-Funktion entgegen.
+Es gibt andere Möglichkeiten, ein **RoutedEventHandler** zu erstellen. Im folgenden ist die Syntax dieses Dokumentationsthema für entnommen [ **RoutedEventHandler** ](/uwp/api/windows.ui.xaml.routedeventhandler) (Wählen Sie  *C++"/ WinRT"* aus der **Sprache** -Dropdown in der oberen rechten Ecke der Webseite). Beachten Sie die verschiedenen Konstruktoren: Einer nimmt ein Lambda entgegen (ein anderer eine freie Funktion) und ein weiterer (der oben verwendete) nimmt ein Objekt und eine Pointer-to-Member-Funktion entgegen.
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -67,7 +67,25 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 
 Die Syntax des Funktionsaufrufoperators ist ebenfalls hilfreich. Sie sagt Ihnen, welche Parameter Ihr Delegat haben muss. Wie Sie sehen, entspricht in diesem Fall die Syntax des Funktionsaufrufoperators den Parametern unseres **MainPage::ClickHandler**.
 
-Wenn Sie nicht viel in Ihrem Ereignis-Handler erledigen, dann können Sie eine Lambda-Funktion anstelle einer Mitgliedsfunktion verwenden. Auch hier ist es vielleicht nicht offensichtlich, aber ein **RoutedEventHandler**-Delegat wird aus einer Lambda-Funktion erstellt, die wiederum der Syntax des Funktionsaufrufoperators entsprechen muss.
+> [!NOTE]
+> Alle angegebenen Ereignisse um die Details der des Delegaten-Parameter und die Delegaten zu ermitteln, finden Sie unter erste dieses Dokumentationsthema für das Ereignis selbst. Sehen wir uns die [UIElement.KeyDown Ereignis](/uwp/api/windows.ui.xaml.uielement.keydown) als Beispiel. Besuchen Sie dieses Thema, und wählen  *C++"/ WinRT"* aus der **Sprache** Dropdown-Liste. In der Syntaxblock am Anfang des Themas sehen Sie diese.
+> 
+> ```cppwinrt
+> // Register
+> event_token KeyDown(KeyEventHandler const& handler) const;
+> ```
+>
+> Dass Informationen an, die des Benutzers die **UIElement.KeyDown** Ereignis (das Thema auf) hat einen Delegattyp mit **KeyEventHandler**, da dies der Typ ist, die Sie übergeben, wenn Sie einen Delegaten mit diesen Ereignistyp registrieren. Daher führen Sie jetzt den Link zu diesem Thema, [KeyEventHandler Delegaten](/uwp/api/windows.ui.xaml.input.keyeventhandler) Typ. Hier enthält der Syntaxblock einen Funktionsaufrufoperator. Und wie bereits erwähnt, informiert Sie was des Delegaten-Parameter werden müssen.
+> 
+> ```cppwinrt
+> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+> ```
+>
+>  Wie Sie sehen können, muss der Delegat deklariert werden, wird ein **"iinspectable"** als Absender und einer Instanz von der [KeyRoutedEventArgs Klasse](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) wie der Args.
+>
+> Um ein weiteres Beispiel sehen wir uns die [Popup.Closed Ereignis](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Ist der Delegattyp [EventHandler\<"iinspectable"\>](/uwp/api/windows.foundation.eventhandler). Der Delegat dauert also eine **"iinspectable"** als Absender und ein anderes **"iinspectable"** (da, die die **EventHandler**des Typparameter) wie der Args.
+
+Wenn Sie nicht viel in Ihrem Ereignis-Handler erledigen, dann können Sie eine Lambda-Funktion anstelle einer Mitgliedsfunktion verwenden. In diesem Fall möglicherweise nicht aus dem Codebeispiel unten wird jedoch ein **RoutedEventHandler** Delegat von einer Lambdafunktion, die in diesem Fall muss die Syntax des Funktionsaufrufoperators entsprechen, die wir oben beschrieben erstellt wird.
 
 ```cppwinrt
 MainPage::MainPage()
@@ -234,10 +252,10 @@ Wenn Sie ein Ereignis mit einer Objektmemberfunktion behandeln oder aus in einer
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [WinRT::auto_revoke_t Marker-Struktur](/uwp/cpp-ref-for-winrt/auto-revoke-t)
-* [WinRT::Implements::get_weak-Funktion](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
-* [WinRT::Implements::get_strong-Funktion](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
+* [winrt::implements::get_weak-Funktion](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
+* [winrt::implements::get_strong-Funktion](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen von Ereignissen in C++ / WinRT](author-events.md)
-* [Parallelität und asynchrone Vorgänge mit C++ / WinRT](concurrency.md)
-* [Starke und schwache Verweise in C++/WinRT](weak-references.md)
+* [Erstellen von Ereignissen mit C++/WinRT](author-events.md)
+* [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency.md)
+* [Starke und schwache Verweise in C++ / WinRT](weak-references.md)

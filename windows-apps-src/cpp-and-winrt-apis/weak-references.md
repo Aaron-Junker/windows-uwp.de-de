@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Uwp, standard, c++, Cpp, Winrt, Projektion, sicheres, schwache, Referenz
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0e2e40daaf777e36094b698d058f21840b1804c8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630815"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291828"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Starke und schwache Verweise in C++ / WinRT
 
@@ -57,7 +57,7 @@ int main()
 }
 ```
 
-**MyClass::RetrieveValueAsync** funktioniert für eine Weile, und klicken Sie dann letztendlich gibt eine Kopie der `MyClass::m_value` -Datenmember. Aufrufen von **RetrieveValueAsync** bewirkt, dass ein asynchroner Objekt erstellt, und dieses Objekt verfügt über einen impliziten *dies* Zeiger (über die schließlich `m_value` zugegriffen wird).
+**MyClass::RetrieveValueAsync** benötigt einige Zeit funktioniert, und schließlich gibt es eine Kopie des der `MyClass::m_value` -Datenmember. Aufrufen von **RetrieveValueAsync** bewirkt, dass ein asynchroner Objekt erstellt, und dieses Objekt verfügt über einen impliziten *dies* Zeiger (über die schließlich `m_value` zugegriffen wird).
 
 Hier ist die vollständige Abfolge der Ereignisse.
 
@@ -101,11 +101,11 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-Da C++ / WinRT-Objekt direkt oder indirekt leitet sich von der [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) Vorlage C++ / WinRT-Objekt aufrufen können, die [ **implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) geschützte Memberfunktion zum Abrufen von eines starken Verweis auf die *dies* Zeiger. Beachten Sie, dass keine Notwendigkeit besteht, verwenden die `strong_this` Variable, die den Aufruf von **Get_strong** Ihr Verweiszähler erhöht und hält Ihre implizite *dies* Zeiger ungültig.
+Da eine C++/WinRT-Objekt direkt oder indirekt leitet sich von der [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) Vorlage die C++/WinRT-Objekt aufrufen können, die [  **Implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) geschützte Memberfunktion zum Abrufen von eines starken Verweis auf die *dies* Zeiger. Beachten Sie, dass keine Notwendigkeit besteht, verwenden die `strong_this` Variable, die den Aufruf von **Get_strong** Ihr Verweiszähler erhöht und hält Ihre implizite *dies* Zeiger ungültig.
 
 Dies behebt das Problem, das wir vorher hatten, wenn wir mit Schritt 4 haben. Selbst wenn alle anderen Verweise auf die Instanz der Klasse nicht mehr angezeigt, wurde die Coroutine unternommen, entsprechende Vorsichtsmaßnahmen treffen garantieren, dass seine Abhängigkeiten stabil sind.
 
-Wenn ein starker Verweis nicht geeignet ist, rufen Sie stattdessen [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) abzurufenden einen schwachen Verweis auf *dies*. Bestätigen Sie, dass Sie vor dem Zugriff auf einen starken Verweis abrufen können *dies*.
+Wenn ein starker Verweis nicht geeignet ist, rufen Sie stattdessen [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) abzurufenden einen schwachen Verweis auf *dies*. Bestätigen Sie, dass Sie vor dem Zugriff auf einen starken Verweis abrufen können *dies*.
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -243,7 +243,7 @@ In beiden Fällen wir sind gerade erfasst die unformatierte *dies* Zeiger. Und d
 
 ### <a name="the-solution"></a>Die Lösung
 
-Die Lösung besteht darin, einen starken Verweis zu erfassen. Ein starker Verweis *ist* inkrementiert den Verweiszähler und *ist* keep-alive für das aktuelle Objekt. Sie deklarieren eine erfassungsvariable (aufgerufen `strong_this` in diesem Beispiel), und initialisieren Sie es mit einem Aufruf von [ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function), die einen starken Verweis auf abruft unsere  *Dies* Zeiger.
+Die Lösung besteht darin, einen starken Verweis zu erfassen. Ein starker Verweis *ist* inkrementiert den Verweiszähler und *ist* keep-alive für das aktuelle Objekt. Sie deklarieren eine erfassungsvariable (aufgerufen `strong_this` in diesem Beispiel), und initialisieren Sie es mit einem Aufruf von [ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), die einen starken Verweis auf abruft unsere  *Dies* Zeiger.
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)
@@ -261,7 +261,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-Wenn ein starker Verweis nicht geeignet ist, rufen Sie stattdessen [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) abzurufenden einen schwachen Verweis auf *dies*. Bestätigen Sie, dass Sie einen starken Verweis weiterhin daraus abrufen können, bevor Sie den Zugriff auf Member.
+Wenn ein starker Verweis nicht geeignet ist, rufen Sie stattdessen [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) abzurufenden einen schwachen Verweis auf *dies*. Bestätigen Sie, dass Sie einen starken Verweis weiterhin daraus abrufen können, bevor Sie den Zugriff auf Member.
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -296,13 +296,13 @@ struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
 
 Dies ist der standard, herkömmliche Möglichkeit zum Verweisen auf ein Objekt und seine Memberfunktion. Um dies sicher zu machen, können Sie&mdash;ab Version 10.0.17763.0 (Windows 10, Version 1809) des Windows SDK&mdash;herstellen, einen starken oder einen schwachen Verweis an dem Punkt, in dem der Handler registriert ist. An diesem Punkt ist das Ereignisobjekt Empfänger bekannt, noch aktiv sein.
 
-Rufen Sie einfach eine starke Referenz [ **Get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) anstelle der unformatierten *dies* Zeiger. C++ / WinRT stellt sicher, dass der resultierende Delegat einen starken Verweis auf das aktuelle Objekt enthält.
+Rufen Sie einfach eine starke Referenz [ **Get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) anstelle der unformatierten *dies* Zeiger. C++ / WinRT stellt sicher, dass der resultierende Delegat einen starken Verweis auf das aktuelle Objekt enthält.
 
 ```cppwinrt
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
-Rufen Sie für einen schwachen Verweis [ **Get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function). C++ / WinRT stellt sicher, dass der resultierende Delegat einen schwachen Verweis enthält. In letzter Minute hinter den Kulissen der Delegaten versucht, den schwachen Verweis zu einer starken aufzulösen, und nur die Member-Funktion aufruft, wenn er erfolgreich ausgeführt wird.
+Rufen Sie für einen schwachen Verweis [ **Get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function). C++ / WinRT stellt sicher, dass der resultierende Delegat einen schwachen Verweis enthält. In letzter Minute hinter den Kulissen der Delegaten versucht, den schwachen Verweis zu einer starken aufzulösen, und nur die Member-Funktion aufruft, wenn er erfolgreich ausgeführt wird.
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
@@ -368,7 +368,7 @@ if (Class strong = weak.get())
 }
 ```
 
-Sofern noch eine andere starke Referenz existiert, erhöht der Aufruf von [**weak_ref::get**](/uwp/cpp-ref-for-winrt/weak-ref#weakrefget-function) die Referenzanzahl und gibt die starke Referenz an den Aufrufer zurück.
+Sofern noch eine andere starke Referenz existiert, erhöht der Aufruf von [**weak_ref::get**](/uwp/cpp-ref-for-winrt/weak-ref#weak_refget-function) die Referenzanzahl und gibt die starke Referenz an den Aufrufer zurück.
 
 ### <a name="opting-out-of-weak-reference-support"></a>Opt-out der Unterstützung von schwachen Referenzen
 Die Unterstützung schwacher Referenzen erfolgt automatisch. Sie können diese Unterstützung jedoch explizit deaktivieren, indem Sie die [**winrt::no_weak_ref**](/uwp/cpp-ref-for-winrt/no-weak-ref)-Markerstruktur als template-Argument an Ihre Basisklasse übergeben.
@@ -394,7 +394,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 Dabei spielt es keine Rolle, wo im Variadic-Parameterpaket die Markerstruktur erscheint. Wenn Sie eine schwache Referenz für einen Opted-Out-Typ anfordern, dann hilft Ihnen der Compiler mit der Meldung „*Dies ist nur für die Unterstützung schwacher Referenzen*”.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [Implements::get_weak-Funktion](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
+* [Implements::get_weak-Funktion](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
 * [Vorlage für WinRT::make_weak-Funktion](/uwp/cpp-ref-for-winrt/make-weak)
 * [WinRT::no_weak_ref Marker-Struktur](/uwp/cpp-ref-for-winrt/no-weak-ref)
 * [Vorlage für WinRT::weak_ref-Struktur](/uwp/cpp-ref-for-winrt/weak-ref)

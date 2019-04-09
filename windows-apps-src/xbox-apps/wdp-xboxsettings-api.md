@@ -6,14 +6,15 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 54a15be26adf0da97105f15f3a44f26ee7bfc96d
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598645"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240038"
 ---
-# <a name="developer-settings-api-reference"></a>Referenz zur API für Entwicklereinstellungen   
+# <a name="developer-settings-api-reference"></a>Referenz zur API für Entwicklereinstellungen
+
 Mit dieser API können Sie auf Xbox One-Einstellungen zugreifen, die für die Entwicklung nützlich sind.
 
 ## <a name="get-all-developer-settings-at-once"></a>Gleichzeitiges Abrufen aller Entwicklereinstellungen
@@ -25,7 +26,7 @@ Mithilfe der folgenden Anforderung können Sie alle Entwicklereinstellungen in e
 Methode      | Anforderungs-URI
 :------     | :-----
 GET | /ext/settings
-<br />
+
 **URI-Parameter**
 
 - Keine
@@ -49,14 +50,16 @@ Die Antwort ist ein JSON-Einstellungsarray mit allen Einstellungen. Jedes Einste
 * Type („Text“ | „Number“ | „Bool“ | „Select“): Dieses Feld gibt den Einstellungstyp an – Texteingabe, ein boolescher Wert („true“ oder „false“), eine Zahl mit einem Mindestwert oder Maximalwert oder Auswahl aus einer bestimmten Liste mit Werten.
 
 Wenn die Einstellung auf eine Zahl ist:
+
 * Min - (Anzahl) dieses Feld gibt den minimalen numerischen Wert der Einstellung an.
 * Max: (Anzahl) dieses Feld gibt den maximalen numerischen Wert der Einstellung an.
 
 Wenn die Einstellung zu wählen:
+
 * OptionsVariable - ("Yes" | "No") dieses Feld gibt an, ob die Festlegen von Optionen Variablen sind, wenn die gültigen Optionen, ohne einen Neustart des Computers ändern können.
 * Options: JSON-Array mit den gültigen Auswahloptionen als Zeichenfolgen.
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -67,6 +70,7 @@ HTTP-Statuscode      | Beschreibung
 5XX | Fehlercodes
 
 ## <a name="get-settings-one-at-a-time"></a>Abrufen einzelner Einstellungen
+
 Einstellungen können auch einzeln abgerufen werden.
 
 **Anforderung**
@@ -76,7 +80,7 @@ Mit der folgenden Anforderung können Sie Informationen zu einer einzelnen Einst
 Methode      | Anforderungs-URI
 :------     | :-----
 GET | /ext/Settings/\<Einstellungsname\>
-<br />
+
 **URI-Parameter**
 
 - Keine
@@ -100,14 +104,16 @@ Die Antwort ist ein JSON-Objekt mit folgenden Feldern:
 * Type („Text“ | „Number“ | „Bool“ | „Select“): Dieses Feld gibt den Einstellungstyp an – Texteingabe, ein boolescher Wert („true“ oder „false“), eine Zahl mit einem Mindestwert oder Maximalwert oder Auswahl aus einer bestimmten Liste mit Werten.
 
 Wenn die Einstellung auf eine Zahl ist:
+
 * Min - (Anzahl) dieses Feld gibt den minimalen numerischen Wert der Einstellung an.
 * Max: (Anzahl) dieses Feld gibt den maximalen numerischen Wert der Einstellung an.
 
 Wenn die Einstellung zu wählen:
+
 * OptionsVariable - ("Yes" | "No") dieses Feld gibt an, ob die Festlegen von Optionen Variablen sind, wenn die gültigen Optionen, ohne einen Neustart des Computers ändern können.
 * Options: JSON-Array mit den gültigen Auswahloptionen als Zeichenfolgen.
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -118,6 +124,7 @@ HTTP-Statuscode      | Beschreibung
 5XX | Fehlercodes
 
 ## <a name="set-the-value-of-a-setting"></a>Festlegen des Werts einer Einstellung
+
 Sie können den Wert einer Einstellung festlegen.
 
 **Anforderung**
@@ -127,7 +134,7 @@ Mit der folgenden Anforderung können Sie den Wert für eine Einstellung festleg
 Methode      | Anforderungs-URI
 :------     | :-----
 PUT | /ext/Settings/\<Einstellungsname\>
-<br />
+
 **URI-Parameter**
 
 - Keine
@@ -144,7 +151,7 @@ Value (Zeichenfolge): Der neue Wert für die Einstellung.
 
 - Keine
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -154,7 +161,6 @@ HTTP-Statuscode      | Beschreibung
 4XX | Fehlercodes
 5XX | Fehlercodes
 
-<br />
-**Gerätefamilien verfügbar**
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox

@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, fluent
-ms.openlocfilehash: 1e2c8b7d9fb7bdc61595296a137c4448cadf52d3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f1cc576bbc7fe7fc326d86072e22b7a385cfeb8b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629265"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913950"
 ---
 # <a name="item-templates-for-grid-view"></a>Elementvorlagen für Rasteransicht
 
@@ -19,7 +19,7 @@ Die Elementvorlagen in diesem Abschnitt können Sie mit einem [**GridView**](htt
 Um die Datenbindung zu demonstrieren, binden Sie diese Vorlagen **GridViewItems** der Beispiel-Aufzeichnung-Klasse aus der [Übersicht über die Datenbindung](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-Wenn ein **DataTemplate** zurzeit mehrere Steuerelemente enthält (z. B. mehr als ein einzelner **TextBlock**), kommt der Name zur Verwendung durch Screenreader-Software von ToString(). Zur Vereinfachung können Sie stattdessen [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) auf dem Root-Element des **DataTemplate** setzen. Weitere Informationen zur Barrierefreiheit finden Sie unter [Zugänglichkeit im Überblick](../accessibility/accessibility-overview.md).
+> Wenn ein **DataTemplate** zurzeit mehrere Steuerelemente enthält (z. B. mehr als ein einzelner **TextBlock**), kommt der Name zur Verwendung durch Screenreader-Software von ToString(). Zur Vereinfachung können Sie stattdessen [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) auf dem Root-Element des **DataTemplate** setzen. Weitere Informationen zur Barrierefreiheit finden Sie unter [Zugänglichkeit im Überblick](../accessibility/accessibility-overview.md).
 
 ## <a name="icon-and-text"></a>Symbol und Text
 Verwenden Sie diese Vorlagen, um eine Sammlung von Apps in einem Raster mit einem Symbol und Text anzuzeigen.
@@ -158,6 +158,6 @@ Verwenden Sie diese Vorlage, um eine Mediensammlung mit Text-Overlay anzuzeigen.
 ## <a name="related-articles"></a>Verwandte Artikel
 - [GridView-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md)
-- [Übersicht über die Accessibililty](../accessibility/accessibility-overview.md)
-- [ListView und GridView-Beispiel (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Überblick über die Barrierefreiheit](../accessibility/accessibility-overview.md)
+- [Beispiele zu ListView und GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Miniaturbilder](../../files/thumbnails.md)

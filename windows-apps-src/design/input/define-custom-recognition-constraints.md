@@ -8,35 +8,30 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a83cbc547ede1977f0222298bf451611905fad50
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631725"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343259"
 ---
 # <a name="define-custom-recognition-constraints"></a>Festlegen von benutzerdefinierten Erkennungseinschränkungen
 
-
-
 Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können.
 
-> **Wichtige APIs:** [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [ **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [ **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
-
+> **Wichtige APIs:** [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 Die Spracherkennung benötigt mindestens eine Einschränkung, um erkennbares Vokabular zu definieren. Wenn Sie keine Einschränkung angeben, wird die vordefinierte Diktiergrammatik der universellen Windows-Apps verwendet. Siehe [Spracherkennung](speech-recognition.md).
 
-
 ## <a name="add-constraints"></a>Hinzufügen von Einschränkungen
-
 
 Verwenden Sie die [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241)-Eigenschaft, um Einschränkungen für die Spracherkennung hinzuzufügen.
 
-Im Folgenden behandeln wir die drei Arten der Spracherkennungseinschränkungen, die in einer App verwendet werden. (Informationen zu Einschränkungen bei Sprachbefehlen finden Sie unter [Starten einer Vordergrund-App mit Sprachbefehlen in Cortana](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana).)
+Im Folgenden behandeln wir die drei Arten der Spracherkennungseinschränkungen, die in einer App verwendet werden. (Cortana-Sprach-Befehl Einschränkungen finden Sie unter [starten eine Vordergrund-app mit Sprachbefehlen in Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).)
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)– eine Einschränkung basierend auf einer vordefinierten Grammatik (Suchen Sie Diktat oder Web).
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)– eine Einschränkung basierend auf einer Liste von Wörtern oder Ausdrücken.
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)– eine Einschränkung in einer Datei Speech Recognition Grammar Specification (SRGS) definiert.
+- [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)– eine Einschränkung basierend auf einer vordefinierten Grammatik (Suchen Sie Diktat oder Web).
+- [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)– eine Einschränkung basierend auf einer Liste von Wörtern oder Ausdrücken.
+- [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)– eine Einschränkung in einer Datei Speech Recognition Grammar Specification (SRGS) definiert.
 
 Jedes Spracherkennungsmodul kann über eine Einschränkungssammlung verfügen. Nur die folgenden Einschränkungskombinationen sind gültig:
 
@@ -88,13 +83,12 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## <a name="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint"></a>Angeben einer programmgesteuerten Listeneinschränkung (SpeechRecognitionListConstraint)
 
-
 Listeneinschränkungen müssen der Einschränkungssammlung einer Spracherkennung hinzugefügt werden.
 
 Beachten Sie folgende Punkte:
 
--   Sie können der Einschränkungssammlung mehrere Listeneinschränkungen hinzufügen.
--   Sie können eine beliebige Sammlung verwenden, die **IIterable&lt;String&gt;** für die Zeichenfolgenwerte implementiert.
+- Sie können der Einschränkungssammlung mehrere Listeneinschränkungen hinzufügen.
+- Sie können eine beliebige Sammlung verwenden, die **IIterable&lt;String&gt;** für die Zeichenfolgenwerte implementiert.
 
 Hier geben wir programmgesteuert ein Array von Wörtern als Listeneinschränkung an und fügen es der Einschränkungssammlung einer Spracherkennung hinzu.
 
@@ -128,28 +122,27 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 
 ## <a name="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint"></a>Angeben einer SRGS-(SpeechRecognitionGrammarFileConstraint-)Grammatikeinschränkung
 
-
 SRGS-Grammatikdateien müssen der Einschränkungssammlung eines Spracherkennungsmoduls hinzugefügt werden.
 
 SRGS, Version 1.0, ist die branchenübliche Markupsprache zum Erstellen von Grammatik für die Spracherkennung im XML-Format. Universelle Windows-Apps bieten über SRGS hinaus auch Alternativen zur Erstellung von Grammatik für die Spracherkennung. Sie stellen aber möglicherweise fest, dass Sie beim Erstellen von Grammatik mit SRGS die besten Ergebnisse erzielen. Dies gilt besonders für komplexere Spracherkennungsszenarien.
 
 SRGS-Grammatik bietet einen umfassenden Featuresatz, den Sie zum Erstellen komplexer Sprachinteraktionen für Ihre Apps nutzen können. Mit SRGS haben Sie beispielsweise folgende Möglichkeiten:
 
--   Geben Sie die Reihenfolge an, in der Wörter und Wortgruppen gesprochen werden müssen, um erkannt zu werden.
--   Kombinieren Sie Wörter mehrerer Listen und Wortgruppen für die Erkennung.
--   Verlinken Sie zu anderen Grammatiken.
--   Weisen Sie einem alternativen Wort oder einer Wortgruppe eine Gewichtung zu, um die Wahrscheinlichkeit der Verwendung zu erhöhen oder zu verringern und für die Spracheingabe so bessere Übereinstimmungen zu erzielen.
--   Binden Sie optionale Wörter oder Wortgruppen ein.
--   Verwenden Sie spezielle Regeln zum Herausfiltern nicht angegebener oder unerwarteter Eingaben, z. B. ungewollte Spracheingaben, die keine Übereinstimmung mit der Grammatik ergeben, oder Hintergrundgeräusche.
--   Verwenden Sie Semantik, um zu definieren, was Spracherkennung für Ihre App bedeutet.
--   Geben Sie verschiedene Aussprachen an, entweder direkt in einer Grammatik oder über einen Link zu einem Lexikon.
+- Geben Sie die Reihenfolge an, in der Wörter und Wortgruppen gesprochen werden müssen, um erkannt zu werden.
+- Kombinieren Sie Wörter mehrerer Listen und Wortgruppen für die Erkennung.
+- Verlinken Sie zu anderen Grammatiken.
+- Weisen Sie einem alternativen Wort oder einer Wortgruppe eine Gewichtung zu, um die Wahrscheinlichkeit der Verwendung zu erhöhen oder zu verringern und für die Spracheingabe so bessere Übereinstimmungen zu erzielen.
+- Binden Sie optionale Wörter oder Wortgruppen ein.
+- Verwenden Sie spezielle Regeln zum Herausfiltern nicht angegebener oder unerwarteter Eingaben, z. B. ungewollte Spracheingaben, die keine Übereinstimmung mit der Grammatik ergeben, oder Hintergrundgeräusche.
+- Verwenden Sie Semantik, um zu definieren, was Spracherkennung für Ihre App bedeutet.
+- Geben Sie verschiedene Aussprachen an, entweder direkt in einer Grammatik oder über einen Link zu einem Lexikon.
 
 Weitere Informationen zu SRGS-Elementen und -Attributen finden Sie unter [SRGS-Grammatik – XML-Referenz](https://go.microsoft.com/fwlink/p/?LinkID=269886). Informationen zu den ersten Schritten zur Erstellung einer SRGS-Grammatik finden Sie unter [So wird's gemacht: Erstellen einer einfachen XML-Grammatik](https://go.microsoft.com/fwlink/p/?LinkID=269887).
 
 Beachten Sie folgende Punkte:
 
--   Sie können der Einschränkungssammlung mehrere Grammatikdatei-Einschränkungen hinzufügen.
--   Sie können die GRXML-Dateierweiterung für XML-basierte Grammatikdokumente verwenden, die den SRGS-Regeln entsprechen.
+- Sie können der Einschränkungssammlung mehrere Grammatikdatei-Einschränkungen hinzufügen.
+- Sie können die GRXML-Dateierweiterung für XML-basierte Grammatikdokumente verwenden, die den SRGS-Regeln entsprechen.
 
 In diesem Beispiel wird eine SRGS-Grammatik verwendet, die in einer Datei namens „srgs.grxml“ (später beschrieben) definiert ist. In den Dateieigenschaften ist die **Paketaktion** auf **Inhalt** und **In Ausgabeverzeichnis kopieren** auf **Immer kopieren** gesetzt:
 
@@ -219,7 +212,6 @@ Hier horchen wir auf Varianten von „Ja“ und „Nein“.
 
 ## <a name="manage-constraints"></a>Verwalten von Einschränkungen
 
-
 Nachdem eine Einschränkungssammlung für die Erkennung geladen wurde, kann Ihre App verwalten, welche Einschränkungen für Erkennungsvorgänge aktiviert sind. Dazu wird für die [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402)-Eigenschaft einer Einschränkung **true** oder **false** festgelegt. Die Standardeinstellung lautet **true**.
 
 Meist ist es effizienter, Einschränkungen einmal zu laden und dann bei Bedarf zu aktivieren bzw. zu deaktivieren, als Einschränkungen für jeden Erkennungsvorgang zu laden, zu entladen und zu kompilieren. Verwenden Sie die [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402)-Eigenschaft nach Bedarf.
@@ -232,15 +224,8 @@ Mit den Eigenschaften [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
+- [Sprachinteraktionen](speech-interactions.md)
 
-* [Sprachinteraktionen](speech-interactions.md)
+### <a name="samples"></a>Proben
 
-**Beispiele**
-* [Die Spracherkennung und-Synthese sprachmuster](https://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
-
-
-
-
+- [Die Spracherkennung und-Synthese sprachmuster](https://go.microsoft.com/fwlink/p/?LinkID=619897)

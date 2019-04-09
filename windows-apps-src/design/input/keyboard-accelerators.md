@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cc696746de837c4883ae4a9ee8ebcf42cb78b12
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590735"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822885"
 ---
 # <a name="keyboard-accelerators"></a>Zugriffstasten
 
@@ -219,7 +219,7 @@ Wenn keine Übereinstimmung identifiziert wird, wird die Zugriffstaste ungültig
 
 Das Invoke-Ereignis des [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator)-Objekts wird ausgelöst, wenn die Zugriffstaste ausgeführt wird. Das [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs)-Ereignisobjekt enthält die folgenden Eigenschaften:
 
-- [**Behandelt** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Festlegung auf "true" wird verhindert, dass das Ereignis, das das Steuerelementmuster auslösen und beendet die Zugriffstaste Eventbubbling. Der Standard ist "False".
+- [**Behandelt** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Festlegung auf "true" wird verhindert, dass das Ereignis, das das Steuerelementmuster auslösen und beendet die Zugriffstaste Eventbubbling. Der Standardwert ist FALSE.
 - [**Element** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): Das Objekt, mit der Zugriffstaste verknüpft ist.
 - [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): Die Zugriffstaste verwendet, um das Invoked-Ereignis auszulösen.
 
@@ -618,12 +618,9 @@ public class MyListView : ListView
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Tastenkombinationen](keyboard-interactions.md)
-* [Zugriffsschlüssel](access-keys.md)
+- [Tastenkombinationen](keyboard-interactions.md)
+- [Zugriffsschlüssel](access-keys.md)
 
-**Beispiele**
-* [XAML-Steuerelementsammlungen (auch bekannt als XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+### <a name="samples"></a>Proben
 
-
- 
-
+- [XAML-Steuerelementsammlungen](https://github.com/Microsoft/Xaml-Controls-Gallery)

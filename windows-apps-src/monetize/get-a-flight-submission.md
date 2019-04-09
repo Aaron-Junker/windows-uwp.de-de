@@ -6,18 +6,18 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Flight-Übermittlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fcbdaa90f09ba1a813612d6104268c4930c9a6d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8e8928583ee7e0d9a0673558d520cd2f2d292c02
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656515"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334515"
 ---
 # <a name="get-a-package-flight-submission"></a>Abrufen einer Flight-Paket-Übermittlung
 
 Verwenden Sie diese Methode der Microsoft Store-Übermittlungs-API, um Daten für eine vorhandene Flight-Paketübermittlung abzurufen. Weitere Informationen über den Erstellungsprozess einer Flight-Paketübermittlung mithilfe der Microsoft Store-Übermittlungs-API finden Sie unter [Verwalten von Flight-Paketübermittlungen](manage-flight-submissions.md).
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
@@ -25,29 +25,29 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 * Erstellen Sie eine Paket-Flight-Eingabe für eine app im Partner Center an. Sie können dies im Partner Center, oder Sie erreichen dies, indem die [erstellen Sie eine Paket-Flight-Eingabe](create-a-flight-submission.md) Methode.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie Verwendungsbeispiele und Beschreibungen des Header und Anforderungstexts.
 
 | Methode | Anforderungs-URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions{submissionId}``` |
+| GET   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions{submissionId}` |
 
 
 ### <a name="request-header"></a>Anforderungsheader
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Erforderlich. Die Store-ID der App mit der abzurufenden Flight-Paketübermittlung. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | string | Erforderlich. Die ID des Flight-Pakets mit der abzurufenden Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines Flight-Pakets](create-a-flight.md) und zum [Abrufen von Flight-Paketen für eine App](get-flights-for-an-app.md) enthalten. Für einen Flug, der im Partner Center erstellt wurde, ist diese ID auch in der URL für die Seite "aktiv" im Partner Center verfügbar.  |
-| submissionId | string | Erforderlich. Die ID der abzurufenden Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer Flight-Paket-Übermittlung](create-a-flight-submission.md) verfügbar. Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
+| applicationId | String | Erforderlich. Die Store-ID der App mit der abzurufenden Flight-Paketübermittlung. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| flightId | String | Erforderlich. Die ID des Flight-Pakets mit der abzurufenden Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines Flight-Pakets](create-a-flight.md) und zum [Abrufen von Flight-Paketen für eine App](get-flights-for-an-app.md) enthalten. Für einen Flug, der im Partner Center erstellt wurde, ist diese ID auch in der URL für die Seite "aktiv" im Partner Center verfügbar.  |
+| submissionId | String | Erforderlich. Die ID der abzurufenden Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer Flight-Paket-Übermittlung](create-a-flight-submission.md) verfügbar. Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -58,7 +58,7 @@ Stellen Sie keinen Anforderungstext für diese Methode bereit.
 
 Im folgenden Beispiel wird gezeigt, wie Sie eine neue Flight-Paketübermittlung für eine App mit der Store-ID 9WZDNCRD91MD abrufen können.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -113,7 +113,7 @@ Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die A
 | Fehlercode |  Beschreibung   |
 |--------|------------------|
 | 404  | Die angegebene Flight-Paket-Übermittlung konnte nicht gefunden werden. |
-| 407  | Die Paket-Flight-Übermittlung gehört nicht zu der Flug angegebene Paket oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Die Paket-Flight-Übermittlung gehört nicht zu der Flug angegebene Paket oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Verwandte Themen

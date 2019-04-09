@@ -2,7 +2,7 @@
 title: Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen
 description: Erstellen Sie eine Out-of-Process-Hintergrundaufgabenklasse, und registrieren Sie sie für die Ausführung, wenn Ihre App nicht im Vordergrund ausgeführt wird.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
-ms.date: 07/02/2018
+ms.date: 2/27/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.localizationpriority: medium
@@ -10,19 +10,19 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9df6eef44d45db37e17610d6a5333f3a387b5cf6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1420b41ef48123e302b546c45669a75545927d89
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592165"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240048"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen
 
 **Wichtige APIs**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**"Backgroundtaskbuilder"**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
 Erstellen Sie eine Hintergrundaufgabenklasse, und registrieren Sie diese für die Ausführung, wenn sich die App nicht im Vordergrund befindet. In diesem Thema wird gezeigt, wie Sie eine Hintergrundaufgabe erstellen und registrieren, die in einem vom App-Prozess getrennten Prozess ausgeführt wird. Informationen zum Ausführen von Hintergrundarbeiten direkt in der Vordergrundanwendung finden Sie unter [Erstellen und Registrieren einer In-Process-Hintergrundaufgabe](create-and-register-an-inproc-background-task.md).
@@ -150,7 +150,7 @@ Der folgende Code Ruft die Verzögerung, gespeichert und freigegeben wird, wenn 
 BackgroundTaskDeferral _deferral; // Note: defined at class scope so that we can mark it complete inside the OnCancel() callback if we choose to support cancellation
 public async void Run(IBackgroundTaskInstance taskInstance)
 {
-    _deferral = taskInstance.GetDeferral()
+    _deferral = taskInstance.GetDeferral();
     //
     // TODO: Insert code to start one or more asynchronous methods using the
     //       await keyword, for example:
@@ -445,7 +445,7 @@ Eine API-Referenz, konzeptionelle Richtlinien zu Hintergrundaufgaben und ausfüh
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-**Ausführliche Hintergrundinformationen Aufgabe Anweisungsthemen**
+**Ausführliche Themen mit Anweisungen zu Hintergrundaufgaben**
 
 * [Reagieren auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
 * [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
@@ -455,14 +455,14 @@ Eine API-Referenz, konzeptionelle Richtlinien zu Hintergrundaufgaben und ausfüh
 * [Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md)
 * [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)
 * [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb des Prozesses](create-and-register-an-inproc-background-task.md)
-* [Konvertieren Sie eine Out-of-Process-Hintergrundaufgabe in einem in-Process-Hintergrundaufgabe](convert-out-of-process-background-task.md)  
+* [Konvertieren einer Out-of-Process-Hintergrundaufgabe in eine In-Process-Hintergrundaufgabe](convert-out-of-process-background-task.md)  
 
-**Hintergrund-Task-Leitfaden**
+**Ratschläge zu Hintergrundaufgaben**
 
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-* [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps (beim debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [So wird’s gemacht: Auslösen von Anhalte-, Fortsetzungs- und Hintergrundereignissen in UWP-Apps (beim Debuggen)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**Hintergrund Task-API-Referenz**
+**Hintergrundaufgabe – API-Referenz**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)

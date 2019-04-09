@@ -6,12 +6,12 @@ ms.date: 02/12/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cbf94420b8ed7a2e030ccb2799a8636f56bef2f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635715"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162926"
 ---
 # <a name="device-portal-for-xbox"></a>Geräteportal für Xbox
 
@@ -53,7 +53,7 @@ Unter **Xbox Live-Testkonten** können Sie die mit Ihrer Xbox verbundenen Konten
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (Gespeicherte Spiele)
 
-Sowohl das Windows-Geräteportal als auch das Xbox-Geräteportal haben eine **Xbox Live**-Seite. Allerdings hat das Xbox-Geräteportal einen einzigartigen Bereich namens **Gespeicherte Xbox Live-Spiele**, in dem Sie Daten für Spiele, die auf Ihrer Xbox installiert sind, speichern können. Geben Sie die **Service-Konfigurations-ID (SCID)** (siehe [Xbox Live-Service-Konfiguration](../xbox-live/xbox-live-service-configuration.md#get-your-ids)), den **Membernamen (MSA)** und den **Paketfamiliennamen (PFN)** ein, die dem Titel und dem Spiel zugeordnet sind, suchen Sie nach der **Eingabedatei (JSON oder XML)** und wählen Sie dann eine der Schaltflächen (**Zurücksetzen**, **Importieren**, **Exportieren** und **Löschen**) aus, um die gespeicherten Daten zu bearbeiten.
+Sowohl das Windows-Geräteportal als auch das Xbox-Geräteportal haben eine **Xbox Live**-Seite. Allerdings hat das Xbox-Geräteportal einen einzigartigen Bereich namens **Gespeicherte Xbox Live-Spiele**, in dem Sie Daten für Spiele, die auf Ihrer Xbox installiert sind, speichern können. Geben Sie die **Service-Konfigurations-ID (SCID)** (siehe [Xbox Live-Service-Konfiguration](https://docs.microsoft.com/gaming/xbox-live//xbox-live-service-configuration.md#get-your-ids)), den **Membernamen (MSA)** und den **Paketfamiliennamen (PFN)** ein, die dem Titel und dem Spiel zugeordnet sind, suchen Sie nach der **Eingabedatei (JSON oder XML)** und wählen Sie dann eine der Schaltflächen (**Zurücksetzen**, **Importieren**, **Exportieren** und **Löschen**) aus, um die gespeicherten Daten zu bearbeiten.
 
 Im Abschnitt **Generieren** können Sie Dummy-Daten erzeugen und in der angegebenen Eingabedatei speichern. Geben Sie einfach **Container (Standardwert: 2)**, **Blobs (Standardwert: 3)** und **Blob-Größe (Standardwert: 1024)** ein und wählen Sie **Generieren** aus.
 

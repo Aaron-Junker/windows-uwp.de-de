@@ -6,17 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 450b1721f24d53fa1503551c40feda793af4155c
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604475"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291918"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>Exemplarische Vorgehensweise: Erstellen einer einfachen Komponente für Windows-Runtime und Aufrufen der Komponente über JavaScript
-
-
-
 
 In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie .NET Framework mit Visual Basic oder C# verwenden, um eigene Windows-Runtime-Typen zu erstellen, die in einer Komponente für Windows-Runtime verpackt sind, und wie Sie die Komponente in Ihrer universellen Windows-App aufrufen, die mit JavaScript für Windows erstellt wurde.
 
@@ -32,7 +29,6 @@ In dieser exemplarischen Vorgehensweise werden die folgenden Aufgaben veranschau
 -   Microsoft Visual Studio 2015 oder Microsoft Visual Studio Community 2015
 
 ## <a name="creating-a-simple-windows-runtime-class"></a>Erstellen eine einfache Windows-Runtime-Klasse
-
 
 In diesem Abschnitt wird eine universelle Windows-App für Windows mit JavaScript erstellt und ein Visual Basic- oder C#-Komponentenprojekt für Windows-Runtime hinzugefügt. Es wird gezeigt, wie ein verwalteter Windows-Runtime-Typ definiert, eine Instanz des Typs aus JavaScript erstellt und statische sowie Instanzmember aufgerufen werden. Die visuelle Darstellung der Beispiel-App ist absichtlich einfach, um den Fokus auf der Komponente zu behalten. Sie können die Darstellung gerne verschönern.
 
@@ -71,7 +67,6 @@ In diesem Abschnitt wird eine universelle Windows-App für Windows mit JavaScrip
 
 ## <a name="call-the-component-from-javascript"></a>Aufrufen der Komponente über JavaScript
 
-
 Um den Windows-Runtime-Typ aus JavaScript zu verwenden, fügen Sie den folgenden Code in der anonymen Funktion in der Datei „default.js“ (im Ordner „js“ des Projekts) hinzu, die von der Visual Studio-Vorlage bereitgestellt wird. Sie sollten ihn nach dem Ereignishandler „app.oncheckpoint“ und vor dem Aufruf von „app.start“ einfügen.
 
 ```javascript
@@ -100,7 +95,6 @@ Beachten Sie, dass der erste Buchstaben der einzelnen Membernamen von Großbuchs
 In ähnlicher Weise unterstützt .NET Framework die natürliche Verwendung der Windows-Runtime in verwaltetem Code. Informationen finden Sie in den nachfolgenden Abschnitten dieses Artikels sowie in den Artikeln [Erstellen von Windows Runtime-Komponenten in C# und Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) und [.NET Framework-Unterstützung für UWP-apps und Windows-Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
 
 ## <a name="create-a-simple-user-interface"></a>Erstellen einer einfachen Benutzeroberfläche
-
 
 Öffnen Sie in Ihrem JavaScript-Projekt die Datei „default.HTML“, und aktualisieren Sie den Text wie im folgenden Code dargestellt. Dieser Code enthält den vollständigen Satz von Steuerelementen für die Beispiel-App und gibt die Funktionsnamen für die Klickereignisse an.
 
@@ -161,10 +155,9 @@ args.setPromise(WinJS.UI.processAll().then(function () {
 }));
 ```
 
-Dies ist eine bessere Möglichkeit, Ereignisse zu HTML-Steuerelementen hinzuzufügen, als das Hinzufügen eines Klickereignishandlers direkt im HTML-Code. Informationen finden Sie unter [Erstellen der App „Hello, world“ (JS)](https://msdn.microsoft.com/library/windows/apps/mt280216).
+Dies ist eine bessere Möglichkeit, Ereignisse zu HTML-Steuerelementen hinzuzufügen, als das Hinzufügen eines Klickereignishandlers direkt im HTML-Code. Finden Sie unter [Erstellen einer "Hello, World"-app (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp).
 
 ## <a name="build-and-run-the-app"></a>Erstellen und Ausführen der App
-
 
 Ändern Sie vor dem Erstellen die Zielplattform für alle Projekte auf ARM, x64 oder x86 – je nachdem, was für Ihren Computer erforderlich ist.
 
@@ -183,18 +176,13 @@ Wählen Sie Schaltfläche „Basics2“ aus, um den Wert der SampleProperty-Eige
 
 > **Beachten Sie**  in der Standardeinstellung können Sie Haltepunkte festlegen, nur im JavaScript-Code. Informationen zum Debuggen des Visual Basic- oder C#-Codes finden Sie unter „Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic“.
 
- 
-
 Wechseln Sie von der App zu Visual Studio, und drücken Sie Umschalt+F5, um den Debugmodus zu beenden und die App zu schließen.
 
 ## <a name="using-the-windows-runtime-from-javascript-and-managed-code"></a>Verwenden von Windows-Runtime aus JavaScript und verwaltetem Code
 
-
 Windows-Runtime kann aus JavaScript oder verwaltetem Code aufgerufen werden. Windows-Runtime-Objekte können zwischen den beiden übergeben werden, und Ergebnisse können auf beiden Seiten behandelt werden. Allerdings unterscheiden sich die Verwendungsmöglichkeiten der Windows-Runtime-Typen in den beiden Umgebungen in einigen Details, da JavaScript und .NET Framework Windows-Runtime unterschiedlich unterstützen. Das folgende Beispiel veranschaulicht diese Unterschiede mithilfe der [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx)-Klasse. In diesem Beispiel erstellen Sie eine Instanz der PropertySet-Sammlung in verwaltetem Code und registrieren einen Ereignishandler zum Nachverfolgen der Änderungen in der Sammlung. Dann fügen Sie JavaScript-Code hinzu, der die Auflistung abruft, einen eigenen Ereignishandler registriert und die Auflistung verwendet. Zuletzt fügen Sie eine Methode hinzu, die Änderungen an der Sammlung von verwaltetem Code aus vornimmt und das Behandeln einer verwalteten Ausnahme durch JavaScript zeigt.
 
 > **Wichtige**  In diesem Beispiel wird das Ereignis im UI-Thread ausgelöst wird. Wenn Sie das Ereignis über einen Hintergrundthread auslösen, z. B. in einem asynchronen Aufruf, müssen Sie einige zusätzliche Arbeiten ausführen, damit JavaScript das Ereignis behandelt. Weitere Informationen finden Sie unter [Auslösen von Ereignissen in Komponenten für Windows-Runtime](raising-events-in-windows-runtime-components.md).
-
- 
 
 Fügen Sie im SampleComponent-Projekt eine neue **public sealed**-Klasse (**Public NotInheritable**-Klasse in Visual Basic) mit dem Namen „PropertySetStats“ hinzu. Die Klasse umschließt eine PropertySet-Auflistung und behandelt das MapChanged-Ereignis. Der Ereignishandler verfolgt die Anzahl der aufgetretenen Änderungen jeder Art, und die DisplayStats-Methode erstellt einen Bericht, der in HTML formatiert ist. Beachten Sie die zusätzliche **using**-Anweisung (**Imports**-Anweisung in Visual Basic). Achten Sie darauf, diese Anweisung den vorhandenen **using**-Anweisungen hinzuzufügen, anstatt sie zu überschreiben.
 
@@ -378,7 +366,6 @@ Drücken Sie zum Ausführen der App die F5-TASTE. Wählen Sie **Runtime1** und d
 Im Gegensatz dazu wird der Wert des Elements geändert, wenn JavaScript die Insert-Methode mit einem doppelten Schlüssel aufruft. Dieser Verhaltensunterschied entsteht aufgrund der unterschiedlichen Methoden, mit denen JavaScript und .NET Framework Windows-Runtime unterstützen, wie in [Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) erläutert wird.
 
 ## <a name="returning-managed-types-from-your-component"></a>Zurückgeben von verwalteten Typen von der Komponente
-
 
 Wie zuvor erwähnt, können Sie systemeigene Windows-Runtime-Typen frei zwischen dem JavaScript-Code und dem C#- oder Visual Basic-Code übergeben. In den meisten Fällen sind die Namen und Membernamen in beiden Fällen identisch (die Namen der Member beginnen in JavaScript lediglich mit Kleinbuchstaben). Im vorherigen Abschnitt schien die PropertySet-Klasse allerdings andere Member im verwalteten Code zu haben. (Beispielsweise in JavaScript die Insert-Methode aufgerufen und in .NET Framework-Code, dem Sie die Add-Methode aufgerufen.) In diesem Abschnitt wird erklärt, wie diese Unterschiede Auswirkungen auf die .NET Framework-Typen, die an JavaScript übergeben.
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c834257e883d3aeb8594001344abd6ef14682c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bae6e5b21369c30c8ed067fe7283c0a116d220b8
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596565"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343289"
 ---
 # <a name="interaction-primer"></a>Einführung in die Interaktion
 
@@ -82,11 +82,11 @@ In Windows 10 **Cortana** Erweiterbarkeit können Sie Sprachbefehle, die von ein
 
 Ein Sprachbefehl ist eine einzelne, in einer Sprachbefehldefinitions-Datei (VCD-Datei) definierte Äußerung, die über **Cortana** an eine installierte App weitergeleitet wird. Die App kann im Vordergrund oder im Hintergrund gestartet werden, je nach Ebene und Komplexität der Interaktion. Sprachbefehle, die zusätzlichen Kontext oder Benutzereingaben erfordern, werden beispielsweise am besten im Vordergrund ausgeführt, während grundlegende Befehle im Hintergrund behandelt werden können.
 
-**Cortana** integriert die grundlegenden Funktionen Ihrer App, bietet einen zentralen Einstiegspunkt, über den der Benutzer die meisten Aufgaben ohne Öffnen der App ausführen kann, und wird somit zum Bindeglied zwischen Ihrer App und dem Benutzer. In vielen Fällen spart der Benutzer dadurch viel Zeit und Mühe. Weitere Informationen finden Sie unter [Cortana-Entwurfsrichtlinien](https://msdn.microsoft.com/library/windows/apps/dn974233).
+**Cortana** integriert die grundlegenden Funktionen Ihrer App, bietet einen zentralen Einstiegspunkt, über den der Benutzer die meisten Aufgaben ohne Öffnen der App ausführen kann, und wird somit zum Bindeglied zwischen Ihrer App und dem Benutzer. In vielen Fällen spart der Benutzer dadurch viel Zeit und Mühe. Weitere Informationen finden Sie unter [Cortana-Entwurfsrichtlinien](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines).
 
 ### <a name="more-info"></a>Weitere Informationen
 
-[Cortana-Entwurfsrichtlinien](https://msdn.microsoft.com/library/windows/apps/dn974233)
+[Cortana-Entwurfsrichtlinien](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
  
 
 ## <a name="speech"></a>Spracherkennung
@@ -127,7 +127,7 @@ Unter Befehl und Steuerung wird die Verwendung von Sprachbefehlen zum Aktivieren
 
 Da Befehl und Steuerung entscheidend für eine erfolgreiche Benutzeroberfläche ist, wird ein einzelner Eingabetyp im Allgemeinen nicht empfohlen. Die Spracherkennung ist in der Regel eine von mehreren Eingabeoptionen für einen Benutzer, die von seinen Vorlieben und Hardwarefunktionen abhängen.
 
-**Diktat**
+**Dictation**
 
 Die einfachste Methode der Spracheingabe. Jede Äußerung wird in Text umgewandelt.
 

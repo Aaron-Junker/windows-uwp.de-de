@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6ce91b47d2846f945a0e4a15f705491ab22e9dea
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608015"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291668"
 ---
 # <a name="rectangles"></a>Rechtecke
-
 
 In Direct3D und in der Windows-Programmierung werden Objekte auf dem Bildschirm als umgebende Rechtecke bezeichnet. Die Seiten des umgebenden Rechtecks sind immer parallel zu den Seiten des Bildschirms, damit das Rechteck durch zwei Punkte, der oberen linken Ecke und der unteren rechten Ecke, definiert werden kann.
 
@@ -24,7 +23,7 @@ In Direct3D und in der Windows-Programmierung werden Objekte auf dem Bildschirm 
 
 Die meisten Anwendungen verwenden die [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897)-Struktur (oder ein Typedef-Alias) als Träger von Informationen über ein umgebendes Rechteck, die beim Blitten auf den Bildschirm oder bei der Trefferermittlung verwendet werden. In C++ die **RECT** Struktur hat folgende Definition.
 
-```
+```cpp
 typedef struct tagRECT { 
     LONG    left;    // This is the upper-left corner x-coordinate.
     LONG    top;     // The upper-left corner y-coordinate.

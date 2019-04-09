@@ -5,12 +5,12 @@ ms.date: 01/10/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, projiziert, Projektion, Implementierung, implementieren, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 05997549b5f1c0d13b12d47e0bb180d54617dcf2
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626665"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921716"
 ---
 # <a name="author-apis-with-cwinrt"></a>Erstellen von APIs mit C++/WinRT
 
@@ -28,7 +28,7 @@ In beiden Fällen wird der Typ, der Ihre C++/WinRT-APIs implementiert, als *Impl
 Das einfachste Szenario ist die Implementierung einer Windows-Runtime-Schnittstelle für die lokale Nutzung. Sie benötigen keine Laufzeitklasse, sondern nur eine normale C++ Klasse. Beispielsweise können Sie eine App rund um [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) schreiben.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden von C++ / WinRT Visual Studio-Erweiterung (VSIX) (die projektunterstützung für die Vorlage bereitstellt) finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Installieren und Verwenden der C++WinRT Visual Studio-Erweiterung (VSIX) und das NuGet-Paket (die zusammen bieten die Projektvorlage und Buildunterstützung) finden Sie unter [Visual Studio-Unterstützung für C++"/ WinRT"](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 In Visual Studio die **Visual C++** > **Windows Universal** > **Core-App (C++ / WinRT)** Projektvorlage veranschaulicht die **"Coreapplication"** Muster. Das Muster beginnt mit der Übergabe einer Implementierung von [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) an [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
 
@@ -258,7 +258,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > Wenn Sie Ihren Typ jedoch in Ihrer XAML-Benutzeroberfläche referenzieren, gibt es sowohl einen Implementierungstyp als auch einen projizierten Typ im selben Projekt. In diesem Fall **stellen** gibt eine Instanz der projizierten Typ zurück. Ein Codebeispiel für dieses Szenario finden Sie unter [XAML-Steuererlemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
-Wir können nur `istringable` (im obigen Codebeispiel) verwenden, um die Mitglieder der **IStringable**-Schnittstelle aufzurufen. Aber eine C++/WinRT-Schnittstelle (die eine projizierte Schnittstelle ist) ist von [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) abgeleitet. Sie können also Aufrufen [ **IUnknown::as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (oder [ **IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) darauf, um Abfragen für andere projizierten Typen oder Schnittstellen, die Sie Außerdem verwenden oder zurückgeben.
+Wir können nur `istringable` (im obigen Codebeispiel) verwenden, um die Mitglieder der **IStringable**-Schnittstelle aufzurufen. Aber eine C++/WinRT-Schnittstelle (die eine projizierte Schnittstelle ist) ist von [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) abgeleitet. Sie können also Aufrufen [ **IUnknown::as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (oder [ **IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) darauf, um Abfragen für andere projizierten Typen oder Schnittstellen, die Sie Außerdem verwenden oder zurückgeben.
 
 ```cppwinrt
 istringable.ToString();
@@ -294,7 +294,7 @@ void ImplFromIClosable(IClosable const& from)
 }
 ```
 
-Aber nur das ursprüngliche Interface-Objekt behält eine Referenz. Wenn *Sie* es behalten wollen, können Sie [**com_ptr::copy_from**](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function) aufrufen.
+Aber nur das ursprüngliche Interface-Objekt behält eine Referenz. Wenn *Sie* es behalten wollen, können Sie [**com_ptr::copy_from**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function) aufrufen.
 
 ```cppwinrt
 winrt::com_ptr<MyType> impl;
@@ -393,14 +393,14 @@ Der Konstruktor der Basisklasse erwartet ein **ToggleButton**. Und **MySpecializ
 Bis Sie die oben beschriebene Änderung vornehmen (um den Konstruktorparameter an die Basisklasse weiterzugeben), wird der Compiler Ihren Konstruktor markieren und darauf hinweisen, dass es (in diesem Fall) keinen geeigneten Standardkonstruktor für einen Typ namens **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** gibt. Das ist die Basisklasse der Basisklasse Ihres Implementierungstyps.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [Vorlage für WinRT::com_ptr-Struktur](/uwp/cpp-ref-for-winrt/com-ptr)
-* [WinRT::com_ptr::copy_from-Funktion](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
-* [Vorlage für WinRT::from_abi-Funktion](/uwp/cpp-ref-for-winrt/from-abi)
+* [winrt::com_ptr Strukturvorlage](/uwp/cpp-ref-for-winrt/com-ptr)
+* [WinRT::com_ptr::copy_from-Funktion](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
+* [winrt::from_abi Funktionsvorlage](/uwp/cpp-ref-for-winrt/from-abi)
 * [Vorlage für WinRT::get_self-Funktion](/uwp/cpp-ref-for-winrt/get-self)
-* [Vorlage für WinRT::Implements-Struktur](/uwp/cpp-ref-for-winrt/implements)
-* [Vorlage für WinRT::Make-Funktion](/uwp/cpp-ref-for-winrt/make)
-* [Vorlage für WinRT::make_self-Funktion](/uwp/cpp-ref-for-winrt/make-self)
-* [WinRT::Windows::Foundation::IUnknown:: als Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::implements Strukturvorlage](/uwp/cpp-ref-for-winrt/implements)
+* [winrt::make Funktionsvorlage](/uwp/cpp-ref-for-winrt/make)
+* [winrt::make_self Funktionsvorlage](/uwp/cpp-ref-for-winrt/make-self)
+* [winrt::Windows::Foundation::IUnknown::as Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)

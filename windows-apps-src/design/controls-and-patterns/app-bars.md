@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 461d6d135838a5141e6606d4c77ce21972a45fe1
+ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649305"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901648"
 ---
 # <a name="command-bar"></a>Befehlsleiste
 
@@ -44,8 +44,8 @@ Das CommandBar-Steuerelement ist ein allgemeines, flexibles und kleines Steuerel
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/CommandBar">die App zu öffnen und CommandBar in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -121,8 +121,8 @@ Sie können der **SecondaryCommands**-Sammlung auch Befehle hinzufügen, die im 
 
 Befehle können programmgesteuert nach Bedarf zwischen „PrimaryCommands“ und „SecondaryCommands“ verschoben werden.
 
-- *Ist ein Befehl, der über die Seiten hinweg konsistent angezeigt würde, empfiehlt es sich, diesen Befehl in einem einheitlichen Ort zu halten.*
-- *Platzieren annehmen, Ja, es wird empfohlen, und die OK-Befehle auf der linken Seite des ablehnen, Nein und Abbrechen. Konsistenz ermöglicht Benutzern das vertrauen, um das System zu verschieben und können sie ihre Kenntnisse der app-Navigation von app zu app übertragen.*
+- *Ein Befehl, der einheitlich über mehrere Seiten hinweg angezeigt wird, muss immer an der gleichen Stelle platziert werden.*
+- *Es wird empfohlen, die Befehle „Akzeptieren“, „Ja“ und „OK“ links von den Befehlen „Ablehnen“, „Nein“ und „Abbrechen“ zu platzieren. Konsistenz trägt dazu bei, dass Benutzern die App vertraut ist und sie ihre App-Navigationskenntnisse von einer App auf andere Apps übertragen können.*
 
 ### <a name="app-bar-buttons"></a>App-Leistenschaltflächen
 
@@ -177,7 +177,8 @@ Wenn [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/wi
 
 ## <a name="open-and-closed-states"></a>Geöffneter und geschlossener Zustand
 
-Die Befehlsleiste kann geöffnet oder geschlossen sein. Im geöffneten Zustand werden die primären Befehlsschaltflächen mit Beschriftungen angezeigt, und das Überlaufmenü ist geöffnet, wenn sekundäre Befehle vorhanden sind.
+Die Befehlsleiste kann geöffnet oder geschlossen sein. Wenn es geöffnet ist, werden die primären Schaltflächen mit Beschriftungen und (falls vorhanden sekundäre Befehle sind) geöffnet Überlaufmenü wird.
+Die Befehlsleiste wird geöffnet, das Überlaufmenü immer (über die primären Befehle) oder nach unten (siehe unten die primären Befehle). Die standardrichtung ist nach oben, jedoch wird es nicht genügend Speicherplatz für das Überlaufmenü aufwärts zu öffnen, öffnet der Befehlsleiste sie nach unten. 
 
 Benutzer kann zwischen diesen Zuständen durch Drücken von "finden Sie weitere" wechseln \[• • • anzuzeigen\] Schaltfläche. Sie können programmgesteuert zwischen den Zuständen wechseln, indem Sie einen Wert für die Eigenschaft [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) festlegen. 
 
@@ -216,13 +217,13 @@ private void CommandBar_Closing(object sender, object e)
 
 Wenn ein Benutzer bei geöffneter Befehlsleiste mit anderen Teilen einer App interagiert, wird die Befehlsleiste automatisch geschlossen. Dies wird als *einfaches Ausblenden* bezeichnet. Sie können das Verhalten für einfaches Ausblenden steuern, indem Sie einen Wert für die Eigenschaft [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) festlegen. Wenn `IsSticky="true"`, die Leiste bleibt geöffnet, bis der Benutzer "finden Sie weitere" drückt \[• • • anzuzeigen\] Schaltfläche oder ein Element aus das Überlaufmenü ausgewählt. 
 
-Es wird empfohlen, eingerastete Befehlsleisten zu vermeiden, da sie nicht den Benutzererwartungen an das einfache Ausblenden entsprechen.
+Es wird empfohlen, persistente Befehlsleisten vermeiden, da sie nicht den Erwartungen für Benutzer entsprechen [Licht zu verwerfen und Fokusverhalten der Tastatur](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#light-dismiss).
 
 ### <a name="display-mode"></a>Anzeigemodus
 
 Sie können steuern, wie die Befehlsleiste im geschlossenen Zustand angezeigt wird, indem Sie einen Wert für die Eigenschaft [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) festlegen. Sie können aus drei Anzeigemodi für den geschlossenen Zustand auswählen:
 - **Compact**: Der Standardmodus. Zeigt die Inhalte, primäre Befehlssymbole ohne Bezeichnung und der "finden Sie unter" Weitere \[• • • anzuzeigen\] Schaltfläche.
-- **Minimale**: Zeigt nur eine dünne Leiste, als die "Weitere Informationen fungiert" \[• • • anzuzeigen\] Schaltfläche. Der Benutzer kann auf eine beliebige Stelle auf der Leiste tippen, um sie zu öffnen.
+- **Minimal**: Zeigt nur eine dünne Leiste, als die "Weitere Informationen fungiert" \[• • • anzuzeigen\] Schaltfläche. Der Benutzer kann auf eine beliebige Stelle auf der Leiste tippen, um sie zu öffnen.
 - **Versteckt**: Die Befehlsleiste wird nicht angezeigt, wenn es geschlossen wird. Dies kann hilfreich beim Anzeigen von Kontextbefehlen mit einer Inlinebefehlsleiste sein. In diesem Fall müssen Sie die Befehlsleiste programmgesteuert öffnen, indem Sie die **IsOpen**-Eigenschaft festlegen oder ClosedDisplayMode auf **Minimal** oder **Compact** festlegen.
 
 Hier enthält eine Befehlsleiste einfache Formatierungsbefehle für eine [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx). Wenn das Bearbeitungsfeld nicht den Fokus besitzt, können die Formatierungsbefehle störend sein, daher werden sie ausgeblendet. Wenn das Bearbeitungsfeld verwendet wird, wird ClosedDisplayMode für die Befehlsleiste in „Compact“ geändert, sodass die Formatierungsbefehle angezeigt werden.
@@ -277,7 +278,7 @@ Befehlsleisten können auf Bildschirmen mit einzelner Ansicht (linkes Beispiel) 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
 - [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
-- [Befehle der XAML-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [Beispiel für XAML-Befehle](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
-ms.openlocfilehash: d05528ecf4408a7e7483b909b75722037c6528b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8f04514962cf0684daa99ee75d4c4da73c785735
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645695"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244086"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Referenz zur API für den Xbox Live-Sandkasten   
 Mit dieser REST-API können Sie den Xbox Live-Sandkasten abrufen und festlegen.
@@ -25,7 +25,7 @@ Mit der folgenden Anforderung können Sie den aktuellen Wert für den Xbox Live-
 Methode      | Anforderungs-URI
 :------     | :-----
 GET | /ext/xboxlive/sandbox
-<br />
+
 **URI-Parameter**
 
 - Keine
@@ -41,7 +41,7 @@ GET | /ext/xboxlive/sandbox
 **Antwort**   
 Sandbox (Zeichenfolge): Der aktuelle Sandkasten, in dem sich das Gerät befindet.   
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -61,7 +61,7 @@ Mit der folgenden Anforderung können Sie den aktuellen Wert für den Xbox Live-
 Methode      | Anforderungs-URI
 :------     | :-----
 PUT | /ext/xboxlive/sandbox
-<br />
+
 **URI-Parameter**
 
 - Keine
@@ -77,7 +77,7 @@ Sandbox (Zeichenfolge): Der neue Wert, auf den der Sandkasten des Geräts festge
 **Antwort**   
 Sandbox (Zeichenfolge): Der aktuelle Sandkasten, in dem sich das Gerät befindet.   
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -87,8 +87,7 @@ HTTP-Statuscode      | Beschreibung
 4XX | Fehlercodes
 5XX | Fehlercodes
 
-<br />
-**Gerätefamilien verfügbar**
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox
 

@@ -2,16 +2,16 @@
 Description: Mithilfe von Flight-Paketen können Sie Pakete an eine begrenzte Testgruppe verteilen.
 title: Flight-Pakete
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, Test-Flighting
 ms.localizationpriority: medium
-ms.openlocfilehash: 568fbff28d6c57acb6214bf274becc9cbc7f8830
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2070d1312df8f840c2368600197ca2bd7c506cdc
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610165"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244296"
 ---
 # <a name="package-flights"></a>Flight-Pakete
 
@@ -70,7 +70,7 @@ Weitere Informationen finden Sie unter [Schrittweises Paketrollout](gradual-pack
 
 ## <a name="configure-additional-package-flight-options"></a>Optionen für das Konfigurieren zusätzlicher Flight-Pakete
 
-Ihr Flight-Paket wird standardmäßig veröffentlicht und Ihrer Test-Flight-Gruppe zur Verfügung gestellt, sobald der Zertifizierungsprozess abgeschlossen ist. Wenn Sie das [Veröffentlichungsdatum](set-app-pricing-and-availability.md#publish-date) ändern oder [Hinweise für die Zertifizierung](notes-for-certification.md) hinzufügen möchten, haben Sie im Abschnitt **Flight-Optionen** die Möglichkeit dazu. Klicken Sie auf **Speichern**, um zur Flight-Paket-Übersicht zurückzukehren. 
+Ihr Flight-Paket wird standardmäßig veröffentlicht und Ihrer Test-Flight-Gruppe zur Verfügung gestellt, sobald der Zertifizierungsprozess abgeschlossen ist. Wenn Sie, ändern möchten der [Veröffentlichungsdatum](set-app-pricing-and-availability.md#publish-date), Sie können dazu die **Flight Optionen** Abschnitt. Klicken Sie auf **Speichern**, um zur Flight-Paket-Übersicht zurückzukehren. 
 
 
 ## <a name="submit-your-package-flight-to-the-store"></a>Übermitteln des Flight-Paket an den Store

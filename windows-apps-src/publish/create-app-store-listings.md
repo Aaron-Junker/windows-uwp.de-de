@@ -2,16 +2,16 @@
 Description: Der Store Angebote Teil der app-Übermittlungsprozess ist, in dem Sie den Text und Bilder, die Kunden angezeigt wird, wenn anzeigen, dass Ihre app in den Microsoft Store Auflisten der angeben.
 title: Erstellen von Store-Einträgen für Apps
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.date: 10/31/2018
+ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, UWP, Eintrag, Beschreibung, Store-Seite, Versionshinweise, Titel
 ms.localizationpriority: medium
-ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cc0c257be2343244872945de17d8c90a23d736ae
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601855"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57977453"
 ---
 # <a name="create-app-store-listings"></a>Erstellen von Store-Einträgen für Apps
 
@@ -130,7 +130,7 @@ Eine kürzere, ansprechende Beschreibung, die am oberen Rand des Store-Eintrags 
 
 Bei Spielen erscheint die Kurzbeschreibung auch im Abschnitt „Informationen“ im Spiele-Hub auf Xbox One.
 
-Behalten Sie für optimale Ergebnisse die Kurzbeschreibung unter 270 Zeichen. Das Feld enthält maximal 500 Zeichen, aber in einigen Ansichten werden nur die ersten 270 Zeichen (mit einem Link zur Verfügung, um die restlichen die kurze Beschreibung anzuzeigen) angezeigt werden.
+Behalten Sie für optimale Ergebnisse die Kurzbeschreibung unter 270 Zeichen. Das Feld hat ein Limit von 1000 Zeichen, aber in einigen Ansichten werden nur die ersten 270 Zeichen (mit einem Link zur Verfügung, um die restlichen die kurze Beschreibung anzuzeigen) angezeigt werden.
 
 
 ### <a name="additional-system-requirements"></a>Weitere Systemanforderungen

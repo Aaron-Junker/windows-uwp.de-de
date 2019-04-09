@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f144ef398fc55e79d2f0190c61214cdf1aa93b68
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f503910a46254f4e885dd2ded1d43b975d78f84e
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607655"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244313"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>Manuelle Kamerasteuerelemente für die Videoaufnahme
 
@@ -55,7 +55,7 @@ Mit [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windo
 
 Das folgende Beispiel verwendet eine einfache Benutzeroberfläche für Optionsfelder, damit der Benutzer zwischen den Entstörungsmodi wechseln kann.
 
-[!code-cs[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
+[!code-xml[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
 
 In der folgenden Methode ist die Eigenschaft [**VideoTemporalDenoisingControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) festgelegt, um festzustellen, ob die temporäre Entstörung überhaupt auf dem aktuellen Gerät unterstützt wird. Wenn Ja, überprüfen Sie, dass **Aus** und **Auto** oder **Ein** unterstützt werden. In diesem Fall machen wir unsere Optionsfelder sichtbar. Als Nächstes werden die Schaltflächen **Auto** und **Ein** eingeblendet, wenn diese Methoden unterstützt werden.
 
@@ -87,8 +87,8 @@ Weitere Informationen über das Abrufen von Videoframes für die Bildverarbeitun
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
-* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Verarbeiten von Medien-Frames mit MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Verarbeiten von Medienframes mit „MediaFrameReader“](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 

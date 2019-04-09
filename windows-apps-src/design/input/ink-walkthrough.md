@@ -6,12 +6,12 @@ keywords: Freihand, Freihandeingabe, Lernprogramm
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bc28a4b1cb8afd70ef68a2e297b51ad0a5a0fc5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: be7005e64a431d65006315fbee551e5c6c3a2a6f
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661915"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343279"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Tutorial: Unterstützen von Freihandeingaben in Ihrer UWP-App
 
@@ -27,17 +27,17 @@ Wir konzentrieren uns auf Folgendes:
 * Unterstützung der Erkennung von grundlegenden Formen
 * Speichern und Laden von Freihandeingaben
 
-Weitere Informationen zur Implementierung dieser Features finden Sie unter [Zeichenstift-Interaktionen und Windows Ink in UWP-Apps](https://docs.microsoft.com/windows/uwp/input/pen-and-stylus-interactions).
+Weitere Informationen zur Implementierung dieser Features finden Sie unter [Zeichenstift-Interaktionen und Windows Ink in UWP-Apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
 
 ## <a name="introduction"></a>Einführung
 
 Mit Windows Ink können Sie Ihren Kunden fast alle erdenklichen schriftlichen Erfahrungen bieten, von schnellen handgeschriebenen Notizen und Anmerkungen bis zu Whiteboard-Demos, und von Architektur- und Ingenieurzeichnungen bis zu persönliche Meisterwerke.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 * Einen Computer (oder einen virtuellen Computer) mit der aktuellen Version von Windows 10.
 * [Visual Studio 2017 und die RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Abhängig von Ihrer Konfiguration können Sie möglicherweise zum Installieren der [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet-Paket, und aktivieren Sie **Entwicklermodus** in den Systemeinstellungen (Einstellungen -> Update & Für Entwickler verwenden Entwicklerfunktionen -> Sicherheit ->).
 * Wenn Sie noch keine Erfahrung mit der App-Entwicklung in der Universellen Windows-Plattform (UWP) mit Visual Studio haben, werfen Sie einen Blick in diese Themen, bevor Sie dieses Lernprogramm starten:  
     * [Vorbereiten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
@@ -66,7 +66,7 @@ Diese Objekte bieten den Großteil der Freihandfunktionen für UWP-Apps.
 
 | Component | Beschreibung |
 | --- | --- |
-| [**InkCanvas-Steuerelement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Ein XAML-UI-Plattform-Steuerelement, das standardmäßig empfängt und zeigt alle Eingaben von einem Stift als ein Freihandstrich oder einen Strich mit löschen. |
+| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Ein XAML-UI-Plattform-Steuerelement, das standardmäßig empfängt und zeigt alle Eingaben von einem Stift als ein Freihandstrich oder einen Strich mit löschen. |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Ein CodeBehind-Objekt, das zusammen mit einem [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement instanziiert wird (über die [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)-Eigenschaft verfügbar gemacht). Dieses Objekt stellt alle Standardfreihandfunktionen bereit, die vom [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)-Steuerelement zur Verfügung gestellt werden, sowie einen umfassenden Satz von APIs für zusätzliche Anpassung und Personalisierung. |
 | [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | Ein XAML-UI-Plattform-Steuerelement mit einer Auflistung anpassbar und erweiterbar, Schaltflächen, die aktiviert werden Freihand-bezogenen Funktionen in einem zugeordneten [ **InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
 | [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>Diese Funktionalität wird von uns hier nicht erläutert. Weitere Informationen finden Sie unter [Komplexes Freihandbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620314). | Ermöglicht das Rendern von Freihandstrichen im angegebenen Direct2D-Gerätekontext einer universellen Windows-App statt im standardmäßigen [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement. |
@@ -119,7 +119,7 @@ Um einfaches Freihandzeichen hinzuzufügen, platzieren Sie einfach ein [**InkCan
     <InkCanvas x:Name="inkCanvas" />
 ```
 
-Das war's. 
+Das ist alles! 
 
 Führen Sie nun erneut die App aus. Machen Sie nun eine Skizze, schreiben Sie Ihren Namen, oder (wenn Sie einen Spiegel zur Hand oder ein sehr ausgeprägtes Gedächtnis haben) zeichnen Sie ein Selbstporträt.
 
@@ -466,7 +466,7 @@ Herzlichen Glückwunsch zum Abschluss der **Eingabe: Unterstützung von Freihand
 
 * [Stiftinteraktionen und Windows Ink in UWP-apps](pen-and-stylus-interactions.md)
 
-### <a name="samples"></a>Beispiele
+### <a name="samples"></a>Proben
 
 * [Beispiel "Ink Analysis" (Basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
 * [Beispiel von Freihandeingaben Handschrift Recognition (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)

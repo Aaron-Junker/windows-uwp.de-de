@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Codebeispiele, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 19cfec890d6a434a392ce08257cad6bbeee4cda1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b3073e2a5ffa445a39bdf6d54dd288be97c88207
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627515"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334968"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# Beispiel: Übermittlungen für apps, Add-ons und Flüge
 
@@ -24,7 +24,7 @@ Dieser Artikel enthält C#-Codebeispiele zeigt das Verwenden der [Microsoft Stor
 
 Sie können die einzelnen Beispiele durchgehen, um mehr über die jeweilige Aufgabe zu erfahren. Zudem können Sie alle Codebeispiele in diesem Artikel in eine Konsolenanwendung einbinden. Um die Beispiele zu übernehmen, erstellen Sie in Visual Studio eine C#-Konsolenanwendung mit dem Namen **DeveloperApiCSharpSample**, kopieren Sie die einzelnen Beispiele in separate Codedateien des Projekts, und erstellen Sie das Projekt.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Für diese Beispiele werden die folgenden Bibliotheken verwendet:
 
@@ -39,7 +39,7 @@ Mit dem folgenden Beispiel wird ein Befehlszeilenprogramm implementiert, das die
 * Weisen Sie die Eigenschaften ```ClientId``` und ```ClientSecret``` der Client-ID und dem Schlüssel für Ihre App zu, und ersetzen Sie die *tenantid*-Zeichenfolge in der ```TokenEndpoint```-URL durch die Mandanten-ID für Ihre App. Weitere Informationen finden Sie unter [eine Azure AD-Anwendung mit Ihrem Partner Center-Konto zuordnen.](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
 
 <span id="clientconfiguration" />
 
@@ -48,7 +48,7 @@ Mit dem folgenden Beispiel wird ein Befehlszeilenprogramm implementiert, das die
 Die Beispiel-App verwendet die ```ClientConfiguration```-Hilfsklasse zum Übergeben von Azure Active Directory-Daten und App-Daten an die einzelnen Beispielmethoden, die die Microsoft Store-Übermittlungs-API verwenden.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
 <span id="create-app-submission" />
 
@@ -64,7 +64,7 @@ Das folgende Beispiel implementiert eine Klasse, die mehrere Methoden in der Mic
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-app-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
 
@@ -79,7 +79,7 @@ Das folgende Beispiel implementiert eine Klasse, die mehrere Methoden in der Mic
 5. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-add-on-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]
 
 <span id="update-add-on-submission" />
 
@@ -94,7 +94,7 @@ Das folgende Beispiel implementiert eine Klasse, die mehrere Methoden in der Mic
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-add-on-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
 <span id="create-flight-submission" />
 
@@ -110,7 +110,7 @@ Das folgende Beispiel implementiert eine Klasse, die mehrere Methoden in der Mic
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-a-flight-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs#FlightSubmissionUpdateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs#FlightSubmissionUpdateSample)]
 
 <span id="ingestionclient" />
 
@@ -123,7 +123,7 @@ Die ```IngestionClient```-Klasse stellt Hilfsmethoden bereit, die von anderen Me
 * Verarbeiten der HTTP-Anforderungen für die Microsoft Store-Übermittlung API
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/IngestionClient.cs#IngestionClient)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/IngestionClient.cs#IngestionClient)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

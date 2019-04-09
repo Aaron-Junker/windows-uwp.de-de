@@ -5,12 +5,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Microsoft Store-Übermittlungs-API, Codebeispiele, Spieloptionen, Trailer, erweiterte Angebote, Python
 ms.localizationpriority: medium
-ms.openlocfilehash: 59306e32fe1fcc68978c977b89934e64d85b8cc8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5d68058d1bf53d936c9d88a3725c7c1dd9a3f443
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629915"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334988"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Python-Beispiel: App-Übermittlung mit Spieloptionen und Trailer
 
@@ -28,11 +28,11 @@ Dieser Artikel enthält Python-Codebeispiele zeigt das Verwenden der [Microsoft 
 
 Dieser Code ruft andere Beispielklassen und Funktionen auf, um die Microsoft Store-Übermittlungs-API zum Erstellen und Ausführen eines Commits einer App-Übermittlung mit Optionen und einem Trailer verwendet. So passen Sie den Code für eigene Zwecke an:
 
-* Weisen Sie die ```tenant```-Variable zur Mandanten-ID für Ihre App zu und weisen Sie die Variablen ```client``` und ```secret``` zur Client-ID und dem Schlüssel für die App zu. Weitere Informationen finden Sie unter [eine Azure AD-Anwendung mit Ihrem Partner Center-Konto zuordnen.](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
-* Weisen Sie die ```application_id```-Variable zur [Store-ID](in-app-purchases-and-trials.md#store-ids) der App zu, für die eine Übermittlung erstellen möchten.
+* Weisen Sie die `tenant`-Variable zur Mandanten-ID für Ihre App zu und weisen Sie die Variablen `client` und `secret` zur Client-ID und dem Schlüssel für die App zu. Weitere Informationen finden Sie unter [eine Azure AD-Anwendung mit Ihrem Partner Center-Konto zuordnen.](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
+* Weisen Sie die `application_id`-Variable zur [Store-ID](in-app-purchases-and-trials.md#store-ids) der App zu, für die eine Übermittlung erstellen möchten.
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/CreateAndSubmitAppSubmissionExample.py#L1-L74)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/CreateAndSubmitAppSubmissionExample.py#L1-L74)]
 
 <span id="token" />
 
@@ -40,11 +40,11 @@ Dieser Code ruft andere Beispielklassen und Funktionen auf, um die Microsoft Sto
 
 Das folgende Beispiel definiert die folgenden Klassen:
 
-* Die ```DevCenterAccessTokenClient```-Klasse definiert eine Hilfsmethode, die Ihre ```tenantId```, ```clientId``` und ```clientSecret``` Werte zum Erstellen eines Azure AD-Zugriffstokens zur Verwendung mit Microsoft Store-Übermittlungs-API verwendet.
-* Die ```DevCenterClient``` Klasse definiert Hilfsmethoden, die eine Vielzahl von Methoden in der Microsoft Store-Übermittlungs-API aufrufen und die ZIP-Datei mit den Paketen, Bildern und Trailerdateien für die App-Übermittlung hochladen.
+* Die `DevCenterAccessTokenClient`-Klasse definiert eine Hilfsmethode, die Ihre `tenantId`, `clientId` und `clientSecret` Werte zum Erstellen eines Azure AD-Zugriffstokens zur Verwendung mit Microsoft Store-Übermittlungs-API verwendet.
+* Die `DevCenterClient` Klasse definiert Hilfsmethoden, die eine Vielzahl von Methoden in der Microsoft Store-Übermittlungs-API aufrufen und die ZIP-Datei mit den Paketen, Bildern und Trailerdateien für die App-Übermittlung hochladen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/devcenterclient.py#L1-L126)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/devcenterclient.py#L1-L126)]
 
 <span id="token" />
 
@@ -53,7 +53,7 @@ Das folgende Beispiel definiert die folgenden Klassen:
 Das folgende Beispiel definiert Hilfsfunktionen, die JSON-formatierte Eintrag Daten für eine neue Übermittlung der Beispiel-App zurückzugeben.
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/submissiondatasamples.py#L1-L170)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/submissiondatasamples.py#L1-L170)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

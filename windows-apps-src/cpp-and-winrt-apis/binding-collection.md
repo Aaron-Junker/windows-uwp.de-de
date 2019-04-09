@@ -5,12 +5,12 @@ ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, XAML, steuerelement, binden, collection
 ms.localizationpriority: medium
-ms.openlocfilehash: c3551ebcc59ebfe426b0be8d5bd20f7578517a25
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c4bf1805b16d869e7a29c49e8fe53c01cf469132
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649205"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921666"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML-Items-Steuerelemente; Binden an eine C++/WinRT-Collection
 
@@ -25,7 +25,7 @@ Diese exemplarische Vorgehensweise baut auf dem in [XAML-Steuerelemente; Binden 
 Wenn eine Laufzeitklasse, die eine Collection repräsentiert, das Ereignis [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) auslöst, wenn ein Element hinzugefügt oder entfernt wird, dann ist die Laufzeitklasse eine Observable-Collection. Ein XAML-Items-Steuerelement kann sich an diese Ereignisse binden und sie verarbeiten, indem es die aktualisierte Collection abruft und sich dann aktualisiert, um die aktuellen Elemente anzuzeigen.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden von C++ / WinRT Visual Studio-Erweiterung (VSIX) (die projektunterstützung für die Vorlage bereitstellt) finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Installieren und Verwenden der C++WinRT Visual Studio-Erweiterung (VSIX) und das NuGet-Paket (die zusammen bieten die Projektvorlage und Buildunterstützung) finden Sie unter [Visual Studio-Unterstützung für C++"/ WinRT"](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>Hinzufügen einer **BookSkus**-Collection zu **BookstoreViewModel**
 
@@ -121,8 +121,8 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 Erstellen Sie nun das Projekt und führen Sie es aus. Klicken Sie auf die Schaltfläche, um den **Click**-Ereignis-Handler auszuführen. Wir haben gesehen, dass die Implementierung von **Append** ein Ereignis auslöst, um die Benutzeroberfläche wissen zu lassen, dass sich die Collection geändert hat. Die **ListBox** fragt die Collection erneut ab, um ihren eigenen **Items**-Wert zu aktualisieren. Nach wie vor ändert sich der Titel eines der Bücher, und diese Titeländerung wird sowohl auf der Schaltfläche als auch in der Listbox angezeigt.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [IObservableVector&lt;T&gt;:: VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
-* [Vorlage für WinRT::Make-Funktion](/uwp/cpp-ref-for-winrt/make)
+* [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+* [winrt::make Funktionsvorlage](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)

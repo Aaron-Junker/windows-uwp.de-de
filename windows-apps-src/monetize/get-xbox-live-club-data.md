@@ -5,28 +5,28 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Live Analyse, Clubs
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf9d06f96632237c10de0fe3b6c4723a2501254
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: aef7f17a2c6371a13a2eeb57b5f3dc4ee4889435
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633175"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162671"
 ---
 # <a name="get-xbox-live-club-data"></a>Abrufen von Xbox Live-Clubdaten
 
-Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um Clubdaten für Ihr [Xbox Live-fähiges Spiel](../xbox-live/index.md) abzurufen. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
+Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um Clubdaten für Ihr [Xbox Live-fähiges Spiel](https://docs.microsoft.com/gaming/xbox-live//index.md) abzurufen. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
 
 > [!IMPORTANT]
-> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](../xbox-live/developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](../xbox-live/developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
+> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store-Analyse-API.
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 
 ### <a name="request-syntax"></a>Anforderungssyntax
@@ -40,7 +40,7 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
@@ -48,8 +48,8 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 | Parameter        | Typ   |  Beschreibung      |  Erforderlich  
 |---------------|--------|---------------|------|
-| applicationId | string | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie die Xbox Live Clubdaten abrufen möchten.  |  Ja  |
-| metricType | string | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **communitymanagerclub** an.  |  Ja  |
+| applicationId | String | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie die Xbox Live Clubdaten abrufen möchten.  |  Ja  |
+| metricType | String | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **communitymanagerclub** an.  |  Ja  |
 | startDate | date | Das Startdatum im Datumsbereich der Clubdaten, die abgerufen werden sollen. Der Standardwert ist 30 Tage vor dem aktuellen Datum. |  Nein  |
 | endDate | date | Das Enddatum im Datumsbereich der Clubdaten, die abgerufen werden sollen. Der Standardwert ist das aktuelle Datum. |  Nein  |
 | top | int | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
@@ -70,7 +70,7 @@ Authorization: Bearer <your access token>
 | Wert      | Typ   | Beschreibung                  |
 |------------|--------|-------------------------------------------------------|
 | Wert      | array  | Ein Array mit einem [ProductData](#productdata)-Objekt, das Daten für Clubs enthält, die sich auf Ihr Spiel sowie auf ein [XboxwideData](#xboxwidedata)-Objekt beziehen, das Clubdaten für alle Xbox Live Kunden enthält. Diese Daten werden zu Vergleichszwecken mit den Daten für Ihr Spiel beigefügt.  |
-| @nextLink  | string | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10000 festgelegt ist, es jedoch mehr als 10000 Zeilen mit Daten für die Abfrage gibt. |
+| @nextLink  | String | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10000 festgelegt ist, es jedoch mehr als 10000 Zeilen mit Daten für die Abfrage gibt. |
 | TotalCount | int    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage. |
 
 
@@ -80,8 +80,8 @@ Diese Ressource enthält Clubdaten für Ihr Spiel.
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-| date            |  string |   Das Datum für die Clubdaten.   |
-|  applicationId               |    string     |  Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie Clubdaten abgerufen haben.   |
+| date            |  String |   Das Datum für die Clubdaten.   |
+|  applicationId               |    String     |  Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie Clubdaten abgerufen haben.   |
 |  clubsWithTitleActivity               |    int     |  Die Anzahl der Clubs, die an Ihrem Spiel gemeinschaftlich beteiligt sind.   |     
 |  clubsExclusiveToGame               |   int      |  Die Anzahl der Clubs, die ausschließlich an Ihrem Spiel gemeinschaftlich beteiligt sind.   |     
 |  clubFacts               |   array      |   Enthält ein oder mehrere [ClubFacts](#clubfacts)-Objekte zu den einzelnen Clubs, die an Ihrem Spiel gemeinschaftlich beteiligt sind.   |
@@ -93,8 +93,8 @@ Diese Ressource enthält die durchschnittlichen Clubdaten über alle Xbox Live-K
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-| date            |  string |   Das Datum für die Clubdaten.   |
-|  applicationId  |    string     |   Im **XboxwideData**-Objekt hat diese Zeichenfolge ist immer den Wert **XBOXWIDE**.  |
+| date            |  String |   Das Datum für die Clubdaten.   |
+|  applicationId  |    String     |   Im **XboxwideData**-Objekt hat diese Zeichenfolge ist immer den Wert **XBOXWIDE**.  |
 |  clubsWithTitleActivity               |   int     |  Durchschnittlich die Anzahl der Clubs mit Kunden, die an einem Xbox Live-fähigen Spiel gemeinschaftlich beteiligt sind.    |     
 |  clubsExclusiveToGame               |   int      |  Durchschnittlich die Anzahl der Clubs mit Kunden, die ausschließlich an einem Xbox Live-fähigen Spiel gemeinschaftlich beteiligt sind.   |     
 |  clubFacts               |   object      |  Enthält ein [ClubFacts](#clubfacts)-Objekt. Dieses Objekt ist bedeutungslos im Kontext des **XboxwideData**-Objekts und verfügt über Standardwerte.  |
@@ -106,7 +106,7 @@ Im **ProductData**-Objekt enthält dieses Objekt enthält Daten für einen besti
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|--------------------|
-|  name            |  string  |   Im **ProductData**-Objekt ist dies der Name des Clubs. Im **XboxwideData**-Objekt hat dies immer den Wert **XBOXWIDE**.           |
+|  name            |  String  |   Im **ProductData**-Objekt ist dies der Name des Clubs. Im **XboxwideData**-Objekt hat dies immer den Wert **XBOXWIDE**.           |
 |  memberCount               |    int     | Im **ProductData**-Objekt ist dies die Anzahl der Clubmitglieder, mit Ausnahme der nicht-Mitglieder, die den Club nur besuchen. Im **XboxwideData**-Objekt ist dies immer 0.    |
 |  titleSocialActionsCount               |    int     |  Im **ProductData**-Objekt ist dies die Anzahl der gemeinschaftlichen Aktionen, die Mitglieder im Club im Bezug auf Ihr Spiel ausgeführt haben. Im **XboxwideData**-Objekt ist dies immer 0   |
 |  isExclusiveToGame               |    Boolesch     |  Im **ProductData**-Objekt gibt dies an, ob der aktuelle Club ausschließlich nur an Ihrem Spiel gemeinschaftlich beteiligt ist. Im **XboxwideData**-Objekt ist dies immer wahr.  |

@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3d516343798b7d8c221a5af12210a4897a3124a9
+ms.sourcegitcommit: 358abe22243da4592c30e18d6fc322778f091c8d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636095"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58362950"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Navigationsdesigngrundlagen für UWP-Apps
 
@@ -197,6 +197,21 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
 
 :::row:::
     :::column:::
+         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+        :::column span="2":::
+    [**Pivot**](../controls-and-patterns/pivot.md)
+    
+    Ähnlich wie [Navigationsansicht](../controls-and-patterns/navigationview.md), jedoch mit zusätzlicher Unterstützung für Touch- und etwas anders verhalten.
+    
+    Verwenden von Pivot bei:-Ihre App um Touch Streifen zwischen Kategorien zu ermöglichen.
+        - Sie möchten Navigationsoptionen, Karussell infintely
+        - Eine umfangreiche Steuerung der Navigation verhaltensänderungen bei den verschiedenen Kategorien ist nicht erforderlich.
+
+:::row-end:::
+
+:::row:::
+    :::column:::
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
@@ -207,9 +222,9 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
         - Die Seiten befinden sich auf der obersten Ebene.
         - Es gibt viele Navigationselementen (mehr als 5)
         - Sie erwarten nicht, dass Benutzer häufig zwischen Seiten wechseln werden.
-        
-:::row-end:::
 
+:::row-end:::
+        
 :::row:::
     :::column:::
         ![Master details image](images/nav/thumbnail-master-detail.svg)

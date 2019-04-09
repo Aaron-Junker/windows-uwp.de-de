@@ -4,12 +4,12 @@ description: Erfahren Sie mehr über den Zugriff von HTTP-Datenverkehr aus der f
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1e7c07c92c1671cd9051393586e1e8562fa756d0
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645675"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244096"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP-Monitor-API-Referenz   
 Sie können mit dieser API auf Echtzeit-HTTP-Datenverkehr für die fokussierte App zugreifen, wenn der HTTP-Monitor auf der Xbox-Konsole aktiviert wurde, indem Sie das Kontrollkästchen in Dev Home aktivieren.
@@ -23,7 +23,7 @@ Sie können abrufen, ob der HTTP-Monitor in Dev Home aktiviert wurde.
 Methode      | Anforderungs-URI
 :------     | :-----
 GET | /ext/httpmonitor/sessions
-<br />
+
 **URI-Parameter**
 
 - Keine
@@ -41,7 +41,7 @@ Ein JSON-Objekt mit den folgenden Feldern:
 
 * Aktiviert – (Bool) Ob der HTTP-Monitor auf der Xbox-Konsole aktiviert wurde, indem das Kontrollkästchen in Dev Home markiert wurde.
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -52,6 +52,7 @@ HTTP-Statuscode      | Beschreibung
 5XX | Fehlercodes
 
 ## <a name="get-http-traffic-from-the-focused-app"></a>Abrufen des HTTP-Datenverkehr aus der fokussierten App
+
 **Anforderung**
 
 Rufen Sie in Echtzeit HTTP-Datenverkehr von der fokussierten App auf der Xbox ab, sofern es keine System-App ist, wenn der HTTP-Monitor über Dev Home aktiviert wurde.
@@ -59,7 +60,7 @@ Rufen Sie in Echtzeit HTTP-Datenverkehr von der fokussierten App auf der Xbox ab
 Methode      | Anforderungs-URI
 :------     | :-----
 Websocket | /ext/httpmonitor/sessions
-<br />
+
 **URI-Parameter**
 
 - Keine
@@ -87,7 +88,7 @@ Ein JSON-Objekt mit den folgenden Feldern:
     * ReasponsePhrase – (Zeichenfolge) Der Antwortgrundausdruck.
     * ResponseMessage – (Zeichenfolge) Die Antwortnachricht, unterstützt derzeit nur JSON- und Textinhalt.
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -98,7 +99,7 @@ HTTP-Statuscode      | Beschreibung
 403 | HTTP-Monitor ist deaktiviert, muss in Dev Home aktiviert werden.
 5XX | Fehlercodes
 
-<br />
-**Gerätefamilien verfügbar**
+
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox

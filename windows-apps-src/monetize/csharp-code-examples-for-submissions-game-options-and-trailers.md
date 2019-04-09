@@ -5,12 +5,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Microsoft Store-Übermittlungs-API, Codebeispiele, Spieloptionen, Trailer, erweiterte Angebote, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 277d455fe3387452a4afe91fd74e5c2099f76ce4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8ffb11c020eacd687ab72274b04f41406c3df2af
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594075"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334638"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C\# Beispiel: app-Übermittlung mit Optionen für Spiele und -Nachspänne
 
@@ -24,7 +24,7 @@ Dieser Artikel enthält C#-Codebeispiele zeigt das Verwenden der [Microsoft Stor
 
 Sie können die einzelnen Beispiele durchgehen, um mehr über die jeweilige Aufgabe zu erfahren. Zudem können Sie alle Codebeispiele in diesem Artikel in eine Konsolenanwendung einbinden. Um die Beispiele zu übernehmen, erstellen Sie in Visual Studio eine C#-Konsolenanwendung mit dem Namen **DevCenterApiSample**, kopieren Sie die einzelnen Beispiele in separate Codedateien des Projekts, und erstellen Sie das Projekt.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Für diese Beispiele gelten die folgenden Anforderungen:
 
@@ -41,7 +41,7 @@ Die ```CreateAndSubmitSubmissionExample```-Klasse definiert eine öffentliche ``
 * Weisen Sie die ```applicationId```-Variable zur [Store-ID](in-app-purchases-and-trials.md#store-ids) der App zu, für die eine Übermittlung erstellen möchten.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/CreateAndSubmitSubmissionExample.cs#CreateAndSubmitSubmissionExample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/CreateAndSubmitSubmissionExample.cs#CreateAndSubmitSubmissionExample)]
 
 <span id="token" />
 
@@ -50,7 +50,7 @@ Die ```CreateAndSubmitSubmissionExample```-Klasse definiert eine öffentliche ``
 Die ```DevCenterAccessTokenClient```-Klasse definiert eine Hilfsmethode, die Ihre ```tenantId```, ```clientId``` und ```clientSecret``` Werte zum Erstellen eines Azure AD-Zugriffstokens zur Verwendung mit Microsoft Store-Übermittlungs-API verwendet.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterAccessTokenClient.cs#DevCenterAccessTokenClient)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterAccessTokenClient.cs#DevCenterAccessTokenClient)]
 
 <span id="utilities" />
 
@@ -59,7 +59,7 @@ Die ```DevCenterAccessTokenClient```-Klasse definiert eine Hilfsmethode, die Ihr
 Die ```DevCenterClient``` Klasse definiert Hilfsmethoden, die eine Vielzahl von Methoden in der Microsoft Store-Übermittlungs-API aufrufen und die ZIP-Datei mit den Paketen, Bildern und Trailerdateien für die App-Übermittlung hochladen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterClient.cs#DevCenterClient)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterClient.cs#DevCenterClient)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

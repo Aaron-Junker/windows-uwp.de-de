@@ -5,26 +5,26 @@ ms.date: 11/072017
 ms.topic: article
 keywords: Windows 10 "," Uwp "," Xbox "," Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7aa8b11bc439266d36fbb27a7eaa7b07e924a17c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617495"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244036"
 ---
 # <a name="xbox-info-api-reference"></a>Referenz zur API für Xbox-Informationen   
 Sie können mit dieser API auf die Xbox One-Geräteinformationen zugreifen.
 
 ## <a name="get-xbox-one-device-information"></a>Abrufe von Xbox One-Geräteinformationen
 
-**Anforderung**
+## <a name="request"></a>Anforderung
 
 Sie können Geräteinformationen zu Ihrer Xbox One abrufen.
 
 Methode      | Anforderungs-URI
 :------     | :-----
 GET | /ext/xbox/info
-<br />
+
 **URI-Parameter**
 
 - Keine
@@ -37,7 +37,7 @@ GET | /ext/xbox/info
 
 - Keine
 
-**Antwort**   
+## <a name="response"></a>Antwort
 Ein JSON-Objekt mit den folgenden Feldern:
 
 * OsVersion (Zeichenfolge): Die Version des Betriebssystems.
@@ -49,7 +49,7 @@ Ein JSON-Objekt mit den folgenden Feldern:
 * ConsoleType (Zeichenfolge): Der Konsolentyp, z. B. „Xbox One“ oder „Xbox One S“.
 * DevkitCertificateExpirationTime (Zahl): Die UTC-Zeit in Sekunden, zu der das Developer Kit-Zertifikat der Konsole abläuft.
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -59,7 +59,6 @@ HTTP-Statuscode      | Beschreibung
 4XX | Fehlercodes
 5XX | Fehlercodes
 
-<br />
-**Gerätefamilien verfügbar**
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox

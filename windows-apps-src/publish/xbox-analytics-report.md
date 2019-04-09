@@ -1,23 +1,23 @@
 ---
 Description: Der Xbox-Analytics-Bericht im Partner Center zeigt Sie eine Statistik zur wie Ihre Kunden mit der Xbox-Funktionen in Ihrem Produkt ansprechender sind.
 title: Bericht der Xbox Analyse
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Xbox Analyse, Xbox Live-Analyse, Xbox-Statistiken
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: fe44c4bc8a4e2843d0158bfce730f322a67cbfa7
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607445"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334847"
 ---
 # <a name="xbox-analytics-report"></a>Bericht der Xbox Analyse
 
 Die **Xbox Analytics** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) erfahren Sie Statistiken dazu, wie Ihre Kunden ansprechende, mit der Xbox-Funktionen in Ihrem Spiel sind. Es enthält auch Informationen zur Dienstintegrität, um Clientfehler zu beheben.
 
 > [!IMPORTANT]
-> Dieser Bericht wird nur angezeigt, wenn Sie ein Spiel für Xbox oder ein Spiel veröffentlichen, das Xbox Live-Dienste verwendet. Wechseln Sie zu diesem Zweck über die [Konzept Genehmigungsprozess](../gaming/concept-approval.md), wozu Spiele, die von veröffentlichten [Microsoft-Partner](../xbox-live/developer-program-overview.md#microsoft-partners) und Spiele, die gesendet werden, über die [ ID@Xbox Programm](../xbox-live/developer-program-overview.md#id). Spiele veröffentlicht wird, über die [Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) sind derzeit nicht sichtbar in diesem Bericht.
+> Dieser Bericht wird nur angezeigt, wenn Sie ein Spiel für Xbox oder ein Spiel veröffentlichen, das Xbox Live-Dienste verwendet. Wechseln Sie zu diesem Zweck über die [Konzept Genehmigungsprozess](../gaming/concept-approval.md), wozu Spiele, die von veröffentlichten [Microsoft-Partner](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#microsoft-partners) und Spiele, die gesendet werden, über die [ ID@Xbox Programm](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#id). Spiele veröffentlicht wird, über die [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) sind derzeit nicht sichtbar in diesem Bericht.
 
 Sehen Sie die **Xbox Analytics** Bericht im linken Navigationsmenü für Ihr Spiel durch Erweitern **analysieren** und **Xbox Analytics**.  Sie können diese Daten anzeigen, im Partner Center oder [Bericht herunterladen](download-analytic-reports.md) offline anzeigen.
 

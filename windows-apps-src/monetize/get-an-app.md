@@ -6,45 +6,45 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, App
 ms.localizationpriority: medium
-ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6f4a4cb86bb5cf23e84e75ad99750dd6cff9539
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590515"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334539"
 ---
 # <a name="get-an-app"></a>Abrufen einer App
 
 Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API zum Abrufen von Informationen zu einer bestimmten app, die mit Ihrem Partner Center-Konto registriert ist.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie Verwendungsbeispiele und Beschreibungen des Header und Anforderungstexts.
 
 | Methode | Anforderungs-URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}` |
 
 
 ### <a name="request-header"></a>Anforderungsheader
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Erforderlich. Die Store-ID der abzurufenden App. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | String | Erforderlich. Die Store-ID der abzurufenden App. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -55,7 +55,7 @@ Stellen Sie keinen Anforderungstext für diese Methode bereit.
 
 Im folgenden Beispiel wird veranschaulicht, wie Informationen über eine App mit dem Store-ID-Wert 9NBLGGH4R315 abgerufen werden können.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -91,7 +91,7 @@ Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die A
 | Fehlercode |  Beschreibung   |
 |--------|------------------|
 | 404  | Die angegebene App konnte nicht gefunden werden. |
-| 407  | Die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Verwandte Themen

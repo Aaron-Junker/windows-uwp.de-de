@@ -5,19 +5,19 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, erstellen, ereignis
 ms.localizationpriority: medium
-ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c410d209972a0221928548901f79bd599c67eae
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644485"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921696"
 ---
 # <a name="author-events-in-cwinrt"></a>Erstellen von Ereignissen mit C++/WinRT
 
 Dieses Thema zeigt, wie man eine Komponente für Windows-Runtime erstellt, die eine Laufzeitklasse für ein Bankkonto enthält, die ein Ereignis auslöst, wenn sein Saldo ins Minus gerät. Es demonstriert außerdem eine Core App, die die Bankkonto-Laufzeitklasse nutzt, eine Funktion zur Anpassung des Saldos aufruft und alle daraus resultierenden Ereignisse verarbeitet.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden der [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) finden Sie in Visual Studio-Erweiterung (VSIX) (die projektunterstützung für die Vorlage bereitstellt) [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Installieren und Verwenden der [ C++"/ WinRT"](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) finden Sie in Visual Studio-Erweiterung (VSIX) und das NuGet-Paket (die zusammen bieten die Projektvorlage und Buildunterstützung) [Visual Studio-Unterstützung für C++/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 > [!IMPORTANT]
 > Wichtige Konzepte und Begriffe, die Ihr Verständnis für die Verwendung von Laufzeitklassen mit C++/WinRT unterstützen, finden Sie unter [Verwenden von APIs mit C++/WinRT](consume-apis.md) und [Erstellen von APIs mit C++/WinRT](author-apis.md).
@@ -285,4 +285,4 @@ Beachten Sie, dass diese Richtlinien nicht unbedingt angewendet werden, wenn Sie
 ## <a name="related-topics"></a>Verwandte Themen
 * [Erstellen von APIs mit C++/WinRT](author-apis.md)
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)
-* [Behandeln von Ereignissen mithilfe von Delegaten in C++ / WinRT](handle-events.md)
+* [Verarbeiten von Ereignissen über Delegaten in C++/WinRT](handle-events.md)

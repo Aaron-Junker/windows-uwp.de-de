@@ -2,16 +2,16 @@
 Description: Sie können in mehr als 100 Sprachen der Microsoft Store-apps senden.
 title: Unterstützte Sprachen
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 716a6e86e03feb6edcbc5cde5aa37d0282df6aca
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657755"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244286"
 ---
 # <a name="supported-languages"></a>Unterstützte Sprachen
 
@@ -35,7 +35,7 @@ Sprachcodes, die hier nicht aufgeführt sind, werden von der Store nicht unterst
 | Amharisch               | am, am-et                                                                                                                                                                                             |
 | Armenisch              | hy, hy-am                                                                                                                                                                                             |
 | Assamesisch              | as, as-in                                                                                                                                                                                             |
-| Aserbaidschanisch           | az, az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
+| Aserbaidschanisch           | az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
 | Baskisch (Baskenland)       | eu, eu-es                                                                                                                                                                                             |
 | Belarussisch            | be, be-by                                                                                                                                                                                             |
 | Bangla                | bn, bn-bd, bn-in                                                                                                                                                                                      |
@@ -43,7 +43,7 @@ Sprachcodes, die hier nicht aufgeführt sind, werden von der Store nicht unterst
 | Bulgarisch             | bg, bg-bg                                                                                                                                                                                             |
 | Katalanisch               | ca, ca-es, ca-es-valencia                                                                                                                                                                             |
 | Cherokee              | chr-cher, chr-cher-us, chr-latn                                                                                                                                                                       |
-| Chinesisch (vereinfacht)  | Zh-Hans, Zh-Cn, Zh-Hans-Cn, Zh-sg, Zh-Hans-sg                                                                                                                                                     |
+| Chinesisch (vereinfacht)  | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
 | Chinesisch (traditionell) | zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw                                                                                                                                      |
 | Kroatisch              | hr, hr-hr, hr-ba                                                                                                                                                                                      |
 | Tschechisch                 | cs, cs-cz                                                                                                                                                                                             |

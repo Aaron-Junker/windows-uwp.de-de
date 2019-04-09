@@ -1,16 +1,16 @@
 ---
 Description: Nachdem Sie Ihre Pakete erfolgreich hochgeladen haben, sehen Sie eine Tabelle, in der angegeben wird, welche Pakete für bestimmte Windows 10-Gerätefamilien angeboten werden (und ggf. für frühere Betriebssystemversionen).
 title: Verfügbarkeit von Gerätefamilien
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Pakete, hochladen, Verfügbarkeit von Gerätefamilien
 ms.localizationpriority: medium
-ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 516339b33ac4cf8e29e320f442791402b64c6a94
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605355"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334627"
 ---
 # <a name="device-family-availability"></a>Verfügbarkeit von Gerätefamilien
 
@@ -34,7 +34,7 @@ Wenn Ihre App dies unterstützt, empfehlen wir, diese Kontrollkästchen hier akt
 
 <span id="xbox" />
 
-Ist die einzige Windows 10-Gerätefamilie, die für Windows.Universal Pakete standardmäßig nicht aktiviert ist, ist **Windows 10 Xbox**. Wenn Ihre App kein Spiel ist (oder wenn sie ein Spiel ist und Sie das [Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) aktiviert haben oder die [Konzeptgenehmigung](../gaming/concept-approval.md) durchlaufen haben), und Ihre Übermittlung neutrale und/oder x64-UWP-Pakete enthält, die mit Windows 10 SDK Version 14393 kompiliert wurden, können Sie das Kontrollkästchen Windows 10 Xbox aktivieren, wenn Sie die App Kunden auf **Windows 10 Xbox** anbieten möchten.
+Ist die einzige Windows 10-Gerätefamilie, die für Windows.Universal Pakete standardmäßig nicht aktiviert ist, ist **Windows 10 Xbox**. Wenn Ihre App kein Spiel ist (oder wenn sie ein Spiel ist und Sie das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) aktiviert haben oder die [Konzeptgenehmigung](../gaming/concept-approval.md) durchlaufen haben), und Ihre Übermittlung neutrale und/oder x64-UWP-Pakete enthält, die mit Windows 10 SDK Version 14393 kompiliert wurden, können Sie das Kontrollkästchen Windows 10 Xbox aktivieren, wenn Sie die App Kunden auf **Windows 10 Xbox** anbieten möchten.
 
 > [!IMPORTANT]
 > Ihre App kann nur dann auf Xbox-Geräten gestartet werden, wenn sie ein mit Windows SDK Version 14393 oder höher kompiliertes neutrales oder x64-Paket enthält. Wenn Sie **Windows 10 Xbox** aktivieren, wird ein für Xbox geeignete Paket mit der Versionsnummer (d. h., ein neutrales oder x64 Paket, das für die Gerätefamilien „Xbox“ oder „Universell“ bestimmt ist) Kunden auf Xbox jedoch immer angeboten – auch dann, wenn es mit einer früheren Version des SDK kompiliert wurde. Daher müssen Sie unbedingt sicherstellen, dass das für Xbox geeignete Paket mit der höchsten Versionsnummer mit Windows SDK-Version 14393 oder höher kompiliert wurde. Andernfalls wird eine Fehlermeldung angezeigt, in der darauf hingewiesen wird, dass Xbox-Kunden die App nicht starten können. 

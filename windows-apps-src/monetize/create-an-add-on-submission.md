@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Erstellen einer Add-On-Übermittlung, In-App-Produkt, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cbb093576badf5cd84b132cfb139db9da7d31991
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661705"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334928"
 ---
 # <a name="create-an-add-on-submission"></a>Erstellen einer Add-On-Übermittlung
-
 
 Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API, um eine neue Add-on (auch bekannt als in-app-Produkt oder IAP) Eingabe für eine app zu erstellen, die mit Ihrem Partner Center-Konto registriert ist. Nachdem Sie erfolgreich eine neue Übermittlung mit dieser Methode erstellt haben, [aktualisieren Sie die Übermittlung](update-an-add-on-submission.md), um erforderliche Änderungen an den Übermittlungsdaten vorzunehmen, und führen Sie ein [Commit für die Übermittlung](commit-an-add-on-submission.md) zur Aufnahme und Veröffentlichung durch.
 
@@ -23,7 +22,7 @@ Weitere Informationen dazu, wie diese Methode zum Erstellen einer Add-On-Übermi
 > [!NOTE]
 > Durch diese Methode wird eine Übermittlung für ein vorhandenes Add-On erstellt. Um ein Add-On zu erstellen, verwenden Sie die Methode zum [Erstellen eines Add-Ons](create-an-add-on.md).
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
@@ -31,28 +30,25 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 * Erstellen Sie ein Add-on für eine Ihrer apps. Sie können dies im Partner Center, oder Sie erreichen dies, indem die [ein Add-on erstellen](create-an-add-on.md) Methode.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie Verwendungsbeispiele und Beschreibungen des Header und Anforderungstexts.
 
 | Methode | Anforderungs-URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions``` |
-
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions` |
 
 ### <a name="request-header"></a>Anforderungsheader
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
-
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | Erforderlich. Die Store-ID des Add-Ons, für das Sie eine Übermittlung erstellen möchten. Die Store-ID ist im Partner Center zur Verfügung und befindet sich in die Antwortdaten für Anforderungen an [ein Add-on erstellen](create-an-add-on.md) oder [Abrufen von Details des Add-On-](get-all-add-ons.md).  |
-
+| inAppProductId | String | Erforderlich. Die Store-ID des Add-Ons, für das Sie eine Übermittlung erstellen möchten. Die Store-ID ist im Partner Center zur Verfügung und befindet sich in die Antwortdaten für Anforderungen an [ein Add-on erstellen](create-an-add-on.md) oder [Abrufen von Details des Add-On-](get-all-add-ons.md).  |
 
 ### <a name="request-body"></a>Anforderungstext
 
@@ -62,7 +58,7 @@ Stellen Sie keinen Anforderungstext für diese Methode bereit.
 
 Im folgenden Beispiel wird gezeigt, wie Sie eine neue Übermittlung für ein Add-On erstellen.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -151,8 +147,7 @@ Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die A
 | Fehlercode |  Beschreibung   |
 |--------|------------------|
 | 400  | Die Übermittlung konnte nicht erstellt werden, da die Anforderung ungültig ist. |
-| 407  | Die Übermittlung konnte aufgrund des aktuellen Status der app nicht erstellt werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
+| 409  | Die Übermittlung konnte aufgrund des aktuellen Status der app nicht erstellt werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 ## <a name="related-topics"></a>Verwandte Themen
 

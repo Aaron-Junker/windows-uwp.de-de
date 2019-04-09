@@ -5,12 +5,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projiziert, projektion, implementierung, laufzeitklasse, aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 545ce8c5e18a9cc1016f4bf09e5d062b5b31b5a6
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645145"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921706"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Verwenden von APIs mit C++/WinRT
 
@@ -141,7 +141,7 @@ lookup.insert_or_assign(2, value);
 Dieser Abschnitt gilt unabhängig davon, ob Sie die Komponente selbst erstellt haben oder ob sie von einem Anbieter stammt.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden von C++ / WinRT Visual Studio-Erweiterung (VSIX) (die projektunterstützung für die Vorlage bereitstellt) finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Installieren und Verwenden der C++WinRT Visual Studio-Erweiterung (VSIX) und das NuGet-Paket (die zusammen bieten die Projektvorlage und Buildunterstützung) finden Sie unter [Visual Studio-Unterstützung für C++"/ WinRT"](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Verweisen Sie in Ihrem Anwendungsprojekt auf die Windows-Runtime-Metadaten-Datei (`.winmd`) der Komponente für Windows-Runtime und erstellen Sie diese. Während des Builds erzeugt das `cppwinrt.exe`-Tool eine Standard-C++ Bibliothek, die die API-Oberfläche der Komponente vollständig beschreibt (bzw. *projiziert*). Mit anderen Worten, die generierte Bibliothek enthält die projizierten Typen für die Komponente.
 
@@ -258,13 +258,13 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ## <a name="important-apis"></a>Wichtige APIs
 * [QueryInterface-Schnittstelle](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [RoActivateInstance-Funktion](https://msdn.microsoft.com/library/br224646)
-* [Windows::Foundation::URI-Klasse](/uwp/api/windows.foundation.uri)
-* [Vorlage für WinRT::get_activation_factory-Funktion](/uwp/cpp-ref-for-winrt/get-activation-factory)
-* [Vorlage für WinRT::Make-Funktion](/uwp/cpp-ref-for-winrt/make)
-* [WinRT::Windows::Foundation::IUnknown-Struktur](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
+* [winrt::get_activation_factory Funktionsvorlage](/uwp/cpp-ref-for-winrt/get-activation-factory)
+* [winrt::make Funktionsvorlage](/uwp/cpp-ref-for-winrt/make)
+* [winrt::Windows::Foundation::IUnknown-Struktur](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen von Ereignissen in C++ / WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [Erstellen von Ereignissen mit C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
 * [Interoperabilität zwischen C++/WinRT und der ABI](interop-winrt-abi.md)
 * [Einführung in C++/WinRT](intro-to-using-cpp-with-winrt.md)
 * [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

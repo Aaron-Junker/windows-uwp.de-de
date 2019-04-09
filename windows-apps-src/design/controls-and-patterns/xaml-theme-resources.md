@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7cae075b0d71925eb35ac2362aef291994b29801
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634645"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244406"
 ---
 # <a name="xaml-theme-resources"></a>XAML-Designressourcen
 
@@ -65,7 +65,7 @@ Das XAML-Framework stellt eine Gruppe von benannten [Color](/uwp/api/Windows.UI.
 
 Diese Tabelle enthält die Schlüssel, einfachen Namen, und die Zeichenfolgendarstellung der Farbe (mithilfe der \#Aarrggbb-Format) für die "Dunklen" und "Hell"-Ressourcen, die von der XAML-Framework bereitgestellt werden. Der Schlüssel wird verwendet, um auf die Ressource in einer App zu verweisen. Der einfache Name für hell/dunkel dient als Teil der Pinselbenennungskonvention, die später erläutert wird.
 
-| Schlüssel                             | Einfacher Name für hell/dunkel | Hell      | Dunkel       |
+| Key                             | Einfacher Name für hell/dunkel | Hell      | Dunkel       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -151,7 +151,7 @@ Zusätzlich zu den Ressourcen, die vom XAML-Framework bereitgestellt werden, gib
 
 Diese Tabelle enthält die systemweiten Farben, die XAML als Ressourcenobjekte aus der Windows-Systempalette abgeleitet bereitstellt. In der Spalte „Name der erleichterten Bedienung“ wird gezeigt, wie Farben in der Windows-Einstellungs-UI beschriftet werden. In der Spalte „Einfacher Name für HighContrast“ wird mit einem Wort beschrieben, wie die Farbe für die allgemeinen XAML-Steuerelemente angewendet wird. Sie wird als Teil der Pinselbenennungskonvention verwendet, die später erläutert wird. Die in der Spalte „Anfänglicher Standardwert“ aufgeführten Werte erhalten Sie, wenn das System nicht mit hohem Kontrast ausgeführt wird.
 
-| Schlüssel                           | Name der erleichterten Bedienung            | Einfacher Name für HighContrast | Anfänglicher Standardwert |
+| Key                           | Name der erleichterten Bedienung            | Einfacher Name für HighContrast | Anfänglicher Standardwert |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
 | SystemColorButtonFaceColor    | **Text der Schaltfläche** (Hintergrund)   | Hintergrund               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **Text der Schaltfläche** (Vordergrund)   | Vordergrund               | \#FF000000      |
@@ -177,7 +177,7 @@ Neben der Systemdesignfarben mit hohem Kontrast wird die Akzentfarbe des Systems
 
 ### <a name="theme-dependent-brushes"></a>Designabhängige Pinsel
 
-Die in den vorherigen Abschnitten gezeigten Farbressourcen dienen zum Festlegen der [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)-Eigenschaft von [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)-Ressourcen in den Systemdesign-Ressourcenwörterbüchern. Sie verwenden die Pinselressourcen, um die Farbe auf XAML-Elemente anzuwenden. Die Schlüssel für die Pinselressourcen folgen diesem Benennungsformat: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Beispiel: `SystemControlBackroundAltHighBrush`.
+Die in den vorherigen Abschnitten gezeigten Farbressourcen dienen zum Festlegen der [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)-Eigenschaft von [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)-Ressourcen in den Systemdesign-Ressourcenwörterbüchern. Sie verwenden die Pinselressourcen, um die Farbe auf XAML-Elemente anzuwenden. Die Schlüssel für die Pinselressourcen folgen diesem Benennungsformat: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Beispiel: `SystemControlBackroundAltHighBrush`Hyper-V-Hosts oder Hyper-V-Hostcluster in einem separaten Namespace als verwaltete Hyper-V-Hosts hinzuzufügen.
 
 Sehen wir uns an, wie der Farbwert für diesen Pinsel zur Laufzeit bestimmt wird. In den Ressourcenverzeichnissen „Light“ und „Dark“ wird dieser Pinsel wie folgt definiert:
 
@@ -240,7 +240,7 @@ Stellt die gemeinsamen Eigenschaften für alle anderen [TextBlock](https://msdn.
 <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
     <Setter Property="FontFamily" Value="Segoe UI"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="TextTrimming" Value="None"/>
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
@@ -318,7 +318,7 @@ Stellt die gemeinsamen Eigenschaften für alle anderen [TextBlock](https://msdn.
 <Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
        BasedOn="{StaticResource BaseTextBlockStyle}">
     <Setter Property="FontWeight" Value="Normal"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
 </Style>
 ```
 
@@ -352,7 +352,7 @@ Stellt die gemeinsamen Eigenschaften für alle anderen [RichTextBlock](https://m
 <Style x:Key="BaseRichTextBlockStyle" TargetType="RichTextBlock">
     <Setter Property="FontFamily" Value="Segoe UI"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="TextTrimming" Value="None"/>
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
@@ -402,7 +402,7 @@ Es sieht ungefähr so aus:
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265) (Schaltfläche)
 
 Dieser [Style](https://msdn.microsoft.com/library/windows/apps/br208849) stellt eine vollständige Vorlage für ein [Button](https://msdn.microsoft.com/library/windows/apps/br209265)-Element bereit, bei der es sich um die Navigationsschaltfläche „Zurück“ für eine Navigations-App handeln kann. Die Standardgröße ist 40 x 40 Pixel. Um den Stil anzupassen, können Sie die Eigenschaften [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](https://msdn.microsoft.com/library/windows/apps/br209406) und andere für Ihr **Button**-Element explizit festlegen oder einen abgeleiteten Stil mithilfe von [BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852) erstellen.
 

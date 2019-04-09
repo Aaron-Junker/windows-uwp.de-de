@@ -1,28 +1,28 @@
 ---
 description: Damit Sie C++/WinRT schneller verwenden können, werden Ihnen in diesem Thema einige einfache Codebeispiele vorgestellt.
 title: Erste Schritte mit C++/WinRT
-ms.date: 10/19/2018
+ms.date: 04/03/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, erste schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4928540d9b6e7e1c3df67f7c247aa3664618a65c
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602235"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921686"
 ---
 # <a name="get-started-with-cwinrt"></a>Erste Schritte mit C++/WinRT
 
 Um Sie mit der Verwendung von geläufigkeit [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), dieses Thema führt durch ein einfaches Codebeispiel, das auf Basis eines neuen **Windows-Konsolenanwendung (C++ / WinRT)** Projekt. Auch dieses Thema wird gezeigt, wie [hinzufügen C++ / WinRT-Support, um ein Windows-Desktop-Anwendungsprojekt](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 > [!IMPORTANT]
-> Bei Verwendung von Visual Studio 2017 (Version 15.8.0 oder höher), und auf dem Windows SDK, Version 10.0.17134.0 (Windows 10, Version 1803), klicken Sie dann eine neu erstellte C + c++ / WinRT-Projekt kann nicht mit dem Fehler kompiliert "*Fehler C3861 aus:"From_abi": Bezeichner wurde nicht gefunden*", und klicken Sie mit anderen Fehlern, die aus *base.h*. Die Lösung besteht darin, entweder Ziel einer höheren (genauer) Version des Windows SDK oder Set-Projekteigenschaft **C/C++-** > **Sprache** > **Konformitätsmodus: Nicht** (auch wenn **/ PERMISSIVE--** wird in den Projekteigenschaften **C/C++-** > **Sprache** > **über die Befehlszeile**  unter **zusätzliche Optionen**, löschen Sie sie).
+> Bei Verwendung von Visual Studio 2017 (Version 15.8.0 oder höher), und auf dem Windows SDK, Version 10.0.17134.0 (Windows 10, Version 1803), klicken Sie dann einen neu erstellten C++/WinRT-Projekt kann nicht mit dem Fehler kompiliert "*Fehler C3861 aus:"From_abi": Bezeichner wurde nicht gefunden*", und klicken Sie mit anderen Fehlern, die aus *base.h*. Die Lösung besteht darin, entweder Ziel einer höheren (genauer) Version des Windows SDK oder Set-Projekteigenschaft **C/C++-** > **Sprache** > **Konformitätsmodus: Nicht** (auch wenn **/ PERMISSIVE--** wird in den Projekteigenschaften **C/C++-** > **Sprache** > **über die Befehlszeile**  unter **zusätzliche Optionen**, löschen Sie sie).
 
 ## <a name="a-cwinrt-quick-start"></a>Schnelleinstieg zu C++/WinRT
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden von C++ / WinRT Visual Studio-Erweiterung (VSIX) (die projektunterstützung für die Vorlage bereitstellt) finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Installieren und Verwenden der C++WinRT Visual Studio-Erweiterung (VSIX) und das NuGet-Paket (die zusammen bieten die Projektvorlage und Buildunterstützung) finden Sie unter [Visual Studio-Unterstützung für C++"/ WinRT"](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Erstellen Sie ein neues **Windows Console Application (C++/WinRT)**-Projekt.
 
@@ -32,7 +32,7 @@ Bearbeiten Sie `pch.h` und `main.cpp` folgendermaßen.
 // pch.h
 ...
 #include <iostream>
-#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ...
 ```
@@ -63,7 +63,7 @@ int main()
 Wir nehmen uns das kurze Codebeispiel oben Stück für Stück vor und erläutern, was in jedem Teil passiert.
 
 ```cppwinrt
-#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ```
 
@@ -120,7 +120,7 @@ Sie müssen auch keine HRESULT-Rückgabecodes verarbeiten. Für einen natürlich
 
 In diesem Abschnitt erfahren Sie, wie Sie C++ hinzufügen können c++ / WinRT-Support, um ein Projekt für die Windows-Desktop-Anwendung, die möglicherweise. Wenn Sie ein vorhandenes Windows-Desktop-Anwendungsprojekt nicht haben, können Sie zusammen mit diesen Schritten ersten Erstellen einer folgen. Angenommen, öffnen Sie Visual Studio und erstellen Sie eine **Visual C++** \> **Windows Desktop** \> **Windows-Desktop-Anwendung** Projekt.
 
-Optional können Sie installieren die [C++ / WinRT Visual Studio-Erweiterung (VSIX)](https://aka.ms/cppwinrt/vsix). Weitere Informationen finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+Optional können Sie installieren die [ C++WinRT Visual Studio-Erweiterung (VSIX)](https://aka.ms/cppwinrt/vsix) und das NuGet-Paket. Weitere Informationen finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ### <a name="set-project-properties"></a>Set-Projekteigenschaften
 
@@ -132,9 +132,9 @@ Da C++ / WinRT verwendet Funktionen der C ++ 17 standard, legen Projekteigenscha
 
 ### <a name="the-precompiled-header"></a>Der vorkompilierte header
 
-Benennen Sie Ihre `stdafx.h` und `stdafx.cpp` zu `pch.h` und `pch.cpp`bzw. Festlegen von Projekteigenschaften **C/C++-** > **vorkompilierte Header** > **vorkompilierte Headerdatei** zu *"PCH.h"*.
+Die standardmäßige Projektvorlage erstellt einen vorkompilierten Header für Sie, die entweder den Namen `framework.h`, oder `stdafx.h`. Umbenennen, um `pch.h`. Wenn Sie haben eine `stdafx.cpp` -Datei, und benennen Sie um, um `pch.cpp`. Festlegen von Projekteigenschaften **C/C++-** > **vorkompilierte Header** > **vorkompilierte Headerdatei** zu *"PCH.h"*.
 
-Suchen und Ersetzen Sie alle `#include "stdafx.h"` mit `#include "pch.h"`.
+Suchen und Ersetzen Sie alle `#include "framework.h"` (oder `#include "stdafx.h"`) mit `#include "pch.h"`.
 
 In `pch.h`, umfassen `winrt/base.h`.
 
@@ -156,12 +156,12 @@ Sie können auch Link-projekteinstellungen verwenden, um eine explizite Verknüp
 #pragma comment(lib, "windowsapp")
 ```
 
-Sie können jetzt kompilieren und verknüpfen und Hinzufügen von C++ / WinRT-Code zu Ihrem Projekt (z. B. der Code in die [ein c++ / WinRT-Schnellstart-](#a-cwinrt-quick-start) Abschnitt oben)
+Sie können jetzt kompilieren und verknüpfen und hinzufügen C++"/ WinRT" Code zu Ihrem Projekt (z. B. Code ähnlich wie in der [ein C++"/ WinRT" Schnellstart-](#a-cwinrt-quick-start) Abschnitt oben).
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [SyndicationClient::RetrieveFeedAsync-Methode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed.Items-Eigenschaft](/uwp/api/windows.web.syndication.syndicationfeed.items)
-* [WinRT::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
 * [WinRT::HRESULT-Error-Struktur](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>Verwandte Themen
@@ -169,5 +169,5 @@ Sie können jetzt kompilieren und verknüpfen und Hinzufügen von C++ / WinRT-Co
 * [Fehlerbehandlung bei C++/WinRT](error-handling.md)
 * [Interoperabilität zwischen C++/WinRT und C++/CX](interop-winrt-cx.md)
 * [Interoperabilität zwischen C++/WinRT und der ABI](interop-winrt-abi.md)
-* [Umstellen von C++/CX auf C++/WinRT](move-to-winrt-from-cx.md)
-* [Zeichenfolgenbehandlung in C++ / WinRT](strings.md)
+* [C++/CX zu C++/WinRT wechseln](move-to-winrt-from-cx.md)
+* [String-Verarbeitung in C++/WinRT](strings.md)

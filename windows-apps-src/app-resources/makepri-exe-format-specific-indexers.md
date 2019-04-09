@@ -6,19 +6,19 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e07c0b2730da258126465fbeea917b32ef9d23e6
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645875"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320603"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Formatspezifische Indexer für MakePri.exe
 
 In diesem Thema werden die formatspezifischen Indexer beschrieben, die das Tool [MakePri.exe](compile-resources-manually-with-makepri.md) verwendet, um seinen Ressourcenindex zu generieren.
 
 > [!NOTE]
-> MakePri.exe installiert ist, wenn Sie aktivieren die **Windows SDK für verwaltete UWP-Apps** Option während der Installation von Windows Software Development Kit. Es wird auf den Pfad installiert `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (sowie in Ordnern, die mit dem Namen für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe installiert ist, wenn Sie aktivieren die **Windows SDK für verwaltete UWP-Apps** Option während der Installation von Windows Software Development Kit. Es wird auf den Pfad installiert `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (sowie in Ordnern, die mit dem Namen für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`Hyper-V-Hosts oder Hyper-V-Hostcluster in einem separaten Namespace als verwaltete Hyper-V-Hosts hinzuzufügen.
 
 MakePri.exe wird in der Regel mit den Befehlen `new`, `versioned` oder `resourcepack` verwendet. Siehe [Befehlszeilenoptionen für MakePri.exe](makepri-exe-command-options.md). In diesen Fällen indiziert das Tool Quelldateien und generiert einen Ressourcenindex. MakePri.exe verwendet eine Reihe individueller Indexer, um die verschiedenen Quellressourcendateien oder Ressourcencontainer zu lesen. Der einfachste Indexer ist der Ordnerindexer. Er indiziert den Inhalt eines Ordners, beispielsweise `.jpg`- oder `.png`-Bilder.
 
@@ -284,12 +284,14 @@ Der ResFiles-Indexer wird mit dem `type`-Attribut RESFILES angegeben. Er indizie
 
 Die `.resfiles`-Datei ist eine Textdatei mit einer flachen Liste von Dateipfaden. Eine `.resfiles`-Datei kann Kommentare mit Schrägstrichen ("//") enthalten. Hier sehen Sie ein Beispiel.
 
-```
+<blockquote>
+<pre>
 Strings\component1\fr\elements.resjson
 Images\logo.scale-100.png
 Images\logo.scale-140.png
 Images\logo.scale-180.png
-```
+</pre>
+</blockquote>
 
 ## <a name="resjson"></a>ResJSON
 

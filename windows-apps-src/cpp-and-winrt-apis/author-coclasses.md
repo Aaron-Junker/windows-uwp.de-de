@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, Uwp, Standard, c++, Cpp, Winrt, Projektion, Autor, COM, Component
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 27c55e94a4e11bbbf550c21fd61ee384c8b21f9c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616565"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244356"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Erstellen von COM-Komponenten mit C++ / WinRT
 
-[C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) können Sie zum Erstellen von klassischen Component Object Model (COM)-Komponenten (oder Co-Klassen), so wie es für Windows-Runtime-Klassen erstellen kann. Hier ist eine einfache Darstellung, die Sie testen können, wenn Sie den Code Einfügen der `pch.h` und `main.cpp` eines neuen **Windows-Konsolenanwendung (C++ / WinRT)** Projekt.
+[C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) können Sie zum Erstellen von klassischen Component Object Model (COM)-Komponenten (oder Co-Klassen), so wie es für Windows-Runtime-Klassen erstellen kann. Hier ist eine einfache Darstellung, die Sie testen können, wenn Sie den Code Einfügen der `pch.h` und `main.cpp` eines neuen **Visual C++**   >  **Windows Desktop**  >  **Windows-Konsolenanwendung (C++"/ WinRT")** Projekt.
 
 ```cppwinrt
 // pch.h
@@ -76,7 +76,7 @@ Weitere Hintergrundinformationen zu den Funktionsbereich des Toast-Benachrichtig
 
 Erstellen Sie zunächst ein neues Projekt in Microsoft Visual Studio. Erstellen Sie eine **Visual C++** > **Windows Desktop** > **Windows-Konsolenanwendung (C++ / WinRT)** Projekt, und nennen Sie sie  *ToastAndCallback*.
 
-Open `pch.h`, und fügen `#include <unknwn.h>` vor der enthält für C++ / WinRT-Header.
+Open `pch.h`, und fügen `#include <unknwn.h>` vor der enthält für C++ / WinRT-Header. Hier ist das Ergebnis ein; Sie können den Inhalt der Ersetzen Ihrer `pch.h` zusammen mit dieser Auflistung.
 
 ```cppwinrt
 // pch.h
@@ -85,9 +85,16 @@ Open `pch.h`, und fügen `#include <unknwn.h>` vor der enthält für C++ / WinRT
 #include <winrt/Windows.Foundation.h>
 ```
 
-Open `main.cpp`, und entfernen Sie die mithilfe von-Anweisungen, die von die Projektvorlage generiert. Fügen Sie den folgenden Code (der bietet uns die Bibliotheken, Headern und Typnamen, die wir benötigen), an ihre Stelle.
+Open `main.cpp`, und entfernen Sie die mithilfe von-Anweisungen, die von die Projektvorlage generiert. Fügen Sie den folgenden Code (die bietet uns die Bibliotheken, Headern und Typnamen, die wir benötigen), an ihre Stelle. Hier ist das Ergebnis ein; Sie können den Inhalt der Ersetzen Ihrer `main.cpp` zusammen mit dieser Auflistung (Wir haben auch den Code aus entfernt `main` in der folgenden Liste, da diese Funktion später ersetzt werden müssen).
 
 ```cppwinrt
+// main.cpp : Defines the entry point for the console application.
+//
+
+#include "pch.h"
+
+#pragma comment(lib, "advapi32")
+#pragma comment(lib, "ole32")
 #pragma comment(lib, "shell32")
 
 #include <iomanip>
@@ -102,7 +109,11 @@ Open `main.cpp`, und entfernen Sie die mithilfe von-Anweisungen, die von die Pro
 using namespace winrt;
 using namespace Windows::Data::Xml::Dom;
 using namespace Windows::UI::Notifications;
+
+int main() { }
 ```
+
+Das Projekt wird nicht noch erstellen; Nachdem wir haben Code hinzufügen, werden Sie aufgefordert werden, zum Erstellen und ausführen.
 
 ## <a name="implement-the-coclass-and-class-factory"></a>Implementieren Sie die Co-Klasse und Klasse-factory
 
@@ -176,7 +187,7 @@ Allerdings darf nicht Sie Ausnahmen für Ihre Implementierungen von COM-Methode 
 
 ## <a name="add-helper-types-and-functions"></a>Hinzufügen von Hilfstypen und -Funktionen
 
-In diesem Schritt fügen wir, dass einige Hilfstypen und -Funktionen, mit der der Rest des Codes, verwenden. In diesem Fall vor dem `main`, fügen Sie Folgendes hinzu.
+In diesem Schritt fügen wir, dass einige Hilfstypen und -Funktionen, mit der der Rest des Codes, verwenden. In diesem Fall unmittelbar vor dem `main`, fügen Sie Folgendes hinzu.
 
 ```cppwinrt
 struct prop_variant : PROPVARIANT
@@ -248,7 +259,7 @@ std::wstring get_shortcut_path()
 
 ## <a name="implement-the-remaining-functions-and-the-wmain-entry-point-function"></a>Implementieren Sie die übrigen Funktionen und die Einstiegspunktfunktion von "wmain"
 
-Die Projektvorlage generiert eine `main` -Funktion für Sie. Löschen, die `main` funktionieren und an seiner Stelle einfügen dieser Code auflisten, die Code zum Registrieren Ihrer Co-Klasse enthält, und klicken Sie dann eine toastfähig der Rückrufe für Ihre Anwendung bereitstellen.
+Löschen Sie Ihre `main` funktionieren und an seiner Stelle einfügen dieser Code auflisten, die Code zum Registrieren Ihrer Co-Klasse enthält, und klicken Sie dann eine toastfähig der Rückrufe für Ihre Anwendung bereitstellen.
 
 ```cppwinrt
 void register_callback()
@@ -345,6 +356,7 @@ void create_toast()
     ToastNotification toast{ xml };
     ToastNotifier notifier{ ToastNotificationManager::CreateToastNotifier(this_app_name) };
     notifier.Show(toast);
+    ::Sleep(50); // Give the callback chance to display.
 }
 
 void LaunchedNormally(HANDLE, INPUT_RECORD &, DWORD &);
@@ -376,7 +388,7 @@ void LaunchedNormally(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD & event
     try
     {
         bool runningAsAdmin{ ::IsUserAnAdmin() == TRUE };
-        std::wcout << this_app_name << L" is running" << (runningAsAdmin ? L" (Administrator)." : L".") << std::endl;
+        std::wcout << this_app_name << L" is running" << (runningAsAdmin ? L" (administrator)." : L" (NOT as administrator).") << std::endl;
 
         if (runningAsAdmin)
         {
@@ -408,7 +420,9 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="how-to-test-the-example-application"></a>Vorgehensweise: Testen die beispielanwendung
 
-Erstellen Sie die Anwendung, und klicken Sie dann als Administrator, um die Registrierung und anderen Setup, Ausführen von Code, dazu führen, dass mindestens einmal ausgeführt. Unabhängig davon, ob Sie sie als Administrator ausführen, und drücken Sie dann ' t ', die dazu führen, dass ein Popup angezeigt werden. Klicken Sie anschließend auf die **einen Rückruf an ToastAndCallback** Schaltfläche direkt aus den Toast-Benachrichtigung, die angezeigt oder von Info-Center und die Anwendung gestartet wird, die Co-Klasse instanziiert, und die  **INotificationActivationCallback::Activate** ausgeführte Methode.
+Erstellen Sie die Anwendung, und klicken Sie dann als Administrator, um die Registrierung und anderen Setup, Ausführen von Code, dazu führen, dass mindestens einmal ausgeführt. Eine Möglichkeit dafür ist, führen Visual Studio als Administrator, und führen Sie die app aus Visual Studio. Mit der rechten Maustaste Visual Studio in der Taskleiste, damit die Sprungliste angezeigt, mit der rechten Maustaste Visual Studio in der Liste springen, und klicken Sie dann auf **als Administrator ausführen**. Akzeptieren Sie die Eingabeaufforderung, und öffnen Sie das Projekt. Wenn Sie die Anwendung ausführen, wird eine Meldung angezeigt, der angibt, ob die Anwendung als Administrator ausgeführt wird. Falls nicht, nicht die Registrierung und die andere Installation ausgeführt. Dieser Registrierung und anderen Setup muss mindestens einmal in der Reihenfolge für die Anwendung ordnungsgemäß ausgeführt.
+
+Unabhängig davon, ob Sie die Anwendung als Administrator ausführen, drücken Sie ' t ', die dazu führen, dass ein Popup angezeigt werden. Klicken Sie anschließend auf die **einen Rückruf an ToastAndCallback** Schaltfläche direkt aus den Toast-Benachrichtigung, die angezeigt oder von Info-Center und die Anwendung gestartet wird, die Co-Klasse instanziiert, und die  **INotificationActivationCallback::Activate** ausgeführte Methode.
 
 ## <a name="in-process-com-server"></a>In-Process-COM-server
 
@@ -526,10 +540,10 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [IInspectable-Schnittstelle](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [IUnknown-Schnittstelle](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [Vorlage für WinRT::Implements-Struktur](/uwp/cpp-ref-for-winrt/implements)
+* [IUnknown Schnittstelle](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [winrt::implements Strukturvorlage](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [Verwenden von COM-Komponenten mit C++/WinRT](consume-com.md)
+* [Verwenden von COM-Komponenten mit C++ / WinRT](consume-com.md)
 * [Senden einer lokalen Popupbenachrichtigung](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

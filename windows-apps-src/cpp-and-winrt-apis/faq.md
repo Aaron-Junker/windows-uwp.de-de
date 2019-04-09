@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, häufig, gestellte, fragen, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd051ffe3af9e18370666f5c6c772b7f188e54a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 70aedf4034ce433b0aa529375799cf45a18ca3e0
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635575"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291888"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Häufig gestellte Fragen zu C++/WinRT
 Antworten auf Fragen, die Sie wahrscheinlich zur Erstellung und Nutzung von Windows-Runtime-APIs mit können [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -22,7 +22,7 @@ Antworten auf Fragen, die Sie wahrscheinlich zur Erstellung und Nutzung von Wind
 Finden Sie unter [wie neu ausrichten, Ihrem C + c++ / WinRT-Projekt auf eine neuere Version des Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Warum kompiliert nicht Mein neue Projekt? Ich verwende Visual Studio 2017 (Version 15.8.0 oder höher), und von SDK Version 17134
-Bei Verwendung von Visual Studio 2017 (Version 15.8.0 oder höher), und auf dem Windows SDK, Version 10.0.17134.0 (Windows 10, Version 1803), klicken Sie dann eine neu erstellte C + c++ / WinRT-Projekt kann nicht mit dem Fehler kompiliert "*Fehler C3861 aus:"From_abi": Bezeichner wurde nicht gefunden*", und klicken Sie mit anderen Fehlern, die aus *base.h*. Die Lösung besteht darin, entweder Ziel einer höheren (genauer) Version des Windows SDK oder Set-Projekteigenschaft **C/C++-** > **Sprache** > **Konformitätsmodus: Nicht** (auch wenn **/ PERMISSIVE--** wird in den Projekteigenschaften **C/C++-** > **Befehlszeile** unter **zusätzliche Optionen** , löschen Sie sie).
+Bei Verwendung von Visual Studio 2017 (Version 15.8.0 oder höher), und auf dem Windows SDK, Version 10.0.17134.0 (Windows 10, Version 1803), klicken Sie dann einen neu erstellten C++/WinRT-Projekt kann nicht mit dem Fehler kompiliert "*Fehler C3861 aus:"From_abi": Bezeichner wurde nicht gefunden*", und klicken Sie mit anderen Fehlern, die aus *base.h*. Die Lösung besteht darin, entweder Ziel einer höheren (genauer) Version des Windows SDK oder Set-Projekteigenschaft **C/C++-** > **Sprache** > **Konformitätsmodus: Nicht** (auch wenn **/ PERMISSIVE--** wird in den Projekteigenschaften **C/C++-** > **Befehlszeile** unter **zusätzliche Optionen** , löschen Sie sie).
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>Wie löse ich den Buildfehler "C++ / WinRT VSIX nicht mehr Build-projektunterstützung bereitstellt.  Sie fügen einen Projektverweis auf die Microsoft.Windows.CppWinRT Nuget-Paket"?
 Installieren Sie die **Microsoft.Windows.CppWinRT** NuGet-Paket in Ihr Projekt. Weitere Informationen finden Sie unter [frühere Versionen der Erweiterung VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
@@ -63,7 +63,7 @@ Die Toolkette LLVM und Clang wird für C++/WinRT nicht unterstützt, aber wir ve
 
 Wechseln Sie zur [LLVM-Download-Seite](https://releases.llvm.org/download.html), suchen Sie nach **Download LLVM 6.0.0** > **Pre-Built Binaries**, und laden Sie **Clang for Windows (64-bit)** herunter. Geben Sie während der Installation an, dass LLVM zur Systemvariablen PATH hinzugefügt werden soll, sodass Sie in der Lage sind, sie von einer Befehlszeile aufzurufen. Für die Zwecke dieses Experiments können Sie die Meldungen, dass das Verzeichnis für die MSBuild-Toolsets nicht gefunden werden konnte und/oder dass die MSVC-Integrationsinstallation fehlgeschlagen ist, ignorieren (sollten diese angezeigt werden). Es gibt verschiedene Möglichkeiten zum Aufrufen von LLVM/Clang. Das folgende Beispiel zeigt nur eine davon.
 
-```
+```cmd
 C:\ExperimentWithLLVMClang>type main.cpp
 // main.cpp
 #pragma comment(lib, "windowsapp")
@@ -121,7 +121,7 @@ int main()
 
 Für den Aufruf von **ToString** oben die **Gehe zu Deklaration** Befehl in Visual Studio zeigt, dass die Projektion der Windows-Runtime **IStringable::ToString** in C++ / WinRT sieht wie folgt aus.
 
-```
+```cppwinrt
 winrt::hstring ToString() const;
 ```
 

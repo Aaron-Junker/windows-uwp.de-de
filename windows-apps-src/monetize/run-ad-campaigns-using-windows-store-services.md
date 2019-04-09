@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Werbungs-API, Anzeigenkampagnen
 ms.localizationpriority: medium
-ms.openlocfilehash: 58325074a2f59dcd146a9534054b302b3ce9956b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e9b88c2aa4c16564d8b2708f54ed25e5d284b4c0
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619145"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334868"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Durchführen von Anzeigenkampagnen mit Store-Diensten
 
@@ -102,7 +102,7 @@ Das folgende Diagramm zeigt die Beziehung zwischen Kampagnen, Lieferpositionen, 
 
 Im folgenden Codebeispiel wird gezeigt, wie Sie ein Azure AD-Zugriffstoken abrufen und die Microsoft Store-Werbungs-API aus einer C#-Konsolen-App aufrufen. Wenn Sie dieses Codebeispiel verwenden möchten, weisen Sie die Variablen *TenantId*, *ClientId*, *ClientSecret* und *AppID* den entsprechenden Werten für Ihr Szenario zu. In diesem Beispiel wird das [Json.NET-Paket](https://www.newtonsoft.com/json) von Newtonsoft benötigt, um die von der Microsoft Store-Werbungs-API zurückgegebenen JSON-Daten zu deserialisieren.
 
-[!code-cs[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
+[!code-csharp[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

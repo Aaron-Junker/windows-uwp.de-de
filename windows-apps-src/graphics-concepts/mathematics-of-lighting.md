@@ -7,22 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a65a3532fe401f31fbf0da656aff1a141fa71a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d21f60694c55edacc7a5723e7ed470c37af992ab
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636305"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618427"
 ---
 # <a name="mathematics-of-lighting"></a>Beleuchtungsmathematik
-
 
 Das Direct3D-Beleuchtungsmodell deckt Umgebungs-, diffuse, spiegelnde und ausstrahlende Beleuchtung ab. Dies bietet eine ausreichende Flexibilität zum Lösen einer breiten Palette an Beleuchtungssituationen. Die Gesamtmenge an Licht in einer Szene wird als *globale Beleuchtung* bezeichnet.
 
 Die globale Beleuchtung wird wie folgt berechnet:
 
-```
-Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive Light 
+```cpp
+global_illumination = ambient_lighting + diffuse_lighting + specular_lighting + emissive_lighting;
 ```
 
 [Umgebungsbeleuchtung](ambient-lighting.md) ist konstante Beleuchtung. Umgebungsbeleuchtung ist in alle Richtungen konstant und färbt alle Pixel eines Objekts identisch. Sie lässt sich schnell berechnen, bewirkt jedoch, dass Objekte flach und unrealistisch aussehen.

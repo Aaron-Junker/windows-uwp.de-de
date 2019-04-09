@@ -6,19 +6,19 @@ ms.date: 10/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f4feff88507ae5f84bccf044aa9ab6711d6b8bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6674fc38d41e3a18709dcb81edc95d164f9f86c
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645765"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320593"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>Manuelles Kompilieren von Ressourcen mit MakePri.exe
 
 MakePri.exe ist ein Befehlszeilentool, mit dem Sie PRI-Dateien erstellen und dumpen können Es ist über MSBuild in Microsoft Visual Studio integriert, kann aber auch für Entwickler von Nutzen sein, die Pakete manuell oder mithilfe benutzerdefinierter Buildsysteme erstellen.
 
 > [!NOTE]
-> MakePri.exe installiert ist, wenn Sie aktivieren die **Windows SDK für verwaltete UWP-Apps** Option während der Installation von Windows Software Development Kit. Es wird auf den Pfad installiert `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (sowie in Ordnern, die mit dem Namen für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe installiert ist, wenn Sie aktivieren die **Windows SDK für verwaltete UWP-Apps** Option während der Installation von Windows Software Development Kit. Es wird auf den Pfad installiert `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (sowie in Ordnern, die mit dem Namen für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`Hyper-V-Hosts oder Hyper-V-Hostcluster in einem separaten Namespace als verwaltete Hyper-V-Hosts hinzuzufügen.
 
 Die maximale Größe für eine PRI-Datei beträgt 64 KB.
 
@@ -43,17 +43,13 @@ MakePri.exe wird in der Regel mit den Optionen `new`, `versioned`, und `resource
 
 ## <a name="makepriexe-warnings-and-error-messages"></a>Warnungen und Fehlermeldungen von MakePri.exe
 
-```
-Resources found for language(s) '<language(s)>' but no resources found for default language(s): '<language(s)>'. Change the default language or qualify resources with the default language.
-```
+### <a name="resources-found-for-languages-languages-but-no-resources-found-for-default-languages-languages-change-the-default-language-or-qualify-resources-with-the-default-language"></a>Ressourcen für Sprache(n) '< Sprache(n) >' gefunden, aber keine Ressourcen gefunden. für Standard-Sprachen: "< Sprache(n) >". Ändern der Standardsprache oder qualifizieren Sie Ressourcen mit der standardmäßigen Sprache.
 
-Die obige Warnung wird angezeigt, wenn MakePri.exe oder MSBuild Dateien oder Zeichenfolgenressourcen für eine bestimmte benannte Ressource erkennt, die scheinbar mit Sprachqualifizierern gekennzeichnet sind, für eine Standardsprache jedoch kein Kandidat gefunden wird. Die Verwendung von Qualifizierern in Datei- und Ordnernamen wird beschrieben in [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung und anderen](tailor-resources-lang-scale-contrast.md). Dateien und Ordner können Namen von Sprachen enthalten, obwohl keine Ressourcen erkannt werden, die genau für die Standardsprache qualifiziert sind. Die Warnung wird beispielsweise angezeigt, wenn für ein Projekt „en-US” als Standardsprache verwendet wird und eine Datei mit dem Namen „de/logo.png” vorhanden ist, aber keine Dateien vorliegen, die mit der Standardsprache „en-US” markiert sind. Um die Warnung zu entfernen, müssen entweder eine oder mehrere Dateien oder eine oder mehrere Zeichenfolgenressourcen mit der Standardsprache qualifiziert werden, oder die Standardsprache muss geändert werden. Zum Ändern der Standardsprache öffnen Sie Ihre Projektmappe in Visual Studio und dann `Package.appxmanifest`. Vergewissern Sie sich auf der Registerkarte „Anwendung”, dass die Standardsprache passend festgelegt ist (z. B. auf „En” oder „en-US”).
+Diese Warnung wird angezeigt, wenn MakePri.exe oder MSBuild ermittelt, Dateien oder Zeichenfolgenressourcen für eine angegebene benannte Ressource, die angezeigt werden, mit dem Language-Qualifizierer gekennzeichnet werden, aber kein Kandidat für eine Standardsprache gefunden wird. Die Verwendung von Qualifizierern in Datei- und Ordnernamen wird beschrieben in [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung und anderen](tailor-resources-lang-scale-contrast.md). Dateien und Ordner können Namen von Sprachen enthalten, obwohl keine Ressourcen erkannt werden, die genau für die Standardsprache qualifiziert sind. Die Warnung wird beispielsweise angezeigt, wenn für ein Projekt „en-US” als Standardsprache verwendet wird und eine Datei mit dem Namen „de/logo.png” vorhanden ist, aber keine Dateien vorliegen, die mit der Standardsprache „en-US” markiert sind. Um die Warnung zu entfernen, müssen entweder eine oder mehrere Dateien oder eine oder mehrere Zeichenfolgenressourcen mit der Standardsprache qualifiziert werden, oder die Standardsprache muss geändert werden. Zum Ändern der Standardsprache öffnen Sie Ihre Projektmappe in Visual Studio und dann `Package.appxmanifest`. Vergewissern Sie sich auf der Registerkarte „Anwendung”, dass die Standardsprache passend festgelegt ist (z. B. auf „En” oder „en-US”).
 
-```
-No default or neutral resource given for '<resource identifier>'. The application may throw an exception for certain user configurations when retrieving the resources.
-```
+### <a name="no-default-or-neutral-resource-given-for-resource-identifier-the-application-may-throw-an-exception-for-certain-user-configurations-when-retrieving-the-resources"></a>Kein Standardwert oder eine neutrale Ressourcen, die für die '<resource identifier>". Die Anwendung kann eine Ausnahme für bestimmte Benutzerkonfigurationen auslösen, wenn die Ressourcen werden abgerufen.
 
-Die obige Warnung wird angezeigt, wenn MakePri.exe oder MSBuild Dateien oder Ressourcen erkennt, die offenbar mit Sprachkennzeichnern markiert sind, deren Ressourcenzuordnungen unklar sind. Das heißt, dass Qualifizierer vorhanden sind, es aber nicht sicher ist, dass zur Laufzeit eine bestimmte infrage kommende Ressource für den betreffenden Ressourcenbezeichner zurückgegeben werden kann. Die Warnung wird angezeigt, wenn keine infrage kommende Ressource für die betreffende Sprache oder Wohnorteinstellung oder einen anderen Qualifizierer gefunden wird, bei dem es sich um einen Standard handelt oder der in jedem Fall mit dem Benutzerkontext übereinstimmt. Zur Laufzeit wird für bestimmte Benutzerkonfigurationen, z. B. die Sprachpräferenzen oder den Wohnort eines Benutzers (**Einstellungen** > **Zeit und Sprache** > **Region und Sprache**), von den zum Abrufen der Ressourcen verwendeten APIs möglicherweise eine unerwartete Ausnahme ausgelöst. Um die Warnung zu entfernen, müssen Standardressourcen bereitgestellt werden, beispielsweise eine Ressource mit der Standardsprache des Projekts oder dem globalen Wohnort (homeregion-001).
+Diese Warnung wird angezeigt, wenn MakePri.exe oder MSBuild ermittelt, Dateien oder Ressourcen, die angezeigt werden, mit der Sprache-Qualifizierer gekennzeichnet werden für die die Ressourcen nicht klar sind. Das heißt, dass Qualifizierer vorhanden sind, es aber nicht sicher ist, dass zur Laufzeit eine bestimmte infrage kommende Ressource für den betreffenden Ressourcenbezeichner zurückgegeben werden kann. Die Warnung wird angezeigt, wenn keine infrage kommende Ressource für die betreffende Sprache oder Wohnorteinstellung oder einen anderen Qualifizierer gefunden wird, bei dem es sich um einen Standard handelt oder der in jedem Fall mit dem Benutzerkontext übereinstimmt. Zur Laufzeit wird für bestimmte Benutzerkonfigurationen, z. B. die Sprachpräferenzen oder den Wohnort eines Benutzers (**Einstellungen** > **Zeit und Sprache** > **Region und Sprache**), von den zum Abrufen der Ressourcen verwendeten APIs möglicherweise eine unerwartete Ausnahme ausgelöst. Um die Warnung zu entfernen, müssen Standardressourcen bereitgestellt werden, beispielsweise eine Ressource mit der Standardsprache des Projekts oder dem globalen Wohnort (homeregion-001).
 
 ## <a name="using-makepriexe-in-a-build-system"></a>Verwenden von MakePri.exe in einem Buildsystem
 

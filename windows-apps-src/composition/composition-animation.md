@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 18208986d7d07e4d437e52dce844deecc03cf1f6
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616705"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240028"
 ---
 # <a name="composition-animations"></a>Kompositionsanimationen
 
@@ -37,7 +37,7 @@ Hier werden bei einem Bildlauf oder Schwenken der UI verschiedene Objekte mithil
 
 ## <a name="using-compositionanimations-to-create-motion"></a>Erstellen während der Übertragung mithilfe von CompositionAnimations
 
-Um während der Übertragung in die Benutzeroberfläche zu generieren, können Entwickler Animationen in XAML (Link zu Storyboards hier) oder der visuellen Ebene zugreifen. Animationen in der visuellen Ebene bieten Entwicklern eine Reihe von Vorteilen:
+Um während der Übertragung in die Benutzeroberfläche zu generieren, können Entwickler Animationen in XAML oder in der visuellen Ebene zugreifen. Animationen in der visuellen Ebene bieten Entwicklern eine Reihe von Vorteilen:
 
 - Leistung – anstelle der herkömmlichen UI-Thread-Bound-Animation, Animationen auf der Benutzeroberfläche der Windows-Plattform, die auf einem unabhängigen Thread mit 60 FPS, die von einem nahtlosen Übergangs Benutzererlebnis ausgeführt werden.
 - Vorlagenmodell – Animationen in der Windows-UI-Ebene sind Vorlagen, Bedeutung verwenden Sie eine einzelne Animation auf mehrere Objekte und Eigenschaften ändern kann oder Parameter unabhängig von der vorherigen sitzt verwendet.

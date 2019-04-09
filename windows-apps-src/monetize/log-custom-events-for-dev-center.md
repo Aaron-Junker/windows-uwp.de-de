@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Services-SDK, Ereignisse protokollieren
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 368e2fb7b3c6d78f68235b829e088d79b5673cf2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604235"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334758"
 ---
 # <a name="log-custom-events-for-partner-center"></a>Protokollieren benutzerdefinierter Ereignisse im Partner Center
 
@@ -22,7 +22,7 @@ Um ein benutzerdefiniertes Ereignis aus Ihrer App zu protokollieren, übergeben 
 > [!NOTE]
 > Benutzerdefinierte Ereignisse, die Sie zum Partner Center protokollieren sind unabhängig vom stagingstatus [Windows-Ereignisse](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), und sie erscheinen nicht im **Ereignisanzeige**.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Bevor Sie, die benutzerdefinierte Protokollierung von Ereignissen in überprüfen können der **Nutzungsbericht** für Ihre app im Partner Center, muss Ihre app in den Store veröffentlicht werden.
 
@@ -39,10 +39,10 @@ Bevor Sie, die benutzerdefinierte Protokollierung von Ereignissen in überprüfe
 5. Klicken Sie in der Liste der SDKs auf das Kontrollkästchen neben **Microsoft Engagement Framework** und anschließend auf **OK**.
 
 6. Fügen Sie die folgende Anweisung am Anfang jeder Codedatei hinzu, in der Sie benutzerdefinierte Ereignisse protokollieren möchten.
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
 
 7. Rufen Sie in jedem Abschnitt des Codes, in dem Sie ein benutzerdefiniertes Ereignis protokollieren möchten, ein [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)-Objekt ab, und rufen Sie dann die [Protokoll](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)-Methode auf. Übergeben Sie die Zeichenfolge für das benutzerdefinierte Ereignis an die Methode.
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
     > Möglicherweise dauert das Laden des [Nutzungsberichts](https://msdn.microsoft.com/windows/uwp/publish/usage-report) lange, wenn Ihre App viele benutzerdefinierte Ereignisse mit langen Namen protokolliert. Es wird empfohlen, dass kurze Namen für Ihre benutzerdefinierten Ereignisse zu verwenden. 

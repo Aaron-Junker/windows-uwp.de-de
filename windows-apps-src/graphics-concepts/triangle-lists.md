@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aae797db890c6bee141c3b4a79a6a85a55a6b512
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 53fd2b132fda018030b7555a9cdac718ec1f1cc4
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653745"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291558"
 ---
 # <a name="triangle-lists"></a>Dreieckslisten
-
 
 Eine Dreiecksliste ist eine Liste isolierter Dreiecke. Die isolierten Dreiecke können sich nahe beieinander befinden oder nicht. Eine Dreiecksliste muss mindestens drei Scheitelpunkte enthalten, und die Gesamtzahl der Scheitelpunkte muss durch drei teilbar sein.
 
@@ -32,7 +31,7 @@ Die folgende Abbildung zeigt eine gerenderte Dreiecksliste.
 
 Der folgende Code zeigt, wie Scheitelpunkte für diese Dreiecksliste erstellt werden.
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -52,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 Im folgenden Codebeispiel wird veranschaulicht, wie Sie diese Dreiecksliste in Direct3D rendern.
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.

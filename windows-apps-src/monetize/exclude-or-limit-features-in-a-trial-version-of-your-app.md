@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, Testversion, In-App-Kauf, IAP, Windows.ApplicationMo
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d7ada6567db95609203f8f163b78631e141b4f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 38590282a95e29ab240486e9c4a3f9cb9afe229c
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655565"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335098"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Ausschließen oder Einschränken von Features in einer Testversion
 
@@ -20,7 +20,7 @@ Durch einen kostenlose, zeitlich begrenzte Testversion Ihrer App mit eingeschrä
 > [!IMPORTANT]
 > Dieser Artikel beschreibt, wie Sie Mitglieder des [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace verwenden, um Testfunktionen zu implementieren. Dieser Namespace wird nicht mehr mit neuen Funktionen aktualisiert, daher wird empfohlen, dass Sie stattdessen den [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) Namespace verwenden. Die **Windows.Services.Store** Namespace unterstützt die neuesten-Add-On-Typen, z. B. nutzbar-Add-Ons Store verwaltete und Abonnements, und mit zukünftige Arten von Produkten und Funktionen, die vom Partner unterstützten kompatibel sein soll Mittelpunkt und dem Store. Der **Windows.Services.Store**-Namespace wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Weitere Informationen zum Implementieren von Testfunktionen mithilfe des **Windows.Services.Store**-Namespace finden Sie in [diesem Artikel](implement-a-trial-version-of-your-app.md).
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Eine Windows-App zum Hinzufügen von Features zum Kauf für Kunden.
 
@@ -66,12 +66,12 @@ Rufen Sie beim Initialisieren der App das [LicenseInformation](https://msdn.micr
 Zu diesem Zeitpunkt erhalten Sie simulierte Lizenzinformationen mithilfe von [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) anstelle von [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Bevor Sie die endgültige Version Ihrer App an den **Store** übermitteln, müssen Sie alle **CurrentAppSimulator**-Verweise in Ihrem Code durch **CurrentApp** ersetzen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
 
 Fügen Sie als Nächstes einen Ereignishandler hinzu, um Benachrichtigungen zu Lizenzänderungen während der Ausführung der App zu erhalten. Die App-Lizenz kann sich zum Beispiel ändern, wenn der Testzeitraum abläuft oder der Kunde die App in einem Store kauft.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
 
 ## <a name="step-3-code-the-features-in-conditional-blocks"></a>Schritt 3: Das Feature in bedingte Blöcke
 
@@ -80,7 +80,7 @@ Beim Auslösen des Lizenzänderungsereignisses muss die App über einen Aufruf d
 Dieses Beispiel zeigt, wie der Lizenzstatus einer App ermittelt wird, um ein Feature Ihrer App zu aktivieren oder zu deaktivieren.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
 
 ## <a name="step-4-get-an-apps-trial-expiration-date"></a>Schritt 4: Der app-Ablauf des Testzeitraums Datum abrufen
 
@@ -89,7 +89,7 @@ Fügen Sie Code ein, um das Ablaufdatum der Testversion einer App abzurufen.
 Der Code in diesem Beispiel legt eine Funktion fest, mit der das Ablaufdatum der Testversion einer App abgerufen wird. Ist die Lizenz noch gültig, wird das Ablaufdatum zusammen mit den verbleibenden Tagen bis zum Ablauf des Testzeitraums angezeigt.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
 
 ## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>Schritt 5: Testen der Funktionen, die mit der simulierte Aufrufe der API-Lizenz
 
@@ -105,7 +105,7 @@ Nachdem Sie die App mit dem simulierten Lizenzserver getestet haben, und bevor S
 > Ihre App muss das **CurrentApp**-Objekt verwenden, wenn Sie sie an einen Store übermitteln, da ansonsten ein Zertifizierungsfehler auftritt.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
 
 ## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>Schritt 7: Beschreiben der Funktionsweise der kostenlosen Testversion für Ihre Kunden
 

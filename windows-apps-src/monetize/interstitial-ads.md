@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Anzeigensteuerelement, Interstitial
 ms.localizationpriority: medium
-ms.openlocfilehash: 9abf761aa141ef3d0c19d6d5401b6815542d4172
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6283c4d69a511e4dd4aa342b547c18624952be29
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603915"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335118"
 ---
 # <a name="interstitial-ads"></a>Interstitialwerbung
 
@@ -34,7 +34,7 @@ Wir bieten zwei Arten von Interstitialwerbung in Ihren Apps und Spielen an: **Vi
 > [!NOTE]
 > Die API für Interstitialwerbung behandelt die Benutzeroberfläche nicht, mit Ausnahme des Zeitpunkts der Videowiedergabe. Informieren Sie sich in den [bewährten Methoden für Interstitialwerbung](ui-and-user-experience-guidelines.md#interstitialbestpractices10) über Richtlinien für das, was Sie tun und was Sie vermeiden sollten, wenn Sie sich überlegen, wie Sie Interstitialwerbung in Ihre App integrieren können.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 * Installieren Sie das [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) mit Visual Studio 2015 oder einer neueren Version von Visual Studio. Installationsanweisungen finden Sie in [diesem Artikel](install-the-microsoft-advertising-libraries.md).
 
@@ -42,9 +42,9 @@ Wir bieten zwei Arten von Interstitialwerbung in Ihren Apps und Spielen an: **Vi
 
 Befolgen Sie zum Anzeigen von Interstitialwerbung in Ihrer App die Anweisungen für den jeweiligen Projekttyp:
 
-* [XAML UND .NET](#interstitialadsxaml10)
+* [XAML/.NET](#interstitialadsxaml10)
 * [HTML/JavaScript](#interstitialadshtml10)
-* [C++ (DirectX-Interop)](#interstitialadsdirectx10)
+* [C++ (DirectX Interop)](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
 
@@ -66,22 +66,22 @@ Dieser Abschnitt enthält Beispiele für C#. Visual Basic und C++ werden jedoch 
 
 3.  Fügen Sie in der geeigneten Codedatei in Ihrer App (z. B. in „MainPage.xaml.cs“ oder einer Codedatei für eine andere Seite) den folgenden Namespaceverweis hinzu.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
 
 4.  Deklarieren Sie an einer geeigneten Stelle in Ihrer App (z. B. in ```MainPage``` oder einer anderen Seite) ein [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad)-Objekt und mehrere Zeichenfolgenfelder, die die Anwendungs-ID und Anzeigeneinheits-ID für die Interstitialwerbung darstellen. Im folgenden Codebeispiel werden die Felder `myAppId` und `myAdUnitId` den [Testwerten](set-up-ad-units-in-your-app.md#test-ad-units) für Interstitialwerbung zugewiesen.
 
     > [!NOTE]
     > Jedes **InterstitialAd** verfügt über ein entsprechendes *Anzeigeneinheit*, die von unseren Diensten verwendet wird, um Werbung auf das Steuerelement zu übertragen, und jede Anzeigeneinheit besteht aus einer *Anzeigeneinheits-ID* und *Anwendungs-ID*. In den folgenden Schritten weisen Sie dem Steuerelement eine Anzeigeneinheits-ID und Anwendungs-ID zu. Dieser Test Werte können nur in einer Testversion Ihrer App verwendet werden. Bevor Sie Ihre app in den Store veröffentlichen, müssen Sie [ersetzen Sie diese Werte mit live-Werte testen](#release) von Partner Center.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
 
 5.  Instanziieren Sie in Code, der beim Start ausgeführt wird (z. B. im Konstruktor der Seite) das **InterstitialAd**-Objekt, und verbinden Sie Ereignishandler für die Ereignisse des Objekts.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
 6.  Wenn Sie anzeigen möchten eine *interstitial Video* Ad: Verwenden Sie etwa 30 bis 60 Sekunden, bevor Sie AD-, benötigen die [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) Methode an, die Ad vorab abzurufen. Dadurch bleibt genügend Zeit, um die Anzeige anzufordern und vorzubereiten, bevor sie angezeigt werden soll. Achten Sie darauf, **AdType.Video** für den Anzeigentyp festzulegen.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
     Wenn Sie anzeigen möchten eine *interstitial Banner* Ad: Verwenden Sie ungefähr 5 bis 8 Sekunden, bevor Sie AD-, benötigen die [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) Methode an, die Ad vorab abzurufen. Dadurch bleibt genügend Zeit, um die Anzeige anzufordern und vorzubereiten, bevor sie angezeigt werden soll. Achten Sie darauf, **AdType.Display** für den Anzeigentyp festzulegen.
 
@@ -91,11 +91,11 @@ Dieser Abschnitt enthält Beispiele für C#. Visual Basic und C++ werden jedoch 
 
 6.  An dem Punkt des Codes, an dem Sie die Video- oder Banner-Interstitialwerbung anzeigen möchten, bestätigen Sie, dass **InterstitialAd** bereit zur Anzeige ist, und zeigen sie anschließend mittels der [Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show)-Methode an.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
 
 7.  Definieren Sie die Ereignishandler für das **InterstitialAd**-Objekt.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
 
 8.  Erstellen und testen Sie Ihre App, um zu überprüfen, ob sie Testanzeigen anzeigt.
 

@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 1
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a296cc877279292f73b591a86ede9136b0d9758
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0ae5001e907d7d38cbf05fd6863b192337fe365f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645195"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162886"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im September 2017
 
@@ -24,7 +24,7 @@ Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live Creators-Programm
 
-Das Xbox Live Creators-Programm ist jetzt live, damit Sie ganz einfach UWP-Spiele erstellen und veröffentlichen können, die auf Windows 10-PCs und Xbox One-Konsolen ausgeführt werden. Weitere Informationen finden Sie unter [Erste Schritte mit dem Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+Das Xbox Live Creators-Programm ist jetzt live, damit Sie ganz einfach UWP-Spiele erstellen und veröffentlichen können, die auf Windows 10-PCs und Xbox One-Konsolen ausgeführt werden. Weitere Informationen finden Sie unter [Erste Schritte mit dem Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
@@ -49,7 +49,7 @@ Der Abschnitt „Erste Schritte” der UWP-Dokumente wurde mit einer [neuen Star
 
 Wir haben neue [Hinweise zur Sprache und dem Tonfall in UWP-Apps](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone) mit Ratschlägen zum Verfassen von Text in Ihrer App hinzugefügt. Was immer Sie erstellen, es ist wichtig, dass die Sprache, die Sie verwenden, zugänglich, benutzerfreundliche und informativ ist.
 
-## <a name="samples"></a>Beispiele
+## <a name="samples"></a>Proben
 
 ### <a name="photolab-sample"></a>Beispiel für PhotoLab
 

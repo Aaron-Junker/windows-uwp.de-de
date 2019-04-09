@@ -2,19 +2,19 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Verpacken von UWP-Apps
 description: Um Ihre UWP-App (Universelle Windows-Plattform) zu vertreiben und zu verkaufen, müssen Sie ein App-Paket erstellen.
-ms.date: 01/02/2019
+ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, UWP
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: f2e89490a76c9174c1e938466bf1fbcc9cc13455
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d5ed75cb79488eb994135dcfef74483ec078a32e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599135"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58173026"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Verpacken einer UWP-App mit Visual Studio
 
@@ -149,12 +149,12 @@ Zum querladen Ihrer app auf einem Windows 10 Mobile-Gerät verwenden die [WinApp
 
 ### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>Querladen Verpacken der app unter Windows 10 Anniversary Update oder höher
 
-In Windows 10 Anniversary Update wurden App-Pakete eingeführt, die einfach durch Doppelklicken auf die App-Paketdatei installiert werden. Verwenden Sie diese Option aus, navigieren zu Ihrer app-Paket oder eine app-Paketdatei, und doppelklicken. Die App-Installer startet und bietet einfache App-Informationen sowie auch eine Installieren-Schaltfläche, Installationsstatusanzeige und alle relevanten Meldungen.
+In Windows 10 Anniversary Update (Windows 10, Version 1607) eingeführt wurden, können app-Pakete installiert werden, einfach durch Doppelklicken auf die app-Paketdatei. Verwenden Sie diese Option aus, navigieren zu Ihrer app-Paket oder eine app-Paketdatei, und doppelklicken. [App-Installer](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root) wird gestartet und bietet die grundlegenden app-Informationen sowie eine Schaltfläche "installieren", Statusanzeige für die Installation und alle entsprechenden Fehlermeldungen.
 
 ![App-Installer zeigt eine Beispiel-App namens Contoso für die Installation an](images/appinstaller-screen.png)
 
 > [!NOTE]
-> Die App-Installer geht davon aus, dass die App vom Gerät als vertrauenswürdig eingestuft wird. Wenn Sie eine Entwickler- oder Unternehmens-App querladen, müssen Sie das Signaturzertifikat im Speicher für vertrauenswürdige Personen oder vertrauenswürdige Herausgeber auf dem Gerät installieren. Wenn Sie nicht sicher sind, wie Sie hierzu vorgehen, finden Sie unter [Testzertifikate installieren](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates) weitere Infos.
+> App-Installer wird davon ausgegangen, dass die app vom Gerät als vertrauenswürdig eingestuft wird. Wenn Sie eine Entwickler- oder Unternehmens-App querladen, müssen Sie das Signaturzertifikat im Speicher für vertrauenswürdige Personen oder vertrauenswürdige Herausgeber auf dem Gerät installieren. Wenn Sie nicht sicher sind, wie Sie hierzu vorgehen, finden Sie unter [Testzertifikate installieren](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates) weitere Infos.
 
 ### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>Sideloaden der app-Paket in früheren Versionen von Windows
 

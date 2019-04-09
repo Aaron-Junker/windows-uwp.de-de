@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf4d62f390a5d324952ef2852a76803f4619fdc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6e1a6d2e0c408d37195f5a4764f71c2acc932ab5
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593805"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240008"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>Registrieren einer App in einem losen Ordner  
 
@@ -22,7 +22,7 @@ Mithilfe des folgenden Anforderungsformats können Sie eine App in einem losen O
 Methode      | Anforderungs-URI
 :------     | :------
 POST | /api/app/packagemanager/register
-<br />
+
 **URI-Parameter**
 
 Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
@@ -30,7 +30,6 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 URI-Parameter      | Beschreibung
 :------     | :-----
 folder (erforderlich) | Der Name des Zielordners für das Paket, das registriert werden soll. Dieser Ordner muss unter „d:\developmentfiles\LooseApps“ auf der Konsole gespeichert sein. Der Ordnername muss base64-codiert sein, da er Pfadtrennzeichen enthalten kann, wenn der Ordner in einem Unterordner unter „LooseApps“ enthalten ist.
-<br />
 
 **Anforderungsheader**
 
@@ -42,7 +41,7 @@ folder (erforderlich) | Der Name des Zielordners für das Paket, das registriert
 
 **Antwort**
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -51,8 +50,8 @@ HTTP-Statuscode      | Beschreibung
 200 | Bereitstellungsanforderung akzeptiert und wird verarbeitet
 4XX | Fehlercodes
 5XX | Fehlercodes
-<br />
-**Gerätefamilien verfügbar**
+
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox
 

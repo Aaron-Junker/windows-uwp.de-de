@@ -9,18 +9,18 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638825"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913980"
 ---
 # <a name="contact-card"></a>Visitenkarte
 
-Die Visitenkarte zeigt Kontaktinformationen wie Name, Telefonnummer und Adresse für einen [Kontakt](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (der Mechanismus, den UWP zum Darstellen von Personen und Unternehmen verwendet).  Die Visitenkarte ermöglicht dem Benutzer auch die Bearbeitung von Kontaktinformationen. Sie können eine kompakte Visitenkarte oder eine vollständige Visitenkarte anzeigen, die zusätzliche Informationen enthält.
+Die Visitenkarte zeigt Kontaktinformationen wie Name, Telefonnummer und Adresse für einen [Kontakt](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (der Mechanismus, den UWP zum Darstellen von Personen und Unternehmen verwendet).  Die Visitenkarte ermöglicht dem Benutzer auch die Bearbeitung von Kontaktinformationen. Sie können eine kompakte Visitenkarte oder eine vollständige Visitenkarte anzeigen, die zusätzliche Informationen enthält.
 
-> **Wichtige APIs:** [ShowContactCard Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [ShowFullContactCard Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_), [IsShowContactCardSupported Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [wenden Sie sich an der Klasse](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **Wichtige APIs:** [ShowContactCard Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [ShowFullContactCard Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [IsShowContactCardSupported Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [wenden Sie sich an der Klasse](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 Es gibt zwei Möglichkeiten, die Visitenkarte anzuzeigen:  
 * Als standardmäßige Visitenkarte, die in einem ausblendbaren Flyout angezeigt wird (die Visitenkarte wird ausgeblendet, wenn der Benutzer auf eine Stelle außerhalb der Visitenkarte klickt). 
@@ -146,7 +146,7 @@ private void OnUserClickShowContactCard(object sender, RoutedEventArgs e)
 
 ## <a name="show-a-full-contact-card"></a>Anzeigen einer vollständigen Visitenkarte
 
-Rufen Sie zum Anzeigen der vollständigen Visitenkarte die [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)-Methode anstelle der [ShowContactCard ](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)-Methode auf.
+Rufen Sie zum Anzeigen der vollständigen Visitenkarte die [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard)-Methode anstelle der [ShowContactCard ](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)-Methode auf.
 
 ```csharp
 private void onUserClickShowContactCard() 
@@ -181,5 +181,5 @@ Die Beispiele in diesem Artikel zeigen die Erstellung eines einfachen Kontakts. 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [Kontakte und Kalender](/windows/uwp/contacts-and-calendar/)
-- [Kontaktkarten-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=624040)
-- [Steuerelement für Personen](/windows/uwp/controls-and-patterns/person-picture/)
+- [Beispiel für Visitenkarten](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [Personenbild-Steuerelement](/windows/uwp/controls-and-patterns/person-picture/)

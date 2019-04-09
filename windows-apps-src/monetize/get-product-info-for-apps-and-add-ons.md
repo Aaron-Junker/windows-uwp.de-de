@@ -6,12 +6,12 @@ ms.date: 02/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, In-App-Einkäufe, IAPs, Add-Ons, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8ec9c64e3cffb55a674fcc19d3152de29ef6d988
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623095"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334888"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>Abrufen von Produktinformationen zu Apps und Add-Ons
 
@@ -22,7 +22,7 @@ Eine vollständige Beispielanwendung finden Sie im [Store-Beispiel](https://gith
 > [!NOTE]
 > Der **Windows.Services.Store**-Namespace wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Wenn Ihre App für eine frühere Version von Windows 10 geeignet ist, müssen Sie den [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace anstelle des **Windows.Services.Store**-Namespace verwenden. Weitere Informationen finden Sie in [diesem Artikel](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Für diese Beispiele gelten die folgenden Voraussetzungen:
 * Ein Visual Studio-Projekt für eine UWP (Universelle Windows-Plattform)-App, die für **Windows 10 Anniversary Edition (10.0; Build 14393)** oder höher, geeignet ist.
@@ -42,7 +42,7 @@ Der Code in diesen Beispielen geht von Folgendem aus:
 Verwenden Sie zum Abrufen von Store-Produktinformationen zur aktuellen App die [GetStoreProductForCurrentAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstoreproductforcurrentappasync)-Methode. Dies ist eine asynchrone Methode, die ein [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx)-Objekt zurückgibt, das Sie verwenden können, um Informationen wie den Preis abzurufen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
 
 ## <a name="get-info-for-add-ons-with-known-store-ids-that-are-associated-with-the-current-app"></a>Abrufen von Informationen für Add-Ons mit bekannten Store-IDs, die der aktuellen App zugeordnet sind
 
@@ -54,7 +54,7 @@ Verwenden Sie zum Abrufen von Store-Produktinformationen für Add-Ons, die der a
 Im diesem Beispiel werden Informationen für dauerhafte Add-Ons mit den angegebenen Store-IDs abgerufen, die der aktuellen App zugeordnet sind.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
 
 ## <a name="get-info-for-add-ons-that-are-available-for-purchase-from-the-current-app"></a>Abrufen von Informationen für Add-Ons, die für die aktuelle App zum Erwerb verfügbar sind
 
@@ -66,7 +66,7 @@ Verwenden Sie zum Abrufen von Store-Produktinformationen für die Add-Ons, die f
 Im folgenden Beispiel werden Informationen für alle dauerhaften Add-Ons, vom Store verwalteten Endverbraucher-Add-Ons und von Entwicklern verwalteten Endverbraucher-Add-Ons von der aktuellen App abgerufen, die zum Erwerb verfügbar sind.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
 
 
 ## <a name="get-info-for-add-ons-for-the-current-app-that-the-user-has-purchased"></a>Abrufen von Informationen zu Add-Ons für die aktuelle App, die der Nutzer erworben hat.
@@ -79,7 +79,7 @@ Verwenden Sie zum Abrufen von Store-Produktinformationen für Add-Ons, die der a
 Im folgenden Beispiel werden Informationen für dauerhafte Add-Ons mit den angegebenen [Store-IDs](in-app-purchases-and-trials.md#store_ids) abgerufen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

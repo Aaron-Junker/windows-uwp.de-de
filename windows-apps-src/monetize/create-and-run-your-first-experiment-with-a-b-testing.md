@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B-Tests, Experimente
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dba9095326c01029e14742c98c1c368b896dfb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 463eb17d341ccad494058861b2e6d1cfd276005e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660215"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334678"
 ---
 # <a name="create-and-run-your-first-experiment"></a>Erstellen und Ausführen des ersten Experiments
 
@@ -24,7 +24,7 @@ In dieser exemplarischen Vorgehensweise führen Sie folgende Aktionen aus:
 
 Eine Übersicht über A / B-Tests mit Partner Center finden Sie [Ausführen von app-Experimenten mit A / B-Tests](run-app-experiments-with-a-b-testing.md).
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Um diese exemplarische Vorgehensweise befolgen zu können, benötigen Sie ein Partner Center-Konto und Ihrem Entwicklungscomputer müssen Sie konfigurieren, wie in beschrieben [Ausführen von app-Experimenten mit A / B-Tests](run-app-experiments-with-a-b-testing.md).
 
@@ -52,7 +52,7 @@ Um diese exemplarische Vorgehensweise befolgen zu können, benötigen Sie ein Pa
 6. Ziehen Sie eine **Schaltfläche** aus der **Toolbox** auf die Seite.
 7. Doppelklicken Sie im Designer auf die Schaltfläche, um die Codedatei zu öffnen, und fügen Sie einen Ereignishandler für das **Click**-Ereignis hinzu.  
 8. Ersetzen Sie den gesamten Inhalt der Codedatei mit folgendem Code. Weisen Sie die ```projectId``` -Variable auf die [Projekt-ID](run-app-experiments-with-a-b-testing.md#terms) -Wert, der Sie vom Partner Center im vorherigen Abschnitt abgerufen haben.
-    [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
+    [!code-csharp[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 9. Speichern Sie die Codedatei, und erstellen Sie das Projekt.
 

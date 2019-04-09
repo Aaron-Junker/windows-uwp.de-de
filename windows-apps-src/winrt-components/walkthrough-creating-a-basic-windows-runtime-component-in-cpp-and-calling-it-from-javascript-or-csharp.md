@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fce4ed3f32c0207e55b37a765b4d48d234343e38
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f1f147d98b8d88e912cc9fec40d5e29c34748167
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625035"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291898"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>Exemplarische Vorgehensweise: Erstellen einer Komponente für Windows-Runtime in C++/CX und deren Aufruf über JavaScript oder C#
 > [!NOTE]
@@ -421,7 +421,7 @@ function ButtonClear_Click() {
 }
 ```
 
-Fügen Sie Code zum Hinzufügen von Ereignis-Listenern durch Ersetzen des vorhandenen Aufrufs von „WinJS.UI.processAll“ in „app.onactivated“ in „default.js“ durch den folgenden Code hinzu, der die Ereignisregistrierung in einem „then“-Block implementiert. Eine ausführliche Erläuterung dazu finden Sie unter Erstellen der App „Hello World“ (JS).
+Fügen Sie Code zum Hinzufügen von Ereignis-Listenern durch Ersetzen des vorhandenen Aufrufs von „WinJS.UI.processAll“ in „app.onactivated“ in „default.js“ durch den folgenden Code hinzu, der die Ereignisregistrierung in einem „then“-Block implementiert. Eine ausführliche Erläuterung dieser, finden Sie unter [Erstellen einer "Hello, World"-app (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp).
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {

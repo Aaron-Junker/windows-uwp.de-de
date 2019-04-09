@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 57f8d7d57c016c015d01e80b07fc0e2c0260ef7f
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592025"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320613"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Laden von Bildern und Ressourcen mit Anpassung an Skalierung, Design, hohen Kontrast usw.
 Ihre App kann Bild-Ressourcendateien mit Bildern (und andere Ressourcendateien) laden, die speziell auf den [Skalierungsfaktor für die Anzeige](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), das Design, den hohen Kontrast und anderen Laufzeitkontexte angepasst wurden Auf diese Bilder kann im imperativen Code oder im XAML-Markup verwiesen werden, z. B. als **Quellen**-Eigenschaft eines **Bildes**. Sie können auch in Ihrer App-Paketmanifest-Quelldatei erscheinen (in der Datei `Package.appxmanifest`), z. B. als Wert für das App-Symbol auf der Registerkarte „Visuelle Anlagen” des Manifest-Designers von Visual Studio, oder auf Ihren Kacheln und Popups. Mithilfe von Qualifizierern in den Dateinamen Ihrer Bilder und optional durch das dynamische Laden mithilfe des [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), können Sie die am besten geeignete Bilddatei aufrufen, die den Laufzeiteinstellungen des Benutzers am besten für die Anzeige, das Design, den hohen Kontrast, die Sprache und anderen Kontexten entsprechen.
@@ -23,21 +23,27 @@ Einige allgemeine Qualifizierer für Bilder sind [Skalierung](tailor-resources-l
 ## <a name="qualify-an-image-resource-for-scale-theme-and-contrast"></a>Qualifizieren von Bildressourcen für Skalierung, Design und Kontrast
 Der Standardwert für den `scale` Qualifizierer lautet `scale-100`. Daher sind diese beiden Varianten gleichwertig (sie bieten ein Bild mit einer Skalierung von 100 oder einem Skalierungsfaktor von 1).
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\logo.scale-100.png
-```
+</pre>
+</blockquote>
+
 
 Sie können Qualifizierer in Ordnernamen anstelle von Dateinamen verwenden. Wenn Sie mehrere Ressourcendateien pro Qualifizierer haben, ist dies eine bessere Strategie. Zu Demonstrationszwecken sind diese zwei Varianten mit den beiden obigen gleichwertig.
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\scale-100\logo.png
-```
+</pre>
+</blockquote>
 
 Als Nächstes sehen Sie ein Beispiel zur Bereitstellung von Varianten in einer Bildressource&mdash;mit dem Namen `/Assets/Images/logo.png`&mdash;für unterschiedliche Einstellungen der Anzeige: Skalierung, Design, hoher Kontrast. Dieses Beispiel verwendet die Ordnerbenennung.
 
-```
+<blockquote>
+<pre>
 \Assets\Images\contrast-standard\theme-dark
     \scale-100\logo.png
     \scale-200\logo.png
@@ -47,7 +53,8 @@ Als Nächstes sehen Sie ein Beispiel zur Bereitstellung von Varianten in einer B
 \Assets\Images\contrast-high
     \scale-100\logo.png
     \scale-200\logo.png
-```
+</pre>
+</blockquote>
 
 ## <a name="reference-an-image-or-other-asset-from-xaml-markup-and-code"></a>Referenzieren eines Bilds oder eines anderen Elements in XAML-Markup und Code
 Der Name&mdash;oder Bezeichner&mdash;einer Bildressource ist der Pfad und Dateiname, aus dem alle Qualifizierer entfernt wurden. Wenn Sie Ordner und/oder Dateien wie im obigen Beispiele des vorherigen Abschnitts benannt haben, erhalten Sie eine einzelne Bild-Ressource und der Anzeigename (als absoluter Pfad) lautet `/Assets/Images/logo.png`. So verwenden Sie diesen Namen in XAML-Markups.
@@ -83,7 +90,8 @@ Für die in diesen Beispielen gezeigten Szenarien verwenden Sie die [URI-Konstru
 
 Beachten Sie, wie auf die Beispielschemen-URIs ("`ms-appx` "oder" `ms-appx-web`") folgt, denen "`://`" folgt, das einem absoluten Pfad folgt. In einem absoluten Pfad, bewirkt das führende "`/`", das der Pfad aus dem Stammverzeichnis des Pakets interpretiert wird.
 
-**Hinweis:** Die `ms-resource` URI-Schemen (für [Zeichenfolgenressourcen](localize-strings-ui-manifest.md)) und `ms-appx(-web)` (für Bilder und andere Ressourcen) führen einen automatischen Qualifiziererabgleich aus, um die Ressource zu suchen, die für den aktuellen Kontext am besten geeignet ist. Das `ms-appdata`URI-Schema (das zum Laden von App-Daten verwendet wird) führt keinen automatischen Abgleich durch, Sie können allerdings auf den Inhalt des [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) reagieren und die entsprechenden Ressourcen explizit von App-Daten mit ihrem gesamten physischen Dateinamen in der URI verwenden. Weitere Informationen zu Anwendungsdaten finden Sie unter [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md). Web-URI-Schemen (z. B. `http`, `https`  und `ftp`) führen keinen automatischen Abgleich durch. Informationen darüber, was Sie in diesem Fall tun sollten, finden Sie unter [Hosting and loading images in the cloud](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
+> [!NOTE]
+> Die `ms-resource` (für [Zeichenfolgenressourcen](localize-strings-ui-manifest.md)) und `ms-appx(-web)` (für Bilder und andere Ressourcen) URI-Schemas führen Sie automatische Qualifizierer zugeordnet werden, um die Ressource zu finden, die für den aktuellen Kontext am besten geeignet ist. Das `ms-appdata`URI-Schema (das zum Laden von App-Daten verwendet wird) führt keinen automatischen Abgleich durch, Sie können allerdings auf den Inhalt des [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) reagieren und die entsprechenden Ressourcen explizit von App-Daten mit ihrem gesamten physischen Dateinamen in der URI verwenden. Weitere Informationen zu Anwendungsdaten finden Sie unter [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md). Web-URI-Schemen (z. B. `http`, `https`  und `ftp`) führen keinen automatischen Abgleich durch. Informationen darüber, was Sie in diesem Fall tun sollten, finden Sie unter [Hosting and loading images in the cloud](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
 
 Absolute Pfade sind eine gute Wahl, wenn die Dateien dort bleiben, wo sie sich in der Projektstruktur befinden. Wenn Sie eine Bilddatei verschieben möchten, Sie allerdings sehr genau darauf achten möchten, dass sie in der gleichen Position relativ zu der verweisenden XAML-Markup-Datei bleibt, können Sie anstelle eines absoluten Pfads einen Pfad verwenden, der relativ zur enthaltenden Markup-Datei existiert. Wenn Sie dies tun, brauchen Sie kein URI-Schema. Sie profitieren in diesem Fall auch weiterhin vom automatischen Qualifiziererabgleich, jedoch nur deshalb, weil Sie den relativen Pfad im XAML-Markup verwenden.
 
@@ -96,23 +104,29 @@ Siehe ebenfalls [Kachel- und Popupunterstützung für Sprache, Skalierung und ho
 ## <a name="qualify-an-image-resource-for-targetsize"></a>Qualifizieren einer Bildressource als Zielgröße
 Sie können die `scale` und `targetsize`-Qualifizierer auf verschiedenen Varianten der gleichen Bildressource verwenden. Sie können diese allerdings nicht gleichzeitig auf einer einzelnen Variante einer Ressource verwenden. Es muss ebenfalls mindestens eine Variante ohne `TargetSize`-Qualifizierer definiert sein. Diese Variante muss entweder einen Wert für `scale` definieren oder ihn standardmäßig auf `scale-100` lassen. Diese beiden Varianten der `/Assets/Square44x44Logo.png`-Ressource sind ebenfalls gültig.
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200.png
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 Und diese zwei Varianten sind gültig. 
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.png // defaults to scale-100
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 Diese Variante ist allerdings nicht gültig.
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200_targetsize-24.png
-```
+</pre>
+</blockquote>
 
 ## <a name="refer-to-an-image-file-from-your-app-package-manifest"></a>Verweisen auf eine Bilddatei aus Ihrem App-Paketmanifest
 Wenn Sie Ordner und/oder Dateien wie in einem der obigen Beispiele des vorherigen Abschnitts benannt haben, erhalten Sie eine einzelne Symbolbildressource und der Anzeigename (als relativer Pfad) lautet `Assets\Square44x44Logo.png`. Verweisen Sie in Ihrem App-Paketmanifest einfach auf die Ressource nach Namen. Es ist kein URI-Schema notwendig.

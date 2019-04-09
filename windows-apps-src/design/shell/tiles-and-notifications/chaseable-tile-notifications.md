@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: Windows 10, Uwp, verfolgbare Kacheln, Live-Kacheln, verfolgbare Kachelbenachrichtigungen
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6e27dec0e7256cfc035ecc3150bd976f69743fe3
+ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592645"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58358615"
 ---
 # <a name="chaseable-tile-notifications"></a>Verfolgbare Kachelbenachrichtigungen
 
@@ -140,6 +140,49 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ```
 
 
+### <a name="accessing-onlaunched-from-desktop-applications"></a>Zugreifen auf OnLaunched von desktop-Anwendungen
+
+Desktop-apps (wie Win32, WPF, usw.) mithilfe der [Desktop-Brücke](https://developer.microsoft.com/windows/bridges/desktop), chaseable Kacheln können zu verwenden! Der einzige Unterschied ist die OnLaunched-Argumente zugreifen. Beachten Sie, dass Sie zuerst müssen [Verpacken der app mit Desktop Bridge](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root).
+
+> [!IMPORTANT]
+> **Erfordert Update für Oktober 2018**: Verwenden der `AppInstance.GetActivatedEventArgs()` -API, Sie müssen als Ziel SDK 17763 und Build 17763 oder höher ausgeführt werden.
+
+Bei desktop-Anwendungen für den Zugriff auf den Argumenten starten, gehen Sie...
+
+```csharp
+
+static void Main()
+{
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+
+    // API only available on build 17763 or higher
+    var args = AppInstance.GetActivatedEventArgs();
+    switch (args.Kind)
+    {
+        case ActivationKind.Launch:
+
+            var launchArgs = args as LaunchActivatedEventArgs;
+
+            // If clicked on from tile
+            if (launchArgs.TileActivatedInfo != null)
+            {
+                // If tile notification(s) were present
+                if (launchArgs.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+                {
+                    // Get arguments from the notifications that were recently displayed
+                    string[] allTileArgs = launchArgs.TileActivatedInfo.RecentlyShownNotifications
+                    .Select(i => i.Arguments)
+                    .ToArray();
+     
+                    // TODO: Highlight each story in the app
+                }
+            }
+    
+            break;
+```
+
+
 ## <a name="raw-xml-example"></a>Beispiel mit unformatiertem XML
 
 Wenn Sie mit unformatiertes XML anstatt der Notifications-Bibliothek verwenden, finden Sie hier den XML-Code.
@@ -178,5 +221,5 @@ Wenn Sie mit unformatiertes XML anstatt der Notifications-Bibliothek verwenden, 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [LaunchActivatedEventArgs.TileActivatedInfo-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [TileActivatedInfo-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

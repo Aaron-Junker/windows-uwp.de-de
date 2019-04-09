@@ -5,19 +5,19 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Live Analyse
 ms.localizationpriority: medium
-ms.openlocfilehash: 74c898630641e8b0d53a181d1874c6df62baaa78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: dd10fadea415bd769061e198fcf29f8edf0f3124
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637085"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162670"
 ---
 # <a name="get-xbox-live-analytics-data"></a>Xbox Live-Analysedaten abrufen
 
-Verwenden Sie diese Methode in der Microsoft Store-Analyse-API zum Abrufen der letzten 30 Tage von allgemeinen Analysedaten für Kunden, die Ihr [Xbox Live-fähiges Spiel](../xbox-live/index.md) spielen, einschließlich Gerätezubehörnutzung, Internetverbindungstyp, Gamerscore-Verteilung, Spielstatistiken und Freunde- und Follower-Daten. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
+Verwenden Sie diese Methode in der Microsoft Store-Analyse-API zum Abrufen der letzten 30 Tage von allgemeinen Analysedaten für Kunden, die Ihr [Xbox Live-fähiges Spiel](https://docs.microsoft.com/gaming/xbox-live//index.md) spielen, einschließlich Gerätezubehörnutzung, Internetverbindungstyp, Gamerscore-Verteilung, Spielstatistiken und Freunde- und Follower-Daten. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
 
 > [!IMPORTANT]
-> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](../xbox-live/developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](../xbox-live/developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
+> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
 
 Zusätzliche Analysedaten für Xbox Live-fähige Spiele sind über folgende Methoden verfügbar:
 * [Abrufen von Daten für Xbox Live Erfolge](get-xbox-live-achievements-data.md)
@@ -27,14 +27,14 @@ Zusätzliche Analysedaten für Xbox Live-fähige Spiele sind über folgende Meth
 * [Abrufen von Xbox Live Multiplayer-Daten](get-xbox-live-multiplayer-data.md)
 * [Abrufen von Daten für Xbox Live gleichzeitige Verwendung](get-xbox-live-concurrent-usage-data.md)
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store-Analyse-API.
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 
 ### <a name="request-syntax"></a>Anforderungssyntax
@@ -48,15 +48,15 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 | Parameter        | Typ   |  Beschreibung      |  Erforderlich  
 |---------------|--------|---------------|------|
-| applicationId | string | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie die allgemeinen Xbox Live Analysedaten abrufen möchten.  |  Ja  |
-| metricType | string | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **productvalues** an.  |  Ja  |
+| applicationId | String | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie die allgemeinen Xbox Live Analysedaten abrufen möchten.  |  Ja  |
+| metricType | String | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **productvalues** an.  |  Ja  |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
@@ -84,11 +84,11 @@ Diese Ressource enthält Gerätenutzungsdaten für Ihr Spiel oder durchschnittli
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-|  applicationId               |    string     |  Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie Analysedaten abgerufen haben.   |
-|  connectionTypeDistribution               |    array     |   Enthält Objekte, die angeben, wie viele Kunden eine verkabelte Internetverbindung im Vergleich zu einer Wireless-Internetverbindung mit Xbox verwenden. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**ConType**: Gibt den Verbindungstyp an.</li><li>**DeviceCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die den Verbindungstyp verwenden. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die den Verbindungstyp verwenden.</li></ul>   |     
-|  deviceCount               |   string      |  Im **ProductData**-Objekt gibt dieses Feld die Anzahl der Kundengeräte an, auf denen Ihr Spiel während der letzten 30 Tage gespielt wurde. Im **XboxwideData**-Objekt ist dieses Feld immer 1, womit ein Ausgangsprozentsatz von 100 % für Daten für alle Xbox Live-Kunden angezeigt wird.   |     
-|  eliteControllerPresentDeviceCount               |   string      |  Im **ProductData**-Objekt gibt dieses Feld die Anzahl der Kunden Ihres Spiels an, die den Xbox Elite Wireless Controller verwenden. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die den Xbox Elite Wireless Controller verwenden.  |     
-|  externalDrivePresentDeviceCount               |   string      |  Im **ProductData**-Objekt gibt dieses Feld die Anzahl der Kunden Ihres Spiels an, die ein externes Laufwerk mit Xbox verwenden. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die ein externes Laufwerk mit Xbox verwenden.  |
+|  applicationId               |    String     |  Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie Analysedaten abgerufen haben.   |
+|  connectionTypeDistribution               |    array     |   Enthält Objekte, die angeben, wie viele Kunden eine verkabelte Internetverbindung im Vergleich zu einer Wireless-Internetverbindung mit Xbox verwenden. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**conType**: Gibt den Verbindungstyp an.</li><li>**deviceCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die den Verbindungstyp verwenden. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die den Verbindungstyp verwenden.</li></ul>   |     
+|  deviceCount               |   String      |  Im **ProductData**-Objekt gibt dieses Feld die Anzahl der Kundengeräte an, auf denen Ihr Spiel während der letzten 30 Tage gespielt wurde. Im **XboxwideData**-Objekt ist dieses Feld immer 1, womit ein Ausgangsprozentsatz von 100 % für Daten für alle Xbox Live-Kunden angezeigt wird.   |     
+|  eliteControllerPresentDeviceCount               |   String      |  Im **ProductData**-Objekt gibt dieses Feld die Anzahl der Kunden Ihres Spiels an, die den Xbox Elite Wireless Controller verwenden. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die den Xbox Elite Wireless Controller verwenden.  |     
+|  externalDrivePresentDeviceCount               |   String      |  Im **ProductData**-Objekt gibt dieses Feld die Anzahl der Kunden Ihres Spiels an, die ein externes Laufwerk mit Xbox verwenden. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die ein externes Laufwerk mit Xbox verwenden.  |
 
 
 ### <a name="userproperties"></a>UserProperties
@@ -97,15 +97,15 @@ Diese Ressource enthält Benutzerdaten für Ihr Spiel oder durchschnittliche Ben
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-|  applicationId               |    string     |   Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie Analysedaten abgerufen haben.  |
-|  userCount               |    string     |   Im **ProductData**-Objekt gibt dieses Feld die Anzahl der Kunden an, die Ihr Spiel während der letzten 30 Tage gespielt haben. Im **XboxwideData**-Objekt ist dieses Feld immer 1, womit ein Ausgangsprozentsatz von 100 % für Daten für alle Xbox Live-Kunden angezeigt wird.   |     
-|  dvrUsageCounts               |   array      |  Enthält Objekte, die angeben, wie viele Kunden einen Spiele-DVR zum Aufzeichnen und Anzeigen des Spiels verwendet haben. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**DvrName**: Gibt an, die game DVR Feature verwendet. Mögliche Werte sind **gameClipUploads**, **gameClipViews**, **screenshotUploads** und **screenshotViews**.</li><li>**UserCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die die angegebene game DVR-Funktion verwendet. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die das angegebene Spiele-DVR-Merkmal verwendet haben.</li></ul>   |     
-|  followerCountPercentiles               |   array      |  Enthält Objekte, die Details über die Anzahl der Follower für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**Prozentsatz**: Derzeit ist dieser Wert immer 50, der angibt, dass die Daten der Follower als mittlere Wert bereitgestellt werden.</li><li>**Wert**: In der **ProductData** Objekt ist, wird dieses Feld gibt den Median der Anzahl der Follower für Ihr Spiel des Kunden. Im **XboxwideData**-Objekt gibt dieses Feld die mittlere Anzahl von Follower für alle Xbox Live-Kunden an.</li></ul>  |   
-|  friendCountPercentiles               |   array      |  Enthält Objekte, die Details über die Anzahl der Freunde für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**Prozentsatz**: Derzeit ist dieser Wert immer 50, der angibt, dass die Friends-Daten als mittlere Wert bereitgestellt werden.</li><li>**Wert**: In der **ProductData** Objekt ist, wird dieses Feld gibt den Median der Anzahl von Freunden für Ihr Spiel des Kunden. Im **XboxwideData**-Objekt gibt dieses Feld die mittlere Anzahl von Freunden für alle Xbox Live-Kunden an.</li></ul>  |     
-|  gamerScoreRangeDistribution               |   array      |  Enthält Objekte, die Details über die Gamescore-Verteilung für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**ScoreRange**: Der Bereich der Gamerscore, für den das folgende Feld Nutzungsdaten bereitstellt. Beispiel: **10K-25K**.</li><li>**UserCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die eine Gamerscore im angegebenen Bereich für alle Spiele verfügen sie gespielt haben. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz alle Xbox Live-Kunden an, die einen Gamerscore im angegebenen Bereich für alle Spiele haben, die sie gespielt haben.</li></ul>  |
-|  titleGamerScoreRangeDistribution               |   array      |  Enthält Objekte, die Details über die Gamescore-Verteilung für Ihr Spiel bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**ScoreRange**: Der Bereich der Gamerscore, für den das folgende Feld Nutzungsdaten bereitstellt. Beispiel: **100-200**.</li><li>**UserCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die eine Gamerscore im angegebenen Bereich für Ihr Spiel zu haben. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz alle Xbox Live-Kunden an, die einen Gamerscore im angegebenen Bereich für Ihr Spiel haben.</li></ul>   |
-|  socialUsageCounts               |   array      |  Enthält Objekte, die Details über die gemeinschaftliche Nutzung für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**ScName**: Der Typ des social Nutzung. Beispielsweise **gameInvites** und **textMessages**.</li><li>**UserCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die teilgenommen haben in der angegebenen Verwendungstyp für soziale Netzwerke. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz alle Xbox Live-Kunden an, die am angegebenen gemeinschaftlichen Nutzungstyp teilgenommen haben.</li></ul>   |
-|  streamingUsageCounts               |   array      |  Enthält Objekte, die Details über die Streaming-Nutzung für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**StName**: Der Typ des streamingplattform. Beispielsweise **youtubeUsage**, **twitchUsage** und **mixerUsage**.</li><li>**UserCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die den angegebene Stream-Plattform verwendet haben. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die die angegebene Streaming-Plattform verwendet haben.</li></ul>  |
+|  applicationId               |    String     |   Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie Analysedaten abgerufen haben.  |
+|  userCount               |    String     |   Im **ProductData**-Objekt gibt dieses Feld die Anzahl der Kunden an, die Ihr Spiel während der letzten 30 Tage gespielt haben. Im **XboxwideData**-Objekt ist dieses Feld immer 1, womit ein Ausgangsprozentsatz von 100 % für Daten für alle Xbox Live-Kunden angezeigt wird.   |     
+|  dvrUsageCounts               |   array      |  Enthält Objekte, die angeben, wie viele Kunden einen Spiele-DVR zum Aufzeichnen und Anzeigen des Spiels verwendet haben. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**dvrName**: Gibt an, die game DVR Feature verwendet. Mögliche Werte sind **gameClipUploads**, **gameClipViews**, **screenshotUploads** und **screenshotViews**.</li><li>**userCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die die angegebene game DVR-Funktion verwendet. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die das angegebene Spiele-DVR-Merkmal verwendet haben.</li></ul>   |     
+|  followerCountPercentiles               |   array      |  Enthält Objekte, die Details über die Anzahl der Follower für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**percentage**: Derzeit ist dieser Wert immer 50, der angibt, dass die Daten der Follower als mittlere Wert bereitgestellt werden.</li><li>**value**: In der **ProductData** Objekt ist, wird dieses Feld gibt den Median der Anzahl der Follower für Ihr Spiel des Kunden. Im **XboxwideData**-Objekt gibt dieses Feld die mittlere Anzahl von Follower für alle Xbox Live-Kunden an.</li></ul>  |   
+|  friendCountPercentiles               |   array      |  Enthält Objekte, die Details über die Anzahl der Freunde für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**percentage**: Derzeit ist dieser Wert immer 50, der angibt, dass die Friends-Daten als mittlere Wert bereitgestellt werden.</li><li>**value**: In der **ProductData** Objekt ist, wird dieses Feld gibt den Median der Anzahl von Freunden für Ihr Spiel des Kunden. Im **XboxwideData**-Objekt gibt dieses Feld die mittlere Anzahl von Freunden für alle Xbox Live-Kunden an.</li></ul>  |     
+|  gamerScoreRangeDistribution               |   array      |  Enthält Objekte, die Details über die Gamescore-Verteilung für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**scoreRange**: Der Bereich der Gamerscore, für den das folgende Feld Nutzungsdaten bereitstellt. Beispiel: **10K-25K**.</li><li>**userCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die eine Gamerscore im angegebenen Bereich für alle Spiele verfügen sie gespielt haben. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz alle Xbox Live-Kunden an, die einen Gamerscore im angegebenen Bereich für alle Spiele haben, die sie gespielt haben.</li></ul>  |
+|  titleGamerScoreRangeDistribution               |   array      |  Enthält Objekte, die Details über die Gamescore-Verteilung für Ihr Spiel bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**scoreRange**: Der Bereich der Gamerscore, für den das folgende Feld Nutzungsdaten bereitstellt. Beispiel: **100-200**.</li><li>**userCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die eine Gamerscore im angegebenen Bereich für Ihr Spiel zu haben. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz alle Xbox Live-Kunden an, die einen Gamerscore im angegebenen Bereich für Ihr Spiel haben.</li></ul>   |
+|  socialUsageCounts               |   array      |  Enthält Objekte, die Details über die gemeinschaftliche Nutzung für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**scName**: Der Typ des social Nutzung. Beispielsweise **gameInvites** und **textMessages**.</li><li>**userCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die teilgenommen haben in der angegebenen Verwendungstyp für soziale Netzwerke. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz alle Xbox Live-Kunden an, die am angegebenen gemeinschaftlichen Nutzungstyp teilgenommen haben.</li></ul>   |
+|  streamingUsageCounts               |   array      |  Enthält Objekte, die Details über die Streaming-Nutzung für Kunden bereitstellen. Jedes Objekt hat zwei Zeichenkettenfelder: <ul><li>**stName**: Der Typ des streamingplattform. Beispielsweise **youtubeUsage**, **twitchUsage** und **mixerUsage**.</li><li>**userCount**: In der **ProductData** Objekt dieses Feld gibt die Anzahl der Einnahmen durch Spiele-Kunden, die den angegebene Stream-Plattform verwendet haben. Im **XboxwideData**-Objekt gibt dieses Feld den Prozentsatz aller Xbox Live-Kunden an, die die angegebene Streaming-Plattform verwendet haben.</li></ul>  |
 
 
 ### <a name="response-example"></a>Antwortbeispiel

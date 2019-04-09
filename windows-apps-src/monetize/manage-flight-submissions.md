@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Flight-Übermittlungen
 ms.localizationpriority: medium
-ms.openlocfilehash: 19ddd43d4e61480764882f1b10e6240aa2afeb8c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 74d93c700ecbfe3db39bf1ffc4c90e107b80f5a5
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662725"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335074"
 ---
 # <a name="manage-package-flight-submissions"></a>Verwalten von Flight-Paket-Übermittlungen
 
@@ -85,7 +85,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu er
 
 3. [Erstellen Sie eine Flight-Paket-Übermittlung](create-a-flight-submission.md) mithilfe der folgenden Methode in der Microsoft Store-Übermittlungs-API. Diese Methode erstellt eine neue laufende Übermittlung, die eine Kopie der letzten veröffentlichten Übermittlung ist.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
     ```
 
@@ -98,7 +98,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu er
 
 5. Revidieren Sie die [Flight-Übermittlungsdaten](#flight-submission-object)mit allen erforderlichen Änderungen für die neue Übermittlung, und führen Sie die folgende Methode aus, um [die Flight-Paket-Übermittlung zu aktualisieren](update-a-flight-submission.md).
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -121,13 +121,13 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu er
 
 5. Führen Sie folgende Methode aus, um [die Flight-Paket-Übermittlung zu committen](commit-a-flight-submission.md). Dies wird von Partner Center benachrichtigt, dass die Übermittlung abgeschlossen ist, und Ihre Änderungen jetzt auf Ihr Konto angewendet werden soll.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
     ```
 
 6. Überprüfen Sie den Commit-Status, indem Sie die folgende Methode ausführen, um [den Status der Flight-Paket-Übermittlung abzurufen](get-status-for-a-flight-submission.md).
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
     ```
 
@@ -257,16 +257,16 @@ Die Ressource hat die folgenden Werte.
 
 | Wert      | Typ   | Beschreibung              |
 |------------|--------|------------------------------|
-| id            | string  | Die ID für die Übermittlung.  |
-| flightId           | string  |  Die ID des Flight-Pakets, dem die Übermittlung zugeordnet ist.  |  
-| status           | string  | Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>   |
+| id            | String  | Die ID für die Übermittlung.  |
+| flightId           | String  |  Die ID des Flight-Pakets, dem die Übermittlung zugeordnet ist.  |  
+| status           | String  | Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | object  |  Eine [Ressource für Statusdetails](#status-details-object), die zusätzliche Details über den Status der Übermittlung enthält, einschließlich Fehlerinformationen.  |
 | flightPackages           | array  | Enthält [Ressourcen für Flight-Pakete](#flight-package-object), die Details über die einzelnen Pakete in der Übermittlung bereitstellen.   |
 | packageDeliveryOptions    | object  | Eine [Ressource für Paketübermittlungsoptionen](#package-delivery-options-object), die Einstellungen zu graduellen Paketrollouts und zu verpflichtenden Updates für die Übermittlung enthält.   |
-| fileUploadUrl           | string  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete oder Bilder für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv, das die Pakete enthält, zu dieser URI hochladen. Weitere Informationen finden Sie unter [Erstellen einer Flight-Paket-Übermittlung](#create-a-package-flight-submission).  |
-| targetPublishMode           | string  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | string  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |
-| notesForCertification           | string  |  Enthält zusätzliche Informationen für Zertifizierungstester wie Anmeldeinformationen für Testkonten und Schritte zum Zugriff auf und zur Überprüfung von Features. Weitere Informationen finden Sie unter [Hinweise zur Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
+| fileUploadUrl           | String  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete oder Bilder für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv, das die Pakete enthält, zu dieser URI hochladen. Weitere Informationen finden Sie unter [Erstellen einer Flight-Paket-Übermittlung](#create-a-package-flight-submission).  |
+| targetPublishMode           | String  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | String  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |
+| notesForCertification           | String  |  Enthält zusätzliche Informationen für Zertifizierungstester wie Anmeldeinformationen für Testkonten und Schritte zum Zugriff auf und zur Überprüfung von Features. Weitere Informationen finden Sie unter [Hinweise zur Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
 <span id="status-details-object" />
 
@@ -289,8 +289,8 @@ Diese Ressource enthält weitere Informationen zu Fehlern oder Warnungen für ei
 
 | Wert           | Typ    | Beschreibung       |
 |-----------------|---------|------|
-|  code               |    string     |   Ein [Übermittlungsstatuscode](#submission-status-code), der den Fehler- oder Warnungstyp beschreibt. |  
-|  details               |     string    |  Eine Meldung mit weiteren Details zum Problem.     |
+|  code               |    String     |   Ein [Übermittlungsstatuscode](#submission-status-code), der den Fehler- oder Warnungstyp beschreibt. |  
+|  details               |     String    |  Eine Meldung mit weiteren Details zum Problem.     |
 
 
 <span id="certification-report-object" />
@@ -301,8 +301,8 @@ Diese Ressource stellt den Zugriff auf die Zertifizierungsberichtsdaten für ein
 
 | Wert           | Typ    | Beschreibung         |
 |-----------------|---------|------|
-|     date            |    string     |  Das Datum und Uhrzeit, die der Bericht, im ISO 8601-Format generiert wurde.    |
-|     reportUrl            |    string     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
+|     date            |    String     |  Das Datum und Uhrzeit, die der Bericht, im ISO 8601-Format generiert wurde.    |
+|     reportUrl            |    String     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
 
 
 <span id="flight-package-object" />
@@ -335,15 +335,15 @@ Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung              |
 |-----------------|---------|------|
-| fileName   |   string      |  Der Name des Pakets.    |  
-| fileStatus    | string    |  Der Status des Pakets. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  string   |  Eine ID, die das Paket eindeutig identifiziert. Dieser Wert wird vom Partner Center verwendet.   |     
-| version    |  string   |  Die Version des App-Pakets. Weitere Informationen finden Sie unter [Paketversionsnummern](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
-| architecture    |  string   |  Die Architektur des App-Pakets (z. B. ARM).   |     
+| fileName   |   String      |  Der Name des Pakets.    |  
+| fileStatus    | String    |  Der Status des Pakets. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
+| id    |  String   |  Eine ID, die das Paket eindeutig identifiziert. Dieser Wert wird vom Partner Center verwendet.   |     
+| version    |  String   |  Die Version des App-Pakets. Weitere Informationen finden Sie unter [Paketversionsnummern](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
+| architecture    |  String   |  Die Architektur des App-Pakets (z. B. ARM).   |     
 | languages    | array    |  Ein Array von Sprachcodes für die Sprachen, die von der App unterstützt werden. Weitere Informationen finden Sie unter [Unterstützte Sprachen](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
 | capabilities    |  array   |  Ein Array von Funktionen, die für das Paket erforderlich sind. Weitere Informationen zu Funktionen finden Sie unter [Deklaration der App-Funktionen](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
-| minimumDirectXVersion    |  string   |  Die DirectX-Version, die vom App-Paket mindestens unterstützt wird. Dieser Wert kann nur für Apps festgelegt werden, die für Windows 8.x bestimmt sind. Im Fall von Apps, die für andere Versionen bestimmt sind, wird er ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  Die Menge an RAM, die für das App-Paket mindestens erforderlich ist. Dieser Wert kann nur für Apps festgelegt werden, die für Windows 8.x bestimmt sind. Im Fall von Apps, die für andere Versionen bestimmt sind, wird er ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>Memory2GB</li></ul>   |    
+| minimumDirectXVersion    |  String   |  Die DirectX-Version, die vom App-Paket mindestens unterstützt wird. Dieser Wert kann nur für Apps festgelegt werden, die für Windows 8.x bestimmt sind. Im Fall von Apps, die für andere Versionen bestimmt sind, wird er ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | String    |  Die Menge an RAM, die für das App-Paket mindestens erforderlich ist. Dieser Wert kann nur für Apps festgelegt werden, die für Windows 8.x bestimmt sind. Im Fall von Apps, die für andere Versionen bestimmt sind, wird er ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
@@ -385,8 +385,8 @@ Diese Ressource enthält [Einstellungen für graduelle Paketrollouts](#manage-gr
 |-----------------|---------|------|
 | isPackageRollout   |   boolean      |  Gibt an, ob für die Übermittlung der graduelle Paketrollout aktiviert ist.    |  
 | packageRolloutPercentage    | float    |  Der Prozentsatz der Benutzer, die im Rahmen des graduellen Paketrollouts die Pakete erhalten.    |  
-| packageRolloutStatus    |  string   |  Eine der folgenden Zeichenfolgen, die den Status des graduellen Paketrollouts angeben: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
-| fallbackSubmissionId    |  string   |  Die ID der Übermittlung, die die Kunden erhalten, die keine Pakete im Rahmen des graduellen Paketrollouts erhalten.   |          
+| packageRolloutStatus    |  String   |  Eine der folgenden Zeichenfolgen, die den Status des graduellen Paketrollouts angeben: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| fallbackSubmissionId    |  String   |  Die ID der Übermittlung, die die Kunden erhalten, die keine Pakete im Rahmen des graduellen Paketrollouts erhalten.   |          
 
 > [!NOTE]
 > Die *PackageRolloutStatus* und *FallbackSubmissionId* Werte, die vom Partner Center zugewiesen sind, und nicht vom Entwickler festgelegt werden sollen. Wenn Sie diese Werte in einen Anforderungstext einfügen, werden diese Werte ignoriert.

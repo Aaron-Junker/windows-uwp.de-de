@@ -5,12 +5,12 @@ keywords: Neuigkeiten, was neu ist, Aktualisierung, Updates, Features, neu, Wind
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e0749ba30dc4c4e8d2791aa2d6699581b48fb8e5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5179b4615d1b7ada40e064c21991fee3d9dbb60e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626515"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162695"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Neuigkeiten für Entwickler in Windows 10, Build 16299
 
@@ -43,7 +43,7 @@ Gaming-Geräteinformationen | Aufgrund der unterschiedlichen Funktionen der Kons
 Spielmodus | Mithilfe der [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808)-APIs für die Universelle Windows-Plattform (UWP) sorgen Sie für ein optimiertes Spielerlebnis, indem Sie den Spielmodus in Windows 10 nutzen. Diese APIs befinden sich im Header **&lt;expandedresources.h&gt;**.
 Gameüberwachung | Die [GameMonitor-Klasse](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor) ermöglicht einer App das Abrufen des Spiel-Überwachungs-Berechtigungszustands des Geräts und potenziell den Benutzer aufzufordern, auf die Spiele-Überwachung zu aktivieren.
 TruePlay | [TruePlay](https://aka.ms/trueplay) bietet Entwicklern einen neuen Satz an Tools, um Täuschungsversuche in ihren PC-Spielen zu vermeiden. Ein Spiel, das mit TruePlay registriert wird, wird in einem geschützten Prozess ausgeführt, das eine Klasse von häufigen Angriffen verringert. Die TruePlay-APIs für die universelle Windows-Plattform (UWP) ermöglichen eine begrenzte Interaktion zwischen Spielen und dem Überwachungssystem der Spiele auf Windows 10-PCs. Diese APIs befinden sich im Header **&lt;gamemonitor.h&gt;**.
-Xbox Live | Wir haben Dokumentationen für Xbox Live-Entwickler hinzugefügt. Die Informationen beziehen sich sowohl auf UWP-Spiele als auch auf Xbox Developer Kit (XDK)-Spiele. </br>* Im [Xbox Live-Entwicklerhandbuch](../xbox-live/index.md) erfahren Sie, wie Sie die Xbox Live-APIs verwenden, um Ihr Spiel in das soziale Xbox Live-Spielenetzwerk zu integrieren. </br>* Im [Xbox Live Creators-Programm](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) können alle UWP-Spielentwickler für Xbox-Live geeignete Spiele entwickeln und veröffentlichen, sowohl für den PC als auch für Xbox One. </br>* Weitere Informationen über die Programme und Features für Xbox Live-Entwickler finden Sie unter [Programmübersicht für Xbox Live-Entwickler](../xbox-live/developer-program-overview.md).
+Xbox Live | Wir haben Dokumentationen für Xbox Live-Entwickler hinzugefügt. Die Informationen beziehen sich sowohl auf UWP-Spiele als auch auf Xbox Developer Kit (XDK)-Spiele. </br>* Im [Xbox Live-Entwicklerhandbuch](https://docs.microsoft.com/gaming/xbox-live//index.md) erfahren Sie, wie Sie die Xbox Live-APIs verwenden, um Ihr Spiel in das soziale Xbox Live-Spielenetzwerk zu integrieren. </br>* Im [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) können alle UWP-Spielentwickler für Xbox-Live geeignete Spiele entwickeln und veröffentlichen, sowohl für den PC als auch für Xbox One. </br>* Weitere Informationen über die Programme und Features für Xbox Live-Entwickler finden Sie unter [Programmübersicht für Xbox Live-Entwickler](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md).
 
 ## <a name="develop-windows-apps"></a>Entwickeln von Windows-Apps
 
@@ -86,7 +86,7 @@ Store-Einträge | Der Store-Eintrag wurde mit neuen Funktionen für künftige Be
 Übermittlungs-API | Die [Microsoft Store-Übermittlungs-API](../monetize/create-and-manage-submissions-using-windows-store-services.md) ermöglicht Ihnen jetzt, [Videotrailer](../monetize/manage-app-submissions.md#trailer-object) und [Spieloptionen](../monetize/manage-app-submissions.md#gaming-options-object) mit Ihrer App zu übermitteln.
 Zielgerichtete Angebote | Mit [gezielten Angeboten](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) können Sie bestimmte Kundensegmente mit attraktivem, personalisiertem Inhalt ansprechen, um Kundenbindung und Monetarisierung zu verbessern.
 
-## <a name="samples"></a>Beispiele
+## <a name="samples"></a>Proben
 
 ### <a name="lunch-scheduler"></a>Lunch Scheduler
 

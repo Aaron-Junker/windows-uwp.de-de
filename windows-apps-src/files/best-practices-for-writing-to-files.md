@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605835"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334898"
 ---
 # <a name="best-practices-for-writing-to-files"></a>Bewährte Methoden zum Schreiben in Dateien
 
@@ -21,7 +21,9 @@ ms.locfileid: "57605835"
 
 Entwickler, die gelegentlich in einen Satz von allgemeinen Problemen führen, bei Verwendung der **schreiben** Methoden der [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio) Klassen für Datei e/a-Vorgänge. Beispielsweise enthalten häufig auftretende Probleme:
 
-• Eine Datei teilweise geschrieben, dass • die app eine Ausnahme empfängt, wenn eine der Methoden aufrufen. • Die Vorgänge hinter sich lassen. TMP-Dateien mit einem Dateinamen, die den Zieldateinamen ähnelt.
+* Teilweise wird eine Datei geschrieben.
+* Die app empfängt eine Ausnahme aus, wenn eine der Methoden aufrufen.
+* Die Vorgänge hinter sich lassen. TMP-Dateien mit einem Dateinamen, die den Zieldateinamen ähnelt.
 
 Die **schreiben** Methoden der [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio) Klassen umfassen Folgendes:
 
@@ -35,7 +37,7 @@ Die **schreiben** Methoden der [ **FileIO** ](https://docs.microsoft.com/uwp/api
 > [!NOTE]
 > Dieser Artikel konzentriert sich auf die **FileIO** Methoden in den Beispielen und Diskussionen. Allerdings die **PathIO** Methoden folgen einem ähnlichen Muster und der Großteil der Anleitung in diesem Artikel gilt für diese Methoden zu. 
 
-## <a name="conveience-vs-control"></a>Conveience im Vergleich zu Steuerelement
+## <a name="convenience-vs-control"></a>Der Einfachheit halber im Vergleich zu Steuerelement
 
 Ein [ **"storagefile"** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) Objekt ist kein Dateihandle, wie das systemeigene Win32-Programmiermodell. Stattdessen eine [ **"storagefile"** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) ist eine Darstellung einer Datei mit den Methoden, um den Inhalt zu bearbeiten.
 
@@ -75,12 +77,12 @@ Diese Tabelle enthält allgemeine Fehlercodes, die app-Entwickler auftreten, wen
 
 |  Fehlernamen (Wert)  |  Schritte  |  Ursachen  |  Lösungen  |
 |----------------------|---------|----------|-------------|
-|  ERROR_ACCESS_DENIED (0 X 80070005)  |  5  |  Die ursprüngliche Datei kann zum Löschen, möglicherweise aus einem vorherigen Vorgang markiert werden.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
-|  ERROR_SHARING_VIOLATION (0 X 80070020)  |  5  |  Die ursprüngliche Datei wird von einem anderen exklusiven Schreibzugriff geöffnet.   |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  19 – 20  |  Die ursprüngliche Datei (file.txt) konnte nicht ersetzt werden, da er verwendet wird. Einem anderen Prozess oder Vorgang wurde Zugriff auf die Datei, bevor es ersetzt werden kann.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
-|  ERROR_DISK_FULL (0 X 80070070)  |  7, 14, 16, 20  |  Transaktive Modell wird eine zusätzliche Datei erstellt, und diese zusätzlichen Speicherplatz beansprucht.  |    |
-|  ERROR_OUTOFMEMORY (0X8007000E)  |  14, 16  |  Dies kann aufgrund von mehrere ausstehende e/a-Vorgänge oder großen Dateien geschehen.  |  Durch das Steuern von Streams ein präziser Ansatz möglicherweise den Fehler zu beheben.  |
-|  E_FAIL (0 X 80004005) |  Beliebig  |  Sonstiges  |  Wiederholen Sie den Vorgang. Wenn es weiterhin fehlschlägt, ist es möglicherweise eine Platform-Fehler, und die app beendet werden soll, da es in einem inkonsistenten Zustand ist. |
+|  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  Die ursprüngliche Datei kann zum Löschen, möglicherweise aus einem vorherigen Vorgang markiert werden.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
+|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  Die ursprüngliche Datei wird von einem anderen exklusiven Schreibzugriff geöffnet.   |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  Die ursprüngliche Datei (file.txt) konnte nicht ersetzt werden, da er verwendet wird. Einem anderen Prozess oder Vorgang wurde Zugriff auf die Datei, bevor es ersetzt werden kann.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, Zugriff auf die Datei synchronisiert wird.  |
+|  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  Transaktive Modell wird eine zusätzliche Datei erstellt, und diese zusätzlichen Speicherplatz beansprucht.  |    |
+|  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  Dies kann aufgrund von mehrere ausstehende e/a-Vorgänge oder großen Dateien geschehen.  |  Durch das Steuern von Streams ein präziser Ansatz möglicherweise den Fehler zu beheben.  |
+|  E_FAIL (0x80004005) |  Beliebig  |  Sonstiges  |  Wiederholen Sie den Vorgang. Wenn es weiterhin fehlschlägt, ist es möglicherweise eine Platform-Fehler, und die app beendet werden soll, da es in einem inkonsistenten Zustand ist. |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>Weitere Überlegungen für Datei-Zustände, die zu Fehlern führen kann
 

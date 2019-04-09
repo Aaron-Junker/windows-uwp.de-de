@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Einrichtung, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 789b235220e5d22b85f7b3038d5d468729439501
+ms.sourcegitcommit: 7a3d28472901edbe4ecdde7e1a01a505ee5bc028
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608705"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58658766"
 ---
 # <a name="set-up-the-game-project"></a>Einrichten des Spieleprojekts
 
@@ -89,9 +89,9 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-Die Methode erstellt eine Instanz des Direct3D-Ansichtsanbieters aus der Ansichtsanbieterfactory (**Direct3DApplicationSource**, definiert in **App.h**) und übergibt sie zur Ausführung an das App-Singleton ([**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)). Das bedeutet, dass sich der Ausgangspunkt für Ihr Spiel im Implementierungscode der [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)-Methode (in diesem Fall: **App::Run**) befindet. 
+Diese Methode erstellt eine Instanz des Anbieters der Direct3D-Ansicht aus der Sicht Anbieterfactory (**Direct3DApplicationSource**, definiert in `App.h`), und übergibt sie an der app-Singleton durch Aufrufen von [  **CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run). Die Methoden der Framework-Ansicht (d.h. die **App** Klasse in diesem Beispiel) werden in der Reihenfolge aufgerufen **initialisieren**-**"SetWindow"** - **Load**-**OnActivated**-**ausführen**-**deinitialisieren**. Aufrufen von **CoreApplication::Run** , Lifycycle startet. Die Hauptschleife für Ihr Spiel befindet sich im Hauptteil der Implementierung der [ **IFrameworkView::Run** Methode](/uwp/api/windows.applicationmodel.core.iframeworkview.run), und in diesem Fall hat der **App::Run**.
 
-Suchen Sie die **App::Run**-Methode in **App.cpp**. Hier ist der Code:
+Suchen Sie die **App::Run**-Methode in **App.cpp**. Hier ist der Code ein.
 
 ```cpp
 //This method is called after the window becomes active.
@@ -146,11 +146,11 @@ Ein paar Dateien haben wir uns für den Schluss aufgehoben. Diese Dateien bieten
 | DeviceResources.h/.cpp       | Allgemein                 | Definiert ein Klassenobjekt, das [Geräteressourcen](tutorial--assembling-the-rendering-pipeline.md#resource) von DirectX steuert. Darüber hinaus enthält es eine Schnittstelle für die Anwendung, die DeviceResources besitzt, um benachrichtigt zu werden, wenn das Gerät verloren geht oder erstellt wird.                                                |
 | DirectXHelper.h              | Allgemein                 | Implementiert Methoden wie z. B. **DX::ThrowIfFailed**, **ReadDataAsync**, und ** ConvertDipsToPixels. **DX::ThrowIfFailed**konvertiert die von DirectX Win32-APIs zurückgegebenen HRESULT-Fehlerwerte in Ausnahmen der Windows-Runtime konvertiert. Verwenden Sie diese Methode, um einen Haltepunkt zum Debuggen von DirectX-Fehlern zu setzen. Weitere Informationen finden Sie unter [ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed). **ReadDataAsync** liest asynchron aus einer binären Datei. **ConvertDipsToPixels** konvertiert eine Länge in geräteunabhängige Pixel (DIPs) auf eine Länge in physische Pixel. |
 | StepTimer.h                  | Allgemein                 | Definiert einen Timer mit hoher Auflösung, der sich besonders für Spiele oder Apps mit interaktivem Rendering eignet.   |
-| Sample3DSceneRenderer.h/.cpp | Inhalt                | Definiert ein Klassenobjekt, um eine grundlegende Renderingpipeline zu instanziieren. Erstellt eine einfache Renderimplementierung, die eine Direct3D-Swapchain und einen Grafikadapter mit Ihrem UWP-DirectX-Spiel verbindet.   |
-| SampleFPSTextRenderer.h/.cpp | Inhalt                | Definiert ein Klassenobjekt, das den aktuellen FPS-Wert mit Direct2D und DirectWrite rechts unten auf dem Bildschirm rendert.  |
-| SamplePixelShader.hlsl       | Inhalt                | Enthält den Code der High-Level-Shader-Language (HLSL) für einen sehr einfachen Pixel-Shader.                                            |
-| SampleVertexShader.hlsl      | Inhalt                | Enthält den Code der High-Level Shader Language (HLSL) für einen sehr einfachen Vertex-Shader.                                           |
-| ShaderStructures.h           | Inhalt                | Enthält die Shader-Strukturen, die zum Senden von MVP-Matrizen und Vertex-Daten an den Vertexshader verwendet werden können.  |
+| Sample3DSceneRenderer.h/.cpp | Content                | Definiert ein Klassenobjekt, um eine grundlegende Renderingpipeline zu instanziieren. Erstellt eine einfache Renderimplementierung, die eine Direct3D-Swapchain und einen Grafikadapter mit Ihrem UWP-DirectX-Spiel verbindet.   |
+| SampleFPSTextRenderer.h/.cpp | Content                | Definiert ein Klassenobjekt, das den aktuellen FPS-Wert mit Direct2D und DirectWrite rechts unten auf dem Bildschirm rendert.  |
+| SamplePixelShader.hlsl       | Content                | Enthält den Code der High-Level-Shader-Language (HLSL) für einen sehr einfachen Pixel-Shader.                                            |
+| SampleVertexShader.hlsl      | Content                | Enthält den Code der High-Level Shader Language (HLSL) für einen sehr einfachen Vertex-Shader.                                           |
+| ShaderStructures.h           | Content                | Enthält die Shader-Strukturen, die zum Senden von MVP-Matrizen und Vertex-Daten an den Vertexshader verwendet werden können.  |
 | pch.h/.cpp                   | Main                   | Enthält alles, was das Windows-System für die von einer Direct3D-App genutzten APIs (einschließlich DirectX 11-APIs) enthält.| 
 
 ### <a name="next-steps"></a>Nächste Schritte

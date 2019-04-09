@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 691ce1cc0c49154142a52f329af6f2a1df4ae027
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d07a90ce34e9b4613eed6782338cbd889d7935c9
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591525"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58081872"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dynamische Layouts mit XAML
 
@@ -61,7 +61,7 @@ Die standardmäßige Spaltenbreite beträgt "*", daher Sie müssen diesen Wert f
         <ColumnDefinition Width="44"/>
         <ColumnDefinition Width="2*"/>
     </Grid.ColumnDefinitions>
-    <TextBlock Text="Column 1 sizes to its conent." FontSize="24"/>
+    <TextBlock Text="Column 1 sizes to its content." FontSize="24"/>
 </Grid>
 ```
 
@@ -77,7 +77,7 @@ Wenn Sie die automatische Größenanpassung in Ihrer Benutzeroberfläche verwend
 
 In einem „Grid“ kann „MinWidth/MaxWidth“ auch mit Spaltendefinitionen verwendet werden, und „MinHeight/MaxHeight“ kann mit Zeilendefinitionen verwendet werden.
 
-**Ausrichtung**
+**Alignment**
 
 Verwenden Sie die Eigenschaften [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) und [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx), um anzugeben, wie ein Element innerhalb seines übergeordneten Containers positioniert werden soll.
 - Die Werte für **HorizontalAlignment** sind **Left**, **Center**, **Right** und **Stretch**.
@@ -88,7 +88,7 @@ Alle Elemente, die untergeordnete Elemente haben können, können den Wert „St
 
 Weitere Informationen finden Sie im Artikel [Ausrichtung, Rand und Abstand](alignment-margin-padding.md) und auf den Referenzseiten [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) und [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx).
 
-**Sichtbarkeit**
+**Visibility**
 
 Können Sie anzeigen oder ausblenden ein Elements durch Festlegen seiner [ **Sichtbarkeit** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.visibility.aspx) Eigenschaft eines der [ **Sichtbarkeit** Enumeration](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visibility.aspx) Werte: **Sichtbare** oder **reduziert**. Wenn ein Element „Collapsed“ ist, verbraucht es keinen Platz im Benutzeroberflächenlayout.
 
@@ -111,9 +111,9 @@ Es folgt ein Vergleich der Hauptfunktionen der Panelsteuerelemente, die im XAML-
 
 Panelsteuerelement | Beschreibung
 --------------|------------
-[**Zeichenbereich**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | **Canvas** unterstützt keine dynamische Benutzeroberfläche; Sie steuern alle Aspekte der Positionierung und der Anpassung der Größe von untergeordneten Elementen. Sie verwenden dieses Panel in der Regel für spezielle Fälle wie das Erstellen von Grafiken oder das Definieren kleiner statischer Bereiche einer größeren adaptiven Benutzeroberfläche. Sie können Code oder visuelle Zustände verwenden, um Elemente zur Laufzeit neu zu positionieren.<li>Die Elemente werden mithilfe der angefügten Eigenschaften Canvas.Top und Canvas.Left absolut positioniert.</li><li>Die Schichtung kann mithilfe der angefügten Eigenschaft Canvas.ZIndex explizit angegeben werden.</li><li>Streckungswerte für „HorizontalAlignment“/„VerticalAlignment“ werden ignoriert. Wenn die Größe des Elements nicht explizit festgelegt wird, wird die Größe an den Inhalt angepasst.</li><li>Untergeordnete Inhalte werden nicht visuell abgeschnitten, wenn sie größer sind als das Panel. </li><li>Untergeordnete Inhalte werden nicht durch die Grenzen des Panels beschränkt.</li>
+[**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | **Canvas** unterstützt keine dynamische Benutzeroberfläche; Sie steuern alle Aspekte der Positionierung und der Anpassung der Größe von untergeordneten Elementen. Sie verwenden dieses Panel in der Regel für spezielle Fälle wie das Erstellen von Grafiken oder das Definieren kleiner statischer Bereiche einer größeren adaptiven Benutzeroberfläche. Sie können Code oder visuelle Zustände verwenden, um Elemente zur Laufzeit neu zu positionieren.<li>Die Elemente werden mithilfe der angefügten Eigenschaften Canvas.Top und Canvas.Left absolut positioniert.</li><li>Die Schichtung kann mithilfe der angefügten Eigenschaft Canvas.ZIndex explizit angegeben werden.</li><li>Streckungswerte für „HorizontalAlignment“/„VerticalAlignment“ werden ignoriert. Wenn die Größe des Elements nicht explizit festgelegt wird, wird die Größe an den Inhalt angepasst.</li><li>Untergeordnete Inhalte werden nicht visuell abgeschnitten, wenn sie größer sind als das Panel. </li><li>Untergeordnete Inhalte werden nicht durch die Grenzen des Panels beschränkt.</li>
 [**Raster**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) | **Grid** unterstützt das dynamische Ändern der Größe von untergeordneten Elementen. Sie können Code oder visuelle Zustände verwenden, um die Position von Elementen zu ändern und sie dynamisch zu umbrechen.<li>Mithilfe der angefügten Eigenschaften Grid.Row und Grid.Column können Elemente in Zeilen und Spalten angeordnet werden.</li><li>Mithilfe der angefügten Eigenschaften „Grid.RowSpan“ und „Grid.ColumnSpan“ können sich die Elemente über mehrere Spalten und Zeilen erstrecken.</li><li>Streckungswerte für „HorizontalAlignment“/„VerticalAlignment“ werden berücksichtigt. Wird die Größe eines Elements nicht explizit festgelegt, wird das Element gestreckt, sodass es den zur Verfügung stehenden Platz in der Rasterzelle ausfüllt.</li><li>Untergeordnete Inhalte werden visuell abgeschnitten, wenn sie größer sind als das Panel.</li><li>Die Größe von Inhalten wird durch die Grenzen des Panels beschränkt, für bildlauffähige Inhalte werden daher bei Bedarf Bildlaufleisten angezeigt.</li>
-[**"Relativepanel"**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) | <li>Elemente werden in Bezug auf den Rand oder die Mitte des Panels und im Verhältnis zueinander angeordnet.</li><li>Elemente werden unter Verwendung verschiedener angefügter Eigenschaften positioniert, die die Ausrichtung des Panels sowie von gleichgeordneten Elementen und die Position gleichgeordneter Elemente steuern. </li><li>Streckungswerte für „HorizontalAlignment“/„VerticalAlignment“ werden ignoriert, es sei denn, die angefügten RelativePanel-Eigenschaften für die Ausrichtung verursachen eine Streckung (ein Element wird zum Beispiel sowohl am rechten als auch am linken Rand des Panels ausgerichtet). Wenn die Größe eines Elements nicht explizit festgelegt und es nicht gestreckt wird, wird die Größe an den Inhalt angepasst.</li><li>Untergeordnete Inhalte werden visuell abgeschnitten, wenn sie größer sind als das Panel.</li><li>Die Größe von Inhalten wird durch die Grenzen des Panels beschränkt, für bildlauffähige Inhalte werden daher bei Bedarf Bildlaufleisten angezeigt.</li>
+[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) | <li>Elemente werden in Bezug auf den Rand oder die Mitte des Panels und im Verhältnis zueinander angeordnet.</li><li>Elemente werden unter Verwendung verschiedener angefügter Eigenschaften positioniert, die die Ausrichtung des Panels sowie von gleichgeordneten Elementen und die Position gleichgeordneter Elemente steuern. </li><li>Streckungswerte für „HorizontalAlignment“/„VerticalAlignment“ werden ignoriert, es sei denn, die angefügten RelativePanel-Eigenschaften für die Ausrichtung verursachen eine Streckung (ein Element wird zum Beispiel sowohl am rechten als auch am linken Rand des Panels ausgerichtet). Wenn die Größe eines Elements nicht explizit festgelegt und es nicht gestreckt wird, wird die Größe an den Inhalt angepasst.</li><li>Untergeordnete Inhalte werden visuell abgeschnitten, wenn sie größer sind als das Panel.</li><li>Die Größe von Inhalten wird durch die Grenzen des Panels beschränkt, für bildlauffähige Inhalte werden daher bei Bedarf Bildlaufleisten angezeigt.</li>
 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) |<li>Die Elemente werden in einer Linie gestapelt – entweder vertikal oder horizontal.</li><li>Streckungswerte für „HorizontalAlignment“/„VerticalAlignment“ werden in der entgegengesetzten Richtung der „Orientation“-Eigenschaft berücksichtigt. Wird die Größe eines Elements nicht explizit festgelegt, wird das Element gestreckt, sodass es die zur Verfügung stehende Breite (oder Höhe, falls die Ausrichtung auf „Horizontal“ festgelegt ist) ausfüllt. In der von der „Orientation“-Eigenschaft angegebenen Richtung wird ein Element an seinen Inhalt angepasst.</li><li>Untergeordnete Inhalte werden visuell abgeschnitten, wenn sie größer sind als das Panel.</li><li>Die Größe des Inhalts wird nicht durch die Grenzen des Panels in der von der „Orientation“-Eigenschaft angegebenen Richtung beschränkt; bildlauffähige Inhalte werden daher über die Panelgrenzen hinaus gestreckt und weisen keine Bildlaufleisten auf. Sie müssen die Höhe (oder Breite) des untergeordneten Inhalts explizit auf die Bildlaufleisten beschränken, damit die Bildlaufleisten angezeigt werden.</li>
 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) |<li>Die Elemente werden in Zeilen oder Spalten angeordnet, die automatisch auf eine neue Zeile oder Spalte umgebrochen werden, wenn der „MaximumRowsOrColumns“-Wert erreicht ist.</li><li>Ob die Elemente in Zeilen oder Spalten angeordnet werden, hängt von der „Orientation“-Eigenschaft ab.</li><li>Mithilfe der angefügten Eigenschaften „VariableSizedWrapGrid.RowSpan“ und „VariableSizedWrapGrid.ColumnSpan“ können sich die Elemente über mehrere Spalten und Zeilen erstrecken.</li><li>Streckungswerte für „HorizontalAlignment“/„VerticalAlignment“ werden ignoriert. Die Größe der Elemente wird gemäß den Eigenschaften „ItemHeight“ und „ItemWidth“ angepasst. Wenn diese Eigenschaften nicht festgelegt werden, wird das Element in der ersten Zelle an seinen Inhalt angepasst, und alle anderen Zellen erben diese Größe.</li><li>Untergeordnete Inhalte werden visuell abgeschnitten, wenn sie größer sind als das Panel.</li><li>Die Größe von Inhalten wird durch die Grenzen des Panels beschränkt, für bildlauffähige Inhalte werden daher bei Bedarf Bildlaufleisten angezeigt.</li>
 

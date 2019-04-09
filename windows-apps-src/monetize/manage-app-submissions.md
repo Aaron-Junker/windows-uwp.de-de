@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, App-Übermittlungen
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aabaa932c8bd21baf81970564b15421931ad39f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: fa5b5a62348a36f7758468a86e19b744cdde8754
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604865"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335086"
 ---
 # <a name="manage-app-submissions"></a>Verwalten von App-Übermittlungen
 
@@ -91,7 +91,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für eine App zu erstellen.
 
 3. [Erstellen Sie eine App-Übermittlung](create-an-app-submission.md) mithilfe der folgenden Methode in der Microsoft Store-Übermittlungs-API. Diese Methode erstellt eine neue laufende Übermittlung, die eine Kopie der letzten veröffentlichten Übermittlung ist.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions
     ```
 
@@ -104,7 +104,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für eine App zu erstellen.
 
 5. Revidieren Sie die [App-Übermittlungsdaten](#app-submission-object) mit allen erforderlichen Änderungen für die neue Übermittlung, und führen Sie die folgende Methode aus, um die [Übermittlung zu aktualisieren](update-an-app-submission.md).
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -127,13 +127,13 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für eine App zu erstellen.
 
 5. Führen Sie folgende Methode aus, um [die App-Übermittlung zu committen](commit-an-app-submission.md). Dies wird von Partner Center benachrichtigt, dass die Übermittlung abgeschlossen ist, und Ihre Änderungen jetzt auf Ihr Konto angewendet werden soll.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
     ```
 
 6. Überprüfen Sie den Commit-Status, indem Sie die folgende Methode ausführen, um [den Status der App-Übermittlung abzurufen](get-status-for-an-app-submission.md).
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/status
     ```
 
@@ -337,12 +337,12 @@ Die Ressource hat die folgenden Werte.
 
 | Wert      | Typ   | Beschreibung      |
 |------------|--------|-------------------|
-| id            | string  | Die ID der Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen verfügbar, um [eine App-Übermittlung zu erstellen](create-an-app-submission.md), [alle Apps abzurufen](get-all-apps.md) und [eine App abzurufen](get-an-app.md). Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
-| applicationCategory           | string  |   Eine Zeichenfolge, die [Kategorie und/oder Unterkategorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) für Ihre App angibt. Kategorien und Unterkategorien werden mit einem Unterstrich „_“ zu einer einzigen Zeichenfolge zusammengefasst, z. B. **BooksAndReference_EReader**.      |  
+| id            | String  | Die ID der Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen verfügbar, um [eine App-Übermittlung zu erstellen](create-an-app-submission.md), [alle Apps abzurufen](get-all-apps.md) und [eine App abzurufen](get-an-app.md). Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
+| applicationCategory           | String  |   Eine Zeichenfolge, die [Kategorie und/oder Unterkategorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) für Ihre App angibt. Kategorien und Unterkategorien werden mit einem Unterstrich „_“ zu einer einzigen Zeichenfolge zusammengefasst, z. B. **BooksAndReference_EReader**.      |  
 | pricing           |  object  | Eine [Preisressource](#pricing-object), die Preisinformationen für die App enthält.        |   
-| visibility           |  string  |  Die Sichtbarkeit der App. Folgende Werte sind möglich: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
-| targetPublishMode           | string  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | string  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |  
+| visibility           |  String  |  Die Sichtbarkeit der App. Folgende Werte sind möglich: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
+| targetPublishMode           | String  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | String  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |  
 | listings           |   object  |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei ein Schlüssel ein Ländercode und ein Wert eine [Eintragsressource](#listing-object) ist, die Eintragsinfos für die App enthält.       |   
 | hardwarePreferences           |  array  |   Ein Array von Zeichenfolgen, die die [Hardwareeinstellungen](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) für die App definieren. Folgende Werte sind möglich: <ul><li>Touch</li><li>Tastatur</li><li>Maus</li><li>Kamera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
 | automaticBackupEnabled           |  boolean  |   Gibt an, ob Windows die App-Daten in automatische Sicherungen auf OneDrive aufnehmen können. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
@@ -351,16 +351,16 @@ Die Ressource hat die folgenden Werte.
 | gamingOptions           |  array |   Ein Array mit einer [Spieloptionenressource](#gaming-options-object), die spielbezogene Einstellungen für die App definiert.     |   
 | hasExternalInAppProducts           |     boolean          |   Gibt an, ob die App Benutzern Käufe außerhalb des Microsoft Store-e-Commerce-Systems gestattet. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | meetAccessibilityGuidelines           |    boolean           |  Gibt an, ob getestet wurde, ob die App die Richtlinien zur Barrierefreiheit erfüllt. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
-| notesForCertification           |  string  |   Enthält [Hinweise zur Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) für Ihre App.    |    
-| status           |   string  |  Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>      |    
+| notesForCertification           |  String  |   Enthält [Hinweise zur Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) für Ihre App.    |    
+| status           |   String  |  Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   object  | Eine [Ressource für Statusdetails](#status-details-object), die zusätzliche Details über den Status der Übermittlung enthält, einschließlich Fehlerinformationen.       |    
-| fileUploadUrl           |   string  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete, Eintragsbilder oder Trailer-Dateien für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv, das die Pakete und Bilder enthält, zu dieser URI hochladen. Weitere Informationen finden Sie unter [Erstellen einer App-Übermittlung](#create-an-app-submission).       |    
+| fileUploadUrl           |   String  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete, Eintragsbilder oder Trailer-Dateien für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv, das die Pakete und Bilder enthält, zu dieser URI hochladen. Weitere Informationen finden Sie unter [Erstellen einer App-Übermittlung](#create-an-app-submission).       |    
 | applicationPackages           |   array  | Ein Array von [Ressourcen für Anwendungspakete](#application-package-object), die Details über die einzelnen Pakete in der Übermittlung bereitstellen. |    
 | packageDeliveryOptions    | object  | Eine [Ressource für Paketübermittlungsoptionen](#package-delivery-options-object), die Einstellungen zu graduellen Paketrollouts und zu verpflichtenden Updates für die Übermittlung enthält.  |
-| enterpriseLicensing           |  string  |  Einer der [Werte für Unternehmenslizenzierung](#enterprise-licensing), die das Verhalten der Unternehmenslizenzierung für die App angeben.  |    
+| enterpriseLicensing           |  String  |  Einer der [Werte für Unternehmenslizenzierung](#enterprise-licensing), die das Verhalten der Unternehmenslizenzierung für die App angeben.  |    
 | allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Gibt an, ob Microsoft [die App für zukünftige Windows 10-Gerätefamilien verfügbar machen](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) darf.    |    
 | allowTargetFutureDeviceFamilies           | object   |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel eine [Windows 10-Gerätefamilie](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) ist und jeder Wert ein boolescher Wert ist, der angibt, ob Ihre App auf die angegebene Gerätefamilie ausgerichtet werden darf.     |    
-| friendlyName           |   string  |  Der Anzeigename der Übermittlung, wie im Partner Center angezeigt. Dieser Wert wird beim Erstellen der Übermittlung für Sie generiert.       |  
+| friendlyName           |   String  |  Der Anzeigename der Übermittlung, wie im Partner Center angezeigt. Dieser Wert wird beim Erstellen der Übermittlung für Sie generiert.       |  
 | trailers           |  array |   Ein Array mit bis zu 15 [Trailer-Ressourcen](#trailer-object), die Videotrailer für den App-Eintrag darstellen.<br/><br/>   |  
 
 
@@ -372,10 +372,10 @@ Diese Ressource enthält Preisinformationen für die App. Die Ressource hat die 
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-|  trialPeriod               |    string     |  Eine Zeichenfolge, die den Testzeitraum für die App angibt. Folgende Werte sind möglich: <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
+|  trialPeriod               |    String     |  Eine Zeichenfolge, die den Testzeitraum für die App angibt. Folgende Werte sind möglich: <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    object     |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *priceId* angegebenen Basispreis für den angegebenen Markt.      |     
 |  sales               |   array      |  **Veraltet** Ein Array von [Verkaufsressourcen](#sale-object), die Verkaufsinformationen für die App enthalten.   |     
-|  priceId               |   string      |  Ein [Preisniveau](#price-tiers), das den [Basispreis](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price) für die App angibt.   |     
+|  priceId               |   String      |  Ein [Preisniveau](#price-tiers), das den [Basispreis](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price) für die App angibt.   |     
 |  isAdvancedPricingModel               |   boolean      |  Bei **true** hat Ihr Entwicklerkonto Zugriff auf die erweiterten Spanne von Preisstufen von 0,99 US-Dollar bis 1.999,99 US-Dollar. Bei **false** hat Ihr Entwicklerkonto Zugriff auf die ursprüngliche Spanne von Preisstufen von 0,99 US-Dollar bis 999,99 US-Dollar. Weitere Informationen zu den verschiedenen Stufen finden Sie unter [Preisstufen](#price-tiers).<br/><br/>**Hinweis**&nbsp;&nbsp;Dieses Feld ist schreibgeschützt.   |
 
 
@@ -394,10 +394,10 @@ Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung    |
 |-----------------|---------|------|
-|  name               |    string     |   Der Name des Verkaufs.    |     
-|  basePriceId               |   string      |  Das [Preisniveau](#price-tiers), das für den Basispreis des Verkaufs verwendet werden soll.    |     
-|  startDate               |   string      |   Das Startdatum für den Verkauf im Format ISO 8601.  |     
-|  endDate               |   string      |  Das Enddatum für den Verkauf im Format ISO 8601.      |     
+|  name               |    String     |   Der Name des Verkaufs.    |     
+|  basePriceId               |   String      |  Das [Preisniveau](#price-tiers), das für den Basispreis des Verkaufs verwendet werden soll.    |     
+|  startDate               |   String      |   Das Startdatum für den Verkauf im Format ISO 8601.  |     
+|  endDate               |   String      |  Das Enddatum für den Verkauf im Format ISO 8601.      |     
 |  marketSpecificPricings               |   object      |   Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *basePriceId* angegebenen Basispreis für den angegebenen Markt.    |
 
 
@@ -420,24 +420,24 @@ Diese Ressource enthält die Basiseintragsinformationen für eine App. Die Resso
 
 | Wert           | Typ    | Beschreibung       |
 |-----------------|---------|------|
-|  copyrightAndTrademarkInfo                |   string      |  Optionale [Copyright- und/oder Markeninformationen](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info).  |
+|  copyrightAndTrademarkInfo                |   String      |  Optionale [Copyright- und/oder Markeninformationen](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info).  |
 |  keywords                |  array       |  Ein Array von [keyword](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords), um die Anzeige Ihrer App in Suchergebnissen zu unterstützen.    |
-|  licenseTerms                |    string     | Die optionalen [Lizenzbestimmungen](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) für Ihre App.     |
-|  privacyPolicy                |   string      |   Dieser Wert ist veraltet. Um festzulegen, oder die Datenschutzrichtlinie-URL für Ihre app zu ändern, müssen Sie dies auf die [Eigenschaften](../publish/enter-app-properties.md#privacy-policy-url) Seite im Partner Center. Sie können diesen Wert aus den Aufrufen an die Übermittlungs-API weglassen. Wenn Sie diesen Wert festlegen, wird er ignoriert werden.       |
-|  supportContact                |   string      |  Dieser Wert ist veraltet. Um festzulegen, oder den Support wenden Sie sich an URL oder e-Mail-Adresse für Ihre app zu ändern, müssen Sie dies auf die [Eigenschaften](../publish/enter-app-properties.md#support-contact-info) Seite im Partner Center. Sie können diesen Wert aus den Aufrufen an die Übermittlungs-API weglassen. Wenn Sie diesen Wert festlegen, wird er ignoriert werden.        |
-|  websiteUrl                |   string      |  Dieser Wert ist veraltet. Um festzulegen, oder ändern Sie die URL der Webseite für Ihre app, müssen Sie dies auf die [Eigenschaften](../publish/enter-app-properties.md#website) Seite im Partner Center. Sie können diesen Wert aus den Aufrufen an die Übermittlungs-API weglassen. Wenn Sie diesen Wert festlegen, wird er ignoriert werden.      |    
-|  description               |    string     |   Die [Beschreibung](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) für den App-Eintrag.   |     
+|  licenseTerms                |    String     | Die optionalen [Lizenzbestimmungen](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) für Ihre App.     |
+|  privacyPolicy                |   String      |   Dieser Wert ist veraltet. Um festzulegen, oder die Datenschutzrichtlinie-URL für Ihre app zu ändern, müssen Sie dies auf die [Eigenschaften](../publish/enter-app-properties.md#privacy-policy-url) Seite im Partner Center. Sie können diesen Wert aus den Aufrufen an die Übermittlungs-API weglassen. Wenn Sie diesen Wert festlegen, wird er ignoriert werden.       |
+|  supportContact                |   String      |  Dieser Wert ist veraltet. Um festzulegen, oder den Support wenden Sie sich an URL oder e-Mail-Adresse für Ihre app zu ändern, müssen Sie dies auf die [Eigenschaften](../publish/enter-app-properties.md#support-contact-info) Seite im Partner Center. Sie können diesen Wert aus den Aufrufen an die Übermittlungs-API weglassen. Wenn Sie diesen Wert festlegen, wird er ignoriert werden.        |
+|  websiteUrl                |   String      |  Dieser Wert ist veraltet. Um festzulegen, oder ändern Sie die URL der Webseite für Ihre app, müssen Sie dies auf die [Eigenschaften](../publish/enter-app-properties.md#website) Seite im Partner Center. Sie können diesen Wert aus den Aufrufen an die Übermittlungs-API weglassen. Wenn Sie diesen Wert festlegen, wird er ignoriert werden.      |    
+|  description               |    String     |   Die [Beschreibung](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) für den App-Eintrag.   |     
 |  features               |    array     |  Ein Array von bis zu 20 Zeichenfolgen, die die [Features](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) für Ihre App auflisten.     |
-|  releaseNotes               |  string       |  Die [Versionshinweise](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) für Ihre App.    |
+|  releaseNotes               |  String       |  Die [Versionshinweise](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) für Ihre App.    |
 |  images               |   array      |  Ein Array von [Bild- und Symbolressourcen](#image-object) für den App-Eintrag.  |
 |  recommendedHardware               |   array      |  Ein Array von bis zu 11 Zeichenfolgen, die die [empfohlenen Hardwarekonfigurationen](../publish/create-app-store-listings.md#additional-information) für Ihre App auflisten.     |
-|  minimumHardware               |     string    |  Ein Array von bis zu 11 Zeichenfolgen, die die [minimalen Hardwarekonfigurationen](../publish/create-app-store-listings.md#additional-information) für Ihre App auflisten.    |  
-|  title               |     string    |   Der Titel für den App-Eintrag.   |  
-|  shortDescription               |     string    |  Wird nur für Spiele verwendet. Diese Beschreibung wird im Abschnitt **Informationen** im Spielehub auf Xbox One angezeigt und gibt weitere Informationen über Ihr Spiel an.   |  
-|  shortTitle               |     string    |  Eine kürzere Version des Produktnamens. Wenn vorhanden, kann dieser kürzere Namen anstelle des Produkttitels an verschiedenen Stellen auf Xbox One angezeigt werden (während der Installation, in Ihren Erfolgen usw.).    |  
-|  sortTitle               |     string    |   Wenn Ihr Produkt auf unterschiedliche Weise alphabetisch sortiert werden kann, können Sie hier eine andere Version eingeben. Dies kann Kunden bei der Suche helfen, das Produkt schneller zu finden.    |  
-|  voiceTitle               |     string    |   Ein alternativer Name für das Produkt, das ggf. als Audio-Erlebnis auf Xbox One verwendet werden kann, wenn Kinect oder ein Kopfhörer genutzt wird.    |  
-|  devStudio               |     string    |   Geben Sie diesen Wert an, wenn Sie ein **Entwickelt von**-Feld in den Eintrag aufnehmen möchten. (Das Feld **Veröffentlicht von** zeigt den mit Ihrem Konto verknüpften Anzeigename des Herausgebers an, wenn Sie einen Wert für das Feld *devStudio* angeben.)    |  
+|  minimumHardware               |     String    |  Ein Array von bis zu 11 Zeichenfolgen, die die [minimalen Hardwarekonfigurationen](../publish/create-app-store-listings.md#additional-information) für Ihre App auflisten.    |  
+|  title               |     String    |   Der Titel für den App-Eintrag.   |  
+|  shortDescription               |     String    |  Wird nur für Spiele verwendet. Diese Beschreibung wird im Abschnitt **Informationen** im Spielehub auf Xbox One angezeigt und gibt weitere Informationen über Ihr Spiel an.   |  
+|  shortTitle               |     String    |  Eine kürzere Version des Produktnamens. Wenn vorhanden, kann dieser kürzere Namen anstelle des Produkttitels an verschiedenen Stellen auf Xbox One angezeigt werden (während der Installation, in Ihren Erfolgen usw.).    |  
+|  sortTitle               |     String    |   Wenn Ihr Produkt auf unterschiedliche Weise alphabetisch sortiert werden kann, können Sie hier eine andere Version eingeben. Dies kann Kunden bei der Suche helfen, das Produkt schneller zu finden.    |  
+|  voiceTitle               |     String    |   Ein alternativer Name für das Produkt, das ggf. als Audio-Erlebnis auf Xbox One verwendet werden kann, wenn Kinect oder ein Kopfhörer genutzt wird.    |  
+|  devStudio               |     String    |   Geben Sie diesen Wert an, wenn Sie ein **Entwickelt von**-Feld in den Eintrag aufnehmen möchten. (Das Feld **Veröffentlicht von** zeigt den mit Ihrem Konto verknüpften Anzeigename des Herausgebers an, wenn Sie einen Wert für das Feld *devStudio* angeben.)    |  
 
 <span id="image-object" />
 
@@ -447,11 +447,11 @@ Diese Ressource enthält Bild- und Symboldaten für einen App-Eintrag. Weitere I
 
 | Wert           | Typ    | Beschreibung           |
 |-----------------|---------|------|
-|  fileName               |    string     |   Der Name der Bilddatei im ZIP-Archiv, das Sie für die Übermittlung hochgeladen haben.    |     
-|  fileStatus               |   string      |  Der Status der Bilddatei. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
-|  id  |  string  | Die ID für das Bild. Dieser Wert wird vom Partner Center bereitgestellt.  |
-|  description  |  string  | Die Beschreibung für das Bild.  |
-|  imageType  |  string  | Gibt den Typ des Bildes an. Die folgenden Strings werden derzeit unterstützt. <p/>[Bildschirmfoto-Bilder](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Screenshot (verwenden Sie diesen Wert für den Desktop-Bildschirmfotos)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Store-Logos](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (verwenden Sie diesen Wert für die 1:1 300x300 Pixel-Logos)</li></ul><p/>[Werbebilder](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox-Bilder](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Optionale Werbebilder](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
+|  fileName               |    String     |   Der Name der Bilddatei im ZIP-Archiv, das Sie für die Übermittlung hochgeladen haben.    |     
+|  fileStatus               |   String      |  Der Status der Bilddatei. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
+|  id  |  String  | Die ID für das Bild. Dieser Wert wird vom Partner Center bereitgestellt.  |
+|  description  |  String  | Die Beschreibung für das Bild.  |
+|  imageType  |  String  | Gibt den Typ des Bildes an. Die folgenden Strings werden derzeit unterstützt. <p/>[Bildschirmfoto-Bilder](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Screenshot (verwenden Sie diesen Wert für den Desktop-Bildschirmfotos)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Store-Logos](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (verwenden Sie diesen Wert für die 1:1 300x300 Pixel-Logos)</li></ul><p/>[Werbebilder](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox-Bilder](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Optionale Werbebilder](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
 
 
 <span id="gaming-options-object" />
@@ -499,7 +499,7 @@ Die Ressource hat die folgenden Werte.
 |  localCooperativeMaxPlayers               |   int      |   Gibt die maximale Anzahl von Spielern an, die das Spiel für lokale Co-Op-Spiele unterstützt.  |     
 |  isBroadcastingPrivilegeGranted               |   boolean      |  Gibt an, ob das Spiel Übertragungen unterstützt.   |     
 |  isCrossPlayEnabled               |   boolean      |   Gibt an, ob das Spiel Multiplayer-Sitzungen zwischen Spieler auf Windows 10-PCs und Xbox unterstützt.  |     
-|  kinectDataForExternal               |   string      |  Eine der folgenden Werte, der angibt, ob das Spiel Kinect-Daten sammeln und an externe Dienste senden kann: <ul><li>NotSet</li><li>Unbekannt</li><li>Enabled</li><li>Deaktiviert</li></ul>   |
+|  kinectDataForExternal               |   String      |  Eine der folgenden Werte, der angibt, ob das Spiel Kinect-Daten sammeln und an externe Dienste senden kann: <ul><li>NotSet</li><li>Unbekannt</li><li>Enabled</li><li>Deaktiviert</li></ul>   |
 
 > [!NOTE]
 > Die *gamingOptions*-Ressource wurde im Mai 2017 nach der ersten Veröffentlichung der Microsoft Store-Übermittlungs-API für Entwickler hinzugefügt. Wenn Sie eine Übermittlung für eine App über die Übermittlungs-API erstellt haben bevor diese Ressource eingeführt wurden und die Übermittlung befindet sich noch in Bearbeitung, wird diese Ressource für Übermittlungen für die App Null sein, bis Sie die Übermittlung erfolgreich ausgeführt oder sie gelöscht haben. Wenn die *gamingOptions*-Ressource für Übermittlungen für eine App nicht verfügbar ist, ist das Feld *hasAdvancedListingPermission* der [Anwendungsressource](get-app-data.md#application_object), das von der [Eine App abrufen](get-an-app.md)-Methode zurückgegeben wird, falsch.
@@ -525,8 +525,8 @@ Diese Ressource enthält weitere Informationen zu Fehlern oder Warnungen für ei
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-|  code               |    string     |   Ein [Übermittlungsstatuscode](#submission-status-code), der den Fehler- oder Warnungstyp beschreibt.   |     
-|  details               |     string    |  Eine Meldung mit weiteren Details zum Problem.     |
+|  code               |    String     |   Ein [Übermittlungsstatuscode](#submission-status-code), der den Fehler- oder Warnungstyp beschreibt.   |     
+|  details               |     String    |  Eine Meldung mit weiteren Details zum Problem.     |
 
 
 <span id="application-package-object" />
@@ -569,15 +569,15 @@ Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung                   |
 |-----------------|---------|------|
-| fileName   |   string      |  Der Name des Pakets.    |  
-| fileStatus    | string    |  Der Status des Pakets. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  string   |  Eine ID, die das Paket eindeutig identifiziert. Dieser Wert wird vom Partner Center bereitgestellt.   |     
-| version    |  string   |  Die Version des App-Pakets. Weitere Informationen finden Sie unter [Paketversionsnummern](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
-| architecture    |  string   |  Die Architektur des Pakets (z. B. ARM).   |     
+| fileName   |   String      |  Der Name des Pakets.    |  
+| fileStatus    | String    |  Der Status des Pakets. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
+| id    |  String   |  Eine ID, die das Paket eindeutig identifiziert. Dieser Wert wird vom Partner Center bereitgestellt.   |     
+| version    |  String   |  Die Version des App-Pakets. Weitere Informationen finden Sie unter [Paketversionsnummern](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
+| architecture    |  String   |  Die Architektur des Pakets (z. B. ARM).   |     
 | languages    | array    |  Ein Array von Sprachcodes für die Sprachen, die von der App unterstützt werden. Weitere Informationen finden Sie unter [Unterstützte Dateitypen](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
 | capabilities    |  array   |  Ein Array von Funktionen, die für das Paket erforderlich sind. Weitere Informationen zu Funktionen finden Sie unter [Deklaration der App-Funktionen](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
-| minimumDirectXVersion    |  string   |  Die DirectX-Version, die vom App-Paket mindestens unterstützt wird. Dies kann nur für Apps für Windows 8.x festgelegt werden. Für Apps, die für andere Betriebssystemversionen bestimmt sind, muss dieser Wert beim Aufruf der [Aktualisieren einer App-Übermittlung](update-an-app-submission.md)-Methode vorhanden sein, aber der von Ihnen angegebene Wert wird ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  Die Menge an RAM, die für das App-Paket mindestens erforderlich ist. Dies kann nur für Apps für Windows 8.x festgelegt werden. Für Apps, die für andere Betriebssystemversionen bestimmt sind, muss dieser Wert beim Aufruf der [Aktualisieren einer App-Übermittlung](update-an-app-submission.md)-Methode vorhanden sein, aber der von Ihnen angegebene Wert wird ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>Memory2GB</li></ul>   |       
+| minimumDirectXVersion    |  String   |  Die DirectX-Version, die vom App-Paket mindestens unterstützt wird. Dies kann nur für Apps für Windows 8.x festgelegt werden. Für Apps, die für andere Betriebssystemversionen bestimmt sind, muss dieser Wert beim Aufruf der [Aktualisieren einer App-Übermittlung](update-an-app-submission.md)-Methode vorhanden sein, aber der von Ihnen angegebene Wert wird ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | String    |  Die Menge an RAM, die für das App-Paket mindestens erforderlich ist. Dies kann nur für Apps für Windows 8.x festgelegt werden. Für Apps, die für andere Betriebssystemversionen bestimmt sind, muss dieser Wert beim Aufruf der [Aktualisieren einer App-Übermittlung](update-an-app-submission.md)-Methode vorhanden sein, aber der von Ihnen angegebene Wert wird ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>Memory2GB</li></ul>   |       
 | targetDeviceFamilies    | array    |  Ein Array von Zeichenfolgen, die die Gerätefamilien darstellen, auf die das Paket ausgerichtet ist. Dieser Wert wird nur für Pakete verwendet, die für Windows 10 bestimmt sind. Im Fall von Paketen, die für frühere Versionen bestimmt sind, hat dieser Wert den Wert **None**. Die folgenden Gerätefamilienzeichenfolgen werden zurzeit für Windows 10-Pakete unterstützt, wobei *{0}* eine Zeichenfolge für Windows 10-Versionen ist, z. B. 10.0.10240.0, 10.0.10586.0 oder 10.0.14393.0: <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
 
 <span/>
@@ -590,8 +590,8 @@ Diese Ressource stellt den Zugriff auf die Zertifizierungsberichtsdaten für ein
 
 | Wert           | Typ    | Beschreibung             |
 |-----------------|---------|------|
-|     date            |    string     |  Das Datum und Uhrzeit, die der Bericht, im ISO 8601-Format generiert wurde.    |
-|     reportUrl            |    string     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
+|     date            |    String     |  Das Datum und Uhrzeit, die der Bericht, im ISO 8601-Format generiert wurde.    |
+|     reportUrl            |    String     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
 
 
 <span id="package-delivery-options-object" />
@@ -633,8 +633,8 @@ Diese Ressource enthält [Einstellungen für graduelle Paketrollouts](#manage-gr
 |-----------------|---------|------|
 | isPackageRollout   |   boolean      |  Gibt an, ob für die Übermittlung der graduelle Paketrollout aktiviert ist.    |  
 | packageRolloutPercentage    | float    |  Der Prozentsatz der Benutzer, die im Rahmen des graduellen Paketrollouts die Pakete erhalten.    |  
-| packageRolloutStatus    |  string   |  Eine der folgenden Zeichenfolgen, die den Status des graduellen Paketrollouts angeben: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
-| fallbackSubmissionId    |  string   |  Die ID der Übermittlung, die die Kunden erhalten, die keine Pakete im Rahmen des graduellen Paketrollouts erhalten.   |          
+| packageRolloutStatus    |  String   |  Eine der folgenden Zeichenfolgen, die den Status des graduellen Paketrollouts angeben: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| fallbackSubmissionId    |  String   |  Die ID der Übermittlung, die die Kunden erhalten, die keine Pakete im Rahmen des graduellen Paketrollouts erhalten.   |          
 
 > [!NOTE]
 > Die *PackageRolloutStatus* und *FallbackSubmissionId* Werte, die vom Partner Center zugewiesen sind, und nicht vom Entwickler festgelegt werden sollen. Wenn Sie diese Werte in einen Anforderungstext einfügen, werden diese Werte ignoriert.
@@ -675,9 +675,9 @@ Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-|  id               |    string     |   Die ID für den Trailer. Dieser Wert wird vom Partner Center bereitgestellt.   |
-|  videoFileName               |    string     |    Der Name der Trailer-Videodatei im ZIP-Archiv, das die Dateien für die Übermittlung enthält.    |     
-|  videoFileId               |   string      |  Die ID für die Videodatei. Dieser Wert wird vom Partner Center bereitgestellt.   |     
+|  id               |    String     |   Die ID für den Trailer. Dieser Wert wird vom Partner Center bereitgestellt.   |
+|  videoFileName               |    String     |    Der Name der Trailer-Videodatei im ZIP-Archiv, das die Dateien für die Übermittlung enthält.    |     
+|  videoFileId               |   String      |  Die ID für die Videodatei. Dieser Wert wird vom Partner Center bereitgestellt.   |     
 |  trailerAssets               |   object      |  Ein Wörterbuch von Schlüssel-Wert-Paaren, wobei ein Schlüssel ein Sprachcode und ein Wert eine [„trailer assets“-Ressource](#trailer-assets-object), die weitere gebietsschemaspezifischen Ressourcen für den Trailer enthält. Weitere Informationen zu den unterstützten Sprachcodes finden Sie unter [Unterstützte Sprachen](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
 
 > [!NOTE]
@@ -691,7 +691,7 @@ Diese Ressource enthält weitere gebietsschemaspezifische Ressourcen für eine T
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-| title   |   string      |  Der lokalisierte Titel des Trailers. Der Titel wird angezeigt, wenn der Benutzer den Trailer im Vollbildmodus anzeigt.     |  
+| title   |   String      |  Der lokalisierte Titel des Trailers. Der Titel wird angezeigt, wenn der Benutzer den Trailer im Vollbildmodus anzeigt.     |  
 | imageList    | array    |   Ein Array mit einer [Bild](#image-for-trailer-object) Ressource, die das Miniaturbild für den Trailer bereitstellt. Sie können nur ein [Image](#image-for-trailer-object)-Ressource in diesem Array haben.  |   
 
 
@@ -703,9 +703,9 @@ Diese Ressource beschreibt die Miniaturansicht für ein Trailer. Die Ressource h
 
 | Wert           | Typ    | Beschreibung           |
 |-----------------|---------|------|
-|  fileName               |    string     |   Der Name der Miniaturansicht im ZIP-Archiv, das Sie für die Übermittlung hochgeladen haben.    |     
-|  id  |  string  | Die ID für die Miniaturansicht. Dieser Wert wird vom Partner Center bereitgestellt.  |
-|  description  |  string  | Die Beschreibung für die Miniaturansicht. Dieser Wert wird nur Metadaten verwendet und den Benutzern nicht angezeigt.   |
+|  fileName               |    String     |   Der Name der Miniaturansicht im ZIP-Archiv, das Sie für die Übermittlung hochgeladen haben.    |     
+|  id  |  String  | Die ID für die Miniaturansicht. Dieser Wert wird vom Partner Center bereitgestellt.  |
+|  description  |  String  | Die Beschreibung für die Miniaturansicht. Dieser Wert wird nur Metadaten verwendet und den Benutzern nicht angezeigt.   |
 
 <span/>
 

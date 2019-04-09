@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.localizationpriority: medium
-ms.openlocfilehash: af8e45e13eb89185e346c3c8e8cd5303da399471
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0b25a3d31ed32d5629f9dcc2b5a89959472bac08
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658735"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59242378"
 ---
 # <a name="guidelines-for-background-tasks"></a>Richtlinien für Hintergrundaufgaben
 
@@ -39,7 +39,7 @@ Wenn Sie eine Hintergrundaufgabe zur Medienwiedergabe im Hintergrund verwenden, 
 
 **Verwalten von Aufgaben im Hintergrund:** Ihre app sollte Abrufen einer Liste von registrierten Hintergrundaufgaben, registrieren Sie sich für den Fortschritt und Abschluss Handler und angemessene Behandlung der Ereignisse. Ihre Hintergrundaufgabenklassen müssen Fortschritt, Abbruch und Abschluss berichten. Weitere Informationen finden Sie unter [Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md) und [Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md).
 
-**Verwendung [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499):** Wenn Ihr Hintergrund Aufgabenklasse asynchrone Code ausgeführt wird, sollten Sie unbedingt Verzögerungen zu verwenden. Andernfalls kann Ihre Hintergrundaufgabe vorzeitig beendet werden, wenn die [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx)-Methode (oder die [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)-Methode bei Hintergrundaufgaben innerhalb von Prozessen) abgeschlossen wird. Weitere Informationen finden Sie unter [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md).
+**Verwendung [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499):** Wenn Ihr Hintergrund Aufgabenklasse asynchrone Code ausgeführt wird, sollten Sie unbedingt Verzögerungen zu verwenden. Andernfalls die Hintergrundaufgabe kann werden wurde vorzeitig beendet bei der [ausführen](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) Methodenrückgabe (oder die [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) Methode im Fall von Hintergrundaufgaben in-Process). Weitere Informationen finden Sie unter [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md).
 
 Alternativ können Sie eine Verzögerung bewirken und asynchrone Methodenaufrufe mit **async/await** abschließen. Schließen Sie die Verzögerung nach den **await**-Methodenaufrufen.
 
@@ -57,14 +57,14 @@ Hintergrundaufgaben, die im gleichen Prozess wie die Vordergrund-App ausgeführt
 
 **Bereiten Sie für app-Updates:** Wenn Ihre app aktualisiert werden, erstellen und Registrieren einer **ServicingComplete** Hintergrundaufgabe (finden Sie unter [SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)) zum Aufheben der Registrierung Hintergrundaufgaben für die vorherige Version der app, und registrieren Sie die Aufgaben im Hintergrund für die neue Version. Dies ist auch ein geeigneter Zeitpunkt, um App-Updates durchzuführen, die möglicherweise außerhalb des Kontexts der Ausführung im Vordergrund erforderlich sind.
 
-**Die Anforderung zum Ausführen der Aufgaben im Hintergrund:**
+**Anfordern der Ausführung von Hintergrundaufgaben:**
 
 > **Wichtige**  ab Windows 10 können apps nicht mehr müssen die als Voraussetzung zum Ausführen von Aufgaben im Hintergrund auf dem Sperrbildschirm angezeigt werden.
 
 UWP (Universelle Windows-Plattform)-Apps können alle unterstützten Aufgabentypen ausführen, ohne auf dem Sperrbildschirm angeheftet zu sein. Apps müssen jedoch vor dem Registrieren einer Hintergrundaufgabe [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) aufrufen. Diese Methode gibt [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439) zurück, wenn der Benutzer Berechtigungen für Hintergrundaufgaben für Ihre App in den Geräteeinstellungen explizit verweigert hat. Weitere Informationen über die Auswahl des Benutzers über Hintergrundaktivitäten und den Stromsparmodus finden Sie unter [Optimieren von Hintergrundaktivitäten ](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
 ## <a name="background-task-checklist"></a>Prüfliste für Hintergrundaufgaben
 
-*Gilt für beide Aufgaben im in-Process und Out-of-Process-Hintergrund*
+*Gilt sowohl für Hintergrundaufgaben innerhalb als auch außerhalb von Prozessen*
 
 -   Verknüpfen Sie Ihre Hintergrundaufgabe mit dem korrekten Trigger.
 -   Fügen Sie Bedingungen hinzu, die für das erfolgreiche Ausführen Ihrer Hintergrundaufgabe sorgen.
@@ -73,7 +73,7 @@ UWP (Universelle Windows-Plattform)-Apps können alle unterstützten Aufgabentyp
 -   Prüfen Sie Ihre App auf Fehler bei der Registrierung von Hintergrundaufgaben. Führen Sie die Registrierung der Hintergrundaufgabe ggf. mit anderen Parameterwerten erneut durch.
 -   Für alle Gerätefamilien mit Ausnahme von Desktops können Hintergrundaufgaben beendet werden, wenn der Arbeitsspeicher des Geräts knapp wird. Wenn eine Ausnahme über wenig Arbeitsspeicher nicht angezeigt oder von der App nicht behandelt wird, wird die Hintergrundaufgabe ohne Warnung und ohne Auslösen des OnCanceled-Ereignisses beendet. Dadurch soll die Benutzerfreundlichkeit der App im Vordergrund sichergestellt werden. Entwerfen Sie die Hintergrundaufgabe so, dass dieses Szenario behandelt werden kann.
 
-*Gilt nur für die Out-of-Process-Hintergrundaufgaben*
+*Gilt nur für Hintergrundaufgaben außerhalb von Prozessen*
 
 -   Erstellen Sie Ihre Hintergrundaufgabe in einer Komponente für Windows-Runtime.
 -   Zeigen Sie keine UI außer Popup-, Kachel- und Signalupdates von der Hintergrundaufgabe an.
@@ -82,7 +82,7 @@ UWP (Universelle Windows-Plattform)-Apps können alle unterstützten Aufgabentyp
 -   Deklarieren Sie jede Hintergrundaufgabe im Anwendungsmanifest zusammen mit dem Triggertyp, mit dem sie verwendet wird. Überprüfen Sie die Korrektheit von Einstiegspunkten und Triggertypen.
 -   Geben Sie im Manifest nur dann ein Executable-Element an, wenn Sie einen Trigger nutzen, der im selben Kontext wie die App ausgeführt werden soll (z. B. [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)).
 
-*Gilt nur für prozessinterne Hintergrundaufgaben*
+*Gilt nur für Hintergrundaufgaben innerhalb von Prozessen*
 
 - Stellen Sie beim Abbrechen einer Aufgabe sicher, dass der `BackgroundActivated`-Ereignishandler vorhanden ist, bevor der Abbruch eintritt, oder der gesamte Prozess wird beendet.
 -   Schreiben Sie Hintergrundaufgaben mit kurzer Laufzeit. Hintergrundaufgaben sind auf 30 Sekunden der Gesamtbetrachtungszeit beschränkt.
@@ -103,7 +103,7 @@ UWP (Universelle Windows-Plattform)-Apps können alle unterstützten Aufgabentyp
 * [Verwenden eines Wartungsauslösers](use-a-maintenance-trigger.md)
 * [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-* [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps (beim debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [So wird’s gemacht: Auslösen von Anhalte-, Fortsetzungs- und Hintergrundereignissen in UWP-Apps (beim Debuggen)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 

@@ -6,12 +6,12 @@ keywords: windows 10, uwp, add-ons, in-app-käufe, IAPs, Windows.Services.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 240cd4e0cdd9b95aa1c281504c7b666786abb293
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661725"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334488"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>Aktivieren von In-App-Käufen von Apps und Add-Ons
 
@@ -26,7 +26,7 @@ Jede Methode zeigt dem Benutzer eine Standardbenutzeroberfläche für den Einkau
 > [!NOTE]
 > Der **Windows.Services.Store**-Namespace wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Wenn Ihre App für eine frühere Version von Windows 10 geeignet ist, müssen Sie den [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace anstelle des **Windows.Services.Store**-Namespace verwenden. Weitere Informationen finden Sie in [diesem Artikel](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Für dieses Beispiel gelten die folgenden Voraussetzungen:
 * Ein Visual Studio-Projekt für eine UWP (Universelle Windows-Plattform)-App, die für **Windows 10 Anniversary Edition (10.0; Build 14393)** oder höher, geeignet ist.
@@ -46,7 +46,7 @@ Der Code in diesem Beispiel geht von folgenden Voraussetzungen aus:
 In diesem Beispiel wird die Verwendung der [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync)-Methode der [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx)-Klasse veranschaulicht, um eine App oder ein Add-On mit bekannter [Store-ID](in-app-purchases-and-trials.md#store-ids) zu erwerben. Eine vollständige Beispielanwendung finden Sie im [Store-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
+[!code-csharp[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
 
 ## <a name="video"></a>Video
 

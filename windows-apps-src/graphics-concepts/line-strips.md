@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 869f0ac2b255c0dee231828f6d9064a917668821
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d17a79c14e981ab0c2c0414074aff17c90a0b478
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646375"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291628"
 ---
 # <a name="line-strips"></a>Zeilenstrips
-
 
 Ein Zeilenstrip ist ein Grundtyp, der aus verbundenen Zeilensegmenten besteht. Die Anwendung kann Zeilenstrips verwenden, um offene Polygone zu erstellen. Bei einem geschlossenes Polygon handelt es sich um ein Polygon, deren letzte Vertex über ein Liniensegment mit ihrem ersten Scheitelpunkt verbunden ist. Wenn die Anwendung Polygone auf Zeilenstrips basiert erstellt, ist nicht sichergestellt, dass die Vertizes notwendigerweise komplanar sind.
 
@@ -28,7 +27,7 @@ Die folgende Abbildung zeigt einen gerenderten Zeilenstrip.
 
 Der folgende Code zeigt, wie Vertizes für diesen Zeilenstrip erstellt werden.
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -47,7 +46,7 @@ CUSTOMVERTEX Vertices[] =
 
 Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Zeilenstrip in Direct3D rendern.
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

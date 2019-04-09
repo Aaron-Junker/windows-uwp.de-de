@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Technologie, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 53616e572be6051d096c095f9587c498b769a6af
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1c5c6bb9bc2dadc89811c18c0aa844b899e52cf1
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623305"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162705"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Spieletechnologien für UWP-Apps
 
@@ -323,7 +323,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
 
 Die [Xbox Live Creators-Programm](https://developer.microsoft.com/games/xbox/xboxlive/creator) kann jeder Entwickler zum Integrieren von Xbox Live in ihre UWP-Spiel, und Veröffentlichen von Xbox One und Windows 10. Integrieren Sie soziale Xbox Live-Funktionen wie Anmelden, Präsenzinformationen, Ranglisten und mehr mit minimaler Entwicklungszeit in Ihre Titel. Die sozialen Xbox Live-Features wurden entwickelt, damit Sie Ihre Zielgruppe organisch auf bis zu 55 Millionen aktive Spieler erweitern können.
 
-Treten Sie dem [ID@Xbox](https://www.xbox.com/developers/id) bei, wenn Sie Zugriff auf weitere Xbox Live-Funktionen wünschen, dedizierte Marketing- und Entwicklungsunterstützung benötigen oder im allgemeinen Xbox One-Store vertreten sein möchten. Um festzustellen, welche Features für das Xbox Live Creators-Programm und das ID@Xbox-Programm verfügbar sind, wechseln Sie auf die [Tabelle der Features](../xbox-live/developer-program-overview.md#feature-table).
+Treten Sie dem [ID@Xbox](https://www.xbox.com/developers/id) bei, wenn Sie Zugriff auf weitere Xbox Live-Funktionen wünschen, dedizierte Marketing- und Entwicklungsunterstützung benötigen oder im allgemeinen Xbox One-Store vertreten sein möchten. Um festzustellen, welche Features für das Xbox Live Creators-Programm und das ID@Xbox-Programm verfügbar sind, wechseln Sie auf die [Tabelle der Features](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table).
 
 Weitere Informationen finden Sie unter [Hinzufügen von Xbox Live zu Ihrem Spiel](e2e.md#adding-xbox-live-to-your-game).
 

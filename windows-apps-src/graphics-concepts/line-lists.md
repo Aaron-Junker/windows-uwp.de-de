@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 43013dc820c0f0f67df2e9502d3c57c77e03f250
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ac66066a4140ace5905ff6bc52a7b1290341beea
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599245"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291585"
 ---
 # <a name="line-lists"></a>Zeilenlisten
-
 
 Bei einer Zeilenliste handelt es sich um eine Liste isolierter Zeilensegmente. Zeilenlisten sind hilfreich für Aufgaben wie das Hinzufügen von Schneeregen oder Starkregen zu einer 3D-Szene. Anwendungen erstellen eine Zeilenliste, indem Sie eine Reihe von Vertizes ausfüllen. Beachten Sie, dass die Anzahl der Vertizes in einer Zeilenliste eine gerade Zahl größer oder gleich 2 sein muss.
 
@@ -33,7 +32,7 @@ Sie können einer Zeilenliste Materialien und Texturen zuweisen. Die Farben des 
 
 Der folgende Code zeigt, wie Vertizes für diese Zeilenliste erstellt werden.
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -52,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 Im folgenden Codebeispiel wird veranschaulicht, wie Sie eine Zeilenliste in Direct3D rendern.
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

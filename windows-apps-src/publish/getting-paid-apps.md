@@ -2,16 +2,16 @@
 Description: Informationen Sie zu Zahlungen für Ihre apps, Add-ons (in-app-Produkte) empfangen und Ergebnis ankündigen.
 title: Bezahlung
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 10/31/2018
+ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, UWP, Bezahlung, App-Verkäufe, App-Erlöse, Auszahlung, Store-Gebühr, Auszahlungssperre, Prozentsatz
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d59519e23955b53b32d2178e37e75f195fd54eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 293f24122129e56fbb1521a0d3dd7e2ff51e4923
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596495"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244106"
 ---
 # <a name="getting-paid"></a>Bezahlung
 Hier ist einige wichtige Informationen über die Zahlung für Ihre apps, Add-ons und Werbung Ergebnis erhalten.
@@ -23,7 +23,7 @@ Hier ist einige wichtige Informationen über die Zahlung für Ihre apps, Add-ons
 
 Wenn Sie sich [für ein Entwicklerkonto registrieren](https://go.microsoft.com/fwlink/p/?LinkID=615100), akzeptieren Sie die [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). In dieser Vereinbarung ist die Geschäftsbeziehung zwischen Ihnen und Microsoft in Bezug auf den Verkauf von Apps im Microsoft Store erläutert, einschließlich der Store-Gebühr, die Microsoft für jeden Verkauf erhebt.
 
-In den meisten Fällen beträgt die Store-Gebühr 30 %. Die Gebühren sind in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) offiziell definiert. Lesen Sie bei Fragen immer in diesem Dokument nach.
+Die Gebühren sind in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) offiziell definiert. Lesen Sie bei Fragen immer in diesem Dokument nach.
 
 Die Microsoft Store-Gebühr gilt für alle vom Microsoft Store erfassten App-Verkäufe einschließlich Add-Ons.
 

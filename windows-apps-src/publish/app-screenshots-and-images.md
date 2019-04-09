@@ -2,16 +2,16 @@
 Description: Sie können die Bildschirmfotos, Logos und andere Grafikobjekte (z. B. Trailer und Werbebilder) auswählen, die im Store-Eintrag Ihrer App enthalten sein sollen.
 title: App-Screenshots, -Bilder und -Trailer
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, Trailer, Video, Screenshot, Bild, Symbol, Store-Eintrag, Store-Eintragsbilder
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a27763d76d2be65c7e0d2c6ccaeb0cd13123bdae
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610185"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244307"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>App-Screenshots, -Bilder und -Trailer
 
@@ -128,7 +128,7 @@ Befolgen Sie folgende Empfehlungen, damit Ihre Trailer effektiv sind:
 
 Sie müssen auch die unten genannten Anforderungen erfüllen.
 
-**So fügen Sie zu Ihrem Angebot Nachspänne hinzu:**
+**So fügen Sie Trailer zu Ihrem Eintrag hinzu:**
 1. Laden Sie die **Videodatei** Ihres Trailers im angegebenen Feld hoch. Ein Dropdownfeld wird auch angezeigt für den Fall, dass Sie einen Trailer wiederverwenden möchten, den Sie bereits hochgeladen haben (z. B. für einen Store-Eintrag in einer anderen Sprache).
 2. Nachdem Sie den Trailer hochgeladen haben, müssen Sie ein **Miniaturbild** dafür hochladen. Dies muss eine PNG-Datei mit 1920 x 1080 Pixeln sein. In der Regel handelt es sich um ein Standbild aus dem Trailer.
 3. Klicken Sie auf das Stiftsymbol, um einen **Titel** für Ihren Trailer hinzuzufügen (maximal 255 Zeichen).
@@ -144,7 +144,7 @@ Um einen Trailer aus einem Eintrag zu entfernen, klicken Sie auf das **X** neben
 
 Wenn Sie Ihre Trailer bereitstellen, müssen Sie die folgenden Anforderungen erfüllen:
 
-- Das Videoformat muss MOV oder MP4 sein. 
+- Das Videoformat muss MOV oder MP4 sein. Wenn Sie 4-KB-Video hochladen, wird nur MP4 unterstützt.
 - Die Videodauer sollte nicht 60 Sekunden überschreiten.
 - Die Dateigröße des Trailers sollte 2 GB nicht überschreiten. 
 - Die Videoauflösung muss 1920 x 1080 Pixel oder 3840 x 2160 Pixel sein.
@@ -158,61 +158,19 @@ Es gibt weitere Anforderungen je nach Typ der Datei.
 
 #### <a name="mov"></a>MOV
 
-<table>
-<tr>
-<td>
+| Video | Audio | 
+| --- | --- | 
+| <ul><li>1080p ProRes (bei Bedarf HQ)</li><li>Native Bildfrequenz; 29,97 BpS bevorzugt</li></ul> | <ul><li>Stereo erforderlich</li><li>Empfohlener Audiopegel: -16 LKFS/LUFS</li></ul> |
 
-**Video:**
-
-<ul>
-<li>1080p ProRes (bei Bedarf HQ)</li>
-<li>Native Bildfrequenz; 29,97 BpS bevorzugt</li>
-</ul>
-</td>
-<td>
-
-**Audio:**
-
-<ul>
-<li>Stereo erforderlich</li>
-<li>Empfohlener Audiopegel: -16 LKFS/LUFS</li>
-</ul> 
-</td>
-</tr>
-</table>
 
 #### <a name="mp4"></a>MP4
 
-<table>
-<tr>
-<td>
+| Video | Audio |
+| --- | --- |
+| <ul><li>Codec: [H.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressiver Scan (kein Interlacing)</li><li>High Profile</li><li>2 aufeinanderfolgende B-Frames</li><li>Geschlossene GOP. GOP der Hälfte der Bildfrequenz</li><li>CABAC</li><li>50 MB/s </li><li>Farbraum: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Kanäle: Stereo oder Surround sound</li><li>Abtastrate: 48 kHz</li><li>Audio Bitrate: 384 KB/s für Stereosound, 512 KB/s für die Surroundsound</li></ul> |
 
-**Video:**
-
-<ul>
-<li>Codec: H.264</li>
-<li>Progressiver Scan (kein Interlacing)</li>
-<li>High Profile</li>
-<li>2 aufeinanderfolgende B-Frames</li>
-<li>Geschlossene GOP. GOP der Hälfte der Bildfrequenz</li>
-<li>CABAC</li>
-<li>50 MB/s </li>
-<li>Farbraum: 4.2.0</li>
-</ul>
-</td>
-<td>
-
-**Audio:**
-
-<ul>
-<li>Codec: AAC-LC</li>
-<li>Kanäle: Stereo oder Surround sound</li>
-<li>Abtastrate: 48 kHz</li>
-<li>Audio Bitrate: 384 KB/s für Stereosound, 512 KB/s für die Surroundsound</li>
-</ul>
-</td>
-</tr>
-</table>
+> [!WARNING]
+> Kunden können nicht über die Audiowiedergabe für MP4-Dateien, die mit Codecs, die als AVC1 codiert.
 
 Für H.264-Mezzanine-Dateien wird Folgendes empfohlen:
 - Behälter: MP4

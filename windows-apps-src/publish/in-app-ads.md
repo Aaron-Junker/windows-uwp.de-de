@@ -2,16 +2,16 @@
 Description: Wenn Ihre app anzeigen, die mit dem Microsoft Advertising SDK angezeigt wird, verwenden Sie der In-app-Werbung-Seite des Partner Center, um die Verwendung der Ads zu verwalten.
 title: In-App-Anzeigen
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.date: 10/31/2018
+ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cfdc4bd81a96d3bbdb2dd369cbdd0444ca22ea4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4b8fc913818d5abe3317582cc18d5cb676a7a2fe
+ms.sourcegitcommit: 9f23bc9265c13f7ccedbc826261ceed2aff5ab83
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658025"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417056"
 ---
 # <a name="in-app-ads"></a>In-App-Anzeigen
 
@@ -117,7 +117,7 @@ Die folgende Tabelle enthält die kostenpflichtigen Netzwerke, die wir derzeit f
 | Outbrain |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Outbrain](https://www.outbrain.com/). |  Banneranzeigen, Banner-Interstitialwerbung  |
 | Revcontent |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Revcontent](https://www.revcontent.com/). |  Banner, nativ  |
 | Smaato |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Smaato](https://www.smaato.com/). |  Banner  |
-| Smartclip |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Smartclip](https://www.smartclip.com/). |  Video-Interstitialanzeigen  |
+| Smartclip |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Smartclip](http://www.smartclip.com/). |  Video-Interstitialanzeigen  |
 | SpotX |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [SpotX](https://www.spotx.tv/). |  Video-Interstitialanzeigen  |
 | Taboola |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Taboola](https://www.taboola.com/). |  Banner  |
 | Undertone | Wählen Sie diese Option, um die Werbung von dienen [Undertone](https://www.undertone.com/). | Banner interstitial |

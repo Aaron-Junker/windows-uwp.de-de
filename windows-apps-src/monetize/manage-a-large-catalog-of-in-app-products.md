@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, In-App-Käufe, IAPs, Add-Ons, Katalog, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 2335e09253570d09c33422d2f5ba4179697e4ea7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6b6c799c0bbf05e113bfc3d28816c6600d678f18
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637355"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334718"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Verwalten eines großen Katalogs von In-App-Produkten
 
@@ -24,7 +24,7 @@ Um diese Funktionalität zu aktivieren, erstellen Sie einige wenige Produkteintr
 
 Der Store verwendet nur die *offerId* aus der Kaufanforderung im entsprechenden [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392). Mit diesem Verfahren werden die Informationen, die ursprünglich bei der [Eintragung des In-App-Produkts im Store](../publish/add-on-submissions.md) bereitgestellt wurden, nicht direkt geändert.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 -   In diesem Thema wird die Store-Unterstützung für die Darstellung mehrerer In-App-Angebote mithilfe eines einzelnen im Store aufgeführten In-App-Produkts erläutert. Wenn Sie mit In-App-Käufen noch nicht vertraut sind, lesen Sie [Aktivieren von In-App-Produktkäufen](enable-in-app-product-purchases.md). Dort finden Sie Lizenzinformationen und eine Anleitung zur richtigen Eintragung Ihres In-App-Kaufs im Store.
 -   Wenn Sie zum ersten Mal Code für neue In-App-Angebote schreiben und testen, müssen Sie anstelle des [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779766)-Objekts das [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779765)-Objekt verwenden. Auf diese Weise können Sie überprüfen, ob die Lizenzlogik simulierte Aufrufe an den Lizenzserver und nicht an den Liveserver verwendet. Zu diesem Zweck müssen Sie die Datei mit dem Namen WindowsStoreProxy.xml in % USERPROFILE% anpassen\\AppData\\lokalen\\Pakete\\&lt;Paketname&gt;\\LocalState\\ Microsoft\\Windows Store\\ApiData. Diese Datei wird vom Simulator in Microsoft Visual Studio erstellt, wenn Sie Ihre App zum ersten Mal ausführen. Sie können jedoch auch eine benutzerdefinierte Version dieser Datei zur Laufzeit laden. Weitere Informationen finden Sie unter [Verwenden der Datei „WindowsStoreProxy.xml“ mit CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
@@ -35,7 +35,7 @@ Der Store verwendet nur die *offerId* aus der Kaufanforderung im entsprechenden 
 Die Kaufanforderung für ein bestimmtes Produkt in einem umfangreichen Katalog wird ähnlich gehandhabt wie andere In-App-Kaufanforderungen. Wenn Ihre App die neue [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)-Methodenüberladung aufruft, stellt die App sowohl ein *OfferId*- als auch ein [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263390)-Objekt bereit, aufgefüllt mit dem Namen des In-App-Produkts.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#MakePurchaseRequest)]
+[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#MakePurchaseRequest)]
 
 ## <a name="report-fulfillment-of-the-in-app-offer"></a>Melden der Erfüllung des In-App-Angebots
 
@@ -46,7 +46,7 @@ Wie bereits erwähnt, verwendet der Store nur bereitgestellte Angebotsinformatio
 Der folgende Code veranschaulicht den Erfüllungsaufruf sowie ein Muster für Meldungen auf der Benutzeroberfläche, in das die angebotsspezifischen Informationen eingefügt werden. Da keine produktspezifischen Informationen vorhanden sind, werden im Beispiel Informationen aus [ListingInformation](https://msdn.microsoft.com/library/windows/apps/br225163) des Produkts verwendet.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#ReportFulfillment)]
+[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#ReportFulfillment)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 

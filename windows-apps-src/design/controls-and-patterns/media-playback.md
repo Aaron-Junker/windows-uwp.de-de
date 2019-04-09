@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: afda713e4a3d0ae30a4ee1ad9e9308d835062108
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a39faf77237596179486eb6c1a0a59a40049155c
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640025"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58914010"
 ---
 # <a name="media-player"></a>Media Player
 
@@ -43,8 +43,8 @@ Verwenden Sie einen Mediaplayer, wenn Sie Audio- oder Videodateien in Ihrer App 
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/MediaPlayerElement">MediaPlayerElement</a> oder <a href="xamlcontrolsgallery:/item/MediaPlayer">MediaPlayer</a> in Aktion zu sehen.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -87,7 +87,7 @@ Das Layout mit doppelzeiligen Steuerelementen (siehe unten) wird für die meiste
 
 ![Beispiel für MTC-Steuerelemente, Doppelzeile](images/controls/mtc_double_inprod.png)
 
-**Informationssystem-Medientypen Transportsteuerelemente**
+**Steuerelemente für den Systemmedientransport**
 
 Das [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) wird automatisch in die Mediensteuerung des Systems integriert. Die Medientransportsteuerelemente des Systems sind die Steuerelemente, die angezeigt werden, wenn Hardwaretasten für Medien betätigt werden, z. B. die Medientasten auf Tastaturen. Weitere Informationen finden Sie unter [SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn278677).
 
@@ -173,7 +173,7 @@ Falls für Ihre App jedoch der Zugriff auf die **Musik**- oder **Videoordner** o
 
 Das [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847)-Element benötigt keine besonderen Funktionen für den Zugriff auf Dateien im lokalen Dateisystem (etwa die Ordner **Musik** oder **Video** des Benutzers), da Benutzer die vollständige Kontrolle darüber haben, auf welche Datei zugegriffen wird. Aus Sicherheits- und Datenschutzgründen ist es am sinnvollsten, die Anzahl der von der App verwendeten Funktionen möglichst gering zu halten.
 
-**Zum Öffnen von lokaler Medien, die mithilfe der fileopenpicker-Klasse**
+**So öffnen Sie lokale Medien mit FileOpenPicker**
 
 1.  Rufen Sie [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) auf, um dem Benutzer die Auswahl einer Mediendatei zu ermöglichen.
 
@@ -246,7 +246,7 @@ Unten sind einige Situationen aufgeführt, in denen Sie die Displayanforderung f
 
 > **Hinweis**&nbsp;&nbsp; Wenn [MediaPlayerElement.IsFullWindow](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) auf „true“ gesetzt ist und Medien wiedergegeben werden, wird die Deaktivierung der Anzeige automatisch verhindert.
 
-**Auf den Bildschirm aktiv bleibt.**
+**So verhindern Sie das Abblenden/Ausschalten des Bildschirms**
 
 1.  Erstellen einer globalen [DisplayRequest](https://msdn.microsoft.com/library/windows/apps/br241816)-Variable. Initialisieren Sie sie mit dem Wert NULL.
 ```csharp
@@ -259,8 +259,9 @@ private DisplayRequest appDisplayRequest = null;
 3.  Rufen Sie [RequestRelease](https://msdn.microsoft.com/library/windows/apps/br241819) auf, um die Displayanfrage freizugeben, wenn die Videowiedergabe beendet, angehalten oder durch einen Wiedergabefehler unterbrochen wird. Falls für die App keine aktiven Displayanforderungen mehr vorhanden sind, schont Windows den Akku, indem das Display abgeblendet (und schließlich ausgeschaltet) wird, wenn das Gerät nicht verwendet wird.
 
     Jedes [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) hat eine [PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) vom Typ [MediaPlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx), die verschiedene Aspekte der Medienwiedergabe steuert wie [PlaybackRate](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx), [PlaybackState](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) und [Position](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx). Hier wenden Sie das Ereignis [PlaybackStateChanged](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) auf  [MediaPlayer.PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) an, um Situationen zu erkennen, in denen die Displayanfrage freigeben werden sollte. Verwenden Sie dann die [NaturalVideoHeight](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx)-Eigenschaft, um festzustellen, ob eine Audio- oder Videodatei wiedergegeben wird, und lassen Sie den Bildschirm nur eingeschaltet, wenn eine Videodatei wiedergegeben wird.
+
     ```xaml
-<MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
+    <MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
     ```
 
     ```csharp
@@ -396,4 +397,4 @@ Die Standardsteuerelemente wurden für die Medienwiedergabe optimiert. Sie könn
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Befehlsdesigngrundlagen für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/dn958433)
-- [Grundlagen von inhaltsdesign für UWP-apps](https://msdn.microsoft.com/library/windows/apps/dn958434)
+- [Grundlagen des Inhaltsdesigns für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/dn958434)

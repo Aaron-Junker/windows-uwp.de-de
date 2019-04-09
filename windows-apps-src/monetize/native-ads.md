@@ -5,12 +5,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Ad-Steuerelement, native Anzeige
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e9df87cd214d3d03f25c674ec80a73fedf53d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cb77f7f2622a06334ee35ec61e18b3b01f98bdb
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628065"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335018"
 ---
 # <a name="native-ads"></a>Native Anzeigen
 
@@ -21,7 +21,7 @@ Für Werbekunden bieten native anzeigen perfekte Platzierungen, da Anzeigen-Umge
 > [!NOTE]
 > Native Anzeigen werden derzeit nur für XAML-basierte UWP-Apps für Windows 10 unterstützt. Die Unterstützung für UWP-Apps mit HTML und JavaScript ist für eine zukünftige Version des Microsoft Advertising-SDK geplant.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 * Installieren Sie das [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) mit Visual Studio 2015 oder einer neueren Version von Visual Studio. Installationsanweisungen finden Sie in [diesem Artikel](install-the-microsoft-advertising-libraries.md).
 
@@ -43,21 +43,21 @@ Befolgen Sie diesen Anweisungen, um eine native Anzeige in Ihrer App zu integrie
 
 4. Fügen Sie in der geeigneten Codedatei in Ihrer App (z. B. in „MainPage.xaml.cs“ oder einer Codedatei für eine andere Seite) den folgenden Namespaceverweis hinzu.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
 5.  Deklarieren Sie an einer geeigneten Stelle in Ihrer App (z. B. in ```MainPage``` oder einer anderen Seite) ein [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2)-Objekt und mehrere Zeichenfolgenfelder, die die Anwendungs-ID und Anzeigeneinheits-ID für die native Anzeige darstellen. Im folgenden Codebeispiel werden die Felder `myAppId` und `myAdUnitId` den [Testwerten](set-up-ad-units-in-your-app.md#test-ad-units) für native Anzeigen zugewiesen.
     > [!NOTE]
     > Jedes **NativeAdsManagerV2**-Objekt verfügt über eine entsprechende *Anzeigeneinheit*, die durch unsere Dienste zum Anzeigen des nativen Anzeigensteuerelements verwendet wird, und jede Anzeigeneinheit besteht aus einer *Anzeigeneinheits-ID* und *Anwendungs-ID*. In den folgenden Schritten weisen Sie dem Steuerelement eine Anzeigeneinheits-ID und Anwendungs-ID zu. Dieser Test Werte können nur in einer Testversion Ihrer App verwendet werden. Bevor Sie Ihre app in den Store veröffentlichen, müssen Sie [ersetzen Sie diese Werte mit live-Werte testen](#release) von Partner Center.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
 6.  Instanziieren Sie in Code, der beim Start ausgeführt wird (z. B. im Konstruktor der Seite) das **NativeAdsManagerV2**-Objekt, und verbinden Sie Ereignishandler für die Ereignisse **AdReady** und **ErrorOccurred** des Objekts.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
 7.  Wenn Sie bereit sind, eine native Anzeige anzuzeigen, rufen Sie die **RequestAd**-Methode auf, um eine Anzeige abzurufen.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
 8.  Wenn eine native Anzeige für Ihre App bereit ist, wird Ihr [AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.adready)-Ereignishandler aufgerufen und ein [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2)-Objekt für die native Anzeige wird im *e*-Parameter übergeben. Verwenden Sie die **NativeAdV2**-Eigenschaften, um jedes Element der nativen Anzeige abzurufen und diese Elemente auf der Seite anzuzeigen. Achten Sie darauf, dass Sie auch die **RegisterAdContainer**-Methode aufrufen, um die UI-Element zu registrieren, die als Container für die native Anzeige dienen. Dies ist erforderlich, um Anzeigenaufrufe und -klicks ordnungsgemäß nachzuverfolgen.
     > [!NOTE]
@@ -93,11 +93,11 @@ Befolgen Sie diesen Anweisungen, um eine native Anzeige in Ihrer App zu integrie
 
     Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen **AdReady**-Ereignishandler nutzen, der jedes Element der nativen Anzeige in den Steuerelementen im **StackPanel** angezeigt und dann die **RegisterAdContainer**-Methode zur Registrierung des **StackPanel** aufruft. Dieser Code geht davon aus, dass er aus der CodeBehind-Datei für die Seite ausgeführt wird, die **StackPanel** enthält.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
 9.  Definiert einen Ereignishandler für das **ErrorOccurred**-Ereignis zum Behandeln von Fehlern im Zusammenhang mit der nativen Anzeige. Das folgende Beispiel schreibt Fehlerinformationen in das Visual Studio **Ausgabe**-Fenster während der Tests.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 
 10.  Kompilieren und Ausführen der App, um eine Testanzeige zu sehen.
 

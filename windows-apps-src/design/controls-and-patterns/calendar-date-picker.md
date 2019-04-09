@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d50554baf412c7329521df68eb19f58340387f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c899334b43353fbc69c3080cfd329df0ef9e0797
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658655"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913970"
 ---
 # <a name="calendar-date-picker"></a>Kalenderdatumsauswahl
 
@@ -44,8 +44,8 @@ Weitere Informationen zur Auswahl des passenden Steuerelements finden Sie im Art
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/CalendarDatePicker">die App zu öffnen und CalendarDatePicker in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -91,7 +91,7 @@ Wenn Sie das Datum in Code festlegen, wird der Wert durch die Eigenschaften [Min
 Über das Ereignis [DateChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) können Sie sich bei Änderungen am Wert „Date“ benachrichtigen lassen.
 
 > [!NOTE]
-Wichtige Informationen zu Datumswerten finden Sie im Artikel zu Datums- und Uhrzeitsteuerelementen unter [DateTime- und Calendar-Werte](date-and-time.md#datetime-and-calendar-values).
+> Wichtige Informationen zu Datumswerten finden Sie im Artikel zu Datums- und Uhrzeitsteuerelementen unter [DateTime- und Calendar-Werte](date-and-time.md#datetime-and-calendar-values).
 
 ### <a name="setting-a-header-and-placeholder-text"></a>Festlegen von Kopfzeilen- und Platzhaltertext
 
@@ -113,4 +113,4 @@ Als Standardtext für den Platzhalter wird „Datum auswählen“ angezeigt. Sie
 - [Datums- und Uhrzeitsteuerelemente](date-and-time.md)
 - [Kalenderansicht](calendar-view.md)
 - [Datumsauswahl](date-picker.md)
-- [Uhrzeitauswahl](time-picker.md)
+- [Zeitauswahl](time-picker.md)

@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, In-App-Einkäufe, IAPs, Belege, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6cae88e57a61e6d4e982f1eac7e65582861ef5d2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605725"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335008"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Überprüfen von Produktkäufen anhand von Belegen
 
@@ -92,7 +92,7 @@ Um die Authentizität eines Belegs zu überprüfen, muss das Back-End-System (ei
 Im Folgenden sehen Sie ein Beispiel für diesen Überprüfungsvorgang. Dieser Code wird in einer .NET Framework-Konsolenanwendung ausgeführt, die einen Verweis auf die **System.Security**-Assembly enthält.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
 
@@ -115,7 +115,7 @@ Das Stammelement dieser Datei ist das Element **Receipt**, das Informationen zu 
 |  Attribut  |  Beschreibung   |
 |-------------|-------------------|
 |  **Version**  |    Die Versionsnummer des Belegs.            |
-|  **"Certificateid"**  |     Der Fingerabdruck des Zertifikats, der für die Signierung des Belegs verwendet wurde.          |
+|  **CertificateId**  |     Der Fingerabdruck des Zertifikats, der für die Signierung des Belegs verwendet wurde.          |
 |  **ReceiptDate**  |    Das Datum, an dem der Beleg signiert und heruntergeladen wurde.           |  
 |  **ReceiptDeviceId**  |   Identifiziert das Gerät, das für die Anforderung dieses Belegs verwendet wurde.         |  |
 
@@ -129,9 +129,9 @@ Dieses Element enthält Kaufinformationen für die aktuelle App.
 
 |  Attribut  |  Beschreibung   |
 |-------------|-------------------|
-|  **ID**  |    Identifiziert den Kauf.           |
-|  **App-ID**  |     Der Paketfamilienname-Wert, den das Betriebssystem für die App verwendet.           |
-|  **"LicenseType"**  |    **Full**, wenn der Benutzer die Vollversion der App gekauft hat. **Trial**, wenn der Benutzer eine Testversion der App heruntergeladen hat.           |  
+|  **Id**  |    Identifiziert den Kauf.           |
+|  **AppId**  |     Der Paketfamilienname-Wert, den das Betriebssystem für die App verwendet.           |
+|  **LicenseType**  |    **Full**, wenn der Benutzer die Vollversion der App gekauft hat. **Trial**, wenn der Benutzer eine Testversion der App heruntergeladen hat.           |  
 |  **PurchaseDate**  |    Das Datum, an dem die App gekauft wurde.          |  |
 
 <span id="productreceipt" />
@@ -144,10 +144,10 @@ Dieses Element enthält Informationen zu einem In-App-Kauf für die aktuelle App
 
 |  Attribut  |  Beschreibung   |
 |-------------|-------------------|
-|  **ID**  |    Identifiziert den Kauf.           |
-|  **App-ID**  |     Identifiziert die App, über die der Benutzer den Kauf durchgeführt hat.           |
-|  **"ProductID"**  |     Identifiziert das gekaufte Produkt.           |
-|  **productType**  |    Legt den Produkttyp fest. Zurzeit wird nur der Wert **Durable** unterstützt.          |  
+|  **Id**  |    Identifiziert den Kauf.           |
+|  **AppId**  |     Identifiziert die App, über die der Benutzer den Kauf durchgeführt hat.           |
+|  **ProductId**  |     Identifiziert das gekaufte Produkt.           |
+|  **ProductType**  |    Legt den Produkttyp fest. Zurzeit wird nur der Wert **Durable** unterstützt.          |  
 |  **PurchaseDate**  |    Das Datum, an dem der Kauf erfolgte.          |  |
 
  
