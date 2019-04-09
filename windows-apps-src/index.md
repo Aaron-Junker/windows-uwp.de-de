@@ -9,12 +9,12 @@ ms.date: 08/4/2017
 keywords: Windows UWP, Universelle Windows-Plattform, Windows-Runtime-APIs, Windows-API, Windows-API-Referenz, WinRT-API, Referenz Windows-API, UWP-API, UWP-API-Referenz, UWP entwickeln, UWP entwerfen, UWP veröffentlichen
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: ce1923fa071344a848b4b0c4fab1ed6da6da48f7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 21e6b168ccd656a15fc8efa70e8cded3f12916d4
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582924"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162625"
 ---
 # <a name="universal-windows-platform-documentation"></a>Dokumentation für die universelle Windows-Plattform
 Mit der universellen Windows-Plattform (UWP) können Sie Apps für beliebige Windows-Geräte entwickeln – z. B. PCs, Smartphones, Xbox One, HoloLens und mehr – und im Microsoft Store veröffentlichen.
@@ -162,7 +162,7 @@ Mit der universellen Windows-Plattform (UWP) können Sie Apps für beliebige Win
                             <a href="xbox-apps/index.md">UWP auf Xbox One</a>
                         </p>
                         <p>
-                            <a href="xbox-live/index.md">Xbox Live</a>
+                            <a href="https://docs.microsoft.com/gaming/xbox-live">Xbox Live</a>
                         </p>
                     </div>
                 </div>
