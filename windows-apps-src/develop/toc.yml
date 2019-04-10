@@ -1,4 +1,6 @@
 items:
+- name: Übersicht
+  href: index.md
 - name: App-Typen
   items:
   - name: Bildungs-Apps
@@ -482,15 +484,19 @@ items:
       - name: Zugriff auf Analysedaten
         href: ../monetize/access-analytics-data-using-windows-store-services.md
         items:
+        - name: Abrufen von Kaufdaten für Ihre Spiele und Apps
+          href: ../monetize/acquisitions-data.md
+        - name: Abrufen von Add-On-Kaufdaten für Ihre Spiele und Apps
+          href: ../monetize/add-on-acquisitions-data.md
         - name: UWP-Apps
           items:
           - name: Abrufen von Daten für Käufe und Installationen
             items:
-            - name: Abrufen von App-Käufen
+            - name: Abrufen von App-Käufen (Legacy)
               href: ../monetize/get-app-acquisitions.md
             - name: Abrufen von App-Installationen
               href: ../monetize/get-app-installs.md
-            - name: Abrufen von App-Erwerbstrichterdaten
+            - name: Abrufen von App-Erwerbstrichterdaten (Legacy)
               href: ../monetize/get-acquisition-funnel-data.md
             - name: Abrufen von App-Konvertierungen nach Kanal
               href: ../monetize/get-app-conversions-by-channel.md
@@ -762,23 +768,6 @@ items:
       items:
       - name: Optionale Pakete mit ausführbarem Code
         href: ../packaging/optional-packages-with-executable-code.md
-    - name: Installieren von UWP-Apps mit dem App-Installer
-      href: ../packaging/appinstaller-root.md
-      items:
-      - name: Erstellen einer App-Installer-Datei mit Visual Studio
-        href: ../packaging/create-appinstallerfile-vs.md
-      - name: Installieren von UWP-Apps von einer Webseite
-        href: ../packaging/installing-UWP-apps-web.md
-      - name: Installieren einer verwandten Gruppe mithilfe einer App-Installer-Datei
-        href: ../packaging/install-related-set.md
-      - name: Problembehandlung bei der Installation mit der App-Installer-Datei
-        href: ../packaging/troubleshoot-appinstaller-issues.md
-      - name: Installieren einer UWP-App aus einer Azure-Web-App
-        href: ../packaging/web-install-azure.md
-      - name: Installieren einer UWP-App von einem IIS-Server
-        href: ../packaging/web-install-iis.md
-      - name: Hosten von UWP-App-Paketen auf AWS für die Webinstallation
-        href: ../packaging/web-install-aws.md
     - name: Installieren von Apps mit dem Tool „WinAppDeployCmd.exe“
       href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
     - name: Deklarationen von App-Funktionen
@@ -949,11 +938,20 @@ items:
       href: ../composition/composition-native-interop.md
     - name: Anpassen der Benutzeroberfläche
       href: ../composition/composition-tailoring.md
-    - name: Verwenden von XAML
+    - name: Verwenden der UWP-XAML
       href: ../composition/using-the-visual-layer-with-xaml.md
       items:
       - name: XAML-Beleuchtung
         href: ../composition/xaml-lighting.md
+    - name: Modernisieren von Desktop-Apps
+      href: ../composition/visual-layer-in-desktop-apps.md
+      items:
+      - name: Verwenden von WPF
+        href: ../composition/using-the-visual-layer-with-wpf.md
+      - name: Verwenden von Windows Forms
+        href: ../composition/using-the-visual-layer-with-windows-forms.md
+      - name: Verwenden von Win32
+        href: ../composition/using-the-visual-layer-with-win32.md
   - name: Windows as a Service
     href: ../updates-and-versions/application-development-for-windows-as-a-service.md
   - name: Komponenten für Windows-Runtime
@@ -1515,9 +1513,9 @@ items:
       href: ../threading-async/use-a-timer-to-submit-a-work-item.md
     - name: Verwenden von Windows-Runtime-Objekten in einer Multithread-Umgebung
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36d2fba58373cd35321c7787856b782b1291b12d
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582918"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822935"
