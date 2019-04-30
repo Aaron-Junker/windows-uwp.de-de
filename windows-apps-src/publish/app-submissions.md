@@ -8,7 +8,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b98ea7f1d28c4fcd63cd2d4706905578b240e126
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57643285"
@@ -16,7 +16,7 @@ ms.locfileid: "57643285"
 # <a name="app-submissions"></a>App-Übermittlungen
 
 
-Nachdem Sie Ihre [App durch die Reservierung eines Namens erstellt haben](create-your-app-by-reserving-a-name.md), können Sie mit der Veröffentlichung beginnen. Der erste Schritt besteht darin, eine ***Übermittlung** zu erstellen.
+Nachdem Sie Ihre [App durch die Reservierung eines Namens erstellt haben](create-your-app-by-reserving-a-name.md), können Sie mit der Veröffentlichung beginnen. Der erste Schritt besteht darin, eine **Übermittlung** zu erstellen.
 
 Sie beginnen mit der Einreichung, sobald Ihre App fertig und bereit für die Veröffentlichung ist. Sie können mit der Eingabe von Infos beginnen, noch bevor Sie eine einzige Codezeile programmiert haben. Updates, die Sie an der Übermittlung werden gespeichert, damit Sie zurückkehren und damit arbeiten, sobald Sie bereit sind.
 

@@ -7,7 +7,7 @@ keywords: Windows 10, Uwp, Azure Ad-Anwendung, Aad, Benutzer, Gruppe, mehrere Be
 ms.localizationpriority: medium
 ms.openlocfilehash: 326bb547ac5b0d31f5112d7d5737ddad0d592dd5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610125"
@@ -42,7 +42,7 @@ Sie können die Benutzer auswählen, die bereits in der Mandant Ihrer Organisati
 <span id="from-directory" />
 
 1.  Wählen Sie das Zahnradsymbol (in der Nähe der oberen rechten Ecke des Partner Center), und wählen Sie dann **entwicklereinstellungen**. In der **Einstellungen** , wählen Sie im Menü **Benutzer**.
-2.  Wählen Sie auf der Seite **Benutzer****Benutzer hinzufügen** aus. 
+2.  Wählen Sie auf der Seite **Benutzer** **Benutzer hinzufügen** aus. 
 3.  Wählen Sie in der angezeigten Liste einen oder mehrere Benutzer aus. Im Suchfeld können Sie nach bestimmten Benutzern suchen.
     > [!TIP]
     > Wenn Sie auf "mehr als einen Benutzer in Ihrem Partner Center-Konto hinzufügen" auswählen, müssen Sie sie der gleichen Rolle oder benutzerdefinierte Berechtigungen zuweisen. Wiederholen Sie zum Hinzufügen mehrerer Benutzer mit anderen Rollenberechtigungen die unten beschriebenen Schritte für alle Rollen oder benutzerdefinierte Berechtigungen.
@@ -148,7 +148,7 @@ Sie können Anwendungen oder Dienste, die Teil von Ihrer Organisation Azure AD Z
 ### <a name="add-azure-ad-applications-from-your-organizations-directory"></a>Hinzufügen von Azure AD-Apps aus Verzeichnis der Organisation
 
 1.  1.  Wählen Sie das Zahnradsymbol (in der Nähe der oberen rechten Ecke des Partner Center), und wählen Sie dann **entwicklereinstellungen**. In der **Einstellungen** , wählen Sie im Menü **Benutzer**.
-2. Wählen Sie auf der Seite **Benutzer****Azure AD-Anwendungen hinzufügen** aus.
+2. Wählen Sie auf der Seite **Benutzer** **Azure AD-Anwendungen hinzufügen** aus.
 3.  Wählen Sie eine oder Azure AD-Anwendungen aus der angezeigten Liste aus. Mithilfe des Suchfelds können Sie nach bestimmten Azure AD-Apps suchen.
     > [!TIP]
     > Wenn Sie auf "mehr als eine Azure AD-Anwendung mit Ihrem Partner Center-Konto hinzufügen" auswählen, müssen Sie sie der gleichen Rolle oder benutzerdefinierte Berechtigungen zuweisen. Wiederholen Sie zum Hinzufügen mehrerer Azure AD-Anwendungen mit anderen Rollenberechtigungen die unten beschriebenen Schritte für alle Rollen oder benutzerdefinierten Berechtigungen.
