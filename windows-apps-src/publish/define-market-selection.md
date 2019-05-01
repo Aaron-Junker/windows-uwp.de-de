@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Märkte, Länder, Regionen
 ms.localizationpriority: medium
-ms.openlocfilehash: 980dc41303a2689c0f86415beb6ba9adb44fe39c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3621e9c6af0daa84a9762989a14c79f35471b73c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646245"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787118"
 ---
 # <a name="define-market-selection"></a>Festlegen der Marktauswahl
 
@@ -97,7 +97,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Bosnien und Herzegowina</td>
     <td>Botsuana</td>
     <td>Bouvetinsel</td>
-    <td>Brasilien</td>
+    <td>Brazilien</td>
   </tr>
   <tr>
     <td>Britisches Territorium im Indischen Ozean</td>
@@ -434,7 +434,7 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Australien            | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Österreich              | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Belgien              | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Brasilien               | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Brazilien               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Kanada               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Chile                | Geschenkkarte       | 2,24 %                         | März 2016     |
 | China                | Geschenkkarte       | 2,24 %                         | März 2016     |
@@ -457,7 +457,7 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Neuseeland          | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Polen               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Portugal             | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Russische Föderation               | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Russland               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Saudi-Arabien         | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Singapur            | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Slowakei             | Geschenkkarte       | 2,24 %                         | März 2016     |
@@ -467,9 +467,9 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Schweden               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Schweiz          | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Taiwan               | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Türkei               | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Turkei               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Vereinigte Arabische Emirate | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Großbritannien       | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Vereinigtes Königreich       | Geschenkkarte       | 2,24 %                         | März 2016     |
 | USA        | Geschenkkarte       | 2,24 %                         | März 2016     |
 
  

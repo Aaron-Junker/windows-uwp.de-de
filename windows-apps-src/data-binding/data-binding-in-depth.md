@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: fe86656756eab9d9286d68c2a37357a9b824561e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd6620e8bfb2bba58a2bdc28d61e4855a75dd203
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636065"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63798167"
 ---
 # <a name="data-binding-in-depth"></a>Datenbindung im Detail
 
@@ -23,10 +23,12 @@ ms.locfileid: "57636065"
 -   [**{X: Bind}-Markuperweiterung**](../xaml-platform/x-bind-markup-extension.md)
 -   [**Binding-Klasse**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
--   [**"INotifyPropertyChanged"**](https://msdn.microsoft.com/library/windows/apps/BR209899)
+-   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
 > [!NOTE]
 > In diesem Thema werden die Datenbindungsfeatures ausführlich beschrieben. Eine kurze und praktische Einführung finden Sie unter [Übersicht „Datenbindung“](data-binding-quickstart.md).
+
+Dieses Thema ist über die Datenbindung in Anwendungen der universellen Windows-Plattform (UWP). Die hier beschriebenen APIs befinden sich in der [ **Windows.UI.Xaml.Data** Namespace](/uwp/api/windows.ui.xaml.data).
 
 Die Datenbindung ist eine Methode, mit der die Benutzeroberfläche Ihrer App Daten anzeigen und diese Daten optional synchronisieren kann. Mit der Datenbindung können Sie Datenaspekte von Benutzeroberflächenaspekten trennen, was zu einem einfacheren konzeptionellen Modell und besserer Lesbarkeit, Testbarkeit und Wartung Ihrer App führt.
 
@@ -673,7 +675,7 @@ ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
 </GridView>
 ```
 
-Sie haben zwei Möglichkeiten zum Implementieren des Musters „is-a-group“. Eine Möglichkeit besteht darin, eine eigene Gruppenklasse zu erstellen. Leiten Sie die Klasse von **List&lt;T&gt;** ab (wobei *T* der Typ der Elemente ist). Beispiel: `public class Author : List<BookSku>`. Die zweite Möglichkeit besteht in der Verwendung eines [LINQ](https://msdn.microsoft.com/library/bb397926.aspx)-Ausdrucks zum dynamischen Erstellen von Gruppenobjekten (und einer Gruppenklasse) aus ähnlichen Eigenschaftswerten der **BookSku**-Elemente. Dieser Ansatz, bei dem nur eine flache Liste von Elementen beibehalten wird, die ad-hoc zusammen gruppiert werden, ist typisch für eine App, die über einen Clouddienst auf Daten zugreift. Sie können Bücher beispielsweise nach Autor oder Genre gruppieren, ohne dafür spezielle Gruppenklassen wie **Author** und **Genre** zu benötigen.
+Sie haben zwei Möglichkeiten zum Implementieren des Musters „is-a-group“. Eine Möglichkeit besteht darin, eine eigene Gruppenklasse zu erstellen. Leiten Sie die Klasse von **List&lt;T&gt;** ab (wobei *T* der Typ der Elemente ist). Beispiel: `public class Author : List<BookSku>`Hyper-V-Hosts oder Hyper-V-Hostcluster in einem separaten Namespace als verwaltete Hyper-V-Hosts hinzuzufügen. Die zweite Möglichkeit besteht in der Verwendung eines [LINQ](https://msdn.microsoft.com/library/bb397926.aspx)-Ausdrucks zum dynamischen Erstellen von Gruppenobjekten (und einer Gruppenklasse) aus ähnlichen Eigenschaftswerten der **BookSku**-Elemente. Dieser Ansatz, bei dem nur eine flache Liste von Elementen beibehalten wird, die ad-hoc zusammen gruppiert werden, ist typisch für eine App, die über einen Clouddienst auf Daten zugreift. Sie können Bücher beispielsweise nach Autor oder Genre gruppieren, ohne dafür spezielle Gruppenklassen wie **Author** und **Genre** zu benötigen.
 
 Das folgende Beispiel veranschaulicht das Muster „is-a-group“ unter Verwendung von [LINQ](https://msdn.microsoft.com/library/bb397926.aspx). Dieses Mal werden die Bücher nach Genre gruppiert, wobei der Name des Genres in der Gruppenkopfzeile angezeigt wird. Dies wird durch den „Key“-Eigenschaftspfad als Verweis auf den [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx)-Wert der Gruppe angezeigt.
 
@@ -786,7 +788,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 ## <a name="xbind-and-binding-feature-comparison"></a>Vergleich der Features von {x:Bind} und {Binding}
 
-| Feature | {X:Bind} | {Binding} | Anmerkungen |
+| Feature | {X:Bind} | {Binding} | Hinweise |
 |---------|----------|-----------|-------|
 | „Path“ ist die Standardeigenschaft. | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
 | Path-Eigenschaft | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | In x:Bind ist Path standardmäßig an Page als Stamm gebunden, nicht DataContext. | 
@@ -800,7 +802,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | Mit {x:Bind} nehmen Sie eine Bindung an ein Feld vor; Path standardmäßig an Page als Stamm gebunden, damit auf jedes benannte Element über sein Feld zugegriffen werden kann. | 
 | RelativeSource: Self (Selbst) | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | Bei {x:Bind}: Benennen Sie das Element, und verwenden Sie den Namen in Path. | 
 | RelativeSource: TemplatedParent | Nicht erforderlich | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Mit {X: Bind} gibt TargetType auf "ControlTemplate" Binden an die übergeordnete Vorlage an. Für {Binding} kann die regulären vorlagenbindung in Steuerelementvorlagen den meisten Fällen verwendet werden. Verwenden Sie jedoch „TemplatedParent“, wenn Sie einen Konverter oder bidirektionale Bindungen verwenden müssen. | 
-| Quelle | Nicht erforderlich | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Für {X: Bind} können Sie direkt mithilfe der benannte Element eine Eigenschaft oder einen statischen Pfad verwenden. | 
+| Source | Nicht erforderlich | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Für {X: Bind} können Sie direkt mithilfe der benannte Element eine Eigenschaft oder einen statischen Pfad verwenden. | 
 | Modus | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | „Mode“ kann „OneTime“, „OneWay“ oder „TwoWay“ sein. Standardwert für {x:Bind} ist „OneTime“; Standardwert für {Binding} ist „OneWay“. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger kann Default, LostFocus oder PropertyChanged sein. {X:Bind} unterstützt kein „UpdateSourceTrigger=Explicit”. {x:Bind} verwendet das PropertyChanged-Verhalten in allen Fällen, außer bei „TextBox.Text“, bei dem es das LostFocus-Verhalten nutzt. | 
 

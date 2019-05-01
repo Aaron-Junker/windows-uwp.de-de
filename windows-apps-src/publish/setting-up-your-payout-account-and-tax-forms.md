@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dff4e3b37be14729abdc3262d484745a0245776
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d9d3ce38548616c561acf30038c97bdd332b67c3
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641005"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63818109"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Einrichten von Auszahlungskonten und Steuerformularen.
 
@@ -88,7 +88,7 @@ In einigen Ländern und Regionen gelten zusätzliche Anforderungen für Auszahlu
 
 Sobald die Auszahlung an Ihre Bank angewiesen wurde, muss „Form-R“ innerhalb von 30 Tagen vorliegen. Verstreicht die 30-tägige Einreichungsfrist, wird der Betrag an Microsoft zurücküberwiesen.
 
-#### <a name="russia"></a>Russische Föderation
+#### <a name="russia"></a>Russland
 
 Wenn Sie Entwickler sind und in Russland leben, müssen Sie möglicherweise Ihrer Bank Belege vorlegen, bevor diese Geldmittel auf Ihr Konto einzahlt. Wenn Sie für eine Zahlung berechtigt sind, erhalten Sie von uns folgende Belege in einer E-Mail-Nachricht:
 

@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Zeitplan, Veröffentlichung, Datum, starten
 ms.localizationpriority: medium
-ms.openlocfilehash: a1477a426a9cdf240e694efb19bd7521fcd734cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e247d59253d24fd309b26aebc450dcc7b5e9051d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597205"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787137"
 ---
 # <a name="configure-precise-release-scheduling"></a>Konfigurieren des genauen Veröffentlichungszeitplans
 
@@ -46,9 +46,9 @@ In der Dropdownliste **Release** können Sie festlegen, wann Ihre App im Store v
 
 Hier sind die Optionen, die Sie für den **Releasezeitplan** eines Produkts konfigurieren können:
 - **So bald wie möglich**: Das Produkt wird freigegeben, sobald es zertifiziert und veröffentlicht wird. Dies ist die Standardoption.
-- **am**: Das Produkt wird freigegeben, auf das Datum und Uhrzeit, die Sie auswählen. Ihnen stehen zwei zusätzliche Optionen zur Auswahl:
+- **at**: Das Produkt wird freigegeben, auf das Datum und Uhrzeit, die Sie auswählen. Ihnen stehen zwei zusätzliche Optionen zur Auswahl:
    - **UTC**: Die Zeit, die Sie auswählen, werden die Zeit (Universal Coordinated Time, UTC), damit die app-Releases gleichzeitig überall Zeit.
-   - **Lokale**: Die Zeit, die Sie auswählen, wird die Verwendung in allen Zeitzonen, die einen Markt zugeordnet sein. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
+   - **Local**: Die Zeit, die Sie auswählen, wird die Verwendung in allen Zeitzonen, die einen Markt zugeordnet sein. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
 - **nicht geplant**: Die app wird in der Store nicht verfügbar sein. Wenn Sie diese Option auswählen, können Sie die App im Store später zur Verfügung stellen, indem Sie eine neue Übermittlung erstellen und eine der anderen Optionen auswählen.
 
 

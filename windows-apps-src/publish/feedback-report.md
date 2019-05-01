@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ab7385d4c61c52b71c74fb61797be306bcc9851
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a827b316d40f9a9cc9c0a5bee0252d47d6af6036
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591825"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63791077"
 ---
 # <a name="feedback-report"></a>Feedbackbericht
 
@@ -51,7 +51,7 @@ Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite mit d
 Im Bericht finden Sie das jeweilige Feedback von Ihren Kunden. Links neben dem Feedbacktext jedes Elements wird angezeigt, wie oft das Feedback von anderen Kunden im Feedback-Hub bewertet wurde. Sie können das Feedback auf drei Arten sortieren:
 
 - **Upvoted** (Standard): Zeigt, Feedback, das Upvoted von anderen Kunden, beginnend mit dem Feedback, das die meisten Upvotes empfangen wurde.
-- **Trend**: Zeigt, Feedback, das wurde Upvoted von anderen Kunden in den letzten sieben Tagen, mit dem Feedback, das Abrufen von der letzten Aktivität ab.
+- **Trending**: Zeigt, Feedback, das wurde Upvoted von anderen Kunden in den letzten sieben Tagen, mit dem Feedback, das Abrufen von der letzten Aktivität ab.
 - **Die letzte**: Zeigt alle Feedback, das Feedback, das die zuletzt Links ab.
 
 Neben jedem Kommentar werden der Typ des Feedbacks sowie das Datum angezeigt, an dem das Feedback abgegeben wurde. Sie sehen auch die Kunden-Markt, das bestimmte Paket, die auf dem Gerät installiert wurde wurden sie verwenden, wenn sie das Feedback, das den Typ des Geräts, links und **Windows Insider** , wenn der Kunde das Feedback wird übermittelt, ein Mitglied ist das Windows-Insider-Programm.

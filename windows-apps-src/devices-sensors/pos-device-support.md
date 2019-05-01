@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5154593065ce40c5ac67a4873d58b2aac913d1f8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 865c95fe5453a038a73b397fdcf32f77f9e8defb
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663095"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63828083"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Unterstützte Point of Service-Peripheriegeräte
 
@@ -39,7 +39,7 @@ ms.locfileid: "57663095"
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Voyager 145Xg                  | 1D / 2D ¹   | USB          | Handheld     | HID POS-Scanner           |
+| Honeywell     | Voyager 145Xg                  | 1D / 2D¹   | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Voyager 1602g                  | 2D         | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Xenon 1900g                    | 2D         | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Xenon 1902g                    | 2D         | USB          | Handheld     | HID POS-Scanner           |
@@ -82,14 +82,14 @@ ms.locfileid: "57663095"
 ### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Windows Mobile-Geräte mit integrierten Barcodescanner
 | Hersteller   | Modell | Betriebssystem |
 |----------------|-------|------------------|
-| Hüttenvogel       | EF400 | Windows Mobile   |
-| Hüttenvogel       | EF500 | Windows Mobile   |
-| Hüttenvogel       | EF500R | Windows Mobile   |
+| Bluebird       | EF400 | Windows Mobile   |
+| Bluebird       | EF500 | Windows Mobile   |
+| Bluebird       | EF500R | Windows Mobile   |
 | Honeywell      | CT50   | Windows Mobile   |
 | Honeywell      | D75e | Windows Mobile   |
 | Janam          | XT2      | Windows Mobile   |
 | Panasonic      | FZ-E1 | Windows Mobile   |
-| Panasonic      | FZ + F1 |Windows Mobile   |
+| Panasonic      | FZ-F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
 | Zebra          | TC700j | Windows Mobile   |
 | HP             | Elite X3 aus "jackets" | Windows Mobile   |

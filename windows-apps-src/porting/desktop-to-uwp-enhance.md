@@ -2,16 +2,17 @@
 Description: Optimieren Sie die desktop-Anwendung für Windows 10-Benutzer mithilfe von universellen Windows-Plattform (UWP) APIs.
 Search.Product: eADQiWindows 10XVcnh
 title: Verbessern Ihrer Desktopanwendung für Windows 10
-ms.date: 10/15/2018
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e06de7d33604981e0055d9d57f774d280753db2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 55e91c96b7a978f0c90365073aa655553d4a658a
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628035"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63805658"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Verbessern Ihrer Desktopanwendung für Windows 10
 
@@ -33,11 +34,12 @@ Fügen Sie dann einen Verweis auf diese Dateien hinzu.
 
 |Datei|Pfad|
 |--|--|
-|System.Runtime.WindowsRuntime|C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319|
-|System.Runtime.WindowsRuntime.UI.Xaml|C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319|
-|System.Runtime.InteropServices.WindowsRuntime|C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\References\<*Sdk-Version*> \Windows.Foundation.UniversalApiContract\<*Version*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\References\<*Sdk-Version*> \Windows.Foundation.FoundationContract\<*Version*>|
+|System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+|System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+|System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+|windows.winmd|C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\UnionMetadata\\<*Sdk-Version*> \Facade|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\References\\<*Sdk-Version*> \Windows.Foundation.UniversalApiContract\<*Version*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Programme\Microsoft Dateien (x86) \Windows Kits\10\References\\<*Sdk-Version*> \Windows.Foundation.FoundationContract\<*Version*>|
 
 Legen Sie im Dialogfeld **Eigenschaften** die **lokale Kopie** jeder *winmd*-Datei auf **Falsch** fest.
 

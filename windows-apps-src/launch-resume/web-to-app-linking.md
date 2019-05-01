@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 176009cb3a2fb14eb5071d48d59a0b807d4c81d6
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641075"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63770363"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Aktivieren von Apps für Websites mit App-URI-Handlern
 
@@ -46,7 +46,7 @@ Wenn beispielsweise die Adresse Ihrer Website "msn.com" lautet, würden Sie den 
 </Applications>
 ```
 
-Die obige Deklaration registriert Ihre App zur Behandlung von Links vom angegebenen Host. Wenn Ihre Website mehrere Adressen hat (z. B.: m.example.com, www.example.com und example.com), fügen Sie einen separaten `<uap3:Host Name=... />` Eintrag innerhalb des `<uap3:AppUriHandler>` für die einzelnen Adressen hinzu.
+Die obige Deklaration registriert Ihre App zur Behandlung von Links vom angegebenen Host. Wenn Ihre Website mehrere Adressen aufweist (z. B.: m.example.com, Www\."example.com" und "example.com") fügen Sie dann auf eine separaten `<uap3:Host Name=... />` Eintrag in der die `<uap3:AppUriHandler>` für jede Adresse.
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>Verknüpfen Sie Ihre App und die Website mit einer JSON-Datei
 
@@ -154,7 +154,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 Sie können die Konfiguration Ihrer App und Website durch Ausführen des App-Host Registration Verifier Werkzeugs prüfen, der hier verfügbar ist:
 
-% windir%\\"System32"\\**AppHostRegistrationVerifier.exe**
+%windir%\\system32\\**AppHostRegistrationVerifier.exe**
 
 Testen Sie die Konfiguration Ihrer App und, indem Sie dieses Werkzeug mit folgenden Parametern ausführen.
 
@@ -186,7 +186,7 @@ Wenn Sie der protocol activation logic zu folgen möchten, legen Sie einen Halte
 ## <a name="appurihandlers-tips"></a>AppUriHandlers Tipps:
 
 - Stellen Sie sicher, dass Sie nur Links angeben, die mit Ihrer App kompatibel sind.
-- Listen Sie alle Hosts auf, die Sie unterstützen werden.  Beachten Sie, dass www.example.com und example.com verschiedene Hosts sind.
+- Listen Sie alle Hosts auf, die Sie unterstützen werden.  Beachten Sie, Www\."example.com" und "example.com" sind verschiedene Hosts.
 - Benutzer können in den Einstellungen auswählen, welche App sie zum Öffnen von Websites bevorzugen.
 - Ihre JSON-Datei muss auf einen Https-Server hochgeladen werden.
 - Wenn Sie die Pfade, die Sie unterstützen möchten, ändern müssen, können Sie JSON-Datei erneut hochladen, ohne Ihre App erneut veröffentlichen zu müssen. Benutzern wird die Änderungen in 1 bis 8 Tagen angezeigt.

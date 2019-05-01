@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store für Unternehmen, Store für Bildungseinrichtungen, Organisationseinheit, Volumenlizenzierung, Enterprise, Education Store, Business Store, Volumeneinkäufe, Massen
 localizationpriority: high
-ms.openlocfilehash: 4babaa9bca13fe1861d5772ba70ec5998cd06285
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b7f0ecc1eb7faec39eaad925ccd6c9d501d39749
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600975"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788397"
 ---
 # <a name="organizational-licensing-options"></a>Organisatorische Lizenzierungsoptionen
 
@@ -98,5 +98,5 @@ Zu diesem Zeitpunkt können Entwickler in den folgenden Ländern und Regionen ü
 - Spanien
 - Schweden
 - Schweiz
-- Großbritannien
+- Vereinigtes Königreich
 - USA

@@ -2,16 +2,17 @@
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Referenz zu Kern-APIs des Device Portal
 description: Hier erhalten Sie Informationen zu den Kern-REST-APIs für das Windows Device Portal, die Sie für den Zugriff auf die Daten und die programmatische Steuerung des Geräts verwenden können.
-ms.date: 4/8/2019
+ms.custom: 19H1
+ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 58ae7d83c0889131313d136c13048b83a861f601
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 910e3108009704d444fb81b195f9dd9eae3daa9d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244136"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63798186"
 ---
 # <a name="device-portal-core-api-reference"></a>Referenz zu Kern-APIs des Device Portal
 
@@ -48,7 +49,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -58,7 +59,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -67,7 +68,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Installieren einer verwandten Gruppe
+
+### <a name="install-a-related-set"></a>Installieren einer verwandten Gruppe
 
 **Anforderung**
 
@@ -96,7 +98,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -106,7 +108,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -115,7 +117,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Registrieren einer App in einem losen Ordner
+
+### <a name="register-an-app-in-a-loose-folder"></a>Registrieren einer App in einem losen Ordner
 
 **Anforderung**
 
@@ -148,7 +151,7 @@ Mithilfe des folgenden Anforderungsformats können Sie eine App in einem losen O
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -158,7 +161,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * Xbox
@@ -166,7 +169,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Verwandte Gruppe in losen Dateiordnern registrieren
+
+### <a name="register-a-related-set-in-loose-file-folders"></a>Verwandte Gruppe in losen Dateiordnern registrieren
 
 **Anforderung**
 
@@ -208,7 +212,7 @@ Sie können eine [verwandte Gruppe](https://blogs.msdn.microsoft.com/appinstalle
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -218,7 +222,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * Xbox
@@ -226,7 +230,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen des App-Installationsstatus
+
+### <a name="get-app-installation-status"></a>Abrufen des App-Installationsstatus
 
 **Anforderung**
 
@@ -250,7 +255,7 @@ Mit dem folgenden Anforderungsformat können Sie den Status einer derzeit ausgef
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -260,7 +265,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 204 | Die Installation läuft |
 | 404 | Keine Installationsaktion wurde gefunden |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -269,7 +274,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Deinstallieren einer App
+
+### <a name="uninstall-an-app"></a>Deinstallieren einer App
 
 **Anforderung**
 
@@ -295,7 +301,7 @@ Mit dem folgenden Anforderungsformat können Sie eine App deinstallieren.
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -305,7 +311,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -314,7 +320,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen installierter Apps
+
+### <a name="get-installed-apps"></a>Abrufen installierter Apps
 
 **Anforderung**
 
@@ -364,7 +371,7 @@ Die Antwort enthält eine Liste der installierten Pakete mit zugehörigen Detail
     },...
 ]}
 ```
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -374,7 +381,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -383,7 +390,9 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-## Bluetooth
+
+## <a name="bluetooth"></a>Bluetooth
+
 <hr>
 
 ### <a name="get-the-bluetooth-radios-on-the-machine"></a>Abrufen der Bluetooth-Geräte auf dem Computer
@@ -426,7 +435,7 @@ Die Antwort enthält ein JSON-Array von Bluetooth-Geräten, die mit dem Gerät v
     },...
 ]}
 ```
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -436,14 +445,15 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX              | Fehlercodes |
 | 5XX              | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * HoloLens
 * IoT
 
 <hr>
-### Ein-/Ausschalten des Bluetooth-Geräts
+
+### <a name="turn-the-bluetooth-radio-on-or-off"></a>Ein-/Ausschalten des Bluetooth-Geräts
 
 **Anforderung**
 
@@ -472,7 +482,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -482,16 +492,178 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX              | Fehlercodes |
 | 5XX              | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * HoloLens
 * IoT
 
+---
+### <a name="get-a-list-of-paired-bluetooth-devices"></a>Abrufen einer Liste mit gekoppelten Bluetooth-Geräten
+
+**Anforderung**
+
+Sie erhalten eine Liste der derzeit gekoppelten Bluetooth-Geräte, indem Sie das folgende Format der Anforderung. Dies kann in einem WebSocket-Verbindung mit den gleichen JSON-Daten aktualisiert werden. Während der Lebensdauer der WebSocket-Verbindung kann die Geräteliste ändern. Eine vollständige Liste der Geräte werden über die WebSocket-Verbindung jedes Mal gesendet, die ein Update verfügbar ist.
+
+| Methode        | Anforderungs-URI       |
+| :---          | :---              |
+| GET           | /api/bt/getpaired |
+| GET/WebSocket | /api/bt/getpaired |
+
+**URI-Parameter**
+
+- Keine
+
+**Anforderungsheader**
+
+- Keine
+
+**Anforderungstext**
+
+- Keine
+
+**Antwort**
+
+Die Antwort enthält ein JSON-Array der Bluetooth-Geräte, die derzeit miteinander kombiniert sind.
+```json
+{"PairedDevices": [
+    {
+        "Name" : string,
+        "ID" : string,
+        "AudioConnectionStatus" : string
+    },...
+]}
+```
+Die *AudioConnectionStatus* Feld wird vorhanden sein, wenn das Gerät für Audio auf diesem System verwendet werden kann. (Richtlinien und optionalen Komponenten können dies Auswirkungen auf.) *AudioConnectionStatus* werden entweder "Verbunden" oder "Getrennt".
+
+---
+### <a name="get-a-list-of-available-bluetooth-devices"></a>Abrufen einer Liste der verfügbaren Bluetooth-Geräte
+
+**Anforderung**
+
+Sie können eine Liste der Bluetooth-Geräte verfügbar für die Paarung von mithilfe des folgenden Formats für die Anforderung abrufen. Dies kann in einem WebSocket-Verbindung mit den gleichen JSON-Daten aktualisiert werden. Während der Lebensdauer der WebSocket-Verbindung kann die Geräteliste ändern. Eine vollständige Liste der Geräte werden über die WebSocket-Verbindung jedes Mal gesendet, die ein Update verfügbar ist.
+
+| Methode        | Anforderungs-URI          |
+| :---          | :---                 |
+| GET           | /api/bt/getavailable |
+| GET/WebSocket | /api/bt/getavailable |
+
+**URI-Parameter**
+
+- Keine
+
+**Anforderungsheader**
+
+- Keine
+
+**Anforderungstext**
+
+- Keine
+
+**Antwort**
+
+Die Antwort enthält ein JSON-Array der Bluetooth-Geräte, die derzeit für die Kopplung verfügbar sind.
+```json
+{"AvailableDevices": [
+    {
+        "Name" : string,
+        "ID" : string
+    },...
+]}
+```
+
+---
+### <a name="connect-a-bluetooth-device"></a>Ein Bluetooth-Gerät verbinden
+
+**Anforderung**
+
+Wird mit dem Gerät herzustellen, wenn das Gerät für Audio auf diesem System verwendet werden kann. (Richtlinien und optionalen Komponenten können dies Auswirkungen auf.)
+
+| Methode       | Anforderungs-URI           |
+| :---         | :---                  |
+| POST         | /api/bt/connectdevice |
+
+**URI-Parameter**
+
+| URI-Parameter | Beschreibung |
+| :---          | :--- |
+| ID            | (**erforderlichen**) die Zuordnung Endpunkt-ID für die Bluetooth-Gerät und Base64-codiert sein. |
+
+**Anforderungsheader**
+
+- Keine
+
+**Anforderungstext**
+
+- Keine
+
+**Antwort**
+
+**Statuscode:**
+
+Diese API hat die folgenden erwarteten Statuscodes:
+
+| HTTP-Statuscode | Beschreibung |
+| :---             | :--- |
+| 200              | OK |
+| 4XX              | Fehlercodes |
+| 5XX              | Fehlercodes |
+
+**Gerätefamilien verfügbar**
+
+* Windows-Desktop
+* HoloLens
+* IoT
+
+
+---
+### <a name="disconnect-a-bluetooth-device"></a>Trennen von einem Bluetooth-Gerät
+
+**Anforderung**
+
+Das Gerät wird getrennt werden, wenn das Gerät für Audio auf diesem System verwendet werden kann. (Richtlinien und optionalen Komponenten können dies Auswirkungen auf.)
+
+| Methode       | Anforderungs-URI              |
+| :---         | :---                     |
+| POST         | /api/bt/disconnectdevice |
+
+**URI-Parameter**
+
+| URI-Parameter | Beschreibung |
+| :---          | :--- |
+| ID            | (**erforderlichen**) die Zuordnung Endpunkt-ID für die Bluetooth-Gerät und Base64-codiert sein. |
+
+**Anforderungsheader**
+
+- Keine
+
+**Anforderungstext**
+
+- Keine
+
+**Antwort**
+
+**Statuscode:**
+
+Diese API hat die folgenden erwarteten Statuscodes:
+
+| HTTP-Statuscode | Beschreibung |
+| :---             | :--- |
+| 200              | OK |
+| 4XX              | Fehlercodes |
+| 5XX              | Fehlercodes |
+
+**Gerätefamilien verfügbar**
+
+* Windows-Desktop
+* HoloLens
+* IoT
+
+---
+## <a name="device-manager"></a>Geräte-Manager
 <hr>
-## Geräte-Manager
-<hr>
-### Abrufen der auf dem Computer installierten Geräte
+
+### <a name="get-the-installed-devices-on-the-machine"></a>Abrufen der auf dem Computer installierten Geräte
 
 **Anforderung**
 
@@ -530,7 +702,7 @@ Die Antwort enthält ein JSON-Array von Geräten, die mit dem Gerät verbunden s
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -540,14 +712,15 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
 * IoT
 
 <hr>
-### Daten auf verbundenen USB-Geräte/Hubs abrufen
+
+### <a name="get-data-on-connected-usb-deviceshubs"></a>Daten auf verbundenen USB-Geräte/Hubs abrufen
 
 **Anforderung**
 
@@ -589,7 +762,7 @@ Die Antwort ist ein JSON-Objekt, das die DeviceID für das USB-Gerät zusammen m
 }
 ```
 
-**Beispiel zu Rückgabedaten:**
+**Beispiel-Daten zurückgeben**
 ```json
 {
     "DeviceList": [{
@@ -616,7 +789,7 @@ Die Antwort ist ein JSON-Objekt, das die DeviceID für das USB-Gerät zusammen m
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -625,15 +798,18 @@ Diese API hat die folgenden erwarteten Statuscodes:
 |  200 | OK | 
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-## Absturzabbildsammlung
+
+## <a name="dump-collection"></a>Absturzabbildsammlung
+
 <hr>
-### Abrufen der Liste alle Absturzabbilder für Apps
+
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>Abrufen der Liste alle Absturzabbilder für Apps
 
 **Anforderung**
 
@@ -660,7 +836,7 @@ Mit dem folgenden Anforderungsformat können Sie die Liste aller verfügbaren Ab
 
 Die Antwort enthält eine Liste der Absturzabbilder für jede quergeladene Anwendung.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -670,7 +846,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile (im Windows-Insider-Programm)
 * Windows-Desktop
@@ -678,7 +854,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen der Absturzabbildsammlungs-Einstellungen für eine App
+
+### <a name="get-the-crash-dump-collection-settings-for-an-app"></a>Abrufen der Absturzabbildsammlungs-Einstellungen für eine App
 
 **Anforderung**
 
@@ -712,7 +889,7 @@ Die Antwort weist das folgende Format auf.
 {"CrashDumpEnabled": bool}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -722,7 +899,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile (im Windows-Insider-Programm)
 * Windows-Desktop
@@ -730,7 +907,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Löschen eines Absturzabbilds für eine quergeladene App
+
+### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a>Löschen eines Absturzabbilds für eine quergeladene App
 
 **Anforderung**
 
@@ -760,7 +938,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -770,7 +948,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile (im Windows-Insider-Programm)
 * Windows-Desktop
@@ -778,7 +956,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Deaktivieren der Absturzabbilder für eine quergeladene App
+
+### <a name="disable-crash-dumps-for-a-sideloaded-app"></a>Deaktivieren der Absturzabbilder für eine quergeladene App
 
 **Anforderung**
 
@@ -807,7 +986,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -817,7 +996,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile (im Windows-Insider-Programm)
 * Windows-Desktop
@@ -825,7 +1004,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Herunterladen des Absturzabbilds für eine quergeladene App
+
+### <a name="download-the-crash-dump-for-a-sideloaded-app"></a>Herunterladen des Absturzabbilds für eine quergeladene App
 
 **Anforderung**
 
@@ -857,7 +1037,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 Die Antwort enthält eine Absturzabbilddatei. Sie können die Absturzabbilddatei mit WinDbg oder Visual Studio untersuchen.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -867,7 +1047,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile (im Windows-Insider-Programm)
 * Windows-Desktop
@@ -875,7 +1055,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Aktivieren der Absturzabbilder für eine quergeladene App
+
+### <a name="enable-crash-dumps-for-a-sideloaded-app"></a>Aktivieren der Absturzabbilder für eine quergeladene App
 
 **Anforderung**
 
@@ -904,7 +1085,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -912,7 +1093,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | :------     | :----- |
 |  200 | OK | 
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile (im Windows-Insider-Programm)
 * Windows-Desktop
@@ -920,7 +1101,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen der Liste der Fehlerüberprüfungsdateien
+
+### <a name="get-the-list-of-bugcheck-files"></a>Abrufen der Liste der Fehlerüberprüfungsdateien
 
 **Anforderung**
 
@@ -955,7 +1137,7 @@ Die Antwort enthält eine Liste der Minidumpdateinamen und die Größen dieser D
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -963,13 +1145,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | :------     | :----- |
 |  200 | OK | 
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Herunterladen einer Fehlerüberprüfungs-Speicherabbilddatei
+
+### <a name="download-a-bugcheck-dump-file"></a>Herunterladen einer Fehlerüberprüfungs-Speicherabbilddatei
 
 **Anforderung**
 
@@ -1001,7 +1184,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 Die Antwort enthält die Speicherabbilddatei. Sie können diese Datei mithilfe von WinDbg untersuchen.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1011,13 +1194,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Abrufen der CrashControl-Fehlerüberprüfungseinstellungen
+
+### <a name="get-the-bugcheck-crash-control-settings"></a>Abrufen der CrashControl-Fehlerüberprüfungseinstellungen
 
 **Anforderung**
 
@@ -1062,7 +1246,7 @@ Die Antwort enthält die CrashControl-Einstellungen. Weitere Informationen zu [C
 
 3: Eingeschränkte Kernel minidump
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1072,13 +1256,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Abrufen eines Live-Kernelspeicherabbilds
+
+### <a name="get-a-live-kernel-dump"></a>Abrufen eines Live-Kernelspeicherabbilds
 
 **Anforderung**
 
@@ -1105,7 +1290,7 @@ Mit dem folgenden Anforderungsformat können Sie ein Live-Kernelspeicherabbild a
 
 Die Antwort enthält das vollständige Kernelmodus-Speicherabbild. Sie können diese Datei mithilfe von WinDbg untersuchen.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1115,13 +1300,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Abrufen eines Speicherabbilds von einem Livebenutzerprozess
+
+### <a name="get-a-dump-from-a-live-user-process"></a>Abrufen eines Speicherabbilds von einem Livebenutzerprozess
 
 **Anforderung**
 
@@ -1152,7 +1338,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 Die Antwort enthält die Prozesssicherung. Sie können diese Datei mit WinDbg oder Visual Studio untersuchen.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1162,13 +1348,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Festlegen der CrashControl-Fehlerüberprüfungseinstellungen
+
+### <a name="set-the-bugcheck-crash-control-settings"></a>Festlegen der CrashControl-Fehlerüberprüfungseinstellungen
 
 **Anforderung**
 
@@ -1200,7 +1387,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1210,15 +1397,18 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-## ETW
+
+## <a name="etw"></a>ETW
+
 <hr>
-### Erstellen einer Echtzeit-ETW-Sitzung über ein Websocket
+
+### <a name="create-a-realtime-etw-session-over-a-websocket"></a>Erstellen einer Echtzeit-ETW-Sitzung über ein Websocket
 
 **Anforderung**
 
@@ -1245,7 +1435,7 @@ Mit dem folgenden Anforderungsformat können Sie eine Echtzeit-ETW-Sitzung erste
 
 Die Antwort enthält die ETW-Ereignisse von den aktivierten Anbietern.  ETW-WebSocket-Befehle finden Sie unten. 
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1255,7 +1445,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1312,7 +1502,8 @@ Beispiel:
 ```
 
 <hr>
-### Auflisten der registrierten ETW-Anbieter
+
+### <a name="enumerate-the-registered-etw-providers"></a>Auflisten der registrierten ETW-Anbieter
 
 **Anforderung**
 
@@ -1347,7 +1538,7 @@ Die Antwort enthält die Liste der ETW-Anbieter. Diese Liste enthält den Anzeig
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1355,7 +1546,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | :------     | :----- |
 |  200 | OK | 
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1363,7 +1554,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Auflisten der benutzerdefinierten ETW-Anbieter, die von der Plattform verfügbar gemacht werden.
+
+### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a>Auflisten der benutzerdefinierten ETW-Anbieter, die von der Plattform verfügbar gemacht werden.
 
 **Anforderung**
 
@@ -1399,11 +1591,11 @@ Mit dem folgenden Anforderungsformat können Sie die registrierten Anbieter aufl
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 - Standardstatuscodes
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1411,7 +1603,9 @@ Mit dem folgenden Anforderungsformat können Sie die registrierten Anbieter aufl
 * IoT
 
 <hr>
-## Pfad
+
+## <a name="location"></a>Pfad
+
 <hr>
 
 ### <a name="get-location-override-mode"></a>Abrufen der Position „Override mode”
@@ -1445,7 +1639,7 @@ Die Antwort enthält den Außerkraftsetzungsstatus des Geräts im folgenden Form
 {"Override" : bool}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1455,7 +1649,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1496,7 +1690,7 @@ Die Antwort enthält den Außerkraftsetzungsstatus des Geräts im folgenden Form
 {"Override" : bool}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1506,7 +1700,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1548,7 +1742,7 @@ Die Antwort enthält die aktuell eingefügten Breiten- und Längengradwerte im f
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1558,7 +1752,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1605,7 +1799,7 @@ Die Antwort enthält den festgelegten Speicherort im folgenden Format.
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1615,7 +1809,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1624,9 +1818,12 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-## Betriebssysteminformationen
+
+## <a name="os-information"></a>Betriebssysteminformationen
+
 <hr>
-### Abrufen des Computernamens
+
+### <a name="get-the-machine-name"></a>Abrufen des Computernamens
 
 **Anforderung**
 
@@ -1657,7 +1854,7 @@ Die Antwort enthält den Namen des Computers im folgenden Format.
 {"ComputerName": string}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1667,7 +1864,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1676,7 +1873,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen der Betriebssysteminformationen
+
+### <a name="get-the-operating-system-information"></a>Abrufen der Betriebssysteminformationen
 
 **Anforderung**
 
@@ -1713,7 +1911,7 @@ Die Antwort enthält die Betriebssysteminformationen im folgenden Format.
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1723,7 +1921,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1732,7 +1930,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen der Gerätefamilie 
+
+### <a name="get-the-device-family"></a>Abrufen der Gerätefamilie 
 
 **Anforderung**
 
@@ -1767,7 +1966,7 @@ Die Antwort enthält die Gerätefamilie (SKU – Desktop, Xbox, usw.).
 
 „DeviceType“ sieht wie folgt aus: „Windows.Xbox“, „Windows.Desktop“ usw. 
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1777,7 +1976,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1786,7 +1985,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Festlegen des Computernamens
+
+### <a name="set-the-machine-name"></a>Festlegen des Computernamens
 
 **Anforderung**
 
@@ -1815,7 +2015,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1823,7 +2023,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | :------     | :----- |
 | 200 | OK |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1832,9 +2032,12 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-## Benutzerinformationen
+
+## <a name="user-information"></a>Benutzerinformationen
+
 <hr>
-### Aktiven Benutzer ermitteln
+
+### <a name="get-the-active-user"></a>Aktiven Benutzer ermitteln
 
 **Anforderung**
 
@@ -1878,7 +2081,7 @@ Bei Misserfolg:
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1888,16 +2091,19 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * HoloLens
 * IoT
 
 <hr>
-## Leistungsdaten
+
+## <a name="performance-data"></a>Leistungsdaten
+
 <hr>
-### Abrufen der Liste der ausgeführten Prozesse
+
+### <a name="get-the-list-of-running-processes"></a>Abrufen der Liste der ausgeführten Prozesse
 
 **Anforderung**
 
@@ -1940,7 +2146,7 @@ Die Antwort enthält eine Liste der Prozesse mit Details für jeden Prozess. Die
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -1950,7 +2156,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -1958,7 +2164,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen der Leistungsstatistik des Systems
+
+### <a name="get-the-system-performance-statistics"></a>Abrufen der Leistungsstatistik des Systems
 
 **Anforderung**
 
@@ -2018,7 +2225,7 @@ Die Antwort enthält die Leistungsstatistik für das System, z. B. CPU- und GPU-
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2028,7 +2235,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -2037,9 +2244,12 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-## Stromversorgung
+
+## <a name="power"></a>Stromversorgung
+
 <hr>
-### Abrufen des aktuellen Akkustatus
+
+### <a name="get-the-current-battery-state"></a>Abrufen des aktuellen Akkustatus
 
 **Anforderung**
 
@@ -2078,7 +2288,7 @@ Die Informationen zum aktuellen Akkustatus werden im folgenden Format zurückgeg
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2088,7 +2298,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -2096,7 +2306,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen des aktiven Energieschemas
+
+### <a name="get-the-active-power-scheme"></a>Abrufen des aktiven Energieschemas
 
 **Anforderung**
 
@@ -2126,7 +2337,7 @@ Das aktive Energieschema hat das folgende Format.
 {"ActivePowerScheme": string (guid of scheme)}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2136,13 +2347,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Abrufen des Unterwerts für ein Energieschema
+
+### <a name="get-the-sub-value-for-a-power-scheme"></a>Abrufen des Unterwerts für ein Energieschema
 
 **Anforderung**
 
@@ -2169,7 +2381,7 @@ Eine vollständige Liste der verfügbaren Energiezustände ist auf einzelne Anwe
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2179,13 +2391,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Abrufen des Energiestatus des Systems
+
+### <a name="get-the-power-state-of-the-system"></a>Abrufen des Energiestatus des Systems
 
 **Anforderung**
 
@@ -2215,7 +2428,7 @@ Die Informationen zum Energiezustand haben die folgende Vorlage.
 {"LowPowerState" : false, "LowPowerStateAvailable" : true }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2225,14 +2438,15 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * HoloLens
 * IoT
 
 <hr>
-### Festlegen des aktiven Energieschemas
+
+### <a name="set-the-active-power-scheme"></a>Festlegen des aktiven Energieschemas
 
 **Anforderung**
 
@@ -2261,7 +2475,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2271,13 +2485,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Festlegen des Unterwerts für ein Energieschema
+
+### <a name="set-the-sub-value-for-a-power-scheme"></a>Festlegen des Unterwerts für ein Energieschema
 
 **Anforderung**
 
@@ -2307,7 +2522,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2315,13 +2530,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | :------     | :----- |
 | 200 | OK |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Abrufen eines Berichts zur Ruhezustandsuntersuchung
+
+### <a name="get-a-sleep-study-report"></a>Abrufen eines Berichts zur Ruhezustandsuntersuchung
 
 **Anforderung**
 
@@ -2348,7 +2564,7 @@ Mit dem folgenden Anforderungsformat können Sie einen Bericht zur Ruhezustandsu
 
 Die Antwort ist eine Datei mit der Ruhezustandsuntersuchung. 
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2358,13 +2574,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Auflisten der verfügbaren Berichte zu Ruhezustandsuntersuchungen
+
+### <a name="enumerate-the-available-sleep-study-reports"></a>Auflisten der verfügbaren Berichte zu Ruhezustandsuntersuchungen
 
 **Anforderung**
 
@@ -2399,7 +2616,7 @@ Die Liste der verfügbaren Berichte hat die folgende Vorlage.
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2409,13 +2626,14 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-### Abrufen der Transformation der Ruhezustandsuntersuchung
+
+### <a name="get-the-sleep-study-transform"></a>Abrufen der Transformation der Ruhezustandsuntersuchung
 
 **Anforderung**
 
@@ -2442,7 +2660,7 @@ Mit dem folgenden Anforderungsformat können Sie die Transformation der Ruhezust
 
 Die Antwort enthält die Transformation der Ruhezustandsuntersuchung.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2452,15 +2670,18 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * IoT
 
 <hr>
-## Fernbedienung
+
+## <a name="remote-control"></a>Fernbedienung
+
 <hr>
-### Neustarten des Zielcomputers
+
+### <a name="restart-the-target-computer"></a>Neustarten des Zielcomputers
 
 **Anforderung**
 
@@ -2485,7 +2706,7 @@ Mit dem folgenden Anforderungsformat können Sie den Zielcomputer neu starten.
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2493,7 +2714,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | :------     | :----- |
 | 200 | OK |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -2502,7 +2723,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Herunterfahren des Zielcomputers
+
+### <a name="shut-down-the-target-computer"></a>Herunterfahren des Zielcomputers
 
 **Anforderung**
 
@@ -2527,7 +2749,7 @@ Mit dem folgenden Anforderungsformat können Sie den Zielcomputer herunterfahren
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2537,7 +2759,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -2546,9 +2768,12 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-## Task-Manager
+
+## <a name="task-manager"></a>Task-Manager
+
 <hr>
-### Starten einer Modern App
+
+### <a name="start-a-modern-app"></a>Starten einer Modern App
 
 **Anforderung**
 
@@ -2578,7 +2803,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2588,7 +2813,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -2597,7 +2822,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Beenden einer Modern App
+
+### <a name="stop-a-modern-app"></a>Beenden einer Modern App
 
 **Anforderung**
 
@@ -2627,7 +2853,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2637,7 +2863,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -2646,7 +2872,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Prozess per PID beenden
+
+### <a name="kill-process-by-pid"></a>Prozess per PID beenden
 
 **Anforderung**
 
@@ -2675,7 +2902,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2685,16 +2912,19 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * HoloLens
 * IoT
 
 <hr>
-## Netzwerk
+
+## <a name="networking"></a>Netzwerk
+
 <hr>
-### Abrufen der aktuellen IP-Konfiguration
+
+### <a name="get-the-current-ip-configuration"></a>Abrufen der aktuellen IP-Konfiguration
 
 **Anforderung**
 
@@ -2761,7 +2991,7 @@ Die Antwort enthält die IP-Konfiguration in der folgenden Vorlage.
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2771,7 +3001,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -2780,7 +3010,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Festlegen einer statischen IP-Adresse (IPv4-Konfiguration)
+
+### <a name="set-a-static-ip-address-ipv4-configuration"></a>Festlegen einer statischen IP-Adresse (IPv4-Konfiguration)
 
 **Anforderung**
 
@@ -2820,7 +3051,7 @@ Aus Gründen der Übersichtlichkeit serialisieren, um eine Schnittstelle auf DHC
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2830,15 +3061,17 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
 * Xbox
 * HoloLens
 * IoT
+
 <hr>
-### Auflisten der Drahtlos-Netzwerkschnittstellen
+
+### <a name="enumerate-wireless-network-interfaces"></a>Auflisten der Drahtlos-Netzwerkschnittstellen
 
 **Anforderung**
 
@@ -2881,7 +3114,7 @@ Eine Liste der verfügbaren Drahtlosschnittstellen mit Details im folgenden Form
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2891,7 +3124,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -2900,7 +3133,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Auflisten von Drahtlosnetzwerken
+
+### <a name="enumerate-wireless-networks"></a>Auflisten von Drahtlosnetzwerken
 
 **Anforderung**
 
@@ -2951,7 +3185,7 @@ Die Liste der an der angegebenen *interface* gefundenen Drahtlosnetzwerke. Diese
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -2961,7 +3195,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -2970,7 +3204,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Herstellen der Verbindung mit einem WLAN-Netzwerk und Trennen der Verbindung
+
+### <a name="connect-and-disconnect-to-a-wi-fi-network"></a>Herstellen der Verbindung mit einem WLAN-Netzwerk und Trennen der Verbindung
 
 **Anforderung**
 
@@ -3003,7 +3238,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3011,7 +3246,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | :------     | :----- |
 | 200 | OK |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3020,7 +3255,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Löschen eines WLAN-Profils
+
+### <a name="delete-a-wi-fi-profile"></a>Löschen eines WLAN-Profils
 
 **Anforderung**
 
@@ -3050,7 +3286,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3058,7 +3294,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | :------     | :----- |
 | 200 | OK |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3067,9 +3303,12 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-## Windows-Fehlerberichterstattung (WER)
+
+## <a name="windows-error-reporting-wer"></a>Windows-Fehlerberichterstattung (WER)
+
 <hr>
-### Herunterladen einer WER-Datei (Windows Error Reporting)
+
+### <a name="download-a-windows-error-reporting-wer-file"></a>Herunterladen einer WER-Datei (Windows Error Reporting)
 
 **Anforderung**
 
@@ -3103,7 +3342,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 - Antwort enthält die angeforderte Datei. 
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3113,14 +3352,15 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * HoloLens
 * IoT
 
 <hr>
-### Auflisten von Dateien in einem Bericht zur Windows-Fehlerberichterstattung (WER)
+
+### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a>Auflisten von Dateien in einem Bericht zur Windows-Fehlerberichterstattung (WER)
 
 **Anforderung**
 
@@ -3158,7 +3398,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3168,14 +3408,15 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * HoloLens
 * IoT
 
 <hr>
-### Auflisten der Berichte zur Windows-Fehlerberichterstattung (WER)
+
+### <a name="list-the-windows-error-reporting-wer-reports"></a>Auflisten der Berichte zur Windows-Fehlerberichterstattung (WER)
 
 **Anforderung**
 
@@ -3216,7 +3457,7 @@ Die WER-Berichte in folgendem Format.
 ]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3226,16 +3467,19 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows-Desktop
 * HoloLens
 * IoT
 
 <hr>
-## Windows Performance Recorder (WPR) 
+
+## <a name="windows-performance-recorder-wpr"></a>Windows Performance Recorder (WPR) 
+
 <hr>
-### Starten der Ablaufverfolgung mit einem benutzerdefinierten Profil
+
+### <a name="start-tracing-with-a-custom-profile"></a>Starten der Ablaufverfolgung mit einem benutzerdefinierten Profil
 
 **Anforderung**
 
@@ -3269,7 +3513,7 @@ Der Status der WPR-Sitzung im folgenden Format.
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3279,7 +3523,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3287,7 +3531,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Starten einer Startleistungs-Ablaufverfolgungssitzung
+
+### <a name="start-a-boot-performance-tracing-session"></a>Starten einer Startleistungs-Ablaufverfolgungssitzung
 
 **Anforderung**
 
@@ -3325,7 +3570,7 @@ Beim Start gibt diese API den Status der WPR-Sitzung im folgenden Format zurück
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3335,7 +3580,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3343,7 +3588,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Beenden einer Startleistungs-Ablaufverfolgungssitzung
+
+### <a name="stop-a-boot-performance-tracing-session"></a>Beenden einer Startleistungs-Ablaufverfolgungssitzung
 
 **Anforderung**
 
@@ -3370,7 +3616,7 @@ Mit dem folgenden Anforderungsformat können Sie eine WPR-Start-Ablaufverfolgung
 
 -  Keine  **Hinweis**: Dies ist ein länger anhaltender Vorgang.  Er wird wieder verfügbar, wenn der ETL-Schreibvorgang auf der Festplatte abgeschlossen ist.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3380,7 +3626,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3388,7 +3634,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Starten einer Leistungs-Ablaufverfolgungssitzung
+
+### <a name="start-a-performance-tracing-session"></a>Starten einer Leistungs-Ablaufverfolgungssitzung
 
 **Anforderung**
 
@@ -3426,7 +3673,7 @@ Beim Start gibt diese API den Status der WPR-Sitzung im folgenden Format zurück
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3436,7 +3683,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3444,7 +3691,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Beenden einer Leistungs-Ablaufverfolgungssitzung
+
+### <a name="stop-a-performance-tracing-session"></a>Beenden einer Leistungs-Ablaufverfolgungssitzung
 
 **Anforderung**
 
@@ -3471,7 +3719,7 @@ Mit dem folgenden Anforderungsformat können Sie eine WPR-Ablaufverfolgungssitzu
 
 - Keine  **Hinweis**: Dies ist ein länger anhaltender Vorgang.  Er wird wieder verfügbar, wenn der ETL-Schreibvorgang auf der Festplatte abgeschlossen ist.  
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3481,7 +3729,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3489,7 +3737,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen des Status einer Ablaufverfolgungssitzung
+
+### <a name="retrieve-the-status-of-a-tracing-session"></a>Abrufen des Status einer Ablaufverfolgungssitzung
 
 **Anforderung**
 
@@ -3523,7 +3772,7 @@ Der Status der WPR-Ablaufverfolgungssitzung im folgenden Format.
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3533,7 +3782,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3541,7 +3790,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Aufführen abgeschlossener Ablaufverfolgungssitzungen (ETLs)
+
+### <a name="list-completed-tracing-sessions-etls"></a>Aufführen abgeschlossener Ablaufverfolgungssitzungen (ETLs)
 
 **Anforderung**
 
@@ -3580,7 +3830,7 @@ Die Liste mit den abgeschlossenen Ablaufverfolgungssitzungen wird im folgenden F
 }]}
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3590,7 +3840,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3598,7 +3848,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Herunterladen einer Ablaufverfolgungssitzung (ETL)
+
+### <a name="download-a-tracing-session-etl"></a>Herunterladen einer Ablaufverfolgungssitzung (ETL)
 
 **Anforderung**
 
@@ -3629,7 +3880,7 @@ Im Anforderungs-URI kann der folgende zusätzliche Parameter angegeben werden:
 
 - Gibt die ETL-Ablaufverfolgungsdatei zurück.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3639,7 +3890,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3647,7 +3898,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Löschen einer Ablaufverfolgungssitzung (ETL)
+
+### <a name="delete-a-tracing-session-etl"></a>Löschen einer Ablaufverfolgungssitzung (ETL)
 
 **Anforderung**
 
@@ -3678,7 +3930,7 @@ Im Anforderungs-URI kann der folgende zusätzliche Parameter angegeben werden:
 
 - Gibt die ETL-Ablaufverfolgungsdatei zurück.
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3688,7 +3940,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3696,9 +3948,12 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-## DNS-SD-Tags 
+
+## <a name="dns-sd-tags"></a>DNS-SD-Tags 
+
 <hr>
-### Anzeigen von Tags
+
+### <a name="view-tags"></a>Anzeigen von Tags
 
 **Anforderung**
 
@@ -3732,7 +3987,7 @@ Anzeigen der derzeit für das Gerät angewendeten Tags.  Diese werden über DNS-
 }
 ```
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3742,7 +3997,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 5XX | Serverfehler |
 
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3751,7 +4006,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Löschen von Tags
+
+### <a name="delete-tags"></a>Löschen von Tags
 
 **Anforderung**
 
@@ -3777,7 +4033,7 @@ Löschen aller Tags derzeit von DNS-SD angekündigten Tags.
 **Antwort**
  - Keine
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3787,7 +4043,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 5XX | Serverfehler |
 
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3796,7 +4052,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Löschen eines Tags
+
+### <a name="delete-tag"></a>Löschen eines Tags
 
 **Anforderung**
 
@@ -3824,7 +4081,7 @@ Löschen eines derzeit von DNS-SD angekündigten Tags.
 **Antwort**
  - Keine
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3833,7 +4090,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 200 | OK |
 
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3842,7 +4099,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
  
 <hr>
-### Hinzufügen eines Tags
+
+### <a name="add-a-tag"></a>Hinzufügen eines Tags
 
 **Anforderung**
 
@@ -3870,7 +4128,7 @@ Hinzufügen eines Tags zur DNS-SD-Ankündigung.
 **Antwort**
  - Keine
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3880,7 +4138,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 401 | Überlauf des Tagbereichs.  Tritt auf, wenn das vorgeschlagene Tag zu lang für den resultierenden DNS-SD-Dienstdatensatz ist. |
 
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3891,7 +4149,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 ## <a name="app-file-explorer"></a>App-Datei-Explorer
 
 <hr>
-### Abrufen bekannter Ordner
+
+### <a name="get-known-folders"></a>Abrufen bekannter Ordner
 
 **Anforderung**
 
@@ -3921,7 +4180,7 @@ Abrufen einer Liste zugänglicher Ordner der obersten Ebene.
     "folder1",...
 ]}
 ```
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3932,7 +4191,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 5XX | Fehlercodes |
 
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -3941,7 +4200,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Abrufen von Dateien
+
+### <a name="get-files"></a>Abrufen von Dateien
 
 **Anforderung**
 
@@ -3982,7 +4242,7 @@ Abrufen einer Liste von Dateien in einem Ordner.
     },...
 ]}
 ```
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -3992,7 +4252,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -4001,7 +4261,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Herunterladen einer Datei
+
+### <a name="download-a-file"></a>Herunterladen einer Datei
 
 **Anforderung**
 
@@ -4030,7 +4291,7 @@ Abrufen einer Datei aus einem bekannten Ordner oder aus „appLocalData“
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -4040,7 +4301,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 404 | Datei nicht gefunden |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -4049,7 +4310,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Umbenennen einer Datei
+
+### <a name="rename-a-file"></a>Umbenennen einer Datei
 
 **Anforderung**
 
@@ -4082,7 +4344,7 @@ Umbenennen einer Datei in einem Ordner.
 
 - Keine
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -4092,7 +4354,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 404 | Datei nicht gefunden |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -4101,7 +4363,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Löschen einer Datei
+
+### <a name="delete-a-file"></a>Löschen einer Datei
 
 **Anforderung**
 
@@ -4132,7 +4395,7 @@ Löschen einer Datei in einem Ordner.
 
 - Keine 
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -4142,7 +4405,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 404 | Datei nicht gefunden |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop
@@ -4151,7 +4414,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 * IoT
 
 <hr>
-### Hochladen einer Datei
+
+### <a name="upload-a-file"></a>Hochladen einer Datei
 
 **Anforderung**
 
@@ -4179,7 +4443,7 @@ Hochladen einer Datei in einen Ordner.  Dadurch wird eine vorhandene Datei mit d
 
 **Antwort**
 
-**Statuscode**
+**Statuscode:**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -4189,7 +4453,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
-**Verfügbare Gerätefamilien**
+**Gerätefamilien verfügbar**
 
 * Windows Mobile
 * Windows-Desktop

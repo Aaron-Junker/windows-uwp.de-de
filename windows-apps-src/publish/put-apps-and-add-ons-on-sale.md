@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c844c37bab8a135468d74558e8dc053b18d48cc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3ec71453cd03359dc6e1b72af2f6a43805bcb5ff
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625315"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788352"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>Anbieten vergünstigter Apps und Add-Ons
 
@@ -56,7 +56,7 @@ Sonderangebote werden im Rahmen der Übermittlung für Apps oder Add-Ons geplant
    - **Segment**: An die Personen in der Customer-Segment wird, die Sie auswählen, der Verkauf angeboten. Sie können hier ein [bereits erstelltes Segment](create-customer-segments.md) verwenden. Sie können auch **First time payers** auswählen, um das Sonderangebot nur für Kunden anzubieten, die noch nie etwas im Store erworben haben. Wir bieten dieses Segment hier an, da wir festgestellt haben, dass Kunden nach ihrem ersten Store-Einkauf häufig weitere Einkäufe tätigen. Für diese Gruppe eignen sich also unter Umständen Angebotspreise sehr gut.
 6. Geben Sie das Datum und die Uhrzeit für den Start und das Ende des Angebotszeitraums ein. Wählen Sie eine der folgenden Zeitzonenoptionen aus:
    - **UTC**: Die Zeit, die Sie auswählen, werden die Zeit (Universal Coordinated Time, UTC), damit der Verkauf zur gleichen Zeit überall tritt auf.
-   - **Lokale**: Die Zeit, die Sie auswählen, wird die Verwendung in allen Zeitzonen, die einen Markt zugeordnet sein. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
+   - **Local**: Die Zeit, die Sie auswählen, wird die Verwendung in allen Zeitzonen, die einen Markt zugeordnet sein. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für die USA wird die Eastern Time verwendet.)
 7. Wenn Sie ein weiteres Sonderangebot planen möchten, wählen Sie **Neues Angebot**. Klicken Sie andernfalls im unteren Bereich der Seite **Preise und Verfügbarkeit** auf **Speichern**, und klicken Sie dann in der Übermittlungsübersicht auf **An Store übermitteln**.
 
 > [!NOTE]

@@ -7,19 +7,19 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c087bac5e166a22098482e5ffe213e3bdce9d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0148be96d9c5994d2fe16e7a0adedee16c8469de
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650535"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63816889"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Aktualisieren einer Live-Kachel über eine Hintergrundaufgabe
 
 **Wichtige APIs**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**"Backgroundtaskbuilder"**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
 Verwenden Sie eine Hintergrundaufgabe, um die Live-Kachel Ihrer App mit neuen Inhalten zu aktualisieren.
 
@@ -256,8 +256,8 @@ Legen Sie zum Debuggen der Hintergrundaufgabe in der Run-Methode der Aufgabe ein
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [**"Backgroundtaskbuilder"**](https://msdn.microsoft.com/library/windows/apps/br224768)
-* [**"Tileupdatemanager"**](https://msdn.microsoft.com/library/windows/apps/br208622)
+* [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+* [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
 * [**"Tilenotification"**](https://msdn.microsoft.com/library/windows/apps/br208616)
 * [Unterstützen Ihrer App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md)
 * [Richtlinien und Prüfliste für Kacheln und Signale](https://msdn.microsoft.com/library/windows/apps/hh465403)

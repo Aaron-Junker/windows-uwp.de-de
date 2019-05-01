@@ -2,16 +2,17 @@
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: Koppeln von Geräten
 description: Einige Geräte müssen gekoppelt werden, bevor sie verwendet werden können. Der Windows.Devices.Enumeration-Namespace unterstützt drei verschiedene Verfahren zum Koppeln von Geräten
-ms.date: 02/08/2017
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 6f59a23f08abbd5edeb9d68be476fb29bd8aab2e
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653385"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63813615"
 ---
 # <a name="pair-devices"></a>Koppeln von Geräten
 
@@ -57,6 +58,8 @@ Zum Implementieren der benutzerdefinierten Kopplung müssen Sie wie bei der einf
 Zum Unterstützen der benutzerdefinierten Kopplung müssen Sie einen Handler für das [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx)-Ereignis erstellen. Bei diesem Handler muss sichergestellt sein, dass alle unterschiedlichen [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808)-Aufzählungen abgedeckt sind, die bei einem Szenario mit benutzerdefinierter Kopplung verwendet werden. Welche Aktion jeweils die richtige ist, hängt von den **DevicePairingKinds**-Aufzählungen ab, die als Teil der Ereignisargumente bereitgestellt werden.
 
 Es ist wichtig, darauf zu achten, dass die benutzerdefinierte Kopplung immer ein Vorgang auf Systemebene ist. Aus diesem Grund wird dem Benutzer bei Vorgängen auf dem Desktop oder einem Windows Phone immer ein Systemdialogfeld angezeigt, wenn die Kopplung durchgeführt werden soll. Dies ist der Fall, weil beide Plattformen über eine Benutzeroberfläche verfügen, für die die Zustimmung durch den Benutzer erforderlich ist. Da dieses Dialogfeld automatisch generiert wird, müssen Sie kein eigenes Dialogfeld erstellen, wenn Sie bei Vorgängen auf diesen Plattformen für [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) die Option **ConfirmOnly** verwenden. Für die anderen **DevicePairingKinds**-Aufzählungen müssen Sie je nach **DevicePairingKinds**-Wert eine besondere Behandlung durchführen. Beispiele für die Behandlung der benutzerdefinierten Kopplung für unterschiedliche **DevicePairingKinds**-Werte finden Sie unter „Beispiel“.
+
+Ab Windows 10, Version 1903 sein, ein neues **DevicePairingKinds** wird unterstützt, **ProvidePasswordCredential**. Dieser Wert bedeutet, dass die app einen Benutzernamen und ein Kennwort vom Benutzer anfordern muss, um mit dem gekoppelten Gerät zu authentifizieren. Aufrufen, um diesen Fall zu behandeln, die [ **AcceptWithPasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_) Methode der Ereignis-Args von der **PairingRequested** -Ereignishandler, die Kopplung zu akzeptieren. Übergeben Sie einen [ **PasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential) Objekt, das den Benutzernamen und das Kennwort als Parameter kapselt. Beachten Sie, dass Benutzername und Kennwort für das Remotegerät unterscheidet und häufig nicht dasselbe wie die Anmeldeinformationen für die lokal angemeldeten Benutzer.
 
 ## <a name="unpairing"></a>Entkoppeln
 

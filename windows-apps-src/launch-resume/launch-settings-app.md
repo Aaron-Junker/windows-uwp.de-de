@@ -2,19 +2,19 @@
 title: Starten der Windows-Einstellungs-App
 description: Erfahren Sie, wie Sie die Windows-Einstellungs-App aus Ihrer App starten können. In diesem Thema wird das ms-settings-URI-Schema beschrieben. Verwenden Sie dieses URI-Schema, um die Windows-Einstellungs-App mit bestimmten Einstellungsseiten zu starten.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 01/08/2019
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 87074e9871fae6be32e2862fc547097898baede8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: fb0e5aee9e7b3e57ebf0ebeaf3d035180e52c65b
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646955"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63817495"
 ---
 # <a name="launch-the-windows-settings-app"></a>Starten der Windows-Einstellungs-App
-
 
 **Wichtige APIs**
 
@@ -64,7 +64,6 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 <!-- TODO: 
 * ms-settings:controlcenter
-* ms-settings:cortana-windowssearch
 * ms-settings:holographic
 * ms-settings:keyboard-advanced
 * ms-settings:regionlanguage-adddisplaylanguage (crashed)
@@ -75,12 +74,12 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 ## <a name="accounts"></a>Konten
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Geschäfts- oder Schulkonto öffnen | ms-settings:workplace |
 | E-Mail- & App-Konten  | ms-settings:emailandaccounts |
 | Familie und andere Personen | ms-settings:otherusers |
-| Richten Sie ein kiosk | MS-Einstellungen: Assignedaccess |
+| Richten Sie ein kiosk | ms-settings:assignedaccess |
 | Anmeldeoptionen | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
 | Synchronisieren von Einstellungen | ms-settings:sync |
 | Einrichten von Windows Hello | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
@@ -88,7 +87,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 ## <a name="apps"></a>Apps
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Apps & Features | ms-settings:appsfeatures |
 | App-Features | ms-settings:appsfeatures-app (Zusätzliche und heruntergeladene Inhalte für die App zurücksetzen, verwalten etc.)|
@@ -101,21 +100,21 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 ## <a name="cortana"></a>Cortana
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
-| Berechtigungen für & Verlauf | ms-settings:cortana-permissions |
-| Weitere Details | ms-settings:cortana-moredetails |
 | Cortana auf allen meinen Geräten | ms-settings:cortana-notifications |
-| Sprechen mit Cortana | ms-settings:cortana-language<br/>MS-Einstellungen: Cortana<br/>MS-Einstellungen: Cortana-Talktocortana |
+| Weitere Details | ms-settings:cortana-moredetails |
+| Berechtigungen für & Verlauf | ms-settings:cortana-permissions |
+| Suchen von Windows | ms-settings:cortana-windowssearch |
+| Sprechen mit Cortana | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
 
 > [!NOTE] 
 > In diesem Abschnitt "Einstellungen" auf Desktop wird Suche aufgerufen werden, wenn der PC in Regionen festgelegt wird, Cortana ist zurzeit nicht verfügbar oder Cortana wurde deaktiviert. Cortana-spezifische Seiten (Cortana auf meinen Geräten), und sich an Cortana werden in diesem Fall nicht aufgeführt. 
 
 ## <a name="devices"></a>Geräte
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
-| Audio und Sprache | ms-settings:holographic-audio (nur verfügbar, wenn das App Mixed Reality-Portal installiert ist – verfügbar im Microsoft Store) |
 | Automatische Wiedergabe | ms-settings:autoplay |
 | Bluetooth | ms-settings:bluetooth |
 | Verbundene Geräte | ms-settings:connecteddevices |
@@ -131,17 +130,16 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 ## <a name="ease-of-access"></a>Erleichterte Bedienung
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | Untertitel | ms-settings:easeofaccess-closedcaptioning |
-| Filter "Farbe" | MS-Einstellungen: Easeofaccess-Colorfilter |
-| Größe des Cursors & Zeiger | MS-Einstellungen: Easeofaccess-Cursorandpointersize |
+| Filter "Farbe" | ms-settings:easeofaccess-colorfilter |
+| Größe des Cursors & Zeiger | ms-settings:easeofaccess-cursorandpointersize |
 | Anzeige | ms-settings:easeofaccess-display |
 | Augensteuerung | ms-settings:easeofaccess-eyecontrol |
 | Schriftarten | ms-settings:fonts |
 | Hoher Kontrast | ms-settings:easeofaccess-highcontrast |
-| Holografisches Headset | ms-settings:holographic-headset (holografische Hardware erforderlich) |
 | Tastatur | ms-settings:easeofaccess-keyboard |
 | Bildschirmlupe | ms-settings:easeofaccess-magnifier |
 | Maus | ms-settings:easeofaccess-mouse |
@@ -151,13 +149,13 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 ## <a name="extras"></a>Extras
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Extras | ms-settings:extras (nur verfügbar, wenn "Apps-Einstellungen" installiert sind (z. B. von Drittanbietern) |
 
 ## <a name="gaming"></a>Spiele
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Senden | ms-settings:gaming-broadcasting |
 | Spieleleiste | ms-settings:gaming-gamebar |
@@ -169,14 +167,25 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 ## <a name="home-page"></a>Startseite
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Startseite „Einstellungen“ | ms-settings: |
 
+## <a name="mixed-reality"></a>Mixed Reality
+
+> [!NOTE]
+> Diese Einstellungen sind nur verfügbar, wenn die app Mixed Reality-Portal installiert ist.
+
+| Einstellungsseite | URI |
+|---------------|-----|
+| Audio und Sprache | ms-settings:holographic-audio |
+| Umgebung | ms-settings:privacy-holographic-environment |
+| Kopfhörer anzeigen | ms-settings:holographic-headset |
+| Deinstallieren | ms-settings:holographic-management |
 
 ## <a name="network--internet"></a>Netzwerk und Internet
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Flugzeugmodus | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | Mobilfunk und SIM | ms-settings:network-cellular |
@@ -188,18 +197,18 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Mobiler Hotspot | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Proxy | ms-settings:network-proxy |
-| Status | ms-settings:network-status<br/>MS-Einstellungen: Netzwerk |
+| Status | ms-settings:network-status<br/>ms-settings:network |
 | VPN | ms-settings:network-vpn |
 | WLAN | ms-settings:network-wifi (nur verfügbar, wenn das Gerät über einen WLAN-Adapter verfügt) |
 | WLAN-Anruf | ms-settings:network-wificalling (nur verfügbar, wenn WLAN-Anruf aktiviert ist) |
 
 ## <a name="personalization"></a>Personalization
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Hintergrund | ms-settings:personalization-background |
 | Ordner auswählen, die im Menü „Start“ angezeigt werden | ms-settings:personalization-start-places |
-| Farben | ms-settings:personalization-colors<br/>MS-Einstellungen: Farben |
+| Farben | ms-settings:personalization-colors<br/>ms-settings:colors |
 | Blick | MS-Einstellungen: Personalisierung-Blick (**in Windows 10, Version 1809 und höher veraltet**) |
 | Sperrbildschirm | ms-settings:lockscreen |
 | Navigationsleiste | MS-Einstellungen: Personalisierung-Navigationsleiste (**in Windows 10, Version 1809 und höher veraltet**) |
@@ -210,13 +219,13 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 ## <a name="phone"></a>Phone
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
-| Ihr Smartphone | ms-settings:mobile-devices<br/>MS-Einstellungen: Mobile-Geräte-Addphone<br/>MS-Einstellungen: Mobile-Geräte-Addphone-direct (öffnet **Ihr Telefon** app) |
+| Ihr Smartphone | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>MS-Einstellungen: Mobile-Geräte-Addphone-direct (öffnet **Ihr Telefon** app) |
 
-## <a name="privacy"></a>Vertraulichkeit
+## <a name="privacy"></a>Datenschutz
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Zubehör-Apps | MS-Einstellungen: Datenschutz-Accessoryapps (**in Windows 10, Version 1809 und höher veraltet**) |
 | Kontoinformationen | ms-settings:privacy-accountinfo |
@@ -225,7 +234,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | App-Diagnose | ms-settings:privacy-appdiagnostics |
 | Automatische Dateidownloads | ms-settings:privacy-automaticfiledownloads |
 | Hintergrund-Apps | ms-settings:privacy-backgroundapps |
-| Calendar | ms-settings:privacy-calendar |
+| Kalender | ms-settings:privacy-calendar |
 | Anrufliste | ms-settings:privacy-callhistory |
 | Kamera | ms-settings:privacy-webcam |
 | Kontakte | ms-settings:privacy-contacts |
@@ -245,12 +254,13 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Telefonanrufe | MS-Einstellungen: Datenschutz-Phonecall (**in Windows 10, Version 1809 und höher veraltet**) |
 | Funkempfang | ms-settings:privacy-radios |
 | Spracherkennung, Freihand und Eingabe |ms-settings:privacy-speechtyping |
-| Aufgaben | ms-settings:privacy-tasks |
+| Richtlinienübersicht | ms-settings:privacy-tasks |
 | Videos | ms-settings:privacy-videos |
+| Voice-Aktivierung | ms-settings:privacy-voiceactivation |
 
 ## <a name="surface-hub"></a>Surface Hub
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Konten | ms-settings:surfacehub-accounts |
 | Bereinigung der Sitzung | ms-settings:surfacehub-sessioncleanup |
@@ -260,14 +270,15 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 ## <a name="system"></a>System
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Info | ms-settings:about |
 | Erweiterte Anzeigeeinstellungen | ms-settings:display-advanced (nur verfügbar auf Geräten, die erweiterte Anzeigeeinstellungen) |
+| App-Volumes und Geräte-Einstellungen | ms-settings:apps-volume |
 | Stromsparmodus | ms-settings:batterysaver (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
 | Einstellungen „Stromsparmodus” | ms-settings:batterysaver-settings (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
 | Akkubetrieb | ms-settings:batterysaver-usagedetails (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
-| Zwischenablage | MS-Einstellungen für Zwischenablage: |
+| Zwischenablage | ms-settings:clipboard |
 | Anzeige | ms-settings:display |
 | Standard-Speicherorte | ms-settings:savelocations |
 | Anzeige | ms-settings:screenrotation |
@@ -288,24 +299,24 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Remotedesktop | Einstellungen „Remotedesktop” |
 | Phone | MS-Einstellungen: Phone (**in Windows 10, Version 1809 und höher veraltet**) |
 | Ein/Aus und Standbymodus | ms-settings:powersleep |
-| Sound | MS-Einstellungen: Sound |
+| Sound | ms-settings:sound |
 | Speicher | ms-settings:storagesense |
 | Speicheroptimierung | ms-settings:storagepolicies |
 
 ## <a name="time-and-language"></a>Zeit und Sprache
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Datum und Uhrzeit | ms-settings:dateandtime |
 | Japan IME-Einstellungen | ms-settings:regionlanguage-jpnime (nur verfügbar, wenn der Eingabemethodeneditor „Microsoft Japan” installiert ist) |
-| Sprache | MS-Einstellungen: Tastenkombinationen<br/>ms-settings:regionlanguage<br/>MS-Einstellungen: Regionlanguage-Bpmfime<br/>MS-Einstellungen: Regionlanguage-Cangjieime<br/>MS-Einstellungen: Regionlanguage-Chsime-Pinyin-Domainlexicon<br/>MS-Einstellungen: Regionlanguage-Chsime-Pinyin-Keyconfig<br/>MS-Einstellungen: Regionlanguage-Chsime-Pinyin-Udp<br/>MS-Einstellungen: Regionlanguage-Chsime-Wubi – Udp<br/>MS-Einstellungen: Regionlanguage-Quickime |
+| Sprache | ms-settings:keyboard<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
 | Pinyin-IME-Einstellungen | ms-settings:regionlanguage-chsime-pinyin (nur verfügbar, wenn der Eingabemethodeneditor „Microsoft Pinyin” installiert ist) |
 | Spracherkennung | ms-settings:speech |
 | Wubi-IME-Einstellungen  | ms-settings:regionlanguage-chsime-wubi (nur verfügbar, wenn der Eingabemethodeneditor „Microsoft Wubi” installiert ist) |
 
 ## <a name="update--security"></a>Update und Sicherheit
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Aktivierung | ms-settings:activation |
 | Sicherung | ms-settings:backup |
@@ -315,7 +326,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Wiederherstellung | ms-settings:recovery |
 | Problembehandlung | ms-settings:troubleshoot |
 | Windows-Sicherheit | ms-settings:windowsdefender |
-| Windows-Insider-Programm | ms-settings:windowsinsider (nur verfügbar, wenn der Benutzer bei WIP registriert ist)<br/>MS-Einstellungen: Windowsinsider-Optin |
+| Windows-Insider-Programm | ms-settings:windowsinsider (nur verfügbar, wenn der Benutzer bei WIP registriert ist)<br/>ms-settings:windowsinsider-optin |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update-Advanced options | ms-settings:windowsupdate-options |
 | Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
@@ -323,7 +334,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 ## <a name="user--accounts"></a>Benutzerkonten
 
-|Seite „Einstellungen“| URI |
+|Einstellungsseite| URI |
 |-------------|-----|
 | Bereitstellung | ms-settings:workplace-provisioning (nur verfügbar, wenn das Unternehmen ein Bereitstellungspaket bereitgestellt hat) |
 | Bereitstellung | ms-settings:provisioning (nur mobil verfügbar und nur, wenn das Unternehmen ein Bereitstellungspaket bereitgestellt hat) |

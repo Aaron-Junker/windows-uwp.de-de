@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Add-On-Verkäufe, Add-On-Käufe, IAP-Verkauf, In-App-Produkte, IAPS, Add-Ons
 ms.localizationpriority: medium
-ms.openlocfilehash: 8027276779dac59f0745dd8053ee73cf1615e630
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7996761076d7d913ad73f0d7e050c69f9b64084d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625835"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63777863"
 ---
 # <a name="add-on-acquisitions-report"></a>Bericht zu Add-On-Käufen
 
@@ -32,7 +32,7 @@ Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Da
 
 Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite nach bestimmten Add-Ons, Markt und/oder Gerätetyp zu filtern.
 
--   **Add-On**: Der Standardfilter ist **alle Add-ons**, aber Sie können die Daten an eine oder mehrere Add-Ons mit der app einschränken.
+-   **Add-on**: Der Standardfilter ist **alle Add-ons**, aber Sie können die Daten an eine oder mehrere Add-Ons mit der app einschränken.
 -   **Markt**: Der Standardfilter ist **alle Märkte**, aber Sie können die Daten, Übernahmen ein oder mehrere Märkte einschränken.
 -   **Gerätetyp**: Die Standardeinstellung ist **alle Geräte**. Wenn Daten für Käufe nur für einen bestimmten Gerätetyp angezeigt werden sollen (beispielsweise PCs, Konsolen oder Tablets), können Sie hier einen bestimmten Typ auswählen.
 
