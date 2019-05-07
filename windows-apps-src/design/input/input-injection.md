@@ -7,12 +7,12 @@ keywords: Gerät, Digitalisierer, Eingabe, Interaktion, Einfügung
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 2ff3150d4c1ed713451669b8918906141daa9659
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343239"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065237"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simulieren der Benutzereingabe über die Eingabeeinfügung
 
@@ -50,7 +50,8 @@ In diesem Beispiel wird veranschaulicht, wie Sie die Eingabeeinfügungs-APIs ([W
 1. Zunächst richten wir die Benutzeroberfläche ein (MainPage.xaml).
 
     Wir verfügen über zwei Rasterbereiche (einen für die Mauseingabe und einen für die eingefügte Toucheingabe), jeweils mit vier Schaltflächen.
-       > [!NOTE] The Grid background must be assigned a value (`Transparent`, in this case), otherwise pointer events are not detected.
+      > [!NOTE] 
+      > Rasterhintergrund muss ein Wert zugewiesen werden (`Transparent`, in diesem Fall), andernfalls zeigerereignisse werden nicht erkannt.
 
     Wenn im Eingabebereich Mausklicks erkannt werden, wird ein entsprechendes Touchereignis in den Eingabeeinfügungsbereich eingefügt. Klicks auf Schaltflächen von der Eingabeeinfügung werden im Titelbereich gemeldet.
 
