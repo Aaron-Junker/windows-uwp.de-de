@@ -8,7 +8,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c8042bbe3ad8a37802b592e4e638a7c42e79a6d
 ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/20/2019
 ms.locfileid: "58221466"
@@ -56,13 +56,13 @@ Das Dial unterstützt drei grundlegende Gesten:
 4. Entfernen Sie falls nötig an der Unterseite der Dial den Batteriedeckel.
 5. Drücken und halten Sie den kleinen eingesetzten Knopf neben den Batterien, bis das Bluetooth-Licht aufleuchtet.
 6. Wechseln Sie zurück zu Ihrem Windows-Gerät und wählen Sie **Bluetooth oder ein anderes Gerät hinzufügen**.
-7. Wählen Sie im Dialogfeld **Hinzufügen eines Geräts****Bluetooth** > **Surface Dial**. Ihre Surface Dial sollte jetzt eine Verbindung herstellen und der Liste der Geräte unter **Maus, Tastatur und Stift** auf der Einstellungsseite **Bluetooth & andere Geräte** hinzugefügt werden.
+7. Wählen Sie im Dialogfeld **Hinzufügen eines Geräts** **Bluetooth** > **Surface Dial**. Ihre Surface Dial sollte jetzt eine Verbindung herstellen und der Liste der Geräte unter **Maus, Tastatur und Stift** auf der Einstellungsseite **Bluetooth & andere Geräte** hinzugefügt werden.
 8. Testen Sie das Dial, indem Sie sie einige Sekunden lang gedrückt halten, um das integrierte Menü anzuzeigen.
 9. Wenn Sie im Menü nicht auf dem Bildschirm angezeigt wird (das Dial sollte auch Vibrieren), wechseln Sie an der Bluetooth-Einstellungen wird das Gerät entfernt, und versuchen Sie erneut eine Verbindung des Geräts.
 
 > [!NOTE]
 > Wheel-Geräte können in den **Rad**-Einstellungen angepasst werden:
-> 1. Wählen Sie im **Startmenü****Einstellungen**.
+> 1. Wählen Sie im **Startmenü** **Einstellungen**.
 > 2. Wählen Sie **Geräte** > **Rad**.    
 > ![Bildschirm "Einstellungen" Wheel](images/radialcontroller/wheel-settings.png)
 

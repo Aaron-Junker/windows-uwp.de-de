@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7272abca9862eaf5ed7ceb161e433849497369a2
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599405"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444214"
 ---
 # <a name="bringing-it-together"></a>Alles zusammenführen
 
@@ -78,20 +78,34 @@ Im Folgenden finden Sie 3 Möglichkeiten, die Grundlagen für fließende Bewegun
     :::column-end:::
 :::row-end:::
 
+## <a name="examples"></a>Beispiele
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ImplicitTransition">öffnen Sie die app und implizite Übergänge in Aktion</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## <a name="implicit-animations"></a>Implizite Animationen
 
 > Implizite Animationen müssen Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher.
-
 
 Implizite Animationen sind, eine einfache Möglichkeit, Fluent während der Übertragung zu erzielen, indem Sie automatisch interpolieren zwischen den alten und neuen Werte während der Parameter geändert wird.
 
 Sie können implizit animieren, Änderungen an den folgenden Eigenschaften:
 
-- ["UIElement"](/uwp/api/windows.ui.xaml.uielement)
-  - **Deckkraft**
+- [UIElement](/uwp/api/windows.ui.xaml.uielement)
+  - **Opacity**
   - **Drehung**
   - **Skalieren**
-  - **Übersetzung**
+  - **Translation**
 
 - [Rahmen](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), oder [Bereich](/uwp/api/windows.ui.xaml.controls.panel)
   - **Hintergrund**

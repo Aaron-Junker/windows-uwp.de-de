@@ -11,16 +11,31 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b736a10a7284e3cc9aa193e082dc654e908afe40
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645265"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444171"
 ---
 # <a name="timing-and-easing"></a>Timing und Geschwindigkeitsverlauf
 
-Bewegung basiert zwar auf der realen Welt, aber auch in einem digitalen Medium werden Geschwindigkeit und Leistung erwartet. 
+Bewegung basiert zwar auf der realen Welt, aber auch in einem digitalen Medium werden Geschwindigkeit und Leistung erwartet.
+
+## <a name="examples"></a>Beispiele
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/EasingFunction">öffnen Sie die app, und vereinfachen von Funktionen in Aktion erleben</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="how-fluent-motion-uses-time"></a>Fluent-Bewegungen und Timing
 
@@ -40,8 +55,8 @@ Für das Timing von Fluent-Bewegungen gelten 500 ms (eine halbe Sekunde) als Gru
 
 :::row:::
     :::column:::
-        Use for objects or pages that are exiting the scene or closing.
-        Allows for very quick directional feedback of exiting UI where timing does not impede upon framerate to achieve a smooth animation.
+Verwenden Sie für Objekte oder Seiten, die die Szene zu beenden oder schließen.
+Sie ermöglicht eine sehr schnelle direktionale Rückmeldung der UI, bei der das Timing die Framerate nicht beeinträchtigt und so eine flüssige Animation unterstützt.
     :::column-end:::
     :::column:::
         ![150ms motion](images/150msAlt.gif)
@@ -52,8 +67,8 @@ Für das Timing von Fluent-Bewegungen gelten 500 ms (eine halbe Sekunde) als Gru
 
 :::row:::
     :::column:::
-        Use for objects or pages that are entering the scene or opening.
-        Allows a reasonable amount of time to celebrate content as it enters the scene.
+Verwenden Sie für Objekte oder Seiten, die die Szene eingeben oder Sie öffnen.
+Dies ist eine angemessene Zeitspanne, um Inhalte zu erkennen, wenn sie in die Szene eintreten.
     :::column-end:::
     :::column:::
         ![300ms motion](images/300ms.gif)
@@ -64,7 +79,7 @@ Für das Timing von Fluent-Bewegungen gelten 500 ms (eine halbe Sekunde) als Gru
 
 :::row:::
     :::column:::
-        Use for objects which are translating across a single scene or multiple scenes. 
+Verwenden Sie nach Objekten, die in einer einzigen Szene oder mehrerer Szenen übersetzen. 
     :::column-end:::
     :::column:::
         ![500ms motion](images/500ms.gif)
@@ -87,10 +102,10 @@ Die Codebeispiele zeigen, wie die empfohlene Werte auf Storyboardanimationen (XA
 
 :::row:::
     :::column:::
-        Use for UI or objects that are exiting the scene.
+Verwenden Sie für die Benutzeroberfläche oder Objekte, die die Szene Vorgang beendet werden.
 
-        Objects become powered and gain momentum until they reach escape velocity.
-        The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.
+Objekte werden unterstützt und Momentum erhalten, bis sie die Escape-Geschwindigkeit erreichen.
+Das resultierende Verhalten ist, dass das Objekt, die am schwersten versucht zu nutzen Sie die Benutzer und Platz für neue Inhalte eingehen.
     :::column-end:::
     :::column:::
         ![accelerate easing](images/accelEase.gif)
@@ -126,12 +141,12 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 :::row:::
     :::column:::
-        Use for objects or UI entering the scene, either navigating or spawning.
+Verwenden Sie für Objekte oder Eingeben der Szene Benutzeroberfläche navigieren, oder erstellen.
 
-        Once on-scene, the object is met with extreme friction, which slows the object to rest.
-        The resulting feel is that the object traveled from a long distance away and entered at an extreme velocity, or is quickly returning to a rest state.
+Nach der Szene, wird das Objekt mit extremer Reibung, erfüllt die verlangsamt, das Objekt wird, das rest.
+Das resultierende Verhalten ist, dass das Objekt aus einer langen Entfernung zurückgelegt mit einer Geschwindigkeit extreme eingegeben und ist schnell und auf einen Rest-Status.
 
-        Even if it's preceded by a moment of unresponsiveness, the velocity of the incoming object has the effect of feeling fast and responsive.
+Auch wenn es einen Moment an fehlender Reaktionsfähigkeit vorangestellt ist, hat die Geschwindigkeit des eingehenden Objekts die Auswirkungen der empfunden, schnell und reaktionsfähig.
     :::column-end:::
     :::column:::
         ![decelerate easing](images/decelEase.gif)
@@ -167,10 +182,10 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 :::row:::
     :::column:::
-        This is the baseline easing for any animated parameter change inside of the system.
-        Use standard easing for objects that change from state to state on-screen, such as a simple position change. Also, use it for objects morphing in-scene, like an object that grows.
+Dies ist die Baseline, die bei einer parameteränderung der animierten innerhalb des Systems zu vereinfachen.
+Verwenden Sie diesen Standard-Geschwindigkeitsverlauf für Objekte, die auf dem Bildschirm von Status zu Status wechseln, z. B. bei einer einfachen Positionsänderung. Verwenden Sie ihn zudem für Objekte, die sich in der Szene kontinuierlich verändern (Morphing), beispielsweise wachsen.
 
-        The resulting feel is that objects changing state from A to B are overcoming, and taken over by, natural forces.
+Das resultierende Verhalten ist, dass Objekte ändern des Status von A nach B überwinden sind, erstellt von, natürlichen erzwingt.
     :::column-end:::
     :::column:::
         ![standard easing](images/standardEase.gif)

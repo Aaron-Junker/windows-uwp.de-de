@@ -12,18 +12,33 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1096bdab340c3f0fef24b5815423f72b0f5c8219
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582794"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444165"
 ---
 # <a name="motion-for-uwp-apps"></a>Bewegung für UWP-Apps
 
-![Herobild](images/header-motion2.svg)
+![Bewegungssymbol](../images/motion-2x.png)
 
 In einer App sind fließende Bewegungen wichtig. Sie geben intelligentes Feedback basierend auf dem Verhalten des Benutzers, lassen die Benutzeroberfläche lebendig wirken und unterstützen den Benutzer bei der Navigation in der App. Durch fließende Bewegungen entsteht eine gewisse emotionale Verbindung zwischen einem Benutzer und der digitalen Benutzeroberfläche. Wir gehen von grundlegenden natürlichen Bewegungen aus, die der Benutzer bereits aus der physischen Welt kennt, und erweitern unser System darauf aufbauend.
+
+## <a name="examples"></a>Beispiele
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/category/Motion">die App zu öffnen und Bewegung in Aktion zu sehen</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="fluent-motion-principles"></a>Prinzipien fließender Bewegungen
 
@@ -53,7 +68,7 @@ Durch fließende Bewegungen wird die Aufmerksamkeit des Benutzers geschickt auf 
 Dank intelligenter Bewegung erhält der Benutzer eine Rückmeldung, die sich an seiner Interaktion mit der Benutzeroberfläche orientiert. Die Interaktion ist auf den Benutzer ausgerichtet. Die Bewegung muss dem Formfaktor angemessen und dem Szenario entsprechend gestaltet sein. Sie sollte jedem Benutzer vertraut sein.
 
 ![UI-Beispiel für kontextuelle Bewegung](images/Contextual.gif)
-> Eine Animation sollte mit der Benutzerinteraktion verknüpft sein. Ein Kontextmenü wird dort bereitgestellt, wo es vom Benutzer aktiviert wurde. 
+> Eine Animation sollte mit der Benutzerinteraktion verknüpft sein. Ein Kontextmenü wird dort bereitgestellt, wo es vom Benutzer aktiviert wurde.
 
 ## <a name="motion-articles"></a>Artikel zu Bewegungen
 

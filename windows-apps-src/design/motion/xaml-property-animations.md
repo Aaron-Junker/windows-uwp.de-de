@@ -8,12 +8,12 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 81da1e769ab171e47a4f4046e8ec7e7c84ecf2d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 183a5433553ff6fdfcb09f6960f6a642f2c8bc08
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630355"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444148"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>Animieren von XAML-Elementen mit kompositionsanimationen
 
@@ -31,21 +31,37 @@ Ab Windows 10, Version 1809, können Sie Eigenschaften für ein UIElement, das d
 > [!NOTE]
 > Um diese Eigenschaften auf "UIElement" verwenden zu können, muss es sich bei der UWP-Projekt-Zielversion 1809 oder höher sein. Weitere Informationen zum Konfigurieren Ihrer Projektversion finden Sie unter [versionsabhängig adaptive apps](../../debug-test-perf/version-adaptive-apps.md).
 
+## <a name="examples"></a>Beispiele
+
+<table>
+<th align="left">XAML-Steuerelementekatalog<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/XamlCompInterop">öffnen Sie die app, und finden Sie unter ' Animation-Interop in Aktion</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## <a name="new-rendering-properties-replace-old-rendering-properties"></a>Neue Renderingeigenschaften ersetzen alten Renderingeigenschaften
 
 Diese Tabelle zeigt die Eigenschaften können Sie das Rendering eines "UIElement", zu ändern, die auch mit animiert werden, können eine ["compositionanimation"](/uwp/api/windows.ui.composition.compositionanimation).
 
 | Eigenschaft | Typ | Beschreibung |
 | -- | -- | -- |
-| [Deckkraft](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Den Grad der Deckkraft des Objekts |
-| [Übersetzung](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Verschieben Sie die X/Y/Z-Position des Elements |
-| ["TransformMatrix"](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | Die Transformationsmatrix, die für das Element gelten |
+| [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Den Grad der Deckkraft des Objekts |
+| [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Verschieben Sie die X/Y/Z-Position des Elements |
+| [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | Die Transformationsmatrix, die für das Element gelten |
 | [Skalieren](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | Skalieren Sie das Element, dessen Mitte sich an den CenterPoint |
 | [Drehung](/uwp/api/windows.ui.xaml.uielement.rotation) | Gleitkomma | Das Element, um die RotationAxis und Mittelpunkt gedreht. |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | Die Achse der Drehung |
 | [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | Der Mittelpunkt der Skalierung und Drehung |
 
-Der Wert der "transformMatrix"-Eigenschaft wird mit den Eigenschaften für Skalierung, Drehung und Übersetzung in der folgenden Reihenfolge kombiniert:  TransformMatrix, Skalierung, Drehung, Translation.
+Der Wert der "transformMatrix"-Eigenschaft wird mit den Eigenschaften für Skalierung, Drehung und Übersetzung in der folgenden Reihenfolge kombiniert:  TransformMatrix, Scale, Rotation, Translation.
 
 Diese Eigenschaften wirken sich nicht auf das Element des Layouts, so dass die Änderung dieser Eigenschaften nicht dazu, dass ein neues [Measure](/uwp/api/windows.ui.xaml.uielement.measure)/[anordnen](/uwp/api/windows.ui.xaml.uielement.arrange) übergeben.
 
