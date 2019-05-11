@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
+ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630565"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535192"
 ---
 # <a name="my-people-notifications"></a>Meine Kontakte – Benachrichtigungen
 
@@ -51,15 +51,15 @@ Die Image-Knoten in der Bindung sollten die folgenden Parameter enthalten:
 
 + **src**
     + Die URI des Elements. Dies kann sowohl HTTP/HTTPS web URI, eine msappx URI oder ein Pfad zu einer lokalen Datei sein.
-+ **Spritesheet-Src-**
++ **spritesheet-src**
     + Die URI des Elements. Dies kann sowohl HTTP/HTTPS web URI, eine msappx URI oder ein Pfad zu einer lokalen Datei sein. Ist nur für Spritesheet-Animationen erforderlich.
-+ **Spritesheet Höhe**
++ **spritesheet-height**
     + Die Framehöhe (in Pixeln). Ist nur für Spritesheet-Animationen erforderlich.
-+ **Spritesheet-f/s**
++ **spritesheet-fps**
     + Frames pro Sekunde (FPS). Ist nur für Spritesheet-Animationen erforderlich. Es werden nur Werte von 1‑120 unterstützt.
-+ **Spritesheet-startingFrame**
++ **spritesheet-startingFrame**
     + Die Framenummer, um die Animation zu starten. Wird nur für Spritesheet-Animationen verwendet und hat den Standardwert 0, wenn keine Angabe erfolgt.
-+ **ALT-Taste**
++ **alt**
     + Text-Zeichenfolge, die als Bildschirmsprachausgabe verwendet wird.
 
 > [!NOTE]
@@ -68,7 +68,7 @@ Die Image-Knoten in der Bindung sollten die folgenden Parameter enthalten:
 Darüber hinaus muss der Knoten der obersten Ebene Popups **hint-people**-Parameter enthalten, um den Absender-Kontakt anzugeben. Dieser Parameter kann folgende Werte haben:
 
 + **E-Mail-Adresse** 
-    + z. B. mailto:johndoe@mydomain.com
+    + z. B. ` mailto:johndoe@mydomain.com `
 + **Telefonnummer** 
     + z. B. Tel:888-888-8888
 + **Remote-ID** 
