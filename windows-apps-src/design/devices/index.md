@@ -1,6 +1,6 @@
 ---
 Description: Wenn Sie sich mit den Geräten vertraut machen, die UWP-Apps (Universelle Windows-Plattform) unterstützen, können Sie für jeden Formfaktor die bestmögliche Benutzerfreundlichkeit bieten.
-title: Einführung der Geräte für UWP-Apps (Universelle Windows-Plattform)
+title: Überlegungen zur Benutzeroberfläche für UWP-Geräte
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -8,20 +8,22 @@ keywords: Gerät, Eingabe, Interaktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6333345a79d92394539d337f1f2390118cff1153
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582834"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065358"
 ---
-#  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>Einführung der Geräte für UWP-Apps (Universelle Windows-Plattform)
+#  <a name="ui-considerations-for-uwp-devices"></a>Überlegungen zur Benutzeroberfläche für UWP-Geräte
 
+![Geräte](../images/devices-2x.png)
 
+Wenn Sie sich mit den Geräten vertraut machen, die UWP-Apps (Universelle Windows-Plattform) unterstützen, können Sie für jeden Formfaktor die bestmögliche Benutzerfreundlichkeit bieten.
 
 ![Windows-Geräte](images/device-primer/device-primer-ramp.png)
 
-Wenn Sie sich mit den Geräten vertraut machen, die UWP-Apps (Universelle Windows-Plattform) unterstützen, können Sie für jeden Formfaktor die bestmögliche Benutzerfreundlichkeit bieten. Beim Entwickeln für ein bestimmtes Gerät sind die wichtigsten zu berücksichtigenden Punkte die Darstellung der App auf dem Gerät, wo, wann und wie die App auf dem Gerät genutzt wird und die Art der Interaktion der Benutzer mit dem Gerät.
+ Beim Entwickeln für ein bestimmtes Gerät sind die wichtigsten zu berücksichtigenden Punkte die Darstellung der App auf dem Gerät, wo, wann und wie die App auf dem Gerät genutzt wird und die Art der Interaktion der Benutzer mit dem Gerät.
 
 ## <a name="pcs-and-laptops"></a>PCs und Laptops
 

@@ -5,16 +5,16 @@ keywords: Layout von UWP-Apps, universelle Windows-Plattform, App-Design, Schnit
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afaada45c3f332085135212be39e43bb1c3fe8f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 03e30aa091a04e16ee84f38832dc962d34659e1b
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582592"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065428"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Designgrundlagen für UWP-Apps
 
-![Herobild](images/header-design-basics.svg)
+![Symbol für Designgrundlagen](../images/basics-2x.png)
 
 Der Designleitfaden für die universelle Windows-Plattform (UWP) ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Es handelt sich dabei nicht um eine Liste von Vorschriften, sondern ein lebendiges Dokument, das entwickelt wurde, um sich an unser Fluent Design-System sowie die Bedürfnisse unserer App-Entwicklungs-Community anzupassen. 
 
