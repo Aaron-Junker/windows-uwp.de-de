@@ -1,16 +1,16 @@
 ---
 title: Versionsadaptive Apps
 description: Erfahren Sie, wie Sie neue APIs nutzen und gleichzeitig die Kompatibilität mit früheren Versionen gewährleisten.
-ms.date: 09/17/2018
+ms.date: 05/17/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 435bbdbfaaf1bec90fa1ee2d598b4a3fe78d3789
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 579f92cc51ed5f9eeea522d81cfdb030f85ef0da
+ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631655"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852278"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Versionsabhängig adaptive apps: Verwenden Sie die neuen APIs Beibehaltung der Kompatibilität mit früheren Versionen
 
@@ -57,6 +57,7 @@ Im Anschluss finden Sie die Buildnummern für die einzelnen SDKs.
 | Fall Creators Update | 1709 | 16299 |
 | Update April 2018 | 1803 | 17134 |
 | Update für Oktober 2018 | 1809 | 17763 |
+| Update von Mai 2019 | 1903 | 18362 |
 
 Sie können jede beliebige veröffentlichte Version des SDKs aus dem [Windows SDK- und Emulator-Archiv](https://developer.microsoft.com/downloads/sdk-archive) herunterladen. Das neueste Windows Insider Preview SDK können Sie im Entwicklerabschnitt der [Windows Insider-Website](https://insider.windows.com/Home/BuildWithWindows) herunterladen.
 
