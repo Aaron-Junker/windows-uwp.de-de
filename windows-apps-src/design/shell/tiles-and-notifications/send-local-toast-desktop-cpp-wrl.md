@@ -7,12 +7,12 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, win32, Desktop, Popupbenachrichtigungen, Popup senden, lokale Popupbenachrichtigungen senden, Desktop Bridge, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 82de349009350c970fce923a2aa503df0801c3b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: af6c4392d97bdbf06c3e185b8a1c0235225bfe5a
+ms.sourcegitcommit: 81021b7930905beb67383a08b09520cf95c68fd9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609845"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940313"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Senden von Popupbenachrichtigungen über C++ WRL-Apps
 
@@ -62,7 +62,7 @@ using namespace Microsoft::WRL;
 
 ## <a name="step-4-implement-the-activator"></a>Schritt 4: Implementieren Sie die Aktivierung
 
-Sie müssen einen Handler für die Popup-Aktivierung implementieren, damit, wenn der Benutzer auf das Popup klickt, Ihre App eine Aktion ausführen kann. Dies ist erforderlich für das Popup, damit es im Info-Center beibehalten wird (da auf das Popup Tage später geklickt werden kann, wenn die App geschlossen ist). Diese Klasse kann an eine beliebige Stelle in Ihrem Projekt platziert werden.
+Sie müssen einen Handler für den Toast-Aktivierung implementieren, sodass klickt der Benutzer auf Ihre Toast, Ihre app etwas durchführen kann. Dies ist erforderlich für das Popup, damit es im Info-Center beibehalten wird (da auf das Popup Tage später geklickt werden kann, wenn die App geschlossen ist). Diese Klasse kann an eine beliebige Stelle in Ihrem Projekt platziert werden.
 
 Implementieren Sie die **INotificationActivationCallback**-Schnittstelle wie folgt, einschließlich der UUID, und rufen Sie auch **CoCreatableClass** auf, um die Klasse als COM-erstellbar zu kennzeichnen. Erstellen Sie mithilfe einer der vielen online GUID-Generatoren eine eindeutige GUID für die UUID. Durch diese GUID CLSID (Klassen-ID) weiß das Info-Center, welche Klasse für COM aktiviert werden soll.
 
@@ -102,7 +102,7 @@ Bei Verwendung der Desktop-Brücke (oder wenn Sie beide Modi unterstützen), fü
 4. **com:Extension** für den COM-Aktivator mithilfe der GUID aus Schritt 4. Stellen Sie sicher, dass `Arguments="-ToastActivated"` hinzugefügt wurde, damit Sie wissen, dass der Start über ein Popup ausgeführt wurde
 5. **desktop:Extension** für **windows.toastNotificationActivation**, um den Popup-Aktivator CLSID zu deklarieren (der GUID aus Schritt #4).
 
-**Datei "Package.appxmanifest"**
+**Package.appxmanifest**
 
 ```xml
 <Package
@@ -421,8 +421,8 @@ Mit Windows 8 wurden Popupbenachrichtigungen eingeführt, allerdings verwendet 
 | Betriebssystem | ToastGeneric | COM-Aktivator | Ältere Popupvorlagen |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | Unterstützt | Unterstützt | Unterstützt (aktiviert den COM-Server nicht) |
-| Windows 8.1 / 8 | n. a. | n. a. | Unterstützt |
-| Windows 7 und niedriger | n. a. | n. a. | n. a. |
+| Windows 8.1 / 8 | Nicht zutreffend | Nicht zutreffend | Unterstützt |
+| Windows 7 und niedriger | Nicht zutreffend | Nicht zutreffend | Nicht zutreffend |
 
 Um zu überprüfen, ob Sie Windows 10 ausführen, geben Sie den `<VersionHelpers.h>` Header an und überprüfen Sie die **IsWindows10OrGreater**-Methode. Wenn „true” zurückgegeben wird, rufen Sie weiterhin alle in dieser Dokumentation beschriebenen Methoden auf. 
 
