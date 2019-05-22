@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4607280fd031fa556bfc5d1c719f4b4e1aeb928e
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626405"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984102"
 ---
 # <a name="visual-layer"></a>Visuelle Ebene
 
@@ -61,6 +61,12 @@ Weitere Informationen finden Sie in der Übersicht [Kompositionsanimationen](com
 Sie können auf ein visuelles Element, das über das XAML-Framework erstellt wurde, zugreifen und ein sichtbares FrameworkElement sichern, indem Sie die [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976)-Klasse in [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) verwenden. Beachten Sie, dass einige Einschränkungen der Anpassung für visuelle Elemente gelten, die über das Framework für Sie erstellt wurden. Dies liegt daran, dass das Framework Offsets, Transformationen und Lebensdauer-Zeitspannen verwaltet. Sie können jedoch Ihre eigenen visuellen Elemente erstellen und sie einem vorhandenen XAML-Element über ElementCompositionPreview anhängen. Sie können sie auch einem vorhandenen ContainerVisual an einer beliebigen Stelle in der visuellen Struktur hinzufügen.
 
 Weitere Informationen finden Sie in der Übersicht [Benutzung der visuellen Ebene mit XAML](using-the-visual-layer-with-xaml.md).
+
+### <a name="working-with-your-desktop-app"></a>Arbeiten mit Ihrer desktop-app
+
+Sie können die visuelle Ebene verwenden, um die Aussehens, Verhaltens, und von Ihr WPF, Windows Forms, verbessern und C++ Win32-desktop-apps. Sie können die Inseln des Inhalts die visuelle Ebene und verwenden den Rest der Benutzeroberfläche in der vorhandenen Framework migrieren. Dies bedeutet, dass Sie wichtige Updates und Verbesserungen an der Benutzeroberfläche Ihrer Anwendung vornehmen können ohne umfangreiche Änderungen an den vorhandenen Code vornehmen Basis.
+
+Weitere Informationen finden Sie unter [modernisieren Sie Ihre desktop-app mit der visuellen Ebene](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps).
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 

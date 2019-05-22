@@ -8,7 +8,7 @@ keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 28c21b3d3b3e53def2181e96a58b53998ee0f04a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57660725"
@@ -91,8 +91,8 @@ Wenn eine App vom Vordergrund in den Hintergrund wechselt, erhält sie zuerst ei
 - **Verwenden** Sie das **EnteredBackground**-Ereignis, um UI-Ressourcen freizugeben, von denen Sie wissen, dass Ihre App sie im Hintergrund nicht benötigt. Beispielsweise könnten Sie das Cover-Bild für einen Song freigeben.
 - **Verwenden** Sie das **AppMemoryUsageLimitChanging**-Ereignis, um sicherzustellen, dass Ihre App weniger Speicher verbraucht als der neue Hintergrundgrenzwert vorgibt. Achten Sie darauf, Ressourcen freizugeben, wenn dies nicht der Fall ist. Wenn Sie dies nicht tun, kann Ihre App je nach der gerätespezifischen Richtlinie angehalten oder beendet werden.
 - **Rufen** Sie manuell den Garbage Collector auf, wenn Ihre App die neue Speichergrenze überschreitet, wenn das **AppMemoryUsageLimitChanging**-Ereignis auslöst.
-- **Verwenden** Sie das **AppMemoryUsageIncreased**-Ereignis für die weitere Überwachung der Speichernutzung Ihrer App im Hintergrund, wenn Sie erwarten, dass diese sich ändert. Wenn die **AppMemoryUsageLevel****High** oder **OverLimit** ist, geben Sie Ressourcen frei.
-- **Geben Sie eventuell** UI-Ressourcen im **AppMemoryUsageLimitChanging**-Ereignishandler anstelle des **EnteredBackground**-Handlers frei, um die Leistung zu erhöhen. Verwenden Sie einen booleschen Wert in den Ereignishandlern **EnteredBackground/LeavingBackground**, um zu verfolgen, ob sich die App im Vordergrund oder im Hintergrund befindet. Wenn dann im Eventhandler **AppMemoryUsageLimitChanging****AppMemoryUsage** den Grenzwert überschreitet und sich die App im Hintergrund befindet (nach dem booleschen Wert), können Sie UI-Ressourcen freigeben.
+- **Verwenden** Sie das **AppMemoryUsageIncreased**-Ereignis für die weitere Überwachung der Speichernutzung Ihrer App im Hintergrund, wenn Sie erwarten, dass diese sich ändert. Wenn die **AppMemoryUsageLevel** **High** oder **OverLimit** ist, geben Sie Ressourcen frei.
+- **Geben Sie eventuell** UI-Ressourcen im **AppMemoryUsageLimitChanging**-Ereignishandler anstelle des **EnteredBackground**-Handlers frei, um die Leistung zu erhöhen. Verwenden Sie einen booleschen Wert in den Ereignishandlern **EnteredBackground/LeavingBackground**, um zu verfolgen, ob sich die App im Vordergrund oder im Hintergrund befindet. Wenn dann im Eventhandler **AppMemoryUsageLimitChanging** **AppMemoryUsage** den Grenzwert überschreitet und sich die App im Hintergrund befindet (nach dem booleschen Wert), können Sie UI-Ressourcen freigeben.
 - **Führen Sie keine** Langzeitaufgaben im **EnteredBackground**-Ereignis durch, da dies dazu führen kann, dass der Übergang zwischen Anwendungen für die Benutzer langsam vor sich geht.
 
 ### <a name="moving-from-the-background-to-the-foreground"></a>Verschieben vom Hintergrund in den Vordergrund

@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 953a92cdb8cc3168a2cbeae9a1f3610f771c6339
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 5feea95245a7e3ff6deefe73617b050f89243a90
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444186"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984130"
 ---
 # <a name="parallax"></a>Parallax
 
@@ -43,7 +43,7 @@ Parallax ist ein visueller Effekt, bei dem sich Elemente, die näher am Betracht
 
 ## <a name="parallax-and-the-fluent-design-system"></a>Parallax und das Fluent Design-System
 
- Mit dem Fluent Design-System erstellen Sie moderne Oberflächen, die Licht, Tiefe, Bewegung, Material und Skalierungsmöglichkeiten beinhalten. Parallax ist eine Komponente des Fluent Design-Systems, die Bewegung, Tiefe und Skalierungsmöglichkeiten in Ihre App bringt. Weitere Informationen finden Sie in der [Fluent Design für UWP-Übersicht](../fluent-design-system/index.md).
+ Mit dem Fluent Design-System erstellen Sie moderne Oberflächen, die Licht, Tiefe, Bewegung, Material und Skalierungsmöglichkeiten beinhalten. Parallax ist eine Komponente des Fluent Design-Systems, die Bewegung, Tiefe und Skalierungsmöglichkeiten in Ihre App bringt. Weitere Informationen finden Sie in der [Fluent Design für UWP-Übersicht](/windows/apps/fluent-design-system).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Funktionsweise in einer Benutzeroberfläche
 
@@ -122,5 +122,5 @@ Die vollständige Liste der Methoden zum Anpassen von Parallax finden Sie in der
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [ParallaxView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
-- [Fluent Design für UWP](../fluent-design-system/index.md)
+- [Fluent Design für UWP](/windows/apps/fluent-design-system)
 - [Die Wissenschaft im System: Fluent Design und der Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
