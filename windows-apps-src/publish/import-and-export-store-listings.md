@@ -27,7 +27,7 @@ Bedenken Sie, dass Sie immer erstellen oder Aktualisieren von Listen direkt im P
 
 Klicken Sie auf der Übermittlungsübersicht für eine App auf **Eintrag exportieren** (im Abschnitt **Store-Einträge**), um eine im UTF-8 codierte CSV-Datei zu generieren. Speichern Sie diese Datei an einem Speicherort auf Ihrem Computer.
 
-Sie können Microsoft Excel oder einem anderen Editor zum Bearbeiten dieser Datei verwenden. Beachten Sie, dass Sie mit der Office 365-Versionen von Excel die **.csv-Datei als UTF-8-CSV (Komma-getrennt) (CSV)** speichert, andere Versionen werden möglicherweise jedoch nicht unterstützt. Nähere Informationen dazu, welche Versionen von Excel dieses Feature unterstützen finden Sie im [Excel 2016 New Features Bulletin](https://support.office.com/en-us/article/What-s-new-in-Excel-2016-for-Windows-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73) und Weitere Informationen zur Codierung als UTF-8 in verschiedenen Editoren finden Sie [hier](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
+Sie können Microsoft Excel oder einem anderen Editor zum Bearbeiten dieser Datei verwenden. Beachten Sie, dass es sich bei Office 365-Versionen von Excel können Sie eine CSV-Datei als speichern **CSV UTF-8 (Komma-getrennt) (*.csv)** , andere Versionen ist jedoch nicht unterstützt dies. Nähere Informationen dazu, welche Versionen von Excel dieses Feature unterstützen finden Sie im [Excel 2016 New Features Bulletin](https://support.office.com/en-us/article/What-s-new-in-Excel-2016-for-Windows-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73) und Weitere Informationen zur Codierung als UTF-8 in verschiedenen Editoren finden Sie [hier](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
       
 Wenn Sie bisher noch keine Einträge für Ihr Produkt erstellt haben, enthält die exportierte CSV-Datei keine benutzerdefinierten Daten. Sie sehen Spalten für **Feld**, **ID**, **Typ** und **Standard**, sowie Zeilen, die jedem Element entsprechen, das in einem Store-Eintrag angezeigt werden kann.
 
@@ -36,7 +36,7 @@ Wenn Sie bereits Einträge erstellt haben (oder Pakete hochgeladen haben), sehen
 Nachfolgend finden Sie ein Überblick darüber, was in jeder der Spalten in der exportierten CSV-Datei enthalten ist:
 - Die Spalte **Feld** enthält einen Namen, der mit jedem Teil eines Store-Eintrags verknüpft ist. Diese entsprechen die gleichen Elemente, die Sie beim Erstellen von Store-Angebote im Partner Center bereitstellen können, obwohl einige der Namen geringfügig unterscheiden. Für Elemente, für die Sie mehr als eine Antwort für den gleichen Typ eingeben können, sehen Sie mehrere Zeilen, bis zur maximalen Anzahl, die Sie angeben können. Für **App-Features** sehen Sie **Feature1**, **Feature2**usw., bis zu **Feature20** (da Sie nur bis zu 20 Features der App angeben können).
 - Die **ID** Spalte enthält eine Anzahl, die Partner Center mit jedem Feld zuordnet. 
-- Die **Typ** Spalte stellt die allgemeine Anleitung dazu, welche Art von Informationen zum Bereitstellen für dieses Feld, z. B. **Text** oder **relativen Pfad (oder die URL zur Datei im Partner Center)**. 
+- Die **Typ** Spalte stellt die allgemeine Anleitung dazu, welche Art von Informationen zum Bereitstellen für dieses Feld, z. B. **Text** oder **relativen Pfad (oder die URL zur Datei im Partner Center)** . 
 - Die Spalte **Standard** (und alle Spalten, die mit Gebietsschemacodes gekennzeichnet sind) stellen den Text oder Objekte dar, die mit jedem Teil der Store-Eintrag verknüpft sind. Sie können die Felder in diesen Spalten aktualisieren, um Ihre Store-Einträge zu bearbeiten.
 
 >[!IMPORTANT]
@@ -65,7 +65,7 @@ Das Löschen der Informationen aus einem Feld für eine Sprache, ohne dabei die 
 
 Viele der Felder in den exportierten Einträgen erfordern eine Texteingabe, wie im obigen Beispiel **Beschreibung** und **Versionshinweise** gezeigt. Geben Sie für diese Arten Felder einfach den entsprechenden Text in das Feld für jede Sprache ein. Folgen Sie unbedingt der Länge und anderen Anforderungen für die einzelnen Felder. Weitere Informationen zu diesen Anforderungen finden Sie unter [App Store-Einträge erstellen](create-app-store-listings.md).
 
-Das Bereitstellen von Informationen für Felder, die Ressourcen entsprechen, wie z. B. Bilder und Trailer, sind etwas komplizierter. Statt **Text**, **Typ** für diese Objekte ist **relativen Pfad (oder die URL zur Datei im Partner Center)**. 
+Das Bereitstellen von Informationen für Felder, die Ressourcen entsprechen, wie z. B. Bilder und Trailer, sind etwas komplizierter. Statt **Text**, **Typ** für diese Objekte ist **relativen Pfad (oder die URL zur Datei im Partner Center)** . 
      
 Wenn Sie bereits Ressourcen für Ihre Store-Einträge hochgeladen haben, werden diese Ressourcen von der URL dargestellt. Diese URLs können in mehreren Beschreibungen für ein Produkt oder sogar über verschiedene Produkte im gleichen Entwicklerkonto wiederverwendet werden, damit Sie diese URLs kopieren und sie in einem anderen Feld wiederverwenden, wenn Sie dies wünschen.
 
@@ -84,7 +84,7 @@ Wenn der Stammordner beispielsweise **My_folder** heißt und Sie ein Bild verwen
 
 ## <a name="import-listings"></a>Importieren von Einträgen
 
-Nachdem Sie alle Ihre Änderungen in der CSV-Datei eingegeben haben (und alle Objekte, die Sie hochladen möchten), müssen Sie die Datei speichern, bevor Sie sie hochladen. Wenn Sie eine Version von Microsoft Excel verwenden, die UTF-8 Codierung unterstützt, stellen Sie sicher, dass Sie **Speichern als** verwenden und das **CSV UTF-8 (Komma-getrennt) (.csv)**-Format verwenden. Wenn Sie einen anderen Editor verwenden, um die CSV-Datei anzuzeigen und zu bearbeiten, stellen Sie sicher, dass die CSV-Datei vor dem Hochladen in UTF-8 codiert ist.
+Nachdem Sie alle Ihre Änderungen in der CSV-Datei eingegeben haben (und alle Objekte, die Sie hochladen möchten), müssen Sie die Datei speichern, bevor Sie sie hochladen. Wenn Sie eine Version von Microsoft Excel verwenden, die UTF-8 Codierung unterstützt, stellen Sie sicher, dass Sie **Speichern als** verwenden und das **CSV UTF-8 (Komma-getrennt) (.csv)** -Format verwenden. Wenn Sie einen anderen Editor verwenden, um die CSV-Datei anzuzeigen und zu bearbeiten, stellen Sie sicher, dass die CSV-Datei vor dem Hochladen in UTF-8 codiert ist.
 
 Wenn Sie die aktualisierte CSV-Datei hochladen möchten und die Daten des Eintrags importieren, wählen Sie in der Übermittlungsübersicht **Einträge importieren** aus. Wenn Sie nur eine CSV-Datei importieren, wählen Sie **CSV importieren**, navigieren Sie zur Datei, und klicken Sie auf **Öffnen**. Wenn Sie einen Ordner mit Bilddateien importieren, wählen Sie „Ordner importieren”, navigieren Sie zu dem Ordner, und klicken Sie auf **Ordner auswählen**. Stellen Sie sicher, dass sich nur eine CSV-Datei im Ordner befindet, sowie alle Objekte, die Sie hochladen. 
 
