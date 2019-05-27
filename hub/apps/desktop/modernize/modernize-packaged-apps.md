@@ -4,20 +4,22 @@ title: Modernisieren von desktop-apps App-Pakete
 ms.date: 04/22/2019
 ms.topic: article
 keywords: windows 10, UWP
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6d71233bc7b96af9d9b261406d6b149f36f65f29
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 191a8b8a007a866f37780a7c52cd40047dc9817f
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985290"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215201"
 ---
-# <a name="features-that-require-package-identity"></a>Funktionen, die Paketidentität erfordern
+# <a name="features-that-require-package-identity"></a>Features, für die Paketidentität benötigt wird
 
 Wenn Sie Ihre desktop-app mit aktualisieren möchten [modernen Windows 10-Funktionen](index.md), viele Features sind nur in desktop-apps, die in einem MSIX-Paket verpackt sind verfügbar.
 
-MSIX ist eine moderne Windows-app-Paket-Format, das eine universelle Packaging-Ergebnis für alle Windows-apps, WPF, Windows Forms und Win32-apps bietet. Packen Ihre Windows-desktop-apps können Sie moderne Windows 10-Funktionen wie live-Kacheln und Benachrichtigungen in Ihre apps integrieren. Er ruft auch Zugriff auf eine stabile Installation und Update-Oberfläche, ein verwalteter Sicherheitsmodell, das mit einem System flexible Möglichkeit, Unterstützung für den Microsoft Store, unternehmensverwaltung und viele benutzerdefinierte Verteilung Modelle ab. Weitere Informationen finden Sie unter [Paket desktopanwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in der Dokumentation zu MSIX.
+MSIX ist eine moderne Windows-app-Paket-Format, das eine universelle Packaging-Ergebnis für alle Windows-apps, WPF, Windows Forms und Win32-apps bietet. Packen Ihre Windows-desktop-apps können Sie moderne Windows 10-Funktionen wie live-Kacheln und Benachrichtigungen in Ihre apps integrieren. Er ruft auch Zugriff auf eine stabile Installation und Update-Oberfläche, ein verwalteter Sicherheitsmodell, das mit einem System flexible Möglichkeit, Unterstützung für den Microsoft Store, unternehmensverwaltung und viele benutzerdefinierte Verteilung Modelle ab. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
 
 Wenn Sie Ihre desktop-app packen, können Sie dann UWP-APIs, die Paketidentität, paketerweiterungen und UWP-Komponenten in Ihrer app-Paket benötigen. Weitere Informationen finden Sie in diesen Artikeln.
 
@@ -27,13 +29,13 @@ Einige UWP-APIs erfordern [Paket Identität](https://docs.microsoft.com/uwp/sche
 
 Weitere Informationen finden Sie unter [diese Liste der APIs](desktop-to-uwp-supported-api.md#list-of-apis).
 
-## <a name="integrate-with-package-extensions"></a>Paketerweiterungen integrieren
+## <a name="integrate-with-package-extensions"></a>Integrieren mit Paketerweiterungen
 
 Wenn Ihre Anwendung Sie in das System integrieren muss (z. B.: Einrichten der Firewall-Regeln) Dinge im Paketmanifest der Anwendung und die Beschreibung des Systems erledigt den Rest. Für die meisten dieser Aufgaben müssen Sie gar keinen Code schreiben. Mit ein wenig XML in das Manifest können Sie Aktionen wie das Starten eines Prozesses, wenn der Benutzer anmeldet, integrieren Ihre Anwendung in Datei-Explorer und fügen Ihrer Anwendung eine Liste der print-Ziele, die in anderen apps angezeigt werden.
 
 Weitere Informationen finden Sie unter [integrieren Sie Ihre desktop-app in paketerweiterungen](desktop-to-uwp-extensions.md).
 
-## <a name="extend-with-uwp-components"></a>Erweitern mit UWP-Komponente
+## <a name="extend-with-uwp-components"></a>Erweitern mit UWP-Komponenten
 
 Einige Windows 10-Umgebungen (z. B. eine touch-fähige UI-Seite) müssen sich in einem Modern-App-Container befinden. Im Allgemeinen zuerst sollten Sie ermitteln, ob Sie Ihre Umgebung durch hinzufügen können [verbessern](desktop-to-uwp-enhance.md) Ihrer vorhandenen Desktopanwendung mit UWP-APIs. Wenn Sie eine UWP-Komponente zu verwenden, um die Funktionalität erzielen, müssen, können Sie Ihrer Projektmappe ein UWP-Projekt hinzufügen und app-Dienste für die Kommunikation zwischen Ihrer desktop-Anwendung und die UWP-Komponente verwenden.
 

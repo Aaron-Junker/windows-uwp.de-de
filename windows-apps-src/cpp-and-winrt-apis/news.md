@@ -1,17 +1,17 @@
 ---
 description: Neuigkeiten und Änderungen von C++/WinRT.
 title: Neuigkeiten in C++ / WinRT
-ms.date: 04/02/2019
+ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Standard, c++, Cpp, Winrt, Projektion, News, was die neue
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8ee10450a7a346c1ae032240aaecc65e7f87822d
-ms.sourcegitcommit: 940645c705865ba9635ccae2da9d917420faf608
+ms.openlocfilehash: b84736e41e039d350a849c55fead008cbab5fdea
+ms.sourcegitcommit: bc64db47b6ff326f15cac15fc2cfd709fa7f877b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58812609"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65626213"
 ---
 # <a name="whats-new-in-cwinrt"></a>Neuigkeiten in C++ / WinRT
 
@@ -28,7 +28,7 @@ Weitere Informationen zu den [ C++WinRT Visual Studio-Erweiterung (VSIX)](https:
 
 - Die `cppwinrt.exe` Tool ist nun im Microsoft.Windows.CppWinRT NuGet-Paket enthalten, und das Tool generiert Platfom Projektion-Header für jedes Projekt bei Bedarf. Daher die `cppwinrt.exe` Tool wird nicht mehr auf dem Windows SDK abhängt (obwohl das Tool mit dem SDK aus Kompatibilitätsgründen weiterhin enthalten ist).
 - `cppwinrt.exe` generiert jetzt Projektion Header unter jeder Plattform/konfigurationsspezifischen Zwischenordner ($IntDir) um parallele Builds zu ermöglichen.
-- Die C++"/ WinRT" Build-Unterstützung (Eigenschaften/Ziele) nun umfassend dokumentiert, für den Fall, dass Sie Ihre Projektdateien manuell anpassen möchten. Finden Sie unter [Microsoft.Windows.CppWinRT NuGet-Paket](https://github.com/Microsoft/xlang/tree/user/sjones/cppwinrt_nuget/src/package/nuget).
+- Die C++"/ WinRT" Build-Unterstützung (Eigenschaften/Ziele) nun umfassend dokumentiert, für den Fall, dass Sie Ihre Projektdateien manuell anpassen möchten. Finden Sie unter [Microsoft.Windows.CppWinRT NuGet-Paket](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md).
 - Zahlreiche Fehlerkorrekturen es wurden vorgenommen.
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>Änderungen an C++"/ WinRT", Version 2.0
@@ -261,7 +261,7 @@ Die traditionelle Methode implementieren eine Coroutine können lokale Variablen
 
 ## <a name="news-and-changes-in-windows-sdk-version-100177630-windows-10-version-1809"></a>Neuigkeiten und Änderungen in Windows SDK, Version 10.0.17763.0 (Windows 10, Version 1809)
 
-Die folgende Tabelle enthält Neuigkeiten und Änderungen an [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) in die aktuelle allgemein verfügbare Version des Windows SDK, d.h. 10.0.17763.0 (Windows 10, Version 1809). Diese Änderungen können auch in späteren SDK Insider Preview-Versionen vorhanden sein.
+Die folgende Tabelle enthält Neuigkeiten und Änderungen für die C++"/ WinRT" im Windows SDK, Version 10.0.17763.0 (Windows 10, Version 1809).
 
 | Neue oder geänderte Funktion | Weitere Informationen |
 | - | - |

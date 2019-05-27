@@ -5,283 +5,237 @@ description: Mit der Universellen Windows-Plattform (UWP) können Sie Apps für 
 title: 'Dokumentation für UWP: Entwickler von UWP-Apps | Microsoft-Dokumentation'
 ms.topic: landing-page
 ms.author: mijacobs
-ms.date: 08/4/2017
+ms.date: 08/04/2017
 keywords: Windows UWP, Universelle Windows-Plattform, Windows-Runtime-APIs, Windows-API, Windows-API-Referenz, WinRT-API, Referenz Windows-API, UWP-API, UWP-API-Referenz, UWP entwickeln, UWP entwerfen, UWP veröffentlichen
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: 21e6b168ccd656a15fc8efa70e8cded3f12916d4
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: ebc8d3c8602a5a67816f0817af0d2f7851a82d68
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162625"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984151"
 ---
 # <a name="universal-windows-platform-documentation"></a>Dokumentation für die universelle Windows-Plattform
-Mit der universellen Windows-Plattform (UWP) können Sie Apps für beliebige Windows-Geräte entwickeln – z. B. PCs, Smartphones, Xbox One, HoloLens und mehr – und im Microsoft Store veröffentlichen.
 
-<ul class="panelContent cardsF">
+Mit der universellen Windows-Plattform (UWP) können Sie Apps für beliebige Windows 10-Geräte entwickeln – z. B. PCs, Xbox One, HoloLens und mehr – und im Microsoft Store veröffentlichen.
+
+<ul class="cardsK panelContent">
     <li>
+      <a href="https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_whats-new.svg" alt="What's new icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/ms365enterprise-partner-news-2.svg?branch=master" alt="What's new illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Neuigkeiten:</h3>
-                        <p>
-                            <a href="whats-new/windows-10-version-latest.md">Neue APIs und Funktionen</a>
-                        </p>
-                        <p>
-                            <a href="whats-new/windows-docs-latest.md">Neuigkeiten in der Dokumentation</a>
-                        </p>
-                        <p>
-                            <a href="whats-new/experimental-apis.md">Experimentelle APIs</a>
-                        </p>
+                        <p></p>Erfahren Sie mehr zu neuen UWP-APIs und Features in der aktuellen Version von Windows 10.</p>
                     </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
     <li>
+      <a href="get-started/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_get-started.svg" alt="Get started icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/biztalk-get-started-get-started.svg?branch=master" alt="Get started illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Beginnen</h3>
-                        <p>
-                            <a href="get-started/universal-application-platform-guide.md">Was ist eine UWP-App?</a>
-                        </p>
-                        <p>
-                            <a href="get-started/sign-up.md">Registrieren für ein Entwicklerkonto</a>
-                        </p>
-                        <p>
-                            <a href="get-started/get-set-up.md">Vorbereiten</a>
-                        </p>
-                        <p>
-                            <a href="get-started/your-first-app.md">Erstellen Ihrer ersten App</a>
-                        </p>
+                        <p></p>Erfahren Sie mehr über die grundlegenden Konzepte und die Einrichtung Ihres Computers, um mit dem Erstellen von Apps beginnen zu können.</p>
                     </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
     <li>
+      <a href="design/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_management.svg" alt="Design icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/sql-database-develop.svg?branch=master" alt="Design illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Design und Benutzeroberfläche (UI)</h3>
-                        <p>
-                            <a href="design/basics/design-and-ui-intro.md">Designgrundlagen</a>
-                        </p>
-                         <p>
-                            <a href="design/fluent-design-system/index.md">Fluent Design-System</a>
-                        </p>
-                        <p>
-                            <a href="design/controls-and-patterns/index.md">Steuerelemente und Muster</a>
-                        </p>
-                        <p>
-                            <a href="design/downloads/index.md">Design-Toolkits</a>
-                        </p>                      
-                    </div>
+                    <h3>Entwurf</h3>
+                    <p>Erfahren Sie mehr zum Entwerfen und Codieren der Benutzeroberfläche für Apps mit dem Fluent Design-System.</p>
+                  </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
+</ul>
+<ul class="cardsK panelContent">
     <li>
+      <a href="develop/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_code-edit.svg" alt="Develop icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/dynamics-training.svg?branch=master" alt="Develop apps illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Entwickeln von Apps</h3>
-                        <p>
-                            <a href="enterprise/index.md">Unternehmens-Apps</a>
-                        </p>
-                        <p>
-                            <a href="packaging/index.md">Verpacken von Apps</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows-Community-Toolkit</a>
-                        </p>
-                        <p>
-                            <a href="porting/index.md">Portieren von Apps zu Windows 10</a>
-                        </p>
-                        <p>
-                            <a href="winrt-components/index.md">Komponenten für Windows-Runtime</a>
-                        </p>
-                        <p>
-                            <a href="apps-for-education/index.md">Bildungs-Apps</a>
-                        </p>
-                        <p>
-                            <a href="porting/apps-on-arm.md">Windows 10 auf ARM</a>
-                        </p>
+                        <p></p>Erkunden Sie unsere Anleitungen und den Code zum Erstellen von UWP-Apps für Windows 10.</p>
                     </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
     <li>
+      <a href="gaming/getting-started.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_build.svg" alt="Develop Games icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/biztalk-get-started-scenarios.svg?branch=master" alt="Develop games illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Entwickeln von Spielen</h3>
-                        <p>
-                            <a href="gaming/e2e.md">Handbuch zur Entwicklung von Spielen unter Windows 10</a>
-                        </p>
-                        <p>
-                            <a href="gaming/index.md">Programmierung von Spielen</a>
-                        </p>
-                        <p>
-                            <a href="gaming/directx-programming.md">DirectX-Programmierung</a>
-                        </p>
-                        <p>
-                            <a href="xbox-apps/index.md">UWP auf Xbox One</a>
-                        </p>
-                        <p>
-                            <a href="https://docs.microsoft.com/gaming/xbox-live">Xbox Live</a>
-                        </p>
+                        <p></p>Erfahren Sie mehr zum Erstellen von UWP-Spielen für Xbox und Windows 10.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </li>    
+      </a>
+    </li>
     <li>
+      <a href="publish/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_upgrade.svg" alt="Publish icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/teams-fast-track.svg?branch=master" alt="Publish illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Veröffentlichen</h3>
-                        <p>
-                            <a href="publish/app-submissions.md">App-Übermittlungen</a>
-                        </p>
-                        <p>
-                            <a href="publish/the-app-certification-process.md">App-Zertifizierungsprozess</a>
-                        </p>
-                        <p>
-                            <a href="publish/upload-app-packages.md">Hochladen von App-Paketen</a>
-                        </p>
-                        <p>
-                            <a href="publish/create-your-app-by-reserving-a-name.md">Reservieren eines Namens</a>
-                        </p>
-                        <p>
-                            <a href="publish/set-app-pricing-and-availability.md">Festlegen der Preise und Verfügbarkeit von Apps</a>
-                        </p>
-                    </div>
+                    <h3>Veröffentlichen</h3>
+                    <p>Verwenden Sie Partner Center, um Ihre Apps und Spiele im Microsoft Store zu veröffentlichen.</p>
+                  </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
+</ul>
+    <ul class="cardsY panelContent featuredContent">
+       <li>
+            <a href="https://docs.microsoft.com/uwp/">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_api-reference.svg?branch=master" src="/media/common/i_api-reference.svg?branch=master" alt="API reference icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>API-Referenz</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+       <li>
+            <a href="https://developer.microsoft.com/windows/samples">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_code-samples.svg?branch=master" src="/media/common/i_code-samples.svg?branch=master" alt="Samples icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>Codebeispiele</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="https://developer.microsoft.com/windows/downloads">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_tools.svg?branch=master" src="/media/common/i_tools.svg?branch=master" alt="Tools icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>Tools und Downloads</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<hr />
+<ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_api-reference.svg" alt="API Ref icon" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>API-Referenz</h3>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/">APIs für die universelle Windows-Plattform</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/API">Windows UWP-Namespaces</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/extension-sdks">Erweiterungs-SDKs</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/schemas">Schemas</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_multi-connect.svg" alt="Related links icon" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Verwandte Links</h3>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">Win32- und COM-APIs für UWP-Apps</a>
-                        </p>
-                        <p>
-                            <a href="//msdn.microsoft.com/library/windows/apps/mt185501.aspx">.NET für UWP-Apps</a>
-                        </p>
-                        <p>
-                            <a href="//msdn.microsoft.com/library/windows/apps/mt691886.aspx">Microsoft Store Services SDK-APIs</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/extension-sdks">Erweiterungs-SDKs für Gerätefamilien und API-Verträge</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/schemas/">Datei-und XML-Schemaspezifikationen für UWP-Apps</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_support.svg" alt=" " />
-                        </div>
-                    </div>
                     <div class="cardText">
                         <h3>Community und Support</h3>
-                        <p>
-                            <a href="https://twitter.com/WindowsDocs">@WindowsDocs auf Twitter</a>
-                        </p>
-                        <p>
-                            <a href="https://aka.ms/OneDevMinute">OneDevMinute auf YouTube</a>
-                        </p>
-                        <p>
-                            <a href="https://developer.microsoft.com/windows/support">Windows-Support für Entwickler</a>
-                        </p>
+                        <p><a href="https://twitter.com/WindowsDocs">@WindowsDocs auf Twitter</a></p>
+                        <p><a href="https://aka.ms/OneDevMinute">OneDevMinute auf YouTube</a></p>
+                        <p><a href="https://developer.microsoft.com/windows/support">Windows-Support für Entwickler</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Noch keine Erfahrung auf dem Gebiet der Entwicklung?</h3>
+                        <p><a href="//mva.microsoft.com/training-topics/c-app-development">Microsoft Virtual Academy</a></p>
+                        <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">LinkedIn Learning</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Verwandte Dokumentation</h3>
+                        <p><a href="/windows/msix/desktop/desktop-to-uwp-root">MSIX-Verpackung und -Bereitstellung</a></p>
+                        <p><a href="https://docs.microsoft.com/dotnet/csharp/index">C#-Handbuch</a></p>
+                        <p><a href="https://docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                     </div>
                 </div>
             </div>
         </div>
-    </li>    
+    </li>
 </ul>

@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ed75cb79488eb994135dcfef74483ec078a32e
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 8a7a34846cbadfa9e133976695239b98294a0dd2
+ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58173026"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66184573"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Verpacken einer UWP-App mit Visual Studio
 
@@ -99,9 +99,10 @@ Um eine app über den Microsoft Store zu verteilen, müssen Sie erstellen ein ap
 6.  Stellen Sie sicher, dass Sie im Dialogfeld **Auswählen und Konfigurieren von Paketen** alle drei Architekturkonfigurationen (x86, x64 und ARM) auswählen, um zu gewährleisten, dass Ihre App auf einer breiten Palette von Geräten bereitgestellt werden kann. Wählen Sie im Listenfeld **App-Bundle erstellen** die Option **Immer**. Ein app-Bündel (".appxbundle" oder ".msixbundle") wird über eine einzelne app-Paketdatei bevorzugt, da es sich um eine Auflistung von app-Pakete, die so konfiguriert, für jeden Typ von der Prozessorarchitektur enthält. Wenn Sie auswählen, um das app-Bündel generieren, wird das app-Bündel in der endgültigen app-Paket Hochladen (.appxupload oder .msixupload)-Datei zusammen mit Informationen über Debug- und Absturzes analytische berücksichtigt. Wenn Sie nicht sicher sind, welche Architektur(en) Sie auswählen sollen, oder wenn Sie mehr darüber erfahren möchten, welche Architekturen von verschiedenen Geräten verwendet werden, finden Sie weitere Informationen unter [App-Paketarchitekturen](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
     ![Erstellen von App-Pakete im Fenster mit Paketkonfiguration angezeigt](images/packaging-screen5.jpg)
 7.  Enthalten die vollständige PDB-Symboldateien für die [Analysieren der Leistung der app](https://docs.microsoft.com/windows/uwp/publish/analytics) von Partner Center, nachdem Ihre app veröffentlicht wurde. Konfigurieren Sie zusätzliche Details wie die Versionsnummer oder den Ausgabespeicherort des Pakets.
-9.  Klicken Sie zum Erstellen des App-Pakets auf **Erstellen**. Bei Auswahl eines der **ich möchte Pakete zum Hochladen in den Microsoft Store erstellen** Optionen in Schritt 3 und ein Paket für die Partner Center-Übermittlung erstellen, die vom Assistenten wird eine Paket Hochladen (.appxupload oder .msixupload)-Datei erstellt. Wenn Sie ausgewählt haben **ich möchte Pakete für das querladen erstellen** in Schritt 3 der Assistent entweder ein einzelnes app-Paket oder ein app-Bundle basierend auf Ihrer Auswahl in Schritt 6 erstellt.
-10. Wenn Ihre app erfolgreich paketiert wurden, wird dieses Dialogfeld wird angezeigt und können Sie Ihre app-Paketdatei hochladen aus am angegebenen Speicherort abrufen. An diesem Punkt können Sie [Überprüfen des app-Pakets auf dem lokalen Computer oder einem Remotecomputer](#validate-your-app-package).
+8.  Klicken Sie zum Erstellen des App-Pakets auf **Erstellen**. Bei Auswahl eines der **ich möchte Pakete zum Hochladen in den Microsoft Store erstellen** Optionen in Schritt 3 und ein Paket für die Partner Center-Übermittlung erstellen, die vom Assistenten wird eine Paket Hochladen (.appxupload oder .msixupload)-Datei erstellt. Wenn Sie ausgewählt haben **ich möchte Pakete für das querladen erstellen** in Schritt 3 der Assistent entweder ein einzelnes app-Paket oder ein app-Bundle basierend auf Ihrer Auswahl in Schritt 6 erstellt.
+9. Wenn Ihre app erfolgreich paketiert wurden, wird dieses Dialogfeld wird angezeigt und können Sie Ihre app-Paketdatei hochladen aus am angegebenen Speicherort abrufen. An diesem Punkt können Sie [Überprüfen des app-Pakets auf dem lokalen Computer oder einem Remotecomputer](#validate-your-app-package) und [automatisieren die Einreichung beim Store](#automate-store-submission).
     ![Paketerstellung abgeschlossen Fenster mit den Optionen für die abonnementüberprüfung angezeigt](images/packaging-screen6.jpg)
+
 
 ### <a name="to-create-your-app-package-upload-file-manually"></a>So erstellen Sie manuell die app-Paketdatei hochladen
 
@@ -138,6 +139,23 @@ Um eine app über den Microsoft Store zu verteilen, müssen Sie erstellen ein ap
 5.  Geben Sie ein Gerät vom Subnetz aus an, oder geben Sie den DNS-Namen (Domain Name Server) oder die IP-Adresse eines Geräts an, das sich außerhalb des Subnetzes befindet.
 6.  Wählen Sie in der Liste **Authentifizierungsmodus** die Option **Keiner** aus, wenn Ihr Gerät keine Anmeldung mittels Windows-Anmeldeinformationen erfordert.
 7.  Klicken Sie auf die Schaltfläche **Auswählen** und anschließend auf die Schaltfläche **Zertifizierungskit für Windows-Apps starten**. Wenn die Remotetools auf diesem Gerät ausgeführt werden, stellt Visual Studio eine Verbindung mit dem Gerät her und führt die Überprüfungstests aus. Weitere Informationen finden Sie unter [Tests im Zertifizierungskit für Windows-Apps](https://msdn.microsoft.com/library/windows/apps/mt186450).
+
+### <a name="automate-store-submission"></a>Automatisieren Sie die Einreichung beim store
+
+Ab Visual Studio-2019, Sie können übermitteln die generierte appxupload-Datei auf dem Microsoft Store direkt aus der IDE durch Auswahl der **automatisch an den Microsoft Store übermitteln, nach der Überprüfung der Windows-Zertifizierungskit für Apps** -Option. Sie müssen die Anmeldeinformationen für die Übermittlung angeben. Diese Anmeldeinformationen bestehen aus drei Teilen: der **Azure-Mandanten-ID**, **Client-ID** und **clientgeheimnis**. Um diese zu erhalten, gehen Sie wie folgt vor:
+
+1. Navigieren Sie im Partner Center zu Ihrer **Developer-Einstellungen**, klicken Sie auf **Benutzer**, und ordnen Sie Dev Center-Konto Ihres Unternehmens mit Azure AD-Verzeichnis Ihrer Organisation. Ausführliche Anweisungen finden Sie unter [Verwalten von Kontobenutzern](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users).
+2. In der **Benutzer** auf **Hinzufügen von Azure AD-Anwendungen**, Hinzufügen von Azure AD-Anwendung, die die app darstellt, oder Diensts, die Sie verwenden, um Zugriff auf die Übermittlung von Apps für Ihr Developer Center-Konto, und weisen sie die Rolle "Manager". Wenn diese Anwendung bereits in Ihrem Azure AD-Verzeichnis vorhanden ist, können Sie es auf der Seite der hinzufügen-Azure AD-Anwendungen auf Ihr Dev Center-Konto hinzufügen auswählen. Andernfalls können Sie eine neue Azure AD-Anwendung auf der Seite **Azure AD-Apps hinzufügen** erstellen. Weitere Informationen finden Sie unter [Hinzufügen von Benutzern, Gruppen und Azure AD-Anwendungen mit Ihrem Partner Center-Konto](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
+3. Wechseln Sie zurück zur der **Verwalten von Benutzern** auf den Namen der Azure AD-Anwendung wechseln Sie zu den Anwendungseinstellungen, und kopieren die **Mandanten-ID** und **Client-ID** Werte.
+4. Klicken Sie auf **Neuen Schlüssel hinzufügen**. Kopieren Sie den Schlüssel-Wert, der den geheimen Clientschlüssel entspricht, auf dem folgenden Bildschirm. Sie werden nicht in der Lage, diese Informationen erneut zugegriffen wird, nach dem Verlassen dieser Seite stellen Sie daher Sie sicher, dass sie nicht verloren gehen. Weitere Informationen finden Sie die Informationen zum Verwalten von Schlüsseln in [Hinzufügen von Benutzern, Gruppen und Azure AD-Anwendungen mit Ihrem Partner Center-Konto](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
+    ![Überprüfen Sie, und Status der Veröffentlichung](images/packaging-screen8.jpg)
+    > [!Important] 
+    > Ihre Anmeldeinformationen können auf Ihr Profil in spätere Übermittlungen zu verwendende gespeichert werden
+5. Klicken Sie auf **OK**.
+
+Die Übermittlung wird gestartet, nachdem der Test WACK haben. Sie können den Fortschritt der Übermittlung im Nachverfolgen der **überprüfen und veröffentlichen** Fenster.
+
+![Überprüfen Sie, und Status der Veröffentlichung](images/packaging-screen9.jpg)
 
 ## <a name="sideload-your-app-package"></a>Querladen des App-Pakets
 

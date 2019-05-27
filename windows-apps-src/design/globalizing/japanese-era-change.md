@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Lokalisierbarkeit, Lokalisierung, japanisch, Ära
 ms.localizationpriority: high
 ms.openlocfilehash: 0d5de4c1713ab80afcdf2e028d39340aebcc018b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57617655"
@@ -44,10 +44,10 @@ Nachdem Sie den Registrierungsschlüssel für die neue Ära hinzugefügt haben, 
 So konfigurieren Sie Ihr Gerät für die Verwendung des japanischen Kalenders:
 
 1. Öffnen Sie **intl.cpl** (suchen Sie in der Windows-Suchleiste danach).
-2. Wählen Sie in der Dropdown-Liste **Format****Japanisch (Japan)** aus.
+2. Wählen Sie in der Dropdown-Liste **Format** **Japanisch (Japan)** aus.
 3. Wählen Sie **Zusätzliche Einstellungen** aus.
 4. Wählen Sie die Registerkarte **Datum** aus.
-5. Wählen Sie in der Dropdown-Liste **Kalendertyp****和暦** (*Wareki*, den japanischen Kalender) aus. Es sollte die zweite Option sein.
+5. Wählen Sie in der Dropdown-Liste **Kalendertyp** **和暦** (*Wareki*, den japanischen Kalender) aus. Es sollte die zweite Option sein.
 6. Klicken Sie auf **OK**.
 7. Klicken Sie im Fenster **Region** auf **OK** .
 

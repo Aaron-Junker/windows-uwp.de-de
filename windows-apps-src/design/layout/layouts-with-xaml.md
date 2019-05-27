@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d07a90ce34e9b4613eed6782338cbd889d7935c9
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 53a69393d945be1640f733b47410f88631fc7714
+ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58081872"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66221051"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dynamische Layouts mit XAML
 
@@ -27,7 +27,7 @@ In der Praxis verwenden Sie eine Kombination aus statischen und dynamischen Elem
 Hier erörtern wir die Verwendung von XAML-Eigenschaften und Layoutpanels zur Erstellung eines Fluid-Layouts für Ihre App.
 
 ### <a name="layout-properties"></a>Layouteigenschaften
-Zum Bestimmen der Größe und Position eines Elements legen Sie seine Layouteigenschaften fest. Um ein dynamisches Layout zu erstellen, verwenden Sie die automatische oder proportionale Größenanpassung für Elemente, und lassen Sie die Layoutpanels die Position für ihre untergeordneten Elemente wie erforderlich positionieren. 
+Zum Bestimmen der Größe und Position eines Elements legen Sie seine Layouteigenschaften fest. Um ein dynamisches Layout erstellen, verwenden Sie automatische oder proportional zur größenanpassung für Elemente und zulassen Sie LayoutPanel-Elemente, deren untergeordnete Elemente positionieren, je nach Bedarf. 
 
 Hier sind einige allgemeine Layout-Eigenschaften und wie man sie zur Erstellung von Fluid-Layouts verwendet.
 
@@ -46,7 +46,7 @@ In diesem Beispiel wird die feste, automatische und proportionale Größenanpass
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
-Column_1 | **Auto** | Die Breite der Spalte wird entsprechend ihres Inhalts angepasst.
+Column_1 | **Automatisch** | Die Breite der Spalte wird entsprechend ihres Inhalts angepasst.
 Column_2 | * | Nach dem Berechnen der Spalten mit automatischer Breite erhält diese Spalte einen Teil der verbleibenden Breite. Column_2 ist nur halb so breit wie Column_4.
 Column_3 | **44** | Die Spalte ist 44 Pixel breit.
 Column_4 | **2**\* | Nach dem Berechnen der Spalten mit automatischer Breite erhält diese Spalte einen Teil der verbleibenden Breite. Column_4 ist doppelt so breit wie Column_2.
@@ -238,7 +238,7 @@ In diesem Beispiel wird die gleiche Aufgabe wie im vorherigen Beispiel ausgefüh
 
 In einem „VisualState“ wird in der Regel ein Wert für eine Steuerelementeigenschaft oder für eine der angefügten Eigenschaften des Panels festgelegt, das das Steuerelement enthält. Wenn Sie eine angefügte Eigenschaft festlegen, verwenden Sie Klammern um den Namen der angefügten Eigenschaft.
 
-In diesem Beispiel wird veranschaulicht, wie die angefügte [**„RelativePanel.AlignHorizontalCenterWithPanel“-Eigenschaft für ein** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanel.aspx)TextBox`myTextBox` mit dem Namen festgelegt wird. Das erste XAML-Markup verwendet [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.objectanimationusingkeyframes.aspx)-Syntax und das zweite die **Setter**-Syntax.
+In diesem Beispiel wird veranschaulicht, wie die angefügte [ **„RelativePanel.AlignHorizontalCenterWithPanel“-Eigenschaft für ein** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanel.aspx)TextBox`myTextBox` mit dem Namen festgelegt wird. Das erste XAML-Markup verwendet [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.objectanimationusingkeyframes.aspx)-Syntax und das zweite die **Setter**-Syntax.
 
 ```xaml
 <!-- Set an attached property using ObjectAnimationUsingKeyFrames. -->
@@ -348,7 +348,7 @@ Sie können den Qualifizierer dem Dateinamen hinzufügen, oder Sie können die D
 
 **Verwenden Sie Namen**
 
-Um den Qualifizierernamen mit der Datei zu verwenden, verwenden Sie das folgende Format: *[pageName]*.DeviceFamily-*[qualifierString]*.xaml.
+Um den Qualifizierernamen mit der Datei zu verwenden, verwenden Sie das folgende Format: *[pageName]* .DeviceFamily- *[qualifierString]* .xaml.
 
 Sehen wir uns nun ein Beispiel für eine Datei mit dem Namen „MainPage.xaml“ an. Um eine Ansicht für Tablet-Geräte zu erstellen, geben Sie der XAML-Ansicht den Namen „MainPage.DeviceFamily-Tablet.xaml“. Um eine Ansicht für PC-Geräte zu erstellen, geben Sie der Ansicht den Namen „MainPage.DeviceFamily-Desktop.xaml“. Nachfolgend sehen Sie, wie die Projektmappe in Microsoft Visual Studio aussieht.
 
@@ -356,7 +356,7 @@ Sehen wir uns nun ein Beispiel für eine Datei mit dem Namen „MainPage.xaml“
 
 **Verwenden Sie Ordnernamen**
 
-Um die Ansichten in Ihrem Visual Studio-Projekt mithilfe von Ordnern zu organisieren, können Sie den Qualifizierernamen mit dem Ordner verwenden. Zu diesem Zweck als Ordnernamen Sie wie folgt: DeviceFamily -*[QualifierString]*. In diesem Fall hat jede XAML-Ansichtsdatei den gleichen Namen. Schließen Sie den Qualifizierer nicht in den Dateinamen ein.
+Um die Ansichten in Ihrem Visual Studio-Projekt mithilfe von Ordnern zu organisieren, können Sie den Qualifizierernamen mit dem Ordner verwenden. Zu diesem Zweck als Ordnernamen Sie wie folgt: DeviceFamily - *[QualifierString]* . In diesem Fall hat jede XAML-Ansichtsdatei den gleichen Namen. Schließen Sie den Qualifizierer nicht in den Dateinamen ein.
 
 Hier sehen Sie ein Beispiel, bei dem die Datei wieder den Namen „MainPage.xaml“ trägt. Um eine Ansicht für Tablet- Geräte zu erstellen, erstellen Sie einen Ordner mit dem Namen „DeviceFamily-Tablet“, und platzieren Sie eine XAML-Ansicht namens „MainPage.xaml“ im Ordner. Um eine Ansicht für PC-Geräte zu erstellen, erstellen Sie einen Ordner mit dem Namen „DeviceFamily-Desktop“, und platzieren Sie eine weitere XAML-Ansicht namens „MainPage.xaml“ darin. Nachfolgend sehen Sie, wie die Projektmappe in Visual Studio aussieht.
 

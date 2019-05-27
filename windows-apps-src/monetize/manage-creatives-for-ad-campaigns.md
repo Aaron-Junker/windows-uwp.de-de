@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Werbungs-API, Anzeigenkampagnen
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c11ee9c5decffff57a2d443e1385398ce40d89
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3411ee4c947d809009c2185389f5513a49afce98
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658465"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215033"
 ---
 # <a name="manage-creatives"></a>Verwalten von Werbemitteln
 
@@ -22,7 +22,7 @@ Weitere Informationen zu der Beziehung zwischen Werbemitteln und Anzeigenkampagn
 > [!NOTE]
 > Die maximal zulässige Größe für Ihre Werbemittel ist 40 KB, wenn Sie diese API für den Upload Ihrer eigenen Werbemittel verwenden. Wenn Sie eine größere Werbemitteldatei übermitteln, gibt diese API zwar keinen Fehler zurück, die Kampagne wird jedoch nicht erfolgreich erstellt.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methoden sind folgende Schritte erforderlich:
 
@@ -30,7 +30,7 @@ Zur Verwendung dieser Methoden sind folgende Schritte erforderlich:
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token), das in der Anforderungskopfzeile für diese Methoden verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 Diese Methoden haben die folgenden URIs.
 
@@ -47,7 +47,7 @@ Diese Methoden haben die folgenden URIs.
 
 | Header        | Typ   | Beschreibung         |
 |---------------|--------|---------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 | Tracking-ID   | GUID   | Optional. Eine ID, die den Abfrageablauf verfolgt.                                  |
 
 
@@ -113,17 +113,17 @@ Diese Methoden geben ein JSON-Antworttext mit einem [Creative](#creative)-Objekt
 
 Die Anforderungs- und Antworttexte für diese Methoden enthalten die folgenden Felder. Die folgende Tabelle zeigt, welche Felder schreibgeschützt sind (d. h. sie können in der PUT-Methode nicht geändert werden) und welche Felder in dem Anforderungstext für die POST-Methode erforderlich sind.
 
-| Feld        | Typ   |  Beschreibung      |  Schreibgeschützt  | Standard  |  Erforderlich für POST |  
+| Feld        | Typ   |  Beschreibung      |  Schreibgeschützt  | Default  |  Erforderlich für POST |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  Ganzzahl   |  Die ID des Werbemittels.     |   Ja    |      |    Nein   |       
-|  name   |  string   |   Name des Werbemittels.    |    Nein   |      |  Ja     |       
-|  content   |  string   |  Der Inhalt des Werbemittel-Image im Base64-codierten Format.<br/><br/>**Hinweis:**&nbsp;&nbsp;Die maximal zulässige Größe der Werbemitteldatei beträgt 40 KB. Wenn Sie eine größere Werbemitteldatei übermitteln, gibt diese API zwar keinen Fehler zurück, die Kampagne wird jedoch nicht erfolgreich erstellt.     |  Nein     |      |   Ja    |       
+|  NAME   |  String   |   Name des Werbemittels.    |    Nein   |      |  Ja     |       
+|  content   |  String   |  Der Inhalt des Werbemittel-Image im Base64-codierten Format.<br/><br/>**Hinweis:** &nbsp;&nbsp;Die maximal zulässige Größe der Werbemitteldatei beträgt 40 KB. Wenn Sie eine größere Werbemitteldatei übermitteln, gibt diese API zwar keinen Fehler zurück, die Kampagne wird jedoch nicht erfolgreich erstellt.     |  Nein     |      |   Ja    |       
 |  height   |  Ganzzahl   |   Die Höhe des Werbemittels.    |    Nein    |      |   Ja    |       
 |  width   |  Ganzzahl   |  Die Breite des Werbemittels.     |  Nein    |     |    Ja   |       
-|  landingUrl   |  string   |  Wenn Sie für die Messung von Installationsanalysen für Ihre App einen Kampagnenachverfolgungsdienst wie Kochava, AppsFlyer oder Tune verwenden, weisen Sie die Nachverfolgungs-URL in diesem Feld zu, wenn Sie die POST-Methode aufrufen (wenn angegeben; dieser Wert muss ein gültiger URI sein). Wenn Sie keinen Kampagnennachverfolgungsdienst verwenden, lassen Sie diesen Wert beim Aufruf der POST-Methode aus. (In diesem Fall wird diese URL automatisch erstellt.)   |  Nein    |     |   Ja    |       
-|  format   |  string   |   Das Anzeigenformat. Zurzeit ist **Banner** der einzige Wert, der unterstützt wird.    |   Nein    |  Banner   |  Nein     |       
-|  imageAttributes   | ["ImageAttributes"](#image-attributes)    |   Stellt Attribute für das Werbemittel bereit.     |   Nein    |      |   Ja    |       
-|  storeProductId   |  string   |   Die [Store-ID](in-app-purchases-and-trials.md#store-ids) der App, der diese Anzeigenkampagne zugeordnet ist. Ein Beispiel für eine Store-ID eines Produkts ist 9nblggh42cfd.    |   Nein    |    |  Nein     |   |  
+|  landingUrl   |  String   |  Wenn Sie eine Kampagne Überwachungsdienst wie z. B. AppsFlyer Kochava, optimieren oder Vungle zum Messen von Install-Analytics für Ihre app verwenden, Ihre nachverfolgungs-URL in dieses Feld zuweisen, wenn Sie die POST-Methode aufrufen (Wenn angegeben, dieser Wert muss ein gültiger URI). Wenn Sie keinen Kampagnennachverfolgungsdienst verwenden, lassen Sie diesen Wert beim Aufruf der POST-Methode aus. (In diesem Fall wird diese URL automatisch erstellt.)   |  Nein    |     |   Ja    |
+|  format   |  String   |   Das Anzeigenformat. Zurzeit ist **Banner** der einzige Wert, der unterstützt wird.    |   Nein    |  Banner   |  Nein     |       
+|  imageAttributes   | [ImageAttributes](#image-attributes)    |   Stellt Attribute für das Werbemittel bereit.     |   Nein    |      |   Ja    |       
+|  storeProductId   |  String   |   Die [Store-ID](in-app-purchases-and-trials.md#store-ids) der App, der diese Anzeigenkampagne zugeordnet ist. Ein Beispiel für eine Store-ID eines Produkts ist 9nblggh42cfd.    |   Nein    |    |  Nein     |   |  
 
 
 <span id="image-attributes"/>
@@ -132,7 +132,7 @@ Die Anforderungs- und Antworttexte für diese Methoden enthalten die folgenden F
 
 | Feld        | Typ   |  Beschreibung      |  Schreibgeschützt  | Standardwert  | Erforderlich für POST |  
 |--------------|--------|---------------|------|-------------|------------|
-|  imageExtension   |   string  |   Einer der folgenden Werte: **PNG** oder **JPG**.    |    Nein   |      |   Ja    |       |
+|  imageExtension   |   String  |   Einer der folgenden Werte: **PNG** oder **JPG**.    |    Nein   |      |   Ja    |       |
 
 
 ## <a name="related-topics"></a>Verwandte Themen

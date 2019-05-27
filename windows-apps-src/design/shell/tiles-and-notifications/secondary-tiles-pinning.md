@@ -9,7 +9,7 @@ keywords: Windows 10, UWP, sekundäre Kacheln, Anheften, anheften, Schnellstart
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57653155"
@@ -164,7 +164,7 @@ await tile.UpdateAsync();
 
 ## <a name="enumerating-all-pinned-secondary-tiles"></a>Auflisten aller angehefteten sekundären Kacheln
 
-Wenn Sie alle Kacheln ermitteln müssen, die der Benutzer angeheftet hat, verwenden Sie anstelle von *SecondaryTile.Exists**SecondaryTile.FindAllAsync()*.
+Wenn Sie alle Kacheln ermitteln müssen, die der Benutzer angeheftet hat, verwenden Sie anstelle von *SecondaryTile.Exists* *SecondaryTile.FindAllAsync()*.
 
 ```csharp
 // Get all secondary tiles

@@ -6,12 +6,12 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 355cff08c6ab98b0837b8cc95f2480aa1fb17bd4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: bdcb8132052cd12444c192c93170fb2f8e94113a
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63784728"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215226"
 ---
 # <a name="in-app-ads"></a>In-App-Anzeigen
 
@@ -40,12 +40,12 @@ So erstellen Sie eine Anzeigeeinheit für eine [Banneranzeige](../monetize/banne
     * Wenn Sie eine interstitial videowerbung oder interstitial Werbebanner in Ihrer app angezeigt werden, wählen Sie **Video interstitial** oder **Banner interstitial** (Achten Sie darauf, wählen Sie die entsprechende Option für den Typ des Interstitial Ad, die Sie anzeigen möchten).
     * Wenn Sie eine native Ad in Ihrer app angezeigt werden, wählen Sie **Native**.
 
-5. Wählen Sie in der Dropdownliste **Gerätefamilie** die Gerätefamilie aus, auf die Ihre App ausgerichtet ist, in der die Anzeigeneinheit verwendet werden. Die verfügbaren Optionen lauten: **UWP (Windows 10)**, **PC/Tablet (Windows 8.1)**, oder **Mobile (Windows Phone 8.x)**.
+5. Wählen Sie in der Dropdownliste **Gerätefamilie** die Gerätefamilie aus, auf die Ihre App ausgerichtet ist, in der die Anzeigeneinheit verwendet werden. Die verfügbaren Optionen lauten: **UWP (Windows 10)** , **PC/Tablet (Windows 8.1)** , oder **Mobile (Windows Phone 8.x)** .
 
 6. Konfigurieren Sie die folgenden zusätzlichen Einstellungen wie gewünscht:
 
-    * Wenn Sie eine **UWP (Windows 10)**-Gerätefamilie für die Anzeigeneinheit auswählen, können Sie optional die [Vermittlungseinstellungen](#mediation) für die Anzeigeneinheit konfigurieren.
-    * Wenn Sie die **PC/Tablet (Windows 8.1)** oder **Mobile (Windows Phone 8.x)**-Gerätefamilie für eine Banneranzeigeneinheit auswählen, können Sie optional **Community-Anzeigen in Ihrer App anzeigen** auswählen, um sich bei [Community-Anzeigen](about-community-ads.md) anzumelden.
+    * Wenn Sie eine **UWP (Windows 10)** -Gerätefamilie für die Anzeigeneinheit auswählen, können Sie optional die [Vermittlungseinstellungen](#mediation) für die Anzeigeneinheit konfigurieren.
+    * Wenn Sie die **PC/Tablet (Windows 8.1)** oder **Mobile (Windows Phone 8.x)** -Gerätefamilie für eine Banneranzeigeneinheit auswählen, können Sie optional **Community-Anzeigen in Ihrer App anzeigen** auswählen, um sich bei [Community-Anzeigen](about-community-ads.md) anzumelden.
 
 7.  Wenn Sie die COPPA-Compliance für die ausgewählte App noch nicht eingerichtet haben, wählen Sie eine Option im Abschnitt [COPPA-Compliance](#coppa) aus.
 8.  Klicken Sie auf **Anzeigeneinheit erstellen**.
@@ -120,6 +120,7 @@ Die folgende Tabelle enthält die kostenpflichtigen Netzwerke, die wir derzeit f
 | Smartclip |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Smartclip](http://www.smartclip.com/). |  Video-Interstitialanzeigen  |
 | SpotX |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [SpotX](https://www.spotx.tv/). |  Video-Interstitialanzeigen  |
 | Taboola |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Taboola](https://www.taboola.com/). |  Banner  |
+| Vungle | Wählen Sie diese Option, um die Werbung von dienen [Vungle](https://vungle.com/) | Video-Interstitialanzeigen |
 | Undertone | Wählen Sie diese Option, um die Werbung von dienen [Undertone](https://www.undertone.com/). | Banner interstitial |
 
 

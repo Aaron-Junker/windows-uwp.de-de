@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 32838e2c3369535928c9e9311f62654eba54e4e0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25dc7118fcb7d9c6e997fae458ef7846777b1262
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611755"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65983918"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Einführung in das UWP-App-Design
 
@@ -20,7 +20,7 @@ ms.locfileid: "57611755"
 
 Der Designleitfaden für die Universelle Windows-Plattform (UWP) ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann.
 
-Es ist keine Liste von Vorschriften, sondern ein lebendiges Dokument, das entwickelt wurde, um sich entsprechend unseres [Fluent Design-Systems](../fluent-design-system/index.md) sowie der Bedürfnisse unserer App-Entwicklungs-Community zu entwickeln.
+Es ist keine Liste von Vorschriften, sondern ein lebendiges Dokument, das entwickelt wurde, um sich entsprechend unseres [Fluent Design-Systems](/windows/apps/fluent-design-system) sowie der Bedürfnisse unserer App-Entwicklungs-Community zu entwickeln.
 
 Diese Einführung bietet einen Überblick über die universellen Designfunktionen, die in jeder UWP-Apps enthalten sind. Es hilft Ihnen, Benutzeroberflächen (UIs) zu erstellen, die sich über eine Vielzahl von Geräten wunderbar skalieren lassen.
 
@@ -98,7 +98,7 @@ Sie können auch das [Windows Template Studio](https://github.com/Microsoft/Wind
 
 ## <a name="controls"></a>Steuerelemente
 
-Die UWP-Designplattform bietet eine Reihe von allgemeinen Steuerelementen, die auf allen Windows-Geräten funktionieren und den Prinzipien für unser [Fluent Design-System](../fluent-design-system/index.md) entsprechen. Diese Steuerelemente reichen von einfachen Steuerelementen wie Schaltflächen und Textelementen bis hin zu ausgeklügelten Steuerelementen, die Listen aus einem Datensatz und einer Vorlage erzeugen können.
+Die UWP-Designplattform bietet eine Reihe von allgemeinen Steuerelementen, die auf allen Windows-Geräten funktionieren und den Prinzipien für unser [Fluent Design-System](/windows/apps/fluent-design-system) entsprechen. Diese Steuerelemente reichen von einfachen Steuerelementen wie Schaltflächen und Textelementen bis hin zu ausgeklügelten Steuerelementen, die Listen aus einem Datensatz und einer Vorlage erzeugen können.
 
 ![UWP-Steuerelemente](../style/images/color/windows-controls.svg)
 
@@ -172,10 +172,10 @@ Wir bieten eine Vielzahl von Werkzeugen zur Unterstützung Ihres Designprozesses
 
 ## <a name="next-fluent-design-system"></a>nächster: Fluent Design-System
 
-Wenn Sie weitere Informationen zu der Prinzipien hinter Fluent Design (das Design-System von Microsoft) und weitere Features für Ihre UWP-App kennenlernen möchten, fahren Sie mit dem Artikel [Fluent Design-System](../fluent-design-system/index.md) fort.
+Wenn Sie weitere Informationen zu der Prinzipien hinter Fluent Design (das Design-System von Microsoft) und weitere Features für Ihre UWP-App kennenlernen möchten, fahren Sie mit dem Artikel [Fluent Design-System](/windows/apps/fluent-design-system) fort.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Was ist eine UWP-App?](../../get-started/universal-application-platform-guide.md)
-- [Fluent Design-System](../fluent-design-system/index.md)
+- [Fluent Design-System](/windows/apps/fluent-design-system)
 - [Übersicht über die XAML-Plattform](../../xaml-platform/index.md)

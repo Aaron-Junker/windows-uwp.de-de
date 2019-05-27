@@ -8,7 +8,7 @@ ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1d8c6a33bd7d9249b5000767ece154ab7f8776
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57603875"
@@ -25,7 +25,7 @@ In diesem Artikel werden die Schritte zum Einrichten und Testen der Entwicklungs
 
 1. Installieren Sie Visual Studio 2017, Visual Studio 2015 Update 3 oder die neueste Version von Visual Studio. Weitere Informationen und Downloads für die Installation finden Sie unter [Downloads und Tools für Windows 10](https://dev.windows.com/downloads). Es wird empfohlen, dass Sie die neueste Version von Visual Studio verwenden, sodass Sie die neuesten Updates für Entwickler und Sicherheit empfangen können.
 
-2. Wenn Sie Visual Studio 2017 erneut installieren, stellen Sie sicher, dass Sie die Arbeitsauslastung **Entwicklung für die universelle Windows-Plattform** auswählen. Wenn Sie ein C++-Entwickler sind, stellen Sie sicher, dass Sie auch das Kontrollkästchen  **	UWP-Tools für C++** im Bereich **Zusammenfassung** rechts unter **Entwicklung für die universelle Windows-Plattform** wählen. Es ist nicht Teil der Standardinstallation.
+2. Wenn Sie Visual Studio 2017 erneut installieren, stellen Sie sicher, dass Sie die Arbeitsauslastung **Entwicklung für die universelle Windows-Plattform** auswählen. Wenn Sie ein C++-Entwickler sind, stellen Sie sicher, dass Sie auch das Kontrollkästchen **UWP-Tools für C++** im Bereich **Zusammenfassung** rechts unter **Entwicklung für die universelle Windows-Plattform** wählen. Es ist nicht Teil der Standardinstallation.
 
     ![Installieren von Visual Studio 2017](images/development-environment-setup-1.png)
 
@@ -56,7 +56,7 @@ Bevor Sie eine App auf Ihrer Xbox One bereitstellen können, muss ein Benutzer a
 
 4. Wählen Sie auf Ihrem Entwicklungs-PC in Visual Studio **Neu/Projekt** aus.
 
-5. Wählen Sie im Fenster **Neues Projekt****Windows Universal/Leere App (Universal Windows)** aus.
+5. Wählen Sie im Fenster **Neues Projekt** **Windows Universal/Leere App (Universal Windows)** aus.
 
 ### <a name="starting-a-c-project"></a>Starten eines C#-Projekts
 

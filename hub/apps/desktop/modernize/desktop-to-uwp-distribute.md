@@ -5,17 +5,19 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 274f69c71890423d9962efe67cca81646a1e8e68
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 2e1aa424fe038a50a5e29364c7f8246e324dc07c
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984480"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215002"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Verteilen Sie Ihre desktop-app-Paket
 
-Wenn Sie entscheiden, [Packen Ihrer desktop-app in einem Paket MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root), Sie können die gepackte Anwendung in den Microsoft Store oder per sideload übertragen veröffentlichen auf einem oder mehreren Geräten.
+Wenn Sie entscheiden, [Packen Ihrer desktop-app in einem Paket MSIX](/windows/msix/desktop/desktop-to-uwp-root), Sie können die gepackte Anwendung in den Microsoft Store oder per sideload übertragen veröffentlichen auf einem oder mehreren Geräten.
 
 > [!NOTE]
 > Haben Sie einen Plan für die wie Benutzer der gepackten Anwendung Umstellung kann? Schauen Sie sich den Abschnitt [Umstellung von Benutzern auf Ihre verpackte App](#transition-users) dieses Handbuchs an, um eine Vorstellung davon zu bekommen, bevor Sie Ihre App verteilen.
@@ -26,12 +28,12 @@ Der [Microsoft Store](https://www.microsoft.com/store/apps) ist eine bequeme Mö
 
 Veröffentlichen Sie Ihre Anwendung auf dem Microsoft Store das breiteste Publikum zu erreichen. Darüber hinaus erhalten Organisation Kunden Ihrer Anwendung intern in der eigenen Organisation durch Verteilen der [Microsoft Store für Unternehmen](https://www.microsoft.com/business-store).
 
-Wenn Sie eine Veröffentlichung im Microsoft Store planen, werden Ihnen als Teil des Übermittlungsprozesses einige zusätzliche Fragen gestellt. Der Grund dafür ist, dass Ihr Paketmanifest eine eingeschränkte Funktion mit dem Namen **runFullTrust** deklariert und wir die Verwendung dieser Funktion durch Ihre Anwendung genehmigen müssen. Erfahren Sie mehr zu dieser Anforderung hier: [Eingeschränkte Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+Wenn Sie eine Veröffentlichung im Microsoft Store planen, werden Ihnen als Teil des Übermittlungsprozesses einige zusätzliche Fragen gestellt. Der Grund dafür ist, dass Ihr Paketmanifest eine eingeschränkte Funktion mit dem Namen **runFullTrust** deklariert und wir die Verwendung dieser Funktion durch Ihre Anwendung genehmigen müssen. Erfahren Sie mehr zu dieser Anforderung hier: [Eingeschränkte Funktionen](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 Sie müssen die Anwendung zu signieren, bevor Sie sie an den Store übermitteln.
 
 >[!IMPORTANT]
-> Wenn Sie Ihre Anwendung in der Microsoft Store veröffentlichen möchten, stellen Sie sicher, dass Ihre Anwendung auf Geräten, auf denen Windows 10 s ausgeführt, ordnungsgemäß ausgeführt wird Dies ist eine Store-Anforderung. Weitere Informationen finden Sie unter [Testen Ihrer Windows-App für Windows 10 S](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s).
+> Wenn Sie Ihre Anwendung in der Microsoft Store veröffentlichen möchten, stellen Sie sicher, dass Ihre Anwendung auf Geräten, auf denen Windows 10 s ausgeführt, ordnungsgemäß ausgeführt wird Dies ist eine Store-Anforderung. Weitere Informationen finden Sie unter [Testen Ihrer Windows-App für Windows 10 S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
 <a id="side-load" />
 
@@ -43,7 +45,7 @@ Dies eignet sich ggf., wenn Sie eine bessere Kontrolle über die Verteilung habe
 
 Um Ihre Anwendung mit anderen Geräten ohne ablegen, damit er in den Store zu verteilen, müssen Sie ein Zertifikat zu erhalten, melden Sie sich Ihre Anwendung mit diesem Zertifikat und dann per sideload übertragen Ihrer Anwendung auf diesen Geräten.
 
-Sie können [ein Zertifikat erstellen](/windows/uwp/packaging/create-certificate-package-signing.md) oder eines von einem beliebten Anbieter wie z. B. [Verisign](https://www.verisign.com/) erhalten.
+Sie können [ein Zertifikat erstellen](/windows/uwp/packaging/create-certificate-package-signing) oder eines von einem beliebten Anbieter wie z. B. [Verisign](https://www.verisign.com/) erhalten.
 
 Wenn die Anwendung auf Geräte zu verteilen, auf denen Windows 10 S ausgeführt werden sollen, muss Ihre Anwendung von der Microsoft Store signiert werden, daher müssen Sie den Store Übermittlung-Prozess durchlaufen zu lassen, bevor Sie Ihre Anwendung auf diesen Geräten verteilen können.
 
@@ -52,9 +54,9 @@ Wenn Sie ein Zertifikat zu erstellen, müssen Sie es im Zertifikatspeicher **Ver
 > [!IMPORTANT]
 > Stellen Sie sicher, dass der Name des Herausgebers auf dem Zertifikat dem Namen des Herausgebers Ihrer App entspricht.
 
-Um Ihre Anwendung mit einem Zertifikat zu signieren, finden Sie unter [melden Sie ein Anwendungspaket mithilfe von SignTool](/windows/uwp/packaging/sign-app-package-using-signtool.md).
+Um Ihre Anwendung mit einem Zertifikat zu signieren, finden Sie unter [melden Sie ein Anwendungspaket mithilfe von SignTool](/windows/uwp/packaging/sign-app-package-using-signtool).
 
-Zum querladen Ihrer Anwendung auf anderen Geräten finden Sie unter [Querladen von branchenanwendungen in Windows 10-](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10).
+Zum querladen Ihrer Anwendung auf anderen Geräten finden Sie unter [Querladen von branchenanwendungen in Windows 10-](/windows/application-management/sideload-apps-in-windows-10).
 
 **Videos**
 

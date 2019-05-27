@@ -6,8 +6,6 @@
       href: basics/index.md
     - name: Einführung in das App-Design
       href: basics/design-and-ui-intro.md
-    - name: Fluent Design-System
-      href: fluent-design-system/index.md
     - name: Navigationsgrundlagen
       items:
         - name: Übersicht
@@ -375,6 +373,8 @@
           items:
             - name: WNS-Prioritäten
               href: shell/tiles-and-notifications/wns-notification-priorities.md
+            - name: Zulassen des Auflistens von WNS-Datenverkehr
+              href: shell/tiles-and-notifications/firewall-allowlist-config.md
             - name: Vom Assistenten für Pushbenachrichtigungen generierter Code
               href: shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md
         - name: Unformatierte Benachrichtigungen

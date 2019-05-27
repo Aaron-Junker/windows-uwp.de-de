@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0600e66c672a28683befdb7b0090f5455a28c948
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4731ab089189a8a03656281d1a9a6da6e4d24e89
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624195"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984259"
 ---
 # <a name="acrylic-material"></a>Acryl-Material
 
@@ -38,7 +38,7 @@ Blog ist eine Art von [Pinsel](https://docs.microsoft.com/en-us/uwp/api/Windows.
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>Acryl und das Fluent Design-System
 
- Mit dem Fluent Design-System erstellen Sie moderne Oberflächen, die Licht, Tiefe, Bewegung, Material und Skalierungsmöglichkeiten beinhalten. Acryl ist Komponente des Fluent Design-Systems, die physische Struktur (Material) und Tiefe zu Ihrer App hinzugefügt. Weitere Informationen finden Sie in der [Fluent Design für UWP-Übersicht](../fluent-design-system/index.md).
+ Mit dem Fluent Design-System erstellen Sie moderne Oberflächen, die Licht, Tiefe, Bewegung, Material und Skalierungsmöglichkeiten beinhalten. Acryl ist Komponente des Fluent Design-Systems, die physische Struktur (Material) und Tiefe zu Ihrer App hinzugefügt. Weitere Informationen finden Sie in der [Fluent Design für UWP-Übersicht](/windows/apps/fluent-design-system).
 
  ## <a name="video-summary"></a>Video-Zusammenfassung
 
@@ -48,14 +48,14 @@ Blog ist eine Art von [Pinsel](https://docs.microsoft.com/en-us/uwp/api/Windows.
 
 :::row:::
     :::column span:::
-        ![Some image](images/XAML-controls-gallery-app-icon.png)
+![Einige Images](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
-        **XAML Controls Gallery**<br>
-        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
+**XAML-Steuerelementsammlungen**<br>
+Wenn Sie die XAML-Steuerelemente Katalog-app installiert haben, klicken Sie auf <a href="xamlcontrolsgallery:/item/Acrylic">hier</a> öffnen Sie die app, und finden Sie unter Blog in Aktion.
 
-        <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-        <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
+<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a><br>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
@@ -73,7 +73,7 @@ Die auffälligste Eigenschaft von Acryl ist seine Transparenz. Es gibt zwei Acry
 ## <a name="when-to-use-acrylic"></a>Wann sollte Acryl verwendet werden?
 
 * Verwenden Sie in-app-Blog für die Unterstützung der Benutzeroberfläche, z. B. auf Oberflächen, die sich Inhalt überlappen können, wenn ein Bildlauf oder mit Ihnen zu interagieren.
-* Verwenden Sie Hintergrund-Blog für vorübergehende UI-Elemente wie Kontextmenüs, Flyouts und Light-Dimsissable Benutzeroberfläche an.<br />Mithilfe von Blog in vorübergehende Szenarien können eine visuelle Beziehung mit dem Inhalt zu verwalten, die die vorübergehende Benutzeroberfläche ausgelöst.
+* Verwenden Sie Hintergrund-Blog für die vorübergehende UI-Elemente wie Kontextmenüs, Flyouts und verwerfbaren Light Benutzeroberfläche.<br />Mithilfe von Blog in vorübergehende Szenarien können eine visuelle Beziehung mit dem Inhalt zu verwalten, die die vorübergehende Benutzeroberfläche ausgelöst.
 
 Bei Verwendung von in-app-Blog auf Navigation Oberflächen erwägen Sie, erweitern die Inhalte darunter den Blog-Bereich, um den Flow in Ihrer app zu verbessern. Mithilfe von NavigationView ist für Sie automatisch der Fall. Um zu vermeiden, erstellen einen Effekt Striping nicht, mehrere Blog Edge-to-Edge - platzieren können diesen jedoch eine unerwünschte Grenze zwischen den beiden weichgezeichnete Flächen erstellen. Blog ist ein Tool zum visuellen Harmonie in Ihren Designs zu versetzen, aber wenn falsch, verwendet diese ganzen visuellen Störungen führen kann.
 
@@ -98,7 +98,7 @@ Für apps mit Menü Flyouts, nicht modalen Popups, oder die Light-dismiss-Bereic
 
 ![E-Mail-app-Muster mit einer nur zu Informationszwecken flyout](images/Mail_TransientContextMenu.png)
 
-Viele unserer Steuerelemente werden Blog wird standardmäßig verwendet. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), ["ComboBox"](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) und ähnliche Steuerelemente mit Light-Dimiss Popups verwenden die vorübergehende Blog, wenn sie aufgerufen werden.
+Viele unserer Steuerelemente werden Blog wird standardmäßig verwendet. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), ["ComboBox"](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) und ähnliche Steuerelemente mit Light-dismiss Popups verwenden die vorübergehende Blog, wenn sie aufgerufen werden.
 
 > [!Note]
 > Blog-Flächen Rendern ist die GPU-intensiv, der Stromverbrauch der Geräte steigern und verkürzen Akkuverbrauch gering zu halten. Blog-Effekte werden automatisch deaktiviert, wenn Geräte Stromsparmodus-Modus geben, und Benutzer können den Blog-Effekte für alle apps deaktivieren, wenn sie auswählen.
@@ -141,7 +141,7 @@ Wir haben eine Sammlung von Pinsel-Designressourcen sowohl für Hintergrund- als
     </tr>
     <tr>
         <td> SystemControlAcrylicWindowMediumHighBrush, SystemControlAcrylicElementMediumHighBrush <br/> SystemControlBaseHighAcrylicWindowMediumHighBrush, SystemControlBaseHighAcrylicElementMediumHighBrush </td>
-        <td align="center"> 70 % </td>
+        <td align="center"> 70% </td>
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
@@ -166,7 +166,7 @@ Zusätzlich zu farbneutralem Acryl haben wir Ressourcen hinzugefügt, mit denen 
     </tr>
     <tr>
         <td> SystemControlAccentAcrylicWindowAccentMediumHighBrush, SystemControlAccentAcrylicElementAccentMediumHighBrush  </td>
-        <td align="center"> 70 % </td>
+        <td align="center"> 70% </td>
         <td> SystemAccentColor </td>
     </tr>
     <tr>
@@ -176,7 +176,7 @@ Zusätzlich zu farbneutralem Acryl haben wir Ressourcen hinzugefügt, mit denen 
     </tr>
     <tr>
         <td> SystemControlAccentDark2AcrylicWindowAccentDark2MediumHighBrush, SystemControlAccentDark2AcrylicElementAccentDark2MediumHighBrush  </td>
-        <td align="center"> 70 % </td>
+        <td align="center"> 70% </td>
         <td> SystemAccentColorDark2 </td>
     </tr>
 </table>
@@ -319,7 +319,7 @@ Darüber hinaus müssen Sie den Titel der App, der normalerweise automatisch in 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 * Verwenden Sie Acryl als Hintergrundmaterial von nicht primären App-Oberflächen wie Navigationsbereichen.
 * Dehnen Sie das Acryl auf mindestens einen Rand der App aus, um durch eine dezente Vermischung mit der Umgebung der App eine nahtlose Oberfläche bereitzustellen.
-* Fügen Sie keine desktop Arylic auf großen hintergrundoberflächen Ihrer-App - unterbricht dies die mentale Modell Blog in erster Linie für vorübergehende Oberflächen verwendet wird.
+* Fügen Sie keine desktop-Blog auf großen hintergrundoberflächen Ihrer-App - unterbricht dies die mentale Modell Blog in erster Linie für vorübergehende Oberflächen verwendet wird.
 * Platzieren Sie In-App- und Hintergrund-Acryl nicht direkt nebeneinander, um visuelle Spannung an den Rändern zu vermeiden.
 * Platzieren Sie nicht mehrere Acrylbereiche mit demselben Farbton und derselben Deckkraft nebeneinander, da dies eine unerwünschte sichtbare Naht erzeugt.
 * Platzieren Sie keinen farbigen Text über Acryloberflächen.

@@ -10,7 +10,7 @@ keywords: Windows 10, UWP, Senden von Popupbenachrichtigungen, Benachrichtigung
 ms.localizationpriority: medium
 ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57605925"
@@ -281,12 +281,12 @@ Wenn der Benutzer in Windows 10 auf das Popup klickt, haben Sie zwei Möglichke
 * Hintergrundaktivierung
 
 > [!NOTE]
-> Wenn Sie die älteren Popupvorlagen von Windows 8.1 verwenden, wird statt **OnActivated****OnLaunched** aufgerufen. Die folgende Dokumentation gilt nur für moderne Windows 10-Benachrichtigungen, die die Benachrichtigungsbibliothek (oder die ToastGeneric-Vorlage bei Verwendung von XML-Rohdaten) verwenden.
+> Wenn Sie die älteren Popupvorlagen von Windows 8.1 verwenden, wird statt **OnActivated** **OnLaunched** aufgerufen. Die folgende Dokumentation gilt nur für moderne Windows 10-Benachrichtigungen, die die Benachrichtigungsbibliothek (oder die ToastGeneric-Vorlage bei Verwendung von XML-Rohdaten) verwenden.
 
 
 ### <a name="handling-foreground-activation"></a>Behandeln der Vordergrundaktivierung
 
-Wenn ein Benutzer in Windows 10 auf ein modernes Popup (oder eine Schaltfläche im Popup) klickt, wird anstelle von **OnLaunched****OnActivated** mit der neuen Art der Aktivierung – **ToastNotification** – aufgerufen. Dadurch kann der Entwickler eine Popupaktivierung auf einfache Weise erkennen und Aufgaben entsprechend ausführen.
+Wenn ein Benutzer in Windows 10 auf ein modernes Popup (oder eine Schaltfläche im Popup) klickt, wird anstelle von **OnLaunched** **OnActivated** mit der neuen Art der Aktivierung – **ToastNotification** – aufgerufen. Dadurch kann der Entwickler eine Popupaktivierung auf einfache Weise erkennen und Aufgaben entsprechend ausführen.
 
 Im Beispiel unten können Sie die Argumentzeichenfolge abrufen, die Sie ursprünglich im Popupinhalt angegeben haben. Sie können auch die Eingabe des Benutzers in Ihren Textfeldern und Auswahlfeldern abrufen.
 

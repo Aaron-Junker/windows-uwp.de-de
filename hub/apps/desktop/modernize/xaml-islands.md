@@ -4,14 +4,16 @@ title: UWP-Steuerelementen in desktop-apps
 ms.date: 04/16/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Windows Forms, Wpf, XAML-Inseln
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: fd4f92e543b224e617e1990e5761d534c87ce6fb
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 62dc89b9e17f1ae9c2394629100e0bd54606594b
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984930"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215124"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Host UWP XAML-Steuerelemente in desktop-apps (XAML-Inseln)
 
@@ -94,7 +96,7 @@ Installieren Sie das Windows 10, die Version 1903 SDK (oder eine höhere Version
 
 Wenn Sie nicht Ihre Anwendung in einem Paket MSIX packen möchten, können Sie hinzufügen eine [Assemblymanifest Seite-an-Seite](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) zu Ihrem Projekt und fügen die **"maxversiontested"** Wert, der dem Manifest an, dass Ihre Anwendung ist kompatibel mit Windows 10, Version 1903 oder höher.
 
-1. Wenn Sie noch nicht vorhanden ist eine Assembly manifest in Ihrem Projekt das Projekt eine neue XML-Datei hinzu, und nennen Sie sie **"App.manifest"**. Für eine WPF oder Windows Forms-Anwendung, stellen Sie sicher, dass Sie auch Zuweisen der **Manifest** Eigenschaft **. "App.manifest"** in die **Anwendung** auf der Seite Ihrer [Projekt Eigenschaften](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
+1. Wenn Sie noch nicht vorhanden ist eine Assembly manifest in Ihrem Projekt das Projekt eine neue XML-Datei hinzu, und nennen Sie sie **"App.manifest"** . Für eine WPF oder Windows Forms-Anwendung, stellen Sie sicher, dass Sie auch Zuweisen der **Manifest** Eigenschaft **. "App.manifest"** in die **Anwendung** auf der Seite Ihrer [Projekt Eigenschaften](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
 2. Im Assemblymanifest umfassen die **Kompatibilität** Element und die untergeordneten Elemente, die im folgenden Beispiel gezeigt. Ersetzen Sie die **Id** Attribut der **"maxversiontested"** Element mit der Versionsnummer von Windows 10, die Sie Anzielen (Dies muss Windows 10, Version 1903 sein oder eine höhere Version sein). 
 
     ```xml

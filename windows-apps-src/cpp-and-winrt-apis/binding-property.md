@@ -1,16 +1,16 @@
 ---
 description: Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *observable*-Eigenschaft bezeichnet. Dieses Thema zeigt, wie man eine Observable-Eigenschaft implementiert und nutzt und wie man ein XAML-Steuerelement daran bindet.
 title: XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft
-ms.date: 08/21/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, XAML, steuerelement, binden, eigenschaft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdbfef54b799f8dff23ad739007cec9fef98af8
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 2fe5c03eebd2b68e98ae908ea4624471fbd2b3d2
+ms.sourcegitcommit: d23dab1533893b7fe0f01ca6eb273edfac4705e6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921726"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65627670"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft
 Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *observable*-Eigenschaft bezeichnet. Dieses Konzept basiert auf dem Software-Design-Muster, das als *Observer-Pattern* bekannt ist. In diesem Thema wird gezeigt, wie zum Implementieren von Observable-Eigenschaften in [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), und wie sie XAML-Steuerelemente binden.
@@ -27,7 +27,7 @@ Ein XAML-Textelement oder -Steuerelement kann sich an diese Ereignisse binden un
 > Informationen zum Installieren und Verwenden der C++WinRT Visual Studio-Erweiterung (VSIX) und das NuGet-Paket (die zusammen bieten die Projektvorlage und Buildunterstützung) finden Sie unter [Visual Studio-Unterstützung für C++"/ WinRT"](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="create-a-blank-app-bookstore"></a>Erstellen einer leeren App (Bookstore)
-Erstellen Sie zunächst ein neues Projekt in Microsoft Visual Studio. Erstellen Sie eine **Visual C++** > **Windows Universal** > **leere App (C++ / WinRT)** Projekt, und nennen Sie sie *Bookstore*.
+Erstellen Sie zunächst ein neues Projekt in Microsoft Visual Studio. Erstellen Sie eine **leere App (C++"/ WinRT")** Projekt, und nennen Sie sie *Bookstore*.
 
 Wir werden eine neue Klasse schreiben, um ein Buch mit einer Observable-Eigenschaft namens „Titel” darzustellen. Wir erstellen und nutzen die Klasse innerhalb derselben Kompilierungseinheit. Aber wir wollen in der Lage sein, aus XAML eine Bindung an diese Klasse zu nutzen. Daher wird es eine Laufzeitklasse sein. Und wir werden C++/WinRT verwenden, um diese zu schreiben und zu nutzen.
 
@@ -61,7 +61,6 @@ Nun öffnen wir `\Bookstore\Bookstore\BookSku.h` und `BookSku.cpp` und implement
 ```cppwinrt
 // BookSku.h
 #pragma once
-
 #include "BookSku.g.h"
 
 namespace winrt::Bookstore::implementation
@@ -89,6 +88,7 @@ Implementieren Sie in `BookSku.cpp` die Funktionen wie folgt.
 // BookSku.cpp
 #include "pch.h"
 #include "BookSku.h"
+#include "BookSku.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -142,18 +142,17 @@ namespace Bookstore
 }
 ```
 
-Speichern und erstellen Sie das Projekt. Kopieren Sie `BookstoreViewModel.h` und `BookstoreViewModel.cpp` aus dem `Generated Files`-Ordner in den Projektordner und nehmen Sie sie in das Projekt auf. Öffnen Sie diese Dateien, und implementieren Sie die Common Language Runtime-Klasse, wie unten dargestellt. Beachten Sie wie im `BookstoreViewModel.h`, wir sind einschließlich `BookSku.h`, die deklariert wird, des Implementierungstyps (**Winrt::Bookstore::implementation::BookSku**). Und wir sind den Standardkonstruktor wiederherstellen, durch das Entfernen `= delete`.
+Speichern und erstellen Sie das Projekt. Kopieren Sie `BookstoreViewModel.h` und `BookstoreViewModel.cpp` aus dem `Generated Files\sources`-Ordner in den Projektordner und nehmen Sie sie in das Projekt auf. Öffnen Sie diese Dateien, und implementieren Sie die Common Language Runtime-Klasse, wie unten dargestellt. Beachten Sie wie im `BookstoreViewModel.h`, wir sind einschließlich `BookSku.h`, die deklariert wird, des Implementierungstyps für **BookSku** (d.h. **Winrt::Bookstore::implementation::BookSku**). Und wir sind entfernen `= default` vom Standardkonstruktor.
 
 ```cppwinrt
 // BookstoreViewModel.h
 #pragma once
-
 #include "BookstoreViewModel.g.h"
 #include "BookSku.h"
 
 namespace winrt::Bookstore::implementation
 {
-    struct BookstoreViewModel final : BookstoreViewModelT<BookstoreViewModel>
+    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
     {
         BookstoreViewModel();
 
@@ -169,6 +168,7 @@ namespace winrt::Bookstore::implementation
 // BookstoreViewModel.cpp
 #include "pch.h"
 #include "BookstoreViewModel.h"
+#include "BookstoreViewModel.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -208,9 +208,9 @@ Speichern Sie die Datei. Erstellen des Projekts wird nicht vollständig im Momen
 
 Wenn Sie das Einschließen von weglassen `BookstoreViewModel.idl` (finden Sie in der Auflistung der `MainPage.idl` oben), und klicken Sie dann die Fehlermeldung angezeigt werden **erwartet \< in Ihrer Nähe "MainViewModel"**. Ein weiterer Tipp ist, um sicherzustellen, dass Sie alle Typen im selben Namespace lassen: der Namespace, der in den codeauflistungen angezeigt wird.
 
-Um den Fehler zu beheben, die wir erwarten Sie nun müssen die Accessor-Stubs für Kopieren der **"MainViewModel"** -Eigenschaft aus die generierten Dateien (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` und `MainPage.cpp`) und in `\Bookstore\Bookstore\MainPage.h` und `MainPage.cpp`.
+Um den Fehler zu beheben, die wir erwarten Sie nun müssen die Accessor-Stubs für Kopieren der **"MainViewModel"** -Eigenschaft aus die generierten Dateien (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` und `MainPage.cpp`) und in `\Bookstore\Bookstore\MainPage.h` und `MainPage.cpp`. Die Schritte hierzu werden nachfolgend beschrieben.
 
-In `\Bookstore\Bookstore\MainPage.h`, umfassen `BookstoreViewModel.h`, die deklariert wird, des Implementierungstyps (**Winrt::Bookstore::implementation::BookstoreViewModel**). Fügen Sie einen privaten Member zum Speichern des Ansichtsmodells hinzu. Beachten Sie, dass die Zugriffsfunktion für die Eigenschaft (und das Mitglied m_mainViewModel) als **Bookstore::BookstoreViewModel** (dem projizierten Typ) implementiert ist. Der Implementierungstyp im selben Projekt (Kompilierungseinheit) wie die Anwendung, daher erstellen wir M_mainViewModel über die Überladung des Konstruktors, der verwendet wird `nullptr_t`. Entfernen Sie auch die **MyProperty** Eigenschaft.
+In `\Bookstore\Bookstore\MainPage.h`, umfassen `BookstoreViewModel.h`, die deklariert wird, des Implementierungstyps für **BookstoreViewModel** (d.h. **Winrt::Bookstore::implementation::BookstoreViewModel**). Fügen Sie einen privaten Member zum Speichern des Ansichtsmodells hinzu. Beachten Sie, dass die Accessor-Funktion (und die Member M_mainViewModel), im Hinblick auf den projizierten Typ für implementiert werden **BookstoreViewModel** (d.h. **Bookstore::BookstoreViewModel**). Der Implementierungstyp im selben Projekt (Kompilierungseinheit) wie die Anwendung, daher erstellen wir M_mainViewModel über die Überladung des Konstruktors, der verwendet wird `nullptr_t`. Entfernen Sie auch die **MyProperty** Eigenschaft.
 
 ```cppwinrt
 // MainPage.h
@@ -240,6 +240,7 @@ In `\Bookstore\Bookstore\MainPage.cpp`, rufen Sie [ **winrt::make** ](/uwp/cpp-r
 // MainPage.cpp
 #include "pch.h"
 #include "MainPage.h"
+#include "MainPage.g.cpp"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
@@ -278,7 +279,7 @@ Für die derzeit veröffentlichte Version von C++ / WinRT, damit Sie die {Bindin
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
-* [winrt::make Funktionsvorlage](/uwp/cpp-ref-for-winrt/make)
+* [Vorlage für WinRT::Make-Funktion](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)

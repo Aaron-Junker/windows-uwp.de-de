@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bcceb8d44b6d92cab05a9c077531b3fe1b05c79
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5de4b51687e152ef5d25a583f949cdd108f2f029
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651755"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984211"
 ---
 # <a name="reveal-focus"></a>Zeigen Sie den Fokus
 
@@ -168,7 +168,7 @@ Eine weitere Möglichkeit zum Anpassen der Fokus anzuzeigen ist, die vom System 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Zeigen Sie den Fokus und die Fluent-Entwurfssystem
 
-Zeigen Sie, dass der Fokus eine Fluent-Entwurfssystem-Komponente handelt, die Ihre app Licht hinzufügt. Weitere Informationen zum Fluent Design-Systems und den zugehörigen Komponenten finden Sie unter [Fluent Design für UWP-Übersicht](../fluent-design-system/index.md).
+Zeigen Sie, dass der Fokus eine Fluent-Entwurfssystem-Komponente handelt, die Ihre app Licht hinzufügt. Weitere Informationen zum Fluent Design-Systems und den zugehörigen Komponenten finden Sie unter [Fluent Design für UWP-Übersicht](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

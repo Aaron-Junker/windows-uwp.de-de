@@ -1,17 +1,20 @@
 ---
 Description: Wenn Sie eine neue desktop-app erstellen möchten, ist die erste Entscheidung, die Sie treffen, ob der Win32 und COM-API oder .NET verwendet.
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
-title: Wählen Sie Ihre app-Plattform
+title: Auswählen Ihrer App-Plattform
 ms.topic: article
 ms.date: 03/18/2019
-ms.openlocfilehash: 960dda5e4cb7e8edc1edf7ce2e81da8306555f1c
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.author: mcleans
+author: mcleanbyron
+ms.localizationpriority: medium
+ms.openlocfilehash: 5ece6c5eea6cc05a966a7eae4cd16958dddee4d4
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984490"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215048"
 ---
-# <a name="choose-your-app-platform"></a>Wählen Sie Ihre app-Plattform
+# <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
 Wenn Sie eine neue Desktopanwendung für Windows-PCs erstellen möchten, ist die erste Entscheidung, die Sie treffen die Anwendungsplattform zu verwenden. Windows bietet vier hauptanwendung Plattformen, die jeweils unterschiedliche Vorteile:
 

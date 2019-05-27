@@ -10,7 +10,7 @@ keywords: Windows 10, UWP, Lokalisierbarkeit, Lokalisierung, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645305"
@@ -53,7 +53,7 @@ Wenn Ihre App für Rechts-Links-Sprachen (RTL) lokalisiert wird, verwenden Sie d
 Legen Sie **FlowDirection** im Stammlayoutpanel (oder Frame) der Seite oder auf der Seite selbst fest. Dadurch erben alle enthaltenen Steuerelemente dieses Eigenschaft.
 
 > [!IMPORTANT]
-> Allerdings wird **FlowDirection***nicht* automatisch basierend auf der vom Benutzer in den Windows-Einstellungen ausgewählten Anzeigesprache festgelegt, und die Eigenschaft ändert sich auch nicht dynamisch, wenn der Benutzer die Anzeigesprache wechselt. Stellt der Benutzer beispielsweise die Windows-Einstellungen von Englisch auf Arabisch um, ändert sich die **FlowDirection**-Eigenschaft *nicht* automatisch von links nach rechts zu rechts nach links. Als App-Entwickler müssen Sie **FlowDirection** für die Sprache festlegen, die gerade angezeigt wird.
+> Allerdings wird **FlowDirection** *nicht* automatisch basierend auf der vom Benutzer in den Windows-Einstellungen ausgewählten Anzeigesprache festgelegt, und die Eigenschaft ändert sich auch nicht dynamisch, wenn der Benutzer die Anzeigesprache wechselt. Stellt der Benutzer beispielsweise die Windows-Einstellungen von Englisch auf Arabisch um, ändert sich die **FlowDirection**-Eigenschaft *nicht* automatisch von links nach rechts zu rechts nach links. Als App-Entwickler müssen Sie **FlowDirection** für die Sprache festlegen, die gerade angezeigt wird.
 
 Die programmatische Technik besteht darin, die Eigenschaft `LayoutDirection` der bevorzugten Benutzeranzeigesprache zu verwenden, um die Eigenschaft [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) festzulegen (siehe Codebeispiel unten). Die meisten Steuerelemente in Windows verwenden **FlowDirection** bereits. Wenn Sie ein benutzerdefiniertes Steuerelement implementieren, sollte es **FlowDirection** verwenden, um entsprechende Layoutänderungen für RTL- und LTR-Sprachen vorzunehmen.
 

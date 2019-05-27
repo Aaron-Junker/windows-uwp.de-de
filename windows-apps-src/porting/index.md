@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eefebbd7087070f85ead09e562f154f43ed49e37
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3d8805f03f8476bcae8404395c27d9d78952f782
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582779"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984229"
 ---
 # <a name="porting-apps-to-windows10"></a>Portieren von Apps zu Windows 10
 
@@ -24,11 +24,11 @@ In diesem Portierungshandbuch werden die Unterschiede zwischen der aktuellen Tec
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Wechsel von Windows Phone Silverlight zu UWP](wpsl-to-uwp-root.md) | Entwickler, die über eine Windows Phone Silverlight-App verfügen, können beim Wechsel zu Windows 10 auf Ihre Kenntnisse und Fähigkeiten zurückgreifen und Ihren vorhandenen Quellcode umfassend nutzen. Mit Windows 10 können Sie eine UWP-App erstellen, also ein einzelnes App-Paket, das Ihre Kunden auf jeder Art von Gerät installieren können. |
+| [Wechsel vom Desktop zu UWP](desktop-to-uwp-migrate.md) | Wählen Sie eine von mehreren Optionen, um UWP-Funktionen in Ihre Win32- und .NET-Desktopanwendungen einzubinden. |
 | [Wechsel von Windows-Runtime 8.x zu UWP](w8x-to-uwp-root.md) | Bei einer universellen 8.1-App – ob für Windows 8.1, Windows Phone 8.1 oder beides – werden Sie feststellen, dass der Quellcode und Ihre Kenntnisse sich reibungslos zu Windows 10 portieren lassen. Mit Windows 10 können Sie eine UWP-App erstellen, also ein einzelnes App-Paket, das Ihre Kunden auf jeder Art von Gerät installieren können. |
 | [Windows-Apps-Konzeptzuordnung für Android- und iOS-Entwickler](android-ios-uwp-map.md) | Wenn Sie Entwickler mit Android- oder iOS-Kenntnissen sind und/oder über den entsprechenden Code verfügen und zu Windows 10 und zur Universellen Windows-Plattform (UWP) wechseln möchten, bietet Ihnen dieser Artikel alle Informationen, die Sie für die Zuordnung der Plattformfeatures – und Ihrer Kenntnisse – zwischen den drei Plattformen benötigen. |
 | [Wechsel von iOS zu UWP](ios-to-uwp-root.md) | Sie entwickeln für iOS und fragen sich, wie Sie zu Windows 10 und zur UWP wechseln können? Das ist gar nicht so kompliziert. Wir haben die Tools, Techniken und Informationen, mit denen Sie großartige Apps entwickeln können, die auf Windows-Geräten genauso gut wie auf iOS-Geräten funktionieren – oder vielleicht sogar noch besser! |
-| [Wechsel vom Desktop zu UWP](desktop-to-uwp-root.md) | Konvertieren Sie Ihre Win32- und .NET 4.6.1-Desktopanwendungen in Apps für die Universelle Windows-Plattform (UWP). |
+| [Wechsel von Windows Phone Silverlight zu UWP](wpsl-to-uwp-root.md) | Entwickler, die über eine Windows Phone Silverlight-App verfügen, können beim Wechsel zu Windows 10 auf Ihre Kenntnisse und Fähigkeiten zurückgreifen und Ihren vorhandenen Quellcode umfassend nutzen. Mit Windows 10 können Sie eine UWP-App erstellen, also ein einzelnes App-Paket, das Ihre Kunden auf jeder Art von Gerät installieren können. |
 | [Konvertieren Ihrer Web-App in eine PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps) | Sie können Ihre Web-App nun in eine progressive Web-App (PWA) konvertieren, die auf allen Plattformen funktioniert, einschließlich UWP. Das [PWA Builder-Tool](https://www.pwabuilder.com) erstellt das erforderliche Manifest für Sie. Dies ersetzt die Brücke der gehosteten Web-Apps (Hosted Web App, HWA). |
 
 ## <a name="related-topics"></a>Verwandte Themen

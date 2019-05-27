@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e22a10e74a834daf4d256313f0e353a6829911c0
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582790"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984241"
 ---
 # <a name="xaml-platform"></a>XAML-Plattform
 
@@ -26,4 +26,4 @@ Dieser Abschnitt enthält Themen, in denen Programmierkonzepte erläutert werden
 | [Übersicht über angefügte Eigenschaften](attached-properties-overview.md) | Erläutert das Konzept einer angefügten Eigenschaft in XAML und bietet einige Beispiele. |
 | [Benutzerdefinierte angefügte Eigenschaften](custom-attached-properties.md) | Erläutert, wie eine angefügte XAML-Eigenschaft als Abhängigkeitseigenschaft implementiert und die Accessorkonvention definiert wird, die erforderlich ist, damit die angefügte Eigenschaft in XAML verwendet werden kann. |
 | [Übersicht über Ereignisse und Routingereignisse](events-and-routed-events-overview.md) | Wir beschreiben das Programmierkonzept von Ereignissen in einer Windows-Runtime-App bei Verwendung von C#, Visual Basic oder Visual C++/CX als Programmiersprache und XAML für die UI-Definition. Sie können im Rahmen der Deklarationen für UI-Elemente Handler für Ereignisse in XAML zuweisen. Alternativ können Sie Handler im Code hinzufügen. Die Windows-Runtime unterstützt **Routingereignisse**: Bestimmte Eingabeereignisse und Datenereignisse können von anderen Objekten behandelt werden als dem Objekt, von dem das Ereignis ausgelöst wurde. Routingereignisse sind hilfreich, wenn Sie Steuerelementvorlagen definieren oder Seiten oder Layoutcontainer verwenden. |
-|[Host-UWP-Steuerelemente in WPF- und Windows Forms-Anwendungen](xaml-host-controls.md)| Hier wird erläutert, wie Sie mit UWP-XAML-Steuerelementen die Benutzeroberfläche einer Windows Forms- oder WPF-Desktopanwendung optimieren.|
+|[UWP-Steuerelementen in Desktop-Apps (XAML-Inseln)](/windows/apps/desktop/modernize/xaml-islands)| Es wird beschrieben, wie Sie mit UWP-XAML-Steuerelementen die Benutzeroberfläche einer Windows Forms-, WPF- oder Win32-Desktopanwendung optimieren.|

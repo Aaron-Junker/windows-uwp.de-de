@@ -9,7 +9,7 @@ ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646535"
@@ -26,9 +26,9 @@ Verwenden Sie zum Erstellen des Layouts für eine einfache Wetter-App mit XAML d
 
 ## <a name="step-1-create-a-blank-app"></a>Schritt 1: Erstellen einer leeren app
 1. Wählen Sie in Visual Studio **Datei** > **Neues Projekt** aus.
-2. Wählen Sie im linken Bereich des Dialogfelds **Neues Projekt****Visual C#** > **Windows** > **Universell** oder **Visual C++** > **Windows** > **Universell** aus.
+2. Wählen Sie im linken Bereich des Dialogfelds **Neues Projekt** **Visual C#** >  **Windows** > **Universell** oder **Visual C++** > **Windows** > **Universell** aus.
 3. Wählen Sie im mittleren Bereich **Blank App** aus.
-4. Geben Sie im Feld **Name****WeatherPanel** ein, und wählen Sie **OK** aus.
+4. Geben Sie im Feld **Name** **WeatherPanel** ein, und wählen Sie **OK** aus.
 5. Wählen Sie zum Ausführen des Programms im Menü **Debugging** > **Debugging starten** aus, oder drücken Sie F5.
 
 ## <a name="step-2-define-a-grid"></a>Schritt 2: Definieren Sie ein Raster

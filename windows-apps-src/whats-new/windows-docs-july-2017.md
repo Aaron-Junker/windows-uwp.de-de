@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 1
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1875fecbdfa6b97cdc30413c8afa6cc58d3251ef
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 03bc41ca76f6c6b20f06c98b0e71e2bc5a361992
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595035"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984205"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Juli 2017
 
@@ -112,9 +112,9 @@ Der [konzeptionellen UWP-Dokumentation](../get-started/universal-application-pla
 
 ### <a name="test-your-windows-app-for-windows-10-s"></a>Testen Ihrer Windows-App für Windows 10 S
 
-Testen Sie Ihre Windows-App, um sicherzustellen, dass sie korrekt auf Geräten unter Windows S ausgeführt wird. Anleitungen dazu finden Sie in [diesem neuen Handbuch](../porting/desktop-to-uwp-test-windows-s.md). 
+Testen Sie Ihre Windows-App, um sicherzustellen, dass sie korrekt auf Geräten unter Windows S ausgeführt wird. Anleitungen dazu finden Sie in [diesem neuen Handbuch](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
-## <a name="samples"></a>Beispiele
+## <a name="samples"></a>Proben
 
 ### <a name="annotated-audio-app-sample"></a>Beispiel für eine kommentierte Audio-App
 
@@ -130,7 +130,7 @@ Testen Sie Ihre Windows-App, um sicherzustellen, dass sie korrekt auf Geräten u
 
 ## <a name="videos"></a>Videos
 
-### <a name="accessibility"></a>Bedienungshilfen
+### <a name="accessibility"></a>Zugriff
 
 Durch Bedienungshilfen in Ihren Apps erreichen Sie viel größere Zielgruppen. [Sehen Sie sich das Video an](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility), und erfahren Sie dann mehr über das [Entwickeln von Apps mit Barrierefreiheit](https://developer.microsoft.com/en-us/windows/accessible-apps).
 

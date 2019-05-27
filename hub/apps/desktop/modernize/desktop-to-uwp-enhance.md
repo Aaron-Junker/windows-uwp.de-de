@@ -4,14 +4,16 @@ title: Verwenden von UWP-APIs in desktop-apps
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, UWP
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: eb0cee26ee65c029af3f0385f44630afa057b29f
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 22aefb58dc06a35ed3a10338eb585aa6c49e55fc
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984660"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215102"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>Rufen Sie die UWP-APIs in desktop-apps
 

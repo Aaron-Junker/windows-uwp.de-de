@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeige, Kampagne, bewerben
 ms.localizationpriority: medium
-ms.openlocfilehash: d442792cb2b4175294ea8da053784ef0a99d18e2
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 0d38d47c1b5e228e984faa4657cd12735e98bcf9
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63811839"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215233"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Erstellen einer Anzeigenkampagne für Ihre App
 
@@ -20,7 +20,7 @@ Sie können Ad Kampagnen erstellen [Partner Center](https://partner.microsoft.co
 Sie können Anzeigenkampagnen nur für Apps erstellen, die die letzte Veröffentlichungsphase des [App-Zertifizierungsprozesses](the-app-certification-process.md) durchlaufen haben.
 
 > [!NOTE]
-> In diesem Abschnitt der Dokumentation wird beschrieben, wie Sie eine Ad-Kampagne in Partner Center zu erstellen. Sie können auch die [Microsoft Store-Werbungs-API](../monetize/run-ad-campaigns-using-windows-store-services.md) zum programmgesteuerten Erstellen und Verwalten von Anzeigenkampagnen verwenden.
+> In diesem Abschnitt der Dokumentation wird beschrieben, wie Sie eine Ad-Kampagne in Partner Center zu erstellen. Andere Optionen für pushkampagnen zu erstellen und Verwalten von Ad-Kampagnen programmgesteuert enthalten [Vungle](https://vungle.com/) und [Erweiterungen für Microsoft Store-API-](../monetize/run-ad-campaigns-using-windows-store-services.md).
 
 ## <a name="instructions"></a>Anweisungen
 
@@ -36,8 +36,8 @@ So erstellen Sie eine Anzeigenkampagne zum Bewerben einer App.
 5.  Überprüfen Sie den Namen für Ihre Kampagne im Feld **Kampagnennamen** und ändern Sie ihn wenn notwendig.
 6.  Wählen Sie unter **Kampagnentyp** eine der folgenden Optionen aus:
     * **Kostenpflichtige Ad**: Diese anzeigen, werden in jeder app ausgeführt, die Gerät und in der Kategorie Ihrer app übereinstimmt. Neue, nach dem 9. Januar 2017 erstellte Kampagnen, zeigen Ihre Anzeigen auch in MSN.com, Outlook.com, Skype und anderen Microsoft-Premium-Eigenschaften an. Werbekampagnen für Apps, deren Ziel Apps und Microsoft-Premium-Eigenschaften sind, werden als *universelle* Kampagnen bezeichnet.
-    * **Community Ad (free)**: Diese anzeigen werden von anderen Entwicklern, die auch Community-Anzeigenkampagnen erstellen veröffentlichte apps ausgeführt. Bevor Sie diese Option auswählen können, müssen Sie auf der Seite **Gewinnbringende Nutzung** -> **In-App Anzeigen** dem Anzeigen von Community-Anzeigen in Ihrer App zugestimmt haben. Weitere Informationen finden Sie unter [Über Community-Anzeigen](about-community-ads.md).
-    * **Haus Ad (free)**: Diese anzeigen, werden nur in Ihren apps ausgeführt werden, die die angekündigte app Typ des Geräts entsprechen. Eigenwerbung ist kostenlos. Weitere Informationen finden Sie unter [Über Eigenwerbung](about-house-ads.md).
+    * **Community Ad (free)** : Diese anzeigen werden von anderen Entwicklern, die auch Community-Anzeigenkampagnen erstellen veröffentlichte apps ausgeführt. Bevor Sie diese Option auswählen können, müssen Sie auf der Seite **Gewinnbringende Nutzung** -> **In-App Anzeigen** dem Anzeigen von Community-Anzeigen in Ihrer App zugestimmt haben. Weitere Informationen finden Sie unter [Über Community-Anzeigen](about-community-ads.md).
+    * **Haus Ad (free)** : Diese anzeigen, werden nur in Ihren apps ausgeführt werden, die die angekündigte app Typ des Geräts entsprechen. Eigenwerbung ist kostenlos. Weitere Informationen finden Sie unter [Über Eigenwerbung](about-house-ads.md).
 
 7.  Bei kostenpflichtigen Anzeigenkampagnen müssen Sie die die **Kampagnendauer** bestätigen (die Zeitspanne, auf die Ihr Kampagnenbudget angewendet wird). Die Standardoption ist **Monatlich**, wobei Ihr Kampagnenbudget regelmäßig monatlich ausgegeben wird, bis Sie die Kampagne beenden. Wenn Sie über ein Premiumkonto verfügen, können Sie optional **Benutzerdefiniert** auswählen, um einen benutzerdefinierten Datums- und Uhrzeitbereich auszuwählen, der während Ihres Kampagnenbudgets angewendet werden soll. Weitere Informationen zu Premienkonten finden Sie unter [Allgemeine Fragen zu Anzeigenkampagnen](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
 
@@ -90,7 +90,7 @@ So erstellen Sie eine Anzeigenkampagne zum Bewerben einer App.
 
 12.  Wenn Sie ein [Premiumkonto](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign) besitzen, können Sie mithilfe des Kontrollkästchens **Ziel-URL** steuern, was geschieht, wenn ein Kunde auf Ihre Anzeige klickt.
     * Wenn Sie das Kontrollkästchen nicht aktivieren, wird der Store-Eintrag Ihrer App angezeigt, wenn ein Kunde auf Ihre Anzeige klickt.
-    * Wenn Sie Kochava oder Tune verwenden, um die Installationsdaten für Ihre App zu messen, geben Sie die Installationsverfolgungs-URL von Kochava oder Tune ein. Beim Speichern der Kampagne wird die Verfolgungs-URL überprüft, um sicherzustellen, dass sie zur Eintragsseite für Ihre App im Microsoft Store aufgelöst wird. Weitere Informationen zur Installationsverfolgung mit Kochava und Tune finden Sie in der [Kochava](https://support.kochava.com/)- und [Tune](https://help.tune.com/)-Dokumentation.
+    * Wenn Sie anpassen, Kochava, optimieren oder Vungle verwenden, um installieren Sie Analytics für Ihre app zu messen, geben Sie Ihre Installation nachverfolgungs-URL ein. Beim Speichern der Kampagne wird die Verfolgungs-URL überprüft, um sicherzustellen, dass sie zur Eintragsseite für Ihre App im Microsoft Store aufgelöst wird. Weitere Informationen zur Überwachung der Installation mit diesen Diensten finden Sie unter den [anpassen](https://docs.adjust.com/en/), [Kochava](https://support.kochava.com/), [optimieren](https://help.tune.com/), und [Vungle](https://support.vungle.com/) Dokumentation .
     * Wenn Sie **Mehr Interaktion in Ihrer App** als Kampagnenziel wählen, können Sie einen [Deep-Link-URI](../launch-resume/handle-uri-activation.md) angeben, um Kunden aus den ausgewählten Segment zu einer bestimmten Seite in Ihrer App umzuleiten.
     * Wenn Sie ein Ziel angeben, bei dem es sich nicht um die Beschreibungsseite Ihrer App oder eine Seite innerhalb Ihrer App handelt, wird Ihre Kampagne automatisch angehalten.
 

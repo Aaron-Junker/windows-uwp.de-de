@@ -1,17 +1,17 @@
 ---
 description: Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit der Bedeutung und dem Unterschied zwischen starken und schwachen Verweisen vertraut sind.
 title: Schwache Referenzen in C++/WinRT
-ms.date: 10/03/2018
+ms.date: 05/16/2019
 ms.topic: article
 keywords: Windows 10, Uwp, standard, c++, Cpp, Winrt, Projektion, sicheres, schwache, Referenz
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0e2e40daaf777e36094b698d058f21840b1804c8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: c9fb112c6f83fa7bd9a3612916efd2527d821c29
+ms.sourcegitcommit: 6c7e1aa3bd396a1ad714e8b77c0800759dc2d8e1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291828"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65821073"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Starke und schwache Verweise in C++ / WinRT
 
@@ -19,12 +19,13 @@ Die Windows-Runtime ist ein System mit referenzzählung. und in einem solchen Sy
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Sicheren Zugriff auf die *dies* Zeiger in einer Coroutine Klassenmembern
 
-Die codeauflistung unten zeigt ein typisches Beispiel für eine Coroutine, die eine Memberfunktion einer Klasse ist.
+Die codeauflistung unten zeigt ein typisches Beispiel für eine Coroutine, die eine Memberfunktion einer Klasse ist. Sie können kopieren und Einfügen in diesem Beispiel wird in den angegebenen Dateien in einem neuen **Windows-Konsolenanwendung (C++"/ WinRT")** Projekt.
 
 ```cppwinrt
 // pch.h
 #pragma once
 #include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 // main.cpp : Defines the entry point for the console application.
@@ -101,11 +102,14 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-Da eine C++/WinRT-Objekt direkt oder indirekt leitet sich von der [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) Vorlage die C++/WinRT-Objekt aufrufen können, die [  **Implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) geschützte Memberfunktion zum Abrufen von eines starken Verweis auf die *dies* Zeiger. Beachten Sie, dass keine Notwendigkeit besteht, verwenden die `strong_this` Variable, die den Aufruf von **Get_strong** Ihr Verweiszähler erhöht und hält Ihre implizite *dies* Zeiger ungültig.
+Ein C++/WinRT-Klasse direkt oder indirekt leitet sich von der [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) Vorlage. Aus diesem Grund die C++/WinRT-Objekt aufrufen können, die [ **implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) geschützte Memberfunktion, um einen starken Verweis abzurufen. die *dies* Zeiger. Beachten Sie, dass keine Notwendigkeit besteht, verwenden die `strong_this` Variable im obigen Codebeispiel; Aufrufen **Get_strong** erhöht die C++"/ WinRT"-Objekt den Verweiszähler und hält die implizite *dieser* Zeiger ungültig.
+
+> [!IMPORTANT]
+> Da **Get_strong** ist eine Memberfunktion der **winrt::implements** Struktur Vorlage können Sie ihn aufrufen nur von einer Klasse, die direkt oder indirekt von abgeleitet **winrt::implements**, z. B. eine C++"/ WinRT"-Klasse. Weitere Informationen zum Ableiten von **winrt::implements**, und finden Sie unter [Autor-APIs mit C++"/ WinRT"](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 Dies behebt das Problem, das wir vorher hatten, wenn wir mit Schritt 4 haben. Selbst wenn alle anderen Verweise auf die Instanz der Klasse nicht mehr angezeigt, wurde die Coroutine unternommen, entsprechende Vorsichtsmaßnahmen treffen garantieren, dass seine Abhängigkeiten stabil sind.
 
-Wenn ein starker Verweis nicht geeignet ist, rufen Sie stattdessen [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) abzurufenden einen schwachen Verweis auf *dies*. Bestätigen Sie, dass Sie vor dem Zugriff auf einen starken Verweis abrufen können *dies*.
+Wenn ein starker Verweis nicht geeignet ist, rufen Sie stattdessen [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) abzurufenden einen schwachen Verweis auf *dies*. Bestätigen Sie, dass Sie vor dem Zugriff auf einen starken Verweis abrufen können *dies*. In diesem Fall **Get_weak** ist eine Memberfunktion der **winrt::implements** Struct-Vorlage.
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -244,6 +248,9 @@ In beiden Fällen wir sind gerade erfasst die unformatierte *dies* Zeiger. Und d
 ### <a name="the-solution"></a>Die Lösung
 
 Die Lösung besteht darin, einen starken Verweis zu erfassen. Ein starker Verweis *ist* inkrementiert den Verweiszähler und *ist* keep-alive für das aktuelle Objekt. Sie deklarieren eine erfassungsvariable (aufgerufen `strong_this` in diesem Beispiel), und initialisieren Sie es mit einem Aufruf von [ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), die einen starken Verweis auf abruft unsere  *Dies* Zeiger.
+
+> [!IMPORTANT]
+> Da **Get_strong** ist eine Memberfunktion der **winrt::implements** Struktur Vorlage können Sie ihn aufrufen nur von einer Klasse, die direkt oder indirekt von abgeleitet **winrt::implements**, z. B. eine C++"/ WinRT"-Klasse. Weitere Informationen zum Ableiten von **winrt::implements**, und finden Sie unter [Autor-APIs mit C++"/ WinRT"](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)

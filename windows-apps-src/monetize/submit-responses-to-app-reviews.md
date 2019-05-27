@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Store-Dienste, Microsoft Store-Rezensions-API, Add-On
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57623835"
@@ -116,7 +116,7 @@ Jedes Objekt im *Result*-Array enthält die folgenden Werte:
 | ApplicationId | string |  Die Store-ID der App, auf deren Rezension Sie geantwortet haben. Beispiel für eine Store-ID: 9WZDNCRFJ3Q8.   |
 | ReviewId | string |  Die ID der Rezension, auf die Sie geantwortet haben. Dies ist eine GUID.   |
 | Erfolgreich | string | Der Wert **true** gibt an, dass Ihre Antwort erfolgreich gesendet wurde. Der Wert **false** gibt an, dass Ihre Antwort nicht erfolgreich war.    |
-| FailureReason | string | Wenn **Successful****false** ist, dann enthält dieser Wert einen Grund für den Fehler. Wenn **Successful****true** ist, dann ist dieser Wert leer.      |
+| FailureReason | string | Wenn **Successful** **false** ist, dann enthält dieser Wert einen Grund für den Fehler. Wenn **Successful** **true** ist, dann ist dieser Wert leer.      |
 
 
 ### <a name="response-example"></a>Antwortbeispiel

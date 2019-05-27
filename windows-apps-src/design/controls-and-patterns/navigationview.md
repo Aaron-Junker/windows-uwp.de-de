@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a396377eb332052ae7f238a23865f2b7dc0aa16
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642225"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984183"
 ---
 # <a name="navigation-view"></a>Navigationsansicht
 
@@ -144,7 +144,7 @@ Im Bereich von NavigationView kann Folgendes enthalten:
 
 - [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) Objekte. Der Navigationselemente zu bestimmten Seiten zu navigieren.
 - [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) Objekte. Trennzeichen für die Navigationselemente zu gruppieren. Legen Sie die [Deckkraft](/uwp/api/windows.ui.xaml.uielement.opacity) Eigenschaft auf 0, um das Trennzeichen als Leerzeichen rendern.
-- [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) Objekte. Die Header für die Bezeichnung von Gruppen von Elementen.
+- [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) objects. Die Header für die Bezeichnung von Gruppen von Elementen.
 - Eine optionale [AutoSuggestBox](auto-suggest-box.md) Steuerelement für die Suche von app-Ebene ermöglichen. Weisen Sie das Steuerelement, das die [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) Eigenschaft.
 - Ein optionaler Einstiegspunkt für [App-Einstellungen](../app-settings/app-settings-and-data.md). Um das Settings-Element auszublenden, legen die [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) Eigenschaft **"false"**.
 
@@ -250,7 +250,7 @@ Es 12px Ränder für Ihre Inhaltsbereich wird empfohlen, wenn NavigationView wir
 
 Standardmäßig wird die Navigationsansicht automatisch der Anzeigemodus, der basierend auf der Menge der verfügbaren Platz auf dem Bildschirm geändert. Die [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) und [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) Eigenschaften angeben, die Haltepunkte, an dem der Anzeigemodus geändert wird. Sie können diese Werte zum Anpassen des Verhaltens im adaptive Anzeige ändern.
 
-### <a name="default"></a>Standard
+### <a name="default"></a>Default
 
 Wenn PaneDisplayMode festgelegt ist, auf den Standardwert des **automatisch**, wird das Verhalten das adaptive erläutert:
 
@@ -624,7 +624,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 }
 ```
 
-Im folgenden finden Sie eine [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/index) Version der **NavView_ItemInvoked** -Handler aus der C# obenstehenden Codebeispiel wird. Die Technik in C++ / WinRT-Ereignishandler meldet man zuerst speichern (im Tag der [ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) der vollständige Name der Seite auf die Sie navigieren möchten. In den Handler auf, können Sie auch diesen Wert mittels Unboxing zu konvertieren, aktivieren Sie ihn in eine [ **TypeName** ](/uwp/api/windows.ui.xaml.interop.typename) -Objekt und verwenden, um zu der Seite "Ziel" zu navigieren. Besteht keine Notwendigkeit für die Mapping-Variable, die mit dem Namen `_pages` , die Sie sehen, der C# Beispiel; und Sie werden zum Erstellen von Komponententests, die bestätigt, dass die Werte in die Tags einen gültigen Typ aufweisen. Siehe auch [Boxing und unboxing Skalare Werte für IInspectable mit C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+Im folgenden finden Sie eine [ C++"/ WinRT"](/windows/uwp/cpp-and-winrt-apis/index) Version der **NavView_ItemInvoked** -Handler aus der C# obenstehenden Codebeispiel wird. Die Technik in C++ / WinRT-Ereignishandler meldet man zuerst speichern (im Tag der [ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) der vollständige Name der Seite auf die Sie navigieren möchten. In den Handler auf, können Sie auch diesen Wert mittels Unboxing zu konvertieren, aktivieren Sie ihn in eine [ **TypeName** ](/uwp/api/windows.ui.xaml.interop.typename) -Objekt und verwenden, um zu der Seite "Ziel" zu navigieren. Besteht keine Notwendigkeit für die Mapping-Variable, die mit dem Namen `_pages` , die Sie sehen, der C# Beispiel; und Sie werden zum Erstellen von Komponententests, die bestätigt, dass die Werte in die Tags einen gültigen Typ aufweisen. Siehe auch [Boxing und unboxing Skalare Werte für IInspectable mit C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* sender */, Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const & args)
@@ -715,4 +715,4 @@ Dieses Beispiel zeigt, wie die Designressourcen in "App.xaml" überschrieben wir
 - [NavigationView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [Master/Details](master-details.md)
 - [Navigationsgrundlagen](../basics/navigation-basics.md)
-- [Fluent Design für UWP-Übersicht](../fluent-design-system/index.md)
+- [Fluent Design für UWP-Übersicht](/windows/apps/fluent-design-system)
