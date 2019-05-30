@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Einstellungen, Einstellungen speichern, Einstellungen laden
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614635"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370496"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Speichern und Laden von Einstellungen in einer UWP-App
 
@@ -86,10 +86,10 @@ Nachfolgend finden Sie eine kurze Zusammenfassung der APIs und anderer nützlich
 
 | API | Beschreibung |
 |------|---------------|
-| [ApplicationData.LocalSettings](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.temporaryfolder) | Ruft den Container der Anwendungseinstellungen aus dem lokalen App-Datenspeicher ab. |
+| [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | Ruft den Container der Anwendungseinstellungen aus dem lokalen App-Datenspeicher ab. |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | Ruft den Container der Anwendungseinstellungen aus dem Roaming-App-Datenspeicher ab. |
-| ["Applicationdatacontainer"](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | Ein Container für App-Einstellungen, der das Erstellen, Löschen, Aufzählen und Durchlaufen der Containerhierarchie unterstützt. |
-| [Windows.UI.ApplicationSettings-Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Stellt Klassen bereit, mit denen Sie die App-Einstellungen definieren, die im Einstellungsbereich der Windows-Shell angezeigt werden. |
+| [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | Ein Container für App-Einstellungen, der das Erstellen, Löschen, Aufzählen und Durchlaufen der Containerhierarchie unterstützt. |
+| [Windows.UI.ApplicationSettings Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Stellt Klassen bereit, mit denen Sie die App-Einstellungen definieren, die im Einstellungsbereich der Windows-Shell angezeigt werden. |
 
 ### <a name="useful-docs"></a>Nützliche Dokumente
 

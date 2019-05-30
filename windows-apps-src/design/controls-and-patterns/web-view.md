@@ -8,19 +8,19 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af61b7d442fee7eff6399a7a5d143adb53fb560
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c996b22395fc8186fb1b6dc786a73fa4a97ecf16
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610635"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363985"
 ---
 # <a name="web-view"></a>Webansicht
  
 
 Mithilfe eines Webansichtssteuerelements betten Sie eine Ansicht in Ihre App ein, die Webinhalte mit dem Microsoft Edge-Renderingmodul rendert. In einem Webansichtssteuerelement können auch Links angezeigt und verwendet werden.
 
-> **Wichtige APIs:** [WebView-Klasse](https://msdn.microsoft.com/library/windows/apps/br227702)
+> **Wichtige APIs:** [WebView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -30,27 +30,27 @@ Verwenden Sie ein Webansichtssteuerelement zum Anzeigen von grafisch ansprechend
 
 **Ändern der Darstellung einer Webansicht**
 
-[WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) ist keine [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx)-Unterklasse und verfügt daher über keine Steuerelementvorlage. Sie können jedoch verschiedene Eigenschaften festlegen, um einige visuelle Aspekte der Webansicht zu steuern.
-- Legen Sie zum Einschränken des Anzeigebereichs die [Width](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx)-Eigenschaft und die [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx)-Eigenschaft fest. 
-- Verwenden Sie zum Verschieben, Skalieren, Neigen und Drehen einer Webansicht die [RenderTransform](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx)-Eigenschaft.
-- Legen Sie zum Steuern der Deckkraft der Webansicht die [Opacity](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx)-Eigenschaft fest.
-- Legen Sie zum Angeben einer Farbe, die als Webseitenhintergrund verwendet wird, wenn der HTML-Inhalt keine Farbe vorgibt, die [DefaultBackgroundColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx)-Eigenschaft fest. 
+[WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) ist keine [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)-Unterklasse und verfügt daher über keine Steuerelementvorlage. Sie können jedoch verschiedene Eigenschaften festlegen, um einige visuelle Aspekte der Webansicht zu steuern.
+- Legen Sie zum Einschränken des Anzeigebereichs die [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width)-Eigenschaft und die [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height)-Eigenschaft fest. 
+- Verwenden Sie zum Verschieben, Skalieren, Neigen und Drehen einer Webansicht die [RenderTransform](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)-Eigenschaft.
+- Legen Sie zum Steuern der Deckkraft der Webansicht die [Opacity](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.opacity)-Eigenschaft fest.
+- Legen Sie zum Angeben einer Farbe, die als Webseitenhintergrund verwendet wird, wenn der HTML-Inhalt keine Farbe vorgibt, die [DefaultBackgroundColor](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultbackgroundcolor)-Eigenschaft fest. 
 
 **Titel der Webseite abrufen**
 
-Sie können den Titel des momentan in der Webansicht angezeigten HTML-Dokuments mithilfe der [DocumentTitle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx)-Eigenschaft abrufen. 
+Sie können den Titel des momentan in der Webansicht angezeigten HTML-Dokuments mithilfe der [DocumentTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.documenttitle)-Eigenschaft abrufen. 
 
 **Eingabeereignisse und Tab-Reihenfolge**
 
-Obwohl WebView keine Control-Unterklasse ist, erhält sie den Tastatureingabefokus und ist Teil der Aktivierreihenfolge. Sie stellt eine [Focus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx)-Methode sowie ein [GotFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx)-Ereignis und ein [LostFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx)-Ereignis bereit, enthält aber keine registerkartenbezogenen Eigenschaften. Ihre Position in der Aktivierreihenfolge ist identisch mit ihrer Position in der XAML-Dokumentreihenfolge. Die Aktivierreihenfolge enthält alle Elemente im Webansichtsinhalt, die den Eingabefokus erhalten können. 
+Obwohl WebView keine Control-Unterklasse ist, erhält sie den Tastatureingabefokus und ist Teil der Aktivierreihenfolge. Sie stellt eine [Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.focus)-Methode sowie ein [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)-Ereignis und ein [LostFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)-Ereignis bereit, enthält aber keine registerkartenbezogenen Eigenschaften. Ihre Position in der Aktivierreihenfolge ist identisch mit ihrer Position in der XAML-Dokumentreihenfolge. Die Aktivierreihenfolge enthält alle Elemente im Webansichtsinhalt, die den Eingabefokus erhalten können. 
 
-Wie in der Events-Tabelle auf der Seite zur [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx)-Klasse angegeben, werden die meisten von [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) geerbten Benutzereingabeereignisse (z. B. [KeyDown](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx), [KeyUp](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx) und [PointerPressed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx)) von der Webansicht nicht unterstützt. Stattdessen können Sie [InvokeScriptAsync](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) mit der JavaScript-Funktion **eval** verwenden, um die HTML-Ereignishandler zu nutzen, und **window.external.notify** aus dem HTML-Ereignishandler, um die Anwendung mithilfe von [WebView.ScriptNotify](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) zu benachrichtigen.
+Wie in der Events-Tabelle auf der Seite zur [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)-Klasse angegeben, werden die meisten von [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) geerbten Benutzereingabeereignisse (z. B. [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown), [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) und [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)) von der Webansicht nicht unterstützt. Stattdessen können Sie [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) mit der JavaScript-Funktion **eval** verwenden, um die HTML-Ereignishandler zu nutzen, und **window.external.notify** aus dem HTML-Ereignishandler, um die Anwendung mithilfe von [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) zu benachrichtigen.
 
 ### <a name="navigating-to-content"></a>Navigieren zum Inhalt
 
-Webansicht bietet mehrere APIs für die grundlegende Navigation: [GoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [GoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [beenden](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [aktualisieren](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [CanGoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx), und [CanGoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). Mit diesen APIs können Sie Ihrer App typische Funktionen für das Webbrowsen hinzufügen. 
+Webansicht bietet mehrere APIs für die grundlegende Navigation: [GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goback), [GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goforward), [beenden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.stop), [aktualisieren](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.refresh), [CanGoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoback), und [CanGoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoforward). Mit diesen APIs können Sie Ihrer App typische Funktionen für das Webbrowsen hinzufügen. 
 
-Legen Sie zum Einrichten des anfänglichen Inhalts der Webansicht die [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx)-Eigenschaft in XAML fest. Der XAML-Parser konvertiert die Zeichenfolge automatisch in einen [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx). 
+Legen Sie zum Einrichten des anfänglichen Inhalts der Webansicht die [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.source)-Eigenschaft in XAML fest. Der XAML-Parser konvertiert die Zeichenfolge automatisch in einen [Uri](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri). 
 
 ```xaml
 <!-- Source file is on the web. -->
@@ -65,15 +65,15 @@ Legen Sie zum Einrichten des anfänglichen Inhalts der Webansicht die [Source](h
 
 Die Source-Eigenschaft kann grundsätzlich im Code festgelegt werden. In der Regel verwenden Sie jedoch eine der **Navigate**-Methoden, um Inhalt in den Code zu laden. 
 
-Verwenden Sie zum Laden des Webinhalts die [Navigate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx)-Methode mit einem **Uri**, der das HTTP- oder HTTPS-Schema verwendet. 
+Verwenden Sie zum Laden des Webinhalts die [Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigate)-Methode mit einem **Uri**, der das HTTP- oder HTTPS-Schema verwendet. 
 
 ```csharp
 webView1.Navigate("http://www.contoso.com");
 ```
 
-Um zu einem URI mit POST-Anforderung und HTTP-Headern zu navigieren, verwenden Sie die [NavigateWithHttpRequestMessage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx)-Methode. Die Methode unterstützt nur [HttpMethod.Post](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) und [HttpMethod.Get](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) als Wert der [HttpRequestMessage.Method](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx)-Eigenschaft. 
+Um zu einem URI mit POST-Anforderung und HTTP-Headern zu navigieren, verwenden Sie die [NavigateWithHttpRequestMessage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage)-Methode. Die Methode unterstützt nur [HttpMethod.Post](https://docs.microsoft.com/uwp/api/windows.web.http.httpmethod.post) und [HttpMethod.Get](https://docs.microsoft.com/uwp/api/windows.web.http.httpmethod.get) als Wert der [HttpRequestMessage.Method](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage.method)-Eigenschaft. 
 
-Um nicht komprimierten und unverschlüsselten Inhalt aus den Datenspeichern [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) oder [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) der App zu laden, verwenden Sie die **Navigate**-Methode mit einem **Uri**, der das [ms-appdata scheme](/windows/uwp/app-resources/uri-schemes) verwendet. Damit die Webansicht für dieses Schema unterstützt wird, müssen Sie Ihren Inhalt in einem Unterordner des lokalen oder temporären Ordners platzieren. Dies ermöglicht die Navigation zu URIs wie „ms-appdata:///local/*folder*/*file*.html“ und „ms-appdata:///temp/*folder*/*file*.html“. (Informationen zum Laden komprimierter oder verschlüsselter Dateien finden Sie unter [NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
+Um nicht komprimierten und unverschlüsselten Inhalt aus den Datenspeichern [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) oder [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) der App zu laden, verwenden Sie die **Navigate**-Methode mit einem **Uri**, der das [ms-appdata scheme](/windows/uwp/app-resources/uri-schemes) verwendet. Damit die Webansicht für dieses Schema unterstützt wird, müssen Sie Ihren Inhalt in einem Unterordner des lokalen oder temporären Ordners platzieren. Dies ermöglicht die Navigation zu URIs wie „ms-appdata:///local/*folder*/*file*.html“ und „ms-appdata:///temp/*folder*/*file*.html“. (Informationen zum Laden komprimierter oder verschlüsselter Dateien finden Sie unter [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri).) 
 
 Jeder dieser Unterordner auf oberster Ebene ist vom Inhalt anderer Unterordner auf oberster Ebene isoliert. Beispielsweise können Sie zu „ms-appdata:///temp/Ordner1/Datei.html“ navigieren, aber keinen Link zu „ms-appdata:///temp/Ordner2/Datei.html“ in die Datei aufnehmen. Sie können aber trotzdem eine Verknüpfung mit HTML-Inhalt im App-Paket erstellen, indem Sie das **Schema „ms-appx-web“** verwenden, und mit Webinhalt, indem Sie die URI-Schemas **http** und **https** verwenden.
 
@@ -81,17 +81,17 @@ Jeder dieser Unterordner auf oberster Ebene ist vom Inhalt anderer Unterordner a
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-Verwenden Sie zum Laden von Inhalt aus Ihrem App-Paket die **Navigate**-Methode mit einem **Uri**, der das Schema [ms-appx-web](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web) verwendet. 
+Verwenden Sie zum Laden von Inhalt aus Ihrem App-Paket die **Navigate**-Methode mit einem **Uri**, der das Schema [ms-appx-web](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10)) verwendet. 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");
 ```
 
-Sie können lokalen Inhalt über einen benutzerdefinierten Resolver laden, indem Sie die [NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx)-Methode verwenden. Diese Vorgehensweise ermöglicht erweiterte Szenarien wie das Herunterladen und Zwischenspeichern webbasierter Inhalte für die Offlineverwendung oder das Extrahieren von Inhalten aus einer komprimierten Datei.
+Sie können lokalen Inhalt über einen benutzerdefinierten Resolver laden, indem Sie die [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri)-Methode verwenden. Diese Vorgehensweise ermöglicht erweiterte Szenarien wie das Herunterladen und Zwischenspeichern webbasierter Inhalte für die Offlineverwendung oder das Extrahieren von Inhalten aus einer komprimierten Datei.
 
 ### <a name="responding-to-navigation-events"></a>Reagieren auf Navigationsereignisse
 
-Das Webansichtssteuerelement stellt mehrere Ereignisse bereit, mit denen Sie auf Zustände bei der Navigation und beim Laden von Inhalten reagieren können. Es treten die Ereignisse in der folgenden Reihenfolge für den anzuzeigenden Webinhalt Stammverzeichnis: [NavigationStarting](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [ContentLoading](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [DOMContentLoaded](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [NavigationCompleted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
+Das Webansichtssteuerelement stellt mehrere Ereignisse bereit, mit denen Sie auf Zustände bei der Navigation und beim Laden von Inhalten reagieren können. Es treten die Ereignisse in der folgenden Reihenfolge für den anzuzeigenden Webinhalt Stammverzeichnis: [NavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationstarting), [ContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.contentloading), [DOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded), [NavigationCompleted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted)
 
 
 **NavigationStarting** – tritt ein, bevor die Webansicht zu neuem Inhalt navigiert. Sie können die Navigation in einem Handler für dieses Ereignis abbrechen, indem Sie die WebViewNavigationStartingEventArgs.Cancel-Eigenschaft auf „true“ festlegen. 
@@ -137,7 +137,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** – Tritt ein, nachdem die Webansicht das Laden des aktuellen Inhalts beendet hat oder ein Navigationsfehler aufgetreten ist. Um festzustellen, ob ein Navigationsfehler aufgetreten ist, überprüfen Sie die [IsSuccess](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx)-Eigenschaft und die [WebErrorStatus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx)-Eigenschaft der [WebViewNavigationCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx)-Klasse. 
+**NavigationCompleted** – Tritt ein, nachdem die Webansicht das Laden des aktuellen Inhalts beendet hat oder ein Navigationsfehler aufgetreten ist. Um festzustellen, ob ein Navigationsfehler aufgetreten ist, überprüfen Sie die [IsSuccess](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess)-Eigenschaft und die [WebErrorStatus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus)-Eigenschaft der [WebViewNavigationCompletedEventArgs](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs)-Klasse. 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -157,26 +157,26 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 ```
 
 Ähnliche Ereignisse treten für jeden **iframe** im Webansichtsinhalt in der gleichen Reihenfolge auf: 
-- [FrameNavigationStarting](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) – tritt ein, bevor ein Frame in einer Webansicht zu neuem Inhalt navigiert. 
-- [FrameContentLoading](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) – tritt ein, nachdem ein Frame in der Webansicht mit dem Laden neuer Inhalte begonnen hat. 
-- [FrameDOMContentLoaded](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) – tritt ein, nachdem ein Frame in der Webansicht die Analyse seines aktuellen HTML-Inhalts beendet hat. 
-- [FrameNavigationCompleted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) – tritt ein, nachdem ein Frame in der Webansicht das Laden seines Inhalts beendet hat. 
+- [FrameNavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framenavigationstarting) – tritt ein, bevor ein Frame in einer Webansicht zu neuem Inhalt navigiert. 
+- [FrameContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framecontentloading) – tritt ein, nachdem ein Frame in der Webansicht mit dem Laden neuer Inhalte begonnen hat. 
+- [FrameDOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framedomcontentloaded) – tritt ein, nachdem ein Frame in der Webansicht die Analyse seines aktuellen HTML-Inhalts beendet hat. 
+- [FrameNavigationCompleted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framenavigationcompleted) – tritt ein, nachdem ein Frame in der Webansicht das Laden seines Inhalts beendet hat. 
 
 ### <a name="responding-to-potential-problems"></a>Reagieren auf mögliche Probleme
 
 Sie können auf potenzielle Inhaltsprobleme reagieren, z. B. auf Skripts mit langer Ausführungszeit, von der Webansicht nicht ladbare Inhalte und Warnungen vor unsicherem Inhalt. 
 
-Bei der Ausführung von Skripts scheint die App nicht mehr zu reagieren. Das [LongRunningScriptDetected](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx)-Ereignis tritt regelmäßig ein, während die Webansicht JavaScript ausführt, und bietet die Möglichkeit zur Unterbrechung des Skripts. Sie stellen die bisherige Ausführungszeit des Skripts mithilfe der [ExecutionTime](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx)-Eigenschaft von [WebViewLongRunningScriptDetectedEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx) fest. Legen Sie zum Anhalten der Skriptausführung die [StopPageScriptExecution](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx)-Eigenschaft für die Ereignisargumente auf **true** fest. Das angehaltene Skript wird erst wieder ausgeführt, wenn es in einer späteren Navigation erneut in der Webansicht geladen wird. 
+Bei der Ausführung von Skripts scheint die App nicht mehr zu reagieren. Das [LongRunningScriptDetected](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.longrunningscriptdetected)-Ereignis tritt regelmäßig ein, während die Webansicht JavaScript ausführt, und bietet die Möglichkeit zur Unterbrechung des Skripts. Sie stellen die bisherige Ausführungszeit des Skripts mithilfe der [ExecutionTime](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime)-Eigenschaft von [WebViewLongRunningScriptDetectedEventArgs](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs) fest. Legen Sie zum Anhalten der Skriptausführung die [StopPageScriptExecution](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution)-Eigenschaft für die Ereignisargumente auf **true** fest. Das angehaltene Skript wird erst wieder ausgeführt, wenn es in einer späteren Navigation erneut in der Webansicht geladen wird. 
 
-Das Webansichtssteuerelement kann keine beliebigen Dateitypen hosten. Wenn das Laden von Inhalten versucht wird, die von der Webansicht nicht gehostet werden können, tritt das [UnviewableContentIdentified](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx)-Ereignis ein. Sie können das Ereignis behandeln und den Benutzer benachrichtigen oder die Datei mithilfe der [Launcher](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx)-Klasse an einen externen Browser oder eine andere App umleiten.
+Das Webansichtssteuerelement kann keine beliebigen Dateitypen hosten. Wenn das Laden von Inhalten versucht wird, die von der Webansicht nicht gehostet werden können, tritt das [UnviewableContentIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unviewablecontentidentified)-Ereignis ein. Sie können das Ereignis behandeln und den Benutzer benachrichtigen oder die Datei mithilfe der [Launcher](https://docs.microsoft.com/uwp/api/Windows.System.Launcher)-Klasse an einen externen Browser oder eine andere App umleiten.
 
-Entsprechend tritt das [UnsupportedUriSchemeIdentified](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsupportedurischemeidentified.aspx)-Ereignis ein, wenn ein nicht unterstütztes URI-Schema wie „fbconnect://“ oder „mailto://“ im Webinhalt aufgerufen wird. Sie können das Ereignis so behandeln, dass es ein benutzerdefiniertes Verhalten zeigt, anstatt dem Standard-Systemstartprogramm das Starten des URIs zu erlauben.
+Entsprechend tritt das [UnsupportedUriSchemeIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsupportedurischemeidentified)-Ereignis ein, wenn ein nicht unterstütztes URI-Schema wie „fbconnect://“ oder „mailto://“ im Webinhalt aufgerufen wird. Sie können das Ereignis so behandeln, dass es ein benutzerdefiniertes Verhalten zeigt, anstatt dem Standard-Systemstartprogramm das Starten des URIs zu erlauben.
 
-[UnsafeContentWarningDisplayingevent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx) tritt ein, wenn die Webansicht eine Warnungsseite für Inhalte anzeigt, die vom SmartScreen-Filter als unsicher gemeldet wurden. Wenn sich der Benutzer entscheidet, die Navigation fortzusetzen, wird bei einer späteren Navigation zu der Seite weder die Warnung angezeigt noch das Ereignis ausgelöst.
+[UnsafeContentWarningDisplayingevent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying) tritt ein, wenn die Webansicht eine Warnungsseite für Inhalte anzeigt, die vom SmartScreen-Filter als unsicher gemeldet wurden. Wenn sich der Benutzer entscheidet, die Navigation fortzusetzen, wird bei einer späteren Navigation zu der Seite weder die Warnung angezeigt noch das Ereignis ausgelöst.
 
 ### <a name="handling-special-cases-for-web-view-content"></a>Behandeln von Sonderfällen für Webansichtsinhalte
 
-Sie können die [ContainsFullScreenElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx)-Eigenschaft und das [ContainsFullScreenElementChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx)-Ereignis verwenden, um Vollbilddarstellungen von Webinhalt (z. B. Videowiedergabe im Vollbildmodus) zu erkennen, darauf zu reagieren und sie zu aktivieren. Mit dem ContainsFullScreenElementChanged-Ereignis können Sie die Größe der Webansicht beispielsweise so ändern, dass sie die gesamte App-Ansicht ausfüllt, oder eine App mit Fenstern in den Vollbildmodus versetzen, wenn die Webnutzung in Vollbild gewünscht wird (siehe das folgende Beispiel).
+Sie können die [ContainsFullScreenElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelement)-Eigenschaft und das [ContainsFullScreenElementChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelementchanged)-Ereignis verwenden, um Vollbilddarstellungen von Webinhalt (z. B. Videowiedergabe im Vollbildmodus) zu erkennen, darauf zu reagieren und sie zu aktivieren. Mit dem ContainsFullScreenElementChanged-Ereignis können Sie die Größe der Webansicht beispielsweise so ändern, dass sie die gesamte App-Ansicht ausfüllt, oder eine App mit Fenstern in den Vollbildmodus versetzen, wenn die Webnutzung in Vollbild gewünscht wird (siehe das folgende Beispiel).
 
 ```csharp
 // Assume webView is defined in XAML
@@ -197,9 +197,9 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
 }
 ```
 
-Sie können das [NewWindowRequested](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx)-Ereignis zur Handhabung von Situationen verwenden, in denen gehosteter Webinhalt die Anzeige eines neuen Fensters (z. B. ein Popupfenster) anfordert. Sie können ein anderes WebView-Steuerelement verwenden, um den Inhalt des angeforderten Fensters anzuzeigen.
+Sie können das [NewWindowRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.newwindowrequested)-Ereignis zur Handhabung von Situationen verwenden, in denen gehosteter Webinhalt die Anzeige eines neuen Fensters (z. B. ein Popupfenster) anfordert. Sie können ein anderes WebView-Steuerelement verwenden, um den Inhalt des angeforderten Fensters anzuzeigen.
 
-Verwenden Sie das [PermissionRequested](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx)-Ereignis zum Aktivieren von Webfeatures, die besondere Funktionen erfordern. Dazu gehören momentan Geolocation, IndexedDB-Speicher sowie Audio- und Videodaten des Benutzers (z. B. von einem Mikrofon oder einer Webcam). Wenn Ihre App auf den Standort oder Medien des Benutzers zugreift, müssen Sie diese Funktion trotzdem im App-Manifest deklarieren. Für eine App, die Geolocationdaten verwendet, müssen mindestens die folgenden Funktionen in „Package.appxmanifest“ deklariert werden:
+Verwenden Sie das [PermissionRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.permissionrequested)-Ereignis zum Aktivieren von Webfeatures, die besondere Funktionen erfordern. Dazu gehören momentan Geolocation, IndexedDB-Speicher sowie Audio- und Videodaten des Benutzers (z. B. von einem Mikrofon oder einer Webcam). Wenn Ihre App auf den Standort oder Medien des Benutzers zugreift, müssen Sie diese Funktion trotzdem im App-Manifest deklarieren. Für eine App, die Geolocationdaten verwendet, müssen mindestens die folgenden Funktionen in „Package.appxmanifest“ deklariert werden:
 
 ```xml
   <Capabilities>
@@ -208,7 +208,7 @@ Verwenden Sie das [PermissionRequested](https://msdn.microsoft.com/library/windo
   </Capabilities>
 ```
 
-Zusätzlich zur App, die das [PermissionRequested](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx)-Ereignis behandelt, muss der Benutzer Standard-Systemdialogfelder für Apps genehmigen, die Standort- oder Medienfunktionen anfordern. Erst dann können diese Features aktiviert werden.
+Zusätzlich zur App, die das [PermissionRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.permissionrequested)-Ereignis behandelt, muss der Benutzer Standard-Systemdialogfelder für Apps genehmigen, die Standort- oder Medienfunktionen anfordern. Erst dann können diese Features aktiviert werden.
 
 Das folgende Beispiel zeigt, wie eine App Geolocation in einer Bing-Karte aktivieren würde:
 
@@ -226,15 +226,15 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-Wenn Ihre App eine Benutzereingabe oder andere asynchrone Vorgänge erfordert, um auf eine Berechtigungsanforderung zu reagieren, erstellen Sie mithilfe der [Defer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx)-Methode von [WebViewPermissionRequest](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) eine [WebViewDeferredPermissionRequest](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx), die zu einem späteren Zeitpunkt Gegenstand einer Aktion sein kann. Siehe [WebViewPermissionRequest.Defer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx). 
+Wenn Ihre App eine Benutzereingabe oder andere asynchrone Vorgänge erfordert, um auf eine Berechtigungsanforderung zu reagieren, erstellen Sie mithilfe der [Defer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewpermissionrequest.defer)-Methode von [WebViewPermissionRequest](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewPermissionRequest) eine [WebViewDeferredPermissionRequest](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest), die zu einem späteren Zeitpunkt Gegenstand einer Aktion sein kann. Siehe [WebViewPermissionRequest.Defer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewpermissionrequest.defer). 
 
-Wenn sich die Benutzer sicher von einer Website abmelden müssen, die in einer Webansicht gehostet wird, oder immer dann, wenn Sicherheit Priorität hat, rufen Sie die statische Methode [ClearTemporaryWebDataAsync](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) auf, um den gesamten lokal zwischengespeicherten Inhalt aus einer Webansichtssitzung zu löschen. Dadurch werden böswillige Benutzer am Zugriff auf vertrauliche Daten gehindert. 
+Wenn sich die Benutzer sicher von einer Website abmelden müssen, die in einer Webansicht gehostet wird, oder immer dann, wenn Sicherheit Priorität hat, rufen Sie die statische Methode [ClearTemporaryWebDataAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cleartemporarywebdataasync) auf, um den gesamten lokal zwischengespeicherten Inhalt aus einer Webansichtssitzung zu löschen. Dadurch werden böswillige Benutzer am Zugriff auf vertrauliche Daten gehindert. 
 
 ### <a name="interacting-with-web-view-content"></a>Interaktion mit Webansichtsinhalten
 
-Sie können mit dem Inhalt der Webansicht interagieren, indem Sie mithilfe der [InvokeScriptAsync](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx)-Methode Skripts aufrufen oder in den Webansichtsinhalt einfügen, und über das [ScriptNotify](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx)-Ereignis Informationen aus dem Webansichtsinhalt zurückerhalten.
+Sie können mit dem Inhalt der Webansicht interagieren, indem Sie mithilfe der [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync)-Methode Skripts aufrufen oder in den Webansichtsinhalt einfügen, und über das [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify)-Ereignis Informationen aus dem Webansichtsinhalt zurückerhalten.
 
-Verwenden Sie zum Aufrufen von JavaScript im Webansichtsinhalt die [InvokeScriptAsync](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx)-Methode. Das aufgerufene Skript kann nur Zeichenfolgenwerte zurückgeben. 
+Verwenden Sie zum Aufrufen von JavaScript im Webansichtsinhalt die [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync)-Methode. Das aufgerufene Skript kann nur Zeichenfolgenwerte zurückgeben. 
 
 Wenn der Inhalt einer Webansicht namens `webView1` eine Funktion namens `setDate` enthält, die drei Parameter akzeptiert, können Sie sie wie folgt aufrufen. 
 
@@ -256,13 +256,13 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Skripts im Webansichtsinhalt können **window.external.notify** mit einem Zeichenfolgenparameter verwenden, um Informationen zurück an Ihre App zu senden. Behandeln Sie zum Empfangen dieser Nachrichten das [ScriptNotify](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx)-Ereignis. 
+Skripts im Webansichtsinhalt können **window.external.notify** mit einem Zeichenfolgenparameter verwenden, um Informationen zurück an Ihre App zu senden. Behandeln Sie zum Empfangen dieser Nachrichten das [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify)-Ereignis. 
 
-Damit eine externe Webseite das **ScriptNotify**-Ereignis beim Aufrufen von „window.external.notify“ auslösen kann, müssen Sie den URI der Seite in den **ApplicationContentUriRules**-Abschnitt des App-Manifests einfügen. (Sie können in Microsoft Visual Studio auf der Registerkarte "Inhalts-URIs" die Datei "Package.appxmanifest" Designer dazu.) Die URIs in dieser Liste müssen HTTPS verwenden, wobei Unterdomäne Platzhalter enthalten kann (z. B. `https://*.microsoft.com`), aber sie darf keine Domäne-Platzhalter enthalten (z. B. `https://*.com` und `https://*.*`). Die Manifestanforderung gilt nicht für Inhalte, die aus dem App-Paket stammen, die einen URI vom Typ „ms-local-stream:// URI“ verwenden, oder die mit [NavigateToString](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) geladen werden. 
+Damit eine externe Webseite das **ScriptNotify**-Ereignis beim Aufrufen von „window.external.notify“ auslösen kann, müssen Sie den URI der Seite in den **ApplicationContentUriRules**-Abschnitt des App-Manifests einfügen. (Sie können in Microsoft Visual Studio auf der Registerkarte "Inhalts-URIs" die Datei "Package.appxmanifest" Designer dazu.) Die URIs in dieser Liste müssen HTTPS verwenden, wobei Unterdomäne Platzhalter enthalten kann (z. B. `https://*.microsoft.com`), aber sie darf keine Domäne-Platzhalter enthalten (z. B. `https://*.com` und `https://*.*`). Die Manifestanforderung gilt nicht für Inhalte, die aus dem App-Paket stammen, die einen URI vom Typ „ms-local-stream:// URI“ verwenden, oder die mit [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring) geladen werden. 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>Zugreifen auf die Windows-Runtime in einer Webansicht
 
-Sie können die [AddWebAllowedObject](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx)-Methode verwenden, um eine Instanz einer systemeigenen Klasse aus einer Komponente für Windows-Runtime in den JavaScript-Kontext der Webansicht einzufügen. Dadurch wird der vollständige Zugriff auf die systemeigenen Methoden, Eigenschaften und Ereignisse des Objekts im JavaScript-Inhalt der betreffenden Webansicht gewährleistet. Die Klasse muss mit dem [AllowForWeb](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx)-Attribut versehen werden. 
+Sie können die [AddWebAllowedObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject)-Methode verwenden, um eine Instanz einer systemeigenen Klasse aus einer Komponente für Windows-Runtime in den JavaScript-Kontext der Webansicht einzufügen. Dadurch wird der vollständige Zugriff auf die systemeigenen Methoden, Eigenschaften und Ereignisse des Objekts im JavaScript-Inhalt der betreffenden Webansicht gewährleistet. Die Klasse muss mit dem [AllowForWeb](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.AllowForWebAttribute)-Attribut versehen werden. 
 
 Durch den folgenden Code wird beispielsweise eine Instanz von `MyClass` eingefügt, die aus einer Komponente für Windows-Runtime in eine Webansicht importiert wurde.
 
@@ -276,7 +276,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 }
 ```
 
-Weitere Informationen finden Sie unter [WebView.AddWebAllowedObject](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx). 
+Weitere Informationen finden Sie unter [WebView.AddWebAllowedObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject). 
 
 Zusätzlich kann vertrauenswürdigem JavaScript-Inhalt in einer Webansicht gestattet werden, direkt auf Windows-Runtime-APIs zuzugreifen. Dadurch werden leistungsfähige systemeigene Funktionen für in einer Webansicht gehostete Web-Apps bereitgestellt. Um dieses Feature zu aktivieren, muss der URI für vertrauenswürdigen Inhalt in der ApplicationContentUriRules-Whitelist der App in „Package.appxmanifest“ aufgeführt sein, wobei WindowsRuntimeAccess ausdrücklich auf „all“ festgelegt ist. 
 
@@ -296,21 +296,21 @@ Dieses Beispiel zeigt einen Abschnitt des App-Manifests. Hier wird einem lokalen
 
 ### <a name="options-for-web-content-hosting"></a>Optionen für das Hosten von Webinhalten
 
-Mit der [WebView.Settings](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx)-Eigenschaft (des Typs [WebViewSettings](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx)) können Sie steuern, ob JavaScript und IndexedDB aktiviert werden. Wenn Sie beispielsweise eine Webansicht zur Anzeige streng statischen Inhalts verwenden, können Sie JavaScript deaktivieren, um die Leistung zu optimieren.
+Mit der [WebView.Settings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.settings)-Eigenschaft (des Typs [WebViewSettings](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewSettings)) können Sie steuern, ob JavaScript und IndexedDB aktiviert werden. Wenn Sie beispielsweise eine Webansicht zur Anzeige streng statischen Inhalts verwenden, können Sie JavaScript deaktivieren, um die Leistung zu optimieren.
 
 ### <a name="capturing-web-view-content"></a>Erfassen von Webansichtsinhalten
 
-Um die Freigabe von Webansichtsinhalten für andere Apps zu aktivieren, verwenden Sie die [CaptureSelectedContentToDataPackageAsync-](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx)Methode, die den ausgewählten Inhalt als [DataPackage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx) zurückgibt. Diese Methode ist asynchron. Sie müssen also eine Verzögerung verwenden, um Rückgaben des [DataRequested](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx)-Ereignishandlers zu verhindern, solange der asynchrone Aufruf nicht abgeschlossen ist. 
+Um die Freigabe von Webansichtsinhalten für andere Apps zu aktivieren, verwenden Sie die [CaptureSelectedContentToDataPackageAsync-](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync)Methode, die den ausgewählten Inhalt als [DataPackage](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) zurückgibt. Diese Methode ist asynchron. Sie müssen also eine Verzögerung verwenden, um Rückgaben des [DataRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested)-Ereignishandlers zu verhindern, solange der asynchrone Aufruf nicht abgeschlossen ist. 
 
-Verwenden Sie zum Abrufen eines Vorschaubilds des aktuellen Webansichtsinhalts die [CapturePreviewToStreamAsync](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx)-Methode. Durch diese Methode wird ein Bild des aktuellen Inhalts erstellt und in den angegebenen Datenstrom geschrieben. 
+Verwenden Sie zum Abrufen eines Vorschaubilds des aktuellen Webansichtsinhalts die [CapturePreviewToStreamAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.capturepreviewtostreamasync)-Methode. Durch diese Methode wird ein Bild des aktuellen Inhalts erstellt und in den angegebenen Datenstrom geschrieben. 
 
 ### <a name="threading-behavior"></a>Threadingverhalten
 
-Webansichtsinhalte werden auf Geräten der Desktopgerätefamilie standardmäßig im UI-Thread und auf allen anderen Geräten in anderen Bereichen gehostet. Sie können die statische [WebView.DefaultExecutionMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx)-Eigenschaft verwenden, um das Standardthreadingverhalten für den aktuellen Client abzufragen. Wenn erforderlich, können Sie dieses Verhalten mit dem [WebView(WebViewExecutionMode)](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx)-Konstruktor überschreiben. 
+Webansichtsinhalte werden auf Geräten der Desktopgerätefamilie standardmäßig im UI-Thread und auf allen anderen Geräten in anderen Bereichen gehostet. Sie können die statische [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode)-Eigenschaft verwenden, um das Standardthreadingverhalten für den aktuellen Client abzufragen. Wenn erforderlich, können Sie dieses Verhalten mit dem [WebView(WebViewExecutionMode)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.)-Konstruktor überschreiben. 
 
 > **Hinweis**&nbsp;&nbsp;Beim Hosten von Inhalten im UI-Thread mobiler Geräte können Leistungsprobleme auftreten. Wenn Sie DefaultExecutionMode ändern, sollten Sie die Leistung deshalb auf allen Zielgeräten testen.
 
-Eine Webansicht, die Inhalte nicht im UI-Thread hostet, ist nicht mit übergeordneten Steuerelementen kompatibel, die Gesten zur Weitergabe des Webansichtssteuerelements an das übergeordnete Steuerelement (wie [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)) und andere verwandte Steuerelemente erfordern. Diese Steuerelemente können keine Gesten empfangen, die in der Hintergrundthread-Webansicht initiiert werden. Darüber hinaus wird der Ausdruck von Hintergrundthread-Webinhalten nicht direkt unterstützt. Sie sollten ein Element stattdessen mit der [WebViewBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx)-Füllung ausdrucken.
+Eine Webansicht, die Inhalte nicht im UI-Thread hostet, ist nicht mit übergeordneten Steuerelementen kompatibel, die Gesten zur Weitergabe des Webansichtssteuerelements an das übergeordnete Steuerelement (wie [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView), [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)) und andere verwandte Steuerelemente erfordern. Diese Steuerelemente können keine Gesten empfangen, die in der Hintergrundthread-Webansicht initiiert werden. Darüber hinaus wird der Ausdruck von Hintergrundthread-Webinhalten nicht direkt unterstützt. Sie sollten ein Element stattdessen mit der [WebViewBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)-Füllung ausdrucken.
 
 ## <a name="recommendations"></a>Empfehlungen
 
@@ -323,7 +323,7 @@ Eine Webansicht, die Inhalte nicht im UI-Thread hostet, ist nicht mit übergeord
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [WebView-Klasse](https://msdn.microsoft.com/library/windows/apps/br227702)
+* [WebView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
  
 
  

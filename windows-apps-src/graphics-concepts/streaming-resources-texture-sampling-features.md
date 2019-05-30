@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b6290fba9d4194df78c39902b8d96e952134682
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: eb0e870aa467641f82d24f03278a199ab56d0c8d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607415"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370973"
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>Textursampling-Features für Streamingressourcen
 
@@ -27,12 +27,12 @@ Die hier beschriebenen Textursampling-Features benötigen die [Ebene 2](tier-2.
 ## <a name="span-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanshader-status-feedback-about-mapped-areas"></a><span id="Shader_status_feedback_about_mapped_areas"></span><span id="shader_status_feedback_about_mapped_areas"></span><span id="SHADER_STATUS_FEEDBACK_ABOUT_MAPPED_AREAS"></span>Shader-Status-Feedback zur zugeordneten Bereiche
 
 
-Alle Shaderanweisungen, die eine Streamingressource lesen oder in diese schreiben, führen dazu, dass Statusinformationen aufgezeichnet werden. Dieser Status wird als zusätzlicher optionaler Rückgabewert für jede Anweisung zum Zugreifen auf eine Ressource verfügbar gemacht, die in ein temporäres 32-Bit-Register übernommen wird. Der Inhalt des Rückgabewerts ist nicht transparent. Das heißt, ein direktes Lesen durch das Shaderprogramm ist nicht zulässig. Aber Sie können die Statusinformationen mit der Funktion [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) extrahieren.
+Alle Shaderanweisungen, die eine Streamingressource lesen oder in diese schreiben, führen dazu, dass Statusinformationen aufgezeichnet werden. Dieser Status wird als zusätzlicher optionaler Rückgabewert für jede Anweisung zum Zugreifen auf eine Ressource verfügbar gemacht, die in ein temporäres 32-Bit-Register übernommen wird. Der Inhalt des Rückgabewerts ist nicht transparent. Das heißt, ein direktes Lesen durch das Shaderprogramm ist nicht zulässig. Aber Sie können die Statusinformationen mit der Funktion [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) extrahieren.
 
 ## <a name="span-idfullymappedcheckspanspan-idfullymappedcheckspanspan-idfullymappedcheckspanfully-mapped-check"></a><span id="Fully_mapped_check"></span><span id="fully_mapped_check"></span><span id="FULLY_MAPPED_CHECK"></span>Vollständig zugeordneten überprüfen
 
 
-Die Funktion [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) interpretiert den von einem Speicherzugriff zurückgegebenen Status und gibt an, ob alle Daten, auf die zugegriffen wird, in der Ressource zugeordnet wurden. **CheckAccessFullyMapped** gibt „true” (0xFFFFFFFF) zurück, wenn Daten zugeordnet wurden, oder „false” (0x00000000), wenn Daten nicht zugeordnet wurden.
+Die Funktion [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) interpretiert den von einem Speicherzugriff zurückgegebenen Status und gibt an, ob alle Daten, auf die zugegriffen wird, in der Ressource zugeordnet wurden. **CheckAccessFullyMapped** gibt „true” (0xFFFFFFFF) zurück, wenn Daten zugeordnet wurden, oder „false” (0x00000000), wenn Daten nicht zugeordnet wurden.
 
 Bei Filterungsvorgängen ist die Gewichtung eines bestimmten Texels manchmal 0,0. Ein Beispiel ist ein Beispiel für lineare mit Texturkoordinaten, die direkt auf ein Texel Center fallen: 3 andere Texel (welche werden je nach Hardware variieren können) beitragen, den Filter, aber mit Gewichtung von 0. Diese Texel mit der Gewichtung 0 tragen nicht zum Filterungsergebnis bei. Wenn sie also auf **NULL**-Kacheln fallen, werden sie nicht als nicht zugeordneter Zugriff gezählt. Die gleiche Garantie gilt für Texturfilter, die mehrere Mip-Ebenen enthalten. Wenn die Texel für eines der Mipmaps nicht zugeordnet sind, aber die Gewichtung für diese Texel 0 ist, zählen diese Texel nicht als nicht zugeordneter Zugriff.
 
@@ -40,7 +40,7 @@ Wenn für den Stichproben aus einem Format, das weniger als 4 Komponenten verfü
 
 Der Shader kann den Status überprüfen und bei einem Fehler alle gewünschten Vorgehensweise fortsetzen. Zum Beispiel kann eine Vorgehensweise die Protokollierung von „Fehlern” (z. B. über UAV-Schreibvorgänge) und/oder Ausführen eines weiteren Lesevorgangs mit der Klammerung an eine undifferenziertere zugeordnete LOD sein. Eine Anwendung könnte erfolgreiche Zugriffe auch nachverfolgen, um zu ermitteln, auf welchen Teil der zugeordneten Gruppe von Kacheln zugegriffen wurde.
 
-Ein Problem für die Protokollierung besteht darin, dass kein Mechanismus vorhanden ist, um die genaue Gruppe von Kacheln zu erfassen, auf die zugegriffen worden wäre. Die Anwendung kann vorsichtige Schätzungen auf Basis der Kenntnis der Koordinaten vornehmen, die für den Zugriff verwendet wurden, sowie die LOD-Anweisung verwenden. Zum Beispiel gibt [**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680)) die Hardware-LOD-Berechnung zurück.
+Ein Problem für die Protokollierung besteht darin, dass kein Mechanismus vorhanden ist, um die genaue Gruppe von Kacheln zu erfassen, auf die zugegriffen worden wäre. Die Anwendung kann vorsichtige Schätzungen auf Basis der Kenntnis der Koordinaten vornehmen, die für den Zugriff verwendet wurden, sowie die LOD-Anweisung verwenden. Zum Beispiel gibt [**tex2Dlod**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-tex2dlod)) die Hardware-LOD-Berechnung zurück.
 
 Ein weiteres Problem besteht darin, dass viele Zugriffe auf dieselben Kacheln erfolgen, sodass viele redundante Protokolleinträge und möglicherweise Konflikte im Arbeitsspeicher auftreten. Es wäre praktisch, wenn die Hardware über eine Option verfügen würde, Kachelzugriffe nicht zu erfassen, wenn diese schon vorher an anderer Stelle erfasst wurden. Vielleicht könnte der Status einer derartigen Verfolgung von der API (wahrscheinlich an Framegrenzen) zurückgesetzt werden.
 
@@ -49,11 +49,11 @@ Ein weiteres Problem besteht darin, dass viele Zugriffe auf dieselben Kacheln er
 
 Damit Shader Bereiche in Mipmap-Streamingressourcen vermeiden, die nicht zugeordnet wurden, verfügen die meisten Shaderanweisungen, bei denen ein Sampler (Filterung) verwendet wird, über einen Modus, in dem der Shader einen zusätzlichen float32-Parameter für die MinLOD-Klammerung an das Texturbeispiel übergeben kann. Dieser Wert befindet sich im Mipmap-Nummernraum der Ansicht, im Gegensatz zu der zugrunde liegenden Ressource.
 
-Die Hardware führt` max(fShaderMinLODClamp,fComputedLOD) `an derselben Position in der LOD-Berechnung aus, an der die MinLOD-Klammerung pro Ressource auftritt, was auch ein [**max**](https://msdn.microsoft.com/library/windows/desktop/bb509624)() darstellt.
+Die Hardware führt` max(fShaderMinLODClamp,fComputedLOD) `an derselben Position in der LOD-Berechnung aus, an der die MinLOD-Klammerung pro Ressource auftritt, was auch ein [**max**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-max)() darstellt.
 
 Wenn das Ergebnis der Anwendung, die pro-Sample LOD Clamp und alle anderen LOD Spannpratzen Farbmuster definiert eine leere Menge ist, ist das Ergebnis der Out-of Grenzen Zugriff Ergebnis wie die einzelnen Ressourcen MinLOD Clamp: 0 für Komponenten in die Oberfläche Format und die Standardwerte für fehlende Komponenten.
 
-Die LOD-Anweisung (z. B. [**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680)), die der hier beschriebenen MinLOD-Klammerung pro Sampling zeitlich vorausgeht, gibt eine LOD mit und ohne Klammerung zurück. Die von dieser LOD-Anweisung zurückgegebene geklammerte LOD gibt die gesamte in der Klammerung pro Ressource enthaltene Klammerung zurück, aber keine Klammerung pro Sampling. Die Klammerung pro Sampling wird vom Shader gesteuert und ist ihm bekannt, daher kann der Autor des Shaders diese Klammerung bei Bedarf manuell auf den Rückgabewert der LOD-Anweisung anwenden.
+Die LOD-Anweisung (z. B. [**tex2Dlod**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-tex2dlod)), die der hier beschriebenen MinLOD-Klammerung pro Sampling zeitlich vorausgeht, gibt eine LOD mit und ohne Klammerung zurück. Die von dieser LOD-Anweisung zurückgegebene geklammerte LOD gibt die gesamte in der Klammerung pro Ressource enthaltene Klammerung zurück, aber keine Klammerung pro Sampling. Die Klammerung pro Sampling wird vom Shader gesteuert und ist ihm bekannt, daher kann der Autor des Shaders diese Klammerung bei Bedarf manuell auf den Rückgabewert der LOD-Anweisung anwenden.
 
 ## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>Minimale/maximale Reduzierung filtern
 

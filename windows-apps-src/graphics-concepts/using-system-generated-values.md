@@ -7,17 +7,17 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87d4be69d9a7869f5331d30225e93a22ad9e959c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622315"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371254"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>Verwenden von vom System generierte Werte
 
 
-Systemgenerierte Werte werden von der [IEingabe-Assemblerphase (IA)](input-assembler-stage--ia-.md) generiert (basierend auf der vom Benutzer bereitgestellten Eingabe [semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647)), um bestimmte Effizienzvorteile in Shader-Operationen zu ermöglichen. Durch das Anhängen von Daten, wie beispielsweise der Instanz-ID (sichtbar für die [Vertexshaderphase (VS)](vertex-shader-stage--vs-.md)), einer Scheitelpunkt-ID (sichtbar für VS) oder einer Grundtypen-ID (sichtbar für die [Geometrieshaderphase (GS)](geometry-shader-stage--gs-.md)/[Pixelshaderphase (PS)](pixel-shader-stage--ps-.md)), kann eine nachfolgende Shaderphase nach diesen Systemwerten suchen, um die Verarbeitung in dieser Phase zu verbessern.
+Systemgenerierte Werte werden von der [IEingabe-Assemblerphase (IA)](input-assembler-stage--ia-.md) generiert (basierend auf der vom Benutzer bereitgestellten Eingabe [semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)), um bestimmte Effizienzvorteile in Shader-Operationen zu ermöglichen. Durch das Anhängen von Daten, wie beispielsweise der Instanz-ID (sichtbar für die [Vertexshaderphase (VS)](vertex-shader-stage--vs-.md)), einer Scheitelpunkt-ID (sichtbar für VS) oder einer Grundtypen-ID (sichtbar für die [Geometrieshaderphase (GS)](geometry-shader-stage--gs-.md)/[Pixelshaderphase (PS)](pixel-shader-stage--ps-.md)), kann eine nachfolgende Shaderphase nach diesen Systemwerten suchen, um die Verarbeitung in dieser Phase zu verbessern.
 
 Beispielsweise kann die VS-Phase nach der Instanzen-ID suchen, um zusätzliche Daten pro Scheitelpunkt für den Shader zu erfassen, oder um andere Vorgänge auszuführen, oder die GS- und die PS-Phase können die Grundtyp-ID verwenden, um Daten pro Grundtyp in der gleichen Weise zu erfassen.
 
@@ -41,7 +41,7 @@ Die [Pixel-Shader (PS)-Phase](pixel-shader-stage--ps-.md) hat keine separate Ein
 
 Die automatische Erzeugung einer Grundtyp-ID für benachbarte Grundtypen wird nicht unterstützt. Für Grundtypen mit Nachbarschaft, etwa einen Dreieckstreifen mit Nachbarschaft, wird nur für die inneren Grundtypen (die nicht-benachbarten Grundtypen) eine Grundtyp-ID geführt, ähnlich wie der Satz der Grundtypen in einem Dreieckstreifen ohne Nachbarschaft.
 
-## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>Instanz-ID
+## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>InstanceID
 
 
 Jede Shader-Phase identifiziert anhand einer Instanz-ID die Instanz der Geometrie, die derzeit verarbeitet wird. Dies ist eine 32-Bit-Ganzzahl ohne Vorzeichen, deren Standardwert 0 ist.
@@ -62,7 +62,7 @@ Die folgenden Tabellen zeigen die vom System generierten Werte für die Instanz 
 | Scheitelpunktdaten    | C, U | D, U | E, U | F, U | G, U | H, U | I, U | J, U | K, U | L, U |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **Instanz-ID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
  
 
@@ -71,7 +71,7 @@ Dreieckstreifen-Instanz U hat 3 Dreieck-Grundtypen, mit den folgenden vom System
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **Instanz-ID**  | 0   | 0   | 0   |
+| **InstanceID**  | 0   | 0   | 0   |
 
  
 
@@ -80,7 +80,7 @@ Die folgenden Tabellen zeigen die vom System generierten Werte für die Instanz 
 | Scheitelpunktdaten    | C, V | D, V | E, V | F, V | G, V | H, V | I, V | J, V | K, V | L, V |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **Instanz-ID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
+| **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
  
 
@@ -89,7 +89,7 @@ Dreieckstreifen-Instanz V hat 3 Dreieck-Grundtypen, mit den folgenden vom System
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **Instanz-ID**  | 1   | 1   | 1   |
+| **InstanceID**  | 1   | 1   | 1   |
 
  
 

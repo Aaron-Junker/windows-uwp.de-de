@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ebac70d56fcdf1bf717d763daf4ac1bd9c06d4b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a9b6c6fc7a7e3ddfab70fe289a41bb4d436e9722
+ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640085"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377316"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Vermittelte Komponenten für Windows-Runtime für eine quergeladene UWP-App
 
@@ -19,7 +19,7 @@ Dieser Artikel beschreibt ein Unternehmen ausgerichtete-Feature von Windows 10, 
 
 ## <a name="introduction"></a>Einführung
 
->**Beachten Sie**  für den Beispielcode in diesem Artikel heruntergeladen [Visual Studio 2015 und 2017](https://aka.ms/brokeredsample). Microsoft Visual Studio-Vorlage zum Erstellen von Windows-Runtime-Komponenten für Brokermessaging kann hier heruntergeladen werden: [Visual Studio 2015-Vorlage für universelle Windows-Apps für Windows 10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**Beachten Sie**  für den Beispielcode in diesem Artikel heruntergeladen [Visual Studio 2015 und 2017](https://aka.ms/brokeredsample). Microsoft Visual Studio-Vorlage zum Erstellen von Windows-Runtime-Komponenten für Brokermessaging kann hier heruntergeladen werden: [Visual Studio 2015-Vorlage für universelle Windows-Apps für Windows 10](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
 
 Windows enthält ein neues Feature namens *Windows Runtime-Komponenten für Anwendungen quergeladener vermittelte*. Wir verwenden den Begriff „prozessübergreifende Kommunikation“ (Inter-Process Communication, IPC), um die Fähigkeit zu beschreiben, vorhandene Desktopsoftwareressourcen in einem einzigen Prozess (Desktopkomponente) auszuführen und gleichzeitig mit diesem Code in einer UWP-App zu interagieren. Dieses Modell ist Unternehmensentwicklern vertraut, da Datenbankanwendungen und Anwendungen, die NT-Dienste unter Windows verwenden, eine ähnliche, aus mehreren Prozessen bestehende Architektur verwenden.
 
@@ -44,7 +44,7 @@ Bei der Desktopkomponente in diesem Feature handelt es sich um einen neuen Anwen
 
 **Vertrag**
 
-Der Vertrag zwischen der quergeladenen Anwendung und der Desktopkomponente wird mithilfe des UWP-Typsystems beschrieben. Dies umfasst eine oder mehrere C deklarieren\# Klassen, die eine UWP darstellen können. Finden Sie unter MSDN-Thema [Erstellen von Windows Runtime-Komponenten in C#\# und Visual Basic](https://msdn.microsoft.com/library/br230301.aspx) für bestimmte Anforderung zum Erstellen von Windows-Runtime-Klasse, die mithilfe von C\#.
+Der Vertrag zwischen der quergeladenen Anwendung und der Desktopkomponente wird mithilfe des UWP-Typsystems beschrieben. Dies umfasst eine oder mehrere C deklarieren\# Klassen, die eine UWP darstellen können. Finden Sie unter MSDN-Thema [Erstellen von Windows Runtime-Komponenten in C#\# und Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) für bestimmte Anforderung zum Erstellen von Windows-Runtime-Klasse, die mithilfe von C\#.
 
 >**Beachten Sie**  Enumerationen werden im Windows-Runtime-Komponenten Vertrag zwischen desktop-Komponente und quergeladener-Anwendung zu diesem Zeitpunkt nicht unterstützt.
 
@@ -161,7 +161,7 @@ Dies erfolgt durch die folgenden Skripts. Fügen Sie die Skripts der Befehlszeil
     rem erase "$(TargetPath)"
 ```
 
-Nachdem der Verweis **Winmd** erstellt wird (im Ordner "Reference" unter den Zielordner des Projekts), ist es manuell in jedes verwendeten quergeladener Anwendungsprojekt (kopiert) übernommen, und auf die verwiesen wird. Dies wird im folgenden Abschnitt näher erläutert. Die Projektstruktur vorliegen, in der oben genannten Buildregeln sicher, dass die Implementierung und der Verweis **Winmd** befinden sich in deutlich getrennte Verzeichnisse, in der Hierarchie erstellen, um Verwechslungen zu vermeiden.
+Nachdem der Verweis **winmd** erstellt wurde (im Ordner „Verweis“ unterhalb des Zielordners für das Projekt), wird er manuell in jedes verarbeitende quergeladene Anwendungsprojekt kopiert und referenziert. Dies wird im folgenden Abschnitt näher erläutert. Die in den oben erwähnten Buildregeln verkörperte Projektstruktur stellt sicher, dass sich die Implementierung und die **winmd**-Verweisdatei in klar getrennten Verzeichnissen in der Buildhierarchie befinden, um Verwirrung zu vermeiden.
 
 ## <a name="side-loaded-applications-in-detail"></a>Quergeladene Anwendungen im Detail
 Wie bereits erwähnt, wird die quergeladene Anwendung genau wie jede andere UWP-App erstellt, aber es gibt ein zusätzliches Detail: das Deklarieren der Verfügbarkeit der RuntimeClass(es) im Manifest der quergeladenen Anwendung. Dies ermöglicht der Anwendung das einfache Neuschreiben, um auf die Funktionalität in der Desktopkomponente zuzugreifen. Ein Manifesteintrag im Abschnitt <Extension> beschreibt die in der Desktopkomponente implementierte RuntimeClass und enthält Informationen darüber, wo sie sich befindet. Diese Deklarationsinhalte im Manifest der Anwendung sind mit denen von Apps für Windows 10 identisch. Zum Beispiel:
@@ -181,7 +181,7 @@ Die Kategorie lautet „inProcessServer“, da die outOfProcessServer-Kategorie 
 
 Der <ActivatableClass>-Abschnitt entspricht einer echten prozessinternen RuntimeClass, die von einer Windows-Runtime-Komponente im App-Paket bevorzugt wird. <ActivatableClassAttribute> ist ein neues Element und die Attribute Name = "DesktopApplicationPath" und Typ = "String" sind obligatorisch und Invarianten. Das Value-Attribut verweist auf den Ort, an dem sich die winmd-Implementierungsdatei der Desktopkomponente befindet (weitere Einzelheiten hierzu finden Sie im folgenden Abschnitt). Jede von der Desktopkomponente bevorzugte RuntimeClass sollte eine eigene <ActivatableClass>-Elementstruktur besitzen. Die ActivatableClassId muss dem vollständig qualifizierten Namespacenamen der RuntimeClass entsprechen.
 
-Wie im Abschnitt „Definieren des Vertrags“ erwähnt wurde, muss ein Projektverweis auf die winmd-Verweisdatei der Desktopkomponente vorgenommen werden. Das Visual Studio-Projektsystem erstellt normalerweise eine aus zwei Ebenen bestehende Verzeichnisstruktur mit demselben Namen. In diesem Beispiel ist es EnterpriseIPCApplication\\EnterpriseIPCApplication. Der Verweis **Winmd** manuell in dieses Verzeichnis der zweiten Ebene, und klicken Sie dann den Projektverweisen Dialogfeld verwendet wird, kopiert wird (klicken Sie auf die **durchsuchen... **  Schaltfläche) zu finden und verweisen auf diese **Winmd**. Danach sollte der Namespace der obersten Ebene der Desktopkomponente (z. B. Fabrikam) als Knoten der obersten Ebene im Teil „Verweise“ des Projekts angezeigt werden.
+Wie im Abschnitt „Definieren des Vertrags“ erwähnt wurde, muss ein Projektverweis auf die winmd-Verweisdatei der Desktopkomponente vorgenommen werden. Das Visual Studio-Projektsystem erstellt normalerweise eine aus zwei Ebenen bestehende Verzeichnisstruktur mit demselben Namen. In diesem Beispiel ist es EnterpriseIPCApplication\\EnterpriseIPCApplication. Der Verweis **Winmd** manuell in dieses Verzeichnis der zweiten Ebene, und klicken Sie dann den Projektverweisen Dialogfeld verwendet wird, kopiert wird (klicken Sie auf die **durchsuchen...**  Schaltfläche) zu finden und verweisen auf diese **Winmd**. Danach sollte der Namespace der obersten Ebene der Desktopkomponente (z. B. Fabrikam) als Knoten der obersten Ebene im Teil „Verweise“ des Projekts angezeigt werden.
 
 >**Beachten Sie** es ist sehr wichtig ist, verwendet der **Winmd verweisen** in der Anwendung geladenen Seite. Wenn Sie versehentlich, über ausführen die **Implementierung Winmd** in das quergeladener Apps-Verzeichnis und den Verweis, Sie werden wahrscheinlich eine Fehlermeldung im Zusammenhang mit "IStringable kann nicht gefunden werden". Dies ist eine anzumelden, das Sie sicher, dass die falsche **Winmd** verwiesen wurde. Die Regeln nach der Erstellung in der IPC-Server-app (im nächsten Abschnitt beschrieben) sorgfältig verteilen diese zwei **Winmd** in separaten Verzeichnissen.
 
@@ -406,7 +406,7 @@ In der Regel werden nur andere projektübergreifenden Verweise vorgenommen. Ein 
 
 Die oben erwähnten Verweise sind eine sorgfältige Mischung aus Verweisen, die für die korrekte Ausführung dieses Hybridservers entscheidend sind. Das normale Verfahren besteht darin, die CSPROJ-Datei (wie für die Bearbeitung des Projekts OutputType beschrieben) zu öffnen und diese Verweise wie erforderlich hinzuzufügen.
 
-Sobald die Verweise korrekt konfiguriert wurden, besteht die nächste Aufgabe darin, die Funktionalität des Servers zu implementieren. Finden Sie im MSDN-Thema [bewährte Methoden für die Interoperabilität mit Windows-Runtime-Komponenten (UWP-apps mithilfe von C\#/VB-/C++ und XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
+Sobald die Verweise korrekt konfiguriert wurden, besteht die nächste Aufgabe darin, die Funktionalität des Servers zu implementieren. Finden Sie im MSDN-Thema [bewährte Methoden für die Interoperabilität mit Windows-Runtime-Komponenten (UWP-apps mithilfe von C\#/VB-/C++ und XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
 Die Aufgabe besteht darin, eine Windows-Runtime-Komponenten-DLL zu erstellen, die Desktopcode als Teil der Implementierung aufrufen kann. Das Begleitbeispiel enthält die in der Windows-Runtime verwendeten Hauptmuster:
 
 -   Methodenaufrufe
@@ -453,7 +453,7 @@ return Task<int>.Run( () =>
 
 ```
 
->**Hinweis** Beachten Sie, dass es beim Schreiben der Implementierung normal ist, auf andere Vorgänge mit potenziell langer Ausführungsdauer zu warten. Wenn dies der Fall ist, die **"Task.Run"** Code muss deklariert werden:
+>**Hinweis** Beachten Sie, dass es beim Schreiben der Implementierung normal ist, auf andere Vorgänge mit potenziell langer Ausführungsdauer zu warten. Wenn dies der Fall ist, die **"Task.Run"**  Code muss deklariert werden:
 
 ```csharp
 return Task<int>.Run(async () =>
@@ -476,7 +476,7 @@ Da die IPC-Methode das Marshalling von Windows-Runtime-Schnittstellen zwischen z
 
 **Erstellen den Proxy in Visual Studio**
 
-Der Prozess zum Erstellen und Registrieren eines Proxys und Stubs für die Verwendung in einem regulären UWP-app-Paket werden in diesem Thema beschriebenen [Auslösen von Ereignissen in Windows-Runtime-Komponenten](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx).
+Der Prozess zum Erstellen und Registrieren eines Proxys und Stubs für die Verwendung in einem regulären UWP-app-Paket werden in diesem Thema beschriebenen [Auslösen von Ereignissen in Windows-Runtime-Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/dn169426(v=vs.140)).
 Die in diesem Artikel beschriebenen Schritte sind komplizierter als der nachfolgend beschriebene Prozess, da sie das Registrieren des Proxys/Stubs innerhalb des Anwendungspakets enthalten (im Gegensatz zur globalen Registrierung).
 
 **Schritt 1:** Erstellen Sie mithilfe der Lösung für das Projekt desktop-Komponente, ein Proxy/Stub-Projekt in Visual Studio:
@@ -521,7 +521,7 @@ MyWinRTComponent.Proxies
 
 **C/C++-> Präprozessordefinitionen > Hinzufügen**
 
-"WIN32; \_WINDOWS; REGISTRIEREN SIE\_PROXY\_DLL "
+"WIN32;\_WINDOWS;REGISTER\_PROXY\_DLL"
 
 **C/C++-> vorkompilierten Header: Wählen Sie "Keine vorkompilierten Header verwenden"**
 
@@ -535,9 +535,9 @@ MyWinRTComponent.Proxies
 
 **Bereitstellen des Proxys**
 
-Der Proxy muss global registriert werden. Die einfachste Möglichkeit hierzu besteht darin, dass beim Installationsprozess „DllRegisterServer“ in der Proxy-DLL aufgerufen wird. Da das Feature nur x86-Server unterstützt (d. h. keine 64-Bit-Unterstützung), besteht die einfachste Konfiguration in der Verwendung eines 32-Bit-Servers, eines 32-Bit-Proxys und einer quergeladenen 32-Bit-Anwendung. Der Proxy befindet sich normalerweise zusammen mit der Implementierung **Winmd** für die desktop-Komponente.
+Der Proxy muss global registriert werden. Die einfachste Möglichkeit hierzu besteht darin, dass beim Installationsprozess „DllRegisterServer“ in der Proxy-DLL aufgerufen wird. Da das Feature nur x86-Server unterstützt (d. h. keine 64-Bit-Unterstützung), besteht die einfachste Konfiguration in der Verwendung eines 32-Bit-Servers, eines 32-Bit-Proxys und einer quergeladenen 32-Bit-Anwendung. Der Proxy befindet sich normalerweise in der **WINMD**-Implementierung für die Desktopkomponente.
 
-Es muss ein weiterer Konfigurationsschritt vorgenommen werden. Damit der Proxy vom quergeladenen Prozess geladen und ausgeführt wird, muss das Verzeichnis mit „lesen/ausführen“ für ALL_APPLICATION_PACKAGES gekennzeichnet sein. Dies erfolgt mithilfe der **icacls.exe** -Befehlszeilentools. Dieser Befehl ausgeführt werden soll, in dem Verzeichnis, in denen die Implementierung **Winmd** und Proxy/Stub-Dll befindet sich:
+Es muss ein weiterer Konfigurationsschritt vorgenommen werden. Damit der Proxy vom quergeladenen Prozess geladen und ausgeführt wird, muss das Verzeichnis mit „lesen/ausführen“ für ALL_APPLICATION_PACKAGES gekennzeichnet sein. Dies erfolgt über das Befehlszeilentool **icacls.exe**. Dieser Befehl muss in dem Verzeichnis ausgeführt werden, in dem sich die **WINMD**-Implementierung und die Proxy-/Stub-DLL befinden:
 
 *Icacls. / T/GRANT \*S-1-15-2-1:RX*
 
@@ -553,7 +553,7 @@ Es folgt eine unvollständige Liste mit zu berücksichtigenden Punkten:
 
 -   Eine Massenübertragung von Ergebnissen reduziert die prozessübergreifende "Geschwätzigkeit". Dazu wird in der Regel das Windows-Runtime-Array-Konstrukt verwendet.
 
--   Zurückgeben von *Liste<T>* , in denen *T* ist ein Objekt über einen asynchronen Vorgang oder eine Eigenschaft abrufen, die bewirkt, dass viele prozessübergreifende "chattiness". Nehmen wir beispielsweise an, die Sie zurückgeben, eine*Liste&lt;Personen&gt;* Objekte. Bei jedem Iterationsdurchlauf handelt es sich um einen prozessübergreifenden Aufruf. Jede *Personen* zurückgegebene Objekt wird dargestellt, indem Sie einen Proxy und jeder Aufruf einer Methode oder Eigenschaft für das einzelne Objekt in einem prozessübergreifenden Aufruf führt. Also ein "unverfänglich" *Liste&lt;Personen&gt;* Objekt, in denen *Anzahl* ist groß, führt dazu, dass eine große Anzahl von langsamen aufrufen. Durch Massenübertragung von Inhaltsstrukturen in einem Array wird eine bessere Leistung erzielt. Zum Beispiel:
+-   Zurückgeben von *Liste<T>*  , in denen *T* ist ein Objekt über einen asynchronen Vorgang oder eine Eigenschaft abrufen, die bewirkt, dass viele prozessübergreifende "chattiness". Nehmen wir beispielsweise an, die Sie zurückgeben, eine*Liste&lt;Personen&gt;*  Objekte. Bei jedem Iterationsdurchlauf handelt es sich um einen prozessübergreifenden Aufruf. Jede *Personen* zurückgegebene Objekt wird dargestellt, indem Sie einen Proxy und jeder Aufruf einer Methode oder Eigenschaft für das einzelne Objekt in einem prozessübergreifenden Aufruf führt. Also ein "unverfänglich" *Liste&lt;Personen&gt;*  Objekt, in denen *Anzahl* ist groß, führt dazu, dass eine große Anzahl von langsamen aufrufen. Durch Massenübertragung von Inhaltsstrukturen in einem Array wird eine bessere Leistung erzielt. Zum Beispiel:
 
 ```csharp
 struct PersonStruct
@@ -565,10 +565,10 @@ struct PersonStruct
 }
 ```
 
-Klicken Sie dann zurück* PersonStruct\[\]* anstelle von *Liste&lt;PersonObject&gt;*.
+Klicken Sie dann zurück * PersonStruct\[\]* anstelle von *Liste&lt;PersonObject&gt;* .
 Dadurch werden alle Daten in einem prozessübergreifenden Hop verteilt.
 
-Wie bei allen Überlegungen in Bezug auf die Leistung sind Messungen und Tests erforderlich. Idealerweise sollte eine Telemetrie in die zahlreichen Vorgänge integriert werden, um deren Dauer zu ermitteln. Es ist wichtig, über einen Bereich zu messen: z. B. wie lange tatsächlich dauert es, alle nutzen die *Personen* Objekte für eine bestimmte Abfrage in der Anwendung quergeladener?
+Wie bei allen Überlegungen in Bezug auf die Leistung sind Messungen und Tests erforderlich. Idealerweise sollte eine Telemetrie in die zahlreichen Vorgänge integriert werden, um deren Dauer zu ermitteln. Dabei ist es wichtig, einen Bereich zu messen: Wie lange dauert es beispielsweise tatsächlich, bis alle *People*-Objekte von einer bestimmten Warteschlange in der quergeladenen Anwendung verarbeitet wurden?
 
 Eine weitere Technik ist das Testen variabler Lasten. Dazu können Leistungstest-Hooks in die Anwendung eingefügt werden, die Lasten mit variabler Verzögerung in die Serververarbeitung integrieren. So können verschiedene Lastenarten und die Reaktion der Anwendung auf die variierende Serverleistung simuliert werden.
 Im Beispiel ist dargestellt, wie mithilfe entsprechender asynchroner Techniken Zeitverzögerungen in den Code eingefügt werden können. Die genaue Dauer der zu integrierenden Verzögerung und die Zufallshäufigkeit für diese künstliche Last variieren je nach Anwendungsdesign und der voraussichtlichen Umgebung, in der die Anwendung ausgeführt wird.
@@ -590,15 +590,15 @@ Die Liste der Module für einen Server Broker tragen *clrhost.dll* in die List
 
 ## <a name="resources"></a>Ressourcen
 
--   [Projektvorlagen für brokermessaging WinRT-Komponente für Windows 10 und Visual Studio 2015](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [Projektvorlagen für brokermessaging WinRT-Komponente für Windows 10 und Visual Studio 2015](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
 
 -   [Das Beispiel NorthwindRT vermittelte WinRT-Komponente](https://go.microsoft.com/fwlink/p/?LinkID=397349)
 
 -   [Bereitstellung von Microsoft Store-apps auf zuverlässige und vertrauenswürdige](https://go.microsoft.com/fwlink/p/?LinkID=393644)
 
--   [App-Verträge und-Erweiterungen (Windows Store-apps)](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
+-   [App-Verträge und-Erweiterungen (Windows Store-apps)](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))
 
--   [Wie Sie querladen von apps unter Windows 10](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
+-   [Wie Sie querladen von apps unter Windows 10](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 
 -   [Bereitstellen von UWP-apps für Unternehmen](https://go.microsoft.com/fwlink/p/?LinkID=264770)
 

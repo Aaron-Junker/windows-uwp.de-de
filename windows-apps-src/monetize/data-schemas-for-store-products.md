@@ -5,18 +5,18 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, UWP, ExtendedJsonData, Store-Produkte, Schema
 ms.localizationpriority: medium
-ms.openlocfilehash: 344052c18178a121fd9c8d133bdd1abe5a4ad886
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 77f63ce409a576b3c873d95df0d2e8d0f0933808
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334839"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372536"
 ---
 # <a name="data-schemas-for-store-products"></a>Datenschemata für Store-Produkte
 
-Wenn Sie ein Produkt wie z. B. eine App oder ein Add-On im Store einreichen, verwaltet der Informationsspeicher einen umfassenden Satz von Daten für das Produkt und dessen Lizenzen. In Ihrem App-Code können Sie programmgesteuerten Zugriff auf einige dieser Daten mithilfe der Eigenschaften im [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) Namespace nutzen. Zum Beispiel können Sie die Beschreibung und den Preis für die aktuelle App oder ein Add-On für die aktuelle App mithilfe der [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) und [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) Eigenschaften abrufen.
+Wenn Sie ein Produkt wie z. B. eine App oder ein Add-On im Store einreichen, verwaltet der Informationsspeicher einen umfassenden Satz von Daten für das Produkt und dessen Lizenzen. In Ihrem App-Code können Sie programmgesteuerten Zugriff auf einige dieser Daten mithilfe der Eigenschaften im [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) Namespace nutzen. Zum Beispiel können Sie die Beschreibung und den Preis für die aktuelle App oder ein Add-On für die aktuelle App mithilfe der [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) und [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) Eigenschaften abrufen.
 
-Viele Daten für Produkte im Store sind jedoch ist nicht über vordefinierte Eigenschaften im [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) Namespace verfügbar. Um auf die vollständigen Daten für ein Produkt in Ihrem Code zuzugreifen, können Sie die folgenden allgemeinen Eigenschaften verwenden:
+Viele Daten für Produkte im Store sind jedoch ist nicht über vordefinierte Eigenschaften im [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) Namespace verfügbar. Um auf die vollständigen Daten für ein Produkt in Ihrem Code zuzugreifen, können Sie die folgenden allgemeinen Eigenschaften verwenden:
 
 * [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)
 * [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData)

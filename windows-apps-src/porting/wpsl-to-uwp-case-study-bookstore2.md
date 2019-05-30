@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1b0c272af5939deba73ff7a07797207d7caaa4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e3b6ab53e5e9f0b36e6bdeb047b48766cda7a2a5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651005"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372389"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>Windows Phone Silverlight, UWP-Fallstudie: Bookstore2
 
@@ -58,7 +58,7 @@ In „MainPage.xaml“ müssen Sie die folgenden anfänglichen Portierungsänder
 -   Ändern Sie „clr-namespace“ in der verbleibenden Namespacepräfix-Deklaration in „using“.
 -   Löschen Sie `SupportedOrientations="Portrait"`und `Orientation="Portrait"`, und konfigurieren Sie **Portrait** im App-Paketmanifest des neuen Projekts.
 -   Löschen Sie `shell:SystemTray.IsVisible="True"`.
--   Die Konvertertypen für Sprunglistenelemente (die im Markup als Ressourcen enthalten sind) wurden in den [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818)-Namespace verschoben. Fügen Sie daher die Deklaration des Namespacepräfixes Windows\_UI\_Xaml\_Steuerelemente\_primitive und ordnen Sie es **Windows.UI.Xaml.Controls.Primitives**. Ändern Sie das Präfix in den Konverterressourcen für Sprunglistenelemente von `phone:` in `Windows_UI_Xaml_Controls_Primitives:`.
+-   Die Konvertertypen für Sprunglistenelemente (die im Markup als Ressourcen enthalten sind) wurden in den [**Windows.UI.Xaml.Controls.Primitives**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives)-Namespace verschoben. Fügen Sie daher die Deklaration des Namespacepräfixes Windows\_UI\_Xaml\_Steuerelemente\_primitive und ordnen Sie es **Windows.UI.Xaml.Controls.Primitives**. Ändern Sie das Präfix in den Konverterressourcen für Sprunglistenelemente von `phone:` in `Windows_UI_Xaml_Controls_Primitives:`.
 -   Ersetzen Sie wie zuvor bei [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) alle Verweise auf den `PhoneTextExtraLargeStyle` **TextBlock**-Stil durch einen Verweis auf `SubtitleTextBlockStyle`, und ersetzen Sie `PhoneTextSubtleStyle` durch `SubtitleTextBlockStyle`, `PhoneTextNormalStyle` durch `CaptionTextBlockStyle` und `PhoneTextTitle1Style` durch `HeaderTextBlockStyle`.
 -   Einzige Ausnahme ist `BookTemplate`. Der Stil des zweiten **TextBlock**-Elements sollte auf `CaptionTextBlockStyle` verweisen.
 -   Entfernen Sie das FontFamily-Attribut aus **TextBlock** innerhalb von `AuthorGroupHeaderTemplate`, und legen Sie den Hintergrund von **Border** so fest, dass nicht auf `PhoneAccentBrush` verwiesen wird, sondern auf `SystemControlBackgroundAccentBrush`.
@@ -67,7 +67,7 @@ In „MainPage.xaml“ müssen Sie die folgenden anfänglichen Portierungsänder
 ## <a name="replacing-the-longlistselector"></a>Ersetzen von „LongListSelector“
 
 
-Um **LongListSelector** durch ein [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)-Steuerelement zu ersetzen, sind mehrere Schritte erforderlich. Los geht’s. **LongListSelector** wird direkt an die gruppierte Datenquelle gebunden, während **SemanticZoom**[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)- oder [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)-Steuerelemente enthält, die über einen [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833)-Adapter indirekt an die Daten gebunden werden. **CollectionViewSource** muss als Ressource im Markup vorhanden sein. Deshalb fügen wir sie zunächst dem Markup in „MainPage.xaml“ innerhalb von `<Page.Resources>` hinzu.
+Um **LongListSelector** durch ein [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)-Steuerelement zu ersetzen, sind mehrere Schritte erforderlich. Los geht’s. **LongListSelector** wird direkt an die gruppierte Datenquelle gebunden, während **SemanticZoom**[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)- oder [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)-Steuerelemente enthält, die über einen [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)-Adapter indirekt an die Daten gebunden werden. **CollectionViewSource** muss als Ressource im Markup vorhanden sein. Deshalb fügen wir sie zunächst dem Markup in „MainPage.xaml“ innerhalb von `<Page.Resources>` hinzu.
 
 ```xml
     <CollectionViewSource
@@ -142,7 +142,7 @@ Eine minimale Fensterbreite von 548 Epx eignet sich in diesem Anwendungsfall, d
 
 Bevor wir das Problem mit dem adaptiven Visual State-Manager angehen, müssen wir zuerst den breiten Zustand entwerfen. Dies bedeutet, dass wir unserem Markup einige neue visuelle Elemente und Vorlagen hinzufügen müssen. Die entsprechende Vorgehensweise wird in den folgenden Schritten beschrieben. Mit Benennungskonventionen für visuelle Elemente und Vorlagen fügen wir das Wort „wide“ (breit) in den Namen aller Elemente oder Vorlagen für den breiten Zustand ein. Wenn ein Element oder eine Vorlage nicht das Wort „wide“ enthält, können Sie davon ausgehen, dass es für den schmalen Zustand bestimmt ist. Dies ist der Standardzustand, und die Eigenschaftswerte werden als lokale Werte der visuellen Elemente einer Seite festgelegt. Nur die Eigenschaftswerte für den breiten Zustand werden im Markup über einen tatsächlichen visuellen Zustand festgelegt.
 
--   Erstellen Sie eine Kopie des [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)-Steuerelements im Markup, und legen Sie in der Kopie `x:Name="narrowSeZo"` fest. Legen Sie im Original `x:Name="wideSeZo"` und `Visibility="Collapsed"` so fest, dass der breite Zustand standardmäßig nicht sichtbar ist.
+-   Erstellen Sie eine Kopie des [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)-Steuerelements im Markup, und legen Sie in der Kopie `x:Name="narrowSeZo"` fest. Legen Sie im Original `x:Name="wideSeZo"` und `Visibility="Collapsed"` so fest, dass der breite Zustand standardmäßig nicht sichtbar ist.
 -   Ändern Sie in `wideSeZo` die **ListView**-Elemente in **GridView**-Elemente sowohl für die vergrößerte als auch für die verkleinerte Ansicht.
 -   Erstellen Sie eine Kopie der drei Ressourcen `AuthorGroupHeaderTemplate`, `ZoomedOutAuthorTemplate` und `BookTemplate`, und fügen Sie das Wort `Wide` an die Schlüssel der Kopien an. Aktualisieren Sie außerdem `wideSeZo`, damit darin auf die Schlüssel dieser neuen Ressourcen verwiesen wird.
 -   Ersetzen Sie den Inhalt von `AuthorGroupHeaderTemplateWide` durch `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`.
@@ -220,7 +220,7 @@ Nun müssen wir nur noch einige abschließende Formatierungsoptimierungen vorneh
 
 -   Legen Sie unter `AuthorGroupHeaderTemplate` das `Foreground="White"`-Element für **TextBlock** so fest, dass sich bei der Ausführung für die Familie der Mobilgeräte die richtige Darstellung ergibt.
 -   Fügen Sie `FontWeight="SemiBold"` sowohl in `AuthorGroupHeaderTemplate` als auch in `ZoomedOutAuthorTemplate` dem **TextBlock**-Element hinzu.
--   In `narrowSeZo`sind die Gruppenköpfe und die Autoren in der verkleinerten Ansicht nicht gestreckt, sondern linksbündig ausgerichtet. Dies müssen wir also ändern. Wir erstellen [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) für die vergrößerte Ansicht, wobei [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) auf `Stretch` festgelegt ist. Anschließend erstellen wir [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) für die verkleinerte Ansicht, die denselben [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) enthält. Dies sieht wie folgt aus:
+-   In `narrowSeZo`sind die Gruppenköpfe und die Autoren in der verkleinerten Ansicht nicht gestreckt, sondern linksbündig ausgerichtet. Dies müssen wir also ändern. Wir erstellen [**HeaderContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.groupstyle.headercontainerstyle) für die vergrößerte Ansicht, wobei [**HorizontalContentAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment) auf `Stretch` festgelegt ist. Anschließend erstellen wir [**ItemContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) für die verkleinerte Ansicht, die denselben [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) enthält. Dies sieht wie folgt aus:
 
 ```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
@@ -299,6 +299,6 @@ Die Funktionalität dieser App wird durch diese Änderungen nicht verändert, ab
 
 Jetzt können wir `ItemsPath="BookSkus"` entfernen, ohne dass sich das Verhalten der App ändert.
 
-## <a name="conclusion"></a>Abschluss
+## <a name="conclusion"></a>Schlussbemerkung
 
 In dieser Fallstudie haben wir es mit einer aufwändigeren Benutzeroberfläche als im vorherigen Beispiel zu tun. Alle Funktionen und Konzepte des Windows Phone Silverlight **LongListSelector**– und vieles mehr – wurden gefunden, die für eine UWP-app in der Form verfügbar sein **SemanticZoom**, **ListView**, **GridView**, und **CollectionViewSource**. Sie haben erfahren, wie Sie sowohl imperativen Code als auch Markup in einer UWP-App wiederverwenden oder kopieren und bearbeiten, um Funktionen, Benutzeroberflächenelemente und Interaktionen speziell für die schmalsten und breitesten Formfaktoren von Windows-Geräten und alle Größen dazwischen umzusetzen.

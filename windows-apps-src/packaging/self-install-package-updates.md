@@ -6,12 +6,12 @@ ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fc5fca95ca475444792fb0209a936bdfc64cb3c6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604445"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372349"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>Herunterladen und Installieren von Paketupdates aus dem Store
 
@@ -30,10 +30,10 @@ In diesem Codebeispiel wird veranschaulicht, wie Sie die [GetAppAndOptionalStore
 
 In diesem Codebeispiel wird von Folgendem ausgegangen:
 
-* Der Code wird im Kontext einer [Seite](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) ausgeführt.
-* Die **Seite** enthält eine [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) mit dem Namen ```downloadProgressBar```, um einen Status für den Downloadvorgang bereitzustellen.
+* Der Code wird im Kontext einer [Seite](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) ausgeführt.
+* Die **Seite** enthält eine [ProgressBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar) mit dem Namen ```downloadProgressBar```, um einen Status für den Downloadvorgang bereitzustellen.
 * Die Codedatei enthält eine **using**-Anweisung für die Namespaces **Windows.Services.Store**, **Windows.Threading.Tasks** und **Windows.UI.Popups**.
-* Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Verwenden Sie für eine [Multi-User-App](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) die [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User)-Methode, um ein **StoreContext**-Objekt anstelle der [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault)-Methode abzurufen.
+* Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Verwenden Sie für eine [Multi-User-App](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) die [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User)-Methode, um ein **StoreContext**-Objekt anstelle der [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault)-Methode abzurufen.
 
 ```csharp
 private StoreContext context = null;
@@ -99,7 +99,7 @@ In diesem Codebeispiel wird veranschaulicht, wie Sie die [GetAppAndOptionalStore
 
 In diesem Codebeispiel wird von Folgendem ausgegangen:
 * Die Codedatei enthält eine **using**-Anweisung für die Namespaces **Windows.Services.Store** und **System.Threading.Tasks**.
-* Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Verwenden Sie für eine [Multi-User-App](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) die [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User)-Methode, um ein **StoreContext**-Objekt anstelle der [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault)-Methode abzurufen.
+* Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Verwenden Sie für eine [Multi-User-App](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) die [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User)-Methode, um ein **StoreContext**-Objekt anstelle der [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault)-Methode abzurufen.
 
 > [!NOTE]
 > Die Methoden **IsNowAGoodTimeToRestartApp**, **RetryDownloadAndInstallLater** und **RetryInstallLater**, die in diesem Code aufgerufen werden, sind Platzhaltermethoden, die gemäß den Anforderungen Ihres eigenen App-Designs implementiert werden können.
@@ -330,7 +330,7 @@ Ab Windows 10, Version 1803, können Sie die Methoden [RequestUninstallStorePac
 
 Das folgende Codebeispiel veranschaulicht, wie Sie die [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync)-Methode aufrufen. In diesem Beispiel wird von Folgendem ausgegangen:
 * Die Codedatei enthält eine **using**-Anweisung für die Namespaces **Windows.Services.Store** und **System.Threading.Tasks**.
-* Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Verwenden Sie für eine [Multi-User-App](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) die [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User)-Methode, um ein **StoreContext**-Objekt anstelle der [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault)-Methode abzurufen.
+* Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Verwenden Sie für eine [Multi-User-App](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) die [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User)-Methode, um ein **StoreContext**-Objekt anstelle der [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault)-Methode abzurufen.
 
 ```csharp
 public async Task UninstallPackage(Windows.ApplicationModel.Package package)
@@ -373,7 +373,7 @@ Ab Windows 10, Version 1803, können Sie die Methoden [GetAssociatedStoreQueueI
 
 Im folgenden Codebeispiel wird veranschaulicht, wie [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) zum Abrufen der Liste der aktiven Paketupdates für die aktuelle App sowie der Statusinformationen für die einzelnen Pakete verwendet wird. In diesem Beispiel wird von Folgendem ausgegangen:
 * Die Codedatei enthält eine **using**-Anweisung für die Namespaces **Windows.Services.Store** und **System.Threading.Tasks**.
-* Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Verwenden Sie für eine [Multi-User-App](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) die [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User)-Methode, um ein **StoreContext**-Objekt anstelle der [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault)-Methode abzurufen.
+* Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Verwenden Sie für eine [Multi-User-App](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) die [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User)-Methode, um ein **StoreContext**-Objekt anstelle der [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault)-Methode abzurufen.
 
 > [!NOTE]
 > Die Methoden **MarkUpdateInProgressInUI**, **RemoveItemFromUI**, **MarkInstallCompleteInUI**, **MarkInstallErrorInUI** und **MarkInstallPausedInUI**, die vom Code in diesem Beispiel aufgerufen werden, sind Platzhaltermethoden, die bei Bedarf entsprechend in Ihren eigenen App-Entwurf implementiert werden können.

@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 671f33cf106eabf11b317b00d5c2a6cd9abcf3d0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630795"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363039"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Einführung in Steuerelemente und Muster
 
 In der UWP-App-Entwicklung ist ein *Steuerelement* ein UI-Element, das Inhalte anzeigt oder Interaktionen ermöglicht. Sie erstellen die Benutzeroberfläche für Ihre App mit Steuerelementen wie Schaltflächen, Textfeldern und Kombinationsfeldern, um Daten anzuzeigen und Benutzereingaben zu erhalten.
 
-> **Wichtige APIs:** [Windows.UI.Xaml.Controls-namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **Wichtige APIs:** [Windows.UI.Xaml.Controls-namespace](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
 Ein *Muster* ist eine Anleitung zum Ändern eines Steuerelements oder zum Kombinieren verschiedener Steuerelemente, um etwas Neues zu erstellen. Z. B. die [Master-/Detail-](master-details.md) Muster ist eine Möglichkeit, mit denen Sie eine [SplitView](split-view.md) Steuerelement für die app-Navigation. Auf ähnliche Weise können Sie die Vorlage Anpassen einer [NavigationView](navigationview.md) Steuerelement auf der Registerkarte "-Muster zu implementieren.
 
@@ -144,7 +144,7 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 ## <a name="related-topics"></a>Verwandte Themen
 
 -   [Index der Steuerelemente nach Funktion](controls-by-function.md)
--   [Windows.UI.Xaml.Controls-namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+-   [Windows.UI.Xaml.Controls-namespace](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 -   [Layout](../layout/index.md)
 -   [Stil](../style/index.md)
 -   [Nutzbarkeit](../usability/index.md)

@@ -6,19 +6,19 @@ keywords: UWP, konsumierbar, Add-Ons, In-App-Käufe, IAPs Windows.ApplicationMod
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e3673db795e3edc2a7c9d83a3ba1036ad8feb659
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 81c37e915b0efa320b1a2f359c873356ed83b6ba
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334568"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371824"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>Käufe von konsumierbaren In-App-Produkten aktivieren
 
 Sie können In-App-Käufe von Endverbraucherprodukten – Artikel, die gekauft, verwendet und wieder gekauft werden können – über die Store-Handelsplattform anbieten, um Kunden beim Kauf Stabilität und Zuverlässigkeit zu bieten. Dies ist besonders nützlich für Dinge wie spielinterne Währungen (Gold, Münzen usw.), die gekauft und dann zum Erwerben bestimmter Power-Ups verwendet werden können.
 
 > [!IMPORTANT]
-> Dieser Artikel beschreibt, wie Sie Mitglieder des [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)-Namespace verwenden, um konsumierbare In-App-Produktkäufe zu ermöglichen. Dieser Namespace wird nicht mehr mit neuen Funktionen aktualisiert, daher wird empfohlen, dass Sie stattdessen den [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) Namespace verwenden. Die **Windows.Services.Store** Namespace unterstützt die neuesten-Add-On-Typen, z. B. nutzbar-Add-Ons Store verwaltete und Abonnements, und mit zukünftige Arten von Produkten und Funktionen, die vom Partner unterstützten kompatibel sein soll Mittelpunkt und dem Store. Der **Windows.Services.Store**-Namespace wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Weitere Informationen zu konsumierbaren In-App-Produkten mithilfe des **Windows.Services.Store**-Namespace finden Sie in [diesem Artikel](enable-consumable-add-on-purchases.md).
+> Dieser Artikel beschreibt, wie Sie Mitglieder des [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store)-Namespace verwenden, um konsumierbare In-App-Produktkäufe zu ermöglichen. Dieser Namespace wird nicht mehr mit neuen Funktionen aktualisiert, daher wird empfohlen, dass Sie stattdessen den [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) Namespace verwenden. Die **Windows.Services.Store** Namespace unterstützt die neuesten-Add-On-Typen, z. B. nutzbar-Add-Ons Store verwaltete und Abonnements, und mit zukünftige Arten von Produkten und Funktionen, die vom Partner unterstützten kompatibel sein soll Mittelpunkt und dem Store. Der **Windows.Services.Store**-Namespace wurde in Windows 10, Version 1607, eingeführt und kann nur in Projekten für die **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer neueren Version in Visual Studio verwendet werden. Weitere Informationen zu konsumierbaren In-App-Produkten mithilfe des **Windows.Services.Store**-Namespace finden Sie in [diesem Artikel](enable-consumable-add-on-purchases.md).
 
 ## <a name="prerequisites"></a>Vorraussetzungen
 
@@ -42,7 +42,7 @@ Wenn Sie dem Kunden Zugriff auf das konsumierbare In-App-Produkt gewähren, müs
 > [!IMPORTANT]
 > Ihre App ist verantwortlich dafür, dass der Store ordnungsgemäß von der Erfüllung in Kenntnis gesetzt wird. Dieser Schritt ist die Grundlage dafür, dass der Kauf von den Kunden als fair und zuverlässig wahrgenommen wird.
 
-Im folgenden Beispiel wird die Verwendung von [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392)-Eigenschaften aus dem [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)-Aufruf im vorangehenden Schritt zum Identifizieren des Produktkaufs gezeigt, der erfüllt werden muss. Es wird eine Sammlung verwendet, um die Produktinformationen an einem Ort zu speichern, auf den später verwiesen werden kann, um zu bestätigen, dass die lokale Erfüllung erfolgreich war.
+Im folgenden Beispiel wird die Verwendung von [PurchaseResults](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.PurchaseResults)-Eigenschaften aus dem [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)-Aufruf im vorangehenden Schritt zum Identifizieren des Produktkaufs gezeigt, der erfüllt werden muss. Es wird eine Sammlung verwendet, um die Produktinformationen an einem Ort zu speichern, auf den später verwiesen werden kann, um zu bestätigen, dass die lokale Erfüllung erfolgreich war.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
@@ -78,7 +78,7 @@ Im folgenden Beispiel wird gezeigt, auf welche Weise [GetUnfulfilledConsumablesA
 
 * [Aktivieren von In-App-Produktkäufen](enable-in-app-product-purchases.md)
 * [Store-Beispiel (veranschaulicht das Testversionen und in-app-Käufe)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/br225197)
+* [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)
  
 
  

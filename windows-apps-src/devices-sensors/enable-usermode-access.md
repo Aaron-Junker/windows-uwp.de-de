@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f41bf9f56b63f59844bec976e9d6e5e3d650b271
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620305"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370273"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Aktivieren des Benutzermoduszugriffs auf GPIO, I2C und SPI
 
@@ -41,7 +41,7 @@ Device(RHPX)
 * _CID – Kompatible ID. Muss „MSFT8000“ sein.
 * _UID – Eindeutige ID. Legen Sie den Wert auf 1 fest.
 
-Als Nächstes deklarieren wir alle GPIO- und SPB-Ressourcen, die für den Benutzermodus verfügbar gemacht werden soll. Die Reihenfolge, in der Ressourcen deklariert werden, ist wichtig, da Ressourcenindizes verwendet werden, um Ressourcen Eigenschaften zuordnen. Sind mehrere I2C- oder SPI-Busse verfügbar gemacht, gilt der erste deklarierte Bus als „Standard“-Bus für diesen Typ und ist die Instanz, die durch die `GetDefaultAsync()`-Methoden der [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) und [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) zurückgegeben wird.
+Als Nächstes deklarieren wir alle GPIO- und SPB-Ressourcen, die für den Benutzermodus verfügbar gemacht werden soll. Die Reihenfolge, in der Ressourcen deklariert werden, ist wichtig, da Ressourcenindizes verwendet werden, um Ressourcen Eigenschaften zuordnen. Sind mehrere I2C- oder SPI-Busse verfügbar gemacht, gilt der erste deklarierte Bus als „Standard“-Bus für diesen Typ und ist die Instanz, die durch die `GetDefaultAsync()`-Methoden der [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) und [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller) zurückgegeben wird.
 
 ### <a name="spi"></a>SPI
 
@@ -156,7 +156,7 @@ Dadurch wird ein Bus mit dem Namen „SPI1“ erstellt und dem Ressourcenindex 2
 #### <a name="spi-driver-requirements"></a>SPI-Treiberanforderungen
 
 * Muss `SpbCx` verwenden oder SpbCx-kompatibel sein
-* Muss die [MITT SPI-Tests](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx) bestanden haben
+* Muss die [MITT SPI-Tests](https://docs.microsoft.com/windows-hardware/drivers/spb/spi-tests-in-mitt) bestanden haben
 * Muss eine Taktfrequenz von 4 Mhz unterstützen
 * Muss 8-Bit-Datenlänge unterstützen
 * Müssen alle SPI-Modi zu unterstützen: 0, 1, 2, 3
@@ -201,7 +201,7 @@ Die folgenden Felder sind Platzhalter für Werte, die vom Benutzer zur Laufzeit 
 #### <a name="i2c-driver-requirements"></a>I2C-Treiberanforderungen
 
 * Muss SpbCx verwenden oder SpbCx-kompatibel sein
-* Muss die [MITT I2C-Tests](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx) bestanden haben
+* Muss die [MITT I2C-Tests](https://docs.microsoft.com/windows-hardware/drivers/spb/run-mitt-tests-for-an-i2c-controller-) bestanden haben
 * Muss 7-Bit-Adressierung unterstützen
 * Muss 100-kHz-Taktfrequenz unterstützen
 * Muss 400-kHz-Taktfrequenz unterstützen
@@ -228,7 +228,7 @@ GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 }
 
 Bei der Deklaration von GPIO-Pins müssen die folgenden Anforderungen beachtet werden:
 
-* Nur im Speicher abgebildete GPIO-Controller werden unterstützt. Über I2C/SPIGPIO verbundene Controller werden nicht unterstützt. Der Treiber für den Controller ist ein im Speicher abgebildeter Controller, wenn mit ihm das [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx)-Flag in der Struktur [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) als Antwort auf den [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx)-Rückruf festgelegt wird.
+* Nur im Speicher abgebildete GPIO-Controller werden unterstützt. Über I2C/SPIGPIO verbundene Controller werden nicht unterstützt. Der Treiber für den Controller ist ein im Speicher abgebildeter Controller, wenn mit ihm das [MemoryMappedController](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags)-Flag in der Struktur [CLIENT_CONTROLLER_BASIC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information) als Antwort auf den [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)-Rückruf festgelegt wird.
 * Jeder Pin erfordert eine GpioIO- und eine GpioInt-Ressource. Die GpioInt-Ressource muss direkt auf die GpioIO-Ressource folgen und muss auf dieselbe Pinnummer verweisen.
 * GPIO-Ressourcen müssen nach aufsteigender Pinnummer geordnet werden.
 * Jede GpioIO- und GpioInt-Ressource muss genau eine Pinnummer in der Pinliste enthalten.
@@ -254,10 +254,10 @@ Die SupportedDriveModes-Eigenschaft gibt an, welche Laufwerkmodi vom GPIO-Contro
 
 | Flagwert | Laufwerkmodus | Beschreibung |
 |------------|------------|-------------|
-| 0 x 1        | InputHighImpedance | Der Pin unterstützt eine hohe Impedanzeingabe, die dem Wert „PullNone“ in ACPI entspricht. |
+| 0x1        | InputHighImpedance | Der Pin unterstützt eine hohe Impedanzeingabe, die dem Wert „PullNone“ in ACPI entspricht. |
 | 0x2        | InputPullUp | Der Pin unterstützt einen integrierten Pull-Up-Widerstand, der dem Wert „PullUp“ in ACPI entspricht. |
-| 0 x 4        | InputPullDown | Der Pin unterstützt einen integrierten Pull-Down-Widerstand, der dem Wert „PullDown“ in ACPI entspricht. |
-| 0 x 8        | OutputCmos | Der Pin unterstützt sowohl die Generierung von starken Höhen als auch die von starken Tiefen (im Gegensatz zu einem offenen Ausgleich). |
+| 0x4        | InputPullDown | Der Pin unterstützt einen integrierten Pull-Down-Widerstand, der dem Wert „PullDown“ in ACPI entspricht. |
+| 0x8        | OutputCmos | Der Pin unterstützt sowohl die Generierung von starken Höhen als auch die von starken Tiefen (im Gegensatz zu einem offenen Ausgleich). |
 
 InputHighImpedance und OutputCmos werden von fast allen GPIO-Controllern unterstützt. Wenn die SupportedDriveModes-Eigenschaft nicht angegeben wird, ist dies die Standardeinstellung.
 
@@ -282,7 +282,7 @@ Wenn native Pinnummerierung verwendet wird, müssen Sie auch die **PinCount**-Ei
 Package (2) { “GPIO-PinCount”, 54 },
 ```
 
-Die **PinCount**-Eigenschaft sollte dem durch die **TotalPins**-Eigenschaft beim [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx)-Rückruf des `GpioClx`-Treibers zurückgegebenen Wert entsprechen.
+Die **PinCount**-Eigenschaft sollte dem durch die **TotalPins**-Eigenschaft beim [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)-Rückruf des `GpioClx`-Treibers zurückgegebenen Wert entsprechen.
 
 Wählen Sie das Schema für die Nummerierung, das am kompatibelsten mit der veröffentlichten Dokumentation zu Ihrer Platine ist. Beispielsweise verwendet Raspberry Pi eine native Pinnummerierung, da viele vorhandene Pinout-Diagramme die BCM2835-Pinnummern verwenden. MinnowBoardMax verwendet eine sequenzielle Pinnummerierung, da es einige vorhandene Pinout-Diagramme gibt und die sequenzielle Pinnummerierung Entwicklern die Arbeit erleichtert, da nur 10 von über 200 Pins verfügbar gemacht werden. Die Entscheidung zur Verwendung einer sequenziellen oder nativen Pinnummerierung sollte darauf abzielen, Verwechslungen durch Entwickler zu vermeiden.
 
@@ -331,9 +331,9 @@ Dies weist dem Controller den Anzeigenamen „UART2“ zu. Dabei handelt es sich
 
 Pin-Muxing bezeichnet die Möglichkeit, denselben physischen Pin für unterschiedliche Funktionen zu verwenden. Mehrere verschiedene integrierte Peripheriegeräte, z. B. I2C-Controller, SPI-Controller und GPIO-Controller können an der gleichen physischen Pin auf einen SOC geleitet werden. Der Mux-Block steuert, welche Funktion zu einem bestimmten Zeitpunkt auf dem Pin aktiv ist. Normalerweise ist Firmware für die Funktionszuweisung beim Start verantwortlich ist und diese Zuweisung bleibt während des Startvorgangs statisch. Runtime-Pin-Muxing bietet die Möglichkeit, Pinfunktionszuweisungen zur Laufzeit neu zu konfigurieren. Wenn Benutzer die Pinfunktion zur Laufzeit auswählen können, wird die Entwicklung beschleunigt, da Benutzer die Pins einer Platine schnell neu konfigurieren können und da die Hardware mehr Anwendungen unterstützt, als sie es bei einer statischen Konfiguration tun würde.
 
-Benutzer können Muxing-Unterstützung für GPIO, I2C, SPI und UART nutzen, ohne zusätzlichen Code zu schreiben. Wenn ein Benutzer eine GPIO oder Bus mit [OpenPin()](https://msdn.microsoft.com/library/dn960157.aspx) oder [FromIdAsync()](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync) öffnet, werden die zugrunde liegenden physische Pins automatisch an die angeforderte Funktion gemuxt. Wenn die Pins bereits von einer anderen Funktion verwendet werden, schlägt der OpenPin()- oder FromIdAsync()-Aufruf fehl. Wenn der Benutzer das Gerät schließt, indem er das Objekt [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx), [I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx), [SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) oder [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx) löscht, werden die Pins freigegeben, sodass sie später für eine andere Funktion geöffnet werden können.
+Benutzer können Muxing-Unterstützung für GPIO, I2C, SPI und UART nutzen, ohne zusätzlichen Code zu schreiben. Wenn ein Benutzer eine GPIO oder Bus mit [OpenPin()](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiocontroller.openpin) oder [FromIdAsync()](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice.fromidasync) öffnet, werden die zugrunde liegenden physische Pins automatisch an die angeforderte Funktion gemuxt. Wenn die Pins bereits von einer anderen Funktion verwendet werden, schlägt der OpenPin()- oder FromIdAsync()-Aufruf fehl. Wenn der Benutzer das Gerät schließt, indem er das Objekt [GpioPin](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiopin), [I2cDevice](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice), [SpiDevice](https://docs.microsoft.com/uwp/api/windows.devices.spi.spidevice) oder [SerialDevice](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication.serialdevice) löscht, werden die Pins freigegeben, sodass sie später für eine andere Funktion geöffnet werden können.
 
-Windows enthält eine integrierte Unterstützung für Pin-Muxing in den [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439515.aspx)-, [SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh406203.aspx)- und [SerCx](https://msdn.microsoft.com/library/windows/hardware/dn265349.aspx)-Frameworks. Diese Frameworks arbeiten zusammen, um einen Pin automatisch an die richtige Funktion zu schalten, wenn auf einen GPIO-Pin oder Bus zugegriffen wird. Der Zugriff auf die Pins wird vermittelt, um Konflikte zwischen mehreren Clients zu vermeiden. Zusätzlich zu dieser integrierten Unterstützung sind die Schnittstellen und Protokolle für das Pin-Muxing universell einsetzbar und können erweitert werden, um zusätzliche Geräte und Szenarien zu unterstützen.
+Windows enthält eine integrierte Unterstützung für Pin-Muxing in den [GpioClx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)-, [SpbCx](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)- und [SerCx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)-Frameworks. Diese Frameworks arbeiten zusammen, um einen Pin automatisch an die richtige Funktion zu schalten, wenn auf einen GPIO-Pin oder Bus zugegriffen wird. Der Zugriff auf die Pins wird vermittelt, um Konflikte zwischen mehreren Clients zu vermeiden. Zusätzlich zu dieser integrierten Unterstützung sind die Schnittstellen und Protokolle für das Pin-Muxing universell einsetzbar und können erweitert werden, um zusätzliche Geräte und Szenarien zu unterstützen.
 
 In diesem Dokument werden zunächst die zugrunde liegenden Schnittstellen und Protokolle des Pin-Muxing beschrieben und anschließend wird beschrieben, wie Sie Unterstützung für Pin-Muxing GpioClx-, SpbCx- und SerCx-Controllertreiber hinzufügen.
 
@@ -353,8 +353,8 @@ Nachfolgend finden Sie die Reihenfolge der Vorgänge des Pin-Muxing.
 
 ![Pin-Muxing-Client-Server-Interaktion](images/usermode-access-diagram-1.png)
 
-1. Der Client empfängt MsftFunctionConfig-Ressourcen von der ACPI-Firmware bei seinem [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx)-Rückruf.
-2. Der Client verwendet die Ressourcen-Hub-Hilfsfunktion, `RESOURCE_HUB_CREATE_PATH_FROM_ID()`um einen Pfad über die Ressourcen-ID zu erstellen. Anschließend öffnet er ein Handle zum Pfad (mit [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx), [IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) oder [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)).
+1. Der Client empfängt MsftFunctionConfig-Ressourcen von der ACPI-Firmware bei seinem [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)-Rückruf.
+2. Der Client verwendet die Ressourcen-Hub-Hilfsfunktion, `RESOURCE_HUB_CREATE_PATH_FROM_ID()`um einen Pfad über die Ressourcen-ID zu erstellen. Anschließend öffnet er ein Handle zum Pfad (mit [ZwCreateFile()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile), [IoGetDeviceObjectPointer()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer) oder [WdfIoTargetOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)).
 3. Der Server extrahiert die Ressourcen-Hub-ID aus dem Dateipfad mit der Ressourcen-Hub-Hilfsfunktionen `RESOURCE_HUB_ID_FROM_FILE_NAME()` und fragt dann beim Ressourcen-Hub die Beschreibung der Ressourcen ab.
 4. Der Server führt eine Freigabevermittlung für jeden Pin in der Beschreibung durch und schließt die Anforderung IRP_MJ_CREATE ab.
 5. Der Client sendet eine *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*-Anforderung an das empfangene Handle.
@@ -369,7 +369,7 @@ In diesem Abschnitt wird beschrieben, wie ein Client die Pin-Muxing-Funktionalit
 
 #### <a name="parsing-resources"></a>Analysieren von Ressourcen
 
-Ein WDF-Treiber empfängt `MsftFunctionConfig()`-Ressourcen in seiner [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx)-Routine. MsftFunctionConfig-Ressourcen können durch die folgenden Felder identifiziert werden:
+Ein WDF-Treiber empfängt `MsftFunctionConfig()`-Ressourcen in seiner [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)-Routine. MsftFunctionConfig-Ressourcen können durch die folgenden Felder identifiziert werden:
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -504,7 +504,7 @@ NTSTATUS AcquireFunctionConfigResource (
 }
 ```
 
-Der Treiber sollte das WDFIOTARGET in einem seiner Kontextbereiche speichern, damit dieses später geschlossen werden kann. Wenn der Treiber für die Veröffentlichung der Muxing-Konfiguration bereit ist, sollte das Ressourcenhandle durch Aufrufen von [WdfObjectDelete()](https://msdn.microsoft.com/library/windows/hardware/ff548734.aspx) oder [WdfIoTargetClose()](https://msdn.microsoft.com/library/windows/hardware/ff548586.aspx) geschlossen werden, wenn Sie WDFIOTARGET wiederverwenden möchten.
+Der Treiber sollte das WDFIOTARGET in einem seiner Kontextbereiche speichern, damit dieses später geschlossen werden kann. Wenn der Treiber für die Veröffentlichung der Muxing-Konfiguration bereit ist, sollte das Ressourcenhandle durch Aufrufen von [WdfObjectDelete()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) oder [WdfIoTargetClose()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetclose) geschlossen werden, wenn Sie WDFIOTARGET wiederverwenden möchten.
 
 ```cpp
     WdfObjectDelete(resourceHandle);
@@ -532,7 +532,7 @@ Die Freigabevermittlung war insgesamt erfolgreich, wenn die Freigabevermittlung 
 
 Wenn die Freigabevermittlung fehlschlägt, sollte die Anforderung mit *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* abgeschlossen werden. Wenn Vermittlung Freigabe erfolgreich ist, sollte die Anforderung mit *STATUS_SUCCESS* abgeschlossen werden.
 
-Beachten Sie, dass der Freigabemodus der eingehenden Anforderung aus der MsftFunctionConfig-Beschreibung entnommen werden soll, nicht aus [IrpSp -> Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx).
+Beachten Sie, dass der Freigabemodus der eingehenden Anforderung aus der MsftFunctionConfig-Beschreibung entnommen werden soll, nicht aus [IrpSp -> Parameters.Create.ShareAccess](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create).
 
 #### <a name="handling-ioctlgpiocommitfunctionconfigpins-requests"></a>Behandeln von IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS-Anfragen
 
@@ -614,7 +614,7 @@ Zusätzlich zum Arbeitsspeicher und den Interruptressourcen, die normalerweise v
 * CLIENT_ConnectFunctionConfigPins – Aufgerufen von `GpioClx`, damit der Miniporttreiber die angegebene Muxing-Konfiguration anwendet.
 * CLIENT_ConnectFunctionConfigPins – Aufgerufen von `GpioClx`, damit der Miniporttreiber die angegebene Muxing-Konfiguration rückgängig macht.
 
-Unter [GpioClx-Ereignisrückruffunktionen](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx) finden Sie eine Beschreibung dieser Routinen.
+Unter [GpioClx-Ereignisrückruffunktionen](https://docs.microsoft.com/previous-versions//hh439464(v=vs.85)) finden Sie eine Beschreibung dieser Routinen.
 
 Zusätzlich zu diesen beiden neuen DDIs, sollten bestehende DDIs auf Pin-Muxing-Kompatibilität überprüft werden:
 
@@ -633,11 +633,11 @@ Das folgende Diagramm zeigt die Abhängigkeiten zwischen den einzelnen Komponent
 
 Bei Gerätinitialisierung analysieren die `SpbCx`- und `SerCx`-Frameworks alle `MsftFunctionConfig()`-Ressourcen, die dem Gerät als Hardwareressourcen bereitgestellt werden. SpbCx/SerCx erwerben dann Pin-Muxing-Ressourcen bzw. geben diese bei Bedarf frei.
 
-`SpbCx` Wendet die Konfiguration der Pin Muxing in seine *IRP_MJ_CREATE* Handler auf, unmittelbar vor Aufrufen der Clienttreiber [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) Rückruf. Wenn die Muxing-Konfiguration nicht angewendet werden kann, wird der `EvtSpbTargetConnect()`-Rückruf des Controllertreibers nicht aufgerufen. Daher kann ein SPB-Controllertreiber davon ausgehen, dass Pins an die SPB-Funktion gemuxt werden, wenn `EvtSpbTargetConnect()` aufgerufen wird.
+`SpbCx` Wendet die Konfiguration der Pin Muxing in seine *IRP_MJ_CREATE* Handler auf, unmittelbar vor Aufrufen der Clienttreiber [EvtSpbTargetConnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) Rückruf. Wenn die Muxing-Konfiguration nicht angewendet werden kann, wird der `EvtSpbTargetConnect()`-Rückruf des Controllertreibers nicht aufgerufen. Daher kann ein SPB-Controllertreiber davon ausgehen, dass Pins an die SPB-Funktion gemuxt werden, wenn `EvtSpbTargetConnect()` aufgerufen wird.
 
-`SpbCx` setzt die Konfiguration der Pin Muxing in seine *IRP_MJ_CLOSE* Handler auf, nach dem Aufrufen des Controller-Treibers [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) Rückruf. Das Ergebnis ist, dass Pins an die SPB-Funktion gemuxt werden, sobald ein peripherer Treiber einen Handle für den SPB-Controllertreiber öffnet. Das Muxing wird entfernt, wenn der periphere Treiber seinen Handle schließt.
+`SpbCx` setzt die Konfiguration der Pin Muxing in seine *IRP_MJ_CLOSE* Handler auf, nach dem Aufrufen des Controller-Treibers [EvtSpbTargetDisconnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) Rückruf. Das Ergebnis ist, dass Pins an die SPB-Funktion gemuxt werden, sobald ein peripherer Treiber einen Handle für den SPB-Controllertreiber öffnet. Das Muxing wird entfernt, wenn der periphere Treiber seinen Handle schließt.
 
-`SerCx` verhält sich ähnlich wie ein. `SerCx` Ruft alle `MsftFunctionConfig()` Ressourcen in der *IRP_MJ_CREATE* Handler nur vor dem Aufrufen des Controller-Treibers [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) Rückruf, und gibt alle Ressourcen in der IRP_MJ_CLOSE Handler, nach dem Aufrufen des Controller-Treibers [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) Rückruf.
+`SerCx` verhält sich ähnlich wie ein. `SerCx` Ruft alle `MsftFunctionConfig()` Ressourcen in der *IRP_MJ_CREATE* Handler nur vor dem Aufrufen des Controller-Treibers [EvtSerCx2FileOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) Rückruf, und gibt alle Ressourcen in der IRP_MJ_CLOSE Handler, nach dem Aufrufen des Controller-Treibers [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) Rückruf.
 
 Die Auswirkung des dynamischen Pin-Muxing für `SerCx` und `SpbCx`-Controllertreiber besteht darin, dass sie Pins tolerieren müssen, bei denen das Muxing von der SPB-/UART-Funktion zu bestimmten Zeiten entfernt wird. Controllertreiber müssen wird davon ausgehen, dass Pins nicht gemuxt werden, bis `EvtSpbTargetConnect()` oder `EvtSerCx2FileOpen()` aufgerufen wird. Pins werden nicht zwangsläufig während der folgenden Rückrufe an eine SPB-/UART-Funktion gemuxt. Folgende Liste ist nicht vollständig, sie stellt jedoch die am häufigsten verwendeten PNP-Routinen dar, die von Controllertreibern implementiert werden.
 

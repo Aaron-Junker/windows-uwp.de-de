@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 473b7ef9f4efacbbe78e1fdb5563695f8211bca8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c8130c6a8e4d8441fdf8ff60c702bd1ae30bae6e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606745"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372263"
 ---
 # <a name="web-authentication-broker"></a>Webauthentifizierungsbroker
 
 
 
 
-In diesem Artikel wird erläutert, wie Ihre App für die universelle Windows-Plattform (UWP) eine Verbindung mit einem Onlineidentitätsanbieter herstellen kann, der Authentifizierungsprotokolle wie OpenID oder OAuth verwendet, z. B. Twitter, Facebook, Flickr, Instagram usw. Die [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066)-Methode sendet eine Anforderung an den Onlineidentitätsanbieter und erhält als Antwort ein Zugriffstoken, das die für die App zugänglichen Anbieterressourcen beschreibt.
+In diesem Artikel wird erläutert, wie Ihre App für die universelle Windows-Plattform (UWP) eine Verbindung mit einem Onlineidentitätsanbieter herstellen kann, der Authentifizierungsprotokolle wie OpenID oder OAuth verwendet, z. B. Twitter, Facebook, Flickr, Instagram usw. Die [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync)-Methode sendet eine Anforderung an den Onlineidentitätsanbieter und erhält als Antwort ein Zugriffstoken, das die für die App zugänglichen Anbieterressourcen beschreibt.
 
 >[!NOTE]
 >Um ein vollständiges, funktionsfähiges Codebeispiel zu erhalten, klonen Sie [WebAuthenticationBroker-Repository auf GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620622).
@@ -35,7 +35,7 @@ Sie müssen Ihre App bei dem Onlineidentitätsanbieter registrieren, mit dem Sie
 
 Der Anforderungs-URI besteht aus der Adresse, unter der Sie die Authentifizierungsanforderung an den Onlineanbieter senden, und angefügten anderen benötigten Informationen, z. B. eine App-ID oder ein Schlüssel, ein Umleitungs-URI, zu dem der Benutzer nach Abschluss der Authentifizierung umgeleitet wird, und der erwartete Antworttyp. Informationen zu den erforderlichen Parametern erhalten Sie von Ihrem Anbieter.
 
-Der Anforderungs-URI wird als *requestUri*-Parameter der [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066)-Methode gesendet. Es muss sich dabei um eine sichere Adresse (beginnend mit `https://`) handeln.
+Der Anforderungs-URI wird als *requestUri*-Parameter der [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync)-Methode gesendet. Es muss sich dabei um eine sichere Adresse (beginnend mit `https://`) handeln.
 
 Das folgende Beispiel zeigt, wie der Anforderungs-URI erstellt wird.
 
@@ -50,7 +50,7 @@ System.Uri endURI = new System.Uri(endURL);
 ## <a name="connect-to-the-online-provider"></a>Herstellen einer Verbindung mit dem Onlineanbieter
 
 
-Um eine Verbindung mit dem Onlineidentitätsanbieter herzustellen und ein Zugriffstoken abzurufen, rufen Sie die [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066)-Methode auf. Für die Methode wird der im vorhergehenden Schritt erstellte URI als *requestUri*-Parameter und ein URI, zu dem der Benutzer umgeleitet werden soll, als *callbackUri*-Parameter angegeben.
+Um eine Verbindung mit dem Onlineidentitätsanbieter herzustellen und ein Zugriffstoken abzurufen, rufen Sie die [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync)-Methode auf. Für die Methode wird der im vorhergehenden Schritt erstellte URI als *requestUri*-Parameter und ein URI, zu dem der Benutzer umgeleitet werden soll, als *callbackUri*-Parameter angegeben.
 
 ```cs
 string result;
@@ -87,14 +87,14 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->Zusätzlich zu [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) enthält der [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044)-Namespace eine [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425)-Methode. Rufen Sie diese Methode nicht auf. Es ist für apps für nur Windows Phone 8.1 vorgesehen und ist als veraltet markiert ab Windows 10.
+>Zusätzlich zu [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) enthält der [**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web)-Namespace eine [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods)-Methode. Rufen Sie diese Methode nicht auf. Es ist für apps für nur Windows Phone 8.1 vorgesehen und ist als veraltet markiert ab Windows 10.
 
 ## <a name="connecting-with-single-sign-on-sso"></a>Herstellen einer Verbindung mit einmaligen Anmelden (Single Sign-On, SSO).
 
 
-Der Webauthentifizierungsbroker lässt das Beibehalten von Cookies standardmäßig nicht zu. Daher muss sich der App-Benutzer jedes Mal anmelden, wenn er auf Ressourcen für diesen Anbieter zugreifen möchte – auch wenn er angibt, dass er angemeldet bleiben möchte (z. B. durch Aktivieren eines Kontrollkästchens im Anmeldedialogfeld des Anbieters). Um die Anmeldung mit Single Sign-On (SSO) durchführen zu können, muss der Onlineidentitätsanbieter SSO für den Webauthentifizierungsbroker aktiviert haben, und Ihre App muss die Überladung von [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) aufrufen, für die kein *callbackUri*-Parameter angegeben wird. Auf diese Weise können persistente Cookies vom Webauthentifizierungsbroker gespeichert werden, so dass durch zukünftige Authentifizierungsaufrufe von derselben App wiederholte Anmeldungen des Benutzers nicht erforderlich sind (der angemeldete Benutzer bleibt solange angemeldet, bis das Zugriffstoken abgelaufen ist).
+Der Webauthentifizierungsbroker lässt das Beibehalten von Cookies standardmäßig nicht zu. Daher muss sich der App-Benutzer jedes Mal anmelden, wenn er auf Ressourcen für diesen Anbieter zugreifen möchte – auch wenn er angibt, dass er angemeldet bleiben möchte (z. B. durch Aktivieren eines Kontrollkästchens im Anmeldedialogfeld des Anbieters). Um die Anmeldung mit Single Sign-On (SSO) durchführen zu können, muss der Onlineidentitätsanbieter SSO für den Webauthentifizierungsbroker aktiviert haben, und Ihre App muss die Überladung von [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) aufrufen, für die kein *callbackUri*-Parameter angegeben wird. Auf diese Weise können persistente Cookies vom Webauthentifizierungsbroker gespeichert werden, so dass durch zukünftige Authentifizierungsaufrufe von derselben App wiederholte Anmeldungen des Benutzers nicht erforderlich sind (der angemeldete Benutzer bleibt solange angemeldet, bis das Zugriffstoken abgelaufen ist).
 
-Zur Unterstützung von SSO muss der Onlineanbieter die Registrierung eines Umleitungs-URIs im Format `ms-app://<appSID>` zulassen (`<appSID>` ist die SID für Ihre App). Die SID Ihrer App finden Sie auf der App-Entwicklerseite Ihrer App. Sie können auch die [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069)-Methode aufrufen, um die SID festzustellen.
+Zur Unterstützung von SSO muss der Onlineanbieter die Registrierung eines Umleitungs-URIs im Format `ms-app://<appSID>` zulassen (`<appSID>` ist die SID für Ihre App). Die SID Ihrer App finden Sie auf der App-Entwicklerseite Ihrer App. Sie können auch die [**GetCurrentApplicationCallbackUri**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.getcurrentapplicationcallbackuri)-Methode aufrufen, um die SID festzustellen.
 
 ```cs
 string result;
@@ -157,7 +157,7 @@ Der Fiddler-Webdebugger kann Apps verwendet werden.
 
 1.  Da die AuthHost in einem eigenen app-Container ausgeführt wird, müssen Sie die VPN-Funktion an einen Registrierungsschlüssel festlegen: Windows-Registrierungs-Editor-Version 5.00
 
-    **HKEY\_lokalen\_Computer**\\**SOFTWARE**\\**Microsoft**\\**Windows NT** \\ **"CurrentVersion"**\\**Image File Execution Options**\\**authhost.exe** \\ **EnablePrivateNetwork** = 00000001
+    **HKEY\_lokalen\_Computer**\\**SOFTWARE**\\**Microsoft**\\**Windows NT** \\ **"CurrentVersion"** \\**Image File Execution Options**\\**authhost.exe** \\ **EnablePrivateNetwork** = 00000001
 
     Wenn Sie diesen Registrierungsschlüssel nicht haben, können Sie sie an einer Eingabeaufforderung mit Administratorrechten erstellen.
 

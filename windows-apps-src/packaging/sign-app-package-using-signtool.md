@@ -6,28 +6,28 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7748ff7d5acf8a94c92e2b51953299131910d63e
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: 71544129480cb55432c222a0481c2a49934cb658
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320573"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372344"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Signieren eines App-Pakets mit SignTool
 
 **SignTool** ist ein Befehlszeilentool, mit dem ein App-Paket oder -Bündel mit einem Zertifikat digital signiert wird. Das Zertifikat kann vom Benutzer (zu Testzwecken) erstellt oder von einem Unternehmen (für die Verteilung) ausgestellt sein. Die Signierung eines App-Pakets bietet dem Benutzer den Nachweis, dass die App-Daten nach der Signierung nicht geändert wurden, sowie die Bestätigung der Identität des Benutzers oder Unternehmens, die es signiert haben. **SignTool** kann verschlüsselte oder unverschlüsselte App-Pakete und -Bündel signieren.
 
 > [!IMPORTANT] 
-> Wenn Sie Visual Studio zum Entwickeln der App verwendet haben, wird empfohlen, dass Sie den Visual Studio-Assistenten zum Erstellen und Signieren des App-Pakets verwenden. Weitere Informationen finden Sie unter [Verpacken einer UWP-App mit Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+> Wenn Sie Visual Studio zum Entwickeln der App verwendet haben, wird empfohlen, dass Sie den Visual Studio-Assistenten zum Erstellen und Signieren des App-Pakets verwenden. Weitere Informationen finden Sie unter [Verpacken einer UWP-App mit Visual Studio](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-Weitere Informationen zur Codesignatur und zu Zertifikaten im Allgemeinen finden Sie unter [Einführung in die Codesignatur](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing).
+Weitere Informationen zur Codesignatur und zu Zertifikaten im Allgemeinen finden Sie unter [Einführung in die Codesignatur](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools).
 
 ## <a name="prerequisites"></a>Vorraussetzungen
 - **Ein app-Paket**  
-    Weitere Informationen über das manuelle Erstellen eines App-Pakets finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). 
+    Weitere Informationen über das manuelle Erstellen eines App-Pakets finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). 
 
 - **Ein gültiges Signaturzertifikat**  
-    Weitere Informationen zum Erstellen oder Importieren ein gültiges Signaturzertifikats finden Sie unter [Erstellen oder Importieren eines Zertifikats für die Paketsignierung](https://msdn.microsoft.com/windows/uwp/packaging/create-certificate-package-signing).
+    Weitere Informationen zum Erstellen oder Importieren ein gültiges Signaturzertifikats finden Sie unter [Erstellen oder Importieren eines Zertifikats für die Paketsignierung](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing).
 
 - **SignTool.exe**  
     Abhängig vom Installationspfad des SDK befindet sich **SignTool** an folgenden Speicherorten auf Ihrem Windows 10-PC:
@@ -36,12 +36,12 @@ Weitere Informationen zur Codesignatur und zu Zertifikaten im Allgemeinen finden
 
 ## <a name="using-signtool"></a>Verwenden von SignTool
 
-**SignTool** kann zum Signieren von Dateien, Überprüfen von Signaturen oder Zeitstempeln, Entfernen von Signaturen und mehr verwendet werden. Um ein App-Paket zu signieren, benötigen Sie den Befehl **sign**. Vollständige Informationen zu **SignTool** finden Sie auf der [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)-Referenzseite. 
+**SignTool** kann zum Signieren von Dateien, Überprüfen von Signaturen oder Zeitstempeln, Entfernen von Signaturen und mehr verwendet werden. Um ein App-Paket zu signieren, benötigen Sie den Befehl **sign**. Vollständige Informationen zu **SignTool** finden Sie auf der [SignTool](https://docs.microsoft.com/windows/desktop/SecCrypto/signtool)-Referenzseite. 
 
 ### <a name="determine-the-hash-algorithm"></a>Ermitteln des Hashalgorithmus
 Wenn Sie mit **SignTool** Ihr App-Paket oder -Bündel signieren, muss der in **SignTool** verwendete Hashalgorithmus derselbe Algorithmus sein, den Sie beim Packen Ihre App verwendet haben. Wenn Sie z. B. **MakeAppx.exe** verwendet haben, um Ihr App-Paket mit den Standardeinstellungen zu erstellen, müssen Sie SHA256 in **SignTool** angeben, da das der von **MakeAppx.exe** verwendete Standardalgorithmus ist.
 
-Um herauszufinden, welcher Hashalgorithmus beim Packen einer App verwendet wurde, extrahieren Sie den Inhalt des App-Pakets und überprüfen die Datei AppxBlockMap.xml. Weitere Informationen zum Entpacken/Extrahieren eines App-Pakets finden Sie unter [Extrahieren von Dateien aus einem Paket oder Bündel](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle). Die Hashmethode befindet sich im BlockMap-Element und besitzt dieses Format:
+Um herauszufinden, welcher Hashalgorithmus beim Packen einer App verwendet wurde, extrahieren Sie den Inhalt des App-Pakets und überprüfen die Datei AppxBlockMap.xml. Weitere Informationen zum Entpacken/Extrahieren eines App-Pakets finden Sie unter [Extrahieren von Dateien aus einem Paket oder Bündel](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). Die Hashmethode befindet sich im BlockMap-Element und besitzt dieses Format:
 
 ```xml
 <BlockMap xmlns="http://schemas.microsoft.com/appx/2010/blockmap" 
@@ -106,7 +106,7 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 
 Beachten Sie, dass einige Zertifikate kein Kennwort verwenden. Wenn Ihr Zertifikat über kein Kennwort verfügt, geben Sie „/p &lt;Your Password&gt;” in der Beispielbefehle nicht an.
 
-Wenn Ihr App-Paket mit einem gültigen Zertifikat signiert ist, können Sie das Paket in den Store hochladen. Weitere Informationen zum Hochladen und Übermitteln von Apps an den Store finden Sie unter [App-Übermittlungen](https://msdn.microsoft.com/windows/uwp/publish/app-submissions).
+Wenn Ihr App-Paket mit einem gültigen Zertifikat signiert ist, können Sie das Paket in den Store hochladen. Weitere Informationen zum Hochladen und Übermitteln von Apps an den Store finden Sie unter [App-Übermittlungen](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
 ## <a name="common-errors-and-troubleshooting"></a>Häufige Fehler und Problembehandlung
 Die häufigsten Fehlertypen bei der Verwendung von **SignTool** sind interne Fehler, die in der Regel wie folgt aussehen:
@@ -137,4 +137,4 @@ Der interne Fehler 0x8007000B entspricht in der Regel einem der folgenden Werte:
 |--------------|--------------------------|----------------|
 | 150          | Fehler 0x8007000B: Der Name der app-manifest Verleger (CN = Contoso) muss der Antragstellername des signierenden Zertifikats überein (CN = Contoso, C = US). | Der Name des Herausgebers des App-Manifests muss exakt mit dem Namen des Antragstellers der Signatur übereinstimmen.               |
 | 151          | Fehler 0x8007000B: Die Signaturmethode des Hash übereinstimmen angegebenen (SHA512) der Hash-Methode, die in der app-Paket (SHA256) verwendet.     | Der im Parameter /fd angegebene Hashalgorithmus ist falsch. Führen Sie **SignTool** erneut mit dem Hashalgorithmus aus, der mit der App-Paketblockzuordnung übereinstimmt (mit dem das App-Paket erstellt wurde).  |
-| 152          | Fehler 0x8007000B: Der Inhalt des app-Pakets müssen für die Zuordnung der Block überprüfen.                                                           | Das App-Paket ist beschädigt und muss neu erstellt werden, um eine neue Blockzuordnung zu generieren. Weitere Informationen zum Erstellen eines App-Pakets finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). |
+| 152          | Fehler 0x8007000B: Der Inhalt des app-Pakets müssen für die Zuordnung der Block überprüfen.                                                           | Das App-Paket ist beschädigt und muss neu erstellt werden, um eine neue Blockzuordnung zu generieren. Weitere Informationen zum Erstellen eines App-Pakets finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). |

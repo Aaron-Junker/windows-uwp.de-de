@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c12acd2148c8c85d69354a71c016d7a7230e590b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 07707160846f3d63c7d0c097fb7b84def08be9e7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605455"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366695"
 ---
 # <a name="drag-animations"></a>Animationen für Drag & Drop-Vorgang
 
@@ -22,7 +22,7 @@ ms.locfileid: "57605455"
 
 Verwenden Sie Drag & Drop-Animationen, wenn Benutzer Objekte verschieben, z. B. wenn sie ein Element innerhalb einer Liste verschieben oder ein Element auf einem anderen ablegen.
 
-> **Wichtige APIs:** [**DragItemThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br243174)
+> **Wichtige APIs:** [**DragItemThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -57,12 +57,12 @@ Verwenden Sie Drag & Drop-Animationen, wenn Benutzer Objekte verschieben, z. B. 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 **Für Entwickler**
-* [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animieren von Drag & Drop-Sequenzen](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**DragItemThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br243174)
-* [**DropTargetItemThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br243186)
-* [**DragOverThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br243180)
+* [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Animieren von Drag & Drop-Sequenzen](https://docs.microsoft.com/previous-versions/windows/apps/jj649427(v=win.10))
+* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**DragItemThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
+* [**DropTargetItemThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.droptargetitemthemeanimation.)
+* [**DragOverThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation.)
 
 
  

@@ -9,33 +9,33 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a3615dac98c5bc8469c8c8ebc47ef718c0131844
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f7cc27df92329157f2987d8d02eb59039534d166
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653395"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370105"
 ---
 # <a name="generate-a-3mf-package"></a>Generieren eines 3MF-Pakets
 
 **Wichtige APIs**
 
--   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
+-   [**Windows.Graphics.Printing3D**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
 
-Dieses Handbuch beschreibt die Struktur des 3D Manufacturing Format-Dokuments und wie dieses mit der [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)-API erstellt und bearbeitet werden kann.
+Dieses Handbuch beschreibt die Struktur des 3D Manufacturing Format-Dokuments und wie dieses mit der [**Windows.Graphics.Printing3D**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)-API erstellt und bearbeitet werden kann.
 
 ## <a name="what-is-3mf"></a>Was ist 3MF?
 
 Das 3D Manufacturing Format ist ein Satz von Konventionen für die Verwendung von XML, um die Darstellung und Struktur von 3D-Modellen zu beschreiben, die für die Fertigung eingesetzt werden (3D-Druck). Es definiert einen Satz von Teilen (von denen einige erforderlich und andere optional sind) und ihre Beziehungen. Ziel dabei ist es, alle erforderlichen Informationen für ein 3D-Fertigungsgerät bereitzustellen. Ein Datensatz, der dem 3D Manufacturing Format entspricht, kann als Datei mit der Erweiterung „.3mf“ gespeichert werden.
 
-In Windows 10 die [ **Printing3D3MFPackage** ](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) -Klasse in der **Windows.Graphics.Printing3D** Namespace ist analog zu einer einzelnen .3mf-Datei, und andere klassenentsprechungen im Vergleich zu der bestimmte XML-Elemente in der Datei. In diesem Handbuch wird beschrieben, wie die einzelnen Hauptbestandteile eines 3MF-Dokuments erstellt und programmgesteuert festgelegt werden können, wie die 3MF Materials-Erweiterung genutzt werden kann und wie ein **Printing3D3MFPackage**-Objekt konvertiert und als 3MF-Datei gespeichert werden kann. Weitere Informationen zu den Standards der 3MF- oder der 3MF Materials-Erweiterung finden Sie in der [3MF-Spezifikation](https://3mf.io/what-is-3mf/3mf-specification/).
+In Windows 10 die [ **Printing3D3MFPackage** ](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage) -Klasse in der **Windows.Graphics.Printing3D** Namespace ist analog zu einer einzelnen .3mf-Datei, und andere klassenentsprechungen im Vergleich zu der bestimmte XML-Elemente in der Datei. In diesem Handbuch wird beschrieben, wie die einzelnen Hauptbestandteile eines 3MF-Dokuments erstellt und programmgesteuert festgelegt werden können, wie die 3MF Materials-Erweiterung genutzt werden kann und wie ein **Printing3D3MFPackage**-Objekt konvertiert und als 3MF-Datei gespeichert werden kann. Weitere Informationen zu den Standards der 3MF- oder der 3MF Materials-Erweiterung finden Sie in der [3MF-Spezifikation](https://3mf.io/what-is-3mf/3mf-specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
 
 ## <a name="core-classes-in-the-3mf-structure"></a>Hauptklassen in der 3MF-Struktur
 
-Die **Printing3D3MFPackage**-Klasse stellt ein vollständiges 3MF-Dokument dar, und den Kern eines 3MF-Dokuments bildet der Modellbestandteil, der durch die [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx)-Klasse dargestellt wird. Der Großteil der Informationen, die zu einem 3D-Modell angegeben werden, werden gespeichert, indem die Eigenschaften der **Printing3DModel**-Klasse und die Eigenschaften der zugrunde liegenden Klassen festgelegt werden.
+Die **Printing3D3MFPackage**-Klasse stellt ein vollständiges 3MF-Dokument dar, und den Kern eines 3MF-Dokuments bildet der Modellbestandteil, der durch die [**Printing3DModel**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmodel)-Klasse dargestellt wird. Der Großteil der Informationen, die zu einem 3D-Modell angegeben werden, werden gespeichert, indem die Eigenschaften der **Printing3DModel**-Klasse und die Eigenschaften der zugrunde liegenden Klassen festgelegt werden.
 
 [!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
 
@@ -49,7 +49,7 @@ Der Modellteil eines 3MF-Dokuments kann Metadaten in Form von Schlüssel-Wert-Pa
 
 ## <a name="mesh-data"></a>Gitterdaten
 
-Im Kontext dieses Handbuchs bezeichnet ein Gitter einen Körper mit dreidimensionaler Geometrie, der anhand eines einzelnen Satzes von Scheitelpunkten erstellt wird (obwohl das Gitter nicht zwangsläufig als Festkörper angezeigt werden muss). Ein Gitterteil wird durch die [**Printing3DMesh**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx)-Klasse dargestellt. Ein gültiges Gitterobjekt muss Informationen über die Lage aller Scheitelpunkte sowie alle Dreiecksoberflächen enthalten, die zwischen bestimmten Scheitelpunktsätzen vorhanden sind.
+Im Kontext dieses Handbuchs bezeichnet ein Gitter einen Körper mit dreidimensionaler Geometrie, der anhand eines einzelnen Satzes von Scheitelpunkten erstellt wird (obwohl das Gitter nicht zwangsläufig als Festkörper angezeigt werden muss). Ein Gitterteil wird durch die [**Printing3DMesh**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmesh)-Klasse dargestellt. Ein gültiges Gitterobjekt muss Informationen über die Lage aller Scheitelpunkte sowie alle Dreiecksoberflächen enthalten, die zwischen bestimmten Scheitelpunktsätzen vorhanden sind.
 
 Mit der folgenden Methode werden einem Gitter Scheitelpunkte hinzugefügt. Diesen Scheitelpunkten wird dann im 3D-Raum eine Lage zugewiesen:
 
@@ -118,7 +118,7 @@ Um festzulegen, welche Materialien welchen Scheitelpunkten der einzelnen Dreieck
 
 ## <a name="components-and-build"></a>Komponenten und Erstellung
 
-Die Komponentenstruktur ermöglicht es dem Benutzer, mehrere Gitterobjekte in einem druckbaren 3D-Modell zu platzieren. Ein [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx)-Objekt enthält ein einzelnes Gitter und eine Liste der Verweise auf andere Komponenten. Hierbei handelt es sich eigentlich um eine Liste der [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx)-Objekte. **Printing3DComponentWithMatrix**-Objekte enthalten jeweils eine **Printing3DComponent** und insbesondere eine Transformationsmatrix, die auf das Gitter und die enthaltenen Komponenten der **Printing3DComponent** angewendet wird.
+Die Komponentenstruktur ermöglicht es dem Benutzer, mehrere Gitterobjekte in einem druckbaren 3D-Modell zu platzieren. Ein [**Printing3DComponent**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dcomponent)-Objekt enthält ein einzelnes Gitter und eine Liste der Verweise auf andere Komponenten. Hierbei handelt es sich eigentlich um eine Liste der [**Printing3DComponentWithMatrix**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dcomponentwithmatrix)-Objekte. **Printing3DComponentWithMatrix**-Objekte enthalten jeweils eine **Printing3DComponent** und insbesondere eine Transformationsmatrix, die auf das Gitter und die enthaltenen Komponenten der **Printing3DComponent** angewendet wird.
 
 Das Modell eines Autos könnte zum Beispiel aus einer „Karosserie“-**Printing3DComponent** bestehen, die das Gitter für die Karosserie enthält. Die „Karosserie“-Komponente kann dann Verweise auf vier verschiedene **Printing3DComponentWithMatrix**-Objekte enthalten, die alle auf dieselbe **Printing3DComponent** mit dem Gitter „Reifen“ verweisen und vier verschiedene Transformationsmatrizen enthalten (die die Reifen vier verschiedenen Positionen an der Karosserie zuordnen). In diesem Szenario müssen die Gitter „Karosserie“ und „Reifen“ nur jeweils einmal gespeichert werden, obwohl das endgültige Produkt insgesamt fünf Gitter umfassen würde.
 
@@ -131,7 +131,7 @@ Das vorliegende Modell mit den definierten Materialien und Komponenten kann nun 
 
 [!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
 
-Jetzt kann ein Druckauftrag in der App gestartet (siehe [3D-Drucken in der App](https://msdn.microsoft.com/library/windows/apps/mt204541.aspx)) oder das **Printing3D3MFPackage** als 3MF-Datei gespeichert werden.
+Jetzt kann ein Druckauftrag in der App gestartet (siehe [3D-Drucken in der App](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)) oder das **Printing3D3MFPackage** als 3MF-Datei gespeichert werden.
 
 Die folgende Methode akzeptiert ein fertiges **Printing3D3MFPackage** und speichert die Daten in einer 3MF-Datei.
 
@@ -139,7 +139,7 @@ Die folgende Methode akzeptiert ein fertiges **Printing3D3MFPackage** und speich
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-[3D-Druck aus Ihrer app](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[3D-Druck aus Ihrer app](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
 [3D drucken UWP-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 

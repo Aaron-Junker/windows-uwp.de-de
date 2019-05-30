@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e1f7e787f2ee80a3168d38a9afd9a249dc0e6de0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 81b2bc5e78087b19d8829df4dab4b03e4db76467
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603065"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370978"
 ---
 # <a name="pixel-shader-ps-stage"></a>Pixelshaderphase (PS)
 
 
 Die Pixelshaderphase (PS) empfängt interpolierte Daten für einen Grundtyp und generiert Pro-Pixel-Daten (z. B. die Farbe).
 
-Hierbei handelt es sich um eine programmierbare Shaderphase. Sie wird als abgerundeter Block im Diagramm [-Grafikpipeline](graphics-pipeline.md) angezeigt. Diese Shaderphase bietet eigene eindeutige Funktionen, die auf dem Shadermodell 4.0 [gemeinsamer Shaderkern](https://msdn.microsoft.com/library/windows/desktop/bb509580) basieren.
+Hierbei handelt es sich um eine programmierbare Shaderphase. Sie wird als abgerundeter Block im Diagramm [-Grafikpipeline](graphics-pipeline.md) angezeigt. Diese Shaderphase bietet eigene eindeutige Funktionen, die auf dem Shadermodell 4.0 [gemeinsamer Shaderkern](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core) basieren.
 
 Die Pixelshaderphase (PS) aktiviert umfassende Schattierungstechniken wie z. B. Beleuchtung pro Pixel und Nachbearbeitung. Ein Pixelshader ist ein Programm, das Konstantenvariablen, Texturdaten, interpolierte Vertex-Werte und andere Daten für Pro-Pixel-Ausgaben kombiniert. Die [Rasterizerphase (RS)](rasterizer-stage--rs-.md) ruft für jeden von einem Grundtyp abgedeckten Pixel einen Pixelshader auf, es ist jedoch möglich, einen **NULL**-Shader anzugeben, um zu vermeiden, dass ein Shader ausgeführt wird.
 
@@ -34,9 +34,9 @@ Wenn die Pipeline ohne einen Geometry-Shader konfiguriert wurde, ist ein Pixel-S
 
 Zu den Eingabedaten für den Pixel-Shader gehören Vertexattribute, die mit oder ohne perspektivische Korrekturen interpoliert werden können oder als Konstanten pro Grundform behandelt werden können. Pixel-Shader-Eingaben werden anhand der Vertexattribute der zu rasternden Grundform interpoliert, basierend auf dem deklarierten Interpolationsmodus. Wenn eine Grundform vor der Rasterung gekappt wird, wird der Interpolationsmodus auch während des Clippingvorgangs Clipping berücksichtigt.
 
-Vertexattribute werden an Pixelshader-Rechenzentrumsstandort interpoliert (oder ausgewertet). Die Interpolationsmodi des Pixeshader-Attributs werden in einer Eingabe-Registererklärungregister pro Element in einem [Argument](https://msdn.microsoft.com/library/windows/desktop/bb509606) oder einer [Eingabestruktur](https://msdn.microsoft.com/library/windows/desktop/bb509668) deklariert. Attribute können linear werden oder mit Schwerpunkt-Sampling interpoliert werden. Weitere Informationen finden Sie im Abschnitt "Schwerpunkt-Sampling von Attributen beim Multisample-Antialiasing" [Regeln für die Rasterung](rasterization-rules.md). Die Bewertung des Schwerpunkts ist nur während des Multisampling relevant, um Fälle abzudecken, in denen zwar ein Pixel, aber nicht die Pixelmitte von einem Grundtyp abgedeckt wird. Die Bewertung des Schwerpunktes erfolgt so nah wie möglich an der (nicht abgedeckten) Pixelmitte.
+Vertexattribute werden an Pixelshader-Rechenzentrumsstandort interpoliert (oder ausgewertet). Die Interpolationsmodi des Pixeshader-Attributs werden in einer Eingabe-Registererklärungregister pro Element in einem [Argument](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-function-parameters) oder einer [Eingabestruktur](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-struct) deklariert. Attribute können linear werden oder mit Schwerpunkt-Sampling interpoliert werden. Weitere Informationen finden Sie im Abschnitt "Schwerpunkt-Sampling von Attributen beim Multisample-Antialiasing" [Regeln für die Rasterung](rasterization-rules.md). Die Bewertung des Schwerpunkts ist nur während des Multisampling relevant, um Fälle abzudecken, in denen zwar ein Pixel, aber nicht die Pixelmitte von einem Grundtyp abgedeckt wird. Die Bewertung des Schwerpunktes erfolgt so nah wie möglich an der (nicht abgedeckten) Pixelmitte.
 
-Eingaben können auch mit einer [-Systemwertsemantik](https://msdn.microsoft.com/library/windows/desktop/bb509647) deklariert werden, die einen Parameter kennzeichnet, der von anderen Pipelinephasen genutzt wird. Z. B. eine Pixelposition sollte mit PA markiert werden\_semantische Position. Die [Eingabe-Assembler (IA) Phase](input-assembler-stage--ia-.md) kann eine skalare für ein Pixel-Shader erstellen (SV mit\_PrimitiveID); die [des Rasterizers (RS)-Phase](rasterizer-stage--rs-.md) können auch eine skalare für ein Pixel-Shader (mithilfe von SVgenerieren\_ IsFrontFace).
+Eingaben können auch mit einer [-Systemwertsemantik](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) deklariert werden, die einen Parameter kennzeichnet, der von anderen Pipelinephasen genutzt wird. Z. B. eine Pixelposition sollte mit PA markiert werden\_semantische Position. Die [Eingabe-Assembler (IA) Phase](input-assembler-stage--ia-.md) kann eine skalare für ein Pixel-Shader erstellen (SV mit\_PrimitiveID); die [des Rasterizers (RS)-Phase](rasterizer-stage--rs-.md) können auch eine skalare für ein Pixel-Shader (mithilfe von SVgenerieren\_ IsFrontFace).
 
 ## <a name="span-idoutputsspanspan-idoutputsspanspan-idoutputsspanoutputs"></a><span id="Outputs"></span><span id="outputs"></span><span id="OUTPUTS"></span>Ausgaben
 

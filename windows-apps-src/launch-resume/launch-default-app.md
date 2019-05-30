@@ -6,21 +6,21 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c5c8b99ec3646d1eebbb922557f97c9e9304ed4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d80cb18fc502df5f6d51d2b7bdc719e860730534
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658365"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370880"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Starten der Standard-App für einen URI
 
 
 **Wichtige APIs**
 
-- [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
-- [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
-- [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
+- [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
+- [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+- [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 Erfahren Sie, wie Sie die Standard-App für einen Uniform Resource Identifier (URI) starten. URIs ermöglichen den Start einer anderen App zum Ausführen einer bestimmten Aufgabe. Dieses Thema enthält auch eine Übersicht über die zahlreichen in Windows integrierten URI-Schemas. Sie können außerdem benutzerdefinierte URIs starten. Weitere Informationen zum Registrieren eines benutzerdefinierten URI-Schemas und Behandeln der URI-Aktivierung finden Sie unter [Behandeln der URI-Aktivierung](handle-uri-activation.md).
 
@@ -32,16 +32,16 @@ In diesem Thema werden einige der folgenden URI-Schemas beschrieben, die in Wind
 | ----------:|----------|
 |[Bingmaps:, ms-Laufwerk-to:, und ms-Walk-to: ](#maps-app-uri-schemes) | Karten-App |
 |[http:](#http-uri-scheme) | Standardwebbrowser |
-|[Mailto:](#email-uri-scheme) | Standard-E-Mail-App |
-|[MS-Aufruf:](#call-app-uri-scheme) |  Anruf-App |
-|[MS-Chat:](#messaging-app-uri-scheme) | Messaging-App |
-|[MS-Personen:](#people-app-uri-scheme) | Kontakte-App |
-|[MS-Fotos:](#photos-app-uri-scheme) | Fotos-App |
-|[MS-Einstellungen:](#settings-app-uri-scheme) | Einstellungs-App |
-|[MS-Store:](#store-app-uri-scheme)  | Store-App |
-|[MS-Tonepicker:](#tone-picker-uri-scheme) | Tonauswahl |
-|[MS-Yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers-App |
-|[Msnweather:](#weather-app-uri-scheme) | Wetter-app |
+|[mailto:](#email-uri-scheme) | Standard-E-Mail-App |
+|[ms-call:](#call-app-uri-scheme) |  Anruf-App |
+|[ms-chat:](#messaging-app-uri-scheme) | Messaging-App |
+|[ms-people:](#people-app-uri-scheme) | Kontakte-App |
+|[ms-photos:](#photos-app-uri-scheme) | Fotos-App |
+|[ms-settings:](#settings-app-uri-scheme) | Einstellungs-App |
+|[ms-store:](#store-app-uri-scheme)  | Store-App |
+|[ms-tonepicker:](#tone-picker-uri-scheme) | Tonauswahl |
+|[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers-App |
+|[msnweather:](#weather-app-uri-scheme) | Wetter-app |
 
 <br>
 Der folgende URI öffnet beispielsweise den Standardbrowser und zeigt die Bing-Website an.
@@ -54,9 +54,9 @@ Im Allgemeinen kann die App nicht die App auswählen, die gestartet wird. Der Be
 
 ### <a name="call-launchuriasync-to-launch-a-uri"></a>Aufruf von „LaunchUriAsync“ zum Starten eines URI
 
-Verwenden Sie die Methode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), um einen URI zu starten. Beim Aufrufen dieser Methode muss Ihre App im Vordergrund ausgeführt werden, d. h., sie muss für den Benutzer sichtbar sein. Durch diese Anforderung wird sichergestellt, dass der Benutzer zu jedem Zeitpunkt die Kontrolle behält. Verknüpfen Sie alle URI-Startvorgänge direkt mit der Benutzeroberfläche Ihrer App, um sicherzustellen, dass diese Anforderung erfüllt wird. Der Benutzer muss immer eine Aktion ausführen, um einen URI zu starten. Wenn Sie versuchen, einen URI zu starten, und Ihre App befindet sich nicht im Vordergrund, schlägt der Start fehl und Ihr Fehlerrückruf wird aufgerufen.
+Verwenden Sie die Methode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync), um einen URI zu starten. Beim Aufrufen dieser Methode muss Ihre App im Vordergrund ausgeführt werden, d. h., sie muss für den Benutzer sichtbar sein. Durch diese Anforderung wird sichergestellt, dass der Benutzer zu jedem Zeitpunkt die Kontrolle behält. Verknüpfen Sie alle URI-Startvorgänge direkt mit der Benutzeroberfläche Ihrer App, um sicherzustellen, dass diese Anforderung erfüllt wird. Der Benutzer muss immer eine Aktion ausführen, um einen URI zu starten. Wenn Sie versuchen, einen URI zu starten, und Ihre App befindet sich nicht im Vordergrund, schlägt der Start fehl und Ihr Fehlerrückruf wird aufgerufen.
 
-Erstellen Sie zunächst ein [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/system.uri.aspx)-Objekt, das den URI darstellt, und übergeben Sie es anschließend an die Methode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Verwenden Sie das Ergebnis, um zu überprüfen, ob der Aufruf erfolgreich war, wie im folgenden Beispiel gezeigt.
+Erstellen Sie zunächst ein [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)-Objekt, das den URI darstellt, und übergeben Sie es anschließend an die Methode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). Verwenden Sie das Ergebnis, um zu überprüfen, ob der Aufruf erfolgreich war, wie im folgenden Beispiel gezeigt.
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -82,7 +82,7 @@ In einigen Fällen fordert das Betriebssystem den Benutzer dazu auf, zu prüfen,
 
 ![Überlagerndes Warndialogfeld in der App auf grauem Hintergrund. Im Dialogfeld wird der Benutzer gefragt, ob die App gewechselt werden soll. Unten rechts sind die Schaltflächen „Ja“ und „Nein“ vorhanden. Die Schaltfläche „Nein“ ist hervorgehoben.](images/warningdialog.png)
 
-Wenn diese Aufforderung stets erfolgen soll, verwenden Sie die Eigenschaft [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442), um anzugeben, dass das Betriebssystem eine Warnung anzeigen soll.
+Wenn diese Aufforderung stets erfolgen soll, verwenden Sie die Eigenschaft [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.treatasuntrusted), um anzugeben, dass das Betriebssystem eine Warnung anzeigen soll.
 
 ```cs
 // The URI to launch
@@ -102,7 +102,7 @@ Es kann jedoch sein, dass der Benutzer nicht über die erforderliche App zum Bea
 
 Empfehlungen sind auch nützlich, wenn mehr als eine App zum Behandeln eines URI-Schema registriert wurde. Durch die Empfehlung einer bestimmten App öffnet Windows die App, wenn sie bereits installiert ist.
 
-Rufen Sie dazu die Methode [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701484) auf, wobei [**LauncherOptions.preferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) auf den Paketfamiliennamen der empfohlenen App im Store festgelegt ist. Diese Info wird vom Betriebssystem verwendet, um die allgemeine Option zum Suchen einer App im Store durch eine spezifische Option zum Erwerben der empfohlenen App im Store zu ersetzen.
+Rufen Sie dazu die Methode [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) auf, wobei [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) auf den Paketfamiliennamen der empfohlenen App im Store festgelegt ist. Diese Info wird vom Betriebssystem verwendet, um die allgemeine Option zum Suchen einer App im Store durch eine spezifische Option zum Erwerben der empfohlenen App im Store zu ersetzen.
 
 ```cs
 // Set the recommended app
@@ -117,9 +117,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="set-remaining-view-preference"></a>Festlegen der verbleibenden Ansichtseinstellung
 
-Quell-Apps, die [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) aufrufen, können anfordern, nach dem Start eines URIs auf dem Bildschirm zu verbleiben. Standardmäßig wird von Windows versucht, den gesamten verfügbaren Speicherplatz gleichmäßig zwischen der Quell- und der Ziel-App aufzuteilen, die den URI verarbeitet. Quell-Apps können die Eigenschaft [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) verwenden. Hiermit geben sie dem Betriebssystem an, mehr oder weniger des verfügbaren Speicherplatzes für ihr App-Fenster zu verwenden. **DesiredRemainingView** kann auch verwendet werden, um anzugeben, dass die Quell-App nach dem Start des URIs nicht auf dem Bildschirm verbleiben muss und vollständig durch die Ziel-App ersetzt werden kann. Mit dieser Eigenschaft wird nur die bevorzugte Fenstergröße der aufrufenden App angegeben. Es wird nicht das Verhalten anderer Apps angegeben, die ggf. zur gleichen Zeit auf dem Bildschirm angezeigt werden.
+Quell-Apps, die [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) aufrufen, können anfordern, nach dem Start eines URIs auf dem Bildschirm zu verbleiben. Standardmäßig wird von Windows versucht, den gesamten verfügbaren Speicherplatz gleichmäßig zwischen der Quell- und der Ziel-App aufzuteilen, die den URI verarbeitet. Quell-Apps können die Eigenschaft [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) verwenden. Hiermit geben sie dem Betriebssystem an, mehr oder weniger des verfügbaren Speicherplatzes für ihr App-Fenster zu verwenden. **DesiredRemainingView** kann auch verwendet werden, um anzugeben, dass die Quell-App nach dem Start des URIs nicht auf dem Bildschirm verbleiben muss und vollständig durch die Ziel-App ersetzt werden kann. Mit dieser Eigenschaft wird nur die bevorzugte Fenstergröße der aufrufenden App angegeben. Es wird nicht das Verhalten anderer Apps angegeben, die ggf. zur gleichen Zeit auf dem Bildschirm angezeigt werden.
 
-**Beachten Sie**  Windows berücksichtigt mehrere verschiedene Faktoren, wenn es der quellanwendung abschließende Fenstergröße, z. B. ermittelt, die Einstellung der Quell-app, die Anzahl der apps auf dem Bildschirm, bildschirmausrichtung und So weiter. Das Festlegen von [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) garantiert kein bestimmtes Fensterverhalten für die Quell-App.
+**Beachten Sie**  Windows berücksichtigt mehrere verschiedene Faktoren, wenn es der quellanwendung abschließende Fenstergröße, z. B. ermittelt, die Einstellung der Quell-app, die Anzahl der apps auf dem Bildschirm, bildschirmausrichtung und So weiter. Das Festlegen von [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) garantiert kein bestimmtes Fensterverhalten für die Quell-App.
 
 ```cs
 // Set the desired remaining view.
@@ -161,13 +161,13 @@ Verwenden der **http:** URI-Schema, um die Standard-Webbrowser zu starten.
 
 ### <a name="maps-app-uri-schemes"></a>URI-Schemas für die Karten-App
 
-Verwenden der **Bingmaps:**, **ms-Laufwerk-to:**, und **ms-Walk-to:** URI der Systeme auf [starten Sie die app Windows ordnet](launch-maps-app.md) spezifische Zuordnungen, Anweisungen und Suchergebnisse. Der folgende URI startet beispielsweise die Windows-Karten-App und zeigt eine über New York City zentrierte Karte an.
+Verwenden der **Bingmaps:** , **ms-Laufwerk-to:** , und **ms-Walk-to:** URI der Systeme auf [starten Sie die app Windows ordnet](launch-maps-app.md) spezifische Zuordnungen, Anweisungen und Suchergebnisse. Der folgende URI startet beispielsweise die Windows-Karten-App und zeigt eine über New York City zentrierte Karte an.
 
 `bingmaps:?cp=40.726966~-74.006076`
 
 ![Ein Beispiel der Windows-Karten-App.](images/mapnyc.png)
 
-Weitere Informationen finden Sie unter [Starten der Windows-Karten-App](launch-maps-app.md). Informationen zum Verwenden des Kartensteuerelements in Ihrer eigenen App finden Sie unter [Anzeigen von Karten mit 2D-, 3D- und Streetside-Ansichten](https://msdn.microsoft.com/library/windows/apps/mt219695).
+Weitere Informationen finden Sie unter [Starten der Windows-Karten-App](launch-maps-app.md). Informationen zum Verwenden des Kartensteuerelements in Ihrer eigenen App finden Sie unter [Anzeigen von Karten mit 2D-, 3D- und Streetside-Ansichten](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps).
 
 ### <a name="messaging-app-uri-scheme"></a>URI-Schema für die Messaging-App
 
@@ -189,7 +189,7 @@ Verwenden der **ms-Tonepicker:** URI-Schema Klingeltöne, Alarme und System-Tön
 |------------|---------|
 | ms-tonepicker: | Wählen Sie Klingeltöne, Alarmtöne und Systemtöne aus. |
 
-Die Parameter werden über einen [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) an die LaunchURI-API übergeben. Weitere Informationen finden Sie unter [Auswählen und Speichern von Tönen mit dem URI-Schema „ms-tonepicker“](launch-ringtone-picker.md).
+Die Parameter werden über einen [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) an die LaunchURI-API übergeben. Weitere Informationen finden Sie unter [Auswählen und Speichern von Tönen mit dem URI-Schema „ms-tonepicker“](launch-ringtone-picker.md).
 
 ### <a name="nearby-numbers-app-uri-scheme"></a>URI-Schema für die Nearby Numbers-App
 
@@ -217,7 +217,7 @@ Oder um ein Video zu bearbeiten: `ms-photos:videoedit?InputToken=123abc&Action=T
 |------------|--------|
 | ms-photos:viewer?fileName={filename} | Startet die Fotos-App, um das gewünschte Bild anzuzeigen. {filename} muss ein vollqualifizierter Pfadname sein. Beispiel: `c:\users\userName\Pictures\ImageToView.jpg` |
 | ms-photos:videoedit?InputToken={input token} | Startet die Fotos-App im Videobearbeitungsmodus für die Datei, die durch das Dateitoken dargestellt wird. **InputToken** ist erforderlich. Sie können den [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) verwenden, um ein Dateitoken zu erhalten. |
-| ms-photos:videoedit?Action={action} | Ein optionaler Parameter, der die Fotos-app in der angegebenen video Bearbeitungsmodus geöffnet wird, wobei {Action} gibt: **SlowMotion**, **FrameExtraction**, **Trim**, **Ansicht**, **Freihandeingaben**. Wenn keine Angabe erfolgt, wird standardmäßig **Ansicht** verwendet |
+| ms-photos:videoedit?Action={action} | Ein optionaler Parameter, der die Fotos-app in der angegebenen video Bearbeitungsmodus geöffnet wird, wobei {Action} gibt: **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. Wenn keine Angabe erfolgt, wird standardmäßig **Ansicht** verwendet |
 | ms-photos:videoedit?StartTime={timespan} | Ein optionaler Parameter, der angibt, wo die Wiedergabe des Videos beginnt. `{timespan}` muss im Format `"hh:mm:ss.ffff"`. Wenn nicht angegeben ist, wird standardmäßig `00:00:00.0000` |
 
 ### <a name="settings-app-uri-scheme"></a>URI-Schema für die Einstellungs-App
@@ -228,7 +228,7 @@ Verwenden der **ms-Einstellungen:** URI-Schema, [starten Sie die Einstellungen f
 
 ![Datenschutzeinstellungen für die Kamera.](images/privacyawarenesssettingsapp.png)
 
-Weitere Informationen finden Sie unter [Starten der Einstellungs-App von Windows](launch-settings-app.md) und [Richtlinien für Apps mit Berücksichtigung von Datenschutz](https://msdn.microsoft.com/library/windows/apps/hh768223).
+Weitere Informationen finden Sie unter [Starten der Einstellungs-App von Windows](launch-settings-app.md) und [Richtlinien für Apps mit Berücksichtigung von Datenschutz](https://docs.microsoft.com/windows/uwp/security/index).
 
 ### <a name="store-app-uri-scheme"></a>URI-Schema für die Store-App
 
@@ -244,4 +244,4 @@ Verwenden der **Msnweather:** URI-Schema, um das Wetter-app zu starten.
 
 | URI-Schema | Ergebnisse |
 |------------|---------|
-| Msnweather://Forecast?LA=\[Latitude\]& lo =\[Längengrad\] | Startet die Wetter-app in der Vorhersage-Seite, die basierend auf einen Speicherort geografische Koordinaten an.<br>`latitude` bezieht sich auf der Breitengrad des Standorts.<br> `longitude` bezieht sich auf der Längengrad des Standorts.<br> |
+| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | Startet die Wetter-app in der Vorhersage-Seite, die basierend auf einen Speicherort geografische Koordinaten an.<br>`latitude` bezieht sich auf der Breitengrad des Standorts.<br> `longitude` bezieht sich auf der Längengrad des Standorts.<br> |

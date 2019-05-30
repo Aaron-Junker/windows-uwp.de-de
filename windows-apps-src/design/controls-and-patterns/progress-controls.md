@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a162d992390e8fc7d05d52303ec292fcf8e920a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a409c4b940ad0e194428981f536823d880e56302
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634425"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364488"
 ---
 # <a name="progress-controls"></a>Statussteuerelemente
 
@@ -25,7 +25,7 @@ ms.locfileid: "57634425"
 
 Ein Statussteuerelement gibt dem Benutzer eine Rückmeldung, dass ein Vorgang mit langer Laufzeit ausgeführt wird. Dies kann bedeuten, dass der Benutzer bei Anzeigen der Statusanzeige nicht mit der App interagieren kann. Je nach verwendetem Indikator wird auch die Länge der Wartezeit angegeben.
 
-> **Wichtige APIs:** [Klasse "ProgressBar"](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx), [IsIndeterminate Eigenschaft](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx), [ProgressRing Klasse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx), [IsActive-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **Wichtige APIs:** [Klasse "ProgressBar"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 ## <a name="types-of-progress"></a>Typen von Statussteuerelementen
 
@@ -74,7 +74,7 @@ Es ist nicht immer klar erkennbar, welches Steuerelement oder welcher Status (be
 
     Bei Verwendung eines ProgressBar-Elements ist die Interaktion nicht modal. Das bedeutet in der Regel, dass der Benutzer durch den Abschluss des Vorgangs nicht blockiert wird und die aktive App bis zum Abschluss der Aktion weiterhin verwenden kann.
 
--   **Schlüsselwörter**
+-   **Keywords**
 
     Wenn der anzuzeigende Vorgang sich mit den folgenden Schlüsselwörtern in Verbindung bringen lässt oder wenn Sie während des Vorgangs Text anzeigen möchten, in dem diese Schlüsselwörter vorkommen, sollten Sie ein ProgressBar-Element verwenden:
 
@@ -92,7 +92,7 @@ Es ist nicht immer klar erkennbar, welches Steuerelement oder welcher Status (be
 
     In diesem Fall verwenden Sie ein ProgressRing-Steuerelement, um den Benutzer auf eine unbestimmte Wartezeit hinzuweisen.
 
--   **Schlüsselwörter**
+-   **Keywords**
 
     Wenn der anzuzeigende Vorgang sich mit den folgenden Schlüsselwörtern in Verbindung bringen lässt oder wenn Sie während des Vorgangs Text anzeigen möchten, in dem diese Schlüsselwörter vorkommen, sollten Sie ein ProgressRing-Element verwenden:
 
@@ -187,9 +187,9 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Klasse "ProgressBar"](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [ProgressRing-Klasse](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [Klasse "ProgressBar"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
 
 **Für Entwickler (XAML)**
-- [Hinzufügen von Statussteuerelemente](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [Hinzufügen von Statussteuerelemente](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
 - [So erstellen Sie eine benutzerdefinierte unbestimmte Fortschrittsleiste für Windows Phone](https://go.microsoft.com/fwlink/p/?LinkID=392426)

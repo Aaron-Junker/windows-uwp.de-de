@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: Windows 10, UWP, Timer, Threads
 ms.localizationpriority: medium
-ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3afa1720ede9728e9cc25af434a431300faf26d6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631215"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371208"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Verwenden von Windows-Runtime-Objekten in einer Multithread-Umgebung
 In diesem Artikel wird beschrieben, wie das .NET Framework Aufrufe von C#- und Visual Basic-Code auf Objekte verarbeitet, die von der Windows-Runtime oder von Komponenten für Windows-Runtime bereitgestellt werden.
@@ -20,7 +20,7 @@ Im .NET Framework können Sie standardmäßig ohne besondere Verarbeitung über 
 
 Wann immer möglich, behandelt die Common Language Runtime (CLR) Objekte aus anderen Quellen, wie beispielsweise der Windows-Runtime, so, als wären sie .NET Framework-Objekte:
 
-- Wenn das Objekt die Schnittstelle [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) implementiert oder das Attribut [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) mit [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023) aufweist, wird es von der CLR so behandelt, als wäre es agil.
+- Wenn das Objekt die Schnittstelle [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) implementiert oder das Attribut [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) mit [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023) aufweist, wird es von der CLR so behandelt, als wäre es agil.
 
 - Wenn CLR einen Aufruf über den Thread marshallen kann, in dem er zum Threadingkontext des Zielobjekts gemacht wurde, geschieht dies transparent.
 
@@ -34,7 +34,7 @@ Alle Typen in der Komponente, die aktiviert werden können, sind standardmäßig
 > [!NOTE]
 >  Agilität bedeutet nicht, dass Threadsicherheit gegeben ist. Sowohl in der Windows-Runtime als auch im .NET Framework sind die meisten Klassen nicht threadsicher, da Threadsicherheit mit Leistungseinbußen verbunden ist und die meisten Objekte nie von mehreren Threads aufgerufen werden. Es ist effizienter, nur bei Bedarf den Zugriff auf einzelne Objekte zu synchronisieren (oder threadsichere Klassen zu verwenden).
 
-Wenn Sie eine Windows-Runtime-Komponente erstellen, können Sie die Standardeinstellung überschreiben. Informationen hierzu finden Sie in den Abschnitten [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface)-Schnittstelle und [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx)-Schnittstelle.
+Wenn Sie eine Windows-Runtime-Komponente erstellen, können Sie die Standardeinstellung überschreiben. Informationen hierzu finden Sie in den Abschnitten [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface)-Schnittstelle und [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject)-Schnittstelle.
 
 ## <a name="objects-from-the-windows-runtime"></a>Objekte aus der Windows-Runtime
 Die meisten Klassen in der Windows-Runtime sind agil, und die CLR behandelt diese als agil. In der Dokumentation für diese Klassen wird „MarshalingBehaviorAttribute(Agile)” unter den Klassenattributen genannt. Die Elemente in einigen dieser agilen Klassen, wie beispielsweise XAML-Steuerelemente, lösen jedoch Ausnahmen aus, wenn sie nicht für den UI-Thread aufgerufen werden. Der folgende Code versucht beispielsweise, einen Hintergrundthread zu verwenden, um eine Eigenschaft der Schaltfläche festzulegen, auf die geklickt wurde. Die [Content](https://go.microsoft.com/fwlink/p/?LinkId=256025)-Eigenschaft der Schaltfläche löst eine Ausnahme aus.
@@ -160,7 +160,7 @@ Standardmäßig sind die Klassen in der Komponente, die aktiviert werden kann, a
 
 Für Objekte, die im UI-Thread ausgeführt werden und Ausnahmen auslösen, wenn sie von einem anderen Thread als dem UI-Thread aufgerufen werden, können Sie das [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029)-Objekt des UI-Threads verwenden, um den Aufruf zu verteilen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 [C#-Handbuch](/dotnet/csharp/)
 
 [Leitfaden für Visual Basic](/dotnet/visual-basic/)

@@ -11,24 +11,24 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: f424a274d3e96b58f32875620f3165ccfac82ba6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d7f26e7a4ae05aaf3e197843e18273cb765754a0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612465"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371462"
 ---
 # <a name="handle-app-resume"></a>Behandeln der App-Fortsetzung
 
 **Wichtige APIs**
 
-- [**Fortsetzen**](https://msdn.microsoft.com/library/windows/apps/br242339)
+- [**Fortsetzen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming)
 
-Erfahren Sie, wo Sie Ihre Benutzeroberfläche aktualisieren, wenn das System die App fortsetzt. Im Beispiel in diesem Thema wird ein Ereignishandler für das [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)-Ereignis registriert.
+Erfahren Sie, wo Sie Ihre Benutzeroberfläche aktualisieren, wenn das System die App fortsetzt. Im Beispiel in diesem Thema wird ein Ereignishandler für das [**Resuming**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming)-Ereignis registriert.
 
 ## <a name="register-the-resuming-event-handler"></a>Registrieren des „resuming“-Ereignishandlers
 
-Registrieren Sie die Behandlung des [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)-Ereignisses, mit dem angegeben wird, dass der Benutzer aus der App und wieder zurück gewechselt hat.
+Registrieren Sie die Behandlung des [**Resuming**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming)-Ereignisses, mit dem angegeben wird, dass der Benutzer aus der App und wieder zurück gewechselt hat.
 
 ```csharp
 partial class MainPage
@@ -73,7 +73,7 @@ MainPage::MainPage()
 
 Das System hält Ihre App ein paar Sekunden an, nachdem der Benutzer zu einer anderen App oder zum Desktop wechselt. Wenn der Benutzer wieder zu Ihrer App wechselt, wird diese vom System fortgesetzt. Beim Fortsetzen der App haben die Variablen und Datenstrukturen den gleichen Inhalt wie vor der Unterbrechung. Das System stellt die App an der Stelle wieder her. Für den Benutzer sieht es so aus, als ob die App im Hintergrund ausgeführt wurde.
 
-Wenn Ihre App das [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)-Ereignis handhabt, wird sie möglicherweise für Stunden oder Tage angehalten. Sie sollte alle Inhalte aktualisieren, die während des Anhaltens der App ggf. veraltet sind, z. B. Newsfeeds oder der Standort des Benutzers.
+Wenn Ihre App das [**Resuming**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming)-Ereignis handhabt, wird sie möglicherweise für Stunden oder Tage angehalten. Sie sollte alle Inhalte aktualisieren, die während des Anhaltens der App ggf. veraltet sind, z. B. Newsfeeds oder der Standort des Benutzers.
 
 Dies ist auch ein guter Zeitpunkt, um alle exklusiven Ressourcen wiederzuherstellen, die Sie freigegeben haben, als Ihre App angehalten wurde, z. B. Dateihandles, Kameras, E/A-Geräte, externe Geräte und Netzwerkressourcen.
 
@@ -116,13 +116,13 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ```
 
 > [!NOTE]
-> Da die [ **wird fortgesetzt** ](https://msdn.microsoft.com/library/windows/apps/br242339) -Ereignis nicht vom UI-Thread ausgelöst wird, muss ein Verteiler in Ihrem Ereignishandler verwendet werden, um alle Aufrufe an die Benutzeroberfläche senden.
+> Da die [ **wird fortgesetzt** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming) -Ereignis nicht vom UI-Thread ausgelöst wird, muss ein Verteiler in Ihrem Ereignishandler verwendet werden, um alle Aufrufe an die Benutzeroberfläche senden.
 
 ## <a name="remarks"></a>Hinweise
 
 Wenn Ihre App an den Visual Studio-Debugger gebunden ist, wird sie nicht angehalten. Sie können sie aber vom Debugger anhalten und dann ein **Resume**-Ereignis senden, damit Sie den Code debuggen können. Sorgen Sie dafür, dass die Symbolleiste **Debugspeicherort** angezeigt wird, und klicken Sie auf das Dropdownelement neben dem Symbol **Anhalten**. Wählen Sie dann **Fortsetzen** aus.
 
-Für Windows Phone Store-Apps folgt auf das [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)-Ereignis immer [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), auch wenn Ihre App derzeit angehalten ist und der Benutzer Ihre App über eine primäre Kachel oder die App-Liste neu startet. Apps können die Initialisierung überspringen, wenn für das aktuelle Fenster bereits Inhalte festgelegt wurden. Überprüfen Sie die [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)-Eigenschaft, um zu ermitteln, ob die App über eine primäre oder sekundäre Kachel gestartet wurde. Entscheiden Sie basierend auf dieser Information, ob die App neu gestartet oder fortgesetzt werden soll.
+Für Windows Phone Store-Apps folgt auf das [**Resuming**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming)-Ereignis immer [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched), auch wenn Ihre App derzeit angehalten ist und der Benutzer Ihre App über eine primäre Kachel oder die App-Liste neu startet. Apps können die Initialisierung überspringen, wenn für das aktuelle Fenster bereits Inhalte festgelegt wurden. Überprüfen Sie die [**LaunchActivatedEventArgs.TileId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid)-Eigenschaft, um zu ermitteln, ob die App über eine primäre oder sekundäre Kachel gestartet wurde. Entscheiden Sie basierend auf dieser Information, ob die App neu gestartet oder fortgesetzt werden soll.
 
 ## <a name="related-topics"></a>Verwandte Themen
 

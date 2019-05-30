@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ddadde2502e8512ba38dc30c6ac24d22631d62c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657015"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372644"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Entsperren von Windows mit Windows Hello-Begleitgeräten (IoT)
 
@@ -50,7 +50,7 @@ Das Windows Hello-Begleitgeräteframework wird als Dienst unter Windows implemen
 
 Die Integration des Windows Hello-Begleitgeräteframeworks erfordert Folgendes:
 
-- Eine aus dem Windows Store heruntergeladene, für das Windows Hello-Begleitgerät bestimmte Begleitgeräte-App für die [universelle Windows-Plattform (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). 
+- Eine aus dem Windows Store heruntergeladene, für das Windows Hello-Begleitgerät bestimmte Begleitgeräte-App für die [universelle Windows-Plattform (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). 
 - Die Möglichkeit, auf dem Windows Hello-Begleitgerät zwei 256-Bit-HMAC-Schlüssel zu erstellen und damit HMAC (mit SHA-256) zu generieren.
 - Ordnungsgemäß konfigurierte Sicherheitsreinstellungen auf dem Windows 10-Desktopgerät. Bevor Windows Hello-Begleitgeräte eingebunden werden können, muss diese PIN für den Begleitauthentifizierungsdienst eingerichtet werden. Die Benutzer müssen über „Einstellungen“ > „Konten“ > „Anmeldeoptionen“ eine PIN einrichten.
 
@@ -216,7 +216,7 @@ Der gesamte API-Fluss sieht wie folgt aus:
 
 ### <a name="registration-and-de-registration"></a>Registrierung und Registrierungsaufhebung
 
-Zwei API-Aufrufe auf der Begleit-Authentifizierungsdienst eine Registrierung erforderlich ist: RequestStartRegisteringDeviceAsync und FinishRegisteringDeviceAsync.
+Zwei API-Aufrufe auf der Begleit-Authentifizierungsdienst eine Registrierung erforderlich ist: RequestStartRegisteringDeviceAsync and FinishRegisteringDeviceAsync.
 
 Bevor diese Aufrufe vorgenommen werden können, muss die Windows Hello-Begleitgeräte-App überprüfen, ob das Windows Hello-Begleitgerät verfügbar ist. Wenn das Windows Hello-Begleitgerät für die Generierung der HMAC-Schlüssel (Authentifizierungs- und Geräteschlüssel) zuständig ist, muss die Windows Hello-Begleitgeräte-App außerdem das Begleitgerät zur Generierung der Schlüssel auffordern, bevor einer der beiden obigen Aufrufe durchgeführt wird. Wenn die Windows Hello-Begleitgeräte-App für die Generierung der HMAC-Schlüssel zuständig ist, muss dieser Schritt vor den beiden obigen Aufrufen durchgeführt werden.
 
@@ -346,7 +346,7 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Authentifizierung
 
 Zwei API-Aufrufe auf der Begleit-Authentifizierungsdienst eine Authentifizierung erfordert: StartAuthenticationAsync und FinishAuthencationAsync.
 
@@ -634,7 +634,7 @@ Fehlermeldungen werden immer angezeigt und werden angezeigt, nachdem ein Absicht
 
 Folgende Anleitungs- und Fehlermeldungen stehen zur Verfügung. Der Gerätename ist ein Parameter und wird von der Begleitgeräte-App als Teil von „ShowNotificationMessageAsync“ übergeben.
 
-**Anleitungen**
+**Guidance**
 
 - „Wischen Sie nach oben oder drücken Sie die LEERTASTE, um sich mit *Gerätename* anzumelden.“
 - „Einrichtung des Begleitgeräts. Bitte warten Sie oder verwenden Sie eine andere Anmeldeoption.“

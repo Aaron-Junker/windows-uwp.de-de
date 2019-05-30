@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9efa6cae8994c12ce742aac0a6301346d6eae0d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: efd024838194876532dc3a1925f9c43430513cda
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622065"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370735"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>Portieren von Windows Phone Silverlight zu UWP für Formfaktoren und UX
 
@@ -48,15 +48,15 @@ Wir haben die Faktoren beschrieben, die für das Verständnis der Bildschirmgrö
 
 Die Mobilgeräteversion ist auf die Ausrichtung im Hochformat beschränkt, da dieses das beste Seitenverhältnis für die Bücherliste bietet. Für eine Seite mit Text, der auf Mobilgeräten am besten in einer einzelnen Spalte gehalten wird, würden wir ebenso vorgehen. Aber PC- und Tabletbildschirme sind in jeder Ausrichtung groß, und die Einschränkung der mobilen Geräte erscheint für größere Geräte unnötig.
 
-Durch das optische Zoomen der App wirkt diese wie die Mobilgeräteversion, nur größer. Das Gerät und sein zusätzlicher Platz werden nicht voll ausgeschöpft, was für den Benutzer nicht von Vorteil ist. Wir sollten mehr Inhalt anzeigen, anstatt nur den gleichen Inhalt größer anzuzeigen. Sogar auf einem Phablet könnten weitere Zeilen mit Inhalt angezeigt werden. Wir könnten den zusätzlichen Platz nutzen, um andere Inhalte wie Werbung anzuzeigen, oder wir könnten das Listenfeld in eine Listenansicht ändern und, wo möglich, Elemente in mehrere Spalten aufteilen. Siehe [Richtlinien für Listen- und Rasteransichts-Steuerelemente](https://msdn.microsoft.com/library/windows/apps/mt186889).
+Durch das optische Zoomen der App wirkt diese wie die Mobilgeräteversion, nur größer. Das Gerät und sein zusätzlicher Platz werden nicht voll ausgeschöpft, was für den Benutzer nicht von Vorteil ist. Wir sollten mehr Inhalt anzeigen, anstatt nur den gleichen Inhalt größer anzuzeigen. Sogar auf einem Phablet könnten weitere Zeilen mit Inhalt angezeigt werden. Wir könnten den zusätzlichen Platz nutzen, um andere Inhalte wie Werbung anzuzeigen, oder wir könnten das Listenfeld in eine Listenansicht ändern und, wo möglich, Elemente in mehrere Spalten aufteilen. Siehe [Richtlinien für Listen- und Rasteransichts-Steuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists).
 
-Zusätzlich zu den neuen Steuerelementen wie z. B. Listenansicht und der Rasteransicht verfügen die meisten Layouttypen festgelegten von Windows Phone Silverlight Entsprechungen in die universelle Windows-Plattform (UWP). Beispiele: [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) und [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635). Das Portieren des Großteils der Benutzeroberfläche, die diese Typen verwendet, sollte unkompliziert ablaufen. Suchen Sie jedoch immer nach Möglichkeiten, die dynamischen Layoutfunktionen dieser Layoutpanel zu nutzen und diese auf Geräten mit verschiedenen Größen automatisch anzupassen und neu zu gestalten.
+Zusätzlich zu den neuen Steuerelementen wie z. B. Listenansicht und der Rasteransicht verfügen die meisten Layouttypen festgelegten von Windows Phone Silverlight Entsprechungen in die universelle Windows-Plattform (UWP). Beispiele: [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas), [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) und [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel). Das Portieren des Großteils der Benutzeroberfläche, die diese Typen verwendet, sollte unkompliziert ablaufen. Suchen Sie jedoch immer nach Möglichkeiten, die dynamischen Layoutfunktionen dieser Layoutpanel zu nutzen und diese auf Geräten mit verschiedenen Größen automatisch anzupassen und neu zu gestalten.
 
 -Funktionen jenseits das dynamische Layout, die in der Systemsteuerelemente und LayoutPanel-Elemente, wir können ein neues Windows 10-Feature namens [Adaptive Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md).
 
 ## <a name="input-modalities"></a>Eingabemodalitäten
 
-Eine Windows Phone Silverlight-Benutzeroberfläche ist es sich um Touch-spezifisch. Die Benutzeroberflächen Ihrer portierten Apps sollten natürlich auch die Toucheingabe unterstützen, Sie können jedoch auch andere Eingabemodalitäten wie Maus und Tastatur zulassen. In der UWP sind Maus-, Stift- und Toucheingabe als *Zeigereingaben* zusammengefasst. Weitere Informationen finden Sie unter [Behandeln von Zeigereingaben](https://msdn.microsoft.com/library/windows/apps/mt404610) und [Tastaturinteraktionen](https://msdn.microsoft.com/library/windows/apps/mt185607).
+Eine Windows Phone Silverlight-Benutzeroberfläche ist es sich um Touch-spezifisch. Die Benutzeroberflächen Ihrer portierten Apps sollten natürlich auch die Toucheingabe unterstützen, Sie können jedoch auch andere Eingabemodalitäten wie Maus und Tastatur zulassen. In der UWP sind Maus-, Stift- und Toucheingabe als *Zeigereingaben* zusammengefasst. Weitere Informationen finden Sie unter [Behandeln von Zeigereingaben](https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input) und [Tastaturinteraktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions).
 
 ## <a name="maximizing-markup-and-code-re-use"></a>Maximieren der Wiederverwendung von Markup und Code
 
@@ -65,8 +65,8 @@ In der Liste [Maximieren der Wiederverwendung von Markup und Code](wpsl-to-uwp-p
 ## <a name="more-info-and-design-guidelines"></a>Weitere Informationen und Designrichtlinien
 
 -   [Entwerfen von UWP-apps](https://developer.microsoft.com/en-us/windows/apps/design)
--   [Richtlinien für Schriftarten](https://msdn.microsoft.com/library/windows/apps/hh700394)
--   [Plan für verschiedene Formfaktoren](https://msdn.microsoft.com/library/windows/apps/dn958435)
+-   [Richtlinien für Schriftarten](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)
+-   [Plan für verschiedene Formfaktoren](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)
 
 ## <a name="related-topics"></a>Verwandte Themen
 

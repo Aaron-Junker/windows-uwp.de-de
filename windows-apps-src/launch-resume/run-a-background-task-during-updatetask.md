@@ -5,12 +5,12 @@ ms.date: 04/21/2017
 ms.topic: article
 keywords: Windows 10 "," Uwp "," Update "," Hintergrundaufgabe "," Updatetask "," Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd7d4494340d1c5e617361f2e3d750b35ebabb9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3683595926f20fdd9f9af5929db65396b0001bcc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603525"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371484"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Ausführen einer Hintergrundaufgabe beim Aktualisieren der UWP-App
 
@@ -26,12 +26,12 @@ Wie bei anderen Arten von Hintergrundaufgaben implementieren Sie die Hintergrund
 
 - Hinzufügen einer Komponente für Windows-Runtime zu Ihrer Lösung
 - Erstellen einer Referenz von einer App zur Komponente
-- Erstellen einer öffentlichen, versiegelten Klasse in der Komponente, die [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) implementiert.
-- Implementieren der [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811)-Methode, die den erforderlichen Einstiegspunkt darstellt, der aufgerufen wird, wenn die Update-Aufgabe ausgeführt wird. Wenn Sie beabsichtigen, von Ihrer Hintergrundaufgabe asynchrone Aufrufe auszuführen, finden Sie unter [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) Erläuterungen dazu, wie Sie in Ihrer **Run**-Methode eine Verzögerung verwenden.
+- Erstellen einer öffentlichen, versiegelten Klasse in der Komponente, die [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) implementiert.
+- Implementieren der [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.)-Methode, die den erforderlichen Einstiegspunkt darstellt, der aufgerufen wird, wenn die Update-Aufgabe ausgeführt wird. Wenn Sie beabsichtigen, von Ihrer Hintergrundaufgabe asynchrone Aufrufe auszuführen, finden Sie unter [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) Erläuterungen dazu, wie Sie in Ihrer **Run**-Methode eine Verzögerung verwenden.
 
 Sie müssen diese Hintergrundaufgabe nicht registrieren (der Abschnitt „Registrieren der auszuführenden Hintergrundaufgabe“ im Thema **Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen**), um die Update-Aufgabe zu verwenden. Dies ist der Hauptgrund für die Verwendung einer Update-Aufgabe, da Sie Ihrer App zum Registrieren der Aufgabe keinen Code hinzufügen müssen, und die App muss zum Registrieren der Hintergrundaufgabe nicht mindestens einmal ausgeführt werden, bevor sie aktualisiert wird.
 
-Der folgende Beispielcode zeigt einen sehr einfachen Startpunkt für eine Update-Aufgaben-Hintergrundaufgabenklasse in C#. Die Hintergrundaufgabenklasse selbst sowie alle anderen Klassen im Hintergrundaufgabenprojekt müssen **öffentlich** und **versiegelt** sein. Ihre Hintergrundaufgabenklasse muss sich von **IBackgroundTask** ableiten und eine öffentliche **Run()**-Methode mit der folgenden Signatur besitzen:
+Der folgende Beispielcode zeigt einen sehr einfachen Startpunkt für eine Update-Aufgaben-Hintergrundaufgabenklasse in C#. Die Hintergrundaufgabenklasse selbst sowie alle anderen Klassen im Hintergrundaufgabenprojekt müssen **öffentlich** und **versiegelt** sein. Ihre Hintergrundaufgabenklasse muss sich von **IBackgroundTask** ableiten und eine öffentliche **Run()** -Methode mit der folgenden Signatur besitzen:
 
 ```cs
 using Windows.ApplicationModel.Background;

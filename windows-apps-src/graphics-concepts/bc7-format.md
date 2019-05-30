@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c55a12dfa7757a48874b6857c95af592e818c2b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25ee9960e55100eaf743d73d7007e9bcf51342ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590765"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370724"
 ---
 # <a name="bc7-format"></a>BC7-Format
 
 
 Das BC7-Format ist ein Format für die Texturkomprimierung, das für die hochwertige Komprimierung von RGB- und RGBA-Daten verwendet wird.
 
-Informationen zu den Blockmodi des BC7-Formats finden Sie unter [Verweis auf den BC7-Format-Modus](https://msdn.microsoft.com/library/windows/desktop/hh308954).
+Informationen zu den Blockmodi des BC7-Formats finden Sie unter [Verweis auf den BC7-Format-Modus](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format-mode-reference).
 
 ## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>Informationen zu "bc7" nicht/DXGI\_FORMAT\_"bc7" nicht
 
@@ -30,7 +30,7 @@ Informationen zu den Blockmodi des BC7-Formats finden Sie unter [Verweis auf den
 -   **DXGI\_FORMAT\_BC7\_UNORM**.
 -   **DXGI\_FORMAT\_BC7\_UNORM\_SRGB**.
 
-Das BC7-Format kann für Texturressourcen wie [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (einschließlich Arrays), Texture3D oder TextureCube (einschließlich Arrays) verwendet werden. Das Format gilt ebenfalls für alle Mip-Map-Oberflächen, die mit diesen Ressourcen verbunden sind.
+Das BC7-Format kann für Texturressourcen wie [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (einschließlich Arrays), Texture3D oder TextureCube (einschließlich Arrays) verwendet werden. Das Format gilt ebenfalls für alle Mip-Map-Oberflächen, die mit diesen Ressourcen verbunden sind.
 
 BC7 verwendet eine feste Blockgröße von 16 Byte (128 Bit) und eine feste Kachelgröße von 4 × 4-Texel. Genau wie mit vorherigen BC-Formaten werden Texturbilder, die größer als die unterstützte Kachelgröße (4 × 4) sind, durch die Verwendung mehrerer Blöcke komprimiert. Diese Adressierungsidentität gilt auch für dreidimensionale Bilder, MIP-Maps, Cube-Zuordnungen und Texturarrays. Alle Bildkacheln müssen das gleiche Format aufweisen.
 
@@ -57,9 +57,9 @@ Die folgende Tabelle enthält die Komponenten der einzelnen Blocktypen.
 
 | BC7-Block enthält...     | Modus-Bit | Rotations-Bit | Index-Selektor- | Partition-Bit | Komprimierte Endpunkte | P-Bit    | Komprimierte Indizes |
 |---------------------------|-----------|---------------|--------------------|----------------|----------------------|----------|--------------------|
-| Nur Farbkomponenten     | Erforderlich  | n. a.           | n. a.                | Erforderlich       | Erforderlich             | Optional | Erforderlich           |
-| Farb- + Alphawert kombiniert    | Erforderlich  | n. a.           | n. a.                | Optional       | Erforderlich             | Optional | Erforderlich           |
-| Separater Farb- und Alphawert | Erforderlich  | Erforderlich      | Optional           | n. a.            | Erforderlich             | n. a.      | Erforderlich           |
+| Nur Farbkomponenten     | Erforderlich  | Nicht zutreffend           | Nicht zutreffend                | Erforderlich       | Erforderlich             | Optional | Erforderlich           |
+| Farb- + Alphawert kombiniert    | Erforderlich  | Nicht zutreffend           | Nicht zutreffend                | Optional       | Erforderlich             | Optional | Erforderlich           |
+| Separater Farb- und Alphawert | Erforderlich  | Erforderlich      | Optional           | Nicht zutreffend            | Erforderlich             | Nicht zutreffend      | Erforderlich           |
 
  
 

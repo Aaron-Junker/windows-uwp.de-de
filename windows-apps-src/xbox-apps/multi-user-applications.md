@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 ms.localizationpriority: medium
-ms.openlocfilehash: b56140f9a71c8233d2832c2b0da6ed927b5a19ac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0b6c3303950c29ffb88d13fb9bcecff4d43e304a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607715"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372094"
 ---
 # <a name="introduction-to-multi-user-applications"></a>Einführung in Anwendungen mit mehreren Benutzern
 
@@ -44,7 +44,7 @@ So wählen Sie das Mehrbenutzermodell:
 Entwickler können KeyRoutedEventArgs.DeviceId verwenden, das von KeyUp- und KeyDown-Routingereignissen verwendet wird, um die aus unterschiedlichen Eingaben generierten Ereignisse zu unterscheiden.
 Mithilfe der Methode Windows.System.UserDeviceAssociation.FindUserFromDeviceId können Sie den Benutzer identifizieren, der mit einer bestimmten Eingaben verknüpft ist.
 
-Weitere Informationen finden Sie im Thema [KeyRoutedEventArgs.DeviceId](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.keyroutedeventargs.deviceid).
+Weitere Informationen finden Sie im Thema [KeyRoutedEventArgs.DeviceId](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.deviceid).
 
 
 ## <a name="guidance-on-which-model-to-choose"></a>Leitfaden zur Modellauswahl

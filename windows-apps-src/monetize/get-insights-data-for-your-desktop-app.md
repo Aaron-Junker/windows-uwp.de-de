@@ -6,25 +6,25 @@ ms.topic: article
 keywords: Windows 10, Uwp, Store Services, Microsoft Store-Textanalyse-API, Einblicke
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5545d27668b23e5b7ae91201421dfa4c92f9c8ed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8f6f4b2df1cda14bc1f363a1f9100e416f26489b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618135"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372466"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Abrufen von internen Daten für die Desktopanwendung
 
 Verwenden Sie diese Methode in der Microsoft Store-Textanalyse-API zum Abrufen von Insights-Daten im Zusammenhang mit der integritätsmetriken für eine desktop-Anwendung, die Sie hinzugefügt haben die [Desktopanwendung, die Windows-Programm](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). Diese Daten werden auch in der [Integritätsbericht](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) für desktop-Anwendungen im Partner Center.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store-Analyse-API.
 * [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 
 ### <a name="request-syntax"></a>Anforderungssyntax
@@ -38,17 +38,17 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 | Parameter        | Typ   |  Beschreibung      |  Erforderlich  
 |---------------|--------|---------------|------|
-| applicationId | string | Die Produkt-ID der Desktopanwendung, die für das Insights-Daten abgerufen werden sollen. Rufen Sie die Produkt-ID, einer Desktopanwendung öffnen [Analytics zu senden, damit die desktop-Anwendung im Partner Center](https://msdn.microsoft.com/library/windows/desktop/mt826504) (z. B. die **Integritätsbericht**) und die Produkt-ID aus der URL abzurufen. Wenn Sie diesen Parameter nicht angeben, enthält der Antworttext die Insights-Daten für alle apps, die mit Ihrem Konto registriert.  |  Nein  |
+| applicationId | String | Die Produkt-ID der Desktopanwendung, die für das Insights-Daten abgerufen werden sollen. Rufen Sie die Produkt-ID, einer Desktopanwendung öffnen [Analytics zu senden, damit die desktop-Anwendung im Partner Center](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) (z. B. die **Integritätsbericht**) und die Produkt-ID aus der URL abzurufen. Wenn Sie diesen Parameter nicht angeben, enthält der Antworttext die Insights-Daten für alle apps, die mit Ihrem Konto registriert.  |  Nein  |
 | startDate | date | Das Startdatum in den Datumsbereich für Insights-Daten abgerufen werden soll. Der Standardwert ist 30 Tage vor dem aktuellen Datum. |  Nein  |
 | endDate | date | Das Enddatum in den Datumsbereich für Insights-Daten abgerufen werden soll. Der Standardwert ist das aktuelle Datum. |  Nein  |
-| filter | string  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede Anweisung enthält einen Feldnamen aus dem Antworttext und einen Wert, die mit den Operatoren **eq** oder **ne** verknüpft sind. Anweisungen können mit **and** oder **or** kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Z. B. *Filter = DataType-Eq "Übernahme"*. <p/><p/>Diese Methode unterstützt derzeit nur den Filter **Integrität**.  | Nein   |
+| filter | String  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede Anweisung enthält einen Feldnamen aus dem Antworttext und einen Wert, die mit den Operatoren **eq** oder **ne** verknüpft sind. Anweisungen können mit **and** oder **or** kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Z. B. *Filter = DataType-Eq "Übernahme"* . <p/><p/>Diese Methode unterstützt derzeit nur den Filter **Integrität**.  | Nein   |
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 
@@ -66,7 +66,7 @@ Authorization: Bearer <your access token>
 | Wert      | Typ   | Beschreibung                  |
 |------------|--------|-------------------------------------------------------|
 | Wert      | array  | Ein Array von Objekten, die für die app Insights-Daten enthalten. Weitere Informationen zu den Daten in jedem Objekt finden Sie unter der [Insight Werte](#insight-values) Abschnitt weiter unten.                                                                                                                      |
-| TotalCount | int    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.                 |
+| TotalCount | ssNoversion    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.                 |
 
 
 ### <a name="insight-values"></a>Insight-Werte
@@ -75,9 +75,9 @@ Elemente im Array *Value* enthalten die folgenden Werte.
 
 | Wert               | Typ   | Beschreibung                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | string | Die Produkt-ID der Desktopanwendung, die für das Insights-Daten abgerufen werden soll.     |
-| insightDate                | string | Das Datum, an dem die Änderung in einer bestimmten Metrik erkannt wurden. Dieses Datum stellt das Ende der Woche, die in der wir eine erhebliche Leistungssteigerung erkannt oder verringern Sie in einer Metrik im Vergleich zu einer Woche davor. |
-| Datentyp     | string | Eine Zeichenfolge, die den allgemeinen Analytics Bereich angibt, den diese Information werden soll. Diese Methode unterstützt derzeit nur die **Integrität**.    |
+| applicationId       | String | Die Produkt-ID der Desktopanwendung, die für das Insights-Daten abgerufen werden soll.     |
+| insightDate                | String | Das Datum, an dem die Änderung in einer bestimmten Metrik erkannt wurden. Dieses Datum stellt das Ende der Woche, die in der wir eine erhebliche Leistungssteigerung erkannt oder verringern Sie in einer Metrik im Vergleich zu einer Woche davor. |
+| dataType     | String | Eine Zeichenfolge, die den allgemeinen Analytics Bereich angibt, den diese Information werden soll. Diese Methode unterstützt derzeit nur die **Integrität**.    |
 | insightDetail          | array | Eine oder mehrere [InsightDetail Werte](#insightdetail-values) , die die Details für den aktuellen Insight darstellen.    |
 
 
@@ -85,14 +85,14 @@ Elemente im Array *Value* enthalten die folgenden Werte.
 
 | Wert               | Typ   | Beschreibung                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | string | Eine Zeichenfolge, die die Metrik gibt an, der den aktuellen Insight oder die aktuelle Dimension beschreibt. Diese Methode unterstützt derzeit nur den Wert **Trefferanzahl**.  |
+| FactName           | String | Eine Zeichenfolge, die die Metrik gibt an, der den aktuellen Insight oder die aktuelle Dimension beschreibt. Diese Methode unterstützt derzeit nur den Wert **Trefferanzahl**.  |
 | SubDimensions         | array |  Ein oder mehrere Objekte, die eine einzelne Metrik für die Einblicke zu beschreiben.   |
-| Prozent            | string |  Der Prozentsatz, den die Metrik für Ihre gesamte Kundenbasis geändert.  |
-| DimensionName           | string |  Der Name der Metrik in der aktuellen Dimension beschrieben. Beispiele hierfür sind **EventType**, **Markt**, **"DeviceType"**, und **PackageVersion**.   |
-| DimensionValue              | string | Der Wert der Metrik, die in der aktuellen Dimension beschrieben wird. Z. B. wenn **DimensionName** ist **EventType**, **DimensionValue** möglicherweise **Absturz** oder **hängen** .   |
-| FactValue     | string | Der Absolute Wert der Metrik auf das Datum, an das der Einblick erkannt wurde.  |
-| Direction | string |  Die Richtung der Änderung (**Positive** oder **Negative**).   |
-| Datum              | string |  Das Datum, an dem die Änderung im Zusammenhang mit der aktuellen Einblick oder die aktuelle Dimension erkannt wurden.   |
+| PercentChange            | String |  Der Prozentsatz, den die Metrik für Ihre gesamte Kundenbasis geändert.  |
+| DimensionName           | String |  Der Name der Metrik in der aktuellen Dimension beschrieben. Beispiele hierfür sind **EventType**, **Markt**, **"DeviceType"** , und **PackageVersion**.   |
+| DimensionValue              | String | Der Wert der Metrik, die in der aktuellen Dimension beschrieben wird. Z. B. wenn **DimensionName** ist **EventType**, **DimensionValue** möglicherweise **Absturz** oder **hängen** .   |
+| FactValue     | String | Der Absolute Wert der Metrik auf das Datum, an das der Einblick erkannt wurde.  |
+| Richtung | String |  Die Richtung der Änderung (**Positive** oder **Negative**).   |
+| date              | String |  Das Datum, an dem die Änderung im Zusammenhang mit der aktuellen Einblick oder die aktuelle Dimension erkannt wurden.   |
 
 ### <a name="response-example"></a>Antwortbeispiel
 

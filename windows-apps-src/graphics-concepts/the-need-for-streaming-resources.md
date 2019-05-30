@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0354b0e727e84d562bf63779e74be72f87198f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f5b44e60e3490f39a91724bf038aa8066de11bf0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632175"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370890"
 ---
 # <a name="the-need-for-streaming-resources"></a>Die Notwendigkeit für Streamingressourcen
 
@@ -33,7 +33,7 @@ In einem Grafiksystem (d. h. einem Betriebssystem, einem Bildschirmtreiber und 
 
 Für einen [Puffer](introduction-to-buffers.md) ist der gesamte Puffer die Unterressource.
 
-Für eine [Textur](textures.md) (z. B. [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525)) ist jede Mip-Ebene eine Unterressource; für ein Textur-Array (z. B. [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526)) ist jede Mip-Ebene an einem bestimmten Arraysegment eine Unterressource. Das Grafiksystem weist nur die Möglichkeit zur Verwaltung der Zuordnung von Vergaben bei dieser Unterressourcen-Granularität auf. Im Kontext von Streamingressourcen bezieht sich der Begriff „Zuordnung” auf die Sichtbarmachung der Daten für den Grafikprozessor.
+Für eine [Textur](textures.md) (z. B. [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)) ist jede Mip-Ebene eine Unterressource; für ein Textur-Array (z. B. [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)) ist jede Mip-Ebene an einem bestimmten Arraysegment eine Unterressource. Das Grafiksystem weist nur die Möglichkeit zur Verwaltung der Zuordnung von Vergaben bei dieser Unterressourcen-Granularität auf. Im Kontext von Streamingressourcen bezieht sich der Begriff „Zuordnung” auf die Sichtbarmachung der Daten für den Grafikprozessor.
 
 ## <a name="span-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanwithout-tiling-cant-access-only-a-small-portion-of-mipmap-chain"></a><span id="Without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="WITHOUT_TILING__CAN_T_ACCESS_ONLY_A_SMALL_PORTION_OF_MIPMAP_CHAIN"></span>Ohne Tiling, kann nicht nur einen kleinen Teil der Mipmap-Kette zugegriffen.
 
@@ -47,7 +47,7 @@ In der Praxis kann das Grafiksystem ohne Streamingressourcenunterstützung nur �
 
 Die Softwareauslagerung kann für die Unterteilung der Oberfläche in Kacheln verwendet werden, die klein genug sind, um von der Hardware behandelt zu werden.
 
-Direct3D unterstützt [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) Oberflächen mit bis zu 16384 Pixeln auf einer Seite. Ein Bild, das 16384 breit und 16384 hoch ist und 4 Byte pro Pixel aufweist, würde 1 GB Videospeicher verbrauchen (und das Hinzufügen von Mipmaps würde diese Menge verdoppeln). In der Praxis müssten die gesamten 1 GB nur selten in einem einzelnen Renderingvorgang referenziert werden.
+Direct3D unterstützt [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) Oberflächen mit bis zu 16384 Pixeln auf einer Seite. Ein Bild, das 16384 breit und 16384 hoch ist und 4 Byte pro Pixel aufweist, würde 1 GB Videospeicher verbrauchen (und das Hinzufügen von Mipmaps würde diese Menge verdoppeln). In der Praxis müssten die gesamten 1 GB nur selten in einem einzelnen Renderingvorgang referenziert werden.
 
 Einige Spieleentwickler modellieren Geländeoberflächen mit Größen von bis zu 128 KB x 128 KB. Auf vorhandenen Grafikprozessoren erreichen sie dies, indem sie die Oberfläche in Kacheln unterteilen, die für die Hardware klein genug sind. Die Anwendung muss herausfinden, welche der Kacheln erforderlich sein könnten und diese in einen Zwischenspeicher von Texturen auf dem Grafikprozessor zu laden – ein Softwareauslagerungssystem.
 

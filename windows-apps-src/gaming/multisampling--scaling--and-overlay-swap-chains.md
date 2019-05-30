@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Swapketten-Skalierung, Einblendungen, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 77e5dac007654449fcfbe2053fda65b123e073fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644195"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368345"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>Swapchainskalierung und Überlagerungen
 
@@ -119,7 +119,7 @@ Wenn Ihr Spiel nicht auf der neuesten Hardware ausgeführt wird – oder auf Har
 ## <a name="create-a-hardware-overlay-swap-chain-for-ui-elements"></a>Erstellen einer Hardware-ÜberlagerungsSwapchain für UI-Elemente
 
 
-Mit der Verwendung der Swapchainskalierung ist der Nachteil verbunden, dass auch die UI herunterskaliert wird und ggf. verschwimmt und schwieriger zu nutzen ist. Auf Geräten mit Hardwareunterstützung für Überlagerungsswapchains kann dieses Problem vollständig vermieden werden, indem die UI mit der systemeigenen Auflösung in einer Swapchain gerendert wird, die von den Echtzeitinhalten des Spiels getrennt ist. Beachten Sie, dass dieses Verfahren nur für [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Swapchains gilt und nicht für die XAML-Interoperabilität verwendet werden kann.
+Mit der Verwendung der Swapchainskalierung ist der Nachteil verbunden, dass auch die UI herunterskaliert wird und ggf. verschwimmt und schwieriger zu nutzen ist. Auf Geräten mit Hardwareunterstützung für Überlagerungsswapchains kann dieses Problem vollständig vermieden werden, indem die UI mit der systemeigenen Auflösung in einer Swapchain gerendert wird, die von den Echtzeitinhalten des Spiels getrennt ist. Beachten Sie, dass dieses Verfahren nur für [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Swapchains gilt und nicht für die XAML-Interoperabilität verwendet werden kann.
 
 Führen Sie die folgenden Schritte aus, um eine Vordergrund-Swapchain zu erstellen, bei der eine Hardwareüberlagerungsfunktion verwendet wird. Diese Schritte werden ausgeführt, nachdem wie oben beschrieben zuerst eine Swapchain für die Echtzeitinhalte des Spiels erstellt wurde.
 
@@ -142,7 +142,7 @@ Führen Sie die folgenden Schritte aus, um eine Vordergrund-Swapchain zu erstell
         );
     ```
 
-    Überlagerungen werden vom DXGI-Adapter unterstützt, wenn der Ausgabeadapter für [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) "True" zurückgibt.
+    Überlagerungen werden vom DXGI-Adapter unterstützt, wenn der Ausgabeadapter für [**SupportsOverlays**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgioutput2-supportsoverlays) "True" zurückgibt.
 
     ```cpp
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
@@ -152,11 +152,11 @@ Führen Sie die folgenden Schritte aus, um eine Vordergrund-Swapchain zu erstell
 
      
 
-2.  Erstellen Sie die Vordergrund-Swapchain mit [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Die folgenden Optionen müssen festgelegt werden, der [ **DXGI\_AUSTAUSCHEN\_Kette\_DESC1** ](https://msdn.microsoft.com/library/windows/desktop/hh404528) für angegebene der *pDesc* Parameter:
+2.  Erstellen Sie die Vordergrund-Swapchain mit [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow). Die folgenden Optionen müssen festgelegt werden, der [ **DXGI\_AUSTAUSCHEN\_Kette\_DESC1** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1) für angegebene der *pDesc* Parameter:
 
-    -   Geben Sie die [ **DXGI\_SWAP\_Kette\_FLAG\_VORDERGRUND\_Ebene** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) swap-Kette Flag zum Angeben einer Swapkette im Vordergrund.
-    -   Verwenden der [ **DXGI\_ALPHA\_Modus\_integriert** ](https://msdn.microsoft.com/library/windows/desktop/hh404496) Alphamodus-Flag. Vordergrund-Swapchains sind immer prämultipliziert.
-    -   Legen Sie die [ **DXGI\_Skalierung\_NONE** ](https://msdn.microsoft.com/library/windows/desktop/hh404526) Flag. Vordergrund-Swapchains werden immer mit systemeigener Auflösung ausgeführt.
+    -   Geben Sie die [ **DXGI\_SWAP\_Kette\_FLAG\_VORDERGRUND\_Ebene** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) swap-Kette Flag zum Angeben einer Swapkette im Vordergrund.
+    -   Verwenden der [ **DXGI\_ALPHA\_Modus\_integriert** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_alpha_mode) Alphamodus-Flag. Vordergrund-Swapchains sind immer prämultipliziert.
+    -   Legen Sie die [ **DXGI\_Skalierung\_NONE** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_scaling) Flag. Vordergrund-Swapchains werden immer mit systemeigener Auflösung ausgeführt.
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -164,7 +164,7 @@ Führen Sie die folgenden Schritte aus, um eine Vordergrund-Swapchain zu erstell
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **Beachten Sie**    legen Sie die [ **DXGI\_AUSTAUSCHEN\_Kette\_FLAG\_VORDERGRUND\_Ebene** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) erneut alle Zeitpunkt, zu die SwapChain geändert wird.
+    > **Beachten Sie**    legen Sie die [ **DXGI\_AUSTAUSCHEN\_Kette\_FLAG\_VORDERGRUND\_Ebene** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) erneut alle Zeitpunkt, zu die SwapChain geändert wird.
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -199,7 +199,7 @@ Führen Sie die folgenden Schritte aus, um eine Vordergrund-Swapchain zu erstell
 
 4.  Für Vordergrund-Swapchains wird immer prämultipliziertes Alpha verwendet. Es wird davon ausgegangen, dass die Farbwerte der einzelnen Pixel vor der Darstellung des Frames bereits mit dem Alphawert multipliziert wurden. Ein BGRA-Pixel mit 100 % Weiß und einem Alpha von 50 % wird beispielsweise auf (0,5, 0,5, 0,5, 0,5) festgelegt.
 
-    Der alpha premultiplication Schritt kann in der Ausgabe-Fusions Phase ausgeführt werden, durch Anwenden einer app Blend-Status (finden Sie unter [ **ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) mit der [ **D3D11\_ RENDERN\_Ziel\_BLEND\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476200) -Struktur **SrcBlend** Feld festgelegt, um **D3D11\_SRC\_ALPHA**. Es können auch Ressourcen mit prämultiplizierten Alphawerten verwendet werden.
+    Der alpha premultiplication Schritt kann in der Ausgabe-Fusions Phase ausgeführt werden, durch Anwenden einer app Blend-Status (finden Sie unter [ **ID3D11BlendState**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11blendstate)) mit der [ **D3D11\_ RENDERN\_Ziel\_BLEND\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_blend_desc) -Struktur **SrcBlend** Feld festgelegt, um **D3D11\_SRC\_ALPHA**. Es können auch Ressourcen mit prämultiplizierten Alphawerten verwendet werden.
 
     Wenn der Schritt der Alphaprämultiplikation nicht erfolgt, erscheinen Farben für die Vordergrund-Swapchain heller als erwartet.
 

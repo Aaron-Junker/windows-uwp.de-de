@@ -5,12 +5,12 @@ keywords: Neuigkeiten, was neu ist, Aktualisierung, Updates, Features, neu, Wind
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d880b2167e718b1ff66aa349c32329e6c19e5b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b7fe830e07c1daf95928ab747259cb57aaa7a9f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592985"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371339"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Neuigkeiten für Entwickler in Windows 10, Build 17134
 
@@ -42,7 +42,7 @@ Schreibstil | Wir haben unseren Artikel über Ausdrucksweise und Tonfall aktuali
 Feature | Beschreibung
  :------ | :------
 Erste Schritte bei der Spiele-Entwicklung | Möchten Sie Spiele für Windows 10 entwickeln? Die neue Seite [Erste Schritte bei der Spiele-Entwicklung](../gaming/getting-started.md) ermöglicht einen vollständigen Überblick darüber, wie Sie sich vorbereiten, registriert und Ihre Apps und Spiele übermitteln.
-Grafikadapter | Wir haben die folgenden DXGI-APIs hinzugefügt, die sich auf die Vorteile und das Entfernen von Grafikadaptern beziehen: </br> * Der [IDXGIFactory6](https://msdn.microsoft.com/library/windows/desktop/mt814823)-Schnittstelle bietet eine einzelne Methode, die Grafikkarten, basierend auf einer bestimmten GPU-Einstellung, auflistet. </br> * Die [DXGIDeclareAdapterRemovalSupport](https://msdn.microsoft.com/library/windows/desktop/mt814821)-Funktion ermöglicht einem Prozess anzugeben, dass er in Bezug auf das Entfernen der Grafikgeräte flexibel reagiert. </br> * Die [DXGI_GPU_PREFERENCE](https://msdn.microsoft.com/library/windows/desktop/mt814822)-Auflistung beschreibt die Einstellung der GPU, auf der für die App ausgeführt wird.
+Grafikadapter | Wir haben die folgenden DXGI-APIs hinzugefügt, die sich auf die Vorteile und das Entfernen von Grafikadaptern beziehen: </br> * Der [IDXGIFactory6](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nn-dxgi1_6-idxgifactory6)-Schnittstelle bietet eine einzelne Methode, die Grafikkarten, basierend auf einer bestimmten GPU-Einstellung, auflistet. </br> * Die [DXGIDeclareAdapterRemovalSupport](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-dxgideclareadapterremovalsupport)-Funktion ermöglicht einem Prozess anzugeben, dass er in Bezug auf das Entfernen der Grafikgeräte flexibel reagiert. </br> * Die [DXGI_GPU_PREFERENCE](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_gpu_preference)-Auflistung beschreibt die Einstellung der GPU, auf der für die App ausgeführt wird.
 
 ## <a name="develop-windows-apps"></a>Entwickeln von Windows-Apps
 
@@ -114,10 +114,10 @@ Es ist einfacher denn je, eine Desktop-App auf die Universelle Windows-Plattform
 
 ### <a name="one-dev-question---why-was-docments-and-settings-renamed-users"></a>Entwicklerfrage: Warum wurde „Dokumente und Einstellungen“ in „Benutzer“ umbenannt?
 
-Möchten Sie wissen, warum das Verzeichnis „Dokumente und Einstellungen“ umbenannt wurde? [Raymond Chen erklärt, woher der Name stammt und warum er geändert wurde](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). Weitere Entwicklungsdetails zu Windows und Informationen zur Geschichte von Windows finden Sie in [Raymonds Blog.](https://blogs.msdn.microsoft.com/oldnewthing/)
+Möchten Sie wissen, warum das Verzeichnis „Dokumente und Einstellungen“ umbenannt wurde? [Raymond Chen erklärt, woher der Name stammt und warum er geändert wurde](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). Weitere Entwicklungsdetails zu Windows und Informationen zur Geschichte von Windows finden Sie in [Raymonds Blog.](https://devblogs.microsoft.com/oldnewthing/)
 
 
-## <a name="samples"></a>Beispiele
+## <a name="samples"></a>Proben
 
 ### <a name="coloring-book"></a>Coloring Book
 

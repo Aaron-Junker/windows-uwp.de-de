@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fae4d5b57ac5cfb5c47fca1a2f3476cd16a56534
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a44a1adb8685ad182620b4c68024176628b9204d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582631"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369666"
 ---
 # <a name="enterprise"></a>Unternehmen
 
@@ -102,9 +102,9 @@ Windows 10 umfasst eine Suite mit Sicherheitsfeatures für App-Entwickler zum S
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Einführung in die Entwicklung sicherer Windows-Apps](https://msdn.microsoft.com/library/windows/apps/mt622741) | Dieser einführende Artikel erläutert verschiedene Windows-Sicherheitsfeatures, die auf verschiedenen Stufen verfügbar sind, d. h. Authentifizierung, In-Flight-Daten und At-Rest-Daten. Außerdem wird hier beschrieben, wie Sie diese Stufen in Ihren Apps integrieren können. Er umfasst eine Vielzahl an Themen und enthält in erster Linie weitere Informationen für App-Architekten zu den Windows-Features, die die Entwicklung von Universellen Windows-Plattform-Apps beschleunigen. |
-| [Authentifizierung und Benutzeridentität](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP-Apps verfügen über verschiedene Optionen zur Benutzerauthentifizierung, die in diesem Artikel beschrieben werden. Für Unternehmen wird dringend das neue Microsoft Passport-Feature empfohlen. Microsoft Passport ersetzt Kennwörter mit der sicheren zweistufigen Authentifizierung (Two-Factor Authentication, 2FA), indem vorhandene Anmeldeinformationen überprüft und gerätespezifische Anmeldeinformationen erstellt werden, die eine Benutzergeste (entweder Biometrie- oder PIN-basiert) schützen, und schafft so eine bequeme und sichere Umgebung. |
-| [Kryptografie](https://msdn.microsoft.com/library/windows/apps/mt270191) | Der Abschnitt „Kryptografie“ bietet eine Übersicht über die für UWP-Apps verfügbaren Kryptografie-Features. Die Artikel reichen von einführenden exemplarischen Vorgehensweisen zum einfachen Verschlüsseln sensibler Daten bis hin zu erweiterten Themen, z. B. Bearbeiten von kryptografischen Schlüsseln und Arbeiten mit MACs, Hashes und Signaturen. |
+| [Einführung in die Entwicklung sicherer Windows-Apps](https://docs.microsoft.com/windows/uwp/security/intro-to-secure-windows-app-development) | Dieser einführende Artikel erläutert verschiedene Windows-Sicherheitsfeatures, die auf verschiedenen Stufen verfügbar sind, d. h. Authentifizierung, In-Flight-Daten und At-Rest-Daten. Außerdem wird hier beschrieben, wie Sie diese Stufen in Ihren Apps integrieren können. Er umfasst eine Vielzahl an Themen und enthält in erster Linie weitere Informationen für App-Architekten zu den Windows-Features, die die Entwicklung von Universellen Windows-Plattform-Apps beschleunigen. |
+| [Authentifizierung und Benutzeridentität](https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity) | UWP-Apps verfügen über verschiedene Optionen zur Benutzerauthentifizierung, die in diesem Artikel beschrieben werden. Für Unternehmen wird dringend das neue Microsoft Passport-Feature empfohlen. Microsoft Passport ersetzt Kennwörter mit der sicheren zweistufigen Authentifizierung (Two-Factor Authentication, 2FA), indem vorhandene Anmeldeinformationen überprüft und gerätespezifische Anmeldeinformationen erstellt werden, die eine Benutzergeste (entweder Biometrie- oder PIN-basiert) schützen, und schafft so eine bequeme und sichere Umgebung. |
+| [Kryptografie](https://docs.microsoft.com/windows/uwp/security/cryptography) | Der Abschnitt „Kryptografie“ bietet eine Übersicht über die für UWP-Apps verfügbaren Kryptografie-Features. Die Artikel reichen von einführenden exemplarischen Vorgehensweisen zum einfachen Verschlüsseln sensibler Daten bis hin zu erweiterten Themen, z. B. Bearbeiten von kryptografischen Schlüsseln und Arbeiten mit MACs, Hashes und Signaturen. |
 | [Windows Information Protection (WIP)](wip-hub.md) | Dies ist ein Übersichtsthema mit umfassenden Informationen für Entwickler zum Zusammenhang zwischen der Windows Information Protection (WIP) und Dateien, Puffern, der Zwischenablage, dem Netzwerk, Hintergrundaufgaben und dem Schutz von Daten bei Sperre. |
 
 ## <a name="data-binding-and-databases"></a>Datenbindung und Datenbanken
@@ -113,8 +113,8 @@ Die Datenbindung ist eine Methode, mit der die Benutzeroberfläche Ihrer App Dat
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Übersicht über Datenbindung](https://msdn.microsoft.com/library/windows/apps/mt269383) | In diesem Thema erfahren Sie, wie Sie in einer UWP-App (Universelle Windows-Plattform) ein Steuerelement (oder ein anderes Benutzeroberflächenelement) an ein einzelnes Element oder ein Elementsteuerelement an eine Sammlung von Elementen binden. Darüber hinaus wird erläutert, wie Sie die Anzeige von Elementen steuern, eine Detailansicht auf Grundlage einer Auswahl implementieren und Daten für die Anzeige umwandeln. |
-| [Entity Framework 7 für UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Das Durchführen komplexer Abfragen für große Datensätze ist mit Entity Framework 7, mit Unterstützung für UWP, wesentlich einfacher. In dieser exemplarischen Vorgehensweise wird eine UWP-App erstellt, die auf grundlegende Daten der lokalen SQLite-Datenbank mithilfe von Entity Framework zugreift. |
+| [Übersicht über Datenbindung](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart) | In diesem Thema erfahren Sie, wie Sie in einer UWP-App (Universelle Windows-Plattform) ein Steuerelement (oder ein anderes Benutzeroberflächenelement) an ein einzelnes Element oder ein Elementsteuerelement an eine Sammlung von Elementen binden. Darüber hinaus wird erläutert, wie Sie die Anzeige von Elementen steuern, eine Detailansicht auf Grundlage einer Auswahl implementieren und Daten für die Anzeige umwandeln. |
+| [Entity Framework 7 für UWP](https://docs.microsoft.com/windows/uwp/data-access/entity-framework-7-with-sqlite-for-csharp-apps) | Das Durchführen komplexer Abfragen für große Datensätze ist mit Entity Framework 7, mit Unterstützung für UWP, wesentlich einfacher. In dieser exemplarischen Vorgehensweise wird eine UWP-App erstellt, die auf grundlegende Daten der lokalen SQLite-Datenbank mithilfe von Entity Framework zugreift. |
 | [Lokale SQLite-Datenbank](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | Dieses Video enthält ein umfassendes Entwicklerhandbuch zur Verwendung von SQLite, der empfohlenen Lösung für lokale App-Datenbanken. Laden Sie die neueste Version für UWP unter [SQLite](https://www.sqlite.org/download.html) herunter oder verwenden Sie die Version, die im Lieferumfang des Windows 10 SDK enthalten ist. |
 
 ## <a name="networking-and-data-serialization"></a>Netzwerke und Datenserialisierung
@@ -123,10 +123,10 @@ Branchenspezifische Apps müssen häufig mit Daten auf einer Vielzahl von andere
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Grundlagen zum Netzwerk](https://msdn.microsoft.com/library/windows/apps/mt280233) | In dieser exemplarischen Vorgehensweise werden grundlegende, für alle UWP-Apps relevante Netzwerkkonzepte erläutert, unabhängig von den verwendeten Kommunikationsprotokollen.  |
-| [Welche Netzwerktechnologie?](https://msdn.microsoft.com/library/windows/apps/mt280235) | Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-Apps zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App am besten geeignet sind. |
-| [XML- und SOAP-Serialisierung](https://msdn.microsoft.com/library/90c86ass.aspx) | Bei der XML-Serialisierung werden Objekte in einen XML-Datenstrom konvertiert, der einer bestimmten Sprache der XML-Schemadefinition (XSD) entspricht. Sie können zum Konvertieren zwischen XML und einer stark typisierten Klasse die systemeigene [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx)-Klasse oder eine externe Bibliothek verwenden. |
-| [JSON-Serialisierung](https://msdn.microsoft.com/library/windows/apps/br240639) | Die JSON-Serialisierung (JavaScript Object Notation) ist ein gängiges Format für die Kommunikation mit REST-APIs. [JSON.NET von Newtonsoft](https://www.newtonsoft.com/json) wird vollständig für UWP-Apps unterstützt. |
+| [Grundlagen zum Netzwerk](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | In dieser exemplarischen Vorgehensweise werden grundlegende, für alle UWP-Apps relevante Netzwerkkonzepte erläutert, unabhängig von den verwendeten Kommunikationsprotokollen.  |
+| [Welche Netzwerktechnologie?](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-Apps zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App am besten geeignet sind. |
+| [XML- und SOAP-Serialisierung](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | Bei der XML-Serialisierung werden Objekte in einen XML-Datenstrom konvertiert, der einer bestimmten Sprache der XML-Schemadefinition (XSD) entspricht. Sie können zum Konvertieren zwischen XML und einer stark typisierten Klasse die systemeigene [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument?redirectedfrom=MSDN)-Klasse oder eine externe Bibliothek verwenden. |
+| [JSON-Serialisierung](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | Die JSON-Serialisierung (JavaScript Object Notation) ist ein gängiges Format für die Kommunikation mit REST-APIs. [JSON.NET von Newtonsoft](https://www.newtonsoft.com/json) wird vollständig für UWP-Apps unterstützt. |
 
 ## <a name="devices"></a>Geräte
 
@@ -134,9 +134,9 @@ Für die Integration in branchenspezifischen Tools, z. B. Drucker, Strichcodesca
 
 | Thema  | Beschreibung |
 |--------|-------------|
-| [Auflisten von Geräten](https://msdn.microsoft.com/library/windows/apps/mt187355) | In diesem Artikel wird erläutert, wie mit dem [Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459)-Namespace nach Geräten gesucht werden kann, die intern mit dem System verbunden, extern verbunden oder über Drahtlos- oder Netzwerkprotokolle entdeckt werden können. Beginnen Sie mit diesem Artikel, wenn Sie eine App erstellen, die mit Geräten arbeitet. |
-| [Drucken und Scannen](https://msdn.microsoft.com/library/windows/apps/mt204544) | Beschreibt das Drucken und Scannen von Ihrer App aus, z. B. Herstellen einer Verbindung und Arbeiten mit Unternehmensgeräten wie POS-Systemen (Point-of-Sale), Belegdruckern und Einzugsscannern mit hoher Kapazität. |
-| [Bluetooth](https://msdn.microsoft.com/library/windows/apps/mt270288) | Neben herkömmlichen Bluetooth-Verbindungen zum Senden und Empfangen von Daten oder Steuern von Geräten kann unter Windows 10 Bluetooth Low Energy (BTLE) zum Senden oder Empfangen von Beacons im Hintergrund verwendet werden. Verwenden Sie diese zum Anzeigen von Benachrichtigungen oder Aktivieren von Funktionen, wenn sich ein Benutzer in der Nähe eines bestimmten Orts befindet oder diesen verlässt. |
+| [Auflisten von Geräten](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices) | In diesem Artikel wird erläutert, wie mit dem [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)-Namespace nach Geräten gesucht werden kann, die intern mit dem System verbunden, extern verbunden oder über Drahtlos- oder Netzwerkprotokolle entdeckt werden können. Beginnen Sie mit diesem Artikel, wenn Sie eine App erstellen, die mit Geräten arbeitet. |
+| [Drucken und Scannen](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning) | Beschreibt das Drucken und Scannen von Ihrer App aus, z. B. Herstellen einer Verbindung und Arbeiten mit Unternehmensgeräten wie POS-Systemen (Point-of-Sale), Belegdruckern und Einzugsscannern mit hoher Kapazität. |
+| [Bluetooth](https://docs.microsoft.com/windows/uwp/devices-sensors/bluetooth) | Neben herkömmlichen Bluetooth-Verbindungen zum Senden und Empfangen von Daten oder Steuern von Geräten kann unter Windows 10 Bluetooth Low Energy (BTLE) zum Senden oder Empfangen von Beacons im Hintergrund verwendet werden. Verwenden Sie diese zum Anzeigen von Benachrichtigungen oder Aktivieren von Funktionen, wenn sich ein Benutzer in der Nähe eines bestimmten Orts befindet oder diesen verlässt. |
 | [Im Unternehmen freigegebener Speicher](enterprise-shared-storage.md) | Erfahren Sie, wie Daten in Gerätesperrszenarien innerhalb derselben App zwischen App-Instanzen oder zwischen Apps freigegeben werden können. |
 
 ## <a name="device-targeting"></a>Ausrichten an Geräte
@@ -145,7 +145,7 @@ Viele Benutzer bringen in der heutigen Zeit ihre eigenen Telefone oder Tablets z
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Anleitung für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/dn894631) | In dieser Anleitung können Sie sich mit der UWP-Plattform unter Windows 10 vertraut machen. Sie erhalten u. a. Informationen dazu, was eine Gerätefamilie ist, wie Sie entscheiden, auf welche Ihre Apps abzielen sollen, Informationen zu neuen UI-Steuerelementen und Bereichen, mit denen Sie Ihre Benutzeroberfläche für verschiedene Geräte-Formfaktoren anpassen können, sowie zur für Ihre App verfügbaren API-Oberfläche und wie Sie diese steuern können. |
+| [Anleitung für UWP-Apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | In dieser Anleitung können Sie sich mit der UWP-Plattform unter Windows 10 vertraut machen. Sie erhalten u. a. Informationen dazu, was eine Gerätefamilie ist, wie Sie entscheiden, auf welche Ihre Apps abzielen sollen, Informationen zu neuen UI-Steuerelementen und Bereichen, mit denen Sie Ihre Benutzeroberfläche für verschiedene Geräte-Formfaktoren anpassen können, sowie zur für Ihre App verfügbaren API-Oberfläche und wie Sie diese steuern können. |
 | [Adaptives XAML-UI-Codebeispiel](https://go.microsoft.com/fwlink/p/?LinkId=619992) | Dieses Codebeispiel zeigt die möglichen Layoutoptionen und Steuerelemente für Ihre App, unabhängig von der Art des Geräts, und veranschaulicht eine Interaktion mit den Bereichen, um das gewünschte Layout zu erzielen. Neben der Reaktion der Steuerelemente und der App selbst auf verschiedene Formfaktoren, werden die verschiedenen Methoden zum Erzielen einer adaptiven Benutzeroberfläche aufgezeigt. |
 | [Xamarin-Thema](/xamarin/) | Xamarin für Telefone |
 
@@ -155,7 +155,7 @@ Es stehen verschiedene Optionen für die Verteilung von Apps für die Benutzer i
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Verteilen von branchenspezifischen Apps an Unternehmen](https://msdn.microsoft.com/library/windows/apps/mt608995) | Über den Microsoft Store für Unternehmen können Sie branchenspezifische Apps direkt für Unternehmen veröffentlichen, damit diese Volumenlizenzen erwerben können, ohne die Apps allgemein zur Verfügung zu stellen. |
+| [Verteilen von branchenspezifischen Apps an Unternehmen](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | Über den Microsoft Store für Unternehmen können Sie branchenspezifische Apps direkt für Unternehmen veröffentlichen, damit diese Volumenlizenzen erwerben können, ohne die Apps allgemein zur Verfügung zu stellen. |
 | [Querladen von Apps](https://technet.microsoft.com/library/mt269549) | Wenn Sie eine App querladen, stellen Sie ein signiertes App-Paket auf einem Gerät bereit. Das Signieren, Hosten und Bereitstellen dieser Apps wird beibehalten. Der Prozess zum Querladen von Apps ist für Windows 10 optimiert.             |
 | [Veröffentlichen von Apps im Microsoft Store](https://dev.windows.com/publish) | Im einheitlichen Microsoft Store können Sie Ihre gesamten Apps für alle Windows-Geräte verwalten und veröffentlichen. Passen Sie die Verfügbarkeit Ihrer App mit marktspezifischen Preisen, Steuerelementen für Verteilung und Sichtbarkeit und weiteren Optionen an. |
 

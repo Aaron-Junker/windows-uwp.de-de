@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8805f03f8476bcae8404395c27d9d78952f782
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 937d165d9305a3f4909383e872f49fcf08a3115c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984229"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371589"
 ---
 # <a name="porting-apps-to-windows10"></a>Portieren von Apps zu Windows 10
 
 
 In diesem Abschnitt wird beschrieben, wie Sie Ihre vorhandene App zur universellen Windows-Plattform (UWP) portieren, um ein einzelnes Windows 10-App-Paket zu erstellen, das Ihre Kunden auf allen Arten von Geräten installieren können. Ihre App profitiert von spannender, neuer Hardware, hervorragenden Umsatzchancen, einem modernen API-Satz, adaptiven UI-Steuerelementen und verschiedenen Eingabemodalitäten, darunter Maus und Tastatur, Toucheingabe und Spracherkennung.
 
-Mit der Windows-Runtime (WinRT)-Technologie können Sie Apps der universellen Windows-Plattform (UWP) erstellen. Unter [Was ist eine App der universellen Windows-Plattform (UWP)?](https://msdn.microsoft.com/library/windows/apps/dn726767) erhalten Sie weitere Infos zu WinRT- und UWP-Apps.
+Mit der Windows-Runtime (WinRT)-Technologie können Sie Apps der universellen Windows-Plattform (UWP) erstellen. Unter [Was ist eine App der universellen Windows-Plattform (UWP)?](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp) erhalten Sie weitere Infos zu WinRT- und UWP-Apps.
 
-In diesem Portierungshandbuch werden die Unterschiede zwischen der aktuellen Technologie Ihrer App und der UWP dargelegt. Sobald Sie das Zusammenspiel zwischen den Technologien verstanden haben, können Sie sich das restliche Developer Center genauer ansehen, das eine umfassende Ressource für die Entwicklung von UWP-Apps ist. Am besten beginnen Sie mit [So wird's gemacht: Entwickeln von Store-Apps](https://msdn.microsoft.com/library/windows/apps/dn726537).
+In diesem Portierungshandbuch werden die Unterschiede zwischen der aktuellen Technologie Ihrer App und der UWP dargelegt. Sobald Sie das Zusammenspiel zwischen den Technologien verstanden haben, können Sie sich das restliche Developer Center genauer ansehen, das eine umfassende Ressource für die Entwicklung von UWP-Apps ist. Am besten beginnen Sie mit [So wird's gemacht: Entwickeln von Store-Apps](https://docs.microsoft.com/previous-versions/windows/apps/dn726537(v=win.10)).
 
 | Thema | Beschreibung |
 |-------|-------------|
@@ -33,6 +33,6 @@ In diesem Portierungshandbuch werden die Unterschiede zwischen der aktuellen Tec
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Wechsel von WPF und Silverlight zu WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
-* [Wechsel von Android zu WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
-* [Wechsel vom Web zu WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
+* [Wechsel von WPF und Silverlight zu WinRT](https://docs.microsoft.com/previous-versions/windows/apps/dn263237(v=win.10))
+* [Wechsel von Android zu WinRT](https://docs.microsoft.com/previous-versions/windows/apps/jj945421(v=win.10))
+* [Wechsel vom Web zu WinRT](https://docs.microsoft.com/previous-versions/windows/apps/hh465151(v=win.10))

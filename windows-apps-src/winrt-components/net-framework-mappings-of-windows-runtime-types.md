@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dc9d71f6f02ec62fdf96161c397f7d2d7363b506
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602615"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372512"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>.NET Framework-Zuordnungen von Windows-Runtime-Typen
 
 
 
-Die folgende Tabelle enthält die Zuordnungen, die das .NET Framework zwischen UWP-Typen (Universelle Windows-Plattform) und .NET Framework-Typen vornimmt. In einer universellen Windows-App, die in verwaltetem Code geschrieben wurde, zeigt IntelliSense den .NET Framework-Typ anstelle des UWP-Typs an. Wenn beispielsweise eine Windows-Runtime Methode einen Parameter vom Typ IVector&lt;string&gt; übernimmt, zeigt IntelliSense einen Parameter vom Typ IList&lt;string&gt; an. Entsprechend verwenden Sie in einer Komponente für Windows-Runtime, die in verwaltetem Code geschrieben wurde, den .NET Framework-Typ in Membersignaturen. Wenn das [Windows-Runtime-Metadatenexport-Tool (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) die Komponente für Windows-Runtime generiert, wird der .NET Framework-Typ zum entsprechenden UWP-Typ.
+Die folgende Tabelle enthält die Zuordnungen, die das .NET Framework zwischen UWP-Typen (Universelle Windows-Plattform) und .NET Framework-Typen vornimmt. In einer universellen Windows-App, die in verwaltetem Code geschrieben wurde, zeigt IntelliSense den .NET Framework-Typ anstelle des UWP-Typs an. Wenn beispielsweise eine Windows-Runtime Methode einen Parameter vom Typ IVector&lt;string&gt; übernimmt, zeigt IntelliSense einen Parameter vom Typ IList&lt;string&gt; an. Entsprechend verwenden Sie in einer Komponente für Windows-Runtime, die in verwaltetem Code geschrieben wurde, den .NET Framework-Typ in Membersignaturen. Wenn das [Windows-Runtime-Metadatenexport-Tool (Winmdexp.exe)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) die Komponente für Windows-Runtime generiert, wird der .NET Framework-Typ zum entsprechenden UWP-Typ.
 
 ## <a name="mapping-tables"></a>Zuordnungstabellen
 
@@ -71,7 +71,7 @@ Tabelle 2: UWP-Typen, die auf .NET Framework-Typen mit dem gleichen Namen und Na
 | Windows.UI.Xaml                     | DurationTyp       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | GridLength         | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | GridUnitType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml                     | Thickness          | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml                     | Stärke          | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml.Controls.Primitives | GeneratorPosition  | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml.Media               | Matrix             | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml.Media.Animation     | KeyTime            | System.Runtime.WindowsRuntime.UI.Xaml.dll |

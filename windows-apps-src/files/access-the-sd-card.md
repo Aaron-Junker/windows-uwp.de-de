@@ -6,12 +6,12 @@ ms.date: 03/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, SD-Karte, Speicher
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
-ms.translationtype: HT
+ms.openlocfilehash: 4573e0959cf9d4af9b3cef8ffbbce14847a9e521
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63800229"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369494"
 ---
 # <a name="access-the-sd-card"></a>Zugreifen auf die SD-Karte
 
@@ -23,7 +23,7 @@ In den meisten Fällen müssen Sie die **removableStorage**-Funktion in der App-
 
 Sie können Dateien mithilfe der folgenden Methoden auf der optionalen SD-Karte speichern und darauf zugreifen:
 - Dateiauswahlen
-- Die [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346)-APIs.
+- Die [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage)-APIs.
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>Zugriffsmöglichkeiten auf der SD-Karte
 
@@ -36,7 +36,7 @@ Sie können Dateien mithilfe der folgenden Methoden auf der optionalen SD-Karte 
 
 - Systemordner und die darin enthaltenen Dateien sind für die App nicht sichtbar, und sie kann nicht darauf zugreifen.
 - Für die App sind auch keine Dateien sichtbar, die mit dem Attribut "Hidden" (Ausgeblendet) gekennzeichnet sind. Das Attribut "Hidden" wird normalerweise verwendet, um das Risiko des versehentlichen Löschens von Daten zu verringern.
-- Außerdem kann die App die Dokumentbibliothek nicht sehen und nicht über [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) darauf zugreifen. Sie können aber auf der SD-Karte auf die Dokumentbibliothek zugreifen, indem Sie das Dateisystem durchlaufen.
+- Außerdem kann die App die Dokumentbibliothek nicht sehen und nicht über [**KnownFolders.DocumentsLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary) darauf zugreifen. Sie können aber auf der SD-Karte auf die Dokumentbibliothek zugreifen, indem Sie das Dateisystem durchlaufen.
 
 ## <a name="security-and-privacy-considerations"></a>Sicherheits- und Datenschutzaspekte
 
@@ -45,7 +45,7 @@ Wenn eine App Dateien an einem globalen Speicherort auf der SD-Karte speichert, 
 - Wenn sich die SD-Karte im Gerät befindet, können auch andere Apps auf Ihre Dateien zugreifen, die über die Registrierung für die Verarbeitung desselben Dateityps verfügen.
 - Wenn die SD-Karte aus dem Gerät herausgenommen wird und über einen PC darauf zugegriffen wird, sind Ihre Dateien im Datei-Explorer sichtbar und für andere Apps zugänglich.
 
-Wenn eine auf der SD-Karte installierte App Dateien in [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) speichert, werden diese Dateien jedoch verschlüsselt und sind für andere Apps nicht zugänglich.
+Wenn eine auf der SD-Karte installierte App Dateien in [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) speichert, werden diese Dateien jedoch verschlüsselt und sind für andere Apps nicht zugänglich.
 
 ## <a name="requirements-for-accessing-files-on-the-sd-card"></a>Anforderungen für den Dateizugriff auf der SD-Karte
 
@@ -62,9 +62,9 @@ Um auf Mediendateien (Musik, Fotos oder Videos) zuzugreifen, die in den Medienbi
 
 ### <a name="getting-a-reference-to-the-sd-card"></a>Abrufen eines Verweises auf die SD-Karte
 
-Der Ordner [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) ist der Stamm-[**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) für die Wechselmedien, die derzeit an das Gerät angeschlossen sind. Wenn eine SD-Karte vorhanden ist, stellt der erste (und einzige) **StorageFolder** unter dem Ordner **KnownFolders.RemovableDevices** die SD-Karte dar.
+Der Ordner [**KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) ist der Stamm-[**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) für die Wechselmedien, die derzeit an das Gerät angeschlossen sind. Wenn eine SD-Karte vorhanden ist, stellt der erste (und einzige) **StorageFolder** unter dem Ordner **KnownFolders.RemovableDevices** die SD-Karte dar.
 
-Verwenden Sie Code der folgenden Art, um zu ermitteln, ob eine SD-Karte vorhanden ist, und um einen Verweis darauf als [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) zu erhalten.
+Verwenden Sie Code der folgenden Art, um zu ermitteln, ob eine SD-Karte vorhanden ist, und um einen Verweis darauf als [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) zu erhalten.
 
 ```csharp
 using Windows.Storage;
@@ -90,16 +90,16 @@ else
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>Abfragen des Inhalts der SD-Karte
 
-Die SD-Karte kann viele Ordner und Dateien enthalten, die nicht als bekannte Ordner erkannt werden und nicht abgefragt werden können, indem ein Speicherort unter [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) verwendet wird. Zum Auffinden von Dateien muss die App den Inhalt der Karte aufzählen, indem sie das Dateisystem rekursiv durchläuft. Verwenden Sie [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) und [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281), um die Inhalte der SD-Karte auf effiziente Weise abzurufen.
+Die SD-Karte kann viele Ordner und Dateien enthalten, die nicht als bekannte Ordner erkannt werden und nicht abgefragt werden können, indem ein Speicherort unter [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) verwendet wird. Zum Auffinden von Dateien muss die App den Inhalt der Karte aufzählen, indem sie das Dateisystem rekursiv durchläuft. Verwenden Sie [**GetFilesAsync (CommonFileQuery.DefaultQuery)** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) und [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync), um die Inhalte der SD-Karte auf effiziente Weise abzurufen.
 
 Wir empfehlen Ihnen, zum Durchlaufen der SD-Karte einen Hintergrundthread zu verwenden. Eine SD-Karte kann viele Gigabyte an Daten enthalten.
 
 Die App kann Benutzer auch zum Auswählen bestimmter Ordner mithilfe der Dateiauswahl auffordern.
 
-Beim Zugreifen auf das Dateisystem auf der SD-Karte mit einem Pfad, der von [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) abgeleitet ist, verhalten sich die untenstehenden Methoden wie folgt:
+Beim Zugreifen auf das Dateisystem auf der SD-Karte mit einem Pfad, der von [**KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) abgeleitet ist, verhalten sich die untenstehenden Methoden wie folgt:
 
--   Die [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273)-Methode gibt die Union (Vereinigung) der Dateierweiterungen, die Sie für die Verarbeitung registriert haben, und der Dateierweiterungen zurück, die den von Ihnen angegebenen Medienbibliothekfunktionen zugeordnet sind.
--   Für die [**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206)-Methode tritt ein Fehler auf, wenn Sie die Dateierweiterung der Datei, auf die Sie zugreifen möchten, nicht für die Verarbeitung registriert haben.
+-   Die [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync)-Methode gibt die Union (Vereinigung) der Dateierweiterungen, die Sie für die Verarbeitung registriert haben, und der Dateierweiterungen zurück, die den von Ihnen angegebenen Medienbibliothekfunktionen zugeordnet sind.
+-   Für die [**GetFileFromPathAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync)-Methode tritt ein Fehler auf, wenn Sie die Dateierweiterung der Datei, auf die Sie zugreifen möchten, nicht für die Verarbeitung registriert haben.
 
 ## <a name="identifying-the-individual-sd-card"></a>Identifizieren einer individuellen SD-Karte
 

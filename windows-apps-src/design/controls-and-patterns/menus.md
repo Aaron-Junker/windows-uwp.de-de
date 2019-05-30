@@ -3,8 +3,9 @@ Description: Menüs und Kontextmenüs zeigen auf Anforderung des Benutzers eine 
 title: Menüs und Kontextmenüs
 label: Menus and context menus
 template: detail.hbs
-ms.date: 01/08/2019
+ms.date: 04/19/2019
 ms.topic: article
+ms.custom: RS5, 19H1
 keywords: windows 10, UWP
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
 pm-contact: yulikl
@@ -12,13 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.custom: RS5
-ms.openlocfilehash: d3ea8e2bff2455340a1183dbe5c1840fdb599d46
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.openlocfilehash: 10e91e8098f232d2875c802567674c9feacb2af9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59247188"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364622"
 ---
 # <a name="menus-and-context-menus"></a>Menüs und Kontextmenüs
 
@@ -32,7 +32,7 @@ Menüs und Kontextmenüs zeigen auf Anforderung des Benutzers eine Liste von Bef
 
 | **Plattform-APIs** | **Windows UI-Bibliothek-APIs** |
 | - | - |
-| [MenuFlyout Klasse](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar-Klasse](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout Eigenschaft](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [MenuBar-Klasse](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout Klasse](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar-Klasse](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout Eigenschaft](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [MenuBar-Klasse](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -61,8 +61,8 @@ Sie können auch in Verbindung mit einer Befehlsleiste eine Menüleiste verwende
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/MenuFlyout">die App zu öffnen und MenuFlyout in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -70,7 +70,7 @@ Sie können auch in Verbindung mit einer Befehlsleiste eine Menüleiste verwende
 
 ## <a name="menus-vs-context-menus"></a>Vergleich zwischen Menüs und Kontextmenüs
 
-Menüs und Kontextmenüs ähneln im Aussehen und was sie enthalten können. In der Tat können Sie das gleiche Steuerelement [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), um sie zu erstellen. Der Unterschied ist, wie Sie den Benutzer darauf zugreifen können.
+Menüs und Kontextmenüs ähneln im Aussehen und was sie enthalten können. In der Tat können Sie das gleiche Steuerelement [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout), um sie zu erstellen. Der Unterschied ist, wie Sie den Benutzer darauf zugreifen können.
 
 Wann sollten Sie ein Menü und wann ein Kontextmenü verwenden?
 
@@ -90,13 +90,13 @@ Wenn Sie Befehle (z. B. Ausschneiden, Kopieren und Einfügen) hinzufügen möcht
 - Haben Sie einen einzigen Einstiegspunkt (am oberen Bildschirmrand, z. B. über ein Menü „Datei“), der immer angezeigt wird
 - Werden in der Regel an eine Schaltfläche oder ein übergeordnetes Menüelement angehängt
 - Werden mit der linken Maustaste (oder einer entsprechenden Aktion, z. B. durch Tippen) aufgerufen
-- Einem Element zugeordnet sind die [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) oder [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) Eigenschaften oder auf einer Menüleiste am oberen Rand des Fensters app gruppiert.
+- Einem Element zugeordnet sind die [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) oder [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) Eigenschaften oder auf einer Menüleiste am oberen Rand des Fensters app gruppiert.
 
 ### <a name="context-menus"></a>Kontextmenüs
 
 - Sind mit einem einzelnen Element verknüpft und zeigen Sekundärbefehle an.
 - Werden mit der rechten Maustaste (oder einer entsprechenden Aktion, z. B. durch Tippen und Halten) aufgerufen.
-- Werden Elementen über ihre [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)-Eigenschaft zugeordnet.
+- Werden Elementen über ihre [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)-Eigenschaft zugeordnet.
 
 ## <a name="icons"></a>Symbole
 
@@ -140,7 +140,7 @@ Diese Objekte erfüllen folgende Zwecke:
 - [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem): Wechseln zwischen gegenseitig Menüelemente.
 - [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator)—Optisches Trennen von Menüelementen
 
-In diesem Beispiel wird eine [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) und verwendet die [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) -Eigenschaft, die eine Eigenschaft, die für die meisten Steuerelemente, um die MenuFlyout als ein Kontextmenü anzuzeigen.
+In diesem Beispiel wird eine [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) und verwendet die [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) -Eigenschaft, die eine Eigenschaft, die für die meisten Steuerelemente, um die MenuFlyout als ein Kontextmenü anzuzeigen.
 
 ````xaml
 <Rectangle
@@ -171,7 +171,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-Das nächste Beispiel ist nahezu identisch, aber anstelle der [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)-Eigenschaft zur Anzeige der [MenuFlyout-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) als Kontextmenü wird die [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout)-Eigenschaft verwendet, um die Klasse als Menü anzuzeigen.
+Das nächste Beispiel ist nahezu identisch, aber anstelle der [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)-Eigenschaft zur Anzeige der [MenuFlyout-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) als Kontextmenü wird die [FlyoutBase.ShowAttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout)-Eigenschaft verwendet, um die Klasse als Menü anzuzeigen.
 
 ````xaml
 <Rectangle
@@ -210,7 +210,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### <a name="light-dismiss"></a>Light schließen
 
-Light dismiss-Steuerelemente wie z. B. Menüs, Kontextmenüs und andere Flyouts, Abfangen von Tastatur und Gamepad Fokus innerhalb der vorübergehenden Benutzeroberfläche bis geschlossen. Um dieses Verhalten optisch zu kennzeichnen, werden diese Steuerelemente auf der Xbox als Überlagerung gezeichnet, wobei Helligkeit bzw. Sichtbarkeit der umgebenden Benutzeroberfläche reduziert wird. Dieses Verhalten lässt sich mit der Eigenschaft  [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) anpassen. Standardmäßig werden vorübergehende Benutzeroberflächen die light-Dismiss-Überlagerung auf der Xbox gezeichnet (**automatisch**), aber nicht für andere gerätefamilien. Sie können auch erzwingen, dass das Overlay an, dass Sie immer **auf** oder immer **aus**.
+Light dismiss-Steuerelemente wie z. B. Menüs, Kontextmenüs und andere Flyouts, Abfangen von Tastatur und Gamepad Fokus innerhalb der vorübergehenden Benutzeroberfläche bis geschlossen. Um dieses Verhalten optisch zu kennzeichnen, werden diese Steuerelemente auf der Xbox als Überlagerung gezeichnet, wobei Helligkeit bzw. Sichtbarkeit der umgebenden Benutzeroberfläche reduziert wird. Dieses Verhalten lässt sich mit der Eigenschaft  [LightDismissOverlayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) anpassen. Standardmäßig werden vorübergehende Benutzeroberflächen die light-Dismiss-Überlagerung auf der Xbox gezeichnet (**automatisch**), aber nicht für andere gerätefamilien. Sie können auch erzwingen, dass das Overlay an, dass Sie immer **auf** oder immer **aus**.
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />
@@ -269,7 +269,7 @@ Sie verwenden die gleichen Elemente zum Erstellen von Menüs in einer Menüleist
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
 - [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
-- [Beispiel für XAML-Kontextmenü](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
+- [Beispiel für XAML-Kontext-Menü](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

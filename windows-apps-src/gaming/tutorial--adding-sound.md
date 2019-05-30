@@ -6,16 +6,16 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Sound
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d5a976ef65bee5efc3329afc98bf198d094b037
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 945270247b8a288554e1910ac1c6f8e5c1ec1619
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589935"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367846"
 ---
 # <a name="add-sound"></a>Hinzufügen von Sound
 
-In diesem Thema erstellen wir eine einfache sound-Engine mit [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs. Wenn Sie noch nicht mit sind __XAudio2__, wir haben eine kurze Einführung unter enthalten [Audio-Konzepte](#audio-concepts).
+In diesem Thema erstellen wir eine einfache sound-Engine mit [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction) APIs. Wenn Sie noch nicht mit sind __XAudio2__, wir haben eine kurze Einführung unter enthalten [Audio-Konzepte](#audio-concepts).
 
 >[!Note]
 >Wenn Sie den neuesten Code für dieses Beispiel noch nicht heruntergeladen haben, wechseln Sie zu [Direct3D-Spielbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel gehört zu einer großen Sammlung von UWP-Featurebeispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter [Abrufen der UWP-Beispiele von GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
@@ -129,10 +129,10 @@ void Simple3DGame::Initialize(
 
 ## <a name="create-and-initialize-the-audio-resources"></a>Erstellen Sie und initialisieren Sie die audio-Ressourcen
 
-* Verwendung [XAudio2Create](https://msdn.microsoft.com/library/windows/desktop/ee419212), eine XAudio2-API, um zwei neue XAudio2-Objekte erstellt, die die – Musik und Sound-Wirkung-Engines zu definieren. Diese Methode gibt einen Zeiger auf des Objekts des [IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908) -Schnittstelle, die alle Audiomodul verwaltet angibt, das Audio processing Thread, der Voice-Diagramm und mehr.
-* Nachdem die Engines instanziiert wurden, verwenden Sie [IXAudio2::CreateMasteringVoice](https://msdn.microsoft.com/library/windows/desktop/hh405048) eine Perfektion Stimme für die einzelnen Objekte der sound-Engine zu erstellen.
+* Verwendung [XAudio2Create](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-xaudio2create), eine XAudio2-API, um zwei neue XAudio2-Objekte erstellt, die die – Musik und Sound-Wirkung-Engines zu definieren. Diese Methode gibt einen Zeiger auf des Objekts des [IXAudio2](https://docs.microsoft.com/windows/desktop/api/xaudio2/nn-xaudio2-ixaudio2) -Schnittstelle, die alle Audiomodul verwaltet angibt, das Audio processing Thread, der Voice-Diagramm und mehr.
+* Nachdem die Engines instanziiert wurden, verwenden Sie [IXAudio2::CreateMasteringVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createmasteringvoice) eine Perfektion Stimme für die einzelnen Objekte der sound-Engine zu erstellen.
 
-Weitere Informationen finden Sie unter [Vorgehensweise: Initialisieren Sie XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx).
+Weitere Informationen finden Sie unter [Vorgehensweise: Initialize XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2).
 
 ### <a name="audiocreatedeviceindependentresources-method"></a>Audio::CreateDeviceIndependentResources-Methode
 
@@ -170,31 +170,31 @@ void Audio::CreateDeviceIndependentResources()
 
 In diesem Beispiel Spielen ist in der Code zum Lesen von audio-Format-Dateien definiert [MediaReader.h](#mediareaderh)/cpp__.  Um eine codierte WAV-Audiodatei zu lesen, rufen Sie [MediaReader::LoadMedia](#mediareaderloadmedia-method), und der Dateiname der die WAV-Datei als Eingabeparameter übergeben.
 
-### <a name="mediareaderloadmedia-method"></a>MediaReader::LoadMedia-Methode
+### <a name="mediareaderloadmedia-method"></a>MediaReader::LoadMedia method
 
-Diese Methode verwendet die [Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197)-APIs, um die WAV-Audiodatei als Pulse Code Modulation (PCM)-Puffer einzulesen.
+Diese Methode verwendet die [Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)-APIs, um die WAV-Audiodatei als Pulse Code Modulation (PCM)-Puffer einzulesen.
 
 #### <a name="set-up-the-source-reader"></a>Der Quellreader einrichten
 
-1. Verwendung [MFCreateSourceReaderFromURL](https://msdn.microsoft.com/library/windows/desktop/dd388110) , erstellen Sie einen Mediensatz quellreader ([IMFSourceReader](https://msdn.microsoft.com/library/windows/desktop/dd374655)).
-2. Verwendung [MFCreateMediaType](https://msdn.microsoft.com/library/windows/desktop/ms693861) erstellen Sie einen Medientyp ([IMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms704850)) Objekt (_MediaType_). Es stellt eine Beschreibung der Media-Format dar. 
+1. Verwendung [MFCreateSourceReaderFromURL](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-mfcreatesourcereaderfromurl) , erstellen Sie einen Mediensatz quellreader ([IMFSourceReader](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nn-mfreadwrite-imfsourcereader)).
+2. Verwendung [MFCreateMediaType](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatemediatype) erstellen Sie einen Medientyp ([IMFMediaType](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediatype)) Objekt (_MediaType_). Es stellt eine Beschreibung der Media-Format dar. 
 3. Angeben, die die _MediaType_der Ausgabe decodiert wird PCM-Audio, d.h. ein Audio eingeben, die __XAudio2__ verwenden können.
-4. Legt die entschlüsselte Ausgabe für der quellreader durch Aufrufen von Medientyp [IMFSourceReader::SetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374667.aspx).
+4. Legt die entschlüsselte Ausgabe für der quellreader durch Aufrufen von Medientyp [IMFSourceReader::SetCurrentMediaType](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-setcurrentmediatype).
 
-Weitere Informationen dazu, warum wir der Quellreader finden Sie unter [Quellreader](https://msdn.microsoft.com/library/windows/desktop/dd940436.aspx).
+Weitere Informationen dazu, warum wir der Quellreader finden Sie unter [Quellreader](https://docs.microsoft.com/windows/desktop/medfound/source-reader).
 
 #### <a name="describe-the-data-format-of-the-audio-stream"></a>Beschreiben Sie das Datenformat des Audiostreams
 
-1. Verwendung [IMFSourceReader::GetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374660) beim Abrufen des aktuellen Medien-Typs für den Stream.
-2. Verwenden [IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177) Konvertieren der aktuellen audio Medientyp, um eine [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799) zu Puffern, verwenden die Ergebnisse des Vorgangs weiter oben als Eingabe. Diese Struktur gibt an, das Datenformat des Audiostreams Wave, das verwendet wird, nach dem Audio geladen wird. 
+1. Verwendung [IMFSourceReader::GetCurrentMediaType](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getcurrentmediatype) beim Abrufen des aktuellen Medien-Typs für den Stream.
+2. Verwenden [IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatewaveformatexfrommfmediatype) Konvertieren der aktuellen audio Medientyp, um eine [WAVEFORMATEX](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) zu Puffern, verwenden die Ergebnisse des Vorgangs weiter oben als Eingabe. Diese Struktur gibt an, das Datenformat des Audiostreams Wave, das verwendet wird, nach dem Audio geladen wird. 
 
-Die __WAVEFORMATEX__ Format zum Beschreiben des PCM-Puffers verwendet werden kann. Verglichen mit der [WAVEFORMATEXTENSIBLE](https://msdn.microsoft.com/library/windows/hardware/ff538802) Struktur kann nur eine Teilmenge von Audio-Wave-Format beschrieben verwendet werden. Weitere Informationen zu den Unterschieden zwischen __WAVEFORMATEX__ und __WAVEFORMATEXTENSIBLE__, finden Sie unter [Extensible Wave-Format-Deskriptoren](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors).
+Die __WAVEFORMATEX__ Format zum Beschreiben des PCM-Puffers verwendet werden kann. Verglichen mit der [WAVEFORMATEXTENSIBLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible) Struktur kann nur eine Teilmenge von Audio-Wave-Format beschrieben verwendet werden. Weitere Informationen zu den Unterschieden zwischen __WAVEFORMATEX__ und __WAVEFORMATEXTENSIBLE__, finden Sie unter [Extensible Wave-Format-Deskriptoren](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors).
 
 #### <a name="read-the-audio-stream"></a>Lesen des Audiodatenstroms
 
-1.  Erhalten Sie die Dauer in Sekunden, des Audiostreams durch Aufrufen von [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) und dann die Dauer in Bytes konvertiert.
-2.  Lesen die Audiodatei im als Datenstrom durch Aufrufen von [IMFSourceReader::ReadSample](https://msdn.microsoft.com/library/windows/desktop/dd374665). __ReadSample__ liest das nächste Beispiel aus der Media-Quelle.
-3.  Verwendung [IMFSample::ConvertToContiguousBuffer](https://msdn.microsoft.com/library/windows/desktop/ms698917.aspx) , den Inhalt des Puffers audioabtastwert kopieren (_Beispiel_) in ein Array (_MediaBuffer_).
+1.  Erhalten Sie die Dauer in Sekunden, des Audiostreams durch Aufrufen von [IMFSourceReader::GetPresentationAttribute](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getpresentationattribute) und dann die Dauer in Bytes konvertiert.
+2.  Lesen die Audiodatei im als Datenstrom durch Aufrufen von [IMFSourceReader::ReadSample](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-readsample). __ReadSample__ liest das nächste Beispiel aus der Media-Quelle.
+3.  Verwendung [IMFSample::ConvertToContiguousBuffer](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfsample-converttocontiguousbuffer) , den Inhalt des Puffers audioabtastwert kopieren (_Beispiel_) in ein Array (_MediaBuffer_).
 
 ```cpp
 Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
@@ -342,8 +342,8 @@ Im Prinzip, tritt ein Konflikt auf, es wird ausgelöst, den Soundeffekt durch Au
 ### <a name="soundeffectplaysound-method"></a>SoundEffect::PlaySound-Methode
 
 * Verwendet das Quellobjekt für den Voice **m\_SourceVoice** zu die Wiedergabe von sound Datenpuffer **m\_SoundData**
-* Erstellt eine [XAUDIO2\_Puffer](https://msdn.microsoft.com/library/windows/desktop/ee419228), um die es enthält einen Verweis auf den sound Datenpuffer, und sendet sie durch einen Aufruf von [IXAudio2SourceVoice::SubmitSourceBuffer](https://msdn.microsoft.com/library/windows/desktop/ee418473). 
-* Mit den sound Daten in einer Warteschlange und **SoundEffect::PlaySound** beginnt durch Aufrufen von wiedergeben [IXAudio2SourceVoice::Start](https://msdn.microsoft.com/library/windows/desktop/ee418471).
+* Erstellt eine [XAUDIO2\_Puffer](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_buffer), um die es enthält einen Verweis auf den sound Datenpuffer, und sendet sie durch einen Aufruf von [IXAudio2SourceVoice::SubmitSourceBuffer](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-submitsourcebuffer). 
+* Mit den sound Daten in einer Warteschlange und **SoundEffect::PlaySound** beginnt durch Aufrufen von wiedergeben [IXAudio2SourceVoice::Start](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-start).
 
 ```cpp
 void SoundEffect::PlaySound(_In_ float volume)
@@ -457,9 +457,9 @@ Wir haben die UWP Framework, Grafiken, Steuerelemente, Benutzeroberfläche und A
 
 ## <a name="audio-concepts"></a>Audio-Konzepte
 
-Verwenden Sie für Windows 10-Spiele-Entwicklung XAudio2 Version 2.9 ein. Diese Version ist im Lieferumfang Windows 10. Weitere Informationen finden Sie unter [XAudio2 Versionen](https://msdn.microsoft.com/library/windows/desktop/ee415802.aspx).
+Verwenden Sie für Windows 10-Spiele-Entwicklung XAudio2 Version 2.9 ein. Diese Version ist im Lieferumfang Windows 10. Weitere Informationen finden Sie unter [XAudio2 Versionen](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-versions).
 
-__AudioX2__ ist eine Low-Level-API, die signalverarbeitung, und Kombinieren von Foundation bereitstellt. Weitere Informationen finden Sie unter [XAudio2-Schlüsselkonzepte](https://msdn.microsoft.com/library/windows/desktop/ee415764.aspx).
+__AudioX2__ ist eine Low-Level-API, die signalverarbeitung, und Kombinieren von Foundation bereitstellt. Weitere Informationen finden Sie unter [XAudio2-Schlüsselkonzepte](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-key-concepts).
 
 ### <a name="xaudio2-voices"></a>XAudio2 stimmen
 
@@ -473,13 +473,13 @@ Weitere Informationen finden Sie unter [XAudio2 stimmen](/windows/desktop/xaudio
 
 ### <a name="audio-graph"></a>Audiograph
 
-Audiograph ist eine Sammlung von [XAudio2 stimmen](/windows/desktop/xaudio2/xaudio2-voices). Audio auf einer Seite von einem audiograph in Quelle stimmen beginnt, durchläuft optional eine oder mehrere Submix stimmen, und endet mit einer Perfektion Stimme. Ein audiograph enthält eine Stimme Quelle für jede Sound wiedergeben, NULL oder mehr Submix stimmen, und eine Perfektion Stimme an. Die einfachste audiograph sowie die Mindestanforderung für die keine Geräusche in XAudio2 ist eine einzelne Quelle Stimme direkt an eine Perfektion Stimme ausgeben. Weitere Informationen finden Sie unter [Audio Diagramme](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx).
+Audiograph ist eine Sammlung von [XAudio2 stimmen](/windows/desktop/xaudio2/xaudio2-voices). Audio auf einer Seite von einem audiograph in Quelle stimmen beginnt, durchläuft optional eine oder mehrere Submix stimmen, und endet mit einer Perfektion Stimme. Ein audiograph enthält eine Stimme Quelle für jede Sound wiedergeben, NULL oder mehr Submix stimmen, und eine Perfektion Stimme an. Die einfachste audiograph sowie die Mindestanforderung für die keine Geräusche in XAudio2 ist eine einzelne Quelle Stimme direkt an eine Perfektion Stimme ausgeben. Weitere Informationen finden Sie unter [Audio Diagramme](https://docs.microsoft.com/windows/desktop/xaudio2/audio-graphs).
 
-### <a name="additional-reading"></a>Zusätzliches Lesematerial
+### <a name="additional-reading"></a>Weiterführende Literatur
 
-* [So wird es gemacht: Initialisieren Sie XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
-* [So wird es gemacht: Laden von Dateien von Audiodaten in XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
-* [So wird es gemacht: Wiedergeben von Sound mit XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787.aspx)
+* [Vorgehensweise: Initialize XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2)
+* [Vorgehensweise: Laden von Dateien von Audiodaten in XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
+* [Vorgehensweise: Wiedergeben von Sound mit XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--play-a-sound-with-xaudio2)
 
 ## <a name="key-audio-h-files"></a>Wichtige audio .h-Dateien
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cc1bafb90b20083d55a622873dea7be5efbf5b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72e45f8ef0f5684b3a712056eb367975f8e6103a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633485"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370349"
 ---
 # <a name="bluetooth-developer-faq"></a>Bluetooth-Entwickler – Häufig gestellte Fragen
 
@@ -63,7 +63,7 @@ In diesem Beispiel wird die Kopplung mit einem Gerät ohne Verschlüsselung init
 
 Bei Bluetooth RFCOMM (Classic)-Geräten ist dies nicht erforderlich. Ab Windows 10, Version 1607, können Sie einfach Geräte in der Nähe suchen und eine Verbindung herstellen. Das aktualisierte [RFCOMM Chat-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) veranschaulicht diese Funktionalität. 
 
-**(14393 und ältere Versionen)** Da dieses Feature für Bluetooth Low Energy (GATT-Client) nicht verfügbar ist, müssen diese Geräte weiterhin über die Einstellungsseite oder mithilfe der [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx)-APIs gekoppelt werden, damit Sie darauf zugreifen können.
+**(14393 und ältere Versionen)** Da dieses Feature für Bluetooth Low Energy (GATT-Client) nicht verfügbar ist, müssen diese Geräte weiterhin über die Einstellungsseite oder mithilfe der [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)-APIs gekoppelt werden, damit Sie darauf zugreifen können.
 
 **(15030 und höhere Versionen)** Das Koppeln von Bluetooth-Geräten ist nicht mehr erforderlich. Verwenden Sie die neuen asynchronen APIs wie GetGattServicesAsync und GetCharacteristicsAsync, um den aktuellen Zustand des Remotegeräts abzufragen. Ausführlichere Informationen finden Sie in den [Client-Dokumentationen](gatt-client.md). 
 

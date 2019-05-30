@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f49d70ceadad8309419846aa26cb9f97df1c82ff
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d1f139ca4cf134ff8515a4da1134da16c338a4a8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620895"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371332"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Mit der Wiedergabe automatisch starten
 
@@ -225,9 +225,9 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 Sie können Apps als Optionen für Geräteereignisse der **automatischen Wiedergabe** registrieren. Geräteereignisse zur **automatischen Wiedergabe** werden ausgelöst, wenn ein Gerät an einen PC angeschlossen wird.
 
-Hier wird gezeigt, wie Sie eine App als Option für die **automatische Wiedergabe** identifizieren, wenn eine Kamera an einen PC angeschlossen wird. Die app registriert wird, als Handler für die **WPD\\ImageSourceAutoPlay** Ereignis. Dabei handelt es sich um ein häufiges Ereignis, das vom WPD-System (Windows Portable Device) ausgelöst wird, wenn es von Kameras und anderen Bildverarbeitungsgeräten benachrichtigt wird, dass es sich dabei um eine ImageSource mit MTP handelt. Weitere Informationen finden Sie unter [Tragbare Windows-Geräte](https://msdn.microsoft.com/library/windows/hardware/ff597729).
+Hier wird gezeigt, wie Sie eine App als Option für die **automatische Wiedergabe** identifizieren, wenn eine Kamera an einen PC angeschlossen wird. Die app registriert wird, als Handler für die **WPD\\ImageSourceAutoPlay** Ereignis. Dabei handelt es sich um ein häufiges Ereignis, das vom WPD-System (Windows Portable Device) ausgelöst wird, wenn es von Kameras und anderen Bildverarbeitungsgeräten benachrichtigt wird, dass es sich dabei um eine ImageSource mit MTP handelt. Weitere Informationen finden Sie unter [Tragbare Windows-Geräte](https://docs.microsoft.com/previous-versions//ff597729(v=vs.85)).
 
-**Wichtige**  der [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) APIs sind Teil der [desktop Gerätefamilie](https://msdn.microsoft.com/library/windows/apps/dn894631). Apps können diese APIs nur für Windows 10-Geräte in der desktop-Gerät-Familie, wie z. B. PCs verwenden.
+**Wichtige**  der [**Windows.Devices.Portable.StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) APIs sind Teil der [desktop Gerätefamilie](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). Apps können diese APIs nur für Windows 10-Geräte in der desktop-Gerät-Familie, wie z. B. PCs verwenden.
 
  
 
@@ -250,7 +250,7 @@ Die Einstellung **Aktionsanzeigename** gibt die Zeichenfolge an, die bei der aut
 
 ### <a name="step-2-add-assembly-reference-for-the-desktop-extensions"></a>Schritt 2: Hinzufügen von Assembly-Verweis für die desktop-Erweiterungen
 
-Die APIs, die für den Speicherzugriff auf einem tragbaren Windows-Gerät erforderlich sind ([**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654)), sind Teil der [Desktopgerätefamilie](https://msdn.microsoft.com/library/windows/apps/dn894631). Dies bedeutet, dass eine spezielle Assembly erforderlich ist, um die APIs zu verwenden, und dass diese Aufrufe nur auf einem Gerät der Desktopgerätefamilie (z. B. einem PC) funktionieren.
+Die APIs, die für den Speicherzugriff auf einem tragbaren Windows-Gerät erforderlich sind ([**Windows.Devices.Portable.StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice)), sind Teil der [Desktopgerätefamilie](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). Dies bedeutet, dass eine spezielle Assembly erforderlich ist, um die APIs zu verwenden, und dass diese Aufrufe nur auf einem Gerät der Desktopgerätefamilie (z. B. einem PC) funktionieren.
 
 1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie dann **Verweis hinzufügen** aus.
 2.  Erweitern Sie die Option **Universal Windows**, und klicken Sie auf **Erweiterungen**.
@@ -286,7 +286,7 @@ Die APIs, die für den Speicherzugriff auf einem tragbaren Windows-Gerät erford
 
 ### <a name="step-4-add-activation-code"></a>Schritt 4: Gültigkeitsdauer des Aktivierungscodes hinzufügen
 
-Der Code in diesem Schritts verweist auf die Kamera als [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654), indem er die Geräteinformations-ID der Kamera an die [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655)-Methode übergibt. Die Geräteinformations-ID der Kamera wird ermittelt, indem die Ereignisargumente zunächst in [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710) umgewandelt werden und anschließend der Wert von der [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711)-Eigenschaft abgerufen wird.
+Der Code in diesem Schritts verweist auf die Kamera als [**StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice), indem er die Geräteinformations-ID der Kamera an die [**FromId**](https://docs.microsoft.com/uwp/api/windows.devices.portable.storagedevice.fromid)-Methode übergibt. Die Geräteinformations-ID der Kamera wird ermittelt, indem die Ereignisargumente zunächst in [**DeviceActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.DeviceActivatedEventArgs) umgewandelt werden und anschließend der Wert von der [**DeviceInformationId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.deviceactivatedeventargs.deviceinformationid)-Eigenschaft abgerufen wird.
 
 Öffnen Sie die Datei „App.xaml.cs“, und fügen Sie der **App**-Klasse den folgenden Code hinzu.
 
@@ -340,7 +340,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 
 ### <a name="step-5-add-code-to-display-device-information"></a>Schritt 5: Fügen Sie Code zum Anzeigen von Geräteinformationen
 
-Informationen zur Kamera erhalten Sie über die Eigenschaften der [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654)-Klasse. Der Code in diesem Schritt zeigt bei der Ausführung der App den Gerätenamen und andere Informationen für den Benutzer an. Anschließend ruft der Code die Methoden GetImageList und GetThumbnail auf, die Sie im nächsten Schritt hinzufügen, um Miniaturansichten der auf der Kamera gespeicherten Bilder anzuzeigen.
+Informationen zur Kamera erhalten Sie über die Eigenschaften der [**StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice)-Klasse. Der Code in diesem Schritt zeigt bei der Ausführung der App den Gerätenamen und andere Informationen für den Benutzer an. Anschließend ruft der Code die Methoden GetImageList und GetThumbnail auf, die Sie im nächsten Schritt hinzufügen, um Miniaturansichten der auf der Kamera gespeicherten Bilder anzuzeigen.
 
 Fügen Sie in der Datei „MainPage.xaml.cs“ der **MainPage**-Klasse folgenden Code hinzu.
 
@@ -415,7 +415,7 @@ Sie können ein Volumegerät wie eine Speicherkarte oder einen USB-Stick als Ger
 
 Im Folgenden zeigen wir, wie Sie Ihr Volumegerät als Gerät zur **automatischen Wiedergabe** identifizieren.
 
-Identifizieren Sie Ihr Volumegerät als Gerät für die **automatische Wiedergabe**, indem Sie dem Stammverzeichnis des Geräts die Datei „autorun.inf“ hinzufügen. Fügen Sie in der Datei „autorun.inf“ im **AutoRun**-Abschnitt einen **CustomEvent**-Schlüssel hinzu. Wenn Ihr Volumegerät an einen PC angeschlossen wird, findet die **automatische Wiedergabe** die Datei „autorun.inf“ und behandelt Ihr Volume als ein Gerät. Die **automatische Wiedergabe** erstellt anhand des Namens, den Sie für den **CustomEvent**-Schlüssel angegeben haben, ein Ereignis zur **automatischen Wiedergabe**. Sie können eine App erstellen und sie dann als Handler für dieses Ereignis zur **automatischen Wiedergabe** registrieren. Wenn das Gerät an den PC angeschlossen wird, bietet die **automatische Wiedergabe** Ihre App als Handler für Ihr Volumegerät an. Weitere Informationen zu Dateien vom Typ „autorun.inf“ finden Sie unter [Autorun.inf-Einträge](https://msdn.microsoft.com/library/windows/desktop/cc144200).
+Identifizieren Sie Ihr Volumegerät als Gerät für die **automatische Wiedergabe**, indem Sie dem Stammverzeichnis des Geräts die Datei „autorun.inf“ hinzufügen. Fügen Sie in der Datei „autorun.inf“ im **AutoRun**-Abschnitt einen **CustomEvent**-Schlüssel hinzu. Wenn Ihr Volumegerät an einen PC angeschlossen wird, findet die **automatische Wiedergabe** die Datei „autorun.inf“ und behandelt Ihr Volume als ein Gerät. Die **automatische Wiedergabe** erstellt anhand des Namens, den Sie für den **CustomEvent**-Schlüssel angegeben haben, ein Ereignis zur **automatischen Wiedergabe**. Sie können eine App erstellen und sie dann als Handler für dieses Ereignis zur **automatischen Wiedergabe** registrieren. Wenn das Gerät an den PC angeschlossen wird, bietet die **automatische Wiedergabe** Ihre App als Handler für Ihr Volumegerät an. Weitere Informationen zu Dateien vom Typ „autorun.inf“ finden Sie unter [Autorun.inf-Einträge](https://docs.microsoft.com/windows/desktop/shell/autorun-cmds).
 
 ### <a name="step-1-create-an-autoruninf-file"></a>Schritt 1: Erstellen Sie eine autorun.inf-Datei
 
@@ -534,9 +534,9 @@ Das **automatische Wiedergabesystem** ermöglicht es, Apps für eine Vielzahl vo
 | Verarbeitung von beschreibbaren optischen Datenträgern                                     | **HandleCDBurningOnArrival** <br />**HandleDVDBurningOnArrival** <br />**HandleBDBurningOnArrival** | Wenn ein Datenträger in das optische Laufwerk eingelegt wird, prüft die automatische Wiedergabe die Dateien, um den Inhaltstyp zu ermitteln. Wenn ein Datenträger mit Schreibzugriff gefunden wurde, wird das Ereignis entsprechend dem Typ des optischen Datenträgers ausgelöst. |
 | Verarbeitung von anderen Geräte- oder Volumeverbindungen                       | **UnknownContentOnArrival**        | Ausgelöst für alle Ereignisse, wenn Inhalt gefunden wurde, der mit einem der Inhaltsereignisse für die automatische Wiedergabe übereinstimmt. Es wird nicht empfohlen, dieses Ereignis zu verwenden. Sie sollten Ihre Anwendung nur für bestimmte Ereignisse für die automatische Wiedergabe registrieren, die sie auch verarbeiten kann. |
 
-Mit dem Eintrag **CustomEvent** in der Datei „autorun.inf“ können Sie angeben, dass von der automatischen Wiedergabe ein benutzerdefiniertes Inhaltsereignis für die automatische Wiedergabe ausgelöst wird. Weitere Informationen finden Sie unter [Autorun.inf-Einträge](https://msdn.microsoft.com/library/windows/desktop/cc144200).
+Mit dem Eintrag **CustomEvent** in der Datei „autorun.inf“ können Sie angeben, dass von der automatischen Wiedergabe ein benutzerdefiniertes Inhaltsereignis für die automatische Wiedergabe ausgelöst wird. Weitere Informationen finden Sie unter [Autorun.inf-Einträge](https://docs.microsoft.com/windows/desktop/shell/autorun-cmds).
 
-Sie können Ihre App als Ereignishandler für Inhalte oder Geräte zur automatischen Wiedergabe registrieren, indem Sie der Datei „package.appxmanifest“ eine Erweiterung für die App hinzufügen. Wenn Sie Visual Studio verwenden, können Sie auf der Registerkarte **Deklarationen** eine Deklaration vom Typ **Inhalt automatisch wiedergeben** oder **Gerät automatisch wiedergeben** hinzufügen. Wenn Sie die Datei „package.appxmanifest“ für die App direkt bearbeiten, fügen Sie dem Paketmanifest ein [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400)-Element hinzu, das als **Category** entweder **windows.autoPlayContent** oder **windows.autoPlayDevice** festlegt. So wird beispielsweise durch den folgenden Eintrag im Paketmanifest eine Erweiterung für **Inhalt automatisch wiedergeben** hinzugefügt, um die App als Handler für das **ShowPicturesOnArrival**-Ereignis zu registrieren.
+Sie können Ihre App als Ereignishandler für Inhalte oder Geräte zur automatischen Wiedergabe registrieren, indem Sie der Datei „package.appxmanifest“ eine Erweiterung für die App hinzufügen. Wenn Sie Visual Studio verwenden, können Sie auf der Registerkarte **Deklarationen** eine Deklaration vom Typ **Inhalt automatisch wiedergeben** oder **Gerät automatisch wiedergeben** hinzufügen. Wenn Sie die Datei „package.appxmanifest“ für die App direkt bearbeiten, fügen Sie dem Paketmanifest ein [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension)-Element hinzu, das als **Category** entweder **windows.autoPlayContent** oder **windows.autoPlayDevice** festlegt. So wird beispielsweise durch den folgenden Eintrag im Paketmanifest eine Erweiterung für **Inhalt automatisch wiedergeben** hinzugefügt, um die App als Handler für das **ShowPicturesOnArrival**-Ereignis zu registrieren.
 
 ```xml
   <Applications>

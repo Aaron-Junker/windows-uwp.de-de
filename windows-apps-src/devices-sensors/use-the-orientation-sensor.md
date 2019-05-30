@@ -6,21 +6,21 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4426cbc2e2d3c6e7d980b0733b6deb5178025abb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 407c76c41d4a8620e2168e8e03dd2a3e24d73b61
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624095"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369574"
 ---
 # <a name="use-the-orientation-sensor"></a>Verwenden des Ausrichtungssensors
 
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
--   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)
+-   [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
 
 **Beispiele**
 
@@ -29,11 +29,11 @@ ms.locfileid: "57624095"
 
 Hier erfahren Sie, wie Sie mithilfe der Ausrichtungssensoren die Ausrichtung des Geräts ermitteln.
 
-Es gibt zwei verschiedene Arten von APIs, die in enthaltenen ausrichtungssensor der [ **Windows.Devices.Sensors** ](https://msdn.microsoft.com/library/windows/apps/BR206408) Namespace: [**OrientationSensor** ](https://msdn.microsoft.com/library/windows/apps/BR206371) und [ **SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). Zwar handelt es sich bei beiden Sensoren um Ausrichtungssensoren, sie werden jedoch für vollkommen unterschiedliche Zwecke verwendet. Aber da beide Ausrichtungssensoren sind, werden auch beide in diesem Artikel behandelt.
+Es gibt zwei verschiedene Arten von APIs, die in enthaltenen ausrichtungssensor der [ **Windows.Devices.Sensors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) Namespace: [**OrientationSensor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) und [ **SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation). Zwar handelt es sich bei beiden Sensoren um Ausrichtungssensoren, sie werden jedoch für vollkommen unterschiedliche Zwecke verwendet. Aber da beide Ausrichtungssensoren sind, werden auch beide in diesem Artikel behandelt.
 
-Die [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)-API wird in 3D-Apps verwendet, um eine Quaternionen- und eine Drehungsmatrix zu erhalten. Eine Quaternion kann am einfachsten verstanden werden, wie eine Drehung mit einem Punkt \[X, y, Z\] über eine beliebige Achse (Gegenüberstellung mit einer Drehung-Matrix, die nacheinander um drei Achsen darstellt). Die Mathematik hinter Quaternions ist recht exotisch, da sie die geometrischen Eigenschaften komplexer Zahlen und die mathematischen Eigenschaften imaginärer Zahlen umfasst. Das Arbeiten mit ihnen ist jedoch einfach, und sie werden von Frameworks wie DirectX unterstützt. Eine komplexe 3D-App kann mithilfe des Ausrichtungssensors die Perspektive des Benutzers anpassen. Dieser Sensor kombiniert Eingaben von Beschleunigungssensor, Gyrometer und Kompass.
+Die [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)-API wird in 3D-Apps verwendet, um eine Quaternionen- und eine Drehungsmatrix zu erhalten. Eine Quaternion kann am einfachsten verstanden werden, wie eine Drehung mit einem Punkt \[X, y, Z\] über eine beliebige Achse (Gegenüberstellung mit einer Drehung-Matrix, die nacheinander um drei Achsen darstellt). Die Mathematik hinter Quaternions ist recht exotisch, da sie die geometrischen Eigenschaften komplexer Zahlen und die mathematischen Eigenschaften imaginärer Zahlen umfasst. Das Arbeiten mit ihnen ist jedoch einfach, und sie werden von Frameworks wie DirectX unterstützt. Eine komplexe 3D-App kann mithilfe des Ausrichtungssensors die Perspektive des Benutzers anpassen. Dieser Sensor kombiniert Eingaben von Beschleunigungssensor, Gyrometer und Kompass.
 
-Die [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)-API dient zum Ermitteln der aktuellen Ausrichtung des Geräts gemäß Definitionen wie „portrait up“, „portrait down“, „landscape left“ und „landscape right“. Außerdem kann sie erkennen, ob die Oberseite des Geräts nach oben oder nach unten zeigt. Dieser Sensor zurückgegebene Drehungswert aus und gibt die Eigenschaften wie "Hochformat" oder "Querformat links", nicht: "Nicht gedreht", "Rotated90DegreesCounterclockwise" und So weiter. In der folgenden Tabelle werden die allgemeinen Ausrichtungseigenschaften den entsprechenden Sensorwerten zugeordnet.
+Die [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)-API dient zum Ermitteln der aktuellen Ausrichtung des Geräts gemäß Definitionen wie „portrait up“, „portrait down“, „landscape left“ und „landscape right“. Außerdem kann sie erkennen, ob die Oberseite des Geräts nach oben oder nach unten zeigt. Dieser Sensor zurückgegebene Drehungswert aus und gibt die Eigenschaften wie "Hochformat" oder "Querformat links", nicht: "Nicht gedreht", "Rotated90DegreesCounterclockwise" und So weiter. In der folgenden Tabelle werden die allgemeinen Ausrichtungseigenschaften den entsprechenden Sensorwerten zugeordnet.
 
 | Ausrichtung     | Entsprechender Sensorwert      |
 |-----------------|-----------------------------------|
@@ -42,7 +42,7 @@ Die [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR20
 | Portrait Down   | Rotated180DegreesCounterclockwise |
 | Landscape Right | Rotated270DegreesCounterclockwise |
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
 

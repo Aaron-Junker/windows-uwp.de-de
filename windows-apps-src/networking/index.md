@@ -6,12 +6,12 @@ ms.date: 11/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 26324637fdf54b48fa441d28065bf437fbf74b26
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 673f774c4d686726b59ff4e52e356ec0bc319379
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582589"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370762"
 ---
 # <a name="networking-and-web-services"></a>Netzwerk- und Webdienste
 
@@ -24,6 +24,6 @@ Die folgenden Netzwerk- und Webdiensttechnologien sind für Entwickler von UWP (
 | [Netzwerkkommunikation im Hintergrund](network-communications-in-the-background.md) | Um die Netzwerkkommunikation fortzusetzen, während sie sich nicht im Vordergrund befindet, kann eine App Hintergrundaufgaben und entweder Socketbroker- oder Steuerkanaltrigger verwenden. |
 | [Sockets](sockets.md) | Sockets sind eine einfache Datenübertragungstechnologie und bilden die Grundlage zahlreicher Netzwerkprotokollimplementierungen. UWP bietet TCP- und UDP-Socketklassen für Client-Server- oder Peer-to-Peer-Anwendungen, unabhängig davon, ob Verbindungen langlebig sind oder keine bestehende Verbindung erforderlich ist. |
 | [WebSockets](websockets.md) | WebSockets stellt einen Mechanismus für die schnelle und sichere bidirektionale Kommunikation zwischen einem Client und einem Server über das Web mithilfe von HTTP(S) bereit und unterstützt sowohl UTF-8-Nachrichten als auch binäre Nachrichten. |
-| [HttpClient](httpclient.md) | Verwenden Sie die [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692)-Namespace-API zum Senden und Empfangen von Informationen über das HTTP-Protokoll 1.1 und 2.0. |
-| [RSS-/Atom-Feeds](web-feeds.md) | Mithilfe von Fremdanbieterfeeds, die entsprechend den RSS- und Atom-Standards mit Features im [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632)-Namespace generiert werden, können Sie die aktuellsten und beliebtesten Webinhalte abrufen oder erstellen. |
+| [HttpClient](httpclient.md) | Verwenden Sie die [Windows.Web.Http](https://docs.microsoft.com/uwp/api/Windows.Web.Http)-Namespace-API zum Senden und Empfangen von Informationen über das HTTP-Protokoll 1.1 und 2.0. |
+| [RSS-/Atom-Feeds](web-feeds.md) | Mithilfe von Fremdanbieterfeeds, die entsprechend den RSS- und Atom-Standards mit Features im [Windows.Web.Syndication](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication)-Namespace generiert werden, können Sie die aktuellsten und beliebtesten Webinhalte abrufen oder erstellen. |
 | [Hintergrundübertragungen](background-transfers.md) | Verwenden Sie die Hintergrundübertragungs-API zum zuverlässigen Kopieren von Dateien im Netzwerk. |

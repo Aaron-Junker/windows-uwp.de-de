@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0474345e21161e76fbfeebe0086e5d433b2d219
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a68623b0a61672426c9b6eef85cb7d1ddc990a19
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607355"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370992"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>Zuordnungen in einen Kachelpool
 
@@ -31,13 +31,13 @@ Lassen Sie uns herausfinden, welchen Speicherplatz die Seitentabelle im ungünst
 
 Nehmen wir an, dass jeder Seitentabelleneintrag 64 Bits umfasst.
 
-Für die Seite "Worst-Case"-Tabelle enthält Größe, die für eine einzelne Oberfläche, erhält die Ressourcengrenzwerte in Direct3D 11, angenommen, eine streaming Ressource mit einem 128-Bit pro Element-Format (z. B. eine RGBA "float"), also eine 64-KB-Kachel erstellt wurde erreicht nur 4096 Pixel. Die maximal unterstützte [ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526) Größe des 16384\*16384\*2048 (jedoch nur eine einzelne Mipmap) müsste ungefähr 1 GB Speicher in der Seitentabelle, wenn vollständig aufgefüllt. Verwenden 64-Bit-Tabelleneinträge (nicht einschließlich Mipmaps). Durch das Hinzufügen von Mip-Maps würde der Speicherbedarf der vollständig zugeordneten (ungünstigster Fall) Seitetabelle um etwa ein Drittel anwachsen, auf etwa 1,3 GB.
+Für die Seite "Worst-Case"-Tabelle enthält Größe, die für eine einzelne Oberfläche, erhält die Ressourcengrenzwerte in Direct3D 11, angenommen, eine streaming Ressource mit einem 128-Bit pro Element-Format (z. B. eine RGBA "float"), also eine 64-KB-Kachel erstellt wurde erreicht nur 4096 Pixel. Die maximal unterstützte [ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) Größe des 16384\*16384\*2048 (jedoch nur eine einzelne Mipmap) müsste ungefähr 1 GB Speicher in der Seitentabelle, wenn vollständig aufgefüllt. Verwenden 64-Bit-Tabelleneinträge (nicht einschließlich Mipmaps). Durch das Hinzufügen von Mip-Maps würde der Speicherbedarf der vollständig zugeordneten (ungünstigster Fall) Seitetabelle um etwa ein Drittel anwachsen, auf etwa 1,3 GB.
 
 Dieser Fall würde einen Zugriff auf etwa 10,6 Terabyte adressierbaren Speicher erlauben. Möglicherweise gibt es jedoch eine Grenze für die Menge an adressierbarem Speicher, wodurch sich diese Mengen verringern würden, vielleicht auf einen Wert im Terabytebereich.
 
-Ein weiterer Fall zu berücksichtigen ist eine einzelne [ **Texture2D** ](https://msdn.microsoft.com/library/windows/desktop/ff471525) streaming Ressource 16384\*16384 mit einem 32-Bit pro Element-Format, einschließlich von Mipmaps. Der Speicherplatz in einer vollständig ausgefüllten Seitentabelle läge bei etwa 170 KB, bei 64-Bit-Einträgen.
+Ein weiterer Fall zu berücksichtigen ist eine einzelne [ **Texture2D** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) streaming Ressource 16384\*16384 mit einem 32-Bit pro Element-Format, einschließlich von Mipmaps. Der Speicherplatz in einer vollständig ausgefüllten Seitentabelle läge bei etwa 170 KB, bei 64-Bit-Einträgen.
 
-Abschließend sollten Sie ein Beispiel unter Verwendung eines BC-Formates betrachten, sagen wir BC7 mit 128 Bits pro Kachel von 4x4 Pixeln. Dies entspricht einem Byte pro Pixel. Ein [ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526) von 16384\*16384\*2048 in einschließlich Mipmaps müsste ungefähr 85 MB dieser Speicher in einer Seitentabelle vollständig auffüllen. Das ist gar nicht schlecht, vor allem unter Berücksichtigung der Tatsache, dass dadurch eine Streaming-Ressource 550 Gigapixel umfassen kann (512 GB Speicherplatz in diesem Fall).
+Abschließend sollten Sie ein Beispiel unter Verwendung eines BC-Formates betrachten, sagen wir BC7 mit 128 Bits pro Kachel von 4x4 Pixeln. Dies entspricht einem Byte pro Pixel. Ein [ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) von 16384\*16384\*2048 in einschließlich Mipmaps müsste ungefähr 85 MB dieser Speicher in einer Seitentabelle vollständig auffüllen. Das ist gar nicht schlecht, vor allem unter Berücksichtigung der Tatsache, dass dadurch eine Streaming-Ressource 550 Gigapixel umfassen kann (512 GB Speicherplatz in diesem Fall).
 
 In der Praxis würden bei Weitem nicht so umfangreiche vollständige Zuordnungen definiert, angesichts der Tatsache, dass die Menge des verfügbaren physischen Speichers bei Weitem nicht zulassen würde, dass gleichzeitig so viel zugeordnet und verwiesen wird. Mit einem Kachelpool könnten die Anwendungen sich jedoch dafür entscheiden, Kacheln wiederzuverwenden (beispielsweise das einfache Wiederverwenden einer "schwarzen" Kachel für große schwarze Bereiche in einem Bild) – und dadurch den Kachelpool (d.h. Seitentabellenzuordnungen) als Tool für die Speicherkomprimierung effizient nutzen.
 

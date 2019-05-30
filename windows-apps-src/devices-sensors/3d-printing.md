@@ -6,17 +6,17 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: Windows 10, Uwp, 3dprinting, 3D-Druck
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0bfaa06c749567fb38254be06ac9e8fd01fe61
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0f63ce967c2053da9addc77fba0eb738fff41b44
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607305"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370382"
 ---
 # <a name="3d-printing"></a>3D-Druck
 
 
-In diesem Abschnitt wird beschrieben, wie die [Windows.Graphics.Printing3D Namespace](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) 3D Druckfunktionen zu Ihrer universellen Windows-app hinzufügen.  
+In diesem Abschnitt wird beschrieben, wie die [Windows.Graphics.Printing3D Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d) 3D Druckfunktionen zu Ihrer universellen Windows-app hinzufügen.  
 
 Weitere Informationen zur 3D-Druck mit Windows 10, einschließlich Ressourcen Hardwarepartner, Community-Diskussionsforen und allgemeine Informationen zum Drucken 3D-Funktionen, finden Sie unter den [3D-Druck mit Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) -Website auf der Hardware Developer Center.
 
@@ -28,7 +28,7 @@ Weitere Informationen zur 3D-Druck mit Windows 10, einschließlich Ressourcen Ha
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [3D-Druck mit Windows 10 (Hardware Dev Center)](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
-* [Windows.Graphics.Printing3D-namespace](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
+* [Windows.Graphics.Printing3D-namespace](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
 * [Beispiel für 3D drucken](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [3D-Druck von Unity-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 

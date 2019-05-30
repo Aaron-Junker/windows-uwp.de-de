@@ -5,12 +5,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, always connected, ARM32-Apps auf ARM, windows 10 auf ARM, problembehandlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 3431b12fc6f6b6ba2d870400ec4f6684f8290a61
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: ddf28627838ebc8cb2df620c398f3803c026cb17
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63815284"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366834"
 ---
 # <a name="troubleshooting-arm-uwp-apps"></a>Problembehandlung bei ARM UWP-apps
 
@@ -23,7 +23,7 @@ Wenn Ihre ARM32 oder ARM64-UWP-app nicht ordnungsgemäß auf ARM funktioniert, i
 Hier sind einige häufig auftretende Probleme zu bedenken, bei der Problembehandlung ARM32 und ARM64-apps.
 
 ### <a name="using-windows-10-mobile-only-apis-on-arm-based-processors"></a>Verwenden von Windows 10 Nur-Mobil-APIs auf ARM-basierten Prozessoren
-ARM-apps möglicherweise treten Probleme auf, wenn nur Mobile-APIs verwenden (z. B. **ob "hardwarebuttons"**). Um dies zu verringern, können Sie dynamisch erkennen, ob Ihre App auf Windows 10 Mobile ausgeführt wird, bevor Sie diese APIs aufrufen. Befolgen Sie die Anleitungen im Blogbeitrag [Dynamisches Erkennen von Features mithilfe von API-Verträgen](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+ARM-apps möglicherweise treten Probleme auf, wenn nur Mobile-APIs verwenden (z. B. **ob "hardwarebuttons"** ). Um dies zu verringern, können Sie dynamisch erkennen, ob Ihre App auf Windows 10 Mobile ausgeführt wird, bevor Sie diese APIs aufrufen. Befolgen Sie die Anleitungen im Blogbeitrag [Dynamisches Erkennen von Features mithilfe von API-Verträgen](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 ### <a name="including-dependencies-not-supported-by-uwp-apps"></a>Einschließen von Abhängigkeiten, die von UWP-Apps nicht unterstützt werden
 Universelle Windows-Plattform (UWP)-apps, die ordnungsgemäß mit Visual Studio und die UWP-SDK erstellt werden nicht möglicherweise Abhängigkeiten auf Betriebssystemkomponenten, die nicht auf ARM-apps, die auf einem ARM64 System zur Verfügung stehen. Beispiele für diese Abhängigkeiten sind:
@@ -33,7 +33,7 @@ Universelle Windows-Plattform (UWP)-apps, die ordnungsgemäß mit Visual Studio 
 
 Durch diese Probleme gelöst werden können: entfernen die Abhängigkeiten nicht verfügbar ist und die Neuentwicklung der app mit den neuesten Versionen von Microsoft Visual Studio und UWP-SDK; oder als letztes Mittel, entfernen die ARM-app aus dem Microsoft Store, damit die X86 Version der app (falls vorhanden) wird auf PCs von Benutzern heruntergeladen.
 
-Weitere Informationen zu .NET-APIs, die für UWP-Apps verfügbar sind, finden Sie unter [.NET für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/mt185501.aspx)
+Weitere Informationen zu .NET-APIs, die für UWP-Apps verfügbar sind, finden Sie unter [.NET für UWP-Apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 
 ### <a name="compiling-an-app-with-an-older-version-of-visual-studio-and-sdk"></a>Kompilieren einer App mit einer älteren Version von Visual Studio und SDK
 Wenn Probleme auftreten, stellen Sie sicher, dass Sie die neueste Version von Microsoft Visual Studio und Windows SDK zum Kompilieren Ihrer App verwenden. Apps, die mit einer früheren Version von Visual Studio und SDK kompiliert wurden, verursachen möglicherweise Probleme, die in späteren Versionen behoben wurden.

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, spiele, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: d2f883e62cf7c61560295673cf48cf891befed91
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2452d4bfcce01dfc86e44c9f57a82baa6beb8ce7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662615"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368794"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 – Häufig gestellte Fragen zur Portierung
 
@@ -33,11 +33,11 @@ Das Direct3D-Gerät wird jetzt zum Erstellen von Ressourcen im Videospeicher ver
 ##  <a name="do-i-have-to-update-my-game-timer-for-uwp"></a>Muss ich meinen Spieltimer für UWP aktualisieren?
 
 
-[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904), zusammen mit [ **QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905), ist immer noch die beste Möglichkeit, einen Spieltimer für UWP-apps zu implementieren.
+[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter), zusammen mit [ **QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency), ist immer noch die beste Möglichkeit, einen Spieltimer für UWP-apps zu implementieren.
 
 Eine Kleinigkeit sollten Sie im Hinblick auf Timer und den UWP-App-Lebenszyklus beachten. Das Anhalten und Fortsetzen ist nicht das Gleiche wie das erneute Starten eines Desktopspiels durch den Spieler, da das Spiel in diesem Fall eine Momentaufnahme ab dem Zeitpunkt fortsetzt, zu dem das Spiel zuletzt gespielt wurde. Ist viel Zeit vergangen – z. B. einige Wochen – können bei einigen Timerimplementierungen Fehler auftreten. Sie können App-Lebenszyklusereignisse verwenden, um Ihren Timer beim Fortsetzen des Spiels zurückzusetzen.
 
-Spiele, die noch immer die RDTSC-Anweisung verwenden, müssen aktualisiert werden. Siehe [Zeitliche Steuerung von Spielen und Multi-Core-Prozessoren](https://msdn.microsoft.com/library/windows/desktop/ee417693).
+Spiele, die noch immer die RDTSC-Anweisung verwenden, müssen aktualisiert werden. Siehe [Zeitliche Steuerung von Spielen und Multi-Core-Prozessoren](https://docs.microsoft.com/windows/desktop/DxTechArts/game-timing-and-multicore-processors).
 
 ## <a name="my-game-code-is-based-on-d3dx-and-dxut-is-there-anything-available-that-can-help-me-migrate-my-code"></a>Mein Spielcode basiert auf D3DX und DXUT. Gibt es irgendetwas, das ich zum Migrieren des Codes verwenden kann?
 
@@ -54,8 +54,8 @@ Chuck Walbourns Artikelserie mit dem Titel [zweifach verwendbaren Codierungstech
 
 Zum Laden von Bildern sind zwei API-Pfade verfügbar:
 
--   Die Inhaltspipeline konvertiert Bilder in DDS-Dateien, die als Direct3D-Texturressourcen verwendet werden. Siehe [Verwenden von 3D-Ressourcen in Spielen oder Apps](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
--   Mit der [Windows-Bilderstellungskomponente](https://msdn.microsoft.com/library/windows/desktop/ee719902) können Bilder in vielen verschiedenen Formaten geladen werden. Sie kann sowohl für Direct2D-Bitmaps als auch für Direct3D-Texturressourcen verwendet werden.
+-   Die Inhaltspipeline konvertiert Bilder in DDS-Dateien, die als Direct3D-Texturressourcen verwendet werden. Siehe [Verwenden von 3D-Ressourcen in Spielen oder Apps](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
+-   Mit der [Windows-Bilderstellungskomponente](https://docs.microsoft.com/windows/desktop/wic/-wic-lh) können Bilder in vielen verschiedenen Formaten geladen werden. Sie kann sowohl für Direct2D-Bitmaps als auch für Direct3D-Texturressourcen verwendet werden.
 
 Sie können auch den DDSTextureLoader und den WICTextureLoader aus [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) oder [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) verwenden.
 
@@ -69,7 +69,7 @@ Das DirectX SDK ist im Windows SDK enthalten. Das neueste DirectX SDK, das vo
 
 Der Großteil der Komponenten im Windows SDK ist bereits in unterstützten Versionen des Betriebssystems enthalten oder verfügt nicht über eine DLL-Komponente (z. B. DirectXMath). Alle Direct3D-API-Komponenten, die von UWP-Apps verwendet werden können, werden bereits für Ihr Spiel verfügbar sein. Sie müssen sie nicht neu verteilen.
 
-Win32-Desktopanwendungen verwenden weiterhin DirectSetup. Wenn Sie die Desktopversion Ihres Spiels aktualisieren, gehen Sie daher wie unter [Direct3D 11-Bereitstellung für Spielentwickler](https://msdn.microsoft.com/library/windows/desktop/ee416644) beschrieben vor.
+Win32-Desktopanwendungen verwenden weiterhin DirectSetup. Wenn Sie die Desktopversion Ihres Spiels aktualisieren, gehen Sie daher wie unter [Direct3D 11-Bereitstellung für Spielentwickler](https://docs.microsoft.com/windows/desktop/direct3darticles/direct3d11-deployment) beschrieben vor.
 
 ## <a name="is-there-any-way-i-can-update-my-desktop-code-to-directx-11-before-moving-away-from-effects"></a>Kann ich meinen Desktopcode vor der Umstellung von Effects auf DirectX 11 aktualisieren?
 
@@ -81,47 +81,47 @@ Siehe [Effects für Direct3D 11-Update](https://go.microsoft.com/fwlink/p/?Link
 
 Ja:
 
--   Lesen Sie [Konvertieren in Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb204851).
--   Stellen Sie sicher, dass Ihr Spiel keine Überreste der festen Pipeline enthält (siehe [Veraltete Funktionen](https://msdn.microsoft.com/library/windows/desktop/cc308047)).
+-   Lesen Sie [Konvertieren in Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3d9/converting-to-directx-9).
+-   Stellen Sie sicher, dass Ihr Spiel keine Überreste der festen Pipeline enthält (siehe [Veraltete Funktionen](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated)).
 -   Führen Sie dann den Portieren DirectX 9-Pfad: [Port aus D3D 9 für die UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
 ##  <a name="can-i-port-my-directx-10-or-11-game-to-uwp"></a>Kann ich mein DirectX 10- oder 11-Spiel zu UWP portieren?
 
 
-DirectX 10.x- und 11-Desktopspiele können ohne großen Aufwand zu UWP portiert werden. Siehe [Migrieren zu Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476190).
+DirectX 10.x- und 11-Desktopspiele können ohne großen Aufwand zu UWP portiert werden. Siehe [Migrieren zu Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-programming-guide-migrating).
 
 ## <a name="how-do-i-choose-the-right-display-device-in-a-multi-monitor-system"></a>Wie wähle ich bei einem Multi-Monitor-System das richtige Anzeigegerät aus?
 
 
-Der Benutzer wählt aus, auf welchem Monitor Ihre App angezeigt wird. Rufen Sie [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) auf, und legen Sie den ersten Parameter auf **nullptr** fest, damit Windows den korrekten Adapter auswählt. Rufen Sie anschließend die [**IDXGIDevice interface**](https://msdn.microsoft.com/library/windows/desktop/bb174527) des Geräts ab, rufen Sie [**GetAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174531) auf, und erstellen Sie die Swapchain mit dem DXGI-Adapter.
+Der Benutzer wählt aus, auf welchem Monitor Ihre App angezeigt wird. Rufen Sie [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) auf, und legen Sie den ersten Parameter auf **nullptr** fest, damit Windows den korrekten Adapter auswählt. Rufen Sie anschließend die [**IDXGIDevice interface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgidevice) des Geräts ab, rufen Sie [**GetAdapter**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-getadapter) auf, und erstellen Sie die Swapchain mit dem DXGI-Adapter.
 
 ## <a name="how-do-i-turn-on-antialiasing"></a>Wie aktiviere ich Antialiasing?
 
 
-Antialiasing (Multisampling) wird beim Erstellen des Direct3D-Geräts aktiviert. Auflisten von multisampling-Unterstützung durch den Aufruf [ **CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499), legen Sie für Multisampling-Optionen in der [ **DXGI\_Beispiel\_DESC-Struktur** ](https://msdn.microsoft.com/library/windows/desktop/bb173072) beim Aufruf [ **CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530).
+Antialiasing (Multisampling) wird beim Erstellen des Direct3D-Geräts aktiviert. Auflisten von multisampling-Unterstützung durch den Aufruf [ **CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels), legen Sie für Multisampling-Optionen in der [ **DXGI\_Beispiel\_DESC-Struktur** ](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) beim Aufruf [ **CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
 
 ## <a name="my-game-renders-using-multithreading-andor-deferred-rendering-what-do-i-need-to-know-for-direct3d-11"></a>Mein Spiel rendert mit Multithreading und/oder verzögertem Rendering. Was muss ich in diesem Zusammenhang bei Direct3D 11 beachten?
 
 
-Lesen Sie [Einführung in das Multithreading in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476891). Dort werden die ersten Schritte erläutert. Eine Liste der wichtigsten Unterschiede finden Sie unter [Unterschiede beim Threading zwischen Direct3D-Versionen](https://msdn.microsoft.com/library/windows/desktop/ff476890). Beachten Sie, dass beim verzögerten Rendering ein *verzögerter Gerätekontext* anstelle eines *unmittelbaren Kontextes* verwendet wird.
+Lesen Sie [Einführung in das Multithreading in Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro). Dort werden die ersten Schritte erläutert. Eine Liste der wichtigsten Unterschiede finden Sie unter [Unterschiede beim Threading zwischen Direct3D-Versionen](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences). Beachten Sie, dass beim verzögerten Rendering ein *verzögerter Gerätekontext* anstelle eines *unmittelbaren Kontextes* verwendet wird.
 
 ## <a name="where-can-i-read-more-about-the-programmable-pipeline-since-direct3d-9"></a>Wo finde ich weitere Informationen zur programmierbaren Pipeline seit Direct3D 9?
 
 
 Lesen Sie die folgenden Themen:
 
--   [Programmierhandbuch für HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509635)
--   [Direct3D 10 häufig gestellte Fragen](https://msdn.microsoft.com/library/windows/desktop/ee416643)
+-   [Programmierhandbuch für HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
+-   [Direct3D 10 häufig gestellte Fragen](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
 
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>Was sollte ich anstelle des X-Dateiformats für meine Modelle verwenden?
 
 
-Es gibt zwar keinen offiziellen Ersatz für das X-Dateiformat, in vielen Beispielen wird aber das SDKMesh-Format verwendet. Visual Studio bietet außerdem eine [Inhaltspipeline](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx), die verschiedene gängige Formate in CMO-Dateien kompiliert, die mit Code aus dem Visual Studio 3D-Starter Kit oder mit dem [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) geladen werden können.
+Es gibt zwar keinen offiziellen Ersatz für das X-Dateiformat, in vielen Beispielen wird aber das SDKMesh-Format verwendet. Visual Studio bietet außerdem eine [Inhaltspipeline](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015), die verschiedene gängige Formate in CMO-Dateien kompiliert, die mit Code aus dem Visual Studio 3D-Starter Kit oder mit dem [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) geladen werden können.
 
 ## <a name="how-do-i-debug-my-shaders"></a>Wie debugge ich meine Shader?
 
 
-Microsoft Visual Studio 2015 umfasst die Diagnosetools für DirectX-Grafiken. Siehe [Debuggen von DirectX-Grafiken](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+Microsoft Visual Studio 2015 umfasst die Diagnosetools für DirectX-Grafiken. Siehe [Debuggen von DirectX-Grafiken](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>Was ist das Direct3D 11-Äquivalent für die *x*-Funktion?
 

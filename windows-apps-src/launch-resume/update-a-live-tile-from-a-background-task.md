@@ -7,19 +7,19 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.localizationpriority: medium
-ms.openlocfilehash: 0148be96d9c5994d2fe16e7a0adedee16c8469de
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 280f2253fda7de816ee753798dcab754d58ae847
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63816889"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370552"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Aktualisieren einer Live-Kachel über eine Hintergrundaufgabe
 
 **Wichtige APIs**
 
--   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Verwenden Sie eine Hintergrundaufgabe, um die Live-Kachel Ihrer App mit neuen Inhalten zu aktualisieren.
 
@@ -39,7 +39,7 @@ Fügen Sie der Projektmappe zum Aktivieren einer Live-Kachel für Ihre App ein n
 ## <a name="implement-the-background-task"></a>Implementieren der Hintergrundaufgabe
 
 
-Implementieren Sie die [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)-Schnittstelle, um eine Klasse zu erstellen, mit der die Live-Kachel Ihrer App aktualisiert wird. Ihre Hintergrundarbeit bezieht sich auf die Run-Methode. In diesem Fall erhält die Aufgabe einen Veröffentlichungsfeed für die MSDN-Blogs. Richten Sie eine Verzögerung ein, um das zu frühe Schließen der Aufgabe zu verhindern, während noch asynchroner Code ausgeführt wird.
+Implementieren Sie die [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)-Schnittstelle, um eine Klasse zu erstellen, mit der die Live-Kachel Ihrer App aktualisiert wird. Ihre Hintergrundarbeit bezieht sich auf die Run-Methode. In diesem Fall erhält die Aufgabe einen Veröffentlichungsfeed für die MSDN-Blogs. Richten Sie eine Verzögerung ein, um das zu frühe Schließen der Aufgabe zu verhindern, während noch asynchroner Code ausgeführt wird.
 
 1.  Benennen Sie im Projektmappen-Explorer die automatisch generierte Datei „Class1.cs“ in „BlogFeedBackgroundTask.cs“ um.
 2.  Ersetzen Sie in „BlogFeedBackgroundTask.cs“ den automatisch generierten Code durch den Stub-Code für die **BlogFeedBackgroundTask**-Klasse.
@@ -159,7 +159,7 @@ namespace BackgroundTasks
 ## <a name="register-the-background-task"></a>Registrieren der Hintergrundaufgabe
 
 
-Erstellen Sie zum Registrieren Ihrer Aufgabe ein [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)-Objekt.
+Erstellen Sie zum Registrieren Ihrer Aufgabe ein [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)-Objekt.
 
 > **Beachten Sie**  ab in Windows 8.1-Hintergrund Registrierung Aufgabenparameter werden überprüft, die zum Zeitpunkt der Registrierung. Bei ungültigen Registrierungsparametern wird ein Fehler zurückgegeben. Ihre App muss Szenarien mit nicht erfolgreicher Registrierung von Hintergrundaufgaben problemlos verarbeiten können. Verwenden Sie beispielsweise eine Bedingungsanweisung, um die App auf Registrierungsfehler zu prüfen, und wiederholen Sie die nicht erfolgreiche Registrierung mit anderen Parameterwerten.
  
@@ -256,11 +256,11 @@ Legen Sie zum Debuggen der Hintergrundaufgabe in der Run-Methode der Aufgabe ein
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
-* [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
-* [**"Tilenotification"**](https://msdn.microsoft.com/library/windows/apps/br208616)
+* [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+* [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
+* [ **"Tilenotification"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Unterstützen Ihrer App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md)
-* [Richtlinien und Prüfliste für Kacheln und Signale](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [Richtlinien und Prüfliste für Kacheln und Signale](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, Demo-App für den Einzelhandel
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b1323f048c1b420a2cf0b239cd9f1a9fb63ff7
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 4c9f31da8e2509c41715a13fbc0bb0322782340a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334878"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366518"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>Hinzufügen von Retail-Demo (RDX)-Funktionen zu Ihrer app
 
@@ -49,7 +49,7 @@ RDX-fähige apps, die diese kritischen Anforderungen nicht erfüllen werden so b
 
 * **Fehler-Erfahrung**. Ihr App muss fehlerfrei funktionieren. Außerdem dürfen keine Fehler-Pop-ups oder -Benachrichtigungen angezeigt werden, wenn Kunden die Vorführgeräte verwenden. Fehler reflektieren negativ auf die app selbst, Ihre Marke, des Geräts Marke, Marke der Hersteller des Geräts und des Microsoft-Marke.
 
-* **Kostenpflichtige apps benötigen einen Testmodus**. Ihre app muss entweder eine kostenlose oder enthalten einen [Testmodus](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app). Kunden, die sich in einem Laden etwas ansehen, möchten dafür nicht zahlen.
+* **Kostenpflichtige apps benötigen einen Testmodus**. Ihre app muss entweder eine kostenlose oder enthalten einen [Testmodus](https://docs.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app). Kunden, die sich in einem Laden etwas ansehen, möchten dafür nicht zahlen.
 
 ### <a name="high-priority-requirements"></a>Anforderungen mit hoher Priorität
 
@@ -359,7 +359,7 @@ namespace MyCompany.MyApp
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Store und Abrufen von app-Daten](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [Das Erstellen und nutzen einen app service](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [Lokalisieren von app-Inhalte](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
+* [Store und Abrufen von app-Daten](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [Das Erstellen und nutzen einen app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [Lokalisieren von app-Inhalte](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
 * [Demo-Erfahrung im Einzelhandel (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)

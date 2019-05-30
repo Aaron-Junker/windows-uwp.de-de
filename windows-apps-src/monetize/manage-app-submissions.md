@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, App-Übermittlungen
 ms.localizationpriority: medium
-ms.openlocfilehash: 474abc2ec43b7f8eab408bd75cca33653d27d932
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 65e8599a73a196ebb72fe3cc45ea984f82057741
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63789676"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371498"
 ---
 # <a name="manage-app-submissions"></a>Verwalten von App-Übermittlungen
 
@@ -85,7 +85,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für eine App zu erstellen.
 
 1. Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
     > [!NOTE]
-    > Stellen Sie sicher, dass für die App mindestens eine abgeschlossene Übermittlung mit abgeschlossenen Informationen zu den [Altersfreigaben](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) vorhanden ist.
+    > Stellen Sie sicher, dass für die App mindestens eine abgeschlossene Übermittlung mit abgeschlossenen Informationen zu den [Altersfreigaben](https://docs.microsoft.com/windows/uwp/publish/age-ratings) vorhanden ist.
 
 2. [Abrufen eines Azure AD-Zugriffstokens](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Sie müssen dieses Zugriffstoken an die Methoden in der Microsoft Store-Übermittlungs-API übergeben. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
@@ -100,7 +100,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für eine App zu erstellen.
     > [!NOTE]
     > Ein SAS-URI ermöglicht den Zugriff auf eine sichere Ressource in Azure Storage, ohne dass Kontoschlüssel benötigt werden. Hintergrundinformationen zu SAS-URIs und ihrer Verwendung mit Azure Blob Storage finden Sie unter [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) und [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit Blob Storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
-4. Wenn Sie neue Pakete, Eintragsbilder oder Trailer-Dateien für die Übermittlung hinzufügen, [müssen Sie die App-Pakete vorbereiten](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) und auch [die App-Screenshots, -Bilder und -Trailer vorbereiten](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images). Fügen Sie all diese Dateien einem ZIP-Archiv hinzu.
+4. Wenn Sie neue Pakete, Eintragsbilder oder Trailer-Dateien für die Übermittlung hinzufügen, [müssen Sie die App-Pakete vorbereiten](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) und auch [die App-Screenshots, -Bilder und -Trailer vorbereiten](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images). Fügen Sie all diese Dateien einem ZIP-Archiv hinzu.
 
 5. Revidieren Sie die [App-Übermittlungsdaten](#app-submission-object) mit allen erforderlichen Änderungen für die neue Übermittlung, und führen Sie die folgende Methode aus, um die [Übermittlung zu aktualisieren](update-an-app-submission.md).
 
@@ -116,7 +116,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für eine App zu erstellen.
     * [Azure Storage-SDK für Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage-SDK für Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    Das folgende C#-Codebeispiel zeigt, wie Sie ein ZIP-Archiv mithilfe der [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx)-Klasse in der Azure Storage-Clientbibliothek für .NET auf Azure Blob Storage hochladen. Im Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstromobjekt geschrieben wurde.
+    Das folgende C#-Codebeispiel zeigt, wie Sie ein ZIP-Archiv mithilfe der [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN)-Klasse in der Azure Storage-Clientbibliothek für .NET auf Azure Blob Storage hochladen. Im Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstromobjekt geschrieben wurde.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -338,28 +338,28 @@ Die Ressource hat die folgenden Werte.
 | Wert      | Typ   | Beschreibung      |
 |------------|--------|-------------------|
 | id            | String  | Die ID der Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen verfügbar, um [eine App-Übermittlung zu erstellen](create-an-app-submission.md), [alle Apps abzurufen](get-all-apps.md) und [eine App abzurufen](get-an-app.md). Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
-| applicationCategory           | String  |   Eine Zeichenfolge, die [Kategorie und/oder Unterkategorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) für Ihre App angibt. Kategorien und Unterkategorien werden mit einem Unterstrich „_“ zu einer einzigen Zeichenfolge zusammengefasst, z. B. **BooksAndReference_EReader**.      |  
+| applicationCategory           | String  |   Eine Zeichenfolge, die [Kategorie und/oder Unterkategorie](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table) für Ihre App angibt. Kategorien und Unterkategorien werden mit einem Unterstrich „_“ zu einer einzigen Zeichenfolge zusammengefasst, z. B. **BooksAndReference_EReader**.      |  
 | pricing           |  object  | Eine [Preisressource](#pricing-object), die Preisinformationen für die App enthält.        |   
-| visibility           |  String  |  Die Sichtbarkeit der App. Folgende Werte sind möglich: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
-| targetPublishMode           | String  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| visibility           |  String  |  Die Sichtbarkeit der App. Folgende Werte sind möglich: <ul><li>Ausgeblendet</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
+| targetPublishMode           | String  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manuell</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | String  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |  
 | listings           |   object  |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei ein Schlüssel ein Ländercode und ein Wert eine [Eintragsressource](#listing-object) ist, die Eintragsinfos für die App enthält.       |   
-| hardwarePreferences           |  array  |   Ein Array von Zeichenfolgen, die die [Hardwareeinstellungen](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) für die App definieren. Folgende Werte sind möglich: <ul><li>Touch</li><li>Tastatur</li><li>Maus</li><li>Kamera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
-| automaticBackupEnabled           |  boolean  |   Gibt an, ob Windows die App-Daten in automatische Sicherungen auf OneDrive aufnehmen können. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
-| canInstallOnRemovableMedia           |  boolean  |   Gibt an, ob Kunden die App auf Wechselmedien installieren können. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| hardwarePreferences           |  array  |   Ein Array von Zeichenfolgen, die die [Hardwareeinstellungen](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties) für die App definieren. Folgende Werte sind möglich: <ul><li>Touch</li><li>Tastatur</li><li>Maus</li><li>Kamera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| automaticBackupEnabled           |  boolean  |   Gibt an, ob Windows die App-Daten in automatische Sicherungen auf OneDrive aufnehmen können. Weitere Informationen finden Sie unter [App-Deklarationen](https://docs.microsoft.com/windows/uwp/publish/app-declarations).   |   
+| canInstallOnRemovableMedia           |  boolean  |   Gibt an, ob Kunden die App auf Wechselmedien installieren können. Weitere Informationen finden Sie unter [App-Deklarationen](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  boolean |   Gibt an, ob game DVR für die App aktiviert ist.    |   
 | gamingOptions           |  array |   Ein Array mit einer [Spieloptionenressource](#gaming-options-object), die spielbezogene Einstellungen für die App definiert.     |   
-| hasExternalInAppProducts           |     boolean          |   Gibt an, ob die App Benutzern Käufe außerhalb des Microsoft Store-e-Commerce-Systems gestattet. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
-| meetAccessibilityGuidelines           |    boolean           |  Gibt an, ob getestet wurde, ob die App die Richtlinien zur Barrierefreiheit erfüllt. Weitere Informationen finden Sie unter [App-Deklarationen](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
-| notesForCertification           |  String  |   Enthält [Hinweise zur Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) für Ihre App.    |    
+| hasExternalInAppProducts           |     boolean          |   Gibt an, ob die App Benutzern Käufe außerhalb des Microsoft Store-e-Commerce-Systems gestattet. Weitere Informationen finden Sie unter [App-Deklarationen](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| meetAccessibilityGuidelines           |    boolean           |  Gibt an, ob getestet wurde, ob die App die Richtlinien zur Barrierefreiheit erfüllt. Weitere Informationen finden Sie unter [App-Deklarationen](https://docs.microsoft.com/windows/uwp/publish/app-declarations).      |   
+| notesForCertification           |  String  |   Enthält [Hinweise zur Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification) für Ihre App.    |    
 | status           |   String  |  Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   object  | Eine [Ressource für Statusdetails](#status-details-object), die zusätzliche Details über den Status der Übermittlung enthält, einschließlich Fehlerinformationen.       |    
 | fileUploadUrl           |   String  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete, Eintragsbilder oder Trailer-Dateien für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv, das die Pakete und Bilder enthält, zu dieser URI hochladen. Weitere Informationen finden Sie unter [Erstellen einer App-Übermittlung](#create-an-app-submission).       |    
 | applicationPackages           |   array  | Ein Array von [Ressourcen für Anwendungspakete](#application-package-object), die Details über die einzelnen Pakete in der Übermittlung bereitstellen. |    
 | packageDeliveryOptions    | object  | Eine [Ressource für Paketübermittlungsoptionen](#package-delivery-options-object), die Einstellungen zu graduellen Paketrollouts und zu verpflichtenden Updates für die Übermittlung enthält.  |
 | enterpriseLicensing           |  String  |  Einer der [Werte für Unternehmenslizenzierung](#enterprise-licensing), die das Verhalten der Unternehmenslizenzierung für die App angeben.  |    
-| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Gibt an, ob Microsoft [die App für zukünftige Windows 10-Gerätefamilien verfügbar machen](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) darf.    |    
-| allowTargetFutureDeviceFamilies           | object   |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel eine [Windows 10-Gerätefamilie](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) ist und jeder Wert ein boolescher Wert ist, der angibt, ob Ihre App auf die angegebene Gerätefamilie ausgerichtet werden darf.     |    
+| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Gibt an, ob Microsoft [die App für zukünftige Windows 10-Gerätefamilien verfügbar machen](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) darf.    |    
+| allowTargetFutureDeviceFamilies           | object   |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel eine [Windows 10-Gerätefamilie](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) ist und jeder Wert ein boolescher Wert ist, der angibt, ob Ihre App auf die angegebene Gerätefamilie ausgerichtet werden darf.     |    
 | friendlyName           |   String  |  Der Anzeigename der Übermittlung, wie im Partner Center angezeigt. Dieser Wert wird beim Erstellen der Übermittlung für Sie generiert.       |  
 | trailers           |  array |   Ein Array mit bis zu 15 [Trailer-Ressourcen](#trailer-object), die Videotrailer für den App-Eintrag darstellen.<br/><br/>   |  
 
@@ -373,9 +373,9 @@ Diese Ressource enthält Preisinformationen für die App. Die Ressource hat die 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
 |  trialPeriod               |    String     |  Eine Zeichenfolge, die den Testzeitraum für die App angibt. Folgende Werte sind möglich: <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
-|  marketSpecificPricings               |    object     |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *priceId* angegebenen Basispreis für den angegebenen Markt.      |     
+|  marketSpecificPricings               |    object     |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *priceId* angegebenen Basispreis für den angegebenen Markt.      |     
 |  sales               |   array      |  **Veraltet** Ein Array von [Verkaufsressourcen](#sale-object), die Verkaufsinformationen für die App enthalten.   |     
-|  priceId               |   String      |  Ein [Preisniveau](#price-tiers), das den [Basispreis](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price) für die App angibt.   |     
+|  priceId               |   String      |  Ein [Preisniveau](#price-tiers), das den [Basispreis](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection) für die App angibt.   |     
 |  isAdvancedPricingModel               |   boolean      |  Bei **true** hat Ihr Entwicklerkonto Zugriff auf die erweiterten Spanne von Preisstufen von 0,99 US-Dollar bis 1.999,99 US-Dollar. Bei **false** hat Ihr Entwicklerkonto Zugriff auf die ursprüngliche Spanne von Preisstufen von 0,99 US-Dollar bis 999,99 US-Dollar. Weitere Informationen zu den verschiedenen Stufen finden Sie unter [Preisstufen](#price-tiers).<br/><br/>**Hinweis**&nbsp;&nbsp;Dieses Feld ist schreibgeschützt.   |
 
 
@@ -394,11 +394,11 @@ Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung    |
 |-----------------|---------|------|
-|  name               |    String     |   Der Name des Verkaufs.    |     
+|  NAME               |    String     |   Der Name des Verkaufs.    |     
 |  basePriceId               |   String      |  Das [Preisniveau](#price-tiers), das für den Basispreis des Verkaufs verwendet werden soll.    |     
 |  startDate               |   String      |   Das Startdatum für den Verkauf im Format ISO 8601.  |     
 |  endDate               |   String      |  Das Enddatum für den Verkauf im Format ISO 8601.      |     
-|  marketSpecificPricings               |   object      |   Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *basePriceId* angegebenen Basispreis für den angegebenen Markt.    |
+|  marketSpecificPricings               |   object      |   Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *basePriceId* angegebenen Basispreis für den angegebenen Markt.    |
 
 
 <span id="listing-object" />
@@ -420,15 +420,15 @@ Diese Ressource enthält die Basiseintragsinformationen für eine App. Die Resso
 
 | Wert           | Typ    | Beschreibung       |
 |-----------------|---------|------|
-|  copyrightAndTrademarkInfo                |   String      |  Optionale [Copyright- und/oder Markeninformationen](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info).  |
-|  keywords                |  array       |  Ein Array von [keyword](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords), um die Anzeige Ihrer App in Suchergebnissen zu unterstützen.    |
-|  licenseTerms                |    String     | Die optionalen [Lizenzbestimmungen](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) für Ihre App.     |
+|  copyrightAndTrademarkInfo                |   String      |  Optionale [Copyright- und/oder Markeninformationen](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions).  |
+|  keywords                |  array       |  Ein Array von [keyword](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions), um die Anzeige Ihrer App in Suchergebnissen zu unterstützen.    |
+|  licenseTerms                |    String     | Die optionalen [Lizenzbestimmungen](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) für Ihre App.     |
 |  privacyPolicy                |   String      |   Dieser Wert ist veraltet. Um festzulegen, oder die Datenschutzrichtlinie-URL für Ihre app zu ändern, müssen Sie dies auf die [Eigenschaften](../publish/enter-app-properties.md#privacy-policy-url) Seite im Partner Center. Sie können diesen Wert aus den Aufrufen an die Übermittlungs-API weglassen. Wenn Sie diesen Wert festlegen, wird er ignoriert werden.       |
 |  supportContact                |   String      |  Dieser Wert ist veraltet. Um festzulegen, oder den Support wenden Sie sich an URL oder e-Mail-Adresse für Ihre app zu ändern, müssen Sie dies auf die [Eigenschaften](../publish/enter-app-properties.md#support-contact-info) Seite im Partner Center. Sie können diesen Wert aus den Aufrufen an die Übermittlungs-API weglassen. Wenn Sie diesen Wert festlegen, wird er ignoriert werden.        |
 |  websiteUrl                |   String      |  Dieser Wert ist veraltet. Um festzulegen, oder ändern Sie die URL der Webseite für Ihre app, müssen Sie dies auf die [Eigenschaften](../publish/enter-app-properties.md#website) Seite im Partner Center. Sie können diesen Wert aus den Aufrufen an die Übermittlungs-API weglassen. Wenn Sie diesen Wert festlegen, wird er ignoriert werden.      |    
-|  description               |    String     |   Die [Beschreibung](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) für den App-Eintrag.   |     
-|  features               |    array     |  Ein Array von bis zu 20 Zeichenfolgen, die die [Features](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) für Ihre App auflisten.     |
-|  releaseNotes               |  String       |  Die [Versionshinweise](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) für Ihre App.    |
+|  description               |    String     |   Die [Beschreibung](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) für den App-Eintrag.   |     
+|  features               |    array     |  Ein Array von bis zu 20 Zeichenfolgen, die die [Features](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) für Ihre App auflisten.     |
+|  releaseNotes               |  String       |  Die [Versionshinweise](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) für Ihre App.    |
 |  images               |   array      |  Ein Array von [Bild- und Symbolressourcen](#image-object) für den App-Eintrag.  |
 |  recommendedHardware               |   array      |  Ein Array von bis zu 11 Zeichenfolgen, die die [empfohlenen Hardwarekonfigurationen](../publish/create-app-store-listings.md#additional-information) für Ihre App auflisten.     |
 |  minimumHardware               |     String    |  Ein Array von bis zu 11 Zeichenfolgen, die die [minimalen Hardwarekonfigurationen](../publish/create-app-store-listings.md#additional-information) für Ihre App auflisten.    |  
@@ -493,13 +493,13 @@ Die Ressource hat die folgenden Werte.
 |  isLocalCooperative               |   boolean      |  Gibt an, ob das Spiel lokale Co-Op-Spiele unterstützt.    |     
 |  isOnlineMultiplayer               |   boolean      |  Gibt an, ob das Spiel Online-Multiplayer-Spiele unterstützt.    |     
 |  isOnlineCooperative               |   boolean      |  Gibt an, ob das Spiel Online-Co-Op-Spiele unterstützt.    |     
-|  localMultiplayerMinPlayers               |   int      |   Gibt die minimale Anzahl von Spielern an, die das Spiel für lokale Multiplayer-Spiele unterstützt.   |     
-|  localMultiplayerMaxPlayers               |   int      |   Gibt die maximale Anzahl von Spielern an, die das Spiel für lokale Multiplayer-Spiele unterstützt.  |     
-|  localCooperativeMinPlayers               |   int      |   Gibt die minimale Anzahl von Spielern an, die das Spiel für lokale Co-Op-Spiele unterstützt.  |     
-|  localCooperativeMaxPlayers               |   int      |   Gibt die maximale Anzahl von Spielern an, die das Spiel für lokale Co-Op-Spiele unterstützt.  |     
+|  localMultiplayerMinPlayers               |   ssNoversion      |   Gibt die minimale Anzahl von Spielern an, die das Spiel für lokale Multiplayer-Spiele unterstützt.   |     
+|  localMultiplayerMaxPlayers               |   ssNoversion      |   Gibt die maximale Anzahl von Spielern an, die das Spiel für lokale Multiplayer-Spiele unterstützt.  |     
+|  localCooperativeMinPlayers               |   ssNoversion      |   Gibt die minimale Anzahl von Spielern an, die das Spiel für lokale Co-Op-Spiele unterstützt.  |     
+|  localCooperativeMaxPlayers               |   ssNoversion      |   Gibt die maximale Anzahl von Spielern an, die das Spiel für lokale Co-Op-Spiele unterstützt.  |     
 |  isBroadcastingPrivilegeGranted               |   boolean      |  Gibt an, ob das Spiel Übertragungen unterstützt.   |     
 |  isCrossPlayEnabled               |   boolean      |   Gibt an, ob das Spiel Multiplayer-Sitzungen zwischen Spieler auf Windows 10-PCs und Xbox unterstützt.  |     
-|  kinectDataForExternal               |   String      |  Eine der folgenden Werte, der angibt, ob das Spiel Kinect-Daten sammeln und an externe Dienste senden kann: <ul><li>NotSet</li><li>Unbekannt</li><li>Enabled</li><li>Deaktiviert</li></ul>   |
+|  kinectDataForExternal               |   String      |  Eine der folgenden Werte, der angibt, ob das Spiel Kinect-Daten sammeln und an externe Dienste senden kann: <ul><li>NotSet</li><li>Unbekannt</li><li>Enabled</li><li>Disabled</li></ul>   |
 
 > [!NOTE]
 > Die *gamingOptions*-Ressource wurde im Mai 2017 nach der ersten Veröffentlichung der Microsoft Store-Übermittlungs-API für Entwickler hinzugefügt. Wenn Sie eine Übermittlung für eine App über die Übermittlungs-API erstellt haben bevor diese Ressource eingeführt wurden und die Übermittlung befindet sich noch in Bearbeitung, wird diese Ressource für Übermittlungen für die App Null sein, bis Sie die Übermittlung erfolgreich ausgeführt oder sie gelöscht haben. Wenn die *gamingOptions*-Ressource für Übermittlungen für eine App nicht verfügbar ist, ist das Feld *hasAdvancedListingPermission* der [Anwendungsressource](get-app-data.md#application_object), das von der [Eine App abrufen](get-an-app.md)-Methode zurückgegeben wird, falsch.
@@ -572,10 +572,10 @@ Die Ressource hat die folgenden Werte.
 | fileName   |   String      |  Der Name des Pakets.    |  
 | fileStatus    | String    |  Der Status des Pakets. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  String   |  Eine ID, die das Paket eindeutig identifiziert. Dieser Wert wird vom Partner Center bereitgestellt.   |     
-| version    |  String   |  Die Version des App-Pakets. Weitere Informationen finden Sie unter [Paketversionsnummern](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
+| version    |  String   |  Die Version des App-Pakets. Weitere Informationen finden Sie unter [Paketversionsnummern](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  String   |  Die Architektur des Pakets (z. B. ARM).   |     
-| languages    | array    |  Ein Array von Sprachcodes für die Sprachen, die von der App unterstützt werden. Weitere Informationen finden Sie unter [Unterstützte Dateitypen](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
-| capabilities    |  array   |  Ein Array von Funktionen, die für das Paket erforderlich sind. Weitere Informationen zu Funktionen finden Sie unter [Deklaration der App-Funktionen](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
+| languages    | array    |  Ein Array von Sprachcodes für die Sprachen, die von der App unterstützt werden. Weitere Informationen finden Sie unter [Unterstützte Dateitypen](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
+| capabilities    |  array   |  Ein Array von Funktionen, die für das Paket erforderlich sind. Weitere Informationen zu Funktionen finden Sie unter [Deklaration der App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
 | minimumDirectXVersion    |  String   |  Die DirectX-Version, die vom App-Paket mindestens unterstützt wird. Dies kann nur für Apps für Windows 8.x festgelegt werden. Für Apps, die für andere Betriebssystemversionen bestimmt sind, muss dieser Wert beim Aufruf der [Aktualisieren einer App-Übermittlung](update-an-app-submission.md)-Methode vorhanden sein, aber der von Ihnen angegebene Wert wird ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
 | minimumSystemRam    | String    |  Die Menge an RAM, die für das App-Paket mindestens erforderlich ist. Dies kann nur für Apps für Windows 8.x festgelegt werden. Für Apps, die für andere Betriebssystemversionen bestimmt sind, muss dieser Wert beim Aufruf der [Aktualisieren einer App-Übermittlung](update-an-app-submission.md)-Methode vorhanden sein, aber der von Ihnen angegebene Wert wird ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>Memory2GB</li></ul>   |       
 | targetDeviceFamilies    | array    |  Ein Array von Zeichenfolgen, die die Gerätefamilien darstellen, auf die das Paket ausgerichtet ist. Dieser Wert wird nur für Pakete verwendet, die für Windows 10 bestimmt sind. Im Fall von Paketen, die für frühere Versionen bestimmt sind, hat dieser Wert den Wert **None**. Die folgenden Gerätefamilienzeichenfolgen werden zurzeit für Windows 10-Pakete unterstützt, wobei *{0}* eine Zeichenfolge für Windows 10-Versionen ist, z. B. 10.0.10240.0, 10.0.10586.0 oder 10.0.14393.0: <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
@@ -678,7 +678,7 @@ Die Ressource hat die folgenden Werte.
 |  id               |    String     |   Die ID für den Trailer. Dieser Wert wird vom Partner Center bereitgestellt.   |
 |  videoFileName               |    String     |    Der Name der Trailer-Videodatei im ZIP-Archiv, das die Dateien für die Übermittlung enthält.    |     
 |  videoFileId               |   String      |  Die ID für die Videodatei. Dieser Wert wird vom Partner Center bereitgestellt.   |     
-|  trailerAssets               |   object      |  Ein Wörterbuch von Schlüssel-Wert-Paaren, wobei ein Schlüssel ein Sprachcode und ein Wert eine [„trailer assets“-Ressource](#trailer-assets-object), die weitere gebietsschemaspezifischen Ressourcen für den Trailer enthält. Weitere Informationen zu den unterstützten Sprachcodes finden Sie unter [Unterstützte Sprachen](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
+|  trailerAssets               |   object      |  Ein Wörterbuch von Schlüssel-Wert-Paaren, wobei ein Schlüssel ein Sprachcode und ein Wert eine [„trailer assets“-Ressource](#trailer-assets-object), die weitere gebietsschemaspezifischen Ressourcen für den Trailer enthält. Weitere Informationen zu den unterstützten Sprachcodes finden Sie unter [Unterstützte Sprachen](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
 
 > [!NOTE]
 > Die *trailers*-Ressource wurde im Mai 2017 nach der ersten Veröffentlichung der Microsoft Store-Übermittlungs-API für Entwickler hinzugefügt. Wenn Sie eine Übermittlung für eine App über die Übermittlungs-API erstellt haben bevor diese Ressource eingeführt wurden und die Übermittlung befindet sich noch in Bearbeitung, wird diese Ressource für Übermittlungen für die App Null sein, bis Sie die Übermittlung erfolgreich ausgeführt oder sie gelöscht haben. Wenn die *trailers*-Ressource für Übermittlungen für eine App nicht verfügbar ist, ist das Feld *hasAdvancedListingPermission* der [Anwendungsressource](get-app-data.md#application_object), das von der [Eine App abrufen](get-an-app.md)-Methode zurückgegeben wird, falsch.
@@ -731,13 +731,13 @@ Die folgenden Werte stellen die verfügbaren Preisstufen in der [Ressource für 
 
 ### <a name="enterprise-licensing-values"></a>Enterprise-Lizenzwerte
 
-Die folgenden Werte stellen das Verhalten der App für die Unternehmenslizenzierung dar. Weitere Informationen zu diesen Optionen finden Sie unter [Lizenzierungsoptionen für Unternehmen](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing).
+Die folgenden Werte stellen das Verhalten der App für die Unternehmenslizenzierung dar. Weitere Informationen zu diesen Optionen finden Sie unter [Lizenzierungsoptionen für Unternehmen](https://docs.microsoft.com/windows/uwp/publish/organizational-licensing).
 
 > [!NOTE]
 > Obwohl Sie die Lizenzierungsoptionen für Unternehmen für eine App-Übermittlung über der Übermittlungs-API konfigurieren können, können Sie diese API nicht verwenden, um Übermittlungen für [Volumenkäufe über den Microsoft Store für Unternehmen und Microsoft Store für Bildungseinrichtungen](../publish/organizational-licensing.md) zu veröffentlichen. Um Übermittlungen an den Microsoft Store für Unternehmen und Microsoft Store für Bildungseinrichtungen zu veröffentlichen, müssen Sie die Partner Center verwenden.
 
 
-| Wert           |  Beschreibung      |
+| Wert           |  Description      |
 |-----------------|---------------|
 | Keine            |     Ihre App soll Unternehmen nicht über die Store-verwaltete Volumenlizenzierung (Onlinevolumenlizenzierung) zur Verfügung gestellt werden.         |     
 | Online        |     Ihre App soll Unternehmen über die Store-verwaltete Volumenlizenzierung (Onlinevolumenlizenzierung) zur Verfügung gestellt werden.  |
@@ -750,7 +750,7 @@ Die folgenden Werte stellen das Verhalten der App für die Unternehmenslizenzier
 
 Die folgenden Werte stellen den Statuscode einer Übermittlung dar.
 
-| Wert           |  Beschreibung      |
+| Wert           |  Description      |
 |-----------------|---------------|
 | Keine            |     Es wurde kein Code angegeben.         |     
 | InvalidArchive        |     Das ZIP-Archiv, das das Paket enthält, ist ungültig oder hat ein unbekanntes Archivformat.  |
@@ -773,4 +773,4 @@ Die folgenden Werte stellen den Statuscode einer Übermittlung dar.
 
 * [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Abrufen von app-Daten mithilfe der Microsoft Store-Übermittlung API](get-app-data.md)
-* [Übermittlung von Apps im Partner Center](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
+* [Übermittlung von Apps im Partner Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions)

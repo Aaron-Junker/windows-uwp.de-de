@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, DirectX, Laden von Ressourcen
 ms.localizationpriority: medium
-ms.openlocfilehash: 478c61713dfcf5bc8a420aa71b0dced81ed6a169
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ae3d6bb4b7360119e1b6e3b793380c8270b70688
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633355"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368540"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Laden von Ressourcen im DirectX-Spiel
 
@@ -28,7 +28,7 @@ Es kann beispielsweise sein, dass die Gitter für polygonale Objekte im Spiel mi
 
 -   Parallel Patterns Library (PPL)
 
-### <a name="prerequisites"></a>Voraussetzungen
+### <a name="prerequisites"></a>Vorraussetzungen
 
 -   Informationen zur grundlegenden Windows-Runtime
 -   Grundlegendes zu asynchronen Aufgaben
@@ -79,9 +79,9 @@ Das asynchrone Laden wird mithilfe der **task**-Vorlage der Parallel Patterns Li
 
 `task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`.
 
-Aufgaben können mithilfe der **.then()**-Syntax verkettet werden. Wenn ein Vorgang abgeschlossen ist, kann ein anderer asynchroner Vorgang ausgeführt werden, der von den Ergebnissen des vorherigen Vorgangs abhängt. Auf diese Weise können Sie komplexe Objekte in separaten Threads für den Spieler nahezu unbemerkt laden, konvertieren und verwalten.
+Aufgaben können mithilfe der **.then()** -Syntax verkettet werden. Wenn ein Vorgang abgeschlossen ist, kann ein anderer asynchroner Vorgang ausgeführt werden, der von den Ergebnissen des vorherigen Vorgangs abhängt. Auf diese Weise können Sie komplexe Objekte in separaten Threads für den Spieler nahezu unbemerkt laden, konvertieren und verwalten.
 
-Weitere Informationen finden Sie unter [Asynchrone Programmierung in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+Weitere Informationen finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 Als Nächstes werfen wir einen Blick auf die Grundstruktur zum Deklarieren und Erstellen einer Methode für das asynchrone Laden von Dateien: **ReadDataAsync**.
 
@@ -112,7 +112,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-Wenn in Ihrem Code basierend auf diesem Code die oben definierte **ReadDataAsync**-Methode aufgerufen wird, wird eine Aufgabe zum Auslesen eines Puffers aus dem Dateisystem erstellt. Nach Abschluss dieses Vorgangs übernimmt eine verkettete Aufgabe den Puffer und führt für die Bytes dieses Puffers einen Datenstrom in ein Array durch, indem der statische [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119)-Typ verwendet wird.
+Wenn in Ihrem Code basierend auf diesem Code die oben definierte **ReadDataAsync**-Methode aufgerufen wird, wird eine Aufgabe zum Auslesen eines Puffers aus dem Dateisystem erstellt. Nach Abschluss dieses Vorgangs übernimmt eine verkettete Aufgabe den Puffer und führt für die Bytes dieses Puffers einen Datenstrom in ein Array durch, indem der statische [**DataReader**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader)-Typ verwendet wird.
 
 ```cpp
 m_basicReaderWriter = ref new BasicReaderWriter();
@@ -126,7 +126,7 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
 
 Dies ist der Aufruf an **ReadDataAsync**. Nach Abschluss des Vorgangs empfängt der Code ein Array mit Bytes, die aus der bereitgestellten Datei ausgelesen wurden. Da **ReadDataAsync** selbst als Aufgabe definiert ist, können Sie mithilfe einer Lambda-Funktion einen bestimmten Vorgang durchführen, wenn das Bytearray zurückgegeben wird. Dies kann beispielsweise die Übergabe dieser Bytedaten an eine geeignete DirectX-Funktion sein.
 
-Wenn Ihr Spiel nicht zu komplex aufgebaut ist, können Sie die Ressourcen mit einer Methode dieser Art laden, wenn Benutzer das Spiel starten. Sie können diesen Schritt ausführen, bevor Sie an einem bestimmten Punkt der Aufrufabfolge Ihrer [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)-Implementierung die Hauptspielschleife starten. Sie rufen auch hier wieder die Methoden zum Laden der Ressourcen asynchron auf, damit das Spiel schneller gestartet werden kann und Spieler nicht auf den Abschluss des Ladevorgangs warten müssen, bevor die ersten Interaktionen möglich sind.
+Wenn Ihr Spiel nicht zu komplex aufgebaut ist, können Sie die Ressourcen mit einer Methode dieser Art laden, wenn Benutzer das Spiel starten. Sie können diesen Schritt ausführen, bevor Sie an einem bestimmten Punkt der Aufrufabfolge Ihrer [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)-Implementierung die Hauptspielschleife starten. Sie rufen auch hier wieder die Methoden zum Laden der Ressourcen asynchron auf, damit das Spiel schneller gestartet werden kann und Spieler nicht auf den Abschluss des Ladevorgangs warten müssen, bevor die ersten Interaktionen möglich sind.
 
 Das eigentliche Spiel sollten jedoch erst richtig gestartet werden, nachdem das asynchrone Laden vollständig abgeschlossen ist! Erstellen Sie eine Methode, mit der angezeigt wird, wann der Ladevorgang abgeschlossen ist, z. B. ein bestimmtes Feld. Verwenden Sie dann die Lambda-Funktionen für die Lademethoden, um den Abschluss des Vorgangs anzuzeigen. Überprüfen Sie die Variable, bevor Sie Komponenten starten, in denen die geladenen Ressourcen verwendet werden.
 
@@ -239,7 +239,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh** interpretiert die Bytedaten, die aus der Datei geladen und erstellt ein Vertexpuffer und eine Index-Puffer für das Netz die Listen Vertex- und übergeben an [ **ID3D11Device::CreateBuffer** ](https://msdn.microsoft.com/library/windows/desktop/ff476501) und geben Sie entweder D3D11\_binden\_VERTEX\_Puffer oder D3D11\_binden\_INDEX\_Puffer. In **BasicLoader** wird der folgende Code verwendet:
+**CreateMesh** interpretiert die Bytedaten, die aus der Datei geladen und erstellt ein Vertexpuffer und eine Index-Puffer für das Netz die Listen Vertex- und übergeben an [ **ID3D11Device::CreateBuffer** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) und geben Sie entweder D3D11\_binden\_VERTEX\_Puffer oder D3D11\_binden\_INDEX\_Puffer. In **BasicLoader** wird der folgende Code verwendet:
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -302,7 +302,7 @@ void BasicLoader::CreateMesh(
 
 Normalerweise erstellen Sie für jedes im Spiel eingesetzte Gitter ein Vertex/Index-Pufferpaar. Wo und wann Sie die Gitter laden, ist Ihre Entscheidung. Falls Sie viele Gitter verwenden, kann es ratsam sein, nur an bestimmten Stellen im Spiel einige dieser Gitter vom Datenträger zu laden, z. B. während spezieller vordefinierter Ladezustände. Für große Gitter, z. B. Geländedaten, können Sie die Vertices per Datenstrom aus einem Cache laden. Das ist jedoch eine komplexere Prozedur, die den Rahmen dieses Themas sprengt.
 
-Wieder gilt: Es ist wichtig, dass Sie mit dem Format Ihrer Vertexdaten vertraut sind! Es gibt sehr viele Möglichkeiten, Vertexdaten in den Tools darzustellen, die zum Erstellen von Modellen verwendet werden. Außerdem haben Sie viele unterschiedliche Optionen, was die Darstellung des Eingabelayouts der Vertexdaten für Direct3D betrifft, z. B. Dreieckslisten und -ketten. Weitere Informationen zu Vertexdaten finden Sie unter [Einführung in Puffer in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898) und [Grundtypen](https://msdn.microsoft.com/library/windows/desktop/bb147291).
+Wieder gilt: Es ist wichtig, dass Sie mit dem Format Ihrer Vertexdaten vertraut sind! Es gibt sehr viele Möglichkeiten, Vertexdaten in den Tools darzustellen, die zum Erstellen von Modellen verwendet werden. Außerdem haben Sie viele unterschiedliche Optionen, was die Darstellung des Eingabelayouts der Vertexdaten für Direct3D betrifft, z. B. Dreieckslisten und -ketten. Weitere Informationen zu Vertexdaten finden Sie unter [Einführung in Puffer in Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro) und [Grundtypen](https://docs.microsoft.com/windows/desktop/direct3d9/primitives).
 
 Als Nächstes sehen wir uns das Laden von Texturen an.
 
@@ -310,7 +310,7 @@ Als Nächstes sehen wir uns das Laden von Texturen an.
 
 Das am häufigsten in Spielen verwendete Objekt – und das Objekt mit den meisten Dateien auf dem Datenträger und im Arbeitsspeicher – sind Texturen. Wie Gitter auch, können Texturen in vielen unterschiedlichen Formaten vorliegen, und Sie können Texturen in ein Format konvertieren, das von Direct3D beim Laden verwendet werden kann. Außerdem gibt es viele verschiedene Arten von Texturen, die zum Erzeugen unterschiedlicher Effekte eingesetzt werden. MIP-Ebenen für Texturen können verwendet werden, um das Aussehen und die Leistung von entfernten Objekten zu verbessern. Verschmutzungs- und Beleuchtungsmaps werden verwendet, um Effekte und Details über einer Basistextur anzuordnen. Normale Maps werden zur Berechnung der Beleuchtung pro Pixel eingesetzt. In modernen Spielen kann eine typische Szene über Tausende einzelner Texturen verfügen, die im Code alle effektiv verwaltet werden müssen!
 
-Wieder analog zu Gittern gibt es einige spezielle Formate, die mit dem Ziel einer effizienteren Arbeitsspeichernutzung eingesetzt werden. Da für Texturen häufig ein großer Anteil des GPU-Speichers (und Systemspeichers) verbraucht wird, werden diese Daten meist komprimiert. Es besteht keine Notwendigkeit, für die Texturen Ihres Spiels die Komprimierung zu verwenden. Sie können beliebige Algorithmen für die Komprimierung bzw. Dekomprimierung nutzen, solange Sie für die Direct3D-Shader Daten in einem geeigneten Format bereitstellen (z. B. eine [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)-Bitmap).
+Wieder analog zu Gittern gibt es einige spezielle Formate, die mit dem Ziel einer effizienteren Arbeitsspeichernutzung eingesetzt werden. Da für Texturen häufig ein großer Anteil des GPU-Speichers (und Systemspeichers) verbraucht wird, werden diese Daten meist komprimiert. Es besteht keine Notwendigkeit, für die Texturen Ihres Spiels die Komprimierung zu verwenden. Sie können beliebige Algorithmen für die Komprimierung bzw. Dekomprimierung nutzen, solange Sie für die Direct3D-Shader Daten in einem geeigneten Format bereitstellen (z. B. eine [**Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)-Bitmap).
 
 Direct3D bietet Unterstützung für die DXT-Texturkomprimierungsalgorithmen. Es kann jedoch sein, dass nicht alle DXT-Formate von der Grafikhardware des Spielers unterstützt werden. DDS-Dateien enthalten DXT-Texturen (sowie andere Texturkomprimierungsformate) und weisen die Erweiterung ".dds" auf.
 
@@ -320,14 +320,14 @@ Eine DDS-Datei ist eine Binärdatei mit den folgenden Informationen:
 
 -   Beschreibung der Daten in der Datei
 
-    Die Daten werden mit einem Header Beschreibung beschrieben [ **DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982); das Pixelformat wird mit definiert [ **DDS\_"PixelFormat"** ](https://msdn.microsoft.com/library/windows/desktop/bb943984). Beachten Sie, dass die **DDS\_HEADER** und **DDS\_"PixelFormat"** Strukturen ersetzen, die als veraltet markierte DDSURFACEDESC2, DDSCAPS2 und DDPIXELFORMAT DirectDraw-7-Strukturen. **DDS\_HEADER** ist die binäre Entsprechung der DDSURFACEDESC2 und DDSCAPS2. **DDS\_"PixelFormat"** DDPIXELFORMAT binäre entspricht.
+    Die Daten werden mit einem Header Beschreibung beschrieben [ **DDS\_HEADER**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header); das Pixelformat wird mit definiert [ **DDS\_"PixelFormat"** ](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat). Beachten Sie, dass die **DDS\_HEADER** und **DDS\_"PixelFormat"** Strukturen ersetzen, die als veraltet markierte DDSURFACEDESC2, DDSCAPS2 und DDPIXELFORMAT DirectDraw-7-Strukturen. **DDS\_HEADER** ist die binäre Entsprechung der DDSURFACEDESC2 und DDSCAPS2. **DDS\_"PixelFormat"** DDPIXELFORMAT binäre entspricht.
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    Wenn der Wert des **DwFlags** in [ **DDS\_"PixelFormat"** ](https://msdn.microsoft.com/library/windows/desktop/bb943984) nastaven NA hodnotu DDPF\_FOURCC und **DwFourCC** auf festgelegt ist "DX10" eine zusätzliche [ **DDS\_HEADER\_DXT10** ](https://msdn.microsoft.com/library/windows/desktop/bb943983) Struktur wird vorhanden sein, um zu ermöglichen, Texturarrays oder DXGI-Formate, die als RGB ausgedrückt werden können Pixelformat, z.B. floating Point-Formate, sRGB Formate usw. Wenn die **DDS\_HEADER\_DXT10** Struktur vorhanden ist, wird der gesamte Daten-Beschreibung sieht wie folgt aus.
+    Wenn der Wert des **DwFlags** in [ **DDS\_"PixelFormat"** ](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat) nastaven NA hodnotu DDPF\_FOURCC und **DwFourCC** auf festgelegt ist "DX10" eine zusätzliche [ **DDS\_HEADER\_DXT10** ](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10) Struktur wird vorhanden sein, um zu ermöglichen, Texturarrays oder DXGI-Formate, die als RGB ausgedrückt werden können Pixelformat, z.B. floating Point-Formate, sRGB Formate usw. Wenn die **DDS\_HEADER\_DXT10** Struktur vorhanden ist, wird der gesamte Daten-Beschreibung sieht wie folgt aus.
 
     ```cpp
     DWORD               dwMagic;
@@ -340,13 +340,13 @@ Eine DDS-Datei ist eine Binärdatei mit den folgenden Informationen:
     BYTE bdata[]
     ```
 
--   Ein Zeiger auf ein Bytearray, in dem die verbleibenden Oberflächen enthalten sind, z. B. Mipmap-Ebenen, Seiten einer Würfelmap, Tiefen in einer Volumentextur. Weitere Informationen zum Layout der DDS-Datei finden Sie unter den folgenden Links: [texture](https://msdn.microsoft.com/library/windows/desktop/bb205578)[Cubemap](https://msdn.microsoft.com/library/windows/desktop/bb205577) oder [Volumentextur](https://msdn.microsoft.com/library/windows/desktop/bb205579).
+-   Ein Zeiger auf ein Bytearray, in dem die verbleibenden Oberflächen enthalten sind, z. B. Mipmap-Ebenen, Seiten einer Würfelmap, Tiefen in einer Volumentextur. Weitere Informationen zum Layout der DDS-Datei finden Sie unter den folgenden Links: [texture](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-file-layout-for-textures)[Cubemap](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-file-layout-for-cubic-environment-maps) oder [Volumentextur](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-file-layout-for-volume-textures).
 
     ```cpp
     BYTE bdata2[]
     ```
 
-In vielen Tools erfolgt der Export im DDS-Format. Falls Sie nicht über ein Tool verfügen, mit dem Exporte der Textur in diesem Format möglich sind, können Sie ein Tool erstellen. Weitere Informationen zum DDS-Format und zur Verwendung im Code finden Sie unter [Programmieranleitung für DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991). In unserem Beispiel wird DDS verwendet.
+In vielen Tools erfolgt der Export im DDS-Format. Falls Sie nicht über ein Tool verfügen, mit dem Exporte der Textur in diesem Format möglich sind, können Sie ein Tool erstellen. Weitere Informationen zum DDS-Format und zur Verwendung im Code finden Sie unter [Programmieranleitung für DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide). In unserem Beispiel wird DDS verwendet.
 
 Wie bei anderen Ressourcentypen auch, lesen Sie die Daten aus einer Datei als Bytestream aus. Nachdem die Aufgabe für den Ladevorgang abgeschlossen ist, führt der Lambda-Aufruf Code aus (**CreateTexture**-Methode), um den Bytestream in ein für Direct3D geeignetes Format zu bringen.
 
@@ -371,7 +371,7 @@ task<void> BasicLoader::LoadTextureAsync(
 }
 ```
 
-Im vorherigen Codeausschnitt wird mit der Lambda-Funktion geprüft, ob der Dateiname die Erweiterung "dds" aufweist. Wenn ja, wird angenommen, dass es sich um eine DDS-Textur handelt. Wenn nicht, verwenden Sie die Windows-Bilderstellungskomponenten-APIs (WIC), um das Format zu ermitteln und die Daten als Bitmap zu decodieren. In beiden Fällen ist das Ergebnis eine [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)-Bitmap (oder ein Fehler).
+Im vorherigen Codeausschnitt wird mit der Lambda-Funktion geprüft, ob der Dateiname die Erweiterung "dds" aufweist. Wenn ja, wird angenommen, dass es sich um eine DDS-Textur handelt. Wenn nicht, verwenden Sie die Windows-Bilderstellungskomponenten-APIs (WIC), um das Format zu ermitteln und die Daten als Bitmap zu decodieren. In beiden Fällen ist das Ergebnis eine [**Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)-Bitmap (oder ein Fehler).
 
 ```cpp
 void BasicLoader::CreateTexture(
@@ -511,7 +511,7 @@ void BasicLoader::CreateTexture(
 }
 ```
 
-Nach Abschluss dieses Codes befindet sich ein [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)-Objekt im Arbeitsspeicher, das aus einer Bilddatei geladen wurde. Wie bei Gittern auch, enthalten Ihr Spiel und die einzelnen Szenen eine große Zahl dieser Objekte. Es ist ratsam, pro Szene oder Level Caches für Texturen einzurichten, auf die regelmäßig zugegriffen wird, anstatt alle Texturen zu Beginn des Spiels oder eines Levels zu laden.
+Nach Abschluss dieses Codes befindet sich ein [**Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)-Objekt im Arbeitsspeicher, das aus einer Bilddatei geladen wurde. Wie bei Gittern auch, enthalten Ihr Spiel und die einzelnen Szenen eine große Zahl dieser Objekte. Es ist ratsam, pro Szene oder Level Caches für Texturen einzurichten, auf die regelmäßig zugegriffen wird, anstatt alle Texturen zu Beginn des Spiels oder eines Levels zu laden.
 
 (Die **CreateDDSTextureFromMemory**-Methode, die im obigen Beispiel aufgerufen wird, ist in ganzer Länge unter [Vollständiger Code für DDSTextureLoader](complete-code-for-ddstextureloader.md) zu finden.)
 
@@ -551,7 +551,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-In diesem Beispiel verwenden Sie die **BasicReaderWriter** Instanz (**m\_BasicReaderWriter**) in der angegebenen kompilierten Shader-Objekt (.cso)-Datei als Byte-Stream zu lesen. Nach Abschluss der Aufgabe ruft die Lambda-Funktion [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) mit den aus der Datei geladenen Bytedaten auf. In Ihrem Rückruf muss ein Kennzeichen dafür festgelegt werden, dass der Ladevorgang erfolgreich war, und der Code muss dieses Kennzeichen überprüfen, bevor der Shader ausgeführt wird.
+In diesem Beispiel verwenden Sie die **BasicReaderWriter** Instanz (**m\_BasicReaderWriter**) in der angegebenen kompilierten Shader-Objekt (.cso)-Datei als Byte-Stream zu lesen. Nach Abschluss der Aufgabe ruft die Lambda-Funktion [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) mit den aus der Datei geladenen Bytedaten auf. In Ihrem Rückruf muss ein Kennzeichen dafür festgelegt werden, dass der Ladevorgang erfolgreich war, und der Code muss dieses Kennzeichen überprüfen, bevor der Shader ausgeführt wird.
 
 Vertex-Shader sind etwas komplexer. Für einen Vertex-Shader laden Sie zusätzlich ein separates Eingabelayout, mit dem die Vertexdaten definiert werden. Mit dem folgenden Code kann ein Vertex-Shader zusammen mit einem benutzerdefinierten Vertexeingabelayout asynchron geladen werden. Achten Sie darauf, dass die aus den Gittern geladenen Vertexinformationen von diesem Eingabelayout richtig dargestellt werden können!
 
@@ -601,7 +601,7 @@ In diesem speziellen Layout werden für jeden Vertex vom Vertex-Shader die folge
 -   Ein normaler Vektor für den Vertex, ebenfalls dargestellt in Form von drei 32-Bit-Gleitkommawerten.
 -   Ein transformierter 2D-Texturkoordinatenwert (u, v), dargestellt als 32-Bit-Gleitkommawertpaar.
 
-Diese Eingabeelemente pro Vertex werden als [HLSL-Semantik](https://msdn.microsoft.com/library/windows/desktop/bb509647) bezeichnet. Es handelt sich dabei um eine Gruppe definierter Register, die zum Übergeben von Daten in das bzw. aus dem kompilierten Shaderobjekt verwendet werden. Die Pipeline führt den Vertex-Shader einmal für jeden Vertex des geladenen Gitters aus. Mit der Semantik wird die Eingabe in den Vertex-Shader (sowie auch die Ausgabe) während der Ausführung definiert, und diese Daten werden dann für die Berechnungen pro Vertex im HLSL-Code des Shaders bereitgestellt.
+Diese Eingabeelemente pro Vertex werden als [HLSL-Semantik](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) bezeichnet. Es handelt sich dabei um eine Gruppe definierter Register, die zum Übergeben von Daten in das bzw. aus dem kompilierten Shaderobjekt verwendet werden. Die Pipeline führt den Vertex-Shader einmal für jeden Vertex des geladenen Gitters aus. Mit der Semantik wird die Eingabe in den Vertex-Shader (sowie auch die Ausgabe) während der Ausführung definiert, und diese Daten werden dann für die Berechnungen pro Vertex im HLSL-Code des Shaders bereitgestellt.
 
 Laden Sie als Nächstes das Vertex-Shaderobjekt.
 
@@ -688,7 +688,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-In diesem Code erstellen Sie den Vertex-Shader per Aufruf von [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524), nachdem Sie die Bytedaten für die CSO-Datei des Vertex-Shaders eingelesen haben. Danach erstellen Sie das Eingabelayout für den Shader in derselben Lambda-Funktion.
+In diesem Code erstellen Sie den Vertex-Shader per Aufruf von [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader), nachdem Sie die Bytedaten für die CSO-Datei des Vertex-Shaders eingelesen haben. Danach erstellen Sie das Eingabelayout für den Shader in derselben Lambda-Funktion.
 
 Für andere Arten von Shadern, z. B. Geometry- und Hull-Shader, kann ebenfalls eine spezielle Konfiguration erforderlich sein. Den vollständigen Code für verschiedene Methoden zum Laden von Shadern finden Sie unter [Vollständiger Code für BasicLoader](complete-code-for-basicloader.md) und [Beispiel für das Laden der Direct3D-Ressource]( https://go.microsoft.com/fwlink/p/?LinkID=265132).
 

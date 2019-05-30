@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, Bedienungshilfen, Spiele
 ms.localizationpriority: medium
-ms.openlocfilehash: 38060d0a6bead360ef8a682902a433670c79b495
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: a3ef82db2d0ddb7883179279fd7e48c1acf38dd3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162778"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369172"
 ---
 #  <a name="making-games-accessible"></a>Erstellen barrierefreier Spiele
 
@@ -35,7 +35,7 @@ Sie multiplizieren die Zahl der Benutzer, die Ihr Spiel spielen können, mit der
 
 Wenn Sie ein beeindruckendes Spiel entwickelt haben, das so kompliziert oder komplex ist, dass es nur von sehr wenigen Menschen gespielt werden kann, begrenzen Sie Ihre Verkaufszahlen. Und wenn Sie ein Spiel entwickeln, das von Menschen mit physischen, sensorischen oder kognitiven Behinderungen nicht gespielt werden kann, entgehen Ihnen ebenfalls mögliche Umsätze. Angesichts der Tatsache, dass [19 % der Bevölkerung in den Vereinigten Staaten über eine Art von Behinderung verfügen](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [ungefähr 14 % aller Erwachsener in den USA Probleme haben](https://nces.ed.gov/naal/estimates/overview.aspx) und [ungefähr 10 % der Männer über eine Form von Farbenblindheit verfügen](https://www.aao.org/eye-health/diseases/color-blindness-risk), kann dies potenziell einen großen Einfluss auf den Umsatz Ihres Titels haben. 
 
-Weitere geschäftliche Begründungen finden Sie unter [Erstellen barrierefreier Videospiele](https://msdn.microsoft.com/library/windows/desktop/ee415219).
+Weitere geschäftliche Begründungen finden Sie unter [Erstellen barrierefreier Videospiele](https://docs.microsoft.com/windows/desktop/DxTechArts/accessibility-best-practices).
 
 ### <a name="better-games"></a>Bessere Spiele
 
@@ -185,7 +185,7 @@ Im Folgenden werden einige einfache Anleitungen aufgelistet, die Sie beim Design
 
 *   Wählen Sie eine einfache, lesbare Schriftart.
 *   Wählen Sie einen ausreichend großen Schriftgrad, oder stellen Sie eine Option für die Anpassung des Schriftgrads bereit, um größere Flexibilität zu bieten. (Der ideale Schriftgrad ist von der Bildschirmgröße, dem Abstand vom Bildschirm usw. abhängig.)
-*   Schaffen Sie einen hohen Kontrast zwischen Hintergrund und Schriftfarbe. Verwenden Sie starke Gliederungen und Schatten für den Text. Verwenden Sie eine dunkle Hintergrundüberlagerung für die Untertitel, und denken Sie daran, Optionen für das Aktivieren und Deaktivieren bereitzustellen. (Weitere Informationen hierzu finden Sie unter [Informationen zum Kontrastverhältnis](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements).)
+*   Schaffen Sie einen hohen Kontrast zwischen Hintergrund und Schriftfarbe. Verwenden Sie starke Gliederungen und Schatten für den Text. Verwenden Sie eine dunkle Hintergrundüberlagerung für die Untertitel, und denken Sie daran, Optionen für das Aktivieren und Deaktivieren bereitzustellen. (Weitere Informationen hierzu finden Sie unter [Informationen zum Kontrastverhältnis](https://docs.microsoft.com/windows/uwp/accessibility/accessible-text-requirements).)
 * Zeigen Sie kurze Sätze auf dem Bildschirm an, maximal 38 Zeichen pro Zeile und maximal 2 bis 3 Zeilen zur gleichen Zeit. (Denken Sie daran, nicht zu viel über das Spiel zu verraten, indem Sie den Text anzeigen, bevor das Ereignis eintritt.)
 *   Stellen Sie klar, aus welcher Quelle der Audioeffekt stammt oder wer gerade spricht. (Beispiel: "Daniel: Hallo!")
 *   Bieten Sie die Möglichkeit, Untertitelungen und Untertitel ein- und auszuschalten. (Zusätzliche Features: Möglichkeit, auszuwählen, wie viel fundierter Informationen angezeigt werden basiert Bedeutung.)
@@ -271,5 +271,5 @@ Im Folgenden finden Sie einige externe Websites, die zusätzliche Informationen 
 ## <a name="related-links"></a>Verwandte Links
 * [Inklusive Entwurf](https://www.microsoft.com/design/inclusive)
 * [Microsoft Accessibility Developer Hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Entwickeln von UWP-apps zugegriffen werden kann](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
+* [Entwickeln von UWP-apps zugegriffen werden kann](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
 * [E-Book Engineering-Software für Barrierefreiheit](https://www.microsoft.com/download/details.aspx?id=19262)

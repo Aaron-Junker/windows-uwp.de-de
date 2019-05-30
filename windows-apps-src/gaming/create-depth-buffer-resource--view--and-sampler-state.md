@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Direct3D, Tiefenpuffer
 ms.localizationpriority: medium
-ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dfd45f620addcf7a3f6292ed2257bdfccc862cd3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613695"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368894"
 ---
 # <a name="create-depth-buffer-device-resources"></a>Erstellen von Tiefenpuffer-Geräteressourcen
 
@@ -38,7 +38,7 @@ Beachten Sie, dass die Erstellung dieser Ressourcen in eine geräteabhängige Re
 ## <a name="check-feature-support"></a>Überprüfen unterstützter Features
 
 
-Rufen Sie vor dem Erstellen der Depth-Zuordnung, die [ **CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497) Methode auf dem Direct3D-Gerät anfordern **D3D11\_FEATURE\_D3D9\_ SCHATTEN\_Unterstützung**, und geben Sie einen [ **D3D11\_FEATURE\_Daten\_D3D9\_SCHATTEN\_Unterstützung** ](https://msdn.microsoft.com/library/windows/desktop/jj247569) Struktur.
+Rufen Sie vor dem Erstellen der Depth-Zuordnung, die [ **CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) Methode auf dem Direct3D-Gerät anfordern **D3D11\_FEATURE\_D3D9\_ SCHATTEN\_Unterstützung**, und geben Sie einen [ **D3D11\_FEATURE\_Daten\_D3D9\_SCHATTEN\_Unterstützung** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_d3d9_shadow_support) Struktur.
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-Erstellen Sie anschließend die Ressourcenansichten. Legen Sie den Mip-Slice für die Ansicht der Tiefenschablone auf null und die Mip-Ebenen für die Shaderressourcenansicht auf 1 fest. Verfügen beide über eine Dimension der Textur des TEXTURE2D, und beide müssen mit einem entsprechenden [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+Erstellen Sie anschließend die Ressourcenansichten. Legen Sie den Mip-Slice für die Ansicht der Tiefenschablone auf null und die Mip-Ebenen für die Shaderressourcenansicht auf 1 fest. Verfügen beide über eine Dimension der Textur des TEXTURE2D, und beide müssen mit einem entsprechenden [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format).
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -152,7 +152,7 @@ DX::ThrowIfFailed(
 ## <a name="create-render-states"></a>Erstellen von Renderstatus
 
 
-Erstellen Sie jetzt einen Renderstatus, den Sie zum Aktivieren von Frontface-Culling verwenden können. Beachten Sie, Funktionsebene 9\_1 Geräte erfordern **DepthClipEnable** festgelegt **"true"**.
+Erstellen Sie jetzt einen Renderstatus, den Sie zum Aktivieren von Frontface-Culling verwenden können. Beachten Sie, Funktionsebene 9\_1 Geräte erfordern **DepthClipEnable** festgelegt **"true"** .
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;

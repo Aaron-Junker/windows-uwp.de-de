@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Directx, Paket
 ms.localizationpriority: medium
-ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 27ea422982ce991de20e67649bc0925a60547cd8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635405"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368315"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>Packen Ihres UWP-DirectX-Spiels (DirectX-Spiels für die universelle Windows-Plattform)
 
@@ -22,7 +22,7 @@ Zusätzlich zu den app-Paket-Modell unterstützt die Windows 10 app-Bundles, die
 -   App-Pakete enthalten plattformspezifische ausführbare Dateien und Bibliotheken. Häufig verfügen UWP-Spiele über bis zu drei App-Pakete, und zwar jeweils ein Paket für die x86-, x64- und ARM-CPU-Architekturen. Der Code und die Daten für die entsprechende Hardwareplattform müssen im dazugehörigen App-Paket enthalten sein. Ein App-Paket sollte außerdem alle wichtigen Ressourcen für das Spiel enthalten, damit die Voraussetzungen für eine Ausführung in guter Qualität und mit guter Leistung gegeben sind.
 -   Ressourcenpakete enthalten optionale oder erweiterte plattformagnostische Daten, z. B. Spielressourcen (Texturen, Gitter, Sound, Text). Ein UWP-Spiel kann über ein oder mehrere Ressourcenpakete verfügen, z. B. Ressourcenpakete für HD-Ressourcen oder -Texturen, Ressourcen der DirectX-Featureebene 11+ oder sprachspezifische Ressourcen.
 
-Weitere Informationen zu App-Bündeln und App-Paketen finden Sie unter [Definieren von App-Ressourcen](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
+Weitere Informationen zu App-Bündeln und App-Paketen finden Sie unter [Definieren von App-Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10)).
 
 Sie können zwar alle Inhalte in Ihre App-Pakete integrieren, aber diese Vorgehensweise ist ineffizient und redundant. Warum soll eine große Texturdatei für jede Plattform einzeln vorhanden sein (also dreimal), wenn sie für ARM-Plattformen meist gar nicht genutzt wird? Eine gute Zielsetzung besteht darin, die von Kunden herunterzuladende Datenmenge möglichst gering zu halten. Die Kunden können dann schneller mit dem Spielen beginnen, Speicherplatz auf dem Gerät sparen und potenzielle Kosten für Bandbreite in getakteten Netzwerken vermeiden.
 
@@ -83,7 +83,7 @@ Gehen Sie beim Konfigurieren der App für die Unterstützung lokalisierter Resso
 
      
 
--   Verwenden Sie die APIs in [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) und [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039), um die gebietsschemaspezifischen Ressourcen für die App anzugeben und zu laden. Verwenden Sie auch Verweise auf Ressourcen, die kein bestimmtes Gebietsschema enthalten. Diese APIs bestimmen das richtige Gebietsschema basierend auf den Einstellungen des jeweiligen Benutzers und rufen somit die richtige Ressource für den Benutzer ab.
+-   Verwenden Sie die APIs in [**Windows.ApplicationModel.Resources**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources) und [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core), um die gebietsschemaspezifischen Ressourcen für die App anzugeben und zu laden. Verwenden Sie auch Verweise auf Ressourcen, die kein bestimmtes Gebietsschema enthalten. Diese APIs bestimmen das richtige Gebietsschema basierend auf den Einstellungen des jeweiligen Benutzers und rufen somit die richtige Ressource für den Benutzer ab.
 -   Wählen Sie in Microsoft Visual Studio 2015, **Store-Projekt > -> App-Pakete erstellen...**  und erstellen Sie das Paket.
 
 ## <a name="defining-scaling-factor-resource-packs"></a>Definieren von Ressourcenpaketen für den Skalierungsfaktor
@@ -100,7 +100,7 @@ Konfigurieren Sie eine App, für die Ressourcenpakete für unterschiedliche Skal
 
      
 
--   Verwenden Sie die APIs in [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) zum Laden der Ressourcen. Verweise auf Ressourcen sollten generalisiert werden (kein Suffix), wobei die spezifische Skalierungsvariante weggelassen wird. Das System ruft die geeignete Skalierungsressource für die Anzeige und die Einstellungen des Benutzers ab.
+-   Verwenden Sie die APIs in [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) zum Laden der Ressourcen. Verweise auf Ressourcen sollten generalisiert werden (kein Suffix), wobei die spezifische Skalierungsvariante weggelassen wird. Das System ruft die geeignete Skalierungsressource für die Anzeige und die Einstellungen des Benutzers ab.
 -   Wählen Sie in Visual Studio 2015 **Store-Projekt > -> App-Pakete erstellen...**  und erstellen Sie das Paket.
 
 ## <a name="defining-directx-feature-level-resource-packs"></a>Definieren von Ressourcenpaketen für DirectX-Featureebenen
@@ -110,7 +110,7 @@ Die DirectX-Featureebenen entsprechen den GPU-Featuresätzen für ältere und ak
 
 Ihr app-Pack Baseline sollten die Baseline-texturformate Komprimierung verwenden: BC1, BC2 oder BC3. Diese Formate können von allen UWP-Geräten genutzt werden, von normalen ARM-Plattformen bis zu dedizierten Arbeitsstationen mit mehreren GPUs und Mediencomputern.
 
-Es ist ratsam, einem Ressourcenpaket Texturformatunterstützung für DirectX-Featureebene 10 oder höher hinzuzufügen, um lokalen Festplattenspeicher und Downloadbandbreite zu sparen. Dies ermöglicht die Verwendung moderner Komprimierungsschemas für Ebene 11, z. B. BC6H und BC7. (Weitere Informationen finden Sie unter [Block-texturkomprimierung in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) Diese Formate sind für die von modernen GPUs unterstützt hochauflösende Textur-Ressourcen effizienter und deren Verwendung finden, Leistung und speicherplatzanforderungen von Ihr Spiel auf High-End-Plattformen verbessert.
+Es ist ratsam, einem Ressourcenpaket Texturformatunterstützung für DirectX-Featureebene 10 oder höher hinzuzufügen, um lokalen Festplattenspeicher und Downloadbandbreite zu sparen. Dies ermöglicht die Verwendung moderner Komprimierungsschemas für Ebene 11, z. B. BC6H und BC7. (Weitere Informationen finden Sie unter [Block-texturkomprimierung in Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/texture-block-compression-in-direct3d-11).) Diese Formate sind für die von modernen GPUs unterstützt hochauflösende Textur-Ressourcen effizienter und deren Verwendung finden, Leistung und speicherplatzanforderungen von Ihr Spiel auf High-End-Plattformen verbessert.
 
 | DirectX-Featureebene | Unterstützte Texturkomprimierung |
 |-----------------------|-------------------------------|
@@ -163,7 +163,7 @@ Gehen Sie wie folgt vor, wenn Sie eine App konfigurieren, für die Ressourcenpak
     );
     ```
 
--   Verwenden Sie die APIs in [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) zum Laden der Ressourcen. Verweise auf Ressourcen sollten generalisiert werden (kein Suffix), wobei die Featureebene weggelassen wird. Im Gegensatz zu Sprache und Skalierung bestimmt das System jedoch nicht automatisch, welche Featureebene für eine Anzeige optimal ist; dies bestimmen Sie selbst basierend auf Codelogik. Sobald Sie die richtige Ebene bestimmt haben, informieren Sie das Betriebssystem mithilfe der APIs über die bevorzugte Featureebene. Anschließend kann das System basierend auf dieser Einstellung die richtige Ressource abrufen. Dies ist ein Codebeispiel dafür, wie Ihre App über die aktuelle DirectX-Featureebene für die Plattform informiert wird:
+-   Verwenden Sie die APIs in [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) zum Laden der Ressourcen. Verweise auf Ressourcen sollten generalisiert werden (kein Suffix), wobei die Featureebene weggelassen wird. Im Gegensatz zu Sprache und Skalierung bestimmt das System jedoch nicht automatisch, welche Featureebene für eine Anzeige optimal ist; dies bestimmen Sie selbst basierend auf Codelogik. Sobald Sie die richtige Ebene bestimmt haben, informieren Sie das Betriebssystem mithilfe der APIs über die bevorzugte Featureebene. Anschließend kann das System basierend auf dieser Einstellung die richtige Ressource abrufen. Dies ist ein Codebeispiel dafür, wie Ihre App über die aktuelle DirectX-Featureebene für die Plattform informiert wird:
     
     ```cpp
     // Set the current UI thread's MRT ResourceContext's DXFeatureLevel with the right DXFL. 
@@ -191,7 +191,7 @@ Gehen Sie wie folgt vor, wenn Sie eine App konfigurieren, für die Ressourcenpak
 
      
 
--   Suchen Sie jetzt mithilfe der [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078)-Klasse nach der passenden Datei für die aktuelle DirectX-Featureebene. Die **ResourceManager**-Klasse gibt ein [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089)-Objekt zurück, das Sie mit [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098) (oder [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438)) und einem bereitgestellten [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064)-Objekt abfragen können. Daraufhin wird ein [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051)-Objekt zurückgegeben, das der DirectX-Featureebene am ehesten entspricht, die durch den Aufruf von [**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101) angegeben wurde.
+-   Suchen Sie jetzt mithilfe der [**ResourceManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager)-Klasse nach der passenden Datei für die aktuelle DirectX-Featureebene. Die **ResourceManager**-Klasse gibt ein [**ResourceMap**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap)-Objekt zurück, das Sie mit [**ResourceMap::GetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.getvalue) (oder [**ResourceMap::TryGetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.trygetvalue)) und einem bereitgestellten [**ResourceContext**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext)-Objekt abfragen können. Daraufhin wird ein [**ResourceCandidate**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidate)-Objekt zurückgegeben, das der DirectX-Featureebene am ehesten entspricht, die durch den Aufruf von [**SetGlobalQualifierValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) angegeben wurde.
     
     ```cpp
     // An explicit ResourceContext is needed to match the DirectX feature level for the display on which the current view is presented.
@@ -216,9 +216,9 @@ Gehen Sie wie folgt vor, wenn Sie eine App konfigurieren, für die Ressourcenpak
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [Definieren von app-Ressourcen](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
-* [Verpacken von Apps](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [App-Objekt-Manager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [Definieren von app-Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10))
+* [Verpacken von Apps](https://docs.microsoft.com/windows/uwp/packaging/index)
+* [App-Objekt-Manager (MakeAppx.exe)](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d6fd8f194a3c9c98fb969034cab5a3e9e2f0de
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0589249c65d301e3e74b305b92842fe4d3f61929
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619625"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372278"
 ---
 # <a name="xnull-markup-extension"></a>{x:Null}-Markuperweiterung
 
@@ -30,11 +30,11 @@ Gibt im XAML-Markup einen **NULL**-Wert für eine Eigenschaft an.
 
 Der anfängliche Standardwert kann zwischen Abhängigkeitseigenschaften variieren und ist nicht unbedingt **null**. Viele Abhängigkeitseigenschaften akzeptieren **null** außerdem aufgrund ihrer internen Implementierung nicht als Wert (weder per Markup noch per Code). In einem solchen Fall tritt unter Umständen eine Analyseausnahme auf, wenn ein XAML-Attributwert mit **{x:Null}** festgelegt wird.
 
-Einige Windows-Runtime-Typen akzeptieren NULL-Werte. Sollte bei einem Typ, der NULL-Werte akzeptiert, **null** nicht bereits als Standardwert festgelegt sein, können Sie **{x:Null}** in XAML verwenden, um den **NULL**-Wert festzulegen. Bei Verwendung von Visual C++-komponentenerweiterungen (C++ / CX), auf NULL festlegbare Typen werden als dargestellt [ **Platform:: ibox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). In Microsoft .NET-Sprachen werden Typen, die NULL-Werte akzeptieren, mit [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) angegeben.
+Einige Windows-Runtime-Typen akzeptieren NULL-Werte. Sollte bei einem Typ, der NULL-Werte akzeptiert, **null** nicht bereits als Standardwert festgelegt sein, können Sie **{x:Null}** in XAML verwenden, um den **NULL**-Wert festzulegen. Bei Verwendung von Visual C++-komponentenerweiterungen (C++ / CX), auf NULL festlegbare Typen werden als dargestellt [ **Platform:: ibox<T>** ](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface). In Microsoft .NET-Sprachen werden Typen, die NULL-Werte akzeptieren, mit [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) angegeben.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [**NULL-Werte zulässt<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
-* [**"IReference"<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
+* [**NULL-Werte zulässt<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN)
+* [ **"IReference"<T>** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
  
 

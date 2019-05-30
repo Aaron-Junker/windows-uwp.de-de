@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 ms.localizationpriority: medium
-ms.openlocfilehash: 293c755ecaf81ce80fab148a8aca92a7e3a8fa48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78ed118ba15f38f8914cf2046344d782cd0df71b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618585"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370794"
 ---
 # <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>Wählen und Speichern von Tönen mithilfe des URI-Schemas „ms-tonepicker“
 
@@ -23,7 +23,7 @@ In diesem Thema wird beschrieben, wie Sie mit der **ms-Tonepicker:** URI-Schema.
 
 ## <a name="ms-tonepicker-uri-scheme-reference"></a>ms-tonepicker: URI-Schema-Verweis
 
-Dieses URI-Schema übergibt keine Argumente über die URI-Schema-Zeichenfolge, sondern über einen [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). Alle Zeichenfolgen beachten die Groß- und Kleinschreibung.
+Dieses URI-Schema übergibt keine Argumente über die URI-Schema-Zeichenfolge, sondern über einen [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset). Alle Zeichenfolgen beachten die Groß- und Kleinschreibung.
 
 In den folgenden Abschnitten wird angegeben, welche Argumente übergeben werden müssen, um die angegebene Aufgabe auszuführen.
 
@@ -45,17 +45,17 @@ Die Argumente, die Sie zum Anzeigen der Tonauswahl übergeben können, sind:
 
 | Parameter | Typ | Erforderlich | Mögliche Werte | Beschreibung |
 |-----------|------|----------|-------|-------------|
-| Aktion | string | Ja | "PickRingtone" | Öffnet die Tonauswahl. |
-| CurrentToneFilePath | string | Nein | Ein vorhandenes Tontoken. | Der Ton, der in der Tonauswahl als aktueller Ton angezeigt werden soll. Wenn dieser Wert nicht festgelegt ist, ist der erste Ton in der Liste standardmäßig aktiviert.<br>Streng genommen, ist dies kein Dateipfad. Sie können einen geeigneten Wert für `CurrenttoneFilePath` aus dem Wert `ToneToken` erhalten, der von der Tonauswahl zurückgegeben wird.  |
-| TypeFilter | string | Nein | "Ringtones", "Notifications", "Alarms", "None" | Wählt die Töne aus, die der Auswahl hinzugefügt werden sollen. Wenn kein Filter angegeben ist, werden alle Töne angezeigt. |
+| Aktion | String | ja | "PickRingtone" | Öffnet die Tonauswahl. |
+| CurrentToneFilePath | String | nein | Ein vorhandenes Tontoken. | Der Ton, der in der Tonauswahl als aktueller Ton angezeigt werden soll. Wenn dieser Wert nicht festgelegt ist, ist der erste Ton in der Liste standardmäßig aktiviert.<br>Streng genommen, ist dies kein Dateipfad. Sie können einen geeigneten Wert für `CurrenttoneFilePath` aus dem Wert `ToneToken` erhalten, der von der Tonauswahl zurückgegeben wird.  |
+| TypeFilter | String | nein | "Ringtones", "Notifications", "Alarms", "None" | Wählt die Töne aus, die der Auswahl hinzugefügt werden sollen. Wenn kein Filter angegeben ist, werden alle Töne angezeigt. |
 
-Die Werte, die in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) zurückgegeben werden:
+Die Werte, die in [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) zurückgegeben werden:
 
 | Rückgabewerte | Typ | Mögliche Werte | Beschreibung |
 |--------------|------|-------|-------------|
 | Ergebnis | Int32 | 0 – Erfolg. <br>1 – Abgebrochen. <br>7 – Ungültige Parameter. <br>8 – Es gibt keine Töne, die den Filterkriterien entsprechen. <br>255 – Die angegebene Aktion ist nicht implementiert. | Das Ergebnis des Auswahlvorgangs. |
-| ToneToken | string | Das Token des ausgewählten Tons. <br>Die Zeichenfolge ist leer, wenn der Benutzer in der Auswahl **Standard** auswählt. | Dieses Token kann in einer Popupbenachrichtigungs-Nutzlast verwendet werden oder einem Kontakt als Klingelton oder SMS-Klingelton zugewiesen werden. Der Parameter wird im ValueSet nur zurückgegeben, wenn **Result** 0 ist. |
-| DisplayName | string | Der Anzeigename des angegebenen Tons. | Eine Zeichenfolge, die dem Benutzer angezeigt werden kann, um den ausgewählten Ton darzustellen. Der Parameter wird im ValueSet nur zurückgegeben, wenn **Result** 0 ist. |
+| ToneToken | String | Das Token des ausgewählten Tons. <br>Die Zeichenfolge ist leer, wenn der Benutzer in der Auswahl **Standard** auswählt. | Dieses Token kann in einer Popupbenachrichtigungs-Nutzlast verwendet werden oder einem Kontakt als Klingelton oder SMS-Klingelton zugewiesen werden. Der Parameter wird im ValueSet nur zurückgegeben, wenn **Result** 0 ist. |
+| DisplayName | String | Der Anzeigename des angegebenen Tons. | Eine Zeichenfolge, die dem Benutzer angezeigt werden kann, um den ausgewählten Ton darzustellen. Der Parameter wird im ValueSet nur zurückgegeben, wenn **Result** 0 ist. |
 
 
 **Beispiel: Öffnen Sie die Auswahl der Ton, damit der Benutzer einen Ton auswählen können**
@@ -92,11 +92,11 @@ Die Argumente, die Sie zum Anzeigen des Tools für das Speichern von Tönen übe
 
 | Parameter | Typ | Erforderlich | Mögliche Werte | Beschreibung |
 |-----------|------|----------|-------|-------------|
-| Aktion | string | Ja | "SaveRingtone" | Öffnet die Auswahl, um einen Klingelton zu speichern. |
-| ToneFileSharingToken | string | Ja | [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx)-Dateifreigabetoken für die Klingeltondatei, die gespeichert werden soll. | Speichert eine bestimmte Audiodatei als Klingelton. Die unterstützten Inhaltstypen für die Datei sind „mpeg audio“ und „x-ms-wma audio“. |
-| DisplayName | string | Nein | Der Anzeigename des angegebenen Tons. | Legt den Anzeigenamen fest, der beim Speichern des angegebenen Klingeltons verwendet werden soll. |
+| Aktion | String | ja | "SaveRingtone" | Öffnet die Auswahl, um einen Klingelton zu speichern. |
+| ToneFileSharingToken | String | ja | [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager)-Dateifreigabetoken für die Klingeltondatei, die gespeichert werden soll. | Speichert eine bestimmte Audiodatei als Klingelton. Die unterstützten Inhaltstypen für die Datei sind „mpeg audio“ und „x-ms-wma audio“. |
+| DisplayName | String | nein | Der Anzeigename des angegebenen Tons. | Legt den Anzeigenamen fest, der beim Speichern des angegebenen Klingeltons verwendet werden soll. |
 
-Die Werte, die in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) zurückgegeben werden:
+Die Werte, die in [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) zurückgegeben werden:
 
 | Rückgabewerte | Typ | Mögliche Werte | Beschreibung |
 |--------------|------|-------|-------------|
@@ -156,15 +156,15 @@ Die Argumente, die Sie zum Abrufen des Anzeigenamens eines Tons übergeben könn
 
 | Parameter | Typ | Erforderlich | Mögliche Werte | Beschreibung |
 |-----------|------|----------|-------|-------------|
-| Aktion | string | Ja | "GetToneName" | Gibt an, dass Sie den Anzeigenamen eines Tons abrufen möchten. |
-| ToneToken | string | Ja | Das Tontoken. | Das Tontoken, aus dem ein Anzeigename abgerufen werden soll. |
+| Aktion | String | ja | "GetToneName" | Gibt an, dass Sie den Anzeigenamen eines Tons abrufen möchten. |
+| ToneToken | String | ja | Das Tontoken. | Das Tontoken, aus dem ein Anzeigename abgerufen werden soll. |
 
-Die Werte, die in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) zurückgegeben werden:
+Die Werte, die in [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) zurückgegeben werden:
 
 | Rückgabewert | Typ | Mögliche Werte | Beschreibung |
 |--------------|------|-------|-------------|
 | Ergebnis | Int32 | 0 – Der Auswahlvorgang war erfolgreich.<br>7 – Falscher Parameter (wenn beispielsweise kein Tontoken angegeben wurde).<br>9 – Fehler beim Lesen des Namens für das angegebene Token.<br>10 – Das angegebene Tontoken kann nicht gefunden werden. | Das Ergebnis des Auswahlvorgangs.
-| DisplayName | string | Der Anzeigename des Tons. | Gibt den Anzeigenamen des ausgewählten Tons zurück. Dieser Parameter wird im ValueSet nur zurückgegeben, wenn **Result** 0 ist. |
+| DisplayName | String | Der Anzeigename des Tons. | Gibt den Anzeigenamen des ausgewählten Tons zurück. Dieser Parameter wird im ValueSet nur zurückgegeben, wenn **Result** 0 ist. |
 
 **Beispiel: Abrufen eines Tokens für die Ton aus Contact.RingToneToken und seinen Anzeigenamen in die Kontaktkarte anzuzeigen.**
 

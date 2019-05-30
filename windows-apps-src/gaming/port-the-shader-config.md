@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Portieren, Shader, Direct3D, OpenGL
 ms.localizationpriority: medium
-ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b800a32149011376e1d97e0da44d32c733ddfb93
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618745"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368235"
 ---
 # <a name="port-the-shader-objects"></a>Portieren der Shaderobjekte
 
@@ -20,8 +20,8 @@ ms.locfileid: "57618745"
 
 **Wichtige APIs**
 
--   [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)
--   [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)
+-   [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)
+-   [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)
 
 Beim Portieren des einfachen Renderers aus OpenGL ES 2.0 ist der erste Schritt das Einrichten der äquivalenten Vertex- und Fragmentshaderobjekte in Direct3D 11. Stellen Sie außerdem sicher, dass das Hauptprogramm mit den Shaderobjekten kommunizieren kann, nachdem diese kompiliert wurden.
 
@@ -29,7 +29,7 @@ Beim Portieren des einfachen Renderers aus OpenGL ES 2.0 ist der erste Schritt d
 
  
 
-Wie unter OpenGL ES 2.0 auch, müssen die kompilierten Shader in Direct3D einem Kontext für das Zeichnen zugeordnet werden. Direct3D verfügt jedoch nicht per se über das Konzept eines Shaderprogrammobjekts. Daher weisen Sie die Shader direkt einem [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) zu. Bei diesem Schritt wird der OpenGL ES 2.0-Prozess zum Erstellen und Binden von Shaderobjekten eingehalten, und es werden die entsprechenden API-Verhalten in Direct3D bereitgestellt.
+Wie unter OpenGL ES 2.0 auch, müssen die kompilierten Shader in Direct3D einem Kontext für das Zeichnen zugeordnet werden. Direct3D verfügt jedoch nicht per se über das Konzept eines Shaderprogrammobjekts. Daher weisen Sie die Shader direkt einem [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) zu. Bei diesem Schritt wird der OpenGL ES 2.0-Prozess zum Erstellen und Binden von Shaderobjekten eingehalten, und es werden die entsprechenden API-Verhalten in Direct3D bereitgestellt.
 
 <a name="instructions"></a>Anweisungen
 ------------
@@ -168,7 +168,7 @@ GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *frag
 glUseProgram(renderer->programObject);
 ```
 
-In Direct3D wird kein Shaderprogrammobjekt verwendet. Stattdessen werden die Shader erstellt, wenn eine der Shadererstellungsmethoden auf der [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)-Schnittstelle (z. B. [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) oder [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) aufgerufen wird. Um die Shader für den aktuellen Zeichnungskontext festzulegen, werden diese einer entsprechenden [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)-Schnittstelle mit einer SetShader-Methode bereitgestellt, z. B. [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) für den Vertex-Shader oder [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) für den Fragmentshader.
+In Direct3D wird kein Shaderprogrammobjekt verwendet. Stattdessen werden die Shader erstellt, wenn eine der Shadererstellungsmethoden auf der [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)-Schnittstelle (z. B. [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) oder [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)) aufgerufen wird. Um die Shader für den aktuellen Zeichnungskontext festzulegen, werden diese einer entsprechenden [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)-Schnittstelle mit einer SetShader-Methode bereitgestellt, z. B. [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) für den Vertex-Shader oder [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) für den Fragmentshader.
 
 Direct3D 11: Legen Sie den Shader für des grafikgerätekontexts zeichnen.
 
@@ -193,9 +193,9 @@ Im OpenGL ES 2.0-Beispiel wird ein **uniform**-Element für die Shaderpipeline d
 Zusätzlich zwei **attribute**-Werte für die Vertexdaten:
 
 -   **eine\_Position**: einen 4-Float-Vektor für den Modell-Koordinaten eines Scheitelpunkts.
--   **eine\_Farbe**: Ein 4-Float-Vektor für die Verbindung mit dem Vertex RGBA-Farbwert.
+-   **a\_color**: Ein 4-Float-Vektor für die Verbindung mit dem Vertex RGBA-Farbwert.
 
-OpenGL ES 2.0: GLSL-Definitionen für die Uniformen und Attribute
+Open GL ES 2.0: GLSL-Definitionen für die Uniformen und Attribute
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
@@ -227,7 +227,7 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 
 In Direct3D werden "Attribute" oder "uniform-Elemente" in dieser Form nicht verwendet (bzw. wird diese Syntax nicht freigegeben). Stattdessen werden Konstantenpuffer verwendet, die als Direct3D-Unterressourcen dargestellt werden. Diese Ressourcen werden vom Hauptprogramm und den Shaderprogrammen gemeinsam genutzt. Einige dieser Unterressourcen, wie Vertexpositionen und -farben, werden in Form von HLSL-Semantik beschrieben. Weitere Informationen zu Konstantenpuffern und zur HLSL-Semantik und deren Beziehung zu OpenGL ES 2.0-Konzepten finden Sie unter [Portieren von Framepufferobjekten, uniform-Elementen und Attributen](porting-uniforms-and-attributes.md).
 
-Wenn dieser Prozess unter Direct3D durchgeführt werden soll, wird das „uniform“-Element in einen Direct3D-Konstantenpuffer („cbuffer“) konvertiert und erhält ein Register für die Suche per **register**-HLSL-Semantik. Die beiden Vertexattribute werden als Eingabeelemente für die Shaderpipelinephasen behandelt und ebenfalls mit [HLSL-Semantik](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION und COLOR0) zum Informieren der Shader versehen. Die Pixel-Shader verwendet eine SV\_POSITION mit PA\_ Präfix, der angibt, dass es sich um einen Systemwert, der von der GPU generiert ist. (In diesem Fall ist es eine Pixelposition, die während der überprüfungskonvertierung generiert.) VertexShaderInput und PixelShaderInput werden nicht deklariert, wie Konstante gepuffert werden, da die erste verwendet wird. definieren Sie den Vertexpuffer (finden Sie unter [Port die Vertex-Puffer und die Daten](port-the-vertex-buffers-and-data-config.md)), und die Daten für die letztgenannte Aufgabe generiert als Ergebnis einer vorherige Stufe in der Pipeline, die den Vertex-Shader in diesem Fall ist.
+Wenn dieser Prozess unter Direct3D durchgeführt werden soll, wird das „uniform“-Element in einen Direct3D-Konstantenpuffer („cbuffer“) konvertiert und erhält ein Register für die Suche per **register**-HLSL-Semantik. Die beiden Vertexattribute werden als Eingabeelemente für die Shaderpipelinephasen behandelt und ebenfalls mit [HLSL-Semantik](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps) (POSITION und COLOR0) zum Informieren der Shader versehen. Die Pixel-Shader verwendet eine SV\_POSITION mit PA\_ Präfix, der angibt, dass es sich um einen Systemwert, der von der GPU generiert ist. (In diesem Fall ist es eine Pixelposition, die während der überprüfungskonvertierung generiert.) VertexShaderInput und PixelShaderInput werden nicht deklariert, wie Konstante gepuffert werden, da die erste verwendet wird. definieren Sie den Vertexpuffer (finden Sie unter [Port die Vertex-Puffer und die Daten](port-the-vertex-buffers-and-data-config.md)), und die Daten für die letztgenannte Aufgabe generiert als Ergebnis einer vorherige Stufe in der Pipeline, die den Vertex-Shader in diesem Fall ist.
 
 Direct3D: HLSL-Definitionen für die Konstantenpuffer und Vertex-Daten
 
@@ -275,7 +275,7 @@ struct VertexPositionColor
 
 Verwenden Sie die DirectXMath XM\* -Typen für die Konstante buffer-Elemente, da sie richtige Packen von Metriken und die Ausrichtung für den Inhalt enthalten, wenn sie die Shader-Pipeline gesendet werden. Wenn Sie standardmäßige Gleitkommatypen und Arrays der Windows-Plattform verwenden, müssen Sie die Verpackung und Ausrichtung selbst durchführen.
 
-Um eine Konstante Puffer zu binden, erstellen Sie eine Beschreibung Layout als ein [ **CD3D11\_Puffer\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/jj151620) Struktur, und übergeben es an [ **ID3DDevice:: CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501). Übergeben Sie den Konstantenpuffer in der Rendermethode dann vor dem Zeichnen an [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486).
+Um eine Konstante Puffer zu binden, erstellen Sie eine Beschreibung Layout als ein [ **CD3D11\_Puffer\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-cd3d11_buffer_desc) Struktur, und übergeben es an [ **ID3DDevice:: CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer). Übergeben Sie den Konstantenpuffer in der Rendermethode dann vor dem Zeichnen an [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource).
 
 Direct3D 11: Binden des Konstantenpuffers
 

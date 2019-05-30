@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: b7ac2a625b3769377ed6c8dddce3ca25177dee5f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 83f58f34ce7251415652496e74d83e24156015aa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608385"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372616"
 ---
 # <a name="credential-locker"></a>Schließfach für Anmeldeinformationen
 
@@ -22,15 +22,15 @@ In diesem Artikel wird beschrieben, wie Apps für die universelle Windows-Plattf
 
 Angenommen, Sie haben eine App, die eine Verbindung mit einem Dienst herstellt, um auf geschützte Dateien wie z. B. Mediendateien, soziale Netzwerke usw. zuzugreifen. Ihr Dienst erfordert Anmeldeinformationen für jeden Benutzer. Sie haben die Benutzeroberfläche in Ihre App integriert, die den Benutzernamen und das Kennwort für den Benutzer abruft; diese Informationen werden dann für die Anmeldung des Benutzers am Dienst verwendet. Mit der API des Schließfachs für Anmeldeinformationen können Sie den Benutzernamen und das Kennwort für den Benutzer speichern und diese Informationen leicht abrufen und den Benutzer automatisch anmelden, wenn er Ihre App das nächste Mal startet, und zwar unabhängig vom verwendeten Gerät.
 
-Benutzeranmeldedaten, die in CredentialLocker gespeichert sind, laufen *nicht* ab, sind *nicht* von [**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) betroffen und werden *nicht* aufgrund von Inaktivität wie herkömmliche Roamingdaten bereinigt. Sie können jedoch nur bis zu 20 Anmeldedaten pro App in CredentialLocker speichern.
+Benutzeranmeldedaten, die in CredentialLocker gespeichert sind, laufen *nicht* ab, sind *nicht* von [**ApplicationData.RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) betroffen und werden *nicht* aufgrund von Inaktivität wie herkömmliche Roamingdaten bereinigt. Sie können jedoch nur bis zu 20 Anmeldedaten pro App in CredentialLocker speichern.
 
 Die Funktionsweise des Schließfachs für Anmeldeinformationen sieht für Domänenkonten etwas anders aus. Wenn für Ihr Microsoft-Konto Anmeldeinformationen gespeichert sind und Sie dieses Konto mit einem Domänenkonto (z. B. das Konto, das Sie bei der Arbeit nutzen) verknüpfen, wandern Ihre Anmeldeinformationen zu diesem Domänenkonto. Neue Anmeldeinformationen, die während einer Anmeldung mit dem Domänenkonto hinzugefügt werden, werden jedoch nicht servergespeichert. So wird sichergestellt, dass private Anmeldeinformationen für die Domäne nicht außerhalb der Domäne verfügbar gemacht werden.
 
 ## <a name="storing-user-credentials"></a>Speichern von Benutzeranmeldeinformationen
 
 
-1.  Rufen Sie mithilfe des [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081)-Objekts aus dem [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089)-Namespace einen Verweis auf das Schließfach für Anmeldeinformationen ab.
-2.  Erstellen Sie ein [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061)-Objekt, das einen Bezeichner für Ihre App, den Benutzernamen und das Kennwort enthält, und übergeben Sie sie an die [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231)-Methode, um die Anmeldeinformationen dem Schließfach hinzuzufügen.
+1.  Rufen Sie mithilfe des [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault)-Objekts aus dem [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)-Namespace einen Verweis auf das Schließfach für Anmeldeinformationen ab.
+2.  Erstellen Sie ein [**PasswordCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordCredential)-Objekt, das einen Bezeichner für Ihre App, den Benutzernamen und das Kennwort enthält, und übergeben Sie sie an die [**PasswordVault.Add**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.add)-Methode, um die Anmeldeinformationen dem Schließfach hinzuzufügen.
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -41,15 +41,15 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
 ## <a name="retrieving-user-credentials"></a>Abrufen von Benutzeranmeldeinformationen
 
 
-Zum Abrufen von Benutzeranmeldeinformationen aus dem Schließfach für Anmeldeinformationen mithilfe eines Verweises auf das [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081)-Objekt stehen verschiedene Optionen zur Verfügung.
+Zum Abrufen von Benutzeranmeldeinformationen aus dem Schließfach für Anmeldeinformationen mithilfe eines Verweises auf das [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault)-Objekt stehen verschiedene Optionen zur Verfügung.
 
--   Mit der [**PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088)-Methode können Sie alle Anmeldeinformationen abrufen, die der Benutzer im Schließfach für Ihre App bereitgestellt hat.
+-   Mit der [**PasswordVault.RetrieveAll**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.retrieveall)-Methode können Sie alle Anmeldeinformationen abrufen, die der Benutzer im Schließfach für Ihre App bereitgestellt hat.
 
--   Wenn Ihnen der Benutzername für die gespeicherten Anmeldeinformationen bekannt ist, können Sie mit der [**PasswordVault.FindAllByUserName**](https://msdn.microsoft.com/library/windows/apps/br227084)-Methode alle Anmeldeinformationen für diesen Benutzernamen abrufen.
+-   Wenn Ihnen der Benutzername für die gespeicherten Anmeldeinformationen bekannt ist, können Sie mit der [**PasswordVault.FindAllByUserName**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.findallbyusername)-Methode alle Anmeldeinformationen für diesen Benutzernamen abrufen.
 
--   Wenn Ihnen der Ressourcenname für die gespeicherten Anmeldeinformationen bekannt ist, können Sie mit der [**PasswordVault.FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083)-Methode alle Anmeldeinformationen für diesen Ressourcennamen abrufen.
+-   Wenn Ihnen der Ressourcenname für die gespeicherten Anmeldeinformationen bekannt ist, können Sie mit der [**PasswordVault.FindAllByResource**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.findallbyresource)-Methode alle Anmeldeinformationen für diesen Ressourcennamen abrufen.
 
--   Und wenn Ihnen sowohl der Benutzer- als auch der Ressourcenname für bestimmte Anmeldeinformationen bekannt ist, können Sie diese Anmeldeinformationen mithilfe der [**PasswordVault.Retrieve**](https://msdn.microsoft.com/library/windows/apps/br227087)-Methode abrufen.
+-   Und wenn Ihnen sowohl der Benutzer- als auch der Ressourcenname für bestimmte Anmeldeinformationen bekannt ist, können Sie diese Anmeldeinformationen mithilfe der [**PasswordVault.Retrieve**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.retrieve)-Methode abrufen.
 
 Sehen wir uns ein Beispiel an, in dem wir den Ressourcennamen global in einer App gespeichert haben und den Benutzer automatisch anmelden, wenn wir entsprechende Anmeldeinformationen finden. Wenn mehrere Anmeldeinformationen für einen Benutzer gefunden werden, wird der Benutzer dazu aufgefordert, Standardanmeldeinformationen für die Anmeldung auszuwählen.
 
@@ -114,9 +114,9 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 
 Das Löschen von Benutzeranmeldeinformationen im Schließfach für Anmeldeinformationen ist ebenfalls ein schneller Prozess mit zwei Schritten.
 
-1.  Rufen Sie mithilfe des [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081)-Objekts aus dem [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089)-Namespace einen Verweis auf das Schließfach für Anmeldeinformationen ab.
+1.  Rufen Sie mithilfe des [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault)-Objekts aus dem [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)-Namespace einen Verweis auf das Schließfach für Anmeldeinformationen ab.
 
-2.  Übergeben Sie die zu löschenden Anmeldeinformationen an die [**PasswordVault.Remove**](https://msdn.microsoft.com/library/windows/apps/hh701242)-Methode.
+2.  Übergeben Sie die zu löschenden Anmeldeinformationen an die [**PasswordVault.Remove**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.remove)-Methode.
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();

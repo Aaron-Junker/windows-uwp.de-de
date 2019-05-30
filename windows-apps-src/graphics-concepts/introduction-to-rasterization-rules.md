@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1907be029254d99be9e6158c93c179baea1fb0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c635d0efad627734e0305c687e015ad183764717
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641085"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371053"
 ---
 # <a name="introduction-to-rasterization-rules"></a>Einführung in die Regeln für die Rasterung
 
@@ -57,7 +57,7 @@ Für die beiden Rechtecke sind die gleichen Pixel betroffen, wie in folgender Ab
 
 Punkte werden auf die gleiche Weise gerendert wie Punkt-Sprites, welche beide als am Bildschirm ausgerichtete Vierecke gerendert werden und deshalb den gleichen Regeln wie beim Polygon-Rendering unterliegen.
 
-Die Rendering-Regeln für nicht geglättete Linien stimmen exakt mit denen für [GDI lines](https://msdn.microsoft.com/library/windows/desktop/dd145027) überein.
+Die Rendering-Regeln für nicht geglättete Linien stimmen exakt mit denen für [GDI lines](https://docs.microsoft.com/windows/desktop/gdi/lines) überein.
 
 ## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>Punkt Sprite-Regeln
 

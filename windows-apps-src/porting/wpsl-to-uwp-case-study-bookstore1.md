@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9f8de488ad0baea1de9aea5c911f2519385d25
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 02337d02472b7215f0fb9be47419caf52420e0f2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653865"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372410"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight, UWP-Fallstudie: Bookstore1
 
 
-Dieses Thema enthält eine Fallstudie, der eine sehr einfache Windows Phone Silverlight-app für eine app für Windows 10 universelle Windows-Plattform (UWP) portieren. Unter Windows 10 können Sie eine einzelne app-Paket erstellen, die Ihre Kunden können auf eine Vielzahl von Geräten installieren, und das ist in dieser Fallstudie dazu. Weitere Informationen finden Sie unter [Anleitung für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+Dieses Thema enthält eine Fallstudie, der eine sehr einfache Windows Phone Silverlight-app für eine app für Windows 10 universelle Windows-Plattform (UWP) portieren. Unter Windows 10 können Sie eine einzelne app-Paket erstellen, die Ihre Kunden können auf eine Vielzahl von Geräten installieren, und das ist in dieser Fallstudie dazu. Weitere Informationen finden Sie unter [Anleitung für UWP-Apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
 Die portierte App besteht aus einem **ListBox**-Element, das an ein Ansichtsmodell gebunden ist. Das Ansichtsmodell verfügt über eine Liste mit Büchern, für die Titel, Autor und Bucheinband angezeigt werden. Für die Bucheinbandbilder ist **Buildvorgang** auf **Inhalt** und **In Ausgabeverzeichnis kopieren** auf **Nicht kopieren** festgelegt.
 
@@ -87,7 +87,7 @@ Für diese app Element \#3 ist keine Schulden, da die Statusleiste (früher die 
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-Zum Festlegen dieser Stile können Sie sie einfach in den Markup-Editor eingeben oder die Visual Studio-XAML-Tools verwenden und sie festlegen, ohne etwas einzugeben. Zu diesem Zweck Sie mit der rechten Maustaste ein **TextBlock** , und klicken Sie auf **Stil bearbeiten** &gt; **Ressource anwenden**. Dies mit der **TextBlock**s in der Elementvorlage, mit der rechten Maustaste die **ListBox** , und klicken Sie auf **zusätzliche Vorlagen bearbeiten** &gt; **bearbeiten Generierte Elemente (ItemTemplate)**.
+Zum Festlegen dieser Stile können Sie sie einfach in den Markup-Editor eingeben oder die Visual Studio-XAML-Tools verwenden und sie festlegen, ohne etwas einzugeben. Zu diesem Zweck Sie mit der rechten Maustaste ein **TextBlock** , und klicken Sie auf **Stil bearbeiten** &gt; **Ressource anwenden**. Dies mit der **TextBlock**s in der Elementvorlage, mit der rechten Maustaste die **ListBox** , und klicken Sie auf **zusätzliche Vorlagen bearbeiten** &gt; **bearbeiten Generierte Elemente (ItemTemplate)** .
 
 Die Elemente sind mit einem weißen Hintergrund mit 80 % Deckkraft unterlegt, da der Standardstil des **ListBox**-Steuerelements den Hintergrund auf die `ListBoxBackgroundThemeBrush`-Systemressource festlegt. Legen Sie `Background="Transparent"` für das **ListBox**-Element fest, um den Hintergrund zu löschen. Zur Linksausrichtung der **TextBlock**-Elemente in der Elementvorlage bearbeiten Sie sie erneut wie oben beschrieben und legen unter **Margin** für beide **TextBlock**-Elemente den Wert `"9.6,0"` fest.
 
@@ -104,7 +104,7 @@ In „Bookstore1WPSL8“ haben wir Folgendes vorgenommen:
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-In „Bookstore1Universal“ verwenden wir das [URI-Schema](https://msdn.microsoft.com/library/windows/apps/jj655406) „ms-appx“. Damit der Rest unseres Codes beibehalten werden kann, können wir eine andere Überladung des **System.Uri**-Konstruktors verwenden, um das URI-Schema „ms-appx“ in einen Basis-URI einzufügen und den restlichen Pfad anzufügen. Hier sehen Sie ein Beispiel:
+In „Bookstore1Universal“ verwenden wir das [URI-Schema](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10)) „ms-appx“. Damit der Rest unseres Codes beibehalten werden kann, können wir eine andere Überladung des **System.Uri**-Konstruktors verwenden, um das URI-Schema „ms-appx“ in einen Basis-URI einzufügen und den restlichen Pfad anzufügen. Hier sehen Sie ein Beispiel:
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
@@ -131,7 +131,7 @@ Der portierten Windows 10-app auf einem mobilen Gerät ausgeführt wird
 
 Wenn die App auf einem Mobilgerät ausgeführt wird, ist der Hintergrund eines Listenfelds standardmäßig in beiden Designs hell. Vielleicht ist dies der von Ihnen bevorzugte Stil. Falls dies so ist, gibt es nichts mehr zu tun. Aber die Steuerelemente sind so konzipiert, dass Sie das Aussehen anpassen können, ohne ihr Verhalten zu ändern. Wenn das Listenfeld im dunklen Design dunkel sein soll, wie in der ursprünglichen App vorgesehen, hilft Ihnen [diese Anleitung](w8x-to-uwp-case-study-bookstore1.md) unter „Eine optionale Anpassung“ weiter.
 
-## <a name="conclusion"></a>Abschluss
+## <a name="conclusion"></a>Schlussbemerkung
 
 In dieser Fallstudie wurde der Prozess zum Portieren einer einfachen App gezeigt – einer zugegebenermaßen unrealistisch einfachen App. Beispielsweise können Listensteuerelemente für die Auswahl oder für die Herstellung eines Kontexts für die Navigation verwendet werden. Die App navigiert zu einer Seite mit weiteren Details zum ausgewählten Element. Diese bestimmte App führt keine Aktionen mit der Auswahl des Benutzers aus und verfügt nicht über Navigation. Dennoch diente die Fallstudie dazu, den Portierungsprozess vorzustellen und wichtige Techniken zu veranschaulichen, die Sie in echten UWP-Apps verwenden können.
 

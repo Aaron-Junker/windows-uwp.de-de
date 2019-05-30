@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, Uwp, WinRT-API, Indexer, Search
 localizationpriority: medium
-ms.openlocfilehash: b2ac43c9aa2d27f8745e9075abc13d8feaba2370
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592685"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369265"
 ---
 # <a name="using-supplemental-properties"></a>Verwenden die zusätzliche Eigenschaften  
 
@@ -27,7 +27,7 @@ Durchsuchbar diese Metadaten sofort ermöglicht Benutzern eine exponentiell höh
 Seit Jahrzehnten die Lösung für die schnelle Suche von Windows wurde der Indexer, und in dem Creators Update es wurde aktualisiert, um diese neuen Szenarien zu unterstützen. Apps können jetzt Dateien kennzeichnen mit zusätzlichen Eigenschaften hinaus, die die vom System extrahiert werden. Diese Eigenschaften werden als Bürger erster Klasse behandelt.  
 
 ## <a name="windows-properties"></a>Windows-Eigenschaften 
-Die [Windows Eigenschaftensystem](https://msdn.microsoft.com/library/windows/desktop/ff728898) wurde ein wichtiger Bestandteil der Interaktion mit Dateien seit Jahren. Sie können apps Eigenschaften aus Dateien lesen, ohne Sie zu den Interna von allen unterschiedliche Dateiformate oder Sprachen, die, denen in eine Datei befinden. All dies abstrahiert für Sie als Entwickler, alles, was man dazu Unternehmen muss stellen Sie eine Liste, und geben Sie Aufsteigend oder Absteigend.  
+Die [Windows Eigenschaftensystem](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) wurde ein wichtiger Bestandteil der Interaktion mit Dateien seit Jahren. Sie können apps Eigenschaften aus Dateien lesen, ohne Sie zu den Interna von allen unterschiedliche Dateiformate oder Sprachen, die, denen in eine Datei befinden. All dies abstrahiert für Sie als Entwickler, alles, was man dazu Unternehmen muss stellen Sie eine Liste, und geben Sie Aufsteigend oder Absteigend.  
 
 Das Eigenschaftensystem ist eng verknüpft, mit dem Windows-Indexer – alle Eigenschaften von Dateien in ihrem Gültigkeitsbereich liest und speichert sie. Wenn eine app fordert eine Liste aller DOCX, die sich in einem Ordner nach Datum der Änderung, sortiert werden mit Ausnahme derjenigen von John Smith den Indexer erstellt wurden kann die Liste sofort zurückkommen.  
 
@@ -150,7 +150,7 @@ Bei einer Neuerstellung des Indexers verloren alle zusätzliche Daten. Apps muss
 
 ### <a name="recovering"></a>Wiederherstellen von 
 Nachdem Sie die apps haben festgestellt, dass der Index neu erstellt wird, werden sie für die Aktualisierung der zusätzlichen Eigenschaften nach Bedarf verantwortlich.  
-### <a name="privacy"></a>Vertraulichkeit 
+### <a name="privacy"></a>Datenschutz 
 Einige der Eigenschaften, die auf die Dateien geschrieben werden können auch, dass Benutzer nicht für andere Anwendungen freigegeben werden sollen möglicherweise. Apps sollten in der Lage, um anzugeben, dass die Informationen, die sie in den Eigenschaften schreiben sollen, entweder privat sein. ihre Anwendungen, mit nur wenigen anderen Anwendungen gemeinsam genutzten oder öffentlichen für jede app auf dem System.  
 
 Obwohl dies möglicherweise ein interessantes Feature für einige der frühen Anwender der Funktion ist, können sie, dass die erste öffentlicher Eigenschaften immer noch viele Werte für das Design hinzufügen ausgeführt wird. Daher wird dies als eine hilfreich markiert, und wir sollten weiterhin erstellen Sie das Feature ohne Unterstützung für die Werte ausblenden, falls erforderlich. Es später noch Mal hinzugefügt wird weitere Szenarios, geöffnet, damit es in alle Designs berücksichtigt werden.  

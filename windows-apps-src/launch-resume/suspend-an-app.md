@@ -11,24 +11,24 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: e440812861cf853810f9fee597c807b439dda426
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6d1b97e76dc1bf15bded6f44c38a67f40babf7b6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599045"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370535"
 ---
 # <a name="handle-app-suspend"></a>Behandeln des Anhaltens von Apps
 
 **Wichtige APIs**
 
-- [**Das Anhalten**](https://msdn.microsoft.com/library/windows/apps/br242341)
+- [**Das Anhalten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
 
-Hier erfahren Sie, wie Sie wichtige Anwendungsdaten speichern, wenn das System die App anhält. Im Beispiel wird ein Ereignishandler für das [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341)-Ereignis registriert und eine Zeichenfolge in einer Datei gespeichert.
+Hier erfahren Sie, wie Sie wichtige Anwendungsdaten speichern, wenn das System die App anhält. Im Beispiel wird ein Ereignishandler für das [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)-Ereignis registriert und eine Zeichenfolge in einer Datei gespeichert.
 
 ## <a name="register-the-suspending-event-handler"></a>Registrieren des Suspending-Ereignishandlers
 
-Registrieren Sie die Behandlung des [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341)-Ereignisses, das angibt, dass die App ihre Anwendungsdaten speichern sollte, bevor sie vom System angehalten wird.
+Registrieren Sie die Behandlung des [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)-Ereignisses, das angibt, dass die App ihre Anwendungsdaten speichern sollte, bevor sie vom System angehalten wird.
 
 ```csharp
 using System;
@@ -82,7 +82,7 @@ MainPage::MainPage()
 
 ## <a name="save-application-data-before-suspension"></a>Speichern von App-Daten vor dem Anhalten
 
-Wenn die App das [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341)-Ereignis behandelt, kann sie die wichtigen App-Daten in der Handlerfunktion speichern. Die App sollte die [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622)-Speicher-API verwenden, um einfache Anwendungsdaten synchron zu speichern.
+Wenn die App das [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)-Ereignis behandelt, kann sie die wichtigen App-Daten in der Handlerfunktion speichern. Die App sollte die [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings)-Speicher-API verwenden, um einfache Anwendungsdaten synchron zu speichern.
 
 ```csharp
 partial class MainPage
@@ -133,11 +133,11 @@ Sie sollten exklusive Ressourcen und Dateihandles freigeben, damit andere Apps d
 
 Das System hält Ihre App an, wenn der Benutzer zu einer anderen App oder zum Desktop bzw. Startbildschirm wechselt. Wenn der Benutzer wieder zu Ihrer App wechselt, wird diese vom System fortgesetzt. Beim Fortsetzen der App haben die Variablen und Datenstrukturen den gleichen Inhalt wie vor der Unterbrechung. Das System stellt die App exakt so wieder her, wie sie unterbrochen wurde. Dadurch entsteht für den Benutzer der Eindruck, die App wäre im Hintergrund weiter ausgeführt worden.
 
-Das System versucht, die App und die zugehörigen Daten im Arbeitsspeicher beizubehalten, während sie angehalten ist. Wenn das System aber nicht über die notwendigen Ressourcen verfügt, um die App im Arbeitsspeicher zu behalten, beendet es die App. Wenn der Benutzer wieder zu einer angehaltenen App wechselt, die beendet wurde, sendet das System ein [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018)-Ereignis, und es sollte die App-Daten in der [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)-Methode wiederherstellen.
+Das System versucht, die App und die zugehörigen Daten im Arbeitsspeicher beizubehalten, während sie angehalten ist. Wenn das System aber nicht über die notwendigen Ressourcen verfügt, um die App im Arbeitsspeicher zu behalten, beendet es die App. Wenn der Benutzer wieder zu einer angehaltenen App wechselt, die beendet wurde, sendet das System ein [**Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)-Ereignis, und es sollte die App-Daten in der [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)-Methode wiederherstellen.
 
 Das System benachrichtigt eine App nicht, wenn sie beendet wird. Wenn Ihre App angehalten wird, muss sie daher die App-Daten speichern und die exklusiven Ressourcen und Dateihandles freigeben, damit diese beim erneuten Aktivieren der App nach der Beendigung wiederhergestellt werden können.
 
-Wenn Sie innerhalb Ihres Handlers einen asynchronen Aufruf ausführen, wird die Steuerung sofort von diesem asynchronen Aufruf zurückgegeben. Das bedeutet, dass die Ausführung dann vom Ereignishandler zurückgegeben werden kann und die App in den nächsten Zustand übergeht, obwohl der asynchrone Aufruf noch nicht abgeschlossen wurde. Verwenden Sie die [**GetDeferral**](https://aka.ms/Kt66iv)-Methode für das an den Ereignishandler übergebene [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4)-Objekt, um das Anhalten zu verzögern, bis Sie für das zurückgegebene [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx)-Objekt die [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx)-Methode aufgerufen haben.
+Wenn Sie innerhalb Ihres Handlers einen asynchronen Aufruf ausführen, wird die Steuerung sofort von diesem asynchronen Aufruf zurückgegeben. Das bedeutet, dass die Ausführung dann vom Ereignishandler zurückgegeben werden kann und die App in den nächsten Zustand übergeht, obwohl der asynchrone Aufruf noch nicht abgeschlossen wurde. Verwenden Sie die [**GetDeferral**](https://aka.ms/Kt66iv)-Methode für das an den Ereignishandler übergebene [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4)-Objekt, um das Anhalten zu verzögern, bis Sie für das zurückgegebene [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral)-Objekt die [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete)-Methode aufgerufen haben.
 
 Durch eine Verzögerung verlängert sich nicht die Zeit, die Ihr Code ausgeführt werden muss, bevor die App beendet wird. Dabei wird nur die Beendigung verzögert, bis die *Complete*-Methode der Verzögerung aufgerufen wird oder die Frist abläuft, *je nachdem, was zuerst eintritt*. Um die Zeit im Zustand „Suspending“ zu verlängern, verwenden Sie [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
@@ -151,7 +151,7 @@ Durch eine Verzögerung verlängert sich nicht die Zeit, die Ihr Code ausgeführ
 * [App-Lebenszyklus](app-lifecycle.md)
 * [Behandeln der App-Aktivierung](activate-an-app.md)
 * [Behandeln der App-Fortsetzung](resume-an-app.md)
-* [UX-Richtlinien für den Start, Anhalten und fortsetzen](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [UX-Richtlinien für den Start, Anhalten und fortsetzen](https://docs.microsoft.com/windows/uwp/launch-resume/index)
 * [Erweiterte Ausführung](run-minimized-with-extended-execution.md)
 
  

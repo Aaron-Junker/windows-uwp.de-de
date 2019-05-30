@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd617c3c08cdcb7815010648c6036a5f39ee3ab
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 15ea49ea0e8e334158000248caf26f662ee5bd35
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623805"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369645"
 ---
 # <a name="use-the-inclinometer"></a>Verwenden des Neigungsmessers
 
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Neigungsmesser**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Neigungsmesser**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)
 
 **Beispiel**
 
@@ -29,7 +29,7 @@ Hier erfahren Sie, wie Sie mithilfe des Neigungsmessers Werte für Nick-, Roll- 
 
 Bei einigen 3D-Spielen wird ein Neigungsmesser als Eingabegerät benötigt. Ein gängiges Beispiel hierfür ist ein Flugsimulator, der die drei Achsen des Neigungsmessers (X, Y und Z) dem Höhenleitwerk sowie dem Quer- und Seitenruder eines Flugzeugs zuordnet.
 
- ## <a name="prerequisites"></a>Voraussetzungen
+ ## <a name="prerequisites"></a>Vorraussetzungen
 
 Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
 

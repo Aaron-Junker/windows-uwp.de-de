@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78b14023f61dd3f8c27bc31f5876407ff0ed0366
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651235"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371204"
 ---
 # <a name="macs-hashes-and-signatures"></a>MACs, Hashes und Signaturen
 
@@ -34,11 +34,11 @@ Beachten Sie, dass Eve, die den Austausch zwischen Sven und Andrea heimlich mitv
 
 Die Erstellung eines MAC-Werts gewährleistet somit, dass die ursprüngliche Nachricht nicht geändert wurde. Zudem beweist der Einsatz eines freigegebenen geheimen Schlüssels, dass der Nachrichtenhash von jemandem signiert wurde, der Zugriff auf den privaten Schlüssel hatte.
 
-Sie können [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) zur Enumerierung der verfügbaren MAC-Algorithmen und zur Generierung eines symmetrischen Schlüssels verwenden. Die statischen Methoden der [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490)-Klasse können zudem zur Durchführung der erforderlichen Verschlüsselung genutzt werden, durch den Sie den MAC-Wert erhalten.
+Sie können [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) zur Enumerierung der verfügbaren MAC-Algorithmen und zur Generierung eines symmetrischen Schlüssels verwenden. Die statischen Methoden der [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine)-Klasse können zudem zur Durchführung der erforderlichen Verschlüsselung genutzt werden, durch den Sie den MAC-Wert erhalten.
 
 Digitale Signaturen von öffentlichen Schlüsseln sind das Äquivalent der Nachrichtenauthentifizierungscodes (MACs) von privaten Schlüsseln. Obwohl MACs private Schlüssel verwenden, um dem Nachrichtenempfänger zu ermöglichen, Nachrichten zu überprüfen und sicherzugehen, dass diese bei der Übertragung nicht verändert wurden, verwenden Signaturen ein Schlüsselpaar aus einem privaten und einem öffentlichen Schlüssel.
 
-In diesem Beispielcode ist die Verwendung der [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530)-Klasse zum Erstellen eines Nachrichtenauthentifizierungscodes mit Hash (Hashed Message Authentication Code, HMAC) dargestellt.
+In diesem Beispielcode ist die Verwendung der [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider)-Klasse zum Erstellen eines Nachrichtenauthentifizierungscodes mit Hash (Hashed Message Authentication Code, HMAC) dargestellt.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -137,11 +137,11 @@ Eine kryptografische Hashfunktion gibt für einen an sie übergebenen Datenblock
 
 Beachten Sie, dass Andrea eine unverschlüsselte Nachricht gesendet hat. Nur der Hash war verschlüsselt. Durch das Verfahren wird nur sichergestellt, dass die ursprüngliche Nachricht nicht verändert wurde und – durch die Verwendung von Andreas öffentlichem Schlüssel – dass der Nachrichtenhash von jemandem mit Zugriff auf Andreas privaten Schlüssel signiert wurde (wahrscheinlich von Andrea).
 
-Sie können die [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511)-Klasse verwenden, um die verfügbaren Hashalgorithmen aufzulisten und einen [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498)-Wert zu erstellen.
+Sie können die [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider)-Klasse verwenden, um die verfügbaren Hashalgorithmen aufzulisten und einen [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash)-Wert zu erstellen.
 
 Digitale Signaturen von öffentlichen Schlüsseln sind das Äquivalent der Nachrichtenauthentifizierungscodes (MACs) von privaten Schlüsseln. Während MACs private Schlüssel verwenden, um einem Nachrichtenempfänger das Überprüfen der Nachrichtenintegrität zu ermöglichen, verwenden Signaturen ein privates/öffentliches Schlüsselpaar.
 
-Mit dem [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498)-Objekt kann ein Hash mehrmals auf unterschiedliche Daten angewendet werden, ohne dass das Objekt jedes Mal neu erstellt werden muss. Die [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499)-Methode fügt einem Puffer, auf den ein Hash angewendet werden soll, neue Daten hinzu. Die [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376)-Methode wendet den Hash auf die Daten an und setzt das Objekt zur weiteren Verwendung zurück. Dies wird im folgenden Beispiel gezeigt.
+Mit dem [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash)-Objekt kann ein Hash mehrmals auf unterschiedliche Daten angewendet werden, ohne dass das Objekt jedes Mal neu erstellt werden muss. Die [**Append**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.append)-Methode fügt einem Puffer, auf den ein Hash angewendet werden soll, neue Daten hinzu. Die [**GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset)-Methode wendet den Hash auf die Daten an und setzt das Objekt zur weiteren Verwendung zurück. Dies wird im folgenden Beispiel gezeigt.
 
 ```cs
 public void SampleReusableHash()
@@ -191,4 +191,4 @@ Da die meisten Signaturvorgänge für öffentliche Schlüssel rechtenintensiv si
 
 Durch das Signieren wird nur sichergestellt, dass die ursprüngliche Nachricht nicht verändert wurde und – durch die Verwendung des öffentlichen Schlüssels des Absenders – dass der Nachrichtenhash von jemandem mit Zugriff auf den privaten Schlüssel signiert wurde.
 
-Sie können ein [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478)-Objekt verwenden, um die verfügbaren Signaturalgorithmen aufzulisten und ein Schlüsselpaar zu generieren oder zu importieren. Sie können statische Methoden der [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498)-Klasse zum Signieren einer Nachricht oder Überprüfen einer Signatur verwenden.
+Sie können ein [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider)-Objekt verwenden, um die verfügbaren Signaturalgorithmen aufzulisten und ein Schlüsselpaar zu generieren oder zu importieren. Sie können statische Methoden der [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash)-Klasse zum Signieren einer Nachricht oder Überprüfen einer Signatur verwenden.

@@ -9,12 +9,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7251d4595a3e87a8629d6e717bb4f52e5b7c35fe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28fac411ad814167dcef3b02424c866bd3453344
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615365"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370595"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>So unterteilen Sie den Bereich einer Streamingressource
 
@@ -46,11 +46,11 @@ Das Layout der Daten in einer Tile ist nicht davon abhängig, wo sie in eine Res
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="texture2d-and-texture2darray-subresource-tiling.md">Texture2D und Texture2DArray Unterteilung von unterressourcen</a></p></td>
-<td align="left"><p>Diese Tabellen zeigen die Unterteilung von <a href="https://msdn.microsoft.com/library/windows/desktop/ff471525"><strong>Texture2D</strong></a>- und <a href="https://msdn.microsoft.com/library/windows/desktop/ff471526"><strong>Texture2DArray</strong></a>-Unterressourcen.</p></td>
+<td align="left"><p>Diese Tabellen zeigen die Unterteilung von <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d"><strong>Texture2D</strong></a>- und <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray"><strong>Texture2DArray</strong></a>-Unterressourcen.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="texture3d-subresource-tiling.md">Texture3D Unterteilung von unterressourcen</a></p></td>
-<td align="left"><p>Diese Tabelle zeigt die Unterteilung von <a href="https://msdn.microsoft.com/library/windows/desktop/ff471562"><strong>Texture3D</strong></a>-Unterressourcen.</p></td>
+<td align="left"><p>Diese Tabelle zeigt die Unterteilung von <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d"><strong>Texture3D</strong></a>-Unterressourcen.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="buffer-tiling.md">Puffer tiling</a></p></td>

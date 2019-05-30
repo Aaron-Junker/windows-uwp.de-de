@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7768d63405281d3155affc6c9f09c62568761718
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b8960d9723460fcbb8cec71da0998958cac8a6e8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607395"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370942"
 ---
 # <a name="tessellator-ts-stage"></a>Tessellatorphase (TS)
 
@@ -52,7 +52,7 @@ Vorteile bei der Tessellation:
 
 Die Direct3D-Grafikpipeline implementiert Tessellation in Hardware, wodurch die Arbeit von der CPU auf die GPU verlagert wird. Dies kann zu sehr großen Leistungsverbesserungen führen, wenn eine Anwendung eine große Anzahl von Morphzielen und/oder ausgeklügelten Skinning-/Deformationsmodellen implementiert.
 
-Der Tessellator ist eine Phase mit fester Funktion, die durch Binden eines [Hüllen-Shaders](hull-shader-stage--hs-.md) an die Pipeline initialisiert wird. (finden Sie unter [so wird's gemacht: Initialisieren die Mosaikstufe](https://msdn.microsoft.com/library/windows/desktop/ff476341)). Die Aufgabe der Tessellatorphase besteht darin, eine Domäne (Viereck, Dreieck oder Linie) in viele kleinere Objekte (Dreiecke, Punkte oder Linien) zu unterteilen. Die Tessellator unterteilt eine kanonische Domäne in einem normalisierten (Null-zu-Eins) Koordinatensystem. Eine viereckige Domäne wird z. B. als Einheitsquadrat unterteilt (tesselliert).
+Der Tessellator ist eine Phase mit fester Funktion, die durch Binden eines [Hüllen-Shaders](hull-shader-stage--hs-.md) an die Pipeline initialisiert wird. (finden Sie unter [so wird's gemacht: Initialisieren die Mosaikstufe](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellator-initialize)). Die Aufgabe der Tessellatorphase besteht darin, eine Domäne (Viereck, Dreieck oder Linie) in viele kleinere Objekte (Dreiecke, Punkte oder Linien) zu unterteilen. Die Tessellator unterteilt eine kanonische Domäne in einem normalisierten (Null-zu-Eins) Koordinatensystem. Eine viereckige Domäne wird z. B. als Einheitsquadrat unterteilt (tesselliert).
 
 ### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>Phasen in der Phase Mosaikeingabefaktoren (TS)
 
@@ -63,7 +63,7 @@ Die Tessellatorphase (TS) arbeitet in zwei Phasen:
 
     | Partitionierungstyp | Bereich                       |
     |----------------------|-----------------------------|
-    | Sekundenbruchteile\_ungerade      | \[1... 63\]                  |
+    | Fractional\_odd      | \[1...63\]                  |
     | Sekundenbruchteile\_sogar     | TessFactor Bereich: \[2..64\] |
     | Ganze Zahl              | TessFactor Bereich: \[1..64\] |
     | Pow2                 | TessFactor Bereich: \[1..64\] |

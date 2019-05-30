@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP, erste App, Hallo Welt
 ms.localizationpriority: medium
-ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d9a7f0302dfdc9f9fa980f0fe93a3371328f9e5c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642155"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367434"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Erstellen der App „Hello, world“ (XAML)
 
@@ -19,7 +19,7 @@ In diesem Tutorial erfahren Sie, wie Sie mit XAML und C# zum Erstellen eines ein
 
 Hier erfahren Sie Folgendes:
 
--   Erstellen Sie ein neues **Visual Studio 2017** Projekt, **Windows 10** und **UWP**.
+-   Erstellen Sie ein neues **Visual Studio** Projekt, **Windows 10** und **UWP**.
 -   Schreiben Sie XAML zum Ändern der UI auf der Startseite.
 -   Führen Sie das Projekt auf dem lokalen Desktop in Visual Studio aus.
 -   Verwenden Sie einen SpeechSynthesizer, um die App sprechen zu lassen, wenn Sie auf eine Schaltfläche klicken.
@@ -42,7 +42,7 @@ Hier erfahren Sie Folgendes:
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Schritt 1: Erstellen eines neuen Projekts in Visual Studio.
 
-1.  Starten Sie Visual Studio 2017.
+1.  Starten Sie Visual Studio.
 
 2.  Von der **Datei** , wählen Sie im Menü **neu > Projekt** zum Öffnen der *neues Projekt* Dialogfeld.
 
@@ -52,7 +52,7 @@ Hier erfahren Sie Folgendes:
 
     ![So wiederholen Sie den Installationsvorgang](images/win10-cs-install.png)
 
-4.  Wählen Sie die Vorlage **Leere App (universelle Windows-App)** aus, und geben Sie „HelloWorld“ als **Name** ein. Wählen Sie **OK** aus.
+4.  Wählen Sie die Vorlage **Leere App (universelle Windows-App)** aus, und geben Sie „HelloWorld“ als **Name** ein. Wählen Sie **OK**.
 
     ![Das Fenster für ein neues Projekt](images/win10-cs-01.png)
 
@@ -76,7 +76,7 @@ Hier erfahren Sie Folgendes:
 
 Doppelklicken Sie zum Anzeigen und Bearbeiten einer Datei im Projekt im **Projektmappen-Explorer** auf die gewünschte Datei. Erweitern Sie eine XAML-Datei genau wie einen Ordner, um die zugeordnete Codedatei anzuzeigen. XAML-Dateien werden in einer geteilten Ansicht geöffnet, die sowohl die Entwurfsoberfläche als auch den XAML-Editor enthält.
 > [!NOTE]
-> Was ist XAML? Extensible Application Markup Language (XAML) ist die Sprache, die zum Definieren der Benutzeroberfläche Ihrer App verwendet wird. Sie kann manuell eingegeben oder mit den Visual Studio-Entwicklungstools erstellt wurden. Eine XAML-Datei verfügt über eine CodeBehind-Datei („.xaml.cs“), die die Logik enthält. Zusammen bilden XAML und CodeBehind eine vollständige Klasse. Weitere Informationen finden Sie in der [XAML-Übersicht](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+> Was ist XAML? Extensible Application Markup Language (XAML) ist die Sprache, die zum Definieren der Benutzeroberfläche Ihrer App verwendet wird. Sie kann manuell eingegeben oder mit den Visual Studio-Entwicklungstools erstellt wurden. Eine XAML-Datei verfügt über eine CodeBehind-Datei („.xaml.cs“), die die Logik enthält. Zusammen bilden XAML und CodeBehind eine vollständige Klasse. Weitere Informationen finden Sie in der [XAML-Übersicht](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
 
 *"App.xaml" und "App.Xaml.cs"*
 
@@ -89,9 +89,9 @@ Doppelklicken Sie zum Anzeigen und Bearbeiten einer Datei im Projekt im **Projek
 
 -   In „MainPage.xaml“ definieren Sie die Benutzeroberfläche für Ihre App. Sie können Elemente direkt per XAML-Markup hinzufügen oder die Designtools von Visual Studio verwenden.
 -   „MainPage.xaml.cs“ ist die CodeBehind-Seite für „MainPage.xaml“. Hier fügen Sie Ihre App-Logik und Ereignishandler hinzu.
--   Zusammen definieren diese beiden Dateien im `HelloWorld`-Namespace eine neue Klasse mit dem Namen `MainPage`, die von [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503) erbt.
+-   Zusammen definieren diese beiden Dateien im `HelloWorld`-Namespace eine neue Klasse mit dem Namen `MainPage`, die von [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) erbt.
 
-*Datei "Package.appxmanifest"*
+*Package.appxmanifest*
 -   Eine Manifestdatei, die Ihre App beschreibt (Name, Beschreibung, Kachel, Startseite usw.)
 -   Enthält eine Liste von Abhängigkeiten, Ressourcen und Dateien, die app enthält.
 
@@ -226,7 +226,7 @@ Stellen Sie sicher, dass die Methodensignatur enthält jetzt die **Async** -Schl
 
 ### <a name="what-did-we-just-do"></a>Was haben wir gerade gemacht?
 
-Dieser Code verwendet Windows-APIs zum Erstellen eines Sprachsyntheseobjekts und gibt dann zu sprechenden Text an. (Weitere Informationen zur Verwendung von SpeechSynthesis finden Sie in den Dokumenten zum [SpeechSynthesis-Namespace](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx).)
+Dieser Code verwendet Windows-APIs zum Erstellen eines Sprachsyntheseobjekts und gibt dann zu sprechenden Text an. (Weitere Informationen zur Verwendung von SpeechSynthesis finden Sie in den Dokumenten zum [SpeechSynthesis-Namespace](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis).)
 
 Wenn Sie die App ausführen und auf die Schaltfläche klicken, sagt Ihr Computer (oder das Handy) wörtlich „Hello, World!“.
 
@@ -237,7 +237,7 @@ Herzlichen Glückwunsch, Sie haben Ihre erste app für Windows 10 und die UWP er
 
 Informationen dazu, wie Sie XAML für die Gestaltung der Steuerelemente in Ihrer App verwenden, finden Sie im [Rasterlernprogramm](../design/layout/grid-tutorial.md). Sie können auch direkt mit den [nächsten Schritten](learn-more.md) fortfahren.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 * [Ihre erste app](your-first-app.md)
 * [Veröffentlichen Sie Ihre UWP-App](https://developer.microsoft.com/store/publish-apps).
