@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a9991cd4a0a3fce630b1c7be64650c79daf74e6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8f00bb9449d9e48518d16e08fa6b6665eecd2f85
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597405"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359735"
 ---
 # <a name="accessibility-in-the-store"></a>Barrierefreiheit im Store  
 
@@ -40,7 +40,7 @@ Sie sollten Ihre App als barrierefrei erklären, wenn Sie diese unter Berücksic
     * Tastenkombinationen für wichtige Funktionen der App zu verwenden.
     * Verwenden von Sprachausgabe-Touchgesten für TAB- und Pfeilnavigation für Geräte ohne Tastatur.
 * Visuelle Barrierefreiheit der App-UI sicherstellen: Kontrastverhältnis von mindestens 4.5:1, keine ausschließlich auf Farben basierende Darstellung von Informationen usw.
-* Tools zum Testen der Barrierefreiheit wurden eingesetzt, z. B. [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) und [**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986), um die Implementierung der Barrierefreiheit zu überprüfen und alle Fehler der Priorität 1 zu beheben, die von diesen Tools gemeldet werden.
+* Tools zum Testen der Barrierefreiheit wurden eingesetzt, z. B. [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) und [**UIAVerify**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-automation-verify), um die Implementierung der Barrierefreiheit zu überprüfen und alle Fehler der Priorität 1 zu beheben, die von diesen Tools gemeldet werden.
 * Die primären Szenarien Ihrer App unter Verwendung von Sprachausgabe, Bildschirmlupe, Bildschirmtastatur, einem Design mit hohem Kontrast und angepassten DPI-Einstellungen wurden überprüft.
 
 Unter [Prüfliste für die Barrierefreiheit](accessibility-checklist.md) werden diese Verfahren erläutert. Zudem finden Sie dort Links zu Ressourcen, die Ihnen beim Durchführen der Verfahren helfen.

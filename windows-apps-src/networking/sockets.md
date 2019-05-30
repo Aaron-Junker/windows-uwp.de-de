@@ -6,27 +6,27 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cdad8f3405420e0548974c734ad23bfd44f2c6b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648825"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363300"
 ---
 # <a name="sockets"></a>Sockets
 Sockets sind eine einfache Datenübertragungstechnologie, auf der viele Netzwerkprotokolle implementiert sind. UWP bietet TCP- und UDP-Socketklassen für Client-Server oder Peer-to-Peer-Anwendungen, unabhängig davon, ob Verbindungen langlebig sind oder keine bestehende Verbindung erforderlich ist.
 
-In diesem Thema geht es um die Verwendung der UWP (Universelle Windows-Plattform)-Socketklassen im [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets)-Namespace. Sie können jedoch auch [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) in einer UWP-App verwenden.
+In diesem Thema geht es um die Verwendung der UWP (Universelle Windows-Plattform)-Socketklassen im [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets)-Namespace. Sie können jedoch auch [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2) in einer UWP-App verwenden.
 
 > [!NOTE]
-> Aufgrund der [Netzwerkisolation](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx) lässt Windows die Einrichtung einer Socketverbindung (Sockets oder WinSock) zwischen zwei UWP-Apps, die auf demselben Computer ausgeführt werden, weder über die lokale Loopbackadresse (127.0.0.0), noch durch explizite Angabe der lokalen IP-Adresse zu. Einzelheiten zu Mechanismen, mit denen UWP-Apps miteinander kommunizieren können, finden Sie unter [App-zu-App-Kommunikation](/windows/uwp/app-to-app/index).
+> Aufgrund der [Netzwerkisolation](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)) lässt Windows die Einrichtung einer Socketverbindung (Sockets oder WinSock) zwischen zwei UWP-Apps, die auf demselben Computer ausgeführt werden, weder über die lokale Loopbackadresse (127.0.0.0), noch durch explizite Angabe der lokalen IP-Adresse zu. Einzelheiten zu Mechanismen, mit denen UWP-Apps miteinander kommunizieren können, finden Sie unter [App-zu-App-Kommunikation](/windows/uwp/app-to-app/index).
 
 ## <a name="build-a-basic-tcp-socket-client-and-server"></a>Erstellen eines grundlegenden TCP-Socket-Clients und -Servers
 Ein TCP (Transmission Control Protocol)-Socket ermöglicht einfache Übertragungen von Netzwerkdaten in beide Richtungen für langlebige Verbindungen. TCP-Sockets sind das zugrunde liegende Feature, das von den meisten im Internet genutzten Netzwerkprotokollen verwendet wird. Zur Veranschaulichung von grundlegenden TCP-Vorgängen zeigt der folgende Beispielcode, wie ein [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) und ein [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) Daten über TCP senden und empfangen, um einen Echo-Client und -Server zu bilden.
 
 Um mit möglichst wenigen Aspekten zu beginnen&mdash;und um Netzwerkisolationsprobleme vorerst zu umgehen&mdash;erstellen Sie ein neues Projekt und fügen Sie den nachstehenden Client- und Servercode in dasselbe Projekt ein.
 
-Sie müssen in Ihrem Projekt [eine App-Funktion](../packaging/app-capability-declarations.md) deklarieren. Öffnen Sie die Quelldatei des App-Paketmanifests (die Datei `Package.appxmanifest`), und aktivieren Sie auf der Registerkarte „Funktionen” die Option **Private Netzwerke (Client und Server)**. So sieht es im `Package.appxmanifest`-Markup aus.
+Sie müssen in Ihrem Projekt [eine App-Funktion](../packaging/app-capability-declarations.md) deklarieren. Öffnen Sie die Quelldatei des App-Paketmanifests (die Datei `Package.appxmanifest`), und aktivieren Sie auf der Registerkarte „Funktionen” die Option **Private Netzwerke (Client und Server)** . So sieht es im `Package.appxmanifest`-Markup aus.
 
 ```xml
 <Capability Name="privateNetworkClientServer" />
@@ -1380,8 +1380,8 @@ Der [**HostName**](/uwp/api/Windows.Networking.HostName)-Konstruktor kann eine A
 ## <a name="related-topics"></a>Verwandte Themen
 * [App-zu-App-Kommunikation](/windows/uwp/app-to-app/index)
 * [Parallelität und asynchrone Vorgänge mit C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [Gewusst wie: Festlegen von Netzwerkfunktionen](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [Windows Sockets (Winsock)-2](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [Gewusst wie: Festlegen von Netzwerkfunktionen](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+* [Windows Sockets (Winsock)-2](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
-## <a name="samples"></a>Beispiele
+## <a name="samples"></a>Proben
 * [Beispiel für StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609)

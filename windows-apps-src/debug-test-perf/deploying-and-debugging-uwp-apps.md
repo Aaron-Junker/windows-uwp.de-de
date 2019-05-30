@@ -6,12 +6,12 @@ ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, debuggen, testen, leistung
 ms.localizationpriority: medium
-ms.openlocfilehash: c210f84c4fc3d07ba5a3d81eef059e17fdf9f308
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 3263f7a0f1c353cfd15bf83e6fe1b0004b3bcc94
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244436"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362674"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Bereitstellen und Debuggen von UWP-Apps
 
@@ -92,7 +92,7 @@ Für die Bereitstellung auf einem Remote-PC, der noch nicht das Creators-Update 
 
 Suchen Sie dazu im Menü **Start** nach **Remotedebugger**, öffnen Sie den Debugger, und erlauben Sie ihm die Konfiguration Ihrer Firewalleinstellungen, wenn Sie dazu aufgefordert werden. Standardmäßig wird der Debugger mit Windows-Authentifizierung gestartet. Somit werden die Benutzeranmeldeinformationen benötigt, falls der angemeldete Benutzer nicht auf beiden PCs identisch ist.
 
-So ändern Sie es **keine Authentifizierung**in die **Remotedebugger**, wechseln Sie zu **Tools**  - &gt; **Optionen**, und Legen Sie sie dann auf **keine Authentifizierung**. Nach dem Einrichten des Remotedebuggers müssen Sie zudem sicherstellen, dass das Hostgerät auf [Entwicklermodus](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) gesetzt wurde. Anschließend können Sie die Bereitstellung über Ihren Entwicklungscomputer ausführen.
+So ändern Sie es **keine Authentifizierung**in die **Remotedebugger**, wechseln Sie zu **Tools**  - &gt; **Optionen**, und Legen Sie sie dann auf **keine Authentifizierung**. Nach dem Einrichten des Remotedebuggers müssen Sie zudem sicherstellen, dass das Hostgerät auf [Entwicklermodus](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) gesetzt wurde. Anschließend können Sie die Bereitstellung über Ihren Entwicklungscomputer ausführen.
 
 Weitere Informationen finden Sie im [Visual Studio Download Center](https://www.visualstudio.com/downloads/).
 
@@ -119,7 +119,7 @@ Nach dem Festlegen der Befehlszeilenargumente können Sie auf den Wert des Argum
 
 Für die Bereitstellung auf Remotecomputern gibt es drei Authentifizierungsmodi:
 
-- **Universell (unverschlüsseltes Protokoll)**: Verwenden Sie diesen Authentifizierungsmodus aus, wenn Sie auf einem Remotegerät bereitstellen. Derzeit können dies IoT-, Xbox- und HoloLens-Geräte sein oder PCs mit Creators-Update (oder neuer). „Universell (unverschlüsseltes Protokoll)“ sollte nur in vertrauenswürdigen Netzwerken verwendet werden. Die Debuggingverbindung ist anfällig für böswillige Benutzer, die zwischen dem Entwicklungs- und dem Remotecomputer übertragene Daten abfangen und manipulieren könnten.
+- **Universell (unverschlüsseltes Protokoll)** : Verwenden Sie diesen Authentifizierungsmodus aus, wenn Sie auf einem Remotegerät bereitstellen. Derzeit können dies IoT-, Xbox- und HoloLens-Geräte sein oder PCs mit Creators-Update (oder neuer). „Universell (unverschlüsseltes Protokoll)“ sollte nur in vertrauenswürdigen Netzwerken verwendet werden. Die Debuggingverbindung ist anfällig für böswillige Benutzer, die zwischen dem Entwicklungs- und dem Remotecomputer übertragene Daten abfangen und manipulieren könnten.
 - **Windows**: Dieser Authentifizierungsmodus wird ausschließlich für eine remote-PC (Desktop oder Laptop) verwendet werden die Visual Studio Remote Tools ausführen. Verwenden Sie diesen Authentifizierungsmodus, wenn Sie Zugriff auf die Anmeldeinformationen des beim Zielcomputer angemeldeten Benutzers haben. Dies ist der sicherste Kanal für die Remotebereitstellung.
 - **Keine**: Dieser Authentifizierungsmodus wird ausschließlich für eine remote-PC (Desktop oder Laptop) verwendet werden die Visual Studio Remote Tools ausführen. Verwenden Sie diese Authentifizierungsmoduseinstellung, wenn Sie einen Testcomputer in einer Umgebung eingerichtet haben, bei der die Anmeldung über ein Testkonto erfolgte und keine Anmeldeinformationen eingegeben werden können. Die Remotedebuggereinstellungen müssen so festgelegt sein, dass sie den Modus „Keine Authentifizierung“ akzeptieren.
 
@@ -160,7 +160,7 @@ Der beim **Kopieren von Dateien auf das Gerät** angegebene **Paketregistrierung
 > [!NOTE]
 > **Dateien auf Gerät kopieren** wird derzeit für Xbox mit Windows 10 Anniversary Update und PCs mit Windows 10 Creators Update unterstützt.
 
-Auf dem Remotegerät wird das Layout an folgenden Standardspeicherort kopiert: `\\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
+Auf dem Remotegerät Ruft das Layout in den folgenden standardmäßigen Speicherort kopiert: `\\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
 
 ### <a name="register-layout-from-network"></a>Registrieren des Layouts über das Netzwerk
 
@@ -171,14 +171,14 @@ Um das Layout erfolgreich über das Netzwerk zu registrieren, müssen Sie zunäc
 Hilfe hierzu bieten die folgenden Beispiele:
 
 - Beispiel 1 (lokaler Layoutordner, auf den als Netzwerkfreigabe zugegriffen werden kann):
-  - **Ordnerpfad des Layouts** = `D:\Layouts\App1`
+  - **Layoutordnerpfad** = `D:\Layouts\App1`
   - **Paketregistrierungspfad** = `\\NETWORK-SHARE\Layouts\App1`
 
 - Beispiel 2 (Netzwerk-Layoutordner):
-  - **Ordnerpfad des Layouts** = `\\NETWORK-SHARE\Layouts\App1`
+  - **Layoutordnerpfad** = `\\NETWORK-SHARE\Layouts\App1`
   - **Paketregistrierungspfad** = `\\NETWORK-SHARE\Layouts\App1`
 
-Wenn Sie das Layout zunächst über das Netzwerk registrieren, werden Ihre Anmeldeinformationen auf dem Zielgerät zwischengespeichert, sodass Sie sich nicht immer wieder anmelden müssen. Um zwischengespeicherte Anmeldeinformationen zu entfernen, verwenden Sie [WinAppDeployCmd.exe Tool](https://msdn.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) (Teil des Windows 10-SDKs) mit dem Befehl **Deletecreds**.
+Wenn Sie das Layout zunächst über das Netzwerk registrieren, werden Ihre Anmeldeinformationen auf dem Zielgerät zwischengespeichert, sodass Sie sich nicht immer wieder anmelden müssen. Um zwischengespeicherte Anmeldeinformationen zu entfernen, verwenden Sie [WinAppDeployCmd.exe Tool](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) (Teil des Windows 10-SDKs) mit dem Befehl **Deletecreds**.
 
 Beim Registrieren des Geräts über das Netzwerk können Sie **Alle Dateien auf dem Gerät beibehalten** nicht auswählen, da keine Dateien physisch auf das Remotegerät kopiert werden.
 
@@ -189,13 +189,13 @@ Auf dem Remotegerät, das Layout wird am folgenden Standardspeicherort abhängig
 
 ## <a name="debugging-options"></a>Debugoptionen
 
-Unter Windows 10, die startleistung von UWP-apps verbessert wird, indem Sie proaktiv zu starten und Anhalten von apps dann in eine Technik namens [Vorabstart der](https://msdn.microsoft.com/library/windows/apps/Mt593297). Viele Apps sind in diesem Modus sofort funktionsfähig, das Verhalten einiger Apps muss jedoch möglicherweise angepasst werden. Um das Debuggen von Problemen in diesen Codepfaden zu erleichtern, können Sie das Debuggen der App von Visual Studio im Vorabstartmodus starten.
+Unter Windows 10, die startleistung von UWP-apps verbessert wird, indem Sie proaktiv zu starten und Anhalten von apps dann in eine Technik namens [Vorabstart der](https://docs.microsoft.com/windows/uwp/launch-resume/handle-app-prelaunch). Viele Apps sind in diesem Modus sofort funktionsfähig, das Verhalten einiger Apps muss jedoch möglicherweise angepasst werden. Um das Debuggen von Problemen in diesen Codepfaden zu erleichtern, können Sie das Debuggen der App von Visual Studio im Vorabstartmodus starten.
 
 Das Debuggen unterstützt wird sowohl von Visual Studio-Projekt (**Debuggen**  - &gt; **andere Debugziele**  - &gt; **universelle Debuggen Windows-App der Vorabstart**), und für apps, die bereits auf dem Computer installierten (**Debuggen**  - &gt; **andere Debugziele**  - &gt; **Debuggen Installed App Package** durch Auswählen der **aktivieren-app mit der Vorabstart** Kontrollkästchen). Weitere Informationen finden Sie unter [Debuggen des UWP-Vorabstarts](https://go.microsoft.com/fwlink/p/?LinkId=717245).
 
 Sie können die folgenden Bereitstellungsoptionen auf der Eigenschaftenseite **Debuggen** des Startprojekts festlegen:
 
-- **Lokales Netzwerkloopback zulassen**
+- **Lokales netzwerkloopback zulassen**
 
   Aus Sicherheitsgründen darf eine UWP-App, die mit der Standardmethode installiert wurde, keine Netzwerkaufrufe an das Gerät senden, auf dem sie installiert ist. Für die bereitgestellte App erstellt die Visual Studio-Bereitstellung standardmäßig eine Ausnahme von dieser Regel. Diese Ausnahme macht es möglich, Kommunikationsverfahren auf einem einzelnen Computer zu testen. Vor der Übermittlung Ihrer-app für den Microsoft Store, sollten Sie die app ohne die Ausnahme testen.
 
@@ -204,7 +204,7 @@ Sie können die folgenden Bereitstellungsoptionen auf der Eigenschaftenseite **D
   - Auf der C# und Visual Basic **Debuggen** auf der Seite Deaktivieren der **lokales netzwerkloopback zulassen** Kontrollkästchen.
   - Legen Sie den Wert **Lokales Netzwerkloopback zulassen** auf der Eigenschaftenseite **Debuggen** für JavaScript und C++ auf **Nein** fest.
 
-- **Eigenen Code zunächst nicht starten, sondern debuggen/Anwendung starten**
+- **Nicht zu starten, aber mein Code Debuggen, beim Starten / Launch Anwendung**
 
   So konfigurieren Sie die Bereitstellung für das automatische Starten einer Debugsitzung beim Starten der App
 
@@ -226,7 +226,7 @@ Legen Sie die **Sympath**-Variable auf dem Speicherort des Symbolpakets fest, um
 .reload
 ```
 
-Mit `‘;’` als Trennzeichen oder dem Befehl `.sympath+` können Sie mehrere Pfade hinzufügen. Mehr zu erweiterten Symbolvorgängen mit WinDbg finden Sie unter [Öffentliche und private Symbole](https://msdn.microsoft.com/library/windows/hardware/ff553493).
+Mit `‘;’` als Trennzeichen oder dem Befehl `.sympath+` können Sie mehrere Pfade hinzufügen. Mehr zu erweiterten Symbolvorgängen mit WinDbg finden Sie unter [Öffentliche und private Symbole](https://docs.microsoft.com/windows-hardware/drivers/debugger/public-and-private-symbols).
 
 ## <a name="windbg"></a>WinDbg
 
@@ -246,7 +246,7 @@ Einer der am häufigsten in WinDbg verwendeten Befehle ist `!analyze -v`. Er wir
 - EXCEPTION_RECORD: Adresse, Code und Flags der aktuellen Ausnahme
 - STACK_TEXT: Stapelüberwachung vor der Ausnahme
 
-Eine vollständige Liste aller WinDbg-Befehle finden Sie unter [Debuggerbefehle](https://msdn.microsoft.com/library/ff540507).
+Eine vollständige Liste aller WinDbg-Befehle finden Sie unter [Debuggerbefehle](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-commands).
 
 ## <a name="related-topics"></a>Verwandte Themen
 

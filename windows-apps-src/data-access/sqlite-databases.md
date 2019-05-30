@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, SQLite, Datenbank
 ms.localizationpriority: medium
-ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 465376214f1bf1b390ec6db8609783e4e7872196
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635665"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362784"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Verwenden einer SQLite-Datenbank in einer UWP-App
 Sie können SQLite verwenden, um Daten in einer einfachen Datenbank auf dem Gerät des Benutzers zu speichern und abzurufen. Dieser Leitfaden zeigt Ihnen wie.
@@ -39,7 +39,7 @@ Weitere Informationen finden Sie unter [Erste Schritte mit EF Core auf der Unive
 
 ### <a name="sqlite-library"></a>SQLite-Bibliothek
 
-Die [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)-Bibliothek implementiert die Schnittstellen im [System.Data.Common](https://msdn.microsoft.com/library/system.data.common.aspx)-Namespace. Microsoft pflegt diese Implementierungen aktiv und bietet einen intuitiven Wrapper für die native SQLite-API auf niedriger Ebene.
+Die [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)-Bibliothek implementiert die Schnittstellen im [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common?redirectedfrom=MSDN)-Namespace. Microsoft pflegt diese Implementierungen aktiv und bietet einen intuitiven Wrapper für die native SQLite-API auf niedriger Ebene.
 
 Der Rest dieses Leitfaden hilft Ihnen bei der Verwendung dieser Bibliothek.
 

@@ -8,12 +8,12 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c05b6686d31606a9510b1433339dc8829a52893
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.openlocfilehash: 34f8d15b971cc9ed286471010a21d1b44b84af13
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59247178"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363472"
 ---
 # <a name="guidelines-for-touch-targets"></a>Richtlinien für die Touch-Ziele
 
@@ -25,7 +25,7 @@ Alle UWP-Steuerelemente wurden entworfen mit Standard-Touch-Ziel-Größen und La
 
 In diesem Thema beschreiben wir dieses Standardverhalten können Sie Ihre app für maximale benutzerfreundlichkeit mit Plattformsteuerelemente und benutzerdefinierte Steuerelemente (Ihre app diese erforderlich ist) entwerfen.
 
-> **Wichtige APIs:** [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **Wichtige APIs:** [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Fluent-Standard-größenanpassung
 
@@ -79,11 +79,11 @@ Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jew
 
 - [Einführung in das UWP-App-Design](../basics/design-and-ui-intro.md)
 - [Größe des Steuerelements und Dichte](../style/spacing.md)
-- [Ausrichtung, Rand, Abstand](../layout/alignment-margin-padding.md)
+- [Ausrichtung, Margin und padding](../layout/alignment-margin-padding.md)
 
 ### <a name="samples"></a>Proben
 
-- [Einfaches Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
 - [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 - [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
@@ -93,8 +93,8 @@ Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jew
 - [Eingabe: XAML-benutzerbeispiel Eingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
 - [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
 - [Eingabe: Beispiel zu Leistungstests in Touch Treffer](https://go.microsoft.com/fwlink/p/?linkid=231590)
-- [Beispiel für XAML-Bildlauf, -Verschiebung und -Zoom](https://go.microsoft.com/fwlink/p/?linkid=251717)
+- [XAML Bildlauf, schwenken und Zoomen Beispiel](https://go.microsoft.com/fwlink/p/?linkid=251717)
 - [Eingabe: Vereinfachte Freihand-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
 - [Eingabe: Beispiel für Windows 8-Gesten](https://go.microsoft.com/fwlink/p/?LinkId=264995)
 - [Eingabe: Manipulationen und Beispiel für Bewegungen (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-- [Beispiel für die DirectX-Fingereingabe](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+- [DirectX-Touch-Eingabe-Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=231627)

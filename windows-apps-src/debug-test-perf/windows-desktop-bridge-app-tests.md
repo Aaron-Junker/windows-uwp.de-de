@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, Uwp, app-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 42ec5c1e91fbeebcaad68f346f317893fdfb2e1c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3f979edbd49699447040880964dd1378bc7c94c0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606885"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362074"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests für Windows Desktop Bridge-Apps
 
@@ -110,7 +110,7 @@ Prüft die im App-Manifest definierten Ressourcen, um sicherzustellen, dass sie 
 **Korrekturmaßnahme**  
 Orientieren Sie sich an der folgenden Tabelle.
 
-Fehlermeldung | Anmerkungen
+Fehlermeldung | Kommentare
 --------------|---------
 Das Bild "{Bildname}" definiert sowohl einen Scale- als auch einen TargetSize-Qualifizierer. Es darf jedoch jeweils nur ein Qualifizierer definiert sein. | Sie können Bilder für unterschiedliche Auflösungen anpassen. In der tatsächlichen Meldung enthält „{image name}“ den Namen des Bilds mit dem Fehler. Stellen Sie sicher, dass für jedes Bild entweder „Scale” oder „TargetSize” als Qualifizierer definiert ist. 
 Das Bild "{Bildname}" überschreitet die Größenbeschränkung von {Größenangabe}.  | Stellen Sie sicher, dass alle Bilder der App den Größenbeschränkungen entsprechen. In der tatsächlichen Meldung enthält „{image name}“ den Namen des Bilds mit dem Fehler. 
@@ -118,7 +118,7 @@ Das Bild "{Bildname}" fehlt im Paket.  | Ein erforderliches Bild fehlt. In der t
 Das Bild "{Bildname}" ist keine gültige Bilddatei.  | Stellen Sie sicher, dass alle Bilder der App den Einschränkungen für Dateiformattypen entsprechen. In der tatsächlichen Meldung enthält „{image name}“ den Namen des ungültigen Bilds. 
 Das Bild „BadgeLogo“ enthält einen ungültigen ABGR-Wert {value} an der Position (x, y). Das Pixel muss weiß (##FFFFFF) oder transparent (00######) sein.  | Das Signallogo ist ein Bild, das neben der Signalbenachrichtigung angezeigt wird, um die App auf dem Sperrbildschirm zu identifizieren. Dieses Bild muss einfarbig sein (es darf nur weiße und transparente Pixel enthalten). In der tatsächlichen Meldung enthält {Wert} den Namen des ungültigen Farbwerts im Bild. 
 Das Bild „BadgeLogo“ enthält einen ABGR-Wert {Wert} an der Position (x, y), der für ein Bild mit hohem Kontrast (Weiß) ungültig ist. Das Pixel muss (##2A2A2A) oder dunkler oder transparent (00######) sein.  | Das Signallogo ist ein Bild, das neben der Signalbenachrichtigung angezeigt wird, um die App auf dem Sperrbildschirm zu identifizieren. Da das Signallogo bei hohem Kontrast (Weiß) auf einem weißen Hintergrund angezeigt wird, muss es sich um eine dunkle Version des normalen Signallogos handeln. Bei hohem Kontrast (Weiß) darf das Signallogo nur Pixel enthalten, die dunkler als (##2A2A2A) oder transparent sind. In der tatsächlichen Meldung enthält {Wert} den Namen des ungültigen Farbwerts im Bild. 
-Für das Bild muss mindestens eine Variante ohne TargetSize-Qualifizierer definiert sein. Sie müssen einen Scale-Qualifizierer definieren oder „Scale” und „TargetSize” nicht angeben. In diesem Fall wird „Scale-100” verwendet.  | Weitere Informationen finden Sie in den Handbüchern unter [Reaktionsfähiges Design](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx) und [App-Ressourcen](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data). 
+Für das Bild muss mindestens eine Variante ohne TargetSize-Qualifizierer definiert sein. Sie müssen einen Scale-Qualifizierer definieren oder „Scale” und „TargetSize” nicht angeben. In diesem Fall wird „Scale-100” verwendet.  | Weitere Informationen finden Sie in den Handbüchern unter [Reaktionsfähiges Design](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) und [App-Ressourcen](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data). 
 Das Paket enthält keine Datei „resources.pri”.  | Wenn das App-Manifest lokalisierbaren Inhalt enthält, müssen Sie sicherstellen, dass das Paket der App eine gültige Datei „resources.pri“ enthält. 
 Die Datei „resources.pri“ muss eine Ressourcenzuordnung enthalten, bei der der Name dem Paketnamen „{vollständiger Paketname}“ entspricht.  | Dieser Fehler wird angezeigt, wenn das Manifest geändert wird und der Name der Ressourcenzuordnung in „resources.pri“ dem Paketnamen im Manifest nicht mehr entspricht. In der tatsächlichen Meldung enthält „{vollständiger Paketname}“ den Paketnamen, den „resources.pri“ enthalten muss. Um diesen Fehler zu beheben, müssen Sie die Datei „resources.pri“ neu erstellen. Am besten erstellen Sie dazu das App-Paket neu. 
 Für die Datei „resources.pri“ darf „Automatisch zusammenführen“ nicht aktiviert sein.  | „MakePRI.exe“ unterstützt eine Option mit dem Namen AutoMerge. Der Standardwert von AutoMerge ist Aus. Bei Aktivierung führt AutoMerge die App-Sprachpaketressourcen in einer einzelnen Datei „resources.pri“ zur Laufzeit zusammen. Wir nicht für apps zu empfehlen, die Sie über den Microsoft Store verteilen möchten. Die resources.pri einer App, die über den Microsoft Store verteilt werden muss im Stammverzeichnis des app Paket und alle Verweise, die von der app unterstützte Sprache. 
@@ -156,7 +156,7 @@ Ihre App kann die Dateitypen deklarieren, denen sie zugeordnet werden kann. Eine
 * **Framework-abhängigkeitsregel**  
 Mit diesem Test wird die Anforderung durchgesetzt, dass die Apps geeignete Abhängigkeiten von der UWP deklarieren. Für den Test tritt ein Fehler auf, wenn eine unzulässige Abhängigkeit besteht. Liegt ein Konflikt zwischen der Betriebssystemversion, in der die App ausgeführt wird, und den bestehenden Frameworkabhängigkeiten vor, schlägt der Test fehl. Der Test schlägt ebenfalls fehl, wenn sich die App auf eine „Vorschauversion“ der Framework-DLLs bezieht.
 * **Überprüfung der prozessübergreifenden Kommunikation (Interprocess Communication)**  
-Dieser Test setzt die Anforderung durch, dass Desktop-Brücke-Apps außerhalb des App-Containers nicht mit Desktopkomponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) den Namen `DesktopApplicationPath` angeben, bestehen diesen Test nicht.  
+Dieser Test setzt die Anforderung durch, dass Desktop-Brücke-Apps außerhalb des App-Containers nicht mit Desktopkomponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) den Namen `DesktopApplicationPath` angeben, bestehen diesen Test nicht.  
 
 **Korrekturmaßnahme**  
 Gleichen Sie das App-Manifest mit den [App-Paketanforderungen](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements) ab.
@@ -217,10 +217,10 @@ Dieser Test überprüft die UWP-Komponenten in der App:
 Dies kann korrigiert werden, indem sichergestellt wird, dass die App als Releasebuild und nicht als ein Debugbuild kompiliert wurde. 
 
 > [!NOTE]
-> Debugbuild einer Anwendung können dieser Test schlägt fehl, selbst wenn die app nur verwendet [-APIs für UWP-apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Überprüfen Sie die Fehlermeldungen zur Identifizierung der API vorhanden, die nicht zulässige API für UWP-apps. 
+> Debugbuild einer Anwendung können dieser Test schlägt fehl, selbst wenn die app nur verwendet [-APIs für UWP-apps](https://docs.microsoft.com/uwp/). Überprüfen Sie die Fehlermeldungen zur Identifizierung der API vorhanden, die nicht zulässige API für UWP-apps. 
 
 > [!NOTE]
-> C++-apps, die in einem Debug-Konfiguration erstellt werden werden dieser Test fehl, selbst wenn die Konfiguration nur die APIs aus dem Windows SDK für UWP-apps verwendet. Finden Sie unter [Alternativen zu Windows-APIs in UWP-apps](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) für Weitere Informationen.
+> C++-apps, die in einem Debug-Konfiguration erstellt werden werden dieser Test fehl, selbst wenn die Konfiguration nur die APIs aus dem Windows SDK für UWP-apps verwendet. Finden Sie unter [Alternativen zu Windows-APIs in UWP-apps](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) für Weitere Informationen.
 
 ### <a name="6-user-account-control-uac-test"></a>6. Benutzer-Konto (Control, UAC) testen  
 
@@ -286,4 +286,4 @@ Entfernen Sie alle Signaturschlüssel für privaten Code (wie z. B. PFX- und SN
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Microsoft Store-Richtlinien](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)

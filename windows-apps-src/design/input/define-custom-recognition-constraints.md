@@ -8,30 +8,30 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a83cbc547ede1977f0222298bf451611905fad50
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 4bb24002e3738213ba3e784e6b91ff55d970a26a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343259"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363627"
 ---
 # <a name="define-custom-recognition-constraints"></a>Festlegen von benutzerdefinierten Erkennungseinschränkungen
 
 Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können.
 
-> **Wichtige APIs:** [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+> **Wichtige APIs:** [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 Die Spracherkennung benötigt mindestens eine Einschränkung, um erkennbares Vokabular zu definieren. Wenn Sie keine Einschränkung angeben, wird die vordefinierte Diktiergrammatik der universellen Windows-Apps verwendet. Siehe [Spracherkennung](speech-recognition.md).
 
 ## <a name="add-constraints"></a>Hinzufügen von Einschränkungen
 
-Verwenden Sie die [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241)-Eigenschaft, um Einschränkungen für die Spracherkennung hinzuzufügen.
+Verwenden Sie die [**SpeechRecognizer.Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints)-Eigenschaft, um Einschränkungen für die Spracherkennung hinzuzufügen.
 
 Im Folgenden behandeln wir die drei Arten der Spracherkennungseinschränkungen, die in einer App verwendet werden. (Cortana-Sprach-Befehl Einschränkungen finden Sie unter [starten eine Vordergrund-app mit Sprachbefehlen in Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).)
 
-- [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)– eine Einschränkung basierend auf einer vordefinierten Grammatik (Suchen Sie Diktat oder Web).
-- [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)– eine Einschränkung basierend auf einer Liste von Wörtern oder Ausdrücken.
-- [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)– eine Einschränkung in einer Datei Speech Recognition Grammar Specification (SRGS) definiert.
+- [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)– eine Einschränkung basierend auf einer vordefinierten Grammatik (Suchen Sie Diktat oder Web).
+- [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)– eine Einschränkung basierend auf einer Liste von Wörtern oder Ausdrücken.
+- [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)– eine Einschränkung in einer Datei Speech Recognition Grammar Specification (SRGS) definiert.
 
 Jedes Spracherkennungsmodul kann über eine Einschränkungssammlung verfügen. Nur die folgenden Einschränkungskombinationen sind gültig:
 
@@ -40,7 +40,7 @@ Jedes Spracherkennungsmodul kann über eine Einschränkungssammlung verfügen. N
 - Eine Kombination aus Listeneinschränkungen und/oder Grammatikdatei-Einschränkungen.
 
 > [!Important]
-> Rufen Sie die Methode **[SpeechRecognizer.CompileConstraintsAsync](https://msdn.microsoft.com/library/windows/apps/dn653240)** auf, um die Einschränkungen zu kompilieren, bevor Sie den Erkennungsprozess starten.
+> Rufen Sie die Methode **[SpeechRecognizer.CompileConstraintsAsync](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)** auf, um die Einschränkungen zu kompilieren, bevor Sie den Erkennungsprozess starten.
 
 ## <a name="specify-a-web-search-grammar-speechrecognitiontopicconstraint"></a>Angeben einer Grammatik für die Websuche (SpeechRecognitionTopicConstraint)
 
@@ -212,15 +212,15 @@ Hier horchen wir auf Varianten von „Ja“ und „Nein“.
 
 ## <a name="manage-constraints"></a>Verwalten von Einschränkungen
 
-Nachdem eine Einschränkungssammlung für die Erkennung geladen wurde, kann Ihre App verwalten, welche Einschränkungen für Erkennungsvorgänge aktiviert sind. Dazu wird für die [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402)-Eigenschaft einer Einschränkung **true** oder **false** festgelegt. Die Standardeinstellung lautet **true**.
+Nachdem eine Einschränkungssammlung für die Erkennung geladen wurde, kann Ihre App verwalten, welche Einschränkungen für Erkennungsvorgänge aktiviert sind. Dazu wird für die [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled)-Eigenschaft einer Einschränkung **true** oder **false** festgelegt. Die Standardeinstellung lautet **true**.
 
-Meist ist es effizienter, Einschränkungen einmal zu laden und dann bei Bedarf zu aktivieren bzw. zu deaktivieren, als Einschränkungen für jeden Erkennungsvorgang zu laden, zu entladen und zu kompilieren. Verwenden Sie die [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402)-Eigenschaft nach Bedarf.
+Meist ist es effizienter, Einschränkungen einmal zu laden und dann bei Bedarf zu aktivieren bzw. zu deaktivieren, als Einschränkungen für jeden Erkennungsvorgang zu laden, zu entladen und zu kompilieren. Verwenden Sie die [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled)-Eigenschaft nach Bedarf.
 
 Durch Begrenzung der Anzahl der Einschränkungen wird die Datenmenge beschränkt, die die Spracherkennung zum Suchen und Abgleichen mit der Spracheingabe benötigt. So können die Leistung und die Genauigkeit der Spracherkennung verbessert werden.
 
 Entscheiden Sie, welche Einschränkungen aktiviert sind. Dies richtet sich nach den Wörtern, die für die App im Kontext des jeweiligen Erkennungsvorgangs zu erwarten sind. Wenn es in der App beispielsweise gerade darum geht, eine Farbe anzuzeigen, müssen Sie wahrscheinlich keine Einschränkung aktivieren, bei der die Bezeichnungen von Tieren erkannt werden.
 
-Mit den Eigenschaften [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) und [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) können Sie Benutzern mitteilen, was gesagt werden kann. Diese Eigenschaften werden mithilfe der [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254)-Eigenschaft festgelegt. Wenn Sie Benutzer im Voraus darüber informieren, was sie bei einem Erkennungsvorgang sagen können, erhöht sich die Wahrscheinlichkeit, dass die Benutzer etwas sagen, was einer aktiven Einschränkung zugeordnet werden kann.
+Mit den Eigenschaften [**SpeechRecognizerUIOptions.AudiblePrompt**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.audibleprompt) und [**SpeechRecognizerUIOptions.ExampleText**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.exampletext) können Sie Benutzern mitteilen, was gesagt werden kann. Diese Eigenschaften werden mithilfe der [**SpeechRecognizer.UIOptions**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions)-Eigenschaft festgelegt. Wenn Sie Benutzer im Voraus darüber informieren, was sie bei einem Erkennungsvorgang sagen können, erhöht sich die Wahrscheinlichkeit, dass die Benutzer etwas sagen, was einer aktiven Einschränkung zugeordnet werden kann.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

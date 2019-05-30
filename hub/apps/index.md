@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 keywords: Windows Win32, Desktopentwicklung
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb104d873e810a9c5bedaa68675fd346cb3f33d
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 31d1c81bbc5af932435860b55ebe5651a789eb6e
+ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215060"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266431"
 ---
 # <a name="build-apps-for-windows"></a>Erstellen von Apps für Windows
 
@@ -120,6 +120,25 @@ Egal, ob Sie eine neue App für Windows 10 erstellen oder eine vorhandene .NET-
       </a>
     </li>
     <li>
+      <a href="/windows/msix/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/sql-get-started-download.svg?branch=master" alt="MSIX packaging illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                    <h3>MSIX-Verpackung und -Bereitstellung</h3>
+                    <p>Verpacken und Bereitstellen einer beliebigen Windows-App auf einer universellen sicheren und zuverlässigen Verpackungsoberfläche.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </a>
+    </li>
+    <li>
       <a href="fluent-design-system.md">
         <div class="cardSize">
             <div class="cardPadding">
@@ -132,6 +151,25 @@ Egal, ob Sie eine neue App für Windows 10 erstellen oder eine vorhandene .NET-
                     <div class="cardText">
                     <h3>Fluent Design-System</h3>
                     <p>Erfahren Sie mehr zum Entwerfen und Codieren der Benutzeroberfläche für Windows-Apps mit dem Fluent Design-System.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/uwp/toolkits/winui/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/virtualization-containers-samples.svg?branch=master" alt="Design illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                    <h3>Windows-UI-Bibliothek</h3>
+                    <p>Verwenden Sie native Windows-UI-Steuerelemente und andere Benutzeroberflächenelemente in Apps für ältere Windows 10-Versionen.</p>
                   </div>
                 </div>
             </div>

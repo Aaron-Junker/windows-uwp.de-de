@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, Uwp, WNS, Windows-Benachrichtigungsdienst, Notification, Windows-Firewall, Problembehandlung, IP, Datenverkehr, Enterprise, Netzwerk, IPv4, VIP-Adresse, vollqualifizierten Domänennamen, öffentliche IP-Adresse
 ms.localizationpriority: medium
-ms.openlocfilehash: 466463bfc984707af4cb30618f9cbfa47d78703c
-ms.sourcegitcommit: fd7d358aad3a5b7112f5a587bb6ea86805dc8a4d
+ms.openlocfilehash: 9ed4ad6ed828abda9d487ef96beca9b655c92421
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976250"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366671"
 ---
 # <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>Windows-Notification-Datenverkehr durch Unternehmensfirewalls von
 
@@ -78,10 +78,10 @@ Bei Verwendung von den älteren Notification-Service, MPNS, sind die IP-Adressbe
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Schnellstart: Eine Pushbenachrichtigung senden](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [Wie Sie anfordern, erstellen und speichern einen Benachrichtigungskanal](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [Gewusst wie: Abfangen von Benachrichtigungen für die Ausführung von Anwendungen](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
-* [Gewusst wie: authentifizieren mit den Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Push Notification Service Anforderungs- und Antwortheader](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Richtlinien und Prüfliste für erste Schritte mit Pushbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Schnellstart: Eine Pushbenachrichtigung senden](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [Wie Sie anfordern, erstellen und speichern einen Benachrichtigungskanal](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [Gewusst wie: Abfangen von Benachrichtigungen für die Ausführung von Anwendungen](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [Gewusst wie: authentifizieren mit den Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [Push Notification Service Anforderungs- und Antwortheader](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [Richtlinien und Prüfliste für erste Schritte mit Pushbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
  

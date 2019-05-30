@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Technologie, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5c6bb9bc2dadc89811c18c0aa844b899e52cf1
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: ba15a4f965dc582a8bd4eaeca211367ea1fcb5cb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162705"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368692"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Spieletechnologien für UWP-Apps
 
@@ -47,7 +47,7 @@ Weitere Informationen finden Sie unter „Vorbereiten der Universellen Windows-P
 ## <a name="getting-started-with-directx-game-project-templates"></a>Erste Schritte mit DirectX-Spielprojektvorlagen
 
 
-Nach Einrichtung der Entwicklungsumgebung können Sie eine verwandte DirectX-Projektvorlage zum Erstellen Ihres DirectX-Spiels für UWP verwenden. Visual Studio 2015 enthält drei Vorlagen für das Erstellen neuer UWP-DirectX-Projekte, **DirectX 11-App (Universelles Windows)**, **DirectX 12-App (Universelles Windows)** und **DirectX 11- und XAML-App (Universelles Windows)**. Weitere Informationen finden Sie unter [DirectX-Spielprojektvorlagen](user-interface.md).
+Nach Einrichtung der Entwicklungsumgebung können Sie eine verwandte DirectX-Projektvorlage zum Erstellen Ihres DirectX-Spiels für UWP verwenden. Visual Studio 2015 enthält drei Vorlagen für das Erstellen neuer UWP-DirectX-Projekte, **DirectX 11-App (Universelles Windows)** , **DirectX 12-App (Universelles Windows)** und **DirectX 11- und XAML-App (Universelles Windows)** . Weitere Informationen finden Sie unter [DirectX-Spielprojektvorlagen](user-interface.md).
 
 ## <a name="windows-10-apis"></a>Windows 10-APIs
 
@@ -58,7 +58,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
 
 ![Technologien für die Spielplattform](images/gameplatformtechnologies.png)
 
--   3D-Grafiken – Windows 10 unterstützt zwei Sätze von 3D-Grafik-APIs, Direct3D 11 und [Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn899121). Mit diesen beiden APIs können 3D- und 2D-Grafiken erstellt werden. Direct3D 11 und Direct3D 12 werden nicht zusammen verwendet, können jedoch zusammen mit APIs in der 2D-Grafik- und Benutzeroberflächengruppe verwendet werden. Weitere Informationen zum Verwenden der Grafik-APIs in Ihrem Spiel finden Sie unter [Grundlegendes zu 3D-Grafiken für DirectX-Spiele](an-introduction-to-3d-graphics-with-directx.md).
+-   3D-Grafiken – Windows 10 unterstützt zwei Sätze von 3D-Grafik-APIs, Direct3D 11 und [Direct3D 12](https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-guide). Mit diesen beiden APIs können 3D- und 2D-Grafiken erstellt werden. Direct3D 11 und Direct3D 12 werden nicht zusammen verwendet, können jedoch zusammen mit APIs in der 2D-Grafik- und Benutzeroberflächengruppe verwendet werden. Weitere Informationen zum Verwenden der Grafik-APIs in Ihrem Spiel finden Sie unter [Grundlegendes zu 3D-Grafiken für DirectX-Spiele](an-introduction-to-3d-graphics-with-directx.md).
 
     <table>
     <colgroup>
@@ -78,7 +78,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p>Verwenden Sie Direct3D 12, wenn Sie die Leistung Ihres Spiels optimieren müssen und das Spiel CPU-gebunden ist.</p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie in der <a href="https://msdn.microsoft.com/library/windows/desktop/dn899121">Direct3D 12</a>-Dokumentation.</p></td>
+    <p>Weitere Informationen finden Sie in der <a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-guide">Direct3D 12</a>-Dokumentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Direct3D 11</td>
@@ -86,7 +86,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p>Verwenden Sie Direct3D 11, wenn Sie über vorhandenen Direct3D 11-Code verfügen, Ihr Spiel nicht CPU-gebunden ist, oder Sie davon profitieren möchten, dass Ihre Ressourcen verwaltet werden.</p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie in der <a href="https://msdn.microsoft.com/library/windows/desktop/ff476080">Direct3D 11</a>-Dokumentation.</p></td>
+    <p>Weitere Informationen finden Sie in der <a href="https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11">Direct3D 11</a>-Dokumentation.</p></td>
     </tr>
     </tbody>
     </table>
@@ -113,7 +113,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p>Direct2D kann anstelle von Direct3D zum Bereitstellen von Grafiken für reine 2D-Spiele verwendet werden, beispielsweise Side-Scroller oder Brettspiele. Es kann auch mit Direct3D für die vereinfachte Erstellung von 2D-Grafiken in einem 3D-Spiel verwendet werden, beispielsweise einer Benutzeroberfläche oder einer Heads-Up-Anzeige.</p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie in der <a href="https://msdn.microsoft.com/library/windows/desktop/dd370990">Direct2D</a>-Dokumentation.</p></td>
+    <p>Weitere Informationen finden Sie in der <a href="https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal">Direct2D</a>-Dokumentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">DirectWrite</td>
@@ -121,7 +121,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p></p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie in der <a href="https://msdn.microsoft.com/library/windows/desktop/dd368038">DirectWrite</a>-Dokumentation.</p></td>
+    <p>Weitere Informationen finden Sie in der <a href="https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal">DirectWrite</a>-Dokumentation.</p></td>
     </tr>
     <tr class="odd">
     <td align="left">DirectComposition</td>
@@ -129,7 +129,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p>DirectComposition wurde für die vereinfachte Anordnung von visuellen Objekten und Erstellen von animierten Übergängen entwickelt. Wenn Ihr Spiel eine komplexe Benutzeroberfläche erfordert, können Sie DirectComposition zum vereinfachten Erstellen und Verwalten der Benutzeroberfläche verwenden.</p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie in der <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371">DirectComposition</a>-Dokumentation.</p></td>
+    <p>Weitere Informationen finden Sie in der <a href="https://docs.microsoft.com/windows/desktop/directcomp/directcomposition-portal">DirectComposition</a>-Dokumentation.</p></td>
     </tr>
     </tbody>
     </table>
@@ -156,7 +156,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p>Verwenden Sie XAudio2, wenn Ihr Spiel Sounds mit minimalem Aufwand und minimaler Verzögerung wiedergeben muss.</p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie in der <a href="https://msdn.microsoft.com/library/windows/desktop/hh405049">XAudio2</a>-Dokumentation.</p></td>
+    <p>Weitere Informationen finden Sie in der <a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal">XAudio2</a>-Dokumentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Media Foundation</td>
@@ -164,7 +164,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p>Media Foundation ist bei Filmszenen oder nichtinteraktiven Komponenten des Spiels besonders nützlich. Media Foundation ist auch für die Decodierung von Audiodateien für die Wiedergabe mit XAudio2 nützlich.</p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie unter <a href="https://msdn.microsoft.com/library/windows/desktop/ms694197">Microsoft Media Foundation</a>.</p></td>
+    <p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk">Microsoft Media Foundation</a>.</p></td>
     </tr>
     </tbody>
     </table>
@@ -191,7 +191,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p>Wenn Ihr Spiel die Gamepadeingabe unterstützen muss und Sie über vorhandenen XInput-Code verfügen, können Sie weiterhin XInput verwenden. XInput wurde durch Windows.Gaming.Input für UWP ersetzt, und Sie sollten beim Schreiben von neuem Eingabecode Windows.Gaming.Input anstelle von XInput verwenden.</p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie in der <a href="https://msdn.microsoft.com/library/windows/desktop/hh405053">XInput</a>-Dokumentation.</p></td>
+    <p>Weitere Informationen finden Sie in der <a href="https://docs.microsoft.com/windows/desktop/xinput/xinput-game-controller-apis-portal">XInput</a>-Dokumentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Gaming.Input</td>
@@ -207,7 +207,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p>Wenn Ihr Spiel Eingaben über ein Gamepad unterstützen muss und einen vorhandenen XInput-Code nicht verwendet, oder wenn Sie einen der oben genannten Vorteile nutzen möchten, sollten Sie Windows.Gaming.Input verwenden.</p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie in der Dokumentation für <a href="https://msdn.microsoft.com/library/windows/apps/dn707817">Windows.Gaming.Input</a>.</p></td>
+    <p>Weitere Informationen finden Sie in der Dokumentation für <a href="https://docs.microsoft.com/uwp/api/Windows.Gaming.Input">Windows.Gaming.Input</a>.</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
@@ -242,7 +242,7 @@ Es gibt viele verwandte APIs für die Spielentwicklung, nicht für alle Spiele m
     <p><strong>Verwendungsszenarien</strong></p>
     <p>Die Verwendung von DirectXMath ist optional und vereinfacht allgemeine mathematische Vorgänge.</p>
     <p><strong>Weitere Informationen</strong></p>
-    <p>Weitere Informationen finden Sie in der <a href="https://msdn.microsoft.com/library/windows/desktop/hh437833">DirectXMath</a>-Dokumentation.</p></td>
+    <p>Weitere Informationen finden Sie in der <a href="https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal">DirectXMath</a>-Dokumentation.</p></td>
     </tr>
     </tbody>
     </table>

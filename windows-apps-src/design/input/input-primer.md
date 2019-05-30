@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bae6e5b21369c30c8ed067fe7283c0a116d220b8
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 55879c33e30564f4639b8880c3a12f4b4181245e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343289"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365922"
 ---
 # <a name="interaction-primer"></a>Einführung in die Interaktion
 
@@ -135,7 +135,7 @@ Das Diktieren wird in der Regel verwendet, wenn eine App die Bedeutung oder die 
 
 ### <a name="more-info"></a>Weitere Informationen
 
-[Richtlinien für den Sprachentwurf](https://msdn.microsoft.com/library/windows/apps/dn596121)
+[Richtlinien für den Sprachentwurf](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
  
 
 ## <a name="pen"></a>Stift
@@ -168,7 +168,7 @@ Sie müssen stiftspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unt
 
 ### <a name="more-info"></a>Weitere Informationen
 
-[Designrichtlinien für die Zeichenstifteingabe](https://msdn.microsoft.com/library/windows/apps/dn456352)
+[Designrichtlinien für die Zeichenstifteingabe](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
  
 
 ## <a name="touch"></a>Touch
@@ -203,7 +203,7 @@ Im Allgemeinen weist die Toucheingabe folgende Merkmale auf:
 
 ### <a name="more-info"></a>Weitere Informationen
 
-[Richtlinien für die Toucheingabe](https://msdn.microsoft.com/library/windows/apps/hh465370)
+[Richtlinien für die Toucheingabe](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)
  
 
 ## <a name="touchpad"></a>Touchpad
@@ -227,7 +227,7 @@ Sie müssen mausspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unte
 
 ### <a name="more-info"></a>Weitere Informationen
 
-[Touchpad-Designrichtlinien](https://msdn.microsoft.com/library/windows/apps/dn456353)
+[Touchpad-Designrichtlinien](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
  
 
 ## <a name="keyboard"></a>Tastatur
@@ -267,7 +267,7 @@ Im Allgemeinen weist eine Tastatur folgende Merkmale auf:
 
 ### <a name="more-info"></a>Weitere Informationen
 
-[Tastaturentwurfsrichtlinien](https://msdn.microsoft.com/library/windows/apps/hh972345)
+[Tastaturentwurfsrichtlinien](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
  
 
 ## <a name="mouse"></a>Maus
@@ -294,7 +294,7 @@ Sie müssen mausspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unte
 
 ### <a name="more-info"></a>Weitere Informationen
 
-[Richtlinien für die Mausinteraktion](https://msdn.microsoft.com/library/windows/apps/dn456351)
+[Richtlinien für die Mausinteraktion](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
  
 
 ## <a name="gesture"></a>Geste

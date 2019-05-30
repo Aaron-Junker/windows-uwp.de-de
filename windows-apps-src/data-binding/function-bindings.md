@@ -5,17 +5,17 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, Uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626215"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360074"
 ---
 # <a name="functions-in-xbind"></a>Funktionen in x:Bind
 
 > [!NOTE]
-> Allgemeine Informationen zum Verwenden der Datenbindung in Ihrer app mit **{X: Bind}** (und eine allumfassende Vergleich zwischen **{X: Bind}** und **{Binding}**), finden Sie unter [Daten Binden ausführlich](data-binding-in-depth.md).
+> Allgemeine Informationen zum Verwenden der Datenbindung in Ihrer app mit **{X: Bind}** (und eine allumfassende Vergleich zwischen **{X: Bind}** und **{Binding}** ), finden Sie unter [Daten Binden ausführlich](data-binding-in-depth.md).
 
 Ab Windows 10, Version 1607, unterstützt **{x: Bind}** die Verwendung einer Funktion als blattbildenden Schritt des Bindungspfades. Dadurch können:
 
@@ -23,7 +23,7 @@ Ab Windows 10, Version 1607, unterstützt **{x: Bind}** die Verwendung einer Fu
 - Eine Möglichkeit, Bindungen von mehr als einem Parameter abhängig zu machen
 
 > [!NOTE]
-> Wenn Sie Funktionen für **{x: Bind}** verwenden möchten, muss die Ziel-SDK-Version 14393 oder höher sein. Sie können keine Funktionen verwenden, wenn Ihre App für frühere Versionen von Windows 10 bestimmt ist. Weitere Informationen zu Zielversionen finden Sie unter [Versionsadaptiver Code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Wenn Sie Funktionen für **{x: Bind}** verwenden möchten, muss die Ziel-SDK-Version 14393 oder höher sein. Sie können keine Funktionen verwenden, wenn Ihre App für frühere Versionen von Windows 10 bestimmt ist. Weitere Informationen zu Zielversionen finden Sie unter [Versionsadaptiver Code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 Im folgenden Beispiel werden Hintergrund und Vordergrund des Elements an Funktionen gebunden, um eine Konvertierung basierend auf dem Farbparameter durchzuführen
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a31464d208e8d9abe68703560552c99e5d957463
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0e5c5e19c6e23f4c0094220a735a0c2a48c1cc34
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638235"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362057"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
@@ -30,7 +30,7 @@ Hier sind Beispiele für App-Optionen, die zu einer Seite für App-Einstellungen
 -   Optionen, die von den bevorzugten Benutzereinstellungen abhängen, wie Musik, Soundeffekte oder Farbdesigns.
 -   App-Infos, die eher selten benötigt werden, z. B. Datenschutzrichtlinie, Hilfe, App-Version oder Copyright-Informationen.
 
-Befehle, die Teil des typischen App-Workflows sind (z. B. das Ändern der Pinselgröße in einer Zeichen-App), sollten sich nicht auf einer Einstellungsseite befinden. Weitere Informationen zur Platzierung von Befehlen finden Sie unter [Befehlsdesigngrundlagen](https://msdn.microsoft.com/library/windows/apps/dn958433).
+Befehle, die Teil des typischen App-Workflows sind (z. B. das Ändern der Pinselgröße in einer Zeichen-App), sollten sich nicht auf einer Einstellungsseite befinden. Weitere Informationen zur Platzierung von Befehlen finden Sie unter [Befehlsdesigngrundlagen](https://docs.microsoft.com/windows/uwp/layout/commanding-basics).
 
 ## <a name="general-recommendations"></a>Allgemeine Empfehlungen
 
@@ -63,11 +63,11 @@ Bei Verwendung einer [App-Leiste](../controls-and-patterns/app-bars.md) oder Too
 
 Wenn Sie ein Hublayout verwenden, sollte sich der Einstiegspunkt für App-Einstellungen im Überlaufmenü „Mehr“ einer App-Leiste befinden.
 
-**Tabstopps/pivots**
+**Tabs/pivots**
 
 Bei einem Registerkarten- oder Pivots-Layout raten wir davon ab, den Einstiegspunkt für App-Einstellungen als eines der Elemente der obersten Ebene in der Navigation zu platzieren. Stattdessen sollte der Einstiegspunkt für App-Einstellungen im Überlaufmenü „Mehr“ einer App-Leiste platziert werden.
 
-**Master / Detail**
+**Master-details**
 
 Anstatt den Einstiegspunkt für App-Einstellungen innerhalb eines Master/Details-Bereichs zu u verstecken, machen Sie ihn als letztes angeheftete Element auf der obersten Ebene des Masterbereichs verfügbar.
 
@@ -135,17 +135,17 @@ Wenn Sie eine Liste der gewünschten Elemente auf der Seite für App-Einstellung
     -   [Hyperlinks](../controls-and-patterns/hyperlinks.md): Um den Benutzer zu einer anderen Seite innerhalb der app oder eine externe Website zu leiten. Wenn ein Benutzer auf einen Hyperlink klickt, wird das Einstellungen-Flyout geschlossen.
     -   [Schaltflächen](../controls-and-patterns/buttons.md): Um eine sofortige Aktion zu initiieren, ohne die aktuelle Einstellungen-Flyout geschlossen wird, Benutzern zu ermöglichen.
 -   Wenn eines der Steuerelemente deaktiviert ist, fügen Sie eine beschreibende Meldung hinzu. Platzieren Sie diese Meldung über dem deaktivierten Steuerelement.
--   Zeigen Sie Inhalte und Steuerelemente als einzelnen Block per Animation an, nachdem das Einstellungen-Flyout und die Überschrift eingeblendet wurden. Animieren Sie Inhalte mit der Animation [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) oder [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) mit einem Offset links von 100 Pixel.
+-   Zeigen Sie Inhalte und Steuerelemente als einzelnen Block per Animation an, nachdem das Einstellungen-Flyout und die Überschrift eingeblendet wurden. Animieren Sie Inhalte mit der Animation [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) oder [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) mit einem Offset links von 100 Pixel.
 -   Verwenden Sie Abschnittsüberschriften, Absätze und Bezeichnungen, um Inhalte ggf. zu organisieren und zu erläutern.
 -   Verwenden Sie zum Wiederholen von Einstellungen eine zusätzliche UI-Ebene oder ein Model zum Erweitern und Reduzieren. Beschränken Sie Hierarchien jedoch auf maximal zwei Ebenen. So könnte zum Beispiel in einer Wetter-App, deren Einstellungen sich auf die jeweilige Stadt beziehen, eine Liste mit Städten angezeigt werden. Der Benutzer muss dann nur auf die gewünschte Stadt zu tippen, um ein neues Flyout zu öffnen oder zu erweitern, um die Einstellungsoptionen anzuzeigen.
--   Wenn das Laden von Steuerelementen oder Webinhalten längere Zeit in Anspruch nimmt, informieren Sie den Benutzer mithilfe eines unbestimmten Statussteuerelements darüber, dass Informationen geladen werden. Weitere Informationen finden Sie unter [Richtlinien für Statussteuerelemente](https://msdn.microsoft.com/library/windows/apps/hh465469).
+-   Wenn das Laden von Steuerelementen oder Webinhalten längere Zeit in Anspruch nimmt, informieren Sie den Benutzer mithilfe eines unbestimmten Statussteuerelements darüber, dass Informationen geladen werden. Weitere Informationen finden Sie unter [Richtlinien für Statussteuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls).
 -   Verwenden Sie keine Schaltflächen für die Navigation oder zum Übernehmen von Änderungen. Verwenden Sie Hyperlinks, um zu anderen Seiten zu navigieren, und speichern Sie Änderungen an App-Einstellungen automatisch, wenn ein Benutzer das Einstellungen-Flyout schließt, anstatt eine Schaltfläche für das Übernehmen von Änderungen zu verwenden.
 
 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Grundlagen des Berichtsentwurfs Befehl](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [Richtlinien für Statussteuerelemente](https://msdn.microsoft.com/library/windows/apps/hh465469)
-* [Store und Abrufen von app-Daten](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
+* [Grundlagen des Berichtsentwurfs Befehl](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+* [Richtlinien für Statussteuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
+* [Store und Abrufen von app-Daten](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

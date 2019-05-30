@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ec88af01e46788ea9f24760af7f9a3b81281ba8d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e177f4715d549ce3ef64534e0fc28d2fc3a9fe0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593125"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359952"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimieren Ihres XAML-Markups
 
@@ -124,9 +124,9 @@ Das ListView-Steuerelement und seine untergeordneten Elemente werden nicht in de
 
 ### <a name="use-layout-panel-properties"></a>Verwenden von Layoutpaneleigenschaften
 
-Layoutpanel verfügen über die Eigenschaft [Background](https://msdn.microsoft.com/library/windows/apps/BR227512), sodass zum Einfärben kein [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) vor dem Panel erforderlich ist.
+Layoutpanel verfügen über die Eigenschaft [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background), sodass zum Einfärben kein [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) vor dem Panel erforderlich ist.
 
-**Ineffiziente**
+**Inefficient**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -135,7 +135,7 @@ Layoutpanel verfügen über die Eigenschaft [Background](https://msdn.microsoft.
 </Grid>
 ```
 
-**Effiziente**
+**Efficient**
 
 ```xaml
 <Grid Background="Black"/>
@@ -198,7 +198,7 @@ Da _InitialPage.xaml_ in diesem Beispiel eine Ressource von _ExampleResourceDict
 
 Wenn Sie eine Ressource in der gesamten App auf vielen Seiten verwenden, ist es eine bewährte Methode, diese in der Datei _App.xaml_ zu speichern, um eine Duplizierung zu vermeiden. Aber _App.xaml_ wird beim Starten der App analysiert. Daher sollte jede Ressource, die nur auf einer Seite verwendet wird (es sei denn, diese Seite ist die Ausgangsseite), unter den lokalen Ressourcen der Seite gespeichert werden. In diesem Beispiel enthält die Datei _App.xaml_ Ressourcen, die nur von einer Seite verwendet werden (bei der es sich nicht um die Ausgangsseite handelt). Dadurch wird die Startzeit der App unnötigerweise erhöht.
 
-**"App.xaml"**
+**App.xaml**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -238,7 +238,7 @@ Um dieses Beispiel effizienter zu gestalten, verschieben Sie `SecondPageTextBrus
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>Zusammenfassen mehrerer gleichartiger Pinsel in einer Ressource
 
-Die XAML-Plattform speichert allgemein verwendete Objekte zwischen, um eine möglichst häufige Wiederverwendung zu ermöglichen. XAML kann jedoch nicht ohne Weiteres feststellen, ob es sich bei einem Pinsel, der in zwei unterschiedlichen Markupkomponenten deklariert ist, um denselben Pinsel handelt. Dieses Beispiel verwendet [SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962) zur Veranschaulichung, aber die Wahrscheinlichkeit und Bedeutung von [GradientBrush](https://msdn.microsoft.com/library/windows/apps/BR210068) ist höher. Prüfen Sie auch auf Pinsel, die vordefinierte Farben verwenden – beispielsweise bezeichnen `"Orange"` und `"#FFFFA500"` dieselbe Farbe.
+Die XAML-Plattform speichert allgemein verwendete Objekte zwischen, um eine möglichst häufige Wiederverwendung zu ermöglichen. XAML kann jedoch nicht ohne Weiteres feststellen, ob es sich bei einem Pinsel, der in zwei unterschiedlichen Markupkomponenten deklariert ist, um denselben Pinsel handelt. Dieses Beispiel verwendet [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) zur Veranschaulichung, aber die Wahrscheinlichkeit und Bedeutung von [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush) ist höher. Prüfen Sie auch auf Pinsel, die vordefinierte Farben verwenden – beispielsweise bezeichnen `"Orange"` und `"#FFFFA500"` dieselbe Farbe.
 
 **Ineffizient.**
 
@@ -281,15 +281,15 @@ Definieren Sie den Pinsel als Ressource, um die Duplizierung zu beheben. Wenn St
 
 Eine Überzeichnung tritt dort auf, wo mehrere Objekte dieselben Bildschirmpixel beanspruchen. Beachten Sie, dass Sie manchmal einen Kompromiss zwischen dieser Richtlinie und dem Wunsch zur Minimierung der Elementanzahl eingehen müssen.
 
-Verwenden Sie [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) als visuelle Diagnose. Möglicherweise erkennen Sie, dass Objekte dargestellt werden, von denen Sie sich nicht wussten, dass sie in der Szene auftreten.
+Verwenden Sie [**DebugSettings.IsOverdrawHeatMapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) als visuelle Diagnose. Möglicherweise erkennen Sie, dass Objekte dargestellt werden, von denen Sie sich nicht wussten, dass sie in der Szene auftreten.
 
 ### <a name="transparent-or-hidden-elements"></a>Transparente oder ausgeblendeten Elemente
 
-Wenn ein Element nicht angezeigt wird, da es transparent ist oder von anderen Elementen verdeckt wird, löschen Sie es einfach, wenn es nicht zum Layout beiträgt. Wenn das Element nicht in seinem visuellen Anfangszustand, aber in anderen visuellen Zuständen sichtbar ist, können Sie den Zustand mit „x:Load“ steuern oder [Visibility](https://msdn.microsoft.com/library/windows/apps/BR208992) auf den Wert **Collapsed** für das Element selbst festlegen und in den entsprechenden Zuständen in **Visible** ändern. Es gibt Ausnahmen von dieser Heuristik: In der Regel wird der Wert, den eine Eigenschaft in den meisten visuellen Zuständen aufweist, am besten lokal für das Element festgelegt.
+Wenn ein Element nicht angezeigt wird, da es transparent ist oder von anderen Elementen verdeckt wird, löschen Sie es einfach, wenn es nicht zum Layout beiträgt. Wenn das Element nicht in seinem visuellen Anfangszustand, aber in anderen visuellen Zuständen sichtbar ist, können Sie den Zustand mit „x:Load“ steuern oder [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) auf den Wert **Collapsed** für das Element selbst festlegen und in den entsprechenden Zuständen in **Visible** ändern. Es gibt Ausnahmen von dieser Heuristik: In der Regel wird der Wert, den eine Eigenschaft in den meisten visuellen Zuständen aufweist, am besten lokal für das Element festgelegt.
 
 ### <a name="composite-elements"></a>Zusammengesetzte Elemente
 
-Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stapeln, um einen Effekt zu erzielen. In diesem Beispiel ist das Ergebnis eine zweifarbige Form, wobei die obere Hälfte schwarz (vom Hintergrund von [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704)) und die untere Hälfte grau ist (vom halbtransparenten weißen [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Objekt, das mit einer Alpha-Überblendung über den schwarzen Hintergrund von **Grid** gelegt wird). Hier werden 150 % der Pixel gefüllt, die erforderlich sind, um das Ergebnis zu erzielen.
+Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stapeln, um einen Effekt zu erzielen. In diesem Beispiel ist das Ergebnis eine zweifarbige Form, wobei die obere Hälfte schwarz (vom Hintergrund von [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)) und die untere Hälfte grau ist (vom halbtransparenten weißen [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Objekt, das mit einer Alpha-Überblendung über den schwarzen Hintergrund von **Grid** gelegt wird). Hier werden 150 % der Pixel gefüllt, die erforderlich sind, um das Ergebnis zu erzielen.
 
 **Ineffizient.**
 
@@ -346,11 +346,11 @@ Ein Layoutpanel kann zwei Zwecke verfolgen: einem Bereich eine Farbe zuzuweisen 
 </GridView>
 ```
 
-Wenn für das [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) Treffertests durchgeführt werden müssen, legen Sie für den Hintergrund einen transparenten Wert fest.
+Wenn für das [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) Treffertests durchgeführt werden müssen, legen Sie für den Hintergrund einen transparenten Wert fest.
 
 ### <a name="borders"></a>Umrandung
 
-Verwenden Sie ein [Border](https://msdn.microsoft.com/library/windows/apps/BR209253)-Element, um einen Rahmen um ein Objekt zu zeichnen. In diesem Beispiel wird ein [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) als provisorischer Rahmen für eine [TextBox](https://msdn.microsoft.com/library/windows/apps/BR209683) verwendet. Allerdings werden alle Pixel in der Mitte der Zelle überzeichnet.
+Verwenden Sie ein [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.)-Element, um einen Rahmen um ein Objekt zu zeichnen. In diesem Beispiel wird ein [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) als provisorischer Rahmen für eine [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) verwendet. Allerdings werden alle Pixel in der Mitte der Zelle überzeichnet.
 
 **Ineffizient.**
 
@@ -385,7 +385,7 @@ Achten Sie auf die Ränder. Zwei benachbarte Elemente überlappen sich (möglich
 
 ### <a name="cache-static-content"></a>Zwischenspeichern statischer Inhalte
 
-Eine andere Quelle für die Überzeichnung ist eine Form, die aus vielen überlappenden Elementen besteht. Wenn Sie [CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084) für die [UIElement](https://msdn.microsoft.com/library/windows/apps/BR208911)-Klasse mit der Verbundform auf **BitmapCache** festlegen, rendert die Plattform das Element für eine Bitmap einmalig und verwendet dann diese Bitmap für jeden Frame (anstelle der Überzeichnung).
+Eine andere Quelle für die Überzeichnung ist eine Form, die aus vielen überlappenden Elementen besteht. Wenn Sie [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) für die [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Klasse mit der Verbundform auf **BitmapCache** festlegen, rendert die Plattform das Element für eine Bitmap einmalig und verwendet dann diese Bitmap für jeden Frame (anstelle der Überzeichnung).
 
 **Ineffizient.**
 
@@ -413,7 +413,7 @@ Das obige Bild ist das Ergebnis, aber hier folgt eine Karte der überzeichneten 
 </Canvas>
 ```
 
-Beachten Sie die Verwendung von [CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084). Verwenden Sie dieses Verfahren nicht, wenn eine der Teilformen animiert ist, da der Bitmapcache wahrscheinlich bei jedem Frame neu generiert werden muss, was dem Zweck widerspricht.
+Beachten Sie die Verwendung von [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode). Verwenden Sie dieses Verfahren nicht, wenn eine der Teilformen animiert ist, da der Bitmapcache wahrscheinlich bei jedem Frame neu generiert werden muss, was dem Zweck widerspricht.
 
 ## <a name="use-xbf2"></a>Verwendung von XBF2
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Portieren, Vertexpuffer, Daten, Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8445339d442fb740e9e2aba5e9d1cb0388c746ef
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592815"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368242"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>Portieren der Vertexpuffer und Daten
 
@@ -20,9 +20,9 @@ ms.locfileid: "57592815"
 
 **Wichtige APIs**
 
--   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
--   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
--   [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
+-   [**ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)
+-   [**ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers)
+-   [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer)
 
 In diesem Schritt definieren Sie die Vertexpuffer für die Gitter und die Indexpuffer, mit deren Hilfe die Shader die Scheitelpunkte (Vertices) in einer angegebenen Reihenfolge durchlaufen können.
 
@@ -130,7 +130,7 @@ In der OpenGL ES 2.0 sind Eingabe Layouts implizit; Sie erstellen ein allgemeine
 
 In Direct3D müssen Sie beim Erstellen des Puffers ein Eingabelayout angeben, um die Struktur der Vertexdaten im Vertexpuffer zu beschreiben, und nicht vor dem Zeichnen der Geometrie. Dazu verwenden Sie ein Eingabelayout, das dem Layout der Daten für die einzelnen Scheitelpunkte im Speicher entspricht. Es ist sehr wichtig, dies genau anzugeben!
 
-Hier erstellen Sie eine Eingabe Beschreibung als ein Array von [ **D3D11\_Eingabe\_ELEMENT\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) Strukturen.
+Hier erstellen Sie eine Eingabe Beschreibung als ein Array von [ **D3D11\_Eingabe\_ELEMENT\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) Strukturen.
 
 Direct3D: Definieren Sie eine Beschreibung der eingabelayout.
 
@@ -151,11 +151,11 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-Mit dieser Eingabebeschreibung wird ein Vertex als ein Vektorpaar mit jeweils drei Koordinaten definiert: ein 3D-Vektor zum Speichern der Vertexposition in den Modellkoordinaten und ein anderer 3D-Vektor zum Speichern des RGB-Farbwerts, der dem Vertex zugeordnet ist. In diesem Fall verwenden Sie das 3x32-Bit-Gleitkommaformat. Elemente dieses Typs sind im Code als `XMFLOAT3(X.Xf, X.Xf, X.Xf)` dargestellt. Sie sollten Typen aus der [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574)-Bibliothek immer bei der Behandlung von Daten verwenden, die von einem Shader genutzt werden. So wird die richtige Verpackung und Ausrichtung der Daten sichergestellt. (Verwenden Sie beispielsweise [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) oder [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) für Vektordaten und [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) für Matrizen.)
+Mit dieser Eingabebeschreibung wird ein Vertex als ein Vektorpaar mit jeweils drei Koordinaten definiert: ein 3D-Vektor zum Speichern der Vertexposition in den Modellkoordinaten und ein anderer 3D-Vektor zum Speichern des RGB-Farbwerts, der dem Vertex zugeordnet ist. In diesem Fall verwenden Sie das 3x32-Bit-Gleitkommaformat. Elemente dieses Typs sind im Code als `XMFLOAT3(X.Xf, X.Xf, X.Xf)` dargestellt. Sie sollten Typen aus der [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/ovw-xnamath-reference)-Bibliothek immer bei der Behandlung von Daten verwenden, die von einem Shader genutzt werden. So wird die richtige Verpackung und Ausrichtung der Daten sichergestellt. (Verwenden Sie beispielsweise [**XMFLOAT3**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3) oder [**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) für Vektordaten und [**XMFLOAT4X4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) für Matrizen.)
 
-Eine Liste aller möglichen Format Typen, finden Sie unter [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+Eine Liste aller möglichen Format Typen, finden Sie unter [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format).
 
-Nachdem das Layout für die Eingabe pro Vertex definiert wurde, erstellen Sie das Layoutobjekt. In den folgenden Code, Sie schreiben, damit **m\_InputLayout**, eine Variable vom Typ **ComPtr** (die verweist auf ein Objekt des Typs [ **ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** enthält das kompilierte Vertexshaderobjekt aus dem vorherigen Schritt [Portieren der Shader](port-the-shader-config.md).
+Nachdem das Layout für die Eingabe pro Vertex definiert wurde, erstellen Sie das Layoutobjekt. In den folgenden Code, Sie schreiben, damit **m\_InputLayout**, eine Variable vom Typ **ComPtr** (die verweist auf ein Objekt des Typs [ **ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)). **fileData** enthält das kompilierte Vertexshaderobjekt aus dem vorherigen Schritt [Portieren der Shader](port-the-shader-config.md).
 
 Direct3D: Erstellen Sie das eingabelayout, die von den Vertexpuffer verwendet.
 
@@ -188,11 +188,11 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-In Direct3D, Shader zugänglichen Puffer dargestellt werden, als [ **D3D11\_SUBRESOURCE\_Daten** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) Strukturen. Um den Speicherort dieses Puffers an Shader-Objekt zu binden, müssen Sie erstellen eine CD3D11\_Puffer\_DESC-Struktur für jeden Puffer mit [ **ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), und legen Sie dann der Puffer des Gerätekontexts Direct3D durch Aufrufen von Set-Methode zum Puffertyp, wie z. B. [ **ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
+In Direct3D, Shader zugänglichen Puffer dargestellt werden, als [ **D3D11\_SUBRESOURCE\_Daten** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) Strukturen. Um den Speicherort dieses Puffers an Shader-Objekt zu binden, müssen Sie erstellen eine CD3D11\_Puffer\_DESC-Struktur für jeden Puffer mit [ **ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer), und legen Sie dann der Puffer des Gerätekontexts Direct3D durch Aufrufen von Set-Methode zum Puffertyp, wie z. B. [ **ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers).
 
 Geben Sie beim Festlegen des Puffers die Breite (die Größe des Datenelements für einen einzelnen Vertex) sowie den Versatz (wo die eigentlichen Vertexdaten beginnen) zum Anfang des Puffers an.
 
-Beachten Sie, dass wir weisen Sie den Zeiger auf die **VertexIndices** array an die **pSysMem** Feld der [ **D3D11\_SUBRESOURCE\_Daten** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) Struktur. Wenn dies nicht korrekt angegeben wird, ist das Gitter beschädigt oder leer!
+Beachten Sie, dass wir weisen Sie den Zeiger auf die **VertexIndices** array an die **pSysMem** Feld der [ **D3D11\_SUBRESOURCE\_Daten** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) Struktur. Wenn dies nicht korrekt angegeben wird, ist das Gitter beschädigt oder leer!
 
 Direct3D: Erstellen Sie, und legen Sie den Vertexpuffer
 
@@ -248,7 +248,7 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-Für Direct3D ist der Prozess sehr ähnlich, jedoch etwas didaktischer gestaltet. Stellen Sie den Indexpuffer als Direct3D-Unterressource für die [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)-Schnittstelle bereit, die Sie beim Konfigurieren von Direct3D erstellt haben. Rufen Sie zu diesem Zweck [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) mit der konfigurierten Unterressource wie folgt für das Indexarray auf. (Beachten Sie, dass Sie den Zeiger zum Zuweisen der **CubeIndices** array an die **pSysMem** Feld der [ **D3D11\_SUBRESOURCE\_Daten** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) Struktur.)
+Für Direct3D ist der Prozess sehr ähnlich, jedoch etwas didaktischer gestaltet. Stellen Sie den Indexpuffer als Direct3D-Unterressource für die [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)-Schnittstelle bereit, die Sie beim Konfigurieren von Direct3D erstellt haben. Rufen Sie zu diesem Zweck [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer) mit der konfigurierten Unterressource wie folgt für das Indexarray auf. (Beachten Sie, dass Sie den Zeiger zum Zuweisen der **CubeIndices** array an die **pSysMem** Feld der [ **D3D11\_SUBRESOURCE\_Daten** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) Struktur.)
 
 Direct3D: Erstellen Sie die Index-Puffer.
 
@@ -274,7 +274,7 @@ m_d3dContext->IASetIndexBuffer(
   0);
 ```
 
-Später werden Sie die Dreiecke wie folgt mit einem Aufruf von [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (bzw. [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) für nicht indizierte Scheitelpunkte) zeichnen. (Ausführlichere Informationen erhalten Sie bereits jetzt unter [Zeichnen auf den Bildschirm](draw-to-the-screen.md).)
+Später werden Sie die Dreiecke wie folgt mit einem Aufruf von [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) (bzw. [**ID3D11DeviceContext::Draw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw) für nicht indizierte Scheitelpunkte) zeichnen. (Ausführlichere Informationen erhalten Sie bereits jetzt unter [Zeichnen auf den Bildschirm](draw-to-the-screen.md).)
 
 Direct3D: Zeichnen Sie die indizierten Scheitelpunkte.
 
@@ -301,7 +301,7 @@ m_d3dContext->DrawIndexed(
 
 ## <a name="remarks"></a>Hinweise
 
-Fügen Sie den Code, mit dem unter [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) Methoden aufgerufen werden, beim Strukturieren von Direct3D jeweils in eine Methode ein, die aufgerufen wird, wenn die Geräteressourcen neu erstellt werden müssen. (In der Direct3D-Projektvorlage befindet sich dieser Code in den **CreateDeviceResource**-Methoden des Rendererobjekts. Der Code zum Aktualisieren des Gerätekontexts ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) wird jedoch in der **Render**-Methode platziert, da dort die Shaderphasen tatsächlich erstellt und die Daten gebunden werden.
+Fügen Sie den Code, mit dem unter [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) Methoden aufgerufen werden, beim Strukturieren von Direct3D jeweils in eine Methode ein, die aufgerufen wird, wenn die Geräteressourcen neu erstellt werden müssen. (In der Direct3D-Projektvorlage befindet sich dieser Code in den **CreateDeviceResource**-Methoden des Rendererobjekts. Der Code zum Aktualisieren des Gerätekontexts ([**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) wird jedoch in der **Render**-Methode platziert, da dort die Shaderphasen tatsächlich erstellt und die Daten gebunden werden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 

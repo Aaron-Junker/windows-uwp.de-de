@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0c709261b08231fa82af615d5398fd66648d4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646465"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364176"
 ---
 # <a name="split-view-control"></a>Steuerelement für geteilte Ansicht
 
 Ein Steuerelement für die geteilte Darstellung verfügt über einen erweiterbaren/reduzierbaren Bereich und einen Inhaltsbereich.
 
-> **Wichtige APIs:** [SplitView-Klasse](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **Wichtige APIs:** [SplitView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 Dies ist ein Beispiel für die Verwendung von SplitView durch die Microsoft Edge-App, um den Hub anzuzeigen.
 
@@ -32,7 +32,7 @@ Dies ist ein Beispiel für die Verwendung von SplitView durch die Microsoft Edge
 
  Der Inhaltsbereich einer geteilten Ansicht wird stets angezeigt. Der Bereich kann erweitert und reduziert werden oder geöffnet bleiben. Er kann vom linken oder rechten Rand eines App-Fensters aus eingeblendet werden. Der Bereich verfügt über vier Modi:
 
--   **Überlagerung**
+-   **Overlay**
 
     Der Bereich ist ausgeblendet, bis er geöffnet wird. Ist der Bereich geöffnet, überlagert er den Inhaltsbereich.
 
@@ -44,7 +44,7 @@ Dies ist ein Beispiel für die Verwendung von SplitView durch die Microsoft Edge
 
     Ein kleiner Teil des Bereich – gerade breit genug für die Anzeige von Symbolen – ist in diesem Modus immer sichtbar. Die Standardbreite für den geschlossen Bereich ist 48px und kann mit `CompactPaneLength` geändert werden. Wenn das Fenster geöffnet ist, wird den Inhaltsbereich überlagert werden.
 
--   **"Compactinline"**
+-   **CompactInline**
 
     Ein kleiner Teil des Bereich – gerade breit genug für die Anzeige von Symbolen – ist in diesem Modus immer sichtbar. Die Standardbreite für den geschlossen Bereich ist 48px und kann mit `CompactPaneLength` geändert werden. Wenn das Fenster geöffnet ist, reduziert es den Platz für Inhalte, die weggeschoben werden.
 

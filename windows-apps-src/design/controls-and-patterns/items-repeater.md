@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3344230bc52013825d94cfbe3668acfa0d7a2e13
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58914000"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364757"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -50,8 +50,8 @@ ItemsRepeater muss sich nicht auf eine integrierte Elementsammlung aus. Wenn Sie
 <td>
     <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um die app öffnen und finden Sie unter den <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in Aktion.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -59,17 +59,30 @@ ItemsRepeater muss sich nicht auf eine integrierte Elementsammlung aus. Wenn Sie
 
 ## <a name="scrolling-with-itemsrepeater"></a>Durchführen eines Bildlaufs mit ItemsRepeater
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) nicht von abgeleitet [Steuerelement](/uwp/api/windows.ui.xaml.controls.control), sodass es eine Steuerelementvorlage enthält. Aus diesem Grund Es enthält keine integrierten, wie ein ListView einen Bildlauf aus, oder führen Sie andere Steuerelemente für die Attributsammlung.
+[**ItemsRepeater** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) nicht von abgeleitet [ **Steuerelement**](/uwp/api/windows.ui.xaml.controls.control), sodass es eine Steuerelementvorlage enthält. Aus diesem Grund Es enthält keine integrierten, wie ein ListView einen Bildlauf aus, oder führen Sie andere Steuerelemente für die Attributsammlung.
 
-Wenn Sie eine ItemsRepeater verwenden, sollten Sie Bildlauffunktionen angeben, durch wrapping in eine [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer) Steuerelement.
+Bei Verwendung einer **ItemsRepeater**, sollten Sie Bildlauffunktionen bereitstellen, durch das wrapping in eine [ **ScrollViewer** ](/uwp/api/windows.ui.xaml.controls.scrollviewer) Steuerelement.
+
+> [!NOTE]
+> Wenn Ihre app, in früheren Versionen von Windows ausgeführt wird - veröffentlicht die *vor* Windows 10, Version 1809 - auch müssen Sie zum Hosten der **ScrollViewer** innerhalb der [  **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost). 
+> ```xaml
+> <muxc:ItemsRepeaterScrollHost>
+>     <ScrollViewer>
+>         <muxc:ItemsRepeater ... />
+>     </ScrollViewer>
+> </muxc:ItemsRepeaterScrollHost>
+> ```
+> Wenn die app nur auf neueren Versionen von Windows 10, Version 1809 und höher – ausgeführt, und klicken Sie dann keine Notwendigkeit besteht, verwenden Sie die [ **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost).
+>
+> Vor Windows 10, Version 1809, **ScrollViewer** wurde nicht implementiert die [ **IScrollAnchorProvider** ](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) Schnittstelle, die die **ItemsRepeater**benötigt.  Die **ItemsRepeaterScrollHost** ermöglicht die **ItemsRepeater** zur Koordinierung mit **ScrollViewer** unter früheren Versionen der sichtbaren Stelle Elemente ordnungsgemäß beibehalten der Benutzer wird angezeigt.  Andernfalls können die Elemente angezeigt, zu verschieben oder plötzlich verschwinden, wenn die Elemente in der Liste geändert werden, oder die app angepasst wird.
 
 ## <a name="create-an-itemsrepeater"></a>Erstellen Sie eine ItemsRepeater
 
-Verwenden einer [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), müssen Sie sie erteilen, dass die Daten anzeigen, indem die ItemsSource-Eigenschaft festlegen. Weisen Sie es dann, wie zum Anzeigen von Elementen durch Festlegen der [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) Eigenschaft.
+Verwenden einer [ **ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), müssen Sie es durch Festlegen der anzuzeigenden Daten erteilen der **ItemsSource** Eigenschaft. Weisen Sie es dann, wie zum Anzeigen von Elementen durch Festlegen der [ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) Eigenschaft.
 
 ### <a name="itemssource"></a>ItemsSource
 
-Legen Sie zum Auffüllen der Ansicht der [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) Eigenschaft, um eine Auflistung von Datenelementen. Hier wird die ItemsSource in Code direkt an eine Instanz einer Sammlung festgelegt.
+Legen Sie zum Auffüllen der Ansicht der [ **ItemsSource** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) Eigenschaft, um eine Auflistung von Datenelementen. Hier ist die **ItemsSource** im Code direkt an eine Instanz einer Sammlung festgelegt ist.
 
 ```csharp
 ObservableCollection<string> Items = new ObservableCollection<string>();
@@ -78,21 +91,23 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-Sie können die ItemsSource-Eigenschaft auch an eine Sammlung in XAML binden. Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](https://msdn.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+Sie können auch eine Bindung die **ItemsSource** Eigenschaft zu einer Sammlung in XAML. Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
 
 
 ```xaml
 <ItemsRepeater ItemsSource="{x:Bind Items}"/>
 ```
 
-### <a name="data-template"></a>Datenvorlage
+### <a name="itemtemplate"></a>ItemTemplate
+Um anzugeben, wie ein Datenelement sichtbar gemacht wird, legen die [ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) Eigenschaft, um eine [ **DataTemplate** ](/uwp/api/windows.ui.xaml.datatemplate) oder [  **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector) Sie definiert haben. Die Datenvorlage definiert, wie die Daten sichtbar gemacht werden. Standardmäßig wird das Element in der Ansicht mit einem **TextBlock** verwendet der die Zeichenfolgendarstellung des Objekts.
 
-Die Datenvorlage eines Elements definiert die Darstellung der Daten. Standardmäßig wird das Element in der Ansicht als die Zeichenfolgendarstellung des Objekts angezeigt an die sie verwenden ein TextBlock-Element gebunden ist. In der Regel möchten Sie jedoch eine ansprechendere Darstellung Ihrer Daten anzeigen. Um anzugeben, genau wie die Elemente angezeigt werden, Sie definieren eine [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate). Der XAML-Code in der DataTemplate definiert das Layout und die Darstellung von Steuerelementen, die zum Anzeigen eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, statischen Inhalt intern zu definieren. Weisen Sie das DataTemplate-Element, das [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) Eigenschaft der ItemsRepeater.
+Allerdings möchten Sie in der Regel eine mehr überzeugende Präsentation von Daten mithilfe einer Vorlage, die definiert, das Layout und die Darstellung von ein oder mehrere Steuerelemente, die Sie zum Anzeigen eines einzelnen Elements verwenden angezeigt. Der Steuerelemente, die Sie in der Vorlage verwendet die Eigenschaften des Datenobjekts gebunden werden können, oder Inline mit statischen Inhalt definiert haben.
 
-In diesem Beispiel ist das Datenobjekt, das eine einfache Zeichenfolge. Sie verwenden einer DataTemplate zum Hinzufügen eines Bilds auf der linken Seite des Texts, und formatieren den TextBlock, um die Zeichenfolge in Blaugrün angezeigt.
+#### <a name="datatemplate"></a>DataTemplate-Element
+In diesem Beispiel ist das Datenobjekt, das eine einfache Zeichenfolge. Die **DataTemplate** enthält ein Bild auf der linken Seite den Text und die Stile der **TextBlock** zur Anzeige der Zeichenfolge in einer Blaugrün-Farbe.
 
 > [!NOTE]
-> Wenn Sie die [x:Bind-Markuperweiterung](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in DataTemplate verwenden, müssen Sie DataType (`x:DataType`) für DataTemplate angeben.
+> Bei Verwendung der [X: Bind-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in einem **DataTemplate**, müssen Sie den Datentyp angeben (`x:DataType`) auf dem DataTemplate.
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -109,27 +124,50 @@ In diesem Beispiel ist das Datenobjekt, das eine einfache Zeichenfolge. Sie verw
 </DataTemplate>
 ```
 
-Hier ist, wie die Elemente angezeigt werden würden, wenn Sie mit dieser Datenvorlage angezeigt.
+Hier ist wie die Elemente angezeigt werden würde, wenn Sie mit diesem angezeigt **DataTemplate**.
 
 ![Elemente, die mit einer Datenvorlage angezeigt](images/listview-itemstemplate.png)
 
-Die Anzahl der Elemente in der Datenvorlage für ein Element kann einen erheblichen Einfluss auf die Leistung haben, wenn Ihrer Ansicht eine große Anzahl von Elementen angezeigt. Weitere Informationen und Beispiele zum Data-Vorlagen verwenden, um das Erscheinungsbild von Elementen in der Liste zu definieren, finden Sie unter [Element Container und Vorlagen](item-containers-templates.md).
+Die Anzahl der Elemente in verwendet die **DataTemplate** für ein Element einen erheblichen Einfluss auf die Leistung haben kann, wenn die Ansicht eine große Anzahl von Elementen angezeigt. Weitere Informationen und Beispiele zum Verwenden von **DataTemplate**s, um das Erscheinungsbild von Elementen in der Liste zu definieren, finden Sie unter [Element Container und Vorlagen](item-containers-templates.md).
 
 > [!TIP]
-> ItemsRepeater umschließen nicht den Inhalt von DataTemplate wurde in einen Elementcontainer wie ListView und andere Steuerelemente der Auflistung. Stattdessen stellt ItemsRepeater nur wie in der DataTemplate-Element definiert ist. Wenn Sie Elemente wie ein Listenansichtselement haben möchten, können Sie einen Container, z. B. ListViewItem, in der Datenvorlage. ItemsRepeater ListViewItem visuellen Elemente angezeigt, jedoch keinen, verwenden Sie für andere Funktionen, z. B. Auswahl oder das Kontrollkästchen mit mehreren Optionen angezeigt.
+> Zur Vereinfachung, wenn Sie die Vorlagen-Inline deklarieren möchten, statt als statische Ressource auf die verwiesen wird, können Sie angeben, die **DataTemplate** oder **DataTemplateSelector** als direkt untergeordnetes Element der **ItemsRepeater**.  Zugewiesen als Wert für die **ItemTemplate** Eigenschaft. Dies ist z. B. gültig:
+> ```xaml
+> <ItemsRepeater ItemsSource="{x:Bind Items}">
+>     <DataTemplate>
+>         <!-- ... -->
+>     </DataTemplate>
+> </ItemsRepeater>
+> ```
+
+> [!TIP]
+> Im Gegensatz zu **ListView** und andere Steuerelemente Auflistung der **ItemsRepeater** umschließen Sie nicht die Elemente aus einer **DataTemplate** zusätzliche Elementcontainers enthält die Standardrichtlinie wie z. B. Ränder, Auffüllung, visuellen Elemente der Auswahl oder ein Zeiger über den visuellen Zustand. Stattdessen **ItemsRepeater** zeigt nur, was in definiert ist die **DataTemplate**. Wenn Sie Elemente wie ein Listenansichtselement haben möchten, Sie können explizit einschließen ein Containers, wie z. B. **ListViewItem**, in der Datenvorlage. **ItemsRepeater** zeigt die **ListViewItem** visuelle Objekte, jedoch nicht automatisch verwenden, die von anderen Funktionen, z. B. Auswahl oder das Kontrollkästchen mit mehreren Optionen angezeigt.
 >
-> Auf ähnliche Weise ist Datenerfassung eine Auflistung der Steuerelemente, z. B. Schaltfläche (`List<Button>`), können Sie ein ContentPresenter-Element in Ihrer DataTemplate zum Anzeigen des Steuerelements positionieren.
+> Auf ähnliche Weise ist Datenerfassung eine Auflistung der Steuerelemente, wie **Schaltfläche** (`List<Button>`), können Sie legen eine **ContentPresenter-Element** in Ihre **DataTemplate-Element** zu Anzeigen des Steuerelements an.
 
 #### <a name="datatemplateselector"></a>DataTemplateSelector
 
-Die Elemente, die Sie in der Ansicht anzeigen müssen nicht vom gleichen Typ sein. [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) können eine **DataTemplateSelector** laden eine Datenvorlage, um die Datenelemente, die basierend auf von Ihnen angegebenen Kriterien darstellen. Weitere Informationen und Beispiele finden Sie unter [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector).
+Die Elemente, die Sie in der Ansicht anzeigen müssen nicht vom gleichen Typ sein. Sie können angeben, die [ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) Eigenschaft mit einer [ **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector) auf verschiedenen  **DataTemplate**basierend auf von Ihnen angegebenen Kriterien.
+
+In diesem Beispiel geht davon aus eine **DataTemplateSelector** definiert wurde, die zwischen zwei unterschiedlichen entscheidet **DataTemplate**s, um ein Element für große und kleine darstellen.
+
+```xaml
+<ItemsRepeater ...>
+    <ItemsRepeater.ItemTemplate>
+        <local:VariableSizeTemplateSelector Large="{StaticResource LargeItemTemplate}" 
+                                            Small="{StaticResource SmallItemTemplate}"/>
+    </ItemsRepeater.ItemTemplate>
+</ItemsRepeater>
+```
+
+Beim Definieren einer **DataTemplateSelector** mit **ItemsRepeater** müssen Sie nur implementieren Sie eine Außerkraftsetzung für die [ **SelectTemplateCore(Object)** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) Methode. Weitere Informationen und Beispiele finden Sie unter [ **DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector).
 
 > [!NOTE]
-> Eine Alternative zur Verwendung von DataTemplate-Element oder DataTemplateSelector implementieren Ihre eigenen Klasse abgeleitet ist [Microsoft.UI.Xaml.Controls.ElementFactory](/uwp/api/microsoft.ui.xaml.controls.elementfactory) , die zum Generieren von Inhalten, die bei der Anforderung verantwortlich ist.
+> Eine Alternative zum **DataTemplate**s zum Verwalten der Erstellung von Elementen in weiter fortgeschrittenen Szenarien zur Implementierung einer eigenen ist [ **Windows.UI.Xaml.Controls.IElementFactory** ](/uwp/api/windows.ui.xaml.controls.ielementfactory)als verwenden die **ItemTemplate**.  Es wird zum Generieren von Inhalten, die bei der Anforderung verantwortlich sein.
 
 ## <a name="configure-the-data-source"></a>Konfigurieren der Datenquelle
 
-Verwenden Sie die [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) -Eigenschaft an die Auflistung, die zum Generieren des Inhalts von Elementen verwenden. Sie können die ItemsSource festlegen, auf einen beliebigen Typ, der implementiert **"IEnumerable"**. Zusätzliche Sammlungs-Schnittstellen implementiert, indem Sie die Datenquelle ermitteln, welche Funktionen für die ItemsRepeater für die Interaktion mit Ihren Daten verfügbar sind.
+Verwenden Sie die [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) -Eigenschaft an die Auflistung, die zum Generieren des Inhalts von Elementen verwenden. Sie können die ItemsSource festlegen, auf einen beliebigen Typ, der implementiert **"IEnumerable"** . Zusätzliche Sammlungs-Schnittstellen implementiert, indem Sie die Datenquelle ermitteln, welche Funktionen für die ItemsRepeater für die Interaktion mit Ihren Daten verfügbar sind.
 
 Diese Liste zeigt die verfügbaren Schnittstellen und wann Sie jeweils in Betracht.
 
@@ -262,7 +300,7 @@ Sie können festlegen, die [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.un
 
 Diese Liste zeigt die verfügbaren Werte. Die Definitionen davon aus, der Standardwert **Ausrichtung** von **horizontale**.
 
-- **Keine**: Zusätzliche Leerzeichen am Ende der Zeile nicht verwendete bleibt. Dies ist der Standardwert.
+- **Keine**: Zusätzliche Leerzeichen am Ende der Zeile nicht verwendete bleibt. Dies ist die Standardeinstellung.
 - **Geben Sie**: Die Elemente werden zusätzliche Breite mit den verfügbaren Speicherplatz (Höhe, wenn vertikale) angegeben.
 - **Uniform**: Die Elemente sind erhält zusätzliche Breite für die Verwendung der verfügbare Platz und zusätzliche Höhe um das Seitenverhältnis beibehalten (Höhe und Breite werden gewechselt wenn vertikale).
 
@@ -274,7 +312,7 @@ Wenn **ItemsStretch** ist **keine**, Sie können festlegen, die [ItemsJustificat
 
 Diese Liste zeigt die verfügbaren Werte. Die Definitionen davon aus, der Standardwert **Ausrichtung** von **horizontale**.
 
-- **Start**: Elemente werden mit dem Anfang der Zeile ausgerichtet. Zusätzliche Leerzeichen am Ende der Zeile nicht verwendete bleibt. Dies ist der Standardwert.
+- **Start**: Elemente werden mit dem Anfang der Zeile ausgerichtet. Zusätzliche Leerzeichen am Ende der Zeile nicht verwendete bleibt. Dies ist die Standardeinstellung.
 - **Center**: Elemente werden in der Mitte der Zeile ausgerichtet. Zusätzlicher Leerraum wird am Anfang und Ende der Zeile gleichmäßig verteilt.
 - **End**: Elemente werden am Ende der Zeile ausgerichtet. Zusätzlicher Leerraum wird am Anfang der Zeile nicht verwendete belassen.
 - **SpaceAround**: Elemente werden gleichmäßig verteilt. Gleich viel Speicherplatz wird vor und nach jedem Element hinzugefügt.
@@ -632,6 +670,7 @@ Dieses Beispiel zeigt ein Layout für eine app mit verschiedenen Kategorien, die
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind Categories}"
                       Background="LightGreen">
@@ -639,6 +678,7 @@ Dieses Beispiel zeigt ein Layout für eine app mit verschiedenen Kategorien, die
       <DataTemplate x:DataType="local:Category">
         <StackPanel Margin="12,0">
           <TextBlock Text="{x:Bind Name}" Style="{ThemeResource TitleTextBlockStyle}"/>
+          <!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
           <ScrollViewer HorizontalScrollMode="Enabled"
                                           VerticalScrollMode="Disabled"
                                           HorizontalScrollBarVisibility="Auto" >

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Bildung
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8c2333d960ba91b1d1c3d3030481108407909594
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582783"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359206"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Entwickeln von universellen Windows-Apps für das Bildungswesen
 ![Screenshot der Prüfungs-App](images/take-a-test-screen-small.png)
@@ -38,7 +38,7 @@ Die Windows Ink-Plattform kann Apps für Bildungszwecke unterstützen, indem die
 
 
 ### <a name="microsoft-store"></a>Microsoft Store
-Apps für Bildungszwecke werden oft unter speziellen Umständen für eine bestimmte Organisation veröffentlicht. Informationen dazu finden Sie unter [Verteilen von branchenspezifischen Apps an Unternehmen](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
+Apps für Bildungszwecke werden oft unter speziellen Umständen für eine bestimmte Organisation veröffentlicht. Informationen dazu finden Sie unter [Verteilen von branchenspezifischen Apps an Unternehmen](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
 
 ## <a name="related-topics"></a>Verwandte Themen
 - [Windows 10 for Education](https://technet.microsoft.com/edu/windows/index) im Windows-IT Center

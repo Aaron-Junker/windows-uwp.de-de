@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cb87bea001492e39a0f60b96f884db70b5bd28ad
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d5774b5301f7e8ce0616df72cfbf4fc81d0d0cf7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592525"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363251"
 ---
 # <a name="command-bar-flyout"></a>Befehlsleisten-Flyout
 
@@ -153,7 +153,7 @@ Sie können auch Befehle zum Hinzufügen der **SecondaryCommands** Auflistung. S
 
 ### <a name="app-bar-buttons"></a>App-Leistenschaltflächen
 
-Sie können die füllen PrimaryCommands und SecondaryCommands direkt mit [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx), und [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) Steuerelemente.
+Sie können die füllen PrimaryCommands und SecondaryCommands direkt mit [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), und [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) Steuerelemente.
 
 Die Steuerelemente für die App-Leistenschaltfläche zeichnen sich durch ein Symbol und eine Textbeschriftung aus. Diese Steuerelemente sind für die Verwendung in einer Befehlsleiste optimiert, und ihre Darstellung ändert sich je nachdem, ob das Steuerelement in der Befehlsleiste oder Überlaufmenü angezeigt werden.
 
@@ -411,4 +411,4 @@ TextCommandBarFlyout kann nicht angepasst werden, und von jeder Text-Steuereleme
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Befehlsdesigngrundlagen für UWP-Apps](../basics/commanding-basics.md)
-- [CommandBar-Klasse](https://msdn.microsoft.com/library/windows/apps/dn279427)
+- [CommandBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

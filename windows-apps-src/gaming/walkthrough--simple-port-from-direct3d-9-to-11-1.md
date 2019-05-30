@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Directx, Port, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: c7569c6b2f041f5535e0eabe934a91da86b60b9a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d4aef73b9b28d631a492436ff90761541134220
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634225"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367426"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Exemplarische Vorgehensweise: Portieren Sie eine einfache Direct3D 9-app, die DirectX 11 und die universelle Windows-Plattform (UWP)
 
@@ -41,7 +41,7 @@ In dieser Portierungsübung wird veranschaulicht, wie Sie ein einfaches Renderin
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">Die spielschleife Port</a></p></td>
-<td align="left"><p>In diesem Thema wird veranschaulicht, wie Sie ein Fenster für ein UWP-Spiel (Universelle Windows-Plattform) implementieren und die Spielschleife übertragen. Außerdem wird die Erstellung eines <a href="https://msdn.microsoft.com/library/windows/apps/hh700478"><strong>IFrameworkView</strong></a>-Elements zum Steuern eines <a href="https://msdn.microsoft.com/library/windows/apps/br208225"><strong>CoreWindow</strong></a>-Vollbilds erläutert.</p></td>
+<td align="left"><p>In diesem Thema wird veranschaulicht, wie Sie ein Fenster für ein UWP-Spiel (Universelle Windows-Plattform) implementieren und die Spielschleife übertragen. Außerdem wird die Erstellung eines <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a>-Elements zum Steuern eines <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>-Vollbilds erläutert.</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,11 +61,11 @@ Nach der Durcharbeitung dieser exemplarischen Vorgehensweise sollten Ihnen die f
 -   Trennung von Gerät, Gerätekontext und Grafikinfrastruktur
 -   Kompilierungsprozess für Shader und Laden von Shaderbytecode zur Laufzeit
 -   Konfigurieren von Daten pro Vertex für den Eingabeassemblerzustand
--   Verwenden eines [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)-Elements zum Erstellen einer CoreWindow-Ansicht
+-   Verwenden eines [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView)-Elements zum Erstellen einer CoreWindow-Ansicht
 
-Beachten Sie, dass in dieser exemplarischen Vorgehensweise der Einfachheit halber [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) verwendet wird. Die XAML-Interoperabilität wird nicht behandelt.
+Beachten Sie, dass in dieser exemplarischen Vorgehensweise der Einfachheit halber [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) verwendet wird. Die XAML-Interoperabilität wird nicht behandelt.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 
 Führen Sie die Schritte unter [Vorbereiten der Entwicklungsumgebung für die Entwicklung von UWP-DirectX-Spielen](prepare-your-dev-environment-for-windows-store-directx-game-development.md) aus. Ist nicht erforderlich, eine Vorlage noch, jedoch benötigen Sie Microsoft Visual Studio 2015, um die Codebeispiele in dieser exemplarischen Vorgehensweise zu laden.
@@ -76,11 +76,11 @@ Lesen Sie sich die Informationen unter [Konzepte und Aspekte der Portierung](por
 
 **Direct3D**
 
-* [Schreiben von HLSL-Shadern in Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Schreiben von HLSL-Shadern in Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [DirectX-Spiele-Projektvorlagen](user-interface.md)
 
 **Microsoft Store**
 
-* [**Microsoft::wrl::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
-* [**Handle für Objekt (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
+* [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class)
+* [**Handle für Objekt (^)** ](https://docs.microsoft.com/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)
 

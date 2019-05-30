@@ -1,16 +1,16 @@
 ---
 description: In diesem Thema werden Strategien zur Behandlung von Fehlern bei der Programmierung mit C++/WinRT erörtert.
 title: Fehlerbehandlung bei C++/WinRT
-ms.date: 05/21/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, fehler, behandlung, ausnahme
 ms.localizationpriority: medium
-ms.openlocfilehash: c6f7135e85ab63ddfe92bd0de8c656b58fb1a020
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3ec6feb34307e0b7c17387d0127cb7d29098e6a6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626575"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361066"
 ---
 # <a name="error-handling-with-cwinrt"></a>Fehlerbehandlung bei C++/WinRT
 
@@ -30,11 +30,16 @@ Das Auslösen von Ausnahmen ist für gewöhnlich langsamer als die Verwendung vo
 Die Leistung wird eher beeinträchtigt durch den Laufzeit-Overhead, der entsteht, wenn sichergestellt werden muss, dass die richtigen Destruktoren im unwahrscheinlichen Falle aufgerufen werden, dass eine Ausnahme ausgelöst wird. Die Leistungseinbußen, die mit dieser Sicherstellung einhergehen, treten unabhängig davon ein, ob tatsächlich eine Ausnahme ausgelöst wird oder nicht. Daher sollten Sie dafür sorgen, dass der Compiler weiß, welche Funktionen potenziell Ausnahmen auslösen können. Wenn der Compiler nachweisen kann, dass keine Ausnahmen von bestimmten Funktionen kommen (`noexcept`-Spezifikation), kann er den Code, den er generiert, optimieren.
 
 ## <a name="catching-exceptions"></a>Abfangen von Ausnahmen
-Ein Fehlerzustand, der auf Ebene der [Windows-Runtime-ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) auftritt, wird in Form eines HRESULT-Werts zurückgegeben. Sie müssen HRESULTs jedoch nicht in Ihrem Code behandeln. Der C++/WinRT-Projektionscode, der für eine API auf Nutzungsseite generiert wird, erkennt einen HRESULT-Code auf der ABI-Ebene und konvertiert den Code in eine [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)-Ausnahme, die Sie abfangen und behandeln können.
+Ein Fehlerzustand, der auf Ebene der [Windows-Runtime-ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) auftritt, wird in Form eines HRESULT-Werts zurückgegeben. Sie müssen HRESULTs jedoch nicht in Ihrem Code behandeln. Der C++/WinRT-Projektionscode, der für eine API auf Nutzungsseite generiert wird, erkennt einen HRESULT-Code auf der ABI-Ebene und konvertiert den Code in eine [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)-Ausnahme, die Sie abfangen und behandeln können. Wenn Sie *führen* wünschen HRESULTS behandeln, verwenden Sie die **winrt::hresult** Typ.
 
 Wenn der Benutzer beispielsweise ein Bild aus der Bildbibliothek löscht, während die Anwendung diese Sammlung durchläuft, wird von der Projektion eine Ausnahme ausgelöst. Dies ist ein Fall, in dem Sie diese Ausnahme abfangen und behandeln müssen. Dieses Codebeispiel veranschaulicht diesen Fall.
 
 ```cppwinrt
+#include <winrt/Windows.Foundation.Collections.h>
+#include <winrt/Windows.Storage.h>
+#include <winrt/Windows.UI.Xaml.Media.Imaging.h>
+#include <winrt/coroutine.h>
+
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage;
@@ -54,7 +59,7 @@ IAsyncAction MakeThumbnailsAsync()
         }
         catch (winrt::hresult_error const& ex)
         {
-            HRESULT hr = ex.to_abi(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
+            winrt::hresult hr = ex.to_abi(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
             winrt::hstring message = ex.message(); // The system cannot find the file specified.
         }
     }
@@ -64,7 +69,7 @@ IAsyncAction MakeThumbnailsAsync()
 Verwenden Sie dieses Muster in einer Coroutine beim Aufrufen einer `co_await`-ed-Funktion. Ein weiteres Beispiel für diese Konvertierung von HRESULT in eine Ausnahme ist, wenn eine Komponenten-API E_OUTOFMEMORY zurückgibt, wodurch ein **std::bad_alloc** ausgelöst wird.
 
 ## <a name="throwing-exceptions"></a>Auslösen von Ausnahmen
-Es gibt Fälle, in denen Sie dies entscheiden, Ihre Anwendung aber nicht wiederhergestellt werden kann, wenn der Aufruf einer bestimmten Funktion fehlschlägt (Sie könnten sich dann nicht mehr darauf verlassen, dass die Anwendung wie erwartet funktioniert). Im Codebeispiel unten wird ein [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle)-Wert als Wrapper für den HANDLE verwendet, der von [**CreateEvent**](https://msdn.microsoft.com/library/windows/desktop/ms682396) zurückgegeben wird. Anschließend wird der Handle (es wird daraus ein `bool`-Wert erstellt) an die Funktionsvorlage [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) übergeben. **winrt::check_bool** funktioniert mit einem `bool`-Wert oder mit einem beliebigen Wert, der in `false` (Fehler) oder `true` (Erfolg) konvertiert werden kann.
+Es gibt Fälle, in denen Sie dies entscheiden, Ihre Anwendung aber nicht wiederhergestellt werden kann, wenn der Aufruf einer bestimmten Funktion fehlschlägt (Sie könnten sich dann nicht mehr darauf verlassen, dass die Anwendung wie erwartet funktioniert). Im Codebeispiel unten wird ein [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle)-Wert als Wrapper für den HANDLE verwendet, der von [**CreateEvent**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-createeventa) zurückgegeben wird. Anschließend wird der Handle (es wird daraus ein `bool`-Wert erstellt) an die Funktionsvorlage [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) übergeben. **winrt::check_bool** funktioniert mit einem `bool`-Wert oder mit einem beliebigen Wert, der in `false` (Fehler) oder `true` (Erfolg) konvertiert werden kann.
 
 ```cppwinrt
 winrt::handle h{ ::CreateEvent(nullptr, false, false, nullptr) };
@@ -75,15 +80,15 @@ winrt::check_bool(::SetEvent(h.get()));
 Wenn der Wert, den Sie an [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) übergeben, falsch ist, findet die folgende Abfolge von Aktionen statt.
 
 - **winrt::check_bool** ruft die Funktion [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) auf.
-- **WinRT::throw_last_error** Aufrufe [ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360) zum Abrufen des aufrufenden Threads den Wert des letzten Fehlers, und ruft dann die [ **winrt::throw_ HRESULT** ](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) Funktion.
+- **WinRT::throw_last_error** Aufrufe [ **GetLastError** ](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror) zum Abrufen des aufrufenden Threads den Wert des letzten Fehlers, und ruft dann die [ **winrt::throw_ HRESULT** ](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) Funktion.
 - **winrt::throw_hresult** löst eine Ausnahme unter Verwendung eines [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)-Objekts (oder eines Standardobjekts) aus, das diesen Fehlercode darstellt.
 
 Da Windows-APIs Laufzeitfehler mit verschiedenen Rückgabewerttypen melden, stehen zusätzlich zu **winrt::check_bool** einige weitere nützliche Hilfsfunktionen zur Verfügung, um Werte zu überprüfen und Ausnahmen auszulösen.
 
-- [**WinRT::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult). Überprüft, ob der HRESULT-Code einen Fehler darstellt. Ist dies der Fall, ruft es **winrt::throw_hresult** auf.
-- [**WinRT::check_nt**](/uwp/cpp-ref-for-winrt/error-handling/check-nt). Überprüft, ob ein Code einen Fehler darstellt. Ist dies der Fall, ruft es **winrt::throw_hresult** auf.
-- [**WinRT::check_pointer**](/uwp/cpp-ref-for-winrt/error-handling/check-pointer). Überprüft, ob ein Zeiger null ist. Ist dies der Fall, ruft es **winrt::throw_last_error** auf.
-- [**WinRT::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32). Überprüft, ob ein Code einen Fehler darstellt. Ist dies der Fall, ruft es **winrt::throw_hresult** auf.
+- [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult). Überprüft, ob der HRESULT-Code einen Fehler darstellt. Ist dies der Fall, ruft es **winrt::throw_hresult** auf.
+- [**winrt::check_nt**](/uwp/cpp-ref-for-winrt/error-handling/check-nt). Überprüft, ob ein Code einen Fehler darstellt. Ist dies der Fall, ruft es **winrt::throw_hresult** auf.
+- [**winrt::check_pointer**](/uwp/cpp-ref-for-winrt/error-handling/check-pointer). Überprüft, ob ein Zeiger null ist. Ist dies der Fall, ruft es **winrt::throw_last_error** auf.
+- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32). Überprüft, ob ein Code einen Fehler darstellt. Ist dies der Fall, ruft es **winrt::throw_hresult** auf.
 
 Sie können diese Hilfsfunktionen für gängige Rückgabecodetypen verwenden oder auf eine Fehlerbedingung reagieren und entweder [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) oder [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) aufrufen. 
 
@@ -133,8 +138,8 @@ WINRT_VERIFY_(TRUE, ::CloseHandle(value));
 * [WinRT::hresult_error-Struktur](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 * [WinRT::throw_hresult-Funktion](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
 * [WinRT::throw_last_error-Funktion](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
-* [WinRT::to_hresult-Funktion](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
+* [winrt::to_hresult function](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Fehler- und Ausnahmebehandlung (modernes C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)
-* [So wird es gemacht: Entwurf für sichere Ausnahmebehandlung](/cpp/cpp/how-to-design-for-exception-safety)
+* [Vorgehensweise: Entwurf für sichere Ausnahmebehandlung](/cpp/cpp/how-to-design-for-exception-safety)

@@ -5,12 +5,12 @@ ms.date: 07/07/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d010816b1ba4c9941aea7bdcdb4bd4c50038aca6
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 72bad5bff8092e63a73cc1e32f4424b70867d245
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067835"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366030"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Auswählen des richtigen Kanaltypen für die Pushbenachrichtigungen
 
@@ -38,10 +38,10 @@ Diese Kanäle sind die derzeit am häufigsten verwendeten Kanäle auf Windows un
 
 ### <a name="what-do-primary-channels-enable"></a>Was aktivieren die primären Kanäle?
 
--   **Senden von Kachelaktualisierungen oder Signalupdates an die primäre Kachel.** Wenn der Benutzer die Kachel an die Startseite angeheftet hat, ist dies eine großartige Möglichkeit, Ihre Fertigkeit zu zeigen. Senden Sie Aktualisierungen mit nützlichen Informationen oder Erinnerungen innerhalb Ihrer App. 
--   **Senden Sie Popupbenachrichtigungen.** Popupbenachrichtigungen sind eine Gelegenheit, dem Benutzer sofort einige Informationen zu unterbreiten. Sie werden von der Shell im Vordergrund der meisten Apps angezeigt sowie Live im Info-Center, so dass der Benutzer darauf zurückkehren und später mit ihnen interagieren kann. 
--   **Von unformatierten Benachrichtigungen ausgelöste Hintergrundaufgaben** Manchmal möchten Sie basierend auf einer Benachrichtigung einige Aktionen für den Benutzer ausführen. Unformatiert Benachrichtigungen ermöglichen das Ausführen der Hintergrundaufgaben Ihrer Apps 
--   **Nachrichtenverschlüsselung während der Übertragung durch Windows mithilfe von TLS.** Nachrichten werden bei der Übertragung auf der Leitung beim Eingang auf WNS und beim Ausgang auf das Gerät des Benutzers verschlüsselt.  
+-   **Kachel oder eines Badge-Updates an die primäre Kachel gesendet.** Wenn der Benutzer die Kachel an die Startseite angeheftet hat, ist dies eine großartige Möglichkeit, Ihre Fertigkeit zu zeigen. Senden Sie Aktualisierungen mit nützlichen Informationen oder Erinnerungen innerhalb Ihrer App. 
+-   **Senden von toastbenachrichtigungen.** Popupbenachrichtigungen sind eine Gelegenheit, dem Benutzer sofort einige Informationen zu unterbreiten. Sie werden von der Shell im Vordergrund der meisten Apps angezeigt sowie Live im Info-Center, so dass der Benutzer darauf zurückkehren und später mit ihnen interagieren kann. 
+-   **Senden von unformatierten Benachrichtigungen zum Auslösen einer Hintergrundaufgabe.** Manchmal möchten Sie basierend auf einer Benachrichtigung einige Aktionen für den Benutzer ausführen. Unformatiert Benachrichtigungen ermöglichen das Ausführen der Hintergrundaufgaben Ihrer Apps 
+-   **Verwenden Sie die Verschlüsselung von Nachrichten, während der Übertragung von Windows mithilfe von TLS bereitgestellt.** Nachrichten werden bei der Übertragung auf der Leitung beim Eingang auf WNS und beim Ausgang auf das Gerät des Benutzers verschlüsselt.  
 
 ### <a name="limitations-of-primary-channels"></a>Einschränkungen der primären Kanäle
 
@@ -108,14 +108,14 @@ Hier ist eine kurze Gegenüberstellung der unterschiedlichen Arten von Kanälen:
 
 <tr class="header">
 <th align="left"><b>Typ</b></th>
-<th align="left"><b>Popupbenachrichtigung?</b></th>
-<th align="left"><b>Kachel-/Signalbenachrichtigung?</b></th>
-<th align="left"><b>Unformatierte Pushbenachrichtigungen?</b></th>
+<th align="left"><b>Mithilfe von Push übertragen Popup?</b></th>
+<th align="left"><b>Migrieren Sie die Kachel "WNS/Badge?</b></th>
+<th align="left"><b>Pushbenachrichtigungen unformatierte?</b></th>
 <th align="left"><b>Authentifizierung</b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>Ist eine Store-Registrierung erforderlich?</b></th>
+<th align="left"><b>Store-Registrierung erforderlich?</b></th>
 <th align="left"><b>Kanäle</b></th>
-<th align="left"><b>Verschlüsselung</b></th>
+<th align="left"><b>Encryption</b></th>
 </tr>
 
 
@@ -167,11 +167,11 @@ Im Allgemeinen wird empfohlen, den primären Kanal in Ihrer App zu verwenden –
 
 * [Senden einer lokalen Kachelbenachrichtigung](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [Adaptive und interaktive Popupbenachrichtigungen](../tiles-and-notifications/adaptive-interactive-toasts.md)
-* [Schnellstart: Eine Pushbenachrichtigung senden](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [So wird's gemacht: Aktualisieren eines Signals durch Pushbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [So wird's gemacht: Anfordern, Erstellen und Speichern eines Benachrichtigungskanals](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [So wird's gemacht: Abfangen von Benachrichtigungen für ausgeführte Anwendungen](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [So wird's gemacht: Authentifizieren mit dem Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Anforderungs- und Antwortheader des Pushbenachrichtigungsdiensts](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Richtlinien und Prüfliste für Pushbenachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Schnellstart: Eine Pushbenachrichtigung senden](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [Vorgehensweise beim Aktualisieren eines Badges durch Pushbenachrichtigungen](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [Wie Sie anfordern, erstellen und speichern einen Benachrichtigungskanal](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [Gewusst wie: Abfangen von Benachrichtigungen für die Ausführung von Anwendungen](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [Gewusst wie: authentifizieren mit den Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [Push Notification Service Anforderungs- und Antwortheader](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [Richtlinien und Prüfliste für erste Schritte mit Pushbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 * [Unformatierte Benachrichtigungen](raw-notification-overview.md)

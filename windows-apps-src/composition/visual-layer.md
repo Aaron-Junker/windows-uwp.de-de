@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4607280fd031fa556bfc5d1c719f4b4e1aeb928e
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 7c61f6580039b9fe3da915491acd84c939088370
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984102"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361385"
 ---
 # <a name="visual-layer"></a>Visuelle Ebene
 
@@ -38,7 +38,7 @@ Die wichtigsten Funktionen der visuellen Ebene sind:
 
 ### <a name="content"></a>Inhalt
 
-Inhalt wird vom Animations- und Effektsystem mit visuellen Elementen für die Verwendung gehostet, transformiert und zur Verfügung gestellt. An der Basis der Klassenhierarchie befindet sich die [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)-Klasse, ein leichter Thread-Agile-Proxy im App-Prozess zum visuellen Zustand im Kompositor. Untergeordnete Klassen visuellen  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) für untergeordnete Elemente, Strukturen, von Visualisierungen erstellen können und [ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) , Inhalt enthält, und können mit beiden Volltonfarben, benutzerdefinierte gezeichneten Inhalt oder visuellen Effekte gezeichnet werden. Zusammen bilden diese Visual-Typen die visuelle Struktur für die 2D-UI und stützen die meisten sichtbaren XAML-FrameworkElements.
+Inhalt wird vom Animations- und Effektsystem mit visuellen Elementen für die Verwendung gehostet, transformiert und zur Verfügung gestellt. An der Basis der Klassenhierarchie befindet sich die [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)-Klasse, ein leichter Thread-Agile-Proxy im App-Prozess zum visuellen Zustand im Kompositor. Untergeordnete Klassen visuellen  [**ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) für untergeordnete Elemente, Strukturen, von Visualisierungen erstellen können und [ **SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) , Inhalt enthält, und können mit beiden Volltonfarben, benutzerdefinierte gezeichneten Inhalt oder visuellen Effekte gezeichnet werden. Zusammen bilden diese Visual-Typen die visuelle Struktur für die 2D-UI und stützen die meisten sichtbaren XAML-FrameworkElements.
 
 Weitere Informationen finden Sie in der Übersicht [Visuelle Kompositionseffekte](composition-visual-tree.md).
 
@@ -58,7 +58,7 @@ Weitere Informationen finden Sie in der Übersicht [Kompositionsanimationen](com
 
 ### <a name="working-with-your-xaml-uwp-app"></a>Arbeit mit der XAML-UWP-App
 
-Sie können auf ein visuelles Element, das über das XAML-Framework erstellt wurde, zugreifen und ein sichtbares FrameworkElement sichern, indem Sie die [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976)-Klasse in [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) verwenden. Beachten Sie, dass einige Einschränkungen der Anpassung für visuelle Elemente gelten, die über das Framework für Sie erstellt wurden. Dies liegt daran, dass das Framework Offsets, Transformationen und Lebensdauer-Zeitspannen verwaltet. Sie können jedoch Ihre eigenen visuellen Elemente erstellen und sie einem vorhandenen XAML-Element über ElementCompositionPreview anhängen. Sie können sie auch einem vorhandenen ContainerVisual an einer beliebigen Stelle in der visuellen Struktur hinzufügen.
+Sie können auf ein visuelles Element, das über das XAML-Framework erstellt wurde, zugreifen und ein sichtbares FrameworkElement sichern, indem Sie die [**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)-Klasse in [**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting) verwenden. Beachten Sie, dass einige Einschränkungen der Anpassung für visuelle Elemente gelten, die über das Framework für Sie erstellt wurden. Dies liegt daran, dass das Framework Offsets, Transformationen und Lebensdauer-Zeitspannen verwaltet. Sie können jedoch Ihre eigenen visuellen Elemente erstellen und sie einem vorhandenen XAML-Element über ElementCompositionPreview anhängen. Sie können sie auch einem vorhandenen ContainerVisual an einer beliebigen Stelle in der visuellen Struktur hinzufügen.
 
 Weitere Informationen finden Sie in der Übersicht [Benutzung der visuellen Ebene mit XAML](using-the-visual-layer-with-xaml.md).
 
@@ -66,11 +66,11 @@ Weitere Informationen finden Sie in der Übersicht [Benutzung der visuellen Eben
 
 Sie können die visuelle Ebene verwenden, um die Aussehens, Verhaltens, und von Ihr WPF, Windows Forms, verbessern und C++ Win32-desktop-apps. Sie können die Inseln des Inhalts die visuelle Ebene und verwenden den Rest der Benutzeroberfläche in der vorhandenen Framework migrieren. Dies bedeutet, dass Sie wichtige Updates und Verbesserungen an der Benutzeroberfläche Ihrer Anwendung vornehmen können ohne umfangreiche Änderungen an den vorhandenen Code vornehmen Basis.
 
-Weitere Informationen finden Sie unter [modernisieren Sie Ihre desktop-app mit der visuellen Ebene](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps).
+Weitere Informationen finden Sie unter [Modernize your desktop app using the Visual layer](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps) (Modernisieren Ihrer Desktop-App über die visuelle Ebene).
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-* [**Vollständige Referenzdokumentation für die API**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+* [**Vollständige Referenzdokumentation für die API**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 * Erweiterte UI und Kompositionsbeispiele in dem [WindowsUIDevLabs-GitHub](https://github.com/microsoft/windowsuidevlabs).
 * [Windows.UI.Composition-Beispielkatalog](https://aka.ms/winuiapp)
 * [@windowsui Twitter-feed ](https://twitter.com/windowsui)

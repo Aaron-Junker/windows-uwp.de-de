@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 08a7ca0b08a9df57d3c496f33f963fcd9d0ebfe2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639605"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367041"
 ---
 # <a name="create-adaptive-tiles"></a>Erstellen adaptiver Kacheln
 
 Kachel "Adaptive" Vorlagen sind ein neues Feature in Windows 10, dadurch können Sie eigene Kachel Benachrichtigungsinhalt, mit der eine einfache und flexible Markupsprache, die an verschiedene bildschirmdichten anpasst entwerfen. Dieser Artikel beschreibt, wie Sie adaptive Livekacheln für Ihre App für die Universelle Windows-Plattform (UWP) erstellen. Die vollständige Liste adaptiver Elemente und Attribute finden Sie unter [Adaptives Kachelschema](../tiles-and-notifications/tile-schema.md).
 
-(Wenn Sie möchten, können Sie weiterhin verwenden, auf die vordefinierten Vorlagen aus dem [Windows 8-kachelvorlagenkatalog](https://msdn.microsoft.com/library/windows/apps/hh761491) beim Entwerfen für Windows 10.)
+(Wenn Sie möchten, können Sie weiterhin verwenden, auf die vordefinierten Vorlagen aus dem [Windows 8-kachelvorlagenkatalog](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10)) beim Entwerfen für Windows 10.)
 
 
 ## <a name="getting-started"></a>Erste Schritte
@@ -414,11 +414,11 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;Hinweis-Textformat = "\*" /&gt; | Zeichenhöhe               | Schriftbreite |
-| caption                        | 12 effektive Pixel (epx) | Regular     |
-| body                           | 15 Epx                    | Regular     |
+| &lt;text hint-style="\*" /&gt; | Zeichenhöhe               | Schriftbreite |
+| caption                        | 12 effektive Pixel (epx) | Regulär     |
+| body                           | 15 Epx                    | Regulär     |
 | base                           | 15 Epx                    | Semibold    |
-| subtitle                       | 20 Epx                    | Regular     |
+| subtitle                       | 20 Epx                    | Regulär     |
 | title                          | 24 Epx                    | Semilight   |
 | subheader                      | 34 Epx                    | Hell       |
 | header                         | 46 Epx                    | Hell       |
@@ -592,19 +592,19 @@ Mit dem **hint-weight**-Attribut wird die Breite von Spalten gesteuert. Der **hi
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
 <td align="left">Gesamtgewichtung: 4</td>
@@ -662,7 +662,7 @@ Wenn Ihre erste Spalte 20 % und die zweite Spalte 80 % der gesamten Breite ein
 </tr>
 <tr class="even">
 <td align="left">20</td>
-<td align="left">20 %</td>
+<td align="left">20%</td>
 </tr>
 <tr class="odd">
 <td align="left">80</td>

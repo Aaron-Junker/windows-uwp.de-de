@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 24e994435a2ff7a01e5c77a0043e7a3fb8bc3f33
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 2c7332a3e1097a8e62576ae5920eb82c2bd5d2a6
+ms.sourcegitcommit: 423ff8f1fd791445e21cca534bcefe407251acf1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065406"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251610"
 ---
 ![Designgrundlagen](../images/downloads-2x.png)
 
@@ -27,44 +27,44 @@ Diese Toolkits enthalten Steuerelemente und Layoutvorlagen für das Entwerfen vo
 
 :::row:::
     :::column:::
-        ![hero image](images/figma.png)
-        <b>Figma toolkit</b><br>
-        v1810, October 2018<br>
-        <a href="https://aka.ms/figmatoolkit">Download</a>
+![Herobild](images/figma.png)
+<b>Figma-Toolkit</b><br>
+v1810, Oktober 2018<br>
+<a href="https://aka.ms/figmatoolkit">Herunterladen</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/sketch.png)
-        <b>Sketch toolkit</b><br>
-        v1810, October 2018<br>
-        <a href="https://aka.ms/sketchtoolkit">Download</a>
+![Hero-Bild](images/sketch.png)
+<b>Sketch-Toolkit</b><br>
+v1810, Oktober 2018<br>
+<a href="https://aka.ms/sketchtoolkit">Herunterladen</a>
     :::column-end:::    
     :::column:::
-        ![hero image](images/adobe-xd.png)
-        <b>Adobe XD toolkit</b><br>
-        v1901, January 2019<br>
-        <a href="https://aka.ms/adobexdtoolkit">Download</a>
+![Hero-Bild](images/adobe-xd.png)
+<b>Adobe XD-Toolkit</b><br>
+v1901, Januar 2019<br>
+<a href="https://aka.ms/adobexdtoolkit">Herunterladen</a>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![hero image](images/adobe-illustrator.png)
-        <b>Adobe Illustrator toolkit</b><br>
-        v1806, June 2018<br>
-        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
+![Herobild](images/adobe-illustrator.png)
+<b>Adobe Illustrator-Toolkit</b><br>
+v1806, Juni 2018<br>
+<a href="https://aka.ms/adobeillustratortoolkit">Herunterladen</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/adobe-photoshop.png)
-        <b>Adobe Photoshop toolkit</b><br>
-        v1705, May 2017<br>
-        <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
+![Herobild](images/adobe-photoshop.png)
+<b>Adobe Photoshop-Toolkit</b><br>
+v1705, Mai 2017<br>
+<a href="https://aka.ms/adobephotoshoptoolkit">Herunterladen</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/framer.png)
-        <b>Framer toolkit</b><br>
-        (This toolkit is no longer supported.)<br/>
-        v1806, June 2018<br>
-        <a href="https://aka.ms/framertoolkit">Download</a>
+![Hero-Bild](images/framer.png)
+<b>Framer-Toolkit</b><br>
+(Dieses Toolkit wird nicht mehr unterstützt.)<br/>
+v1806, Juni 2018<br>
+<a href="https://aka.ms/framertoolkit">Herunterladen</a>
     :::column-end:::
 :::row-end:::
 
@@ -72,16 +72,16 @@ Diese Toolkits enthalten Steuerelemente und Layoutvorlagen für das Entwerfen vo
 
 :::row:::
     :::column:::
-        ![WinUI library thumbnail](images/WinUI-library.png)
-        <b>Windows UI Library</b><br>
-        Controls and other UI elements for UWP apps.<br/>
-        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
+![Miniaturansicht der WinUI-Bibliothek](images/WinUI-library.png)
+<b>Windows-UI-Bibliothek</b><br>
+Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps<br/>
+<a href="/uwp/toolkits/winui/getting-started">Installationsanweisungen</a><br/>
     :::column-end:::
     :::column:::
-        ![Windows community thumbnail](images/Windows-community-toolkit.png)
-        <b>Windows Community Toolkit</b><br>
-        Helper functions, custom controls, and app services.<br />
-        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
+![Miniaturansicht der Windows-Community](images/Windows-community-toolkit.png)
+<b>Windows-Community-Toolkit</b><br>
+Hilfsfunktionen, benutzerdefinierte Steuerelemente und App-Dienste<br />
+<a href="/windows/uwpcommunitytoolkit/getting-started">Installationsanweisungen</a>
     :::column-end:::
     :::column:::
     :::column-end:::

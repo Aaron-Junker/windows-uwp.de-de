@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595495"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366944"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Erstellen eines 3D-JavaScript-Spiels mit three.js
 
@@ -638,7 +638,7 @@ Am Ende werden die aktualisierten `x`- und `y`-Werte als Übersetzungen auf die 
 
 ---
 
-Gratulation! Sie haben nun eine vom Spieler gesteuerte bewegbare Kamera, mit der sich der Spieler umsehen kann. Wir können immer noch direkt durch die Wände laufen, darum kümmern wir uns jedoch etwas später. Als Nächstes fügen wir unseren Dinosaurier hinzu.
+Herzlichen Glückwunsch! Sie haben nun eine vom Spieler gesteuerte bewegbare Kamera, mit der sich der Spieler umsehen kann. Wir können immer noch direkt durch die Wände laufen, darum kümmern wir uns jedoch etwas später. Als Nächstes fügen wir unseren Dinosaurier hinzu.
 
 <iframe height='300' scrolling='no' title='Verschieben' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Finden Sie unter dem Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>verschieben</a> von Microsoft Edge-Dokumentation (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) auf <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -1075,7 +1075,7 @@ function lockChange() {
 
 ---
 
-Das war's. Es war ein langer Weg, aber nun haben wir ein Spiel mit **three.js** erstellt.
+Das ist alles! Es war ein langer Weg, aber nun haben wir ein Spiel mit **three.js** erstellt.
 
 Gehen Sie zurück an den Anfang der Seite, wo Sie den [finalen CodePen](#introduction) finden!
 
@@ -1084,7 +1084,7 @@ Gehen Sie zurück an den Anfang der Seite, wo Sie den [finalen CodePen](#introdu
 Nachdem Sie eine UWP-app verfügen, ist es möglich, die in den Microsoft Store (vorausgesetzt, dass Sie es zunächst verbessert haben!) veröffentlichen Dazu müssen Sie einige Schritte durchführen.
 
 1.  Sie müssen als Windows-Entwickler [registriert](https://developer.microsoft.com/store/register) sein.
-2.  Verwenden Sie die [Prüfliste für App-Übermittlung](https://msdn.microsoft.com/windows/uwp/publish/app-submissions).
-3.  Die App muss zur [Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
+2.  Verwenden Sie die [Prüfliste für App-Übermittlung](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
+3.  Die App muss zur [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
 Weitere Informationen finden Sie unter [Veröffentlichen Ihrer UWP-app](https://developer.microsoft.com/store/publish-apps).
 

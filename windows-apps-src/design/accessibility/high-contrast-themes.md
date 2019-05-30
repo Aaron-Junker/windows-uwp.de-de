@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b58eb4b6e3f3f02bb1f72fcba9da3710f08a72da
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c37ceb63a5d9d9f83d3f1ebca0b0584f1092b7f6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649005"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359580"
 ---
 # <a name="high-contrast-themes"></a>Designs mit hohem Kontrast  
 
@@ -39,14 +39,14 @@ Während bei allgemeinen Steuerelementen vollständige Unterstützung für hohen
 
 Wird die Farbe `#E6E6E6` im ersten Beispiel inline festgelegt, behält das Raster diese Hintergrundfarbe in allen Designs bei. Wenn der Benutzer zum Design „Hoher Kontrast (Schwarz)” wechselt, erwartet er, dass Ihre App einen schwarzen Hintergrund hat. Da `#E6E6E6` fast weiß ist, sind einige Benutzer möglicherweise nicht in der Lage, mit Ihrer App zu interagieren.
 
-Im zweiten Beispiel wird die [**{ThemeResource}-Markuperweiterung**](../../xaml-platform/themeresource-markup-extension.md) verwendet, um auf eine Farbe in der [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx)-Sammlung zu verweisen, bei der es sich um eine dedizierte Eigenschaft eines [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794)-Elements handelt. Die **ThemeDictionaries**-Sammlung ermöglicht es XAML, Farben automatisch basierend auf dem aktuellen Design des Benutzers auszutauschen.
+Im zweiten Beispiel wird die [ **{ThemeResource}-Markuperweiterung**](../../xaml-platform/themeresource-markup-extension.md) verwendet, um auf eine Farbe in der [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)-Sammlung zu verweisen, bei der es sich um eine dedizierte Eigenschaft eines [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)-Elements handelt. Die **ThemeDictionaries**-Sammlung ermöglicht es XAML, Farben automatisch basierend auf dem aktuellen Design des Benutzers auszutauschen.
 
 ## <a name="theme-dictionaries"></a>Designverzeichnisse
 
 Wenn Sie die Systemstandardfarbe ändern müssen, erstellen Sie eine ThemeDictionaries-Sammlung für Ihre App.
 
 1. Erstellen Sie zunächst die richtige Grundstruktur (sofern nicht bereits vorhanden). Erstellen Sie in „App.xaml” eine **ThemeDictionaries**-Sammlung, die mindestens **Default** und **HighContrast** enthält.
-2. Erstellen Sie unter **Default** den gewünschten [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx)-Typ (in der Regel **SolidColorBrush**). Vergeben Sie einen *x:Key*-Namen, der für die Verwendung spezifisch ist.
+2. Erstellen Sie unter **Default** den gewünschten [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush)-Typ (in der Regel **SolidColorBrush**). Vergeben Sie einen *x:Key*-Namen, der für die Verwendung spezifisch ist.
 3. Weisen Sie das gewünschte **Color**-Element zu.
 4. Kopieren Sie das **Brush**-Objekt in **HighContrast**.
 
@@ -95,7 +95,7 @@ Auf der Seite *Einstellungen > Erleichterte Bedienung > Hoher Kontrast* sind sta
 
 Jede **SystemColor*Color**-Ressource ist eine Variable, die die Farbe automatisch aktualisiert, wenn der Benutzer Designs mit hohem Kontrast wechselt. Im Folgenden finden Sie Richtlinien für die Verwendung der einzelnen Ressourcen.
 
-Ressource | Verwendungszweck |
+Ressource | Verwendung |
 |--------|-------|
 **SystemColorWindowTextColor** | Textkörper, Überschriften, Listen, beliebiger Text, mit dem nicht interagiert werden kann |
 | **SystemColorHotlightColor** | Hyperlinks |
@@ -167,7 +167,7 @@ Für den Hintergrund von Seiten, Bereichen, Popups und Leisten sollte im Design 
 
 ## <a name="list-items"></a>Listenelemente
 
-Im Design mit hohem Kontrast wird der Hintergrund von Elementen in ein [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) auf **SystemColorHighlightColor** festgelegt, wenn der Benutzer auf sie zeigt, sie drückt oder auswählt. Ein häufiger Fehler bei komplexen Listenelementen ist, dass die Farbe des Inhalts des Listenelements beim Zeigen, Drücken oder Auswählen nicht umgekehrt wird. Dies führt dazu, dass das Element nicht gelesen werden kann.
+Im Design mit hohem Kontrast wird der Hintergrund von Elementen in ein [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) auf **SystemColorHighlightColor** festgelegt, wenn der Benutzer auf sie zeigt, sie drückt oder auswählt. Ein häufiger Fehler bei komplexen Listenelementen ist, dass die Farbe des Inhalts des Listenelements beim Zeigen, Drücken oder Auswählen nicht umgekehrt wird. Dies führt dazu, dass das Element nicht gelesen werden kann.
 
 ![Einfache Liste im hellen Design und im Design „Hoher Kontrast (Schwarz)”](images/high-contrast-list1.png)
 
@@ -176,7 +176,7 @@ Im Design mit hohem Kontrast wird der Hintergrund von Elementen in ein [ListView
 
 ### <a name="list-items-with-colored-text"></a>Listenelemente mit farbigem Text
 
-Das Festlegen von „TextBlock.Foreground” in der [DataTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) des ListView-Steuerelements kann Probleme verursachen. Diese Einstellung wird meist vorgenommen, um eine visuelle Hierarchie zu erzeugen. Die Foreground-Eigenschaft ist für das [ListViewItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) festgelegt, und TextBlock-Elemente in der „DataTemplate” erben die richtige Vordergrundfarbe, wenn auf das Element gezeigt, es gedrückt oder ausgewählt wird. Durch das Festlegen der Foreground-Eigenschaft funktioniert die Vererbung jedoch nicht.
+Das Festlegen von „TextBlock.Foreground” in der [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) des ListView-Steuerelements kann Probleme verursachen. Diese Einstellung wird meist vorgenommen, um eine visuelle Hierarchie zu erzeugen. Die Foreground-Eigenschaft ist für das [ListViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem) festgelegt, und TextBlock-Elemente in der „DataTemplate” erben die richtige Vordergrundfarbe, wenn auf das Element gezeigt, es gedrückt oder ausgewählt wird. Durch das Festlegen der Foreground-Eigenschaft funktioniert die Vererbung jedoch nicht.
 
 ![Komplexe Liste im hellen Design und im Design „Hoher Kontrast (Schwarz)”](images/high-contrast-list2.png)
 
@@ -228,7 +228,7 @@ Sie können dieses Problem umgehen, indem Sie die Foreground-Eigenschaft bedingt
 
 ## <a name="detecting-high-contrast"></a>Erkennen von hohem Kontrast
 
-Sie können mithilfe von Membern der [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)-Klasse programmgesteuert überprüfen, ob das aktuelle Design ein Design mit hohem Kontrast ist.
+Sie können mithilfe von Membern der [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)-Klasse programmgesteuert überprüfen, ob das aktuelle Design ein Design mit hohem Kontrast ist.
 
 > [!NOTE]
 > Achten Sie darauf, dass Sie den **AccessibilitySettings**-Konstruktor in einem Bereich aufrufen, in dem die App initialisiert ist und bereits Inhalt anzeigt.
@@ -238,4 +238,4 @@ Sie können mithilfe von Membern der [**AccessibilitySettings**](https://msdn.mi
 * [Benutzeroberflächenbeispiel Kontrast und Einstellungen](https://go.microsoft.com/fwlink/p/?linkid=231539)
 * [Beispiel für XAML-Barrierefreiheit](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Beispiel für XAML-hoher Kontrast](https://go.microsoft.com/fwlink/p/?linkid=254993)
-* [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)
+* [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

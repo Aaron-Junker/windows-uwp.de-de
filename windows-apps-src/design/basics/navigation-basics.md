@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3d516343798b7d8c221a5af12210a4897a3124a9
-ms.sourcegitcommit: 358abe22243da4592c30e18d6fc322778f091c8d
+ms.openlocfilehash: 1c764eeb57ec8046a93e7fb58e156fa68daea8df
+ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58362950"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "64564521"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Navigationsdesigngrundlagen für UWP-Apps
 
@@ -29,17 +29,17 @@ Es gibt eine große Anzahl von Navigationsmöglichkeiten. Wir könnten:
     :::column:::
         ![navigation example 1](images/nav/nav-1.svg)
 
-        Require users to go through a series of pages in order.
+Müssen Sie Benutzer eine Reihe von Seiten in der Reihenfolge zu durchlaufen.
     :::column-end:::
     :::column:::
         ![navigation example 2](images/nav/nav-2.svg)
 
-        Provide a menu that allows users to jump directly to any page.
+Geben Sie ein Menü, das Benutzer direkt zu einer beliebigen Seite wechseln kann.
     :::column-end:::
     :::column:::
         ![navigation example 3](images/nav/nav-3.svg)
 
-        Place everything on a single page and provide filtering mechanisms for viewing content.
+Platzieren Sie alles auf einer Seite, und geben Sie die Filtermechanismen zur Anzeige von Inhalt.
     :::column-end:::
 :::row-end:::
 
@@ -71,14 +71,14 @@ Weniger Navigationselemente erleichtern den Anwendern die Entscheidungsfindung. 
 
         ![navview good](images/nav/navview-good.svg)
 
-        Present navigation items in a familiar navigation menu.
+Präsentieren Sie Navigationselemente in einer vertrauten Navigationsmenü.
     :::column-end:::
     :::column:::
         ![don't example](images/nav/dont.svg)
 
         ![navview bad](images/nav/navview-bad.svg)
 
-        Overwhelm users with many navigation options.
+Überlasten von Benutzern mit vielen Navigationsoptionen.
     :::column-end:::
 :::row-end:::
 
@@ -111,14 +111,14 @@ Nun, da Sie mit den allgemeinen Navigationsprinzipien vertraut sind, überlegen 
     :::column span="2":::
         ### Flat/lateral
 
-        In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
+In einer flachen/lateralen Struktur stehen die Seiten parallel zueinander. Sie können in beliebiger Reihenfolge von einer Seite zur nächsten wechseln.
 
-        We recommend using a flat structure when:
+Wir empfehlen die Verwendung einer flachen Struktur bei:
 
-        - Die Seiten können in beliebiger Reihenfolge angezeigt werden.
-        - Die Seiten sind deutlich voneinander abgegrenzt und verfügen nicht über eine offensichtliche Beziehung zwischen über- und untergeordneten Elementen.
-        - Es gibt weniger als 8 Seiten in der Gruppe ein. <br>
-        (Wenn eine Gruppe mehr Seiten enthält, wird es für Benutzer möglicherweise schwierig, zu verstehen, inwiefern sich die Seiten unterscheiden oder welche Position sie zurzeit in der Gruppe haben. Wenn Sie davon ausgehen, dass dies kein Problem für Ihre App ist, machen Sie aus den Seiten Peers. Ziehen Sie andernfalls eine hierarchische Struktur in Betracht, um die Seiten in zwei oder mehr kleinere Gruppen zu unterteilen.)
+- Die Seiten können in beliebiger Reihenfolge angezeigt werden.
+- Die Seiten sind deutlich voneinander abgegrenzt und verfügen nicht über eine offensichtliche Beziehung zwischen über- und untergeordneten Elementen.
+- Es gibt weniger als 8 Seiten in der Gruppe ein. <br>
+(Wenn eine Gruppe mehr Seiten enthält, wird es für Benutzer möglicherweise schwierig, zu verstehen, inwiefern sich die Seiten unterscheiden oder welche Position sie zurzeit in der Gruppe haben. Wenn Sie davon ausgehen, dass dies kein Problem für Ihre App ist, machen Sie aus den Seiten Peers. Ziehen Sie andernfalls eine hierarchische Struktur in Betracht, um die Seiten in zwei oder mehr kleinere Gruppen zu unterteilen.)
 
     :::column-end:::
 :::row-end:::
@@ -130,15 +130,15 @@ Nun, da Sie mit den allgemeinen Navigationsprinzipien vertraut sind, überlegen 
     :::column span="2":::
         ### Hierarchical
 
-        In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
+In einer hierarchischen Struktur werden Seiten in einer Baumstruktur organisiert. Jede untergeordnete Seite hat ein übergeordnetes Element. Ein übergeordnetes Element kann jedoch eine oder mehrere untergeordnete Seiten haben. Um eine untergeordnete Seite aufzurufen, durchlaufen Sie das übergeordnete Element.
 
-        Hierarchical structures are good for organizing complex content that spans lots of pages. The downside is some navigation overhead: the deeper the structure, the more clicks it takes to get from page to page.
+Hierarchische Strukturen sind gut geeignet, um komplexe Inhalte, die sich über viele Seiten erstrecken, zu organisieren. Der Nachteil besteht darin, dass hierarchische Seiten Navigationsmehraufwand verursachen: je tiefer die Struktur, desto mehr Klicks sind für das Wechseln der Seiten erforderlich.
 
-        We recommend a hierarchical structure when:
+Wir empfehlen eine hierarchische Struktur, wenn:
         
-        - Seiten, die in einer bestimmten Reihenfolge durchlaufen werden sollen.
-        - Es gibt eine klare Beziehung zwischen übergeordneten und untergeordneten Seiten.
-        - In der Gruppe gibt es mehr als 7 Seiten.
+- Seiten, die in einer bestimmten Reihenfolge durchlaufen werden sollen.
+- Es gibt eine klare Beziehung zwischen übergeordneten und untergeordneten Seiten.
+- In der Gruppe gibt es mehr als 7 Seiten.
         
     :::column-end:::
 :::row-end:::
@@ -150,12 +150,12 @@ Nun, da Sie mit den allgemeinen Navigationsprinzipien vertraut sind, überlegen 
     :::column span="2":::
         ### Combining structures
 
-        You don't have choose to one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
+Sie haben wählen Sie nicht auf eine Struktur oder das andere; Viele gut-Design-apps verwenden. Eine App verwendet flache Strukturen für Seiten auf obersten Ebenen, die in beliebiger Reihenfolge angezeigt werden können, und hierarchische Strukturen für Seiten, die komplexere Beziehungen haben.
 
-        If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
+Wenn die Navigationsstruktur über mehrere Ebenen verfügt, empfehlen wir, dass Peer-to-Peer-Navigationselemente nur mit den Peers innerhalb der aktuellen Unterstruktur verknüpft sind. Betrachten Sie eine Navigationsstruktur angezeigt, die zwei Ebenen die angrenzende Abbildung aus:
 
-        - Auf Ebene 1 sollte das Peer-to-Peer-Navigationselement Zugriff auf die Seiten A, B, C und D ermöglichen.
-        - Auf Ebene 2 sollten die Peer-to-Peer Navigationselemente für die A2-Seiten nur mit den anderen A2-Seiten verknüpft werden. Sie sollten nicht mit Seiten auf Ebene 2 in der C-Unterstruktur verknüpft sein.
+- Auf Ebene 1 sollte das Peer-to-Peer-Navigationselement Zugriff auf die Seiten A, B, C und D ermöglichen.
+- Auf Ebene 2 sollten die Peer-to-Peer Navigationselemente für die A2-Seiten nur mit den anderen A2-Seiten verknüpft werden. Sie sollten nicht mit Seiten auf Ebene 2 in der C-Unterstruktur verknüpft sein.
     :::column-end:::
 :::row-end:::
 
@@ -170,7 +170,7 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
     :::column span="2":::
         [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
-        With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
+Mit wenigen Ausnahmen verwendet jede App mit mehrere Seiten den Frame. In einem typischen Szenario hat die App eine Hauptseite, die den Frame und ein primäres Navigationselement beinhaltet, z. B. ein Navigationssteuerelement. Wählt der Benutzer eine Seite, wird sie durch den Frame geladen und angezeigt.
 :::row-end:::
 
 :::row:::
@@ -180,18 +180,18 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
     :::column span="2":::
         [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
 
-        Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
+Zeigt eine horizontale Liste mit Links zu Seiten auf derselben Ebene an. Die [NavigationView](../controls-and-patterns/navigationview.md) Steuerelement implementiert der oberen Navigationsleiste und Registerkarten von Mustern.
         
-        Use top navigation when:
+Verwenden Sie oben im Navigationsbereich bei:
 
-        - Möchten Sie alle Navigationsoptionen für die auf dem Bildschirm anzuzeigen.
-        - Sie verlangen mehr Speicherplatz für den Inhalt Ihrer app.
-        - Symbole können nicht Ihre Navigationskategorien klar beschreiben.
+- Möchten Sie alle Navigationsoptionen für die auf dem Bildschirm anzuzeigen.
+- Sie verlangen mehr Speicherplatz für den Inhalt Ihrer app.
+- Symbole können nicht Ihre Navigationskategorien klar beschreiben.
         
-        Mit Registerkarten, wenn:
+Mit Registerkarten, wenn:
 
-        - Navigationszustand Seite und der Verlauf beibehalten werden sollen.
-        - Sie erwarten, dass Benutzer häufig Registerkarten wechseln.
+- Navigationszustand Seite und der Verlauf beibehalten werden sollen.
+- Sie erwarten, dass Benutzer häufig Registerkarten wechseln.
 
 :::row-end:::
 
@@ -202,11 +202,12 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
         :::column span="2":::
     [**Pivot**](../controls-and-patterns/pivot.md)
     
-    Ähnlich wie [Navigationsansicht](../controls-and-patterns/navigationview.md), jedoch mit zusätzlicher Unterstützung für Touch- und etwas anders verhalten.
+Ähnlich wie [Navigationsansicht](../controls-and-patterns/navigationview.md), jedoch mit zusätzlicher Unterstützung für Touch- und etwas anders verhalten.
     
-    Verwenden von Pivot bei:-Ihre App um Touch Streifen zwischen Kategorien zu ermöglichen.
-        - Sie möchten Navigationsoptionen, Karussell infintely
-        - Eine umfangreiche Steuerung der Navigation verhaltensänderungen bei den verschiedenen Kategorien ist nicht erforderlich.
+Verwenden von Pivot bei:
+- Ihre App um Touch Streifen zwischen Kategorien zu ermöglichen.
+- Sie möchten Navigationsoptionen, Karussell infintely
+- Eine umfangreiche Steuerung der Navigation verhaltensänderungen bei den verschiedenen Kategorien ist nicht erforderlich.
 
 :::row-end:::
 
@@ -217,11 +218,11 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
     :::column span="2":::
         [**Left navigation**](../controls-and-patterns/navigationview.md)
 
-        Displays a vertical list of links to top-level pages. Use when:
+Zeigt eine vertikale Liste mit Links zu den übergeordneten Seiten an. Zu verwenden in folgenden Fällen:
         
-        - Die Seiten befinden sich auf der obersten Ebene.
-        - Es gibt viele Navigationselementen (mehr als 5)
-        - Sie erwarten nicht, dass Benutzer häufig zwischen Seiten wechseln werden.
+- Die Seiten befinden sich auf der obersten Ebene.
+- Es gibt viele Navigationselementen (mehr als 5)
+- Sie erwarten nicht, dass Benutzer häufig zwischen Seiten wechseln werden.
 
 :::row-end:::
         
@@ -232,12 +233,12 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
     :::column span="2":::
         [**Master/details**](../controls-and-patterns/master-details.md)
 
-        Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
+Zeigt eine Liste (Masteransicht) der Elemente an. Durch Auswahl eines Elements wird die entsprechende Seite im Detailbereich angezeigt. Zu verwenden in folgenden Fällen:
         
-        - Sie erwarten, dass Benutzer häufig zwischen untergeordneten Elementen wechseln werden.
-        - Sie möchten es dem Benutzer ermöglichen, Vorgänge auf hoher Ebene, z. B. Löschen oder Sortieren, für einzelne Elemente oder Gruppen von Elementen durchzuführen, und Sie möchten es dem Benutzer ermöglichen, Details für jedes Element anzuzeigen oder zu aktualisieren.
+- Sie erwarten, dass Benutzer häufig zwischen untergeordneten Elementen wechseln werden.
+- Sie möchten es dem Benutzer ermöglichen, Vorgänge auf hoher Ebene, z. B. Löschen oder Sortieren, für einzelne Elemente oder Gruppen von Elementen durchzuführen, und Sie möchten es dem Benutzer ermöglichen, Details für jedes Element anzuzeigen oder zu aktualisieren.
 
-        Master/Details eignet sich gut für E-Mail-Posteingänge, Kontaktlisten und die Dateneingabe.
+Master/Details eignet sich gut für E-Mail-Posteingänge, Kontaktlisten und die Dateneingabe.
 :::row-end:::
 
 :::row:::
@@ -247,7 +248,7 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
     :::column span="2":::
         [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
 
-        Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
+Eingebettete Navigationselemente können im Inhalt einer Seite erscheinen. Im Gegensatz zu anderen Navigationselementen, die für alle Seiten konsistent sein sollten, sind im Inhalt eingebettete Navigationselemente auf jeder Seite einzigartig.
 :::row-end:::
 
 ## <a name="next-add-navigation-code-to-your-app"></a>nächster: Hinzufügen von Navigations-Code zu Ihrer app

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 37deaabe2586391b0f0c93359133f10830558539
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4e4d8f43893b5f2a9a58c2eb6209ecb7d8dd1c21
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608855"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367580"
 ---
 # <a name="game-flow-management"></a>Spielablaufverwaltung
 
@@ -283,13 +283,13 @@ Dies sind die in diesem Beispiel verwendeten Ereignishandler sowie die jeweils b
 <tbody>
 <tr class="odd">
 <td align="left">OnActivated</td>
-<td align="left">Behandelt <a href="https://msdn.microsoft.com/library/windows/apps/br225018"><strong>CoreApplicationView::Activated</strong></a>. Die Spiele-App befindet sich im Vordergrund, weshalb das Hauptfenster aktiviert ist.</td>
+<td align="left">Behandelt <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated"><strong>CoreApplicationView::Activated</strong></a>. Die Spiele-App befindet sich im Vordergrund, weshalb das Hauptfenster aktiviert ist.</td>
 </tr>
 <tr class="even">
 <td align="left">OnDpiChanged</td>
 <td align="left">Behandelt <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>. Der DPI-Wert der Anzeige hat sich geändert, und das Spiel passt seine Ressourcen entsprechend an.
 <div class="alert">
-<strong>Beachten Sie</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>"corewindow"</strong> </a> Koordinaten sind als die DIPs (geräteunabhängigen Pixeln), für die <a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>. Daher müssen Sie Direct2D über die DPI-Änderung informieren, damit die 2D-Ressourcen oder -Grundtypen korrekt angezeigt werden.
+<strong>Beachten Sie</strong> <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow"><strong>"corewindow"</strong> </a> Koordinaten sind als die DIPs (geräteunabhängigen Pixeln), für die <a href="https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview">Direct2D</a>. Daher müssen Sie Direct2D über die DPI-Änderung informieren, damit die 2D-Ressourcen oder -Grundtypen korrekt angezeigt werden.
 </div>
 <div>
 </div></td>
@@ -304,27 +304,27 @@ Dies sind die in diesem Beispiel verwendeten Ereignishandler sowie die jeweils b
 </tr>
 <tr class="odd">
 <td align="left">OnResuming</td>
-<td align="left">Behandelt <a href="https://msdn.microsoft.com/library/windows/apps/br205859"><strong>CoreApplication::Resuming</strong></a>. Die Spiele-App stellt das Spiel aus einem Anhaltezustand wieder her.</td>
+<td align="left">Behandelt <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming"><strong>CoreApplication::Resuming</strong></a>. Die Spiele-App stellt das Spiel aus einem Anhaltezustand wieder her.</td>
 </tr>
 <tr class="even">
 <td align="left">OnSuspending</td>
-<td align="left">Behandelt <a href="https://msdn.microsoft.com/library/windows/apps/br205860"><strong>CoreApplication::Suspending</strong></a>. Die Spiele-App speichert den eigenen Zustand auf einem Datenträger. Der Speichervorgang für den Zustand darf maximal fünf Sekunden dauern.</td>
+<td align="left">Behandelt <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending"><strong>CoreApplication::Suspending</strong></a>. Die Spiele-App speichert den eigenen Zustand auf einem Datenträger. Der Speichervorgang für den Zustand darf maximal fünf Sekunden dauern.</td>
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left">Behandelt <a href="https://msdn.microsoft.com/library/windows/apps/hh701591"><strong>CoreWindow::VisibilityChanged</strong></a>. Die Sichtbarkeit der Spiele-App hat sich geändert: Die App wurde entweder sichtbar, oder sie wurde durch eine andere sichtbar gewordene App unsichtbar.</td>
+<td align="left">Behandelt <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.visibilitychanged"><strong>CoreWindow::VisibilityChanged</strong></a>. Die Sichtbarkeit der Spiele-App hat sich geändert: Die App wurde entweder sichtbar, oder sie wurde durch eine andere sichtbar gewordene App unsichtbar.</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
-<td align="left">Behandelt <a href="https://msdn.microsoft.com/library/windows/apps/br208255"><strong>CoreWindow::Activated</strong></a>. Das Hauptfenster der Spiele-App wurde deaktiviert oder aktiviert, weshalb der Fokus entfernt und das Spiel angehalten oder der Fokus wiedererlangt werden muss. In beiden Fällen gibt das Overlay an, dass das Spiel angehalten wurde.</td>
+<td align="left">Behandelt <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.activated"><strong>CoreWindow::Activated</strong></a>. Das Hauptfenster der Spiele-App wurde deaktiviert oder aktiviert, weshalb der Fokus entfernt und das Spiel angehalten oder der Fokus wiedererlangt werden muss. In beiden Fällen gibt das Overlay an, dass das Spiel angehalten wurde.</td>
 </tr>
 <tr class="odd">
 <td align="left">OnWindowClosed</td>
-<td align="left">Behandelt <a href="https://msdn.microsoft.com/library/windows/apps/br208261"><strong>CoreWindow:: Closed</strong></a>. Die Spiele-App schließt das Hauptfenster und hält das Spiel an.</td>
+<td align="left">Behandelt <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.closed"><strong>CoreWindow:: Closed</strong></a>. Die Spiele-App schließt das Hauptfenster und hält das Spiel an.</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowSizeChanged</td>
-<td align="left">Behandelt <a href="https://msdn.microsoft.com/library/windows/apps/br208283"><strong>CoreWindow::SizeChanged</strong></a>. Die Spiele-App ordnet die Grafikressourcen und das Overlay neu zu, um die Größenänderung umzusetzen, und aktualisiert anschließend das Renderziel.</td>
+<td align="left">Behandelt <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.sizechanged"><strong>CoreWindow::SizeChanged</strong></a>. Die Spiele-App ordnet die Grafikressourcen und das Overlay neu zu, um die Größenänderung umzusetzen, und aktualisiert anschließend das Renderziel.</td>
 </tr>
 </tbody>
 </table>

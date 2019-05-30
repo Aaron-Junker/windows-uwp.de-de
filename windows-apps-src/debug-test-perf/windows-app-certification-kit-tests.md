@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, app-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb7cb68b57e3d9b30a25237a63410d3bfa319b3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0a7cf1e89c91f9ad53777aa21af1d43e070c4fc8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645085"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362232"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests im Zertifizierungskit für Windows-Apps
 
@@ -34,7 +34,7 @@ Apps müssen nicht aufgeführt DLLs beim Laden in der zu öffnende HKEY\-lokalen
 
 Die App wird beim Zertifizierungstest durchgehend auf Flexibilität und Stabilität geprüft.
 
-Das Zertifizierungskit für Windows-Apps ruft [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) auf, um Apps zu starten. Damit eine App mit **ActivateApplication** gestartet werden kann, muss die Benutzerkontensteuerung (UAC) aktiviert sein und die Bildschirmauflösung mindestens 1024 x 768 oder 768 x 1024 betragen. Ist eine dieser Bedingungen nicht erfüllt, fällt die App bei diesem Test durch.
+Das Zertifizierungskit für Windows-Apps ruft [**IApplicationActivationManager::ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) auf, um Apps zu starten. Damit eine App mit **ActivateApplication** gestartet werden kann, muss die Benutzerkontensteuerung (UAC) aktiviert sein und die Bildschirmauflösung mindestens 1024 x 768 oder 768 x 1024 betragen. Ist eine dieser Bedingungen nicht erfüllt, fällt die App bei diesem Test durch.
 
 ### <a name="corrective-actions"></a>Maßnahmen
 
@@ -42,10 +42,10 @@ Stellen Sie sicher, dass die Benutzerkontensteuerung (UAC) auf dem Test-PC aktiv
 
 Führen Sie den Test auf einem PC mit ausreichend großem Bildschirm aus.
 
-Falls die App nicht gestartet werden kann, obwohl die Testplattform die Voraussetzungen für [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) erfüllt, können Sie das Problem mithilfe des Aktivierungsereignisprotokolls beheben. So finden Sie die Einträge im Ereignisprotokoll:
+Falls die App nicht gestartet werden kann, obwohl die Testplattform die Voraussetzungen für [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) erfüllt, können Sie das Problem mithilfe des Aktivierungsereignisprotokolls beheben. So finden Sie die Einträge im Ereignisprotokoll:
 
 1.  Eventvwr.exe und navigieren Sie zu der Anwendung und Services Log\\Microsoft\\Windows\\Immersive-Shell-Ordner.
-2.  Filtern Sie die Ansicht, um die Ereignis-Ids anzuzeigen: 5900 – 6000.
+2.  Filtern Sie die Ansicht, um die Ereignis-Ids anzuzeigen: 5900-6000.
 3.  Prüfen Sie die Protokolleinträge, um zu ermitteln, weshalb die App nicht gestartet wurde.
 
 Führen Sie für die Datei mit dem Problem eine Problembehandlung durch, um das Problem zu identifizieren und zu beheben. Erstellen Sie die App neu, und wiederholen Sie den Test. Sie können auch überprüfen, ob im Protokollordner des Zertifizierungskits für Windows-Apps eine Dumpdatei erstellt wurde, die zum Debuggen Ihrer App verwendet werden kann.
@@ -64,7 +64,7 @@ Das Zertifizierungskit für Windows-Apps verwendet „HighVersionLie“, um zu e
 
 ### <a name="corrective-action"></a>Maßnahmen
 
-Apps sollten dies anhand von API-Funktionen zur Versionsabfrage überprüfen. Weitere Informationen finden Sie unter [Version des Betriebssystems](https://msdn.microsoft.com/library/windows/desktop/ms724832).
+Apps sollten dies anhand von API-Funktionen zur Versionsabfrage überprüfen. Weitere Informationen finden Sie unter [Version des Betriebssystems](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version).
 
 ## <a name="background-tasks-cancellation-handler-validation"></a>Überprüfung des Abbruchhandlers für Aufgaben
 
@@ -80,7 +80,7 @@ Die App wird gestartet und angehalten, und der Teil der App, der sich nicht im H
 
 ### <a name="corrective-action"></a>Maßnahmen
 
-Fügen Sie Ihrer App den Abbruchhandler hinzu. Weitere Informationen finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](https://msdn.microsoft.com/library/windows/apps/Mt299103).
+Fügen Sie Ihrer App den Abbruchhandler hinzu. Weitere Informationen finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 ## <a name="app-count"></a>App-Anzahl
 
@@ -110,7 +110,7 @@ Apps müssen ein korrekt formatiertes App-Manifest besitzen.
 
 ### <a name="test-details"></a>Testdetails
 
-Überprüft das App-Manifest, um sicherzustellen, dass der Inhalt der Beschreibung in den [App-Paketanforderungen](https://msdn.microsoft.com/library/windows/apps/Mt148525) entspricht.
+Überprüft das App-Manifest, um sicherzustellen, dass der Inhalt der Beschreibung in den [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) entspricht.
 
 -   **Dateierweiterungen und Protokolle**
 
@@ -124,11 +124,11 @@ Apps müssen ein korrekt formatiertes App-Manifest besitzen.
 
 -   **Überprüfung der prozessübergreifenden Kommunikation (IPC)**
 
-    Dieser Test setzt den Bedarf an, den dass die UWP-apps nicht außerhalb des app-Containers auf Desktop-Komponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) den Namen „DesktopApplicationPath“ angeben, bestehen diesen Test nicht.
+    Dieser Test setzt den Bedarf an, den dass die UWP-apps nicht außerhalb des app-Containers auf Desktop-Komponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) den Namen „DesktopApplicationPath“ angeben, bestehen diesen Test nicht.
 
 ### <a name="corrective-action"></a>Maßnahmen
 
-Gleichen Sie das App-Manifest mit den [App-Paketanforderungen](https://msdn.microsoft.com/library/windows/apps/Mt148525) ab.
+Gleichen Sie das App-Manifest mit den [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) ab.
 
 ## <a name="windows-security-features-test"></a>Test der Windows-Sicherheitsfeatures
 
@@ -224,11 +224,11 @@ Dieser Test wird nur für Apps ausgeführt, die in nicht verwalteten Sprachen ge
 
 **Windows-Zertifizierungskit für Apps-Fehlermeldung:** SharedSectionsCheck Test ist fehlgeschlagen.
 
-Binärdateien mit beschreibbaren Abschnitten, die als freigegeben gekennzeichnet sind, stellen eine Sicherheitsbedrohung dar. Erstellen Sie keine Apps mit freigegebenen beschreibbaren Abschnitten, wenn dies nicht notwendig ist. Verwenden Sie [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) oder [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761), um ein freigegebenes Speicherobjekt zu erstellen, das korrekt gesichert ist.
+Binärdateien mit beschreibbaren Abschnitten, die als freigegeben gekennzeichnet sind, stellen eine Sicherheitsbedrohung dar. Erstellen Sie keine Apps mit freigegebenen beschreibbaren Abschnitten, wenn dies nicht notwendig ist. Verwenden Sie [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) oder [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile), um ein freigegebenes Speicherobjekt zu erstellen, das korrekt gesichert ist.
 
 **Erläutert, wie bei Ihrer app dieser Test schlägt fehl.**
 
-Entfernen Sie sämtliche freigegebenen Abschnitte aus der App, und erstellen Sie freigegebene Speicherobjekte, indem Sie [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) oder [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) mit den passenden Sicherheitsattributen aufrufen und die App dann neu erstellen.
+Entfernen Sie sämtliche freigegebenen Abschnitte aus der App, und erstellen Sie freigegebene Speicherobjekte, indem Sie [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) oder [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) mit den passenden Sicherheitsattributen aufrufen und die App dann neu erstellen.
 
 **"Hinweise"**
 
@@ -315,9 +315,9 @@ Apps müssen die APIs für UWP-apps (Windows-Runtime oder unterstützten Win32-A
 
 Stellen Sie sicher, dass die App als Releasebuild und nicht als Debugbuild kompiliert wurde.
 
-> **Beachten Sie**  Debugbuild einer Anwendung können dieser Test schlägt fehl, selbst wenn die app nur verwendet [-APIs für UWP-apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+> **Beachten Sie**  Debugbuild einer Anwendung können dieser Test schlägt fehl, selbst wenn die app nur verwendet [-APIs für UWP-apps](https://docs.microsoft.com/uwp/).
 
-Überprüfen Sie den Fehlermeldungen zum Identifizieren der-API verwendet die app, die keine [-API für UWP-apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+Überprüfen Sie den Fehlermeldungen zum Identifizieren der-API verwendet die app, die keine [-API für UWP-apps](https://docs.microsoft.com/uwp/).
 
 > **Beachten Sie**  C++-apps, die in einem Debug-Konfiguration erstellt werden können dieser Test schlägt fehl, selbst wenn die Konfiguration nur die APIs aus dem Windows SDK für UWP-apps verwendet. Angezeigt wird, [Alternativen zu Windows-APIs in UWP-apps](https://go.microsoft.com/fwlink/p/?LinkID=244022) für Weitere Informationen.
 
@@ -371,7 +371,7 @@ Prüft die im App-Manifest definierten Ressourcen, um sicherzustellen, dass sie 
 Orientieren Sie sich an der folgenden Tabelle.
 
 <table>
-<tr><th>Fehlermeldung</th><th>Anmerkungen</th></tr>
+<tr><th>Fehlermeldung</th><th>Kommentare</th></tr>
 <tr><td>
 <p>Das Bild "{Bildname}" definiert sowohl einen Scale- als auch einen TargetSize-Qualifizierer. Es darf jedoch jeweils nur ein Qualifizierer definiert sein.</p>
 </td><td>
@@ -412,7 +412,7 @@ Orientieren Sie sich an der folgenden Tabelle.
 <tr><td>
 <p>Für das Bild muss mindestens eine Variante ohne TargetSize-Qualifizierer definiert sein. Sie müssen einen Scale-Qualifizierer definieren oder „Scale” und „TargetSize” nicht angeben. In diesem Fall wird „Scale-100” verwendet.</p>
 </td><td>
-<p>Weitere Informationen finden Sie unter <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">Reaktionsfähiges Design für UWP-Apps (Universelle Windows-Plattform) – Grundlagen</a> und <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Richtlinien für App-Ressourcen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Reaktionsfähiges Design für UWP-Apps (Universelle Windows-Plattform) – Grundlagen</a> und <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
 </td></tr>
 <tr><td>
 <p>Das Paket enthält keine Datei „resources.pri”.</p>
@@ -434,7 +434,7 @@ Orientieren Sie sich an der folgenden Tabelle.
 <tr><td>
 <p>Die Zeichenfolge „{string}“ entspricht nicht der Längenbeschränkung von maximal {number} Zeichen.</p>
 </td><td>
-<p>Weitere Informationen finden Sie unter <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">App-Paketanforderungen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
 <p>In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt, und {number} enthält die maximale Länge.</p>
 </td></tr>
 <tr><td>
@@ -447,12 +447,12 @@ Orientieren Sie sich an der folgenden Tabelle.
 <tr><td>
 <p>Die Zeichenfolge darf nicht leer sein (Länge größer 0 (null)).</p>
 </td><td>
-<p>Weitere Informationen finden Sie unter <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">App-Paketanforderungen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
 </td></tr>
 <tr><td>
 <p>In der Datei „resources.pri” ist keine Standardressource angegeben.</p>
 </td><td>
-<p>Weitere Informationen finden Sie unter <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Richtlinien für App-Ressourcen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
 <p>In der Standardbuildkonfiguration nimmt Visual Studio nur Bildressourcen mit der Skalierung 200 % in das App-Paket auf, wenn ein Bündel generiert wird, andere Ressourcen werden im Ressourcenpaket abgelegt. Stellen Sie sicher, dass Sie entweder Bildressourcen mit der Skalierung 200 % einschließen oder Ihr Projekt für die Aufnahme der vorhandenen Ressourcen konfigurieren.</p>
 </td></tr>
 <tr><td>
@@ -551,15 +551,15 @@ Stellen Sie sicher, dass Ihre app richtig auf Direct3D-Funktionsebene 9 gerender
 
 ### <a name="background"></a>Hintergrund
 
-Wenn von der App auf ihrem jeweiligen Direct3D-Gerät [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) nicht aufgerufen wird, gibt sie keinen Speicher frei, der für die vorherigen 3D-Arbeitsschritte zugeordnet wurde. Dies erhöht das Risiko, dass Apps aufgrund von unzureichendem Systemspeicher beendet werden.
+Wenn von der App auf ihrem jeweiligen Direct3D-Gerät [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) nicht aufgerufen wird, gibt sie keinen Speicher frei, der für die vorherigen 3D-Arbeitsschritte zugeordnet wurde. Dies erhöht das Risiko, dass Apps aufgrund von unzureichendem Systemspeicher beendet werden.
 
 ### <a name="test-details"></a>Testdetails
 
-Apps werden auf die Einhaltung der d3d-Anforderungen überprüft. Außerdem wird sichergestellt, dass Apps beim Anhalterückruf (Suspend) eine neue [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346)-API aufrufen.
+Apps werden auf die Einhaltung der d3d-Anforderungen überprüft. Außerdem wird sichergestellt, dass Apps beim Anhalterückruf (Suspend) eine neue [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)-API aufrufen.
 
 ### <a name="corrective-action"></a>Maßnahmen
 
-Von der App sollte die [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346)-API für ihre [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345)-Schnittstelle vor jedem Anhaltevorgang aufgerufen werden.
+Von der App sollte die [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)-API für ihre [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3)-Schnittstelle vor jedem Anhaltevorgang aufgerufen werden.
 
 ## <a name="app-capabilities-test"></a>Test der App-Funktionen
 
@@ -668,5 +668,5 @@ Aktualisieren Sie den JavaScript-Hintergrundcode so, dass „Close()” richtig 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Tests für Windows Desktop Bridge-app](windows-desktop-bridge-app-tests.md)
-* [Microsoft Store-Richtlinien](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)
  

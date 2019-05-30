@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d84683544628a9b6df0eafb2999fabb134465ea8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8af03b32453bcdacb3da95678cf23a988c375f1b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635565"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359641"
 ---
 # <a name="accessibility-testing"></a>Barrierefreiheitstests  
 
@@ -23,7 +23,7 @@ Testverfahren, mit denen Sie sicherstellen können, dass Ihre App für die unive
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
 
 ## <a name="run-accessibility-testing-tools"></a>Ausführen der Tools zum Testen der Barrierefreiheit  
-Das Windows Software Development Kit (SDK) enthält verschiedene Tools zum Testen der Barrierefreiheit, z. B. [**EH-Viewer**](https://msdn.microsoft.com/library/windows/desktop/Dn433239), [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) und [**UI-Barrierefreiheitsprüfung**](https://msdn.microsoft.com/library/windows/desktop/Hh920985). Mit diesen Tools können Sie die Barrierefreiheit Ihrer App überprüfen. Achten Sie darauf, dass Sie sämtliche App-Szenarien und UI-Elemente testen.
+Das Windows Software Development Kit (SDK) enthält verschiedene Tools zum Testen der Barrierefreiheit, z. B. [**EH-Viewer**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope), [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) und [**UI-Barrierefreiheitsprüfung**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-accessibility-checker). Mit diesen Tools können Sie die Barrierefreiheit Ihrer App überprüfen. Achten Sie darauf, dass Sie sämtliche App-Szenarien und UI-Elemente testen.
 
 Sie können die Tools zum Testen der Barrierefreiheit entweder über die Eingabeaufforderung von Microsoft Visual Studio oder über den Tools-Ordner des Windows SDK öffnen (bin-Unterverzeichnis des Ordners, in dem das Windows SDK auf dem Entwicklungscomputer installiert ist).
   
@@ -35,16 +35,16 @@ Sie können die Tools zum Testen der Barrierefreiheit entweder über die Eingabe
 
 ### <a name="accscope"></a>**EH-Viewer (AccScope)**  
 
-Mit dem Tool [**EH-Viewer**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) können Entwickler und Tester die Barrierefreiheit der App während ihrer Entwicklungs- und Entwurfsphase auswerten. Dies wird meist in frühen Prototypphasen und nicht in den letzten Testphasen des Entwicklungszyklus einer App durchgeführt. Das Hauptziel besteht im Testen von Barrierefreiheitsszenarien in Verbindung mit der Sprachausgabe für die App.
+Mit dem Tool [**EH-Viewer**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) können Entwickler und Tester die Barrierefreiheit der App während ihrer Entwicklungs- und Entwurfsphase auswerten. Dies wird meist in frühen Prototypphasen und nicht in den letzten Testphasen des Entwicklungszyklus einer App durchgeführt. Das Hauptziel besteht im Testen von Barrierefreiheitsszenarien in Verbindung mit der Sprachausgabe für die App.
 
 <span id="inspect"/>
 <span id="INSPECT"/>
 
 ### <a name="inspect"></a>**Prüfen**  
 
-[**Überprüfen Sie** ](https://msdn.microsoft.com/library/windows/desktop/Dd318521) ermöglicht es Ihnen, wählen ein UI-Element, und zeigen die barrierefreiheitsdaten. Sie können Eigenschaften und Steuerelementmuster der Microsoft-Benutzeroberflächenautomatisierung anzeigen und die Navigationsstruktur der Automatisierungselemente im Benutzeroberflächenautomatisierungs-Baum testen. Verwenden Sie beim Entwickeln der Benutzeroberfläche **Inspect**, um zu überprüfen, wie die Barrierefreiheitsattribute in der Benutzeroberflächenautomatisierung verfügbar gemacht werden. In einigen Fällen stammen die Attribute aus der Unterstützung der Benutzeroberflächenautomatisierung, die für Standard-XAML-Steuerelemente bereits implementiert wurde. In anderen Fällen stammen die Attribute aus bestimmten Werten, die Sie im XAML-Markup als an [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) angefügte Eigenschaften festgelegt haben.
+[**Überprüfen Sie** ](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) ermöglicht es Ihnen, wählen ein UI-Element, und zeigen die barrierefreiheitsdaten. Sie können Eigenschaften und Steuerelementmuster der Microsoft-Benutzeroberflächenautomatisierung anzeigen und die Navigationsstruktur der Automatisierungselemente im Benutzeroberflächenautomatisierungs-Baum testen. Verwenden Sie beim Entwickeln der Benutzeroberfläche **Inspect**, um zu überprüfen, wie die Barrierefreiheitsattribute in der Benutzeroberflächenautomatisierung verfügbar gemacht werden. In einigen Fällen stammen die Attribute aus der Unterstützung der Benutzeroberflächenautomatisierung, die für Standard-XAML-Steuerelemente bereits implementiert wurde. In anderen Fällen stammen die Attribute aus bestimmten Werten, die Sie im XAML-Markup als an [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) angefügte Eigenschaften festgelegt haben.
 
-Die folgende Abbildung zeigt das [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521)-Tool, mit dem die Benutzeroberflächenautomatisierungseigenschaften des Menübefehls **Bearbeiten** in Editor abgefragt werden.
+Die folgende Abbildung zeigt das [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects)-Tool, mit dem die Benutzeroberflächenautomatisierungseigenschaften des Menübefehls **Bearbeiten** in Editor abgefragt werden.
 
 ![Screenshot des Inspect-Tools.](./images/inspect.png)
 
@@ -64,7 +64,7 @@ Die **Benutzeroberflächenautomatisierungs-Überprüfung (UIA Verify)** ist ein 
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
 ### <a name="accessible-event-watcher"></a>**Überwachung für barrierefreie Ereignisse**  
-[**Zugänglich-Ereignisüberwachung (AccEvent)** ](https://msdn.microsoft.com/library/windows/desktop/Dd317979) testet, ob die Elemente der Benutzeroberfläche der app ausgelöst, entsprechenden-Benutzeroberflächenautomatisierung und Microsoft Active Accessibility-Ereignisse beim Auftreten von Änderungen an der Benutzeroberfläche werden. Änderungen an der Benutzeroberfläche können auftreten, wenn sich der Fokus ändert, ein Benutzeroberflächenelement aufgerufen oder ausgewählt wird oder sich sein Zustand oder seine Eigenschaft ändert.
+[**Zugänglich-Ereignisüberwachung (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) testet, ob die Elemente der Benutzeroberfläche der app ausgelöst, entsprechenden-Benutzeroberflächenautomatisierung und Microsoft Active Accessibility-Ereignisse beim Auftreten von Änderungen an der Benutzeroberfläche werden. Änderungen an der Benutzeroberfläche können auftreten, wenn sich der Fokus ändert, ein Benutzeroberflächenelement aufgerufen oder ausgewählt wird oder sich sein Zustand oder seine Eigenschaft ändert.
 
 > [!NOTE]
 > Die meisten in dieser Dokumentation erwähnten Tools zum Testen der Barrierefreiheit können auf einem PC, aber nicht auf einem Mobiltelefon ausgeführt werden. Sie können einige dieser Tools ausführen, während Sie entwickeln und einen Emulator verwenden, aber die meisten dieser Tools können den Benutzeroberflächenautomatisierungs-Baum im Emulator nicht bereitstellen.
@@ -95,7 +95,7 @@ Verwenden Sie die App mit einem Design mit hohem Kontrast, um sicherzustellen, d
 
 ## <a name="verify-your-app-with-display-settings"></a>Überprüfen der App mit Anzeigeeinstellungen  
 
-Verwenden Sie die Systemanzeigeoptionen, die den DPI-Wert der Anzeige anpassen, und stellen Sie sicher, dass Ihre App-UI bei einer Änderung des DPI-Werts richtig skaliert wird. (Einige Benutzer ändern die dpi-Werte als Zugriffsoption auf diese Klasse steht in **erleichterte Bedienung** auch als Eigenschaften anzuzeigen.) Wenn Sie auf Probleme stoßen, führen Sie die [Richtlinien zum Skalieren Layouts](https://msdn.microsoft.com/library/windows/apps/Dn611863) und geben Sie zusätzliche Ressourcen für andere Skalierungsfaktoren.
+Verwenden Sie die Systemanzeigeoptionen, die den DPI-Wert der Anzeige anpassen, und stellen Sie sicher, dass Ihre App-UI bei einer Änderung des DPI-Werts richtig skaliert wird. (Einige Benutzer ändern die dpi-Werte als Zugriffsoption auf diese Klasse steht in **erleichterte Bedienung** auch als Eigenschaften anzuzeigen.) Wenn Sie auf Probleme stoßen, führen Sie die [Richtlinien zum Skalieren Layouts](https://developer.microsoft.com/windows/design) und geben Sie zusätzliche Ressourcen für andere Skalierungsfaktoren.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -142,9 +142,9 @@ Ab Windows 10, Version 1607, wurde in der Sprachausgabe ein neuer Entwicklermo
 
     Einige Steuerelemente bieten zusätzliche Aktionen. Rufen Sie eine vollständige Liste auf, indem Sie mit vier Fingern einmal tippen.
 
-    Sollte ein Steuerelement auf Maus- und Tastatureingaben, jedoch nicht auf eine primäre oder sekundäre Berührungsinteraktion reagieren, müssen für das Steuerelement unter Umständen zusätzliche Steuerungsmuster zur [Benutzeroberflächenautomatisierung](https://msdn.microsoft.com/library/windows/desktop/Ee684009) implementiert werden.
+    Sollte ein Steuerelement auf Maus- und Tastatureingaben, jedoch nicht auf eine primäre oder sekundäre Berührungsinteraktion reagieren, müssen für das Steuerelement unter Umständen zusätzliche Steuerungsmuster zur [Benutzeroberflächenautomatisierung](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32) implementiert werden.
 
-Erwägen Sie auch die Nutzung des [**EH-Viewer**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)-Tools (EH-Viewer) zum Testen von Barrierefreiheitsszenarien in Verbindung mit der Sprachausgabe für die App. Im [**Thema zum EH-Viewer-Tool**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) wird erläutert, wie **EH-Viewer** für das Testen von Szenarien in Verbindung mit der Sprachausgabe konfiguriert wird.
+Erwägen Sie auch die Nutzung des [**EH-Viewer**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope)-Tools (EH-Viewer) zum Testen von Barrierefreiheitsszenarien in Verbindung mit der Sprachausgabe für die App. Im [**Thema zum EH-Viewer-Tool**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) wird erläutert, wie **EH-Viewer** für das Testen von Szenarien in Verbindung mit der Sprachausgabe konfiguriert wird.
 
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
@@ -153,15 +153,15 @@ Erwägen Sie auch die Nutzung des [**EH-Viewer**](https://msdn.microsoft.com/lib
 ## <a name="examine-the-ui-automation-representation-for-your-app"></a>Untersuchen der Darstellung der Benutzeroberflächenautomatisierung für Ihre App  
 Einige der bereits erwähnten Tools zum Testen der Benutzeroberflächenautomatisierung ermöglichen eine Anzeige Ihrer App, bei der absichtlich nicht berücksichtigt wird, wie die App aussieht. Stattdessen wird die App als Struktur aus Benutzeroberflächenautomatisierungs-Elementen dargestellt. Mit diesem Verfahren interagieren Benutzeroberflächenautomatisierungs-Clients, vor allem Hilfstechnologien, mit der App in Barrierefreiheitsszenarien.
 
-Das Tool [**EH-Viewer**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) ermöglicht eine besonders interessante Anzeige der App, da Sie die Benutzeroberflächenautomatisierungs-Elemente entweder als visuelle Darstellung oder als Liste anzeigen können. Wenn Sie die Visualisierung verwenden, können Sie einen Drilldown zu den einzelnen Bestandteilen so durchführen, dass eine Korrelation mit der visuellen Darstellung der App-UI möglich ist. Sie können sogar die Barrierefreiheit Ihrer frühesten UI-Prototypen testen, bevor Sie der UI die gesamte Logik zugewiesen haben. So stellen Sie sicher, dass sich die visuelle Interaktion und die Navigation für Barrierefreiheitsszenarien der App im Gleichgewicht befinden.
+Das Tool [**EH-Viewer**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) ermöglicht eine besonders interessante Anzeige der App, da Sie die Benutzeroberflächenautomatisierungs-Elemente entweder als visuelle Darstellung oder als Liste anzeigen können. Wenn Sie die Visualisierung verwenden, können Sie einen Drilldown zu den einzelnen Bestandteilen so durchführen, dass eine Korrelation mit der visuellen Darstellung der App-UI möglich ist. Sie können sogar die Barrierefreiheit Ihrer frühesten UI-Prototypen testen, bevor Sie der UI die gesamte Logik zugewiesen haben. So stellen Sie sicher, dass sich die visuelle Interaktion und die Navigation für Barrierefreiheitsszenarien der App im Gleichgewicht befinden.
 
-Außerdem können Sie testen, ob in der Elementansicht der Benutzeroberflächenautomatisierung Elemente angezeigt werden, die dort nicht erscheinen sollen. Falls Sie Elemente finden, die aus der Ansicht entfernt werden sollen, oder falls Elemente fehlen, können Sie mithilfe der angefügten XAML-Eigenschaft [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) anpassen, wie XAML-Steuerelemente in Barrierefreiheitsansichten erscheinen. Nachdem Sie sich die grundlegenden Barrierefreiheitsansichten angesehen haben, ist dies ein guter Zeitpunkt für die erneute Überprüfung der Registerkartensequenzen oder der räumlichen Navigation mithilfe von Pfeiltasten. So können Sie sich vergewissern, dass Benutzer Zugang zu allen Teilbereichen haben, die interaktiv sind und in der Steuerungsansicht verfügbar gemacht werden.
+Außerdem können Sie testen, ob in der Elementansicht der Benutzeroberflächenautomatisierung Elemente angezeigt werden, die dort nicht erscheinen sollen. Falls Sie Elemente finden, die aus der Ansicht entfernt werden sollen, oder falls Elemente fehlen, können Sie mithilfe der angefügten XAML-Eigenschaft [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityview) anpassen, wie XAML-Steuerelemente in Barrierefreiheitsansichten erscheinen. Nachdem Sie sich die grundlegenden Barrierefreiheitsansichten angesehen haben, ist dies ein guter Zeitpunkt für die erneute Überprüfung der Registerkartensequenzen oder der räumlichen Navigation mithilfe von Pfeiltasten. So können Sie sich vergewissern, dass Benutzer Zugang zu allen Teilbereichen haben, die interaktiv sind und in der Steuerungsansicht verfügbar gemacht werden.
 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>Verwandte Themen  
 * [Bedienungshilfen](accessibility.md)
 * [Nicht empfehlenswerte Methoden](practices-to-avoid.md)
-* [Benutzeroberflächenautomatisierung](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
+* [Benutzeroberflächenautomatisierung](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Barrierefreiheit in Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
 * [Erste Schritte mit der Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

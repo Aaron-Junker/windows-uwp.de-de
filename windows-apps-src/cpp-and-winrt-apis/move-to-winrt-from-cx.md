@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: fe988bffbf024308fb5d43da7ed538e5330b58de
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7fbe10e41da1b330d6f5042bea109a8a0e04f8ad
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635075"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360158"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>C++/CX zu C++/WinRT wechseln
 
@@ -21,14 +21,14 @@ In diesem Thema wird gezeigt, wie zum Portieren von Code in einem [C++ / CX](/cp
 Wenn Sie nach und nach Ihrem C + portieren möchten c++ / CX-Code für C++ / WinRT, Sie können. C++ / CX und C++ / WinRT-Code kann gleichzeitig im selben Projekt, mit Ausnahme der XAML-Unterstützung des Compilers und der Windows-Runtime-Komponenten verwendet werden. Für diese zwei Ausnahmen müssen Sie entweder C + Ziel c++ / CX- oder C++ / WinRT im selben Projekt.
 
 > [!IMPORTANT]
-> Wenn Ihr Projekt eine XAML-Anwendung erstellt wird, klicken Sie dann einen Workflow, die wir empfehlen wird zunächst ein neues Projekt in Visual Studio mithilfe eines C + erstellen c++ / WinRT-Projektvorlagen (finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Starten Sie dann auf Kopieren von Quellcode und Markup über von der C / c++ / CX-Projekt. Sie können neue XAML-Seiten mit hinzufügen **Projekt** \> **neues Element hinzufügen...** \> **Visual C++** > **Blank-Seite (C++ / WinRT)**.
+> Wenn Ihr Projekt eine XAML-Anwendung erstellt wird, klicken Sie dann einen Workflow, die wir empfehlen wird zunächst ein neues Projekt in Visual Studio mithilfe eines C + erstellen c++ / WinRT-Projektvorlagen (finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Starten Sie dann auf Kopieren von Quellcode und Markup über von der C / c++ / CX-Projekt. Sie können neue XAML-Seiten mit hinzufügen **Projekt** \> **neues Element hinzufügen...** \> **Visual C++**  > **Blank-Seite (C++ / WinRT)** .
 >
 > Alternativ können Sie eine Windows-Runtime-Komponente auf Faktor Code aus der XAML C / c++ / CX zu projizieren, wie Sie es portieren. Verschieben Sie entweder so viele C + c++ / CX code wie möglich in eine Komponente, und ändern Sie das XAML-Projekt in C++ / WinRT. Oder übernehmen Sie andernfalls das XAML-Projekt als C++ / CX, erstellen Sie eine neue C + c++ / WinRT-Komponente, und Portieren von C++ / CX-Code aus dem XAML-Projekt, und klicken Sie in der Komponente. Sie könnten auch haben C++ / CX-Komponentenprojekt zusammen mit C++ / WinRT-Komponentenprojekt innerhalb der gleichen Lösung, verweisen auf beide aus Ihrem Anwendungsprojekt, und den port schrittweise aus einem zum anderen. Finden Sie unter [Interoperabilität zwischen C++ / WinRT und C++ / CX](interop-winrt-cx.md) für Weitere Informationen zur Verwendung der beiden sprachprojektionen im selben Projekt.
 
 > [!NOTE]
 > Sowohl [C++/CX ](/cpp/cppcx/visual-c-language-reference-c-cx) als auch das Windows SDK deklarieren Typen im Root-Namespace **Windows**. Ein Windows-Typ, der in C++/WinRT projiziert wird, verfügt über den gleichen vollqualifizierten Namen wie der Windows-Typ, befindet sich aber im C++/**winrt**-Namespace. Diese unterschiedlichen Namespaces ermöglichen die Portierung von C++/CX nach C++/WinRT in Ihrem eigenen Tempo.
 
-Unter Berücksichtigung der oben genannten Ausnahmen, der erste Schritt bei der Portierung von C++ / CX-Projekt in C++ / WinRT ist C++ manuell hinzufügen c++ / WinRT-Support, um es (finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Installieren Sie zu diesem Zweck die [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in Ihr Projekt. Öffnen des Projekts in Visual Studio, klicken Sie auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Navigieren Sie**geben oder fügen Sie **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wählen Sie das Element in den Suchergebnissen aus, und klicken Sie dann auf **installieren** zum Installieren des Pakets für das betreffende Projekt. Eine Auswirkung dieser Änderung ist, dass die Unterstützung für C++/CX im Projekt deaktiviert wird. Es ist eine gute Idee, lassen Sie Support deaktiviert, sodass Buildmeldungen Sie suchen (und Port) können alle Ihre Abhängigkeiten an C++ / CX, oder Sie können Unterstützung wieder aktivieren (in den Projekteigenschaften, **C/C++-** \> **Allgemein** \> **Windows-Runtime-Erweiterung nutzen** \> **Ja (/ Zw)**), und nach und nach port.
+Unter Berücksichtigung der oben genannten Ausnahmen, der erste Schritt bei der Portierung von C++ / CX-Projekt in C++ / WinRT ist C++ manuell hinzufügen c++ / WinRT-Support, um es (finden Sie unter [Visual Studio-Unterstützung für C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Installieren Sie zu diesem Zweck die [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in Ihr Projekt. Öffnen des Projekts in Visual Studio, klicken Sie auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Navigieren Sie**geben oder fügen Sie **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wählen Sie das Element in den Suchergebnissen aus, und klicken Sie dann auf **installieren** zum Installieren des Pakets für das betreffende Projekt. Eine Auswirkung dieser Änderung ist, dass die Unterstützung für C++/CX im Projekt deaktiviert wird. Es ist eine gute Idee, lassen Sie Support deaktiviert, sodass Buildmeldungen Sie suchen (und Port) können alle Ihre Abhängigkeiten an C++ / CX, oder Sie können Unterstützung wieder aktivieren (in den Projekteigenschaften, **C/C++-** \> **Allgemein** \> **Windows-Runtime-Erweiterung nutzen** \> **Ja (/ Zw)** ), und nach und nach port.
 
 Stellen Sie sicher, Projekteigenschaft **allgemeine** \> **Zielplattformversion** nastaven NA hodnotu 10.0.17134.0 (Windows 10, Version 1803) oder höher.
 
@@ -138,7 +138,7 @@ record.UserState(newValue);
 ```
 
 ## <a name="creating-an-instance-of-a-class"></a>Erstellen einer Instanz einer Klasse
-Arbeiten Sie mit C++ / CX-Objekt über ein Handle dafür, die so genannte ein Caretzeichen (\^) Verweis. Sie erstellen ein neues Objekt über das Schlüsselwort `ref new`, das wiederum [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) aufruft, um eine neue Instanz der Laufzeitklasse zu aktivieren.
+Arbeiten Sie mit C++ / CX-Objekt über ein Handle dafür, die so genannte ein Caretzeichen (\^) Verweis. Sie erstellen ein neues Objekt über das Schlüsselwort `ref new`, das wiederum [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) aufruft, um eine neue Instanz der Laufzeitklasse zu aktivieren.
 
 ```cppcx
 using namespace Windows::Storage::Streams;
@@ -200,7 +200,7 @@ private:
 ```
 
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>Konvertieren von einer Basis-Runtime-Klasse in einer abgeleiteten
-Es ist üblich, einen Verweis auf eine Basisklasse zu verwenden, die Sie kennen, auf ein Objekt eines abgeleiteten Typs verweist. In C++ / CX können Sie verwenden `dynamic_cast` zu *Umwandlung* der Verweis auf eine Basisklasse in einen Verweis auf eine abgeleitete. Die `dynamic_cast` ist eigentlich nur ein ausgeblendeter Aufruf [ **QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Hier ist ein typisches Beispiel&mdash;können Sie eine Abhängigkeit Eigenschaftenänderungsereignis behandeln, und Sie umwandeln möchten **DependencyObject** wieder in den tatsächlichen Typ, der die Abhängigkeitseigenschaft besitzt.
+Es ist üblich, einen Verweis auf eine Basisklasse zu verwenden, die Sie kennen, auf ein Objekt eines abgeleiteten Typs verweist. In C++ / CX können Sie verwenden `dynamic_cast` zu *Umwandlung* der Verweis auf eine Basisklasse in einen Verweis auf eine abgeleitete. Die `dynamic_cast` ist eigentlich nur ein ausgeblendeter Aufruf [ **QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Hier ist ein typisches Beispiel&mdash;können Sie eine Abhängigkeit Eigenschaftenänderungsereignis behandeln, und Sie umwandeln möchten **DependencyObject** wieder in den tatsächlichen Typ, der die Abhängigkeitseigenschaft besitzt.
 
 ```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -214,7 +214,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Wind
 }
 ```
 
-Der entsprechende C++-/ c++ / WinRT-Code ersetzt die `dynamic_cast` durch einen Aufruf der [ **IUnknown::try_as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) -Funktion, die kapselt **QueryInterface**. Sie haben auch die Möglichkeit zum Aufrufen [ **IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function), stattdessen die löst eine Ausnahme aus, wenn Abfragen für die erforderliche Schnittstelle (die Standardschnittstelle des Typs, die Sie angefordert werden) nicht zurückgegeben wird. Hier ist ein C++ / WinRT-Codebeispiel.
+Die entsprechende C++/WinRT-Code ersetzt die `dynamic_cast` durch einen Aufruf der [ **IUnknown::try_as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) -Funktion, die kapselt **QueryInterface**. Sie haben auch die Möglichkeit zum Aufrufen [ **IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function), stattdessen die löst eine Ausnahme aus, wenn Abfragen für die erforderliche Schnittstelle (die Standardschnittstelle des Typs, die Sie angefordert werden) nicht zurückgegeben wird. Hier ist ein C++ / WinRT-Codebeispiel.
 
 ```cppwinrt
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
@@ -277,19 +277,19 @@ myButton().Click(token);
 Weitere Informationen und Optionen finden Sie unter [Einen registrierten Delegaten widerrufen](handle-events.md#revoke-a-registered-delegate).
 
 ## <a name="mapping-ccx-platform-types-to-cwinrt-types"></a>Zuordnen von C++/CX-**Platform**-Typen zu C++/WinRT-Typen
-C++/CX bietet verschiedene Datentypen im **Platform**-Namespace. Diese Typen gehören nicht zum C++-Standard, daher können Sie sie nur verwenden, wenn Sie die Windows-Runtime-Spracherweiterungen aktivieren (Visual Studio-Projekteigenschaft **C/C++** > **Allgemein** > **Windows-Runtime-Erweiterung verwenden** > **Ja (/ZW)**). In der Tabelle unten finden Sie Informationen zum Portieren von **Platform**-Typen in ihre Entsprechungen in C++/WinRT. Nachdem Sie dies erledigt haben, können Sie, da C++/WinRT zum C++-Standard gehört, die Option `/ZW` deaktivieren.
+C++/CX bietet verschiedene Datentypen im **Platform**-Namespace. Diese Typen gehören nicht zum C++-Standard, daher können Sie sie nur verwenden, wenn Sie die Windows-Runtime-Spracherweiterungen aktivieren (Visual Studio-Projekteigenschaft **C/C++**  > **Allgemein** > **Windows-Runtime-Erweiterung verwenden** > **Ja (/ZW)** ). In der Tabelle unten finden Sie Informationen zum Portieren von **Platform**-Typen in ihre Entsprechungen in C++/WinRT. Nachdem Sie dies erledigt haben, können Sie, da C++/WinRT zum C++-Standard gehört, die Option `/ZW` deaktivieren.
 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
-| **Platform:: Agile\^** | [**WinRT::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
-| **Platform:: Array\^** | Finden Sie unter [Port **Platform:: Array\^**](#port-platformarray) |
-| **Platform:: Exception\^** | [**WinRT::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
-| **Platform:: InvalidArgumentException\^** | [**WinRT::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
-| **Platform:: Object\^** | **WinRT::Windows::Foundation::IInspectable** |
-| **Platform:: String\^** | [**WinRT::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
+| **Platform::Agile\^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
+| **Platform::Array\^** | Finden Sie unter [Port **Platform:: Array\^** ](#port-platformarray) |
+| **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
+| **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
+| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
+| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
 ### <a name="port-platformagile-to-winrtagileref"></a>Port **Platform:: Agile\^**  zu **winrt::agile_ref**
-Die **Platform:: Agile\^**  Typ in C++ / CX stellt eine Windows-Runtime-Klasse, die von jedem Thread aus zugegriffen werden kann. C++ / WinRT-äquivalent ist [ **winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
+Die **Platform:: Agile\^**  Typ in C++ / CX stellt eine Windows-Runtime-Klasse, die von jedem Thread aus zugegriffen werden kann. Die C++/WinRT-äquivalent ist [ **winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
 
 In C++/CX.
 
@@ -309,7 +309,7 @@ Ihre Optionen umfassen die Verwendung einer Initialisiererliste einen **Std:: Ar
 ### <a name="port-platformexception-to-winrthresulterror"></a>Port **Platform:: Exception\^**  zu **winrt::hresult_error**
 Die **Platform:: Exception\^**  Typ wird erzeugt, in C++ / CX, ein Windows-Runtime-API einen nicht S gibt\_OK HRESULT. Für C++/WinRT ist die Entsprechung [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error).
 
-Zum Portieren von C++ / WinRT, Ändern der gesamte Code, der verwendet **Platform:: Exception\^**  verwenden **winrt::hresult_error**.
+An den Port C++"/ WinRT", Ändern der gesamte Code, der verwendet **Platform:: Exception\^**  verwenden **winrt::hresult_error**.
 
 In C++/CX.
 
@@ -327,21 +327,21 @@ C++/WinRT stellt diese Ausnahmeklassen bereit.
 
 | Ausnahmentyp | Basisklasse | HRESULT |
 | ---- | ---- | ---- |
-| [**WinRT::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) | | Aufrufen von [**hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresulterrortoabi-function) |
-| [**WinRT::hresult_access_denied**](/uwp/cpp-ref-for-winrt/error-handling/hresult-access-denied) | **WinRT::hresult_error** | E_ACCESSDENIED |
-| [**WinRT::hresult_canceled**](/uwp/cpp-ref-for-winrt/error-handling/hresult-canceled) | **WinRT::hresult_error** | ERROR_CANCELLED |
-| [**WinRT::hresult_changed_state**](/uwp/cpp-ref-for-winrt/error-handling/hresult-changed-state) | **WinRT::hresult_error** | E_CHANGED_STATE |
-| [**WinRT::hresult_class_not_available**](/uwp/cpp-ref-for-winrt/error-handling/hresult-class-not-available) | **WinRT::hresult_error** | CLASS_E_CLASSNOTAVAILABLE |
-| [**WinRT::hresult_illegal_delegate_assignment**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-delegate-assignment) | **WinRT::hresult_error** | E_ILLEGAL_DELEGATE_ASSIGNMENT |
-| [**WinRT::hresult_illegal_method_call**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-method-call) | **WinRT::hresult_error** | E_ILLEGAL_METHOD_CALL |
-| [**WinRT::hresult_illegal_state_change**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-state-change) | **WinRT::hresult_error** | E_ILLEGAL_STATE_CHANGE |
-| [**WinRT::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) | **WinRT::hresult_error** | E_INVALIDARG |
-| [**WinRT::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) | **WinRT::hresult_error** | E_NOINTERFACE |
-| [**WinRT::hresult_not_implemented**](/uwp/cpp-ref-for-winrt/error-handling/hresult-not-implemented) | **WinRT::hresult_error** | E_NOTIMPL |
-| [**WinRT::hresult_out_of_bounds**](/uwp/cpp-ref-for-winrt/error-handling/hresult-out-of-bounds) | **WinRT::hresult_error** | E_BOUNDS |
-| [**WinRT::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/error-handling/hresult-wrong-thread) | **WinRT::hresult_error** | RPC_E_WRONG_THREAD |
+| [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) | | Aufrufen von [**hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function) |
+| [**winrt::hresult_access_denied**](/uwp/cpp-ref-for-winrt/error-handling/hresult-access-denied) | **winrt::hresult_error** | E_ACCESSDENIED |
+| [**winrt::hresult_canceled**](/uwp/cpp-ref-for-winrt/error-handling/hresult-canceled) | **winrt::hresult_error** | ERROR_CANCELLED |
+| [**winrt::hresult_changed_state**](/uwp/cpp-ref-for-winrt/error-handling/hresult-changed-state) | **winrt::hresult_error** | E_CHANGED_STATE |
+| [**winrt::hresult_class_not_available**](/uwp/cpp-ref-for-winrt/error-handling/hresult-class-not-available) | **winrt::hresult_error** | CLASS_E_CLASSNOTAVAILABLE |
+| [**winrt::hresult_illegal_delegate_assignment**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-delegate-assignment) | **winrt::hresult_error** | E_ILLEGAL_DELEGATE_ASSIGNMENT |
+| [**winrt::hresult_illegal_method_call**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-method-call) | **winrt::hresult_error** | E_ILLEGAL_METHOD_CALL |
+| [**winrt::hresult_illegal_state_change**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-state-change) | **winrt::hresult_error** | E_ILLEGAL_STATE_CHANGE |
+| [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) | **winrt::hresult_error** | E_INVALIDARG |
+| [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) | **winrt::hresult_error** | E_NOINTERFACE |
+| [**winrt::hresult_not_implemented**](/uwp/cpp-ref-for-winrt/error-handling/hresult-not-implemented) | **winrt::hresult_error** | E_NOTIMPL |
+| [**winrt::hresult_out_of_bounds**](/uwp/cpp-ref-for-winrt/error-handling/hresult-out-of-bounds) | **winrt::hresult_error** | E_BOUNDS |
+| [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/error-handling/hresult-wrong-thread) | **winrt::hresult_error** | RPC_E_WRONG_THREAD |
 
-Beachten Sie, dass jede Klasse (über die **hresult_error** -Basisklasse) eine [**to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresulterrortoabi-function)-Funktion bereitstellt, die das HRESULT für den Fehler zurückgibt, sowie eine [**message**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresulterrormessage-function)-Funktion, die die Darstellung der Zeichenfolge dieses HRESULT zurückgibt.
+Beachten Sie, dass jede Klasse (über die **hresult_error** -Basisklasse) eine [**to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function)-Funktion bereitstellt, die das HRESULT für den Fehler zurückgibt, sowie eine [**message**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function)-Funktion, die die Darstellung der Zeichenfolge dieses HRESULT zurückgibt.
 
 Hier ist ein Beispiel für das Auslösen einer Ausnahme in C++/CX.
 
@@ -365,7 +365,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 ### <a name="port-platformstring-to-winrthstring"></a>Port **Platform:: String\^**  zu **winrt::hstring**
 **Platform:: String\^**  ist gleichbedeutend mit der Windows-Runtime-HSTRING-ABI-Typ. Für C++/WinRT ist die Entsprechung [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Mit C++/WinRT können Sie aber Windows-Runtime-APIs mit Standard-C++ Wide-String-Typen wie **std::wstring** aufrufen und/oder Wide-String-Literale. Weitere Informationen und Codebeispiele finden Sie unter [String-Verarbeitung in C++/WinRT](strings.md).
 
-Mit C++ / CX können Sie erreichen die [ **Platform::String::Data** ](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) Eigenschaft zum Abrufen der Zeichenfolge wie eine C-Stil **const Wchar_t\***  Array (z. B. übergeben Damit **std::wcout**).
+Mit C++/CX können Sie erreichen die [ **Platform::String::Data** ](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) Eigenschaft zum Abrufen der Zeichenfolge wie eine C-Stil **const Wchar_t\***  (z. B. array Sie übergeben **std::wcout**).
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };

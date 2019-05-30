@@ -1,16 +1,16 @@
 ---
 description: Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit C++/WinRT.
 title: Häufig gestellte Fragen zu C++/WinRT
-ms.date: 10/26/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, häufig, gestellte, fragen, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 70aedf4034ce433b0aa529375799cf45a18ca3e0
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 7ac7f8e46974b7c12b42f6d6f94052e61902b240
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291888"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360253"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Häufig gestellte Fragen zu C++/WinRT
 Antworten auf Fragen, die Sie wahrscheinlich zur Erstellung und Nutzung von Windows-Runtime-APIs mit können [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -21,8 +21,11 @@ Antworten auf Fragen, die Sie wahrscheinlich zur Erstellung und Nutzung von Wind
 ## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>Wie ich neuausrichtung Meine C + c++ / WinRT-Projekt auf eine neuere Version des Windows SDK?
 Finden Sie unter [wie neu ausrichten, Ihrem C + c++ / WinRT-Projekt auf eine neuere Version des Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
+## <a name="why-wont-my-new-project-compile-now-that-ive-moved-to-cwinrt-20"></a>Warum nicht Mein neue Projekt kompiliert, nun, dass ich in verschoben haben C++WinRT 2.0?
+Den vollständigen Satz von Änderungen (z. B. wichtige Änderungen) werden soll, finden Sie unter [Neuigkeiten und Änderungen in C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). Z. B. für coroutineunterstützung (einschließlich Coroutine Hilfsprogrammen wie z. B. **winrt::resume_background**, **winrt::resume_foreground**, und **winrt::resume_on_signal** ), müssen Sie `#include <winrt/coroutine.h>`. Wenn Sie eine bereichsbasierte verwenden `for` für eine Windows-Runtime-Sammlung werden jetzt müssen Sie `#include <winrt/Windows.Foundation.Collections.h>`.
+
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Warum kompiliert nicht Mein neue Projekt? Ich verwende Visual Studio 2017 (Version 15.8.0 oder höher), und von SDK Version 17134
-Bei Verwendung von Visual Studio 2017 (Version 15.8.0 oder höher), und auf dem Windows SDK, Version 10.0.17134.0 (Windows 10, Version 1803), klicken Sie dann einen neu erstellten C++/WinRT-Projekt kann nicht mit dem Fehler kompiliert "*Fehler C3861 aus:"From_abi": Bezeichner wurde nicht gefunden*", und klicken Sie mit anderen Fehlern, die aus *base.h*. Die Lösung besteht darin, entweder Ziel einer höheren (genauer) Version des Windows SDK oder Set-Projekteigenschaft **C/C++-** > **Sprache** > **Konformitätsmodus: Nicht** (auch wenn **/ PERMISSIVE--** wird in den Projekteigenschaften **C/C++-** > **Befehlszeile** unter **zusätzliche Optionen** , löschen Sie sie).
+Bei Verwendung von Visual Studio 2017 (Version 15.8.0 oder höher), und auf dem Windows SDK, Version 10.0.17134.0 (Windows 10, Version 1803), klicken Sie dann einen neu erstellten C++/WinRT-Projekt kann nicht mit dem Fehler kompiliert "*Fehler C3861 aus:"From_abi": Bezeichner wurde nicht gefunden*", und klicken Sie mit anderen Fehlern, die aus *base.h*. Die Lösung besteht darin, entweder Ziel einer höheren (genauer) Version des Windows SDK oder Set-Projekteigenschaft **C/C++-**  > **Sprache** > **Konformitätsmodus: Nicht** (auch wenn **/ PERMISSIVE--** wird in den Projekteigenschaften **C/C++-**  > **Befehlszeile** unter **zusätzliche Optionen** , löschen Sie sie).
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>Wie löse ich den Buildfehler "C++ / WinRT VSIX nicht mehr Build-projektunterstützung bereitstellt.  Sie fügen einen Projektverweis auf die Microsoft.Windows.CppWinRT Nuget-Paket"?
 Installieren Sie die **Microsoft.Windows.CppWinRT** NuGet-Paket in Ihr Projekt. Weitere Informationen finden Sie unter [frühere Versionen der Erweiterung VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
@@ -44,7 +47,7 @@ Nur wenn die Laufzeitklasse so konzipiert ist, dass sie von außerhalb ihrer imp
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>Warum wird der Linker stellt mir so eine "LNK2019: Nicht aufgelöstes externes Symbol"Fehler?
 Wenn es sich bei dem nicht aufgelösten Symbol um eine API aus den Windows-Namespace-Headern für die C++/WinRT-Projektion (im **Winrt**-Namespace) handelt, ist die API in einem Header forward-deklariert, den Sie eingeschlossen haben, ihre Definition befindet sich aber in einem Header, der noch nicht hinzugefügt wurde. Binden Sie den Header ein, der für den Namespace der API benannt ist, und führen Sie eine erneute Erstellung durch. Weitere Informationen finden Sie unter [C++/WinRT-Projektionsheader](consume-apis.md#cwinrt-projection-headers).
 
-Wenn das Symbol nicht aufgelöste eine kostenlose Windows-Runtime-Funktion, z. B. [RoInitialize](https://msdn.microsoft.com/library/br224650), müssen Sie zum expliziten Verknüpfen der [WindowsApp.lib](/uwp/win32-and-com/win32-apis) Schirm-Bibliothek in Ihrem Projekt. Die C++/WinRT-Projektion hängt von einigen dieser freien (Nicht-Mitglieds)-Funktionen und Einstiegspunkten ab. Wenn Sie eine der [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)-Projektvorlagen für Ihre Anwendung verwenden, wird `WindowsApp.lib` automatisch für Sie verknüpft. Andernfalls können Sie die Projektlinkeinstellungen verwenden, um sie einzuschließen, oder dies im Quellcode erledigen.
+Wenn das Symbol nicht aufgelöste eine kostenlose Windows-Runtime-Funktion, z. B. [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize), müssen Sie zum expliziten Verknüpfen der [WindowsApp.lib](/uwp/win32-and-com/win32-apis) Schirm-Bibliothek in Ihrem Projekt. Die C++/WinRT-Projektion hängt von einigen dieser freien (Nicht-Mitglieds)-Funktionen und Einstiegspunkten ab. Wenn Sie eine der [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)-Projektvorlagen für Ihre Anwendung verwenden, wird `WindowsApp.lib` automatisch für Sie verknüpft. Andernfalls können Sie die Projektlinkeinstellungen verwenden, um sie einzuschließen, oder dies im Quellcode erledigen.
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")

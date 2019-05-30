@@ -5,18 +5,18 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592955"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361230"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen eigener Stile
 
 In diesem Lernprogramm wird das Anpassen der Benutzeroberfläche unserer XAML-App veranschaulicht. Warnung: in diesem Lernprogramm kann möglicherweise ein Einhorn auftauchen. (Stimmt!)  
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 * [Visual Studio 2017 und das Windows 10 SDK (10.0.15063.468 oder höher)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>Teil 0: Code abrufen
@@ -25,7 +25,7 @@ Der Ausgangspunkt für diese Übung befindet sich im PhotoLab-Beispielrepository
 Die PhotoLab-App besteht aus zwei Hauptseiten:
 
 **MainPage.xaml:** zeigt eine Ansicht der Foto-Galerie, zusammen mit einigen Informationen über jede Bilddatei an.
-!["MainPage"](../basics/images/xaml-basics/mainpage.png)
+![MainPage](../basics/images/xaml-basics/mainpage.png)
 
 **DetailPage.xaml:** zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
@@ -60,7 +60,8 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen 
 
     Der [Windows.XAML.Ui.Shapes Namespace](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) enthält sieben Formen zur Auswahl. Es gibt eine Ellipse, ein Rechteck, und einen „Pfad”, der jede Form zeichnen kann – sogar ein Einhorn! 
     
-    <!-- TODO reduce size --> ![Eines Einhorns](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size -->
+    ![Eines Einhorns](../basics/images/xaml-basics/unicorn.png)
     
     > **Weitere Informationen finden sie ein:** Die [Zeichnen von Formen](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) Artikel erfahren Sie alles, was Sie XAML-Formen kennen müssen. 
     
@@ -87,7 +88,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen 
         Minimum="-2"
         Maximum="2" />
     ```
-    **Nach dem**
+    **After**
     ```xaml
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -134,7 +135,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen 
             Minimum="-1"
             Maximum="1" />
     ```
-    **Nach dem**
+    **After**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -179,7 +180,7 @@ Herzlichen Glückwunsch! Sie haben Teil 1 abgeschlossen! Wenn Sie nicht weiterko
 
 Einer der Vorteile der XAML-Stile ist, dass sie die Menge an Code, den Sie schreiben müssen erheblich verringern können und es jetzt viel einfach ist, das Erscheinungsbild Ihrer App zu aktualisieren.
 
-Um einen Stil zu definieren, fügen Sie ein [Stil](https://msdn.microsoft.com/library/windows/apps/br208849)-Element in die [Ressourcen](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources)-Eigenschaft eines Elements ein, das das Steuerelement enthält, das Sie formatieren möchten.  Wenn Sie Ihren Stil der **Page.Resources**-Eigenschaft hinzufügen, werden Ihre Stile für die gesamte Seite zugängig. Wenn Sie Ihren Stil der **Application.Resources**-Eigenschaft in der Datei App.xaml hinzufügen, wird der Stil wird für die gesamte App zugänglich.
+Um einen Stil zu definieren, fügen Sie ein [Stil](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)-Element in die [Ressourcen](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources)-Eigenschaft eines Elements ein, das das Steuerelement enthält, das Sie formatieren möchten.  Wenn Sie Ihren Stil der **Page.Resources**-Eigenschaft hinzufügen, werden Ihre Stile für die gesamte Seite zugängig. Wenn Sie Ihren Stil der **Application.Resources**-Eigenschaft in der Datei App.xaml hinzufügen, wird der Stil wird für die gesamte App zugänglich.
 
 Sie können benannte Stile und allgemeine Stile erstellen. Eine benannte Formatvorlage muss explizit auf bestimmte Steuerelemente angewendet werden. Ein allgemeiner Stil gilt für alle Steuerelemente, die dem angegebenen **TargetType** entsprechen. 
 
@@ -262,7 +263,7 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
         </Grid.Resources>
     ```
 
-    **Nach dem**
+    **After**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -302,7 +303,7 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
             </Style>                            
     ```    
 
-    **Nach dem**
+    **After**
     ```XAML
             <Style TargetType="TextBlock"
                    x:Key="ValueTextBox">
@@ -325,7 +326,7 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```
 
-    **Nach dem**
+    **After**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -337,7 +338,8 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
 
 6. Übersetzen Sie die App, und führen Sie sie aus. Es sollte... gleich aussehen. Allerdings sollten Sie ein Gefühl der Zufriedenheit haben, das sich daraus ergibt, effizienten und leichter zu verwaltenden Code zu schreiben.
 
-<!-- TODO add new start/end points --> Herzlichen Glückwunsch, Sie haben Teil 2 abgeschlossen!
+<!-- TODO add new start/end points -->
+Herzlichen Glückwunsch! Sie haben Teil 2 abgeschlossen!
 
 
 ## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>Teil 3: Verwenden einer Steuerelementvorlage, um einen Schieberegler mit Effekten zu machen.
@@ -646,7 +648,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Grid.RowDefinitions>        
     ```
 
-    **Nach dem**
+    **After**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -691,7 +693,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Polygon>           
     ```
     
-    **Nach dem**
+    **After**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -711,7 +713,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
                     Grid.ColumnSpan="3" />          
     ```
     
-    **Nach dem**
+    **After**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Height="{ThemeResource SliderTrackThemeHeight}"
@@ -750,7 +752,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
             Template="{StaticResource FancySliderControlTemplate}"/>    
     ```
     
-    **Nach dem**
+    **After**
     ```XAML
     <Slider Header="Exposure" 
             Grid.Row="2"  Foreground="Transparent"
@@ -791,7 +793,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
             Maximum="1" />
     ```
     
-    **Nach dem**
+    **After**
     ```XAML
     <Slider Header="Temperature"
             Grid.Row="3" Foreground="Transparent"
@@ -833,7 +835,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
             Maximum="1" />
     ```
     
-    **Nach dem**
+    **After**
     ```XAML
     <Slider Header="Tint"
             Grid.Row="4" Foreground="Transparent"
@@ -858,4 +860,5 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
     
     Wie Sie sehen können, verbessern unsere Updates die Positionierung des Polygons. Jetzt ist das untere Ende des Polygons am unteren Rand der Ziehpunkt des Schiebereglers ausgerichtet.
     
-<!-- TODO correct folder --> Herzlichen Glückwunsch! Sie haben das Lernprogramm abgeschlossen. Wenn Sie nicht weiterkommen oder die endgültige Lösung nicht anzeigen können, finden Sie das fertige Beispiel unter [UWP-App-Beispielrepository](https://github.com/Microsoft/Windows-universal-samples).
+<!-- TODO correct folder -->
+Herzlichen Glückwunsch! Sie haben das Lernprogramm abgeschlossen. Wenn Sie nicht weiterkommen oder die endgültige Lösung nicht anzeigen können, finden Sie das fertige Beispiel unter [UWP-App-Beispielrepository](https://github.com/Microsoft/Windows-universal-samples).

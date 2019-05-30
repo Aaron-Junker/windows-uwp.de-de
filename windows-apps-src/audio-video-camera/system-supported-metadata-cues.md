@@ -6,12 +6,12 @@ ms.date: 04/18/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Metadaten, Marker, Spracherkennung, Kapitel
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b3753e92524e300252930f48433f91e175353c9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 92f8826729bb2374b87267d27b961d74eb72e928
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635855"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360551"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>Vom System unterstützte, zeitbasierte Metadaten-Marker
 Dieser Artikel beschreibt, wie verschiedene Formate zeitbasierter Metadaten genutzt werden, die in Mediendateien oder -streams eingebettet sein können. UWP-Apps können Ereignisse registrieren, die von der Medienpipeline während der Wiedergabe ausgelöst werden, wenn diese Metadaten-Marker erkannt werden. Mithilfe der [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue)-Klasse können Apps eigene, benutzerdefinierte Metadaten-Marker implementieren; dieser Artikel behandelt mehrere Metadatenstandards, die von der Medienpipeline automatisch erkannt werden, z. B.:
@@ -24,7 +24,7 @@ Dieser Artikel beschreibt, wie verschiedene Formate zeitbasierter Metadaten genu
 * Fragmentierte MP4-Emsg-Felder
 
 
-Dieser Artikel setzt die Konzepte des Artikels [Media-Elemente, Wiedergabelisten und Titel](media-playback-with-mediasource.md) fort, liefert Grundlagen für die Arbeit mit den Klassen [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) und [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) sowie allgemeine Richtlinien für die Verwendung zeitgesteuerter Metadaten in Ihrer App.
+Dieser Artikel setzt die Konzepte des Artikels [Media-Elemente, Wiedergabelisten und Titel](media-playback-with-mediasource.md) fort, liefert Grundlagen für die Arbeit mit den Klassen [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) und [**TimedMetadataTrack**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.TimedMetadataTrack) sowie allgemeine Richtlinien für die Verwendung zeitgesteuerter Metadaten in Ihrer App.
 
 Die grundlegenden Implementierungsschritte sind für alle in diesem Artikel beschriebenen zeitgesteuerten Metadatentypen gleich:
 
@@ -172,7 +172,7 @@ Rufen Sie in der **RegisterMetadataHandlerForEmsgCues**-Hilfsmethode eine Instan
 [!code-cs[RegisterMetadataHandlerForEmsgCues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForEmsgCues)]
 
 
-Im Handler für das **CueEntered**-Ereignis übertragen Sie die in der **Cues**-Eigenschaft des [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) enthaltenen Datenmarker auf einen [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Stellen Sie sicher, dass das **DataCue**-Objekt nicht „Null“ lautet. Die Eigenschaften des Emsg-Feldes werden von der Medienpipeline in der [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties)-Sammlung als benutzerdefinierte Eigenschaften des Datenmarker-Objekts bereitgestellt. In diesem Beispiel wird versucht, mehrere verschiedene Eigenschaftswerte mithilfe der **[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)**-Methode zu extrahieren. Wenn diese Methode „Null“ zurückgibt, ist die angeforderte Eigenschaft nicht im Emsg-Feld vorhanden; stattdessen wird ein Standardwert festgelegt.
+Im Handler für das **CueEntered**-Ereignis übertragen Sie die in der **Cues**-Eigenschaft des [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) enthaltenen Datenmarker auf einen [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Stellen Sie sicher, dass das **DataCue**-Objekt nicht „Null“ lautet. Die Eigenschaften des Emsg-Feldes werden von der Medienpipeline in der [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties)-Sammlung als benutzerdefinierte Eigenschaften des Datenmarker-Objekts bereitgestellt. In diesem Beispiel wird versucht, mehrere verschiedene Eigenschaftswerte mithilfe der **[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)** -Methode zu extrahieren. Wenn diese Methode „Null“ zurückgibt, ist die angeforderte Eigenschaft nicht im Emsg-Feld vorhanden; stattdessen wird ein Standardwert festgelegt.
 
 Der nächste Teil des Beispiels zeigt, wie die Wiedergabe einer Anzeige ausgelöst wird, weil die im vorherigen Schritt ermittelte Eigenschaft *Scheme_id_uri* den Wert „urn: scte:scte35:2013:xml” aufweist (siehe [http://dashif.org/identifiers/event-schemes/](https://dashif.org/identifiers/event-schemes/)). Beachten Sie, dass der Standard empfiehlt, das Emsg mehrmals redundant zu senden; dieses Beispiel führt daher eine Liste bereits verarbeiteter Emsg-IDs, damit nur neue Nachrichten verarbeitet werden. Erstellen Sie vor dem Lesen der Markerdaten einen neuen **DataReader** durch den Aufruf [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) und legen Sie durch die [**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding)-Eigenschaft UTF-8 als Codierung fest. In diesem Beispiel wird die Meldungsnutzlast in die Debugausgabe geschrieben. Echte Apps verwenden diese Nutzlastdaten, um die Wiedergabe von Anzeigen zu planen.
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d10dbf52f0ed01d46f9e5cba83cd14d48bfc88d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d4910a514c9fc1f16c29056319043393506a9e2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639175"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366917"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Erstellen eines UWP-Spiels in JavaScript
 
@@ -30,7 +30,7 @@ Um Ihre Anwendung für den Microsoft Store veröffentlichen müssen sie als UWP 
 
 Dieses Projekt wurde mit JavaScript unter Verwendung von Visual Studio erstellt. Mit einigen geringfügigen Änderungen kann es auch auf einer Website gehostet oder an andere Plattformen angepasst werden. 
 
-**Hinweis:** Dies ist keines Spiels (oder bei einem guten!); Es soll veranschaulichen die Verwendung der Bibliothek für JavaScript und eine dritte Partei um eine app auf dem Microsoft Store veröffentlichen.
+**Hinweis**: Dies ist keines Spiels (oder bei einem guten!); Es soll veranschaulichen die Verwendung der Bibliothek für JavaScript und eine dritte Partei um eine app auf dem Microsoft Store veröffentlichen.
 
 
 ## <a name="requirements"></a>Anforderungen
@@ -51,7 +51,7 @@ Die einfachste Möglichkeit ist es, GitHub zu besuchen, auf die grüne Schaltfl�
 
 ![Klonen des Repositorys](images/JS2D_2.png)
 
-Sie können das Projekt auch als Zip-Datei herunterladen oder andere Standardverfahren zum Arbeiten mit [GitHub-Projekten](https://msdn.microsoft.com/en-us/windows/uwp/get-started/get-uwp-app-samples) nutzen.
+Sie können das Projekt auch als Zip-Datei herunterladen oder andere Standardverfahren zum Arbeiten mit [GitHub-Projekten](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples) nutzen.
 
 Nachdem die Projektmappe in Visual Studio geladen wurde, sehen Sie mehrere Dateien, einschließlich:
 
@@ -65,7 +65,7 @@ Drücken Sie **F5** zum Ausführen der App. Daraufhin sollte ein Fenster geöffn
 
 ![Ein ganz normaler Dinosaurier mit einer Ninja-Katze auf seinem Rücken](images/JS2D_3.png)
 
-**Hinweis:** Hat etwas nicht geklappt? Stellen Sie sicher, dass Sie Visual Studio mit Web-Unterstützung installiert haben. Sie können dies überprüfen, indem Sie ein neues Projekt erstellen. Wenn es keine Unterstützung für JavaScript gibt, müssen Sie Visual Studio neu installieren und das Feld *Microsoft Web Developer Tools* aktivieren.
+**Hinweis**: Hat etwas nicht geklappt? Stellen Sie sicher, dass Sie Visual Studio mit Web-Unterstützung installiert haben. Sie können dies überprüfen, indem Sie ein neues Projekt erstellen. Wenn es keine Unterstützung für JavaScript gibt, müssen Sie Visual Studio neu installieren und das Feld *Microsoft Web Developer Tools* aktivieren.
 
 ## <a name="walkthough"></a>Exemplarische Vorgehensweise
 
@@ -177,7 +177,7 @@ Jetzt werden wir die Wolken bewegen. Das Geheimnis für das Bewegen der Wolken �
 
 Dieser Code ruft eine Funktion namens **gameLoop()** mit zwischen 30 und 60 Frames pro Sekunde auf. Die genaue Geschwindigkeit hängt von der Geschwindigkeit Ihres Computers ab.
 
-Suchen Sie nach der **gameLoop()**-Funktion. Unten zum Ende hin sehen Sie eine Funktion namens **animateClouds()**. Bearbeiten Sie sie, damit sie nicht mehr auskommentiert ist.
+Suchen Sie nach der **gameLoop()** -Funktion. Unten zum Ende hin sehen Sie eine Funktion namens **animateClouds()** . Bearbeiten Sie sie, damit sie nicht mehr auskommentiert ist.
 
 ```
     // Move clouds
@@ -204,7 +204,7 @@ Wenn Sie die App jetzt ausführen, sehen Sie, dass sich die Wolken bewegen. Jetz
 
 ### <a name="4-adding-keyboard-and-mouse-input"></a>4. Hinzufügen von Tastatur- und Mauseingaben
 
-Ein Spiel, mit dem Sie nicht interagieren können, ist kein Spiel. Wir müssen dem Spieler also ermöglichen, die Tastatur oder Maus zu verwenden, um eine Aktion auszuführen. In der **loadingComplete()**-Funktion sehen Sie Folgendes. Entfernen Sie die Kommentare.
+Ein Spiel, mit dem Sie nicht interagieren können, ist kein Spiel. Wir müssen dem Spieler also ermöglichen, die Tastatur oder Maus zu verwenden, um eine Aktion auszuführen. In der **loadingComplete()** -Funktion sehen Sie Folgendes. Entfernen Sie die Kommentare.
 
 ```
     // This code will call the method 'keyboardPressed' is the user presses a key.
@@ -216,7 +216,7 @@ Ein Spiel, mit dem Sie nicht interagieren können, ist kein Spiel. Wir müssen d
 
 Wir haben jetzt zwei Funktionen, die aufgerufen werden, wenn der Spieler eine Taste drückt oder mit der Maus klickt. Beide Ereignisse rufen **userDidSomething()** auf, eine Funktion, welche die Gamestate-Variable untersucht, um zu entscheiden, was das Spiel derzeit ausführt und was daher als Nächstes passieren muss.
 
-Gamestate ist ein Entwurfsmuster, das häufig in Spielen verwendet wird. Alles, was passiert, erfolgt in der **gameLoop()**-Funktion, die vom Ticker-Timer aufgerufen wird. Die gameLoop()-Funktion verfolgt, ob das Spiel gespielt wird, das Spiel gerade vorbei ist, das Spiel jetzt begonnen werden kann oder einen anderen vom Autor definierten Zustand hat, und verwendet eine Variable. Diese Zustandsvariable wird in einer Switch-Anweisung getestet und definiert, welche anderen Funktionen aufgerufen werden. Wenn der Zustand auf „Wiedergabe“ festgelegt ist, werden die Funktionen, welche den Dinosaurier springen lassen und die Fässer verschieben, aufgerufen. Wenn der Dinosaurier getötet wird, wird die Gamestate-Variable auf den Zustand „Spiel beendet“ gesetzt und die Meldung „Game over!“ wird angezeigt. Wenn Sie an Spielentwurfsmustern interessiert sind, ist das Buch [Game Programming Patterns](https://gameprogrammingpatterns.com/) sehr hilfreich.
+Gamestate ist ein Entwurfsmuster, das häufig in Spielen verwendet wird. Alles, was passiert, erfolgt in der **gameLoop()** -Funktion, die vom Ticker-Timer aufgerufen wird. Die gameLoop()-Funktion verfolgt, ob das Spiel gespielt wird, das Spiel gerade vorbei ist, das Spiel jetzt begonnen werden kann oder einen anderen vom Autor definierten Zustand hat, und verwendet eine Variable. Diese Zustandsvariable wird in einer Switch-Anweisung getestet und definiert, welche anderen Funktionen aufgerufen werden. Wenn der Zustand auf „Wiedergabe“ festgelegt ist, werden die Funktionen, welche den Dinosaurier springen lassen und die Fässer verschieben, aufgerufen. Wenn der Dinosaurier getötet wird, wird die Gamestate-Variable auf den Zustand „Spiel beendet“ gesetzt und die Meldung „Game over!“ wird angezeigt. Wenn Sie an Spielentwurfsmustern interessiert sind, ist das Buch [Game Programming Patterns](https://gameprogrammingpatterns.com/) sehr hilfreich.
 
 Führen Sie die App erneut aus, anschließend können Sie mit dem Spiel beginnen. Drücken Sie die Leertaste (oder klicken mit der Maus oder tippen auf den Bildschirm), damit etwas passiert. 
 
@@ -261,8 +261,8 @@ Nachdem Sie eine UWP-app verfügen, ist es möglich, die in den Microsoft Store 
 Dazu müssen Sie einige Schritte durchführen.
 
 1. Sie müssen als Windows-Entwickler [registriert](https://developer.microsoft.com/en-us/store/register) sein.
-2. Verwenden Sie die [Prüfliste für App-Übermittlung](https://msdn.microsoft.com/windows/uwp/publish/app-submissions).
-3. Die App muss zur [Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
+2. Verwenden Sie die [Prüfliste für App-Übermittlung](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
+3. Die App muss zur [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
 
 Weitere Informationen finden Sie unter [Veröffentlichen Ihrer UWP-app](https://developer.microsoft.com/en-us/store/publish-apps).
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 82cb45dae1a4b9b1a9db8fabc044edf8157f1eb1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 58d3b59d8fdd1587a0bec8369a78863d0c3d4557
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646335"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66358809"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>Erste Schritte: Aufbau von Visual Studio
 
@@ -44,7 +44,7 @@ Wiederholen Sie den Vorgang für das **TextBlock**-Steuerelement, sodass es wie 
 
 ![Entwerfen der Benutzeroberfläche in Visual Studio](images/ios-to-uwp/vs-add-button-label.png)
 
-Im Gegensatz zu Xcode, wo Layout- und Bindungsinformationen in einer XIB- oder einer Storyboard-Datei gespeichert sind, wird in Visual Studio empfohlen, die zum Speichern dieser Details verwendeten XAML-Dateien in einer umfangreichen, bearbeitbaren, deklarativen XML-ähnlichen Sprache zu bearbeiten. Weitere Informationen zu Extensible Application Markup Language (XAML) finden Sie in der [XAML-Übersicht](https://msdn.microsoft.com/library/windows/apps/mt185595). Alle derzeit im Bereich **Entwurf** angezeigten Inhalte werden im **XAML**-Bereich definiert. Der **XAML**-Bereich ermöglicht bei Bedarf eine genaue Steuerung, und sobald Sie sich eingearbeitet haben, kommen Sie mit dem manuellen Schreiben von Benutzeroberflächencode schnell voran. An dieser Stelle konzentrieren wir uns jedoch ausschließlich auf die Bereiche **Entwurf** und **Eigenschaften**.
+Im Gegensatz zu Xcode, wo Layout- und Bindungsinformationen in einer XIB- oder einer Storyboard-Datei gespeichert sind, wird in Visual Studio empfohlen, die zum Speichern dieser Details verwendeten XAML-Dateien in einer umfangreichen, bearbeitbaren, deklarativen XML-ähnlichen Sprache zu bearbeiten. Weitere Informationen zu Extensible Application Markup Language (XAML) finden Sie in der [XAML-Übersicht](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview). Alle derzeit im Bereich **Entwurf** angezeigten Inhalte werden im **XAML**-Bereich definiert. Der **XAML**-Bereich ermöglicht bei Bedarf eine genaue Steuerung, und sobald Sie sich eingearbeitet haben, kommen Sie mit dem manuellen Schreiben von Benutzeroberflächencode schnell voran. An dieser Stelle konzentrieren wir uns jedoch ausschließlich auf die Bereiche **Entwurf** und **Eigenschaften**.
 
 Ändern wir nun die Schaltflächendetails. Wie Sie nachvollziehen können, muss zum Ändern des Namens der Schaltfläche in Xcode der Wert des Felds **Titel** im Eigenschaftenpanel geändert werden.
 

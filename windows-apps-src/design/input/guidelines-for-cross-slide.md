@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d402bca61fc271b6d1e2e972cca280693f9ce3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36ebabbfd8f7e5f40e31be44d6dc7e4483a199ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658125"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363706"
 ---
 # <a name="guidelines-for-cross-slide"></a>Richtlinien für Querziehen
 
@@ -20,9 +20,9 @@ ms.locfileid: "57658125"
 
 **Wichtige APIs**
 
--   [**CrossSliding**](https://msdn.microsoft.com/library/windows/apps/br241942)
--   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
+-   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
+-   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 Verwenden Sie Querziehen, um Auswahlinteraktionen mit einer Streifbewegung und Ziehinteraktionen (Verschieben) mit einer Ziehbewegung zu unterstützen.
 
@@ -54,7 +54,7 @@ Die folgende Abbildung zeigt, wie der Benutzer ein UI-Element berührt, den Fing
 
 Beachten Sie die folgenden Richtlinien, wenn Sie eine Querziehfunktion in Ihrer App bereitstellen.
 
-Verwenden Sie das Querziehen für Listen oder Auflistungen, bei denen ein Bildlauf nur in eine Richtung möglich ist. Weitere Informationen finden Sie unter [Hinzufügen von ListView-Steuerelementen](https://msdn.microsoft.com/library/windows/apps/hh465382).
+Verwenden Sie das Querziehen für Listen oder Auflistungen, bei denen ein Bildlauf nur in eine Richtung möglich ist. Weitere Informationen finden Sie unter [Hinzufügen von ListView-Steuerelementen](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10)).
 
 **Beachten Sie**  die zeitlich festgelegtes drücken und halten-Interaktion sollte In Fällen, in dem Bereich in zwei Richtungen, z. B. Webbrowser oder e-Readern verschoben werden kann, rufen Sie das Kontextmenü für Objekte wie Bildern und Links verwendet werden.
 

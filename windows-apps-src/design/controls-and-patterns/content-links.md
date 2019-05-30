@@ -10,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648535"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363058"
 ---
 # <a name="content-links-in-text-controls"></a>Links zu Inhalten in Textsteuerelementen
 
@@ -46,7 +46,7 @@ Unterschiede bei der Verwendung, beim Rendering und beim Verhalten werden in den
 
 | Feature   | RichEditBox | Textblock |
 | --------- | ----------- | ---------- |
-| Verwendungszweck | ContentLinkInfo-Instanz | ContentLink-Textelement |
+| Verwendung | ContentLinkInfo-Instanz | ContentLink-Textelement |
 | Cursor | Wird durch den Typ des Links zu Inhalten bestimmt, kann nicht geändert werden | Wird durch die Cursor-Eigenschaft bestimmt, standardmäßig **null** |
 | ToolTip | Nicht gerendert | Zeigt sekundären Text an |
 
@@ -303,7 +303,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> Wenn Sie einen ContentLink in einem Textsteuerelement mit anderen Textelementen in XAML verwenden, platzieren Sie den Inhalt in einem [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx)-Container und wenden das Attribut `xml:space="preserve"` auf den Span-Container an, um die Leerstelle zwischen dem ContentLink und anderen Elementen beizubehalten.
+> Wenn Sie einen ContentLink in einem Textsteuerelement mit anderen Textelementen in XAML verwenden, platzieren Sie den Inhalt in einem [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span)-Container und wenden das Attribut `xml:space="preserve"` auf den Span-Container an, um die Leerstelle zwischen dem ContentLink und anderen Elementen beizubehalten.
 
 ## <a name="examples"></a>Beispiele
 

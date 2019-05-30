@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0e5ba7ddb6ef37b4aa54584602fc890bbabc8998
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608135"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359353"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern
 
@@ -114,7 +114,7 @@ Je nach verwendeten Tools und Workflows bei der Asset-Erstellung und je nachdem,
 
 ## <a name="alternateform"></a>Alternatives Format
 
-Mit dem `alternateform` Qualifizierer können Sie ein alternatives Format einer Ressource für einen speziellen Zweck angeben. Dies wird in der Regel nur von japanischen App-Entwicklern verwendet, um eine Furigana-Zeichenfolge bereitzustellen, für die der Wert `msft-phonetic` reserviert ist (Informationen hierzu finden Sie im Abschnitt "Unterstützung von Furigana für japanische Zeichenfolgen, die sortiert werden können" unter [ Vorbereiten für die Lokalisierung](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)).
+Mit dem `alternateform` Qualifizierer können Sie ein alternatives Format einer Ressource für einen speziellen Zweck angeben. Dies wird in der Regel nur von japanischen App-Entwicklern verwendet, um eine Furigana-Zeichenfolge bereitzustellen, für die der Wert `msft-phonetic` reserviert ist (Informationen hierzu finden Sie im Abschnitt "Unterstützung von Furigana für japanische Zeichenfolgen, die sortiert werden können" unter [ Vorbereiten für die Lokalisierung](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))).
 
 Entweder Ihr Zielsystem oder Ihre App müssen einen Wert bereitstellen, für die `alternateform`-Qualifizierer übereinstimmen müssen. Verwenden Sie das Präfix `msft-` nicht für eigene benutzerdefinierte `alternateform` Qualifiziererwerte.
 
@@ -250,7 +250,7 @@ Weitere Informationen zum Qualifizieren einer Ressource für `scale` und `target
 
 ## <a name="targetsize"></a>TargetSize
 
-Der `targetsize`-Qualifizierer dient in erster Linie zum Angeben von [Dateityp-Zuordnungssymbolen](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh127427) oder [Protokollsymbolen](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bb266530), die im Datei-Explorer angezeigt werden. Der Qualifiziererwert stellt die Seitenlänge eines quadratischen Bilds in unformatierten (physischen) Pixeln dar. Die Ressource, deren Wert den Einstellungseigenschaften im Datei-Explorer entspricht, wird geladen. Andernfalls wird die Ressource mit dem nächsten größten Wert geladen, wenn keine genaue Übereinstimmung vorhanden ist.
+Der `targetsize`-Qualifizierer dient in erster Linie zum Angeben von [Dateityp-Zuordnungssymbolen](https://docs.microsoft.com/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type) oder [Protokollsymbolen](https://docs.microsoft.com/windows/desktop/search/-search-3x-wds-ph-ui-extensions), die im Datei-Explorer angezeigt werden. Der Qualifiziererwert stellt die Seitenlänge eines quadratischen Bilds in unformatierten (physischen) Pixeln dar. Die Ressource, deren Wert den Einstellungseigenschaften im Datei-Explorer entspricht, wird geladen. Andernfalls wird die Ressource mit dem nächsten größten Wert geladen, wenn keine genaue Übereinstimmung vorhanden ist.
 
 Definieren Sie Ressourcen, die verschiedene Größen des `targetsize`-Qualifiziererwerts für das App-Symbol darstellen (`/Assets/Square44x44Logo.png`) auf der Registerkarte für visuelle Ressourcen für die App-Paket-Manifest-Designer.
 
@@ -259,6 +259,21 @@ Weitere Informationen zum Qualifizieren einer Ressource für `scale` und `target
 ## <a name="theme"></a>Design
 
 Der Qualifizierer `theme` wird verwendet, um Ressourcen bereitzustellen, die am besten mit der Standardeinstellung für den App-Modus übereinstimmen oder mit der Überschreibung durch [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme).
+
+
+## <a name="shell-light-theme-and-unplated-resources"></a>Shell Design "hell" und unplated Ressourcen
+Die *Windows 10 aktualisieren ggf. 2019* eingeführt, ein neue "helle" Design für die Windows-Shell. Daher werden eine Anwendungsressourcen, die zuvor auf einen dunklen Hintergrund angezeigt wurden jetzt auf einen hellen Hintergrund angezeigt. Für apps, apps, die bereitgestellt Altform unplated Ressourcen für die Taskleiste und Fenster Switcher (Alt + Tab, Aufgabenansicht usw.), sollten Sie überprüfen, ob sie über einen hellen Hintergrund akzeptable Kontrast verfügen.
+
+### <a name="providing-light-theme-specific-assets"></a>Bereitstellen von spezifischen Datenobjekte aus Design "hell"
+Apps, die eine angepasste Ressource bereitstellen, Shell Design "hell" kann einen neue alternative ressourcenqualifizierer verwenden möchten: `altform-lightunplated`. Dieser Qualifizierer spiegelt den vorhandenen Altform unplated Qualifizierer. 
+
+### <a name="downlevel-considerations"></a>Kompatible Überlegungen
+Apps sollten nicht verwendet werden. die `theme-light` Qualifizierer mit dem `altform-unplated` Qualifizierer. Dadurch wird zu einem unvorhersehbaren Verhalten auf RS5 und frühere Versionen von Windows aufgrund der Möglichkeit Ressourcen werden geladen, für die Taskleiste. In früheren Versionen von Windows kann die Design-Light-Version nicht ordnungsgemäß verwendet werden. Die `altform-lightunplated` Qualifizierer wird dieses Problem vermieden. 
+
+### <a name="compatibility-behavior"></a>Kompatibilität-Verhalten
+Für Abwärtskompatibilität Kompatibilität mit der Windows Logik zum Erkennen von eine monochrome Symbole, und überprüfen Sie enthält, ob sie mit dem gewünschten Hintergrund steht im Gegensatz zu. Wenn das Symbol nicht kontrastanforderungen zu erfüllen, wird Windows einen Kontrast-weiß-Version der Ressource gesucht. Wenn diese nicht verfügbar ist, wird Windows ausweichen auf den mit vergoldeten Kontakten Version des Medienobjekts.
+
+
 
 ## <a name="important-apis"></a>Wichtige APIs
 
@@ -269,7 +284,7 @@ Der Qualifizierer `theme` wird verwendet, um Ressourcen bereitzustellen, die am 
 
 * [Effektive Pixel und Skalierungsfaktor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Ressourcenverwaltungssystem](resource-management-system.md)
-* [Vorbereiten für die Lokalisierung](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [Vorbereiten für die Lokalisierung](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
 * [Erkennen von der Plattform wird Ihrer app auf ausgeführt](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [Familien Geräteübersicht](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [Lokalisieren Sie Ihre UI-Zeichenfolgen](localize-strings-ui-manifest.md)

@@ -6,12 +6,12 @@ keywords: Kontakte, E-Mail, Senden
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 524e1f12c3da0d9d06e73d84e08e2d54efde9a7e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626485"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361218"
 ---
 # <a name="send-email"></a>Senden von E-Mails
 
@@ -25,7 +25,7 @@ Hier erfahren Sie, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten, da
 
 ## <a name="launch-the-compose-email-dialog"></a>Starten des Dialogfelds zum Verfassen einer E-Mail
 
-Erstellen Sie ein neues [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270)-Objekt, und legen Sie die Daten fest, die im Dialogfeld zum Verfassen einer E-Mail bereits vorhanden sein sollen. Rufen Sie [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) auf, um das Dialogfeld anzuzeigen.
+Erstellen Sie ein neues [**EmailMessage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email.EmailMessage)-Objekt, und legen Sie die Daten fest, die im Dialogfeld zum Verfassen einer E-Mail bereits vorhanden sein sollen. Rufen Sie [**ShowComposeNewEmailAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync) auf, um das Dialogfeld anzuzeigen.
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -51,12 +51,12 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 ## <a name="summary-and-next-steps"></a>Zusammenfassung und nächste Schritte
 
-In diesem Thema haben Sie erfahren, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten. Informationen zum Auswählen von Kontakten als E-Mail-Empfänger finden Sie unter [Auswählen von Kontakten](selecting-contacts.md). Informationen zum Auswählen einer Datei als E-Mail-Anlage finden Sie unter [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275).
+In diesem Thema haben Sie erfahren, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten. Informationen zum Auswählen von Kontakten als E-Mail-Empfänger finden Sie unter [Auswählen von Kontakten](selecting-contacts.md). Informationen zum Auswählen einer Datei als E-Mail-Anlage finden Sie unter [**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync).
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kontakte auswählen](selecting-contacts.md)
-* [Wie Sie Ihre Windows Phone-app weiterhin nach dem Aufruf von eine Dateiauswahl](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [Wie Sie Ihre Windows Phone-app weiterhin nach dem Aufruf von eine Dateiauswahl](https://docs.microsoft.com/previous-versions/windows/apps/dn614994(v=win.10))
  
 
  

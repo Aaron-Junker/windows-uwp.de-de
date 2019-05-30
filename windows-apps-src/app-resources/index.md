@@ -7,12 +7,12 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: a5af904c099b92e399f169221cae3122f358be19
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f40a68b6e07a90bcb1ce1d646bdfc0dfb4553495
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582487"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359421"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>App-Ressourcen und das Ressourcenverwaltungssystem
 
@@ -36,7 +36,7 @@ Weitere Informationen zu einer Werterhöhung Ihrer App durch Lokalisierung finde
 | [URI-Schemas](uri-schemes.md) | Es gibt mehrere URI (Uniform Resource Identifier)-Schemen, die Sie verwenden können, um auf Dateien aus Ihrem App Paket, dem App-Ordner oder der Cloud zu verweisen. Sie können auch ein URI-Schema verwenden, um auf Zeichenfolgen zu verweisen, die von den App-Ressourcendateien (.resw) geladen wurden. |
 | [Angeben der von der App verwendeten Standardressourcen](specify-default-resources-installed.md) | Wenn Ihre App nicht über Ressourcen verfügt, die den speziellen Einstellungen eines Kundengeräts entsprechen, werden die Standardressourcen der App verwendet. In diesem Thema wird erläutert, wie Sie diese Standardressourcen festlegen. |
 | [Integrieren von Ressourcen im App-Paket und nicht in einem Ressourcenpaket](build-resources-into-app-package.md) | Einige Arten von Apps (mehrsprachige Wörterbücher, Übersetzungstools usw.) müssen das Standardverhalten von einem App-Paket überschreiben und Ressourcen im App-Paket und nicht in separaten Ressourcenpaketen integrieren. In diesem Thema wird erläutert, wie das geht. |
-| [APIs für die Paketressourcenindizierung (PRI) und benutzerdefinierte Buildsysteme](pri-apis-custom-build-systems.md) | Mit den [APIs für die Paketressourcenindizierung (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690) können Sie ein benutzerdefiniertes Buildsystem für die Ressourcen Ihrer UWP-App entwickeln. Das Buildsystem kann Indexdateien der Paketressource (PRI) erstellen, versionieren und per Dump sichern (als XML), und zwar für jedes Maß an Komplexität, das Ihre UWP-App benötigt. |
+| [APIs für die Paketressourcenindizierung (PRI) und benutzerdefinierte Buildsysteme](pri-apis-custom-build-systems.md) | Mit den [APIs für die Paketressourcenindizierung (PRI)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) können Sie ein benutzerdefiniertes Buildsystem für die Ressourcen Ihrer UWP-App entwickeln. Das Buildsystem kann Indexdateien der Paketressource (PRI) erstellen, versionieren und per Dump sichern (als XML), und zwar für jedes Maß an Komplexität, das Ihre UWP-App benötigt. |
 | [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](compile-resources-manually-with-makepri.md) | „MakePri.exe“ ist ein Befehlszeilentool, mit dem Sie PRI-Dateien erstellen und sichern können. Es ist über MSBuild in Microsoft Visual Studio integriert, kann aber auch für Entwickler von Nutzen sein, die Pakete manuell oder mithilfe benutzerdefinierter Buildsysteme erstellen. |
 | [Verwenden des Ressourcenverwaltungssystems für Windows 10 in älteren Apps oder Spielen](using-mrt-for-converted-desktop-apps-and-games.md) | Indem Sie Ihre .NET- oder Win32-App oder Ihr Spiel als AppX-Paket verpacken, können Sie das Ressourcenverwaltungssystem nutzen, um App-Ressourcen zu laden, die auf den Laufzeitkontext zugeschnitten sind. In diesem Thema werden die Techniken detailliert beschrieben. |
 

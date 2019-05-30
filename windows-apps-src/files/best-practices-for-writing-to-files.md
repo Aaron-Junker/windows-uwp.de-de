@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334898"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369511"
 ---
 # <a name="best-practices-for-writing-to-files"></a>Bewährte Methoden zum Schreiben in Dateien
 
@@ -41,7 +41,7 @@ Die **schreiben** Methoden der [ **FileIO** ](https://docs.microsoft.com/uwp/api
 
 Ein [ **"storagefile"** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) Objekt ist kein Dateihandle, wie das systemeigene Win32-Programmiermodell. Stattdessen eine [ **"storagefile"** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) ist eine Darstellung einer Datei mit den Methoden, um den Inhalt zu bearbeiten.
 
-Dieses Konzept zu verstehen ist nützlich, beim Durchführen von e/as mit einem **"storagefile"**. Z. B. die [Schreiben in eine Datei](quickstart-reading-and-writing-files.md#writing-to-a-file) Abschnitt werden drei Möglichkeiten, die in eine Datei schreiben:
+Dieses Konzept zu verstehen ist nützlich, beim Durchführen von e/as mit einem **"storagefile"** . Z. B. die [Schreiben in eine Datei](quickstart-reading-and-writing-files.md#writing-to-a-file) Abschnitt werden drei Möglichkeiten, die in eine Datei schreiben:
 
 * Mithilfe der [ **FileIO.WriteTextAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync) Methode.
 * Durch Erstellen eines Puffers und dem anschließenden Aufrufen der [ **FileIO.WriteBufferAsync** ](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync) Methode.
@@ -192,7 +192,7 @@ else
 
 ### <a name="synchronize-access-to-the-file"></a>Synchronisieren des Zugriffs auf die Datei
 
-Die [zur parallelen Programmierung mit .NET Blog](https://blogs.msdn.microsoft.com/pfxteam/) ist eine großartige Quelle für Anleitungen zur parallelen Programmierung. Insbesondere die [Posten Sie über AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) beschreibt, wie Sie exklusiven Zugriff auf eine Datei als Schreibvorgängen, während gleichzeitig der Lesezugriff ermöglichen zu gewährleisten. Bedenken Sie, dass das Serialisieren, die sich auf die e/a auswirken Leistung.
+Die [zur parallelen Programmierung mit .NET Blog](https://devblogs.microsoft.com/pfxteam/) ist eine großartige Quelle für Anleitungen zur parallelen Programmierung. Insbesondere die [Posten Sie über AsyncReaderWriterLock](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) beschreibt, wie Sie exklusiven Zugriff auf eine Datei als Schreibvorgängen, während gleichzeitig der Lesezugriff ermöglichen zu gewährleisten. Bedenken Sie, dass das Serialisieren, die sich auf die e/a auswirken Leistung.
 
 ## <a name="see-also"></a>Siehe auch
 

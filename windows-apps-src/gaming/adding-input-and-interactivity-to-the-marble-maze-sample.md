@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Eingabe, Beispiel
 ms.localizationpriority: medium
-ms.openlocfilehash: d545f696a93bfa8416e1a772ecc015867a3615c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8daada2424dfc7a1bbe0a227449911f1fbb3b34d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611815"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369181"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Hinzufügen von Eingaben und Interaktivität zum Marble Maze-Beispiel
 
@@ -28,7 +28,7 @@ Hier sind einige der wichtigsten in diesem Dokument erörterten Punkte für das 
 
 -   Unterstützen Sie nach Möglichkeit mehrere Eingabegeräte, damit die Kunden Ihr Spiel ganz nach ihren persönlichen Vorlieben und Fähigkeiten spielen können. Die Verwendung eines Gamecontrollers und Sensors ist zwar optional, wird aber dringend empfohlen, um die Benutzerfreundlichkeit für die Spieler zu erhöhen. Die APIs für Gamecontroller und Sensoren soll Ihnen die Integration dieser Eingabegeräte erleichtern.
 
--   Zum Initialisieren der Toucheingabe müssen Sie sich für Windows-Ereignisse registrieren, beispielsweise für das Aktivieren, Freigeben und Verschieben des Zeigers. Zum Initialisieren des Beschleunigungsmessers erstellen Sie ein [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687)-Objekt, wenn Sie die Anwendung initialisieren. Der Xbox-Controller muss nicht initialisiert werden.
+-   Zum Initialisieren der Toucheingabe müssen Sie sich für Windows-Ereignisse registrieren, beispielsweise für das Aktivieren, Freigeben und Verschieben des Zeigers. Zum Initialisieren des Beschleunigungsmessers erstellen Sie ein [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)-Objekt, wenn Sie die Anwendung initialisieren. Der Xbox-Controller muss nicht initialisiert werden.
 
 -   Überlegen Sie bei Spielen für einen Spieler, ob Sie die Eingaben aller möglichen Xbox-Controller kombinieren möchten. Auf diese Weise müssen Sie nicht nachverfolgen, welche Eingabe von welchem Controller kommt. Oder verfolgen Sie einfach die Eingaben vom zuletzt hinzugefügten Controller nach, wie in diesem Beispiel dargestellt.
 
@@ -56,7 +56,7 @@ Marble Maze unterstützt Xbox-Controller, Maus und Toucheingabe zum Auswählen v
 ## <a name="initializing-input-devices"></a>Initialisieren von Eingabegeräten
 
 
-Der Xbox-Controller muss nicht initialisiert werden. Zum Initialisieren der Toucheingabe müssen Sie sich für Windows-Ereignisse registrieren, beispielsweise für das Aktivieren (z. B. wenn der Benutzer die Maustaste drückt oder den Bildschirm berührt), Freigeben und Verschieben des Zeigers. Zum Initialisieren des Beschleunigungsmessers müssen Sie ein [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687)-Objekt erstellen, wenn Sie die Anwendung initialisieren.
+Der Xbox-Controller muss nicht initialisiert werden. Zum Initialisieren der Toucheingabe müssen Sie sich für Windows-Ereignisse registrieren, beispielsweise für das Aktivieren (z. B. wenn der Benutzer die Maustaste drückt oder den Bildschirm berührt), Freigeben und Verschieben des Zeigers. Zum Initialisieren des Beschleunigungsmessers müssen Sie ein [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)-Objekt erstellen, wenn Sie die Anwendung initialisieren.
 
 Im folgenden Beispiel wird dargestellt, wie die **App::SetWindow**-Methode für die Zeigerereignisse [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerPressed) und [Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerReleased) des [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerMoved)-Elements registriert wird. Diese Ereignisse werden bei der Initialisierung der App und vor der Spielschleife registriert.
 
@@ -490,7 +490,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin();
 
 ### <a name="processing-accelerometer-input"></a>Verarbeiten von Beschleunigungsmessereingaben
 
-Zur Verarbeitung von Beschleunigungsmessereingaben ruft die **MarbleMazeMain::Update**-Methode die [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://msdn.microsoft.com/library/windows/apps/br225699)-Methode auf. Diese Methode gibt ein [Windows::Devices::Sensors::AccelerometerReading](https://msdn.microsoft.com/library/windows/apps/br225688)-Objekt zurück, das die Ablesung eines Beschleunigungsmessers darstellt. Die Eigenschaften **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** und **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** enthalten die Schwerkraftbeschleunigung entlang der X-Achse bzw. der Y-Achse.
+Zur Verarbeitung von Beschleunigungsmessereingaben ruft die **MarbleMazeMain::Update**-Methode die [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer.getcurrentreading)-Methode auf. Diese Methode gibt ein [Windows::Devices::Sensors::AccelerometerReading](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.AccelerometerReading)-Objekt zurück, das die Ablesung eines Beschleunigungsmessers darstellt. Die Eigenschaften **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** und **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** enthalten die Schwerkraftbeschleunigung entlang der X-Achse bzw. der Y-Achse.
 
 Das folgende Beispiel zeigt, wie die **MarbleMazeMain::Update**-Methode den Beschleunigungsmesser abruft und die kombinierten Eingabewerte aktualisiert. Wenn Sie das Gerät neigen, bewegt sich die Murmel aufgrund der Schwerkraft schneller.
 
@@ -548,7 +548,7 @@ Geräte melden Eingabewerte auf unterschiedliche Weise. So wird eine Zeigereinga
 
  
 
-Nachdem die **MarbleMazeMain::Update**-Methode die Eingabe verarbeitet hat, erstellt sie einen Vektor, der die Auswirkung der Neigung des Labyrinths auf die Murmel darstellt. Das folgende Beispiel zeigt, wie Marble Maze mit der [XMVector3Normalize](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.geometric.xmvector3normalize)-Funktion einen normalisierten Schwerkraftvektor erstellt. Die **maxTilt**-Variable schränkt die Neigung des Labyrinths ein und verhindert, dass das Labyrinth auf die Seite gekippt wird.
+Nachdem die **MarbleMazeMain::Update**-Methode die Eingabe verarbeitet hat, erstellt sie einen Vektor, der die Auswirkung der Neigung des Labyrinths auf die Murmel darstellt. Das folgende Beispiel zeigt, wie Marble Maze mit der [XMVector3Normalize](https://docs.microsoft.com/windows/desktop/api/directxmath/nf-directxmath-xmvector3normalize)-Funktion einen normalisierten Schwerkraftvektor erstellt. Die **maxTilt**-Variable schränkt die Neigung des Labyrinths ein und verhindert, dass das Labyrinth auf die Seite gekippt wird.
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;

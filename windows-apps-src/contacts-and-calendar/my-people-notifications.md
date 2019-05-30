@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
-ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
+ms.openlocfilehash: d4150e7296badd3d31a9aacc7becd3d849f6affd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535192"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360420"
 ---
 # <a name="my-people-notifications"></a>Meine Kontakte – Benachrichtigungen
 
@@ -68,11 +68,11 @@ Die Image-Knoten in der Bindung sollten die folgenden Parameter enthalten:
 Darüber hinaus muss der Knoten der obersten Ebene Popups **hint-people**-Parameter enthalten, um den Absender-Kontakt anzugeben. Dieser Parameter kann folgende Werte haben:
 
 + **E-Mail-Adresse** 
-    + z. B. ` mailto:johndoe@mydomain.com `
+    + Beispiel: ` mailto:johndoe@mydomain.com `
 + **Telefonnummer** 
-    + z. B. Tel:888-888-8888
+    + Beispiel: Tel:888-888-8888
 + **Remote-ID** 
-    + z. B. remoteid:1234
+    + Beispiel: remoteid:1234
 
 > [!NOTE]
 > Falls Ihre App die [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) verwendet und auf dem Smartphone gespeicherte Kontakte mithilfe der [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId)-Eigenschaft mit remote gespeicherten Kontakten verknüpft, muss der Wert für die RemoteId-Eigenschaft unbedingt stabil und eindeutig sein. Die Remote-ID muss also durchweg ein einzelnes Benutzerkonto identifizieren und ein eindeutiges Tag enthalten, um zu verhindern, dass sich Konflikte mit den Remote-IDs anderer Kontakte auf dem PC ergeben. Hierzu zählen auch Kontakte von anderen Apps.
@@ -126,7 +126,7 @@ Wenn Sie die Benachrichtigung starten, sollte sie wie folgt aussehen:
 ![Benachrichtigung als Spritesheet](images/pizza-notification-small.gif)
 
 ## <a name="starting-the-notification"></a>Starten der Benachrichtigung
-Um eine Benachrichtigung für „Meine Kontakte” zu starten, müssen wir die Popup-Vorlage in ein [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx)-Objekt konvertieren. Falls Sie das Popup in einer XML-Datei (hier „content.xml“ genannt) definiert haben, verwenden Sie diesen Code zum Starten verwenden:
+Um eine Benachrichtigung für „Meine Kontakte” zu starten, müssen wir die Popup-Vorlage in ein [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument)-Objekt konvertieren. Falls Sie das Popup in einer XML-Datei (hier „content.xml“ genannt) definiert haben, verwenden Sie diesen Code zum Starten verwenden:
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiel, DirectX, laden, rastern, Gitter, Bitmap, 2D, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: afd08d62182bd0980f43ce1c4578c1181f8a6d2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 942a775fca262903b1ee72831b4eae6612d25786
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613745"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368864"
 ---
 # <a name="fundamentals-of-directx-programming"></a>Grundlagen der DirectX-Programmierung
 
@@ -42,7 +42,7 @@ Das Thema „Laden von Ressourcen im DirectX-Spiel” führt Sie durch die grund
 <td align="left"><p>Erstellen von 2D-Grafiken mit DirectX</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D-Graphics-Leitfaden</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D-Graphics-Leitfaden</a></p></td>
 <td align="left"><p>Machen Sie sich mit den Direct3D-Grafikkonzepten vertraut.</p></td>
 </tr>
 <tr class="odd">

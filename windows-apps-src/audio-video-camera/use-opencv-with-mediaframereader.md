@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: d72a8d3fcaf337973f585ab19370140cd80f3826
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5aee0ed5969d87cd5a9d8ef7a621b383d4078d38
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640175"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360587"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Verwenden Sie die Open Source Computer Vision-Bibliothek (OpenCV) mit MediaFrameReader
 
-In diesem Artikel wird erläutert, wie Sie die Open Source Computer Vision-Bibliothek (OpenCV), eine systemeigene Code-Bibliothek, die eine Vielzahl von Algorithmen für die Bildverarbeitung bietet, mit der [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader)-Klasse verwenden, die Medien aus mehreren Quellen gleichzeitig lesen kann. Der Beispielcode in diesem Artikel führt Sie durch die Erstellung einer einfachen App, die Frames von einem Farbsensor erhält, jede Frame mithilfe der OpenCV-Bibliothek verwischt und dann das verarbeitete Bild in einem XAML-**Image** Steuerelement anzeigt. 
+In diesem Artikel wird erläutert, wie Sie die Open Source Computer Vision-Bibliothek (OpenCV), eine systemeigene Code-Bibliothek, die eine Vielzahl von Algorithmen für die Bildverarbeitung bietet, mit der [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader)-Klasse verwenden, die Medien aus mehreren Quellen gleichzeitig lesen kann. Der Beispielcode in diesem Artikel führt Sie durch die Erstellung einer einfachen App, die Frames von einem Farbsensor erhält, jede Frame mithilfe der OpenCV-Bibliothek verwischt und dann das verarbeitete Bild in einem XAML-**Image** Steuerelement anzeigt. 
 
 >[!NOTE]
 >OpenCV.Win.Core und OpenCV.Win. ImgProc werden nicht regelmäßig aktualisiert, werden jedoch weiterhin für das Erstellen von OpenCVHelper empfohlen, wie auf dieser Seite beschrieben.
@@ -35,7 +35,7 @@ Informationen zum Einstieg schnell entwickeln, können Sie die OpenCV-Bibliothek
 Führen Sie die Schritte unter [Verarbeiten von Softwarebitmaps mit OpenCV](process-software-bitmaps-with-opencv.md) durch, um die OpenCV Helferkomponente für Windows-Runtime zu erstellen und der UWP-App-Lösung einen Verweis auf das Komponentenprojekt hinzuzufügen.
 
 ## <a name="find-available-frame-source-groups"></a>Suchen nach verfügbaren Framequellgruppen
-Zunächst müssen Sie eine Framequellgruppe von Medien finden, aus der die Medienframes abgerufen werden. Erhalten Sie die Liste der verfügbaren Gruppen auf dem aktuellen Gerät durch Aufrufen von **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)**. Wählen Sie anschließend die Quellgruppen aus, die die für Ihr App-Szenario erforderlichen Sensortypen enthalten. In diesem Beispiel benötigen wir lediglich eine Quellgruppe, die Frames von einer RGB-Kamera bereitstellt.
+Zunächst müssen Sie eine Framequellgruppe von Medien finden, aus der die Medienframes abgerufen werden. Erhalten Sie die Liste der verfügbaren Gruppen auf dem aktuellen Gerät durch Aufrufen von **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)** . Wählen Sie anschließend die Quellgruppen aus, die die für Ihr App-Szenario erforderlichen Sensortypen enthalten. In diesem Beispiel benötigen wir lediglich eine Quellgruppe, die Frames von einer RGB-Kamera bereitstellt.
 
 [!code-cs[OpenCVFrameSourceGroups](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameSourceGroups)]
 
@@ -45,14 +45,14 @@ Initialisieren Sie anschließend das **MediaCapture**-Objekt durch Festlegen der
 > [!NOTE] 
 > Die Technik, die von der OpenCV-Helferkomponente verwendet wird und die in [Verarbeiten von Softwarebitmaps mit OpenCV](process-software-bitmaps-with-opencv.md) ausführlich beschrieben ist, erfordert, dass sich die Bilddaten im CPU-Speicher und nicht im GPU-Speicher befinden. Sie sollten daher **MemoryPreference.CPU** für die **[MemoryPreference](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.MemoryPreference)** im Feld der **MediaCaptureInitializationSettings** angeben.
 
-Nachdem das **MediaCapture**-Objet initialisiert wurde, rufen Sie einen Verweis auf die RGB-Framequelle durch den Zugriff auf die **[MediaCapture.FrameSources](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)**-Eigenschaft auf.
+Nachdem das **MediaCapture**-Objet initialisiert wurde, rufen Sie einen Verweis auf die RGB-Framequelle durch den Zugriff auf die **[MediaCapture.FrameSources](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)** -Eigenschaft auf.
 
 [!code-cs[OpenCVInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVInitMediaCapture)]
 
 ## <a name="initialize-the-mediaframereader"></a>Initialisieren des MediaFrameReader
-Als Nächstes erstellen Sie einen [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) für die RGB-Framequelle, die in den vorherigen Schritten abgerufen wurde. Um eine gute Framerate zu gewährleisten, sollten Sie Frames verarbeiten, die eine niedrigere Auflösung als die Auflösung des Sensors haben. Dieses Beispiel bietet das optionale **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)**-Argument für die **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)**-Methode, um anzufordern, dass die vom Frame-Reader bereitgestellten Frames auf 640 x 480 Pixel geändert werden.
+Als Nächstes erstellen Sie einen [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) für die RGB-Framequelle, die in den vorherigen Schritten abgerufen wurde. Um eine gute Framerate zu gewährleisten, sollten Sie Frames verarbeiten, die eine niedrigere Auflösung als die Auflösung des Sensors haben. Dieses Beispiel bietet das optionale **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)** -Argument für die **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** -Methode, um anzufordern, dass die vom Frame-Reader bereitgestellten Frames auf 640 x 480 Pixel geändert werden.
 
-Nach dem Erstellen des Frame-Readers, registrieren Sie einen Handler für das **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)**-Ereignis. Erstellen Sie anschließend ein neues **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)**-Objekt, das die **FrameRenderer**-Hilfsklasse verwendet, um das verarbeitete Bild darzustellen. Rufen Sie dann den Konstruktor für den **FrameRenderer** auf. Initialisieren Sie die Instanzen der **OpenCVHelper**-Klasse, die in der OpenCVBridge Komponente für Windows-Runtime definiert ist. Diese Hilfsklasse wird im **FrameArrived**-Ereignishandler verwendet, um jeden Frame zu verarbeiten. Starten Sie anschließend die den Framereader durch Aufrufen von **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)**.
+Nach dem Erstellen des Frame-Readers, registrieren Sie einen Handler für das **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)** -Ereignis. Erstellen Sie anschließend ein neues **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)** -Objekt, das die **FrameRenderer**-Hilfsklasse verwendet, um das verarbeitete Bild darzustellen. Rufen Sie dann den Konstruktor für den **FrameRenderer** auf. Initialisieren Sie die Instanzen der **OpenCVHelper**-Klasse, die in der OpenCVBridge Komponente für Windows-Runtime definiert ist. Diese Hilfsklasse wird im **FrameArrived**-Ereignishandler verwendet, um jeden Frame zu verarbeiten. Starten Sie anschließend die den Framereader durch Aufrufen von **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)** .
 
 [!code-cs[OpenCVFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameReader)]
 

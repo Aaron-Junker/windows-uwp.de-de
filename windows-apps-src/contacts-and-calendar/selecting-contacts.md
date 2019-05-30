@@ -6,22 +6,22 @@ keywords: Kontakte, auswählen, einzelnen Kontakt auswählen, mehrere Kontakte a
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c44f05b5d67fe094859ea0eacfb57c0012004d14
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: facad25446dca286ac150e59d0418c2dd8bfc896
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606795"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361273"
 ---
 # <a name="select-contacts"></a>Auswählen von Kontakten
 
 
 
-Mit dem [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002)-Namespace verfügen Sie über mehrere Optionen zum Auswählen von Kontakten. Wir zeigen Ihnen hier, wie Sie einen einzelnen Kontakt oder mehrere Kontakte auswählen und wie Sie die Kontaktauswahl so konfigurieren, dass nur die von der App benötigten Kontaktinformationen abgerufen werden.
+Mit dem [**Windows.ApplicationModel.Contacts**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts)-Namespace verfügen Sie über mehrere Optionen zum Auswählen von Kontakten. Wir zeigen Ihnen hier, wie Sie einen einzelnen Kontakt oder mehrere Kontakte auswählen und wie Sie die Kontaktauswahl so konfigurieren, dass nur die von der App benötigten Kontaktinformationen abgerufen werden.
 
 ## <a name="set-up-the-contact-picker"></a>Einrichten der Kontaktauswahl
 
-Erstellen Sie eine Instanz von [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913), und weisen Sie sie einer Variablen zu.
+Erstellen Sie eine Instanz von [**Windows.ApplicationModel.Contacts.ContactPicker**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactPicker), und weisen Sie sie einer Variablen zu.
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
@@ -29,15 +29,15 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 
 ## <a name="set-the-selection-mode-optional"></a>Festlegen des Auswahlmodus (optional)
 
-Standardmäßig ruft die Kontaktauswahl alle verfügbaren Daten für die von Benutzern ausgewählten Kontakte ab. Mithilfe der [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode)-Eigenschaft können Sie die Kontaktauswahl so konfigurieren, dass nur die von der App benötigten Datenfelder abgerufen werden. Diese effiziente Verwendungsweise der Kontaktauswahl eignet sich besonders dann, wenn Sie nur einen Teil der verfügbaren Kontaktdaten benötigen.
+Standardmäßig ruft die Kontaktauswahl alle verfügbaren Daten für die von Benutzern ausgewählten Kontakte ab. Mithilfe der [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode)-Eigenschaft können Sie die Kontaktauswahl so konfigurieren, dass nur die von der App benötigten Datenfelder abgerufen werden. Diese effiziente Verwendungsweise der Kontaktauswahl eignet sich besonders dann, wenn Sie nur einen Teil der verfügbaren Kontaktdaten benötigen.
 
-Legen Sie zunächst die [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode)-Eigenschaft auf **Fields** fest.
+Legen Sie zunächst die [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode)-Eigenschaft auf **Fields** fest.
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-Geben Sie dann mithilfe der [**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype)-Eigenschaft die Felder an, die von der Kontaktauswahl abgerufen werden sollen. In diesem Beispiel wird die Kontaktauswahl so konfiguriert, dass E-Mail-Adressen abgerufen werden:
+Geben Sie dann mithilfe der [**DesiredFieldsWithContactFieldType**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype)-Eigenschaft die Felder an, die von der Kontaktauswahl abgerufen werden sollen. In diesem Beispiel wird die Kontaktauswahl so konfiguriert, dass E-Mail-Adressen abgerufen werden:
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
@@ -49,7 +49,7 @@ contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Con
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-Verwenden Sie [**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync), wenn der Benutzer mindestens einen Kontakt auswählen soll.
+Verwenden Sie [**PickContactsAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.pickcontactsasync), wenn der Benutzer mindestens einen Kontakt auswählen soll.
 
 ```cs
 public IList<Contact> contacts;
@@ -60,7 +60,7 @@ contacts = await contactPicker.PickContactsAsync();
 
 Überprüfen Sie in der Auswahl, ob der Benutzer Kontakte ausgewählt hat. Wenn ja, verarbeiten Sie die Kontaktinformationen.
 
-Dieses Beispiel zeigt, wie ein einzelner Kontakt verarbeitet wird. Hier wird der Name des Kontakts abgerufen und in ein [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)-Steuerelement namens *OutputName* kopiert.
+Dieses Beispiel zeigt, wie ein einzelner Kontakt verarbeitet wird. Hier wird der Name des Kontakts abgerufen und in ein [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Steuerelement namens *OutputName* kopiert.
 
 ```cs
 if (contact != null)
@@ -167,7 +167,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 
 ## <a name="complete-example-multiple-contacts"></a>Vollständiges Beispiel (mehrere Kontakte)
 
-In diesem Beispiel werden mithilfe der Kontaktauswahl mehrere Kontakte abgerufen und einem [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)-Steuerelement namens `OutputContacts` hinzugefügt.
+In diesem Beispiel werden mithilfe der Kontaktauswahl mehrere Kontakte abgerufen und einem [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)-Steuerelement namens `OutputContacts` hinzugefügt.
 
 ```cs
 MainPage rootPage = MainPage.Current;

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, OpenGL, Direct3D, Puffer, uniform-Variablen, Vertexattribute
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1db1890e47257412a7e2ee8e08c40164d0d927
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d79a4573438aec49d4aa1b828c90e72c04150de
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656245"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368154"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>Vergleichen von OpenGL ES 2.0-Puffern, uniform-Variablen und Vertexattributen mit Direct3D
 
@@ -20,9 +20,9 @@ ms.locfileid: "57656245"
 
 **Wichtige APIs**
 
--   [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
--   [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
--   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
+-   [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)
+-   [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)
+-   [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)
 
 Während des Portierens zu Direct3D 11 aus OpenGL ES 2.0 müssen Sie die Syntax und das API-Verhalten zum Übergeben von Daten zwischen der App und den Shaderprogrammen ändern.
 
@@ -34,9 +34,9 @@ Unten ist die grundlegende Zuordnung angegeben.
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | uniform-Variable                   | Konstantenpufferfeld (**cbuffer**)                                                                                                                                                |
 | Attribut                 | Vertexpufferelement-Feld mit Eingabelayout und Kennzeichnung durch spezielle HLSL-Semantik                                                                                |
-| buffer-Objekt             | Puffer Finden Sie unter [ **D3D11\_SUBRESOURCE\_Daten** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) und [ **D3D11\_Puffer\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092)und ein allzweckdateiserver Puffer-Definitionen. |
-| Framepufferobjekt (Frame Buffer Object, FBO) | Renderziel(e); siehe [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) mit [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)                                       |
-| Hintergrundpuffer               | Swapchain mit „Hintergrundpuffer“-Oberfläche; siehe [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) mit [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) als Anhang                       |
+| buffer-Objekt             | Puffer Finden Sie unter [ **D3D11\_SUBRESOURCE\_Daten** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) und [ **D3D11\_Puffer\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)und ein allzweckdateiserver Puffer-Definitionen. |
+| Framepufferobjekt (Frame Buffer Object, FBO) | Renderziel(e); siehe [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) mit [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)                                       |
+| Hintergrundpuffer               | Swapchain mit „Hintergrundpuffer“-Oberfläche; siehe [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) mit [**IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1) als Anhang                       |
 
  
 
@@ -73,9 +73,9 @@ Weitere Puffer sind Pixelpuffer und Zuordnungen, z. B. Texturen Für die Shader
 
 In Direct3D 11 werden Pufferdatenelemente als „Unterressourcen“ angesehen und können von einzelnen Vertexdatenelementen bis hin zu MIP-Map-Texturen reichen.
 
--   Auffüllen einer [ **D3D11\_SUBRESOURCE\_Daten** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) Struktur mit der Konfiguration für ein Datenelement Puffer.
--   Auffüllen einer [ **D3D11\_Puffer\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) Struktur mit der Größe der einzelnen Elemente in den Puffer als auch der Puffertyp.
--   Aufrufen von [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) mit diesen beiden Strukturen
+-   Auffüllen einer [ **D3D11\_SUBRESOURCE\_Daten** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) Struktur mit der Konfiguration für ein Datenelement Puffer.
+-   Auffüllen einer [ **D3D11\_Puffer\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) Struktur mit der Größe der einzelnen Elemente in den Puffer als auch der Puffertyp.
+-   Aufrufen von [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) mit diesen beiden Strukturen
 
 Direct3D 11: Erstellen und Auffüllen ein Vertexpuffer und eine Index-Puffer.
 
@@ -106,7 +106,7 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-Beschreibbare Pixelpuffer oder Maps, z. B. ein Framepuffer, können als [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)-Objekte erstellt werden. Diese können als Ressourcen an eine [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)- oder [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628)-Schnittstelle gebunden werden und nach dem Zeichnen mit der zugeordneten Swapchain angezeigt oder an einen Shader übergeben werden.
+Beschreibbare Pixelpuffer oder Maps, z. B. ein Framepuffer, können als [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)-Objekte erstellt werden. Diese können als Ressourcen an eine [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)- oder [**ID3D11ShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview)-Schnittstelle gebunden werden und nach dem Zeichnen mit der zugeordneten Swapchain angezeigt oder an einen Shader übergeben werden.
 
 Direct3D 11: Erstellen ein Objekt der Frame-Puffer.
 
@@ -141,13 +141,13 @@ glUniformMatrix4fv(renderer->mvpLoc, 1, GL_FALSE, (GLfloat*) &renderer->mvpMatri
 
 Im GLSL-Code eines Shaders sieht die entsprechende uniform-Deklaration wie folgt aus:
 
-OpenGL ES 2.0: Einheitliche GLSL-Deklaration
+Open GL ES 2.0: Einheitliche GLSL-Deklaration
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
 ```
 
-Unter Direct3D werden uniform-Daten als "Konstantenpuffer" bezeichnet, die – wie uniform-Elemente auch – für die einzelnen Shader bereitgestellte Konstantendaten enthalten. Genauso wie bei uniform-Puffern ist es wichtig, die Konstantenpufferdaten exakt so im Speicher zu verpacken, wie sie vom Shader für die Interpretation erwartet werden. Mit DirectXMath Typen (wie z. B. [ **XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) anstelle von Plattform-Datentypen (z. B. **"float"\***  oder **"float"\[4\]** ) gewährleistet die richtigen datenausrichtung-Element.
+Unter Direct3D werden uniform-Daten als "Konstantenpuffer" bezeichnet, die – wie uniform-Elemente auch – für die einzelnen Shader bereitgestellte Konstantendaten enthalten. Genauso wie bei uniform-Puffern ist es wichtig, die Konstantenpufferdaten exakt so im Speicher zu verpacken, wie sie vom Shader für die Interpretation erwartet werden. Mit DirectXMath Typen (wie z. B. [ **XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4)) anstelle von Plattform-Datentypen (z. B. **"float"\***  oder **"float"\[4\]** ) gewährleistet die richtigen datenausrichtung-Element.
 
 Konstantenpuffer müssen über ein zugeordnetes GPU-Register verfügen, mit dem für die GPU auf diese Daten verwiesen wird. Die Daten werden im Registerbereich so verpackt, wie dies vom Layout des Puffers vorgegeben wird.
 
@@ -224,7 +224,7 @@ attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-Teilweise gilt für Direct3D der gleiche Prozess. Anstelle von Attributen werden Vertexdaten in Eingabepuffern bereitgestellt. Dazu gehören auch Vertexpuffer und die entsprechenden Indexpuffer. Da Direct3D nicht über die "Attributdeklaration" verfügt, müssen Sie ein Eingabelayout angeben. Damit werden die individuelle Komponente der Datenelemente im Vertexpuffer und die HLSL-Semantik deklariert, mit der angegeben wird, wo und wie diese Komponenten vom Vertex-Shader interpretiert werden sollen. Für die HLSL-Semantik ist es erforderlich, die Nutzung der einzelnen Komponenten mit einer speziellen Zeichenfolge zu definieren, über die das Shadermodul über ihren Zweck informiert wird. Beispielsweise werden Vertexpositionsdaten als POSITION, Normalendaten als NORMAL und Vertexfarbdaten als COLOR gekennzeichnet. (Andere Shader-Phasen erfordern auch bestimmte Semantik und diese semantische Bedeutung haben verschiedene Interpretationen basierend auf der Shader-Stufe.) Lesen Sie weitere Informationen zur HLSL-Semantik [portieren Sie Ihre Pipeline Shader](change-your-shader-loading-code.md) und [HLSL-Semantik](https://msdn.microsoft.com/library/windows/desktop/bb205574).
+Teilweise gilt für Direct3D der gleiche Prozess. Anstelle von Attributen werden Vertexdaten in Eingabepuffern bereitgestellt. Dazu gehören auch Vertexpuffer und die entsprechenden Indexpuffer. Da Direct3D nicht über die "Attributdeklaration" verfügt, müssen Sie ein Eingabelayout angeben. Damit werden die individuelle Komponente der Datenelemente im Vertexpuffer und die HLSL-Semantik deklariert, mit der angegeben wird, wo und wie diese Komponenten vom Vertex-Shader interpretiert werden sollen. Für die HLSL-Semantik ist es erforderlich, die Nutzung der einzelnen Komponenten mit einer speziellen Zeichenfolge zu definieren, über die das Shadermodul über ihren Zweck informiert wird. Beispielsweise werden Vertexpositionsdaten als POSITION, Normalendaten als NORMAL und Vertexfarbdaten als COLOR gekennzeichnet. (Andere Shader-Phasen erfordern auch bestimmte Semantik und diese semantische Bedeutung haben verschiedene Interpretationen basierend auf der Shader-Stufe.) Lesen Sie weitere Informationen zur HLSL-Semantik [portieren Sie Ihre Pipeline Shader](change-your-shader-loading-code.md) und [HLSL-Semantik](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps).
 
 Der Prozess zum Festlegen der Vertex- und Indexpuffer und das Festlegen des Eingabelayouts wird zusammenfassend als "Eingabeassembly"-Phase (Input Assembly, IA) der Direct3D-Grafikpipeline bezeichnet.
 
@@ -255,7 +255,7 @@ Ein Eingabelayout wird deklariert, und es wird ein Vertex-Shader zugeordnet, ind
 -   Eine Vertexpositionskoordinate, die im Hauptspeicher als XMFLOAT3 dargestellt wird und bei der es sich um ein ausgerichtetes Array mit drei 32-Bit-Gleitkommawerten für die Koordinaten (x, y, z) handelt.
 -   Ein Vertexfarbwert, der als XMFLOAT4 dargestellt wird und bei dem es sich um ein ausgerichtetes Array mit vier 32-Bit-Gleitkommawerten für die Farbe (RGBA) handelt.
 
-Sie weisen jeweils eine Semantik und einen Formattyp zu. Anschließend übergeben Sie die Beschreibung an [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). Das Eingabelayout wird beim Aufrufen von [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) verwendet, wenn Sie während der Rendermethode die Eingabeassembly einrichten.
+Sie weisen jeweils eine Semantik und einen Formattyp zu. Anschließend übergeben Sie die Beschreibung an [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout). Das Eingabelayout wird beim Aufrufen von [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) verwendet, wenn Sie während der Rendermethode die Eingabeassembly einrichten.
 
 Direct3D 11: Beschreibt eine eingabelayout mit spezifischen Semantik
 

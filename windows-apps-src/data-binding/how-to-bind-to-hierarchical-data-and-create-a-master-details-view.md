@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c2280fd7234fc41ee02dc17909bda8d7af0e1b9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d8695a385dbc6d550a8002a5f64b7d777e95594e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602075"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360031"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Binden von hierarchischen Daten und Erstellen einer Master/Details-Ansicht
 
@@ -19,21 +19,21 @@ ms.locfileid: "57602075"
 
 > **Beachten Sie**  finden Sie auch unter den [Master/Detail-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=619991).
 
-Sie können eine Master/Details-Ansicht mit mehreren Ebenen (auch bekannt als Listen-Details-Ansicht) von hierarchischen Daten erstellen, indem Sie Elementsteuerelemente an [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)-Instanzen binden, die in einer Kette verbunden sind. In diesem Thema verwenden wir nach Möglichkeit die [{x:Bind}-Markuperweiterung](https://msdn.microsoft.com/library/windows/apps/Mt204783) und die flexiblere (aber weniger leistungsfähige) [{Binding}-Markuperweiterung](https://msdn.microsoft.com/library/windows/apps/Mt204782), wenn nötig.
+Sie können eine Master/Details-Ansicht mit mehreren Ebenen (auch bekannt als Listen-Details-Ansicht) von hierarchischen Daten erstellen, indem Sie Elementsteuerelemente an [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)-Instanzen binden, die in einer Kette verbunden sind. In diesem Thema verwenden wir nach Möglichkeit die [{x:Bind}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) und die flexiblere (aber weniger leistungsfähige) [{Binding}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension), wenn nötig.
 
-Eine häufig verwendete Struktur für UWP-Apps (Universelle Windows-Plattform) ist die Navigation zu unterschiedlichen Detailseiten, wenn der Benutzer in einer Masterliste eine Auswahl trifft. Dies ist hilfreich, wenn Sie eine anschauliche visuelle Darstellung jedes Elements auf allen Ebenen in einer Hierarchie erzielen möchten. Eine weitere Möglichkeit ist die Anzeige von mehreren Datenebenen auf einer einzelnen Seite. Dies ist nützlich, wenn Sie einige einfache Listen anzeigen möchten, in denen der Benutzer schnell Detailinformationen für ein bestimmtes Element anzeigen kann. In diesem Thema wird die Implementierung dieser Interaktion beschrieben. Die [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)-Instanzen verfolgen die aktuelle Auswahl auf jeder Hierarchieebene nach.
+Eine häufig verwendete Struktur für UWP-Apps (Universelle Windows-Plattform) ist die Navigation zu unterschiedlichen Detailseiten, wenn der Benutzer in einer Masterliste eine Auswahl trifft. Dies ist hilfreich, wenn Sie eine anschauliche visuelle Darstellung jedes Elements auf allen Ebenen in einer Hierarchie erzielen möchten. Eine weitere Möglichkeit ist die Anzeige von mehreren Datenebenen auf einer einzelnen Seite. Dies ist nützlich, wenn Sie einige einfache Listen anzeigen möchten, in denen der Benutzer schnell Detailinformationen für ein bestimmtes Element anzeigen kann. In diesem Thema wird die Implementierung dieser Interaktion beschrieben. Die [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)-Instanzen verfolgen die aktuelle Auswahl auf jeder Hierarchieebene nach.
 
 Wir erstellen eine Ansicht einer Sportmannschaftshierarchie, die in Listen für Ligen, Divisionen und Mannschaften unterteilt ist und eine Detailansicht für Mannschaften enthält. Wenn Sie ein Element in einer Liste auswählen, werden die nachfolgenden Ansichten automatisch aktualisiert.
 
 ![Master/Details-Ansicht einer Sporthierarchie](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
-In diesem Thema wird vorausgesetzt, dass Sie mit dem Erstellen von UWP-Apps vertraut sind. Anweisungen zum Erstellen Ihrer ersten UWP-App finden Sie unter [Erstellen Ihrer ersten UWP-App mit C# oder Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581).
+In diesem Thema wird vorausgesetzt, dass Sie mit dem Erstellen von UWP-Apps vertraut sind. Anweisungen zum Erstellen Ihrer ersten UWP-App finden Sie unter [Erstellen Ihrer ersten UWP-App mit C# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10)).
 
 ## <a name="create-the-project"></a>Erstellen des Projekts
 
-Erstellen Sie ein neues Projekt vom Typ **Leere Anwendung (Windows Universal)**. Weisen Sie ihm den Namen „MasterDetailsBinding“ zu.
+Erstellen Sie ein neues Projekt vom Typ **Leere Anwendung (Windows Universal)** . Weisen Sie ihm den Namen „MasterDetailsBinding“ zu.
 
 ## <a name="create-the-data-model"></a>Erstellen des Datenmodells
 
@@ -130,7 +130,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-Schließlich ersetzen Sie den Inhalt der Datei „MainPage.xaml“ durch das folgende Markup, mit dem drei [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)-Instanzen deklariert und zu einer Kette verbunden werden. Die nachfolgenden Steuerelemente können dann abhängig von der Hierarchieebene an die entsprechende **CollectionViewSource**-Instanz gebunden werden.
+Schließlich ersetzen Sie den Inhalt der Datei „MainPage.xaml“ durch das folgende Markup, mit dem drei [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)-Instanzen deklariert und zu einer Kette verbunden werden. Die nachfolgenden Steuerelemente können dann abhängig von der Hierarchieebene an die entsprechende **CollectionViewSource**-Instanz gebunden werden.
 
 ```xml
 <Page
@@ -220,7 +220,7 @@ Schließlich ersetzen Sie den Inhalt der Datei „MainPage.xaml“ durch das fol
 </Page>
 ```
 
-Beachten Sie, dass Sie durch die direkte Bindung an die [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)-Instanz implizieren, dass Sie in Bindungen, in denen der Pfad in der Sammlung selbst nicht gefunden werden kann, an das aktuelle Element binden möchten. Die **CurrentItem**-Eigenschaft muss nicht als Pfad für die Bindung angegeben werden, obwohl dies im Zweifelsfall möglich ist. Beispielsweise wird die [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content)-Eigenschaft der [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365)-Klasse, welche die Teamansicht darstellt, an `Teams`**CollectionViewSource** gebunden. Die Steuerelemente in der [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) werden jedoch an Eigenschaften der `Team`-Klasse gebunden, da die **CollectionViewSource** bei Bedarf automatisch das aktuell aus der Teamliste ausgewählte Team liefert.
+Beachten Sie, dass Sie durch die direkte Bindung an die [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)-Instanz implizieren, dass Sie in Bindungen, in denen der Pfad in der Sammlung selbst nicht gefunden werden kann, an das aktuelle Element binden möchten. Die **CurrentItem**-Eigenschaft muss nicht als Pfad für die Bindung angegeben werden, obwohl dies im Zweifelsfall möglich ist. Beispielsweise wird die [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Eigenschaft der [**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl)-Klasse, welche die Teamansicht darstellt, an `Teams`**CollectionViewSource** gebunden. Die Steuerelemente in der [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) werden jedoch an Eigenschaften der `Team`-Klasse gebunden, da die **CollectionViewSource** bei Bedarf automatisch das aktuell aus der Teamliste ausgewählte Team liefert.
 
  
 

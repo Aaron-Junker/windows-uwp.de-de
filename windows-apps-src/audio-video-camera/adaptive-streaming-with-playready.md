@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36cd006b4608d82999281ebd407fd32e168ae38b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f87ecf0c3c90976295d85c1a995f1de091491974
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650465"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359178"
 ---
 # <a name="adaptive-streaming-with-playready"></a>Adaptives Streaming mit PlayReady
 
@@ -63,9 +63,9 @@ private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 
 ## <a name="setting-up-the-mediaprotectionmanager"></a>Einrichten von „MediaProtectionManager“
 
-Um Ihrer UWP-App PlayReady-Inhaltsschutz hinzuzufügen, müssen Sie ein [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040)-Objekt einrichten. Diese Einrichtung erfolgt beim Initialisieren Ihres [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912)-Objekts.
+Um Ihrer UWP-App PlayReady-Inhaltsschutz hinzuzufügen, müssen Sie ein [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager)-Objekt einrichten. Diese Einrichtung erfolgt beim Initialisieren Ihres [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)-Objekts.
 
-Mit dem folgenden Code wird ein [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040)-Objekt eingerichtet:
+Mit dem folgenden Code wird ein [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager)-Objekt eingerichtet:
 
 ```csharp
 private void SetUpProtectionManager(ref MediaElement mediaElement)
@@ -100,7 +100,7 @@ private void SetUpProtectionManager(ref MediaElement mediaElement)
 
 Dieser Code kann einfach in Ihre App kopiert werden, da er für die Einrichtung des Inhaltsschutzes erforderlich ist.
 
-Das [ComponentLoadFailed](https://msdn.microsoft.com/library/windows/apps/br207041)-Ereignis wird ausgelöst, wenn das Laden von Binärdaten fehlschlägt. Zum Behandeln dieses Ereignisses müssen wir einen Ereignishandler hinzufügen, der signalisiert, dass das Laden nicht abgeschlossen wurde:
+Das [ComponentLoadFailed](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.componentloadfailed)-Ereignis wird ausgelöst, wenn das Laden von Binärdaten fehlschlägt. Zum Behandeln dieses Ereignisses müssen wir einen Ereignishandler hinzufügen, der signalisiert, dass das Laden nicht abgeschlossen wurde:
 
 ```csharp
 private void ProtectionManager_ComponentLoadFailed(
@@ -111,7 +111,7 @@ private void ProtectionManager_ComponentLoadFailed(
 }
 ```
 
-Ebenso müssen wir einen Ereignishandler für das [ServiceRequested](https://msdn.microsoft.com/library/windows/apps/br207045)-Ereignis hinzufügen, das beim Anfordern eines Diensts ausgelöst wird. Dieser Code überprüft, um welche Art von Anforderung es sich handelt, und reagiert entsprechend:
+Ebenso müssen wir einen Ereignishandler für das [ServiceRequested](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.servicerequested)-Ereignis hinzufügen, das beim Anfordern eines Diensts ausgelöst wird. Dieser Code überprüft, um welche Art von Anforderung es sich handelt, und reagiert entsprechend:
 
 ```csharp
 private async void ProtectionManager_ServiceRequested(
@@ -192,7 +192,7 @@ async void ProActiveIndivRequest()
 
 ## <a name="license-acquisition-service-requests"></a>Lizenzerwerb-Dienstanforderungen
 
-Falls es sich bei der Anforderung stattdessen um [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285) handelt, rufen wir die folgende Funktion auf, um die PlayReady-Lizenz anzufordern und zu erwerben. Wir teilen dem übergebenen **MediaProtectionServiceCompletion**-Objekt mit, ob die Anforderung erfolgreich war, und schließen die Anforderung ab:
+Falls es sich bei der Anforderung stattdessen um [PlayReadyLicenseAcquisitionServiceRequest](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest) handelt, rufen wir die folgende Funktion auf, um die PlayReady-Lizenz anzufordern und zu erwerben. Wir teilen dem übergebenen **MediaProtectionServiceCompletion**-Objekt mit, ob die Anforderung erfolgreich war, und schließen die Anforderung ab:
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -274,7 +274,7 @@ async void LicenseAcquisitionRequest(
 
 ## <a name="initializing-the-adaptivemediasource"></a>Initialisieren von „AdaptiveMediaSource“
 
-Schließlich benötigen Sie eine Funktion zum Initialisieren des [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912)-Objekts, das aus einem bestimmten [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)- und [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926)-Objekt erstellt wurde. Bei **Uri** sollte es sich um den Link zur Mediendatei (HLS oder DASH) handeln. **MediaElement** muss in Ihrem XAML-Code definiert werden.
+Schließlich benötigen Sie eine Funktion zum Initialisieren des [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)-Objekts, das aus einem bestimmten [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)- und [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)-Objekt erstellt wurde. Bei **Uri** sollte es sich um den Link zur Mediendatei (HLS oder DASH) handeln. **MediaElement** muss in Ihrem XAML-Code definiert werden.
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)

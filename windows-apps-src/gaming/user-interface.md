@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Directx, Vorlagen
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a4491fe9a3bb97a73652c40a2968f2f53c377b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5eb36b66cc067111e2749ebd51a05994a011ba01
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634245"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367474"
 ---
 # <a name="directx-game-project-templates"></a>DirectX-Spielprojektvorlagen
 
@@ -19,7 +19,7 @@ ms.locfileid: "57634245"
 
 Mit Vorlagen für DirectX und die universelle Windows-Plattform (UWP) können Sie schnell ein Projekt als Ausgangspunkt für Ihr Spiel erstellen.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 
 Gehen Sie wie folgt vor, um das Projekt zu erstellen:
@@ -33,7 +33,7 @@ Visual Studio 2015 enthält drei DirectX und UWP-Vorlagen:
 
 -   DirectX 11-App (Universelle Windows-App): Mit der Vorlage "DirectX 11-App (Universelle Windows-App)" wird ein UWP-Projekt erstellt, das direkt in einem App-Fenster mit DirectX 11 gerendert wird.
 -   DirectX 12-App (Universelle Windows-App): Mit der Vorlage "DirectX 12-App (Universelle Windows-App)" wird ein UWP-Projekt erstellt, das direkt in einem App-Fenster mit DirectX 12 gerendert wird.
--   DirectX 11- und XAML-App (Universelle Windows-App): Mit der Vorlage „DirectX 11- und XAML-App (Universelle Windows-App)“ wird ein UWP-Projekt erstellt, das direkt in einem XAML-Steuerelement mit DirectX 11 gerendert wird. Diese Vorlage verwendet ein [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)-Element und ermöglicht so die Verwendung von XAML-UI-Steuerelementen. Dies kann zwar das Hinzufügen von Benutzeroberflächenelementen vereinfachen, die Verwendung der XAML-Vorlage beeinträchtigt aber unter Umständen die Leistung.
+-   DirectX 11- und XAML-App (Universelle Windows-App): Mit der Vorlage „DirectX 11- und XAML-App (Universelle Windows-App)“ wird ein UWP-Projekt erstellt, das direkt in einem XAML-Steuerelement mit DirectX 11 gerendert wird. Diese Vorlage verwendet ein [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)-Element und ermöglicht so die Verwendung von XAML-UI-Steuerelementen. Dies kann zwar das Hinzufügen von Benutzeroberflächenelementen vereinfachen, die Verwendung der XAML-Vorlage beeinträchtigt aber unter Umständen die Leistung.
 
 Die Entscheidung für eine Vorlage hängt von der Leistung und von den gewünschten Technologien ab.
 

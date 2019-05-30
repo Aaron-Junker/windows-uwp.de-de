@@ -6,12 +6,12 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: db481fac1bdcb9e79762f52aee48574e987c4cbb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8a846aab77fad6f087057fe930d11ac781ed7171
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601015"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362199"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Testen von Surface Hub-Apps mit Visual Studio
 Der Visual Studio-Simulator bietet eine Umgebung, in der Sie Apps für die universale Windows-Plattform (UWP) entwerfen, entwickeln, debuggen und testen können, einschließlich Apps, die Sie für Microsoft Surface Hub entwickelt haben. Der Simulator verwendet nicht die gleiche Benutzeroberfläche wie Surface Hub, aber es ist hilfreich beim Testen, wie Ihre app sieht aus, und mit dem Surface Hub-Bildschirmgröße und-Auflösung verhält.
@@ -90,7 +90,7 @@ Standardmäßig wird die Surface Hub nur apps aus dem Microsoft Store installier
 3. Wählen Sie **Entwicklermodus** aus, und akzeptieren Sie die Warnung.
 
 ### <a name="deploy-your-app-from-visual-studio"></a>Bereitstellen Ihrer App aus Visual Studio
-Weitere Informationen zum Bereitstellungsprozess finden Sie in der Regel unter [bereitstellen und Debuggen von UWP-apps](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+Weitere Informationen zum Bereitstellungsprozess finden Sie in der Regel unter [bereitstellen und Debuggen von UWP-apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
    > [!NOTE]
    > Dieses Feature erfordert Visual Studio 2015 Update 1 oder höher, aber es wird empfohlen, dass Sie die neueste aktuellste Version von Visual Studio verwenden. Eine Instanz von Visual Studio auf dem neuesten Stand, werden Sie alle neuesten Entwicklungen und Sicherheitsupdates gibe.

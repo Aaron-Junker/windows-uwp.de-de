@@ -2,16 +2,16 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Übersicht über das Windows Device Portal
 description: Hier erfahren Sie, wie Sie mit dem Windows Device Portal Ihr Gerät per Remotezugriff über ein Netzwerk oder eine USB-Verbindung konfigurieren und verwalten.
-ms.date: 02/19/2019
+ms.date: 4/9/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: ba3c0a393cc5eb536de43539df48f43bb98d8ef1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 39715dc3f4b88a2e9a91a7cb659208f8370f16f2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611935"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362417"
 ---
 # <a name="windows-device-portal-overview"></a>Übersicht über das Windows Device Portal
 
@@ -26,25 +26,29 @@ Die Funktionalität der Windows Device Portal wird mit implementiert [REST-APIs]
 ## <a name="setup"></a>Setup
 
 Für jedes Gerät gelten spezielle Anweisungen zum Herstellen der Verbindung mit dem Device Portal, diese allgemeinen Schritte sind jedoch für jedes Gerät erforderlich:
+
 1. Aktivieren Sie den Entwicklermodus und Device Portal, auf dem Gerät (in der Einstellungs-app konfiguriert).
+
 2. Verbinden Sie über ein lokales Netzwerk oder mit USB-Gerät und vom PC.
+
 3. Navigieren Sie im Browser zu der Seite für das Geräteportal. Diese Tabelle zeigt die Ports und Protokolle verwendet, die für jede Gerätefamilie.
 
 Gerätefamilie | Standardmäßig aktiviert? | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
 HoloLens | Ja, im Entwicklermodus | 80 (Standard) | 443 (Standard) | http://127.0.0.1:10080
-IoT | Ja, im Entwicklermodus | 8080 | Über Registrierungsschlüssel aktivieren | n. a.
-Xbox | Im Entwicklermodus aktivieren | Deaktiviert | 11443 | n. a.
-Desktop| Im Entwicklermodus aktivieren | 50080\* | 50043\* | n. a.
+IoT | Ja, im Entwicklermodus | 8080 | Über Registrierungsschlüssel aktivieren | Nicht zutreffend
+Xbox | Im Entwicklermodus aktivieren | Disabled | 11443 | Nicht zutreffend
+Desktop| Im Entwicklermodus aktivieren | 50080\* | 50043\* | Nicht zutreffend
 Phone | Im Entwicklermodus aktivieren | 80| 443 | http://127.0.0.1:10080
 
 \* Dies ist nicht immer der Fall, wie der Device-Portal auf Desktop-Ports im kurzlebigen Bereich Ansprüche (> 50.000) um Konflikte mit vorhandenen Port Ansprüche auf dem Gerät zu verhindern. Weitere Informationen hierzu finden Sie im Abschnitt zu [Porteinstellungen](device-portal-desktop.md#registry-based-configuration-for-device-portal) für den Desktop.  
 
 Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
+
 - [Geräteportal für HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
 - [Für IoT-Geräteportal](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [Device-Portal für mobile Geräte](device-portal-mobile.md)
-- [Geräteportal für Xbox](device-portal-xbox.md)
+- [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md)
 - [Für Desktop-Geräteportal](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
 ## <a name="features"></a>Features
@@ -52,6 +56,7 @@ Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
 ### <a name="toolbar-and-navigation"></a>Symbolleiste und Navigation
 
 Auf die Symbolleiste am oberen Rand der Seite ermöglicht den Zugriff auf häufig verwendete Funktionen.
+
 - **Power**: Access-Power-Optionen.
   - **Herunterfahren**: Das Gerät wird deaktiviert.
   - **Starten Sie neu**: Zyklen Einschalten des Geräts.
@@ -75,9 +80,9 @@ Der Apps-Manager ermöglicht das Installieren/Deinstallieren und Verwaltungsfunk
 
 Sie können apps Sideloaden, während der Entwicklung mit Windows Device Portal:
 
-1.  Wenn Sie ein app-Paket erstellt haben, können Sie es Remote auf Ihrem Gerät installieren. Nachdem Sie es in Visual Studio erstellt haben, wird ein Ausgabeordner generiert.
+1. Wenn Sie ein app-Paket erstellt haben, können Sie es Remote auf Ihrem Gerät installieren. Nachdem Sie es in Visual Studio erstellt haben, wird ein Ausgabeordner generiert.
 
-  ![App-Installation](images/device-portal/iot-installapp0.png)
+    ![App-Installation](images/device-portal/iot-installapp0.png)
 
 2. Windows Device Portal, navigieren Sie zu der **Apps Manager** Seite.
 
@@ -108,9 +113,10 @@ Alternativ können Sie installieren das Zertifikat über die Windows Device Port
 5. Wenn das Gerät Windows 10 im S-Modus ausgeführt wird, und es ist beim ersten, die das angegebene Zertifikat auf dem Gerät installiert wurde, das Gerät neu gestartet.
 
 #### <a name="uninstall-an-app"></a>Deinstallieren einer App
-1.  Stellen Sie sicher, dass die App nicht ausgeführt wird. 
-2.  Wenn es sich handelt, wechseln Sie zu **Ausführen von apps** und schließen Sie sie. Wenn Sie versuchen, die deinstalliert werden, während die app ausgeführt wird, wird dies zu Problemen führen, wenn Sie versuchen, die app erneut installieren. 
-3.  Wählen Sie die app in der Dropdownliste auf **entfernen**.
+
+1. Stellen Sie sicher, dass die App nicht ausgeführt wird.
+2. Wenn es sich handelt, wechseln Sie zu **Ausführen von apps** und schließen Sie sie. Wenn Sie versuchen, die deinstalliert werden, während die app ausgeführt wird, wird dies zu Problemen führen, wenn Sie versuchen, die app erneut installieren.
+3. Wählen Sie die app in der Dropdownliste auf **entfernen**.
 
 ### <a name="running-processes"></a>Laufende Prozesse
 
@@ -120,7 +126,7 @@ Diese Seite enthält Informationen zu Prozessen, die derzeit auf dem Hostgerät 
 
 ### <a name="file-explorer"></a>Datei-Explorer
 
-Auf dieser Seite können Sie zum Anzeigen und Bearbeiten von alle mittels sideload übertragenen apps gespeicherte Dateien. Finden Sie unter den [mit dem App-Datei-Explorer](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) Blogbeitrag, um weitere Informationen zu den Datei-Explorer und dessen Verwendung. 
+Auf dieser Seite können Sie zum Anzeigen und Bearbeiten von alle mittels sideload übertragenen apps gespeicherte Dateien. Finden Sie unter den [mit dem App-Datei-Explorer](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) Blogbeitrag, um weitere Informationen zu den Datei-Explorer und dessen Verwendung.
 
 ![Device Portal-Datei-Explorer-Seite](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
@@ -129,12 +135,12 @@ Auf dieser Seite können Sie zum Anzeigen und Bearbeiten von alle mittels sidelo
 Die Seite "Leistung" zeigt in Echtzeit Diagramme mit System Diagnoseinformationen wie Energieverbrauch, Framerate, und CPU-Last.
 
 Die folgenden Metriken sind verfügbar:
+
 - **CPU**: Prozent der insgesamt verfügbaren CPU-Auslastung
 - **Arbeitsspeicher**: Insgesamt verwendet werden, verfügbar ist, ein Commit ausgeführt wurde, per Pager benachrichtigt, und nicht ausgelagerten
-- **E/A**: Lesen und Schreiben von Mengen von Daten
+- **I/O**: Lesen und Schreiben von Mengen von Daten
 - **Netzwerk**: Erhaltene und gesendete Daten
 - **GPU**: Prozent des insgesamt verfügbaren GPU-Engine-Auslastung
-
 
 ![Leistung der Portal-Seite "Geräte"](images/device-portal/mob-device-portal-perf.png)
 
@@ -145,6 +151,7 @@ Die ETW-protokollierungsseite verwaltet Event Tracing for Windows (ETW)-Informat
 ![Portal-ETW-Protokollierung-Seite "Geräte"](images/device-portal/mob-device-portal-etw.png)
 
 Aktivieren Sie **Anbieter ausblenden**, um nur die Liste der Ereignisse anzuzeigen.
+
 - **Die registrierten Anbieter**: Wählen Sie den Ereignisanbieter und die Ablaufverfolgungsebene. Die Ablaufverfolgungsebene ist eine der folgenden Werte:
   1. Abnormal exit or termination
   2. Severe errors
@@ -158,11 +165,11 @@ Aktivieren Sie **Anbieter ausblenden**, um nur die Liste der Ereignisse anzuzeig
 - **Anbieter-Verlauf**: Dadurch wird die ETW-Anbieter, die während der aktuellen Sitzung aktiviert wurden. Klicken oder tippen Sie auf **Aktivieren**, um einen Anbieter zu aktivieren, der deaktiviert war. Klicken oder tippen Sie auf **Löschen**, um den Verlauf zu löschen.
 - **Filter / Ereignisse**: Die **Ereignisse** Abschnitt werden die ETW-Ereignisse von den ausgewählten Anbieter im Tabellenformat aufgelistet. Die Tabelle wird in Echtzeit aktualisiert. Verwenden der **Filter** Menü zum Einrichten benutzerdefinierter Filter für die Ereignisse angezeigt werden. Klicken Sie auf die **löschen** Schaltfläche, um alle ETW-Ereignisse aus der Tabelle zu löschen. Hierdurch werden keine Anbieter deaktiviert. Klicken Sie auf **in Datei speichern** , die derzeit gesammelten ETW-Ereignisse in eine lokale CSV-Datei zu exportieren.
 
-Weitere Informationen zur Verwendung von ETW-Protokollierung finden Sie unter den [Device-Portal verwenden, um Debugprotokolle anzuzeigen](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) Blogbeitrag. 
+Weitere Informationen zur Verwendung von ETW-Protokollierung finden Sie unter den [Device-Portal verwenden, um Debugprotokolle anzuzeigen](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) Blogbeitrag.
 
 ### <a name="performance-tracing"></a>Leistungsüberwachung
 
-Die Leistung nachrichtenablaufverfolgungs-Seite können Sie für die Ansicht der [Windows Performance Recorder (WPR)](https://msdn.microsoft.com/library/hh448205.aspx) ablaufverfolgungen aus dem Hostgerät.
+Die Leistung nachrichtenablaufverfolgungs-Seite können Sie für die Ansicht der [Windows Performance Recorder (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) ablaufverfolgungen aus dem Hostgerät.
 
 ![Device Portal Leistung nachrichtenablaufverfolgungs-Seite](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -171,7 +178,7 @@ Die Leistung nachrichtenablaufverfolgungs-Seite können Sie für die Ansicht der
 
 Klicken Sie auf **Beenden**, um die Ablaufverfolgung zu beenden. Auf dieser Seite zu bleiben, bis die Datei (. ETL) vollständig heruntergeladen wurde.
 
-Erfasst. ETL-Dateien geöffnet werden können, für die Analyse in die [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/desktop/hh448170.aspx).
+Erfasst. ETL-Dateien geöffnet werden können, für die Analyse in die [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)).
 
 ### <a name="device-manager"></a>Geräte-Manager
 
@@ -182,6 +189,7 @@ Seite mit dem Geräte-Manager Listet alle Peripheriegeräte, die auf Ihrem Gerä
 ### <a name="networking"></a>Netzwerk
 
 Die Seite "Netzwerke" verwaltet Netzwerkverbindungen enthaltenen arbeitsplatzverbindungen auf dem Gerät. Es sei denn, Sie Device Portal über USB verbunden sind, werden Änderungen an diesen Einstellungen wahrscheinlich Sie Device Portal trennen.
+
 - **Verfügbare Netzwerke**: Zeigt die WLAN-Netzwerken auf dem Gerät verfügbar. Durch Klicken oder Tippen auf ein Netzwerk können Sie eine Verbindung mit ihm herstellen und ggf. ein Kennwort eingeben. Device-Portal unterstützt noch keine Authentifizierung von Unternehmen. Sie können auch die **Profile** Dropdownliste, um zu versuchen, sich mit einem WLAN-Profile, die bekannt, dass das Gerät verbinden.
 - **IP-Konfiguration**: Zeigt Informationen zu den einzelnen ApplicationWorkingSetLimit des Netzwerk-Ports zu beheben.
 
@@ -193,25 +201,25 @@ Die Seite "Netzwerke" verwaltet Netzwerkverbindungen enthaltenen arbeitsplatzver
 
 Das Geräteportal kündigt seine Präsenz im lokalen Netzwerk mithilfe von DNS-SD an. Alle Geräteportalinstanzen, unabhängig von deren Gerätetyp, kündigen sich unter „WDP._wdp._tcp.local“ an. Die TXT-Datensätze für die Instanz des Dienstes liefern Folgendes:
 
-Schlüssel | Typ | Beschreibung 
+Key | Typ | Beschreibung
 ----|------|-------------
-E | int | Sicherer Port für Geräteportal. Wenn 0 (null), lauscht das Geräteportal nicht auf HTTPS-Verbindungen. 
-D | string | Typ des Geräts. Dieser wird das Format „Windows.*“ aufweisen, z. B. Windows.Xbox oder Windows.Desktop
-A | string | Gerätearchitektur. Diese ist ARM, x86 oder AMD64.  
+S | ssNoversion | Sicherer Port für Geräteportal. Wenn 0 (null), lauscht das Geräteportal nicht auf HTTPS-Verbindungen.
+D | String | Typ des Geräts. Dieser wird das Format „Windows.*“ aufweisen, z. B. Windows.Xbox oder Windows.Desktop
+A | String | Gerätearchitektur. Diese ist ARM, x86 oder AMD64.  
 T | Mit NULL-Zeichen getrennt Liste mit Zeichenfolgen | Vom Benutzer angewendete Tags für das Gerät. Informationen zur Verwendung finden Sie unter der Tags-REST-API. Liste wird durch Doppelnull beendet.  
 
-Es wird vorgeschlagen, die Verbindung über den HTTPS-Anschluss herzustellen, da nicht alle Geräte auf dem vom DNS-SD-Datensatz angekündigten HTTP-Port lauschen. 
+Es wird vorgeschlagen, die Verbindung über den HTTPS-Anschluss herzustellen, da nicht alle Geräte auf dem vom DNS-SD-Datensatz angekündigten HTTP-Port lauschen.
 
 ### <a name="csrf-protection-and-scripting"></a>CSRF-Schutz und -Skripting
 
 Zum Schutz vor [CSRF-Angriffen](https://wikipedia.org/wiki/Cross-site_request_forgery) ist bei allen Nicht-GET-Anfragen ein eindeutiges Token erforderlich. Dieses Token, der X-CSFR-Token-Anforderungsheader, wird von einem Sitzungscookie CSRF-Token, abgeleitet. In der Web-Benutzeroberfläche des Geräteportals wird das CSRF-Token-Cookie bei jeder Anforderung in den X-CSRF-Token-Header kopiert.
 
 > [!IMPORTANT]
-> Diesen Schutz verhindert die Verwendung der REST-APIs von einem eigenständigen Client (z. B. Befehlszeilen-Hilfsprogramme). Dies kann auf drei Arten gelöst werden: 
-> - Verwenden Sie einen Benutzernamen "Auto-". Clients, die ihrem Benutzernamen „Auto-“ voranstellen, umgehen CSRF-Schutz. Es ist wichtig, dass dieser Benutzername nicht zur Anmeldung beim Geräteportal über den Browser verwendet wird, da dies den Dienst für CSRF-Angriffe öffnet. Beispiel: Wenn Device Portal Benutzernamen "Admin", ist ```curl -u auto-admin:password <args>``` umgehen von CSRF-Schutz verwendet werden soll. 
-> - Implementieren des Cookie-zu-Header-Schemas in den Client. Dies erfordert eine GET-Anforderung zur Erstellung des Sitzungscookies und dann die Aufnahme von Header und Cookie in alle nachfolgenden Anforderungen. 
-> - Deaktivieren der Authentifizierung und Verwenden von HTTP. CSRF-Schutz bezieht sich nur auf HTTPS-Endpunkte, sodass für Verbindungen auf HTTP-Endpunkten keine der oben genannten Schritte ausgeführt werden müssen. 
+> Diesen Schutz verhindert die Verwendung der REST-APIs von einem eigenständigen Client (z. B. Befehlszeilen-Hilfsprogramme). Dies kann auf drei Arten gelöst werden:
+> - Verwenden Sie einen Benutzernamen "Auto-". Clients, die ihrem Benutzernamen „Auto-“ voranstellen, umgehen CSRF-Schutz. Es ist wichtig, dass dieser Benutzername nicht zur Anmeldung beim Geräteportal über den Browser verwendet wird, da dies den Dienst für CSRF-Angriffe öffnet. Beispiel: Wenn Device Portal Benutzernamen "Admin", ist ```curl -u auto-admin:password <args>``` umgehen von CSRF-Schutz verwendet werden soll.
+> - Implementieren des Cookie-zu-Header-Schemas in den Client. Dies erfordert eine GET-Anforderung zur Erstellung des Sitzungscookies und dann die Aufnahme von Header und Cookie in alle nachfolgenden Anforderungen.
+> - Deaktivieren der Authentifizierung und Verwenden von HTTP. CSRF-Schutz bezieht sich nur auf HTTPS-Endpunkte, sodass für Verbindungen auf HTTP-Endpunkten keine der oben genannten Schritte ausgeführt werden müssen.
 
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>Schutz vor websiteübergreifendem WebSocket-Hijacking (Cross-Site WebSocket Hijacking, CSWSH)
 
-Zum Schutz vor [CSWSH-Angriffen](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html) müssen alle Clients, die eine WebSocket-Verbindung mit einem Geräteportal herstellen, einen dem Hostheader entsprechenden Origin-Header angeben. Dadurch wird gegenüber dem Geräteportal belegt, dass die Anforderung entweder von der Benutzeroberfläche des Geräteportals oder von einer gültigen Clientanwendung stammt. Anforderungen ohne Origin-Header werden abgelehnt. 
+Zum Schutz vor [CSWSH-Angriffen](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html) müssen alle Clients, die eine WebSocket-Verbindung mit einem Geräteportal herstellen, einen dem Hostheader entsprechenden Origin-Header angeben. Dadurch wird gegenüber dem Geräteportal belegt, dass die Anforderung entweder von der Benutzeroberfläche des Geräteportals oder von einer gültigen Clientanwendung stammt. Anforderungen ohne Origin-Header werden abgelehnt.

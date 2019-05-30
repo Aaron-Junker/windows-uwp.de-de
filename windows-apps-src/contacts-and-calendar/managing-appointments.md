@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Termine, Kalender
 ms.localizationpriority: medium
-ms.openlocfilehash: ece137fafc2fdcca7ce41839aa4614456973cf40
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1e4eeaf486738996ce5a860f567fc18a7d41cca2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602085"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361252"
 ---
 # <a name="manage-appointments"></a>Verwalten von Terminen
 
 
 
-Mit dem [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359)-Namespace können Sie in der Kalender-App eines Benutzers Termine erstellen und verwalten. Hier erfahren Sie, wie Sie einen Termin erstellen, einer Kalender-App hinzufügen, in der Kalender-App ersetzen und aus der Kalender-App entfernen. Außerdem wird erläutert, wie Sie eine Zeitspanne für eine Kalender-App anzeigen und ein Terminwiederholungsobjekt erstellen.
+Mit dem [**Windows.ApplicationModel.Appointments**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Appointments)-Namespace können Sie in der Kalender-App eines Benutzers Termine erstellen und verwalten. Hier erfahren Sie, wie Sie einen Termin erstellen, einer Kalender-App hinzufügen, in der Kalender-App ersetzen und aus der Kalender-App entfernen. Außerdem wird erläutert, wie Sie eine Zeitspanne für eine Kalender-App anzeigen und ein Terminwiederholungsobjekt erstellen.
 
 ## <a name="create-an-appointment-and-apply-data-to-it"></a>Erstellen eines Termins und Anwenden von Daten
 
-Erstellen Sie ein [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221)-Objekt, und weisen Sie es einer Variablen zu. Weisen Sie dem **Appointment**-Element dann die Termineigenschaften zu, die von einem Benutzer über die UI bereitgestellt wurden.
+Erstellen Sie ein [**Windows.ApplicationModel.Appointments.Appointment**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Appointments.Appointment)-Objekt, und weisen Sie es einer Variablen zu. Weisen Sie dem **Appointment**-Element dann die Termineigenschaften zu, die von einem Benutzer über die UI bereitgestellt wurden.
 
 ```cs
 private void Create-Click(object sender, RoutedEventArgs e)
@@ -255,7 +255,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## <a name="add-an-appointment-to-the-users-calendar"></a>Hinzufügen eines Termins zum Kalender des Benutzers
 
-Erstellen Sie ein [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221)-Objekt, und weisen Sie es einer Variablen zu. Rufen Sie anschließend die [**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261)-Methode auf, um die standardmäßige Terminanbieter-UI zum Hinzufügen von Terminen anzuzeigen, damit der Benutzer einen Termin hinzufügen kann. Wenn der Benutzer auf **Hinzufügen** geklickt hat, wird im Beispiel der Terminbezeichner ausgegeben, der von **ShowAddAppointmentAsync** zurückgegeben wird.
+Erstellen Sie ein [**Windows.ApplicationModel.Appointments.Appointment**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Appointments.Appointment)-Objekt, und weisen Sie es einer Variablen zu. Rufen Sie anschließend die [**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)-Methode auf, um die standardmäßige Terminanbieter-UI zum Hinzufügen von Terminen anzuzeigen, damit der Benutzer einen Termin hinzufügen kann. Wenn der Benutzer auf **Hinzufügen** geklickt hat, wird im Beispiel der Terminbezeichner ausgegeben, der von **ShowAddAppointmentAsync** zurückgegeben wird.
 
 ```cs
 private async void Add-Click(object sender, RoutedEventArgs e)
@@ -282,11 +282,11 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Beachten Sie**  für Windows Phone Store-apps [ **ShowAddAppointment** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) funktioniert genauso wie [ **ShowEditNewAppointment** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) , das Dialogfeld zum Hinzufügen des Termins angezeigt, bearbeitet werden kann.
+**Beachten Sie**  für Windows Phone Store-apps [ **ShowAddAppointment** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) funktioniert genauso wie [ **ShowEditNewAppointment** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) , das Dialogfeld zum Hinzufügen des Termins angezeigt, bearbeitet werden kann.
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>Ersetzen eines Termins im Kalender des Benutzers
 
-Erstellen Sie ein [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221)-Objekt, und weisen Sie es einer Variablen zu. Rufen Sie anschließend die passende [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync)-Methode auf, um die standardmäßige Terminanbieter-UI zum Ersetzen von Terminen anzuzeigen, damit der Benutzer einen Termin ersetzen kann. Der Benutzer stellt auch den Terminbezeichner bereit, der ersetzt werden soll. Dieser Bezeichner wurde von [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) zurückgegeben. Wenn der Benutzer auf **Ersetzen**geklickt hat, wird im Beispiel ausgegeben, dass der Terminbezeichner aktualisiert wurde.
+Erstellen Sie ein [**Windows.ApplicationModel.Appointments.Appointment**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Appointments.Appointment)-Objekt, und weisen Sie es einer Variablen zu. Rufen Sie anschließend die passende [**AppointmentManager.ShowReplaceAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync)-Methode auf, um die standardmäßige Terminanbieter-UI zum Ersetzen von Terminen anzuzeigen, damit der Benutzer einen Termin ersetzen kann. Der Benutzer stellt auch den Terminbezeichner bereit, der ersetzt werden soll. Dieser Bezeichner wurde von [**AppointmentManager.ShowAddAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) zurückgegeben. Wenn der Benutzer auf **Ersetzen**geklickt hat, wird im Beispiel ausgegeben, dass der Terminbezeichner aktualisiert wurde.
 
 ```cs
 private async void Replace-Click(object sender, RoutedEventArgs e)
@@ -340,7 +340,7 @@ private async void Replace-Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-an-appointment-from-the-users-calendar"></a>Entfernen eines Termins aus dem Kalender des Benutzers
 
-Rufen Sie die passende [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync)-Methode auf, um die standardmäßige Terminanbieter-UI zum Entfernen von Terminen anzuzeigen, damit der Benutzer einen Termin entfernen kann. Der Benutzer stellt auch den Terminbezeichner bereit, der entfernt werden soll. Dieser Bezeichner wurde von [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) zurückgegeben. Wenn der Benutzer auf **Löschen**geklickt hat, wird im Beispiel ausgegeben, dass der mit diesem Terminbezeichner angegebene Termin entfernt wurde.
+Rufen Sie die passende [**AppointmentManager.ShowRemoveAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync)-Methode auf, um die standardmäßige Terminanbieter-UI zum Entfernen von Terminen anzuzeigen, damit der Benutzer einen Termin entfernen kann. Der Benutzer stellt auch den Terminbezeichner bereit, der entfernt werden soll. Dieser Bezeichner wurde von [**AppointmentManager.ShowAddAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) zurückgegeben. Wenn der Benutzer auf **Löschen**geklickt hat, wird im Beispiel ausgegeben, dass der mit diesem Terminbezeichner angegebene Termin entfernt wurde.
 
 ```cs
 private async void Remove-Click(object sender, RoutedEventArgs e)
@@ -390,7 +390,7 @@ private async void Remove-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-a-time-span-for-the-appointments-provider"></a>Anzeigen einer Zeitspanne für den Terminanbieter
 
-Rufen Sie die [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync)-Methode auf, um eine bestimmte Zeitspanne für die primäre UI des standardmäßigen Terminanbieters anzuzeigen, wenn der Benutzer auf **Anzeigen** geklickt hat. Im Beispiel wird ausgegeben, dass der standardmäßige Terminanbieter auf dem Bildschirm angezeigt wird.
+Rufen Sie die [**AppointmentManager.ShowTimeFrameAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync)-Methode auf, um eine bestimmte Zeitspanne für die primäre UI des standardmäßigen Terminanbieters anzuzeigen, wenn der Benutzer auf **Anzeigen** geklickt hat. Im Beispiel wird ausgegeben, dass der standardmäßige Terminanbieter auf dem Bildschirm angezeigt wird.
 
 ```cs
 private async void Show-Click(object sender, RoutedEventArgs e)
@@ -404,7 +404,7 @@ private async void Show-Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-an-appointment-recurrence-object-and-apply-data-to-it"></a>Erstellen eines Terminwiederholungsobjekts und Anwenden von Daten
 
-Erstellen Sie ein [**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence)-Objekt, und weisen Sie es einer Variablen zu. Weisen Sie dem **AppointmentRecurrence**-Objekt dann die Wiederholungseigenschaften zu, die von einem Benutzer über die Benutzeroberfläche bereitgestellt wurden.
+Erstellen Sie ein [**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentrecurrence)-Objekt, und weisen Sie es einer Variablen zu. Weisen Sie dem **AppointmentRecurrence**-Objekt dann die Wiederholungseigenschaften zu, die von einem Benutzer über die Benutzeroberfläche bereitgestellt wurden.
 
 ```cs
 private void Create-Click(object sender, RoutedEventArgs e)
@@ -507,7 +507,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## <a name="add-a-new-editable-appointment"></a>Hinzufügen neuer bearbeitbarer Termine
 
-[**ShowEditNewAppointmentAsync** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) funktioniert wie [ **ShowAddAppointmentAsync** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) mit dem Unterschied, dass das Dialogfeld zum Hinzufügen des Termins bearbeitet werden kann, sodass der Benutzer ändern kann die Termin-Daten vor dem Speichern.
+[**ShowEditNewAppointmentAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) funktioniert wie [ **ShowAddAppointmentAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) mit dem Unterschied, dass das Dialogfeld zum Hinzufügen des Termins bearbeitet werden kann, sodass der Benutzer ändern kann die Termin-Daten vor dem Speichern.
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -542,7 +542,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-appointment-details"></a>Anzeigen von Termindetails
 
-[**ShowAppointmentDetailsAsync** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) bewirkt, dass das System zum Anzeigen von Details für den angegebenen Termin. Für Apps mit App-Kalendern kann das Anzeigen von Termindetails in den Kalendern aktiviert werden. Andernfalls werden vom System die Termindetails angezeigt. Eine Überladung der Methode, die ein Startdatumargument akzeptiert, wird zum Anzeigen von Details für eine Instanz einer Terminserie bereitgestellt.
+[**ShowAppointmentDetailsAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) bewirkt, dass das System zum Anzeigen von Details für den angegebenen Termin. Für Apps mit App-Kalendern kann das Anzeigen von Termindetails in den Kalendern aktiviert werden. Andernfalls werden vom System die Termindetails angezeigt. Eine Überladung der Methode, die ein Startdatumargument akzeptiert, wird zum Anzeigen von Details für eine Instanz einer Terminserie bereitgestellt.
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)

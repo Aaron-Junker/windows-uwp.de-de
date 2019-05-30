@@ -6,22 +6,22 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: d62ce9abd84a0769a2393db169b8198d3d9f6cec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f542c76d879881af296351ce51a803aa9986ecbb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616405"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359708"
 ---
 # <a name="version-adaptive-code"></a>Versionsadaptiver Code
 
-Das Schreiben von adaptivem Code ist vergleichbar mit dem [Erstellen einer adaptiven UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml). Dabei können Sie etwa Ihre grundlegende Benutzeroberfläche für den kleinsten Bildschirm entwerfen und anschließend Elemente verschieben oder hinzufügen, wenn erkannt wird, dass die App auf einem größeren Bildschirm ausgeführt wird. Bei adaptivem Code schreiben Sie Ihren Basiscode für die niedrigste Betriebssystemversion und können anschließend ausgewählte Features hinzufügen, wenn erkannt wird, dass Ihre App unter einer höheren Version ausgeführt wird, die über das neue Feature verfügt.
+Das Schreiben von adaptivem Code ist vergleichbar mit dem [Erstellen einer adaptiven UI](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml). Dabei können Sie etwa Ihre grundlegende Benutzeroberfläche für den kleinsten Bildschirm entwerfen und anschließend Elemente verschieben oder hinzufügen, wenn erkannt wird, dass die App auf einem größeren Bildschirm ausgeführt wird. Bei adaptivem Code schreiben Sie Ihren Basiscode für die niedrigste Betriebssystemversion und können anschließend ausgewählte Features hinzufügen, wenn erkannt wird, dass Ihre App unter einer höheren Version ausgeführt wird, die über das neue Feature verfügt.
 
 Wichtige Hintergrundinformationen über ApiInformation, API-Verträge und das Konfigurieren von Visual Studio finden Sie unter [Versionsadaptive Apps](version-adaptive-apps.md).
 
 ### <a name="runtime-api-checks"></a>API-Laufzeitprüfungen
 
-Verwenden Sie die [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx)-Klasse in einer Bedingung in Ihrem Code, um zu testen, ob die aufzurufende API vorhanden ist. Diese Bedingung wird immer ausgewertet – ganz gleich, wo Ihre App ausgeführt wird. Das Ergebnis ist aber nur dann **True**, wenn sie auf einem Gerät ausgeführt wird, auf dem die API vorhanden ist und somit aufgerufen werden kann. So können Sie Apps mit versionsadaptivem Code erstellen, die APIs verwenden, welche nur unter bestimmten Betriebssystemversionen verfügbar sind.
+Verwenden Sie die [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation)-Klasse in einer Bedingung in Ihrem Code, um zu testen, ob die aufzurufende API vorhanden ist. Diese Bedingung wird immer ausgewertet – ganz gleich, wo Ihre App ausgeführt wird. Das Ergebnis ist aber nur dann **True**, wenn sie auf einem Gerät ausgeführt wird, auf dem die API vorhanden ist und somit aufgerufen werden kann. So können Sie Apps mit versionsadaptivem Code erstellen, die APIs verwenden, welche nur unter bestimmten Betriebssystemversionen verfügbar sind.
 
 Hier gehen wir anhand von spezifischen Beispielen auf die Nutzung neuer Features der Windows Insider Preview ein. Eine allgemeine Übersicht über die Verwendung von **ApiInformation** finden Sie in der [Übersicht zu Gerätefamilien](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code) sowie im Blogbeitrag [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/) (Dynamisches Erkennen von Features mithilfe von API-Verträgen).
 
@@ -34,7 +34,7 @@ In den meisten Fällen können Sie die auf die SDK-Version 10240 festgelegte Mi
 
 Die Mindestversion der App muss erhöht werden, wenn Sie Folgendes verwenden:
 - Eine neue API, die eine Funktion erfordert, die in einer früheren Version nicht verfügbar ist. Die unterstützte Mindestversion muss auf eine höhere Version festgelegt werden, die über diese Funktion verfügt. Weitere Informationen finden Sie unter [Deklaration der App-Funktionen](../packaging/app-capability-declarations.md).
-- Einen neuen Ressourcenschlüssel, der zu „generic.xaml“ hinzugefügt wurde und in einer früheren Version nicht verfügbar war. Die zur Laufzeit verwendete Version von „generic.xaml“ wird durch die auf dem Gerät ausgeführte Betriebssystemversion bestimmt. Mit API-Laufzeitprüfungen lässt sich nicht ermitteln, ob XAML-Ressourcen vorhanden sind. Daher dürfen nur Ressourcenschlüssel verwendet werden, die in der von der App unterstützten Mindestversion zur Verfügung stehen. Andernfalls bringt eine [XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) Ihre App zur Laufzeit zum Absturz.
+- Einen neuen Ressourcenschlüssel, der zu „generic.xaml“ hinzugefügt wurde und in einer früheren Version nicht verfügbar war. Die zur Laufzeit verwendete Version von „generic.xaml“ wird durch die auf dem Gerät ausgeführte Betriebssystemversion bestimmt. Mit API-Laufzeitprüfungen lässt sich nicht ermitteln, ob XAML-Ressourcen vorhanden sind. Daher dürfen nur Ressourcenschlüssel verwendet werden, die in der von der App unterstützten Mindestversion zur Verfügung stehen. Andernfalls bringt eine [XAMLParseException](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlparseexception) Ihre App zur Laufzeit zum Absturz.
 
 ### <a name="adaptive-code-options"></a>Optionen für adaptiven Code
 
@@ -73,14 +73,14 @@ In diesem Abschnitt zeigen wir verschiedene Beispiele für adaptiven Code, in de
 
 ### <a name="example-1-new-enum-value"></a>Beispiel 1: Neue Enum-Wert
 
-Windows 10, Version 1607 Fügt einen neuen Wert der [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx) Enumeration: **ChatWithoutEmoji**. Dieser neue Eingabeumfang besitzt das gleiche Eingabeverhalten wie der Eingabeumfang **Chat** (Rechtschreibprüfung, AutoVervollständigen, automatische Großschreibung), wird aber einer Bildschirmtastatur ohne Emoji-Schaltfläche zugeordnet. Dies ist hilfreich, wenn Sie Ihre eigene Emoji-Auswahl erstellen und die integrierte Emoji-Schaltfläche auf der Bildschirmtastatur deaktivieren möchten. 
+Windows 10, Version 1607 Fügt einen neuen Wert der [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) Enumeration: **ChatWithoutEmoji**. Dieser neue Eingabeumfang besitzt das gleiche Eingabeverhalten wie der Eingabeumfang **Chat** (Rechtschreibprüfung, AutoVervollständigen, automatische Großschreibung), wird aber einer Bildschirmtastatur ohne Emoji-Schaltfläche zugeordnet. Dies ist hilfreich, wenn Sie Ihre eigene Emoji-Auswahl erstellen und die integrierte Emoji-Schaltfläche auf der Bildschirmtastatur deaktivieren möchten. 
 
-Dieses Beispiel zeigt, wie Sie überprüfen, ob der **ChatWithoutEmoji**-Enumerationswert vorhanden ist, und die [InputScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.inputscope.aspx)-Eigenschaft eines **TextBox**-Elements festlegen, falls dies der Fall ist. Ist der Wert in dem System, auf dem die App ausgeführt wird, nicht vorhanden, wird **InputScope** stattdessen auf **Chat** festgelegt. Der hier gezeigte Code kann in einem Page-Konstruktor oder in einem Page.Loaded-Ereignishandler platziert werden.
+Dieses Beispiel zeigt, wie Sie überprüfen, ob der **ChatWithoutEmoji**-Enumerationswert vorhanden ist, und die [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope)-Eigenschaft eines **TextBox**-Elements festlegen, falls dies der Fall ist. Ist der Wert in dem System, auf dem die App ausgeführt wird, nicht vorhanden, wird **InputScope** stattdessen auf **Chat** festgelegt. Der hier gezeigte Code kann in einem Page-Konstruktor oder in einem Page.Loaded-Ereignishandler platziert werden.
 
 > [!TIP]
 > Verlassen Sie sich beim Prüfen einer API nicht auf .NET-Sprachfeatures, sondern verwenden Sie statische Zeichenfolgen. Andernfalls versucht Ihre App unter Umständen, auf einen nicht definierten Typ zuzugreifen, was einen Absturz zur Laufzeit zur Folge hat.
 
-**C# -CODE**
+**C#**
 ```csharp
 // Create a TextBox control for sending messages 
 // and initialize an InputScope object.
@@ -125,7 +125,7 @@ Im vorherigen Beispiel wird das TextBox-Element erstellt, und alle Eigenschaften
          Loaded="messageBox_Loaded"/>
 ```
 
-**C# -CODE**
+**C#**
 ```csharp
 private void messageBox_Loaded(object sender, RoutedEventArgs e)
 {
@@ -156,20 +156,20 @@ Wenn Sie den ChatWithoutEmoji-Wert in XAML oder in Code ohne Überprüfung verwe
 
 ### <a name="example-2-new-control"></a>Beispiel 2: Neues Steuerelement
 
-Eine neue Version von Windows verfügt üblicherweise über neue Steuerelemente für die UWP-API-Oberfläche, die den Funktionsumfang der Plattform erweitern. Das Vorhandensein eines neuen Steuerelements kann mithilfe der [ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx)-Methode ermittelt werden.
+Eine neue Version von Windows verfügt üblicherweise über neue Steuerelemente für die UWP-API-Oberfläche, die den Funktionsumfang der Plattform erweitern. Das Vorhandensein eines neuen Steuerelements kann mithilfe der [ApiInformation.IsTypePresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent)-Methode ermittelt werden.
 
-In der Windows 10-Version 1607 wird ein neues Mediensteuerelement namens [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) eingeführt. Dieses Steuerelement basiert auf der [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx)-Klasse, stellt beispielweise Features wie die problemlose Einbindung von Hintergrundaudio bereit und profitiert von Verbesserungen bei der Architektur des Medienstapels.
+In der Windows 10-Version 1607 wird ein neues Mediensteuerelement namens [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) eingeführt. Dieses Steuerelement basiert auf der [MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)-Klasse, stellt beispielweise Features wie die problemlose Einbindung von Hintergrundaudio bereit und profitiert von Verbesserungen bei der Architektur des Medienstapels.
 
-Wenn die App allerdings auf einem Gerät mit einer älteren Windows 10-Version als 1607 ausgeführt wird, muss anstelle des neuen **MediaPlayerElement**-Steuerelements das [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx)-Steuerelement verwendet werden. Sie können mithilfe der [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx)-Methode zur Laufzeit überprüfen, ob das MediaPlayerElement-Steuerelement vorhanden ist, und dann das geeignete Steuerelement für das System laden, auf dem die App ausgeführt wird.
+Wenn die App allerdings auf einem Gerät mit einer älteren Windows 10-Version als 1607 ausgeführt wird, muss anstelle des neuen **MediaPlayerElement**-Steuerelements das [**MediaElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement)-Steuerelement verwendet werden. Sie können mithilfe der [**ApiInformation.IsTypePresent**](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent)-Methode zur Laufzeit überprüfen, ob das MediaPlayerElement-Steuerelement vorhanden ist, und dann das geeignete Steuerelement für das System laden, auf dem die App ausgeführt wird.
 
-Dieses Beispiel zeigt, wie Sie eine App erstellen, die abhängig davon, ob der MediaPlayerElement-Typ vorhanden ist, entweder das neue MediaPlayerElement-Steuerelement oder das alte MediaElement-Steuerelement verwendet. In diesem Code werden die Steuerelemente samt dazugehöriger Benutzeroberfläche und entsprechendem Code mithilfe der [UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx)-Klasse in Komponenten zerlegt, sodass sie abhängig von der Betriebssystemversion einbezogen werden können. Alternativ können Sie ein benutzerdefiniertes Steuerelement verwendet. Dieses bietet mehr Funktionen und benutzerdefiniertes Verhalten als in diesem einfachen Beispiel erforderlich.
+Dieses Beispiel zeigt, wie Sie eine App erstellen, die abhängig davon, ob der MediaPlayerElement-Typ vorhanden ist, entweder das neue MediaPlayerElement-Steuerelement oder das alte MediaElement-Steuerelement verwendet. In diesem Code werden die Steuerelemente samt dazugehöriger Benutzeroberfläche und entsprechendem Code mithilfe der [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)-Klasse in Komponenten zerlegt, sodass sie abhängig von der Betriebssystemversion einbezogen werden können. Alternativ können Sie ein benutzerdefiniertes Steuerelement verwendet. Dieses bietet mehr Funktionen und benutzerdefiniertes Verhalten als in diesem einfachen Beispiel erforderlich.
  
 **MediaPlayerUserControl** 
 
 `MediaPlayerUserControl` kapselt ein **MediaPlayerElement** und mehrere Schaltflächen für eine framebasierte Mediennavigation. „UserControl“ ermöglicht die Behandlung dieser Steuerelemente als einzelne Entität und erleichtert den Wechsel zu „MediaElement“ bei älteren Systemen. Dieses Benutzersteuerelement sollte nur für Systeme verwendet werden, die über „MediaPlayerElement“ verfügen, sodass im Code innerhalb dieses Benutzersteuerelements keine ApiInformation-Prüfungen ausgeführt werden.
 
 > [!NOTE]
-> Die Schaltflächen für die Frameschritte werden außerhalb des Medienplayers platziert, um dieses Beispiel möglichst einfach und prägnant zu halten. Zur Verbesserung der Benutzerfreundlichkeit sollten Sie „MediaTransportControls“ mit Ihren benutzerdefinierten Schaltflächen anpassen. Weitere Informationen finden Sie unter [Benutzerdefinierte Transportsteuerelemente](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls). 
+> Die Schaltflächen für die Frameschritte werden außerhalb des Medienplayers platziert, um dieses Beispiel möglichst einfach und prägnant zu halten. Zur Verbesserung der Benutzerfreundlichkeit sollten Sie „MediaTransportControls“ mit Ihren benutzerdefinierten Schaltflächen anpassen. Weitere Informationen finden Sie unter [Benutzerdefinierte Transportsteuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls). 
 
 **XAML**
 ```xaml
@@ -198,7 +198,7 @@ Dieses Beispiel zeigt, wie Sie eine App erstellen, die abhängig davon, ob der M
 </UserControl>
 ```
 
-**C# -CODE**
+**C#**
 ```csharp
 using System;
 using Windows.Media.Core;
@@ -271,7 +271,7 @@ namespace MediaApp
 
 Rufen Sie zur Laufzeit **ApiInformation.IsTypePresent** auf, um zu prüfen, ob „MediaPlayerElement“ vorhanden ist. Falls ja, wird `MediaPlayerUserControl` geladen. Andernfalls wird `MediaElementUserControl` geladen.
 
-**C# -CODE**
+**C#**
 ```csharp
 public MainPage()
 {
@@ -305,9 +305,9 @@ Verwenden Sie Zustandsauslöser nur dann für adaptiven Code, wenn lediglich ger
 
 ### <a name="example-1-new-property"></a>Beispiel 1: Neue Eigenschaft
 
-Der erste Schritt bei der Einrichtung eines erweiterbaren Zustandsauslösers besteht in der Verwendung von Unterklassen für die [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx)-Klasse zur Erstellung eines benutzerdefinierten Auslösers, dessen Aktivierung davon abhängt, ob eine API vorhanden ist. Dieses Beispiel zeigt einen Auslöser, der aktiviert wird, wenn das Vorhandensein der Eigenschaft der in XAML festgelegten `_isPresent`-Variablen entspricht.
+Der erste Schritt bei der Einrichtung eines erweiterbaren Zustandsauslösers besteht in der Verwendung von Unterklassen für die [StateTriggerBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.statetriggerbase)-Klasse zur Erstellung eines benutzerdefinierten Auslösers, dessen Aktivierung davon abhängt, ob eine API vorhanden ist. Dieses Beispiel zeigt einen Auslöser, der aktiviert wird, wenn das Vorhandensein der Eigenschaft der in XAML festgelegten `_isPresent`-Variablen entspricht.
 
-**C# -CODE**
+**C#**
 ```csharp
 class IsPropertyPresentTrigger : StateTriggerBase
 {
@@ -339,7 +339,7 @@ class IsPropertyPresentTrigger : StateTriggerBase
 
 Im nächsten Schritt wird der visuelle Zustandsauslöser in XAML eingerichtet, um abhängig vom Vorhandensein der API zwei unterschiedliche visuelle Zustände zu erhalten. 
 
-In der Windows 10-Version 1607 wird für die [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx)-Klasse eine neue Eigenschaft namens [AllowFocusOnInteraction](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.allowfocusoninteraction.aspx) eingeführt, die bestimmt, ob ein Steuerelement den Fokus erhält, wenn ein Benutzer damit interagiert. Dies ist hilfreich, falls ein Textfeld für die Dateneingabe den Fokus behalten (und die Bildschirmtastatur weiter angezeigt werden) soll, wenn der Benutzer auf eine Schaltfläche klickt.
+In der Windows 10-Version 1607 wird für die [FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement)-Klasse eine neue Eigenschaft namens [AllowFocusOnInteraction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction) eingeführt, die bestimmt, ob ein Steuerelement den Fokus erhält, wenn ein Benutzer damit interagiert. Dies ist hilfreich, falls ein Textfeld für die Dateneingabe den Fokus behalten (und die Bildschirmtastatur weiter angezeigt werden) soll, wenn der Benutzer auf eine Schaltfläche klickt.
 
 Der Auslöser in diesem Beispiel überprüft, ob die Eigenschaft vorhanden ist. Ist die Eigenschaft vorhanden, wird die **AllowFocusOnInteraction**-Eigenschaft für eine Schaltfläche auf **False** festgelegt. Ist die Eigenschaft nicht vorhanden, wird der ursprüngliche Zustand der Schaltfläche beibehalten. Das TextBox-Element dient zur Veranschaulichung der Auswirkung dieser Eigenschaft, wenn Sie den Code ausführen.
 
@@ -375,7 +375,7 @@ Der Auslöser in diesem Beispiel überprüft, ob die Eigenschaft vorhanden ist. 
 
 Dieses Beispiel zeigt, wie Sie abhängig davon, ob ein Wert vorhanden ist, unterschiedliche Enumerationswerte festlegen. Hierbei kommt ein benutzerdefinierter Zustandsauslöser zum Einsatz, um das gleiche Ergebnis zu erhalten wie im vorherigen Chatbeispiel. In diesem Beispiel wird der neue ChatWithoutEmoji-Eingabeumfang verwendet, wenn auf dem Gerät die Windows 10-Version 1607 ausgeführt wird. Andernfalls wird der Eingabeumfang **Chat** verwendet. Die visuellen Zustände, die diesen Auslöser verwenden, werden im *if-else*-Stil eingerichtet, wobei die Wahl des Eingabeumfangs davon abhängt, ob der neue Enumerationswert vorhanden ist.
 
-**C# -CODE**
+**C#**
 ```csharp
 class IsEnumPresentTrigger : StateTriggerBase
 {

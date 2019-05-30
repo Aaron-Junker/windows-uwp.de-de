@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f0a53d0f725c134bbb7adecaa956000a53235b0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9c48cd52d69d13b61f059894cc0dbea89eecf913
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600905"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360866"
 ---
 # <a name="hardware-drm"></a>Hardwarebasiertes DRM
 
@@ -89,18 +89,18 @@ Die beste Möglichkeit, festzustellen, ob Sie in der DRM-Hardware oder Software 
 
 In diesem Abschnitt wird beschrieben, wie Sie den auf dem System unterstützten Hardware-DRM-Typ erkennen.
 
-Sie können die [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441)-Methode verwenden, um festzustellen, ob das System ein bestimmtes Hardware-DRM-Feature unterstützt. Zum Beispiel:
+Sie können die [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)-Methode verwenden, um festzustellen, ob das System ein bestimmtes Hardware-DRM-Feature unterstützt. Zum Beispiel:
 
 ```csharp
 bool isFeatureSupported = PlayReadyStatics.CheckSupportedHardware(PlayReadyHardwareDRMFeatures.HEVC);
 ```
 
-Die [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265)-Enumeration enthält die Liste gültiger Werte für das Hardware-DRM-Feature, die abgefragt werden können. Um festzustellen, ob das Hardware-DRM unterstützt wird, verwenden Sie den **HardwareDRM**-Member in der Abfrage. Um festzustellen, ob die Hardware den High Efficiency Video Coding (HEVC)/H.265-Codec unterstützt, verwenden Sie den **HEVC**-Member in der Abfrage.
+Die [**PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures)-Enumeration enthält die Liste gültiger Werte für das Hardware-DRM-Feature, die abgefragt werden können. Um festzustellen, ob das Hardware-DRM unterstützt wird, verwenden Sie den **HardwareDRM**-Member in der Abfrage. Um festzustellen, ob die Hardware den High Efficiency Video Coding (HEVC)/H.265-Codec unterstützt, verwenden Sie den **HEVC**-Member in der Abfrage.
 
-Sie können auch die [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx)-Eigenschaft zum Abrufen der Sicherheitsstufe des Clientzertifikats verwenden, um festzustellen, ob das Hardware-DRM unterstützt wird. Sofern die zurückgegebene Zertifikatssicherheitsstufe nicht größer oder gleich 3000 ist, ist entweder der Client nicht individualisiert oder bereitgestellt (in diesem Fall gibt die Eigenschaft 0 zurück) oder das Hardware-DRM wird nicht verwendet (in diesem Fall gibt die Eigenschaft einen Wert unter 3000 zurück).
+Sie können auch die [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel)-Eigenschaft zum Abrufen der Sicherheitsstufe des Clientzertifikats verwenden, um festzustellen, ob das Hardware-DRM unterstützt wird. Sofern die zurückgegebene Zertifikatssicherheitsstufe nicht größer oder gleich 3000 ist, ist entweder der Client nicht individualisiert oder bereitgestellt (in diesem Fall gibt die Eigenschaft 0 zurück) oder das Hardware-DRM wird nicht verwendet (in diesem Fall gibt die Eigenschaft einen Wert unter 3000 zurück).
 
 ### <a name="detecting-support-for-aes128cbc-hardware-drm"></a>Erkenn des Supports für AES128CBC Hardware-DRM
-Ab Windows 10, Version 1709, können Sie die Unterstützung für AES128CBC Hardware-Verschlüsselung auf einem Gerät durch Aufrufen von **[PlayReadyStatics.CheckSupportedHardware](https://msdn.microsoft.com/library/windows/apps/dn986441)** und Angeben des Enumerationswerts [**PlayReadyHardwareDRMFeatures.Aes128Cbc** ](https://msdn.microsoft.com/library/windows/apps/dn986265) erkennen. In früheren Versionen von Windows 10 verursachte die Angabe dieses Werts eine Ausnahme. Aus diesem Grund sollten Sie das Vorhandensein des Enumerationswerts überprüfen, indem Sie **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** aufrufen und die wichtige Vertragsversion 5 vor dem Aufruf von **CheckSupportedHardware**  angeben.
+Ab Windows 10, Version 1709, können Sie die Unterstützung für AES128CBC Hardware-Verschlüsselung auf einem Gerät durch Aufrufen von **[PlayReadyStatics.CheckSupportedHardware](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)** und Angeben des Enumerationswerts [**PlayReadyHardwareDRMFeatures.Aes128Cbc** ](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) erkennen. In früheren Versionen von Windows 10 verursachte die Angabe dieses Werts eine Ausnahme. Aus diesem Grund sollten Sie das Vorhandensein des Enumerationswerts überprüfen, indem Sie **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** aufrufen und die wichtige Vertragsversion 5 vor dem Aufruf von **CheckSupportedHardware**  angeben.
 
 ```csharp
 bool supportsAes128Cbc = ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5);

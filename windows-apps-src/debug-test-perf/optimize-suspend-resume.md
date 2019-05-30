@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 06af6241bdd75efdd3ff71e02f74252d60540669
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f94fcdf33267ab352f5cdc274e07373952b0939b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653655"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362156"
 ---
 # <a name="optimize-suspendresume"></a>Optimieren von Anhalten/Fortsetzen
 
@@ -54,17 +54,17 @@ Eine App kann angehalten werden, wenn sie vom Benutzer in den Hintergrund verset
 
 ### <a name="serialize-only-when-necessary"></a>Serialisierung nur wenn erforderlich
 
-Viele Apps serialisieren sämtliche Daten, wenn Sie angehalten werden. Wenn Sie nur einen kleinen Teil der Einstellungsdaten der App speichern möchten, sollten Sie den [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622)-Speicher verwenden, anstatt die Daten zu serialisieren. Serialisieren Sie nur große Datenmengen, die nicht zu den Einstellungen gehören.
+Viele Apps serialisieren sämtliche Daten, wenn Sie angehalten werden. Wenn Sie nur einen kleinen Teil der Einstellungsdaten der App speichern möchten, sollten Sie den [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings)-Speicher verwenden, anstatt die Daten zu serialisieren. Serialisieren Sie nur große Datenmengen, die nicht zu den Einstellungen gehören.
 
 Wenn Sie Ihre Daten serialisieren, sollten Sie ein erneutes Serialisieren vermeiden, wenn sich die Daten nicht geändert haben. Dabei dauert es nicht nur länger, wenn die Daten serialisiert und gespeichert werden, sondern auch, wenn die Daten bei der Reaktivierung der App gelesen und deserialisiert werden. Stattdessen sollte die App feststellen, ob sich ihr Status tatsächlich geändert hat und ggf. nur die geänderten Daten serialisieren bzw. deserialisieren. Eine empfehlenswerte Methode hierfür ist die regelmäßige Serialisierung im Hintergrund von Daten, wenn sich diese ändern. Bei dieser Methode ist bereits alles gespeichert, was beim Anhalten serialisiert werden muss, und die App kann ohne große Verzögerung angehalten werden.
 
 ### <a name="serializing-data-in-c-and-visual-basic"></a>Serialisieren von Daten in C# und Visual Basic
 
-Als Serialisierungstechnologien für .NET-Apps stehen die Klassen [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) und [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx) zur Verfügung.
+Als Serialisierungstechnologien für .NET-Apps stehen die Klassen [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN), [**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) und [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer?redirectedfrom=MSDN) zur Verfügung.
 
-Aus Leistungsgründen empfehlen wir die Verwendung der [**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx)-Klasse. Die **XmlSerializer**-Klasse zeichnet sich durch die schnellste Serialisierung und Deserialisierung sowie durch einen geringen Speicherbedarf aus. **XmlSerializer** ist nur in wenigen Bereichen mit .NET Framework verknüpft. Im Vergleich zu den anderen Serialisierungstechnologien müssen daher für die Verwendung von **XmlSerializer** weniger Module in Ihre App geladen werden.
+Aus Leistungsgründen empfehlen wir die Verwendung der [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN)-Klasse. Die **XmlSerializer**-Klasse zeichnet sich durch die schnellste Serialisierung und Deserialisierung sowie durch einen geringen Speicherbedarf aus. **XmlSerializer** ist nur in wenigen Bereichen mit .NET Framework verknüpft. Im Vergleich zu den anderen Serialisierungstechnologien müssen daher für die Verwendung von **XmlSerializer** weniger Module in Ihre App geladen werden.
 
-[**DataContractSerializer** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) erleichtert es, Serialisieren von benutzerdefinierten Klassen, obwohl es sich um eine größere Auswirkungen auf die Leistung als hat **XmlSerializer**. Wenn Sie eine bessere Leistung benötigen, denken Sie über einen Wechsel nach. Generell sollten Sie nur ein Serialisierungsprogramm laden und **XmlSerializer** vorziehen, falls Sie nicht die Funktionen eines anderen Serialisierungsprogramms benötigen.
+[**DataContractSerializer** ](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) erleichtert es, Serialisieren von benutzerdefinierten Klassen, obwohl es sich um eine größere Auswirkungen auf die Leistung als hat **XmlSerializer**. Wenn Sie eine bessere Leistung benötigen, denken Sie über einen Wechsel nach. Generell sollten Sie nur ein Serialisierungsprogramm laden und **XmlSerializer** vorziehen, falls Sie nicht die Funktionen eines anderen Serialisierungsprogramms benötigen.
 
 ### <a name="reduce-memory-footprint"></a>Verringern des Speicherbedarfs
 
@@ -81,11 +81,11 @@ Bestimmte Objekte, beispielsweise Dateien und Geräte, beanspruchen Arbeitsspeic
 
 Die Ausführung einer angehaltenen App kann fortgesetzt werden, wenn sie vom Benutzer in den Vordergrund geholt wird oder wenn das System einen Energiesparmodus verlässt. Wenn eine angehaltene App fortgesetzt wird, wird die App-Ausführung an dem Punkt fortgesetzt, an dem sie zuvor angehalten wurde. Es gehen keine App-Daten verloren, da sie im Arbeitsspeicher gespeichert wurden. Dies gilt auch dann, wenn die App über einen längeren Zeitraum angehalten war.
 
-Bei den meisten Apps ist keine Behandlung des [**Resuming**](https://msdn.microsoft.com/library/windows/apps/BR205859)-Ereignisses erforderlich. Bei der App-Reaktivierung besitzen die Variablen und Objekte exakt den gleichen Zustand wie beim Anhalten der App. Behandeln Sie das **Resuming**-Ereignis nur dann, wenn Sie Daten oder Objekte aktualisieren müssen, die sich nach dem Anhalten der App möglicherweise geändert haben. Beispiele wären etwa Inhalte (z. B. aktualisierte Feeddaten), nicht mehr aktuelle Netzwerkverbindungen oder die Wiederherstellung des Zugriffs ein Gerät (etwa eine Webcam).
+Bei den meisten Apps ist keine Behandlung des [**Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming)-Ereignisses erforderlich. Bei der App-Reaktivierung besitzen die Variablen und Objekte exakt den gleichen Zustand wie beim Anhalten der App. Behandeln Sie das **Resuming**-Ereignis nur dann, wenn Sie Daten oder Objekte aktualisieren müssen, die sich nach dem Anhalten der App möglicherweise geändert haben. Beispiele wären etwa Inhalte (z. B. aktualisierte Feeddaten), nicht mehr aktuelle Netzwerkverbindungen oder die Wiederherstellung des Zugriffs ein Gerät (etwa eine Webcam).
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Richtlinien für die app anhalten und fortsetzen](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [Richtlinien für die app anhalten und fortsetzen](https://docs.microsoft.com/windows/uwp/launch-resume/index)
  
 
  

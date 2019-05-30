@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: debc4572a26db9e849dd31f17b114f15aa9ef055
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644465"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362491"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
 
@@ -75,7 +75,7 @@ Damit dies ausgeführt werden kann, sind zwei neue Funktionen erforderlich. Dies
 ```
 
 > [!NOTE]
-> Die Funktion „devicePortalProvider” ist eingeschränkt („rescap”), das heißt, Sie müssen zuerst die Zustimmung vom Store erhalten, bevor Sie Ihre App dort veröffentlichen können. Dies hindert Sie jedoch nicht daran, Ihre App lokal per Querladen zu testen. Weitere Informationen zu eingeschränkten Funktionen finden Sie unter [Deklarationen von App-Funktionen](https://msdn.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities).
+> Die Funktion „devicePortalProvider” ist eingeschränkt („rescap”), das heißt, Sie müssen zuerst die Zustimmung vom Store erhalten, bevor Sie Ihre App dort veröffentlichen können. Dies hindert Sie jedoch nicht daran, Ihre App lokal per Querladen zu testen. Weitere Informationen zu eingeschränkten Funktionen finden Sie unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
 ## <a name="set-up-your-background-task-and-winrt-component"></a>Einrichten der Hintergrundaufgabe und der WinRT-Komponente
 Um die Device Portal-Verbindung einzurichten, muss Ihre App eine App-Dienstverbindung aus dem Device Portal-Dienst mit der in Ihrer App ausgeführten Instanz des Device Portal herstellen. Fügen Sie zu diesem Zweck Ihrer Anwendung eine neue WinRT-Komponente mit einer Klasse hinzu, die [**IBackgroundTask**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.ibackgroundtask) implementiert.

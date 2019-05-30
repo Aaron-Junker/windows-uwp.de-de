@@ -8,19 +8,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 55621cec768e0aac680c3a84fd803e591459a97d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1b931268dc20f40c1bc1d7c700f346d29d6aa9d6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605435"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370612"
 ---
 # <a name="graphics-pipeline"></a>Grafikpipeline
 
 
 Die Direct3D-Grafikpipeline dient zum Generieren von Grafiken für Echtzeitspiele. Datenflüsse vom Eingang zum Ausgang durch jede konfigurierbare oder programmierbare Phase
 
-Alle Stufen können mithilfe der Direct3D-API konfiguriert werden. Stufen, die allgemeine Shaderkerne (die abgerundeten rechteckige Blöcke) bereitstellen, sind mit der [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)-Programmiersprache programmierbar. Dadurch wird die Pipeline extrem flexibel und anpassbar.
+Alle Stufen können mithilfe der Direct3D-API konfiguriert werden. Stufen, die allgemeine Shaderkerne (die abgerundeten rechteckige Blöcke) bereitstellen, sind mit der [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)-Programmiersprache programmierbar. Dadurch wird die Pipeline extrem flexibel und anpassbar.
 
 Die am häufigsten verwendeten Stufen sind die Vertex-Shader-Stufe (VS-Stufe) und die Pixel-Shader-Stufe (PS-Stufe). Wenn Sie nicht einmal diese Shaderstufen bereitstellen, werden standardmäßige No-Op- und Pass-Through-Vertex- und Pixel-Shader verwendet.
 
@@ -48,7 +48,7 @@ Die am häufigsten verwendeten Stufen sind die Vertex-Shader-Stufe (VS-Stufe) un
 
 ## <a name="geometry-shader-stage"></a>Geometry-Shader-Stufe (GS-Stufe)
 
-|-|-| |Zweck|Die [Geometry-Shader-Stufe (GS-Stufe)](geometry-shader-stage--gs-.md) verarbeitet vollständige Grundformen (Dreiecke, Linien und Punkt) zusammen mit deren angrenzenden Vertices. Sie unterstützt Geometrieverstärkung und -abschwächung. Sie ist nützlich für Algorithmen wie Point Sprite Expansion, Dynamic Particle Systems, Fur/Fin Generation, Shadow Volume Generation, Single Pass Render-to-Cubemap, Per-Primitive Material Swapping und Per-Primitive Material Setup (dazu gehört das Erstellen baryzentrischer Koordinaten als Daten für Grundformen, sodass ein Pixel-Shader allgemeine Attribute interpolieren kann). | | Eingabe|Im Gegensatz zu den Eingaben für einen Vertex-Shader, der einen einzelnen Vertex verarbeitet, sind die Eingaben für einen Geometry-Shader die Vertices vollständiger Grundformen (drei Vertices für ein Dreieck, zwei Vertices für eine Linie oder ein Vertex für einen Punkt).| |Ausgabe|Die Geometry-Shader-Stufe (GS-Stufe) kann mehrere Vertices ausgeben, die eine einzelne ausgewählte Topologie darstellen. Ausgabetopologien des Geometry-Shaders sind <strong>Tristrip</strong>, <strong>Linestrip</strong> und <strong>Pointlist</strong>. Die Anzahl der ausgegebenen Grundformen kann mit jedem Aufruf des Geometry-Shaders variieren. Die maximale Anzahl auszugebender Vertices muss allerdings statisch deklariert werden muss. Die nach einem Geometry-Shader-Aufruf ausgegeben Strips können beliebig lang sein. Neue Strips können mit der HLSL-Funktion [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) erstellt werden.|
+|-|-| |Zweck|Die [Geometry-Shader-Stufe (GS-Stufe)](geometry-shader-stage--gs-.md) verarbeitet vollständige Grundformen (Dreiecke, Linien und Punkt) zusammen mit deren angrenzenden Vertices. Sie unterstützt Geometrieverstärkung und -abschwächung. Sie ist nützlich für Algorithmen wie Point Sprite Expansion, Dynamic Particle Systems, Fur/Fin Generation, Shadow Volume Generation, Single Pass Render-to-Cubemap, Per-Primitive Material Swapping und Per-Primitive Material Setup (dazu gehört das Erstellen baryzentrischer Koordinaten als Daten für Grundformen, sodass ein Pixel-Shader allgemeine Attribute interpolieren kann). | | Eingabe|Im Gegensatz zu den Eingaben für einen Vertex-Shader, der einen einzelnen Vertex verarbeitet, sind die Eingaben für einen Geometry-Shader die Vertices vollständiger Grundformen (drei Vertices für ein Dreieck, zwei Vertices für eine Linie oder ein Vertex für einen Punkt).| |Ausgabe|Die Geometry-Shader-Stufe (GS-Stufe) kann mehrere Vertices ausgeben, die eine einzelne ausgewählte Topologie darstellen. Ausgabetopologien des Geometry-Shaders sind <strong>Tristrip</strong>, <strong>Linestrip</strong> und <strong>Pointlist</strong>. Die Anzahl der ausgegebenen Grundformen kann mit jedem Aufruf des Geometry-Shaders variieren. Die maximale Anzahl auszugebender Vertices muss allerdings statisch deklariert werden muss. Die nach einem Geometry-Shader-Aufruf ausgegeben Strips können beliebig lang sein. Neue Strips können mit der HLSL-Funktion [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) erstellt werden.|
 
 ## <a name="stream-output-stage"></a>Streamoutputstufe (SO-Stufe)
 

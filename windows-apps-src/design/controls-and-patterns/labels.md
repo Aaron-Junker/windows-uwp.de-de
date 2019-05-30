@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4345daf5b879fed7ba9805e4a448c473299031d7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5996fb15c0d7302c7360c2e45613f0da2720d415
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654145"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364650"
 ---
 # <a name="labels"></a>Beschriftungen
 
@@ -24,9 +24,9 @@ ms.locfileid: "57654145"
 
 Ein Label ist der Name bzw. Titel eines Steuerelements oder einer Gruppe verwandter Steuerelemente.
 
-> **Wichtige APIs:** Header-Eigenschaft, [TextBlock-Klasse](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **Wichtige APIs:** Header-Eigenschaft, [TextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
-In XAML verfügen zahlreiche Steuerelemente über eine integrierte Header-Eigenschaft, die Sie zum Anzeigen der Beschriftung verwenden. Für Steuerelemente ohne Header-Eigenschaft oder zum Beschriften von Steuerelementgruppen können Sie stattdessen ein [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)-Element verwenden.
+In XAML verfügen zahlreiche Steuerelemente über eine integrierte Header-Eigenschaft, die Sie zum Anzeigen der Beschriftung verwenden. Für Steuerelemente ohne Header-Eigenschaft oder zum Beschriften von Steuerelementgruppen können Sie stattdessen ein [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element verwenden.
 
 ![Screenshot mit einem standardmäßigen Beschriftungssteuerelement](images/label-standard.png)
 
@@ -43,15 +43,15 @@ In XAML verfügen zahlreiche Steuerelemente über eine integrierte Header-Eigens
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Textsteuerelemente](text-controls.md)
-* [TextBox.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [PasswordBox.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [ToggleSwitch.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [DatePicker.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [TimePicker.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [Slider.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [ComboBox.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [RichEditBox.Header-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [TextBlock-Klasse](https://msdn.microsoft.com/library/windows/apps/br209652)
+* [TextBox.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)
+* [PasswordBox.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header)
+* [ToggleSwitch.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.header)
+* [DatePicker.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.header)
+* [TimePicker.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.header)
+* [Slider.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider.header)
+* [ComboBox.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox.header)
+* [RichEditBox.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.header)
+* [TextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
  
 

@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 363ea5728b94d6b42f29299e8d240bcfc6242b4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5fc43d5229ecd2bd9502fd74fef7f5197f758c62
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625115"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363588"
 ---
 # <a name="guidelines-for-panning"></a>Anleitungen für das Verschieben
 
 
 Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einzelnen Ansicht navigieren, um den Inhalt der Ansicht anzuzeigen, der nicht in den Anzeigebereich passt. Beispiele für Ansichten sind die Ordnerstruktur eines Computers, eine Dokumentbibliothek oder ein Fotoalbum.
 
-> **Wichtige APIs:** [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **Wichtige APIs:** [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -79,10 +79,9 @@ Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einz
 Das Verschieben per Toucheingabe mittels Streif- oder Ziehbewegung mit einem oder mehreren Fingern funktioniert wie der Bildlauf mit der Maus. Die Verschiebungsinteraktion gleicht eher dem Drehen des Mausrads oder Verschieben des Bildlauffelds als dem Klicken auf die Bildlaufleiste. Wenn eine Unterscheidung in einer API vorgenommen oder für einige gerätespezifische Windows-Benutzeroberfläche erforderlich ist, beziehen wir uns lediglich auf beide Interaktionen mit verschieben.
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update - verhaltensänderung</strong>
-> </div>
-> Beim Schwenken/Bildlauf in UWP-App wird jetzt standardmäßig anstelle der Textauswahl ein aktiver Stifts verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).  
+> <strong>Windows 10 Fall Creators Update - verhaltensänderung</strong> standardmäßig markierten Text, ein active Stift jetzt einen Bildlauf/Pans in UWP-apps (z. B. Touch, Touchpad und Stift der passiven).  
 > Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Informationen finden Sie die API-Referenz für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.
+> </div>
 
 Je nach Eingabegerät verwendet der Benutzer eine der folgenden Methoden, um die Anzeige in einem verschiebbaren Bereich zu verschieben:
 
@@ -172,9 +171,9 @@ Dieser Leitfaden ist auch für Apps wie Fotoalben oder Karten-Apps hilfreich, di
 ## <a name="related-articles"></a>Verwandte Artikel
 
 
-* [Benutzerdefinierte Benutzerinteraktionen](https://msdn.microsoft.com/library/windows/apps/mt185599)
-* [Optimieren der ListView und GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
-* [Barrierefreiheit der Tastaturnavigation](https://msdn.microsoft.com/library/windows/apps/mt244347)
+* [Benutzerdefinierte Benutzerinteraktionen](https://developer.microsoft.com/windows/design/inputs-devices)
+* [Optimieren der ListView und GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
+* [Barrierefreiheit der Tastaturnavigation](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
 
 **Beispiele**
 * [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)

@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a56bc23b4b727d5be2ed35fb77afae03f0689c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8731e5c794210c1a084c3de3cbf5004c7749a5e0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613225"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359909"
 ---
 # <a name="optimize-background-activity"></a>Optimieren von Hintergrundaktivitäten
 
 Universelle Windows-Apps sollten auf allen Gerätefamilien mit konsistenter Qualität ausgeführt werden. Auf akkubetriebenen Geräten stellt der Energieverbrauch einen wichtigen Faktor in Bezug auf die allgemeine Erfahrung der Benutzer mit Ihrer App dar. Jeder Benutzer wünscht sich eine Akkulaufzeit für den ganzen Tag. Hierfür muss jedoch jede auf dem Gerät installierte Software, einschließlich Ihrer Software, effizient ausgeführt werden. 
 
-Das Verhalten von Hintergrundaufgaben ist der wichtigste Faktor für den Energieverbrauch von Apps. Eine Hintergrundaufgabe ist eine Programmaktivität, die beim System zur Ausführung registriert wurde, ohne dass die App geöffnet ist. Weitere Informationen finden Sie unter [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
+Das Verhalten von Hintergrundaufgaben ist der wichtigste Faktor für den Energieverbrauch von Apps. Eine Hintergrundaufgabe ist eine Programmaktivität, die beim System zur Ausführung registriert wurde, ohne dass die App geöffnet ist. Weitere Informationen finden Sie unter [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
 ## <a name="background-activity-permissions"></a>Berechtigungen für Hintergrundaktivitäten
 
@@ -39,7 +39,7 @@ Auf Desktopgeräten wird die Option „Von Windows verwaltet” als Ein/Aus-Scha
 
 ![Hintergrund-Berechtigungen ausschalten](images/background-task-permissions-off.png)
 
-In Ihrer App können Sie den Enumerationswert [**BackgroundAccessStatus**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) verwenden, der durch Aufrufen der [**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx)-Methode zurückgegeben wird, um die aktuell festgelegten Hintergrund-Berechtigungen anzuzeigen.
+In Ihrer App können Sie den Enumerationswert [**BackgroundAccessStatus**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) verwenden, der durch Aufrufen der [**BackgroundExecutionManager.RequestAccessAsync()** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)-Methode zurückgegeben wird, um die aktuell festgelegten Hintergrund-Berechtigungen anzuzeigen.
 
 Wenn Ihre App keine verantwortliche Verwaltung von Hintergrundaufgaben implementiert, lehnen Benutzer möglicherweise Genehmigungen für Hintergrundaktivitäten für Ihre App insgesamt ab. Dies ist für keine der beiden Parteien vorteilhaft. Wenn Ihre App keine Berechtigung hat, um Hintergrundaktivitäten auszuführen, die für eine Aktion des Benutzers erforderlich sind, kann der Benutzer benachrichtigt und auf die Einstellungs-App geführt werden. Dies kann erfolgen durch das [Starten der Einstellungs-App](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app) auf der Informationsseite für die Hintergrundaktivitäten oder den Akkuverbrauch der App.
 
@@ -52,10 +52,10 @@ Innerhalb Ihrer App zeigen Sie den Status des Stromsparmodus durch einen Verweis
 Im Folgenden finden Sie zusätzliche Schritte, die Sie beim Registrieren von Hintergrundaufgaben ausführen können, um zusätzliche Energie zu sparen.
 
 ### <a name="use-a-maintenance-trigger"></a>Verwenden eines Wartungsauslösers 
-Sie können ein [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx)-Objekt anstelle eines [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx)-Objekts verwenden, um festzulegen, wann eine Hintergrundaufgabe gestartet wird. Aufgaben, die Wartungsauslöser verwenden, werden nur ausgeführt, wenn das Gerät an die Stromversorgung angeschlossen ist, und dürfen länger ausgeführt werden. Weitere Anweisungen finden Sie unter [Verwenden von Wartungsauslösern](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger).
+Sie können ein [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.maintenancetrigger)-Objekt anstelle eines [**SystemTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.systemtrigger)-Objekts verwenden, um festzulegen, wann eine Hintergrundaufgabe gestartet wird. Aufgaben, die Wartungsauslöser verwenden, werden nur ausgeführt, wenn das Gerät an die Stromversorgung angeschlossen ist, und dürfen länger ausgeführt werden. Weitere Anweisungen finden Sie unter [Verwenden von Wartungsauslösern](https://docs.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger).
 
 ### <a name="use-the-backgroundworkcostnothigh-system-condition-type"></a>Verwenden Sie den Systembedingungstyp **BackgroundWorkCostNotHigh**.
-Die Systembedingungen müssen erfüllt sein, damit Hintergrundaufgaben ausgeführt werden. (Weitere Informationen finden Sie unter [Festlegen von Bedingungen zum Ausführen einer Hintergrundaufgabe](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task)). Die Kosten für Hintergrundaufgaben stellen eine Messung dar, die die *relativen* Auswirkungen auf den Energieverbrauch angibt, wenn die Hintergrundaufgabe ausgeführt wird. Eine Aufgabe, die ausgeführt wird, während das Gerät an die Stromversorgung angeschlossen ist, würde als **niedrig** markiert werden (wenig/keine Auswirkung auf den Akku). Eine Aufgabe, die ausgeführt wird, wenn das Gerät mit Akkustrom betrieben wird und der Bildschirm ausgeschaltet ist, wird als **hoch** markiert, da zu diesem Zeitpunkt vermutlich nur wenige Programmaktivitäten auf dem Gerät ausgeführt werden. Daher verursacht eine Hintergrundaufgabe höhere relative Kosten. Eine Aufgabe, die ausgeführt wird, während das Gerät mit Akkustrom betrieben wird und der Bildschirm *eingeschaltet* ist, wird als **mittel** markiert, da vermutlich einige Programmaktivitäten bereits ausgeführt werden und die Hintergrundaufgabe etwas mehr zum Energieverbrauch beiträgt. Die **BackgroundWorkCostNotHigh**-Systembedingung verzögert einfach die Fähigkeit Ihrer Aufgabe, ausgeführt zu werden, bis der Bildschirm eingeschaltet ist oder das Gerät an die Stromversorgung angeschlossen ist.
+Die Systembedingungen müssen erfüllt sein, damit Hintergrundaufgaben ausgeführt werden. (Weitere Informationen finden Sie unter [Festlegen von Bedingungen zum Ausführen einer Hintergrundaufgabe](https://docs.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task)). Die Kosten für Hintergrundaufgaben stellen eine Messung dar, die die *relativen* Auswirkungen auf den Energieverbrauch angibt, wenn die Hintergrundaufgabe ausgeführt wird. Eine Aufgabe, die ausgeführt wird, während das Gerät an die Stromversorgung angeschlossen ist, würde als **niedrig** markiert werden (wenig/keine Auswirkung auf den Akku). Eine Aufgabe, die ausgeführt wird, wenn das Gerät mit Akkustrom betrieben wird und der Bildschirm ausgeschaltet ist, wird als **hoch** markiert, da zu diesem Zeitpunkt vermutlich nur wenige Programmaktivitäten auf dem Gerät ausgeführt werden. Daher verursacht eine Hintergrundaufgabe höhere relative Kosten. Eine Aufgabe, die ausgeführt wird, während das Gerät mit Akkustrom betrieben wird und der Bildschirm *eingeschaltet* ist, wird als **mittel** markiert, da vermutlich einige Programmaktivitäten bereits ausgeführt werden und die Hintergrundaufgabe etwas mehr zum Energieverbrauch beiträgt. Die **BackgroundWorkCostNotHigh**-Systembedingung verzögert einfach die Fähigkeit Ihrer Aufgabe, ausgeführt zu werden, bis der Bildschirm eingeschaltet ist oder das Gerät an die Stromversorgung angeschlossen ist.
 
 ## <a name="test-battery-efficiency"></a>Testen der Akkueffizienz
 
@@ -63,6 +63,6 @@ Testen Sie Ihre App immer auf realen Geräten, wenn Sie Szenarien mit hohem Ener
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
-* [Planen für Leistung](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
+* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [Planen für Leistung](https://docs.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

@@ -1,21 +1,21 @@
 ---
 Description: Es werden Barrierefreiheitskonzepte für UWP-Apps (Universelle Windows-Plattform) vorgestellt.
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: Bedienungshilfen
+title: Zugriff
 label: Accessibility
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9cdfb8a20e273d5d9e5819fc1e28aba97e4296
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 157d0c2ef640f4059d532c26956419e7b3fd3cb4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611695"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362110"
 ---
-# <a name="accessibility"></a>Bedienungshilfen  
+# <a name="accessibility"></a>Zugriff  
 
 
 
@@ -44,5 +44,5 @@ Bei der Barrierefreiheit geht es darum, eine Anwendung so zu gestalten, dass sie
 | [Steuerelementmuster und Schnittstellen](control-patterns-and-interfaces.md) | Enthält eine Liste der Steuerelementmuster für die Microsoft-Benutzeroberflächenautomatisierung zusammen mit den Klassen, die Clients für den Zugriff verwenden, und den Schnittstellen, die Anbieter zur Implementierung verwenden. |
 
 ## <a name="related-topics"></a>Verwandte Themen  
-* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
+* [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation) 
 * [Erste Schritte mit der Sprachausgabe](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

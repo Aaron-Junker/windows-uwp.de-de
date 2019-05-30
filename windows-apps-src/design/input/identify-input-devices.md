@@ -8,30 +8,30 @@ keywords: Gerät, Digitalisierer, Eingabe, Interaktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d37a830ffd0735d69046aa7e9495cfe6fa943f97
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 982f787aaef05dabdc356af906e80b28085b5a2d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638525"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363384"
 ---
 # <a name="identify-input-devices"></a>Identifizieren von Eingabegeräten
 
 
 Identifizieren Sie die Eingabegeräte, die mit einem Gerät für die universelle Windows-Plattform (UWP) verbunden sind, sowie deren Funktionen und Attribute.
 
-> **Wichtige APIs:** [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **Wichtige APIs:** [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 ## <a name="retrieve-mouse-properties"></a>Abrufen von Mauseigenschaften
 
 
-Der [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)-Namespace enthält die [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)-Klasse, mit der Sie die Eigenschaften abrufen können, die von einer oder mehreren angeschlossenen Mäusen bereitgestellt werden. Erstellen Sie einfach ein neues **MouseCapabilities**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
+Der [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)-Namespace enthält die [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities)-Klasse, mit der Sie die Eigenschaften abrufen können, die von einer oder mehreren angeschlossenen Mäusen bereitgestellt werden. Erstellen Sie einfach ein neues **MouseCapabilities**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
 
 **Beachten Sie**  die von den hier behandelten Eigenschaften zurückgegebenen Werte basieren auf alle erkannten Mäuse: Boolesche Eigenschaften, die zurück ungleich NULL, wenn mindestens eine Maus, einer bestimmten Funktion unterstützt und numerische Eigenschaften, des maximalen Werts, der von einer Maus, die verfügbar gemacht werden zurück.
 
  
 
-Der folgende Code verwendet eine Reihe von [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)-Elementen, um die einzelnen Mauseigenschaften und -werte anzuzeigen.
+Der folgende Code verwendet eine Reihe von [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Elementen, um die einzelnen Mauseigenschaften und -werte anzuzeigen.
 
 ```CSharp
 private void GetMouseProperties()
@@ -48,9 +48,9 @@ private void GetMouseProperties()
 ## <a name="retrieve-keyboard-properties"></a>Abrufen von Tastatureigenschaften
 
 
-Der [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)-Namespace enthält die [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623)-Klasse, mit der Sie ermitteln können, ob eine Tastatur angeschlossen ist. Erstellen Sie einfach ein neues **KeyboardCapabilities**-Objekt, und rufen Sie die [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625)-Eigenschaft ab.
+Der [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)-Namespace enthält die [**KeyboardCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.KeyboardCapabilities)-Klasse, mit der Sie ermitteln können, ob eine Tastatur angeschlossen ist. Erstellen Sie einfach ein neues **KeyboardCapabilities**-Objekt, und rufen Sie die [**KeyboardPresent**](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent)-Eigenschaft ab.
 
-Der folgende Code verwendet ein [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)-Element, um die Tastatureigenschaft und ihren Wert anzuzeigen.
+Der folgende Code verwendet ein [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element, um die Tastatureigenschaft und ihren Wert anzuzeigen.
 
 ```CSharp
 private void GetKeyboardProperties()
@@ -63,13 +63,13 @@ private void GetKeyboardProperties()
 ## <a name="retrieve-touch-properties"></a>Abrufen von Berührungseigenschaften
 
 
-Der [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)-Namespace enthält die [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644)-Klasse, mit der Sie ermitteln können, ob Touchdigitalisierungsgeräte angeschlossen sind. Erstellen Sie einfach ein neues **TouchCapabilities**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
+Der [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)-Namespace enthält die [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities)-Klasse, mit der Sie ermitteln können, ob Touchdigitalisierungsgeräte angeschlossen sind. Erstellen Sie einfach ein neues **TouchCapabilities**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
 
 **Beachten Sie**  die von den hier behandelten Eigenschaften zurückgegebenen Werte auf allen erkannten Digitalisierungsgeräte basieren: Boolesche Eigenschaften, die zurück ungleich NULL, wenn mindestens ein Digitizer einer bestimmten Funktion unterstützt und numerische Eigenschaften, des maximalen Werts von jedem eine Digitizer verfügbar gemacht werden zurück.
 
  
 
-Der folgende Code verwendet eine Reihe von [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)-Elementen, um die Eigenschaften und Werte der einzelnen Touchdigitalisierer anzuzeigen.
+Der folgende Code verwendet eine Reihe von [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Elementen, um die Eigenschaften und Werte der einzelnen Touchdigitalisierer anzuzeigen.
 
 ```CSharp
 private void GetTouchProperties()
@@ -83,7 +83,7 @@ private void GetTouchProperties()
 ## <a name="retrieve-pointer-properties"></a>Abrufen von Zeigereigenschaften
 
 
-Der [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)-Namespace enthält die [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633)-Klasse, mit der Sie abrufen können, ob eines der erkannten Geräte Zeigereingaben (Toucheingabe, Stift oder Maus) unterstützt. Erstellen Sie einfach ein neues **PointerDevice**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
+Der [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)-Namespace enthält die [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice)-Klasse, mit der Sie abrufen können, ob eines der erkannten Geräte Zeigereingaben (Toucheingabe, Stift oder Maus) unterstützt. Erstellen Sie einfach ein neues **PointerDevice**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
 
 **Beachten Sie**  die von den hier behandelten Eigenschaften zurückgegebenen Werte basieren auf allen erkannten Zeiger-Geräten: Boolesche Eigenschaften, die zurück ungleich NULL, wenn mindestens ein Gerät eine bestimmte Funktion unterstützt, und numerische Eigenschaften, des maximalen Werts, der von einem beliebigen Gerät für einen Zeiger verfügbar gemacht werden zurück.
 

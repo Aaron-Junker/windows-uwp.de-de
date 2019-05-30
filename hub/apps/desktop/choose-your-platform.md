@@ -7,12 +7,12 @@ ms.date: 03/18/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ece6c5eea6cc05a966a7eae4cd16958dddee4d4
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 996bbaf4dd05ce5b24e536459c6d7d009a53fa19
+ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215048"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266406"
 ---
 # <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
@@ -29,7 +29,10 @@ Alle diese Plattformen können Sie die desktop-apps wie Word, Excel und Photosho
 
 * **Win32 API**. Die Win32-API (auch als die Windows-API bezeichnet) ist die ursprüngliche Plattform für systemeigene C /C++ Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Es bietet eine erstklassige entwicklungserfahrung ohne abhängig von der eine verwaltete Laufzeitumgebung wie .NET und WinRT. Dadurch wird die Win32-API der Plattform der Wahl für Anwendungen, die höchste Leistung und direkten Zugriff auf die System-Hardware zu benötigen.
 
-Dieser Artikel beschreibt diese Plattformen im Detail und können Sie die beste Option für Ihre Anwendung zu ermitteln.
+Dieser Artikel beschreibt diese Plattformen im Detail und können Sie die beste Option für Ihre Anwendung zu ermitteln. 
+
+> [!NOTE]
+> Unabhängig davon, welche app-Plattform, die Sie auswählen, können Sie viele Funktionen des die universelle Windows-Plattform (UWP) verwenden, um eine moderne Lösung in Ihrer app unter Windows 10 bereitzustellen. Beispielsweise auch, wenn Ihre desktop-app mithilfe von WPF, Windows Forms oder die Win32-API erstellt wird, können immer noch viele Features eingeführt wurden und mit der UWP, z. B. MSIX paketbereitstellung und UWP XAML-Steuerelemente Sie. Weitere Informationen finden Sie unter [modernisieren Sie Ihre desktop-apps](modernize/index.md).
 
 ## <a name="uwp"></a>UWP
 

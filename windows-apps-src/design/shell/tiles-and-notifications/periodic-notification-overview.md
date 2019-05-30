@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 14f5fa06cfa0a6a7e393f3e2d513af0898d1f822
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624855"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360941"
 ---
 # <a name="periodic-notification-overview"></a>Übersicht über regelmäßige Benachrichtigungen
  
@@ -34,14 +34,14 @@ Regelmäßige Benachrichtigungen bieten Ihnen Live-Kachelaktualisierungen mit mi
 
 Regelmäßige Benachrichtigungen erfordern einen von Ihrer App gehosteten Clouddienst. Der Dienst wird regelmäßig von allen Benutzern abgefragt, die die App installiert haben. Bei jedem Abfrageintervall, wie z. B. nach einer Stunde, sendet Windows eine HTTP GET-Anforderung an den URI, lädt die angeforderten Inhalte, die als Reaktion auf die Anforderung zurückgegeben werden, für die Kachel oder das Signal herunter (als XML) und zeigt die Inhalte auf der App-Kachel an.
 
-Beachten Sie, dass regelmäßige Benachrichtigungen nicht mit Popupbenachrichtigungen verwendet werden können. Popups werden am besten per [geplanter](https://msdn.microsoft.com/library/windows/apps/hh465417) oder per [Push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)benachrichtigung übermittelt.
+Beachten Sie, dass regelmäßige Benachrichtigungen nicht mit Popupbenachrichtigungen verwendet werden können. Popups werden am besten per [geplanter](https://docs.microsoft.com/previous-versions/windows/apps/hh465417(v=win.10)) oder per [Push](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))benachrichtigung übermittelt.
 
 ## <a name="uri-location-and-xml-content"></a>URI-Speicherort und XML-Inhalt
 
 
 Jede gültige HTTP- oder HTTPS-Webadresse kann als abzufragender URI verwendet werden.
 
-Die Antwort des Cloudservers enthält die heruntergeladenen Inhalte. Die von dem URI zurückgegebenen Inhalte müssen mit den XML-Schemaspezifikationen für [Kacheln](adaptive-tiles-schema.md) oder [Signale](https://msdn.microsoft.com/library/windows/apps/br212851) übereinstimmen, und sie müssen in UTF-8 codiert sein. Sie können definierte HTTP-Header verwenden, um [Ablaufzeit](#expiration-of-tile-and-badge-notifications) oder Tag für die Benachrichtigung anzugeben.
+Die Antwort des Cloudservers enthält die heruntergeladenen Inhalte. Die von dem URI zurückgegebenen Inhalte müssen mit den XML-Schemaspezifikationen für [Kacheln](adaptive-tiles-schema.md) oder [Signale](https://docs.microsoft.com/uwp/schemas/tiles/badgeschema/schema-root) übereinstimmen, und sie müssen in UTF-8 codiert sein. Sie können definierte HTTP-Header verwenden, um [Ablaufzeit](#expiration-of-tile-and-badge-notifications) oder Tag für die Benachrichtigung anzugeben.
 
 ## <a name="polling-behavior"></a>Abfrageverhalten
 
@@ -84,13 +84,13 @@ Beispielsweise können Sie während eines aktiven Börsenhandelstags die Gültig
 ## <a name="periodic-notifications-in-the-notification-queue"></a>Regelmäßige Benachrichtigungen in der Benachrichtigungswarteschlange
 
 
-Sie können regelmäßige Benachrichtigungen mit [Benachrichtigungszyklen](https://msdn.microsoft.com/library/windows/apps/hh781199) verwenden. Eine Kachel auf dem Startbildschirm zeigt standardmäßig den Inhalt einer einzelnen Benachrichtigung an, bis die aktuelle Benachrichtigung durch eine neue ersetzt wird. Bei aktivierten Benachrichtigungszyklen verbleiben bis zu fünf Benachrichtigungen in einer Warteschlange und werden nacheinander auf der Kachel angezeigt.
+Sie können regelmäßige Benachrichtigungen mit [Benachrichtigungszyklen](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10)) verwenden. Eine Kachel auf dem Startbildschirm zeigt standardmäßig den Inhalt einer einzelnen Benachrichtigung an, bis die aktuelle Benachrichtigung durch eine neue ersetzt wird. Bei aktivierten Benachrichtigungszyklen verbleiben bis zu fünf Benachrichtigungen in einer Warteschlange und werden nacheinander auf der Kachel angezeigt.
 
-Hat die Warteschlange ihre maximale Kapazität von fünf Benachrichtigungen erreicht, ersetzt die nächste neue Benachrichtigung die älteste Benachrichtigung in der Warteschlange. Durch Festlegen von Tags für Ihre Benachrichtigungen können Sie die Ersetzungsrichtlinie der Warteschlange jedoch beeinflussen. Ein Tag ist eine app-spezifische Zeichenfolge von bis zu 16 alphanumerischen Zeichen (ohne Beachtung der Groß-/Kleinschreibung), die in der Antwortnutzlast im HTTP-Header [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) angegeben wird. Windows vergleicht das Tag einer eingehenden Benachrichtigung mit den Tags aller bereits in der Warteschlange vorhandenen Benachrichtigungen. Wird eine Übereinstimmung gefunden, ersetzt die neue Benachrichtigung die Benachrichtigung in der Warteschlange mit demselben Tag. Wird keine Übereinstimmung gefunden, wird die Standardersetzungsregel angewendet und die neue Benachrichtigung ersetzt die älteste Benachrichtigung in der Warteschlange.
+Hat die Warteschlange ihre maximale Kapazität von fünf Benachrichtigungen erreicht, ersetzt die nächste neue Benachrichtigung die älteste Benachrichtigung in der Warteschlange. Durch Festlegen von Tags für Ihre Benachrichtigungen können Sie die Ersetzungsrichtlinie der Warteschlange jedoch beeinflussen. Ein Tag ist eine app-spezifische Zeichenfolge von bis zu 16 alphanumerischen Zeichen (ohne Beachtung der Groß-/Kleinschreibung), die in der Antwortnutzlast im HTTP-Header [X-WNS-Tag](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) angegeben wird. Windows vergleicht das Tag einer eingehenden Benachrichtigung mit den Tags aller bereits in der Warteschlange vorhandenen Benachrichtigungen. Wird eine Übereinstimmung gefunden, ersetzt die neue Benachrichtigung die Benachrichtigung in der Warteschlange mit demselben Tag. Wird keine Übereinstimmung gefunden, wird die Standardersetzungsregel angewendet und die neue Benachrichtigung ersetzt die älteste Benachrichtigung in der Warteschlange.
 
 Sie können die Benachrichtigungswarteschlange und Tags verwenden, um eine Vielzahl von Benachrichtigungsszenarien mit großem Funktionsumfang zu implementieren. So kann beispielsweise eine Aktien-App fünf Benachrichtigungen senden – jede für eine andere Aktie und markiert mit dem Aktiennamen. Dadurch enthält die Warteschlange niemals zwei Benachrichtigungen für die gleiche Aktie, wovon eine zwangsläufig nicht mehr aktuell wäre.
 
-Weitere Informationen finden Sie unter [Verwenden der Benachrichtigungswarteschlange](https://msdn.microsoft.com/library/windows/apps/hh781199).
+Weitere Informationen finden Sie unter [Verwenden der Benachrichtigungswarteschlange](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10)).
 
 ### <a name="enabling-the-notification-queue"></a>Aktivieren der Benachrichtigungswarteschlange
 
@@ -103,7 +103,7 @@ Sie müssen einen eindeutigen URI für jede Benachrichtigung angeben, die Window
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [Richtlinien für die periodische Benachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [So richten Sie regelmäßige Benachrichtigungen für die badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [So richten Sie regelmäßige Benachrichtigungen für Kacheln](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [Richtlinien für die periodische Benachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
+* [So richten Sie regelmäßige Benachrichtigungen für die badges](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [So richten Sie regelmäßige Benachrichtigungen für Kacheln](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  

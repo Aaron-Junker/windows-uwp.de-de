@@ -7,12 +7,12 @@ keywords: windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ad54dd485d7dbf5e7f4cb119c7700c09056017
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 672485dd505227da0a59a220edaa9648e2521e63
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215134"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359626"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Erweitern Sie Ihre desktop-Apps mit modernen UWP-Komponente
 
@@ -175,7 +175,7 @@ Sie können auch das **Package.appxmanifest** im Designer öffnen, die **Deklara
 
 ### <a name="start-the-uwp-app"></a>Starten der UWP-App
 
-Erstellen Sie zunächst in Ihrer Desktop-Anwendung eine [Uri](https://msdn.microsoft.com/library/system.uri.aspx), die den Protokollnamen und alle Parameter enthält, die an die UWP-App übergeben werden sollen. Rufen Sie dann die [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)-Methode auf.
+Erstellen Sie zunächst in Ihrer Desktop-Anwendung eine [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN), die den Protokollnamen und alle Parameter enthält, die an die UWP-App übergeben werden sollen. Rufen Sie dann die [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)-Methode auf.
 
 ```csharp
 

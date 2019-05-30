@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: Windows 10, UWP, Bildschirmaufnahme
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bbe52de6e148ff86f492ee2c490e5dda388ffa1
-ms.sourcegitcommit: 703f23f0cd2037997b6540335d32d344d5604974
+ms.openlocfilehash: 5d61e5bb8e5f00a2ac5743ed1a91c470f455c9c6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58867886"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361452"
 ---
 # <a name="screen-capture"></a>Bildschirmaufnahme
 
@@ -94,7 +94,7 @@ Public Async Function StartCaptureAsync() As Task
 End Function
 ```
 
-Da dies die UI-Code ist, muss sie für den UI-Thread aufgerufen werden. Wenn Sie es im Code-Behind für eine Seite Ihrer Anwendung aufrufen (wie **"MainPage.Xaml.cs"**) Dies ist automatisch für Sie ausgeführt, aber falls nicht, Sie können erzwingen, dass es für die Ausführung im UI-Thread durch den folgenden Code:
+Da dies die UI-Code ist, muss sie für den UI-Thread aufgerufen werden. Wenn Sie es im Code-Behind für eine Seite Ihrer Anwendung aufrufen (wie **"MainPage.Xaml.cs"** ) Dies ist automatisch für Sie ausgeführt, aber falls nicht, Sie können erzwingen, dass es für die Ausführung im UI-Thread durch den folgenden Code:
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -216,15 +216,15 @@ Es wird empfohlen, den UI-Thread für **FrameArrived** nach Möglichkeit zu verm
 
 Alternativ können Sie manuell Frames mit der **Direct3D11CaptureFramePool.TryGetNextFrame**-Methode ziehen, bis Sie alle Frames haben, die Sie benötigen.
 
-Das **Direct3D11CaptureFrame**-Objekt enthält die Eigenschaften **ContentSize**, **Surface** und **SystemRelativeTime**. Die **SystemRelativeTime** ist die QPC ([QueryPerformanceCounter](https://msdn.microsoft.com/library/windows/desktop/ms644904))-Zeit, die zum Synchronisieren von anderen Medienelemente verwendet werden kann.
+Das **Direct3D11CaptureFrame**-Objekt enthält die Eigenschaften **ContentSize**, **Surface** und **SystemRelativeTime**. Die **SystemRelativeTime** ist die QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter))-Zeit, die zum Synchronisieren von anderen Medienelemente verwendet werden kann.
 
 ## <a name="processing-capture-frames"></a>Verarbeiten von Aufnahmeframes
 
-Frames aus **Direct3D11CaptureFramePool** werden beim Aufrufen von **TryGetNextFrame** ausgecheckt, und gemäß der Lebensdauer des **Direct3D11CaptureFrame**-Objekts wieder eingecheckt. Für systemeigene Anwendungen reicht das Veröffentlichen des **Direct3D11CaptureFrame**-Objekts aus, um die Frame zurück in den Frame-Pool einzuchecken. Für verwaltete Anwendungen wird empfohlen, die **Direct3D11CaptureFrame.Dispose** (**Schließen** in C++)-Methode zu verwenden. **Direct3D11CaptureFrame** implementiert die [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable)-Schnittstelle, die als [IDisposable](https://msdn.microsoft.com/library/system.idisposable.aspx) für C#-Aufrufer projiziert wird.
+Frames aus **Direct3D11CaptureFramePool** werden beim Aufrufen von **TryGetNextFrame** ausgecheckt, und gemäß der Lebensdauer des **Direct3D11CaptureFrame**-Objekts wieder eingecheckt. Für systemeigene Anwendungen reicht das Veröffentlichen des **Direct3D11CaptureFrame**-Objekts aus, um die Frame zurück in den Frame-Pool einzuchecken. Für verwaltete Anwendungen wird empfohlen, die **Direct3D11CaptureFrame.Dispose** (**Schließen** in C++)-Methode zu verwenden. **Direct3D11CaptureFrame** implementiert die [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable)-Schnittstelle, die als [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable?redirectedfrom=MSDN) für C#-Aufrufer projiziert wird.
 
 Anwendungen sollten weder Verweise auf **Direct3D11CaptureFrame**-Objekte speichern, noch Verweise auf die zugrunde liegende Direct3D-Oberfläche speichern, nachdem der Frame erneut eingecheckt wurde.
 
-Während der Verarbeitung eines Frames, empfiehlt es sich, dass Anwendungen die [ID3D11Multithread](https://msdn.microsoft.com/library/windows/desktop/mt644886)-Sperre auf dem gleichen Gerät wie das **Direct3D11CaptureFramePool**-Objekt verwenden.
+Während der Verarbeitung eines Frames, empfiehlt es sich, dass Anwendungen die [ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread)-Sperre auf dem gleichen Gerät wie das **Direct3D11CaptureFramePool**-Objekt verwenden.
 
 Die zugrunde liegende Direct3D-Oberfläche gibt immer die Größe an, die beim Erstellen (oder neuerstellen) von **Direct3D11CaptureFramePool** angegeben wird. Wenn der Inhalt größer als der Frame ist, werden die Inhalte auf die Größe des Frame zugeschnitten. Wenn der Inhalt kleiner als der Frames ist, enthält der Rest des Frames nicht definierte Daten. Es wird empfohlen, dass Anwendungen eine Sub-Rect mit der **ContentSize**-Eigenschaft für den **Direct3D11CaptureFrame** kopieren, um zu verhindern, dass der Inhalt nicht definiert ist.
 
@@ -638,4 +638,4 @@ Wenn Sie ein Video zu Ihrer Anwendung aufzeichnen möchten, erreichen Sie so lei
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Windows.Graphics.Capture Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture-Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

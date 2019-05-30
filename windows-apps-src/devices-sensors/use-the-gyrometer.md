@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 940f82e5e4cff30a2756c32c80d2f3ab02ae440a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e7ee2cac1ae53ca59b8ec60d917e39a737a049ad
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660505"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369632"
 ---
 # <a name="use-the-gyrometer"></a>Verwenden des Gyrometers
 
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
 **Beispiel**
 
@@ -29,7 +29,7 @@ Hier erfahren Sie, wie Sie mithilfe des Gyrometers Bewegungsänderungen des Benu
 
 Gyrometer und Beschleunigungssensoren ergänzen sich gegenseitig als Spielecontroller. Mit dem Beschleunigungsmesser können Sie die Bewegung in eine Richtung messen, während das Gyrometer die Winkelgeschwindigkeit (oder Drehbewegungen) misst.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
 

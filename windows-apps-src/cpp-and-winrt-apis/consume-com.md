@@ -1,16 +1,16 @@
 ---
 description: In diesem Thema wird anhand eines vollständigen Direct2D-Codebeispiels verdeutlicht, wie Sie C++/WinRT für die Nutzung von COM-Klassen und -Schnittstellen verwenden.
 title: Verwenden von COM-Komponenten mit C++ / WinRT
-ms.date: 07/23/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Standard, c++, Cpp, Winrt, COM, Komponente, Klasse, Schnittstelle
 ms.localizationpriority: medium
-ms.openlocfilehash: 16425fd6d296a4abd4ed62c0c64cd23ef1f88891
-ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.openlocfilehash: dc4acd288496d83d5d91f1bdf206be19fe2fbb06
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58618407"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361148"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Verwenden von COM-Komponenten mit C++ / WinRT
 
@@ -30,7 +30,7 @@ Um spezifischere, wir reden über die Interaktion mit der Schnittstelle *Zeiger*
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-Der obige Code zeigt, wie zu einen nicht initialisierten intelligenten Zeiger deklariert eine [ **ID2D1Factory1** ](https://msdn.microsoft.com/library/Hh404596) COM-Schnittstelle. Der intelligente Zeiger wird nicht initialisiert werden, damit sie noch nicht auf zeigt eine **ID2D1Factory1** Schnittstelle, die auf ein beliebiges tatsächliche Objekt (es ist nicht auf eine Schnittstelle überhaupt) gehören. Es besitzt das Potenzial dazu jedoch. und sie können über COM-Verweis gezählt wird, um die Lebensdauer des besitzenden Objekts der Schnittstelle zu verwalten, die darauf verweist, und klicken Sie auf dem Datenträger werden mit dem Sie die Funktionen auf dieser Schnittstelle aufrufen hat (wird ein intelligenter Zeiger).
+Der obige Code zeigt, wie zu einen nicht initialisierten intelligenten Zeiger deklariert eine [ **ID2D1Factory1** ](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1) COM-Schnittstelle. Der intelligente Zeiger wird nicht initialisiert werden, damit sie noch nicht auf zeigt eine **ID2D1Factory1** Schnittstelle, die auf ein beliebiges tatsächliche Objekt (es ist nicht auf eine Schnittstelle überhaupt) gehören. Es besitzt das Potenzial dazu jedoch. und sie können über COM-Verweis gezählt wird, um die Lebensdauer des besitzenden Objekts der Schnittstelle zu verwalten, die darauf verweist, und klicken Sie auf dem Datenträger werden mit dem Sie die Funktionen auf dieser Schnittstelle aufrufen hat (wird ein intelligenter Zeiger).
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>COM-Funktionen, die einen Schnittstellenzeiger als zurückgeben **"void"**
 
@@ -46,7 +46,7 @@ D2D1CreateFactory(
 );
 ```
 
-Code über Aufrufe der [ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) Funktion, die eine **ID2D1Factory1** über seinen letzten Parameter, der hat-Schnittstellenzeiger **"void" \* \***  Typ. Viele COM-Funktionen geben eine **"void"\*\***. Verwenden Sie für solche Funktionen [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) wie gezeigt.
+Code über Aufrufe der [ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) Funktion, die eine **ID2D1Factory1** über seinen letzten Parameter, der hat-Schnittstellenzeiger **"void" \* \***  Typ. Viele COM-Funktionen geben eine **"void"\*\*** . Verwenden Sie für solche Funktionen [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) wie gezeigt.
 
 ## <a name="com-functions-that-return-a-specific-interface-pointer"></a>COM-Funktionen, die einen bestimmten Schnittstellenzeiger zurückgeben
 
@@ -72,7 +72,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>COM-Funktionen, die einen Schnittstellenzeiger als zurückgeben **IUnknown**
 
-Die [ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) Funktion gibt einen Schnittstellenzeiger für DirectWrite-Factory zurück, über die letzten Parameter [ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)Typ. Verwenden Sie bei einer solchen Funktion [ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), aber Neuinterpretation umgewandelt werden, um **IUnknown**.
+Die [ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) Funktion gibt einen Schnittstellenzeiger für DirectWrite-Factory zurück, über die letzten Parameter [ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)Typ. Verwenden Sie bei einer solchen Funktion [ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), aber Neuinterpretation umgewandelt werden, um **IUnknown**.
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -169,7 +169,7 @@ Verwenden Sie alternativ [ **com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#c
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Vollständige Quelle Codelisting aus einer minimalen Direct2D-Anwendung
 
-Wenn Sie erstellen und diese Quellcodebeispiel dann zunächst in Visual Studio ausführen möchten, erstellen Sie ein neues **Core-App (C++ / WinRT)**. `Direct2D` ist ein sinnvolle Namen für das Projekt, aber Sie können die sie beliebig benennen. Open `App.cpp`, löschen Sie den gesamten Inhalt und fügen Sie in der folgenden Liste.
+Wenn Sie erstellen und diese Quellcodebeispiel dann zunächst in Visual Studio ausführen möchten, erstellen Sie ein neues **Core-App (C++ / WinRT)** . `Direct2D` ist ein sinnvolle Namen für das Projekt, aber Sie können die sie beliebig benennen. Open `App.cpp`, löschen Sie den gesamten Inhalt und fügen Sie in der folgenden Liste.
 
 ```cppwinrt
 #include "pch.h"
@@ -477,7 +477,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(App());
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 

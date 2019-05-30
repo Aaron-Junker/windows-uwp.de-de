@@ -6,15 +6,15 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a63cf64fec32be5439838618e534617d1f4a9afc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622755"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359360"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Szenario 1: Generieren einer PRI-Datei von Zeichenfolgenressourcen und Ressourcendateien
-In diesem Szenario verwenden wir die [APIs zur Paketressourcenindizierung (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690), um eine neue App zur Darstellung unseres benutzerdefinierten Buildsystems zu erstellen. Denken Sie daran: Der Zweck dieses benutzerdefinierten Buildsystems besteht darin, PRI-Dateien für eine Ziel-UWP-App zu erstellen. Im Rahmen dieser exemplarischen Vorgehensweise erstellen wir also einige Beispielressourcendateien (mit Zeichenfolgen und anderen Arten von Ressourcen), um die Ressourcen dieser Ziel-UWP-App abzubilden.
+In diesem Szenario verwenden wir die [APIs zur Paketressourcenindizierung (PRI)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference), um eine neue App zur Darstellung unseres benutzerdefinierten Buildsystems zu erstellen. Denken Sie daran: Der Zweck dieses benutzerdefinierten Buildsystems besteht darin, PRI-Dateien für eine Ziel-UWP-App zu erstellen. Im Rahmen dieser exemplarischen Vorgehensweise erstellen wir also einige Beispielressourcendateien (mit Zeichenfolgen und anderen Arten von Ressourcen), um die Ressourcen dieser Ziel-UWP-App abzubilden.
 
 ## <a name="new-project"></a>Neues Projekt
 Erstellen Sie zunächst ein neues Projekt in Microsoft Visual Studio. Erstellen Sie ein Anwendungsprojekt der **Visual C++-Windows-Konsole**, und nennen Sie es *CBSConsoleApp*.
@@ -228,10 +228,10 @@ Die Informationen beginnen mit einer Ressourcenzuordnung, deren Namen dem Paketf
 Die erste Zeichenfolgenressource lautet *EnOnlyString* aus `en-US\resources.resw`. Dieser umfasst nur einen Kandidaten (der dem Qualifizierer *language-en-US* entspricht). Anschließend folgt *LocalizedString1* sowohl aus `resources.resw` als auch aus `en-US\resources.resw`. Folglich gibt es zwei Kandidaten: einen übereinstimmenden *language-en-US* und einen neutralen Fallback-Kandidaten, der mit einem beliebigen Kontext übereinstimmt. Analog dazu verfügt *LocalizedString2* über zwei Kandidaten: *language-de-DE* und neutral. Und schließlich ist *NeutralOnlyString* nur in neutraler Form vorhanden. Dieser Name soll deutlich machen, dass er nicht lokalisiert werden soll.
 
 ## <a name="summary"></a>Zusammenfassung
-In diesem Szenario haben wir gezeigt, wie Sie die [APIs zur Paketressourcenindizierung (PRI](https://msdn.microsoft.com/library/windows/desktop/mt845690) verwenden, um einen Ressourcenindexer zu erstellen. Wir haben dem Ressourcenindexer Zeichenfolgenressourcen und Ressourcendateien hinzugefügt. Anschließend haben wir mit dem Ressourcenindexer eine binäre PRI-Datei generiert. Und schließlich haben wir die binäre PRI-Datei im XML-Format gesichert, sodass wir überprüfen konnten, dass sie die erwarteten Informationen enthält.
+In diesem Szenario haben wir gezeigt, wie Sie die [APIs zur Paketressourcenindizierung (PRI](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) verwenden, um einen Ressourcenindexer zu erstellen. Wir haben dem Ressourcenindexer Zeichenfolgenressourcen und Ressourcendateien hinzugefügt. Anschließend haben wir mit dem Ressourcenindexer eine binäre PRI-Datei generiert. Und schließlich haben wir die binäre PRI-Datei im XML-Format gesichert, sodass wir überprüfen konnten, dass sie die erwarteten Informationen enthält.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [Ressource "Package" Indizierung (PRI)-Referenz](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [Ressource "Package" Indizierung (PRI)-Referenz](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [APIs für die Paketressourcenindizierung (PRI) und benutzerdefinierte Buildsysteme](pri-apis-custom-build-systems.md)

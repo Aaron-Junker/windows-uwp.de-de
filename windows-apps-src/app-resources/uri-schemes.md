@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: f199d70fc9194f211533820a7b23e20de929752d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320583"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359340"
 ---
 # <a name="uri-schemes"></a>URI-Schemen
 
@@ -249,11 +249,11 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>Pfad (ms-resource)
 
-Der Pfad gibt den hierarchischen Ort der [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live)-Unterstruktur (siehe [Resource Management System](https://msdn.microsoft.com/library/windows/apps/jj552947)) und das darin enthaltene [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live)-Element an. Dies entspricht in der Regel dem Dateinamen (ohne Erweiterung) der Ressourcendatei (.resw) und dem Bezeichner der darin enthaltenen Zeichenfolgenressource.
+Der Pfad gibt den hierarchischen Ort der [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live)-Unterstruktur (siehe [Resource Management System](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))) und das darin enthaltene [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live)-Element an. Dies entspricht in der Regel dem Dateinamen (ohne Erweiterung) der Ressourcendatei (.resw) und dem Bezeichner der darin enthaltenen Zeichenfolgenressource.
 
 Beispiele und weitere Informationen finden Sie unter [Lokalisieren der Zeichenfolge im Paketmanifest der Benutzeroberfläche und der App](localize-strings-ui-manifest.md) und [Unterstützte Kachel- und Popupbenachrichtigungen für Sprache, Skalierungsfaktor und hohen Kontrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-Bei der Pfadkomponente von `ms-resource` muss wie bei generischen URIs die Groß-/Kleinschreibung beachtet werden. Das zugrunde liegende abrufen wird jedoch eine [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) mit *IgnoreCase* festgelegt `true`.
+Bei der Pfadkomponente von `ms-resource` muss wie bei generischen URIs die Groß-/Kleinschreibung beachtet werden. Das zugrunde liegende abrufen wird jedoch eine [CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) mit *IgnoreCase* festgelegt `true`.
 
 Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und '”' (doppelte Anführungszeichen) müssen in einem Pfad mit einem Prozentzeichen versehen werden, um Daten wie Datei- oder Ordnernamen anzugeben. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Daher zum Abrufen von einer Zeichenfolgenressource aus einer Ressourcendatei namens `Hello#World.resw`, diesen URI verwenden.
 
@@ -274,5 +274,5 @@ Entwickler bestimmter Komponenten, die sich in Ebenen über dieser URI-Analyse b
 * [Verweisen auf ein Bild oder eine andere Anlage aus XAML-Markup und code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md)
 * [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](localize-strings-ui-manifest.md)
-* [Ressourcenverwaltungssystem](https://msdn.microsoft.com/library/windows/apps/jj552947)
+* [Ressourcenverwaltungssystem](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
 * [Kachel- und popupbildgrößen benachrichtigungsunterstützung für Sprache, Skalierung und hoher Kontrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

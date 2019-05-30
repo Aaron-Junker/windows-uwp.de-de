@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d81957c379bd948a50d08b980ff20debc6c223c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28a1bd46646deae8f6e6519d72295d42ce2766db
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611265"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359556"
 ---
 # <a name="landmarks-and-headings"></a>Orientierungspunkte und Überschriften
 
@@ -33,7 +33,7 @@ Es gibt ein Such-Eingabefeld, das in einen Such-Orientierungspunkt eingeschlosse
 
 Einstellungen-App wäre auch ohne Orientierungspunkte und Überschriften zugänglich, aber sie wird damit besser nutzbar. Ein Sprachausgabe-Benutzer kann schnell und einfach zu der Gruppe (Orientierungspunkt) gelangen, die er benötigt, und dann auch schnell zur Untergruppe (Überschrift). 
 
-Verwenden Sie [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty), um das UI-Element als den gewünschten [Orientierungspunkttyp](https://msdn.microsoft.com/library/windows/desktop/mt759299) einzurichten. Dieses Orientierungspunkt-UI-Element würde alle anderen UI-Elemente kapseln, die für diesen Orientierungspunkt sinnvoll sind. 
+Verwenden Sie [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty), um das UI-Element als den gewünschten [Orientierungspunkttyp](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers) einzurichten. Dieses Orientierungspunkt-UI-Element würde alle anderen UI-Elemente kapseln, die für diesen Orientierungspunkt sinnvoll sind. 
 
 Verwenden Sie [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty), um die Orientierungspunkte spezifisch zu benennen. Wenn Sie einen vordefinierten Orientierungspunkttyp wie Haupt- oder Navigationsname auswählen, werden diese Namen für den Orientierungspunktnamen verwendet. Wenn Sie jedoch den Orientierungspunkttyp auf benutzerdefiniert setzen, müssen Sie den Orientierungspunkt über diese Eigenschaft spezifisch benennen. Sie können diese Eigenschaft auch verwenden, um die Standardnamen der nicht benutzerdefinierten Orientierungspunkttypen zu überschreiben. 
 

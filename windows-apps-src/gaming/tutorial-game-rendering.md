@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Rendern
 ms.localizationpriority: medium
-ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2b44558232247de969f22d5767a16d921cfbf252
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610505"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367571"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Rendering-Framework II: Rendern von Spielen
 
@@ -37,7 +37,7 @@ In diesem Artikel wird erläutert, wie Sie andere Teile dieses Frameworks einric
 Der Renderer ist verantwortlich für das Erstellen und Verwalten alle D3D11- und D2D-Objekte, die verwendet, um die visuellen Spielelemente generieren. Die Klasse __GameRenderer__ ist der Renderer für dieses Beispielspiel und wurde entwickelt, um Rendering-Anforderungen des Spiels zu erfüllen.
 
 Hier einige Konzepte, die Sie verwenden können, um den Renderer für Ihr Spiel zu entwerfen:
-* Da Direct3D 11-APIs als [COM](https://msdn.microsoft.com/library/windows/desktop/ms694363.aspx)-APIs definiert sind, müssen Sie [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class)-Verweise auf die von diesen APIs definierten Objekte bereitstellen. Diese Objekte werden automatisch freigegeben, wenn ihr letzter Verweis den gültigen Bereich verlässt und die App beendet wird. Weitere Informationen finden Sie unter [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr). Beispiel für diese Objekte: Konstantenpuffer, Shaderobjekte – [Vertex-Shader](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders), [Pixel-Shader](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders) und Shaderressourcenobjekte.
+* Da Direct3D 11-APIs als [COM](https://docs.microsoft.com/windows/desktop/com/the-component-object-model)-APIs definiert sind, müssen Sie [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class)-Verweise auf die von diesen APIs definierten Objekte bereitstellen. Diese Objekte werden automatisch freigegeben, wenn ihr letzter Verweis den gültigen Bereich verlässt und die App beendet wird. Weitere Informationen finden Sie unter [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr). Beispiel für diese Objekte: Konstantenpuffer, Shaderobjekte – [Vertex-Shader](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders), [Pixel-Shader](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders) und Shaderressourcenobjekte.
 * Konstantenpuffer sind in dieser Klasse definiert, um verschiedene Daten aufzunehmen, die zum Rendern benötigt werden.
     * Durch die Verwendung mehrerer Konstantenpuffer für unterschiedliche Häufigkeiten kann die Menge an Daten reduziert werden, die pro Frame an die GPU gesendet werden müssen. In diesem Beispiel werden die Konstanten basierend auf der Häufigkeit, mit der sie aktualisiert werden müssen, auf verschiedene Puffer verteilt. Dies ist die empfohlene Methode für die Direct3D-Programmierung. 
     * In diesem Beispielspiel sind 4 Konstantenpuffer definiert.
@@ -46,7 +46,7 @@ Hier einige Konzepte, die Sie verwenden können, um den Renderer für Ihr Spiel 
         3. __m\_ConstantBufferChangesEveryFrame__ enthält die Ansichtsmatrix. Diese Matrix hängt von der Kameraposition und der Blickrichtung (der Projektionsnormalen) ab und ändert sich einmal pro Frame in __Render__-Methode. Dies wurde weiter oben erläutert __Rendering-Framework I: Einführung in Rendering__unter der [ __GameRenderer::Render__ Methode](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
         4. __m\_ConstantBufferChangesEveryPrim__ enthält die Modell-Matrix und Material-Eigenschaften, der jeden Primitiv. Die Modellmatrix transformiert Scheitelpunkte aus lokalen Koordinaten in globale Koordinaten. Diese Konstanten gelten speziell für die einzelnen Grundtypen und werden für jeden Draw-Aufruf aktualisiert. Dies wurde weiter oben erläutert __Rendering-Framework I: Einführung in Rendering__unter der [primitiven Textrendering](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
 * Shaderressourcenobjekte, die Texturen für die Grundtypen enthalten, werden in dieser Klasse ebenfalls definiert.
-    * Einige Texturen sind vordefiniert ([DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991.aspx) ist ein Dateiformat, das zum Speichern von komprimierten und unkomprimierten Texturen verwendet werden kann. DDS-Texturen werden für die Wände und den Boden der Welt sowie für die Munitionskugeln verwendet.)
+    * Einige Texturen sind vordefiniert ([DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide) ist ein Dateiformat, das zum Speichern von komprimierten und unkomprimierten Texturen verwendet werden kann. DDS-Texturen werden für die Wände und den Boden der Welt sowie für die Munitionskugeln verwendet.)
     * In diesem Beispiel spielen Ressourcenobjekte Shader sind: __m\_SphereTexture__, __m\_CylinderTexture__, __m\_CeilingTexture__, __m\_FloorTexture__, __m\_WallsTexture__.
 * Shaderobjekte werden in dieser Klasse zur Berechnung der Grundtypen und Texturen definiert. 
     * In diesem Beispiel spielen die Shader-Objekte sind __m\_VertexShader__, __m\_VertexShaderFlat__, und __m\_PixelShader__, __m\_PixelShaderFlat__.
@@ -364,7 +364,7 @@ __FinalizeCreateGameDeviceResources__ und [__CreateWindowSizeDependentResources_
 * Verwenden Sie __SetProjParams__, um sicherzustellen, dass die Kamera mit der richtigen Projektionsmatrix arbeitet. Weitere Informationen finden Sie unter [Kamera und Koordinatenraum](tutorial--assembling-the-rendering-pipeline.md#camera-and-coordinate-space).
 * Behandeln Sie die Rotation des Bildschirms durch Rechtsmultiplikation der 3D-Rotationsmatrix mit der Projektionsmatrix der Kamera. Aktualisieren Sie dann den __ConstantBufferChangeOnResize__-Konstantenpuffer mit der resultieRendern Projektionsmatrix.
 * Legen Sie die __m\_GameResourcesLoaded__ __booleschen__ globale Variable, um anzugeben, dass die Ressourcen in den Puffern bereit für den nächsten Schritt jetzt geladen werden. Wir haben diese Variable zu Beginn in der __GameRenderer__-Konstruktormethode über die __GameRenderer::CreateDeviceDependentResources__-Methode mit __FALSE__ initialisiert. 
-* Wenn dies __m\_GameResourcesLoaded__ ist __"true"__, die szeneobjekte rendern kann stattfinden. Dies wurde im behandelt die __Rendering-Framework I: Einführung in Rendering__ Artikel unter [ __GameRenderer::Render Methode__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
+* Wenn dies __m\_GameResourcesLoaded__ ist __"true"__ , die szeneobjekte rendern kann stattfinden. Dies wurde im behandelt die __Rendering-Framework I: Einführung in Rendering__ Artikel unter [ __GameRenderer::Render Methode__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
 
 ```cpp
 // When creating this sample game using the DirectX 11 App template, this method needs to be created.

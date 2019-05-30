@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ad304d22fd1c519f7364ac69882eeaac9fa1a5c7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598615"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360711"
 ---
 # <a name="playready-encrypted-media-extension"></a>Verschlüsselte Medienerweiterung von PlayReady
 
@@ -72,7 +72,7 @@ Um das Hardware-DRM mit PlayReady zu verwenden, sollte Ihre JavaScript-Web-App d
 Mitunter werden Inhalte jedoch nicht vom Hardware-DRM unterstützt. Cocktail-Inhalte werden nie vom Hardware-DRM unterstützt. Wenn Sie Cocktail-Inhalte wiedergeben möchten, müssen Sie das Hardware-DRM außer Kraft setzen. Einige Hardware-DRM-Typen unterstützen HEVC, andere dagegen nicht. Wenn Sie HEVC-Inhalte wiedergeben möchten und diese nicht vom Hardware-DRM unterstützt werden, sollten Sie das Hardware-DRM in diesem Fall ebenfalls außer Kraft setzen.
 
 > [!NOTE]
-> Um festzustellen, ob HEVC-Inhalte unterstützt werden, verwenden Sie nach der Instanziierung von `com.microsoft.playready` die [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441)-Methode.
+> Um festzustellen, ob HEVC-Inhalte unterstützt werden, verwenden Sie nach der Instanziierung von `com.microsoft.playready` die [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)-Methode.
 
 ## <a name="add-secure-stop-to-your-web-app"></a>Hinzufügen des sicheren Beendens zur Web-App
 

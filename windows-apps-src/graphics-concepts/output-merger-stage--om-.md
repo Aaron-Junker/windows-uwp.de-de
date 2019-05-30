@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a77048bed3ad27f2040a672d93380d0250f9aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 177d5a8fed47396fa694bd8fb88baea8d8b7bbb3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641095"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371187"
 ---
 # <a name="output-merger-om-stage"></a>Ausgabezusammenführungsphase (OM)
 
@@ -37,7 +37,7 @@ Bei der Vermischung werden eine oder mehrere Pixelwerte zum Erstellen einer endg
 
 ![Diagramm zur Funktionsweise der Vermischung von Daten](images/d3d10-blend-state.png)
 
-Vom Konzept her können Sie dieses Flussdiagramm, das zweimal in die Ausgabezusammenführungsphase implementiert wird, visualisieren: das erster vermischt RGB-Daten, während das zweite gleichzeitig Alphadaten vermischt. Informationen zur Verwendung der APIs zum Erstellen und Festlegen des Blend-Status finden Sie unter [Vermischungsfunktionen konfigurieren](https://msdn.microsoft.com/library/windows/desktop/bb205072).
+Vom Konzept her können Sie dieses Flussdiagramm, das zweimal in die Ausgabezusammenführungsphase implementiert wird, visualisieren: das erster vermischt RGB-Daten, während das zweite gleichzeitig Alphadaten vermischt. Informationen zur Verwendung der APIs zum Erstellen und Festlegen des Blend-Status finden Sie unter [Vermischungsfunktionen konfigurieren](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-blend-state).
 
 Die Vermischung mit fester Funktion kann unabhängig für jedes Renderziel aktiviert werden. Es gibt jedoch nur eine Gruppe von Steuerelementen für die Vermischung, sodass die gleiche Vermischung auf alle Renderziele mit aktivierter Vermischung angewandt wird. Die Vermischungswerte (einschließlich BlendFactor) werden vor der Vermischung immer auf den Bereich des Renderzielformats arretiert. Die Klammerung erfolgt pro Renderziel und unter Berücksichtigung des Renderzieltyps. Die einzige Ausnahme bilden float16-, float11- und float10-Formate, die nicht festgelegt werden, damit die Vermischungsvorgänge für diese Formate mit mindestens der gleichen Genauigkeit/dem gleichen Bereich die des Ausgabeformats erfolgen können. Die NaNs und signierten Nullen werden in allen Fällen (einschließlich 0.0 Blend-Schriftbreiten) weitergegeben.
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f6a1277dbb2d756f0d3a4ffc1fd545f892a2096
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ac7f0785894849cffe09cd902f459015f1f7b6b
+ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596505"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377323"
 ---
 # <a name="block-compression"></a>Blockkomprimierung
 
@@ -73,7 +73,7 @@ Wenn Sie einen App-Code besitzen, der einen Speicherzeiger zur Anzeige des Speic
 
 Auf der linken Seite des Diagramms sehen Sie die Mipmap-Ebenengrößen, die für eine nicht komprimierte 60 x 40 Textur generiert werden. Die Größe der obersten Ebene stammt vom API-Aufruf, der die Textur generiert. Jeder nachfolgende Ebene ist halb so groß wie die vorherige Ebene. Für eine nicht komprimierte Textur besteht kein Unterschied zwischen der virtuellen (deklarierten) und der physischen (tatsächlichen) Größe.
 
-Auf der rechten Seite des Diagramms sehen Sie die Mipmap-Ebenengrößen, die für die gleiche 60 x 40 Textur durch Komprimierung generiert werden. Beachten Sie, dass die zweiten und dritten Ebenen einen Arbeitsspeicherabstand aufweisen, um die Größen auf jeder Ebene als ein Vierfaches festzulegen. Dies ist erforderlich, damit die Algorithmen für 4 × 4-Texel-Blöcke verwendet werden können. Dies wird besonders dann deutlich, wenn Sie Mipmap-Ebenen in Betracht ziehen, die kleiner als 4 × 4 sind. Die Größe dieser sehr kleinen Mipmap-Ebenen werden bei der Zuordnung des Arbeitsspeichers für die Textur auf das nächste Vierfache aufgerundet.
+Auf der rechten Seite des Diagramms sehen Sie die Mipmap-Ebenengrößen, die für die gleiche 60 x 40 Textur durch Komprimierung generiert werden. Beachten Sie, dass die zweiten und dritten Ebenen einen Arbeitsspeicherabstand aufweisen, um die Größen auf jeder Ebene als ein Vierfaches festzulegen. Dies ist erforderlich, damit die Algorithmen für 4 × 4-Texel-Blöcke verwendet werden können. Dies ist besonders bemerkbar, wenn Sie Mipmap-Ebenen in Betracht ziehen, die kleiner als 4 × 4; die Größe dieser sehr kleine Mipmap-Ebenen wird aufgerundet auf die nächste Stufe der 4 Wenn Texturspeicher zugeordnet wird.
 
 Sampling-Hardware verwendet die virtuelle Größe. Wenn die Textur ermittelt wird, wird der Speicherabstand ignoriert. Für Mipmap-Ebenen, die kleiner als 4 × 4 sind, werden nur die ersten vier Texel für eine 2 x 2-Karte und nur der erste Texel für einen 1 x 1-Block verwendet. Es gibt jedoch keine API-Struktur, die die physische Größe (einschließlich des Arbeitsspeicherabstands) anzeigt.
 
@@ -346,13 +346,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-Um „f” als Typ „u” neu zu interpretieren, verwenden Sie [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx):
+Um „f” als Typ „u” neu zu interpretieren, verwenden Sie [memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy):
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-In der vorherigen neuen Interpretation ändert sich der zugrunde liegende Wert der Daten nicht. [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) interpretiert den Float-Wert als Ganzzahl ohne Vorzeichen.
+In der vorherigen neuen Interpretation ändert sich der zugrunde liegende Wert der Daten nicht. [memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy) interpretiert den Float-Wert als Ganzzahl ohne Vorzeichen.
 
 Verwenden Sie zum Ausführen der typischen Art der Konvertierung foglende Zuweisung:
 

@@ -6,12 +6,12 @@ keywords: Drehsteuerung, radial, Lernprogramm
 ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8042bbe3ad8a37802b592e4e638a7c42e79a6d
-ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
-ms.translationtype: HT
+ms.openlocfilehash: a16b455d692eaf9f73b7dc90200bd0f021025e52
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58221466"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365661"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Tutorial: Unterstützen von Surface Dial (und anderen Radgeräten) in Ihrer UWP-App
 
@@ -85,10 +85,10 @@ Laden Sie dieses Visual Studio-Beispiel und den Quellecode von [GitHub](https://
 
 Diese Objekte bieten den Großteil der Radgerätefunktion für UWP-Apps.
 
-| Component | Beschreibung |
+| Komponente | Beschreibung |
 | --- | --- |
-| [**RadialController** Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) und verwandten | Stellt einen Radeingabegerät oder -Zubehör, z. B. das Surface Dial, dar. |
-| [**IRadialControllerConfigurationInterop**](https://msdn.microsoft.com/library/windows/desktop/mt790709) / [**IRadialControllerInterop**](https://msdn.microsoft.com/library/windows/desktop/mt790711)<br/>Wir gehen hier nicht auf diese Funktionalität ein. Weitere Informationen finden Sie unter der [Klassisches Windows-Desktopbeispiel](https://aka.ms/radialcontrollerclassicsample). | Ermöglicht die Interoperabilität mit einer UWP-App. |
+| [**RadialController** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) und verwandten | Stellt einen Radeingabegerät oder -Zubehör, z. B. das Surface Dial, dar. |
+| [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>Wir gehen hier nicht auf diese Funktionalität ein. Weitere Informationen finden Sie unter der [Klassisches Windows-Desktopbeispiel](https://aka.ms/radialcontrollerclassicsample). | Ermöglicht die Interoperabilität mit einer UWP-App. |
 
 ## <a name="step-1-run-the-sample"></a>Schritt 1: Ausführen des Beispiels
 
@@ -108,7 +108,7 @@ OK, nun haben wir die grundlegende UWP-App, die wir im verbleibenden Teil dieses
 
 ## <a name="step-2-basic-radialcontroller-functionality"></a>Schritt 2: Grundlegende RadialController-Funktionalität
 
-Halten Sie das Surface Dial gedrückt, während die App im Vordergrund ausgeführt wird, um das ** RadialController **-Menü anzuzeigen.
+Mit der app im Vordergrund, und halten Sie die Surface Dial zum Anzeigen der **RadialController** Menü.
 
 Wir haben unsere App noch nicht angepasst, sodass das Menü einen Standardsatz von kontextbezogenen Tools enthält. 
 
@@ -619,18 +619,18 @@ Herzlichen Glückwunsch zum Abschluss der *Lernprogramm für erste Schritte: Das
 
 ### <a name="api-reference"></a>API-Referenz
 
-- [**RadialController** Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
-- [**RadialControllerButtonClickedEventArgs** Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
-- [**RadialControllerConfiguration** Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 
-- [**RadialControllerControlAcquiredEventArgs** Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
-- [**RadialControllerMenu** Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenu) 
-- [**RadialControllerMenuItem** Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 
-- [**RadialControllerRotationChangedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
-- [**RadialControllerScreenContact** Klasse](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact) 
-- [**RadialControllerScreenContactContinuedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
-- [**RadialControllerScreenContactStartedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
-- [**RadialControllerMenuKnownIcon** Enumeration](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
-- [**RadialControllerSystemMenuItemKind** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+- [**RadialController** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialControllerMenu** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenu) 
+- [**RadialControllerMenuItem** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
+- [**RadialControllerRotationChangedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerMenuKnownIcon** Enumeration](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**RadialControllerSystemMenuItemKind** enum](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### <a name="samples"></a>Proben
 

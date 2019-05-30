@@ -31,7 +31,7 @@ Wenn Sie Windows 10 SDK nicht für Ihre Win32-App aktiviert haben, müssen Sie 
 
 Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie dann **Eigenschaften** aus.
 
-Wählen Sie im oberen **Konfigurationsmenü****alle Konfigurationen** aus, damit die folgende Änderung auf das Debuggen und die Freigabe angewendet wird.
+Wählen Sie im oberen **Konfigurationsmenü** **alle Konfigurationen** aus, damit die folgende Änderung auf das Debuggen und die Freigabe angewendet wird.
 
 Fügen Sie unter **Linker-> Eingabe**`runtimeobject.lib` den **zusätzlichen Abhängigkeiten** hinzu.
 

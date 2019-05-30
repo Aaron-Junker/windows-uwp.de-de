@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1e4b4c89fff2854c36bd76cc680197fad1aa8dff
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598215"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370405"
 ---
 # <a name="aep-service-class-ids"></a>IDs der AEP-Dienstklasse
 
@@ -23,7 +23,7 @@ ms.locfileid: "57598215"
 
 Die AEP-Dienste (Zuordnungsendpunkt) bieten einen Programmierungsvertrag für Dienste, die von einem Gerät über ein bestimmtes Protokoll unterstützt werden. Für mehrere dieser Dienste sind Bezeichner festgelegt, die verwendet werden sollen, wenn auf sie verwiesen wird. Diese Verträge werden durch die **System.Devices.AepService.ServiceClassId**-Eigenschaft gekennzeichnet. In diesem Abschnitt sind einige bekannte IDs der AEP-Dienstklasse aufgeführt. Die Klassen-ID des AEP-Diensts gilt auch für Protokolle mit benutzerdefinierten Klassen-IDs.
 
-App-Entwickler sollten auf Basis der Klassen-IDs erweiterte Abfragesyntaxfilter (Advanced Query Syntax, AQS) verwenden, um ihre Abfragen auf die zu verwendenden AEP-Dienste zu beschränken. Dadurch werden sowohl die Abfrageergebnisse auf die betreffenden Dienste beschränkt als auch Leistung, Akkulaufzeit und Dienstqualität für das Gerät erheblich verbessert. Eine Anwendung kann z. B. diese Dienstklassen-IDs verwenden, um ein Gerät für die Miracast-Synchronisierung oder als DLNA-DMR (Digital Media-Renderer) zu verwenden. Weitere Informationen zur Interaktion zwischen Geräten und Diensten finden Sie unter [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991).
+App-Entwickler sollten auf Basis der Klassen-IDs erweiterte Abfragesyntaxfilter (Advanced Query Syntax, AQS) verwenden, um ihre Abfragen auf die zu verwendenden AEP-Dienste zu beschränken. Dadurch werden sowohl die Abfrageergebnisse auf die betreffenden Dienste beschränkt als auch Leistung, Akkulaufzeit und Dienstqualität für das Gerät erheblich verbessert. Eine Anwendung kann z. B. diese Dienstklassen-IDs verwenden, um ein Gerät für die Miracast-Synchronisierung oder als DLNA-DMR (Digital Media-Renderer) zu verwenden. Weitere Informationen zur Interaktion zwischen Geräten und Diensten finden Sie unter [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Bluetooth- und Bluetooth LE-Dienste
 
@@ -72,7 +72,7 @@ Das Bluetooth-Protokoll unterstützt verschiedene Dienste, die alle dasselbe gru
 
  
 
-Eine vollständige Liste der verfügbaren Bluetooth-Dienste finden Sie [hier](https://go.microsoft.com/fwlink/p/?LinkID=619586) und [hier](https://go.microsoft.com/fwlink/p/?LinkID=619587) auf den Bluetooth-Protokoll- und -Dienstseiten. Sie können auch die [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571)-API verwenden, um einige allgemeine GATT-Dienste abzurufen.
+Eine vollständige Liste der verfügbaren Bluetooth-Dienste finden Sie [hier](https://go.microsoft.com/fwlink/p/?LinkID=619586) und [hier](https://go.microsoft.com/fwlink/p/?LinkID=619587) auf den Bluetooth-Protokoll- und -Dienstseiten. Sie können auch die [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids)-API verwenden, um einige allgemeine GATT-Dienste abzurufen.
 
 ## <a name="custom-bluetooth-le-services"></a>Benutzerdefinierte Bluetooth LE-Dienste
 
@@ -88,13 +88,13 @@ In der Regel wird der Name aller UPnP-Dienste mithilfe des in RFC 4122 definiert
 
 | Dienstname                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
-| Verbindungs-Manager                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
-| AV-Transport                       | **deeacb78-707a-52df-B1C6-6f945e7e25bf**  |
+| Ziel-Editor für Dimensionsverarbeitung                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| AV-Transport                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
 | Renderingkontrolle                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | Ebene-3-Weiterleitung                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
 | Konfiguration der allgemeinen WAN-Schnittstelle | **e4c1c624-c3c4-5104-b72e-ac425d9d157c**  |
 | WAP-IP-Verbindung                  | **e4ac1c23-b5ac-5c27-8814-6bd837d8832c**  |
-| WFA-WLAN-Konfiguration             | **23d5f7db-747f-5099-8F21-3ddfd0c3c688**  |
+| WFA-WLAN-Konfiguration             | **23d5f7db-747f-5099-8f21-3ddfd0c3c688**  |
 | Drucker, erweitert                   | **fb9074da-3d9f-5384-922e-9978ae51ef0c**  |
 | Drucker, grundlegend                      | **5d2a7252-d45c-5158-87a4-05212da327e1**  |
 | Medienempfängerregistrierungsstelle           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |
@@ -118,7 +118,7 @@ In der Regel wird der Name aller WSD-Dienste mithilfe des in RFC 4122 definierte
 
 ## <a name="aqs-sample"></a>AQS-Beispiel
 
-Diese AQS filtert nach allen UPnP-**AssociationEndpointService**-Objekten, die DIAL unterstützen. In diesem Fall wird [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) auf **AsssociationEndpointService** festgelegt.
+Diese AQS filtert nach allen UPnP-**AssociationEndpointService**-Objekten, die DIAL unterstützen. In diesem Fall wird [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) auf **AsssociationEndpointService** festgelegt.
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND

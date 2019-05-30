@@ -1,16 +1,16 @@
 ---
 description: Dieses Thema zeigt, wie man selbst, von Windows oder von Drittanbietern implementierte C++/WinRT-APIs verwendet.
 title: Verwenden von APIs mit C++/WinRT
-ms.date: 05/08/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projiziert, projektion, implementierung, laufzeitklasse, aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 545ce8c5e18a9cc1016f4bf09e5d062b5b31b5a6
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: e6bf1e7fb32533aa9d7b865ac7c8afc374290e54
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921706"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360349"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Verwenden von APIs mit C++/WinRT
 
@@ -19,9 +19,10 @@ In diesem Thema wird gezeigt, wie [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>Wenn sich die API in einem Windows-Namespace befindet
 Dies ist der häufigste Fall, bei dem Sie eine Windows-Runtime-API verwenden. Für jeden Typ in einem Windows-Namespace, der in den Metadaten festgelegt ist, definiert C++/WinRT ein C++-freundliches Äquivalent (den *projizierten Typ*). Ein projizierter Typ verfügt über den gleichen vollqualifizierten Namen wie der Windows-Typ, wird unter Verwendung der C++-Syntax jedoch im C++-**winrt**-Namespace abgelegt. Beispielsweise wird [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) in C++/WinRT als **winrt::Windows::Foundation::Uri** projiziert.
 
-Es folgt ein einfaches Codebeispiel.
+Es folgt ein einfaches Codebeispiel. Wenn Sie möchten die kopieren und Einfügen von den folgenden Codebeispielen direkt in der Codedatei main Quelle des eine **Windows-Konsolenanwendung (C++"/ WinRT")** -Projekt, und die erste Gruppe **vorkompilierte Header nicht verwenden** in den Projekteigenschaften.
 
 ```cppwinrt
+// main.cpp
 #include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
@@ -40,9 +41,9 @@ Der enthaltene Header `winrt/Windows.Foundation.h` ist Teil des SDKs und befinde
 > [!TIP]
 > Wenn Sie einen Typ aus einem Windows-Namespace verwenden möchten, fügen Sie den C++/WinRT-Header ein, der diesem Namespace entspricht. Die `using namespace`-Direktiven sind optional, aber praktisch.
 
-Im obigen Codebeispiel wird nach der Initialisierung von C++/WinRT ein Wert des projizierten Typs **winrt::Windows::Foundation::Uri** mit Stapelzuordnung über einen seiner öffentlich dokumentierten Konstruktoren (in diesem Beispiel [**Uri(String)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) zugewiesen. Für diesen häufigsten Anwendungsfall müssen Sie in der Regel nichts weiter tun. Wenn Sie einen projizierten C++/WinRT-Typwert haben, können Sie diesen behandeln, als wäre er eine Instanz des tatsächlichen Windows-Runtime-Typs, da er über die gleichen Mitglieder verfügt.
+Im obigen Codebeispiel wird nach der Initialisierung von C++/WinRT ein Wert des projizierten Typs **winrt::Windows::Foundation::Uri** mit Stapelzuordnung über einen seiner öffentlich dokumentierten Konstruktoren (in diesem Beispiel [**Uri(String)** ](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) zugewiesen. Für diesen häufigsten Anwendungsfall müssen Sie in der Regel nichts weiter tun. Wenn Sie einen projizierten C++/WinRT-Typwert haben, können Sie diesen behandeln, als wäre er eine Instanz des tatsächlichen Windows-Runtime-Typs, da er über die gleichen Mitglieder verfügt.
 
-Tatsächlich ist dieser projizierte Wert ein Proxy; im Grunde ist er nur ein intelligenter Zeiger auf ein zugrunde liegendes Objekt. Die Konstruktoren des projizierten Werts rufen [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) auf, um eine Instanz der zugrunde liegenden Windows-Runtime-Klasse (in diesem Fall **Windows.Foundation.Uri**) zu erstellen und die Standardschnittstelle dieses Objekts im neuen projizierten Wert zu speichern. Wie unten dargestellt, Delegaten Aufrufen der projizierte Wert Member tatsächlich, über den intelligenten Zeiger, auf das dahinter liegende-Objekt. Das ist, in denen Änderungen des Ansichtszustands auftreten.
+Tatsächlich ist dieser projizierte Wert ein Proxy; im Grunde ist er nur ein intelligenter Zeiger auf ein zugrunde liegendes Objekt. Die Konstruktoren des projizierten Werts rufen [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) auf, um eine Instanz der zugrunde liegenden Windows-Runtime-Klasse (in diesem Fall **Windows.Foundation.Uri**) zu erstellen und die Standardschnittstelle dieses Objekts im neuen projizierten Wert zu speichern. Wie unten dargestellt, Delegaten Aufrufen der projizierte Wert Member tatsächlich, über den intelligenten Zeiger, auf das dahinter liegende-Objekt. Das ist, in denen Änderungen des Ansichtszustands auftreten.
 
 ![Der projizierte Windows::Foundation::Uri-Typ](images/uri.png)
 
@@ -86,6 +87,7 @@ WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInter
 Sie erreichen dies über eine Abfrage für die entsprechende Schnittstelle. Sie haben aber immer die Kontrolle. Sie können ein wenig Komfort gegen etwas mehr Leistung eintauschen – indem Sie die IStringable-Schnittstelle selbst abrufen und direkt verwenden. Im folgenden Codebeispiel erhalten Sie einen tatsächlichen IStringable-Schnittstellenzeiger zur Laufzeit (über eine einmalige Abfrage). Danach ist Ihr Aufruf von **ToString** direkter Art und verhindert alle weiteren Aufrufe an **QueryInterface**.
 
 ```cppwinrt
+...
 IStringable stringable = contosoUri; // One-off QueryInterface.
 WINRT_ASSERT(stringable.ToString() == L"http://www.contoso.com/");
 ```
@@ -95,10 +97,21 @@ Sie können diese Technik wählen, wenn Sie wissen, dass Sie mehrere Methoden au
 Wenn Sie im Übrigen nicht auf die Mitglieder auf ABI-Ebene zugreifen möchten, ist dies möglich. Im Codebeispiel unten sehen Sie, wie das geht. Sie finden weitere Informationen und Codebeispiele unter [Interoperabilität zwischen C++/WinRT und der ABI](interop-winrt-abi.md).
 
 ```cppwinrt
-int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+#include <Windows.Foundation.h>
+#include <unknwn.h>
+#include <winrt/Windows.Foundation.h>
+using namespace winrt::Windows::Foundation;
 
-winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
-HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
+int main()
+{
+    winrt::init_apartment();
+    Uri contosoUri{ L"http://www.contoso.com" };
+
+    int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+
+    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
+    HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
+}
 ```
 
 ## <a name="delayed-initialization"></a>Verzögerte Initialisierung
@@ -107,6 +120,8 @@ Selbst der Standardkonstruktor eines projizierten Typs bewirkt, dass ein zugrund
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
 using namespace winrt::Windows::Storage::Streams;
+
+#define MAX_IMAGE_SIZE 1024
 
 struct Sample
 {
@@ -119,11 +134,19 @@ struct Sample
 private:
     Buffer m_gamerPicBuffer{ nullptr };
 };
+
+int main()
+{
+    winrt::init_apartment();
+    Sample s;
+    // ...
+    s.DelayedInit();
+}
 ```
 
 Alle Konstruktoren des projizierten Typs, *ausgenommen* der Konstruktor `nullptr_t`, bewirken, dass ein zugrunde liegendes Windows-Runtime-Objekt erstellt wird. Dem Konstruktor `nullptr_t` ist im Wesentlichen keine Aktion zugeordnet. Er erwartet, dass das projizierte Objekt zu einem späteren Zeitpunkt initialisiert wird. Ob eine Laufzeitklasse also über einen Standardkonstruktor verfügt oder nicht, Sie können dieses Verfahren für eine effiziente verzögerte Initialisierung verwenden.
 
-Diese Überlegung wirkt sich auf anderen Orten, in dem Sie den Standardkonstruktor, wie z. B. in Vektoren und Zuordnungen aufrufen können. Betrachten Sie dieses Codebeispiel.
+Diese Überlegung wirkt sich auf anderen Orten, in dem Sie den Standardkonstruktor, wie z. B. in Vektoren und Zuordnungen aufrufen können. Betrachten Sie dieses Codebeispiel veranschaulicht, die für die Sie benötigen eine **leere App (C++"/ WinRT")** Projekt.
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
@@ -145,7 +168,7 @@ Dieser Abschnitt gilt unabhängig davon, ob Sie die Komponente selbst erstellt h
 
 Verweisen Sie in Ihrem Anwendungsprojekt auf die Windows-Runtime-Metadaten-Datei (`.winmd`) der Komponente für Windows-Runtime und erstellen Sie diese. Während des Builds erzeugt das `cppwinrt.exe`-Tool eine Standard-C++ Bibliothek, die die API-Oberfläche der Komponente vollständig beschreibt (bzw. *projiziert*). Mit anderen Worten, die generierte Bibliothek enthält die projizierten Typen für die Komponente.
 
-Dann fügen Sie wie bei einem Windows-Namespace-Typ einen Header ein und konstruieren den projizierten Typ über einen seiner Konstruktoren. Der Startcode Ihres Anwendungsprojekts registriert die Laufzeitklasse, und der Konstruktor des projizierten Typs ruft [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) auf, um die Laufzeitklasse der referenzierten Komponente zu aktivieren.
+Dann fügen Sie wie bei einem Windows-Namespace-Typ einen Header ein und konstruieren den projizierten Typ über einen seiner Konstruktoren. Der Startcode Ihres Anwendungsprojekts registriert die Laufzeitklasse, und der Konstruktor des projizierten Typs ruft [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) auf, um die Laufzeitklasse der referenzierten Komponente zu aktivieren.
 
 ```cppwinrt
 #include <winrt/BankAccountWRC.h>
@@ -163,6 +186,8 @@ Weitere Details, Code und eine exemplarische Vorgehensweise bei der Verwendung v
 Ein Typ, der vom XAML-UI verwendet wird, muss eine Laufzeitklasse sein (auch, wenn er sich im selben Projekt wie das XAML-UI befindet).
 
 Für dieses Szenario generieren Sie einen projizierten Typ aus den Windows-Runtime-Metadaten der Laufzeitklasse (`.winmd`). Auch hier fügen Sie einen Header ein. Aber diesmal konstruieren Sie den projizierten Typ über seinen `nullptr`-Konstruktor. Dieser Konstruktor führt keine Initialisierung durch. Daher müssen Sie der Instanz über die [**winrt::make**](/uwp/cpp-ref-for-winrt/make)-Helper-Funktion einen Wert zuweisen und alle notwendigen Konstruktorargumente übergeben. Eine Laufzeitklasse, die im selben Projekt wie der verwendende Code implementiert ist, muss weder registriert noch über die Windows-Runtime/COM-Aktivierung instanziiert werden.
+
+Sie müssen eine **leere App (C++"/ WinRT")** -Projekt für dieses Codebeispiel.
 
 ```cppwinrt
 // MainPage.h
@@ -211,7 +236,7 @@ myrc2 = winrt::make<MyProject::implementation::MyRuntimeClass>();
 
 - Sie können auf die Mitglieder aller Schnittstellen eines projizierten Typs zugreifen.
 - Sie können einen projizierten Typ an einen Aufrufer zurückgeben.
-- Projizierte Typen und Schnittstellen sind von [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) abgeleitet. Sie können [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) für einen projizierten Typ oder eine Interface aufrufen, um nach anderen projizierten Schnittstellen zu suchen, die Sie ebenfalls verwenden oder an einen Aufrufer zurückgeben können. Die **as**Mitgliedsfunktion arbeitet wie [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521).
+- Projizierte Typen und Schnittstellen sind von [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) abgeleitet. Sie können [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) für einen projizierten Typ oder eine Interface aufrufen, um nach anderen projizierten Schnittstellen zu suchen, die Sie ebenfalls verwenden oder an einen Aufrufer zurückgeben können. Die **as**Mitgliedsfunktion arbeitet wie [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)).
 
 ```cppwinrt
 void f(MyProject::MyRuntimeClass const& myrc)
@@ -256,15 +281,15 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ```
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [QueryInterface-Schnittstelle](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [RoActivateInstance-Funktion](https://msdn.microsoft.com/library/br224646)
+* [QueryInterface-Schnittstelle](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [RoActivateInstance-Funktion](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
 * [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
-* [winrt::get_activation_factory Funktionsvorlage](/uwp/cpp-ref-for-winrt/get-activation-factory)
-* [winrt::make Funktionsvorlage](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown-Struktur](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [Vorlage für WinRT::get_activation_factory-Funktion](/uwp/cpp-ref-for-winrt/get-activation-factory)
+* [Vorlage für WinRT::Make-Funktion](/uwp/cpp-ref-for-winrt/make)
+* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen von Ereignissen mit C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [Erstellen von Ereignissen in C++ / WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
 * [Interoperabilität zwischen C++/WinRT und der ABI](interop-winrt-abi.md)
 * [Einführung in C++/WinRT](intro-to-using-cpp-with-winrt.md)
 * [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

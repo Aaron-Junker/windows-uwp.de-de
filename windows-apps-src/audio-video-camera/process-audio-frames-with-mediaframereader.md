@@ -6,16 +6,16 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598585"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360700"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Verarbeiten von Audioframes mit „MediaFrameReader“
 
-Dieser Artikel veranschaulicht das Verwenden von [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) mit [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) um AudioFrames mit Audiodaten aus einer Aufnahmequelle abzurufen. Weitere Informationen zur Verwendung einer **MediaFrameReader**-Bilddaten wie z. B. Farbe, Infrarot oder Tiefenkamera finden Sie unter [Verarbeiten von Medienframes mit "MediaFrameReader"](process-media-frames-with-mediaframereader.md). Dieser Artikel enthält eine allgemeine Übersicht über das Frame-Reader-Verwendungsmuster und beschreibt einige zusätzlichen Funktionen der **MediaFrameReader**-Klasse, z. B. die Verwendung von **MediaFrameSourceGroup**, um Frames aus mehreren Quellen zur gleichen Zeit abzurufen. 
+Dieser Artikel veranschaulicht das Verwenden von [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) mit [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) um AudioFrames mit Audiodaten aus einer Aufnahmequelle abzurufen. Weitere Informationen zur Verwendung einer **MediaFrameReader**-Bilddaten wie z. B. Farbe, Infrarot oder Tiefenkamera finden Sie unter [Verarbeiten von Medienframes mit "MediaFrameReader"](process-media-frames-with-mediaframereader.md). Dieser Artikel enthält eine allgemeine Übersicht über das Frame-Reader-Verwendungsmuster und beschreibt einige zusätzlichen Funktionen der **MediaFrameReader**-Klasse, z. B. die Verwendung von **MediaFrameSourceGroup**, um Frames aus mehreren Quellen zur gleichen Zeit abzurufen. 
 
 > [!NOTE] 
 > Die in diesem Artikel besprochenen Features sind erst ab Windows 10, Version 1803, verfügbar.
@@ -37,7 +37,7 @@ Der Prozess zum Erwerb von Audioframes entspricht größtenteils dem Erwerb ande
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>Auswählen von Framequellen und Framequellgruppen
 
-Der erste Schritt beim Aufzeichnen von Audio Frames ist das Initialisieren einer [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource), die die Quelle der Audiodaten darstellt, z. B. ein Mikrofon oder ein anderes Gerät für die Audioaufnahme. Zu diesem Zweck müssen Sie eine neue Instanz des [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture)-Objekts erstellen. In diesem Beispiel ist die einzige Initialisierungseinstellung für die **MediaCapture** die Einstellung des [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode), um anzugeben, dass wir des Aufnahmegeräts übertragen möchten. 
+Der erste Schritt beim Aufzeichnen von Audio Frames ist das Initialisieren einer [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource), die die Quelle der Audiodaten darstellt, z. B. ein Mikrofon oder ein anderes Gerät für die Audioaufnahme. Zu diesem Zweck müssen Sie eine neue Instanz des [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)-Objekts erstellen. In diesem Beispiel ist die einzige Initialisierungseinstellung für die **MediaCapture** die Einstellung des [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode), um anzugeben, dass wir des Aufnahmegeräts übertragen möchten. 
 
 Nach dem Aufruf von [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync), erhalten Sie die Liste der verfügbaren Medienframequellen mit der [**Framequellen**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.framesources)-Eigenschaft. In diesem Beispiel verwendet wir eine Linq-Abfrage, um alle Framequellen auszuwählen, in denen die [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo), die die Framequelle beschreibt, einen [**MediaStreamType**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype) von **Audio** hat, und angibt, dass die Medienquelle Audiodaten erzeugt.
 
