@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Visual Studio, Tools, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f4ff471ae4c45761a1c1dad5819e97c8245746a1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653475"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368137"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Visual Studio-Tools für die Spieleprogrammierung
 
@@ -43,7 +43,7 @@ Nutzen Sie den Grafik-Editor zum Arbeiten mit den Arten von umfassenden Textur- 
 
 Erstellen Sie [Buildanpassungsdateien](#build-customizations-for-3d-assets), um diese Formate zur Buildzeit in DDS-Dateien zu konvertieren.
 
-Weitere Informationen finden Sie unter [Arbeiten mit Texturen und Bildern](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
+Weitere Informationen finden Sie unter [Arbeiten mit Texturen und Bildern](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015).
 
 > **Beachten Sie**  der Bild-Editor dient kein Ersatz für eine vollständige Funktion Image app bearbeiten, jedoch ist für viele einfach anzeigen und Bearbeiten von Szenarien geeignet.
 
@@ -62,7 +62,7 @@ Dies ist ein Screenshot eines Modells im Editor, auf das Beleuchtungsfunktionen 
 
 ![Teekanne](images/modeleditor.png)
 
-Weitere Informationen finden Sie unter [Arbeiten mit 3D-Modellen](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
+Weitere Informationen finden Sie unter [Arbeiten mit 3D-Modellen](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015).
 
 > **Beachten Sie**  der Modell-Editor dient kein Ersatz für eine vollständige Funktionsmodell app bearbeiten, aber für viele einfach anzeigen und Bearbeiten von Szenarien geeignet ist.
 
@@ -109,20 +109,20 @@ float3 LambertLighting(
 }
 ```
 
-Weitere Informationen finden Sie unter [Arbeiten mit Shadern](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx).
+Weitere Informationen finden Sie unter [Arbeiten mit Shadern](https://docs.microsoft.com/visualstudio/designers/working-with-shaders?view=vs-2015).
 
 ## <a name="build-customizations-for-3d-assets"></a>Buildanpassungen für 3D-Objekte
 
 
 Sie können dem Projekt Buildanpassungen hinzufügen, sodass Ressourcen von Visual Studio in nutzbare Formate konvertiert werden. Danach können Sie die Objekte in die App laden und verwenden, indem Sie DirectX-Ressourcen wie in jeder anderen DirectX-App auch erstellen und füllen.
 
-Zum Hinzufügen von Buildanpassungen klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt und wählen die Option **Buildanpassungen...**. Sie können dem Projekt die folgenden Arten von Buildanpassungen hinzufügen:
+Zum Hinzufügen von Buildanpassungen klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt und wählen die Option **Buildanpassungen...** . Sie können dem Projekt die folgenden Arten von Buildanpassungen hinzufügen:
 
 -   Von der Bildinhaltpipeline werden Bilddateien als Eingaben verwendet und DirectDraw Surface-Dateien (.dds) ausgegeben.
 -   Von der Gitterinhaltpipeline werden Gitterdateien (z. B. FBX) als Eingabe verwendet und CMO-Gitterdateien ausgegeben.
 -   Von der Shaderinhaltpipeline werden visuelle Shaderdiagramme (.dgsl) aus dem Shader-Editor von Visual Studio verwendet und kompilierte Shaderausgabedateien (.cso) ausgegeben.
 
-Weitere Informationen finden Sie unter [Verwenden von 3D-Objekten im Spiel oder in der App](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
+Weitere Informationen finden Sie unter [Verwenden von 3D-Objekten im Spiel oder in der App](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
 
 ## <a name="debugging-directx-graphics"></a>Debuggen von DirectX-Grafiken
 
@@ -139,7 +139,7 @@ Visual Studio enthält grafikspezifische Debugtools. Verwenden Sie diese Tools z
 -   Begrenzte Direct2D-Unterstützung
 -   Betriebssystem- und SDK-Anforderungen
 
-Weitere Informationen finden Sie unter [Debuggen von DirectX-Grafiken](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+Weitere Informationen finden Sie unter [Debuggen von DirectX-Grafiken](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
 
 
  

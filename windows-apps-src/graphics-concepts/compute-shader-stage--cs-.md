@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 29645500f8a3d1b953c24921c32a59f283bd5db3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5660e2e75bbad7d5c2ee1f9c31ed4538ac55fe75
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613275"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370444"
 ---
 # <a name="compute-shader-cs-stage"></a>Computeshaderphase (CS)
 
@@ -21,7 +21,7 @@ Die Computeshaderphase (CS) bietet schnelle, allgemeine Berechnungen und nutzt d
 
 Ein Computeshader kann auf vielen Threads parallel ausgeführt werden.
 
-Ein Computeshader ist eine [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)-programmierbare Shaderphase, die Direct3D weit über Grafikprogrammierung mithilfe von [DirectCompute](https://go.microsoft.com/fwlink/p/?linkid=209544)-Technologie erweitert.
+Ein Computeshader ist eine [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)-programmierbare Shaderphase, die Direct3D weit über Grafikprogrammierung mithilfe von [DirectCompute](https://go.microsoft.com/fwlink/p/?linkid=209544)-Technologie erweitert.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 

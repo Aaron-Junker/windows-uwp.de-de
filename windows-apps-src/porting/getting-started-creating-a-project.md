@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6ea9fdf2e504e1ceee71658eab308751e1745c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 32366289d51944c3ff30a77dc84602473a3fba45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601445"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372861"
 ---
 # <a name="getting-started-creating-a-project"></a>Erste Schritte: Erstellen eines Projekts
 
@@ -25,7 +25,7 @@ Im folgenden Video werden Xcode und Visual Studio verglichen.
 
 Sie werden außerdem den [Blogbeitrag zum Erstellen von Apps für Windows](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/) sehr hilfreich finden.
 
-Erstellen einer app für Windows 10 (formeller als app (Universelle Windows Plattform) bezeichnet) ist, wie eine iOS-app mit Storyboards zu erstellen. Die Windows 10-app wird häufig über mehrere Seiten, jede Seite, die mit einem anderen Teil der Benutzeroberfläche, wie eine Website erstellt. Jeder Seite sind normalerweise zwei Quelldateien zugeordnet: eine zum Speichern der Benutzeroberfläche im unter [Übersicht über XAML](https://msdn.microsoft.com/library/windows/apps/mt185595) definierten Format und eine für den Quellcode, häufig C#. Beim Interagieren mit der App navigiert der Benutzer zwischen diesen Seiten. In dieser exemplarischen Vorgehensweise wird eine App mit zwei Seiten erstellt.
+Erstellen einer app für Windows 10 (formeller als app (Universelle Windows Plattform) bezeichnet) ist, wie eine iOS-app mit Storyboards zu erstellen. Die Windows 10-app wird häufig über mehrere Seiten, jede Seite, die mit einem anderen Teil der Benutzeroberfläche, wie eine Website erstellt. Jeder Seite sind normalerweise zwei Quelldateien zugeordnet: eine zum Speichern der Benutzeroberfläche im unter [Übersicht über XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview) definierten Format und eine für den Quellcode, häufig C#. Beim Interagieren mit der App navigiert der Benutzer zwischen diesen Seiten. In dieser exemplarischen Vorgehensweise wird eine App mit zwei Seiten erstellt.
 
 **Beachten Sie**  eine wichtige Funktion von Windows 10-apps ist die Tatsache, dass der gleiche Quellcode und den gleichen API-Satz, steht Ihnen unabhängig von der Plattform. Wie Sie wissen, können Sie beim Schreiben einer universellen iOS-App für iPhone und iPad zur Laufzeit feststellen, auf welcher Plattform Ihre App ausgeführt wird, und entsprechende Maßnahmen ergreifen. Auf ähnliche Weise können Windows 10-apps, zur Laufzeit, das Gerät anweisen, die, das Sie ausgeführt werden. Bei einer UWP-app besteht keine Notwendigkeit mit \#Ifdef in Ihrem Quellcode zum Erstellen von Phone im Vergleich zu Desktop erstellt. Glücklicherweise Windows 10-apps auch auf intelligente Weise ihre Benutzeroberflächen-Steuerelemente je nach Gerät verwendet: Angenommen, Ihre app kann ein Datumsauswahl-Steuerelement verweisen, und das Steuerelement automatisch Aussehen und funktionieren unterschiedlich, je nachdem, ob es hat auf einem Desktop oder eine Phone-Bildschirm ausgeführt werden. Der Quellcode bleibt jedoch unverändert.
 
@@ -50,7 +50,7 @@ Zum Vergleich: beim Erstellen eines neuen Projekts in Xcode wird eine Liste mit 
 
 In Visual Studio können Sie ebenfalls aus einer Vielzahl von Projektvorlagen wählen, wie in der folgenden Abbildung dargestellt.
 
-![Visual Studio-im Dialogfeld Neues Projekt](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png) Tippen Sie in dieser exemplarischen Vorgehensweise auf **Visual C#** , und tippen Sie dann auf **Windows**, **Windows Universal** und **Leere App (Windows universell)**. Geben Sie „MyApp“ in das Feld **Name** ein, und tippen Sie dann auf **OK**. Daraufhin erstellt Visual Studio Ihr erstes Projekt und zeigt es an. Nun können Sie mit dem Entwerfen der App beginnen und Code hinzufügen.
+![Visual Studio-im Dialogfeld Neues Projekt](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png) Tippen Sie in dieser exemplarischen Vorgehensweise auf **Visual C#** , und tippen Sie dann auf **Windows**, **Windows Universal** und **Leere App (Windows universell)** . Geben Sie „MyApp“ in das Feld **Name** ein, und tippen Sie dann auf **OK**. Daraufhin erstellt Visual Studio Ihr erstes Projekt und zeigt es an. Nun können Sie mit dem Entwerfen der App beginnen und Code hinzufügen.
 
 ## <a name="next-step"></a>Nächster Schritt
 

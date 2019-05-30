@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, Popupbenachrichtigungen, interaktive Popups, adaptive Popups, Popup-Inhalt, Nutzlast des Popups
 ms.localizationpriority: medium
-ms.openlocfilehash: a75e39dfcddbef5bb5c37c2a253a46a7b9cc9577
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 75e5ea7e83a1a274b90b14588f7d809a4aa91269
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596825"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366868"
 ---
 # <a name="toast-content"></a>Popupinhalt
 
@@ -22,7 +22,7 @@ Mit adaptiven und interaktiven Popupbenachrichtigungen können Sie flexible Bena
 > **Wichtige APIs:** [NuGet-Paket für UWP-Community-Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Die älteren Vorlagen von Windows 8.1 und Windows Phone 8.1 finden Sie unter den [ältere popupvorlagenkatalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
+> Die älteren Vorlagen von Windows 8.1 und Windows Phone 8.1 finden Sie unter den [ältere popupvorlagenkatalog](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
 ## <a name="getting-started"></a>Erste Schritte
@@ -43,9 +43,9 @@ Popupbenachrichtigungen sind eine Kombination aus einigen Dateneigenschaften wie
 
 Die Kernkomponenten des Popupinhalts sind...
 * **Starten Sie**: Hiermit wird definiert, welche Argumente werden zurück an Ihre app übergeben werden, klickt der Benutzer Ihre Toast, da Sie deep-Link in den richtigen Inhalt, den der Toast angezeigt. Weitere Informationen hierzu finden Sie unter [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md).
-* **Visual**: Der visuelle Teil den Toast, enthält die generische Bindung dar, einschließlich Text und Bilder.
-* **Aktionen**: Der interaktive Teil den Toast, einschließlich der Eingaben und Aktionen.
-* **Audio**: Steuerelemente werden das Audio abgespielt, wenn es sich bei der Toast, die dem Benutzer angezeigt wird.
+* **visual**: Der visuelle Teil den Toast, enthält die generische Bindung dar, einschließlich Text und Bilder.
+* **actions**: Der interaktive Teil den Toast, einschließlich der Eingaben und Aktionen.
+* **audio**: Steuerelemente werden das Audio abgespielt, wenn es sich bei der Toast, die dem Benutzer angezeigt wird.
 
 Der Popupinhalt ist in XML-Rohdaten definiert, aber Sie können unsere [NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um ein C# (oder C++)-Objektmodell für die Erstellung des Popupinhalts zu erhalten. In diesem Artikel werden alle Elemente des Popupinhalts dokumentiert.
 

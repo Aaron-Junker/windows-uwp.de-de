@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f474ec0c3017c3834d3eadb6f1caa989fc188a7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8dda866c877eb166c38949cfff5cec504103fd30
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653335"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359596"
 ---
 # <a name="accessible-text-requirements"></a>Anforderungen für barrierefreien Text  
 
@@ -46,21 +46,21 @@ Für dekorativen Text, der keine Informationen liefert, gilt diese Anforderung n
 ## <a name="text-element-roles"></a>Textelementrollen  
 In einer UWP-App können die folgenden Standardelemente (meist als *Textelemente* oder *textedit-Steuerelemente* bezeichnet) verwendet werden:
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): Rolle [ **Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**Textfeld**](https://msdn.microsoft.com/library/windows/apps/BR209683): Rolle [ **bearbeiten**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichTextBlock** ](https://msdn.microsoft.com/library/windows/apps/BR227565) (und overflow Klasse [ **RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): die Rolle ist [ **Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): Rolle [ **bearbeiten**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock): Rolle [ **Text**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [**Textfeld**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox): Rolle [ **bearbeiten**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [**RichTextBlock** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) (und overflow Klasse [ **RichTextBlockOverflow**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblockoverflow)): die Rolle ist [ **Text**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [**RichEditBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox): Rolle [ **bearbeiten**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
 
-Wenn ein Steuerelement meldet, dass ihm die Rolle [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182) zugewiesen ist, gehen Hilfstechnologien davon aus, dass Benutzer die Werte ändern können. Falls Sie also statischen Text in einem [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) platzieren, wird die Rolle falsch gemeldet, wodurch auch die Struktur der App falsch für einen Benutzer gemeldet wird, der Barrierefreiheitsfeatures verwendet.
+Wenn ein Steuerelement meldet, dass ihm die Rolle [**Edit**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) zugewiesen ist, gehen Hilfstechnologien davon aus, dass Benutzer die Werte ändern können. Falls Sie also statischen Text in einem [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) platzieren, wird die Rolle falsch gemeldet, wodurch auch die Struktur der App falsch für einen Benutzer gemeldet wird, der Barrierefreiheitsfeatures verwendet.
 
-In den Textmodellen für XAML sind zwei Elemente enthalten, die hauptsächlich für statischen Text, [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)-Elemente und [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)-Elemente verwendet werden. Bei keinem dieser Elemente handelt es sich um eine [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390)-Unterklasse, sodass sie auch nicht den Tastaturfokus erhalten oder in der Aktivierreihenfolge erscheinen können. Dies bedeutet jedoch nicht, dass sie von Hilfstechnologien nicht gelesen werden bzw. gelesen werden können. Sprachausgaben sind in der Regel für die Unterstützung mehrerer Modi zum Ausgeben der Inhalte einer App ausgelegt und verfügen beispielsweise über einen dedizierten Lesemodus oder Navigationsmuster, die über den Fokus und die Aktivierreihenfolge hinausgehen, z. B. einen „virtuellen Cursor“. Fügen Sie Ihren statischen Text also nicht nur deswegen in Container ein, die den Fokus erhalten können, damit Benutzer über die Aktivierreihenfolge darauf zugreifen können. Benutzer von Hilfstechnologien erwarten, dass über die Aktivierreihenfolge verfügbare Inhalte interaktiv sind. Wenn sie darin auf statischen Text treffen, ist dies eher verwirrend als hilfreich. Testen Sie dies selbst mit der Sprachausgabe, um einen Eindruck der Benutzeroberfläche Ihrer App zu gewinnen, wenn eine Sprachausgabe zum Untersuchen des statischen Texts der App verwendet wird.
+In den Textmodellen für XAML sind zwei Elemente enthalten, die hauptsächlich für statischen Text, [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Elemente und [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)-Elemente verwendet werden. Bei keinem dieser Elemente handelt es sich um eine [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)-Unterklasse, sodass sie auch nicht den Tastaturfokus erhalten oder in der Aktivierreihenfolge erscheinen können. Dies bedeutet jedoch nicht, dass sie von Hilfstechnologien nicht gelesen werden bzw. gelesen werden können. Sprachausgaben sind in der Regel für die Unterstützung mehrerer Modi zum Ausgeben der Inhalte einer App ausgelegt und verfügen beispielsweise über einen dedizierten Lesemodus oder Navigationsmuster, die über den Fokus und die Aktivierreihenfolge hinausgehen, z. B. einen „virtuellen Cursor“. Fügen Sie Ihren statischen Text also nicht nur deswegen in Container ein, die den Fokus erhalten können, damit Benutzer über die Aktivierreihenfolge darauf zugreifen können. Benutzer von Hilfstechnologien erwarten, dass über die Aktivierreihenfolge verfügbare Inhalte interaktiv sind. Wenn sie darin auf statischen Text treffen, ist dies eher verwirrend als hilfreich. Testen Sie dies selbst mit der Sprachausgabe, um einen Eindruck der Benutzeroberfläche Ihrer App zu gewinnen, wenn eine Sprachausgabe zum Untersuchen des statischen Texts der App verwendet wird.
 
 <span id="Auto-suggest_accessibility"/>
 <span id="auto-suggest_accessibility"/>
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
 
 ## <a name="auto-suggest-accessibility"></a>Barrierefreiheitsfunktion „Automatischer Vorschlag“  
-Wenn ein Benutzer etwas in ein Eingabefeld tippt und eine Liste möglicher Vorschläge eingeblendet wird, wird dieses Szenario als „Automatischer Vorschlag“ bezeichnet. Sie finden diese Funktion häufig in der Zeile **An:** eines E-Mail-Felds, im Suchfeld von Cortana in Windows, im URL-Eingabefeld in Microsoft Edge, im Feld zur Eingabe des Standorts in der Wetter-App usw. Bei Verwendung von [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) in XAML oder von systeminternen HTML-Steuerelementen ist diese Funktionalität bereits standardmäßig integriert. Um die Funktion zur Verfügung zu stellen, müssen das Eingabefeld und die Liste verknüpft werden. Im Abschnitt [Implementieren von „Automatischer Vorschlag“](#implementing_auto-suggest) finden Sie eine Erläuterung.
+Wenn ein Benutzer etwas in ein Eingabefeld tippt und eine Liste möglicher Vorschläge eingeblendet wird, wird dieses Szenario als „Automatischer Vorschlag“ bezeichnet. Sie finden diese Funktion häufig in der Zeile **An:** eines E-Mail-Felds, im Suchfeld von Cortana in Windows, im URL-Eingabefeld in Microsoft Edge, im Feld zur Eingabe des Standorts in der Wetter-App usw. Bei Verwendung von [**AutosuggestBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) in XAML oder von systeminternen HTML-Steuerelementen ist diese Funktionalität bereits standardmäßig integriert. Um die Funktion zur Verfügung zu stellen, müssen das Eingabefeld und die Liste verknüpft werden. Im Abschnitt [Implementieren von „Automatischer Vorschlag“](#implementing_auto-suggest) finden Sie eine Erläuterung.
 
 Die Sprachausgabe wurde aktualisiert und stellt diese Funktion nun mit einem speziellen Vorschlagsmodus bereit. Wenn Bearbeitungsfeld und Liste ordnungsgemäß verknüpft sind, haben Endbenutzer im Allgemeinen folgende Möglichkeiten:
 
@@ -78,24 +78,24 @@ _Beispiel für eine Liste der Vorschläge_
 <span id="IMPLEMENTING_AUTO-SUGGEST"/>
 
 ### <a name="implementing-auto-suggest"></a>Implementieren von „Automatischer Vorschlag“  
-Für den Zugriff auf diese Funktion müssen das Eingabefeld und die Liste in der UIA-Struktur einander zugeordnet werden. Die Zuordnung wird über die [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017)-Eigenschaft in Desktop-Apps oder über die [ControlledPeers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)-Eigenschaft in UWP-Apps hergestellt.
+Für den Zugriff auf diese Funktion müssen das Eingabefeld und die Liste in der UIA-Struktur einander zugeordnet werden. Die Zuordnung wird über die [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017)-Eigenschaft in Desktop-Apps oder über die [ControlledPeers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)-Eigenschaft in UWP-Apps hergestellt.
 
 „Automatischer Vorschlag“ kann im Allgemeinen auf zwei Weisen genutzt werden.
 
 **Standardauswahl**  
-Wenn in der Liste eine Standardauswahl getroffen wird, sucht die Sprachausgabe ein [**UIA_SelectionItem_ElementSelectedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223)-Ereignis in einer Desktop-App oder das [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents)-Ereignis, um es in einer UWP-App auszulösen. Jedes Mal, wenn sich die Auswahl ändert, wenn der Benutzer einen weiteren Buchstaben eingibt und die Vorschläge aktualisiert wurden oder wenn ein Benutzer durch die Liste navigiert, sollte das **ElementSelected**-Ereignis ausgelöst werden.
+Wenn in der Liste eine Standardauswahl getroffen wird, sucht die Sprachausgabe ein [**UIA_SelectionItem_ElementSelectedEventId**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-event-ids)-Ereignis in einer Desktop-App oder das [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents)-Ereignis, um es in einer UWP-App auszulösen. Jedes Mal, wenn sich die Auswahl ändert, wenn der Benutzer einen weiteren Buchstaben eingibt und die Vorschläge aktualisiert wurden oder wenn ein Benutzer durch die Liste navigiert, sollte das **ElementSelected**-Ereignis ausgelöst werden.
 
 ![Liste mit einer Standardauswahl](images/autosuggest-default-selection.png)<br/>
 _Beispiel für eine Standardauswahl vorhanden ist_
 
 **Keine Standardeinstellung.**  
-Wenn keine Standardauswahl vorhanden ist, beispielsweise im Standortfeld der Wetter-App, sucht die Sprachausgabe das [**UIA_LayoutInvalidatedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223 )-Desktopereignis oder das [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents)-UWP-Ereignis, das bei jeder Listenaktualisierung für die Liste ausgelöst werden muss.
+Wenn keine Standardauswahl vorhanden ist, beispielsweise im Standortfeld der Wetter-App, sucht die Sprachausgabe das [**UIA_LayoutInvalidatedEventId**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-event-ids)-Desktopereignis oder das [**LayoutInvalidated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents)-UWP-Ereignis, das bei jeder Listenaktualisierung für die Liste ausgelöst werden muss.
 
 ![Liste mit nicht standardmäßigen-Auswahl](images/autosuggest-no-default-selection.png)<br/>
 _Beispiel, es keine Standardauswahl ist_
 
 ### <a name="xaml-implementation"></a>XAML-Implementierung  
-Wenn Sie die standardmäßige [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox)-Klasse in XAML verwenden, ist diese Funktionalität bereits integriert. Wenn Sie mithilfe von [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) und einer Liste eine eigene Funktion für automatische Vorschläge erstellen, müssen Sie die Liste für **TextBox** auf [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) festlegen. Sie müssen das **AutomationPropertyChanged**-Ereignis jedes Mal für die [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)-Eigenschaft auslösen, wenn Sie diese Eigenschaft hinzufügen oder entfernen, und abhängig vom verwendeten Szenario auch Ihre eigenen [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents)-Ereignisse oder [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents)-Ereignisse auslösen, wie zuvor in diesem Artikel erläutert.
+Wenn Sie die standardmäßige [**AutosuggestBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)-Klasse in XAML verwenden, ist diese Funktionalität bereits integriert. Wenn Sie mithilfe von [**TextBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) und einer Liste eine eigene Funktion für automatische Vorschläge erstellen, müssen Sie die Liste für **TextBox** auf [**AutomationProperties.ControlledPeers**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) festlegen. Sie müssen das **AutomationPropertyChanged**-Ereignis jedes Mal für die [**ControlledPeers**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)-Eigenschaft auslösen, wenn Sie diese Eigenschaft hinzufügen oder entfernen, und abhängig vom verwendeten Szenario auch Ihre eigenen [**SelectionItemPatternOnElementSelected**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents)-Ereignisse oder [**LayoutInvalidated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents)-Ereignisse auslösen, wie zuvor in diesem Artikel erläutert.
 
 ### <a name="html-implementation"></a>HTML-Implementierung  
 Wenn Sie die systemeigenen Steuerelemente in HTML verwenden, wurde die UIA-Implementierung bereits für Sie zugeordnet. Im Folgenden ein Beispiel für eine Implementierung, die bereits für Sie integriert wurde:
@@ -116,7 +116,7 @@ Wenn Sie die systemeigenen Steuerelemente in HTML verwenden, wurde die UIA-Imple
 
 ## <a name="text-in-graphics"></a>Text in Grafiken
 
-Verwenden Sie nach Möglichkeit keinen Text in Grafiken. Text, den Sie der in der App als [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752)-Element angezeigten Bildquelldatei hinzufügen, ist z. B. nicht automatisch barrierefrei oder für Hilfstechnologien lesbar. Falls Sie Text in Grafiken verwenden müssen, müssen Sie sicherstellen, dass der [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)-Wert, den Sie als Entsprechung für „alternativen Text“ angeben, diesen Text oder eine Zusammenfassung seiner Bedeutung enthält. Ähnliches gilt auch, wenn Sie Textzeichen anhand von Vektoren als Teil einer [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)-Klasse oder mit [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921) erstellen.
+Verwenden Sie nach Möglichkeit keinen Text in Grafiken. Text, den Sie der in der App als [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)-Element angezeigten Bildquelldatei hinzufügen, ist z. B. nicht automatisch barrierefrei oder für Hilfstechnologien lesbar. Falls Sie Text in Grafiken verwenden müssen, müssen Sie sicherstellen, dass der [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8)-Wert, den Sie als Entsprechung für „alternativen Text“ angeben, diesen Text oder eine Zusammenfassung seiner Bedeutung enthält. Ähnliches gilt auch, wenn Sie Textzeichen anhand von Vektoren als Teil einer [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)-Klasse oder mit [**Glyphs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Glyphs) erstellen.
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
@@ -134,7 +134,7 @@ Nachdem Sie das Offensichtliche hinausblicken durchgeführt haben, umfasst Windo
 > [!NOTE]
 > Die **korrektes größere** Einstellung ermöglicht es einem Benutzer in der Regel geben Sie ihre bevorzugte Größe für Text- und apps auf ihre primären Bildschirm nur.
 
-Verschiedene Textelemente und Steuerelemente verfügen über eine [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled)-Eigenschaft. Diese Eigenschaft weist standardmäßig den Wert **true** auf. Wenn **"true"**, die Größe des Texts in diesem Element skaliert werden kann. Die Skalierung wirkt sich auf Text mit einem kleinen **FontSize** in höherem Maß als Text beeinflusst, die eine große **FontSize**. Sie können die automatische Größenänderung durch Festlegen eines Elements deaktivieren **IsTextScaleFactorEnabled** Eigenschaft **"false"**. 
+Verschiedene Textelemente und Steuerelemente verfügen über eine [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled)-Eigenschaft. Diese Eigenschaft weist standardmäßig den Wert **true** auf. Wenn **"true"** , die Größe des Texts in diesem Element skaliert werden kann. Die Skalierung wirkt sich auf Text mit einem kleinen **FontSize** in höherem Maß als Text beeinflusst, die eine große **FontSize**. Sie können die automatische Größenänderung durch Festlegen eines Elements deaktivieren **IsTextScaleFactorEnabled** Eigenschaft **"false"** . 
 
 Finden Sie unter [Text skalieren](https://docs.microsoft.com/windows/uwp/design/input/text-scaling) Weitere Details.
 
@@ -172,12 +172,12 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 Der Wert des **TextScaleFactor** ein Double-Wert im Bereich von \[1,2.25\]. Der kleinste Text wird um diesen Wert vergrößert. Unter Umständen können Sie den Wert verwenden, um beispielsweise Grafiken passend zum Text zu skalieren. Denken Sie jedoch daran, dass nicht der gesamte Text um denselben Faktor skaliert wird. Allgemein gilt: Je größer der Text, desto geringer sind die Auswirkungen der Skalierung.
 
 Diese Typen verfügen über eine **IsTextScaleFactorEnabled**-Eigenschaft:  
-* [**ContentPresenter-Element**](https://msdn.microsoft.com/library/windows/apps/BR209378)
-* [**Steuerelement** ](https://msdn.microsoft.com/library/windows/apps/BR209390) und abgeleitete Klassen
-* [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
-* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
-* [**TextBlock-Element**](https://msdn.microsoft.com/library/windows/apps/BR209652)
-* [**Das TextElement** ](https://msdn.microsoft.com/library/windows/apps/BR209967) und abgeleitete Klassen
+* [**ContentPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)
+* [**Steuerelement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) und abgeleitete Klassen
+* [**FontIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FontIcon)
+* [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
+* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+* [**Das TextElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.TextElement) und abgeleitete Klassen
 
 <span id="related_topics"/>
 

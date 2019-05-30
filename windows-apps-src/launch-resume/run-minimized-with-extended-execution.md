@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP, erweiterte Ausführung, minimiert, ExtendedExecutionSession, Hintergrundaufgabe, Anwendungslebenszyklus, Sperrbildschirm
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cc67a7593a340ada8f807fc0fb0c1b846c6f05b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 68d2c9937b02d60bb8509aedaf6277512a4e0c4a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641305"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371425"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>Verschieben der angehaltenen App mithilfe der erweiterten Ausführung
 
@@ -23,7 +23,7 @@ Es gibt Fälle, in denen eine App bei einer Minimierung möglicherweise weiter a
 
 Wenn eine App weiter ausgeführt muss, kann sie entweder vom Betriebssystem weiter ausgeführt werden, oder sie kann die weitere Ausführung anfordern. Wenn beispielsweise im Hintergrund Audioinhalte wiedergegeben werden, kann das Betriebssystem eine App weiter ausführen, wenn Sie diese Schritte für [Medienwiedergabe im Hintergrund](../audio-video-camera/background-audio.md) ausführen. Andernfalls müssen Sie manuell mehr Zeit anfordern. Sie erhalten möglicherweise mehrere Minuten Zeit für die Ausführung im Hintergrund, aber Sie müssen jederzeit auf die Verarbeitung der widerrufenen Sitzung vorbereitet sein. Diese Einschränkungen für die Lebenszykluszeit einer Anwendung sind deaktiviert, während sie unter einem Debugger ausgeführt wird. Aus diesem Grund ist es wichtig, Extended Execution und andere Tools zum Verschieben von App-Aussetzungen nur zu testen, wenn die App nicht unter einem Debugger ausgeführt wird, oder die in Visual Studio verfügbaren Lifecycle Events zu verwenden. 
  
-Um mehr Zeit für das Ausführen eines Vorgangs im Hintergrund anzufordern, erstellen Sie eine [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx). Die Art der von Ihnen erstellten **ExtendedExecutionSession** wird durch den [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) festgelegt, den Sie während des Erstellens angeben. Es gibt drei **ExtendedExecutionReason** Enum-Werte: **Nicht angegeben, handelt es sich bei LocationTracking** und **SavingData**. Es kann jeweils nur eine **ExtendedExecutionSession** angefordert werden. Wenn Sie versuchen, eine neue Sitzung zu erstellen, während eine genehmigte Sitzungsanforderung aktiv ist, wird die Ausnahme 0x8007139F vom **ExtendedExecutionSession**-Konstruktor ausgelöst, die besagt, dass die Gruppe oder Ressource nicht den richtigen Status zum Ausführen der angeforderten Operation aufweist. Verwenden Sie [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) und [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx) nicht. Sie erfordern eingeschränkte Funktionen und sind nicht zur Verwendung in Store-Anwendungen verfügbar.
+Um mehr Zeit für das Ausführen eines Vorgangs im Hintergrund anzufordern, erstellen Sie eine [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession). Die Art der von Ihnen erstellten **ExtendedExecutionSession** wird durch den [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) festgelegt, den Sie während des Erstellens angeben. Es gibt drei **ExtendedExecutionReason** Enum-Werte: **Nicht angegeben, handelt es sich bei LocationTracking** und **SavingData**. Es kann jeweils nur eine **ExtendedExecutionSession** angefordert werden. Wenn Sie versuchen, eine neue Sitzung zu erstellen, während eine genehmigte Sitzungsanforderung aktiv ist, wird die Ausnahme 0x8007139F vom **ExtendedExecutionSession**-Konstruktor ausgelöst, die besagt, dass die Gruppe oder Ressource nicht den richtigen Status zum Ausführen der angeforderten Operation aufweist. Verwenden Sie [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) und [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) nicht. Sie erfordern eingeschränkte Funktionen und sind nicht zur Verwendung in Store-Anwendungen verfügbar.
 
 ## <a name="run-while-minimized"></a>Ausführen bei Minimierung
 
@@ -45,7 +45,7 @@ Diese Art der erweiterten Ausführung wird auf allen Betriebssystemeditionen bee
 
 ## <a name="track-the-users-location"></a>Abrufen des Standorts eines Benutzers
 
-Geben Sie beim Erstellen einer **ExtendedExecutionSession** **ExtendedExecutionReason.LocationTracking** an, wenn Ihre App regelmäßig den Standort aus [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) protokollieren muss. Apps für Fitnessnachverfolgung und Navigation, die regelmäßig den Standort des Benutzers überwachen müssen, sollten diesen Grund verwenden.
+Geben Sie beim Erstellen einer **ExtendedExecutionSession** **ExtendedExecutionReason.LocationTracking** an, wenn Ihre App regelmäßig den Standort aus [GeoLocator](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator) protokollieren muss. Apps für Fitnessnachverfolgung und Navigation, die regelmäßig den Standort des Benutzers überwachen müssen, sollten diesen Grund verwenden.
 
 Eine erweiterte Ausführungssitzung der Standortnachverfolgung kann bei Bedarf auch ausgeführt werden, während der Bildschirm auf einem mobilen Gerät gesperrt ist. Pro Gerät kann jedoch nur eine solche Sitzung ausgeführt werden. Eine erweiterte Ausführung zur Standortnachverfolgung kann nur im Vordergrund angefordert werden, und die App muss sich im Zustand **Ausgeführt** befinden. Dadurch wird sichergestellt, dass der Benutzer weiß, dass die App die erweiterte Ausführung zur Standortnachverfolgung initiiert hat. GeoLocator kann mittels einer Hintergrundaufgabe oder eines App-Diensts während der Ausführung der App im Hintergrund weiter verwendet werden, ohne dass eine erweiterte Ausführung zur Standortnachverfolgung angefordert wird.
 
@@ -53,7 +53,7 @@ Eine erweiterte Ausführungssitzung der Standortnachverfolgung kann bei Bedarf a
 
 Geben Sie beim Erstellen einer **ExtendedExecutionSession** **ExtendedExecutionReason.SavingData** an, wenn Sie in Fällen, in das Nichtspeichern von Daten vor Beenden der App zu Datenverlusten und einer negativen Benutzererfahrung führt, Benutzerdaten speichern möchten.
 
-Verwenden Sie diese Art von Sitzung nicht, um den Lebenszyklus einer App zum Zweck des Hoch- oder Herunterladens von Daten zu verlängern. Fordern Sie eine [Hintergrundübertragung](https://msdn.microsoft.com/windows/uwp/networking/background-transfers) an, wenn Sie Daten hochladen müssen, oder registrieren Sie einen **MaintenanceTrigger**, um die Übertragung zu verarbeiten, wenn die Stromversorgung verfügbar ist. Eine erweiterte Ausführungssitzung mit dem Grund **ExtendedExecutionReason.SavingData** kann angefordert werden, wenn sich die App im Vordergrund und im Zustand **Ausgeführt** befindet oder wenn sie sich im Hintergrund und im Zustand **Angehalten** befindet.
+Verwenden Sie diese Art von Sitzung nicht, um den Lebenszyklus einer App zum Zweck des Hoch- oder Herunterladens von Daten zu verlängern. Fordern Sie eine [Hintergrundübertragung](https://docs.microsoft.com/windows/uwp/networking/background-transfers) an, wenn Sie Daten hochladen müssen, oder registrieren Sie einen **MaintenanceTrigger**, um die Übertragung zu verarbeiten, wenn die Stromversorgung verfügbar ist. Eine erweiterte Ausführungssitzung mit dem Grund **ExtendedExecutionReason.SavingData** kann angefordert werden, wenn sich die App im Vordergrund und im Zustand **Ausgeführt** befindet oder wenn sie sich im Hintergrund und im Zustand **Angehalten** befindet.
 
 Der Zustand **Angehalten** ist die letzte Phase während des App-Lebenszyklus, in der die App Aufgaben ausführen kann, bevor sie beendet wird. **ExtendedExecutionReason.SavingData** ist die einzige Art von **ExtendedExecutionSession**, die im **Suspending**-Zustand angefordert werden kann. Das Anfordern einer erweiterten Ausführungssitzung mit dem Grund **ExtendedExecutionReason.SavingData**, während sich die App im Zustand **Angehalten** befindet, kann ein Problem verursachen, das Sie beachten sollten. Wenn im Zustand **Suspending** eine erweiterte Ausführungssitzung angefordert wird, und der Benutzer das erneute Starten der App anfordert, benötigt sie zum Starten scheinbar eine lange Zeit. Der Grund hierfür ist, dass die erweiterte Ausführungssitzung abgeschlossen werden muss, bevor die alte Instanz der App geschlossen und eine neue Instanz der App gestartet werden kann. Es wird auf Leistung beim Starten verzichtet, um sicherzustellen, dass der Benutzerstatus nicht verloren geht.
 
@@ -61,7 +61,7 @@ Der Zustand **Angehalten** ist die letzte Phase während des App-Lebenszyklus, i
 
 Es gibt drei grundsätzliche Interaktionen mit erweiterten Ausführungssitzungen: Anfordern, Löschen und Sperren.  Das Anfordern wird im folgenden Codeausschnitt gezeigt.
 
-### <a name="request"></a>Anfordern
+### <a name="request"></a>Anforderung
 
 ```csharp
 var newSession = new ExtendedExecutionSession();
@@ -85,7 +85,7 @@ switch (result)
 
 Durch Aufrufen von **RequestExtensionAsync** wird durch das Betriebssystem geprüft, ob der Benutzer Hintergrundaktivitäten für die App genehmigt hat und ob das System über genügend Ressourcen verfügt, um die Hintergrundausführung zu aktivieren. Pro App wird jeweils nur eine Sitzung genehmigt, sodass weitere Aufrufe von **RequestExtensionAsync** dazu führen, dass die Sitzung abgelehnt wird.
 
-Sie können [BackgroundExecutionManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) im Voraus überprüfen, um den [BackgroundAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundaccessstatus.aspx?f=255&MSPPError=-2147217396) zu ermitteln. Dies ist die Benutzereinstellung, die festlegt, ob Ihre App im Hintergrund ausgeführt werden kann oder nicht. Weitere Informationen zu diesen Benutzereinstellungen finden Sie unter [Hintergrundaktivitäten und Energieinformationen](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97).
+Sie können [BackgroundExecutionManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) im Voraus überprüfen, um den [BackgroundAccessStatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus?f=255&MSPPError=-2147217396) zu ermitteln. Dies ist die Benutzereinstellung, die festlegt, ob Ihre App im Hintergrund ausgeführt werden kann oder nicht. Weitere Informationen zu diesen Benutzereinstellungen finden Sie unter [Hintergrundaktivitäten und Energieinformationen](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97).
 
 Der **ExtendedExecutionReason** gibt den Vorgang an, der von Ihrer App im Hintergrund ausgeführt wird. Die Zeichenfolge **Beschreibung** ist eine lesbare Zeichenfolge, die beschreibt, warum Ihre App den Vorgang ausführen muss. Diese Zeichenfolge wird dem Benutzer nicht angezeigt, wird aber möglicherweise in zukünftigen Windows-Versionen verfügbar gemacht. Der Ereignishandler **Revoked** ist erforderlich, damit eine erweiterte Ausführungssitzung ordnungsgemäß angehalten werden kann, wenn der Benutzer oder das System festlegen, dass die App nicht mehr im Hintergrund ausgeführt werden kann.
 
@@ -251,17 +251,17 @@ static class ExtendedExecutionHelper
 
 ## <a name="ensure-that-your-app-uses-resources-well"></a>Gute Nutzung von Ressourcen durch Ihre App
 
-Das Optimieren von Arbeitsspeicher und Energieverbrauch Ihrer App ist der Schlüssel, um sicherzustellen, dass das Betriebssystem die Ausführung Ihrer App auch dann zulässt, wenn sie sich nicht mehr im Vordergrund befindet. Um zu ermitteln, wie viel Arbeitsspeicher Ihre App verwendet, verwenden Sie die [Speicherverwaltungs-APIs](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx). Je mehr Arbeitsspeicher Ihre App verwendet, desto schwieriger wird es für das Betriebssystem, Ihre App weiter auszuführen, wenn sich eine andere App im Vordergrund befindet. Der Benutzer hat letztendlich die Kontrolle über alle Hintergrundaktivitäten, die Ihre App ausführen kann, und kann die Auswirkungen Ihrer App auf den Akkuverbrauch erkennen.
+Das Optimieren von Arbeitsspeicher und Energieverbrauch Ihrer App ist der Schlüssel, um sicherzustellen, dass das Betriebssystem die Ausführung Ihrer App auch dann zulässt, wenn sie sich nicht mehr im Vordergrund befindet. Um zu ermitteln, wie viel Arbeitsspeicher Ihre App verwendet, verwenden Sie die [Speicherverwaltungs-APIs](https://docs.microsoft.com/uwp/api/windows.system.memorymanager). Je mehr Arbeitsspeicher Ihre App verwendet, desto schwieriger wird es für das Betriebssystem, Ihre App weiter auszuführen, wenn sich eine andere App im Vordergrund befindet. Der Benutzer hat letztendlich die Kontrolle über alle Hintergrundaktivitäten, die Ihre App ausführen kann, und kann die Auswirkungen Ihrer App auf den Akkuverbrauch erkennen.
 
-Um zu ermitteln, ob der Benutzer die Hintergrundaktivität Ihrer App begrenzt hat, verwenden Sie [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx). Achten Sie auf die Akkunutzung, und führen Sie Ihre App nur dann im Hintergrund aus, wenn dies zum Ausführen einer vom Benutzer gewünschten Aktion notwendig ist.
+Um zu ermitteln, ob der Benutzer die Hintergrundaktivität Ihrer App begrenzt hat, verwenden Sie [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager). Achten Sie auf die Akkunutzung, und führen Sie Ihre App nur dann im Hintergrund aus, wenn dies zum Ausführen einer vom Benutzer gewünschten Aktion notwendig ist.
 
 ## <a name="see-also"></a>Siehe auch
 
 [Beispiel für erweiterte Ausführung](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
-[Anwendungslebenszyklus](https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
+[Anwendungslebenszyklus](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
 [App Lifecycle - Keep Apps Alive with Background Tasks and Extended Execution](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
-[Geben Sie Speicher frei, wenn Ihre App in den Hintergrund verschoben wird](https://msdn.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
-[Übertragungen im Hintergrund](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)  
+[Geben Sie Speicher frei, wenn Ihre App in den Hintergrund verschoben wird](https://docs.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
+[Übertragungen im Hintergrund](https://docs.microsoft.com/windows/uwp/networking/background-transfers)  
 [Akku Bewusstsein und Hintergrundaktivität](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
-[MemoryManager-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)  
-[Wiedergeben von Medien im Hintergrund](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  
+[MemoryManager-Klasse](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)  
+[Wiedergeben von Medien im Hintergrund](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)  

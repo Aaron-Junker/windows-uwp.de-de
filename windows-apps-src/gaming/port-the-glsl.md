@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, GLSL, Portieren
 ms.localizationpriority: medium
-ms.openlocfilehash: 809440f9e77af19c01f4a050eee3b6f8d1c709b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 210f98476a06b88e7d3d543006a6d4ec886cfd45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621375"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368254"
 ---
 # <a name="port-the-glsl"></a>Portieren der GLSL
 
@@ -20,14 +20,14 @@ ms.locfileid: "57621375"
 
 **Wichtige APIs**
 
--   [HLSL-Semantik](https://msdn.microsoft.com/library/windows/desktop/bb205574)
--   [Shaderkonstanten (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
+-   [HLSL-Semantik](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps)
+-   [Shaderkonstanten (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)
 
 Nachdem Sie sich um den Code gekümmert haben, mit dem die Puffer und Shaderobjekte erstellt und konfiguriert werden, muss der in diesen Shadern enthaltene Code von der GL Shader Language (GLSL) von OpenGL ES 2.0 in die High-Level Shader Language (HLSL) von Direct3D 11 portiert werden.
 
 In OpenGL ES 2.0-Shader, Daten nach der Ausführung, die Verwendung systeminterner Funktionen wie z. B. zurückgeben **Gl\_Position**, **Gl\_FragColor**, oder **Gl\_FragData \[n\]**  (wobei n für der Index für eine bestimmte Renderziel ist). In Direct3D sind keine speziellen systeminternen Funktionen vorhanden. Von den Shadern werden Daten als Rückgabetyp ihrer jeweiligen main()-Funktionen zurückgegeben.
 
-Daten, die zwischen Shaderphasen interpoliert werden sollen, z. B. Vertexposition oder Normale, werden mithilfe der **varying**-Deklaration behandelt. Direct3D verfügt jedoch nicht über diese Deklaration. Alle Daten, die zwischen Shaderphasen übertragen werden sollen, müssen daher per [HLSL-Semantik](https://msdn.microsoft.com/library/windows/desktop/bb205574) markiert werden. Mit der jeweils gewählten Semantik wird der Zweck für die Daten angegeben. Vertexdaten, die zwischen Fragmentshadern interpoliert werden sollen, werden beispielsweise wie folgt deklariert:
+Daten, die zwischen Shaderphasen interpoliert werden sollen, z. B. Vertexposition oder Normale, werden mithilfe der **varying**-Deklaration behandelt. Direct3D verfügt jedoch nicht über diese Deklaration. Alle Daten, die zwischen Shaderphasen übertragen werden sollen, müssen daher per [HLSL-Semantik](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps) markiert werden. Mit der jeweils gewählten Semantik wird der Zweck für die Daten angegeben. Vertexdaten, die zwischen Fragmentshadern interpoliert werden sollen, werden beispielsweise wie folgt deklariert:
 
 `float4 vertPos : POSITION;`
 
@@ -54,7 +54,7 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-Hier wird vom Konstantenpuffer das Register „b0“ für den gepackten Puffer verwendet. Alle Register werden in der Form b bezeichnet\#. Weitere Informationen zur HLSL-Implementierung von Konstantenpuffern, Registern und Datenpaketen finden Sie unter [Shaderkonstanten (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
+Hier wird vom Konstantenpuffer das Register „b0“ für den gepackten Puffer verwendet. Alle Register werden in der Form b bezeichnet\#. Weitere Informationen zur HLSL-Implementierung von Konstantenpuffern, Registern und Datenpaketen finden Sie unter [Shaderkonstanten (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants).
 
 <a name="instructions"></a>Anweisungen
 ------------
@@ -159,10 +159,10 @@ Die Farbe für das Pixel an der Position wird in das Renderziel geschrieben. Das
 ---------
 [Zeichnen auf den Bildschirm](draw-to-the-screen.md) Anmerkungen
 -------
-Wenn Sie mit der HLSL-Semantik und dem Packen von Konstantenpuffern vertraut sind, können Sie einigen Debugaufwand vermeiden und Möglichkeiten zur Optimierung schaffen. Wenn Sie die Möglichkeit erhalten, lesen [Variable Syntax (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Einführung in die Speicherpuffer in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898), und [Vorgehensweise: Erstellen ein Konstantenpuffers](https://msdn.microsoft.com/library/windows/desktop/ff476896). Hier sind als Anfang schon einmal einige Tipps aufgeführt, die in Verbindung mit der Semantik und Konstantenpuffern zu beachten sind:
+Wenn Sie mit der HLSL-Semantik und dem Packen von Konstantenpuffern vertraut sind, können Sie einigen Debugaufwand vermeiden und Möglichkeiten zur Optimierung schaffen. Wenn Sie die Möglichkeit erhalten, lesen [Variable Syntax (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax), [Einführung in die Speicherpuffer in Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro), und [Vorgehensweise: Erstellen ein Konstantenpuffers](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to). Hier sind als Anfang schon einmal einige Tipps aufgeführt, die in Verbindung mit der Semantik und Konstantenpuffern zu beachten sind:
 
 -   Überprüfen Sie stets den Direct3D-Konfigurationscode des Renderers, um sicherzustellen, dass die Strukturen für die Konstantenpuffer mit den cbuffer-Strukturdeklarationen der HLSL übereinstimmen und dass die Komponentenskalartypen für beide Deklarationen übereinstimmen.
--   Verwenden Sie im C++-Code des Renderers [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)-Typen in den Konstantenpufferdeklarationen, um für die richtige Verpackung der Daten zu sorgen.
+-   Verwenden Sie im C++-Code des Renderers [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal)-Typen in den Konstantenpufferdeklarationen, um für die richtige Verpackung der Daten zu sorgen.
 -   Die beste Möglichkeit zur effizienten Nutzung von Konstantenpuffern ist die Organisation von Shadervariablen in Konstantenpuffern anhand der Updatehäufigkeit. Wenn Sie beispielsweise über uniform-Daten verfügen, die einmal pro Frame aktualisiert werden, sowie über andere uniform-Daten, die nur bei Kamerabewegungen aktualisiert werden, empfiehlt sich das Aufteilen der Daten auf zwei separate Konstantenpuffer.
 -   Semantik, deren Anwendung Sie vergessen oder die Sie auf fehlerhafte Weise angewendet haben, ist die wichtigste Ursache für Fehler der Shaderkompilierung (FXC). Deshalb sollten Sie die Semantik auf jeden Fall noch einmal überprüfen. Die Dokumente können etwas verwirrend erscheinen, da viele ältere Seiten und Beispiele noch auf andere Versionen der HLSL-Semantik des Stands vor Direct3D 11 verweisen.
 -   Stellen Sie sicher, dass Sie wissen, auf welche Direct3D-Featureebene Sie für einen Shader jeweils abzielen. Die Semantik für Feature-Ebene 9\_ \* unterscheiden sich von denen für 11\_1.

@@ -10,18 +10,18 @@ dev_langs:
 - vb
 - cppcx
 - cppwinrt
-ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9e13138ca634c075eba0c9b1331f6af4176de1eb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654535"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360427"
 ---
 # <a name="xaml-lighting"></a>XAML-Beleuchtung
 
 [**CompositionLight** ](/uwp/api/Windows.UI.Composition.CompositionLight) Objekte werden verwendet, in Verbindung mit [ **SceneLightingEffect** ](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) , dynamische Beleuchtung und Reflexionsvermögen zu simulieren.
 
-Sie können Lichter auf [**visuelle Elemente**](https://msdn.microsoft.com/library/windows/apps/Dn706858) und XAML-[**UI-Elemente**](/uwp/api/Windows.UI.Xaml.UIElement) anwenden.
+Sie können Lichter auf [**visuelle Elemente**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) und XAML-[**UI-Elemente**](/uwp/api/Windows.UI.Xaml.UIElement) anwenden.
 
 ## <a name="applying-lights-to-xaml-uielements"></a>Anwenden von Lichtern auf XAML-UI-Elemente
 
@@ -496,6 +496,6 @@ Die Ergebnisse der diese XAML werden wie folgt aussehen.
 > [!Important]
 > Die Einstellung UIElement.Lights im Markup des obigen Beispiels wird nur für Apps mit mindestens gleicher oder höherer Version des Windows 10 Creators-Updates unterstützt. Für Apps, die ältere Versionen verwenden, müssen die Lichter in CodeBehind erstellt werden.
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 * Erweiterte Beispiele für Benutzeroberfläche und Komposition finden Sie im [WindowsUIDevLabs-GitHub](https://github.com/microsoft/windowsuidevlabs).

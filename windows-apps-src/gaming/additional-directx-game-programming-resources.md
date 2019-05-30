@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Programmierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d5068c2f474af22d789dea6428f911087f9ff0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b855bc9adc79b3ae5dd5ab7128be7035a78a4aa0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639215"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369106"
 ---
 # <a name="game-programming-resources"></a>Ressourcen für die Spieleprogrammierung
 
@@ -23,13 +23,13 @@ Weitere Informationen zur Spieleprogrammierung unter Windows finden Sie in den f
 ## <a name="game-programming-reference"></a>Programmierreferenz für Spiele
 
 
--   [Grafiken und-Spiele](https://msdn.microsoft.com/library/windows/desktop/ee663279)
+-   [Grafiken und-Spiele](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
 -   [OpenGL-Referenz](https://go.microsoft.com/fwlink/p/?LinkID=288875)
 
 ## <a name="game-design-guidance"></a>Designleitfaden für Spiele
 
 
--   [Index der UX-Richtlinien für die UWP-apps](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [Index der UX-Richtlinien für die UWP-apps](https://developer.microsoft.com/windows/design)
 
 ## <a name="blogs"></a>Blogs
 
@@ -43,7 +43,7 @@ Weitere Informationen zur Spieleprogrammierung unter Windows finden Sie in den f
 
 -   [DirectX-Toolkit](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
 -   [Verarbeiten von Bibliothek DirectXTex Textur](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
--   Microsoft Visual Studio-[Grafikdiagnose](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx)
+-   Microsoft Visual Studio-[Grafikdiagnose](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
 -   [Win2D](https://github.com/Microsoft/Win2D) – Einfach zu verwendende Windows-Runtime-API für 2D-Grafikrendering im unmittelbaren Modus mit GPU-Beschleunigung.
 -   [Winkel für Microsoft Store](https://go.microsoft.com/fwlink/p/?linkid=618387) -Ausführungen OpenGL ES-Inhalt auf Windows durch die Übersetzung von OpenGL ES-API aufruft, die DirectX 11-API-Aufrufe.
 

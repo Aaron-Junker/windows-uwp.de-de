@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Gitter, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b5aa00b5beb7c80a903fbf17d432f73f16561a2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595645"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368985"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Erstellen und Anzeigen einfacher Gitter
 
@@ -28,9 +28,9 @@ In 3D-Spielen für die universelle Windows-Plattform (UWP) werden Spielobjekte u
 
 ### <a name="technologies"></a>Technologien
 
--   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
+-   [Direct3D](https://docs.microsoft.com/windows/desktop/getting-started-with-direct3d)
 
-### <a name="prerequisites"></a>Voraussetzungen
+### <a name="prerequisites"></a>Vorraussetzungen
 
 -   Grundkenntnisse in linearer Algebra und 3D-Koordinatensystemen
 -   Eine Visual Studio 2015 oder höher Direct3D-Vorlage
@@ -77,7 +77,7 @@ Daraus ergeben sich acht Vertizes mit jeweils einer bestimmten Farbe. Jedes Paar
 
 ### <a name="step-2-set-up-the-input-layout"></a>Schritt 2: Richten Sie das eingabelayout
 
-Nun befinden sich die Vertizes im Speicher. Ihr Grafikgerät besitzt jedoch einen eigenen Speicher, auf den Sie mithilfe von Direct3D zugreifen. Um die Vertexdaten zur Verarbeitung an das Grafikgerät zu übergeben, müssen Sie den Weg dazu ebnen. Das bedeutet: Sie müssen deklarieren, wie die Vertexdaten angeordnet sind, sodass sie vom Grafikgerät interpretiert werden können, wenn sie vom Spiel an das Gerät übergeben werden. Verwenden Sie dazu [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575).
+Nun befinden sich die Vertizes im Speicher. Ihr Grafikgerät besitzt jedoch einen eigenen Speicher, auf den Sie mithilfe von Direct3D zugreifen. Um die Vertexdaten zur Verarbeitung an das Grafikgerät zu übergeben, müssen Sie den Weg dazu ebnen. Das bedeutet: Sie müssen deklarieren, wie die Vertexdaten angeordnet sind, sodass sie vom Grafikgerät interpretiert werden können, wenn sie vom Spiel an das Gerät übergeben werden. Verwenden Sie dazu [**ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout).
 
 Deklarieren Sie das Eingabelayout für den Vertexpuffer, und legen Sie es fest.
 
@@ -110,17 +110,17 @@ In diesem Code geben Sie ein Layout für die Vertizes an – genauer gesagt: wel
 
     **COLOR**-Werte werden in der Regel als RGBA-Wert aus vier Komponenten am Ende der Shader-Pipeline zurückgegeben. In diesem Beispiel legen Sie in der Shader-Pipeline für alle Pixel den Alpha-Wert „A“ auf „1,0“ (maximale Deckkraft) fest.
 
-Eine vollständige Liste der Formate, finden Sie unter [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059). Die vollständige HLSL-Semantikliste finden Sie unter [Semantik](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+Eine vollständige Liste der Formate, finden Sie unter [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format). Die vollständige HLSL-Semantikliste finden Sie unter [Semantik](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
 
-Rufen Sie [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) auf, und erstellen Sie das Eingabelayout auf dem Direct3D-Gerät. Nun müssen Sie einen Puffer erstellen, der die Daten auch enthalten kann.
+Rufen Sie [**ID3D11Device::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) auf, und erstellen Sie das Eingabelayout auf dem Direct3D-Gerät. Nun müssen Sie einen Puffer erstellen, der die Daten auch enthalten kann.
 
 ### <a name="step-3-populate-the-vertex-buffers"></a>Schritt 3: Füllen Sie die Vertexpuffer
 
 Vertexpuffer enthalten die Liste der Vertizes für alle Dreiecke im Gitter. Alle Vertizes müssen in dieser Liste eindeutig sein. In unserem Beispiel sind acht Vertizes für den Würfel vorhanden. Der Vertex-Shader wird auf dem Grafikgerät ausgeführt. Er liest aus dem Vertexpuffer und interpretiert die Daten basierend auf dem im vorherigen Schritt angegebenen Eingabelayout.
 
-Im nächsten Beispiel geben Sie eine Beschreibung und eine Unterressource für den Puffer an. Diese beiden Elemente teilen Direct3D verschiedene Informationen zur physischen Zuordnung der Vertexdaten und zu ihrer Behandlung im Speicher des Grafikgeräts mit. Das ist erforderlich, weil Sie einen generischen [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) verwenden, der alles Mögliche enthalten kann. Die [ **D3D11\_Puffer\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) und [ **D3D11\_SUBRESOURCE\_Daten** ](https://msdn.microsoft.com/library/windows/desktop/ff476220)Strukturen werden bereitgestellt, um sicherzustellen, dass die Direct3D das Layout der physikalischen Speicher des Puffers, u. a. die Größe der einzelnen Vertex-Elemente in den Puffer sowie die maximale Größe der Liste Vertex versteht. Darüber hinaus können Sie hier den Zugriff auf den Pufferspeicher und seinen Durchlauf steuern. Dies ist jedoch nicht Teil dieses Lernprogramms.
+Im nächsten Beispiel geben Sie eine Beschreibung und eine Unterressource für den Puffer an. Diese beiden Elemente teilen Direct3D verschiedene Informationen zur physischen Zuordnung der Vertexdaten und zu ihrer Behandlung im Speicher des Grafikgeräts mit. Das ist erforderlich, weil Sie einen generischen [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) verwenden, der alles Mögliche enthalten kann. Die [ **D3D11\_Puffer\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) und [ **D3D11\_SUBRESOURCE\_Daten** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)Strukturen werden bereitgestellt, um sicherzustellen, dass die Direct3D das Layout der physikalischen Speicher des Puffers, u. a. die Größe der einzelnen Vertex-Elemente in den Puffer sowie die maximale Größe der Liste Vertex versteht. Darüber hinaus können Sie hier den Zugriff auf den Pufferspeicher und seinen Durchlauf steuern. Dies ist jedoch nicht Teil dieses Lernprogramms.
 
-Nach dem Konfigurieren des Puffers rufen Sie [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) auf, um ihn zu erstellen. Bei mehreren Objekten müssen Sie natürlich Puffer für jedes einzelne Modell erstellen.
+Nach dem Konfigurieren des Puffers rufen Sie [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) auf, um ihn zu erstellen. Bei mehreren Objekten müssen Sie natürlich Puffer für jedes einzelne Modell erstellen.
 
 Deklarieren Sie den Vertexpuffer, und erstellen Sie ihn.
 
@@ -187,9 +187,9 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-Bei 36 Indexelemente im Puffer für lediglich acht Vertizes ergibt sich ein hohes Maß an Redundanz. Wenn Sie auswählen, einige der Redundanzen zu entfernen, und verwenden Sie einen anderen Vertex Liste, z. B. ein Streifen oder ein Lüfter, müssen Sie diesen Typ angeben, wenn Sie angeben, dass eine bestimmte [ **D3D11\_PRIMITIVEN\_Topologie** ](https://msdn.microsoft.com/library/windows/desktop/ff476189) Wert der [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) Methode.
+Bei 36 Indexelemente im Puffer für lediglich acht Vertizes ergibt sich ein hohes Maß an Redundanz. Wenn Sie auswählen, einige der Redundanzen zu entfernen, und verwenden Sie einen anderen Vertex Liste, z. B. ein Streifen oder ein Lüfter, müssen Sie diesen Typ angeben, wenn Sie angeben, dass eine bestimmte [ **D3D11\_PRIMITIVEN\_Topologie** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) Wert der [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) Methode.
 
-Weitere Informationen zu verschiedenen Indexlistentechniken finden Sie unter [Primitive Topologien](https://msdn.microsoft.com/library/windows/desktop/bb205124).
+Weitere Informationen zu verschiedenen Indexlistentechniken finden Sie unter [Primitive Topologien](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies).
 
 ### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>Schritt 5: Erstellen Sie einen Konstanten Puffer für die Transformation für Matrizen
 
@@ -289,7 +289,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-Wenn Sie schon einmal dabei sind, legen Sie die Vertex- und Indexpuffer für [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149) sowie die verwendete Topologie fest.
+Wenn Sie schon einmal dabei sind, legen Sie die Vertex- und Indexpuffer für [ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference-10level9-context) sowie die verwendete Topologie fest.
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -412,7 +412,7 @@ Fügen Sie diesen Code getrennt vom Vertex-Shader-HLSL-Code in eine HLSL-Datei (
 
 ### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>Schritt 8: Rastern und die Anzeige des Netzes
 
-Führen Sie die Pipeline aus. Rufen Sie dazu einfach [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565) auf.
+Führen Sie die Pipeline aus. Rufen Sie dazu einfach [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexed) auf.
 
 Zeichnen Sie den Würfel.
 

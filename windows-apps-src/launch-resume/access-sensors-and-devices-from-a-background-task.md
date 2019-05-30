@@ -6,38 +6,38 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.localizationpriority: medium
-ms.openlocfilehash: 26b665f68932f7a90127ee99414f984f5d9f2005
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f2e4c3868c2eb83947cf9341e4fbd49e2724af61
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636795"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370855"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>Zugreifen auf Sensoren und Geräte von einer Hintergrundaufgabe aus
 
 
 
 
-Mit [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) kann Ihre universelle Windows-App im Hintergrund auf Sensoren und Peripheriegeräte zugreifen. Dies ist selbst dann möglich, wenn die Vordergrund-App angehalten wird. Je nachdem, wo Ihre App ausgeführt wird, kann sie eine Hintergrundaufgabe zum Synchronisieren von Daten mit Geräten oder zum Überwachen von Sensoren verwenden. Zur Verbesserung der Akkulaufzeit und Sicherstellung der Zustimmung durch den Benutzer unterliegt die Nutzung von [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) den Richtlinien, die in diesem Thema beschrieben werden.
+Mit [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) kann Ihre universelle Windows-App im Hintergrund auf Sensoren und Peripheriegeräte zugreifen. Dies ist selbst dann möglich, wenn die Vordergrund-App angehalten wird. Je nachdem, wo Ihre App ausgeführt wird, kann sie eine Hintergrundaufgabe zum Synchronisieren von Daten mit Geräten oder zum Überwachen von Sensoren verwenden. Zur Verbesserung der Akkulaufzeit und Sicherstellung der Zustimmung durch den Benutzer unterliegt die Nutzung von [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) den Richtlinien, die in diesem Thema beschrieben werden.
 
-Erstellen Sie zum Zugreifen auf Sensoren oder Peripheriegeräte im Hintergrund eine Hintergrundaufgabe, für die [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) verwendet wird. Ein Beispiel für die Vorgehensweise auf einem PC finden Sie unter [Beispiel für ein benutzerdefiniertes USB-Gerät](https://go.microsoft.com/fwlink/p/?LinkId=301975 ). Ein Beispiel für ein Smartphone finden Sie unter [Beispiel für Hintergrundsensoren](https://go.microsoft.com/fwlink/p/?LinkId=393307).
+Erstellen Sie zum Zugreifen auf Sensoren oder Peripheriegeräte im Hintergrund eine Hintergrundaufgabe, für die [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) verwendet wird. Ein Beispiel für die Vorgehensweise auf einem PC finden Sie unter [Beispiel für ein benutzerdefiniertes USB-Gerät](https://go.microsoft.com/fwlink/p/?LinkId=301975 ). Ein Beispiel für ein Smartphone finden Sie unter [Beispiel für Hintergrundsensoren](https://go.microsoft.com/fwlink/p/?LinkId=393307).
 
 > [!Important]
 > **DeviceUseTrigger** kann nicht für In-Process-Hintergrundaufgaben verwendet werden. Die Informationen in diesem Thema gelten nur für Out-of-Process-Hintergrundaufgaben.
 
 ## <a name="device-background-task-overview"></a>Hintergrundaufgabe für Geräte – Übersicht
 
-Wenn Ihre App für den Benutzer nicht mehr sichtbar ist, wird die App von Windows angehalten oder beendet, um Arbeitsspeicher und CPU-Ressourcen freizugeben. Dies ermöglicht anderen Apps die Ausführung im Vordergrund und reduziert den Stromverbrauch. In diesem Fall wären alle laufenden Datenereignisse ohne die Hilfe einer Hintergrundaufgabe verloren. Windows stellt den Trigger für die Hintergrundaufgabe bereit: [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Damit kann Ihre App lange Synchronisierungs- und Überwachungsvorgänge auf Geräten und Sensoren auch dann sicher im Hintergrund ausführen, wenn Ihre App angehalten wurde. Weitere Informationen zum App-Lebenszyklus finden Sie unter [Starten, Fortsetzen und Hintergrundaufgaben](index.md). Weitere Informationen zu Hintergrundaufgaben finden Sie unter [Unterstützen von Apps durch Hintergrundaufgaben](support-your-app-with-background-tasks.md).
+Wenn Ihre App für den Benutzer nicht mehr sichtbar ist, wird die App von Windows angehalten oder beendet, um Arbeitsspeicher und CPU-Ressourcen freizugeben. Dies ermöglicht anderen Apps die Ausführung im Vordergrund und reduziert den Stromverbrauch. In diesem Fall wären alle laufenden Datenereignisse ohne die Hilfe einer Hintergrundaufgabe verloren. Windows stellt den Trigger für die Hintergrundaufgabe bereit: [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). Damit kann Ihre App lange Synchronisierungs- und Überwachungsvorgänge auf Geräten und Sensoren auch dann sicher im Hintergrund ausführen, wenn Ihre App angehalten wurde. Weitere Informationen zum App-Lebenszyklus finden Sie unter [Starten, Fortsetzen und Hintergrundaufgaben](index.md). Weitere Informationen zu Hintergrundaufgaben finden Sie unter [Unterstützen von Apps durch Hintergrundaufgaben](support-your-app-with-background-tasks.md).
 
 **Beachten Sie**  In universellen Windows-app, ein Gerät im Hintergrund zu synchronisieren, dass der Benutzer genehmigt hat Hintergrund synchronisiert, die Ihre app erfordert. Das Gerät muss – mit E/A-Aktivierung – auch mit dem PC verbunden oder gekoppelt sein und kann maximal zehn Minuten lang Aktivitäten im Hintergrund ausführen. Weitere Details zur Richtlinienerzwingung sind weiter unten in diesem Thema beschrieben.
 
 ### <a name="limitation-critical-device-operations"></a>Einschränkung: Kritische Gerätevorgänge
 
-Einige kritische Gerätevorgänge (wie etwa zeitaufwändige Firmwareupdates) können mithilfe von [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) nicht durchgeführt werden. Diese Vorgänge können nur auf dem PC und nur von einer privilegierten App durchgeführt werden, für die [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) verwendet wird. Eine *privilegierte App* ist eine App, die vom Gerätehersteller dafür autorisiert wurde, diese Vorgänge auszuführen. Mithilfe von Metadaten wird angegeben, welche App, falls zutreffend, als privilegierte App für ein Gerät festgelegt wurde. Weitere Informationen finden Sie unter [Gerätesynchronisierung und -update für Microsoft Store-Geräte-Apps](https://go.microsoft.com/fwlink/p/?LinkId=306619).
+Einige kritische Gerätevorgänge (wie etwa zeitaufwändige Firmwareupdates) können mithilfe von [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) nicht durchgeführt werden. Diese Vorgänge können nur auf dem PC und nur von einer privilegierten App durchgeführt werden, für die [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) verwendet wird. Eine *privilegierte App* ist eine App, die vom Gerätehersteller dafür autorisiert wurde, diese Vorgänge auszuführen. Mithilfe von Metadaten wird angegeben, welche App, falls zutreffend, als privilegierte App für ein Gerät festgelegt wurde. Weitere Informationen finden Sie unter [Gerätesynchronisierung und -update für Microsoft Store-Geräte-Apps](https://go.microsoft.com/fwlink/p/?LinkId=306619).
 
 ## <a name="protocolsapis-supported-in-a-deviceusetrigger-background-task"></a>In einer DeviceUseTrigger-Hintergrundaufgabe unterstützte Protokolle/APIs
 
-Hintergrundaufgaben mit [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) ermöglichen Ihrer App die Kommunikation über viele Protokolle/APIs. Die meisten davon werden von den vom System ausgelösten Hintergrundaufgaben nicht unterstützt. Folgende Protokolle werden von einer universellen Windows-App unterstützt.
+Hintergrundaufgaben mit [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) ermöglichen Ihrer App die Kommunikation über viele Protokolle/APIs. Die meisten davon werden von den vom System ausgelösten Hintergrundaufgaben nicht unterstützt. Folgende Protokolle werden von einer universellen Windows-App unterstützt.
 
 | Protokoll         | DeviceUseTrigger in einer universellen Windows-App                                                                                                                                                    |
 |------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -49,13 +49,13 @@ Hintergrundaufgaben mit [**DeviceUseTrigger**](https://msdn.microsoft.com/librar
 | Netzwerk (drahtgebunden)    | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
 | Netzwerk (WLAN)    | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
 | IDeviceIOControl | ![DeviceServicingTrigger unterstützt IDeviceIOControl.](images/ap-tools.png)                                                                                                                       |
-| Sensor-API      | ![DeviceServicingTrigger unterstützt APIs für universelle Sensoren](images/ap-tools.png) (beschränkt auf Sensoren der [universellen Gerätefamilie](https://msdn.microsoft.com/library/windows/apps/dn894631)) |
+| Sensor-API      | ![DeviceServicingTrigger unterstützt APIs für universelle Sensoren](images/ap-tools.png) (beschränkt auf Sensoren der [universellen Gerätefamilie](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)) |
 
 ## <a name="registering-background-tasks-in-the-app-package-manifest"></a>Registrieren von Hintergrundaufgaben im App-Paketmanifest
 
-Ihre App führt Synchronisierungs- und Aktualisierungsvorgänge in Code durch, der als Teil einer Hintergrundaufgabe ausgeführt wird. Dieser Code ist in eine Windows-Runtime-Klasse eingebettet, mit der [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) implementiert wird (oder auf einer dedizierten JavaScript-Seite für JavaScript-Apps). Zum Verwenden einer [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe muss Ihre App diese in der App-Manifestdatei einer Vordergrund-App deklarieren, wie dies auch für vom System ausgelöste Hintergrundaufgaben erfolgt.
+Ihre App führt Synchronisierungs- und Aktualisierungsvorgänge in Code durch, der als Teil einer Hintergrundaufgabe ausgeführt wird. Dieser Code ist in eine Windows-Runtime-Klasse eingebettet, mit der [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) implementiert wird (oder auf einer dedizierten JavaScript-Seite für JavaScript-Apps). Zum Verwenden einer [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe muss Ihre App diese in der App-Manifestdatei einer Vordergrund-App deklarieren, wie dies auch für vom System ausgelöste Hintergrundaufgaben erfolgt.
 
-In diesem Beispiel für eine App-Paketmanifestdatei ist **DeviceLibrary.SyncContent** der Einstiegspunkt für eine Hintergrundaufgabe, die [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) verwendet.
+In diesem Beispiel für eine App-Paketmanifestdatei ist **DeviceLibrary.SyncContent** der Einstiegspunkt für eine Hintergrundaufgabe, die [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) verwendet.
 
 ```xml
 <Extensions>
@@ -69,43 +69,43 @@ In diesem Beispiel für eine App-Paketmanifestdatei ist **DeviceLibrary.SyncCont
 
 ## <a name="introduction-to-using-deviceusetrigger"></a>Einführung in die Verwendung von DeviceUseTrigger
 
-Führen Sie diese grundlegenden Schritte aus, um [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) zu verwenden. Weitere Informationen zu Hintergrundaufgaben finden Sie unter [Unterstützen Ihrer App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md).
+Führen Sie diese grundlegenden Schritte aus, um [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) zu verwenden. Weitere Informationen zu Hintergrundaufgaben finden Sie unter [Unterstützen Ihrer App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md).
 
 1.  Ihre App registriert die Hintergrundaufgabe im App-Manifest und bettet den Code für die Hintergrundaufgabe in einer Windows-Runtime-Klasse ein, die IBackgroundTask implementiert, oder in eine dedizierte JavaScript-Seite für JavaScript-Apps.
-2.  Beim Starten erstellt und konfiguriert Ihre App ein Triggerobjekt vom Typ [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) und speichert die Triggerinstanz für die künftige Verwendung.
+2.  Beim Starten erstellt und konfiguriert Ihre App ein Triggerobjekt vom Typ [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) und speichert die Triggerinstanz für die künftige Verwendung.
 3.  Die App prüft, ob die Hintergrundaufgabe bereits registriert wurde. Wenn nicht, führt sie dafür die Registrierung für den Trigger durch. Beachten Sie, dass es für die App nicht zulässig ist, Bedingungen für die Aufgabe festzulegen, die diesem Trigger zugeordnet ist.
-4.  Wenn Ihre App die Hintergrundaufgabe auslösen muss, muss sie zuerst [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) aufrufen, um zu prüfen, ob die App eine Hintergrundaufgabe anfordern kann.
-5.  Wenn die App die Hintergrundaufgabe anfordern kann, ruft sie die [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn297341)-Aktivierungsmethode für das Triggerobjekt des Geräts auf.
+4.  Wenn Ihre App die Hintergrundaufgabe auslösen muss, muss sie zuerst [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) aufrufen, um zu prüfen, ob die App eine Hintergrundaufgabe anfordern kann.
+5.  Wenn die App die Hintergrundaufgabe anfordern kann, ruft sie die [**RequestAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger.requestasync)-Aktivierungsmethode für das Triggerobjekt des Geräts auf.
 6.  Ihre Hintergrundaufgabe wird nicht wie andere Hintergrundaufgaben gedrosselt (es gilt kein CPU-Zeitkontingent), sondern wird mit reduzierter Priorität ausgeführt, um die Reaktionsfähigkeit von Vordergrund-Apps aufrechtzuerhalten.
 7.  Windows überprüft dann anhand des Triggertyps, ob die erforderlichen Richtlinien erfüllt sind, einschließlich der Anforderung einer Zustimmung des Benutzers für den Vorgang, bevor die Hintergrundaufgabe gestartet wird.
 8.  Windows überwacht die Systembedingungen und die Aufgabenlaufzeit und bricht die Aufgabe ggf. ab, falls die erforderlichen Bedingungen nicht mehr erfüllt sind.
 9.  Wenn die Hintergrundaufgabe den aktuellen Status oder den Abschluss des Vorgangs meldet, empfängt die App diese Ereignisse über die Status- und Abschlussereignisse der registrierten Aufgabe.
 
-**Wichtige**    berücksichtigen Sie folgende wichtige Punkte, bei Verwendung der [ **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337):
+**Wichtige**    berücksichtigen Sie folgende wichtige Punkte, bei Verwendung der [ **DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger):
 
--   Die Möglichkeit, programmgesteuert Hintergrund auslösen Aufgaben mit der [ **DeviceUseTrigger** ](https://msdn.microsoft.com/library/windows/apps/dn297337) wurde erstmals in Windows 8.1 und Windows Phone 8.1.
+-   Die Möglichkeit, programmgesteuert Hintergrund auslösen Aufgaben mit der [ **DeviceUseTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) wurde erstmals in Windows 8.1 und Windows Phone 8.1.
 
 -   Bestimmte Richtlinien werden von Windows erzwungen, um sicherzustellen, dass die Zustimmung des Benutzers vorliegt, wenn Peripheriegeräte auf dem PC aktualisiert werden.
 
 -   Weitere Richtlinien werden erzwungen, um für Benutzer die Akkulaufzeit zu verlängern, wenn Peripheriegeräte synchronisiert und aktualisiert werden.
 
--   Hintergrundaufgaben, für die [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) verwendet wird, können von Windows ggf. abgebrochen werden, wenn bestimmte Richtlinienanforderungen nicht mehr erfüllt sind, einschließlich einer Maximaldauer für die Hintergrundzeit (Gesamtbetrachtungszeit). Es ist wichtig, diese Richtlinienanforderungen zu berücksichtigen, wenn Sie diese Hintergrundaufgaben zum Interagieren mit Ihrem Peripheriegerät verwenden.
+-   Hintergrundaufgaben, für die [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) verwendet wird, können von Windows ggf. abgebrochen werden, wenn bestimmte Richtlinienanforderungen nicht mehr erfüllt sind, einschließlich einer Maximaldauer für die Hintergrundzeit (Gesamtbetrachtungszeit). Es ist wichtig, diese Richtlinienanforderungen zu berücksichtigen, wenn Sie diese Hintergrundaufgaben zum Interagieren mit Ihrem Peripheriegerät verwenden.
 
 **Tipp**  um anzuzeigen, wie diese Hintergrundaufgaben zu arbeiten, laden Sie ein Beispiel. Ein Beispiel für die Vorgehensweise auf einem PC finden Sie unter [Beispiel für ein benutzerdefiniertes USB-Gerät](https://go.microsoft.com/fwlink/p/?LinkId=301975 ). Ein Beispiel für ein Smartphone finden Sie unter [Beispiel für Hintergrundsensoren](https://go.microsoft.com/fwlink/p/?LinkId=393307).
  
 ## <a name="frequency-and-foreground-restrictions"></a>Einschränkungen in Bezug auf die Häufigkeit und den Vordergrund
 
-Es besteht keine Einschränkung hinsichtlich der Häufigkeit, mit der Ihre App Vorgänge initiieren kann, aber sie kann nur jeweils einen Hintergrundaufgabenvorgang mit [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) ausführen (dies wirkt sich nicht auf andere Arten von Hintergrundaufgaben aus) und eine Hintergrundaufgabe nur initiieren, während sich Ihre App im Vordergrund befindet. Wenn sich Ihre App nicht im Vordergrund befindet, kann sie eine Hintergrundaufgabe nicht mit **DeviceUseTrigger** initiieren. Ihre App kann keine zweite **DeviceUseTrigger**-Hintergrundaufgabe initiieren, bevor die erste Hintergrundaufgabe abgeschlossen wurde.
+Es besteht keine Einschränkung hinsichtlich der Häufigkeit, mit der Ihre App Vorgänge initiieren kann, aber sie kann nur jeweils einen Hintergrundaufgabenvorgang mit [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) ausführen (dies wirkt sich nicht auf andere Arten von Hintergrundaufgaben aus) und eine Hintergrundaufgabe nur initiieren, während sich Ihre App im Vordergrund befindet. Wenn sich Ihre App nicht im Vordergrund befindet, kann sie eine Hintergrundaufgabe nicht mit **DeviceUseTrigger** initiieren. Ihre App kann keine zweite **DeviceUseTrigger**-Hintergrundaufgabe initiieren, bevor die erste Hintergrundaufgabe abgeschlossen wurde.
 
 ## <a name="device-restrictions"></a>Einschränkungen in Bezug auf Geräte
 
-Jede App ist zwar auf die Registrierung und Ausführung von nur einer [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe beschränkt, aber das Gerät (auf dem Ihre App ausgeführt wird) kann mehreren Apps das Registrieren und Ausführen von **DeviceUseTrigger**-Hintergrundaufgaben erlauben. Je nach Gerät kann ggf. eine Obergrenze für die Gesamtzahl an **DeviceUseTrigger**-Hintergrundaufgaben aller Apps gelten. Dies verringert den Stromverbrauch auf Geräten, auf denen die Ressourcen knapp sind. Weitere Informationen hierzu finden Sie in der folgenden Tabelle.
+Jede App ist zwar auf die Registrierung und Ausführung von nur einer [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe beschränkt, aber das Gerät (auf dem Ihre App ausgeführt wird) kann mehreren Apps das Registrieren und Ausführen von **DeviceUseTrigger**-Hintergrundaufgaben erlauben. Je nach Gerät kann ggf. eine Obergrenze für die Gesamtzahl an **DeviceUseTrigger**-Hintergrundaufgaben aller Apps gelten. Dies verringert den Stromverbrauch auf Geräten, auf denen die Ressourcen knapp sind. Weitere Informationen hierzu finden Sie in der folgenden Tabelle.
 
-Über eine einzelne [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe kann Ihre App auf eine unbegrenzte Zahl von Peripheriegeräten oder Sensoren zugreifen, die nur von den unterstützten APIs und Protokollen beschränkt wird, die in der obigen Tabelle aufgeführt sind.
+Über eine einzelne [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe kann Ihre App auf eine unbegrenzte Zahl von Peripheriegeräten oder Sensoren zugreifen, die nur von den unterstützten APIs und Protokollen beschränkt wird, die in der obigen Tabelle aufgeführt sind.
 
 ## <a name="background-task-policies"></a>Richtlinien für Hintergrundaufgaben
 
-Windows erzwingt Richtlinien, wenn von Ihrer App eine [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe verwendet wird. Wenn diese Richtlinien nicht erfüllt sind, wird die Hintergrundaufgabe ggf. abgebrochen. Es ist wichtig, diese Richtlinienanforderungen zu berücksichtigen, wenn Sie diese Art von Hintergrundaufgaben zum Interagieren mit Geräten oder Sensoren verwenden.
+Windows erzwingt Richtlinien, wenn von Ihrer App eine [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe verwendet wird. Wenn diese Richtlinien nicht erfüllt sind, wird die Hintergrundaufgabe ggf. abgebrochen. Es ist wichtig, diese Richtlinienanforderungen zu berücksichtigen, wenn Sie diese Art von Hintergrundaufgaben zum Interagieren mit Geräten oder Sensoren verwenden.
 
 ### <a name="task-initiation-policies"></a>Richtlinien für die Aufgabeninitiierung
 
@@ -117,9 +117,9 @@ In dieser Tabelle ist aufgeführt, welche Richtlinien für die Aufgabeninitiieru
 | Das Gerät ist an das System angeschlossen (bzw. befindet sich bei einem Drahtlosgerät in Reichweite). | ![Richtlinie gilt](images/ap-tools.png) |
 | Die App kann mithilfe der unterstützten Geräteperipherie-APIs (Windows-Runtime-APIs für USB, HID, Bluetooth, Sensoren usw.) auf das Gerät zugreifen. Falls Ihre App nicht auf das Gerät oder den Sensor zugreifen kann, wird der Zugriff auf die Hintergrundaufgabe verweigert. | ![Richtlinie gilt](images/ap-tools.png) |
 | Der von der App bereitgestellte Einstiegspunkt für die Hintergrundaufgabe wird im App-Paketmanifest registriert. | ![Richtlinie gilt](images/ap-tools.png) |
-| Es wird nur eine [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe pro App ausgeführt. | ![Richtlinie gilt](images/ap-tools.png) |
-| Die maximale Anzahl von [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgaben wurde auf dem Gerät (auf dem die App ausgeführt wird) noch nicht erreicht. | **Desktop-Gerätefamilie**: Eine unbegrenzte Anzahl von Vorgängen registriert, und parallel ausgeführt werden kann. **Mobile-Gerätefamilie**: 1 Vorgang auf einem Gerät 512 MB; Andernfalls können 2 Aufgaben registriert und parallel ausgeführt werden. |
-| Maximale Anzahl von Peripheriegeräten oder Sensoren, auf die Ihre App über eine einzelne [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe zugreifen kann, wenn sie die unterstützten APIs/Protokolle verwendet. | unbegrenzt |
+| Es wird nur eine [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe pro App ausgeführt. | ![Richtlinie gilt](images/ap-tools.png) |
+| Die maximale Anzahl von [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgaben wurde auf dem Gerät (auf dem die App ausgeführt wird) noch nicht erreicht. | **Desktop-Gerätefamilie**: Eine unbegrenzte Anzahl von Vorgängen registriert, und parallel ausgeführt werden kann. **Mobile-Gerätefamilie**: 1 Vorgang auf einem Gerät 512 MB; Andernfalls können 2 Aufgaben registriert und parallel ausgeführt werden. |
+| Maximale Anzahl von Peripheriegeräten oder Sensoren, auf die Ihre App über eine einzelne [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe zugreifen kann, wenn sie die unterstützten APIs/Protokolle verwendet. | unbegrenzt |
 | Die Hintergrundaufgabe verbraucht pro Minute 400 ms an CPU-Zeit (bei einer CPU mit 1 GHz), wenn der Bildschirm gesperrt ist. Bei nicht gesperrtem Bildschirm wird diese Zeit innerhalb von 5 Minuten verbraucht. Wenn diese Richtlinie nicht erfüllt wird, kann dies zum Abbruch der Aufgabe führen. | ![Richtlinie gilt](images/ap-tools.png) |
 
 ### <a name="runtime-policy-checks"></a>Richtlinienprüfung zur Laufzeit
@@ -138,19 +138,19 @@ In dieser Tabelle ist aufgeführt, welche Laufzeitrichtlinien für universelle W
 
 ## <a name="best-practices"></a>Empfohlene Methoden
 
-Unten sind bewährte Methoden für Apps angegeben, von denen die [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgaben verwendet werden.
+Unten sind bewährte Methoden für Apps angegeben, von denen die [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgaben verwendet werden.
 
 ### <a name="programming-a-background-task"></a>Programmieren einer Hintergrundaufgabe
 
-Mit dem Verwenden der [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe über Ihre App wird sichergestellt, dass alle von der Vordergrund-App gestarteten Synchronisierungs- oder Überwachungsvorgänge im Hintergrund weiterhin ausgeführt werden, wenn Benutzer Apps wechseln und Ihre Vordergrund-App von Windows angehalten wird. Wir empfehlen Ihnen, dieses allgemeine Modell zum Registrieren, Auslösen und Aufheben der Registrierung von Hintergrundaufgaben zu verwenden:
+Mit dem Verwenden der [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe über Ihre App wird sichergestellt, dass alle von der Vordergrund-App gestarteten Synchronisierungs- oder Überwachungsvorgänge im Hintergrund weiterhin ausgeführt werden, wenn Benutzer Apps wechseln und Ihre Vordergrund-App von Windows angehalten wird. Wir empfehlen Ihnen, dieses allgemeine Modell zum Registrieren, Auslösen und Aufheben der Registrierung von Hintergrundaufgaben zu verwenden:
 
-1.  Rufen Sie [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) auf, um zu überprüfen, ob die App eine Hintergrundaufgabe anfordern kann. Dies muss erfolgen, bevor eine Hintergrundaufgabe registriert wird.
+1.  Rufen Sie [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) auf, um zu überprüfen, ob die App eine Hintergrundaufgabe anfordern kann. Dies muss erfolgen, bevor eine Hintergrundaufgabe registriert wird.
 
 2.  Registrieren Sie die Hintergrundaufgabe, bevor Sie den Trigger anfordern.
 
 3.  Verbinden Sie Ereignishandler für den aktuellen Status und den Abschluss mit dem Trigger. Wenn Ihre App aus dem angehaltenen Zustand zurückkehrt, stellt Windows für die App alle in die Warteschlange eingereihten Ereignisse zum Status und Abschluss bereit, mit denen der Status der Hintergrundaufgaben ermittelt werden kann.
 
-4.  Schließen Sie alle geöffneten Geräte- oder Sensorobjekte, wenn Sie Ihre [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe auslösen, damit diese Geräte bzw. Sensoren geöffnet und von der Hintergrundaufgabe verwendet werden können.
+4.  Schließen Sie alle geöffneten Geräte- oder Sensorobjekte, wenn Sie Ihre [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe auslösen, damit diese Geräte bzw. Sensoren geöffnet und von der Hintergrundaufgabe verwendet werden können.
 
 5.  Registrieren Sie den Trigger.
 
@@ -160,7 +160,7 @@ Mit dem Verwenden der [**DeviceUseTrigger**](https://msdn.microsoft.com/library/
 
 8.  Führen Sie die Registrierung für Abbruchereignisse über die Klasse der Hintergrundaufgabe durch. Die Registrierung für Abbruchereignisse ermöglicht dem Code der Hintergrundaufgabe das saubere Beenden der ausgeführten Hintergrundaufgabe, wenn sie von Windows oder Ihrer Vordergrund-App abgebrochen wird.
 
-9.  Heben Sie die Registrierung beim Beenden der App auf (nicht beim Anhalten), und brechen Sie alle laufenden Aufgaben ab, wenn diese für die App nicht mehr benötigt werden. Auf Systemen mit knappen Ressourcen, z. B. Smartphones mit wenig Arbeitsspeicher, ermöglicht diese Maßnahme anderen Apps die Verwendung einer [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe.
+9.  Heben Sie die Registrierung beim Beenden der App auf (nicht beim Anhalten), und brechen Sie alle laufenden Aufgaben ab, wenn diese für die App nicht mehr benötigt werden. Auf Systemen mit knappen Ressourcen, z. B. Smartphones mit wenig Arbeitsspeicher, ermöglicht diese Maßnahme anderen Apps die Verwendung einer [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe.
 
     -   Heben Sie die Registrierung auf, und brechen Sie alle laufenden Aufgaben ab, wenn Ihre App beendet wird.
 
@@ -168,8 +168,8 @@ Mit dem Verwenden der [**DeviceUseTrigger**](https://msdn.microsoft.com/library/
 
 ### <a name="cancelling-a-background-task"></a>Abbrechen einer Hintergrundaufgabe
 
-Zum Abbrechen einer Aufgabe, die im Hintergrund Ihrer Vordergrund-App ausgeführt wird, verwenden Sie die Unregister-Methode des [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)-Objekts, das Sie in der App zum Registrieren der [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)-Hintergrundaufgabe verwenden. Wenn Sie die Registrierung der Hintergrundaufgabe mithilfe der [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869)-Methode unter **BackgroundTaskRegistration** aufheben, bricht die Infrastruktur der Hintergrundaufgaben Ihre Hintergrundaufgabe ab.
+Zum Abbrechen einer Aufgabe, die im Hintergrund Ihrer Vordergrund-App ausgeführt wird, verwenden Sie die Unregister-Methode des [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)-Objekts, das Sie in der App zum Registrieren der [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgabe verwenden. Wenn Sie die Registrierung der Hintergrundaufgabe mithilfe der [**Unregister**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.unregister)-Methode unter **BackgroundTaskRegistration** aufheben, bricht die Infrastruktur der Hintergrundaufgaben Ihre Hintergrundaufgabe ab.
 
-Für die [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869)-Methode wird zusätzlich der boolesche Wert "true" oder „false“ verwendet, um anzugeben, ob derzeit ausgeführte Instanzen der Hintergrundaufgabe abgebrochen werden sollen, ohne deren Beendigung abzuwarten. Weitere Informationen finden Sie im API-Referenzthema für **Unregister**.
+Für die [**Unregister**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.unregister)-Methode wird zusätzlich der boolesche Wert "true" oder „false“ verwendet, um anzugeben, ob derzeit ausgeführte Instanzen der Hintergrundaufgabe abgebrochen werden sollen, ohne deren Beendigung abzuwarten. Weitere Informationen finden Sie im API-Referenzthema für **Unregister**.
 
-Zusätzlich zu [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) muss Ihre App auch [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) aufrufen. So wird dem System mitgeteilt, dass der asynchrone Vorgang, der einer Hintergrundaufgabe zugeordnet ist, abgeschlossen ist.
+Zusätzlich zu [**Unregister**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.unregister) muss Ihre App auch [**BackgroundTaskDeferral.Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete) aufrufen. So wird dem System mitgeteilt, dass der asynchrone Vorgang, der einer Hintergrundaufgabe zugeordnet ist, abgeschlossen ist.

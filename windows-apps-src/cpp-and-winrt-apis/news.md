@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Uwp, Standard, c++, Cpp, Winrt, Projektion, News, was die neue
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b84736e41e039d350a849c55fead008cbab5fdea
-ms.sourcegitcommit: bc64db47b6ff326f15cac15fc2cfd709fa7f877b
+ms.openlocfilehash: a84e118d988d8bf6a7d26eba7d5dd009c7ad44f3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65626213"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360135"
 ---
 # <a name="whats-new-in-cwinrt"></a>Neuigkeiten in C++ / WinRT
 
@@ -158,7 +158,7 @@ Diese Optimierung vermeidet die #include Abhängigkeiten in `module.g.cpp` , dam
 
 #### <a name="smarter-and-more-efficient-modulegcpp-for-large-projects-with-multiple-libs"></a>Intelligenter und effizienter `module.g.cpp` bei großen Projekten mit mehreren Bibliotheken
 
-Die `module.g.cpp` -Datei enthält nun auch zwei zusätzliche zusammensetzbare-Hilfen, mit dem Namen **Winrt_can_unload_now**, und **Winrt_get_activation_factory**. Diese sind für größere Projekte konzipiert, in denen eine DLL-Datei aus einer Anzahl von Bibliotheken, jeweils eine eigene Runtime-Klassen ist. In diesem Fall müssen Sie manuell zusammenfügen der DLLs **"dllgetactivationfactory"** und **"DllCanUnloadNow"**. Diese Hilfsprogramme erleichtern viel einfacher für Sie, dass hierzu die Vermeidung vermeidbarer Ursprung Fehler. Die `cppwinrt.exe` des Tools `-lib` Flag kann ebenfalls verwendet werden, jede einzelne Lib eigene Präambel gewähren (statt `winrt_xxx`), damit Funktionen für jede Bibliothek einzeln mit dem Namen, und daher eindeutig kombiniert werden können.
+Die `module.g.cpp` -Datei enthält nun auch zwei zusätzliche zusammensetzbare-Hilfen, mit dem Namen **Winrt_can_unload_now**, und **Winrt_get_activation_factory**. Diese sind für größere Projekte konzipiert, in denen eine DLL-Datei aus einer Anzahl von Bibliotheken, jeweils eine eigene Runtime-Klassen ist. In diesem Fall müssen Sie manuell zusammenfügen der DLLs **"dllgetactivationfactory"** und **"DllCanUnloadNow"** . Diese Hilfsprogramme erleichtern viel einfacher für Sie, dass hierzu die Vermeidung vermeidbarer Ursprung Fehler. Die `cppwinrt.exe` des Tools `-lib` Flag kann ebenfalls verwendet werden, jede einzelne Lib eigene Präambel gewähren (statt `winrt_xxx`), damit Funktionen für jede Bibliothek einzeln mit dem Namen, und daher eindeutig kombiniert werden können.
 
 #### <a name="new-winrtcoroutineh-header"></a>Neue `winrt/coroutine.h` Header
 
@@ -302,7 +302,7 @@ Wenn zuvor für C++ bleibt / WinRT, um alle Windows-Header in Ihrem Projekt einz
 
 Derzeit sind die einzigen Ausnahmen von Windows SDK-Header-Datei Isolation für systeminterne Funktionen und numerische Werte. Es gibt keine bekannten Probleme mit diesen letzten verbleibenden Abhängigkeiten.
 
-In Ihrem Projekt können Sie Interoperabilität mit dem Windows SDK-Header erneut aktivieren, wenn Sie möchten. Sie können z. B. eine COM-Schnittstelle implementieren möchten (als Stamm [ **IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)). Für dieses Beispiel umfassen `unknwn.h` bevor Sie C++ einfügen c++ / WinRT-Header. Dies bewirkt, dass dies der Fall ist C++ / WinRT-Basisbibliothek zahlreichen Hooks zur Unterstützung von klassischen COM-Schnittstellen zu aktivieren. Ein Codebeispiel finden Sie unter [Autor COM-Komponenten mit C++ / WinRT](author-coclasses.md). Auf ähnliche Weise enthalten Sie explizit alle anderen Windows SDK-Header, die deklarieren Typen und/oder Funktionen, die Sie aufrufen möchten.
+In Ihrem Projekt können Sie Interoperabilität mit dem Windows SDK-Header erneut aktivieren, wenn Sie möchten. Sie können z. B. eine COM-Schnittstelle implementieren möchten (als Stamm [ **IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)). Für dieses Beispiel umfassen `unknwn.h` bevor Sie C++ einfügen c++ / WinRT-Header. Dies bewirkt, dass dies der Fall ist C++ / WinRT-Basisbibliothek zahlreichen Hooks zur Unterstützung von klassischen COM-Schnittstellen zu aktivieren. Ein Codebeispiel finden Sie unter [Autor COM-Komponenten mit C++ / WinRT](author-coclasses.md). Auf ähnliche Weise enthalten Sie explizit alle anderen Windows SDK-Header, die deklarieren Typen und/oder Funktionen, die Sie aufrufen möchten.
 
 ### <a name="how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>Wie Sie Ihre C + neu zuweisen c++ / WinRT-Projekt auf eine neuere Version des Windows SDK
 
@@ -315,7 +315,7 @@ Es gibt jedoch zwei weitere Methoden, die Ihr Projekt in Visual Studio neu zuwei
 
 Wenn Sie nach der Verwendung einer dieser beiden Methoden Compiler oder Linker-Fehler auftreten, können Sie versuchen, die Projektmappe bereinigen (**erstellen** > **Projektmappe bereinigen** bzw. löschen Sie manuell alle temporären Ordner und Dateien) vor dem Versuch, erneut zu erstellen.
 
-Wenn der C++-Compiler erzeugt "*Fehler C2039: "IUnknown": ist kein Mitglied der "\`globalen Namespace''*", fügen Sie dann `#include <unknwn.h>` am Anfang Ihrer `pch.h` Datei (bevor Sie C++ einfügen c++ / WinRT-Header).
+Wenn der C++-Compiler erzeugt "*Fehler C2039: "IUnknown": ist kein Mitglied der "\`globalen Namespace''* ", fügen Sie dann `#include <unknwn.h>` am Anfang Ihrer `pch.h` Datei (bevor Sie C++ einfügen c++ / WinRT-Header).
 
 Sie müssen möglicherweise auch hinzufügen `#include <hstring.h>` danach.
 

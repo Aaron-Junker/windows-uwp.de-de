@@ -6,28 +6,28 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 01efd2cfd88143f99bf9058e8140308eb6afe458
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c7296923b3e991a56fed115527b28a6b62b3ffd6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582757"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369460"
 ---
  # <a name="files-folders-and-libraries"></a>Dateien, Ordner und Bibliotheken
 
 
-Verwenden Sie die APIs im [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346), [Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791) und [Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928)-Namespace, um Text und andere Datenformate in Dateien zu lesen und zu schreiben sowie Dateien und Ordner zu verwalten. In diesem Abschnitt erhalten Sie Informationen zum Lesen und Schreiben von App-Einstellungen, zur Datei- und Ordnerauswahl und zu speziellen Speicherorten im Sandkasten, z. B. die Video-/Musikbibliothek.
+Verwenden Sie die APIs im [Windows.Storage](https://docs.microsoft.com/uwp/api/Windows.Storage), [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) und [Windows.Storage.Pickers](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers)-Namespace, um Text und andere Datenformate in Dateien zu lesen und zu schreiben sowie Dateien und Ordner zu verwalten. In diesem Abschnitt erhalten Sie Informationen zum Lesen und Schreiben von App-Einstellungen, zur Datei- und Ordnerauswahl und zu speziellen Speicherorten im Sandkasten, z. B. die Video-/Musikbibliothek.
 
 | Thema | Beschreibung  |
 |-------|--------------|
 | [Aufzählen und Abfragen von Dateien und Ordnern](quickstart-listing-files-and-folders.md) | Greifen Sie auf Dateien und Ordner zu, die sich in einem Ordner, in einer Bibliothek, auf einem Gerät oder an einer Netzwerkadresse befinden. Sie können auch durch Erstellen von Datei- und Ordnerabfragen Dateien und Ordner an bestimmten Speicherorten abrufen. |
-| [Erstellen, Schreiben und Lesen einer Datei](quickstart-reading-and-writing-files.md) | Lesen und Schreiben Sie eine Datei mithilfe eines [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171)-Objekts. |
+| [Erstellen, Schreiben und Lesen einer Datei](quickstart-reading-and-writing-files.md) | Lesen und Schreiben Sie eine Datei mithilfe eines [StorageFile](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekts. |
 | [Bewährte Methoden zum Schreiben in Dateien](best-practices-for-writing-to-files.md) | Hier finden Sie bewährte Methoden für verschiedene Dateischreibvorgänge mit den Klassen [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) und [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio). |
-| [Abrufen von Dateieigenschaften](quickstart-getting-file-properties.md) | Es werden Eigenschaften – oberste Ebene, grundlegend und erweitert – für eine Datei abgerufen, die durch ein [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171)-Objekt dargestellt wird. |
-| [Öffnen von Dateien und Ordnern mit einer Auswahl](quickstart-using-file-and-folder-pickers.md) | Greifen Sie auf Dateien und Ordner zu, indem Sie Benutzern die Interaktion mit einer Auswahl ermöglichen. Sie können über [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) auf einen Ordner zugreifen. |
-| [Speichern einer Datei mit einer Auswahl](quickstart-save-a-file-with-a-picker.md) | Mithilfe von [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) können Benutzer den Namen und Speicherort zum Speichern einer Datei durch die App angeben. |
+| [Abrufen von Dateieigenschaften](quickstart-getting-file-properties.md) | Es werden Eigenschaften – oberste Ebene, grundlegend und erweitert – für eine Datei abgerufen, die durch ein [StorageFile](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekt dargestellt wird. |
+| [Öffnen von Dateien und Ordnern mit einer Auswahl](quickstart-using-file-and-folder-pickers.md) | Greifen Sie auf Dateien und Ordner zu, indem Sie Benutzern die Interaktion mit einer Auswahl ermöglichen. Sie können über [FolderPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker) auf einen Ordner zugreifen. |
+| [Speichern einer Datei mit einer Auswahl](quickstart-save-a-file-with-a-picker.md) | Mithilfe von [FileSavePicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) können Benutzer den Namen und Speicherort zum Speichern einer Datei durch die App angeben. |
 | [Zugriff auf Inhalte in der Heimnetzgruppe](quickstart-accessing-homegroup-content.md) | Greifen Sie auf Inhalte zu, die sich im Heimnetzgruppenordner des Benutzers befinden, einschließlich Bildern, Musik und Videos. |
-| [Ermitteln der Verfügbarkeit von Microsoft OneDrive-Dateien](quickstart-determining-availability-of-microsoft-onedrive-files.md) | Ermitteln Sie mithilfe der [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)-Eigenschaft, ob eine Microsoft OneDrive-Datei verfügbar ist. |
+| [Ermitteln der Verfügbarkeit von Microsoft OneDrive-Dateien](quickstart-determining-availability-of-microsoft-onedrive-files.md) | Ermitteln Sie mithilfe der [StorageFile.IsAvailable](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)-Eigenschaft, ob eine Microsoft OneDrive-Datei verfügbar ist. |
 | [Dateien und Ordner in den Musik-, Bild- und Videobibliotheken](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | Fügen Sie vorhandene Musik-, Bilder- oder Video-Ordner den entsprechenden Bibliotheken hinzu. Sie können auch Ordner aus Bibliotheken entfernen, die Liste der Ordner in einer Bibliothek abrufen und gespeicherte Fotos, Musik und Videos untersuchen. |
 | [Nachverfolgen kürzlich verwendeter Dateien und Ordner](how-to-track-recently-used-files-and-folders.md) | Sie können Dateien nachverfolgen, auf die häufig zugegriffen wird, indem Sie sie der Liste mit den zuletzt verwendeten Elementen (MRU) der App hinzufügen. Die Plattform verwaltet die MRU für Sie. Dabei werden Elemente nach der Zeit und dem Ort des letzten Zugriffs sortiert und die ältesten Elemente entfernt, wenn das Limit von 25 Elementen erreicht ist. Alle Apps besitzen eine eigene MRU. |
 | [Nachverfolgen von Dateisystemänderungen im Hintergrund](change-tracking-filesystem.md) | Verfolgen Sie Änderungen am Dateisystem nach, selbst wenn die App nicht ausgeführt wird.|

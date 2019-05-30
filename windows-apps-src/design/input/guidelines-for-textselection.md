@@ -8,19 +8,19 @@ keywords: Tastatur, Text, Eingabe, Benutzerinteraktionen
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fc227904e57577a30eb2d171a060fb69d39b71f0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612505"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363499"
 ---
 # <a name="selecting-text-and-images"></a>Auswählen von Text und Bildern
 
 
 In diesem Artikel wird das Auswählen und Bearbeiten von Text, Bildern und Steuerelementen beschrieben. Außerdem enthält er Richtlinien für die Benutzeroberfläche, die Sie bei der Verwendung dieser Mechanismen in Ihren Apps berücksichtigen sollten.
 
-> **Wichtige APIs:** [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **Wichtige APIs:** [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
  
 
 
@@ -109,7 +109,7 @@ Zielelemente können wie in den folgenden Abbildungen dargestellt z. B. auch in
 
 
 **Für Entwickler**
-* [Benutzerdefinierte Benutzerinteraktionen](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [Benutzerdefinierte Benutzerinteraktionen](https://developer.microsoft.com/windows/design/inputs-devices)
 
 **Beispiele**
 * [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)

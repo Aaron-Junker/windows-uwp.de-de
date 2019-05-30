@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Bewegungs-/Blicksteuerungen, Steuerelemente
 ms.localizationpriority: medium
-ms.openlocfilehash: 222f46bbda165442003aecea0bbd138bcb844a3b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f1516ada043ac5e9d5c059f7cd2b91cb69a5eab1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604375"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367853"
 ---
 # <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Move-suchen-Steuerelemente für Spiele
 
@@ -178,11 +178,11 @@ Die Eingabedaten zum Aktualisieren des Zustands der Controller werden mit sechs 
 
 Die folgenden Methoden und Eigenschaften verwenden wir, um die Zustandsinformationen der Controller zu initialisieren, auf sie zuzugreifen und sie zu aktualisieren.
 
--   **Initialize**. Die App ruft diesen Ereignishandler auf, um die Steuerungen zu initialisieren und an das [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Objekt anzufügen, das das Anzeigefenster beschreibt.
+-   **Initialize**. Die App ruft diesen Ereignishandler auf, um die Steuerungen zu initialisieren und an das [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Objekt anzufügen, das das Anzeigefenster beschreibt.
 -   **SetPosition**. Die App ruft diese Methode auf, um die Koordinaten (X, Y und Z) der Steuerungen im Szenenbereich festzulegen.
 -   **SetOrientation**. Die App ruft diese Methode auf, um den Nick- und Gierwinkel der Kamera festzulegen.
--   **erste\_Position**. Die App greift auf diese Eigenschaft zu, um die aktuelle Position der Kamera im Szenenbereich abzurufen. Diese Eigenschaft wird verwendet, um der App die aktuelle Kameraposition mitzuteilen.
--   **erste\_LookPoint**. Die App greift auf diese Eigenschaft zu, um den aktuellen Punkt abzurufen, auf den die Kamera gerichtet ist.
+-   **get\_Position**. Die App greift auf diese Eigenschaft zu, um die aktuelle Position der Kamera im Szenenbereich abzurufen. Diese Eigenschaft wird verwendet, um der App die aktuelle Kameraposition mitzuteilen.
+-   **get\_LookPoint**. Die App greift auf diese Eigenschaft zu, um den aktuellen Punkt abzurufen, auf den die Kamera gerichtet ist.
 -   **Update**. Diese Methode liest den Zustand der Bewegungs- und Blickcontroller und aktualisiert die Kameraposition. Diese Methode wird in der Hauptschleife der App kontinuierlich aufgerufen, um die Kameracontrollerdaten und die Kameraposition im Szenenbereich zu aktualisieren.
 
 Jetzt haben Sie alle Komponenten, die Sie zum Implementieren der Bewegungs-/Blicksteuerungen benötigen. Als Nächstes setzen wir diese Teile zusammen.
@@ -192,17 +192,17 @@ Jetzt haben Sie alle Komponenten, die Sie zum Implementieren der Bewegungs-/Blic
 
 Der Ereignisverteiler der Windows-Runtime stellt fünf Ereignisse bereit, die von Instanzen der **MoveLookController**-Klasse behandelt werden sollen:
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
--   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271)
--   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)
+-   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
+-   [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup)
+-   [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)
 
-Diese Ereignisse sind im [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Typ implementiert. Es wird davon ausgegangen, dass Sie über ein **CoreWindow**-Objekt verfügen, mit dem Sie arbeiten können. Informationen dazu, wie Sie ein solches Objekt erhalten, finden Sie bei Bedarf unter [Einrichten der UWP-C++-App (Universals Windows Plattform) zum Anzeigen einer DirectX-Ansicht](https://msdn.microsoft.com/library/windows/apps/hh465077).
+Diese Ereignisse sind im [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Typ implementiert. Es wird davon ausgegangen, dass Sie über ein **CoreWindow**-Objekt verfügen, mit dem Sie arbeiten können. Informationen dazu, wie Sie ein solches Objekt erhalten, finden Sie bei Bedarf unter [Einrichten der UWP-C++-App (Universals Windows Plattform) zum Anzeigen einer DirectX-Ansicht](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10)).
 
 Wenn diese Ereignisse während der Ausführung der App ausgelöst werden, aktualisieren die Handler die in den privaten Feldern definierten Zustandsinformationen der Controller.
 
-Als Erstes füllen wir die Ereignishandler für die Maus und den Toucheingabezeiger auf. Im ersten Ereignishandler (**OnPointerPressed()**), rufen wir die X- und Y-Koordinaten des Zeigers vom [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Objekt ab, das die Anzeige verwaltet, wenn der Benutzer im Bereich des Blickcontrollers mit der Maus klickt oder den Bildschirm berührt.
+Als Erstes füllen wir die Ereignishandler für die Maus und den Toucheingabezeiger auf. Im ersten Ereignishandler (**OnPointerPressed()** ), rufen wir die X- und Y-Koordinaten des Zeigers vom [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Objekt ab, das die Anzeige verwaltet, wenn der Benutzer im Bereich des Blickcontrollers mit der Maus klickt oder den Bildschirm berührt.
 
 **OnPointerPressed**
 
@@ -299,11 +299,11 @@ void MoveLookController::OnPointerMoved(
 
 Der **OnPointerMoved**-Ereignishandler wird bei jeder Bewegung des Zeigers ausgelöst (in diesem Fall, wenn ein Toucheingabezeiger bewegt oder der Mauszeiger mit gedrückter linker Maustaste bewegt wird). Ist die Zeiger-ID mit der Zeiger-ID des Bewegungscontrollers identisch, ist es der Bewegungszeiger. Andernfalls wird überprüft, ob es sich beim aktiven Zeiger um den Zeiger des Blickcontrollers handelt.
 
-Wenn es sich um den Zeiger des Bewegungscontrollers handelt, wird nur die Zeigerposition aktualisiert. Die Position wird weiter aktualisiert, solange das [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)-Ereignis ausgelöst wird, da die endgültige Position mit der ersten Position verglichen werden soll, die mit dem **OnPointerPressed**-Ereignishandler erfasst wurde.
+Wenn es sich um den Zeiger des Bewegungscontrollers handelt, wird nur die Zeigerposition aktualisiert. Die Position wird weiter aktualisiert, solange das [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)-Ereignis ausgelöst wird, da die endgültige Position mit der ersten Position verglichen werden soll, die mit dem **OnPointerPressed**-Ereignishandler erfasst wurde.
 
 Wenn es sich um den Zeiger des Blickcontrollers handelt, wird es etwas komplizierter. Wir müssen einen neuen Blickpunkt berechnen und die Kamera auf diesen Punkt ausrichten. Dazu berechnen wir die Differenz zwischen dem letzten Blickpunkt und der aktuellen Bildschirmposition und multiplizieren sie mit dem Skalierungsfaktor, den wir einstellen können, um die Blickbewegungen in Bezug zur Distanz der Bildschirmbewegung zu verkleinern oder zu vergrößern. Anhand dieses Werts berechnen wir den Neigungswinkel und den Schwenkwinkel.
 
-Abschließend müssen wir die Bewegungs- oder Blickcontrollerverhalten deaktivieren, wenn der Spieler aufhört, die Maus zu bewegen oder den Bildschirm zu berühren. Wir verwenden **OnPointerReleased**, die wir beim Aufrufen [ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279) ausgelöst wird, entsprechend **m\_MoveInUse** oder **m\_LookInUse** auf "false" Deaktivieren der Kamera Pan-Bewegung und 0 (null), die Zeiger-ID.
+Abschließend müssen wir die Bewegungs- oder Blickcontrollerverhalten deaktivieren, wenn der Spieler aufhört, die Maus zu bewegen oder den Bildschirm zu berühren. Wir verwenden **OnPointerReleased**, die wir beim Aufrufen [ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) ausgelöst wird, entsprechend **m\_MoveInUse** oder **m\_LookInUse** auf "false" Deaktivieren der Kamera Pan-Bewegung und 0 (null), die Zeiger-ID.
 
 **OnPointerReleased**
 
@@ -355,7 +355,7 @@ void MoveLookController::OnKeyDown(
 
 Solange eine dieser Tasten gedrückt wird, legt der Ereignishandler den entsprechenden Bewegungszustand auf „true“ fest.
 
-**"OnKeyUp"**
+**OnKeyUp**
 
 ```cpp
 void MoveLookController::OnKeyUp(
@@ -424,7 +424,7 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-Die **Initialize**-Methode akzeptiert als Parameter einen Verweis auf die [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Instanz der App und registriert die von uns entwickelten Ereignishandler für die entsprechenden Ereignisse in dieser **CoreWindow**-Instanz. Sie initialisiert die Bewegungs- und Blickzeiger-IDs, legt den Befehlsvektor für die Touchscreen-Bewegungscontrollerimplementierung auf Null fest und richtet die Kameraansicht gerade nach vorn aus, wenn die App gestartet wird.
+Die **Initialize**-Methode akzeptiert als Parameter einen Verweis auf die [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Instanz der App und registriert die von uns entwickelten Ereignishandler für die entsprechenden Ereignisse in dieser **CoreWindow**-Instanz. Sie initialisiert die Bewegungs- und Blickzeiger-IDs, legt den Befehlsvektor für die Touchscreen-Bewegungscontrollerimplementierung auf Null fest und richtet die Kameraansicht gerade nach vorn aus, wenn die App gestartet wird.
 
 ## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a>Abrufen und Festlegen der Position und Ausrichtung der Kamera
 
@@ -575,7 +575,7 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-Gratulation! Sie haben einfache Bewegungs-/Blicksteuerungen für Touchscreens und Tastatur-/Mauseingabe in Ihrem Spiel implementiert.
+Herzlichen Glückwunsch! Sie haben einfache Bewegungs-/Blicksteuerungen für Touchscreens und Tastatur-/Mauseingabe in Ihrem Spiel implementiert.
 
 
 

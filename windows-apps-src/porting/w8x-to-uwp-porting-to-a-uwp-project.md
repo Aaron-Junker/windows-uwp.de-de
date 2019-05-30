@@ -6,24 +6,24 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c7a40d81171113656a39dda2fe02e0701fdd8ba4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fac31b773c2326f8a9e0ed50cdf876552fee5689
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596655"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372254"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>Portieren eines Windows-Runtime 8.x-Projekts zu einem UWP-Projekt
 
 
 
-Sie haben zwei Möglichkeiten, wenn Sie mit dem Portierungsprozess beginnen. Eine Möglichkeit ist das Bearbeiten einer Kopie der vorhandenen Projektdateien, einschließlich des App-Paketmanifests (die Vorgehensweise finden Sie in den Informationen zum Aktualisieren der Projektdateien unter [Migrieren von Apps zur universellen Windows-Plattform (UWP)](https://msdn.microsoft.com/library/mt148501.aspx)). Die andere Option besteht darin erstellen ein neues Windows 10-Projekt in Visual Studio, und kopieren Ihre Dateien hinein. Im ersten Abschnitt dieses Themas wird diese zweite Möglichkeit beschrieben, aber im restlichen Thema finden Sie zusätzliche Informationen für beide Vorgehensweisen. Sie können auch auswählen, um das neue Windows 10-Projekt in der gleichen Projektmappe wie Ihre vorhandenen Projekte beibehalten und Freigabe von Quellcodedateien, die mit einem freigegebenen Projekt. Alternativ können Sie das neue Projekt in einer eigenen Projektmappe platzieren und Quellcodedateien mithilfe des Features für verknüpfte Dateien in Visual Studio freigeben.
+Sie haben zwei Möglichkeiten, wenn Sie mit dem Portierungsprozess beginnen. Eine Möglichkeit ist das Bearbeiten einer Kopie der vorhandenen Projektdateien, einschließlich des App-Paketmanifests (die Vorgehensweise finden Sie in den Informationen zum Aktualisieren der Projektdateien unter [Migrieren von Apps zur universellen Windows-Plattform (UWP)](https://docs.microsoft.com/visualstudio/misc/migrate-apps-to-the-universal-windows-platform-uwp?view=vs-2015)). Die andere Option besteht darin erstellen ein neues Windows 10-Projekt in Visual Studio, und kopieren Ihre Dateien hinein. Im ersten Abschnitt dieses Themas wird diese zweite Möglichkeit beschrieben, aber im restlichen Thema finden Sie zusätzliche Informationen für beide Vorgehensweisen. Sie können auch auswählen, um das neue Windows 10-Projekt in der gleichen Projektmappe wie Ihre vorhandenen Projekte beibehalten und Freigabe von Quellcodedateien, die mit einem freigegebenen Projekt. Alternativ können Sie das neue Projekt in einer eigenen Projektmappe platzieren und Quellcodedateien mithilfe des Features für verknüpfte Dateien in Visual Studio freigeben.
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>Erstellen des Projekts und Kopieren der Dateien
 
 Diese Schritte konzentrieren sich auf die Option zum Erstellen eines neuen Windows 10-Projekts in Visual Studio, und kopieren Ihre Dateien hinein. Einige der Details (etwa, wie viele Projekte Sie erstellen und welche Dateien Sie kopieren) sind abhängig von den Faktoren und Entscheidungen, die unter [Bei einer universellen 8.1-App](w8x-to-uwp-root.md) und in den anschließenden Abschnitten beschrieben sind. Bei den folgenden Schritten wird vom einfachsten Fall ausgegangen.
 
-1.  Starten Sie Microsoft Visual Studio 2015, und Erstellen eines neuen Projekts für die leere Anwendung (Windows universell). Weitere Informationen finden Sie unter [beschleunigen Sie Ihre Windows-Runtime 8.x-app mithilfe von Vorlagen (C#, C++, Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232). Für das neue Projekt wird ein App-Paket (APPX-Datei) erstellt, das auf allen Gerätefamilien ausgeführt werden kann.
+1.  Starten Sie Microsoft Visual Studio 2015, und Erstellen eines neuen Projekts für die leere Anwendung (Windows universell). Weitere Informationen finden Sie unter [beschleunigen Sie Ihre Windows-Runtime 8.x-app mithilfe von Vorlagen (C#, C++, Visual Basic)](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10)). Für das neue Projekt wird ein App-Paket (APPX-Datei) erstellt, das auf allen Gerätefamilien ausgeführt werden kann.
 2.  Geben Sie in Ihrem universellen 8.1-App-Projekt alle Quellcodedateien und visuellen Ressourcendateien an, die Sie wiederverwenden möchten. Kopieren Sie mithilfe des Explorers die Datenmodelle, Ansichtsmodelle, visuellen Ressourcen, Ressourcenverzeichnisse sowie die Ordnerstruktur und alles andere, was Sie wiederverwenden möchten, in das neue Projekt. Kopieren oder erstellen Sie bei Bedarf Unterordner auf dem Datenträger.
 3.  Kopieren Sie auch Ansichten (z. B. „MainPage.xaml“ und „MainPage.xaml.cs“) in das neue Projekt. Erstellen Sie bei Bedarf auch hier neue Unterordner, und entfernen Sie die vorhandenen Ansichten aus dem Projekt. Erstellen Sie vor dem Überschreiben oder Entfernen einer von Visual Studio generierten Ansicht jedoch eine Kopie, um später darauf zurückgreifen zu können. In der ersten Portierungsphase einer universellen 8.1-App wird in erster Linie dafür gesorgt, dass die App auf einer Gerätefamilie gut aussieht und reibungslos funktioniert. Später können Sie sich dann auf eine einwandfreie Anpassung der Ansichten an alle Formfaktoren konzentrieren und bei Bedarf adaptiven Code für die optimale Nutzung einer bestimmten Gerätefamilie hinzufügen.
 4.  Vergewissern Sie sich im **Projektmappen-Explorer**, dass **Alle Dateien anzeigen** aktiviert ist. Wählen Sie die kopierten Dateien aus, klicken Sie mit der rechten Maustaste darauf, und klicken Sie dann auf **Zu Projekt hinzufügen**. Dadurch werden die zugehörigen Ordner automatisch hinzugefügt. Sie können **Alle Dateien anzeigen** jetzt ggf. deaktivieren. Eine alternative Vorgehensweise ist die Verwendung des Befehls **Vorhandenes Element hinzufügen**, wenn Sie alle erforderlichen Unterordner im **Projektmappen-Explorer** von Visual Studio erstellt haben. Stellen Sie sicher, dass für Ihre visuellen Ressourcen **Buildvorgang** auf **Inhalt** und **In Ausgabeverzeichnis kopieren** auf **Nicht kopieren** festgelegt ist.
@@ -39,7 +39,7 @@ Sie werden feststellen, dass Sie durch kleinere Umgestaltungsmaßnahmen und/oder
 -   Sie sollten in der Lage, viele der Anweisungen, die für die bedingte Kompilierung in Ihrer Universal 8.1-app-Quellcode zu entfernen, wenn nur Windows 10 unterstützt werden müssen. Weitere Informationen finden Sie in diesem Thema unter [Bedingte Kompilierung und adaptiver Code](#conditional-compilation-and-adaptive-code).
 -   Für Features, die nicht bei allen Gerätefamilien zur Verfügung stehen (wie etwa Drucker, Scanner oder die Kamerataste), können Sie adaptiven Code schreiben. Weitere Informationen finden Sie im dritten Beispiel dieses Themas unter [Bedingte Kompilierung und adaptiver Code](#conditional-compilation-and-adaptive-code).
 -   Wenn Sie Windows 8.1, Windows Phone 8.1 und Windows 10 unterstützen möchten, können Sie drei Projekte in der gleichen Projektmappe beibehalten und Freigeben von Code für ein freigegebenes Projekt. Alternativ können Sie Quellcodedateien projektübergreifend freigeben. Klicken Sie dazu in Visual Studio im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, wählen Sie **Vorhandenes Element hinzufügen** und dann die freizugebenden Dateien aus, und klicken Sie auf **Als Link hinzufügen**. Speichern Sie die Quellcodedateien in einem gemeinsamen Ordner im Dateisystem, in dem sie für verknüpfte Projekte sichtbar sind. Und vergessen Sie nicht, die Dateien der Quellcodeverwaltung hinzuzufügen.
--   Informationen zur Wiederverwendung auf binärer Ebene finden Sie unter [Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). Es gibt auch Portable Class Libraries, die die Teilmenge von .NET APIs zu unterstützen, die in .NET Framework für Windows 8.1, Windows Phone 8.1 und Windows 10-apps ((.NET Core) und das vollständige .NET Framework verfügbar sind. Portable Klassenbibliothekassemblys sind mit allen diesen Plattformen binärkompatibel. Erstellen Sie mit Visual Studio ein Projekt für eine portable Klassenbibliothek. Weitere Informationen finden Sie unter [Plattformübergreifende Entwicklung mit der portablen Klassenbibliothek](https://msdn.microsoft.com/library/gg597391.aspx).
+-   Informationen zur Wiederverwendung auf binärer Ebene finden Sie unter [Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)). Es gibt auch Portable Class Libraries, die die Teilmenge von .NET APIs zu unterstützen, die in .NET Framework für Windows 8.1, Windows Phone 8.1 und Windows 10-apps ((.NET Core) und das vollständige .NET Framework verfügbar sind. Portable Klassenbibliothekassemblys sind mit allen diesen Plattformen binärkompatibel. Erstellen Sie mit Visual Studio ein Projekt für eine portable Klassenbibliothek. Weitere Informationen finden Sie unter [Plattformübergreifende Entwicklung mit der portablen Klassenbibliothek](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library).
 
 ## <a name="extension-sdks"></a>Erweiterungs-SDKs
 
@@ -63,7 +63,7 @@ Name und Versionsnummer entsprechen den Ordnern am Installationsort Ihres SDKs. 
 
 `\Program Files (x86)\Windows Kits\10\Extension SDKs\WindowsMobile\10.0.x.y`
 
-Falls Ihre App nicht auf die Gerätefamilie ausgerichtet ist, die die API implementiert, müssen Sie vor dem Aufrufen der API mithilfe der [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001)-Klasse ermitteln, ob die API vorhanden ist. (Dies wird als adaptiver Code bezeichnet.) Diese Bedingung wird unabhängig davon ausgewertet, wo Ihre App ausgeführt wird. Das Ergebnis ist aber nur dann „True“, wenn sie auf Geräten ausgeführt wird, bei denen die API vorhanden ist und aufgerufen werden kann. Verwenden Sie Erweiterungs-SDKs und adaptiven Code erst, nachdem Sie geprüft haben, ob eine universelle API vorhanden ist. Beispiele finden Sie im nächsten Abschnitt.
+Falls Ihre App nicht auf die Gerätefamilie ausgerichtet ist, die die API implementiert, müssen Sie vor dem Aufrufen der API mithilfe der [**ApiInformation**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.ApiInformation)-Klasse ermitteln, ob die API vorhanden ist. (Dies wird als adaptiver Code bezeichnet.) Diese Bedingung wird unabhängig davon ausgewertet, wo Ihre App ausgeführt wird. Das Ergebnis ist aber nur dann „True“, wenn sie auf Geräten ausgeführt wird, bei denen die API vorhanden ist und aufgerufen werden kann. Verwenden Sie Erweiterungs-SDKs und adaptiven Code erst, nachdem Sie geprüft haben, ob eine universelle API vorhanden ist. Beispiele finden Sie im nächsten Abschnitt.
 
 Weitere Informationen finden Sie auch unter [App-Paketmanifest](#app-package-manifest).
 
@@ -83,7 +83,7 @@ Das erste Beispiel zeigt das Verwendungsmuster für die **PickSingleFileAsync**-
 #endif // WINDOWS_APP
 ```
 
-Windows 10 zusammengeführt werden, auf die [ **PickSingleFileAsync** ](https://msdn.microsoft.com/library/windows/apps/jj635275) -API, damit Ihr Code folgt vereinfacht:
+Windows 10 zusammengeführt werden, auf die [ **PickSingleFileAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) -API, damit Ihr Code folgt vereinfacht:
 
 ```csharp
     // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
@@ -106,7 +106,7 @@ In diesem Beispiel behandeln wir die Hardwaretaste „Zurück“ – allerdings 
 #endif // WINDOWS_PHONE_APP
 ```
 
-In Windows 10 ist das Ereignis der Schaltfläche "zurück" ein universal Konzept. In die Hardware oder Software implementierte „Zurück“-Schaltflächen lösen das [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596)-Ereignis aus. Daher müssen wir dieses Ereignis behandeln.
+In Windows 10 ist das Ereignis der Schaltfläche "zurück" ein universal Konzept. In die Hardware oder Software implementierte „Zurück“-Schaltflächen lösen das [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested)-Ereignis aus. Daher müssen wir dieses Ereignis behandeln.
 
 ```csharp
     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -137,7 +137,7 @@ void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input.CameraE
 #endif // WINDOWS_PHONE_APP
 ```
 
-In Windows 10 ist die Hardwaretaste "Kamera" ein Konzept, die speziell für mobile Geräte. Da auf allen Geräten ein einzelnes App-Paket ausgeführt wird, ändern wir unsere Kompilierzeitbedingung mithilfe von so genanntem adaptivem Code in eine Laufzeitbedingung. Hierzu fragen wir zur Laufzeit mithilfe der [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001)-Klasse ab, ob die [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557)-Klasse vorhanden ist. **HardwareButtons** ist im mobilen Erweiterungs-SDK definiert. Daher müssen wir unserem Projekt einen Verweis auf dieses SDK hinzufügen, um den Code kompilieren zu können. Beachten Sie jedoch, dass der Handler nur auf einem Gerät ausgeführt wird, das die im mobilen Erweiterungs-SDK definierten Typen implementiert und somit der Familie mobiler Geräte angehört. Dieser Code entspricht also grundsätzlich dem universellen 8.1-Code, da sichergestellt wird, dass nur Features verwendet werden, die tatsächlich vorhanden sind (auch wenn dies auf andere Weise bewerkstelligt wird).
+In Windows 10 ist die Hardwaretaste "Kamera" ein Konzept, die speziell für mobile Geräte. Da auf allen Geräten ein einzelnes App-Paket ausgeführt wird, ändern wir unsere Kompilierzeitbedingung mithilfe von so genanntem adaptivem Code in eine Laufzeitbedingung. Hierzu fragen wir zur Laufzeit mithilfe der [**ApiInformation**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.ApiInformation)-Klasse ab, ob die [**HardwareButtons**](https://docs.microsoft.com/uwp/api/Windows.Phone.UI.Input.HardwareButtons)-Klasse vorhanden ist. **HardwareButtons** ist im mobilen Erweiterungs-SDK definiert. Daher müssen wir unserem Projekt einen Verweis auf dieses SDK hinzufügen, um den Code kompilieren zu können. Beachten Sie jedoch, dass der Handler nur auf einem Gerät ausgeführt wird, das die im mobilen Erweiterungs-SDK definierten Typen implementiert und somit der Familie mobiler Geräte angehört. Dieser Code entspricht also grundsätzlich dem universellen 8.1-Code, da sichergestellt wird, dass nur Features verwendet werden, die tatsächlich vorhanden sind (auch wenn dies auf andere Weise bewerkstelligt wird).
 
 ```csharp
     // Note: Cache the value instead of querying it more than once.
@@ -162,9 +162,9 @@ Weitere Informationen finden Sie unter [Erkennen der Plattform, auf der Ihre App
 
 ## <a name="app-package-manifest"></a>App-Paketmanifest
 
-Die [Änderungen in Windows 10-](https://msdn.microsoft.com/library/windows/apps/dn705793) Thema listet Änderungen an der Paketmanifest-Schemareferenz für Windows 10, einschließlich der Elemente, die hinzugefügt, entfernt, geändert und wurden. Referenzinformationen zu allen Elementen, Attributen und Typen im Schema finden Sie unter [Elementhierarchie](https://msdn.microsoft.com/library/windows/apps/dn934819). Wenn Sie eine Windows Phone Store-App portieren, oder wenn Ihre App ein Update für eine App aus dem Windows Phone Store ist, stellen Sie sicher, dass das Element **pm: phoneidentity** dem Inhalt des Anwendungsmanifests Ihrer vorherigen App entspricht (verwenden Sie dieselben GUIDs, die der App vom Store zugewiesen wurden). Dadurch wird sichergestellt, dass Benutzer Ihrer App, die eine Aktualisierung auf Windows 10 durchführen, Ihre neue App als Update und nicht als Duplikat erhalten. Weitere Einzelheiten finden Sie im Referenzthema [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763).
+Die [Änderungen in Windows 10-](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10) Thema listet Änderungen an der Paketmanifest-Schemareferenz für Windows 10, einschließlich der Elemente, die hinzugefügt, entfernt, geändert und wurden. Referenzinformationen zu allen Elementen, Attributen und Typen im Schema finden Sie unter [Elementhierarchie](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/root-elements). Wenn Sie eine Windows Phone Store-App portieren, oder wenn Ihre App ein Update für eine App aus dem Windows Phone Store ist, stellen Sie sicher, dass das Element **pm: phoneidentity** dem Inhalt des Anwendungsmanifests Ihrer vorherigen App entspricht (verwenden Sie dieselben GUIDs, die der App vom Store zugewiesen wurden). Dadurch wird sichergestellt, dass Benutzer Ihrer App, die eine Aktualisierung auf Windows 10 durchführen, Ihre neue App als Update und nicht als Duplikat erhalten. Weitere Einzelheiten finden Sie im Referenzthema [**pm:PhoneIdentity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-pm-phoneidentity).
 
-Mit den Einstellungen in Ihrem Projekt (einschließlich der Verweise auf Erweiterungs-SDKs) wird der API-Oberflächenbereich bestimmt, der von Ihrer App aufgerufen werden kann. Aber anhand Ihres App-Paketmanifests wird die eigentliche Gruppe der Geräte bestimmt, auf denen Kunden Ihre App aus dem Store installieren können. Weitere Informationen finden Sie unter „Beispiele“ in [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903).
+Mit den Einstellungen in Ihrem Projekt (einschließlich der Verweise auf Erweiterungs-SDKs) wird der API-Oberflächenbereich bestimmt, der von Ihrer App aufgerufen werden kann. Aber anhand Ihres App-Paketmanifests wird die eigentliche Gruppe der Geräte bestimmt, auf denen Kunden Ihre App aus dem Store installieren können. Weitere Informationen finden Sie unter „Beispiele“ in [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
 
 Sie können das App-Paketmanifest bearbeiten und verschiedene Deklarationen, Funktionen und andere Einstellungen festlegen, die für einige Features erforderlich sind. Sie können das Manifest mit dem App-Paketmanifest-Editor von Visual Studio bearbeiten. Falls der **Projektmappen-Explorer** nicht angezeigt wird, wählen Sie ihn im Menü **Ansicht** aus. Doppelklicken Sie auf **Package.appxmanifest**. Dadurch wird das Fenster des Manifest-Editors geöffnet. Klicken Sie auf die gewünschte Registerkarte, nehmen Sie Ihre Änderungen vor, und speichern Sie sie.
 
@@ -172,8 +172,8 @@ Das nächste Thema ist [Problembehandlung](w8x-to-uwp-troubleshooting.md).
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Entwickeln von apps für die universelle Windows-Plattform](https://msdn.microsoft.com/library/dn975273.aspx)
-* [Beschleunigen Sie Ihre Windows-Runtime 8.x-app mithilfe von Vorlagen (C#, C++, Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
-* [Erstellen Windows-Runtime-Komponenten](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [Plattformübergreifende Entwicklung mit der portablen Klassenbibliothek](https://msdn.microsoft.com/library/gg597391.aspx)
+* [Entwickeln von apps für die universelle Windows-Plattform](https://docs.microsoft.com/visualstudio/cross-platform/develop-apps-for-the-universal-windows-platform-uwp?view=vs-2015)
+* [Beschleunigen Sie Ihre Windows-Runtime 8.x-app mithilfe von Vorlagen (C#, C++, Visual Basic)](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))
+* [Erstellen Windows-Runtime-Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
+* [Plattformübergreifende Entwicklung mit der portablen Klassenbibliothek](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)
 

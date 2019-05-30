@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7146fe6489d61c641b7104e8c7c25728550c1c54
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636555"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370666"
 ---
 # <a name="face-and-vertex-normal-vectors"></a>Seiten- und Scheitelnormalenvektoren
 
@@ -31,7 +31,7 @@ Die folgende Abbildung zeigt einen Normalvektor für eine Vorderseite:
 ## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>Gesichter Culling zurück
 
 
-Jede Fläche, die keine Vorderseite ist, ist eine Rückseite. Direct3D unterstützt Rückseitenentfernung, d.°h. Rückseiten werden nicht immer gerendert. Bei der Rückseitenentfernung werden die Rückseiten nicht gerendert. Sie können den Cullingmodus ändern, um Rückseiten doch zu rendern. Weitere Informationen finden Sie unter [Culling-Status](https://msdn.microsoft.com/library/windows/desktop/bb204882).
+Jede Fläche, die keine Vorderseite ist, ist eine Rückseite. Direct3D unterstützt Rückseitenentfernung, d.°h. Rückseiten werden nicht immer gerendert. Bei der Rückseitenentfernung werden die Rückseiten nicht gerendert. Sie können den Cullingmodus ändern, um Rückseiten doch zu rendern. Weitere Informationen finden Sie unter [Culling-Status](https://docs.microsoft.com/windows/desktop/direct3d9/culling-state).
 
 ## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>Flächenspezifische-Einheit
 

@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Kartenauthentifizierungsschlüssel, Kartensteuerelement
 ms.localizationpriority: medium
-ms.openlocfilehash: 620566036dc5aa9357d10e60ec92067ba0faf130
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8f62ecfab5bd8d09092e5264831327b8c63666bc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649555"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370511"
 ---
 # <a name="request-a-maps-authentication-key"></a>Anfordern eines Kartenauthentifizierungsschlüssels
 
 
 
 
-Ihre [universelle Windows-App](https://msdn.microsoft.com/library/windows/apps/dn894631) muss authentifiziert werden, bevor sie die [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)-Klasse und Kartendienste im [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979)-Namespace verwenden kann. Zum Authentifizieren Ihrer App müssen Sie einen Kartenauthentifizierungsschlüssel angeben. In diesem Thema wird beschrieben, wie Sie einen Kartenauthentifizierungsschlüssel vom [Bing Maps Developer Center](https://www.bingmapsportal.com/) anfordern und Ihrer App hinzufügen.
+Ihre [universelle Windows-App](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) muss authentifiziert werden, bevor sie die [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)-Klasse und Kartendienste im [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)-Namespace verwenden kann. Zum Authentifizieren Ihrer App müssen Sie einen Kartenauthentifizierungsschlüssel angeben. In diesem Thema wird beschrieben, wie Sie einen Kartenauthentifizierungsschlüssel vom [Bing Maps Developer Center](https://www.bingmapsportal.com/) anfordern und Ihrer App hinzufügen.
 
 **Tipp** Um mehr über das Verwenden von Karten in Ihrer App zu erfahren, laden Sie das folgende Beispiel aus den [API-Beispielen für die universelle Windows-Plattform](https://go.microsoft.com/fwlink/p/?LinkId=619979) auf GitHub herunter:
 
@@ -59,11 +59,11 @@ So erstellen Sie einen neuen Schlüssel
 ## <a name="add-the-key-to-your-app"></a>Hinzufügen des Schlüssels zur App
 
 
-Der Kartenauthentifizierungsschlüssel ist erforderlich, um die [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)-Klasse und Kartendienste ([**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979)) in Ihrer universellen Windows-App zu verwenden. Fügen Sie ihn ggf. dem Kartensteuerelement und Kartendienstobjekten hinzu.
+Der Kartenauthentifizierungsschlüssel ist erforderlich, um die [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)-Klasse und Kartendienste ([**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)) in Ihrer universellen Windows-App zu verwenden. Fügen Sie ihn ggf. dem Kartensteuerelement und Kartendienstobjekten hinzu.
 
 ### <a name="to-add-the-key-to-a-map-control"></a>So fügen Sie den Schlüssel einem Kartensteuerelement hinzu
 
-Setzen Sie zum Authentifizieren der [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)-Klasse die [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036)-Eigenschaft auf den Wert des Authentifizierungsschlüssels. Sie können diese Eigenschaft je nach Ihren Einstellungen im Code oder im XAML-Markup festlegen. Weitere Informationen zur Verwendung der **MapControl**-Klasse finden Sie unter [Anzeigen von Karten mit 2D-, 3D- und Streetside-Ansichten](display-maps.md).
+Setzen Sie zum Authentifizieren der [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)-Klasse die [**MapServiceToken**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)-Eigenschaft auf den Wert des Authentifizierungsschlüssels. Sie können diese Eigenschaft je nach Ihren Einstellungen im Code oder im XAML-Markup festlegen. Weitere Informationen zur Verwendung der **MapControl**-Klasse finden Sie unter [Anzeigen von Karten mit 2D-, 3D- und Streetside-Ansichten](display-maps.md).
 
 -   In diesem Beispiel wird die **MapServiceToken**-Eingeschaft auf den Wert des Authentifizierungsschlüssels im Code gesetzt.
 
@@ -79,7 +79,7 @@ Setzen Sie zum Authentifizieren der [**MapControl**](https://msdn.microsoft.com/
 
 ### <a name="to-add-the-key-to-map-services"></a>So fügen Sie den Schlüssel Kartendiensten hinzu
 
-Um Dienste im [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979)-Namespace zu verwenden, setzen Sie die [**ServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn636977)-Eigenschaft auf den Wert des Authentifizierungsschlüssels. Weitere Informationen zur Verwendung von Kartendiensten finden Sie unter [Anzeigen von Routen und Wegbeschreibungen auf einer Karte](routes-and-directions.md) und [Durchführen der Geocodierung und umgekehrten Geocodierung](geocoding.md).
+Um Dienste im [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)-Namespace zu verwenden, setzen Sie die [**ServiceToken**](https://docs.microsoft.com/uwp/api/windows.services.maps.mapservice.servicetoken)-Eigenschaft auf den Wert des Authentifizierungsschlüssels. Weitere Informationen zur Verwendung von Kartendiensten finden Sie unter [Anzeigen von Routen und Wegbeschreibungen auf einer Karte](routes-and-directions.md) und [Durchführen der Geocodierung und umgekehrten Geocodierung](geocoding.md).
 
 -   In diesem Beispiel wird die **ServiceToken**-Eingeschaft auf den Wert des Authentifizierungsschlüssels im Code gesetzt.
 
@@ -91,6 +91,6 @@ Um Dienste im [**Windows.Services.Maps**](https://msdn.microsoft.com/library/win
 
 * [Bing Karten Developer Center](https://www.bingmapsportal.com/)
 * [Beispiel für UWP-Karte](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Entwurfsrichtlinien für Karten](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Entwurfsrichtlinien für Karten](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015-Video: Nutzen von Karten und Ortung über Telefon, Tablet und PC in Ihren Windows-Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Beispiel für eine UWP-App mit Verkehrsinformationen](https://go.microsoft.com/fwlink/p/?LinkId=619982)

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e3614b7bde3a87c8f5fa6fdc0eada560fd7bbcdc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605045"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370964"
 ---
 # <a name="stream-output-so-stage"></a>Streamausgabephase (SO)
 
@@ -31,7 +31,7 @@ In den Arbeitsspeicher gestreamte Daten können in einem nachfolgenden Rendering
 Es gibt zwei Möglichkeiten, die Streamausgabedaten in die Pipeline zu stellen:
 
 -   Streamausgabedaten können der Eingabeassemblerphase (IA) wieder zugeführt werden.
--   Streamausgabedaten können von programmierbaren Shadern mit [Load](https://msdn.microsoft.com/library/windows/desktop/bb509694)-Funktionen gelesen werden.
+-   Streamausgabedaten können von programmierbaren Shadern mit [Load](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load)-Funktionen gelesen werden.
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Eingabe
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Directx, Eingabelatenz
 ms.localizationpriority: medium
-ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a74e2e24810dee058aa166800091af91d55cdef4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601745"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368448"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>Optimieren der Eingabelatenz für UWP-DirectX-Spiele (Universelle Windows-Plattform)
 
@@ -65,7 +65,7 @@ Die Implementierung der Spielschleife wird unten für die einzelnen beschriebene
 
 Beim ersten Durchlauf des Puzzlespiels wird der Bildschirm nur aktualisiert, wenn ein Benutzer ein Puzzleteil verschiebt. Benutzer können ein Puzzleteil entweder an seinen Platz ziehen oder das Teil auswählen und dann auf die richtige Position tippen. Im letzteren Fall wird das Puzzleteil ohne Animation oder Effekte eingefügt.
 
-Der Code umfasst eine Spielschleife mit einem einzelnen Thread in der [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)-Methode, für die das **CoreProcessEventsOption::ProcessOneAndAllPending**-Element verwendet wird. Mit dieser Option werden alle derzeit verfügbaren Ereignisse in der Warteschlange verteilt. Falls keine Ereignisse ausstehen, wartet die Spielschleife, bis ein Ereignis vorhanden ist.
+Der Code umfasst eine Spielschleife mit einem einzelnen Thread in der [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)-Methode, für die das **CoreProcessEventsOption::ProcessOneAndAllPending**-Element verwendet wird. Mit dieser Option werden alle derzeit verfügbaren Ereignisse in der Warteschlange verteilt. Falls keine Ereignisse ausstehen, wartet die Spielschleife, bis ein Ereignis vorhanden ist.
 
 ``` syntax
 void App::Run()
@@ -96,7 +96,7 @@ void App::Run()
 
 Beim zweiten Durchlauf wird das Spiel modifiziert. Wenn Benutzer ein Puzzleteil auswählen und dann auf die richtige Position für das Teil tippen, wird es auf dem Bildschirm per Animation an seine Zielposition verschoben.
 
-Wie im ersten Szenario verfügt der Code über eine Spielschleife mit einem einzelnen Thread, die mithilfe von **ProcessOneAndAllPending** die in der Warteschlange enthaltenen Eingabeereignisse verteilt. Der Unterschied besteht jetzt darin, dass die Schleife während der Animation zu **CoreProcessEventsOption::ProcessAllIfPresent**, damit nicht auf neue Eingabeereignisse gewartet wird. Wenn keine Ereignisse ausstehen, erfolgt die Rückgabe für [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) sofort, und die App kann den nächsten Frame der Animation darstellen. Nachdem die Animation abgeschlossen ist, wechselt die Schleife zurück zu **ProcessOneAndAllPending**, um die Bildschirmaktualisierungen zu begrenzen.
+Wie im ersten Szenario verfügt der Code über eine Spielschleife mit einem einzelnen Thread, die mithilfe von **ProcessOneAndAllPending** die in der Warteschlange enthaltenen Eingabeereignisse verteilt. Der Unterschied besteht jetzt darin, dass die Schleife während der Animation zu **CoreProcessEventsOption::ProcessAllIfPresent**, damit nicht auf neue Eingabeereignisse gewartet wird. Wenn keine Ereignisse ausstehen, erfolgt die Rückgabe für [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) sofort, und die App kann den nächsten Frame der Animation darstellen. Nachdem die Animation abgeschlossen ist, wechselt die Schleife zurück zu **ProcessOneAndAllPending**, um die Bildschirmaktualisierungen zu begrenzen.
 
 ``` syntax
 void App::Run()
@@ -182,7 +182,7 @@ Die Einfachheit dieses Entwicklungsansatzes hat aber auch einen Nachteil. Beim R
 
 Bei einigen Spielen kann es möglich sein, den Anstieg der Eingabelatenz aus Szenario 3 zu ignorieren oder auszugleichen. Wenn eine geringe Eingabelatenz für das Spielerlebnis und die Spielerrückmeldungen aber von entscheidender Bedeutung ist, müssen Spiele, die 60 Frames pro Sekunde rendern, die Eingabe in einem separaten Thread verarbeiten.
 
-Der vierte Durchlauf des Puzzlespiels baut auf Szenario 3 auf, indem die Eingabeverarbeitung und das Rendern der Grafiken aus der Spielschleife in separate Threads unterteilt wird. Mit der Nutzung separater Threads wird sichergestellt, dass die Eingabe durch die Grafikausgabe nicht verzögert werden kann. Der Code wird dadurch aber komplexer. In Szenario 4 ruft der Eingabethread [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) mit [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217) auf. Damit wird auf neue Ereignisse gewartet, und alle verfügbaren Ereignisse werden verteilt. Dieses Verhalten wird beibehalten, bis das Fenster geschlossen wird oder das Spiel [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260) aufruft.
+Der vierte Durchlauf des Puzzlespiels baut auf Szenario 3 auf, indem die Eingabeverarbeitung und das Rendern der Grafiken aus der Spielschleife in separate Threads unterteilt wird. Mit der Nutzung separater Threads wird sichergestellt, dass die Eingabe durch die Grafikausgabe nicht verzögert werden kann. Der Code wird dadurch aber komplexer. In Szenario 4 ruft der Eingabethread [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) mit [**CoreProcessEventsOption::ProcessUntilQuit**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption) auf. Damit wird auf neue Ereignisse gewartet, und alle verfügbaren Ereignisse werden verteilt. Dieses Verhalten wird beibehalten, bis das Fenster geschlossen wird oder das Spiel [**CoreWindow::Close**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.close) aufruft.
 
 ``` syntax
 void App::Run()
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Die **DirectX 11 und XAML-App (Universelles Windows)** Vorlage in Microsoft Visual Studio 2015 teilt die spielschleife in mehreren Threads auf ähnliche Weise. Dabei wird das [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460)-Objekt verwendet, um einen Thread für die Behandlung der Eingabe zu starten. Außerdem wird ein Renderthread erstellt, der unabhängig vom XAML-UI-Thread ist. Weitere Informationen zu diesen Vorlagen finden Sie unter [Erstellen eines UWP- und eines DirectX-Spieleprojekts aus einer Vorlage](user-interface.md).
+Die **DirectX 11 und XAML-App (Universelles Windows)** Vorlage in Microsoft Visual Studio 2015 teilt die spielschleife in mehreren Threads auf ähnliche Weise. Dabei wird das [**Windows::UI::Core::CoreIndependentInputSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreIndependentInputSource)-Objekt verwendet, um einen Thread für die Behandlung der Eingabe zu starten. Außerdem wird ein Renderthread erstellt, der unabhängig vom XAML-UI-Thread ist. Weitere Informationen zu diesen Vorlagen finden Sie unter [Erstellen eines UWP- und eines DirectX-Spieleprojekts aus einer Vorlage](user-interface.md).
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>Weitere Möglichkeiten zur Reduzierung der Eingabelatenz
 

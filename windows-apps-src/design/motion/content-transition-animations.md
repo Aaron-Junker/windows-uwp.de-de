@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 096cc0aaa9b0580eb6b45328a3243ba75d82f202
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5ec8778f590ba9b50c67209eaf4b80e2cbed2f16
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649805"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364810"
 ---
 # <a name="content-transition-animations"></a>Inhaltsübergangsanimationen
 
@@ -23,7 +23,7 @@ ms.locfileid: "57649805"
 
 Mithilfe von Inhaltsübergangsanimationen können Sie den Inhalt eines Bildschirmbereichs ändern und gleichzeitig den Container oder Hintergrund unverändert lassen. Neuer Inhalt wird eingeblendet. Muss vorhandener Inhalt ersetzt werden, wird dieser Inhalt ausgeblendet.
 
-> **Wichtige APIs:** [**ContentThemeTransition-Klasse (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **Wichtige APIs:** [**ContentThemeTransition-Klasse (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
@@ -41,10 +41,10 @@ Mithilfe von Inhaltsübergangsanimationen können Sie den Inhalt eines Bildschir
 ## <a name="related-articles"></a>Verwandte Artikel
 
 **Für Entwickler (XAML)**
-* [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animieren von Inhalten der Übergänge](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**ContentThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/br243104)
+* [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Animieren von Inhalten der Übergänge](https://docs.microsoft.com/previous-versions/windows/apps/jj649426(v=win.10))
+* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**ContentThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
 
  
 

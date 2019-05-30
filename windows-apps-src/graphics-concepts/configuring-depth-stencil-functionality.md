@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cb6c62248fbf273a9d7ca1ef0d1d82293122eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd23938387b40c8ce268c65209d1fb11d5da529c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656185"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370629"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Konfigurieren der Funktionalität der tiefenschablone
 
@@ -24,7 +24,7 @@ Wenn Sie mit dem Tiefenschablonenpuffer und der entsprechenden Tiefenschablonenp
 ## <a name="span-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>Status der Tiefenschablone erstellen
 
 
-Die Tiefenschablonenphase zeigt den Zustand der Ausgabezusammenführungsphase zum Ausführen des [Tiefenschablonen-Test](https://msdn.microsoft.com/library/windows/desktop/bb205120) an. Der Tiefenschablonen-Test bestimmt, ob eine gegebene Pixel gezeichnet werden soll oder nicht.
+Die Tiefenschablonenphase zeigt den Zustand der Ausgabezusammenführungsphase zum Ausführen des [Tiefenschablonen-Test](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage) an. Der Tiefenschablonen-Test bestimmt, ob eine gegebene Pixel gezeichnet werden soll oder nicht.
 
 ## <a name="span-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>Tiefenschablone Datenbindung der OM-Phase
 
@@ -77,7 +77,7 @@ Wenn Ihre Anwendung zwei Render-Durchgänge durchführt – einen zum Erstellen 
 
 Wenn die Schablonenmaske die gleiche Größe und Form wie der Grundtyp hat, den Sie rendern, enthält das resultierende Bild an der Stelle eine Lücke, an der sich der Grundtyp befinden sollte. Die Anwendung kann die Lücke mit Schwarz ausfüllen, um eine Silhouette des Grundtyps zu erstellen.
 
-### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspantwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span>Zweiseitigen Schablone
+### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwo-sided-stenciltwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span><span id="two-sided-stencil">Zweiseitigen Schablone
 
 Zum Zeichnen von Schatten mit dem Schablonenpuffer werden Schattenvolumen verwendet. Die Anwendung berechnet die Schattenvolumenumwandlung durch verdeckende Geometrie, indem die Ränder der Silhouette berechnet und aus dem Licht in eine Gruppe von 3D-Volumen extrudiert werden. Diese Volumen werden dann zweimal in den Schablonenpuffer gerendert.
 
@@ -98,4 +98,4 @@ Ein inaktiver Tiefenschablonenpuffer kann von einem Shader als Textur gelesen we
 
 [Grafikpipeline](graphics-pipeline.md)
 
-[Ausgabezusammenführung-Phase](https://msdn.microsoft.com/library/windows/desktop/bb205120)
+[Ausgabezusammenführung-Phase](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)

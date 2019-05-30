@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 882ee548754b9fa498697a8d75a12a23f86fc9de
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 956e4050e3077ac827cf8107470698b42878a5e1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616885"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370875"
 ---
 # <a name="add-a-splash-screen"></a>Hinzufügen eines Begrüßungsbildschirms
 
@@ -29,7 +29,7 @@ Wenn Sie eine Visual Studio-Vorlage zum Erstellen der App verwenden, wird dem Pr
 
     ![Screenshot des Fensters „Package.appxmanifest“ in Visual Studio 2017](images/appmanifest.png)
 
-    Wenn Sie „Package.appxmanifest“ in einem Text-Editor öffnen, wird das [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467)-Element als untergeordnetes Element des [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471)-Elements angezeigt. Das standardmäßige Begrüßungsbildschirm-Markup in der Manifestdatei sieht in einem Text-Editor wie folgt aus:
+    Wenn Sie „Package.appxmanifest“ in einem Text-Editor öffnen, wird das [**SplashScreen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen)-Element als untergeordnetes Element des [**VisualElements**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements)-Elements angezeigt. Das standardmäßige Begrüßungsbildschirm-Markup in der Manifestdatei sieht in einem Text-Editor wie folgt aus:
 
     ```xml
     <uap:SplashScreen Image="Assets\SplashScreen.png" />
@@ -43,7 +43,7 @@ Wenn Sie eine Visual Studio-Vorlage zum Erstellen der App verwenden, wird dem Pr
 
     **Wichtige**  das Image des Begrüßungsbildschirms Auswahl muss 1152 x 1920 Pixel skaliert werden dies die richtige Größe für ein 2,4 x Skalierungsfaktor ist. Ist dies die einzige Ressource, die Sie bereitstellen, wird es auf die Skalierungsfaktoren 1.4x und 1x nach unten skaliert.
 
-6. Legen Sie im Abschnitt **Begrüßungsbildschirm** im Feld **Hintergrundfarbe** die Hintergrundfarbe fest, die zusammen mit Ihrem Bild angezeigt werden soll. Sie können entweder den Namen einer Farbe eingeben oder "\#" und den Hexadezimalwert einer Farbe. Eine Liste mit den Namen der verfügbaren Farben finden Sie unter [**SplashScreen-Element**](https://msdn.microsoft.com/library/windows/apps/br211467). Das Festlegen einer Hintergrundfarbe für Ihren Begrüßungsbildschirm ist nicht unbedingt erforderlich. Wenn Sie nicht, dass eine Farbe für eine UWP-app angeben, die Hintergrundfarbe des Begrüßungsbildschirms standardmäßig hellgrau (Farbtonwert \#464646). Dies ist die gleiche Farbe wie die standardmäßige Hintergrundfarbe für eine **Kachel** (siehe Feld **Hintergrundfarbe** im Abschnitt **Bilder für Kacheln und Logos** auf der Registerkarte **Visuelle Anlagen**). Wenn Sie keine Farbe für ein Windows Phone angeben oder „transparent“ festlegen, wird die Hintergrundfarbe des Begrüßungsbildschirms transparent sein.
+6. Legen Sie im Abschnitt **Begrüßungsbildschirm** im Feld **Hintergrundfarbe** die Hintergrundfarbe fest, die zusammen mit Ihrem Bild angezeigt werden soll. Sie können entweder den Namen einer Farbe eingeben oder "\#" und den Hexadezimalwert einer Farbe. Eine Liste mit den Namen der verfügbaren Farben finden Sie unter [**SplashScreen-Element**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen). Das Festlegen einer Hintergrundfarbe für Ihren Begrüßungsbildschirm ist nicht unbedingt erforderlich. Wenn Sie nicht, dass eine Farbe für eine UWP-app angeben, die Hintergrundfarbe des Begrüßungsbildschirms standardmäßig hellgrau (Farbtonwert \#464646). Dies ist die gleiche Farbe wie die standardmäßige Hintergrundfarbe für eine **Kachel** (siehe Feld **Hintergrundfarbe** im Abschnitt **Bilder für Kacheln und Logos** auf der Registerkarte **Visuelle Anlagen**). Wenn Sie keine Farbe für ein Windows Phone angeben oder „transparent“ festlegen, wird die Hintergrundfarbe des Begrüßungsbildschirms transparent sein.
 
 ## <a name="summary-and-next-steps"></a>Zusammenfassung und nächste Schritte
 
@@ -52,5 +52,5 @@ Falls das Laden der App einige Zeit dauert, können Sie erwägen, einen erweiter
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen Sie einen benutzerdefinierten Splash-Bildschirm](create-a-customized-splash-screen.md)
-* [Paketmanifest-Schemaverweis: SplashScreen-element](https://msdn.microsoft.com/library/windows/apps/br211467)
-* [Windows.ApplicationModel.Activation.SplashScreen-Klasse](https://msdn.microsoft.com/library/windows/apps/br224763)
+* [Paketmanifest-Schemaverweis: SplashScreen-element](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen)
+* [Windows.ApplicationModel.Activation.SplashScreen-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)

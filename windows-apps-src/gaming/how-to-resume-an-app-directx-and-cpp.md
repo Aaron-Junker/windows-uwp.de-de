@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, fortsetzen, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: f0aa60061ae9fc14392bfe4beb0693ba50fda0df
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1506351dd06563386154ac35938cbd17f5ced32
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601605"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368612"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>So wird's gemacht - Reaktivieren einer App (DirectX und C++)
 
@@ -22,9 +22,9 @@ In diesem Thema erfahren Sie, wie wichtige Anwendungsdaten wiederhergestellt wer
 ## <a name="register-the-resuming-event-handler"></a>Registrieren des „resuming“-Ereignishandlers
 
 
-Registrieren Sie die Behandlung des [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859)-Ereignisses, mit dem angegeben wird, dass der Benutzer aus der App und wieder zurück gewechselt hat.
+Registrieren Sie die Behandlung des [**CoreApplication::Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming)-Ereignisses, mit dem angegeben wird, dass der Benutzer aus der App und wieder zurück gewechselt hat.
 
-Fügen Sie Ihrer Implementierung der [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)-Methode Ihres Ansichtsanbieters folgenden Code hinzu:
+Fügen Sie Ihrer Implementierung der [**IFrameworkView::Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)-Methode Ihres Ansichtsanbieters folgenden Code hinzu:
 
 ```cpp
 // The first method is called when the IFrameworkView is being created.
@@ -43,7 +43,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## <a name="refresh-displayed-content-after-suspension"></a>Aktualisieren der angezeigten Inhalte nach einer Unterbrechung
 
 
-Wenn die App das Resuming-Ereignis behandelt, kann der angezeigte Inhalt aktualisiert werden. Stellen Sie alle mit dem Handler für [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) gespeicherten Apps wieder her, und setzen Sie die Verarbeitung fort. Für Spieleentwickler: Wenn Sie das Audiomodul angehalten haben, muss es jetzt neu gestartet werden.
+Wenn die App das Resuming-Ereignis behandelt, kann der angezeigte Inhalt aktualisiert werden. Stellen Sie alle mit dem Handler für [**CoreApplication::Suspending**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending) gespeicherten Apps wieder her, und setzen Sie die Verarbeitung fort. Für Spieleentwickler: Wenn Sie das Audiomodul angehalten haben, muss es jetzt neu gestartet werden.
 
 ```cpp
 void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
@@ -56,7 +56,7 @@ void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
 }
 ```
 
-Dieser Rückruf tritt als Ereignismeldung auf, die vom [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)-Element des [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Elements der App verarbeitet wird. Dieser Rückruf wird nicht aufgerufen, wenn Sie in der Hauptschleife der App (in der [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)-Methode des Ansichtsanbieters implementiert) [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) nicht aufrufen.
+Dieser Rückruf tritt als Ereignismeldung auf, die vom [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)-Element des [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Elements der App verarbeitet wird. Dieser Rückruf wird nicht aufgerufen, wenn Sie in der Hauptschleife der App (in der [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)-Methode des Ansichtsanbieters implementiert) [**CoreDispatcher::ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) nicht aufrufen.
 
 ``` syntax
 // This method is called after the window becomes active.

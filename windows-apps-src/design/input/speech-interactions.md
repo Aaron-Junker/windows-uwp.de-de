@@ -8,12 +8,12 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb292ad5cba892275709fbc89d5d53fa136144f3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637075"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365300"
 ---
 # <a name="speech-interactions"></a>Spracherkennungsinteraktionen
 
@@ -23,7 +23,7 @@ Integrieren Sie Spracherkennung und Text-zu-Sprache (auch als Text-to-Speech, TT
 
 **TTS:** TTS verwendet ein Sprachsynthesemodul (Sprache), um eine Textzeichenfolge in gesprochene Wörter zu konvertieren. Bei der Eingabezeichenfolge kann es sich um einfachen, schlichten Text oder komplexere Speech Synthesis Markup Language (SSML) handeln. SSML stellt eine Standardmethode zum Steuern der Eigenschaften der Sprachausgabe bereit, z. B. Aussprache, Lautstärke, Stimmlage, Rate bzw. Geschwindigkeit und Betonung.
 
-**Andere sprachrelevante Komponenten:**
+**Andere sprachrelevante Komponenten:** 
 **Cortana** in Windows-Anwendungen nutzt angepasste Sprachbefehle (gesprochen oder eingegeben), um Ihre App im Vordergrund zu starten (die App erhält wie beim Starten über das Startmenü den Fokus) oder als Hintergrunddienst zu aktivieren (**Cortana** behält den Fokus, es werden aber Ergebnisse aus der App angezeigt). Weitere Hinweise, um App-Funktionen in der **Cortana**-UI verfügbar machen, finden Sie in den [Richtlinien zu Cortana-Sprachbefehlen](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd).
 
 ## <a name="speech-interaction-design"></a>Integrieren der Spracherkennung
@@ -164,7 +164,7 @@ Eine benutzerdefinierte Grammatik ist eine von Ihnen entworfene und erstellte Gr
     -   Halten Sie jede Grammatik klein. Grammatiken, die weniger zu vergleichende Ausdrücke enthalten, bieten eine bessere Erkennungsgenauigkeit als größere Grammatiken mit vielen Ausdrücken. Es empfiehlt sich, anstelle einer einzigen Grammatik für die gesamte App mehrere kleinere Grammatiken für bestimmte Szenarien zu verwenden.
     -   Informieren Sie den Benutzer darüber, was er im jeweiligen App-Kontext sagen kann, und aktivieren bzw. deaktivieren Sie Grammatiken nach Bedarf.
     -   Entwerfen Sie jede Grammatik so, dass der Benutzer einen Befehl auf verschiedene Arten sprechen kann. Sie können z. B. die **GARBAGE**-Regel verwenden, um Spracheingaben abzugleichen, die in Ihrer Grammatik nicht definiert sind. So kann der Benutzer zusätzliche Wörter verwenden, die für Ihre App keine Bedeutung haben, beispielsweise "gib mir", "und", "äähm", "vielleicht" usw.
-    -   Verwenden Sie das [sapi:subset](https://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx)-Element, um den Vergleich von Spracheingaben zu erleichtern. Dies ist eine Microsoft-Erweiterung der SRGS-Spezifikation, die den Abgleich von Teilausdrücken ermöglicht.
+    -   Verwenden Sie das [sapi:subset](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/jj572474(v=office.14))-Element, um den Vergleich von Spracheingaben zu erleichtern. Dies ist eine Microsoft-Erweiterung der SRGS-Spezifikation, die den Abgleich von Teilausdrücken ermöglicht.
     -   Definieren Sie in Ihrer Grammatik nach Möglichkeit keine einsilbigen Ausdrücke. Die Erkennung funktioniert bei Ausdrücken mit zwei oder mehr Silben meist genauer.
     -   Vermeiden Sie Ausdrücke, die ähnlich klingen. Ausdrücke wie „Geld“, „Held“ und „fällt“ können das Erkennungsmodul z. B. verwirren und zu einer schlechten Erkennungsgenauigkeit führen.
 
@@ -175,11 +175,11 @@ Eine benutzerdefinierte Grammatik ist eine von Ihnen entworfene und erstellte Gr
 
 Wenn Ihre App Spezialvokabular mit ungewöhnlichen oder fiktiven Wörtern oder Wörter mit ungewöhnlicher Aussprache enthält, können Sie die Erkennungsleistung für diese Wörter verbessern, indem Sie eine benutzerdefinierte Aussprache definieren.
 
-Für eine kleine Liste von Wörtern und Ausdrücken oder eine Liste selten verwendeter Wörter und Ausdrücke können Sie eine benutzerdefinierte Aussprache in einer SRGS-Grammatik erstellen. Weitere Informationen finden Sie unter [token-Element](https://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx).
+Für eine kleine Liste von Wörtern und Ausdrücken oder eine Liste selten verwendeter Wörter und Ausdrücke können Sie eine benutzerdefinierte Aussprache in einer SRGS-Grammatik erstellen. Weitere Informationen finden Sie unter [token-Element](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361600(v=office.14)).
 
-Für größere Listen von Wörtern und Ausdrücken oder häufig verwendete Wörter und Ausdrücke können Sie separate Dokumente mit Aussprachewörterbüchern erstellen. Weitere Informationen dazu finden Sie unter [Info zu Lexika und phonetischen Alphabeten](https://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx).
+Für größere Listen von Wörtern und Ausdrücken oder häufig verwendete Wörter und Ausdrücke können Sie separate Dokumente mit Aussprachewörterbüchern erstellen. Weitere Informationen dazu finden Sie unter [Info zu Lexika und phonetischen Alphabeten](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
 
-## <a name="testing"></a>Testing
+## <a name="testing"></a>Test
 
 Testen Sie die Genauigkeit der Spracherkennung und jede UI, die die Spracherkennung unterstützt, mit der Zielgruppe Ihrer App. So können Sie am besten herausfinden, wie effektiv die Sprachinteraktionsfunktion in Ihrer App ist. Erhalten Benutzer z. B. schlechte Erkennungsergebnisse, weil Ihre App nicht auf einen gängigen Ausdruck lauscht?
 
@@ -200,7 +200,7 @@ Hören Sie sich alle TTS-Zeichenfolgen an, um sicherzustellen, dass sie verstän
 -   Wenn eine ungewöhnliche Abfolge von Wörtern kombiniert wird oder Teilenummern oder Satzzeichen gesprochen werden, kann ein Satz unverständlich werden.
 -   Sprache kann unnatürlich klingen, wenn der Sprechrhythmus von der normalen Sprechweise eines Muttersprachlers abweicht.
 
-Beide Probleme können durch Verwendung von SSML anstelle von Nur-Text als Synthesizereingabe behoben werden. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](https://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) und [Referenz für Speech Synthesis Markup Language](https://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
+Beide Probleme können durch Verwendung von SSML anstelle von Nur-Text als Synthesizereingabe behoben werden. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) und [Referenz für Speech Synthesis Markup Language](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## <a name="other-articles-in-this-section"></a>Andere Artikel in diesem Abschnitt 
 
@@ -215,8 +215,8 @@ Beide Probleme können durch Verwendung von SSML anstelle von Nur-Text als Synth
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Sprachinteraktionen](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Cortana-Interaktionen](https://msdn.microsoft.com/library/windows/apps/mt185598)
+* [Sprachinteraktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
+* [Cortana-Interaktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-interactions)
 
  **Beispiele**
 

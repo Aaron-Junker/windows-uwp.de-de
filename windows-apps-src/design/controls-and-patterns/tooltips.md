@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 80591abb1e3130540ea94bc1f8d2602b90edc590
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613665"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364032"
 ---
 # <a name="tooltips"></a>QuickInfos
 
@@ -25,7 +25,7 @@ Eine QuickInfo ist eine kurze Beschreibung, die mit einem anderen Steuerelement 
 
 ![Eine QuickInfo](images/controls/tool-tip.png)
 
-> **Wichtige APIs:** [QuickInfo-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+> **Wichtige APIs:** [QuickInfo-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -153,4 +153,4 @@ Wenn eine QuickInfo auf den Inhalt es verweist verdeckt auf, Sie können anpasse
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [QuickInfo-Klasse](https://msdn.microsoft.com/library/windows/apps/br227608)
+- [QuickInfo-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)

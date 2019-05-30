@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Threads, Threadpool
 ms.localizationpriority: medium
-ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ff47115c228e3cf6530e12aa4686c88660f16fcd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658015"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371551"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Senden einer Arbeitsaufgabe an den Threadpool
 
@@ -19,19 +19,19 @@ ms.locfileid: "57658015"
 
 <b>Wichtige APIs</b>
 
--   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
--   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
+-   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
+-   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
 
 Hier erfahren Sie, wie Sie Arbeit in einem separaten Thread erledigen können, indem Sie eine Arbeitsaufgabe an den Threadpool übermitteln. Somit sorgen Sie dafür, dass die Benutzeroberfläche bei der Erledigung von Arbeit, die viel Zeit in Anspruch nimmt, reaktionsfähig bleibt, und Sie können mehrere Aufgaben parallel bearbeiten.
 
 ## <a name="create-and-submit-the-work-item"></a>Erstellen und Senden der Arbeitsaufgabe
 
-Erstellen Sie eine Arbeitsaufgabe, indem Sie [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) aufrufen. Stellen Sie einen Delegaten zur Durchführung der Arbeit bereit (Sie können eine Lambda-Funktion oder Delegatfunktion verwenden). **RunAsync** gibt ein [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)-Objekt zurück. Speichern Sie dieses Objekt, da es im nächsten Schritt verwendet wird.
+Erstellen Sie eine Arbeitsaufgabe, indem Sie [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) aufrufen. Stellen Sie einen Delegaten zur Durchführung der Arbeit bereit (Sie können eine Lambda-Funktion oder Delegatfunktion verwenden). **RunAsync** gibt ein [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)-Objekt zurück. Speichern Sie dieses Objekt, da es im nächsten Schritt verwendet wird.
 
-Drei Versionen von [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) sind verfügbar. Damit können Sie optional die Priorität der Arbeitsaufgabe angeben und steuern, ob sie gleichzeitig mit anderen Arbeitsaufgaben ausgeführt wird.
+Drei Versionen von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) sind verfügbar. Damit können Sie optional die Priorität der Arbeitsaufgabe angeben und steuern, ob sie gleichzeitig mit anderen Arbeitsaufgaben ausgeführt wird.
 
 >[!NOTE]
->Verwendung [ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317) zum Zugriff auf den UI-Thread und Anzeigen des Status von der Arbeitsaufgabe.
+>Verwendung [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) zum Zugriff auf den UI-Thread und Anzeigen des Status von der Arbeitsaufgabe.
 
 Im folgenden Beispiel werden eine Arbeitsaufgabe erstellt und ein Lambda für die Verarbeitung angegeben:
 
@@ -269,13 +269,13 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-Nach dem Aufruf von [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) wird die Arbeitsaufgabe vom Threadpool in eine Warteschlange eingereiht und ausgeführt, wenn ein Thread verfügbar wird. Arbeitsaufgaben im Threadpool werden asynchron und in einer beliebigen Reihenfolge ausgeführt. Stellen Sie daher sicher, dass Ihre Arbeitsaufgaben über eine unabhängige Funktionsweise funktionieren.
+Nach dem Aufruf von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) wird die Arbeitsaufgabe vom Threadpool in eine Warteschlange eingereiht und ausgeführt, wenn ein Thread verfügbar wird. Arbeitsaufgaben im Threadpool werden asynchron und in einer beliebigen Reihenfolge ausgeführt. Stellen Sie daher sicher, dass Ihre Arbeitsaufgaben über eine unabhängige Funktionsweise funktionieren.
 
-Beachten Sie, dass von der Arbeitsaufgabe die [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593)-Eigenschaft überprüft und bei einem Abbruch der Arbeitsaufgabe beendet wird.
+Beachten Sie, dass von der Arbeitsaufgabe die [**IAsyncInfo.Status**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.status)-Eigenschaft überprüft und bei einem Abbruch der Arbeitsaufgabe beendet wird.
 
 ## <a name="handle-work-item-completion"></a>Behandeln der Vervollständigung der Arbeitsaufgabe
 
-Stellen Sie einen Vervollständigungshandler zur Verfügung, indem Sie die [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx)-Eigenschaft der Arbeitsaufgabe festlegen. Geben Sie einen Delegaten an (Sie können eine Lambda-Funktion oder Delegatfunktion nutzen), mit dem die Arbeitsaufgabe durchgeführt wird. Verwenden Sie z. B. [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317), um auf den Benutzeroberflächenthread zuzugreifen und das Ergebnis anzuzeigen.
+Stellen Sie einen Vervollständigungshandler zur Verfügung, indem Sie die [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed)-Eigenschaft der Arbeitsaufgabe festlegen. Geben Sie einen Delegaten an (Sie können eine Lambda-Funktion oder Delegatfunktion nutzen), mit dem die Arbeitsaufgabe durchgeführt wird. Verwenden Sie z. B. [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows), um auf den Benutzeroberflächenthread zuzugreifen und das Ergebnis anzuzeigen.
 
 Im folgenden Beispiel wird die Benutzeroberfläche mit dem Ergebnis der in Schritt 1 übermittelten Arbeitsaufgabe aktualisiert:
 

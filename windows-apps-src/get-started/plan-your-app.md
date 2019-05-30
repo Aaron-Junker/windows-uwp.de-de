@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f4c80ca1d031c69f5f70cdf85e90ea1d5887830
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 43423bc1475e446fcc0c6ab3f0d65b5a844d19d2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605665"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370681"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Erstellen von komplexen UWP-Apps (Universelle Windows-Plattform)
 
@@ -128,7 +128,7 @@ Allgemeine Methoden:
 -   **Wiedergeben auf**  können Ihre Benutzer genießen Audio, Video oder Bilder, die von Ihrer app mit anderen Geräten in ihrem privaten Netzwerk gestreamt.
 -   **Dateiauswahl und Dateierweiterungen für die Auswahl**   können Ihre Benutzer zu laden und speichern Sie ihre Dateien aus dem lokalen Dateisystem, verbundene Speichergeräte, Heimnetzgruppe oder auch andere apps. Außerdem können Sie eine Dateiauswahlerweiterung bereitstellen, sodass andere Apps den Inhalt Ihrer App laden können.
 
-Weitere Informationen finden Sie unter [App-Verträge und Erweiterungen](https://msdn.microsoft.com/library/windows/apps/hh464906).
+Weitere Informationen finden Sie unter [App-Verträge und Erweiterungen](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10)).
 <!-- Win 8 page. Should have replacement. -->
 
 **Verschiedene Ansichten, Formfaktoren und Hardwarekonfigurationen**  Windows versetzt Benutzer in Kosten und Ihrer app im Vordergrund. Ihre App-UI soll auf jedem Gerät, mit jeder Eingabemethode, in jeder Ausrichtung, mit allen Hardwarekonfigurationen und unter allen Umständen überzeugen.
@@ -148,15 +148,15 @@ Selbstverständlich können Sie eine Reihe von Interaktionen für Touchscreens w
 **Personalisierung**
 
 -   **Einstellungen**  können Ihre Benutzer, die Umgebung, die sie möchten erstellen, indem Sie Appeinstellungen werden gespeichert. Fassen Sie alle Einstellungen der App auf einem Bildschirm zusammen, und ermöglichen Sie Benutzern die Konfiguration der App mithilfe gängiger Methoden. Weitere Informationen zum [Hinzufügen von App-Einstellungen](../design/app-settings/app-settings-and-data.md).
--   **Roaming**  erstellen Sie eine fortlaufende Oberfläche auf Geräten durch roaming-Daten, können Benutzer übernimmt diese Aufgabe Recht, wo sie aufgehört und behält die Benutzererfahrung, die sie jederzeit gern, unabhängig von dem Gerät, das sie verwenden. Erleichtern Sie Benutzern die Nutzung Ihrer App auf allen Geräten, z. B. auf dem Familien-PC im Wohnzimmer, dem Arbeits-PC und auf dem eigenen Tablet und anderen Formfaktoren. Einstellungen und App-Status werden mittels Roaming beibehalten. Weitere Informationen finden Sie unter [Verwalten von App-Daten](../design/app-settings/store-and-retrieve-app-data.md) und [Richtlinien für das Roaming von Anwendungsdaten](https://msdn.microsoft.com/library/windows/apps/hh465094).
+-   **Roaming**  erstellen Sie eine fortlaufende Oberfläche auf Geräten durch roaming-Daten, können Benutzer übernimmt diese Aufgabe Recht, wo sie aufgehört und behält die Benutzererfahrung, die sie jederzeit gern, unabhängig von dem Gerät, das sie verwenden. Erleichtern Sie Benutzern die Nutzung Ihrer App auf allen Geräten, z. B. auf dem Familien-PC im Wohnzimmer, dem Arbeits-PC und auf dem eigenen Tablet und anderen Formfaktoren. Einstellungen und App-Status werden mittels Roaming beibehalten. Weitere Informationen finden Sie unter [Verwalten von App-Daten](../design/app-settings/store-and-retrieve-app-data.md) und [Richtlinien für das Roaming von Anwendungsdaten](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data).
 -   **Kacheln eines Benutzers**    Verfügbarmachen Ihrer app mehr persönliche für Ihre Benutzer durch ihre Benutzer-Kachel-Bild laden, oder lassen Sie die Benutzer Inhalte von Ihrer app als ihren persönlichen-Kachel in der gesamten Windows festgelegt.
 
 **Gerätefunktionen**  achten, dass Ihre app nutzt die Funktionen der heutigen Geräte.
 
--   **NEAR-Gesten**  lassen Sie die Benutzer, Geräte mit anderen Benutzern verbunden sind, die physisch in unmittelbarer Nähe ausrichten, indem Sie physisch zusammen auf die Geräte (Multiplayer-Spiele). Weitere Informationen hierzu finden Sie unter [Näherung und Kopplung](https://msdn.microsoft.com/library/windows/apps/hh465229).
--   **Kameras und externe Speichergeräte**  Verbindung mit ihren integrierten oder Netzbetrieb Kameras für chatten und Conferencing, und die Aufzeichnung von SQL.%0, Profil Pics, dokumentieren die Welt um, die Ihre Benutzer oder eine beliebige Aktivität der app eignet sich hervorragend zum. Weitere Informationen zum [Zugreifen auf Inhalte auf Wechselspeichermedien](https://msdn.microsoft.com/library/windows/apps/hh465189).
+-   **NEAR-Gesten**  lassen Sie die Benutzer, Geräte mit anderen Benutzern verbunden sind, die physisch in unmittelbarer Nähe ausrichten, indem Sie physisch zusammen auf die Geräte (Multiplayer-Spiele). Weitere Informationen hierzu finden Sie unter [Näherung und Kopplung](https://docs.microsoft.com/previous-versions/windows/apps/hh465229(v=win.10)).
+-   **Kameras und externe Speichergeräte**  Verbindung mit ihren integrierten oder Netzbetrieb Kameras für chatten und Conferencing, und die Aufzeichnung von SQL.%0, Profil Pics, dokumentieren die Welt um, die Ihre Benutzer oder eine beliebige Aktivität der app eignet sich hervorragend zum. Weitere Informationen zum [Zugreifen auf Inhalte auf Wechselspeichermedien](https://docs.microsoft.com/previous-versions/windows/apps/hh465189(v=win.10)).
 -   **Beschleunigungsmesser und andere Sensoren**     Geräte werden mit einer Reihe von Sensoren heutzutage. Ihre App kann die Bildschirmhelligkeit basierend auf der Umgebungshelligkeit erhöhen oder verringern, die UI bei Drehung des Bildschirms anpassen oder auf physische Bewegungen reagieren. Weitere Informationen zu [Sensoren](../devices-sensors/sensors.md).
--   **GeoLocation**  Geolocation-Informationen von standard-Web-Daten oder von Geolocation, Sensoren, um Benutzern umgehen, ermittelt die Position auf einer Karte oder Hinweise zu erhalten, in der Nähe Personen, Aktivitäten und Ziele verwenden. Weitere Informationen zum [geografischen Standort](https://msdn.microsoft.com/library/windows/apps/hh465139).
+-   **GeoLocation**  Geolocation-Informationen von standard-Web-Daten oder von Geolocation, Sensoren, um Benutzern umgehen, ermittelt die Position auf einer Karte oder Hinweise zu erhalten, in der Nähe Personen, Aktivitäten und Ziele verwenden. Weitere Informationen zum [geografischen Standort](https://docs.microsoft.com/previous-versions/windows/apps/hh465139(v=win.10)).
 
 Betrachten Sie noch einmal das Beispiel der Reise-App. Damit sich die App besonders dadurch auszeichnet, dass sie Freunde beim gemeinsamen Erstellen von Reiserouten für Gruppenreisen unterstützt, könnten Sie einige der folgenden Features nutzen:
 
@@ -212,9 +212,9 @@ Ausführlichere Informationen zur Verwendung der unterschiedlichen Oberflächen 
 -   **Versuchen Sie immer, Inhalte zu verwenden.**    Wann immer möglich, sodass die Benutzer direkt bearbeiten, den Inhalt der app-Zeichenbereich, anstatt Hinzufügen von Befehlen, die sich auf dem Inhalt Verhalten. Lassen Sie beispielsweise in der Reise-App zu, dass Benutzer ihre Reiseroute durch Ziehen und Ablegen von Aktivitäten in einer Liste auf der Canvas neu gestalten, anstatt die Aktivität auswählen und sie mithilfe der Befehlsschaltflächen zum Verschieben nach oben bzw. nach unten neu anordnen zu müssen.
 -   **Wenn Sie den Inhalt nicht verwenden können.** Ordnen Sie Befehle in einer dieser UI-Oberflächen an, falls das Verwenden des Inhalts nicht möglich ist:
 
-    -   In der [Befehlsleiste](https://msdn.microsoft.com/library/windows/apps/hh465302): Sie sollten die meisten Befehle in der Befehlsleiste abgelegt ist normalerweise verborgen, bis der Benutzer tippt, um es sichtbar zu machen.
+    -   In der [Befehlsleiste](https://docs.microsoft.com/windows/uwp/controls-and-patterns/app-bars): Sie sollten die meisten Befehle in der Befehlsleiste abgelegt ist normalerweise verborgen, bis der Benutzer tippt, um es sichtbar zu machen.
     -   In der app-Canvas: Wenn der Benutzer auf einer Seite oder Ansicht, die einen einzigen Zweck hat, können Sie Befehle für diesen Zweck direkt auf der Leinwand bereitstellen. Es sollte nur sehr wenige dieser Befehle geben.
-    -   In einem [Kontextmenü](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/menus): Sie können Kontextmenüs für Zwischenablageaktionen (z. B. Ausschneiden, kopieren und Einfügen), oder für Befehle, die um die Inhalte kann nicht ausgewählt werden (z. B. das Pinsymbol das an einen Speicherort auf einer Karte hinzufügen).
+    -   In einem [Kontextmenü](https://docs.microsoft.com/windows/uwp/controls-and-patterns/menus): Sie können Kontextmenüs für Zwischenablageaktionen (z. B. Ausschneiden, kopieren und Einfügen), oder für Befehle, die um die Inhalte kann nicht ausgewählt werden (z. B. das Pinsymbol das an einen Speicherort auf einer Karte hinzufügen).
 
 **Entscheiden Sie, wie das Layout Ihrer app in jeder Ansicht.**    Windows unterstützt quer- und Hochformat-Ausrichtung und unterstützt das Ändern der Größe an die Breite jeder apps an eine Mindestbreite Vollbildmodus. Ihre App soll in jeder Größe, auf jedem Bildschirm und in jeder Ausrichtung richtig angezeigt werden und funktionieren. Dazu müssen Sie das Layout der UI-Elements für unterschiedliche Größen und Ansichten planen. In diesem Fall passt sich die App-UI einfach an die Anforderungen und Einstellungen der Benutzer an.
 
@@ -238,4 +238,4 @@ Weitere Informationen zum Entwerfen für unterschiedliche Bildschirmgrößen fin
 
 Bevor Sie sich der Entwicklung der App widmen, sollten Sie das Design oder den Prototyp anhand von Richtlinien, Benutzereindrücken und Anforderungen überprüfen. Sie vermeiden dadurch möglicherweise eine spätere Überarbeitung. Jede Funktion verfügt über einen Satz von UX-Richtlinien können Sie Ihre app polish und einen Satz von Store-Anforderungen, die Sie erfüllen müssen, um Ihre app in den Microsoft Store zu veröffentlichen. Sie können die App mithilfe des [Zertifizierungskits für Windows-Apps](https://developer.microsoft.com/windows/develop/app-certification-kit) auf die Einhaltung technischer Store-Anforderungen überprüfen. Außerdem können Sie mit den Leistungstools in Microsoft Visual Studio sicherstellen, dass die Benutzer in allen Szenarien von hoher Benutzerfreundlichkeit profitieren.
 
-Mithilfe der [detaillierten UX-Richtlinien für UWP-Apps](https://msdn.microsoft.com/library/windows/apps/hh465424) behalten Sie die wichtigen Features der App im Blick. Analysieren Sie die Leistung der einzelnen Szenarien der App mit [Visual Studio-Leistungstools](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx).
+Mithilfe der [detaillierten UX-Richtlinien für UWP-Apps](https://developer.microsoft.com/windows/design) behalten Sie die wichtigen Features der App im Blick. Analysieren Sie die Leistung der einzelnen Szenarien der App mit [Visual Studio-Leistungstools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015).

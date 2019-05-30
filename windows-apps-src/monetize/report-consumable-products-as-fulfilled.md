@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Sammlungs-API, erfüllen, Verbrauchsprodukt
 ms.localizationpriority: medium
-ms.openlocfilehash: cea8937af3df0ad1e80434d649f431d188521667
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 994113abc34a0a5f7905bff00aa77c6785409927
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615805"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372775"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>Melden von konsumierbaren Produkten als erfüllt
 
@@ -22,7 +22,7 @@ Sie können diese Methode auf zwei Weisen verwenden, um ein Verbrauchsprodukt al
 * Geben Sie die (im **itemId**-Parameter einer [Produktabfrage](query-for-products.md)) zurückgegebene) Artikelkennung des Verbrauchsprodukts und eine von Ihnen bereitgestellte eindeutige Tracking-ID an. Wenn die gleiche Tracking-ID für mehrere Versuche verwendet wird, wird auch dann das gleiche Ergebnis zurückgegeben, wenn der Artikel bereits in Anspruch genommen wurde. Wenn Sie nicht sicher sind, ob eine Verbrauchsanforderung erfolgreich war, sollte Ihr Dienst Verbrauchsanforderungen mit derselben Tracking-ID erneut übermitteln. Die Tracking-ID ist immer mit der jeweiligen Verbrauchsanforderung verknüpft und kann beliebig oft erneut übermittelt werden.
 * Geben Sie die (im **productId**-Parameter einer [Produktabfrage](query-for-products.md) zurückgegebene) Produkt-ID und eine Transaktions-ID an, die aus einer der Quellen abgerufen wird, die in der Beschreibung für den **transactionId**-Parameter im Abschnitt „Anforderungstext“ unten aufgeführt sind.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 
 Zur Verwendung dieser Methode benötigen Sie:
@@ -32,7 +32,7 @@ Zur Verwendung dieser Methode benötigen Sie:
 
 Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus einem Dienst](view-and-grant-products-from-a-service.md).
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 
 ### <a name="request-syntax"></a>Anforderungssyntax
@@ -46,10 +46,10 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 
 | Header         | Typ   | Beschreibung                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Autorisierung  | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;.                           |
-| Host           | string | Muss auf den Wert **collections.mp.microsoft.com** festgelegt werden.                                            |
+| Autorisierung  | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;.                           |
+| Host           | String | Muss auf den Wert **collections.mp.microsoft.com** festgelegt werden.                                            |
 | Content-Length | number | Die Länge des Anforderungstexts.                                                                       |
-| Content-Type   | string | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
+| Content-Type   | String | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -57,19 +57,19 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 | Parameter     | Typ         | Beschreibung         | Erforderlich |
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | Der Benutzer, für den dieser Artikel genutzt wird. Weitere Informationen finden Sie in der folgenden Tabelle.        | Ja      |
-| itemId        | string       | Der Wert *itemId*, der von einer [Produktanfrage](query-for-products.md) zurückgegeben wird. Verwenden Sie diesen Parameter mit *trackingId*.      | Nein       |
+| itemId        | String       | Der Wert *itemId*, der von einer [Produktanfrage](query-for-products.md) zurückgegeben wird. Verwenden Sie diesen Parameter mit *trackingId*.      | Nein       |
 | trackingId    | guid         | Eine eindeutige, vom Entwickler angegebene Tracking-ID. Verwenden Sie diesen Parameter mit *itemId*.         | Nein       |
-| productId     | string       | Der Wert *productId*, den eine [Produktabfrage](query-for-products.md) zurückgibt. Verwenden Sie diesen Parameter mit *transactionId*.   | Nein       |
-| transactionId | guid         | Ein Transaktions-ID-Wert, der aus einer der folgenden Quellen abgerufen wird. Verwenden Sie diesen Parameter mit *productId*.<ul><li>Die [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid)-Eigenschaft der [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392)-Klasse.</li><li>Der von [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync), [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) oder [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) zurückgegebene App- oder Produktbeleg.</li><li>Der Parameter *transactionId*, der von einer [Produktabfrage](query-for-products.md) zurückgegeben wird.</li></ul>   | Nein       |
+| productId     | String       | Der Wert *productId*, den eine [Produktabfrage](query-for-products.md) zurückgibt. Verwenden Sie diesen Parameter mit *transactionId*.   | Nein       |
+| transactionId | guid         | Ein Transaktions-ID-Wert, der aus einer der folgenden Quellen abgerufen wird. Verwenden Sie diesen Parameter mit *productId*.<ul><li>Die [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid)-Eigenschaft der [PurchaseResults](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.PurchaseResults)-Klasse.</li><li>Der von [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync), [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) oder [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) zurückgegebene App- oder Produktbeleg.</li><li>Der Parameter *transactionId*, der von einer [Produktabfrage](query-for-products.md) zurückgegeben wird.</li></ul>   | Nein       |
 
 
 Das UserIdentity-Objekt enthält die folgenden Parameter.
 
 | Parameter            | Typ   | Beschreibung       | Erforderlich |
 |----------------------|--------|-------------------|----------|
-| identityType         | string | Gibt den Zeichenfolgenwert **b2b** an.    | Ja      |
-| identityValue        | string | Der [Microsoft Store-ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4), der die Identität des Benutzers darstellt, für den Sie ein Verbrauchsprodukt als erfüllt melden möchten.      | Ja      |
-| localTicketReference | string | Der angeforderte Bezeichner für die zurückgegebene Antwort. Es wird empfohlen, die Sie verwenden den gleichen Wert wie die *"UserID"*[Anspruch](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) in den Microsoft Store-ID-Schlüssel. | Ja      |
+| identityType         | String | Gibt den Zeichenfolgenwert **b2b** an.    | Ja      |
+| identityValue        | String | Der [Microsoft Store-ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4), der die Identität des Benutzers darstellt, für den Sie ein Verbrauchsprodukt als erfüllt melden möchten.      | Ja      |
+| localTicketReference | String | Der angeforderte Bezeichner für die zurückgegebene Antwort. Es wird empfohlen, die Sie verwenden den gleichen Wert wie die *"UserID"* [Anspruch](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) in den Microsoft Store-ID-Schlüssel. | Ja      |
 
 
 ### <a name="request-examples"></a>Anforderungsbeispiele

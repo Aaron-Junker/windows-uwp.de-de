@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Rendern, Schattenkarte, Tiefenpuffer, Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 27cd535dc51a330937c345acf352677a42c652eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a8ae67df457d4abafc8fb689a747139f62ca0e0e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621335"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368074"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>Rendern der Schattenmap zum Tiefenpuffer
 
@@ -37,7 +37,7 @@ Geben Sie für den Schattenrenderdurchlauf einen Tiefenpuffer an, aber geben Sie
 
 Geben Sie den Viewport für das Licht und einen Vertex-Shader an, und legen Sie die Konstantenpuffer für den Lichtraum fest. Verwenden Sie für diesen Durchlauf das Vorderseiten-Culling, um die in den Schattenpuffer eingefügten Tiefenwerte zu optimieren.
 
-Beachten Sie, dass Sie auf den meisten Geräten "nullptr" für den Pixelshader angeben können (oder die Angabe eines Pixelshaders ganz weglassen können). Für einige Treiber wird jedoch möglicherweise eine Ausnahme ausgelöst, wenn Sie auf dem Direct3D-Gerät einen Draw-Aufruf durchführen, während ein Null-Pixelshader festgelegt ist. Sie können einen minimalen Pixel-Shader für den Schattenrenderdurchlauf festlegen, um diese Ausnahme zu vermeiden. Die Ausgabe dieses Shaders wird nicht aufbewahrt. Für jedes Pixel kann [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995) aufgerufen werden.
+Beachten Sie, dass Sie auf den meisten Geräten "nullptr" für den Pixelshader angeben können (oder die Angabe eines Pixelshaders ganz weglassen können). Für einige Treiber wird jedoch möglicherweise eine Ausnahme ausgelöst, wenn Sie auf dem Direct3D-Gerät einen Draw-Aufruf durchführen, während ein Null-Pixelshader festgelegt ist. Sie können einen minimalen Pixel-Shader für den Schattenrenderdurchlauf festlegen, um diese Ausnahme zu vermeiden. Die Ausgabe dieses Shaders wird nicht aufbewahrt. Für jedes Pixel kann [**discard**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard) aufgerufen werden.
 
 Rendern Sie die Objekte, die Schatten werfen können. Um Geometrieelemente, die keinen Schatten werfen können, brauchen Sie sich jedoch nicht zu kümmern (z. B. ein Boden in einem Raum oder Objekte, die zum Zweck der Optimierung aus dem Schattendurchlauf entfernt werden).
 
@@ -125,7 +125,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Optimieren Sie die Ansicht Frustums:**  Stellen Sie sicher, dass Ihre Implementierung eine umfassende Ansicht Frustums berechnet, damit, dass Ihnen die Genauigkeit Ihrer Tiefenpuffer bietet. Weitere Tipps zu Schattenmethoden finden Sie unter [Häufig verwendete Methoden zur Verbesserung von Tiefenmaps für Schatten](https://msdn.microsoft.com/library/windows/desktop/ee416324).
+**Optimieren Sie die Ansicht Frustums:**  Stellen Sie sicher, dass Ihre Implementierung eine umfassende Ansicht Frustums berechnet, damit, dass Ihnen die Genauigkeit Ihrer Tiefenpuffer bietet. Weitere Tipps zu Schattenmethoden finden Sie unter [Häufig verwendete Methoden zur Verbesserung von Tiefenmaps für Schatten](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps).
 
 ## <a name="vertex-shader-for-shadow-pass"></a>Vertex-Shader für Schattendurchlauf
 

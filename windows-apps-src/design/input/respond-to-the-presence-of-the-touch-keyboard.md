@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: Tastatur, Erreichbarkeit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktionen
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: e44b7cf5a61a795e52490f6d603aea0bcf87bea2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 192c016dfa61f39074d99bccf58ff9371f16d16f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658295"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365428"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Reagieren auf die Anzeige der Bildschirmtastatur
 
@@ -211,8 +211,8 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Tastenkombinationen](keyboard-interactions.md)
-- [Barrierefreiheit der Tastaturnavigation](https://msdn.microsoft.com/library/windows/apps/mt244347)
-- [Benutzerdefinierte Automatisierungs-Peers](https://msdn.microsoft.com/library/windows/apps/mt297667)
+- [Barrierefreiheit der Tastaturnavigation](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
+- [Benutzerdefinierte Automatisierungs-Peers](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
 
 **Beispiele**
 

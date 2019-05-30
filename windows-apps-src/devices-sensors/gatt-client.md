@@ -5,20 +5,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 35488417497ac157969ff2641fbeaa0d4bb02591
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635085"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370120"
 ---
 # <a name="bluetooth-gatt-client"></a>Bluetooth GATT-Client
 
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
--   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
+-   [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+-   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 Dieser Artikel erläutert die Verwendung der Bluetooth Generic Attribut- (GATT-) Client-APIs für Universelle Windows-Plattform- (UWP-) Apps sowie den Beispielcode für allgemeine GATT-Client-Aufgaben:
 - Abfrage für Geräte in der Nähe
@@ -28,7 +28,7 @@ Dieser Artikel erläutert die Verwendung der Bluetooth Generic Attribut- (GATT-)
 - Benachrichtigungen für geänderte Merkmale abonnieren
 
 ## <a name="overview"></a>Übersicht
-Entwickler können mit den APIs im [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)-Namensraum auf Bluetooth LE-Geräte zugreifen. Bluetooth LE-Geräte machen ihre Funktionen über eine Sammlung folgender Elemente verfügbar:
+Entwickler können mit den APIs im [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)-Namensraum auf Bluetooth LE-Geräte zugreifen. Bluetooth LE-Geräte machen ihre Funktionen über eine Sammlung folgender Elemente verfügbar:
 
 -   Dienste
 -   Merkmale
@@ -51,9 +51,9 @@ Es gibt zwei Hauptmethoden zur Abfrage von Geräten in der Nähe:
 - DeviceWatcher in Windows.Devices.Enumeration
 - AdvertisementWatcher in Windows.Devices.Bluetooth.Advertisement
 
-Die zweite Methode wird in der [Anzeigen](ble-beacon.md)-Dokumentation ausführlich erläutert, daher nicht an dieser Stelle; das grundlegende Ziel ist jedoch, Bluetooth-Adressen von Geräten in der Nähe zu finden, die den speziellen [Anzeigenfilter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter.aspx) erfüllen. Wenn Sie die Adresse haben, können Sie [BluetoothLEDevice.FromBluetoothAddressAsync](https://msdn.microsoft.com/en-us/library/windows/apps/mt608819.aspx) aufrufen, um einen Verweis auf das Gerät zu erhalten. 
+Die zweite Methode wird in der [Anzeigen](ble-beacon.md)-Dokumentation ausführlich erläutert, daher nicht an dieser Stelle; das grundlegende Ziel ist jedoch, Bluetooth-Adressen von Geräten in der Nähe zu finden, die den speziellen [Anzeigenfilter](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter) erfüllen. Wenn Sie die Adresse haben, können Sie [BluetoothLEDevice.FromBluetoothAddressAsync](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice.frombluetoothaddressasync) aufrufen, um einen Verweis auf das Gerät zu erhalten. 
 
-Zurück zu der DeviceWatcher-Methode. Bluetooth LE-Geräte funktionieren genau wie alle anderen Geräte in Windows und können mithilfe von [Enumerations-APIs](https://msdn.microsoft.com/library/windows/apps/BR225459) abgefragt werden. Verwenden Sie die [DeviceWatcher](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher)-Klasse, und übergeben Sie eine Abfragezeichenfolge für die gesuchten Geräte: 
+Zurück zu der DeviceWatcher-Methode. Bluetooth LE-Geräte funktionieren genau wie alle anderen Geräte in Windows und können mithilfe von [Enumerations-APIs](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) abgefragt werden. Verwenden Sie die [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher)-Klasse, und übergeben Sie eine Abfragezeichenfolge für die gesuchten Geräte: 
 
 ```csharp
 // Query for extra properties you want returned
@@ -78,10 +78,10 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 // Start the watcher.
 deviceWatcher.Start();
 ```
-Nachdem Sie DeviceWatcher gestartet haben, erhalten Sie [DeviceInformation](https://msdn.microsoft.com/library/windows/apps/br225393) für jedes Gerät, das die Abfrage im Handler für das [Added](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.added)-Ereignis der betreffenden Geräte erfüllt. Eine ausführlichere Beschreibung von DeviceWatcher finden Sie im vollständigen Beispiel [auf Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing). 
+Nachdem Sie DeviceWatcher gestartet haben, erhalten Sie [DeviceInformation](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) für jedes Gerät, das die Abfrage im Handler für das [Added](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added)-Ereignis der betreffenden Geräte erfüllt. Eine ausführlichere Beschreibung von DeviceWatcher finden Sie im vollständigen Beispiel [auf Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing). 
 
 ## <a name="connecting-to-the-device"></a>Verbinden mit dem Gerät
-Sobald ein gewünschtes Gerät erkannt wird, verwenden Sie die [DeviceInformation.ID](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.id), um das Bluetooth LE Device-Objekt für das Gerät abzurufen: 
+Sobald ein gewünschtes Gerät erkannt wird, verwenden Sie die [DeviceInformation.ID](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id), um das Bluetooth LE Device-Objekt für das Gerät abzurufen: 
 
 ```csharp
 async void ConnectDevice(DeviceInformation deviceInfo)
@@ -168,7 +168,7 @@ if (result.Status == GattCommunicationStatus.Success)
     // Successfully wrote to device
 }
 ```
-> **Tipp**: Lehnen Sie sich mit der Verwendung von [DataReader](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datareader.aspx) und [DataWriter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datawriter.aspx). Diese Funktionalität wird unentbehrlich für die Arbeit mit den unformatierten Puffern, die viele Bluetooth-APIs liefern. 
+> **Tipp**: Lehnen Sie sich mit der Verwendung von [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) und [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter). Diese Funktionalität wird unentbehrlich für die Arbeit mit den unformatierten Puffern, die viele Bluetooth-APIs liefern. 
 ## <a name="subscribing-for-notifications"></a>Abonnieren von Benachrichtigungen
 
 Achten Sie darauf, ob das Merkmal die Funktionen „Indicate“ oder „Notify“ unterstützt (Eigenschaften des Merkmals prüfen). 

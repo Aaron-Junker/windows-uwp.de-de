@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Direct3D 11, Initialisierung, portieren, Direct3D 9
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c5a7f33ddbc6d70af5293b92165892c2098e452d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604185"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368035"
 ---
 # <a name="initialize-direct3d-11"></a>Initialisieren von Direct3D 11
 
@@ -29,7 +29,7 @@ Hier wird veranschaulicht, wie Sie Direct3D 9-Initialisierungscode in Direct3D 1
 ## <a name="initialize-the-direct3d-device"></a>Initialisieren des Direct3D-Geräts
 
 
-In Direct3D 9 wurde ein Handle zum Direct3D-Gerät erstellt, indem [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313) aufgerufen wurde. Zuerst wurde ein Zeiger auf [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) abgerufen und eine Anzahl von Parametern angegeben, um die Konfiguration des Direct3D-Geräts und der Swapchain zu steuern. Vorher wurde [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) aufgerufen, um sicherzustellen, dass vom Gerät keine unmöglichen Vorgänge verlangt wurden.
+In Direct3D 9 wurde ein Handle zum Direct3D-Gerät erstellt, indem [**IDirect3D9::CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-createdevice) aufgerufen wurde. Zuerst wurde ein Zeiger auf [**IDirect3D9 interface**](https://docs.microsoft.com/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3d9) abgerufen und eine Anzahl von Parametern angegeben, um die Konfiguration des Direct3D-Geräts und der Swapchain zu steuern. Vorher wurde [**GetDeviceCaps**](https://docs.microsoft.com/windows/desktop/api/wingdi/nf-wingdi-getdevicecaps) aufgerufen, um sicherzustellen, dass vom Gerät keine unmöglichen Vorgänge verlangt wurden.
 
 Direct3D 9
 
@@ -69,7 +69,7 @@ m_pD3D->CreateDevice(
 
 In Direct3D 11 werden der Gerätekontext und die Grafikinfrastruktur als separat vom eigentlichen Gerät angesehen. Die Initialisierung ist in mehrere Schritte unterteilt.
 
-Zuerst wird das Gerät erstellt. Dazu rufen wir eine Liste der Featureebenen ab, die vom Gerät unterstützt werden. Dies sind bereits nahezu alle Informationen, die in Bezug auf die GPU benötigt werden. Allein für den Zugriff auf Direct3D muss auch keine Schnittstelle erstellt werden. Stattdessen wird die [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082)-Kern-API verwendet. So erhalten wir einen Handle zum Gerät und den unmittelbaren Kontext des Geräts. Der Gerätekontext wird verwendet, um den Pipelinestatus festzulegen und Renderbefehle zu erzeugen.
+Zuerst wird das Gerät erstellt. Dazu rufen wir eine Liste der Featureebenen ab, die vom Gerät unterstützt werden. Dies sind bereits nahezu alle Informationen, die in Bezug auf die GPU benötigt werden. Allein für den Zugriff auf Direct3D muss auch keine Schnittstelle erstellt werden. Stattdessen wird die [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice)-Kern-API verwendet. So erhalten wir einen Handle zum Gerät und den unmittelbaren Kontext des Geräts. Der Gerätekontext wird verwendet, um den Pipelinestatus festzulegen und Renderbefehle zu erzeugen.
 
 Nach dem Erstellen des Direct3D 11-Geräts und -Kontexts kann die COM-Zeigerfunktion zum Abrufen der jeweils aktuellen Version der Schnittstellen verwendet werden, die über zusätzliche Funktionen verfügt. Dies ist stets zu empfehlen.
 
@@ -125,7 +125,7 @@ Direct3D 11 enthält eine Geräte-API mit der Bezeichnung DirectX Graphics Infra
 
 Vom Direct3D-Gerät wird eine COM-Schnittstelle für DXGI implementiert. Zuerst muss diese Schnittstelle abgerufen und verwendet werden, um den DXGI-Adapter anzufordern, mit dem das Gerät gehostet wird. Anschließend wird der DXGI-Adapter zum Erstellen einer DXGI-Factory genutzt.
 
-> **Beachten Sie**    diese COM-Schnittstellen sind, Ihre erste Antwort u. u. mit [ **QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Stattdessen sollten Sie intelligente [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)-Zeiger nutzen. Rufen Sie anschließend einfach die [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx)-Methode auf, und stellen Sie einen leeren COM-Zeiger mit dem passenden Schnittstellentyp bereit.
+> **Beachten Sie**    diese COM-Schnittstellen sind, Ihre erste Antwort u. u. mit [ **QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Stattdessen sollten Sie intelligente [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class)-Zeiger nutzen. Rufen Sie anschließend einfach die [**As()** ](https://docs.microsoft.com/previous-versions/br230426(v=vs.140))-Methode auf, und stellen Sie einen leeren COM-Zeiger mit dem passenden Schnittstellentyp bereit.
 
  
 
@@ -147,7 +147,7 @@ dxgiAdapter->GetParent(
     );
 ```
 
-Da die DXGI-Factory jetzt vorhanden ist, können wir sie zum Erstellen der Swapchain verwenden. Als Nächstes werden die Parameter der Swapchain definiert. Wir müssen das Surface-Format angeben. Wählen wir [ **DXGI\_FORMAT\_B8G8R8A8\_UNORM** ](https://msdn.microsoft.com/library/windows/desktop/bb173059) , da er mit Direct2D kompatibel ist. Die Anzeigeskalierung, Multisampling und das Stereorendering werden deaktiviert, weil diese Funktionen in diesem Beispiel nicht verwendet werden. Da die Ausführung direkt in einem CoreWindow-Objekt erfolgt, können wir die Breite und Höhe auf der Einstellung 0 belassen und automatisch Vollbildwerte erhalten.
+Da die DXGI-Factory jetzt vorhanden ist, können wir sie zum Erstellen der Swapchain verwenden. Als Nächstes werden die Parameter der Swapchain definiert. Wir müssen das Surface-Format angeben. Wählen wir [ **DXGI\_FORMAT\_B8G8R8A8\_UNORM** ](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format) , da er mit Direct2D kompatibel ist. Die Anzeigeskalierung, Multisampling und das Stereorendering werden deaktiviert, weil diese Funktionen in diesem Beispiel nicht verwendet werden. Da die Ausführung direkt in einem CoreWindow-Objekt erfolgt, können wir die Breite und Höhe auf der Einstellung 0 belassen und automatisch Vollbildwerte erhalten.
 
 > **Beachten Sie**    immer Satz der *SDKVersion* Parameter D3D11\_SDK\_VERSION für UWP-apps.
 
@@ -167,9 +167,9 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-Um sicherzustellen, dass wir werden nicht gerendert, häufiger als die tatsächlich in der Bildschirm angezeigt werden kann, wir Frame Latenz auf 1 festgelegt und Verwendung [ **DXGI\_AUSTAUSCHEN\_Auswirkung\_KIPPEN\_SEQUENZIELL** ](https://msdn.microsoft.com/library/windows/desktop/bb173077). So kann Energie gespart werden. Außerdem ist dies eine Anforderung für die Store-Zertifizierung. Weitere Informationen zur Darstellung auf dem Bildschirm erhalten Sie in Teil 2 dieser exemplarischen Vorgehensweise.
+Um sicherzustellen, dass wir werden nicht gerendert, häufiger als die tatsächlich in der Bildschirm angezeigt werden kann, wir Frame Latenz auf 1 festgelegt und Verwendung [ **DXGI\_AUSTAUSCHEN\_Auswirkung\_KIPPEN\_SEQUENZIELL** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_effect). So kann Energie gespart werden. Außerdem ist dies eine Anforderung für die Store-Zertifizierung. Weitere Informationen zur Darstellung auf dem Bildschirm erhalten Sie in Teil 2 dieser exemplarischen Vorgehensweise.
 
-> **Beachten Sie**    können Sie multithreading (z. B. [ **ThreadPool** ](https://msdn.microsoft.com/library/windows/apps/br229642) Arbeitsaufgaben), die andere Arbeit fortzusetzen, während das Renderingthread blockiert wird.
+> **Beachten Sie**    können Sie multithreading (z. B. [ **ThreadPool** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading) Arbeitsaufgaben), die andere Arbeit fortzusetzen, während das Renderingthread blockiert wird.
 
  
 

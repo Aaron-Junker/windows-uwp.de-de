@@ -13,24 +13,24 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 461d6d135838a5141e6606d4c77ce21972a45fe1
-ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.openlocfilehash: 5559e4204dd50ff989d48ff4508862489f9d3180
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58901648"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361241"
 ---
 # <a name="command-bar"></a>Befehlsleiste
 
 Über Befehlsleisten können Benutzer komfortabel auf häufig verwendete Befehle in Ihrer App zugreifen. Befehlsleisten ermöglichen den Zugriff auf App-Ebene oder seitenspezifische Befehle und können mit jedem Navigationsmuster verwendet werden.
 
-> **Wichtige APIs:** [CommandBar-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx), [AppBarButton Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx), [AppBarSeparator-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
+> **Wichtige APIs:** [CommandBar-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
 ![Beispiel für eine Befehlsleiste mit Symbolen](images/controls_appbar_icons.png)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Das CommandBar-Steuerelement ist ein allgemeines, flexibles und kleines Steuerelement, mit dem komplexe Inhalte wie Bilder oder Textblöcke sowie einfache Befehle wie [AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)-, [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)- und [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)-Steuerelemente angezeigt werden können.
+Das CommandBar-Steuerelement ist ein allgemeines, flexibles und kleines Steuerelement, mit dem komplexe Inhalte wie Bilder oder Textblöcke sowie einfache Befehle wie [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)-, [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)- und [AppBarSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)-Steuerelemente angezeigt werden können.
 
 > [!NOTE]
 > XAML stellt das [AppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar)-Steuerelement und das [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar)-Steuerelement bereit. Sie sollten AppBar nur verwenden, wenn Sie eine universelle Windows 8-App aktualisieren, in der AppBar verwendet wird, und möglichst wenige Änderungen vornehmen möchten. Für neue Apps in Windows 10 sollten Sie stattdessen das CommandBar-Steuerelement verwenden. In diesem Dokument wird davon ausgegangen, dass Sie das CommandBar-Steuerelement verwenden.
@@ -44,8 +44,8 @@ Das CommandBar-Steuerelement ist ein allgemeines, flexibles und kleines Steuerel
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/CommandBar">die App zu öffnen und CommandBar in Aktion zu sehen</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -74,12 +74,12 @@ Dies ist die gleiche Befehlsleiste im geöffneten Zustand. Die Beschriftungen ze
 ![Geschlossene Befehlsleiste](images/commandbar_anatomy_open.png)
 
 Die Befehlsleiste ist in 4 Hauptbereiche unterteilt:
-- Der Inhaltsbereich wird an der linken Seite der Leiste ausgerichtet. Er wird angezeigt, wenn die Eigenschaft [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) befüllt ist.
-- Der Bereich für primäre Befehle wird an der rechten Seite der Leiste ausgerichtet. Er wird angezeigt, wenn die Eigenschaft [PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx) gefüllt ist.  
-- Die "finden Sie weitere" \[• • • anzuzeigen\] Schaltfläche auf der rechten Seite der Leiste angezeigt wird. Drücken die "finden Sie weitere" \[• • • anzuzeigen\] Schaltfläche zeigt primären Befehl "Bezeichnungen" und das Überlaufmenü wird geöffnet, wenn sekundäre Befehle vorhanden sind. Die Schaltfläche wird nicht angezeigt, wenn keine primären oder sekundären Befehlsbezeichnungen vorhanden sind. Dieses Standardverhalten können Sie mit der [OverflowButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx)-Eigenschaft ändern.
-- Das Überlaufmenü wird nur angezeigt, wenn die Befehlsleiste geöffnet ist und die Eigenschaft [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) befüllt ist. Wenn der Platz begrenzt ist, werden primäre Befehle in den SecondaryCommands-Bereich verschoben. Dieses Standardverhalten können Sie mit der [IsDynamicOverflowEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled.aspx)-Eigenschaft ändern.
+- Der Inhaltsbereich wird an der linken Seite der Leiste ausgerichtet. Er wird angezeigt, wenn die Eigenschaft [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) befüllt ist.
+- Der Bereich für primäre Befehle wird an der rechten Seite der Leiste ausgerichtet. Er wird angezeigt, wenn die Eigenschaft [PrimaryCommands](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands) gefüllt ist.  
+- Die "finden Sie weitere" \[• • • anzuzeigen\] Schaltfläche auf der rechten Seite der Leiste angezeigt wird. Drücken die "finden Sie weitere" \[• • • anzuzeigen\] Schaltfläche zeigt primären Befehl "Bezeichnungen" und das Überlaufmenü wird geöffnet, wenn sekundäre Befehle vorhanden sind. Die Schaltfläche wird nicht angezeigt, wenn keine primären oder sekundären Befehlsbezeichnungen vorhanden sind. Dieses Standardverhalten können Sie mit der [OverflowButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility)-Eigenschaft ändern.
+- Das Überlaufmenü wird nur angezeigt, wenn die Befehlsleiste geöffnet ist und die Eigenschaft [SecondaryCommands](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands) befüllt ist. Wenn der Platz begrenzt ist, werden primäre Befehle in den SecondaryCommands-Bereich verschoben. Dieses Standardverhalten können Sie mit der [IsDynamicOverflowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled)-Eigenschaft ändern.
 
-Das Layout wird umgekehrt, wenn [FlowDirection](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.flowdirection.aspx) auf **RightToLeft** festgelegt wurde.
+Das Layout wird umgekehrt, wenn [FlowDirection](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) auf **RightToLeft** festgelegt wurde.
 
 ## <a name="create-a-command-bar"></a>Erstellen einer Befehlsleiste
 Mit folgendem Beispiel wird die oben gezeigte Befehlsleiste erstellt.
@@ -106,12 +106,12 @@ Mit folgendem Beispiel wird die oben gezeigte Befehlsleiste erstellt.
 ```
 
 ## <a name="commands-and-content"></a>Befehle und Inhalt
-Das CommandBar-Steuerelement verfügt über 3 Eigenschaften, die Sie verwenden können, um Befehle und Inhalt hinzuzufügen: [PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx), [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx), und [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx).
+Das CommandBar-Steuerelement verfügt über 3 Eigenschaften, die Sie verwenden können, um Befehle und Inhalt hinzuzufügen: [PrimaryCommands](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands), [SecondaryCommands](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands), und [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content).
 
 
 ### <a name="commands"></a>Befehle
 
-Befehlsleistenelemente werden standardmäßig der **PrimaryCommands**-Sammlung hinzugefügt. Sie sollten Befehle nach ihrer Wichtigkeit hinzufügen, damit die wichtigsten Befehle immer sichtbar sind. Wenn die Breite der Befehlsleiste geändert wird, z. B. wenn Benutzer die Größe des App-Fensters ändern, werden primäre Befehle dynamisch zwischen der Befehlsleiste und dem Überlaufmenü an Haltepunkten verschoben. Dieses Standardverhalten können Sie mit der [IsDynamicOverflowEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled.aspx)-Eigenschaft ändern. 
+Befehlsleistenelemente werden standardmäßig der **PrimaryCommands**-Sammlung hinzugefügt. Sie sollten Befehle nach ihrer Wichtigkeit hinzufügen, damit die wichtigsten Befehle immer sichtbar sind. Wenn die Breite der Befehlsleiste geändert wird, z. B. wenn Benutzer die Größe des App-Fensters ändern, werden primäre Befehle dynamisch zwischen der Befehlsleiste und dem Überlaufmenü an Haltepunkten verschoben. Dieses Standardverhalten können Sie mit der [IsDynamicOverflowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled)-Eigenschaft ändern. 
 
 Auf sehr kleinen Bildschirmen (Breite: 320 epx) passen maximal vier primäre Befehle in die Befehlsleiste. 
 
@@ -121,12 +121,12 @@ Sie können der **SecondaryCommands**-Sammlung auch Befehle hinzufügen, die im 
 
 Befehle können programmgesteuert nach Bedarf zwischen „PrimaryCommands“ und „SecondaryCommands“ verschoben werden.
 
-- *Ein Befehl, der einheitlich über mehrere Seiten hinweg angezeigt wird, muss immer an der gleichen Stelle platziert werden.*
-- *Es wird empfohlen, die Befehle „Akzeptieren“, „Ja“ und „OK“ links von den Befehlen „Ablehnen“, „Nein“ und „Abbrechen“ zu platzieren. Konsistenz trägt dazu bei, dass Benutzern die App vertraut ist und sie ihre App-Navigationskenntnisse von einer App auf andere Apps übertragen können.*
+- *Ist ein Befehl, der über die Seiten hinweg konsistent angezeigt würde, empfiehlt es sich, diesen Befehl in einem einheitlichen Ort zu halten.*
+- *Platzieren annehmen, Ja, es wird empfohlen, und die OK-Befehle auf der linken Seite des ablehnen, Nein und Abbrechen. Konsistenz ermöglicht Benutzern das vertrauen, um das System zu verschieben und können sie ihre Kenntnisse der app-Navigation von app zu app übertragen.*
 
 ### <a name="app-bar-buttons"></a>App-Leistenschaltflächen
 
-„PrimaryCommands“ und „SecondaryCommands“ können nur mit Befehlselementen vom Typ [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx), and [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) gefüllt werden. 
+„PrimaryCommands“ und „SecondaryCommands“ können nur mit Befehlselementen vom Typ [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) gefüllt werden. 
 
 Die Steuerelemente für die App-Leistenschaltfläche zeichnen sich durch ein Symbol und eine Textbeschriftung aus. Diese Steuerelemente sind für die Verwendung in Befehlsleisten optimiert, und ihr Erscheinungsbild verändert sich abhängig davon, ob das Steuerelement in der Befehlsleiste oder im Überlaufmenü verwendet wird.
 
@@ -135,7 +135,7 @@ Die Symbole im Überlaufmenü sind 16 × 16 px groß und damit kleiner als di
 ### <a name="button-labels"></a>Schaltflächenbeschriftungen
 Mithilfe der Appbarbutton- Eigenschaft [IsCompact](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton.IsCompact) wird festgelegt, ob die Bezeichnung angezeigt wird. In einem CommandBar-Steuerelement überschreibt die Befehlsleiste automatisch die IsCompact-Eigenschaft der Schaltfläche, wenn die Befehlsleiste geöffnet und geschlossen wird.
 
-Verwenden Sie zum Positionieren von App-Leistenschaltflächen die [DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx)-Eigenschaft von CommandBar.
+Verwenden Sie zum Positionieren von App-Leistenschaltflächen die [DefaultLabelPosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelposition)-Eigenschaft von CommandBar.
 
 ```xaml
 <CommandBar DefaultLabelPosition="Right">
@@ -162,7 +162,7 @@ Wenn die Beschriftung an der angegebenen Stelle umgebrochen wird, sieht dies wie
 
 ### <a name="command-bar-flyouts"></a>Flyouts auf einer Befehlsleiste
 
-Ziehen Sie logische Gruppierungen für die Befehle in Erwägung. Platzieren Sie z. B. die Befehle „Antworten“, „Allen antworten“ und „Weiterleiten“ im Menü „Antworten“. Mit einer App-Leistenschaltfläche wird zwar üblicherweise ein einzelner Befehl aktiviert, sie kann jedoch auch zum Anzeigen eines [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx)- oder [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx)-Elements mit benutzerdefiniertem Inhalt verwendet werden.
+Ziehen Sie logische Gruppierungen für die Befehle in Erwägung. Platzieren Sie z. B. die Befehle „Antworten“, „Allen antworten“ und „Weiterleiten“ im Menü „Antworten“. Mit einer App-Leistenschaltfläche wird zwar üblicherweise ein einzelner Befehl aktiviert, sie kann jedoch auch zum Anzeigen eines [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)- oder [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyout)-Elements mit benutzerdefiniertem Inhalt verwendet werden.
 
 ![Beispiel für Flyouts auf einer Befehlsleiste](images/AppbarGuidelines_Flyouts.png)
 
@@ -172,7 +172,7 @@ Sie können dem Inhaltsbereich beliebige XAML-Elemente hinzufügen, indem Sie di
 
 Wenn der dynamische Überlauf aktiviert ist, wird der Inhalt nicht abgeschnitten, da die primären Befehle in das Überlaufmenü verschoben werden können. Andernfalls haben primäre Befehle Vorrang und können dazu führen, dass der Inhalt abgeschnitten wird.
 
-Wenn [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) auf **Compact** festgelegt wurde, kann der Inhalt abgeschnitten werden, wenn er größer als die kompakte Größe der Befehlsleiste ist. Behandeln Sie das [Opening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx)-Ereignis und das [Closed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx)-Ereignis, um Teile der Benutzeroberfläche im Inhaltsbereich anzuzeigen oder auszublenden, damit sie nicht beschnitten werden. Weitere Informationen finden Sie im Abschnitt [Geöffneter und geschlossener Zustand](#open-and-closed-states).
+Wenn [ClosedDisplayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode) auf **Compact** festgelegt wurde, kann der Inhalt abgeschnitten werden, wenn er größer als die kompakte Größe der Befehlsleiste ist. Behandeln Sie das [Opening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.opening)-Ereignis und das [Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closed)-Ereignis, um Teile der Benutzeroberfläche im Inhaltsbereich anzuzeigen oder auszublenden, damit sie nicht beschnitten werden. Weitere Informationen finden Sie im Abschnitt [Geöffneter und geschlossener Zustand](#open-and-closed-states).
 
 
 ## <a name="open-and-closed-states"></a>Geöffneter und geschlossener Zustand
@@ -180,9 +180,9 @@ Wenn [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/wi
 Die Befehlsleiste kann geöffnet oder geschlossen sein. Wenn es geöffnet ist, werden die primären Schaltflächen mit Beschriftungen und (falls vorhanden sekundäre Befehle sind) geöffnet Überlaufmenü wird.
 Die Befehlsleiste wird geöffnet, das Überlaufmenü immer (über die primären Befehle) oder nach unten (siehe unten die primären Befehle). Die standardrichtung ist nach oben, jedoch wird es nicht genügend Speicherplatz für das Überlaufmenü aufwärts zu öffnen, öffnet der Befehlsleiste sie nach unten. 
 
-Benutzer kann zwischen diesen Zuständen durch Drücken von "finden Sie weitere" wechseln \[• • • anzuzeigen\] Schaltfläche. Sie können programmgesteuert zwischen den Zuständen wechseln, indem Sie einen Wert für die Eigenschaft [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) festlegen. 
+Benutzer kann zwischen diesen Zuständen durch Drücken von "finden Sie weitere" wechseln \[• • • anzuzeigen\] Schaltfläche. Sie können programmgesteuert zwischen den Zuständen wechseln, indem Sie einen Wert für die Eigenschaft [IsOpen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.isopen) festlegen. 
 
-Sie können die Ereignisse [Opening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx), [Opened](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx), [Closing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx) und [Closed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) nutzen, um auf das Öffnen und Schließen der Befehlsleiste zu reagieren.  
+Sie können die Ereignisse [Opening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.opening), [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.opened), [Closing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closing) und [Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closed) nutzen, um auf das Öffnen und Schließen der Befehlsleiste zu reagieren.  
 - Das Opening-Ereignis und das Closing-Ereignis treten vor Beginn der Übergangsanimation ein.
 - Das Opened-Ereignis und das Closed-Ereignis treten nach Abschluss des Übergangs ein.
 
@@ -215,18 +215,18 @@ private void CommandBar_Closing(object sender, object e)
 
 ### <a name="issticky"></a>IsSticky
 
-Wenn ein Benutzer bei geöffneter Befehlsleiste mit anderen Teilen einer App interagiert, wird die Befehlsleiste automatisch geschlossen. Dies wird als *einfaches Ausblenden* bezeichnet. Sie können das Verhalten für einfaches Ausblenden steuern, indem Sie einen Wert für die Eigenschaft [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) festlegen. Wenn `IsSticky="true"`, die Leiste bleibt geöffnet, bis der Benutzer "finden Sie weitere" drückt \[• • • anzuzeigen\] Schaltfläche oder ein Element aus das Überlaufmenü ausgewählt. 
+Wenn ein Benutzer bei geöffneter Befehlsleiste mit anderen Teilen einer App interagiert, wird die Befehlsleiste automatisch geschlossen. Dies wird als *einfaches Ausblenden* bezeichnet. Sie können das Verhalten für einfaches Ausblenden steuern, indem Sie einen Wert für die Eigenschaft [IsSticky](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.issticky) festlegen. Wenn `IsSticky="true"`, die Leiste bleibt geöffnet, bis der Benutzer "finden Sie weitere" drückt \[• • • anzuzeigen\] Schaltfläche oder ein Element aus das Überlaufmenü ausgewählt. 
 
 Es wird empfohlen, persistente Befehlsleisten vermeiden, da sie nicht den Erwartungen für Benutzer entsprechen [Licht zu verwerfen und Fokusverhalten der Tastatur](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#light-dismiss).
 
 ### <a name="display-mode"></a>Anzeigemodus
 
-Sie können steuern, wie die Befehlsleiste im geschlossenen Zustand angezeigt wird, indem Sie einen Wert für die Eigenschaft [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) festlegen. Sie können aus drei Anzeigemodi für den geschlossenen Zustand auswählen:
+Sie können steuern, wie die Befehlsleiste im geschlossenen Zustand angezeigt wird, indem Sie einen Wert für die Eigenschaft [ClosedDisplayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode) festlegen. Sie können aus drei Anzeigemodi für den geschlossenen Zustand auswählen:
 - **Compact**: Der Standardmodus. Zeigt die Inhalte, primäre Befehlssymbole ohne Bezeichnung und der "finden Sie unter" Weitere \[• • • anzuzeigen\] Schaltfläche.
 - **Minimal**: Zeigt nur eine dünne Leiste, als die "Weitere Informationen fungiert" \[• • • anzuzeigen\] Schaltfläche. Der Benutzer kann auf eine beliebige Stelle auf der Leiste tippen, um sie zu öffnen.
 - **Versteckt**: Die Befehlsleiste wird nicht angezeigt, wenn es geschlossen wird. Dies kann hilfreich beim Anzeigen von Kontextbefehlen mit einer Inlinebefehlsleiste sein. In diesem Fall müssen Sie die Befehlsleiste programmgesteuert öffnen, indem Sie die **IsOpen**-Eigenschaft festlegen oder ClosedDisplayMode auf **Minimal** oder **Compact** festlegen.
 
-Hier enthält eine Befehlsleiste einfache Formatierungsbefehle für eine [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx). Wenn das Bearbeitungsfeld nicht den Fokus besitzt, können die Formatierungsbefehle störend sein, daher werden sie ausgeblendet. Wenn das Bearbeitungsfeld verwendet wird, wird ClosedDisplayMode für die Befehlsleiste in „Compact“ geändert, sodass die Formatierungsbefehle angezeigt werden.
+Hier enthält eine Befehlsleiste einfache Formatierungsbefehle für eine [RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox). Wenn das Bearbeitungsfeld nicht den Fokus besitzt, können die Formatierungsbefehle störend sein, daher werden sie ausgeblendet. Wenn das Bearbeitungsfeld verwendet wird, wird ClosedDisplayMode für die Befehlsleiste in „Compact“ geändert, sodass die Formatierungsbefehle angezeigt werden.
 
 ```xaml
 <StackPanel Width="300"
@@ -267,20 +267,20 @@ Befehlsleisten können am oberen Rand des App-Fensters, am unteren Rand des App-
 -   Bei kleinen Handheld-Geräten empfiehlt es sich, Befehlsleisten am unteren Bildschirmrand zu platzieren, da sie dort besser erreichbar sind.
 -   Bei Geräten mit größeren Bildschirmen hat es sich bewährt, Befehlsleisten im oberen Bereich des Fensters zu platzieren.
 
-Zur Ermittlung der Größe des physischen Bildschirms können Sie die API [DiagonalSizeInInches](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) verwenden.
+Zur Ermittlung der Größe des physischen Bildschirms können Sie die API [DiagonalSizeInInches](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.diagonalsizeininches) verwenden.
 
 Befehlsleisten können auf Bildschirmen mit einzelner Ansicht (linkes Beispiel) und auf Bildschirmen mit mehreren Ansichten (rechtes Beispiel) in folgenden Bildschirmbereichen platziert werden: Inlinebefehlsleisten können überall im Aktionsbereich platziert werden.
 
 ![Beispiel 2 für die Platzierung der App-Leiste](images/AppbarGuidelines_Placement2.png)
 
->**Touch-Geräte**: Wenn die Befehlsleiste sichtbar ist, zu einem Benutzer bleiben muss, wenn die Bildschirmtastatur oder Soft Input Panel (SIP) angezeigt wird, und klicken Sie dann Sie auf die Befehlsleiste zuweisen können die ["bottomappbar"](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.bottomappbar.aspx) Eigenschaft einer Seite, und es werden verschoben, sichtbar bleiben, wenn das SIP vorhanden ist. . Andernfalls müssen Sie die Befehlsleiste inline relativ zum App-Inhalt platzieren.
+>**Touch-Geräte**: Wenn die Befehlsleiste sichtbar ist, zu einem Benutzer bleiben muss, wenn die Bildschirmtastatur oder Soft Input Panel (SIP) angezeigt wird, und klicken Sie dann Sie auf die Befehlsleiste zuweisen können die ["bottomappbar"](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.bottomappbar) Eigenschaft einer Seite, und es werden verschoben, sichtbar bleiben, wenn das SIP vorhanden ist. . Andernfalls müssen Sie die Befehlsleiste inline relativ zum App-Inhalt platzieren.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
 - [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
-- [Beispiel für XAML-Befehle](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [Befehle der XAML-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Befehlsdesigngrundlagen für UWP-Apps](../basics/commanding-basics.md)
-* [CommandBar-Klasse](https://msdn.microsoft.com/library/windows/apps/dn279427)
+* [CommandBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

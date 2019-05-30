@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ac4e5bb7c761ad6661647cb88f831ffa652b6241
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7942839b43739ca5fb15106abbfa1877ead81dc2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662425"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362769"
 ---
 # <a name="flip-view"></a>Flip-Ansicht
 
@@ -24,7 +24,7 @@ ms.locfileid: "57662425"
 
 Verwenden Sie eine Flip-Ansicht zum Durchsuchen von Bildern oder anderen Elementen in einer Sammlung, z. B. von Fotos in einem Album oder von Elementen auf einer Seite mit Produktdetails, wobei jeweils ein Bild gescannt wird. Bei Geräten mit Touchscreen erfolgt die Navigation durch die Sammlung mit einer Wischbewegung über ein Element. Bei Verwendung mit einer Maus werden beim Zeigen mit der Maus Navigationsschaltflächen angezeigt. Bei Verwendung einer Tastatur erfolgt die Navigation durch die Sammlung mithilfe der Pfeiltasten.
 
-> **Wichtige APIs:** [FlipView-Klasse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx), [ItemsSource-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [ItemTemplate-Eigenschaft](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
+> **Wichtige APIs:** [FlipView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [ItemsSource-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
@@ -57,13 +57,13 @@ Eine Flip-Ansicht kann auch vertikal durchsucht werden:
 
 ## <a name="create-a-flip-view"></a>Erstellen einer Flip-Ansicht
 
-FlipView ist ein [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx), so dass es eine Sammlung von Elementen jeden Typs enthalten kann. Um die Ansicht auszufüllen, fügen Sie der Sammlung [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) Elemente hinzu, oder legen die Eigenschaft [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) auf eine Datenquelle fest.
+FlipView ist ein [ItemsControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol), so dass es eine Sammlung von Elementen jeden Typs enthalten kann. Um die Ansicht auszufüllen, fügen Sie der Sammlung [**Items**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) Elemente hinzu, oder legen die Eigenschaft [**ItemsSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Datenquelle fest.
 
-Datenelemente werden in der Flip-Ansicht standardmäßig als Zeichenfolgendarstellung des Datenobjekts angezeigt, an das sie gebunden sind. Um genau anzugeben, wie Elemente in der Flip-Ansicht angezeigt werden, erstellen Sie eine [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx), um das Layout der Steuerelemente zu definieren, die für die Anzeige eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, den Inhalt intern zu definieren. Sie weisen die DataTemplate der Eigenschaft [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) von FlipView zu.
+Datenelemente werden in der Flip-Ansicht standardmäßig als Zeichenfolgendarstellung des Datenobjekts angezeigt, an das sie gebunden sind. Um genau anzugeben, wie Elemente in der Flip-Ansicht angezeigt werden, erstellen Sie eine [**DataTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate), um das Layout der Steuerelemente zu definieren, die für die Anzeige eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, den Inhalt intern zu definieren. Sie weisen die DataTemplate der Eigenschaft [**DataTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) von FlipView zu.
 
 ### <a name="add-items-to-the-items-collection"></a>Hinzufügen von Elementen zur Sammlung Items
 
-Sie können der Sammlung [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) Elemente per XAML oder Code hinzufügen. In der Regel fügen Sie Elemente auf diese Weise hinzu, wenn Sie nur über eine geringe Anzahl von Elementen verfügen, die sich nicht ändern und einfach in XAML definiert werden können, oder wenn die Elemente zur Laufzeit im Code generiert werden. Hier sehen Sie eine Flip-Ansicht mit inline definierten Elementen.
+Sie können der Sammlung [**Items**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) Elemente per XAML oder Code hinzufügen. In der Regel fügen Sie Elemente auf diese Weise hinzu, wenn Sie nur über eine geringe Anzahl von Elementen verfügen, die sich nicht ändern und einfach in XAML definiert werden können, oder wenn die Elemente zur Laufzeit im Code generiert werden. Hier sehen Sie eine Flip-Ansicht mit inline definierten Elementen.
 
 ```xaml
 <FlipView x:Name="flipView1">
@@ -84,13 +84,13 @@ flipView1.Items.Add("Item 2");
 stackPanel1.Children.Add(flipView1);
 ```
 
-Wenn Sie einer Flip-Ansicht Elemente hinzufügen, werden diese automatisch in einem [**FlipViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipviewitem.aspx)-Container platziert. Um die Art und Weise zu ändern, wie ein Element angezeigt wird, können Sie dem Elementcontainer einen Stil zuordnen. Legen Sie dazu die [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)-Eigenschaft fest. 
+Wenn Sie einer Flip-Ansicht Elemente hinzufügen, werden diese automatisch in einem [**FlipViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipViewItem)-Container platziert. Um die Art und Weise zu ändern, wie ein Element angezeigt wird, können Sie dem Elementcontainer einen Stil zuordnen. Legen Sie dazu die [**ItemContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)-Eigenschaft fest. 
 
 Wenn Sie die Elemente in XAML definieren, werden sie der Sammlung Items automatisch hinzugefügt.
 
 ### <a name="set-the-items-source"></a>Festlegen der Quelle von Elementen
 
-In der Regel verwenden Sie eine Flip-Ansicht, um Daten aus Quellen wie einer Datenbank oder dem Internet anzuzeigen. Um eine Flip-Ansicht aus einer Datenquelle zu füllen, legen Sie deren Eigenschaft [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) auf eine Sammlung mit Datenelementen fest.
+In der Regel verwenden Sie eine Flip-Ansicht, um Daten aus Quellen wie einer Datenbank oder dem Internet anzuzeigen. Um eine Flip-Ansicht aus einer Datenquelle zu füllen, legen Sie deren Eigenschaft [**ItemsSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Sammlung mit Datenelementen fest.
 
 Hier ist die ItemsSource der Flip-Ansicht im Code direkt auf eine Instanz einer Sammlung festgelegt.
 
@@ -112,7 +112,7 @@ stackPanel1.Children.Add(flipView1);
 
 Sie können die ItemsSource-Eigenschaft auch an eine Sammlung in XAML binden. Weitere Informationen finden Sie unter [Datenbindung mit XAML](../../data-binding/data-binding-quickstart.md).
 
-Hier wird die ItemsSource an eine [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) mit dem Namen `itemsViewSource` gebunden. 
+Hier wird die ItemsSource an eine [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) mit dem Namen `itemsViewSource` gebunden. 
 
 ```xaml
 <Page.Resources>
@@ -130,7 +130,7 @@ Hier wird die ItemsSource an eine [**CollectionViewSource**](https://msdn.micros
 
 ### <a name="specify-the-look-of-the-items"></a>Festlegen der Darstellung der Elemente
 
-Datenelemente werden in der Flip-Ansicht standardmäßig als Zeichenfolgendarstellung des Datenobjekts angezeigt, an das sie gebunden sind. In der Regel möchten Sie eine ansprechendere Darstellung Ihrer Daten anzeigen. Um genau anzugeben, wie Elemente in der Flip-Ansicht angezeigt werden, erstellen Sie eine [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). Der XAML-Code in der DataTemplate definiert das Layout und die Darstellung von Steuerelementen, die zum Anzeigen eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, den Inhalt intern zu definieren. Die DataTemplate ist der Eigenschaft [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) des FlipView-Steuerelements zugeordnet.
+Datenelemente werden in der Flip-Ansicht standardmäßig als Zeichenfolgendarstellung des Datenobjekts angezeigt, an das sie gebunden sind. In der Regel möchten Sie eine ansprechendere Darstellung Ihrer Daten anzeigen. Um genau anzugeben, wie Elemente in der Flip-Ansicht angezeigt werden, erstellen Sie eine [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Der XAML-Code in der DataTemplate definiert das Layout und die Darstellung von Steuerelementen, die zum Anzeigen eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, den Inhalt intern zu definieren. Die DataTemplate ist der Eigenschaft [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) des FlipView-Steuerelements zugeordnet.
 
 In diesem Beispiel wird die ItemTemplate einer FlipView inline definiert. Dem Bild wird eine Überlagerung hinzugefügt, um den Bildnamen anzuzeigen. 
 
@@ -159,7 +159,7 @@ Datenvorlage für die Flip-Ansicht.
 
 ### <a name="set-the-orientation-of-the-flip-view"></a>Festlegen der Ausrichtung der Flip-Ansicht
 
-Standardmäßig blättert die Flip-Ansicht horizontal. Damit sie vertikal blättert, verwenden Sie ein StackPanel-Element mit vertikaler Ausrichtung als [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) der Flip-Ansicht.
+Standardmäßig blättert die Flip-Ansicht horizontal. Damit sie vertikal blättert, verwenden Sie ein StackPanel-Element mit vertikaler Ausrichtung als [**ItemsPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) der Flip-Ansicht.
 
 Dieses Beispiel zeigt, wie ein StackPanel-Element mit vertikaler Ausrichtung als ItemsPanel einer FlipView verwendet wird.
 
@@ -232,4 +232,4 @@ Beispielcode, der veranschaulicht, wie Sie einem FlipView-Element eine Kontextan
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Richtlinien für Listen](lists.md)
-- [**FlipView-Klasse**](https://msdn.microsoft.com/library/windows/apps/br242678)
+- [**FlipView-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c622c037f878d1ad34cdadf897dde10683532832
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28376f6e96cc490c7c44f4ed60093591e873300e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660865"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371005"
 ---
 # <a name="rasterization-rules"></a>Regeln für die Rasterung
 
@@ -97,7 +97,7 @@ Regeln für die Grundtypenrasterung werden normalerweise durch Multisample-Antia
 
 -   Für einen Punkt wird ein Abdeckungstest für jede Beispielposition (nicht für eine Pixelmitte) ausgeführt.
 
-Multisampling-Formate können in Renderzielen verwendet werden, die wieder in Shader mithilfe von [load](https://msdn.microsoft.com/library/windows/desktop/bb509694) gelesen werden können, da für einzelne Beispiele, auf die der Shader zugreift, keine Lösung erforderlich ist. Tiefenformate werden für Multisample-Ressourcen nicht unterstützt. Daher sind Tiefenformate auf Renderziele beschränkt.
+Multisampling-Formate können in Renderzielen verwendet werden, die wieder in Shader mithilfe von [load](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load) gelesen werden können, da für einzelne Beispiele, auf die der Shader zugreift, keine Lösung erforderlich ist. Tiefenformate werden für Multisample-Ressourcen nicht unterstützt. Daher sind Tiefenformate auf Renderziele beschränkt.
 
 Formate ohne Typ unterstützen Multisampling, um einer Ressourcenansicht das Interpretieren von Daten auf unterschiedliche Weise zu ermöglichen. Beispielsweise erstellen Sie konnte eine für Multisampling-Ressource mit R8G8B8A8\_TYPELESS, rendern Sie über eine renderzielansicht Ressource mit einer R8G8B8A8\_UINT zu formatieren, und beheben Sie den Inhalt in eine andere Ressource mit einer R8G8B8A8\_UNORM-Datenformat.
 

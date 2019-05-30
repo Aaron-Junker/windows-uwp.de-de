@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c5e1c294da2b4ef24ff8f62b686890cb8c69c06
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 70957cbce10da25943b3c6347ccbbc81aafb5739
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646285"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370773"
 ---
 # <a name="input-assembler-ia-stage"></a>Eingabeassemblerphase (IA)
 
@@ -22,7 +22,7 @@ Die Eingabeassemblerphase (IA) liefert Grundtypen und angrenzende Daten an die P
 ## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>Zweck und Verwendung
 
 
-Die Eingabeassemblerphase (IA) dient dem Zweck, Grundtypendaten (Punkte, Linien und Dreiecke) aus den von Benutzer gefüllten Puffern zu lesen und die Daten zu Grundtypen zusammenzusetzen, die dann von den anderen Pipeline-Phasen verwendet werden, und [systemgenerierte Werte](https://msdn.microsoft.com/library/windows/desktop/bb509647) anzuhängen, damit die Shader effizienter arbeiten können. Bei systemgenerierten Werten handelt es sich um Textzeichenfolgen, die auch als Semantiken bezeichnet werden. Die programmierbaren Shader-Phasen werden aus einem herkömmlichen Shader-Kern konstruiert, der systemgenerierte Werte (wie Grundtyp-ID, Instanz-ID oder eine Scheitelpunkt-ID) verwendet, so dass die Shader-Phase die Verarbeitung auf diese Grundtypen, Instanzen und Scheitelpunkte reduzieren kann, die noch nicht verarbeitet wurden.
+Die Eingabeassemblerphase (IA) dient dem Zweck, Grundtypendaten (Punkte, Linien und Dreiecke) aus den von Benutzer gefüllten Puffern zu lesen und die Daten zu Grundtypen zusammenzusetzen, die dann von den anderen Pipeline-Phasen verwendet werden, und [systemgenerierte Werte](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) anzuhängen, damit die Shader effizienter arbeiten können. Bei systemgenerierten Werten handelt es sich um Textzeichenfolgen, die auch als Semantiken bezeichnet werden. Die programmierbaren Shader-Phasen werden aus einem herkömmlichen Shader-Kern konstruiert, der systemgenerierte Werte (wie Grundtyp-ID, Instanz-ID oder eine Scheitelpunkt-ID) verwendet, so dass die Shader-Phase die Verarbeitung auf diese Grundtypen, Instanzen und Scheitelpunkte reduzieren kann, die noch nicht verarbeitet wurden.
 
 Eine IA-Phase kann Scheitelpunkte zu mehreren verschiedenen [Grundtypen](primitive-topologies.md) (wie Linienlisten, Dreieckstreifen oder Grundtypen mit angrenzenden Daten) zusammenstellen. Grundtypen wie Dreiecklisten mit angrenzenden Daten und eine Linienliste mit angrenzenden Daten unterstützten die [Geometrieshaderphase (GS)](geometry-shader-stage--gs-.md).
 
@@ -61,7 +61,7 @@ Die IA-Phase stellt die Daten zu Grundtypen zusammen und hängt systemgenerierte
 </tr>
 <tr class="even">
 <td align="left"><p><a href="using-system-generated-values.md">Verwenden von vom System generierte Werte</a></p></td>
-<td align="left"><p>Systemgenerierte Werte werden von der Eingabeassemblerphase (IA) generiert (basierend auf vom Benutzer bereitgestellten Eingaben <a href="https://msdn.microsoft.com/library/windows/desktop/bb509647">Semantiken</a>), um bestimmte Effizienzvorteile in Shaderabläufen zu ermöglichen. Durch das Anhängen von Daten, wie beispielsweise der Instanz-ID (sichtbar für die <a href="vertex-shader-stage--vs-.md">Vertexshaderphase (VS)</a>), einer Scheitelpunkt-ID (sichtbar für VS) oder einer Grundtypen-ID (sichtbar für die <a href="geometry-shader-stage--gs-.md">Geometrieshaderphase (GS)</a>/<a href="pixel-shader-stage--ps-.md">Pixelshaderphase (PS)</a>), kann eine nachfolgende Shaderphase nach diesen Systemwerten suchen, um die Verarbeitung in dieser Phase zu verbessern.</p></td>
+<td align="left"><p>Systemgenerierte Werte werden von der Eingabeassemblerphase (IA) generiert (basierend auf vom Benutzer bereitgestellten Eingaben <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">Semantiken</a>), um bestimmte Effizienzvorteile in Shaderabläufen zu ermöglichen. Durch das Anhängen von Daten, wie beispielsweise der Instanz-ID (sichtbar für die <a href="vertex-shader-stage--vs-.md">Vertexshaderphase (VS)</a>), einer Scheitelpunkt-ID (sichtbar für VS) oder einer Grundtypen-ID (sichtbar für die <a href="geometry-shader-stage--gs-.md">Geometrieshaderphase (GS)</a>/<a href="pixel-shader-stage--ps-.md">Pixelshaderphase (PS)</a>), kann eine nachfolgende Shaderphase nach diesen Systemwerten suchen, um die Verarbeitung in dieser Phase zu verbessern.</p></td>
 </tr>
 </tbody>
 </table>

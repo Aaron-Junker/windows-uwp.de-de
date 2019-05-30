@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f8c1cc6e17d95f55cc97af7695c12b374edcaaa8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2c7fadaf902b4aa543234bc8d43fbc1595a54219
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632885"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369682"
 ---
 # <a name="use-the-compass"></a>Verwenden des Kompasses
 
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Kompass**](https://msdn.microsoft.com/library/windows/apps/BR225705)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Kompass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)
 
 **Beispiel**
 
@@ -29,7 +29,7 @@ Hier erfahren Sie, wie Sie mithilfe des Kompasses die aktuelle Richtung ermittel
 
 Apps können die aktuelle Richtung anhand des magnetischen oder geografischen Nordpols bestimmen. Navigations-Apps bestimmen mit dem Kompass die Richtung, in die das Gerät weist, und passen damit die Karte an.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
 

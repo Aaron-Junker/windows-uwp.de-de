@@ -6,12 +6,12 @@ keywords: DirectX-Spielbeispiel, Spielbeispiel, Universelle Windows-Plattform (U
 ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c2ee2795410c083a6dd460a8537115dc8d20de31
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642865"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367703"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>Erstellen eines einfachen Spiels für die universelle Windows-Plattform (UWP) mit DirectX
 
@@ -32,7 +32,7 @@ Für dieses Tutorial müssen Sie mit den folgenden Themen vertraut sein:
 -   Grundlegende Konzepte der linearen Algebra und der newtonschen Physik.
 -   Grundlegende Terminologie für die Grafikprogrammierung.
 -   Grundlegende Konzepte der Windows-Programmierung.
--   Grundlegende Kenntnisse der APIs von [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) und [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569).
+-   Grundlegende Kenntnisse der APIs von [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) und [Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/how-to-use-direct3d-11).
 
 ##  <a name="direct3d-uwp-shooting-game-sample"></a>Beispiel für einen Direct3D UWP-Shooter
 
@@ -61,5 +61,5 @@ Das Beispiel veranschaulicht folgende Spielkonzepte:
 | [Rendering-Framework II: Rendern von Spielen](tutorial-game-rendering.md) | Erfahren Sie im zweiten Teil des Themas Rendern mehr über das Vorbereiten der Daten, die vor der Wiedergabe erforderlich sind. |
 | [Fügen Sie eine Benutzeroberfläche hinzu](tutorial--adding-a-user-interface.md) | Fügen Sie einfache Menüoptionen und Heads-up-Anzeigekomponenten hinzu, die dem Spieler Feedback bereitstellen. |
 | [Hinzufügen von Steuerelementen](tutorial--adding-controls.md) | Fügen Sie dem Spiel Bewegungs-/Blicksteuerungen hinzu &mdash; grundlegende Fingereingabe, Maus und Gamecontroller-Steuerelemente. |
-| [Hinzufügen von sound](tutorial--adding-sound.md) | Enthält Informationen zum Erstellen von Sounds für das Spiel mit [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs. |
+| [Hinzufügen von sound](tutorial--adding-sound.md) | Enthält Informationen zum Erstellen von Sounds für das Spiel mit [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction) APIs. |
 | [Erweitern Sie das Beispiel](tutorial-resources.md) | Ressourcen, um Ihre Kenntnisse der DirectX-Spieleentwicklung weiter zu vertiefen, einschließlich die Verwendung von XAML zum Erstellen von Überlagerungen. |

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Uwp, verbundene Geräte "," Remotesystemen "," ROM "," Projekt "ROME"
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ac4a5783250f3bd21cb8a3b96a579715830e687d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658415"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371715"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>Starten einer App auf einem Remotegerät
 
@@ -62,7 +62,7 @@ Fügen Sie Ihrem App-Startcode einen Aufruf an `BuildDeviceList()` hinzu, bevor 
 
 ## <a name="launch-an-app-on-a-remote-device"></a>Starten einer App auf einem Remotegerät
 
-Sie starten eine App remote, indem Sie das Gerät, mit dem Sie eine Verbindung herstellen möchten, an die [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx)-API übergeben. Für diese Methode gibt es drei Überladungen. Die einfachste Überladung, die in diesem Beispiel gezeigt wird, gibt den URI an, der die App auf dem Remotegerät aktiviert. In diesem Beispiel öffnet der URI die Karten-App auf dem Remotecomputer mit einer 3D-Ansicht der Space Needle.
+Sie starten eine App remote, indem Sie das Gerät, mit dem Sie eine Verbindung herstellen möchten, an die [**RemoteLauncher.LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotelauncher.launchuriasync)-API übergeben. Für diese Methode gibt es drei Überladungen. Die einfachste Überladung, die in diesem Beispiel gezeigt wird, gibt den URI an, der die App auf dem Remotegerät aktiviert. In diesem Beispiel öffnet der URI die Karten-App auf dem Remotecomputer mit einer 3D-Ansicht der Space Needle.
 
 Andere **RemoteLauncher.LaunchUriAsync**-Überladungen ermöglichen die Angabe von Optionen, wie den URI der Website, die angezeigt werden soll, wenn keine entsprechende App auf dem Remotegerät gestartet werden kann, und die Angabe einer optionalen Liste der Paketfamiliennamen, die zum Starten des URIs auf dem Remotegerät verwendet werden können. Sie können auch Daten in Form von Schlüssel-Wert-Paaren bereitstellen. Sie können beispielsweise Daten an die App übergeben, die Sie aktivieren, um einen Kontext für die Remote-App bereitzustellen, etwa den Namen des wiederzugebenden Titels oder die aktuelle Position der Wiedergabe bei der Übergabe von einem Gerät an ein anderes.
 
@@ -70,11 +70,11 @@ In Szenarien in der Praxis können Sie eine Benutzeroberfläche bereitstellen, u
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
 
-Das [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus.aspx)-Objekt, das von **RemoteLauncher.LaunchUriAsync()** zurückgegeben wird, enthält Informationen dazu, ob der Remotestart erfolgreich war. Wenn bei dem Remotestart ein Fehler aufgetreten ist, wird ein Grund angegeben.
+Das [**RemoteLaunchUriStatus**](https://docs.microsoft.com/uwp/api/windows.system.remotelaunchuristatus)-Objekt, das von **RemoteLauncher.LaunchUriAsync()** zurückgegeben wird, enthält Informationen dazu, ob der Remotestart erfolgreich war. Wenn bei dem Remotestart ein Fehler aufgetreten ist, wird ein Grund angegeben.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-[Remote-Systemen-API-Referenz](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[Remote-Systemen-API-Referenz](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)  
 [Verbundene apps und Geräten (Projekt "ROME") (Übersicht)](connected-apps-and-devices.md)  
 [Entdecken von Remotegeräten](discover-remote-devices.md)  
 Das [Beispiel für Remotesysteme](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) zeigt die Vorgehensweise zum Erkennen eines Remotesystems, Starten einer App auf einem Remotesystem und Verwenden von App-Diensten zum Senden von Nachrichten zwischen Apps, die auf zwei Systemen ausgeführt werden.

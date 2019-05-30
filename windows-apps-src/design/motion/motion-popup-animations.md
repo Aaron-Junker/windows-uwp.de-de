@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d79c369e14236b827bdc18aba6c74349528728b3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ee3d6a7fc29ec2adfeb149a3bc84f27c482c3be7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635175"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366703"
 ---
 # <a name="pop-up-ui-animations"></a>Animationen für Popupbenutzeroberflächen
 
@@ -21,7 +21,7 @@ ms.locfileid: "57635175"
 
 Verwenden Sie Popupanimationen, um Popup-UI-Elemente für Flyouts oder benutzerdefinierte Popup-UI-Elemente anzuzeigen und auszublenden. Popupelemente sind Container, die über dem Inhalt der App angezeigt werden und ausgeblendet werden, wenn Benutzer außerhalb des Popupelements tippen oder klicken.
 
-> **Wichtige APIs:** [**PopInThemeAnimation Klasse**](https://msdn.microsoft.com/library/windows/apps/br210383), [ **PopupThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+> **Wichtige APIs:** [**PopInThemeAnimation Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation), [ **PopupThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -33,12 +33,12 @@ Verwenden Sie Popupanimationen, um Popup-UI-Elemente für Flyouts oder benutzerd
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animieren der Popup-Benutzeroberfläche](https://msdn.microsoft.com/library/windows/apps/xaml/jj649433)
-* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**PopInThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210383)
-* [**PopOutThemeAnimation-Klasse**](https://msdn.microsoft.com/library/windows/apps/br210391)
-* [**PopupThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+* [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Animieren der Popup-Benutzeroberfläche](https://docs.microsoft.com/previous-versions/windows/apps/jj649433(v=win.10))
+* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**PopInThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)
+* [**PopOutThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation)
+* [**PopupThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
  
 

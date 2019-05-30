@@ -1,16 +1,16 @@
 ---
 description: Ein agiles Objekt ist ein Objekt, auf das von jedem Thread aus zugegriffen werden kann. Ihre C++/WinRT-Typen sind standardmäßig agil, aber Sie können diese Option deaktivieren.
 title: Agile Objekte mit C++/WinRT
-ms.date: 10/20/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, agil, objekt, agilität, IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b390161a4eb2c4f38fed9bce226c5a5e92c5ad8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291779"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360330"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Agile Objekte in C++ / WinRT
 
@@ -19,7 +19,7 @@ In der Mehrzahl der Fälle kann eine Instanz von einer Windows-Runtime-Klasse zu
 Aber Sie können das Programm verlassen. Sie müssen möglicherweise einen zwingenden Grund ein Objekt des Typs befinden, z. B. in einem bestimmten Singlethread-Apartment erforderlich ist. Dies hat typischerweise mit Wiedereinsprungsvoraussetzungen zu tun. Aber auch die UI-APIs (User Interface, Benutzerschnittstelle) bieten zunehmend agile Objekte. Im Allgemeinen ist Agilität die einfachste und leistungsfähigste Option. Auch wenn Sie eine Aktivierungs-Factory implementieren, muss diese agil sein (auch, wenn Ihre entsprechende Laufzeitklasse es nicht ist).
 
 > [!NOTE]
-> Windows-Runtime basiert auf COM. Im Sinne von COM ist eine agile Klasse mit `ThreadingModel` = *Both* registriert. Weitere Informationen zu COM, Threadingmodelle und Apartments, finden Sie unter [verstehen und Verwenden von COM-Threadingmodellen](https://msdn.microsoft.com/library/ms809971).
+> Windows-Runtime basiert auf COM. Im Sinne von COM ist eine agile Klasse mit `ThreadingModel` = *Both* registriert. Weitere Informationen zu COM, Threadingmodelle und Apartments, finden Sie unter [verstehen und Verwenden von COM-Threadingmodellen](/previous-versions/ms809971(v=msdn.10)).
 
 ## <a name="code-examples"></a>Codebeispiele
 
@@ -37,7 +37,7 @@ struct MyType : winrt::implements<MyType, IStringable>
 };
 ```
 
-Da wir dies nicht explizit ausschließen, ist diese Implementierung agil. Die [**winrt::implementiert**](/uwp/cpp-ref-for-winrt/implements) Basisstruktur implementiert [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) und [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). Die **IMarshal**-Implementierung verwendet **CoCreateFreeThreadedMarshaler**, um das Legacy-Code zu unterstützen, der nichts über **IAgileObject** weiß.
+Da wir dies nicht explizit ausschließen, ist diese Implementierung agil. Die [**winrt::implementiert**](/uwp/cpp-ref-for-winrt/implements) Basisstruktur implementiert [**IAgileObject**](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) und [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). Die **IMarshal**-Implementierung verwendet **CoCreateFreeThreadedMarshaler**, um das Legacy-Code zu unterstützen, der nichts über **IAgileObject** weiß.
 
 Dieser Code prüft ein Objekt auf Agilität. Der Aufruf von [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) löst eine Ausnahme aus, wenn `myimpl` nicht agil ist.
 
@@ -115,7 +115,7 @@ Der Aufruf [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-fu
 
 ## <a name="important-apis"></a>Wichtige APIs
 
-* [IAgileObject-Schnittstelle](https://msdn.microsoft.com/library/windows/desktop/hh802476)
+* [IAgileObject-Schnittstelle](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject)
 * [IMarshal-Schnittstelle](/windows/desktop/api/objidl/nn-objidl-imarshal)
 * [Vorlage für WinRT::agile_ref-Struktur](/uwp/cpp-ref-for-winrt/agile-ref)
 * [Vorlage für WinRT::Implements-Struktur](/uwp/cpp-ref-for-winrt/implements)
@@ -126,4 +126,4 @@ Der Aufruf [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-fu
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Verstehen und Verwenden von COM-Threadmodell](https://msdn.microsoft.com/library/ms809971)
+* [Verstehen und Verwenden von COM-Threadmodell](/previous-versions/ms809971(v=msdn.10))

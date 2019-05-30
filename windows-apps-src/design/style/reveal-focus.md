@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de4b51687e152ef5d25a583f949cdd108f2f029
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 2cb91b37b1d2a6924a80bbe666129343ad778d8e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984211"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370468"
 ---
 # <a name="reveal-focus"></a>Zeigen Sie den Fokus
 
@@ -176,6 +176,6 @@ Zeigen Sie, dass der Fokus eine Fluent-Entwurfssystem-Komponente handelt, die Ih
 - [Entwerfen für Xbox und Fernsehgeräte](/windows/uwp/design/devices/designing-for-tv)
 - [Gamepad und Remotesteuerung Interaktionen](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
 - [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
-- [Auswirkungen der Komposition](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Auswirkungen der Komposition](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Die Wissenschaft im System: Fluent Design und der Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Die Wissenschaft im System: Fluent Design und Licht](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)
