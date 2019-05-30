@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, App-Übermittlung, löschen
 ms.localizationpriority: medium
-ms.openlocfilehash: d2e5d77fa89bcb77bfecb79f2171e4ec550f42f4
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e5f16aa763b393ed9a328524b966624f825f1295
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334138"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372538"
 ---
 # <a name="delete-an-app-submission"></a>Löschen einer App-Übermittlung
 
@@ -44,7 +44,7 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App, die die zu löschende Übermittlung enthält. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | String | Erforderlich. Die Store-ID der App, die die zu löschende Übermittlung enthält. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | String | Erforderlich. Die ID der zu löschenden Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer App-Übermittlung](create-an-app-submission.md) verfügbar. Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
 
 

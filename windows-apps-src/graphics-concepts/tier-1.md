@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae76111f6feefa0bb63fd18516e033050cc06fc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3aeb30fca8e9fbad21f274162aab3106afcf2e45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589885"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370842"
 ---
 # <a name="tier-1"></a>Ebene 1
 
@@ -52,7 +52,7 @@ Das Streamen von Ressourcen mit jeglichen Mipmaps, die kein Vielfaches der stand
 
 Zum Wechseln zwischen verweisen auf Kacheln in einem Pool Kachel über eine [Puffer](introduction-to-buffers.md) Ressource dem verweisen auf die gleiche Kacheln über einen [Textur](introduction-to-textures.md) Ressource, oder umgekehrt, die die letzte Kachel Zuordnungen aktualisieren oder kopieren poolkacheln muss der Kachel-Zuordnungen, die Zuordnungen definiert, auf die Kachel für dieselbe ressourcendimension (Puffer im Vergleich zu Textur\*) als ressourcendimension, die auf den Kacheln verwendet werden. Andernfalls ist das Verhalten nicht definiert ist, einschließlich der Wahrscheinlichkeit des Zurücksetzens des Geräts.
 
-Es also bspw. nicht zulässig, die Kachelzuordnungen so zu aktualisieren, dass sie Kachelzuordnungen für einen Puffer festlegen, die Kachelzuordnungen an die gleichen Kacheln im Kachelpool über eine [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) Ressource zu aktualisieren und dann auf die Kacheln über den Puffer zuzugreifen. Dies kann entweder mit einer erneuten Definition der Kachelzuordnungen für eine Ressource beim Wechsel zwischen Puffer- und Texturfreigabekacheln (oder umgekehrt) umgangen werden, oder indem einfach die Kacheln in einem Kachelpool zwischen Puffer und Textur-Ressourcen nicht freigegeben werden.
+Es also bspw. nicht zulässig, die Kachelzuordnungen so zu aktualisieren, dass sie Kachelzuordnungen für einen Puffer festlegen, die Kachelzuordnungen an die gleichen Kacheln im Kachelpool über eine [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) Ressource zu aktualisieren und dann auf die Kacheln über den Puffer zuzugreifen. Dies kann entweder mit einer erneuten Definition der Kachelzuordnungen für eine Ressource beim Wechsel zwischen Puffer- und Texturfreigabekacheln (oder umgekehrt) umgangen werden, oder indem einfach die Kacheln in einem Kachelpool zwischen Puffer und Textur-Ressourcen nicht freigegeben werden.
 
 ### <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>Minimale/maximale Reduzierung filtern
 

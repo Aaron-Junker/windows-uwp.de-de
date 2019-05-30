@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dc5e107fd343798698f5957c26d87a0d3ffe6625
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b30f2e9d08fd36686045523c54180829570cbd2d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608625"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372873"
 ---
 # <a name="getting-started-animation"></a>Erste Schritte: Animation
 
@@ -48,7 +48,7 @@ Lassen Sie uns das Rechteck nun verschieben und ausblenden. Ziehen Sie dazu den 
 
 ![Fenster „Eigenschaften“ und Schaltfläche „Wiedergeben“](images/ios-to-uwp/blend-5.png)
 
-Als Nächstes möchten wir das Rechteck wieder einblenden. Doppelklicken Sie im Fenster **Objekte und Zeitachsen** auf **Storyboard1**. Wählen Sie dann wie in der folgenden Abbildung gezeigt im Fenster **Eigenschaften** im Bereich **Allgemein****AutoReverse** aus.
+Als Nächstes möchten wir das Rechteck wieder einblenden. Doppelklicken Sie im Fenster **Objekte und Zeitachsen** auf **Storyboard1**. Wählen Sie dann wie in der folgenden Abbildung gezeigt im Fenster **Eigenschaften** im Bereich **Allgemein** **AutoReverse** aus.
 
 ![Auswählen eines Storyboards](images/ios-to-uwp/blend-6.png)
 
@@ -124,9 +124,9 @@ Wenn Sie die Datei MainPage.xaml in der **XAML**-Ansicht öffnen, können Sie de
 ...
 ```
 
-Sie können diesen XAML-Code manuell bearbeiten oder zu Blend zurückkehren, um dort weiter an diesem zu arbeiten. Mit Blend können Sie spielerisch interessante Benutzeroberflächen erstellen und sie mit einem Grafiktool animieren, was die Entwicklung erheblich beschleunigt. Weitere Informationen zu Animationen finden Sie unter [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/mt187350).
+Sie können diesen XAML-Code manuell bearbeiten oder zu Blend zurückkehren, um dort weiter an diesem zu arbeiten. Mit Blend können Sie spielerisch interessante Benutzeroberflächen erstellen und sie mit einem Grafiktool animieren, was die Entwicklung erheblich beschleunigt. Weitere Informationen zu Animationen finden Sie unter [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview).
 
-**Beachten Sie**  Informationen zu Animationen für <span class="legacy-term">UWP-apps mit JavaScript und HTML</span>, finden Sie unter [animieren Ihre Benutzeroberfläche (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**Beachten Sie**  Informationen zu Animationen für <span class="legacy-term">UWP-apps mit JavaScript und HTML</span>, finden Sie unter [animieren Ihre Benutzeroberfläche (HTML)](https://docs.microsoft.com/previous-versions/windows/apps/hh465165(v=win.10)).
 
 ### <a name="next-step"></a>Nächster Schritt
 

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 33244391ca9f2ffcba21adacccebf2e9b1d73419
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612775"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363361"
 ---
 # <a name="toast-content-xml-schema"></a>XML-Schema des Popupinhalts
 
@@ -79,15 +79,15 @@ scenario?
 
 lang?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 baseUri?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 addImageQuery?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 **Attribute in &lt;Bindung&gt;**
 
@@ -99,27 +99,27 @@ template?
 
 lang?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 baseUri?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 addImageQuery?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 **Attribute in &lt;Text&gt;**
 
 lang?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230847) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 **Attribute in &lt;Image&gt;**
 
 src
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230844) finden Sie ausführliche Informationen zu diesem erforderlichen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image) finden Sie ausführliche Informationen zu diesem erforderlichen Attribut.
 
 placement?
 
@@ -131,11 +131,11 @@ placement?
 
 alt?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230844) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 addImageQuery?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230844) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 hint-crop?
 
@@ -148,15 +148,15 @@ hint-crop?
 
 src?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230842) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 loop?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230842) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 silent?
 
--   In [diesem Artikel zu Elementschemas](https://msdn.microsoft.com/library/windows/apps/br230842) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
+-   In [diesem Artikel zu Elementschemas](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio) finden Sie ausführliche Informationen zu diesem optionalen Attribut.
 
 ## <a name="schemas-ltactiongt"></a>Schemata: &lt;Aktion&gt;
 
@@ -185,7 +185,7 @@ id
 -   Dieses Attribut ist erforderlich.
 -   Das id-Attribut ist erforderlich und wird von Entwicklern verwendet, um Eingaben des Benutzers abzurufen, sobald die App (im Vordergrund oder im Hintergrund) aktiviert ist.
 
-type
+Typ
 
 -   type = "text | selection"
 -   Dieses Attribut ist erforderlich.

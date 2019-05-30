@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, verbundene Geräte, Remotesysteme, "ROME", Projekt "ROME", Hintergrundtasks, app service
 ms.localizationpriority: medium
-ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 067b465feccda424dd6a8e3f44e784166afe6d48
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612935"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366420"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>Kommunizieren mit einem App-Remotedienst
 
@@ -63,14 +63,14 @@ Die folgenden **using**-Anweisungen werden für den Code in diesem Abschnitt ben
 [!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetUsings)]
 
 
-Instanziieren Sie zunächst ein [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.AppService.AppServiceConnection)-Objekt, als ob Sie einen App-Dienst lokal aufrufen würden. Dieser Vorgang wird in [Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md) ausführlicher behandelt. In diesem Beispiel ist der aufzurufende App-Dienst der Dienst für die Generierung von Zufallszahlen.
+Instanziieren Sie zunächst ein [**AppServiceConnection**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection)-Objekt, als ob Sie einen App-Dienst lokal aufrufen würden. Dieser Vorgang wird in [Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md) ausführlicher behandelt. In diesem Beispiel ist der aufzurufende App-Dienst der Dienst für die Generierung von Zufallszahlen.
 
 > [!NOTE]
-> Es wird angenommen, dass ein [RemoteSystem](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem)-Objekt bereits innerhalb des Codes geladen wurde, der die folgende Methode aufruft. Anleitungen dazu, wie Sie dies einrichten können, finden Sie unter [Starten einer Remote-App](launch-a-remote-app.md).
+> Es wird angenommen, dass ein [RemoteSystem](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem)-Objekt bereits innerhalb des Codes geladen wurde, der die folgende Methode aufruft. Anleitungen dazu, wie Sie dies einrichten können, finden Sie unter [Starten einer Remote-App](launch-a-remote-app.md).
 
 [!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetAppService)]
 
-Als Nächstes wird ein [**RemoteSystemConnectionRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemConnectionRequest)-Objekt für das vorgesehene Remotegerät erstellt. Es wird dann zum Öffnen der **AppServiceConnection** zu diesem Gerät verwendet. Beachten Sie, dass im folgenden Beispiel Fehlerbehandlung und Berichte erheblich vereinfacht dargestellt werden, um das Beispiel kurz zu halten.
+Als Nächstes wird ein [**RemoteSystemConnectionRequest**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystemConnectionRequest)-Objekt für das vorgesehene Remotegerät erstellt. Es wird dann zum Öffnen der **AppServiceConnection** zu diesem Gerät verwendet. Beachten Sie, dass im folgenden Beispiel Fehlerbehandlung und Berichte erheblich vereinfacht dargestellt werden, um das Beispiel kurz zu halten.
 
 [!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetRemoteConnection)]
 
@@ -78,7 +78,7 @@ An diesem Punkt sollten Sie über eine offene Verbindung zu einem App-Dienst auf
 
 ## <a name="exchange-service-specific-messages-over-the-remote-connection"></a>Exchange-Dienst-spezifische Nachrichten über die Remoteverbindung
 
-Hier können Sie Nachrichten in Form von [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset)-Objekten an den Dienst senden und von dem Dienst empfangen (weitere Informationen finden Sie unter [Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md)). Der Dienst für die Generierung von Zufallszahlen verwendet zwei Ganzzahlen mit den Schlüsseln `"minvalue"` und `"maxvalue"` als Eingaben, wählt nach dem Zufallsprinzip innerhalb dieses Bereichs eine Ganzzahl aus und gibt diese an den aufrufenden Prozess mit dem Schlüssel `"Result"` zurück.
+Hier können Sie Nachrichten in Form von [**ValueSet**](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset)-Objekten an den Dienst senden und von dem Dienst empfangen (weitere Informationen finden Sie unter [Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md)). Der Dienst für die Generierung von Zufallszahlen verwendet zwei Ganzzahlen mit den Schlüsseln `"minvalue"` und `"maxvalue"` als Eingaben, wählt nach dem Zufallsprinzip innerhalb dieses Bereichs eine Ganzzahl aus und gibt diese an den aufrufenden Prozess mit dem Schlüssel `"Result"` zurück.
 
 [!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetSendMessage)]
 
@@ -89,5 +89,5 @@ Sie haben jetzt eine Verbindung zu einem App-Dienst auf einem aufgerufenen Hostg
 [Verbundene apps und Geräten (Projekt "ROME") (Übersicht)](connected-apps-and-devices.md)  
 [Starten Sie eine remote-app](launch-a-remote-app.md)  
 [Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md)  
-[Remote-Systemen-API-Referenz](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[Remote-Systemen-API-Referenz](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)  
 [Beispiel für Remotesysteme](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

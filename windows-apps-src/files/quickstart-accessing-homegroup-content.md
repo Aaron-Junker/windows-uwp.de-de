@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c42cff51852f7d0456d533af60455d7d1b9caf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 07d94f5b11acfe14bf55392c5cbf2c1b7bcfbeef
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613895"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369395"
 ---
 # <a name="accessing-homegroup-content"></a>Zugriff auf Inhalte in der Heimnetzgruppe
 
@@ -19,15 +19,15 @@ ms.locfileid: "57613895"
 
 **Wichtige APIs**
 
--   [**Windows.Storage.KnownFolders-Klasse**](https://msdn.microsoft.com/library/windows/apps/br227151)
+-   [**Windows.Storage.KnownFolders-Klasse**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)
 
 Greifen Sie auf Inhalte zu, die sich im Heimnetzgruppenordner des Benutzers befinden, einschließlich Bildern, Musik und Videos.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 -   **Verstehen Sie die asynchrone Programmierung für apps der universellen Windows-Plattform (UWP)**
 
-    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Deklarationen der App capabilty**
 
@@ -50,7 +50,7 @@ Führen Sie die folgenden Schritte durch, um eine Instanz der Dateiauswahl zu ö
 
 1.  **Erstellen und Anpassen der Dateiauswahl**
 
-    Verwenden Sie [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) zum Erstellen einer Dateiauswahl, und legen Sie dann den [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) der Auswahl auf [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890) fest. Optional können Sie weitere Eigenschaften festlegen, die für Benutzer und App relevant sind. Richtlinien zur Anpassung der Dateiauswahl erhalten Sie in [Richtlinien und Prüfliste für die Dateiauswahl](https://msdn.microsoft.com/library/windows/apps/hh465182).
+    Verwenden Sie [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) zum Erstellen einer Dateiauswahl, und legen Sie dann den [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) der Auswahl auf [**PickerLocationId.HomeGroup**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId) fest. Optional können Sie weitere Eigenschaften festlegen, die für Benutzer und App relevant sind. Richtlinien zur Anpassung der Dateiauswahl erhalten Sie in [Richtlinien und Prüfliste für die Dateiauswahl](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers).
 
     In diesem Beispiel wird eine Dateiauswahl erstellt, die in der Heimnetzgruppe geöffnet wird, bei der Dateien jeglichen Typs angezeigt werden und die Dateien als Miniaturbilder erscheinen:
     ```cs
@@ -63,7 +63,7 @@ Führen Sie die folgenden Schritte durch, um eine Instanz der Dateiauswahl zu ö
 
 2.  **Zeigen Sie die Dateiauswahl aus, und verarbeiten Sie die ausgewählte Datei.**
 
-    Lassen Sie den Benutzer eine Datei auswählen, indem Sie [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) aufrufen, oder mehrere Dateien auswählen, indem Sie [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) aufrufen, nachdem Sie die Dateiauswahl erstellt und angepasst haben.
+    Lassen Sie den Benutzer eine Datei auswählen, indem Sie [**FileOpenPicker.PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) aufrufen, oder mehrere Dateien auswählen, indem Sie [**FileOpenPicker.PickMultipleFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) aufrufen, nachdem Sie die Dateiauswahl erstellt und angepasst haben.
 
     Dieses Beispiel zeigt eine Dateiauswahl, bei der der Benutzer eine Datei auswählen kann:
     ```cs
@@ -85,7 +85,7 @@ In diesem Beispiel wird erläutert, wie Elemente in der Heimnetzgruppe gefunden 
 
 1.  **Rufen Sie den Abfrageausdruck, aus der Benutzer.**
 
-    Hier erhalten wir einen Abfrageausdruck, den der Benutzer in ein [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)-Steuerelement namens `searchQueryTextBox` eingegeben hat:
+    Hier erhalten wir einen Abfrageausdruck, den der Benutzer in ein [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Steuerelement namens `searchQueryTextBox` eingegeben hat:
     ```cs
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
@@ -128,7 +128,7 @@ In diesem Abschnitt erfahren Sie, wie Sie nach Heimnetzgruppendateien suchen, di
 
 1.  **Ruft eine Auflistung der heimnetzgruppenbenutzer.**
 
-    Jeder Ordner auf oberster Ebene in der Heimnetzgruppe repräsentiert einen bestimmten Heimnetzgruppenbenutzer. Um die Sammlung der Heimnetzgruppenbenutzer zu erhalten, rufen Sie also [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) auf, um die Heimnetzgruppenordner der obersten Ebene abzurufen.
+    Jeder Ordner auf oberster Ebene in der Heimnetzgruppe repräsentiert einen bestimmten Heimnetzgruppenbenutzer. Um die Sammlung der Heimnetzgruppenbenutzer zu erhalten, rufen Sie also [**GetFoldersAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) auf, um die Heimnetzgruppenordner der obersten Ebene abzurufen.
     ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
@@ -173,7 +173,7 @@ Gehen Sie wie folgt vor, um Videoinhalte aus der Heimnetzgruppe zu streamen:
 
 1.  **Fügen Sie ein MediaElement in Ihre app ein.**
 
-    Mithilfe von [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) können Sie Audio- und Videoinhalte in Ihrer App wiedergeben. Weitere Informationen zur Audio- und Videowiedergabe finden Sie unter [Erstellen von benutzerdefinierten Transportsteuerelementen](https://msdn.microsoft.com/library/windows/apps/mt187271) und [Audio, Video und Kamera](https://msdn.microsoft.com/library/windows/apps/mt203788).
+    Mithilfe von [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) können Sie Audio- und Videoinhalte in Ihrer App wiedergeben. Weitere Informationen zur Audio- und Videowiedergabe finden Sie unter [Erstellen von benutzerdefinierten Transportsteuerelementen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls) und [Audio, Video und Kamera](https://docs.microsoft.com/windows/uwp/audio-video-camera/index).
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
@@ -193,7 +193,7 @@ Gehen Sie wie folgt vor, um Videoinhalte aus der Heimnetzgruppe zu streamen:
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Öffnen Sie die Auswahl des Benutzers-Datei für den Lesezugriff, und legen Sie den Datei-Stream als Quelle für die** [ **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), und klicken Sie dann die Datei nicht wiedergeben.
+3.  **Öffnen Sie die Auswahl des Benutzers-Datei für den Lesezugriff, und legen Sie den Datei-Stream als Quelle für die** [ **MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement), und klicken Sie dann die Datei nicht wiedergeben.
     ```cs
     if (file != null)
     {

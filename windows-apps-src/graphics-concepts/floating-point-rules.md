@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de5ba146c8241598527dd268d604fcc9bb97d6d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a29fbe49e45b819ddf4ffc3172445996d3622360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662355"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370619"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>Gleitkomma-Regeln
 
@@ -37,7 +37,7 @@ Einige dieser Regeln entsprechen nur einer einzigen der von IEEE-754 angebotenen
     Die Ausnahme ist -0: sqrt(-0) ergibt -0, und rsq(-0) ergibt -INF.
 -   INF - INF = NaN
 -   (+/-)INF / (+/-)INF = NaN
--   (+/-) INF \* 0 = NaN
+-   (+/-)INF \* 0 = NaN
 -   NaN (beliebiger Operand) beliebiger Wert = NaN
 -   Die Vergleiche EQ, GT, GE, LT und LE liefern **FALSE**, wenn einer der Operanden der NaN-Wert ist oder beide diesen Wert besitzen.
 -   Bei Vergleichen wird das Vorzeichen von 0 ignoriert (somit ist +0 gleich -0).
@@ -82,13 +82,13 @@ Einige dieser Regeln entsprechen nur einer einzigen der von IEEE-754 angebotenen
 -   x +/- 0.0f ergibt immer x (außer für auf Null gesetzte Denorms). Es gilt aber -0 + 0 = +0.
 -   Fused-Vorgänge (z. B. mad und dp3) liefern Ergebnisse, die nicht ungenauer sind als die denkbar schlechteste serielle Anordnung einer Auswertung der Unfused-Erweiterung des Vorgangs. Bezüglich der Toleranz ist die Definition der denkbar schlechtesten Anordnung keine feste Definition für einen bestimmten Fused-Vorgang, sondern sie ist von den jeweiligen Eingabewerten abhängig. Für jeden einzelnen Schritt in einer Unfused-Erweiterung ist eine Toleranz von 1 ULP zugelassen (oder für jede Anweisung, die Direct3D mit einer höheren Toleranz als 1 ULP aufruft, ist diese höhere Toleranz zulässig).
 -   Für Fused-Vorgänge gelten dieselben NaN-Regeln wie für Unfused-Vorgänge.
--   Die Toleranz für sqrt und rcp beträgt 1 ULP. Für die Shader-Anweisungen [**rcp**](https://msdn.microsoft.com/library/windows/desktop/hh447205) zur Berechnung des Kehrwerts und [**rsq**](https://msdn.microsoft.com/library/windows/desktop/hh447221) zur Berechnung der reziproken Quadratwurzel gelten eigene, ebenfalls weniger strikte Genauigkeitsanforderungen.
+-   Die Toleranz für sqrt und rcp beträgt 1 ULP. Für die Shader-Anweisungen [**rcp**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) zur Berechnung des Kehrwerts und [**rsq**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/rsq--sm4---asm-) zur Berechnung der reziproken Quadratwurzel gelten eigene, ebenfalls weniger strikte Genauigkeitsanforderungen.
 -   Multiplizieren und Dividieren erfolgt jeweils auf der Genauigkeitsebene von 32-Bit-Gleitkommavorgängen (0,5 ULP Genauigkeit für das Multiplizieren und 1,0 ULP für reziproke Vorgänge). Wenn x/y direkt implementiert ist, muss die Genauigkeit der Ergebnisse größer oder gleich der Genauigkeit sein, die eine Methode mit zwei Schritten liefert.
 
 ## <a name="span-iddoubleprec64bitspanspan-iddoubleprec64bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64-Bit-(doppelte Genauigkeit) floating-Point-Regeln
 
 
-Hardware und Anzeigetreiber unterstützen optional Gleitkommazahlen doppelter Genauigkeit. Um die Unterstützung, wenn Sie aufrufen [ **ID3D11Device::CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497) mit [ **D3D11\_FEATURE\_DOUBLES** ](https://msdn.microsoft.com/library/windows/desktop/ff476124#d3d11-feature-doubles), die treibersätze **DoublePrecisionFloatShaderOps** von [ **D3D11\_FEATURE\_Daten\_DOUBLES** ](https://msdn.microsoft.com/library/windows/desktop/ff476127) auf "true". Treiber und Hardware müssen dann alle Gleitkommaanweisungen mit doppelter Genauigkeit unterstützen.
+Hardware und Anzeigetreiber unterstützen optional Gleitkommazahlen doppelter Genauigkeit. Um die Unterstützung, wenn Sie aufrufen [ **ID3D11Device::CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) mit [ **D3D11\_FEATURE\_DOUBLES** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature), die treibersätze **DoublePrecisionFloatShaderOps** von [ **D3D11\_FEATURE\_Daten\_DOUBLES** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles) auf "true". Treiber und Hardware müssen dann alle Gleitkommaanweisungen mit doppelter Genauigkeit unterstützen.
 
 Anweisungen mit doppelter Genauigkeit befolgen IEEE 754R-Verhaltensanforderungen.
 
@@ -148,9 +148,9 @@ Die Regeln für 32-Bit-Gleitkommazahlen gelten auch für 11-Bit- und 10-Bit-Glei
 
 [Anhänge](appendix.md)
 
-[Ressourcen](https://msdn.microsoft.com/library/windows/desktop/ff476894)
+[Ressourcen](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources)
 
-[Texturen](https://msdn.microsoft.com/library/windows/desktop/ff476902)
+[Texturen](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: fe97d689711202511dcfec023b718cd1ba9b0b1d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291768"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370934"
 ---
 # <a name="transform-overview"></a>Übersicht über Transformationen
 
@@ -60,7 +60,7 @@ Matrizen werden in der Reihenfolge Zeile-Spalte geschrieben. Die folgende Matrix
 
 ![Gleichung einer Matrix für die einheitliche Skalierung](images/matrix.png)
 
-In C++ deklariert Direct3D Matrizen als zweidimensionale Arrays mit einer Matrix-Struktur. Das folgende Beispiel demonstriert die Initialisierung einer [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573)-Struktur zur Funktion als einheitliche Skalierungsmatrix (Skalierungsfaktor „s“.
+In C++ deklariert Direct3D Matrizen als zweidimensionale Arrays mit einer Matrix-Struktur. Das folgende Beispiel demonstriert die Initialisierung einer [**D3DMATRIX**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dmatrix)-Struktur zur Funktion als einheitliche Skalierungsmatrix (Skalierungsfaktor „s“.
 
 ```cpp
 D3DMATRIX scale = {

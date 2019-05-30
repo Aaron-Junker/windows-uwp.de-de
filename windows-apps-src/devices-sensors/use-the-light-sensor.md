@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aeb60d67f0cdee77772797816e45fdd9bdc41b4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 04d75d4c854a407fd733c6ecdfb3cabac84faef6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623615"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369606"
 ---
 # <a name="use-the-light-sensor"></a>Verwenden des Lichtsensors
 
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**LightSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.LightSensor)
 
 **Beispiel**
 
@@ -29,7 +29,7 @@ Hier erfahren Sie, wie Sie mithilfe des Umgebungslichtsensors veränderte Lichtv
 
 Der Umgebungslichtsensor ist einer von vielen Sensoren, mit denen Apps auf Veränderungen in der Umgebung des Benutzers reagieren können.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
 

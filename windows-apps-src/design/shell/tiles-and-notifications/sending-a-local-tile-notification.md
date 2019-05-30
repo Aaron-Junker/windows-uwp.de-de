@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4a6b61463204b4ae60fbb853cd00a10c7185a084
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636105"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362700"
 ---
 # <a name="send-a-local-tile-notification"></a>Senden einer lokalen Kachelbenachrichtigung
  
@@ -204,7 +204,7 @@ Durch regelmäßige oder Push-Benachrichtigungen können nur neue Benachrichtigu
 
 **Verwenden die Benachrichtigungswarteschlange**
 
-Nachdem Sie Ihre erste Kachelaktualisierung ausgeführt haben, können Sie die Funktionalität der Kachel erweitern, indem Sie eine [Benachrichtigungswarteschlange](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234) aktivieren.
+Nachdem Sie Ihre erste Kachelaktualisierung ausgeführt haben, können Sie die Funktionalität der Kachel erweitern, indem Sie eine [Benachrichtigungswarteschlange](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10)) aktivieren.
 
 **Andere Methoden zur Übermittlung von Benachrichtigungen**
 
@@ -291,7 +291,7 @@ var notification = new TileNotification(doc);
 * [Benachrichtigungsbibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications-namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [Gewusst wie: Verwenden Sie die Benachrichtigungswarteschlange (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [Gewusst wie: Verwenden Sie die Benachrichtigungswarteschlange (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10))
 * [Übermittlung von Benachrichtigungen](choosing-a-notification-delivery-method.md)
  
 

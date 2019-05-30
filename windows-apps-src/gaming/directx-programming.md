@@ -6,12 +6,12 @@ ms.date: 06/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiel, Übersicht, Programmierung, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 83ac401892761e1e6433d337babbce00dc559b98
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 56da2fabbe0e3e6ae49ebb817a6f57e4d62d7ae9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608845"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368801"
 ---
 # <a name="directx-programming"></a>DirectX-Programmierung
 
@@ -61,7 +61,7 @@ Dieser Abschnitt enthält Informationen zum Entwickeln von UWP-Spielen mit Direc
 </table>
 
 
-Referenzen und Programmieranleitungen für DirectX finden Sie unter [Direct3D 11-Grafiken](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx) und [Direct3D 12-Grafik](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx).
+Referenzen und Programmieranleitungen für DirectX finden Sie unter [Direct3D 11-Grafiken](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) und [Direct3D 12-Grafik](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics).
  
 
 

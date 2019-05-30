@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0b42a10c2cdd61aef84e08d6bd4f6408a978c3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8a280d07ab7d715adaa7da941be641cd54e24443
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617315"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371013"
 ---
 # <a name="lost-devices"></a>Verloren gegangene Geräte
 
@@ -21,7 +21,7 @@ Ein Direct3D-Gerät kann sich entweder im Zustand „betriebsbereit” oder im Z
 
 Standardmäßig werden nicht alle Szenarien angegeben, durch die ein Gerät nicht mehr auffindbar sein kann. Einige typische Beispiele sind der Fokusverlust wenn z. B. der Benutzer ALT+TAB drückt oder wenn ein Systemdialogfeld initialisiert wird. Geräte können auch durch ein Energieverwaltungsereignis oder wenn eine andere Anwendung den Vollbildmodus startet nicht mehr auffindbar sein. Darüber hinaus versetzen Fehler beim Zurücksetzen eines Geräts das Gerät in den nicht mehr auffindbaren Zustand.
 
-Alle von [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) abgeleiteten Methoden funktionieren garantiert, wenn ein Gerät nicht mehr auffindbar ist. Wenn ein Gerät nicht mehr auffindbar ist, bietet jede Funktion in der Regel die folgenden drei Optionen:
+Alle von [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) abgeleiteten Methoden funktionieren garantiert, wenn ein Gerät nicht mehr auffindbar ist. Wenn ein Gerät nicht mehr auffindbar ist, bietet jede Funktion in der Regel die folgenden drei Optionen:
 
 -   Fehlschlagen mit dem Fehler "Gerät nicht mehr auffindbar" – Dies bedeutet, dass die Anwendung erkennen muss, dass das Gerät nicht mehr auffindbar ist, damit die Anwendung identifizieren kann, dass etwas nicht wie erwartet abläuft.
 -   Ohne Meldung fehl, Zurückgeben von S\_OK oder einen anderen Rückgabecode - Wenn eine Funktion im Hintergrund fehlschlägt, die Anwendung in der Regel kann nicht unterschieden zwischen dem Ergebnis von "Success" und "Automatische Fehler".

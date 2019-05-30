@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 1
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 53bd11950d30e3924d6d196e911fa05208d0f5ec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614865"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371915"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im August 2017
 
@@ -32,7 +32,7 @@ Sie können jetzt [bedingte XAML](../debug-test-perf/conditional-xaml.md) auspro
 
 ### <a name="game-mode"></a>Spielmodus
 
-Mithilfe der [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808)-APIs für die Universelle Windows-Plattform (UWP) sorgen Sie für ein optimiertes Spielerlebnis, indem Sie den Spielmodus in Windows 10 nutzen. Diese APIs befinden sich im Header **&lt;expandedresources.h&gt;**.
+Mithilfe der [Game Mode](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal)-APIs für die Universelle Windows-Plattform (UWP) sorgen Sie für ein optimiertes Spielerlebnis, indem Sie den Spielmodus in Windows 10 nutzen. Diese APIs befinden sich im Header **&lt;expandedresources.h&gt;** .
 
 ![Spielmodus](images/game-mode.png)
 
@@ -45,7 +45,7 @@ Die [Microsoft Store-Übermittlungs-API](../monetize/create-and-manage-submissio
 
 ### <a name="data-schemas-for-store-products"></a>Datenschemata für Store-Produkte
 
-Wir haben den Artikel [Datenschemata für Store-Produkte](../monetize/data-schemas-for-store-products.md) hinzugefügt. Dieser Artikel enthält Schemata für auf den Store bezogenen Daten für mehrere Objekte im Namespace [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), z. B. [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) und [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
+Wir haben den Artikel [Datenschemata für Store-Produkte](../monetize/data-schemas-for-store-products.md) hinzugefügt. Dieser Artikel enthält Schemata für auf den Store bezogenen Daten für mehrere Objekte im Namespace [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store), z. B. [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) und [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
 
 ### <a name="desktop-bridge"></a>Desktop-Brücke
 

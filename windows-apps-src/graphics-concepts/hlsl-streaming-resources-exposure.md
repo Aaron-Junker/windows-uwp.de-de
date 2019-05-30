@@ -7,35 +7,35 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: db8a368f6cd9e0b6d38fb16d81dbc31a0f8a615f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643485"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370601"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>Belichtung von HLSL-Streamingressourcen
 
 
-Eine spezielle Syntax für die Microsoft High Level Shader Language (HLSL) ist für die Unterstützung von Streaming Ressourcen in [Shadermodell 5](https://msdn.microsoft.com/library/windows/desktop/ff471356) erforderlich.
+Eine spezielle Syntax für die Microsoft High Level Shader Language (HLSL) ist für die Unterstützung von Streaming Ressourcen in [Shadermodell 5](https://docs.microsoft.com/windows/desktop/direct3dhlsl/d3d11-graphics-reference-sm5) erforderlich.
 
 Die HLSL-Syntax für Shader Model 5 ist nur auf Geräten zulässig, die Streamingressourcen unterstützen. Jede relevante HLSL-Methode für das Streaming von Ressourcen in der folgenden Tabelle akzeptiert einen (feedback) oder zwei (clamp und feedback in dieser Reihenfolge) zusätzliche optionale Parameter. Aufbau einer **Sample**-Methode:
 
 **Beispiel (Sampler, Speicherort \[, Offset \[, Clamp \[, Feedback\] \] \])**
 
-Ein Beispiel für eine **Sample**-Methode ist [**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787).
+Ein Beispiel für eine **Sample**-Methode ist [**Texture2D.Sample(S,float,int,float,uint)** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/t2darray-sample-s-float-int-float-uint-).
 
 Die Parameter offset, clamp und feedback sind optional. Sie müssen alle optionalen Parameter bis zu dem angeben, den Sie benötigen, was mit den C++- Regeln für Standardfunktionsargumente übereinstimmt. Wenn zum Beispiel der Feedbackstatus erforderlich ist, müssen Sie sowohl den offset- als auch den clamp-Parameter explizit für **Sample** bereitstellen, obwohl diese Parameter möglicherweise logisch nicht benötigt werden.
 
 Der Parameter clamp ist ein skalarer Float-Wert. Mit clamp=0.0f geben Sie an, dass der Clampvorgang nicht durchgeführt wird.
 
-Der Parameter feedback ist eine **Uint**-Variable, die Sie der internen Funktion [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) bereitstellen können, mit der Speicherzugriff angefordert wird. Sie müssen den Parameter feedback nicht ändern oder interpretieren – der Compiler stellt keine erweiterten Analyse- oder Diagnosemöglichkeiten bereit, um festzustellen, ob Sie den Wert geändert haben.
+Der Parameter feedback ist eine **Uint**-Variable, die Sie der internen Funktion [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) bereitstellen können, mit der Speicherzugriff angefordert wird. Sie müssen den Parameter feedback nicht ändern oder interpretieren – der Compiler stellt keine erweiterten Analyse- oder Diagnosemöglichkeiten bereit, um festzustellen, ob Sie den Wert geändert haben.
 
-So lautet die Syntax für [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083):
+So lautet die Syntax für [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped):
 
 **"bool" CheckAccessFullyMapped (in (Uint FeedbackVar);**
 
-[**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083) interpretiert den Wert der *FeedbackVar* und gibt true, wenn alle Daten, die auf die zugegriffen wird wurde in der Ressource zugeordnet ist, andernfalls **CheckAccessFullyMapped**"false" zurückgibt.
+[**CheckAccessFullyMapped** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) interpretiert den Wert der *FeedbackVar* und gibt true, wenn alle Daten, die auf die zugegriffen wird wurde in der Ressource zugeordnet ist, andernfalls **CheckAccessFullyMapped**"false" zurückgibt.
 
 Wenn der Parameter clamp oder feedback vorhanden ist, gibt der Compiler eine Variante der Grundanweisung aus. Beispielsweise generiert sample für eine Streamingressource die Anweisung `sample_cl_s`.
 
@@ -56,7 +56,7 @@ In der folgende Tabelle sind die HLSL-Methoden zusammengefasst, die geändert wu
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471359">HLSL-Objekte</a> </th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/d3d11-graphics-reference-sm5-objects">HLSL-Objekte</a> </th>
 <th align="left">Intrinsische Methoden mit feedback-Option – (*) verfügt auch über die clamp-Option</th>
 </tr>
 </thead>

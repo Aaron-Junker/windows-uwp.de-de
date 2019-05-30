@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Aktivieren Ihres Geräts für die Entwicklung
 description: Konfigurieren Sie Ihr Windows 10-Gerät für die Entwicklung und das Debugging.
 keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät aktivieren
-ms.date: 05/30/2018
+ms.date: 4/9/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 90ff8e8c0d11e58d251e9c2f5bfb00f3b8aedf1a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f927d8bce1e59ba9a8ed9b0f3f08ce3575c6d7bd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618955"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367023"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
@@ -93,11 +93,11 @@ Diese Abbildung zeigt Entwicklerfeatures für Windows 10:
 Weitere Informationen zum Device Portal finden Sie in der [Übersicht über das Windows-Geräteportal](../debug-test-perf/device-portal.md).
 
 Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
-- [Für Desktop-Geräteportal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
+- [Für Desktop-Geräteportal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
 - [Geräteportal für HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [Für IoT-Geräteportal](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Device-Portal für mobile Geräte](../debug-test-perf/device-portal-mobile.md)
-- [Geräteportal für Xbox](../debug-test-perf/device-portal-xbox.md)
+- [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md)
 
 Wenn Sie Probleme beim Aktivieren des Entwicklermodus oder des Geräteportals haben, finden Sie im Forum [Bekannte Probleme](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) Problemumgehungen für diese Probleme. Suchen Sie andernfalls unter [Fehler beim Installieren des Entwicklermoduspakets](#failure-to-install-developer-mode-package) nach zusätzlichen Detail und welche WSUS KBs zugelassen werden, um das Paket im Entwicklermodus zu erlauben oder zu entsperren.
 
@@ -128,12 +128,12 @@ Die Gerätesuche sollte nur aktiviert werden, wenn das Gerät ein Bereitstellung
  Auf der Desktopgerätefamilie finden Sie auf der Einstellungsseite **Für Entwickler** Verknüpfungen zu den Einstellungen, die Sie zum Optimieren Ihres PCs für Entwicklungsaufgaben verwenden können. Für jede Einstellung können Sie das Kontrollkästchen aktivieren und auf **Übernehmen** klicken, oder Sie können auf den Link **Einstellungen anzeigen** klicken, um die Einstellungsseite für diese Option zu öffnen.
 
 
-## <a name="notes"></a>Anmerkungen
+## <a name="notes"></a>Hinweise
 In früheren Versionen von Windows 10 Mobile gab es die Option „Absturzabbild” im Menü "Entwicklereinstellungen".  Dieses Feature wurde auf das [Geräteportal](../debug-test-perf/device-portal.md) verschoben, damit sie per Remotezugriff, anstatt nur über USB verwendet werden kann.  
 
 Es gibt verschiedene Tools, mit denen Sie eine App von einem Windows 10-PC auf einem Gerät bereitstellen können. Beide Geräte müssen über eine kabelgebundene oder drahtlose Verbindung mit dem gleichen Subnetz des Netzwerks verbunden sein oder über USB verbunden werden. Mit beiden aufgeführten Methoden wird nur das App-Paket (.appx/.appxbundle) installiert, nicht die Zertifikate.
 
--   Verwenden Sie das Tool für die Windows 10-Anwendungsbereitstellung (WinAppDeployCmd). Weitere Informationen zum [Tool WinAppDeployCmd](https://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
+-   Verwenden Sie das Tool für die Windows 10-Anwendungsbereitstellung (WinAppDeployCmd). Weitere Informationen zum [Tool WinAppDeployCmd](https://docs.microsoft.com/previous-versions/windows/apps/mt203806(v=vs.140)).
 -   Im [Geräteportal](../debug-test-perf/device-portal.md) ist die Bereitstellung aus Ihrem Browser auf einem mobilen Gerät unter Windows 10, Version 1511 oder höher, möglich. Im Geräteportal können Sie auf der Seite **[Apps](../debug-test-perf/device-portal.md#apps-manager)** ein App-Paket (APPX) hochladen und auf dem Gerät installieren.
 
 ## <a name="failure-to-install-developer-mode-package"></a>Fehler beim Installieren des Entwicklermoduspakets
@@ -201,20 +201,20 @@ Sie können mithilfe von „gpedit.msc“ die Gruppenrichtlinien für die Gerät
 1.  Führen Sie **regedit** aus.
 2.  Legen Sie diesen DWORD-Wert auf 1 fest, um das Querladen zu aktivieren.
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\"CurrentVersion"\\AppModelUnlock\\"allowalltrustedapps"**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
     - ODER
 
     Um den Entwicklermodus zu aktivieren, legen Sie diese DWORD-Werte auf 1 fest:
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\"CurrentVersion"\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **Verwenden von PowerShell zum Aktivieren Ihres Geräts**
 
 1.  Führen Sie PowerShell mit Administratorrechten aus.
 2.  Führen Sie zum Aktivieren des Querladens diesen Befehl aus:
 
-    -   **PS: C:\\WINDOWS\\"System32"&gt; Reg hinzufügen "HKEY\_lokalen\_Computer\\SOFTWARE\\Microsoft\\Windows\\" CurrentVersion "\\ AppModelUnlock"/ t / REG\_DWORD/f/v"AllowAllTrustedApps"/ d"1"**
+    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
 
     - ODER
 
@@ -233,9 +233,9 @@ Wenn Sie Apps auf Ihrem Windows 8.1-Gerät erstellen oder querladen, müssen Si
 
 Danach müssen Sie Ihr Gerät wie in diesem Thema beschrieben für die Entwicklung aktivieren, damit Sie weiterhin auf diesem Gerät entwickeln können. Andernfalls erhalten Sie möglicherweise eine Fehlermeldung, wenn Sie Ihre App debuggen oder versuchen, ein Paket dafür zu erstellen. Hier ist ein Beispiel für diesen Fehler:
 
-Fehler: DEP0700: Fehler beim Registrieren der app.
+Fehler: DEP0700 : Fehler beim Registrieren der app.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 * [Ihre erste app](your-first-app.md)
 * [Veröffentlichen Sie Ihre UWP-App](https://developer.microsoft.com/store/publish-apps).

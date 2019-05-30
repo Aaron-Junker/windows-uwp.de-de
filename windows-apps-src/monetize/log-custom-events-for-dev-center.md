@@ -6,21 +6,21 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Services-SDK, Ereignisse protokollieren
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 368e2fb7b3c6d78f68235b829e088d79b5673cf2
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e45b14daf6951142cb0d0ed8714e981eb6a55628
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334758"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371040"
 ---
 # <a name="log-custom-events-for-partner-center"></a>Protokollieren benutzerdefinierter Ereignisse im Partner Center
 
-Die [Nutzungsbericht](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in Partner Center können Sie erhalten Informationen zu benutzerdefinierten Ereignissen, die Sie in Ihrer app (Universelle Windows Plattform) definiert haben. Ein benutzerdefiniertes Ereignis ist eine beliebige Zeichenfolge, die ein Ereignis oder eine Aktivität in Ihrer App repräsentiert. Beispielsweise kann ein Spiel benutzerdefinierte Ereignisse mit den Bezeichnungen *FirstLevelPassed*, *SecondLevelPassed*usw. definieren, die protokolliert werden, wenn der Benutzer die einzelnen Levels des Spiels durchläuft.
+Die [Nutzungsbericht](https://docs.microsoft.com/windows/uwp/publish/usage-report) in Partner Center können Sie erhalten Informationen zu benutzerdefinierten Ereignissen, die Sie in Ihrer app (Universelle Windows Plattform) definiert haben. Ein benutzerdefiniertes Ereignis ist eine beliebige Zeichenfolge, die ein Ereignis oder eine Aktivität in Ihrer App repräsentiert. Beispielsweise kann ein Spiel benutzerdefinierte Ereignisse mit den Bezeichnungen *FirstLevelPassed*, *SecondLevelPassed*usw. definieren, die protokolliert werden, wenn der Benutzer die einzelnen Levels des Spiels durchläuft.
 
-Um ein benutzerdefiniertes Ereignis aus Ihrer App zu protokollieren, übergeben Sie die Zeichenfolge des benutzerdefinierten Ereignisses an die [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)-Methode des Microsoft Store Services SDK. Sie können die gesamtvorkommen überprüfen, für Ihre benutzerdefinierten Ereignisse in der **benutzerdefinierte Ereignisse** im Abschnitt der [Nutzungsbericht](https://msdn.microsoft.com/windows/uwp/publish/usage-report) im Partner Center.
+Um ein benutzerdefiniertes Ereignis aus Ihrer App zu protokollieren, übergeben Sie die Zeichenfolge des benutzerdefinierten Ereignisses an die [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)-Methode des Microsoft Store Services SDK. Sie können die gesamtvorkommen überprüfen, für Ihre benutzerdefinierten Ereignisse in der **benutzerdefinierte Ereignisse** im Abschnitt der [Nutzungsbericht](https://docs.microsoft.com/windows/uwp/publish/usage-report) im Partner Center.
 
 > [!NOTE]
-> Benutzerdefinierte Ereignisse, die Sie zum Partner Center protokollieren sind unabhängig vom stagingstatus [Windows-Ereignisse](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), und sie erscheinen nicht im **Ereignisanzeige**.
+> Benutzerdefinierte Ereignisse, die Sie zum Partner Center protokollieren sind unabhängig vom stagingstatus [Windows-Ereignisse](https://docs.microsoft.com/windows/desktop/Events/windows-events), und sie erscheinen nicht im **Ereignisanzeige**.
 
 ## <a name="prerequisites"></a>Vorraussetzungen
 
@@ -45,10 +45,10 @@ Bevor Sie, die benutzerdefinierte Protokollierung von Ereignissen in überprüfe
     [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
-    > Möglicherweise dauert das Laden des [Nutzungsberichts](https://msdn.microsoft.com/windows/uwp/publish/usage-report) lange, wenn Ihre App viele benutzerdefinierte Ereignisse mit langen Namen protokolliert. Es wird empfohlen, dass kurze Namen für Ihre benutzerdefinierten Ereignisse zu verwenden. 
+    > Möglicherweise dauert das Laden des [Nutzungsberichts](https://docs.microsoft.com/windows/uwp/publish/usage-report) lange, wenn Ihre App viele benutzerdefinierte Ereignisse mit langen Namen protokolliert. Es wird empfohlen, dass kurze Namen für Ihre benutzerdefinierten Ereignisse zu verwenden. 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Nutzungsbericht](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
+* [Nutzungsbericht](https://docs.microsoft.com/windows/uwp/publish/usage-report)
 * [Log-Methode](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
-* [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
+* [Microsoft Store Services SDK](https://docs.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

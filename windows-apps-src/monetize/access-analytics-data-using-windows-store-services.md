@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Store-Dienste Microsoft Store-Analyse-API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ab3e223c99a13e4520d5bc603454881803a3cb64
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 14a1b73a2c82beea746d40c25bfa18ddf6171203
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334858"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372001"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Zugreifen auf Analysedaten mit Store-Diensten
 
@@ -95,7 +95,7 @@ Die folgenden Analytics-Methoden sind für die UWP-apps in Partner Center verfü
 
 ### <a name="methods-for-desktop-applications"></a>Methoden für Desktopanwendungen
 
-Die folgenden Analysemethoden stehen für die Verwendung durch Entwicklerkonten zur Verfügung, die zum [Windows Desktop Application-Programm](https://msdn.microsoft.com/library/windows/desktop/mt826504) gehören.
+Die folgenden Analysemethoden stehen für die Verwendung durch Entwicklerkonten zur Verfügung, die zum [Windows Desktop Application-Programm](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) gehören.
 
 | Szenario       | Methoden      |
 |---------------|--------------------|
@@ -125,7 +125,7 @@ Die folgenden zusätzlichen Methoden sind verfügbar für die Verwendung von ent
 
 ### <a name="methods-for-hardware-and-drivers"></a>Methoden für Hardware und Treiber
 
-Developer-Konten, die zu gehören die [Windows Hardware-Dashboard-Programm](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) haben Zugriff auf einen zusätzlichen Satz von Methoden zum Abrufen von Analysedaten für Hardware und Treiber. Weitere Informationen finden Sie unter [Hardware-Dashboard-API-](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Developer-Konten, die zu gehören die [Windows Hardware-Dashboard-Programm](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) haben Zugriff auf einen zusätzlichen Satz von Methoden zum Abrufen von Analysedaten für Hardware und Treiber. Weitere Informationen finden Sie unter [Hardware-Dashboard-API-](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Codebeispiel
 

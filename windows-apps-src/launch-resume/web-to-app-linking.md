@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 464aa35aa8362049042ad23a6816c4de21b25634
-ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
+ms.openlocfilehash: c638eb843528cc17a3f02233ef5f238264eb58a0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66184517"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370520"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Aktivieren von Apps für Websites mit App-URI-Handlern
 
@@ -179,7 +179,7 @@ Schließen Sie die Anwendung, um sicherzustellen, dass die App aktiviert wird, w
 
 Stellen Sie sicher, dass Ihre app geschlossen ist. Drücken Sie die **Windows-Taste + R** zum Öffnen des **ausführen**-Dialogfelds fügen Sie den Link im Fenster ein. Ihre app sollte anstelle des Webbrowsers gestartet werden.
 
-Darüber hinaus können Sie Ihre App testen, indem Sie sie über eine andere app mithilfe der [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API starten. Diese API können auch Sie nutzen, um dies auf Telefonen zu testen.
+Darüber hinaus können Sie Ihre App testen, indem Sie sie über eine andere app mithilfe der [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) API starten. Diese API können auch Sie nutzen, um dies auf Telefonen zu testen.
 
 Wenn Sie der protocol activation logic zu folgen möchten, legen Sie einen Haltepunkt im **OnActivated** -Ereignishandler fest.
 
@@ -191,11 +191,11 @@ Wenn Sie der protocol activation logic zu folgen möchten, legen Sie einen Halte
 - Ihre JSON-Datei muss auf einen Https-Server hochgeladen werden.
 - Wenn Sie die Pfade, die Sie unterstützen möchten, ändern müssen, können Sie JSON-Datei erneut hochladen, ohne Ihre App erneut veröffentlichen zu müssen. Benutzern wird die Änderungen in 1 bis 8 Tagen angezeigt.
 - Alle quergeladenen Apps mit AppUriHandlern werden validierte Links für den Host on Install haben Sie müssen kein JSON-Datei hochgeladen haben, um das Feature zu testen.
-- Dieses Feature funktioniert, wann immer Ihre App eine UWP-App ist, die mit  [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) gestartet ist, oder eine Windows-Desktop-App, gestartet mit  [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Wenn die URL einen registrierten URI App Handler entspricht, wird die App anstelle des Browsers gestartet werden.
+- Dieses Feature funktioniert, wann immer Ihre App eine UWP-App ist, die mit  [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) gestartet ist, oder eine Windows-Desktop-App, gestartet mit  [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Wenn die URL einen registrierten URI App Handler entspricht, wird die App anstelle des Browsers gestartet werden.
 
 ## <a name="see-also"></a>Siehe auch
 
 [Verknüpfung zwischen Web und App – Beispielprojet](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
-[windows.protocol-Registrierung](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
-[Behandeln der URI-Aktivierung](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[windows.protocol-Registrierung](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)
+[Behandeln der URI-Aktivierung](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 [Beispiel für Assoziationsstart](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustriert die Verwendung der LaunchUriAsync()-API.

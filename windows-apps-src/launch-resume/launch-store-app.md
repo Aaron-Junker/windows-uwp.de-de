@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fd0e7137f31a8f1620f7937b52efe1ca84a6b99a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660895"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370784"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Starten der Microsoft Store-App
 
 
 
-In diesem Thema wird beschrieben, die **ms-Windows-Store:** URI-Schema. Ihre app kann dieses URI-Schema verwenden, um die Microsoft Store-app auf bestimmte Seiten im Speicher mithilfe von starten die [ **LaunchUriAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701476) Methode.
+In diesem Thema wird beschrieben, die **ms-Windows-Store:** URI-Schema. Ihre app kann dieses URI-Schema verwenden, um die Microsoft Store-app auf bestimmte Seiten im Speicher mithilfe von starten die [ **LaunchUriAsync** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) Methode.
 
 Dieses Beispiel zeigt, wie Sie den Store auf der Seite "Spiele" öffnen:
 
@@ -25,7 +25,7 @@ Dieses Beispiel zeigt, wie Sie den Store auf der Seite "Spiele" öffnen:
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
 ```
 
-## <a name="ms-windows-store-uri-scheme-reference"></a>MS-Windows-Store: URI-Schema-Verweis
+## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-store: URI-Schema-Verweis
 
 <table>
 <tr><th>Beschreibung</th><th></th><th>URI-Schema</th></tr>
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Startet die Seite mit Produktdetails für ein Produkt. <p>Store-ID wird empfohlen, für Kunden mit Windows 10 und funktioniert auf allen Betriebssystemversionen, aber die früheren Möglichkeiten, diese Elemente (z. B.: PFN) werden weiterhin unterstützt.</p>
-<p>Diese Werte finden Sie in <a href="https://partner.microsoft.com/dashboard">Partner Center</a> auf die <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">App-Identität</a> Seite im Abschnitt für die App-Verwaltung für jede app.</p>
+<p>Diese Werte finden Sie in <a href="https://partner.microsoft.com/dashboard">Partner Center</a> auf die <a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">App-Identität</a> Seite im Abschnitt für die App-Verwaltung für jede app.</p>
 </td>
 <td>
 Store-ID <p>(Empfohlen)</p>

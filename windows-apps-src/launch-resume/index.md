@@ -6,12 +6,12 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hintergrundaufgabe, App-Dienst, verbundene Geräte, Remotesysteme
 ms.localizationpriority: medium
-ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 79f3f1d28294527d6987540a159baa31d663db4c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582826"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371723"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Starten, Fortsetzen und Hintergrundaufgaben
 
@@ -95,7 +95,7 @@ Im Abschnitt [Hintergrundaufgaben](support-your-app-with-background-tasks.md) er
 | Thema | Beschreibung |
 |-------|-------------|
 | [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)                                       | Stellen Sie sicher, dass Ihre App die Anforderungen für die Ausführung von Hintergrundaufgaben erfüllt. |
-| [Zugreifen auf Sensoren und Geräte von einer Hintergrundaufgabe aus](access-sensors-and-devices-from-a-background-task.md)   | Mit [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) kann Ihre universelle Windows-App im Hintergrund auf Sensoren und Peripheriegeräte zugreifen. Dies ist selbst dann möglich, wenn die Vordergrund-App angehalten wird. |
+| [Zugreifen auf Sensoren und Geräte von einer Hintergrundaufgabe aus](access-sensors-and-devices-from-a-background-task.md)   | Mit [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) kann Ihre universelle Windows-App im Hintergrund auf Sensoren und Peripheriegeräte zugreifen. Dies ist selbst dann möglich, wenn die Vordergrund-App angehalten wird. |
 | [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb von Prozessen](create-and-register-an-inproc-background-task.md)       | Erstellen und registrieren Sie eine Hintergrundaufgabe, die im gleichen Prozess wie die Vordergrund-App ausgeführt wird. |
 | [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)           | Erstellen und registrieren Sie eine Hintergrundaufgabe, die in einem von Ihrer App getrennten Prozess ausgeführt wird, und registrieren Sie sie für die Ausführung, wenn sich die App nicht im Vordergrund befindet. |
 | [Portieren einer Hintergrundaufgabe außerhalb eines Prozesses in eine Hintergrundaufgabe innerhalb eines Prozesses](convert-out-of-process-background-task.md) | Hier erfahren Sie, wie Sie eine Out-of-Process-Hintergrundaufgabe zu einer In-Process-Hintergrundaufgabe portieren, die im gleichen Prozess wie die Vordergrund-App ausgeführt wird.|
@@ -106,14 +106,14 @@ Im Abschnitt [Hintergrundaufgaben](support-your-app-with-background-tasks.md) er
 | [Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md)       | Erfahren Sie, wie Ihre App den Status und Abschluss einer Hintergrundaufgabe erkennt. |
 | [Optimieren von Hintergrundaktivitäten](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) |Lesen Sie, wie Sie die Energie im Hintergrund reduzieren und mit Benutzereinstellungen für Hintergrundaktivitäten interagieren. |
 | [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)                                                 | Hier erfahren Sie, wie eine Funktion erstellt wird, die zum sicheren Registrieren der meisten Hintergrundaufgaben wiederverwendet werden kann. |
-| [Reagieren auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)         | Hier erfahren Sie, wie Sie eine Hintergrundaufgabe erstellen können, die auf [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)-Ereignisse reagiert. |
+| [Reagieren auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)         | Hier erfahren Sie, wie Sie eine Hintergrundaufgabe erstellen können, die auf [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)-Ereignisse reagiert. |
 | [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)                                    | Hier erfahren Sie, wie Sie eine einmalige Hintergrundaufgabe planen oder eine regelmäßige Hintergrundaufgabe ausführen. |
 | [Unbegrenzte Ausführung im Hintergrund](run-in-the-background-indefinetly.md)                                    | Verwenden Sie eine Funktion, um eine Hintergrundaufgabe oder eine erweiterte Ausführungssitzung ohne zeitliche Begrenzung im Hintergrund auszuführen. |
 | [Auslösen einer Hintergrundaufgabe in der App](trigger-background-task-from-app.md) | Hier erfahren Sie, wie Sie [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) zum Aktivieren einer Hintergrundaufgabe in Ihrer App verwenden.|
 | [Festlegen von Bedingungen zum Ausführen einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md)             | Erfahren Sie, wie Bedingungen festgelegt werden, die steuern, wann die Hintergrundaufgabe ausgeführt wird. |
-| [Übertragen von Daten im Hintergrund](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | Verwenden Sie die API für Hintergrundübertragungen zum Kopieren von Dateien im Hintergrund. |
+| [Übertragen von Daten im Hintergrund](https://docs.microsoft.com/windows/uwp/networking/background-transfers)                 | Verwenden Sie die API für Hintergrundübertragungen zum Kopieren von Dateien im Hintergrund. |
 | [Aktualisieren einer Live-Kachel über eine Hintergrundaufgabe](update-a-live-tile-from-a-background-task.md)                   | Verwenden Sie eine Hintergrundaufgabe, um die Live-Kachel Ihrer App mit neuen Inhalten zu aktualisieren. |
-| [Verwenden eines Wartungsauslösers](use-a-maintenance-trigger.md)                                                   | Erfahren Sie, wie Sie die [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)-Klasse zum Ausführen von einfachem Code im Hintergrund verwenden, während das Gerät angeschlossen ist. |
+| [Verwenden eines Wartungsauslösers](use-a-maintenance-trigger.md)                                                   | Erfahren Sie, wie Sie die [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger)-Klasse zum Ausführen von einfachem Code im Hintergrund verwenden, während das Gerät angeschlossen ist. |
 
 ## <a name="remote-systems"></a>Remotesysteme
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, DirectX, Schattenvolumen, Tiefenpuffer, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2feecb3080efefb2f9625fd8b66c5b722ad02a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ce0cbd310ea89c5fa7b5c68033402f559768a24
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622275"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368510"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>Exemplarische Vorgehensweise: Implementieren Sie Schattenvolumen, die mithilfe von Tiefenpuffern in Direct3D 11
 
@@ -65,7 +65,7 @@ Windows 8-Adde d Tiefe Vergleichsfunktion auf Funktionsebene 9\_1 und 9\_3. Jetz
 
 Nach Abschluss dieser exemplarischen Vorgehensweise, werden Sie wissen, wie eine grundlegende kompatibel Schatten Volume Technik in Direct3D 11 zu implementieren, die kompatibel mit der Funktionsebene 9 ist\_1 und höher.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 
 Führen Sie die Schritte unter [Vorbereiten der Entwicklungsumgebung für die Entwicklung von Spielen für die universelle Windows-Plattform (UWP) und DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md) aus. Ist nicht erforderlich, eine Vorlage noch, jedoch benötigen Sie Microsoft Visual Studio 2015, um das Codebeispiel in dieser exemplarischen Vorgehensweise erstellen.
@@ -75,13 +75,13 @@ Führen Sie die Schritte unter [Vorbereiten der Entwicklungsumgebung für die En
 
 **Direct3D**
 
-* [Schreiben von HLSL-Shadern in Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Schreiben von HLSL-Shadern in Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [Erstellen Sie ein neues DirectX 11-Projekt für UWP](user-interface.md)
 
 **Volumeschattenkopie-Zuordnung – technische Artikel**
 
-* [Allgemeine Techniken zur Verbesserung der Volumeschattenkopie-Depth-Zuordnungen](https://msdn.microsoft.com/library/windows/desktop/ee416324)
-* [Kaskadierenden Shadow-Zuordnungen](https://msdn.microsoft.com/library/windows/desktop/ee416307)
+* [Allgemeine Techniken zur Verbesserung der Volumeschattenkopie-Depth-Zuordnungen](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)
+* [Kaskadierenden Shadow-Zuordnungen](https://docs.microsoft.com/windows/desktop/DxTechArts/cascaded-shadow-maps)
 
  
 

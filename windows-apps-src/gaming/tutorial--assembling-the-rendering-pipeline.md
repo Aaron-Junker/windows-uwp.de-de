@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Rendern
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c16f1fbb55374b1d04c9fc9f5f7eae72ad19b00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0eeb515f07d9bc2e48ba97f6ef4d71afd0226ace
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604855"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367731"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>Rendering-Framework I: Einführung in das Rendering
 
@@ -496,11 +496,11 @@ Um diese Pipeline erstellen zu können, müssen Sie damit vertraut sein:
 * [Shader-Stufen](#shader-stages)
 * [Verschiedene Shader-Dateiformate](#various-shader-file-formats)
 
-Weitere Informationen finden Sie unter [Understand the Direct3D 11 rendering pipeline](https://msdn.microsoft.com/library/windows/desktop/dn643746.aspx) und [Grafik-Pipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx).
+Weitere Informationen finden Sie unter [Understand the Direct3D 11 rendering pipeline](https://docs.microsoft.com/windows/desktop/direct3dgetstarted/understand-the-directx-11-2-graphics-pipeline) und [Grafik-Pipeline](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline).
 
 #### <a name="hlsl"></a>HLSL
 
-HLSL ist die High Level Shading-Sprache für DirectX. Mit HLSL können Sie wie in C-programmierbare Shader für die Direct3D-Pipeline erstellen. Weitere Informationen finden Sie unter [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561.aspx).
+HLSL ist die High Level Shading-Sprache für DirectX. Mit HLSL können Sie wie in C-programmierbare Shader für die Direct3D-Pipeline erstellen. Weitere Informationen finden Sie unter [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl).
 
 #### <a name="shaders"></a>Shader
 
@@ -516,7 +516,7 @@ Vertex-Shader verarbeiten Scheitelpunkte und führt dabei in der Regel Vorgänge
 
 #### <a name="shader-stages"></a>Shaderstufen
 
-Eine Sequenz dieser verschiedene Shader für die Verarbeitung dieser Grundtypen wird als Shaderstufen in einer Renderingpipeline bezeichnet. Die tatsächlichen Phasen hängen von der Version von Direct3D ab, aber in der Regel umfassen sie Vertex-, Geometrie- und Pixel-Phasen. Es gibt auch andere Phasen, z. B. Geometrie- und Domänen-Shader für Tesselation und Compute-Shader. Alle diese Stufen sind vollständig programmierbar mithilfe von [HLSL])(#hlsl). Weitere Informationen finden Sie unter [Grafikpipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx).
+Eine Sequenz dieser verschiedene Shader für die Verarbeitung dieser Grundtypen wird als Shaderstufen in einer Renderingpipeline bezeichnet. Die tatsächlichen Phasen hängen von der Version von Direct3D ab, aber in der Regel umfassen sie Vertex-, Geometrie- und Pixel-Phasen. Es gibt auch andere Phasen, z. B. Geometrie- und Domänen-Shader für Tesselation und Compute-Shader. Alle diese Stufen sind vollständig programmierbar mithilfe von [HLSL])(#hlsl). Weitere Informationen finden Sie unter [Grafikpipeline](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline).
 
 #### <a name="various-shader-file-formats"></a>Verschiedene Shader-Dateiformate
 
@@ -545,17 +545,17 @@ Der Begriff Unterressource bezieht sich auf die Teilmenge einer Ressource. Direc
 
 #### <a name="depth-stencil"></a>Tiefenschablone
 
-Eine Tiefenschablonenressource stellt das Format und den Puffer zur Speicherung von Tiefen- und Schabloneninformationen bereit. Es wird mit der eine Texturressource erstellt. Weitere Informationen zum Erstellen einer Tiefenschablonen-Ressource finden Sie unter [Konfigurieren der Tiefenschablonenfunktionalität](https://msdn.microsoft.com/library/windows/desktop/bb205074.aspx). Wir greifen über die implementierte Tiefenschablonenansicht auf die Tiefenschablonenressource zu, mithilfe der [ID3D11DepthStencilView](https://msdn.microsoft.com/library/windows/desktop/ff476377.aspx)-Schnittstelle.
+Eine Tiefenschablonenressource stellt das Format und den Puffer zur Speicherung von Tiefen- und Schabloneninformationen bereit. Es wird mit der eine Texturressource erstellt. Weitere Informationen zum Erstellen einer Tiefenschablonen-Ressource finden Sie unter [Konfigurieren der Tiefenschablonenfunktionalität](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-depth-stencil). Wir greifen über die implementierte Tiefenschablonenansicht auf die Tiefenschablonenressource zu, mithilfe der [ID3D11DepthStencilView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview)-Schnittstelle.
 
 Tiefeninformationen steuern, welche Bereiche von Polygonen dargestellt werden. Schabloneninformationen steuern, welche Pixel maskiert werden. Es kann verwendet werden, um Spezialeffekte zu erzeugen, da es bestimmt, ob ein Pixel gezeichnet oder nicht gezeichnet wird. Es setzt das Bit auf 1 oder 0. 
 
-Weitere Informationen finden Sie unter: [Ansicht der tiefenschablone](../graphics-concepts/depth-stencil-view--dsv-.md), [Tiefenpuffer](../graphics-concepts/depth-buffers.md), und [Stencilpuffer](../graphics-concepts/stencil-buffers.md).
+Weitere Informationen finden Sie in den folgenden Themen: [Ansicht der tiefenschablone](../graphics-concepts/depth-stencil-view--dsv-.md), [Tiefenpuffer](../graphics-concepts/depth-buffers.md), und [Stencilpuffer](../graphics-concepts/stencil-buffers.md).
 
 #### <a name="render-target"></a>Renderziel
 
-Eine Renderziel ist eine Ressource, in die wir am Ende eines Renderingdurchgangs schreiben können. Es wird häufig mit der [ID3D11Device::CreateRenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476517.aspx)-Methode erstellt, mit der Hintergrundpuffer-Swapkette (die auch eine Ressource ist) als Eingabeparameter. 
+Eine Renderziel ist eine Ressource, in die wir am Ende eines Renderingdurchgangs schreiben können. Es wird häufig mit der [ID3D11Device::CreateRenderTargetView](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createrendertargetview)-Methode erstellt, mit der Hintergrundpuffer-Swapkette (die auch eine Ressource ist) als Eingabeparameter. 
 
-Jedes Renderziel sollte auch eine entsprechende Tiefenschablonenansicht haben, da wir [OMSetRenderTargets](https://msdn.microsoft.com/library/windows/desktop/ff476464.aspx) zum Festlegen des Renderziel vor der Verwendung verwenden, was auch eine Tiefenschablonenansicht erfordert. Wir greifen auf die Renderzielressource über die implementierte Renderzielansicht mit der [ID3D11RenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476582.aspx)-Schnittstelle zu. 
+Jedes Renderziel sollte auch eine entsprechende Tiefenschablonenansicht haben, da wir [OMSetRenderTargets](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) zum Festlegen des Renderziel vor der Verwendung verwenden, was auch eine Tiefenschablonenansicht erfordert. Wir greifen auf die Renderzielressource über die implementierte Renderzielansicht mit der [ID3D11RenderTargetView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)-Schnittstelle zu. 
 
 #### <a name="device"></a>Gerät
 
@@ -563,25 +563,25 @@ Für Benutzer, die mit Direct3D 11 nicht vertraut sind, ist dies ein Gerät zum
 
 Oder präzise ausgedrückt: Direct3D-Gerät ist die Komponente zum Rendern von Direct3D. Ein Gerät kapselt und speichert den Renderstatus, führt Transformationen und Beleuchtungsvorgänge aus, und rastert ein Bild zu einer Oberfläche. Weitere Informationen finden Sie unter [Geräte](../graphics-concepts/devices.md)
 
-Ein Gerät wird durch die [ID3D11Device](https://msdn.microsoft.com/library/windows/desktop/ff476379.aspx)-Schnittstelle dargestellt. In anderen Worten: die ID3D11Device-Schnittstelle stellt eine virtuelle Grafikkarte dar und wird verwendet, um die Ressourcen zu erstellen, die das Gerät besitzt. 
+Ein Gerät wird durch die [ID3D11Device](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)-Schnittstelle dargestellt. In anderen Worten: die ID3D11Device-Schnittstelle stellt eine virtuelle Grafikkarte dar und wird verwendet, um die Ressourcen zu erstellen, die das Gerät besitzt. 
 
-Beachten Sie, dass es verschiedene Versionen von ID3D11Device gibt, [ID3D11Device5](https://msdn.microsoft.com/library/windows/desktop/mt492478.aspx) ist die neueste Version und fügt neue Informationen zum ID3D11Device4 hinzu. Weitere Informationen zur Kommunikation zwischen Direct3D mit der zugrunde liegenden Hardware finden Sie unter [Windows Device Driver Model (WDDM)-Architektur](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture).
+Beachten Sie, dass es verschiedene Versionen von ID3D11Device gibt, [ID3D11Device5](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11device5) ist die neueste Version und fügt neue Informationen zum ID3D11Device4 hinzu. Weitere Informationen zur Kommunikation zwischen Direct3D mit der zugrunde liegenden Hardware finden Sie unter [Windows Device Driver Model (WDDM)-Architektur](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture).
 
-Jede Anwendung muss mindestens ein Gerät haben, die meisten Apps erstellen nur ein Gerät. Erstellen Sie ein Gerät für eine der die Hardwaretreiber, die auf Ihrem Computer installiert ist, durch den Aufruf __D3D11CreateDevice__ oder __D3D11CreateDeviceAndSwapChain__ und geben Sie den Treibertyp mit der D3D\_ Treiber\_Typflag. Jedes Gerät kann einen oder mehrere Gerätekontexte benutzen, je nach Bedarf der gewünschten Funktion. Weitere Informationen finden Sie unter [D3D11CreateDevice-Funktion](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx).
+Jede Anwendung muss mindestens ein Gerät haben, die meisten Apps erstellen nur ein Gerät. Erstellen Sie ein Gerät für eine der die Hardwaretreiber, die auf Ihrem Computer installiert ist, durch den Aufruf __D3D11CreateDevice__ oder __D3D11CreateDeviceAndSwapChain__ und geben Sie den Treibertyp mit der D3D\_ Treiber\_Typflag. Jedes Gerät kann einen oder mehrere Gerätekontexte benutzen, je nach Bedarf der gewünschten Funktion. Weitere Informationen finden Sie unter [D3D11CreateDevice-Funktion](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice).
 
 #### <a name="device-context"></a>Gerätekontext
 
 Der Gerätekontext wird verwendet, um den [Pipelinestatus](#rendering-pipeline) festzulegen und Renderbefehle mit [Ressourcen](#resource) eines [Geräts](#device) zu erzeugen. 
 
-Direct3D 11 implementiert zwei Arten von Gerätekontexten, eins für das sofortige Rendern und das andere für das verzögerte Rendern. Beide Kontexte werden durch eine [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476385.aspx)-Schnittstelle dargestellt.  
+Direct3D 11 implementiert zwei Arten von Gerätekontexten, eins für das sofortige Rendern und das andere für das verzögerte Rendern. Beide Kontexte werden durch eine [ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)-Schnittstelle dargestellt.  
 
 Die __ID3D11DeviceContext__-Schnittstellen haben unterschiedliche Versionen; __ID3D11DeviceContext4__ fügt neue Methoden zu __ID3D11DeviceContext3__ hinzu.
 
-Hinweis: __ID3D11DeviceContext4__ wird in das Windows 10 Creators Update eingeführt und ist die neueste Version von der __ID3D11DeviceContext__ Schnittstelle. Anwendungen für das Windows 10 Creators Update sollten diese Schnittstelle anstelle von früheren Versionen verwenden. Weitere Informationen finden Sie unter [ID3D11DeviceContext4](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx).
+Hinweis: __ID3D11DeviceContext4__ wird in das Windows 10 Creators Update eingeführt und ist die neueste Version von der __ID3D11DeviceContext__ Schnittstelle. Anwendungen für das Windows 10 Creators Update sollten diese Schnittstelle anstelle von früheren Versionen verwenden. Weitere Informationen finden Sie unter [ID3D11DeviceContext4](https://docs.microsoft.com/windows/desktop/api/d3d11_3/nn-d3d11_3-id3d11devicecontext4).
 
 #### <a name="dxdeviceresources"></a>DX::DeviceResources
 
-Die __DX::DeviceResources__-Klasse befindet sich in der __DeviceResources.cpp__/__.h__-Datei und steuert alle Geräteressourcen von DirectX. In dem Spiele-Beispielprojekt und der DirectX 11-App-Projektvorlage, befinden sich diese Dateien im Ordner __Commons__. Sie können auf die neueste Version dieser Dateien zuzugreifen, wenn Sie ein neues DirectX 11-App-Vorlageprojekt in Visual Studio 2015 oder höher erstellen.
+Die __DX::DeviceResources__-Klasse befindet sich in der __DeviceResources.cpp__/ __.h__-Datei und steuert alle Geräteressourcen von DirectX. In dem Spiele-Beispielprojekt und der DirectX 11-App-Projektvorlage, befinden sich diese Dateien im Ordner __Commons__. Sie können auf die neueste Version dieser Dateien zuzugreifen, wenn Sie ein neues DirectX 11-App-Vorlageprojekt in Visual Studio 2015 oder höher erstellen.
 
 ### <a name="buffer"></a>Puffer
 
@@ -612,11 +612,11 @@ Binden Sie Puffer an:
     * Die Streamoutputstufe durch Aufrufen von __ID3D11DeviceContext::SOSetTargets__
     * Die Shader-Stufe durch Aufrufen der Shader-Methoden, wie __id3d11DeviceContext:: VSSetConstantBuffers__
 
-Weitere Informationen zu finden Sie unter [Einführung in Puffer in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898.aspx).
+Weitere Informationen zu finden Sie unter [Einführung in Puffer in Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro).
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX Graphics Infrastructure (DXGI) ist ein neues Subsystem, das mit Windows Vista eingeführt wurde, die einige der Aufgaben auf niedriger Ebene kapselt, die Direct3D 10, benötigt 10.1, 11 und 11.1. Bei Verwendung von DXGI in einer Multithread-Anwendung ist besondere Vorsicht geboten, um sicherzustellen, dass keine Deadlocks auftreten. Weitere Informationen finden Sie unter [DirectX Graphics Infrastructure (DXGI): Best Practices-Multithreading](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX Graphics Infrastructure (DXGI) ist ein neues Subsystem, das mit Windows Vista eingeführt wurde, die einige der Aufgaben auf niedriger Ebene kapselt, die Direct3D 10, benötigt 10.1, 11 und 11.1. Bei Verwendung von DXGI in einer Multithread-Anwendung ist besondere Vorsicht geboten, um sicherzustellen, dass keine Deadlocks auftreten. Weitere Informationen finden Sie unter [DirectX Graphics Infrastructure (DXGI): Best Practices-Multithreading](https://docs.microsoft.com/windows/desktop/direct3darticles/dxgi-best-practices)
 
 ### <a name="feature-level"></a>Featureebene
 
@@ -624,9 +624,9 @@ Die Featureebene ist ein Konzept, das in Direct3D 11 eingeführt wurde, um die 
 
 Jede Grafikkarte implementiert eine gewisse DirectX-Funktion, abhängig von den installierten GPUs. In früheren Versionen von Microsoft Direct3D konnten Sie die Version der implementierten Direct3D-Grafikkarte sehen und die Anwendung entsprechend programmieren. 
 
-Mit der Featureebene können Sie bei der Erstellung eines Geräts versuchen, ein Gerät für die Featureebene zu erstellen, die Sie anfordern möchten. Wenn die Geräteerstellung funktioniert, ist die Featureebene vorhanden, andernfalls wird die Featureebene von der Hardware nicht unterstützt. Sie können entweder versuchen, ein Gerät auf einer niedrigeren Featureebene neu zu erstellen oder Sie können die Anwendung beenden. Z. B. die 12\_0 Funktionsebene erfordert Direct3D 11.3 oder Direct3D 12- und Shader Model 5.1. Weitere Informationen finden Sie unter [Direct3D-Funktionsebenen: Übersicht über die für jede Funktion](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview).
+Mit der Featureebene können Sie bei der Erstellung eines Geräts versuchen, ein Gerät für die Featureebene zu erstellen, die Sie anfordern möchten. Wenn die Geräteerstellung funktioniert, ist die Featureebene vorhanden, andernfalls wird die Featureebene von der Hardware nicht unterstützt. Sie können entweder versuchen, ein Gerät auf einer niedrigeren Featureebene neu zu erstellen oder Sie können die Anwendung beenden. Z. B. die 12\_0 Funktionsebene erfordert Direct3D 11.3 oder Direct3D 12- und Shader Model 5.1. Weitere Informationen finden Sie unter [Direct3D-Funktionsebenen: Übersicht über die für jede Funktion](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro).
 
-Verwenden die Funktionsebenen, können Sie eine Anwendung entwickeln, für die Direct3D 9, Microsoft Direct3D 10 und Direct3D 11 und führen Sie anschließend auf 9, 10 oder 11-Hardware (mit einigen Ausnahmen). Weitere Informationen finden Sie unter [Direct3D-Featureebenen](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx).
+Verwenden die Funktionsebenen, können Sie eine Anwendung entwickeln, für die Direct3D 9, Microsoft Direct3D 10 und Direct3D 11 und führen Sie anschließend auf 9, 10 oder 11-Hardware (mit einigen Ausnahmen). Weitere Informationen finden Sie unter [Direct3D-Featureebenen](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro).
 
 ### <a name="stereo-rendering"></a>Stereorendering
 

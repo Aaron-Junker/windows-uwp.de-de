@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, DirectX, Grafiken
 ms.localizationpriority: medium
-ms.openlocfilehash: fc93111d48f71a6ca8acad8191a2afb535fad2f0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 68d2c6ec250286b9820ff218f9b35637f49f3b97
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660935"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368749"
 ---
 # <a name="draw-to-the-screen"></a>Zeichnen auf dem Bildschirm
 
@@ -20,24 +20,24 @@ ms.locfileid: "57660935"
 
 **Wichtige APIs**
 
--   [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)
+-   [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)
+-   [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)
+-   [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)
 
 Schließlich wird der Code portiert, der den sich drehenden Würfel auf den Bildschirm zeichnet.
 
 In OpenGL ES 2.0 wird der Zeichnungskontext als EGLContext-Typ definiert. Er enthält die Fenster- und Oberflächenparameter sowie die erforderlichen Ressourcen zum Zeichnen in die Renderziele, mit denen das im Fenster angezeigte endgültige Bild erstellt wird. Mithilfe dieses Kontextes konfigurieren Sie die Grafikressourcen zur korrekten Anzeige der Ergebnisse Ihrer Shaderpipeline auf dem Bildschirm. Eine der primären Ressourcen ist der "Hintergrundpuffer" (auch als "Framepufferobjekt" bezeichnet), der die endgültigen, zusammengesetzten und für die Darstellung auf dem Bildschirm fertigen Renderziele enthält.
 
-Bei Direct3D ist der Prozess zum Konfigurieren der Grafikressourcen für das Zeichnen auf den Bildschirm didaktischer und erfordert mehr APIs. (Eine Vorlage für Microsoft Visual Studio Direct3D maßgeblich dabei jedoch vereinfacht,!) Um einen Kontext (einen Direct3D-Gerät-Kontext bezeichnet) zu erhalten, benötigen Sie zunächst eine [ **ID3D11Device1** ](https://msdn.microsoft.com/library/windows/desktop/hh404575) -Objekt und verwenden sie zum Erstellen und Konfigurieren einer [ **ID3D11DeviceContext1**  ](https://msdn.microsoft.com/library/windows/desktop/hh404598) Objekt. Diese beiden Objekte werden zusammen verwendet, um die spezifischen Ressourcen zu konfigurieren, die Sie zum Zeichnen auf den Bildschirm benötigen.
+Bei Direct3D ist der Prozess zum Konfigurieren der Grafikressourcen für das Zeichnen auf den Bildschirm didaktischer und erfordert mehr APIs. (Eine Vorlage für Microsoft Visual Studio Direct3D maßgeblich dabei jedoch vereinfacht,!) Um einen Kontext (einen Direct3D-Gerät-Kontext bezeichnet) zu erhalten, benötigen Sie zunächst eine [ **ID3D11Device1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) -Objekt und verwenden sie zum Erstellen und Konfigurieren einer [ **ID3D11DeviceContext1**  ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) Objekt. Diese beiden Objekte werden zusammen verwendet, um die spezifischen Ressourcen zu konfigurieren, die Sie zum Zeichnen auf den Bildschirm benötigen.
 
 Kurz gesagt: Die DXGI-APIs enthalten in erster Linie APIs zum Verwalten von Ressourcen, die direkt den Grafikadapter betreffen, und Direct3D enthält die APIs, mit denen Sie die GPU und Ihr in der CPU ausgeführtes Hauptprogramm verknüpfen können.
 
 Zum Vergleich werden in diesem Beispiel die folgenden relevanten Typen aus den APIs verwendet:
 
--   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575): bietet eine virtuelle Darstellung der grafischen Gerätes und ihrer Ressourcen.
--   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598): stellt die Schnittstelle zum Konfigurieren von Puffern und Rendering-Befehle.
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631): die Swapkette ist analog zu den Hintergrundpuffer OpenGL ES 2.0. Sie ist der Bereich im Speicher des Grafikadapters, der die endgültigen gerenderten Bilder für die Anzeige enthält. Dieser Bereich wird als „Swapchain“ bezeichnet, da er mehrere beschreibbare Puffer enthält, die ausgetauscht werden können, um das aktuelle Renderbild auf dem Bildschirm darzustellen.
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582): den Direct2D-Bitmap-Puffer, der durch die SwapChain präsentiert wird, dass der Direct3D-Gerätekontext zeichnet enthält. Wie bei OpenGL ES 2.0 können Sie mehrere Renderziele haben, von denen einige nicht an die Swapchain gebunden sind, die aber für Schattierungstechniken mit mehreren Durchgängen verwendet werden.
+-   [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1): bietet eine virtuelle Darstellung der grafischen Gerätes und ihrer Ressourcen.
+-   [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1): stellt die Schnittstelle zum Konfigurieren von Puffern und Rendering-Befehle.
+-   [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1): die Swapkette ist analog zu den Hintergrundpuffer OpenGL ES 2.0. Sie ist der Bereich im Speicher des Grafikadapters, der die endgültigen gerenderten Bilder für die Anzeige enthält. Dieser Bereich wird als „Swapchain“ bezeichnet, da er mehrere beschreibbare Puffer enthält, die ausgetauscht werden können, um das aktuelle Renderbild auf dem Bildschirm darzustellen.
+-   [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview): den Direct2D-Bitmap-Puffer, der durch die SwapChain präsentiert wird, dass der Direct3D-Gerätekontext zeichnet enthält. Wie bei OpenGL ES 2.0 können Sie mehrere Renderziele haben, von denen einige nicht an die Swapchain gebunden sind, die aber für Schattierungstechniken mit mehreren Durchgängen verwendet werden.
 
 In der Vorlage enthält das Rendererobjekt die folgenden Felder:
 
@@ -63,7 +63,7 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-Die Direct3D-Laufzeit erstellt implizit eine [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) für die [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635). Diese stellt die Textur als „Hintergrundpuffer“ dar, der von der Swapchain zur Anzeige verwendet werden kann.
+Die Direct3D-Laufzeit erstellt implizit eine [**IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1) für die [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d). Diese stellt die Textur als „Hintergrundpuffer“ dar, der von der Swapchain zur Anzeige verwendet werden kann.
 
 Für die Initialisierung und Konfiguration des Direct3D-Geräts und -Gerätekontexts sowie der Renderziele dienen die benutzerdefinierten Methoden **CreateDeviceResources** und **CreateWindowSizeDependentResources** in der Direct3D-Vorlage.
 
@@ -123,15 +123,15 @@ void Render(GraphicsContext *drawContext)
 
 Der Prozess in Direct3D 11 ist sehr ähnlich. (Es wird vorausgesetzt, dass Sie die Viewport- und Renderzielkonfiguration der Direct3D-Vorlage verwenden.)
 
--   Aktualisieren Sie die Konstantenpuffer (in diesem Fall die Modell-Anzeige-Projizierungsmatrix) mit Aufrufen für [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
--   Legen Sie den Scheitelpunktpuffer mit [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) fest.
--   Legen Sie den Indexpuffer mit [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) fest.
--   Legen Sie die spezifische Dreieckstopologie (eine Dreiecksliste) mit [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) fest.
--   Legen Sie das Eingabelayout des Scheitelpunktpuffers mit [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) fest.
--   Binden Sie den Vertex-Shader mit [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493).
--   Binden Sie den Fragment-Shader mit [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472).
--   Senden Sie die indizierten Scheitelpunkte durch die Shader, und geben Sie die Farbergebnisse mit [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) an den Renderzielpuffer aus.
--   Zeigen Sie den Renderzielpuffer mit [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) an.
+-   Aktualisieren Sie die Konstantenpuffer (in diesem Fall die Modell-Anzeige-Projizierungsmatrix) mit Aufrufen für [**ID3D11DeviceContext1::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-updatesubresource1).
+-   Legen Sie den Scheitelpunktpuffer mit [**ID3D11DeviceContext1::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) fest.
+-   Legen Sie den Indexpuffer mit [**ID3D11DeviceContext1::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) fest.
+-   Legen Sie die spezifische Dreieckstopologie (eine Dreiecksliste) mit [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) fest.
+-   Legen Sie das Eingabelayout des Scheitelpunktpuffers mit [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) fest.
+-   Binden Sie den Vertex-Shader mit [**ID3D11DeviceContext1::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader).
+-   Binden Sie den Fragment-Shader mit [**ID3D11DeviceContext1::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader).
+-   Senden Sie die indizierten Scheitelpunkte durch die Shader, und geben Sie die Farbergebnisse mit [**ID3D11DeviceContext1::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) an den Renderzielpuffer aus.
+-   Zeigen Sie den Renderzielpuffer mit [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) an.
 
 Direct3D 11: Renderings eines Frames für die Anzeige
 
@@ -196,7 +196,7 @@ void RenderObject::Render()
 
 ```
 
-Nachdem [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) aufgerufen wurde, wird der Frame an die konfigurierte Anzeige ausgegeben.
+Nachdem [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) aufgerufen wurde, wird der Frame an die konfigurierte Anzeige ausgegeben.
 
 ## <a name="previous-step"></a>Vorheriger Schritt
 

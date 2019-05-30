@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b9e82b0ab5e798bb0b29c4d5127cfe773db5f7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 41c42a058398539701cc1df003717eec99d1b2cd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616255"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362858"
 ---
 # <a name="create-custom-transport-controls"></a>Erstellen benutzerdefinierter Transportsteuerelemente
 
@@ -21,7 +21,7 @@ ms.locfileid: "57616255"
 
 MediaPlayerElement verfügt über anpassbare XAML-Transportsteuerelemente, um die Steuerung von Audio-und Videoinhalten innerhalb einer universellen Windows-Platform (UWP)-App zu verwalten. Hier wird gezeigt, wie Sie die MediaTransportControls-Vorlage anpassen. Wir zeigen Ihnen, wie Sie das Überlaufmenü verwenden, eine benutzerdefinierte Schaltfläche hinzufügen und den Schieberegler bearbeiten können.
 
-> **Wichtige APIs:** [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx), [MediaPlayerElement.AreTransportControlsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled.aspx), [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn278677)
+> **Wichtige APIs:** [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaPlayerElement.AreTransportControlsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled), [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)
 
 Bevor Sie beginnen, sollten Sie mit den MediaPlayerElement- und MediaTransportControls-Klassen vertraut sein. Weitere Informationen finden Sie im Leitfaden für das MediaPlayerElement-Steuerelement.
 
@@ -29,13 +29,13 @@ Bevor Sie beginnen, sollten Sie mit den MediaPlayerElement- und MediaTransportCo
 > Die Beispiele in diesem Thema basieren auf dem [Beispiel für die Steuerelemente für den Medientransport](https://go.microsoft.com/fwlink/p/?LinkId=620023). Sie können das Beispiel herunterladen, um den fertigen Code anzuzeigen und auszuführen.
 
 > [!NOTE]
-> **MediaPlayerElement** steht erst ab Windows 10, Version 1607, zur Verfügung. Für das Entwickeln von Apps für niedrigere Windows 10-Versionen muss stattdessen [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) verwendet werden. Alle Beispiele auf dieser Seite funktionieren auch mit **MediaElement**.
+> **MediaPlayerElement** steht erst ab Windows 10, Version 1607, zur Verfügung. Für das Entwickeln von Apps für niedrigere Windows 10-Versionen muss stattdessen [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) verwendet werden. Alle Beispiele auf dieser Seite funktionieren auch mit **MediaElement**.
 
 ## <a name="when-should-you-customize-the-template"></a>Wann sollte die Vorlage angepasst werden?
 
-**MediaPlayerElement** verfügt über integrierte Transportsteuerelemente, die so konzipiert sind, dass sie standardmäßig mit den meisten Apps für die Video- und Audiowiedergabe verwendet werden können. Sie werden von der [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx)-Klasse bereitgestellt und enthalten Schaltflächen zum Wiedergeben und Beenden von sowie zum Navigieren in Medien, zum Einstellen der Lautstärke, zum Aktivieren/Deaktivieren des Vollbildmodus, zum Übertragen auf ein Zweitgerät, zum Aktivieren von Untertiteln, zum Wechseln von Audiospuren und zum Anpassen der Wiedergaberate. MediaTransportControls verfügt über Eigenschaften, mit denen Sie steuern können, ob die einzelnen Schaltflächen angezeigt und aktiviert werden. Sie können auch die [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx)-Eigenschaft festlegen, um anzugeben, ob die Steuerelemente in einer Zeile oder in zwei Zeilen angezeigt werden.
+**MediaPlayerElement** verfügt über integrierte Transportsteuerelemente, die so konzipiert sind, dass sie standardmäßig mit den meisten Apps für die Video- und Audiowiedergabe verwendet werden können. Sie werden von der [**MediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Klasse bereitgestellt und enthalten Schaltflächen zum Wiedergeben und Beenden von sowie zum Navigieren in Medien, zum Einstellen der Lautstärke, zum Aktivieren/Deaktivieren des Vollbildmodus, zum Übertragen auf ein Zweitgerät, zum Aktivieren von Untertiteln, zum Wechseln von Audiospuren und zum Anpassen der Wiedergaberate. MediaTransportControls verfügt über Eigenschaften, mit denen Sie steuern können, ob die einzelnen Schaltflächen angezeigt und aktiviert werden. Sie können auch die [**IsCompact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediatransportcontrols.iscompact)-Eigenschaft festlegen, um anzugeben, ob die Steuerelemente in einer Zeile oder in zwei Zeilen angezeigt werden.
 
-Allerdings gibt es möglicherweise Szenarien, in denen Sie das Erscheinungsbild des Steuerelements weiter anpassen oder sein Verhalten ändern müssen. Dies sind einige Beispiele:
+Allerdings gibt es möglicherweise Szenarien, in denen Sie das Erscheinungsbild des Steuerelements weiter anpassen oder sein Verhalten ändern müssen. Hier einige Beispiele:
 - Ändern Sie die Symbole, das Schiebereglerverhalten und die Farben.
 - Verschieben Sie weniger häufig verwendete Befehlsschaltflächen in ein Überlaufmenü.
 - Ändern Sie die Reihenfolge, in der Befehle wegfallen, wenn die Größe des Steuerelements geändert wird.
@@ -51,17 +51,17 @@ Sie können die Darstellung des Steuerelements durch Ändern der Standardvorlage
 
 ## <a name="template-structure"></a>Vorlagenstruktur
 
-Das [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx)-Element ist im Standardstil enthalten. Sie können diesen Standardstil in Ihr Projekt kopieren, um ihn zu ändern. Das ControlTemplate-Element ist in Abschnitte unterteilt, ähnlich wie andere XAML-Steuerelementvorlagen.
-- Der erste Abschnitt der Vorlage enthält die [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx)-Definitionen für die verschiedenen Komponenten von MediaTransportControls.
+Das [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)-Element ist im Standardstil enthalten. Sie können diesen Standardstil in Ihr Projekt kopieren, um ihn zu ändern. Das ControlTemplate-Element ist in Abschnitte unterteilt, ähnlich wie andere XAML-Steuerelementvorlagen.
+- Der erste Abschnitt der Vorlage enthält die [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)-Definitionen für die verschiedenen Komponenten von MediaTransportControls.
 - Im zweiten Abschnitt werden die verschiedenen visuellen Zustände definiert, die von MediaTransportControls verwendet werden.
-- Der dritte Abschnitt enthält das [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)-Element, in dem die verschiedenen MediaTransportControls-Elemente zusammengeführt werden und mit dem das Layout der Komponenten definiert wird.
+- Der dritte Abschnitt enthält das [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Element, in dem die verschiedenen MediaTransportControls-Elemente zusammengeführt werden und mit dem das Layout der Komponenten definiert wird.
 
 > [!NOTE]
 > Weitere Informationen zum Ändern von Vorlagen finden Sie unter [Steuerelementvorlagen](/windows/uwp/design/controls-and-patterns/control-templates). Können Sie einen Text-Editor oder ähnliche Editoren in der IDE öffnen der XAML-Dateien im \( *Programmdateien*) \Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*derSDK-Version*) \Generic. Das Standardformat und die Vorlage für jedes Steuerelement werden in der Datei **generic.xaml** definiert. Sie finden die MediaTransportControls-Vorlage in generic.xaml, indem Sie nach „MediaTransportControls“ suchen.
 
 In den folgenden Abschnitten erfahren Sie, wie Sie einige der wichtigsten Elemente der Transportsteuerelemente anpassen:
-- [**Schieberegler**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): ermöglicht dem Benutzer über ihre Medien bereinigen sowie die Bearbeitung an
-- [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): alle Schaltflächen enthält.
+- [**Schieberegler**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider): ermöglicht dem Benutzer über ihre Medien bereinigen sowie die Bearbeitung an
+- [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar): alle Schaltflächen enthält.
 Weitere Informationen finden Sie im Abschnitt zum Aufbau des MediaTransportControls-Referenzthemas.
 
 ## <a name="customize-the-transport-controls"></a>Anpassen der Transportsteuerelemente
@@ -109,9 +109,9 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-3. Kopieren Sie den Standardstil für [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) in einen [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx) in Ihrem Projekt. Dies sind der Stil und die Vorlage, die Sie ändern.
+3. Kopieren Sie den Standardstil für [**MediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) in einen [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) in Ihrem Projekt. Dies sind der Stil und die Vorlage, die Sie ändern.
 (Im Beispiel für die Medientransportsteuerelemente wird ein neuer Ordner mit dem Namen „Themes“ erstellt, dem eine ResourceDictionary-Datei mit dem Namen generic.xaml hinzugefügt wird.)
-4. Ändern Sie den [**TargetType**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.targettype.aspx) des Stils in den Typ des neuen benutzerdefinierten Steuerelements. (Im Beispiel wird der TargetType in `local:CustomMediaTransportControls`geändert.)
+4. Ändern Sie den [**TargetType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) des Stils in den Typ des neuen benutzerdefinierten Steuerelements. (Im Beispiel wird der TargetType in `local:CustomMediaTransportControls`geändert.)
 
 ```xaml
 xmlns:local="using:CustomMediaTransportControls">
@@ -119,7 +119,7 @@ xmlns:local="using:CustomMediaTransportControls">
 <Style TargetType="local:CustomMediaTransportControls">
 ```
 
-5. Legen Sie den [**DefaultStyleKey**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.defaultstylekey.aspx) Ihrer benutzerdefinierten Klasse fest. Dies weist die benutzerdefinierte Klasse an, einen Style mit dem TargetType `local:CustomMediaTransportControls` zu verwenden.
+5. Legen Sie den [**DefaultStyleKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.defaultstylekey) Ihrer benutzerdefinierten Klasse fest. Dies weist die benutzerdefinierte Klasse an, einen Style mit dem TargetType `local:CustomMediaTransportControls` zu verwenden.
 
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
@@ -131,7 +131,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-6. Fügen Sie dem XAML-Markup ein [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) hinzu, und fügen Sie diesem die benutzerdefinierten Transportsteuerelemente hinzu. Beachten Sie, dass die APIs zum Ausblenden, Anzeigen, Deaktivieren und Aktivieren der Standardschaltflächen mit einer angepassten Vorlage weiterhin funktionieren.
+6. Fügen Sie dem XAML-Markup ein [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) hinzu, und fügen Sie diesem die benutzerdefinierten Transportsteuerelemente hinzu. Beachten Sie, dass die APIs zum Ausblenden, Anzeigen, Deaktivieren und Aktivieren der Standardschaltflächen mit einer angepassten Vorlage weiterhin funktionieren.
 
 ```xaml
 <MediaPlayerElement Name="MediaPlayerElement1" AreTransportControlsEnabled="True" Source="video.mp4">
@@ -155,13 +155,13 @@ Sie können nun den Steuerelementstil und die -vorlage ändern, um das Erscheinu
 
 Sie können MediaTransportControls-Befehlsschaltflächen in ein Überlaufmenü verschieben, sodass weniger häufig verwendete Befehle ausgeblendet werden, bis der Benutzer diese benötigt.
 
-In der MediaTransportControls-Vorlage sind die Befehlsschaltflächen in einem [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx)-Element enthalten. Das Konzept der Befehlsleiste basiert auf primären und sekundären Befehlen. Die primären Befehle sind die Schaltflächen, die standardmäßig im Steuerelement angezeigt werden und stets sichtbar sind (es sei denn, Sie deaktivieren die Schaltfläche oder blenden sie aus, oder es ist nicht ausreichend Platz vorhanden). Die sekundären Befehle sind in einem Überlaufmenü enthalten, das angezeigt wird, wenn ein Benutzer auf die Schaltfläche mit den Auslassungspunkten (...) klickt. Weitere Informationen finden Sie im Artikel [App-Leisten und Befehlsleisten](app-bars.md).
+In der MediaTransportControls-Vorlage sind die Befehlsschaltflächen in einem [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)-Element enthalten. Das Konzept der Befehlsleiste basiert auf primären und sekundären Befehlen. Die primären Befehle sind die Schaltflächen, die standardmäßig im Steuerelement angezeigt werden und stets sichtbar sind (es sei denn, Sie deaktivieren die Schaltfläche oder blenden sie aus, oder es ist nicht ausreichend Platz vorhanden). Die sekundären Befehle sind in einem Überlaufmenü enthalten, das angezeigt wird, wenn ein Benutzer auf die Schaltfläche mit den Auslassungspunkten (...) klickt. Weitere Informationen finden Sie im Artikel [App-Leisten und Befehlsleisten](app-bars.md).
 
 Um ein Element aus den primären Befehlsleistenbefehlen in das Überlaufmenü zu verschieben, müssen Sie die XAML-Steuerelementvorlage bearbeiten.
 
 **So verschieben Sie einen Befehl an das Überlaufmenü**
 1. Suchen Sie in der Steuerelementvorlage das CommandBar-Element namens `MediaControlsCommandBar`.
-2. Fügen Sie dem XAML-Code für CommandBar einen [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx)-Abschnitt hinzu. Platzieren Sie diesen nach dem schließenden Tag für das [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx)-Element.
+2. Fügen Sie dem XAML-Code für CommandBar einen [**SecondaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands)-Abschnitt hinzu. Platzieren Sie diesen nach dem schließenden Tag für das [**PrimaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands)-Element.
 
 ```xaml
 <CommandBar x:Name="MediaControlsCommandBar" ... >  
@@ -184,7 +184,7 @@ Um ein Element aus den primären Befehlsleistenbefehlen in das Überlaufmenü zu
 </CommandBar>
 ```
 
-3. Um das Menü mit Befehlen zu füllen, schneiden Sie den XAML-Code für die gewünschten [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)-Objekte aus dem PrimaryCommands-Element aus, und fügen Sie ihn in das SecondaryCommands-Element ein. In diesem Beispiel wird das `PlaybackRateButton`-Element in das Überlaufmenü verschoben.
+3. Um das Menü mit Befehlen zu füllen, schneiden Sie den XAML-Code für die gewünschten [**AppBarButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)-Objekte aus dem PrimaryCommands-Element aus, und fügen Sie ihn in das SecondaryCommands-Element ein. In diesem Beispiel wird das `PlaybackRateButton`-Element in das Überlaufmenü verschoben.
 
 4. Fügen Sie der Schaltfläche eine Beschriftung hinzu, und entfernen Sie die Formatierungsinformationen, wie hier gezeigt.
 Da das Überlaufmenü aus Textschaltflächen besteht, müssen Sie der Schaltfläche eine Textbeschriftung hinzufügen und außerdem den Stil entfernen, der die Höhe und Breite der Schaltfläche festgelegt. Andernfalls wird sie nicht richtig im Überlaufmenü angezeigt.
@@ -217,10 +217,10 @@ Das Anpassen von MediaTransportControls kann beispielsweise erforderlich sein, w
 
 Sie müssen es CommandBar am entsprechenden Speicherort hinzufügen. (Weitere Informationen finden Sie über das Arbeiten mit den Menü-Überlaufabschnitt.) Wie es in der Benutzeroberfläche positioniert ist, wird durch, in dem die Schaltfläche im Markup ist bestimmt. Z. B. Wenn Sie diese Schaltfläche, um als das letzte Element in die primären Befehle angezeigt werden soll, fügen sie am Ende der Befehlsliste primärer hinzu.
 
-Sie können auch das Symbol für die Schaltfläche mit den anpassen. Weitere Informationen finden Sie unter den <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx"> <b>AppBarButton</b> </a> Verweis.
+Sie können auch das Symbol für die Schaltfläche mit den anpassen. Weitere Informationen finden Sie unter den <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"> <b>AppBarButton</b> </a> Verweis.
     
 
-2. Rufen Sie in der [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx)-Überschreibung die Schaltfläche aus der Vorlage ab, und registrieren Sie einen Handler für das dazugehörige [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)-Ereignis. Dieser Code wird in die `CustomMediaTransportControls`-Klasse eingefügt.
+2. Rufen Sie in der [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)-Überschreibung die Schaltfläche aus der Vorlage ab, und registrieren Sie einen Handler für das dazugehörige [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis. Dieser Code wird in die `CustomMediaTransportControls`-Klasse eingefügt.
 
 ```csharp
 public sealed class CustomMediaTransportControls :  MediaTransportControls
@@ -277,9 +277,9 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 ### <a name="modifying-the-slider"></a>Ändern des Schiebereglers
 
-Das „seek“-Steuerelement von MediaTransportControls wird durch ein [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)-Element bereitgestellt. Eine Möglichkeit zum Anpassen besteht darin, die Granularität des Suchverhaltens zu ändern.
+Das „seek“-Steuerelement von MediaTransportControls wird durch ein [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)-Element bereitgestellt. Eine Möglichkeit zum Anpassen besteht darin, die Granularität des Suchverhaltens zu ändern.
 
-Der standardmäßige Suchschieberegler ist in 100 Segmente unterteilt, sodass das Suchverhalten auf diese Anzahl von Abschnitten begrenzt ist. Sie können die Granularität des Suchschiebereglers ändern, indem Sie das Slider-Element aus der visuellen XAML-Struktur in Ihrem [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx)-Ereignishandler für [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) abrufen. In diesem Beispiel wird gezeigt, wie Sie mithilfe von [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) einen Verweis auf das Slider-Element abrufen, dann das Standardschrittintervall des Schiebereglers von 1 % in 0,1 % (1.000 Schritte) ändern, wenn das Medium länger als 120 Minuten ist. Das MediaPlayerElement hat den Namen `MediaPlayerElement1`.
+Der standardmäßige Suchschieberegler ist in 100 Segmente unterteilt, sodass das Suchverhalten auf diese Anzahl von Abschnitten begrenzt ist. Sie können die Granularität des Suchschiebereglers ändern, indem Sie das Slider-Element aus der visuellen XAML-Struktur in Ihrem [**MediaOpened**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.mediaopened)-Ereignishandler für [**MediaPlayerElement.MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) abrufen. In diesem Beispiel wird gezeigt, wie Sie mithilfe von [**VisualTreeHelper**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.VisualTreeHelper) einen Verweis auf das Slider-Element abrufen, dann das Standardschrittintervall des Schiebereglers von 1 % in 0,1 % (1.000 Schritte) ändern, wenn das Medium länger als 120 Minuten ist. Das MediaPlayerElement hat den Namen `MediaPlayerElement1`.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)

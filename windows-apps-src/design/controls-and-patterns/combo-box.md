@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 21a6c698fa0e07587e2c25ae827dc6654a8ced9d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 297b907191dfa07084e5e4ada0e3468733e47090
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618625"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363132"
 ---
 # <a name="combo-box"></a>Kombinationsfeld
 
@@ -173,13 +173,13 @@ Vor dem SDK 17763, den Wert der SelectedItem-Eigenschaft (und somit SelectedValu
 
 - SelectedItem = Null
 - SelectedValue = Null
-- SelectedIndex =-1
+- SelectedIndex = -1
 
 Im SDK 17763 und höhere Versionen den Wert der SelectedItem-Eigenschaft (und somit SelectedValue und SelectedIndex) muss nicht in die Auflistung der Elemente des Kombinationsfelds sein. Im vorherigen Beispiel, Festlegen von `colorComboBox.SelectedItem = "Pink"` führt:
 
 - SelectedItem = Pink
 - SelectedValue = Pink
-- SelectedIndex =-1
+- SelectedIndex = -1
 
 ### <a name="text-search"></a>Textsuche
 
@@ -194,7 +194,7 @@ Sie können festlegen, die [IsTextSearchEnabled](/uwp/api/windows.ui.xaml.contro
 
 Wird standardmäßig ein Kombinationsfeld ermöglicht dem Benutzer aus einer vordefinierten Liste von Optionen auswählen. Es gibt jedoch Fälle, in dem die Liste enthält nur eine Teilmenge der gültigen Werte und der Benutzer sollte in der Lage, andere Werte eingeben, die nicht aufgelistet sind. Um dies zu unterstützen, können Sie im Kombinationsfeld bearbeitbar zu machen.
 
-Damit ein Kombinationsfeld bearbeitet werden kann, legen Sie die [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable) Eigenschaft **"true"**. Behandeln Sie dann die [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) Ereignis, um die Arbeit mit der vom Benutzer eingegebene Wert.
+Damit ein Kombinationsfeld bearbeitet werden kann, legen Sie die [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable) Eigenschaft **"true"** . Behandeln Sie dann die [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) Ereignis, um die Arbeit mit der vom Benutzer eingegebene Wert.
 
 Standardmäßig wird der SelectedItem-Wert aktualisiert, wenn der Benutzer die benutzerdefinierten Text ein Commit ausgeführt. Sie können dieses Verhalten überschreiben, indem Sie festlegen **behandelt** zu **"true"** in den Ereignis-Args TextSubmitted. Wenn das Ereignis als behandelt markiert ist, wird das Kombinationsfeld werden keine weiteren Maßnahmen nach dem Ereignis und verbleibt im Zustand "Bearbeiten". SelectedItem wird nicht aktualisiert werden.
 
@@ -305,6 +305,6 @@ bool IsValid(string Text)
 - [Textsteuerelemente](text-controls.md)
 - [Rechtschreibprüfung](text-controls.md)
 - [Suche](search.md)
-- [TextBox-Klasse](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Windows.UI.Xaml.Controls PasswordBox-Klasse](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length-Eigenschaft](https://msdn.microsoft.com/library/system.string.length.aspx)
+- [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

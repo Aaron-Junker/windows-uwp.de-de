@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3b5e230270b46b7cb2709d4bfa06c4c51d0224
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5893719e43314eb15c684948a31de5a025a926fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598155"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370829"
 ---
 # <a name="vertex-shader-vs-stage"></a>Vertexshaderphase (VS)
 
@@ -29,7 +29,7 @@ Die Scheitelpunkt-Shader- (VS) Phase wird für einzelne Scheitelpunktverarbeitun
 -   Morphing
 -   Scheitelpunktbeleuchtung
 
-Die Scheitelpunkt-Shader-Stufe ist eine programmierbare Shader-Stufe. Sie wird im [Grafikpipeline](graphics-pipeline.md)- Diagramm als abgerundeter Block angezeigt. Dieser Shader-Stufe verwendet Shadermodell 4.0 [gemeinsamer Shaderkern](https://msdn.microsoft.com/library/windows/desktop/bb509580).
+Die Scheitelpunkt-Shader-Stufe ist eine programmierbare Shader-Stufe. Sie wird im [Grafikpipeline](graphics-pipeline.md)- Diagramm als abgerundeter Block angezeigt. Dieser Shader-Stufe verwendet Shadermodell 4.0 [gemeinsamer Shaderkern](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core).
 
 Die Scheitelpunkt-Shader- (VS) Phase verarbeitet Scheitelpunkte aus dem Eingabe-Assembler. Ein Scheitelpunkt-Shader operiert immer auf einem einzigen Eingabescheitelpunkt und erzeugt daraus einen einzigen Ausgabescheitelpunkt. Die Scheitelpunkt-Shader-Phase muss immer für auszuführende Pipeline aktiv sein. Wenn keine Scheitelpunktänderung oder -transformation erforderlich ist, muss ein Pass-Through-Scheitelpunkt-Shader erstellt und auf die Pipeline festgelegt werden.
 
@@ -39,7 +39,7 @@ Die Vertex-Shader-Stufe kann zwei vom System generierte Werte aus der Eingabe-As
 
 Scheitelpunkt-Shader werden immer auf allen Scheitelpunkten ausgeführt, einschließlich benachbarter Scheitelpunkte in Eingabe-Grundtyp-Topologien mit Nachbarschaft. Die Ausführungshäufigkeit des Scheitelpunkt-Shaders kann von der CPU mithilfe der VSInvocations-Pipelinestatistik abgefragt werden.
 
-Ein Vertex-Shader kann laden und Ausführen textursampling Vorgänge Bildschirmbereich ableitungen sind, in denen nicht erforderlich (Verwenden der systeminternen Funktionen "HLSL": [Beispiel (HLSL von DirectX-Textur-Objekt)](https://msdn.microsoft.com/library/windows/desktop/bb509695), [SampleCmpLevelZero (HLSL von DirectX-Textur-Objekt)](https://msdn.microsoft.com/library/windows/desktop/bb509697), und [SampleGrad (HLSL von DirectX-Textur-Objekt)](https://msdn.microsoft.com/library/windows/desktop/bb509698)).
+Ein Vertex-Shader kann laden und Ausführen textursampling Vorgänge Bildschirmbereich ableitungen sind, in denen nicht erforderlich (Verwenden der systeminternen Funktionen "HLSL": [Beispiel (HLSL von DirectX-Textur-Objekt)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample), [SampleCmpLevelZero (HLSL von DirectX-Textur-Objekt)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero), und [SampleGrad (HLSL von DirectX-Textur-Objekt)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplegrad)).
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Eingabe
 

@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a7a34846cbadfa9e133976695239b98294a0dd2
-ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
+ms.openlocfilehash: ba1e09a3819b2c22de52760519f352adc36d6362
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66184573"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372374"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Verpacken einer UWP-App mit Visual Studio
 
@@ -46,7 +46,7 @@ Nachdem Sie die vorangehenden Schritte abgeschlossen haben, können Sie Ihre App
 
 1.  **Testen Sie Ihre app ein.** Bevor Sie die app für die Übermittlung von Partner Center Verpacken, stellen Sie sicher, dass sie erwartungsgemäß funktioniert auf allen gerätefamilien, die Sie unterstützen möchten. Diese Gerätefamilien umfassen Desktop-, Mobile-, Surface Hub-, Xbox-, IoT- und andere Geräte. Weitere Informationen zum Bereitstellen und Testen Ihrer app mithilfe von Visual Studio finden Sie unter [bereitstellen und Debuggen von UWP-apps](../debug-test-perf/deploying-and-debugging-uwp-apps.md).
 2.  **Optimieren Sie Ihre app ein.** Sie können die Profilerstellungs- und Debugtools von Visual Studio verwenden, um die Leistung Ihrer UWP-App zu optimieren. Zu diesen Tools gehören das Zeitachsentool für „Reaktionsfähigkeit der Benutzeroberfläche“, das Speichernutzungstool, das CPU-Auslastungstool und viele mehr. Weitere Informationen zur Verwendung dieser Tools finden Sie im Thema [Profilerstellungsfeature-Tour](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour).
-3.  **Überprüfen Sie die .NET Native-Kompatibilität (für VB und C# apps).** Mit der Universelle Windows-Plattform wurde ein neuer systemeigener Compiler eingeführt, der die Laufzeitleistung Ihrer App verbessert. Diese Änderung macht es erforderlich, dass Sie Ihre App in dieser Kompilierungsumgebung testen. Standardmäßig aktiviert die **Release**-Buildkonfiguration die .NET Native-Toolkette. Daher ist es wichtig, die App und das erwartete Verhalten mit dieser **Release**-Konfiguration zu testen. Einige häufige Debugprobleme, die bei .NET Native auftreten können, werden [Native .NET Windows Universal Apps debuggen](https://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx) ausführlich erläutert.
+3.  **Überprüfen Sie die .NET Native-Kompatibilität (für VB und C# apps).** Mit der Universelle Windows-Plattform wurde ein neuer systemeigener Compiler eingeführt, der die Laufzeitleistung Ihrer App verbessert. Diese Änderung macht es erforderlich, dass Sie Ihre App in dieser Kompilierungsumgebung testen. Standardmäßig aktiviert die **Release**-Buildkonfiguration die .NET Native-Toolkette. Daher ist es wichtig, die App und das erwartete Verhalten mit dieser **Release**-Konfiguration zu testen. Einige häufige Debugprobleme, die bei .NET Native auftreten können, werden [Native .NET Windows Universal Apps debuggen](https://blogs.msdn.microsoft.com/devops/2015/07/29/debugging-net-native-windows-universal-apps/) ausführlich erläutert.
 
 ## <a name="configure-an-app-package"></a>Konfigurieren eines App-Pakets
 
@@ -118,9 +118,9 @@ Um eine app über den Microsoft Store zu verteilen, müssen Sie erstellen ein ap
 
 **Um Ihre app-Paket lokal überprüfen**
 
-1. In der endgültigen **Paketerstellung abgeschlossen** auf der Seite die **App-Pakete erstellen** Assistenten lassen die **lokalen Computer** Option ausgewählt ist, und klicken Sie auf **starten Windows-Zertifizierungskit für Apps**. Weitere Informationen zum Testen der App mit dem Zertifizierungskit für Windows-Apps finden Sie unter [Zertifizierungskit für Windows-Apps](https://msdn.microsoft.com/library/windows/apps/Mt186449).
+1. In der endgültigen **Paketerstellung abgeschlossen** auf der Seite die **App-Pakete erstellen** Assistenten lassen die **lokalen Computer** Option ausgewählt ist, und klicken Sie auf **starten Windows-Zertifizierungskit für Apps**. Weitere Informationen zum Testen der App mit dem Zertifizierungskit für Windows-Apps finden Sie unter [Zertifizierungskit für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
 
-    Das Zertifizierungskit für Windows-Apps führt die verschiedene Tests aus und gibt die Ergebnisse zurück. Weitere Informationen finden Sie unter [Tests des Zertifizierungskits für Windows-Apps](https://msdn.microsoft.com/library/windows/apps/mt186450).
+    Das Zertifizierungskit für Windows-Apps führt die verschiedene Tests aus und gibt die Ergebnisse zurück. Weitere Informationen finden Sie unter [Tests des Zertifizierungskits für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
 
     Wenn Sie ein Windows 10-Remotegerät, die Sie zum Testen verwenden möchten haben, müssen Sie die Windows-Zertifizierungskit für Apps auf diesem Gerät manuell zu installieren. Im nächsten Abschnitt werden die erforderlichen Schritte beschrieben. Nachdem Sie damit fertig sind, wählen Sie **Remotecomputer** und klicken auf **Zertifizierungskit für Windows-Apps starten**, um eine Verbindung zum Remotegerät herzustellen und die Überprüfungen ausführen.
 
@@ -128,23 +128,23 @@ Um eine app über den Microsoft Store zu verteilen, müssen Sie erstellen ein ap
 
 **Zum Überprüfen des app-Pakets auf einem Windows 10-Remotegerät**
 
-1.  Aktivieren Sie Ihr Windows 10-Gerät für die Entwicklung anhand der [Aktivieren von Geräten für die Entwicklung](https://msdn.microsoft.com/library/windows/apps/Dn706236) Anweisungen.
+1.  Aktivieren Sie Ihr Windows 10-Gerät für die Entwicklung anhand der [Aktivieren von Geräten für die Entwicklung](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) Anweisungen.
     >[!IMPORTANT]
     > Sie können keine app-Paket auf einem ARM-Remotegerät für Windows 10 überprüfen.
-2.  Laden Sie die Remotetools für Visual Studio herunter, und installieren Sie sie. Diese Tools werden verwendet, um das Zertifizierungskit für Windows-Apps remote auszuführen. Weitere Informationen zu diesen Tools einschließlich der Downloadseite finden Sie unter [Ausführen von UWP-Apps auf einem Remotecomputer](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor).
+2.  Laden Sie die Remotetools für Visual Studio herunter, und installieren Sie sie. Diese Tools werden verwendet, um das Zertifizierungskit für Windows-Apps remote auszuführen. Weitere Informationen zu diesen Tools einschließlich der Downloadseite finden Sie unter [Ausführen von UWP-Apps auf einem Remotecomputer](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
 3.  Laden Sie die erforderlichen [Windows App Certification Kit](https://go.microsoft.com/fwlink/p/?LinkID=309666) und installieren Sie es auf dem Windows 10-Remotegerät.
 4.  Aktivieren Sie auf der Seite **Paketerstellung abgeschlossen** des Assistenten das Optionsfeld **Remotecomputer**. Klicken Sie anschließend neben der Schaltfläche **Testverbindung** auf die Schaltfläche mit den Auslassungszeichen.
     >[!NOTE]
-    > Die **Remotecomputer** Optionsfeld ist nur verfügbar, wenn Sie mindestens eine Projektmappenkonfiguration ausgewählt haben, die die Validierung unterstützt. Weitere Informationen zum Testen der App mit dem WACK finden Sie unter [Zertifizierungskit für Windows-Apps](https://msdn.microsoft.com/library/windows/apps/Mt186449).
+    > Die **Remotecomputer** Optionsfeld ist nur verfügbar, wenn Sie mindestens eine Projektmappenkonfiguration ausgewählt haben, die die Validierung unterstützt. Weitere Informationen zum Testen der App mit dem WACK finden Sie unter [Zertifizierungskit für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
 5.  Geben Sie ein Gerät vom Subnetz aus an, oder geben Sie den DNS-Namen (Domain Name Server) oder die IP-Adresse eines Geräts an, das sich außerhalb des Subnetzes befindet.
 6.  Wählen Sie in der Liste **Authentifizierungsmodus** die Option **Keiner** aus, wenn Ihr Gerät keine Anmeldung mittels Windows-Anmeldeinformationen erfordert.
-7.  Klicken Sie auf die Schaltfläche **Auswählen** und anschließend auf die Schaltfläche **Zertifizierungskit für Windows-Apps starten**. Wenn die Remotetools auf diesem Gerät ausgeführt werden, stellt Visual Studio eine Verbindung mit dem Gerät her und führt die Überprüfungstests aus. Weitere Informationen finden Sie unter [Tests im Zertifizierungskit für Windows-Apps](https://msdn.microsoft.com/library/windows/apps/mt186450).
+7.  Klicken Sie auf die Schaltfläche **Auswählen** und anschließend auf die Schaltfläche **Zertifizierungskit für Windows-Apps starten**. Wenn die Remotetools auf diesem Gerät ausgeführt werden, stellt Visual Studio eine Verbindung mit dem Gerät her und führt die Überprüfungstests aus. Weitere Informationen finden Sie unter [Tests im Zertifizierungskit für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
 
 ### <a name="automate-store-submission"></a>Automatisieren Sie die Einreichung beim store
 
 Ab Visual Studio-2019, Sie können übermitteln die generierte appxupload-Datei auf dem Microsoft Store direkt aus der IDE durch Auswahl der **automatisch an den Microsoft Store übermitteln, nach der Überprüfung der Windows-Zertifizierungskit für Apps** -Option. Sie müssen die Anmeldeinformationen für die Übermittlung angeben. Diese Anmeldeinformationen bestehen aus drei Teilen: der **Azure-Mandanten-ID**, **Client-ID** und **clientgeheimnis**. Um diese zu erhalten, gehen Sie wie folgt vor:
 
-1. Navigieren Sie im Partner Center zu Ihrer **Developer-Einstellungen**, klicken Sie auf **Benutzer**, und ordnen Sie Dev Center-Konto Ihres Unternehmens mit Azure AD-Verzeichnis Ihrer Organisation. Ausführliche Anweisungen finden Sie unter [Verwalten von Kontobenutzern](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users).
+1. Navigieren Sie im Partner Center zu Ihrer **Developer-Einstellungen**, klicken Sie auf **Benutzer**, und ordnen Sie Dev Center-Konto Ihres Unternehmens mit Azure AD-Verzeichnis Ihrer Organisation. Ausführliche Anweisungen finden Sie unter [Verwalten von Kontobenutzern](https://docs.microsoft.com/windows/uwp/publish/manage-account-users).
 2. In der **Benutzer** auf **Hinzufügen von Azure AD-Anwendungen**, Hinzufügen von Azure AD-Anwendung, die die app darstellt, oder Diensts, die Sie verwenden, um Zugriff auf die Übermittlung von Apps für Ihr Developer Center-Konto, und weisen sie die Rolle "Manager". Wenn diese Anwendung bereits in Ihrem Azure AD-Verzeichnis vorhanden ist, können Sie es auf der Seite der hinzufügen-Azure AD-Anwendungen auf Ihr Dev Center-Konto hinzufügen auswählen. Andernfalls können Sie eine neue Azure AD-Anwendung auf der Seite **Azure AD-Apps hinzufügen** erstellen. Weitere Informationen finden Sie unter [Hinzufügen von Benutzern, Gruppen und Azure AD-Anwendungen mit Ihrem Partner Center-Konto](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
 3. Wechseln Sie zurück zur der **Verwalten von Benutzern** auf den Namen der Azure AD-Anwendung wechseln Sie zu den Anwendungseinstellungen, und kopieren die **Mandanten-ID** und **Client-ID** Werte.
 4. Klicken Sie auf **Neuen Schlüssel hinzufügen**. Kopieren Sie den Schlüssel-Wert, der den geheimen Clientschlüssel entspricht, auf dem folgenden Bildschirm. Sie werden nicht in der Lage, diese Informationen erneut zugegriffen wird, nach dem Verlassen dieser Seite stellen Sie daher Sie sicher, dass sie nicht verloren gehen. Weitere Informationen finden Sie die Informationen zum Verwalten von Schlüsseln in [Hinzufügen von Benutzern, Gruppen und Azure AD-Anwendungen mit Ihrem Partner Center-Konto](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).

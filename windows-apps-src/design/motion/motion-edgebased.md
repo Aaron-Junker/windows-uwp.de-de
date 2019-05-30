@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fd7071092a66f46a81095a5cb6aff8b623a774a5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610205"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366626"
 ---
 # <a name="edge-based-ui-animations"></a>Animationen für randbasierte Benutzeroberflächenelemente
 
@@ -23,7 +23,7 @@ ms.locfileid: "57610205"
 
 Randbasierte Animationen blenden UI-Elemente ein oder aus, die vom Bildschirmrand ausgehen. Die Aktionen zum Anzeigen und Ausblenden können von Benutzern oder von der App initiiert werden. Die UI-Elemente können die Anwendung überlagern oder Teil der Hauptoberfläche der App sein. Wenn das UI-Element Teil der App-Oberfläche ist, müssen Sie möglicherweise die Größe der restlichen App entsprechend anpassen.
 
-> **Wichtige APIs:** [**EdgeUIThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **Wichtige APIs:** [**EdgeUIThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -45,13 +45,13 @@ Randbasierte Animationen blenden UI-Elemente ein oder aus, die vom Bildschirmran
 
 
 **Für Entwickler**
-* [Übersicht über Animationen](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animieren von Edge-basierte Benutzeroberfläche](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**EdgeUIThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh702324)
-* [**PaneThemeTransition-Klasse**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [Animieren von wird ausgeblendet](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Animieren von ordnet](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Animieren von Edge-basierte Benutzeroberfläche](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
+* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**EdgeUIThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+* [**PaneThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
+* [Animieren von wird ausgeblendet](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
+* [Animieren von ordnet](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
 
  
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c48b02de34bd37acced8ef65859708f31fd78ca2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612885"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370858"
 ---
 # <a name="tier-2"></a>Ebene 2
 
@@ -42,7 +42,7 @@ Schreibvorgänge auf nicht zugeordnete Kacheln werden beim Wechsel in den Speich
 
 Filtern mit einem Abbild, welches die **NULL** und nicht-**NULL** Kacheln überspannt und 0 (standardmäßig nach fehlenden Format) für Texel auf **NULL** Kacheln in der gesamten Ausführung beiträgt. Ältere Hardware erfüllt diese Anforderung nicht und gibt 0 (mit standardmäßig nach fehlenden Format) für das vollständige Filterergebnis zurück, wenn jegliche Texel (mit ungleich NULL Breite) sich auf einer **NULL** Kachel befinden. Jede andere Hardware muss die Anforderung erfüllen, alle Texel (mit einer Gewichtung ungleich NULL) in den Filtervorgang einzubeziehen.
 
-**NULL** Texelzugriffe haben zur Folge, dass durch den [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) Vorgang der Feedbackstatus des Texturlesevorgangs mit „false” zurückgegeben wird. Dies ist unabhängig davon, wie die Schreibmaske des Texturzugriffsergebnisses im Shader erfolgt, und wie viele Komponenten im Texturformat vorhanden sind (deren Kombination möglicherweise den Eindruck vermittelt, dass auf die Textur nicht zugegriffen werden muss).
+**NULL** Texelzugriffe haben zur Folge, dass durch den [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) Vorgang der Feedbackstatus des Texturlesevorgangs mit „false” zurückgegeben wird. Dies ist unabhängig davon, wie die Schreibmaske des Texturzugriffsergebnisses im Shader erfolgt, und wie viele Komponenten im Texturformat vorhanden sind (deren Kombination möglicherweise den Eindruck vermittelt, dass auf die Textur nicht zugegriffen werden muss).
 
 ## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>Ausrichtungbeschränkungen
 

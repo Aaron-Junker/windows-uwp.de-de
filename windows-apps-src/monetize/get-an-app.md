@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, App
 ms.localizationpriority: medium
-ms.openlocfilehash: c6f4a4cb86bb5cf23e84e75ad99750dd6cff9539
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 96efc6145d382d4f6a996e541d638f2a1d896e80
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334539"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372662"
 ---
 # <a name="get-an-app"></a>Abrufen einer App
 
@@ -44,7 +44,7 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der abzurufenden App. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | String | Erforderlich. Die Store-ID der abzurufenden App. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 
 ### <a name="request-body"></a>Anforderungstext

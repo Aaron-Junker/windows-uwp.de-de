@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f2638e93ecbe346cc5dccb503d94d926ddcdae
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e8e7653174eaf31f11341a5c8e21b69ec54a6189
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335148"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371281"
 ---
 # <a name="create-and-manage-submissions"></a>Erstellen und Verwalten von Übermittlungen
 
@@ -46,15 +46,15 @@ Stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllt haben, bevor
 
 * Bereiten Sie Ihre App für die Verwendung mit der Microsoft Store-Übermittlungs-API vor:
 
-  * Wenn Ihre app noch nicht im Partner Center vorhanden ist, müssen Sie [Ihrer app zu erstellen, indem Sie ihren Namen im Partner Center reservieren](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). Sie können nicht die Übermittlung zum Microsoft Store-API verwenden, zum Erstellen einer app im Partner Center. Arbeit im Partner Center zu erstellen, und klicken Sie dann danach können Sie die API den Zugriff auf die app und Übermittlungen dafür programmgesteuert zu erstellen. Sie können jedoch mithilfe der API Add-Ons und Flight-Pakete programmgesteuert erstellen, bevor Sie Übermittlungen für sie erstellen.
+  * Wenn Ihre app noch nicht im Partner Center vorhanden ist, müssen Sie [Ihrer app zu erstellen, indem Sie ihren Namen im Partner Center reservieren](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). Sie können nicht die Übermittlung zum Microsoft Store-API verwenden, zum Erstellen einer app im Partner Center. Arbeit im Partner Center zu erstellen, und klicken Sie dann danach können Sie die API den Zugriff auf die app und Übermittlungen dafür programmgesteuert zu erstellen. Sie können jedoch mithilfe der API Add-Ons und Flight-Pakete programmgesteuert erstellen, bevor Sie Übermittlungen für sie erstellen.
 
-  * Bevor Sie eine Eingabe für eine bestimmte app, die mit dieser API erstellen können, müssen Sie zuerst [erstellen Sie eine Übermittlung für die app im Partner Center](https://msdn.microsoft.com/windows/uwp/publish/app-submissions), einschließlich der Beantwortung der [age Bewertungen](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) Fragebogen. Danach können Sie neue Übermittlungen für diese App mithilfe der API programmgesteuert erstellen. Sie müssen keine Add-On-Übermittlung oder Flight-Paketübermittlung vor der Verwendung der API für diese Arten von Übermittlungen erstellen.
+  * Bevor Sie eine Eingabe für eine bestimmte app, die mit dieser API erstellen können, müssen Sie zuerst [erstellen Sie eine Übermittlung für die app im Partner Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions), einschließlich der Beantwortung der [age Bewertungen](https://docs.microsoft.com/windows/uwp/publish/age-ratings) Fragebogen. Danach können Sie neue Übermittlungen für diese App mithilfe der API programmgesteuert erstellen. Sie müssen keine Add-On-Übermittlung oder Flight-Paketübermittlung vor der Verwendung der API für diese Arten von Übermittlungen erstellen.
 
-  * Wenn Sie eine App-Übermittlung erstellen oder aktualisieren und ein App-Paket angeben müssen, [bereiten Sie das App-Paket vor](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements).
+  * Wenn Sie eine App-Übermittlung erstellen oder aktualisieren und ein App-Paket angeben müssen, [bereiten Sie das App-Paket vor](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
 
-  * Wenn Sie eine App-Übermittlung erstellen oder aktualisieren und Screenshots oder Bilder für den Store-Eintrag angeben müssen, [bereiten Sie die App-Screenshots und -Bilder vor](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images).
+  * Wenn Sie eine App-Übermittlung erstellen oder aktualisieren und Screenshots oder Bilder für den Store-Eintrag angeben müssen, [bereiten Sie die App-Screenshots und -Bilder vor](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images).
 
-  * Wenn Sie eine Add-On-Übermittlung erstellen oder aktualisieren und ein Symbol angeben müssen, [bereiten Sie das Symbol vor](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon).
+  * Wenn Sie eine Add-On-Übermittlung erstellen oder aktualisieren und ein Symbol angeben müssen, [bereiten Sie das Symbol vor](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions).
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 

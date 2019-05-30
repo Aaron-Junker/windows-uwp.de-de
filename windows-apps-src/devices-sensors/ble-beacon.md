@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: b1c8271c8066304dce355cf50afd4509173eed3e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3deb5aca27b4f33d0492bae9fd4ddbce4f52d065
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653265"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370360"
 ---
 # <a name="bluetooth-le-advertisements"></a>Bluetooth LE-Ankündigungen
 
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Bluetooth.Advertisement**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.aspx)
+-   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
 
 Dieser Artikel enthält eine Übersicht über Bluetooth Low Energy (LE)-Ankündigungsbeacons für Apps für die Universelle Windows-Plattform (UWP).  
 
@@ -26,8 +26,8 @@ Dieser Artikel enthält eine Übersicht über Bluetooth Low Energy (LE)-Ankündi
 
 Es gibt zwei Hauptfunktionen, die ein Entwickler mithilfe der LE-Ankündigungs-APIs ausführen kann:
 
--   [Ankündigungsüberwachung](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx): Überwachung auf Beacons in der Nähe und deren Filterung auf der Basis von Nutzlast oder Nähe.  
--   [Ankündigung Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx): eine Nutzlast für Windows definieren, um im Auftrag eines Entwicklers zu werben.  
+-   [Ankündigungsüberwachung](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher): Überwachung auf Beacons in der Nähe und deren Filterung auf der Basis von Nutzlast oder Nähe.  
+-   [Ankündigung Publisher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher): eine Nutzlast für Windows definieren, um im Auftrag eines Entwicklers zu werben.  
 
 Ein vollständiges Codebeispiel finden Sie unter [Beispiel für Bluetooth-Ankündigungen](https://go.microsoft.com/fwlink/p/?LinkId=619990) auf Github.
 
@@ -43,7 +43,7 @@ Um Bluetooth LE-Grundfunktionalität in einer App für die Universelle Windows-P
 
 Bluetooth LE-Ankündigungen ermöglichen Ihrem Gerät, konstant eine spezifische Nutzlast („Ankündigung“ genannt) zu signalisieren. Diese Ankündigung kann von jedem Bluetooth LE-kompatiblen Gerät in der Nähe erkannt werden, wenn es für den Empfang dieser spezifischen Ankündigung eingerichtet wurde.
 
-> **Hinweis**: Für Datenschutz ist die Lebensdauer Ihrer Ankündigung an, die Ihrer App gebunden. Sie können einen BluetoothLEAdvertisementPublisher erstellen und in einer Hintergrundaufgabe „Start“ aufrufen, um die Ankündigung im Hintergrund auszuführen. Weitere Informationen zu Hintergrundaufgaben finden Sie unter [Starten, Fortsetzen und Hintergrundaufgaben](https://msdn.microsoft.com/windows/uwp/launch-resume/index).
+> **Hinweis**: Für Datenschutz ist die Lebensdauer Ihrer Ankündigung an, die Ihrer App gebunden. Sie können einen BluetoothLEAdvertisementPublisher erstellen und in einer Hintergrundaufgabe „Start“ aufrufen, um die Ankündigung im Hintergrund auszuführen. Weitere Informationen zu Hintergrundaufgaben finden Sie unter [Starten, Fortsetzen und Hintergrundaufgaben](https://docs.microsoft.com/windows/uwp/launch-resume/index).
 
 ### <a name="basic-publishing"></a>Grundlegende Veröffentlichung
 

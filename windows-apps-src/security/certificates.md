@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28419df1a37ff640db7246b54e50da5bfce9fedb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624355"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372623"
 ---
 # <a name="intro-to-certificates"></a>Einführung in Zertifikate
 
@@ -53,7 +53,7 @@ Der Standard für X.509-Zertifikate für öffentliche Schlüssel wurde mit der Z
 
 ![x.509-Zertifikatversionen 1, 2 und 3](images/x509certificateversions.png)
 
-Manche dieser Felder und Erweiterungen können direkt angegeben werden, wenn Sie mit der [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079)-Klasse eine Zertifikatanforderung erstellen. Die meisten sind dazu nicht in der Lage. Diese Felder können von der ausstellenden Behörde aufgefüllt oder leer gelassen werden. Weitere Informationen zu den Feldern finden Sie in den folgenden Abschnitten:
+Manche dieser Felder und Erweiterungen können direkt angegeben werden, wenn Sie mit der [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties)-Klasse eine Zertifikatanforderung erstellen. Die meisten sind dazu nicht in der Lage. Diese Felder können von der ausstellenden Behörde aufgefüllt oder leer gelassen werden. Weitere Informationen zu den Feldern finden Sie in den folgenden Abschnitten:
 
 ### <a name="version-1-fields"></a>Felder von Version 1
 

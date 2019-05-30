@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Paket-Rollout, Test-Flight-Übermittlung, Aktualisieren, Prozentsatz
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium
-ms.openlocfilehash: d5f7a388eed193e780fe2b7be9cafa5d249f6653
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: c9aa114cc8b9aca73d4c278761b88e6daca0db11
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334807"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371445"
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a>Aktualisieren des Prozentsatzes eines Rollouts für eine Flight-Paketübermittlung
 
@@ -47,7 +47,7 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App mit der Flight-Paket-Übermittlung, deren Paketrollout-Prozentsatz aktualisiert werden soll. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | String | Erforderlich. Die Store-ID der App mit der Flight-Paket-Übermittlung, deren Paketrollout-Prozentsatz aktualisiert werden soll. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | flightId | String | Erforderlich. Die ID des Flight-Pakets mit der Übermittlung, deren Paketrollout-Prozentsatz aktualisiert werden soll. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines Flight-Pakets](create-a-flight.md) und zum [Abrufen von Flight-Paketen für eine App](get-flights-for-an-app.md) enthalten. Für einen Flug, der im Partner Center erstellt wurde, ist diese ID auch in der URL für die Seite "aktiv" im Partner Center verfügbar.  |
 | submissionId | String | Erforderlich. Die ID der Übermittlung, deren Paketrollout-Prozentsatz aktualisiert werden soll. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer Flight-Paket-Übermittlung](create-a-flight-submission.md) verfügbar. Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
 | Prozentsatz  |  float  |  Erforderlich. Der Prozentsatz der Benutzer, die das Paket für den schrittweisen Rollout erhalten.  |

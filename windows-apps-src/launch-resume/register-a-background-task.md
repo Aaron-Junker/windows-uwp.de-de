@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.localizationpriority: medium
-ms.openlocfilehash: e586e85e15202e0186afe481ec18b32c2f480712
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 087f60ae3a16ad4cd38137d692fe079ce6c58bf4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660785"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371745"
 ---
 # <a name="register-a-background-task"></a>Registrieren einer Hintergrundaufgabe
 
 
 **Wichtige APIs**
 
--   [**BackgroundTaskRegistration-Klasse**](https://msdn.microsoft.com/library/windows/apps/br224786)
--   [**BackgroundTaskBuilder-Klasse**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**SystemCondition-Klasse**](https://msdn.microsoft.com/library/windows/apps/br224834)
+-   [**BackgroundTaskRegistration-Klasse**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
+-   [**BackgroundTaskBuilder-Klasse**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**SystemCondition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
 
 Hier erfahren Sie, wie eine Funktion erstellt wird, die zum sicheren Registrieren der meisten Hintergrundaufgaben wiederverwendet werden kann.
 
@@ -30,13 +30,13 @@ Dieses Thema behandelt schrittweise eine Hilfsfunktion, die Hintergrundaufgaben 
 
 **Hinweis**  
 
-Universelle Windows-Apps müssen jedoch [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) aufrufen, bevor Hintergrundtrigger-Typen registriert werden.
+Universelle Windows-Apps müssen jedoch [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) aufrufen, bevor Hintergrundtrigger-Typen registriert werden.
 
-Rufen Sie [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) und anschließend [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) auf, wenn die App nach der Aktualisierung gestartet wird, um sicherzustellen, dass Ihre universelle Windows-App nach der Veröffentlichung eines Updates weiterhin ordnungsgemäß ausgeführt wird. Weitere Informationen finden Sie unter [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md).
+Rufen Sie [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess) und anschließend [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) auf, wenn die App nach der Aktualisierung gestartet wird, um sicherzustellen, dass Ihre universelle Windows-App nach der Veröffentlichung eines Updates weiterhin ordnungsgemäß ausgeführt wird. Weitere Informationen finden Sie unter [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md).
 
 ## <a name="define-the-method-signature-and-return-type"></a>Definieren von Methodensignatur und Rückgabetyp
 
-Diese Methode übernimmt den Einstiegspunkt der Aufgabe, den Namen der Aufgabe, einen vorgefertigten Trigger für die Hintergrundaufgabe und (optional) eine [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) für die Hintergrundaufgabe. Diese Methode gibt ein [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)-Objekt zurück.
+Diese Methode übernimmt den Einstiegspunkt der Aufgabe, den Namen der Aufgabe, einen vorgefertigten Trigger für die Hintergrundaufgabe und (optional) eine [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) für die Hintergrundaufgabe. Diese Methode gibt ein [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)-Objekt zurück.
 
 > [!Important]
 > `taskEntryPoint` – für Hintergrund, die sich außerhalb des Prozesses führen Sie in Aufgaben, muss dies als den Namespacenamen, konstruiert werden ".", und den Namen der Klasse, die die Hintergrund-Klasse. Die Zeichenfolge beachtet die Groß-/Kleinschreibung.  Wenn Sie beispielsweise den Namespace „MyBackgroundTasks“ und eine Klasse „BackgroundTask1“ haben, die Ihren Hintergrund-Klassen-Code enthält, ist die Zeichenfolge für `taskEntryPoint` „MyBackgroundTasks.BackgroundTask1“.
@@ -72,11 +72,11 @@ Diese Methode übernimmt den Einstiegspunkt der Aufgabe, den Namen der Aufgabe, 
 
 Überprüfen Sie, ob die Aufgabe bereits registriert ist. Diese Überprüfung ist wichtig, denn eine mehrfach registrierte Hintergrundaufgabe wird mehrfach aufgerufen, wenn sie ausgelöst wird. Dies kann die CPU überlasten und zu unerwartetem Verhalten führen.
 
-Sie können die vorhandenen Registrierungen durch Abfrage der [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787)-Eigenschaft und Iteration über das Ergebnis überprüfen. Überprüfen Sie die Namen aller Instanzen: wenn ein Name mit dem Namen der Aufgabe übereinstimmt, die registriert werden soll, verlassen Sie die Schleife, und legen Sie eine Flag-Variable fest, damit Ihr Code im nächsten Schritt einen anderen Pfad wählen kann.
+Sie können die vorhandenen Registrierungen durch Abfrage der [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks)-Eigenschaft und Iteration über das Ergebnis überprüfen. Überprüfen Sie die Namen aller Instanzen: wenn ein Name mit dem Namen der Aufgabe übereinstimmt, die registriert werden soll, verlassen Sie die Schleife, und legen Sie eine Flag-Variable fest, damit Ihr Code im nächsten Schritt einen anderen Pfad wählen kann.
 
 > **Beachten Sie**  verwenden Aufgabennamen im Hintergrund, die zu Ihrer app eindeutig sind. Stellen Sie sicher, dass jede Hintergrundaufgabe einen eindeutigen Namen hat.
 
-Der folgende Code registriert eine Hintergrundaufgabe mit dem im vorigen Schritt erstellten [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838):
+Der folgende Code registriert eine Hintergrundaufgabe mit dem im vorigen Schritt erstellten [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger):
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -145,7 +145,7 @@ Der folgende Code registriert eine Hintergrundaufgabe mit dem im vorigen Schritt
 
 Überprüfen Sie, ob sich die Aufgabe in der Liste der bereits registrierten Hintergrundaufgaben befindet. Geben Sie in diesem Fall diese Instanz der Aufgabe zurück.
 
-Registrieren Sie die Aufgabe dann mithilfe eines neuen [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)-Objekts. Der Code sollte überprüfen, ob der Parameter für die Bedingung null ist, und andernfalls die Bedingung an das Registrierungsobjekt anfügen. Geben Sie die von der [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772)-Methode zurückgegebene [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) zurück.
+Registrieren Sie die Aufgabe dann mithilfe eines neuen [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)-Objekts. Der Code sollte überprüfen, ob der Parameter für die Bedingung null ist, und andernfalls die Bedingung an das Registrierungsobjekt anfügen. Geben Sie die von der [**BackgroundTaskBuilder.Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)-Methode zurückgegebene [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) zurück.
 
 > **Beachten Sie**  Hintergrund Registrierung Aufgabenparameter werden zum Zeitpunkt der Registrierung überprüft. Bei ungültigen Registrierungsparametern wird ein Fehler zurückgegeben. Stellen Sie sicher, dass Ihre App problemlos mit Szenarien ohne erfolgreiche Registrierung von Hintergrundaufgaben zurechtkommt. Andernfalls stürzt die App unter Umständen ab, wenn sie so konzipiert ist, dass nach dem Versuch, eine Aufgabe zu registrieren, ein gültiges Registrierungsobjekt vorhanden sein muss.
 > **Hinweis** Wenn Sie eine Hintergrundaufgabe registrieren, die im gleichen Prozess wie Ihre-App ausgeführt wird, senden Sie `String.Empty` oder `null` als `taskEntryPoint`-Parameter.

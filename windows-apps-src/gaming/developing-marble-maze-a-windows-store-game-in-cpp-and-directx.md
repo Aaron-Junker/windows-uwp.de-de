@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Spiele, beispiel, directx, 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f915ad9cf200a5c2c762976ab3c39c2ef85410
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f287110584c02a5d7822f6b1d84cd332d4d6199d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662465"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368915"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Entwickeln von Marble Maze, einem UWP-Spiel in C++ und DirectX
 
@@ -39,11 +39,11 @@ Marble Maze bietet dem Benutzer mehrere Möglichkeiten zur Interaktion mit dem S
 
 ![Screenshot des Marble Maze-Spiels](images/marblemaze-2.png)
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 
 -   Aktualisieren Sie Windows 10 Creators
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
 -   Kenntnisse in der C++-Programmierung
 -   Erfahrung mit DirectX und der Terminologie von DirectX
 -   Grundkenntnisse in COM
@@ -61,9 +61,9 @@ Im Dokument [Exemplarische Vorgehensweise: Erstellen eines einfachen UWP-Spiels 
 In dieser Dokumentation wird Folgendes beschrieben:
 
 -   Erstellen eines UWP-Spiels mit der Windows-Runtime-API und DirectX
--   Arbeiten mit visuellen [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)- und [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)-Inhalten wie Modellen, Texturen, Vertex- und Pixelshadern sowie 2D-Überblendungen
+-   Arbeiten mit visuellen [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11)- und [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal)-Inhalten wie Modellen, Texturen, Vertex- und Pixelshadern sowie 2D-Überblendungen
 -   Integrieren von Eingabemechanismen wie Touch, Beschleunigungsmesser und Xbox One-Controller
--   Integrieren von Musik und Soundeffekten mit [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049)
+-   Integrieren von Musik und Soundeffekten mit [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal)
 
 ## <a name="what-this-documentation-does-not-cover"></a>In dieser Dokumentation nicht behandelte Themen
 
@@ -77,7 +77,7 @@ Folgende Aspekte der Spieleentwicklung werden in dieser Dokumentation nicht beha
 -   Vorbereiten von Spielen für andere Teile der Welt
 -   Zertifizieren und Veröffentlichen von Spielen im Microsoft Store
 
-Für die Zusammenarbeit von Marble Maze mit 3D-Geometrie und für physikalische Berechnungen wie Kollisionen wird zudem die [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)-Bibliothek verwendet. DirectXMath wird in diesem Abschnitt nicht eingehend beschrieben. Weitere Einzelheiten zur Verwendung von DirectXMath in Marble Maze finden Sie im Quellcode.
+Für die Zusammenarbeit von Marble Maze mit 3D-Geometrie und für physikalische Berechnungen wie Kollisionen wird zudem die [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal)-Bibliothek verwendet. DirectXMath wird in diesem Abschnitt nicht eingehend beschrieben. Weitere Einzelheiten zur Verwendung von DirectXMath in Marble Maze finden Sie im Quellcode.
 
 Zwar bietet Marble Maze viele wiederverwendbare Komponenten, doch stellt es kein vollständiges Framework für die Spieleentwicklung dar. Wenn eine Komponente von Marble Maze als in Ihrem Spiel wiederverwendbar erachtet wird, ist dies in der vorliegenden Dokumentation entsprechend gekennzeichnet.
 

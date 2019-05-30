@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 175009773f7969adbaf36a036e733443f593467f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 940de8c00dc2639785ae82e87d63f4994b1b6b2e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620555"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367741"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Definieren des UWP-App-Frameworks
 
@@ -23,9 +23,9 @@ Das Ansichtsanbieterobjekt implementiert die __IFrameworkView__-Schnittstelle, d
 
 Sie müssen diese fünf Methoden implementieren, die vom App-Singleton aufgerufen werden:
 * [__Initialisieren__](#initialize-the-view-provider)
-* [__"SetWindow"__](#configure-the-window-and-display-behaviors)
-* [__Auslastungstest__](#load-method-of-the-view-provider)
-* [__Führen Sie__](#run-method-of-the-view-provider)
+* [__SetWindow__](#configure-the-window-and-display-behaviors)
+* [__Load__](#load-method-of-the-view-provider)
+* [__Run__](#run-method-of-the-view-provider)
 * [__Die Initialisierung aufheben__](#uninitialize-method-of-the-view-provider)
 
 Die __Initialize__-Methode wird beim Starten der App aufgerufen. Die __SetWindow__-Methode wird nach __Initialize__ aufgerufen. Es wird dann __Load__ aufgerufen. Wenn das Spiel fortgesetzt wird, wird die __Run__-Methode aufgerufen. Wenn das Spiel beendet wird, wird die __Uninitialize__-Methode aufgerufen. Weitere Informationen finden Sie unter [__IFrameworkView__ API-Referenz](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview). 
@@ -71,7 +71,7 @@ IFrameworkView^ DirectXApplicationSource::CreateView()
 
 ## <a name="initialize-the-view-provider"></a>Initialisieren des Ansichtsanbieter
 
-Nachdem das Ansichtsanbieterobjekt erstellt wurde, ruft das App-Singleton die [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)-Methode beim Starten der Anwendung auf. Daher müssen die elementaren Verhaltensweisen eines UWP-Spiels unbedingt von dieser Methode behandelt werden. Hierzu zählt beispielsweise die Behandlung der Aktivierung des Hauptfensters. Außerdem muss von der Methode sichergestellt werden, dass das Spiel eine überraschende Unterbrechung (sowie eine mögliche spätere Fortsetzung) behandeln kann.
+Nachdem das Ansichtsanbieterobjekt erstellt wurde, ruft das App-Singleton die [**Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)-Methode beim Starten der Anwendung auf. Daher müssen die elementaren Verhaltensweisen eines UWP-Spiels unbedingt von dieser Methode behandelt werden. Hierzu zählt beispielsweise die Behandlung der Aktivierung des Hauptfensters. Außerdem muss von der Methode sichergestellt werden, dass das Spiel eine überraschende Unterbrechung (sowie eine mögliche spätere Fortsetzung) behandeln kann.
 
 Dann kann die Spiele-App eine angehaltene Nachricht behandeln (oder fortsetzen). Aber es gibt immer noch kein Fenster, und das Spiel ist noch nicht initialisiert. Wir haben also noch ein wenig Arbeit vor uns.
 
@@ -105,11 +105,11 @@ void App::Initialize(
 
 ## <a name="configure-the-window-and-display-behaviors"></a>Konfigurieren Sie das Fenster und Anzeigeverhalten
 
-Nun sehen wir uns die Implementierung von [__SetWindow__](https://msdn.microsoft.com/library/windows/apps/hh700509) an. In der __SetWindow__-Methode konfigurieren Sie das Fenster und Anzeigeverhalten.
+Nun sehen wir uns die Implementierung von [__SetWindow__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow) an. In der __SetWindow__-Methode konfigurieren Sie das Fenster und Anzeigeverhalten.
 
 ### <a name="appsetwindow-method"></a>App::SetWindow-Methode
 
-Das App-Singleton stellt ein [__CoreWindow__](https://msdn.microsoft.com/library/windows/apps/br208225)-Objekt bereit, das das Hauptfenster des Spiels darstellt, und macht seine Ressourcen und Ereignisse für das Spiel verfügbar. Jetzt kann das Spiel die grundlegenden Benutzeroberflächenkomponenten und Ereignisse hinzufügen.
+Das App-Singleton stellt ein [__CoreWindow__](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Objekt bereit, das das Hauptfenster des Spiels darstellt, und macht seine Ressourcen und Ereignisse für das Spiel verfügbar. Jetzt kann das Spiel die grundlegenden Benutzeroberflächenkomponenten und Ereignisse hinzufügen.
 
 Erstellen Sie dann einen Zeiger mit der __CoreCursor__-Methode, die von den Bedienelemente und von der Maus- und auch von der Fingereingabesteuerung genutzt werden kann.
 
@@ -162,7 +162,7 @@ void App::SetWindow(
 
 ## <a name="load-method-of-the-view-provider"></a>Die Load-Methode des Ansichtsanbieters
 
-Nachdem das Hauptfenster festgelegt ist, ruft das App-Singleton die [__Load__](https://msdn.microsoft.com/library/windows/apps/hh700501)-Methode auf. Diese Methode verwendet eine Reihe asynchroner Aufgaben, um die Spielobjekte zu erstellen, Grafikressourcen zu laden und den Zustandsautomaten des Spiels zu initialisieren. Diese Methode eignet sich auch besser zum Vorabrufen von Spieldaten oder Ressourcen als **SetWindow** oder **Initialize**. 
+Nachdem das Hauptfenster festgelegt ist, ruft das App-Singleton die [__Load__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load)-Methode auf. Diese Methode verwendet eine Reihe asynchroner Aufgaben, um die Spielobjekte zu erstellen, Grafikressourcen zu laden und den Zustandsautomaten des Spiels zu initialisieren. Diese Methode eignet sich auch besser zum Vorabrufen von Spieldaten oder Ressourcen als **SetWindow** oder **Initialize**. 
 
 Da Windows zeitliche Beschränkungen auferlegen kann, bevor Ihr Spiel Eingaben verarbeitet, können Sie mithilfe des asynchronen Aufgabenmusters die __Load__-Methode schnell abschließen, damit die Verarbeitung der Eingabe beginnen kann. Falls das Laden einige Zeit dauert (etwa aufgrund einer Vielzahl von Ressourcen), sollten Sie für Benutzer eine regelmäßig aktualisierte Statusleiste bereitstellen. In der Methode treffen wir alle nötigen Vorbereitungen für den Spielstart (wie Festlegen aller Startzustände oder globalen Werte).
 
@@ -298,7 +298,7 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="run-method-of-the-view-provider"></a>Die Run-Methode des Ansichtsanbieters
 
-Die früheren drei Methoden: __Initialisieren Sie__, __"SetWindow"__, und __Load__ die Stufe festgelegt haben. Das Spiel kann jetzt auf die **Run**-Methode weitergehen und der Spaß kann beginnen! Die Ereignisse, die es für den Wechsel des Spielzustands nutzt, werden verteilt und verarbeitet. Die Grafik wird im Rahmen der Spielschleifendurchläufe aktualisiert.
+Die früheren drei Methoden: __Initialisieren Sie__, __"SetWindow"__ , und __Load__ die Stufe festgelegt haben. Das Spiel kann jetzt auf die **Run**-Methode weitergehen und der Spaß kann beginnen! Die Ereignisse, die es für den Wechsel des Spielzustands nutzt, werden verteilt und verarbeitet. Die Grafik wird im Rahmen der Spielschleifendurchläufe aktualisiert.
 
 ### <a name="apprun"></a>App::Run
 
@@ -308,9 +308,9 @@ Der Beispielcode geht im Zustandsautomaten der Spielengine in einen von zwei Zu
     * __Deaktiviert__: Das Spielfenster wird deaktiviert (verliert also den Fokus) oder angedockt. In diesem Fall hält das Spiel die Ereignisverarbeitung an und wartet auf den Fensterfokus bzw. darauf, dass das Fenster wieder abgedockt wird.
     * __TooSmall__: Das Spiel aktualisiert seinen eigenen Status und rendert die Grafiken für die Anzeige.
 
-Wenn Ihr Spiel den Fokus hat, müssen Sie jedes in der Meldungswarteschlange eingehende Ereignis behandeln. Daher müssen Sie [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) mit der Option **ProcessAllIfPresent** aufrufen. Andere Optionen können zu einer verzögerten Verarbeitung von Meldungsereignissen führen. So entsteht der Eindruck, dass das Spiel nicht reagiert oder Toucheingaben nur träge umgesetzt werden.
+Wenn Ihr Spiel den Fokus hat, müssen Sie jedes in der Meldungswarteschlange eingehende Ereignis behandeln. Daher müssen Sie [**CoreWindowDispatch.ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) mit der Option **ProcessAllIfPresent** aufrufen. Andere Optionen können zu einer verzögerten Verarbeitung von Meldungsereignissen führen. So entsteht der Eindruck, dass das Spiel nicht reagiert oder Toucheingaben nur träge umgesetzt werden.
 
-Wenn die App nicht sichtbar ist, angehalten oder angedockt wurde, möchten wir nicht, dass sie Meldungen ausgibt, die niemals ankommen, und dabei auch noch Ressourcen beansprucht. Daher muss das Spiel **ProcessOneAndAllPending** verwenden, was eine Blockierung bis zum Eingang eines Ereignisses zur Folge hat. Dieses Ereignis wird dann zusammen mit anderen Ereignissen verarbeitet, die während der Verarbeitung des ersten Ereignisses in der Prozesswarteschlange eingehen. [**ProcessEvents** ](https://msdn.microsoft.com/library/windows/apps/br208215) dann sofort nach der Verarbeitung der Warteschlange zurückgegeben.
+Wenn die App nicht sichtbar ist, angehalten oder angedockt wurde, möchten wir nicht, dass sie Meldungen ausgibt, die niemals ankommen, und dabei auch noch Ressourcen beansprucht. Daher muss das Spiel **ProcessOneAndAllPending** verwenden, was eine Blockierung bis zum Eingang eines Ereignisses zur Folge hat. Dieses Ereignis wird dann zusammen mit anderen Ereignissen verarbeitet, die während der Verarbeitung des ersten Ereignisses in der Prozesswarteschlange eingehen. [**ProcessEvents** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) dann sofort nach der Verarbeitung der Warteschlange zurückgegeben.
 
 ```cpp
 void App::Run()
@@ -386,7 +386,7 @@ Wenn der Benutzer letztendlich die Sitzung beendet, müssen wir sie bereinigen. 
 
 Klicken Sie in Windows 10 schließen das app-Fenster nicht zu beenden den Prozess der app, aber stattdessen schreibt er den Status des app-Singletons in den Speicher. Sollte eine besondere Aktion wie eine spezielle Bereinigung von Ressourcen erforderlich sein, wenn das System diesen Speicher freigeben muss, platzieren Sie den Code für diese Bereinigung in dieser Methode.
 
-### <a name="app-uninitialize"></a>App: Uninitialize
+### <a name="app-uninitialize"></a>App:: Uninitialize
 
 ```cpp
 void App::Uninitialize()

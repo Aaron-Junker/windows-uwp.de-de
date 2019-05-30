@@ -11,23 +11,23 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: eaf6118720ab77931decf93113a13341ab4f51d0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28188acfd3999c0b384326f013a0ba1bdf71a34f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642175"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370755"
 ---
 # <a name="handle-file-activation"></a>Behandeln der Dateiaktivierung
 
 **Wichtige APIs**
 
--   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
--   [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
+-   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+-   [**Windows.UI.Xaml.Application.OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
 
 Ihre app kann registrieren, um der Standardhandler für einen bestimmten Dateityp zu werden. Sowohl Windows-Desktopanwendungen als auch UWP-Apps (Universelle Windows-Plattform) können als Standarddateihandler registriert werden. Wenn Ihre App vom Benutzer als Standardhandler für einen bestimmten Dateityp ausgewählt wird, wird sie dann aktiviert, wenn der Dateityp gestartet wird.
 
-Wir empfehlen, die Registrierung für einen Dateityp nur durchzuführen, wenn davon auszugehen ist, dass alle entsprechenden Vorgänge für einen bestimmten Dateityp verarbeitet werden. Wenn der Dateityp von Ihrer App nur intern verwendet wird, ist die Registrierung eines Standardhandlers nicht erforderlich. Wenn Sie sich entscheiden, die Registrierung für eine bestimmten Dateityp durchzuführen, müssen Sie die entsprechenden Funktionen bereitstellen, die vom Benutzer bei der Aktivierung für diesen Dateityp erwartet werden. Beispielsweise kann eine Bildanzeige-App für das Anzeigen des Dateityps JPG registriert werden. Weitere Informationen zu Dateizuordnungen finden Sie unter [Richtlinien für Dateitypen und URIs](https://msdn.microsoft.com/library/windows/apps/hh700321).
+Wir empfehlen, die Registrierung für einen Dateityp nur durchzuführen, wenn davon auszugehen ist, dass alle entsprechenden Vorgänge für einen bestimmten Dateityp verarbeitet werden. Wenn der Dateityp von Ihrer App nur intern verwendet wird, ist die Registrierung eines Standardhandlers nicht erforderlich. Wenn Sie sich entscheiden, die Registrierung für eine bestimmten Dateityp durchzuführen, müssen Sie die entsprechenden Funktionen bereitstellen, die vom Benutzer bei der Aktivierung für diesen Dateityp erwartet werden. Beispielsweise kann eine Bildanzeige-App für das Anzeigen des Dateityps JPG registriert werden. Weitere Informationen zu Dateizuordnungen finden Sie unter [Richtlinien für Dateitypen und URIs](https://docs.microsoft.com/windows/uwp/files/index).
 
 Die folgenden Schritte zeigen, wie Sie den benutzerdefinierten Dateityp „.alsdk“ registrieren und Ihre App aktivieren, wenn der Benutzer eine ALSDK-Datei startet.
 
@@ -37,15 +37,15 @@ Die folgenden Schritte zeigen, wie Sie den benutzerdefinierten Dateityp „.alsd
 
 Die App empfängt nur für die im Paketmanifest angegebenen Dateierweiterungen Aktivierungsereignisse. Im Folgenden wird beschrieben, wie Sie festlegen, dass die App Dateien mit der Erweiterung `.alsdk` behandelt.
 
-1.  Doppelklicken Sie im **Projektmappen-Explorer** auf „package.appxmanifest“, um den Manifest-Designer zu öffnen. Wählen Sie die Registerkarte **Deklarationen** und dann in der Dropdownliste **Verfügbare Deklarationen** die Option **Dateitypzuordnungen** aus, und klicken Sie dann auf **Hinzufügen**. Ausführliche Informationen zu Bezeichnern, die von Dateizuordnungen verwendet werden, finden Sie unter [ProgIDs](https://msdn.microsoft.com/library/windows/desktop/cc144152).
+1.  Doppelklicken Sie im **Projektmappen-Explorer** auf „package.appxmanifest“, um den Manifest-Designer zu öffnen. Wählen Sie die Registerkarte **Deklarationen** und dann in der Dropdownliste **Verfügbare Deklarationen** die Option **Dateitypzuordnungen** aus, und klicken Sie dann auf **Hinzufügen**. Ausführliche Informationen zu Bezeichnern, die von Dateizuordnungen verwendet werden, finden Sie unter [ProgIDs](https://docs.microsoft.com/windows/desktop/shell/fa-progids).
 
     Es folgt eine kurze Beschreibung der Felder, die Sie im Manifest-Designer ausfüllen können:
 
 | Feld | Beschreibung |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Anzeigename** | Geben Sie den Anzeigenamen für eine Gruppe von Dateitypen an. Anhand des Anzeigenamens wird in der **Systemsteuerung** unter [Standardprogramme festlegen](https://msdn.microsoft.com/library/windows/desktop/cc144154) der Dateityp identifiziert. |
-| **Logo** | Geben Sie das Logo zur Identifikation des Dateityps auf dem Desktop in der **Systemsteuerung** unter [Standardprogramme festlegen](https://msdn.microsoft.com/library/windows/desktop/cc144154) an. Wenn kein Logo angegeben wird, wird das kleine Logo der Anwendung verwendet. |
-| **Infotipp** | Geben Sie den [Infotipp](https://msdn.microsoft.com/library/windows/desktop/cc144152) für eine Gruppe von Dateitypen an. Diese QuickInfo wird angezeigt, wenn Benutzer mit der Maus auf das Symbol für eine Datei dieses Typs zeigen. |
+| **Anzeigename** | Geben Sie den Anzeigenamen für eine Gruppe von Dateitypen an. Anhand des Anzeigenamens wird in der **Systemsteuerung** unter [Standardprogramme festlegen](https://docs.microsoft.com/windows/desktop/shell/default-programs) der Dateityp identifiziert. |
+| **Logo** | Geben Sie das Logo zur Identifikation des Dateityps auf dem Desktop in der **Systemsteuerung** unter [Standardprogramme festlegen](https://docs.microsoft.com/windows/desktop/shell/default-programs) an. Wenn kein Logo angegeben wird, wird das kleine Logo der Anwendung verwendet. |
+| **Infotipp** | Geben Sie den [Infotipp](https://docs.microsoft.com/windows/desktop/shell/fa-progids) für eine Gruppe von Dateitypen an. Diese QuickInfo wird angezeigt, wenn Benutzer mit der Maus auf das Symbol für eine Datei dieses Typs zeigen. |
 | **Name** | Wählen Sie einen Namen für eine Gruppe von Dateitypen aus, die identische Anzeigenamen, Logos, Infotipps und Bearbeitungsflags verwenden. Wählen Sie einen Gruppennamen aus, der auch nach App-Updates unverändert bleiben kann. **Hinweis**  Der Name darf nur aus Kleinbuchstaben bestehen. |
 | **Inhaltstyp** | Geben Sie den MIME-Inhaltstyp, z. B. **image/jpeg**, für einen bestimmten Dateityp an. **Wichtiger Hinweis zu zulässigen Inhaltstypen:** Hier wird eine alphabetische Liste der MIME-Inhaltstypen, die Sie in das Paketmanifest eingeben können nicht, da sie entweder reserviert bzw. unzulässigen: **Anwendung/Force-Download**, **Application/Octet-Stream**, **Anwendung/unbekannt**, **Application/X-Msdownload**. |
 | **Dateityp** | Geben Sie den Dateityp, für den die Registrierung durchgeführt werden soll, mit vorangestelltem Punkt an, z. B. „.jpeg“. **Reservierte und unzulässige Dateitypen:** Finden Sie unter [reservierte URI-Schema-Namen und Dateitypen](reserved-uri-scheme-names.md) für eine alphabetische Liste der Dateitypen für integrierte apps, die Sie für Ihre UWP-apps registrieren können, da diese reserviert nicht zulässig sind oder sind. |
@@ -55,7 +55,7 @@ Die App empfängt nur für die im Paketmanifest angegebenen Dateierweiterungen A
 4.  Geben Sie "Images\\Icon.png" als das Logo.
 5.  Drücken Sie STRG+S, um die an „package.appxmanifest“ vorgenommenen Änderungen zu speichern.
 
-Die obigen Schritte fügen dem Paketmanifest ein [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400)-Element wie das unten dargestellte hinzu. Die **windows.fileTypeAssociation**-Kategorie gibt an, dass die App Dateien mit der Erweiterung `.alsdk` behandelt.
+Die obigen Schritte fügen dem Paketmanifest ein [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension)-Element wie das unten dargestellte hinzu. Die **windows.fileTypeAssociation**-Kategorie gibt an, dass die App Dateien mit der Erweiterung `.alsdk` behandelt.
 
 ```xml
       <Extensions>
@@ -83,7 +83,7 @@ Fügen Sie ein 44 x 44-Symbol in das Projekt ein, damit Ihr Logo an diesen Posit
 
 ## <a name="step-3-handle-the-activated-event"></a>Schritt 3: Das aktivierte Ereignis behandeln
 
-Der [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)-Ereignishandler empfängt alle Dateiaktivierungsereignisse.
+Der [**OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)-Ereignishandler empfängt alle Dateiaktivierungsereignisse.
 
 ```csharp
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -129,7 +129,7 @@ Wenn Ihre app über den Datei-Aktivierung gestartet wird, sollten Sie erwägen, 
 
 ## <a name="remarks"></a>Hinweise
 
-Die empfangenen Dateien stammen unter Umständen aus einer nicht vertrauenswürdigen Quelle. Wir empfehlen, den Inhalt einer Datei zu überprüfen, bevor Sie sie weiter verarbeiten. Weitere Informationen zur Eingabeüberprüfung finden Sie unter [Schreiben von sicherem Code](https://go.microsoft.com/fwlink/p/?LinkID=142053).
+Die empfangenen Dateien stammen unter Umständen aus einer nicht vertrauenswürdigen Quelle. Wir empfehlen, den Inhalt einer Datei zu überprüfen, bevor Sie sie weiter verarbeiten.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
@@ -139,18 +139,18 @@ Die empfangenen Dateien stammen unter Umständen aus einer nicht vertrauenswürd
 
 ### <a name="concepts"></a>Konzepte
 
-* [Standardprogramme](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [Dateityp und Protokollmodell von Zuordnungen](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [Standardprogramme](https://docs.microsoft.com/windows/desktop/shell/default-programs)
+* [Dateityp und Protokollmodell von Zuordnungen](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
 
-### <a name="tasks"></a>Aufgaben
+### <a name="tasks"></a>Richtlinienübersicht
 
 * [Starten der Standard-App für eine Datei](launch-the-default-app-for-a-file.md)
 * [Behandeln der URI-Aktivierung](handle-uri-activation.md)
 
 ### <a name="guidelines"></a>Richtlinien
 
-* [Richtlinien für die Dateitypen und URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Richtlinien für die Dateitypen und URIs](https://docs.microsoft.com/windows/uwp/files/index)
 
-### <a name="reference"></a>Verweis
-* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224716)
-* [Windows.UI.Xaml.Application.OnFileActivated](https://msdn.microsoft.com/library/windows/apps/br242331)
+### <a name="reference"></a>Referenz
+* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+* [Windows.UI.Xaml.Application.OnFileActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)

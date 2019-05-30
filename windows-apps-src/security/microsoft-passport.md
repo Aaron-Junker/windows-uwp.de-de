@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1026bd153f43d5e956fbacdcc33728d890f34e34
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651545"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371973"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -115,16 +115,16 @@ Im nächsten Schritt werden die Informationen angefordert, mit denen sich der Be
 
 In diesem Szenario verwenden wir die E-Mail-Adresse als eindeutigen Bezeichner für den Benutzer. Nachdem sich der Benutzer registriert hat, sollten Sie eine Validierungs-E-Mail senden, um sicherzustellen, dass die Adresse gültig ist. Dadurch erhalten Sie einen Mechanismus zum Zurücksetzen des Kontos, falls dies erforderlich ist.
 
-Wenn der Benutzer seine PIN eingerichtet hat, erstellt die App das [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) des Benutzers. Die App ruft außerdem die optionalen Schlüsselnachweisinformationen ab, um einen kryptografischen Beweis dafür zu erhalten, dass der Schlüssel im TPM generiert wird. Der generierte öffentliche Schlüssel und optional der Nachweis werden an den Back-End-Server gesendet, um das verwendete Gerät zu registrieren. Jedes Schlüsselpaar, das auf den einzelnen Geräten generiert wird, ist eindeutig.
+Wenn der Benutzer seine PIN eingerichtet hat, erstellt die App das [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential) des Benutzers. Die App ruft außerdem die optionalen Schlüsselnachweisinformationen ab, um einen kryptografischen Beweis dafür zu erhalten, dass der Schlüssel im TPM generiert wird. Der generierte öffentliche Schlüssel und optional der Nachweis werden an den Back-End-Server gesendet, um das verwendete Gerät zu registrieren. Jedes Schlüsselpaar, das auf den einzelnen Geräten generiert wird, ist eindeutig.
 
-Der Code zum Erstellen von [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) sieht wie folgt aus:
+Der Code zum Erstellen von [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential) sieht wie folgt aus:
 
 ```csharp
 var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-[  **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) ist der Teil, durch den öffentlicher und privater Schlüssel erstellt werden. Wenn das Gerät über den richtigen TPM-Chip verfügt, fordern die APIs den TPM-Chip zum Erstellen des privaten und öffentlichen Schlüssels an und speichern das Ergebnis. Wenn kein TPM-Chip verfügbar ist, erstellt das Betriebssystem das Schlüsselpaar im Code. Die App hat keine Möglichkeit, direkt auf die erstellten privaten Schlüssel zuzugreifen. Bei der Erstellung von Schlüsselpaaren geht es auch um die resultierenden Nachweisinformationen. (Weitere Informationen zu Nachweisen finden Sie im nächsten Abschnitt.)
+[  **RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) ist der Teil, durch den öffentlicher und privater Schlüssel erstellt werden. Wenn das Gerät über den richtigen TPM-Chip verfügt, fordern die APIs den TPM-Chip zum Erstellen des privaten und öffentlichen Schlüssels an und speichern das Ergebnis. Wenn kein TPM-Chip verfügbar ist, erstellt das Betriebssystem das Schlüsselpaar im Code. Die App hat keine Möglichkeit, direkt auf die erstellten privaten Schlüssel zuzugreifen. Bei der Erstellung von Schlüsselpaaren geht es auch um die resultierenden Nachweisinformationen. (Weitere Informationen zu Nachweisen finden Sie im nächsten Abschnitt.)
 
 Nachdem das Schlüsselpaar und die Nachweisinformationen auf dem Gerät erstellt wurden, müssen der öffentliche Schlüssel, die optionalen Nachweisinformationen und der eindeutige Bezeichner (z. B. die E-Mail-Adresse) an den Back-End-Registrierungsdienst gesendet und im Back-End gespeichert werden.
 
@@ -208,8 +208,8 @@ Wenn der Server den generierten RSA-Schlüssel, die Nachweisanweisung und das AI
 - Das AIK-Zertifikat muss zeitlich gültig sein.
 - Die Zertifikate aller ausstellenden Zertifizierungsstellen in der Kette müssen zeitlich gültig und dürfen nicht widerrufen sein.
 - Die Nachweisanweisung muss das richtige Format aufweisen.
-- Die Signatur für den [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288)-BLOB verwendet einen öffentlichen AIK-Schlüssel.
-- Der im [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288)-BLOB enthaltene öffentliche Schlüssel muss mit dem öffentlichen RSA-Schlüssel übereinstimmen, den der Client zusammen mit der Nachweisanweisung gesendet hat.
+- Die Signatur für den [**KeyAttestation**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper)-BLOB verwendet einen öffentlichen AIK-Schlüssel.
+- Der im [**KeyAttestation**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper)-BLOB enthaltene öffentliche Schlüssel muss mit dem öffentlichen RSA-Schlüssel übereinstimmen, den der Client zusammen mit der Nachweisanweisung gesendet hat.
 
 Ihre App weist dem Benutzer je nach diesen Umständen möglicherweise eine andere Autorisierungsstufe zu. Wenn beispielsweise eine dieser Voraussetzungen nicht erfüllt ist, registriert die App den Benutzer möglicherweise nicht bzw. schränkt dessen Befugnisse ein.
 
@@ -219,7 +219,7 @@ Nachdem sich der Benutzer in Ihrem System registriert ist, kann er die App nutze
 
 ### <a name="33-force-the-user-to-sign-in-again"></a>3.3 Erzwingen der erneuten Benutzeranmeldung
 
-In einigen Szenarien sollte der Benutzer nachweisen, dass es sich um die derzeit angemeldete Person handelt, bevor er auf die App zugreift bzw. in manchen Fällen bevor er eine bestimmte Aktion innerhalb der App ausführt. Bevor beispielsweise eine Banking-App den Befehl zum Überweisen von Geld an den Server sendet, sollten Sie sicherstellen, dass es sich um den richtigen Benutzer handelt, anstatt einer Person, die ein angemeldetes Gerät gefunden hat und versucht, eine Transaktion ausführen. Sie können eine erneute Benutzeranmeldung in der App erzwingen, indem Sie die [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134)-Klasse verwenden. Durch die folgende Codezeile wird die erneute Eingabe von Anmeldeinformationen erzwungen.
+In einigen Szenarien sollte der Benutzer nachweisen, dass es sich um die derzeit angemeldete Person handelt, bevor er auf die App zugreift bzw. in manchen Fällen bevor er eine bestimmte Aktion innerhalb der App ausführt. Bevor beispielsweise eine Banking-App den Befehl zum Überweisen von Geld an den Server sendet, sollten Sie sicherstellen, dass es sich um den richtigen Benutzer handelt, anstatt einer Person, die ein angemeldetes Gerät gefunden hat und versucht, eine Transaktion ausführen. Sie können eine erneute Benutzeranmeldung in der App erzwingen, indem Sie die [**UserConsentVerifier**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier)-Klasse verwenden. Durch die folgende Codezeile wird die erneute Eingabe von Anmeldeinformationen erzwungen.
 
 Durch die folgende Codezeile wird die erneute Eingabe von Anmeldeinformationen erzwungen.
 
@@ -267,7 +267,7 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 }
 ```
 
-Durch die erste Zeile [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn973046) wird das Betriebssystem aufgefordert, den Schlüsselhandle zu öffnen. Wenn dieser Schritt erfolgreich ist, können Sie die Abfragenachricht mit der [**KeyCredential.RequestSignAsync**](https://msdn.microsoft.com/library/windows/apps/dn973058)-Methode signieren. Dadurch wird das Betriebssystem aufgefordert, die PIN oder biometrische Daten des Benutzers über Windows Hello anzufordern. Der Entwickler hat zu keiner Zeit Zugriff auf den privaten Schlüssel des Benutzers. Dieser wird durch die APIs gesichert.
+Durch die erste Zeile [**KeyCredentialManager.OpenAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.keycredentialmanager.openasync) wird das Betriebssystem aufgefordert, den Schlüsselhandle zu öffnen. Wenn dieser Schritt erfolgreich ist, können Sie die Abfragenachricht mit der [**KeyCredential.RequestSignAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.keycredential.requestsignasync)-Methode signieren. Dadurch wird das Betriebssystem aufgefordert, die PIN oder biometrische Daten des Benutzers über Windows Hello anzufordern. Der Entwickler hat zu keiner Zeit Zugriff auf den privaten Schlüssel des Benutzers. Dieser wird durch die APIs gesichert.
 
 Die APIs fordern das Betriebssystem auf, die Abfrage mit dem privaten Schlüssel zu signieren. Das System fordert dann vom Benutzer einen PIN-Code oder konfigurierte biometrische Anmeldeinformationen an. Wenn die richtigen Informationen eingegeben werden, kann das System den TPM-Chip zum Ausführen der kryptografischen Funktionen und zum Signieren der Abfrage auffordern. (Falls kein TPM verfügbar ist, verwenden Sie die Fallback-Softwarelösung.) Der Client muss die signierte Abfrage zurück an den Server senden.
 
@@ -387,9 +387,9 @@ Die Benutzeroberfläche sieht ungefähr wie folgt aus:
 
 ![Windows-Hello-Benutzeroberfläche](images/passport-ui.png)
 
-Wenn sich der Benutzer entschließt, auf Windows Hello umzusteigen, müssen Sie die vorstehend beschriebene [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) erstellen. Der Registrierungsserver im Back-End fügt der Datenbank den öffentlichen Schlüssel und die optionale Nachweisanweisung hinzu. Da der Benutzer bereits anhand von Benutzernamen und Kennwort authentifiziert wurde, kann der Server die neuen Anmeldeinformationen mit den aktuellen Benutzerinformationen in der Datenbank verknüpfen. Das Datenbankmodell kann dem oben beschriebenen Beispiel entsprechen.
+Wenn sich der Benutzer entschließt, auf Windows Hello umzusteigen, müssen Sie die vorstehend beschriebene [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential) erstellen. Der Registrierungsserver im Back-End fügt der Datenbank den öffentlichen Schlüssel und die optionale Nachweisanweisung hinzu. Da der Benutzer bereits anhand von Benutzernamen und Kennwort authentifiziert wurde, kann der Server die neuen Anmeldeinformationen mit den aktuellen Benutzerinformationen in der Datenbank verknüpfen. Das Datenbankmodell kann dem oben beschriebenen Beispiel entsprechen.
 
-Wenn die App die [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) des Benutzers erstellen konnte, speichert sie die Benutzer-ID im isolierten Speicher, damit der Benutzer dieses Konto aus der Liste auswählen kann, wenn er die App das nächste Mal startet. Ab diesem Punkt folgt die Steuerung exakt den Beispielen in früheren Kapiteln.
+Wenn die App die [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential) des Benutzers erstellen konnte, speichert sie die Benutzer-ID im isolierten Speicher, damit der Benutzer dieses Konto aus der Liste auswählen kann, wenn er die App das nächste Mal startet. Ab diesem Punkt folgt die Steuerung exakt den Beispielen in früheren Kapiteln.
 
 Der letzte Schritt bei der Migration zu einem vollständigen Windows-Hello-Szenario besteht darin, den Anmeldenamen und die Kennwortoption in der App zu deaktivieren und die gespeicherten Kennworthashwerte aus der Datenbank zu entfernen.
 
@@ -408,7 +408,7 @@ Mission erfüllt! Sie haben das Internet gerade sicherer gemacht!
 ### <a name="61-articles-and-sample-code"></a>6.1 Artikel und Beispielcode
 
 - [Windows Hello-Übersicht](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
-- [Details zur Implementierung für Windows Hello](https://msdn.microsoft.com/library/mt589441)
+- [Details zur Implementierung für Windows Hello](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide)
 - [Windows Hello-Codebeispiel auf GitHub](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 Terminologie

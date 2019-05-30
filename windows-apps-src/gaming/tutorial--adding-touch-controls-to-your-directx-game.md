@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Touch, Steuerelemente, Directx, Eingabe
 ms.localizationpriority: medium
-ms.openlocfilehash: e8892219b485d320bb77f90ac0d172e8e2403392
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1f683f2d357057e33f3daa613e1b027a83776af
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618735"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367766"
 ---
 # <a name="touch-controls-for-games"></a>Toucheingabesteuerelemente für Spiele
 
@@ -119,7 +119,7 @@ Mit den folgenden drei Ereignishandlern aktualisieren wir die Informationen zum 
 
 Die folgenden Methoden und Eigenschaften verwenden wir, um die Zustandsinformationen des Kameracontrollers zu initialisieren, auf sie zuzugreifen und sie zu aktualisieren.
 
--   **Initialize** ist ein Ereignishandler, den die App aufruft, um die Steuerelemente zu initialisieren und an das [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Objekt anzufügen, das das Anzeigefenster beschreibt.
+-   **Initialize** ist ein Ereignishandler, den die App aufruft, um die Steuerelemente zu initialisieren und an das [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Objekt anzufügen, das das Anzeigefenster beschreibt.
 -   **SetPosition** ist eine Methode, die die App aufruft, um die Koordinaten (X, Y und Z) der Steuerungen im Szenenbereich festzulegen. Beachten Sie, dass die Z-Koordinate in diesem Lernprogramm immer Null ist.
 -   **erste\_Position** ist eine Eigenschaft, die unsere app zugreift, um die aktuelle Position der Kamera im Bereich der Szene zu erhalten. Diese Eigenschaft wird verwendet, um der App die aktuelle Kameraposition mitzuteilen.
 -   **erste\_FixedLookPoint** ist eine Eigenschaft, die unsere app zugreift, um den aktuellen Punkt zu erhalten, zu dem die Controller-Kamera sind aufgetreten. In diesem Beispiel ist der Punkt auf die Normale der X-Y-Ebene beschränkt.
@@ -134,15 +134,15 @@ Als Nächstes setzen wir diese Teile zusammen.
 
 Der Ereignisverteiler der Windows-Runtime stellt drei Ereignisse bereit, die von der App behandelt werden sollen:
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
+-   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
 
-Diese Ereignisse sind im [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Typ implementiert. Es wird davon ausgegangen, dass Sie über ein **CoreWindow**-Objekt verfügen, mit dem Sie arbeiten können. Weitere Informationen finden Sie unter [Einrichten der UWP-C++-App zum Anzeigen einer DirectX-Ansicht](https://msdn.microsoft.com/library/windows/apps/hh465077).
+Diese Ereignisse sind im [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Typ implementiert. Es wird davon ausgegangen, dass Sie über ein **CoreWindow**-Objekt verfügen, mit dem Sie arbeiten können. Weitere Informationen finden Sie unter [Einrichten der UWP-C++-App zum Anzeigen einer DirectX-Ansicht](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10)).
 
 Wenn diese Ereignisse während der Ausführung der App ausgelöst werden, aktualisieren die Handler die in den privaten Feldern definierten Zustandsinformationen des Kameracontrollers.
 
-Als Erstes füllen wir die Ereignishandler für den Toucheingabezeiger auf. Im ersten Ereignishandler (**OnPointerPressed**) rufen wir die X- und Y-Koordinaten des Zeigers aus dem [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Objekt ab, das die Anzeige verwaltet, wenn der Benutzer den Bildschirm berührt oder mit der Maus klickt.
+Als Erstes füllen wir die Ereignishandler für den Toucheingabezeiger auf. Im ersten Ereignishandler (**OnPointerPressed**) rufen wir die X- und Y-Koordinaten des Zeigers aus dem [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Objekt ab, das die Anzeige verwaltet, wenn der Benutzer den Bildschirm berührt oder mit der Maus klickt.
 
 **OnPointerPressed**
 
@@ -190,7 +190,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Abschließend müssen wir den Kameraschwenk deaktivieren, wenn der Spieler aufhört, den Bildschirm zu berühren. Wir verwenden **OnPointerReleased**, die aufgerufen wird, wenn [ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279) ausgelöst wird, entsprechend **m\_PanInUse** auf "false" und Deaktivieren der Kamera Pan-Bewegung und die ID der Zeiger auf 0 festgelegt.
+Abschließend müssen wir den Kameraschwenk deaktivieren, wenn der Spieler aufhört, den Bildschirm zu berühren. Wir verwenden **OnPointerReleased**, die aufgerufen wird, wenn [ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) ausgelöst wird, entsprechend **m\_PanInUse** auf "false" und Deaktivieren der Kamera Pan-Bewegung und die ID der Zeiger auf 0 festgelegt.
 
 **OnPointerReleased**
 
@@ -239,7 +239,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-Die **Initialize**-Methode akzeptiert als Parameter einen Verweis auf die [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Instanz der App und registriert die von uns entwickelten Ereignishandler für die entsprechenden Ereignisse in dieser **CoreWindow**-Instanz.
+Die **Initialize**-Methode akzeptiert als Parameter einen Verweis auf die [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Instanz der App und registriert die von uns entwickelten Ereignishandler für die entsprechenden Ereignisse in dieser **CoreWindow**-Instanz.
 
 ## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>Abrufen und Festlegen der Position des Kameracontrollers
 
@@ -339,7 +339,7 @@ Jetzt können wir eine Koordinate des Szenenbereichs abrufen, auf die die Kamera
         );  
 ```
 
-Gratulation! Sie haben in Ihrem Spiel einen einfachen Satz mit Toucheingabesteuerungen zum Schwenken einer Kamera implementiert.
+Herzlichen Glückwunsch! Sie haben in Ihrem Spiel einen einfachen Satz mit Toucheingabesteuerungen zum Schwenken einer Kamera implementiert.
 
 
  

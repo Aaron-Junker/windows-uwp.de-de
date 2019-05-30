@@ -6,12 +6,12 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 851f8a25055c90dfd592d5a68c733258bcd5f7b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a3569a6c7f487ae17030bad03a1b839ad9df4167
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605955"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372722"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>Auslösen von Ereignissen in Komponenten für Windows-Runtime
 > [!NOTE]
@@ -19,8 +19,8 @@ ms.locfileid: "57605955"
 
 Wenn die Komponente für Windows-Runtime ein Ereignis eines benutzerdefinierten Delegattyps in einem Hintergrundthread (Arbeitsthread) auslöst und JavaScript in der Lage sein soll, das Ereignis zu empfangen, können Sie es auf eine der folgenden Weisen implementieren und/oder auslösen:
 
--   (Option 1) Lösen Sie das Ereignis mit dem [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) aus, um das Ereignis an den JavaScript-Threadkontext zu marshallen. Dies ist in der Regel zwar die beste Option, erzielt in manchen Szenarien aber möglicherweise nicht die schnellste Leistung.
--   (Option 2) Verwenden Sie [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt;, allerdings mit Verlust von Ereignistypinformationen. Falls Option 1 nicht möglich oder die Leistung nicht ausreichend ist, bietet diese Option eine gute Alternative, wenn der Verlust von Typinformationen akzeptabel ist.
+-   (Option 1) Lösen Sie das Ereignis mit dem [Windows.UI.Core.CoreDispatcher](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher) aus, um das Ereignis an den JavaScript-Threadkontext zu marshallen. Dies ist in der Regel zwar die beste Option, erzielt in manchen Szenarien aber möglicherweise nicht die schnellste Leistung.
+-   (Option 2) Verwenden Sie [Windows.Foundation.EventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)&lt;Object&gt;, allerdings mit Verlust von Ereignistypinformationen. Falls Option 1 nicht möglich oder die Leistung nicht ausreichend ist, bietet diese Option eine gute Alternative, wenn der Verlust von Typinformationen akzeptabel ist.
 -   (Option 3) Erstellen Sie einen eigenen Proxy und Stub für die Komponente. Diese Option ist am schwierigsten zu implementieren, behält aber die Typinformationen bei und erzielt in anspruchsvollen Szenarien unter Umständen eine bessere Leistung als Option 1.
 
 Wenn Sie nur ein Ereignis in einem Hintergrundthread ohne eine dieser Optionen auslösen, wird das Ereignis von einem JavaScript-Client nicht empfangen.
@@ -29,11 +29,11 @@ Wenn Sie nur ein Ereignis in einem Hintergrundthread ohne eine dieser Optionen a
 
 Bei allen Komponenten und Apps für Windows-Runtime handelt es sich im Grunde um COM-Objekte, unabhängig davon, welche Sprache Sie bei ihrer Erstellung verwenden. In der Windows-API sind die meisten Komponenten agile COM-Objekte, die mit Objekten im Hintergrundthread und im UI-Thread gleichermaßen gut kommunizieren können. Wenn ein COM-Objekt nicht agil angelegt werden kann, sind Hilfsobjekte (auch als Proxys bzw. Stubs bezeichnet) erforderlich, um mit anderen COM-Objekten über die Threadgrenze des UI-Threadhintergrunds hinweg zu kommunizieren. (In der COM-Terminologie wird dies als Kommunikation zwischen Threadapartments bezeichnet.)
 
-Die meisten Objekte in der Windows-API sind entweder agil oder verfügen über integrierte Proxys und Stubs. Allerdings können Proxys und Stubs nicht für generische Typen wie Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) erstellt werden, da sie erst vollständige Typen sind, wenn das Typargument bereitgestellt ist. Fehlende Proxys oder Stubs stellen nur bei JavaScript-Clients ein Problem dar. Wenn die Komponente aber sowohl in JavaScript als auch in C++ oder einer .NET-Sprache verwendet werden soll, müssen Sie eine der drei folgenden Optionen verwenden.
+Die meisten Objekte in der Windows-API sind entweder agil oder verfügen über integrierte Proxys und Stubs. Allerdings können Proxys und Stubs nicht für generische Typen wie Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://docs.microsoft.com/uwp/api/windows.foundation.typedeventhandler) erstellt werden, da sie erst vollständige Typen sind, wenn das Typargument bereitgestellt ist. Fehlende Proxys oder Stubs stellen nur bei JavaScript-Clients ein Problem dar. Wenn die Komponente aber sowohl in JavaScript als auch in C++ oder einer .NET-Sprache verwendet werden soll, müssen Sie eine der drei folgenden Optionen verwenden.
 
 ## <a name="option-1-raise-the-event-through-the-coredispatcher"></a>Option 1) Auslösen des Ereignisses mit dem CoreDispatcher-Ereignis
 
-Sie können Ereignisse eines benutzerdefinierten Delegattyps mit [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) senden, und JavaScript kann diese Ereignisse empfangen. Wenn Sie nicht sicher sind, welche Option Sie verwenden sollen, versuchen Sie es zunächst mit dieser ersten Option. Wenn die Wartezeit zwischen dem Auslösen von Ereignissen und der Ereignisbehandlung ein Problem darstellt, versuchen Sie es mit einer der anderen Optionen.
+Sie können Ereignisse eines benutzerdefinierten Delegattyps mit [Windows.UI.Core.CoreDispatcher](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher) senden, und JavaScript kann diese Ereignisse empfangen. Wenn Sie nicht sicher sind, welche Option Sie verwenden sollen, versuchen Sie es zunächst mit dieser ersten Option. Wenn die Wartezeit zwischen dem Auslösen von Ereignissen und der Ereignisbehandlung ein Problem darstellt, versuchen Sie es mit einer der anderen Optionen.
 
 Im folgenden Beispiel wird gezeigt, wie der CoreDispatcher verwendet wird, um ein stark typisiertes Ereignis auszulösen. Beachten Sie, dass es sich bei dem Typargument um „Toast“, und nicht um „Object“ handelt.
 
@@ -72,7 +72,7 @@ public void MakeToastWithDispatcher(string message)
 
 ## <a name="option-2-use-eventhandlerltobjectgt-but-lose-type-information"></a>(Option 2) Verwenden von EventHandler&lt;Object&gt;, allerdings mit Verlust von Typinformationen
 
-Eine weitere Möglichkeit, ein Ereignis aus einem Hintergrundthread zu senden, ist die Verwendung von [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; als Typ des Ereignisses. Windows instanziiert den generischen Typ konkret und stellt dafür einen Proxy und einen Stub bereit. Der Nachteil besteht darin, dass die Typinformationen der Ereignisargumente und des Senders verloren gehen. C++- und .NET-Clients müssen aus der Dokumentation entnehmen können, welcher Typ in den ursprünglichen Typ umgewandelt werden muss, wenn das Ereignis empfangen wird. JavaScript-Clients benötigt keine Informationen über die ursprünglichen Typen. Sie finden die Argumenteigenschaften anhand ihrer Namen in den Metadaten.
+Eine weitere Möglichkeit, ein Ereignis aus einem Hintergrundthread zu senden, ist die Verwendung von [Windows.Foundation.EventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)&lt;Object&gt; als Typ des Ereignisses. Windows instanziiert den generischen Typ konkret und stellt dafür einen Proxy und einen Stub bereit. Der Nachteil besteht darin, dass die Typinformationen der Ereignisargumente und des Senders verloren gehen. C++- und .NET-Clients müssen aus der Dokumentation entnehmen können, welcher Typ in den ursprünglichen Typ umgewandelt werden muss, wenn das Ereignis empfangen wird. JavaScript-Clients benötigt keine Informationen über die ursprünglichen Typen. Sie finden die Argumenteigenschaften anhand ihrer Namen in den Metadaten.
 
 In diesem Beispiel wird gezeigt, wie Windows.Foundation.EventHandler&lt;Object&gt; in C# verwendet wird:
 
@@ -124,7 +124,7 @@ Im weiteren Verlauf dieses Artikels wird gezeigt, wie eine grundlegende Komponen
 
 Diese exemplarische Vorgehensweise besteht aus folgenden Teilen:
 
--   Hier erstellen Sie zwei Windows-Runtime-Basisklassen. Die eine Klasse macht ein Ereignis vom Typ [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) verfügbar, und die andere Klasse ist der Typ, der als Argument für TValue an JavaScript zurückgegeben wird. Diese Klassen können erst mit JavaScript kommunizieren, wenn Sie die nachfolgenden Schritten ausgeführt haben.
+-   Hier erstellen Sie zwei Windows-Runtime-Basisklassen. Die eine Klasse macht ein Ereignis vom Typ [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://docs.microsoft.com/uwp/api/windows.foundation.typedeventhandler) verfügbar, und die andere Klasse ist der Typ, der als Argument für TValue an JavaScript zurückgegeben wird. Diese Klassen können erst mit JavaScript kommunizieren, wenn Sie die nachfolgenden Schritten ausgeführt haben.
 -   Diese App aktiviert das Hauptklassenobjekt, ruft eine Methode auf und behandelt ein Ereignis, das von der Komponente für Windows-Runtime ausgelöst wird.
 -   Diese werden von den Tools benötigt, die die Proxy- und Stubklassen generieren.
 -   Dann wird mithilfe der IDL-Datei der C-Quellcode für den Proxy und den Stub generiert.
@@ -279,7 +279,7 @@ Der erste Schritt zum Erstellen eines Proxys und Stubs für eine Komponente best
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>So generieren Sie GUIDs für die Schnittstellen der Komponente (C#- oder andere .NET-Sprachen)
 
-Wählen Sie in der Menüleiste „Extras &gt; GUID erstellen” aus. Wählen Sie im Dialogfeld „5. \[GUID ("Xxxxxxxx-Xxxx... Xxxx)\]. Klicken Sie auf die Schaltfläche „Neue GUID” und dann auf die Schaltfläche „Kopieren”.
+Wählen Sie in der Menüleiste „Extras &gt; GUID erstellen” aus. Wählen Sie im Dialogfeld „5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. Klicken Sie auf die Schaltfläche „Neue GUID” und dann auf die Schaltfläche „Kopieren”.
 
 ![GUID-Generator-Tool](./images/guidgeneratortool.png)
 

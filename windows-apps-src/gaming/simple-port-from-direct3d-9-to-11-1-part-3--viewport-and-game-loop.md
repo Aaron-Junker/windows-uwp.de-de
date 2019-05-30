@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, portieren, Spielschleife, Direct3D 9, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2087959bc29d2b2b02cdc9a2f373a8b62ea8c25a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bd6a17b5e1684fbee21965158295dba123737bd6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627985"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367911"
 ---
 # <a name="port-the-game-loop"></a>Portieren der Spielschleife
 
@@ -24,20 +24,20 @@ ms.locfileid: "57627985"
 -   Teil 3: Portieren der Spielschleife
 
 
-In diesem Thema wird veranschaulicht, wie Sie ein Fenster für ein UWP-Spiel (Universelle Windows-Plattform) implementieren und die Spielschleife übertragen. Außerdem wird die Erstellung eines [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)-Elements zum Steuern eines [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)-Vollbilds erläutert. Teil 3 der exemplarischen Vorgehensweise [Portieren einer einfachen Direct3D 9-App zu DirectX 11 und UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) .
+In diesem Thema wird veranschaulicht, wie Sie ein Fenster für ein UWP-Spiel (Universelle Windows-Plattform) implementieren und die Spielschleife übertragen. Außerdem wird die Erstellung eines [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView)-Elements zum Steuern eines [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Vollbilds erläutert. Teil 3 der exemplarischen Vorgehensweise [Portieren einer einfachen Direct3D 9-App zu DirectX 11 und UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) .
 
 ## <a name="create-a-window"></a>Erstellen eines Fensters
 
 
 Zum Einrichten eines Desktopfensters mit einem Direct3D 9-Viewport musste das herkömmliche Fensterframework für Desktop-Apps implementiert werden. Es musste ein HWND-Element erstellt, die Fenstergröße festgelegt, ein Rückruf zur Fensterverarbeitung eingerichtet, die Sichtbarkeit hergestellt werden usw.
 
-Dagegen verfügt die UWP-Umgebung über ein deutlich einfacheres System. Anstatt ein herkömmliches Fenster einzurichten, wird von einem Microsoft Store-Spiel, für das DirectX verwendet wird, das [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)-Element implementiert. Diese Schnittstelle ist für DirectX-Apps und -Spiele vorhanden, um die direkte Ausführung in einem [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) innerhalb des App-Containers zu ermöglichen.
+Dagegen verfügt die UWP-Umgebung über ein deutlich einfacheres System. Anstatt ein herkömmliches Fenster einzurichten, wird von einem Microsoft Store-Spiel, für das DirectX verwendet wird, das [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView)-Element implementiert. Diese Schnittstelle ist für DirectX-Apps und -Spiele vorhanden, um die direkte Ausführung in einem [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) innerhalb des App-Containers zu ermöglichen.
 
-> **Beachten Sie**    Windows stellt verwaltete Zeiger auf Ressourcen wie das Quellobjekt für die Anwendung und die [ **"corewindow"**](https://msdn.microsoft.com/library/windows/apps/br208225). Finden Sie unter [**Handle für Objekt (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+> **Beachten Sie**    Windows stellt verwaltete Zeiger auf Ressourcen wie das Quellobjekt für die Anwendung und die [ **"corewindow"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Finden Sie unter [**Handle für Objekt (^)** ]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
 
  
 
-Muss die "main"-Klasse erben [ **"iframeworkview"** ](https://msdn.microsoft.com/library/windows/apps/hh700478) und implementieren Sie die fünf **"iframeworkview"** Methoden: [**Initialisieren Sie**](https://msdn.microsoft.com/library/windows/apps/hh700495), [ **"SetWindow"**](https://msdn.microsoft.com/library/windows/apps/hh700509), [ **Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [ **Ausführen** ](https://msdn.microsoft.com/library/windows/apps/hh700505), und [ **deinitialisieren**](https://msdn.microsoft.com/library/windows/apps/hh700523). Zusätzlich zur Erstellung des **IFrameworkView**-Elements, in dem Ihr Spiel (im Wesentlichen) enthalten ist, müssen Sie eine Factoryklasse implementieren, über die eine Instanz des **IFrameworkView**-Elements erstellt wird. Das Spiel verfügt weiterhin über eine ausführbare Datei mit einer **main()**-Methode. Mithilfe von "main" kann jedoch lediglich die Factory verwendet werden, um die **IFrameworkView**-Instanz zu erstellen.
+Muss die "main"-Klasse erben [ **"iframeworkview"** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) und implementieren Sie die fünf **"iframeworkview"** Methoden: [**Initialisieren Sie**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize), [ **"SetWindow"** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow), [ **Load**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load), [ **Ausführen** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run), und [ **deinitialisieren**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize). Zusätzlich zur Erstellung des **IFrameworkView**-Elements, in dem Ihr Spiel (im Wesentlichen) enthalten ist, müssen Sie eine Factoryklasse implementieren, über die eine Instanz des **IFrameworkView**-Elements erstellt wird. Das Spiel verfügt weiterhin über eine ausführbare Datei mit einer **main()** -Methode. Mithilfe von "main" kann jedoch lediglich die Factory verwendet werden, um die **IFrameworkView**-Instanz zu erstellen.
 
 main-Funktion
 
@@ -103,9 +103,9 @@ while(WM_QUIT != msg.message)
 
 Die Spielschleife in der UWP-Version unseres Spiels ist ähnlich, dabei jedoch einfacher aufgebaut:
 
-Die Spielschleife befindet sich in der [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)-Methode (anstatt **main()**), weil die Funktionen des Spiels über die [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)-Klasse abgewickelt werden.
+Die Spielschleife befindet sich in der [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)-Methode (anstatt **main()** ), weil die Funktionen des Spiels über die [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView)-Klasse abgewickelt werden.
 
-Anstatt ein Framework zur Behandlung von Meldungen zu implementieren und [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943) aufzurufen, können wir die [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)-Methode aufrufen, die in das [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)-Element des App-Fensters integriert ist. Es ist nicht erforderlich, dass die Spielschleife über Verzweigungen verfügt und Meldungen behandelt. Rufen Sie einfach **ProcessEvents** auf, und fahren Sie fort.
+Anstatt ein Framework zur Behandlung von Meldungen zu implementieren und [**PeekMessage**](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-peekmessagea) aufzurufen, können wir die [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)-Methode aufrufen, die in das [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)-Element des App-Fensters integriert ist. Es ist nicht erforderlich, dass die Spielschleife über Verzweigungen verfügt und Meldungen behandelt. Rufen Sie einfach **ProcessEvents** auf, und fahren Sie fort.
 
 Spielschleife im Direct3D 11-Microsoft Store-Spiel
 

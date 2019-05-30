@@ -6,22 +6,22 @@ ms.date: 05/24/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c7f1ad75e1e0544486049f9bd721d8a82edf03
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8e75ab94c6f1c8c4560854fd4f5264c313657ba9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623055"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369890"
 ---
 # <a name="sensor-orientation"></a>Sensorausrichtung
 
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Windows.Devices.Sensors.Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
 
-Sensordaten der Klassen [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687), [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718), [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705), [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) und [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) sind durch ihre Referenzachsen definiert. Diese Achsen werden durch den Referenzrahmen des Geräts bestimmt und drehen sich mit dem Gerät, wenn es vom Benutzer gedreht wird. Falls Ihre App die automatische Drehung unterstützt und sie sich selbst entsprechend der Drehung des Geräts neu ausrichtet, müssen Sie die Sensordaten für die Drehung anpassen, bevor Sie sie verwenden.
+Sensordaten der Klassen [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer), [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer) und [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) sind durch ihre Referenzachsen definiert. Diese Achsen werden durch den Referenzrahmen des Geräts bestimmt und drehen sich mit dem Gerät, wenn es vom Benutzer gedreht wird. Falls Ihre App die automatische Drehung unterstützt und sie sich selbst entsprechend der Drehung des Geräts neu ausrichtet, müssen Sie die Sensordaten für die Drehung anpassen, bevor Sie sie verwenden.
 
 ## <a name="display-orientation-vs-device-orientation"></a>Bildschirmausrichtung und Geräteausrichtung
 
@@ -37,7 +37,7 @@ Das nächste Bild zeigt die Anzeigeausrichtung im Querformat und die Geräteausr
 
 ![Bildschirmausrichtung im Querformat und Geräteausrichtung im LandscapeFlipped-Format](images/sensor-orientation-c.PNG)
 
-Sie können die Ausrichtungswerte mithilfe der [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258)-Klasse abfragen, indem Sie die [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx)-Methode mit der [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx)-Eigenschaft verwenden. Anschließend können Sie durch einen Vergleich mit der [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142)-Enumeration eine Logik erstellen. Bedenken Sie, dass Sie für jede unterstützte Ausrichtung eine Konvertierung der Referenzachsen in die jeweilige Ausrichtung unterstützen müssen.
+Sie können die Ausrichtungswerte mithilfe der [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation)-Klasse abfragen, indem Sie die [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview)-Methode mit der [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation)-Eigenschaft verwenden. Anschließend können Sie durch einen Vergleich mit der [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)-Enumeration eine Logik erstellen. Bedenken Sie, dass Sie für jede unterstützte Ausrichtung eine Konvertierung der Referenzachsen in die jeweilige Ausrichtung unterstützen müssen.
 
 ## <a name="landscape-first-vs-portrait-first-devices"></a>Für Querformat und für Hochformat ausgelegte Geräte
 
@@ -46,7 +46,7 @@ Hersteller bieten Geräte an, die sowohl für das Quer- als auch das Hochformat 
 | Ausrichtung | Für Querformat ausgelegt | Für Hochformat ausgelegt |
 |-------------|-----------------|----------------|
 | **Querformat** | ![Querformatgerät im Querformat](images/sensor-orientation-0.PNG) | ![Hochformatgerät im Querformat](images/sensor-orientation-1.PNG) |
-| **Hochformat** | ![Querformatgerät im Hochformat](images/sensor-orientation-2.PNG) | ![Hochformatgerät im Hochformat](images/sensor-orientation-3.PNG) |
+| **Portrait** | ![Querformatgerät im Hochformat](images/sensor-orientation-2.PNG) | ![Hochformatgerät im Hochformat](images/sensor-orientation-3.PNG) |
 | **LandscapeFlipped** | ![Querformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-4.PNG) | ![Hochformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-5.PNG) | 
 | **PortraitFlipped** | ![Querformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-6.PNG)| ![Hochformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-7.PNG) |
 
@@ -110,7 +110,7 @@ Die folgende Tabelle zeigt, wie Beschleunigungsmesser- und Gyrometerdaten für d
 | Referenzachsen        |  X |  „Y“ zugeordnet ist | Z |
 |-----------------------|----|----|---|
 | **Querformat**         |  X |  „Y“ zugeordnet ist | Z |
-| **Hochformat**          |  „Y“ zugeordnet ist | -X | Z |
+| **Portrait**          |  „Y“ zugeordnet ist | -X | Z |
 | **LandscapeFlipped**  | -X | -Y | Z |
 | **PortraitFlipped**   | -Y |  X | Z |
 
@@ -159,7 +159,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>Bildschirmausrichtung und Geräteausrichtung
 
-Die [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)-Daten müssen auf andere Weise geändert werden. Stellen Sie sich diese unterschiedlichen Ausrichtungen als Drehungen um die Z-Achse entgegen dem Uhrzeigersinn vor. Folglich müssen wir die Drehung umkehren, um wieder die Ausrichtung des Benutzers zu erhalten. Für Quaterniondaten können wir anhand der eulerschen Formel eine Drehung mit einer Referenzquaternion definieren, und außerdem können wir eine Referenzdrehungsmatrix verwenden.
+Die [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)-Daten müssen auf andere Weise geändert werden. Stellen Sie sich diese unterschiedlichen Ausrichtungen als Drehungen um die Z-Achse entgegen dem Uhrzeigersinn vor. Folglich müssen wir die Drehung umkehren, um wieder die Ausrichtung des Benutzers zu erhalten. Für Quaterniondaten können wir anhand der eulerschen Formel eine Drehung mit einer Referenzquaternion definieren, und außerdem können wir eine Referenzdrehungsmatrix verwenden.
 
 ![Eulersche Formel](images/eulers-formula.png)
 
@@ -173,7 +173,7 @@ Im vorangehenden Ausdruck wird das absolute Objekt von den Sensordaten zurückge
 | Bildschirmausrichtung  | Drehung gegen den Uhrzeigersinn um Z | Referenzquaternion (Drehung in umgekehrter Richtung) | Referenzdrehungsmatrix (Drehung in umgekehrter Richtung) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
 | **Querformat**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
-| **Hochformat**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
+| **Portrait**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
-| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[1, 0 0<br/> 1 0 0<br/> 0 0 1]             |
+| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1 0 0<br/> 0 0 1]             |
 

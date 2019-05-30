@@ -6,19 +6,19 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Verpacken
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c429c3c88b0ae23cb518a59cab2e5a3c4f380a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d90307560c315741751a5ab58ccdf0eaf35d97fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658195"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372792"
 ---
 # <a name="manual-app-packaging"></a>Manuelles Verpacken von Apps
 
 Wenn Sie ein App-Paket erstellen und signieren möchten, für die Entwicklung der App aber nicht Visual Studio verwendet haben, müssen Sie die Tools für die manuelle App-Verpackung verwenden.
 
 > [!IMPORTANT] 
-> Wenn Sie Visual Studio zum Entwickeln der App verwendet haben, wird empfohlen, dass Sie den Visual Studio-Assistenten zum Erstellen und Signieren des App-Pakets verwenden. Weitere Informationen finden Sie unter [Verpacken einer UWP-App mit Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+> Wenn Sie Visual Studio zum Entwickeln der App verwendet haben, wird empfohlen, dass Sie den Visual Studio-Assistenten zum Erstellen und Signieren des App-Pakets verwenden. Weitere Informationen finden Sie unter [Verpacken einer UWP-App mit Visual Studio](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
 ## <a name="purpose"></a>Zweck
 

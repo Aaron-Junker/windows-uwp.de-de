@@ -6,12 +6,12 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Karte, Standort, Bilder, Überlagerung
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c2f07a364980b67a34a519eb5dd8b4da1a18f0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e9b4d439958e6cfbf0845aaf5bcd31644ff39432
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663085"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371684"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Überlagern von nebeneinander angeordneten Bildern in einer Karte
 
@@ -23,11 +23,11 @@ ms.locfileid: "57663085"
 
 ## <a name="tiled-image-overview"></a>Übersicht über nebeneinander angeordnete Bilder
 
-Kartendienste wie Nokia Karten und Bing Maps teilen Karten zum schnellen Abrufen und Anzeigen in quadratische Kacheln ein. Diese Kacheln messen 256 x 256 Pixel und werden vorab auf mehrere Detailebenen gerendert. Viele Dienste von Drittanbietern umfassen auch kartenbasierte Daten, die in Kacheln aufgeteilt sind. Verwenden Sie Kachelquellen, um Kacheln von Drittanbietern abzurufen oder benutzerdefinierte Kacheln zu erstellen. Überlagern Sie diese auf der angezeigten Karte im [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)-Objekt.
+Kartendienste wie Nokia Karten und Bing Maps teilen Karten zum schnellen Abrufen und Anzeigen in quadratische Kacheln ein. Diese Kacheln messen 256 x 256 Pixel und werden vorab auf mehrere Detailebenen gerendert. Viele Dienste von Drittanbietern umfassen auch kartenbasierte Daten, die in Kacheln aufgeteilt sind. Verwenden Sie Kachelquellen, um Kacheln von Drittanbietern abzurufen oder benutzerdefinierte Kacheln zu erstellen. Überlagern Sie diese auf der angezeigten Karte im [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)-Objekt.
 
-**Wichtige**    , wenn Sie die Kachel-Datenquellen verwenden, müssen Sie nicht Schreiben von Code, um anzufordern, oder um einzelne Kacheln zu positionieren. Das [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)-Objekt fordert bei Bedarf Kacheln an. Bei jeder Anforderung werden die X- und Y-Koordinaten und der Zoomfaktor für die einzelnen Kacheln angegeben. Geben Sie einfach das Format des URIs oder Dateinamens an, um die Kacheln in der **UriFormatString**-Eigenschaft abzurufen. Dazu fügen Sie ersetzbare Parameter in den Basis-URI oder Dateinamen ein, um anzugeben, wo die X- und Y-Koordinaten und der Zoomfaktor für jede Kachel übergeben werden.
+**Wichtige**    , wenn Sie die Kachel-Datenquellen verwenden, müssen Sie nicht Schreiben von Code, um anzufordern, oder um einzelne Kacheln zu positionieren. Das [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)-Objekt fordert bei Bedarf Kacheln an. Bei jeder Anforderung werden die X- und Y-Koordinaten und der Zoomfaktor für die einzelnen Kacheln angegeben. Geben Sie einfach das Format des URIs oder Dateinamens an, um die Kacheln in der **UriFormatString**-Eigenschaft abzurufen. Dazu fügen Sie ersetzbare Parameter in den Basis-URI oder Dateinamen ein, um anzugeben, wo die X- und Y-Koordinaten und der Zoomfaktor für jede Kachel übergeben werden.
 
-In diesem Beispiel sehen Sie eine [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992)-Eigenschaft für eine [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)-Klasse. Diese zeigt die ersetzbaren Parameter für die X- und Y-Koordinaten und den Zoomfaktor an.
+In diesem Beispiel sehen Sie eine [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring)-Eigenschaft für eine [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)-Klasse. Diese zeigt die ersetzbaren Parameter für die X- und Y-Koordinaten und den Zoomfaktor an.
 
 ```syntax
 http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -39,39 +39,39 @@ Weitere Informationen über das Kachelsystem von Kartendiensten finden Sie unter
 
 ### <a name="overlay-tiles-from-a-tile-source"></a>Überlagern von Kacheln aus einer Kachelquelle
 
-Überlagern Sie nebeneinander angeordnete Bilder aus einer Kachelquelle in einer Karte mithilfe der [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141)-Klasse.
+Überlagern Sie nebeneinander angeordnete Bilder aus einer Kachelquelle in einer Karte mithilfe der [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource)-Klasse.
 
-1.  Instanziieren Sie eine der drei Klassen für Kacheldatenquellen, die von der [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141)-Klasse erben.
+1.  Instanziieren Sie eine der drei Klassen für Kacheldatenquellen, die von der [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource)-Klasse erben.
 
-    -   [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)
-    -   [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)
-    -   [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)
+    -   [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)
+    -   [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)
+    -   [**CustomMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource)
 
     Konfigurieren Sie die **UriFormatString**-Eigenschaft zum Anfordern der Kacheln, indem Sie ersetzbare Parameter im Basis-URI oder Dateinamen einfügen.
 
-    Im folgenden Beispiel wird eine [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)-Klasse instanziiert. In diesem Beispiel wird der Wert der [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992)-Eigenschaft im Konstruktor der **HttpMapTileDataSource**-Klasse veranschaulicht.
+    Im folgenden Beispiel wird eine [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)-Klasse instanziiert. In diesem Beispiel wird der Wert der [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring)-Eigenschaft im Konstruktor der **HttpMapTileDataSource**-Klasse veranschaulicht.
 
     ```csharp
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
-2.  Instanziieren und konfigurieren Sie eine [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144)-Klasse. Geben Sie die [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141)-Klasse an, die Sie im vorherigen Schritt als [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149)-Eigenschaft der **MapTileSource**-Klasse festgelegt haben.
+2.  Instanziieren und konfigurieren Sie eine [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)-Klasse. Geben Sie die [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource)-Klasse an, die Sie im vorherigen Schritt als [**DataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource)-Eigenschaft der **MapTileSource**-Klasse festgelegt haben.
 
-    Im folgenden Beispiel wird die [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149)-Eigenschaft im Konstruktor der [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144)-Klasse veranschaulicht.
+    Im folgenden Beispiel wird die [**DataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource)-Eigenschaft im Konstruktor der [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)-Klasse veranschaulicht.
 
     ```csharp
         MapTileSource tileSource = new MapTileSource(dataSource);
     ```
 
-    Sie können die Bedingungen, unter denen Kacheln angezeigt werden, mithilfe der Eigenschaften der [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144)-Klasse einschränken.
+    Sie können die Bedingungen, unter denen Kacheln angezeigt werden, mithilfe der Eigenschaften der [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)-Klasse einschränken.
 
-    -   Zeigen Sie Kacheln nur in einem bestimmten geografischen Bereich an, indem Sie einen Wert für die [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147)-Eigenschaft angeben.
-    -   Zeigen Sie Kacheln nur auf bestimmten Detailebenen an, indem Sie einen Wert für die [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171)-Eigenschaft angeben.
+    -   Zeigen Sie Kacheln nur in einem bestimmten geografischen Bereich an, indem Sie einen Wert für die [**Bounds**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.bounds)-Eigenschaft angeben.
+    -   Zeigen Sie Kacheln nur auf bestimmten Detailebenen an, indem Sie einen Wert für die [**ZoomLevelRange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.zoomlevelrange)-Eigenschaft angeben.
 
-    Optional können Sie weitere Eigenschaften der [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144)-Klasse konfigurieren, die Auswirkungen auf das Laden oder die Anzeige von Kacheln haben, z. B. [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153) und [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155).
+    Optional können Sie weitere Eigenschaften der [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)-Klasse konfigurieren, die Auswirkungen auf das Laden oder die Anzeige von Kacheln haben, z. B. [**Layer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer), [**AllowOverstretch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.allowoverstretch), [**IsRetryEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.isretryenabled) und [**IsTransparencyEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.istransparencyenabled).
 
-3.  Fügen Sie die [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144)-Klasse der [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053)-Collection dem [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)-Objekt hinzu.
+3.  Fügen Sie die [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)-Klasse der [**TileSources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.tilesources)-Collection dem [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)-Objekt hinzu.
 
     ```csharp
          MapControl1.TileSources.Add(tileSource);
@@ -80,20 +80,20 @@ Weitere Informationen über das Kachelsystem von Kartendiensten finden Sie unter
 ## <a name="overlay-tiles-from-a-web-service"></a>Überlagern von Kacheln aus einem Webdienst
 
 
-Überlagern Sie nebeneinander angeordnete Bilder aus einem Webdienst mithilfe der [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)-Klasse.
+Überlagern Sie nebeneinander angeordnete Bilder aus einem Webdienst mithilfe der [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)-Klasse.
 
-1.  Instanziieren Sie eine [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)-Klasse.
-2.  Geben Sie das Format des URIs an, den der Webdienst als Wert für die [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992)-Eigenschaft erwartet. Um diesen Wert zu erstellen, fügen Sie dem Basis-URI die ersetzbaren Parameter hinzu. Im folgenden Codebeispiel beträgt der Wert der **UriFormatString**-Eigenschaft beispielsweise:
+1.  Instanziieren Sie eine [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)-Klasse.
+2.  Geben Sie das Format des URIs an, den der Webdienst als Wert für die [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring)-Eigenschaft erwartet. Um diesen Wert zu erstellen, fügen Sie dem Basis-URI die ersetzbaren Parameter hinzu. Im folgenden Codebeispiel beträgt der Wert der **UriFormatString**-Eigenschaft beispielsweise:
 
     ``` syntax
     http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Der Webdienst muss einen URI unterstützen, der die ersetzbaren Parameter {x}, {y} und {zoomlevel} enthält. Die meisten Webdienste (z. B. Nokia, Bing und Google) unterstützen URIs in diesem Format. Benötigt der Webdienst zusätzliche Argumente, die mit der [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992)-Eigenschaft nicht zur Verfügung stehen, müssen Sie einen benutzerdefinierten URI erstellen. Mithilfe des [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993)-Ereignisses können Sie einen benutzerdefinierten URI erstellen und zurückgeben. Weitere Infos finden Sie im Abschnitt [Bereitstellen eines benutzerdefinierten URIs](#customuri) weiter unten in diesem Thema.
+    Der Webdienst muss einen URI unterstützen, der die ersetzbaren Parameter {x}, {y} und {zoomlevel} enthält. Die meisten Webdienste (z. B. Nokia, Bing und Google) unterstützen URIs in diesem Format. Benötigt der Webdienst zusätzliche Argumente, die mit der [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring)-Eigenschaft nicht zur Verfügung stehen, müssen Sie einen benutzerdefinierten URI erstellen. Mithilfe des [**UriRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.urirequested)-Ereignisses können Sie einen benutzerdefinierten URI erstellen und zurückgeben. Weitere Infos finden Sie im Abschnitt [Bereitstellen eines benutzerdefinierten URIs](#customuri) weiter unten in diesem Thema.
 
 3.  Befolgen Sie die verbleibenden Schritte in der [Übersicht über nebeneinander angeordnete Bilder](#tileintro).
 
-Im folgenden Beispiel überlagern Kacheln aus einem fiktiven Webdienst eine Karte von Nordamerika. Der Wert der [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992)-Eigenschaft ist im Konstruktor der [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)-Klasse angegeben. In diesem Beispiel werden durch Festlegen der optionalen [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147)-Eigenschaft nur Kacheln innerhalb der geografischen Bereiche angegeben.
+Im folgenden Beispiel überlagern Kacheln aus einem fiktiven Webdienst eine Karte von Nordamerika. Der Wert der [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring)-Eigenschaft ist im Konstruktor der [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)-Klasse angegeben. In diesem Beispiel werden durch Festlegen der optionalen [**Bounds**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.bounds)-Eigenschaft nur Kacheln innerhalb der geografischen Bereiche angegeben.
 
 ```csharp
 private void AddHttpMapTileSource()
@@ -167,16 +167,16 @@ void MainPage::AddHttpMapTileSource()
 ## <a name="overlay-tiles-from-local-storage"></a>Überlagern von Kacheln aus dem lokalen Speicher
 
 
-Überlagern Sie nebeneinander angeordnete Bilder, die als Dateien im lokalen Speicher gespeichert sind, mithilfe der [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)-Klasse. In der Regel können Sie diese Dateien mit Ihrer App verpacken und verteilen.
+Überlagern Sie nebeneinander angeordnete Bilder, die als Dateien im lokalen Speicher gespeichert sind, mithilfe der [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)-Klasse. In der Regel können Sie diese Dateien mit Ihrer App verpacken und verteilen.
 
-1.  Instanziieren Sie eine [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)-Klasse.
-2.  Geben Sie das Format der Dateinamen als Wert für die [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998)-Eigenschaft ein. Um diesen Wert zu erstellen, fügen Sie dem Basis-Dateinamen die ersetzbaren Parameter hinzu. Im folgenden Codebeispiel hat die [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992)-Eigenschaft beispielsweise den Wert:
+1.  Instanziieren Sie eine [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)-Klasse.
+2.  Geben Sie das Format der Dateinamen als Wert für die [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring)-Eigenschaft ein. Um diesen Wert zu erstellen, fügen Sie dem Basis-Dateinamen die ersetzbaren Parameter hinzu. Im folgenden Codebeispiel hat die [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring)-Eigenschaft beispielsweise den Wert:
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    Wenn das Format der Dateinamen zusätzliche Argumente benötigt, die mit der [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998)-Eigenschaft nicht zur Verfügung stehen, müssen Sie einen benutzerdefinierten URI erstellen. Mithilfe des [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001)-Ereignisses können Sie einen benutzerdefinierten URI erstellen und zurückgeben. Weitere Infos finden Sie im Abschnitt [Bereitstellen eines benutzerdefinierten URIs](#customuri) weiter unten in diesem Thema.
+    Wenn das Format der Dateinamen zusätzliche Argumente benötigt, die mit der [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring)-Eigenschaft nicht zur Verfügung stehen, müssen Sie einen benutzerdefinierten URI erstellen. Mithilfe des [**UriRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.urirequested)-Ereignisses können Sie einen benutzerdefinierten URI erstellen und zurückgeben. Weitere Infos finden Sie im Abschnitt [Bereitstellen eines benutzerdefinierten URIs](#customuri) weiter unten in diesem Thema.
 
 3.  Befolgen Sie die verbleibenden Schritte in der [Übersicht über nebeneinander angeordnete Bilder](#tileintro).
 
@@ -185,15 +185,15 @@ Zum Laden von Kacheln aus dem lokalen Speicher können Sie die folgenden Protoko
 | Uri | Weitere Informationen |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | ms-appx:/// | Verweist auf das Stammelement des App-Installationsordners. |
-|  | Dies ist der von der [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681)-Eigenschaft referenzierte Speicherort. |
+|  | Dies ist der von der [Package.InstalledLocation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.installedlocation)-Eigenschaft referenzierte Speicherort. |
 | ms-appdata:///local | Verweist auf das Stammelement des lokalen Speichers der App. |
-|  | Dies ist der von der [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621)-Eigenschaft referenzierte Speicherort. |
+|  | Dies ist der von der [ApplicationData.LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder)-Eigenschaft referenzierte Speicherort. |
 | ms-appdata:///temp | Verweist auf die temporären Ordner der App. |
-|  | Dies ist der Pfad, auf den die [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629)-Eigenschaft verweist. |
+|  | Dies ist der Pfad, auf den die [ApplicationData.TemporaryFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder)-Eigenschaft verweist. |
 
  
 
-Im folgenden Beispiel werden Kacheln, die als Dateien im Installationsverzeichnis der App gespeichert werden, mithilfe des `ms-appx:///`-Protokolls geladen. Der Wert der [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998)-Eigenschaft ist im Konstruktor der [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)-Klasse angegeben. In diesem Beispiel werden Kacheln nur angezeigt, wenn der Zoomfaktor für die Karte innerhalb des Bereichs liegt, der durch die optionale [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171)-Eigenschaft angegeben ist.
+Im folgenden Beispiel werden Kacheln, die als Dateien im Installationsverzeichnis der App gespeichert werden, mithilfe des `ms-appx:///`-Protokolls geladen. Der Wert der [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring)-Eigenschaft ist im Konstruktor der [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)-Klasse angegeben. In diesem Beispiel werden Kacheln nur angezeigt, wenn der Zoomfaktor für die Karte innerhalb des Bereichs liegt, der durch die optionale [**ZoomLevelRange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.zoomlevelrange)-Eigenschaft angegeben ist.
 
 ```csharp
         void AddLocalMapTileSource()
@@ -219,10 +219,10 @@ Im folgenden Beispiel werden Kacheln, die als Dateien im Installationsverzeichni
 
 ## <a name="provide-a-custom-uri"></a>Bereitstellen eines benutzerdefinierten URIs
 
-Wenn die ersetzbaren Parameter, die mit der [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992)-Eigenschaft der [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)-Klasse oder der [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998)-Eigenschaft der [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)-Klasse zur Verfügung stehen, nicht zum Abrufen Ihrer Kacheln ausreichen, müssen Sie einen benutzerdefinierten URI erstellen. Indem Sie einen benutzerdefinierten Handler für das **UriRequested**-Ereignis bereitstellen, können Sie einen benutzerdefinierten URI erstellen und zurückgeben. Das **UriRequested**-Ereignis wird für jede einzelne Kachel ausgelöst.
+Wenn die ersetzbaren Parameter, die mit der [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring)-Eigenschaft der [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)-Klasse oder der [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring)-Eigenschaft der [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)-Klasse zur Verfügung stehen, nicht zum Abrufen Ihrer Kacheln ausreichen, müssen Sie einen benutzerdefinierten URI erstellen. Indem Sie einen benutzerdefinierten Handler für das **UriRequested**-Ereignis bereitstellen, können Sie einen benutzerdefinierten URI erstellen und zurückgeben. Das **UriRequested**-Ereignis wird für jede einzelne Kachel ausgelöst.
 
-1.  Kombinieren Sie in Ihrem benutzerdefinierten Handler für das **UriRequested**-Ereignis die erforderlichen benutzerdefinierten Argumente mit den Eigenschaften [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) und [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) der [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177)-Klasse, um den benutzerdefinierten URI zu erstellen.
-2.  Geben Sie die benutzerdefinierte URI in der [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748)-Eigenschaft der [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173)-Klasse zurück. Diese ist in der [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179)-Eigenschaft der [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177)-Klasse enthalten.
+1.  Kombinieren Sie in Ihrem benutzerdefinierten Handler für das **UriRequested**-Ereignis die erforderlichen benutzerdefinierten Argumente mit den Eigenschaften [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.x), [**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.y) und [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.zoomlevel) der [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs)-Klasse, um den benutzerdefinierten URI zu erstellen.
+2.  Geben Sie die benutzerdefinierte URI in der [**Uri**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequest.uri)-Eigenschaft der [**MapTileUriRequest**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequest)-Klasse zurück. Diese ist in der [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.request)-Eigenschaft der [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs)-Klasse enthalten.
 
 Das folgende Beispiel zeigt, wie Sie einen benutzerdefinierten URI durch Erstellen eines benutzerdefinierten Handlers für das **UriRequested**-Ereignis bereitstellen. Sie erfahren zudem, wie Sie das Verzögerungsmuster implementieren, wenn Sie asynchron zum Erstellen des benutzerdefinierten URIs weitere Schritte ausführen müssen.
 
@@ -264,14 +264,14 @@ using System.Threading.Tasks;
 
 ## <a name="overlay-tiles-from-a-custom-source"></a>Überlagern von Kacheln aus einer benutzerdefinierten Quelle
 
-Überlagern Sie benutzerdefinierte Kacheln mithilfe der [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)-Klasse. Erstellen Sie Kacheln programmgesteuert im Arbeitsspeicher, oder schreiben Sie eigenen Code, um vorhandene Kacheln aus einer anderen Quelle zu laden.
+Überlagern Sie benutzerdefinierte Kacheln mithilfe der [**CustomMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource)-Klasse. Erstellen Sie Kacheln programmgesteuert im Arbeitsspeicher, oder schreiben Sie eigenen Code, um vorhandene Kacheln aus einer anderen Quelle zu laden.
 
-Stellen Sie zum Erstellen oder Laden von benutzerdefinierten Kacheln einen benutzerdefinierten Handler für das [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984)-Ereignis bereit. Das **BitmapRequested**-Ereignis wird für jede einzelne Kachel ausgelöst.
+Stellen Sie zum Erstellen oder Laden von benutzerdefinierten Kacheln einen benutzerdefinierten Handler für das [**BitmapRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested)-Ereignis bereit. Das **BitmapRequested**-Ereignis wird für jede einzelne Kachel ausgelöst.
 
-1.  Kombinieren Sie in Ihrem benutzerdefinierten Handler für das [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984)-Ereignis die erforderlichen benutzerdefinierten Argumente mit den Eigenschaften [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) und [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) der [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132)-Klasse, um eine benutzerdefinierte Kachel zu erstellen oder abzurufen.
-2.  Geben Sie die benutzerdefinierte Kachel in der [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140)-Eigenschaft der [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128)-Klasse zurück, die in der [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134)-Eigenschaft der [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132)-Klasse enthalten ist. Bei der **PixelData**-Eigenschaft handelt es sich um den Typ [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664).
+1.  Kombinieren Sie in Ihrem benutzerdefinierten Handler für das [**BitmapRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested)-Ereignis die erforderlichen benutzerdefinierten Argumente mit den Eigenschaften [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x), [**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y) und [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) der [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs)-Klasse, um eine benutzerdefinierte Kachel zu erstellen oder abzurufen.
+2.  Geben Sie die benutzerdefinierte Kachel in der [**PixelData**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequest.pixeldata)-Eigenschaft der [**MapTileBitmapRequest**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest)-Klasse zurück, die in der [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.request)-Eigenschaft der [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs)-Klasse enthalten ist. Bei der **PixelData**-Eigenschaft handelt es sich um den Typ [**IRandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStreamReference).
 
-Das folgende Beispiel zeigt, wie Sie benutzerdefinierte Kacheln durch Erstellen eines benutzerdefinierten Handlers für das **BitmapRequested**-Ereignis bereitstellen. In diesem Beispiel werden identische rote Kacheln erstellt, die teilweise deckend sind. Im Beispiel werden die Eigenschaften [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) und [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) der [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132)-Klasse ignoriert. Auch wenn dies kein praktisches Beispiel ist, wird im Beispiel veranschaulicht, wie Sie benutzerdefinierte Kacheln im Arbeitsspeicher erstellen können. Sie erfahren zudem, wie Sie das Verzögerungsmuster implementieren, wenn Sie asynchron zum Erstellen der benutzerdefinierten Kacheln weitere Schritte ausführen müssen.
+Das folgende Beispiel zeigt, wie Sie benutzerdefinierte Kacheln durch Erstellen eines benutzerdefinierten Handlers für das **BitmapRequested**-Ereignis bereitstellen. In diesem Beispiel werden identische rote Kacheln erstellt, die teilweise deckend sind. Im Beispiel werden die Eigenschaften [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x), [**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y) und [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) der [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs)-Klasse ignoriert. Auch wenn dies kein praktisches Beispiel ist, wird im Beispiel veranschaulicht, wie Sie benutzerdefinierte Kacheln im Arbeitsspeicher erstellen können. Sie erfahren zudem, wie Sie das Verzögerungsmuster implementieren, wenn Sie asynchron zum Erstellen der benutzerdefinierten Kacheln weitere Schritte ausführen müssen.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -415,13 +415,13 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 
 So ersetzen Sie die Standardkarte durch Drittanbieter- oder benutzerdefinierte Kacheln:
 
--   Legen Sie [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** als Wert für die [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157)-Eigenschaft der [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144)-Klasse fest.
--   Legen Sie [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** als Wert für die [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051)-Eigenschaft der [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)-Klasse fest.
+-   Legen Sie [**MapTileLayer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileLayer).**BackgroundReplacement** als Wert für die [**Layer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer)-Eigenschaft der [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)-Klasse fest.
+-   Legen Sie [**MapStyle**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle).**None** als Wert für die [**Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style)-Eigenschaft der [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)-Klasse fest.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Bing Karten Developer Center](https://www.bingmapsportal.com/)
 * [Beispiel für UWP-Karte](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Entwurfsrichtlinien für Karten](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Entwurfsrichtlinien für Karten](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015-Video: Nutzen von Karten und Ortung über Telefon, Tablet und PC in Ihren Windows-Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Beispiel für eine UWP-App mit Verkehrsinformationen](https://go.microsoft.com/fwlink/p/?LinkId=619982)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Uwp, verbundene Geräte "," Remotesystemen "," ROM "," Projekt "ROME"
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: c785e6d2a8021148f572df88a6d9e6ba07c4a457
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ae9229378f75adeb215a881bdaf955b010cd7806
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601175"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366377"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Verbundene Apps und Geräte (Projekt „Rome”)
 
@@ -19,7 +19,7 @@ In diesem Abschnitt wird erläutert, wie zum Verbinden von apps für Geräte und
 
 Die meisten Benutzer verfügen über mehrere Geräte, wobei sie häufig eine Aktivität auf einem Gerät beginnen und auf einem anderen Gerät abschließen. Dazu müssen Apps geräte- und plattformübergreifend sein. Projekt "ROME" können Sie zum Ermitteln von Remotegeräten, starten Sie eine app auf einem Remotegerät und per app Service auf einem Remotegerät zu kommunizieren.
 
-Die mit Windows 10, Version 1607, eingeführten [Remotesysteme-APIs](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems) ermöglichen Ihnen das Schreiben von Apps, mit denen Benutzer eine Aufgabe auf einem Gerät starten und auf einem anderen Gerät abschließen können. Die Aufgabe bleibt der zentrale Fokus, und Benutzer können an dem für sie komfortabelsten Gerät arbeiten. Zum Beispiel hört ein Benutzer vielleicht Radio auf seinem Mobiltelefon. Aber zu Hause angekommen möchte er möglicherweise die Wiedergabe auf seine Xbox One übertragen, die in die Heim-Stereoanlage eingebunden ist.
+Die mit Windows 10, Version 1607, eingeführten [Remotesysteme-APIs](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems) ermöglichen Ihnen das Schreiben von Apps, mit denen Benutzer eine Aufgabe auf einem Gerät starten und auf einem anderen Gerät abschließen können. Die Aufgabe bleibt der zentrale Fokus, und Benutzer können an dem für sie komfortabelsten Gerät arbeiten. Zum Beispiel hört ein Benutzer vielleicht Radio auf seinem Mobiltelefon. Aber zu Hause angekommen möchte er möglicherweise die Wiedergabe auf seine Xbox One übertragen, die in die Heim-Stereoanlage eingebunden ist.
 
 Sie können Project Rome auch für Begleitgeräte oder Remotesteuerungsszenarien verwenden. Verwenden Sie die App-Dienst-Messaging-APIs, um einen App-Kanal zwischen zwei Geräten zum Senden und Empfangen von benutzerdefinierten Nachrichten zu erstellen. Beispielsweise können Sie eine App für Ihr Mobiltelefon schreiben, die die Wiedergabe auf Ihrem Fernsehgerät steuert, oder eine Begleit-App, die Informationen über die Charaktere in einer Fernsehsendung bereitstellt, die Sie sich in einer anderen App ansehen.  
 

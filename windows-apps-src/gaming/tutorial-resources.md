@@ -5,25 +5,25 @@ keywords: DirectX, XAML
 ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cb1c9f9cf6cbc6cce0c5d4547ed503bb9a06e56
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 39fc465a38aa31e86d5c6162c4b333517c9efb4d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660115"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367690"
 ---
 # <a name="extend-the-game-sample"></a>Erweitern des Spielbeispiels
 
 Sie sind nun mit den Schlüsselkomponenten eines einfachen dreidimensionalen DirectX 3D-Spiels für die Universelle Windows-Plattform (UWP) vertraut. Sie können das Framework für ein Spiel (einschließlich Ansichtsanbieter und Rendering-Pipeline) einrichten und eine einfache Spielschleife implementieren. Zudem können Sie ein einfaches Benutzeroberflächenoverlay erstellen und Soundeffekte und Steuerelemente einbauen. Sie sind auf dem Weg, Ihre eigenes Spiel zu erstellen. Wenn Sie weitere Hilfe und Informationen benötigen, sehen Sie sich diese Ressourcen an.
 
--   [DirectX-Grafiken und -Spiele](https://msdn.microsoft.com/library/windows/desktop/ee663274)
--   [Direct3D 11-Übersicht](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [Direct3D 11-Referenz](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [DirectX-Grafiken und -Spiele](https://docs.microsoft.com/windows/desktop/directx)
+-   [Direct3D 11-Übersicht](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
+-   [Direct3D 11-Referenz](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference)
 
 ## <a name="using-xaml-for-the-overlay"></a>Verwenden von XAML für die Überlagerung
 
 
-Eine Alternative, auf die wir noch nicht näher eingegangen sind, ist die Verwendung von XAML anstelle von [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) für das Overlay. XAML hat gegenüber Direct2D viele Vorteile, insbesondere für die Zeichnung der Elemente der Benutzeroberfläche. Der wichtigste Vorteil ist, dass es macht das Aussehen und Verhalten von Windows 10 in Ihrer DirectX-Spielen, die einfacher zu integrieren. Viele der allgemeinen Elemente, Stile und Verhalten, die eine UWP-App ausmachen, sind eng in das XAML-Modell integriert und ersparen einem Spieleentwickler eine Menge Arbeit bei der Implementierung. Falls Ihr eigenes Spieldesign eine komplizierte Benutzeroberfläche hat, empfiehlt sich unter Umständen die Verwendung von XAML anstelle von Direct2D.
+Eine Alternative, auf die wir noch nicht näher eingegangen sind, ist die Verwendung von XAML anstelle von [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) für das Overlay. XAML hat gegenüber Direct2D viele Vorteile, insbesondere für die Zeichnung der Elemente der Benutzeroberfläche. Der wichtigste Vorteil ist, dass es macht das Aussehen und Verhalten von Windows 10 in Ihrer DirectX-Spielen, die einfacher zu integrieren. Viele der allgemeinen Elemente, Stile und Verhalten, die eine UWP-App ausmachen, sind eng in das XAML-Modell integriert und ersparen einem Spieleentwickler eine Menge Arbeit bei der Implementierung. Falls Ihr eigenes Spieldesign eine komplizierte Benutzeroberfläche hat, empfiehlt sich unter Umständen die Verwendung von XAML anstelle von Direct2D.
 
 Mit XAML können wir eine Spielschnittstelle erstellen, die der vorher in Direct2D erstellten ähnelt.
 
@@ -37,8 +37,8 @@ Während sie ähnliche Ergebnisse erhalten, gibt es eine Reihe von Unterschieden
 
 Feature | XAML| Direct2D
 :----------|:----------- | :-----------
-Definieren der Überlagerung | In einer XAML-Datei definiert `\*.xaml`. Wenn Sie XAML-Code verstehen, wird das Erstellen und Konfigurieren von komplizierteren Overlays einfacher gegenüber Direct2D.| Sie definieren das Overlay als Sammlung von Direct2D-Grundtypen und [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)-Zeichenfolgen, die manuell platziert und in einen Direct2D-Zielpuffer geschrieben werden. 
-Benutzeroberflächenelemente | Die XAML UI-Elemente basieren auf standardisierten Elementen, die Teil der XAML-APIs der Windows-Runtime sind. Hierzu gehören unter anderem [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) und [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716). Der Code zum Behandeln des Verhaltens der XAML-UI-Elemente ist in der CodeBehind-Datei „Main.xaml.cpp“ definiert. | Einfache Formen können z. B. wie Rechtecke und Ellipsen gezeichnet werden.
+Definieren der Überlagerung | In einer XAML-Datei definiert `\*.xaml`. Wenn Sie XAML-Code verstehen, wird das Erstellen und Konfigurieren von komplizierteren Overlays einfacher gegenüber Direct2D.| Sie definieren das Overlay als Sammlung von Direct2D-Grundtypen und [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal)-Zeichenfolgen, die manuell platziert und in einen Direct2D-Zielpuffer geschrieben werden. 
+Benutzeroberflächenelemente | Die XAML UI-Elemente basieren auf standardisierten Elementen, die Teil der XAML-APIs der Windows-Runtime sind. Hierzu gehören unter anderem [**Windows::UI::Xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml) und [**Windows::UI::Xaml::Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls). Der Code zum Behandeln des Verhaltens der XAML-UI-Elemente ist in der CodeBehind-Datei „Main.xaml.cpp“ definiert. | Einfache Formen können z. B. wie Rechtecke und Ellipsen gezeichnet werden.
 Größenanpassung der Fenster | Behandelt Größenänderungen und Statusänderungsereignisse, transformiert dabei das Overlay entsprechend | Es muss manuell angegeben werden, wie die Overlaykomponenten neu gezeichnet werden muss
 
 
@@ -78,7 +78,7 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 ```
 
 
-Um die konfigurierte Swapchain der [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)-Bereichsinstanz zuzuordnen, die Sie mit XAML definiert haben, müssen Sie einen Zeiger auf die zugrunde liegende Implementierung der systemeigenen [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/dn302143)-Schnittstelle abrufen und in einem entsprechenden Aufruf von [**ISwapChainPanelNative::SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) Ihre konfigurierte Swapchain übergeben. 
+Um die konfigurierte Swapchain der [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)-Bereichsinstanz zuzuordnen, die Sie mit XAML definiert haben, müssen Sie einen Zeiger auf die zugrunde liegende Implementierung der systemeigenen [**ISwapChainPanelNative**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative)-Schnittstelle abrufen und in einem entsprechenden Aufruf von [**ISwapChainPanelNative::SetSwapChain**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain) Ihre konfigurierte Swapchain übergeben. 
 
 Der folgende Codeausschnitt aus [**DX::DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) gibt Details für DirectX/XAML-Interoperabilität an:
 

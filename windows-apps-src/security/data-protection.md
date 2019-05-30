@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c93527a2ee738a3e6b0f4e9b9d2a1343158441b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 15feb86677cd70774a99fe4046d817c71fc71f90
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608265"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372580"
 ---
 # <a name="data-protection"></a>Datenschutz
 
 
 
-In diesem Artikel wird erläutert, wie Sie mithilfe der [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559)-Klasse im [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585)-Namespace digitale Daten in einer UWP-App verschlüsseln und entschlüsseln können.
+In diesem Artikel wird erläutert, wie Sie mithilfe der [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider)-Klasse im [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)-Namespace digitale Daten in einer UWP-App verschlüsseln und entschlüsseln können.
 
 Sie können die Datenschutz-APIs auf verschiedene Weise verwenden:
 
@@ -26,12 +26,12 @@ Sie können die Datenschutz-APIs auf verschiedene Weise verwenden:
 -   Zum Schützen von Daten mithilfe eines symmetrischen Schlüssels. Damit können zum Beispiel die Daten eines Nicht-AD-Prinzipals wie Live ID geschützt werden.
 -   Zum Schützen von Daten anhand von Anmeldeinformationen (Kennwort), die zum Anmelden bei einer Website erforderlich sind.
 
-Um Daten zu schützen, müssen Sie beim Erstellen eines [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559)-Objekts einen Schutzdeskriptor angeben, bevor Sie [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) oder [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) aufrufen. Im Folgenden sehen Sie Beispiele für mögliche Schutzdeskriptoren.
+Um Daten zu schützen, müssen Sie beim Erstellen eines [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider)-Objekts einen Schutzdeskriptor angeben, bevor Sie [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) oder [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) aufrufen. Im Folgenden sehen Sie Beispiele für mögliche Schutzdeskriptoren.
 
 ## <a name="protecting-static-data"></a>Schützen statischer Daten
 
 
-Das folgende Beispiel zeigt, wie Sie mithilfe der Methoden [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) und [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) statische Daten für die SID des aktuellen Benutzers asynchron schützen können.
+Das folgende Beispiel zeigt, wie Sie mithilfe der Methoden [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) und [**UnprotectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectasync) statische Daten für die SID des aktuellen Benutzers asynchron schützen können.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -116,7 +116,7 @@ namespace SampleProtectAsync
 ## <a name="protecting-stream-data"></a>Schützen von Datenstromdaten
 
 
-Das folgende Beispiel zeigt, wie Sie mithilfe der Methoden [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) und [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) Datenstromdaten für die SID des aktuellen Benutzers asynchron schützen können.
+Das folgende Beispiel zeigt, wie Sie mithilfe der Methoden [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) und [**UnprotectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectstreamasync) Datenstromdaten für die SID des aktuellen Benutzers asynchron schützen können.
 
 ```cs
 using Windows.Security.Cryptography;

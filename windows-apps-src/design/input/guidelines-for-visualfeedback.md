@@ -8,18 +8,18 @@ keywords: Visuelles Feedback, Fokus-Feedback, Touch-Feedback, Kontaktvisualisier
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b043ec71eb7d5883a1b22c4f0d8f43824034d454
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1f716b930a4d8b96a55a5741e5a520be624526fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640785"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363541"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Richtlinien für visuelles Feedback
 
 Zeigen Sie Benutzern durch visuelles Feedback, wenn ihre Interaktionen ermittelt, interpretiert und behandelt werden. Visuelles Feedback ist hilfreich für Benutzer und kann sie zur Interaktion ermutigen. Es weist auf erfolgreiche Interaktionen hin, was für den Benutzer das Gefühl der Kontrolle verstärkt. Darüber hinaus informiert es über den Systemstatus und verringert die Fehlerzahl.
 
-> **Wichtige APIs:**  [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+> **Wichtige APIs:**  [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>Empfehlungen
 
@@ -27,7 +27,7 @@ Zeigen Sie Benutzern durch visuelles Feedback, wenn ihre Interaktionen ermittelt
     - Unter [XAML-Formatvorlagen](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) finden Sie weitere Informationen zum Anpassen der Eigenschaften eines Steuerelements, einschließlich der visuellen Zustandseigenschaften.
     - Unter [UserControl-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) finden Sie weitere Informationen zu Änderungen an einer Steuerelementvorlage.
     - Erwägen Sie, eine eigene benutzerdefinierte Steuerelementvorlage zu erstellen, wenn Sie umfangreiche Änderungen an einer Steuerelementvorlage vornehmen müssen. Ein Beispiel für eine benutzerdefinierte Steuerelementvorlage finden Sie unter [Beispiel für ein benutzerdefiniertes Bearbeitungssteuerelement](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
-- Verwenden Sie keine Toucheingabevisualisierungen in Situationen, in denen diese die Verwendung der App beeinträchtigen könnten. Weitere Informationen finden Sie unter [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969).
+- Verwenden Sie keine Toucheingabevisualisierungen in Situationen, in denen diese die Verwendung der App beeinträchtigen könnten. Weitere Informationen finden Sie unter [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback).
 - Zeigen Sie nur dann Feedback an, wenn dies absolut notwendig ist. Sorgen Sie dafür, dass die Benutzeroberfläche übersichtlich bleibt. Zeigen Sie nur dann visuelles Feedback an, wenn die darin enthaltenen Informationen sonst nirgends verfügbar sind.
 - Versuchen Sie, die Verhaltensweisen der integrierten Windows-Gesten für visuelles Feedback nicht in erheblichem Umfang anzupassen, da dies eine inkonsistente und verwirrende Benutzerumgebung zur Folge haben kann.
 
@@ -44,7 +44,7 @@ Durch die Verwendung der Standardsteuerelemente für die XAML-Plattform stellen 
 
 Das visuelle Feedback ist im Allgemeinen vom Eingabegerät abhängig (Toucheingabe, Touchpad, Maus, Stift, Tastatur usw.). Das integrierte Feedback für die Maus z. B. beinhaltet normalerweise eine Bewegung und Änderung des Cursors, während für Touch- und Stifteingabe Berührungsvisualisierungen erforderlich sind und für die Eingabe und Navigation per Tastatur Fokusrechtecke und Hervorhebung verwendet werden.
 
-Verwenden Sie [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969), um das Feedbackverhalten für die Plattformgesten festzulegen.
+Verwenden Sie [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback), um das Feedbackverhalten für die Plattformgesten festzulegen.
 
 Wenn Sie Anpassungen an der Feedback-UI vornehmen, muss das Feedback alle Eingabemodi unterstützen und für alle Modi geeignet sein.
 
@@ -73,7 +73,7 @@ Um die Breite der beiden Rahmentypen (primär oder sekundär) zu ändern, verwen
 ```
 ![Randbreiten visueller Fokuselemente mit hoher Sichtbarkeit](images/FocusMargin.png)
 
-Der Rand ist eine Eigenschaft des Typs [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness) und kann daher so angepasst werden, dass er nur an bestimmten Seiten des Steuerelements angezeigt wird. Siehe unten: ![Hohe Transparenz Fokus visual Rand Stärke nur unten](images/FocusThicknessSide.png)
+Der Rand ist eine Eigenschaft des Typs [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness?redirectedfrom=MSDN) und kann daher so angepasst werden, dass er nur an bestimmten Seiten des Steuerelements angezeigt wird. Siehe unten: ![Hohe Transparenz Fokus visual Rand Stärke nur unten](images/FocusThicknessSide.png)
 
 Der Rand ist der Abstand zwischen den visuellen Grenzen des Steuerelements und dem Beginn des *sekundären Rahmens* der visuellen Fokuselemente. Der standardmäßige Rand hat eine Breite von **1 Pixel** außerhalb der Grenzen des Steuerelements. Sie können diesen Rand pro Steuerelement bearbeiten, indem Sie die Eigenschaft **FocusVisualMargin** ändern:
 ```XAML
@@ -112,7 +112,7 @@ Um die Farben pro Steuerelement zu ändern, bearbeiten Sie einfach die Eigenscha
 * [Richtlinien für Verschiebung](guidelines-for-panning.md)
 
 **Für Entwickler**
-* [Benutzerdefinierte Benutzerinteraktionen](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [Benutzerdefinierte Benutzerinteraktionen](https://developer.microsoft.com/windows/design/inputs-devices)
 
 **Beispiele**
 * [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)

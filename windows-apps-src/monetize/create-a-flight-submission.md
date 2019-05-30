@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Erstellen einer Flight-Übermittlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7a60de3440106e446f6c3e896cd747741e4db2
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: b6474c566795043a435e70b2b41d4f5b59280c15
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334688"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371978"
 ---
 # <a name="create-a-package-flight-submission"></a>Erstellen einer Flight-Paket-Übermittlung
 
@@ -50,7 +50,7 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App, für die Sie eine Flight-Paketübermittlung erstellen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | String | Erforderlich. Die Store-ID der App, für die Sie eine Flight-Paketübermittlung erstellen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | flightId | String | Erforderlich. Die ID des Flight-Pakets, für das Sie die Übermittlung hinzufügen möchten. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines Flight-Pakets](create-a-flight.md) und zum [Abrufen von Flight-Paketen für eine App](get-flights-for-an-app.md) enthalten.  |
 
 

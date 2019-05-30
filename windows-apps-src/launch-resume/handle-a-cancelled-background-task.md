@@ -10,20 +10,20 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 1feffac4d9b616c2fadff0080c3282e4200f3be7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 832a13f8b1f4a6e6e221b4fa0ce328b5edabac7d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625575"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371675"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Behandeln einer abgebrochenen Hintergrundaufgabe
 
 **Wichtige APIs**
 
--   [**BackgroundTaskCanceledEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224775)
--   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)
--   [**ApplicationData.Current**](https://msdn.microsoft.com/library/windows/apps/br241619)
+-   [**BackgroundTaskCanceledEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
+-   [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
+-   [**ApplicationData.Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
 
 Hier erfahren Sie, wie Sie eine Hintergrundaufgabe erstellen, die mithilfe des beständigen Speichers Abbruchanforderungen erkennt, die Ausführung beendet und den Abbruch an die App meldet.
 
@@ -83,7 +83,7 @@ private:
     volatile bool CancelRequested;
 ```
 
-In der **OnCanceled** Sie in Schritt 1 erstellte Methode legen Sie die Flagvariable  **\_CancelRequested** zu **"true"**.
+In der **OnCanceled** Sie in Schritt 1 erstellte Methode legen Sie die Flagvariable  **\_CancelRequested** zu **"true"** .
 
 Die vollständige [Beispiel für einen Hintergrundtask]( https://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled** Methode legt  **\_CancelRequested** zu **"true"** und schreibt Debugausgabe ggf. nützlich sind.
 
@@ -131,7 +131,7 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>Behandeln des Abbruchs durch Beenden der Hintergrundaufgabe
 
-Wenn eine abbruchanforderung empfangen wird, muss die Methode, die Ausführung von Hintergrundaufgaben Arbeit anhalten und beenden, indem Sie erkennen, wann  **\_CancelRequested** nastaven NA hodnotu **"true"**. Für in-Process-Hintergrundaufgaben, bedeutet dies, Rückgabe aus dem **OnBackgroundActivated** Methode. Für die Out-of-Process-Hintergrundaufgaben, bedeutet dies, Rückgabe von der **ausführen** Methode.
+Wenn eine abbruchanforderung empfangen wird, muss die Methode, die Ausführung von Hintergrundaufgaben Arbeit anhalten und beenden, indem Sie erkennen, wann  **\_CancelRequested** nastaven NA hodnotu **"true"** . Für in-Process-Hintergrundaufgaben, bedeutet dies, Rückgabe aus dem **OnBackgroundActivated** Methode. Für die Out-of-Process-Hintergrundaufgaben, bedeutet dies, Rückgabe von der **ausführen** Methode.
 
 Ändern Sie den Code der Hintergrundaufgabenklasse, um die Kennzeichenvariable zu überprüfen, während die Hintergrundaufgabe ausgeführt wird. Wenn  **\_CancelRequested** auf "true" werden mehr Arbeit festgelegt wird, nicht fortgesetzt werden kann.
 
@@ -177,7 +177,7 @@ else
 ```
 
 > [!NOTE]
-> Das Codebeispiel oben verwendet die [ **IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[ **Fortschritt** ](https://msdn.microsoft.com/library/windows/apps/br224800) Eigenschaft, die zum Aufzeichnen des Aufgabenstatus Hintergrund verwendet wird. Der Fortschritt wird der App mithilfe der [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782)-Klasse gemeldet.
+> Das Codebeispiel oben verwendet die [ **IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance).[ **Fortschritt** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) Eigenschaft, die zum Aufzeichnen des Aufgabenstatus Hintergrund verwendet wird. Der Fortschritt wird der App mithilfe der [**BackgroundTaskProgressEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs)-Klasse gemeldet.
 
 Ändern der **ausführen** -Methode, damit diese nach Arbeit beendet wurde, zeichnet, ob die Aufgabe abgeschlossen oder abgebrochen wurde. Dieser Schritt gilt für Hintergrundaufgaben außerhalb von Prozessen, da eine Möglichkeit für die Kommunikation zwischen Prozessen haben müssen, wenn die Hintergrundaufgabe abgebrochen wurde. Für Hintergrundaufgaben innerhalb von Prozessen können Sie den Status einfach mit der Anwendung teilen, um anzugeben, dass die Aufgabe abgebrochen wurde.
 

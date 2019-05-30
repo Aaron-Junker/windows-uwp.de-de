@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Senden von Popupbenachrichtigungen, Benachrichtigungen, Benachrichtigungen senden, Popupbenachrichtigungen, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, exemplarische Vorgehensweise
 ms.localizationpriority: medium
-ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4c8def5d1a220fe0458dd5c244d875b991b2b76c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605925"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365930"
 ---
 # <a name="send-a-local-toast-notification"></a>Senden einer lokalen Popupbenachrichtigung
 
@@ -42,7 +42,7 @@ Wir werden die folgenden Schritte durchlaufen:
 > **Wichtige APIs:** [ToastNotification Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Um dieses Thema vollständig zu verstehen, ist Folgendes hilfreich...
 
@@ -54,14 +54,14 @@ Um dieses Thema vollständig zu verstehen, ist Folgendes hilfreich...
 > Im Gegensatz zu Windows 8/8.1 müssen Sie in Ihrem App-Manifest nicht mehr deklarieren, dass Ihre App Popupbenachrichtigungen anzeigen kann. Alle Apps können Popupbenachrichtigungen senden und anzeigen.
 
 > [!NOTE]
-> **Windows 8/8.1-apps**: Verwenden Sie die [archivierte Dokumentation](https://msdn.microsoft.com/library/windows/apps/xaml/hh868254.aspx).
+> **Windows 8/8.1-apps**: Verwenden Sie die [archivierte Dokumentation](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10)).
 
 
 ## <a name="install-nuget-packages"></a>Installieren von NuGet-Paketen
 
 Wir empfehlen die Installation der beiden folgenden NuGet-Pakete für Ihr Projekt. In unserem Codebeispiel werden diese Pakete verwendet. Am Ende des Artikels finden Sie die „Vanilla“-Codeausschnitte, die keine NuGet-Pakete verwenden.
 
-* ["Microsoft.Toolkit.uwp.Notifications"](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Toast-Nutzlasten über Objekte anstelle von unformatierten XML-Daten zu generieren.
+* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Toast-Nutzlasten über Objekte anstelle von unformatierten XML-Daten zu generieren.
 * [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/): Generieren und Analysieren von Abfragezeichenfolgen mitC#
 
 
@@ -195,7 +195,7 @@ ToastActionsCustom actions = new ToastActionsCustom()
 
 Die Erstellung des Inhalts ist jetzt fertig und wir können diesen verwenden, um Ihr [**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)-Objekt zu instanziieren.
 
-**Hinweis:**: Sie können auch einen Aktivierungstyp innerhalb des Stammelements angeben, um festzulegen, welche Art von Aktivierung erfolgen muss, wenn der Benutzer auf den Text der Popupbenachrichtigung tippt. Normalerweise sollte durch Tippen auf den Text des Popups Ihre App im Vordergrund gestartet werden, um eine konsistente Benutzererfahrung zu schaffen. In Fällen, in denen es sinnvoll ist, können Sie jedoch andere Aktivierungstypen verwenden, die für Ihr spezielles Szenario geeignet sind.
+**Hinweis:** : Sie können auch einen Aktivierungstyp innerhalb des Stammelements angeben, um festzulegen, welche Art von Aktivierung erfolgen muss, wenn der Benutzer auf den Text der Popupbenachrichtigung tippt. Normalerweise sollte durch Tippen auf den Text des Popups Ihre App im Vordergrund gestartet werden, um eine konsistente Benutzererfahrung zu schaffen. In Fällen, in denen es sinnvoll ist, können Sie jedoch andere Aktivierungstypen verwenden, die für Ihr spezielles Szenario geeignet sind.
 
 Sie sollten die **Start**-Eigenschaft immer angeben, um festzulegen, welche Art von Aktivierung erfolgen muss, wenn der Benutzer auf den Text der Popupbenachrichtigung tippt.
 
@@ -238,7 +238,7 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 Wenn Sie die Benachrichtigung, die Sie senden, programmgesteuert entfernen oder ersetzen möchten, müssen Sie die Tag-Eigenschaft (und optional die Group-Eigenschaft) verwenden, um einen primären Schlüssel für die Benachrichtigung anzugeben. Sie können diesen primären Schlüssel dann zukünftig verwenden, um die Benachrichtigung zu entfernen oder zu ersetzen.
 
-Weitere Informationen zum Ersetzen/entfernen bereits übermittelt, Popupbenachrichtigungen finden Sie unter [Schnellstart: Verwalten von Popupbenachrichtigungen im Info-Center (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+Weitere Informationen zum Ersetzen/entfernen bereits übermittelt, Popupbenachrichtigungen finden Sie unter [Schnellstart: Verwalten von Popupbenachrichtigungen im Info-Center (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 Tag und Group fungieren kombiniert als ein zusammengesetzter primärer Schlüssel. Die Gruppe ist dem generischen Bezeichner, in denen Sie Gruppen wie "WallPosts", "Messages", "FriendRequests" zuweisen. Ein, und klicken Sie dann Tag sollte die Benachrichtigung selbst aus, in der Gruppe eindeutig identifiziert. Unter Verwendung einer allgemeinen Gruppe können Sie dann mithilfe der [RemoveGroup-API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) alle Benachrichtigungen aus dieser Gruppe entfernen.
 
@@ -270,7 +270,7 @@ Hier ist ein Beispiel dafür, was eine Nachrichten-App tun sollte...
 3. Die App öffnet die Unterhaltung und löscht dann alle Popups für die Unterhaltung (mithilfe von [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) für die von der App bereitgestellte Gruppe für diese Unterhaltung)
 4. Im Info-Center des Benutzers wird jetzt ordnungsgemäß der Zustand der Benachrichtigung angegeben, da im Info-Center keine veralteten Benachrichtigungen für die Unterhaltung vorhanden sind.
 
-Weitere Informationen zu aller Benachrichtigungen zu deaktivieren oder bestimmte Benachrichtigungen zu entfernen, finden Sie unter [Schnellstart: Verwalten von Popupbenachrichtigungen im Info-Center (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+Weitere Informationen zu aller Benachrichtigungen zu deaktivieren oder bestimmte Benachrichtigungen zu entfernen, finden Sie unter [Schnellstart: Verwalten von Popupbenachrichtigungen im Info-Center (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 
 ## <a name="handling-activation"></a>Behandeln der Aktivierung

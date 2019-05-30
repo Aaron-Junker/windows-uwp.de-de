@@ -5,12 +5,12 @@ keywords: Gehostete Web-App, HWA, REST-API, Einzelseiten-App, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c38a7182cd27abcfb0de66c721f0e06b95b695d5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624625"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366984"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Erstellen einer Web-App mit einer einzelnen Seite mit REST API-Backend
 
@@ -22,7 +22,7 @@ Dieses zweiteilige Lernprogramm bietet einen kurzen Überblick über die moderne
 
 Wir werden einige der beliebtesten Webtechnologien verwenden, einschließlich des [Node.js](https://nodejs.org/en/) Runtime und [Express](https://expressjs.com/) für serverseitige Entwicklung, das [Bootstrap](https://getbootstrap.com/)-UI-Framework, das [Pug](https://www.npmjs.com/package/pug)-Vorlagenmodul und [Swagger](https://swagger.io/tools/) zum Erstellen von RESTful-APIs. Sie werden auch Erfahrung mit dem [Azure-Portal](https://ms.portal.azure.com/) für das Cloud-Hosting sammeln, und mit dem [Visual Studio Code](https://code.visualstudio.com/)-Editor arbeiten.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Wenn Sie diese Ressourcen nicht bereits auf dem Computer besitzen, folgen Sie den folgenden Downloadlinks:
 
@@ -30,7 +30,7 @@ Wenn Sie diese Ressourcen nicht bereits auf dem Computer besitzen, folgen Sie de
 
  - [Express Generator](https://expressjs.com/en/starter/generator.html)– nach der Installation von Knoten, Installieren von Express mit `npm install express-generator -g`
 
- - [Visual Studio-Code](https://code.visualstudio.com/)
+ - [Visual Studio Code](https://code.visualstudio.com/)
 
 Wenn Sie die endgültigen Schritte zum Hosten Ihres API-Diensts und Ihrer Arbeitsspeicherspiele-App auf Microsoft Azure abschließen möchten, müssen [Sie ein kostenloses Azure-Konto erstellen](https://azure.microsoft.com/en-us/free/), wenn Sie dies noch nicht getan haben.
 
@@ -115,7 +115,7 @@ Wir verwenden [Swagger](https://swagger.io/), um den Entwurf unseres Speicherspi
 
 1. Erstellen Sie (z. B. in Ihrem lokalen *GitHub*-Verzeichnis) einen neuen Ordner, und laden die Datei [**API.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) herunter, die unsere Speicherspiel-API-Definitionen enthält. Stellen Sie sicher, dass der Ordnername keine Leerzeichen enthält.
 
-2. Öffnen Sie Ihre Lieblings-Shell ([, oder verwenden Sie das integrierte Terminal von Visual Studio Code!](https://code.visualstudio.com/docs/editor/integrated-terminal)) in dem Ordner, und führen Sie folgenden Knoten-Paket-Manager-Befehl (NPM-Befehl) aus, um das [Yeoman](https://yeoman.io/)-Code-Gerüst-Tool (yo) und Swagger-Generator für die globale (**-g**) Knotenumgebung zu installieren:
+2. Öffnen Sie Ihre Lieblings-Shell ([, oder verwenden Sie das integrierte Terminal von Visual Studio Code!](https://code.visualstudio.com/docs/editor/integrated-terminal)) in dem Ordner, und führen Sie folgenden Knoten-Paket-Manager-Befehl (NPM-Befehl) aus, um das [Yeoman](https://yeoman.io/)-Code-Gerüst-Tool (yo) und Swagger-Generator für die globale ( **-g**) Knotenumgebung zu installieren:
 
     ```
     npm install -g yo
@@ -142,7 +142,7 @@ Wir verwenden [Swagger](https://swagger.io/), um den Entwurf unseres Speicherspi
     npm install swaggerize-ui
     ```
 
-    Starten Sie nun den VS-Code und **Datei** > **Ordner öffnen...**, und wechseln Sie zum Verzeichnis MemoryGameAPI. Dies ist der Node.js-API-Server, den Sie gerade erstellt haben! Er verwendet das beliebte [ExpressJS](https://expressjs.com/en/4x/api.html)-Web-Anwendungsframework zum Strukturieren und Ausführung Ihres Projekts.
+    Starten Sie nun den VS-Code und **Datei** > **Ordner öffnen...** , und wechseln Sie zum Verzeichnis MemoryGameAPI. Dies ist der Node.js-API-Server, den Sie gerade erstellt haben! Er verwendet das beliebte [ExpressJS](https://expressjs.com/en/4x/api.html)-Web-Anwendungsframework zum Strukturieren und Ausführung Ihres Projekts.
 
 ### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. Anpassen der Servercode und das Setup zu debuggen
 
@@ -616,7 +616,7 @@ Das Hinzufügen einer Flip-Bewegung mit [CSS-Transformationen](https://docs.micr
     Wenn ein Benutzer nun auf eine Karte klickt, wird die Karte um 180 Grad gedreht.
 
 ### <a name="6-test-and-play"></a>6. Play-Test
-Gratulation! Sie haben die Web-App erfolgreich erstellt! Testen wir sie. 
+Herzlichen Glückwunsch! Sie haben die Web-App erfolgreich erstellt! Testen wir sie. 
 
 1. Öffnen Sie eine Eingabeaufforderung im Verzeichnis Arbeitsspeicher aus, und geben Sie den folgenden Befehl aus: `npm start`
 
@@ -626,7 +626,7 @@ Gratulation! Sie haben die Web-App erfolgreich erstellt! Testen wir sie.
 
     Sie können auch Ihren Code mit dem im letzten Ordner zur Verfügung gestellten Code vergleichen.
 
-4. So beenden Sie das Spiel, in der Eingabeaufforderung Folgendes: **STRG + C**, **Y**. 
+4. So beenden Sie das Spiel, in der Eingabeaufforderung Folgendes: **Ctrl + C**, **Y**. 
 
 ### <a name="going-further"></a>Vertiefung
 
@@ -636,7 +636,7 @@ Die grundlegenden Schritte für die Veröffentlichung auf dem Microsoft Store si
 
  1. Erstellen Sie ein Konto für [Windows-Entwickler](https://developer.microsoft.com/en-us/store/register).
  2. Verwenden Sie die [Prüfliste für die App-Übermittlung](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions).
- 3. Reichen Sie Ihre App für die [Zertifizierung](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process) ein.
+ 3. Reichen Sie Ihre App für die [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process) ein.
 
 Hier sind einige nützliche Ressourcen für die weiterfühRendern Schritte:
 

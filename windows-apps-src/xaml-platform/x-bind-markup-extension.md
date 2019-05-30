@@ -6,25 +6,25 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 625c48e2f0fc57a4e9fd3a98acc505e01e2eb42c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c32fee5d9cbe5d40b9fe324eb8d6bad6d87eb9b3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658615"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371079"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind}-Markuperweiterung
 
-**Beachten Sie**  allgemeine Informationen zum Verwenden der Datenbindung in Ihrer app mit **{X: Bind}** (und eine allumfassende Vergleich zwischen **{X: Bind}** und **{Binding}**), finden Sie unter [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Beachten Sie**  allgemeine Informationen zum Verwenden der Datenbindung in Ihrer app mit **{X: Bind}** (und eine allumfassende Vergleich zwischen **{X: Bind}** und **{Binding}** ), finden Sie unter [Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
 
-Die **{X: Bind}** Markuperweiterung – neues für Windows 10 – ist eine Alternative zum **{Binding}**. **{X: Bind}**  Ausführung schneller und weniger Arbeitsspeicher als **{Binding}** und unterstützt eine bessere Debuggingunterstützung.
+Die **{X: Bind}** Markuperweiterung – neues für Windows 10 – ist eine Alternative zum **{Binding}** . **{X: Bind}**  Ausführung schneller und weniger Arbeitsspeicher als **{Binding}** und unterstützt eine bessere Debuggingunterstützung.
 
 Zur XAML-Kompilierungszeit wird **{X: Bind}** in Code konvertiert, der den Wert aus einer Eigenschaft aus einer Datenquelle abruft und diesen in der im Markup angegeben Eigenschaft festlegt. Das Binding-Objekt kann optional konfiguriert werden, um Änderungen am Wert der Datenquelleneigenschaft zu beobachten und sich basierend auf diesen Änderungen (`Mode="OneWay"`) zu aktualisieren. Es kann optional auch konfiguriert werden, um Änderungen am eigenen Wert per Push zurück an die Quelleigenschaft (`Mode="TwoWay"`) zu senden.
 
-Die von **{x:Bind}** und **{Binding}** erstellten Bindungsobjekte sind von der Funktionsweise her größtenteils identisch. **{x:Bind}** führt allerdings speziellen Code aus, der zur Kompilierzeit generiert wird, und **{Binding}** verwendet eine allgemeine Laufzeitobjektüberprüfung. Folglich bieten **{x:Bind}**-Bindungen (häufig als kompilierte Bindungen bezeichnet) eine hervorragende Leistung, stellen die Validierung Ihrer Bindungsausdrücke bei der Kompilierung bereit und unterstützen das Debuggen, indem Sie die Möglichkeit erhalten, Haltepunkte in den Codedateien festzulegen, die als Teilklasse für die Seite generiert werden. Diese Dateien befinden sich in Ihrem `obj`-Ordner und weisen Namen wie `<view name>.g.cs` auf (für C#).
+Die von **{x:Bind}** und **{Binding}** erstellten Bindungsobjekte sind von der Funktionsweise her größtenteils identisch. **{x:Bind}** führt allerdings speziellen Code aus, der zur Kompilierzeit generiert wird, und **{Binding}** verwendet eine allgemeine Laufzeitobjektüberprüfung. Folglich bieten **{x:Bind}** -Bindungen (häufig als kompilierte Bindungen bezeichnet) eine hervorragende Leistung, stellen die Validierung Ihrer Bindungsausdrücke bei der Kompilierung bereit und unterstützen das Debuggen, indem Sie die Möglichkeit erhalten, Haltepunkte in den Codedateien festzulegen, die als Teilklasse für die Seite generiert werden. Diese Dateien befinden sich in Ihrem `obj`-Ordner und weisen Namen wie `<view name>.g.cs` auf (für C#).
 
 > [!TIP]
-> **{x:Bind}** verfügt über einen Standardmodus von **OneTime**, im Gegensatz zu **{Binding}**, wo der Standardmodus **OneWay** ist. Diese wurde aus Leistungsgründen so gewählt, da **OneWay** bewirkt, dass mehr Code generiert wird, um die Änderungserkennung zu verknüpfen und zu behandeln. Sie können für einen Modus explizit angeben, dass OneWay- oder TwoWay-Bindung verwendet wird. [x:DefaultBindMode](x-defaultbindmode-attribute.md) kann auch verwendet werden, um für ein bestimmtes Segment der Markupstruktur den Standardmodus für **{x:Bind}** zu ändern. Der angegebene Modus gilt für alle **{x:Bind}**-Ausdrücke in diesem Element und seinen untergeordneten Elementen, die nicht explizit einen Bindungsmodus festlegen.
+> **{x:Bind}** verfügt über einen Standardmodus von **OneTime**, im Gegensatz zu **{Binding}** , wo der Standardmodus **OneWay** ist. Diese wurde aus Leistungsgründen so gewählt, da **OneWay** bewirkt, dass mehr Code generiert wird, um die Änderungserkennung zu verknüpfen und zu behandeln. Sie können für einen Modus explizit angeben, dass OneWay- oder TwoWay-Bindung verwendet wird. [x:DefaultBindMode](x-defaultbindmode-attribute.md) kann auch verwendet werden, um für ein bestimmtes Segment der Markupstruktur den Standardmodus für **{x:Bind}** zu ändern. Der angegebene Modus gilt für alle **{x:Bind}** -Ausdrücke in diesem Element und seinen untergeordneten Elementen, die nicht explizit einen Bindungsmodus festlegen.
 
 **Beispiel-apps, die veranschaulichen, {X: Bind}**
 
@@ -48,11 +48,11 @@ Die von **{x:Bind}** und **{Binding}** erstellten Bindungsobjekte sind von der F
 
 | Begriff | Beschreibung |
 |------|-------------|
-| _"PropertyPath"_ | Eine Zeichenfolge, die den Eigenschaftspfad für die Bindung angibt. Weitere Informationen finden Sie unten im Abschnitt [Eigenschaftspfad](#property-path). |
+| _propertyPath_ | Eine Zeichenfolge, die den Eigenschaftspfad für die Bindung angibt. Weitere Informationen finden Sie unten im Abschnitt [Eigenschaftspfad](#property-path). |
 | _bindingProperties_ |
-| _PropName_=_Wert_\[, _PropName_=_Wert_\]* | Mindestens eine Bindungseigenschaft, die mithilfe einer Name-Wert-Paarsyntax angegeben wird. |
+| _propName_=_value_\[, _propName_=_value_\]* | Mindestens eine Bindungseigenschaft, die mithilfe einer Name-Wert-Paarsyntax angegeben wird. |
 | _propName_ | Der Zeichenfolgenname der für das Binding-Objekt festzulegenden Eigenschaft. Beispiel: „Konverter“. |
-| _Wert_ | Der für die Eigenschaft festzulegende Wert. Die Syntax des Arguments hängt von der festgelegten Eigenschaft ab. Hier ein Beispiel für eine _propName_=_value_-Syntax, bei der der Wert selbst eine Markuperweiterung ist: `Converter={StaticResource myConverterClass}`. Weitere Informationen finden Sie unten im Abschnitt [Mit {x:Bind} festzulegende Eigenschaften](#properties-that-you-can-set-with-xbind). |
+| _value_ | Der für die Eigenschaft festzulegende Wert. Die Syntax des Arguments hängt von der festgelegten Eigenschaft ab. Hier ein Beispiel für eine _propName_=_value_-Syntax, bei der der Wert selbst eine Markuperweiterung ist: `Converter={StaticResource myConverterClass}`. Weitere Informationen finden Sie unten im Abschnitt [Mit {x:Bind} festzulegende Eigenschaften](#properties-that-you-can-set-with-xbind). |
 
 ## <a name="examples"></a>Beispiele
 
@@ -75,7 +75,7 @@ Dieser beispielhafte XAML-Code verwendet **{x:Bind}** mit einer **ListView.ItemT
 
 ## <a name="property-path"></a>Eigenschaftspfad
 
-*PropertyPath* legt **Path** für einen **{x:Bind}**-Ausdruck fest. **Path** ist ein Eigenschaftspfad, der den Wert der Eigenschaft, der Untereigenschaft, des Felds oder der Methode angibt, an die bzw. das Sie binden (die Quelle). Sie können den Namen der **Path**-Eigenschaft explizit erwähnen: `{Binding Path=...}`. Sie können diesen aber auch weglassen: `{Binding ...}`.
+*PropertyPath* legt **Path** für einen **{x:Bind}** -Ausdruck fest. **Path** ist ein Eigenschaftspfad, der den Wert der Eigenschaft, der Untereigenschaft, des Felds oder der Methode angibt, an die bzw. das Sie binden (die Quelle). Sie können den Namen der **Path**-Eigenschaft explizit erwähnen: `{x:Bind Path=...}`. Sie können diesen aber auch weglassen: `{x:Bind ...}`.
 
 ### <a name="property-path-resolution"></a>Auflösung des Eigenschaftspfads
 
@@ -88,24 +88,24 @@ Für C++/CX kann **{x:Bind}** keine Bindungen an private Felder und Eigenschafte
 Mit **x:Bind** müssen Sie **ElementName=xxx** nicht als Teil des Bindungsausdrucks verwenden. Stattdessen können der Name des Elements als der erste Teil des Pfads für die Bindung Sie da benannte Elemente Felder in die Seite oder das Benutzersteuerelement werden, die die Stamm-Bindungsquelle darstellt. 
 
 
-### <a name="collections"></a>Sammlungen
+### <a name="collections"></a>Auflistungen
 
 Wenn die Datenquelle eine Auflistung ist, kann der Eigenschaftspfad Elemente in der Auflistung anhand ihrer Position oder ihres Indexes angeben. Z. B. "Teams\[0\]. Dessen Mitglieder", in dem das Literal"\[\]"schließt"0", der das erste Element in einer Sammlung mit Null indizierte anfordert.
 
-Um einen Indexer verwenden zu können, muss das Modell **IList&lt;T&gt;** oder **IVector&lt;T&gt;** für den Typ der Eigenschaft implementieren, die indiziert werden soll. Wenn der Typ der indizierten Eigenschaft **INotifyCollectionChanged** oder **IObservableVector** unterstützt und die Bindung OneWay oder TwoWay ist, registriert und lauscht er auf Änderungsbenachrichtigungen an diesen Schnittstellen. Die Änderungserkennungslogik wird basierend auf allen Auflistungsänderungen aktualisiert, auch wenn sie keine Auswirkungen auf den entsprechenden indizierten Wert hat. Dies geschieht, da die Überwachungslogik für alle Instanzen der Auflistung identisch ist.
+Um einen Indexer verwenden zu können, muss das Modell **IList&lt;T&gt;** oder **IVector&lt;T&gt;** für den Typ der Eigenschaft implementieren, die indiziert werden soll. (Beachten Sie, IReadOnlyList&lt;T&gt; und IVectorView&lt;T&gt; die Indexersyntax nicht unterstützt.) Wenn der Typ der indizierten Eigenschaft **INotifyCollectionChanged** oder **IObservableVector** unterstützt und die Bindung OneWay oder TwoWay ist, registriert und lauscht er auf Änderungsbenachrichtigungen an diesen Schnittstellen. Die Änderungserkennungslogik wird basierend auf allen Auflistungsänderungen aktualisiert, auch wenn sie keine Auswirkungen auf den entsprechenden indizierten Wert hat. Dies geschieht, da die Überwachungslogik für alle Instanzen der Auflistung identisch ist.
 
-Wenn die Datenquelle ein Wörterbuch oder eine Karte ist, kann der Eigenschaftspfad Elemente in der Auflistung anhand ihres Zeichenfolgennamens angeben. Z. B. **&lt;TextBlock Text = "{X: Bind Spieler\["John Smith"\]" /&gt;** sucht ein Element im Wörterbuch mit dem Namen "John Smith". Der Name muss in Anführungszeichen gesetzt werden. Dabei können einfache oder doppelte Anführungszeichen verwendet werden. Das Caret-Symbol (^) kann als Escapezeichen für Anführungszeichen innerhalb von Zeichenfolgen verwendet werden. Es ist normalerweise am einfachsten, Anführungszeichen zu verwenden, die von denen für das XAML-Attribut verwendeten abweichen.
+Wenn die Datenquelle ein Wörterbuch oder eine Karte ist, kann der Eigenschaftspfad Elemente in der Auflistung anhand ihres Zeichenfolgennamens angeben. Z. B. **&lt;TextBlock Text = "{X: Bind Spieler\["John Smith"\]" /&gt;** sucht ein Element im Wörterbuch mit dem Namen "John Smith". Der Name muss in Anführungszeichen gesetzt werden. Dabei können einfache oder doppelte Anführungszeichen verwendet werden. Das Caret-Symbol (^) kann als Escapezeichen für Anführungszeichen innerhalb von Zeichenfolgen verwendet werden. Es ist normalerweise am einfachsten, Anführungszeichen zu verwenden, die von denen für das XAML-Attribut verwendeten abweichen. (Beachten Sie, IReadOnlyDictionary&lt;T&gt; und IMapView&lt;T&gt; die Indexersyntax nicht unterstützt.)
 
 Um einen Zeichenfolgen-Indexer verwenden zu können, muss das Modell **IDictionary&lt;string, T&gt;** oder **IMap&lt;string T&gt;** für den Typ der Eigenschaft implementieren, die indiziert werden soll. Wenn der Typ der indizierten Eigenschaft **IObservableMap** unterstützt und die Bindung OneWay oder TwoWay ist, wird er registriert und überwacht Benachrichtigungen auf diesen Schnittstellen. Die Änderungserkennungslogik wird basierend auf allen Auflistungsänderungen aktualisiert, auch wenn sie keine Auswirkungen auf den entsprechenden indizierten Wert hat. Dies geschieht, da die Überwachungslogik für alle Instanzen der Auflistung identisch ist.
 
 ### <a name="attached-properties"></a>Angefügte Eigenschaften
 
-Um an angefügte Eigenschaften zu binden, müssen Sie den Klassen- und den Eigenschaftsnamen nach dem Punkt in Klammern setzen. Beispiel: **Text="{x:Bind Button22.(Grid.Row)}"**. Wenn die Eigenschaft nicht in einem Xaml-Namespace deklariert wird, müssen Sie ihr einen XML-Namespace als Präfix voranstellen, den Sie einem Codenamespace am Anfang des Dokuments zuordnen sollten.
+Um an angefügte Eigenschaften zu binden, müssen Sie den Klassen- und den Eigenschaftsnamen nach dem Punkt in Klammern setzen. Beispiel: **Text="{x:Bind Button22.(Grid.Row)}"** . Wenn die Eigenschaft nicht in einem Xaml-Namespace deklariert wird, müssen Sie ihr einen XML-Namespace als Präfix voranstellen, den Sie einem Codenamespace am Anfang des Dokuments zuordnen sollten.
 
 ### <a name="casting"></a>Umwandlung
 
 Kompilierte Bindungen sind stark typisiert und lösen den Typ der einzelnen Schritte in einem Pfad auf. Wenn der zurückgegebene Typ nicht über den Member verfügt, erzeugt er zur Kompilierzeit einen Fehler. Sie können eine Umwandlung angeben, um der Bindung den tatsächlichen Typ des Objekts mitzuteilen. Im folgenden Fall ist **obj** eine Eigenschaft eines Typobjekts, enthält aber ein Textfeld, sodass wir **Text="{x:Bind ((TextBox)obj).Text}"** oder **Text="{x:Bind obj.(TextBox.Text)}"** verwenden können.
-Die **groups3** Feld **Text = "{X: Bind ((data:SampleDataGroup) groups3\[0\]). Title} "** ist ein Wörterbuch von Objekten, damit Sie sie zum umwandeln müssen **Daten: SampleDataGroup**. Beachten Sie die Verwendung des **data:**-XML-Namespacepräfix für die Zuordnung des Objekttyps zu einem Code-Namespace, der nicht Teil des Standard-XAML-Namespace ist.
+Die **groups3** Feld **Text = "{X: Bind ((data:SampleDataGroup) groups3\[0\]). Title} "** ist ein Wörterbuch von Objekten, damit Sie sie zum umwandeln müssen **Daten: SampleDataGroup**. Beachten Sie die Verwendung des **data:** -XML-Namespacepräfix für die Zuordnung des Objekttyps zu einem Code-Namespace, der nicht Teil des Standard-XAML-Namespace ist.
 
 _Hinweis: Die C#-Syntax lautet: Umwandlung ist flexibler als die Syntax der angefügten Eigenschaft, und ist die empfohlene Syntax weiterleiten._
 
@@ -115,7 +115,7 @@ Ab Windows 10, Version 1607, unterstützt **{x: Bind}** die Verwendung einer Fu
 
 ## <a name="event-binding"></a>Ereignisbindung
 
-Ereignisbindung ist ein besonderes Feature der kompilierte Bindung. Damit können Sie den Handler für ein Ereignis mit einer Bindung angeben. Es muss also keine Methode im CodeBehind-Abschnitt sein. Zum Beispiel: **Klicken Sie auf "{X: Bind rootFrame.GoForward}" =**.
+Ereignisbindung ist ein besonderes Feature der kompilierte Bindung. Damit können Sie den Handler für ein Ereignis mit einer Bindung angeben. Es muss also keine Methode im CodeBehind-Abschnitt sein. Zum Beispiel: **Click="{x:Bind rootFrame.GoForward}"** .
 
 Bei Ereignissen muss die Zielmethode nicht überladen werden und muss Folgendes erfüllen:
 
@@ -131,15 +131,15 @@ Weitere Informationen zur Zeichenfolgensyntax für einen Eigenschaftspfad finden
 
 **{x:Bind}** wird mit der *bindingProperties*-Platzhaltersyntax angegeben, da in der Markuperweiterung mehrere Lese-/Schreibeigenschaften einer Binding-Klasse festgelegt werden können. Die Eigenschaften können in beliebiger Reihenfolge mithilfe von durch Kommas getrennten Paaren *propName*=*value* angegeben werden. Beachten Sie, dass Sie in den Bindungsausdruck keine Zeilenumbrüche einschließen können. Für einige Eigenschaften sind Typen erforderlich, die keine Typkonvertierung enthalten, sodass für diese eigene innerhalb von **{x:Bind}** geschachtelte Markuperweiterungen erforderlich sind.
 
-Diese Eigenschaften funktionieren ähnlich wie die Eigenschaften der [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)-Klasse.
+Diese Eigenschaften funktionieren ähnlich wie die Eigenschaften der [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)-Klasse.
 
 | Eigenschaft | Beschreibung |
 |----------|-------------|
 | **Pfad** | Weitere Informationen finden Sie weiter oben im Abschnitt [Eigenschaftspfad](#property-path). |
-| **Konverter** | Gibt das Konverterobjekt an, das vom Bindungsmodul aufgerufen wird. Der Konverter kann in XAML festgelegt werden, sofern Sie dabei auf eine Objektinstanz verweisen, die Sie in einer [{StaticResource}-Markuperweiterung](staticresource-markup-extension.md) zugewiesen haben. Verweisen Sie anschließend im Ressourcenwörterbuch auf dieses Objekt. |
-| **ConverterLanguage** | Gibt die Kultur an, die vom Konverter verwendet werden soll. (Wenn Sie festlegen, sind **ConverterLanguage** sollten Sie auch festlegen werden **Konverter**.) Die Kultur wird als eine standardbasierte-ID festgelegt. Weitere Informationen finden Sie unter [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880). |
-| **converterParameter** | Gibt den Konverterparameter an, der in der Konverterlogik verwendet werden kann. (Wenn Sie festlegen, sind **ConverterParameter** sollten Sie auch festlegen werden **Konverter**.) Die meisten Konverter verwenden Sie einfachen Logik, die alle benötigten Informationen aus dem übergebenen Wert zu konvertierenden abrufen und müssen keine **ConverterParameter** Wert. Der **ConverterParameter**-Parameter ist für etwas weiter fortgeschrittene Konverterimplementierungen mit mehr als einer Logik gedacht, die überprüft, was in **ConverterParameter** übergeben wird. Sie können auch einen Konverter schreiben, der keine Zeichenfolgenwerte verwendet. Dies ist jedoch sehr ungewöhnlich. Weitere Informationen finden Sie in den „Anmerkungen“ zu [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827). |
-| **fallbackValue** | Gibt einen Wert an, der angezeigt wird, wenn die Quelle oder der Pfad nicht aufgelöst werden können. |
+| **Converter** | Gibt das Konverterobjekt an, das vom Bindungsmodul aufgerufen wird. Der Konverter kann in XAML festgelegt werden, sofern Sie dabei auf eine Objektinstanz verweisen, die Sie in einer [{StaticResource}-Markuperweiterung](staticresource-markup-extension.md) zugewiesen haben. Verweisen Sie anschließend im Ressourcenwörterbuch auf dieses Objekt. |
+| **ConverterLanguage** | Gibt die Kultur an, die vom Konverter verwendet werden soll. (Wenn Sie festlegen, sind **ConverterLanguage** sollten Sie auch festlegen werden **Konverter**.) Die Kultur wird als eine standardbasierte-ID festgelegt. Weitere Informationen finden Sie unter [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage). |
+| **ConverterParameter** | Gibt den Konverterparameter an, der in der Konverterlogik verwendet werden kann. (Wenn Sie festlegen, sind **ConverterParameter** sollten Sie auch festlegen werden **Konverter**.) Die meisten Konverter verwenden Sie einfachen Logik, die alle benötigten Informationen aus dem übergebenen Wert zu konvertierenden abrufen und müssen keine **ConverterParameter** Wert. Der **ConverterParameter**-Parameter ist für etwas weiter fortgeschrittene Konverterimplementierungen mit mehr als einer Logik gedacht, die überprüft, was in **ConverterParameter** übergeben wird. Sie können auch einen Konverter schreiben, der keine Zeichenfolgenwerte verwendet. Dies ist jedoch sehr ungewöhnlich. Weitere Informationen finden Sie in den „Anmerkungen“ zu [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter). |
+| **FallbackValue** | Gibt einen Wert an, der angezeigt wird, wenn die Quelle oder der Pfad nicht aufgelöst werden können. |
 | **Modus** | Gibt den Bindungsmodus, als eine der folgenden Zeichenfolgen: "OneTime", "OneWay" oder "TwoWay". Der Standard lautet "OneTime". Beachten Sie, dass dieser vom Standardwert für **{Binding}** abweicht, der in den meisten Fällen "OneWay" lautet. |
 | **TargetNullValue** | Gibt einen Wert an, der angezeigt wird, wenn der Quellwert aufgelöst werden kann, aber explizit **null** ist. |
 | **BindBack** | Gibt eine Funktion an, die für die umgekehrter Richtung einer bidirektionalen Bindung verwendet wird. |
@@ -161,15 +161,15 @@ Kompilierte Bindungen hängen von der Codegenerierung ab. Wenn Sie daher **{x:Bi
 Bei Seiten und Benutzersteuerelementen, die kompilierte Bindungen umfassen, befindet sich im generierten Code eine "Bindings"-Eigenschaft. Dazu gehören folgende Methoden:
 
 - **Update()** - Hiermit werden die Werte aller kompilierten Bindungen aktualisiert. Für alle unidirektionalen und bidirektionalen Bindungen werden zur Erkennung von Änderungen Listener eingehängt.
-- **Initialize()**: Wenn die Bindungen nicht bereits initialisiert wurden, wird zur Initialisierung der Bindungen Update() aufgerufen
+- **Initialize()** : Wenn die Bindungen nicht bereits initialisiert wurden, wird zur Initialisierung der Bindungen Update() aufgerufen
 - **StopTracking()** - Hängt die für uni- und bidirektionale Bindungen erstellen Listener aus. Sie können mit der Methode Update() erneut initialisiert werden.
 
 > [!NOTE]
-> Ab Windows 10, Version 1607, wird über das XAML-Framework ein integrierter Konverter für die Konvertierung eines booleschen Operanden in einen Sichtbarkeitszustand bereitgestellt. Der Konverter verknüpft **true** mit dem Enumerationswert **Visible** und **false** mit dem Wert **Collapsed**, sodass Sie eine Visibility-Eigenschaft an einen booleschen Wert binden können, ohne einen Konverter zu erstellen. Beachten Sie, dass dies keine Funktionsbindung ist, sondern nur eine Eigenschaftsbindung. Für die Verwendung des integrierten Konverters muss die SDK-Zielversion der App mindestens 14393 lauten. Die Verwendung ist nicht möglich, wenn Ihre App für frühere Versionen von Windows 10 bestimmt ist. Weitere Informationen zu Zielversionen finden Sie unter [Versionsadaptiver Code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Ab Windows 10, Version 1607, wird über das XAML-Framework ein integrierter Konverter für die Konvertierung eines booleschen Operanden in einen Sichtbarkeitszustand bereitgestellt. Der Konverter verknüpft **true** mit dem Enumerationswert **Visible** und **false** mit dem Wert **Collapsed**, sodass Sie eine Visibility-Eigenschaft an einen booleschen Wert binden können, ohne einen Konverter zu erstellen. Beachten Sie, dass dies keine Funktionsbindung ist, sondern nur eine Eigenschaftsbindung. Für die Verwendung des integrierten Konverters muss die SDK-Zielversion der App mindestens 14393 lauten. Die Verwendung ist nicht möglich, wenn Ihre App für frühere Versionen von Windows 10 bestimmt ist. Weitere Informationen zu Zielversionen finden Sie unter [Versionsadaptiver Code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-**Tipp**    bei Bedarf an einzelnen geschweiften Klammern nach einem Wert wie z. B. in [ **Pfad** ](https://msdn.microsoft.com/library/windows/apps/br209830) oder [ **ConverterParameter** ](https://msdn.microsoft.com/library/windows/apps/br209827), einen umgekehrten Schrägstrich voranstellen: `\{`. Setzen Sie alternativ die gesamte Zeichenfolge mit den geschweiften Klammern, für die Escapezeichen verwendet werden müssen, in weitere Anführungszeichen, z. B. `ConverterParameter='{Mix}'`.
+**Tipp**    bei Bedarf an einzelnen geschweiften Klammern nach einem Wert wie z. B. in [ **Pfad** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) oder [ **ConverterParameter** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter), einen umgekehrten Schrägstrich voranstellen: `\{`. Setzen Sie alternativ die gesamte Zeichenfolge mit den geschweiften Klammern, für die Escapezeichen verwendet werden müssen, in weitere Anführungszeichen, z. B. `ConverterParameter='{Mix}'`.
 
-[**Konverter**](https://msdn.microsoft.com/library/windows/apps/br209826), [ **ConverterLanguage** ](https://msdn.microsoft.com/library/windows/apps/hh701880) und **ConverterLanguage** beziehen sich auf das Szenario der ein Wert konvertiert wird, oder geben Sie aus der die Bindungsquelle in einen Typ oder Wert, der mit die Bindungsziel-Eigenschaft kompatibel ist. Weitere Informationen und Beispiele finden Sie im Abschnitt „Datenkonvertierungen“ unter [Datenbindung im Detail](https://msdn.microsoft.com/library/windows/apps/mt210946).
+[**Konverter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter), [ **ConverterLanguage** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage) und **ConverterLanguage** beziehen sich auf das Szenario der ein Wert konvertiert wird, oder geben Sie aus der die Bindungsquelle in einen Typ oder Wert, der mit die Bindungsziel-Eigenschaft kompatibel ist. Weitere Informationen und Beispiele finden Sie im Abschnitt „Datenkonvertierungen“ unter [Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
 
 **{x:Bind}** ist nur eine Markuperweiterung ohne Methode zum programmgesteuerten Erstellen oder Ändern dieser Bindungen. Weitere Informationen zu Markuperweiterungen finden Sie in der [XAML-Übersicht](xaml-overview.md).
 

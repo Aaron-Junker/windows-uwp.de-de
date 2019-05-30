@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, drucken, 3dprinting, 3D-Druck
 ms.localizationpriority: medium
-ms.openlocfilehash: 99272c4e9ffd461901b4b2f2d2aa93b416a1b100
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 763fbc1c3cb7e969b2e932ded7cf32d7447a6e98
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605615"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369808"
 ---
 # <a name="printing-and-scanning"></a>Drucken und Scannen
 
@@ -27,7 +27,7 @@ In diesem Abschnitt wird das Drucken und Scannen aus Ihrer Universellen Windows-
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Entwurfsrichtlinien für das Drucken](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [Entwurfsrichtlinien für das Drucken](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
 * [Build 2015-Video: Entwickeln von apps, die in Windows 10-drucken](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP-print-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=619984)
  

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 156c4cc62e1997f5d647c06c87e226fe519de168
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: abe151bd78a0340b91aa1600ad34282b94b6d216
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650365"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372595"
 ---
 # <a name="cryptography"></a>Kryptografie
 
@@ -34,7 +34,7 @@ Die folgende Terminologie wird bei der Kryptografie und bei Public Key-Infrastru
 | Hashing                     | Das Verfahren zum Umwandeln von Daten mit variabler Länge in einen Wert mit einer bestimmten Länge, der in der Regel kleiner ist. Indem Sie Hashes vergleichen, können Sie sich mit hoher Zuverlässigkeit versichern, dass zwei oder mehr Daten übereinstimmen.            |
 | Signatur                   | Verschlüsselter Hash digitaler Daten, der in der Regel zur Authentifizierung des Absenders von Daten oder zur Sicherstellung genutzt wird, dass die Daten während der Übertragung nicht manipuliert wurden.                                               |
 | Algorithmus                   | Eine schrittweise Prozedur zur Verschlüsselung von Daten.                                                                                                                                                         |
-| Schlüssel                         | Eine zufällige oder Pseudozufallszahl, die als Eingabe für einen Kryptografiealgorithmus zur Verschlüsselung und Entschlüsselung von Daten verwendet wird.                                                                                               |
+| Key                         | Eine zufällige oder Pseudozufallszahl, die als Eingabe für einen Kryptografiealgorithmus zur Verschlüsselung und Entschlüsselung von Daten verwendet wird.                                                                                               |
 | Kryptografie mit symmetrischem Schlüssel  | Kryptografie, bei der zur Ver- und Entschlüsselung derselbe Schlüssel verwendet wird. Auch bekannt als Kryptografie mit geheimem Schlüssel.                                                                                      |
 | Kryptografie mit asymmetrischem Schlüssel | Kryptografie, bei der zur Ver- und Entschlüsselung verschiedene, mathematisch jedoch in Beziehung stehende Schlüssel verwendet werden. Auch bekannt als Kryptografie mit öffentlichem Schlüssel.                                                          |
 | Codierung                    | Das Verfahren zur Codierung von digitalen Nachrichten, einschließlich Zertifikaten, für die Übertragung über ein Netzwerk.                                                                                                     |
@@ -93,7 +93,7 @@ Die vereinfachte Schnittstelle für die Anwendungsprogrammierung, die für Apps 
 
 ### <a name="cryptography-support"></a>Kryptografieunterstützung
 
-Sie können folgende Kryptografieaufgaben ausführen. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) -Namespace.
+Sie können folgende Kryptografieaufgaben ausführen. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core) -Namespace.
 
 -   Erstellen symmetrischer Schlüssel
 -   Ausführen der symmetrischen Verschlüsselung
@@ -104,18 +104,18 @@ Sie können folgende Kryptografieaufgaben ausführen. Weitere Informationen find
 -   Hashinhalt
 -   Digitales Signieren von Inhalt
 
-Das SDK enthält außerdem eine vereinfachte Schnittstelle für kennwortbasierten Datenschutz. Diese können Sie für folgende Aufgaben verwenden. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) -Namespace.
+Das SDK enthält außerdem eine vereinfachte Schnittstelle für kennwortbasierten Datenschutz. Diese können Sie für folgende Aufgaben verwenden. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) -Namespace.
 
 -   Asynchroner Schutz statischer Daten
 -   Asynchroner Schutz eines statischen Datenstroms
 
 ### <a name="encoding-support"></a>Codierungsunterstützung
 
-Eine App kann kryptografische Daten für die Übertragung in einem Netzwerk codieren und Daten decodieren, die aus einer Netzwerkquelle empfangen wurden. Weitere Informationen finden Sie unter den statischen Methoden, die im [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) -Namespace verfügbar sind.
+Eine App kann kryptografische Daten für die Übertragung in einem Netzwerk codieren und Daten decodieren, die aus einer Netzwerkquelle empfangen wurden. Weitere Informationen finden Sie unter den statischen Methoden, die im [**Windows.Security.Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography) -Namespace verfügbar sind.
 
 ### <a name="pki-support"></a>PKI-Unterstützung
 
-Apps können folgende PKI-Aufgaben ausführen. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) -Namespace.
+Apps können folgende PKI-Aufgaben ausführen. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates) -Namespace.
 
 -   Erstellen eines Zertifikats
 -   Erstellen eines selbstsignierten Zertifikats
@@ -143,7 +143,7 @@ Die folgenden Artikel enthalten weitere Informationen zu Sicherheitsszenarien:
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Zertifikate](certificates.md)                                               | In diesem Artikel wird die Verwendung von Zertifikaten in UWP-Apps beschrieben. Mit digitalen Zertifikaten wird ein öffentlicher Schlüssel in der Kryptografie für öffentliche Schlüssel an eine Person, an einen Computer oder an eine Organisation gebunden. Die gebundenen Identitäten werden meist dazu verwendet, eine Entität für die andere zu authentifizieren. Zertifikate werden z. B. häufig dazu verwendet, einen Webserver für einen Benutzer und einen Benutzer für einen Webserver zu authentifizieren. Sie können Zertifikatanforderungen erstellen und ausgestellte Zertifikate installieren oder importieren. Außerdem können Sie ein Zertifikat in einer Zertifikathierarchie registrieren. |
 | [Kryptografische Schlüssel](cryptographic-keys.md)                                   | In diesem Artikel wird erläutert, wie Sie mithilfe standardmäßiger Schlüsselableitungsfunktionen Schlüssel ableiten und wie Sie Inhalte mithilfe symmetrischer und asymmetrischer Schlüssel verschlüsseln können.                                                                                                                                                                                                                                                                                                                                                                             |
-| [Datenschutz](data-protection.md)                                         | In diesem Artikel wird erläutert, wie Sie mithilfe der [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559)-Klasse im [Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585)-Namespace digitale Daten in einer UWP-App verschlüsseln und entschlüsseln können.                                                                                                                                                                                                                  |
+| [Datenschutz](data-protection.md)                                         | In diesem Artikel wird erläutert, wie Sie mithilfe der [DataProtectionProvider](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider)-Klasse im [Windows.Security.Cryptography.DataProtection](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)-Namespace digitale Daten in einer UWP-App verschlüsseln und entschlüsseln können.                                                                                                                                                                                                                  |
 | [MACs, Hashes und Signaturen](macs-hashes-and-signatures.md)               | In diesem Artikel wird erläutert, wie Nachrichtenmanipulationen mithilfe von Nachrichtenauthentifizierungscodes (Message Authentication Codes, MACs), Hashes und Signaturen in UWP-Apps erkannt werden können.                                                                                                                                                                                                                                                                                                                                                                                |
 | [Exportbeschränkungen hinsichtlich Kryptografie](export-restrictions-on-cryptography.md) | Anhand der Informationen in diesem Abschnitt können Sie ermitteln, ob Ihre App Kryptografiefunktionen in einer Weise verwendet, die unter Umständen dazu führt, dass sie im Microsoft Store nicht angezeigt wird.                                                                                                                                                                                                                                                                                                                                                                                            |
 | [Allgemeine Kryptografieaufgaben](common-cryptography-tasks.md)                     | Die folgenden Artikel enthalten Beispielcode für allgemeine UWP-Kryptografieaufgaben, z. B. Erstellen zufälliger Zahlen, Vergleichen von Puffern, Konvertieren zwischen Zeichenfolgen und binären Daten, Kopieren in und aus Bytearrays sowie Codieren und Decodieren von Daten.                                                                                                                                                                                                                                                                                    |
