@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Hauptobjekt
 ms.localizationpriority: medium
-ms.openlocfilehash: 96aefc8b053dd7490f47910ca5bb79989855e1a3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a3c47f3c22c41e7ca73c8a8b5d4e26dc27fab343
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651495"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367648"
 ---
 # <a name="define-the-main-game-object"></a>Definieren des Hauptobjekts für das Spiel
 
@@ -54,7 +54,7 @@ Das Beispiel richtet die folgenden Komponenten in das spielobjekt ab:
 
 * Ein neues Audiowiedergabeobjekt wird erstellt.
 * Arrays für die Grafikgrundtypen des Spiels werden erstellt (einschließlich Arrays für die Levelgrundtypen, Munition und Hindernisse).
-* Ein Speicherort für die Spielzustandsdaten mit der Bezeichnung *Game* wird erstellt und am durch [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619) festgelegten Speicherort der App-Dateneinstellungen platziert.
+* Ein Speicherort für die Spielzustandsdaten mit der Bezeichnung *Game* wird erstellt und am durch [**ApplicationData::Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) festgelegten Speicherort der App-Dateneinstellungen platziert.
 * Ein Spieltimer und die anfängliche spielinterne Overlaybitmap werden erstellt.
 * Eine neue Kamera mit einem spezifischen Satz von Ansichts- und Projektionsparametern wird erstellt.
 * Das Eingabegerät (Controller) wird auf die gleiche Ausgangsausrichtung festgelegt wie die Kamera, sodass die Ausgangsposition der Steuerung exakt der Kameraposition entspricht.
@@ -245,8 +245,8 @@ Die interne für definierten Methoden **Simple3DGame** enthalten:
 
 -   **Initialisieren Sie**: Legt die Anfangswerte der globalen Variablen fest und initialisiert die Spielobjekte. Dies wird im behandelt die [initialisieren und starten Sie das Spiel](#initialize-and-start-the-game) Abschnitt.
 -   **LoadGame**: Initialisiert ein neues Level und startet den entsprechenden Ladevorgang.
--   **LoadLevelAsync**: Eine asynchrone Aufgabe beginnt (Wenn Sie nicht mit asynchronen Aufgaben vertraut sind, finden Sie unter [Parallel Patterns Library](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) initialisieren die Ebene, und rufen Sie dann auf eine asynchrone Aufgabe für den Renderer an bestimmte Geräte auf Ressourcen zu laden. Diese Methode wird in einem gesonderten Thread ausgeführt. Daher können in diesem Thread nur [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)-Methoden (und keine [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)-Methoden) aufgerufen werden. Alle Gerätekontextmethoden werden in der **FinalizeLoadLevel**-Methode aufgerufen.
--   **FinalizeLoadLevel**: Führt alle Aktionen zum Laden des Levels aus, die im Hauptthread durchgeführt werden müssen. Dies schließt alle Aufrufe von Direct3D 11-Gerätekontextmethoden ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) ein.
+-   **LoadLevelAsync**: Eine asynchrone Aufgabe beginnt (Wenn Sie nicht mit asynchronen Aufgaben vertraut sind, finden Sie unter [Parallel Patterns Library](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) initialisieren die Ebene, und rufen Sie dann auf eine asynchrone Aufgabe für den Renderer an bestimmte Geräte auf Ressourcen zu laden. Diese Methode wird in einem gesonderten Thread ausgeführt. Daher können in diesem Thread nur [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)-Methoden (und keine [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)-Methoden) aufgerufen werden. Alle Gerätekontextmethoden werden in der **FinalizeLoadLevel**-Methode aufgerufen.
+-   **FinalizeLoadLevel**: Führt alle Aktionen zum Laden des Levels aus, die im Hauptthread durchgeführt werden müssen. Dies schließt alle Aufrufe von Direct3D 11-Gerätekontextmethoden ([**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) ein.
 -   **StartLevel**: Startet das Gameplay für ein neues Level.
 -   **PauseGame**: Hält das Spiel an.
 -   **RunGame**: Führt eine Iteration der Spielschleife aus. Wird jeweils einmal pro Iteration der Spielschleife von **App::Update** aufgerufen, sofern sich das Spiel im Zustand **Active** befindet.
@@ -261,12 +261,12 @@ Und die privaten Methoden:
 
 Die anderen öffentlichen Methoden dienen zum Abrufen von Eigenschaften und geben Gameplay- und Overlay-spezifische Informationen an das App-Framework zurück, um diese anzuzeigen.
 
-### <a name="data"></a>Data
+### <a name="data"></a>Daten
 
 Am Anfang des Codebeispiels befinden sich vier Objekte, deren Instanzen während der Ausführung der Spielschleife aktualisiert werden.
 
 -   **MoveLookController** Objekt: Stellt die Player-Eingabe. Weitere Informationen finden Sie unter [Hinzufügen von Steuerelementen](tutorial--adding-controls.md).
--   **GameRenderer** Objekt: Stellt die Direct3D 11-Renderer abgeleitet der **DirectXBase** -Klasse, die alle gerätespezifischen Objekte und ihre Darstellung behandelt. Weitere Informationen finden Sie unter [Rendering-Framework ich](tutorial--assembling-the-rendering-pipeline.md).
+-   **GameRenderer** object: Stellt die Direct3D 11-Renderer abgeleitet der **DirectXBase** -Klasse, die alle gerätespezifischen Objekte und ihre Darstellung behandelt. Weitere Informationen finden Sie unter [Rendering-Framework ich](tutorial--assembling-the-rendering-pipeline.md).
 -   **Audio** Objekt: Steuert die Audiowiedergabe für das Spiel. Weitere Informationen finden Sie unter [Hinzufügen von Sounds](tutorial--adding-sound.md).
 
 Die restlichen Spielvariablen enthalten die Listen mit den Grundtypen und die entsprechenden spielinternen Werte sowie Gameplay-spezifische Daten und Beschränkungen.

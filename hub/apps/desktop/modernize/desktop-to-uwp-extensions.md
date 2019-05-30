@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 063106362a36aa32d0874be15dd589b5fb573409
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 291c16d14428f8c6476b12fbadf00f84c26a4235
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214948"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359481"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Integrieren Sie Ihre desktop-app-Paket mit Windows 10 und UWP
 
@@ -99,7 +99,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 
 Sie können sicherstellen, dass Benutzer Ihre neue Anwendung für die App-Pakete, die standardmäßig für bestimmte Typen von Dateien, anstatt Sie zu öffnen die Desktopversion von Ihrer app geöffnet.
 
-Dazu müssen Sie den [programmgesteuerten Bezeichner (Programm-ID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) jeder Anwendung angeben, aus der Sie Dateizuordnungen übernehmen möchten.
+Dazu müssen Sie den [programmgesteuerten Bezeichner (Programm-ID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) jeder Anwendung angeben, aus der Sie Dateizuordnungen übernehmen möchten.
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
@@ -123,8 +123,8 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. Diese ID wird intern verwendet, um einen [programmgesteuerte Bezeichner (Programm-ID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) mit Hash zu generieren, die mit Ihrer Dateitypzuordnung verknüpft ist. Mithilfe dieser ID können Sie Änderungen in zukünftigen Versionen Ihrer App verwalten. |
-|MigrationProgId |Die [Programmbezeichner (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) , beschreibt die Anwendung, Komponente und Version der Desktopanwendung, die von dem Sie die dateizuordnungen erben möchten.|
+|Name |Eine eindeutige ID für Ihre App. Diese ID wird intern verwendet, um einen [programmgesteuerte Bezeichner (Programm-ID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) mit Hash zu generieren, die mit Ihrer Dateitypzuordnung verknüpft ist. Mithilfe dieser ID können Sie Änderungen in zukünftigen Versionen Ihrer App verwalten. |
+|MigrationProgId |Die [Programmbezeichner (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) , beschreibt die Anwendung, Komponente und Version der Desktopanwendung, die von dem Sie die dateizuordnungen erben möchten.|
 
 #### <a name="example"></a>Beispiel
 
@@ -182,7 +182,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. Diese ID wird intern verwendet, um einen [programmgesteuerte Bezeichner (Programm-ID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) mit Hash zu generieren, die mit Ihrer Dateitypzuordnung verknüpft ist. Mithilfe dieser ID können Sie Änderungen in zukünftigen Versionen Ihrer App verwalten.   |
+|Name |Eine eindeutige ID für Ihre App. Diese ID wird intern verwendet, um einen [programmgesteuerte Bezeichner (Programm-ID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) mit Hash zu generieren, die mit Ihrer Dateitypzuordnung verknüpft ist. Mithilfe dieser ID können Sie Änderungen in zukünftigen Versionen Ihrer App verwalten.   |
 |FileType |Die Erweiterung, die von Ihrer App unterstützt wird. |
 
 #### <a name="example"></a>Beispiel
@@ -410,7 +410,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 
 Verwenden Sie eine Erweiterung, um diese Ordner zu identifizieren. Auf diese Weise kann das System die Dateien finden und laden, die Sie darin abgelegt haben. Stellen Sie sich diese Erweiterung als Ersatz für die Umgebungsvariable _%PATH%_ vor.
 
-Wenn Sie diese Erweiterung nicht verwenden, durchsucht das System das Paketabhängigkeitsdiagramm des Prozesses, den Paketstammordner und anschließend das Systemverzeichnis ( _%SystemRoot%\system32_) in dieser Reihenfolge. Weitere Informationen hierzu finden Sie unter [Suchreihenfolge von Windows-Apps](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps).
+Wenn Sie diese Erweiterung nicht verwenden, durchsucht das System das Paketabhängigkeitsdiagramm des Prozesses, den Paketstammordner und anschließend das Systemverzeichnis ( _%SystemRoot%\system32_) in dieser Reihenfolge. Weitere Informationen hierzu finden Sie unter [Suchreihenfolge von Windows-Apps](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order).
 
 Jedes Paket kann nur eine dieser Erweiterungen enthalten. Das bedeutet, Sie können Ihrem Hauptpaket, und dann jedem Ihrer [optionalen Pakete und zugehörigen Sets](https://docs.microsoft.com/windows/uwp/packaging/optional-packages) eine hinzufügen.
 
@@ -673,7 +673,7 @@ Sie können einen oder mehrere vordefinierte Werte für die Dateitypen mit dem *
 
 Im Datei-Explorer können Benutzer diese Dateien mithilfe dieses Felds gruppieren. Systemkomponenten verwenden auch dieses Feld für verschiedene Zwecke, wie etwa für die Indizierung.
 
-Für weitere Informationen zum **Art**-Feld und die Werte, die Sie für dieses Feld verwenden können, finden Sie unter [Art Namen verwenden](https://msdn.microsoft.com/library/windows/desktop/cc144136.aspx).
+Für weitere Informationen zum **Art**-Feld und die Werte, die Sie für dieses Feld verwenden können, finden Sie unter [Art Namen verwenden](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names).
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
@@ -702,7 +702,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Kategorie |Immer ``windows.fileTypeAssociation``.
 |Name |Eine eindeutige ID für Ihre App. |
 |FileType |Die relevanten Dateierweiterungen. |
-|Wert |Ein gültiger [Art-Wert](https://msdn.microsoft.com/en-us/library/windows/desktop/cc144136.aspx#kind_hierarchy) |
+|Wert |Ein gültiger [Art-Wert](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>Beispiel
 
@@ -1069,8 +1069,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |DropTargetHandler |Die Klassen-ID der Anwendung, die implementiert die [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) Schnittstelle. Dateien aus Wechselmedien werden an die [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)-Methode Ihrer [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Implementierung übergeben.  |
 |Parameter |Sie müssen die [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Schnittstelle nicht für alle Inhaltsereignisse implementieren. Für jedes der Inhaltsereignisse können Sie Befehlszeilenparameter bereitstellen, anstatt die [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Schnittstelle zu implementieren. Für solche Ereignisse werden automatische Wiedergabe mithilfe dieser Parameter über die Befehlszeile, um Ihre Anwendung starten. Sie können diese Parameter im Initialisierungscode Ihrer App analysieren, um festzustellen, ob sie von der automatischen Wiedergabe gestartet wurde, und dann Ihre benutzerdefinierte Implementierung bereitstellen. |
 |DeviceEvent |Der Name eines Geräteereignisses, bei dem Benutzer mit Ihrem ``ActionDisplayName`` und ``ProviderDisplayName`` aufgefordert werden. Ein Geräteereignis wird ausgelöst, wenn ein Gerät an den PC angeschlossen wird. Geräteereignisse beginnen mit der Zeichenfolge ``WPD`` und sind [hier](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference) aufgelistet. |
-|HWEventHandler |Die Klassen-ID der Anwendung, die implementiert die [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) Schnittstelle. |
-|InitCmdLine |Der Zeichenfolgeparameter, der an die [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx)-Methode der [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx)-Schnittstelle übergeben werden soll. |
+|HWEventHandler |Die Klassen-ID der Anwendung, die implementiert die [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) Schnittstelle. |
+|InitCmdLine |Der Zeichenfolgeparameter, der an die [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize)-Methode der [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)-Schnittstelle übergeben werden soll. |
 
 ### <a name="example"></a>Beispiel
 
@@ -1101,14 +1101,14 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 Wenn Ihre Anwendung geöffnet ist, wenn Benutzer ein Update darauf installieren, wird die Anwendung geschlossen.
 
-Wenn Sie möchten, dass die Anwendung neu starten, nachdem das Update abgeschlossen ist, rufen Sie die [RegisterApplicationRestart ist](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) -Funktion in jeder Prozess, der neu gestartet werden soll.
+Wenn Sie möchten, dass die Anwendung neu starten, nachdem das Update abgeschlossen ist, rufen Sie die [RegisterApplicationRestart ist](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) -Funktion in jeder Prozess, der neu gestartet werden soll.
 
-Jeder aktive Fenster in Ihrer Anwendung empfängt eine [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) Nachricht. An diesem Punkt kann Ihre Anwendung Aufrufen der [RegisterApplicationRestart ist](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) Funktion erneut aus, um die Befehlszeile bei Bedarf aktualisieren.
+Jeder aktive Fenster in Ihrer Anwendung empfängt eine [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) Nachricht. An diesem Punkt kann Ihre Anwendung Aufrufen der [RegisterApplicationRestart ist](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) Funktion erneut aus, um die Befehlszeile bei Bedarf aktualisieren.
 
-Zeitpunkt, zu jedem aktiven Fenster in Ihrer Anwendung empfängt die [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) Nachricht, die Ihre Anwendung Daten speichern soll und heruntergefahren.
+Zeitpunkt, zu jedem aktiven Fenster in Ihrer Anwendung empfängt die [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) Nachricht, die Ihre Anwendung Daten speichern soll und heruntergefahren.
 
 >[!NOTE]
-Erhalten Sie auch Ihre aktiven Fenster der [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) Meldung für den Fall, dass die Anwendung nicht behandelt die [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) Nachricht.
+Erhalten Sie auch Ihre aktiven Fenster der [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) Meldung für den Fall, dass die Anwendung nicht behandelt die [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) Nachricht.
 
 An diesem Punkt Ihrer Anwendung verfügt über 30 Sekunden zu seinem eigenen Prozesse schließen oder die Plattform beendet diese erzwungen.
 

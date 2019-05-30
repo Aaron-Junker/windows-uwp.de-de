@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 910e3108009704d444fb81b195f9dd9eae3daa9d
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: b2e1e2dfdb1dd52e1dd07a146badd78a6bb809fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63798186"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359931"
 ---
 # <a name="device-portal-core-api-reference"></a>Referenz zu Kern-APIs des Device Portal
 
@@ -1238,7 +1238,7 @@ Die Antwort enthält die CrashControl-Einstellungen. Weitere Informationen zu [C
 
 **Abbildtypen**
 
-0: Deaktiviert
+0: Disabled
 
 1: Vollständiges Speicherabbild (erfasst alle verwendeten Arbeitsspeicher)
 
@@ -1373,7 +1373,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 | URI-Parameter | Beschreibung |
 | :---          | :--- |
 | autoreboot   | (**optional**) True oder False. Dieser Parameter gibt an, ob das System nach einem Fehler oder Einfrieren automatisch neu gestartet wird. |
-| dumptype   | (**optional**) Der Speicherabbildtyp. Die unterstützten Werte finden Sie unter [CrashDumpType-Enumeration](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).|
+| dumptype   | (**optional**) Der Speicherabbildtyp. Die unterstützten Werte finden Sie unter [CrashDumpType-Enumeration](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100)).|
 | maxdumpcount   | (**optional**) Die maximale Anzahl der zu speichernden Speicherabbilder. |
 | overwrite   | (**optional**) True oder False. Dieser Parameter gibt an, ob alte Speicherabbilder überschrieben werden, wenn der durch *maxdumpcount* angegebene Höchstwert für die Anzahl von Speicherabbildern erreicht wurde. |
 
@@ -1604,7 +1604,7 @@ Mit dem folgenden Anforderungsformat können Sie die registrierten Anbieter aufl
 
 <hr>
 
-## <a name="location"></a>Pfad
+## <a name="location"></a>Speicherort
 
 <hr>
 
@@ -2003,7 +2003,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| name | (**erforderlich**) Der neue Name für den Computer. |
+| NAME | (**erforderlich**) Der neue Name für den Computer. |
 
 **Anforderungsheader**
 
@@ -2362,7 +2362,7 @@ Mit dem folgenden Anforderungsformat können Sie den Unterwert für ein Energies
  
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
-| GET | /api/power/cfg/*<power scheme path>* |
+| GET | /api/power/cfg/ *<power scheme path>* |
 
 Optionen:
 - SCHEME_CURRENT
@@ -2500,7 +2500,7 @@ Mit dem folgenden Anforderungsformat können Sie den Unterwert für ein Energies
  
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
-| POST | /api/power/cfg/*<power scheme path>* |
+| POST | /api/power/cfg/ *<power scheme path>* |
 
 
 **URI-Parameter**
@@ -2550,7 +2550,7 @@ Mit dem folgenden Anforderungsformat können Sie einen Bericht zur Ruhezustandsu
 **URI-Parameter**
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| Dateiname | (**erforderlich**) Der vollständige Name für die Datei, die Sie herunterladen möchten. Dieser Wert sollte hex64-codiert sein. |
+| FileName | (**erforderlich**) Der vollständige Name für die Datei, die Sie herunterladen möchten. Dieser Wert sollte hex64-codiert sein. |
 
 **Anforderungsheader**
 
@@ -3327,7 +3327,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 | :------          | :------ |
 | Benutzer   | (**erforderlich**) Der dem Bericht zugeordnete Benutzername. |
 | Typ   | (**erforderlich**) Der Typ des Berichts. Dieser kann **queried** oder **archived** lauten. |
-| name   | (**erforderlich**) Der Name des Berichts. Dieser sollte base64-codiert sein. |
+| NAME   | (**erforderlich**) Der Name des Berichts. Dieser sollte base64-codiert sein. |
 | Datei   | (**erforderlich**) Der Name der Datei des Berichts, die heruntergeladen werden soll. Dieser sollte base64-codiert sein. |
 
 **Anforderungsheader**
@@ -3379,7 +3379,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 | :------          | :------ |
 | Benutzer   | (**erforderlich**) Der dem Bericht zugeordnete Benutzer. |
 | Typ   | (**erforderlich**) Der Typ des Berichts. Dieser kann **queried** oder **archived** lauten. |
-| name   | (**erforderlich**) Der Name des Berichts. Dieser sollte base64-codiert sein. |
+| NAME   | (**erforderlich**) Der Name des Berichts. Dieser sollte base64-codiert sein. |
 
 **Anforderungsheader**
 

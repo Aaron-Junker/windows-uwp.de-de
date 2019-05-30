@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Directx, 2D, Grafiken
 ms.localizationpriority: medium
-ms.openlocfilehash: 1154abc4305307d87f15fbe0c0e5461e3a15e27e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e3a843c00d28d83157cf35a0bd9527be8c6b62f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632655"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367353"
 ---
 # <a name="2d-graphics-for-directx-games"></a>2D-Grafiken für DirectX-Spiele
 
@@ -21,7 +21,7 @@ Hier finden Sie Informationen zum Einsatz von 2D-Bitmapgrafiken und -effekten im
 
 2D-Grafiken sind eine Untergruppe von 3D-Grafiken mit 2D-Grundtypen oder -Bitmaps. Ganz allgemein wird hier keine z-Koordinate wie in einem 3D-Spiel verwendet, da das Gameplay üblicherweise auf die x-y-Ebene beschränkt ist. Spiele dieser Art nutzen gelegentlich 3D-Grafiktechniken zur Erstellung visueller Komponenten und sind im Allgemeinen einfacher zu entwickeln. Falls Sie noch keine Erfahrungen im Bereich der Spieleentwicklung gesammelt haben, ist ein 2D-Spiel eine gute Einstiegsmöglichkeit. Bei der Entwicklung von 2D-Grafiken können Sie sich zudem sehr gut in die Verwendung von DirectX einarbeiten.
 
-2D-Spielgrafiken können in DirectX mit Direct2D, Direct3D oder einer Kombination aus beidem entwickelt werden. Viele der hilfreichen Klassen für die Entwicklung von 2D-Spielen befinden sich in Direct3D (so zum Beispiel die [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601)-Klasse). Bei Direct2D handelt es sich um eine Gruppe von APIs, die in erster Linie für Benutzeroberflächen und Apps gedacht sind, die das Zeichnen von Grundtypen (wie Kreise, Linien und flache Polygonformen) unterstützen müssen. Darüber hinaus steht Ihnen aber auch eine leistungsfähige Sammlung von Klassen und Methoden für die Entwicklung von Spielgrafiken (insbesondere für Overlays, Oberflächen und Head-up-Displays (HUDs) für das Spiel) oder für die Entwicklung verschiedenster 2D-Spiele zur Verfügung – von sehr einfachen Spielen bis hin zu Spielen mit recht hohem Detailgrad. Da sich 2D-Grafiken allerdings am effektivsten mit Elementen aus beiden Bibliotheken entwickeln lassen, werden wir diesen Ansatz auch in diesem Thema verfolgen.
+2D-Spielgrafiken können in DirectX mit Direct2D, Direct3D oder einer Kombination aus beidem entwickelt werden. Viele der hilfreichen Klassen für die Entwicklung von 2D-Spielen befinden sich in Direct3D (so zum Beispiel die [**Sprite**](https://docs.microsoft.com/windows/desktop/direct3d10/id3dx10sprite)-Klasse). Bei Direct2D handelt es sich um eine Gruppe von APIs, die in erster Linie für Benutzeroberflächen und Apps gedacht sind, die das Zeichnen von Grundtypen (wie Kreise, Linien und flache Polygonformen) unterstützen müssen. Darüber hinaus steht Ihnen aber auch eine leistungsfähige Sammlung von Klassen und Methoden für die Entwicklung von Spielgrafiken (insbesondere für Overlays, Oberflächen und Head-up-Displays (HUDs) für das Spiel) oder für die Entwicklung verschiedenster 2D-Spiele zur Verfügung – von sehr einfachen Spielen bis hin zu Spielen mit recht hohem Detailgrad. Da sich 2D-Grafiken allerdings am effektivsten mit Elementen aus beiden Bibliotheken entwickeln lassen, werden wir diesen Ansatz auch in diesem Thema verfolgen.
 
 ## <a name="concepts-at-a-glance"></a>Konzepte auf einen Blick
 
@@ -53,9 +53,9 @@ Achten Sie bei Ihrer Grafikengine darauf, dass diese eine Reihe von Auflösungen
 
 In Sachen Optik sind großartige Grafiken Ihre wichtigste Ressource. Ihre Bitmapgrafiken sind zwar vielleicht nicht ganz so beeindruckend wie fotorealistische 3D-Grafik mit den neuesten Shadermodell-Features, mit einer großartigen Grafik in hoher Auflösung können Sie aber mindestens genauso viel Stil und Persönlichkeit erzeugen – und das bei deutlich geringerem Leistungsbedarf.
 
-## <a name="reference"></a>Verweis
+## <a name="reference"></a>Referenz
 
 
--   [Übersicht über die Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987)
--   [Direct2D-Schnellstart](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Direct2D und Direct3D-Interoperabilität (Übersicht)](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+-   [Übersicht über die Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview)
+-   [Direct2D-Schnellstart](https://docs.microsoft.com/windows/desktop/Direct2D/getting-started-with-direct2d)
+-   [Direct2D und Direct3D-Interoperabilität (Übersicht)](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview)

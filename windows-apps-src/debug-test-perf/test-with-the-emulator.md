@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: df03c6f10f106868213fe812b2f303d7675c567b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6850a5d2458c29c81bacc195106af697b37dd23b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626895"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359895"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tests mit dem Emulator für Microsoft Windows 10 Mobile
 
@@ -41,7 +41,7 @@ Betriebssystem
 -   64 Bit
 -   Mindestens Pro-Edition
 
-Informationen zum Überprüfen der BIOS-Anforderungen finden Sie unter [So wird's gemacht: Aktivieren von Hyper-V für den Emulator für Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/jj863509.aspx).
+Informationen zum Überprüfen der BIOS-Anforderungen finden Sie unter [So wird's gemacht: Aktivieren von Hyper-V für den Emulator für Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
 
 Wählen Sie zum Überprüfen der RAM- und Betriebssystemanforderungen in der Systemsteuerung **System und Sicherheit** und anschließend **System**.
 
@@ -96,7 +96,7 @@ Zusätzlich zu den neuen Features, die im vorherigen Abschnitt erwähnt wurden, 
 
 -   **Anwendungslebenszyklus und Markieren als veraltet**. Testen Sie das Verhalten Ihrer App, wenn diese deaktiviert oder als veraltet markiert wird, indem Sie auf der Seite **Debug** der Projekteigenschaften den Wert der Option **Tombstone upon deactivation while debugging** ändern.
 
--   **Lokaler Ordnerspeicher (ehemals „isolierter Speicher”)**. Daten im isolierten Speicher bleiben während der Emulatorausführung erhalten, gehen beim Schließen des Emulators aber verloren.
+-   **Lokaler Ordnerspeicher (ehemals „isolierter Speicher”)** . Daten im isolierten Speicher bleiben während der Emulatorausführung erhalten, gehen beim Schließen des Emulators aber verloren.
 
 -   **Mikrofon**. Erfordert und nutzt das Mikrofon des Hostcomputers.
 
@@ -144,7 +144,7 @@ Die folgende Tabelle enthält die Tasten einer Hardwaretastatur, die Sie verwend
 
 Beachten Sie, dass mit Emulator Build 10.0.14332 die Zuordnung der Computerhardwaretasten geändert wurde. Die Einträge in der zweiten Spalte der folgenden Tabelle bezeichnen diese neuen Tasten. 
 
-Computerhardwaretasten (Emulator Build 10.0.14295 und früher) | Computerhardwaretasten (Emulator Build 10.0.14332 und höher) | Windows Phone-Hardwaretaste | Anmerkungen
+Computerhardwaretasten (Emulator Build 10.0.14295 und früher) | Computerhardwaretasten (Emulator Build 10.0.14332 und höher) | Windows Phone-Hardwaretaste | Hinweise
 --------------------- | ------------------------- | ----------------------------- | -----
 F1 | WIN + ESC | Zurück | Eine lange Betätigung funktioniert wie erwartet.
 F2 | WIN + F2 | Start | Eine lange Betätigung funktioniert wie erwartet.
@@ -215,7 +215,7 @@ Im Näherungsmodus können Sie Meldungen von einem Tag oder von einem anderen Pe
 -   NDEF:URI
 -   NDEF:wkt.U
 
-Zum Erstellen dieser Meldungen können Sie entweder die **Nutzlastfenster** bearbeiten oder die Meldungen in einer Datei bereitstellen. Weitere Informationen zu diesen Typen und zu deren Verwendung finden Sie im Anmerkungsabschnitt der[**ProximityDevice.PublishBinaryMessage**](https://msdn.microsoft.com/library/windows/apps/Hh701129)-Referenzseite.
+Zum Erstellen dieser Meldungen können Sie entweder die **Nutzlastfenster** bearbeiten oder die Meldungen in einer Datei bereitstellen. Weitere Informationen zu diesen Typen und zu deren Verwendung finden Sie im Anmerkungsabschnitt der[**ProximityDevice.PublishBinaryMessage**](https://docs.microsoft.com/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage)-Referenzseite.
 
 Das Windows 8-Treiberkit (Windows Driver Kit, WDK) enthält ein Treiberbeispiel, in dem das gleiche Protokoll verfügbar gemacht wird wie im Windows Phone 8-Emulator. Laden Sie das WDK herunter, erstellen Sie den Beispieltreiber, installieren Sie ihn auf einem Gerät unter Windows 8, und fügen Sie anschließend die IP-Adresse oder den Hostnamen des Geräts der Geräteliste hinzu, oder koppeln Sie es entweder mit einem anderen Gerät unter Windows 8 oder mit einem Windows Phone 8-Emulator.
 
@@ -268,7 +268,7 @@ Im Anschluss finden Sie Informationen zu den verfügbaren Funktionen:
 
 ### <a name="smart-card-reader-mode"></a>Smartcardlesemodus
 
-Der Emulator kann mit einem Smartcard-Lesegerät Ihres Hostcomputers verbunden werden. Dadurch erscheinen eingelegte oder in die Nähe gehaltene Smartcards in Ihrer Smartphone-Anwendung, und die APDU-basierte Kommunikation über die [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002) -Klasse wird ermöglicht. Hierzu muss Ihr Computer über ein kompatibles Smartcard-Lesegerät verfügen. USB-Smartcardleser mit NFC (kontaktlos) und Einschub (Kontakt) sind weit verbreitet. Um die Verwendung eines angeschlossenen Smartcardlesers mit dem Emulator zu ermöglichen, wählen Sie zunächst den **Kartenlesermodus** aus. Daraufhin erscheint eine Dropdownliste mit allen angeschlossenen und kompatiblen Smartcardlesern des Hostsystems, in der Sie den gewünschten Smartcardleser auswählen können.
+Der Emulator kann mit einem Smartcard-Lesegerät Ihres Hostcomputers verbunden werden. Dadurch erscheinen eingelegte oder in die Nähe gehaltene Smartcards in Ihrer Smartphone-Anwendung, und die APDU-basierte Kommunikation über die [**Windows.Devices.SmartCards.SmartCardConnection**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) -Klasse wird ermöglicht. Hierzu muss Ihr Computer über ein kompatibles Smartcard-Lesegerät verfügen. USB-Smartcardleser mit NFC (kontaktlos) und Einschub (Kontakt) sind weit verbreitet. Um die Verwendung eines angeschlossenen Smartcardlesers mit dem Emulator zu ermöglichen, wählen Sie zunächst den **Kartenlesermodus** aus. Daraufhin erscheint eine Dropdownliste mit allen angeschlossenen und kompatiblen Smartcardlesern des Hostsystems, in der Sie den gewünschten Smartcardleser auswählen können.
 
 Beachten Sie, dass einige NFC-fähige Smartcardleser bestimmte Arten von NFC-Karten und die APDU-Standardbefehle für PC/SC-Speicherkarten nicht unterstützen.
 
@@ -319,7 +319,7 @@ Verwenden Sie die Registerkarte **Location** der zusätzlichen **Tools** des Emu
 
 Sie können während des App-Tests Ortswechsel mit unterschiedlichen Geschwindigkeiten und Genauigkeitsprofilen simulieren. Mithilfe des Positionssimulators können Sie Veränderungen bei der Nutzung der Standort-API ermitteln, die die Benutzerfreundlichkeit erhöhen. So können Sie mithilfe des Tools beispielsweise feststellen, ob Sie zur erfolgreichen Erkennung von Geofences in unterschiedlichen Szenarien die Geofence-Parameter (wie Größe oder Verweildauer) justieren müssen.
 
-Die Registerkarte **Location** unterstützt drei Modi. In allen Modi gilt: Wenn der Emulator eine neue Position erhält, kann mit dieser Position das [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/BR225540)-Ereignis ausgelöst oder auf einen [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/Hh973536)-Anruf in Ihrer App mit Positionsbestimmung reagiert werden.
+Die Registerkarte **Location** unterstützt drei Modi. In allen Modi gilt: Wenn der Emulator eine neue Position erhält, kann mit dieser Position das [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignis ausgelöst oder auf einen [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)-Anruf in Ihrer App mit Positionsbestimmung reagiert werden.
 
 -   Im Modus **Pin** markieren Sie Orte auf der Karte. Wenn Sie auf **Play all points** klicken, sendet der Positionssimulator die Position der einzelnen Markierungen nacheinander an den Emulator und verwendet dabei das im Textfeld **Seconds per pin** angegebene Intervall.
 
@@ -635,7 +635,7 @@ Der Microsoft-Emulator enthält „XDECleanup.exe“ – ein Tool, das alle VMs,
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>Deinstallieren des Windows 10 Mobile-Image
 
-Wenn Sie den Emulator installieren, wird ein VHD-Image mit Windows 10 Mobile installiert. Dieses erhält einen eigenen Eintrag in der Liste **Programme und Features** in der Systemsteuerung. Wenn Sie das Image deinstallieren möchten, suchen Sie in der Liste mit den installierten Programmen nach **Windows 10 Mobile Image – <version>**, klicken Sie mit der rechten Maustaste darauf, und wählen Sie **Deinstallieren** aus.
+Wenn Sie den Emulator installieren, wird ein VHD-Image mit Windows 10 Mobile installiert. Dieses erhält einen eigenen Eintrag in der Liste **Programme und Features** in der Systemsteuerung. Wenn Sie das Image deinstallieren möchten, suchen Sie in der Liste mit den installierten Programmen nach **Windows 10 Mobile Image – <version>** , klicken Sie mit der rechten Maustaste darauf, und wählen Sie **Deinstallieren** aus.
 
 In der aktuellen Version müssen Sie die VHD-Datei für den Emulator manuell löschen. Wenn Sie auf den Standardpfad den Emulator installiert haben, wird die VHD-Datei unter "c:"\\Programmdateien (x86)\\Windows-Kits\\10\\Emulation\\Mobile\\ <version> \\ Flash.vhd.
 
@@ -652,7 +652,7 @@ So deaktivieren sie die Hardwarbeschleunigung:
 5. Doppelklicken Sie auf **DisableRemoteFx**, geben Sie im Feld **Wert** den Wert 1 ein, wählen Sie die Option **Decimal** aus, und klicken Sie dann auf **OK**.
 6. Schließen Sie den Registrierungs-Editor.
 
-**Hinweis:** Nach dem Festlegen dieses Registrierungswerts, müssen Sie den virtuellen Computer in Hyper-V-Manager für die Konfiguration, die Sie in Visual Studio gestartet löschen, und klicken Sie dann erneut starten den Emulator mit Grafiken Software gerendert.
+**Hinweis**: Nach dem Festlegen dieses Registrierungswerts, müssen Sie den virtuellen Computer in Hyper-V-Manager für die Konfiguration, die Sie in Visual Studio gestartet löschen, und klicken Sie dann erneut starten den Emulator mit Grafiken Software gerendert.
 
 ## <a name="support-resources"></a>Supportressourcen
 
@@ -660,7 +660,7 @@ Antworten und Problemlösungen für die Windows 10-Tools finden Sie im [Forum f
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Ausführen von Windows Phone-apps im emulator](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
+* [Ausführen von Windows Phone-apps im emulator](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
 * [Windows und Windows Phone SDK-Archiv](https://dev.windows.com/downloads/sdk-archive)
  
 

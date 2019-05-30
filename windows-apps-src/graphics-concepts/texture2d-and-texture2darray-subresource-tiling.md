@@ -7,22 +7,22 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2175ce19824068a850ff70340b467f09e5c76540
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2e193ab7bce31c1f13cb40f04902922c6ff21056
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592745"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370916"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Unterteilung von Texture2D- und Texture2DArray-Unterressourcen
 
 
-Diese Tabellen zeigen die Unterteilung von [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525)- und [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526)-Unterressourcen. Die Werte in dieser Tabelle beziehen keine Tail-MIP-Verpackung mit ein.
+Diese Tabellen zeigen die Unterteilung von [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)- und [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)-Unterressourcen. Die Werte in dieser Tabelle beziehen keine Tail-MIP-Verpackung mit ein.
 
 ## <a name="span-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spansubresources-with-multisample-counts-of-1"></a><span id="Subresources-with-multisample-counts-of-1"></span><span id="subresources-with-multisample-counts-of-1"></span><span id="SUBRESOURCES-WITH-MULTISAMPLE-COUNTS-OF-1"></span>Unterressourcen mit 1 für Multisampling
 
 
-Die folgende Tabelle zeigt die Unterteilung von [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525)- und [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526)-Unterressourcen mit Multisampling (1).
+Die folgende Tabelle zeigt die Unterteilung von [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)- und [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)-Unterressourcen mit Multisampling (1).
 
 | Bits/Pixel (1 Beispiel/Pixel) | Kachelabmessungen (Pixel, B x H) |
 |-----------------------------|-------------------------------|
@@ -41,7 +41,7 @@ Format-Bit-Anzahl für das streaming von Ressourcen nicht unterstützt werden, 9
 ## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>Unterressourcen mit verschiedenen für Multisampling
 
 
-Die folgende Tabelle zeigt die Unterteilung von [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525)- und [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526)-Unterressourcen mit verschiedenen Multisampling-Anzahlen.
+Die folgende Tabelle zeigt die Unterteilung von [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)- und [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)-Unterressourcen mit verschiedenen Multisampling-Anzahlen.
 
 | Bits/Pixel (1 Beispiel/Pixel) | Kachelabmessungen (Pixel, B x H) |
 |-----------------------------|-------------------------------|

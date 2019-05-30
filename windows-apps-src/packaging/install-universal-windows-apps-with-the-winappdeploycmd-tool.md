@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 479c4410384613b22ba86bc976a360125bb73c3a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 06107691a4551ae2af05e63c1db810485273dc9b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632805"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372815"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Installieren von Apps mit dem Tool „WinAppDeployCmd.exe“
 
@@ -20,7 +20,7 @@ Bereitstellung von Windows-Anwendung (WinAppDeployCmd.exe) ist ein Befehlszeilen
 
 Sie benötigen nur das Windows 10-SDK installiert wird, führen Sie das WinAppDeployCmd-Tool über eine Eingabeaufforderung oder eine Skriptdatei an. Wenn Sie eine app mit WinAppDeployCmd.exe installieren, verwendet diese die.appx/.msix-Datei oder das AppxManifest (für lose Dateien) zu Ihrer app auf einem Windows 10-Gerät querladen. Mit diesem Befehl wird nicht das für Ihre App erforderliche Zertifikat installiert. Führen Sie die app muss das Windows 10-Gerät im Entwicklermodus oder bereits über das installierte Zertifikat verfügen.
 
-Um eine Bereitstellung auf mobilen Geräten auszuführen, müssen Sie zunächst ein Paket erstellen. Weitere Informationen finden Sie [hier](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+Um eine Bereitstellung auf mobilen Geräten auszuführen, müssen Sie zunächst ein Paket erstellen. Weitere Informationen finden Sie [hier](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
 Die **WinAppDeployCmd.exe** Tool befindet sich auf Ihrem Windows 10-PC: **"C:"\\Programmdateien (x86)\\Windows-Kits\\10\\Bin\\&lt;SDK-Version&gt;\\X86\\WinAppDeployCmd.exe** () basierend auf dem Installationspfad für das SDK). 
 > [!NOTE]

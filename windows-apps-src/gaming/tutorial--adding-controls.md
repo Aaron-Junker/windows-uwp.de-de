@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Steuerelemente, Eingabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ff7088ec4062973d0b9d1ff6d20d7992e4135c3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595415"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367954"
 ---
 # <a name="add-controls"></a>Hinzufügen von Steuerelementen
 
@@ -43,11 +43,11 @@ Beim Initialisieren der **MoveLookController**-Klasse im Beispielspiel werden vi
 
 Ereignis | Beschreibung
 :------ | :-------
-[**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) | Die linke oder rechte Maustaste wurde gedrückt (und gedrückt gehalten), oder der Touchscreen wurde berührt.
-[**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) |Die Maus wurde bewegt, oder eine Zieh-Aktion wurde auf dem Touchscreen ausgeführt.
-[**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) |Die linke Maustaste wurde losgelassen, oder das Objekt, das den Touchscreen berührt, wurde angehoben.
-[**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275) |Der Zeiger wurde aus dem Hauptfenster bewegt.
-[**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) | Die Maus wurde über eine bestimmte Distanz bewegt. Wir sind aber nur an Deltawerten der Mausbewegungen und nicht an der aktuellen x-y-Position interessiert.
+[**CoreWindow::PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | Die linke oder rechte Maustaste wurde gedrückt (und gedrückt gehalten), oder der Touchscreen wurde berührt.
+[**CoreWindow::PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |Die Maus wurde bewegt, oder eine Zieh-Aktion wurde auf dem Touchscreen ausgeführt.
+[**CoreWindow::PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) |Die linke Maustaste wurde losgelassen, oder das Objekt, das den Touchscreen berührt, wurde angehoben.
+[**CoreWindow::PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerexited) |Der Zeiger wurde aus dem Hauptfenster bewegt.
+[**Windows::Devices::Input::MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) | Die Maus wurde über eine bestimmte Distanz bewegt. Wir sind aber nur an Deltawerten der Mausbewegungen und nicht an der aktuellen x-y-Position interessiert.
 
 
 Diese Ereignishandler werden beim Starten der Überwachung für die Benutzereingabe festgelegt, sobald **MoveLookController** im Anwendungsfenster initialisiert wird.
@@ -86,7 +86,7 @@ Status | Beschreibung
 :----- | :-------
 **Keine** | Dies ist der Initialisierungszustand für den Controller. Das Spiel erwartet keine Controllereingabe und die Eingabe wird ignoriert.
 **WaitForInput** | Der Controller wartet auf die Bestätigung der Nachricht des Spielers über das Spiel, entweder mit einem Mausklick, einem Touchereignis oder der Menütaste auf einem Gamepad.
-**aktiv** | Der Controller ist im aktiven Spiel-Modus.
+**Active** | Der Controller ist im aktiven Spiel-Modus.
 
 
 
@@ -105,7 +105,7 @@ Im **aktiven** Zustand verarbeitet die **MoveLookController**-Instanz Eingabeere
 
 
 Mauseingaben werden im Zustand **Active** mit verschiedenen Zeiger-IDs für die unterschiedlichen Zeigeraktionen nachverfolgt.
-Wenn ein [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)-Ereignis empfangen wird, ruft die **MoveLookController**-Instanz den vom Fenster erstellten Wert der Zeiger-ID ab. Die Zeiger-ID stellt einen bestimmten Eingabetyp dar. Bei einem Multitouchgerät sind etwa gleichzeitig mehrere unterschiedliche aktive Eingaben möglich. Die IDs werden verwendet, um den vom Spieler verwendeten Eingabetyp nachzuverfolgen. Wenn ein Ereignis im Bewegungsrechteck des Touchscreens stattfindet, wird eine Zeiger-ID zugewiesen, um alle Zeigerereignisse im Bewegungsrechteck nachzuverfolgen. Andere Zeigerereignisse im Schießrechteck werden separat mit einer anderen Zeiger-ID nachverfolgt.
+Wenn ein [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)-Ereignis empfangen wird, ruft die **MoveLookController**-Instanz den vom Fenster erstellten Wert der Zeiger-ID ab. Die Zeiger-ID stellt einen bestimmten Eingabetyp dar. Bei einem Multitouchgerät sind etwa gleichzeitig mehrere unterschiedliche aktive Eingaben möglich. Die IDs werden verwendet, um den vom Spieler verwendeten Eingabetyp nachzuverfolgen. Wenn ein Ereignis im Bewegungsrechteck des Touchscreens stattfindet, wird eine Zeiger-ID zugewiesen, um alle Zeigerereignisse im Bewegungsrechteck nachzuverfolgen. Andere Zeigerereignisse im Schießrechteck werden separat mit einer anderen Zeiger-ID nachverfolgt.
 
 
 > [!NOTE]
@@ -160,7 +160,7 @@ Betrachten wir nun die Implementierung der drei Steuerelementtypen im Detail.
 
 Wenn Mausbewegungen erkannt werden, sollen diese Bewegungen zum Ermitteln des neuen Neigungs- und Schwenkwinkels der Kamera verwendet werden. Hierzu implementieren wir relative Maussteuerungen, bei denen nicht die absoluten x-y-Pixelkoordinaten der Bewegung aufgezeichnet werden, sondern die relative Distanz der Mausbewegung (also das Delta zwischen Start und Ende der Bewegung) erfasst wird.
 
-Dazu ermitteln wir die Änderung der X-Koordinate (horizontale Bewegung) und der Y-Koordinate (vertikale Bewegung), indem wir die Felder [**MouseDelta::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) und **MouseDelta::Y** für das vom [**MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356)-Ereignis zurückgegebene [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://msdn.microsoft.com/library/windows/apps/hh758358)-Argumentobjekt überprüfen.
+Dazu ermitteln wir die Änderung der X-Koordinate (horizontale Bewegung) und der Y-Koordinate (vertikale Bewegung), indem wir die Felder [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) und **MouseDelta::Y** für das vom [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved)-Ereignis zurückgegebene [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta)-Argumentobjekt überprüfen.
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -220,8 +220,8 @@ Touch außerhalb der Bewegungs- und Schießrechtecke | Ändern Sie die Drehung (
 
 Die **MoveLookController**-Instanz überprüft anhand der Zeiger-ID, wo das Ereignis aufgetreten ist, und führt eine der folgenden Aktionen aus:
 
--   Wenn das [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)-Ereignis im Bewegungs- oder Schießrechteck aufgetreten ist, wird die Zeigerposition für den Controller aktualisiert.
--   Wenn das [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)-Ereignis an einer anderen Stelle des Bildschirms (definiert als Blicksteuerung) aufgetreten ist, werden die Änderungen des Nick- und Gierwinkels des Blickrichtungsvektors berechnet.
+-   Wenn das [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)-Ereignis im Bewegungs- oder Schießrechteck aufgetreten ist, wird die Zeigerposition für den Controller aktualisiert.
+-   Wenn das [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)-Ereignis an einer anderen Stelle des Bildschirms (definiert als Blicksteuerung) aufgetreten ist, werden die Änderungen des Nick- und Gierwinkels des Blickrichtungsvektors berechnet.
 
 
 Nachdem wir unsere Toucheingabesteuerungen implementiert haben, werden die Rechtecke, die wir zuvor mithilfe von Direct2D gezeichnet haben dem Spieler anzeigen, wo er sich in den Bereichen bewegen, schießen und hinsehen soll.
@@ -401,7 +401,7 @@ Sehen Sie den vollständigen Code für die **MoveLookController::OnPointerPresse
 
 Hier weist **MoveLookController** die Zeiger-ID für den Zeiger zu, der das Ereignis für eine bestimmte Variable ausgelöst hat, die dem Blickbereich entspricht. Wenn eine Fingereingabe, die in der Region sehen auftreten der **m\_LookPointerID** Variable wird festgelegt, der Zeiger-ID, die das Ereignis ausgelöst hat. Eine boolesche Variable, **m\_LookInUse**, wird auch festgelegt, um anzugeben, dass das Steuerelement nicht der Fall ist, aber wurde veröffentlicht.
 
-Im nächsten Schritt erfahren Sie, wie das Beispielspiel das [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)-Touchscreenereignis behandelt.
+Im nächsten Schritt erfahren Sie, wie das Beispielspiel das [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)-Touchscreenereignis behandelt.
 
 
 In der **MoveLookController::OnPointerMoved**-Methode überprüfen wir, welche Art von Zeiger-ID dem Ereignis zugewiesen wurde. Ist es **m_lookPointerID**, berechnen wir die Änderung an der Position des Zeigers.
@@ -435,9 +435,9 @@ Wir verwenden dann Deltas, um zu berechnen, wie die Drehung geändert werden mus
 
 
 
-Zum Schluss sehen wir uns an, wie das Beispielspiel das [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)-Touchscreenereignis behandelt.
+Zum Schluss sehen wir uns an, wie das Beispielspiel das [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)-Touchscreenereignis behandelt.
 Nachdem der Benutzer die Geste abgeschlossen und den Finger vom Bildschirm entfernt hat, wird [**MoveLookController::OnPointerReleased**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L441-L500) initiiert.
-Wenn die ID des Zeigers, von dem das [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)-Ereignis ausgelöst wurde, die ID des zuvor erfassten Mauszeigers ist, legt die **MoveLookController**-Instanz die Geschwindigkeit auf `0` fest, da der Spieler den Blickbereich nicht mehr berührt.
+Wenn die ID des Zeigers, von dem das [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)-Ereignis ausgelöst wurde, die ID des zuvor erfassten Mauszeigers ist, legt die **MoveLookController**-Instanz die Geschwindigkeit auf `0` fest, da der Spieler den Blickbereich nicht mehr berührt.
 
 ```cpp
     else if (pointerID == m_lookPointerID)
@@ -460,7 +460,7 @@ Benutzereingabe | Aktion
 :------- | :--------
 W | Spieler vorwärts
 A | Spieler nach links
-E | Spieler rückwärts
+S | Spieler rückwärts
 D | Spieler nach rechts
 X | Ansicht nach oben
 Leertaste | Ansicht nach unten
@@ -469,7 +469,7 @@ Mausbewegung | Ändern Sie die Drehung (Neigungs- und Schwenkwinkel) der Kameraa
 Linke Maustaste | Mit der Maustaste schießen
 
 
-Um die Tastatur zu verwenden, registriert das Beispielspiel zwei neue Ereignisse, [**CoreWindow: KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271) und [**CoreWindow:: KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270) in der [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88)-Methode. Diese Ereignisse behandeln das Drücken und Loslassen einer Taste.
+Um die Tastatur zu verwenden, registriert das Beispielspiel zwei neue Ereignisse, [**CoreWindow: KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) und [**CoreWindow:: KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown) in der [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88)-Methode. Diese Ereignisse behandeln das Drücken und Loslassen einer Taste.
 
 ```cpp
 window->KeyDown +=

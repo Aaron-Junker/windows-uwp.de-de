@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9712b4498b03460568d20d4c8e27172ad5c14360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661985"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362204"
 ---
 # <a name="resource-types"></a>Ressourcentypen
 
@@ -110,12 +110,12 @@ Jede Shader-Phase ermöglicht bis zu 15 Shader-Konstantenpuffer; Jeder Puffer ka
 
 Verwenden Sie einen Konstantenpuffer, um die Ergebnisse der Datenstromausgabephase zu speichern.
 
-Unter [Shaderkonstanten (DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581) finden Sie ein Beispiel zum Erklären eines Konstantenpuffers in einem Shader.
+Unter [Shaderkonstanten (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants) finden Sie ein Beispiel zum Erklären eines Konstantenpuffers in einem Shader.
 
 ## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>Texturressourcen
 
 
-Eine Texturressource ist eine strukturierte Datensammlung, die für das Speichern von Texel entwickelt wurde. Im Gegensatz zu Puffern können Texturen von Textursamplern gefiltert werden, da sie von Shader-Einheiten gelesen werden. Der Texturtyp hat Einfluss darauf, wie die Textur gefiltert wird. Ein Texel repräsentiert die kleinste Einheit einer Textur, die von einer Pipeline gelesen oder geschrieben werden kann. Jede Texel enthält 1 bis 4-Komponenten, die in einem der Formate DXGI angeordnet sind (siehe [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)).
+Eine Texturressource ist eine strukturierte Datensammlung, die für das Speichern von Texel entwickelt wurde. Im Gegensatz zu Puffern können Texturen von Textursamplern gefiltert werden, da sie von Shader-Einheiten gelesen werden. Der Texturtyp hat Einfluss darauf, wie die Textur gefiltert wird. Ein Texel repräsentiert die kleinste Einheit einer Textur, die von einer Pipeline gelesen oder geschrieben werden kann. Jede Texel enthält 1 bis 4-Komponenten, die in einem der Formate DXGI angeordnet sind (siehe [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)).
 
 Texturen werden als strukturierte Ressource erstellt, damit ihre Größe bekannt ist. Jedoch kann jede Textur zum Zeitpunkt des Erstellens von Ressourcen typisiert oder typenlos sein, solange der Typ unter Verwendung einer Ansicht vollständig angegeben ist, wenn die Textur an die Pipeline gebunden ist.
 
