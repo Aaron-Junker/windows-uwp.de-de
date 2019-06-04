@@ -9,12 +9,12 @@ ms.date: 08/04/2017
 keywords: Windows UWP, Universelle Windows-Plattform, Windows-Runtime-APIs, Windows-API, Windows-API-Referenz, WinRT-API, Referenz Windows-API, UWP-API, UWP-API-Referenz, UWP entwickeln, UWP entwerfen, UWP veröffentlichen
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: ebc8d3c8602a5a67816f0817af0d2f7851a82d68
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 04adb7de9fa52988329bd8b5739b6bc315ddf786
+ms.sourcegitcommit: a4fe508e62827a10471e2359e81e82132dc2ac5a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984151"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66468333"
 ---
 # <a name="universal-windows-platform-documentation"></a>Dokumentation für die universelle Windows-Plattform
 
@@ -230,7 +230,7 @@ Mit der universellen Windows-Plattform (UWP) können Sie Apps für beliebige Win
                 <div class="card">
                     <div class="cardText">
                         <h3>Verwandte Dokumentation</h3>
-                        <p><a href="/windows/msix/desktop/desktop-to-uwp-root">MSIX-Verpackung und -Bereitstellung</a></p>
+                        <p><a href="/windows/msix">MSIX-Verpackung und -Bereitstellung</a></p>
                         <p><a href="https://docs.microsoft.com/dotnet/csharp/index">C#-Handbuch</a></p>
                         <p><a href="https://docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                     </div>

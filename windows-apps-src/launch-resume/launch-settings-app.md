@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1a0c632089c8c4cf84ecf6df99935671423b51a6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d720b256ae528192d694f98877126a6df087a18e
+ms.sourcegitcommit: 26bd7953ee5c5e625d4ed8f93df0391511c76f23
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370810"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491139"
 ---
 # <a name="launch-the-windows-settings-app"></a>Starten der Windows-Einstellungs-App
 
@@ -274,7 +274,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 |-------------|-----|
 | Info | ms-settings:about |
 | Erweiterte Anzeigeeinstellungen | ms-settings:display-advanced (nur verfügbar auf Geräten, die erweiterte Anzeigeeinstellungen) |
-| App-Volumes und Geräte-Einstellungen | ms-settings:apps-volume |
+| App-Volumes und Geräte-Einstellungen | MS-Einstellungen: apps-Volume (**hinzugefügt in Windows 10, Version 1903**)|
 | Stromsparmodus | ms-settings:batterysaver (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
 | Einstellungen „Stromsparmodus” | ms-settings:batterysaver-settings (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
 | Akkubetrieb | ms-settings:batterysaver-usagedetails (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
