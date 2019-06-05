@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Richtlinien, bewährte Methoden
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7bb187092158386c503b91973d8d63ce291b4760
+ms.sourcegitcommit: c62b260eecd373e57b19a623bae77e29180e0f3d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639145"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66565516"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Richtlinien für die Benutzeroberfläche und Benutzerumgebung für Anzeigen
 
@@ -76,6 +76,8 @@ Dieser Abschnitt enthält Beispiele für Szenarien mit Banneranzeigen, die einen
 * Schreiben oder Verteilen von Code, der Anzeigendienste auf andere Weise aufruft als die Microsoft Advertising-Bibliotheken, die im Zusammenhang mit Ihrer App ausgeführt werden.
 
 * Interagieren mit nicht dokumentierten Schnittstellen oder untergeordneten Objekten, die von den Microsoft Advertising-Bibliotheken erstellt wurden, z. B. **WebView** oder **MediaElement**.
+
+* Platzieren Werbeanzeigen, in einer Viewbox, um die Größe der anzeigen zu reduzieren, um weitere Werbung auf einer Seite als normal zulassen.
 
 <span id="interstitialbestpractices10" />
 
@@ -171,9 +173,9 @@ In Ihrem Code müssen Sie die [RegisterAdContainer](https://docs.microsoft.com/u
 
 Es gibt zwei Überladungen für die **RegisterAdContainer**-Methode, die Sie verwenden können:
 
-* Wenn Sie den gesamten Container für alle nativen Anzeigenelemente klickbar gestalten möchten, rufen Sie die **RegisterAdContainer(FrameworkElement)**-Methode auf und übergeben den zu steuernden Container an die Methode. Wenn Sie beispielsweise alle nativen Anzeigenelemente in separaten Steuerelementen anzeigen, die alle in einem **StackPanel** gehostet werden, und das gesamte **StackPanel** klickbar sein soll, übergeben Sie das **StackPanel** an diese Methode.
+* Wenn Sie den gesamten Container für alle nativen Anzeigenelemente klickbar gestalten möchten, rufen Sie die **RegisterAdContainer(FrameworkElement)** -Methode auf und übergeben den zu steuernden Container an die Methode. Wenn Sie beispielsweise alle nativen Anzeigenelemente in separaten Steuerelementen anzeigen, die alle in einem **StackPanel** gehostet werden, und das gesamte **StackPanel** klickbar sein soll, übergeben Sie das **StackPanel** an diese Methode.
 
-* Wenn Sie nur bestimmte native Anzeigenelemente klickbar gestalten möchten, rufen Sie die **RegisterAdContainer (FrameworkElement, IVector(FrameworkElement))**-Methode auf. Nur die Steuerelemente, die Sie über den zweiten Parameter übergeben, werden klickbar.
+* Wenn Sie nur bestimmte native Anzeigenelemente klickbar gestalten möchten, rufen Sie die **RegisterAdContainer (FrameworkElement, IVector(FrameworkElement))** -Methode auf. Nur die Steuerelemente, die Sie über den zweiten Parameter übergeben, werden klickbar.
 
 ### <a name="required-native-ad-elements"></a>Erforderliche native Anzeigenelemente
 
