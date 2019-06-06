@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Uwp, Standard, c++, Cpp, Winrt, Projektion, News, was die neue
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a84e118d988d8bf6a7d26eba7d5dd009c7ad44f3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 11249335f9d29d37bb0824fa779d3ae151c74799
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360135"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721653"
 ---
 # <a name="whats-new-in-cwinrt"></a>Neuigkeiten in C++ / WinRT
 
@@ -160,13 +160,17 @@ Diese Optimierung vermeidet die #include Abhängigkeiten in `module.g.cpp` , dam
 
 Die `module.g.cpp` -Datei enthält nun auch zwei zusätzliche zusammensetzbare-Hilfen, mit dem Namen **Winrt_can_unload_now**, und **Winrt_get_activation_factory**. Diese sind für größere Projekte konzipiert, in denen eine DLL-Datei aus einer Anzahl von Bibliotheken, jeweils eine eigene Runtime-Klassen ist. In diesem Fall müssen Sie manuell zusammenfügen der DLLs **"dllgetactivationfactory"** und **"DllCanUnloadNow"** . Diese Hilfsprogramme erleichtern viel einfacher für Sie, dass hierzu die Vermeidung vermeidbarer Ursprung Fehler. Die `cppwinrt.exe` des Tools `-lib` Flag kann ebenfalls verwendet werden, jede einzelne Lib eigene Präambel gewähren (statt `winrt_xxx`), damit Funktionen für jede Bibliothek einzeln mit dem Namen, und daher eindeutig kombiniert werden können.
 
-#### <a name="new-winrtcoroutineh-header"></a>Neue `winrt/coroutine.h` Header
+#### <a name="coroutine-support"></a>Coroutineunterstützung
 
-Die `winrt/coroutine.h` -Header ist die neue Anlaufstelle für alle C++coroutineunterstützung "/ WinRT". Diese Unterstützung zuvor befanden, an einigen Stellen, die wir sind der Ansicht wurde zu beschränken. Da die Windows-Runtime-Async-Schnittstellen generiert werden, statt handschriftlich, sie jetzt befinden sich im `winrt/Windows.Foundation.h`. Abgesehen davon, dass besser verwaltet und unterstützt werden kann, die dieser Coroutine kann z.B. [ **Resume_foreground** ](/uwp/cpp-ref-for-winrt/resume-foreground) müssen nicht mehr an das Ende eines bestimmten Namespace-Headers übernommen werden. Stattdessen können sie ihre Abhängigkeiten auf natürliche Weise mehr enthalten. Dadurch weitere **Resume_foreground** unterstützen nicht nur auf Fortsetzen einer angegebenen [ **Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher), können jetzt auch unterstützt jedoch auf Fortsetzen einer angegebenen [ **Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Bisher konnte nur eine unterstützt werden; aber nicht beides, da die Definition nur in einem einzelnen Namespace befinden kann.
+Coroutineunterstützung ist automatisch enthalten. Die Unterstützung zuvor befanden, an mehreren Orten, die wir sind der Ansicht wurde zu beschränken. Und dann für den v2. 0, vorübergehend eine `winrt/coroutine.h` Headerdatei war erforderlich, aber, die nicht mehr benötigt wird. Da die Windows-Runtime-Async-Schnittstellen generiert werden, statt handschriftlich, sie jetzt befinden sich im `winrt/Windows.Foundation.h`. Abgesehen davon, dass besser verwaltet und unterstützt werden kann, die dieser Coroutine kann z.B. [ **Resume_foreground** ](/uwp/cpp-ref-for-winrt/resume-foreground) müssen nicht mehr an das Ende eines bestimmten Namespace-Headers übernommen werden. Stattdessen können sie ihre Abhängigkeiten auf natürliche Weise mehr enthalten. Dadurch weitere **Resume_foreground** unterstützen nicht nur auf Fortsetzen einer angegebenen [ **Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher), können jetzt auch unterstützt jedoch auf Fortsetzen einer angegebenen [ **Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Bisher konnte nur eine unterstützt werden; aber nicht beides, da die Definition nur in einem einzelnen Namespace befinden kann.
 
 Hier ist ein Beispiel für die **DispatcherQueue** unterstützen.
 
 ```cppwinrt
+...
+#include <winrt/Windows.System.h>
+using namespace Windows::System;
+...
 fire_and_forget Async(DispatcherQueueController controller)
 {
     bool queued = co_await resume_foreground(controller.DispatcherQueue());

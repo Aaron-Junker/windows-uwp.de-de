@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, häufig, gestellte, fragen, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ac7f8e46974b7c12b42f6d6f94052e61902b240
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 914cf884b97d14af523cc61b0fcce719104783ba
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360253"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721686"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Häufig gestellte Fragen zu C++/WinRT
 Antworten auf Fragen, die Sie wahrscheinlich zur Erstellung und Nutzung von Windows-Runtime-APIs mit können [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -22,7 +22,7 @@ Antworten auf Fragen, die Sie wahrscheinlich zur Erstellung und Nutzung von Wind
 Finden Sie unter [wie neu ausrichten, Ihrem C + c++ / WinRT-Projekt auf eine neuere Version des Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
 ## <a name="why-wont-my-new-project-compile-now-that-ive-moved-to-cwinrt-20"></a>Warum nicht Mein neue Projekt kompiliert, nun, dass ich in verschoben haben C++WinRT 2.0?
-Den vollständigen Satz von Änderungen (z. B. wichtige Änderungen) werden soll, finden Sie unter [Neuigkeiten und Änderungen in C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). Z. B. für coroutineunterstützung (einschließlich Coroutine Hilfsprogrammen wie z. B. **winrt::resume_background**, **winrt::resume_foreground**, und **winrt::resume_on_signal** ), müssen Sie `#include <winrt/coroutine.h>`. Wenn Sie eine bereichsbasierte verwenden `for` für eine Windows-Runtime-Sammlung werden jetzt müssen Sie `#include <winrt/Windows.Foundation.Collections.h>`.
+Den vollständigen Satz von Änderungen (z. B. wichtige Änderungen) werden soll, finden Sie unter [Neuigkeiten und Änderungen in C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). Wenn Sie eine bereichsbasierte verwenden z. B. `for` für eine Windows-Runtime-Sammlung werden jetzt müssen Sie `#include <winrt/Windows.Foundation.Collections.h>`.
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Warum kompiliert nicht Mein neue Projekt? Ich verwende Visual Studio 2017 (Version 15.8.0 oder höher), und von SDK Version 17134
 Bei Verwendung von Visual Studio 2017 (Version 15.8.0 oder höher), und auf dem Windows SDK, Version 10.0.17134.0 (Windows 10, Version 1803), klicken Sie dann einen neu erstellten C++/WinRT-Projekt kann nicht mit dem Fehler kompiliert "*Fehler C3861 aus:"From_abi": Bezeichner wurde nicht gefunden*", und klicken Sie mit anderen Fehlern, die aus *base.h*. Die Lösung besteht darin, entweder Ziel einer höheren (genauer) Version des Windows SDK oder Set-Projekteigenschaft **C/C++-**  > **Sprache** > **Konformitätsmodus: Nicht** (auch wenn **/ PERMISSIVE--** wird in den Projekteigenschaften **C/C++-**  > **Befehlszeile** unter **zusätzliche Optionen** , löschen Sie sie).

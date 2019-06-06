@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, problembehandlung, HRESULT, fehler
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe67fd0593c9c1f605a5d1cc7418c348b6ca9c3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 563545e8a819ab6af5bbc0604c18b4833d76bebb
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360099"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721674"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Problembehandlung bei C++/WinRT-Problemen
 
@@ -51,7 +51,6 @@ Wenn Ihre App beendet wird und Sie nur wissen, dass beim XAML-Markup-Parsing ein
 | Der C++-Compiler generiert "*Fehler C2039: "IUnknown": ist kein Mitglied von "\`globalen Namespace''* ". | Finden Sie unter [wie neu ausrichten, Ihrem C + c++ / WinRT-Projekt auf eine neuere Version des Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | Der C++-Linker generiert "*Fehler LNK2019: nicht aufgelöstes externes Symbol _WINRT_CanUnloadNow@0 verwiesen wird, in der Funktion _VSDesignerCanUnloadNow@0* " | Finden Sie unter [wie neu ausrichten, Ihrem C + c++ / WinRT-Projekt auf eine neuere Version des Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | Der Buildprozess generiert die Fehlermeldung *die c++ / WinRT VSIX nicht mehr Build-projektunterstützung bereitstellt.  Fügen Sie einen Projektverweis auf die Microsoft.Windows.CppWinRT Nuget-Paket hinzu*. | Installieren Sie die **Microsoft.Windows.CppWinRT** NuGet-Paket in Ihr Projekt. Weitere Informationen finden Sie unter [frühere Versionen der Erweiterung VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension). |
-| Die C++ Compiler generiert eine Fehlermeldung angezeigt, die erwähnt *"std::experimental"* , bzw. einen Fehler des Formulars *Fehler C3861 aus: "Resume_background": Bezeichner wurde nicht gefunden*. | Als [ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20), für alle coroutineunterstützung (einschließlich Coroutine Hilfsprogrammen wie z. B. **winrt::resume_background**, **winrt::resume_foreground**, und **winrt::resume_on_signal**), müssen Sie `#include <winrt/coroutine.h>`. |
 | Die C++ Linker generiert *Fehler LNK2019: nicht aufgelöstes externes Symbol*, mit der eine Erwähnung von *Winrt::impl::consume_Windows_Foundation_Collections_IVector*. | Als [ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20), wenn Sie eine bereichsbasierte verwenden `for` für eine Windows-Runtime-Sammlung werden jetzt müssen Sie `#include <winrt/Windows.Foundation.Collections.h>`. |
 
 > [!NOTE]
