@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bee954cba446ac7dc7eb41622d9275b3b73af6ee
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
+ms.sourcegitcommit: f47620e72ff8127fae9b024c70ddced3a5c45d91
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621835"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748448"
 ---
 # <a name="dialog-controls"></a>Dialogfeld-Steuerelemente
 
@@ -250,9 +250,37 @@ Ein typisches Bestätigungsdialogfeld verfügt über zwei Schaltflächen: eine S
 
 > Auf einigen Plattformen befindet sich die Bestätigungsschaltfläche auf der rechten anstatt auf der linken Seite. Warum empfehlen wir die Platzierung auf der linken Seite?  Wenn Sie davon ausgehen, dass die meisten Benutzer Rechtshänder sind und ihr Telefon in dieser Hand halten, ist es bequemer, eine Bestätigungsschaltfläche zu drücken, die sich auf der linken Seite befindet, weil sie für den Benutzer wahrscheinlich einfacher mit dem Daumen erreichbar ist. Bei Schaltflächen auf der rechten Bildschirmseite muss der Benutzer seinen Daumen in eine weniger bequeme Position nach innen bewegen.
 
+## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog AppWindow oder XAML-Inseln
 
+> HINWEIS: Dieser Abschnitt gilt nur für apps, die Windows 10, Version 1903 oder höher ausgerichtet, sind. AppWindow und XAML-Inseln sind nicht in früheren Versionen verfügbar. Weitere Informationen zur versionsverwaltung finden Sie unter [versionsabhängig adaptive apps](../../../debug-test-perf/version-adaptive-apps.md).
 
+In der Standardeinstellung Content Dialogfelder anzeigen modal relativ zum Stamm [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). Bei Verwendung von ContentDialog in entweder ein [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) oder [XAML Insel](/apps/desktop/modernize/xaml-islands), müssen Sie manuell festlegen der [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) im Dialogfeld auf den Stamm der XAML-Host.
 
+Zu diesem Zweck legen Sie die ContentDialogs-XamlRoot-Eigenschaft auf die gleiche XamlRoot als ein Element bereits in der AppWindow oder einer Insel XAML, wie hier gezeigt.
+
+```csharp
+private async void DisplayNoWifiDialog()
+{
+    ContentDialog noWifiDialog = new ContentDialog
+    {
+        Title = "No wifi connection",
+        Content = "Check your connection and try again.",
+        CloseButtonText = "Ok"
+    };
+
+    // Use this code to associate the dialog to the appropriate AppWindow by setting
+    // the dialog's XamlRoot to the same XamlRoot as an element that is already present in the AppWindow.
+    if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+    {
+        noWifiDialog.XamlRoot = elementAlreadyInMyAppWindow.XamlRoot;
+    }
+
+    ContentDialogResult result = await noWifiDialog.ShowAsync();
+}
+```
+
+> [!WARNING]
+> Gibt es nur möglich ContentDialog öffnen pro Thread zu einem Zeitpunkt. Beim Versuch, zwei ContentDialogs Öffnen löst eine Ausnahme, auch wenn sie versuchen, die in separaten AppWindows zu öffnen.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
