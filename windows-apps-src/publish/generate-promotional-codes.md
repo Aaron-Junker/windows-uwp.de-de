@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Angebotscode, Angebotscodes, Token, Token
 ms.localizationpriority: medium
-ms.openlocfilehash: db4cde6f8c195101ec31de26c00ffa7325e08d71
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 931b3abfe13a3834d991ee1a0a38c752b9e3f719
+ms.sourcegitcommit: 7da28cf4f4e8390bc9a21a9488b03af39271cbbe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605395"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64745037"
 ---
 # <a name="generate-promotional-codes"></a>Generieren von Werbecodes
 
@@ -31,8 +31,13 @@ Sie können einmaligen Code generieren (und eine für jeden Kunden zu verteilen)
 Beachten Sie die folgenden Richtlinien für Werbecodes:
 
 -   Werbecodes können für alle über den Microsoft Store veröffentlichten Apps oder Add-Ons (mit Ausnahme von Abonnements für Add-Ons) generiert werden. Kunden können die Codes mit allen Versionen von Windows einlösen, die von Ihren Apps oder Add-Ons unterstützt werden.
--   Werbecodes laufen sechs Monate nach dem Datum der Bestellung ab, es sei denn, Sie wählen ein früheres Ablaufdatum aus.
--   Sie können für alle Apps oder Add-Ons alle 6 Monate Codes generieren, die bis zu 1600 Einlösungen ermöglichen. Der Zeitraum von sechs Monaten beginnt mit der Übermittlung der ersten Werbecodebestellung, auch wenn Sie ein früheres Ablaufdatum auswählen. Die Summe aller 1600 Einlösungen pro Produkt bezieht sich auf Codes zur einmaligen Verwendung und Codes, die mehrmals verwendet werden können.
+-   Für Spiele:
+    - Sie können bis zu 5.000 Promotioncodes pro Spiel generieren.
+    - Promotioncodes für Spiele generiert laufen nie ab.
+- Für alle anderen Typen von apps oder -Add-Ons:
+    - In jedem Zeitraum von sechs Monaten Sie können bis zu 1600 einmalige Verwendung Promotioncodes generieren, oder eine beliebige Anzahl von mehreren verwenden Sie Codes so, dass die Summe einlösungen zulässig nicht überschreitet 1600.
+    - Der Zeitraum von 6 Monaten beginnt, wenn Sie die erste generieren Angebotscode erstellt, und so lange beibehalten wird für 6 Monate, unabhängig davon, ob Sie eine frühere Ablaufdatum auf den Codes festgelegt.
+    - Während einer vorhandenen Periode von sechs Monaten erstellten Codes Anzahl für die Anzahl der in diesem Zeitraum, generierten Codes ist, selbst wenn sie nach dem Ende der ablaufen (z. B. Wenn Sie am letzten Tag des Fensters Laufzeit von sechs Monaten einen Code erzeugen, sie werden wird dennoch werden  gültig sein für einen vollständigen 6 Monate verhindert.)
 -   Führen Sie die Anforderungen der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), einschließlich Abschnitt **3 k. Promotioncodes**.
 
 > [!NOTE]
