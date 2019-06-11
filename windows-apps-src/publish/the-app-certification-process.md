@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, Uwp, veröffentlichen, vorverarbeitung, Zertifizierung, freigeben, Ausstehend, übermitteln, zu veröffentlichen, Status, Zeit
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9df9ce95c6b17bcd3d702bf09ac57b9f205e0c
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d88d8deeb467f186f120fb8c1e579d5c9222aaf1
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790589"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826228"
 ---
 # <a name="the-app-certification-process"></a>Der App-Zertifizierungsprozess
 
@@ -29,7 +29,7 @@ Während dieser Phase werden mehrere Tests durchgeführt:
 -   **Technische Einhaltung der Standards Tests:** Technische Einhaltung der Standards wird von der Windows-Zertifizierungskit für Apps getestet. (Achten Sie immer darauf, [Ihre App mit dem Zertifizierungskit für Windows-Apps zu testen](../debug-test-perf/windows-app-certification-kit.md), bevor Sie sie im Store einreichen.)
 -   **Inhaltliche Einhaltung der Standards:** Die Zeitspanne, während dieses Vorgangs variiert je nach Komplexität Ihrer app ist, wie viele visuellen Inhalt hat und wie viele apps vor kurzem übermittelt wurden. Achten Sie darauf, auf der Seite [Hinweise für Zertifizierung](notes-for-certification.md) alle für Tester erforderlichen Informationen bereitzustellen.
 
-Nach Abschluss des Zertifizierungsprozesses erhalten Sie einen Zertifizierungsbericht, der Aufschluss darüber gibt, ob Ihre App die Zertifizierung bestanden hat. War die Zertifizierung nicht erfolgreich, ist im Bericht angegeben, welcher Test nicht bestanden bzw. welche [Richtlinie](https://docs.microsoft.com/legal/windows/agreements/store-policies) nicht erfüllt wurde. Nachdem Sie das Problem behoben haben, können Sie eine neue Einreichung für Ihre App erstellen, um den Zertifizierungsprozess erneut einzuleiten.
+Nach Abschluss des Zertifizierungsprozesses erhalten Sie einen Zertifizierungsbericht, der Aufschluss darüber gibt, ob Ihre App die Zertifizierung bestanden hat. War die Zertifizierung nicht erfolgreich, ist im Bericht angegeben, welcher Test nicht bestanden bzw. welche [Richtlinie](store-policies.md) nicht erfüllt wurde. Nachdem Sie das Problem behoben haben, können Sie eine neue Einreichung für Ihre App erstellen, um den Zertifizierungsprozess erneut einzuleiten.
 
 ## <a name="release"></a>Version
 
@@ -54,7 +54,7 @@ Während Ihre app in der Phase beim Veröffentlichen, ist die **Details anzeigen
 Nach erfolgreicher Absolvierung der obigen Schritte ändert sich der Status der Übermittlung von **Veröffentlichung** in **Im Store**. Ihre Übermittlung steht den Kunden nun im Microsoft Store zum Download zur Verfügung (sofern Sie unter [Erkennbarkeit](choose-visibility-options.md#discoverability) keine andere Option ausgewählt haben). 
 
 > [!NOTE]
-> Außerdem führen wir Stichprobenkontrollen für bereits veröffentlichte Apps durch, um potenzielle Probleme zu ermitteln und sicherzustellen, dass Ihre App alle [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies) erfüllt. Falls Probleme gefunden werden, werden Sie benachrichtigt, dass ein Problem aufgetreten ist und wie Sie es ggf. beheben können, oder dass die App aus dem Store entfernt wurde.
+> Außerdem führen wir Stichprobenkontrollen für bereits veröffentlichte Apps durch, um potenzielle Probleme zu ermitteln und sicherzustellen, dass Ihre App alle [Microsoft Store-Richtlinien](store-policies.md) erfüllt. Falls Probleme gefunden werden, werden Sie benachrichtigt, dass ein Problem aufgetreten ist und wie Sie es ggf. beheben können, oder dass die App aus dem Store entfernt wurde.
 
  
 

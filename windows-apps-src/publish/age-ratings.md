@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, Altersfreigabe, Spielfreigabe, IARC, Bewertung, Fragebogen, Bewertungsgremium, Inhaltsbewertung
 ms.localizationpriority: medium
-ms.openlocfilehash: fc079cd0c3fb75444a8ac8c6f8376c3ed5a992b4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 55592f2d16807e2ad359a21977bd483db0b2e089
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787308"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826177"
 ---
 # <a name="age-ratings"></a>Altersfreigaben
 
@@ -59,4 +59,4 @@ Bisher haben Entwickler die Altersfreigabe für ihre App selbst angegeben, ansta
 | 7+ (geeignet für Kinder ab 7 Jahren)   | Für Apps mit dieser Altersfreigabe gelten die gleichen Kriterien wie für Apps für die Altersstufe 3+, außer dass diese Apps Inhalte enthalten können, die kleinere Kinder möglicherweise verängstigen, sowie Darstellungen partieller Nacktheit, sofern diese keine sexuelle Aktivität andeuten. Diese Bewertung sollte nur für Apps verwendet werden, deren Inhalt für Kinder geeignet ist.                                                                                   |
 | 12+ (geeignet für Kinder ab 12 Jahren) | Apps mit dieser Altersfreigabe können weitergehende Darstellungen von Nacktheit nicht sexueller Art, geringfügig anschauliche Gewaltdarstellungen gegen nicht reale Figuren oder nicht anschauliche Gewaltdarstellungen gegenüber Menschen oder Tieren enthalten. Apps mit dieser Altersfreigabe können auch anstößige Ausdrücke enthalten, aber keine anstößige Sprache sexueller Natur. Apps mit dieser Altersfreigabe können auch: (i) den unkontrollierten Zugriff auf soziale Onlinenetzwerke oder (ii) die unkontrollierte Freigabe persönlicher Informationen an dritte Parteien (darunter andere Spieler oder Onlinebekanntschaften) ermöglichen. (Ihre App muss für jede als „kontrolliert“ geltende Aktivität Jugendschutzfeatures enthalten, die die elterliche Erlaubnis erfordern, um Freigabefeatures zu nutzen. Sie müssen diese Features explizit identifizieren und ihre Funktion in den [Hinweisen für Zertifizierung](notes-for-certification.md) erläutern.) |
 | 16+ (geeignet für Kinder ab 16 Jahren) | In Apps mit dieser Altersfreigabe können realistische Gewalt mit minimalen blutrünstigen Szenen und sexuelle Aktivität dargestellt werden. Die Apps können entsprechend den in den Store-Richtlinien festgelegten Einschränkungen auch Darstellungen von Drogen- oder Tabakkonsum und kriminellen Aktivitäten sowie mehr anstößige Inhalte als Apps für die Altersstufe 12+ enthalten.                                                                                                                           |
-| 18+ (geeignet für Erwachsene)            | Spiele mit dieser Altersfreigabe können intensive, grausame Gewalt oder Blut enthalten, was nur für Erwachsene geeignet ist. Alle Inhalte müssen den [Inhaltsrichtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies) entsprechen.                                                                                                                                                            |
+| 18+ (geeignet für Erwachsene)            | Spiele mit dieser Altersfreigabe können intensive, grausame Gewalt oder Blut enthalten, was nur für Erwachsene geeignet ist. Alle Inhalte müssen den [Inhaltsrichtlinien](store-policies.md) entsprechen.                                                                                                                                                            |

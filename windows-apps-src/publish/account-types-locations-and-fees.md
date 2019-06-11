@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Entwicklerkonto, individuell, Unternehmen, geschäftlich
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b35f95556a13d880992a12d7434af76feed4334
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 7556ca526ecfa28b1d97346501ec1875f938ca35
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63770886"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826213"
 ---
 # <a name="account-types-locations-and-fees"></a>Kontotypen, Standorte und Gebühren
 
@@ -31,9 +31,9 @@ Im Folgenden sind die grundlegenden Unterschiede zwischen den beiden Kontotypen 
 
 | Einzelkonto | Unternehmenskonto |
 |--------------------|-----------------|
-| <ul><li>Kostet ca. 19 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Kürzerer Kontoüberprüfungsprozess</li></ul> | <ul><li>Kostet ca. 99 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Erfordert eine bessere Überprüfung des Kontos</li><li>Erfordert, dass Ihr Unternehmen als solches im Land oder in der Region seiner Niederlassung anerkannt ist</li><li>Übermitteln von Apps mit eingeschränkter Funktionalität (wie in den [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type) beschrieben)</li></ul> |
+| <ul><li>Kostet ca. 19 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Kürzerer Kontoüberprüfungsprozess</li></ul> | <ul><li>Kostet ca. 99 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Erfordert eine bessere Überprüfung des Kontos</li><li>Erfordert, dass Ihr Unternehmen als solches im Land oder in der Region seiner Niederlassung anerkannt ist</li><li>Übermitteln von Apps mit eingeschränkter Funktionalität (wie in den [Microsoft Store-Richtlinien](store-policies.md#1014-account-type) beschrieben)</li></ul> |
 
-Unternehmenskonten sind etwas teurer. Das liegt hauptsächlich daran, dass wir durch einige zusätzliche Schritte sicherstellen, dass Sie von Ihrem Unternehmen autorisiert wurden und zum Einrichten des Kontos berechtigt sind. Pro dem [Store Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type), apps für bestimmte Funktionen wie diejenigen, die finanzielle Zugriff auf Kontoinformationen oder, die Authentifizierung für die primäre Funktionalität zugreifen (ohne Verwendung einer sicheren, dedizierten von Drittanbietern erfordern Authentication-Anbieter), können nur von Unternehmenskonten veröffentlicht werden.
+Unternehmenskonten sind etwas teurer. Das liegt hauptsächlich daran, dass wir durch einige zusätzliche Schritte sicherstellen, dass Sie von Ihrem Unternehmen autorisiert wurden und zum Einrichten des Kontos berechtigt sind. Pro dem [Store Richtlinien](store-policies.md#1014-account-type), apps für bestimmte Funktionen wie diejenigen, die finanzielle Zugriff auf Kontoinformationen oder, die Authentifizierung für die primäre Funktionalität zugreifen (ohne Verwendung einer sicheren, dedizierten von Drittanbietern erfordern Authentication-Anbieter), können nur von Unternehmenskonten veröffentlicht werden.
 
 ## <a name="account-verification"></a>Kontobenachrichtigung
 
@@ -252,4 +252,4 @@ In der Spalte **PayPal** wird angegeben, ob PayPal als Zahlungsmethode für Ihr 
 | Sambia                            | 19 USD              | 99 USD           | ZMK, Auszahlung per Banküberweisung | Nein     |  
 | Simbabwe                          | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |
 
-\*  PayPal als Zahlungsmethode für Auszahlung-Konten in diesem Markt verwendet werden können, jedoch kann nicht verwendet werden, hierzu Zahlen sind die Registrierungsgebühr von Developer-Konto.
+\*  PayPal als Zahlungsmethode für Auszahlung-Konten in diesem Markt verwendet werden kann, aber nicht zum Bezahlen für die Registrierungsgebühr von Developer-Konto verwendet werden.

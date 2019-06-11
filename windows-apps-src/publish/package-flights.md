@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, Test-Flighting
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c0d299ba5b3a37b2f80a5e3c9b4456d63c3e0d4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: abd4b26d0943bf032f93f62719959ef6650e0d65
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788480"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826138"
 ---
 # <a name="package-flights"></a>Flight-Pakete
 
@@ -75,7 +75,7 @@ Ihr Flight-Paket wird standardmäßig veröffentlicht und Ihrer Test-Flight-Grup
 
 ## <a name="submit-your-package-flight-to-the-store"></a>Übermitteln des Flight-Paket an den Store
 
-Wenn Sie Pakete angegeben und alle erforderlichen Optionen konfiguriert haben, klicken Sie auf **An Store übermitteln**. Ihr Flight-Paket durchläuft anschließend den [App-Zertifizierungsprozess](the-app-certification-process.md). Beachten Sie, dass Pakete in Ihrem Paket Flight erfüllen müssen, die [Microsoft Store Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)entspricht der Vorgehensweise bei der alle Übermittlungen.
+Wenn Sie Pakete angegeben und alle erforderlichen Optionen konfiguriert haben, klicken Sie auf **An Store übermitteln**. Ihr Flight-Paket durchläuft anschließend den [App-Zertifizierungsprozess](the-app-certification-process.md). Beachten Sie, dass Pakete in Ihrem Paket Flight erfüllen müssen, die [Microsoft Store Richtlinien](store-policies.md)entspricht der Vorgehensweise bei der alle Übermittlungen.
 
 Personen, die in Ihren Test-Flight-Gruppen diesem Flight-Paket zugeordnet sind und Ihre App bereits haben, erhalten jetzt ein Update mit den Paketen, die Sie in Ihrem Flight-Paket bereitgestellt haben. Wenn diese Personen Ihre App noch nicht haben, erhalten sie die Pakete aus Ihrem Flight-Paket, wenn sie es installieren. 
 

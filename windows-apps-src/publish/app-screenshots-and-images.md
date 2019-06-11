@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, Trailer, Video, Screenshot, Bild, Symbol, Store-Eintrag, Store-Eintragsbilder
 ms.localizationpriority: medium
-ms.openlocfilehash: a27763d76d2be65c7e0d2c6ccaeb0cd13123bdae
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 3f1931a15b5517264cd11dca8d8086dda7094b93
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244307"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826154"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>App-Screenshots, -Bilder und -Trailer
 
@@ -128,7 +128,7 @@ Befolgen Sie folgende Empfehlungen, damit Ihre Trailer effektiv sind:
 
 Sie müssen auch die unten genannten Anforderungen erfüllen.
 
-**So fügen Sie Trailer zu Ihrem Eintrag hinzu:**
+**So fügen Sie zu Ihrem Angebot Nachspänne hinzu:**
 1. Laden Sie die **Videodatei** Ihres Trailers im angegebenen Feld hoch. Ein Dropdownfeld wird auch angezeigt für den Fall, dass Sie einen Trailer wiederverwenden möchten, den Sie bereits hochgeladen haben (z. B. für einen Store-Eintrag in einer anderen Sprache).
 2. Nachdem Sie den Trailer hochgeladen haben, müssen Sie ein **Miniaturbild** dafür hochladen. Dies muss eine PNG-Datei mit 1920 x 1080 Pixeln sein. In der Regel handelt es sich um ein Standbild aus dem Trailer.
 3. Klicken Sie auf das Stiftsymbol, um einen **Titel** für Ihren Trailer hinzuzufügen (maximal 255 Zeichen).
@@ -152,7 +152,7 @@ Wenn Sie Ihre Trailer bereitstellen, müssen Sie die folgenden Anforderungen erf
 - Der Titel darf 255 Zeichen nicht überschreiten. 
 - Schließen Sie keine Altersfreigaben in Ihrem Trailer ein.
 
-Wie die anderen Felder auf der Seite des Store-Eintrags müssen Trailer die Zertifizierung bestehen, bevor Sie sie im Microsoft Store veröffentlichen können. Achten Sie darauf, dass Ihre Trailer die [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies) einhalten.
+Wie die anderen Felder auf der Seite des Store-Eintrags müssen Trailer die Zertifizierung bestehen, bevor Sie sie im Microsoft Store veröffentlichen können. Achten Sie darauf, dass Ihre Trailer die [Microsoft Store-Richtlinien](store-policies.md) einhalten.
 
 Es gibt weitere Anforderungen je nach Typ der Datei.
 
@@ -223,7 +223,7 @@ Die Bildgröße **2:1 (2400 x 1200)** wird nur verwendet, wenn Ihre App die Holo
 
 Wenn Ihre app zuvor übermittelter frühere Betriebssystemversionen unterstützt (Windows 8.x bzw. Windows Phone 8.x), diese Images müssen angegeben werden, damit wir unsere zu berücksichtigen, mit der Ihre app in Werbe-Layouts (obwohl sie nicht garantieren, dass Ihre app präsentiert werden). Wenn Ihre app diese früheren Betriebssystemversionen nicht unterstützt, überspringen Sie diesen Abschnitt. (Dieser Abschnitt hieß früher **Optionale Werbebilder**.)
 
-**Für Windows Phone 8.1 und früher**zwei Bildgrößen in Werbe-Layouts verwendet werden können: **1000 x 800 Pixel (5:4)** und **358 x 358 Pixel (1:1)**. Wenn Ihre app für Windows Phone 8.1 oder früher ausgeführt wird, wird empfohlen, Bilder in beiden dieser Größen bereitstellen.  
+**Für Windows Phone 8.1 und früher**zwei Bildgrößen in Werbe-Layouts verwendet werden können: **1000 x 800 Pixel (5:4)** und **358 x 358 Pixel (1:1)** . Wenn Ihre app für Windows Phone 8.1 oder früher ausgeführt wird, wird empfohlen, Bilder in beiden dieser Größen bereitstellen.  
 
 > [!TIP]
 > Stellen Sie ein 300 x 300 großes App-Kachelsymbol im Abschnitt [Store-Logos](#store-logos) für alle Übermittlungen bereit, die Windows Phone 8.1 oder früher unterstützen. Dadurch wird sichergestellt, dass Ihre App im Store nicht mit einem leeren Symbol angezeigt wird.  

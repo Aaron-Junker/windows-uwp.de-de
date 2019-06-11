@@ -2,19 +2,19 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Verpacken von UWP-Apps
 description: Um Ihre UWP-App (Universelle Windows-Plattform) zu vertreiben und zu verkaufen, müssen Sie ein App-Paket erstellen.
-ms.date: 03/18/2019
+ms.date: 06/10/2019
 ms.topic: article
 keywords: windows 10, UWP
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: ba1e09a3819b2c22de52760519f352adc36d6362
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 265e034b264cf82bacfa5a32141eb5d999d57108
+ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372374"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66825034"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Verpacken einer UWP-App mit Visual Studio
 
@@ -54,7 +54,7 @@ Die App-Manifestdatei (Package.appxmanifest.xml) ist eine XML-Datei, die über d
 
 Visual Studio verfügt über einen Manifest-Designer, mit dem Sie die Manifestdatei ohne Bearbeitung der XML-Rohdaten der Datei aktualisieren können.
 
-**Konfigurieren eines Pakets mit dem manifest-designer**
+### <a name="configure-a-package-with-the-manifest-designer"></a>Konfigurieren eines Pakets mit dem Manifest-Designer
 
 1.  Erweitern Sie im **Projektmappen-Explorer** den Projektknoten Ihrer UWP-App.
 2.  Doppelklicken Sie auf die Datei **Package.appxmanifest**. Wenn die Manifestdatei bereits in der XML-Codeansicht geöffnet ist, werden Sie von Visual Studio zum Schließen der Datei aufgefordert.
@@ -81,7 +81,7 @@ Um eine app über den Microsoft Store zu verteilen, müssen Sie erstellen ein ap
 >[!NOTE]
 > Wenn Sie ein app-Paket (AppX-Datei oder .msix) oder die app-Bündel (.appxbundle oder .msixbundle) manuell erstellen möchten, finden Sie unter [erstellen Sie ein app-Paket mit dem Tool MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
 
-### <a name="to-create-your-app-package-upload-file-using-visual-studio"></a>Um Ihre app hochladen-Paketdatei mithilfe von Visual Studio zu erstellen.
+### <a name="create-your-app-package-upload-file-using-visual-studio"></a>Erstellen Sie Ihre app hochladen-Paketdatei mithilfe von Visual Studio
 
 1.  Öffnen Sie im **Projektmappen-Explorer** die Projektmappe für Ihr UWP-App-Projekt.
 2.  Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Store**->**App-Pakete erstellen** aus. Wenn diese Option deaktiviert ist oder nicht angezeigt wird, überprüfen Sie, ob es sich beim Projekt um ein Universal Windows-Projekt handelt.  
@@ -100,11 +100,10 @@ Um eine app über den Microsoft Store zu verteilen, müssen Sie erstellen ein ap
     ![Erstellen von App-Pakete im Fenster mit Paketkonfiguration angezeigt](images/packaging-screen5.jpg)
 7.  Enthalten die vollständige PDB-Symboldateien für die [Analysieren der Leistung der app](https://docs.microsoft.com/windows/uwp/publish/analytics) von Partner Center, nachdem Ihre app veröffentlicht wurde. Konfigurieren Sie zusätzliche Details wie die Versionsnummer oder den Ausgabespeicherort des Pakets.
 8.  Klicken Sie zum Erstellen des App-Pakets auf **Erstellen**. Bei Auswahl eines der **ich möchte Pakete zum Hochladen in den Microsoft Store erstellen** Optionen in Schritt 3 und ein Paket für die Partner Center-Übermittlung erstellen, die vom Assistenten wird eine Paket Hochladen (.appxupload oder .msixupload)-Datei erstellt. Wenn Sie ausgewählt haben **ich möchte Pakete für das querladen erstellen** in Schritt 3 der Assistent entweder ein einzelnes app-Paket oder ein app-Bundle basierend auf Ihrer Auswahl in Schritt 6 erstellt.
-9. Wenn Ihre app erfolgreich paketiert wurden, wird dieses Dialogfeld wird angezeigt und können Sie Ihre app-Paketdatei hochladen aus am angegebenen Speicherort abrufen. An diesem Punkt können Sie [Überprüfen des app-Pakets auf dem lokalen Computer oder einem Remotecomputer](#validate-your-app-package) und [automatisieren die Einreichung beim Store](#automate-store-submission).
+9. Wenn Ihre app erfolgreich paketiert wurden, wird dieses Dialogfeld wird angezeigt und können Sie Ihre app-Paketdatei hochladen aus am angegebenen Speicherort abrufen. An diesem Punkt können Sie [Überprüfen des app-Pakets auf dem lokalen Computer oder einem Remotecomputer](#validate-your-app-package) und [Automatisieren von Store-Übermittlungen](#automate-store-submissions).
     ![Paketerstellung abgeschlossen Fenster mit den Optionen für die abonnementüberprüfung angezeigt](images/packaging-screen6.jpg)
 
-
-### <a name="to-create-your-app-package-upload-file-manually"></a>So erstellen Sie manuell die app-Paketdatei hochladen
+### <a name="create-your-app-package-upload-file-manually"></a>Erstellen Sie manuell die app-Paketdatei hochladen
 
 1. Speichern Sie die folgenden Dateien in einem Ordner:
     - Eine oder mehrere app-Pakete (.msix oder AppX-Datei) oder ein app-Bündel (.msixbundle oder .appxbundle).
@@ -112,46 +111,74 @@ Um eine app über den Microsoft Store zu verteilen, müssen Sie erstellen ein ap
 2. Zippen Sie den Ordner an.
 3. Der Name der Erweiterung ZIP-Ordner von ZIP .msixupload oder .appxupload zu ändern.
 
-### <a name="validate-your-app-package"></a>Überprüfen des app-Pakets
+## <a name="validate-your-app-package"></a>Überprüfen des app-Pakets
 
 Überprüfen Sie Ihre app, bevor Sie sie zum Partner Center für die Zertifizierung auf einem Computer lokal oder remote übermitteln. Versionsbuilds können nur für Ihr App-Paket, nicht aber für Debugbuilds überprüft werden. Weitere Informationen zum Übermitteln Ihrer app an den Partner Center, finden Sie unter [Übermittlung von Apps](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
-**Um Ihre app-Paket lokal überprüfen**
+### <a name="validate-your-app-package-locally"></a>Überprüfen Sie Ihre app-Paket lokal
 
 1. In der endgültigen **Paketerstellung abgeschlossen** auf der Seite die **App-Pakete erstellen** Assistenten lassen die **lokalen Computer** Option ausgewählt ist, und klicken Sie auf **starten Windows-Zertifizierungskit für Apps**. Weitere Informationen zum Testen der App mit dem Zertifizierungskit für Windows-Apps finden Sie unter [Zertifizierungskit für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
 
-    Das Zertifizierungskit für Windows-Apps führt die verschiedene Tests aus und gibt die Ergebnisse zurück. Weitere Informationen finden Sie unter [Tests des Zertifizierungskits für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
+    Die Gruppenrichtlinien-Verwaltungskonsole (Windows App Certification Kit, WACK) führt verschiedene Tests und die Ergebnisse zurückgibt. Weitere Informationen finden Sie unter [Tests des Zertifizierungskits für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
 
     Wenn Sie ein Windows 10-Remotegerät, die Sie zum Testen verwenden möchten haben, müssen Sie die Windows-Zertifizierungskit für Apps auf diesem Gerät manuell zu installieren. Im nächsten Abschnitt werden die erforderlichen Schritte beschrieben. Nachdem Sie damit fertig sind, wählen Sie **Remotecomputer** und klicken auf **Zertifizierungskit für Windows-Apps starten**, um eine Verbindung zum Remotegerät herzustellen und die Überprüfungen ausführen.
 
 2. Nach dem WACK abgeschlossen wurde, und Ihre app verfügt über Zertifizierungen übergeben, können Sie Ihre app zum Partner Center zu übermitteln. Stellen Sie sicher, dass Sie die richtige Datei hochladen. Der Standardspeicherort der Datei finden Sie im Stammordner Ihrer Lösung `\[AppName]\AppPackages` und endet er mit der Dateierweiterung .appxupload oder .msixupload. Der Name des Formulars werden `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` oder `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` Wenn Sie für ein app-Bundle mit allen der ausgewählten Paketarchitektur entschieden haben.
 
-**Zum Überprüfen des app-Pakets auf einem Windows 10-Remotegerät**
+### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>Überprüfen des app-Pakets auf einem Windows 10-Remotegerät
 
-1.  Aktivieren Sie Ihr Windows 10-Gerät für die Entwicklung anhand der [Aktivieren von Geräten für die Entwicklung](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) Anweisungen.
+1. Aktivieren Sie Ihr Windows 10-Gerät für die Entwicklung anhand der [Aktivieren von Geräten für die Entwicklung](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) Anweisungen.
     >[!IMPORTANT]
     > Sie können keine app-Paket auf einem ARM-Remotegerät für Windows 10 überprüfen.
-2.  Laden Sie die Remotetools für Visual Studio herunter, und installieren Sie sie. Diese Tools werden verwendet, um das Zertifizierungskit für Windows-Apps remote auszuführen. Weitere Informationen zu diesen Tools einschließlich der Downloadseite finden Sie unter [Ausführen von UWP-Apps auf einem Remotecomputer](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
-3.  Laden Sie die erforderlichen [Windows App Certification Kit](https://go.microsoft.com/fwlink/p/?LinkID=309666) und installieren Sie es auf dem Windows 10-Remotegerät.
-4.  Aktivieren Sie auf der Seite **Paketerstellung abgeschlossen** des Assistenten das Optionsfeld **Remotecomputer**. Klicken Sie anschließend neben der Schaltfläche **Testverbindung** auf die Schaltfläche mit den Auslassungszeichen.
+2. Laden Sie die Remotetools für Visual Studio herunter, und installieren Sie sie. Diese Tools werden verwendet, um das Zertifizierungskit für Windows-Apps remote auszuführen. Weitere Informationen zu diesen Tools einschließlich der Downloadseite finden Sie unter [Ausführen von UWP-Apps auf einem Remotecomputer](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
+3. Laden Sie die erforderlichen [Windows App Certification Kit](https://go.microsoft.com/fwlink/p/?LinkID=309666) und installieren Sie es auf dem Windows 10-Remotegerät.
+4. Aktivieren Sie auf der Seite **Paketerstellung abgeschlossen** des Assistenten das Optionsfeld **Remotecomputer**. Klicken Sie anschließend neben der Schaltfläche **Testverbindung** auf die Schaltfläche mit den Auslassungszeichen.
     >[!NOTE]
     > Die **Remotecomputer** Optionsfeld ist nur verfügbar, wenn Sie mindestens eine Projektmappenkonfiguration ausgewählt haben, die die Validierung unterstützt. Weitere Informationen zum Testen der App mit dem WACK finden Sie unter [Zertifizierungskit für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
-5.  Geben Sie ein Gerät vom Subnetz aus an, oder geben Sie den DNS-Namen (Domain Name Server) oder die IP-Adresse eines Geräts an, das sich außerhalb des Subnetzes befindet.
-6.  Wählen Sie in der Liste **Authentifizierungsmodus** die Option **Keiner** aus, wenn Ihr Gerät keine Anmeldung mittels Windows-Anmeldeinformationen erfordert.
-7.  Klicken Sie auf die Schaltfläche **Auswählen** und anschließend auf die Schaltfläche **Zertifizierungskit für Windows-Apps starten**. Wenn die Remotetools auf diesem Gerät ausgeführt werden, stellt Visual Studio eine Verbindung mit dem Gerät her und führt die Überprüfungstests aus. Weitere Informationen finden Sie unter [Tests im Zertifizierungskit für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
+5. Geben Sie ein Gerät vom Subnetz aus an, oder geben Sie den DNS-Namen (Domain Name Server) oder die IP-Adresse eines Geräts an, das sich außerhalb des Subnetzes befindet.
+6. Wählen Sie in der Liste **Authentifizierungsmodus** die Option **Keiner** aus, wenn Ihr Gerät keine Anmeldung mittels Windows-Anmeldeinformationen erfordert.
+7. Klicken Sie auf die Schaltfläche **Auswählen** und anschließend auf die Schaltfläche **Zertifizierungskit für Windows-Apps starten**. Wenn die Remotetools auf diesem Gerät ausgeführt werden, stellt Visual Studio eine Verbindung mit dem Gerät her und führt die Überprüfungstests aus. Weitere Informationen finden Sie unter [Tests im Zertifizierungskit für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
 
-### <a name="automate-store-submission"></a>Automatisieren Sie die Einreichung beim store
+## <a name="automate-store-submissions"></a>Automatisieren von Store-Übermittlungen
 
-Ab Visual Studio-2019, Sie können übermitteln die generierte appxupload-Datei auf dem Microsoft Store direkt aus der IDE durch Auswahl der **automatisch an den Microsoft Store übermitteln, nach der Überprüfung der Windows-Zertifizierungskit für Apps** -Option. Sie müssen die Anmeldeinformationen für die Übermittlung angeben. Diese Anmeldeinformationen bestehen aus drei Teilen: der **Azure-Mandanten-ID**, **Client-ID** und **clientgeheimnis**. Um diese zu erhalten, gehen Sie wie folgt vor:
+Ab Visual Studio-2019, Sie können übermitteln die generierte appxupload-Datei auf dem Microsoft Store direkt aus der IDE durch Auswahl der **automatisch an den Microsoft Store übermitteln, nach der Überprüfung der Windows-Zertifizierungskit für Apps** Option am Ende der [App-Pakete erstellen-Assistenten](#create-your-app-package-upload-file-using-visual-studio). Dieses Feature nutzt Azure Active Directory für den Zugriff auf die Partner Center-Kontoinformationen, die zum Veröffentlichen Ihrer app erforderlich sind. Um dieses Feature verwenden zu können, müssen Sie Azure Active Directory mit Ihrem Partner Center-Konto zuordnen und beim Abrufen der mehrere Anmeldeinformationen für die Übermittlung von Apps erforderlich sind.
 
-1. Navigieren Sie im Partner Center zu Ihrer **Developer-Einstellungen**, klicken Sie auf **Benutzer**, und ordnen Sie Dev Center-Konto Ihres Unternehmens mit Azure AD-Verzeichnis Ihrer Organisation. Ausführliche Anweisungen finden Sie unter [Verwalten von Kontobenutzern](https://docs.microsoft.com/windows/uwp/publish/manage-account-users).
-2. In der **Benutzer** auf **Hinzufügen von Azure AD-Anwendungen**, Hinzufügen von Azure AD-Anwendung, die die app darstellt, oder Diensts, die Sie verwenden, um Zugriff auf die Übermittlung von Apps für Ihr Developer Center-Konto, und weisen sie die Rolle "Manager". Wenn diese Anwendung bereits in Ihrem Azure AD-Verzeichnis vorhanden ist, können Sie es auf der Seite der hinzufügen-Azure AD-Anwendungen auf Ihr Dev Center-Konto hinzufügen auswählen. Andernfalls können Sie eine neue Azure AD-Anwendung auf der Seite **Azure AD-Apps hinzufügen** erstellen. Weitere Informationen finden Sie unter [Hinzufügen von Benutzern, Gruppen und Azure AD-Anwendungen mit Ihrem Partner Center-Konto](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
-3. Wechseln Sie zurück zur der **Verwalten von Benutzern** auf den Namen der Azure AD-Anwendung wechseln Sie zu den Anwendungseinstellungen, und kopieren die **Mandanten-ID** und **Client-ID** Werte.
-4. Klicken Sie auf **Neuen Schlüssel hinzufügen**. Kopieren Sie den Schlüssel-Wert, der den geheimen Clientschlüssel entspricht, auf dem folgenden Bildschirm. Sie werden nicht in der Lage, diese Informationen erneut zugegriffen wird, nach dem Verlassen dieser Seite stellen Sie daher Sie sicher, dass sie nicht verloren gehen. Weitere Informationen finden Sie die Informationen zum Verwalten von Schlüsseln in [Hinzufügen von Benutzern, Gruppen und Azure AD-Anwendungen mit Ihrem Partner Center-Konto](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
-    ![Überprüfen Sie, und Status der Veröffentlichung](images/packaging-screen8.jpg)
-    > [!Important] 
+### <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Zuordnen von Azure Active Directory mit Ihrem Partner Center-Konto
+
+Bevor Sie die Anmeldeinformationen, die für die automatische Übermittlung von Store-Apps erforderlich sind abrufen können, Sie müssen zunächst folgende Schritte in der [Partner Center-Dashboard](https://partner.microsoft.com/dashboard) , wenn Sie nicht bereits getan haben.
+
+1. [Weisen Sie Ihr Partner Center-Konto in Ihrer Organisation Azure Active Directory](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center). Wenn in Ihrer Organisation bereits mit Office 365 oder anderen Unternehmensdiensten von Microsoft gearbeitet wird, verfügen Sie bereits über Azure AD. Andernfalls können Sie ein neues erstellen Azure AD-Mandanten aus in Partner Center ohne zusätzliche Kosten.
+
+2. [Hinzufügen einer Azure AD-Anwendung an den Partner Center-Konto](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account). Dieses Azure AD-Anwendung stellt dar, die app oder Ihres Diensts, die Sie verwenden, um die Übermittlung von Apps für Ihr Developer Center-Konto zugreifen. Sie müssen diese Anwendung zuweisen der **Manager** Rolle. Wenn diese Anwendung bereits in Ihrem Azure AD-Verzeichnis vorhanden ist, können Sie sie auf der Seite **Azure AD-Apps hinzufügen** auswählen, um sie Ihrem Dev Center-Konto hinzuzufügen. Andernfalls können Sie eine neue Azure AD-Anwendung auf der Seite **Azure AD-Apps hinzufügen** erstellen.
+
+### <a name="retrieve-the-credentials-required-for-submissions"></a>Rufen Sie die Anmeldeinformationen für die Übermittlung von Apps erforderlich sind
+
+Als Nächstes können Sie abrufen, die Partner Center-Anmeldeinformationen, die für die Übermittlung von Apps erforderlich sind: die **Azure-Mandanten-ID**, **Client-ID** und **Clientschlüssel**.
+
+1. Wechseln Sie zu der [Partner Center-Dashboard](https://partner.microsoft.com/dashboard) und melden Sie sich mit Ihren Azure AD-Anmeldeinformationen.
+
+2. Wählen Sie im Partner Center-Dashboard das Zahnradsymbol (in der Nähe der oberen rechten Ecke des Dashboards), und wählen Sie dann **entwicklereinstellungen**.
+
+3. In der **Einstellungen** im linken Bereich, klicken Sie anschließend auf **Benutzer**.
+
+4. Klicken Sie auf den Namen der Azure AD-Anwendung, um die Einstellungen der Anwendung aufzurufen. Kopieren Sie auf dieser Seite die **Mandanten-ID** und **Client-ID** Werte.
+
+5. In der **Schlüssel** auf **Hinzufügen neuer Schlüssel**. Kopieren Sie auf dem nächsten Bildschirm die **Schlüssel** -Wert, der den geheimen Clientschlüssel entspricht. Sie werden nicht in der Lage, diese Informationen erneut zugegriffen wird, nach dem Verlassen dieser Seite stellen Sie daher Sie sicher, dass sie nicht verloren gehen. Weitere Informationen finden Sie unter [Verwalten von Schlüsseln für eine Azure AD-App](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application).
+
+### <a name="configure-automatic-store-submissions-in-visual-studio"></a>Konfigurieren Sie automatische Übermittlung von Store-Apps in Visual Studio
+
+Nachdem Sie die vorherigen Schritte abgeschlossen haben, können Sie die automatische Übermittlung von Store-Apps in Visual Studio-2019 konfigurieren.
+
+1. Am Ende der [App-Pakete erstellen-Assistenten](#create-your-app-package-upload-file-using-visual-studio)Option **automatisch an den Microsoft Store übermitteln, nach der Überprüfung der Windows-Zertifizierungskit für Apps** , und klicken Sie auf **Reconfigure**.
+
+2. In der **Einstellungen für Microsoft Store-Übermittlung konfigurieren** Dialogfeld Geben Sie den Azure-Mandanten-ID, Client-ID und Client-Schlüssel.
+
+    ![Konfigurieren von Einstellungen für Microsoft Store-Übermittlung](images/packaging-screen8.jpg)
+
+    > [!Important]
     > Ihre Anmeldeinformationen können auf Ihr Profil in spätere Übermittlungen zu verwendende gespeichert werden
-5. Klicken Sie auf **OK**.
+
+3. Klicken Sie auf **OK**.
 
 Die Übermittlung wird gestartet, nachdem der Test WACK haben. Sie können den Fortschritt der Übermittlung im Nachverfolgen der **überprüfen und veröffentlichen** Fenster.
 

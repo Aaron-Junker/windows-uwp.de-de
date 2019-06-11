@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eb5a03a2a6de8624e8b414fa31c6eec51c04bbc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b34f88d198ec80c67e5aac7b57001e42fe5c516
+ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364892"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66825020"
 ---
 # <a name="inking-controls"></a>Steuerelemente für Freihandeingaben
 
@@ -84,7 +84,7 @@ Zum Hinzufügen eines InkCanvas-Steuerelements zu Ihrer App ist nur eine Markupz
 ```
 
 > [!NOTE]
-> Ausführliche Informationen zur Anpassung von „InkCanvas” mit „InkPresenter” finden Sie im Artikel [Zeichen- und Eingabestiftinteraktionen in UWP-Apps](https://windowsstyleguide/input/pen-and-stylus-interactions/).
+> Ausführliche InkCanvas-Anpassung InkPresenter verwenden, finden Sie unter den ["Pen Interaktionen und Windows Ink in UWP-apps"](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) Artikel.
 
 Das InkToolbar-Steuerelement muss in Verbindung mit einem InkCanvas-Steuerelement verwendet werden. Zum Einbinden eines InkToolbar-Steuerelements (mit allen integrierten Tools) in Ihre App ist nur eine zusätzliche Markupzeile erforderlich:
 
@@ -170,6 +170,6 @@ Der Radierer verfügt ebenfalls über ein Flyout mit dem Befehl **Freihand volls
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Stift- und Stift Interaktionen in UWP-apps](https://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [Erkennen von Freihandeingabestrichen](https://windowsstyleguide/input/convert-ink-to-text/)
-- [Store und Abrufen von Freihandeingabestrichen](https://windowsstyleguide/input/save-and-load-ink/)
+- [Stiftinteraktionen und Windows Ink in UWP-apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Erkennen von Windows Freihandstriche als Text und Formen](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
+- [Store und Windows Ink-Stroke-Daten abzurufen](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)

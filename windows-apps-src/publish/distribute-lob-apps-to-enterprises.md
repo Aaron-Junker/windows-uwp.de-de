@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, LOB, Branche, Unternehmens-Apps, Store für Unternehmen, Store für Bildungseinrichtungen, Enterprise
 ms.localizationpriority: medium
-ms.openlocfilehash: b379762ba3d3ea11b974a84119280247b85bc19e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d44d2b248ddc2bff6ffa91860621fe315fb22c47
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787073"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826149"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Verteilen von branchenspezifischen Apps an Unternehmen
 
@@ -39,7 +39,7 @@ Um die Zuordnung zu bestätigen, klicken Sie auf **Akzeptieren**. Über Ihr Kont
 
 ## <a name="submit-lob-apps"></a>Branchenspezifische Apps übermitteln
 
-Wenn Sie eine App für die exklusive Nutzung durch ein Unternehmen veröffentlichen möchten, ist das Verfahren vergleichbar mit dem Übermitteln von anderen Apps. Die App durchläuft den gleichen [Zertifizierungsprozess](the-app-certification-process.md) und muss allen [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies). entsprechen. Dieser Prozess weicht nur bei einigen wenigen Schritten ab.
+Wenn Sie eine App für die exklusive Nutzung durch ein Unternehmen veröffentlichen möchten, ist das Verfahren vergleichbar mit dem Übermitteln von anderen Apps. Die App durchläuft den gleichen [Zertifizierungsprozess](the-app-certification-process.md) und muss allen [Microsoft Store-Richtlinien](store-policies.md). entsprechen. Dieser Prozess weicht nur bei einigen wenigen Schritten ab.
 
 
 ### <a name="visibility"></a>Sichtbarkeit

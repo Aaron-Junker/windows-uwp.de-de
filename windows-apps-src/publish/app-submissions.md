@@ -6,12 +6,12 @@ keywords: Prüfliste, Windows, UWP, Übermittlung, übermitteln, Spiel, App, üb
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b98ea7f1d28c4fcd63cd2d4706905578b240e126
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 24d3c99636009ebf65f3e24d39d657297b105150
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643285"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826119"
 ---
 # <a name="app-submissions"></a>App-Übermittlungen
 
@@ -38,7 +38,7 @@ Hier finden Sie eine Liste mit den Informationen, die Sie beim Erstellen Ihrer A
 Die erforderlichen Elemente sind im Folgenden aufgeführt. Einige Bereiche sind optional oder verfügen über Standardwerte, die Sie nach Bedarf ändern können. Sie müssen nicht auf diese Bereiche in der Reihenfolge, die hier aufgeführten arbeiten.
 
 ### <a name="pricing-and-availability-page"></a>Seite „Preise und Verfügbarkeit“
-| Name des Felds                    | Anmerkungen                                       | Weitere Informationen                                                             |
+| Name des Felds                    | Hinweise                                       | Weitere Informationen                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Märkte**                   | Standardwert: Alle möglichen Märkte  | [Preise und Markt Auswahl definieren](define-pricing-and-market-selection.md)         |
 | **Zielgruppe**                | Standardwert: Öffentliche Zielgruppe | [Zielgruppe](choose-visibility-options.md#audience) |
@@ -53,10 +53,10 @@ Die erforderlichen Elemente sind im Folgenden aufgeführt. Einige Bereiche sind 
 
 ### <a name="properties-page"></a>Seite „Eigenschaften“
 
-| Name des Felds                    | Anmerkungen                                       | Weitere Informationen                                                             |
+| Name des Felds                    | Hinweise                                       | Weitere Informationen                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Kategorie und Unterkategorie**  | Erforderlich                                    | [Category und Subcategory-Tabelle](category-and-subcategory-table.md)       |
-| **Eine Datenschutzrichtlinie-URL**            | Für viele Apps erforderlich. Weitere Informationen finden Sie in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) und den [Microsoft Store-Richtlinien](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information). | [Eine Datenschutzrichtlinie-URL](enter-app-properties.md#privacy-policy-url)        |
+| **Eine Datenschutzrichtlinie-URL**            | Für viele Apps erforderlich. Weitere Informationen finden Sie in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) und den [Microsoft Store-Richtlinien](store-policies.md#105-personal-information). | [Eine Datenschutzrichtlinie-URL](enter-app-properties.md#privacy-policy-url)        |
 | **Website**                   | Optional                                    | [Website](enter-app-properties.md#website)                   |
 | **Kontaktinformationen für Support**      | Erforderlich, wenn Ihr Produkt auf Xbox verfügbar ist. Andernfalls optional (empfohlen)                                   | [Kontaktinformationen für Support](enter-app-properties.md#support-contact-info)              |
 | **Spiele-Einstellungen**             | Optional (gilt nur für Spiele)         | [Spiele-Einstellungen](enter-app-properties.md#game-settings) |
@@ -68,7 +68,7 @@ Die erforderlichen Elemente sind im Folgenden aufgeführt. Einige Bereiche sind 
 
 ### <a name="age-ratings-page"></a>Seite „Altersfreigaben“
 
-| Name des Felds                    | Anmerkungen                                       | Weitere Informationen                          |
+| Name des Felds                    | Hinweise                                       | Weitere Informationen                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
 | **Altersfreigaben**               | Erforderlich                                    | [Altersfreigaben](age-ratings.md)          |
 
@@ -76,7 +76,7 @@ Die erforderlichen Elemente sind im Folgenden aufgeführt. Einige Bereiche sind 
 
 ### <a name="packages-page"></a>Seite „Pakete“
 
-| Name des Felds                    | Anmerkungen                                  | Weitere Informationen                          |
+| Name des Felds                    | Hinweise                                  | Weitere Informationen                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
 | **Steuerelement zum Paket hochladen**    | Erforderlich (mindestens ein Paket)        | [App-Pakete hochladen](upload-app-packages.md) |
 | **Familie geräteverfügbarkeit** | Standard: basierend auf Ihren Paketen       | [Familie geräteverfügbarkeit](device-family-availability.md) |
@@ -88,7 +88,7 @@ Die erforderlichen Elemente sind im Folgenden aufgeführt. Einige Bereiche sind 
 
 Sie benötigen alle erforderlichen Informationen für mindestens eine der von Ihrer App unterstützten Sprachen. Wir empfehlen Ihnen, [Store-Einträge](create-app-store-listings.md) in allen Sprachen anzugeben, die von der App unterstützt werden. Außerdem können Sie [Store-Einträge in weiteren Sprachen angeben](create-app-store-listings.md#store-listing-languages). Um die Verwaltung mehrerer Einträge für das gleiche Produkt zu erleichtern, können Sie [Store-Einträge importieren und exportieren](import-and-export-store-listings.md).
 
-| Name des Felds                    | Anmerkungen                                       | Weitere Informationen                                                     |
+| Name des Felds                    | Hinweise                                       | Weitere Informationen                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Beschreibung**               | Erforderlich                                    | [Geben Sie eine tolle app-Beschreibung](write-a-great-app-description.md) |
 | **Was ist neu in dieser version**   | Optional                                 | [Anmerkungen zu dieser Version](create-app-store-listings.md#whats-new-in-this-version)       |
@@ -97,9 +97,9 @@ Sie benötigen alle erforderlichen Informationen für mindestens eine der von Ih
 | **Store-logos**               | Empfohlen. Ist für bestimmte Betriebssystemversionen erforderlich | [Store-logos](app-screenshots-and-images.md#store-logos)             |
 | **Nachspänne**                  | Optional                                    | [Nachspänne](app-screenshots-and-images.md#trailers)                | 
 | **Windows 10 und Xbox-Bild (16:9 Superheld Grafiken)**     | Empfohlen        | [Windows 10 und Xbox Bild (16:9 Superheld Grafiken)
-] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Xbox-images**     | Für die ordnungsgemäße Anzeige erforderlich, wenn Sie Xbox veröffentlichen        | [Xbox-images
-] (app-Screenshots-und-images.md #Xbox-Images) |
+](app-screenshots-and-images.md#xbox-images) |
 | **Zusätzliche Felder**  | Optional                                    | [Zusätzliche Felder](create-app-store-listings.md#supplemental-fields) 
 | **Suchbegriffe**              | Optional                                    | [Suchbegriffe](create-app-store-listings.md#search-terms)         |
 | **Copyright- und markenbestimmungen-Informationen** | Optional                                 | [Copyright- und markenbestimmungen-Informationen](create-app-store-listings.md#copyright-and-trademark-info) |
@@ -111,7 +111,7 @@ Sie benötigen alle erforderlichen Informationen für mindestens eine der von Ih
 
 ### <a name="submission-options-page"></a>Seite für die Übermittlungsoptionen
 
-| Name des Felds                    | Anmerkungen                                       | Weitere Informationen                                                     |
+| Name des Felds                    | Hinweise                                       | Weitere Informationen                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Optionen für die Veröffentlichung halten**     | Standardwert: Veröffentlichen Sie diese Übermittlung, sobald die Zertifizierungsstelle übergibt (oder mehrere Daten, die Sie im Abschnitt Zeitplan ausgewählt)      | [Optionen für die Veröffentlichung halten](manage-submission-options.md#publishing-hold-options)    
 | **Anmerkungen zu dieser Version für die Zertifizierung**     | Empfohlen          | [Anmerkungen zu dieser Version für die Zertifizierung](notes-for-certification.md)             |

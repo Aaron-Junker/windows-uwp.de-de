@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bab1d6bd629aa85351e28a907d4b5ad705fb377
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 47011a22353f26361a392690d857bde1fc180c03
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788363"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826106"
 ---
 # <a name="product-declarations"></a>Produktdeklarationen
 
@@ -21,7 +21,7 @@ In den folgenden Abschnitten werden einige der Deklarationen und berücksichtige
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>Diese app ermöglicht es Benutzern, um Einkäufe zu tätigen, aber das Commerce-System von Microsoft Store nicht verwendet.
 
-Für fast jeden müssen sollten Sie dieses Kontrollkästchen deaktiviert lassen, seit apps, die Möglichkeiten zum Kauf anbieten Elemente, die sind oder verarbeitet oder verwendet werden können in Ihrer app die in app-Käufe von Microsoft Store-API zum Erstellen und übermitteln die Add-Ons. Pro dem [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), apps, die erstellt und übermittelt vor dem 29. Juni 2015 wurden können weiterhin in-app-Kauf-Funktionalität zu bieten, ohne müssen jedoch mithilfe der Microsoft e-Commerce-, den Kauf-Funktion entspricht der [Microsoft Store Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions). Wenn dies auf Ihre App zutrifft, müssen Sie dieses Kontrollkästchen aktivieren. Lassen Sie das Kontrollkästchen andernfalls deaktiviert.
+Für fast jeden müssen sollten Sie dieses Kontrollkästchen deaktiviert lassen, seit apps, die Möglichkeiten zum Kauf anbieten Elemente, die sind oder verarbeitet oder verwendet werden können in Ihrer app die in app-Käufe von Microsoft Store-API zum Erstellen und übermitteln die Add-Ons. Pro dem [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), apps, die erstellt und übermittelt vor dem 29. Juni 2015 wurden können weiterhin in-app-Kauf-Funktionalität zu bieten, ohne müssen jedoch mithilfe der Microsoft e-Commerce-, den Kauf-Funktion entspricht der [Microsoft Store Richtlinien](store-policies.md#108-financial-transactions). Wenn dies auf Ihre App zutrifft, müssen Sie dieses Kontrollkästchen aktivieren. Lassen Sie das Kontrollkästchen andernfalls deaktiviert.
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>Diese App wurde auf Einhaltung der Richtlinien zur Barrierefreiheit getestet.
 
