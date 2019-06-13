@@ -342,7 +342,7 @@ Eine Alternative zum Schreiben eigener Spielemodule mithilfe der Windows-APIs f�
 -   Grafikengine – Grafikengines umfassen Windows 10-Grafik-APIs, verwalten Grafikressourcen und unterstützen zahlreiche Modell- und Weltformate.
 -   Audioengine – Audioengines umfassen Windows 10-Audio-APIs, verwalten Audioressourcen und stellen erweiterte Audiowiedergabe und -Effekte bereit.
 -   Netzwerkengine – Netzwerkengines umfassen Windows 10-Netzwerk-APIs zum Hinzufügen von Peer-zu-Peer- oder serverbasierter Multiplayerunterstützung zu Ihrem Spiel und enthalten ggf. erweiterte Netzwerkfunktionalität zur Unterstützung einer großen Anzahl von Spielern.
--   Engine für künstliche Intelligenz und Pfadsuche – Engines für künstliche Intelligenz und Pfadsuche stellen ein Framework zur Steuerung des Agentverhaltens in einem Spiel bereit.
+-   Engine für KI und Pfadsuche – Engines für KI und Pfadsuche stellen ein Framework zur Steuerung des Agentverhaltens in einem Spiel bereit.
 -   Engines für besondere Zwecke – Es stehen unterschiedliche weitere Engines zur Bewältigung von nahezu allen möglichen Spielentwicklungsaufgaben zur Verfügung, z. B. Erstellen von Inventarsystemen und Dialogstrukturen.
 
 ## <a name="submitting-a-game-to-the-store"></a>Übermitteln eines Spiels an den Store
