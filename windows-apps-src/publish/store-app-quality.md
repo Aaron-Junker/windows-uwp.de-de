@@ -8,10 +8,10 @@ keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
 ms.openlocfilehash: 550ffeac8912769fc7e319d819f4de67f6d36cf1
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826417"
 ---
 # <a name="app-quality"></a>App-Qualität
@@ -86,7 +86,7 @@ Kunden wissen es zu schätzen, wenn Sie auf ihr Feedback und ihre Anforderungen 
 - Weitere Informationen finden Sie unter [Kundenkontakt intensivieren](https://developer.microsoft.com/store/engage).
 
 
-### <a name="see-also"></a>Siehe auch
+### <a name="see-also"></a>Weitere Informationen
 
 - [Richtlinien und Verhaltensregeln für den Microsoft Store](store-policies-and-code-of-conduct.md)
 - [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

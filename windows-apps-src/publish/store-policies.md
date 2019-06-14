@@ -8,10 +8,10 @@ keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ms.openlocfilehash: 3511fb221e1e087f7ced5ce11aca8d53bd027079
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826477"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
@@ -467,7 +467,7 @@ Wenn Ihr Produkt Inhalte (z. B. von Benutzern erstellte Inhalte, Verkaufsinhalt
 ---
 <sup>1</sup>„Store“ oder „Microsoft Store“ bezeichnet unabhängig vom Namen eine im Besitz von Microsoft befindliche und von Microsoft betriebene Plattform, über die Apps für Kunden angeboten und von diesen erworben werden können. Sofern nicht anders angegeben, umfasst der Begriff Store den Microsoft Store, den Windows Store, den Xbox-Store, den Microsoft Store für Unternehmen und den Microsoft Store für Bildungseinrichtungen.
 
-### <a name="see-also"></a>Siehe auch
+### <a name="see-also"></a>Weitere Informationen
 
 - [Änderungsverlauf für Microsoft Store-Richtlinien](store-policies-change-history.md)
 - [Richtlinien und Verhaltensregeln für den Microsoft Store](store-policies-and-code-of-conduct.md)

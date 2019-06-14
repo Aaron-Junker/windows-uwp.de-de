@@ -8,10 +8,10 @@ keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: 2B84B877-794A-468F-A478-DA09E4694513
 ms.openlocfilehash: a9e96431594cf1a046741659011e546807294f7a
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826447"
 ---
 # <a name="developer-code-of-conduct"></a>Verhaltensregeln für Entwickler
@@ -34,7 +34,7 @@ Sie sind verpflichtet, Ihr Store-Entwicklerkonto einwandfrei zu führen. Dies um
 Sie dürfen im Store oder Partner Center keine betrügerischen oder unlauteren Geschäfte tätigen. Dies bezieht sich auch auf, wenn auch nicht beschränkt auf den Versuch, die Rangliste sowie Suchergebnisse, Bewertungen oder Prüfungen für Ihre App oder irgendeine andere App zu manipulieren; die Beeinträchtigung der Nutzung des Store-Dienstes (oder von damit verbundenen und von Microsoft angebotenen Diensten) durch irgendeine Drittpartei; den Versuch jeglichen Finanzbetrugs (einschließlich, aber nicht beschränkt auf den Betrug hinsichtlich Anzeigenimpressionen oder Klicks); die Beteiligung an betrügerischen Aktivitäten bezüglich Werbeinventar und -anzeigen in Ihrer Anwendung; oder den Erwerb bzw. Versuch des Erwerbs des unerlaubten Zugriffs auf persönliche Daten, ob direkt oder indirekt, sowie die Verwendung solcher Daten.
 
 
-### <a name="see-also"></a>Siehe auch
+### <a name="see-also"></a>Weitere Informationen
 
 - [Richtlinien und Verhaltensregeln für den Microsoft Store](store-policies-and-code-of-conduct.md)
 - [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
