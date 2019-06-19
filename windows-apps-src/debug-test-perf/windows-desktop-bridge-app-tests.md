@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, Uwp, app-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f979edbd49699447040880964dd1378bc7c94c0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 38c9a40dbe1a46aa125c76cd1fcc88a84685c8cc
+ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362074"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67235169"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests für Windows Desktop Bridge-Apps
 
@@ -30,7 +30,7 @@ Dieser Test stellt sicher, dass alle portierbaren ausführbaren Dateien (PE-Date
 Der Test überprüft alle portierbaren ausführbaren Dateien im Paket und überprüft die Kopfzeilen auf eine Signatur. Alle PE-Dateien sollten digital signiert werden. Eine Warnung wird generiert, wenn PE-Dateien nicht signiert sind.
  
 **Korrekturmaßnahmen**  
-Digital signierte Dateien werden immer empfohlen. Weitere Informationen finden Sie unter [Einführung in die Codesignatur](https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx).
+Digital signierte Dateien werden immer empfohlen. Weitere Informationen finden Sie unter [Einführung in die Codesignatur](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)).
 
 ### <a name="2-file-association-verbs"></a>2. Verben für Datei-Zuordnung 
 **Hintergrund**  
