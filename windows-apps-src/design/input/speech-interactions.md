@@ -8,12 +8,12 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb292ad5cba892275709fbc89d5d53fa136144f3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ef8cdad247a57ce5fab461e70c2725fda4231efd
+ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365300"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67253064"
 ---
 # <a name="speech-interactions"></a>Spracherkennungsinteraktionen
 
@@ -58,7 +58,7 @@ Beenden Sie die Erkennung, wenn eine Eingabe von einem anderen Gerät als der Sp
 
 Legen Sie die Dauer fest, nach der das Ausbleiben einer Spracheingabe als Beendigung der Spracherkennung interpretiert wird. Starten Sie die Erkennung nach dieser Dauer nicht automatisch neu. Meist weist das Ausbleiben einer Spracheingabe darauf hin, dass der Benutzer die Interaktion mit Ihrer App beendet hat.
 
-Deaktivieren Sie die gesamte fortlaufende Erkennungs-UI, und beenden Sie die Erkennungssitzung, wenn keine Netzwerkverbindung verfügbar ist. Die fortlaufende Erkennung erfordert eine Netzwerkverbindung.
+Deaktivieren Sie die gesamte fortlaufende Erkennungs-UI, und beenden Sie die Erkennungssitzung, wenn keine Netzwerkverbindung verfügbar ist. Kontinuierliche Erkennung ist eine Netzwerkverbindung erforderlich.
 
 ## <a name="commanding"></a>Befehle
 
@@ -200,7 +200,7 @@ Hören Sie sich alle TTS-Zeichenfolgen an, um sicherzustellen, dass sie verstän
 -   Wenn eine ungewöhnliche Abfolge von Wörtern kombiniert wird oder Teilenummern oder Satzzeichen gesprochen werden, kann ein Satz unverständlich werden.
 -   Sprache kann unnatürlich klingen, wenn der Sprechrhythmus von der normalen Sprechweise eines Muttersprachlers abweicht.
 
-Beide Probleme können durch Verwendung von SSML anstelle von Nur-Text als Synthesizereingabe behoben werden. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) und [Referenz für Speech Synthesis Markup Language](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
+Beide Probleme können durch die anstelle eines nur-Text als Eingabe für die Spracherkennung Synthesizer SSML behoben werden. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) und [Referenz für Speech Synthesis Markup Language](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## <a name="other-articles-in-this-section"></a>Andere Artikel in diesem Abschnitt 
 

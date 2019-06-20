@@ -8,12 +8,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2848b22c69960075297546d401689d4c51c637aa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dc13b53450c97ffcd3d44b58d564c813344abf0a
+ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361929"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67253057"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Speichern und Abrufen von Einstellungen und anderen App-Daten
 
@@ -430,7 +430,7 @@ localSettings.DeleteContainer("exampleContainer");
 ## <a name="versioning-your-app-data"></a>Versionsverwaltung Ihrer App-Daten
 
 
-Optional können Sie die App-Daten für Ihre App mit einer Versionsnummer versehen. In diesem Fall können Sie neue Versionen der betreffenden App erstellen, mit denen das Format der App-Daten geändert wird, ohne dass es dadurch zu Kompatibilitätsproblemen mit der Vorgängerversion der App kommt. Die App prüft die Version der App-Daten im Dateispeicher. Handelt es sich um eine niedrigere Version als erwartet, aktualisiert die App sowohl die Anwendungsdaten auf das neue Format als auch die Version. Weitere Informationen finden Sie in den Artikeln zur [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version)-Eigenschaft und zur [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.)-Methode.
+Optional können Sie die App-Daten für Ihre App mit einer Versionsnummer versehen. In diesem Fall können Sie neue Versionen der betreffenden App erstellen, mit denen das Format der App-Daten geändert wird, ohne dass es dadurch zu Kompatibilitätsproblemen mit der Vorgängerversion der App kommt. Die App prüft die Version der App-Daten im Dateispeicher. Handelt es sich um eine niedrigere Version als erwartet, aktualisiert die App sowohl die Anwendungsdaten auf das neue Format als auch die Version. Weitere Informationen finden Sie in den Artikeln zur [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version)-Eigenschaft und zur [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.setversionasync)-Methode.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
