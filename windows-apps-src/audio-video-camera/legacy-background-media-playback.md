@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: da18981a2be03c40e15df666f58d60ac91b6f130
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dee2bcb05b9d30177c68b1beac468ac19f4a1be9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360772"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318341"
 ---
 # <a name="legacy-background-media-playback"></a>Medienwiedergabe im Hintergrund (Legacy)
 
@@ -64,7 +64,7 @@ Daten können als Argument an die Methoden zum Senden einer Nachricht übergeben
 
 Die Lebensdauer einer Hintergrundaufgabe ist eng mit dem aktuellen Wiedergabestatus Ihrer App verknüpft. Wenn der Benutzer die Audiowiedergabe beispielsweise anhält, kann das System die App je nach den Umständen beenden oder abbrechen. Das System kann die Hintergrundaufgabe nach einer gewissen Zeit ohne Audiowiedergabe automatisch beenden.
 
-Die [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.)-Methode wird gestartet, wenn die App das erste Mal auf [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) im Code zugreift, der in der Vordergrund-App ausgeführt wird, oder wenn Sie einen Handler für das [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground)-Ereignis registrieren, je nachdem, welcher Fall zuerst eintritt. Es wird empfohlen, dass Sie sich für den „MessageReceived“-Ereignishandler registrieren, bevor Sie **BackgroundMediaPlayer.Current** das erste Mal aufrufen, damit die Vordergrund-App keine Nachrichten versäumt, die vom Hintergrundprozess gesendet werden.
+Die [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)-Methode wird gestartet, wenn die App das erste Mal auf [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) im Code zugreift, der in der Vordergrund-App ausgeführt wird, oder wenn Sie einen Handler für das [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground)-Ereignis registrieren, je nachdem, welcher Fall zuerst eintritt. Es wird empfohlen, dass Sie sich für den „MessageReceived“-Ereignishandler registrieren, bevor Sie **BackgroundMediaPlayer.Current** das erste Mal aufrufen, damit die Vordergrund-App keine Nachrichten versäumt, die vom Hintergrundprozess gesendet werden.
 
 Damit die Hintergrundaufgabe aktiv bleibt, muss die App eine [**BackgroundTaskDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral) aus der **Run**-Methode anfordern und [**BackgroundTaskDeferral.Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete) aufrufen, wenn die Aufgabeninstanz das Ereignis [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) oder [**Completed**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed) empfängt. Verwenden Sie in der **Run**-Methode keine Schleife oder Warten, da dabei Ressourcen verwendet werden. Dies könnte dazu führen, dass die Hintergrundaufgabe der App vom System beendet wird.
 

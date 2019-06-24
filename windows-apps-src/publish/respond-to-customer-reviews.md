@@ -6,19 +6,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, Uwp, antwortet, Antworten überprüfen
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d45b5144bb13e66c506c4a55115bf252288064d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fa73c8f43c449e8cf7b1c5aa67574f6ff00e7a15
+ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633965"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67325863"
 ---
 # <a name="respond-to-customer-reviews"></a>Reagieren auf Kundenrezensionen
 
 
 Sie können, können app-Bewertungen reagieren, dass Kunden wissen, dass Sie ihr Feedback hören, sichtbar sind. Wenn Sie auf Kritiken antworten, können Sie Kunden über neue Features oder behobene Schwachstellen informieren, die in Bezug zu ihren Kommentaren stehen, oder Sie erhalten detaillierteres Feedback mit Verbesserungsvorschlägen für Ihre App. Ihre Antworten werden in den Microsoft Store für alle Windows 10-Kunden anzeigen angezeigt. Sie können auch auswählen, um Ihre Antwort per e-Mail an dem Kunden zu senden, (Wenn sie noch nicht von der Teilnahme abgemeldet und ein Gerät mit Windows 10, Version 1803 oder höher verwenden).
 
-Suchen Sie zum Anzeigen Ihrer app-Bewertungen, und geben Antworten, die app in [Partner Center](https://partner.microsoft.com/dashboard). Erweitern Sie im linken Navigationsmenü *Analytics**, und klicken Sie dann auf **Reviews** zum Anzeigen der [Bericht überprüft](reviews-report.md). Wählen Sie **reagieren, um zu überprüfen** , die Ihre Antwort zurückgibt.
+Suchen Sie zum Anzeigen Ihrer app-Bewertungen, und geben Antworten, die app in [Partner Center](https://partner.microsoft.com/dashboard). Erweitern Sie im linken Navigationsmenü **Analysen**, und klicken Sie dann auf **Rezensionen**, um den [Bericht „Rezensionen“](reviews-report.md) anzuzeigen. Wählen Sie **reagieren, um zu überprüfen** , die Ihre Antwort zurückgibt.
 
 > [!TIP]
 > Zusätzlich zur Verwendung von Partner Center, um auf Testberichte zu reagieren, können Sie reagieren auf Überprüfungen [programmgesteuert](../monetize/submit-responses-to-app-reviews.md).

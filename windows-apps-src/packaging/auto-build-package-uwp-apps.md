@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: cb21573dac0c4cc4fc2d6aa2e2345c56631fde87
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 61525e2a4a088e37184bb93526722e0bf23fbd56
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372761"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319813"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Einrichten automatisierter Builds für UWP-Apps
 
@@ -140,7 +140,7 @@ Entfernen Sie dann die `AppxBundle` MSBuild-Argument aus den Buildschritt.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Erstellen Sie Ihre app von .NET für Windows](https://www.visualstudio.com/docs/build/get-started/dot-net)
+- [Erstellen Sie Ihre app von .NET für Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
 - [Verpacken von UWP-apps](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-- [Querladen von BRANCHENSPEZIFISCHEN apps unter Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+- [Querladen von BRANCHENSPEZIFISCHEN apps unter Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
 - [Erstellen Sie ein Zertifikat zum Signieren des Pakets](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

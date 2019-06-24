@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 75066b566fde3f25ea4feb2ed82358b106ffcf7c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ff067729e71ed4d4a49a082adf9fc754804836a6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359120"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317598"
 ---
 # <a name="audio-graphs"></a>Audiodiagramme
 
@@ -48,7 +48,7 @@ Die Audiodiagramm-APIs von Windows-Runtime
 
 ## <a name="audiograph-class"></a>AudioGraph-Klasse
 
-Die [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph)-Klasse ist das übergeordnete Element aller Knoten, aus denen das Diagramm besteht. Verwenden Sie dieses Objekt, um Instanzen aller Audioknotentypen zu erstellen. Erstellen Sie eine Instanz der **AudioGraph**-Klasse, indem Sie ein [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings)-Objekt, das Konfigurationseinstellungen für das Diagramm enthält, initialisieren und dann [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.) aufrufen. Die zurückgegebene [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult)-Klasse ermöglicht den Zugriff auf das erstellte Audiodiagramm oder gibt einen Fehler zurück, wenn bei der Erstellung des Audiodiagramms ein Fehler auftritt.
+Die [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph)-Klasse ist das übergeordnete Element aller Knoten, aus denen das Diagramm besteht. Verwenden Sie dieses Objekt, um Instanzen aller Audioknotentypen zu erstellen. Erstellen Sie eine Instanz der **AudioGraph**-Klasse, indem Sie ein [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings)-Objekt, das Konfigurationseinstellungen für das Diagramm enthält, initialisieren und dann [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createasync) aufrufen. Die zurückgegebene [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult)-Klasse ermöglicht den Zugriff auf das erstellte Audiodiagramm oder gibt einen Fehler zurück, wenn bei der Erstellung des Audiodiagramms ein Fehler auftritt.
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
@@ -168,7 +168,7 @@ Der folgende Code zeigt ein Beispiel einer Implementierung der **GenerateAudioDa
 -   Da diese Methode auf den Rohdatenpuffer zugreift, der Windows-Runtime-Typen zugrunde liegt, muss diese mithilfe des Schlüsselworts **unsafe** deklariert werden. Außerdem müssen Sie das Projekt in Microsoft Visual Studio so konfigurieren, dass die Kompilierung von unsicherem Code zugelassen wird, indem Sie die Seite **Eigenschaften** des Projekts öffnen, auf die Eigenschaftenseite **Build** klicken und das Kontrollkästchen **Unsicheren Code zulassen** aktivieren.
 -   Initialisieren Sie im **Windows.Media**-Namespace eine neue Instanz des [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame)-Objekts, indem Sie die gewünschte Puffergröße an den Konstruktor übergeben. Die Puffergröße ist die Sample-Anzahl multipliziert mit der Größe der einzelnen Sample.
 -   Rufen Sie das [**AudioBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer)-Objekt des Audioframes ab, indem Sie die [**LockBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer)-Methode aufrufen.
--   Rufen Sie eine Instanz der [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions//mt297505(v=vs.85))-COM-Schnittstelle aus dem Audiopuffer ab, indem Sie [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference) aufrufen.
+-   Rufen Sie eine Instanz der [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))-COM-Schnittstelle aus dem Audiopuffer ab, indem Sie [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference) aufrufen.
 -   Rufen Sie einen Zeiger auf die Rohdaten des Audiopuffers ab, indem Sie die [**IMemoryBufferByteAccess.GetBuffer**](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)-Methode aufrufen und in den Beispieldatentyp der Audiodaten umwandeln.
 -   Füllen Sie den Puffer mit Daten, und geben Sie das [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame)-Objekt für die Übermittlung an das Audiodiagramm zurück.
 
@@ -241,7 +241,7 @@ Mit der Audiodiagramm-API können Sie Audioeffekte zu jedem Knotentyp in einem D
 ## <a name="spatial-audio"></a>Räumliche Audiowiedergabe
 Ab Windows 10, Version 1607, unterstützt **AudioGraph** die räumliche Audiowiedergabe. Dabei können Sie eine Position im dreidimensionalen Raum angeben, an der Audiodaten von einem Eingabe- oder Submixknoten ausgegeben werden. Sie können auch eine Form und Richtung für die Audioausgabe angeben, eine Geschwindigkeit festlegen, die für die Dopplerverschiebung der Audiodaten des Knotens verwendet wird, und ein Abklingmodell definieren, das beschreibt, wie Klang mit zunehmender Entfernung gedämpft wird. 
 
-Um einen Emitter zu erstellen, können Sie zunächst eine Form definieren, in der der Sound vom Emitter projiziert wird. Die Klangausbreitung kann kegel- oder kugelförmig sein. Die [**AudioNodeEmitterShape**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterShape)-Klasse bietet statische Methoden zum Erstellen dieser Formen. Als Nächstes erstellen Sie ein Abklingmodell. Es definiert, wie die Lautstärke des vom Emitter ausgegebenen Sounds mit zunehmender Entfernung vom Listener (Zuhörer) abnimmt. Mit der [**CreateNatural**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaymodel.createnatural)-Methode wird ein Abklingmodell erstellt. Es emuliert das natürliche Abklingen von Sound anhand eines auf einem Abstandsquadrat basierten Abnahmemodells. Erstellen Sie zuletzt ein [**AudioNodeEmitterSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterSettings)-Objekt. Dieses Objekt wird derzeit nur zum Aktivieren und Deaktivieren der geschwindigkeitsbasierten Dopplerdämpfung der vom Emitter ausgegebenen Audiodaten verwendet. Rufen Sie den [**AudioNodeEmitter**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.)-Konstruktor auf, und übergeben Sie die gerade erstellten Initialisierungsobjekte. Der Emitter wird standardmäßig am Ursprung positioniert, Sie können seine Position aber auch mit der [**Position**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.position)-Eigenschaft festlegen.
+Um einen Emitter zu erstellen, können Sie zunächst eine Form definieren, in der der Sound vom Emitter projiziert wird. Die Klangausbreitung kann kegel- oder kugelförmig sein. Die [**AudioNodeEmitterShape**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterShape)-Klasse bietet statische Methoden zum Erstellen dieser Formen. Als Nächstes erstellen Sie ein Abklingmodell. Es definiert, wie die Lautstärke des vom Emitter ausgegebenen Sounds mit zunehmender Entfernung vom Listener (Zuhörer) abnimmt. Mit der [**CreateNatural**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaymodel.createnatural)-Methode wird ein Abklingmodell erstellt. Es emuliert das natürliche Abklingen von Sound anhand eines auf einem Abstandsquadrat basierten Abnahmemodells. Erstellen Sie zuletzt ein [**AudioNodeEmitterSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterSettings)-Objekt. Dieses Objekt wird derzeit nur zum Aktivieren und Deaktivieren der geschwindigkeitsbasierten Dopplerdämpfung der vom Emitter ausgegebenen Audiodaten verwendet. Rufen Sie den [**AudioNodeEmitter**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.-ctor)-Konstruktor auf, und übergeben Sie die gerade erstellten Initialisierungsobjekte. Der Emitter wird standardmäßig am Ursprung positioniert, Sie können seine Position aber auch mit der [**Position**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.position)-Eigenschaft festlegen.
 
 > [!NOTE]
 > Audioknotenemitter können nur Monoaudiodaten mit einer Abtastrate von 48 kHz verarbeiten. Die Verwendung von Stereoaudiodaten oder Audio mit einer anderen Abtastrate führt zu einer Ausnahme.

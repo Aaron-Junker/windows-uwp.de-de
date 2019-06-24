@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f1be694be412bbf0a4e076e8ac5753eefda74c55
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: be6780851c05f59abc373318f0746c8e436b74ac
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360910"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318407"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Erkennen von Gesichtern in Bildern oder Videos
 
@@ -45,7 +45,7 @@ Verwenden Sie die [**BitmapDecoder**](https://docs.microsoft.com/uwp/api/Windows
 
 [!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
-In der aktuellen Version unterstützt die **FaceDetector**-Klasse nur Bilder im Pixelformat Gray8 oder Nv12. Die **SoftwareBitmap**-Klasse stellt die [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows)-Methode bereit, die eine Bitmap in ein anderes Format umwandelt. In diesem Beispiel wird das Quellbild in das Pixelformat Gray8 umgewandelt, sofern es nicht bereits dieses Format aufweist. Sie können ggf. mithilfe der Methoden [**GetSupportedBitmapPixelFormats**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.getsupportedbitmappixelformats) und [**IsBitmapPixelFormatSupported**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.isbitmappixelformatsupported) zur Laufzeit bestimmen, ob ein Pixelformat unterstützt wird, für den Fall, dass der Satz der unterstützten Formate in zukünftigen Versionen erweitert wird.
+In der aktuellen Version unterstützt die **FaceDetector**-Klasse nur Bilder im Pixelformat Gray8 oder Nv12. Die **SoftwareBitmap**-Klasse stellt die [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert)-Methode bereit, die eine Bitmap in ein anderes Format umwandelt. In diesem Beispiel wird das Quellbild in das Pixelformat Gray8 umgewandelt, sofern es nicht bereits dieses Format aufweist. Sie können ggf. mithilfe der Methoden [**GetSupportedBitmapPixelFormats**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.getsupportedbitmappixelformats) und [**IsBitmapPixelFormatSupported**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.isbitmappixelformatsupported) zur Laufzeit bestimmen, ob ein Pixelformat unterstützt wird, für den Fall, dass der Satz der unterstützten Formate in zukünftigen Versionen erweitert wird.
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
@@ -91,7 +91,7 @@ Die [**FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnaly
 
 **FaceDetector** unterstützt wie **FaceTracker** eine begrenzte Anzahl von Pixelformaten. In diesem Beispiel wird die Gesichtserkennung abgebrochen, wenn der bereitgestellte Frame nicht das Format Nv12 aufweist.
 
-Rufen Sie [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) auf, um eine Liste von [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace)-Objekten, die die Gesichter im Frame darstellen, abzurufen. Sobald Sie über die Liste der Gesichter verfügen, können Sie sie (auf die gleiche Weise wie weiter oben für die Gesichtserkennung beschrieben) anzeigen. Beachten Sie, dass alle UI-Aktualisierungen in einem Aufruf von [**CoredDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) erfolgen müssen, da die Hilfsmethode für die Gesichtsverfolgung nicht im UI-Thread aufgerufen wird.
+Rufen Sie [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) auf, um eine Liste von [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace)-Objekten, die die Gesichter im Frame darstellen, abzurufen. Sobald Sie über die Liste der Gesichter verfügen, können Sie sie (auf die gleiche Weise wie weiter oben für die Gesichtserkennung beschrieben) anzeigen. Beachten Sie, dass da das Gesicht nachverfolgung Hilfsmethode, die nicht im UI-Thread aufgerufen wird, müssen Sie alle Aktualisierungen der Benutzeroberfläche in in einem Aufruf vornehmen [ **CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 

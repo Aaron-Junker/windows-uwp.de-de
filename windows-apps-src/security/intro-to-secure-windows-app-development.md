@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: ee386199fbee7d2f9b839d6b1805c6181e4d70a9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c9b4060fbd2e59a545451c9c8ebe103c9bb527a0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371397"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320606"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Einführung in die Entwicklung sicherer Windows-Apps
 
@@ -175,7 +175,7 @@ Der Registrierungsworkflow einer App könnte wie folgt aussehen:
 
 Die von Ihnen erfassten Registrierungsinformationen umfassen möglicherweise viel mehr Identifikationsinformationen als in diesem einfachen Szenario. Wenn Ihre App auf einen gesicherten Dienst – z. B. Onlinebanking – zugreift, müssen Sie beim Anmeldevorgang einen Identitätsnachweis und andere Dinge anfordern. Nachdem alle Bedingungen erfüllt wurden, wird der öffentliche Schlüssel dieses Benutzers im Back-End gespeichert und für Überprüfungszwecke verwendet, wenn der Benutzer den Dienst das nächste Mal verwendet.
 
-Weitere Informationen zu Windows Hello finden Sie im [Windows Hello-Handbuch](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide) und im [Windows Hello-Entwicklerhandbuch](microsoft-passport.md).
+Weitere Informationen zu Windows Hello finden Sie im [Windows Hello-Handbuch](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide) und im [Windows Hello-Entwicklerhandbuch](microsoft-passport.md).
 
 ## <a name="3-data-in-flight-security-methods"></a>3 Sicherheitsmethoden für In-Flight-Daten
 
@@ -478,14 +478,14 @@ Wenn die Daten auf dem Gerät empfangen werden, bietet das Windows-App-Modell me
 
 ### <a name="62-code-samples"></a>6.2 Codebeispiele
 
--   [Schließfach für Anmeldeinformationen](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
--   [Auswahl der Anmeldeinformationen](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
--   [Gerätesperre mit Azure-Anmeldung](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
--   [Unternehmensdatenschutz](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
--   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/KeyCredentialManager)
--   [Smartcards](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)
--   [Web-kontoverwaltung](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
--   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
+-   [Schließfach für Anmeldeinformationen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
+-   [Auswahl der Anmeldeinformationen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
+-   [Gerätesperre mit Azure-Anmeldung](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [Unternehmensdatenschutz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
+-   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
+-   [Smartcards](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
+-   [Web-kontoverwaltung](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+-   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
 
 ### <a name="63-api-reference"></a>6.3 API-Referenz
 

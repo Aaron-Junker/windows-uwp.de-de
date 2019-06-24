@@ -6,16 +6,16 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e9567e06f80035bbcf811b5aaeaf8058ffee41a3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334578"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320030"
 ---
 # <a name="app-management-and-services"></a>App-Verwaltung und -Dienste
 
-Können Sie verwalten und Anzeigen von Details im Zusammenhang mit der jede Ihrer apps im [Partner Center](https://partner.microsoft.com/dashboard/), und Konfigurieren von Diensten wie z. B. Benachrichtigungen, die ein / B-Tests und zugeordnet.
+Können Sie verwalten und Anzeigen von Details im Zusammenhang mit der jede Ihrer apps im [Partner Center](https://partner.microsoft.com/dashboard), und Konfigurieren von Diensten wie z. B. Benachrichtigungen, die ein / B-Tests und zugeordnet.
 
 Bei der Arbeit mit einer app in Partner Center sehen Sie im linken Navigationsmenü für Abschnitte **Services** und **App-Verwaltung**. Sie können diese Abschnitte erweitern, um auf die unten beschriebenen Funktionen zuzugreifen.
 
@@ -25,7 +25,7 @@ Im Abschnitt **Dienste** können Sie verschiedene Dienste für Ihre Apps verwalt
 
 ## <a name="xbox-live"></a>Xbox Live
 
-Wenn Sie ein Spiel veröffentlichen, können Sie aktivieren die [Xbox Live Creators-Programm](https://xbox.com/developers/creators-program) auf dieser Seite. Dadurch können Sie konfigurieren und Testen Xbox Live-Features zu starten, und schließlich veröffentlichen Sie Ihr Spiel Xbox Live Creators-Programm.
+Wenn Sie ein Spiel veröffentlichen, können Sie aktivieren die [Xbox Live Creators-Programm](https://www.xbox.com/developers/creators-program) auf dieser Seite. Dadurch können Sie konfigurieren und Testen Xbox Live-Features zu starten, und schließlich veröffentlichen Sie Ihr Spiel Xbox Live Creators-Programm.
 
 Weitere Informationen finden Sie unter [erste Schritte mit dem Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) und [einen neuen Titel für die Xbox Live Creators-Programm zu erstellen und veröffentlichen Sie in der testumgebung](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
 
@@ -51,7 +51,7 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 
 Wenn Ihr Produkt Azure AD integriert und Aufrufe von APIs, die entweder anfordern [Anwendungsberechtigungen oder delegierte Berechtigungen](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) , die Zustimmung des Administrators erfordern, geben Sie Ihre Azure AD-Client-ID hier. Dadurch können Administratoren, die die app für die Zustimmung erteilen Organisation für Ihr Produkt im Namen aller Benutzer im Mandanten abrufen.
 
-Weitere Informationen finden Sie unter [Anfordern der Zustimmung für einen gesamten Mandanten](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
+Weitere Informationen finden Sie unter [Anfordern der Zustimmung für einen gesamten Mandanten](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-consent-for-an-entire-tenant).
 
 ## <a name="app-management"></a>App-Verwaltung
 

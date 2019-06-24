@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fb07dd9aec475566940dbf98ae6bd1c5f9c1337
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604395"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317336"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>Interaktionen via Blick und Eye Tracking in UWP-Apps
 
@@ -38,7 +38,7 @@ Darüber hinaus bietet die Eingabe über Anvisieren gleichermaßen attraktive M�
 > [!NOTE]
 > Die Unterstützung für Eye Tracking-Hardware wurde mit dem **Windows 10 Fall Creators Update** zusammen mit der [Augensteuerung](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control) eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen verwenden können, um den Bildschirmzeiger zu steuern, Text über die Bildschirmtastatur einzugeben und mit Personen über Text-zu-Sprache zu kommunizieren. Eine Reihe von UWP-APIs ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) zum Erstellen von Anwendungen, die mit den Augen interagieren können nachverfolgung Hardware steht mit **Windows 10 April 2018 Update (Version 1803, Build 17134)** und höher.
 
-## <a name="privacy"></a>Vertraulichkeit
+## <a name="privacy"></a>Datenschutz
 
 Aufgrund der potenziell vertraulichen persönlichen Daten, die von Eye Tracking-Geräten gesammelt werden, müssen Sie die `gazeInput`-Funktion im App-Manifest Ihrer UWP-Anwendung deklarieren (siehe den folgenden Abschnitt **Setup**). Sofern deklariert, fordert Windows die Benutzer (bei erstmaliger Ausführung der App) automatisch über ein Dialogfeld auf, ihre Zustimmung zu geben, dass die App mit dem Eye Tracking-Gerät kommuniziert und auf diese Daten zugreift.
 
@@ -66,7 +66,7 @@ Um die APIs für die Eingabe über Anvisieren in Ihrer UWP-App zu verwenden, mü
 
 In diesem Beispiel wird veranschaulicht, wie Sie den Blick der Benutzer in einer UWP-Anwendung verfolgen und eine Timing-Funktion mit grundlegenden Treffertests verwenden, um anzugeben, wie gut sie ihren Blick auf ein bestimmtes Element fokussieren können.
 
-Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich im Viewport der Anwendung befindet, während eine [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar) aus dem [Windows-Community Toolkit](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/) nach dem Zufallsprinzip im Zeichenbereich platziert wird. Wenn der Anvisierungspunkt auf der Fortschrittsleiste erkannt wird, wird ein Timer gestartet und die Fortschrittsleiste wird im Zeichenbereich nach dem Zufallsprinzip verschoben, wenn sie 100 % erreicht.
+Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich im Viewport der Anwendung befindet, während eine [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) aus dem [Windows-Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) nach dem Zufallsprinzip im Zeichenbereich platziert wird. Wenn der Anvisierungspunkt auf der Fortschrittsleiste erkannt wird, wird ein Timer gestartet und die Fortschrittsleiste wird im Zeichenbereich nach dem Zufallsprinzip verschoben, wenn sie 100 % erreicht.
 
 ![Blickverfolgung mit Timer-Beispiel](images/gaze/gaze-input-timed2.gif)
 
@@ -405,7 +405,7 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich
 
     Wir blenden die Blickverfolgungsellipse in `GazeEntered` und `GazeExited` ein bzw. aus.
 
-    In `GazeMoved` verschieben wir unsere Blickverfolgungsellipse basierend auf der [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition), die vom [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) der [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) bereitgestellt wird. Wir verwalten auch den Blickfokus-Timer in der [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar), der die Neupositionierung der Fortschrittsleiste auslöst. Einzelheiten erfahren Sie im nächsten Schritt.
+    In `GazeMoved` verschieben wir unsere Blickverfolgungsellipse basierend auf der [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition), die vom [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) der [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) bereitgestellt wird. Wir verwalten auch den Blickfokus-Timer in der [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar), der die Neupositionierung der Fortschrittsleiste auslöst. Einzelheiten erfahren Sie im nächsten Schritt.
 
     ```csharp
     /// <summary>
@@ -600,7 +600,7 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich
 
 ### <a name="resources"></a>Ressourcen
 
-- [Bestaunen zu Windows-Community-Toolkit-Bibliothek](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
+- [Bestaunen zu Windows-Community-Toolkit-Bibliothek](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>Themenbeispiele
 

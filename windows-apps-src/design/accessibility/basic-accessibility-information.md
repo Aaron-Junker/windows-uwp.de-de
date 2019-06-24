@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c4b796c8af493508328730c2b958a0beb38bf60c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a50ca6eaeecd2528eaa0d8558ef70552ae49944a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361959"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317290"
 ---
 # <a name="expose-basic-accessibility-information"></a>Verfügbarmachen von grundlegenden Informationen zur Barrierefreiheit  
 
@@ -97,7 +97,7 @@ XAML
 <span id="LABELS"/>
 
 ## <a name="labels-and-labeledby"></a>Bezeichnungen und „LabeledBy“  
-Um einem Formularelement eine Beschriftung zuzuordnen, wird empfohlen, eine [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Klasse mit **x:Name** für Beschriftungstext zu verwenden und die angefügte [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95))-Eigenschaft für das Formularelement so festzulegen, dass sie anhand des XAML-Namens auf die **TextBlock**-Klasse mit der Beschriftung verweist. Bei Verwendung dieses Musters wird der Fokus auf das zugeordnete Steuerelement verschoben, wenn der Benutzer auf die Beschriftung klickt, und Hilfstechnologien können den Beschriftungstext als Namen zur Verwendung durch Screenreader-Software für das Formularfeld verwenden. Das folgende Beispiel veranschaulicht diese Vorgehensweise.
+Um einem Formularelement eine Beschriftung zuzuordnen, wird empfohlen, eine [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Klasse mit **x:Name** für Beschriftungstext zu verwenden und die angefügte [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95))-Eigenschaft für das Formularelement so festzulegen, dass sie anhand des XAML-Namens auf die **TextBlock**-Klasse mit der Beschriftung verweist. Bei Verwendung dieses Musters wird der Fokus auf das zugeordnete Steuerelement verschoben, wenn der Benutzer auf die Beschriftung klickt, und Hilfstechnologien können den Beschriftungstext als Namen zur Verwendung durch Screenreader-Software für das Formularfeld verwenden. Das folgende Beispiel veranschaulicht diese Vorgehensweise.
 
 XAML
 ```xml

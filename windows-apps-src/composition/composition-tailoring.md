@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc9a6d89a143d8fd03d73dbd83b832ed9513ee2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9692a8ef21e9f62114b38c6bb5d15199b8c0e04a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644415"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318150"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>Anpassen von Auswirkungen und Erfahrungen mit Windows-Benutzeroberfläche
 
@@ -112,13 +112,13 @@ Die API für vorhandenen Code in wenigen einfachen Schritten kann hinzugefügt w
     }
     ```
 
-Vollständiges Codebeispiel finden Sie auf die [Windows UI-Github-Repository](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
+Vollständiges Codebeispiel finden Sie auf die [Windows UI-Github-Repository](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 15063/CompCapabilities).
 
 ## <a name="fast-vs-slow-effects"></a>Schnelle oder langsame Effekte
 
 Aufgrund des Feedbacks aus der bereitgestellten [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) und [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) -Methoden in der CompositionCapabilities-API kann die Anwendung kann entscheiden, zu teuer oder nicht unterstützten Effekte für austauschen andere Auswirkungen ihrer Wahl, die für das Gerät optimiert sind. Einige Effekte bekanntermaßen Weitere ressourcenintensiv als andere konsistent sein und sollten sparsam eingesetzt werden und andere Effekte können flexibler verwendet werden. Für alle Effekte sollte jedoch Sorgfalt verwendet werden beim Verketten und animieren, die als einige Szenarien oder Kombinationen von die Leistungsmerkmale des Diagramms Auswirkungen ändern können. Im folgenden finden Sie einige Faustregel Leistungsmerkmale für die einzelnen Auswirkungen:
 
-- Effekte, die bekannt sind, haben Auswirkungen auf die hohe Leistung sind wie folgt: Bildbearbeitungstools, Volumeschattenkopie-Maske, BackDropBrush, HostBackDropBrush und Ebene Visual. Diese werden nicht empfohlen, für die low-End-Geräten [(die Funktionsebene 9.1-9.3)](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx), und sollte mit Bedacht auf high-End-Geräten verwendet werden.
+- Effekte, die bekannt sind, haben Auswirkungen auf die hohe Leistung sind wie folgt: Bildbearbeitungstools, Volumeschattenkopie-Maske, BackDropBrush, HostBackDropBrush und Ebene Visual. Diese werden nicht empfohlen, für die low-End-Geräten [(die Funktionsebene 9.1-9.3)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro), und sollte mit Bedacht auf high-End-Geräten verwendet werden.
 - Effekte mit Auswirkungen auf die mittlere Leistung enthalten Farbmatrix, bestimmte Blend Auswirkungen BlendModes (Helligkeit, Farbe, Sättigung und Hue), SpotLight, SceneLightingEffect und (je nach Szenario) BorderEffect. Diese Effekte auf low-End-Geräten mit bestimmten Szenarien funktioniert möglicherweise, jedoch Sorgfalt beim Verketten und animieren, verwendet werden soll. Empfehlen Sie einschränken der Verwendung auf zwei oder weniger, und bei Übergängen nur animieren.
 - Alle anderen Auswirkungen haben Auswirkungen auf die mit niedriger Leistung und in alle plausible Szenarien beim animieren und verketten.
 

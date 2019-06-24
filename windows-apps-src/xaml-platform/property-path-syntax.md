@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 63656fc545596fc045dc536167313c0c8e3f6ad2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 57532c45bdf6c2b8feb2af1277be74a0f8b2c759
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371158"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320301"
 ---
 # <a name="property-path-syntax"></a>PropertyPath-Syntax
 
@@ -58,7 +58,7 @@ Nehmen wir zum Beispiel ein Geschäftsobjekt, bei dem es eine Liste von „Teams
 
 ### <a name="attached-properties"></a>Angefügte Eigenschaften
 
-Eigenschaftspfade können Verweise auf angefügte Eigenschaften enthalten. Da der Bezeichnername einer angefügten Eigenschaft bereits einen Punkt enthält, muss ein Name für die angefügte Eigenschaft in runden Klammern hinzugefügt werden, damit der Punkt nicht als Objekteigenschaftsschritt interpretiert wird. Wenn Sie beispielsweise [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) als Bindungspfad verwenden möchten, lautet die korrekte Zeichenfolge „(Canvas.ZIndex)“. Weitere Informationen zu angefügten Eigenschaften finden Sie unter [Übersicht über angefügte Eigenschaften](attached-properties-overview.md).
+Eigenschaftspfade können Verweise auf angefügte Eigenschaften enthalten. Da der Bezeichnername einer angefügten Eigenschaft bereits einen Punkt enthält, muss ein Name für die angefügte Eigenschaft in runden Klammern hinzugefügt werden, damit der Punkt nicht als Objekteigenschaftsschritt interpretiert wird. Wenn Sie beispielsweise [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) als Bindungspfad verwenden möchten, lautet die korrekte Zeichenfolge „(Canvas.ZIndex)“. Weitere Informationen zu angefügten Eigenschaften finden Sie unter [Übersicht über angefügte Eigenschaften](attached-properties-overview.md).
 
 ### <a name="combining-property-path-syntax"></a>Zusammenführen der Eigenschaftspfadsyntax
 
@@ -70,7 +70,7 @@ Da ein Eigenschaftspfad von einem Bindungsmodul interpretiert wird und auf Infor
 
 ## <a name="property-path-for-animation-targeting"></a>Eigenschaftspfad für die Animationsausrichtung
 
-Animationen stützen sich auf die Ausrichtung auf eine Abhängigkeitseigenschaft, wobei Storyboardwerte angewendet werden, wenn die Animation läuft. Die Animation ermittelt ein Element anhand des Namens ([x:Name-Attribut](x-name-attribute.md)), um das Objekt mit der zu animierenden Eigenschaft zu identifizieren. Oft ist es erforderlich, einen Eigenschaftspfad zu definieren, der mit dem Objekt beginnt, das als der [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) bezeichnet wird, und mit dem speziellen Abhängigkeitseigenschaftswert endet, bei dem die Animation angewendet werden soll. Dieser Eigenschaftspfad wird als Wert für [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)) verwendet.
+Animationen stützen sich auf die Ausrichtung auf eine Abhängigkeitseigenschaft, wobei Storyboardwerte angewendet werden, wenn die Animation läuft. Die Animation ermittelt ein Element anhand des Namens ([x:Name-Attribut](x-name-attribute.md)), um das Objekt mit der zu animierenden Eigenschaft zu identifizieren. Oft ist es erforderlich, einen Eigenschaftspfad zu definieren, der mit dem Objekt beginnt, das als der [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) bezeichnet wird, und mit dem speziellen Abhängigkeitseigenschaftswert endet, bei dem die Animation angewendet werden soll. Dieser Eigenschaftspfad wird als Wert für [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) verwendet.
 
 Weitere Informationen zum Definieren von Animationen in XAML finden Sie unter [Storyboardanimationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
@@ -107,7 +107,7 @@ Die [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Proper
 
 Meistens ist es in XAML möglich, eine [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)-Klasse ohne jeglichen Code anzuwenden. In einigen Fällen ist es jedoch sinnvoll, ein **PropertyPath**-Objekt mithilfe von Code zu definieren und dieses zur Laufzeit einer Eigenschaft zuzuordnen.
 
-[ **"PropertyPath"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) verfügt über eine [ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.) -Konstruktor, und nicht über einen Standardkonstruktor verfügen. Die Zeichenfolge, die Sie diesem Konstruktor übergeben, wird mithilfe der zuvor beschriebenen Eigenschaftspfadsyntax definiert. Dies ist dieselbe Zeichenfolge, mit der Sie [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) als XAML-Attribut zuweisen können. Die einzige andere API der **PropertyPath**-Klasse ist die schreibgeschützte [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path)-Eigenschaft. Sie können diese Eigenschaft als Konstruktionszeichenfolge für eine andere **PropertyPath**-Instanz verwenden.
+[ **"PropertyPath"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) verfügt über eine [ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor) -Konstruktor, und nicht über einen Standardkonstruktor verfügen. Die Zeichenfolge, die Sie diesem Konstruktor übergeben, wird mithilfe der zuvor beschriebenen Eigenschaftspfadsyntax definiert. Dies ist dieselbe Zeichenfolge, mit der Sie [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) als XAML-Attribut zuweisen können. Die einzige andere API der **PropertyPath**-Klasse ist die schreibgeschützte [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path)-Eigenschaft. Sie können diese Eigenschaft als Konstruktionszeichenfolge für eine andere **PropertyPath**-Instanz verwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
@@ -116,6 +116,6 @@ Meistens ist es in XAML möglich, eine [**PropertyPath**](https://docs.microsoft
 * [{Binding}-Markuperweiterung](binding-markup-extension.md)
 * [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
 * [**Bindung**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
-* [**Bindung-Konstruktor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.)
+* [**Bindung-Konstruktor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.-ctor)
 * [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
 

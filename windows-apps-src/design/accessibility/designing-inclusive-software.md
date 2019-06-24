@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d2377f95efbe79853b1416213a25e22ed7d5f0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e9cc88792e6cfdc581a4c7dc27ecc060cc0000c3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639695"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317347"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Entwerfen inklusiver Software für Windows 10  
 
@@ -23,7 +23,7 @@ Microsoft entwickelt seine Designprinzipien und -verfahren kontinuierlich weiter
 
 Diese neue Designphilosophie heißt inklusives Design. Unser Ziel ist es, Software von Grund auf für alle Arten von Benutzern zu entwickeln. Dies steht im Gegensatz zu der Auffassung, dass Eingabehilfen erst am Ende des Entwicklungsprozesses erstellt werden, um die Anforderungen einer kleinen Gruppe von Benutzern zu erfüllen.
 
-„Wir definieren eine Behinderung als den Konflikt zwischen den Anforderungen einer einzelnen Person und dem angebotenen Dienst, dem angebotenen Produkt oder der angebotenen Umgebung. Jeder Benutzer kann eine Behinderung erleiden. Es ist eine allgemeine menschliche Erfahrung, ausgeschlossen zu werden.“  \- von der [inklusive](https://www.microsoft.com/design/inclusive) video  
+„Wir definieren eine Behinderung als den Konflikt zwischen den Anforderungen einer einzelnen Person und dem angebotenen Dienst, dem angebotenen Produkt oder der angebotenen Umgebung. Jeder Benutzer kann eine Behinderung erleiden. Es ist eine allgemeine menschliche Erfahrung, ausgeschlossen zu werden.“  \- von der [inklusive](https://www.microsoft.com/design/inclusive/) video  
 
 Mithilfe des inklusiven Designs werden bessere Produkte für alle erstellt. Es geht darum, die gesamte Bandbreite der menschlichen Vielfalt zu berücksichtigen. Denken Sie an die Bordsteinabsenkungen, die Sie jetzt in den Kreuzungsbereichen der meisten Bürgersteige finden. Diese sind eindeutig zur Verwendung durch Rollstuhlfahrer bestimmt. Aber jetzt werden sie von fast jedem verwendet, einschließlich Personen mit Kinderwägen, Radfahrern und Skateboardern. Sogar Fußgänger verwenden oft Bordsteinabsenkungen, da sie einfach vorhanden und komfortabel sind. Fernbedienungen könnten als Hilfstechnologie (Assistive Technology, AT) für Personen mit körperlichen Einschränkungen betrachtet werden. Es ist heute jedoch fast unmöglich, einen Fernseher ohne Fernbedienung zu kaufen. Bevor Kinder lernen, ihre Schuhe zuzubinden, können sie Schuhe zum Reinschlüpfen oder leicht zu schließende Schuhe tragen. Schuhe, die leicht an- und auszuziehen sind, werden häufig in Kulturen bevorzugt, in denen Schuhe vor dem Betreten eines Hauses ausgezogen werden. Sie sind auch besser für Personen mit Bewegungseinschränkungen an den Händen geeignet, etwa Personen mit Arthritis oder einem vorübergehend gebrochenen Handgelenk.
 
@@ -50,7 +50,7 @@ Eine von Forrester Research im Auftrag von Microsoft 2003-2004 durchgeführte St
 
 Abgesehen von permanenten Behinderungen können Schwere und Art der Schwierigkeiten, die eine Person hat, während ihres Lebens unterschiedlich sein. Es gibt keine „normalen“ Menschen. Unsere Fähigkeiten unterliegen ständigen Veränderungen. Margaret Meade sagte einmal: „Wir sind alle einzigartig. Diese Einzigartigkeit ist uns allen gemeinsam.“  
 
-Microsoft engagiert sich in der Forschung auf den Gebieten Computerwissenschaften und Softwareentwicklung, um das Computererlebnis zu optimieren und neuartige Computertechnologien zu erfinden. Weitere Informationen finden Sie unter [Aktuelle Microsoft-Forschungs- und Entwicklungsprojekte](https://www.microsoft.com/enable/microsoft/research.aspx). Diese haben das Ziel, Computer leichter zugänglich zu machen, den visuellen und auditiven Zugang zu Computern zu vereinfachen und Interaktionen mit Computern zu erleichtern.  
+Microsoft engagiert sich in der Forschung auf den Gebieten Computerwissenschaften und Softwareentwicklung, um das Computererlebnis zu optimieren und neuartige Computertechnologien zu erfinden. Weitere Informationen finden Sie unter [Aktuelle Microsoft-Forschungs- und Entwicklungsprojekte](https://www.microsoft.com/accessibility/). Diese haben das Ziel, Computer leichter zugänglich zu machen, den visuellen und auditiven Zugang zu Computern zu vereinfachen und Interaktionen mit Computern zu erleichtern.  
 
 ## <a name="practical-design-steps"></a>Praktische Designschritte  
 Wenn Sie dabei sind, ist dieser Abschnitt für Sie gedacht. Es werden Designschritte für die Praxis beschrieben, die Sie bei der Implementierung des inklusiven Designs für Ihre App beachten sollten.  
@@ -104,7 +104,7 @@ Befolgen Sie diese sieben Schritte, um sicherzustellen, dass Ihre Software inklu
 7.  Stellen Sie das fertige Produkt bereit, und dokumentieren Sie Ihre Implementierung für Personen, die möglicherweise nach Ihnen am Projekt arbeiten.  
 
 ## <a name="related-topics"></a>Verwandte Themen  
-* [Inklusive Entwurf](https://design.microsoft.com/inclusive)
+* [Inklusive Entwurf](https://www.microsoft.com/design/inclusive/)
 * [Engineeringsoftware für den Zugriff auf](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft Accessibility Developer hub](https://developer.microsoft.com/windows/accessible-apps)
 * [Entwickeln von barrierefreien Windows-Apps](developing-inclusive-windows-apps.md) 

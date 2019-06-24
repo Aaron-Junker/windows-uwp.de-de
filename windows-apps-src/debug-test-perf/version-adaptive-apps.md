@@ -5,12 +5,12 @@ ms.date: 05/17/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 579f92cc51ed5f9eeea522d81cfdb030f85ef0da
-ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
+ms.openlocfilehash: b947d0b6cc83dc6bca45efb7103a933e79972e3b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852278"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317449"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Versionsabhängig adaptive apps: Verwenden Sie die neuen APIs Beibehaltung der Kompatibilität mit früheren Versionen
 
@@ -59,9 +59,9 @@ Im Anschluss finden Sie die Buildnummern für die einzelnen SDKs.
 | Update für Oktober 2018 | 1809 | 17763 |
 | Update von Mai 2019 | 1903 | 18362 |
 
-Sie können jede beliebige veröffentlichte Version des SDKs aus dem [Windows SDK- und Emulator-Archiv](https://developer.microsoft.com/downloads/sdk-archive) herunterladen. Das neueste Windows Insider Preview SDK können Sie im Entwicklerabschnitt der [Windows Insider-Website](https://insider.windows.com/Home/BuildWithWindows) herunterladen.
+Sie können jede beliebige veröffentlichte Version des SDKs aus dem [Windows SDK- und Emulator-Archiv](https://developer.microsoft.com/windows/downloads/sdk-archive) herunterladen. Das neueste Windows Insider Preview SDK können Sie im Entwicklerabschnitt der [Windows Insider-Website](https://insider.windows.com/for-developers/) herunterladen.
 
- Weitere Informationen zu Windows 10-Updates, finden Sie unter [Windows 10-Versionsinformationen](https://technet.microsoft.com/windows/release-info). Wichtige Informationen zu dem Supportlebenszyklus für Windows 10, finden Sie unter den [Windows Lifecycle Fact Sheet](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
+ Weitere Informationen zu Windows 10-Updates, finden Sie unter [Windows 10-Versionsinformationen](https://www.microsoft.com/itpro/windows-10/release-information). Wichtige Informationen zu dem Supportlebenszyklus für Windows 10, finden Sie unter den [Windows Lifecycle Fact Sheet](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 ## <a name="perform-api-checks"></a>API-Überprüfung
 
@@ -90,11 +90,11 @@ Die größte und am häufigsten verwendete API-Vertrag ist der **Windows.Foundat
 
 In allen Versionen von Windows 10 können Sie die ApiInformation-Klasse in einer Bedingung im Code verwenden, um zu testen, ob die aufzurufende API vorhanden ist. In Ihrem adaptiven Code können Sie verschiedene Methoden der Klasse, z. B. IsTypePresent, IsEventPresent, IsMethodPresent und IsPropertyPresent verwenden, um mit der jeweils erforderliche Granularität nach APIs zu suchen.
 
-Beispiele und weitere Informationen finden Sie unter **[Versionsadaptiver Code](version-adaptive-code.md)**.
+Beispiele und weitere Informationen finden Sie unter **[Versionsadaptiver Code](version-adaptive-code.md)** .
 
 Wenn die Mindestversion für Ihre Apps Build 15063 (Creators Update) oder höher ist, können Sie *bedingte XAML* verwenden, um Eigenschaften festzulegen und Objekte zu instanziieren, ohne Code-Behind verwenden zu müssen. Bedingte XAML bietet eine Möglichkeit, die Methode ApiInformation.IsApiContractPresent im Markup zu verwenden.
 
-Weitere Informationen und Beispiele finden Sie unter **[Bedingte XAML](conditional-xaml.md)**.
+Weitere Informationen und Beispiele finden Sie unter **[Bedingte XAML](conditional-xaml.md)** .
 
 ## <a name="test-your-version-adaptive-app"></a>Testen Ihrer versionsadaptiven App
 

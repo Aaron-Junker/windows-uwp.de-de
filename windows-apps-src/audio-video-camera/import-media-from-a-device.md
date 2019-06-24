@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec16f9810a0802fc319b3ebac679cc4cb2f8334
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a4302568b398c76198e241aeb37980165e1bb864
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361716"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318367"
 ---
 # <a name="import-media-from-a-device"></a>Importieren von Medien von einem Gerät
 
@@ -50,7 +50,7 @@ Implementieren Sie einen Handler für die Schaltfläche zum Abbrechen. In den Be
 
 In einem typischen Medienimportszenario wird dem Benutzer eine Liste der zum Import verfügbaren Medienelemente angezeigt. Es kann eine große Anzahl von Mediendateien zur Auswahl vorhanden sein, und in der Regel soll eine Miniaturansicht für jedes Medienelement angezeigt werden. Aus diesem Grund werden in diesem Beispiel drei Hilfsklassen zum inkrementellen Laden von Einträgen in das ListView-Steuerelement verwendet, wenn der Benutzer in der Liste nach unten scrollt.
 
-* **IncrementalLoadingBase**-Klasse – Implementiert [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN), [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) und [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx), um das grundlegende inkrementelle Ladeverhalten bereitzustellen.
+* **IncrementalLoadingBase**-Klasse – Implementiert [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN), [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) und [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN), um das grundlegende inkrementelle Ladeverhalten bereitzustellen.
 * **GeneratorIncrementalLoadingClass**-Klasse – Stellt die Implementierung der Basisklasse für das inkrementelle Laden bereit.
 * **ImportableItemWrapper**-Klasse – Ein dünner Wrapper um die [**PhotoImportItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Import.PhotoImportItem)-Klasse zum Hinzufügen einer bindbaren [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage)-Eigenschaft für das Miniaturbild für jedes importierte Element.
 

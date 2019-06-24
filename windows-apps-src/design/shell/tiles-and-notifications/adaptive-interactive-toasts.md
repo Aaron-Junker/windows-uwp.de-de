@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, Popupbenachrichtigungen, interaktive Popups, adaptive Popups, Popup-Inhalt, Nutzlast des Popups
 ms.localizationpriority: medium
-ms.openlocfilehash: 75e5ea7e83a1a274b90b14588f7d809a4aa91269
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7bef6874b7855a321c4e5a9153faa96d432d2dea
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366868"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320931"
 ---
 # <a name="toast-content"></a>Popupinhalt
 
@@ -880,5 +880,5 @@ Informationen dazu, wie Sie Popupaktivierungen behandeln (der Benutzer klickt au
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Senden Sie eine lokale Popup- und Handle-Aktivierung](send-local-toast.md)
-* [Benachrichtigungsbibliothek auf GitHub (Teil von das UWP Community Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Benachrichtigungsbibliothek auf GitHub (Teil von das UWP Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Kachel- und popupbildgrößen benachrichtigungsunterstützung für Sprache, Skalierung und hoher Kontrast](tile-toast-language-scale-contrast.md)

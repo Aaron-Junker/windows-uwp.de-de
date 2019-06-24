@@ -7,12 +7,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Notification, Collection, Gruppe, Ux, Ux-Anleitungen, Anleitungen, Aktion, Toast, Info-Centers, Noninterruptive, effektive Benachrichtigungen, nicht intrusiv handlungsrelevant Benachrichtigungen verwalten, Organisieren
 ms.localizationpriority: medium
-ms.openlocfilehash: 878df85db9ab0e33db06a86ddb726f07dc28f013
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 327a2add84343be3b972f7bb1f232298e7ef92ad
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615765"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320728"
 ---
 # <a name="toast-notification-ux-guidance"></a>Toast-Notification-UX-Leitfaden
 Benachrichtigungen sind ein wichtiger Bestandteil des modernen Lebens. Sie können Benutzer produktiver und engagierte mit apps und Websites als auch auf dem Laufenden bleiben mit Updates werden. Benachrichtigungen können jedoch schnell Aktivieren von nützlich, um overbearing und aufwendig, wenn sie nicht zur benutzerorientierten so entworfen wurden. Benachrichtigungen sind eine mit der rechten Maustaste außerhalb wird deaktiviert, und es ist unwahrscheinlich, nachdem sie deaktiviert sind, sie werden aktiviert, erneut.  So stellen Sie sicher, dass Ihre Benachrichtigungen geeigneten Platz auf dem Bildschirm des Benutzers und die Uhrzeit, damit Sie diesen Kanal Engagement geöffnet halten können.
@@ -65,4 +65,4 @@ Wenn Sie noch heute Benachrichtigungen an Ihre UWP-app senden, können Sie Analy
 * [Inhalt der Popupbenachrichtigung](adaptive-interactive-toasts.md)
 * [Unformatierte Benachrichtigungen](raw-notification-overview.md)
 * [Update ausstehend](toast-pending-update.md)
-* [Benachrichtigungsbibliothek auf GitHub (Teil der Windows-Community-Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Benachrichtigungsbibliothek auf GitHub (Teil der Windows-Community-Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: c6dc07ff35cdd90deaddff06f89aa585aa63156a
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 49f03a1ae5ed0ea1a602103e2181c252c8c29c2f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335028"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319328"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Verwenden des Multilingual App Toolkit 4.0
 
@@ -49,7 +49,7 @@ Bevor Sie mit der Lokalisierung der App beginnen können, muss das MAT für Ihr 
 
 - Öffnen Sie die Projektmappe in Visual Studio.
 - Wählen Sie im Projektmappen-Explorer das gewünschte Projekt aus.
-- Wählen Sie im Menü **Extras****Multilingual App Toolkit** > **Auswahl aktivieren**. 
+- Wählen Sie im Menü **Extras** **Multilingual App Toolkit** > **Auswahl aktivieren**. 
 
 Warten Sie, bis im Ausgabefenster (das die Ausgabe des Multilingual App Toolkit enthält) die Nachricht `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>` angezeigt wird. Sobald diese Meldung erscheint, kann MAT verwendet werden.
 
@@ -58,7 +58,7 @@ Warten Sie, bis im Ausgabefenster (das die Ausgabe des Multilingual App Toolkit 
 Führen Sie die folgenden Schritte aus, um Ihrem Projekt Sprachen hinzuzufügen.
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektknoten.
-2. Klicken Sie auf **Multilingual App Toolkit** > **Übersetzungssprachen hinzufügen...**.
+2. Klicken Sie auf **Multilingual App Toolkit** > **Übersetzungssprachen hinzufügen...** .
 3. Wählen Sie im Dialogfeld „Übersetzungssprachen” die Sprachen aus, die sie unterstützen möchten, und klicken Sie dann auf OK.
 
 Das Toolkit führt daraufhin Folgendes aus:
@@ -105,7 +105,7 @@ Nachdem Sie Ihre App mit der Pseudosprache getestet haben, gibt es drei Optionen
 Sie können den Multilingual Editor verwenden, um Zeichenfolgen einzeln zu übersetzen. Wie bereits erwähnt, ist er im [MSI-Installationsprogramm](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit) enthalten.
 
 - Klicken Sie mit der rechten Maustaste auf die XLF-Datei, die Sie übersetzen möchten.
-- Klicken Sie auf **Öffnen mit...**, und wählen Sie den Multilingual Editor. Sie können auch auf **Als Standard festlegen** klicken.
+- Klicken Sie auf **Öffnen mit...** , und wählen Sie den Multilingual Editor. Sie können auch auf **Als Standard festlegen** klicken.
 - Für jede Zeichenfolge wird unter **Quelle** die ursprüngliche Zeichenfolge in der Standardsprache angezeigt. Unter **Übersetzung** geben Sie die Übersetzung der Zeichenfolge in der entsprechenden Sprache für die XLF-Datei ein, die Sie bearbeiten.
 - Wenn Sie fertig sind, speichern und schließen Sie die Datei.
 
@@ -115,7 +115,7 @@ Sie können auch den Multilingual Editor auch wie folgt starten. Wechseln Sie zu
 
 #### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>Option 2: Senden Sie die XLF-Dateien zur Übersetzung an einen Drittanbieter.
 
-Um die Übersetzungs- und Bearbeitungsaufgaben an Lokalisierer zu übergeben, wählen Sie die gewünschten XLF-Dateien im Projektmappen-Explorer aus. Klicken Sie dann mit der rechten Maustaste darauf und anschließend auf **Multilingual App Toolkit** > **Übersetzungen exportieren...**.
+Um die Übersetzungs- und Bearbeitungsaufgaben an Lokalisierer zu übergeben, wählen Sie die gewünschten XLF-Dateien im Projektmappen-Explorer aus. Klicken Sie dann mit der rechten Maustaste darauf und anschließend auf **Multilingual App Toolkit** > **Übersetzungen exportieren...** .
 
 Wählen Sie **Ausgabe: E-Mail-Empfänger** in das Dialogfeld "Exportieren Zeichenfolge Ressourcen", und auf OK, und Ihre Dateien komprimiert und an eine neue e-Mail angefügt. Wählen Sie **Ausgabe: Speicherort**Browser wählen Sie für einen Ordner und klicken Sie auf OK, optional für die Dateien komprimiert werden, und klicken Sie auf OK erneut, Ihre Dateien werden (ZIP und) an der Position, die Sie ausgewählt haben, in einen neuen Ordner mit dem Namen für Ihr Projekt gespeichert.
 
@@ -127,11 +127,11 @@ Erstellen Sie Ihr Projekt neu, um zu bewirken, dass die übersetzten Zeichenfolg
 
 Folgende Drittanbieter bieten Lokalisierungsdienste an und können Ihnen möglicherweise behilflich sein:
 
-- [Elanex](https://www.elanex.com/)
+- [Elanex](https://www.strakertranslations.com/)
 - [Keywords Studios](https://www.keywordsstudios.com/)
 - [Lionbridge](https://www.lionbridge.com)
-- [Moravia](https://www.moravia.com/)
-- [SDL](https://www.sdl.com/languagecloud/managed-translation/ilp/instantquote)
+- [Moravia](https://www.rws.com/what-we-do/rws-moravia/)
+- [SDL](https://www.sdl.com/translate/get-started/instant-quote.html)
 - [Welocalize](https://www.welocalize.com/)
 
 > [!NOTE]

@@ -6,12 +6,12 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Kategorie, Unterkategorie, Genre, Kategorien, Genres
 ms.localizationpriority: medium
-ms.openlocfilehash: 227119c265565e6f2f7965e53bb57f74a5c619f1
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 4d7f3d01122bf4311e8f7b3a4a166478d5ba0ea6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787166"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320054"
 ---
 # <a name="category-and-subcategory-table"></a>Kategorie- und Unterkategorietabelle
 
@@ -20,7 +20,7 @@ Das Zuweisen der richtigen Kategorie und Unterkategorie trägt dazu bei, dass Ku
 
 Sie müssen Sie die Kategorie auswählen, die Ihre App am besten beschreibt. Wählen Sie optional, falls verfügbar, eine Unterkategorie aus. Falls Sie sich nicht sicher sind, welche Kategorie oder Unterkategorie Sie verwenden sollen, oder wenn Sie keine finden können, die Ihnen zusagt, suchen Sie die Kategorie aus, in der Kunden Ihrer Meinung nach am ehesten nach einer App wie Ihrer suchen.
 
-Auf Wunsch **Spiele** für Ihre Kategorie, müssen Sie mindestens eine Unterkategorie auswählen (namens *"Genre"* für Spiele). Sie können beliebig viele Genres für Ihr Spiel auswählen. Um ein Spiel für Ihre Kunden auf Xbox zu veröffentlichen, müssen Sie das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators) aktivieren oder den Prozess der [Konzeptgenehmigung](../gaming/concept-approval.md) durchlaufen). 
+Auf Wunsch **Spiele** für Ihre Kategorie, müssen Sie mindestens eine Unterkategorie auswählen (namens *"Genre"* für Spiele). Sie können beliebig viele Genres für Ihr Spiel auswählen. Um ein Spiel für Ihre Kunden auf Xbox zu veröffentlichen, müssen Sie das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) aktivieren oder den Prozess der [Konzeptgenehmigung](../gaming/concept-approval.md) durchlaufen). 
 
 > [!IMPORTANT] 
 > Wenn Sie die App in der Kategorie **Spiele** veröffentlichen, ist es nicht möglich, eine andere Kategorie bei einer neuen Übermittlung auszuwählen. Sie muss weiterhin in der Kategorie **Spiele** veröffentlicht werden (Sie können allerdings die Auswahl des Genres in bei einer neuen Übermittlung ändern). Außerdem können Sie die Kategorie **Spiele** nicht bei einem Update der App auswählen, die Sie zuvor in einer anderen Kategorie veröffentlicht haben.

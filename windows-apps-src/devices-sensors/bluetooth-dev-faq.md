@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e45f8ef0f5684b3a712056eb367975f8e6103a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f61f2a0889cd5a2b2b95063e6009530951b49cbd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370349"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321602"
 ---
 # <a name="bluetooth-developer-faq"></a>Bluetooth-Entwickler – Häufig gestellte Fragen
 
@@ -82,5 +82,5 @@ Ja, alle diese APIs sollten funktionieren. In diesem Blog wird ausführlich besc
 **Bluetooth LE**: Ja, alle Funktionen ist in der OneCore und auf die letzte Geräten mit einem funktionierenden Bluetooth LE-Stapel verfügbar sein sollen. 
 > Einschränkung: Peripherie-Rolle ist abhängig von der Hardware und einigen Windows Server-Editionen unterstützen keine Bluetooth. 
 
-**Bluetooth (klassisch) für die BR/EDR**: Im großen und sehr ähnliche Ebene Profil-Unterstützung verfügen, jedoch einige Variationen vorhanden. Siehe die Dokumentation zu [RFCOMM](send-or-receive-files-with-rfcomm.md) und diese Dokumentation zu unterstützten Profilen für [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) und [Telefon](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles).
+**Bluetooth (klassisch) für die BR/EDR**: Im großen und sehr ähnliche Ebene Profil-Unterstützung verfügen, jedoch einige Variationen vorhanden. Siehe die Dokumentation zu [RFCOMM](send-or-receive-files-with-rfcomm.md) und diese Dokumentation zu unterstützten Profilen für [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) und [Telefon](https://support.microsoft.com/products/windows?os=windows-10-mobile).
 

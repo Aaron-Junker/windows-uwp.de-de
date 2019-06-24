@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b6c6fc7a7e3ddfab70fe289a41bb4d436e9722
-ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
+ms.openlocfilehash: 24878d3c63de7df9c55f48571984b7d60d1ea240
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377316"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320369"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Vermittelte Komponenten für Windows-Runtime für eine quergeladene UWP-App
 
@@ -19,7 +19,7 @@ Dieser Artikel beschreibt ein Unternehmen ausgerichtete-Feature von Windows 10, 
 
 ## <a name="introduction"></a>Einführung
 
->**Beachten Sie**  für den Beispielcode in diesem Artikel heruntergeladen [Visual Studio 2015 und 2017](https://aka.ms/brokeredsample). Microsoft Visual Studio-Vorlage zum Erstellen von Windows-Runtime-Komponenten für Brokermessaging kann hier heruntergeladen werden: [Visual Studio 2015-Vorlage für universelle Windows-Apps für Windows 10](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**Beachten Sie**  für den Beispielcode in diesem Artikel heruntergeladen [Visual Studio 2015 und 2017](https://aka.ms/brokeredsample). Microsoft Visual Studio-Vorlage zum Erstellen von Windows-Runtime-Komponenten für Brokermessaging kann hier heruntergeladen werden: [Visual Studio 2015-Vorlage für universelle Windows-Apps für Windows 10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 Windows enthält ein neues Feature namens *Windows Runtime-Komponenten für Anwendungen quergeladener vermittelte*. Wir verwenden den Begriff „prozessübergreifende Kommunikation“ (Inter-Process Communication, IPC), um die Fähigkeit zu beschreiben, vorhandene Desktopsoftwareressourcen in einem einzigen Prozess (Desktopkomponente) auszuführen und gleichzeitig mit diesem Code in einer UWP-App zu interagieren. Dieses Modell ist Unternehmensentwicklern vertraut, da Datenbankanwendungen und Anwendungen, die NT-Dienste unter Windows verwenden, eine ähnliche, aus mehreren Prozessen bestehende Architektur verwenden.
 
@@ -590,7 +590,7 @@ Die Liste der Module für einen Server Broker tragen *clrhost.dll* in die List
 
 ## <a name="resources"></a>Ressourcen
 
--   [Projektvorlagen für brokermessaging WinRT-Komponente für Windows 10 und Visual Studio 2015](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [Projektvorlagen für brokermessaging WinRT-Komponente für Windows 10 und Visual Studio 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 -   [Das Beispiel NorthwindRT vermittelte WinRT-Komponente](https://go.microsoft.com/fwlink/p/?LinkID=397349)
 

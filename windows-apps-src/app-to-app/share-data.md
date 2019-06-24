@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bebd214f5f634e501f7a79bc57cc306f1b559e7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 08dbe9ed7aaa732172d488712aa47d6d3631508a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359196"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317704"
 ---
 # <a name="share-data"></a>Freigeben von Daten
 
@@ -60,7 +60,7 @@ Eine Benutzeroberfläche für das Freigeben wird vom System bereitgestellt. Zum 
 
 ## <a name="handle-errors"></a>Behandeln von Fehlern
 
-In den meisten Fällen ist das Freigeben von Inhalten ein einfacher Prozess. Es besteht jedoch immer die Möglichkeit, dass unerwartet ein Problem auftritt. So kann in der App etwa vorgesehen sein, dass der Benutzer etwas zum Teilen auswählt, der Benutzer hat aber nichts ausgewählt. Um diese Situationen zu behandeln, verwenden Sie die [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String))-Methode, die dem Benutzer eine Meldung anzeigt, wenn ein Fehler auftritt.
+In den meisten Fällen ist das Freigeben von Inhalten ein einfacher Prozess. Es besteht jedoch immer die Möglichkeit, dass unerwartet ein Problem auftritt. So kann in der App etwa vorgesehen sein, dass der Benutzer etwas zum Teilen auswählt, der Benutzer hat aber nichts ausgewählt. Um diese Situationen zu behandeln, verwenden Sie die [**FailWithDisplayText**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest#Windows_ApplicationModel_DataTransfer_DataRequest_FailWithDisplayText_System_String_)-Methode, die dem Benutzer eine Meldung anzeigt, wenn ein Fehler auftritt.
 
 ## <a name="delay-share-with-delegates"></a>Verzögern der Freigabe mit Delegaten
 

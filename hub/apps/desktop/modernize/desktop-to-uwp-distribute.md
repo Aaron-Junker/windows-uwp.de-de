@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 45d298aca60155915900f494654dce8e89fb1ee0
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 2d10836da46cce4d862f7f727890b0c9c107df5a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131907"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317061"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Verteilen Sie Ihre desktop-app-Paket
 
@@ -26,7 +26,7 @@ Wenn Sie entscheiden, [Packen Ihrer desktop-app in einem Paket MSIX](/windows/ms
 
 Der [Microsoft Store](https://www.microsoft.com/store/apps) ist eine bequeme Möglichkeit für Kunden, Ihre App zu beziehen.
 
-Veröffentlichen Sie Ihre Anwendung auf dem Microsoft Store das breiteste Publikum zu erreichen. Darüber hinaus erhalten Organisation Kunden Ihrer Anwendung intern in der eigenen Organisation durch Verteilen der [Microsoft Store für Unternehmen](https://www.microsoft.com/business-store).
+Veröffentlichen Sie Ihre Anwendung auf dem Microsoft Store das breiteste Publikum zu erreichen. Darüber hinaus erhalten Organisation Kunden Ihrer Anwendung intern in der eigenen Organisation durch Verteilen der [Microsoft Store für Unternehmen](https://businessstore.microsoft.com/store).
 
 Wenn Sie eine Veröffentlichung im Microsoft Store planen, werden Ihnen als Teil des Übermittlungsprozesses einige zusätzliche Fragen gestellt. Der Grund dafür ist, dass Ihr Paketmanifest eine eingeschränkte Funktion mit dem Namen **runFullTrust** deklariert und wir die Verwendung dieser Funktion durch Ihre Anwendung genehmigen müssen. Erfahren Sie mehr zu dieser Anforderung hier: [Eingeschränkte Funktionen](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 

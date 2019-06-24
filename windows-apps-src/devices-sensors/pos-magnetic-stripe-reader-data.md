@@ -5,12 +5,12 @@ ms.date: 10/04/2018
 ms.topic: article
 keywords: Zeigen Sie die Windows 10, Uwp, Service, pos, Magnetstreifenleser
 ms.localizationpriority: medium
-ms.openlocfilehash: 1805213c7c30ccbc67fb96098f11480703589bb4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 12b88d942e4b5a9c90880f6bd362ba9e7e011186
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651605"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321551"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>Abrufen und Verstehen von Magnetstreifendaten
 
@@ -24,10 +24,9 @@ Wenn der Reader eine gestreiften Karte erkennt, wird eines der drei Ereignisse a
 * [BankCardDataReceived Ereignis](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): Tritt auf, wenn es sich bei eine Bankkarte Transaktionsdatenbank ist.
 * [VendorSpecificDataReceived Ereignis](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived): Tritt auf, wenn eine Karte anbieterspezifische Transaktionsdatenbank ist.
 
-Ihre Anwendung muss nur die Ereignisse abonnieren, die vom Magnetstreifen Reader unterstützt werden. Sie können sehen, welche Typen von Karten mit unterstützt werden [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes
-).
+Ihre Anwendung muss nur die Ereignisse abonnieren, die vom Magnetstreifen Reader unterstützt werden. Sie können sehen, welche Typen von Karten mit unterstützt werden [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes).
 
-Der folgende Code zeigt die drei abonnieren ***"DataReceived"** Ereignisse:
+Der folgende Code zeigt die drei abonnieren * **"DataReceived"** Ereignisse:
 
 ```cs
 private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, MagneticStripeReader reader)
@@ -54,7 +53,7 @@ Der Ereignishandler übergeben die [ClaimedMagneticStripeReader](https://docs.mi
 
 * **AamvaCardDataReceived** Ereignis: [MagneticStripeReaderAamvaCardDataReceivedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
 * **BankCardDataReceived** Ereignis: [MagneticStripeReaderBankCardDataReceivedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
-* **VendorSpecificDataReceived** Ereignis: [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
+* **VendorSpecificDataReceived** Ereignis: [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
 
 ## <a name="get-the-data"></a>Abrufen der Daten
 

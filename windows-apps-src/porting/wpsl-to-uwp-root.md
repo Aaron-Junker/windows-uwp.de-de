@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c9088f695fb70d171f0b9d5474a4a0f2a63cae05
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d611c57ff6d8382a70bcc5078e04e9af8b6fd4ca
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372426"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322271"
 ---
 #  <a name="move-from-windowsphone-silverlight-to-uwp"></a>Verschieben von Windows Phone Silverlight zu UWP
 
 
 Wenn Sie mit einer Windows Phone Silverlight-app-Entwickler sind, wird Sie beim Übergang auf Windows 10 können Sie mit Ihren Fähigkeiten und den Quellcode vornehmen können. Unter Windows 10 können Sie eine app (Universelle Windows Plattform) erstellen, die eine einzelne app-Paket ist, die Ihre Kunden auf jede Art von Gerät installieren können. Weitere Hintergrundinformationen für Windows 10 UWP-apps und die Konzepte von adaptiven Code und adaptive Benutzeroberfläche, in denen wir in diesem Leitfaden zum Portieren erwähnt werden, finden Sie unter den [Anleitung zu universellen Windows-Plattform (UWP) apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
-Wenn Sie Ihre Windows Phone Silverlight-app in einer Windows 10-app portieren, Sie werden auf den mobilen Features informieren Sie sich, die [, eingeführt in Windows Phone 8.1](https://docs.microsoft.com/previous-versions/windows/apps/ff402535(v%3dvs.105)), und schon über die universelle Windows-Plattform (UWP) zu verwenden, deren app Modell und die Benutzeroberflächen-Framework sind universelle auf allen Windows 10-Geräten. Dies ermöglicht die Unterstützung von PCs, Tablets, Telefonen und einer großen Zahl von anderen Gerätearten – mit einer Codebasis und einem App-Paket. Zudem vervielfacht sich die potenzielle Zielgruppe Ihrer App, und Sie erhalten neue Möglichkeiten durch freigegebene Daten, gekaufte Consumables usw. Weitere Informationen zu neuen Funktionen finden Sie unter [Neuigkeiten für Entwickler in Windows 10](https://dev.windows.com/getstarted/whats-new-windows-10).
+Wenn Sie Ihre Windows Phone Silverlight-app in einer Windows 10-app portieren, Sie werden auf den mobilen Features informieren Sie sich, die [, eingeführt in Windows Phone 8.1](https://docs.microsoft.com/previous-versions/windows/apps/ff402535(v=vs.105)), und schon über die universelle Windows-Plattform (UWP) zu verwenden, deren app Modell und die Benutzeroberflächen-Framework sind universelle auf allen Windows 10-Geräten. Dies ermöglicht die Unterstützung von PCs, Tablets, Telefonen und einer großen Zahl von anderen Gerätearten – mit einer Codebasis und einem App-Paket. Zudem vervielfacht sich die potenzielle Zielgruppe Ihrer App, und Sie erhalten neue Möglichkeiten durch freigegebene Daten, gekaufte Consumables usw. Weitere Informationen zu neuen Funktionen finden Sie unter [Neuigkeiten für Entwickler in Windows 10](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest).
 
 Wenn Sie die Option, möglich Windows Phone Silverlight-Version Ihrer App und die Windows 10-Version von sowohl für Kunden verfügbar zur gleichen Zeit.
 
@@ -79,7 +79,7 @@ Die gute Nachricht ist, dass auf der Featureebene nur sehr wenig nicht in der UW
 ## <a name="related-topics"></a>Verwandte Themen
 
 **Dokumentation**
-* [Neuigkeiten für Entwickler in Windows 10](https://dev.windows.com/getstarted/whats-new-windows-10)
+* [Neuigkeiten für Entwickler in Windows 10](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)
 * [Anleitung für UWP (Universelle Windows-Plattform)-Apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [Roadmap für universelle Windows-Plattform (UWP)-apps mit C# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))
 * [Nächste Schritte für Windows Phone 8-Entwickler](https://docs.microsoft.com/previous-versions/windows/apps/dn655121(v=vs.105))

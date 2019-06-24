@@ -4,12 +4,12 @@ description: Dieser Artikel enthält eine Übersicht über die CPUSets-API,die i
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: 49662d476d6d022ca05d53e9358fc547fda92a32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 693abe68fcc7e4a341d773c6fa1af0d777c60c15
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625665"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322155"
 ---
 # <a name="cpusets-for-game-development"></a>CPUSets für die Entwicklung von Spielen
 
@@ -49,11 +49,11 @@ Die Informationen in jeder Instanz dieser Datenstruktur, die von **GetSystemCpuS
 
  **Tabelle 1. Der Datenmember ist nützlich für die Entwicklung von Spielen.**
 
-| Elementname  | Datentyp | Beschreibung |
+| Membername  | Datentyp | Beschreibung |
 | ------------- | ------------- | ------------- |
 | Typ  | CPU_SET_INFORMATION_TYPE  | Der Typ der Informationen in der Struktur. Wenn der Wert nicht **CpuSetInformation** lautet, sollte er ignoriert werden.  |
 | Id  | ohne Vorzeichen lang  | Die ID des angegebenen CPU-Satzes. Dies ist die ID, die mit CPU-Satz-Funktionen wie **SetThreadSelectedCpuSets** verwendet werden sollte.  |
-| Gruppe  | ohne Vorzeichen kurz  | Gibt die „Prozessorgruppe“ des CPU-Satzes an. Mit Prozessorgruppen kann ein PC mehr als 64 logische Prozessorkerne haben, und ein Austausch von CPUs per Hot-Swap bei laufendem System wird möglich. Es kommt nicht oft vor, dass ein PC kein Server mit mehr als einer Gruppe ist. Wenn Sie nicht gerade Anwendungen schreiben, die auf großen Servern oder Serverfarmen ausgeführt werden sollen, empfiehlt es sich, CPU-Sätze in einer einzelnen Gruppe zu verwenden, da die meisten Verbraucher-PCs nur eine Prozessorgruppe haben. Alle anderen Werte in dieser Struktur beziehen sich auf die Gruppe.  |
+| Gruppieren  | ohne Vorzeichen kurz  | Gibt die „Prozessorgruppe“ des CPU-Satzes an. Mit Prozessorgruppen kann ein PC mehr als 64 logische Prozessorkerne haben, und ein Austausch von CPUs per Hot-Swap bei laufendem System wird möglich. Es kommt nicht oft vor, dass ein PC kein Server mit mehr als einer Gruppe ist. Wenn Sie nicht gerade Anwendungen schreiben, die auf großen Servern oder Serverfarmen ausgeführt werden sollen, empfiehlt es sich, CPU-Sätze in einer einzelnen Gruppe zu verwenden, da die meisten Verbraucher-PCs nur eine Prozessorgruppe haben. Alle anderen Werte in dieser Struktur beziehen sich auf die Gruppe.  |
 | LogicalProcessorIndex  | char-Wert ohne Vorzeichen  | Zur Gruppe relativer Index des CPU-Satzes  |
 | CoreIndex  | char-Wert ohne Vorzeichen  | Zur Gruppe relativer Index des physischen CPU-Kerns, auf dem sich der CPU-Satz befindet.  |
 | LastLevelCacheIndex  | char-Wert ohne Vorzeichen  | Zur Gruppe relativer Index des letzten Caches, der diesem CPU-Satz zugeordnet ist. Dies ist der langsamste Cache, es sei denn, das System verwendet NUMA-Knoten, in der Regel den L2- oder L3-Cache.  |
@@ -191,7 +191,7 @@ Das in Abbildung 1 dargestellte Cache-Layout ist ein Beispiel für die Art von L
 Die für UWP-Entwicklung verfügbare CPUSets-API bietet eine beträchtliche Menge an Informationen und Kontrolle über Ihre Multithreading-Optionen. Der zusätzliche Komplexität im Vergleich zu früheren Multithread-APIs für die Windows-Entwicklung ist mit einer Lernkurve verbunden. Die gestiegene Flexibilität ermöglicht aber letztendlich eine bessere Leistung auf unterschiedlichen Verbraucher-PCs und anderen Hardwarezielen.
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-- [CPU-Gruppen (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
+- [CPU-Gruppen (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
 - [ATG gebotenen CPUSets-Beispiel](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
 - [UWP auf Xbox One](index.md)
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ac96354fa1752f655307a5dfd18678233e59c724
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a72a4e7349a5d72b7081873814389c0924ca9308
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372439"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322286"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Portieren von Windows Phone Silverlight-XAML und für die UWP-Benutzeroberfläche
 
@@ -201,7 +201,7 @@ Windows Phone Silverlight-apps verwenden die Steuerelemente, die der **Microsoft
 
 **Beachten Sie**    visuellen Zustand der PointerOver in benutzerdefinierte Stile/Templates in Windows 10-apps, aber nicht in Windows Phone Silverlight-Anwendungen relevant ist. Es gibt weitere Gründe, warum Ihre vorhandenen benutzerdefinierte Stile/Vorlagen möglicherweise nicht für Windows 10-apps, einschließlich Systemressourcenschlüssel, die Sie verwenden, Änderungen für die Sätze von visuellen Zuständen verwendet und leistungsverbesserungen, die versucht, die Standardstile für Windows 10 / Vorlagen. Es wird empfohlen, dass Sie eine neue Kopie der Standardvorlage des Steuerelements, für Windows 10 bearbeiten und wenden Sie Ihre Anpassung Stil- und Vorlagenressourcen, klicken Sie dann erneut.
 
-Weitere Informationen zu UWP-Steuerelementen finden Sie unter [Steuerelemente nach Funktion](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Liste der Steuerelemente](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) und [Richtlinien für Steuerelemente](https://developer.microsoft.com/windows/design/controls-patterns).
+Weitere Informationen zu UWP-Steuerelementen finden Sie unter [Steuerelemente nach Funktion](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Liste der Steuerelemente](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) und [Richtlinien für Steuerelemente](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index).
 
 ##  <a name="design-language-in-windows10"></a>Design-Sprache in Windows 10
 
@@ -211,7 +211,7 @@ Es gibt einige Unterschiede in Design-Sprache zwischen Windows Phone Silverlight
 
 Für lokalisierte Zeichenfolgen können Sie die RESX-Datei aus dem Windows Phone Silverlight-Projekt in Ihre UWP-app-Projekt erneut verwenden. Kopieren Sie die Datei, fügen Sie sie dem Projekt hinzu, und benennen Sie sie in „Resources.resw“ um, damit sie standardmäßig vom Suchmechanismus gefunden wird. Legen Sie **BBuildvorgangn** auf **PRIResource** und **In Ausgabeverzeichnis kopieren** auf **Nicht kopieren** fest. Anschließend können Sie die Zeichenfolgen im Markup verwenden, indem Sie das **X:Uid**-Attribut für Ihre XAML-Elemente angeben. Finden Sie unter [Schnellstart: Verwenden von Zeichenfolgenressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
 
-Windows Phone Silverlight-apps verwenden die **CultureInfo** Klasse können Sie eine app Globalisieren. UWP-Apps verwenden MRT (Modern Resource Technology), wodurch App-Ressourcen (Lokalisierung, Skalierung und Design) sowohl zur Laufzeit als auch in der Visual Studio-Entwurfsoberfläche dynamisch geladen werden können. Weitere Informationen finden Sie unter [Richtlinien für Dateien, Daten und Globalisierung](https://developer.microsoft.com/windows/design/usability).
+Windows Phone Silverlight-apps verwenden die **CultureInfo** Klasse können Sie eine app Globalisieren. UWP-Apps verwenden MRT (Modern Resource Technology), wodurch App-Ressourcen (Lokalisierung, Skalierung und Design) sowohl zur Laufzeit als auch in der Visual Studio-Entwurfsoberfläche dynamisch geladen werden können. Weitere Informationen finden Sie unter [Richtlinien für Dateien, Daten und Globalisierung](https://docs.microsoft.com/windows/uwp/design/usability/index).
 
 Im Thema [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) wird beschrieben, wie Sie gerätefamilienspezifische Ressourcen auf der Grundlage des Ressourcenauswahlfaktors für die Gerätefamilie laden.
 

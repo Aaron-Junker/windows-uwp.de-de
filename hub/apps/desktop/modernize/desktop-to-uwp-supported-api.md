@@ -9,12 +9,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e0ae94b0f8631c88f48098f8c2f3df000c25252c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e4b919d42cb113c6ec9f2710baec6c9aa1765840
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359424"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317591"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>UWP-APIs für desktop-apps verfügbar
 
@@ -50,7 +50,7 @@ Gelegentlich können APIs in diesen Bereichen scheinbar ordnungsgemäß funktion
 
 Folgendes ist eine vollständige Liste der UWP-APIs in desktop-apps unterstützt. Sie können anzeigen, [APIs, die nur in App-Pakete unterstützt](#new) oder [APIs, die in App-Pakete und desktop-Anwendungen unterstützt](#both).
 
-Beispiele zur Verwendung von UWP-APIs finden Sie in der [Desktop Bridge Beispiele](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) und [app-Beispiele für universelle Windows-Plattform (UWP)](https://github.com/Microsoft/Windows-universal-samples) auf GitHub. Sie können außerdem den Blog-Artikel zum Erstellen einer App für Windows nutzen: [Aufrufen von Windows 10-APIs aus einer Desktop-Anwendung](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
+Beispiele zur Verwendung von UWP-APIs finden Sie in der [Desktop Bridge Beispiele](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) und [app-Beispiele für universelle Windows-Plattform (UWP)](https://github.com/Microsoft/Windows-universal-samples) auf GitHub. Sie können außerdem den Blog-Artikel zum Erstellen einer App für Windows nutzen: [Aufrufen von Windows 10-APIs aus einer Desktop-Anwendung](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
 <a id="new" />
 

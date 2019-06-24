@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Anzeigennetzwerke, App-Metadaten
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: 0122c2fbe1e0e9905a8509694c4a589e04e33247
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d47b1fb567c647ade6ae81373b391c42354f7d88
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621135"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318627"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>App-Metadaten-API für Anzeigennetzwerke
 
@@ -69,7 +69,7 @@ Diese Methode hat die folgende Anforderungssyntax.
 
 | Header        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Ocp-Apim-Subscription-Key | string | Erforderlich. Der Abonnementschlüssel, den Sie aus dem [Portal für die App-Metadaten-API abgerufen haben](#get-key).  |
+| Ocp-Apim-Subscription-Key | String | Erforderlich. Der Abonnementschlüssel, den Sie aus dem [Portal für die App-Metadaten-API abgerufen haben](#get-key).  |
 
 <span/>
 
@@ -77,7 +77,7 @@ Diese Methode hat die folgende Anforderungssyntax.
 
 | Name        | Typ   | Beschreibung                                                                 |
 |---------------|--------|-----------------------|
-| app_id | string | Erforderlich. Die ID der App, für die Sie Metadaten abrufen möchten. Folgende Werte sind möglich:<br/><br/><ul><li>Die Store-ID für die App. Beispiel für eine Store-ID: 9NBLGGH29DM8.</li><li>Die Produkt-ID (manchmal auch als *App-ID* bezeichnet) für eine App, die ursprünglich für Windows 8.x oder Windows Phone 8.x erstellt wurde. Die Produkt-ID ist eine GUID.</li></ul> |
+| app_id | String | Erforderlich. Die ID der App, für die Sie Metadaten abrufen möchten. Folgende Werte sind möglich:<br/><br/><ul><li>Die Store-ID für die App. Beispiel für eine Store-ID: 9NBLGGH29DM8.</li><li>Die Produkt-ID (manchmal auch als *App-ID* bezeichnet) für eine App, die ursprünglich für Windows 8.x oder Windows Phone 8.x erstellt wurde. Die Produkt-ID ist eine GUID.</li></ul> |
 
 <span/>
 
@@ -128,21 +128,21 @@ Weitere Informationen zu den Werten im Antworttext finden Sie in der folgenden T
 
 | Wert      | Typ   | Beschreibung    |
 |------------|--------|--------------------|
-| storeId           | string  | Die Store-ID der App. Beispiel für eine Store-ID: 9NBLGGH29DM8.     |  
-| name           | string  | Der Name der App.   |
-| description           | string  | Die Beschreibung aus dem Store-Eintrag für die App.  |
-| phoneStoreGuid           | string  | Die Produkt-ID (Windows Phone 8.x) für die App. Dies ist eine GUID.  |
-| windowsStoreGuid           | string  | Die Produkt-ID (Windows 8.x) für die App. Dies ist eine GUID. |
-| storeCategory           | string  | Die Kategorie für die App im Store. Die unterstützten Werte finden Sie in der [Kategorie- und Unterkategorietabelle](../publish/category-and-subcategory-table.md) für Apps im Store.  |
-| iabCategory           | string  | Die Inhaltskategorie für die App gemäß Definition des Interactive Advertising Bureau (IAB). Beispielsweise **Nachrichten** oder **Sport**. Eine Liste der Inhaltskategorien finden Sie auf der Seite [IAB Tech Lab Content Taxonomy](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy) der IAB-Website.   |
-| iabCategoryId           | string  | Die ID der Inhaltskategorie für die App. **IAB12** ist beispielsweise die ID für die Nachrichtenkategorie und **IAB17** die ID für die Sportkategorie. Eine Liste der IDs für Inhaltskategorien finden Sie in Abschnitt 5.1 der [OpenRTB API Specification](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf). |
+| storeId           | String  | Die Store-ID der App. Beispiel für eine Store-ID: 9NBLGGH29DM8.     |  
+| NAME           | String  | Der Name der App.   |
+| description           | String  | Die Beschreibung aus dem Store-Eintrag für die App.  |
+| phoneStoreGuid           | String  | Die Produkt-ID (Windows Phone 8.x) für die App. Dies ist eine GUID.  |
+| windowsStoreGuid           | String  | Die Produkt-ID (Windows 8.x) für die App. Dies ist eine GUID. |
+| storeCategory           | String  | Die Kategorie für die App im Store. Die unterstützten Werte finden Sie in der [Kategorie- und Unterkategorietabelle](../publish/category-and-subcategory-table.md) für Apps im Store.  |
+| iabCategory           | String  | Die Inhaltskategorie für die App gemäß Definition des Interactive Advertising Bureau (IAB). Beispielsweise **Nachrichten** oder **Sport**. Eine Liste der Inhaltskategorien finden Sie auf der Seite [IAB Tech Lab Content Taxonomy](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy/) der IAB-Website.   |
+| iabCategoryId           | String  | Die ID der Inhaltskategorie für die App. **IAB12** ist beispielsweise die ID für die Nachrichtenkategorie und **IAB17** die ID für die Sportkategorie. Eine Liste der IDs für Inhaltskategorien finden Sie in Abschnitt 5.1 der [OpenRTB API Specification](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf). |
 | coppa           | Boolesch  | „True“, wenn sich die App an Kinder unter 13 Jahren richtet und daher bestimmten Anforderungen gemäß dem Children's Online Privacy Protection Act („COPPA“) unterliegt; andernfalls „False“.  |
-| downloadUrl           | string  | Der Link zum App-Eintrag im Store. Dieser Link hat das Format ```https://www.microsoft.com/store/apps/<Store ID>```.  |
+| downloadUrl           | String  | Der Link zum App-Eintrag im Store. Dieser Link hat das Format ```https://www.microsoft.com/store/apps/<Store ID>```.  |
 | isLive           | Boolesch  | „True“, wenn die App im Store derzeit verfügbar ist. Andernfalls „false“.  |
 | iconUrls           | array  |  Ein Array von einer oder mehreren Zeichenfolgen, die die relativen Pfade zu den Symbol-URLs enthalten, die der App zugeordnet sind. Um die Symbole abzurufen, stellen Sie den URLs *http* oder *https* voran.  |
-| type           | string  | Eine der folgenden Zeichenfolgen: **App** oder **Spiel**.  |
+| Typ           | String  | Eine der folgenden Zeichenfolgen: **App** oder **Spiel**.  |
 | Geräte           |  array  | Ein Array von einem oder mehreren der folgenden Zeichenfolgen, die die Gerätetypen festlegen, die die app unterstützt: **PC**, **Phone**, **Xbox**, **IoT**, **Server**, und **Holographic**.  |
-| platformVersions           | array  |  Ein Array von einem oder mehreren der folgenden Zeichenfolgen, die die Plattformen anzugeben, die die app unterstützt: **Windows.Universal**, **Windows.Windows8x**, und **Windows.WindowsPhone8x**.  |
+| platformVersions           | array  |  Ein Array von einem oder mehreren der folgenden Zeichenfolgen, die die Plattformen anzugeben, die die app unterstützt: **Windows.Universal**, **Windows.Windows8x**, and **Windows.WindowsPhone8x**.  |
 | screenshotUrls           | array  | Ein Array von einer oder mehreren Zeichenfolgen, die die relativen Pfade zu den Screenshot-URLs für diese App enthalten. Um die Screenshots abzurufen, stellen Sie den URLs *http* oder *https* voran.  |
 
 <span/>

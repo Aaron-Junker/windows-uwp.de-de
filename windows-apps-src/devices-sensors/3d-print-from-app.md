@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, 3dprinting, 3D-Druck
 ms.localizationpriority: medium
-ms.openlocfilehash: 712efde0293edff6134309ac2d6d9105413a2877
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e2ed99720afdccef297d46853d4a2445b497195e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370424"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321694"
 ---
 # <a name="3d-printing-from-your-app"></a>3D-Druck über Ihre App
 
@@ -54,7 +54,7 @@ Hinzufügen eines **TextBlock**-Elements für UI-Feedback:
 ## <a name="get-the-3d-data"></a>Abrufen der 3D-Daten
 
 
-Die Methode, mit der Ihre App 3D-Geometriedaten abruft, kann variieren. Die App kann Daten aus einem 3D-Scan abrufen, Modelldaten in einem Pull-Vorgang aus einer Webressource herunterladen oder programmgesteuert mithilfe von mathematischen Gleichungen oder Benutzereingaben ein 3D-Gitter generieren. Der Einfachheit halber wird in dieser Anleitung gezeigt, wie Sie eine 3D-Datendatei (mit einem beliebigen gängigen Dateityp) aus dem Gerätespeicher in den Programmspeicher laden. Die [Modellbibliothek für 3D Builder](https://developer.microsoft.com/windows/hardware/3d-builder-model-library) enthält verschiedene Modelle, die Sie leicht auf Ihr Gerät herunterladen können.
+Die Methode, mit der Ihre App 3D-Geometriedaten abruft, kann variieren. Die App kann Daten aus einem 3D-Scan abrufen, Modelldaten in einem Pull-Vorgang aus einer Webressource herunterladen oder programmgesteuert mithilfe von mathematischen Gleichungen oder Benutzereingaben ein 3D-Gitter generieren. Der Einfachheit halber wird in dieser Anleitung gezeigt, wie Sie eine 3D-Datendatei (mit einem beliebigen gängigen Dateityp) aus dem Gerätespeicher in den Programmspeicher laden. Die [Modellbibliothek für 3D Builder](https://developer.microsoft.com/windows/hardware/3d-print/windows-3d-printing) enthält verschiedene Modelle, die Sie leicht auf Ihr Gerät herunterladen können.
 
 Laden Sie in der `OnLoadClick`-Methode mit der [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)-Klasse eine einzelne Datei in den Speicher der App.
 

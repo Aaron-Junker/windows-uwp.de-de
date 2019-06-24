@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeige, Kampagne, bewerben
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d38d47c1b5e228e984faa4657cd12735e98bcf9
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 1dc06a2977832e659220b133ba42a99bad982291
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215233"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320095"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Erstellen einer Anzeigenkampagne für Ihre App
 
@@ -90,7 +90,7 @@ So erstellen Sie eine Anzeigenkampagne zum Bewerben einer App.
 
 12.  Wenn Sie ein [Premiumkonto](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign) besitzen, können Sie mithilfe des Kontrollkästchens **Ziel-URL** steuern, was geschieht, wenn ein Kunde auf Ihre Anzeige klickt.
     * Wenn Sie das Kontrollkästchen nicht aktivieren, wird der Store-Eintrag Ihrer App angezeigt, wenn ein Kunde auf Ihre Anzeige klickt.
-    * Wenn Sie anpassen, Kochava, optimieren oder Vungle verwenden, um installieren Sie Analytics für Ihre app zu messen, geben Sie Ihre Installation nachverfolgungs-URL ein. Beim Speichern der Kampagne wird die Verfolgungs-URL überprüft, um sicherzustellen, dass sie zur Eintragsseite für Ihre App im Microsoft Store aufgelöst wird. Weitere Informationen zur Überwachung der Installation mit diesen Diensten finden Sie unter den [anpassen](https://docs.adjust.com/en/), [Kochava](https://support.kochava.com/), [optimieren](https://help.tune.com/), und [Vungle](https://support.vungle.com/) Dokumentation .
+    * Wenn Sie anpassen, Kochava, optimieren oder Vungle verwenden, um installieren Sie Analytics für Ihre app zu messen, geben Sie Ihre Installation nachverfolgungs-URL ein. Beim Speichern der Kampagne wird die Verfolgungs-URL überprüft, um sicherzustellen, dass sie zur Eintragsseite für Ihre App im Microsoft Store aufgelöst wird. Weitere Informationen zur Überwachung der Installation mit diesen Diensten finden Sie unter den [anpassen](https://docs.adjust.com/en/), [Kochava](https://support.kochava.com/), [optimieren](https://help.tune.com/hasoffers/), und [Vungle](https://support.vungle.com/hc/en-us) Dokumentation .
     * Wenn Sie **Mehr Interaktion in Ihrer App** als Kampagnenziel wählen, können Sie einen [Deep-Link-URI](../launch-resume/handle-uri-activation.md) angeben, um Kunden aus den ausgewählten Segment zu einer bestimmten Seite in Ihrer App umzuleiten.
     * Wenn Sie ein Ziel angeben, bei dem es sich nicht um die Beschreibungsseite Ihrer App oder eine Seite innerhalb Ihrer App handelt, wird Ihre Kampagne automatisch angehalten.
 

@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
-ms.openlocfilehash: 585289fdc66b8730036f3d14faeafce8c22c09a7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 276a352918e4458e145755bbafad09d4278ec4d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371358"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322049"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>Portieren benutzerdefinierter C++-Spiele auf die UWP auf Xbox
 
 Wenn Sie eine benutzerdefinierte C++-Engine schreiben, bietet Xbox One vollständige Unterstützung für C++. 
 
-C++-Spiele auf der universellen Windows-Plattform (UWP) verwenden für das Rendern DirectX. Weitere Informationen finden Sie unter [DirectX-Grafiken und -Spiele](https://msdn.microsoft.com/library/windows/desktop/ee663274(v=vs.85).aspx).
+C++-Spiele auf der universellen Windows-Plattform (UWP) verwenden für das Rendern DirectX. Weitere Informationen finden Sie unter [DirectX-Grafiken und -Spiele](https://docs.microsoft.com/windows/desktop/directx).
 
 Sie können [C++ mit Komponentenerweiterungen](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) (C++/CX) oder [Standard C++](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) (Win32 und COM) schreiben.
 

@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af03b32453bcdacb3da95678cf23a988c375f1b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 60be53bfcb351866a0cf124fe4ef6f21ff889f88
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359641"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318963"
 ---
 # <a name="accessibility-testing"></a>Barrierefreiheitstests  
 
@@ -95,7 +95,7 @@ Verwenden Sie die App mit einem Design mit hohem Kontrast, um sicherzustellen, d
 
 ## <a name="verify-your-app-with-display-settings"></a>Überprüfen der App mit Anzeigeeinstellungen  
 
-Verwenden Sie die Systemanzeigeoptionen, die den DPI-Wert der Anzeige anpassen, und stellen Sie sicher, dass Ihre App-UI bei einer Änderung des DPI-Werts richtig skaliert wird. (Einige Benutzer ändern die dpi-Werte als Zugriffsoption auf diese Klasse steht in **erleichterte Bedienung** auch als Eigenschaften anzuzeigen.) Wenn Sie auf Probleme stoßen, führen Sie die [Richtlinien zum Skalieren Layouts](https://developer.microsoft.com/windows/design) und geben Sie zusätzliche Ressourcen für andere Skalierungsfaktoren.
+Verwenden Sie die Systemanzeigeoptionen, die den DPI-Wert der Anzeige anpassen, und stellen Sie sicher, dass Ihre App-UI bei einer Änderung des DPI-Werts richtig skaliert wird. (Einige Benutzer ändern die dpi-Werte als Zugriffsoption auf diese Klasse steht in **erleichterte Bedienung** auch als Eigenschaften anzuzeigen.) Wenn Sie auf Probleme stoßen, führen Sie die [Richtlinien zum Skalieren Layouts](https://developer.microsoft.com/windows/apps/design) und geben Sie zusätzliche Ressourcen für andere Skalierungsfaktoren.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -164,4 +164,4 @@ Außerdem können Sie testen, ob in der Elementansicht der Benutzeroberflächena
 * [Nicht empfehlenswerte Methoden](practices-to-avoid.md)
 * [Benutzeroberflächenautomatisierung](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Barrierefreiheit in Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
-* [Erste Schritte mit der Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [Erste Schritte mit der Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

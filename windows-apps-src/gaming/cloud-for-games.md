@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Cloud-Dienste
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a7e3bed746a31ce2d8f458045cdd1126b71b8c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b1b63c6eb3c803b26ead85332affe1fc4f20e314
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368992"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321334"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Nutzen von Clouddiensten für UWP-Spiele
 
@@ -111,7 +111,7 @@ Hier erfahren Sie, wie andere Entwickler Cloudlösungen in ihre Spiele implement
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.crimecoast.com/">Pixel Squad</a></td>
+        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Pixel Squad entwickelte mit der Unity-Engine und Azure das Spiel <b>Crime Coast</b>. <b>Crime Coast</b> ist ein Social-Strategiespiel für Android, iOS und die Windows-Plattformen. Für das Spiel wurden Azure Blob Speicher, Managed Azure Redis Cache und mehrere IIS-VMs mit Lastenausgleich sowie der Microsoft Notification-Hub eingesetzt. Erfahren Sie, wie die Skalierung und Handhabung der Spieler bei 5.000 gleichzeitigen Spielern möglich ist.
         </td>
         <td>
@@ -182,7 +182,7 @@ In diesem Abschnitt lernen Sie Möglichkeiten zur Nutzung der Azure Cloudangebot
 | Sammeln und Analysieren von Spieldaten| Massive Parallelverarbeitung von Daten aus relationalen und nicht-relationalen Datenbanken | [Azure Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/)| Flexibles Data-Warehouse als Dienst mit Enterprise-Funktionen   |
 | Wecken des Benutzerinteresses für eine erhöhte Verwendung und Aufbewahrung| Senden von benutzerorientierten Pushbenachrichtigung an Plattformen von jedem Back-End zur Generierung von Interesse und Förderung bestimmter Spielaktionen | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| Mit dem schnellen Übertragungs-Push erreichen Sie Millionen Mobilgeräte auf allen wichtigen Plattformen &mdash;iOS, Android, Windows, Kindle, Baidu. Ihr Spiel kann auf jedem Back-End gehostet werden &mdash;Cloud oder lokal.|
 | Medieninhalte für Ihr Publikum lokal und weltweit bei gleichzeitigem Schutz Ihrer Inhalte wiedergeben| Qualitativ hochwertige Trailer für Spiele und Kino-Clips können von allen Geräten wiedergegeben werden| [Azure Media Services](https://azure.microsoft.com/services/media-services/)| Bedarfsgesteuertes und Live-Videostreaming mit integrierten Netzwerkfunktionen für die Inhaltsübermittlung. Verwendung eines Spielers für alle Wiedergabeanforderungen, einschließlich Inhaltsschutz und Verschlüsselung.| 
-| Entwicklung, Verteilen und Beta-Tests für Ihre mobilen Apps | Testen und Verteilen Ihrer mobilen App. Verwalten von App-Leistung und Benutzererfahrung. | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| Integriert Absturzberichte und Benutzermetriken mit einer Plattform für die App-Verteilung und Benutzer-Feedback. Unterstützt Android, Cordova, iOS, OS X, Unity, Windows und Xamarin-Apps. Berücksichtigen Sie auch [Visual Studio Mobile Center](https://www.visualstudio.com/vs/mobile-center/) &mdash; einsatzleitung für apps, die kombiniert umfassende Analysen, Absturzberichte, push-Benachrichtigungen, app-Verteilung und vieles mehr. |
+| Entwicklung, Verteilen und Beta-Tests für Ihre mobilen Apps | Testen und Verteilen Ihrer mobilen App. Verwalten von App-Leistung und Benutzererfahrung. | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| Integriert Absturzberichte und Benutzermetriken mit einer Plattform für die App-Verteilung und Benutzer-Feedback. Unterstützt Android, Cordova, iOS, OS X, Unity, Windows und Xamarin-Apps. Berücksichtigen Sie auch [Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash; einsatzleitung für apps, die kombiniert umfassende Analysen, Absturzberichte, push-Benachrichtigungen, app-Verteilung und vieles mehr. |
 | Erstellen von Marketingkampagnen zur Steigerung und Erhaltung der Nutzungszahlen  | Senden von Push-Benachrichtigungen an Zielgruppen zur Generierung von Interesse und Förderung bestimmter Spielaktionen gemäß Datenanalysen | [Mobile-Engagement](https://azure.microsoft.com/services/mobile-engagement/) – wird im März 2018 eingestellt und steht derzeit nur für vorhandene Kunden zur Verfügung. |  Steigerung der Spielzeit und der Benutzerzahlen auf allen wichtigen Plattformen (iOS, Android, Windows, Windows Phone) |
 
 
@@ -206,7 +206,7 @@ In diesem Abschnitt lernen Sie Möglichkeiten zur Nutzung der Azure Cloudangebot
 ## <a name="tools-and-other-useful-links"></a>Tools und andere nützliche Links
 
 * [MSDN-Foren &mdash; Azure-Plattform](https://social.msdn.microsoft.com/Forums/azure/home?category=windowsazureplatform)
-* [Cloud-basierten Auslastungstests-tool](https://www.visualstudio.com/team-services/cloud-load-testing/)
+* [Cloud-basierten Auslastungstests-tool](https://visualstudio.microsoft.com/team-services/cloud-load-testing/)
 * [SDKs und Befehlszeilentools](https://azure.microsoft.com/downloads/)
     
 ## <a name="software-as-a-service-for-game-backend"></a>Software-as-a Service für Game-Back-Ends

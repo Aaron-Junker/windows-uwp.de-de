@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611535"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317973"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Support für Meine Kontakte zu einer Anwendung hinzufügen
 
@@ -29,7 +29,7 @@ Es gibt drei Dinge, die durchgeführt werden müssen, damit die Anwendung das Fe
 
 1. [Unterstützung für die "sharetarget" aktivierungskontrakt im Anwendungsmanifest deklariert werden.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [Kommentieren Sie die Kontakte, die die Benutzer freigeben können, um Ihre App ein.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3.  Unterstützen Sie mehrere Instanzen Ihrer Anwendung, die zur gleichen Zeit ausgeführt werden. Benutzer müssen mit einer vollständigen Version Ihrer Anwendung interagieren, während Sie diese im Kontaktbereich verwenden.  Sie können diese sogar in mehreren Kontaktlisten gleichzeitig verwenden.  Um dies zu unterstützen, muss Ihre Anwendung mehrere Ansichten gleichzeitig ausführen können. Weitere Informationen hierzu finden Sie im Artikel ["Anzeigen mehrerer Ansichten für eine App"](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
+3.  Unterstützen Sie mehrere Instanzen Ihrer Anwendung, die zur gleichen Zeit ausgeführt werden. Benutzer müssen mit einer vollständigen Version Ihrer Anwendung interagieren, während Sie diese im Kontaktbereich verwenden.  Sie können diese sogar in mehreren Kontaktlisten gleichzeitig verwenden.  Um dies zu unterstützen, muss Ihre Anwendung mehrere Ansichten gleichzeitig ausführen können. Weitere Informationen hierzu finden Sie im Artikel ["Anzeigen mehrerer Ansichten für eine App"](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 Wenn Sie dies getan haben, wird die Anwendung in der Kontaktliste für Kontakte mit Kommentaren angezeigt.
 
@@ -53,7 +53,7 @@ Um Unterstützung für den Vertrag „Meine Kontakte” zu deklarieren, öffnen 
 
 ```
 
-**Nach dem**
+**After**
 
 ```xml
 <Package
@@ -121,7 +121,7 @@ Standardmäßig wird die Anwendung nur für Kontakte in der Kontaktliste angezei
 </Applications>
 ```
 
-**Nach dem**
+**After**
 
 ```Csharp
 <Applications>
@@ -179,17 +179,17 @@ Mit dem ContactPanel-Objekt können Sie ebenfalls die Hintergrundfarbe des Heade
 
 ## <a name="supporting-notification-badging"></a>Unterstützung von Benachrichtigungssignalen
 
-Wenn Sie möchten, dass auf der Taskleiste angeheftete Kontakte ein Signal erhalten, wenn neue Benachrichtigungen von Ihrer App für diese Person eintreffen, müssen die **Hint-Personen**-Parameter in den [Popupbenachrichtigungen](https://docs.microsoft.com/en-us/windows/uwp/shell/tiles-and-notifications/adaptive-interactive-toasts) und [Meine Kontakte – Benachrichtigungen](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications) einbezogen werden.
+Wenn Sie möchten, dass auf der Taskleiste angeheftete Kontakte ein Signal erhalten, wenn neue Benachrichtigungen von Ihrer App für diese Person eintreffen, müssen die **Hint-Personen**-Parameter in den [Popupbenachrichtigungen](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) und [Meine Kontakte – Benachrichtigungen](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications) einbezogen werden.
 
 ![Benachrichtigung für „Meine Kontakte”](images/my-people-badging.png)
 
 Um einen Kontakt zu benachrichtigen, muss der Knoten der obersten Ebene Popups hint-people-Parameter enthalten, um den Absender-Kontakt oder andere Kontakte anzugeben. Dieser Parameter kann folgende Werte haben:
 + **E-Mail-Adresse** 
-    + z. B. mailto:johndoe@mydomain.com
+    + Beispiel: mailto:johndoe@mydomain.com
 + **Telefonnummer** 
-    + z. B. Tel:888-888-8888
+    + Beispiel: Tel:888-888-8888
 + **Remote-ID** 
-    + z. B. remoteid:1234
+    + Beispiel: remoteid:1234
 
 Hier ist ein Beispiel, wie Sie eine Popupbenachrichtigung für eine bestimmte Person identifizieren:
 ```XML
@@ -246,7 +246,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 > [!Note]
 > Zurzeit besteht keine Batchvorgang zum Lösen von Kontakten.
 
-**Hinweis:** 
+**Hinweis**: 
 
 ## <a name="see-also"></a>Siehe auch
 + [Freigeben von „Meine Kontakte”](my-people-sharing.md)

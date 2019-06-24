@@ -4,13 +4,13 @@ title: RSS-/Atom-Feeds
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66372783"
 ---
 # <a name="rssatom-feeds"></a>RSS-/Atom-Feeds
@@ -44,7 +44,7 @@ Mit der Netzwerkisolation kann ein Entwickler für jede App den Umfang des erfor
 
 Die Netzwerkisolation wirkt sich auf alle Klassenelemente in den [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication)-Namespace und im [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)-Namespace aus, die versuchen, auf das Netzwerk zuzugreifen. Die Netzwerkisolation wird unter Windows aktiv erzwungen. Ein Aufruf eines Klassenelements im **Windows.Web.Syndication**-Namespace oder **Windows.Web.AtomPub**-Namespace, der zu einem Netzwerkzugriff führt, kann aufgrund der Netzwerkisolation einen Fehler verursachen, falls die geeignete Netzwerkfunktion nicht aktiviert wurde.
 
-Die Netzwerkfunktionen für eine App werden beim Erstellen der App im App-Manifest konfiguriert. Netzwerkfunktionen werden in der Regel hinzugefügt, Microsoft Visual Studio 2015 verwenden, wenn es sich bei der Entwicklung der Anwendung. Sie können aber auch manuell mit einem Texteditor in der App-Manifestdatei festgelegt werden.
+Die Netzwerkfunktionen für eine App werden beim Erstellen der App im App-Manifest konfiguriert. Netzwerkfunktionen werden normalerweise bei der Entwicklung einer App mithilfe von Microsoft Visual Studio 2015 hinzugefügt. Sie können aber auch manuell mit einem Texteditor in der App-Manifestdatei festgelegt werden.
 
 Ausführlichere Informationen zu Netzwerkisolation und Netzwerkfunktionen finden Sie im Abschnitt „Funktionen“ des Themas [Grundlagen zum Netzwerk](networking-basics.md).
 
@@ -56,7 +56,7 @@ In diesem Abschnitt wird beschrieben, wie Sie einen Webfeed mithilfe von Klassen
 
 Damit die UWP-App im Netzwerk verwendet werden kann, müssen Sie alle erforderlichen Netzwerkfunktionen in der Projektdatei **Package.appxmanifest** festlegen. Wenn Ihre App als Client eine Verbindung mit Remotediensten im Internet herstellen muss, ist die Funktion **internetClient** erforderlich. Weitere Informationen finden Sie im Abschnitt „Funktionen“ des Themas [Grundlagen zum Netzwerk](networking-basics.md).
 
-**Abrufen von syndiziertem Inhalt von einer Web-feed**
+**Abrufen von Fremdinhalten aus einem Webfeed**
 
 Nun sehen wir uns etwas Code an, der demonstriert, wie ein Feed abgerufen werden kann und anschließend die einzelnen Elemente des Feeds angezeigt werden können. Bevor wir die Anforderung konfigurieren und senden können, definieren wir einige Variablen, die wir während des Vorgangs verwenden werden, und initialisieren eine Instanz von [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient), die die Methoden und Eigenschaften definiert, die wir zum Abrufen und Anzeigen des Feeds verwenden.
 

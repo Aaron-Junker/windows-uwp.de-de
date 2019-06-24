@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Live-Analyse, gleichzeitige Nutzung
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ac2208ca5eca02e3007a88209aa26735e29612
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: a1ceef92a533a230c2dca54a835578b56ceb809f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162866"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321765"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>Abrufen von Xbox Live-Daten zur gleichzeitigen Nutzung
 
 
-Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um fast in Echtzeit die Nutzungsdaten (mit 5-15-Minuten-Latenz) über die durchschnittliche Anzahl der Kunden abzurufen, die Ihr [Xbox Live-fähiges Spiel](https://docs.microsoft.com/gaming/xbox-live//index.md) jede Minute, Stunde oder Tag während eines angegebenen Zeitraums spielen. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
+Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um fast in Echtzeit die Nutzungsdaten (mit 5-15-Minuten-Latenz) über die durchschnittliche Anzahl der Kunden abzurufen, die Ihr [Xbox Live-fähiges Spiel](https://docs.microsoft.com/gaming/xbox-live/index.md) jede Minute, Stunde oder Tag während eines angegebenen Zeitraums spielen. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
 
 > [!IMPORTANT]
-> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
+> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
 
 ## <a name="prerequisites"></a>Vorraussetzungen
 
@@ -71,8 +71,8 @@ Der Antworttext enthält ein Array von Objekten, die jeweils einen Satz von glei
 
 | Wert      | Typ   | Beschreibung                  |
 |------------|--------|-------------------------------------------------------|
-| Anzahl      | number  | Die durchschnittliche Anzahl der Kunden, die Ihr Xbox Live-fähiges Spiel für die angegebene Minute, Stunde oder Tag spielen. <p/><p/>**Hinweis:**&nbsp;&nbsp;Ein Wert von 0 gibt an, dass entweder keine gleichzeitigen Benutzer während des angegebenen Intervalls spielten, oder dass beim Sammeln von gleichzeitigen Benutzerdaten für das Spiel während des angegebenen Intervalls ein Fehler aufgetreten ist. |
-| Datum  | String | Das Datum und Uhrzeit, die die Minute, Stunde oder Tag angeben, während dessen die gleichzeitigen Nutzungsdaten auftraten.  |
+| Anzahl      | number  | Die durchschnittliche Anzahl der Kunden, die Ihr Xbox Live-fähiges Spiel für die angegebene Minute, Stunde oder Tag spielen. <p/><p/>**Hinweis:** &nbsp;&nbsp;Ein Wert von 0 gibt an, dass entweder keine gleichzeitigen Benutzer während des angegebenen Intervalls spielten, oder dass beim Sammeln von gleichzeitigen Benutzerdaten für das Spiel während des angegebenen Intervalls ein Fehler aufgetreten ist. |
+| date  | String | Das Datum und Uhrzeit, die die Minute, Stunde oder Tag angeben, während dessen die gleichzeitigen Nutzungsdaten auftraten.  |
 | SeriesName | String    | Dies hat immer den Wert **UserConcurrency**. |
 
 

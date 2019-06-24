@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4a47a5f8ffca1d9ca2ddab05fe0baf2f85977d7f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630835"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318191"
 ---
 # <a name="shadows-in-windows-ui"></a>Zeichnen von Schatten im Windows-Benutzeroberfläche
 
@@ -113,9 +113,9 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 Wenn Sie einen Schatten komplexere Frameworkelemente hinzufügen möchten, stehen Ihnen mehrere Möglichkeiten, Ihnen das Zusammenarbeiten mit Schatten zwischen XAML und dem Kompositionsthread:
 
-1. Verwenden der [DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) in das Windows-Community-Toolkit verfügbar. Finden Sie unter den [DropShadowPanel Dokumentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) ausführliche Anleitungen verwenden.
+1. Verwenden der [DropShadowPanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) in das Windows-Community-Toolkit verfügbar. Finden Sie unter den [DropShadowPanel Dokumentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) ausführliche Anleitungen verwenden.
 1. Erstellen Sie eine Visualisierung verwenden als Host für die Schattenkopien und Binde ihn dem Handout XAML Visual.
-1. Verwenden Sie die Kompositions-Beispielkatalog [SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) benutzerdefiniertes CompositionShadow-Steuerelement. In diesem Beispiel für die Nutzung wird angezeigt.
+1. Verwenden Sie die Kompositions-Beispielkatalog [SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) benutzerdefiniertes CompositionShadow-Steuerelement. In diesem Beispiel für die Nutzung wird angezeigt.
 
 ## <a name="performance"></a>Leistung
 
@@ -129,7 +129,7 @@ CompositionDropShadowSourcePolicy.InheritFromVisualContent | Hoch
 Statische Blur Radius | Niedrig
 Animieren von Blur Radius | Hoch
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 - [Komposition DropShadow-API](/uwp/api/Windows.UI.Composition.DropShadow)
-- [WindowsUIDevLabs-GitHub-Repository](https://github.com/Microsoft/WindowsUIDevLabs)
+- [WindowsUIDevLabs GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)

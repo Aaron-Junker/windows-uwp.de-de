@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d4e7b71ea0fcc6f18106ee1d11c3dead1438c7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d25cd3f8a963d85f704e32482475827462ddba58
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360671"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318264"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“
 
@@ -161,7 +161,7 @@ Das nächste Beispiel zeigt die Verwendung eines **Slider**-Steuerelements, um d
 
 [!code-cs[CreateSourceWithOpenCompleted](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCreateSourceWithOpenCompleted)]
 
-Der **OpenOperationCompleted**-Handler bietet eine Möglichkeit, um die Dauer des Inhalts der Medienquelle festzustellen. Sobald die Dauer bestimmt ist, wird der Höchstwert des **Slider**-Steuerelements auf die Gesamtzahl der Sekunden des Medienelements festgelegt. Der Wert wird innerhalb eines Aufrufs von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) festgelegt, um sicherzustellen, dass es im UI-Thread ausgeführt wird.
+Der **OpenOperationCompleted**-Handler bietet eine Möglichkeit, um die Dauer des Inhalts der Medienquelle festzustellen. Sobald die Dauer bestimmt ist, wird der Höchstwert des **Slider**-Steuerelements auf die Gesamtzahl der Sekunden des Medienelements festgelegt. Der Wert wird innerhalb eines Aufrufs von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) festgelegt, um sicherzustellen, dass es im UI-Thread ausgeführt wird.
 
 [!code-cs[DeclareDuration](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareDuration)]
 
@@ -189,7 +189,7 @@ Beachten Sie: Wird der Offsetwert eines Players einer negativen Wiedergabepositi
 ## <a name="play-spherical-video-with-mediaplayer"></a>Wiedergeben von sphärischen Videos mit MediaPlayer
 Ab Windows 10 Version 1703 unterstützt **MediaPlayer** equirektanguläre Projektionen für kugelförmige Videowiedergabe. **MediaPlayer** unterscheidet sphärische Videoinhalte nicht von anderen und spielt das Video ab, sofern die Video-Codierung unterstützt wird. Falls das sphärische Video einen Metadatentag enthält, der für das Video equirektanguläre Projektion fordert, kann **MediaPlayer** das Video mithilfe dieser Sichtfeld- und Ausrichtungsinformationen wiedergeben. Dies ermöglicht Szenarien wie Virtual-Reality-Videowiedergabe durch Anzeigebrillen oder einfache Bildschwenks innerhalb des sphärischen Videoinhalt durch Maus- oder Tastatureingaben des Benutzers.
 
-Für sphärische Videowiedergaben befolgen Sie die zuvor in diesem Artikel beschriebenen Schritte für die Videowiedergabe. Ein zusätzliche Schritt ist das Registrieren des Handlers für das [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened)-Ereignis. Dieses Ereignis bietet Ihnen die Möglichkeit, Parameter für die sphärische Videowiedergabe zu aktivieren und zu steuern.
+Für sphärische Videowiedergaben befolgen Sie die zuvor in diesem Artikel beschriebenen Schritte für die Videowiedergabe. Ein zusätzliche Schritt ist das Registrieren des Handlers für das [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) -Ereignis. Dieses Ereignis bietet Ihnen die Möglichkeit, Parameter für die sphärische Videowiedergabe zu aktivieren und zu steuern.
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 

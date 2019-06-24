@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 545e1e1b220de9edf444ca06c3b21140227e8284
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 16f61c1f950583ee0fef7f30b7e17939df7ea538
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215139"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317757"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>Mithilfe der hosting-API in einer Desktopanwendung UWP XAML
 
@@ -71,7 +71,7 @@ Wie Sie die UWP XAML hosting-API in Ihrem Code verwenden, hängt von Ihren Anwen
 
 ### <a name="c-win32"></a>C++ Win32
 
-[C++Beispiel für Win32](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island). Dieses Beispiel veranschaulicht eine vollständige Implementierung des Hostings eines UWP-Benutzersteuerelements in ein entpackt C++ Win32-Anwendung (d. h. eine Anwendung, die nicht in ein MSIX-Paket erstellt wird).
+[C++Beispiel für Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island). Dieses Beispiel veranschaulicht eine vollständige Implementierung des Hostings eines UWP-Benutzersteuerelements in ein entpackt C++ Win32-Anwendung (d. h. eine Anwendung, die nicht in ein MSIX-Paket erstellt wird).
 
 ### <a name="wpf-and-windows-forms"></a>WPF und Windows Forms
 
@@ -162,7 +162,7 @@ Hier sind die wichtigsten Schritte für die Verwendung der UWP XAML hosting-API 
 
 Vollständige Beispiele, in denen diese Aufgaben im Rahmen eine funktionierende beispielanwendung veranschaulicht, finden Sie im folgenden Code:
 
-  * **C++ Win32:** Finden Sie unter den [XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/XamlBridge.cpp) Datei die [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+  * **C++ Win32:** Finden Sie unter den [XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/XamlBridge.cpp) Datei die [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
   * **WPF:** Finden Sie unter den [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) und [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) Dateien in das Windows-Community-Toolkit.  
 
@@ -176,7 +176,7 @@ Es gibt mehrere Dinge, die Ihre app benötigt, um Eingabe und Fokus Tastaturnavi
 
 Um Tastatureingaben für jedes XAML-Island richtig behandeln zu können, muss Ihre Anwendung alle Windows-Meldungen für die UWP XAML-Framework übergeben, damit bestimmte Nachrichten richtig verarbeitet werden können. Wandeln Sie hierzu an einer Stelle in Ihrer Anwendung, die die Nachrichtenschleife zugreifen können, die **DesktopWindowXamlSource** -Objekt für jedes XAML-Insel auf eine **IDesktopWindowXamlSourceNative2** COM-Schnittstelle. Rufen Sie dann die **PreTranslateMessage** -Methode der diese Schnittstelle und übergeben Sie die aktuelle Meldung.
 
-  * Ein C++ Win32-Anwendung aufrufen kann **PreTranslateMessage** direkt in ihre primäre Meldungsschleife. Ein Beispiel finden Sie unter den [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L61) Codedatei in die [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+  * Ein C++ Win32-Anwendung aufrufen kann **PreTranslateMessage** direkt in ihre primäre Meldungsschleife. Ein Beispiel finden Sie unter den [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L61) Codedatei in die [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
   * Eine WPF-Anwendung aufrufen kann **PreTranslateMessage** aus der Ereignishandler für die [ **ComponentDispatcher.ThreadFilterMessage** ](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2) Ereignis. Ein Beispiel finden Sie unter den [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) -Datei in das Windows-Community-Toolkit.
 
@@ -202,7 +202,7 @@ Beispiele zur Vorgehensweise hierfür im Kontext des eine funktionierende beispi
 
 Wenn der Benutzer die Größe des übergeordneten UI-Elements ändert, müssen Sie zum Verarbeiten von layoutänderungen erforderlichen, um sicherzustellen, die Ihre UWP-Steuerelemente, die zeigen, wie zu erwarten. Hier sind einige wichtigen Szenarien zu berücksichtigen.
 
-* In einem C++ Win32-Anwendung, wenn Ihre Anwendung die WM_SIZE-Meldung können sie den gehosteten XAML-Insel neu positionieren verarbeitet, mit der [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) Funktion. Ein Beispiel finden Sie unter den [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) Codedatei in die [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+* In einem C++ Win32-Anwendung, wenn Ihre Anwendung die WM_SIZE-Meldung können sie den gehosteten XAML-Insel neu positionieren verarbeitet, mit der [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) Funktion. Ein Beispiel finden Sie unter den [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) Codedatei in die [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
 * Wenn das übergeordnete Element der Benutzeroberfläche muss zum Abrufen der Größe des rechteckigen Bereichs, der zum Anpassen der **Windows.UI.Xaml.UIElement** , die Sie hosten auf die **DesktopWindowXamlSource**, rufen Sie die [ **Measure** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) Methode der **Windows.UI.Xaml.UIElement**. Zum Beispiel:
 
@@ -245,11 +245,11 @@ Wenn Sie ein benutzerdefiniertes UWP XAML-Steuerelement (eines Steuerelements, d
 2. Rufen Sie die [ **GetXamlType** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype) -Methode der Ihre Metadaten Stammanbieter, wenn der Typname des UWP XAML-Steuerelements zugewiesen wird (Dies konnte im Code zur Laufzeit zugewiesen werden, oder Sie können entscheiden, diese zu aktivieren zugewiesen in Visual Studio-Eigenschaftenfenster).
 
     Beispiele finden Sie die folgenden Codedateien:
-      * **C++ Win32:** Finden Sie unter den [XamlApplication.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup/XamlApplication.cpp) Codedatei in die [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+      * **C++ Win32:** Finden Sie unter den [XamlApplication.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup/XamlApplication.cpp) Codedatei in die [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
       * **WPF und Windows Forms**: Finden Sie unter den [XamlApplication.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/XamlApplication.cs) und [UWPTypeFactory.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/UWPTypeFactory.cs) Codedateien in das Windows-Community-Toolkit. Diese Dateien sind Teil der Implementierung von freigegebenen der **WindowsXamlHost** Klassen für WPF und Windows-Formulare, wie Sie mit der UWP XAML-hosting-API in diese Arten von apps zu verdeutlichen.
 
-3. Integrieren Sie den Quellcode für das benutzerdefinierte UWP XAML-Steuerelement in Ihrer Anwendungslösung die Hosts, erstellen Sie das benutzerdefinierte Steuerelement zu und verwenden Sie es in Ihrer Anwendung. Anleitungen für eine WPF oder Windows Forms-Anwendung finden Sie unter [diese Anweisungen](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control). Ein Beispiel für eine C++ Win32-Anwendung finden Sie unter den [Microsoft.UI.Xaml.Markup](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup) und ["MyApp"](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/MyApp) -Projekte in der [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+3. Integrieren Sie den Quellcode für das benutzerdefinierte UWP XAML-Steuerelement in Ihrer Anwendungslösung die Hosts, erstellen Sie das benutzerdefinierte Steuerelement zu und verwenden Sie es in Ihrer Anwendung. Anleitungen für eine WPF oder Windows Forms-Anwendung finden Sie unter [diese Anweisungen](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control). Ein Beispiel für eine C++ Win32-Anwendung finden Sie unter den [Microsoft.UI.Xaml.Markup](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup) und ["MyApp"](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/MyApp) -Projekte in der [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
@@ -274,4 +274,4 @@ Wenn Sie ein benutzerdefiniertes UWP XAML-Steuerelement (eines Steuerelements, d
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [UWP-Steuerelementen in desktop-Anwendungen](xaml-islands.md)
-* [C++Beispiel für Win32-XAML-Inseln](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)
+* [C++Beispiel für Win32-XAML-Inseln](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)

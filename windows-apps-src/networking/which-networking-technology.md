@@ -4,13 +4,13 @@ description: Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-
 title: Welche Netzwerktechnologie?
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: db2e444b9f13ba41127b362483774c92d45f1f77
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66372755"
 ---
 # <a name="which-networking-technology"></a>Welche Netzwerktechnologie?
@@ -22,7 +22,7 @@ Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-Entwickler zu
 
 Verwenden Sie [Sockets](sockets.md), wenn Sie mit einem anderen Gerät kommunizieren und Ihr eigenes Protokoll verwenden möchten.
 
-Zwei Implementierungen von Sockets sind für Entwickler von universellen Windows-Plattform (UWP) verfügbar: [**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets), und [Winsock](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2). Wenn Sie neuen Code schreiben, hat Windows.Networking.Sockets den Vorteil, dass es sich um eine moderne API handelt, die für die Verwendung durch UWP-Entwickler vorgesehen ist. Wenn Sie plattformübergreifende Netzwerkbibliotheken oder anderen vorhandenen Winsock-Code verwenden oder die Winsock-API bevorzugen, verwenden Sie Winsock.
+Zwei Implementierungen von Sockets sind für UWP-Entwickler (Universelle Windows-Plattform) verfügbar: [**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) und [Winsock](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2). Wenn Sie neuen Code schreiben, hat Windows.Networking.Sockets den Vorteil, dass es sich um eine moderne API handelt, die für die Verwendung durch UWP-Entwickler vorgesehen ist. Wenn Sie plattformübergreifende Netzwerkbibliotheken oder anderen vorhandenen Winsock-Code verwenden oder die Winsock-API bevorzugen, verwenden Sie Winsock.
 
 ### <a name="when-to-use-sockets"></a>Wann sollten Sockets verwenden werden?
 
@@ -69,7 +69,7 @@ Verwenden Sie [HttpClient](httpclient.md) (und den Rest der [**Windows.Web.Http*
 
 Verwenden Sie die [Hintergrundübertragungs-API](background-transfers.md), wenn Sie zuverlässig Dateien über das Netzwerk übertragen möchten. Die Hintergrundübertragungs-API bietet erweiterte Upload- und Downloadfeatures, die bei angehaltener App im Hintergrund ausgeführt werden und auch nach Beendigung der App aktiv bleiben. Die API überwacht den Netzwerkstatus und kann Übertragungen automatisch anhalten und fortsetzen, wenn die Verbindung unterbrochen wird. Übertragungen sind außerdem daten- und akkuabhängig – die Downloadaktivität wird also basierend auf dem aktuellen Verbindungs- und Geräteakkustatus angepasst. Diese Funktionen sind wichtig, wenn Ihre App auf mobilen oder akkubetriebenen Geräten ausgeführt wird. Die API ist ideal für das Hoch- und Herunterladen von großen Dateien über HTTP(S) geeignet. FTP wird auch unterstützt, allerdings nur für Downloads.
 
-Ein neues Hintergrund-Transfer-Feature in Windows 10 ist die Möglichkeit, nach der Verarbeitung auslösen, wenn die Dateiübertragung abgeschlossen wurde, damit können Sie lokale Kataloge aktualisieren, aktivieren die anderen apps oder Benutzer benachrichtigen, wenn ein Download abgeschlossen ist, an.
+Ein neues Feature für die Hintergrundübertragung in Windows 10 ist die Möglichkeit, eine Nachverarbeitung auszulösen, wenn eine Dateiübertragung abgeschlossen wurde, sodass Sie lokale Kataloge aktualisieren, andere Apps aktivieren oder den Benutzer benachrichtigen können, wenn ein Download abgeschlossen ist.
 
 ### <a name="when-to-use-background-transfers"></a>Wann sollten Hintergrundübertragungen verwendet werden?
 
@@ -127,7 +127,7 @@ Mit der [**Windows.Devices.WiFiDirect.Services**](https://docs.microsoft.com/uwp
 
 ### <a name="mobile-operators"></a>Mobilfunkanbieter
 
-Windows 10, die auf einer breiten entwicklerzielgruppe stellt einige APIs, die Gerätehersteller und mobilen Betreibern nur zuvor verfügbar gemacht wurden. Beachten Sie, dass obwohl diese APIs jetzt verfügbar gemacht werden, sie auch bestimmten App-Funktionen unterliegen, die von Microsoft genehmigt werden müssen, bevor eine App veröffentlicht werden kann. Die tatsächliche Verwendung dieser APIs wird nach wie vor in erster Linie auf Gerätehersteller und Mobilfunkanbieter beschränkt.
+Windows 10 stellt einer großen Entwicklergruppe einige APIs bereit, die bisher nur Geräteherstellern und Mobilfunkanbietern zur Verfügung standen. Beachten Sie, dass obwohl diese APIs jetzt verfügbar gemacht werden, sie auch bestimmten App-Funktionen unterliegen, die von Microsoft genehmigt werden müssen, bevor eine App veröffentlicht werden kann. Die tatsächliche Verwendung dieser APIs wird nach wie vor in erster Linie auf Gerätehersteller und Mobilfunkanbieter beschränkt.
 
 ### <a name="network-operations"></a>Netzwerkvorgänge
 

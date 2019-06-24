@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Vorlagen, Tools, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 090cb13faa00f55f5c611abc20f4ee9e90977113
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653765"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321182"
 ---
 # <a name="project-templates-and-tools-for-games"></a>Projektvorlagen und Tools für Spiele
 
@@ -25,7 +25,7 @@ Zunächst benötigen Sie Visual Studio.
 ## <a name="get-visual-studio"></a>Herunterladen von Visual Studio
 
 
-[Herunterladen und installieren Sie Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
+[Herunterladen und installieren Sie Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/).
 
 <table>
 <colgroup>

@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87e4eb90b4801d01ecb85c91b5e64ccc9155d199
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649865"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318097"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>Pull-to-Refresh mit Source-Modifiern
 
 In diesem Artikel gehen wir näher auf die Verwendung des SourceModifier-Features von InteractionTracker ein und demonstrieren dessen Verwendung, indem wir ein benutzerdefiniertes Pull-to-Refresh-Steuerelement erstellen.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
 
@@ -48,7 +48,7 @@ Für die Endbenutzererfahrung möchten wir den Effekt des „Widerstandes“ erz
 
 ![Liste mit Pull-to-Refresh](images/animation/city-list.gif)
 
-Den Arbeitscode für diese Erfahrung finden Sie im [Window UI Dev Labs-Repo auf GitHub](https://github.com/Microsoft/WindowsUIDevLabs). Hier ist die exemplarische Vorgehensweise zum Erstellen der Erfahrung.
+Den Arbeitscode für diese Erfahrung finden Sie im [Window UI Dev Labs-Repo auf GitHub](https://github.com/microsoft/WindowsCompositionSamples). Hier ist die exemplarische Vorgehensweise zum Erstellen der Erfahrung.
 In Ihrem XAML-Markup-Code haben Sie folgendes:
 
 ```xaml

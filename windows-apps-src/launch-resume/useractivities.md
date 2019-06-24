@@ -5,12 +5,12 @@ keywords: benutzeraktivität, benutzeraktivitäten, zeitachse, cortana aufgaben 
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ed268dd4ba07604db468ee24e5ea348acf806b39
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641155"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321812"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Benutzeraktivitäten geräteübergreifend fortsetzen
 
@@ -73,7 +73,7 @@ Die erste Zeile in der oben genannten `GenerateActivityAsync()`-Methode ruft [Us
 
 Nach dem Abrufen oder Erstellen der **UserActivity**, geben Sie die beiden anderen erforderlichen Felder an: `UserActivity.VisualElements.DisplayText`und `UserActivity.ActivationUri`.
 
-Speichern Sie anschließend die **UserActivity**-Metadaten durch Aufrufen von [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync) und schließlich [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), die eine [UserActivitySession ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession) zurückgibt. Mit dem Objekt **UserActivitySession** können wir verwalten, wann der Benutzer tatsächlich mit der **UserActivity**  beschäftigt ist. Wir sollten z. B. `Dispose()` in der **UserActivitySession** aufrufen, wenn der Benutzer die Seite verlässt. Im obigen Beispiel rufen wir auch `Dispose()` in `_currentActivity` auf, bevor wir `CreateSession()` aufrufen. Dies ist der Fall, weil wir `_currentActivity` zu einem Mitgliedsfeld unserer Seite gemacht haben und alle vorhandenen Aktivität beenden möchten, bevor wir die neue starten (Hinweis: `?`ist der [Operator mit NULL-Bedingung](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-conditional-operators), der auf Null testet, bevor der Member-Zugriff durchgeführt wird).
+Speichern Sie anschließend die **UserActivity**-Metadaten durch Aufrufen von [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync) und schließlich [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), die eine [UserActivitySession ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession) zurückgibt. Mit dem Objekt **UserActivitySession** können wir verwalten, wann der Benutzer tatsächlich mit der **UserActivity**  beschäftigt ist. Wir sollten z. B. `Dispose()` in der **UserActivitySession** aufrufen, wenn der Benutzer die Seite verlässt. Im obigen Beispiel rufen wir auch `Dispose()` in `_currentActivity` auf, bevor wir `CreateSession()` aufrufen. Dies ist der Fall, weil wir `_currentActivity` zu einem Mitgliedsfeld unserer Seite gemacht haben und alle vorhandenen Aktivität beenden möchten, bevor wir die neue starten (Hinweis: `?`ist der [Operator mit NULL-Bedingung](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-), der auf Null testet, bevor der Member-Zugriff durchgeführt wird).
 
 Da es sich in diesem Fall beim `ActivationUri` um ein benutzerdefiniertes Schema handelt, müssen wir außerdem das Protokoll im Anwendungsmanifest registrieren. Dies erfolgt in der Package.appmanifest XML-Datei oder mithilfe des Designers.
 
@@ -149,8 +149,8 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="cross-platform-and-service-to-service-integration"></a>Plattformübergreifende Integration und Integration zwischen Diensten
 
-Wenn Ihre App plattformübergreifend ausgeführt wird (z. B. auf Android und iOS) oder der Benutzerzustand in der Cloud verwaltet wird, können Sie UserActivities über [Microsoft Graph](https://developer.microsoft.com/graph/) veröffentlichen.
-Nachdem Ihre App oder Ihr Dienst mit einem Microsoft-Konto authentifiziert wurde, sind lediglich zwei einfache REST-Aufrufe erforderlich, um anhand der gleichen Daten wie weiter oben beschrieben [Aktivitäts](https://developer.microsoft.com/graph/docs/api-reference/beta/api/projectrome_put_activity)- und [Verlaufs](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/projectrome_historyitem)-Objekte zu generieren.
+Wenn Ihre App plattformübergreifend ausgeführt wird (z. B. auf Android und iOS) oder der Benutzerzustand in der Cloud verwaltet wird, können Sie UserActivities über [Microsoft Graph](https://developer.microsoft.com/graph) veröffentlichen.
+Nachdem Ihre App oder Ihr Dienst mit einem Microsoft-Konto authentifiziert wurde, sind lediglich zwei einfache REST-Aufrufe erforderlich, um anhand der gleichen Daten wie weiter oben beschrieben [Aktivitäts](https://docs.microsoft.com/graph/api/resources/projectrome-activity)- und [Verlaufs](https://docs.microsoft.com/graph/api/resources/projectrome-historyitem)-Objekte zu generieren.
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -158,7 +158,7 @@ Sie können die [UserActivity](https://docs.microsoft.com/uwp/api/windows.applic
 * Erfahren Sie mehr über die [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Sehen Sie sich den [Beispielcode](https://github.com/Microsoft/project-rome) an.
 * Hier finden Sie [weitere ausgeklügelte adaptive Karten](https://adaptivecards.io/).
-* Veröffentlichen Sie eine **UserActivity** von iOS, Android oder Ihrem Webdienst über [Microsoft Graph](https://developer.microsoft.com/graph/).
+* Veröffentlichen Sie eine **UserActivity** von iOS, Android oder Ihrem Webdienst über [Microsoft Graph](https://developer.microsoft.com/graph).
 * Erfahren Sie mehr zu [Project Rome auf GitHub](https://github.com/Microsoft/project-rome).
 
 ## <a name="key-apis"></a>Wichtige APIs
@@ -172,4 +172,4 @@ Sie können die [UserActivity](https://docs.microsoft.com/uwp/api/windows.applic
 * [Mit Adaptive Cards Visualizer, Beispiele](https://adaptivecards.io/)
 * [Behandeln der URI-Aktivierung](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Interagieren mit Ihren Kunden auf jeder Plattform mit der Microsoft Graph, Aktivitätsfeed und mit Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

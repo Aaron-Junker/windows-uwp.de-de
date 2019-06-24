@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, Uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25b0732b7c29653d18f0e018698ab4b6398d402a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635065"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318072"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>Erweitern vorhandener ScrollViewer-Erfahrungen
 
 Dieser Artikel erklärt, wie Sie mit einem XAML-ScrollViewer und ExpressionAnimations dynamische, eingabegesteuerte Bewegungserlebnisse erzeugen können.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
 Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
 
@@ -61,7 +61,7 @@ Allgemeine Schritte zum Einstieg:
 
 ## <a name="example"></a>Beispiel
 
-Schauen wir uns an, wie das oben gezeigte Parallax-Beispiel zusammengesetzt ist. Als Referenz finden Sie den gesamten Quellcode der App im [Window UI Dev Labs-Repo auf GitHub](https://github.com/Microsoft/WindowsUIDevLabs).
+Schauen wir uns an, wie das oben gezeigte Parallax-Beispiel zusammengesetzt ist. Als Referenz finden Sie den gesamten Quellcode der App im [Window UI Dev Labs-Repo auf GitHub](https://github.com/microsoft/WindowsCompositionSamples).
 
 Das Erste ist, eine Referenz auf das ScrollManipulationPropertySet zu erhalten.
 

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 205ccd6a8a2424d96f2c18068f5bf4c15596fdcb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: fb8bdb2d2052bb50ee9bc2c9c719f102ac1d9aa0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63785003"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319979"
 ---
 # <a name="opening-a-developer-account"></a>Eröffnen eines Entwicklerkontos
 
@@ -72,7 +72,7 @@ Das Konto des Unternehmens durch Anmelden mit dem Microsoft-Konto an, das es ge�
 
 Wir verwenden von Ihnen bereitgestellte Sicherheitsinformationen, um die Sicherheitsstufe Ihres Microsoft-Kontos zu erhöhen, indem diesem mehrere Formen der Identifizierung zugeordnet werden. Dadurch wird der nicht autorisierte Zugriff auf Ihr Microsoft-Konto (und Ihr Entwicklerkonto) erheblich erschwert. Falls Sie Ihr Kennwort vergessen, oder wenn jemand versucht, auf Ihr Konto zuzugreifen, können wir Sie erreichen, um den Besitz zu bestätigen und/oder damit Sie wieder die Kontrolle über Ihr Konto erlangen.
 
-Es müssen mindestens zwei E-Mail-Adressen und/oder Telefonnummern für das Microsoft-Konto vorhanden sein. Wir empfehlen, so viele wie möglich hinzuzufügen. Beachten Sie bitte, dass einige Sicherheitsinformationen bestätigt werden müssen, ehe sie verwendet werden können. Überprüfen Sie außerdem regelmäßig, ob Ihre Sicherheitsinformationen aktuell sind. Sie können Ihre Sicherheitsinformationen verwalten, indem Sie zu https://account.microsoft.com/security und sich mit Ihrem Microsoft-Konto anzumelden. Finden Sie unter [Sicherheitsinfos & Sicherheitscodes](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes) für Weitere Informationen.
+Es müssen mindestens zwei E-Mail-Adressen und/oder Telefonnummern für das Microsoft-Konto vorhanden sein. Wir empfehlen, so viele wie möglich hinzuzufügen. Beachten Sie bitte, dass einige Sicherheitsinformationen bestätigt werden müssen, ehe sie verwendet werden können. Überprüfen Sie außerdem regelmäßig, ob Ihre Sicherheitsinformationen aktuell sind. Sie können Ihre Sicherheitsinformationen verwalten, indem Sie zu https://account.microsoft.com/security und sich mit Ihrem Microsoft-Konto anzumelden. Finden Sie unter [Sicherheitsinfos & Sicherheitscodes](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes) für Weitere Informationen.
 
 Wenn Sie zum Partner Center melden Sie sich mit Ihrem Microsoft-Konto, das System fordert Sie möglicherweise, dass Sie Ihre Identität überprüfen, senden Sie einen Sicherheitscode an, dem Sie angeben müssen, um die Anmeldung abzuschließen. Es wird empfohlen, Festlegen von PCs, die häufig als verwendet *vertrauenswürdige Geräte*. Wenn Sie von einem vertrauenswürdigen Gerät anmelden, wird nicht Sie in der Regel einen Code, aufgefordert, obwohl gelegentlich in bestimmten Situationen werden Sie möglicherweise aufgefordert, oder wenn Sie auf dem Gerät einen längeren Zeitraum noch nicht angemeldet. Finden Sie unter [fügen Sie ein vertrauenswürdiges Gerät mit Ihrem Microsoft-Konto](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) für Weitere Informationen.
 

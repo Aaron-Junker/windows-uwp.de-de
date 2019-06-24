@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: fae6caf73cb8a5b569193a17e65e5d8b4f582ff2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4b6bc87c4d1694b47823a92619e6ec9d1e91bb69
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57652225"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319910"
 ---
 # <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>Verwenden von Fiddler mit Xbox One bei der Entwicklung für UWP
 
@@ -19,15 +19,15 @@ Fiddler ist ein Webdebuggingproxy, der den gesamten HTTP- und HTTPS-Datenverkehr
 
 Im normalen Betrieb besteht das Risiko, dass die Kommunikation einer Konsole, die über einen Proxy kommuniziert, durch diesen verändert wird, sodass Spieler möglicherweise mogeln können. Daher werden Konsolen so programmiert, dass sie keine Kommunikation über einen Proxy zulassen. Wenn Sie Fiddler mit Ihrem Xbox One Dev Kit verwenden, müssen Sie einige spezielle Konfigurationsschritte für den Dev Kit ausführen, damit dieser den Fiddler-Proxy verwenden kann. 
 
-Fiddler ist Freeware und kann von der [Fiddler-Website](https://www.fiddler2.com/fiddler2/) heruntergeladen werden. 
+Fiddler ist Freeware und kann von der [Fiddler-Website](https://www.telerik.com/download/fiddler) heruntergeladen werden. 
 
 Fiddler kann Auswirkungen auf den Netzwerkstatus haben, der von der Konsole gemeldet wird. Wenn eine Upstreamverbindung auf dem Computer deaktiviert wird, auf dem Fiddler ausgeführt wird, erkennt die Konsole diese Trennung möglicherweise erst nach Ablauf der Authentifizierung der Konsole. Wenn Sie Fiddler verwenden, müssen Sie die Verbindung zwischen der Konsole und dem Computer trennen, auf dem Fiddler ausgeführt wird, anstelle Fiddler zu verwenden, um eine Trennung zu simulieren
 
 ### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a>So installieren und aktivieren Sie Fiddler auf Ihrem Entwicklungscomputer
 Führen Sie diese Schritte zum Installieren und Aktivieren von Fiddler aus, um den Datenverkehr von Ihrem Dev Kit zu überwachen:
 
-1. Installieren Sie Fiddler auf Ihrem Entwicklungscomputer, indem Sie die Anweisungen auf der [Fiddler-Website](https://www.fiddler2.com/fiddler2/) befolgen. 
-2. Starten Sie Fiddler, und wählen Sie im Menü **Extras****Fiddler-Optionen** aus. 
+1. Installieren Sie Fiddler auf Ihrem Entwicklungscomputer, indem Sie die Anweisungen auf der [Fiddler-Website](https://www.telerik.com/download/fiddler) befolgen. 
+2. Starten Sie Fiddler, und wählen Sie im Menü **Extras** **Fiddler-Optionen** aus. 
 3. Wählen Sie die Registerkarte **Verbindungen** aus, und stellen Sie sicher, dass **Remoteverbindungen für Remotecomputer zulassen** ausgewählt ist. 
 4. Klicken Sie auf **OK**, um die Änderung der Einstellungen zu akzeptieren. Ihnen wird nun ein Dialogfeld angezeigt, in dem Ihnen mitgeteilt wird, dass Fiddler neu gestartet werden muss, damit die Änderung wirksam wird, und Sie Ihre möglicherweise Ihre Firewall manuell konfigurieren müssen. Klicken Sie auf in diesem Dialogfeld auf **OK**, *starten Sie Fiddler jedoch noch nicht neu*.
 5. Konfigurieren Sie die erforderliche Firewallregel, um Remotecomputern das Herstellen von Verbindungen zu gestatten. Starten Sie das Windows-Firewall-Systemsteuerungsapplet. Klicken Sie auf **Erweiterte Einstellungen** und anschließend auf **Eingehende Regel**. Suchen Sie die Regel mit dem Namen „FiddlerProxy“, und führen Sie einen Bildlauf nach rechts durch. Überprüfen Sie dabei, ob jede Einstellung in der folgenden Tabelle für diese Regel angezeigt wird.
@@ -35,8 +35,8 @@ Führen Sie diese Schritte zum Installieren und Aktivieren von Fiddler aus, um d
   | Einstellung           | Bevorzugter Wert                |
   | ----              | ----                           |
   | Name              | FiddlerProxy                   |
-  | Gruppe             | *Kein Wert* |
-  | Profil           | Alle                            |
+  | Gruppieren             | *Kein Wert* |
+  | Profil           | All                            |
   | Enabled           | Ja                            |
   | Aktion            | Zulassen                          |
   | Außer Kraft setzen          | Nein                             |

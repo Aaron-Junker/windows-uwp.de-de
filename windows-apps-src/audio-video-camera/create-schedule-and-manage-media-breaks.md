@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 68260cadd4322d51c528bf6c6af7f5c8472f2199
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 23cb51ec6b2c6c2560c0a1f6d583ba916768254c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361862"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318561"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>Erstellen, Planen und Verwalten von Medienunterbrechungen
 
@@ -66,7 +66,7 @@ Es gibt verschiedene Ereignisse im Zusammenhang mit Medienunterbrechungen, für 
 
 [!code-cs[RegisterMediaBreakEvents](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterMediaBreakEvents)]
 
-Das [**BreakStarted**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager.breakstarted)-Ereignis wird ausgelöst, wenn eine Medienunterbrechung beginnt. Es empfiehlt sich, die Benutzeroberfläche zu aktualisieren, um den Benutzer darauf hinzuweisen, dass Unterbrechungsmedieninhalt wiedergegeben wird. In diesem Beispiel wird das dem Handler übergebene [**MediaBreakStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakStartedEventArgs)-Objekt verwendet, um einen Verweis auf die Medienunterbrechung zu erhalten, die begonnen hat. Anschließend wird die [**CurrentItemIndex**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.currentitemindex)-Eigenschaft verwendet, um zu bestimmen, welches Medienelement in der Wiedergabeliste der Medienunterbrechung wiedergegeben wird. Dann wird die Benutzeroberfläche aktualisiert, um dem Benutzer den aktuellen Anzeigenindex und die Anzahl der in der Unterbrechung verbliebenen Anzeigen anzuzeigen. Beachten Sie, dass Aktualisierungen der Benutzeroberfläche im UI-Thread vorgenommen werden müssen. Daher sollte der Aufruf innerhalb eines Aufrufs von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) erfolgen. 
+Das [**BreakStarted**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager.breakstarted)-Ereignis wird ausgelöst, wenn eine Medienunterbrechung beginnt. Es empfiehlt sich, die Benutzeroberfläche zu aktualisieren, um den Benutzer darauf hinzuweisen, dass Unterbrechungsmedieninhalt wiedergegeben wird. In diesem Beispiel wird das dem Handler übergebene [**MediaBreakStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakStartedEventArgs)-Objekt verwendet, um einen Verweis auf die Medienunterbrechung zu erhalten, die begonnen hat. Anschließend wird die [**CurrentItemIndex**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.currentitemindex)-Eigenschaft verwendet, um zu bestimmen, welches Medienelement in der Wiedergabeliste der Medienunterbrechung wiedergegeben wird. Dann wird die Benutzeroberfläche aktualisiert, um dem Benutzer den aktuellen Anzeigenindex und die Anzahl der in der Unterbrechung verbliebenen Anzeigen anzuzeigen. Beachten Sie, dass Aktualisierungen der Benutzeroberfläche im UI-Thread vorgenommen werden müssen. Daher sollte der Aufruf innerhalb eines Aufrufs von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) erfolgen. 
 
 [!code-cs[BreakStarted](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakStarted)]
 

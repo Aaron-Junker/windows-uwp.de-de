@@ -6,12 +6,12 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a846aab77fad6f087057fe930d11ac781ed7171
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 37c7f9edbaee008b6e16ef2ca202ff5cbcf39ca2
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362199"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317507"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Testen von Surface Hub-Apps mit Visual Studio
 Der Visual Studio-Simulator bietet eine Umgebung, in der Sie Apps für die universale Windows-Plattform (UWP) entwerfen, entwickeln, debuggen und testen können, einschließlich Apps, die Sie für Microsoft Surface Hub entwickelt haben. Der Simulator verwendet nicht die gleiche Benutzeroberfläche wie Surface Hub, aber es ist hilfreich beim Testen, wie Ihre app sieht aus, und mit dem Surface Hub-Bildschirmgröße und-Auflösung verhält.
@@ -69,7 +69,7 @@ So fügen Sie Surface Hub-Auflösungen zum Simulator hinzu:
     ![Auflösungen des Visual Studio-Simulators](images/vs-simulator-resolutions.png)
 
    > [!TIP]
-   > [Tablet-Modus aktivieren](https://windows.microsoft.com/windows-10/getstarted-like-a-tablet) , die Erfahrung von einem Surface Hub besser zu simulieren.
+   > [Tablet-Modus aktivieren](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) , die Erfahrung von einem Surface Hub besser zu simulieren.
 
 ## <a name="deploy-apps-to-a-surface-hub-device-from-visual-studio"></a>Bereitstellen von apps aus Visual Studio auf einem Surface Hub-Gerät
 Manuelles Bereitstellen einer app auf einem Surface Hub ist ein einfacher Prozess.

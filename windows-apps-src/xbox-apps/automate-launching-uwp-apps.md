@@ -4,12 +4,12 @@ description: Mit der Protokoll- und Startaktivierung können Entwickler ihre UWP
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: f61fcfcef549295b8f3c9004572a74043a2917a2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: abc0b40178dc9b7c386342af6a6d85c6fb61945a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365831"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320269"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Automatisieren des Starts von UWP-Apps unter Windows 10
 
@@ -136,7 +136,7 @@ Diese Option unterstützt keine Befehlszeilenargumente.
 
 ### <a name="launcher-application"></a>Startanwendung
 
-Sie können eine separate Anwendung erstellen, die den Einsatz von COM zum Starten unterstützt. Das folgende Beispiel zeigt den C++-Code für den Start mit Startaktivierung in einem Startprogramm. Mit diesem Code erstellen Sie ein **ApplicationActivationManager**-Objekt und rufen **ActivateApplication** auf, indem Sie die zuvor gefundene AUMID und beliebige Argumente übergeben. Weitere Informationen zu den anderen Parametern finden Sie unter [IApplicationActivationManager::ActivateApplication-Methode (MSDN)](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx).
+Sie können eine separate Anwendung erstellen, die den Einsatz von COM zum Starten unterstützt. Das folgende Beispiel zeigt den C++-Code für den Start mit Startaktivierung in einem Startprogramm. Mit diesem Code erstellen Sie ein **ApplicationActivationManager**-Objekt und rufen **ActivateApplication** auf, indem Sie die zuvor gefundene AUMID und beliebige Argumente übergeben. Weitere Informationen zu den anderen Parametern finden Sie unter [IApplicationActivationManager::ActivateApplication-Methode (MSDN)](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication).
 
 ```
 #include <ShObjIdl.h>

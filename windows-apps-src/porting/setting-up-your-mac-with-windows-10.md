@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f7b0469ae8c50e6da40fb248678a69a2827931
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5bdd090b380160952dfbb8b5f04b95b6c84b75b7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663825"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322342"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>Einrichten von Windows 10 auf Ihrem Mac
 
@@ -22,7 +22,7 @@ Verwenden Sie Ihren aktuellen Mac-Computer zum Entwickeln von Apps für Windows.
 
 Sie sind bereit zum Entwickeln universeller Windows-Apps, haben aber keinen PC zur Hand? Das ist kein Problem – Sie können auch Ihren Mac verwenden! Sie können mit beliebten Lösungen von Drittanbietern wie Apple Boot Camp, Oracle VirtualBox, VMware Fusion und Parallels Desktop Windows 10 und Microsoft Visual Studio auf Ihrem Apple-Computer installieren.
 
-**Beachten Sie**  benötigen Sie ein startbares Windows 10-Image auf einem Datenträger oder USB-Flashlaufwerk. Wenn Sie MSDN-Abonnent sind, können Sie das Image aus dem Center mit Downloads für MSDN-Abonnenten herunterladen. Wenn Sie kein Abonnent sind, kann das Installationsprogramm erworben werden, aus der [Microsoft Store](https://apps.microsoft.com/windows/app). Sie können es auch [hier](https://go.microsoft.com/fwlink/?LinkId=623906) herunterladen. Das ist hilfreich, wenn Sie Windows bereits verwenden und ein Upgrade ausführen möchten.
+**Beachten Sie**  benötigen Sie ein startbares Windows 10-Image auf einem Datenträger oder USB-Flashlaufwerk. Wenn Sie MSDN-Abonnent sind, können Sie das Image aus dem Center mit Downloads für MSDN-Abonnenten herunterladen. Wenn Sie kein Abonnent sind, kann das Installationsprogramm erworben werden, aus der [Microsoft Store](https://www.microsoft.com/store/apps). Sie können es auch [hier](https://go.microsoft.com/fwlink/?LinkId=623906) herunterladen. Das ist hilfreich, wenn Sie Windows bereits verwenden und ein Upgrade ausführen möchten.
 
 Nachdem Sie die Windows-ausgeführt haben, können Sie die neueste Version von Visual Studio aus installieren [downloads für Entwickler für Windows 10](https://developer.microsoft.com/en-us/windows/downloads) und startet das Schreiben von apps!
 

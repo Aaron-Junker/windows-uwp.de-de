@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: c4aa46f38b7b98f8dc4963938082aa1dd9ed8973
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ba56464cb30a8bacecae8a2347332c0c36be55ea
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366462"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322120"
 ---
 # <a name="custom-dependency-properties"></a>Benutzerdefinierte Abhängigkeitseigenschaften
 
@@ -472,7 +472,7 @@ Hier gilt der allgemeine Grundsatz, dass Klassenkonstruktoren keine virtuellen M
 
 ### <a name="registering-the-dependency-properties-for-ccx-apps"></a>Registrieren der Abhängigkeitseigenschaften für C++/CX-Apps
 
-Die Implementierung für das Registrieren einer Eigenschaft in C++/CX ist schwieriger als für C#, zum einen aufgrund der Aufteilung in Kopfzeile und Implementierungsdatei und zum anderen, weil die Initialisierung im Stammbereich der Implementierungsdatei nicht empfohlen wird. (Visual C++-komponentenerweiterungen (C++ / CX) statische Initialisierer-Code eingefügt, aus dem Stammbereich direkt in **DllMain**hingegen C# Compiler weisen Sie die statische Initialisierer zu Klassen und umgehen somit **DllMain** Problemen zu laden.). Die bewährte Methode besteht hier im Deklarieren einer Hilfsfunktion, die die gesamte Registrierung von Abhängigkeitseigenschaften für eine Klasse durchführt, d. h. eine Funktion pro Klasse. Für jede benutzerdefinierte Klasse, die Ihre App nutzt, müssen Sie dann auf die Hilfsregistrierungsfunktion verweisen, die von den einzelnen benutzerdefinierten Klassen jeweils verfügbar gemacht wird, die Sie verwenden möchten. Rufen Sie jede Hilfsregistrierungsfunktion einmalig als Teil des [**Application constructor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.) (`App::App()`) vor `InitializeComponent` auf. Dieser Konstruktor wird nur ausgeführt, wenn wirklich zum ersten Mal auf die App verwiesen wir. Er wird nicht erneut ausgeführt, wenn beispielsweise eine angehaltene App fortgesetzt wird. Wie im vorherigen C++-Registrierungsbeispiel gezeigt, ist auch die **nullptr**-Überprüfung jedes [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)-Aufrufs wichtig, da hierdurch sichergestellt wird, dass kein Aufrufer der Funktion die Eigenschaft zweimal registrieren kann. Bei einem zweiten Registrierungsaufruf würde Ihre App ohne eine solche Überprüfung wahrscheinlich abstürzen, da der Eigenschaftsname doppelt vorhanden wäre. Dieses Implementierungsmuster können Sie im [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://go.microsoft.com/fwlink/p/?linkid=238581) im Code für die C++/CX-Version des Beispiels sehen.
+Die Implementierung für das Registrieren einer Eigenschaft in C++/CX ist schwieriger als für C#, zum einen aufgrund der Aufteilung in Kopfzeile und Implementierungsdatei und zum anderen, weil die Initialisierung im Stammbereich der Implementierungsdatei nicht empfohlen wird. (Visual C++-komponentenerweiterungen (C++ / CX) statische Initialisierer-Code eingefügt, aus dem Stammbereich direkt in **DllMain**hingegen C# Compiler weisen Sie die statische Initialisierer zu Klassen und umgehen somit **DllMain** Problemen zu laden.). Die bewährte Methode besteht hier im Deklarieren einer Hilfsfunktion, die die gesamte Registrierung von Abhängigkeitseigenschaften für eine Klasse durchführt, d. h. eine Funktion pro Klasse. Für jede benutzerdefinierte Klasse, die Ihre App nutzt, müssen Sie dann auf die Hilfsregistrierungsfunktion verweisen, die von den einzelnen benutzerdefinierten Klassen jeweils verfügbar gemacht wird, die Sie verwenden möchten. Rufen Sie jede Hilfsregistrierungsfunktion einmalig als Teil des [**Application constructor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`) vor `InitializeComponent` auf. Dieser Konstruktor wird nur ausgeführt, wenn wirklich zum ersten Mal auf die App verwiesen wir. Er wird nicht erneut ausgeführt, wenn beispielsweise eine angehaltene App fortgesetzt wird. Wie im vorherigen C++-Registrierungsbeispiel gezeigt, ist auch die **nullptr**-Überprüfung jedes [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)-Aufrufs wichtig, da hierdurch sichergestellt wird, dass kein Aufrufer der Funktion die Eigenschaft zweimal registrieren kann. Bei einem zweiten Registrierungsaufruf würde Ihre App ohne eine solche Überprüfung wahrscheinlich abstürzen, da der Eigenschaftsname doppelt vorhanden wäre. Dieses Implementierungsmuster können Sie im [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://go.microsoft.com/fwlink/p/?linkid=238581) im Code für die C++/CX-Version des Beispiels sehen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 

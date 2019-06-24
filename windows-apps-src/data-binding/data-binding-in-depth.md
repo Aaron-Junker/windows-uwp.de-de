@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 972556a3d8d46dce11b251fc11d209fa96d3b751
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 150ea5fc9f5e91171f29cc985351856487e91d4a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362593"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318756"
 ---
 # <a name="data-binding-in-depth"></a>Datenbindung im Detail
 
@@ -43,7 +43,7 @@ Unabhängig vom Modus, es gibt zwei Arten der Bindung, und sie sind sowohl in de
 **Beispiel-apps, die veranschaulichen, {X: Bind}**
 
 -   [{x:Bind}-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=619989).
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper).
 -   [Beispiel für XAML-Benutzeroberflächengrundlagen](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
 **Beispiel-apps, die veranschaulichen, {Binding}**
@@ -199,7 +199,7 @@ void HostViewModel::PropertyChanged(winrt::event_token const& token) noexcept
 
 Die **NextButtonText**-Eigenschaft ist jetzt feststellbar. Wenn Sie eine uni- oder bidirektionale Bindung an diese Eigenschaft erstellen (was weiter unten genauer gezeigt wird), abonniert das sich ergebende Bindungsobjekt das **PropertyChanged**-Ereignis. Wenn das Ereignis ausgelöst wird, erhält der Handler des Bindungsobjekts ein Argument mit dem Namen der Eigenschaft, die geändert wurde. Daher weiß das Bindungsobjekt, welchen Eigenschaftswert es erneut lesen muss.
 
-Damit Sie nicht zum Implementieren des Musters für mehrere Male, oben, bei Verwendung von C# und Sie nur abgeleitet werden können die **BindableBase** Bässe-Klasse, die finden Sie in der [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (im Beispiel "Ordner" Common""). Dies ist ein Beispiel hierfür.
+Damit Sie nicht zum Implementieren des Musters für mehrere Male, oben, bei Verwendung von C# und Sie nur abgeleitet werden können die **BindableBase** Bässe-Klasse, die finden Sie in der [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) (im Beispiel "Ordner" Common""). Dies ist ein Beispiel hierfür.
 
 ```csharp
 public class HostViewModel : BindableBase
@@ -604,7 +604,7 @@ Click="{x:Bind RootFrame.GoForward}"/>
 
 Überladene Methoden können nicht verwendet werden, um ein Ereignis mit diesem Verfahren zu behandeln. Wenn die Methode, die das Ereignis behandelt, darüber hinaus über Parameter verfügt, müssen diese alle von den Typen aller Ereignisparameter zugeordnet werden können. In diesem Fall ist [**Frame.GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) nicht überladen und hat keine Parameter (wäre aber weiterhin gültig, auch wenn es zwei **object**-Parameter verwendet). [**Frame.GoBack** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) überladen ist, jedoch, damit wir die Verwendung dieser Methode mit diesem Verfahren nicht möglich.
 
-Das Verfahren zu Ereignisbindung ist ähnlich der Implementierung und Nutzung von Befehlen (ein Befehl ist eine Eigenschaft, die ein Objekt zurückgibt, das die [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)-Schnittstelle implementiert). Sowohl [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) als auch [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) kann mit Befehlen verwendet werden. Damit Sie das Befehlsmuster nicht mehrmals implementieren müssen, können Sie die **DelegateCommand**-Hilfsklasse verwenden, die Sie im [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)-Beispiel (im Ordner „Common“) finden.
+Das Verfahren zu Ereignisbindung ist ähnlich der Implementierung und Nutzung von Befehlen (ein Befehl ist eine Eigenschaft, die ein Objekt zurückgibt, das die [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)-Schnittstelle implementiert). Sowohl [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) als auch [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) kann mit Befehlen verwendet werden. Damit Sie das Befehlsmuster nicht mehrmals implementieren müssen, können Sie die **DelegateCommand**-Hilfsklasse verwenden, die Sie im [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)-Beispiel (im Ordner „Common“) finden.
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>Binden an eine Sammlung von Dateien oder Ordnern
 

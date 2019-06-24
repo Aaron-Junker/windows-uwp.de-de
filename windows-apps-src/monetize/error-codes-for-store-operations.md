@@ -5,12 +5,12 @@ ms.date: 08/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, In-App-Einkäufe, IAPs, Add-Ons, Fehlercodes
 ms.localizationpriority: medium
-ms.openlocfilehash: ba505b30076c356a39ae195e1d187cbc49d8a66a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e887e5fec2a2e04658332a25a3a6c8e23fe2550c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662875"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321715"
 ---
 # <a name="error-codes-for-store-operations"></a>Fehlercodes für Store-Vorgänge
 
@@ -53,7 +53,7 @@ Die folgenden Fehlercodes beziehen sich auf Vorgänge für Apps oder Add-Ons Liz
 | 0x803F8009<br/>0x803F800A   | Der Testzeitraum für die App ist abgelaufen.   |
 | 0x803F8190   |  Die Lizenz lässt das Produkt nicht im aktuellen Land oder der Region Ihres Geräts zu, in dem es verwendet wird.  |
 | 0x803F81F5<br/>0x803F81F6<br/>0x803F81F7<br/>0x803F81F8<br/>0x803F81F9   |  Sie haben die maximale Anzahl von Geräten erreicht, die mit Spielen und Apps aus dem Store verwendet werden können. Um das Spiel oder die App auf dem aktuellen Gerät verwenden zu können, müssen Sie zunächst ein anderes Gerät von Ihrem Konto entfernen.  |
-| 0x803F9000<br/>0x803F9001    |  Die Lizenz ist abgelaufen oder beschädigt. Zum Beheben dieses Fehlers führen Sie die [Problembehandlung für Windows-apps](https://support.microsoft.com/help/4027498/windows-run-the-troubleshooter-for-windows-apps) Zurücksetzen des Caches Store.     |
+| 0x803F9000<br/>0x803F9001    |  Die Lizenz ist abgelaufen oder beschädigt. Zum Beheben dieses Fehlers führen Sie die [Problembehandlung für Windows-apps](https://support.microsoft.com/help/4027498/microsoft-store-fix-problems-with-apps) Zurücksetzen des Caches Store.     |
 | 0x803F9006    |  Der Vorgang konnte nicht abgeschlossen werden, da der Benutzer des Produkts hat auf dem Gerät mit seinem Microsoft-Konto angemeldet ist.            |
 | 0x803F9008<br/>0x803F9009    |  Ihr Gerät ist offline. Das Gerät muss online sein, um das Produkt zu verwenden.            |
 | 0x803F900A    |  Das Abonnement ist abgelaufen.            |

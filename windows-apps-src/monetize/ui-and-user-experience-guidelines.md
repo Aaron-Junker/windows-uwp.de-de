@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Richtlinien, bewährte Methoden
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb187092158386c503b91973d8d63ce291b4760
-ms.sourcegitcommit: c62b260eecd373e57b19a623bae77e29180e0f3d
+ms.openlocfilehash: cf7f61f427ef0b1a0ff5b6f3b66d02d13d02e4ab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66565516"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320676"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Richtlinien für die Benutzeroberfläche und Benutzerumgebung für Anzeigen
 
@@ -25,10 +25,10 @@ Dieser Artikel enthält Richtlinien für die Bereitstellung hervorragender Umgeb
 Bevor Sie unsere Richtlinien für die unterschiedlichen Arten von Werbung in diesem Artikel durchlesen, schauen Sie sich zunächst diese allgemeinen bewährten Methoden zur Verbesserung der Anzeigenumsätze an.
 
 * [Sorgfältige Planung von Werbeanzeigen](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/). Lesen Sie unsere zugehörigen Anleitungen zum [Optimieren der Anzeigbarkeit Ihrer Werbeeinheiten](optimize-ad-unit-viewability.md).
-* [Verwenden von Interstitialbannerwerbung als Fallback für Interstitialvideowerbung](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video).
+* [Verwenden von Interstitialbannerwerbung als Fallback für Interstitialvideowerbung](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video/).
 * [Kennen Sie Ihre Benutzer für eine gezieltere Werbung](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/).
 * [Verwenden der neuesten Advertising-Bibliotheken](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/).
-* [Festlegen der richtigen COPPA-Einstellungen für Ihre App](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app).
+* [Festlegen der richtigen COPPA-Einstellungen für Ihre App](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app/).
 
 
 ## <a name="guidelines-for-banner-ads"></a>Richtlinien für Banneranzeigen
@@ -39,7 +39,7 @@ Die folgenden Abschnitte enthalten Empfehlungen für das Implementieren von [Ban
 
 Wir empfehlen diese Methoden beim Implementieren von Banneranzeigen in Ihrer App:
 
-* [Verwenden Sie Interactive Advertising Bureau-Größen](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes), die gut in das Layout für das Gerät passen.
+* [Verwenden Sie Interactive Advertising Bureau-Größen](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes/), die gut in das Layout für das Gerät passen.
 
 * Widmen Sie den Großteil der Benutzeroberfläche Ihrer App Steuerelementen und Inhalten.
 

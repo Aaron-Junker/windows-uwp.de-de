@@ -6,12 +6,12 @@ ms.date: 01/3/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 2561f18e2ac054c8b378b0c7c0a9689bebcc4140
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3b25283dbe8feff74ba994efba31c542f59171d9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611255"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317879"
 ---
 # <a name="device-portal-for-hololens"></a>Device Portal für HoloLens
 
@@ -21,12 +21,12 @@ ms.locfileid: "57611255"
 ### <a name="enable-device-portal"></a>Aktivieren des Geräteportals
 
 1. Schalten Sie die HoloLens ein, und setzen Sie sie auf.
-2. Führen Sie die [Blütengeste](https://dev.windows.com/holographic/Gestures.html#Bloom) aus, um das Hauptmenü zu starten.
-3. Betrachten Sie die Kachel **Einstellungen**, und führen Sie die [Zeigefingergeste](https://dev.windows.com/holographic/Gestures.html#Press_and_release) aus. Führen Sie die Zeigefingergeste ein zweites Mal aus, um die App in Ihrer Umgebung zu platzieren. Die Einstellungs-App wird gestartet, nachdem Sie sie platziert haben.
+2. Führen Sie die [Blütengeste](https://developer.microsoft.com/mixed-reality#Bloom) aus, um das Hauptmenü zu starten.
+3. Betrachten Sie die Kachel **Einstellungen**, und führen Sie die [Zeigefingergeste](https://developer.microsoft.com/mixed-reality#Press_and_release) aus. Führen Sie die Zeigefingergeste ein zweites Mal aus, um die App in Ihrer Umgebung zu platzieren. Die Einstellungs-App wird gestartet, nachdem Sie sie platziert haben.
 4. Wählen Sie das Menüelement **Aktualisieren** aus.
 5. Wählen Sie das Menüelement **Für Entwickler** aus.
 6. Aktivieren Sie den **Entwicklermodus**.
-7. [Scrollen Sie nach unten](https://dev.windows.com/holographic/Gestures.html#Navigation), und aktivieren Sie Device Portal.
+7. [Scrollen Sie nach unten](https://developer.microsoft.com/mixed-reality#Navigation), und aktivieren Sie Device Portal.
 
 
 ### <a name="pair-your-device"></a>Koppeln des Geräts
@@ -51,7 +51,7 @@ ms.locfileid: "57611255"
 #### <a name="connect-to-an-emulator"></a>Herstellen einer Verbindung mit einem Emulator 
 
 Sie können das Geräteportal auch mit dem Emulator verwenden. Verwenden Sie die Symbolleiste, um die Verbindung mit dem Geräteportal herzustellen. Klicken Sie auf dieses Symbol:
-- Device-Portal zu öffnen: Öffnen Sie die Windows Device Portal für das Betriebssystem HoloLens im Emulator.
+- Device-Portal zu öffnen: Öffnen Sie das Windows-Geräteportal für das HoloLens-Betriebssystem im Emulator.
 
 #### <a name="create-a-username-and-password"></a>Erstellen eines Benutzernamens und Kennworts 
 
@@ -93,8 +93,8 @@ Die Symbolleiste am oberen Rand der Seite ermöglicht den Zugriff auf häufig ve
 - **Herunterfahren**: Das Gerät wird deaktiviert.
 - **Starten Sie neu**: Zyklen Einschalten des Geräts.
 - **Sicherheit**: Öffnet die Seite Sicherheit für Geräte.
-- **"Cool"**: Gibt die Temperatur des Geräts an.
-- **STANDARDNACHRICHTENKLASSIFIZIERUNGEN**: Gibt an, ob das Gerät im Netzbetrieb befindet, und geladen.
+- **Cool**: Gibt die Temperatur des Geräts an.
+- **A/C**: Gibt an, ob das Gerät im Netzbetrieb befindet, und geladen.
 - **Hilfe**: Öffnet die Dokumentationsseite für REST-Schnittstelle.
 
 Auf der Startseite werden die folgenden Informationen angezeigt:
@@ -118,7 +118,7 @@ Auf der Seite „3D View“ können Sie erkennen, wie die HoloLens Ihre Umgebung
 - **Anzeigen der Stabilisierung Ebene**: Zeigt die Ebene, die HoloLens zur Stabilisierung während der Übertragung verwendet.
 - **Anzeigen von Mesh**: Zeigt die Mesh Oberfläche Zuordnung, das Ihrer Umgebung darstellt.
 - **Anzeigen von Details**: Zeigt übergeben Positionen, Head Drehung Quaternionen und der Gerät-Ursprung-Vektor, wie sie in Echtzeit zu ändern.
-- **Schaltfläche "Vollbild"**: Zeigt die 3D-Ansicht im Vollbildmodus an. Drücken Sie die ESC-Taste, um die Vollbildansicht zu beenden.
+- **Schaltfläche "Vollbild"** : Zeigt die 3D-Ansicht im Vollbildmodus an. Drücken Sie die ESC-Taste, um die Vollbildansicht zu beenden.
 
 - Surface-Wiederaufbau: Klicken Sie oder tippen Sie Update aus, um das aktuelle räumliche Zuordnung Netz vom Gerät angezeigt. Ein vollständiger Durchlauf kann bis zu einige Sekunden lang dauern. Das Gitter wird in der 3D-Ansicht nicht automatisch aktualisiert. Sie müssen auf „Update“ klicken, um das aktuelle Gitter vom Gerät abzurufen. Klicken Sie auf „Speichern“ um das aktuelle Spatial-Mapping-Gitter als OBJ-Datei auf dem PC zu speichern.
 
@@ -127,8 +127,8 @@ Auf der Seite „3D View“ können Sie erkennen, wie die HoloLens Ihre Umgebung
 Auf der Seite „Mixed Reality Capture“ können Sie Mediendatenströme von der HoloLens speichern.
 - Einstellungen: Steuern Sie die Media-Datenströme, die erfasst werden, indem Sie die folgenden Einstellungen zu überprüfen:-Hologramme: Erfasst den holographic Inhalt in den video Stream an. Hologramme werden in Mono und nicht in Stereo gerendert.
 - **PV Kamera**: Erfasst den Videostream zwischen der Kamera und Fotos/Video.
-- **MIC-Audio**: Erfasst die Audiodaten aus dem Mikrofon-Array.
-- **App-Audio**: Erfasst die Audiodaten aus dem die derzeit ausgeführte app.
+- **Mic Audio**: Erfasst die Audiodaten aus dem Mikrofon-Array.
+- **App Audio**: Erfasst die Audiodaten aus dem die derzeit ausgeführte app.
 - **Live-Vorschau-Qualität**: Wählen Sie die Bildschirmauflösung, Framerate und streaming-Rate für die Livevorschau an.
 
 - Klicken oder tippen Sie auf die Schaltfläche „Live preview“, um den Aufnahmedatenstrom anzuzeigen. Mit „Stop live preview“ wird der Aufnahmedatenstrom beendet.
@@ -164,7 +164,7 @@ Beachten Sie, dass die App auch dann beim Starten ausgeführt wird, wenn der Kio
 Ermöglicht Ihnen das Aufzeichnen und Wiedergeben von Eingabedaten für Testzwecke.
 - **Erfassen Sie Raum**: Verwendet, um eine simulierte Platz-Datei herunterzuladen, die das Netz räumliche Zuordnung für die benutzerumgebung enthält. Benennen Sie den Raum, und klicken Sie auf „Aufnahme“, um die Daten als XEF-Datei auf dem PC zu speichern. Diese Raumdatei kann in den HoloLens-Emulator geladen werden.
 - **Aufzeichnung**: Überprüfen Sie die Datenströme aufzuzeichnen, Name der Aufzeichnung, und klicken bzw. Tippen Sie auf der Eintrag zum Starten der Aufzeichnung. Führen Sie mit der HoloLens Aktionen aus, und klicken Sie dann auf „Beenden“, um die Daten als XEF-Datei auf dem PC zu speichern. Diese Datei kann im HoloLens-Emulator oder auf dem Gerät geladen werden.
-- **Wiedergabe**: Klicken Sie oder tippen Sie zum auswählen eine Xef Datei von Ihrem PC und senden die Daten an die HoloLens aufzeichnen hochladen.
+- **Playback**: Klicken Sie oder tippen Sie zum auswählen eine Xef Datei von Ihrem PC und senden die Daten an die HoloLens aufzeichnen hochladen.
 - **Steuerungsmodus**: Standard oder einer Simulation in der Dropdownliste auswählen, und klicken oder tippen Sie auf die Schaltfläche "festlegen", um den Modus für die HoloLens auszuwählen. Durch Auswahl von „Simulation“ werden die realen Sensoren auf der HoloLens deaktiviert und stattdessen hochgeladene simulierte Daten verwendet. Wenn Sie zu „Simulation“ wechseln, reagiert die HoloLens nicht auf den realen Benutzer, bis Sie zurück zu „Standard“ wechseln.
 
 

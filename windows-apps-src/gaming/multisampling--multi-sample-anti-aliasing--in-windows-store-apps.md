@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Multisampling, Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: b547e47b7d896ab818349dcc70ee9dc3c7078847
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 976cdfb5f1dc92f693f7296d6e33d7ccc4c4d6e7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368383"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318946"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in universellen Windows-apps-Plattform (UWP)
 
@@ -30,7 +30,7 @@ Direct3D-Featureebenen stellen die Unterstützung für spezielle Mindestfunktion
 
 1.  Ermitteln Sie per Aufruf von [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport), welche DXGI-Formate in Verbindung mit dem Multisampling verwendet werden können. Geben Sie die Renderzielformate an, die vom Spiel verwendet werden können. Sowohl die Renderziel als auch beheben müssen, verwenden das gleiche Format überprüfen Sie daher für beide [ **D3D11\_FORMAT\_Unterstützung\_MULTISAMPLE\_renderTarget-Klasse** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) und **D3D11\_FORMAT\_Unterstützung\_MULTISAMPLE\_beheben**.
 
-    **Funktionsebene 9:  ** Obwohl die Feature-Ebene 9-Geräten [garantieren Sie Unterstützung für Multisampling-renderzielformate](https://docs.microsoft.com/previous-versions//ff471324(v=vs.85)), Unterstützung ist für für Multisampling Resolve-Ziele nicht garantiert. Diese Überprüfung ist also erforderlich, bevor versucht wird, das in diesem Thema beschriebene Multisampling-Verfahren anzuwenden.
+    **Funktionsebene 9:  ** Obwohl die Feature-Ebene 9-Geräten [garantieren Sie Unterstützung für Multisampling-renderzielformate](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85)), Unterstützung ist für für Multisampling Resolve-Ziele nicht garantiert. Diese Überprüfung ist also erforderlich, bevor versucht wird, das in diesem Thema beschriebene Multisampling-Verfahren anzuwenden.
 
     Der folgende Code überprüft multisampling-Unterstützung für alle der DXGI\_FORMATIERUNG von Werten:
 

@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, Bedienungshilfen, Spiele
 ms.localizationpriority: medium
-ms.openlocfilehash: a3ef82db2d0ddb7883179279fd7e48c1acf38dd3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 74ff2c25d38f20b94f50cc05a548778ee212bad0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369172"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321364"
 ---
 #  <a name="making-games-accessible"></a>Erstellen barrierefreier Spiele
 
@@ -19,11 +19,11 @@ Eingabehilfen können jede Person und jedes Unternehmen auf der Welt dabei unter
 
 ## <a name="gaming-for-everyone"></a>Gaming for Everyone
 
-Wir von Microsoft sind überzeugt, dass Spiele Spaß für alle Benutzer bedeuten. Wir „möchten eine inklusive Umgebung für Spiele erstellen, die jeden anspricht. Wir glauben daran, dass wir für unsere Fans arbeiten und wir in der Art und Weise, in der wir verfügbar sin – innerhalb und außerhalb der Mauern von Microsoft – zeigen, wer wir sind. Wir haben das Programm entwickelt, um die unsere Unternehmenswerte darzustellen und glauben, dass das Programm dazu führet, positive Änderung durchzusetzen – nicht nur an unserem Arbeitsplatz, sondern in den Produkten, die wir für Spieler erstellen.” ([Blogbeitrag](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone) von Phil Spencer)
+Wir von Microsoft sind überzeugt, dass Spiele Spaß für alle Benutzer bedeuten. Wir „möchten eine inklusive Umgebung für Spiele erstellen, die jeden anspricht. Wir glauben daran, dass wir für unsere Fans arbeiten und wir in der Art und Weise, in der wir verfügbar sin – innerhalb und außerhalb der Mauern von Microsoft – zeigen, wer wir sind. Wir haben das Programm entwickelt, um die unsere Unternehmenswerte darzustellen und glauben, dass das Programm dazu führet, positive Änderung durchzusetzen – nicht nur an unserem Arbeitsplatz, sondern in den Produkten, die wir für Spieler erstellen.” ([Blogbeitrag](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) von Phil Spencer)
 
-Wir möchten eine ansprechende, vielseitige und inklusive Umgebung erstellen, in denen jeder spielen kann. "Eine dauerhafte Auswirkung erfordert die Änderung der Kultur, die nicht über Nacht durchgeführt wird. Allerdings verpflichtet sich unser Team, täglich besser zu werden, unserer Entscheidungsfindung durchzudenken und die Vielfalt der Anforderungen, Fähigkeiten und Interessen der Spieler auf der ganzen Welt zu berücksichtigen." ([Blogbeitrag](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone) von Phil Spencer)
+Wir möchten eine ansprechende, vielseitige und inklusive Umgebung erstellen, in denen jeder spielen kann. "Eine dauerhafte Auswirkung erfordert die Änderung der Kultur, die nicht über Nacht durchgeführt wird. Allerdings verpflichtet sich unser Team, täglich besser zu werden, unserer Entscheidungsfindung durchzudenken und die Vielfalt der Anforderungen, Fähigkeiten und Interessen der Spieler auf der ganzen Welt zu berücksichtigen." ([Blogbeitrag](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) von Phil Spencer)
 
-Wir hoffen, Sie folgen uns auf dem Weg, [Gaming for Everyone](https://news.microsoft.com/gamingforeveryone) zu verwirklichen. 
+Wir hoffen, Sie folgen uns auf dem Weg, [Gaming for Everyone](https://news.microsoft.com/gamingforeveryone/) zu verwirklichen. 
 
 ##  <a name="why-make-games-accessible"></a>Warum sollten Sie barrierefreie Spiele entwickeln?
 
@@ -69,7 +69,7 @@ Wenn Sie die meisten Fragen mit „nein“ beantwortet haben oder die Antwort au
 
 ## <a name="defining-disability"></a>Definition von Behinderungen
 
-Behinderungen werden als „fehlende Übereinstimmung zwischen den Bedürfnissen einer Person und dem Service, dem Produkt oder der Umgebung, die angeboten werden“ definiert. ([Inklusive Video](https://www.microsoft.com/design/inclusive), "Microsoft.com".) Dies bedeutet, dass jeder Benutzer eine Behinderung auftreten kann, und eine Bedingung kurz- oder erhalten werden. Stellen Sie sich die Herausforderungen vor, denen sich Spieler in einer derartigen Lage gegenübersehen, wenn sie Ihr Spiel spielen, und überlegen Sie, wie Sie Ihr Spiel für diese Personen verbessern können. Im Folgenden finden Sie einige Behinderungen, an die Sie denken sollten:
+Behinderungen werden als „fehlende Übereinstimmung zwischen den Bedürfnissen einer Person und dem Service, dem Produkt oder der Umgebung, die angeboten werden“ definiert. ([Inklusive Video](https://www.microsoft.com/design/inclusive/), "Microsoft.com".) Dies bedeutet, dass jeder Benutzer eine Behinderung auftreten kann, und eine Bedingung kurz- oder erhalten werden. Stellen Sie sich die Herausforderungen vor, denen sich Spieler in einer derartigen Lage gegenübersehen, wenn sie Ihr Spiel spielen, und überlegen Sie, wie Sie Ihr Spiel für diese Personen verbessern können. Im Folgenden finden Sie einige Behinderungen, an die Sie denken sollten:
 
 ### <a name="vision"></a>Sehvermögen
 
@@ -196,7 +196,7 @@ Wenn Spieler in Ihrem Spieletitel über die Spracheingabe und SMS-Nachrichten mi
 
 Spieler, die kein Mikrofon mit ihren Gaming-Gerät verbunden haben, können trotzdem ein Gespräch mit einer anderen Person haben. Sie können Text in das Chatfenster eingeben und diese Nachrichten in Stimmnachrichten konvertieren. Dies ermöglicht einem Spieler, der nicht gut hört, das transkribierte Lesen von SMS von der Person, mit der sie einen Voice-Chat hat.
 
-Entwicklern in ID@Xbox und dem verwaltetem Partner-Programm stehen die Funktionen Text-zu-Sprache und Sprache-zu-Text als Teil der [Eingabehilfen für Spiele-Chat 2](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility) im Xbox Live-Dienst zur Verfügung. Weitere Informationen finden Sie unter [Übersicht über Spiele-Chat 2](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md).
+Entwicklern in ID@Xbox und dem verwaltetem Partner-Programm stehen die Funktionen Text-zu-Sprache und Sprache-zu-Text als Teil der [Eingabehilfen für Spiele-Chat 2](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) im Xbox Live-Dienst zur Verfügung. Weitere Informationen finden Sie unter [Übersicht über Spiele-Chat 2](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
 
 ### <a name="sound-feedback"></a>Audiofeedback
 
@@ -225,7 +225,7 @@ Die Anpassung der Schwierigkeitsgrade Ihres Spiels ist ein heikler Vorgang. Wenn
 
 ### <a name="photosensitivity-epilepsy-testing"></a>Tests auf Lichtempfindlichkeitsepilepsie
 
-Lichtempfindlichkeitsepilepsie (PSE) ist eine Erkrankung, bei der durch visuelle Reize wie aufblitzendes Licht oder bestimmte sich bewegende visuelle Formen und Muster Anfälle ausgelöst werden. Diese Erkrankung tritt bei ungefähr drei Prozent der Menschen auf und ist besonders bei Kindern und Jugendlichen verbreitet. Wir haben ungefähr [1 Person unter 4000 Personen im Alter von 5 bis 24 Jahren](https://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3).
+Lichtempfindlichkeitsepilepsie (PSE) ist eine Erkrankung, bei der durch visuelle Reize wie aufblitzendes Licht oder bestimmte sich bewegende visuelle Formen und Muster Anfälle ausgelöst werden. Diese Erkrankung tritt bei ungefähr drei Prozent der Menschen auf und ist besonders bei Kindern und Jugendlichen verbreitet. Wir haben ungefähr [1 Person unter 4000 Personen im Alter von 5 bis 24 Jahren](https://www.epilepsy.com/learn/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-0).
 
 Es gibt viele Faktoren, die beim Spielen von Videospielen eine lichtempfindliche Reaktion auslösen können, darunter die Spieldauer, die Häufigkeit des aufblitzenden Lichts, die Intensität des Lichts, der Kontrast zwischen Hintergrund und Licht, der Abstand zwischen Bildschirm und Spieler sowie die Wellenlänge des Lichts.
 
@@ -253,7 +253,7 @@ Im Folgenden finden Sie einige externe Websites, die zusätzliche Informationen 
 
 ### <a name="game-accessibility-guidelines"></a>Anleitungen für die Barrierefreiheit von Spielen
 * [Richtlinien für Spiele Eingabehilfen](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation-Richtlinien](https://www.includification.com/)
+* [AbleGamers Foundation-Richtlinien](https://accessible.games/accessible-player-experiences/)
 * [Entwerfen Sie allgemein verfügbar (UA)-Spiele](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>Benutzerdefinierte Eingabesteuergeräte
@@ -262,14 +262,14 @@ Im Folgenden finden Sie einige externe Websites, die zusätzliche Informationen 
 
 ## <a name="references-used"></a>Verwendete Quellen
 * [Richtlinien für Spiele Eingabehilfen](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation-Richtlinien](https://www.includification.com/)
+* [AbleGamers Foundation-Richtlinien](https://accessible.games/accessible-player-experiences/)
 * [Farbe, die Blind Sensibilisierung können Unternehmen Interesse-Community](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 * [Wie Sie Untertitel gut – einen Blog-Artikel auf Gamasutra von Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
 * [Innovationen für alle Programms](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 * [Leiden, Anfälle auslösen foundation](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>Verwandte Links
-* [Inklusive Entwurf](https://www.microsoft.com/design/inclusive)
+* [Inklusive Entwurf](https://www.microsoft.com/design/inclusive/)
 * [Microsoft Accessibility Developer Hub](https://developer.microsoft.com/windows/accessible-apps)
 * [Entwickeln von UWP-apps zugegriffen werden kann](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
 * [E-Book Engineering-Software für Barrierefreiheit](https://www.microsoft.com/download/details.aspx?id=19262)

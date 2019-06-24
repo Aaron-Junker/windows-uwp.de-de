@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 57f8d7d57c016c015d01e80b07fc0e2c0260ef7f
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: f069899da69e4689e21fa578ff7124fbaf453ea3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320613"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317727"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Laden von Bildern und Ressourcen mit Anpassung an Skalierung, Design, hohen Kontrast usw.
 Ihre App kann Bild-Ressourcendateien mit Bildern (und andere Ressourcendateien) laden, die speziell auf den [Skalierungsfaktor für die Anzeige](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), das Design, den hohen Kontrast und anderen Laufzeitkontexte angepasst wurden Auf diese Bilder kann im imperativen Code oder im XAML-Markup verwiesen werden, z. B. als **Quellen**-Eigenschaft eines **Bildes**. Sie können auch in Ihrer App-Paketmanifest-Quelldatei erscheinen (in der Datei `Package.appxmanifest`), z. B. als Wert für das App-Symbol auf der Registerkarte „Visuelle Anlagen” des Manifest-Designers von Visual Studio, oder auf Ihren Kacheln und Popups. Mithilfe von Qualifizierern in den Dateinamen Ihrer Bilder und optional durch das dynamische Laden mithilfe des [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), können Sie die am besten geeignete Bilddatei aufrufen, die den Laufzeiteinstellungen des Benutzers am besten für die Anzeige, das Design, den hohen Kontrast, die Sprache und anderen Kontexten entsprechen.
@@ -86,7 +86,7 @@ Das `ms-appx-web`-Schema greift auf die gleichen Dateien wie `ms-appx` zu, jedoc
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-Für die in diesen Beispielen gezeigten Szenarien verwenden Sie die [URI-Konstruktor](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_)-Überladung, die [UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind) ableitet. Geben Sie einen gültigen absoluten URI einschließlich Schema und Autorität ein oder überlassen Sie die Autorität dem Standardwert des App-Pakets, wie im obigen Beispiel gezeigt.
+Für die in diesen Beispielen gezeigten Szenarien verwenden Sie die [URI-Konstruktor](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_)-Überladung, die [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind?view=netframework-4.8) ableitet. Geben Sie einen gültigen absoluten URI einschließlich Schema und Autorität ein oder überlassen Sie die Autorität dem Standardwert des App-Pakets, wie im obigen Beispiel gezeigt.
 
 Beachten Sie, wie auf die Beispielschemen-URIs ("`ms-appx` "oder" `ms-appx-web`") folgt, denen "`://`" folgt, das einem absoluten Pfad folgt. In einem absoluten Pfad, bewirkt das führende "`/`", das der Pfad aus dem Stammverzeichnis des Pakets interpretiert wird.
 
@@ -167,7 +167,7 @@ this.myXAMLImageElement.Source = new Windows.UI.Xaml.Media.Imaging.BitmapImage(n
 ```
 
 ## <a name="updating-images-in-response-to-qualifier-value-change-events"></a>Aktualisieren von Bildern als Antwort auf Änderungsereignisse im Qualifiziererwert
-Die aktive App kann auf Änderungen in den Systemeinstellungen reagieren, die die Qualifiziererwerte im standardmäßigen Ressourcekontext betreffen. Die folgenden Systemeinstellungen rufen ein [**"MapChanged"**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)-Ereignis auf [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) auf.
+Die aktive App kann auf Änderungen in den Systemeinstellungen reagieren, die die Qualifiziererwerte im standardmäßigen Ressourcekontext betreffen. Die folgenden Systemeinstellungen rufen ein [ **"MapChanged"** ](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)-Ereignis auf [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) auf.
 
 Als Reaktion auf dieses Ereignis können Sie Ihre Bilder mithilfe des standardmäßigen **ResourceContext** aktualisieren, den der [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) standardmäßig verwendet.
 

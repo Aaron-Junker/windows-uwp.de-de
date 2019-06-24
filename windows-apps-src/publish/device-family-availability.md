@@ -5,12 +5,12 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Pakete, hochladen, Verfügbarkeit von Gerätefamilien
 ms.localizationpriority: medium
-ms.openlocfilehash: af2152eb8d174f6d2e40e20c8cdaccd0e87605bb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 088fb859ae38e608182b22b94300b9c27063054e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787098"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320020"
 ---
 # <a name="device-family-availability"></a>Verfügbarkeit von Gerätefamilien
 
@@ -30,7 +30,7 @@ Pakete, die auf die Gerätefamilie Windows.Universal abzielen, können auf jedem
 
 Sie können das Kontrollkästchen für eine Windows 10-Gerätefamilie deaktivieren, wenn Sie Kunden auf diesem Gerät keine Übermittlung anbieten möchten. Wenn das Kontrollkästchen für eine Gerätefamilie deaktiviert ist, können neue Kunden die App auf diesem Gerätetyp nicht erwerben (Kunden, die bereits über die App verfügen, können diese allerdings weiterhin nutzen und erhalten alle von Ihnen übermittelten Aktualisierungen).
 
-Wenn Ihre App dies unterstützt, empfehlen wir, diese Kontrollkästchen hier aktiviert zu lassen, es sei denn, Sie möchten aus einem bestimmten Grund die Windows 10-Gerätetypen einschränken, die Ihre App erwerben können. Wenn Sie beispielsweise wissen, dass Ihre App kein hohes Maß an Benutzerfreundlichkeit auf [Surface Hub](https://developer.microsoft.com/windows/surfacehub) und/oder [Microsoft HoloLens](https://developer.microsoft.com/windows/mixed-reality) bietet, deaktivieren Sie das Kontrollkästchen **Windows 10 Team** und/oder **Windows 10 Holographic**. Dadurch wird verhindert, dass neuen Kunden die App auf diesen Geräten erwerben. Wenn Sie die App später für diese Kunden anbieten möchten, können Sie eine neue Übermittlung Erstellen, bei der die Kontrollkästchen aktiviert sind.
+Wenn Ihre App dies unterstützt, empfehlen wir, diese Kontrollkästchen hier aktiviert zu lassen, es sei denn, Sie möchten aus einem bestimmten Grund die Windows 10-Gerätetypen einschränken, die Ihre App erwerben können. Wenn Sie beispielsweise wissen, dass Ihre App kein hohes Maß an Benutzerfreundlichkeit auf [Surface Hub](https://developer.microsoft.com/windows/surfacehub) und/oder [Microsoft HoloLens](https://developer.microsoft.com/mixed-reality) bietet, deaktivieren Sie das Kontrollkästchen **Windows 10 Team** und/oder **Windows 10 Holographic**. Dadurch wird verhindert, dass neuen Kunden die App auf diesen Geräten erwerben. Wenn Sie die App später für diese Kunden anbieten möchten, können Sie eine neue Übermittlung Erstellen, bei der die Kontrollkästchen aktiviert sind.
 
 <span id="xbox" />
 

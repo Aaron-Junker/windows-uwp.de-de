@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2318d873a55b4134cf36eda91b57866e14b6b3a7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 50f588caaf36d9a2a74222029e17785663cf3953
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361729"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318296"
 ---
 # <a name="media-casting"></a>Medienumwandlung
 
@@ -66,14 +66,14 @@ Fügen Sie in der XAML-Datei eine Schaltfläche hinzu, über die der Benutzer di
 
 [!code-xml[CastPickerButton](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetCastPickerButton)]
 
-Rufen Sie im **Click**-Ereignishandler für die Schaltfläche [**TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.) auf, um die Transformation eines UI-Elements relativ zu einem anderen Element abzurufen. In diesem Beispiel ist die Transformation die Position der Umwandlungsauswahl-Schaltfläche relativ zum visuellen Stamm des Anwendungsfensters. Rufen Sie die [**Show**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevicepicker.show)-Methode des [**CastingDevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Media.Casting.CastingDevicePicker)-Objekts auf, um das Dialogfeld der Umwandlungsauswahl zu öffnen. Geben Sie die Position und die Abmessungen der Umwandlungsauswahl-Schaltfläche an, sodass das Dialogfeld als Flyout der vom Benutzer gewählten Schaltfläche angezeigt werden kann.
+Rufen Sie im **Click**-Ereignishandler für die Schaltfläche [**TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transformtovisual) auf, um die Transformation eines UI-Elements relativ zu einem anderen Element abzurufen. In diesem Beispiel ist die Transformation die Position der Umwandlungsauswahl-Schaltfläche relativ zum visuellen Stamm des Anwendungsfensters. Rufen Sie die [**Show**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevicepicker.show)-Methode des [**CastingDevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Media.Casting.CastingDevicePicker)-Objekts auf, um das Dialogfeld der Umwandlungsauswahl zu öffnen. Geben Sie die Position und die Abmessungen der Umwandlungsauswahl-Schaltfläche an, sodass das Dialogfeld als Flyout der vom Benutzer gewählten Schaltfläche angezeigt werden kann.
 
 [!code-cs[CastPickerButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
 Rufen Sie im **CastingDeviceSelected**-Ereignishandler die [**CreateCastingConnection**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.createcastingconnection)-Methode der [**SelectedCastingDevice**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdeviceselectedeventargs.selectedcastingdevice)-Eigenschaft der Ereignisargumente auf, die das vom Benutzer ausgewählte Umwandlungsgerät darstellt. Registrieren Sie Handler für die Ereignisse [**ErrorOccurred**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.erroroccurred) und [**StateChanged**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.statechanged). Rufen Sie abschließend [**RequestStartCastingAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.requeststartcastingasync) auf, um die Umwandlung zu starten, indem das Ergebnis für die [**GetAsCastingSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement.getascastingsource)-Methode des **MediaPlayer**-Objekts des **MediaPlayerElement**-Steuerelements übergeben wird, um anzugeben, dass die Medien, die umgewandelt werden sollen, der Inhalt des **MediaPlayer** sind, der dem **MediaPlayerElement** zugeordnet ist.
 
 > [!NOTE] 
-> Die Umwandlungsverbindung muss im UI-Thread initiiert werden. Da **CastingDeviceSelected** nicht für den UI-Thread aufgerufen wird, müssen Sie diese Aufrufe innerhalb eines Aufrufs von [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) platzieren, sodass diese für den UI-Thread aufgerufen werden.
+> Die Umwandlungsverbindung muss im UI-Thread initiiert werden. Da **CastingDeviceSelected** nicht für den UI-Thread aufgerufen wird, müssen Sie diese Aufrufe innerhalb eines Aufrufs von [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) platzieren, sodass diese für den UI-Thread aufgerufen werden.
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
@@ -112,7 +112,7 @@ Registrieren Sie abschließend Ereignishandler für die Ereignisse [**Added**](h
 
 Das **Added**-Ereignis wird ausgelöst, wenn ein neues Gerät vom Überwachungselement erkannt wird. Erstellen Sie im Handler für dieses Ereignis ein neues [**CastingDevice**](https://docs.microsoft.com/uwp/api/Windows.Media.Casting.CastingDevice)-Objekt, indem Sie [**CastingDevice.FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.fromidasync) aufrufen und die ID des erkannten Umwandlungsgeräts übergeben, die in dem an den Handler übergebenen **DeviceInformation**-Objekt enthalten ist.
 
-Fügen Sie das **CastingDevice** zum **ListBox** für Umwandlungsgeräte hinzu, damit der Benutzer es auswählen kann. Aufgrund der in XAML definierten [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) wird die [**FriendlyName**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.friendlyname)-Eigenschaft als Elementtext im Listenfeld verwendet. Da dieser Ereignishandler nicht für den UI-Thread aufgerufen wird, müssen Sie die Benutzeroberfläche innerhalb eines Aufrufs von [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) aktualisieren.
+Fügen Sie das **CastingDevice** zum **ListBox** für Umwandlungsgeräte hinzu, damit der Benutzer es auswählen kann. Aufgrund der in XAML definierten [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) wird die [**FriendlyName**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.friendlyname)-Eigenschaft als Elementtext im Listenfeld verwendet. Da dieser Ereignishandler nicht für den UI-Thread aufgerufen wird, müssen Sie die Benutzeroberfläche innerhalb eines Aufrufs von [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) aktualisieren.
 
 [!code-cs[WatcherAdded](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherAdded)]
 
@@ -149,7 +149,7 @@ Aktualisieren Sie im Handler für das **ErrorOccurred**-Ereignis die Benutzerobe
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
-Implementieren Sie zum Schluss den Handler für die Schaltfläche zum Trennen. Beenden Sie die Medienumwandlung, und trennen Sie die Verbindung mit dem Umwandlungsgerät, indem Sie die [**DisconnectAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.disconnectasync)-Methode des **CastingConnection**-Objekts aufrufen. Dieser Aufruf muss durch Aufrufen von [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) an den UI-Thread weitergeleitet werden.
+Implementieren Sie zum Schluss den Handler für die Schaltfläche zum Trennen. Beenden Sie die Medienumwandlung, und trennen Sie die Verbindung mit dem Umwandlungsgerät, indem Sie die [**DisconnectAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.disconnectasync)-Methode des **CastingConnection**-Objekts aufrufen. Dieser Aufruf muss durch Aufrufen von [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) an den UI-Thread weitergeleitet werden.
 
 [!code-cs[DisconnectButton](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
 

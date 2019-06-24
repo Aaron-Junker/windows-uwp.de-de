@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Spieleinstellungen, Anzeigemodus, Systemanforderungen, Hardwareanforderungen, Mindestanforderungen an die Hardware, empfohlene Hardware, Datenschutzrichtlinie, Kontaktinformationen für den Support, App-Website, Supportinformationen
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3b78da4e56ab5994155c41505bbdde42b44e12
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 5bc1283560334d2eac97fd358feabfca0f411014
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63774046"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320043"
 ---
 # <a name="enter-app-properties"></a>Eingeben von App-Eigenschaften
 
@@ -67,7 +67,7 @@ Die **Plattformübergreifende Multiplayer-Option** bedeutet, dass das Spiel Mult
 
 ## <a name="display-mode"></a>Anzeigemodus
 
-In diesem Abschnitt können Sie angeben, ob Ihr Produkt in einer immersiven Ansicht (nicht nur 2D) für [Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) auf PC bzw. HoloLens-Geräten geeignet ist. Wenn Sie dies bestätigen, müssen Sie ebenfalls folgendes angeben:
+In diesem Abschnitt können Sie angeben, ob Ihr Produkt in einer immersiven Ansicht (nicht nur 2D) für [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) auf PC bzw. HoloLens-Geräten geeignet ist. Wenn Sie dies bestätigen, müssen Sie ebenfalls folgendes angeben:
 - Wählen Sie entweder **Mindesthardwareanforderungen** oder **Empfohlene Hardware** für **immersives Windows Mixed Reality-Headset** unter [Systemanforderungen](#system-requirements) auf dem unten angezeigten Abschnitt der Seite **Eigenschaften** aus.
 - Geben Sie **Boundary setup** an (wenn ein PC ausgewählt wurde), damit Benutzer wissen, ob es nur einer sitzenden oder stehenden Position verwendet werden soll, oder ob der Benutzer sich bei der Verwendung bewegen kann. 
 

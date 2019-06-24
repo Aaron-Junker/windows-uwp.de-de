@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, asynchron
 ms.localizationpriority: medium
-ms.openlocfilehash: 26378473803b8963c0ca85eb414bae798f9607e4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 63772a4ee9ea98ca6a45dde45b728d4fedd988d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371577"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320496"
 ---
 # <a name="asynchronous-programming"></a>Asynchrone Programmierung
 In diesem Thema wird beschrieben, asynchrone Programmierung in die universelle Windows-Plattform (UWP) und seine Darstellung im C#, Microsoft Visual Basic .NET, C++ und JavaScript.
@@ -71,5 +71,5 @@ Asynchrone Funktionen können häufig genauso einfach wie konventionelle Funktio
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Aufrufen asynchroner APIs in C# oder Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
-* [Asynchrone Programmierung mit Async und Await (C#- und Visual Basic)](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
+* [Asynchrone Programmierung mit Async und Await (C#- und Visual Basic)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hh191443(v=vs.110))
 * [Reversi Feature Beispielszenarien: asynchronem Code](https://docs.microsoft.com/previous-versions/windows/apps/jj712233(v=win.10))

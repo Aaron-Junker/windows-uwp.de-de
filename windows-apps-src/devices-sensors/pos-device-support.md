@@ -5,19 +5,19 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 865c95fe5453a038a73b397fdcf32f77f9e8defb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: aa8bec12ca3920b1e273d8f2d98186f62a340016
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63828083"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321529"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Unterstützte Point of Service-Peripheriegeräte
 
 ## <a name="barcode-scanner"></a>Strichcodescanner
 | Verbindung | Support |
 | -------------|-------------|
-| USB          | <p>Windows enthält einen in-Box Klassentreiber für Barcodescanner USB-Verbindung basierend auf der HID POS-Scanner-Verwendungstabelle (8 c)-Spezifikation definiert, indem [USB.org](https://www.usb.org/developers/hidpage/). Eine Liste bekannter kompatibler Geräte finden Sie in folgender Tabelle.  Sehen Sie im Handbuch Ihres Strichcodescanners nach oder wenden Sie sich an den Hersteller, um zu erfahren, wie Sie Ihren Scanner im **USB.HID.POS Scanner**-Scannermodus konfigurieren. </p><p>Windows unterstützt auch die Implementierung von herstellerspezifischen Treibern für weitere Strichcodescanner, die den Scannerstandard „USB.HID.POS“ nicht unterstützen. Erfragen Sie beim Hersteller Ihres Strichcodescanners, ob ein herstellerspezifischer Treiber verfügbar ist.</p><p>Hersteller von Strichcodescannern sollten Sie sich an das [Strichcodescannertreiber-Entwurfshandbuch](https://aka.ms/pointofservice-drv) für weitere Informationen zum Erstellen eines benutzerdefinierten Strichcodescannertreibers wenden</p> |
+| USB          | <p>Windows enthält einen in-Box Klassentreiber für Barcodescanner USB-Verbindung basierend auf der HID POS-Scanner-Verwendungstabelle (8 c)-Spezifikation definiert, indem [USB.org](https://www.usb.org/hid). Eine Liste bekannter kompatibler Geräte finden Sie in folgender Tabelle.  Sehen Sie im Handbuch Ihres Strichcodescanners nach oder wenden Sie sich an den Hersteller, um zu erfahren, wie Sie Ihren Scanner im **USB.HID.POS Scanner**-Scannermodus konfigurieren. </p><p>Windows unterstützt auch die Implementierung von herstellerspezifischen Treibern für weitere Strichcodescanner, die den Scannerstandard „USB.HID.POS“ nicht unterstützen. Erfragen Sie beim Hersteller Ihres Strichcodescanners, ob ein herstellerspezifischer Treiber verfügbar ist.</p><p>Hersteller von Strichcodescannern sollten Sie sich an das [Strichcodescannertreiber-Entwurfshandbuch](https://aka.ms/pointofservice-drv) für weitere Informationen zum Erstellen eines benutzerdefinierten Strichcodescannertreibers wenden</p> |
 | Bluetooth    | <p>Windows unterstützt den auf Seriellem Port-Protokoll – einfacher serieller Schnittstelle (SPP-SSI) basierten Bluetooth-Strichcodescanner. Eine Liste bekannter kompatibler Geräte finden Sie in folgender Tabelle. Sehen Sie im Handbuch Ihres Strichcodescanners nach oder wenden Sie sich an den Hersteller, um zu erfahren, wie Sie Ihren Scanner im **SPP-SSI**-Scannermodus konfigurieren.</p> |
 | Webcam       | <p>Ab Windows 10, Version 1803, können Sie Strichcodescanner über ein Standard-Kameraobjektiv von einer universellen Windows-Anwendung lesen. Es wird empfohlen, dass Sie eine Kamera verwenden, die Autofokus und eine Auflösung von mindestens 1920 x 1440 unterstützt.  Einige niedrigere Auflösungen bei Kameras können Standardstrichcodes lesen, wenn der Strichcode groß genug gedruckt wird.  Barcodes mit weniger umfangreichen Elementen benötigen möglicherweise höhere Auflösungen bei einer Kamera.</p>| 
 |
@@ -32,8 +32,8 @@ ms.locfileid: "63828083"
 | Honeywell     | Genesis 7580g                  | 2D         | USB          | Präsentation | HID POS-Scanner           |
 | Honeywell     | Granit 198Xi                   | 2D         | USB          | Handheld     | HID POS-Scanner           |
 | Honeywell     | Granit 191Xi                   | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | N5680                          | 2D         | Intern     | Component    | HID POS-Scanner           |
-| Honeywell     | N3680                          | 2D         | Intern     | Component    | HID POS-Scanner           |
+| Honeywell     | N5680                          | 2D         | Intern     | Komponente    | HID POS-Scanner           |
+| Honeywell     | N3680                          | 2D         | Intern     | Komponente    | HID POS-Scanner           |
 | Honeywell     | Orbit 7190g                    | 2D         | USB          | Präsentation | HID POS-Scanner           |
 | Honeywell     | Stratos 2700                   | 2D         | USB          | In der Leistungsindikatoren   | HID POS-Scanner           |
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | HID POS-Scanner           |
@@ -68,8 +68,8 @@ ms.locfileid: "63828083"
 
 
 ¹ Upgradable 2D Barcodes über Honeywell unterstützen. <br/>
-² mindestens Firmware 009 (2018.07.09) erforderlich. Aktualisiert werden, können mithilfe von Zebra [123Scan](http://www.zebra.com/123Scan).<br/>
-³ mindestens Firmware 016 (2018.01.18) erforderlich. Aktualisiert werden, können mithilfe von Zebra [123Scan](http://www.zebra.com/123Scan). 
+² mindestens Firmware 009 (2018.07.09) erforderlich. Aktualisiert werden, können mithilfe von Zebra [123Scan](http://www.zebra.com/123scan).<br/>
+³ mindestens Firmware 016 (2018.01.18) erforderlich. Aktualisiert werden, können mithilfe von Zebra [123Scan](http://www.zebra.com/123scan). 
 
 
 <hr>

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Bildung
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2333d960ba91b1d1c3d3030481108407909594
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3d68fd78a7da3f1b98f61225f3aad8ca1590140e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359206"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317606"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Entwickeln von universellen Windows-Apps für das Bildungswesen
 ![Screenshot der Prüfungs-App](images/take-a-test-screen-small.png)
@@ -23,7 +23,7 @@ Bildungs-Apps müssen barrierefrei sein. Weitere Informationen finden Sie unter 
 
 
 ### <a name="secure-assessments"></a>Sichere Bewertungen
-Apps für Bewertungen oder Tests müssen oft eine *gesperrte* Umgebung bereitstellen, um zu verhindern, dass die Lernenden während eines Tests andere Computer oder Internetressourcen verwenden. Diese Funktion wird über die [Prüfungs-API](take-a-test-api.md) bereitgestellt. Ein Beispiel einer Prüfungsumgebung mit gesperrtem Onlinezugriff für ernsthafte Prüfungen finden Sie in der Web-App [Prüfung](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) im Windows IT Center.
+Apps für Bewertungen oder Tests müssen oft eine *gesperrte* Umgebung bereitstellen, um zu verhindern, dass die Lernenden während eines Tests andere Computer oder Internetressourcen verwenden. Diese Funktion wird über die [Prüfungs-API](take-a-test-api.md) bereitgestellt. Ein Beispiel einer Prüfungsumgebung mit gesperrtem Onlinezugriff für ernsthafte Prüfungen finden Sie in der Web-App [Prüfung](https://docs.microsoft.com/education/windows/take-tests-in-windows-10) im Windows IT Center.
 
 ### <a name="user-input"></a>Benutzereingabe
 Benutzereingaben sind ein wichtiger Bestandteil von Apps für Bildungszwecke. Die Steuerelemente auf der Benutzeroberfläche müssen gut reagieren und intuitiv bedienbar sein, damit die Aufmerksamkeit der Benutzer für die Inhalte nicht gestört wird. Eine allgemeine Übersicht der in einer universellen Windows-App verfügbaren Eingabeoptionen finden Sie unter [Einführung in Eingaben](https://docs.microsoft.com/windows/uwp/design/input/input-primer) und in den nachfolgenden Themen im Abschnitt „Design und UI“. Dazu zeigen die folgenden Beispiel-Apps den grundlegenden Umgang mit der Benutzeroberfläche in der universellen Windows-Plattform.
@@ -41,4 +41,4 @@ Die Windows Ink-Plattform kann Apps für Bildungszwecke unterstützen, indem die
 Apps für Bildungszwecke werden oft unter speziellen Umständen für eine bestimmte Organisation veröffentlicht. Informationen dazu finden Sie unter [Verteilen von branchenspezifischen Apps an Unternehmen](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
 
 ## <a name="related-topics"></a>Verwandte Themen
-- [Windows 10 for Education](https://technet.microsoft.com/edu/windows/index) im Windows-IT Center
+- [Windows 10 for Education](https://docs.microsoft.com/education/windows/index) im Windows-IT Center

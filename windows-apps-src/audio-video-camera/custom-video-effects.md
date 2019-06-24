@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d1aa710485d38f20433e842b3d6418f911252e2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 819f0b4a5ba17a866eb50539f5138460eefd0eec
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361807"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318403"
 ---
 # <a name="custom-video-effects"></a>Benutzerdefinierte Videoeffekte
 
@@ -79,7 +79,7 @@ Die [**IsReadOnly**](https://docs.microsoft.com/uwp/api/windows.media.effects.ib
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties-Methode
 
-Das System ruft [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows) für den Effekt auf, um Ihnen die Codierungseigenschaften für den Videostream mitzuteilen, für den der Effekt gilt. Diese Methode bietet auch einen Verweis auf das Direct3D-Gerät, welches für das Hardwarerendering verwendet wird. Die Verwendung dieses Geräts wird im Beispiel zur Hardwareverarbeitung weiter unten in diesem Artikel gezeigt.
+Das System ruft [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) für den Effekt auf, um Ihnen die Codierungseigenschaften für den Videostream mitzuteilen, für den der Effekt gilt. Diese Methode bietet auch einen Verweis auf das Direct3D-Gerät, welches für das Hardwarerendering verwendet wird. Die Verwendung dieses Geräts wird im Beispiel zur Hardwareverarbeitung weiter unten in diesem Artikel gezeigt.
 
 [!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
 
@@ -154,7 +154,7 @@ Fügen Sie den folgenden Code in den Namespace für den Effekt ein, um die Schni
 
 Sie können nun die **ProcessFrame**-Methodenimplementierung hinzufügen. Zunächst erhält diese Methode ein [**BitmapBuffer**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBuffer)-Objekt aus den Ein- und Ausgabesoftwarebitmaps. Beachten Sie, dass der Ausgabeframe zum Schreiben und die Eingabe zum Lesen geöffnet wird. Als Nächstes wird ein [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IMemoryBufferReference)-Objekt für jeden Puffer durch Aufrufen von [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) abgerufen. Danach wird der tatsächliche Datenpuffer durch Umwandeln der **IMemoryBufferReference**-Objekte wie die oben definierte COMInterop-Schnittstelle, **IMemoryByteAccess**, und anschließendes Aufrufen von **GetBuffer** abgerufen.
 
-Nun, da die Datenpuffer abgerufen wurden, können Sie aus dem Eingabepuffer lesen und in den Ausgabepuffer schreiben. Das Layout des Puffers wird durch Aufrufen von [**GetPlaneDescription**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription) abgerufen, das Informationen über die Breite und den anfänglichen Versatz des Puffers bereitstellt. Die Bits pro Pixel werden durch die Codierungseigenschaften bestimmt, die zuvor mit der [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows)-Methode festgelegt wurden. Anhand der Informationen zum Pufferformat wird der Index im Puffer für jedes Pixel gefunden. Der Pixelwert aus dem Quellpuffer wird in den Zielpuffer kopiert, wobei die Farbwerte mit der FadeValue-Eigenschaft multipliziert werden, die für diesen Effekt definiert ist, um sie um den angegebenen Wert abzublenden.
+Nun, da die Datenpuffer abgerufen wurden, können Sie aus dem Eingabepuffer lesen und in den Ausgabepuffer schreiben. Das Layout des Puffers wird durch Aufrufen von [**GetPlaneDescription**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription) abgerufen, das Informationen über die Breite und den anfänglichen Versatz des Puffers bereitstellt. Die Bits pro Pixel werden durch die Codierungseigenschaften bestimmt, die zuvor mit der [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties)-Methode festgelegt wurden. Anhand der Informationen zum Pufferformat wird der Index im Puffer für jedes Pixel gefunden. Der Pixelwert aus dem Quellpuffer wird in den Zielpuffer kopiert, wobei die Farbwerte mit der FadeValue-Eigenschaft multipliziert werden, die für diesen Effekt definiert ist, um sie um den angegebenen Wert abzublenden.
 
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
@@ -190,7 +190,7 @@ Legen Sie die Codierungseigenschaften, die vom Effekt unterstützt werden sollen
 [!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
 
 
-Verwenden Sie die [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows)-Methode, um ein neues Win2D-**CanvasDevice**-Objekt vom [**IDirect3DDevice**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice) zu erstellen, das an die Methode übergeben wird.
+Verwenden Sie die [**SetEncodingProperties**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert)-Methode, um ein neues Win2D-**CanvasDevice**-Objekt vom [**IDirect3DDevice**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice) zu erstellen, das an die Methode übergeben wird.
 
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 

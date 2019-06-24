@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 16b75226d6b79b19978ddf7e37231b15ac7a4e3e
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 344ee7060edcee3376e271fc21e104490d8724d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984169"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319712"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Verschieben von einer Desktopanwendung für UWP
 
@@ -18,15 +18,15 @@ Wenn Sie eine vorhandene desktop-Anwendung verfügen, die mithilfe von .NET Fram
 
 ## <a name="package-your-desktop-application-in-an-msix-package"></a>Packen Sie die desktop-Anwendung in einem Paket MSIX
 
-Sie können die desktop-Anwendung in einem Paket MSIX für den Zugriff auf viele weitere Features von Windows 10 verpacken. MSIX ist ein moderner Windows app-Paket-Format, die eine universelle Packaging-Ergebnis für alle Windows-apps, einschließlich UWP, WPF, Windows Forms und Win32-apps bereitstellt. Packen Ihre Windows-desktop-apps in MSIX Paketen erhalten Sie Zugriff auf eine stabile Installation und aktualisieren die benutzerfreundlichkeit, eine verwaltete Sicherheitsmodell mit eine flexible Funktion System, das Unterstützung für den Microsoft Store, unternehmensverwaltung und viele benutzerdefinierte Distribution-Modelle. Sie können die Anwendung, ob Sie den Quellcode haben oder wenn nur eine vorhandene Installationsdatei (z. B. eine MSI- oder App-V-Installer) verpacken. Nachdem Sie Ihre Anwendung gepackt haben, können Sie die UWP-Features wie z. B. Paket Extensions und andere UWP-Komponenten integrieren.
+Sie können die desktop-Anwendung in einem Paket MSIX für den Zugriff auf viele weitere Features von Windows 10 verpacken. MSIX ist ein modernes Windows-App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps bereitgestellt wird, z. B. UWP-, WPF-, Windows Forms- und Win32-Apps. Durch das Verpacken Ihrer Windows-Desktop-Apps in MSIX-Paketen erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Sie können die Anwendung, ob Sie den Quellcode haben oder wenn nur eine vorhandene Installationsdatei (z. B. eine MSI- oder App-V-Installer) verpacken. Nachdem Sie Ihre Anwendung gepackt haben, können Sie die UWP-Features wie z. B. Paket Extensions und andere UWP-Komponenten integrieren.
 
 Weitere Informationen finden Sie unter [Packen von desktop-Anwendungen (Desktop-Brücke)](/windows/msix/desktop/desktop-to-uwp-root) und [Features, die Paketidentität erfordern](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
 ## <a name="use-uwp-apis"></a>Verwenden von UWP-APIs
 
-Sie können viele UWP-APIs aufrufen, direkt in Ihrer Windows Forms, WPF oder C++ Win32-desktop-app auf moderne Funktionen für Windows 10-Benutzern das einfache integrieren. Beispielsweise können Sie die UWP-APIs zum Hinzufügen von Popupbenachrichtigungen zu Ihrer desktop-app aufrufen.
+Sie können viele UWP-APIs direkt in Ihrer WPF-, Windows Forms- oder C++-Win32-Desktop-App aufrufen, um moderne Benutzeroberflächen für Windows 10-Benutzer zu integrieren. Sie können beispielsweise UWP-APIs aufrufen, um Ihrer Desktop-App Popupbenachrichtigungen hinzuzufügen.
 
-Weitere Informationen finden Sie unter [nutzen UWP-APIs in desktop-apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+Weitere Informationen finden Sie unter [Use UWP APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) (Verwenden von UWP-APIs in Desktop-Apps).
 
 ## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>Migrieren von .NET Framework-app in einer UWP-app
 
@@ -234,12 +234,12 @@ Genau wie bei UWPs sind die Kosten für das Hinzufügen einer Android- oder iOS-
 
 Fügen Sie zuerst der Lösung ein **Android**-, **iOS**- oder **plattformübergreifendes** hinzu.
 
-Sie finden diese Vorlagen im Dialogfeld **Neues Projekt hinzufügen** in der **Visual C#-**-Gruppe.
+Sie finden diese Vorlagen im Dialogfeld **Neues Projekt hinzufügen** in der **Visual C#-** -Gruppe.
 
 ![Xamarin-Apps](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Plattformübergreifende Projekte sind ideal für Apps mit wenigen plattformspezifischen Funktionen. Sie können diese zur Entwicklung einer nativen XAML-basierten Benutzeroberfläche verwenden, die unter iOS, Android und Windows ausgeführt wird. Weitere Informationen finden Sie [hier](https://www.xamarin.com/forms).
+>Plattformübergreifende Projekte sind ideal für Apps mit wenigen plattformspezifischen Funktionen. Sie können diese zur Entwicklung einer nativen XAML-basierten Benutzeroberfläche verwenden, die unter iOS, Android und Windows ausgeführt wird. Weitere Informationen finden Sie [hier](https://docs.microsoft.com/xamarin/xamarin-forms/).
 
 Fügen Sie anschließen von Ihrem Android-, iOS- oder plattformübergreifenden Projekt einen Verweis auf das Klassenbibliotheksprojekt hinzu.
 
@@ -278,7 +278,7 @@ public class MainActivity : ListActivity
 }
 ```
 
-Informationen zu den ersten Schritten mit Android-, iOS- und plattformübergreifenden Projekten finden Sie im [Xamarin-Entwicklerportal](https://developer.xamarin.com/).
+Informationen zu den ersten Schritten mit Android-, iOS- und plattformübergreifenden Projekten finden Sie im [Xamarin-Entwicklerportal](https://docs.microsoft.com/xamarin).
 
 ## <a name="next-steps"></a>Nächste Schritte
 

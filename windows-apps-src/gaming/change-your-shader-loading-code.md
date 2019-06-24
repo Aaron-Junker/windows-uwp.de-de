@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, OpenGL, Direct3D, Shaderpipeline
 ms.localizationpriority: medium
-ms.openlocfilehash: 8793ef8b44df1ca1d93133383666434f525f2d07
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fc5e1eb9c261a4397d83c833591f2497521aa1c6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368972"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321382"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>Vergleichen der OpenGL ES 2.0-Shaderpipeline mit Direct3D
 
@@ -21,8 +21,8 @@ ms.locfileid: "66368972"
 **Wichtige APIs**
 
 -   [Eingabe-Assembler-Stufe](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)
--   [Vertex-Shader-Stufe](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
--   [Pixel-Shader-Stufe](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
+-   [Vertex-Shader-Stufe](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
+-   [Pixel-Shader-Stufe](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
 
 Vom Konzept her ist die Direct3D 11-Shaderpipeline der in OpenGL ES 2.0 sehr ähnlich. Hinsichtlich des API-Entwurfs sind die Hauptkomponenten für die Erstellung und Verwaltung der Shaderstufen jedoch Teile der zwei primären Schnittstellen [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) und [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). In diesem Thema versuchen wir, allgemeine Muster der OpenGL ES 2.0-Shaderpipeline-API den Direct3D 11-Entsprechungen in diesen Schnittstellen zuzuordnen.
 
@@ -34,10 +34,10 @@ Die Shaderobjekte werden mit Methoden der [**ID3D11Device1**](https://docs.micro
 Die Direct3D 11-Grafikpipeline wird von Instanzen der [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)-Schnittstelle verwaltet und umfasst die folgenden Stufen:
 
 -   [Eingabe-Assembler-Stufe](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage). Die Eingabe-Assembler-Stufe stellt Daten (Dreiecke, Linien und Punkte) für die Pipeline bereit. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) Methoden, die dieser Phase unterstützen "IA" vorangestellt.
--   [Vertex-Shader-Stufe](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)). Die Vertex-Shader-Stufe verarbeitet Scheitelpunkte und führt dabei in der Regel Vorgänge wie Transformationen, das Anwenden von Skins und Beleuchtung aus. Ein Vertex-Shader verarbeitet immer einen einzigen Eingabescheitelpunkt und erzeugt daraus einen einzigen Ausgabescheitelpunkt. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) Methoden, die dieser Phase unterstützen "Im Vergleich" vorangestellt.
+-   [Vertex-Shader-Stufe](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)). Die Vertex-Shader-Stufe verarbeitet Scheitelpunkte und führt dabei in der Regel Vorgänge wie Transformationen, das Anwenden von Skins und Beleuchtung aus. Ein Vertex-Shader verarbeitet immer einen einzigen Eingabescheitelpunkt und erzeugt daraus einen einzigen Ausgabescheitelpunkt. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) Methoden, die dieser Phase unterstützen "Im Vergleich" vorangestellt.
 -   [Datenstrom-Ausgabe-Stufe](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage). Die Datenstrom-Ausgabe-Stufe streamt Grundtypdaten auf dem Weg zum Rasterizer aus der Pipeline in den Arbeitsspeicher. Daten können "ausgestreamt" und/oder in den Rasterizer übergeben werden. In den Arbeitsspeicher gestreamte Daten können als Eingabedaten wieder der Pipeline zugeführt oder von der CPU eingelesen werden. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) Methoden, die dieser Phase unterstützen "Usw." vorangestellt.
 -   [Rasterizer-Stufe](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage). Der Rasterizer beschneidet Grundtypen, bereitet Grundtypen für den Pixelshader vor und bestimmt, wie Pixelshader aufgerufen werden. Sie können die Rasterung Deaktivieren von wird, dass der Pipeline gibt es kein PixelShader (Legen Sie die Pixel-Shader-Stufe, auf NULL mit [ **ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader)), und Deaktivieren von Tiefe und Schablone (testen Legen Sie DepthEnable und StencilEnable auf "false" in [ **D3D11\_Tiefe\_SCHABLONE\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_desc)). Wenn die Rasterung deaktiviert ist, werden damit zusammenhängende Pipelinezähler nicht aktualisiert.
--   [Pixelshader-Stufe](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)). Die Pixelshader-Stufe empfängt interpolierte Daten für einen Grundtyp und generiert Pro-Pixel-Daten (z. B. die Farbe). [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) Methoden, die Unterstützung dieser Phase haben das Präfix "PS".
+-   [Pixelshader-Stufe](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)). Die Pixelshader-Stufe empfängt interpolierte Daten für einen Grundtyp und generiert Pro-Pixel-Daten (z. B. die Farbe). [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) Methoden, die Unterstützung dieser Phase haben das Präfix "PS".
 -   [Ausgabezusammenführungs-Stufe](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage). Die Ausgabezusammenführungs-Stufe kombiniert verschiedene Ausgabedaten (Pixelshaderwerte, Tiefen- und Schabloneninformationen) mit dem Inhalt des Renderziels und Tiefen-/Schablonenpuffern, um das endgültige Pipelineergebnis zu generieren. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) Methoden, die dieser Phase unterstützen "OM" vorangestellt.
 
 (Es gibt auch Stufen für Geometry-Shader, Hull-Shader, Tesselator und Domain-Shader. Diese haben aber keine Äquivalente in OpenGL ES 2.0 und werden hier daher nicht behandelt.) Eine vollständige Liste der Methoden für diese Stufen finden Sie auf den Referenzseiten zu [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) und [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). **ID3D11DeviceContext1** erweitert **ID3D11DeviceContext** für Direct3D 11.

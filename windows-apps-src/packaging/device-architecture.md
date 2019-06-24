@@ -5,12 +5,12 @@ ms.date: 07/13/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Verpacken, Architektur, Paket-Konfiguration
 ms.localizationpriority: medium
-ms.openlocfilehash: 338dac1d43e08257fa00b51c0c311a090f3d95c0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c691605ad121ee1e218bfe7947a9026a46fc5234
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619935"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319800"
 ---
 # <a name="app-package-architectures"></a>App-Paketarchitekturen
 
@@ -25,7 +25,7 @@ Es ist **dringend** empfohlen, dass Sie alle Architekturen als Ziel Ihrer App-Pa
 ## <a name="windows-10-devices-and-architectures"></a>Windows 10-Geräte und -Architekturen
 
 > [!div class="mx-tableFixed"]
-| UWP-Architektur | Desktop (x86)      | Desktop (x64)      | Desktop (ARM)      | Mobile             | Windows Mixed Reality und HoloLens           | Xbox               | IoT Core (geräteabhängig) | Surface Hub        |
+| UWP-Architektur | Desktop (x86)      | Desktop (x64)      | Desktop (ARM)      | Mobil             | Windows Mixed Reality und HoloLens           | Xbox               | IoT Core (geräteabhängig) | Surface Hub        |
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|--------------------|
 | x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          | :heavy_check_mark: |
 | x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          | :heavy_check_mark: |
@@ -44,7 +44,7 @@ Diese Konfiguration wird weniger häufig als x86 verwendet. Sie sollten wissen, 
 Die Windows 10 on ARM-Konfiguration umfasst Desktop-PCs, mobile Geräte und einige IoT Core-Geräte (Rasperry Pi 2, Raspberry Pi 3 und DragonBoard). Windows 10 on ARM-Desktop-PCs sind eine neue Funktion in die Windows-Produktfamilie. Wenn Sie UWP-App-Entwickler sind, sollten Sie ARM-Pakete für den Store für diese PCs übermitteln.
 
 >[!NOTE]
-> Um Ihrer UWP-Anwendung für die ARM64 systemintern Zielplattform erstellen zu können, müssen Sie Visual Studio 2017 Version 15.9 oder höher verfügen. Weitere Informationen finden Sie unter [in diesem Blogbeitrag](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
+> Um Ihrer UWP-Anwendung für die ARM64 systemintern Zielplattform erstellen zu können, müssen Sie Visual Studio 2017 Version 15.9 oder höher verfügen. Weitere Informationen finden Sie unter [in diesem Blogbeitrag](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
 
 Weitere Informationen finden Sie unter [Windows 10 auf ARM](../porting/apps-on-arm.md). Sehen Sie sich diesen //Build-Talk an, um eine Demo zu [Windows 10 on ARM](https://channel9.msdn.com/Events/Build/2017/P4171) zu sehen und mehr zu erfahren.
 

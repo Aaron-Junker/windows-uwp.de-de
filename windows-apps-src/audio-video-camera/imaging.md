@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c61a35f0ad35cf85afcba564eb676aa171b0243
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c25fc09d606c0f143f357dd7f89026fa94b80922
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360841"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318354"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Erstellen, Bearbeiten und Speichern von Bitmapbildern
 
@@ -65,7 +65,7 @@ Um ein Bild unter Verwendung des [**Image**](https://docs.microsoft.com/uwp/api/
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-Zurzeit unterstützt das Steuerelement **Image** nur Bilder, die BGRA8-Codierung und einen vormultiplizierten oder No-Alpha-Kanal verwenden. Bevor Sie versuchen, ein Bild anzuzeigen, sollten Sie einen Test durchführen, um sicherzustellen, dass es das richtige Format hat. Wenn dies nicht der Fall ist, verwenden Sie die statische [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows)-Methode von **SoftwareBitmap**, um das Bild in das unterstützte Format zu konvertieren.
+Zurzeit unterstützt das Steuerelement **Image** nur Bilder, die BGRA8-Codierung und einen vormultiplizierten oder No-Alpha-Kanal verwenden. Bevor Sie versuchen, ein Bild anzuzeigen, sollten Sie einen Test durchführen, um sicherzustellen, dass es das richtige Format hat. Wenn dies nicht der Fall ist, verwenden Sie die statische [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert)-Methode von **SoftwareBitmap**, um das Bild in das unterstützte Format zu konvertieren.
 
 Erstellen Sie ein neues [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource)-Objekt. Legen Sie den Inhalt des Quellobjekts durch Aufrufen von [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) fest, und übergeben Sie dabei ein **SoftwareBitmap**-Objekt. Anschließend können Sie die [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source)-Eigenschaft des **Image**-Steuerelements auf das neu erstellte **SoftwareBitmapSource**-Objekt festlegen.
 
@@ -89,7 +89,7 @@ Zur Verwendung von COM-Interop müssen Sie einen Verweis auf den **System.Runtim
 
 [!code-cs[InteropNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetInteropNamespace)]
 
-Initialisieren Sie die [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions//mt297505(v=vs.85))-COM-Schnittstelle, indem Sie Ihrem Namespace den folgenden Code hinzufügen.
+Initialisieren Sie die [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))-COM-Schnittstelle, indem Sie Ihrem Namespace den folgenden Code hinzufügen.
 
 [!code-cs[COMImport](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
 
@@ -111,7 +111,7 @@ Rufen Sie die [**CreateCopyFromSurfaceAsync**](https://docs.microsoft.com/uwp/ap
 
 ## <a name="convert-a-softwarebitmap-to-a-different-pixel-format"></a>Konvertieren eines SoftwareBitmap-Objekts in ein anderes Pixelformat
 
-Die **SoftwareBitmap**-Klasse stellt die statische [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows)-Methode dar, mit der Sie auf einfache Weise ein neues **SoftwareBitmap**-Objekt erstellen können, das Pixelformat und Alphamodus aus einem vorhandenen **SoftwareBitmap**-Objekt verwendet. Beachten Sie, dass die neu erstellte Bitmap eine separate Kopie der Bilddaten darstellt. Änderungen an der neuen Bitmap haben keine Auswirkungen auf die Quellbitmap.
+Die **SoftwareBitmap**-Klasse stellt die statische [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert)-Methode dar, mit der Sie auf einfache Weise ein neues **SoftwareBitmap**-Objekt erstellen können, das Pixelformat und Alphamodus aus einem vorhandenen **SoftwareBitmap**-Objekt verwendet. Beachten Sie, dass die neu erstellte Bitmap eine separate Kopie der Bilddaten darstellt. Änderungen an der neuen Bitmap haben keine Auswirkungen auf die Quellbitmap.
 
 [!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 

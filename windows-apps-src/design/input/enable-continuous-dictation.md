@@ -8,12 +8,12 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3709a9076ce1d258ce2eca7f97aa1478088a9044
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 646f4ad98e6c914c2318a164629d31ce7b67dab4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363566"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317306"
 ---
 # <a name="continuous-dictation"></a>Kontinuierliches Diktieren
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  Anschließend wird die Eigenschaft [**Confidence**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence) überprüft. Wenn der Wert von Confidence [**Medium**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionConfidence) oder besser ist, wird der Text an das StringBuilder-Objekt angefügt. Während der Eingabeerfassung wird auch die Benutzeroberfläche aktualisiert.
 
-    **Beachten Sie**  der [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) Ereignis wird ausgelöst, in einem Hintergrundthread, der die Benutzeroberfläche kann nicht direkt aktualisiert werden. Wenn ein Handler die Benutzeroberfläche zu aktualisieren muss (als die \[Sprach- und TTS Beispiel\] ist), müssen Sie die Updates für den UI-Thread durch Verteilen der [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) -Methode des Dispatchers.
+    **Beachten Sie**  der [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) Ereignis wird ausgelöst, in einem Hintergrundthread, der die Benutzeroberfläche kann nicht direkt aktualisiert werden. Wenn ein Handler die Benutzeroberfläche zu aktualisieren muss (als die \[Sprach- und TTS Beispiel\] ist), müssen Sie die Updates für den UI-Thread durch Verteilen der [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) -Methode des Dispatchers.
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -165,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  Der Ereignishandler überprüft die Status-Eigenschaft, um zu ermitteln, ob die Erkennung erfolgreich war. Er behandelt auch den Fall, dass ein Benutzer nicht mehr spricht. Häufig wird [**TimeoutExceeded**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) als erfolgreiche Erkennung betrachtet, da der Benutzer aufgehört hat, zu sprechen. Behandeln Sie diesen Fall in Ihrem Code, um die Benutzerfreundlichkeit zu verbessern.
 
-    **Beachten Sie**  der [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) Ereignis wird ausgelöst, in einem Hintergrundthread, der die Benutzeroberfläche kann nicht direkt aktualisiert werden. Wenn ein Handler die Benutzeroberfläche zu aktualisieren muss (als die \[Sprach- und TTS Beispiel\] ist), müssen Sie die Updates für den UI-Thread durch Verteilen der [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) -Methode des Dispatchers.
+    **Beachten Sie**  der [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) Ereignis wird ausgelöst, in einem Hintergrundthread, der die Benutzeroberfläche kann nicht direkt aktualisiert werden. Wenn ein Handler die Benutzeroberfläche zu aktualisieren muss (als die \[Sprach- und TTS Beispiel\] ist), müssen Sie die Updates für den UI-Thread durch Verteilen der [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) -Methode des Dispatchers.
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,

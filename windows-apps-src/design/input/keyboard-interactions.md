@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: e3fcf6b792990fad9cb0071aece878cac31f5420
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 20cb1e3162f0c852a60c620be92afd37ad9f8232
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662915"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317273"
 ---
 # <a name="keyboard-interactions"></a>Tastaturinteraktionen
 
@@ -59,7 +59,7 @@ Hier sind die Geräte und die Tools, die in diesem Thema erläutert werden:
 |-----------------------------------|-----------------|
 |Tastatur (Hardware und Software)   |Zusätzlich zu den standard-Hardware-Tastatur, unterstützt die UWP-Anwendungen zwei Software Tastaturen: die [Touch (oder Software) Tastatur](#software-keyboard) und [Bildschirmtastatur](#on-screen-keyboard).|
 |Gamepad und Remotesteuerung         |Xbox-Gamepad und -Fernbedienung sind grundlegende Eingabegeräte im [10-Fuß-Bereich](../devices/designing-for-tv.md). Ausführliche Informationen zur UWP-Unterstützung für Gamepad und Fernbedienung finden Sie unter [Interaktionen mit Gamepad und Fernbedienung](gamepad-and-remote-interactions.md).|
-|Bildschirmleseprogramme (Sprachausgabe)          |Die Sprachausgabe ist ein integriertes Bildschirmleseprogramm für Windows, das eindeutige Interaktion und Funktionalität bietet, aber dennoch auf der einfachen Tastaturnavigation und -eingabe basiert. Weitere Informationen zur Sprachausgabe finden Sie unter [Erste Schritte mit Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
+|Bildschirmleseprogramme (Sprachausgabe)          |Die Sprachausgabe ist ein integriertes Bildschirmleseprogramm für Windows, das eindeutige Interaktion und Funktionalität bietet, aber dennoch auf der einfachen Tastaturnavigation und -eingabe basiert. Weitere Informationen zur Sprachausgabe finden Sie unter [Erste Schritte mit Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator).|
 
 ## <a name="custom-experiences-and-efficient-keyboarding"></a>Benutzerdefinierte Erfahrungen und effiziente Tastaturfunktionen
 Wie bereits erwähnt, ist Die Tastaturunterstützung ist ein wesentlicher Bestandteil dafür, dass Ihre Anwendungen optimal für Benutzer mit unterschiedlichen Kenntnissen, Fähigkeiten und Erwartungen funktionieren. Wir empfehlen Ihnen, folgendes zu priorisieren.
@@ -89,9 +89,9 @@ Ein visuelles Fokuselement:
 
 Damit ein Steuerelement (einschließlich der Navigationselemente) über die Tastatur verwendet werden kann, muss auf dem Steuerelement der Fokus liegen. Eine Möglichkeit für ein Steuerelement den Tastaturfokus empfangen ist darauf zugegriffen werden kann durch die Registerkartennavigation durch das Identifizieren sie als Registerkarte in der Reihenfolge Ihrer Anwendung beenden.
 
-Für ein Steuerelement in der Aktivierreihenfolge einbezogen werden die [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) Eigenschaft muss festgelegt werden, um **"true"** und [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) Eigenschaft muss festgelegt werden, um **"true"**.
+Für ein Steuerelement in der Aktivierreihenfolge einbezogen werden die [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) Eigenschaft muss festgelegt werden, um **"true"** und [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) Eigenschaft muss festgelegt werden, um **"true"** .
 
-Um explizit ein Steuerelement aus der Aktivierreihenfolge auszuschließen, legen Sie die [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) Eigenschaft **"false"**.
+Um explizit ein Steuerelement aus der Aktivierreihenfolge auszuschließen, legen Sie die [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) Eigenschaft **"false"** .
 
 Standardmäßig entspricht die Aktivierreihenfolge der Reihenfolge, in der UI-Elemente erstellt werden. Wenn beispielsweise ein `StackPanel` die Elemente `Button`, `Checkbox` und `TextBox` enthält, ist die Aktivierreihenfolge `Button`, `Checkbox` und`TextBox`.
 
@@ -320,7 +320,7 @@ Erwägen Sie Unterstützung für die Pfeil-Key-Navigation, wenn Sie die folgende
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>Dialogfelder</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>Optionsfelder</sup></p>     
+      <p><sup>RadioButtons</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -364,7 +364,7 @@ Die folgende Abbildung zeigt ein intuitives Tastaturnavigationsverhalten für e
 
 ### <a name="keyboard-and-narrator"></a>Tastatur und Sprachausgabe
 
-Die Sprachausgabe ist eine UI-Eingabehilfe für Tastaturbenutzer. (Weitere Eingabetypen werden ebenfalls unterstützt.) Allerdings geht die Sprachausgabefunktionalität über die Tastaturinteraktionen hinaus, die von den UWP-Apps unterstützt werden, und beim Entwerfen der UWP-App für die Sprachausgabe ist besondere Sorgfalt erforderlich. (Die [Seite mit den Grundlagen der Sprachausgabe](https://support.microsoft.com/help/22808/windows-10-narrator-learning-basics) leitet Sie durch die Sprachausgabe.)
+Die Sprachausgabe ist eine UI-Eingabehilfe für Tastaturbenutzer. (Weitere Eingabetypen werden ebenfalls unterstützt.) Allerdings geht die Sprachausgabefunktionalität über die Tastaturinteraktionen hinaus, die von den UWP-Apps unterstützt werden, und beim Entwerfen der UWP-App für die Sprachausgabe ist besondere Sorgfalt erforderlich. (Die [Seite mit den Grundlagen der Sprachausgabe](https://support.microsoft.com/help/22808/windows-10-narrator-basics) leitet Sie durch die Sprachausgabe.)
 
 Einige der Unterschiede zwischen dem UWP-Tastaturverhalten und der Sprachausgabe umfassen:
 -   Zusätzliche Tastenkombinationen für die Navigation zu UI-Elementen, die nicht über die Standardtastaturnavigation verfügbar sind, z. B. FESTSTELLTASTE + Pfeiltasten zum Lesen von Steuerelementbeschriftungen.
@@ -405,8 +405,8 @@ Im Folgenden finden Sie einige wichtige Zuordnungen zwischen Tastatur, Gamepad u
 | LEERTASTE         | A-Taste                            | Auswahltaste       |
 | EINGABETASTE         | A-Taste                            | Auswahltaste       |
 | Beenden        | B-Taste                            | Zurück-Schaltfläche         |
-| POS1/ENDE      | n. a.                                 | n. a.                 |
-| Bild AUF/BILD AB  | Auslösertaste für vertikalen Bildlauf, Bumper-Taste für horizontalen Bildlauf   | n. a.                 |
+| POS1/ENDE      | Nicht zutreffend                                 | Nicht zutreffend                 |
+| Bild AUF/BILD AB  | Auslösertaste für vertikalen Bildlauf, Bumper-Taste für horizontalen Bildlauf   | Nicht zutreffend                 |
 
 Einige der wichtigsten Unterschiede, die Sie beim Entwerfen Ihrer UWP-App für die Verwendung mit Gamepad und Fernbedienung beachten sollten, sind:
 -   Die Texteingabe erfordert, dass der Benutzer A drückt, um ein Textsteuerelement zu aktivieren.
@@ -534,7 +534,7 @@ Im Folgenden finden Sie eine Liste der nicht bearbeitbaren Steuerelemente, die i
 -   Kombinationsfeld
 -   Optionsfeld
 -   Bildlaufleiste
--   Struktur
+-   trEE
 -   Strukturelement
 -   Menü
 -   Menüleiste

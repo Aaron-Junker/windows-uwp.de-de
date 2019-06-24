@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bdd859a922cf3252f5896da2652a0b73e20a079
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a07fae7920bbcddd4c68b052aa82c072312b4995
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371193"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322152"
 ---
 # <a name="dependency-properties-overview"></a>Übersicht über Abhängigkeitseigenschaften
 
@@ -25,7 +25,7 @@ Damit eine Abhängigkeitseigenschaft unterstützt wird, muss das die Eigenschaft
 
 Der Zweck von Abhängigkeitseigenschaften besteht darin, es zu ermöglichen, den Wert einer Eigenschaft anhand anderer Eingaben systembedingt zu berechnen (andere Eigenschaften, Ereignisse und Zustände, die während der Ausführung der App eintreten). Zu diesen anderen Eingaben gehören:
 
--  Externe Eingabe wie Benutzereinstellung
+- Externe Eingabe wie Benutzereinstellung
 - Just-In-Time-Mechanismen zur Ermittlung von Eigenschaften, z. B. Datenbindung, Animationen und Storyboards
 - Vorlagen zur mehrfachen Verwendung, z. B. Ressourcen und Stile
 - Werte, die aufgrund von Beziehungen mit anderen Elementen in der Elementstruktur bekannt sind (übergeordnete und untergeordnete Elemente).
@@ -76,13 +76,13 @@ public bool IsSpinning
 > [!NOTE]
 > Im vorherige Beispiel ist als das vollständige Beispiel zum Erstellen eine benutzerdefinierten Abhängigkeitseigenschaft nicht vorgesehen. Damit sollen die Konzepte von Abhängigkeitseigenschaften für alle Personen verdeutlicht werden, die es vorziehen, Konzepte über den Code zu erlernen. Ein vollständigeres Beispiel finden Sie unter [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md).
 
-## <a name="dependency-property-value-precedence"></a>Rangfolge von Abhängigkeitseigenschaftswerten 
+## <a name="dependency-property-value-precedence"></a>Rangfolge von Abhängigkeitseigenschaftswerten
 
 Wenn Sie den Wert einer Abhängigkeitseigenschaft abrufen, erhalten Sie einen Wert, der für diese Eigenschaft mithilfe einer der Eingaben festgelegt wurde, die Teil des Windows-Runtime-Eigenschaftensystems sind. Die Rangfolge von Abhängigkeitseigenschaftswerten wird genutzt, damit vom Windows-Runtime-Eigenschaftensystem Werte auf vorhersehbare Weise berechnet werden können. Es ist auch wichtig, dass Sie mit der grundlegenden Reihenfolge vertraut sind, die für die Rangfolge gilt. Andernfalls kann es passieren, dass Sie eine Eigenschaft auf einer Rangfolgenebene festlegen möchten, während diese von einer anderen Komponente (System, Aufrufe von Dritten, Ihr eigener Code) auf einer anderen Ebene festgelegt wird. Sie sind dann frustriert, weil Sie herausfinden müssen, welcher Eigenschaftswert verwendet wird und woher dieser Wert stammt.
 
 Zum Beispiel sind Stile und Vorlagen als gemeinsamer Ausgangspunkt zum Festlegen von Eigenschaftswerten und somit zum Festlegen der Darstellung eines Steuerelements vorgesehen. Nun kann es aber sein, dass Sie in einer bestimmten Steuerelementinstanz den Wert abweichend vom allgemeinen Vorlagenwert ändern möchten, beispielsweise wenn das Steuerelement eine andere Hintergrundfarbe oder einen anderen Text als Inhalt haben soll. Das Windows-Runtime-Eigenschaftssystem verwendet lokale Werte mit höherer Priorität als Werte, die von Stilen und Vorlagen bereitgestellt werden. Dadurch wird das Überschreiben der Vorlagen durch App-spezifische Werte ermöglicht, sodass die Steuerelemente nützlich für die eigene Verwendung in der App-UI sind.
 
-### <a name="dependency-property-precedence-list"></a>Rangfolgeliste für Abhängigkeitseigenschaften 
+### <a name="dependency-property-precedence-list"></a>Rangfolgeliste für Abhängigkeitseigenschaften
 
 Im Folgenden wird die maßgebliche Rangfolge beschrieben, die beim Zuweisen des Laufzeitwerts für eine Abhängigkeitseigenschaft im Eigenschaftensystem verwendet wird. Die höchste Priorität befindet sich an erster Stelle der Liste. Eine ausführlichere Erklärung folgt nach dieser Liste.
 
@@ -194,7 +194,7 @@ Sie können eine Eigenschaft auch dann absichtlich auf den Standardwert festlege
 
 ## <a name="dependencyobject-and-threading"></a>**DependencyObject** und Threading
 
-Alle [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)-Instanzen müssen in dem Benutzeroberflächenthread erstellt werden, der mit dem aktuellen [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) verknüpft ist, das von einer Windows-Runtime-App angezeigt wird. Obwohl jede **DependencyObject** im zentralen UI-Thread erstellt werden muss, kann durch den Zugriff auf die [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.dispatcher)-Eigenschaft mithilfe eines Verteilerverweises von anderen Threads aus auf die Objekte zugegriffen werden. Sie können anschließend Methoden wie [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) für das [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)-Objekt aufrufen und Ihren Code gemäß den Regeln der Threadeinschränkungen im UI-Thread ausführen.
+Alle [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)-Instanzen müssen in dem Benutzeroberflächenthread erstellt werden, der mit dem aktuellen [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) verknüpft ist, das von einer Windows-Runtime-App angezeigt wird. Obwohl jede **DependencyObject** im zentralen UI-Thread erstellt werden muss, kann durch den Zugriff auf die [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.dispatcher)-Eigenschaft mithilfe eines Verteilerverweises von anderen Threads aus auf die Objekte zugegriffen werden. Sie können anschließend Methoden wie [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) für das [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)-Objekt aufrufen und Ihren Code gemäß den Regeln der Threadeinschränkungen im UI-Thread ausführen.
 
 Die Threadingmerkmale von [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) sind relevant, da dies in der Regel bedeutet, dass nur im Benutzeroberflächenthread ausgeführter Code den Wert einer Abhängigkeitseigenschaft ändern oder auch nur lesen kann. Threadingprobleme können in typischem Benutzeroberflächencode in der Regel vermieden werden, wenn **async**-Muster und Hintergrundworkerthreads richtig verwendet werden. Threadingprobleme im Zusammenhang mit **DependencyObject** entstehen in der Regel nur, wenn Sie eigene **DependencyObject**-Typen definieren und versuchen, diese als Datenquellen oder für andere Szenarien zu verwenden, für die ein **DependencyObject** nicht notwendigerweise geeignet ist.
 

@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Live-Analyse, Integrität, Clientfehler
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a311550541391d9aa5dc035bc73130274dc9e0e
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 052b8befc1540c3c2eae58e406db77e431ce6729
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162906"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321756"
 ---
 # <a name="get-xbox-live-health-data"></a>Abrufen von Xbox Live-Integritätsdaten
 
 
-Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um Integritätsdaten für Ihr [Xbox Live-fähiges Spiel](https://docs.microsoft.com/gaming/xbox-live//index.md) abzurufen. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
+Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um Integritätsdaten für Ihr [Xbox Live-fähiges Spiel](https://docs.microsoft.com/gaming/xbox-live/index.md) abzurufen. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
 
 > [!IMPORTANT]
-> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
+> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
 
 ## <a name="prerequisites"></a>Vorraussetzungen
 
@@ -53,8 +53,8 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 | metricType | String | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **callingpattern** an.  |  Ja  |
 | startDate | date | Das Startdatum im Datumsbereich der Integritätsdaten, die abgerufen werden sollen. Der Standardwert ist 30 Tage vor dem aktuellen Datum. |  Nein  |
 | endDate | date | Das Enddatum im Datumsbereich der Integritätsdaten, die abgerufen werden sollen. Der Standardwert ist das aktuelle Datum. |  Nein  |
-| top | int | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
-| skip | int | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. |  Nein  |
+| top | ssNoversion | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
+| skip | ssNoversion | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. |  Nein  |
 | filter | String  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede Anweisung enthält einen Feldnamen aus dem Antworttext und einen Wert, die mit den Operatoren **eq** oder **ne** verknüpft sind. Anweisungen können mit **and** oder **or** kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul> | Nein   |
 | groupby | String | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul><p/>Wenn Sie eine oder mehrere *Groupby*-Felder angeben, haben alle anderen *Groupby* Felder, die Sie nicht angeben, den Wert **All** im Antworttext. |  Nein  |
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 |------------|--------|-------------------------------------------------------|
 | Wert      | array  | Ein Array von Objekten, die Integritätsdaten enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.                                                                                                                      |
 | @nextLink  | String | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10000 festgelegt ist, es jedoch mehr als 10000 Zeilen mit Daten für die Abfrage gibt. |
-| TotalCount | int    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.   |
+| TotalCount | ssNoversion    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.   |
 
 
 Elemente im Array *Value* enthalten die folgenden Werte.
@@ -96,7 +96,7 @@ Elemente im Array *Value* enthalten die folgenden Werte.
 |------------|--------|-------------------------------------------------------|
 | Dienst      | String  |   Der Name des Xbox Live Dienstes, auf den sich die Integritätsdaten beziehen.       |
 | Endpunkt      | String  |   Der Endpunkt des Xbox Live Dienstes, auf den sich die Integritätsdaten beziehen.        |
-| httpStatusCode      | String  |  Der HTTP-Statuscode für diesen Satz an Integritätsdaten.<p/><p/>**Hinweis:**&nbsp;&nbsp;Den Statuscode **429E** gibt an, dass der Aufruf des Dienstes nur deshalb erfolgreich war, weil [die differenzierte Begrenzung der Übertragungsrate](https://docs.microsoft.com/gaming/xbox-live//using-xbox-live/best-practices/fine-grained-rate-limiting.md) während des Aufrufs als Ausnahme gehandhabt wurde. Differenzierte Begrenzung der Übertragungsrate könnte in der Zukunft erzwungen werden, wenn der Dienst ein hohes Aufkommen erfährt und in diesem Fall der Aufruf zu einem [429 HTTP-Statuscode](https://docs.microsoft.com/gaming/xbox-live//using-xbox-live/best-practices/fine-grained-rate-limiting.md#http-429-response-object) führen könnte.         |
+| httpStatusCode      | String  |  Der HTTP-Statuscode für diesen Satz an Integritätsdaten.<p/><p/>**Hinweis:** &nbsp;&nbsp;Den Statuscode **429E** gibt an, dass der Aufruf des Dienstes nur deshalb erfolgreich war, weil [die differenzierte Begrenzung der Übertragungsrate](https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md) während des Aufrufs als Ausnahme gehandhabt wurde. Differenzierte Begrenzung der Übertragungsrate könnte in der Zukunft erzwungen werden, wenn der Dienst ein hohes Aufkommen erfährt und in diesem Fall der Aufruf zu einem [429 HTTP-Statuscode](https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md#http-429-response-object) führen könnte.         |
 | serviceResponses      | number  | Die Anzahl der Dienstantworten, die den angegebenen Status zurückgegeben.         |
 | uniqueDevices      | number  |  Die Anzahl der eindeutigen Geräte, die den Dienst aufgerufen und den angegebenen Statuscode empfangen haben.       |
 | uniqueUsers      | number  |   Die Anzahl der eindeutigen Benutzer, die den angegebenen Statuscode erhalten haben.       |
