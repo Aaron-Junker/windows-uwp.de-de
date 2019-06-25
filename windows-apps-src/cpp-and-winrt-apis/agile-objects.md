@@ -1,29 +1,29 @@
 ---
-description: Ein agiles Objekt ist ein Objekt, auf das von jedem Thread aus zugegriffen werden kann. Ihre C++/WinRT-Typen sind standardmäßig agil, aber Sie können diese Option deaktivieren.
+description: Ein agiles Objekt ist ein Objekt, auf das von jedem Thread aus zugegriffen werden kann. Ihre C++/WinRT-Typen sind standardmäßig agil, aber Sie können diese Option auch deaktivieren.
 title: Agile Objekte mit C++/WinRT
 ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, agil, objekt, agilität, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360330"
 ---
-# <a name="agile-objects-in-cwinrt"></a>Agile Objekte in C++ / WinRT
+# <a name="agile-objects-in-cwinrt"></a>Agile Objekte in C++/WinRT
 
-In der Mehrzahl der Fälle kann eine Instanz von einer Windows-Runtime-Klasse zugegriffen werden, von jedem Thread (ebenso wie die meisten Standard-c++-Objekten). Solche eine Windows-Runtime-Klasse ist *agile*. Nur eine kleine Anzahl von Windows-Runtime-Klassen, die mit Windows ausgeliefert nicht-agile werden, aber wenn Sie zu verwenden, Sie ihre Threadmodell und Marshallingverhalten berücksichtigen müssen (Marshalling ist übergeben von Daten über eine Apartmentgrenze). Es ist ein geeigneter Standard für alle Windows-Runtime-Objekt, werden agile, damit Ihre eigenen [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Typen sind standardmäßig agile.
+In den meisten Fällen kann von jedem Thread aus auf eine Instanz einer Windows-Runtime-Klasse zugegriffen werden (wie es bei den meisten C++-Standardobjekten der Fall ist). Eine solche Windows-Runtime-Klasse ist *agile*. Nur eine kleine Anzahl von Windows-Runtime-Klassen, die mit Windows bereitgestellt werden, sind nicht agil. Wenn Sie sie nutzen, müssen Sie ihr Threadingmodell und ihr Marshallingverhalten berücksichtigen (Marshalling ist die Weitergabe von Daten über eine Apartmentgrenze). Es ist ein guter Standard für jedes Windows-Runtime-Objekt, agil zu sein, sodass Ihre eigenen [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Typen standardmäßig agil sind.
 
-Aber Sie können das Programm verlassen. Sie müssen möglicherweise einen zwingenden Grund ein Objekt des Typs befinden, z. B. in einem bestimmten Singlethread-Apartment erforderlich ist. Dies hat typischerweise mit Wiedereinsprungsvoraussetzungen zu tun. Aber auch die UI-APIs (User Interface, Benutzerschnittstelle) bieten zunehmend agile Objekte. Im Allgemeinen ist Agilität die einfachste und leistungsfähigste Option. Auch wenn Sie eine Aktivierungs-Factory implementieren, muss diese agil sein (auch, wenn Ihre entsprechende Laufzeitklasse es nicht ist).
+Sie können dieses Verhalten jedoch abwählen. Möglicherweise haben Sie einen zwingenden Grund, ein Objekt Ihres Typs zu beschränken (z.B. in einem Singlethread-Apartment). Dies hat typischerweise mit Wiedereinsprungsvoraussetzungen zu tun. Aber auch die UI-APIs (User Interface, Benutzerschnittstelle) bieten zunehmend agile Objekte. Im Allgemeinen ist Agilität die einfachste und leistungsfähigste Option. Auch wenn Sie eine Aktivierungsfactory implementieren, muss diese agil sein (selbst dann, wenn Ihre entsprechende Laufzeitklasse es nicht ist).
 
 > [!NOTE]
-> Windows-Runtime basiert auf COM. Im Sinne von COM ist eine agile Klasse mit `ThreadingModel` = *Both* registriert. Weitere Informationen zu COM, Threadingmodelle und Apartments, finden Sie unter [verstehen und Verwenden von COM-Threadingmodellen](/previous-versions/ms809971(v=msdn.10)).
+> Windows-Runtime basiert auf COM. Im Sinne von COM wird eine agile Klasse mit `ThreadingModel` = *Both* registriert. Weitere Informationen zu COM-Threadingmodellen finden Sie unter [Verstehen und Verwenden von COM-Threadingmodellen](/previous-versions/ms809971(v=msdn.10)).
 
 ## <a name="code-examples"></a>Codebeispiele
 
-Verwenden wir eine beispielimplementierung einer Runtime-Klasse, die veranschaulichen, wie C + c++ / WinRT unterstützt Flexibilität.
+Sehen wir uns uns anhand einer Beispielimplementierung einer Laufzeitklasse an, wie C++/WinRT Agilität unterstützt.
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -37,7 +37,7 @@ struct MyType : winrt::implements<MyType, IStringable>
 };
 ```
 
-Da wir dies nicht explizit ausschließen, ist diese Implementierung agil. Die [**winrt::implementiert**](/uwp/cpp-ref-for-winrt/implements) Basisstruktur implementiert [**IAgileObject**](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) und [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). Die **IMarshal**-Implementierung verwendet **CoCreateFreeThreadedMarshaler**, um das Legacy-Code zu unterstützen, der nichts über **IAgileObject** weiß.
+Da wir dies nicht explizit ausschließen, ist diese Implementierung agil. Die [**winrt::implementiert**](/uwp/cpp-ref-for-winrt/implements)-Basisstruktur implementiert [**IAgileObject**](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) und [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). Die **IMarshal**-Implementierung verwendet **CoCreateFreeThreadedMarshaler**, um Legacycode zu unterstützen, dem **IAgileObject** nicht bekannt ist.
 
 Dieser Code prüft ein Objekt auf Agilität. Der Aufruf von [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) löst eine Ausnahme aus, wenn `myimpl` nicht agil ist.
 
@@ -53,13 +53,13 @@ winrt::com_ptr<IAgileObject> iagileobject{ myimpl.try_as<IAgileObject>() };
 if (iagileobject) { /* myimpl is agile. */ }
 ```
 
-**IAgileObject** hat keine eigenen Methoden, sodass man damit nicht viel anfangen kann. Diese nächste Variante ist eher typisch.
+**IAgileObject** hat keine eigenen Methoden, sodass hier keine Möglichkeiten vorhanden sind. Diese nächste Variante ist eher typisch.
 
 ```cppwinrt
 if (myimpl.try_as<IAgileObject>()) { /* myimpl is agile. */ }
 ```
 
-**IAgileObject** ist eine *Marker-Schnittstelle*. Der Nutzen der Abfrage von **IAgileObject** besteht aus der Informationen zum Erfolg oder Misserfolg.
+**IAgileObject** ist eine *Markerschnittstelle*. Der Nutzen der Abfrage von **IAgileObject** besteht aus den Informationen zum Erfolg oder Misserfolg.
 
 ## <a name="opting-out-of-agile-object-support"></a>Vermeiden der Unterstützung von agilen Objekten
 
@@ -74,7 +74,7 @@ struct MyImplementation: implements<MyImplementation, IStringable, winrt::non_ag
 }
 ```
 
-Wenn Sie eine Laufzeitklasse schreiben.
+Wenn Sie eine Laufzeitklasse erstellen.
 
 ```cppwinrt
 struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
@@ -83,20 +83,20 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 }
 ```
 
-Dabei spielt es keine Rolle, wo im Variadic-Parameterpaket die Markerstruktur erscheint.
+Dabei spielt es keine Rolle, wo im variadic-Parameterpaket die Markerstruktur verwendet wird.
 
-Unabhängig davon, ob Sie die Flexibilität deaktivieren, können Sie implementieren **IMarshal** selbst. Beispielsweise können Sie die **winrt::non_agile** Markierung, vermeiden Sie die standardmäßige Implementierung der Flexibilität, und implementieren die **IMarshal** selbst&mdash;möglicherweise den Marshal-by-Value-Semantik unterstützt.
+Unabhängig davon, ob Sie die Agilität abwählen, können Sie **IMarshal** selbst implementieren. Beispielsweise können Sie den Marker **winrt::non_agile** verwenden, um die Agilitätsstandardimplementierung zu vermeiden, und **IMarshal** selbst implementieren (um die Marshal-by-Value-Semantik zu unterstützen).
 
-## <a name="agile-references-winrtagileref"></a>Agile Referenzen (winrt::agile_ref)
+## <a name="agile-references-winrtagileref"></a>Agile-Verweise (winrt::agile_ref)
 
-Wenn Sie ein Objekt verwenden, das nicht agil ist, aber Sie es in einem potentiell agilen Kontext weitergeben müssen, dann ist eine Option die Verwendung der [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)-Strukturvorlage. So erhalten Sie eine agile Referenz auf eine Instanz eines nicht agilen Typs oder auf eine Schnittstelle eines nicht agilen Objekts.
+Wenn Sie ein Objekt verwenden, das nicht agil ist, Sie es aber in einem potenziell agilen Kontext übergeben müssen, dann ist eine Option die Verwendung der [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)-Strukturvorlage. So erhalten Sie einen agilen Verweis auf eine Instanz eines nicht agilen Typs oder auf eine Schnittstelle eines nicht agilen Objekts.
 
 ```cppwinrt
 NonAgileType nonagile_obj;
 winrt::agile_ref<NonAgileType> agile{ nonagile_obj };
 ```
 
-Oder Sie können die Hilfsfunktion [**winrt::make_agile**](/uwp/cpp-ref-for-winrt/make-agile) verwenden.
+Sie können auch die Hilfsfunktion [**winrt::make_agile**](/uwp/cpp-ref-for-winrt/make-agile) verwenden.
 
 ```cppwinrt
 NonAgileType nonagile_obj;
@@ -111,19 +111,19 @@ NonAgileType nonagile_obj_again{ agile.get() };
 winrt::hstring message{ nonagile_obj_again.Message() };
 ```
 
-Der Aufruf [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-function) gibt einen Proxy zurück, der in dem Thread-Kontext, in dem **get** aufgerufen wird, sicher verwendet werden kann.
+Der Aufruf [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-function) gibt einen Proxy zurück, der im Threadkontext, in dem **get** aufgerufen wird, sicher verwendet werden kann.
 
 ## <a name="important-apis"></a>Wichtige APIs
 
 * [IAgileObject-Schnittstelle](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject)
 * [IMarshal-Schnittstelle](/windows/desktop/api/objidl/nn-objidl-imarshal)
-* [Vorlage für WinRT::agile_ref-Struktur](/uwp/cpp-ref-for-winrt/agile-ref)
-* [Vorlage für WinRT::Implements-Struktur](/uwp/cpp-ref-for-winrt/implements)
-* [Vorlage für WinRT::make_agile-Funktion](/uwp/cpp-ref-for-winrt/make-agile)
-* [WinRT::non_agile Marker-Struktur](/uwp/cpp-ref-for-winrt/non-agile)
-* [WinRT::Windows::Foundation::IUnknown:: als Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [WinRT::Windows::Foundation::IUnknown::try_as-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)
+* [winrt::agile_ref-Strukturvorlage](/uwp/cpp-ref-for-winrt/agile-ref)
+* [winrt::implements-Strukturvorlage](/uwp/cpp-ref-for-winrt/implements)
+* [winrt::make_agile Funktionsvorlage](/uwp/cpp-ref-for-winrt/make-agile)
+* [winrt::non_agile-Markerstruktur](/uwp/cpp-ref-for-winrt/non-agile)
+* [winrt::Windows::Foundation::IUnknown::as-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::Windows::Foundation::IUnknown::try_as-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Verstehen und Verwenden von COM-Threadmodell](/previous-versions/ms809971(v=msdn.10))
+* [Verstehen und Verwenden von COM-Threadingmodellen](/previous-versions/ms809971(v=msdn.10))

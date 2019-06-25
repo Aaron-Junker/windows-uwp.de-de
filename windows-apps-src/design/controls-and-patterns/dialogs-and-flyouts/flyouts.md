@@ -1,10 +1,10 @@
 ---
 Description: Dialogfelder und Flyouts zeigen vorübergehende UI-Elemente an, die angezeigt werden, wenn der Benutzer sie anfordert oder eine Aktion erfolgt, die eine Benachrichtigung oder Genehmigung erfordert.
-title: Flyouts
+title: Flyoutsteuerelemente
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
@@ -12,17 +12,17 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625015"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63793797"
 ---
 # <a name="flyouts"></a>Flyouts
 
-Ein Flyout ist ein einfach ausblendbarer Container, der beliebige UI als Inhalt anzeigen kann. Flyouts können andere Flyouts oder Kontextmenüs enthalten, um eine geschachtelte Umgebung zu kreieren.
+Ein Flyout ist ein einfach ausblendbarer Container, der beliebige Benutzeroberfläche als Inhalt anzeigen kann. Flyouts können andere Flyouts oder Kontextmenüs enthalten, um eine geschachtelte Umgebung zu erstellen.
 
-![Kontextmenü geschachtelt in einem Flyout](../images/flyout-nested.png)
+![In einem Flyout geschachteltes Kontextmenü](../images/flyout-nested.png)
 
 > **Wichtige APIs:** [Flyout-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
@@ -30,7 +30,7 @@ Ein Flyout ist ein einfach ausblendbarer Container, der beliebige UI als Inhalt 
 
 * Verwenden Sie keine Flyouts anstelle von [QuickInfos](../tooltips.md) oder [Kontextmenüs](../menus.md). Verwenden Sie QuickInfos, um kurze Beschreibungen anzuzeigen, die nach einer festgelegten Zeit ausgeblendet werden. Verwenden Sie ein Kontextmenü für kontextbezogene Aktionen im Zusammenhang mit UI-Elementen (beispielsweise Kopieren und Einfügen).
 
-Finden Sie Empfehlungen dazu, wann Sie verwendet ein Flyout im Vergleich zu einem Dialogfeld (ein ähnliches Steuerelement), verwenden Sie [Dialogfelder und Flyouts](index.md). 
+Empfehlungen dazu, wann ein Flyout und wann ein Dialogfeld (ein ähnliches Steuerelement) verwendet werden sollte, finden Sie unter [Dialogfelder und Flyouts](index.md). 
 
 ## <a name="examples"></a>Beispiele
 
@@ -51,7 +51,7 @@ Finden Sie Empfehlungen dazu, wann Sie verwendet ein Flyout im Vergleich zu eine
 ##  <a name="how-to-create-a-flyout"></a>Erstellen eines Flyouts
 
 
-Flyouts sind an bestimmte Steuerelemente angefügt. Sie können die [Platzierung](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) Eigenschaft, um anzugeben, wo ein Flyout angezeigt wird: Oben, links, unten, rechts oder vollständig. Wenn Sie den [vollständigen Platzierungsmodus](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) auswählen, streckt die App das Flyout und zentriert es innerhalb des App-Fensters. Einige Steuerelemente wie z. B. [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button), verfügen über eine [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout)-Eigenschaft, mit der Sie ein Flyout oder [Kontextmenü](../menus.md) zuordnen können.
+Flyouts sind an bestimmte Steuerelemente angefügt. Sie können mit der [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement)-Eigenschaft angeben, wo das Flyout angezeigt werden soll: Top (Oben), Left (Links), Bottom (Unten), Right (Rechts) oder Full (Vollständig). Wenn Sie den [vollständigen Platzierungsmodus](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) auswählen, streckt die App das Flyout und zentriert es innerhalb des App-Fensters. Einige Steuerelemente (z.B. [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)) verfügen über eine [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout)-Eigenschaft, mit der Sie ein Flyout oder [Kontextmenü](../menus.md) zuordnen können.
 
 In diesem Beispiel wird ein einfaches Flyout erstellt, das Text angezeigt, wenn die Schaltfläche gedrückt wird.
 ````xaml
@@ -145,30 +145,30 @@ Um ein Flyout zu formatieren, ändern Sie den [FlyoutPresenterStyle](https://doc
 </Flyout>
 ````
 
-## <a name="styling-flyouts-for-10-foot-experiences"></a>Formatieren von Flyouts für 10-Fuß Erfahrungen
+## <a name="styling-flyouts-for-10-foot-experiences"></a>Formatieren von Flyouts für 10-Foot-Benutzeroberflächen
 
-Einfach ausblendbare Steuerelemente wie Flyouts erhalten den Tastatur- bzw. Gamepad-Fokus, bis sie nicht mehr angezeigt werden. Um dieses Verhalten optisch zu kennzeichnen, werden diese einfach ausblendbaren Steuerelemente auf der Xbox als Überlagerung gezeichnet, wobei der Kontrast und die Helligkeit bzw. Sichtbarkeit der umgebenden Benutzeroberfläche reduziert wird. Dieses Verhalten kann mit der Eigenschaft [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) geändert werden. Standardmäßig erhalten Flyouts auf der Xbox (jedoch nicht auf anderen Gerätefamilien) die einfach ausblendbare Überlagerung. Apps können jedoch durchsetzen, dass die Überlagerung stets **An** oder stets **Aus** ist.
+Einfach ausblendbare Steuerelemente wie Flyouts erhalten den Tastatur- bzw. Gamepadfokus, bis sie nicht mehr angezeigt werden. Um dieses Verhalten optisch zu kennzeichnen, werden diese einfach ausblendbaren Steuerelemente auf der Xbox als Überlagerung gezeichnet, wobei der Kontrast und die Helligkeit bzw. Sichtbarkeit der umgebenden Benutzeroberfläche verringert wird. Dieses Verhalten kann mit der Eigenschaft [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) geändert werden. Standardmäßig erhalten Flyouts auf der Xbox (jedoch nicht auf anderen Gerätefamilien) die einfach ausblendbare Überlagerung. Apps können jedoch durchsetzen, dass die Überlagerung stets **Ein** oder stets **Aus** ist.
 
-![Flyout mit Abblend-Überlagerung](../images/flyout-smoke.png)
+![Flyout mit abgeblendeter Überlagerung](../images/flyout-smoke.png)
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="On">
 ```
 
 ## <a name="light-dismiss-behavior"></a>Verhalten für einfaches Ausblenden
-Flyouts können schnell mit einer einfachen Ausblend-Aktion geschlossen werden. Dazu zählen:
+Flyouts können schnell mit einer einfachen Ausblendaktion geschlossen werden. Dazu zählen:
 -   Tippen außerhalb des Flyouts
--   Drücken der ESC-Taste auf der Tastatur
--   Drücken der Zurück-Taste des Systems (Hardware oder Software)
--   Drücken der B-Taste auf dem Gamepad
+-   Drücken der ESC-TASTE auf der Tastatur
+-   Drücken der Schaltfläche „Zurück“ des Systems (Hardware oder Software)
+-   Drücken der B-TASTE auf dem Gamepad
 
-Wird das Ausblenden durch Tippen vorgenommen, wird die Geste in der Regel absorbiert und nicht an die UI unterhalb weitergegeben. Ist beispielsweise hinter einem geöffneten Flyout eine Schaltfläche sichtbar, wird durch einfaches Antippen durch den Benutzer das Flyout ausgeblendet, ohne jedoch diese Schaltfläche zu aktivieren. Um die Schaltfläche zu drücken, ist ein weiteres Antippen nötig.
+Wird das Ausblenden durch Tippen vorgenommen, wird die Geste in der Regel absorbiert und nicht an die zugrunde liegende Benutzeroberfläche übergegeben. Ist beispielsweise hinter einem geöffneten Flyout eine Schaltfläche sichtbar, wird durch einfaches Tippen durch den Benutzer das Flyout ausgeblendet, ohne jedoch diese Schaltfläche zu aktivieren. Um die Schaltfläche zu drücken, ist ein weiteres Tippen erforderlich.
 
-Sie können dieses Verhalten ändern, indem Sie die Schaltfläche als Pass-Through-Eingabeelement für das Flyout gestalten. Das Flyout wird wie oben beschriebenen durch die einfache Ausblend-Aktion geschlossen, gibt den Antipp-Vorgang aber gleichzeitig an das entsprechende `OverlayInputPassThroughElement` weiter. Erwägen Sie, dieses Verhalten zu übernehmen, um Interaktionen des Benutzers bei ähnlich funktionierenden Elementen zu beschleunigen. Wenn Ihre App eine Sammlung von Favoriten beinhaltet und jedes Element der Sammlung ein angefügtes Flyout enthält, kann man davon auszugehen, dass die Benutzer mehrere Flyouts in schneller Abfolge abarbeiten möchten.
+Sie können dieses Verhalten ändern, indem Sie die Schaltfläche als Pass-Through-Eingabeelement für das Flyout gestalten. Das Flyout wird wie oben beschriebenen durch die einfache Ausblendaktion geschlossen, gibt den Tippvorgang aber gleichzeitig an das entsprechende `OverlayInputPassThroughElement` weiter. Erwägen Sie, dieses Verhalten zu übernehmen, um Interaktionen des Benutzers für ähnlich funktionierende Elemente zu beschleunigen. Wenn Ihre App eine Sammlung von Favoriten beinhaltet und jedes Element der Sammlung ein angefügtes Flyout enthält, ist davon auszugehen, dass Benutzer mit mehreren Flyouts in schneller Abfolge interagieren möchten.
 
-[!NOTE] Achten Sie darauf, kein Überlagerungseingabeelement mit Pass-Through festzulegen, da dies in einer destruktiven Aktion resultiert. Die Benutzer sind an diskrete, einfach ausblendbare Aktionen gewöhnt, die die Primär-UI nicht aktivieren. Schließen, Löschen oder ähnlich destruktive Schaltflächen sollten nicht über einfach ausblendbare Elemente aktiviert werden, um unerwartetes und störendes Verhalten zu vermeiden.
+[!NOTE] Achten Sie darauf, kein Überlagerungseingabeelement mit Pass-Through festzulegen, da dies zu einer destruktiven Aktion führt. Die Benutzer sind an diskrete, einfach ausblendbare Aktionen gewöhnt, die die primäre Benutzeroberfläche nicht aktivieren. Schließen, Löschen und ähnlich destruktive Schaltflächen sollten nicht über einfach ausblendbare Elemente aktiviert werden, um unerwartetes und störendes Verhalten zu vermeiden.
 
-Im folgenden Beispiel werden alle drei Schaltflächen in der Favoritenleiste durch einfaches Antippen aktiviert.
+Im folgenden Beispiel werden alle drei Schaltflächen in der Favoritenleiste durch einfaches Tippen aktiviert.
 
 ````xaml
 <Page>
@@ -210,10 +210,10 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [QuickInfos](../tooltips.md)
-- [Menüs und Kontextmenüs](../menus.md)
+- [Menüs und Kontextmenü](../menus.md)
 - [Flyout-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
