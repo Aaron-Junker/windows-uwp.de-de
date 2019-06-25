@@ -5,12 +5,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Bluetooth, Bluetooth LE, energiesparend, GATT, GAP, Central, Peripheral, Client, Server, Beobachter, Herausgeber
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f23bdc658d2a82e3edeefd0a7be471ca9620d33
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7921094c55944b4cfed4fdb3f3e6d895eb7fe0a4
+ms.sourcegitcommit: 58d35b89662d4ad240650933e43fee0b00e9a962
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321616"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67344510"
 ---
 # <a name="bluetooth-low-energy"></a>Bluetooth Low Energy
 Bluetooth Low Energy (LE) ist eine Spezifikation, die Protokolle für die Ermittlung von und die Kommunikation zwischen energieeffizienten Geräten definiert. Die Ermittlung von Geräten wird mit dem Generic Access Profile (GAP)-Protokoll durchgeführt. Nach der Ermittlung erfolgt die Kommunikation von Gerät zu Gerät über das Generic Attribute (GATT)-Protokoll. Dieses Thema enthält eine kurze Übersicht über Bluetooth LE in UWP-Apps. Weitere Informationen zu Bluetooth LE finden Sie in der [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/), Version 4.0, in der Bluetooth LE eingeführt wurde. 
@@ -21,7 +21,7 @@ Bluetooth Low Energy (LE) ist eine Spezifikation, die Protokolle für die Ermitt
 
 GATT- und GAP-Protokolle können mithilfe der folgenden Namespaces in UWP-Apps implementiert werden.
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
+- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)
 
 ## <a name="central-and-peripheral"></a>Central und Peripheral
 Die beiden primären Rollen für die Ermittlung heißen „Central“ und „Peripheral“. In der Regel wird Windows im Central-Modus ausgeführt und stellt eine Verbindung mit verschiedenen Peripheral-Geräten her. 
@@ -41,5 +41,5 @@ Zusätzlich zu den Rollen „Central” und „Peripheral” gibt es die Rollen 
 
 ## <a name="see-also"></a>Siehe auch
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Bluetooth-Kern-Spezifikation](https://www.bluetooth.com/specifications/bluetooth-core-specification/)
+- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)
+- [Bluetooth-Kern-Spezifikation](https://www.bluetooth.com/specifications/bluetooth-core-specification)

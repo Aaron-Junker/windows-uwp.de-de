@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e26908839204c67a4746f602acc08c6776e889c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7223123ef6f71a45acc967aa60feffa1003b66d1
+ms.sourcegitcommit: 58d35b89662d4ad240650933e43fee0b00e9a962
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370256"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67344527"
 ---
 # <a name="device-information-properties"></a>Geräteinformationseigenschaften
 
@@ -101,6 +101,15 @@ Einige Eigenschaften gelten für alle [**DeviceInformationKind**](https://docs.m
 
  
 
+## <a name="devicepanel-properties"></a>DevicePanel-Eigenschaften
+
+| Name                                            | Typ    | Beschreibung                                                                                                      |
+|-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| **System.Devices.Panel.PanelId**                | Zeichenfolge  | Der Bezeichner der dem **DevicePanel** Objekt.                                                                    |
+| **System.Devices.Panel.PanelGroup**             | Zeichenfolge  | Der Bezeichner des übergeordneten Elements **PanelGroup**.                                                                      |
+ 
+ 
+ 
 ## <a name="associationendpoint-properties"></a>AssociationEndpoint-Eigenschaften
 
 | Name                                  | Typ       | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -155,9 +164,3 @@ Einige Eigenschaften gelten für alle [**DeviceInformationKind**](https://docs.m
 | **System.Devices.AepService.ServiceClassId**    | GUID    | Die Identität des Diensts, der von diesem Gerät dargestellt wird.                                                             |
 | **System.Devices.AepService.ServiceId**         | Zeichenfolge  | Die Identität dieses Diensts. Dies ist auch der Wert von [**DeviceInformation.Id**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id). |
 | **System.ItemNameDisplay**                      | Zeichenfolge  | Der beste Anzeigename für den Dienst.                                                                           |
-
- 
-
- 
-
- 
