@@ -11,18 +11,20 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, Uwp, WNS, Windows-Benachrichtigungsdienst, Notification, Windows-Firewall, Problembehandlung, IP, Datenverkehr, Enterprise, Netzwerk, IPv4, VIP-Adresse, vollqualifizierten Domänennamen, öffentliche IP-Adresse
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed4ad6ed828abda9d487ef96beca9b655c92421
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 23a9b11cd961e03217aba8ca3d1d988447a2f80b
+ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366671"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349859"
 ---
 # <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>Windows-Notification-Datenverkehr durch Unternehmensfirewalls von
 
 ## <a name="background"></a>Hintergrund
 Viele Unternehmen verwenden von Firewalls Blockieren von unerwünschtem Netzwerkdatenverkehr; Leider kann dadurch auch wichtige Dinge wie Windows Notification Service-Kommunikation blockiert. Dies bedeutet, dass alle Benachrichtigungen über WNS gesendet werden verworfen. Um dies zu vermeiden, können Netzwerkadministratoren die Ausnahmeliste der WNS-Datenverkehr an die Firewall passieren können die Liste der genehmigten WNS-Kanäle hinzufügen. Im folgenden finden Sie weitere Informationen zur Verwendung und die hinzuzufügenden Elemente. 
 
+> [!Note] 
+Ab 6/24/2019, Windows-Clients **nicht** Unterstützung Proxys die Verbindung mit WNS müssen eine direkte Verbindung sein.
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>Welche Informationen das Allowlist hinzugefügt werden soll
 Im folgenden wird eine Liste mit den FQDNs, virtuellen IP-Adressen und IP-Adressbereiche, die von den Windows Notification Service verwendet. 

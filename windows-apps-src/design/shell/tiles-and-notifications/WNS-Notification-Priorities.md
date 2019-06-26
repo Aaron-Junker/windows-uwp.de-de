@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, Uwp, WinRT-API, WNS
 localizationpriority: medium
-ms.openlocfilehash: 2719c3228c95075eb2a940d12b6c91049b67f524
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: f5c4b9f1db58a091dc4f9389888ad3739c4439e5
+ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291788"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349868"
 ---
 # <a name="wns-notification-priorities"></a>WNS-Benachrichtigung-Prioritäten
 Wenn eine Benachrichtigung, die Priorität mit einem einfachen-Header auf WNS beitragsnachrichten festlegen, können Sie steuern, wie Benachrichtigungen in Akku vertrauliche Situationen übermittelt werden.
@@ -41,7 +41,7 @@ Beachten Sie, dass viele apps Benachrichtigungen mit unterschiedlichen Prioritä
 
 ## <a name="setting-the-priority"></a>Festlegen der Prioritäten
 
-Festlegen der Prioritäten für die benachrichtigungsanforderung erfolgt über einen zusätzlichen Header auf die POST-Anforderung `X-WNS-PRIORITY`. Dies ist eine ganze Zahl zwischen 0 und 3 der eine Priorität zugeordnet: 
+Festlegen der Prioritäten für die benachrichtigungsanforderung erfolgt über einen zusätzlichen Header auf die POST-Anforderung `X-WNS-PRIORITY`. Dies ist eine ganze Zahl zwischen 1 und 4 der eine Priorität zugeordnet: 
 
 | Prioritätenname | X-WNS-PRIORITY-Wert | Standardwert für: |
 |---------------|----------------------|------------------|
