@@ -1,39 +1,42 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Einrichten
-description: Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, und mit dem beginnen Sie Erstellen von apps für universelle Windows-Plattform (UWP) für Windows 10.
+description: Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, um mit dem Erstellen von UWP-Apps (Universelle Windows-Plattform) für Windows 10 zu beginnen.
 ms.date: 05/07/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: 5d0f3e7ca98f01750d7d05cc06b56783e3b32359
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658645"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64564461"
 ---
 # <a name="get-set-up"></a>Einrichten
 
 ![Vorbereitungen für die Verwendung von Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, und mit dem beginnen Sie Erstellen von apps für universelle Windows-Plattform (UWP) für Windows 10.
+Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, um mit dem Erstellen von UWP-Apps (Universelle Windows-Plattform) für Windows 10 zu beginnen.
 
-## <a name="1-download-or-update-visual-studio"></a>1. Herunterladen oder Aktualisieren von Visual Studio
+## <a name="1-download-or-update-visual-studio"></a>1. Laden Sie Visual Studio herunter, oder aktualisieren Sie Ihre Version.
 
-Microsoft Visual Studio 2017 können, die Sie entwerfen, codieren, testen und Debuggen Ihre apps.
+> [!NOTE]
+> Bei neuen Versionen von Visual Studio kann die Darstellung von den Screenshots in diesen Anweisungen abweichen. Keine Sorge! Wenn Sie diese Anweisungen befolgen, können Sie Ihre Umgebung trotzdem ordnungsgemäß einrichten.
 
-Wenn Sie bereits über Visual Studio 2017 haben, können Sie die kostenlose Microsoft Visual Studio Community 2017 installieren. Dieser Download umfasst auch Geräte-Simulatoren zum Testen Ihrer Apps:
+Microsoft Visual Studio 2019 unterstützt Sie beim Entwerfen, Codieren, Testen und Debuggen Ihrer Apps.
 
--   [Windows 10-Entwicklertools herunterladen](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+Wenn Sie Visual Studio 2019 noch nicht verwenden, können Sie Microsoft Visual Studio Community 2019 kostenlos installieren. Dieser Download umfasst auch Gerätesimulatoren zum Testen Ihrer Apps:
 
-Verwenden Sie bei der Installation von Visual Studio die Option „Entwicklungstools für universelle Windows-Apps“, so wie hier gezeigt:
+-   [Windows 10-Entwicklungstools herunterladen](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+
+Verwenden Sie bei der Installation von Visual Studio die Option „Entwicklungstools für universelle Windows-Apps“, wie hier gezeigt:
 
 ![Visual Studio-Tools für UWP](images/vs-2017-community-setup.png)
 
-Benötigen Sie Hilfe für Visual Studio? Wechseln Sie zu [Erste Schritte mit Visual Studio](https://www.visualstudio.com/vs/getting-started).
+Benötigen Sie Hilfe zu Visual Studio? Informieren Sie sich unter [Erste Schritte mit Visual Studio](https://www.visualstudio.com/vs/getting-started).
 
-Wenn Sie Visual Studio bereits verwenden, aber entdecken, dass Ihnen einige Komponenten fehlen, können Sie das Installationsprogramm erneut über das Dialogfeld *Neues Projekt* starten:
+Wenn Sie Visual Studio bereits verwenden, aber feststellen, dass einige Komponenten fehlen, können Sie den Installer über das Dialogfeld *Neues Projekt* erneut starten:
 
    ![So wiederholen Sie den Installationsvorgang](images/win10-cs-install.png)
 
@@ -60,7 +63,7 @@ Nachdem Sie die Tools installiert und Ihr Gerät für die Entwicklung aktiviert 
 
 Wenn Sie Ihr Gerät anpassen und andere Funktionen oder Pakete installieren möchten, schauen Sie sich dieses Projekt für Systemsetupskripts an.
 
-- [Entwickler-Setup-Skripts](https://github.com/Microsoft/windows-dev-box-setup-scripts)
+- [Setupskripts für Entwickler](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## <a name="want-more-tools-and-downloads"></a>Benötigen Sie mehr Tools und Downloads?
 

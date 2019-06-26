@@ -1,23 +1,23 @@
 ---
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: Erstellen eines Entwicklerkontos
-description: Registrieren Sie sich jetzt für ein Entwicklerkonto, um Ihre Apps im Microsoft Store veröffentlichen und an anderen Microsoft-Programmen teilnehmen zu können.
+description: Registrieren Sie sich jetzt für ein Entwicklerkonto, damit Sie Ihre Apps im Microsoft Store veröffentlichen und an anderen Microsoft-Programmen teilnehmen können.
 ms.date: 04/04/2018
 ms.topic: article
-keywords: Windows 10, UWP, Anmelden, Entwicklerkonto
+keywords: Windows 10, UWP, registrieren, Entwicklerkonto
 ms.localizationpriority: medium
 ms.openlocfilehash: 1eac2ad42b277c8cea5d571e08018d62ba338011
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66370641"
 ---
 # <a name="create-a-developer-account"></a>Erstellen eines Entwicklerkontos
 
-Registrieren Sie sich jetzt für ein Entwicklerkonto, um Ihre Apps im Microsoft Store veröffentlichen und an anderen Microsoft-Programmen teilnehmen zu können.
+Registrieren Sie sich jetzt für ein Entwicklerkonto, damit Sie Ihre Apps im Microsoft Store veröffentlichen und an anderen Microsoft-Programmen teilnehmen können.
 
-[Registrieren Sie sich jetzt an!](https://go.microsoft.com/fwlink/p/?LinkId=615100)
+[Jetzt registrieren!](https://go.microsoft.com/fwlink/p/?LinkId=615100)
 
 ## <a name="opening-your-developer-account"></a>Eröffnen eines Entwicklerkontos
 

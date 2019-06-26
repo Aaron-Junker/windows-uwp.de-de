@@ -1,26 +1,26 @@
 ---
 title: Beispiele für UWP-Apps abrufen
-description: Erfahren Sie, wie Sie die Beispiele für UWP-Codes von GitHub herunterladen können.
+description: Erfahren Sie, wie Sie die UWP-Codebeispiele von GitHub herunterladen.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Beispielcode, Codebeispiele
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598535"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63772224"
 ---
 # <a name="get-uwp-app-samples"></a>Beispiele für UWP-Apps abrufen
 
-Die Beispiele für Universelle Windows Plattform-Apps (UWP-Apps) sind über Repositorys auf GitHub verfügbar. Unter [Samples](https://developer.microsoft.com/windows/samples "Dev Center Beispiele") finden Sie eine durchsuchbare, kategorisierte Liste, oder durchsuchen Sie die Repository [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die Universelle Windows-Plattform"), die Beispiele für alle UWP-Features und ihre API-Verwendungsmuster enthält.  
-![Beispielrepository von GitHub UWP](images/GitHubUWPSamplesPage.png)
+Die Beispiele für Universelle Windows Plattform-Apps (UWP-Apps) sind über Repositorys auf GitHub verfügbar. Unter [Samples](https://developer.microsoft.com/windows/samples "Dev Center Beispiele") finden Sie eine durchsuchbare, kategorisierte Liste. Alternativ können Sie das Repository [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die Universelle Windows-Plattform") durchsuchen, das Beispiele für alle UWP-Features und ihre API-Verwendungsmuster enthält.  
+![GitHub-Repository mit UWP-Beispielen](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>Code herunterladen
 
-Informationen zum Herunterladen der Beispiele finden Sie unter [Repository](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die Universelle Windows-Plattform"). Wählen Sie **Clone or download** und dann **Herunterladen der ZIP-Datei**. Oder klicken Sie einfach [hier](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "ZIP-Datei mit App-Beispielen für die Universelle Windows-Plattform herunterladen").
+Um die Beispiele herunterzuladen, wechseln Sie zum [Repository](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die Universelle Windows-Plattform") und wählen **Clone or download** (Klonen oder herunterladen) und dann **Download ZIP** (ZIP herunterladen) aus. Oder klicken Sie einfach [hier](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "ZIP-Datei mit App-Beispielen für die Universelle Windows-Plattform herunterladen").
 
 Die ZIP-Datei enthält stets die neuesten Beispiele. Sie benötigen zum Herunterladen kein GitHub-Konto. Wenn ein SDK-Update veröffentlicht wird oder wenn Sie alle aktuellen Änderungen/Ergänzungen übernehmen möchten, suchen Sie einfach nach der neuesten ZIP-Datei.
 
@@ -45,7 +45,7 @@ Die ZIP-Datei enthält stets die neuesten Beispiele. Sie benötigen zum Herunter
 
     ![Sprachordner](images/SamplesUnzip3.png)
 
-4.  Wählen Sie die Sprache, Sie wie z. B. CS für C# verwenden, möchten\#, sehen Sie eine Visual Studio-Projektmappendatei, die Sie in Visual Studio öffnen können.
+4.  Wählen Sie die gewünschte Sprache (z. B. CS für C\#) aus. Es wird eine Visual Studio-Projektmappendatei angezeigt, die Sie in Visual Studio öffnen können.
 
     ![VS-Projektmappe](images/SamplesUnzip4.png)
 
