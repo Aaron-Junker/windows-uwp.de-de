@@ -4,13 +4,13 @@ title: Nachverfolgen kürzlich verwendeter Dateien und Ordner
 description: Sie können Dateien nachverfolgen, auf die häufig zugegriffen wird, indem Sie sie der Liste mit den zuletzt verwendeten Elementen (MRU) der App hinzufügen.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369438"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Nachverfolgen kürzlich verwendeter Dateien und Ordner
@@ -25,11 +25,11 @@ Sie können Dateien nachverfolgen, auf die häufig zugegriffen wird, indem Sie s
 Ihre App-MRU-Liste wird durch die [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList)-Klasse repräsentiert, die Sie aus der statischen [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)-Eigenschaft abrufen können. MRU-Elemente werden als [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem)-Objekte gespeichert. Das bedeutet, dass sowohl [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekte (die Dateien darstellen) als auch [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)-Objekte (die Ordner darstellen) der MRU-Liste hinzugefügt werden können.
 
 > [!NOTE]
-> Vollständige Beispiele finden Sie unter der [Beispieldatei mit Auswahl](https://go.microsoft.com/fwlink/p/?linkid=619994) und [Beispieldatei für Access](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Vollständige Beispiele finden Sie im [Beispiel zur Dateiauswahl](https://go.microsoft.com/fwlink/p/?linkid=619994) und im [Beispiel zum Dateizugriff](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
--   **Verstehen Sie die asynchrone Programmierung für apps der universellen Windows-Plattform (UWP)**
+-   **Kenntnisse in der asynchronen Programmierung für Apps für die universelle Windows-Plattform (UWP)**
 
     Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
@@ -52,10 +52,10 @@ Ihre App-MRU-Liste wird durch die [**StorageItemMostRecentlyUsedList**](https://
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) überladen ist. Im Beispiel verwenden wir [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add), sodass wir der Datei Metadaten zuordnen können. Wenn Sie Metadaten festlegen, können Sie den Zweck des Elements festlegen, z. B. Profilauswahl. Sie können die Datei durch einen Aufruf von [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) auch ohne Metadaten der MRU-Liste hinzufügen. Beim Hinzufügen eines Elements zur MRU-Liste gibt die Methode eine eindeutig identifizierende Zeichenfolge zurück. Mit diesem sogenannten Token wird das Element abgerufen.
+    [**StorageItemMostRecentlyUsedList.Add**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) ist überladen. Im Beispiel verwenden wir [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add), sodass wir der Datei Metadaten zuordnen können. Wenn Sie Metadaten festlegen, können Sie den Zweck des Elements festlegen, z. B. Profilauswahl. Sie können die Datei durch einen Aufruf von [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) auch ohne Metadaten der MRU-Liste hinzufügen. Beim Hinzufügen eines Elements zur MRU-Liste gibt die Methode eine eindeutig identifizierende Zeichenfolge zurück. Mit diesem sogenannten Token wird das Element abgerufen.
 
 > [!TIP]
-> Sie benötigen das Token zum Abrufen eines Elements aus der MRU-Liste, speichern Sie es also an einer beliebigen Stelle. Weitere Informationen zu App-Daten finden Sie unter [Verwalten von Anwendungsdaten](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10)).
+> Sie benötigen das Token zum Abrufen eines Elements aus der MRU-Liste. Speichern Sie es daher an einem beliebigen Ort. Weitere Informationen zu App-Daten finden Sie unter [Verwalten von Anwendungsdaten](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10)).
 
 ## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>Verwenden von Token zum Abrufen von Elementen aus der MRU-Liste
 

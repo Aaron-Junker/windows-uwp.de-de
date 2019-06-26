@@ -4,13 +4,13 @@ title: Ermitteln der Verfügbarkeit von Microsoft OneDrive-Dateien
 description: Ermitteln Sie mithilfe der StorageFile.IsAvailable-Eigenschaft, ob eine Microsoft OneDrive-Datei verfügbar ist.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: effb28fa453ec884152dbc404245f00f4893ef5a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369427"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Ermitteln der Verfügbarkeit von Microsoft OneDrive-Dateien
@@ -19,18 +19,18 @@ ms.locfileid: "66369427"
 **Wichtige APIs**
 
 -   [**FileIO-Klasse**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
--   [ **"Storagefile"-Klasse**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
+-   [**StorageFile-Klasse**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
 -   [**StorageFile.IsAvailable-Eigenschaft**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)
 
 Ermitteln Sie mithilfe der [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)-Eigenschaft, ob eine Microsoft OneDrive-Datei verfügbar ist.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
--   **Verstehen Sie die asynchrone Programmierung für apps der universellen Windows-Plattform (UWP)**
+-   **Kenntnisse in der asynchronen Programmierung für Apps für die universelle Windows-Plattform (UWP)**
 
     Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Deklarationen der App capabilty**
+-   **Deklarationen von App-Funktionen**
 
     Weitere Informationen finden Sie unter [Berechtigungen für den Dateizugriff](file-access-permissions.md).
 
@@ -38,7 +38,7 @@ Ermitteln Sie mithilfe der [**StorageFile.IsAvailable**](https://docs.microsoft.
 
 Benutzer können OneDrive-Dateien als „Offline verfügbar“ (Standardeinstellung) oder „Nur online verfügbar“ kennzeichnen. Diese Funktion bietet Benutzern die Möglichkeit, große Dateien (z. B. Bilder und Videos) in ihren OneDrive-Speicher zu verschieben, als nur online verfügbar zu kennzeichnen und so Speicherplatz auf der Festplatte zu sparen (lokal wird nur eine Datei mit Metadaten gespeichert).
 
-[**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable), wird verwendet, um zu bestimmen, ob eine Datei derzeit verfügbar ist. Die folgende Tabelle zeigt den Wert der **StorageFile.IsAvailable**-Eigenschaft in verschiedenen Szenarien.
+Mithilfe von [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) wird ermittelt, ob eine Datei zurzeit verfügbar ist. Die folgende Tabelle zeigt den Wert der **StorageFile.IsAvailable**-Eigenschaft in verschiedenen Szenarien.
 
 | Dateityp                              | Online | Getaktetes Netzwerk        | Offline |
 |-------------------------------------------|--------|------------------------|---------|
