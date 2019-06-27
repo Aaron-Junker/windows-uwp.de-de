@@ -1,63 +1,63 @@
 ---
-title: Verwenden die zusätzliche Eigenschaften
-description: Einführung in die Verwendung von zusätzlichen Eigenschaften und Details auf, wie sie in Windows implementiert wurden
+title: Verwenden von Zusatzeigenschaften
+description: Enthält eine Einführung in die Verwendung von Zusatzeigenschaften und Details zur Implementierung in Windows.
 ms.date: 01/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, WinRT-API, Indexer, Search
+keywords: Windows 10, UWP, WinRT-API, Indexer, Suche
 localizationpriority: medium
 ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369265"
 ---
-# <a name="using-supplemental-properties"></a>Verwenden die zusätzliche Eigenschaften  
+# <a name="using-supplemental-properties"></a>Verwenden von Zusatzeigenschaften  
 
 ## <a name="summary"></a>Zusammenfassung  
-- Zusätzliche Eigenschaften können apps Dateien kennzeichnen mit Eigenschaften, ohne die Datei zu ändern 
-- Hilfreich für die Fälle, in denen Sie Eigenschaften, die schwer zu berechnen sind oder die Datei nicht geändert werden kann 
-- Verwenden die zusätzliche Eigenschaften ist identisch mit der eine andere Eigenschaft des Systems für die Windows-Eigenschaft  
+- Zusatzeigenschaften ermöglichen Apps das Kennzeichnen von Dateien mit Eigenschaften, ohne die Datei zu ändern. 
+- Dies ist in Fällen hilfreich, in denen Eigenschaften schwierig zu berechnen sind oder die Datei nicht geändert werden kann. 
+- Die Verwendung von Zusatzeigenschaften entspricht der Vorgehensweise für alle anderen Eigenschaften im Windows-Eigenschaftensystem.  
 
 ## <a name="introduction"></a>Einführung 
-Viele interessante neue Apps in den letzten Jahren erfordern, mit der CPU-intensive Vorgänge für Benutzerdateien, um nützliche Eigenschaften aus den Dateien über grundlegende Dinge wie Erstellungsdatum zu extrahieren. Diese apps in Bildern, beabsichtigte Extrahierung in e-Mails und Textanalyse zu Dokumenten der Gruppe zusammen Objekt. Dies wird gesteuert wird, um wie leistungsstarke computing ist nun auf die meisten Consumer PCs verfügbar.   
+Für viele der aufregenden neuen Apps ist in den letzten Jahren die Durchführung von CPU-intensiven Vorgängen für Benutzerdateien erforderlich gewesen, um nützliche Eigenschaften aus den Dateien zu extrahieren, die über grundlegende Informationen wie das Erstellungsdatum hinausgehen. In diesen Apps wird die Objekterkennung in Bildern, die Extraktion von Absichten aus E-Mails und die Textanalyse zum Gruppieren von Dokumenten durchgeführt. Der Auslöser hierfür ist, dass mittlerweile die meisten Heim-PCs über eine hohe Rechenleistung verfügen.   
 
-Durchsuchbar diese Metadaten sofort ermöglicht Benutzern eine exponentiell höhere Produktivität. Einfach zu wissen, dass Ihre Tochter in einem Bild ist, ist interessant, aber wird für das Bild Ihrer mit ihrem Großmutter durchsuchen können so viel nützlicher ist. Es ist die Verwendung von einem Computer Verhalten persönlichere und mehr aktiv. Wie ein Benutzer auf dem Computer erreicht können Sie Ihre geliebte leistungsanforderungen zu ermitteln. 
+Benutzer können deutlich produktiver arbeiten, wenn sie die Möglichkeit erhalten, diese Metadaten schnell zu durchsuchen. Es ist gut, wenn ein Benutzer weiß, dass seine Tochter auf einem Bild zu sehen ist. Viel nützlicher ist es aber, wenn er nach einem Bild suchen kann, auf dem seine Tochter mit ihrer Großmutter abgebildet ist. Die Nutzung eines Computers wird hierdurch persönlicher, und der Benutzer ist stärker eingebunden. Es ist so, als ob der Computer sich direkt an den Benutzer wendet, um ihm bei der Suche nach schönen Erinnerungen zu helfen. 
 
-Seit Jahrzehnten die Lösung für die schnelle Suche von Windows wurde der Indexer, und in dem Creators Update es wurde aktualisiert, um diese neuen Szenarien zu unterstützen. Apps können jetzt Dateien kennzeichnen mit zusätzlichen Eigenschaften hinaus, die die vom System extrahiert werden. Diese Eigenschaften werden als Bürger erster Klasse behandelt.  
+Mehrere Jahrzehnte lang war der Indexer die Lösung für das schnelle Suchen unter Windows. Im Rahmen des Creators Update wurde er aktualisiert, um diese neuen Szenarien zu unterstützen. Apps können Dateien jetzt mit zusätzlichen Eigenschaften kennzeichnen, die über die vom System extrahierten Eigenschaften hinausgehen. Diese Eigenschaften werden vorrangig behandelt.  
 
 ## <a name="windows-properties"></a>Windows-Eigenschaften 
-Die [Windows Eigenschaftensystem](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) wurde ein wichtiger Bestandteil der Interaktion mit Dateien seit Jahren. Sie können apps Eigenschaften aus Dateien lesen, ohne Sie zu den Interna von allen unterschiedliche Dateiformate oder Sprachen, die, denen in eine Datei befinden. All dies abstrahiert für Sie als Entwickler, alles, was man dazu Unternehmen muss stellen Sie eine Liste, und geben Sie Aufsteigend oder Absteigend.  
+Das [Windows-Eigenschaftensystem](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) war viele Jahre lang ein wichtiger Bestandteil der Interaktion mit Dateien. Es ermöglicht Apps das Lesen von Eigenschaften aus Dateien, ohne dass Informationen zu allen internen Merkmalen der unterschiedlichen Dateiformate oder Sprachen vorliegen müssen, die für eine Datei gelten können. All dies wird für dich als Entwickler abstrahiert, und du musst nur noch eine Liste anfordern und „Aufsteigend“ oder „Absteigend“ angeben.  
 
-Das Eigenschaftensystem ist eng verknüpft, mit dem Windows-Indexer – alle Eigenschaften von Dateien in ihrem Gültigkeitsbereich liest und speichert sie. Wenn eine app fordert eine Liste aller DOCX, die sich in einem Ordner nach Datum der Änderung, sortiert werden mit Ausnahme derjenigen von John Smith den Indexer erstellt wurden kann die Liste sofort zurückkommen.  
+Das Eigenschaftensystem ist eng mit dem Indexer von Windows verknüpft. Es liest alle Eigenschaften aus den Dateien im jeweiligen Bereich aus und speichert sie. Wenn eine App später dann eine nach Änderungsdatum sortierte Liste mit allen DOCX-Dateien eines Ordners anfordert, die nicht von „John Smith“ erstellt wurden, kann diese Liste vom Indexer sofort zurückgegeben werden.  
 
-Der Nachteil dieser Systeme Zusammenspiel ist, der Indexer verwendet, um alle Eigenschaften festzulegen, es zu einer Datei sofort verfügbar sein speichern würde. Dies beschränkt es zu wissen zu Weitere interessante Eigenschaften, die länger zu berechnen, da es schwierig erforderlich ist.  
+Der Nachteil bei der Zusammenarbeit dieser Systeme besteht darin, dass für den Indexer alle Eigenschaften, die er für eine Datei speichern muss, sofort verfügbar sein mussten. Aufgrund der strengen Zeitbeschränkung wurde verhindert, dass er Informationen zu interessanteren Eigenschaften mit längerer Berechnungsdauer erhalten hat.  
 
-Mithilfe von Eigenschaften jedoch einfach, die app können entweder einen sortierten Satz von Eigenschaften zu einer Datei, ähnlich wie die Arbeit mit einer Datenbank, oder sie können eine Abfrage wie die Verwendung einer Suchmaschine übergeben. Der Indexer wird die Abfrage verarbeitet und die Ergebnisse zurückgeben. Diese bieten Entwicklern die Flexibilität, kombinieren Sie ihre Filter (z. B. nur Search Jpg-Dateien) mit der Abfrage des Benutzers (beginnend mit "Bird" Dateiname). 
+Die Verwendung von Eigenschaften ist aber einfach. Die App kann entweder – ähnlich wie bei einer Datenbank – einen sortierten Eigenschaftensatz zu einer Datei anfordern, oder sie kann eine Abfrage übergeben, z. B. zur Nutzung einer Suchmaschine. Der Indexer verarbeitet die Abfrage und gibt die Ergebnisse zurück. Entwickler können ihre Filter (z. B. ausschließliche Suche nach JPG-Dateien) so flexibel mit der Abfrage des Benutzers (Dateiname, der mit „bird“ beginnt) kombinieren. 
 
-## <a name="supplemental-properties"></a>Zusätzliche Eigenschaften 
+## <a name="supplemental-properties"></a>Zusatzeigenschaften 
 
-Zusätzliche Eigenschaften verhalten sich identisch zu regulären Windows-Eigenschaften mit einem sehr wichtigen Unterschied: sie wollen nicht geschrieben werden, wenn die Datei an den Indexer hinzugefügt wird. Eine zusätzliche Eigenschaft muss von einer anderen app auf dem System zu einem späteren Zeitpunkt hinzugefügt werden. Es könnte sein, objekterkennung in zwei Minuten später einmal abgeschlossen ist oder die Tage später sein. 
+Zusatzeigenschaften verhalten sich identisch zu regulären Windows-Eigenschaften, aber es gibt einen wichtigen Unterschied: Sie werden nicht geschrieben, wenn die Datei dem Indexer hinzugefügt wird. Eine Zusatzeigenschaft muss später von einer anderen App des Systems hinzugefügt werden. Dies kann zwei Minuten später durchgeführt werden, nachdem die Objekterkennung abgeschlossen ist, oder es kann einige Tage später erfolgen. 
 
-Wenn die Eigenschaft geschrieben wird kann es werden durchsucht, gefiltert, sortiert oder gruppiert werden, genau wie jede andere Eigenschaft, auf dem System. Auch verwendet werden in der kombinierten Abfragen mit anderen Eigenschaften auf dem System, entweder ergänzende oder nicht. Dies wird Ihnen die Flexibilität, leicht zusätzliche Eigenschaften mit Ihren vorhandenen Code der Datei System kombinieren, ohne eine Neuerstellung durchgeführt werden.  
+Nachdem die Eigenschaft geschrieben wurde, kann sie wie alle anderen Eigenschaften des Systems durchsucht, gefiltert, sortiert oder gruppiert werden. Darüber hinaus kann sie in kombinierten Abfragen mit anderen Eigenschaften des Systems verwendet werden (Zusatz- oder reguläre Eigenschaften). Hierdurch kannst du Zusatzeigenschaften flexibel mit deinem vorhandenen Dateisystemcode kombinieren, ohne ihn umschreiben zu müssen.  
 
 ### <a name="example-scenarios"></a>Beispielszenarien 
 
-Es gibt unzählige verschiedene Eigenschaften, die Sie auf eine zusätzliche Eigenschaft schreiben können, aber es gibt einige wichtige Szenarios, denen in diesem Tutorial zurück, Dienste weiterhin nutzen möchten, wird:  
+Es gibt Tausende von unterschiedlichen Eigenschaften, die du in eine Zusatzeigenschaft schreiben kannst. In diesem Tutorial wird aber immer wieder auf zwei Hauptszenarien verwiesen:  
 
-#### <a name="tagging-pictures-with-extracted-properties"></a>Markieren Bilder mit den extrahierten Eigenschaften 
-Diese apps können ein trainiertes ML-Modells verwenden, um Funktionen aus einem Image zu extrahieren, die das System z. B.-Objekt in der Abbildung nicht bekannt ist. Klicken Sie dann kann die Objekte, die sie in der Abbildung identifiziert werden und das Eigenschaftensystem für später Suche und Gruppierung hinzufügen.  
+#### <a name="tagging-pictures-with-extracted-properties"></a>Kennzeichnen von Bildern mit extrahierten Eigenschaften 
+Für diese Apps kann ein per ML trainiertes Modell genutzt werden, um Merkmale aus einem Bild zu extrahieren, die dem System nicht bekannt sind (z. B. ein Objekt im Bild). Die im Bild identifizierten Objekte können dann dem Eigenschaftensystem zum späteren Durchsuchen oder Gruppieren hinzugefügt werden.  
 
-#### <a name="tagging-files-with-an-app-specific-id"></a>Kennzeichnen von Dateien mit einer bestimmten app-ID 
-Viele Datei Sync-apps verwenden ihre eigenen eindeutige ID, um Dateien nachzuverfolgen, wie sie zwischen dem Server und verschiedenen Clientgeräten verschieben. Synchronisierungsclient kann diese ID im Eigenschaftensystem schreiben, ohne die Datei beeinflusst. Diese ID ist jetzt für die app später für den schnellen Zugriff verfügbar und für jede andere app auf dem System gelesen, bei der Kommunikation mit den Synchronisierungsanbieter verfügbar. 
+#### <a name="tagging-files-with-an-app-specific-id"></a>Kennzeichnen von Dateien mit einer App-spezifischen ID 
+Viele Apps für die Dateisynchronisierung nutzen eine eigene eindeutige ID, um Dateien nachzuverfolgen, während sie zwischen dem Server und den verschiedenen Clientgeräten verschoben werden. Der Synchronisierungsclient kann diese ID in das Eigenschaftensystem schreiben, ohne dass sich dies auf die Datei auswirkt. Diese ID ist dann später für die App verfügbar, um den schnellen Zugriff zu ermöglichen. Außerdem kann sie auch von allen anderen Apps des Systems gelesen werden, wenn diese mit dem Synchronisierungsanbieter kommunizieren. 
 
-Es gibt viele weitere Optionen für die Verwendung von zusätzlicher Eigenschaften, aber beide gute Beispiele für vorgenommen werden, da sie schnelle Suche oder suchen Sie erfordern, sind Informationen, die das System nicht kennen, und kann nicht hinzugefügt werden, auf die Datei selbst.  
+Es gibt noch viele andere Optionen zur Nutzung von Zusatzeigenschaften. Dies sind aber zwei gute Beispiele, da sie eine schnelle Suche erfordern, für das System unbekannte Informationen darstellen und nicht der Datei selbst hinzugefügt werden können.  
 
-### <a name="using-supplemental-properties"></a>Verwenden die zusätzliche Eigenschaften 
-Verwenden die zusätzlichen Eigenschaften ist identisch mit der eine normale Eigenschaft in das Dateisystem schreiben. Wenn Sie mit der Verwendung von unterstütztes und Eigenschaften vertraut sind, können Sie über diese überspringen. Andernfalls, betrachten wir ein Beispiel, das von einer einzelnen Eigenschaft in eine Datei schreiben und Lesen dann später wieder die gleiche Eigenschaft.  
+### <a name="using-supplemental-properties"></a>Verwenden von Zusatzeigenschaften 
+Die Verwendung der Zusatzeigenschaften entspricht dem Schreiben einer regulären Eigenschaft in das Dateisystem. Falls du dich mit der Nutzung von StorageFiles und Eigenschaften auskennst, kannst du diesen Abschnitt überspringen. Sieh dir andernfalls unten das kurze Beispiel für das Schreiben einer einzelnen Eigenschaft in eine Datei und das spätere Auslesen derselben Eigenschaft an.  
 
-### <a name="writing-supplemental-properties"></a>Schreiben von zusätzlichen Eigenschaften  
-Im Beispiel wird nur die erste Datei, die aus Gründen der Einfachheit gefunden ändern, aber in der Regel wird eine app die Eigenschaft hinzuzufügen, zu jeder Datei, die es findet.  
+### <a name="writing-supplemental-properties"></a>Schreiben von Zusatzeigenschaften  
+Im Beispiel wird der Einfachheit halber nur die erste gefundene Datei geändert, aber im Allgemeinen fügt eine App die Eigenschaft jeder gefundenen Datei hinzu.  
 
 ```csharp
 // Only indexed jpg files are going to be used 
@@ -80,10 +80,10 @@ props.Add(new KeyValuePair<string, object>("System.Supplemental.ResourceId", fil
 await file.Properties.SavePropertiesAsync(props); 
 ```
 
-Es ist eine wichtige Überprüfung auf, wenn die Position vor dem Schreiben einer Eigenschaft indiziert ist. In diesem Beispiel verwenden wir die Abfrageoptionen zum Filtern, sodass nur indizierten Orten. Wenn dies nicht möglich ist, können Sie den indizierten Zustand des übergeordneten Ordners (Datei. Überprüfen GetParentAsync(). GetIndexedStateAsync()). In beiden Fällen werden die gleichen Ergebnisse liefern. 
+Es wird eine wichtige Prüfung durchgeführt, wenn der Speicherort indiziert ist, bevor eine Eigenschaft geschrieben wird. In diesem Beispiel verwenden wir die Abfrageoptionen, um nur nach indizierten Speicherorten zu filtern. Falls dies nicht möglich ist, kannst du den Indizierungszustand des übergeordneten Ordners überprüfen (file.GetParentAsync().GetIndexedStateAsync()). In beiden Fällen erhältst du die gleichen Ergebnisse. 
 
-### <a name="reading-supplemental-properties"></a>Lesen Sie die zusätzliche Eigenschaften 
-In diesem Fall entspricht eine zusätzliche Eigenschaft lesen eine andere Datei System-Eigenschaft lesen. In diesem Beispiel die app wird nur eine Eigenschaft aus einer Datei lesen, die, der Sie bereits über eine "storagefile" verfügt, aber es könnte auch andere Eigenschaften lesen, zur gleichen Zeit.  
+### <a name="reading-supplemental-properties"></a>Lesen von Zusatzeigenschaften 
+Auch hier entspricht das Lesen einer Zusatzeigenschaft wieder dem Lesen aller anderen Dateisystemeigenschaften. In diesem Beispiel liest die App nur eine Eigenschaft aus einer Datei, für die sie bereits über eine StorageFile verfügt, aber sie kann bei Bedarf auch gleichzeitig andere Eigenschaften lesen.  
 
 ```csharp
 // An object to hold the result from the indexer, and a string to store  
@@ -101,61 +101,61 @@ if (returnedProps.TryGetValue("System.Supplemental.ResourceId", out uncheckedRes
     } 
 } 
 ```
-Es ist eine Überprüfung, um sicherzustellen, dass der Wert, der von dem Eigenschaftensystem ist, was Sie erwarten. Obwohl es unwahrscheinlich ist, ist es möglich, da Ihre app es geschrieben hat der Wert gelöscht wurde. Dies wird weiter unten ausführlich behandelt.  
+Du kannst anhand einer Überprüfung sicherstellen, dass der Wert, den du vom Eigenschaftensystem erhältst, dem erwarteten Wert entspricht. Die Wahrscheinlichkeit ist zwar gering, aber es kann sein, dass der Wert gelöscht wurde, seitdem er von deiner App geschrieben wurde. Dies wird weiter unten ausführlich beschrieben.  
 
 ### <a name="implementation-notes"></a>Hinweise zur Implementierung 
-Es gibt einige geringfügige Optionen, die in den Entwurf der die zusätzlichen Eigenschaften vorgenommen wurden. Um Ihre Implementierung zu vereinfachen wurden in den folgenden Abschnitten aus der technischen Entwurf-Spezifikation für die Funktion kopiert. Sie bieten einen Einblick, wie die Funktion entwickelt wurde, und warum einige der Einschränkungen vorhanden sind. 
+Am Design der Zusatzeigenschaften wurden einige geringfügige Änderungen vorgenommen. Als Hilfe bei der Implementierung wurden die folgenden Abschnitte aus den Engineering-Designspezifikationen für das Feature kopiert. Sie enthalten Informationen zum Entwurf des Features und Angaben zu den Gründen für die Einschränkungen. 
 
-### <a name="supplemental-properties-available"></a>Zusätzliche Eigenschaften zur Verfügung stehen 
-Es gibt nur zwei Eigenschaften, die ursprünglich für apps verwendet werden: System.Supplemental.ResourceId und System.Supplemental.AlbumID. Wenn besteht die Notwendigkeit mehr, die sie hinzugefügt werden können. Die Album-ID ist eine mehrwertige Zeichenfolge, die für viele verschiedene Anwendungen verwendet werden kann, und die Ressourcen-ID wird als eine eindeutige ID für die Synchronisierung von cloudanbietern verwendet. 
+### <a name="supplemental-properties-available"></a>Verfügbare Zusatzeigenschaften 
+Ursprünglich sind nur zwei Eigenschaften vorhanden, die für Apps verwendet werden können: „System.Supplemental.ResourceId“ und „System.Supplemental.AlbumID“. Falls weitere Eigenschaften benötigt werden, können sie hinzugefügt werden. Die Album-ID ist eine Zeichenfolge mit mehreren Werten, die für viele unterschiedliche Anwendungen verwendet werden kann, und die ResourceId wird als eindeutige ID für Cloudsynchronisierungsanbieter verwendet. 
 
-#### <a name="file-system-support"></a>Unterstützung des 
-Da FAT-formatierten Wechseldatenträger ist ein wichtiges Szenario, zusätzliche Eigenschaften unterstützt FAT und NTFS-Laufwerke. Dadurch wird sichergestellt, dass die zusätzlichen Eigenschaften werden für alle Benutzer, unabhängig von den jeweiligen Gerätetyp verfügbar sein sollen.   
+#### <a name="file-system-support"></a>Dateisystemunterstützung 
+Da Wechselmedien mit FAT-Formatierung ein wichtiges Szenario darstellen, werden für Zusatzeigenschaften FAT- und NTFS-Laufwerke unterstützt. Hierdurch wird sichergestellt, dass die Zusatzeigenschaften unabhängig vom Gerätetyp für alle Benutzer verfügbar sind.   
 
-### <a name="non-indexed-locations"></a>Nicht indizierten Orten  
-Es gibt eine Reihe von Ordnern, die nicht indiziert werden, auf dem Desktop. In diesen Fällen sollten apps immer noch Zugriff auf zusätzliche Eigenschaften haben. Zusätzliche Eigenschaften sind jedoch nicht außerhalb der indizierten Orte zur Verfügung steht. Dieser Kompromiss wurde aus verschiedenen Gründen vorgenommen:  
+### <a name="non-indexed-locations"></a>Nicht indizierte Orte  
+Auf dem Desktop gibt es einige Ordner, die nicht indiziert werden. In diesen Fällen kann es trotzdem sein, dass Apps Zugriff auf Zusatzeigenschaften benötigen. Zusatzeigenschaften sind außerhalb von indizierten Speicherorten aber nicht verfügbar. Diese Kompromisslösung hat verschiedene Gründe:  
 
-- Alle Bibliotheken und cloudspeicherorten werden standardmäßig indiziert.   
-  Dies sind die Speicherorte, UWP-apps in erster Linie verwenden. Es gibt andere Speicherorte, die nicht indizierte (System oder Netzwerk-Laufwerke) sind, aber sie werden weniger häufig zum Speichern von Benutzerdaten verwendet. 
+- Alle Bibliotheken und Cloudspeicherorte werden standardmäßig indiziert.   
+  Dies sind die Speicherorte, die von UWP-Apps hauptsächlich genutzt werden. Es gibt auch andere Speicherorte, die nicht indiziert sind (System- oder Netzlaufwerke), aber diese werden weniger häufig zum Speichern von Benutzerdaten verwendet. 
 
-- Die Oberfläche WinRT-API-Entwurf wird davon ausgegangen, dass der Indexer fast immer verfügbar ist.  
-  Daher ist der Indexer bereits in den meisten von den Orten, die apps interessiert sind verfügbar. Wenn der Benutzer gefunden werden, um Daten in nicht indizierten Orten speichern, wird die einfachste Lösung sein, um diesen Speicherort zum Index hinzufügen. Klicken Sie dann zusätzliche Eigenschaften arbeiten, Enumeration werden schneller, und apps ist in der Lage, ändern Sie die Position nachzuverfolgen.
+- Beim Entwurf der WinRT-API-Oberfläche wird vorausgesetzt, dass der Indexer fast immer verfügbar ist.  
+  Der Indexer steht also bereits an den meisten Speicherorten zur Verfügung, die für Apps interessant sind. Wenn sich herausstellt, dass Benutzer Daten an nicht indizierten Speicherorten speichern, besteht die einfachste Lösung darin, den jeweiligen Speicherort dem Index hinzuzufügen. Dies führt dazu, dass die Zusatzeigenschaften funktionieren, die Enumeration schneller durchgeführt wird und der Speicherort von Apps nachverfolgt werden kann.
 
-### <a name="reading-or-writing-supplemental-properties-from-a-file-in-a-non-indexed-location"></a>Beim Lesen oder Schreiben von zusätzlichen Eigenschaften aus einer Datei an einem Ort Non-Indexed 
-Im Fall, den eine app versucht, eine zusätzliche Eigenschaft an einem Speicherort zu schreiben, die derzeit nicht indiziert ist, klicken Sie dann löst der API-Aufruf eine Ausnahme. Dies ist die gleiche Ausnahme werden, die als ausgelöst wird, wenn jemand versucht, den System.Music.AlbumArtist für DOCX-Datei (Ungültiger Args) zu aktualisieren.  
+### <a name="reading-or-writing-supplemental-properties-from-a-file-in-a-non-indexed-location"></a>Lesen oder Schreiben von Zusatzeigenschaften aus einer Datei an einem nicht indizierten Speicherort 
+Falls eine App versucht, eine Zusatzeigenschaft an einen derzeit nicht indizierten Speicherort zu schreiben, löst der API-Aufruf eine Ausnahme aus. Dies ist die gleiche Ausnahme, die beim Versuch ausgelöst wird, das System.Music.AlbumArtist-Element für eine DOCX-Datei zu aktualisieren (Invalid Args).  
  
-### <a name="change-notifications"></a>Benachrichtigungen zu ändern:  
-Änderungsbenachrichtigungen für die UWP und änderungsnachverfolgung werden weiterhin für die zusätzlichen Eigenschaften wie bei Standardeigenschaften. Diese ermöglicht apps, die Daten, um alle Änderungen an eine ihrer apps nachverfolgen bereitstellen 
+### <a name="change-notifications"></a>Änderungsbenachrichtigungen:  
+Die UWP-Änderungsbenachrichtigungen und -Änderungsnachverfolgung funktionieren für die Zusatzeigenschaften weiterhin genauso wie für die Standardeigenschaften. So können Apps, die Daten bereitstellen, alle Änderungen nachverfolgen, die für eine ihrer Apps vorgenommen werden. 
   
-### <a name="invalidating-properties"></a>Eigenschaften für ungültig zu erklären:  
-Die zusätzlichen Eigenschaften für eine Datei ist möglicherweise veraltet, wenn eine Datei geändert oder werden, auf dem System verschoben. Apps, die mithilfe von Push übertragen die Daten werden diejenigen mit den Informationen zu, wenn die Daten gültig ist oder aktualisiert werden, damit das System nur die Tools für sie es selbst herausfinden, bereitgestellt werden müssen.  
+### <a name="invalidating-properties"></a>Ungültigmachen von Eigenschaften:  
+Die Zusatzeigenschaften einer Datei gelten unter Umständen als veraltet, wenn eine Datei geändert oder auf dem System verschoben wird. Apps, die den Pushvorgang für die Daten durchführen, verfügen über die Informationen darüber, ob die Daten gültig sind oder aktualisiert werden müssen. Vom System werden daher nur die Tools bereitgestellt, mit denen die Apps den entsprechenden Vorgang selbst ermitteln können.  
  
-Im Fall eine Datei geändert wird, jedoch nicht verschoben oder umbenannt, die zusätzlichen Eigenschaften für die Datei bleibt unverändert. Die apps werden können, registrieren Sie sich für Benachrichtigungen über die vorhandene API-Oberfläche, und aktualisieren Sie die Eigenschaften nach Bedarf. 
+Falls die Datei geändert, aber nicht verschoben oder umbenannt wird, bleiben alle Zusatzeigenschaften der Datei unverändert. Die Apps können sich für Änderungsbenachrichtigungen über die vorhandene API-Oberfläche registrieren und die Eigenschaften je nach Bedarf aktualisieren. 
  
-Wenn die Datei verschoben wird, werden die Eigenschaften für ungültig erklärt werden soll. Die app wird empfangen die änderungsbenachrichtigungen entweder löschen, zu erstellen, umbenannt oder verschoben werden, je nachdem, wie genau der Vorgang abgeschlossen wurde. Die app hat die änderungsbenachrichtigung erhalten werden können, überprüfen Sie die Datei, und aktualisieren die zusätzlichen Eigenschaften für die Datei aus, je nach Bedarf. 
+Wenn die Datei verschoben wird, werden die Eigenschaften für ungültig erklärt. Die App empfängt die Änderungsbenachrichtigungen für das Löschen, Erstellen, Umbenennen oder Verschieben. Dies hängt davon ab, wie der Vorgang genau durchgeführt wird. Nachdem die App die Änderungsbenachrichtigung empfangen hat, kann sie die Datei untersuchen und die Zusatzeigenschaften der Datei je nach Bedarf aktualisieren. 
  
-### <a name="indexer-rebuilds"></a>Indexer neu erstellt.  
-Gelegentlich der System-Index für eine der aus verschiedenen Gründen neu erstellt werden muss – das Eigenschaftsschema ändern kann, der Benutzer konnte EDP aktivieren oder einfach die Datei kann beschädigt werden. In diesen Fällen werden die zusätzlichen Eigenschaften nicht beibehalten. Es berücksichtigt die Arbeit, um zu versuchen, die zusätzlichen Eigenschaften zu erhalten, wenn der Index neu erstellt wird wird, aber es eine Reihe von wichtigen Blockierungen gab:  
+### <a name="indexer-rebuilds"></a>Neuerstellungen des Indexers  
+Von Zeit zu Zeit muss der Systemindex aus verschiedenen Gründen neu erstellt werden: das Eigenschaftsschema kann sich geändert haben, der Benutzer hat ggf. den Unternehmensdatenschutz aktiviert oder die Datenbankdatei ist einfach beschädigt. In diesen Fällen werden die Zusatzeigenschaften nicht beibehalten. Wir haben den Versuch unternommen, die Zusatzeigenschaften bei der Neuerstellung des Index beizubehalten. Dies wurde aber durch einige wichtige Aspekte verhindert:  
 
-### <a name="protecting-the-data"></a>Schutz von Daten 
-Im Fall, in dem die Datenbankdatei beschädigt ist, entweder von Datenträgerfehlern oder Rogue-Verwaltungssoftware, wird es nicht möglich, die Daten zu schützen, die in dieser Datei gespeichert wurde. Sie müssen an anderer Stelle auf dem System oder irgendwie isoliert vom Rest der Datenbank gespeichert werden. 
+### <a name="protecting-the-data"></a>Schützen der Daten 
+Falls die Datenbankdatei beschädigt ist – entweder aufgrund von Datenträgerfehlern oder nicht autorisierter Software –, ist es unmöglich, die in dieser Datei gespeicherten Daten zu schützen. Sie müssen an einem anderen Ort im System gespeichert oder von den restlichen Daten der Datenbank isoliert werden. 
 
-Da wir bereits sehr viel Arbeit, die der Index weniger wahrscheinlich ist möglicherweise beschädigt durchführen, verringert das die Anzahl der diesem Fall für die Häufigkeit dennoch.  
-Verwalten die Zuordnung zwischen Dateien und die Metadaten während der Neuerstellung 
+Da wir bereits viel Arbeit investieren, um die Anfälligkeit des Index für Beschädigungen zu reduzieren, sollte sich die Anzahl von Vorfällen entsprechend verringern.  
+Beibehalten der Zuordnung von Dateien zu den zugehörigen Metadaten bei Neuerstellungen 
 
-Auch wenn der Index der Daten über eine Neuerstellung schützen kann, ist es unmöglich zu wissen, ob die Datei wurde während der Index neu erstellt wird, wurde geändert. Die Daten, die der Index aus der Datei geschützt ist möglicherweise nicht mehr gültig sein, wenn die Datei geändert oder verschoben wird.  
+Die Daten können vom Index während einer Neuerstellung zwar geschützt werden, aber es kann nicht ermittelt werden, ob sich die Datei während der Neuerstellung des Index geändert hat. Die Daten der Datei, die vom Index geschützt werden, sind ggf. nicht mehr gültig, wenn die Datei geändert oder verschoben wird.  
 Verhalten 
 
-Bei einer Neuerstellung des Indexers verloren alle zusätzliche Daten. Apps muss selbst wieder einfügen von Daten in den Indexer, der während der Wiederherstellung verloren gegangen. Dies eine zusätzliche Belastung für die apps eingefügt, jedoch wird angemessenen angesehen, da sie immer den master-Status für alle ihre Daten enthält.  
+Bei einer Neuerstellung des Indexers gehen alle Zusatzdaten verloren. Die Apps sind dafür verantwortlich, die Daten wieder in den Indexer einzufügen, die während der Neuerstellung verloren gegangen sind. Dies ist eine zusätzliche Belastung für die Apps, die aber als angemessen angesehen wird, da diese immer den Überblick über den Masterstatus ihrer gesamten Daten behalten müssen.  
 
-### <a name="recovering"></a>Wiederherstellen von 
-Nachdem Sie die apps haben festgestellt, dass der Index neu erstellt wird, werden sie für die Aktualisierung der zusätzlichen Eigenschaften nach Bedarf verantwortlich.  
-### <a name="privacy"></a>Datenschutz 
-Einige der Eigenschaften, die auf die Dateien geschrieben werden können auch, dass Benutzer nicht für andere Anwendungen freigegeben werden sollen möglicherweise. Apps sollten in der Lage, um anzugeben, dass die Informationen, die sie in den Eigenschaften schreiben sollen, entweder privat sein. ihre Anwendungen, mit nur wenigen anderen Anwendungen gemeinsam genutzten oder öffentlichen für jede app auf dem System.  
+### <a name="recovering"></a>Wiederherstellung 
+Nachdem die Apps erkannt haben, dass der Index neu erstellt wird, sind sie für die Aktualisierung der Zusatzeigenschaften nach eigenem Ermessen verantwortlich.  
+### <a name="privacy"></a>Vertraulichkeit 
+Für einige Eigenschaften, die ggf. in die Dateien geschrieben werden, kann die Anforderung gelten, dass Benutzer die gemeinsame Verwendung mit anderen Anwendungen nicht wünschen. Apps sollten darauf hinweisen können, dass die in die Eigenschaften geschriebenen Informationen entweder für ihre Anwendungen privat, nur für einige andere Anwendungen freigegeben oder für jede App des Systems öffentlich zugänglich sind.  
 
-Obwohl dies möglicherweise ein interessantes Feature für einige der frühen Anwender der Funktion ist, können sie, dass die erste öffentlicher Eigenschaften immer noch viele Werte für das Design hinzufügen ausgeführt wird. Daher wird dies als eine hilfreich markiert, und wir sollten weiterhin erstellen Sie das Feature ohne Unterstützung für die Werte ausblenden, falls erforderlich. Es später noch Mal hinzugefügt wird weitere Szenarios, geöffnet, damit es in alle Designs berücksichtigt werden.  
+Auch wenn dies für einige „Early Adopters“ ggf. ein interessantes Feature ist, so sind sie doch auch der Meinung, dass öffentliche Eigenschaften für den Entwurf trotzdem sehr nützlich wären. Aus diesem Grund ist dieses Feature als optional gekennzeichnet. Wir arbeiten weiter an seiner Entwicklung, aber ohne Unterstützung zum Ausblenden der Werte bei Bedarf. Wenn das Feature später hinzugefügt wird, ergeben sich noch weitere Szenarien, und es wird wichtig sein, die Nutzung für alle Entwürfe zu erwägen.  
 
-## <a name="conclusions"></a>Schlussfolgerungen 
-Das war alles, zusätzliche Eigenschaften sind eine einfache Möglichkeit, weitere Eigenschaften der Datei in das System zu speichern. Ihre Verwendung ist natürlich optional, es kann aber zu Ihrer app eine Kante über andere apps, die sortieren und Durchsuchen ihre Daten so schnell können nicht. 
+## <a name="conclusions"></a>Schlussfolgerung 
+Das ist alles. Zusatzeigenschaften stellen eine einfache Möglichkeit zum Speichern von mehr Dateieigenschaften im System dar. Die Nutzung ist natürlich optional, aber du kannst deiner App hiermit einen Vorteil gegenüber anderen Apps verschaffen, mit denen Daten nicht so schnell sortiert und durchsucht werden können. 
 
-Wir suchen nach vorne auf Ihre apps starten, um diese Eigenschaften verwenden. Wenn Sie haben Fragen zur Verwendung der Header geben uns in den Kommentaren zu informieren 
+Wir freuen uns auf den Einsatz dieser Eigenschaften in Apps. Falls du Fragen zur Verwendung des Headers hast, kannst du unten einen Kommentar eingeben. 

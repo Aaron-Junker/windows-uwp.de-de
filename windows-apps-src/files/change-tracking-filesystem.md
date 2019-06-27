@@ -1,16 +1,16 @@
 ---
 title: Nachverfolgen von Dateisystemänderungen im Hintergrund
-description: Beschreibt, wie Änderungen in Dateien und Ordner im Hintergrund nachverfolgen, wie sie Benutzer im System verschieben.
+description: Hier erfährst du, wie du im Hintergrund Änderungen an Dateien und Ordnern nachverfolgst, die von Benutzern im System verschoben werden.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b0ec7762fd64f0f0b8de65faa1aaf079bdaba3a3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621575"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63807024"
 ---
 # <a name="track-file-system-changes-in-the-background"></a>Nachverfolgen von Dateisystemänderungen im Hintergrund
 
@@ -21,32 +21,32 @@ ms.locfileid: "57621575"
 -   [**StorageLibraryChangedTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger)
 -   [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary)
 
-Die [ **StorageLibraryChangeTracker** ](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibraryChangeTracker) Klasse ermöglicht apps, die zum Nachverfolgen von Änderungen in Dateien und Ordnern, wie sie Benutzer im System verschieben. Mithilfe der **StorageLibraryChangeTracker** -Klasse, eine app kann nachverfolgen:
+Die Klasse [**StorageLibraryChangeTracker**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibraryChangeTracker) ermöglicht es Apps, Änderungen an Dateien und Ordnern nachzuverfolgen, die von Benutzern im System verschoben werden. Mithilfe der Klasse **StorageLibraryChangeTracker** kann eine App Folgendes nachverfolgen:
 
-- Bei Dateivorgängen Sie einschließlich hinzufügen, löschen Sie, ändern.
-- Ordner-Vorgänge wie umbenennungen und löscht.
-- Dateien und Ordner auf dem Laufwerk verschieben.
+- Dateivorgänge wie Hinzufügen, Löschen und Ändern
+- Ordnervorgänge wie Umbenennungen und Löschungen
+- Verschiebung von Dateien und Ordnern auf dem Laufwerk
 
-Mithilfe dieses Handbuchs erfahren, das Nachrichtensystem-Programmiermodell für die Arbeit mit der änderungsnachverfolgung, zeigen Sie einen Beispielcode, und die verschiedenen Arten von Dateivorgängen, die vom nachverfolgt werden **StorageLibraryChangeTracker**.
+In diesem Handbuch lernst du das Programmiermodell für die Verwendung der Änderungsnachverfolgung kennen. Außerdem findest du hier etwas Beispielcode sowie Informationen zu den verschiedenen Arten von Dateivorgängen, die von **StorageLibraryChangeTracker** nachverfolgt werden.
 
-**StorageLibraryChangeTracker** funktioniert nur für benutzerbibliotheken, oder für einen beliebigen Ordner auf dem lokalen Computer. Dies schließt sekundären Laufwerke oder Wechseldatenträger aber enthält keine NAS-Laufwerke und Netzwerklaufwerke.
+**StorageLibraryChangeTracker** eignet sich für Benutzerbibliotheken sowie für jeden beliebigen Ordner auf dem lokalen Computer. Dies schließt sekundäre Laufwerke und Wechseldatenträger mit ein, gilt aber nicht für NAS- oder Netzlaufwerke.
 
-## <a name="using-the-change-tracker"></a>Verwenden die änderungsnachverfolgung
+## <a name="using-the-change-tracker"></a>Verwenden der Änderungsnachverfolgung
 
-Die änderungsnachverfolgung wird als ein zirkulärer Puffer, der den letzten Speichern System implementiert *N* Dateisystemvorgänge. Apps sind die Änderungen aus dem Puffer gelesen, und klicken Sie dann in ihrer eigenen Erfahrungen verarbeiten können. Wenn die app mit den Änderungen abgeschlossen ist, wird die Änderungen gekennzeichnet, während der Verarbeitung und nie, finden Sie sie erneut ein.
+Die Änderungsnachverfolgung wird im System als zirkulärer Puffer implementiert, in dem die letzten *N* Dateisystemvorgänge gespeichert werden. Apps können die Änderungen aus dem Puffer lesen und in ihrer eigenen Umgebung verarbeiten. Wenn die App die Verarbeitung der Änderungen abgeschlossen hat, werden diese als verarbeitet markiert und in Zukunft nicht mehr angezeigt.
 
-Um die änderungsnachverfolgung in einem Ordner zu verwenden, gehen Sie folgendermaßen vor:
+Führe die folgenden Schritte aus, um die Änderungsnachverfolgung für einen Ordner zu verwenden:
 
-1. Aktivieren der änderungsnachverfolgung für den Ordner.
-2. Warten Sie, bis Änderungen.
-3. Lesen Sie die Änderungen.
-4. Akzeptieren Sie die Änderungen.
+1. Aktiviere die Änderungsnachverfolgung für den Ordner.
+2. Warte auf Änderungen.
+3. Lies die Änderungen.
+4. Akzeptiere die Änderungen.
 
-In den nächsten Abschnitten führen durch jeden Schritt mit einigen Codebeispielen. Das vollständige Codebeispiel wird am Ende dieses Artikels bereitgestellt.
+Die obigen Schritte werden in den nächsten Abschnitten anhand von Codebeispielen veranschaulicht. Das vollständige Codebeispiel befindet sich am Ende des Artikels.
 
-### <a name="enable-the-change-tracker"></a>Aktivieren der änderungsnachverfolgung
+### <a name="enable-the-change-tracker"></a>Aktivieren der Änderungsnachverfolgung
 
-Das System darauf hinzuweisen, dass sie die änderungsnachverfolgung für eine angegebene Bibliothek interessiert ist ist, die die app muss als Erstes. Dies geschieht durch Aufrufen der [ **aktivieren** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) -Methode für die änderungsnachverfolgung für die Bibliothek von Interesse sind.
+Die App muss dem System zunächst signalisieren, dass sie die Änderungsnachverfolgung für eine bestimmte Bibliothek verwenden möchte. Hierzu ruft sie für die relevante Bibliothek die Methode [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) für die Änderungsnachverfolgung auf.
 
 ```csharp
 StorageLibrary videosLib = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
@@ -56,20 +56,20 @@ videoTracker.Enable();
 
 Einige wichtige Hinweise:
 
-- Stellen Sie sicher, dass Ihre app verfügt über die Berechtigung zur richtigen Bibliothek im Manifest vor dem Erstellen der [ **StorageLibrary** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) Objekt. Finden Sie unter [Dateizugriffsberechtigungen](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions) Weitere Details.
-- [**Aktivieren Sie** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) ist threadsicher, nicht zurückgesetzt, den Zeiger und kann so oft wie (mehr dazu später gewünscht) aufgerufen werden.
+- Vergewissere dich vor der Erstellung des Objekts [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary), dass deine App im Manifest über Berechtigungen für die korrekte Bibliothek verfügt. Ausführlichere Informationen findest du unter [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions).
+- [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) ist threadsicher, setzt deinen Zeiger nicht zurück und kann beliebig oft aufgerufen werden. (Dies wird später noch genauer erläutert.)
 
-![Ein leeres System zur änderungsnachverfolgung aktivieren](images/changetracker-enable.png)
+![Aktivieren einer leeren Änderungsnachverfolgung](images/changetracker-enable.png)
 
-### <a name="wait-for-changes"></a>Warten Sie, bis Änderungen
+### <a name="wait-for-changes"></a>Warten auf Änderungen
 
-Nachdem die änderungsnachverfolgung initialisiert wurde, beginnt es alle Vorgänge aufzuzeichnen, die in einer Bibliothek auch auftreten, während die app nicht ausgeführt wird. Apps können sich registrieren, um jederzeit aktiviert werden, eine Änderung vorliegt, durch die Registrierung für, die [ **StorageLibraryChangedTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger) Ereignis.
+Nach der Initialisierung beginnt die Änderungsnachverfolgung damit, sämtliche Vorgänge zu erfassen, die innerhalb der Bibliothek stattfinden – selbst wenn die App gar nicht ausgeführt wird. Apps können sich für das Ereignis [**StorageLibraryChangedTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger) registrieren, um aktiviert zu werden, sobald eine Änderung vorgenommen wird.
 
-![Änderungen, die die änderungsnachverfolgung ohne die app mit dem Lesen hinzugefügt wird](images/changetracker-waiting.png)
+![Änderungen, die der Änderungsnachverfolgung hinzugefügt werden, ohne von der App gelesen zu werden](images/changetracker-waiting.png)
 
-### <a name="read-the-changes"></a>Lesen Sie die Änderungen
+### <a name="read-the-changes"></a>Lesen der Änderungen
 
-Die app kann dann Abrufen von Änderungen aus der änderungsnachverfolgung und erhalten Sie eine Liste der Änderungen seit dem letzten, die diese Option aktiviert. Der folgende Code zeigt, wie Sie eine Liste der Änderungen aus der änderungsprotokollierung abrufen.
+Die App kann nun Änderungen aus der Änderungsnachverfolgung abrufen, um eine Liste mit den Änderungen seit der letzten Überprüfung zu erhalten. Der folgende Code zeigt das Abrufen einer Liste mit Änderungen aus der Änderungsnachverfolgung:
 
 ```csharp
 StorageLibrary videosLibrary = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
@@ -78,58 +78,58 @@ StorageLibraryChangeReader videoChangeReader = videosLibrary.ChangeTracker.GetCh
 IReadOnlyList changeSet = await changeReader.ReadBatchAsync();
 ```
 
-Die app ist dann für die Verarbeitung der Änderungen in eine eigene Benutzeroberfläche oder die Datenbank, die je nach Bedarf verantwortlich.
+Die App muss die Änderungen nun nach Bedarf in ihrer eigenen Umgebung oder Datenbank verarbeiten.
 
-![Lesen Sie die Änderungen aus der änderungsprotokollierung, in eine app-Datenbank](images/changetracker-reading.png)
+![Lesen der Änderungen aus der Änderungsnachverfolgung in eine App-Datenbank](images/changetracker-reading.png)
 
 > [!TIP]
-> Der zweite Aufruf von aktivieren ist gegen eine Racebedingung verwendet werden soll, wenn der Benutzer einen anderen Ordner in der Bibliothek hinzufügt, während Ihre app Änderungen gelesen wird. Ohne den zusätzlichen Aufruf von **aktivieren** Code Fehler EcSearchFolderScopeViolation (0 x 80070490), wenn der Benutzer die Ordner in ihrer Bibliothek geändert wird
+> Der zweite Aufruf dient zur Vermeidung einer Racebedingung für den Fall, dass der Benutzer der Bibliothek einen weiteren Ordner hinzufügt, während deine App Änderungen liest. Ohne den zusätzlichen Aufruf von **Enable** tritt ein ecSearchFolderScopeViolation-Fehler (0x80070490) auf, wenn der Benutzer die Ordner in ihrer Bibliothek ändert.
 
-### <a name="accept-the-changes"></a>Die Änderungen übernehmen
+### <a name="accept-the-changes"></a>Akzeptieren der Änderungen
 
-Nach Abschluss die app verarbeitet die Änderungen an, es sollte das System informiert, anzuzeigenden nie die Änderungen erneut durch Aufrufen der [ **AcceptChangesAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync) Methode.
+Nachdem die App die Änderungen verarbeitet hat, muss sie das System durch Aufrufen der Methode [**AcceptChangesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync) anweisen, die Änderungen nicht mehr anzuzeigen.
 
 ```csharp
 await changeReader.AcceptChangesAsync();
 ```
 
-![Markieren die Änderungen als lesen, damit sie nicht erneut angezeigt wird](images/changetracker-accepting.png)
+![Markieren von Änderungen als gelesen, damit sie nicht mehr angezeigt werden](images/changetracker-accepting.png)
 
-Die app jetzt erhalten nur Änderungen, wenn die änderungsnachverfolgung in der Zukunft zu lesen.
+Bei zukünftigen Lesevorgängen für die Änderungsnachverfolgung erhält die App nun nur noch neue Änderungen.
 
-- Wenn Änderungen, zwischen dem Aufruf stattgefunden haben [ **ReadBatchAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.readbatchasync) und [AcceptChangesAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync), die Zeiger werden nur auf die letzte Änderung, die die app angezeigt werden kann, erweitert werden. Diese anderen Änderungen werden beim nächsten aufgerufen **ReadBatchAsync**.
-- Akzeptiert keine die Änderungen werden dazu, dass das System dem gleichen Satz von Änderungen das nächste zurück, die app ruft Uhrzeit **ReadBatchAsync**.
+- Sollten Änderungen zwischen dem Aufruf von [**ReadBatchAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.readbatchasync) und dem Aufruf von [AcceptChangesAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync) stattgefunden haben, wird der Zeiger nur bis zur neuesten Änderung versetzt, die von der App erfasst wurde. Die übrigen Änderungen sind beim nächsten Aufruf von **ReadBatchAsync** weiterhin verfügbar.
+- Werden die Änderungen nicht akzeptiert, gibt das System die gleiche Gruppe von Änderungen zurück, wenn die App das nächste Mal **ReadBatchAsync** aufruft.
 
-## <a name="important-things-to-remember"></a>Wichtige Punkte zu beachten
+## <a name="important-things-to-remember"></a>Wichtige Punkte
 
-Wenn Sie die änderungsnachverfolgung zu verwenden, gibt es einige Dinge, die Sie, denken Sie daran berücksichtigen, um sicherzustellen, dass alles ordnungsgemäß funktioniert.
+Im Zusammenhang mit der Verwendung der Änderungsnachverfolgung müssen einige Dinge berücksichtigt werden, um sicherzustellen, dass alles ordnungsgemäß funktioniert.
 
 ### <a name="buffer-overruns"></a>Pufferüberläufe
 
-Obwohl wir versuchen, reservieren Sie ausreichend Platz in der änderungsprotokollierung durchlief, enthalten alle Vorgänge auf dem System durchgeführt werden, bis Ihre app gelesen werden kann, ist es sehr einfach, stellen Sie sich ein Szenario vor, in dem die Änderungen in die app Lesen nicht, bevor zirkuläre Puffer selbst überschrieben. Insbesondere dann, wenn der Benutzer das Wiederherstellen von Daten aus einer Sicherung oder eine umfangreiche Sammlung von Bildern von seiner smartphonekamera synchronisiert.
+Wir versuchen zwar, in der Änderungsnachverfolgung genügend Speicherplatz zu reservieren, damit alle ausgeführten Vorgänge gespeichert werden können, bis sie von deiner App gelesen werden, es kann jedoch schnell passieren, dass der zirkuläre Puffer sich selbst überschreibt, bevor die App die Änderungen gelesen hat. Dieser Fall kann insbesondere eintreten, wenn der Benutzer Daten aus einer Sicherung wiederherstellt oder eine umfangreiche Bildersammlung von seinem Smartphone synchronisiert.
 
-In diesem Fall **ReadBatchAsync** gibt den Fehlercode [ **StorageLibraryChangeType.ChangeTrackingLost**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetype). Wenn Ihre app mit diesem Fehlercode empfängt, bedeutet dies ein paar Dinge:
+In diesem Fall gibt **ReadBatchAsync** den Fehlercode [**StorageLibraryChangeType.ChangeTrackingLost**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetype) zurück. Wenn deine App diesen Fehlercode empfängt, bedeutet das Folgendes:
 
-* Der Puffer hat sich seit dem letzten überschrieben, die auf diese. Die beste Vorgehensweise ist erneut die Bibliothek, da keine Informationen aus der nachverfolgung unvollständig sein wird.
-* Die änderungsnachverfolgung wird keine weitere Änderungen zurück, bis zum Aufruf von [ **zurücksetzen**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.reset). Nach dem Zurücksetzen die app aufgerufen wird, wird der Zeiger wird in der die letzte Änderung verschoben und nachverfolgung wird normal fortgesetzt.
+* Der Puffer hat sich seit der letzten Betrachtung selbst überschrieben. In diesem Fall empfiehlt es sich, die Bibliothek erneut zu durchforsten, da die Nachverfolgungsinformationen unvollständig sind.
+* Die Änderungsnachverfolgung gibt bis zum Aufrufen von [**Reset**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.reset) keine weiteren Änderungen zurück. Nachdem die App „Reset“ aufgerufen hat, wird der Zeiger an der Position der neuesten Änderung platziert, und die Nachverfolgung wird normal fortgesetzt.
 
-Wird nur selten, dass diese Fälle abrufen, aber in Szenarien, in denen der Benutzer eine große Anzahl von Dateien auf ihren Datenträger verschoben wird, die wir die änderungsnachverfolgung erheblich zunehmen kann, und richten Sie zu viel Speicher möchten nicht. Dies sollte auf umfangreiche Dateisystemvorgänge zu reagieren, während nicht beschädigen die benutzerfreundlichkeit in Windows-apps ermöglichen.
+Solche Fälle sind zwar eher selten, wenn ein Benutzer aber eine große Anzahl von Dateien auf dem Datenträger verschiebt, soll die Änderungsnachverfolgung nicht zu stark aufgebläht werden und dadurch zu viel Speicherplatz beanspruchen. Mit dieser Lösung können Apps auf umfangreiche Dateisystemvorgänge reagieren, ohne die Benutzerfreundlichkeit unter Windows zu beeinträchtigen.
 
-### <a name="changes-to-a-storagelibrary"></a>Änderungen an einer StorageLibrary
+### <a name="changes-to-a-storagelibrary"></a>Änderungen an einer Speicherbibliothek (StorageLibrary)
 
-Die [ **StorageLibrary** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) Klasse vorhanden ist, als eine virtuelle Gruppe der Stammordner, der anderen Ordner enthalten. Um dies mit einer Datei System System zur änderungsnachverfolgung abzustimmen, haben wir die folgenden Optionen aus:
+Die Klasse [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) ist eine virtuelle Gruppe von Stammordnern, die wiederum weitere Ordner enthalten. Um dies mit einer Dateisystem-Änderungsnachverfolgung unter einen Hut zu bringen, haben wir folgende Entscheidungen getroffen:
 
-- Alle Änderungen an untergeordnete Klasse der Stammordner für die Bibliothek werden in der änderungsprotokollierung durchlief dargestellt. Der Stammordner für die Bibliothek finden Sie mithilfe der [ **Ordner** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) Eigenschaft.
-- Hinzufügen oder entfernen die Stammordner von einem **StorageLibrary** (über [ **RequestAddFolderAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync) und [ **RequestRemoveFolderAsync**  ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync)) erstellt einen Eintrag in der änderungsnachverfolgung nicht. Diese Änderungen nachverfolgt werden können, über die [ **DefinitionChanged** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged) Ereignis oder durch Aufzählen der Stammordner in der Bibliothek mithilfe der [ **Ordner** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) Eigenschaft.
-- Wenn ein Ordner mit Inhalt bereits in der Bibliothek hinzugefügt wird, stehen keine Änderung Benachrichtigung oder Änderung Tracker-Einträge generiert. Alle weiteren Änderungen an die untergeordneten Elemente des diesem Ordner generiert Benachrichtigungen und Tracker-Einträge zu ändern.
+- Sämtliche Änderungen an Nachfolgern der Stammbibliothekordner werden in der Änderungsnachverfolgung berücksichtigt. Die Stammbibliothekordner können mithilfe der Eigenschaft [**Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) ermittelt werden.
+- Das Hinzufügen oder Entfernen von Stammordnern zu bzw. aus einem Element vom Typ **StorageLibrary** (über [**RequestAddFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync) bzw. [**RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync)) führt nicht zur Erstellung eines Eintrags in der Änderungsnachverfolgung. Diese Änderungen können über das Ereignis [**DefinitionChanged**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged) oder mittels Aufzählung der Stammordner in der Bibliothek (mithilfe der Eigenschaft [**Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders)) nachverfolgt werden.
+- Wenn der Bibliothek ein nicht leerer Ordner hinzugefügt wird, werden keine Änderungsbenachrichtigungen oder Einträge in der Änderungsnachverfolgung generiert. Spätere Änderungen an den Nachfolgern dieses Ordners führen zur Generierung von Benachrichtigungen sowie zu Einträgen in der Änderungsnachverfolgung.
 
-### <a name="calling-the-enable-method"></a>Aufrufen der Methode aktivieren
+### <a name="calling-the-enable-method"></a>Aufrufen der Methode „Enable“
 
-Apps sollten Aufrufen [ **aktivieren** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) , sobald sie beginnen, im Dateisystem nachverfolgen und vor jeder Enumeration der Änderungen. Dadurch wird sichergestellt, dass alle Änderungen, die von der änderungsnachverfolgung erfasst werden sollen.  
+Apps müssen die Methode [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) aufrufen, sobald sie mit der Nachverfolgung des Dateisystems beginnen, sowie vor jeder Aufzählung der Änderungen. Dadurch wird sichergestellt, dass alle Änderungen von der Änderungsnachverfolgung erfasst werden.  
 
-## <a name="putting-it-together"></a>Letzte Schritte
+## <a name="putting-it-together"></a>Zusammenführung
 
-Hier wurde der gesamte Code, der verwendet wird, registrieren Sie sich für die Änderungen in der Videobibliothek und starten Sie die Änderungen aus der änderungsnachverfolgung abgerufen.
+Hier siehst du den gesamten Code. Er dient dazu, eine Registrierung für die Änderungen aus der Videobibliothek durchzuführen und mit dem Abrufen der Änderungen aus der Änderungsnachverfolgung zu beginnen.
 
 ```csharp
 private async void EnableChangeTracker()
