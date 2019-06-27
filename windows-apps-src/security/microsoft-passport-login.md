@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b7f168c9f4e812b1cfb459ebea91f61a988122
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 24ae3fb7442ac955b5edf4127dfdf66176c81a43
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371303"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399624"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Erstellen einer Windows Hello-Anmelde-App
 
@@ -224,10 +224,14 @@ In dieser Übung lernen Sie, wie Sie prüfen, ob Windows Hello auf dem Computer 
     }
     ```
 
--   Sie benötigen eine Möglichkeit zur Behandlung von Konten. Da in dieser praktischen Übung weder ein Server noch eine Datenbank vorhanden ist, wird eine Liste mit Benutzern lokal gespeichert und geladen. Klicken Sie mit der rechten Maustaste auf den Ordner „Utils“, und fügen Sie eine neue Klasse namens „AccountHelper.cs“ hinzu. Definieren Sie die Klasse als öffentliche, statische Klasse. „AccountHelper“ ist eine statische Klasse mit allen erforderlichen Methoden zum lokalen Speichern und Laden der Kontenliste. Zum Speichern und Laden wird ein XmlSerializer-Element verwendet. Darüber hinaus müssen Sie sich die gespeicherte Datei und ihren Speicherort merken. Dazu werden Verweise auf weitere Namespaces benötigt.
+-   Sie benötigen eine Möglichkeit zur Behandlung von Konten. Da in dieser praktischen Übung weder ein Server noch eine Datenbank vorhanden ist, wird eine Liste mit Benutzern lokal gespeichert und geladen. Klicken Sie mit der rechten Maustaste auf den Ordner „Utils“, und fügen Sie eine neue Klasse namens „AccountHelper.cs“ hinzu. Definieren Sie die Klasse als öffentliche, statische Klasse. „AccountHelper“ ist eine statische Klasse mit allen erforderlichen Methoden zum lokalen Speichern und Laden der Kontenliste. Zum Speichern und Laden wird ein XmlSerializer-Element verwendet. Darüber hinaus müssen Sie sich die gespeicherte Datei und ihren Speicherort merken.
     
     ```cs
+    using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Text;
+    using System.Threading.Tasks;
     using System.Xml.Serialization;
     using Windows.Storage;
     using PassportLogin.Models;

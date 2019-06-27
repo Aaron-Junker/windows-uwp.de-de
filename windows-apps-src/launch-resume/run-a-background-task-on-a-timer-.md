@@ -6,12 +6,12 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Hintergrundaufgaben
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f163fb660ad158694f925467711e4d62bf8217
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4eaff7142c3c14f04b780b93a7e98e1447f068d8
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371455"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399608"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>Ausführen einer Hintergrundaufgabe für einen Timer
 
@@ -33,7 +33,7 @@ Der integrierte Timer für auf Desktop- oder Mobilgeräte ausgerichtete UWP-Apps
 
 > [!NOTE]
 > Wenn *FreshnessTime* festgelegt ist auf weniger als 15 Minuten wird eine Ausnahme ausgelöst, bei dem Versuch, die die Hintergrundaufgabe zu registrieren.
- 
+
 Beispielsweise bewirkt dieses Triggers eine Hintergrundaufgabe einmal pro Stunde ausgeführt.
 
 ```cs
