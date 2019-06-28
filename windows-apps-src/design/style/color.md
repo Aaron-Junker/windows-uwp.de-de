@@ -3,24 +3,24 @@ description: Hier erfahren Sie, wie Sie Akzentfarben und Designs in Ihren UWP-Ap
 title: Farbe in UWP-Apps
 ms.date: 04/7/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 49d891888e26b6ce4c9f94e92605eaf7d619b6f3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: 3177deb74085737531366f63e9f2e8bbecac06e6
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654255"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67028459"
 ---
 # <a name="color"></a>Farbe
 
-![Favoritenbild](images/header-color.svg)
+![Herobild](images/header-color.svg)
 
-Farbe bietet eine intuitive Möglichkeit, Informationen an Benutzer in Ihrer App zu übermitteln – sie kann Interaktivität anzuzeigen, Feedback auf Benutzeraktionen geben und Ihrer Benutzeroberfläche ein Gefühl von visueller Kontinuität vermitteln. 
+Farbe bietet eine intuitive Möglichkeit zur Übermittlung von Informationen an Benutzer in Ihrer App: Mit ihr kann Interaktivität angezeigt, Feedback auf Benutzeraktionen gegeben und Ihrer Benutzeroberfläche ein Gefühl von visueller Kontinuität verliehen werden.
 
-In UWP-Apps werden die Farben in erster Linie durch Akzentfarbe und Design bestimmt. In diesem Artikel erläutern wir, wie Sie die Farbe in Ihrer App verwenden können, und wie Sie Akzentfarben und Designressourcen verwenden, um Ihre UWP-App in jedem beliebigen Design-Kontext verwendet zu können. 
+In UWP-Apps werden Farben in erster Linie durch Akzentfarbe und Design bestimmt. In diesem Artikel erläutern wir, wie Sie Farbe in Ihrer App einsetzen können und wie Sie mit Akzentfarben und Designressourcen dafür sorgen, dass Ihre UWP-App in jedem beliebigen Designkontext verwendet werden kann.
 
 ## <a name="color-principles"></a>Farbprinzipien
 
@@ -48,21 +48,21 @@ In UWP-Apps werden die Farben in erster Linie durch Akzentfarbe und Design besti
 
 ## <a name="themes"></a>Designs
 
-UWP-Apps können ein helles oder dunkles Anwendungsdesign verwenden. Das Design wirkt sich auf die Farben des App-Hintergrunds, Text, Symbole und [Standardsteuerelemente](../controls-and-patterns/index.md) aus.
+UWP-Apps können ein helles oder dunkles Anwendungsdesign verwenden. Das Design wirkt sich auf die Farben des App-Hintergrunds, Text, Symbole und [allgemeine Steuerelemente](../controls-and-patterns/index.md) aus.
 
 ### <a name="light-theme"></a>Helles Design
 
-![Helles Design](images/color/light-theme.svg)
+![helles Design](images/color/light-theme.svg)
 
 ### <a name="dark-theme"></a>Dunkles Design
 
-![Dunkles Design](images/color/dark-theme.svg)
+![dunkles Design](images/color/dark-theme.svg)
 
-Das Design der UWP-App folgt standardmäßig den Design-Einstellungen des Benutzers aus den Windows-Einstellungen oder dem Standarddesign des Geräts (d. h. dunkel auf XBox). Allerdings können Sie das Design für Ihre UWP-App festlegen. 
+Das Design Ihrer UWP-App folgt standardmäßig den Designeinstellungen des Benutzers aus den Windows-Einstellungen oder dem Standarddesign des Geräts (d.h. dunkel auf XBox). Sie können jedoch das Design für Ihre UWP-App festlegen.
 
 ### <a name="changing-the-theme"></a>Ändern des Designs
 
-Sie können Designs einfach ändern, indem Sie die **RequestedTheme**-Eigenschaft in `App.xaml`-Datei ändern:
+Sie können Designs ändern, indem Sie die **RequestedTheme**-Eigenschaft in Ihrer Datei `App.xaml` ändern.
 
 ```XAML
 <Application
@@ -74,34 +74,34 @@ Sie können Designs einfach ändern, indem Sie die **RequestedTheme**-Eigenschaf
 </Application>
 ```
 
-Das Entfernen der **RequestedTheme**-Eigenschaft bedeutet, dass die Anwendung die Systemeinstellungen des Benutzers verwendet.
+Das Entfernen der **RequestedTheme**-Eigenschaft bedeutet, dass Ihre App die Systemeinstellungen des Benutzers verwendet.
 
-Anwender können auch Designs mit hohem Kontrast verwenden, die eine kleine Palette von Farbkombinationen mit hohem Farbkontrast nutzen, durch die die Benutzeroberfläche leichter zu erkennen ist. In diesem Fall überschreibt das System Ihre RequestedTheme.
+Benutzer können auch das Design mit hohem Kontrast verwenden, das eine kleine Palette von Kontrastfarben nutzt, durch die die Benutzeroberfläche leichter zu erkennen ist. In diesem Fall setzt das System Ihren Wert für „RequestedTheme“ außer Kraft.
 
 ### <a name="testing-themes"></a>Testen von Designs
 
-Wenn Sie kein Design für Ihre App anfordern, sollten Sie unbedingt Ihre App in hellem und dunklem Design testen, um sicherzustellen, dass Ihre App unter allen Umständen lesbar ist.
+Wenn Sie kein Design für Ihre App anfordern, sollten Sie die App unbedingt in hellem und dunklem Design testen, um sicherzustellen, dass sie unter allen Bedingungen lesbar ist.
 
-**Hinweis**: In Visual Studio ist die Standardeinstellung RequestedTheme Light, daher Sie ändern die RequestedTheme um beide zu testen müssen.
+**Hinweis**: In Visual Studio ist „RequestedTheme“ standardmäßig „Light“ (Hell). Daher müssen Sie den Wert für „RequestedTheme“ ändern, um beide Designs zu testen.
 
 ## <a name="theme-brushes"></a>Designpinsel
 
 Allgemeine Steuerelemente verwenden automatisch [Designpinsel](../controls-and-patterns/xaml-theme-resources.md#the-xaml-color-ramp-and-theme-dependent-brushes), um den Kontrast für helle und dunkle Designs anzupassen.
 
-Hier ist eine Abbildung, wie [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md) die Designpinsel verwendet:
+Hier zeigt eine Abbildung, wie das Steuerelement [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md) Designpinsel verwendet:
 
-![Beispiel für Steuerelement-Designpinsel](images/color/theme-brushes.svg)
+![Beispiel für ein Steuerelement mit Designpinseln](images/color/theme-brushes.svg)
 
 Die Designpinsel werden für folgende Zwecke verwendet:
 
 - **Base** gilt für Text.
-- **ALT** ist das Gegenteil von Base.
-- **Chrome** richtet sich an die Elemente der obersten Ebene, z. B. Navigationsbereich oder Befehlsleisten.
+- **Alt** ist das Gegenteil von Base.
+- **Chrome** gilt für Elemente der obersten Ebene, z.B. Navigationsbereiche oder Befehlsleisten.
 - **List** gilt für Steuerelemente.
 
-**Niedrig**/**Mittel**/**Hoch** beziehen sich auf die Intensität der Farben.
+**Low**/**Medium**/**High** (Niedrig/Mittel/Hoch) bezieht sich auf die Intensität der Farbe.
 
-### <a name="using-theme-brushes"></a>Verwenden der Designpinsel
+### <a name="using-theme-brushes"></a>Verwenden von Designpinseln
 
 :::row:::
     :::column:::
@@ -138,7 +138,7 @@ Weitere Informationen zur Verwendung von Designpinseln in Ihrer App finden Sie u
 
 ## <a name="accent-color"></a>Akzentfarbe
 
-Allgemeine Steuerelemente verwenden eine Akzentfarbe, um die Zustandsinformationen zu vermitteln. Standardmäßig ist die Akzentfarbe die `SystemAccentColor`, die der Benutzer in den Einstellungen auswählt. Sie können jedoch auch Akzentfarben entsprechend der Marke Ihrer App anpassen.
+Allgemeine Steuerelemente verwenden eine Akzentfarbe, um Zustandsinformationen zu vermitteln. Standardmäßig ist die Akzentfarbe der Wert für `SystemAccentColor`, den der Benutzer in den Einstellungen auswählt. Sie können die Akzentfarbe für Ihre App jedoch auch entsprechend Ihrer Marke anpassen.
 
 ![Windows-Steuerelemente](images/color/windows-controls.svg)
 
@@ -155,7 +155,7 @@ Allgemeine Steuerelemente verwenden eine Akzentfarbe, um die Zustandsinformation
 
 ### <a name="overriding-the-accent-color"></a>Überschreiben der Akzentfarbe
 
-Wenn Sie Ihre App-Akzentfarbe ändern möchten, platzieren Sie den folgenden Code in `app.xaml`.
+Wenn Sie die Akzentfarbe Ihrer App ändern möchten, fügen Sie den folgenden Code in `app.xaml` ein.
 
 ```xaml
 <Application.Resources>
@@ -167,7 +167,7 @@ Wenn Sie Ihre App-Akzentfarbe ändern möchten, platzieren Sie den folgenden Cod
 
 ### <a name="choosing-an-accent-color"></a>Auswählen einer Akzentfarbe
 
-Wenn Sie eine benutzerdefinierte Akzentfarbe für Ihre App auswählen, stellen Sie sicher, dass Text und Hintergrund, die die Akzentfarbe verwenden, ausreichenden Kontrast für eine optimale Lesbarkeit haben. Um den Kontrast zu testen, können Sie das Farbauswahltool in den Windows-Einstellungen verwenden, oder Sie können diese [online Kontrast-Tools nutzen](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
+Wenn Sie eine benutzerdefinierte Akzentfarbe für Ihre App auswählen, stellen Sie sicher, dass Text und Hintergrund, die die Akzentfarbe verwenden, ausreichenden Kontrast für eine optimale Lesbarkeit aufweisen. Um den Kontrast zu testen, können Sie das Farbauswahltool in den Windows-Einstellungen verwenden, oder Sie können diese [Online-Kontrast-Tools nutzen](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 ![Benutzerdefinierter Akzentfarbwähler in den Windows-Einstellungen](images/color/color-picker.svg)
 
@@ -186,7 +186,8 @@ Diese Schattierungen sind als [Designressourcen](../controls-and-patterns/xaml-t
 - `SystemAccentColorDark2`
 - `SystemAccentColorDark3`
 
-<!-- check this is true --> Sie können auch zugreifen, die Unterscheidung Farbpalette programmgesteuert mit der [ **UISettings.GetColorValue** ](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_) Methode und [ **UIColorType** ](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) die Enumeration.
+<!-- check this is true -->
+Sie können die Akzentfarbpalette auch programmgesteuert mit der [**UISettings.GetColorValue**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_)-Methode und der [**UIColorType**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType)-Enumeration aufrufen.
 
 Sie können die Akzentfarbpalette für Designfarben in Ihrer App verwenden. Hier ist ein Beispiel für die Verwendung der Akzentfarbpalette auf einer Schaltfläche.
 
@@ -208,40 +209,40 @@ Sie können die Akzentfarbpalette für Designfarben in Ihrer App verwenden. Hier
 <Button Content="Button"></Button>
 ```
 
-Wenn Sie farbigen Text auf farbigem Hintergrund verwenden, stellen Sie sicher, dass genügend Kontrast zwischen Text und Hintergrund vorhanden ist. Standardmäßig werden Hyperlinks oder Hypertext in der Akzentfarbe des Benutzers dargestellt. Wenden Sie Varianten der Akzentfarbe im Hintergrund an, sollten Sie eine Variante der ursprüngliche Akzentfarbe verwenden, um den Kontrast von farbigem Text auf farbigem Hintergrund zu optimieren.
+Wenn Sie farbigen Text auf einem farbigem Hintergrund verwenden, stellen Sie sicher, dass genügend Kontrast zwischen Text und Hintergrund vorhanden ist. Standardmäßig werden Hyperlinks oder Hypertext in der Akzentfarbe des Benutzers dargestellt. Wenn Sie Varianten der Akzentfarbe auf den Hintergrund anwenden, sollten Sie eine Variante der ursprünglichen Akzentfarbe verwenden, um den Kontrast von farbigem Text auf einem farbigen Hintergrund zu optimieren.
 
-Das folgende Diagramm zeigt ein Beispiel für die unterschiedlichen Hell/Dunkel-Töne der Akzentfarbe, und gibt an, wie der Farbtyp auf einer farbige Oberfläche angewendet werden kann.
+Das folgende Diagramm zeigt ein Beispiel für die verschiedenen Hell/Dunkel-Töne der Akzentfarbe und gibt an, wie der Farbtyp auf einer farbigen Oberfläche angewendet werden kann.
 
 ![Farbe auf Farbe](images/color/color-on-color.png)
 
-Weitere Informationen zum Verwenden der Stil-Steuerelemente finden Sie unter [XAML-Style](../controls-and-patterns/xaml-styles.md).
+Weitere Informationen zum Formatieren von Steuerelementen finden Sie unter [XAML-Stile](../controls-and-patterns/xaml-styles.md).
 
-## <a name="color-api"></a>Farb-API
+## <a name="color-api"></a>Color-API
 
-Es gibt verschiedene APIs, um Farbe auf Ihrer Anwendung hinzuzufügen. Zuerst kommt die [**Farb**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors)-Klasse, die eine umfangreiche Liste vordefinierter Farben implementiert. Auf diese kann automatisch mithilfe der XAML-Eigenschaften zugegriffen werden. Im folgenden Beispiel erstellen wir eine Schaltfläche und legen Sie Farbeigenschaften im Hintergrund und Vordergrund auf Mitglieder der **Farb**-Klasse fest.
+Es gibt verschiedene APIs, mit denen Sie Ihrer App Farbe hinzufügen können. Dies ist zunächst die [**Colors**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors)-Klasse, die eine umfangreiche Liste vordefinierter Farben implementiert. Darauf kann mithilfe der XAML-Eigenschaften automatisch zugegriffen werden. Im folgenden Beispiel erstellen wir eine Schaltfläche und legen die Farbeigenschaften für Hintergrund und Vordergrund auf Mitglieder der **Colors**-Klasse fest.
 
 ```xaml
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
 ```
 
-Sie können Ihre eigenen Farben aus RGB- und hex-Werten mithilfe der [**Farb**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.color)-Struktur in XAML erstellen.
+Sie können Ihre eigenen Farben aus RGB- und Hex-Werten mithilfe der [**Color**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.color)-Struktur in XAML erstellen.
 
 ```xaml
 <Color x:Key="LightBlue">#FF36C0FF</Color>
 ```
 
-Sie können auch die gleiche Farbe im Code mit der **FromArgb**-Methode erstellen.
+Sie können auch dieselbe Farbe im Code mit der **FromArgb**-Methode erstellen.
 
 ```csharp
 Color LightBlue = Color.FromArgb(255,54,192,255);
 ```
 
-Die Buchstaben "Argb" bedeutet Alpha (Deckkraft), Rot, Grün und Blau, die vier Komponenten einer Farbe. Jedes Argument reicht von 0 bis 255. Sie können den ersten Wert auslassen, was eine standardmäßige Deckkraft von 255 oder 100 % undurchsichtig ergibt.
+Die Buchstaben "Argb" stehen für „Alpha“ (Deckkraft), „Rot“, „Grün“ und „Blau“ – die vier Komponenten einer Farbe. Jedes Argument kann zwischen 0 und 255 liegen. Sie können den ersten Wert wahlweise weglassen und erhalten so eine standardmäßige Deckkraft von 255 oder 100 % undurchsichtig.
 
 > [!Note]
 > Wenn Sie C++ verwenden, müssen Sie Farben mit der [**ColorHelper**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colorhelper)-Klasse erstellen.
 
-Am häufigsten wird für eine **Farbe** ein Argument für [**SolidColorBrush**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.solidcolorbrush) verwendet, das zum Zeichnen von UI-Elementen im Volltonfarbe verwendet werden kann. Diese Pinsel sind in der Regel durch das [**ResourceDictionary**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary) definiert, sodass sie für mehrere Elemente wiederverwendet werden können.
+Am häufigsten wird **Color** als ein Argument für den Pinsel [**SolidColorBrush**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.solidcolorbrush) verwendet, der zum Zeichnen von UI-Elementen in einer Volltonfarbe verwendet werden kann. Diese Pinsel werden in der Regel in einem [**ResourceDictionary**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary) definiert, sodass sie für mehrere Elemente wiederverwendet werden können.
 
 ```xaml
 <ResourceDictionary>
@@ -250,43 +251,43 @@ Am häufigsten wird für eine **Farbe** ein Argument für [**SolidColorBrush**](
 </ResourceDictionary>
 ```
 
-Weitere Informationen über die Verwendung der Pinsel finden Sie unter [XAML-Pinsel](brushes.md).
+Weitere Informationen zur Verwendung von Pinseln finden Sie unter [XAML-Pinsel](brushes.md).
 
 ## <a name="scoping-system-colors"></a>Festlegen des Gültigkeitsbereichs von Systemfarben
 
-Zusätzlich zum Definieren eigene Farben in Ihrer app, können Sie auch unsere systematized Farben, die gewünschten Regionen in der gesamten app beschränken, mit der **ColorSchemeResources** Tag. Mit dieser API können Sie nicht nur farblich zu markieren und Design eine große Gruppe von Steuerelementen durch das Festlegen von ein paar Eigenschaften, sondern auch Vorteile vielen anderen Systemen, die Sie erhalten würde nicht mit Ihrer eigenen benutzerdefinierten Farben manuell definieren normalerweise erhalten:
+Zusätzlich zum Definieren Ihrer eigenen Farben in Ihrer App können Sie auch mithilfe des Tags **ColorPaletteResources** den Gültigkeitsbereich für unsere Systemfarben in der gesamten App auf gewünschte Regionen festlegen. Über diese API können Sie nicht nur großen Gruppen von Steuerelementen gleichzeitig Farben und Designs zuweisen, indem Sie einige wenige Eigenschaften festlegen, sondern Sie können auch viele andere Systemvorteile nutzen, die Sie beim manuellen Definieren Ihrer eigenen benutzerdefinierten Farben normalerweise nicht erhalten würden:
 
-- Jede Farbe mit **ColorSchemeResources** wird keine Auswirkungen auf hoher Kontrast
-  * D. h. Ihre app kann an mehrere Personen ohne zusätzliche Entwürfe oder Dev Kosten zugegriffen werden
-- Können einfach Farben hell, dunkel oder für alle Bereiche geltende für beide Designs festgelegt durch Festlegen einer Eigenschaft für die API
-- Set auf Farben **ColorSchemeResources** Kaskadieren auf alle Steuerelemente mit ähnlichen, die ebenfalls diese Systemfarbe verwenden
-  * Dadurch wird sichergestellt, dass Sie eine konsistente farbdarstellung Geschichte über Ihre app hat und gleichzeitig das Aussehen Ihrer Marke
-- Alle visuellen Zustände, Animationen und Deckkraft Variationen Auswirkungen Re-Vorlage ohne
+- Eine mit **ColorPaletteResources** festgelegte Farbe hat keine Auswirkung auf „Hoher Kontrast“.
+  * Dies bedeutet, dass mehr Personen ohne zusätzliche Design- oder Dev-Kosten auf Ihre App zugreifen können.
+- Sie können Farben in beiden Designs ganz einfach auf „Hell“, „Dunkel“ oder „Pervasive“ festlegen, indem Sie in der API eine einzige Eigenschaft festlegen.
+- Farben, die unter **ColorPaletteResources** festgelegt wurden, werden auf alle ähnlichen Steuerelemente, die diese Systemfarben ebenfalls verwenden, nach unten kaskadiert.
+  * Dadurch wird sichergestellt, dass Ihre gesamte App eine einheitliche Farbdarstellung aufweist und gleichzeitig das Erscheinungsbild Ihrer Marke beibehalten wird.
+- Wirkt sich auf alle visuellen Zustände, Animationen und Deckkraftvarianten aus, ohne dass eine neue Vorlage erforderlich ist.
 
-### <a name="how-to-use-colorschemeresources"></a>Gewusst wie: Verwenden von ColorSchemeResources
+### <a name="how-to-use-colorpaletteresources"></a>Verwenden von „ColorPaletteResources“
 
-ColorSchemeResources ist eine API, die mitteilt, dass das System, auf welche Ressourcen zu Where beschränkt. ColorSchemeResources nehmen muss ein [X: Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute), die kann eine der drei Optionen zur Auswahl:
+„ColorPaletteResources“ ist eine API, die das System informiert, für welche Ressourcen wo ein Gültigkeitsbereich festgelegt wird. Für „ColorPaletteResources“ muss ein [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) angegeben werden, der einer der drei folgenden Werte sein kann:
 - Standard
-  * Zeigt die Farbe Änderungen in beiden [Licht](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) und [dunkel](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme) Design
+  * Zeigt Ihre Farbänderungen im Design [Hell](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) und [Dunkel](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme).
 - Hell
-  * Zeigt eine Farbe ändert sich nur in [Design "hell"](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) 
+  * Zeigt Ihre Farbänderungen nur im [Design „Hell“](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme).
 - Dunkel
-  * Zeigt eine Farbe ändert sich nur in [Design "dunkel"](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
+  * Zeigt Ihre Farbänderungen nur im [Design „Dunkel“](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme).
 
-Festlegen, X: Key wird sichergestellt, dass Sie Farben entsprechend zu, das System oder app-Design ändern, soll eine andere benutzerdefinierte Darstellung im entweder Design.
+Durch Festlegen eines Werts für „x:Key“ wird sichergestellt, dass Ihre Farben sich entsprechend dem System oder dem App-Design ändern, wenn eines der Designs ein anderes benutzerdefiniertes Erscheinungsbild haben soll.
 
-### <a name="how-to-apply-scoped-colors"></a>Wie Sie diesen Bereich Farben anwenden
+### <a name="how-to-apply-scoped-colors"></a>Anwenden von bereichsbezogenen Farben
 
-Festlegen des Gültigkeitsbereichs von Ressourcen über die **ColorSchemeResources** -API in XAML können Sie Systemfarbe oder eines Pinsels an, die in unserer [Designressourcen](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources) Bibliothek und anschließend erneut definieren, innerhalb des Bereichs einer Seite oder Container.
+Durch das Festlegen von Gültigkeitsbereichen über die **ColorPaletteResources**-API in XAML können Sie eine beliebige Systemfarbe oder einen beliebigen Pinsel aus unserer Bibliothek [Designressourcen](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources) verwenden und sie bzw. ihn innerhalb des Bereichs einer Seite oder eines Containers neu definieren.
 
-Wenn Sie zwei Systemfarben - definiert z. B. **SystemBaseLowColor** und **SystemBaseMediumLowColor** in einem Raster, und klicken Sie dann zwei Schaltflächen auf der Seite eingefügt: eine in diesem Raster und eine außerhalb:
+Wenn Sie beispielsweise zwei Systemfarben – **BaseLow** und **BaseMediumLow** – in einem Raster definiert und dann zwei Schaltflächen auf Ihrer Seite platziert haben, eine in diesem Raster und eine außerhalb:
 
 ```xaml
 <Grid x:Name="Grid_A">
     <Grid.Resources>
-        <ColorSchemeResources x:Key="Default" 
-        SystemBaseLowColor="LightGreen" 
-        SystemBaseMediumLowColor="DarkCyan"/>
+        <ColorPaletteResources x:Key="Default"
+        BaseLow="LightGreen"
+        BaseMediumLow="DarkCyan"/>
     </Grid.Resources>
 
     <Buton Content="Button_A"/>
@@ -294,45 +295,45 @@ Wenn Sie zwei Systemfarben - definiert z. B. **SystemBaseLowColor** und **System
 <Buton Content="Button_B"/>
 ```
 
-Sie erhalten **Button_A** mit den angewendeten neuen Farben, und **Button_B** suchen, wie unser System als Standardschaltfläche bleibt:
+Würden Sie **Button_A** mit den angewendeten neuen Farben erhalten, und **Button_B** würde weiterhin wie die Standardschaltfläche unseres Systems aussehen:
 
-![Bereichsbezogene Systemfarben auf Schaltfläche "](images/color/scopedcolors_cyan_button.png)
+![Bereichsbezogene Systemfarben auf Schaltfläche](images/color/scopedcolors_cyan_button.png)
 
-Aber da unsere Systemfarben auf andere Steuerelemente zu kaskadieren festlegen **SystemBaseLowColor** und **SystemBaseMediumLowColor** wirkt sich auf mehr als nur die Schaltflächen. In diesem Fall Steuerelemente wie **ToggleButton**, **RadioButton** und **Schieberegler** wird zudem beeinträchtigt durch diese Farbe ändert, sollten die Steuerelemente im oben Exampl gesetzt werden die Raster-Bereich.
-Wenn Sie eine Änderung Farbe beschränken möchten *auf einen einzelnen steuert nur* definieren Sie dazu **ColorSchemeResources** innerhalb des Steuerelements Ressourcen:
+Da aber alle unsere Systemfarben auch auf andere Steuerelemente nach unten kaskadiert werden, wird sich das Festlegen von Werten für **BaseLow** und **BaseMediumLow** auf mehr als nur Schaltflächen auswirken. In diesem Fall wirken sich diese Änderungen der Systemfarbe auch auf Steuerelemente wie **ToggleButton**, **RadioButton** und **Slider** aus, wenn diese Steuerelemente in den Rasterbereich des vorstehenden Beispiels eingefügt werden.
+Wenn Sie einen Bereich für eine Systemfarbe festlegen möchten, wechseln Sie *zu einem einzigen Steuerelement*, indem Sie **ColorPaletteResources** innerhalb der Ressourcen dieses Steuerelements definieren:
 
 ```xaml
 <Grid x:Name="Grid_A">
     <Button Content="Button_A">
         <Button.Resources>
-            <ColorSchemeResources x:Key="Default" 
-                SystemBaseLowColor="LightGreen" 
-                SystemBaseMediumLowColor="DarkCyan"/>
+            <ColorPaletteResources x:Key="Default"
+                BaseLow="LightGreen"
+                BaseMediumLow="DarkCyan"/>
         </Button.Resources>
     </Button>
 </Grid>
 <Button Content="Button_B"/>
 ```
-Sie haben im Grunde genau dasselbe wie vor, aber jetzt andere Steuerelemente, die dem Raster hinzugefügte keine neue ändert sich die Farbe. Dies ist, da diese Systemfarben zugeordnet sind **Button_A** nur.
+Das Ergebnis entspricht im Wesentlichen exakt dem vorstehend gezeigten Beispiel, doch jetzt übernehmen alle anderen Steuerelemente, die dem Raster hinzugefügt werden, die Farbänderungen nicht. Der Grund: Diese Systemfarben sind nur auf den Bereich **Button_A** bezogen.
 
-### <a name="nesting-scoped-resources"></a>Bereich verschachteln, Ressourcen
+### <a name="nesting-scoped-resources"></a>Schachteln von bereichsbezogenen Ressourcen
 
-Schachteln von Systemfarben ist auch möglich und erfolgt dies durch das Platzieren von **ColorSchemeResources** in der geschachtelten Elemente Ressourcen innerhalb des Markups Ihrer app-Layout:
+Es ist auch möglich, Systemfarben zu schachteln. Dazu fügen Sie **ColorPaletteResources** im Markup Ihres App-Layouts in den Ressourcen der geschachtelten Elemente ein:
 
 ```xaml
 <Grid x:Name="Grid_A">
     <Grid.Resources>
-        <ColorSchemeResources x:Key="Default"
-            SystemBaseLowColor="LightGreen"
-            SystemBaseMediumLowColor="DarkCyan"/>
+        <ColorPaletteResources x:Key="Default"
+            BaseLow="LightGreen"
+            BaseMediumLow="DarkCyan"/>
     </Grid.Resources>
 
     <Button Content="Button_A"/>
     <Grid x:Name="Grid_B">
         <Grid.Resources>
-            <ColorSchemeResources x:Key="Default"
-                SystemBaseLowColor="Goldenrod"
-                SystemBaseMediumLowColor="DarkGoldenrod"/>
+            <ColorPaletteResources x:Key="Default"
+                BaseLow="Goldenrod"
+                BaseMediumLow="DarkGoldenrod"/>
         </Grid.Resources>
 
         <Button Content="Nested Button"/>
@@ -340,33 +341,33 @@ Schachteln von Systemfarben ist auch möglich und erfolgt dies durch das Platzie
 </Grid>
 ```
 
-In diesem Beispiel **Button_A** ist erbende Farben definieren in **Grid_A**Ressourcen und **geschachtelten Schaltfläche** erbt Farben aus **Grid_B**Ressourcen. Durch Erweiterung, dies bedeutet, dass es sich bei allen anderen Steuerelementen innerhalb platziert **Grid_B** überprüft oder anwenden **Grid_B**Ressourcen zunächst vor dem Überprüfen oder Anwenden von **Grid_A**des Ressourcen und unserer Standardfarben schließlich übernommen wird, wenn nichts auf der Seite oder app-Ebene definiert ist.
+In diesem Beispiel erbt **Button_A** Farben, die in den Ressourcen von **Grid_A** definiert wurden, und **Nested Button** erbt Farben aus den Ressourcen von **Grid_B**. Weiter gedacht bedeutet dies, dass alle anderen in **Grid_B** platzieren Steuerelemente zuerst die Ressourcen von **Grid_B** überprüfen oder anwenden, bevor sie die Ressourcen von **Grid_A** überprüfen oder anwenden, und dass sie zuletzt unsere Standardfarben anwenden, wenn auf der Seiten- oder App-Ebene nichts definiert wurde.
 
-Dies funktioniert für eine beliebige Anzahl von geschachtelten Elementen, deren Ressourcen Farbdefinitionen haben.
+Dies funktioniert bei einer beliebigen Anzahl von geschachtelten Elementen, für deren Ressourcen es Farbdefinitionen gibt.
 
-### <a name="scoping-with-a-resourcedictionary"></a>Festlegen des Gültigkeitsbereichs, mit einem ResourceDictionary
+### <a name="scoping-with-a-resourcedictionary"></a>Festlegen des Gültigkeitsbereichs mit einem ResourceDictionary
 
-Sie sind nicht auf einen Container oder auf der Seite Ressourcen beschränkt, und Sie können auch diese Systemfarben in einem ResourceDictionary, die dann zusammengeführt werden kann in jedem Bereich die Möglichkeit, die Sie normalerweise ein Wörterbuch Zusammenführen würde definieren.
+Ihre Möglichkeiten sind nicht auf die Ressourcen für einen Container oder eine Seite beschränkt, und Sie können diese Systemfarben auch in einem ResourceDictionary definieren und es anschließend in jedem beliebigen Bereich genauso zusammenführen, wie Sie ein Wörterbuch normalerweise zusammenführen würden.
 
 #### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
 
-Erstellen Sie zunächst ein ResourceDictionary. Legen Sie die **ColorPaletteResources** innerhalb der ThemeDictionaries und überschreiben Sie die gewünschten Systemfarben:
+Zuerst erstellen Sie ein ResourceDictionary. Dann fügen Sie die **ColorPaletteResources** in den „ThemeDictionaries“ ein und setzen die gewünschten Systemfarben außer Kraft:
 
 ```xaml
 <ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TestApp">
 
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
             <ResourceDictionary.MergedDictionaries>
-            
+
                 <ColorPaletteResources x:Key="Default"
-                    Accent="#FF0073CF" 
-                    AltHigh="#FF000000" 
+                    Accent="#FF0073CF"
+                    AltHigh="#FF000000"
                     AltLow="#FF000000"/>
-                    
+
             </ResourceDictionary>
         </ResourceDictionary.MergedDictionaries>        
     </ResourceDictionary.ThemeDictionaries>
@@ -375,7 +376,7 @@ Erstellen Sie zunächst ein ResourceDictionary. Legen Sie die **ColorPaletteReso
 
 #### <a name="mainpagexaml"></a>MainPage.xaml
 
-Auf der Seite, die das Layout enthält müssen Sie einfach Zusammenführen Sie dieses Wörterbuch in den gewünschten Bereich:
+Auf der Seite mit Ihrem Layout führen Sie dieses Wörterbuch einfach in dem gewünschten Bereich zusammen:
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -386,21 +387,21 @@ Auf der Seite, die das Layout enthält müssen Sie einfach Zusammenführen Sie d
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
     </Grid.Resources>
-             
+
     <Button Content="Button_A"/>
 </Grid>
 ```
 
-Jetzt alle Ressourcen, Designs und benutzerdefinierte Farben können platziert werden in einem einzelnen **MyCustomTheme** Ressourcenverzeichnis und bei Bedarf ohne zusätzliche Überfrachtung im Markup Layout kümmern.
+Jetzt können alle Ressourcen, Designs und benutzerdefinierten Farben in einem einzigen **MyCustomTheme**-Ressourcenverzeichnis platziert und ihnen ein Gültigkeitsbereich nach Bedarf hinzugefügt werden, ohne dass Sie sich Gedanken um zusätzlichen Clutter im Markup Ihres Layouts machen müssen.
 
-### <a name="other-ways-to-define-color-resources"></a>Weitere Informationen zum Definieren der Farbressourcen
+### <a name="other-ways-to-define-color-resources"></a>Andere Möglichkeiten zum Definieren von Farbressourcen
 
-ColorSchemeResources ermöglicht es auch für Systemfarben platziert werden sollen sowie die Definition direkt darin, als Wrapper und nicht in Zeile:
+„ColorPaletteResources“ ermöglicht es auch, dass Systemfarben darin platziert und dort direkt als Wrapper (statt inline) definiert werden:
 
 ``` xaml
-<ColorSchemeResources x:Key="Dark">
+<ColorPaletteResources x:Key="Dark">
     <Color x:Key="SystemBaseLowColor">Goldenrod</Color>
-</ColorSchemeResources>
+</ColorPaletteResources>
 ```
 
 ## <a name="usability"></a>Nutzbarkeit
@@ -414,7 +415,7 @@ ColorSchemeResources ermöglicht es auch für Systemfarben platziert werden soll
 
         Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
 
-        When considering what colors to use in your application, accessiblity should be a primary concern. Use the guidance below to make sure your application is accessible to as many users as possible.
+        When considering what colors to use in your application, accessibility should be a primary concern. Use the guidance below to make sure your application is accessible to as many users as possible.
     :::column-end:::
 :::row-end:::
 
@@ -425,7 +426,7 @@ ColorSchemeResources ermöglicht es auch für Systemfarben platziert werden soll
     :::column span="2":::
         **Lighting**
 
-        Be aware that variation in ambient lighting can affect the useability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
+        Be aware that variation in ambient lighting can affect the usability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
     :::column-end:::
 :::row-end:::
 
@@ -436,7 +437,7 @@ ColorSchemeResources ermöglicht es auch für Systemfarben platziert werden soll
     :::column span="2":::
         **Colorblindness**
 
-        Be aware of how colorblindness could affect the useability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
+        Be aware of how colorblindness could affect the usability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
     :::column-end:::
 :::row-end:::
 
