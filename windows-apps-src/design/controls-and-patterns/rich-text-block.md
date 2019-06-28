@@ -6,16 +6,16 @@ label: Rich text block
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e671c61058ec1c048fbb1b547cc79060a7cd0d0a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364336"
 ---
 # <a name="rich-text-block"></a>Rich-Text-Block
@@ -24,7 +24,7 @@ ms.locfileid: "66364336"
 
 Rich-Text-Blöcke bieten verschiedene Features für erweitertes Textlayout, die Sie verwenden können, wenn Sie Unterstützung für Absätze, Inline-UI-Elemente oder komplexe Textlayouts benötigen.
 
-> **Wichtige APIs:** [RichTextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Absatz Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typografieklasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> **Wichtige APIs:** [RichTextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typography-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -61,7 +61,7 @@ Von RichTextBlock unterstützte Features:
 
 ### <a name="paragraphs"></a>Absätze
 
-Sie definieren mit [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Elementen die Textblöcke, die in einem RichTextBlock-Steuerelement angezeigt werden sollen. Jeder RichTextBlock sollte mindestens einen Paragraph enthalten. 
+Sie definieren mit [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Elementen die Textblöcke, die in einem RichTextBlock Steuerelement angezeigt werden sollen. Jeder RichTextBlock sollte mindestens einen Paragraph enthalten. 
 
 Mit der [RichTextBlock.TextIndent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.textindent)-Eigenschaft können Sie die Größe des Einzugs für alle Absätze in einem RichTextBlock festlegen. Sie können diese Einstellung für bestimmte Absätze in einem RichTextBlock überschreiben, indem Sie die [Paragraph.TextIndent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.paragraph.textindent)-Eigenschaft auf einen anderen Wert festlegen.
 
@@ -151,7 +151,7 @@ Siehe „Typografie“ und „Richtlinien für Schriftarten“.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -167,5 +167,5 @@ Siehe „Typografie“ und „Richtlinien für Schriftarten“.
 - [Windows.UI.Xaml.Controls PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 
-**Für Entwickler (Sonstiges)**
-- [String.Length-Eigenschaft](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+**Für Entwickler (Sonstige)**
+- [StringLength-Eigenschaft](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

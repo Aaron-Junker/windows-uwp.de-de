@@ -6,16 +6,16 @@ label: Text box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2db08cc577a82ddf6973cb33e41f9bdb39fdffde
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364232"
 ---
 # <a name="text-box"></a>Textfeld
@@ -83,7 +83,7 @@ Dieser XAML-Code führt zu folgendem Textfeld.
 
 Üblicherweise wird ein Textfeld verwendet, um die Dateneingabe in ein Formular zu ermöglichen, wobei die [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)-Eigenschaft dazu dient, die vollständige Textzeichenfolge aus dem Textfeld abzurufen. Zum Zugriff auf die Text-Eigenschaft nutzen Sie in der Regel ein Ereignis wie etwa eine Schaltfläche, Sie können jedoch auch ein [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)- oder [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging)-Ereignis verwenden, wenn bei einer Textänderung eine Aktion ausgeführt werden muss.
 
-Dieses Beispiel zeigt, wie Sie abrufen, und legen Sie den aktuellen Inhalt eines Textfelds.
+Dieses Beispiel zeigt, wie Sie den aktuellen Inhalt eines Textfelds abrufen und festlegen.
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -111,7 +111,7 @@ In den folgenden Fällen wird die „Alles löschen”-Schaltfläche nicht angez
 - **AcceptsReturn** ist **true**.
 - **TextWrap** hat einen anderen Wert als **NoWrap**.
 
-Dieses Beispiel zeigt, wie Sie abrufen, und legen Sie den aktuellen Inhalt eines Textfelds.
+Dieses Beispiel zeigt, wie Sie den aktuellen Inhalt eines Textfelds abrufen und festlegen.
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -309,7 +309,7 @@ Weitere Informationen und Beispiele finden Sie unter [Verwenden des Eingabeumfan
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -319,4 +319,4 @@ Weitere Informationen und Beispiele finden Sie unter [Verwenden des Eingabeumfan
 - [Richtlinien für die Texteingabe](text-controls.md)
 - [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length-Eigenschaft](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [StringLength-Eigenschaft](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

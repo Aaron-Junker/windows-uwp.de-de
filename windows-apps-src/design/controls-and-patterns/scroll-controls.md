@@ -6,17 +6,17 @@ label: Scrollbars
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: Abarlow, pagildea
 design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e401e700728e1d481fd2142281fe81524d146f94
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364430"
 ---
 # <a name="scroll-viewer-controls"></a>Bildlaufanzeige-Steuerelemente
@@ -87,7 +87,7 @@ Um Ihrer Seite einen vertikalen Bildlauf hinzuzufügen, umschließen Sie den Sei
 </Page>
 ```
 
-Dieses XAML zeigt das horizontalen Bildlauf aktivieren, setzen Sie ein Bild in einer Bildlaufanzeige und Zoomen zu aktivieren.
+Dieser XAML-Code veranschaulicht das Aktivieren des horizontalen Scrollens, das Einfügen eines Bilds in eine Bildlaufanzeige und das Aktivieren des Zooms.
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
@@ -99,13 +99,13 @@ Dieses XAML zeigt das horizontalen Bildlauf aktivieren, setzen Sie ein Bild in e
 
 ## <a name="scrollviewer-in-a-control-template"></a>ScrollViewer in einer Steuerelementvorlage
 
-Normalerweise ist das ScrollViewer-Steuerelement Teil von anderen Steuerelementen. Eine ScrollViewer-Komponente zeigt zusammen mit der [ScrollContentPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollContentPresenter)-Klasse zur Unterstützung nur dann einen Viewport sowie Bildlaufleisten an, wenn der Layoutbereich des Hoststeuerelements einschränkt wird und kleiner als die Größe des erweiterten Inhalts ist. Dies ist häufig bei Listen der Fall, daher enthalten [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)- und [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)-Vorlagen immer ScrollViewer. [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) und [RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) enthalten ebenfalls ScrollViewer in ihren Vorlagen.
+Normalerweise ist das ScrollViewer-Steuerelement Teil von anderen Steuerelementen. Eine ScrollViewer-Komponente zeigt zusammen mit der [ScrollContentPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollContentPresenter)-Klasse zur Unterstützung nur dann einen Viewport sowie Bildlaufleisten an, wenn der Layoutbereich des Hoststeuerelements einschränkt wird und kleiner als die Größe des erweiterten Inhalts ist. Dies ist häufig bei Listen der Fall, daher enthalten [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)- und [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)-Vorlagen immer ScrollViewer. [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) und [RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) umfassen ebenfalls ScrollViewer in der Vorlage.
 
 Wenn eine **ScrollViewer**-Komponente in einem Steuerelement vorhanden ist, ist im Hoststeuerelement häufig die Ereignisbehandlung für bestimmte Eingabeereignisse und Bearbeitungen integriert, mit denen ein Bildlauf für den Inhalt durchgeführt werden kann. GridView interpretiert z. B. eine Wischbewegung, wodurch für den Inhalt ein horizontaler Bildlauf durchgeführt wird. Die Eingabeereignisse und Manipulationen von Rohdaten, die das Hoststeuerelement empfängt, werden als durch das Steuerelement behandelt betrachtet, und untergeordnete Ereignisse wie [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) werden nicht ausgelöst oder per Bubbling an übergeordnete Container weitergeleitet. Sie können das integrierte Verhalten des Steuerelements teilweise ändern, indem Sie eine Steuerelementklasse und die virtuellen **On***-Methoden für Ereignisse überschreiben oder eine neue Vorlage für das Steuerelement verwenden. In beiden Fällen ist es allerdings nicht unkompliziert, das ursprüngliche Standardverhalten zu reproduzieren, das in der Regel vorhanden ist, damit das Steuerelement wie erwartet auf Ereignisse und Eingabeaktionen und -gesten des Benutzers reagiert. Sie sollten daher genau überlegen, ob das Eingabeereignis wirklich ausgelöst werden soll. Sie sollten überprüfen, ob andere Eingabeereignisse oder Gesten vorhanden sind, die nicht von dem Steuerelement behandelt werden, und diese im Entwurf für die App oder die Steuerelementinteraktion verwenden.
 
 Damit Steuerelemente, die einen ScrollViewer enthalten, einige Verhaltensweisen und Eigenschaften innerhalb der ScrollViewer-Komponente steuern können, definiert ScrollViewer eine Reihe von angefügten XAML-Eigenschaften, die in Stilen festgelegt und in Vorlagenbindungen verwendet werden können. Weitere Informationen zu angefügten Eigenschaften finden Sie unter [Übersicht über angefügte Eigenschaften](../../xaml-platform/attached-properties-overview.md).
 
-**ScrollViewer XAML angefügten Eigenschaften**
+**Angefügte XAML-Eigenschaften für ScrollViewer**
 
 ScrollViewer definiert die folgenden angefügten XAML-Eigenschaften:
 
@@ -147,7 +147,7 @@ In Fällen, in denen im XAML-Code wie im Beispielcode gezeigt ein ScrollViewer e
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-topics"></a>Verwandte Themen
 

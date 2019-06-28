@@ -6,16 +6,16 @@ label: Search
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364481"
 ---
 # <a name="search-and-find-in-page"></a>Suche und „Auf Seite suchen“
@@ -29,21 +29,21 @@ Die Suche ist eine der besten Möglichkeiten, um Inhalte in Ihrer App zu finden.
 ## <a name="elements-of-the-search-experience"></a>Elemente der Suche
 
 
-**Eingabe.**    Text ist der am häufigsten verwendeten Modus der Sucheingabe und bildet den Schwerpunkt dieses Leitfadens. Andere gängige Eingabemodi sind Spracheingabe und Kamera. Für diese sind jedoch in der Regel eine Verknüpfung mit der Gerätehardware sowie ggf. zusätzliche Steuerelemente oder benutzerdefinierte UI-Elemente in der App erforderlich.
+**Eingabe.**   Die Texteingabe ist der am häufigsten verwendete Suchmodus und steht daher bei diesem Leitfaden im Mittelpunkt. Andere gängige Eingabemodi sind Spracheingabe und Kamera. Für diese sind jedoch in der Regel eine Verknüpfung mit der Gerätehardware sowie ggf. zusätzliche Steuerelemente oder benutzerdefinierte UI-Elemente in der App erforderlich.
 
-**Keine Eingabe.**    Sobald der Benutzer hat das Eingabefeld aktiviert, aber bevor der Benutzer Text eingegeben wurde, können Sie anzeigen, sogenannte "keine Eingabe Canvas." Die Nulleingabe-Canvas wird häufig in der App-Canvas angezeigt, sodass der Inhalt durch [einen automatischen Vorschlag](auto-suggest-box.md) ersetzt wird, wenn der Benutzer mit der Eingabe der Abfrage beginnt. Für den Nulleingabezustand eignen sich beispielsweise der aktuelle Suchverlauf, populäre Suchabfragen, kontextbezogene Suchvorschläge sowie Hinweise und Tipps.
+**Nulleingabe.**   Nach der Aktivierung des Eingabefelds durch den Benutzer (aber noch vor der Texteingabe) können Sie eine sogenannte Nulleingabe-Canvas anzeigen. Die Nulleingabe-Canvas wird häufig in der App-Canvas angezeigt, sodass der Inhalt durch [einen automatischen Vorschlag](auto-suggest-box.md) ersetzt wird, wenn der Benutzer mit der Eingabe der Abfrage beginnt. Für den Nulleingabezustand eignen sich beispielsweise der aktuelle Suchverlauf, populäre Suchabfragen, kontextbezogene Suchvorschläge sowie Hinweise und Tipps.
 
 ![Beispiel für Cortana mit Nulleingabe-Canvas](images/search-cortana-example.png)
 
  
 
-**Fragen Sie die Formulierung/automatisch vorschlagen.**    Abfrage Formulierung NULL eingegebenen Inhalt ersetzt, sobald der Benutzer beginnt, Daten eingegeben. Während der Eingabe einer Abfragezeichenfolge werden dem Benutzer kontinuierlich aktualisierte Abfragevorschläge oder Optionen zur Mehrdeutigkeitsvermeidung angezeigt, um die Eingabe zu beschleunigen und ihn bei der Formulierung einer geeigneten Abfrage zu unterstützen. Dieses Verhalten von Abfragevorschlägen ist in das [Steuerelement für automatische Vorschläge](auto-suggest-box.md) integriert und ermöglicht auch die Symbolanzeige innerhalb der Suche (beispielsweise ein Mikrofon oder ein Commit-Symbol). Jedes andere Verhalten muss von der App behandelt werden.
+**Abfrageformulierung/automatischer Vorschlag.**   Die Abfrageformulierung ersetzt den Nulleingabeinhalt, sobald der Benutzer mit der Eingabe beginnt. Während der Eingabe einer Abfragezeichenfolge werden dem Benutzer kontinuierlich aktualisierte Abfragevorschläge oder Optionen zur Mehrdeutigkeitsvermeidung angezeigt, um die Eingabe zu beschleunigen und ihn bei der Formulierung einer geeigneten Abfrage zu unterstützen. Dieses Verhalten von Abfragevorschlägen ist in das [Steuerelement für automatische Vorschläge](auto-suggest-box.md) integriert und ermöglicht auch die Symbolanzeige innerhalb der Suche (beispielsweise ein Mikrofon oder ein Commit-Symbol). Jedes andere Verhalten muss von der App behandelt werden.
 
 ![example of query/formulation einen automatischen Vorschlag](images/search-autosuggest-example.png)
 
  
 
-**Legen Sie die Ergebnisse.**    Die Suchergebnisse werden häufig direkt in das Eingabefeld für die Suche. Dies ist zwar nicht zwingend erforderlich, die Gegenüberstellung von Eingabe und Ergebnissen bewahrt jedoch den Kontext und ermöglicht dem Kunden eine direkte Bearbeitung der vorherigen Abfrage oder die Eingabe einer neuen Abfrage. Dieser Zusammenhang kann noch weiter verdeutlicht werden, indem der Hinweistext durch die Abfrage ersetzt wird, auf die der Ergebnissatz zurückzuführen ist.
+**Ergebnissatz.**   Suchergebnisse werden üblicherweise direkt unter dem Eingabefeld der Suche angezeigt. Dies ist zwar nicht zwingend erforderlich, die Gegenüberstellung von Eingabe und Ergebnissen bewahrt jedoch den Kontext und ermöglicht dem Kunden eine direkte Bearbeitung der vorherigen Abfrage oder die Eingabe einer neuen Abfrage. Dieser Zusammenhang kann noch weiter verdeutlicht werden, indem der Hinweistext durch die Abfrage ersetzt wird, auf die der Ergebnissatz zurückzuführen ist.
 
 Eine Möglichkeit für eine wirksame Bearbeitung der vorherigen Abfrage oder die Eingabe einer neuen Abfrage besteht darin, bei Reaktivierung des Felds die vorherige Abfrage hervorzuheben. In diesem Fall ersetzt jede Tastatureingabe die vorherige Zeichenfolge, die Zeichenfolge bleibt jedoch erhalten, sodass der Benutzer einen Cursor platzieren und die vorherige Zeichenfolge bearbeiten oder anhängen kann.
 
@@ -56,11 +56,11 @@ Die Suche ist ein gängiges Feature, und die entsprechenden UI-Elemente begegnen
 
 Im Anschluss finden Sie einige gängige Suchbereiche:
 
-**Globale** und **kontextbezogene/Optimierung.**   Suche auf mehrere Quellen mit Cloud- und lokalen Inhalt. Zu den unterschiedlichen Ergebnisse zählen beispielsweise URLs, Dokumente, Medien, Aktionen und Apps.
+**Global** und **Kontext/Eingrenzung.**   Übergreifende Suche für mehrere Quellen mit Cloud-basierten und lokalen Inhalten. Zu den unterschiedlichen Ergebnisse zählen beispielsweise URLs, Dokumente, Medien, Aktionen und Apps.
 
-**Web.**    Finden Sie einen Web-Index. Die Ergebnisse können unter anderem Seiten, Entitäten und Antworten umfassen.
+**Web.**   Suche nach einem Webindex. Die Ergebnisse können unter anderem Seiten, Entitäten und Antworten umfassen.
 
-**Meine Produkte sind.**    Suche über Geräte, Cloud, soziale Graphen und vieles mehr. Die Ergebnisse können variieren, sind jedoch durch die Verbindung mit Benutzerkonten eingegrenzt.
+**Mein Inhalt.**   Übergreifende Suche für Geräte, Cloud, Soziogramme und mehr. Die Ergebnisse können variieren, sind jedoch durch die Verbindung mit Benutzerkonten eingegrenzt.
 
 Verwenden Sie Hinweistext, um den Suchbereich zu kommunizieren. Dazu gehören:
 
@@ -200,7 +200,7 @@ Wenn eine Textübereinstimmung in der Suche vorliegt, sollte der erste Begriff i
 
 
 
-## <a name="implementing-find-in-page"></a>**Find-in-Page-Implementierung**
+## <a name="implementing-find-in-page"></a>**Implementieren von „Auf Seite suchen“**
 
 -   Bei Dokumentviewern, Lesern und Browsern handelt es sich um die wahrscheinlichsten App-Typen für die Bereitstellung von „Auf Seite suchen“, was Benutzern eine vollständige Bildschirmanzeige-/-leseerfahrung ermöglicht.
 -   Die Funktion „Auf Seite suchen“ ist sekundär und sollte auf einer Befehlsleiste platziert werden.

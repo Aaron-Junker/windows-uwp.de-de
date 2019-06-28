@@ -6,16 +6,16 @@ label: Labels
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5996fb15c0d7302c7360c2e45613f0da2720d415
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364650"
 ---
 # <a name="labels"></a>Beschriftungen
@@ -39,7 +39,7 @@ In XAML verfügen zahlreiche Steuerelemente über eine integrierte Header-Eigens
 
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
-* [Beispiel für XAML UI-Grundlagen](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [Beispiel für XAML-Benutzeroberflächengrundlagen](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Textsteuerelemente](text-controls.md)
@@ -50,7 +50,7 @@ In XAML verfügen zahlreiche Steuerelemente über eine integrierte Header-Eigens
 * [TimePicker.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.header)
 * [Slider.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider.header)
 * [ComboBox.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox.header)
-* [RichEditBox.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.header)
+* [RichEditBox.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.header)
 * [TextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
  

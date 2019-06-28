@@ -4,23 +4,23 @@ title: Zeichnen von Formen
 description: Erfahren Sie, wie Sie Formen wie Ellipsen, Rechtecke, Polygone und Pfade zeichnen. Mithilfe der Klasse Path visualisieren Sie eine ziemlich komplexe vektorbasierte Zeichnungssprache in einer XAML-Benutzeroberfläche. Beispielsweise können Sie auf diese Weise Bézierkurven zeichnen.
 ms.date: 11/16/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 06f5ce8ad7576114137adb862f89720e27d3802b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364291"
 ---
 # <a name="draw-shapes"></a>Zeichnen von Formen
 
 Erfahren Sie, wie Sie Formen wie Ellipsen, Rechtecke, Polygone und Pfade zeichnen. Mithilfe der Klasse [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) visualisieren Sie eine ziemlich komplexe vektorbasierte Zeichnungssprache in einer XAML-Benutzeroberfläche. Beispielsweise können Sie auf diese Weise Bézierkurven zeichnen.
 
-> **Wichtige APIs:** [Path-Klasse](/uwp/api/Windows.UI.Xaml.Shapes.Path), [Windows.UI.Xaml.Shapes Namespace](/uwp/api/Windows.UI.Xaml.Shapes), [Windows.UI.Xaml.Media-Namespace](/uwp/api/Windows.UI.Xaml.Media)
+> **Wichtige APIs:** [Path-Klasse](/uwp/api/Windows.UI.Xaml.Shapes.Path), [Windows.UI.Xaml.Shapes-Namespace](/uwp/api/Windows.UI.Xaml.Shapes), [Windows.UI.Xaml.Media-Namespace](/uwp/api/Windows.UI.Xaml.Media)
 
 
-Zwei Sätzen von Klassen definieren Sie eine Region der Speicherplatz in XAML UI: [**Form** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) Klassen und [ **Geometrie** ](/uwp/api/Windows.UI.Xaml.Media.Geometry) Klassen. Der Hauptunterschied zwischen diesen Klassen besteht darin, dass einer **Shape**-Klasse ein Pinsel zugeordnet ist und diese auf dem Bildschirm gerendert werden kann, während eine **Geometry**-Klasse einfach einen Bereich definiert und nur gerendert wird, wenn sie Informationen zu einer anderen UI-Eigenschaft beiträgt. Sie können sich eine **Shape**-Klasse als [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) vorstellen, dessen Umrandung durch eine **Geometry**-Klasse definiert ist. In diesem Thema werden hauptsächlich die **Shape**-Klassen behandelt.
+Zwei Sätze von Klassen definieren einen Bereich in der XAML-Benutzeroberfläche:  [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)-Klassen und [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry)-Klassen. Der Hauptunterschied zwischen diesen Klassen besteht darin, dass einer **Shape**-Klasse ein Pinsel zugeordnet ist und diese auf dem Bildschirm gerendert werden kann, während eine **Geometry**-Klasse einfach einen Bereich definiert und nur gerendert wird, wenn sie Informationen zu einer anderen UI-Eigenschaft beiträgt. Sie können sich eine **Shape**-Klasse als [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) vorstellen, dessen Umrandung durch eine **Geometry**-Klasse definiert ist. In diesem Thema werden hauptsächlich die **Shape**-Klassen behandelt.
 
 Die [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)-Klassen sind [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line), [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse), [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon), [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) und [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path). **Path** ist interessant, da Sie mit dieser Klasse beliebige Geometrien definieren können, und die Klasse [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) stellt eine Möglichkeit zum Definieren der Teile eines **Path** dar.
 
@@ -63,7 +63,7 @@ Wenn eine [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) in einem UI-Lay
 
 Eine Gruppe von 6 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)-Elementen ist Teil der Steuerelementvorlage für das [**ProgressRing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)-Steuerelement. 2 konzentrische **Ellipse**-Elemente sind Teil eines [**RadioButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton).
 
-## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rechteck
+## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rectangle
 
 Ein [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) ist eine vierseitige Form, bei der die gegenüberliegenden Seiten gleich sind. Um ein einfaches **Rectangle** zu erstellen, geben Sie eine [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), eine [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) und einen Wert für [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) an.
 
@@ -102,7 +102,7 @@ Hier die gerenderte [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-K
 
 ![Ein gerendertes Rechteck](images/shapes-rectangle.jpg)
 
-**Tipp**  es gibt einige Szenarien für die UI-Definitionen, anstatt eine [ **Rechteck**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), [ **Rahmen** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) möglicherweise besser geeignet. Wenn Sie eine rechteckige Form um anderen Inhalt zeichnen möchten, ist **Border** u. U. besser geeignet. Rahmen können untergeordnete Elemente enthalten, und ihre Größe passt sich automatisch an den Inhalt an. Dagegen sind die Breite und Höhe von **Rectangle**-Elementen auf feste Werte festgelegt. Die Ecken von **Border** können durch Festlegen der [**CornerRadius**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.cornerradius)-Eigenschaft auch abgerundet werden.
+**Tipp**  In einigen Szenarien für UI-Definitionen ist die Verwendung eines [**Border**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Elements anstelle eines [**Rectangle**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)-Elements möglicherweise angemessener. Wenn Sie eine rechteckige Form um anderen Inhalt zeichnen möchten, ist **Border** u. U. besser geeignet. Rahmen können untergeordnete Elemente enthalten, und ihre Größe passt sich automatisch an den Inhalt an. Dagegen sind die Breite und Höhe von **Rectangle**-Elementen auf feste Werte festgelegt. Die Ecken von **Border** können durch Festlegen der [**CornerRadius**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.cornerradius)-Eigenschaft auch abgerundet werden.
 
 Andererseits ist [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) wahrscheinlich eine bessere Wahl für die Steuerelementkomposition. Eine **Rectangle**-Form wird in vielen Steuerelementvorlagen verwendet, da sie als FocusVisual-Teil für fokussierbare Steuerelemente verwendet wird. Befindet sich das Steuerelement in einem fokussierten Ansichtszustand, wird dieses Rechteck sichtbar gemacht; in anderen Zuständen ist es ausgeblendet.
 
@@ -141,7 +141,7 @@ Dies ist das gerenderte [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon).
 
 ![Ein gerendertes Polygon](images/shapes-polygon.jpg)
 
-**Tipp**  ein [ **Punkt** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) Wert wird häufig als einen Typ in XAML für Szenarien als deklarieren die Scheitelpunkte des Shapes verwendet. Ein **Point** ist beispielsweise Teil der Ereignisdaten für Fingereingabeereignisse, damit Sie ermitteln können, wo genau in Koordinatenbereich die Fingereingabeaktion stattgefunden hat. Weitere Informationen zu **Point** und dessen Verwendung in XAML oder Code finden Sie in der API-Referenz für [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point).
+**Tipp**  Ein [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)-Wert wird in XAML oft als Typ für andere Szenarien als das Deklarieren der Scheitelpunkte von Formen verwendet. Ein **Point** ist beispielsweise Teil der Ereignisdaten für Fingereingabeereignisse, damit Sie ermitteln können, wo genau in Koordinatenbereich die Fingereingabeaktion stattgefunden hat. Weitere Informationen zu **Point** und dessen Verwendung in XAML oder Code finden Sie in der API-Referenz für [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point).
 
 ## <a name="line"></a>Zeile
 
@@ -165,11 +165,11 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline-Objekt
+## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
 Eine [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) ähnelt einem [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon), da bei beiden die Grenze der Form durch eine Reihe von Punkten definiert wird. Bei einer **Polyline** wird jedoch der letzte Punkt nicht mit dem ersten verbunden.
 
-**Beachten Sie**    Sie möglicherweise explizit einen identischen Start- und Endpunkt in der [ **Punkte** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.polyline.points) legen Sie für die [ **Polylinie** ](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), aber in diesem Fall Sie wahrscheinlich hätte eine [ **Polygon** ](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) stattdessen.
+**Hinweis**  Sie könnten zwar in den [**Points**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.polyline.points) explizit einen identischen Anfangs- und Endpunkt für [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) festlegen. In diesem Fall sollten Sie jedoch wahrscheinlich eher ein [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) verwenden.
 
 Wenn Sie die [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) einer [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) angeben, füllt **Fill** den Innenraum der Form. Dies gilt auch, wenn der Anfangs- und Endpunkt der [**Points**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.polyline.points), die für **Polyline** festgelegt wurden, keine Überschneidungen aufweisen. Wenn Sie keine **Fill** angeben, ähnelt die **Polyline** dem Rendering für mehrere einzelne [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line)-Elemente, bei denen sich die Anfangs- und Endpunkte aufeinander folgender Linien überschneiden.
 
@@ -233,7 +233,7 @@ Hier ist der gerenderte [**Pfad**](/uwp/api/Windows.UI.Xaml.Shapes.Path).
 
 ![Ein gerenderter Pfad](images/shapes-path.jpg)
 
-Das nächste Beispiel zeigt die Verwendung der anderen vorgestellten Technik: [**GeometryGroup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.geometrygroup) mit [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry). In diesem Beispiel führt einige der zugehörigen Geometrietypen, die als Teil der verwendet werden können eine **PathGeometry**: [**PathFigure** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) und die verschiedenen Elemente, die ein Segment im können [ **PathFigure.Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments).
+Das nächste Beispiel zeigt die Verwendung der anderen vorgestellten Technik: [**GeometryGroup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.geometrygroup) mit [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry). Dieses Beispiel zeigt einige der beitragenden Geometrietypen, die als Teil von **PathGeometry** verwendet werden können:  [**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) und die verschiedenen Elemente, die ein Segment in [**PathFigure.Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments) darstellen können.
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">

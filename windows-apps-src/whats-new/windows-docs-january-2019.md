@@ -1,90 +1,90 @@
 ---
-title: Neuerungen in Windows-Dokumentation im Januar 2019 – Entwickeln von UWP-apps
-description: Neue Features, Videos und Anleitungen für Entwickler haben die Windows 10-Entwicklerdokumentation für Januar 2019 hinzugefügt wurde
-keywords: neues, Update, Funktionen, die Anleitung für Entwickler, Windows 10, Januar
+title: Neues in der Windows-Dokumentation im Januar 2019 – Entwickeln von UWP-Apps
+description: Neue Features, Videos und Entwicklerleitfäden in der Entwicklerdokumentation für Windows 10 im Januar 2019
+keywords: Neuigkeiten, Neues, Update, Features, Entwicklerleitfäden, Windows 10, Januar
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: beb80c28866b8f8207f203b70cb504dcd034098d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636575"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63800605"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Was ist neu in der Windows-Entwickler-Dokumentation im Januar 2019
+# <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Neues in der Windows-Entwicklerdokumentation im Januar 2019
 
-Die Entwicklerdokumentation für die Windows-Plattform wird ständig mit Informationen über neue Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Anleitung für Entwickler und Videos haben in den Monat Januar zur Verfügung gestellt wurde.
+Die Entwicklerdokumentation für die Windows-Plattform wird kontinuierlich mit Informationen zu neuen Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden und Videos wurden im Januar veröffentlicht.
 
 Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
 ## <a name="features"></a>Features
 
-### <a name="windows-development-on-microsoft-learn"></a>Windows-Entwicklung für Microsoft-Learn
+### <a name="windows-development-on-microsoft-learn"></a>Windows-Entwicklung bei Microsoft Learn
 
-Microsoft-Learn bietet neue praktisches lernen und schulungsmöglichkeiten für Microsoft-Entwickler an. Wenn Sie lernen, wie Sie die Entwicklung von Windows-apps interessieren, lesen Sie [unserer neuen Lernpfad](https://docs.microsoft.com/learn/paths/develop-windows10-apps/) eine umfassende Einführung in die Plattform, die Tools und wie Sie Ihre ersten einige apps zu schreiben.
+Microsoft Learn bietet neue praktische Lern- und Schulungsmöglichkeiten für Microsoft-Entwickler. Wenn du dich für die Entwicklung von Windows-Apps interessierst, sieh dir [unseren neuen Lernpfad](https://docs.microsoft.com/learn/paths/develop-windows10-apps/) an. Dort findest du eine umfassende Einführung in die Plattform, in die Tools und in die Entwicklung deiner ersten Apps.
 
-![Bild von der Windows-Entwicklung Lernpfad](images/windows-learn.png)
+![Abbildung: Lernpfad für die Windows-Entwicklung](images/windows-learn.png)
 
-### <a name="direct-3d-12"></a>Direct3D 12-Beschleunigung
+### <a name="direct-3d-12"></a>Direct3D 12
 
-[Direct3D 12 Rendering-Durchläufe](/windows/desktop/direct3d12/direct3d-12-render-passes) können Verbessern der Leistung von Ihrem Renderer, wenn davon Kachel-basierte verzögerte Rendering (TBDR), zu anderen Techniken. Die Technik hilft Ihrem Renderer GPU effizienter durch Aktivieren der Anwendung besser Rendering Sortierung Anforderungen und Abhängigkeiten zu identifizieren, und wodurch die Arbeitsspeicher-Datenverkehr in und aus-Chip Arbeitsspeicher.
+[Direct3D 12-Renderdurchgänge](/windows/desktop/direct3d12/direct3d-12-render-passes) können die Leistung deines Renderers verbessern, sofern dieser neben anderen Techniken auf TBDR (Tile-Based Deferred Rendering) basiert. Mit dieser Technik kann deine App Reihenfolgeanforderungen für das Ressourcenrendering sowie Datenabhängigkeiten besser erkennen. Dies ermöglicht es deinem Renderer, eine höhere GPU-Effizienz zu erzielen, und verringert den ein- und ausgehenden Datenverkehr außerhalb des Chips.
 
-### <a name="msix-modification-packages"></a>MSIX Änderung Pakete
+### <a name="msix-modification-packages"></a>MSIX-Änderungspakete
 
-Windows 10 Version 1809 verbesserte Unterstützung für [MSIX Änderung Pakete](https://docs.microsoft.com/windows/msix/modification-package-1809-update). Änderung Pakete können registrierungsbasierte-Plug-Ins und der zugeordneten Anpassung enthalten und können eine Anwendung bereitgestellt wird, über MSIX verwenden eine virtuelle Registrierung, und wie erwartet ausgeführt werden.
+In der Version 1809 von Windows 10 wurde die Unterstützung von [MSIX-Änderungspaketen](https://docs.microsoft.com/windows/msix/modification-package-1809-update) verbessert. Änderungspakete können nun registrierungsbasierte Plug-Ins und entsprechende Anpassungen enthalten. Dadurch kann eine über MSIX bereitgestellte Anwendung eine virtuelle Registrierung verwenden und wie erwartet ausgeführt werden.
 
-![MSIX Änderung-paketerstellung](images/msix-modification-package.png)
+![MSIX-Änderungspakete: Erstellung](images/msix-modification-package.png)
 
-### <a name="open-source-of-wpf-windows-forms-and-winui"></a>Open Sie-Source-WinUI, Windows Forms und WPF
+### <a name="open-source-of-wpf-windows-forms-and-winui"></a>Open Source für WPF, Windows Forms und WinUI
 
-Die WPF, Windows Forms und WinUI UX-Frameworks sind jetzt für Open-Source-Beiträge auf GitHub verfügbar. Weitere Informationen und Links finden Sie unter den [erstellen Windows-apps-Blog](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
+Die UX-Frameworks WPF, Windows Forms und WinUI sind jetzt für Open-Source-Beiträge auf GitHub verfügbar. Weitere Informationen und Links findest du im [Blog zur Erstellung von Windows-Apps](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
 
 ### <a name="progressive-web-apps-for-xbox"></a>Progressive Web-Apps für Xbox
 
-Mit [Progressive Web-Apps für Xbox One](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations), Sie können Erweitern einer Webanwendung und verfügbar zu machen als Xbox One-app über den Microsoft Store und trotzdem weiterhin verwenden, Ihre vorhandenen Frameworks, CDN und Server-Back-End. Sie können zum größten Teil Ihrer PWA für Xbox One Verpacken, auf die gleiche Weise zugreifen, für Windows möchten, es gibt jedoch einige wichtige Unterschiede in der vorliegenden Schritt für Schritt wird.
+Mit [progressiven Web-Apps für Xbox One](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations) kannst du eine Webanwendung erweitern und als Xbox One-App über den Microsoft Store verfügbar machen. Dabei kannst du weiterhin deine vorhandenen Frameworks, dein vorhandenes CDN und dein vorhandenes Server-Back-End verwenden. Die Vorgehensweise zum Packen von PWAs für Xbox One entspricht größtenteils der Vorgehensweise für Windows. Es gibt jedoch einige entscheidende Unterschiede, die in diesem Leitfaden erläutert werden.
 
-### <a name="windows-machine-learning"></a>Windows-Machine learning
+### <a name="windows-machine-learning"></a>Machine Learning unter Windows
 
-Wir haben umstrukturiert [die Landing Page für WinML-APIs](https://docs.microsoft.com/windows/ai/api-reference), und neue Dokumentation zum benutzerdefinierten WinML-Operator und systemeigenen APIs hinzugefügt.
+Wir haben die [Landing Page für WinML-APIs](https://docs.microsoft.com/windows/ai/api-reference) umstrukturiert und eine neue Dokumentation für den benutzerdefinierten WinML-Operator und für native APIs hinzugefügt.
 
-[Trainieren ein Modells mit PyTorch](https://docs.microsoft.com/windows/ai/train-model-pytorch) enthält Anleitungen zum Trainieren eines Modells verwenden das PyTorch-Framework, entweder lokal oder in der Cloud. Sie können dann dieses Modell als ONNX-Datei herunterladen und verwenden es in Ihren WinML-Anwendungen.
+Unter [Trainieren eines Modells mit PyTorch](https://docs.microsoft.com/windows/ai/train-model-pytorch) erfährst du, wie du ein Modell unter Verwendung des PyTorch-Frameworks trainierst (entweder lokal oder in der Cloud). Dieses Modell kannst du dann als ONNX-Datei herunterladen und in deinen WinML-Anwendungen verwenden.
 
 ![WinML-Grafik](images/winml-graphic.png)
 
-## <a name="developer-guidance"></a>Erläuterungen für Entwickler
+## <a name="developer-guidance"></a>Entwicklerleitfäden
 
-### <a name="choose-your-platform"></a>Wählen Sie Ihre Plattform
+### <a name="choose-your-platform"></a>Auswählen Ihrer Plattform
 
-Eine neue desktop-Anwendung erstellen möchten? Sehen Sie sich unsere überarbeitete [wählen Sie Ihre Plattform](https://docs.microsoft.com/windows/desktop/choose-your-technology) Seite ausführliche Beschreibungen und Vergleichen der UWP, WPF und Windows Forms-Plattformen und Weitere Informationen zu den Win32-API.
+Du möchtest eine neue Desktopanwendung erstellen? Auf unserer überarbeiteten Seite [Auswählen Ihrer App-Plattform](https://docs.microsoft.com/windows/desktop/choose-your-technology) findest du ausführliche Beschreibungen und Gegenüberstellungen der Plattformen UWP, WPF und Windows Forms sowie weitere Informationen zur Win32-API.
 
-### <a name="faqs-on-win32-webview"></a>Häufig gestellte Fragen zum Win32 WebView
+### <a name="faqs-on-win32-webview"></a>Häufig gestellte Fragen zu Win32 WebView
 
-Unsere [häufig gestellte Fragen](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs) enthält Antworten auf häufig gestellte Fragen die Verwendung der Webansicht für Microsoft Edge in desktop-Anwendungen sowie links zu Beispielen und zusätzliche Ressourcen.
+Im Abschnitt [Häufig gestellte Fragen](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs) findest du sowohl Antworten auf allgemeine Fragen zur Verwendung von Microsoft Edge-WebView in Desktopanwendungen als auch Links zu Beispielen und weiteren Ressourcen.
 
-### <a name="japanese-era-change"></a>Japanische Zeitraum ändern
+### <a name="japanese-era-change"></a>Änderung der japanischen Zeitrechnung
 
-[Vorbereiten Ihrer Anwendung auf die japanischen Zeitraum Änderung](../design/globalizing/japanese-era-change.md) erfahren Sie, wie ein, um sicherzustellen, dass Ihre Windows Anwendung bereit ist für der japanische Zeitraum zu ändern, die auf 1. Mai 2019 platzieren. [Auf dieser Seite finden Sie auch in Japanisch](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change).
+Unter [Machen Sie Ihre Anwendung startklar für den Wechsel der japanischen Ära](../design/globalizing/japanese-era-change.md) erfährst du, wie du deine Windows-Anwendung für die Änderung der japanischen Zeitrechnung vorbereitest, die am 1. Mai 2019 stattfindet. [Diese Seite ist auch auf Japanisch verfügbar](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change).
 
 ## <a name="videos"></a>Videos
 
 ### <a name="progressive-web-apps"></a>Progressive Web Apps
 
-Progressive Web-Apps sind Websites, die wie systemeigene apps für andere Browser und eine Vielzahl von Windows 10-Geräten funktionieren. [Das Video](https://youtu.be/ugAewC3308Y) Weitere Informationen, und klicken Sie dann [Dokumente](https://aka.ms/Windows-PWA) für den Einstieg.
+Progressive Web-Apps sind Websites, die in unterschiedlichen Browsern und auf einer Vielzahl von Windows 10-Geräten wie native Apps funktionieren. [Sieh dir das Video an](https://youtu.be/ugAewC3308Y), um mehr zu erfahren, und [lies anschließend die Dokumentation](https://aka.ms/Windows-PWA), um loszulegen.
 
-### <a name="vs-code-series"></a>VS Code-Serie
+### <a name="vs-code-series"></a>VS Code-Reihe
 
-Sehen Sie sich unsere [neue Videoreihe auf Visual Studio Code](https://www.youtube.com/playlist?list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx) Informationen zu den neuerungen von VSCode, wie Sie es verwenden und wie es erstellt wurde.
+In unserer [neuen Videoreihe zu Visual Studio Code](https://www.youtube.com/playlist?list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx) erfährst du, was VS Code ist, wie du es verwendest und wie es erstellt wurde.
 
-### <a name="one-dev-question"></a>Eine Frage für Entwickler
+### <a name="one-dev-question"></a>One Dev Question
 
-In der Videoreihe Dev Frage behandeln langjährigen Microsoft-Entwicklern eine Reihe von Fragen zu Windows-Entwicklung, Teams und Verlauf. Hier ist die neueste Fragen, die wir beantwortet haben!
+In der Videoreihe „One Dev Question“ beantworten langjährige Microsoft-Entwickler eine Reihe von Fragen zur Entwicklung, Teamkultur und Geschichte von Windows. Folgende Fragen wurden kürzlich beantwortet:
 
 Raymond Chen:
 
-* [Warum haben Sie Programm- und Programmdateien (x86)?](https://youtu.be/N7o9eJpFYco)
+* [Warum gibt es „Programme“ und „Programme (x86)“?](https://youtu.be/N7o9eJpFYco)
 
 Larry Osterman:
 
-* [Warum COM ist so kompliziert?](https://youtu.be/-gkXAV-StVA )
-* [Wie hieß Ihr erstes Vorstellungsgespräch wie bei Microsoft?](https://youtu.be/qRb6otsHG5c)
+* [Warum ist COM so kompliziert?](https://youtu.be/-gkXAV-StVA )
+* [Wie war das erste Vorstellungsgespräch bei Microsoft?](https://youtu.be/qRb6otsHG5c)

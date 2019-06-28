@@ -6,17 +6,17 @@ label: Split view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364176"
 ---
 # <a name="split-view-control"></a>Steuerelement für geteilte Ansicht
@@ -32,7 +32,7 @@ Dies ist ein Beispiel für die Verwendung von SplitView durch die Microsoft Edge
 
  Der Inhaltsbereich einer geteilten Ansicht wird stets angezeigt. Der Bereich kann erweitert und reduziert werden oder geöffnet bleiben. Er kann vom linken oder rechten Rand eines App-Fensters aus eingeblendet werden. Der Bereich verfügt über vier Modi:
 
--   **Overlay**
+-   **Überlagerung**
 
     Der Bereich ist ausgeblendet, bis er geöffnet wird. Ist der Bereich geöffnet, überlagert er den Inhaltsbereich.
 
@@ -95,9 +95,9 @@ Dies ist ein SplitView-Steuerelement mit einem offenen Bereich, der inline neben
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-topics"></a>Verwandte Themen
-- [Navigationsbereich im Bereich Muster](navigationview.md)
+- [Navigationsbereichsmuster](navigationview.md)
 - [Listenansicht](lists.md)
 - [Master/Details](master-details.md)

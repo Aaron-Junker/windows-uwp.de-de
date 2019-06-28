@@ -6,17 +6,17 @@ label: Lists
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: predavid
 design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a574ff858f8eab3fa1984ecd883a786fa0e0f19c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364722"
 ---
 # <a name="lists"></a>Listen
@@ -34,10 +34,10 @@ Für jedes Listenmuster sind Entwurfsrichtlinien, Features und Beispiele aufgef�
 
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update - verhaltensänderung</strong>
+> <strong>Windows 10 Fall Creators Update – Abweichende Funktionsweise</strong>
 > </div>
 > Beim Schwenken/Bildlauf in der Liste der UWP-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
-> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Informationen finden Sie die API-Referenz für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.
+> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.
 
 ## <a name="list-views"></a>Listenansichten
 
@@ -76,7 +76,7 @@ Dies ist eine einfache Listenansicht mit gruppierten Daten auf einem Telefon.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">Listenansicht und der Rasteransicht</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">Listenansicht und Rasteransicht</a></p></td>
 <td align="left"><p>Lernen Sie die Grundlagen der Verwendung einer Listen- oder Rasteransicht in Ihrer App kennen.</p></td>
 </tr>
 <tr class="even">
@@ -88,11 +88,11 @@ Dies ist eine einfache Listenansicht mit gruppierten Daten auf einem Telefon.
 <td align="left"><p>Verwenden Sie diese Beispiel-Elementvorlagen für eine ListView, um das Erscheinungsbild gängiger App-Typen abzurufen.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="inverted-lists.md">Umgekehrte Listen</a></p></td>
+<td align="left"><p><a href="inverted-lists.md">Invertierte Listen</a></p></td>
 <td align="left"><p>Bei invertierten Listen werden neue Elemente am Ende hinzugefügt, z. B. bei einer Chat-App. Befolgen Sie diese Richtlinien, um in Ihrer App eine invertierte Liste zu verwenden.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pull-to-refresh.md">Zum Aktualisieren ziehen</a></p></td>
+<td align="left"><p><a href="pull-to-refresh.md">Aktualisieren durch Ziehen</a></p></td>
 <td align="left"><p>Dank des Musters „Aktualisieren durch Ziehen“ können Benutzer aktuelle Daten in einer Liste durch das Ausführen einer Ziehbewegung von oben nach unten auf der Liste abrufen. Verwenden Sie diese Anleitung, um „Aktualisieren durch Ziehen“ in der Listenansicht zu implementieren.</p></td>
 </tr>
 <tr class="even">
@@ -143,7 +143,7 @@ Eine Rasteransicht eignet sich ideal für eine Inhaltsbibliothek, die häufig ve
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">Listenansicht und der Rasteransicht</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">Listenansicht und Rasteransicht</a></p></td>
 <td align="left"><p>Lernen Sie die Grundlagen der Verwendung einer Listen- oder Rasteransicht in Ihrer App kennen.</p></td>
 </tr>
 <tr class="even">
@@ -229,9 +229,9 @@ Mit dem Auswahlmodus können Benutzer ein einzelnes oder mehrere Elemente auswä
 
 Es gibt drei verschiedene Auswahlmodi:
 
--   Einzelne: Der Benutzer kann nur ein Element gleichzeitig auswählen.
--   Mehrere: Der Benutzer kann mehrere Elemente auswählen, ohne einen Modifizierer.
--   Erweitert: Der Benutzer kann mehrere Elemente mit einem Modifizierer, wie Sie die UMSCHALTTASTE gedrückt halten, auswählen.
+-   Einzeln:  Dabei kann der Benutzer jeweils nur ein Element auswählen.
+-   Mehrfach:  Der Benutzer kann mehrere Elemente ohne Modifizierer auswählen.
+-   Erweitert:  Dabei kann der Benutzer mit Zusatztasten mehrere Elemente auswählen, z. B. durch Gedrückthalten der UMSCHALTTASTE.
 
 Durch Tippen auf ein Element wird es ausgewählt. Das Tippen auf die Aktion auf der Befehlsleiste wirkt sich auf alle ausgewählten Elemente aus. Wenn kein Element ausgewählt ist, sind die Aktionen auf der Befehlsleiste mit Ausnahme von „Alle auswählen“ in der Regel inaktiv.
 

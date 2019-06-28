@@ -6,17 +6,17 @@ label: Progress controls
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a409c4b940ad0e194428981f536823d880e56302
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364488"
 ---
 # <a name="progress-controls"></a>Statussteuerelemente
@@ -25,7 +25,7 @@ ms.locfileid: "66364488"
 
 Ein Statussteuerelement gibt dem Benutzer eine Rückmeldung, dass ein Vorgang mit langer Laufzeit ausgeführt wird. Dies kann bedeuten, dass der Benutzer bei Anzeigen der Statusanzeige nicht mit der App interagieren kann. Je nach verwendetem Indikator wird auch die Länge der Wartezeit angegeben.
 
-> **Wichtige APIs:** [Klasse "ProgressBar"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
+> **Wichtige APIs:** [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 ## <a name="types-of-progress"></a>Typen von Statussteuerelementen
 
@@ -39,11 +39,11 @@ Ein Statussteuerelement ist zudem schreibgeschützt und nicht interaktiv. Dies b
 
 ![ProgressBar-Status](images/ProgressBar_TwoStates.png)
 
-*Von oben nach unten - unbestimmte Fortschrittsleiste und eine bestimmte "ProgressBar"*
+*Von oben nach unten – unbestimmtes ProgressBar-Element und bestimmtes ProgressBar-Element*
 
 ![ProgressRing-Status](images/ProgressRing_SingleState.png)
 
-*Eine unbestimmte ProgressRing*
+*Ein unbestimmtes ProgressRing-Element*
 
 ## <a name="examples"></a>Beispiele
 
@@ -66,50 +66,50 @@ Ein Statussteuerelement ist zudem schreibgeschützt und nicht interaktiv. Dies b
 Es ist nicht immer klar erkennbar, welches Steuerelement oder welcher Status (bestimmt oder unbestimmt) zu verwenden ist, um einen Vorgang anzuzeigen. Manchmal ist eine Aufgabe so deutlich zu erkennen, dass kein Statussteuerelement erforderlich ist. Manchmal ist jedoch auch bei Verwendung eines Statussteuerelements eine Textzeile erforderlich, die den Benutzer darüber informiert, welcher Vorgang gerade ausgeführt wird.
 
 ### <a name="progressbar"></a>ProgressBar
--   **Besitzt das Steuerelement ein vorhersagbares End "oder" definierten Zeitraum?**
+-   **Verfügt das Steuerelement über eine festgelegte Dauer oder ein vorhersehbares Ende?**
 
     Verwenden Sie in diesem Fall eine bestimmte Statusanzeige, und aktualisieren Sie deren Prozentsatz oder Wert entsprechend.
 
--   **Werden der Benutzer kann weiterhin, ohne dass der Status des Vorgangs überwachen?**
+-   **Kann der Benutzer fortfahren, ohne den Status des Vorgang zu überwachen?**
 
     Bei Verwendung eines ProgressBar-Elements ist die Interaktion nicht modal. Das bedeutet in der Regel, dass der Benutzer durch den Abschluss des Vorgangs nicht blockiert wird und die aktive App bis zum Abschluss der Aktion weiterhin verwenden kann.
 
--   **Keywords**
+-   **Schlüsselwörter**
 
     Wenn der anzuzeigende Vorgang sich mit den folgenden Schlüsselwörtern in Verbindung bringen lässt oder wenn Sie während des Vorgangs Text anzeigen möchten, in dem diese Schlüsselwörter vorkommen, sollten Sie ein ProgressBar-Element verwenden:
 
     - *Wird geladen...*
-    - *Abrufen von*
-    - *Arbeiten...*
+    - *Wird abgerufen...*
+    - *In Bearbeitung...*
 
 ### <a name="progressring"></a>ProgressRing
 
--   **Bewirkt der Vorgang, den Benutzer warten, um den Vorgang fortzusetzen?**
+-   **Muss der Benutzer den Abschluss des Vorgangs abwarten, bevor er seine Aktivität fortsetzen kann?**
 
     Wenn ein Vorgang bis zu seinem Abschluss eine umfassende Interaktion mit der App erfordert, empfiehlt sich die Verwendung eines ProgressRing-Elements. Das ProgressRing-Steuerelement ist für modale Interaktionen vorgesehen, in denen die Aktivitäten des Benutzers blockiert werden, bis das ProgressRing-Element nicht mehr angezeigt wird.
 
--   **Werden die app wird für den Benutzer zum Abschluss einer Aufgabe gewartet?**
+-   **Wartet die App darauf, dass der Benutzer eine Aufgabe ausführt?**
 
     In diesem Fall verwenden Sie ein ProgressRing-Steuerelement, um den Benutzer auf eine unbestimmte Wartezeit hinzuweisen.
 
--   **Keywords**
+-   **Schlüsselwörter**
 
     Wenn der anzuzeigende Vorgang sich mit den folgenden Schlüsselwörtern in Verbindung bringen lässt oder wenn Sie während des Vorgangs Text anzeigen möchten, in dem diese Schlüsselwörter vorkommen, sollten Sie ein ProgressRing-Element verwenden:
 
-    - *Aktualisieren*
-    - *Anmeldung wird durchgeführt...*
-    - *Verbindung wird hergestellt...*
+    - *Wird aktualisiert*
+    - *Anmelden...*
+    - *Verbinden...*
 
 ### <a name="no-progress-indication-necessary"></a>Keine Fortschrittsanzeige erforderlich
--   **Muss der Benutzer wissen, dass etwas passiert ist?**
+-   **Müssen Benutzer wissen, dass Vorgänge ausgeführt werden?**
 
     Wenn die App z. B. im Hintergrund einen Download ausführt, der nicht vom Benutzer eingeleitet wurde, ist es auch nicht unbedingt erforderlich, den Benutzer darüber zu informieren.
 
--   **Ist der Vorgang eine Hintergrundaktivitäten, die blockiert nicht die Benutzeraktivität und der minimalen (aber immer noch einige) für den Benutzer interessant ist?**
+-   **Wird der Vorgang im Hintergrund ausgeführt, ohne die Aktivitäten des Benutzers zu blockieren, und ist er für Benutzer von geringem Interesse, aber nicht völlig irrelevant?**
 
     Verwenden Sie Text, wenn die App Aufgaben ausführt, die zwar nicht immer sichtbar sein müssen, bei denen aber der Status angezeigt werden soll.
 
--   **Ist der Benutzer nur über den Abschluss des Vorgangs wichtig?**
+-   **Möchte der Benutzer nur über den Abschluss des Vorgangs informiert werden?**
 
     Manchmal ist es am besten, nur auf den Abschluss eines Vorgangs hinzuweisen oder den unmittelbaren Abschluss des Vorgangs durch ein visuelles Element anzukündigen, und den restlichen Vorgang im Hintergrund auszuführen.
 
@@ -117,23 +117,23 @@ Es ist nicht immer klar erkennbar, welches Steuerelement oder welcher Status (be
 
 Manchmal ist eine visuelle Darstellung hilfreich, um zu ermitteln, zu welchem Zeitpunkt welches Statussteuerelement verwendet werden sollte:
 
-**ProgressBar - bestimmte**
+**ProgressBar – bestimmt**
 
 ![Beispiel für ein bestimmtes ProgressBar-Element](images/PB_DeterminateExample.png)
 
 Beim ersten Beispiel handelt es sich um ein bestimmtes ProgressBar-Steuerelement. Wenn die Dauer des Vorgangs bekannt ist, etwa beim Installieren, Herunterladen oder Einrichten, eignet sich ein bestimmtes ProgressBar-Steuerelement.
 
-**ProgressBar - unbestimmt**
+**ProgressBar – unbestimmt**
 
 ![Beispiel für ein unbestimmtes ProgressBar-Element](images/PB_IndeterminateExample.png)
 
 Wenn die Dauer des Vorgangs nicht bekannt ist, verwenden Sie ein unbestimmtes ProgressBar-Steuerelement. Unbestimmte ProgressBar-Elemente können auch beim Ausfüllen virtualisierter Listen verwendet werden oder um einen glatten visuellen Übergang von einem unbestimmten zu einem bestimmten ProgressBar-Element zu erstellen.
 
--   **Ist der Vorgang in einer virtualisierten Collection an?**
+-   **Befindet sich der Vorgang in einer virtualisierten Sammlung?**
 
     In diesem Fall legen Sie nicht für jedes angezeigte Listenelement eine Statusanzeige fest. Positionieren Sie stattdessen ein ProgressBar-Element am Anfang der Auflistung der zu ladenden Elemente, um anzuzeigen, dass die Elemente geladen werden.
 
-**ProgressRing - unbestimmt**
+**ProgressRing – unbestimmt**
 
 ![Beispiel für ein unbestimmtes ProgressRing-Steuerelement](images/PR_IndeterminateExample.png)
 
@@ -143,7 +143,7 @@ Unbestimmte ProgressRing-Elemente werden verwendet, wenn jegliche Benutzerintera
 
 Die beiden Statussteuerelemente sind recht einfach gehalten. Bei verschiedenen visuellen Features der Steuerelemente sind jedoch deren Anpassungsoptionen nicht offensichtlich.
 
-**Ändern der Größe der ProgressRing**
+**Ändern der Größe des ProgressRing-Elements**
 
 Sie können das ProgressRing-Element so groß gestalten, wie Sie möchten. Die Mindestgröße beträgt jedoch 20 x 20 Epx. Um die Größe eines ProgressRing-Elements zu ändern, müssen Sie dessen Höhe und Breite festlegen. Wenn nur die Höhe oder nur die Breite festgelegt wird, erhält das Steuerelement die Mindestgröße (20 x 20 Epx). Wenn die Höhe und die Breite auf zwei verschiedene Größen festgelegt sind, wird die kleinere Größen verwendet.
 Um sicherzustellen, dass Ihr ProgressRing-Steuerelement seinen Zweck erfüllt, legen Sie für die Höhe und die Breite denselben Wert fest:
@@ -162,7 +162,7 @@ Wenn das ProgressRing-Element sichtbar und animiert sein soll, legen Sie die IsA
 progressRing.IsActive = true;
 ```
 
-**Einfärben der Statussteuerelemente**
+**Farben der Statussteuerelemente**
 
 Standardmäßig ist die Grundfarbe der Statussteuerelemente auf die Akzentfarbe des Systems festgelegt. Dies können Sie anpassen, indem Sie einfach die „Foreground“-Eigenschaft der Steuerelemente ändern.
 
@@ -173,7 +173,7 @@ Standardmäßig ist die Grundfarbe der Statussteuerelemente auf die Akzentfarbe 
 
 Durch das Ändern die Vordergrundfarbe des ProgressRing-Elements ändern sich die Farben der Punkte. Die „Foreground“-Eigenschaft des ProgressBar-Elements ändert dann die Füllfarbe der Leiste. Um den ungefüllten Teil der Leiste zu ändern, überschreiben Sie einfach die „Background“-Eigenschaft.
 
-**Einen Wartecursor angezeigt**
+**Anzeigen eines Wartecursors**
 
 Manchmal ist es am besten, nur kurz einen Wartecursor anzuzeigen, wenn eine App oder ein Vorgang etwas Zeit erfordert und Sie dem Benutzer anzeigen müssen, dass mit der App oder dem Bereich, in dem sich der Wartecursor befindet, bis zu dessen Ausblenden nicht interagiert werden sollte.
 
@@ -183,13 +183,13 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Klasse "ProgressBar"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
 - [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
 
 **Für Entwickler (XAML)**
-- [Hinzufügen von Statussteuerelemente](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
-- [So erstellen Sie eine benutzerdefinierte unbestimmte Fortschrittsleiste für Windows Phone](https://go.microsoft.com/fwlink/p/?LinkID=392426)
+- [Hinzufügen von Statussteuerelementen](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
+- [So wird's gemacht: Erstellen einer benutzerdefinierten unbestimmten Statusleiste für Windows Phone](https://go.microsoft.com/fwlink/p/?LinkID=392426)

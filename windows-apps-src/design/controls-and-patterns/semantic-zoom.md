@@ -6,16 +6,16 @@ label: Semantic zoom
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c8cc237dec082096eb235237490e4f5d29cc6dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364319"
 ---
 # <a name="semantic-zoom"></a>Semantischer Zoom
@@ -59,7 +59,7 @@ Der semantische Zoom ist nicht mit dem optischen Zoom zu verwechseln. Sie zeigen
 </tr>
 </table>
 
-**Fotos-app**
+**Fotos-App**
 
 Hier ist ein in der Fotos-App verwendeter semantischer Zoom. Fotos werden nach Monat gruppiert. Durch Auswahl einer Monatskopfzeile in der standardmäßigen Rasteransicht wird die Ansicht der Monatsliste verkleinert, um schneller navigieren zu können.
 
@@ -80,9 +80,9 @@ Sie benötigen für einen semantischen Zoom folgende drei Elemente:
 - Eine vergrößerte Ansicht, die Daten auf Elementebene anzeigt
 - Eine verkleinerte Ansicht, die die Daten auf Gruppenebene anzeigt
 
-Bevor Sie einen semantischen Zoom verwenden, sollten Sie wissen, wie Sie eine Listenansicht mit gruppierten Daten verwenden. Weitere Informationen finden Sie unter [auflisten, anzeigen und die Rasteransicht](listview-and-gridview.md). 
+Bevor Sie einen semantischen Zoom verwenden, sollten Sie wissen, wie Sie eine Listenansicht mit gruppierten Daten verwenden. Weitere Informationen finden Sie unter [Listenansicht und Rasteransicht](listview-and-gridview.md). 
 
-> **Hinweis**:&nbsp;&nbsp;Um die vergrößerte und verkleinerte Ansicht des SemanticZoom-Steuerelements zu definieren, können Sie zwei beliebige Steuerelemente verwenden, die die Benutzeroberfläche [ISemanticZoomInformation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) implementieren. Das XAML-Framework bietet 3 Steuerelementen, die diese Schnittstelle implementieren: ListView, GridView und dem Hub.
+> **Hinweis**:&nbsp;&nbsp;Um die vergrößerte und verkleinerte Ansicht des SemanticZoom-Steuerelements zu definieren, können Sie zwei beliebige Steuerelemente verwenden, die die Benutzeroberfläche [ISemanticZoomInformation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) implementieren. Das XAML-Framework bietet drei Steuerelemente, die diese Schnittstelle implementieren:  ListView, GridView und Hub.
  
  Dieser XAML-Code zeigt die Struktur des SemanticZoom-Steuerelements. Sie weisen weitere Steuerelemente den Eigenschaften „ZoomedInView” und „ZoomedOutView” zu.
  
@@ -100,7 +100,7 @@ Bevor Sie einen semantischen Zoom verwenden, sollten Sie wissen, wie Sie eine Li
  
 Die folgenden Beispiele stammen von der Seite „SemanticZoom” des [Beispiels für XAML-UI-Grundlagen](https://go.microsoft.com/fwlink/p/?LinkId=619992). Sie können das Beispiel herunterladen, um den kompletten Code anzuzeigen, einschließlich der Datenquelle. Dieser semantische Zoom verwendet eine GridView, um die vergrößerte Ansicht und eine ListView für die verkleinerte Ansicht bereitzustellen.
   
-**Definieren Sie die vergrößerte Ansicht**
+**Definieren der vergrößerten Ansicht**
 
 Hier sehen Sie das GridView-Steuerelement für die vergrößerte Ansicht. Die vergrößerte Ansicht sollte die einzelnen Datenelemente in Gruppen anzeigen. Dieses Beispiel zeigt, wie die Elemente in einem Raster mit einem Bild und Text angezeigt werden sollten. 
 
@@ -140,7 +140,7 @@ Die Darstellung der Gruppenkopfzeilen wird in der Ressource `ZoomedInGroupHeader
 </DataTemplate>
 ```
 
-**Definieren Sie die verkleinerte Ansicht**
+**Definieren der verkleinerten Ansicht**
 
 Dieser XAML-Code definiert ein ListView-Steuerelement für die verkleinerte Ansicht. Dieses Beispiel zeigt, wie die Gruppenkopfzeilen als Text in einer Liste angezeigt werden sollten.
 
@@ -161,7 +161,7 @@ Dieser XAML-Code definiert ein ListView-Steuerelement für die verkleinerte Ansi
 </DataTemplate>
 ```
 
-**Synchronisiert die Sichten**
+**Synchronisieren der Ansichten**
 
 Die vergrößerte und verkleinerte Ansicht sollten synchronisiert werden, sodass für den Fall, dass ein Benutzer eine Gruppe in der verkleinerten Ansicht auswählt, die Details dieser Gruppe in der vergrößerten Ansicht angezeigt werden. Sie können eine [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) verwenden oder Code hinzufügen, um die Ansichten zu synchronisieren.
 
@@ -195,13 +195,13 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Grundlagen des Berichtsentwurfs Navigation](../basics/navigation-basics.md)
-- [Listenansicht und der Rasteransicht](listview-and-gridview.md)
+- [Navigationsdesigngrundlagen](../basics/navigation-basics.md)
+- [Listenansicht und Rasteransicht](listview-and-gridview.md)
 - [Elementcontainer und Vorlagen](item-containers-templates.md)
 
 

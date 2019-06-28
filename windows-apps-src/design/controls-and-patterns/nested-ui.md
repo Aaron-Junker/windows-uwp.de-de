@@ -5,17 +5,17 @@ label: Nested UI in list items
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
 pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364553"
 ---
 # <a name="nested-ui-in-list-items"></a>Geschachtelte UI bei Listenelementen
@@ -26,7 +26,7 @@ Eine geschachtelte UI ist eine Benutzeroberfläche (User Interface, UI) mit gesc
 
 Sie können dem Benutzer mit geschachtelten UIs weitere Optionen zur Verfügung stellen, mit denen sie wichtige Aktionen schneller ausführen können. Bedenken Sie jedoch, dass die Benutzeroberfläche komplizierter wird, je mehr Aktionen Sie anbieten. Wenn Sie diese Art von Benutzeroberfläche verwenden, sollten Sie besonders vorsichtig vorgehen. Dieser Artikel enthält Richtlinien, um die beste Vorgehensweise für Ihre UI zu ermitteln.
 
-> **Wichtige APIs:** [ListView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [GridView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
+> **Wichtige APIs:** [ListView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [GridView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
 
 In diesem Artikel erläutern wir die Erstellung von geschachtelten UIs in [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)- und in [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)-Elementen. In diesem Abschnitt werden andere Formen von geschachtelten UIs nicht berücksichtigt, aber die hier gegebenen Konzepte lassen sich auf andere UIs übertragen. Bevor Sie beginnen, sollten Sie mit der allgemeinen Richtlinie für die Verwendung von ListView- und GridView-Steuerelementen in der Benutzeroberfläche vertraut sein, die in den Artikeln [Listen](lists.md) und [Listenansicht und Rasteransicht](listview-and-gridview.md) beschrieben wird.
 
@@ -37,7 +37,7 @@ In diesem Artikel verwenden wir die Begriffe *Liste*, *Listenelement* und *gesch
 
 ![Komponenten von geschachtelten UIs](images/nested-ui-example-1.png)
 
-> Hinweis:&nbsp;&nbsp; ListView und GridView sind beide von der Klasse [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) abgeleitet, sodass sie dieselbe Funktionalität haben, sie zeigen die Daten jedoch unterschiedlich an. In diesem Artikel beziehen sich Aussagen zu Listen sowohl auf die ListView- als auch die GridView-Steuerelemente, wenn nicht anders angegeben.
+> HINWEIS&nbsp;&nbsp; ListView und GridView sind beide von der Klasse [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) abgeleitet, sodass sie dieselbe Funktionalität haben, sie zeigen die Daten jedoch unterschiedlich an. In diesem Artikel beziehen sich Aussagen zu Listen sowohl auf die ListView- als auch die GridView-Steuerelemente, wenn nicht anders angegeben.
 
 ## <a name="primary-and-secondary-actions"></a>Primäre und sekundäre Aktionen
 
