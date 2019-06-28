@@ -3,39 +3,39 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: Wischen Befehle ist ein Touch-Beschleuniger für Kontextmenüs.
+Description: Bei wischgestenbasierten Befehlen handelt es sich um Beschleuniger für die Toucheingabe für Kontextmenüs.
 title: Swipe
 label: Swipe
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d575eb25d9a013aa999cf304db6d83faeb87765
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626655"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63774691"
 ---
 # <a name="swipe"></a>Swipe
 
-Wischgestenbasierte Befehle sind ein Beschleuniger für Kurzbefehlmenüs. Sie ermöglichen es Benutzern per Toucheingabe, häufig verwendete Aktionen auszuführen, ohne Zustände innerhalb der App zu ändern.
+Wischgestenbasierte Befehle sind ein Beschleuniger für Kontextmenüs. Benutzer können damit per Toucheingabe leicht häufig verwendete Aktionen ausführen, ohne Zustände innerhalb der App ändern zu müssen.
 
-> **Wichtige APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **Wichtige APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
-![Anzeige- und Ausführungsdesigns](images/LightThemeSwipe.png)
+![Helles Design für Ausführen und Einblenden](images/LightThemeSwipe.png)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Wischgestenbasierte Befehle sparen Platz. Sie eignen sich in Situationen, in denen der gleiche Vorgang mehrmals hintereinander schnell wiederholt wird. Außerdem ermöglichen Sie „schnelle Aktionen“ für Elemente an, für die kein vollständiges Popup oder keine Zustandsänderung auf der Seite erforderlich ist.
+Wischgestenbasierte Befehle sparen Platz. Sie eignen sich in Situationen, in denen der gleiche Vorgang für mehrere Elemente mehrmals hintereinander schnell wiederholt wird. Darüber hinaus ermöglichen sie „schnelle Aktionen“ für Elemente, für die kein vollständiges Popup oder keine Zustandsänderung auf der Seite erforderlich ist.
 
-Wischgestenbasierte Befehle sollten verwendet werden, wenn Sie über eine große Gruppe von Elementen verfügen, die alle 1-3 Aktionen durchführen, die ein Benutzer möglicherweise regelmäßig ausführen möchte. Diese Aktionen können u.a. Folgendes umfassen:
+Wischgestenbasierte Befehle sollten bei einer großen Gruppe von Elementen verwendet werden, die jeweils ein bis drei Aktionen enthalten, die ein Benutzer möglicherweise regelmäßig ausführen möchte. Zu diesen Aktionen zählen u. a. folgende:
 
 - Löschen
 - Markieren oder Archivieren
 - Speichern oder Herunterladen
-- Beantworten
+- Antworten
 
 ## <a name="examples"></a>Beispiele
 
@@ -44,7 +44,7 @@ Wischgestenbasierte Befehle sollten verwendet werden, wenn Sie über eine große
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/SwipeControl">die App zu öffnen und SwipeControl in Aktion zu sehen</a>.</p>
+    <p>Wenn du die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert hast, klicke hier, um <a href="xamlcontrolsgallery:/item/SwipeControl">die App zu öffnen und SwipeControl in Aktion zu sehen</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -53,54 +53,54 @@ Wischgestenbasierte Befehle sollten verwendet werden, wenn Sie über eine große
 </tr>
 </table>
 
-## <a name="video-summary"></a>Video-Zusammenfassung
+## <a name="video-summary"></a>Videozusammenfassung
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev015/player]
 
-## <a name="how-does-swipe-work"></a>Wie funktioniert das Wischen?
+## <a name="how-does-swipe-work"></a>Wie funktionieren Wischgesten?
 
-UWP Wischen Befehle verfügt über zwei Modi: [Offenlegen](/uwp/api/windows.ui.xaml.controls.swipemode) und [ausführen](/uwp/api/windows.ui.xaml.controls.swipemode). Außerdem werden vier verschiedene Wischrichtungen unterstützt: nach oben, unten, links und rechts.Wischen Richtungen: nach oben, unten, links und rechts.
+Für wischgestenbasierte UWP-Befehle gibt es zwei Modi: [Einblenden](/uwp/api/windows.ui.xaml.controls.swipemode) und [Ausführen](/uwp/api/windows.ui.xaml.controls.swipemode). Außerdem werden vier verschiedene Wischrichtungen unterstützt: nach oben, nach unten, nach links und nach rechts.
 
-### <a name="reveal-mode"></a>Anzeigemodus
+### <a name="reveal-mode"></a>Einblendmodus
 
-Im Modus „Einblenden“ wischt der Benutzer über ein Element, um ein Menü mit einem oder mehreren Befehlen zu öffnen, und muss explizit darauf tippen, um diesen Befehl auszuführen. Wenn der Anwender über ein Element wischt und es loslässt, bleibt das Menü geöffnet, bis entweder ein Befehl ausgewählt wird oder das Menü durch streifen, tippen oder wischen des geöffneten Elements vom Bildschirm erneut geschlossen wird.
+Im Modus „Einblenden“ wischt der Benutzer über ein Element, um ein Menü mit einem oder mehreren Befehlen zu öffnen. Er muss explizit auf einen Befehl tippen, um diesen auszuführen. Wenn der Benutzer über ein Element wischt und es loslässt, bleibt das Menü geöffnet, bis der Benutzer einen Befehl auswählt oder das Menü schließt, indem er in die entgegengesetzte Richtung wischt, es durch eine Tippgeste schließt oder das geöffnete Element vom Bildschirm wischt.
 
 ![Wischen zum Einblenden](images/SwipeCommand-Reveal_v2.gif)
 
-Der Anzeigemodus ist ein sicherer, flexibler Wischmodus und kann für die meisten Aktionen, auch potenziell schädliche Aktionen wie Löschen verwendet werden kann.
+Der Einblendmodus ist ein sicherer, flexiblerer Wischmodus und kann für die meisten Menüaktionen (auch möglicherweise destruktive Aktionen wie Löschen) verwendet werden.
 
-Wenn der Benutzer eine der Menüoptionen auswählt, die im geöffneten und positionierten Zustand des Anzeigemodus angezeigt werden, wird der Befehl für dieses Element aufgerufen und das Steuerelement „Wischen“ geschlossen.
+Wählt der Benutzer eine der Menüoptionen aus, die im geöffneten und statischen Zustand des Einblendmodus angezeigt werden, wird der Befehl für dieses Element aufgerufen und das Steuerelement zum Wischen geschlossen.
 
 ### <a name="execute-mode"></a>Ausführungsmodus
 
-Im Ausführungsmodus wischt der Benutzer über ein Element, um einen einzelnen Befehl mit dem Wischvorgang anzuzeigen oder auszuführen. Wenn der Benutzer das Element, über das er gewischt hat, loslässt, bevor er über einen Schwellenwert hinaus wischt, wird das Menü wird geschlossen und der Befehl nicht ausgeführt. Wenn der Benutzer über den Schwellenwert hinaus wischt und das Element dann loslässt, wird der Befehl sofort ausgeführt.
+Im Ausführungsmodus wischt der Benutzer über ein Element, um mit dieser Wischgeste einen einzelnen Befehl einzublenden und auszuführen. Lässt der Benutzer das entsprechende Element los, bevor ein bestimmter Schwellenwert erreicht wurde, wird das Menü geschlossen, und der Befehl wird nicht ausgeführt. Wenn der Benutzer wischt, bis ein bestimmter Schwellenwert erreicht wurde und das Element dann loslässt, wird der Befehl sofort ausgeführt.
 
-![Ausführen per Wischen](images/SwipeCommand_Delete_v2.gif)
+![Wischen zum Ausführen](images/SwipeCommand_Delete_v2.gif)
 
-Wenn der Benutzer seinen Finger nach dem Erreichen des Schwellenwerts nicht loslässt und das Element durch Wischen wieder geschlossen wird, wird weder der Befehl noch eine Aktion für das Element ausgeführt.
+Wenn der Benutzer die Finger nach dem Erreichen des Schwellenwerts nicht anhebt und das gewünschte Element wieder geschlossen wird, wird weder der Befehl noch eine Aktion für das Element ausgeführt.
 
-Der Ausführungsmodus bietet visuelles Feedback durch Farbe und den Bezeichnungstext, während ein Element gezogen wird.
+Der Ausführungsmodus gibt beim Wischen über ein Element mithilfe von Farben und Beschriftungsausrichtung visuelles Feedback.
 
-Der Ausführungsmodus ist besonders hilfreich, wenn der Benutzer ihn für eine häufig durchgeführte Aktion verwendet.
+Der Ausführungsmodus ist besonders hilfreich, wenn der Benutzer ihn für eine häufig ausgeführte Aktion verwendet.
 
-Er kann auch für destruktivere Aktionen wie das Löschen eines Elements verwendet werden. Beachten Sie jedoch, dass „Ausführen“ nur eine Wischaktion in eine Richtung erfordert, während der Benutzer für „Anzeigen“ ausdrücklich auf eine Schaltfläche klicken muss.
+Er kann auch für destruktivere Aktionen wie das Löschen eines Elements verwendet werden. Beachte jedoch, dass für das Ausführen nur eine Wischaktion in eine Richtung erforderlich ist, während der Benutzer für das Einblenden explizit auf eine Schaltfläche klicken muss.
 
 ### <a name="swipe-directions"></a>Wischrichtungen
 
-Es kann in alle Richtungen gewischt werden: nach oben, unten, links und rechts. Jede Wischrichtung kann eigene Wischelemente oder Inhalte enthalten, es kann allerdings jeweils nur eine Instanz der Richtung für ein einzelnes Element festgelegt werden.
+Es kann in alle Richtungen gewischt werden: nach oben, nach unten, nach links und nach rechts. Jede Wischrichtung kann eigene Wischelemente oder -inhalte enthalten, für ein einzelnes wischbares Element kann allerdings jeweils nur eine Richtung festgelegt werden.
 
-Beispielsweise sind zwei [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems)-Definitionen für dasselbe SwipeControl nicht möglich.
+Beispielsweise sind nicht zwei [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems)-Definitionen für dasselbe SwipeControl-Element möglich.
 
-## <a name="how-to-create-a-swipe-command"></a>Erstellen eines Wischbefehls
+## <a name="how-to-create-a-swipe-command"></a>Erstellen eines wischgestenbasierten Befehls
 
-Wischbefehle verfügen über zwei Komponenten, die Sie definieren müssen:
+Für wischgestenbasierte Befehle müssen zwei Komponenten definiert werden:
 
-- [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), das Inhalte umschließt. In einer Sammlung, z. B. eine ListView, befindet sich diese innerhalb der DataTemplate.
-- Die Menüelemente Wischen, d.h. ein oder mehrere [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) Objekte in der wischsteuerelement direktionale Containern platziert: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems), oder [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
+- Die Komponente [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), die deine Inhalte umschließt. In einer Sammlung (etwa vom Typ „ListView“) befindet sich diese innerhalb von DataTemplate.
+- Die Elemente des Menüs „Wischen“. Dabei handelt es sich um mindestens ein [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)-Objekt, das in direktionalen Containern des Steuerelements „Wischen“ platziert ist: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems) oder [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems).
 
-Inhalte zum Wischen können als Inline-Inhalte platziert oder im Abschnitt „Ressourcen“ Ihrer Seite oder App platziert werden.
+Inhalte zum Wischen können inline oder im Ressourcenabschnitt deiner Seite oder App platziert werden.
 
-Nachfolgend finden Sie ein Beispiel für ein SwipeControl, das Text umschließt. Es zeigt die Hierarchie der XAML-Elemente, die zum Erstellen eines Wischbefehls erforderlich sind.
+Nachfolgend siehst du ein Beispiel für ein SwipeControl-Element, das Text umschließt. Es zeigt die Hierarchie der XAML-Elemente, die zum Erstellen eines wischgestenbasierten Befehls erforderlich sind.
 
 ```xaml
 <SwipeControl HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -121,9 +121,9 @@ Nachfolgend finden Sie ein Beispiel für ein SwipeControl, das Text umschließt.
 </SwipeControl>
 ```
 
-In diesem Thema befassen wir uns mit einem vollständigeren Beispiel dazu, wie Wischbefehle normalerweise in einer Liste verwendet werden. In diesem Beispiel richten Sie einen Löschbefehl ein, der den Ausführungsmodus verwendet, und ein Menü mit anderen Befehlen, die den Anzeigemodus verwenden. Beide Befehlsgruppen werden im Abschnitt „Ressourcen“ der Seite definiert. Sie wenden die Wischbefehle auf die Elemente in einer ListView an.
+Nun befassen wir uns mit einem umfassenderen Beispiel dazu, wie wischgestenbasierte Befehle normalerweise in einer Liste verwendet werden. In diesem Beispiel richtest du einen Löschbefehl ein, der den Ausführungsmodus verwendet, sowie ein Menü mit anderen Befehlen, das den Einblendmodus verwendet. Beide Befehlsgruppen werden im Ressourcenabschnitt der Seite definiert. Du wendest die wischgestenbasierten Befehle auf die Elemente in ListView an.
 
-Erstellen Sie zunächst die Wischelemente, die die Befehle darstellen, als Ressourcen auf Seitenebene. SwipeItem verwendet eine [IconSource](/uwp/api/windows.ui.xaml.controls.iconsource) als Symbol. Erstellen Sie die Symbole ebenfalls als Ressourcen.
+Erstelle zunächst die Wischelemente, die die Befehle darstellen, als Ressourcen auf Seitenebene. SwipeItem verwendet [IconSource](/uwp/api/windows.ui.xaml.controls.iconsource) als Symbol. Erstelle die Symbole ebenfalls als Ressourcen.
 
 ```xaml
 <Page.Resources>
@@ -143,11 +143,11 @@ Erstellen Sie zunächst die Wischelemente, die die Befehle darstellen, als Resso
 </Page.Resources>
 ```
 
-Denken Sie daran, die Menüelemente in Ihren Wischinhalten mit knappen und präzisen Beschriftungen beizubehalten. Diese Aktionen sollten die primären Aktionen werden, die ein Benutzer möglicherweise mehrmals innerhalb eines kurzen Zeitraums ausführen möchte.
+Denke daran, für die Menüelemente in deinen Wischinhalten kurze und präzise Beschriftungen zu verwenden. Bei diesen Aktionen sollte es sich um die primären Aktionen handeln, die ein Benutzer möglicherweise mehrmals innerhalb eines kurzen Zeitraums ausführen möchte.
 
-Das Einrichten eines Wischbefehls für die Verwendung in einer Sammlung oder ListView erfolgt auf genau die gleiche Weise wie das Definieren eines einzelnen Wischbefehls (wie oben gezeigt), mit der Ausnahme, dass das SwipeControl in einer DataTemplate definiert wird, damit es auf jedes Element in der Sammlung angewendet wird.
+Beim Einrichten eines wischgestenbasierten Befehls für die Verwendung in einer Sammlung oder Listenansicht (ListView) gehst du genau so vor wie beim Definieren eines einzelnen wischgestenbasierten Befehls (wie oben gezeigt). Die einzige Ausnahme besteht darin, dass das SwipeControl-Element in DataTemplate definiert wird, damit es auf jedes Element in der Sammlung angewendet wird.
 
-Hier ist eine ListView mit der SwipeControl, die im DataTemplate-Element angewendet wird. Die Eigenschaften „LeftItems“ und „RightItems“ verweisen auf die Wischelemente, die Sie als Ressourcen erstellen.
+Nachfolgend siehst du eine Listenansicht (ListView) mit dem SwipeControl-Element, das auf das DataTemplate-Element angewendet wird. Die Eigenschaften „LeftItems“ und „RightItems“ verweisen auf die Wischelemente, die du als Ressourcen erstellt hast.
 
 ```xaml
 <ListView x:Name="sampleList" Width="300">
@@ -180,11 +180,11 @@ Hier ist eine ListView mit der SwipeControl, die im DataTemplate-Element angewen
 </ListView>
 ```
 
-## <a name="handle-an-invoked-swipe-command"></a>Behandeln eines aufgerufenen Wischbefehls
+## <a name="handle-an-invoked-swipe-command"></a>Behandeln eines aufgerufenen wischgestenbasierten Befehls
 
-Um auf einen Wischbefehl zu reagieren, behandeln Sie dessen [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked)-Ereignis. (Für Weitere Informationen kann ein Benutzer einen Befehl aufrufen, überprüfen Sie die _wie Wischen funktioniert?_ weiter oben in diesem Artikel.) In der Regel ist ein Streifen-Befehl in einer ListView oder Liste-ähnliches Szenario ein. Wenn dann ein Befehl aufgerufen wird, können Sie eine Aktion für das gezogene Element ausführen.
+Du behandelst das [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked)-Ereignis, um auf einen wischgestenbasierten Befehl zu reagieren. (Weitere Informationen zum Aufrufen eines Befehls durch einen Benutzer findest du weiter oben in diesem Artikel im Abschnitt _Wie funktionieren Wischgesten?_ .) In der Regel wird ein wischgestenbasierter Befehl in ListView oder einem listenähnlichen Element verwendet. In diesem Fall kannst du beim Aufrufen eines Befehls eine Aktion für das Element ausführen, über das du gewischt hast.
 
-Gehen Sie zum Behandeln des Invoked-Ereignisses für das zuvor erstellte Wischelement _delete_ wie folgt vor.
+Gehe zum Behandeln des Invoked-Ereignisses für das zuvor erstellte Wischelement _delete_ wie folgt vor:
 
 ```xaml
 <SwipeItems x:Key="ExecuteDelete" Mode="Execute">
@@ -193,7 +193,7 @@ Gehen Sie zum Behandeln des Invoked-Ereignisses für das zuvor erstellte Wischel
 </SwipeItems>
 ```
 
-Bei dem Datenelement handelt es sich um das SwipeControl von DataContext. In Ihrem Code können Sie auf das Element zugreifen, das durch Abrufen der SwipeControl.DataContext-Eigenschaft aus den Ereignisargumenten gezogen wurde, wie hier gezeigt.
+Bei dem Datenelement handelt es sich um DataContext von SwipeControl. In deinem Code kannst du auf das Element zugreifen, über das gewischt wurde, indem du die Eigenschaft „SwipeControl.DataContext“ aus den Ereignisargumenten abrufst, wie hier gezeigt.
 
 ```csharp
  private void Delete_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
@@ -203,19 +203,19 @@ Bei dem Datenelement handelt es sich um das SwipeControl von DataContext. In Ihr
 ```
 
 > [!NOTE]
-> Hier wurden die Elemente der ListView.Items-Sammlung der Einfachheit halber direkt hinzugefügt, damit das Element ebenfalls auf die gleiche Weise gelöscht wird. Wenn Sie die ListView.ItemsSource stattdessen auf eine Sammlung festlegen, was üblicher ist, müssen Sie das Element aus der Quellsammlung löschen.
+> Hier wurden die Elemente der Einfachheit halber direkt der Sammlung „ListView.Items“ hinzugefügt, damit das Element auf die gleiche Weise gelöscht wird. Legst du stattdessen „ListView.ItemsSource“ auf eine Sammlung fest (was üblicher ist), musst du das Element aus der Quellsammlung löschen.
 
-In diesem speziellen Fall haben Sie das Element aus der Liste entfernt, sodass der endgültige visuelle Zustand des gezogenen Elements nicht von Bedeutung ist. In Situationen, in denen Sie einfach eine Aktion ausführen möchten und die Wischsteuerung danach wieder zuklappen möchten, können Sie die Eigenschaft [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) auf einen der [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked)-Enumerationswerte festlegen.
+In diesem speziellen Fall hast du das Element aus der Liste entfernt, sodass der endgültige visuelle Zustand des gewischten Elements nicht von Bedeutung ist. In Situationen, in denen du einfach eine Aktion ausführen und die wischgestenbasierte Steuerung danach wieder zuklappen möchtest, kannst du die Eigenschaft [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) auf einen der [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked)-Enumerationswerte festlegen.
 
 - **Auto**
   - Im Ausführungsmodus bleibt das geöffnete Wischelement beim Aufrufen geöffnet.
-  - Im Anzeigemodus bleibt das geöffnete Wischelement beim Aufrufen reduziert.
-- **Schließen**
+  - Im Einblendmodus wird das geöffnete Wischelement beim Aufrufen zugeklappt.
+- **Close**
   - Wenn das Element aufgerufen wird, wird das Steuerelement „Wischen“ immer zugeklappt und kehrt unabhängig vom jeweiligen Modus zum Normalzustand zurück.
 - **RemainOpen**
   - Wenn das Element aufgerufen wird, bleibt das Steuerelement „Wischen“ unabhängig vom jeweiligen Modus immer geöffnet.
 
-Hier wird ein Wischelement vom Typ _Antwort_ so festgelegt, dass es nach dem Aufrufen geschlossen wird.
+Hier wird ein Wischelement vom Typ _reply_ so festgelegt, dass es nach dem Aufrufen geschlossen wird.
 
 ```xaml
 <SwipeItem Text="Reply" IconSource="{StaticResource ReplyIcon}"
@@ -225,20 +225,20 @@ Hier wird ein Wischelement vom Typ _Antwort_ so festgelegt, dass es nach dem Auf
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
-- Verwenden Sie den Wischvorgang nicht bei FlipViews, Hubs oder Pivots. Die Kombination kann aufgrund von in Konflikt stehenden Wischrichtungen für den Benutzer verwirrend sein.
-- Kombinieren Sie das horizontale Wischen nicht mit horizontaler Navigation bzw. das vertikale Wischen mit vertikaler Navigation.
-- Stellen Sie sicher, das der vom Benutzer durchgeführte Wischvorgang dieselbe Aktion ist und konsistent für alle bezogenen, wischfähigen Elemente durchgeführt wird.
-- Verwenden Sie „Wischen“ für die Hauptaktionen, die Benutzer ausführen.
-- Verwenden Sie „Wischen” für Elemente, bei denen die gleiche Aktion mehrmals wiederholt wird.
-- Verwenden Sie horizontales Wischen bei größeren und vertikales Wischen bei kleineren Elementen.
-- Verwenden Sie kurze und knappe Beschriftungen.
+- Verwende den Wischvorgang nicht für FlipViews, Hubs oder Pivots. Die Kombination kann aufgrund von widersprüchlichen Wischrichtungen für den Benutzer verwirrend sein.
+- Kombiniere horizontales Wischen nicht mit horizontaler Navigation bzw. vertikales Wischen nicht mit vertikaler Navigation.
+- Stelle sicher, dass es sich bei dem vom Benutzer durchgeführten Wischvorgang um dieselbe Aktion handelt und dass sie konsistent für alle zugehörigen wischfähigen Elemente ausgeführt wird.
+- Verwende Wischvorgänge für die vom Benutzer ausgeführten Hauptaktionen.
+- Verwende Wischvorgänge für Elemente, für die die gleiche Aktion mehrmals wiederholt wird.
+- Verwende horizontales Wischen bei breiteren und vertikales Wischen bei höheren Elementen.
+- Verwende kurze, präzise Beschriftungen.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery): Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Listenansicht und der Rasteransicht](listview-and-gridview.md)
+- [Listenansicht und Rasteransicht](listview-and-gridview.md)
 - [Elementcontainer und Vorlagen](item-containers-templates.md)
-- [Zum Aktualisieren nach unten ziehen](pull-to-refresh.md)
+- [Aktualisierung durch Ziehen](pull-to-refresh.md)

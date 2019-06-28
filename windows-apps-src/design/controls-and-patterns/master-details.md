@@ -6,14 +6,14 @@ label: Master/details
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601255"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63773375"
 ---
 # <a name="masterdetails-pattern"></a>Master/Details-Muster
 
@@ -21,7 +21,7 @@ ms.locfileid: "57601255"
 
 Das Master/Details-Muster verfügt über einen Masterbereich (in der Regel mit einer [Listenansicht](lists.md)) und einen Detailbereich für Inhalte. Wenn ein Element in der Masterliste ausgewählt wird, wird der Detailbereich aktualisiert. Dieses Muster wird häufig für E-Mails und Adressbücher verwendet.
 
-> **Wichtige APIs:** [ListView-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **Wichtige APIs:** [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Beispiel für das Master/Details-Muster](images/HIGSecOne_MasterDetail.png)
 
@@ -53,15 +53,15 @@ Der Benutzer beginnt im Masterbereich und führt einen Drilldown zum Detailberei
 
 ### <a name="create-a-stacked-masterdetails-pattern"></a>Erstellen eines gestapelten Master/Details-Musters
 
-Eine Möglichkeit zur Erstellung des gestapelten Master/Details-Musters ist die Verwendung separater Seiten für den Masterbereich und den Detailbereich. Ordnen Sie die Masteransicht auf einer Seite und den Detailbereich auf einer separaten Seite an.
+Eine Möglichkeit zur Erstellung des gestapelten Master/Details-Musters ist die Verwendung separater Seiten für den Masterbereich und den Detailbereich. Platziere die Masteransicht auf einer Seite und den Detailbereich auf einer separaten Seite.
 
 ![Teile der Master/Details-Ansicht im gestapelten Format](images/patterns-md-stacked-parts.png)
 
-Für die Seite mit der Masteransicht eignet sich ein [Listenansicht](lists.md)-Steuerelement gut für die Darstellung von Listen, die Bilder und Text enthalten können. 
+Für die Seite mit der Masteransicht eignet sich ein Steuerelement vom Typ [Listenansicht](lists.md) gut für die Darstellung von Listen, die Bilder und Text enthalten können. 
 
-Verwenden Sie für die Seite mit der Detailansicht das am besten geeignete [Inhaltselement](../layout/layout-panels.md). Wenn viele separate Felder vorhanden sind, können Sie ein Layout vom Typ **Raster** zum Anordnen der Elemente in einem Formular verwenden.
+Verwende für die Seite mit der Detailansicht das am besten geeignete [Inhaltselement](../layout/layout-panels.md). Wenn viele separate Felder vorhanden sind, erwäge die Verwendung eines **Rasterlayouts** zum Anordnen der Elemente in einem Formular.
 
-Weitere Informationen zur Navigation zwischen Seiten finden Sie unter [Navigationsverlauf und Rückwärtsnavigation für UWP-Apps](../basics/navigation-history-and-backwards-navigation.md).
+Weitere Informationen zur Navigation zwischen Seiten findest du unter [Navigationsverlauf und Rückwärtsnavigation für UWP-Apps](../basics/navigation-history-and-backwards-navigation.md).
 
 ## <a name="side-by-side-style"></a>Format mit paralleler Anordnung
 
@@ -73,36 +73,36 @@ Für die Liste im Masterbereich wird eine visuelle Auswahlmethode genutzt, um da
 
 ### <a name="create-a-side-by-side-masterdetails-pattern"></a>Erstellen eines parallelen Master/Details-Musters
 
-Eine Möglichkeit zur Erstellung eines parallelen Master/Details-Musters ist die Verwendung des Steuerelements für die [geteilte Ansicht](split-view.md). Ordnen Sie die Masteransicht im Bereich der geteilten Ansicht und die Detailansicht im Inhaltsbereich der geteilten Ansicht an.
+Eine Möglichkeit zur Erstellung eines parallelen Master/Details-Musters ist die Verwendung des Steuerelements für die [geteilte Ansicht](split-view.md). Platziere die Masteransicht im Bereich der geteilten Ansicht und die Detailansicht im Inhaltsbereich der geteilten Ansicht.
 
-![Teile der geteilten Master/Detailansicht](images/patterns_md_splitview_parts.png)
+![Teile der geteilten Master/Details-Ansicht](images/patterns_md_splitview_parts.png)
 
 Für den Masterbereich eignet sich ein [Listenansicht](lists.md)-Steuerelement gut für die Darstellung von Listen, die Bilder und Text enthalten können.
 
-Verwenden Sie für den Detailinhalt das am besten geeignete [Inhaltselement](../layout/layout-panels.md). Wenn viele separate Felder vorhanden sind, können Sie ein Layout vom Typ **Raster** zum Anordnen der Elemente in einem Formular verwenden.
+Verwende für den Detailinhalt das am besten geeignete [Inhaltselement](../layout/layout-panels.md). Wenn viele separate Felder vorhanden sind, erwäge die Verwendung eines **Rasterlayouts** zum Anordnen der Elemente in einem Formular.
 
 ## <a name="adaptive-layout"></a>Adaptives Layout
 
-Um ein Master/Details-Muster für jede Bildschirmgröße zu implementieren, erstellen Sie eine reaktionsfähige Benutzeroberfläche mit einem [adaptiven Layout](../layout/layouts-with-xaml.md).
+Um ein Master/Details-Muster für jede Bildschirmgröße zu implementieren, erstelle eine reaktionsfähige Benutzeroberfläche mit einem [adaptiven Layout](../layout/layouts-with-xaml.md).
 
 ![Adaptives Master/Details-Layout](images/patterns_masterdetail.png)
 
 ### <a name="create-an-adaptive-masterdetails-pattern"></a>Erstellen eines adaptiven Master/Detail-Musters
-Um ein adaptives Layout zu erstellen, definieren Sie verschiedene [**VisualStates**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstate) für Ihre Benutzeroberfläche, und deklarieren Sie Haltepunkte für die verschiedenen Zustände mit [**AdaptiveTriggers**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
+Definiere zum Erstellen eines adaptiven Layouts verschiedene [**VisualStates**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstate)-Elemente für deine Benutzeroberfläche, und deklariere Haltepunkte für die verschiedenen Zustände mit [**AdaptiveTriggers**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-In den folgenden Beispielen implementieren Sie das Master/Detail-Muster mit adaptiven Layouts und veranschaulichen das Binden von Daten an statische, Datenbank- und Online-Ressourcen: 
-- [Master/Detail-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [Master-/Detail- plus -Auswahl-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Windows Vorlage Studio Master/Detail-Beispiel](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
-- [Customer-Orders-Datenbank-Beispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+In den folgenden Beispielen implementierst du das Master/Details-Muster mit adaptiven Layouts und veranschaulichst das Binden von Daten an statische Ressourcen sowie Datenbank- und Onlineressourcen: 
+- [Master/Details-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
+- [Beispiel für Master/Details sowie Auswahl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Master/Details-Beispiel für Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
+- [Beispieldatenbank für Kundenbestellung](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS-Reader-Beispiel](https://github.com/Microsoft/Windows-appsample-rssreader)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Listen](lists.md)
 - [Suche](search.md)
-- [App "und" Befehl Balken](app-bars.md)
+- [App- und Befehlsleisten](app-bars.md)
 - [ListView-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [SplitView-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)

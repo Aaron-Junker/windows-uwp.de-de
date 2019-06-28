@@ -1,45 +1,45 @@
 ---
-Description: ItemsRepeater ist ein Lightweight-Steuerelement zum Generieren und eine Auflistung von Elementen vorhanden.
+Description: ItemsRepeater ist ein einfaches Steuerelement zum Generieren und Darstellen einer Sammlung von Elementen.
 title: ItemsRepeater
 label: ItemsRepeater
 template: detail.hbs
 ms.date: 02/01/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364757"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
-Verwenden einer [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) zum Erstellen von benutzerdefinierten Sammlung Benutzererlebnis mit ein flexibles Layout-System, benutzerdefinierte Ansichten und Virtualisierung.
+Verwenden Sie ein [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)-Steuerelement, um benutzerdefinierte Sammlungsoberflächen mit einem flexiblen Layoutsystem, benutzerdefinierten Ansichten und Virtualisierung zu erstellen.
 
-Im Gegensatz zu [ListView](/uwp/api/windows.ui.xaml.controls.listview), [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) bietet eine umfassende Benutzeroberfläche – keine er besitzt keinen Standard-Benutzeroberfläche und bietet keine Richtlinie aus, um den Fokus, Auswahl, oder Interaktion des Benutzers. Stattdessen ist es ein Baustein, den Sie verwenden können, um eigene eindeutige Auflistung basierende Funktionen und benutzerdefinierte Steuerelemente zu erstellen. Wenn Sie keine integrierte Richtlinie hat, können Sie zum Anfügen der Richtlinie, um die Benutzeroberfläche zu erstellen, die Sie benötigen. Beispielsweise können Sie das Layout zu verwenden, die keyboarding Richtlinie, die Richtlinie zur Serverauswahl usw. definieren.
+Im Gegensatz zu [ListView](/uwp/api/windows.ui.xaml.controls.listview) stellt [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) keine umfassende Benutzeroberfläche bereit– „ItemsRepeater“ hat keine Standardbenutzeroberfläche und stellt keine Richtlinien hinsichtlich Fokus, Auswahl, oder Benutzerinteraktion bereit. Stattdessen ist das Steuerelement ein Baustein, den Sie dazu verwenden können, Ihre eigenen einzigartigen sammlungsbasierten Oberflächen und benutzerdefinierten Steuerelemente zu erstellen. Weil es keine integrierte Richtlinien hat, können Sie Richtlinien zuordnen, um die von Ihnen geforderte Benutzeroberfläche zu erstellen. Beispielsweise können Sie das zu verwendende Layout, die Tastaturunterstützungsrichtlinie, die Auswahlrichtlinie usw. definieren.
 
-Sie können sich vorstellen [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) konzeptionell als einen Bereich für datengesteuerte und nicht als vollständige wie ListView-Steuerelement. Sie geben eine Auflistung von Datenelementen, die angezeigt werden, eine Elementvorlage, die ein Element der Benutzeroberfläche für jedes Datenelement generiert und ein Layout, das bestimmt, wie die Elemente angepasst und positioniert werden. Klicken Sie dann ItemsRepeater untergeordneter Elemente anhand der Datenquelle erstellt, und zeigt sie laut die Item-Vorlage und das Layout. Die angezeigten Elemente müssen nicht homogen sein, da es sich bei Inhalt zur Darstellung der Datenelemente, die basierend auf Kriterien, die Sie in eine Datenvorlagenauswahl angeben ItemsRepeater geladen werden kann.
+Vom Konzept her können Sie sich [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) als einen datengesteuerten Bereich statt als ein vollständiges Steuerelement wie „ListView“ vorstellen. Sie geben eine Sammlung von anzuzeigenden Datenelementen, eine Elementvorlage, über die ein Benutzeroberflächenelement für jedes Datenelement generiert wird, und ein Layout an, das die Größe und die Position der Elemente bestimmt. „ItemsRepeater“ erstellt dann anhand der Datenquelle untergeordnete Elemente und zeigt diese entsprechend der Elementvorlage und dem Layout an. Die angezeigten Elemente müssen nicht homogen sein, da „ItemsRepeater“ Inhalte, die den Datenelementen entsprechen, anhand von Kriterien laden kann, die Sie in einer Datenvorlagenauswahl angeben.
 
 | **Abrufen der Windows-UI-Bibliothek** |
 | - |
-| Dieses Steuerelement ist Bestandteil der Windows-UI-Bibliothek, eines NuGet-Pakets, die neuen Steuerelemente und Funktionen der Benutzeroberfläche für UWP-apps enthält. Weitere Informationen einschließlich installationsanweisungen finden Sie in der [Übersicht über die Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| Dieses Steuerelement ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **Wichtige APIs:** [ItemsRepeater Klasse](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), [ScrollViewer-Klasse](/uwp/api/windows.ui.xaml.controls.scrollviewer)
+> **Wichtige APIs:** [ItemsRepeater-Klasse](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), [ScrollViewer-Klasse](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Verwenden einer [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) benutzerdefinierte zeigt für Auflistungen von Daten zu erstellen. Während es verwendet werden kann, die einen grundlegenden Satz von Elementen vorhanden, können Sie häufig als das Anzeigeelement in der Vorlage ein benutzerdefiniertes Steuerelement verwenden.
+Verwenden Sie ein [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)-Steuerelement, um eine benutzerdefinierte Anzeige für eine Sammlung von Daten zu erstellen. Obwohl es verwendet werden kann, einen einfachen Satz von Elementen darzustellen, werden Sie es häufig wahrscheinlich als das Anzeigeelement in der Vorlage eines benutzerdefinierten Steuerelements verwenden.
 
-Wenn Sie ein Out-of-the-Box-Steuerelement zum Anzeigen von Daten in einer Liste oder Raster mit minimalem Anpassungsaufwand benötigen, sollten Sie verwenden eine [ListView](/uwp/api/windows.ui.xaml.controls.listview) oder [GridView](/uwp/api/windows.ui.xaml.controls.gridview).
+Wenn Sie ein sofort einsatzbereites Steuerelement benötigen, um bei minimaler Anpassung Daten in einer Liste oder einem Raster anzuzeigen, sollten Sie ein [ListView](/uwp/api/windows.ui.xaml.controls.listview)- oder [GridView](/uwp/api/windows.ui.xaml.controls.gridview)-Steuerelement verwenden.
 
-ItemsRepeater muss sich nicht auf eine integrierte Elementsammlung aus. Wenn Sie eine Items-Auflistung direkt, anstatt zu einer anderen Datenquelle, Bindung bereitstellen müssen Sie sind eine weitere High-Policy-Erfahrung schädlicheren und sollten [ListView](/uwp/api/windows.ui.xaml.controls.listview) oder [GridView](/uwp/api/windows.ui.xaml.controls.gridview).
+„ItemsRepeater“ hat keine integrierte Sammlung für Elemente (Items-Sammlung). Wenn Sie statt einer Bindung an eine separate Datenquelle direkt eine Items-Sammlung bereitstellen müssen, benötigen Sie wahrscheinlich eine Oberfläche mit eingeschränkterer Richtlinie und sollten [ListView](/uwp/api/windows.ui.xaml.controls.listview) oder [GridView](/uwp/api/windows.ui.xaml.controls.gridview) verwenden.
 
-[ItemsControl](/uwp/api/windows.ui.xaml.controls.itemscontrol) und ItemsRepeater beide ermöglichen Sie die Sammlung, aber ItemsRepeater unterstützt virtualisierenden UI-Layouts, während das ItemsControl-Element nicht der Fall ist. Es wird empfohlen, anstelle von ItemsRepeater ItemsControl-Objekt gibt an, ob die nur für einige Elemente aus Daten darstellen oder Erstellen eines benutzerdefinierten Sammlung-Steuerelements.
+Sowohl [ItemsControl](/uwp/api/windows.ui.xaml.controls.itemscontrol) als auch „ItemsRepeater“ ermöglichen anpassbare Sammlungsoberflächen, aber im Gegensatz zu „ItemsControl“ unterstützt „ItemsRepeater“ das Virtualisieren von Benutzeroberflächenlayouts. Es empfiehlt sich, „ItemsRepeater“ statt „ItemsControl“ zu verwenden, egal, ob nur einige Datenelemente dargestellt werden sollen oder ob ein benutzerdefiniertes Sammlungssteuerelement erstellt werden soll.
 
 > [!NOTE]
-> Wenn Sie eine Situation haben, in dem Sie der Meinung sind ItemsControl Ihren Anforderungen entspricht und keine ItemsRepeater, bitte Ihr Feedback auf die [Windows UI-Bibliothek-GitHub-Projekt](https://github.com/Microsoft/microsoft-ui-xaml/issues) uns wissen zu lassen.
+> Haben Sie eine Situation, für die Sie der Meinung sind, dass „ItemsControl“ Ihren Anforderungen entspricht, „ItemsRepeater“ dagegen nicht, bitten wir Sie, uns dies als Feedback zum [GitHub-Projekt der Windows-UI-Bibliothek](https://github.com/Microsoft/microsoft-ui-xaml/issues) wissen zu lassen.
 
 ## <a name="examples"></a>Beispiele
 
@@ -48,7 +48,7 @@ ItemsRepeater muss sich nicht auf eine integrierte Elementsammlung aus. Wenn Sie
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um die app öffnen und finden Sie unter den <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in Aktion.</p>
+    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in Aktion zu sehen.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Abrufen des Quellcodes (GitHub)</a></li>
@@ -57,14 +57,14 @@ ItemsRepeater muss sich nicht auf eine integrierte Elementsammlung aus. Wenn Sie
 </tr>
 </table>
 
-## <a name="scrolling-with-itemsrepeater"></a>Durchführen eines Bildlaufs mit ItemsRepeater
+## <a name="scrolling-with-itemsrepeater"></a>Scrollen mit „ItemsRepeater“
 
-[**ItemsRepeater** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) nicht von abgeleitet [ **Steuerelement**](/uwp/api/windows.ui.xaml.controls.control), sodass es eine Steuerelementvorlage enthält. Aus diesem Grund Es enthält keine integrierten, wie ein ListView einen Bildlauf aus, oder führen Sie andere Steuerelemente für die Attributsammlung.
+[**ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) ist nicht aus [**Control**](/uwp/api/windows.ui.xaml.controls.control) abgeleitet und hat somit keine Steuerelementvorlage. Aus diesem Grund enthält „ItemsRepeater“ kein integriertes Scrollen, wie dies für „ListView“ oder andere Sammlungssteuerelemente der Fall ist.
 
-Bei Verwendung einer **ItemsRepeater**, sollten Sie Bildlauffunktionen bereitstellen, durch das wrapping in eine [ **ScrollViewer** ](/uwp/api/windows.ui.xaml.controls.scrollviewer) Steuerelement.
+Wenn Sie ein **ItemsRepeater**-Steuerelement verwenden, sollten Sie Scrollfunktionalität bereitstellen, indem Sie es in ein [**ScrollViewer**](/uwp/api/windows.ui.xaml.controls.scrollviewer)-Steuerelement einbinden.
 
 > [!NOTE]
-> Wenn Ihre app, in früheren Versionen von Windows ausgeführt wird - veröffentlicht die *vor* Windows 10, Version 1809 - auch müssen Sie zum Hosten der **ScrollViewer** innerhalb der [  **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost). 
+> Wird Ihre App unter früheren Versionen von Windows ausgeführt – Versionen, die *vor* Windows 10, Version 1809, veröffentlicht wurden –, müssen Sie das **ScrollViewer**-Steuerelement im [**ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost)-Steuerelement hosten. 
 > ```xaml
 > <muxc:ItemsRepeaterScrollHost>
 >     <ScrollViewer>
@@ -72,17 +72,17 @@ Bei Verwendung einer **ItemsRepeater**, sollten Sie Bildlauffunktionen bereitste
 >     </ScrollViewer>
 > </muxc:ItemsRepeaterScrollHost>
 > ```
-> Wenn die app nur auf neueren Versionen von Windows 10, Version 1809 und höher – ausgeführt, und klicken Sie dann keine Notwendigkeit besteht, verwenden Sie die [ **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost).
+> Wird Ihre App nur unter Windows 10 ab Version 1809 ausgeführt, besteht keine Notwendigkeit, [**ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost) zu verwenden.
 >
-> Vor Windows 10, Version 1809, **ScrollViewer** wurde nicht implementiert die [ **IScrollAnchorProvider** ](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) Schnittstelle, die die **ItemsRepeater**benötigt.  Die **ItemsRepeaterScrollHost** ermöglicht die **ItemsRepeater** zur Koordinierung mit **ScrollViewer** unter früheren Versionen der sichtbaren Stelle Elemente ordnungsgemäß beibehalten der Benutzer wird angezeigt.  Andernfalls können die Elemente angezeigt, zu verschieben oder plötzlich verschwinden, wenn die Elemente in der Liste geändert werden, oder die app angepasst wird.
+> Vor Windows 10, Version 1809, ist in **ScrollViewer** die Schnittstelle [**IScrollAnchorProvider**](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) nicht implementiert, die für **ItemsRepeater** benötigt wird.  Das **ItemsRepeaterScrollHost**-Steuerelement ermöglicht das Koordinieren von **ItemsRepeater** und **ScrollViewer** unter früheren Versionen, um die sichtbaren Positionen von Elementen, die der Benutzer anzeigt, ordnungsgemäß beizubehalten.  Andernfalls kann es passieren, dass die Elemente verschoben werden oder plötzlich verschwinden, wenn die Elemente in der Liste geändert werden oder wenn die Größe der App geändert wird.
 
-## <a name="create-an-itemsrepeater"></a>Erstellen Sie eine ItemsRepeater
+## <a name="create-an-itemsrepeater"></a>Erstellen eines „ItemsRepeater“-Steuerelements
 
-Verwenden einer [ **ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), müssen Sie es durch Festlegen der anzuzeigenden Daten erteilen der **ItemsSource** Eigenschaft. Weisen Sie es dann, wie zum Anzeigen von Elementen durch Festlegen der [ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) Eigenschaft.
+Um ein [**ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)-Steuerelement verwenden zu können, müssen ihm die anzuzeigenden Daten zuordnen, indem Sie die **ItemsSource**-Eigenschaft festlegen. Danach teilen Sie ihm mit, wie die Elemente angezeigt werden sollen, indem Sie die [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)-Eigenschaft festlegen.
 
 ### <a name="itemssource"></a>ItemsSource
 
-Legen Sie zum Auffüllen der Ansicht der [ **ItemsSource** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) Eigenschaft, um eine Auflistung von Datenelementen. Hier ist die **ItemsSource** im Code direkt an eine Instanz einer Sammlung festgelegt ist.
+Um die Ansicht aufzufüllen, legen Sie die [**ItemsSource**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource)-Eigenschaft auf eine Sammlung von Datenelementen fest. Hier wird die **ItemsSource**-Eigenschaft im Code direkt auf eine Instanz einer Sammlung festgelegt.
 
 ```csharp
 ObservableCollection<string> Items = new ObservableCollection<string>();
@@ -91,7 +91,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-Sie können auch eine Bindung die **ItemsSource** Eigenschaft zu einer Sammlung in XAML. Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+Sie können die **ItemsSource**-Eigenschaft auch an eine Sammlung in XAML binden. Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
 
 
 ```xaml
@@ -99,15 +99,15 @@ Sie können auch eine Bindung die **ItemsSource** Eigenschaft zu einer Sammlung 
 ```
 
 ### <a name="itemtemplate"></a>ItemTemplate
-Um anzugeben, wie ein Datenelement sichtbar gemacht wird, legen die [ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) Eigenschaft, um eine [ **DataTemplate** ](/uwp/api/windows.ui.xaml.datatemplate) oder [  **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector) Sie definiert haben. Die Datenvorlage definiert, wie die Daten sichtbar gemacht werden. Standardmäßig wird das Element in der Ansicht mit einem **TextBlock** verwendet der die Zeichenfolgendarstellung des Objekts.
+Um anzugeben, wie ein Datenelement visualisiert wird, legen Sie die [**ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)-Eigenschaft auf eine [ **DataTemplate**](/uwp/api/windows.ui.xaml.datatemplate)- oder [ **DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)-Instanz fest, die Sie definiert haben. Die Datenvorlage definiert, wie die Daten visualisiert werden. Standardmäßig wird das Element in der Ansicht mit einer **TextBlock**-Instanz angezeigt, für die die Zeichenfolgendarstellung des Datenobjekts verwendet wird.
 
-Allerdings möchten Sie in der Regel eine mehr überzeugende Präsentation von Daten mithilfe einer Vorlage, die definiert, das Layout und die Darstellung von ein oder mehrere Steuerelemente, die Sie zum Anzeigen eines einzelnen Elements verwenden angezeigt. Der Steuerelemente, die Sie in der Vorlage verwendet die Eigenschaften des Datenobjekts gebunden werden können, oder Inline mit statischen Inhalt definiert haben.
+In der Regel möchten Sie jedoch eine ansprechendere Darstellung Ihrer Daten anzeigen, indem Sie eine Vorlage verwenden, in der das Layout und das Aussehen der Steuerelemente definiert sind, in denen Sie ein einzelnes Elements anzeigen. Die Steuerelemente, die Sie in der Vorlage verwenden, können an die Eigenschaften eines Datenobjekts gebunden sein oder statischen Inhalt haben, der intern definiert ist.
 
-#### <a name="datatemplate"></a>DataTemplate-Element
-In diesem Beispiel ist das Datenobjekt, das eine einfache Zeichenfolge. Die **DataTemplate** enthält ein Bild auf der linken Seite den Text und die Stile der **TextBlock** zur Anzeige der Zeichenfolge in einer Blaugrün-Farbe.
+#### <a name="datatemplate"></a>DataTemplate
+In diesem Beispiel ist das Datenobjekt eine einfache Zeichenfolge. Die **DataTemplate**-Instanz enthält ein Bild links neben dem Text und legt für die **TextBlock**-Instanz fest, dass die Zeichenfolge in Blaugrün angezeigt werden soll.
 
 > [!NOTE]
-> Bei Verwendung der [X: Bind-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in einem **DataTemplate**, müssen Sie den Datentyp angeben (`x:DataType`) auf dem DataTemplate.
+> Wenn Sie die [x:Bind-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in **DataTemplate** verwenden, müssen Sie „DataType“ (`x:DataType`) für „DataTemplate“ angeben.
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -124,14 +124,14 @@ In diesem Beispiel ist das Datenobjekt, das eine einfache Zeichenfolge. Die **Da
 </DataTemplate>
 ```
 
-Hier ist wie die Elemente angezeigt werden würde, wenn Sie mit diesem angezeigt **DataTemplate**.
+Nachstehend sind die Elemente so dargestellt, wie sie mit dieser **DataTemplate**-Instanz angezeigt würden.
 
-![Elemente, die mit einer Datenvorlage angezeigt](images/listview-itemstemplate.png)
+![Elemente, die mit einer Datenvorlage angezeigt werden](images/listview-itemstemplate.png)
 
-Die Anzahl der Elemente in verwendet die **DataTemplate** für ein Element einen erheblichen Einfluss auf die Leistung haben kann, wenn die Ansicht eine große Anzahl von Elementen angezeigt. Weitere Informationen und Beispiele zum Verwenden von **DataTemplate**s, um das Erscheinungsbild von Elementen in der Liste zu definieren, finden Sie unter [Element Container und Vorlagen](item-containers-templates.md).
+Die Anzahl der Objekte, die in der **DataTemplate**-Instanz für ein Element verwendet werden, kann einen erheblichen Einfluss auf die Leistung haben, wenn in Ihrer Ansicht sehr viele Elemente angezeigt werden. Weitere Informationen sowie Beispiele zur Verwendung von **DataTemplate**-Instanzen, um das Aussehen von Elementen in Ihrer Liste zu definieren, finden Sie unter [Elementcontainer und Vorlagen](item-containers-templates.md).
 
 > [!TIP]
-> Zur Vereinfachung, wenn Sie die Vorlagen-Inline deklarieren möchten, statt als statische Ressource auf die verwiesen wird, können Sie angeben, die **DataTemplate** oder **DataTemplateSelector** als direkt untergeordnetes Element der **ItemsRepeater**.  Zugewiesen als Wert für die **ItemTemplate** Eigenschaft. Dies ist z. B. gültig:
+> Wenn Sie der Einfachheit halber die Vorlage intern deklarieren möchten, statt dass sie als statische Ressource referenziert wird, können Sie die **DataTemplate**- oder **DataTemplateSelector**-Instanz als direktes untergeordnetes Element des **ItemsRepeater**-Steuerelements angeben.  Sie wird als der Wert der **ItemTemplate**-Eigenschaft zugewiesen. Folgendes ist beispielsweise gültig:
 > ```xaml
 > <ItemsRepeater ItemsSource="{x:Bind Items}">
 >     <DataTemplate>
@@ -141,15 +141,15 @@ Die Anzahl der Elemente in verwendet die **DataTemplate** für ein Element einen
 > ```
 
 > [!TIP]
-> Im Gegensatz zu **ListView** und andere Steuerelemente Auflistung der **ItemsRepeater** umschließen Sie nicht die Elemente aus einer **DataTemplate** zusätzliche Elementcontainers enthält die Standardrichtlinie wie z. B. Ränder, Auffüllung, visuellen Elemente der Auswahl oder ein Zeiger über den visuellen Zustand. Stattdessen **ItemsRepeater** zeigt nur, was in definiert ist die **DataTemplate**. Wenn Sie Elemente wie ein Listenansichtselement haben möchten, Sie können explizit einschließen ein Containers, wie z. B. **ListViewItem**, in der Datenvorlage. **ItemsRepeater** zeigt die **ListViewItem** visuelle Objekte, jedoch nicht automatisch verwenden, die von anderen Funktionen, z. B. Auswahl oder das Kontrollkästchen mit mehreren Optionen angezeigt.
+> Im Gegensatz zu **ListView** und anderen Sammlungssteuerelementen umhüllt **ItemsRepeater** die Elemente aus einer **DataTemplate**-Instanz nicht mit einem zusätzlichen Elementcontainer, der Standardrichtlinien enthält, etwa Ränder, Auffüllung, visuelle Auswahlkomponenten oder ein Zeiger über einem visuellen Zustand. Stattdessen präsentiert **ItemsRepeater** nur den Inhalt, der in der **DataTemplate**-Instanz definiert ist. Wenn Sie möchten, dass Ihre Elemente genau so aussehen wie ein Listenansichtselement, können Sie explizit einen Container, z. B. **ListViewItem**, in Ihre Datenvorlage einfügen. **ItemsRepeater** zeigt die visuellen **ListViewItem**-Komponenten an, verwendet aber nicht automatisch weitere Funktionalität, etwa Auswahl oder Anzeigen des Multiauswahl-Kontrollkästchen.
 >
-> Auf ähnliche Weise ist Datenerfassung eine Auflistung der Steuerelemente, wie **Schaltfläche** (`List<Button>`), können Sie legen eine **ContentPresenter-Element** in Ihre **DataTemplate-Element** zu Anzeigen des Steuerelements an.
+> Analog können Sie, wenn Ihre Datensammlung eine Sammlung von Steuerelementen ist, z. B. **Button** (`List<Button>`), eine **ContentPresenter**-Instanz in Ihrer **DataTemplate**-Instanz anordnen, um das Steuerelement anzuzeigen.
 
 #### <a name="datatemplateselector"></a>DataTemplateSelector
 
-Die Elemente, die Sie in der Ansicht anzeigen müssen nicht vom gleichen Typ sein. Sie können angeben, die [ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) Eigenschaft mit einer [ **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector) auf verschiedenen  **DataTemplate**basierend auf von Ihnen angegebenen Kriterien.
+Die Elemente, die Sie in der Ansicht anzeigen, müssen nicht denselben Typ haben. Sie können die [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)-Eigenschaft mit einer [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)-Instanz bereitstellen, um anhand von Kriterien, die Sie angegeben haben, verschiedene **DataTemplate**-Instanzen auszuwählen.
 
-In diesem Beispiel geht davon aus eine **DataTemplateSelector** definiert wurde, die zwischen zwei unterschiedlichen entscheidet **DataTemplate**s, um ein Element für große und kleine darstellen.
+In diesem Beispiel wird davon ausgegangen, dass eine **DataTemplateSelector**-Instanz definiert ist, in der zwischen zwei unterschiedlichen **DataTemplate**-Instanzen entschieden wird, um ein „Large“- und ein „Small“-Element darzustellen.
 
 ```xaml
 <ItemsRepeater ...>
@@ -160,72 +160,72 @@ In diesem Beispiel geht davon aus eine **DataTemplateSelector** definiert wurde,
 </ItemsRepeater>
 ```
 
-Beim Definieren einer **DataTemplateSelector** mit **ItemsRepeater** müssen Sie nur implementieren Sie eine Außerkraftsetzung für die [ **SelectTemplateCore(Object)** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) Methode. Weitere Informationen und Beispiele finden Sie unter [ **DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector).
+Wenn Sie eine **DataTemplateSelector**-Instanz definieren, die mit **ItemsRepeater** verwendet werden soll, müssen Sie nur eine Überschreibung für die [**SelectTemplateCore(Object)** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_)-Methode implementieren. Weitere Informationen und Beispiele finden Sie unter [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector).
 
 > [!NOTE]
-> Eine Alternative zum **DataTemplate**s zum Verwalten der Erstellung von Elementen in weiter fortgeschrittenen Szenarien zur Implementierung einer eigenen ist [ **Windows.UI.Xaml.Controls.IElementFactory** ](/uwp/api/windows.ui.xaml.controls.ielementfactory)als verwenden die **ItemTemplate**.  Es wird zum Generieren von Inhalten, die bei der Anforderung verantwortlich sein.
+> Für die Art und Weise, wie Elemente in komplexeren Szenarien erstellt werden, können Sie alternativ zu **DataTemplate**-Instanzen Ihre eigene [**Windows.UI.Xaml.Controls.IElementFactory**](/uwp/api/windows.ui.xaml.controls.ielementfactory)-Instanz implementieren, um diese als **ItemTemplate**-Instanz zu verwenden.  Sie ist für das Generieren von Inhalt verantwortlich, wenn dieser angefordert wird.
 
 ## <a name="configure-the-data-source"></a>Konfigurieren der Datenquelle
 
-Verwenden Sie die [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) -Eigenschaft an die Auflistung, die zum Generieren des Inhalts von Elementen verwenden. Sie können die ItemsSource festlegen, auf einen beliebigen Typ, der implementiert **"IEnumerable"** . Zusätzliche Sammlungs-Schnittstellen implementiert, indem Sie die Datenquelle ermitteln, welche Funktionen für die ItemsRepeater für die Interaktion mit Ihren Daten verfügbar sind.
+Verwenden Sie die [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource)-Eigenschaft, um die Sammlung anzugeben, mit der der Inhalt von Elementen generiert werden soll. Sie können die „ItemsSource“-Eigenschaft auf jeden Typ festlegen, der **IEnumerable** implementiert. Zusätzliche Sammlungsschnittstellen, die durch Ihre Datenquelle implementiert sind, bestimmen, welche Funktionalität für die „ItemsRepeater“-Instanz verfügbar ist, um mit Ihren Daten zu interagieren.
 
-Diese Liste zeigt die verfügbaren Schnittstellen und wann Sie jeweils in Betracht.
+In dieser Liste sind die verfügbaren Schnittstellen aufgeführt und ist beschrieben, wann die jeweilige Schnittstelle in Betracht kommt.
 
-- ["IEnumerable"](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/uwp/api/windows.foundation.collections.iiterable_t_)
+- [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/uwp/api/windows.foundation.collections.iiterable_t_)
 
-  - Kann bei kleinen, statischen Datasets verwendet werden.
+  - Kann für kleine statische Datasets verwendet werden.
 
-    Die Datenquelle muss mindestens die "IEnumerable" implementieren / IIterable-Schnittstelle. Wenn dies alles ist, die unterstützt wird dann durchläuft das Steuerelement alles, was Sie einmal eine Kopie zu erstellen, die sie verwenden können, den Zugriff auf Elemente, die über einen Indexwert.
+    Für die Datenquelle muss mindestens die „IEnumerable / IIterable“-Schnittstelle implementiert werden. Ist dies alles, was unterstützt wird, durchläuft das Steuerelement alle Inhalte einmal, um eine Kopie zu erstellen, die es verwenden kann, um über einen Indexwert auf Elemente zuzugreifen.
 
 - [IReadonlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/uwp/api/windows.foundation.collections.ivectorview_t_)
 
-  - Kann für statische, schreibgeschützte Datasets verwendet werden.
+  - Kann für statische schreibgeschützte Datasets verwendet werden.
 
-    Ermöglicht das Steuerelement, das Zugreifen auf Elemente nach Index, und vermeidet die redundante interne Kopie.
+    Ermöglicht dem Steuerelement, über den Index auf Elemente zuzugreifen, und vermeidet redundante interne Kopien.
 
 - [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/uwp/api/windows.foundation.collections.ivector_t_)
 
   - Kann für statische Datasets verwendet werden.
 
-    Ermöglicht das Steuerelement, das Zugreifen auf Elemente nach Index, und vermeidet die redundante interne Kopie.
+    Ermöglicht es dem Steuerelement, über den Index auf Elemente zuzugreifen, und vermeidet redundante interne Kopien.
 
-    **Warnung**: In der Liste/eines Vektors geändert werden, ohne die Implementierung der [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) wird nicht in der Benutzeroberfläche widergespiegelt werden.
+    **Warnung**: [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) muss implementiert sein, damit Änderungen an der Liste oder dem Vektor in die Benutzeroberfläche übernommen werden.
 
 - [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged)(.NET)
 
-  - Empfohlen, die änderungsbenachrichtigungen unterstützen.
+  - Empfohlen, um Änderungsbenachrichtigungen zu unterstützen.
 
-    Aktiviert das Steuerelement zu überwachen und reagieren auf Änderungen in der Datenquelle aus, und diese Änderungen in der Benutzeroberfläche.
+    Ermöglicht es dem Steuerelement, auf Änderungen in der Datenquelle zu überwachen und diese Änderungen in die Benutzeroberfläche zu übernehmen.
 
 - [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
 
-  - Unterstützt die änderungsbenachrichtigung
+  - Unterstützt Änderungsbenachrichtigung.
 
-    Wie die **INotifyCollectionChanged** -Schnittstelle, ermöglicht dies das Steuerelement zum Überwachen und reagieren auf Änderungen in der Datenquelle.
+    Hiermit wird es dem Steuerelement, wie bei der **INotifyCollectionChanged**-Schnittstelle, ermöglicht, auf Änderungen in der Datenquelle zu überwachen und zu reagieren.
 
-    **Warnung**: Die Windows.Foundation.IObservableVector\<T > unterstützt keine Aktion "Verschieben". Dadurch kann die Benutzeroberfläche für ein Element der visuellen Zustand zu verlieren.  Z. B. ein Element, das derzeit ausgewählt ist, bzw. den Fokus besitzt, in denen erfolgt des Verschiebens von "Entfernen" gefolgt von einem "hinzufügen" den Fokus verliert und nicht mehr ausgewählt werden.
+    **Warnung**: „Windows.Foundation.IObservableVector\<T>“ unterstützt keine Aktion für Verschieben (Move-Aktion). Dies kann dazu führen, dass die Benutzeroberfläche für ein Element ihren visuellen Zustand verliert.  Zum Beispiel ergibt sich für ein Element, das derzeit ausgewählt ist oder den Fokus hat, dass es den Fokus verliert und nicht länger ausgewählt ist, wenn das Verschieben durch ein Entfernen (Remove) gefolgt von einem Hinzufügen (Add) erfolgt.
 
-    Die Platform.Collections.Vector\<T > verwendet IObservableVector\<T > und verfügt über dieselbe Einschränkung. Wenn Sie Unterstützung für eine Aktion "Verschieben" erforderlich ist, Sie dann verwenden die **INotifyCollectionChanged** Schnittstelle.  Der .NET ObservableCollection\<T >-Klasse verwendet **INotifyCollectionChanged**.
+    „Platform.Collections.Vector\<T>“ verwendet „IObservableVector\<T>“ und hat dieselbe Einschränkung. Muss eine Move-Aktion unterstützt werden, verwenden Sie die **INotifyCollectionChanged**-Schnittstelle.  Die .NET-Klasse „ObservableCollection\<T>“ verwendet **INotifyCollectionChanged**.
 
 - [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping)
 
-  - Wenn ein eindeutiger Bezeichner jedes Element zugeordnet werden können.  Empfohlen bei Verwendung von "Reset" als Aktion zum Ändern der Auflistung.
+  - Wird verwendet, wenn jedem Element ein eindeutiger Bezeichner (ID) zugeordnet werden kann.  Empfohlen, wenn „Reset“ als Aktion für Sammlungsänderungen verwendet wird.
 
-    Aktiviert das Steuerelement die vorhandene Benutzeroberfläche sehr effizient wiederherstellen, nach dem Empfang einer schwer 'Zurücksetzen'-Aktion im Rahmen einer **INotifyCollectionChanged** oder **IObservableVector** Ereignis. Nach dem Empfang einer Zurücksetzen wird das Steuerelement die bereitgestellte eindeutige ID verwenden, um die aktuellen Daten mit Elementen zuzuordnen, die sie bereits erstellt haben. Ohne den Schlüssel für die Zuordnung des Index müsste das Steuerelement wird davon ausgegangen, dass es im Erstellen einer Benutzeroberfläche für die Daten von Grund auf beginnen soll.
+    Ermöglicht es dem Steuerelement, sehr effizient die vorhandene Benutzeroberfläche wiederherstellen zu können, nachdem eine harte Aktion für Zurücksetzen (Reset-Aktion) im Rahmen eines **INotifyCollectionChanged**- oder **IObservableVector**-Ereignisses empfangen wurde. Nachdem das Steuerelement eine „Reset“-Aktion empfangen hat, verwendet es die bereitgestellte eindeutige ID, um die aktuellen Daten mit Elementen zu verknüpfen, die es bereits erstellt hat. Ohne die Zuordnung von Schlüssel zu Index müsste das Steuerelement davon ausgehen, dass es die Benutzeroberfläche für die Daten von Grund auf neu erstellen muss.
 
-Die Schnittstellen, die oben aufgeführten, als IKeyIndexMapping, geben das gleiche Verhalten in ItemsRepeater, wie in ListView und GridView.
+Die oben aufgeführten Schnittstellen zeigen, mit Ausnahme von „IKeyIndexMapping“, in „ItemsRepeater“ das gleiche Verhalten wie in „ListView“ und „GridView“.
 
 
-Die folgenden Schnittstellen auf ItemsSource spezielle Funktionen in der ListView und GridView-Steuerelemente zu aktivieren, aber zurzeit keine Auswirkungen auf eine ItemsRepeater:
+Die folgenden Schnittstellen für eine Elementequelle (ItemsSource) ermöglichen spezielle Funktionalität in „ListView“- und „GridView“-Steuerelementen, wirken sich derzeit aber nicht auf ein „ItemsRepeater“-Steuerelement aus:
 
 - [ISupportIncrementalLoading](/uwp/api/windows.ui.xaml.data.isupportincrementalloading)
 - [IItemsRangeInfo](/uwp/api/windows.ui.xaml.data.iitemsrangeinfo)
 - [ISelectionInfo](/uwp/api/windows.ui.xaml.data.iselectioninfo)
 
 > [!TIP]
-> Wir legen Wert auf Ihre Meinung! Teilen Sie uns Ihre Meinung der [Windows UI-Bibliothek-GitHub-Projekt](https://github.com/Microsoft/microsoft-ui-xaml/issues). Erwägen Sie Ihre Meinung über vorhandene Vorschläge wie z. B. [#374](https://github.com/Microsoft/microsoft-ui-xaml/issues/374): Inkrementelles Laden-Unterstützung für ItemsRepeater hinzugefügt.
+> Wir legen Wert auf Ihre Meinung! Teilen Sie uns Ihre Meinung zu dem [GitHub-Projekt der Windows-UI-Bibliothek](https://github.com/Microsoft/microsoft-ui-xaml/issues) mit. Erwägen Sie, Ihre Gedanken zu vorhandenen Vorschlägen wie [#374](https://github.com/Microsoft/microsoft-ui-xaml/issues/374) hinzuzufügen: Add incremental loading support for ItemsRepeater (Unterstützung für inkrementelles Laden zu ItemsRepeater hinzufügen).
 
-Ein alternativer Ansatz, um die Daten inkrementell zu laden, wie der Bildlauf nach oben oder unten ist beobachten Sie die Position des Viewports für das ScrollViewer-Element, und Laden weitere Daten werden während der Viewport der Block erreicht.
+Ein alternativer Ansatz zum inkrementellen Laden von Daten, während der Benutzer nach oben oder unten scrollt, besteht darin, die Position des Viewports von „ScrollViewer“ zu beobachten und mehr Daten zu laden, wenn sich der Viewport der Erstreckung nähert.
 
 ```xaml
 <ScrollViewer ViewChanged="ScrollViewer_ViewChanged">
@@ -258,17 +258,17 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 ## <a name="change-the-layout-of-items"></a>Ändern des Layouts von Elementen
 
-Elemente angezeigt, indem Sie die [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) angeordnet sind, nach einem [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) Objekt, das die Größe und Positionierung der untergeordneten Elemente verwaltet. Bei Verwendung mit einem ItemsRepeater ermöglicht das Layoutobjekt UI-Virtualisierung. Die bereitgestellten Layouts sind [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) und [UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout). Standardmäßig verwendet ItemsRepeater einem StackLayout mit vertikaler Ausrichtung an.
+Elemente, die von [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) angezeigt werden, werden von einem [Layout](/uwp/api/microsoft.ui.xaml.controls.layout)-Objekt angeordnet, das die Größen und Positionierungen seiner untergeordneten Elemente verwaltet. Wird ein „Layout“-Objekt mit einem „ItemsRepeater“-Steuerelement verwendet, ermöglicht es UI-Virtualisierung. Die bereitgestellten Layouts sind [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) und [UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout). Standardmäßig verwendet „ItemsRepeater“ ein „StackLayout“ mit vertikaler Ausrichtung.
 
 ### <a name="stacklayout"></a>StackLayout
 
-[StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) ordnet Elemente in einer einzelnen Zeile, die Sie horizontal oder vertikal ausrichten können.
+[StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) ordnet Elemente in einer einzelnen Zeile an, die Sie horizontal oder vertikal ausrichten können.
 
-Sie können festlegen, die [Abstand](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) Eigenschaft, um den Abstand zwischen Elementen anpassen. Abstand wird angewendet, in die Richtung des Layouts des [Ausrichtung](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation).
+Sie können die [Spacing](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing)-Eigenschaft festlegen, um den Abstand zwischen Elementen anzupassen. „Spacing“ wird in der Richtung angewendet, die durch die Ausrichtung ([Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation)) des Layouts angegeben ist.
 
-![Stack-Layoutabstände](images/stack-layout.png)
+![Abstand für StackLayout](images/stack-layout.png)
 
-Dieses Beispiel zeigt, wie Sie die ItemsRepeater.Layout-Eigenschaft auf einem StackLayout mit horizontaler Ausrichtung und Abstände 8-Pixel festgelegt wird.
+In diesem Beispiel wird gezeigt, wie die „ItemsRepeater.Layout“-Eigenschaft auf ein Stapellayout (StackLayout) mit horizontaler Ausrichtung und einem jeweiligen Abstand von 8 Pixeln festgelegt wird.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -281,52 +281,52 @@ Dieses Beispiel zeigt, wie Sie die ItemsRepeater.Layout-Eigenschaft auf einem St
 
 ### <a name="uniformgridlayout"></a>UniformGridLayout
 
-Die [UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout) Elemente nacheinander in einem Layout Wrapping positioniert. Elemente in der Reihenfolge von links nach rechts angeordnet sind bei der [Ausrichtung](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.orientation) ist **horizontale**, und oben-nach-unten, wenn die Ausrichtung ist angeordnet **vertikale**. Jedes Element ist gleich groß.
+[UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout) positioniert Elemente der Reihe nach in einem Umbruchlayout. Elemente werden in Reihenfolge von links nach rechts angeordnet, wenn die [Orientation](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.orientation)-Eigenschaft auf **Horizontal**, und von oben nach unten, wenn „Orientation“ auf **Vertical** festgelegt ist. Jedes Element hat dieselbe Größe.
 
-![Symbole mit einheitlicher Layout Rasterweite](images/uniform-grid-layout.png)
+![Einheitliches Rasterlayout](images/uniform-grid-layout.png)
 
-Die Anzahl der Elemente in jeder Zeile des einem horizontalen Layout wird durch die Breite des Elements mit minimalen beeinflusst. Die Anzahl der Elemente in jeder Spalte von einem vertikalen Layout wird durch die Höhe des Elements mit minimalen beeinflusst.
+Die Anzahl der Elemente in jeder Zeile eines horizontalen Layouts wird durch die Mindestbreite eines Elements beeinflusst. Die Anzahl der Elemente in jeder Spalte eines vertikalen Layouts wird durch die Mindesthöhe eines Elements beeinflusst.
 
-- Sie können explizit angeben, eine Mindestgröße für die Verwendung durch Festlegen der [MinItemHeight](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemheight) und [MinItemWidth](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemwidth) Eigenschaften.
-- Wenn Sie keine Mindestgröße angeben, gilt die gemessene Größe des ersten Elements die minimale Größe pro Element.
+- Sie können explizit eine zu verwendende Mindestgröße bereitstellen, indem Sie die Eigenschaften [MinItemHeight](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemheight) und [MinItemWidth](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemwidth) festlegen.
+- Wenn Sie keine Mindestgröße angeben, wird die gemessene Größe des ersten Elements als die Mindestgröße pro Element angenommen.
 
-Sie können auch festlegen minimalen Abstand für das Layout zwischen Zeilen und Spalten enthalten die [MinColumnSpacing](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.mincolumnspacing) und [MinRowSpacing](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minrowspacing) Eigenschaften.
+Sie können für das Layout auch einen Mindestabstand, der zwischen Zeilen und Spalten eingefügt werden soll, angeben, indem Sie die Eigenschaften [MinColumnSpacing](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.mincolumnspacing) und [MinRowSpacing](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minrowspacing) festlegen.
 
-![Einheitliche Raster größenanpassung und Abstand](images/uniform-grid-sizing-spacing.png)
+![Einheitliche Größe und einheitlicher Abstand für Raster](images/uniform-grid-sizing-spacing.png)
 
-Nachdem Sie die Anzahl, wenn Elemente in einer Zeile oder Spalte festgelegt wurden auf die minimale Größe des Elements und Abstand basieren, gibt es möglicherweise nicht verwendeter Speicherplatz nach dem letzten Element in der Zeile oder Spalte (wie in der vorherigen Abbildung dargestellt). Sie können angeben, ob zusätzlicher Leerraum wird ignoriert, verwendet, um die Größe der einzelnen Elemente zu erhöhen oder verwendet, um zusätzlichen Abstand zwischen den Elementen zu erstellen. Dies wird gesteuert, indem die [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) und [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) Eigenschaften.
+Nachdem die Anzahl der Elemente in einer Zeile oder Spalte anhand von Mindestgröße und Mindestabstand des Elements bestimmt wurde, kann nach dem letzten Element in der Zeile oder Spalte ungenutzter Platz vorhanden sein (wie in der vorherigen Abbildung dargestellt). Sie können angeben, ob zusätzlicher Platz ignoriert wird, verwendet wird, um die Größe jedes Elements zu erhöhen, oder verwendet wird, um zusätzlichen Abstand zwischen den Elementen zu erstellen. Dies wird mit den Eigenschaften [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) und [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) gesteuert.
 
-Sie können festlegen, die [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) Eigenschaft, um anzugeben, wie die Elementgröße erhöht wird, um den nicht verwendeten Speicherplatz zu füllen.
+Sie können die [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch)-Eigenschaft festlegen, um anzugeben, wie die Elementgröße erhöht werden soll, um den ungenutzten Platz zu füllen.
 
-Diese Liste zeigt die verfügbaren Werte. Die Definitionen davon aus, der Standardwert **Ausrichtung** von **horizontale**.
+In dieser Liste sind die verfügbaren Werte aufgeführt. Für die Definitionen wird für **Orientation** der Wert **Horizontal** als Standardwert angenommen.
 
-- **Keine**: Zusätzliche Leerzeichen am Ende der Zeile nicht verwendete bleibt. Dies ist die Standardeinstellung.
-- **Geben Sie**: Die Elemente werden zusätzliche Breite mit den verfügbaren Speicherplatz (Höhe, wenn vertikale) angegeben.
-- **Uniform**: Die Elemente sind erhält zusätzliche Breite für die Verwendung der verfügbare Platz und zusätzliche Höhe um das Seitenverhältnis beibehalten (Höhe und Breite werden gewechselt wenn vertikale).
+- **Keine**: Zusätzlicher Platz am Ende der Zeile wird nicht verwendet. Dies ist der Standardwert.
+- **Fill**: Den Elementen wird zusätzliche Breite zugewiesen, um den verfügbaren Platz vollständig zu nutzen (Höhe bei vertikalem Layout).
+- **Uniform**: Den Elementen wird zusätzliche Breite zugewiesen, um den verfügbaren Platz vollständig zu nutzen, sowie zusätzliche Höhe, um das Seitenverhältnis beizubehalten (Höhe und Breite werden bei vertikaler Anordnung getauscht).
 
-Diese Abbildung zeigt die Auswirkungen der **ItemsStretch** Werte in einem horizontalen Layout.
+Diese Abbildung zeigen die Auswirkungen der **ItemsStretch**-Werte in einem horizontalen Layout.
 
-![Stretch für einheitliche Grid-Element](images/uniform-grid-item-stretch.png)
+![Einheitliches Dehnen von Rasterelementen](images/uniform-grid-item-stretch.png)
 
-Wenn **ItemsStretch** ist **keine**, Sie können festlegen, die [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) Eigenschaft, um anzugeben, wie zusätzlicher Speicherplatz verwendet wird, die Elemente ausrichten.
+Ist **ItemsStretch** auf **None** festgelegt, können Sie durch Festlegen der [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification)-Eigenschaft angeben, wie zusätzlicher Platz dazu verwendet werden soll, die Elemente auszurichten.
 
-Diese Liste zeigt die verfügbaren Werte. Die Definitionen davon aus, der Standardwert **Ausrichtung** von **horizontale**.
+In dieser Liste sind die verfügbaren Werte aufgeführt. Für die Definitionen wird für **Orientation** der Wert **Horizontal** als Standardwert angenommen.
 
-- **Start**: Elemente werden mit dem Anfang der Zeile ausgerichtet. Zusätzliche Leerzeichen am Ende der Zeile nicht verwendete bleibt. Dies ist die Standardeinstellung.
-- **Center**: Elemente werden in der Mitte der Zeile ausgerichtet. Zusätzlicher Leerraum wird am Anfang und Ende der Zeile gleichmäßig verteilt.
-- **End**: Elemente werden am Ende der Zeile ausgerichtet. Zusätzlicher Leerraum wird am Anfang der Zeile nicht verwendete belassen.
-- **SpaceAround**: Elemente werden gleichmäßig verteilt. Gleich viel Speicherplatz wird vor und nach jedem Element hinzugefügt.
-- **SpaceBetween**: Elemente werden gleichmäßig verteilt. Gleich viel Speicherplatz wird zwischen jedem Element hinzugefügt. Es wird kein Leerraum am Anfang und Ende der Zeile hinzugefügt.
-- **SpaceEvenly**: Elemente werden mit gleich viel Platz zwischen den einzelnen Elementen sowohl am Anfang und Ende der Zeile gleichmäßig verteilt.
+- **Start**: Elemente werden am Anfang der Zeile ausgerichtet. Zusätzlicher Platz am Ende der Zeile wird nicht verwendet. Dies ist der Standardwert.
+- **Center**: Elemente werden in der Mitte der Zeile ausgerichtet. Zusätzlicher Platz wird gleichmäßig auf den Anfang und das Ende der Zeile verteilt.
+- **End**: Elemente werden am Ende der Zeile ausgerichtet. Zusätzlicher Platz am Anfang der Zeile wird nicht verwendet.
+- **SpaceAround**: Elemente werden gleichmäßig verteilt. Vor und nach jedem Element wird gleich großer Platz hinzugefügt.
+- **SpaceBetween**: Elemente werden gleichmäßig verteilt. Zwischen je zwei Elementen wird gleich großer Platz hinzugefügt. Weder am Anfang noch am Ende der Zeile wird Platz hinzugefügt.
+- **SpaceEvenly**: Elemente werden gleichmäßig verteilt, wobei gleich viel Platz sowohl zwischen je zwei Elementen als auch am Anfang und am Ende der Zeile hinzugefügt wird.
 
-Diese Abbildung zeigt die Auswirkungen der **ItemsStretch** Werte in einem vertikalen Layout (angewendet auf Spalten anstelle von Zeilen).
+Diese Abbildung zeigt die Auswirkungen der **ItemsStretch**-Werte in einem vertikalen Layout (angewendet auf Spalten statt auf Zeilen).
 
-![Eine Begründung Uniform Grid-Element](images/uniform-grid-item-justification.png)
+![Einheitliche Ausrichtung von Rasterlementen](images/uniform-grid-item-justification.png)
 
 > [!TIP]
-> Die **ItemsStretch** Eigenschaft wirkt sich auf die _Measure_ Layout übergeben. Die **ItemsJustification** Eigenschaft wirkt sich auf die _anordnen_ Layout übergeben.
+> Die **ItemsStretch**-Eigenschaft wirkt sich auf den _Bemessen_-Schritt eines Layouts aus. Die **ItemsJustification**-Eigenschaft wirkt sich auf den _Anordnen_-Schritt eines Layouts aus.
 
-Dieses Beispiel veranschaulicht die legen Sie die **ItemsRepeater.Layout** Eigenschaft, um eine **UniformGridLayout**.
+In diesem Beispiel wird veranschaulicht, wie die **ItemsRepeater.Layout**-Eigenschaft, auf ein einheitliches Rasterlayout (**UniformGridLayout**) festgelegt wird.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -340,20 +340,20 @@ Dieses Beispiel veranschaulicht die legen Sie die **ItemsRepeater.Layout** Eigen
 </muxc:ItemsRepeater>
 ```
 
-## <a name="lifecycle-events"></a>Ereignisse des Lebenszyklus
+## <a name="lifecycle-events"></a>Lebenszyklusereignisse
 
-Wenn Sie Elemente in Hosten einer [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), müssen Sie möglicherweise Maßnahmen ergreifen, wenn ein Element angezeigt wird oder beendet wird, angezeigt werden, z. B. wie die Startzeit für eines asynchronen Downloads der Inhalte, verknüpfen Sie das Element einen Mechanismus zum Nachverfolgen der Auswahl oder Beenden Sie eine Hintergrundaufgabe.
+Wenn Sie Elemente in einem [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)-Steuerelement hosten, müssen Sie möglicherweise, wenn ein Element angezeigt oder dessen Anzeige beendet wird, eine Aktion auslösen, etwa Starten eines asynchronen Downloads von bestimmten Inhalten, Verknüpfen des Elements mit einem Mechanismus zum Nachverfolgen der Auswahl oder Beenden einer Hintergrundaufgabe.
 
-In einem Steuerelement virtualisierenden können nicht Sie auf Laden/Entladen Ereignisse verlassen, da das Element nicht aus der visuellen echtzeitstruktur entfernt werden kann, wenn es erneuert wurde. Stattdessen werden andere Ereignisse bereitgestellt, um den Lebenszyklus von Elementen zu verwalten. Dieses Diagramm zeigt den Lebenszyklus eines Elements in einer ItemsRepeater, und wenn die verwandten Ereignisse ausgelöst werden.
+In einem virtualisierenden Steuerelement können Sie sich nicht auf Geladen/Entladen-Ereignisse (Loaded/Unloaded) verlassen, weil das Element möglicherweise nicht aus dem visuellen Livebaum entfernt wird, wenn es erneut verwendet wird. Stattdessen werden andere Ereignisse bereitgestellt, um den Lebenszyklus von Elementen zu verwalten. In dieser schematischen Darstellung ist der Lebenszyklus eines Elements in einem „ItemsRepeater“-Steuerelement gezeigt und wird veranschaulicht, wann die zugehörigen Ereignisse ausgelöst werden.
 
-![Diagramm zum Lebenszyklus-Ereignis](images/items-repeater-lifecycle.png)
+![Schematische Darstellung von Lebenszyklusereignissen](images/items-repeater-lifecycle.png)
 
-- [**ElementPrepared** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementprepared) tritt jedes Mal ein Element für die Verwendung bereitgestellt wird. Dies tritt auf, für sowohl eine neu erstellte Element als auch ein Element, das bereits vorhanden ist und aus der Warteschlange für die Wiederverwendung erneut verwendet wird.
-- [**ElementClearing** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementclearing) tritt auf, unmittelbar jedes Mal ein Element in die Warteschlange Wiederverwendung, z. B. Wenn sie außerhalb des Bereichs von liegt gesendet wurde Elemente realisiert.
-- [**ElementIndexChanged** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementindexchanged
-) tritt auf, für jedes "UIElement" erzielt, in dem der Index des Elements dar geändert hat. Z. B. wenn ein anderes Element hinzugefügt oder entfernt werden, in der Datenquelle, der Index für Elemente, die in der Sortierung Folgen dieses Ereignis empfangen.
+- [**ElementPrepared**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementprepared) tritt jedes Mal auf, wenn ein Element für die Verwendung vorbereitet wird. Dieses Ereignis tritt sowohl für ein neu erstelltes Element als auch für ein Element auf, das bereits vorhanden ist und aus der Wiederverwendungswarteschlange erneut verwendet wird.
+- [**ElementClearing**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementclearing) tritt jedes Mal unmittelbar auf, nachdem ein Element an die Wiederverwendungswarteschlange gesendet wurde, beispielsweise wenn es aus dem Bereich der realisierten Elemente herausgefallen ist.
+- [**ElementIndexChanged**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementindexchanged
+) tritt für jedes realisierte Benutzeroberflächenelement (UIElement) auf, bei dem sich der Index des Elements, dem es entspricht, geändert hat. Wenn beispielsweise ein anderes Element in der Datenquelle hinzugefügt oder entfernt wird, empfängt der Index für Elemente, die in der Reihenfolge später kommen, dieses Ereignis.
 
-Dieses Beispiel zeigt, wie Sie diese Ereignisse verwenden können, zum Anfügen eines Diensts benutzerdefinierte Auswahl, um die Auswahl von Elementen in einem benutzerdefinierten Steuerelement nachzuverfolgen, die ItemsRepeater verwendet wird, um Elemente anzuzeigen.
+In diesem Beispiel wird gezeigt, wie Sie diese Ereignisse dazu verwenden könnten, einen Auswahldienst anzufügen, um die Elementauswahl in einem benutzerdefinierten Steuerelement nachzuverfolgen, in dem „ItemsRepeater“ zum Anzeigen von Elementen verwendet wird.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -417,19 +417,19 @@ private void OnElementClearing(ItemsRepeater sender, ElementClearingEventArgs ar
 
 ## <a name="sorting-filtering-and-resetting-the-data"></a>Sortieren, Filtern und Zurücksetzen der Daten
 
-Beim Ausführen von Aktionen wie das Filtern oder sortieren das DataSet Sie üblicherweise möglicherweise besitzen den früheren Satz von Daten in die neuen Daten verglichen, und über eine präzise änderungsbenachrichtigungen ausgegeben [INotifyCollectionChanged](/uwp/api/windows.ui.xaml.interop.inotifycollectionchanged). Allerdings ist es oft einfacher, vollständig ersetzen Sie die alten Daten mit den neuen Daten und zum Auslösen einer abfragebenachrichtigung mit Auflistung ändern der [zurücksetzen](/uwp/api/windows.ui.xaml.interop.notifycollectionchangedaction) Aktion stattdessen.
+Wenn Sie eine Aktion wie Filtern oder Sortieren eines Datasets ausführen, besteht Ihre herkömmliche Vorgehensweise möglicherweise darin, den früheren Satz von Daten mit den neuen Daten zu vergleichen und dann granulare Änderungsbenachrichtigungen über [INotifyCollectionChanged](/uwp/api/windows.ui.xaml.interop.inotifycollectionchanged) auszugeben. Häufig ist es jedoch einfacher, die alten Daten vollständig durch die neuen Daten zu ersetzen und mit der [Reset](/uwp/api/windows.ui.xaml.interop.notifycollectionchangedaction)-Aktion eine Änderungsbenachrichtigung für die Sammlung auszulösen.
 
-In der Regel führt dazu, dass ein Zurücksetzen ein Steuerelements, das Freigeben von vorhandenen untergeordneten Elemente und das Starten über die Benutzeroberfläche von den beginnend an der Bildlaufposition 0 erstellen, wie er kennt genau wie die Daten während des Zurücksetzens geändert hat.
+In der Regel veranlasst ein Zurücksetzen ein Steuerelement dazu, vorhandene untergeordnete Elemente freizugeben und neu zu beginnen, wobei die Benutzeroberfläche ab dem Anfang an Scrollposition 0 erstellt wird, weil das Steuerelement nicht genau weiß, wie sich die Daten während des Zurücksetzens geändert haben.
 
-Wenn die Auflistung als zugewiesen unterstützt die ItemsSource eindeutige Bezeichner durch die Implementierung der [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping) Schnittstelle, und klicken Sie dann die ItemsRepeater schnell ermitteln:
+Unterstützt die als Elementequelle (ItemsSource) zugewiesene Sammlung jedoch eindeutige Bezeichner, indem die [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping)-Schnittstelle implementiert ist, kann „ItemsRepeater“ schnell Folgendes ermitteln:
 
-- wiederverwendbare UIElements für Daten, die vor und nach dem Zurücksetzen vorhanden waren
-- zuvor sichtbare Elemente, die entfernt wurden
-- neue Elemente hinzugefügt werden, die angezeigt werden
+- Wiederverwendbare „UIElement“-Objekte für Daten, die vor und nach dem Zurücksetzen vorhanden waren
+- Zuvor sichtbare Elemente, die entfernt wurden
+- Hinzugefügte neue Elemente, die sichtbar sind
 
-Dadurch wird die ItemsRepeater zu vermeiden, die Bildlaufposition 0 zu beginnen. Außerdem können sie schnell Wiederherstellen der UIElements für Daten, die in dem Zurücksetzen nicht geändert haben, wodurch eine bessere Leistung.
+Dadurch wird verhindert, dass „ItemsRepeater“ erneut bei der Scrollposition 0 beginnt. Außerdem wird „ItemsRepeater“ hiermit in die Lage versetzt, die „UIElement“-Objekte für Daten schnell wiederherzustellen, die beim Zurücksetzen nicht geändert wurden, wodurch eine bessere Leistung erzielt wird.
 
-Dieses Beispiel zeigt, wie eine Liste von Elementen in einem vertikalen Stapel angezeigt, in denen _MyItemsSource_ ist eine benutzerdefinierte Datenquelle, die eine zugrunde liegende Liste von Elementen umschließt. Macht eine _Daten_ -Eigenschaft, die verwendet werden kann, um als Quelle Elemente zu verwenden, die zurücksetzen ein dann löst eine neue Liste neu zuweisen.
+In diesem Beispiel wird gezeigt, wie eine Liste von Elementen in einem vertikalen Stapel angezeigt wird, wobei _MyItemsSource_ eine benutzerdefinierte Datenquelle ist, die eine zugrunde liegende Liste von Elementen umschließt. Sie macht eine _Data_-Eigenschaft verfügbar, die dazu verwendet werden kann, eine neue Quelle zuzuweisen, die als Elementequelle zu verwenden ist, wodurch dann ein Zurücksetzen ausgelöst wird.
 
 ```xaml
 <ScrollViewer x:Name="sv">
@@ -561,14 +561,14 @@ public class MyItemsSource : IReadOnlyList<ItemBase>, IKeyIndexMapping, INotifyC
 
 ```
 
-## <a name="create-a-custom-collection-control"></a>Erstellen eines benutzerdefinierten Sammlung-Steuerelements
+## <a name="create-a-custom-collection-control"></a>Erstellen eines benutzerdefinierten Sammlungssteuerelements
 
-Sie können die [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) So erstellen Sie eine benutzerdefinierte Sammlung-Steuerelement mit seinen eigenen Typ des Steuerelements, das jedes Element vorhanden.
+Sie können [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) verwenden, um ein benutzerdefiniertes Sammlungssteuerelement vollständig mit seinem eigenen Steuerungstyp zu erstellen, um jedes Element darzustellen.
 
 > [!NOTE]
-> Dies ist vergleichbar mit der Verwendung **ItemsControl**, jedoch nicht von **ItemsControl-Element** und eine **ItemsPresenter** in der Steuerelementvorlage, die Sie von ableiten **Steuerelement** und fügen Sie eine **ItemsRepeater** in der Steuerelementvorlage. Das benutzerdefinierte Steuerelement "verfügt über eine" **ItemsRepeater** im Vergleich zu "ist ein" **ItemsControl**. Das bedeutet, Sie müssen auch explizit auswählen, welche Eigenschaften verfügbar machen, anstatt die geerbte Eigenschaften nicht unterstützt.
+> Dies ist vergleichbar mit dem Verwenden von **ItemsControl**, aber statt von **ItemsControl** abzuleiten und eine **ItemsPresenter**-Instanz in die Steuerelementvorlage zu setzen, nehmen Sie das Ableiten von **Control** vor, und fügen Sie ein **ItemsRepeater**-Steuerelement in die Steuerelementvorlage ein. Das benutzerdefinierte Sammlungssteuerelement „hat ein“ **ItemsRepeater**-Steuerelement im Vergleich zu „ist ein“ **ItemsControl**-Steuerelement. Dies impliziert, Sie müssen auch explizit auswählen, welche Eigenschaften verfügbar zu machen sind, anstatt festzulegen, welche geerbten Eigenschaften nicht unterstützt werden sollen.
 
-In diesem Beispiel wird gezeigt, wie zum Platzieren einer [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) in der Vorlage ein benutzerdefiniertes Steuerelement mit dem Namen _MediaCollectionView_ und seine Eigenschaften verfügbar machen.
+In diesem Beispiel wird gezeigt, wie ein [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)-Steuerelement in der Vorlage eines benutzerdefinierten Steuerelements namens _MediaCollectionView_ angeordnet wird und wie dessen Eigenschaften verfügbar gemacht werden.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -634,11 +634,11 @@ public sealed class MediaCollectionView : Control
 }
 ```
 
-## <a name="display-grouped-items"></a>Gruppiert Elemente anzeigen
+## <a name="display-grouped-items"></a>Anzeigen von gruppierten Elementen
 
-Können geschachtelt werden ein [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) in die [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) von einem anderen ItemsRepeater Erstellung geschachtelter Virtualisierung Layouts. Das Framework veranlasst effiziente Verwendung von Ressourcen durch Minimierung der unnötigen Realisierung von Elementen, die nicht sichtbar sind oder in der Nähe der aktuellen Viewport.
+Sie können ein [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)-Steuerelement in der [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)-Eigenschaft eines anderen ItemsRepeater-Steuerelements schachteln, um geschachtelte Virtualisierungslayouts zu erstellen. Das Framework nutzt Ressourcen effizient, indem es unnötige Verwendung (Realisierung) von Elementen minimiert, die nicht sichtbar sind oder sich in der Nähe des aktuellen Viewports befinden.
 
-Dieses Beispiel zeigt, wie Sie eine Liste der gruppierten Elemente in einem vertikalen Stapel anzeigen können. Die äußere ItemsRepeater generiert jede Gruppe. In der Vorlage für jede Gruppe wird eine andere ItemsRepeater Elemente generiert.
+In diesem Beispiel wird veranschaulicht, wie Sie eine Liste von gruppierten Elementen in einem vertikalen Stapel anzeigen können. Das äußere „ItemsRepeater“-Steuerelement generiert jede Gruppe. In der Vorlage für jede Gruppe generiert ein anderes „ItemsRepeater“-Steuerelement die Elemente .
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -664,9 +664,9 @@ Dieses Beispiel zeigt, wie Sie eine Liste der gruppierten Elemente in einem vert
 </ScrollViewer>
 ```
 
-Dieses Beispiel zeigt ein Layout für eine app mit verschiedenen Kategorien, die mit der benutzereinstellung ändern können und werden als horizontal Scrollen Listen angezeigt, wie hier gezeigt.
+Dieses Beispiel zeigt ein Layout für eine App, in der es verschiedene Kategorien gibt, die mit der Benutzereinstellung geändert werden können und als horizontal scrollende Listen angezeigt werden (siehe Abbildung).
 
-![Geschachtelte Layouts mit Elementen repeater](images/items-repeater-nested-layout.png)
+![Geschachteltes Layouts mit „ItemsRepeater“-Steuerelement](images/items-repeater-nested-layout.png)
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -707,16 +707,16 @@ Dieses Beispiel zeigt ein Layout für eine app mit verschiedenen Kategorien, die
 </ScrollViewer>
 ```
 
-## <a name="bringing-an-element-into-view"></a>Schalten ein Element in der Ansicht
+## <a name="bringing-an-element-into-view"></a>Bringen eines Elements in die Ansicht
 
-Der XAML-Framework behandelt bereits ein "FrameworkElement" in der Ansicht zu bringen, wenn sie entweder 1) erhält den Tastaturfokus oder (2) Wenn Sie die Sprachausgabe den Fokus erhält. Möglicherweise anderen Fällen Sie explizit ein Element in der Ansicht erscheinen müssen. Z. B. in der Antwort auf eine Benutzeraktion oder um den Zustand der Benutzeroberfläche nach einer Seitennavigation wiederherzustellen.
+Das XAML-Framework verwaltet bereits das Bringen eines Frameworkelements (FrameworkElement) in die Ansicht, wenn es entweder den 1) Tastaturfokus erhält oder den 2) Sprachausgabefokus erhält. Es kann weitere Fälle geben, in denen Sie ein Element explizit in die Ansicht bringen müssen. So beispielsweise als Antwort auf eine Benutzeraktion oder zum Wiederherstellen des Zustands der Benutzeroberfläche nach einer Seitennavigation.
 
-Schalten eine virtualisierte Element in der Ansicht umfasst Folgendes:
-1. Beachten Sie ein UIElement für ein Element
-2. Führen Sie das Layout, um sicherzustellen, dass das Element eine gültige Position hat.
-3. Initiiert eine Anforderung an das erkannte Element sichtbar zu machen.
+Für ein Bringen eines virtualisierten Elements in die Ansicht sind folgende Schritt erforderlich:
+1. Realisieren eines „UIElement“-Objekts für ein Element
+2. Ausführen des Layouts, um sicherzustellen, dass das Element eine gültige Position hat
+3. Initiieren einer Anforderung, um das realisierte Element in die Anzeige zu bringen
 
-Das folgende Beispiel zeigt die folgenden Schritte aus, als Teil der Wiederherstellung der Bildlaufposition eines Elements in einer flachen, vertikale Liste nach einer Seitennavigation. Im Fall von hierarchischen Daten geschachtelte ItemsRepeaters der Ansatz ist im Wesentlichen identisch, jedoch muss auf jeder Ebene der Hierarchie ausgeführt werden.
+Im folgenden Beispiel werden diese Schritte als Bestandteil der Wiederherstellung der Scrollposition eines Elements in einer flachen vertikalen Liste nach einer Seitennavigation veranschaulicht. Bei hierarchischen Daten mit geschachtelten „ItemsRepeater“-Steuerelementen ist die Vorgehensweise im Wesentlichen identisch, muss aber auf jeder Ebene der Hierarchie ausgeführt werden.
 
 ```xaml
 <ScrollViewer x:Name="scrollviewer">
@@ -761,31 +761,31 @@ public class MyPage : Page
 
 ```
 
-## <a name="enable-accessibility"></a>Aktivieren der Barrierefreiheit
+## <a name="enable-accessibility"></a>Aktivieren von Barrierefreiheit
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) bietet keine Standardbenutzeroberfläche für den Zugriff auf. Die Dokumentation zu [Benutzerfreundlichkeit für UWP-apps](/windows/uwp/design/usability) bietet eine Fülle von Informationen, die Ihnen sicherzustellen, dass Ihre app bietet eine Benutzeroberfläche für die inklusive. Wenn Sie die ItemsRepeater zum Erstellen eines benutzerdefinierten Steuerelements verwenden, müssen Sie auf die Dokumentation auf anzuzeigen [Automatisierungspeers von benutzerdefinierten](/windows/uwp/design/accessibility/custom-automation-peers).
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) stellt keine Standardbenutzeroberfläche für Barrierefreiheit bereit. Die Dokumentation zu [Benutzerfreundlichkeit in UWP-Apps](/windows/uwp/design/usability) bietet eine Fülle von Informationen dazu, wie Sie sicherstellen können, dass Ihre App eine inklusive Benutzeroberfläche bereitstellt. Wenn Sie die „ItemsRepeater“-Klasse verwenden, um ein benutzerdefiniertes Steuerelement zu erstellen, sollten Sie die Dokumentation zu [Benutzerdefinierte Automatisierungspeers](/windows/uwp/design/accessibility/custom-automation-peers) lesen.
 
-### <a name="keyboarding"></a>Tastatureingabe
-Die minimale keyboarding-Unterstützung für das Verschieben von konzentrieren, die ItemsRepeater bietet basiert darauf, dass die XAML [2D Richtungsnavigation für Keyboarding](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard).
+### <a name="keyboarding"></a>Tastaturunterstützung
+Die Mindesttastaturunterstützung für Fokusbewegung, die „ItemsRepeater“ bietet, basiert auf der zu XAML gehörenden [direktionalen 2D-Navigation für die Tastatur](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard).
 
-![Richtung](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
+![Richtungsnavigation (direktionale Navigation)](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-Die ItemsRepeaters [XYFocusKeyboardNavigation Modus](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) ist _aktiviert_ standardmäßig. Je nach den gewünschten Erfahrung, erwägen Sie Unterstützung für allgemeine [Tastenkombinationen](/windows/uwp/design/input/keyboard-interactions) wie Start, Ende, PageUp und Bild-ab.
+Der [XYFocusKeyboardNavigation-Modus](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) von „ItemsRepeater“ ist standardmäßig aktiviert (_Enabled_). Je nach gewünschter Oberfläche bietet es sich an, Unterstützung für allgemeine [Tastaturinteraktionen](/windows/uwp/design/input/keyboard-interactions), etwa „Pos1“ (Home), „Ende“ (End), „Bild auf“ (PageUp) und „Bild ab“ (PageDown), hinzuzufügen.
 
-Die ItemsRepeater gewährleistet automatisch, dass die Standardreihenfolge für die Registerkarte für die enthaltenen Elemente (ob oder nicht virtualisiert) die gleiche Reihenfolge entspricht, die die Elemente in den Daten angegeben werden. Hat standardmäßig die ItemsRepeater seine [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) -Eigenschaftensatz auf [einmal](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) anstelle der standardmäßigen allgemeine _lokalen_.
+„ItemsRepeater“ stellt nicht automatisch sicher, dass die Standardaktivierreihenfolge für die enthaltenen Elemente (ob virtualisiert oder nicht) mit der Reihenfolge identisch ist, in der die Elemente in den Daten vorliegen. Standardmäßig ist die [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation)-Eigenschaft von „ItemsRepeater“ auf [Once](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) anstelle der üblichen Standardeinstellung von _Local_ festgelegt.
 
 > [!NOTE]
-> Die ItemsRepeater merkt sich nicht automatisch auf das letzte fokussierte Element aus.  Dies bedeutet, dass die Umschalt + Tab, bis zum letzten genommen werden können, Element realisiert, wenn ein Benutzer verwendet.
+> „ItemsRepeater“ merkt sich nicht automatisch das letzte fokussierte Element.  Dies bedeutet, dass ein Benutzer, wenn er UMSCHALT+TAB verwendet, möglicherweise zum letzten realisierten Element gelangt.
 
-### <a name="announcing-item-x-of-y-in-screen-readers"></a>Ankündigung von "Element _X_ von _Y_" in der Sprachausgabe
+### <a name="announcing-item-x-of-y-in-screen-readers"></a>Ankündigen von „Element _X_ von _Y_“ in Sprachausgaben
 
-Müssen Sie verwalten, Festlegen der entsprechenden Automatisierungseigenschaften, z. B. die Werte für **PositionInSet** und **SizeOfSet**, und stellen Sie sicher, sie auf dem neuesten Stand bleiben, wenn Elemente hinzugefügt werden, usw. verschoben, entfernt.
+Sie müssen das Festlegen der entsprechenden Automatisierungseigenschaften verwalten, z. B. die Werte für **PositionInSet** und **SizeOfSet**, und sicherstellen, dass sie auf dem neuesten Stand bleiben, wenn Elemente hinzugefügt, verschoben, entfernt usw. werden.
 
-In einigen benutzerdefinierten Layouts möglicherweise nicht auf der visuellen Reihenfolge eine offensichtliche Sequenz.  Benutzer erwarten minimal an, dass die Werte für die PositionInSet und SizeOfSet-Eigenschaft, die von Bildschirmsprachausgaben verwendet die Reihenfolge entspricht, die die Elemente in den Daten (Offset von 1 fest, um gezählt zu werden, 0-basierte natürliche übereinstimmen) angezeigt werden.
+In einigen benutzerdefinierten Layouts gibt es möglicherweise keine offensichtliche Abfolge für die visuelle Reihenfolge.  Benutzer erwarten zumindest, dass die Werte für die Eigenschaften „PositionInSet“ und „SizeOfSet“, die von Sprachausgaben verwendet werden, der Reihenfolge entsprechen, in der die Elemente in den Daten stehen (versetzt um 1, um der natürlichen Zählweise gegenüber 0-Basierung zu entsprechen).
 
-Die beste Möglichkeit, dies zu erreichen ist, dass des Automatisierungspeers für die Element-Steuerelement implementieren die [GetPositionInSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpositioninsetcore) und [GetSizeOfSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getsizeofsetcore) Methoden und die Position des Elements im DataSet-Bericht durch das Steuerelement dargestellt. Der Wert wird nur zur Laufzeit beim Zugriff über eine hilfstechnologie berechnet, und es auf dem neuesten Stand zu halten, wird nicht. Der Wert entspricht der Reihenfolge der Daten.
+Dies lässt sich am besten erreichen, indem im Automatisierungspeer für das Elementsteuerelement die Methoden [GetPositionInSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpositioninsetcore) und [GetSizeOfSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getsizeofsetcore) implementiert werden und die Position des Elements im Dataset, das durch das Steuerelement dargestellt wird, mitgeteilt wird. Der Wert wird nur zur Laufzeit berechnet, wenn über eine Hilfstechnologie auf ihn zugegriffen wird. Somit ist es kein Problem, ihn auf dem neuesten Stand zu halten. Der Wert entspricht der Datenreihenfolge.
 
-Dieses Beispiel zeigt, wie dies möglich wäre bei der Präsentation eines benutzerdefinierten Steuerelements namens _CardControl_.
+In diesem Beispiel wird gezeigt, wie Sie dies umsetzen können, wenn Sie ein benutzerdefiniertes Steuerelement namens _CardControl_ präsentieren.
 
 ```xaml
 <ScrollViewer >

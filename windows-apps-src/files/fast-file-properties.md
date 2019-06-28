@@ -3,45 +3,45 @@ title: Schneller Zugriff auf Dateieigenschaften in UWP
 description: Stellen Sie schnell eine Liste von Dateien und ihren Eigenschaften über eine Bibliothek in einer UWP-App zusammen.
 ms.date: 02/06/2019
 ms.topic: article
-keywords: Windows 10, Uwp, Datei, Eigenschaften
+keywords: Windows 10, UWP, Datei, Eigenschaften
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630235"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63799613"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>Schneller Zugriff auf Dateieigenschaften in UWP 
 
-Erfahren Sie, wie Sie schnell eine Liste von Dateien und ihren Eigenschaften aus einer Bibliothek zusammenstellen und diese Eigenschaften in einer App verwenden können.  
+Hier erfährst du, wie du schnell eine Liste von Dateien und ihren Eigenschaften aus einer Bibliothek zusammenstellen und diese Eigenschaften in einer App verwenden kannst.  
 
 Voraussetzungen 
-- **Asynchrone Programmierung für apps der universellen Windows-Plattform (UWP)**   erfahren Sie, wie asynchrone Schreiben von apps in C# oder Visual Basic finden Sie unter [Aufrufen von asynchronen APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
-- **Zugriffsberechtigungen für Bibliotheken**   für den Code in diesen Beispielen ist das **PicturesLibrary** -Funktion, aber den Dateispeicherort möglicherweise eine Funktion oder keine Funktion überhaupt. Weitere Informationen finden Sie unter [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
-- **Einfache Enumeration**    dieses Beispiel verwendet ["queryoptions"](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) einige erweiterte enumerationseigenschaften festlegen. Um mehr darüber zu erfahren, wie Sie eine einfache Liste von Dateien für ein kleineres Verzeichnis erhalten, lesen Sie [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
+- **Asynchrone Programmierung für UWP-Apps (Universelle Windows-Plattform):**  Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic findest du unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
+- **Zugriffsberechtigungen für Bibliotheken:**  Der Code in diesen Beispielen erfordert beispielsweise den Zugriff auf die **picturesLibrary**-Funktion, während dein Dateispeicherort einen anderen Zugriffstyp oder keinen Zugriff voraussetzt. Weitere Informationen finden Sie unter [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
+- **Einfache Dateiauflistung:**   In diesem Beispiel werden mit [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) einige erweiterte Auflistungseigenschaften festgelegt. Weitere Informationen dazu, wie du eine einfache Liste von Dateien für ein kleineres Verzeichnis erhältst, findest du unter [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
 
 ## <a name="usage"></a>Verwendungszweck  
-Viele Apps müssen die Eigenschaften einer Gruppe von Dateien auflisten, müssen aber nicht immer direkt mit den Dateien interagieren. Zum Beispiel, eine Musikanwendung spielt immer nur eine Datei ab (Öffnen), aber sie benötigt die Eigenschaften aller Dateien in einem Ordner, so dass die Anwendung die Song-Warteschlange anzeigen kann. So kann der Benutzer eine gültige Datei zum Abspielen auswählen. 
+Viele Apps müssen die Eigenschaften einer Gruppe von Dateien auflisten, müssen aber nicht immer direkt mit den Dateien interagieren. Beispiel: Eine Musik-App spielt (öffnet) immer nur eine Datei ab, sie benötigt aber die Eigenschaften aller Dateien in einem Ordner, damit sie die Songwarteschlange anzeigen oder damit der Benutzer eine gültige Datei für die Wiedergabe auswählen kann. 
 
-Die Beispiele auf dieser Seite sollten nicht in Apps verwendet werden, die die Metadaten jeder Datei modifizieren, oder in Apps, die mit allen resultierenden StorageFiles interagieren (über das Lesen ihrer Eigenschaften hinaus). Weitere Informationen finden Sie unter [Aufzählung und Abfrage von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
+Die Beispiele auf dieser Seite sollten nicht in Apps verwendet werden, die die Metadaten jeder Datei modifizieren, oder in Apps, die mit allen resultierenden StorageFiles interagieren (über das Lesen ihrer Eigenschaften hinaus). Weitere Informationen findest du unter [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
 
-## <a name="enumerate-all-the-pictures-in-a-location"></a>Aufzählung aller Bilder eines Ortes 
-In diesem Beispiel führen Sie folgendes aus:
--  Erstellen Sie ein [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)-Objekt, um anzugeben, dass das Programm die Dateien so schnell wie möglich aufzählen möchte.
--  Holen Sie Dateieigenschaften durch Auslagern von StorageFile-Objekten in das Programm. Durch das Auslagern der Dateien wird der Speicherverbrauch des Programms reduziert und die Reaktion verbessert.
+## <a name="enumerate-all-the-pictures-in-a-location"></a>Aufzählen aller Bilder an einem Speicherort 
+In diesem Beispiel werden die folgenden Schritte ausgeführt:
+-  Erstellen eines [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)-Objekts, um anzugeben, dass die App die Dateien so schnell wie möglich auflisten soll
+-  Abrufen von Dateieigenschaften durch Auslagern von StorageFile-Objekten in die App. Durch das Auslagern der Dateien wird der von der App belegte Arbeitsspeicher reduziert und die Reaktion verbessert.
 
 ### <a name="creating-the-query"></a>Erstellen der Abfrage 
-Um die Abfrage zu erstellen, verwenden wir ein QueryOptions-Objekt, um zu spezifizieren, dass die App daran interessiert ist, nur bestimmte Typen von Bilddateien aufzulisten und mit Windows Information Protection (System.Security.EncryptionOwners) geschützte Dateien herauszufiltern. 
+Zum Erstellen der Abfrage verwenden wir ein QueryOptions-Objekt, um anzugeben, dass die App nur an der Auflistung bestimmter Bilddateitypen interessiert ist, und um Dateien herauszufiltern, die mit Windows Information Protection (System.Security.EncryptionOwners) geschützt sind. 
 
-Es ist wichtig, die Eigenschaften einzustellen, auf die die Anwendung über [QueryOptions.SetPropertyPrefetch](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch) zugreifen soll. Wenn die App auf eine Eigenschaft zugreift, die nicht vorgeladen ist, wird sie eine erhebliche Leistungseinbuße erleiden.
+Es ist wichtig, mit [QueryOptions.SetPropertyPrefetch](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch) die Eigenschaften festzulegen, auf die die App zugreifen wird. Wenn die App auf eine Eigenschaft zugreift, die nicht vorab abgerufen wird, führt dies zu erheblichen Leistungseinbußen.
 
-[OnlyUseIndexerAndOptimzeForIndexedProperties](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.IndexerOption) weist das System an, die Ergebnisse so schnell wie möglich zurückzuliefern, aber nur die in [SetPropertyPrefetch](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch) angegebenen Eigenschaften zu berücksichtigen. 
+[OnlyUseIndexerAndOptimzeForIndexedProperties](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.IndexerOption) weist das System an, die Ergebnisse so schnell wie möglich zurückzugeben, aber nur die in [SetPropertyPrefetch](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch) angegebenen Eigenschaften zu berücksichtigen. 
 
-### <a name="paging-in-the-results"></a>Paging in den Ergebnissen 
-Benutzer können Tausende oder Millionen von Dateien in ihrer Bilderbibliothek haben, so dass der Aufruf von [GetFilesAsync](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult.getfilesasync) ihren Rechner überfordern würde, weil es eine StorageFile für jedes Bild erstellt. Dies kann dadurch gelöst werden, dass eine feste Anzahl von StorageFiles auf einmal erstellt wird, diese in das UI verarbeitet werden und der Speicher freigegeben wird. 
+### <a name="paging-in-the-results"></a>Auslagern in den Ergebnissen 
+Die Bilderbibliothek von Benutzern kann Tausende oder Millionen von Dateien enthalten. Der Aufruf von [GetFilesAsync](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult.getfilesasync) würde daher ihren Rechner überfordern, da für jedes Bild ein StorageFile-Objekt erstellt wird. Dieses Problem kann dadurch behoben werden, dass eine feste Anzahl von StorageFiles-Elementen auf einmal erstellt wird, diese im Kontext der Benutzeroberfläche verarbeitet werden und der Arbeitsspeicher freigegeben wird. 
 
-In unserem Beispiel tun wir dies, indem wir [StorageFileQueryResult.GetFilesAsync(UInt32 StartIndex, UInt32 maxNumberOfItems)](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult.getfilesasync) verwenden, um jeweils nur 100 Dateien gleichzeitig zu holen. Das Programm verarbeitet dann die Dateien und erlaubt dem Betriebssystem, den Speicher wieder freizugeben. Diese Technik begrenzen den maximalen Speicher der App und stellt sicher, dass das System reaktionsschnell bleibt. Natürlich müssen Sie die Anzahl der zurückgesendeten Dateien für Ihr Szenario anpassen. Aber um ein reaktionsschnelles Erlebnis für alle Benutzer zu gewährleisten, ist es empfehlenswert, nicht mehr als 500 Dateien auf einmal zu holen.
+In unserem Beispiel verwenden wir dazu [StorageFileQueryResult.GetFilesAsync(UInt32 StartIndex, UInt32 maxNumberOfItems)](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult.getfilesasync), um jeweils nur 100 Dateien gleichzeitig abzurufen. Die App verarbeitet dann die Dateien und erlaubt dem Betriebssystem, den Arbeitsspeicher anschließend wieder freizugeben. Mit dieser Methode kann der von der App verwendete maximale Arbeitsspeicher begrenzt und sichergestellt werden, dass das System reaktionsschnell bleibt. Natürlich musst du die Anzahl der zurückgesendeten Dateien für dein Szenario anpassen. Aber um eine schnelle Reaktionszeit für alle Benutzer zu gewährleisten, ist es empfehlenswert, nicht mehr als 500 Dateien auf einmal abzurufen.
 
 
 **Beispiel**  
@@ -109,13 +109,13 @@ while (images.Count != 0 || index < 10000) 
 ```
 
 ### <a name="results"></a>Ergebnisse 
-Die resultierenden StorageFile-Dateien enthalten nur die angeforderten Eigenschaften, werden aber 10-mal schneller zurückgegeben als die anderen IndexerOption. Die Anwendung kann weiterhin Zugriff auf Eigenschaften beantragen, die nicht bereits in der Abfrage enthalten sind, aber es gibt eine Leistungseinbuße, um die Datei zu öffnen und diese Eigenschaften abzurufen.  
+Die resultierenden StorageFile-Dateien enthalten nur die angeforderten Eigenschaften, werden aber zehnmal schneller zurückgegeben als die anderen IndexerOptions-Elemente. Die App kann weiterhin Zugriff auf Eigenschaften anfordern, die nicht bereits in der Abfrage enthalten sind. Dies führt beim Öffnen der Datei und Abrufen dieser Eigenschaften jedoch zu Leistungseinbußen.  
 
-## <a name="adding-folders-to-libraries"></a>Hinzufügen von Ordnern zu Libraries 
-Apps können den Benutzer mittels [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync) auffordern, den Speicherort zum Index hinzuzufügen. Sobald der Speicherort einmal enthalten ist, wird er automatisch indiziert und Apps können diese Technik verwenden, um die Dateien aufzuzählen.
+## <a name="adding-folders-to-libraries"></a>Hinzufügen von Ordnern zu Bibliotheken 
+Apps können den Benutzer mittels [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync) auffordern, den Speicherort zum Index hinzuzufügen. Ist der Speicherort erst einmal enthalten, wird er automatisch indiziert, und Apps können diese Technik zum Auflisten der Dateien verwenden.
  
-## <a name="see-also"></a>Siehe auch
-["Queryoptions" API-Referenz](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
+## <a name="see-also"></a>Weitere Informationen
+[QueryOptions-API-Referenz](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
  

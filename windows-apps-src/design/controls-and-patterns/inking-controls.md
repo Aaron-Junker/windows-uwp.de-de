@@ -5,21 +5,21 @@ label: Inking Controls
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b34f88d198ec80c67e5aac7b57001e42fe5c516
-ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66825020"
 ---
 # <a name="inking-controls"></a>Steuerelemente für Freihandeingaben
 
 
 
-Es gibt zwei verschiedene Steuerelemente, die die erleichtern Freihand in apps für universelle Windows-Plattform (UWP): [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) und [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+Es gibt zwei verschiedene Steuerelemente, die das Verknüpfen in UWP-Apps (universelle Windows-Plattform) erleichtern: [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) und [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Das InkCanvas-Steuerelement rendert Stifteingaben entweder als Freihandstrich (mit Standardeinstellungen für Farbe und Breite) oder als Radierstrich. Dieses Steuerelement ist eine transparente Überlagerung, die keine integrierte Benutzeroberfläche zum Ändern der Standardeigenschaften von Freihandstrichen enthält.
 
@@ -35,7 +35,7 @@ Das InkToolbar-Steuerelement enthält standardmäßig Schaltflächen zum Zeichne
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **Wichtige APIs:** [InkCanvas-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **Wichtige APIs:** [InkCanvas-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
@@ -47,7 +47,7 @@ Standardmäßig werden Striche als Freihandeingabe gerendert, wenn die Stiftspit
 Kombinieren Sie das InkCanvas-Steuerelement mit einem InkToolbar-Steuerelement, um eine Benutzeroberfläche zum Aktivieren von Freihandfeatures und Festlegen grundlegender Freihandeigenschaften wie Strichgröße, Farbe und Form der Stiftspitze bereitzustellen.
 
 > [!NOTE] 
-> Verwenden Sie das zugrunde liegende [InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter)-Objekt, wenn Sie umfassendere Anpassungen am Rendering von Freihandeingaben für ein InkCanvas-Steuerelement vornehmen möchten.
+> Verwenden Sie das zugrunde liegende [InkPresenter-Objekt](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), wenn Sie umfassendere Anpassungen am Rendering von Freihandeingaben für ein InkCanvas-Steuerelement vornehmen möchten.
 
 ## <a name="examples"></a>Beispiele
 
@@ -56,7 +56,7 @@ Kombinieren Sie das InkCanvas-Steuerelement mit einem InkToolbar-Steuerelement, 
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/InkCanvas">die App zu öffnen und InkCanvas in Aktion zu sehen</a>.</p>
+    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die <a href="xamlcontrolsgallery:/item/InkCanvas">App zu öffnen und InkCanvas in Aktion zu sehen</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -68,12 +68,12 @@ Kombinieren Sie das InkCanvas-Steuerelement mit einem InkToolbar-Steuerelement, 
 **Microsoft Edge**
 
 Microsoft Edge verwendet „InkCanvas” und „InkToolbar” für **Webseitennotizen**.  
-![InkCanvas-Steuerelement wird verwendet, um in Microsoft Edge für Freihandeingaben](images/ink-tools-edge.png)
+![Das InkCanvas-Steuerelement wird für Freihandeingaben in Microsoft Edge verwendet](images/ink-tools-edge.png)
 
 **Windows Ink-Arbeitsbereich**
 
 Die InkCanvas- und InkToolbar-Steuerelemente werden auch für den **Skizzenblock** und **Bildschirmskizzen** im **Windows Ink-Arbeitsbereich** verwendet.  
-![InkToolbar im Windows Ink-Arbeitsbereich](images/ink-tools-ink-workspace.png)
+![InkToolbar-Steuerelement im Windows Ink-Arbeitsbereich](images/ink-tools-ink-workspace.png)
 
 ## <a name="create-an-inkcanvas-and-inktoolbar"></a>Erstellen eines InkCanvas- und InkToolbar-Steuerelements
 
@@ -84,7 +84,7 @@ Zum Hinzufügen eines InkCanvas-Steuerelements zu Ihrer App ist nur eine Markupz
 ```
 
 > [!NOTE]
-> Ausführliche InkCanvas-Anpassung InkPresenter verwenden, finden Sie unter den ["Pen Interaktionen und Windows Ink in UWP-apps"](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) Artikel.
+> Ausführliche Informationen zur Anpassung von „InkCanvas” mit „InkPresenter” finden Sie im Artikel [Zeichenstiftinteraktionen und Windows Ink in UWP-Apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
 
 Das InkToolbar-Steuerelement muss in Verbindung mit einem InkCanvas-Steuerelement verwendet werden. Zum Einbinden eines InkToolbar-Steuerelements (mit allen integrierten Tools) in Ihre App ist nur eine zusätzliche Markupzeile erforderlich:
 
@@ -137,7 +137,7 @@ Je nach Anwendung und erforderlicher Freihandfunktion können Sie dem InkToolbar
 - Benutzerdefiniertes Umschalten: Legt den Zustand eines durch die App definierten Features auf „aktiviert“ oder „deaktiviert“ fest. Wenn die Schaltfläche aktiviert ist, funktioniert das Feature in Verbindung mit dem aktiven Tool.
 
 > [!NOTE]
-> Die Anzeigereihenfolge der integrierten Schaltflächen kann nicht geändert werden. Die Standardreihenfolge für die Anzeige ist: Kugelschreiber, Stift, Textmarker, Radierer und Lineal. Benutzerdefinierte Stifte werden an den letzten Standardstift angefügt, benutzerdefinierte Tool-Schaltflächen werden zwischen der letzten Stiftschaltfläche und der Radiererschaltfläche hinzugefügt, und benutzerdefinierte Umschaltflächen werden nach der Linealschaltfläche hinzugefügt. (Benutzerdefinierte Schaltflächen werden in der Reihenfolge hinzugefügt, in der sie angegeben werden.)
+> Die Anzeigereihenfolge der integrierten Schaltflächen kann nicht geändert werden. Die Standardreihenfolge in der Anzeige ist: Kugelschreiber, Stift, Textmarker, Radierer und Lineal. Benutzerdefinierte Stifte werden an den letzten Standardstift angefügt, benutzerdefinierte Tool-Schaltflächen werden zwischen der letzten Stiftschaltfläche und der Radiererschaltfläche hinzugefügt, und benutzerdefinierte Umschaltflächen werden nach der Linealschaltfläche hinzugefügt. (Benutzerdefinierte Schaltflächen werden in der Reihenfolge hinzugefügt, in der sie angegeben werden.)
 
 Obwohl das InkToolbar-Steuerelement ein Element auf oberster Ebene sein kann, wird es in der Regel über eine Schaltfläche oder einen Befehl für die Freihandeingabe verfügbar gemacht. Wir empfehlen, die Glyphe EE56 aus der Schriftart „Segoe MLD2 Assets“ als Symbol auf oberster Ebene zu verwenden.
 
@@ -148,7 +148,7 @@ Alle integrierten Stift- und Toolschaltflächen enthalten ein Flyoutmenü, in de
 Das Flyout wird angezeigt, wenn die Schaltfläche eines aktiven Tools erneut ausgewählt wird. Wenn die Farbe oder Größe geändert wird, wird das Flyout automatisch geschlossen, und die Freihandeingabe kann fortgesetzt werden. Für benutzerdefinierte Stifte und Tools kann das Standardflyoutmenü oder ein benutzerdefiniertes Flyoutmenü verwendet werden.
 
 Der Radierer verfügt ebenfalls über ein Flyout mit dem Befehl **Freihand vollständig löschen**.  
-![InkToolbar mit Radierer Flyout aufgerufen](images/ink-tools-erase-all-ink.png)
+![InkToolbar-Steuerelement mit aufgerufenem Radierer-Flyout](images/ink-tools-erase-all-ink.png)
 
  Informationen zur Anpassung und Erweiterbarkeit finden Sie im [einfachen Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
 
@@ -164,12 +164,12 @@ Der Radierer verfügt ebenfalls über ein Flyout mit dem Befehl **Freihand volls
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [einfachen Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) – Erläutert acht Szenarien im Zusammenhang mit den Anpassungs- und Erweiterbarkeitsfunktionen der InkCanvas- und InkToolbar-Steuerelemente. Jedes Szenario bietet einen allgemeinen Überblick über gängige Situationen bei der Freihandeingabe und Steuerelementimplementierungen.
-- [Komplexes Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) – Erläutert komplexere Szenarien für Freihandeingaben.
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- Im [einfachen Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) werden acht Szenarien im Zusammenhang mit den Anpassungs- und Erweiterbarkeitsfunktionen der InkCanvas- und InkToolbar-Steuerelemente erläutert. Jedes Szenario bietet einen allgemeinen Überblick über gängige Situationen bei der Freihandeingabe und Steuerelementimplementierungen.
+- In [Komplexes Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) werden komplexere Szenarien für Freihandeingaben erläutert.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Stiftinteraktionen und Windows Ink in UWP-apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
-- [Erkennen von Windows Freihandstriche als Text und Formen](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
-- [Store und Windows Ink-Stroke-Daten abzurufen](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
+- [Stiftinteraktionen und Windows Ink in UWP-Apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Erkennen von Windows Ink-Strichen als Text und Formen](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
+- [Speichern und Abrufen der Daten zu Windows Ink-Strichen](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
