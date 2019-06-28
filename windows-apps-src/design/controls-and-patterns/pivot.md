@@ -1,25 +1,25 @@
 ---
-Description: Das Pivot-Steuerelement ermöglicht, zwischen einem kleinen Satz von Inhaltsabschnitten Touch Wischen.
+Description: Das Pivot-Steuerelement ermöglicht Touch-Wischen zwischen einem kleinen Satz von Inhaltsabschnitten.
 title: Pivot
 template: detail.hbs
 ms.date: 06/19/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 232da8afeccf5d82f65b51ae0a40905b3433d412
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364536"
 ---
 # <a name="pivot"></a>Pivot
 
-Die [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) -Steuerelement können zwischen einem kleinen Satz von Inhaltsabschnitten Touch Wischen.
+Das [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)-Steuerelement ermöglicht Touch-Wischen zwischen einem kleinen Satz von Inhaltsabschnitten.
 
 > **Wichtige APIs:** [Pivot-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [NavigationView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
@@ -30,7 +30,7 @@ Die [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) -
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/Pivot">öffnen Sie die app und das Pivot-Steuerelement in Aktion sehen</a>.</p>
+    <p>Wenn du die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert hast, klicke hier, um <a href="xamlcontrolsgallery:/item/Pivot">die App zu öffnen und Pivot-Steuerlement in Aktion zu sehen</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -39,26 +39,26 @@ Die [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) -
 </tr>
 </table>
 
-Das Pivot-Element zu steuern, wie [NavigationView](navigationview.md), unterstreicht ausgewählten Elements.
+Das Pivot-Steuerelement, ebenso wie [NavigationView](navigationview.md), unterstreicht das ausgewählte Element.
 
 ![Standardfokus als Unterstrich des ausgewählten Headers](images/pivot_focus_selectedHeader.png)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Um allgemeine oben im Navigationsbereich und Registerkarten-Muster zu erreichen, es wird empfohlen, [NavigationView](navigationview.md), die automatisch passt sich an verschiedene Bildschirmgrößen und größere Anpassung ermöglicht.
+Um gängige Muster für obere Navigation und Registerkarten zu erhalten, wird empfohlen, [NavigationView](navigationview.md) zu verwenden, das sich automatisch an verschiedene Bildschirmgrößen anpasst und größere Anpassungsmöglichkeiten bietet.
 
-Aber wenn die Navigation ein Touch-Lesegerät erforderlich ist, empfehlen wir mithilfe von Pivot.
+Wenn Ihre Navigation jedoch Touch-Wischen erfordert, empfehlen wir die Verwendung von Pivot.
 
-Die wichtigsten Unterschiede zwischen der NavigationView und Pivot-Steuerelemente sind das Standardverhalten für den Überlauf und die Navigation-API:
+Die anderen Hauptunterschiede zwischen dem NavigationView- und dem Pivot-Steuerelement sind das Standardverhalten bei Überlauf und die Navigations-API:
 
-- Pivotieren Sie Laufbänder Überlauf, die Elemente, die während der NavigationView eine Menü-Dropdownliste verwendet überlaufen, damit Benutzer alle Elemente angezeigt werden können.
-- Pivot behandelt die Navigation zwischen Inhaltsabschnitte, während mehr Kontrolle über Navigationsverhalten NavigationView ermöglicht.
+- Pivot verwendet für überlaufende Elemente ein Karussell, während NavigationView für Überlauf ein Menüdropdown verwendet, sodass Benutzer alle Elemente sehen können.
+- Pivot verarbeitet die Navigation zwischen Inhaltsabschnitten, während NavigationView stärkere Kontrolle über das Navigationsverhalten ermöglicht.
 
 ## <a name="use-navigationview-instead-of-pivot"></a>Verwenden von NavigationView anstelle von PowerPivot
 
-Wenn UIs Ihrer app das Pivot-Steuerelement verwendet wird, können Sie Pivot in NavigationView durch den folgenden Code konvertieren.
+Wenn die Benutzeroberfläche Ihrer App das Pivot-Steuerelement verwendet, können Sie mit dem folgenden Code Pivot in NavigationView konvertieren.
 
-Dieses XAML erstellt eine NavigationView mit 3 Abschnitte des Inhalts, wie im Beispiel Pivot in [erstellt ein Pivot-Steuerelement](#create-a-pivot-control).
+Dieses XAML erstellt eine NavigationView mit 3 Inhaltabschnitten, wie das Beispiel-Pivot in [Erstellen eines Pivot-Steuerelements](#create-a-pivot-control).
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -83,7 +83,7 @@ Dieses XAML erstellt eine NavigationView mit 3 Abschnitte des Inhalts, wie im Be
 </Page>
 ```
 
-NavigationView bietet mehr Kontrolle über die Anpassung der Navigation und entsprechenden Code-Behind muss. Der obige XAML begleitenden, verwenden Sie folgende Code-Behind:
+NavigationView bietet stärkere Kontrolle über Anpassungen der Navigation und erfordert entsprechenden CodeBehind. Verwenden Sie den folgenden CodeBehind zusammen mit dem oben stehenden XAML:
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -112,11 +112,11 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-Dieser Code imitiert das Pivot-Steuerelement integrierte navigationsumgebung minus die Touch-Wischen Erfahrung zwischen Inhaltsabschnitten. Wie Sie sehen können, können Sie mehrere Aspekte, wie z.B. der animierten Übergang Navigation-Parameter und Stack-Funktionen auch anpassen.
+Dieser Code imitiert die integrierte Navigationsumgebung des Pivot-Steuerelements ohne die Touch-Wischen-Erfahrung zwischen Inhaltsabschnitten. Wie Sie sehen können, könnten Sie aber auch mehrere Aspekte anpassen, einschließlich des animierten Übergangs, der Navigationsparameter und der Stapelfunktionen.
 
 ## <a name="create-a-pivot-control"></a>Erstellen eines Pivot-Steuerelements
 
-Dieser Code erstellt eine grundlegende Pivot-Steuerelement mit 3 Abschnitte des Inhalts.
+Dieser Code erzeugt ein grundlegendes Pivot-Steuerelement mit 3 Inhaltsabschnitten.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Category Title">
@@ -137,7 +137,7 @@ Dieser Code erstellt eine grundlegende Pivot-Steuerelement mit 3 Abschnitte des 
 
 ### <a name="pivot-items"></a>Pivot-Elemente
 
-Das Pivot-Steuerelement ist ein [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl), daher kann es eine Sammlung von Elementen jeden Typs enthalten. Jedes zum Pivot-Steuerelement hinzugefügte Element, das nicht ausdrücklich ein [PivotItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PivotItem)-Element ist, wird implizit in ein PivotItem eingeschlossen. Da ein Pivot-Element häufig zum Navigieren zwischen Inhaltsseiten verwendet wird, ist es üblich, die Sammlung von [Elementen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) direkt mit XAML-UI-Elementen zu füllen. Alternativ können Sie die Eigenschaft [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Datenquelle festlegen. In der ItemsSource gebundene Elemente können beliebigen Typs sein, wenn es sich jedoch nicht explizit um PivotItems handelt, müssen Sie eine [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)- und eine [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.headertemplate)-Eigenschaft definieren, um festzulegen, wie die Elemente angezeigt werden sollen.
+Pivot ist ein [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl), daher kann es eine Sammlung von Elementen jeden Typs enthalten. Jedes zum Pivot-Steuerelement hinzugefügte Element, das nicht ausdrücklich ein [PivotItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PivotItem)-Element ist, wird implizit in ein PivotItem eingeschlossen. Da ein Pivot-Element häufig zum Navigieren zwischen Inhaltsseiten verwendet wird, ist es üblich, die Sammlung von [Elementen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) direkt mit XAML-UI-Elementen zu füllen. Alternativ können Sie die Eigenschaft [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Datenquelle festlegen. In der ItemsSource gebundene Elemente können beliebigen Typs sein, wenn es sich jedoch nicht explizit um PivotItems handelt, müssen Sie eine [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)- und eine [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.headertemplate)-Eigenschaft definieren, um festzulegen, wie die Elemente angezeigt werden sollen.
 
 Mit der Eigenschaft [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selecteditem) können Sie das aktive Element des Pivot-Steuerelements abrufen oder festlegen. Mit der Eigenschaft [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selectedindex) können Sie den Index des aktiven Elements abrufen oder festlegen.
 
@@ -172,12 +172,12 @@ Das Steuerelement erkennt die folgenden Touchgesteninteraktionen:
 
 Das Steuerelement ist in zwei Modi verfügbar:
 
-**Stationary**
+**Stationär**
 
 - Pivots werden nicht verschoben, wenn alle Pivotheader in den zulässigen Bereich passen.
 - Durch Tippen auf eine Pivotbeschriftung wird zur entsprechenden Seite navigiert. Das Pivot selbst wird jedoch nicht verschoben. Das aktive Pivot wird hervorgehoben.
 
-**Karussellsicht**
+**Karussell**
 
 - Falls nicht alle Pivotheader in den verfügbaren Bereich passen, werden Pivots in einer Karussellansicht dargestellt.
 - Durch Tippen auf eine Pivotbeschriftung wird die entsprechende Seite aufgerufen, und die aktive Pivotbeschriftung rückt an die erste Position.
@@ -191,9 +191,9 @@ Das Steuerelement ist in zwei Modi verfügbar:
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 - [Pivot-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
-- [Grundlagen des Berichtsentwurfs Navigation](../basics/navigation-basics.md)
+- [Navigationsdesigngrundlagen](../basics/navigation-basics.md)

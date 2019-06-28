@@ -1,11 +1,11 @@
 ---
-Description: Verwenden Sie Vorlagen, um das Aussehen der Elemente in ListView oder GridView-Steuerelemente zu ändern.
+Description: Verwenden Sie Vorlagen, um das Erscheinungsbild der Elemente in ListView- und GridView-Steuerelementen zu ändern.
 title: Elementcontainer und Vorlagen
 label: Item containers and templates
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
 pm-contact: predavid
 design-contact: kimsea
@@ -13,27 +13,27 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2402be26a14d2e57a482a68cf8d5b587f4e65dd1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364945"
 ---
 # <a name="item-containers-and-templates"></a>Elementcontainer und Vorlagen
 
  
 
-Die **ListView**- und **GridView**-Steuerelemente verwalten, wie ihre Elemente angeordnet werden (horizontal, vertikal, an welcher Stelle der Umbruch in die nächste Zeile erfolgt, usw.), und wie die Benutzer mit den Elementen interagieren, nicht jedoch, wie die einzelnen Elemente auf dem Bildschirm angezeigt werden. Die Visualisierung der Elemente wird von Elementcontainern verwaltet. Wenn Sie einer Listenansicht Elemente hinzufügen, werden diese automatisch in einem Container platziert. Der Standardelementcontainer für ListView lautet [ListViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) und für GridView [GridViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
+Die **ListView**- und **GridView**-Steuerelemente verwalten, wie ihre Elemente angeordnet werden (horizontal, vertikal, an welcher Stelle der Umbruch in die nächste Zeile erfolgt, usw.), und wie die Benutzer mit den Elementen interagieren, nicht jedoch, wie die einzelnen Elemente auf dem Bildschirm angezeigt werden. Die Visualisierung der Elemente wird von Elementcontainern verwaltet. Wenn Sie einer Listenansicht Elemente hinzufügen, werden diese automatisch in einem Container platziert. Der Standardelementcontainer für ListView ist [ListViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem); für GridView ist es [GridViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
 
 > **Wichtige APIs:** [ListView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [GridView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview), [ItemTemplate-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), [ItemContainerStyle-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
 
 
 > [!NOTE]
-> Sowohl ListView als auch GridView sind von der Klasse [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) abgeleitet, sodass sie dieselbe Funktionsweise haben, Daten jedoch unterschiedlich anzeigen. In diesem Artikel beziehen sich Aussagen zur Listenansicht sowohl auf die ListView- als auch die GridView-Steuerelemente, falls nicht anders angegeben. Möglicherweise werden Klassen wie ListView oder ListViewItem genannt. Das Präfix *List* kann jedoch durch *Grid* für das entsprechende Rastersteuerelement ersetzt werden (GridView oder GridViewItem). 
+> ListView und GridView sind beide von der Klasse [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) abgeleitet, sodass sie dieselbe Funktionalität haben, Daten jedoch unterschiedlich anzeigen. In diesem Artikel beziehen sich Aussagen zur Listenansicht sowohl auf die ListView- als auch die GridView-Steuerelemente, falls nicht anders angegeben. Möglicherweise werden Klassen wie ListView oder ListViewItem genannt. Das Präfix *List* kann jedoch durch *Grid* für das entsprechende Rastersteuerelement ersetzt werden (GridView oder GridViewItem). 
 
 Diese Containersteuerelemente bestehen aus zwei wichtigen Komponenten, die zusammen die endgültige visuelle Darstellung für ein Element erstellen, die *Datenvorlage* und *Steuerelementvorlage*.
 
-- **Datenvorlage**: Sie legen ein [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) für die [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) -Eigenschaft der Listenansicht fest, um anzugeben, wie die einzelnen Datenelemente angezeigt werden.
+- **Datenvorlage**: Sie legen eine [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) für die [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)-Eigenschaft der Listenansicht fest, um anzugeben, wie die einzelnen Datenelemente angezeigt werden.
 - **Steuerelementvorlage**: Die Steuerelementvorlage ist die Komponente für die Visualisierung des Elements, für die das Framework verantwortlich ist, beispielsweise optische Zustände. Sie können die [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)-Eigenschaft verwenden, um die Steuerelementvorlage zu ändern. In der Regel tun Sie dies, um die Farben der Listenansicht entsprechend Ihrem Branding zu ändern, oder um zu ändern, wie ausgewählte Elemente angezeigt werden.
 
 Diese Abbildung zeigt, wie die Steuerelementvorlage und die Datenvorlage zusammen die endgültige optische Darstellung für ein Element festlegen.
@@ -73,7 +73,7 @@ Nachstehend finden Sie den XAML-Code zur Erstellung dieser Elemente. Die Vorlage
 </ListView>
 ```
  
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 - Es wird davon ausgegangen, dass Sie wissen, wie ein Listenansicht-Steuerelement verwendet wird. Weitere Informationen finden Sie in dem Artikel [ListView und GridView](listview-and-gridview.md).
 - Weiterhin wird vorausgesetzt, dass Sie die Grundlagen zu Stilen und Vorlagen kennen, auch, wie Sie einen Stil inline oder als Ressource verwenden. Weitere Informationen finden Sie unter [Formatieren von Steuerelementen](xaml-styles.md) und [Steuerelementvorlagen](control-templates.md).
@@ -82,7 +82,7 @@ Nachstehend finden Sie den XAML-Code zur Erstellung dieser Elemente. Die Vorlage
 
 Bevor wir tiefer in die Materie eintauchen, we Datenelemente in einer Listenansicht angezeigt werden, müssen wir die Daten, die angezeigt werden sollen, kennen. In diesem Beispiel erstellen wir einen Datentyp namens `NamedColor`. Es besteht aus einem Farbnamen, einem Farbwert und einem **SolidColorBrush**-Objekt für die Farbe, die als 3 Eigenschaften verfügbar sind, `Name`, `Color` und `Brush`.
  
-Anschließend wird der **Liste** für jede benannte Farbe in der Klasse [Colors](https://docs.microsoft.com/uwp/api/windows.ui.colors) ein `NamedColor`-Objekt hinzugefügt. Die Liste wird als [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) für die Listenansicht festgelegt.
+Anschließend füllen wir eine **Liste** mit einem `NamedColor`-Objekt für jede benannte Farbe in der Klasse [Colors](https://docs.microsoft.com/uwp/api/windows.ui.colors). Die Liste wird als [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) für die Listenansicht festgelegt.
 
 Nachstehend finden Sie den Code, mit dem die Klasse definiert und die `NamedColors`-Liste mit Einträgen gefüllt wird.
 
@@ -166,12 +166,12 @@ Die Listenansicht zeigt jetzt die Elemente nach Namen sortiert an, wie in dieser
 
 ![Listenansicht mit einer Zeichenfolgendarstellung einer Element-Eigenschaft](images/listview-display-member-path.png)
 
-In der Regel möchten Sie eine ansprechendere Darstellung Ihrer Daten anzeigen. Um genau anzugeben, wie Elemente in der Listenansicht angezeigt werden, müssen Sie ein [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) erstellen. Der XAML-Code in der DataTemplate definiert das Layout und die Darstellung von Steuerelementen, die zum Anzeigen eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, statischen Inhalt intern zu definieren. Weisen Sie das DataTemplate der [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)-Eigenschaft des Listensteuerelements zu.
+In der Regel möchten Sie eine ansprechendere Darstellung Ihrer Daten anzeigen. Um genau anzugeben, wie Elemente in der Listenansicht angezeigt werden, erstellen Sie eine [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Der XAML-Code in der DataTemplate definiert das Layout und die Darstellung von Steuerelementen, die zum Anzeigen eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, statischen Inhalt intern zu definieren. Sie weisen DataTemplate der [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)-Eigenschaft des Listensteuerelements zu.
 
 > [!IMPORTANT]
 > Sie können **ItemTemplate** und **DisplayMemberPath** nicht gleichzeitig verwenden. Wenn beide Eigenschaften festgelegt sind, wird eine Ausnahmebedingung ausgelöst.
 
-Hier definieren Sie ein DataTemplate-Objekt, das ein [Rechteck](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) in der Farbe des Elements zusammen mit dem Farbnamen und den RGB-Werten anzeigt. 
+Hier definieren Sie ein DataTemplate-Objekt, durch das [Rectangle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) in der Farbe des Elements zusammen mit dem Farbnamen und den RGB-Werten angezeigt wird. 
 
 > [!NOTE]
 > Wenn Sie die [x:Bind-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in DataTemplate verwenden, müssen Sie DataType (`x:DataType`) für DataTemplate angeben.
@@ -262,7 +262,7 @@ Wenn die Daten mithilfe dieser Datenvorlage in einem Raster angezeigt werden, si
 
 Datenvorlagen sind der bevorzugte Weg für die Definition des Aussehens Ihrer Listenansicht. Sie können auch eine erhebliche Auswirkung auf die Leistung haben, wenn in der Liste eine große Anzahl von Elementen angezeigt wird. 
 
-Bei einer Datenvorlage wird für jedes Element in der Listenansicht eine Instanz von jedem XAML-Elements erstellt. Die Rastervorlage im vorherigen Beispiel hat beispielsweise 10 XAML-Elemente (1 Raster, 1 Rechteck, 3 Rahmen, 5 Textblöcke). Bei einer GridView, die auf dem Bildschirm mithilfe dieser Datenvorlage 20 Elemente anzeigt, werden mindestens 200 Elemente (20 * 10 = 200) erstellt. Wenn Sie die Anzahl der Elemente in einer Datenvorlage verringern, kann die Gesamtanzahl der Elemente, die für die Listenansicht erstellt werden müssen, erheblich reduziert werden. Weitere Informationen finden Sie unter [ListView und GridView-UI-Optimierung: Verringerung der Element-Anzahl pro Element](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
+Bei einer Datenvorlage wird für jedes Element in der Listenansicht eine Instanz von jedem XAML-Elements erstellt. Die Rastervorlage im vorherigen Beispiel hat beispielsweise 10 XAML-Elemente (1 Raster, 1 Rechteck, 3 Rahmen, 5 Textblöcke). Bei einer GridView, die auf dem Bildschirm mithilfe dieser Datenvorlage 20 Elemente anzeigt, werden mindestens 200 Elemente (20 * 10 = 200) erstellt. Wenn Sie die Anzahl der Elemente in einer Datenvorlage verringern, kann die Gesamtanzahl der Elemente, die für die Listenansicht erstellt werden müssen, erheblich reduziert werden. Weitere Informationen finden Sie unter [ListView und GridView-UI Optimierung:  Reduzierung der Anzahl der Element pro Element](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
  Betrachten Sie diesen Ausschnitt der Rasterdatenvorlage. Sehen wir uns an, wodurch wir die Anzahl der Elemente verringern können.
 
@@ -304,7 +304,7 @@ Die Steuerelemente „ListView“ und „GridView“ sind dahingegehend optimier
 > [!NOTE]
 > In UWP-Apps für Windows 10 verwendet sowohl **ListViewItem** als auch **GridViewItem** den **ListViewItemPresenter**. „GridViewItemPresenter“ ist veraltet und sollte nicht mehr verwendet werden. ListViewItem und GridViewItem werden standardmäßig unterschiedlich angezeigt, weil sie für ListViewItemPresenter unterschiedliche Eigenschaftswerte festlegen.)
 
-Um das Aussehen der Elementcontainer zu ändern, verwenden Sie die [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)-Eigenschaft und stellen Sie einen [Stil](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style) bereit, indem Sie für den zugehörigen [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype)**ListViewItem** oder **GridViewItem** als Wert festlegen.
+Um das Aussehen der Elementcontainer zu ändern, verwenden Sie die [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)-Eigenschaft und stellen Sie einen [Stil](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style) bereit, indem Sie für den zugehörigen [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) als Wert **ListViewItem** oder **GridViewItem** festlegen.
 
 In diesem Beispiel fügen Sie dem ListViewItem Abstände hinzu, um die Elemente in der Liste deutlicher voneinander zu trennen.
 
@@ -326,19 +326,19 @@ Jetzt sieht die Listenansicht mit etwas mehr Platz zwischen den Elementen so aus
 
 ![Elemente in der Listenansicht mit Abständen](images/listview-data-template-1.png)
 
-Im Standardstil des ListViewItem ist die **ContentMargin**-Eigenschaft des ListViewItemPresenter über ein [TemplateBinding](https://docs.microsoft.com/windows/uwp/xaml-platform/templatebinding-markup-extension) mit der **Padding**-Eigenschaft des ListViewItem verknüpft (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`). Wenn wir die „Padding“-Eigenschaft festlegen, wird dieser Wert eigentlich an die „ContentMargin“-Eigenschaft des „ListViewItemPresenter“ übergeben.
+In dem Standardstil für ListViewItem ist die **ContentMargin**-Eigenschaft über ein [TemplateBinding](https://docs.microsoft.com/windows/uwp/xaml-platform/templatebinding-markup-extension) mit der **Padding**-Eigenschaft (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`) des ListViewItem-Objekts verknüpft. Wenn wir die „Padding“-Eigenschaft festlegen, wird dieser Wert eigentlich an die „ContentMargin“-Eigenschaft des „ListViewItemPresenter“ übergeben.
 
 Um andere ListViewItemPresenter-Eigenschaften zu ändern, die nicht per Vorlage an ListViewItems-Eigenschaften gebunden sind, müssen Sie die Vorlage für ListViewItem mit einem neuen ListViewItemPresenter umschreiben, dessen Eigenschaften Sie dann ändern können. 
 
 > [!NOTE]
 > Mit den Standardformaten von ListViewItem und GridViewItem werden zahlreiche Eigenschaften für ListViewItemPresenter festgelegt. Es wird empfohlen, mit einer Kopie des Standardstils zu beginnen und nur die Eigenschaften zu ändern, bei denen dies erforderlich ist. Andernfalls werden die visuellen Elemente wahrscheinlich nicht so wie angezeigt, die Sie es erwarten, da einige Eigenschaften nicht richtig festgelegt sein werden.
 
-**Um eine Kopie der Standardvorlage in Visual Studio erstellen**
+**So erstellen Sie eine Kopie der Standardvorlage in Visual Studio**
  
 1. Öffnen Sie das Dokumentgliederungsfenster (**Ansicht > Andere Fenster > Dokumentgliederung**).
 2. Wählen Sie das Listen- oder Rasterelement aus, das Sie ändern möchten. In diesem Beispiel ändern Sie das `colorsGridView`-Element.
 3. Klicken mit der rechten Maustaste, und wählen Sie **Weitere Vorlagen bearbeiten > Erzeugten Elementcontainer bearbeiten (ItemContainerStyle) > Kopie bearbeiten**.
-    ![Visual Studio-editor](images/listview-itemcontainerstyle-vs.png)
+    ![Visual Studio-Editor](images/listview-itemcontainerstyle-vs.png)
 4. Geben Sie im Dialogfeld „Stilressource erstellen“ einen Namen für den Stil ein. In diesem Beispiel verwenden Sie `colorsGridViewItemStyle`.
     ![Visual Studio-Dialogfeld „Stilressource erstellen“ (images/listview-style-resource-vs.png)
 
@@ -404,8 +404,8 @@ Wenn **SelectionMode** auf **Multiple** festgelegt ist, wird in der Steuerelemen
 
 Sie können über die [CheckMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode)-Eigenschaft festlegen, ob das Kontrollkästchen im Inlineformat oder im Overlayformat angezeigt wird.
 
-- **Inline**: Dieses Format zeigt das Kontrollkästchen auf der linken Seite des Inhalts und Farben, den Hintergrund des Elementcontainers Auswahl an. Dies ist der Standardstil für ListView.
-- **Überlagern**: Dieses Format zeigt das Kontrollkästchen auf den Inhalt, und nur den Rahmen des Elementcontainers Auswahl an Farben. Dies ist der Standardstil für GridView.
+- **Inline**: Bei diesem Stil wird das Kontrollkästchen links neben dem Inhalt angezeigt. Der Hintergrund des Elementcontainers wird farbig hervorgehoben, um darauf hinzuweisen, dass es ausgewählt ist. Dies ist der Standardstil für ListView.
+- **Overlay**:  Bei diesem Stil wird das Kontrollkästchen über dem Inhalt angezeigt. Es wird nur der Rahmen des Elementcontainers farbig hervorgehoben, um darauf hinzuweisen, dass es ausgewählt ist. Dies ist der Standardstil für GridView.
 
 Die folgende Tabelle zeigt die visuellen Standardelemente, mit denen auf eine Auswahl hingewiesen wird.
 
@@ -433,10 +433,10 @@ Zustand/Pinselname | Inlineformat | Overlaystil
 <b>Normal</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![Inlineelementauswahl (normal)](images/listview-item-normal.png) | ![Overlayelementauswahl (normal)](images/gridview-item-normal.png)
 <b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline-Elementauswahlzeiger über](images/listview-item-pointerover.png) | ![Overlyelementauswahl (Hover)](images/gridview-item-pointerover.png)
 <b>Gedrückt</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Inlineelementauswahl (gedrückt)](images/listview-item-pressed.png) | ![Overlayelementauswahl (gedrückt)](images/gridview-item-pressed.png)
-<b>ausgewählt</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inlineelementauswahl aktiviert](images/listview-item-selected.png) | ![Overlayelementauswahl aktiviert](images/gridview-item-selected.png)
+<b>Ausgewählt</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inlineelementauswahl aktiviert](images/listview-item-selected.png) | ![Overlayelementauswahl aktiviert](images/gridview-item-selected.png)
 <b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (nur Overlay)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inline-Element Auswahlzeiger über ausgewählt](images/listview-item-pointeroverselected.png) | ![Overlayelementauswahl (Hover)](images/gridview-item-pointeroverselected.png)
 <b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (nur Overlay)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (nur Inline)</li></ul> | ![Inlineelementauswahl (markiert)](images/listview-item-pressedselected.png) | ![Overlayelementauswahl (markiert)](images/gridview-item-pressedselected.png)
-<b>Mit Fokus</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inlineelementauswahl (Vordergrund)](images/listview-item-focused.png) | ![Overlayelementauswahl (Vordergrund)](images/gridview-item-focused.png)
+<b>Im Vordergrund</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inlineelementauswahl (Vordergrund)](images/listview-item-focused.png) | ![Overlayelementauswahl (Vordergrund)](images/gridview-item-focused.png)
 
 ListViewItemPresenter hat noch andere Pinseleigenschaften für Datenplatzhalter und Drag&Drop-Zustände. Wenn Sie in der Listenansicht inkrementelles Laden oder Drag&Drop verwenden, sollten Sie überlegen, ob Sie auch diese zusätzlichen Pinseleigenschaften ändern müssen. Informationen finden Sie in der ListViewItemPresenter-Klasse mit einer vollständigen Liste der Eigenschaften, die Sie ändern können. 
 
@@ -447,18 +447,18 @@ Wenn Sie weitere Änderungen vornehmen müssen als es von den **ListViewItemPres
 Wie bereits erwähnt, hat die Anzahl von UIElements in einer Elementvorlage erhebliche Auswirkungen auf die Leistung der Listenansicht. Wenn Sie ListViewItemPresenter durch erweiterte XAML-Vorlagen ersetzen, erhöht sich die Anzahl der Elemente erheblich. Wenn in der Listenansicht eine große Anzahl von Elementen angezeigt wird oder die Leistung von Bedeutung ist, wird davon abgeraten.
 
 > [!NOTE]
-> **ListViewItemPresenter** wird nur unterstützt, wenn das [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) der Listenansicht einem [ItemsWrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemswrapgrid) oder einem [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel) entspricht. Wenn Sie das ItemsPanel ändern und [VariableSizedWrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid), [WrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.wrapgrid) oder [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel) verwenden, wechselt die Elementvorlage automatisch zur erweiterten XAML-Vorlage. Weitere Informationen finden Sie unter [Optimieren der ListView- und GridView-Benutzeroberfläche](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
+> **ListViewItemPresenter** wird nur unterstützt, wenn [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) der Listenansicht [ItemsWrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemswrapgrid) oder [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel) entspricht. Wenn Sie die ItemsPanel ändern und [VariableSizedWrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid), [WrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.wrapgrid) oder [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel) verwenden, wird die Elementvorlage in der erweiterten XAML-Vorlage automatisch gewechselt. Weitere Informationen finden Sie unter [Optimieren der ListView- und GridView-Benutzeroberfläche](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
 Um eine erweiterte XAML-Vorlage anzupassen, müssen Sie eine Kopie von Ihrer App erstellen und die **ItemContainerStyle**-Eigenschaft auf diese Kopie festlegen.
 
-**Um die erweiterten Vorlage zu kopieren.**
+**So kopieren Sie die erweiterte Vorlage**
 1. Legen Sie die ItemContainerStyle-Eigenschaft für Ihren ListView oder GridView wie hier dargestellt fest.
     ```xaml
     <ListView ItemContainerStyle="{StaticResource ListViewItemExpanded}"/>
     <GridView ItemContainerStyle="{StaticResource GridViewItemExpanded}"/>
     ```
 2. Erweitern Sie im Eigenschaftenbereich von Visual Studio den Abschnitt „Verschiedenes“, und suchen Sie die „ItemContainerStyle“-Eigenschaft. (Stellen Sie sicher, dass ListView oder GridView ausgewählt ist.)
-3. Klicken Sie auf den Eigenschaftenmarker für die ItemContainerStyle-Eigenschaft. (Das ist das kleine Feld neben dem Textfeld. Es Coloreed grün angezeigt, dass er auf eine StaticResource festgelegt ist.) Das Eigenschaftsmenü wird geöffnet.
+3. Klicken Sie auf den Eigenschaftenmarker für die ItemContainerStyle-Eigenschaft. (Das ist das kleine Feld neben dem Textfeld. Es wird grün angezeigt, um darauf hinzuweisen, dass eine StaticResource festgelegt ist.) Das Eigenschaftsmenü wird geöffnet.
 4. Wählen Sie im Eigenschaftsmenü die Option **In neue Ressource konvertieren** aus. 
     
     ![Visual Studio-Eigenschaftenmenü](images/listview-convert-resource-vs.png)
