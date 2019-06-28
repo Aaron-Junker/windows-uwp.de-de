@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 62dc89b9e17f1ae9c2394629100e0bd54606594b
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: e6074202a05c80a9dc759cdf81b2c20c7cc17d07
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215124"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414102"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Host UWP XAML-Steuerelemente in desktop-apps (XAML-Inseln)
 
 Ab Windows 10, Version 1903 sein, können Sie UWP-Steuerelementen in nicht-UWP-desktopanwendungen, die mit einem Feature hosten *XAML-Inseln*. Dieses Feature ermöglicht Sie erhöhen die aussehen, Verhalten und Funktionalität von Ihren bestehenden desktopanwendungen mit den neuesten Windows 10-Benutzeroberflächen-Features, die nur über die UWP-Steuerelemente verfügbar sind. Dies bedeutet, dass Sie UWP-Features wie z. B. können [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) und Steuerelemente, unterstützen die [Fluent-Entwurfssystem](/windows/uwp/design/fluent-design-system/index) in Ihre vorhandenen WPF, Windows Forms und C++-Win32-Anwendungen.
 
-Wir bieten mehrere Möglichkeiten, verwenden in Ihrer Windows Forms, WPF-XAML-Inseln und C++ Win32-Anwendungen abhängig von der Technologie oder ein Framework, die Sie verwenden.
+Wir bieten mehrere Möglichkeiten, verwenden in Ihrer Windows Forms, WPF-XAML-Inseln und C++ Win32-Anwendungen abhängig von der Technologie oder ein Framework, die Sie verwenden. 
 
 > [!NOTE]
 > Wenn Sie Feedback zu XAML-Inseln haben, erstellen Sie ein neues Problem in der [Microsoft.Toolkit.Win32 Repository](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) und lassen Sie Ihre Kommentare vorhanden. Wenn Sie Ihr Feedback zu senden, privat möchten, können Sie senden, damit XamlIslandsFeedback@microsoft.com. Ihre Einblicke und Szenarien sind sehr wichtig für uns.
@@ -35,7 +35,7 @@ Ab Windows 10, Version 1903 sein, wir bieten zwei Möglichkeiten zur Verwendung 
 > [!NOTE]
 > C++-Win32-desktop-Anwendungen müssen die UWP XAML hosting-API zum Hosten von UWP-Steuerelementen verwenden. Die XAML-Island-Steuerelemente in das Windows-Community-Toolkit sind nicht verfügbar für C++ Win32-desktopanwendungen.
 
-Es gibt zwei Arten von XAML Island-Steuerelementen, die von der Windows-Community-Toolkit für WPF- und Windows Forms-Anwendungen bereitgestellt werden: *umschlossen Steuerelemente* und *Hoststeuerelemente*.
+Es gibt zwei Arten von XAML Island-Steuerelementen, die von der Windows-Community-Toolkit für WPF- und Windows Forms-Anwendungen bereitgestellt werden: *umschlossen Steuerelemente* und *Hoststeuerelemente*. 
 
 ### <a name="wrapped-controls"></a>Umschlossene Steuerelemente
 
@@ -67,14 +67,6 @@ Nachfolgend ist dargestellt, wie diese Steuerelemente architektonisch organisier
 ![Hoststeuerelement-Architektur](images/xaml-islands/host-controls.png)
 
 Die am Diagrammende aufgeführten APIs sind im Lieferumfang des Windows SDK enthalten. Der umschlossene Steuerelementen und Hoststeuerelementen stehen über Nuget-Pakete in das Windows-Community-Toolkit.
-
-## <a name="feature-roadmap"></a>Roadmap für die Funktion
-
-Ab der Version von Windows 10, Version 1903 sein, sind die umschlossene Steuerelementen und Hoststeuerelementen im Windows-Community-Toolkit immer noch in einer entwicklervorschauversion bis der Veröffentlichung von Version 1.0 der Steuerelemente zur Verfügung steht.
-
-* Version 1.0 der Steuerelemente für .NET Framework 4.6.2 und höher in freigegeben werden geplant werden die [Version 6.0 des Toolkits](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
-* Version 1.0 der Steuerelemente für .NET Core-3 werden für ein späteres Release des Toolkits geplant.
-* Wenn Sie sicher diese neuesten Previews der Version 1.0 Versionen dieser Steuerelemente für die .NET Framework und .NET Core-3 testen möchten, finden Sie unter den **6.0.0-preview3** NuGet-Pakete der [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) Katalog.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -112,8 +104,19 @@ Wenn Sie nicht Ihre Anwendung in einem Paket MSIX packen möchten, können Sie h
     </assembly>
     ```
 
+## <a name="feature-roadmap"></a>Roadmap für die Funktion
+
+Ab der Version von Windows 10, Version 1903 sein, sind die umschlossene Steuerelementen und Hoststeuerelementen im Windows-Community-Toolkit immer noch in einer entwicklervorschauversion bis der Veröffentlichung von Version 1.0 der Steuerelemente zur Verfügung steht.
+
+* Version 1.0 der Steuerelemente für .NET Framework 4.6.2 und höher in freigegeben werden geplant werden die [Version 6.0 des Toolkits](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
+* Version 1.0 der Steuerelemente für .NET Core-3 werden für ein späteres Release des Toolkits geplant.
+* Wenn Sie sicher diese neuesten Previews der Version 1.0 Versionen dieser Steuerelemente für die .NET Framework und .NET Core-3 testen möchten, finden Sie unter den **6.0.0-preview3** NuGet-Pakete der [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) Katalog.
+
+Weitere Informationen finden Sie unter [in diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap).
+
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 Weitere Informationen und Lernprogramme zur Verwendung von XAML-Inseln finden Sie unter den folgenden Artikeln und Ressourcen:
 
-* [XAML-Inseln Lab](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn). Dieses umfassende Lab bietet schrittweise Anleitungen zum Verwenden der umschlossene Steuerelementen und Hoststeuerelementen im Windows-Community-Toolkit UWP-Steuerelementen zu einer vorhandenen WPF-Line-of-Business-Anwendung hinzufügen. In diesem Labor die [der gesamte Code für die WPF-Anwendung](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn/Lab) sowie [ausführliche Anleitungen](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/blob/microsoftlearn/Manual/README.md) für jeden Schritt im Prozess.
+* [Modernisieren Sie ein WPF-app-Tutorial](modernize-wpf-tutorial.md): In diesem Tutorial enthält schrittweise Anleitungen zum Verwenden der umschlossene Steuerelementen und Hoststeuerelementen im Windows-Community-Toolkit UWP-Steuerelementen zu einer vorhandenen WPF-Line-of-Business-Anwendung hinzufügen. Dieses Lernprogramm enthält den vollständigen Code für die WPF-Anwendung sowie detaillierte Anweisungen für jeden Schritt im Prozess an.
+* [XAML-Inseln v1 - Updates und Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap): In diesem Blogbeitrag erläutert, häufige gestellte Fragen zur XAML-Inseln und bietet eine detaillierte Entwicklungsplan.
