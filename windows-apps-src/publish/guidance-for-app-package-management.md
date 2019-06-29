@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c75eb1a4b28b015b83557f74957a3370f478a26e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: f514177ad5de7774e6926165435fd3b2d7b5e1f7
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790775"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468937"
 ---
 # <a name="guidance-for-app-package-management"></a>Leitfaden für die App-Paketverwaltung
 
@@ -31,7 +31,7 @@ Auf unterschiedlichen Betriebssystemen können unterschiedliche Pakettypen ausge
 Im Allgemeinen können höhere Betriebssystemversionen Pakete ausführen, die auf frühere Betriebssystemversionen für dieselbe Gerätefamilie abzielen. Windows 10-Geräte können alle vorherige unterstützte Betriebssystemversionen (pro-Gerätefamilie) ausführen. Windows 10-desktop-Geräte können apps ausgeführt werden, die für Windows 8.1 oder Windows 8 erstellt wurden. Windows 10 mobile-Geräten können apps, die für Windows Phone 8.1, Windows Phone 8 und sogar Windows Phone erstellt wurden ausführen 7.x. Jedoch erhalten Kunden unter Windows 10, wenn die app auf UWP-Paketen, die für die entsprechenden Gerätefamilie enthalten nicht nur diese Pakete.
 
 > [!IMPORTANT]
-> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/).
+> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 
 ## <a name="removing-an-app-from-the-store"></a>Entfernen einer App aus dem Store

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Betatests, eingeschränkter Vertrieb, Beta, Betas, testen, Tester
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0a4d1053c35a831458c832131659b9cb888259
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 6cf7fb20129c0b616fcdb537ff8e612aec9b94a4
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787176"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468916"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>Betatests und zielgerichtete Verteilung
 
@@ -65,12 +65,12 @@ So verwenden Sie diese Option:
 Im Gegensatz zu den oben beschriebenen Optionen eignet sich diese Option für Kunden mit Windows Phone 8.1 und Windows 10 (allerdings nicht für Windows 8 x). Kein Kunde ist in der Lage, die App durch Suchen oder Browsen im Store zu finden. Aber jeder Kunde mit dem entsprechenden direkten Link zum Store-Eintrag kann die App auf einem Gerät mit Windows Phone 8.1 oder früher oder unter Windows 10 herunterladen. Damit die Tester Ihre App kostenlos herunterladen können, müssen Sie als Preis **Kostenlos** festlegen.
 
 So verwenden Sie diese Option:
-- Wählen Sie im Abschnitt **Sichtbarkeit** der Seite **Preise und Verfügbarkeit** unter [Erkennbarkeit](choose-visibility-options.md#discoverability), die Option **Make this product available but not discoverable in the Store**. Wählen Sie die Option für **nur direkte Verknüpfung: Jeder Kunde mit einem direkten Link zu den produktanforderungen Angebot können Sie herunterladen, außer für Windows 8.x.**.
+- Wählen Sie im Abschnitt **Sichtbarkeit** der Seite **Preise und Verfügbarkeit** unter [Erkennbarkeit](choose-visibility-options.md#discoverability), die Option **Make this product available but not discoverable in the Store**. Wählen Sie die Option für **nur direkte Verknüpfung: Jeder Kunde mit einem direkten Link zu den produktanforderungen Angebot können Sie herunterladen, außer für Windows 8.x.** .
 - Nachdem Ihr Produkt veröffentlicht wurde, geben Sie den Link (die **URL** auf der [Seite App-Identität](view-app-identity-details.md)) an Ihre Tester, damit sie die App ausprobieren können.
 - Wenn Sie bereit sind, Ihre App für die Allgemeinheit zur Verfügung zu stellen, können Sie eine neue Übermittlung erstellen und die Option **Sichtbarkeit** in **Make this product available and discoverable in the Store** ändern (sowie ggf. andere gewünschte Änderungen vornehmen).
 
 > [!IMPORTANT]
-> Ab 31. Oktober 2018 darf keine neu erstellte Produkte enthalten, Pakete für Windows Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> Ab 31. Oktober 2018 darf keine neu erstellte Produkte enthalten, Pakete für Windows Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 ## <a name="targeted-distribution-to-windows-phone-customers-with-specified-email-addresses"></a>Zielgerichtete Verteilung an Kunden mit Windows Phone mit angegebenen E-Mail-Adressen
 

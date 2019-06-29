@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, anpassen, Eintrag, Beschreibung, früher
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c14ed3fa7f7f5f7d1b4c80bb8165b3f27e522a
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 2d9a9e86397ca5e85697543f99481b43f438a063
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63777706"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468968"
 ---
 # <a name="create-platform-specific-store-listings"></a>Erstellen plattformspezifischer Store-Einträge
 
@@ -21,7 +21,7 @@ Wenn Ihre app zuvor veröffentlichte Pakete gespeichert, die auf verschiedenen B
 Unter Windows 10 (einschließlich Xbox) die Kunden sehen sich immer auf die Standardeinstellung [Store auflisten](create-app-store-listings.md). Die Möglichkeit, plattformspezifischen Store-Angebote zu erstellen, es sei denn, Sie Ihre app mit Paketen bereits veröffentlicht haben, die eine oder mehrere frühere Betriebssystemversionen unterstützen nicht angezeigt. 
 
 > [!IMPORTANT]
-> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Plattformspezifischen Store-Angebote können nützlich sein, wenn Sie Funktionen zu erwähnen, die nur in eine Version des Betriebssystems angezeigt werden soll, oder möchten, Screenshots bereitstellen, die für ein bestimmtes Betriebssystem (unabhängig vom Gerätetyp) spezifisch sind.
 

@@ -6,19 +6,19 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Pakete, Upload, Hochladen des Anwendungspakets
 ms.localizationpriority: medium
-ms.openlocfilehash: 07643b42a4c897c3af1865b895fb174e0eee4a3e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 97735a8e860f7c941cc35d77a21496696683640f
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787936"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468880"
 ---
 # <a name="upload-app-packages"></a>Hochladen von App-Paketen
 
 Die **Pakete** Seite ist, in dem Sie alle für die app die Paketdateien (.msix, .msixupload, .msixbundle, AppX, .appxupload und/oder .appxbundle) hochladen, die übermittelt werden. Sie können alle Pakete für die gleiche app auf dieser Seite hochladen, und beim Kunden Ihre app herunterladen, stellt der Store automatisch jeden Kunden, für das Paket, das am besten geeignet für ihr Gerät ist bereit. Nachdem Sie Ihre Pakete hochgeladen haben, sehen Sie eine Tabelle, in der angegeben wird, [welche Pakete für bestimmte Windows 10-Gerätefamilien angeboten werden](#device-family-availability) (und ggf. für frühere Betriebssystemversionen).
 
 > [!IMPORTANT]
-> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Ausführliche Informationen zu Inhalt und Struktur der Pakete finden Sie unter [App-Paketanforderungen](app-package-requirements.md). Sie sollten auch Informationen zu [wie Auswirkungen auf die Pakete Versionsnummern werden für bestimmte Kunden übermittelt](package-version-numbering.md) und [Verwalten von Paketen für verschiedene Szenarios](guidance-for-app-package-management.md).
 

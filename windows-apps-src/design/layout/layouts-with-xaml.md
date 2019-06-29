@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 749466e8ebce798f68295df28ad9f11a15e46702
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 69facfe9b1cdac408fe1fd63dfa144de072dfdfd
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365022"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468977"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dynamische Layouts mit XAML
 
@@ -22,7 +22,7 @@ Die Grundlage für ein dynamisches Layout ist die richtige Verwendung von XAML-L
 
 Das XAML-Layoutsystem unterstützt sowohl statische als auch dynamische Layouts. In einem statischen Layout weisen Sie Steuerelementen feste Größen in Pixel und Positionen zu. Wenn der Benutzer die Auflösung oder Ausrichtung seines Geräts ändert, bleibt die UI unverändert. Statische Layouts können auf bestimmte Formfaktoren und Anzeigegrößen beschnitten werden. Dynamische Layouts passen sich andererseits durch Vergrößerung, Verkleinerung und Umbrüche an den auf einem Gerät verfügbaren Platz für die Anzeige an. 
 
-In der Praxis verwenden Sie eine Kombination aus statischen und dynamischen Elemente zum Erstellen der Benutzeroberfläche. Statische Elemente und Werte kommen an bestimmten Stellen immer noch vor, es sollte jedoch darauf geachtet werden, dass die Gesamt-UI reaktionsfähig ist und sich an verschiedene Auflösungen, Bildschirmgrößen und Ansichten anpasst.
+In der Praxis verwenden Sie eine Kombination aus statischen und dynamischen Elemente zum Erstellen der Benutzeroberfläche. Sie weiterhin verwenden Sie statische Elemente und Werte an einigen Stellen, aber stellen Sie sicher, dass die gesamte Benutzeroberfläche zu verschiedenen Auflösungen, Bildschirmgrößen und Ansichten reagiert.
 
 Hier erörtern wir die Verwendung von XAML-Eigenschaften und Layoutpanels zur Erstellung eines Fluid-Layouts für Ihre App.
 
