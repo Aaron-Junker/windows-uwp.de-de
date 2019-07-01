@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 20980562f73bca2087d4c0a6ee049c848404d6a6
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5fababa6903880c4c4aa70d93d36e49fd4ea89b5
+ms.sourcegitcommit: f4b64245cf784793b431f2c9d8bded6f321e7788
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319414"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67412111"
 ---
 ![Designgrundlagen](../images/downloads-2x.png)
 
@@ -29,7 +29,7 @@ Diese Toolkits enthalten Steuerelemente und Layoutvorlagen für das Entwerfen vo
     :::column:::
 ![Herobild](images/figma.png)
 <b>Figma-Toolkit</b><br>
-v1810, Oktober 2018<br>
+v1905, Mai 2019<br>
 <a href="https://aka.ms/figmatoolkit">Herunterladen</a>
     :::column-end:::
     :::column:::

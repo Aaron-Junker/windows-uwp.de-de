@@ -43,6 +43,20 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: Verteilen Ihres App-Pakets
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: 'Tutorial: Modernisieren einer WPF-App'
+          items:
+            - name: Übersicht
+              href: apps/desktop/modernize/modernize-wpf-tutorial.md
+            - name: Migrieren der Contoso-Spesen-App zu .NET Core 3
+              href: apps/desktop/modernize/modernize-wpf-tutorial-1.md
+            - name: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
+              href: apps/desktop/modernize/modernize-wpf-tutorial-2.md
+            - name: Hinzufügen eines UWP-CalendarView-Steuerelements mithilfe von XAML Islands
+              href: apps/desktop/modernize/modernize-wpf-tutorial-3.md
+            - name: Hinzufügen von Windows 10-Benutzeraktivitäten und -Benachrichtigungen
+              href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
+            - name: Verpacken und Bereitstellen mit MSIX
+              href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
     - name: Fluent Design-System
       href: apps/fluent-design-system.md
     - name: Bedienungshilfen

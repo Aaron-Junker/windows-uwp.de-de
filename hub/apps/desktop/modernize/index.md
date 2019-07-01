@@ -6,18 +6,18 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6153a0a094d03081388c15ec31696ef277ef7081
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 47cb292b1f5aeed9473cac0f27074f449dc67032
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215215"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414106"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
 Windows 10 und die Universelle Windows-Plattform (UWP) verfügen über viele Features, mit denen Sie in Ihren Desktop-Apps eine moderne Benutzerumgebung bereitstellen können. Die meisten dieser Features sind als modulare Komponenten verfügbar, die Sie je nach Bedarf in Ihre Desktop-Apps übernehmen können, ohne dass Sie Ihre Anwendung für eine andere Plattform umschreiben müssen. Sie können Ihre vorhandenen Desktop-Apps erweitern, indem Sie auswählen, welche Teile von Windows 10 und der UWP übernommen werden sollen.
 
-In diesem Artikel werden die Features von Windows 10 und der UWP beschrieben, die Sie derzeit in Ihren Desktop-Apps verwenden können.
+In diesem Artikel werden die Features von Windows 10 und der UWP beschrieben, die Sie derzeit in Ihren Desktop-Apps verwenden können. Ein Tutorial, das das Modernisieren einer vorhandenen App veranschaulicht, sodass sie viele der in diesem Artikel beschriebenen Features verwendet, finden Sie in Gestalt des Tutorials [Modernisieren einer WPF-App](modernize-wpf-tutorial.md).
 
 > [!NOTE]
 > Benötigen Sie Hilfe beim Migrieren Ihrer Desktop-Apps zu Windows 10? Mit dem Dienst [Desktop App Assure](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) erhalten Entwickler, die ihre Apps zu Windows 10 portieren, direkten kostenlosen Support. Dieses Programm ist für alle ISVs und berechtigten Unternehmen verfügbar. Weitere Informationen zur Berechtigung und zum Programm selbst finden Sie unter [https://aka.ms/DesktopAppAssure](https://aka.ms/DesktopAppAssure). [Senden Sie Ihre Anfrage](https://aka.ms/DesktopAppAssureRequest), um zu beginnen.
