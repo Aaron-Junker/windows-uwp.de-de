@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Entwicklerkonto, individuell, Unternehmen, geschäftlich
 ms.localizationpriority: medium
-ms.openlocfilehash: 7556ca526ecfa28b1d97346501ec1875f938ca35
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: 92f657386c3a5d1ca6815b9b0a9e56b4d6f2578b
+ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826213"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67495746"
 ---
 # <a name="account-types-locations-and-fees"></a>Kontotypen, Standorte und Gebühren
 
@@ -58,198 +58,196 @@ In der Spalte **Auszahlung** wird angegeben, auf welchem Weg Sie das mit Ihren A
 
 In der Spalte **PayPal** wird angegeben, ob PayPal als Zahlungsmethode für Ihr [Auszahlungskonto](setting-up-your-payout-account-and-tax-forms.md) und (und, sofern nichts anderes angegeben, für Ihre Entwicklerkonto-Registrierungsgebühr) unterstützt wird.
 
-| Land/Region                    | Individuelle Registrierungskosten | Kosten für die Unternehmensregistrierung | Auszahlung           | PayPal |
-|-----------------------------------|---------------------|------------------|------------------|--------|
-| Afghanistan                       | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |
-| Albanien                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |
-| Algerien                           | 1535 DZD            | 7000 DZD         | USD, Auszahlung per Banküberweisung | Nein     |  
-| Andorra                           | 14 EUR              | 75 EUR           | Keine Auszahlung        | Nein     |  
-| Angola                            | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Antigua und Barbuda               | 19 USD              | 99 USD           | XCD, Auszahlung per Banküberweisung | Nein     |  
-| Argentinien                         | 106 ARS             | 420 ARS          | USD, Auszahlung per Banküberweisung | Nein     |  
-| Armenien                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Australien                         | 21 AUD              | 110 AUD          | AUD, Auszahlung per Banküberweisung | Ja    |  
-| Österreich                           | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Aserbeidschan                        | 19 USD              | 99 USD           | AZN, Auszahlung per Banküberweisung | Nein     |  
-| Bahamas                       | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Bahrain                           | 7 BHD               | 38 BHD           | BHD, Auszahlung per Banküberweisung | Nein     |  
-| Bangladesch                        | 1468 BDT            | 7600 BDT         | BDT, Auszahlung per Banküberweisung | Nein     |  
-| Barbados                          | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Belarus                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Belgien                           | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Belize                            | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Benin                             | 19 USD              | 99 USD           | XOF, Auszahlung per Banküberweisung | Nein     |  
-| Bhutan                            | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Bolivien                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Bosnien und Herzegowina            | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Botsuana                          | 19 USD              | 99 USD           | BWP, Auszahlung per Banküberweisung | Nein     |  
-| Brazilien                            | 46 BRL              | 160 BRL          | USD, Auszahlung per Banküberweisung | Nein     |  
-| Brunei                            | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Bulgarien                          | 28 BGN              | 160 BGN          | BGN, Auszahlung per Banküberweisung | Nein     |  
-| Burkina Faso                      | 19 USD              | 99 USD           | XOF, Auszahlung per Banküberweisung | Nein     |  
-| Burundi                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Cabo Verde                        | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Kambodscha                          | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Kamerun                          | 19 USD              | 99 USD           | XAF, Auszahlung per Banküberweisung | Nein     |  
-| Kanada                            | 20 CAD              | 99 CAD           | CAD, Auszahlung per Banküberweisung | Ja    |  
-| Zentralafrikanische Republik          | 19 USD              | 99 USD           | XAF, Auszahlung per Banküberweisung | Nein     |  
-| Tschad                              | 19 USD              | 99 USD           | XAF, Auszahlung per Banküberweisung | Nein     |  
-| Chile                             | 9776 CLP            | 46000 CLP        | USD, Auszahlung per Banküberweisung | Nein     |  
-| China                             | 116 CNY             | 600 CNY          | USD, Auszahlung per Banküberweisung | Ja*   |  
-| Kolumbien                          | 36543 COP           | 180000 COP       | USD, Auszahlung per Banküberweisung | Nein     |  
-| Komoren                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Kongo                             | 19 USD              | 99 USD           | XAF, Auszahlung per Banküberweisung | Nein     |  
-| Kongo, Demokratische Republik                       | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Costa Rica                        | 9578 CRC            | 49725 CRC        | CRC, Auszahlung per Banküberweisung | Nein     |  
-| Côte d'Ivoire                     | 19 USD              | 99 USD           | XOF, Auszahlung per Banküberweisung | Nein     |  
-| Kroatien                           | 107 HRK             | 500 HRK          | HRK, Auszahlung per Banküberweisung | Nein     |  
-| Zypern                            | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Tschechische Republik                    | 365 CZK             | 1720 CZK         | CZK, Auszahlung per Banküberweisung | Ja    |  
-| Dänemark                           | 106 DKK             | 530 DKK          | DKK, Auszahlung per Banküberweisung | Ja    |  
-| Dschibuti                          | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     | 
-| Dominica                          | 19 USD              | 99 USD           | XCD, Auszahlung per Banküberweisung | Nein     | 
-| Dominikanische Republik                | 19 USD              | 99 USD           | DOP, Auszahlung per Banküberweisung | Nein     |  
-| Ecuador                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Ägypten                             | 133 EGP             | 600 EGP          | EGP, Auszahlung per Banküberweisung | Nein     |  
-| El Salvador                       | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Äquatorialguinea                 | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Eritrea                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Estland                           | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Äthiopien                          | 19 USD              | 99 USD           | ETB, Auszahlung per Banküberweisung | Nein     |  
-| Färöer                     | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Fidschi                              | 19 USD              | 99 USD           | FJD, Auszahlung per Banküberweisung | Nein     |  
-| Finnland                           | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Frankreich                            | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Gabun                             | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Gambia                        | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Georgien                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Deutschland                           | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Ghana                             | 19 USD              | 99 USD           | GHS, Auszahlung per Banküberweisung | Nein     |  
-| Griechenland                            | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Grönland                         | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Grenada                           | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Guatemala                         | 145 GTQ             | 750 GTQ          | GTQ, Auszahlung per Banküberweisung | Nein     |  
-| Guinea                            | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Guinea-Bissau                     | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Guyana                            | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Haiti                             | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Honduras                          | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Hongkong (SAR)                     | 147 HKD             | 760 HKD          | HKD, Auszahlung per Banküberweisung | Ja    |  
-| Ungarn                           | 4237 HUF            | 18800 HUF        | HUF, Auszahlung per Banküberweisung | Ja*   |  
-| Island                           | 2319 ISK            | 11929 ISK        | USD, Auszahlung per Banküberweisung | Nein     | 
-| Indien                             | 1201 INR            | 4500 INR         | INR, Auszahlung per Banküberweisung | Nein     |  
-| Indonesien                         | 203015 IDR          | 1000000 IDR      | IDR, Auszahlung per Banküberweisung | Nein     | 
-| Irak                              | 22078 IQD           | 120000 IQD       | USD, Auszahlung per Banküberweisung | Nein     |  
-| Irland                           | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Israel                            | 67 ILS              | 350 ILS          | ILS, Auszahlung per Banküberweisung | Ja    |  
-| Italien                             | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Jamaika                           | 19 USD              | 99 USD           | JMD, Auszahlung per Banküberweisung | Nein     |  
-| Japan                             | 1847 JPY            | 9800 JPY         | JPY, Auszahlung per Banküberweisung | Ja    |  
-| Jordanien                            | 13 JOD              | 70 JOD           | JOD, Auszahlung per Banküberweisung | Nein     |  
-| Kasachstan                        | 2897 KZT            | 15038 KZT        | KZT, Auszahlung per Banküberweisung | Nein     |  
-| Kenia                             | 1900 KES            | 9999 KES         | KES, Auszahlung per Banküberweisung | Nein     |  
-| Kiribati                          | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Korea, Republik                             | 21216 KRW           | 108000 KRW       | USD, Auszahlung per Banküberweisung | Nein     |  
-| Kuwait                            | 5 KWD               | 28 KWD           | KWD, Auszahlung per Banküberweisung | Nein     |  
-| Kirgisistan                        | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Laos                              | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Lettland                            | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Nein     |  
-| Libanon                           | 28690 LBP           | 149686 LBP       | LBP, Auszahlung per Banküberweisung | Nein     |  
-| Lesotho                           | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Liberia                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Libyen                             | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Liechtenstein                     | 17 CHF              | 93 CHF           | CHF, Auszahlung per Banküberweisung | Ja    |  
-| Litauen                         | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Nein     |  
-| Luxemburg                        | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Macau (SAR)                         | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Nordmazedonien                 | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Madagaskar                        | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Malawi                            | 19 USD              | 99 USD           | MWK, Auszahlung per Banküberweisung | Nein     |  
-| Malaysia                          | 62 MYR              | 300 MYR          | USD, Auszahlung per Banküberweisung | Nein     |  
-| Malediven                          | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Mali                              | 19 USD              | 99 USD           | XOF, Auszahlung per Banküberweisung | Nein     |  
-| Malta                             | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Marshallinseln                  | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Mauretanien                        | 5681 MRO            | 30046 MRO        | Keine Auszahlung        | Nein     |  
-| Mauritius                         | 19 USD              | 99 USD           | MUR, Auszahlung per Banküberweisung | Nein     |  
-| Mexiko                            | 247 MXN             | 1140 MXN         | MXN, Auszahlung per Banküberweisung | Ja    |  
-| Mikronesien                        | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Monaco                            | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Nein     |  
-| Mongolei                          | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Montenegro                        | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Nein     |  
-| Marokko                           | 158 MAD             | 800 MAD          | MAD, Auszahlung per Banküberweisung | Nein     |  
-| Mosambik                        | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Myanmar                           | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Namibia                           | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Nauru                             | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Nepal                             | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Niederlande                       | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Neuseeland                       | 24 NZD              | 140 NZD          | NZD, Auszahlung per Banküberweisung | Ja    |  
-| Nicaragua                         | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Niger                             | 19 USD              | 99 USD           | XOF, Auszahlung per Banküberweisung | Nein     |  
-| Nigeria                           | 3700 NGN            | 19500 NGN        | NGN, Auszahlung per Banküberweisung | Nein     |  
-| Norwegen                            | 113 NOK             | 580 NOK          | NOK, Auszahlung per Banküberweisung | Ja    |  
-| Oman                              | 7 OMR               | 40 OMR           | OMR, Auszahlung per Banküberweisung | Nein     |  
-| Pakistan                          | 1959 PKR            | 9000 PKR         | PKR, Auszahlung per Banküberweisung | Nein     |  
-| Palau                             | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Panama                            | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Papua-Neuguinea                  | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Paraguay                          | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Peru                              | 54 PEN              | 280 PEN          | PEN, Auszahlung per Banküberweisung | Nein     |  
-| Philippinen                       | 832 PHP             | 4400 PHP         | PHP, Auszahlung per Banküberweisung | Ja    |  
-| Polen                            | 59 PLN              | 280 PLN          | PLN, Auszahlung per Banküberweisung | Ja    |  
-| Portugal                          | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Katar                             | 69 QAR              | 360 QAR          | QAR, Auszahlung per Banküberweisung | Nein     |  
-| Rumänien                           | 14 EUR              | 75 EUR           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Russland                            | 626 RUB             | 3000 RUB         | RUB, Auszahlung per Banküberweisung | Ja*   |  
-| Ruanda                            | 19 USD              | 99 USD           | RWF, Auszahlung per Banküberweisung | Nein     |  
-| St. Kitts und Nevis             | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| St. Lucia                       | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| St. Vincent und die Grenadinen  | 19 USD              | 99 USD           | XCD, Auszahlung per Banküberweisung | Nein     |  
-| Samoa                             | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| San Marino                        | 14 EUR              | 75 EUR           | Keine Auszahlung        | Nein     |  
-| São Tomé und Príncipe             | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Saudi-Arabien                      | 71 SAR              | 380 SAR          | SAR, Auszahlung per Banküberweisung | Nein     |  
-| Senegal                           | 19 USD              | 99 USD           | XOF, Auszahlung per Banküberweisung | Nein     |  
-| Serbien                            | 1619 RSD            | 7000 RSD         | USD, Auszahlung per Banküberweisung | Nein     |  
-| Seychellen                        | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Sierra Leone                      | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Singapur                         | 24 SGD              | 120 SGD          | SGD, Auszahlung per Banküberweisung | Ja    |  
-| Slowakei                          | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Slowenien                          | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Salomonen                   | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Somalia                           | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Südafrika                      | 193 ZAR             | 700 ZAR          | ZAR, Auszahlung per Banküberweisung | Nein     |  
-| Spanien                             | 14 EUR              | 75 EUR           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Sri Lanka                         | 19 USD              | 99 USD           | LKR, Auszahlung per Banküberweisung | Nein     |  
-| Suriname                          | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Swasiland                         | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Schweden                            | 123 SEK             | 700 SEK          | SEK, Auszahlung per Banküberweisung | Ja    |  
-| Schweiz                       | 17 CHF              | 90 CHF           | CHF, Auszahlung per Banküberweisung | Ja    |  
-| Taiwan                            | 568 TWD             | 2840 TWD         | USD, Auszahlung per Banküberweisung | Ja    |  
-| Tadschikistan                        | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Tansania                          | 19 USD              | 99 USD           | TZS, Auszahlung per Banküberweisung | Nein     |  
-| Thailand                          | 601 THB             | 3000 THB         | THB, Auszahlung per Banküberweisung | Ja    |  
-| Timor-Leste                       | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Togo                              | 19 USD              | 99 USD           | XOF, Auszahlung per Banküberweisung | Nein     |  
-| Tonga                             | 19 USD              | 99 USD           | TOP, Auszahlung per Banküberweisung | Nein     |  
-| Trinidad und Tobago               | 122 TTD             | 636 TTD          | TTD, Auszahlung per Banküberweisung | Nein     |  
-| Tunesien                           | 31 TND              | 140 TND          | TND, Auszahlung per Banküberweisung | Nein     |  
-| Turkei                            | 37 TRY              | 160 TRY          | TRY, Auszahlung per Banküberweisung | Nein     |  
-| Turkmenistan                      | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Tuvalu                            | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Uganda                            | 19 USD              | 99 USD           | UGX, Auszahlung per Banküberweisung | Nein     |  
-| Ukraine                           | 156 UAH             | 800 UAH          | USD, Auszahlung per Banküberweisung | Nein     |  
-| Vereinigte Arabische Emirate              | 19 USD              | 99 USD           | EUR, Auszahlung per Banküberweisung | Ja    |  
-| Vereinigtes Königreich                    | 12 GBP              | 65 GBP           | GBP, Auszahlung per Banküberweisung | Ja    |  
-| USA                     | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Ja    |  
-| Uruguay                           | 19 USD              | 99 USD           | UYU, Auszahlung per Banküberweisung | Nein     |  
-| Usbekistan                        | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |  
-| Vanuatu                           | 19 USD              | 99 USD           | Keine Auszahlung        | Nein     |  
-| Venezuela                         | 119 VEF             | 420 VEF          | USD, Auszahlung per Banküberweisung | Nein     |  
-| Vietnam                           | 400425 VND          | 2000000 VND      | VND, Auszahlung per Banküberweisung | Nein     |  
-| Jemen                             | 4080 YER            | 21245 YER        | Keine Auszahlung        | Nein     |  
-| Sambia                            | 19 USD              | 99 USD           | ZMK, Auszahlung per Banküberweisung | Nein     |  
-| Simbabwe                          | 19 USD              | 99 USD           | USD, Auszahlung per Banküberweisung | Nein     |
-
-\*  PayPal als Zahlungsmethode für Auszahlung-Konten in diesem Markt verwendet werden kann, aber nicht zum Bezahlen für die Registrierungsgebühr von Developer-Konto verwendet werden.
+| Land/Region                    | Individuelle Registrierungskosten | Kosten für die Unternehmensregistrierung |
+|-----------------------------------|---------------------|------------------|
+| Afghanistan                       | 19 USD              | 99 USD           |
+| Albanien                           | 19 USD              | 99 USD           |
+| Algerien                           | 1535 DZD            | 7000 DZD         |  
+| Andorra                           | 14 EUR              | 75 EUR           |  
+| Angola                            | 19 USD              | 99 USD           |  
+| Antigua und Barbuda               | 19 USD              | 99 USD           |  
+| Argentinien                         | 106 ARS             | 420 ARS          |  
+| Armenien                           | 19 USD              | 99 USD           |  
+| Australien                         | 21 AUD              | 110 AUD          |  
+| Österreich                           | 14 EUR              | 75 EUR           |  
+| Aserbeidschan                        | 19 USD              | 99 USD           |  
+| Bahamas                       | 19 USD              | 99 USD           |  
+| Bahrain                           | 7 BHD               | 38 BHD           |  
+| Bangladesch                        | 1468 BDT            | 7600 BDT         |  
+| Barbados                          | 19 USD              | 99 USD           |  
+| Belarus                           | 19 USD              | 99 USD           |  
+| Belgien                           | 14 EUR              | 75 EUR           |  
+| Belize                            | 19 USD              | 99 USD           |  
+| Benin                             | 19 USD              | 99 USD           |  
+| Bhutan                            | 19 USD              | 99 USD           |  
+| Bolivien                           | 19 USD              | 99 USD           |  
+| Bosnien und Herzegowina            | 19 USD              | 99 USD           |  
+| Botsuana                          | 19 USD              | 99 USD           |  
+| Brazilien                            | 46 BRL              | 160 BRL          |  
+| Brunei                            | 19 USD              | 99 USD           |  
+| Bulgarien                          | 28 BGN              | 160 BGN          |  
+| Burkina Faso                      | 19 USD              | 99 USD           |  
+| Burundi                           | 19 USD              | 99 USD           |  
+| Cabo Verde                        | 19 USD              | 99 USD           |  
+| Kambodscha                          | 19 USD              | 99 USD           |  
+| Kamerun                          | 19 USD              | 99 USD           |  
+| Kanada                            | 20 CAD              | 99 CAD           |  
+| Zentralafrikanische Republik          | 19 USD              | 99 USD           |  
+| Tschad                              | 19 USD              | 99 USD           |  
+| Chile                             | 9776 CLP            | 46000 CLP        |  
+| China                             | 116 CNY             | 600 CNY          |  
+| Kolumbien                          | 36543 COP           | 180000 COP       |  
+| Komoren                           | 19 USD              | 99 USD           |  
+| Kongo                             | 19 USD              | 99 USD           |  
+| Kongo, Demokratische Republik                       | 19 USD              | 99 USD           |  
+| Costa Rica                        | 9578 CRC            | 49725 CRC        |  
+| Côte d'Ivoire                     | 19 USD              | 99 USD           |  
+| Kroatien                           | 107 HRK             | 500 HRK          |  
+| Zypern                            | 14 EUR              | 75 EUR           |  
+| Tschechische Republik                    | 365 CZK             | 1720 CZK         |  
+| Dänemark                           | 106 DKK             | 530 DKK          |  
+| Dschibuti                          | 19 USD              | 99 USD           | 
+| Dominica                          | 19 USD              | 99 USD           | 
+| Dominikanische Republik                | 19 USD              | 99 USD           |  
+| Ecuador                           | 19 USD              | 99 USD           |  
+| Ägypten                             | 133 EGP             | 600 EGP          |  
+| El Salvador                       | 19 USD              | 99 USD           |  
+| Äquatorialguinea                 | 19 USD              | 99 USD           |  
+| Eritrea                           | 19 USD              | 99 USD           |  
+| Estland                           | 14 EUR              | 75 EUR           |  
+| Äthiopien                          | 19 USD              | 99 USD           |  
+| Färöer                     | 19 USD              | 99 USD           |  
+| Fidschi                              | 19 USD              | 99 USD           |  
+| Finnland                           | 14 EUR              | 75 EUR           |  
+| Frankreich                            | 14 EUR              | 75 EUR           |  
+| Gabun                             | 19 USD              | 99 USD           |  
+| Gambia                        | 19 USD              | 99 USD           |  
+| Georgien                           | 19 USD              | 99 USD           |  
+| Deutschland                           | 14 EUR              | 75 EUR           |  
+| Ghana                             | 19 USD              | 99 USD           |  
+| Griechenland                            | 14 EUR              | 75 EUR           |  
+| Grönland                         | 19 USD              | 99 USD           |  
+| Grenada                           | 19 USD              | 99 USD           |  
+| Guatemala                         | 145 GTQ             | 750 GTQ          |  
+| Guinea                            | 19 USD              | 99 USD           |  
+| Guinea-Bissau                     | 19 USD              | 99 USD           |  
+| Guyana                            | 19 USD              | 99 USD           |  
+| Haiti                             | 19 USD              | 99 USD           |  
+| Honduras                          | 19 USD              | 99 USD           |  
+| Hongkong (SAR)                     | 147 HKD             | 760 HKD          |  
+| Ungarn                           | 4237 HUF            | 18800 HUF        |  
+| Island                           | 2319 ISK            | 11929 ISK        |
+| Indien                             | 1201 INR            | 4500 INR         |  
+| Indonesien                         | 203015 IDR          | 1000000 IDR      |
+| Irak                              | 22078 IQD           | 120000 IQD       |  
+| Irland                           | 14 EUR              | 75 EUR           |  
+| Israel                            | 67 ILS              | 350 ILS          |  
+| Italien                             | 14 EUR              | 75 EUR           |  
+| Jamaika                           | 19 USD              | 99 USD           |  
+| Japan                             | 1847 JPY            | 9800 JPY         |  
+| Jordanien                            | 13 JOD              | 70 JOD           |  
+| Kasachstan                        | 2897 KZT            | 15038 KZT        |  
+| Kenia                             | 1900 KES            | 9999 KES         |  
+| Kiribati                          | 19 USD              | 99 USD           |  
+| Korea, Republik                             | 21216 KRW           | 108000 KRW       |  
+| Kuwait                            | 5 KWD               | 28 KWD           |  
+| Kirgisistan                        | 19 USD              | 99 USD           |  
+| Laos                              | 19 USD              | 99 USD           |  
+| Lettland                            | 14 EUR              | 75 EUR           |  
+| Libanon                           | 28690 LBP           | 149686 LBP       |  
+| Lesotho                           | 19 USD              | 99 USD           |  
+| Liberia                           | 19 USD              | 99 USD           |  
+| Libyen                             | 19 USD              | 99 USD           |  
+| Liechtenstein                     | 17 CHF              | 93 CHF           |  
+| Litauen                         | 14 EUR              | 75 EUR           |  
+| Luxemburg                        | 14 EUR              | 75 EUR           |  
+| Macau (SAR)                         | 19 USD              | 99 USD           |  
+| Nordmazedonien                 | 19 USD              | 99 USD           |  
+| Madagaskar                        | 19 USD              | 99 USD           |  
+| Malawi                            | 19 USD              | 99 USD           |  
+| Malaysia                          | 62 MYR              | 300 MYR          |  
+| Malediven                          | 19 USD              | 99 USD           |  
+| Mali                              | 19 USD              | 99 USD           |  
+| Malta                             | 14 EUR              | 75 EUR           |  
+| Marshallinseln                  | 19 USD              | 99 USD           |  
+| Mauretanien                        | 5681 MRO            | 30046 MRO        |  
+| Mauritius                         | 19 USD              | 99 USD           |  
+| Mexiko                            | 247 MXN             | 1140 MXN         |  
+| Mikronesien                        | 19 USD              | 99 USD           |  
+| Monaco                            | 14 EUR              | 75 EUR           |  
+| Mongolei                          | 19 USD              | 99 USD           |  
+| Montenegro                        | 14 EUR              | 75 EUR           |  
+| Marokko                           | 158 MAD             | 800 MAD          |  
+| Mosambik                        | 19 USD              | 99 USD           |  
+| Myanmar                           | 19 USD              | 99 USD           |  
+| Namibia                           | 19 USD              | 99 USD           |  
+| Nauru                             | 19 USD              | 99 USD           |  
+| Nepal                             | 19 USD              | 99 USD           |  
+| Niederlande                       | 14 EUR              | 75 EUR           |  
+| Neuseeland                       | 24 NZD              | 140 NZD          |  
+| Nicaragua                         | 19 USD              | 99 USD           |  
+| Niger                             | 19 USD              | 99 USD           |  
+| Nigeria                           | 3700 NGN            | 19500 NGN        |  
+| Norwegen                            | 113 NOK             | 580 NOK          |  
+| Oman                              | 7 OMR               | 40 OMR           |  
+| Pakistan                          | 1959 PKR            | 9000 PKR         |  
+| Palau                             | 19 USD              | 99 USD           |  
+| Panama                            | 19 USD              | 99 USD           |  
+| Papua-Neuguinea                  | 19 USD              | 99 USD           |  
+| Paraguay                          | 19 USD              | 99 USD           |  
+| Peru                              | 54 PEN              | 280 PEN          |  
+| Philippinen                       | 832 PHP             | 4400 PHP         |  
+| Polen                            | 59 PLN              | 280 PLN          |  
+| Portugal                          | 14 EUR              | 75 EUR           |  
+| Katar                             | 69 QAR              | 360 QAR          |  
+| Rumänien                           | 14 EUR              | 75 EUR           |  
+| Russland                            | 626 RUB             | 3000 RUB         |  
+| Ruanda                            | 19 USD              | 99 USD           |  
+| St. Kitts und Nevis             | 19 USD              | 99 USD           |  
+| St. Lucia                       | 19 USD              | 99 USD           |  
+| St. Vincent und die Grenadinen  | 19 USD              | 99 USD           |  
+| Samoa                             | 19 USD              | 99 USD           |  
+| San Marino                        | 14 EUR              | 75 EUR           |  
+| São Tomé und Príncipe             | 19 USD              | 99 USD           |  
+| Saudi-Arabien                      | 71 SAR              | 380 SAR          |  
+| Senegal                           | 19 USD              | 99 USD           |  
+| Serbien                            | 1619 RSD            | 7000 RSD         |  
+| Seychellen                        | 19 USD              | 99 USD           |  
+| Sierra Leone                      | 19 USD              | 99 USD           |  
+| Singapur                         | 24 SGD              | 120 SGD          |  
+| Slowakei                          | 14 EUR              | 75 EUR           |  
+| Slowenien                          | 14 EUR              | 75 EUR           |  
+| Salomonen                   | 19 USD              | 99 USD           |  
+| Somalia                           | 19 USD              | 99 USD           |  
+| Südafrika                      | 193 ZAR             | 700 ZAR          |  
+| Spanien                             | 14 EUR              | 75 EUR           |  
+| Sri Lanka                         | 19 USD              | 99 USD           |  
+| Suriname                          | 19 USD              | 99 USD           |  
+| Swasiland                         | 19 USD              | 99 USD           |  
+| Schweden                            | 123 SEK             | 700 SEK          |  
+| Schweiz                       | 17 CHF              | 90 CHF           |  
+| Taiwan                            | 568 TWD             | 2840 TWD         |  
+| Tadschikistan                        | 19 USD              | 99 USD           |  
+| Tansania                          | 19 USD              | 99 USD           |  
+| Thailand                          | 601 THB             | 3000 THB         |  
+| Timor-Leste                       | 19 USD              | 99 USD           |  
+| Togo                              | 19 USD              | 99 USD           |  
+| Tonga                             | 19 USD              | 99 USD           |  
+| Trinidad und Tobago               | 122 TTD             | 636 TTD          |  
+| Tunesien                           | 31 TND              | 140 TND          |  
+| Turkei                            | 37 TRY              | 160 TRY          |  
+| Turkmenistan                      | 19 USD              | 99 USD           |  
+| Tuvalu                            | 19 USD              | 99 USD           |  
+| Uganda                            | 19 USD              | 99 USD           |  
+| Ukraine                           | 156 UAH             | 800 UAH          |  
+| Vereinigte Arabische Emirate              | 19 USD              | 99 USD           |  
+| Vereinigtes Königreich                    | 12 GBP              | 65 GBP           |  
+| USA                     | 19 USD              | 99 USD           |  
+| Uruguay                           | 19 USD              | 99 USD           |  
+| Usbekistan                        | 19 USD              | 99 USD           |  
+| Vanuatu                           | 19 USD              | 99 USD           |  
+| Venezuela                         | 119 VEF             | 420 VEF          |  
+| Vietnam                           | 400425 VND          | 2000000 VND      |  
+| Jemen                             | 4080 YER            | 21245 YER        |  
+| Sambia                            | 19 USD              | 99 USD           |  
+| Simbabwe                          | 19 USD              | 99 USD           |

@@ -6,24 +6,23 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, UWP, Eintrag, Beschreibung, Store-Seite, Versionshinweise, Titel
 ms.localizationpriority: medium
-ms.openlocfilehash: 91031f8442f43753a04b958692c851b1f16eb1a0
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 0e9c7f56dd799b568e12a887355ec19561f207ea
+ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63811880"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67495728"
 ---
 # <a name="create-app-store-listings"></a>Erstellen von Store-Einträgen für Apps
-
 
 Im Abschnitt **Store-Einträge** des [App-Übermittlungsprozesses](app-submissions.md) stellen Sie den Text und die [Bilder](app-screenshots-and-images.md) bereit, die den Kunden im Microsoft Store angezeigt werden, wenn diese Ihre App ansehen.
 
 Viele der Felder in einem **Store-Eintrag** sind optional. Es wird jedoch empfohlen, mehrere Bilder und so viele Infos wie möglich bereitzustellen, damit Ihr Eintrag auffällt. Im Schritt **Store-Eintrag** sollten Sie mindestens eine Textbeschreibung und mindestens einen [Screenshot](app-screenshots-and-images.md#screenshots) angeben.
 
 > [!TIP]
-> Optional können Sie [importieren und Exportieren von Store-Angebote](import-and-export-store-listings.md) Wenn Sie Ihre Auflistung Informationen offline in eine CSV-Datei eingeben möchten, anstatt durch Angabe Informationen und das Hochladen von direkt in Partner Center Dateien. Das Verwenden der Option zum Importieren und Exportieren ist besonders dann hilfreich, wenn Sie Einträge in mehreren Sprachen besitzen, da Sie mehrere Updates auf einmal vornehmen können. 
+> Optional können Sie [importieren und Exportieren von Store-Angebote](import-and-export-store-listings.md) Wenn Sie Ihre Auflistung Informationen offline in eine CSV-Datei eingeben möchten, anstatt durch Angabe Informationen und das Hochladen von direkt in Partner Center Dateien. Das Verwenden der Option zum Importieren und Exportieren ist besonders dann hilfreich, wenn Sie Einträge in mehreren Sprachen besitzen, da Sie mehrere Updates auf einmal vornehmen können.
 
-Wenn Ihre app zuvor veröffentlichte Windows unterstützt 8.x bzw. Windows Phone 8.x oder früher können Sie [plattformspezifischen Store-Angebote erstellen](create-platform-specific-store-listings.md) Kunden angezeigt. 
+Wenn Ihre app zuvor veröffentlichte Windows unterstützt 8.x bzw. Windows Phone 8.x oder früher können Sie [plattformspezifischen Store-Angebote erstellen](create-platform-specific-store-listings.md) Kunden angezeigt.
 
 ## <a name="store-listing-languages"></a>Sprachen für Store-Einträge
 
@@ -36,7 +35,7 @@ Klicken Sie zum Hinzufügen oder Entfernen von Sprachen für Ihre Store-Einträg
 
 Im Abschnitt **Additional Store listing languages** können Sie auf **Manage additional languages** klicken, um Sprachen hinzuzufügen oder zu entfernen, die  *nicht* in Ihren Paketen enthalten sind. Aktivieren Sie die Kontrollkästchen für die Sprachen, die Sie hinzufügen möchten, und klicken Sie dann auf **Aktualisieren**. Die ausgewählten Sprachen werden im Abschnitt **Additional Store listing languages** angezeigt. Klicken Sie zum Entfernen einer oder mehrerer dieser Sprachen auf **Entfernen** (oder klicken Sie auf **Manage additional languages**, und deaktivieren Sie die Kontrollkästchen für die Sprachen, die Sie entfernen möchten).
 
-Wenn Sie Ihre Auswahl getroffen haben, klicken Sie auf **Speichern**, um zur Übermittlungsübersicht zurückzukehren. 
+Wenn Sie Ihre Auswahl getroffen haben, klicken Sie auf **Speichern**, um zur Übermittlungsübersicht zurückzukehren.
 
 ## <a name="add-and-edit-store-listing-info"></a>Fügen Sie hinzu und bearbeiten Sie Store Auflisten von Informationen
 
@@ -80,16 +79,14 @@ Ein Bildschirmfoto ist erforderlich, um Ihre App zu übermitteln. Wir empfehlen,
 
 Weitere Informationen finden Sie unter [App-Screenshots und -Bilder](app-screenshots-and-images.md#screenshots).
 
-
-## <a name="store-logos"></a>Store-Logos 
+## <a name="store-logos"></a>Store-Logos
 
 Store-Logos sind optionale Bilder, die Sie hochladen können, um die Art und Weise zu verbessern, auf die Ihre App für Kunden angezeigt wird. Sie können optional auch angeben, dass nur hier hochgeladene Bilder im Store-Eintrag der App für Kunden auf Windows 10 (einschließlich Xbox) verwendet werden sollen, statt dem Store die Verwendung von Logobildern aus den Paketen Ihrer App zu erlauben.
 
 > [!IMPORTANT]
-> Wenn Ihre App Xbox unterstützt oder wenn Windows Phone 8.1 oder frühere Versionen unterstützt werden, müssen Sie hier bestimmte Bilder bereitstellen, damit der Eintrag im Store korrekt angezeigt wird. 
+> Wenn Ihre App Xbox unterstützt oder wenn Windows Phone 8.1 oder frühere Versionen unterstützt werden, müssen Sie hier bestimmte Bilder bereitstellen, damit der Eintrag im Store korrekt angezeigt wird.
 
 Weitere Informationen finden Sie unter [Store-Logos](app-screenshots-and-images.md#store-logos).
-
 
 ## <a name="trailers-and-additional-assets"></a>Nachspänne und zusätzliche Ressourcen
 
@@ -109,20 +106,17 @@ Eine kürzere Version des Produktnamens. Wenn vorhanden, kann dieser kürzere Na
 
 Dieses Feld ist auf 50 Zeichen beschränkt.
 
-
 ### <a name="sort-title"></a>Sortierungstitel
 
-Wenn Ihr Produkt alphabetisch sortiert oder auf unterschiedliche Weise geschrieben werden kann, können Sie hier eine andere Version eingeben. Dadurch können Kunden das Produkt schnell finden, wenn sie diese Version bei der Suche eingeben. 
+Wenn Ihr Produkt alphabetisch sortiert oder auf unterschiedliche Weise geschrieben werden kann, können Sie hier eine andere Version eingeben. Dadurch können Kunden das Produkt schnell finden, wenn sie diese Version bei der Suche eingeben.
 
 Dieses Feld ist auf 255 Zeichen beschränkt.
-
 
 ### <a name="voice-title"></a>Sprachtitel
 
 Ein alternativer Name für das Produkt, das ggf. als Audio-Erlebnis auf Xbox One verwendet werden kann, wenn Kinect oder ein Kopfhörer genutzt wird.
 
 Dieses Feld ist auf 255 Zeichen beschränkt.
-
 
 ### <a name="short-description"></a>Kurze Beschreibung
 
@@ -132,16 +126,14 @@ Bei Spielen erscheint die Kurzbeschreibung auch im Abschnitt „Informationen“
 
 Behalten Sie für optimale Ergebnisse die Kurzbeschreibung unter 270 Zeichen. Das Feld hat ein Limit von 1000 Zeichen, aber in einigen Ansichten werden nur die ersten 270 Zeichen (mit einem Link zur Verfügung, um die restlichen die kurze Beschreibung anzuzeigen) angezeigt werden.
 
-
 ### <a name="additional-system-requirements"></a>Weitere Systemanforderungen
 
-Bei Bedarf können Sie die Hardwarekonfigurationen beschreiben, die für die ordnungsgemäße Funktionsweise der App erforderlich sind, über die Informationen hinaus, die Sie im Abschnitt **Systemanforderungen** unter [App-Eigenschaften](enter-app-properties.md#system-requirements) angegeben haben. Dies ist besonders wichtig, wenn Ihre App Hardware benötigt, die u. U. nicht auf jedem Computer vorhanden ist. Wenn Ihre App beispielsweise nur mit externer USB-Hardware wie z. B. einem 3D-Drucker oder einem Mikrocontroller nur funktionsfähig ist, empfehlen wir, diese hier einzugeben. Die Informationen, die Sie hier eingeben, werden Kunden im Store-Eintrag Ihrer App unter Windows 10, Version 1607 oder höher (einschließlich Xbox), zusammen mit den auf der Eigenschaftenseite des Produkts angegebenen Anforderungen angezeigt. 
+Bei Bedarf können Sie die Hardwarekonfigurationen beschreiben, die für die ordnungsgemäße Funktionsweise der App erforderlich sind, über die Informationen hinaus, die Sie im Abschnitt **Systemanforderungen** unter [App-Eigenschaften](enter-app-properties.md#system-requirements) angegeben haben. Dies ist besonders wichtig, wenn Ihre App Hardware benötigt, die u. U. nicht auf jedem Computer vorhanden ist. Wenn Ihre App beispielsweise nur mit externer USB-Hardware wie z. B. einem 3D-Drucker oder einem Mikrocontroller nur funktionsfähig ist, empfehlen wir, diese hier einzugeben. Die Informationen, die Sie hier eingeben, werden Kunden im Store-Eintrag Ihrer App unter Windows 10, Version 1607 oder höher (einschließlich Xbox), zusammen mit den auf der Eigenschaftenseite des Produkts angegebenen Anforderungen angezeigt.
 
 Sie können bis zu 11 Elemente sowohl für **Mindesthardwareanforderungen** als auch für **Empfohlene Hardware** eingeben. Diese werden dem Kunden im Store-Eintrag als Aufzählung angezeigt. Die Beschreibung sollte pro Element nur wenige Wörter (und nicht mehr als 200 Zeichen) enthalten.
 
 > [!NOTE]
 > Die zusätzlichen Systemanforderungen werden im Store-Eintrag mit Aufzählungszeichen versehen. Fügen Sie daher keine eigenen Aufzählungszeichen hinzu.
-
 
 <span id="shared-fields" />
 
@@ -159,7 +151,6 @@ Beim Hinzufügen von Suchbegriffen sollten Sie überlegen, mit welchen Begriffen
 
 Zusätzliche Urheberrecht- und Markeninformationen können Sie bei Bedarf hier eingeben. Dieses Feld ist auf 200 Zeichen beschränkt.
 
-
 ### <a name="additional-license-terms"></a>Zusätzliche Lizenzbedingungen
 
 Lassen Sie dieses Feld leer, wenn Sie möchten, dass Ihre App für Kunden gemäß den **Standardbedingungen für anwendungsbezogene Lizenzen** (am Ende der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)) lizenziert wird.
@@ -170,16 +161,13 @@ Wenn Sie einen einzelnen URL in dieses Feld eingeben, wird dieser für Kunden al
 
 Sie können auch bis zu 10.000 Zeichen Texts in dieses Feld eingeben. Wenn Sie dies tun, werden Kunden die zusätzlichen Lizenzbedingungen als reiner Text angezeigt.
 
-
 ### <a name="developed-by"></a>Entwickelt von
 
 Geben Sie hier Text ein, wenn Sie das Feld **Entwickelt von** im Store-Eintrag Ihrer App anzeigen möchten. (Das Feld **Veröffentlicht von** zeigt den mit Ihrem Konto verknüpften Anzeigename des Herausgebers an, wenn Sie einen Wert für das Feld **Veröffentlicht von** angeben.)
 
 Dieses Feld ist auf 255 Zeichen beschränkt.
  
-
 <span id="privacy-policy" />
 
 > [!NOTE]
 > Die Felder **Datenschutzrichtlinie**, **Website**, und **Supportkontaktinfos** befinden sich jetzt auf der Seite [Eigenschaften](enter-app-properties.md).
-

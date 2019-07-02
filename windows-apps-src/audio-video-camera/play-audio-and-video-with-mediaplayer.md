@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d25cd3f8a963d85f704e32482475827462ddba58
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3d2d95711196a9bf2ab113527e5fc8f44459dc3d
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318264"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486432"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“
 
@@ -189,7 +189,7 @@ Beachten Sie: Wird der Offsetwert eines Players einer negativen Wiedergabepositi
 ## <a name="play-spherical-video-with-mediaplayer"></a>Wiedergeben von sphärischen Videos mit MediaPlayer
 Ab Windows 10 Version 1703 unterstützt **MediaPlayer** equirektanguläre Projektionen für kugelförmige Videowiedergabe. **MediaPlayer** unterscheidet sphärische Videoinhalte nicht von anderen und spielt das Video ab, sofern die Video-Codierung unterstützt wird. Falls das sphärische Video einen Metadatentag enthält, der für das Video equirektanguläre Projektion fordert, kann **MediaPlayer** das Video mithilfe dieser Sichtfeld- und Ausrichtungsinformationen wiedergeben. Dies ermöglicht Szenarien wie Virtual-Reality-Videowiedergabe durch Anzeigebrillen oder einfache Bildschwenks innerhalb des sphärischen Videoinhalt durch Maus- oder Tastatureingaben des Benutzers.
 
-Für sphärische Videowiedergaben befolgen Sie die zuvor in diesem Artikel beschriebenen Schritte für die Videowiedergabe. Ein zusätzliche Schritt ist das Registrieren des Handlers für das [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) -Ereignis. Dieses Ereignis bietet Ihnen die Möglichkeit, Parameter für die sphärische Videowiedergabe zu aktivieren und zu steuern.
+Für sphärische Videowiedergaben befolgen Sie die zuvor in diesem Artikel beschriebenen Schritte für die Videowiedergabe. Die einen zusätzliche Schritt registrieren Sie einen Handler für ist das [ **MediaPlayer.MediaOpened** ](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) Ereignis. Dieses Ereignis bietet Ihnen die Möglichkeit, Parameter für die sphärische Videowiedergabe zu aktivieren und zu steuern.
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 

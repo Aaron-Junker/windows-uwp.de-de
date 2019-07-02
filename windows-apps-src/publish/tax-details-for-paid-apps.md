@@ -6,12 +6,12 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, UWP, Steuern, App-Steuern, Steuergesetze, E-Commerce-Erweiterung, Steuersatz
 ms.localizationpriority: medium
-ms.openlocfilehash: 82f10abe57d9d5542286183180012b26478f88cf
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 3c23189df3daf71090493c6080308749c632f871
+ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788153"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67495755"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Steuerdaten für Entwickler von Windows-app/Spiel und den Azure Marketplace-Herausgeber
 
@@ -275,7 +275,7 @@ Folgendes gilt nur für Azure Marketplace-Herausgeber, ungeachtet für den Fall 
 ## <a name="mixed-remittance-countriesregions-for-windows-appgame-developers"></a>Gemischte überweisungsland Länder/Regionen für Entwickler von Windows-app/Spiel
 
 
-Bestimmte Abrechnungspartner von Microsoft können den Einzug und die Überweisung von Verkaufssteuer, Gebrauchssteuer, Waren- und Dienstleistungssteuer, Umsatzsteuer und vergleichbaren Steuern (falls zutreffend), die für den Erwerb Ihrer Apps und/oder In-App-Produkte durch Kunden über den Store gelten, in den unten aufgeführten Ländern/Regionen abwickeln: Die [Berichte](payout-summary.md#downloading-payment-transactions), die Ihnen von Microsoft zur Verfügung gestellt werden, geben Aufschluss über die Transaktionen, für die ein Abrechnungspartner Verkaufssteuer, Gebrauchssteuer, Waren- und Dienstleistungssteuer, Umsatzsteuer und vergleichbare Steuern eingezogen hat, die für den Erwerb Ihrer Apps oder In-App-Produkte durch Kunden über den Store angefallen sind. Mit Ausnahme der Transaktionen, die in solchen Berichten beschrieben sind, werden von Microsoft und seinen Abrechnungspartnern keinerlei Verkaufssteuern, Gebrauchssteuern, Waren- und Dienstleistungssteuern, Umsatzsteuern oder vergleichbare Steuern in Verbindung mit dem Erwerb Ihrer Apps oder In-App-Produkte durch Kunden in diesen Ländern überwiesen. Sie sind für die Prüfung der zur Verfügung gestellten Berichte sowie für die Ermittlung und die Einhaltung eventueller Pflichten hinsichtlich Registrierung, Einzug und Überweisung von Steuern in Verbindung mit Transaktionen, die Ihre Apps oder In-App-Produkte betreffen, verantwortlich.
+Bestimmte Abrechnungspartner von Microsoft können den Einzug und die Überweisung von Verkaufssteuer, Gebrauchssteuer, Waren- und Dienstleistungssteuer, Umsatzsteuer und vergleichbaren Steuern (falls zutreffend), die für den Erwerb Ihrer Apps und/oder In-App-Produkte durch Kunden über den Store gelten, in den unten aufgeführten Ländern/Regionen abwickeln: Die [Berichte](payout-summary.md#transaction-history-download-export), die Ihnen von Microsoft zur Verfügung gestellt werden, geben Aufschluss über die Transaktionen, für die ein Abrechnungspartner Verkaufssteuer, Gebrauchssteuer, Waren- und Dienstleistungssteuer, Umsatzsteuer und vergleichbare Steuern eingezogen hat, die für den Erwerb Ihrer Apps oder In-App-Produkte durch Kunden über den Store angefallen sind. Mit Ausnahme der Transaktionen, die in solchen Berichten beschrieben sind, werden von Microsoft und seinen Abrechnungspartnern keinerlei Verkaufssteuern, Gebrauchssteuern, Waren- und Dienstleistungssteuern, Umsatzsteuern oder vergleichbare Steuern in Verbindung mit dem Erwerb Ihrer Apps oder In-App-Produkte durch Kunden in diesen Ländern überwiesen. Sie sind für die Prüfung der zur Verfügung gestellten Berichte sowie für die Ermittlung und die Einhaltung eventueller Pflichten hinsichtlich Registrierung, Einzug und Überweisung von Steuern in Verbindung mit Transaktionen, die Ihre Apps oder In-App-Produkte betreffen, verantwortlich.
 
 | Länder/Regionen mit gemischter Überweisung |
 |------------------------------------|

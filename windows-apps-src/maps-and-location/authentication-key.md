@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Kartenauthentifizierungsschlüssel, Kartensteuerelement
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f62ecfab5bd8d09092e5264831327b8c63666bc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bb6cf66a6725e8231fac693a81a39bc2f0b15fd2
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370511"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498902"
 ---
 # <a name="request-a-maps-authentication-key"></a>Anfordern eines Kartenauthentifizierungsschlüssels
 
@@ -48,7 +48,7 @@ So erstellen Sie einen neuen Schlüssel
     -   **Anwendungsname:** Der Name der Anwendung.
     -   **Anwendungs-URL (optional):** Die URL Ihrer Anwendung.
     -   **Typ des Schlüssels:** Wählen Sie **grundlegende** oder **Enterprise**.
-    -   **Anwendungstyp:** Wählen Sie **universelle Windows-App** für die Verwendung in Ihrer universellen Windows-app.
+    -   **Anwendungstyp:** Wählen Sie **Windows-Anwendung** für die Verwendung in Ihrer universellen Windows-app.
 
     So sieht das Formular aus.
 

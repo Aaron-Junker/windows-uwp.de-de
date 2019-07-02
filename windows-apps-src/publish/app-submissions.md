@@ -6,12 +6,12 @@ keywords: Prüfliste, Windows, UWP, Übermittlung, übermitteln, Spiel, App, üb
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5d44823821208a2384aec9d66037c4da3865f
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 7c535b77c68f4375f70fe344165f96d66a551eaf
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468930"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486421"
 ---
 # <a name="app-submissions"></a>App-Übermittlungen
 
@@ -96,10 +96,8 @@ Sie benötigen alle erforderlichen Informationen für mindestens eine der von Ih
 | **Screenshots**               | Erforderlich (mindestens ein Screenshot; es werden vier oder mehr empfohlen)          | [Screenshots](app-screenshots-and-images.md#screenshots)          |
 | **Store-logos**               | Empfohlen. Ist für bestimmte Betriebssystemversionen erforderlich | [Store-logos](app-screenshots-and-images.md#store-logos)             |
 | **Nachspänne**                  | Optional                                    | [Nachspänne](app-screenshots-and-images.md#trailers)                | 
-| **Windows 10 und Xbox-Bild (16:9 Superheld Grafiken)**     | Empfohlen        | [Windows 10 und Xbox Bild (16:9 Superheld Grafiken)
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
-| **Xbox-images**     | Für die ordnungsgemäße Anzeige erforderlich, wenn Sie Xbox veröffentlichen        | [Xbox-images
-](app-screenshots-and-images.md#xbox-images) |
+| **Windows 10 und Xbox-Bild (16:9 Superheld Grafiken)**     | Empfohlen        | [Windows 10 und Xbox-Bild (16:9 Superheld Grafiken)](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Xbox-images**     | Für die ordnungsgemäße Anzeige erforderlich, wenn Sie Xbox veröffentlichen        | [Xbox-images](app-screenshots-and-images.md#xbox-images) |
 | **Zusätzliche Felder**  | Optional                                    | [Zusätzliche Felder](create-app-store-listings.md#supplemental-fields) 
 | **Suchbegriffe**              | Optional                                    | [Suchbegriffe](create-app-store-listings.md#search-terms)         |
 | **Copyright- und markenbestimmungen-Informationen** | Optional                                 | [Copyright- und markenbestimmungen-Informationen](create-app-store-listings.md#copyright-and-trademark-info) |
