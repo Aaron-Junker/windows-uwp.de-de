@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dbb06f53f760724da312e00f545d799d6a24200
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 991d86dd61c660553e5b0a3fdbbdec0336c7fb8b
+ms.sourcegitcommit: d63e5a4fd24434068067cae5b8fb3bed4931247e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321569"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67515149"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Aktivieren des Benutzermoduszugriffs auf GPIO, I2C und SPI
 
@@ -268,7 +268,7 @@ Wenn ein GPIO-Signal einen Levelshifter durchläuft, bevor es den verfügbar gem
 Windows unterstützt zwei Schemas für die Pinnummerierung:
 
 * Sequenzielle Pinnummerierung – Benutzer sehen Zahlen wie 0, 1, 2... bis zur Anzahl der verfügbar gemachten Pins. 0 ist die erste in ASL deklarierte GpioIo-Ressource, 1 ist die zweite in ASL deklarierte GpioIo-Ressource usw.
-* Native Pinnummerierung – Benutzer sehen die Pinnummern in GpioIo-Beschreibungen, z. B. 4, 5, 12, 13, ... .
+* Native Pin-Nummerierung: Benutzer sehen die Pin-Nummern angegeben in GpioIo-Deskriptoren, z. B. 4, 5, 12, 13,...
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
