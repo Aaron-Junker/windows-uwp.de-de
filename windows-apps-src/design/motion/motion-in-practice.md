@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bc879e43d7e117a4e61e8b6de4bb5437d126e84b
-ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
+ms.openlocfilehash: 8cf010533d2d62559bb8dc0d214e04ab917e62bd
+ms.sourcegitcommit: d534f81590d881a18d677a648c59913029837a84
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67325855"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67535432"
 ---
 # <a name="bringing-it-together"></a>Alles zusammenführen
 
@@ -26,16 +26,13 @@ Im Folgenden finden Sie 3 Möglichkeiten, die Grundlagen für fließende Bewegun
 
 :::row:::
     :::column:::
-        **Implicit animation**
-        Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.
+**Impliziten animationsengine** automatische Tween und zeitlichen Steuerung zwischen den Werten in einer ändern Sie den Parameter auf sehr einfache Fluent während der Übertragung mit standardisierten Werte zu erzielen.
     :::column-end:::
     :::column:::
-        **Built-in animation**
-        System components, such as common controls and shared motion, are "Fluent by default". Fundamentals have been applied in a manner consistent with their implied usage.
+**Integrierte Animationen** Systemkomponenten, z. B. Allgemeine Steuerelemente und freigegebenen während der Übertragung, sind "Fluent standardmäßig". Grundlagen der wurden in Übereinstimmung mit ihrer impliziten Verwendung angewendet.
     :::column-end:::
     :::column:::
-        **Custom animation following guidance recommendations**
-        There may be times when the system does not yet provide an exact motion solution for your scenario. In those cases, use the baseline fundamental recommendations as a starting point for your experiences.
+**Benutzerdefinierte Animation, die folgenden Anleitungen, Empfehlungen** manchmal, wenn das System noch keine genaue Motion-Lösung für Ihr Szenario bietet, möglicherweise. Verwenden Sie in diesen Fällen die grundlegenden Sicherheitsbaseline-Empfehlungen als Ausgangspunkt für Ihre Erfahrungen.
     :::column-end:::
 :::row-end:::
 
@@ -45,16 +42,14 @@ Im Folgenden finden Sie 3 Möglichkeiten, die Grundlagen für fließende Bewegun
 
 :::row:::
     :::column:::
-        <b>Direction Forward Out:</b><br>
-        Fade out: 150m; Easing: Default Accelerate
-        <b>Direction Forward In:</b><br>
-        Slide up 150px: 300ms; Easing: Default Decelerate
+<b>Richtung Forward Out:</b><br>
+Ausblenden: 150 Millionen; Vereinfachen von: Beschleunigen Sie die standardmäßige <b>Schritt nach vorn In:</b><br>
+Schieben Sie 150: 300 MS; Vereinfachen von: Standardmäßige verlangsamen.
     :::column-end:::
     :::column:::
-         <b>Direction Backward Out:</b><br>
-        Slide down 150px: 150ms; Easing: Default Accelerate
-        <b>Direction Backward In:</b><br>
-        Fade in: 300ms; Easing: Default Decelerate
+<b>Die Richtung, rückwärts:</b><br>
+Schieben Sie 150: 150ms; Vereinfachen von: Beschleunigen Sie die standardmäßige <b>rückwärts Richtung:</b><br>
+Eingeblendet: 300 MS; Vereinfachen von: Standardmäßige verlangsamen.
     :::column-end:::
 :::row-end:::
 
@@ -64,12 +59,12 @@ Im Folgenden finden Sie 3 Möglichkeiten, die Grundlagen für fließende Bewegun
 
 :::row:::
     :::column:::
-        <b>Direction Expand:</b><br>
-        Grow: 300ms; Easing: Standard
+<b>Richtung erweitern zu können:</b><br>
+Erweitern: 300 MS; Vereinfachen von: Standard
     :::column-end:::
     :::column:::
-        <b>Direction Contract:</b><br>
-        Grow: 150ms; Easing: Default Accelerate
+<b>Richtung Vertrag:</b><br>
+Erweitern: 150ms; Vereinfachen von: Standardmäßig beschleunigen.
     :::column-end:::
 :::row-end:::
 
