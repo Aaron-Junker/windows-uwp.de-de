@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3cdb20516d4f21933c7770f43701af322e09c886
-ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
+ms.openlocfilehash: 8f1e36f0febeeaac5a12d408d7be8a717f0ab398
+ms.sourcegitcommit: 7c3b88198178d6f6a535f35e1bf8665410d41d92
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67325880"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67569122"
 ---
 # <a name="directionality-and-gravity"></a>Direktionalität und Schwerkraft
 
@@ -43,8 +43,8 @@ Eine gerichtete Bewegung unterliegt Kräften wie beispielsweise der Schwerkraft.
 
 :::row:::
     :::column:::
-        Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
-        When you move objects, avoid unnatural collisions. Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.
+Richtung des Verschiebens entspricht physische Bewegung. Wie in der Natur können sich Objekte entlang jeder Weltachse (X, Y, Z) bewegen. Entsprechend stellen wir uns die Bewegung von Objekten auf dem Bildschirm vor.
+Wenn Sie die Objekte bewegen, vermeiden Sie unnatürlichen Konflikte. Sollten Sie bedenken, in denen Objekte stammen aus und wechseln Sie zu und unterstützen Konstrukte höherer Ebene, die verwendet werden können immer in der Szene, wie z. B. Scroll Richtung oder Layout-Hierarchie.
     :::column-end:::
     :::column:::
         ![direction backward in](images/Direction.gif)
@@ -75,8 +75,7 @@ Es sind 4 diskrete Navigationsrichtungen zu berücksichtigen.
 
 :::row:::
     :::column:::
-        **Forward-In**
-        Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
+**Forward-In** Feiern Sie Inhalte, die die Szene in einer Weise, die nicht mit den ausgehenden Inhalt kollidiert eingeben. Inhalte, die in der Szene verlangsamt wird.
     :::column-end:::
     :::column:::
         ![direction forward in](images/forwardIN.gif)
@@ -84,8 +83,7 @@ Es sind 4 diskrete Navigationsrichtungen zu berücksichtigen.
 :::row-end:::
 :::row:::
     :::column:::
-        **Forward-Out**
-        Content exits quickly. Objects accelerate off screen.
+**Forward-Out** Inhalte schnell beendet werden. Objekte außerhalb des Bildschirms beschleunigen.
     :::column-end:::
     :::column:::
         ![direction forward out](images/forwardOUT.gif)
@@ -93,8 +91,7 @@ Es sind 4 diskrete Navigationsrichtungen zu berücksichtigen.
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-In**
-        Same as Forward-In, but reversed.
+**Rückwärts-In** wie Forward-In, jedoch storniert.
     :::column-end:::
     :::column:::
         ![direction backward in](images/backwardIN.gif)
@@ -102,8 +99,7 @@ Es sind 4 diskrete Navigationsrichtungen zu berücksichtigen.
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-Out**
-        Same as Forward-Out, but reversed.
+**Rückwärts-Out** identisch Forward-ausgecheckt wird, jedoch storniert.
     :::column-end:::
     :::column:::
         ![direction backward out](images/backwardOUT.gif)
