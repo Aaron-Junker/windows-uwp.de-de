@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 20cb1e3162f0c852a60c620be92afd37ad9f8232
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: eef1c3dd50f06d38023102122cc7fc63a36df25c
+ms.sourcegitcommit: 3ec8c1d0ea3798cdb2745e7a941a025cf3cf21c8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317273"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650786"
 ---
 # <a name="keyboard-interactions"></a>Tastaturinteraktionen
 
@@ -369,7 +369,7 @@ Die Sprachausgabe ist eine UI-Eingabehilfe für Tastaturbenutzer. (Weitere Einga
 Einige der Unterschiede zwischen dem UWP-Tastaturverhalten und der Sprachausgabe umfassen:
 -   Zusätzliche Tastenkombinationen für die Navigation zu UI-Elementen, die nicht über die Standardtastaturnavigation verfügbar sind, z. B. FESTSTELLTASTE + Pfeiltasten zum Lesen von Steuerelementbeschriftungen.
 -   Navigation zu deaktivierten Elementen. Standardmäßig werden deaktivierte Elemente nicht über die Standardtastaturnavigation verfügbar gemacht.
-    -   Steuerelementansichten für schnellere Navigation basierend auf UI-Granularität. Benutzer können zu Elementen, Zeichen, Wörtern, Zeilen, Absätzen, Links, Überschriften, Tabellen, Landmarks und Vorschlägen navigieren. Die Standardtastaturnavigation macht diese Objekte als einfache Liste verfügbar, was die Navigation unter Umständen verkompliziert, es sein denn, Sie stellen Tastenkombinationen bereit.
+-   Steuerelementansichten für schnellere Navigation basierend auf UI-Granularität. Benutzer können zu Elementen, Zeichen, Wörtern, Zeilen, Absätzen, Links, Überschriften, Tabellen, Landmarks und Vorschlägen navigieren. Die Standardtastaturnavigation macht diese Objekte als einfache Liste verfügbar, was die Navigation unter Umständen verkompliziert, es sein denn, Sie stellen Tastenkombinationen bereit.
 
 #### <a name="case-study--autosuggestbox-control"></a>Fallstudie – AutoSuggestBox-Steuerelement
 
@@ -485,16 +485,21 @@ Wenn bei spaltenweise absteigender Reihenfolge (Eingabe der Elemente von oben na
 
 Wie bereits erwähnt, sollten Sie versuchen, um sicherzustellen, dass der visuellen Reihenfolge der Steuerelemente in der Benutzeroberfläche Ihrer Anwendung Richtungsnavigation entspricht.
 
-Einige Steuerelemente, z. B. ContextMenu, AppBarOverflowMenu und Vorschlagssuche, enthalten ein Menü-Popupfenster, das einen Speicherort und die Richtung relativ zum das primäre Steuerelement (basierend auf verfügbaren Bildschirmplatz) angezeigt wird. Wenn beispielsweise nicht genügend Platz vorhanden ist, um das Menü nach unten (Standardrichtung) zu öffnen, wird es nach oben geöffnet. Es kann nicht garantiert werden, dass das Menü jedes Mal in dieselbe Richtung geöffnet wird.
+Einige Steuerelemente (z. B. das Kontextmenü, CommandBar Überlaufmenü und Vorschlagssuche Menü) werden Popupmenüs in einen Speicherort und die Richtung (nach unten in der Standardeinstellung) relativ zu das primäre Steuerelement und die verfügbaren Bildschirmplatz angezeigt. Beachten Sie, dass die öffnendes Richtung zur Laufzeit durch eine Vielzahl von Faktoren beeinflusst werden kann.
 
 <table>
   <td><img src="images/keyboard/command-bar-open-down.png" alt="command bar opens down with down arrow key" /></td>
   <td><img src="images/keyboard/command-bar-open-up.png" alt="command bar opens up with down arrow key" /></td>
 </table>
 
-Wenn das Menü zum ersten Mal geöffnet wird (und vom Benutzer kein Element ausgewählt wurde), legt die NACH-UNTEN-TASTE den Fokus für diese Steuerelemente immer auf das erste Element im Menü. Die NACH-OBEN-TASTE legt den Fokus für diese Steuerelemente immer auf das letzte Element im Menü. Wenn das letzte Element ausgewählt und die NACH-UNTEN-TASTE gedrückt wird, wird der Fokus gleichermaßen auf das erste Element im Menü verlagert. Wenn das erste Element ausgewählt und die NACH-OBEN-TASTE gedrückt wird, wird der Fokus gleichermaßen auf das letzte Element im Menü verlagert
+Für diese Steuerelemente setzt beim ersten des Menüs öffnen (und kein Element vom Benutzer ausgewählt wurde), die nach-unten-Taste immer Fokus auf das erste Element, während die nach-oben-Taste immer den Fokus auf das letzte Element im Menü legt diese fest. 
 
-Sie sollten versuchen, diese Verhaltensweisen für Ihre benutzerdefinierten Steuerelemente zu emulieren. Beispiel zur Implementierung dieses Verhaltens finden Sie im [programmgesteuerte Fokusnavigation](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) Dokumentation.
+Ist das letzte Element den Fokus besitzt, und die nach-unten-Taste gedrückt wird, den Fokus auf das erste Element im Menü. Auf ähnliche Weise wechselt, wenn das erste Element den Fokus besitzt, und die nach-oben-Taste gedrückt wird, den Fokus auf das letzte Element im Menü. Dieses Verhalten wird als bezeichnet *Durchlauf* und eignet sich für die Navigation in der Popupmenüs, die in unvorhersehbarer Richtungen öffnen können.
+
+> [!NOTE]
+> Durchlauf sollten in nicht-Popup-Benutzeroberflächen vermieden werden, in denen Benutzer kommen könnte, um in einer Endlosschleife aufgefangener fühlen. 
+
+Es wird empfohlen, dass Sie diese gleichen Verhalten emulieren, die sich in Ihre benutzerdefinierten Steuerelemente. Beispiel zur Implementierung dieses Verhaltens finden Sie im [programmgesteuerte Fokusnavigation](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) Dokumentation.
 
 ## <a name="test-your-app"></a>Testen der App
 
