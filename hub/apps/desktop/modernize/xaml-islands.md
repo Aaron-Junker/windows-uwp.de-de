@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: e6074202a05c80a9dc759cdf81b2c20c7cc17d07
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: 8ceb314424ae2611e141ef866a84c08e55b0ba2d
+ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414102"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690888"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Host UWP XAML-Steuerelemente in desktop-apps (XAML-Inseln)
 
@@ -86,10 +86,10 @@ Installieren Sie das Windows 10, die Version 1903 SDK (oder eine höhere Version
 
 #### <a name="option-2-set-the-maxversiontested-value-in-your-assembly-manifest"></a>Option 2: Legen Sie den Wert "maxversiontested" in Ihrem Assemblymanifest
 
-Wenn Sie nicht Ihre Anwendung in einem Paket MSIX packen möchten, können Sie hinzufügen eine [Assemblymanifest Seite-an-Seite](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) zu Ihrem Projekt und fügen die **"maxversiontested"** Wert, der dem Manifest an, dass Ihre Anwendung ist kompatibel mit Windows 10, Version 1903 oder höher.
+Wenn Sie nicht Ihre Anwendung in einem Paket MSIX packen möchten, können Sie hinzufügen ein [Anwendungsmanifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) zu Ihrem Projekt und fügen die **"maxversiontested"** Elements im Manifest an, dass Ihre Anwendung ist kompatibel mit Windows 10, Version 1903 oder höher.
 
-1. Wenn Sie noch nicht vorhanden ist eine Assembly manifest in Ihrem Projekt das Projekt eine neue XML-Datei hinzu, und nennen Sie sie **"App.manifest"** . Für eine WPF oder Windows Forms-Anwendung, stellen Sie sicher, dass Sie auch Zuweisen der **Manifest** Eigenschaft **. "App.manifest"** in die **Anwendung** auf der Seite Ihrer [Projekt Eigenschaften](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
-2. Im Assemblymanifest umfassen die **Kompatibilität** Element und die untergeordneten Elemente, die im folgenden Beispiel gezeigt. Ersetzen Sie die **Id** Attribut der **"maxversiontested"** Element mit der Versionsnummer von Windows 10, die Sie Anzielen (Dies muss Windows 10, Version 1903 sein oder eine höhere Version sein). 
+1. Wenn Sie noch nicht vorhanden ist eine Anwendung ein manifest in Ihrem Projekt das Projekt eine neue XML-Datei hinzu, und nennen Sie sie **"App.manifest"** . Für eine WPF oder Windows Forms-Anwendung, stellen Sie sicher, dass Sie auch Zuweisen der **Manifest** Eigenschaft **. "App.manifest"** in die **Anwendung** auf der Seite Ihrer [Projekt Eigenschaften](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
+2. Im Anwendungsmanifest, enthalten die **Kompatibilität** Element und die untergeordneten Elemente, die im folgenden Beispiel gezeigt. Ersetzen Sie die **Id** Attribut der **"maxversiontested"** Element mit der Versionsnummer von Windows 10, die Sie Anzielen (Dies muss Windows 10, Version 1903 sein oder eine höhere Version sein).
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -103,6 +103,9 @@ Wenn Sie nicht Ihre Anwendung in einem Paket MSIX packen möchten, können Sie h
         </compatibility>
     </assembly>
     ```
+
+> [!NOTE]
+> Beim Hinzufügen einer **"maxversiontested"** Element um ein Anwendungsmanifest in einem C++ Win32 Projekt (mit einer Projektvorlage für Windows Desktop-Anwendung in Visual Studio), die Sie möglicherweise die folgende Warnung angezeigt, in Ihrem Projekt: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"` . Diese Warnung, nicht dass nichts falsch. in Ihrem Projekt ist, und er ignoriert werden kann.
 
 ## <a name="feature-roadmap"></a>Roadmap für die Funktion
 

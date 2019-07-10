@@ -2,16 +2,16 @@
 title: Registrierungsdaten für Spielecontroller
 description: Enthält Informationen zu den Daten, die Sie der Registrierung Ihres PCs hinzufügen können, damit der Controller UWP-Spielen verwenden kann.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Eingabe, Registrierung, benutzerdefiniert
 ms.localizationpriority: medium
-ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 30c1f0d8c9fac09d071d158563c964c6a598e073
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244396"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714059"
 ---
 # <a name="registry-data-for-game-controllers"></a>Registrierungsdaten für Spielecontroller
 
@@ -36,7 +36,7 @@ In der folgenden Tabelle wird der erwartete Werte im Stammverzeichnis des Gerät
         <th>Info</th>
     </tr>
     <tr>
-        <td>Deaktiviert</td>
+        <td>Disabled</td>
         <td>DWORD</td>
         <td>Nein</td>
         <td>
@@ -820,7 +820,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b> oder <b>EightWay</b>
+        <td><b>"TwoWay"</b>, <b>FourWay</b>, oder <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -1347,6 +1347,6 @@ Windows Registry Editor Version 5.00
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF-Dateien](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

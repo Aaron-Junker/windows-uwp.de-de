@@ -2,16 +2,16 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Übersicht über das Windows Device Portal
 description: Hier erfahren Sie, wie Sie mit dem Windows Device Portal Ihr Gerät per Remotezugriff über ein Netzwerk oder eine USB-Verbindung konfigurieren und verwalten.
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 59e7e46ea68f6bb5fe7fd63e6ac35b9256103c38
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1f776a9d0ffe15f4bec26fbf8a26ce52a73345e9
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317899"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713864"
 ---
 # <a name="windows-device-portal-overview"></a>Übersicht über das Windows Device Portal
 
@@ -46,10 +46,10 @@ Phone | Im Entwicklermodus aktivieren | 80| 443 | http://127.0.0.1:10080
 Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
 
 - [Geräteportal für HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Für IoT-Geräteportal](https://go.microsoft.com/fwlink/?LinkID=616499)
-- [Device-Portal für mobile Geräte](device-portal-mobile.md)
+- [Geräteportal für IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [Geräteportal für Mobilgeräte](device-portal-mobile.md)
 - [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md)
-- [Für Desktop-Geräteportal](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+- [Geräteportal für Windows-Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
 ## <a name="features"></a>Features
 

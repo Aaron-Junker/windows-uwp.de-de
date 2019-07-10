@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 16f61c1f950583ee0fef7f30b7e17939df7ea538
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fa38c952d4d46d83ea9b4e9f0db5f516fe09ce59
+ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317757"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690889"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>Mithilfe der hosting-API in einer Desktopanwendung UWP XAML
 
-Ab Windows 10, Version 1903 sein, nicht-UWP-desktop-Anwendungen (einschließlich Windows Forms, WPF und C++ Win32-Anwendungen) können die *UWP XAML hosting-API* zum Hosten von UWP-Steuerelementen in einem UI-Element, die zugeordnet wird eine Das Fensterhandle (HWND). Mit dieser API können nicht-UWP-desktopanwendungen auf die neuesten Features von Windows 10-Benutzeroberfläche verwenden, die nur über die UWP-Steuerelemente verfügbar sind. Beispielsweise können nicht-UWP-desktop-Anwendungen verwenden diese API zum Hosten von UWP-Steuerelementen, mit denen die [Fluent-Entwurfssystem](/windows/uwp/design/fluent-design-system/index) und unterstützen [Windows Ink](/windows/uwp/design/pen-and-stylus-interactions).
+Ab Windows 10, Version 1903 sein, nicht-UWP-desktop-Anwendungen (einschließlich Windows Forms, WPF und C++ Win32-Anwendungen) können die *UWP XAML hosting-API* zum Hosten von UWP-Steuerelementen in einem UI-Element, die zugeordnet wird eine Das Fensterhandle (HWND). Mit dieser API können nicht-UWP-desktopanwendungen auf die neuesten Features von Windows 10-Benutzeroberfläche verwenden, die nur über die UWP-Steuerelemente verfügbar sind. Beispielsweise können nicht-UWP-desktop-Anwendungen verwenden diese API zum Hosten von UWP-Steuerelementen, mit denen die [Fluent-Entwurfssystem](/windows/uwp/design/fluent-design-system/index) und unterstützen [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions).
 
 Die UWP XAML hosting-API bildet die Grundlage für eine größere Gruppe von Steuerelementen, die wir bereit sind, um Entwicklern ermöglichen, Fluent-Benutzeroberfläche auf nicht-UWP-desktopanwendungen zu bringen. Dieses Feature heißt *XAML-Inseln*. Einen Überblick über diese Funktion finden Sie unter [UWP-Steuerelementen in desktopanwendungen](xaml-islands.md).
 

@@ -2,16 +2,16 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Geräteportal für Windows-Desktop
 description: Hier erfahren Sie, wie das Windows Device Portal Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
-ms.date: 02/6/2019
+ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe1f2a51199dd12cd1d285c17c5d48c9a25b969
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 00cf497d5d57f5a3cdc5c52ecfeead7885ff7d56
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654525"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713809"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
 
@@ -71,7 +71,7 @@ Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführlic
 - Features
 - Mixed Reality
 - Streaming Install-Debugger
-- Pfad
+- Speicherort
 - Entwurf
 
 ## <a name="more-device-portal-options"></a>Weitere Optionen für das Geräteportal
@@ -109,15 +109,15 @@ Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderun
 
 Im folgenden sind einige häufige Fehler, die bei der Einrichtung des Device Portal auftreten können.
 
-### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch gibt ungültige Anzahl von Updates (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch returns invalid number of updates (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
 
 Sie können diese Fehlermeldung beim Versuch, die Entwickler-Pakete auf einer Vorabversion Build von Windows 10 installiert. Diese Features bei Bedarf (Feature-On) Pakete werden über Windows Update gehostet, und sie für Builds von Vorabversionen handelt herunterzuladen erfordert, dass Sie in Test-flighting entscheiden. Wenn die Installation in Test-flighting für die richtige Build- und die Kombination der Ring nicht aktiviert ist, wird die Nutzlast nicht heruntergeladen werden. Überprüfen Sie Folgendes:
 
 1. Navigieren Sie zu **Einstellungen > Update und Sicherheit > Windows-Insider-Programm** und überprüfen Sie, ob die **Windows Insider-Konto** Abschnitt hat die richtigen Kontoinformationen. Wenn Sie diesen Abschnitt nicht sehen, wählen Sie **Verknüpfen eines Windows-Insider-Kontos**Ihr e-Mail-Konto hinzu, und vergewissern Sie sich, dass er unter wird angezeigt der **Windows Insider-Konto** Überschrift (müssen Sie möglicherweise auswählen**Verknüpfen eines Windows-Insider-Kontos** ein zweites Mal tatsächlich Link eine neu hinzugefügte Konto).
  
-2. Klicken Sie unter **welchen Inhalt Sie erhalten möchten?**, stellen Sie sicher, dass **aktiven Entwicklung von Windows** ausgewählt ist.
+2. Klicken Sie unter **welchen Inhalt Sie erhalten möchten?** , stellen Sie sicher, dass **aktiven Entwicklung von Windows** ausgewählt ist.
  
-3. Klicken Sie unter **welchem Zeitrahmen dies geschehen soll neue Builds erhalten?**, stellen Sie sicher, dass **Windows Insider Fast** ausgewählt ist.
+3. Klicken Sie unter **welchem Zeitrahmen dies geschehen soll neue Builds erhalten?** , stellen Sie sicher, dass **Windows Insider Fast** ausgewählt ist.
  
 4. Sie sollten jetzt die FoDs installieren können. Wenn Sie bestätigt haben, sind auf Windows-Insider Fast und noch nicht die FoDs installiert, bitte Ihr Feedback und fügen Sie die Log-Dateien unter **C:\Windows\Logs\CBS**.
 

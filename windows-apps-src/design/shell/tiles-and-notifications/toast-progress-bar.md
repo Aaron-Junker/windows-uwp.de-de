@@ -3,16 +3,16 @@ Description: Erfahren Sie, wie eine Statusanzeige in Ihrer Toast-Benachrichtigun
 title: Popup-Statusanzeige und Datenbindungen
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.date: 12/7/2017
+ms.date: 12/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Popup, Statusanzeige, Popup-Statusanzeige, Benachrichtigungen, Datenbindung der Popups
 ms.localizationpriority: medium
-ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 742270a4cdc6cbbc9eed0879e30b3e7066722f05
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624825"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714104"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Popup-Statusanzeige und Datenbindungen
 
@@ -34,7 +34,7 @@ Die folgende Abbildung zeigt eine exakte Statusanzeige mit allen entsprechenden 
 
 | Eigenschaft | Typ | Erforderlich | Beschreibung |
 |---|---|---|---|
-| **Titel** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | false | Ruft einen optionalen Zeichenfolgetitel auf oder legt diesen fest. Unterstützt die Datenbindung. |
+| **Title** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | false | Ruft einen optionalen Zeichenfolgetitel auf oder legt diesen fest. Unterstützt die Datenbindung. |
 | **Wert** | doppelt oder [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) oder [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | Ruft den Wert der Statusanzeige auf oder legt diesen fest. Unterstützt die Datenbindung. Die Standardeinstellung ist 0. Kann entweder ein Double zwischen 0,0 und 1,0, `AdaptiveProgressBarValue.Indeterminate` oder `new BindableProgressBarValue("myProgressValue")` sein. |
 | **ValueStringOverride** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | false | Ruft eine optionale Zeichenfolge auf oder legt diese fest, damit sie anstelle der Standardzeichenfolge in Prozent angezeigt wird. Wenn dies nicht bereitgestellt ist, wird etwas wie "70 %" angezeigt. |
 | **Status** | Zeichenfolge oder [BindableString](toast-schema.md#bindablestring) | true | Ruft eine Statuszeichenfolge auf oder legt diese fest (erforderlich), die unter der Statusanzeige auf der linken Seite angezeigt wird. Diese Zeichenfolge sollte den Status des Vorgangs widerspiegeln, z. B. "Herunterladen..." oder "Installieren von..." |
