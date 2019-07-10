@@ -6,17 +6,17 @@ label: Hyperlinks
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: b17220a039612e0b13cd9842800c37c39bf194dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362759"
 ---
 # <a name="hyperlinks"></a>Hyperlinks
@@ -25,7 +25,7 @@ ms.locfileid: "66362759"
 
 Über Hyperlinks können Benutzer zu einem anderen Teil der App oder zu einer anderen App navigieren oder mit einer separaten Browser-App einen bestimmten URI (Uniform Resource Identifier) starten. Sie haben zwei Möglichkeiten, einer XAML-App einen Link hinzuzufügen: über das Textelement **Link** oder das Steuerelement **HyperlinkButton**.
 
-> **Wichtige APIs:** [Text des Linkelements](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [HyperlinkButton-Steuerung](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **Wichtige APIs:** [Textelement „Hyperlink“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [Steuerelement „HyperlinkButton“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![Eine Linkschaltfläche](images/controls/hyperlink-button.png)
 
@@ -47,7 +47,7 @@ Wählen Sie den richtigen Linktyp basierend auf Ihren Anforderungen:
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/HyperlinkButton">die App zu öffnen und HyperlinkButton in Aktion zu sehen</a>.</p>
+    <p>Falls die App <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> installiert ist, klicke <a href="xamlcontrolsgallery:/item/HyperlinkButton">hier</a>, um die App zu öffnen und „HyperlinkButton“ in Aktion zu sehen.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -73,7 +73,7 @@ Der Link wird inline angezeigt und mit dem umgebenden Text umbrochen:
 
 ![Beispiel für einen Link als Textelement](images/controls_hyperlink-element.png) 
 
-> **Tipp:** &nbsp;&nbsp;Wenn Sie einen Link in einem Textsteuerelement mit anderen Textelementen in XAML verwenden, platzieren Sie den Inhalt in einem [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span)-Container und wenden das Attribut `xml:space="preserve"` auf den Span-Container an, um die Leerstelle zwischen dem Link und anderen Elementen beizubehalten.
+> **Tipp:** &nbsp;&nbsp;Wenn du einen Link in einem Textsteuerelement mit anderen Textelementen in XAML verwendest, platziere den Inhalt in einem [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span)-Container, and wende das Attribut `xml:space="preserve"` darauf an, damit die Leerstelle zwischen dem Link und anderen Elementen erhalten bleibt.
 
 ## <a name="create-a-hyperlinkbutton"></a>Erstellen eines HyperlinkButton-Elements
 
@@ -97,7 +97,7 @@ Die Linkschaltflächen mit Textinhalt werden als markierter Text angezeigt. Das 
 
 ![Beispiel für einen Link als Schaltflächensteuerelement](images/controls_hyperlink-button-image.png)
 
-Dieses Beispiel zeigt, wie Sie ein einfaches HyperlinkButton-Element in Code erstellen.
+Dieses Beispiel zeigt die Erstellung eines HyperlinkButton-Elements im Code.
 
 ```csharp
 var helpLinkButton = new HyperlinkButton();
@@ -109,21 +109,21 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 Die Navigation wird bei beiden Linktypen gleich gehandhabt. Sie können die Eigenschaft **NavigateUri** festlegen oder das **Click**-Ereignis behandeln.
 
-**Navigieren Sie zu einem URI**
+**Navigieren zu einem URI**
 
 Wenn Sie mit dem Link zu einem URI navigieren möchten, legen Sie die NavigateUri-Eigenschaft fest. Wenn ein Benutzer auf den Link klickt oder tippt, wird der angegebene URI im Standardbrowser geöffnet. Der Standardbrowser wird in einem separaten Prozess von Ihrer App ausgeführt.
 
 > [!NOTE]
-> Ein URI wird durch die [Windows.Foundation.Uri](/uwp/api/windows.foundation.uri)-Klasse dargestellt. Bei der Programmierung mit .NET wird diese Klasse ausgeblendet und sollte die [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri)-Klasse verwendet werden. Weitere Informationen finden Sie auf den Referenzseiten für diese Klassen.
+> Ein URI wird durch die Klasse [Windows.Foundation.Uri](/uwp/api/windows.foundation.uri) dargestellt. Da diese Klasse bei der Programmierung mit .NET verborgen ist, sollte die Klasse [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri) verwendet werden. Weitere Informationen findest du auf den Referenzseiten für diese Klassen.
 
-Sie müssen keine Schemas wie **http:** oder **https:** verwenden. Sie können Schemas wie **ms-appx:** , **ms-appdata:** oder **ms-resources:** verwenden, falls dort Ressourceninhalte vorhanden sind, die in einem Browser geladen werden können. Das Schema **file:** ist ausdrücklich blockiert. Weitere Informationen finden Sie unter [URI-Schemas](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10)).
+Du musst nicht das Schema **http:** oder **https:** verwenden. Stattdessen kannst du Schemas wie **ms-appx:** , **ms-appdata:** oder **ms-resources:** verwenden, falls dort Ressourceninhalte vorhanden sind, die in einem Browser geladen werden können. Das Schema **file:** ist allerdings ausdrücklich blockiert. Weitere Informationen finden Sie unter [URI-Schemas](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10)).
 
 Wenn ein Benutzer auf den Link klickt, wird der Wert der NavigateUri-Eigenschaft an einen Systemhandler für URI-Typen und -Schemas übergeben. Das System startet dann die App, die für das Schema des URIs registriert ist, der für „NavigateUri“ angegeben wird.
 
 Wenn der Link keine Inhalte in einem Standardwebbrowser laden soll (und kein Browser angezeigt werden soll), legen Sie keinen Wert für „NavigateUri“ fest. Behandeln Sie stattdessen das Click-Ereignis, und schreiben Sie Code, der die gewünschte Aktion ausführt.
 
 
-**Behandelt das Click-Ereignis**
+**Behandeln des Click-Ereignisses**
 
 Verwenden Sie das Click-Ereignis für alle Aktionen außer für das Starten eines URIs in einem Browser (also beispielsweise für die Navigation innerhalb der App). Wenn Sie beispielsweise keinen Broswer öffnen, sondern eine neue App-Seite laden möchten, rufen Sie eine [Frame.Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)-Methode in Ihrem Click-Ereignishandler auf, um zur neuen App-Seite zu navigieren. Wenn ein externer, absoluter URI in einem [WebView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview)-Steuerelement geladen werden soll, das auch in Ihrer App vorhanden ist, rufen Sie [WebView.Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigate) als Teil Ihrer Klickhandlerlogik auf.
 
@@ -134,7 +134,7 @@ Sie können im Click-Ereignishandler nicht verhindern, dass der Standardbrowser 
 ## <a name="hyperlink-underlines"></a>Unterstreichung von Links
 Links sind standardmäßig unterstrichen. Diese Unterstreichung ist wichtig, da dadurch Anforderungen für Barrierefreiheit erfüllt werden. Farbenblinde Benutzer können anhand der Unterstreichung zwischen Links und anderem Text unterscheiden. Wenn Sie die Unterstreichung deaktivieren, sollten Sie eine andere Art der Formatierung in Betracht ziehen (z. B. „FontWeight“ oder „FontStyle“), um Links von anderem Text abzuheben.
 
-**Hyperlink-Text-Elemente**
+**Linktextelemente**
 
 Sie können die [UnderlineStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink.underlinestyle)-Eigenschaft festlegen, um die Unterstreichung zu deaktivieren. Ziehen Sie in diesem Fall die Verwendung von [FontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontweight) oder [FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontstyle) in Betracht, um Ihren Linktext zu differenzieren.
 
@@ -160,7 +160,7 @@ Da es sich bei einem Link nicht um ein [UIElement](https://docs.microsoft.com/uw
 
 Für den Link liegen Einschränkungen in Bezug auf den Inhalt vor, der in der [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span.inlines)-Sammlung enthalten sein darf. Genauer gesagt: Ein Link lässt nur [Run](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.run)- und andere [Span](/uwp/api/windows.ui.xaml.documents.span)-Typen zu, die keinen anderen Link darstellen. [InlineUIContainer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.inlineuicontainer) darf nicht in der Inlines-Sammlung eines Links enthalten sein. Beim Versuch, eingeschränkte Inhalte hinzuzufügen, wird eine Ausnahme für ein ungültiges Argument oder eine XAML-Analyseausnahme ausgelöst.
 
-**Verhalten von links und Design-Stil**
+**Links und Design-/Stilverhalten**
 
 Links erben nicht von [Control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control). Daher enthalten sie keine [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style)- oder [Template](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template)-Eigenschaft. Sie können die von [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement) geerbten Eigenschaften wie „Foreground“ oder „FontFamily“ bearbeiten, um das Erscheinungsbild eines Links zu ändern. Sie können jedoch keinen allgemeinen Stil bzw. keine allgemeine Vorlage zum Anwenden von Änderungen verwenden. Verwenden Sie anstelle einer Vorlage allgemeine Ressourcen für Werte der Linkeigenschaften, um die Konsistenz zu gewährleisten. Einige Linkeigenschaften verwenden Standardwerte aus einem vom System bereitgestellten {ThemeResource}-Markuperweiterungswert. Dadurch kann die Linkdarstellung entsprechend angepasst werden, wenn der Benutzer das Systemdesign während der Laufzeit ändert.
 
@@ -169,19 +169,19 @@ Die Standardfarbe des Links ist die Akzentfarbe des Systems. Dieses Verhalten k�
 ## <a name="recommendations"></a>Empfehlungen
 
 -   Verwenden Sie Links nur für die Navigation. Verwenden Sie sie nicht für andere Aktionen.
--   Verwenden Sie den Textstil aus dem Typenverlauf für textbasierte Links. Informieren Sie sich über [Schriftarten und den Windows 10-Typenverlauf](../style/typography.md).
+-   Verwenden Sie den Textstil aus dem Typenverlauf für textbasierte Links. Informationen zu Schriftarten und zum Windows 10-Typenverlauf findest du [hier](../style/typography.md).
 -   Separate Links sollten weit genug voneinander platziert werden, damit der Benutzer zwischen ihnen unterscheiden kann und sie mühelos einzeln auswählen kann.
 -   Fügen Sie Hyperlinks QuickInfos hinzu, die dem Benutzer anzeigen, wohin er umgeleitet wird. Wenn der Benutzer zu einer externen Website weitergeleitet werden soll, schließen Sie den Namen der Domäne der obersten Ebene in die QuickInfo ein und formatieren den Text mit einer zweiten Schriftfarbe.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Textsteuerelemente](text-controls.md)
-- [Richtlinien für QuickInfos](tooltips.md)
+- [QuickInfos](tooltips.md)
 
 **Für Entwickler (XAML)**
-- [Windows.UI.Xaml.Documents.Hyperlink-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)
-- [Windows.UI.Xaml.Controls.HyperlinkButton class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+- [Klasse „Windows.UI.Xaml.Documents.Hyperlink“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)
+- [Klasse „Windows.UI.Xaml.Controls.HyperlinkButton“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)

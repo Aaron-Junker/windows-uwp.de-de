@@ -7,23 +7,23 @@ label: Auto-suggest box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: c3076e9a098ff62ba9000b4337417013e400375e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66361097"
 ---
 # <a name="auto-suggest-box"></a>Feld mit automatischen Vorschlägen
 
 Verwenden Sie ein AutoSuggestBox-Element, um eine Liste mit Vorschlägen bereitzustellen, aus der Benutzer während der Eingabe auswählen können.
 
-> **Wichtige APIs:** [AutoSuggestBox Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [TextChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
+> **Wichtige APIs:** [Klasse „AutoSuggestBox“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [Ereignis „TextChanged“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [Ereignis „SuggestionChosen“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [Ereignis „QuerySubmitted“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 ![Ein Feld mit automatischen Vorschlägen](images/controls/auto-suggest-box-open.png)
 
@@ -40,7 +40,7 @@ Weitere Informationen zur Auswahl des passenden Textsteuerelements finden Sie im
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/AutoSuggestBox">die App zu öffnen und AutoSuggestBox in Aktion zu sehen</a>.</p>
+    <p>Falls die App <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> installiert ist, klicke <a href="xamlcontrolsgallery:/item/AutoSuggestBox">hier</a>, um die App zu öffnen und „AutoSuggestBox“ in Aktion zu sehen.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -72,7 +72,7 @@ Zum Verwenden eines AutoSuggestBox-Elements müssen Sie auf drei Benutzeraktione
 
 ### <a name="text-changed"></a>Text geändert
 
-Das Ereignis [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged) tritt ein, sobald der Inhalt des Textfelds aktualisiert wird. Verwenden Sie die [Reason](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason)-Eigenschaft für die Ereignisargumente, um zu ermitteln, ob die Änderung aufgrund einer Benutzereingabe erfolgt ist. Wenn der Grund für die Änderung **UserInput** lautet, filtern Sie Ihre Daten basierend auf der Eingabe. Legen Sie die gefilterten Daten anschließend als [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) des AutoSuggestBox-Elements fest, um die Vorschlagsliste zu aktualisieren.
+Das [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged)-Ereignis tritt auf, wenn der Inhalt des Textfelds aktualisiert wird. Verwenden Sie die [Reason](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason)-Eigenschaft für die Ereignisargumente, um zu ermitteln, ob die Änderung aufgrund einer Benutzereingabe erfolgt ist. Wenn der Grund für die Änderung **UserInput** lautet, filtern Sie Ihre Daten basierend auf der Eingabe. Legen Sie die gefilterten Daten anschließend als [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) des AutoSuggestBox-Elements fest, um die Vorschlagsliste zu aktualisieren.
 
 Um zu steuern, wie Elemente in der Vorschlagsliste angezeigt werden, können Sie [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) oder [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) verwenden.
 
@@ -176,14 +176,14 @@ Hier ist ein AutoSuggestBox-Element mit einem Suchsymbol dargestellt.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
-- [AutoSuggestBox-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox)
+- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für „AutoSuggestBox“](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Textsteuerelemente](text-controls.md)
 - [Rechtschreibprüfung](text-controls.md)
 - [Suche](search.md)
-- [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)
+- [Klasse „TextBox“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Klasse „Windows.UI.Xaml.Controls PasswordBox“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [Eigenschaft „String.Length“](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

@@ -6,16 +6,16 @@ label: Flip view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7942839b43739ca5fb15106abbfa1877ead81dc2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362769"
 ---
 # <a name="flip-view"></a>Flip-Ansicht
@@ -24,7 +24,7 @@ ms.locfileid: "66362769"
 
 Verwenden Sie eine Flip-Ansicht zum Durchsuchen von Bildern oder anderen Elementen in einer Sammlung, z. B. von Fotos in einem Album oder von Elementen auf einer Seite mit Produktdetails, wobei jeweils ein Bild gescannt wird. Bei Geräten mit Touchscreen erfolgt die Navigation durch die Sammlung mit einer Wischbewegung über ein Element. Bei Verwendung mit einer Maus werden beim Zeigen mit der Maus Navigationsschaltflächen angezeigt. Bei Verwendung einer Tastatur erfolgt die Navigation durch die Sammlung mithilfe der Pfeiltasten.
 
-> **Wichtige APIs:** [FlipView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [ItemsSource-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+> **Wichtige APIs:** [Klasse „FlipView“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [Eigenschaft „ItemsSource“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [Eigenschaft „ItemTemplate“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
@@ -38,7 +38,7 @@ Die Flip-Ansicht ist zum Durchblättern von Bildern in kleinen bis mittelgroßen
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/FlipView">die App zu öffnen und FlipView in Aktion zu sehen</a>.</p>
+    <p>Falls die App <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> installiert ist, klicke <a href="xamlcontrolsgallery:/item/FlipView">hier</a>, um die App zu öffnen und „FlipView“ in Aktion zu sehen.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -126,7 +126,7 @@ Hier wird die ItemsSource an eine [**CollectionViewSource**](https://docs.micros
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Hinweis**&nbsp;&nbsp;Sie können eine Flip-Ansicht auffüllen, indem Sie entweder der Items-Sammlung Elemente hinzufügen oder die ItemsSource-Eigenschaft festlegen. Die beiden Methoden können jedoch nicht gleichzeitig verwendet werden. Wenn Sie die ItemsSource-Eigenschaft festlegen und dann ein Element in XAML hinzufügen, wird das hinzugefügte Element ignoriert. Wenn Sie die ItemsSource-Eigenschaft festlegen und der Items-Sammlung ein Element in Code hinzufügen, wird eine Ausnahme ausgelöst.
+>**Hinweis:** &nbsp;&nbsp;Um eine Flip-Ansicht aufzufüllen, kannst du entweder der zugehörigen Items-Sammlung Elemente hinzufügen oder die zugehörige ItemsSource-Eigenschaft festlegen. Du kannst aber nicht beide Methoden gleichzeitig verwenden. Wenn Sie die ItemsSource-Eigenschaft festlegen und dann ein Element in XAML hinzufügen, wird das hinzugefügte Element ignoriert. Wenn Sie die ItemsSource-Eigenschaft festlegen und der Items-Sammlung ein Element in Code hinzufügen, wird eine Ausnahme ausgelöst.
 
 ### <a name="specify-the-look-of-the-items"></a>Festlegen der Darstellung der Elemente
 
@@ -227,9 +227,9 @@ Beispielcode, der veranschaulicht, wie Sie einem FlipView-Element eine Kontextan
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Richtlinien für Listen](lists.md)
-- [**FlipView-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
+- [Listen](lists.md)
+- [**Klasse „FlipView“** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)

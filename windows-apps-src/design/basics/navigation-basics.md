@@ -7,63 +7,63 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 07/16/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1c764eeb57ec8046a93e7fb58e156fa68daea8df
-ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64564521"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Navigationsdesigngrundlagen für UWP-Apps
 
-![Navigationsgrundlagen-Header](images/nav/navigation-basics-header.jpg)
+![Header für Navigationsgrundlagen](images/nav/navigation-basics-header.jpg)
 
-Wenn Sie sich eine App als eine Sammlung von Seiten vorstellen, beschreibt der Begriff *Navigation* den Wechselvorgang zwischen Seiten und innerhalb einer Seite. Die Navigation ist der Ausgangspunkt für die Benutzererfahrung und definiert die Art und Weise, in der Nutzer die Inhalte und Funktionen finden, an denen sie interessiert sind. Sie ist sehr wichtig, und es kann schwierig sein, sie richtig zu implementieren.
+Wenn du dir eine App als eine Sammlung von Seiten vorstellst, beschreibt der Begriff *Navigation* den Wechsel zwischen Seiten sowie Bewegungen auf einer Seite. Die Navigation ist die Grundlage der Benutzererfahrung und definiert, wie Benutzer zu den für sie relevanten Inhalten und Features gelangen. Eine gute Navigation ist immens wichtig, aber manchmal nicht ganz einfach umzusetzen.
 
-Es gibt eine große Anzahl von Navigationsmöglichkeiten. Wir könnten:
+Bei der Navigation müssen zahlreiche Entscheidungen getroffen werden. Wir haben unter anderem folgende Möglichkeiten:
 
 :::row:::
     :::column:::
         ![navigation example 1](images/nav/nav-1.svg)
 
-Müssen Sie Benutzer eine Reihe von Seiten in der Reihenfolge zu durchlaufen.
+Wir können festlegen, dass Benutzer eine Reihe von Seiten in der vorgegebenen Reihenfolge durchlaufen müssen.
     :::column-end:::
     :::column:::
         ![navigation example 2](images/nav/nav-2.svg)
 
-Geben Sie ein Menü, das Benutzer direkt zu einer beliebigen Seite wechseln kann.
+Wie können ein Menü bereitstellen, über das Benutzer direkt zu einer beliebigen Seite gelangen.
     :::column-end:::
     :::column:::
         ![navigation example 3](images/nav/nav-3.svg)
 
-Platzieren Sie alles auf einer Seite, und geben Sie die Filtermechanismen zur Anzeige von Inhalt.
+Wir können alles auf einer einzelnen Seite platzieren Filtermechanismen für die Inhalte bereitstellen.
     :::column-end:::
 :::row-end:::
 
-Es gibt zwar kein einheitliches Navigationsdesign, das für jede App funktioniert, aber es gibt Prinzipien und Richtlinien, die Ihnen helfen, das richtige Design für Ihre App zu finden.
+Es gibt zwar kein universelles Navigationsdesign, das für jede App geeignet ist, es gibt jedoch Prinzipien und Richtlinien, die dazu beitragen, das passende Design für deine App zu finden.
 
-## <a name="principles-of-good-navigation"></a>Grundsätze guter Navigation
+## <a name="principles-of-good-navigation"></a>Merkmale einer guten Navigation
 
 Beginnen wir mit den Grundprinzipien eines guten Navigationsdesigns:
 
-- **Konsistenz:** Erfüllt die Erwartungen der Benutzer.
-- **Einfachheit:** Nicht mehr als erforderlich.
-- **Klarheit:** Geben Sie eindeutigen Pfaden und Optionen.
+- **Konsistenz:** Erfülle die Erwartungen des Benutzers.
+- **Einfachheit:** Beschränke dich auf das Wesentliche.
+- **Klarheit:** Stelle klare Pfade und Optionen bereit.
 
 ### <a name="consistency"></a>Konsistenz
 
-Die Navigation sollte den Erwartungen der Benutzer entsprechen. Mithilfe von [Standardsteuerelemente](#use-the-right-controls) , dass Benutzer verstehen und mit der folgenden Standardkonventionen für Symbole, Speicherort, und formatieren Navigation vorhersagbarste und intuitivste für Benutzer veranlasst.
+Die Navigation muss die Erwartungen des Benutzers erfüllen. Vertraute [Standardsteuerelemente](#use-the-right-controls) und die Einhaltung von Standardkonventionen für Symbole, Positionierung und Stil machen die Navigation für Benutzer berechenbar und intuitiv.
 
-![Bild mit Seitenkomponenten](images/nav/page-components.svg)
+![Abbildung: Seitenkomponenten](images/nav/page-components.svg)
 
-> Benutzer erwarten einige UI-Elemente an Standardpositionen.
+> Benutzer erwarten, dass sich bestimmte UI-Elemente an bestimmten Standardpositionen befinden.
 
 ### <a name="simplicity"></a>Einfachheit
 
-Weniger Navigationselemente erleichtern den Anwendern die Entscheidungsfindung. Der einfache Zugriff auf wichtige Ziele und das Ausblenden weniger wichtiger Objekte hilft den Benutzern, schneller dorthin zu gelangen, wohin sie wollen.
+Weniger Navigationselemente vereinfachen den Entscheidungsprozess von Benutzern. Müheloser Zugriff auf wichtige Orte sowie das Ausblenden weniger wichtiger Elemente tragen dazu bei, dass Benutzer schneller ans gewünschte Ziel gelangen.
 
 :::row:::
     :::column:::
@@ -71,38 +71,38 @@ Weniger Navigationselemente erleichtern den Anwendern die Entscheidungsfindung. 
 
         ![navview good](images/nav/navview-good.svg)
 
-Präsentieren Sie Navigationselemente in einer vertrauten Navigationsmenü.
+Darstellung von Navigationselementen in einem vertrauten Navigationsmenü
     :::column-end:::
     :::column:::
         ![don't example](images/nav/dont.svg)
 
         ![navview bad](images/nav/navview-bad.svg)
 
-Überlasten von Benutzern mit vielen Navigationsoptionen.
+Überforderung der Benutzer durch zahlreiche Navigationsoptionen
     :::column-end:::
 :::row-end:::
 
 ### <a name="clarity"></a>Klarheit
 
-Klare Pfade ermöglichen eine logische Navigation für den Benutzer. Navigationsmöglichkeiten sichtbar zu machen und Zusammenhänge zwischen den Seiten zu klären, soll verhindern, dass sich die Benutzer „verirren”.
+Klare Pfade ermöglichen eine logische Benutzernavigation. Offensichtliche Navigationsoptionen sowie die Verdeutlichung von Zusammenhängen zwischen Seiten sorgen dafür, dass Benutzer nicht die Orientierung verlieren.
 
-![Beispiel für „Richtig”](images/nav/clarity-image.svg)
+![Positives Beispiel](images/nav/clarity-image.svg)
 
-> Die Ziele sind klar gekennzeichnet, so dass die Benutzer wissen, wo sie sich befinden.
+> Ziele sind klar gekennzeichnet, damit die Benutzer wissen, wo sie sich befinden.
 
 ## <a name="general-recommendations"></a>Allgemeine Empfehlungen
 
-Nehmen wir nun unsere Gestaltungsprinzipien – Konsistenz, Einfachheit und Klarheit – und verwenden wir sie, um einige allgemeine Empfehlungen zu formulieren.
+In diesem Abschnitt entwickeln wir auf der Grundlage der Gestaltungsprinzipien „Konsistenz“, „Einfachheit“ und „Klarheit“ einige allgemeine Empfehlungen.
 
-1. Denken Sie an Ihre Benutzer. Verfolgen Sie typische Pfade, die sie durch Ihre App nehmen könnten, und überlegen Sie für jede Seite, warum der Benutzer dort ist und wohin er gehen möchte.
+1. Führe dir deine Benutzer vor Augen. Skizziere typische Pfade durch deine App, und überlege dir für jede Seite, warum der Benutzer dort ist und wohin er wahrscheinlich möchte.
 
-2. Vermeiden Sie umfassende Navigationshierarchien. Wenn Sie über drei Navigationsebenen hinausgehen, riskieren Sie, Ihren Benutzer in einer tiefen Hierarchie zu verlieren, die er nur schwer verlassen kann.
+2. Vermeide tiefe Navigationshierarchien. Bei Verwendung von mehr als drei Navigationsebenen besteht die Gefahr, dass der Benutzer die Orientierung verliert.
 
-3. Vermeiden Sie „Pogo Sticking”. Pogo Sticking tritt auf, wenn der Benutzer für die Navigation zu zugehörigen Inhalten eine Ebene nach oben und erneut eine nach unten navigieren muss.
+3. Vermeide sogenanntes „Pogo Sticking”. Pogo Sticking tritt auf, wenn der Benutzer für die Navigation zu verwandten Inhalten eine Ebene nach oben und dann wieder eine Ebene nach unten navigieren muss.
 
-## <a name="use-the-right-structure"></a>Verwenden Sie die richtige Navigationsstruktur
+## <a name="use-the-right-structure"></a>Verwenden der richtigen Struktur
 
-Nun, da Sie mit den allgemeinen Navigationsprinzipien vertraut sind, überlegen wir uns die Strukturierung Ihrer App. Es gibt zwei allgemeine Strukturen: Flache und hierarchische.
+Nachdem du nun mit allgemeinen Navigationsprinzipien vertraut bist, beschäftigen wir uns als Nächstes mit der Strukturierung deiner App. Du hast die Wahl zwischen zwei allgemeinen Strukturen: flach und hierarchisch.
 
 :::row:::
     :::column:::
@@ -111,14 +111,14 @@ Nun, da Sie mit den allgemeinen Navigationsprinzipien vertraut sind, überlegen 
     :::column span="2":::
         ### Flat/lateral
 
-In einer flachen/lateralen Struktur stehen die Seiten parallel zueinander. Sie können in beliebiger Reihenfolge von einer Seite zur nächsten wechseln.
+In einer flachen/lateralen Struktur sind die Seiten nebeneinander angeordnet. Sie können in beliebiger Reihenfolge von einer Seite zur nächsten wechseln.
 
-Wir empfehlen die Verwendung einer flachen Struktur bei:
+Die Verwendung einer flachen Struktur empfiehlt sich in folgenden Fällen:
 
 - Die Seiten können in beliebiger Reihenfolge angezeigt werden.
 - Die Seiten sind deutlich voneinander abgegrenzt und verfügen nicht über eine offensichtliche Beziehung zwischen über- und untergeordneten Elementen.
-- Es gibt weniger als 8 Seiten in der Gruppe ein. <br>
-(Wenn eine Gruppe mehr Seiten enthält, wird es für Benutzer möglicherweise schwierig, zu verstehen, inwiefern sich die Seiten unterscheiden oder welche Position sie zurzeit in der Gruppe haben. Wenn Sie davon ausgehen, dass dies kein Problem für Ihre App ist, machen Sie aus den Seiten Peers. Ziehen Sie andernfalls eine hierarchische Struktur in Betracht, um die Seiten in zwei oder mehr kleinere Gruppen zu unterteilen.)
+- Die Gruppe enthält weniger als acht Seiten. <br>
+(Sind mehr Seiten vorhanden, können Benutzer möglicherweise nicht ohne Weiteres nachvollziehen, inwiefern sich die Seiten unterscheiden oder wo sie sich innerhalb der Gruppe befinden. Wenn Sie davon ausgehen, dass dies kein Problem für Ihre App ist, machen Sie aus den Seiten Peers. Ziehe andernfalls eine hierarchische Struktur in Betracht, um die Seiten in zwei oder mehr kleinere Gruppen zu unterteilen.)
 
     :::column-end:::
 :::row-end:::
@@ -130,14 +130,14 @@ Wir empfehlen die Verwendung einer flachen Struktur bei:
     :::column span="2":::
         ### Hierarchical
 
-In einer hierarchischen Struktur werden Seiten in einer Baumstruktur organisiert. Jede untergeordnete Seite hat ein übergeordnetes Element. Ein übergeordnetes Element kann jedoch eine oder mehrere untergeordnete Seiten haben. Um eine untergeordnete Seite aufzurufen, durchlaufen Sie das übergeordnete Element.
+In einer hierarchischen Struktur werden Seiten in einer baumartigen Struktur angeordnet. Jede untergeordnete Seite hat genau ein übergeordnetes Element. Ein übergeordnetes Element kann jedoch eine oder mehrere untergeordnete Seiten haben. Um eine untergeordnete Seite aufzurufen, durchlaufen Sie das übergeordnete Element.
 
-Hierarchische Strukturen sind gut geeignet, um komplexe Inhalte, die sich über viele Seiten erstrecken, zu organisieren. Der Nachteil besteht darin, dass hierarchische Seiten Navigationsmehraufwand verursachen: je tiefer die Struktur, desto mehr Klicks sind für das Wechseln der Seiten erforderlich.
+Hierarchische Strukturen sind gut geeignet, um komplexe Inhalte, die sich über viele Seiten erstrecken, zu strukturieren. Der Nachteil ist ein gewisser Mehraufwand bei der Navigation: je tiefer die Struktur, desto mehr Klicks sind erforderlich, um zwischen den Seiten zu wechseln.
 
-Wir empfehlen eine hierarchische Struktur, wenn:
+Eine hierarchische Struktur empfiehlt sich in folgenden Fällen:
         
-- Seiten, die in einer bestimmten Reihenfolge durchlaufen werden sollen.
-- Es gibt eine klare Beziehung zwischen übergeordneten und untergeordneten Seiten.
+- Die Seiten sollen in einer bestimmten Reihenfolge durchlaufen werden.
+- Zwischen den Seiten besteht eine klare hierarchische Beziehung.
 - In der Gruppe gibt es mehr als 7 Seiten.
         
     :::column-end:::
@@ -150,18 +150,18 @@ Wir empfehlen eine hierarchische Struktur, wenn:
     :::column span="2":::
         ### Combining structures
 
-Sie haben wählen Sie nicht auf eine Struktur oder das andere; Viele gut-Design-apps verwenden. Eine App verwendet flache Strukturen für Seiten auf obersten Ebenen, die in beliebiger Reihenfolge angezeigt werden können, und hierarchische Strukturen für Seiten, die komplexere Beziehungen haben.
+Du musst dich nicht zwischen den beiden Strukturen entscheiden: In vielen gut gestalteten Apps wird eine Kombination aus beiden Strukturen verwendet. Eine App kann flache Strukturen für übergeordnete Seiten verwenden, die in beliebiger Reihenfolge angezeigt werden können, und hierarchische Strukturen für Seiten mit komplexeren Beziehungen.
 
-Wenn die Navigationsstruktur über mehrere Ebenen verfügt, empfehlen wir, dass Peer-to-Peer-Navigationselemente nur mit den Peers innerhalb der aktuellen Unterstruktur verknüpft sind. Betrachten Sie eine Navigationsstruktur angezeigt, die zwei Ebenen die angrenzende Abbildung aus:
+Wenn die Navigationsstruktur über mehrere Ebenen verfügt, empfehlen wir, dass Peer-to-Peer-Navigationselemente nur mit den Peers innerhalb der aktuellen Unterstruktur verknüpft sind. Die Abbildung zeigt eine Navigationsstruktur mit drei Ebenen:
 
-- Auf Ebene 1 sollte das Peer-to-Peer-Navigationselement Zugriff auf die Seiten A, B, C und D ermöglichen.
+- Auf der ersten Ebene ermöglicht das Peer-to-Peer-Navigationselement den Zugriff auf die Seiten A, B, C und D.
 - Auf Ebene 2 sollten die Peer-to-Peer Navigationselemente für die A2-Seiten nur mit den anderen A2-Seiten verknüpft werden. Sie sollten nicht mit Seiten auf Ebene 2 in der C-Unterstruktur verknüpft sein.
     :::column-end:::
 :::row-end:::
 
 ## <a name="use-the-right-controls"></a>Verwenden der richtigen Steuerelemente
 
-Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entscheiden, wie der Benutzer durch die Seiten navigieren soll. UWP bietet eine Vielzahl von Navigationssteuerelementen, um ein konsistentes und zuverlässiges Navigationserlebnis in Ihrer App zu gewährleisten.
+Nachdem du dich für eine Seitenstruktur entschieden hast, musst du dir überlegen, wie die Benutzer durch die entsprechenden Seiten navigieren sollen. Die UWP bietet eine Vielzahl von Navigationssteuerelementen, um in deiner App ein konsistentes und zuverlässiges Navigationserlebnis zu gewährleisten.
 
 :::row:::
     :::column:::
@@ -170,7 +170,7 @@ Sobald Sie sich für eine Seitenstruktur entschieden haben, müssen Sie entschei
     :::column span="2":::
         [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
-Mit wenigen Ausnahmen verwendet jede App mit mehrere Seiten den Frame. In einem typischen Szenario hat die App eine Hauptseite, die den Frame und ein primäres Navigationselement beinhaltet, z. B. ein Navigationssteuerelement. Wählt der Benutzer eine Seite, wird sie durch den Frame geladen und angezeigt.
+Für Apps mit mehreren Seiten wird fast immer ein Frame verwendet. Eine App verfügt in der Regel über eine Hauptseite, die den Frame und ein primäres Navigationselement (beispielsweise ein NavigationView-Steuerelement) enthält. Wenn der Benutzer eine Seite auswählt, wird sie durch den Frame geladen und angezeigt.
 :::row-end:::
 
 :::row:::
@@ -180,18 +180,18 @@ Mit wenigen Ausnahmen verwendet jede App mit mehrere Seiten den Frame. In einem 
     :::column span="2":::
         [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
 
-Zeigt eine horizontale Liste mit Links zu Seiten auf derselben Ebene an. Die [NavigationView](../controls-and-patterns/navigationview.md) Steuerelement implementiert der oberen Navigationsleiste und Registerkarten von Mustern.
+Zeigt eine horizontale Liste mit Links zu Seiten auf der gleichen Ebene an. Das Steuerelement [NavigationView](../controls-and-patterns/navigationview.md) implementiert die Muster für die obere Navigation und die Registerkarten.
         
-Verwenden Sie oben im Navigationsbereich bei:
+Die obere Navigation kann in folgenden Fällen verwendet werden:
 
-- Möchten Sie alle Navigationsoptionen für die auf dem Bildschirm anzuzeigen.
-- Sie verlangen mehr Speicherplatz für den Inhalt Ihrer app.
-- Symbole können nicht Ihre Navigationskategorien klar beschreiben.
+- Wenn du alle Navigationsoptionen auf dem Bildschirm anzeigen möchtest
+- Wenn du mehr Platz für den Inhalt deiner App benötigst
+- Wenn sich deine Navigationskategorien nicht eindeutig durch Symbole darstellen lassen
         
-Mit Registerkarten, wenn:
+Registerkarten können in folgenden Fällen verwendet werden:
 
-- Navigationszustand Seite und der Verlauf beibehalten werden sollen.
-- Sie erwarten, dass Benutzer häufig Registerkarten wechseln.
+- Wenn Navigationsverlauf und Seitenzustand erhalten bleiben sollen
+- Wenn du erwartest, dass Benutzer häufig zwischen Registerkarten wechseln
 
 :::row-end:::
 
@@ -202,12 +202,12 @@ Mit Registerkarten, wenn:
         :::column span="2":::
     [**Pivot**](../controls-and-patterns/pivot.md)
     
-Ähnlich wie [Navigationsansicht](../controls-and-patterns/navigationview.md), jedoch mit zusätzlicher Unterstützung für Touch- und etwas anders verhalten.
+Ähnlich wie [NavigationView](../controls-and-patterns/navigationview.md), aber mit zusätzlicher Unterstützung von Toucheingaben und etwas anderem Navigationsverhalten.
     
-Verwenden von Pivot bei:
-- Ihre App um Touch Streifen zwischen Kategorien zu ermöglichen.
-- Sie möchten Navigationsoptionen, Karussell infintely
-- Eine umfangreiche Steuerung der Navigation verhaltensänderungen bei den verschiedenen Kategorien ist nicht erforderlich.
+Pivot kann in folgenden Fällen verwendet werden:
+- Wenn du in deiner App das Wechseln zwischen Kategorien per Wischgeste ermöglichen möchtest
+- Wenn Navigationsoptionen in Form eines Karussells dargestellt werden sollen
+- Wenn du keine umfangreiche Kontrolle über das Navigationsverhalten zwischen Kategorien benötigst
 
 :::row-end:::
 
@@ -218,10 +218,10 @@ Verwenden von Pivot bei:
     :::column span="2":::
         [**Left navigation**](../controls-and-patterns/navigationview.md)
 
-Zeigt eine vertikale Liste mit Links zu den übergeordneten Seiten an. Zu verwenden in folgenden Fällen:
+Zeigt eine vertikale Liste mit Links zu übergeordneten Seiten an. Zu verwenden in folgenden Fällen:
         
 - Die Seiten befinden sich auf der obersten Ebene.
-- Es gibt viele Navigationselementen (mehr als 5)
+- Es sind mehr als fünf Navigationselemente vorhanden.
 - Sie erwarten nicht, dass Benutzer häufig zwischen Seiten wechseln werden.
 
 :::row-end:::
@@ -233,12 +233,12 @@ Zeigt eine vertikale Liste mit Links zu den übergeordneten Seiten an. Zu verwen
     :::column span="2":::
         [**Master/details**](../controls-and-patterns/master-details.md)
 
-Zeigt eine Liste (Masteransicht) der Elemente an. Durch Auswahl eines Elements wird die entsprechende Seite im Detailbereich angezeigt. Zu verwenden in folgenden Fällen:
+Zeigt eine Liste (Masteransicht) mit Elementen an. Durch Auswählen eines Elements wird die entsprechende Seite im Detailbereich angezeigt. Zu verwenden in folgenden Fällen:
         
 - Sie erwarten, dass Benutzer häufig zwischen untergeordneten Elementen wechseln werden.
 - Sie möchten es dem Benutzer ermöglichen, Vorgänge auf hoher Ebene, z. B. Löschen oder Sortieren, für einzelne Elemente oder Gruppen von Elementen durchzuführen, und Sie möchten es dem Benutzer ermöglichen, Details für jedes Element anzuzeigen oder zu aktualisieren.
 
-Master/Details eignet sich gut für E-Mail-Posteingänge, Kontaktlisten und die Dateneingabe.
+Das Master/Details-Muster eignet sich sehr gut für E-Mail-Postfächer, Kontaktlisten und die Dateneingabe.
 :::row-end:::
 
 :::row:::
@@ -248,9 +248,9 @@ Master/Details eignet sich gut für E-Mail-Posteingänge, Kontaktlisten und die 
     :::column span="2":::
         [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
 
-Eingebettete Navigationselemente können im Inhalt einer Seite erscheinen. Im Gegensatz zu anderen Navigationselementen, die für alle Seiten konsistent sein sollten, sind im Inhalt eingebettete Navigationselemente auf jeder Seite einzigartig.
+Eingebettete Navigationselemente können im Inhalt einer Seite angezeigt werden. Im Gegensatz zu anderen Navigationselementen, die für alle Seiten konsistent sein sollten, sind im Inhalt eingebettete Navigationselemente auf jeder Seite einzigartig.
 :::row-end:::
 
-## <a name="next-add-navigation-code-to-your-app"></a>nächster: Hinzufügen von Navigations-Code zu Ihrer app
+## <a name="next-add-navigation-code-to-your-app"></a>Nächster Schritt: Hinzufügen von Navigationscode zu deiner App
 
-Im nächsten Artikel, [Implementierung grundlegender Navigation,](navigate-between-two-pages.md), lernen Sie den Code kennen, die für die Verwendung von Frame-Steuerelementen zur Bereitstellung einer grundlegenden Navigation zwischen zwei Seiten in Ihrer App erforderlich ist.
+Im nächsten Artikel ([Implementieren einer grundlegenden Navigation](navigate-between-two-pages.md)) wird der Code behandelt, der erforderlich ist, um unter Verwendung eines Frame-Steuerelements eine grundlegende Navigation zwischen zwei Seiten in deiner App zu ermöglichen.

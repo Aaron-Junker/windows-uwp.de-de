@@ -1,32 +1,32 @@
 ---
-description: Mit C++/WinRT können Sie Windows-Runtime-APIs mit Standard-C++ String-Typen aufrufen, oder Sie können den Typ winrt::hstring verwenden.
-title: String-Verarbeitung in C++/WinRT
+description: Mit C++/WinRT kannst du Windows-Runtime-APIs über standardmäßige breite C++-Zeichenfolgentypen aufrufen oder den Typ „winrt::hstring“ verwenden.
+title: Behandeln von Zeichenfolgen in C++/WinRT
 ms.date: 04/23/2019
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, string
+keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Zeichenfolge
 ms.localizationpriority: medium
 ms.openlocfilehash: d66cdcff8eff8c620d58a5948cbcf081acea2f45
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360183"
 ---
-# <a name="string-handling-in-cwinrt"></a>String-Verarbeitung in C++/WinRT
+# <a name="string-handling-in-cwinrt"></a>Behandeln von Zeichenfolgen in C++/WinRT
 
-Mit [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), können Sie mithilfe C++-Standardbibliothek Breite Zeichenfolgen-Datentypen wie z. B. Windows-Runtime-APIs aufrufen **Std:: wstring** (Hinweis: nicht mit schmaler Zeichenfolge Typen wie z. B. **Std:: String**). C++/WinRT hat einen benutzerdefinierten String-Typ namens [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (definiert in der C++/WinRT-Basisbibliothek `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). Und das ist der String-Typ, den Windows-Runtime-Konstruktoren, -Funktionen und -Eigenschaften tatsächlich entgegennehmen und zurückgeben. Aber in vielen Fällen können Sie dank der Konvertierungskonstruktoren und Konvertierungsoperatoren von **hstring** wählen, ob Sie **hstring** in Ihrem Client-Code nutzen oder nicht. Wenn Sie APIs *erstellen*, ist es wahrscheinlicher, dass Sie **hstring** kennen müssen.
+Mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) kannst du Windows-Runtime-APIs über breite Zeichenfolgentypen (beispielsweise **std::wstring**) der C++-Standardbibliothek aufrufen. (Schmale Zeichenfolgentypen wie **std::string** können hierzu nicht verwendet werden.) C++/WinRT verfügt über einen benutzerdefinierten Zeichenfolgentyp namens [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Er ist in der C++/WinRT-Basisbibliothek `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` definiert. Und das ist der Zeichenfolgentyp, der von Windows-Runtime-Konstruktoren, -Funktionen und -Eigenschaften akzeptiert und zurückgegeben wird. Dank der Konvertierungskonstruktoren und -operatoren von **hstring** hast du aber in vielen Fällen die Wahl, ob du **hstring** in deinem Clientcode nutzen möchtest. Wenn du APIs *erstellst*, musst du dich wahrscheinlich intensiver mit **hstring** beschäftigen.
 
-Es gibt viele String-Typen in C++. Zusätzlich zu **std::basic_string** aus der C++ Standard Library existieren in vielen Bibliotheken Varianten. C++17 verfügt über String-Konvertierungstools und **std::basic_string_view**, um die Lücken zwischen den String-Typen zu schließen.  [**WinRT::hstring** ](/uwp/cpp-ref-for-winrt/hstring) bietet Konvertierung mit **std::wstring_view** um die Interoperabilität zu gewährleisten, **std::basic_string_view** konzipiert wurde.
+In C++ stehen zahlreiche Zeichenfolgentypen zur Verfügung. Neben **std::basic_string** aus der C++-Standardbibliothek gibt es in vielen Bibliotheken auch noch Varianten davon. C++17 verfügt über Hilfsprogramme für die Zeichenfolgenkonvertierung sowie über **std::basic_string_view**, um die Lücken zwischen den verschiedenen Zeichenfolgentypen zu schließen.  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) ermöglicht Konvertierungen mit **std::wstring_view**, um die Interoperabilität zu gewährleisten, für die **std::basic_string_view** entworfen wurde.
 
-## <a name="using-stdwstring-and-optionally-winrthstring-with-uri"></a>Mithilfe von **Std:: wstring** (und optional **winrt::hstring**) mit **Uri**
-[**Windows::Foundation::URI** ](/uwp/api/windows.foundation.uri) wird erstellt aus einem [ **winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
+## <a name="using-stdwstring-and-optionally-winrthstring-with-uri"></a>Verwenden von **std::wstring** (und optional **winrt::hstring**) mit **Uri**
+[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) basiert auf [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
 
 ```cppwinrt
 public:
     Uri(winrt::hstring uri) const;
 ```
 
-Aber **hstring** hat [Konvertierungskonstruktoren](/uwp/cpp-ref-for-winrt/hstring#hstringhstring-constructor), mit denen Sie damit arbeiten können, ohne sich dessen bewusst sein zu müssen. Hier ist ein Codebeispiel, das zeigt, wie man ein **Uri** aus einem Wide-String-Literal, aus einer Wide-String-Ansicht und aus einem **std::wstring** macht.
+**hstring** verfügt jedoch über [Konvertierungskonstruktoren](/uwp/cpp-ref-for-winrt/hstring#hstringhstring-constructor), sodass du damit arbeiten kannst, ohne weiter darauf zu achten. Das folgende Codebeispiel zeigt die Umwandlung eines breiten Zeichenfolgenliterals, einer breiten Zeichenfolgeansicht und eines Elements vom Typ **std::wstring** in einen **URI**:
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -53,14 +53,14 @@ int main()
 }
 ```
 
-Die Eigenschaftszugriffsfunktion [**Uri::Domain**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.Domain) ist vom Typ **hstring**.
+Der Eigenschaftenaccessor [**Uri::Domain**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.Domain) ist vom Typ **hstring**.
 
 ```cppwinrt
 public:
     winrt::hstring Domain();
 ```
 
-Aber auch dieses Detail ist optional (dank des [Konvertierungsoperators für **std::wstring_view**](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view) von **hstring**.
+Aber dank des [Konvertierungsoperators für **std::wstring_view**](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view) von **hstring** muss dir auch dieses Detail nicht unbedingt bewusst sein.
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -72,7 +72,7 @@ hstring domainHstring{ contosoUri.Domain() }; // L"contoso.com"
 domainHstring = awUri.Domain(); // L"adventure-works.com"
 ```
 
-Ebenso gibt [**IStringable::ToString**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nf-windows-foundation-istringable-tostring) ein hstring zurück.
+Analog dazu wird von [**IStringable::ToString**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nf-windows-foundation-istringable-tostring) eine hstring-Zeichenfolge zurückgegeben.
 
 ```cppwinrt
 public:
@@ -91,26 +91,26 @@ hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
 tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
 ```
 
-Sie können die [**hstring::c_str-Funktion**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) verwenden, um einen Standard Wide-String aus einem **hstring** zu erhalten (genau wie aus einem **std::wstring**).
+Du kannst die [**Funktion „hstring::c_str“** ](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) verwenden, um aus einer **hstring**-Zeichenfolge eine breite Standardzeichenfolge zu erhalten (genau wie bei **std::wstring**).
 
 ```cppwinrt
 #include <iostream>
 std::wcout << tostringHstring.c_str() << std::endl;
 ```
-Wenn Sie einen **hstring** haben, dann können Sie daraus einen **Uri** machen.
+Wenn du über eine **hstring**-Zeichenfolge verfügst, kannst du diese in einen **URI** konvertieren.
 
 ```cppwinrt
 Uri awUriFromHstring{ tostringHstring };
 ```
 
-Nehmen wir eine Methode, die einen **hstring** entgegennimmt.
+Zur Veranschaulichung verwenden wir eine Methode, die eine **hstring**-Zeichenfolge akzeptiert:
 
 ```cppwinrt
 public:
     Uri CombineUri(winrt::hstring relativeUri) const;
 ```
 
-Alle Optionen, die Sie gerade gesehen haben, gelten auch in solchen Fällen.
+Alle der weiter oben behandelten Optionen gelten auch in solchen Fällen.
 
 ```cppwinrt
 std::wstring contact{ L"contact" };
@@ -119,7 +119,7 @@ contosoUri = contosoUri.CombineUri(contact);
 std::wcout << contosoUri.ToString().c_str() << std::endl;
 ```
 
-**hstring** hat einen MItgliedkonvertierungsoperator **std::wstring_view**, und die Konvertierung wird kostenlos durchgeführt.
+**hstring** besitzt einen Memberkonvertierungsoperator (**std::wstring_view**), und die Konvertierung erfolgt kostenlos.
 
 ```cppwinrt
 void legacy_print(std::wstring_view view);
@@ -130,12 +130,12 @@ void Print(winrt::hstring const& hstring)
 }
 ```
 
-## <a name="winrthstring-functions-and-operators"></a>**winrt::hstring** Funktionen und Operatoren
-Eine Vielzahl von Konstruktoren, Operatoren, Funktionen und Iteratoren sind für [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) implementiert.
+## <a name="winrthstring-functions-and-operators"></a>**winrt::hstring**: Funktionen und Operatoren
+Für [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) wurde eine Vielzahl von Konstruktoren, Operatoren, Funktionen und Iteratoren implementiert.
 
-Ein **hstring** ist ein Gültigkeitsbereich, also können Sie ihn mit einem bereichsbasierten `for` oder mit `std::for_each` verwenden. Es bietet auch Vergleichsoperatoren für den natürlichen und effizienten Vergleich mit seinen Pendants in der C++ Standard Library. Und es enthält alles, was Sie brauchen, um **hstring** als Schlüssel für assoziative Container zu verwenden.
+Da es sich bei **hstring** um einen Bereich handelt, kannst du „hstring“ mit bereichsbasiertem `for` oder mit `std::for_each` verwenden. Es bietet auch Vergleichsoperatoren für natürliche und effiziente Vergleiche mit den entsprechenden Pendants in der C++-Standardbibliothek. Außerdem ist bereits alles enthalten, um **hstring** als Schlüssel für assoziative Container verwenden zu können.
 
-Wir stellen fest, dass viele C++ Bibliotheken **std::string** verwenden und ausschließlich mit UTF-8-Text arbeiten. Zur Bequemlichkeit bieten wir Hilfsprogramme an, wie z. B. [**winrt::to_string**](/uwp/cpp-ref-for-winrt/to-string) und [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring), für die Konvertierung in beide Richtungen.
+Viele C++ Bibliotheken verwenden **std::string** und arbeiten ausschließlich mit UTF-8-Text. Zur Vereinfachung stehen Hilfsprogramme wie [**winrt::to_string**](/uwp/cpp-ref-for-winrt/to-string) und [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) für die Konvertierung in beide Richtungen zur Verfügung.
 
 ```cppwinrt
 winrt::hstring w{ L"Hello, World!" };
@@ -147,17 +147,17 @@ w = winrt::to_hstring(c);
 WINRT_ASSERT(w == L"Hello, World!");
 ```
 
-Weitere Beispiele und Informationen über **hstring**-Funktionen und -Operatoren finden Sie im Referenzthema der [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)-API.
+Weitere Beispiele und Informationen zu **hstring**-Funktionen und -Operatoren findest du im API-Referenzthema für [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
 
 ## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a>Die Gründe für **winrt::hstring** und **winrt::param::hstring**
-Die Windows-Runtime ist in Form von **wchar_t** Zeichen implementiert, aber das Application Binary Interface (ABI) von Windows-Runtime ist keine Teilmenge der Möglichkeiten von **std::wstring** oder **std::wstring_view**. Diese zu nutzen, würde zu erheblicher Ineffizienz führen. Stattdessen bietet C++/WinRT **winrt::hstring**, das einen unveränderlichen String darstellt, der mit dem zugrundeliegenden [HSTRING](https://docs.microsoft.com/windows/desktop/WinRT/hstring) übereinstimmt und hinter einer Schnittstelle ähnlich der von **std::wstring** implementiert ist. 
+Die Windows-Runtime-Implementierung basiert auf **wchar_t**-Zeichen, die binäre Anwendungsschnittstelle (Application Binary Interface, ABI) der Windows-Runtime ist jedoch keine Teilmenge dessen, was von **std::wstring** oder **std::wstring_view** bereitgestellt wird. Die Verwendung dieser Elemente wäre also äußerst ineffizient. Stattdessen steht in C++/WinRT **winrt::hstring** zur Verfügung, um eine unveränderliche Zeichenfolge darzustellen, die der zugrundeliegenden [HSTRING](https://docs.microsoft.com/windows/desktop/WinRT/hstring)-Zeichenfolge entspricht und hinter einer Schnittstelle implementiert wird, die mit der Schnittstelle von **std::wstring** vergleichbar ist. 
 
-Sie werden feststellen, dass C++/WinRT-Eingabeparameter, die logisch **winrt::hstring** akzeptieren, tatsächlich **winrt::param::hstring** erwarten. Der **param**-Namespace enthält eine Reihe von Typen, die ausschließlich zur Optimierung von Eingabeparametern verwendet werden, um für eine natürliche Bindung an C++ Standard Library-Typen zu sorgen und Kopien und andere Ineffizienzen zu vermeiden. Sie sollten diese Typen nicht direkt verwenden. Wenn Sie eine Optimierung für Ihre eigenen Funktionen verwenden wollen, dann verwenden Sie **std::wstring_view**.
+Wie du vielleicht schon bemerkt hast, wird von C++/WinRT-Eingabeparametern, die logisch betrachtet **winrt::hstring** akzeptieren sollten, tatsächlich **winrt::param::hstring** erwartet. Der **param**-Namespace enthält eine Reihe von Typen, die ausschließlich zur Optimierung von Eingabeparametern dienen, um eine natürliche Bindung an Typen der C++-Standardbibliothek zu ermöglichen und Kopien und andere Ineffizienzen zu vermeiden. Diese Typen sollten nicht direkt verwendet werden. Wenn du eine Optimierung für deine eigenen Funktionen verwenden möchtest, verwende **std::wstring_view**.
 
-Das Ergebnis ist, dass Sie die Besonderheiten der Windows-Runtime-String-Verwaltung weitgehend ignorieren und mit dem, was Sie wissen, effizient arbeiten können. Wenn man bedenkt, wie stark Strings in der Windows-Runtime verwendet werden, ist dies sehr wichtig.
+Dadurch kannst du die Besonderheiten der Windows-Runtime-Zeichenfolgenverwaltung weitgehend ignorieren und effizient arbeiten, ohne dir neues Wissen anzueignen. Das ist angesichts der intensiven Nutzung von Zeichenfolgen in der Windows-Runtime ein bedeutender Vorteil.
 
-## <a name="formatting-strings"></a>Strings formatieren
-Eine Option für die Stringformatierung ist **std::wstringstream**. Hier ist ein Beispiel, das eine einfache Debug-Trace-Meldung formatiert und anzeigt.
+## <a name="formatting-strings"></a>Formatieren von Zeichenfolgen
+Eine Möglichkeit zum Formatieren von Zeichenfolgen ist **std::wstringstream**. Im folgenden Beispiel wird eine einfache Meldung der Debugablaufverfolgung formatiert und angezeigt:
 
 ```cppwinrt
 #include <sstream>
@@ -172,6 +172,6 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 ```
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [WinRT::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
-* [WinRT::to_hstring-Funktion](/uwp/cpp-ref-for-winrt/to-hstring)
-* [WinRT::to_string-Funktion](/uwp/cpp-ref-for-winrt/to-string)
+* [Struktur „winrt::hstring“](/uwp/cpp-ref-for-winrt/hstring)
+* [Funktion „winrt::to_hstring“](/uwp/cpp-ref-for-winrt/to-hstring)
+* [Funktion „winrt::to_string“](/uwp/cpp-ref-for-winrt/to-string)

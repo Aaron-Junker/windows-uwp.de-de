@@ -6,42 +6,42 @@ label: Icons
 template: detail.hbs
 ms.date: 05/02/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5e464251200812e79474d05d9d0a680b49167871
-ms.sourcegitcommit: 7da28cf4f4e8390bc9a21a9488b03af39271cbbe
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64564539"
 ---
 # <a name="icons-for-uwp-apps"></a>Symbole für UWP-Apps
 
 ![Headerbild für Symbole](images/icons/header-icons.png)
 
-Symbole bieten eine visuelle Kurzform für eine Aktion, ein Konzept oder ein Produkt. Durch das Komprimieren der Bedeutung in ein symbolisches Bild können Symbole Sprachhürden überwinden und dazu beitragen, eine sehr wertvolle Ressource zu sparen: Platz auf dem Bildschirm. 
+Symbole dienen zur visuellen Darstellung einer Aktion, eines Konzepts oder eines Produkts. Dank der in einem Symbolbild komprimierten Bedeutung können Symbole Sprachhürden überwinden und dazu beitragen, eine äußerst wertvolle Ressource zu sparen: Platz auf dem Bildschirm. 
 
-Symbole können in Apps angezeigt werden – und außerhalb von Apps: 
+Symbole können sowohl innerhalb als auch außerhalb von Apps vorkommen: 
 
 :::row:::
     :::column:::
         **Icons inside the app**
 
         ![icons inside the app](images/icons/inside-icons.png)
-In Ihre app verwenden Sie die Symbole zur Darstellung einer Aktion, z. B. Text zu kopieren, oder Navigieren auf der Seite "Einstellungen".
+Innerhalb deiner App stellen Symbole eine Aktion dar – etwa das Kopieren von Text oder das Aufrufen der Einstellungsseite.
     :::column-end:::
     :::column:::
-**Symbole, die außerhalb der app**
+**Symbole außerhalb der App**
 
         ![icons outside the app](images/icons/outside-icons.jpg)
-Außerhalb der app verwendet Windows ein Symbol für Ihre app im Startmenü und auf der Taskleiste. Wenn der Benutzer entscheidet, die Ihre app an das Startmenü anheften, kann Ihrer app-Start-Kachel das Symbol Ihrer app bieten. Das Symbol Ihrer app, die in der Titelleiste angezeigt wird, und Sie können auch einen Begrüßungsbildschirm mit das Logo Ihrer app zu erstellen.
+Außerhalb deiner App verwendet Windows ein Symbol, um deine App im Startmenü und auf der Taskleiste darzustellen. Wenn der Benutzer deine App an das Startmenü anheftet, kann die Startkachel deiner App das Symbol deiner App enthalten. Das Symbol deiner App wird auf der Titelleiste angezeigt, und du kannst einen Begrüßungsbildschirm mit dem Logo deiner App erstellen.
     :::column-end:::
 :::row-end:::
 
-In diesem Artikel werden Symbole in Ihrer App beschrieben. Informationen zu Symbolen außerhalb Ihrer App (App-Symbole) finden Sie im [Artikel zu App- und Kachelsymbolen](/windows/uwp/design/shell/tiles-and-notifications/app-assets).
+In diesem Artikel werden Symbole innerhalb deiner App beschrieben. Informationen zu Symbolen außerhalb deiner App (App-Symbole) findest du im [Artikel zu App- und Kachelsymbolen](/windows/uwp/design/shell/tiles-and-notifications/app-assets).
 
 ## <a name="when-to-use-icons"></a>Wann Symbole verwendet werden sollten
 
@@ -52,13 +52,13 @@ Symbole können Platz sparen, aber wann ist eine Verwendung sinnvoll?
         ![do](images/do.svg)
         ![icons standard image](images/icons/icons-standard.svg)<br>
 
-Verwenden Sie ein Symbol für Aktionen wie Ausschneiden, kopieren, einfügen, und speichern oder für die Navigationselemente im Navigationsmenü aus.
+Verwende ein Symbol für Aktionen wie Ausschneiden, Kopieren, Einfügen und Speichern oder für Navigationselemente in einem Navigationsmenü.
     :::column-end:::
     :::column:::
         ![don't](images/dont.svg)
         ![icons concept image](images/icons/icons-concept.svg)<br>
 
-Verwenden Sie ein Symbol, wenn bereits eine weitere Informationen zum Konzept vorhanden ist, die Sie darstellen möchten. (Um festzustellen, ob ein Symbol vorhanden ist, überprüfen Sie die Liste der Segoe-Symbol.)
+Verwende ein Symbol, wenn für das gewünschte Konzept bereits eines vorhanden ist. (Ob bereits ein Symbol vorhanden ist, erfährst du in der Segoe-Symbolliste.)
     :::column-end:::
 :::row-end:::
 
@@ -67,26 +67,26 @@ Verwenden Sie ein Symbol, wenn bereits eine weitere Informationen zum Konzept vo
         ![do](images/do.svg)
         ![icon shopping cart](images/icons/icon-shopping-cart.svg)<br>
 
-Verwenden Sie ein Symbol aus, wenn für den Benutzer zu verstehen, was bedeutet, dass das Symbol ist es einfach, und es einfach genug ist, um das Löschen bei kleiner Größe sein.
+Verwende ein Symbol, wenn dessen Bedeutung für den Benutzer leicht nachvollziehbar und es auch bei geringer Größe gut erkennbar ist.
     :::column-end:::
     :::column:::
         ![dont](images/dont.svg)
         ![icons concept image](images/icons/icon-bad-example.png)<br>
 
-Verwenden Sie ein Symbol nicht seine Bedeutung nicht klar ist, oder machen deutlich eine komplexe Form.
+Verwende kein Symbol, wenn dessen Bedeutung nicht eindeutig oder zur Verdeutlichung eine komplexe Form erforderlich ist.
     :::column-end:::
 :::row-end:::
 
 
 
-## <a name="using-the-right-type-of-icon"></a>Verwendung der richtigen Art von Symbol
+## <a name="using-the-right-type-of-icon"></a>Verwenden der richtigen Art von Symbol
 
-Es gibt viele Möglichkeiten, ein Symbol zu erstellen. Sie können eine Symbolschriftart wie Segoe MDL2 Assets verwenden. Sie können Ihre eigenen vektorbasiertes Bild erstellen. Sie können sogar ein Bitmap-Bild verwenden, auch wenn das nicht empfohlen wird. Hier ist eine Übersicht über die verschiedenen Möglichkeiten zum Hinzufügen eines Symbols zu Ihrer App. 
+Symbole können auf unterschiedliche Weise erstellt werden. Du kannst eine Symbolschriftart wie Segoe MDL2 Assets verwenden. Du kannst ein eigenes vektorbasiertes Bild erstellen. Du kannst sogar ein Bitmap-Bild verwenden. (Davon raten wir allerdings ab.) Im Anschluss findest du eine Übersicht über die verschiedenen Methoden, mit denen du deiner App ein Symbol hinzufügen kannst: 
 
 ### <a name="use-a-predefined-icon"></a>Verwenden eines vordefinierten Symbols
 :::row:::
     :::column:::
-Microsoft bietet mehr als 1.000 Symbole in der Form der Schriftart Segoe MDL2 Bestand. Möglicherweise ist es nicht intuitiv, ein Symbol aus einer Schriftart zu nehmen, aber unsere Schriftanzeigetechnologie bedeutet, dass diese Symbole klar und scharf auf jedem Bildschirm, bei jeder Auflösung und in jeder Größe angezeigt werden. Anweisungen hierzu finden Sie unter [Segoe MDL2 Symbole](segoe-ui-symbol-font.md).
+In der Schriftart „Segoe MDL2 Assets“ von Microsoft stehen über 1.000 Symbole zur Verfügung. Die Verwendung eines Symbols aus einer Schriftart ist zwar möglicherweise nicht intuitiv, dank unserer Anzeigetechnologie für Schriftarten werden diese Symbole jedoch auf jedem Anzeigegerät, bei jeder Auflösung und in jeder Größe klar und scharf dargestellt. Eine entsprechende Anleitung findest du unter [Segoe MDL2-Symbole](segoe-ui-symbol-font.md).
     :::column-end:::
     :::column:::
         ![pre-defined icon image](images/icons/predefined-icon.png)
@@ -96,7 +96,7 @@ Microsoft bietet mehr als 1.000 Symbole in der Form der Schriftart Segoe MDL2 Be
 ### <a name="use-a-font"></a>Verwenden einer Schriftart
 :::row:::
     :::column:::
-Sie müssen keine verwenden Sie die Schriftart Segoe MDL2 Assets – können Sie alle Schriftarten, die der Benutzer hat auf ihrem System, z. B. Wingdings oder Webdings installiert.
+Es muss nicht unbedingt „Segoe MDL2 Assets“ sein: Du kannst jede beliebige Schriftart verwenden, die der Benutzer auf seinem System installiert hat – beispielsweise „Wingdings“ oder „Webdings“.
     :::column-end:::
     :::column:::
         ![wingdings image](images/icons/wingdings.png)
@@ -106,7 +106,7 @@ Sie müssen keine verwenden Sie die Schriftart Segoe MDL2 Assets – können Sie
 ### <a name="use-a-scalable-vector-graphics-svg-file"></a>Verwenden einer SVG-Datei (Scalable Vector Graphics)
 :::row:::
     :::column:::
-SVG-Ressourcen sind ideal für Symbole, da sie immer auf jeder Größe und Auflösung scharf aussehen. Die meisten Zeichenanwendungen können in das SVG-Format exportieren. Anweisungen hierzu finden Sie unter [SVGImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource).
+SVG-Ressourcen sind ideal für Symbole, da sie in jeder Größe und Auflösung gestochen scharf dargestellt werden. Die meisten Zeichenanwendungen verfügen über eine SVG-Exportfunktion. Eine entsprechende Anleitung findest du unter [SvgImageSource Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource) (Klasse „SvgImageSource“).
     :::column-end:::
     :::column:::
         ![SVG image](images/icons/icon-scale.gif)
@@ -116,17 +116,17 @@ SVG-Ressourcen sind ideal für Symbole, da sie immer auf jeder Größe und Aufl�
 ### <a name="use-geometry-objects"></a>Verwenden geometrischer Objekte
 :::row:::
     :::column:::
-Geometrien sind eine vektorbasierte-Ressource, wie SVG-Dateien sodass sie immer Spitzen gesucht werden. Das Erstellen einer Geometrie ist jedoch kompliziert, da Sie jeden Punkt und jede Kurve einzeln angeben müssen. Es ist wirklich nur eine gute Option, wenn Sie das Symbol ändern müssen, während Ihre App ausgeführt wird (z. B. um es zu animieren). Anweisungen finden Sie unter [Befehle zum Verschieben und Zeichnen von Geometrien](../../xaml-platform/move-draw-commands-syntax.md). 
+Bei geometrischen Objekten handelt es sich genau wie bei SVG-Dateien um vektorbasierte Ressourcen, die immer gestochen scharf dargestellt werden. Die Erstellung eines geometrischen Objekts ist allerdings kompliziert, da du jeden Punkt und jede Kurve einzeln angeben musst. Diese Option ist eigentlich nur empfehlenswert, wenn du das Symbol ändern musst, während deine App ausgeführt wird (um es beispielsweise zu animieren). Eine entsprechende Anleitung findest du unter [Move and draw commands syntax](../../xaml-platform/move-draw-commands-syntax.md) (Syntax für Befehle zum Verschieben und Zeichnen). 
     :::column-end:::
     :::column:::
         ![Geometry objects image](images/icons/geometry-objects.png)
     :::column-end:::
 :::row-end:::
 
-### <a name="you-can-also-use-a-bitmap-image-such-as-png-gif-or-jpeg-although-we-dont-recommend-it"></a>Sie können auf ein Bitmap-Bild wie PNG, GIF oder JPEG verwenden, auch wenn das nicht empfohlen wird.
+### <a name="you-can-also-use-a-bitmap-image-such-as-png-gif-or-jpeg-although-we-dont-recommend-it"></a>Du kannst auch ein Bitmap-Bild (beispielsweise eine PNG-, GIF- oder JPEG-Datei) verwenden. Davon raten wir allerdings ab.
 :::row:::
     :::column:::
-Sie haben nach oben oder unten skaliert werden, je nachdem, wie groß das Symbol sein soll und die Auflösung des Bildschirms werden Bitmapbilder an eine bestimmte Größe erstellt. Wenn das Bild verkleinert wird, kann es verschwommen angezeigt werden. Wenn es vergrößert wird, kann es eckig und verpixelt aussehen. Wenn Sie ein Bitmap-Bild verwenden müssen, empfehlen wir die Verwendung einer PNG- oder GIF-Datei anstelle des JPEG-Formats. 
+Bitmap-Bilder werden in einer bestimmten Größe erstellt und müssen daher je nach Bildschirmauflösung und gewünschter Symbolgröße vergrößert oder verkleinert werden. Verkleinert wirkt das Bild möglicherweise unscharf; vergrößert kann es kantig und verpixelt aussehen. Solltest du ein Bitmap-Bild verwenden müssen, verwende nach Möglichkeit eine PNG- oder GIF-Datei (anstelle einer JPEG-Datei). 
     :::column-end:::
     :::column:::
         ![don't](images/dont.svg)
@@ -136,20 +136,20 @@ Sie haben nach oben oder unten skaliert werden, je nachdem, wie groß das Symbol
 
 ## <a name="make-the-icon-do-something"></a>Festlegen einer Aktion für das Symbol
 
-Nachdem Sie ein Symbol haben, besteht der nächste Schritt, um einen Befehl oder einer Navigationsaktion zuordnen Zweck zu erleichtern. Die beste Möglichkeit hierzu ist das Symbol auf eine Schaltfläche oder eine Befehlsleiste hinzufügen. 
+Der nächste Schritt darin, deinem Symbol einen Befehl oder eine Navigationsaktion zuzuordnen. Dazu fügst du das Symbol am besten einer Schaltfläche oder Befehlsleiste hinzu. 
 
-![Befehlsleistenbild](images/icons/app-bar-desktop.svg)
+![Abbildung: Befehlsleiste](images/icons/app-bar-desktop.svg)
 
 ## <a name="create-an-icon-button"></a>Erstellen einer Symbolschaltfläche
 
-Sie können ein Symbol in eine Standardschaltfläche einfügen. Da Sie Schaltflächen an vielfältigeren Orten verwenden können, erhalten Sie damit etwas mehr Flexibilität, welcher Stelle Ihr Aktionssymbol angezeigt wird. 
+Du kannst ein Symbol einer Standardschaltfläche hinzufügen. Da Schaltflächen an verschiedensten Orten verwendet werden können, kannst du dadurch etwas flexibler bestimmen, wo dein Aktionssymbol angezeigt werden soll. 
 
-Es gibt verschiedene Möglichkeiten, ein Symbol zu einer Schaltfläche hinzuzufügen:
+Ein Symbol kann einer Schaltfläche auf unterschiedliche Weise hinzugefügt werden:
 
 :::row:::
     :::column span="2":::
         <b>Step 1</b><br>
-Legen Sie auf der Schaltfläche Schriftfamilie `Segoe MDL2 Assets` und der Content-Eigenschaft auf den Unicode-Wert des Symbols für das Sie verwenden möchten:
+Lege die Schriftfamilie der Schaltfläche auf `Segoe MDL2 Assets` und die Inhaltseigenschaft auf den Unicode-Wert der gewünschten Glyphe fest:
     :::column-end:::
     :::column:::
         ![Create an icon button step 1](images/icons/create-icon-step-1.svg)
@@ -163,7 +163,7 @@ Legen Sie auf der Schaltfläche Schriftfamilie `Segoe MDL2 Assets` und der Conte
 :::row:::
     :::column span="2":::
         <b>Step 2</b><br>
-Sie können eines der Objekte die Symbol-Element verwenden: [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon), [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon), oder [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). Dies bietet Ihnen weitere Arten von Symbolen, die zur Auswahl und können Sie Symbole und andere Arten von Inhalten, z. B. Text, kombiniert werden, wenn Sie möchten:
+Du kannst eines der Symbolelementobjekte verwenden: [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon), [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) oder [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). Dadurch hast du mehr Symboltypen zur Auswahl, und du kannst auf Wunsch Symbole mit anderen Arten von Inhalten (beispielsweise Text) kombinieren:
     :::column-end:::
     :::column:::
         ![Create an icon button step 2](images/icons/icon-text-step-2.svg)
@@ -179,18 +179,18 @@ Sie können eines der Objekte die Symbol-Element verwenden: [BitmapIcon](https:/
 </Button>
 ```
 
-## <a name="create-a-series-of-icons-in-a-command-bar"></a>Erstellen einer Reihe von Symbolen in einer Befehlsleiste
+## <a name="create-a-series-of-icons-in-a-command-bar"></a>Erstellen einer Reihe von Symbolen auf einer Befehlsleiste
 
 :::row:::
     :::column span:::
-Wenn Sie eine Reihe von Befehlen, die zusammengehören, haben, wie z. B. Ausschneiden/Kopieren/Einfügen oder eine Gruppe von Zeichnen-Befehle für ein Programm bearbeiten, speichern Sie sie zusammen in einem [Befehlsleiste](../controls-and-patterns/app-bars.md). Eine Befehlsleiste enthält eine oder mehrere Schaltflächen oder Umschaltflächen der App-Leiste, die jeweils eine Aktion darstellen. Jede Schaltfläche verfügt über eine [Symbol](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon)-Eigenschaft, mit der Sie steuern, welches Symbol angezeigt wird. Es gibt eine Vielzahl von Möglichkeiten, um das Symbol anzugeben. 
+Zusammengehörige Befehle wie „Ausschneiden“, „Kopieren“ und „Einfügen“ oder eine Reihe von Zeichenbefehlen für ein Fotobearbeitungsprogramm können auf einer [Befehlsleiste](../controls-and-patterns/app-bars.md) zusammengefasst werden. Eine Befehlsleiste enthält einzelne oder mehrere Schaltflächen oder Umschaltflächen der App-Leiste, die jeweils eine Aktion darstellen. Jede Schaltfläche verfügt über eine Eigenschaft vom Typ [Icon](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon), die steuert, welches Symbol angezeigt wird. Das Symbol kann auf unterschiedliche Weise angegeben werden. 
     :::column-end:::
     :::column:::
         ![Example of a command bar with icons](images/icons/create-icon-command-bar.svg)
     :::column-end:::
 :::row-end:::
 
-Die einfachste Möglichkeit ist die Verwendung der von uns bereitgestellten Liste vordefinierter Symbole: Geben Sie einfach den Namen des Symbols an, z. B. „Zurück“ oder „Beenden“, und das System zeichnet das entsprechende Symbol: 
+Die komfortabelste Methode ist die Verwendung der von uns bereitgestellten Liste vordefinierter Symbole: Gib einfach den Namen des Symbols an (beispielsweise „Back“ oder „Stop“), und das System zeichnet das entsprechende Symbol: 
 
 ``` xaml
 <CommandBar>
@@ -204,18 +204,18 @@ Die einfachste Möglichkeit ist die Verwendung der von uns bereitgestellten List
 </CommandBar>
 
 ```
-Die vollständige Liste mit Symbolnamen finden Sie in der [Symbolenumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+Die vollständige Liste mit Symbolnamen findest du in der [Symbolenumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
-Es gibt andere Möglichkeiten zum Bereitstellen von Symbolen für eine Schaltfläche in einer Befehlsleiste:
+Es gibt auch noch andere Möglichkeiten, um Symbole für eine Schaltfläche auf einer Befehlsleiste bereitzustellen:
 
-+ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon): Das Symbol basiert auf einer Glyphe aus der angegebenen Schriftartfamilie.
-+ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon): Das Symbol basiert auf einer Bitmapbilddatei mit dem festgelegten **URI**.
-+ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon): Das Symbol basiert auf [Path](/uwp/api/windows.ui.xaml.shapes.path)-Daten.
++ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon): Das Symbol basiert auf einer Glyphe aus der angegebenen Schriftfamilie.
++ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon): Das Symbol basiert auf einer Bitmap-Bilddatei mit dem angegebenen **URI**.
++ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon): Das Symbol basiert auf Pfaddaten ([Path](/uwp/api/windows.ui.xaml.shapes.path)).
 
-Weitere Informationen zu Befehlszeilen finden Sie im [Artikel zu Befehlsleisten](../controls-and-patterns/app-bars.md). 
+Weitere Informationen zu Befehlsleisten findest du in [diesem Artikel](../controls-and-patterns/app-bars.md). 
 
 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Richtlinien für die Kachel "und" Symbol-Objekte](../shell/tiles-and-notifications/app-assets.md)
+* [App-Symbole und Logos](../shell/tiles-and-notifications/app-assets.md)

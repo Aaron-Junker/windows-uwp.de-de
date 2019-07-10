@@ -16,7 +16,7 @@ ms.locfileid: "66371175"
 # <a name="events-and-routed-events-overview"></a>Übersicht über Ereignisse und Routingereignisse
 
 **Wichtige APIs**
-- [ **"UIElement"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)
+- [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)
 - [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs)
 
 Wir beschreiben die Programmierkonzept von Ereignissen in einer Windows-Runtime-app, bei Verwendung C#, Visual Basic oder Visual C++-komponentenerweiterungen (C++ / CX) als Programmiersprache aus, und XAML für die Definition der Benutzeroberfläche. Sie können im Rahmen der Deklarationen für UI-Elemente Handler für Ereignisse in XAML zuweisen. Alternativ können Sie Handler im Code hinzufügen. Die Windows-Runtime unterstützt *Routingereignisse*: Bestimmte Eingabeereignisse und Datenereignisse können von anderen Objekten behandelt werden als dem Objekt, von dem das Ereignis ausgelöst wurde. Routingereignisse sind hilfreich, wenn Sie Steuerelementvorlagen definieren oder Seiten oder Layoutcontainer verwenden.

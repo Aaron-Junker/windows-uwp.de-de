@@ -1,27 +1,27 @@
 ---
-description: Dieses Thema zeigt, wie man Event-Handling-Delegaten mit C++/WinRT registriert und widerruft.
-title: Verarbeiten von Ereignissen über Delegaten in C++/WinRT
-ms.date: 03/04/2019
+description: Dieses Thema zeigt, wie Event-Handling-Delegaten mit C++/WinRT registriert und widerrufen werden.
+title: Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
+ms.date: 04/23/2019
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projiziert, projizierung, varbeiten, ereignis, delegat
+keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: c647168f44ffbfc4d753700a87825b5ca7b28544
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
-ms.translationtype: MT
+ms.openlocfilehash: 00870a196517f975d2736298513be7567f3dd29e
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921676"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64745055"
 ---
-# <a name="handle-events-by-using-delegates-in-cwinrt"></a>Verarbeiten von Ereignissen über Delegaten in C++/WinRT
+# <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
-In diesem Thema wird gezeigt, wie zum Registrieren und Sperren für die Ereignisbehandlung Delegaten mit [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Sie können ein Ereignis mit jedem Objekt verarbeiten, das einer normalen C++ Funktion entspricht.
+In diesem Thema erfährst du, wie du Delegaten, die Ereignisse behandeln, mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) registrierst und widerrufst. Du kannst ein Ereignis mit jedem funktionsähnlichen C++-Standardobjekt behandeln.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden der C++WinRT Visual Studio-Erweiterung (VSIX) und das NuGet-Paket (die zusammen bieten die Projektvorlage und Buildunterstützung) finden Sie unter [Visual Studio-Unterstützung für C++"/ WinRT"](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-## <a name="register-a-delegate-to-handle-an-event"></a>Einen Delegaten für die Verarbeitung eines Ereignisses registrieren
+## <a name="register-a-delegate-to-handle-an-event"></a>Registrieren eines Delegaten zum Behandeln eines Ereignisses
 
-Ein einfaches Beispiel ist die Verarbeitung des Klickereignisses einer Schaltfläche. Es ist typisch, XAML-Markup zu verwenden, um eine Member-Funktion zu registrieren, um das Ereignis wie folgt zu verarbeiten.
+Ein einfaches Beispiel ist die Behandlung des Klickereignisses einer Schaltfläche. In der Regel wird XAML-Markup verwendet, um eine Memberfunktion für die Behandlung des Ereignisses zu registrieren:
 
 ```xaml
 // MainPage.xaml
@@ -36,7 +36,7 @@ void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs co
 }
 ```
 
-Anstatt dies im Markup zu deklarieren, können Sie explizit eine Member-Funktion registrieren, um ein Ereignis zu verarbeiten. Es mag nicht offensichtlich sein, aber das Argument für den [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Aufruf ist eine Instanz des [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler)-Delegaten. In diesem Fall verwenden wir die Überladung des **RoutedEventHandler**-Konstruktors, die ein Objekt und eine Pointer-to-Member-Funktion benötigt.
+Alternativ kannst du auch imperativ eine Memberfunktion für die Behandlung eines Ereignisses registrieren, anstatt eine Deklaration im Markup zu verwenden. Es ist vielleicht nicht auf den ersten Blick ersichtlich, aber das Argument für den Aufruf [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) im folgenden Code ist eine Instanz des Delegaten [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler). In diesem Fall verwenden wir die Konstruktorüberladung **RoutedEventHandler**, die ein Objekt und eine Pointer-to-Member-Funktion akzeptiert.
 
 ```cppwinrt
 // MainPage.cpp
@@ -49,9 +49,9 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> Bei der Registrierung des Delegats übergibt im obenstehenden Codebeispiel wird eine unformatierte *dies* Zeiger (zeigt auf das aktuelle Objekt). Um zu erfahren, wie Sie einen starken oder einen schwachen Verweis auf das aktuelle Objekt herzustellen, finden Sie unter den **bei Verwendung eine Memberfunktion als Delegat** Unterabschnitt im Abschnitt [problemlos den Zugriff auf die *dies* Zeiger mit einem Delegaten zur Verarbeitung von Ereignissen](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+> Beim Registrieren des Delegaten wird im obigen Codebeispiel ein unformatierter Zeiger vom Typ *this* übergeben, der auf das aktuelle Objekt verweist. Informationen zum Einrichten eines starken oder schwachen Verweises auf ein aktuelles Objekt findest du im Unterabschnitt **Wenn Sie eine Memberfunktion als Stellvertretung verwenden** des Abschnitts [Sicheres Zugreifen auf den *this*-Zeiger mit einem Delegaten für die Ereignisbehandlung](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
-Es gibt andere Möglichkeiten, ein **RoutedEventHandler** zu erstellen. Im folgenden ist die Syntax dieses Dokumentationsthema für entnommen [ **RoutedEventHandler** ](/uwp/api/windows.ui.xaml.routedeventhandler) (Wählen Sie  *C++"/ WinRT"* aus der **Sprache** -Dropdown in der oberen rechten Ecke der Webseite). Beachten Sie die verschiedenen Konstruktoren: Einer nimmt ein Lambda entgegen (ein anderer eine freie Funktion) und ein weiterer (der oben verwendete) nimmt ein Objekt und eine Pointer-to-Member-Funktion entgegen.
+Ein Handler vom Typ **RoutedEventHandler** kann auch noch auf andere Weise erstellt werden. Der folgende Syntaxblock stammt aus dem Dokumentationsthema für [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler). (Wähle rechts oben auf dieser Webseite im Dropdownmenü **Sprache** die Option *C++/WinRT* aus.) Beachte die verschiedenen Konstruktoren: Einer akzeptiert eine Lambda-Funktion, ein anderer eine freie Funktion und ein weiterer (der oben verwendete) ein Objekt sowie eine Pointer-to-Member-Funktion.
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -65,27 +65,27 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 };
 ```
 
-Die Syntax des Funktionsaufrufoperators ist ebenfalls hilfreich. Sie sagt Ihnen, welche Parameter Ihr Delegat haben muss. Wie Sie sehen, entspricht in diesem Fall die Syntax des Funktionsaufrufoperators den Parametern unseres **MainPage::ClickHandler**.
+Die Syntax des Funktionsaufrufoperators ist ebenfalls hilfreich. Sie gibt Aufschluss über die benötigten Delegatparameter. Wie du siehst, entspricht in diesem Fall die Syntax des Funktionsaufrufoperators den Parametern unseres Handlers vom Typ **MainPage::ClickHandler**.
 
 > [!NOTE]
-> Alle angegebenen Ereignisse um die Details der des Delegaten-Parameter und die Delegaten zu ermitteln, finden Sie unter erste dieses Dokumentationsthema für das Ereignis selbst. Sehen wir uns die [UIElement.KeyDown Ereignis](/uwp/api/windows.ui.xaml.uielement.keydown) als Beispiel. Besuchen Sie dieses Thema, und wählen  *C++"/ WinRT"* aus der **Sprache** Dropdown-Liste. In der Syntaxblock am Anfang des Themas sehen Sie diese.
+> Navigiere zum Ermitteln der Details eines Ereignisdelegaten sowie der zugehörigen Parameter zunächst zum Dokumentationsthema für das Ereignis. Nehmen wir beispielsweise das [Ereignis „UIElement.KeyDown“](/uwp/api/windows.ui.xaml.uielement.keydown). Rufe dieses Thema auf, und wähle in der Dropdownliste **Sprache** die Option  *C++/WinRT* aus. Der Syntaxblock am Anfang des Themas enthält Folgendes:
 > 
 > ```cppwinrt
 > // Register
 > event_token KeyDown(KeyEventHandler const& handler) const;
 > ```
 >
-> Dass Informationen an, die des Benutzers die **UIElement.KeyDown** Ereignis (das Thema auf) hat einen Delegattyp mit **KeyEventHandler**, da dies der Typ ist, die Sie übergeben, wenn Sie einen Delegaten mit diesen Ereignistyp registrieren. Daher führen Sie jetzt den Link zu diesem Thema, [KeyEventHandler Delegaten](/uwp/api/windows.ui.xaml.input.keyeventhandler) Typ. Hier enthält der Syntaxblock einen Funktionsaufrufoperator. Und wie bereits erwähnt, informiert Sie was des Delegaten-Parameter werden müssen.
+> Hier kannst du sehen, dass das Ereignis **UIElement.KeyDown** (das aufgerufene Thema) den Delegattyp **KeyEventHandler** besitzt, da dieser Typ beim Registrieren eines Delegaten mit diesem Ereignistyp übergeben wird. Klicke in dem Thema auf den Link zu diesem Delegattyp ([KeyEventHandler](/uwp/api/windows.ui.xaml.input.keyeventhandler)). Der dort bereitgestellte Syntaxblock enthält einen Funktionsaufrufoperator. Und dieser gibt wie bereits erwähnt Aufschluss über die benötigten Delegatparameter.
 > 
 > ```cppwinrt
 > void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
 > ```
 >
->  Wie Sie sehen können, muss der Delegat deklariert werden, wird ein **"iinspectable"** als Absender und einer Instanz von der [KeyRoutedEventArgs Klasse](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) wie der Args.
+>  Wie du siehst, muss der Delegat deklariert werden, um ein Element vom Typ **IInspectable** als Absender und eine Instanz der [Klasse „KeyRoutedEventArgs“](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) als Argumente zu akzeptieren.
 >
-> Um ein weiteres Beispiel sehen wir uns die [Popup.Closed Ereignis](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Ist der Delegattyp [EventHandler\<"iinspectable"\>](/uwp/api/windows.foundation.eventhandler). Der Delegat dauert also eine **"iinspectable"** als Absender und ein anderes **"iinspectable"** (da, die die **EventHandler**des Typparameter) wie der Args.
+> Sehen wir uns ein weiteres Beispiel an: das [Ereignis „Popup.Closed“](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Sein Delegattyp ist [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler). Dein Delegat akzeptiert also ein Element vom Typ **IInspectable** als Absender und ein weiteres Element vom Typ **IInspectable** als Argumente (da es sich dabei um den Typparameter von **EventHandler** handelt).
 
-Wenn Sie nicht viel in Ihrem Ereignis-Handler erledigen, dann können Sie eine Lambda-Funktion anstelle einer Mitgliedsfunktion verwenden. In diesem Fall möglicherweise nicht aus dem Codebeispiel unten wird jedoch ein **RoutedEventHandler** Delegat von einer Lambdafunktion, die in diesem Fall muss die Syntax des Funktionsaufrufoperators entsprechen, die wir oben beschrieben erstellt wird.
+Wenn dein Ereignishandler nicht viel zu tun hat, kannst du anstelle einer Memberfunktion eine Lambda-Funktion verwenden. Auch hier ist es vielleicht nicht auf den ersten Blick ersichtlich, aber im folgenden Codebeispiel wird ein Delegat vom Typ **RoutedEventHandler** auf der Grundlage einer Lambda-Funktion erstellt, und auch hier muss wieder die entsprechende Syntax des oben erläuterten Funktionsaufrufoperators verwendet werden.
 
 ```cppwinrt
 MainPage::MainPage()
@@ -99,7 +99,7 @@ MainPage::MainPage()
 }
 ```
 
-Sie können sich dafür entscheiden, etwas konkreter zu werden, wenn Sie Ihren Delegaten konstruieren. Beispielsweise bei der Weitergabe oder der mehrfachen Verwendung.
+Ein Delegat kann auch etwas expliziter konstruiert werden. Beispielsweise, wenn du ihn weitergeben oder mehrmals verwenden möchtest.
 
 ```cppwinrt
 MainPage::MainPage()
@@ -115,9 +115,9 @@ MainPage::MainPage()
 }
 ```
 
-## <a name="revoke-a-registered-delegate"></a>Einen registrierten Delgaten widerrufen
+## <a name="revoke-a-registered-delegate"></a>Widerrufen eines registrierten Delegaten
 
-Wenn Sie einen Deleganten registrieren, wird Ihnen in der Regel ein Token zurückgegeben. Mit diesem Token können Sie anschließend Ihren Delegaten widerrufen, d. h. die Registrierung des Delegaten für das Ereignis wird aufgehoben. Er wird nicht mehr aufgerufen, wenn das Ereignis erneut ausgelöst wird. Der Einfachheit halber hat keines der obigen Codebeispiele gezeigt, wie das geht. Das nächste Codebeispiel speichert das Token jedoch im privaten Datenelement der Struktur und widerruft seinen Handler im Destruktor.
+Wenn du einen Delegaten registrierst, wird in der Regel ein Token zurückgegeben. Mit diesem Token kannst du später deinen Delegaten widerrufen. Dadurch wird die Registrierung des Delegaten für das Ereignis aufgehoben, und er wird nicht mehr aufgerufen, wenn das Ereignis erneut ausgelöst wird. Dies wurde der Einfachheit halber in keinem der obigen Codebeispiele gezeigt. Im nächsten Codebeispiel wird das Token allerdings im privaten Datenmember der Struktur gespeichert und der zugehörige Handler im Destruktor widerrufen.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -140,9 +140,9 @@ private:
 };
 ```
 
-Statt einen starken Verweis, wie im obigen Beispiel können Sie einen schwachen Verweis auf die Schaltfläche zum Speichern (siehe [starke und schwache Verweise in C++ / WinRT](weak-references.md)).
+Anstelle eines starken Verweises wie im obigen Beispiel kannst du einen schwachen Verweis auf die Schaltfläche speichern (siehe [Starke und schwache Verweise in C++/WinRT](weak-references.md)).
 
-Wenn Sie einen Delegaten registrieren, Sie können auch angeben **winrt::auto_revoke** (Dies ist ein Wert vom Typ [ **winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) ein Ereignis zugeordneter Rücknahmeschlüssel (der anfordern Typ [ **winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)). Das Ereignis zugeordneter Rücknahmeschlüssel enthält einen schwachen Verweis auf die Ereignisquelle (das Objekt, das das Ereignis auslöst), für Sie. Sie können manuell widerrufen, indem Sie die Mitgliedsfunktion **event_revoker::revoke** aufrufen; der Event-Revoker ruft diese Funktion aber selbst automatisch auf, wenn sie ihren Gültigkeitsbereich verlässt. Die **revoke**-Funktion überprüft, ob die Ereignisquelle noch vorhanden ist, und widerruft in diesem Fall den Delegaten. In diesem Beispiel gibt es keine Notwendigkeit, die Ereignisquelle zu speichern und daher auch keinen Bedarf für einen Destruktor.
+Alternativ kannst du bei der Registrierung eines Delegaten **winrt::auto_revoke** (ein Wert vom Typ [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) angeben, um einen Ereignis-Revoker (vom Typ [**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) anzufordern. Der Ereignis-Revoker enthält einen schwachen Verweis auf die Ereignisquelle (das Objekt, das das Ereignis auslöst). Zum manuellen Widerrufen kannst du die Memberfunktion **event_revoker::revoke** aufrufen. Der Ereignis-Revoker ruft diese Funktion bei Verlassen des Gültigkeitsbereichs aber automatisch selbst auf. Die Funktion **revoke** überprüft, ob die Ereignisquelle noch vorhanden ist, und widerruft in diesem Fall deinen Delegaten. In diesem Beispiel muss die Ereignisquelle nicht gespeichert werden, und es besteht auch kein Bedarf für einen Destruktor.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -160,7 +160,7 @@ private:
 };
 ```
 
-Unten ist der Syntaxblock aus dem Dokumentationsthema für das [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis zu sehen. Es zeigt die drei verschiedenen Registrierungs- und Widerrufsfunktionen. Sie können genau sehen, welche Art von Event-Revoker Sie für die dritten Überladung deklarieren müssen.
+Der folgende Syntaxblock stammt aus dem Dokumentationsthema für das Ereignis [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Er zeigt die drei verschiedenen Registrierungs- und Widerrufsfunktionen. Anhand der dritten Überladung siehst du ganz genau, welche Art von Ereignis-Revoker du deklarieren musst.
 
 ```cppwinrt
 // Register
@@ -175,16 +175,19 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 ```
 
 > [!NOTE]
-> Im obigen Codebeispiel `Button::Click_revoker` ist ein Typalias für `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. Ein ähnliches Muster gilt für alle C++/WinRT-Ereignisse. Jede Windows-Runtime-Ereignis verfügt über eine Überladung der Revoke-Funktion, die ein Ereignis zugeordneter Rücknahmeschlüssel zurückgibt, und die zugeordneter Rücknahmeschlüssel-Typ ist ein Mitglied der Ereignisquelle. Wenn wir also, ein weiteres Beispiel, das [ **CoreWindow::SizeChanged** ](/uwp/api/windows.ui.core.corewindow.sizechanged) Ereignis verfügt über eine Registrierung funktionsüberladung, die einen Wert vom Typ zurückgibt **CoreWindow::SizeChanged_revoker**.
+> Im obigen Codebeispiel ist `Button::Click_revoker` ein Typalias für `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. Ein ähnliches Muster gilt für alle C++/WinRT-Ereignisse. Jedes Windows-Runtime-Ereignis verfügt über eine Widerrufsfunktionsüberladung, die einen Ereignis-Revoker zurückgibt, und dieser Revokertyp gehört zur Ereignisquelle. Nehmen wir als weiteres Beispiel das Ereignis [**CoreWindow::SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged): Dieses Ereignis verfügt über eine Registrierungsfunktionsüberladung, die einen Wert vom Typ **CoreWindow::SizeChanged_revoker** zurückgibt.
 
 
-In einem Seitennavigationsszenario kann es sinnvoll sein, Handler zu widerrufen. Wenn Sie wiederholt auf eine Seite navigieren und diese dann wieder verlassen, können Sie alle Handler widerrufen, wenn Sie von der Seite weg navigieren. Wenn Sie dieselbe Seiteninstanz wiederverwenden, dann überprüfen Sie alternativ den Wert Ihres Tokens und registrieren Sie sich nur, wenn er noch nicht festgelegt ist (`if (!m_token){ ... }`). Eine dritte Möglichkeit besteht darin, einen Event-Revoker als Datenelement der Seite zu speichern. Und eine vierte Möglichkeit (wird später in diesem Thema beschrieben) besteht darin, eine starke oder schwache Referenz auf das *this*-Objekt in Ihrer Lambda-Funktion zu verwenden.
+Das Widerrufen von Handlern kann etwa in einem Seitennavigationsszenario sinnvoll sein. Wenn du wiederholt zu einer Seite navigierst und sie wieder verlässt, kannst du beim Verlassen der Seite alle Handler widerrufen. Bei Wiederverwendung der gleichen Seiteninstanz kannst du alternativ den Wert deines Tokens überprüfen und die Registrierung nur ausführen, wenn er noch nicht festgelegt ist (`if (!m_token){ ... }`). Eine dritte Möglichkeit besteht darin, einen Ereignis-Revoker auf der Seite als Datenmember zu speichern. Weiter unten in diesem Thema wird außerdem noch eine vierte Möglichkeit beschrieben: die Erfassung eines starken oder schwachen Verweises auf das *this*-Objekt in deiner Lambda-Funktion.
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>Delegattypen für asynchrone Aktionen und Vorgänge
 
-Die obigen Beispiele verwenden den Delegattyp **RoutedEventHandler**, aber es gibt natürlich auch viele andere Delegattypen. Beispielsweise haben asynchrone Aktionen und Vorgänge (mit und ohne Fortschritt) Completed- und/oder Progress-Ereignisse, die Delegaten des entsprechenden Typs erwarten. Beispielsweise erfordert das Progress-Ereignis eines asynchronen Vorgangs mit Fortschritt (betrifft alles, das [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) implementiert) einen Delegaten vom Typ [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler). Hier ist ein Codebeispiel für die Erstellung eines solchen Delegaten mit einer Lambda-Funktion. Das Beispiel zeigt auch, wie man einen [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler)-Delegaten erstellt.
+In den obigen Beispielen wird der Delegattyp **RoutedEventHandler** verwendet. Es gibt aber natürlich noch viele andere Delegattypen. Asynchrone Aktionen und Vorgänge (mit und ohne Fortschritt) verfügen beispielsweise über Abschluss- und/oder Fortschrittsereignisse, die Delegaten des entsprechenden Typs erwarten. So erfordert etwa das Fortschrittsereignis eines asynchronen Vorgangs mit Fortschritt (sprich: jegliche Implementierung von [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)) einen Delegaten vom Typ [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler). Im Anschluss findest du ein Codebeispiel für die Erstellung eines solchen Delegattyps mit einer Lambda-Funktion. Das Beispiel veranschaulicht auch die Erstellung eines Delegaten vom Typ [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler).
 
 ```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Web.Syndication.h>
+
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Web::Syndication;
@@ -198,29 +201,29 @@ void ProcessFeedAsync()
 
     async_op_with_progress.Progress(
         [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& /* sender */, RetrievalProgress const& args)
-    {
-        uint32_t bytes_retrieved = args.BytesRetrieved;
-        // use bytes_retrieved;
-    });
+        {
+            uint32_t bytes_retrieved = args.BytesRetrieved;
+            // use bytes_retrieved;
+        });
 
     async_op_with_progress.Completed(
         [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const /* asyncStatus */)
-    {
-        SyndicationFeed syndicationFeed = sender.GetResults();
-        // use syndicationFeed;
-    });
-    
+        {
+            SyndicationFeed syndicationFeed = sender.GetResults();
+            // use syndicationFeed;
+        });
+
     // or (but this function must then be a coroutine, and return IAsyncAction)
     // SyndicationFeed syndicationFeed{ co_await async_op_with_progress };
 }
 ```
 
-Wie aus dem obigen „coroutine“-Kommentar hervorgeht, werden Sie es wahrscheinlich natürlicher finden, Coroutinen zu verwenden, anstatt einen Delegaten für die Completed-Ereignisse asynchroner Aktionen und Vorgänge zu verwenden. Details und Codebeispiele finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency.md).
+Wie im obigen Kommentar zu Coroutinen bereits angedeutet, ist die Verwendung von Coroutinen für dich wahrscheinlich naheliegender als die Verwendung eines Delegaten mit den Abschlussereignissen asynchroner Aktionen und Vorgänge. Ausführlichere Informationen und Codebeispiele findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency.md).
 
 > [!NOTE]
-> Es ist nicht korrekt implementiert mehrere *Abschlusshandler* für eine asynchrone Aktion oder Operation. Sie können entweder einen einzelnen Delegaten für das abgeschlossene Ereignis verwenden, oder Sie können `co_await` es. Wenn Sie beides haben, misslingt die zweite.
+> Implementiere für asynchrone Aktionen oder Vorgänge nicht mehrere *Abschlusshandler*. Du kannst entweder einen einzelnen Delegaten für das Abschlussereignis verwenden oder `co_await` dafür ausführen. Ist beides vorhanden, ist der zweite Vorgang nicht erfolgreich.
 
-Wenn Sie Delegaten anstelle einer Coroutine weiterhin verwenden, können Sie für eine einfachere Syntax optional.
+Wenn du dich für Delegaten und gegen eine Coroutine entscheidest, kannst du eine einfachere Syntax verwenden.
 
 ```cppwinrt
 async_op_with_progress.Completed(
@@ -232,7 +235,7 @@ async_op_with_progress.Completed(
 
 ## <a name="delegate-types-that-return-a-value"></a>Delegattypen, die einen Wert zurückgeben
 
-Einige Delegattypen müssen selbst einen Wert zurückgeben. Ein Beispiel ist [**ListViewItemToKeyHandler**](/uwp/api/windows.ui.xaml.controls.listviewitemtokeyhandler), der einen String zurückgibt. Hier ist ein Beispiel für die Erstellung eines solchen Delegaten (beachten Sie, dass die Lambda-Funktion einen Wert zurückgibt).
+Einige Delegattypen müssen selbst einen Wert zurückgeben. Ein Beispiel ist [**ListViewItemToKeyHandler**](/uwp/api/windows.ui.xaml.controls.listviewitemtokeyhandler), der eine Zeichenfolge zurückgibt. Hier ist ein Beispiel für die Erstellung eines solchen Delegaten. (Beachte, dass die Lambda-Funktion einen Wert zurückgibt.)
 
 ```cppwinrt
 using namespace winrt::Windows::UI::Xaml::Controls;
@@ -246,16 +249,16 @@ winrt::hstring f(ListView listview)
 }
 ```
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>Sicheren Zugriff auf die *dies* Zeiger durch einen Delegaten zur Verarbeitung von Ereignissen
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>Sicheres Zugreifen auf den *this*-Zeiger mit einem Delegaten für die Ereignisbehandlung
 
-Wenn Sie ein Ereignis mit einer Objektmemberfunktion behandeln oder aus in einer Lambda-Funktion innerhalb eines Objekts-Memberfunktion, Sie die relative Lebensdauer von der Ereignis-Empfänger (das Objekt, das das Ereignis zu behandeln) und die Ereignisquelle (das Objekt berücksichtigen müssen Auslösen des Ereignisses). Weitere Informationen und Codebeispiele, finden Sie unter [starke und schwache Verweise in C++ / WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+Wenn du ein Ereignis mit der Memberfunktion eines Objekts oder im Rahmen einer Lambda-Funktion innerhalb der Memberfunktion eines Objekts verarbeitest, musst du dir Gedanken zur relativen Lebensdauer des Ereignisempfängers (das Objekt, das das Ereignis behandelt) und der Ereignisquelle (das Objekt, das das Ereignis auslöst) machen. Weitere Informationen und Codebeispiele findest du unter [Starke und schwache Verweise in C++/WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [WinRT::auto_revoke_t Marker-Struktur](/uwp/cpp-ref-for-winrt/auto-revoke-t)
-* [winrt::implements::get_weak-Funktion](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
-* [winrt::implements::get_strong-Funktion](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
+* [Markerstruktur „winrt::auto_revoke_t“](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [Funktion „winrt::implements::get_weak“](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
+* [Funktion „winrt::implements::get_strong“](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen von Ereignissen mit C++/WinRT](author-events.md)
+* [Erstellen von Ereignissen in C++/WinRT](author-events.md)
 * [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency.md)
-* [Starke und schwache Verweise in C++ / WinRT](weak-references.md)
+* [Starke und schwache Verweise in C++/WinRT](weak-references.md)

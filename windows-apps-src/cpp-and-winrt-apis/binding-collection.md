@@ -1,37 +1,37 @@
 ---
-description: Eine Collection, die effektiv an ein XAML-Items-Steuerelement gebunden werden kann, wird als *Observable*-Collection bezeichnet. Dieses Thema zeigt, wie man eine Observable-Collection implementiert und nutzt und wie man ein XAML-Items-Steuerelement daran bindet.
-title: XAML-Items-Steuerelemente; Binden an eine C++/WinRT-Collection
+description: Eine Sammlung, die effektiv an ein XAML-Elementsteuerelement gebunden werden kann, wird als *Observable*-Sammlung bezeichnet. Dieses Thema zeigt, wie man eine Observable-Sammlung implementiert und nutzt und wie man ein XAML-Elementsteuerelement daran bindet.
+title: 'XAML-Elementsteuerelemente: Binden an eine C++/WinRT-Sammlung'
 ms.date: 04/24/2019
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projizierung, XAML, steuerelement, binden, collection
+keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, binden, Sammlung
 ms.localizationpriority: medium
 ms.openlocfilehash: 7669c6536f28d5f979567f5b433dbf614800bec3
-ms.sourcegitcommit: d23dab1533893b7fe0f01ca6eb273edfac4705e6
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65627678"
 ---
-# <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML-Items-Steuerelemente; Binden an eine C++/WinRT-Collection
+# <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML-Elementsteuerelemente: Binden an eine C++/WinRT-Sammlung
 
-Eine Collection, die effektiv an ein XAML-Items-Steuerelement gebunden werden kann, wird als *Observable*-Collection bezeichnet. Dieses Konzept basiert auf dem Software-Design-Muster, das als *Observer-Pattern* bekannt ist. In diesem Thema wird gezeigt, wie sichtbare Auflistungen im implementiert [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), und Binden von XAML-ItemsControl darauf.
+Eine Sammlung, die effektiv an ein XAML-Elementsteuerelement gebunden werden kann, wird als *Observable*-Sammlung bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Sammlungen in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementierst und XAML-Elementsteuerelemente an sie bindest.
 
-Wenn Sie zusammen mit diesem Thema folgen möchten, empfehlen wir, dass Sie zuerst das Projekt erstellen, das beschrieben ist [XAML-Steuerelemente, binden an eine C++"/ WinRT"-Eigenschaft](binding-property.md). In diesem Thema wird das Projekt mehr Code hinzugefügt, und der in diesem Thema erläuterten Konzepte hinzugefügt.
+Zur besseren Nachvollziehbarkeit dieses Themas empfiehlt es sich, zuerst das unter [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](binding-property.md) beschriebene Projekt zu erstellen. In diesem Thema wird dem Projekt weiterer Code hinzugefügt, und es werden weitere Konzepte erläutert.
 
 > [!IMPORTANT]
-> Wichtige Konzepte und Begriffe, die Ihr Verständnis für die Verwendung von Laufzeitklassen mit C++/WinRT unterstützen, finden Sie unter [Verwenden von APIs mit C++/WinRT](consume-apis.md) und [Erstellen von APIs mit C++/WinRT](author-apis.md).
+> Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit C++/WinRT findest du unter [Verwenden von APIs mit C++/WinRT](consume-apis.md) sowie unter [Erstellen von APIs mit C++/WinRT](author-apis.md).
 
-## <a name="what-does-observable-mean-for-a-collection"></a>Was bedeutet *observable* für eine Collection?
-Wenn eine Laufzeitklasse, die eine Collection repräsentiert, das Ereignis [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) auslöst, wenn ein Element hinzugefügt oder entfernt wird, dann ist die Laufzeitklasse eine Observable-Collection. Ein XAML-Items-Steuerelement kann sich an diese Ereignisse binden und sie verarbeiten, indem es die aktualisierte Collection abruft und sich dann aktualisiert, um die aktuellen Elemente anzuzeigen.
+## <a name="what-does-observable-mean-for-a-collection"></a>Was bedeutet *beobachtbar* für eine Sammlung?
+Wenn eine Laufzeitklasse, die eine Sammlung darstellt, das Ereignis [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) auslöst, sobald ihr ein Element hinzugefügt oder ein Element daraus entfernt wird, ist die Laufzeitklasse eine beobachtbare Sammlung. Ein XAML-Elementsteuerelement kann an diese Ereignisse gebunden werden und sie behandeln, indem es die aktualisierte Sammlung abruft und sich anschließend selbst aktualisiert, um die aktuellen Elemente anzuzeigen.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden der C++WinRT Visual Studio-Erweiterung (VSIX) und das NuGet-Paket (die zusammen bieten die Projektvorlage und Buildunterstützung) finden Sie unter [Visual Studio-Unterstützung für C++"/ WinRT"](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>Hinzufügen einer **BookSkus**-Collection zu **BookstoreViewModel**
+## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>Hinzufügen einer Sammlung vom Typ **BookSkus** zu **BookstoreViewModel**
 
-In [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md) haben wir eine Eigenschaft vom Typ **BookSku** zu unserem Hauptansichtsmodell hinzugefügt. In diesem Schritt verwenden wir die [ **winrt::single_threaded_observable_vector** ](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) Factory-Funktionsvorlage, um die beispielprojektdateien implementieren eine Auflistung von **BookSku** auf der gleiche Ansichtsmodell.
+In [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](binding-property.md) haben wir unserem Hauptansichtsmodell eine Eigenschaft vom Typ **BookSku** hinzugefügt. In diesem Schritt verwenden wir die Factoryfunktionsvorlage [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector), um auf der Grundlage des gleichen Ansichtsmodells eine beobachtbare Sammlung von **BookSku** zu implementieren.
 
-Deklarieren Sie eine neue Eigenschaft in `BookstoreViewModel.idl`.
+Deklariere eine neue Eigenschaft in `BookstoreViewModel.idl`.
 
 ```idl
 // BookstoreViewModel.idl
@@ -45,9 +45,9 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> In der obigen MIDL-3.0-Auflistung, beachten Sie, dass der Typ des der **BookSkus** Eigenschaft [ **IObservableVector** ](/uwp/api/windows.foundation.collections.ivector_t_) von [ **"iinspectable"** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). Im nächsten Abschnitt dieses Themas, wir werden Bindung werden die Elemente Quelle ein [ **ListBox** ](/uwp/api/windows.ui.xaml.controls.listbox) zu **BookSkus**. Ein Listenfeld, das ist ein ItemsControl-Element, und die ordnungsgemäße Festlegung der [ **ItemsControl.ItemsSource** ](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) -Eigenschaft müssen Sie es auf einen Wert vom Typ festgelegt **IObservableVector** (oder **IVector**) der **"iinspectable"**, oder eines Typs Interoperabilität, z. B. [ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
+> Wie im obigen MIDL 3.0-Listing zu sehen, handelt es sich beim Typ der Eigenschaft **BookSkus** um [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) von [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). Im nächsten Abschnitt dieses Themas binden wir die Elementquelle eines Listenfelds ([**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) an **BookSkus**. Ein Listenfeld ist ein Elementsteuerelement. Die Eigenschaft [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) muss daher auf einen Wert vom Typ **IObservableVector** (oder **IVector**) von **IInspectable** festgelegt werden – oder auf einen Interoperabilitätstyp wie [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
 
-Speichern und erstellen Sie das Projekt. Kopieren Sie die Accessor-Stubs aus `BookstoreViewModel.h` und `BookstoreViewModel.cpp` in die `\Bookstore\Bookstore\Generated Files\sources` Ordner (Weitere Informationen finden Sie im vorherige Thema [XAML-Steuerelemente, binden an eine C++"/ WinRT"-Eigenschaft](binding-property.md)). Implementieren Sie diese Stubs Accessor wie folgt.
+Speichere, und führe den Buildvorgang aus. Kopiere die Accessor-Stubs aus `BookstoreViewModel.h` und `BookstoreViewModel.cpp` in den Ordner `\Bookstore\Bookstore\Generated Files\sources`. (Ausführlichere Informationen findest du im vorherigen Thema [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](binding-property.md).) Implementiere diese Accessor-Stubs wie folgt:
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -89,8 +89,8 @@ Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspec
 ...
 ```
 
-## <a name="bind-a-listbox-to-the-bookskus-property"></a>Binden einer Listbox an die **BookSkus**-Eigenschaft
-Öffnen Sie `MainPage.xaml` mit dem XAML-Markup für unsere UI-Hauptseite. Fügen Sie den folgende Markup-Code in dem **StackPanel** hinzu, indem sich der **Button** befindet.
+## <a name="bind-a-listbox-to-the-bookskus-property"></a>Binden eines Listenfelds an die Eigenschaft **BookSkus**
+Öffne `MainPage.xaml`. Darin befindet sich das XAML-Markup für unsere UI-Hauptseite. Füge das folgende Markup innerhalb des gleichen **StackPanel**-Elements hinzu wie die Schaltfläche (**Button**).
 
 ```xaml
 <ListBox ItemsSource="{x:Bind MainViewModel.BookSkus}">
@@ -102,7 +102,7 @@ Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspec
 </ListBox>
 ```
 
-In `MainPage.cpp` fügen Sie dem **Click**-Ereignis-Handler eine Zeile Code hinzu, um ein Buch zur Collection hinzuzufügen.
+Füge in `MainPage.cpp` dem Ereignishandler für **Click** eine Codezeile hinzu, um am Ende der Sammlung ein Buch hinzuzufügen.
 
 ```cppwinrt
 // MainPage.cpp
@@ -115,11 +115,11 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 ...
 ```
 
-Erstellen Sie nun das Projekt und führen Sie es aus. Klicken Sie auf die Schaltfläche, um den **Click**-Ereignis-Handler auszuführen. Wir haben gesehen, dass die Implementierung von **Append** ein Ereignis auslöst, um die Benutzeroberfläche wissen zu lassen, dass sich die Collection geändert hat. Die **ListBox** fragt die Collection erneut ab, um ihren eigenen **Items**-Wert zu aktualisieren. Nach wie vor ändert sich der Titel eines der Bücher, und diese Titeländerung wird sowohl auf der Schaltfläche als auch in der Listbox angezeigt.
+Erstelle nun das Projekt, und führe es aus. Klicke auf die Schaltfläche, um den Ereignishandler für **Click** auszuführen. Wir haben gesehen, dass die Implementierung von **Append** ein Ereignis auslöst, um die Benutzeroberfläche darauf hinzuweisen, dass sich die Sammlung geändert hat, und dass das Listenfeld (**ListBox**) die Sammlung erneut abfragt, um ihren eigenen Wert vom Typ **Items** zu aktualisieren. Genau wie zuvor ändert sich der Titel eines der Bücher, und diese Titeländerung wird sowohl auf der Schaltfläche als auch im Listenfeld angezeigt.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
-* [Vorlage für WinRT::Make-Funktion](/uwp/cpp-ref-for-winrt/make)
+* [Funktionsvorlage „winrt::make“](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)

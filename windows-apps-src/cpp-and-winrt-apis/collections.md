@@ -1,43 +1,42 @@
 ---
 description: C++/WinRT verfügt über Funktionen und Basisklassen, mit denen Sie beim Implementieren bzw. Übergeben von Sammlungen viel Zeit sparen können.
-title: Sammlungen mit C++ / WinRT
-ms.date: 10/03/2018
+title: Sammlungen mit C++/WinRT
+ms.date: 04/23/2019
 ms.topic: article
-keywords: Windows 10, Uwp, standard, c++, Cpp, Winrt, Projektion, Auflistung
+keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Sammlung
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a50ab5f70faa0c8f8b73eada38444bcafd444d8b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: 8417897fd44d5357f40d8414102d0cbff6d16476
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635435"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64745208"
 ---
-# <a name="collections-with-cwinrt"></a>Sammlungen mit C++ / WinRT
+# <a name="collections-with-cwinrt"></a>Sammlungen mit C++/WinRT
 
-Intern verfügt über eine Windows-Runtime-Sammlung auf sehr kompliziert "bewegliche Teile" aus. Aber wenn Sie ein Auflistungsobjekt an eine Windows-Runtime-Funktion übergeben oder eine eigene Auflistung – Eigenschaften und Auflistungstypen implementieren möchten, sind Funktionen und Basisklassen in [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) , die Sie unterstützen. Diese Funktionen vereinfachen Sie die volle Kontrolle, und sparen Sie Zeit und Mühe ein enormer Aufwand verbunden.
+Intern verfügt eine Windows-Runtime-Sammlung über viele komplizierte bewegliche Teile. Wenn du aber ein Sammlungsobjekt an eine Windows-Runtime-Funktion übergeben oder deine eigenen Sammlungseigenschaften und -typen implementieren möchtest, kannst du zur Unterstützung die in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) enthaltenen Funktionen und Basisklassen verwenden. Mit diesen Features wird für dich die Komplexität verringert, und du sparst viel Zeit und Aufwand.
 
-[**IVector** ](/uwp/api/windows.foundation.collections.ivector_t_) ist die Windows-Runtime-Schnittstelle implementiert, die von jedem random-Access-Auflistung von Elementen. Würden Sie implementieren **IVector** selbst außerdem müssten Sie implementieren [ **IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_), [ **IVectorView** ](/uwp/api/windows.foundation.collections.ivectorview_t_), und [ **IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_). Auch wenn Sie *müssen* einen benutzerdefinierten Auflistungstyp, die eine Menge Arbeit. Aber wenn Sie über Daten, in verfügen einem **Std:: vector** (oder ein **Std:: Map**, oder ein **Std:: unordered_map**) möchten lediglich, die an eine Windows-Runtime-API übergeben, und Sie vermeiden möchten dieser Ebene arbeiten, wenn möglich. Und vermeiden es *ist* möglich, da C++ / WinRT hilft Ihnen die Erstellung von Auflistungen effizient und mit wenig Aufwand.
+[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) ist die Windows-Runtime-Schnittstelle, die von Elementsammlungen mit zufälligem Zugriff implementiert wird. Wenn du **IVector** selbst implementieren würdest, müsstest du auch [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_), [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_) und [**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_) implementieren. Auch wenn du *unbedingt* einen benutzerdefinierten Sammlungstyp benötigst, bedeutet dies sehr viel Arbeit. Wenn du aber über Daten in einem **std::vector**-Element (oder **std::map** oder **std::unordered_map**) verfügst und diese lediglich an eine Windows-Runtime-API übergeben möchtest, solltest du diesen Aufwand nach Möglichkeit vermeiden. *Dies ist möglich*, weil du in C++/WinRT Unterstützung bei der effizienten Erstellung von Sammlungen ohne größeren Aufwand erhältst.
 
-Siehe auch [ItemsControl für XAML, binden an einen C++ / WinRT-Auflistung](binding-collection.md).
-
-> [!NOTE]
-> Wenn die Windows-SDK-Version 10.0.17763.0 (Windows 10, Version 1809) nicht installiert haben, oder höher, dann haben Sie keinen Zugriff auf Funktionen und Klassen, die in diesem Thema dokumentiert sind. Stattdessen finden Sie unter [, wenn Sie eine ältere Version des Windows SDK ist](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) eine Auflistung einer Observable-Vektor-Vorlage, die Sie stattdessen verwenden können.
+Weitere Informationen findest du auch unter [XAML-Elementsteuerelemente; Binden an eine C++/WinRT-Sammlung](binding-collection.md).
 
 ## <a name="helper-functions-for-collections"></a>Hilfsfunktionen für Sammlungen
 
-### <a name="general-purpose-collection-empty"></a>Allgemeine, leere Auflistung
+### <a name="general-purpose-collection-empty"></a>Leere universelle Auflistung
 
-Dieser Abschnitt enthält die möglichen Szenario für die zum Erstellen einer Sammlung, die anfänglich leer ist; und füllen Sie es dann *nach* erstellen.
+In diesem Abschnitt wird die Erstellung einer Sammlung beschrieben, die anfänglich leer ist und *nach* der Erstellung aufgefüllt wird.
 
-Um ein neues Objekt eines Typs abzurufen, die eine allgemeine Auflistung implementiert, können Sie den Aufrufen der [ **winrt::single_threaded_vector** ](/uwp/cpp-ref-for-winrt/single-threaded-vector) Funktionsvorlage. Das Objekt wird zurückgegeben, als ein [ **IVector**](/uwp/api/windows.foundation.collections.ivector_t_), und das ist die Schnittstelle, die über den Sie die Funktionen und Eigenschaften des zurückgegebenen Objekts aufrufen.
+Zum Abrufen eines neuen Objekts mit einem Typ, bei dem eine universelle Sammlung implementiert wird, kannst du die Funktionsvorlage [**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector) aufrufen. Das Objekt wird als [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) zurückgegeben. Dies ist die Schnittstelle, über die du die Funktionen und Eigenschaften des zurückgegebenen Objekts aufrufst.
+
+Falls du die folgenden Codebeispiele kopieren und direkt in die Hauptquellcodedatei eines Projekts vom Typ **Windows-Konsolenanwendung (C++/WinRT)** einfügen möchtest, musst du in den Projekteigenschaften zuerst die Option **Vorkompilierte Header nicht verwenden** festlegen.
 
 ```cppwinrt
-...
+// main.cpp
 #include <winrt/Windows.Foundation.Collections.h>
 #include <iostream>
 using namespace winrt;
-...
+
 int main()
 {
     winrt::init_apartment();
@@ -56,15 +55,15 @@ int main()
 }
 ```
 
-Wie im obigen Codebeispiel sehen ist, nach der Erstellung der Sammlung kann Elemente angefügt, durchlaufen sie, und behandeln Sie das Objekt in der Regel, wie Sie ein beliebiges Sammlungsobjekt Windows-Runtime, die Sie über eine API erhalten haben, können. Wenn Sie eine unveränderliche Ansicht über der Auflistung benötigen, rufen Sie [ **IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview), wie gezeigt. Der oben gezeigten Muster&mdash;des Erstellens und Nutzens einer Sammlung&mdash;eignet sich für einfache Szenarien möchten Sie zum Übergeben von Daten in oder Abrufen von Daten aus einer API. Können Sie übergeben ein **IVector**, oder ein **IVectorView**und überall ein [ **IIterable** ](/uwp/api/windows.foundation.collections.iiterable_t_) wird erwartet.
+Wie im obigen Codebeispiel zu sehen ist, kannst du nach dem Erstellen der Sammlung Elemente anfügen, diese durchlaufen und das Objekt im Allgemeinen so wie alle Windows-Runtime-Sammlungsobjekte behandeln, die du ggf. von einer API erhalten hast. Falls du eine unveränderliche Ansicht der Sammlung benötigst, kannst du wie gezeigt [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview) aufrufen. Das obige Muster – zum Erstellen und Nutzen einer Sammlung – ist für einfache Szenarien geeignet, in denen du Daten an eine API übergeben oder von der API erhalten möchtest. Du kannst überall dort ein **IVector**- oder **IVectorView**-Element übergeben, wo ein [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)-Element erwartet wird.
 
-Im Codebeispiel oben den Aufruf von **winrt::init_apartment** initialisiert COM; standardmäßig in einem Multithread-Apartment.
+Im obigen Codebeispiel wird mit dem Aufruf von **winrt::init_apartment** der Thread in der Windows-Runtime initialisiert – standardmäßig in einem Multithread-Apartment. Mit dem Aufruf wird darüber hinaus auch COM initialisiert.
 
-### <a name="general-purpose-collection-primed-from-data"></a>Allgemeine Sammlung von Daten sind
+### <a name="general-purpose-collection-primed-from-data"></a>Universelle Sammlung mit Datenauffüllung
 
-Dieser Abschnitt behandelt das Szenario, in dem Sie eine Sammlung erstellen und füllen diese zur gleichen Zeit möchten.
+In diesem Abschnitt wird der Fall beschrieben, in dem du eine Sammlung erstellen und gleichzeitig auffüllen möchtest.
 
-Sie können vermeiden, den Aufwand für Aufrufe **Append** im vorherigen Codebeispiel. Möglicherweise verfügen Sie bereits die Daten, oder Sie möchten die Daten vor der Erstellung der Windows-Runtime-Auflistungsobjekt zu füllen. Hier ist wie das geht.
+Du kannst den Mehraufwand für das Aufrufen von **Append** aus dem vorherigen Codebeispiel vermeiden. Unter Umständen verfügst du bereits über die Quelldaten, oder du möchtest die Quelldaten vor dem Erstellen des Windows-Runtime-Sammlungsobjekts auffüllen. Hierzu gehst du wie folgt vor.
 
 ```cppwinrt
 auto coll1{ winrt::single_threaded_vector<int>({ 1,2,3 }) };
@@ -78,44 +77,46 @@ for (auto const& el : coll2)
 }
 ```
 
-Sie können ein temporäres Objekt, das mit Ihrer Daten an übergeben **winrt::single_threaded_vector**, wie bei `coll1`weiter oben. Oder Sie verschieben eine **Std:: vector** (vorausgesetzt, Sie wird nicht auf zugreifen werden sie erneut) an die Funktion übergeben. In beiden Fällen sind Sie übergeben eine *Rvalue* an die Funktion übergeben. Die können des Compilers, effiziente und kopieren die Daten zu vermeiden. Wenn Sie mehr erfahren möchten *Rvalues*, finden Sie unter [Wert Kategorien und Verweise darauf](cpp-value-categories.md).
+Du kannst ein temporäres Objekt mit deinen Daten an **winrt::single_threaded_vector** übergeben (wie oben mit `coll1`). Oder du kannst ein **std::vector**-Element in die Funktion verschieben (unter der Annahme, dass du darauf nicht mehr zugreifst). In beiden Fällen übergibst du ein *rvalue*-Element in die Funktion. So kann der Compiler effizient arbeiten und das Kopieren der Daten vermeiden. Weitere Informationen zu R-Werten (*rvalues*) findest du unter [Value categories, and references to them](cpp-value-categories.md) (Wertekategorien und entsprechende Verweise).
 
-Wenn Sie ein XAML-Elemente-Steuerelement in Ihrer Sammlung binden möchten, können Sie Sie. Beachten Sie jedoch, die die ordnungsgemäße Festlegung der [ **ItemsControl.ItemsSource** ](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) -Eigenschaft müssen Sie es auf einen Wert vom Typ festgelegt **IVector** von **"iinspectable"** (oder eines Typs Interoperabilität, z. B. [ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)). Hier ist ein Codebeispiel, die erzeugt eine Auflistung von einem Typ, der für die Bindung geeignet, und ein Element hinzufügt.
+Wenn du ein XAML-Elementsteuerelement an deine Sammlung binden möchtest, ist dies möglich. Achte hierbei aber auf Folgendes: Für das richtige Festlegen der [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)-Eigenschaft muss du sie auf einen Wert vom Typ **IVector** von **IInspectable** festlegen (oder eines Interoperabilitätstyps wie [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)).
+
+Hier ist ein Codebeispiel angegeben, bei dem eine Sammlung mit einem Typ erstellt wird, der für das Binden geeignet ist. Anschließend wird ein Element angefügt. Du findest den Kontext für dieses Codebeispiel unter [XAML-Elementsteuerelemente; Binden an eine C++/WinRT-Sammlung](binding-collection.md).
 
 ```cppwinrt
 auto bookSkus{ winrt::single_threaded_vector<Windows::Foundation::IInspectable>() };
-bookSkus.Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
+bookSkus.Append(winrt::make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 ```
 
-Sie können eine Windows-Runtime-Sammlung aus Daten erstellen und bereiten Sie eine Ansicht für diese Übergabe an eine API, ohne Alles kopieren.
+Du kannst eine Windows-Runtime-Sammlung aus Daten erstellen und diese so darstellen, dass alles für die Übergabe an eine API bereit ist – ohne Kopiervorgänge.
 
 ```cppwinrt
 std::vector<float> values{ 0.1f, 0.2f, 0.3f };
-IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetView() };
+Windows::Foundation::Collections::IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetView() };
 ```
 
-In den obigen Beispielen die Auflistung erstellen wir *können* gebunden werden, um eine XAML-Elemente-Steuerelement, aber die Auflistung nicht Observable-Objekt.
+In den obigen Beispielen *kann* die von uns erstellte Sammlung an ein XAML-Elementsteuerelement gebunden werden, aber die Sammlung ist nicht „beobachtbar“ (observable).
 
-### <a name="observable-collection"></a>Observable-Auflistung
+### <a name="observable-collection"></a>Beobachtbare Sammlung
 
-Um ein neues Objekt eines Typs abzurufen, die implementiert eine *Observable* Auflistung, rufen die [ **winrt::single_threaded_observable_vector** ](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) Funktionsvorlage mit einer Typ des Elements. Verwenden Sie jedoch eine Observable-Auflistung für die Bindung an ein Steuerelement für den XAML-Elemente, geeignet zu machen **"iinspectable"** als Typ des Elements.
+Rufe zum Abrufen eines neuen Objekts mit einem Typ, bei dem eine *beobachtbare* Sammlung implementiert wird, die Funktionsvorlage [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) mit einem beliebigen Elementtyp auf. Verwende aber **IInspectable** als Elementtyp, um eine beobachtbare Sammlung für das Binden an ein XAML-Elementsteuerelement vorzubereiten.
 
-Das Objekt wird zurückgegeben, als ein [ **IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_), und das ist die Schnittstelle, die über den Sie das Steuerelement an das es gebunden ist) aufgerufen werden (oder Funktionen und Eigenschaften des zurückgegebenen Objekts.
+Das Objekt wird als [**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_) zurückgegeben. Dies ist die Schnittstelle, über die du (bzw. das Steuerelement, an das sie gebunden ist) die Funktionen und Eigenschaften des zurückgegebenen Objekts aufrufst.
 
 ```cppwinrt
 auto bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>() };
 ```
 
-Weitere Details und Codebeispiele, über das Binden Ihre Benutzers Benutzeroberfläche (UI) steuert, in eine Observable-Auflistung, finden Sie unter [ItemsControl für XAML, binden an einen C++ / WinRT-Auflistung](binding-collection.md).
+Weitere Informationen und Codebeispiele zum Binden deiner Steuerelemente der Benutzeroberfläche an eine beobachtbare Sammlung findest du unter [XAML-Elementsteuerelemente; Binden an eine C++/WinRT-Sammlung](binding-collection.md).
 
-### <a name="associative-collection-map"></a>Assoziativen Auflistung (Map)
+### <a name="associative-collection-map"></a>Assoziative Sammlung (Karte)
 
-Es gibt Versionen assoziativen Auflistung, der zwei Funktionen, denen wir uns angesehen haben, haben.
+Es sind assoziative Sammlungsversionen der beiden Funktionen vorhanden, die wir uns angesehen haben.
 
-- Die [ **winrt::single_threaded_map** ](/uwp/cpp-ref-for-winrt/single-threaded-map) Vorlage für die Funktion gibt eine assoziative nicht-Observable-Auflistung als ein [ **IMap**](/uwp/api/windows.foundation.collections.imap_k_v_).
-- Die [ **winrt::single_threaded_observable_map** ](/uwp/cpp-ref-for-winrt/single-threaded-observable-map) Vorlage für die Funktion gibt eine assoziative Observable-Auflistung als ein [ **IObservableMap** ](/uwp/api/windows.foundation.collections.iobservablemap_k_v_).
+- Die Funktionsvorlage [**winrt::single_threaded_map**](/uwp/cpp-ref-for-winrt/single-threaded-map) gibt eine nicht beobachtbare assoziative Sammlung als [**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_) zurück.
+- Die Funktionsvorlage [**winrt::single_threaded_observable_map**](/uwp/cpp-ref-for-winrt/single-threaded-observable-map) gibt eine beobachtbare assoziative Sammlung als [**IObservableMap**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_) zurück.
 
-Sie können optional auch diese Auflistungen mit Daten vorzubereiten, durch die Übergabe an die Funktion eine *Rvalue* des Typs **Std:: Map** oder **Std:: unordered_map**.
+Du kannst diese Sammlungen optional mit Daten füllen, indem du an die Funktion einen *rvalue* vom Typ **std::map** oder **std::unordered_map** übergibst.
 
 ```cppwinrt
 auto coll1{
@@ -130,13 +131,13 @@ std::map<winrt::hstring, int> values{
 auto coll2{ winrt::single_threaded_map<winrt::hstring, int>(std::move(values)) };
 ```
 
-### <a name="single-threaded"></a>Singlethread-
+### <a name="single-threaded"></a>Singlethread
 
-Die "Singlethread" in den Namen dieser Funktionen gibt an, dass sie nicht, dass eine der Parallelität angeben&mdash;heißt, sie sind nicht threadsicher. Die Erwähnung von Threads ist unabhängig von Apartments, da die von diesen Funktionen zurückgegebenen Objekte aller agile sind (finden Sie unter [Agile Objekte in C++ / WinRT](agile-objects.md)). Es ist einfach, dass die Objekte Singlethread sind. Und das ist völlig geeignet, wenn Sie nur die Daten auf eine Weise, oder die andere über die anwendungsbinärdateischnittstelle (ABI) übergeben möchten.
+Die „Singlethread“-Angabe in den Namen dieser Funktionen weist darauf hin, dass sie keine Parallelität ermöglichen. Sie sind also nicht „threadsicher“. Die Erwähnung von Threads bezieht sich nicht auf Apartments, da die von diesen Funktionen zurückgegebenen Objekte alle „agil“ sind (siehe [Agile Objekte in C++/WinRT](agile-objects.md)). Es bedeutet lediglich, dass es sich um Singlethread-Objekte handelt. Dies ist auch völlig ausreichend, wenn du Daten in der einen oder der anderen Richtung über die ABI (Application Binary Interface) übergeben möchtest.
 
 ## <a name="base-classes-for-collections"></a>Basisklassen für Sammlungen
 
-Wenn Sie die vollständige Flexibilität erhalten Sie, Sie möchten eine eigene benutzerdefinierte Auflistung zu implementieren, sollten Sie vermeiden, die die harte Art. Beispielsweise sieht wie eine benutzerdefinierte Vektoransicht aussehen würde *ohne Unterstützung von C++ / WinRT Basisklassen*.
+Wenn du zur Erzielung vollständiger Flexibilität deine eigene benutzerdefinierte Sammlung implementieren möchtest, ist es ratsam, hierfür nicht die schwierige Vorgehensweise zu wählen. Eine Ansicht eines benutzerdefinierten Vektors würde beispielsweise wie folgt aussehen, *wenn keine Basisklassen von C++/WinRT verwendet werden*.
 
 ```cppwinrt
 ...
@@ -159,7 +160,7 @@ struct MyVectorView :
 IVectorView<float> view{ winrt::make<MyVectorView>() };
 ```
 
-Stattdessen ist es viel einfacher, leiten Sie Ihre benutzerdefinierten Vektoransicht aus der [ **winrt::vector_view_base** ](/uwp/cpp-ref-for-winrt/vector-view-base) Struct-Vorlage, und implementieren Sie einfach die **Get_container** -Funktion Machen Sie der Container, die Ihre Daten verfügbar.
+Stattdessen ist es viel einfacher, die Ansicht eines benutzerdefinierten Vektors aus der Strukturvorlage [**winrt::vector_view_base**](/uwp/cpp-ref-for-winrt/vector-view-base) abzuleiten und nur die Funktion **get_container** zu implementieren, um den Container mit deinen Daten verfügbar zu machen.
 
 ```cppwinrt
 struct MyVectorView2 :
@@ -176,7 +177,7 @@ private:
 };
 ```
 
-Der Container, die vom **Get_container** müssen Bereitstellen der **beginnen** und **End** Schnittstelle **winrt::vector_view_base** erwartet. Wie im Beispiel oben gezeigt **Std:: vector** bereitstellt. Sie können jedoch zurückgeben, Container, der den gleichen Vertrag, einschließlich Ihrer eigenen benutzerdefinierten Container erfüllt.
+Der von **get_container** zurückgegebene Container muss die Schnittstellen **begin** und **end** bereitstellen, die von **winrt::vector_view_base** erwartet werden. Dies wird von **std::vector** bereitgestellt, wie im obigen Beispiel zu sehen ist. Du kannst aber alle Container zurückgeben, die denselben Vertrag erfüllen, z. B. auch deinen eigenen benutzerdefinierten Container.
 
 ```cppwinrt
 struct MyVectorView3 :
@@ -209,13 +210,13 @@ private:
 };
 ```
 
-Hierbei handelt es sich um die Basis-Klassen C++ / WinRT bietet, damit Sie die benutzerdefinierte Sammlungen implementieren können.
+Dies sind die Basisklassen, die von C++/WinRT bereitgestellt werden, um dich bei der Implementierung von benutzerdefinierten Sammlungen zu unterstützen.
 
-### <a name="winrtvectorviewbaseuwpcpp-ref-for-winrtvector-view-base"></a>[WinRT::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
+### <a name="winrtvectorviewbaseuwpcpp-ref-for-winrtvector-view-base"></a>[winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
-Finden Sie unter die oben aufgeführten Codebeispiele.
+Siehe hierzu auch die obigen Codebeispiele.
 
-### <a name="winrtvectorbaseuwpcpp-ref-for-winrtvector-base"></a>[WinRT::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
+### <a name="winrtvectorbaseuwpcpp-ref-for-winrtvector-base"></a>[winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
 
 ```cppwinrt
 struct MyVector :
@@ -237,7 +238,7 @@ private:
 };
 ```
 
-### <a name="winrtobservablevectorbaseuwpcpp-ref-for-winrtobservable-vector-base"></a>[WinRT::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
+### <a name="winrtobservablevectorbaseuwpcpp-ref-for-winrtobservable-vector-base"></a>[winrt::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
 
 ```cppwinrt
 struct MyObservableVector :
@@ -259,7 +260,7 @@ private:
 };
 ```
 
-### <a name="winrtmapviewbaseuwpcpp-ref-for-winrtmap-view-base"></a>[WinRT::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
+### <a name="winrtmapviewbaseuwpcpp-ref-for-winrtmap-view-base"></a>[winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
 
 ```cppwinrt
 struct MyMapView :
@@ -278,7 +279,7 @@ private:
 };
 ```
 
-### <a name="winrtmapbaseuwpcpp-ref-for-winrtmap-base"></a>[WinRT::map_base](/uwp/cpp-ref-for-winrt/map-base)
+### <a name="winrtmapbaseuwpcpp-ref-for-winrtmap-base"></a>[winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
 
 ```cppwinrt
 struct MyMap :
@@ -302,7 +303,7 @@ private:
 };
 ```
 
-### <a name="winrtobservablemapbaseuwpcpp-ref-for-winrtobservable-map-base"></a>[WinRT::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
+### <a name="winrtobservablemapbaseuwpcpp-ref-for-winrtobservable-map-base"></a>[winrt::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
 
 ```cppwinrt
 struct MyObservableMap :
@@ -328,18 +329,18 @@ private:
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [ItemsControl.ItemsSource-Eigenschaft](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
-* [IObservableVector-Schnittstelle](/uwp/api/windows.foundation.collections.iobservablevector_t_)
-* [IVector-Schnittstelle](/uwp/api/windows.foundation.collections.ivector_t_)
-* [Vorlage für WinRT::map_base-Struktur](/uwp/cpp-ref-for-winrt/map-base)
-* [Vorlage für WinRT::map_view_base-Struktur](/uwp/cpp-ref-for-winrt/map-view-base)
-* [Vorlage für WinRT::observable_map_base-Struktur](/uwp/cpp-ref-for-winrt/observable-map-base)
-* [Vorlage für WinRT::observable_vector_base-Struktur](/uwp/cpp-ref-for-winrt/observable-vector-base)
-* [Vorlage für WinRT::single_threaded_observable_map-Funktion](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
-* [Vorlage für WinRT::single_threaded_map-Funktion](/uwp/cpp-ref-for-winrt/single-threaded-map)
-* [Vorlage für WinRT::single_threaded_observable_vector-Funktion](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
-* [Vorlage für WinRT::single_threaded_vector-Funktion](/uwp/cpp-ref-for-winrt/single-threaded-vector)
-* [Vorlage für WinRT::vector_base-Struktur](/uwp/cpp-ref-for-winrt/vector-base)
-* [Vorlage für WinRT::vector_view_base-Struktur](/uwp/cpp-ref-for-winrt/vector-view-base)
+* [Schnittstelle „IObservableVector“](/uwp/api/windows.foundation.collections.iobservablevector_t_)
+* [Schnittstelle „IVector“](/uwp/api/windows.foundation.collections.ivector_t_)
+* [Strukturvorlage „winrt::map_base“](/uwp/cpp-ref-for-winrt/map-base)
+* [Strukturvorlage „winrt::map_view_base“](/uwp/cpp-ref-for-winrt/map-view-base)
+* [Strukturvorlage „winrt::observable_map_base“](/uwp/cpp-ref-for-winrt/observable-map-base)
+* [Strukturvorlage „winrt::observable_vector_base“](/uwp/cpp-ref-for-winrt/observable-vector-base)
+* [Funktionsvorlage „winrt::single_threaded_observable_map“](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
+* [Funktionsvorlage „winrt::single_threaded_map“](/uwp/cpp-ref-for-winrt/single-threaded-map)
+* [Funktionsvorlage „winrt::single_threaded_observable_vector“](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
+* [Funktionsvorlage „winrt::single_threaded_vector“](/uwp/cpp-ref-for-winrt/single-threaded-vector)
+* [Strukturvorlage „winrt::vector_base“](/uwp/cpp-ref-for-winrt/vector-base)
+* [Strukturvorlage „winrt::vector_view_base“](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Wertekategorien und zugehörige Verweise](cpp-value-categories.md)

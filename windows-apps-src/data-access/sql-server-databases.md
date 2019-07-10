@@ -1,62 +1,62 @@
 ---
-title: Verwenden einer SQL Server-Datenbank in einer UWP-App
-description: Verwenden Sie eine SQL Server-Datenbank in einer UWP-App.
+title: Verwenden einer SQL Server-Datenbank in einer UWP-App
+description: Hier erfährst du, wie du eine SQL Server-Datenbank in einer UWP-App verwendest.
 ms.date: 3/28/2019
 ms.topic: article
-keywords: windows 10, uwp, SQL Server, datenbank
+keywords: Windows 10, UWP, SQL Server, Datenbank
 ms.localizationpriority: medium
 ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360151"
 ---
-# <a name="use-a-sql-server-database-in-a-uwp-app"></a>Verwenden einer SQL Server-Datenbank in einer UWP-App
+# <a name="use-a-sql-server-database-in-a-uwp-app"></a>Verwenden einer SQL Server-Datenbank in einer UWP-App
 Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) speichern und abrufen.
 
-In diesem Leitfaden zeigen wir Ihnen, wie Sie das tun können. Wenn Sie die [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases)-Beispieldatenbank auf Ihrer SQL Server-Instanz installieren und dann diese Snippets verwenden, erhalten Sie eine grundlegende Benutzeroberfläche, die Produkte aus der Northwind-Beispieldatenbank anzeigt.
+In diesem Leitfaden erfährst du, wie das geht. Wenn du die [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases)-Beispieldatenbank in deiner SQL Server-Instanz installierst und diese Codeausschnitte verwendest, erhältst du eine einfache Benutzeroberfläche (User Interface, UI), die Produkte aus der Northwind-Beispieldatenbank anzeigt.
 
 ![Northwind-Produkte](images/products-northwind.png)
 
-Die in diesem Leitfaden gezeigten Snippets basieren auf diesem [vollständigeren Beispiel](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo).
+Die Codeausschnitte in diesem Leitfaden basieren auf [diesem umfassenderen Beispiel](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo).
 
-## <a name="first-set-up-your-solution"></a>Richten Sie zunächst Ihre Lösung ein
+## <a name="first-set-up-your-solution"></a>Einrichten der Lösung
 
-Um Ihre App direkt mit einer SQL Server-Datenbank zu verbinden, stellen Sie sicher, dass die Mindestversion Ihres Projekts auf das Fall Creators Update zielt.  Sie finden diese Informationen auf der Eigenschaftsseite Ihres UWP-Projekts.
+Um deine App direkt mit einer SQL Server-Datenbank verbinden zu können, muss die Mindestversion deines Projekts auf das Fall Creators Update ausgerichtet sein.  Diese Information findest du auf der Eigenschaftenseite deines UWP-Projekts.
 
-![Mindestversion des Windows SDKs](images/min-version-fall-creators.png)
+![Mindestversion des Windows SDK](images/min-version-fall-creators.png)
 
-Öffnen Sie die Datei **Package.appxmanifest** Ihres UWP-Projekts im Manifest-Designer.
+Öffne die Datei **Package.appxmanifest** deines UWP-Projekts im Manifest-Designer.
 
-In der **Funktionen** Registerkarte die **Unternehmensauthentifizierung** Kontrollkästchen, wenn Sie Windows-Authentifizierung zum Authentifizieren Ihrer SQL Server verwenden.
+Aktiviere auf der Registerkarte **Funktionen** das Kontrollkästchen **Unternehmensauthentifizierung**, wenn du zur Authentifizierung deiner SQL Server-Instanz die Windows-Authentifizierung verwendest.
 
-![Funktion Unternehmensauthentifizierung](images/enterprise-authentication.png)
+![Funktion „Unternehmensauthentifizierung“](images/enterprise-authentication.png)
 
 <a id="use-data" />
 
-## <a name="add-and-retrieve-data-in-a-sql-server-database"></a>Hinzufügen und Abrufen von Daten in einer SQL Server-Datenbank
+## <a name="add-and-retrieve-data-in-a-sql-server-database"></a>Hinzufügen und Abrufen von Daten in einer SQL Server-Datenbank
 
-In diesem Abschnitt werden wir diese Dinge tun:
+In diesem Abschnitt führen wir folgende Schritte aus:
 
-: ein: Fügen Sie eine Verbindungszeichenfolge hinzu.
+:one: Hinzufügen einer Verbindungszeichenfolge
 
-: zwei: Erstellen Sie eine Klasse zum Speichern von Produktdaten.
+:two: Erstellen einer Klasse für Produktdaten
 
-: drei: Abrufen von Produkten aus der SQL Server-Datenbank.
+:three: Abrufen von Produkten aus der SQL Server-Datenbank
 
-: vier: Fügen Sie eine einfache Benutzeroberfläche hinzu.
+:four: Hinzufügen einer einfachen Benutzeroberfläche
 
-: fünf: Füllen Sie die Benutzeroberfläche mit Produkten.
+:five: Auffüllen der Benutzeroberfläche mit Produkten
 
 >[!NOTE]
-> Dieser Abschnitt zeigt eine Möglichkeit, Ihren Datenzugriffscode zu organisieren. Es ist nur als Beispiel gedacht, wie Sie [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) zum Speichern und Abrufen von Daten aus einer SQL Server-Datenbank verwenden können. Sie können Ihren Code auf jede Art und Weise organisieren, die für das Design Ihrer App am sinnvollsten ist.
+> In diesem Abschnitt wird eine mögliche Methode zur Strukturierung deines Datenzugriffscodes veranschaulicht. Hierbei handelt es sich lediglich um ein Beispiel, um zu zeigen, wie du Daten mithilfe von [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) in einer SQL Server-Datenbank speichern und daraus abrufen kannst. Du kannst deinen Code natürlich auch anders strukturieren, wenn das für das Design deiner App sinnvoller ist.
 
 ### <a name="add-a-connection-string"></a>Hinzufügen einer Verbindungszeichenfolge
 
-Fügen Sie in der Datei **App.xaml.cs** eine Eigenschaft zur Klasse ``App`` hinzu, die anderen Klassen in Ihrer Lösung Zugriff auf die Verbindungszeichenfolge gibt.
+Füge in der Datei **App.xaml.cs** der ``App``-Klasse eine Eigenschaft hinzu, damit andere Klassen in deiner Lösung auf die Verbindungszeichenfolge zugreifen können.
 
-Unsere Verbindungszeichenfolge zeigt auf die Northwind-Datenbank in einer SQL Server Express-Instanz.
+Unsere Verbindungszeichenfolge verweist auf die Northwind-Datenbank in einer SQL Server Express-Instanz.
 
 ```csharp
 sealed partial class App : Application
@@ -75,9 +75,9 @@ sealed partial class App : Application
 }
 ```
 
-### <a name="create-a-class-to-hold-product-data"></a>Legen Sie eine Klasse für Produktdaten an
+### <a name="create-a-class-to-hold-product-data"></a>Erstellen einer Klasse für Produktdaten
 
-Wir erstellen eine Klasse, die das Ereignis [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) implementiert, so dass wir Attribute in unserer XAML-Benutzeroberfläche an die Eigenschaften in dieser Klasse binden können.
+Wir erstellen eine Klasse, die das [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN)-Ereignis implementiert, damit wir Attribute auf unserer XAML-Benutzeroberfläche an die Eigenschaften in dieser Klasse binden können.
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -104,9 +104,9 @@ public class Product : INotifyPropertyChanged
 }
 ```
 
-### <a name="retrieve-products-from-the-sql-server-database"></a>Produkte aus der SQL Server-Datenbank abrufen
+### <a name="retrieve-products-from-the-sql-server-database"></a>Abrufen von Produkten aus der SQL Server-Datenbank
 
-Erstellen Sie eine Methode, die Produkte aus der Northwind-Beispieldatenbank abruft und diese dann als [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN)-Collection von ``Product``-Instanzen zurückgibt.
+Erstelle eine Methode, die Produkte aus der Northwind-Beispieldatenbank abruft und sie dann als [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN)-Sammlung von ``Product``-Instanzen zurückgibt.
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -156,9 +156,9 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="add-a-basic-user-interface"></a>Hinzufügen einer einfachen Benutzeroberfläche
 
- Fügen Sie den folgenden XAML-Code zur Datei **MainPage.xaml** des UWP-Projekts hinzu.
+ Füge der Datei **MainPage.xaml** des UWP-Projekts den folgenden XAML-Code hinzu.
 
- Dieser XAML-Code erstellt ein [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), um jedes Produkt anzuzeigen, das Sie im vorherigen Snippet zurückgegeben haben. Es bindet die Attribute jeder Zeile im [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) an die Eigenschaften, die wir in der Klasse ``Product`` definiert haben.
+ Dieser XAML-Code erstellt ein [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)-Element, um die einzelnen Produkte anzuzeigen, die im vorherigen Codeausschnitt zurückgegeben wurden, und er bindet die Attribute jeder Zeile im [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)-Element an die Eigenschaften, die wir in der ``Product``-Klasse definiert haben.
 
 ```xml
 <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}">
@@ -206,9 +206,9 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 </Grid>
 ```
 
-### <a name="show-products-in-the-listview"></a>Produkte im ListView anzeigen
+### <a name="show-products-in-the-listview"></a>Anzeigen von Produkten in der Listenansicht
 
-Öffnen Sie die Datei **MainPage.xaml.cs** und fügen Sie Code zum Konstruktor der ``MainPage``-Klasse hinzu, die die **ItemSource**-Eigenschaft des [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) auf die [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) der ``Product``-Instanzen setzt.
+Öffne die Datei **MainPage.xaml.cs**, und füge dem Konstruktor der ``MainPage``-Klasse Code hinzu, um die **ItemSource**-Eigenschaft des [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)-Elements auf die [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN)-Sammlung von ``Product``-Instanzen festzulegen.
 
 ```csharp
 public MainPage()
@@ -218,32 +218,32 @@ public MainPage()
 }
 ```
 
-Starten Sie das Projekt und sehen Sie sich die Produkte aus der Northwind-Beispieldatenbank in der Benutzeroberfläche an.
+Starte das Projekt. Daraufhin werden auf der Benutzeroberfläche Produkte aus der Northwind-Beispieldatenbank angezeigt.
 
 ![Northwind-Produkte](images/products-northwind.png)
 
-Erkunden Sie den [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN)-Namespace, um zu sehen, was Sie mit Daten in Ihrer SQL Server-Datenbank noch alles machen können.
+Erkunde den [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN)-Namespace, um noch weitere Verwendungsmöglichkeiten für Daten in deiner SQL Server-Datenbank kennenzulernen.
 
-## <a name="trouble-connecting-to-your-database"></a>Probleme beim Herstellen einer Verbindung mit der Datenbank?
+## <a name="trouble-connecting-to-your-database"></a>Probleme beim Herstellen der Verbindung mit deiner Datenbank?
 
-In den meisten Fällen muss ein Aspekt der SQL Server-Konfiguration geändert werden. Wenn Sie mit einem anderen Typ von Desktopanwendung wie einer Windows Forms- oder WPF-Anwendung eine Verbindung mit der Datenbank herstellen können, stellen Sie sicher, dass Sie TCP/IP für SQL Server aktiviert haben. Dies können über die Konsole **Computerverwaltung** durchführen.
+In den meisten Fällen muss etwas an der SQL Server-Konfiguration geändert werden. Falls du über eine andere Art von Desktopanwendung (etwa über eine Windows Forms- oder WPF-Anwendung) eine Verbindung mit deiner Datenbank herstellen kannst, vergewissere dich, dass du TCP/IP für SQL Server aktiviert hast. Hierzu kannst du die Konsole **Computerverwaltung** verwenden.
 
 ![Computerverwaltung](images/computer-management.png)
 
-Stellen Sie dann sicher, dass Ihr SQL Server-Browser-Dienst ausgeführt wird.
+Vergewissere dich anschließend, dass der Dienst „SQL Server-Browser“ ausgeführt wird.
 
-![SQL Server-Browser-Dienst](images/sql-browser-service.png)
+![Dienst „SQL Server-Browser“](images/sql-browser-service.png)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Verwenden Sie eine einfache Datenbank zum Speichern von Daten auf dem Gerät des Benutzers**
+**Verwenden einer einfachen Datenbank, um Daten auf dem Gerät des Benutzers zu speichern**
 
-Weitere Infos finden Sie unter [Verwenden Sie eine SQLite-Datenbank in einer UWP-App](sqlite-databases.md).
+Weitere Informationen findest du unter [Verwenden einer SQLite-Datenbank in einer UWP-App](sqlite-databases.md).
 
-**Freigeben von Code zwischen den verschiedenen apps auf verschiedenen Plattformen**
+**Nutzen des gleichen Codes für verschiedene Apps auf verschiedenen Plattformen**
 
-Weitere Informationen finden Sie unter [Teilen von Code zwischen einer Desktop-App und einer UWP-App](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)
+Weitere Informationen findest du unter [Move from a desktop application to UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate) (Migrieren von einer Desktopanwendung zu UWP).
 
-**Hinzufügen von master-Detail-Seiten mit Azure SQL-Back-ends**
+**Hinzufügen von Master/Detail-Seiten mit Azure SQL-Back-Ends**
 
-Mehr unter [Beispiel einer Kundenauftragsdatenbank.](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+Weitere Informationen findest du unter [Customers Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) (Beispiel für eine Kundenauftragsdatenbank).

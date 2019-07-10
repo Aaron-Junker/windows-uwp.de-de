@@ -1,59 +1,59 @@
 ---
 ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66214739"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Beitragen zur UWP-Konzeptdokumentation
 
-Vielen Dank für Ihr Interesse an der Dokumentation zur Universellen Windows-Plattform (UWP)! Wir freuen uns über Ihr Feedback, Änderungen und Ergänzungen unserer Dokumente.
+Vielen Dank für dein Interesse an der Dokumentation zur universellen Windows-Plattform (UWP)! Wir freuen uns über dein Feedback sowie über deine Änderungen und Ergänzungen für unsere Dokumentation.
 
-## <a name="writing-content"></a>Schreiben von Inhalten
+## <a name="writing-content"></a>Erstellen von Inhalten
 
-Unsere Dokumentation wird in Markdown eine einfache Textsyntax geschrieben. Wenn Sie nicht mit Markdown vertraut sind, können Sie [Grundlagen auf GitHub](https://guides.github.com/features/mastering-markdown/). Wenn Sie nicht sicher sind, können Sie immer die Formatierung von anderen Seiten in unsere Dokumente kopieren.
+Unsere Dokumentation ist in Markdown (einer einfachen Textstilsyntax) geschrieben. Auf [GitHub](https://guides.github.com/features/mastering-markdown/) kannst du dich bei Bedarf mit den Grundlagen von Markdown vertraut machen. Solltest du unsicher sein, kannst du jederzeit die Formatierung von anderen Seiten in unserer Dokumentation kopieren.
 
 ## <a name="public-contributions"></a>Öffentliche Beiträge
 
-Wenn Sie sind **nicht** Mitarbeiter von Microsoft, die Sie mitwirken können, über die [öffentliche Inhaltsrepository](https://github.com/MicrosoftDocs/windows-uwp). Öffentliche Beiträge eignen sich für Änderungen und erläuterungen zu vorhandenen Seiten.
+Wenn du **kein** Microsoft-Mitarbeiter bist, kannst du für deine Beiträge das [öffentliche Inhaltsrepository](https://github.com/MicrosoftDocs/windows-uwp) verwenden. Öffentliche Beiträge können zur Änderung oder Präzisierung bereits vorhandener Seiten verwendet werden.
 
 ### <a name="editing-a-file"></a>Bearbeiten einer Datei
 
-Wenn Sie bereits im öffentlichen Repository Inhalt sind, sollten Sie zunächst, navigieren zu der Datei, die Sie ändern möchten. Wählen Sie dort das Stiftsymbol oben den angezeigten Inhalt an die Bearbeitung zu beginnen.
+Wenn du dich bereits im öffentlichen Inhaltsrepository befindest, navigiere zunächst zu der Datei, die du ändern möchtest. Wähle dort über dem angezeigten Inhalt das Stiftsymbol aus, um mit der Bearbeitung zu beginnen.
 
-Wenn Sie eine Seite in docs.microsoft.com anzeigen, Sie können auch auswählen, die **bearbeiten** auf der oberen rechten Teil der Seite auf die Schaltfläche. Dies leitet Sie zur Quelldatei im Repository verknüpft.
+Falls du gerade eine Seite von „docs.microsoft.com“ betrachtest, kannst du alternativ auch rechts oben auf der Seite auf die Schaltfläche **Bearbeiten** klicken. Dadurch gelangst du zur entsprechenden Quelldatei im Repository.
 
-Wenn Sie mit der Bearbeitung beginnen, verzweigt GitHub automatisch die offizielle-Repository in Ihr persönliches GitHub-Konto, in dem Sie Ihre Änderungen vornehmen können. Wenn Sie fertig sind, senden Sie eine Pull-Anforderung an die **Docs** Branch.
+Wenn du mit der Bearbeitung beginnst, forkt GitHub das offizielle Repository automatisch in dein persönliches GitHub-Konto, in dem du dann die gewünschten Änderungen vornehmen kannst. Anschließend musst du einen Pull Request an den Branch **docs** übermitteln.
 
 ### <a name="pull-requests"></a>Pull-Anforderungen
 
-Nachdem Sie Ihren Pull Request übermitteln, wird es ausgewertet, für eine Prüfliste der inhaltlichen Qualität sicherstellen, dass es sich um unsere grundlegender Standards erfüllt. Wenn sie erfolgreich ist, wird es ein Mitglied der UWP-Dokumentationsteam zur weiteren Überprüfung zugewiesen. Wenn ein Fehler auftritt, werden Sie darüber informiert werden geeigneten Änderungen zu.
+Nach Übermittlung deines Pull Requests wird anhand einer Prüfliste überprüft, ob die Qualität des Inhalts unseren grundlegenden Standards entspricht. Ist die Überprüfung erfolgreich, wird der Request zur weiteren Überprüfung einem Mitglied des UWP-Dokumentationsteams zugewiesen. Andernfalls erfährst du, was geändert werden muss.
 
-Die zugewiesenen Reviewer (n) möglicherweise genehmigen oder Ablehnen der Pull Request oder zusammenarbeiten, um weitere Änderungen vorzunehmen.
+Die zugewiesenen Prüfer können deinen Pull Request genehmigen, ablehnen oder mit dir zusammenarbeiten, um weitere Änderungen vorzunehmen.
 
 ## <a name="internal-contributions"></a>Interne Beiträge
 
-Wenn Sie ein Microsoft-Mitarbeiter sind, können Sie mitwirken, über die [private Inhaltsrepository](https://github.com/microsoftdocs/windows-uwp-pr). Finden Sie Anleitungen zur Verwendung dieses Repository in der [Windows-Erstellungshandbuch](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Dokumentation zu zukünftigen Features muss über das private Repository nur beigesteuert werden.
+Microsoft-Mitarbeiter können für ihre Beiträge das [private Inhaltsrepository](https://github.com/microsoftdocs/windows-uwp-pr) verwenden. Informationen zur Verwendung dieses Repositorys findest du im [Erstellungshandbuch für Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Dokumentationen für zukünftige Features dürfen ausschließlich über das private Repository beigesteuert werden.
 
 ### <a name="editing-a-file"></a>Bearbeiten einer Datei
 
-Wie in der öffentlichen Repository können Sie kleine Änderungen auf das private Repository in Ihrem Browser vornehmen ohne einen lokalen Klon zu erstellen. Sie **müssen** stellen Sie sicher, dass Sie auf der richtige Branch beitragen. Weitere Informationen zu Ihren persönlichen Branch erstellt, finden Sie unter [die Anweisungen im Handbuch zur Erstellung von Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master).
+Kleinere Änderungen am privaten Repository können genau wie beim öffentlichen Repository über den Browser vorgenommen werden, ohne einen lokalen Klon erstellen zu müssen. Vergewissere dich **unbedingt**, dass du dich im korrekten Branch befindest. Weitere Informationen zur Erstellung eines eigenen Branchs findest du im [Erstellungshandbuch für Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master).
 
-### <a name="making-substantial-changes"></a>Wesentliche Änderungen
+### <a name="making-substantial-changes"></a>Vornehmen erheblicher Änderungen
 
-Um umfangreichere Änderungen an einen vorhandenen Artikel vornehmen, fügen Sie hinzu oder ändern Sie Bilder, oder tragen Sie einen neuen Artikel bei, erstellen Sie einen lokalen Klon des Inhalts private Repositorys. Weitere Informationen folgen [die Anweisungen im Handbuch zur Erstellung von Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/).
+Wenn du umfangreichere Änderungen an einem bereits vorhandenen Artikel vornehmen, Bilder hinzufügen/ändern oder einen neuen Artikel beisteuern möchtest, musst du einen lokalen Klon unseres privaten Inhaltsrepositorys erstellen. Weitere Informationen findest du im [Erstellungshandbuch für Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/).
 
 ### <a name="pull-requests"></a>Pull-Anforderungen
 
-Wenn Sie einen Pull Request in das interne Repository zu erstellen, stellen Sie sicher, dass Sie Ihre persönliche Verzweigung in den Branch zusammenführen, die es erstellt wurde.
+Achte beim Erstellen eines Pull Requests im internen Repository darauf, dass du deinen persönlichen Branch mit dem Branch zusammenführst, auf dessen Grundlage er erstellt wurde.
 
-Nachdem Sie Ihren Pull Request übermittelt haben, wird es für bewertet ein [Prüfliste der inhaltlichen Qualität](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master) um sicherzustellen, dass es unsere grundlegender Standards erfüllt. Wenn sie erfolgreich ist, wird es ein Mitglied der UWP-Dokumentationsteam zur weiteren Überprüfung zugewiesen. Wenn ein Fehler auftritt, werden Sie darüber informiert werden geeigneten Änderungen zu.
+Nach Übermittlung des Pull Requests wird anhand einer [Prüfliste](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master) überprüft, ob die Qualität des Inhalts unseren grundlegenden Standards entspricht. Ist die Überprüfung erfolgreich, wird der Request zur weiteren Überprüfung einem Mitglied des UWP-Dokumentationsteams zugewiesen. Andernfalls erfährst du, was geändert werden muss.
 
-Die zugewiesenen Reviewer (n) möglicherweise genehmigen oder Ablehnen der Pull Request oder zusammenarbeiten, um weitere Änderungen vorzunehmen. Prüfer werden der Pull Request nicht zusammengeführt, bis Sie es selbst genehmigt haben.
+Die zugewiesenen Prüfer können deinen Pull Request genehmigen, ablehnen oder mit dir zusammenarbeiten, um weitere Änderungen vorzunehmen. Prüfer führen den Pull Request erst zusammen, wenn er von dir selbst genehmigt wurde.
 
-## <a name="using-issues-to-provide-feedback-on-uwp-conceptual-documentation"></a>Verwendung von Problemen zum Bereitstellen von Feedback für die UWP-Konzeptdokumentation
+## <a name="using-issues-to-provide-feedback-on-uwp-conceptual-documentation"></a>Verwenden von Problemen zum Abgeben von Feedback zur UWP-Konzeptdokumentation
 
-Wenn Sie möchten zum Bereitstellen von Feedback zur Dokumentation anstelle von machen bearbeitet selbst, können Sie [erstellen Sie ein Problem im öffentlichen Repository](https://github.com/MicrosoftDocs/windows-uwp/issues). Wählen Sie die **Probleme** Registerkarte, und wählen Sie die **neues Problem** Schaltfläche. Vergessen Sie nicht, den Titel des Themas und die URL für die Seite anzugeben. Mitglieder des Teams UWP-Dokumentation zur Überprüfung wird Ihr Problem zugewiesen werden.
+Wenn du Feedback zur Dokumentation abgeben möchtest, anstatt sie selbst zu bearbeiten, kannst du [ein Problem im öffentlichen Repository erstellen](https://github.com/MicrosoftDocs/windows-uwp/issues). Wähle die Registerkarte **Issues** (Probleme) und anschließend die Schaltfläche **New issue** (Neues Problem) aus. Vergiss nicht, den Titel des Themas und die URL für die Seite anzugeben. Dein Problem wird Mitgliedern des UWP-Dokumentationsteams zur Überprüfung zugewiesen.
 
-* Verwenden Sie interne bei Problemen die [WDG-Inhalt anfordern Tool](https://aka.ms/pubrequest).
+* Für interne Probleme steht das [WDG-Inhaltsanforderungstool](https://aka.ms/pubrequest) zur Verfügung.

@@ -1,86 +1,86 @@
 ---
-title: Erstellen eigener Stile
-description: In diesem Artikel werden die Grundlagen für UI-Stilelemente in XAML behandelt
+title: Erstellen benutzerdefinierter Stile
+description: In diesem Artikel werden die Grundlagen der Gestaltung von UI-Elementen in XAML behandelt.
 keywords: XAML, UWP, Erste Schritte
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66361230"
 ---
-# <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen eigener Stile
+# <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen benutzerdefinierter Stile
 
-In diesem Lernprogramm wird das Anpassen der Benutzeroberfläche unserer XAML-App veranschaulicht. Warnung: in diesem Lernprogramm kann möglicherweise ein Einhorn auftauchen. (Stimmt!)  
+In diesem Tutorial wird die Anpassung der Benutzeroberfläche (User Interface, UI) unserer XAML-App veranschaulicht. Warnung: in diesem Tutorial taucht möglicherweise ein Einhorn auf. (Im Ernst!)  
 
-## <a name="prerequisites"></a>Vorraussetzungen
-* [Visual Studio 2017 und das Windows 10 SDK (10.0.15063.468 oder höher)](https://developer.microsoft.com/windows/downloads)
+## <a name="prerequisites"></a>Voraussetzungen
+* [Visual Studio 2017 und das Windows 10 SDK (10.0.15063.468 oder höher)](https://developer.microsoft.com/windows/downloads)
 
-## <a name="part-0-get-the-code"></a>Teil 0: Code abrufen
-Der Ausgangspunkt für diese Übung befindet sich im PhotoLab-Beispielrepository, unter [xaml-basics-starting-points/style/ Ordner](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). Nachdem Sie das Repository geklont/heruntergeladen haben, können Sie das Projekt bearbeiten, indem Sie PhotoLab.sln mit Visual Studio 2017 öffnen.
+## <a name="part-0-get-the-code"></a>Teil 0: Beziehen des Codes
+Der Ausgangspunkt für dieses Lab befindet sich im PhotoLab-Beispielrepository im Ordner [xaml-basics-starting-points/style/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). Nachdem du das Repository geklont/heruntergeladen hast, kannst du das Projekt bearbeiten, indem du „PhotoLab.sln“ mit Visual Studio 2017 öffnest.
 
 Die PhotoLab-App besteht aus zwei Hauptseiten:
 
-**MainPage.xaml:** zeigt eine Ansicht der Foto-Galerie, zusammen mit einigen Informationen über jede Bilddatei an.
+**MainPage.xaml**: Zeigt eine Fotogalerie sowie einige Informationen zur jeweiligen Bilddatei.
 ![MainPage](../basics/images/xaml-basics/mainpage.png)
 
-**DetailPage.xaml:** zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
+**DetailPage.xaml** zeigt ein einzelnes Foto, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-create-a-fancy-slider-control"></a>Teil 1: Erstellen Sie ein ausgefallener Schieberegler-Steuerelement  
+## <a name="part-1-create-a-fancy-slider-control"></a>Teil 1: Erstellen eines schicken Schiebereglers  
 
-Die universelle Windows-Plattform (UWP) bietet eine Reihe von Möglichkeiten zum Anpassen der Darstellung Ihrer App. Von Schriftarten und Typografie-Einstellungen bis hin zu Farben und Farbverläufen und Weichzeichnereffekten – Sie haben viele Optionen. 
+Die universelle Windows-Plattform (UWP) bietet eine Reihe von Möglichkeiten, mit denen du die Darstellung deiner App anpassen kannst – von Schriftarten über Typografieeinstellungen bis hin zu Farben, Farbverläufen und Weichzeichnereffekten. 
 
-Im ersten Teil des Lernprogramms lernen wir über unsere Steuerelemente zum Bearbeiten von Fotos. 
+Im ersten Teil des Tutorials peppen wir einige unserer Steuerelemente für die Fotobearbeitung auf. 
 
 <figure>
     <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*Einen humble Schieberegler mit einer Standardstil.*</figure>
+    <figure>*Ein normaler Schieberegler im Standardstil.*</figure>
 </figure>
 
-Diese Schieberegler sind in Ordnung – sie funktionieren so, wie ein Schieberegler funktionieren sollte – aber sie haben keine ausgefallenen Effekte. Das wird hier geändert. 
+Diese Schieberegler sind zwar ganz in Ordnung und tun das, was man von einem Schieberegler erwartet, aber sie sind nichts Besonderes. Das ändern wir gleich. 
 
-Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen Sie es auf die linke Seite und das Bild wird dunkler; Schieberegler nach rechts, und es wird heller. Machen wir unseren Schieberegler etwas cooler und verleihen wir ihm einen Hintergrund, der von Schwarz auf Weiß verläuft. Der Schieberegler sieht besser aus, was großartige ist, aber es gibt auch einen visuellen Hinweis zu den Funktionen an, die der Schieberegler bereitstellt.
+Der Schieberegler für die Belichtung passt die Belichtung des Bilds an. Wenn du ihn nach links ziehst, wird das Bild dunkler. Ziehst du ihn nach rechts, wird das Bild heller. Wir hübschen unseren Schieberegler nun etwas auf und versehen ihn mit einem schwarzweißen Farbverlauf als Hintergrund. Der Schieberegler sieht dadurch nicht nur besser aus, sondern veranschaulicht auch, welche Funktion er erfüllt.
 
-### <a name="customize-a-slider-control"></a>Anpassen des Schieberegler-Steuerelements
+### <a name="customize-a-slider-control"></a>Anpassen eines Schiebereglers
 
 <!-- TODO: Update folder -->
-1. Öffnen Sie nach dem Download des Repositorys **PhotoLab.sln** unter xaml-basics-starting-points/style/ Ordner, und legen Sie Ihre Projektmappen-Plattform auf x86 oder x64 (nicht ARM) fest. 
+1. Öffne nach dem Herunterladen des Repositorys die Datei **PhotoLab.sln** aus dem Ordner „xaml-basics-starting-points/style/“, und lege deine Projektmappenplattform auf „x86“ oder „x64“ fest (nicht auf „ARM“). 
 
-    Drücken Sie F5, um die App zu übersetzen und auszuführen. Der erste Bildschirm zeigt eine Bildergalerie. Klicken Sie auf ein Bild, um die Detailseite aufzurufen. Klicken Sie von dort auf die Schaltfläche "Bearbeiten", um die Bearbeitungssteuerelemente zu sehen, mit denen wir arbeiten werden. Beenden Sie die App und kehren Sie zu Visual Studio zurück.  
+    Drücke F5, um die App zu kompilieren und auszuführen. Der erste Bildschirm zeigt eine Bildergalerie. Klicke auf ein Bild, um die Detailseite aufzurufen. Klicke dort auf die Bearbeitungsschaltfläche, um die Bearbeitungssteuerelemente anzuzeigen, mit denen wir arbeiten. Beende die App, und kehre zu Visual Studio zurück.  
 
-2. Doppelklicken Sie im Projektmappen-Explorer-Bereich auf **DetailPage.xaml**, um sie zu öffnen. 
+2. Doppelklicke im Projektmappen-Explorer auf die Datei **DetailPage.xaml**, um sie zu öffnen. 
 
-    ![Die DetailPage.xaml-Datei im Projektmappen-Explorer von Visual Studio 2017.](../basics/images/xaml-basics/style-detail-page-explorer.png)
+    ![Die Datei „DetailPage.xaml“ im Projektmappen-Explorer von Visual Studio 2017.](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
-3. Verwenden Sie ein Polygon-Element, um eine Hintergrundform für den Schieberegler für die Belichtung zu erstellen.
+3. Verwende ein Polygonelement, um eine Hintergrundform für den Belichtungsschieberegler zu erstellen.
 
-    Der [Windows.XAML.Ui.Shapes Namespace](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) enthält sieben Formen zur Auswahl. Es gibt eine Ellipse, ein Rechteck, und einen „Pfad”, der jede Form zeichnen kann – sogar ein Einhorn! 
+    Im [Namespace „Windows.XAML.Ui.Shapes“](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) stehen sieben Formen zur Auswahl. Es gibt eine Ellipse, ein Rechteck und einen sogenannten Pfad, mit dem du eine beliebige Form zeichnen kannst (ja, sogar ein Einhorn). 
     
     <!-- TODO reduce size -->
-    ![Eines Einhorns](../basics/images/xaml-basics/unicorn.png)
+    ![Ein Einhorn](../basics/images/xaml-basics/unicorn.png)
     
-    > **Weitere Informationen finden sie ein:** Die [Zeichnen von Formen](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) Artikel erfahren Sie alles, was Sie XAML-Formen kennen müssen. 
+    > **Weitere Informationen:** Im Artikel [Zeichnen von Formen](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) erfährst du alles, was du über XAML-Formen wissen musst. 
     
-    Wir möchten ein dreieckig aussehendes Grafikobjekt erstellen – ähnlich der Form der Lautstärkeregelung einer Stereoanlage.
+    Wir möchten ein dreieckiges Widget erstellen, das in etwa so aussieht wie die Lautstärkeregelung an einer Stereoanlage.
     
-    ![Ein Schieberegler](../basics/images/xaml-basics/style-volume-slider.png)
+    ![Ein Lautstärkeregler](../basics/images/xaml-basics/style-volume-slider.png)
     
-    Klingt wie einen Auftrag für die Polygonform! Um einen Polygon zu definieren, geben Sie eine Reihe von Punkten an und weisen Sie ihnen eine Fläche zu. Lassen Sie uns ein Polygon erstellen, das ungefähr 200 Pixel breit und 20 Pixel hoch ist, das mit dem Farbverlauf gefüllt werden soll.
+    Hierzu verwenden wir am besten die Polygonform. Zum Definieren eines Polygons wird eine Gruppe von Punkten angegeben und mit einer Füllung versehen. Unser Polygon soll etwa 200 Pixel breit und 20 Pixel hoch sein und mit einem Farbverlauf gefüllt werden.
     
-    Suchen Sie in DetailPage.xaml den Code für den Schieberegler für die Belichtung heraus und erstellen Sie ein Polygon-Element direkt davor: 
+    Suche in „DetailPage.xaml“ den Code für den Belichtungsschieberegler, und erstelle direkt davor ein Polygonelement: 
 
-    * Legen Sie **Grid.Row** auf "2" fest, um das Polygon in der gleichen Zeile wie den Belichtungsschieberegler zu platzieren. 
-    * Legen Sie die **Punkt**-Eigenschaft auf "0,20 200,20 200,0" fest, um die Dreiecksform zu definieren.
-    * Legen Sie die **Stretch**-Eigenschaft auf "Fill" und die **HorizontalAlignment**-Eigenschaft auf "Stretch" fest.
-    * Legen Sie die **Höhe** auf "20" und das **VerticalAlignment** auf "Center"fest. 
-    * Geben Sie dem **Polygon** einen linearen Farbverlauf.     
-    * Legen Sie für den Belichtungsschieberegler die **Vordergrund**-Eigenschaft auf "Transparent" fest, damit Sie das Polygon sehen können. 
+    * Lege **Grid.Row** auf „2“ fest, damit sich das Polygon in der gleichen Zeile befindet wie der Belichtungsschieberegler. 
+    * Lege die Eigenschaft **Points** auf „0,20 200,20 200,0“ fest, um die Dreiecksform zu definieren.
+    * Lege die Eigenschaft **Stretch** auf „Fill“ und die Eigenschaft **HorizontalAlignment** auf „Stretch“ fest.
+    * Lege **Height** auf „20“ und **VerticalAlignment** auf „Center“ fest. 
+    * Gib dem **Polygon** einen linearen Farbverlauf.     
+    * Lege die Eigenschaft **Foreground** für den Belichtungsschieberegler auf „Transparent“ fest, um das Polygon sehen zu können. 
 
-    **Vor dem**
+    **Vorher**
     ```xaml
     <Slider Header="Exposure"
         Grid.Row="2"
@@ -88,7 +88,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen 
         Minimum="-2"
         Maximum="2" />
     ```
-    **After**
+    **Nachher**
     ```xaml
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -111,18 +111,18 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen 
     ```
 
     Hinweise:
-    * Wenn Sie die umgebende XAML-Codierung betrachten, sehen Sie, dass diese Elemente in einem Raster sind. Wir haben das Polygon in die gleichen Zeile wie den Belichtungsschieberegler (Grid.Row="2") gesetzt, damit sie an derselben Stelle angezeigt werden. Wir haben das Polygon vor den Schieberegler gesetzt, damit der Schieberegler über der Form rendert.
-    * Wir haben „Stretch” = "Fill" und „HorizontalAlignment” = "Stretch" im Polygon festgelegt, damit das Dreieck so angepasst wird, um den verfügbaren Platz auszufüllen. Wenn Sie den Schieberegler in der Breite verkleinern oder vergrößern wird das Polygon entsprechend vergrößert oder verkleinert. 
+    * Wie du anhand des umgebenden XAML-Codes siehst, befinden sich diese Elemente in einem Raster. Wir haben das Polygon in der gleichen Zeile platziert wie den Belichtungsschieberegler (Grid.Row="2"), sodass sie an derselben Stelle angezeigt werden. Wir haben das Polygon vor dem Schieberegler platziert, damit der Schieberegler über der Form gerendert wird.
+    * Für das Polygon haben wir „Stretch” auf „Fill“ und „HorizontalAlignment” auf „Stretch“ festgelegt, damit das Dreieck so angepasst wird, dass es den verfügbaren Platz ausfüllt. Wenn sich die Breite des Schiebereglers ändert, wird das Polygon entsprechend vergrößert oder verkleinert. 
 
-4. Übersetzen Sie die App, und führen Sie sie aus. Der Schieberegler sollte nun großartig aussehen:
+4. Kompiliere die App, und führe sie aus. Der Schieberegler sollte nun wie folgt aussehen:
 
-    ![Ein ausgefallener Belichtungsschieberegler](../basics/images/xaml-basics/style-exposure-slider-done.png)
+    ![Ein schicker Belichtungsschieberegler](../basics/images/xaml-basics/style-exposure-slider-done.png)
 
-5. Geben wir jetzt dem nächsten Schieberegler, dem Schieberegler für die Temperatur, ein Upgrade. Der Temperatur-Schieberegler ändert die Farbtemperatur des Bilds. Beim Ziehen auf die linken Seite wird das Bild blauer und beim Ziehen auf die recht Seite wird das Bild mehr gelb.
+5. Kommen wir zum nächsten Schieberegler: dem Schieberegler für die Farbtemperatur. Der Temperaturschieberegler ändert die Farbtemperatur des Bilds. Wenn du ihn nach links ziehst, wird das Bild blauer. Ziehst du ihn nach rechts, wird das Bild gelber.
 
-    Wir verwenden einen anderen Polygon für diese Hintergrundform mit denselben Dimensionen wie das vorherige, aber dieses Mal ist die Füllung ein Farbverlauf in Blau-Gelb anstelle von Schwarzweiß. 
+    Für diese Hintergrundform verwenden wir ein weiteres Polygon mit den gleichen Dimensionen wie zuvor, diesmal aber mit einem blau-gelben Farbverlauf anstelle von Schwarzweiß. 
 
-    **Vor dem**
+    **Vorher**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -135,7 +135,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen 
             Minimum="-1"
             Maximum="1" />
     ```
-    **After**
+    **Nachher**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -161,30 +161,30 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an: ziehen 
             Maximum="1" />
     ```
 
-6. Übersetzen Sie die App, und führen Sie sie aus. Sie verfügen jetzt über ausgefallene Schieberegler.
+6. Kompiliere die App, und führe sie aus. Du hast nun zwei schicke Schieberegler:
 
-    ![Zwei ausgefallene Schieberegler](../basics/images/xaml-basics/style-2sliders-done.png)
+    ![Zwei schicke Schieberegler](../basics/images/xaml-basics/style-2sliders-done.png)
 
 7. **Bonus**
 
-    Fügen Sie eine Hintergrundform für den Farbton-Schieberegler hinzu, mit einem Farbverlauf von Grün auf Rot. 
+    Füge für den Farbtonschieberegler eine Hintergrundform mit einem rot-grünen Farbverlauf hinzu. 
 
-    ![Drei ausgefallene Schieberegler](../basics/images/xaml-basics/style-3sliders-done.png)
+    ![Drei schicke Schieberegler](../basics/images/xaml-basics/style-3sliders-done.png)
 
 
-Herzlichen Glückwunsch! Sie haben Teil 1 abgeschlossen! Wenn Sie nicht weiterkommen oder die endgültige Lösung nicht anzeigen können, finden Sie den fertigen Code unter **UWP Academy\XAML\Styling\Part1\Finish**.
+Herzlichen Glückwunsch! Der erste Teil ist geschafft. Falls du an einer Stelle nicht weiterkommst oder dir die endgültige Lösung ansehen möchtest, findest du den fertigen Code unter **UWP Academy\XAML\Styling\Part1\Finish**.
 
  
     
-## <a name="part-2-create-basic-styles"></a>Teil 2: Grundlegende Formate erstellen
+## <a name="part-2-create-basic-styles"></a>Teil 2: Erstellen grundlegender Stile
 
-Einer der Vorteile der XAML-Stile ist, dass sie die Menge an Code, den Sie schreiben müssen erheblich verringern können und es jetzt viel einfach ist, das Erscheinungsbild Ihrer App zu aktualisieren.
+Einer der Vorteile von XAML-Stilen besteht darin, dass sie den Programmieraufwand erheblich verringern und die Aktualisierung der App-Darstellung deutlich vereinfachen.
 
-Um einen Stil zu definieren, fügen Sie ein [Stil](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)-Element in die [Ressourcen](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources)-Eigenschaft eines Elements ein, das das Steuerelement enthält, das Sie formatieren möchten.  Wenn Sie Ihren Stil der **Page.Resources**-Eigenschaft hinzufügen, werden Ihre Stile für die gesamte Seite zugängig. Wenn Sie Ihren Stil der **Application.Resources**-Eigenschaft in der Datei App.xaml hinzufügen, wird der Stil wird für die gesamte App zugänglich.
+Um einen Stil zu definieren, wird der Eigenschaft [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) eines Elements, in dem sich das zu gestaltende Steuerelement befindet, ein Element vom Typ [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) hinzugefügt.  Wenn du deinen Stil der Eigenschaft **Page.Resources** hinzufügst, stehen deine Stile für die gesamte Seite zur Verfügung. Wenn du deinen Stil der Eigenschaft **Application.Resources** in der Datei „App.xaml“ hinzufügst, steht der Stil für die gesamte App zur Verfügung.
 
-Sie können benannte Stile und allgemeine Stile erstellen. Eine benannte Formatvorlage muss explizit auf bestimmte Steuerelemente angewendet werden. Ein allgemeiner Stil gilt für alle Steuerelemente, die dem angegebenen **TargetType** entsprechen. 
+Du kannst benannte Stile und allgemeine Stile erstellen. Ein benannter Stil muss explizit auf bestimmte Steuerelemente angewendet werden. Ein allgemeiner Stil wird auf alle Steuerelemente angewendet, die dem angegebenen Zieltyp (**TargetType**) entsprechen. 
 
-In diesem Beispiel besitzt der erste Stil ein **x:Key-Attribut**, und der Zieltyp ist **Button**. Die **Style**-Eigenschaft der ersten Schaltfläche wird auf diesen Schlüssel festgelegt, sodass der Stil benannt wird und explizit angewendet wird. Der zweite Stil wird automatisch auf die zweite Schaltfläche angewendet, da deren Zieltyp **Button** ist und der Stil kein **x:Key**-Attribut besitzt.
+In diesem Beispiel besitzt der erste Stil ein Attribut vom Typ **x:Key** und den Zieltyp **Button**. Die Eigenschaft **Style** der ersten Schaltfläche wird auf diesen Schlüssel festgelegt. Der Stil ist somit ein benannter Stil und muss explizit angewendet werden. Der zweite Stil wird automatisch auf die zweite Schaltfläche angewendet, da deren Zieltyp **Button** lautet und der Stil über kein Attribut vom Typ **x:Key** verfügt.
 
 
 ```XAML
@@ -207,7 +207,7 @@ In diesem Beispiel besitzt der erste Stil ein **x:Key-Attribut**, und der Zielty
 </Grid>
 ```
 
-Fügen wir nun der App einen Stil hinzu. Sehen Sie sich unter DetailsPage.xaml die Textblöcke an, die sich neben den Belichtungs-, Temperatur- und Farbton-Schiebereglern befinden. Jeder dieser Text-Blöcke zeigt den Wert eines Schiebereglers an. Hier ist der Textblock für den Belichtungs-Schieberegler. Sie sehen, dass die Eigenschaften für **Margin**, **VerticalAlignment** und **Padding** festgelegt sind.
+Als Nächstes fügen wir unserer App einen Stil hinzu. Sieh dir in „DetailsPage.xaml“ die Textblöcke an, die sich neben unseren Schiebereglern für Belichtung, Farbtemperatur und Farbton befinden. Jeder dieser Textblöcke zeigt den Wert eines Schiebereglers an. Im Anschluss findest du den Textblock für den Belichtungsschieberegler. Wie du siehst, sind die Eigenschaften **Margin**, **VerticalAlignment** und **Padding** festgelegt:
 
 ```XAML
 <TextBlock Grid.Row="2"
@@ -215,14 +215,14 @@ Fügen wir nun der App einen Stil hinzu. Sehen Sie sich unter DetailsPage.xaml d
             Margin="10,8,0,0" VerticalAlignment="Center" Padding="0"
             Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />
 ```
-Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigenschaften auf den gleichen Wert festgelegt sind. Klingt gut für einen Stil...
+Wenn du dir die anderen Textblöcke ansiehst, wirst du feststellen, dass dort die gleichen Eigenschaften und die gleichen Werte festgelegt sind. Klingt nach einer guten Gelegenheit für einen Stil.
 
-### <a name="create-a-value-text-block-style"></a>Erstellen eines Wert-Stils für den Text-Block
+### <a name="create-a-value-text-block-style"></a>Erstellen eines Stils mit einem Werttextblock
 
 <!-- TODO: add second starting point -->
-1. Öffnen Sie DetailsPage.xaml.
+1. Öffne „DetailsPage.xaml“.
 
-2. Suchen Sie das **Raster**-Steuerelement **EditControlsGrid**. Es enthält unsere Schieberegler und Textfelder. Beachten Sie, dass das Raster bereits ein Format für unsere Schieberegler definiert. 
+2. Suche nach dem Steuerelement **Grid** mit dem Namen **EditControlsGrid**. Es enthält unsere Schieberegler und Textfelder. Beachte, dass das Raster bereits einen Stil für unsere Schieberegler definiert. 
 
     ```XAML
     <Grid x:Name="EditControlsGrid"
@@ -243,9 +243,9 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
             </Style>
         </Grid.Resources>    
     ```
-3. Erstellen Sie einen Stil für einen **TextBlock**, der **Margin** auf "10,8,0,0", sein **VerticalAlignment** auf Center" und sein **Padding** auf "0" festlegt.
+3. Erstelle einen Stil für einen Textblock (**TextBlock**), um **Margin** auf „10,8,0,0“, **VerticalAlignment** auf „Center“ und **Padding** auf „0“ festzulegen.
 
-    **Vor dem**
+    **Vorher**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -263,7 +263,7 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
         </Grid.Resources>
     ```
 
-    **After**
+    **Nachher**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -289,9 +289,9 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
         </Grid.Resources>
     ```    
 
-4. Erstellen wir daraus eine benannte Formatvorlage, damit wir angeben können, welche **TextBlock**-Steuerelemente dafür gelten. Legen Sie die **x: Key** -Eigenschaft des Stils auf "ValueTextBox" fest. 
+4. Wir machen daraus einen benannten Stil, damit wir angeben können, für welche Steuerelemente vom Typ **TextBlock** er gelten soll. Lege die Eigenschaft **x: Key** des Stils auf „ValueTextBox“ fest. 
 
-    **Vor dem**
+    **Vorher**
     ```XAML
             <Style TargetType="TextBlock">
                 <Setter Property="Margin"
@@ -303,7 +303,7 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
             </Style>                            
     ```    
 
-    **After**
+    **Nachher**
     ```XAML
             <Style TargetType="TextBlock"
                    x:Key="ValueTextBox">
@@ -316,9 +316,9 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
             </Style>                            
     ```    
 
-5. Entfernen Sie für jeden **TextBlock** die Eigenschaften **Margin**, **VerticalAlignment** und **Padding** und legen Sie die **Stil**-Eigenschaft auf "{StaticResource ValueTextBox}" fest.
+5. Entferne für jeden Textblock (**TextBlock**) die Eigenschaften **Margin**, **VerticalAlignment** und **Padding**, und lege die Eigenschaft **Style** auf „{StaticResource ValueTextBox}“ fest.
 
-    **Vor dem**
+    **Vorher**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -326,7 +326,7 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```
 
-    **After**
+    **Nachher**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -334,24 +334,24 @@ Sehen Sie sich die anderen Textblöcke an – Sie sehen, dass die gleichen Eigen
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```    
 
-    Nehmen Sie diese Änderung an allen 6 TextBlock-Steuerelementen vor, die den Schiebereglern zugeordnet sind.
+    Führe diese Änderung für alle sechs TextBlock-Steuerelemente durch, die den Schiebereglern zugeordnet sind.
 
-6. Übersetzen Sie die App, und führen Sie sie aus. Es sollte... gleich aussehen. Allerdings sollten Sie ein Gefühl der Zufriedenheit haben, das sich daraus ergibt, effizienten und leichter zu verwaltenden Code zu schreiben.
+6. Kompiliere die App, und führe sie aus. Sie sollte nun... immer noch genauso aussehen. Du kannst allerdings stolz darauf sein, effizienten und mühelos verwaltbaren Code geschrieben zu haben.
 
 <!-- TODO add new start/end points -->
-Herzlichen Glückwunsch! Sie haben Teil 2 abgeschlossen!
+Damit ist der zweite Teil abgeschlossen.
 
 
-## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>Teil 3: Verwenden einer Steuerelementvorlage, um einen Schieberegler mit Effekten zu machen.
+## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>Teil 3: Erstellen eines schicken Schiebereglers mithilfe einer Steuerelementvorlage
 
-Erinnern Sie sich, wie wir in Teil 1 eine Form hinter dem Schieberegler hinzugefügt haben, damit er cool aussieht?
+Du erinnerst dich doch bestimmt noch an den ersten Teil, in dem wir eine Form im Hintergrund des Schiebereglers hinzugefügt haben, um ihn etwas aufzupeppen.
 
-Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstellen Sie eine Steuerelementvorlage. 
+Das hat zwar funktioniert, der gleiche Effekt lässt sich jedoch noch besser mit einer Steuerelementvorlage erzielen. 
 
 <!-- TODO add new starting points -->
-1. Doppelklicken Sie im Projektmappen-Explorer-Bereich auf **DetailPage.xaml**.
+1. Doppelklicke im Projektmappen-Explorer auf **DetailPage.xaml**.
 
-2. Als Nächstes verwenden wir die standardmäßige Steuerelementvorlage für Schieberegler als Ausgangspunkt. Fügen Sie diesen XAML-Code dem **Page.Resources**-Element hinzu. (Das **Page.Resources**-Element befindet sich am Anfang der Seite.)
+2. Als Nächstes verwenden wir die standardmäßige Steuerelementvorlage für Schieberegler als Ausgangspunkt. Füge den folgenden XAML-Code dem Element **Page.Resources** hinzu. (Das Element **Page.Resources** befindet sich am Anfang der Seite.)
 
     ```XAML
     <ControlTemplate x:Key="FancySliderControlTemplate" TargetType="Slider">
@@ -613,9 +613,9 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
     </ControlTemplate>
     ```
 
-    WOW, das ist eine Menge XAML! Steuerelementvorlagen sind ein leistungsfähiges Feature, sie können jedoch sehr komplex sein, daher empfiehlt sich in der Regel, mit der Standardvorlage zu beginnen. 
+    Wow, das ist eine ganze Menge XAML-Code! Steuerelementvorlagen sind ein leistungsfähiges Feature, können aber recht komplex sein. Daher empfiehlt es sich in der Regel, mit der Standardvorlage zu beginnen. 
     
-3. Suchen Sie im gerade hinzugefügten **ControlTemplate** das Raster-Steuerelement mit dem Namen **HorizontalTemplate**. Dieses Raster definiert den Teil der Vorlage, die wir ändern möchten.
+3. Suche in der soeben hinzufügten Steuerelementvorlage (**ControlTemplate**) nach dem Rastersteuerelement namens **HorizontalTemplate**. Dieses Raster definiert den Teil der Vorlage, den wir ändern möchten.
 
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
@@ -631,9 +631,9 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Grid.RowDefinitions>
     ```
 
-5.  Erstellen Sie ein Polygon, das genauso funktioniert wie das Polygon, das Sie für den Belichtungs-Schieberegler in Teil 1 erstellt haben. Fügen Sie das Polygon hinzu, nachdem Sie den **Grid.RowDefinitions**-Tag geschlossen haben. Legen Sie **Grid.Row** auf "0", **Grid.RowSpan** auf "3" und **Grid.ColumnSpan** auf "3" fest. 
+5.  Erstelle ein Polygon mit den gleichen Merkmalen wie das Polygon, das du im ersten Teil für den Belichtungsschieberegler erstellt hast. Füge das Polygon nach dem schließenden Tag **Grid.RowDefinitions** hinzu. Lege **Grid.Row** auf „0“, **Grid.RowSpan** auf „3“ und **Grid.ColumnSpan** auf „3“ fest. 
 
-    **Vor dem**
+    **Vorher**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -648,7 +648,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Grid.RowDefinitions>        
     ```
 
-    **After**
+    **Nachher**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -675,9 +675,9 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Polygon>           
     ```
 
-6. Entfernen Sie die **Polygon.Fill**-Einstellung. Legen Sie **Fill** auf "{TemplateBinding Background}" fest. Dadurch wird die **Hintergrund**-Eigenschaft des Schiebereglers auf die Eigenschaft **Fill** des Polygons festgelegt. 
+6. Entferne die Einstellung **Polygon.Fill**. Lege **Fill** auf „{TemplateBinding Background}“ fest. Dadurch wird die Eigenschaft **Fill** des Polygons festgelegt, wenn die Eigenschaft **Background** des Schiebereglers festgelegt wird. 
 
-    **Vor dem**
+    **Vorher**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -693,7 +693,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Polygon>           
     ```
     
-    **After**
+    **Nachher**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -702,9 +702,9 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Polygon>           
     ```    
 
-7. Hinter dem Polygon, den Sie gerade hinzugefügt haben, wird ein Rechteck mit dem Namen **HorizontalTrackRect** angezeigt. Entfernen Sie die **Fill**-Eigenschaft des Rechtecks, damit das Rechteck nicht angezeigt wird und unsere Polygonform nicht blockiert. (Wir möchten das Rechteck nicht vollständig entfernen, da die Steuerelementvorlage auch für die Interaktion visueller Objekte wie z. B. Hover verwendet wird.)
+7. Direkt nach dem Polygon, das zu hinzugefügt hast, befindet sich ein Rechteck namens **HorizontalTrackRect**. Entferne die Einstellung **Fill** des Rechtecks, damit das Rechteck nicht sichtbar ist und unsere Polygonform nicht blockiert. Wir möchten das Rechteck nicht vollständig entfernen, da es von der Steuerelementvorlage auch für interaktionsbezogene visuelle Hinweise (etwa beim Daraufzeigen) verwendet wird.
 
-    **Vor dem**
+    **Vorher**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Fill="{TemplateBinding Background}"
@@ -713,7 +713,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
                     Grid.ColumnSpan="3" />          
     ```
     
-    **After**
+    **Nachher**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Height="{ThemeResource SliderTrackThemeHeight}"
@@ -721,16 +721,16 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
                     Grid.ColumnSpan="3" />
     ```
 
-    Herzlichen Glückwunsch! Sie haben diese Vorlage vollständig bearbeitet! Nun müssen wir sie auf unsere Schieberegler anwenden. 
+    Damit ist die Vorlage fertig. Nun müssen wir sie auf unsere Schieberegler anwenden. 
     
-8. Aktualisieren wir unseren Belichtungs-Schieberegler.
+8. Aktualisieren wir also unseren Belichtungsschieberegler.
 
-    * Legen Sie die **Vorlage**-Eigenschaft des Schiebereglers auf "{StaticResource FancySliderControlTemplate}" fest.
-    * Entfernen Sie die Einstellung des Schiebereglers für den Hintergrund = "Transparent". 
-    * Legen Sie den Schiebereglerhintergrund auf einen linearen Farbverlauf fest, der von Schwarz in Weiß übergeht.
-    * Entfernen Sie das Hintergrund-Polygon, das wir in Teil 1 erstellt haben.
+    * Lege die Eigenschaft **template** des Schiebereglers auf „{StaticResource FancySliderControlTemplate}“ fest.
+    * Entferne die Einstellung „Background="Transparent"“ des Schiebereglers. 
+    * Lege den Hintergrund des Schiebereglers auf einen linearen Farbverlauf fest, der von Schwarz in Weiß übergeht.
+    * Entferne das Hintergrundpolygon, das wir im ersten Teil erstellt haben.
         
-    **Vor dem**
+    **Vorher**
     ```XAML
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -752,7 +752,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
             Template="{StaticResource FancySliderControlTemplate}"/>    
     ```
     
-    **After**
+    **Nachher**
     ```XAML
     <Slider Header="Exposure" 
             Grid.Row="2"  Foreground="Transparent"
@@ -770,9 +770,9 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
         </Slider.Background>
     </Slider>
     ```        
-9. Führen Sie die gleichen Updates auf den Schieberegler für die Temperatur aus.
+9. Aktualisiere den Schieberegler für die Farbtemperatur auf die gleiche Weise.
 
-    **Vor dem**
+    **Vorher**
     ```XAML
     <Polygon Grid.Row="3" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -793,7 +793,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
             Maximum="1" />
     ```
     
-    **After**
+    **Nachher**
     ```XAML
     <Slider Header="Temperature"
             Grid.Row="3" Foreground="Transparent"
@@ -812,9 +812,9 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
     </Slider>
     ```    
 
-10. Führen Sie die gleichen Updates auf den Schieberegler für den Farbton aus.
+10. Aktualisiere den Farbtonschieberegler auf die gleiche Weise.
 
-    **Vor dem**
+    **Vorher**
     ```XAML
     <Polygon Grid.Row="4" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -835,7 +835,7 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
             Maximum="1" />
     ```
     
-    **After**
+    **Nachher**
     ```XAML
     <Slider Header="Tint"
             Grid.Row="4" Foreground="Transparent"
@@ -854,11 +854,11 @@ Jetzt gibt es eine bessere Möglichkeit, den gleichen Effekt zu erzielen: Erstel
     </Slider>
     ```        
 
-11. Übersetzen Sie die App, und führen Sie sie aus. 
+11. Kompiliere die App, und führe sie aus. 
 
-    ![Sie haben die besten Schieberegler in der ganzen Welt](../basics/images/xaml-basics/style-sliders-templates.png)
+    ![Die besten Schieberegler überhaupt](../basics/images/xaml-basics/style-sliders-templates.png)
     
-    Wie Sie sehen können, verbessern unsere Updates die Positionierung des Polygons. Jetzt ist das untere Ende des Polygons am unteren Rand der Ziehpunkt des Schiebereglers ausgerichtet.
+    Wie du siehst, ist das Polygon dank unserer Aktualisierungen nun besser positioniert: Der untere Rand des Polygons ist nun am unteren Rand des Schieberegler-Ziehpunkts ausgerichtet.
     
 <!-- TODO correct folder -->
-Herzlichen Glückwunsch! Sie haben das Lernprogramm abgeschlossen. Wenn Sie nicht weiterkommen oder die endgültige Lösung nicht anzeigen können, finden Sie das fertige Beispiel unter [UWP-App-Beispielrepository](https://github.com/Microsoft/Windows-universal-samples).
+Damit ist das Tutorial beendet. Falls du an einer Stelle nicht weiterkommen solltest und dir die endgültige Lösung ansehen möchtest, findest du das vollständige Beispiel im [UWP-App-Beispielrepository](https://github.com/Microsoft/Windows-universal-samples).
