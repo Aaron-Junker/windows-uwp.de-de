@@ -4,27 +4,27 @@ title: Elementvorlagen für Listenansicht
 template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
-keywords: Windows 10, UWP, fluent
+keywords: Windows 10, UWP, Fluent
 ms.openlocfilehash: 0a772c0ec6aad2c0d6a099b54eb4c6faa413cc7b
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913940"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63793906"
 ---
 # <a name="item-templates-for-list-view"></a>Elementvorlagen für Listenansicht
 
 Die Elementvorlagen in diesem Abschnitt können Sie mit einem [**ListView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)-Steuerelement verwenden. Mithilfe dieser Vorlagen erhalten Sie das Erscheinungsbild gängiger App-Typen. 
 
-Um die Datenbindung zu demonstrieren, binden Sie diese Vorlagen **ListViewItems** der Beispiel-Aufzeichnung-Klasse aus der [Übersicht über die Datenbindung](../../data-binding/data-binding-quickstart.md).
+Zur Veranschaulichung der Datenbindung werden über diese Vorlagen **ListViewItems** an die Recording-Beispielklasse aus der [Datenbindungsübersicht](../../data-binding/data-binding-quickstart.md) gebunden.
 
 > [!NOTE] 
-> Wenn ein **DataTemplate** zurzeit mehrere Steuerelemente enthält (z. B. mehr als ein einzelner **TextBlock**), kommt der Name zur Verwendung durch Screenreader-Software von ToString(). Zur Vereinfachung können Sie stattdessen [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) auf dem Root-Element des **DataTemplate** setzen. Weitere Informationen zur Barrierefreiheit finden Sie unter [Zugänglichkeit im Überblick](../accessibility/accessibility-overview.md).
+> Wenn ein **DataTemplate**-Element mehrere Steuerelemente enthält (z. B. mehr als einen einzelnen **TextBlock**), stammt der Name zur Verwendung durch Screenreader-Software derzeit von .ToString() für das Element. Zur Vereinfachung können Sie stattdessen [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) im Stammelement von **DataTemplate** festlegen. Weitere Informationen zur Barrierefreiheit finden Sie unter [Übersicht über die Barrierefreiheit](../accessibility/accessibility-overview.md).
 
 ## <a name="single-line-list-item"></a>Einzeiliges Listenelement
-Verwenden Sie diese Vorlage, um eine Elementliste mit einem Bild und einem einzeiligen Text anzuzeigen.
+Verwenden Sie diese Vorlage, um eine Liste von Elementen mit einem Bild und einzeiligem Text anzuzeigen.
 
-![Beispiel zu einzeiligem Listenelement](images/listitems/singlelineexample.png)
+![Beispiel für einzeiliges Listenelement](images/listitems/singlelineexample.png)
 ![Einzeiliges Listenelement](images/listitems/singlelineicon.png)
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -40,9 +40,9 @@ Verwenden Sie diese Vorlage, um eine Elementliste mit einem Bild und einem einze
 ```
 
 ## <a name="double-line-list-item"></a>Zweizeiliges Listenelement 
-Verwenden Sie diese Vorlage, um eine Elementliste mit einem Bild und einem zweizeiligen Text anzuzeigen.
+Verwenden Sie diese Vorlage, um eine Liste von Elementen mit einem Bild und zweizeiligem Text anzuzeigen.
 
-![Beispiel zu zweizeiligem Listenelement mit Symbol](images/listitems/doublelineexample.png) 
+![Beispiel für zweizeiliges Listenelement mit Symbol](images/listitems/doublelineexample.png) 
 ![Zweizeiliges Listenelement mit Symbol](images/listitems/doublelineicon.png)
 
 ```xaml
@@ -66,9 +66,9 @@ Verwenden Sie diese Vorlage, um eine Elementliste mit einem Bild und einem zweiz
 ```
 
 ## <a name="triple-line-list-item"></a>Dreizeiliges Listenelement
-Verwenden Sie diese Vorlage, um eine Elementliste mit einem Bild und einem dreizeiligen Text anzuzeigen.
+Verwenden Sie diese Vorlage, um eine Liste von Elementen mit dreizeiligem Text anzuzeigen.
 
-![Beispiel zu dreizeiligem Listenelement](images/listitems/triplelineexample.png)
+![Beispiel für dreizeiliges Listenelement](images/listitems/triplelineexample.png)
 ![Dreizeiliges Listenelement](images/listitems/tripleline.png)
 
 ```xaml
@@ -86,9 +86,9 @@ Verwenden Sie diese Vorlage, um eine Elementliste mit einem Bild und einem dreiz
 ```
 
 ## <a name="table-list-item"></a>Tabellenlistenelement
-Verwenden Sie diese Vorlage, um eine Elementliste mit Text in Spalten anzuzeigen.
+Verwenden Sie diese Vorlage, um eine Liste von Elementen mit Text in definierten Spalten anzuzeigen.
 
-![Beispiel zu Tabellenlistenelement](images/listitems/tablelist.png)
+![Beispiel für Tabellenlistenelement](images/listitems/tablelist.png)
 ```xaml
 <ListView  ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.HeaderTemplate>
@@ -131,6 +131,6 @@ Verwenden Sie diese Vorlage, um eine Elementliste mit Text in Spalten anzuzeigen
 ## <a name="related-articles"></a>Verwandte Artikel
 - [ListView-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
 - [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md)
-- [Überblick über die Barrierefreiheit](../accessibility/accessibility-overview.md)
-- [Beispiele zu ListView und GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Übersicht über die Barrierefreiheit](../accessibility/accessibility-overview.md)
+- [Beispiel für ListView und GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Miniaturbilder](../../files/thumbnails.md)

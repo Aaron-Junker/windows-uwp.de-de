@@ -4,27 +4,27 @@ title: Elementvorlagen für Rasteransicht
 template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
-keywords: Windows 10, UWP, fluent
+keywords: Windows 10, UWP, Fluent
 ms.openlocfilehash: f1cc576bbc7fe7fc326d86072e22b7a385cfeb8b
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913950"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63794548"
 ---
 # <a name="item-templates-for-grid-view"></a>Elementvorlagen für Rasteransicht
 
 Die Elementvorlagen in diesem Abschnitt können Sie mit einem [**GridView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)-Steuerelement verwenden. Mithilfe dieser Vorlagen erhalten Sie das Erscheinungsbild gängiger App-Typen.
 
-Um die Datenbindung zu demonstrieren, binden Sie diese Vorlagen **GridViewItems** der Beispiel-Aufzeichnung-Klasse aus der [Übersicht über die Datenbindung](../../data-binding/data-binding-quickstart.md).
+Zur Veranschaulichung der Datenbindung werden über diese Vorlagen **GridViewItems** an die Recording-Beispielklasse aus der [Datenbindungsübersicht](../../data-binding/data-binding-quickstart.md) gebunden.
 
 > [!NOTE] 
-> Wenn ein **DataTemplate** zurzeit mehrere Steuerelemente enthält (z. B. mehr als ein einzelner **TextBlock**), kommt der Name zur Verwendung durch Screenreader-Software von ToString(). Zur Vereinfachung können Sie stattdessen [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) auf dem Root-Element des **DataTemplate** setzen. Weitere Informationen zur Barrierefreiheit finden Sie unter [Zugänglichkeit im Überblick](../accessibility/accessibility-overview.md).
+> Wenn ein **DataTemplate**-Element mehrere Steuerelemente enthält (z. B. mehr als einen einzelnen **TextBlock**), stammt der Name zur Verwendung durch Screenreader-Software derzeit von .ToString() für das Element. Zur Vereinfachung können Sie stattdessen [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) im Stammelement von **DataTemplate** festlegen. Weitere Informationen zur Barrierefreiheit finden Sie unter [Übersicht über die Barrierefreiheit](../accessibility/accessibility-overview.md).
 
 ## <a name="icon-and-text"></a>Symbol und Text
 Verwenden Sie diese Vorlagen, um eine Sammlung von Apps in einem Raster mit einem Symbol und Text anzuzeigen.
 
-![Kleine Symbol und Text-Gridview-Beispiel](images/listitems/icontext.png)
+![Beispiel für Rasteransicht mit kleinem Symbol und Text](images/listitems/icontext.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -43,7 +43,7 @@ Verwenden Sie diese Vorlagen, um eine Sammlung von Apps in einem Raster mit eine
 </GridView>
 ```
 
-![Kleines Symbol und doppelzeiliges Text-Gridview-Beispiel](images/listitems/icontext2.png)
+![Beispiel für Rasteransicht mit Symbol und zweizeiligem Text](images/listitems/icontext2.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -84,9 +84,9 @@ Verwenden Sie diese Vorlage, um eine Bildersammlung in einem Raster mit Mehrfach
 </GridView>
 ```
 ## <a name="image-and-text"></a>Bild und Text
-Verwenden Sie diese Vorlagen, um eine Mediensammlung mit darunter liegendem Text anzuzeigen.
+Verwenden Sie diese Vorlagen, um eine Mediensammlung mit darunter stehendem Text anzuzeigen.
 
-![Beispiel für quadratische Bild- und Textrasterdarstellung](images/listitems/imageandtext.png)
+![Beispiel für Rasteransicht mit quadratischen Bildern und Text](images/listitems/imageandtext.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -108,7 +108,7 @@ Verwenden Sie diese Vorlagen, um eine Mediensammlung mit darunter liegendem Text
 </GridView>
 ```
 
-![Beispiel für rechteckige Bild- und Textrasterdarstellung](images/listitems/imageandtext2.png)
+![Beispiel für Rasteransicht mit rechteckigen Bildern und Text](images/listitems/imageandtext2.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -130,10 +130,10 @@ Verwenden Sie diese Vorlagen, um eine Mediensammlung mit darunter liegendem Text
 </GridView>
 ```
 
-## <a name="image-with-text-overlay"></a>Bildraster mit Text-Overlay
-Verwenden Sie diese Vorlage, um eine Mediensammlung mit Text-Overlay anzuzeigen.
+## <a name="image-with-text-overlay"></a>Bild mit Textüberlagerung
+Verwenden Sie diese Vorlage, um eine Mediensammlung mit Textüberlagerung anzuzeigen.
 
-![Beispiel für Text-Overlay-GridView](images/listitems/imageoverlay.png)
+![Beispiel für Rasteransicht mit Bildern und Textüberlagerung](images/listitems/imageoverlay.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -158,6 +158,6 @@ Verwenden Sie diese Vorlage, um eine Mediensammlung mit Text-Overlay anzuzeigen.
 ## <a name="related-articles"></a>Verwandte Artikel
 - [GridView-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md)
-- [Überblick über die Barrierefreiheit](../accessibility/accessibility-overview.md)
-- [Beispiele zu ListView und GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Übersicht über die Barrierefreiheit](../accessibility/accessibility-overview.md)
+- [Beispiel für ListView und GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Miniaturbilder](../../files/thumbnails.md)
