@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 956e4050e3077ac827cf8107470698b42878a5e1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 182a2862589ef5b6b0bd5d76cb1b9ef9599b2ed6
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370875"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820633"
 ---
 # <a name="add-a-splash-screen"></a>Hinzufügen eines Begrüßungsbildschirms
 
@@ -27,7 +27,7 @@ Wenn Sie eine Visual Studio-Vorlage zum Erstellen der App verwenden, wird dem Pr
 
     Im folgenden Screenshot ist das Fenster „Package.appxmanifest“ in Visual Studio dargestellt. Je nach Art des Projekts werden leicht unterschiedliche Sätze von visuellen Ressourcen angezeigt.
 
-    ![Screenshot des Fensters „Package.appxmanifest“ in Visual Studio 2017](images/appmanifest.png)
+    ![ein Screenshot des Fensters "package.appxmanifest" in Visual Studio-2019](images/appmanifest.png)
 
     Wenn Sie „Package.appxmanifest“ in einem Text-Editor öffnen, wird das [**SplashScreen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen)-Element als untergeordnetes Element des [**VisualElements**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements)-Elements angezeigt. Das standardmäßige Begrüßungsbildschirm-Markup in der Manifestdatei sieht in einem Text-Editor wie folgt aus:
 

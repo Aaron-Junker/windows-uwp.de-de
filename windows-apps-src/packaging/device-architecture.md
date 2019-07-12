@@ -5,12 +5,12 @@ ms.date: 07/13/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Verpacken, Architektur, Paket-Konfiguration
 ms.localizationpriority: medium
-ms.openlocfilehash: c691605ad121ee1e218bfe7947a9026a46fc5234
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 12de19b78c3aab27a7fbc29dd5e8183de1a0c0be
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319800"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821011"
 ---
 # <a name="app-package-architectures"></a>App-Paketarchitekturen
 
@@ -44,7 +44,8 @@ Diese Konfiguration wird weniger häufig als x86 verwendet. Sie sollten wissen, 
 Die Windows 10 on ARM-Konfiguration umfasst Desktop-PCs, mobile Geräte und einige IoT Core-Geräte (Rasperry Pi 2, Raspberry Pi 3 und DragonBoard). Windows 10 on ARM-Desktop-PCs sind eine neue Funktion in die Windows-Produktfamilie. Wenn Sie UWP-App-Entwickler sind, sollten Sie ARM-Pakete für den Store für diese PCs übermitteln.
 
 >[!NOTE]
-> Um Ihrer UWP-Anwendung für die ARM64 systemintern Zielplattform erstellen zu können, müssen Sie Visual Studio 2017 Version 15.9 oder höher verfügen. Weitere Informationen finden Sie unter [in diesem Blogbeitrag](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
+> Um Ihrer UWP-Anwendung für die ARM64 systemintern Zielplattform erstellen zu können, müssen Sie Visual Studio 2017-Version 15.9 oder höher oder Visual Studio-2019 verfügen. Weitere Informationen finden Sie unter [in diesem Blogbeitrag](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
+
 
 Weitere Informationen finden Sie unter [Windows 10 auf ARM](../porting/apps-on-arm.md). Sehen Sie sich diesen //Build-Talk an, um eine Demo zu [Windows 10 on ARM](https://channel9.msdn.com/Events/Build/2017/P4171) zu sehen und mehr zu erfahren.
 

@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Device-portal
 ms.localizationpriority: medium
-ms.openlocfilehash: debc4572a26db9e849dd31f17b114f15aa9ef055
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fe1c2130c3fae70f8aa5aa18acee83a6b6247ef5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362491"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820157"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
 
@@ -22,7 +22,7 @@ Ab dem Creators Update können Sie im Device Portal die Diagnoseschnittstellen I
 ## <a name="create-a-new-uwp-app-project"></a>Erstellen eines neuen UWP-App-Projekts
 In dieser Anleitung erstellen wir der Einfachheit halber alles in einer Projektmappe.
 
-Erstellen Sie in Microsoft Visual Studio 2017 ein neues UWP-App-Projekt. Wechseln Sie zu „Datei“ > „Neues Projekt“, und wählen Sie „Vorlagen“ > „Visual C#“ > „Windows Universal“ > „Leere App (Windows Universal)“. Nennen Sie die App „DevicePortalProvider”. Diese App soll den App-Dienst enthalten. Stellen Sie sicher, dass Sie die Unterstützung für das Creators Update-SDK auswählen.  Möglicherweise müssen Sie Visual Studio aktualisieren oder das neue SDK installieren – Details dazu finden Sie [hier](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/). 
+Erstellen Sie in Microsoft Visual Studio-2019 ein neues Projekt für die UWP-app. Wechseln Sie zur Datei > Neu > Projekt und wählen leere App (Windows universell) für C#, und klicken Sie dann auf Weiter. Das Dialogfeld Neues Projekt konfigurieren. Nennen Sie das Projekt "DevicePortalProvider", und klicken Sie dann auf erstellen. Diese App soll den App-Dienst enthalten. Stellen Sie sicher, dass Sie "Windows 10 Creators Update (10.0; auswählen Build 15063) "unterstützen.  Möglicherweise müssen Sie Visual Studio aktualisieren oder das neue SDK installieren – Details dazu finden Sie [hier](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/). 
 
 ## <a name="add-the-deviceportalprovider-extension-to-your-packageappxmanifest-file"></a>Hinzufügen der devicePortalProvider-Erweiterung zur package.appxmanifest-Datei
 Sie müssen der *package.appxmanifest*-Datei Code hinzufügen, damit Sie Ihre App als Device Portal-Plug-In nutzen können. Fügen Sie zunächst die folgenden Namespace-Definitionen am Beginn der Datei ein. Fügen Sie auch das `IgnorableNamespaces`-Attribut hinzu.

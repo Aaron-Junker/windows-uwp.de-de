@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 707c2ed110498f4ef18fea31ace87d1fd2434112
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639985"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820341"
 ---
 # <a name="create-data-bindings"></a>Erstellen von Datenbindungen
 
@@ -20,22 +20,22 @@ In diesem Lernprogramm erfahren Sie, wie Sie Ihre Textbausteine durch Datenbindu
 
 Sie beginnen mit einer vereinfachten Version des PhotoLab-Beispiels. Dieses Starterversion umfasst die vollständigen Datenebene sowie ein grundlegendes XAML-Layout und lässt viele kleinere Features aus, um den Code leichter zu durchsuchen. In diesem Lernprogramm lernen Sie nicht das Erstellen der vollständigen App. Lesen Sie daher die endgültige Version zu Features durch wie z. B. benutzerdefinierte Animationen und Support für Ihre Telefon. Die endgültige Version finden Sie im Stammordner des [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)-Repos. 
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Vorraussetzungen
 
-* [Visual Studio 2017 und die neueste Version des Windows 10-SDKs](https://developer.microsoft.com/windows/downloads).
+* [Visual Studio-2019 und die neueste Version von Windows 10 SDK](https://developer.microsoft.com/windows/downloads).
 
-## <a name="part-0-get-the-code"></a>Teil 0: Code abrufen
-Der Startpunkt für diese Übung befindet sich im PhotoLab-Beispiel-Repository, im Ordner [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding). Nachdem Sie das Repository geklont/heruntergeladen haben, können Sie das Projekt bearbeiten, indem Sie PhotoLab.sln mit Visual Studio 2017 öffnen.
+## <a name="part-0-get-the-code"></a>Teil 0: Abrufen des Codes
+Der Startpunkt für diese Übung befindet sich im PhotoLab-Beispiel-Repository, im Ordner [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding). Nachdem Sie das Repository heruntergeladen oder geklont haben, können Sie das Projekt bearbeiten, öffnen Sie mit Visual Studio-2019 PhotoLab.sln.
 
 Die PhotoLab-App besteht aus zwei Hauptseiten:
 
-**MainPage.xaml:** zeigt eine Ansicht der Foto-Galerie, zusammen mit einigen Informationen über jede Bilddatei an.
-!["MainPage"](../design/basics/images/xaml-basics/mainpage.png)
+**MainPage.xaml**: Zeigt eine Fotogalerie sowie einige Informationen zur jeweiligen Bilddatei.
+![MainPage](../design/basics/images/xaml-basics/mainpage.png)
 
-**DetailPage.xaml:** zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
+**DetailPage.xaml** zeigt ein einzelnes Foto, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 ![DetailPage](../design/basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-replace-the-placeholders"></a>Teil 1: Ersetzen Sie die Platzhalter
+## <a name="part-1-replace-the-placeholders"></a>Teil 1: Ersetzen Sie die Platzhalter
 
 Hier erstellen Sie einmalige Bindungen der XAML-Datenvorlage, um echte Bilder und Metadaten von Bildern anstelle der Platzhalterinhalte anzuzeigen. 
 
@@ -122,7 +122,7 @@ Führen Sie die App aus, um herauszufinden, wie sie bisher aussieht. Keine weite
 > [!Note]
 > Wenn Sie weiter experimentieren möchten, versuchen Sie, der Datenvorlage einen neuen TextBlock hinzuzufügen, und verwenden Sie den x: Bind IntelliSense-Trick, um eine Eigenschaft zu suchen, die Sie anzeigen möchten. 
 
-## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>Teil 2: Verwenden Sie die Bindung zur Verbindung mit den Images der Benutzeroberfläche des Katalogs
+## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>Teil 2: Verwenden Sie die Bindung zur Verbindung mit den Images der Benutzeroberfläche des Katalogs
 
 Hier erstellen Sie einmalige Bindungen auf XAML-Seiten für die Verbindung der Fotogalerie-Ansicht mit der Bildersammlung und ersetzen dadurch den vorhandenen prozeduralen Code, der dies im CodeBehind durchführt. Erstellen Sie außerdem eine Schaltfläche **Löschen**, um zu sehen, wie sich die Fotogalerie-Ansicht ändert, wenn Sie Bilder aus der Sammlung entfernen. Gleichzeitig erfahren Sie, wie Ereignisse für mehr Flexibilität als herkömmliche Ereignishandler an Ereignishandler gebunden werden. 
 
@@ -160,7 +160,7 @@ Im PhotoLab-Beispiel kann eine solche Bindung verwendet werden, um das Haupt-**G
               ItemsSource="{x:Bind Images}" 
     ```
 
-    Die **Images** Eigenschaft ist vom Typ **ObservableCollection\<ImageFileInfo\>**, damit die einzelnen Elemente der Anzeige der **GridView** sind Der Typ **ImageFileInfo**. Dies entspricht dem **x: DataType**-Wert, der in Teil 1 beschrieben wurde. 
+    Die **Images** Eigenschaft ist vom Typ **ObservableCollection\<ImageFileInfo\>** , damit die einzelnen Elemente der Anzeige der **GridView** sind Der Typ **ImageFileInfo**. Dies entspricht dem **x: DataType**-Wert, der in Teil 1 beschrieben wurde. 
 
 Alle Bindungen, die wir haben bisher untersucht haben, sind einmalige, schreibgeschützte Bindungen und entsprechen dem Standardverhalten für nur **x: Bind**-Ausdrücke. Die Daten werden nur bei der Initialisierung hochgeladen, wodurch High-End-Bindungen entstehen – dies eignet sich ideal für die Unterstützung von mehreren komplexen Ansichten großer Datensätze. 
 
@@ -171,7 +171,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-Die **Images** Eigenschaftswert sich nie ändert, aber da die Eigenschaft vom Typ **ObservableCollection\<T\>**, *Inhalt* von der Auflistung kann geändert werden, und die Bindung automatisch Beachten Sie die Änderungen und die Benutzeroberfläche aktualisiert wird. 
+Die **Images** Eigenschaftswert sich nie ändert, aber da die Eigenschaft vom Typ **ObservableCollection\<T\>** , *Inhalt* von der Auflistung kann geändert werden, und die Bindung automatisch Beachten Sie die Änderungen und die Benutzeroberfläche aktualisiert wird. 
 
 Um dies zu testen, werden wir vorübergehend eine Schaltfläche hinzufügen, die das derzeit ausgewählte Bild löscht. In der endgültigen Version ist diese Schaltfläche nicht vorhanden, da die Auswahl eines Bildes Sie zu einer Detailseite führt. Jedoch das Verhalten der **ObservableCollection\<T\>**  ist im letzten Beispiel PhotoLab wichtig, da die XAML in der Page-Konstruktor initialisiert wird (über die  **InitializeComponent** Methodenaufruf), aber die **Images** -Auflistung wird aufgefüllt, weiter unten in der **OnNavigatedTo** Methode. 
 
@@ -211,7 +211,7 @@ In dieser Phase erstellen wir unidirektionale Bindungen von einem Steuerelement 
 
 * Suchen Sie ein **DataTemplate** mit dem Namen **ImageGridView_DefaultItemTemplate** und ersetzen Sie die Werte von **Höhe** und **Breite** des **Raster**-Steuerelements im oberen Bereich der Vorlage.
 
-    **Vor dem**
+    **Vorher**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -220,7 +220,7 @@ In dieser Phase erstellen wir unidirektionale Bindungen von einem Steuerelement 
               Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **Nach dem**
+    **Nachher**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -303,7 +303,7 @@ Im Gegensatz zu integrierten Steuerelement-Eigenschaften werden Ihre benutzerdef
 
 4. Suchen Sie in MainPage.xaml ein **DataTemplate** mit dem Namen **ImageGridView_DefaultItemTemplate** und ersetzen Sie die Werte von **Höhe** und **Breite** des **Raster**-Steuerelements im oberen Bereich der Vorlage. (Wenn Sie im vorherigen Teil dieses Lernprogramms die Bindungen von einem Steuerelement zum anderen erstellt haben, müssen Sie als einzige Änderungen **Wert** durch **ItemSize** und **ZoomSlider** durch **Seite** ersetzen. Führen Sie dies für die Höhe und Breite aus!)
 
-    **Vor dem**
+    **Vorher**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -312,7 +312,7 @@ Im Gegensatz zu integrierten Steuerelement-Eigenschaften werden Ihre benutzerdef
             Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **Nach dem**
+    **Nachher**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -557,7 +557,7 @@ Wenn Sie die App ausführen, funktioniert jetzt alles, einschließlich der Schie
 > Versuchen Sie die Funktions-Bindung mit dem **TextBlock** vom letzten Play-Punkt und binden Sie sie an eine neue Methode, die eine Zeichenfolge im "000 x 000"-Format zurückgibt, wenn Sie sie an den **ItemSize**-Wert übergeben.
 
 
-## <a name="conclusion"></a>Abschluss
+## <a name="conclusion"></a>Schlussbemerkung
 
 In diesem Lernprogramm haben Sie einen Einblick in die Datenbindung und einige der verfügbaren Funktionen erhalten. Eines möchten wir jedoch zu bedenken geben: nicht alles kann gebunden werden, und in einigen Fällen sind die Werte zum Herstellen einer Verbindung nicht kompatibel mit den Eigenschaften, die Sie anbinden möchten. Es gibt zwar ein hohes Maß an Flexibilität beim Binden, dies funktioniert allerdings nicht in jeder Situation.
 

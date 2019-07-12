@@ -6,12 +6,12 @@ keywords: App zu app Communication, prozessübergreifende Kommunikation IPC, mes
 ms.date: 01/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e1b409406cf03d83ff10b04d96d7ff9f0413dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d122a51c53fc7eb32ab79f6decc570238af22973
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370743"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821048"
 ---
 # <a name="create-and-consume-an-app-service"></a>Erstellen und Verwenden eines App-Diensts
 
@@ -27,10 +27,10 @@ In dieser Anleitung erstellen wir der Einfachheit halber alles in einer Projektm
 
 1. In Visual Studio 2015 oder höher, erstellen Sie ein neues UWP-app-Projekt, und nennen Sie sie **AppServiceProvider**.
     1. Wählen Sie **Datei > Neu > Projekt...** 
-    2. In der **neues Projekt** wählen Sie im Dialogfeld **installiert > Visual C# > leere App (Universelles Windows)** . Dies ist die App, die den App-Dienst für andere UWP-Apps verfügbar macht.
-    3. Nennen Sie das Projekt **AppServiceProvider**, Auswählen eines Speicherorts für sie und klicken Sie auf **OK**.
+    2. In der **Erstellen eines neuen Projekts** wählen Sie im Dialogfeld **leere App (Universelles Windows) C#** . Dies ist die App, die den App-Dienst für andere UWP-Apps verfügbar macht.
+    3. Klicken Sie auf **Weiter**, und nennen Sie das Projekt **AppServiceProvider**, Auswählen eines Speicherorts für sie und klicken Sie dann auf **erstellen**.
 
-2. Wenn Sie gefragt werden, wählen Sie eine **Ziel** und **Mindestversion** für das Projekt, wählen Sie mindestens **10.0.14393**. Wenn Sie die Verwendung der neuen möchten **SupportsMultipleInstances** -Attribut, Sie müssen Visual Studio 2017 und Ziel verwenden **10.0.15063** (**Windows 10 Creators Update**) oder höher.
+2. Wenn Sie gefragt werden, wählen Sie eine **Ziel** und **Mindestversion** für das Projekt, wählen Sie mindestens **10.0.14393**. Wenn Sie die Verwendung der neuen möchten **SupportsMultipleInstances** -Attribut müssen verwenden Sie Visual Studio 2017 oder Visual Studio-2019 und Ziel **10.0.15063** (**Windows 10 Creators Update**) oder höher.
 
 <span id="appxmanifest"/>
 

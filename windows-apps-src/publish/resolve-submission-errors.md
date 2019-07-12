@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df93195578c1e7c6fd87ab7403375a1a3dcc825
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 8ec2b10b402db7398dad6643355e064c26318170
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468912"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820600"
 ---
 # <a name="resolve-submission-errors"></a>Beheben von Übermittlungsfehlern
 
@@ -25,7 +25,7 @@ Wenn ein Kompilierungsfehler angezeigt wird, stellen Sie sicher, dass Sie die An
 
 ## <a name="desktop-application"></a>Desktop-Anwendung
 
-Wenn Sie beabsichtigen, ein Paket zu übermitteln, die Win32- und UWP-Binärdateien enthält, stellen Sie sicher, dass Sie das Paket erstellen, mit dem Windows-Paketerstellungsprojekt, die in Visual Studio 2017 Update 4 verfügbar ist. Wenn Sie das Paket mit einer UWP-Projektvorlage erstellen, sind Sie möglicherweise nicht in der zum übermitteln, die an den Store oder laden es auf anderen PCs packen können. Auch wenn das Paket erfolgreich veröffentlicht wurde, kann es auf unerwartete Weise auf dem PC des Benutzers Verhalten. Weitere Informationen finden Sie unter [Verpacken einer app mit Visual Studio (Desktop-Brücke)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
+Wenn Sie beabsichtigen, ein Paket zu übermitteln, die Win32- und UWP-Binärdateien enthält, stellen Sie sicher, dass Sie das Paket erstellen, mit dem Windows-Paketerstellungsprojekt, die in Visual Studio 2017 Update 4 und höher verfügbar ist. Wenn Sie das Paket mit einer UWP-Projektvorlage erstellen, sind Sie möglicherweise nicht in der zum übermitteln, die an den Store oder laden es auf anderen PCs packen können. Auch wenn das Paket erfolgreich veröffentlicht wurde, kann es auf unerwartete Weise auf dem PC des Benutzers Verhalten. Weitere Informationen finden Sie unter [Verpacken einer app mit Visual Studio (Desktop-Brücke)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x und früher
 

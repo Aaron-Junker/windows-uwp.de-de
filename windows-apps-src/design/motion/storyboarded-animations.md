@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f603a6ff5aadc1c3e5342db6a7d771f8c37a7b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: cc5b3598f2d50a49aa9d51721c2c1eb1261c8aa8
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320840"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820512"
 ---
 # <a name="storyboarded-animations"></a>Storyboardanimationen
 
@@ -265,7 +265,7 @@ Die erforderliche Aktivierung abhängiger Animationen durch den App-Entwickler i
 Als App-Entwickler können Sie sich auch für die Anwendung einer App-weiten Einstellung entscheiden, mit der abhängige Animationen stets deaktiviert werden – auch Animationen, für die **EnableDependentAnimation** auf **true** festgelegt ist. Informationen finden Sie unter [**Timeline.AllowDependentAnimations**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
 > [!TIP]
-> Bei Verwendung der Animationsbereich in Blend für Visual Studio 2017, wenn Sie versuchen, eine abhängige Animation auf eine Eigenschaft des visuellen Zustands anzuwenden, werden Warnungen im Designer angezeigt werden. Warnungen werden nicht in der Buildausgabe oder der Fehlerliste angezeigt. Wenn Sie XAML manuell bearbeiten, wird eine Warnung von der Designer nicht angezeigt. Zur Laufzeit beim Debuggen des Ausgabebereichs-Debug-Ausgabe wird eine Warnmeldung angezeigt, die die Animation ist nicht unabhängig und wird übersprungen.
+> Bei Verwendung der Animationsbereich in Blend für Visual Studio-2019, wenn Sie versuchen, eine abhängige Animation auf eine Eigenschaft des visuellen Zustands anzuwenden, werden Warnungen im Designer angezeigt werden. Warnungen werden nicht in der Buildausgabe oder der Fehlerliste angezeigt. Wenn Sie XAML manuell bearbeiten, wird eine Warnung von der Designer nicht angezeigt. Zur Laufzeit beim Debuggen des Ausgabebereichs-Debug-Ausgabe wird eine Warnmeldung angezeigt, die die Animation ist nicht unabhängig und wird übersprungen.
 
 
 ## <a name="starting-and-controlling-an-animation"></a>Starten und Steuern einer Animation

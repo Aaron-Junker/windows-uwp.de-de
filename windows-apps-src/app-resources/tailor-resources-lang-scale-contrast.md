@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5ba7ddb6ef37b4aa54584602fc890bbabc8998
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: db5ba7fb6e13d2a5aab4b74014458073aa88e7f4
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359353"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820215"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern
 
@@ -61,7 +61,7 @@ Die Datei, deren Name den geeignetsten Qualifizierer für die Einstellung enthä
 
 ## <a name="reference-a-string-or-image-resource-by-name"></a>Verweisen auf eine Zeichenfolgen- oder Bildressource nach Namen
 
-Weitere Informationen finden Sie unter [Referenzieren eines Bezeichners für Zeichenfolgenressourcen im XAML-Markup](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Referenzieren eines Bezeichners für Zeichenfolgenressourcen im Code](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code) und [Referenzieren eines Bilds oder eines anderen Elements in XAML-Markup und Code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
+Weitere Informationen finden Sie unter [Referenzieren eines Bezeichners für Zeichenfolgenressourcen im XAML-Markup](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml), [Referenzieren eines Bezeichners für Zeichenfolgenressourcen im Code](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code) und [Referenzieren eines Bilds oder eines anderen Elements in XAML-Markup und Code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
 
 ## <a name="actual-and-neutral-qualifier-matches"></a>Aktuelle und neutrale Qualifizierertreffer
 Sie müssen nicht für *jeden* Qualifiziererwert eine Ressourcendatei erstellen. Wenn Sie z. B. feststellen, dass Sie nur eine visuelle Ressource für hohen Kontrast und eine für den standardmäßigen Kontrast benötigen, benennen Sie diese Ressourcen wie folgt.

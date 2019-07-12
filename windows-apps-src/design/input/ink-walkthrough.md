@@ -6,12 +6,12 @@ keywords: Freihand, Freihandeingabe, Lernprogramm
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be7005e64a431d65006315fbee551e5c6c3a2a6f
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 929d72da46c52cfdb510f1e1b6a97ddcbbe066d5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343279"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820573"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Tutorial: Unterstützen von Freihandeingaben in Ihrer UWP-App
 
@@ -36,7 +36,7 @@ Mit Windows Ink können Sie Ihren Kunden fast alle erdenklichen schriftlichen Er
 ## <a name="prerequisites"></a>Vorraussetzungen
 
 * Einen Computer (oder einen virtuellen Computer) mit der aktuellen Version von Windows 10.
-* [Visual Studio 2017 und die RS2 SDK](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio-2019 und die RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Abhängig von Ihrer Konfiguration können Sie möglicherweise zum Installieren der [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet-Paket, und aktivieren Sie **Entwicklermodus** in den Systemeinstellungen (Einstellungen -> Update & Für Entwickler verwenden Entwicklerfunktionen -> Sicherheit ->).
 * Wenn Sie noch keine Erfahrung mit der App-Entwicklung in der Universellen Windows-Plattform (UWP) mit Visual Studio haben, werfen Sie einen Blick in diese Themen, bevor Sie dieses Lernprogramm starten:  
@@ -64,14 +64,14 @@ Laden Sie dieses Visual Studio-Beispiel und den Quellecode von [GitHub](https://
 
 Diese Objekte bieten den Großteil der Freihandfunktionen für UWP-Apps.
 
-| Component | Beschreibung |
+| Komponente | Beschreibung |
 | --- | --- |
 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Ein XAML-UI-Plattform-Steuerelement, das standardmäßig empfängt und zeigt alle Eingaben von einem Stift als ein Freihandstrich oder einen Strich mit löschen. |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Ein CodeBehind-Objekt, das zusammen mit einem [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement instanziiert wird (über die [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)-Eigenschaft verfügbar gemacht). Dieses Objekt stellt alle Standardfreihandfunktionen bereit, die vom [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)-Steuerelement zur Verfügung gestellt werden, sowie einen umfassenden Satz von APIs für zusätzliche Anpassung und Personalisierung. |
 | [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | Ein XAML-UI-Plattform-Steuerelement mit einer Auflistung anpassbar und erweiterbar, Schaltflächen, die aktiviert werden Freihand-bezogenen Funktionen in einem zugeordneten [ **InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
 | [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>Diese Funktionalität wird von uns hier nicht erläutert. Weitere Informationen finden Sie unter [Komplexes Freihandbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620314). | Ermöglicht das Rendern von Freihandstrichen im angegebenen Direct2D-Gerätekontext einer universellen Windows-App statt im standardmäßigen [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement. |
 
-## <a name="step-1-run-the-sample"></a>Schritt 1: Ausführen des Beispiels
+## <a name="step-1-run-the-sample"></a>Schritt 1: Ausführen des Beispiels
 
 Nachdem Sie die RadialController-Beispiel-App heruntergeladen haben, stellen Sie sicher, dass sie ausgeführt wird:
 1. Öffnen Sie das Beispielprojekt in Visual Studio.
@@ -97,7 +97,7 @@ Beheben wir dieses Problem in diesem Schritt.
 Um einfaches Freihandzeichen hinzuzufügen, platzieren Sie einfach ein [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-UWP-Steuerelement auf der entsprechenden Seite in Ihrer App.
 
 > [!NOTE]
-> Ein InkCanvas verfügt standardmäßig über [**Höhe.**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) und [**Breite-**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)-Eigenschaften von null, sofern es sich um ein untergeordnetes Element eines Elements handelt, das die Größe seiner untergeordneten Elemente automatisch festlegt. 
+> Ein InkCanvas verfügt standardmäßig über [**Höhe.** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) und [**Breite-** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)-Eigenschaften von null, sofern es sich um ein untergeordnetes Element eines Elements handelt, das die Größe seiner untergeordneten Elemente automatisch festlegt. 
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei „MainPage.xaml.cs“.
@@ -203,7 +203,7 @@ Weitere Informationen zur Anpassung einer [InkToolbar](https://docs.microsoft.co
 </tr>
 </table>
 
-## <a name="step-5-support-handwriting-recognition"></a>Schritt 5: Unterstützung von handschrifterkennung
+## <a name="step-5-support-handwriting-recognition"></a>Schritt 5: Unterstützung von handschrifterkennung
 
 Nun, da Sie in Ihrer App zeichnen und schreiben können, versuchen wir aus diesen Skizzen etwas Nutzen zu ziehen.
 
@@ -319,7 +319,7 @@ Weitere Informationen zur dynamischen Handschrifterkennung finden Sie unter [Win
 </tr>
 </table>
 
-## <a name="step-6-recognize-shapes"></a>Schritt 6: Erkennen von Formen
+## <a name="step-6-recognize-shapes"></a>Schritt 6: Erkennen von Formen
 
 OK, nun können Sie also Ihre handschriftlichen Notizen in etwas umwandeln, das etwas lesbarer ist. Aber was ist mit diesem verwackelten Gekritzel aus Ihrem Meeting?
 
@@ -392,7 +392,7 @@ Hier ist das gleiche Flussdiagramm nach der Formerkennung.
 ![Ursprüngliches Freihand-Flussdiagramm](images/ink/ink-app-step6-shapereco2-small.png)
 
 
-## <a name="step-7-save-and-load-ink"></a>Schritt 7: Speichern und Laden von Freihandeingaben
+## <a name="step-7-save-and-load-ink"></a>Schritt 7: Speichern und Laden von Freihandeingaben
 
 Sie sind mit dem Kritzeln fertig und Ihnen gefällt, was Sie sehen, würden aber gerne später noch ein paar Änderungen vornehmen? Sie können Ihre Freihandstriche in einer serialisierten Freihandformat-Datei (ISF-Datei) speichern und sie jederzeit für die Bearbeitung erneut laden. 
 
@@ -464,7 +464,7 @@ Herzlichen Glückwunsch zum Abschluss der **Eingabe: Unterstützung von Freihand
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Stiftinteraktionen und Windows Ink in UWP-apps](pen-and-stylus-interactions.md)
+* [Stiftinteraktionen und Windows Ink in UWP-Apps](pen-and-stylus-interactions.md)
 
 ### <a name="samples"></a>Proben
 

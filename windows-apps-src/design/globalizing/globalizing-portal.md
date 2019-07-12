@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 91396051ec822f469e300f51217191fc4e704cac
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 466747cbbfe6f599f42a39f0d2766f78775ec6c8
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714050"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820588"
 ---
 # <a name="globalization-and-localization"></a>Globalisierung und Lokalisierung
 
@@ -67,6 +67,6 @@ Die meisten Lokalisierungsteams verwenden spezielle Tools, um den Prozess zu unt
 | [Stellen Sie Ihre app lokalisierbar](prepare-your-app-for-localization.md) | Eine lokalisierte App kann in anderen Märkten, Sprachen oder Regionen lokalisiert werden, ohne dass funktionale Mängel in der App auftreten. Die wichtigste Eigenschaft einer lokalisierbaren App ist, dass ihr ausführbarer Code sauber von den lokalisierbaren Ressourcen der App getrennt ist. |
 | [Internationale Schriftarten](loc-international-fonts.md) | Dieses Thema listet die Schriftarten, die für die UWP-apps, die in anderen Sprachen als USA lokalisiert sind verfügbar Englisch. |
 | [Entwerfen Sie Ihre app für bidirektionalen text](design-for-bidi-text.md) | Entwerfen Sie Ihre App so, dass bidirektionale Textunterstützung (BiDi) bereitgestellt wird, sodass Sie Texte aus links und rechtsbündigen Schreibsystemen kombinieren können. |
-| [Mit dem Multilingual App Toolkit 4.0](use-mat.md) | Das Multilingual App Toolkit (MAT) 4.0 integriert sich in Microsoft Visual Studio 2017, um Übersetzungsunterstützung, Übersetzungsdateiverwaltung und Editortools für UWP-Apps bereitzustellen. |
+| [Mit dem Multilingual App Toolkit 4.0](use-mat.md) | Multilingual App Toolkit (MAT) 4.0 integriert mit Microsoft Visual Studio 2017 und höher, um UWP-apps mit übersetzungsunterstützung, Verwaltung von Übersetzungsdateien und Bearbeitungstools zu ermöglichen. |
 | [Multilingual App Toolkit 4.0 – häufig gestellte Fragen und Problembehandlung](mat-faq-troubleshooting.md) | Dieses Thema enthält Antworten auf häufig gestellte Fragen und Probleme in Bezug auf das Multilingual App Toolkit (MAT) 4.0. |
 | [Vorbereiten Sie Ihrer Anwendung auf die japanischen Era-Änderung](japanese-era-change.md) | Hier erhalten Sie Informationen zum im Mai 2019 anstehenden Wechsel der japanischen Ära, und wie Sie Ihre Anwendung darauf entsprechend vorbereiten können. |

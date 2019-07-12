@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Inhalt-Gruppenzuordnung, Streaming-Installation, Uwp-App-Streaming-Installation, Quellinhalt-Gruppenzuordnung
 ms.localizationpriority: medium
-ms.openlocfilehash: 882db0a6a97c5ee203a072156ca3eb82615607bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e25f30a2288f6be76ce108de2056ab6407187de
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647945"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821031"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Erstellen und Konvertieren einer Quellinhalt-Gruppenzuordnung
 
@@ -143,7 +143,7 @@ Sie können auch Platzhalter mit Text für Dateinamen verwenden. Wenn beispielsw
 
 ## <a name="convert-sourceappxcontentgroupmapxml-to-appxcontentgroupmapxml"></a>Konvertieren von SourceAppxContentGroupMap.xml in AppxContentGroupMap.xml
 
-Um die `SourceAppxContentGroupMap.xml` in die endgültige Version `AppxContentGroupMap.xml` zu konvertieren, können Sie Visual Studio 2017 oder das **MakeAppx.exe**-Befehlszeilentool verwenden.
+Konvertiert die `SourceAppxContentGroupMap.xml` auf die endgültige Version `AppxContentGroupMap.xml`, können Sie Visual Studio-2019 oder **MakeAppx.exe** -Befehlszeilentools.
 
 Verwenden von Visual Studio für die Konvertierung Ihrer Inhaltsgruppen-Zuordnung:
 1. Fügen Sie die `SourceAppxContentGroupMap.xml` zu Ihrem Projektordner hinzu.

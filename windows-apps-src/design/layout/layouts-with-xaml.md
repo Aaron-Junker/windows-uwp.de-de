@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69facfe9b1cdac408fe1fd63dfa144de072dfdfd
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 480029fd98a302fcc166067cbb383d7e9f8d1829
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468977"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820546"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dynamische Layouts mit XAML
 
@@ -88,7 +88,7 @@ Alle Elemente, die untergeordnete Elemente haben können, können den Wert „St
 
 Weitere Informationen finden Sie im Artikel [Ausrichtung, Rand und Abstand](alignment-margin-padding.md) und auf den Referenzseiten [**HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) und [**VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment).
 
-**Visibility**
+**Sichtbarkeit**
 
 Können Sie anzeigen oder ausblenden ein Elements durch Festlegen seiner [ **Sichtbarkeit** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) Eigenschaft eines der [ **Sichtbarkeit** Enumeration](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Visibility) Werte: **Sichtbare** oder **reduziert**. Wenn ein Element „Collapsed“ ist, verbraucht es keinen Platz im Benutzeroberflächenlayout.
 
@@ -207,7 +207,7 @@ In diesem Beispiel wird die gleiche Aufgabe wie im vorherigen Beispiel ausgefüh
                 <VisualState>
                     <VisualState.StateTriggers>
                         <!-- VisualState to be triggered when the
-                             window width is >=720 effective pixels. -->
+                             window width is >=640 effective pixels. -->
                         <AdaptiveTrigger MinWindowWidth="640" />
                     </VisualState.StateTriggers>
 

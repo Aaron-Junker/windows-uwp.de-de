@@ -5,12 +5,12 @@ keywords: App-Erweiterung, App-Dienst, Hintergrund
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a7bb6f719f95766c07c1e5f92b50148cf0f2cce
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2cfb3be556cb681bc9ed2d9d46bb86304182e5ca
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642365"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821020"
 ---
 # <a name="create-and-host-an-app-extension"></a>Erstellen und Hosten einer App-Erweiterung
 
@@ -18,7 +18,7 @@ In diesem Artikel wird erläutert, wie Sie eine UWP-App-Erweiterung erstellen un
 
 Dieser Artikel wird zusammen mit einem Codebeispiel angezeigt:
 - Laden Sie [Math Extension-Codebeispiel](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)herunter und entzippen Sie die Dateien.
-- Öffnen Sie in Visual Studio 2017 MathExtensionSample.sln. Legen Sie den Buildtyp auf x86 fest (**Build** > **Konfigurationsmanager**, ändern Sie dann **Plattform** auf **x86** für beide Projekte).
+- Öffnen Sie in Visual Studio-2019 MathExtensionSample.sln ein. Legen Sie den Buildtyp auf x86 fest (**Build** > **Konfigurationsmanager**, ändern Sie dann **Plattform** auf **x86** für beide Projekte).
 - Bereitstellen der Lösung an: **Erstellen Sie** > **Lösung bereitstellen**.
 
 ## <a name="introduction-to-app-extensions"></a>Einführung in App-Erweiterungen
@@ -41,7 +41,7 @@ Allgemein gesagt, muss zum Einrichten einer App-Erweiterungsbeziehung folgendes 
 4. Es wird festgelegt, wie die Hosts und die Erweiterungen kommunizieren.
 5. Verwenden Sie die [Windows.ApplicationModel.AppExtensions](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppExtensions)-API in der Host-App, um auf die Erweiterungen zuzugreifen.
 
-Sehen wir uns diese Vorgehensweise durch Untersuchen des [Math Extension-Codebeispiels](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip) an, das einen hypothetischen Rechner implementiert, für den Sie mithilfe der Erweiterungen neue Funktionen hinzufügen können. Laden Sie in Microsoft Visual Studio 2017 **MathExtensionSample.sln** aus dem Codebeispiel.
+Sehen wir uns diese Vorgehensweise durch Untersuchen des [Math Extension-Codebeispiels](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip) an, das einen hypothetischen Rechner implementiert, für den Sie mithilfe der Erweiterungen neue Funktionen hinzufügen können. Laden Sie in Microsoft Visual Studio-2019, **MathExtensionSample.sln** gegenüber dem Codebeispiel.
 
 ![Math Extension-Codebeispiel](images/mathextensionhost-calctab.png)
 
@@ -124,9 +124,9 @@ Die `<uap3:AppExtension>`-Attribute haben folgende Bedeutungen:
 |---------|-----------|:------:|
 |**Name**|Dies ist der Erweiterungsvertragsname. Wenn sie dem auf einem Host deklarierten **Namen** entspricht, kann dieser Host diese Erweiterung finden.| :heavy_check_mark: |
 |**ID**| Identifiziert diese Erweiterung eindeutig. Da es möglicherweise mehrere Erweiterungen mit dem gleichen Erweiterungsvertragsnamen gibt (wie eine Paint-App, die mehrere Erweiterungen unterstützt), können Sie die ID verwenden, um sie auseinanderzuhalten. App-Erweiterungshosts können die ID verwenden, um den Typ der Erweiterung zu überprüfen. Beispielsweise können Sie eine Erweiterung für den Desktop und eine weitere für Mobilgeräte haben, wobei die ID das Unterscheidungsmerkmal ist. Sie können ebenfalls dafür das Element **Eigenschaften** verwenden.| :heavy_check_mark: |
-|**"DisplayName"**| Kann von der Host-App verwendet werden, um die Erweiterung für den Benutzer zu identifizieren. Ist abfragbar vom und verwendet das [Neue Ressourcenverwaltungssystem](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) für die Lokalisierung. Der lokalisierte Inhalt wird vom App-Erweiterungspaket und nicht von der Host-App geladen. | |
+|**DisplayName**| Kann von der Host-App verwendet werden, um die Erweiterung für den Benutzer zu identifizieren. Ist abfragbar vom und verwendet das [Neue Ressourcenverwaltungssystem](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) für die Lokalisierung. Der lokalisierte Inhalt wird vom App-Erweiterungspaket und nicht von der Host-App geladen. | |
 |**Beschreibung** | Kann von der Host-App verwendet werden, um die Erweiterung für den Benutzer zu beschreiben. Ist abfragbar vom und verwendet das [Neue Ressourcenverwaltungssystem](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) für die Lokalisierung. Der lokalisierte Inhalt wird vom App-Erweiterungspaket und nicht von der Host-App geladen. | |
-|**Öffentliche Ordner**|Der Name eines Ordners, relativ zum Stammverzeichnis des Pakets, in dem Sie Inhalte mit dem Erweiterungshost teilen können. Üblicherweise ist der Name "Public", Sie können allerdings einen beliebigen Namen verwenden, der einem Ordner in der Erweiterung entspricht.| :heavy_check_mark: |
+|**PublicFolder**|Der Name eines Ordners, relativ zum Stammverzeichnis des Pakets, in dem Sie Inhalte mit dem Erweiterungshost teilen können. Üblicherweise ist der Name "Public", Sie können allerdings einen beliebigen Namen verwenden, der einem Ordner in der Erweiterung entspricht.| :heavy_check_mark: |
 
 `<uap3:Properties>` ist ein optionales Element, das benutzerdefinierte Metadaten enthält, den Hosts zur Laufzeit gelesen werden können. Im Codebeispiel ist die Erweiterung als App-Dienst implementiert, damit der Host den Namen des App-Diensts abrufen kann und ihn damit aufrufen kann. Der Name des App-Diensts ist im <Service>-Element definiert, das wir definiert haben (der Name spielt dabei keine Rolle). Der Host im Codebeispiel sucht zur Laufzeit nach dieser Eigenschaft, um den Namen des App-Diensts zu erfahren.
 

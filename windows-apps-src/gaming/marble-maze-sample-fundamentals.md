@@ -6,12 +6,12 @@ ms.date: 08/22/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Spiele, Beispiel, Directx, Grundlagen
 ms.localizationpriority: medium
-ms.openlocfilehash: 21dcbbcc1fde25877592fafe9e8372e269a72a42
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f04c17609976e8bd8f6c1c6143ed7b992b0bb3c5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368496"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820618"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Grundlagen am Beispiel von Marble Maze
 
@@ -25,7 +25,7 @@ In diesem Thema werden die fundamentalen Eigenschaften des Marble Maze-Projekt&m
 
 Es folgen einige wichtige Punkte, die in diesem Dokument erläutert werden und die beim Planen und Entwickeln Ihres UWP-Spiels relevant sind.
 
--   Verwenden Sie die Visual C++ Vorlage **DirectX 11-App (Universelle Windows-App)** in Visual Studio, um das DirectX-UWP-Spiel zu erstellen.
+-   Verwenden der **DirectX 11-App (universelle Windows - C++/CX)** Vorlage in Visual Studio zum Erstellen Ihrer DirectX-UWP-Spiels.
 -   Windows-Runtime stellt Klassen und Schnittstellen bereit, sodass Sie UWP-Apps auf moderne, objektorientierte Art und Weise entwickeln können.
 -   Verwenden Sie Objektverweise mit dem Caretzeichen "^"-Symbol zum Verwalten der Lebensdauer von Windows-Runtime-Variablen, [Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) zum Verwalten der Lebensdauer von COM-Objekten und [std::shared\_Ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) oder [std::unique\_Ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) zum Verwalten der Lebensdauer von allen anderen vom Heap zugewiesenen C++ Objekte.
 -   In den meisten Fällen verwenden Sie für die Behandlung unerwarteter Fehler die Ausnahmebehandlung anstelle von Ergebniscodes.
@@ -36,19 +36,19 @@ Es folgen einige wichtige Punkte, die in diesem Dokument erläutert werden und d
 
 Wenn Sie das Beispiel heruntergeladen und extrahiert haben, können Sie die Projektmappendatei **MarbleMaze_VS2017.sln** (im Ordner **C++** ) öffnen, und der gesamte Code liegt offen vor Ihnen.
 
-Beim Erstellen des Visual Studio-Projekts für Marble Maze haben wir mit einem bereits vorhandenen Projekt begonnen. Wenn Sie jedoch noch kein vorhandenes Projekt haben, das die grundlegende, für Ihr DirectX-UWP-Spiel erforderliche Funktionalität bereitstellt, wird empfohlen, ein Projekt basierend auf der Visual Studio-Vorlage **DirectX 11-App (Universelle Windows-App)** zu erstellen, da sie eine grundlegende, funktionierende 3D-Anwendung enthält. Gehen Sie hierzu folgendermaßen vor:
+Beim Erstellen des Visual Studio-Projekts für Marble Maze haben wir mit einem bereits vorhandenen Projekt begonnen. Jedoch wenn Sie nicht bereits ein vorhandenes Projekt, die die grundlegende Funktionalität bereitstellt, der Ihrer DirectX-UWP-Spiel erfordert verfügen, es wird empfohlen, dass Sie ein Projekt basierend auf der Visual Studio erstellen **DirectX 11-App (universelle Windows - C++/CX)** Vorlage, da es sich um eine grundlegende funktionierende 3D-Anwendung bietet. Gehen Sie hierzu folgendermaßen vor:
 
-1. Öffnen Sie Visual Studio 2017, und wählen Sie **Datei > Neu > Projekt...** aus.
+1. Wählen Sie in Visual Studio-2019, **Datei > Neu > Projekt...**
 
-2. Wählen Sie in Fenster **Neues Projekt** auf der linken Seitenleiste **Installiert > Vorlagen > Visual C++** aus.
+2. In der **Erstellen eines neuen Projekts** wählen Sie im Fenster **DirectX 11-App (universelle Windows - C++/CX)** . Wenn Sie diese Option nicht sehen, Sie haben nicht die erforderlichen Komponenten installiert&mdash;finden Sie unter [ändern Visual Studio 2019 durch Hinzufügen oder Entfernen von Workloads und Komponenten](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) Informationen zur Installation zusätzlicher Komponenten .
 
-3. Wählen Sie im mittleren Bereich **DirectX 11-App (universelle Windows-App)** aus. Wenn diese Option nicht angezeigt wird, haben Sie eventuell nicht die erforderlichen Komponenten installiert&mdash;Weitere Informationen dazu, wie Sie zusätzliche Komponenten installieren finden Sie unter [Visual Studio 2017 durch Hinzufügen oder Entfernen von Arbeitslasten und Komponenten ändern](https://docs.microsoft.com/visualstudio/install/modify-visual-studio).
+![Neues Projekt](images/vs2019-marble-maze-sample-fundamentals-1.png)
 
-4. Geben Sie Ihrem Projekt einen **Namen**, einen **Speicherort** für die gespeicherten Dateien und eine **Projektmappennamen**, und klicken Sie auf **OK**.
+3. Wählen Sie **Weiter**, und geben Sie dann eine **Projektname**, **Speicherort** für die Dateien gespeichert werden sollen, und ein **Projektmappenname**, und wählen Sie dann auf  **Erstellen Sie**.
 
-![Neues Projekt](images/marble-maze-sample-fundamentals-1.png)
 
-Eine wichtige Projekteinstellung in der Voralge **DirectX 11-App (Universelle Windows-App)** ist die Option **/ZW**. Diese Option ermöglicht dem Programm die Verwendung der Windows-Runtime-Spracherweiterungen. Sie ist standardmäßig aktiviert, wenn Sie die Visual Studio-Vorlage verwenden. Weitere Informationen zur Vorgehensweise beim Festlegen von Compiler-Optionen in Visual Studio finden Sie unter [Compileroptionen festlegen](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options).
+
+Eine wichtige projekteinstellung in der **DirectX 11-App (universelle Windows - C++/CX)** Vorlage ist die **/Zw** auswählen, um die Anwendung die Windows-Runtime-spracherweiterungen verwenden zu können. Sie ist standardmäßig aktiviert, wenn Sie die Visual Studio-Vorlage verwenden. Weitere Informationen zur Vorgehensweise beim Festlegen von Compiler-Optionen in Visual Studio finden Sie unter [Compileroptionen festlegen](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options).
 
 > **Vorsicht**    der **/Zw** Option ist nicht kompatibel mit den Optionen, wie z. B. **"/ CLR"** . Im Fall von **/clr** können Sie demnach über ein und dasselbe Visual C++-Projekt nicht das .NET Framework und die Windows-Runtime erreichen.
 

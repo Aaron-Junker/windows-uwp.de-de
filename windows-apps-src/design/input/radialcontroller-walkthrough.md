@@ -6,12 +6,12 @@ keywords: Drehsteuerung, radial, Lernprogramm
 ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a16b455d692eaf9f73b7dc90200bd0f021025e52
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4cf27f6f9893b3d4cc68c899bf3ff1902320a910
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365661"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820563"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Tutorial: Unterstützen von Surface Dial (und anderen Radgeräten) in Ihrer UWP-App
 
@@ -41,7 +41,7 @@ Das Dial unterstützt drei grundlegende Gesten:
 ## <a name="prerequisites"></a>Vorraussetzungen
 
 * Ein Computer (oder ein virtueller Computer) mit Windows 10 Creators Update oder höher
-* [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Ein Radgerät (aktuell nur die [Surface Dial](https://aka.ms/purchasesurfacedial))
 * Wenn Sie noch keine Erfahrung mit der App-Entwicklung in der Universellen Windows-Plattform (UWP) mit Visual Studio haben, werfen Sie einen Blick in diese Themen, bevor Sie dieses Lernprogramm starten:  
@@ -90,7 +90,7 @@ Diese Objekte bieten den Großteil der Radgerätefunktion für UWP-Apps.
 | [**RadialController** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) und verwandten | Stellt einen Radeingabegerät oder -Zubehör, z. B. das Surface Dial, dar. |
 | [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>Wir gehen hier nicht auf diese Funktionalität ein. Weitere Informationen finden Sie unter der [Klassisches Windows-Desktopbeispiel](https://aka.ms/radialcontrollerclassicsample). | Ermöglicht die Interoperabilität mit einer UWP-App. |
 
-## <a name="step-1-run-the-sample"></a>Schritt 1: Ausführen des Beispiels
+## <a name="step-1-run-the-sample"></a>Schritt 1: Ausführen des Beispiels
 
 Nachdem Sie die RadialController-Beispiel-App heruntergeladen haben, stellen Sie sicher, dass sie ausgeführt wird:
 1. Öffnen Sie das Beispielprojekt in Visual Studio.
@@ -282,7 +282,7 @@ Fügen wir nun den für den **RadialController**-Zugriff auf unsere Steuerelemen
 
 OK, verknüpfen wir nun diese Schaltflächen.
 
-## <a name="step-5-configure-menu-at-runtime"></a>Schritt 5: Konfigurieren Sie im Menü zur Laufzeit
+## <a name="step-5-configure-menu-at-runtime"></a>Schritt 5: Konfigurieren Sie im Menü zur Laufzeit
 
 In diesem Schritt verknüpfen wir die Schaltflächen **Element hinzufügen/entfernen** und **RadialController-Menü zurücksetzen**, um zu zeigen, wie Sie das Menü dynamisch anpassen können.
 
@@ -340,7 +340,7 @@ In diesem Schritt verknüpfen wir die Schaltflächen **Element hinzufügen/entfe
 
     Wie Sie sehen, wurde das Menü auf den ursprünglichen Zustand zurückgesetzt.
 
-## <a name="step-6-customize-the-device-haptics"></a>Schritt 6: Das Gerät Haptics anpassen
+## <a name="step-6-customize-the-device-haptics"></a>Schritt 6: Das Gerät Haptics anpassen
 Das Surface Dial und andere Radgeräte können Benutzern haptisches Feedback für die aktuelle Interaktion (basierend auf den Klick oder die Drehung) bereitstellen.
 
 In diesem Schritt wird gezeigt, wie Sie das haptische Feedback anpassen können, indem Sie die Steuerelemente für den Schieberegler und Umschalter zuordnen, sodass das haptische Feedbackverhalten dynamisch festgelegt wird. In diesem Beispiel muss der Umschalter auf an gestellt sein, damit das Feedback aktiviert wird, während der Schiebereglerwert angibt, wie oft das Feedback wiederholt wird. 
@@ -580,7 +580,7 @@ In diesem Schritt wird gezeigt, wie Sie das haptische Feedback anpassen können,
 
 Führen Sie nun die App erneut aus, um die benutzerdefinierte Haptik auszuprobieren, indem Sie den Schiebereglerwert und den Zustand des Ein-/Aus-Schalters ändern.
 
-## <a name="step-7-define-on-screen-interactions-for-surface-studio-and-similar-devices"></a>Schritt 7: Definieren Sie auf dem Bildschirm Interaktionen für Surface-Studio und ähnliche Geräte
+## <a name="step-7-define-on-screen-interactions-for-surface-studio-and-similar-devices"></a>Schritt 7: Definieren Sie auf dem Bildschirm Interaktionen für Surface-Studio und ähnliche Geräte
 Im Zusammenspiel mit Surface Studio bietet das Surface Dial Benutzern ein noch innovativeres Bedienerlebnis. 
 
 Das Surface Dial unterstützt nicht nur die beschriebene Standardmenüaktion „Drücken und Halten“, sondern kann zusätzlich direkt auf dem Bildschirm des Surface Studio platziert werden. Dadurch wird ein spezielles Onscreen-Menü aktiviert. 

@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d0f6cdf4818743e3b5a3cc7c5a6b13f69f40afa
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f0549aa1e20d8ed787eed550f4a7e7171a812831
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318457"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820188"
 ---
 # <a name="my-people-sharing"></a>Freigeben von „Meine Kontakte”
 
@@ -20,7 +20,7 @@ Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakte
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows 10 und Microsoft Visual Studio 2017 Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Sie sollten über Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache verfügen. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Übersicht
@@ -40,7 +40,7 @@ Wenn Sie dies getan haben, wird die Anwendung als Freigabeziel im Freigabefenste
 Um Unterstützung für die Anwendung als Freigabeziel zu deklarieren, öffnen Sie die Anwendung zunächst in Visual Studio. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei **Package.appxmanifest** und wählen Sie **Öffnen mit** aus. Wählen Sie aus dem Menü anschließend **XML (Text)-Editor**, und klicken Sie auf **OK**. Nehmen Sie danach folgenden Änderungen am Manifest vor.
 
 
-**Vor dem**
+**Vorher**
 ```xml
 <Applications>
     <Application Id="MyApp"
@@ -50,7 +50,7 @@ Um Unterstützung für die Anwendung als Freigabeziel zu deklarieren, öffnen Si
 </Applications>
 ```
 
-**After**
+**Nachher**
 
 ```xml
 <Applications>

@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317973"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820224"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Support für Meine Kontakte zu einer Anwendung hinzufügen
 
@@ -20,7 +20,7 @@ Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakte
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows 10 und Microsoft Visual Studio 2017 Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Sie sollten über Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache verfügen. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Übersicht
@@ -37,7 +37,7 @@ Wenn Sie dies getan haben, wird die Anwendung in der Kontaktliste für Kontakte 
 
 Um Unterstützung für den Vertrag „Meine Kontakte” zu deklarieren, öffnen Sie die Anwendung in Visual Studio. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei **Package.appxmanifest** und wählen Sie **Öffnen mit** aus. Wählen Sie aus dem Menü anschließend **XML (Text)-Editor**, und klicken Sie auf **OK**. Nehmen Sie danach folgenden Änderungen am Manifest vor.
 
-**Vor dem**
+**Vorher**
 
 ```xml
 <Package
@@ -53,7 +53,7 @@ Um Unterstützung für den Vertrag „Meine Kontakte” zu deklarieren, öffnen 
 
 ```
 
-**After**
+**Nachher**
 
 ```xml
 <Package
@@ -107,7 +107,7 @@ Die “appId” ist der Paketfamilienname, gefolgt von ‘!’ und einer aktivie
 
 Standardmäßig wird die Anwendung nur für Kontakte in der Kontaktliste angezeigt, die Sie speziell kommentiert haben.  Dies vermeidet eine Verwechslungen mit Kontakten, die nicht mit Ihnen durch die App interagiert können.  Wenn Sie möchten, dass Ihre Anwendung für Kontakte angezeigt wird, deren Ihre Anwendung nicht bekannt ist (z. B. um Benutzer dazu aufzufordern, ihrem Konto Kontakte hinzuzufügen), können Sie Ihrem Manifest Folgendes hinzufügen:
 
-**Vor dem**
+**Vorher**
 
 ```Csharp
 <Applications>
@@ -121,7 +121,7 @@ Standardmäßig wird die Anwendung nur für Kontakte in der Kontaktliste angezei
 </Applications>
 ```
 
-**After**
+**Nachher**
 
 ```Csharp
 <Applications>

@@ -5,12 +5,12 @@ ms.date: 04/21/2017
 ms.topic: article
 keywords: Windows 10 "," Uwp "," Update "," Hintergrundaufgabe "," Updatetask "," Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: d943623a9978d39fd3930edc07e7524fe1cadf55
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fa5420b14d3d73f370031eed917e0e7c367c41c7
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321792"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820958"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Ausführen einer Hintergrundaufgabe beim Aktualisieren der UWP-App
 
@@ -20,7 +20,7 @@ The Hintergrundaufgabe „Update-Aufgabe“ wird vom Betriebssystem aufgerufen, 
 
 Die Update-Aufgabe unterscheidet sich vom Starten einer Hintergrundaufgabe mit dem [ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)-Auslöser, da Ihre App in diesem Fall mindestens einmal ausgeführt werden muss, bevor sie aktualisiert wird, um die Hintergrundaufgabe zu registrieren, die durch den **ServicingComplete**-Auslöser aktiviert wird.  Die Update-Aufgabe wird nicht registriert, und daher wird bei einer App, die noch nicht ausgeführt wurde, die aber aktualisiert wurde, dennoch die Update-Aufgabe ausgelöst.
 
-## <a name="step-1-create-the-background-task-class"></a>Schritt 1: Erstellen Sie die Hintergrund-Task-Klasse
+## <a name="step-1-create-the-background-task-class"></a>Schritt 1: Erstellen Sie die Hintergrund-Task-Klasse
 
 Wie bei anderen Arten von Hintergrundaufgaben implementieren Sie die Hintergrundaufgabe „Update-Aufgabe“ als eine Komponente für Windows-Runtime. Befolgen Sie zum Erstellen dieser Komponente die Schritte im Abschnitt **Erstellen der Hintergrundaufgabenklasse** im Artikel [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task). Die Schritte sind folgende:
 
@@ -86,12 +86,12 @@ Um sicherzustellen, dass die UpdateTask ausgelöst wird, erhöhen Sie als Nächs
 
 ![Version aktualisieren](images/bump-version.png)
 
-Wenn Sie jetzt in Visual Studio 2017 F5 drücken, wird Ihre App aktualisiert, und das System aktiviert Ihre UpdateTask-Komponente im Hintergrund. Der Debugger wird automatisch an den Hintergrundprozess angehängt. Der Haltepunkt wird erreicht, und Sie können Ihre Update-Code-Logik durchlaufen.
+Nun in Visual Studio-2019 beim Drücken von F5, Ihre app aktualisiert werden und das System wird die Komponente UpdateTask im Hintergrund aktivieren. Der Debugger wird automatisch an den Hintergrundprozess angehängt. Der Haltepunkt wird erreicht, und Sie können Ihre Update-Code-Logik durchlaufen.
 
 Wenn die Hintergrundaufgabe abgeschlossen ist, können Sie in der gleichen Debug-Sitzung über das Windows-Startmenü die Vordergrund-App starten. Der Debugger wird wieder automatisch angehängt, diesmal an den Vordergrundprozess, und Sie können die Logik Ihrer App durchlaufen.
 
 > [!NOTE]
-> Visual Studio 2015-Benutzer: Die oben genannten Schritte gelten für Visual Studio 2017. Wenn Sie Visual Studio 2015 verwenden, können Sie dieselben Techniken zum Auslösen und Tasten der UpdateTask verwenden, wobei Visual Studio aber nicht daran angefügt wird. Alternativ können Sie in VS 2015 einen [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) einrichten, der die UpdateTask als Einstiegspunkt festlegt, und die Ausführung direkt in der Vordergrund-App auslösen.
+> Visual Studio 2015-Benutzer: Die oben genannten Schritte gelten für Visual Studio 2017 oder Visual Studio-2019. Wenn Sie Visual Studio 2015 verwenden, können Sie dieselben Techniken zum Auslösen und Tasten der UpdateTask verwenden, wobei Visual Studio aber nicht daran angefügt wird. Alternativ können Sie in VS 2015 einen [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) einrichten, der die UpdateTask als Einstiegspunkt festlegt, und die Ausführung direkt in der Vordergrund-App auslösen.
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c94d27e87853b570268e3a39fe941c817b3eda6a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 19756730177485c6d16ad9a42ff1174eba8ca3b9
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590975"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820308"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Erste Schritte bei der Entwicklung von UWP-Apps auf Xbox One
 
@@ -20,20 +20,20 @@ Führen Sie die folgenden Schritte **sorgfältig** aus, um Ihren PC und Xbox One
 
 Bevor Sie beginnen, müssen Sie die folgenden Schritte ausführen:
 -   Richten Sie einen PC mit der neuesten Version von Windows 10.
-<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
+<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2019.
 
     > [!NOTE]
-    > Visual Studio 2017 is required if you are using the Windows 10, build 15063 SDK. -->
+    > Visual Studio 2019 is required if you are using the Windows 10, build 15063 SDK. -->
 
 - Sorgen Sie für mindestens 5 GB freien Speicherplatz auf Ihrer Xbox One.
 
 ## <a name="setting-up-your-development-pc"></a>Einrichten des Entwicklungs-PCs
 
-1.  Installieren Sie Visual Studio 2015 Update 3 oder Visual Studio 2017.
+1.  Installieren Sie Visual Studio 2015 Update 3, Visual Studio 2017 oder Visual Studio-2019.
 
     Wenn Sie Visual Studio 2015 Update 3 installieren, stellen Sie sicher, dass Sie auswählen **benutzerdefinierte** installieren, und wählen Sie die **Entwicklungstools für universelle Windows-App** Kontrollkästchen – es ist nicht Teil der standardmäßigen zu installieren. Achten Sie als C++-Entwickler darauf, **Benutzerdefinierte Installation** auszuwählen. Wählen Sie **C++** aus.
 
-    Wenn Sie Visual Studio 2017 erneut installieren, stellen Sie sicher, dass Sie die Arbeitsauslastung **Entwicklung für die universelle Windows-Plattform** auswählen. Wenn Sie in C++-Entwickler sind die **Zusammenfassung** auf der rechten Seite unter **universelle Windows-Plattform-Entwicklung**, stellen Sie sicher, dass Sie auswählen, die **C++ Universal Windows Platform-Tools** Kontrollkästchen. Es ist nicht Teil der Standardinstallation.
+    Wenn Sie Visual Studio 2017 oder Visual Studio-2019 installieren, stellen Sie sicher, dass Sie auswählen, die **Universal Windows Platform Development** arbeitsauslastung. Wenn Sie in C++-Entwickler sind die **Zusammenfassung** auf der rechten Seite unter **universelle Windows-Plattform-Entwicklung**, stellen Sie sicher, dass Sie auswählen, die **C++ Universal Windows Platform-Tools** Kontrollkästchen. Es ist nicht Teil der Standardinstallation.
 
     Weitere Informationen finden Sie unter [Ihrer UWP auf Xbox-Entwicklungsumgebung einrichten](development-environment-setup.md).
 
@@ -78,7 +78,7 @@ Weitere Informationen finden Sie unter [Ihrer UWP auf Xbox-Entwicklungsumgebung 
 
 7. Lehnen Sie sich nun ganz entspannt zurück. Viel Spaß mit Ihrer ersten App auf der Konsole!  
 
-## <a name="thats-it"></a>Das war's.
+## <a name="thats-it"></a>Das ist alles!
 
 ![Hello World](images/getting-started-hello-world.png)
 

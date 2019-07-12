@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Spiele, Entwickeln von Spielen
 ms.localizationpriority: medium
-ms.openlocfilehash: 950f9415e63a31a5204a15f4f72b968535489cfa
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 53e977e07337c11036916c2087a00e9ec7a95118
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321242"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821126"
 ---
 # <a name="windows-10-game-development-guide"></a>Handbuch zur Entwicklung von Spielen unter Windows 10
 
@@ -521,7 +521,7 @@ C++/CX ist eine Sprache mit hoher Leistung und geringerem Mehraufwand, die eine 
     </tr>
     <tr>
         <td>Visual C++-Programmieranleitung und -Referenz</td>
-        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual C++ in Visual Studio 2017</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual C++ in Visual Studio 2019</a></td>
     </tr>
 </table>
  
@@ -1026,7 +1026,7 @@ Hier finden Sie einige Links, die Sie beim Wechsel von Windows-Desktop-Spielen z
     </tr>
     <tr>
         <td>Nicht unterstützte CRT-Funktionen in UWP</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">In den apps der universellen Windows-Plattform nicht unterstützte CRT-Funktionen</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen</a></td>
     </tr>
     <tr>
         <td>Alternativen zu Windows-APIs</td>
@@ -1530,7 +1530,7 @@ Verwenden Sie [Partner Center](https://partner.microsoft.com/dashboard) zum Ver�
     </colgroup>
     <tr>
         <td>Partner Center-app veröffentlichen</td>
-        <td><a href="https://developer.microsoft.com/store/publish-apps">Veröffentlichen von Windows-apps</a></td>
+        <td><a href="https://developer.microsoft.com/store/publish-apps">Veröffentlichen von Windows-Apps</a></td>
     </tr>
     <tr>
         <td>Partner Center erweiterte Veröffentlichung (GDN)</td>

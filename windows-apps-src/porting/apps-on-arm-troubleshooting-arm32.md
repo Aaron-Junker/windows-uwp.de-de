@@ -5,19 +5,20 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, always connected, ARM32-Apps auf ARM, windows 10 auf ARM, problembehandlung
 ms.localizationpriority: medium
-ms.openlocfilehash: b93a4a3bdf4a6abd12a0df8bfc1871cb38647f63
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3ef6d521cc3f090179e816873fdaa0a4cdd8307e
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319753"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821062"
 ---
 # <a name="troubleshooting-arm-uwp-apps"></a>Problembehandlung bei ARM UWP-apps
 
 Wenn Ihre ARM32 oder ARM64-UWP-app nicht ordnungsgemäß auf ARM funktioniert, ist hier einige Hinweise, die helfen können.
 
 >[!NOTE]
-> Um Ihrer UWP-Anwendung für die ARM64 systemintern Zielplattform erstellen zu können, müssen Sie Visual Studio 2017 Version 15.9 oder höher verfügen. Weitere Informationen finden Sie unter [in diesem Blogbeitrag](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
+> Um Ihrer UWP-Anwendung für die ARM64 systemintern Zielplattform erstellen zu können, müssen Sie Visual Studio 2017-Version 15.9 oder höher oder Visual Studio-2019 verfügen. Weitere Informationen finden Sie unter [in diesem Blogbeitrag](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
+
 
 ## <a name="common-issues"></a>Allgemeine Probleme
 Hier sind einige häufig auftretende Probleme zu bedenken, bei der Problembehandlung ARM32 und ARM64-apps.

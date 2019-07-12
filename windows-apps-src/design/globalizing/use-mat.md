@@ -1,21 +1,21 @@
 ---
-Description: Das Multilingual App Toolkit (MAT) 4.0 integriert sich in Microsoft Visual Studio 2017, um Übersetzungsunterstützung, Übersetzungsdateiverwaltung und Editortools für UWP-Apps bereitzustellen.
+Description: Multilingual App Toolkit (MAT) 4.0 ist in Microsoft Visual Studio-2019 mit übersetzungsunterstützung, Verwaltung von Übersetzungsdateien und Bearbeitungstools zu UWP-apps integriert.
 title: Verwenden des Multilingual App Toolkit
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 49f03a1ae5ed0ea1a602103e2181c252c8c29c2f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 428238f9d8a3468ab308841850ac13e8da22961f
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319328"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820586"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Verwenden des Multilingual App Toolkit 4.0
 
-Das Multilingual App Toolkit (MAT) 4.0 integriert sich in Microsoft Visual Studio 2017, um Übersetzungsunterstützung, Übersetzungsdateiverwaltung und Editortools für UWP-Apps bereitzustellen. Hier sind einige der Vorteile des Toolkits.
+Multilingual App Toolkit (MAT) 4.0 ist in Microsoft Visual Studio-2019 mit übersetzungsunterstützung, Verwaltung von Übersetzungsdateien und Bearbeitungstools zu UWP-apps integriert. Hier sind einige der Vorteile des Toolkits.
 
 - Unterstützt Sie beim Verwalten von Ressourcenänderungen und des Übersetzungsstatus während der Entwicklung.
 - Stellt eine UI zum Auswählen von Sprachen anhand von konfigurierten Übersetzungsanbietern bereit.
@@ -38,10 +38,10 @@ Siehe auch [Richtlinien für Globalisierung](guidelines-and-checklist-for-global
 
 Das Multilingual App Toolkit 4.0 (MAT) besteht aus zwei Teilen. Zu jedem Teil gehört ein eigenes Installationsprogramm.
 
-- [Multilingual App Toolkit 4.0-Erweiterung für Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). Enthält die MAT 4.0-Erweiterung für Visual Studio 2017 in Form eines VSIX-Installationsprogramms.
+- [Multilingual App Toolkit 4.0-Erweiterung für Visual Studio 2017 und höher](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). Die MAT-4.0-Erweiterung enthält für Visual Studio-2019 in Form einer VSIX-Installer.
 - [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). Enthält das eigenständige Multilingual Editor-Tool aus MAT 4.0 in Form eines MSI-Installationsprogramms. Zudem ist die MAT 4.0-Erweiterung für Visual Studio 2015 und für Visual Studio 2013 enthalten
 
-Wenn Sie Visual Studio 2017 verwenden, sollten Sie nacheinander beide Installationsprogramme herunterladen und ausführen. Wenn Sie Visual Studio 2015 oder Visual Studio 2013 verwenden, laden Sie das MSI-Installationsprogramm herunter und führen es aus.
+Bei Verwendung von Visual Studio 2017 oder Visual Studio-2019 herunter, und beide Installationsprogramme, nacheinander ausgeführt. Wenn Sie Visual Studio 2015 oder Visual Studio 2013 verwenden, laden Sie das MSI-Installationsprogramm herunter und führen es aus.
 
 ### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Schritt 3 Aktivieren Sie das Multilingual App Toolkit für Ihr Projekt
 
