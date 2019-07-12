@@ -6,12 +6,12 @@ keywords: UWP App Entwicklung Threading asynchron Plattform Übersicht Portal en
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f8390ddafdb20032ea7a96d52534e4dcfaa6bf0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e8302b7245dfda6f49facc1d8dede2da3038aed3
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582733"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820643"
 ---
 <div> 
 <h1>Entwickeln von UWP-Apps</h1>
@@ -288,7 +288,7 @@ ms.locfileid: "57582733"
                     </div>                
                     <div class="cardText">
                         <h3>Entwicklungstools</h3>
-                        <p>Laden Sie Visual Studio 2017, das Windows 10 SDK und andere Entwicklertools herunter.</p>
+                        <p>Laden Sie Visual Studio 2019, das Windows 10 SDK und andere Entwicklertools herunter.</p>
                     </div>
                 </div>
             </div>

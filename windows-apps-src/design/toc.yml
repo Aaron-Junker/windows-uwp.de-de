@@ -562,6 +562,8 @@
           href: globalizing/use-mat.md
         - name: 'Multilingual App Toolkit 4.0: häufig gestellte Fragen und Problembehandlung'
           href: globalizing/mat-faq-troubleshooting.md
+        - name: UTF-8-Codepage verwenden
+          href: globalizing/use-utf8-code-page.md
         - name: Vorbereiten Ihrer Anwendung auf den Wechsel der japanischen Ära
           href: globalizing/japanese-era-change.md
     - name: Anleitungen für die App-Hilfe
