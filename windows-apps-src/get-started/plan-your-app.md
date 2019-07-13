@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 43423bc1475e446fcc0c6ab3f0d65b5a844d19d2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 97407ec48eaac3415980b9313092b21e9532250a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370681"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321112"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Erstellen einer komplexen UWP-App (Universelle Windows-Plattform)
 
@@ -220,7 +220,7 @@ Ausführlichere Informationen zur Verwendung der unterschiedlichen Oberflächen 
 
 ![App-Designs für PCs und mobile Geräte](images/ux-budgettracker1-md-notablet.png)
 
-Weitere Informationen zur Berücksichtigung unterschiedlicher Bildschirmgrößen beim Design finden Sie unter [Bildschirmgrößen und Haltepunkte für reaktionsfähiges Design](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
+Weitere Informationen zur Berücksichtigung unterschiedlicher Bildschirmgrößen beim Design finden Sie unter [Bildschirmgrößen und Haltepunkte für reaktionsfähiges Design](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## <a name="make-a-good-first-impression"></a>Erzielen eines positiven ersten Eindrucks
 
@@ -238,4 +238,4 @@ Weitere Informationen zur Berücksichtigung unterschiedlicher Bildschirmgrößen
 
 Bevor Sie sich der Entwicklung der App widmen, sollten Sie das Design oder den Prototyp anhand von Richtlinien, Benutzereindrücken und Anforderungen überprüfen. Sie vermeiden dadurch möglicherweise eine spätere Überarbeitung. Für jedes Feature sind Richtlinien für die Benutzerfreundlichkeit verfügbar, die Sie bei der optimalen Gestaltung Ihrer App unterstützen. Außerdem gelten für die Veröffentlichung von Apps im Microsoft Store eine Reihe von Store-Anforderungen. Sie können die App mithilfe des [Zertifizierungskits für Windows-Apps](https://developer.microsoft.com/windows/develop/app-certification-kit) auf die Einhaltung technischer Store-Anforderungen überprüfen. Außerdem können Sie mit den Leistungstools in Microsoft Visual Studio sicherstellen, dass die Benutzer in allen Szenarien von hoher Benutzerfreundlichkeit profitieren.
 
-Mithilfe der [detaillierten UX-Richtlinien für UWP-Apps](https://developer.microsoft.com/windows/design) behalten Sie die wichtigen Features der App im Blick. Analysieren Sie die Leistung der einzelnen Szenarien der App mit [Visual Studio-Leistungstools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015).
+Mithilfe der [detaillierten UX-Richtlinien für UWP-Apps](https://developer.microsoft.com/windows/apps/design) behalten Sie die wichtigen Features der App im Blick. Analysieren Sie die Leistung der einzelnen Szenarien der App mit [Visual Studio-Leistungstools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015).

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Dateien, Datei-E/A, Datei lesen, Datei schreiben, Datei erstellen, Text schreiben, Text lesen
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5480638e201dca8a5eb5363d7a5944422c626f67
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 29cfeef852f240548f1cd961f73766346da7afa4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366889"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321133"
 ---
 # <a name="work-with-files"></a>Arbeiten mit Dateien
 
@@ -145,4 +145,4 @@ Hier findest du einen kurzen Überblick über die APIs und andere nützliche Dok
 | [Beispiel zum Dateizugriff](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Veranschaulicht das Erstellen, Lesen, Schreiben, Kopieren und Löschen einer Datei. |
 | [Beispiel zur Dateiauswahl](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Zeigt, wie auf Dateien und Ordner zugegriffen werden kann, indem dem Benutzer die Möglichkeit gegeben wird, diese über die Benutzeroberfläche auszuwählen. Außerdem erfährst du hier, wie du eine Datei so speicherst, dass der Benutzer den Namen, Dateityp und Speicherort der zu speichernden Datei angeben kann. |
 | [JSON-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | Veranschaulicht das Codieren und Decodieren von JSON-Objekten (JavaScript Object Notation), Arrays, Zeichenfolgen, Zahlen und booleschen Werten mithilfe des [Windows.Data.Json-Namespace](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
-| [Weitere Codebeispiele](https://developer.microsoft.com//windows/samples) | Wähle in der Dropdownliste mit den Kategorien die Option **Dateien, Ordner und Bibliotheken** aus. |
+| [Weitere Codebeispiele](https://developer.microsoft.com/windows/samples) | Wähle in der Dropdownliste mit den Kategorien die Option **Dateien, Ordner und Bibliotheken** aus. |

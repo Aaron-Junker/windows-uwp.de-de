@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 1
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a3a9614a4488791a36f81a3d4dedac572111b4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4030796e942c76ccf32e04dbf951cac68718a6a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780272"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320389"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Juli 2018
 
@@ -22,7 +22,7 @@ Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?
 
 ### <a name="progressive-web-apps-on-windows"></a>Progressive Web Apps unter Windows
 
-[Progressive Web-Apps (PWAs)](https://developer.microsoft.com/windows/pwa) sind einfach Web-Apps, die [progressiv verbessert](https://wikipedia.org/wiki/Progressive_enhancement) werden mit nativen app-ähnlichen Features zur Unterstützung von Plattformen und Browser-Engines, etwa Installation mit Starten von der Startseite, Offlineunterstützung und Pushbenachrichtigungen. Unter Windows 10 mit der Microsoft Edge-Engine (EdgeHTML) kann für PWAs der hinzugefügte Vorteil genutzt werden, dass sie [unabhängig vom Browserfenster als UWP-Apps ausgeführt werden können](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features).
+[Progressive Web-Apps (PWAs)](https://developer.microsoft.com/windows/pwa) sind einfach Web-Apps, die [progressiv verbessert](https://www.wikipedia.org/wiki/Progressive_enhancement) werden mit nativen app-ähnlichen Features zur Unterstützung von Plattformen und Browser-Engines, etwa Installation mit Starten von der Startseite, Offlineunterstützung und Pushbenachrichtigungen. Unter Windows 10 mit der Microsoft Edge-Engine (EdgeHTML) kann für PWAs der hinzugefügte Vorteil genutzt werden, dass sie [unabhängig vom Browserfenster als UWP-Apps ausgeführt werden können](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features).
 
 ![Ein Bild mit PWAs in Aktion](images/progressive-web-apps.jpg)
 
@@ -48,11 +48,9 @@ Das Adobe XD- und das Adobe Illustrator-Toolkit wurden mit neuen Features aktual
 
 ### <a name="webvr"></a>WebVR
 
-Wir haben mehrere neue Themen zur [WebVR-Dokumentation](https://docs.microsoft.com/microsoft-edge/webvr/
-) hinzugefügt:
+Wir haben mehrere neue Themen zur [WebVR-Dokumentation](https://docs.microsoft.com/microsoft-edge/webvr/) hinzugefügt:
 
-* [Was ist WebVR?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
-) Es wird erläutert, was WebVR ist, warum Sie es verwenden sollten, und wie die ersten Schritte des Entwickelns für WebVR aussehen.
+* [Was ist WebVR?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) Es wird erläutert, was WebVR ist, warum Sie es verwenden sollten, und wie die ersten Schritte des Entwickelns für WebVR aussehen.
 
 * [WebVR in progressiven Web-Apps](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas): Erfahren Sie, wie WebVR zu einer progressiven Web-App (PWA) hinzugefügt wird.
 
@@ -80,7 +78,7 @@ Project Personality Chat ermöglicht es Ihnen, anpassbare Rollen zu Ihren Chat-B
 
 ### <a name="one-dev-question"></a>One Dev Question
 
-In der „One Dev Question“-Videoreihe behandeln langjährige Microsoft-Entwickler eine Reihe von Fragen zur Windows-Entwicklung, -Teamkultur und -Geschichte. Es folgen die neuesten Fragen, die wir beantwortet haben!
+In der Videoreihe „One Dev Question“ beantworten langjährige Microsoft-Entwickler eine Reihe von Fragen zur Entwicklung, Teamkultur und Geschichte von Windows. Hier sind die neuesten Antworten auf Fragen angegeben.
 
 Raymond Chen:
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Layout, Formular
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cd3fb1c294ac81f42bb53c23d307eed49a6708fd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2e64392e1de5f6061b802acc0a2eed81c3e750fb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564576"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318807"
 ---
 # <a name="create-and-customize-a-form"></a>Erstellen und Anpassen eines Formulars
 
@@ -182,4 +182,4 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weitere nützl
 | [Tutorial zu adaptiven Layouts](../design/basics/xaml-basics-adaptive-layout.md) | Eine schrittweise geführte Anleitung zu adaptiven Layouts und zum dynamischen Design |
 | [Datenbank für Kundenaufträge](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Layout und Formulare in Aktion in einem mehrseitigen Unternehmensbeispiel |
 | [XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) | Eine Auswahl von XAML-Steuerelementen und Informationen zu deren Implementierung |
-| [Weitere Codebeispiele](https://developer.microsoft.com//windows/samples) | Wählen Sie **Controls, layout, and text** (Steuerelemente, Layout und Text) in der Dropdownliste „Kategorie“ aus, um verwandte Codebeispiele anzuzeigen. |
+| [Weitere Codebeispiele](https://developer.microsoft.com/windows/samples) | Wählen Sie **Controls, layout, and text** (Steuerelemente, Layout und Text) in der Dropdownliste „Kategorie“ aus, um verwandte Codebeispiele anzuzeigen. |

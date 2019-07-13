@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP, erste App, Hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a7f0302dfdc9f9fa980f0fe93a3371328f9e5c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 65dfc7b5f9a870f3ccdd5c0c046b996a01c06a00
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367434"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321205"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Erstellen der App „Hello, world“ (XAML)
 
@@ -240,8 +240,8 @@ Informationen dazu, wie du XAML für die Gestaltung der Steuerelemente in deiner
 ## <a name="see-also"></a>Weitere Informationen
 
 * [Deine erste App](your-first-app.md)
-* [Veröffentlichen deiner UWP-App](https://developer.microsoft.com/store/publish-apps)
-* [Anleitungen zur Entwicklung von UWP App](https://developer.microsoft.com/windows/apps/develop)
+* [Veröffentlichen deiner UWP-App](https://docs.microsoft.com/windows/uwp/publish/)
+* [Anleitungen zur Entwicklung von UWP App](https://docs.microsoft.com/windows/uwp/develop/)
 * [Codebeispiele für UWP-Entwickler](https://developer.microsoft.com/windows/samples)
 * [Was ist eine universelle Windows-App?](universal-application-platform-guide.md)
 * [Registrieren für ein Windows-Konto](sign-up.md)

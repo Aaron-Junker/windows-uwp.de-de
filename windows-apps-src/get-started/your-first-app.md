@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, erste App, C#, C++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e42f627624cb559a84b7da73958f7aa93b0fee2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c6f66d90e96b0dfe941e4311ebf79cd3b9b5f4ae
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564546"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318751"
 ---
 # <a name="create-your-first-app"></a>Erstellen Ihrer ersten App
 
@@ -65,7 +65,7 @@ Erweitern Sie Ihre JavaScript- und HTML-Kenntnisse über UWP hinaus, um Web-Apps
 
 Web-Apps können einfach als gehostete Web-App-Pakete in das UWP-Framework eingefügt und im Microsoft Store beworben werden.
 
-* [Gehostete Web-Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [Gehostete Web-Apps](https://developer.microsoft.com/windows/pwa)
 * [Konvertieren einer Webanwendung in eine UWP-App](../porting/hwa-create-windows.md)
 
 

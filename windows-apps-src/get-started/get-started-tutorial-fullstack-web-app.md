@@ -5,12 +5,12 @@ keywords: Gehostete Web-App, HWA, REST-API, einseitige App, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c38a7182cd27abcfb0de66c721f0e06b95b695d5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b1b837d6585507311dc2246d42f3094ce8b07421
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366984"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321176"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Erstellen einer Single-Page-Web-App mit REST API-Back-End
 
@@ -233,7 +233,7 @@ Diese Ebene unseres Programms stellt die Spielkarten dar und stellt den Großtei
  - [guess.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/guess.js?token=ACEfkvY69Zr1AZQ4iXgfCgDxeinT21bBks5ZFhYBwA%3D%3D)-Code in deine **data\guess.js**-Datei
  - [new.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/new.js?token=ACEfkiqeDN0HjZ4-gIKRh3wfVZPSlEmgks5ZFhYPwA%3D%3D)-Code in deine **data\new.js**-Datei
 
-Der Einfachheit halber speichern wir unser Spiel in einer globalen Variablen (`global.board`) auf dem Node-Server. In der praktischen Anwendung würdest du jedoch einen Cloudspeicher (z. B. Google [Cloud Datastore](https://cloud.google.com/datastore/) oder Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) verwenden, um einen funktionierenden Gedächtnisspiel-API-Dienst zu erhalten, der mehrere Spiele und Spieler unterstützt.
+Der Einfachheit halber speichern wir unser Spiel in einer globalen Variablen (`global.board`) auf dem Node-Server. In der praktischen Anwendung würdest du jedoch einen Cloudspeicher (z. B. Google [Cloud Datastore](https://cloud.google.com/datastore/) oder Azure [DocumentDB](https://azure.microsoft.com/services/cosmos-db/)) verwenden, um einen funktionierenden Gedächtnisspiel-API-Dienst zu erhalten, der mehrere Spiele und Spieler unterstützt.
 
 Speichere alle Änderungen in VS Code. Starte den Server erneut (F5 in VS Code oder `npm start` in der Shell, und navigiere dann zu [https://localhost:8000](https://localhost:8000)), um die Spiele-API zu testen.
 
@@ -284,7 +284,7 @@ Wenn Azure jetzt deine Swagger-Benutzeroberfläche anzeigt, ist nur noch ein let
 
 ### <a name="going-further"></a>Vertiefung
 
-Um die Gedächtnisspiel-API zu einem funktionierenden Back-End-Dienst für eine Produktions-App zu machen, solltest du den Code erweitern, um mehrere Spieler und Spiele zu unterstützen. Dazu musst du wahrscheinlich [Authentifizierung](https://swagger.io/docs/specification/authentication/) (zur Verwaltung von Spieleridentitäten), eine [NoSQL-Datenbank](https://docs.microsoft.com/en-us/azure/documentdb/) (zur Nachverfolgung von Spielen und Spielern) und einige grundlegende [Komponententests](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis) für deine API hinzufügen.
+Um die Gedächtnisspiel-API zu einem funktionierenden Back-End-Dienst für eine Produktions-App zu machen, solltest du den Code erweitern, um mehrere Spieler und Spiele zu unterstützen. Dazu musst du wahrscheinlich [Authentifizierung](https://swagger.io/docs/specification/authentication/) (zur Verwaltung von Spieleridentitäten), eine [NoSQL-Datenbank](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/) (zur Nachverfolgung von Spielen und Spielern) und einige grundlegende [Komponententests](https://apigee.com/about/blog/api-technology/swagger-test-templates-test-your-apis) für deine API hinzufügen.
 
 Hier sind einige nützliche Ressourcen für weiterführende Schritte:
 
@@ -292,7 +292,7 @@ Hier sind einige nützliche Ressourcen für weiterführende Schritte:
 
  - [Dokumente für Azure Web + Mobil](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
 
- - [Azure DocumentDB-Dokumente](https://docs.microsoft.com/en-us/azure/documentdb/index)
+ - [Azure DocumentDB-Dokumente](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
 ## <a name="part-ii-build-a-single-page-web-application"></a>Teil II: Erstellen einer Single-Page-Web-App
 
@@ -575,7 +575,7 @@ Das Rastersystem kann bis zu zwölf Spalten enthalten. Da wir für unser Spiel 
 ### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5. Hinzufügen einer Animation zum Aufdecken von Karten mit CSS-Transformationen
 Ersetze die Datei „style.css“ in „memory\public\stylesheets“ durch die Datei „style.css“ im Ordner „Start“.
 
-Durch das Hinzufügen einer Aufdeckbewegung mit [CSS-Transformationen](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms) wird das Aufdecken deiner Karten realistisch in 3D dargestellt. Die Karten im Spiel werden unter Verwendung der folgenden HTML-Struktur erstellt und dem Spiel programmgesteuert hinzugefügt (in der zuvor gezeigten Funktion `drawGameBoard()`).
+Durch das Hinzufügen einer Aufdeckbewegung mit [CSS-Transformationen](https://developer.mozilla.org/docs/Web/CSS/CSS_Transforms) wird das Aufdecken deiner Karten realistisch in 3D dargestellt. Die Karten im Spiel werden unter Verwendung der folgenden HTML-Struktur erstellt und dem Spiel programmgesteuert hinzugefügt (in der zuvor gezeigten Funktion `drawGameBoard()`).
 
 ``` html
 <div class="flipContainer">
@@ -642,6 +642,6 @@ Hier sind einige nützliche Ressourcen für weiterführende Schritte:
 
  - [Bereitstellen deines Anwendungsentwicklungsprojekts für Azure-Websites](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [Konvertieren deiner Webanwendung in eine App für die universelle Windows-Plattform (UWP)](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
+ - [Konvertieren deiner Webanwendung in eine App für die universelle Windows-Plattform (UWP)](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
 
- - [Veröffentlichen von Windows-Apps](https://developer.microsoft.com/en-us/store/publish-apps)
+ - [Veröffentlichen von Windows-Apps](https://docs.microsoft.com/windows/uwp/publish/)

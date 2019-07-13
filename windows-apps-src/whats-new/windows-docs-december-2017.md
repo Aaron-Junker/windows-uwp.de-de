@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Entwicklerleitfäden, Windows 10, Deze
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a79edb39cc4bfa5794d79d68f4fb8d5b0e976105
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c715a48e0f9d6dea5939e6363441b0300544c252
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63806067"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321907"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Dezember 2017
 
@@ -44,7 +44,7 @@ Füge auf Geräten, die Interaktionen per Toucheingabe unterstützen, die Tastat
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusammenarbeit der Entwickler im Microsoft-Ökosystem durch die Freigabe von Engineering Systems-Arbeitsaufgaben (Fehler, Features usw.) und die Verteilung von Inhalten (Builds, Dokumente, Spezifikationen) zu optimieren. [Weitere Informationen](https://docs.microsoft.com/en-us/collaborate).
+Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusammenarbeit der Entwickler im Microsoft-Ökosystem durch die Freigabe von Engineering Systems-Arbeitsaufgaben (Fehler, Features usw.) und die Verteilung von Inhalten (Builds, Dokumente, Spezifikationen) zu optimieren. [Weitere Informationen](https://docs.microsoft.com/collaborate/).
 
 ![Microsoft Collaborate in Partner Center](images/microsoft_collaborate_screenshot.PNG)
 
@@ -52,7 +52,7 @@ Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusamm
 
 In Visual Studio 2017, Version 15.5, wurde die Vorlage für das **Paketerstellungsprojekt für Windows-Anwendungen** aktualisiert, damit das Integrieren eines UWP-Projekts deutlich vereinfacht wird. Du musst nicht mehr ein JavaScript-basiertes Paketerstellungsprojekt verwenden und dann das Paketmanifest manuell optimieren.  
 
-Weitere Hinweise zur Verwendung mit dieser neuen Vorlage zum Verpacken deiner Desktopanwendung findest du unter [Packen einer App mit Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
+Weitere Hinweise zur Verwendung mit dieser neuen Vorlage zum Verpacken deiner Desktopanwendung findest du unter [Packen einer App mit Visual Studio](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 Weitere Hinweise dazu, wie du dein Paket einem UWP-Projekt hinzufügst, findest du im Artikel zum [Erweitern deiner Desktopanwendung mit modernen UWP-Komponenten](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend).
 

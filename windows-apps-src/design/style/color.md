@@ -1,18 +1,18 @@
 ---
 description: Hier erfahren Sie, wie Sie Akzentfarben und Designs in Ihren UWP-Apps verwenden.
 title: Farbe in UWP-Apps
-ms.date: 04/7/2018
+ms.date: 04/07/2019
 ms.topic: article
 keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3177deb74085737531366f63e9f2e8bbecac06e6
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e5cd8ecafd3557719e70c50890da4c3eade18f52
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67028459"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714136"
 ---
 # <a name="color"></a>Farbe
 

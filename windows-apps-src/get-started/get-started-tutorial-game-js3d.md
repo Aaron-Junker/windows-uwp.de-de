@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366944"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321087"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Erstellen eines 3D-JavaScript-Spiels mit „three.js“
 
@@ -34,7 +34,7 @@ Möchtest du schon einmal einen Blick auf die fertige App werfen, bevor du weite
 ## <a name="requirements"></a>Anforderungen
 
 Um dieses Projekt ausprobieren zu können, benötigst du Folgendes:
--   Einen Windows-Computer (oder einen virtuellen Computer) mit der aktuellen Version von Windows 10.
+-   Einen Windows-Computer (bzw. einen virtuellen Computer) mit der aktuellen Version von Windows 10.
 -   Eine Kopie von Visual Studio. Die kostenlose Visual Studio Community Edition kann von der [Visual Studio-Homepage](https://visualstudio.com/) heruntergeladen werden.
 In diesem Projekt wird die JavaScript-Bibliothek **three.js** verwendet. **three.js** wird unter der MIT-Lizenz veröffentlicht. Diese Bibliothek ist bereits im Projekt vorhanden. (Suche im Projektmappen-Explorer nach `js/libs`.) Weitere Informationen zu dieser Bibliothek findest du auf der Homepage von [**three.js**](https://threejs.org/).
 
@@ -1086,5 +1086,5 @@ Nachdem du nun über eine UWP-App verfügst, kannst du sie im Microsoft Store ve
 1.  Du musst als Windows-Entwickler [registriert](https://developer.microsoft.com/store/register) sein.
 2.  Du musst die [Prüfliste für die App-Übermittlung](https://docs.microsoft.com/windows/uwp/publish/app-submissions) verwenden.
 3.  Die App muss zur [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
-Weitere Informationen findest du unter [Veröffentlichen von Windows-Apps und -Spielen](https://developer.microsoft.com/store/publish-apps).
+Weitere Informationen findest du unter [Veröffentlichen von Windows-Apps und -Spielen](https://docs.microsoft.com/windows/uwp/publish/).
 

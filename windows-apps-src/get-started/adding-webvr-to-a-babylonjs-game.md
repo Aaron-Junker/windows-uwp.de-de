@@ -5,12 +5,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: WebVR, Edge, Webentwicklung, Babylon, Babylonjs, Babylon.js, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d8029752790e19adc5eb4266615372fb346e001
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 5f212e4e06035134b0ac5b5ea69381ed0d985783
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63798240"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321166"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>Hinzufügen von WebVR-Support zu einem Babylon.js-3D-Spiel
 
@@ -23,7 +23,7 @@ Wir fügen dem hier gezeigten Spiel WebVR-Unterstützung hinzu. Schließe einen 
 </iframe>
 
 Dies ist ein 3D-Spiel, das gut auf einem Flachbildschirm funktioniert. Aber gilt dies auch für VR?
-In diesem Tutorial werden die wenigen Schritte beschrieben, die erforderlich sind, um das Spiel für WebVR einzurichten. Wir verwenden ein [Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality)-Headset, mit dem die zusätzliche WebVR-Unterstützung in Microsoft Edge genutzt werden kann. Nachdem wir diese Änderungen auf das Spiel angewendet haben, kannst du davon ausgehen, dass es auch für andere Browser/Headset-Kombinationen funktioniert, für die WebVR unterstützt wird.
+In diesem Tutorial werden die wenigen Schritte beschrieben, die erforderlich sind, um das Spiel für WebVR einzurichten. Wir verwenden ein [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality)-Headset, mit dem die zusätzliche WebVR-Unterstützung in Microsoft Edge genutzt werden kann. Nachdem wir diese Änderungen auf das Spiel angewendet haben, kannst du davon ausgehen, dass es auch für andere Browser/Headset-Kombinationen funktioniert, für die WebVR unterstützt wird.
 
 
 
@@ -132,12 +132,12 @@ Mit den in der `headset`-Variable gespeicherten Informationen können wir jetzt 
 
 ## <a name="creating-and-selecting-the-initial-camera"></a>Erstellen und Auswählen der ersten Kamera
 
-Mit Babylon.js kann WebVR schnell hinzugefügt werden, indem [`WebVRFreeCamera`](https://doc.babylonjs.com/classes/3.1/webvrfreecamera) verwendet wird. Diese Kamera kann Tastatureingaben erfassen und ermöglicht es dir, ein VR-Headset zum Steuern der Kopfdrehung zu nutzen.
+Mit Babylon.js kann WebVR schnell hinzugefügt werden, indem [`WebVRFreeCamera`](https://doc.babylonjs.com/api/classes/babylon.webvrfreecamera) verwendet wird. Diese Kamera kann Tastatureingaben erfassen und ermöglicht es dir, ein VR-Headset zum Steuern der Kopfdrehung zu nutzen.
 
 
 ### <a name="step-1-checking-for-headsets"></a>Schritt 1: Durchführen einer Überprüfung auf Headsets
 
-Als Reservekamera verwenden wir [`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera), die derzeit im ursprünglichen Spiel genutzt wird.
+Als Reservekamera verwenden wir [`UniversalCamera`](https://doc.babylonjs.com/api/classes/babylon.universalcamera), die derzeit im ursprünglichen Spiel genutzt wird.
 
 Wir überprüfen unsere `headset`-Variable, um zu ermitteln, ob wir die `WebVRFreeCamera`-Kamera verwenden können.
 

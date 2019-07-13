@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, universell
 ms.localizationpriority: medium
-ms.openlocfilehash: 37207d4ce65551a7bdd33d57f72f3fa6a0a6185d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8b1f6e0e04cdf81512918e0cd3e33ec0f93e2245
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370698"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320999"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Was ist eine App der universellen Windows-Plattform (UWP)?
 
@@ -107,7 +107,7 @@ UWP-Apps verwenden die Windows-Runtime, die native, vom Betriebssystem bereitges
 
 ## <a name="links-to-help-you-get-going"></a>Links für die ersten Schritte
 
-### <a name="get-set-up"></a>Vorbereiten
+### <a name="get-set-up"></a>Einrichten
 
 Navigieren Sie zu [Vorbereiten](get-set-up.md), um die erforderlichen Tools herunterzuladen und mit dem Erstellen von Apps zu beginnen, und [schreiben Sie Ihre erste App](your-first-app.md).
 
@@ -121,13 +121,12 @@ Zusätzlich zur Interaktion auf verschiedenen Geräten sollten Sie [Ihre App pla
 
 - Entwerfen Sie Ihren Workflow anhand von [Navigationsdesigngrundlagen für UWP-Apps](https://docs.microsoft.com/windows/uwp/layout/navigation-basics), damit die App auf dem Bildschirm eines mobilen Geräts genauso gut funktioniert wie auf Geräten mit mittelgroßem und großem Bildschirm. [Erstellen Sie das Layout der Benutzeroberfläche](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design), um unterschiedliche Bildschirmgrößen und Auflösungen zu berücksichtigen.
 
-- Achten Sie darauf, wie Sie verschiedene Eingabearten umsetzen können. In den [Richtlinien für Interaktionen](https://developer.microsoft.com/windows/design/inputs-devices) finden Sie Informationen darüber, wie Benutzer anhand von Features wie [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines), [Sprache](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions), [Toucheingaben](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction), der [Touch-Bildschirmtastatur](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) und vielem mehr mit Ihrer App interagieren.  In den [Richtlinien für Text und Texteingabe](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls) finden Sie Informationen für eine herkömmlichere Benutzerumgebung.
+- Achten Sie darauf, wie Sie verschiedene Eingabearten umsetzen können. In den [Richtlinien für Interaktionen](https://docs.microsoft.com/windows/uwp/design/layout/index) finden Sie Informationen darüber, wie Benutzer anhand von Features wie [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines), [Sprache](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions), [Toucheingaben](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction), der [Touch-Bildschirmtastatur](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) und vielem mehr mit Ihrer App interagieren.  In den [Richtlinien für Text und Texteingabe](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls) finden Sie Informationen für eine herkömmlichere Benutzerumgebung.
 
 ### <a name="add-services"></a>Dienste hinzufügen
 
 - Verwenden Sie [Clouddienste](https://go.microsoft.com/fwlink/?LinkId=526377) für die Synchronisierung auf allen Geräten.
 - Erfahren Sie, wie Sie eine [Verbindung mit Webdiensten](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10)) zur Unterstützung der App-Benutzerumgebung herstellen.
-- Finden Sie heraus, wie Sie [Cortana zu Ihrer App hinzufügen](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382), damit sie auf Sprachbefehle reagieren kann.
 - Beziehen Sie [Push-Benachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) und [In-App-Käufe](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases) in Ihre Planung ein. Diese Features sollten auf allen Geräten funktionieren.
 
 ### <a name="submit-your-app-to-the-store"></a>Übermitteln Ihrer App an den Store
@@ -142,7 +141,7 @@ Weitere einführende Informationen finden Sie unter [Einführung in das Entwicke
 
 - Hier erfahren Sie, wie Sie [Benutzeraktivitäten](https://blogs.windows.com/buildingapps/2017/12/19/application-engagement-windows-timeline-user-activities/#tHuZ6tLPtCXqYKvw.97) verwenden, damit Benutzeraktivitäten in Ihrer App auf der Windows-Zeitachse und in der Funktion „Weitermachen, wo Sie aufgehört haben” von Cortana angezeigt werden.
 - Erfahren Sie, wie Sie [Kacheln, Signale und Benachrichtigungen für UWP-Apps](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/) verwenden.
-- Eine vollständige Liste von Win32-APIs für UWP-Apps finden Sie unter [API-Sätze für UWP-Apps](https://docs.microsoft.com/previous-versions//mt186421(v=vs.85)) und [DLLs für UWP-Apps](https://docs.microsoft.com/previous-versions//mt186422(v=vs.85)).
+- Eine vollständige Liste von Win32-APIs für UWP-Apps finden Sie unter [API-Sätze für UWP-Apps](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)) und [DLLs für UWP-Apps](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)).
 - Eine Übersicht über das Schreiben von .NET UWP-Apps finden Sie unter [Universelle Windows-Apps in .NET](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/).
 - Eine Liste der .NET-Typen, die Sie in einer UWP-App verwenden können, finden Sie unter [.NET für UWP-Apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0).
 - [Kompilieren von Apps mit .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/)

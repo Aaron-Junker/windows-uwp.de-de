@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bc422f57cdc268ea517aff729a9c3e57c80acf69
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372783"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320613"
 ---
 # <a name="rssatom-feeds"></a>RSS-/Atom-Feeds
 
@@ -60,7 +60,7 @@ Damit die UWP-App im Netzwerk verwendet werden kann, müssen Sie alle erforderli
 
 Nun sehen wir uns etwas Code an, der demonstriert, wie ein Feed abgerufen werden kann und anschließend die einzelnen Elemente des Feeds angezeigt werden können. Bevor wir die Anforderung konfigurieren und senden können, definieren wir einige Variablen, die wir während des Vorgangs verwenden werden, und initialisieren eine Instanz von [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient), die die Methoden und Eigenschaften definiert, die wir zum Abrufen und Anzeigen des Feeds verwenden.
 
-Der [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.)-Konstruktor löst eine Ausnahme aus, wenn das an den Konstruktor übergebene *uriString*-Element kein gültiger URI ist. Daher überprüfen wir das *uriString*-Element mithilfe eines try/catch-Blocks.
+Der [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)-Konstruktor löst eine Ausnahme aus, wenn das an den Konstruktor übergebene *uriString*-Element kein gültiger URI ist. Daher überprüfen wir das *uriString*-Element mithilfe eines try/catch-Blocks.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -93,13 +93,13 @@ try {
 }
 ```
 
-Anschließend konfigurieren wir die Anforderung, indem wir alle erforderlichen Serveranmeldeinformationen (die [**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential)-Eigenschaft), Proxyanmeldeinformationen (die [**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential)-Eigenschaft) und HTTP-Header (die [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader)-Methode) festlegen. Da die grundlegenden Anforderungsparameter nun konfiguriert sind, haben wir ein gültiges, mit einer von der App bereitgestellten Feed-URI-Zeichenfolge erstelltes [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.)-Objekt. Das **Uri**-Objekt wird anschließend an die [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)-Funktion übergeben, um den Feed anzufordern.
+Anschließend konfigurieren wir die Anforderung, indem wir alle erforderlichen Serveranmeldeinformationen (die [**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential)-Eigenschaft), Proxyanmeldeinformationen (die [**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential)-Eigenschaft) und HTTP-Header (die [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader)-Methode) festlegen. Da die grundlegenden Anforderungsparameter nun konfiguriert sind, haben wir ein gültiges, mit einer von der App bereitgestellten Feed-URI-Zeichenfolge erstelltes [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri)-Objekt. Das **Uri**-Objekt wird anschließend an die [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)-Funktion übergeben, um den Feed anzufordern.
 
 In der Annahme, dass die gewünschten Feedinhalte zurückgegeben wurden, durchläuft der Beispielcode jedes Feedelement, wobei er **displayCurrentItem** aufruft (was wir als Nächstes definieren), um Elemente und ihre Inhalte über die UI als Liste anzuzeigen.
 
 Beim Aufrufen der meisten asynchronen Netzwerkmethoden müssen Sie Code zum Behandeln von Ausnahmen schreiben. Ihr Ausnahmehandler kann detailliertere Informationen zur Ursache abrufen, um die Ausnahme besser verstehen und entsprechende Entscheidungen treffen zu können.
 
-Die [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)-Methode löst eine Ausnahme aus, wenn keine Verbindung mit dem HTTP-Server hergestellt werden kann oder wenn das [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.)-Objekt nicht auf einen gültigen AtomPub- oder RSS-Feed verweist. Im JavaScript-Beispielcode wird eine **onError**-Funktion verwendet, um etwaige Ausnahmen abzufangen und ausführlichere Informationen zur Ausnahme auszugeben, wenn ein Fehler auftritt.
+Die [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)-Methode löst eine Ausnahme aus, wenn keine Verbindung mit dem HTTP-Server hergestellt werden kann oder wenn das [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri)-Objekt nicht auf einen gültigen AtomPub- oder RSS-Feed verweist. Im JavaScript-Beispielcode wird eine **onError**-Funktion verwendet, um etwaige Ausnahmen abzufangen und ausführlichere Informationen zur Ausnahme auszugeben, wenn ein Fehler auftritt.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

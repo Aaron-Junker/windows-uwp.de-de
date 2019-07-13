@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 67ba9f5c9bc4a5e723eb2696d88804df5300eda0
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66748448"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468985"
 ---
 # <a name="dialog-controls"></a>Dialogfeld-Steuerelemente
 
@@ -254,7 +254,7 @@ Ein typisches Bestätigungsdialogfeld verfügt über zwei Schaltflächen: eine S
 
 > HINWEIS: Dieser Abschnitt gilt nur für Apps für Windows 10, Version 1903 oder höher. „AppWindow“ und „XAML-Inseln“ sind in früheren Versionen nicht verfügbar. Weitere Informationen zu Versionen finden Sie unter [Versionsadaptive Apps](../../../debug-test-perf/version-adaptive-apps.md).
 
-Inhaltsdialogfelder werden standardmäßig modal relativ zum Stamm [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) angezeigt. Wenn Sie „ContentDialog“ in einem [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) oder einer [XAML-Insel](/apps/desktop/modernize/xaml-islands) verwenden, müssen Sie den Wert für [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) im Dialogfeld manuell auf den Stamm des XAML-Hosts festlegen.
+Inhaltsdialogfelder werden standardmäßig modal relativ zum Stamm [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) angezeigt. Wenn Sie „ContentDialog“ in einem [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) oder einer [XAML-Insel](/windows/apps/desktop/modernize/xaml-islands) verwenden, müssen Sie den Wert für [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) im Dialogfeld manuell auf den Stamm des XAML-Hosts festlegen.
 
 Legen Sie hierzu die „XamlRoot“-Eigenschaft von „ContentDialog“ auf denselben „XamlRoot“-Wert wie bei einem in „AppWindow“ oder „XAML-Insel“ bereits vorhandenen Element fest, wie hier gezeigt wird.
 
@@ -284,7 +284,7 @@ private async void DisplayNoWifiDialog()
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [QuickInfos](../tooltips.md)

@@ -10,18 +10,18 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea4dc1d77c5cf7199d084d4646b5862599a1d54
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc696c9a57e84e2caade6a2623a72a6048b65621
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794458"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319106"
 ---
 # <a name="teaching-tip"></a>Unterrichtstipp
 
 Ein Unterrichtstipp ist ein semipersistentes und inhaltsreiches Flyout, das Kontextinformationen bereitstellt. Es wird häufig verwendet, um Benutzer über wichtige und neue Features zu informieren, die die Benutzerfreundlichkeit verbessern, sowie um sie an solche Features zu erinnern und sie entsprechend zu schulen.
 
-**Wichtige APIs:** [TeachingTip-Klasse](https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+**Wichtige APIs:** [TeachingTip-Klasse](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.teachingtip?view=winui-2.2)
 
 Ein Unterrichtstipp ist möglicherweise einfach ausblendbar oder erfordert explizite Aktionen, damit er geschlossen werden kann. Ein Unterrichtstipp weist ggf. mit einer Spitze auf ein spezifisches Element der Benutzeroberfläche oder kann auch ohne Spitze oder Ziel verwendet werden.
 

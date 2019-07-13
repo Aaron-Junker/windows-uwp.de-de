@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0f3e7ca98f01750d7d05cc06b56783e3b32359
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 30ffec0f2a5e771e649eda6240d9e7ef90f50890
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564461"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318796"
 ---
 # <a name="get-set-up"></a>Einrichten
 
@@ -34,7 +34,7 @@ Verwenden Sie bei der Installation von Visual Studio die Option „Entwicklungst
 
 ![Visual Studio-Tools für UWP](images/vs-2017-community-setup.png)
 
-Benötigen Sie Hilfe zu Visual Studio? Informieren Sie sich unter [Erste Schritte mit Visual Studio](https://www.visualstudio.com/vs/getting-started).
+Benötigen Sie Hilfe zu Visual Studio? Informieren Sie sich unter [Erste Schritte mit Visual Studio](https://visualstudio.microsoft.com/vs/getting-started/).
 
 Wenn Sie Visual Studio bereits verwenden, aber feststellen, dass einige Komponenten fehlen, können Sie den Installer über das Dialogfeld *Neues Projekt* erneut starten:
 
@@ -73,4 +73,4 @@ Die vollständige Liste der Tools und Downloads finden Sie unter [Downloads](htt
 
 * [Codebeispiele für UWP-Entwickler](https://developer.microsoft.com/windows/samples)
 * [Was ist eine UWP-App?](universal-application-platform-guide.md)
-* [Für Windows-Konto registrieren](sign-up.md)
+* [Registrieren für ein Windows-Konto](sign-up.md)
