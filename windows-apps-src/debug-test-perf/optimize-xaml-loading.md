@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: aacf51cc320a0835f906e91806b686a88907640e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f46967cd26f10510e2620229fee0eec13ca7f52a
+ms.sourcegitcommit: 7bbc24d770bf23a8d7e2b234503aad743eb354f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317620"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67852057"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimieren Ihres XAML-Markups
 
@@ -159,7 +159,7 @@ Verwenden Sie das [x:Key-Attribut](../xaml-platform/x-key-attribute.md), um Ihre
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>ResourceDictionary in einem UserControl-Element
 
-Ein innerhalb von [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) definiertes ResourceDictionary führt zu Leistungseinbußen. Die Plattform erstellt für jede Instanz von UserControl eine Kopie von ResourceDictionary. Bei einem häufig verwendeten Benutzersteuerelement empfiehlt es sich daher, ResourceDictionary aus UserControl zu entfernen und auf der Seitenebene zu platzieren.
+Ein innerhalb von [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) definiertes ResourceDictionary führt zu Leistungseinbußen. Die Plattform erstellt für jede Instanz von UserControl eine Kopie von ResourceDictionary. Wenn Sie ein Steuerelement, die viel verwendet wird verfügen, klicken Sie dann verschieben Sie ResourceDictionary aus das UserControl-Steuerelement, und speichern Sie diese auf Seitenebene.
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Ressourcen und ResourceDictionary-Bereich
 
@@ -379,7 +379,7 @@ Verwenden Sie ein [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.co
 </Border>
 ```
 
-### <a name="margins"></a>Ränder
+### <a name="margins"></a>Seitenränder
 
 Achten Sie auf die Ränder. Zwei benachbarte Elemente überlappen sich (möglicherweise versehentlich), wenn negative Ränder in die Rendergrenzen hineinreichen und eine Überzeichnung verursachen.
 
