@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 0629201b695f6df6f7f3e2084a73d72b10b82be5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 478c4a16902329e1dd9267e0339dca0e0dcf3539
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63813613"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321970"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Anwendungsentwicklung für Windows as a Service
 
@@ -160,4 +160,4 @@ Lassen Sie uns wissen, wie Ihre App mit Test-Flight-Builds funktioniert. Wenn di
 Auf der Website [Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) finden Sie ein Verzeichnis der Softwarelösungen, die Windows 10 unterstützen. Sie richtet sich an IT-Administratoren in Unternehmen und Organisationen weltweit, die die Bereitstellung von Windows 10 auf ihren Systemen in Betracht ziehen. IT-Administratoren können anhand der Website feststellen, ob die in ihrem Unternehmen bereitgestellte Software in Windows 10 unterstützt wird.
 
 ## <a name="related-topics"></a>Verwandte Themen
-[Windows 10-Wartungsoptionen für Updates und Upgrades](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
+[Windows 10-Wartungsoptionen für Updates und Upgrades](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
