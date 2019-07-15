@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b3cb74e3b3613cf562af7b5290697f111722226
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: a55f543aae5efae101590bd892278a30b3ca9907
+ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800546"
+ms.lasthandoff: 07/14/2019
+ms.locfileid: "67870323"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -64,6 +64,7 @@ C++/WinRT arbeitet besser und erzeugt kleinere Binärdateien als jede andere Spr
 | [Interoperabilität zwischen C++/WinRT und der ABI](interop-winrt-abi.md) | Dieses Thema zeigt, wie man zwischen Application Binary Interface (ABI) und C++/WinRT-Objekten konvertiert. |
 | [Starke und schwache Verweise in C++/WinRT](weak-references.md) | Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit der Bedeutung und dem Unterschied zwischen starken und schwachen Verweisen vertraut sind. |
 | [Agile Objekte](agile-objects.md) | Ein agiles Objekt ist ein Objekt, auf das von jedem Thread aus zugegriffen werden kann. Ihre C++/WinRT-Typen sind standardmäßig agil, aber Sie können diese Option auch deaktivieren. |
+| [Eine einfache C++/WinRT-Windows-UI-Beispielbibliothek](simple-winui-example.md) | Dieses Thema führt Sie durch den Prozess zum Hinzufügen von einfacher Unterstützung für WinUI innerhalb eines C++/WinRT-Projekts. |
 
 ### <a name="topics-about-the-c-language"></a>Themen zur C++-Sprache
 
