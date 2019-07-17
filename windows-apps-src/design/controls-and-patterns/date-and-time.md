@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 54da5ea68dad0bbd2c7f00ae5fc4128f14d1ce43
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0c980acc3b9887dac68712bd65de96e8f3a327a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362880"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319061"
 ---
 # <a name="calendar-date-and-time-controls"></a>Kalender-, Datums- und Uhrzeitsteuerelemente
 
@@ -124,7 +124,7 @@ Ein verwandtes Konzept ist die Calendar-Klasse, die beeinflusst, wie die Daten i
 > **Note**&nbsp;&nbsp;Eigenschaften, die Datumsobjekte verwenden, können nicht als XAML-Attributzeichenfolge festgelegt werden, da der Windows-Runtime-XAML-Parser nicht über eine Konvertierungslogik zum Konvertieren von Zeichenfolgen in Datumsangaben als DateTime/DateTimeOffset-Objekte verfügt. In der Regel legen Sie diese Werte im Code fest. Eine andere Möglichkeit besteht darin, ein Datum zu definieren, das als Datenobjekt oder im Datenkontext verfügbar ist, und anschließend die Eigenschaft als XAML-Attribut festzulegen, das auf einen [\{Binding\}-Markuperweiterung](../../xaml-platform/binding-markup-extension.md)-Ausdruck verweist, der auf das Datum als Daten zugreifen kann.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
-* [Beispiel für XAML-Benutzeroberflächengrundlagen](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [Beispiel für XAML-Benutzeroberflächengrundlagen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 
 
 ## <a name="related-topics"></a>Verwandte Themen

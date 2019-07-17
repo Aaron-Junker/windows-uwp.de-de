@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d8968104ec7b28a6b4a59eb6a83c422807282a7c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bb43307b0a95b49acfd7e2f9739a843824dbf61c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362992"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319071"
 ---
 # <a name="control-templates"></a>Steuerelementvorlagen
 
@@ -202,5 +202,5 @@ Möglicherweise sind Ihnen bei einigen Attributen in den XAML-Beispielen Ressour
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-* [Beispiel für XAML-Steuerelementekatalog](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
-* [Beispiel für ein benutzerdefiniertes Textbearbeitungssteuerelement](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
+* [Beispiel für XAML-Steuerelementekatalog](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+* [Beispiel für ein benutzerdefiniertes Textbearbeitungssteuerelement](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)
