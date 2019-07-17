@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 466747cbbfe6f599f42a39f0d2766f78775ec6c8
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f57cc53eaea51c56e665660cfaf6ecdf6456b96b
+ms.sourcegitcommit: b0aea3c2061f7b9a87e7396e8e5f7735748718ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820588"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68239509"
 ---
 # <a name="globalization-and-localization"></a>Globalisierung und Lokalisierung
 
@@ -69,4 +69,5 @@ Die meisten Lokalisierungsteams verwenden spezielle Tools, um den Prozess zu unt
 | [Entwerfen Sie Ihre app für bidirektionalen text](design-for-bidi-text.md) | Entwerfen Sie Ihre App so, dass bidirektionale Textunterstützung (BiDi) bereitgestellt wird, sodass Sie Texte aus links und rechtsbündigen Schreibsystemen kombinieren können. |
 | [Mit dem Multilingual App Toolkit 4.0](use-mat.md) | Multilingual App Toolkit (MAT) 4.0 integriert mit Microsoft Visual Studio 2017 und höher, um UWP-apps mit übersetzungsunterstützung, Verwaltung von Übersetzungsdateien und Bearbeitungstools zu ermöglichen. |
 | [Multilingual App Toolkit 4.0 – häufig gestellte Fragen und Problembehandlung](mat-faq-troubleshooting.md) | Dieses Thema enthält Antworten auf häufig gestellte Fragen und Probleme in Bezug auf das Multilingual App Toolkit (MAT) 4.0. |
+| [Verwenden Sie die UTF-8-Codepage](use-utf8-code-page.md) | UTF-8 ist die universelle Codepage für die Internationalisierung. |
 | [Vorbereiten Sie Ihrer Anwendung auf die japanischen Era-Änderung](japanese-era-change.md) | Hier erhalten Sie Informationen zum im Mai 2019 anstehenden Wechsel der japanischen Ära, und wie Sie Ihre Anwendung darauf entsprechend vorbereiten können. |

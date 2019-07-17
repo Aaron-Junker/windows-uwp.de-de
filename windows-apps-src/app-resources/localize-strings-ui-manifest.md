@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 23cd899a196fbe3d28b7156890d65e90ac88cdad
-ms.sourcegitcommit: 9f097438937539f94b6a14a09ee65d30f71da9c6
-ms.translationtype: HT
+ms.openlocfilehash: 6412416fe2d73c4fc313a32fdc2929fff9dc51c4
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68223966"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270089"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest
 
@@ -303,7 +303,7 @@ Um Ressourcen in nicht gepackte Anwendungen zu verwenden, sollten Sie Folgendes 
 
 1. Verwendung [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) anstelle von [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) beim Auflösen von Ressourcen aus Code, wie es ist keine *aktuelle Ansicht* in Szenarien nicht gepackt. Die folgende Ausnahme auftritt, wenn Sie aufrufen [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in Szenarien nicht enthalten: *-Ressourcenkontexten verwendet möglicherweise nicht für Threads erstellt werden, die nicht über ein "corewindow" verfügen.*
 1. Verwendung [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) resources.pri-Datei Ihrer app manuell zu erstellen.
-    - Ausführen von `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
+    - Ausführen von `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
     - Die &lt;PRICONFIG&gt; dürfen die "&lt;paketerstellung&gt;" im Abschnitt, damit alle Ressourcen in einer einzelnen resources.pri-Datei gebündelt werden. Wenn die Standardeinstellung verwenden [MakePri.exe-Konfigurationsdatei](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) erstellt [Createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), müssen gelöscht werden der "&lt;paketerstellung&gt;" im Abschnitt manuell, nachdem es erstellt wurde.
     - Die &lt;PRICONFIG&gt; muss alle relevanten Indexer erforderlich, um alle Ressourcen in Ihrem Projekt in eine Datei für die einzelnen resources.pri merge enthalten. Der Standardwert [MakePri.exe-Konfigurationsdatei](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) erstellt [Createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) alle Indexer enthält.
     - Wenn Sie die Standardkonfiguration nicht verwenden, stellen Sie sicher, dass der Indexer PRI aktiviert ist (Überprüfen Sie die Standardkonfiguration für hierzu) PRIs gefunden von UWP-Projekt-verweisen, NuGet-Verweise und So weiter, zusammenführen, die sich in das Stammverzeichnis des Projekts befinden.
