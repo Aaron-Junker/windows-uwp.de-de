@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8ceb314424ae2611e141ef866a84c08e55b0ba2d
-ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
+ms.openlocfilehash: 52338ef4d3850b5cf4a2caa0e2d6f93341897285
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67690888"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141818"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Host UWP XAML-Steuerelemente in desktop-apps (XAML-Inseln)
 
@@ -45,7 +45,7 @@ Die folgenden umschlossene UWP-Steuerelemente für die Implementierung der XAML-
 
 | Steuerelement | Betriebssystem | Beschreibung |
 |-----------------|-------------------------------|-------------|
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, Version 1903 | Geben Sie eine Fläche aus, und verwandte Symbolleisten für Windows Ink-basierte Benutzerinteraktion in Ihre Windows Forms oder WPF-Desktopanwendung an. |
+| [InkCanvas-Steuerelement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, Version 1903 | Geben Sie eine Fläche aus, und verwandte Symbolleisten für Windows Ink-basierte Benutzerinteraktion in Ihre Windows Forms oder WPF-Desktopanwendung an. |
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, Version 1903 | Bettet eine Ansicht, die streams auf und rendert die Medieninhalte wie z. B. Videos in Ihre Windows Forms oder WPF-Desktopanwendung an. |
 | [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, Version 1903 | Können Sie eine symbolische oder fotorealistische-Karte in Ihrer Windows Forms oder WPF-Desktopanwendung anzeigen. |
 
@@ -72,7 +72,7 @@ Die am Diagrammende aufgeführten APIs sind im Lieferumfang des Windows SDK enth
 
 XAML-Inseln erfordern Windows 10, Version 1903 und höher. Um XAML-Inseln in Ihrer Anwendung verwenden zu können, müssen Sie zuerst das Projekt einrichten.
 
-### <a name="step-1-modify-your-project-to-use-windows-runtime-apis"></a>Schritt 1: Ändern Sie das Projekt zur Verwendung von Windows-Runtime-APIs
+### <a name="step-1-modify-your-project-to-use-windows-runtime-apis"></a>Schritt 1: Ändern Sie das Projekt zur Verwendung von Windows-Runtime-APIs
 
 Anweisungen hierzu finden Sie unter [in diesem Artikel](desktop-to-uwp-enhance.md#set-up-your-project).
 
@@ -105,7 +105,7 @@ Wenn Sie nicht Ihre Anwendung in einem Paket MSIX packen möchten, können Sie h
     ```
 
 > [!NOTE]
-> Beim Hinzufügen einer **"maxversiontested"** Element um ein Anwendungsmanifest in einem C++ Win32 Projekt (mit einer Projektvorlage für Windows Desktop-Anwendung in Visual Studio), die Sie möglicherweise die folgende Warnung angezeigt, in Ihrem Projekt: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"` . Diese Warnung, nicht dass nichts falsch. in Ihrem Projekt ist, und er ignoriert werden kann.
+> Beim Hinzufügen einer **"maxversiontested"** Element um ein Anwendungsmanifest, möglicherweise der folgende Buildvorgang in Ihrem Projekt Warnung angezeigt: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Diese Warnung, nicht dass nichts falsch. in Ihrem Projekt ist, und er ignoriert werden kann.
 
 ## <a name="feature-roadmap"></a>Roadmap für die Funktion
 

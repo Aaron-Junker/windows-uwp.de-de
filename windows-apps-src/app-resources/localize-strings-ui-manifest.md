@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: b6caf2de67b72c01391d47037150d76500a1cb42
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
-ms.translationtype: MT
+ms.openlocfilehash: 23cd899a196fbe3d28b7156890d65e90ac88cdad
+ms.sourcegitcommit: 9f097438937539f94b6a14a09ee65d30f71da9c6
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820306"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68223966"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest
 
@@ -301,23 +301,21 @@ Erstellen Sie einfach Ihren UWP Benutzer Steuerelemente/Bibliotheken und [alle Z
 
 Um Ressourcen in nicht gepackte Anwendungen zu verwenden, sollten Sie Folgendes tun:
 
-1. Verwenden Sie zur Unterstützung von Szenarien nicht verpackt, [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) anstelle von [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) wie keine *aktuelle Ansicht* in Szenarien nicht gepackt. Die folgende Ausnahme auftritt, wenn Sie aufrufen [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in Szenarien nicht enthalten: *-Ressourcenkontexten verwendet möglicherweise nicht für Threads erstellt werden, die nicht über ein "corewindow" verfügen.*
+1. Verwendung [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) anstelle von [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) beim Auflösen von Ressourcen aus Code, wie es ist keine *aktuelle Ansicht* in Szenarien nicht gepackt. Die folgende Ausnahme auftritt, wenn Sie aufrufen [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in Szenarien nicht enthalten: *-Ressourcenkontexten verwendet möglicherweise nicht für Threads erstellt werden, die nicht über ein "corewindow" verfügen.*
 1. Verwendung [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) resources.pri-Datei Ihrer app manuell zu erstellen.
     - Ausführen von `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
-    - Die <PRICONFIG> dürfen die "<packaging>" im Abschnitt, damit alle Ressourcen in einer einzelnen resources.pri-Datei gebündelt werden. Wenn die Standardeinstellung verwenden [MakePri.exe-Konfigurationsdatei](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) erstellt [Createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), müssen gelöscht werden die "<packaging>" im Abschnitt manuell, nachdem es erstellt wurde.
-    - Die <PRICONFIG> muss alle relevanten Indexer erforderlich, um alle Ressourcen in Ihrem Projekt in eine Datei für die einzelnen resources.pri merge enthalten. Der Standardwert [MakePri.exe-Konfigurationsdatei](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) erstellt [Createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) alle Indexer enthält.
+    - Die &lt;PRICONFIG&gt; dürfen die "&lt;paketerstellung&gt;" im Abschnitt, damit alle Ressourcen in einer einzelnen resources.pri-Datei gebündelt werden. Wenn die Standardeinstellung verwenden [MakePri.exe-Konfigurationsdatei](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) erstellt [Createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), müssen gelöscht werden der "&lt;paketerstellung&gt;" im Abschnitt manuell, nachdem es erstellt wurde.
+    - Die &lt;PRICONFIG&gt; muss alle relevanten Indexer erforderlich, um alle Ressourcen in Ihrem Projekt in eine Datei für die einzelnen resources.pri merge enthalten. Der Standardwert [MakePri.exe-Konfigurationsdatei](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) erstellt [Createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) alle Indexer enthält.
     - Wenn Sie die Standardkonfiguration nicht verwenden, stellen Sie sicher, dass der Indexer PRI aktiviert ist (Überprüfen Sie die Standardkonfiguration für hierzu) PRIs gefunden von UWP-Projekt-verweisen, NuGet-Verweise und So weiter, zusammenführen, die sich in das Stammverzeichnis des Projekts befinden.
         > [!NOTE]
-        > Durch Auslassen `/IndexName`, und das Projekt, ohne dass ein app-Manifest, der IndexName/Root-Namespace, der die PRI-Datei automatisch auf festgelegt ist *Anwendung*, die der Laufzeit für nicht gepackte apps kompatibel ist (Dies entfernt die Vorherige harte Abhängigkeit für Paket-ID). Allerdings können Sie Stamm-Namespace explizit wie folgt angeben:
-        > - ResourceLoader.GetForViewIndependentUse("ControlName\Resources").GetStringForUri(new Uri("ms-resource:///ManagedWinRT/Resources/Header"))
-        > - ResourceLoader.GetForViewIndependentUse("ControlName\Resources").GetStringForUri(new Uri("ms-resource://Application/ManagedWinRT/Resources/Header"))
+        > Durch Auslassen `/IndexName`, und das Projekt, ohne dass ein app-Manifest, der IndexName/Root-Namespace, der die PRI-Datei automatisch auf festgelegt ist *Anwendung*, die der Laufzeit für nicht gepackte apps kompatibel ist (Dies entfernt die Vorherige harte Abhängigkeit für Paket-ID). Beim Angeben der Ressourcen-URIs, ms-Resource: / / / Verweise, die den Stamm-Namespace auslassen ableiten *Anwendung* als den Stammnamespace für nicht gepackte apps (oder Sie können angeben, *Anwendung* explizit als in ms-Resource://Application/).
 1. Kopieren Sie die PRI-Datei in das Buildausgabeverzeichnis der .exe
 1. Führen Sie die .exe 
     > [!NOTE]
     > Das Ressourcenverwaltungssystem verwendet die Anzeigesprache System, anstatt die bevorzugten Sprache Benutzerliste beim Auflösen von Ressourcen auf der Sprache nicht gepackte apps basieren. Die bevorzugte Sprache Benutzerliste wird nur für UWP-apps verwendet werden.
 
 > [!Important]
-> Sie müssen manuell neu erstellen PRI-Dateien, wenn der Inhalt der Ressourcendatei, z. B. ein Skript nach der Erstellung geändert, die behandelt die [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) -Befehl aus, und die resources.pri-Ausgabe in die .exe-Verzeichnis kopiert.
+> Sie müssen manuell PRI-Dateien neu erstellen, wenn Ressourcen geändert werden. Es wird empfohlen, ein Post-Build-Skript, das verarbeitet die [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) -Befehl aus, und die resources.pri-Ausgabe in die .exe-Verzeichnis kopiert.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)

@@ -1,6 +1,6 @@
 ---
 description: Dieses Tutorial veranschaulicht das Hinzufügen von UWP XAML-Benutzeroberflächen, MSIX-Pakete erstellen und andere moderne Komponenten in Ihrer WPF-Anwendung integrieren.
-title: Fügen Sie ein UWP-InkCanvas-Steuerelement, das mithilfe von XAML-Inseln
+title: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
@@ -8,14 +8,14 @@ author: mcleanbyron
 keywords: Windows 10, Uwp, Windows Forms, Wpf, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 2f8cf18bce7bec880a2cb0bef298c0b565e20208
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.openlocfilehash: 35b6886389640c7960c4120772c169161779ab68
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420088"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141840"
 ---
-# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Teil 2: Fügen Sie ein UWP-InkCanvas-Steuerelement, das mithilfe von XAML-Inseln
+# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Teil 2: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
 
 Dies ist der zweite Teil eines Tutorials, die zeigt, wie Sie eine Beispiel WPF-desktop-app mit dem Namen Contoso-Ausgaben zu modernisieren. Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-app, finden Sie unter [Lernprogramm: Modernisieren von WPF-app](modernize-wpf-tutorial.md). In diesem Artikel wird vorausgesetzt, Sie haben bereits abgeschlossen [Teil 1](modernize-wpf-tutorial-1.md).
 
@@ -38,20 +38,20 @@ Bevor Sie hinzufügen können eine **InkCanvas** Steuerelement an die Contoso-Au
 
 4. Wählen Sie **Anwendungsmanifestdatei**, nennen Sie sie **"App.manifest"** , und klicken Sie auf **hinzufügen**.
 
-5. Suchen Sie in der Manifestdatei geöffnet, die **Kompatibilität** aus, und identifizieren Sie den folgenden kommentierten Eintrag.
+5. Suchen Sie in der Manifestdatei geöffnet, die **Kompatibilität** aus, und identifizieren Sie die folgenden kommentierten **SupportedOS** -Element für Windows 10.
 
     ```xml
     <!-- Windows 10 -->
     <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
     ```
 
-6. Fügen Sie unter diesem Eintrag das folgende Element hinzu.
+6. Unter diesem Element, fügen Sie die folgenden **"maxversiontested"** Element.
 
     ```xml
     <maxversiontested Id="10.0.18362.0"/>
     ```
 
-7. Heben Sie die auskommentierung der **SupportedOS** Eintrag für Windows 10. Dieser Abschnitt sollte jetzt wie folgt aussehen.
+7. Heben Sie die auskommentierung der **SupportedOS** -Element für Windows 10. Dieser Abschnitt sollte jetzt wie folgt aussehen.
 
     ```xml
     <!-- Windows 10 -->
@@ -60,7 +60,7 @@ Bevor Sie hinzufügen können eine **InkCanvas** Steuerelement an die Contoso-Au
     ```
 
     > [!NOTE]
-    > Dieser Eintrag gibt an, dass die app Windows 10, Version 1903 erfordert (build 18362) oder höher. Dies ist die erste Version von Windows 10, die XAML-Inseln unterstützt. Ohne diesen Eintrag im Anwendungsmanifest löst die app zur Laufzeit eine Ausnahme aus.
+    > Die **"maxversiontested"** Element gibt an, dass die app Windows 10, Version 1903 erfordert (build 18362) oder höher. Dies ist die erste Version von Windows 10, die XAML-Inseln unterstützt. Ohne diesen Eintrag im Anwendungsmanifest löst die app zur Laufzeit eine Ausnahme aus. Nach dem Hinzufügen dieses Elements können Sie die folgende Buildwarnung angezeigt, in Ihrem Projekt: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Diese Warnung, nicht dass nichts falsch. in Ihrem Projekt ist, und er ignoriert werden kann.
 
 8. Suchen Sie in der Manifestdatei, die folgenden kommentierten **Anwendung** Abschnitt.
 

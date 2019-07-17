@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 61525e2a4a088e37184bb93526722e0bf23fbd56
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5837674f2cb20710a59eeac0af59498bf28b197e
+ms.sourcegitcommit: a86d0bd1c2f67e5986cac88a98ad4f9e667cfec5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319813"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68229377"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Einrichten automatisierter Builds für UWP-Apps
 
@@ -64,11 +64,21 @@ steps:
 
 Die Standardvorlage versucht zum Signieren des Pakets mit dem Zertifikat, das in der CSPROJ-Datei angegeben. Wenn Sie Ihr Paket während des Builds signieren möchten benötigen Sie Zugriff auf den privaten Schlüssel. Andernfalls können Sie deaktivieren, Signierung durch Hinzufügen des Parameters `/p:AppxPackageSigningEnabled=false` auf die `msbuildArgs` Abschnitt in der YAML-Datei.
 
-## <a name="add-your-project-certificate-to-a-repository"></a>Fügen Sie Ihr Projekt Zertifikat in einem repository
+## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Fügen Sie Ihr Projekt-Zertifikat hinzu, um die Bibliothek für sichere Dateien
 
-Pipelines funktioniert mit Azure-Repositorys Git- und TFVC-Repositorys. Bei Verwendung eines Git-Repositorys fügen Sie die Zertifikatdatei Ihres Projekts dem Repository hinzu, damit der Build-Agent das App-Paket signieren kann. Andernfalls wird die Zertifikatdatei vom Git-Repository ignoriert. Um die Zertifikatdatei in Ihrem Repository hinzuzufügen, Maustaste die Zertifikatdatei in **Projektmappen-Explorer**, und wählen Sie dann im Kontextmenü die Option, die **ignoriert Datei zur Quellcodeverwaltung hinzufügen** Befehl.
+Übermitteln von Zertifikaten zu Ihrem Repository nach Möglichkeit vermeiden, und Git standardmäßig ignoriert. Um die sichere Handhabung von vertraulichen Dateien wie Zertifikate verwalten zu können, unterstützt Azure DevOps [sichere Dateien](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops).
 
-![Einschließen eines Zertifikats](images/building-screen1.png)
+So laden Sie ein Zertifikat für den automatisierten Build hoch:
+
+1. Erweitern Sie im Azure-Pipelines, **Pipelines** im Navigationsbereich und klicken Sie auf **Bibliothek**.
+2. Klicken Sie auf die **sichere Dateien** Registerkarte, und klicken Sie dann auf **+ sichere Datei**.
+
+    ![Gewusst wie: Hochladen einer sicheren Datei](images/secure-file1.png)
+
+3. Navigieren Sie zu der Zertifikatdatei, und klicken Sie auf **OK**.
+4. Nachdem Sie das Zertifikat hochgeladen haben, wählen Sie ihn, um seine Eigenschaften anzuzeigen. Unter **Pipeline Berechtigungen**, aktivieren Sie die **autorisieren, für die Verwendung in allen Pipelines** umschalten.
+
+    ![Gewusst wie: Hochladen einer sicheren Datei](images/secure-file2.png)
 
 ## <a name="configure-the-build-solution-build-task"></a>Konfigurieren der Buildaufgabe „Projektmappe erstellen“
 
@@ -82,7 +92,12 @@ Dieser Task verwendet die MSBuild-Argumente. Sie müssen den Wert dieser Argumen
 | AppxBundle | Immer | Erstellt eine.msixbundle/.appxbundle mit den.msix/.appx-Dateien für die Plattform angegeben. |
 | UapAppxPackageBuildMode | StoreUpload | Generiert die.msixupload/.appxupload-Datei und die **_Test** Ordner für das querladen. |
 | UapAppxPackageBuildMode | CI | Wird nur die.msixupload/.appxupload-Datei generiert. |
-| UapAppxPackageBuildMode | SideloadOnly | Generiert die **_Test** Ordner für das querladen nur |
+| UapAppxPackageBuildMode | SideloadOnly | Generiert die **_Test** Ordner für das querladen nur. |
+| AppxPackageSigningEnabled | true | Ermöglicht das Paket zu signieren. |
+| "Packagecertificatethumbprint" | Zertifikatfingerabdruck | Dieser Wert **müssen** entsprechen den Fingerabdruck im Signaturzertifikat oder eine leere Zeichenfolge sein. |
+| PackageCertificateKeyFile | Pfad | Der Pfad zu das zu verwendende Zertifikat. Dies wird aus den Metadaten für die sichere Datei abgerufen. |
+
+### <a name="configure-the-build"></a>Konfigurieren Sie den build
 
 Wenn Sie Ihre Lösung über die Befehlszeile oder mithilfe von jedem anderen Buildsystem erstellen möchten, führen Sie MSBuild mit diesen Argumenten.
 
@@ -92,6 +107,41 @@ Wenn Sie Ihre Lösung über die Befehlszeile oder mithilfe von jedem anderen Bui
 /p:AppxBundlePlatforms="$(Build.BuildPlatform)"
 /p:AppxBundle=Always
 ```
+
+### <a name="configure-package-signing"></a>Konfigurieren Sie die paketsignierung
+
+Zum Signieren des Pakets MSIX (oder APPX) muss die Pipeline das Signaturzertifikat abrufen. Zu diesem Zweck fügen Sie eine Aufgabe DownloadSecureFile vor die Aufgabe VSBuild hinzu.
+Dadurch erhalten Sie Zugriff auf das Signaturzertifikat über ```signingCert```.
+
+```yml
+- task: DownloadSecureFile@1
+  name: signingCert
+  displayName: 'Download CA certificate'
+  inputs:
+    secureFile: '[Your_Pfx].pfx'
+```
+
+Als Nächstes aktualisieren Sie die VSBuild-Aufgabe, um das Signaturzertifikat zu verweisen:
+
+```yml
+- task: VSBuild@1
+  inputs:
+    platform: 'x86'
+    solution: '$(solution)'
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" 
+                  /p:AppxPackageDir="$(appxPackageDir)" 
+                  /p:AppxBundle=Always 
+                  /p:UapAppxPackageBuildMode=StoreUpload 
+                  /p:AppxPackageSigningEnabled=true
+                  /p:PackageCertificateThumbprint="" 
+                  /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)"'
+```
+
+> [!NOTE]
+> Das Argument "packagecertificatethumbprint" wird als Vorsichtsmaßnahme absichtlich auf eine leere Zeichenfolge festgelegt. Wenn der Fingerabdruck im Projekt festgelegt ist, aber das signierende Zertifikat stimmt nicht überein, der Build mit dem Fehler fehl: `Certificate does not match supplied signing thumbprint`.
+
+### <a name="review-parameters"></a>Überprüfen Sie die Parameter
 
 Die Parameter definiert die `$()` Syntax sind Variablen, die in der Builddefinition definiert und Änderungen in anderen Systemen erstellt.
 

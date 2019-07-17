@@ -1,6 +1,6 @@
 ---
 description: Dieses Tutorial veranschaulicht das Hinzufügen von UWP XAML-Benutzeroberflächen, MSIX-Pakete erstellen und andere moderne Komponenten in Ihrer WPF-Anwendung integrieren.
-title: Migrieren von Contoso Ausgaben-app auf .NET Core 3
+title: Migrieren der Contoso-Spesen-App zu .NET Core 3
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
@@ -8,14 +8,14 @@ author: mcleanbyron
 keywords: Windows 10, Uwp, Windows Forms, Wpf, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: e718de7a22873ccf347e60c661f724ce3abdd2cf
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.openlocfilehash: 6e303e7059edd72fcdeb5455f450e6ece9d58e02
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420131"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141847"
 ---
-# <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Teil 1: Migrieren von Contoso Ausgaben-app auf .NET Core 3
+# <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Teil 1: Migrieren der Contoso-Spesen-App zu .NET Core 3
 
 Dies ist der erste Teil eines Tutorials, die zeigt, wie Sie eine Beispiel WPF-desktop-app mit dem Namen Contoso-Ausgaben zu modernisieren. Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-app, finden Sie unter [Lernprogramm: Modernisieren von WPF-app](modernize-wpf-tutorial.md).
   
@@ -162,7 +162,7 @@ So konfigurieren Sie die NuGet-Pakete für die **ContosoExpenses.Core** Projekt:
 
 5. Suchen Sie nach der `MvvmLightLibsStd10` Packen und installieren Sie es. Dies ist die .NET Standard-Version von der `MvvmLightLibs` Paket. Für dieses Paket wurde der Autor die Version der Bibliothek in ein separates Paket als .NET Framework-Version von .NET Standard-Paket.
 
-    ! MvvmLightsLibs-Paket[](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
+    ![MvvmLightsLibs-Paket](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
 
 6. In der **ContosoExpenses.Core** Projekt der rechten Maustaste auf die **Abhängigkeiten** Knoten, und wählen Sie **Verweis hinzufügen**.
 

@@ -7,12 +7,12 @@ ms.date: 03/18/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 996bbaf4dd05ce5b24e536459c6d7d009a53fa19
-ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
+ms.openlocfilehash: 2a4de1a43e60250e7efc2faf70f3c49e8253beb3
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266406"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141800"
 ---
 # <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
@@ -27,7 +27,7 @@ Alle diese Plattformen können Sie die desktop-apps wie Word, Excel und Photosho
 
 * **UWP, WPF und Windows Forms**. Diese Plattformen bieten verwaltete Laufzeitumgebungen (die Windows-Runtime für UWP und .NET für Windows Forms und WPF), zahlreiche Vorteile, insbesondere in den Bereichen der Produktivität von Entwicklern, moderne und anpassbare Benutzeroberfläche und anwendungssicherheit. Da diese Frameworks visuellen Designern und UI-Markup für das schnelle Erstellen einer Benutzeroberfläche unterstützen, sind sie besonders gut geeignet für Line-of-Business-Anwendungen.
 
-* **Win32 API**. Die Win32-API (auch als die Windows-API bezeichnet) ist die ursprüngliche Plattform für systemeigene C /C++ Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Es bietet eine erstklassige entwicklungserfahrung ohne abhängig von der eine verwaltete Laufzeitumgebung wie .NET und WinRT. Dadurch wird die Win32-API der Plattform der Wahl für Anwendungen, die höchste Leistung und direkten Zugriff auf die System-Hardware zu benötigen.
+* **Win32-API-** . Die Win32-API (auch als die Windows-API bezeichnet) ist die ursprüngliche Plattform für systemeigene C /C++ Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Es bietet eine erstklassige entwicklungserfahrung ohne abhängig von der eine verwaltete Laufzeitumgebung wie .NET und WinRT. Dadurch wird die Win32-API der Plattform der Wahl für Anwendungen, die höchste Leistung und direkten Zugriff auf die System-Hardware zu benötigen.
 
 Dieser Artikel beschreibt diese Plattformen im Detail und können Sie die beste Option für Ihre Anwendung zu ermitteln. 
 
@@ -36,7 +36,7 @@ Dieser Artikel beschreibt diese Plattformen im Detail und können Sie die beste 
 
 ## <a name="uwp"></a>UWP
 
-UWP ist die führenden Plattform für Windows 10-Anwendungen und Spiele. Es ist eine hochgradig anpassbare Plattform, die XAML-Markup verwendet wird, um die Benutzererfahrung (Presentation) von Code (Geschäftslogik) zu trennen. UWP eignet sich für desktop-Anwendungen, die, die eine moderne Benutzeroberfläche, formatanpassung und grafikintensive Szenarien erfordern. UWP bietet auch integrierte Unterstützung für die [Fluent-Entwurfssystem](/windows/uwp/design/fluent-design-system/) für den Standard-UX-Erfahrung und ermöglicht den Zugriff auf die [Windows-Runtime (WinRT) APIs](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis). Durch Übernahme von Fluent, unterstützt die UWP automatisch allgemeine Eingabemethoden, z. B. Touch, Freihandeingaben, Gamepad, Tastatur und Maus.
+UWP ist die führenden Plattform für Windows 10-Anwendungen und Spiele. Es ist eine hochgradig anpassbare Plattform, die XAML-Markup verwendet wird, um die Benutzererfahrung (Presentation) von Code (Geschäftslogik) zu trennen. UWP eignet sich für desktop-Anwendungen, die eine moderne Benutzeroberfläche, formatanpassung und grafikintensive Szenarien erfordern. UWP bietet auch integrierte Unterstützung für die [Fluent-Entwurfssystem](/windows/uwp/design/fluent-design-system/) für den Standard-UX-Erfahrung und ermöglicht den Zugriff auf die [Windows-Runtime (WinRT) APIs](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis). Durch Übernahme von Fluent, unterstützt die UWP automatisch allgemeine Eingabemethoden, z. B. Touch, Freihandeingaben, Gamepad, Tastatur und Maus.
 
 Nicht nur können Sie zum Erstellen von desktopanwendungen für Windows-PCs UWP verwenden, sondern UWP ist auch die einzige unterstützte Plattform für Xbox, HoloLens und Surface Hub-Anwendungen. UWP ist unsere neuesten und fortschrittliche Anwendungsplattform.
 
@@ -61,7 +61,7 @@ Die folgende Tabelle vergleicht verschiedene Merkmale der Windows Forms, WPF und
 | Funktion oder Szenario  |    UWP     |      WPF     |   Windows Forms  |
 |--------|--------|--------|--------|
 | **Unterstützte Versionen**      |  Windows 10   |  Windows 7 und höher |  Windows 7 und höher  |
-| **Sprachen**      |   C\#, C++/WinRT, C++/CX, VB, JavaScript   |  C\#, C++/CLI (verwalteter Erweiterungen für C++), F\#, VB |  C\#, C++/CLI (verwalteter Erweiterungen für C++), F\#, VB   |
+| **Sprachen**      |   C\#, C++"/ WinRT", C++/CX, VB, JavaScript   |  C\#, C++/CLI (verwalteter Erweiterungen für C++), F\#, VB |  C\#, C++/CLI (verwalteter Erweiterungen für C++), F\#, VB   |
 | **UI-Laufzeit** |    Native (C++"/ WinRT" und C++/CX) und verwaltet (.NET Native)  |  (Verwaltet (.NET Framework)<br/><br/>Unterstützung für .NET Core-3 wird bald verfügbar sein.  |   (Verwaltet (.NET Framework)<br/><br/>Unterstützung für .NET Core-3 wird bald verfügbar sein.    |
 | **Open-source** | [Ja (nur Windows-Benutzeroberflächenbibliothek)](https://github.com/Microsoft/microsoft-ui-xaml)  |  [Ja (nur .NET Core)](https://github.com/dotnet/wpf) | [Ja (nur .NET Core)](https://github.com/dotnet/winforms)  |
 | **Unterstützt XAML** |   Ja   |  Ja  |   Nein   |
@@ -83,7 +83,7 @@ Hier sind einige Highlights in welche die Win32-API und C++ bietet Ihnen die Ers
 -   Effiziente, typsichere generische Programmierung mithilfe von Vorlagen.
 -   Effiziente und sichere Container und Algorithmen.
 -   DirectX, insbesondere auf Direct3D und DirectCompute (Beachten Sie, dass die UWP bietet auch DirectX-Interop).
--   C++ AMP.
+-   C++AMP.
 
 Weitere Informationen finden Sie unter [erste Schritte mit Windows-desktop-apps, die die Win32-API verwenden](/windows/desktop/desktop-programming) und [Desktop-app-Technologien](/windows/desktop/desktop-app-technologies).
 
