@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: aaaf13c455d3d05d5ccfac6b2bd61418f3e8e5bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662345"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63820521"
 ---
 # <a name="writing-style"></a>Schreibstil
 
@@ -67,7 +67,7 @@ Apps werden durch Aktionen definiert. Benutzer führen Aktionen aus, wenn sie di
 
 ## <a name="short-and-sweet"></a>Bleiben Sie kurz und bündig
 
-Benutzer überfliegen den Text und überspringen häufig mehrere Wörter. Machen Sie bei den erforderlichen Informationen und Darstellung keine Zugeständnisse, verwenden Sie allerdings nicht mehr Worte, als notwendig. In manchen Fällen bedeutet dies viele kürzere Sätze oder Satzfragmente. Sie müssen also bei Wörtern und Strukturen in längeren Sätzen besonders wählerisch sein.
+Benutzer überfliegen den Text und überspringen häufig mehrere Wörter. Machen Sie bei den erforderlichen Informationen und der Darstellung keine Zugeständnisse, verwenden Sie allerdings nicht mehr Worte als notwendig. In manchen Fällen bedeutet dies viele kürzere Sätze oder Satzfragmente. Sie müssen also bei Wörtern und Strukturen in längeren Sätzen besonders wählerisch sein.
 
 :::row:::
     :::column:::
@@ -82,7 +82,7 @@ Benutzer überfliegen den Text und überspringen häufig mehrere Wörter. Machen
 
 ## <a name="style-conventions"></a>Stilkonventionen
 
-Wenn Sie sich selbst nicht als Schriftsteller betrachten, kann es einschüchternd sein, zu versuchen, diese Prinzipien und Empfehlungen umzusetzen. Aber keine Sorge – einfach und unkompliziert Sprache ist eine hervorragende Möglichkeit, eine gute Benutzererfahrung bereitzustellen. Und wenn Sie immer noch nicht sicher sind, wie Sie Ihre Wörter strukturieren sollten, finden Sie hier einige hilfreiche Richtlinien. Und wenn Sie weitere Informationen benötigen, lesen Sie [Microsoft-Stilanleitungen](https://docs.microsoft.com/style-guide/welcome/).
+Wenn Sie sich selbst nicht als Schriftsteller betrachten, kann es einschüchternd sein, zu versuchen, diese Prinzipien und Empfehlungen umzusetzen. Aber keine Sorge – eine einfache und unkomplizierte Sprache ist eine hervorragende Möglichkeit, eine gute Benutzererfahrung bereitzustellen. Und wenn Sie immer noch nicht sicher sind, wie Sie Ihre Wörter strukturieren sollten, finden Sie hier einige hilfreiche Richtlinien. Und wenn Sie weitere Informationen benötigen, lesen Sie die [Microsoft-Stilvorgaben](https://docs.microsoft.com/style-guide/welcome/).
 
 ### <a name="addressing-the-user"></a>Benutzer ansprechen
 
@@ -106,7 +106,7 @@ Wenden Sie sich direkt an den Benutzer.
 * Gehen Sie nicht davon aus, dass der Benutzer bereits mit allen Abkürzungen vertraut ist, auch wenn Sie vermuten, dass diese häufig verwendet werden.
 * Definieren Sie immer, was eine neue Abkürzung bedeutet, wenn diese für den Benutzer das erste Mal angezeigt wird.
 * Verwenden Sie keine Abkürzungen, die anderen Abkürzungen ähneln.
-* Verwenden Sie kein Abkürzungen, wenn Sie Ihre App lokalisieren oder wenn Ihre Sprache nicht die Muttersprache der Benutzer ist.
+* Verwenden Sie keine Abkürzungen beim Lokalisieren Ihrer App oder wenn Ihre Sprache nicht die Muttersprache der Benutzer ist.
 
 :::row:::
     :::column:::
@@ -117,11 +117,11 @@ Wenden Sie sich direkt an den Benutzer.
     :::column-end:::
 :::row-end:::
 
-### <a name="contractions"></a>Zusammenziehungen
+### <a name="contractions"></a>Kontraktionen
 
-Benutzer verwenden Zusammenziehungen und erwarten, diese zu sehen. Ein Vermeiden lässt die App zu formell oder sogar unnatürlich erscheinen.
-* Verwenden Sie Zusammenziehungen, wenn sie für den Text passend sind.
-* Verwenden Sie keine ungewöhnlichen Zusammenziehungen, um Platz zu sparen, oder wenn diese Ihre Worte weniger konventionell erscheinen lassen.
+Benutzer verwenden Kontraktionen und erwarten, diese zu sehen. Ein Vermeiden lässt die App zu formell oder sogar unnatürlich erscheinen.
+* Verwenden Sie Kontraktionen, wenn sie für den Text passend sind.
+* Verwenden Sie keine ungewöhnlichen Kontraktionen, um Platz zu sparen, oder wenn diese Ihre Worte weniger natürlich klingen lassen.
 
 :::row:::
     :::column:::
@@ -134,7 +134,7 @@ Benutzer verwenden Zusammenziehungen und erwarten, diese zu sehen. Ein Vermeiden
 
 ### <a name="periods"></a>Punkte
 
- Wenn Sie einen Text mit einem Punkt beenden, impliziert dies, dass dieser Text ein vollständiger Satz ist. Verwenden Sie einen Punkt für größere Textblöcke, und vermeiden sie diese für Text, der kürzer als ein vollständiger Satz ist.
+ Wenn Sie einen Text mit einem Punkt beenden, impliziert dies, dass dieser Text ein vollständiger Satz ist. Verwenden Sie einen Punkt für größere Textblöcke; setzen Sie keinen Punkt bei Text, der kürzer als ein vollständiger Satz ist.
 * Verwenden Sie einen Punkt, um vollständige Sätze in QuickInfos, Fehlermeldungen und Dialogfeldern zu beenden.
 * Beenden Sie Texte für Schaltflächen, Optionsfelder, Beschriftungen oder Kontrollkästchen nicht mit einem Punkt.
 
@@ -171,9 +171,9 @@ Auch wenn Großbuchstaben wichtig sind, werden diese oft übermäßig verwendet.
 
 ## <a name="error-messages"></a>Fehlermeldungen
 
-Wenn ein Fehler in Ihrer App auftritt, achten die Benutzer darauf. Da Benutzer möglicherweise verwirrt oder unzufrieden oder frustriert sind, wenn sie eine Fehlermeldung erhalten, ist dies ein Bereich, in dem gute Ausdrucksweise und guter Tonfall sich besonders auswirken können.
+Wenn ein Fehler in Ihrer App auftritt, achten die Benutzer darauf. Da Benutzer möglicherweise verwirrt, unzufrieden oder frustriert sind, wenn sie eine Fehlermeldung erhalten, ist dies ein Bereich, in dem gute Ausdrucksweise und guter Tonfall sich besonders auswirken können.
 
-Es ist vor allem wichtig, dass die Fehlermeldung den Benutzer nicht dafür verantwortlich macht. Es ist aber auch wichtig, dass sie diese nicht mit Informationen überlasten, die sie nicht verstehen. In den meisten Fällen möchte ein Benutzer nach einem Fehler so schnell und so einfach wie möglich wieder zu seiner Aufgabe zurückkehren. Aus diesem Grund sollten Ihre Fehlermeldungen
+Es ist vor allem wichtig, dass die Fehlermeldung den Benutzer nicht dafür verantwortlich macht. Es ist aber auch wichtig, dass sie Benutzer nicht mit Informationen überlasten, die sie nicht verstehen. In den meisten Fällen möchte ein Benutzer nach einem Fehler so schnell und so einfach wie möglich wieder zu seiner Aufgabe zurückkehren. Befolgen Sie daher beim Verfassen von Fehlermeldung folgende Richtlinien:
 
 * **Seien Sie freundlich und entspannt**, indem Sie einen Umgangston wählen und unbekannte Begriffe sowie Fachjargon vermeiden.
 
@@ -227,21 +227,21 @@ Es ist vor allem wichtig, dass die Fehlermeldung den Benutzer nicht dafür veran
 
 ## <a name="spoken-experiences"></a>Gesprochene Texte
 
-Die gleichen Prinzipien und Empfehlungen gelten für Texte, die gesprochen werden sollen, beispielsweise von Cortana. In solchen Fällen sind die folgenden Prinzipien des guten Schreibens noch wichtiger, weil Sie den Benutzern keine anderen visuellen Designelemente zur Ergänzung der gesprochenen Wörter bereitstellen können.
+Die gleichen Grundsätze und Empfehlungen gelten für Texte, die gesprochen werden sollen, beispielsweise von Cortana. In solchen Fällen sind die folgenden Prinzipien des guten Schreibens noch wichtiger, weil Sie den Benutzern keine anderen visuellen Designelemente zur Ergänzung der gesprochenen Wörter bereitstellen können.
 
-* **Seien Sie freundlich und entspannt**, indem Sie sich im Umgangston an den Benutzer wenden. Mehr als in jedem anderen Bereich ist es hier von Bedeutung, dass ein gesprochener Text warm und entspannt klingt, damit der Benutzer keine Scheu vor Interaktionen hat.
+* **Seien Sie freundlich und entspannt**, indem Sie sich im Umgangston an den Benutzer wenden. Mehr als in jedem anderen Bereich ist es hier von Bedeutung, dass ein gesprochener Text freundlich und entspannt klingt, damit der Benutzer keine Scheu vor Interaktionen hat.
 
-* **Seien Sie hilfreich**, indem Sie alternativer Vorschläge bereitstellen, wenn der Benutzer unmögliche Wünsche hat. Ähnlich wie bei einer Fehlermeldung sollten Sie bei einem Fehler, für den Ihre App die Anforderung nicht erfüllen kann, eine realistische Alternative haben, die der Benutzer stattdessen ausprobieren kann.
+* **Seien Sie hilfreich**, indem Sie alternative Vorschläge äußern, wenn der Benutzer unmögliche Wünsche hat. Ähnlich wie bei einer Fehlermeldung sollten Sie bei einem Fehler, für den Ihre App die Anforderung nicht erfüllen kann, eine realistische Alternative haben, die der Benutzer stattdessen ausprobieren kann.
 
 * **Seien Sie klar und präzise**, indem Sie eine einfache Sprache verwenden. Gesprochene Texte sollten keine langen Sätze oder komplizierte Wörter enthalten.
 
-## <a name="accessibility-and-localization"></a>Lokalisierung und Bedienungshilfen
+## <a name="accessibility-and-localization"></a>Lokalisierung und Barrierefreiheit
 
-Ihre App kann eine größere Zielgruppe erreichen, wenn sie die Bedienungshilfen und Lokalisierung beim Schreiben berücksichtigen. Dies ist etwas, das nur durch Text erreicht werden kann, wobei eine unkomplizierte und freundliche Sprache ein guter Anfang ist. Weitere Informationen finden Sie in unserer [Übersicht über die Eingabehilfen](https://docs.microsoft.com/windows/uwp/design/accessibility/accessibility-overview) und in den [Richtlinien für die Lokalisierung](https://docs.microsoft.com/windows/uwp/design/globalizing/globalizing-portal).
+Ihre App kann eine größere Zielgruppe erreichen, wenn sie die Barrierefreiheit und Lokalisierung bei der Programmierung berücksichtigen. Dies ist etwas, das nur durch Text erreicht werden kann, wobei eine unkomplizierte und freundliche Sprache ein guter Anfang ist. Weitere Informationen finden Sie unter [Barrierefreiheit im Überblick](https://docs.microsoft.com/windows/uwp/design/accessibility/accessibility-overview) und in den [Richtlinien für die Lokalisierung](https://docs.microsoft.com/windows/uwp/design/globalizing/globalizing-portal).
 
 * **Seien Sie hilfreich**, indem Sie unterschiedliche Erfahrungen berücksichtigen. Vermeiden Sie Ausdrücke, die möglicherweise nicht sinnvoll für ein internationales Publikum sind, und verwenden Sie keine Sätze, die Annahmen darüber machen, was der Benutzer tun oder lassen kann.
 
-* **Seien Sie klar und präzise**, indem Sie ungewöhnliche und spezielle Wörter vermeiden, wenn diese nicht erforderlich sind. Je einfacher der Text ist, desto einfacher ist er zu lokalisieren.
+* **Seien Sie klar und präzise**, indem Sie ungewöhnliche und spezielle Wörter vermeiden, wenn diese nicht erforderlich sind. Je einfacher der Text ist, desto leichter ist er zu lokalisieren.
 
 
 ## <a name="techniques-for-non-writers"></a>Verfahren für Nicht-Autoren
@@ -250,8 +250,8 @@ Sie müssen kein geschulter oder erfahrener Autor sein, um Ihren Benutzern ein h
 
 * Angenommen, Sie sprechen mit einem Freund über Ihre App. Wie würden Sie Ihm die App erklären? Wie würden Sie über die Funktionen sprechen oder Anweisungen geben? Besser noch, sprechen Sie mit einer Person über die App, die diese noch nie verwendet hat. 
 
-* Stellen Sie sich vor, Sie würden eine völlig andere App beschreiben. Wenn Sie beispielsweise ein Spiel beschreiben, denken Sie darüber nach, was Sie sagen oder schreiben würden, um eine finanzielle oder eine Nachrichten-App zu beschreiben. Der Kontrast in Sprache und Struktur, den Sie verwenden können, gibt Ihnen einen besseren Einblick für die richtigen Worte, die Sie schreiben.
+* Stellen Sie sich vor, Sie würden eine völlig andere App beschreiben. Wenn Sie beispielsweise ein Spiel beschreiben, denken Sie darüber nach, was Sie sagen oder schreiben würden, um eine Finanz-App oder eine Nachrichten-App zu beschreiben. Durch den verwendeten Kontrast in Sprache und Struktur finden Sie besser die richtigen Worte für das, worüber Sie tatsächlich schreiben.
 
 * Sehen Sie sich ähnliche Apps zur Inspiration an. 
 
-Die richtigen Worte zu finden ist ein Problem, mit dem viele Personen kämpfen, fühlen Sie sich daher nicht schlecht, wenn Sie einen Kompromiss für eine Wortwahl finden, die nicht ganz perfekt ist.
+Die richtigen Worte zu finden ist ein Problem, mit dem viele Personen kämpfen, fühlen Sie sich daher nicht schlecht, wenn Sie sich für eine Wortwahl entscheiden, die nicht ganz perfekt ist.

@@ -4,22 +4,22 @@ title: Bewertungssteuerelement
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: abarlow
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644925"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63787414"
 ---
 # <a name="rating-control"></a>Bewertungssteuerelement
 
-Das Bewertungssteuerelement ermöglicht Benutzern das Anzeigen und Festlegen von Bewertungen, die den Grad der Zufriedenheit mit Inhalten und Diensten widerspiegeln. Benutzer können per Toucheingabe, Stift, Maus, Gamepad und Tastatur mit dem Bewertungssteuerelement interagieren. Die Anleitungen zeigen, wie die Funktionen des Bewertungssteuerelements verwendet werden, um Flexibilität und Anpassung bereitzustellen.
+Das Bewertungssteuerelement ermöglicht Benutzern das Anzeigen und Abgeben von Bewertungen, die den Grad der Zufriedenheit mit Inhalten und Diensten widerspiegeln. Benutzer können per Toucheingabe, Stift, Maus, Gamepad und Tastatur mit dem Bewertungssteuerelement interagieren. Die Anleitungen zeigen, wie die Funktionen des Bewertungssteuerelements verwendet werden, um Flexibilität und Anpassung bereitzustellen.
 
 > **Wichtige APIs:** [RatingControl-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
@@ -74,7 +74,7 @@ private void RatingChanged(RatingControl sender, object args)
 ### <a name="read-only-rating-mode"></a>Schreibgeschützter Bewertungsmodus
 
 Manchmal müssen Sie Bewertungen von sekundärem Inhalt anzeigen, z. B. Bewertungen, die in empfohlenem Inhalt angezeigt werden, oder wenn eine Liste von Kommentaren und die entsprechenden Bewertungen angezeigt werden. In diesem Fall sollte der Benutzer die Bewertung nicht bearbeiten können. Daher können Sie für das Steuerelement den schreibgeschützten Modus festlegen.
-Das Bewertungssteuerelement sollte auch dann im schreibgeschützten Modus verwendet werden, wenn es in sehr großen virtualisierten Listen mit Inhalt, für UI-Design und aus Leistungsgründen, eingesetzt wird.
+Das Bewertungssteuerelement sollte auch dann im schreibgeschützten Modus verwendet werden, wenn es in sehr großen virtualisierten Listen mit Inhalt, für UI-Design und aus Leistungsgründen eingesetzt wird.
 
 ![Schreibgeschützte lange Liste](images/rating_rs2_doc_reviews.png)
 
@@ -97,4 +97,4 @@ Hier finden Sie eine Auflistung einiger zusätzlicher Funktionen:
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.

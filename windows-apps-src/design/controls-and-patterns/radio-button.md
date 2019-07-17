@@ -6,24 +6,24 @@ label: Radio buttons
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 91903365a258d54804b420cd217dd7c25d79406a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606135"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63813694"
 ---
 # <a name="radio-buttons"></a>Optionsfelder
 
-> **Wichtige APIs:** [RadioButton-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [aktivierte Ereignis](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [IsChecked-Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+> **Wichtige APIs:** [RadioButton-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [Checked-Ereignis](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [IsChecked-Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
-Mithilfe von Optionsfeldern können Benutzer eine Option aus einer Gruppe von Optionsfeldern auswählen. Jede Option wird durch ein Optionsfeld dargestellt, und Benutzer können nur ein Optionsfeld in einer Gruppe von Optionsfeldern auswählen.
+Mithilfe von Optionsfeldern können Benutzer eine Option aus einer Gruppe von Optionen auswählen. Jede Option wird durch ein Optionsfeld dargestellt, und Benutzer können nur ein Optionsfeld in einer Gruppe von Optionsfeldern auswählen.
 
 (Falls Sie sich über die englische Bezeichnung „Radio Button” wundern: Optionsfelder sind im Englischen nach den Tasten mit voreingestellten Sendern an einem Radio benannt.)
 
@@ -51,11 +51,11 @@ Wenn Optionen Zahlen mit festgelegten Schritten (10, 20, 30) sind, verwenden Sie
 
 ![Schiebereglersteuerelement](images/controls/slider.png)
 
-Wenn mehr als 8 Optionen vorhanden sind, verwenden Sie eine [Dropdownliste](lists.md) oder ein [Listenfeld](lists.md).
+Wenn mehr als acht Optionen vorhanden sind, verwenden Sie eine [Dropdownliste](lists.md) oder ein [Listenfeld](lists.md).
 
 ![Kombinationsfeld](images/combo_box_scroll.png)
 
-Wenn die verfügbaren Optionen auf dem aktuellen Kontext der App basieren oder andernfalls dynamisch variieren können, verwenden Sie ein [Listenfeld](lists.md) für die Einfachauswahl.
+Wenn die verfügbaren Optionen auf dem aktuellen Kontext der App basieren oder anderweitig dynamisch variieren können, verwenden Sie ein [Listenfeld](lists.md) für die Einfachauswahl.
 
 ## <a name="examples"></a>Beispiele
 
@@ -169,7 +169,7 @@ Die Optionsfeldgruppen sehen wie folgt aus.
 
 ![Optionsfelder in zwei Gruppen](images/radio-button-groups.png)
 
-Ein Optionsfeld hat zwei Zustände: *aktiviert* und *deaktiviert*. Wenn ein Optionsfeld aktiviert ist, lautet die [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)-Eigenschaft **true**. Wenn ein Optionsfeld deaktiviert ist, lautet die **IsChecked**-Eigenschaft **false**. Ein Optionsfeld kann durch Klicken auf ein anderes Optionsfeld in derselben Gruppe deaktiviert werden, jedoch nicht durch erneutes Klicken auf das Optionsfeld selbst. Sie können ein Optionsfeld jedoch programmgesteuert durch Festlegen der IsChecked-Eigenschaft auf **false** deaktivieren. Sie können die **IsChecked**-Eigenschaft tatsächlich mit einem booleschen Wert vergleichen, indem Sie die **Wert** der **IsChecked**-Eigenschaft abrufen.
+Ein Optionsfeld hat zwei Zustände: *aktiviert* und *deaktiviert*. Wenn ein Optionsfeld aktiviert ist, ist die [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)-Eigenschaft auf **true** festgelegt. Wenn ein Optionsfeld deaktiviert ist, lautet die **IsChecked**-Eigenschaft **false**. Ein Optionsfeld kann durch Klicken auf ein anderes Optionsfeld in derselben Gruppe deaktiviert werden, jedoch nicht durch erneutes Klicken auf das Optionsfeld selbst. Sie können ein Optionsfeld jedoch programmgesteuert durch Festlegen der IsChecked-Eigenschaft auf **false** deaktivieren. Sie können die **IsChecked**-Eigenschaft tatsächlich mit einem booleschen Wert vergleichen, indem Sie den **Wert** der **IsChecked**-Eigenschaft abrufen.
 
 ## <a name="recommendations"></a>Empfehlungen
 
@@ -191,7 +191,7 @@ Diese Abbildung zeigt die richtige Vorgehensweise zum Platzieren und Anordnen vo
 
 **Für Designer**
 - [Schaltflächen](buttons.md)
-- [Ein/aus-Schalter](toggles.md)
+- [Umschalter](toggles.md)
 - [Kontrollkästchen](checkbox.md)
 - [Listen und Kombinationsfelder](lists.md)
 - [Schieberegler](slider.md)

@@ -8,33 +8,33 @@ op-migration-status: ready
 ms.author: mijacobs
 ms.date: 11/01/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654055"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63796427"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>Befehlsdesigngrundlagen für UWP-Apps
 
-In einer app (Universelle Windows Plattform) *Befehl Elemente* sind interaktive Elemente der Benutzeroberfläche, mit denen Benutzer Aktionen wie z. B. eine e-Mail zu senden, das Löschen eines Elements oder Senden eines Formulars durchführen zu können. *Befehl Schnittstellen* bestehen aus common Command-Elemente, die die Befehls-Oberflächen, die sie hosten, die Interaktionen, die sie unterstützen und die Erfahrungen, die sie bereitstellen.
+Bei den *Befehlselementen* in einer Universellen Windows-Plattform (UWP)-App handelt es sich um die interaktiven Benutzeroberflächenelemente, mit denen Benutzer Aktionen durchführen können, um beispielsweise eine E-Mail zu senden, ein Element zu löschen oder ein Formular zu übermitteln. *Befehlsschnittstellen* setzen sich aus gängigen Befehlselementen, den Befehlsoberflächen, von denen sie gehostet werden, den von ihnen unterstützten Interaktionen sowie den gebotenen Erfahrungen zusammen.
 
-## <a name="provide-the-best-command-experience"></a>Geben Sie den Befehl am besten
+## <a name="provide-the-best-command-experience"></a>Bieten Sie die beste Benutzerfreundlichkeit für Befehle
 
-Der wichtigste Aspekt einer Befehl-Schnittstelle ist, was Sie versuchen, einen Benutzer ausführen können. Wie Sie die Funktionalität Ihrer Anwendung planen, sollten Sie die erforderlichen Schritte zum Ausführen dieser Vorgänge und die Benutzeroberflächen, die Sie aktivieren möchten. Wenn Sie einen ersten Entwurf diese Benutzeroberflächen abgeschlossen haben, können Sie Entscheidungen auf die Tools und Interaktionen zur Implementierung vornehmen.
+Der wichtigste Aspekt einer Befehlsschnittstelle besteht darin, was der Benutzer nach Ihrer Absicht erreichen soll. Bedenken Sie beim Planen der Funktionalität Ihrer App die Schritte, die zum Realisieren der jeweiligen Aufgaben erforderlich sind, sowie die Benutzererfahrung, die sie damit verbinden möchten. Wenn Sie einen ersten Entwurf dieser Erfahrungen skizziert haben, können Sie Entscheidungen zu den Tools und den Interaktionen zu deren Umsetzung treffen.
 
-Hier sind einige allgemeine Funktionen der Befehl ein:
+Einige gängige Benutzererfahrungen im Zusammenhang mit Befehlen:
 
 - Senden oder Übermitteln von Informationen
 - Auswählen von Einstellungen und Auswahlmöglichkeiten
 - Suchen und Filtern von Inhalten
 - Öffnen, Speichern und Löschen von Dateien
-- Inhalte bearbeiten oder erstellen
+- Bearbeiten oder Erstellen von Inhalten
 
-Seien Sie kreativ mit dem Entwurf Befehl beizutragen. Wählen Sie, welche Eingabegeräte Ihrer app unterstützt, und wie Ihre app für jedes Gerät reagiert. Unterstützt die breiteste Palette von Funktionen und Einstellungen stellen Sie Ihre app als verwendet werden kann, portabel und wie möglich zugegriffen werden kann (finden Sie unter [Befehle Design für universelle Windows-Plattform (UWP) apps](../controls-and-patterns/commanding.md) Einzelheiten).
+Seien Sie kreativ beim Entwerfen der Benutzererfahrung für Befehle. Wählen Sie aus, welche Eingabegeräte von der App unterstützt werden und wie die App auf jedes Gerät reagiert. Durch Unterstützung der breitesten Palette von Funktionen und Einstellungen machen Sie Ihre Apps so nützlich, portabel und zugänglich wie möglich (weitere Einzelheiten finden Sie unter [Befehlsdesign für Universelle Windows-Plattform (UWP)-Apps](../controls-and-patterns/commanding.md)).
 
 
 
@@ -42,9 +42,9 @@ Seien Sie kreativ mit dem Entwurf Befehl beizutragen. Wählen Sie, welche Eingab
 When designing a command interface, the most important decision is choosing what a user can do. To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take. Once you decide what you want users to accomplish, then you can provide them the tools to do so.
 -->
 
-## <a name="choose-the-right-command-elements"></a>Wählen Sie die Elemente für die right-Befehl
+## <a name="choose-the-right-command-elements"></a>Auswählen der richtigen Befehlselemente
 
-Verwenden die richtigen Elemente in eine Befehlsschnittstelle möglich, dass den Unterschied zwischen eine intuitive, leicht zu bedienende-app und eine schwierig und verwirrend. Ein umfassender Satz von Command-Elemente sind in die universelle Windows-Plattform (UWP) verfügbar. Hier ist eine Liste mit einigen der am häufigsten verwendeten Elemente der UWP-Befehl.
+Die Verwendung der richtigen Elemente in einer Befehlsschnittstelle kann den Unterschied zwischen einer intuitiven, benutzerfreundlichen App und einer schwierigen, verwirrenden App bewirken. In der Universellen Windows-Plattform (UWP) ist eine breite Palette von Befehlselementen verfügbar. Dies ist eine Liste mit einigen der gängigsten UWP-Befehlselemente.
 
 :::row:::
     :::column:::
@@ -98,13 +98,13 @@ Verwenden die richtigen Elemente in eine Befehlsschnittstelle möglich, dass den
 
 Eine vollständige Liste finden Sie unter [Steuerelemente und UI-Elemente](../controls-and-patterns/index.md).
 
-## <a name="place-commands-on-the-right-surface"></a> Platzieren von Befehlen auf der passenden Oberfläche
+## <a name="place-commands-on-the-right-surface"></a>Platzieren von Befehlen auf der passenden Oberfläche
 
-Sie können die Befehlselemente auf eine Anzahl von Surfaces in Ihrer app, einschließlich der app-Canvas oder spezielle Befehl-Containern, z. B. eine Befehlsleiste, Befehlsleiste Flyout, Menü oder Dialogfeld platzieren.
+Sie können Befehlselemente auf einer Reihe von Oberflächen in Ihrer App platzieren, einschließlich der App-Canvas oder spezieller Befehlscontainer, wie Befehlsleisten, Befehlsleisten-Flyouts, Menüleisten und Dialoge.
 
-Immer versuchen, die Benutzer, die Inhalte direkt bearbeiten können, anstatt durch Befehle, die sich auf dem Inhalt, z. B. das Ziehen und ablegen, um die Listenelemente neu anordnen und nicht nach oben oder unten Befehlsschaltflächen Verhalten. 
+Lassen Sie Benutzer nach Möglichkeit den Inhalt direkt bearbeiten und nicht über Befehle, die auf den Inhalt einwirken, z. B. Neuanordnen von Listen durch Ziehen und Ablegen anstatt Nach-oben- und Nach-unten-Befehlsschaltflächen. 
 
-Allerdings kann dies nicht möglich, mit bestimmten Eingabegeräte oder, wenn bestimmter Benutzer Funktionen und Einstellungen, sodass. Klicken Sie in diesen Fällen bereitzustellen Sie so viele Eingabeereignisse visueller Hinweise wie möglich, und platzieren Sie diese Befehlselemente auf einer Oberfläche Befehl in Ihrer app.
+Bei bestimmten Eingabegeräten ist dies u. U. nicht möglich, oder wenn bestimmte Benutzerfunktionen und -einstellungen integriert werden. Stellen Sie in diesen Fällen so viele Befehlsoptionen wie möglich bereit, und platzieren Sie diese Befehlselemente auf einer Befehlsoberfläche in der App.
 
 Hier eine Liste mit einigen der gängigsten Befehlsoberflächen.
 
@@ -142,12 +142,12 @@ Hier eine Liste mit einigen der gängigsten Befehlsoberflächen.
         <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
 :::row-end:::
 
-## <a name="provide-command-feedback"></a>Geben Sie Feedback zu Befehlen 
+## <a name="provide-command-feedback"></a>Feedback zu Befehlen 
 
-Feedback zu Befehlen kommuniziert für Benutzer, dass eine Interaktion oder der Befehl wurde erkannt, wie der Befehl interpretiert und verarbeitet wurde und angibt, ob der Befehl erfolgreich oder nicht war. Dadurch können Benutzer zu verstehen, was sie gemacht haben und was sie als Nächstes tun können. Im Idealfall sollte das Feedback natürlich in Ihre Benutzeroberfläche integriert werden, so dass Benutzer nicht unterbrochen werden müssen oder zusätzliche Maßnahmen ergreifen müssen, es sei denn, dies ist absolut notwendig.
+Durch Feedback zu Befehlen wird Benutzern mitgeteilt, dass eine Interaktion oder ein Befehl erkannt wurde, wie der Befehl interpretiert und verarbeitet wurde und ob der Befehl erfolgreich abgeschlossen wurde. Dadurch können Benutzer verstehen, welche Aktion sie ausgeführt haben und welche sie als Nächstes ausführen können. Im Idealfall sollte das Feedback natürlich in Ihre Benutzeroberfläche integriert werden, so dass Benutzer nicht unterbrochen werden oder zusätzliche Maßnahmen ergreifen müssen, es sei denn, dies ist absolut notwendig.
 
 > [!NOTE]
-> Geben Sie Feedback, und nur bei Bedarf nur dann, wenn sie an anderer Stelle nicht verfügbar ist. Behalten Sie die Benutzeroberfläche Ihrer Anwendung und übersichtlich, es sei denn, Sie Wert hinzufügen.
+> Geben Sie nur dann Feedback, wenn dies notwendig ist und kein Feedback an anderer Stelle zur Verfügung steht. Halten Sie die Benutzeroberfläche der Anwendung einfach und übersichtlich, es sei denn, sie fügen hilfreiche Funktionen hinzu.
 
 Hier sind einige Möglichkeiten, um Feedback in Ihrer App bereitzustellen.
 
@@ -168,7 +168,7 @@ Hier sind einige Möglichkeiten, um Feedback in Ihrer App bereitzustellen.
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Flyouts</a> sind einfache kontextbezogene Popups, die durch Tippen oder klicken an einer beliebigen Stelle außerhalb des Flyouts geschlossen werden können.
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Flyouts</a> sind einfache, kontextbezogene Popups, die durch Antippen oder Klicken außerhalb des Flyouts verworfen werden können.
 :::row-end:::
 
 :::row:::
@@ -187,7 +187,7 @@ Hier sind einige Möglichkeiten, um Feedback in Ihrer App bereitzustellen.
 
 ### <a name="when-to-confirm-or-undo-actions"></a>Bestätigen oder Rückgängigmachen von Aktionen
 
-Unabhängig davon, wie gut entworfenen ist der Benutzeroberfläche Ihrer Anwendung, alle Benutzer eine Aktion, die sie möchten, dass sie noch nicht ausführen. Ihre app können in diesen Situationen müssen die Bestätigung für eine Aktion oder durch die Möglichkeit, letzte Aktionen rückgängig zu machen.
+Unabhängig davon, wie durchdacht das Design der UI Ihrer App ist – jeder Benutzer kann einmal eine unabsichtlich eine unerwünschte Aktion ausführen. In einer solchen Situation kann Ihre App hilfreich sein, indem sie eine Bestätigung der Aktion fordert oder eine Möglichkeit zum Rückgängigmachen der kürzlich durchgeführten Aktionen anbietet.
 
 :::row:::
     :::column:::
@@ -210,7 +210,7 @@ Unabhängig davon, wie gut entworfenen ist der Benutzeroberfläche Ihrer Anwendu
         -   Renaming a file
 :::row-end:::
 
-##  <a name="optimize-for-specific-input-types"></a> Optimieren für bestimmte Eingabearten
+##  <a name="optimize-for-specific-input-types"></a>Optimieren für bestimmte Eingabearten
 
 Ausführliche Informationen zum Optimieren der Benutzerfreundlichkeit bei einem bestimmten Eingabetyp oder -gerät finden Sie unter [Einführung in die Interaktion](../input/index.md).
 

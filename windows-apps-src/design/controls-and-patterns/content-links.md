@@ -1,20 +1,20 @@
 ---
-Description: Inhaltslinks zum Einbetten von umfangreichen Daten in Ihrem Text-Steuerelemente verwenden.
+Description: Verwenden Sie Links zu Inhalten, um umfangreiche Daten in Ihre Textsteuerelemente einzubetten.
 title: Links zu Inhalten in Textsteuerelementen
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363058"
 ---
 # <a name="content-links-in-text-controls"></a>Links zu Inhalten in Textsteuerelementen
@@ -23,10 +23,10 @@ Links zu Inhalten bieten eine Möglichkeit, umfangreiche Daten in Textsteuerelem
 
 Wenn der Benutzer einem Eintrag in einer RichEditBox ein kaufmännisches Und-Zeichen (@) als Präfix hinzufügt, wird eine Liste der Personen und/oder Ortsvorschläge angezeigt, die mit dem Eintrag übereinstimmen. Wenn der Benutzer dann beispielsweise einen Ort auswählt, wird ein ContentLink für diesen Ort in den Text eingefügt. Wenn der Benutzer den Link zu dem Inhalt aus der RichEditBox aufruft, werden ein Flyout mit einer Karte und zusätzliche Informationen zu dem Ort angezeigt.
 
-> **Wichtige APIs:** [ContentLink-Klasse](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo Klasse](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange-Klasse](/uwp/api/windows.ui.text.richedittextrange)
+> **Wichtige APIs:** [ContentLink-Klasse](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo-Klasse](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange-Klasse](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> Die APIs für Links zu Inhalten sind auf die folgenden Namespaces verteilt: Windows.UI.Xaml.Controls Windows.UI.Xaml.Documents und Windows.UI.Text.
+> Die APIs für Links zu Inhalten erstrecken sich über die folgenden Namespaces: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents und Windows.UI.Text.
 
 
 
@@ -39,20 +39,20 @@ Es gibt zwei unterschiedliche Methoden, Links zu Inhalten zu verwenden:
 
 So sehen Links zu Inhalten standardmäßig in einem RichEditBox und einem Textblock aus.
 
-![Inhaltslink in RichEdit-Eingabefeld](images/content-link-default-richedit.png)
-![Inhaltslink im Textblock](images/content-link-default-textblock.png)
+![Link zu Inhalten im Rich-Edit-Feld](images/content-link-default-richedit.png)
+![Link zu Inhalten im Textblock](images/content-link-default-textblock.png)
 
 Unterschiede bei der Verwendung, beim Rendering und beim Verhalten werden in den folgenden Abschnitten ausführlich behandelt. Diese Tabelle bietet einen kurzen Vergleich der Hauptunterschiede zwischen einem Link zu Inhalten in einem RichEditBox und einem Textblock.
 
 | Feature   | RichEditBox | Textblock |
 | --------- | ----------- | ---------- |
-| Verwendung | ContentLinkInfo-Instanz | ContentLink-Textelement |
+| Verwendungszweck | ContentLinkInfo-Instanz | ContentLink-Textelement |
 | Cursor | Wird durch den Typ des Links zu Inhalten bestimmt, kann nicht geändert werden | Wird durch die Cursor-Eigenschaft bestimmt, standardmäßig **null** |
 | ToolTip | Nicht gerendert | Zeigt sekundären Text an |
 
 ## <a name="enable-content-links-in-a-richeditbox"></a>Aktiviert Links zu Inhalten in einem RichEditBox
 
-Ein Link zu Inhalten wird am häufigsten verwendet, um einem Benutzer das schnelle Hinzufügen von Informationen zu ermöglichen, indem dem Namen einer Person oder eines Ortes ein kaufmännische Und-Zeichen (@) im entsprechenden Text vorangestellt wird. Bei Aktivierung in einem [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox) wird eine Auswahl geöffnet und der Benutzer kann eine Person aus seiner Kontaktliste oder, je aktivierter Option, einen nahegelegenen Ort hinzufügen.
+Ein Link zu Inhalten wird am häufigsten verwendet, um einem Benutzer das schnelle Hinzufügen von Informationen zu ermöglichen, indem dem Namen einer Person oder eines Ortes ein kaufmännisches Und-Zeichen (@) im entsprechenden Text vorangestellt wird. Bei Aktivierung in einem [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox) wird eine Auswahl geöffnet und der Benutzer kann je nach aktivierter Option eine Person aus seiner Kontaktliste oder einen nahegelegenen Ort hinzufügen.
 
 Der Link zu Inhalten kann mit dem Rich-Text-Inhalt gespeichert werden, und Sie können ihn zur Verwendung in anderen Bereichen Ihrer App extrahieren. In einer E-Mail-App können Sie beispielsweise die persönlichen Informationen extrahieren und verwenden, um das Feld „An“ mit einer E-Mail-Adresse zu füllen.
 
@@ -63,7 +63,7 @@ Der Link zu Inhalten kann mit dem Rich-Text-Inhalt gespeichert werden, und Sie k
 
 Links zu Inhalten werden in einem RichEditBox aktiviert, indem mindestens ein Anbieter für Links zu Inhalten der Sammlung [RichEditBox.ContentLinkProviders](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkProviders) hinzugefügt wird. Es gibt zwei Anbieter für Links zu Inhalten, die in das XAML-Framework integriert sind.
 
-- [ContactContentLinkProvider](/uwp/api/windows.ui.xaml.documents.contactcontentlinkprovider) – Sucht mithilfe der **Personen** App nach Kontakten.
+- [ContactContentLinkProvider](/uwp/api/windows.ui.xaml.documents.contactcontentlinkprovider) – Sucht mithilfe der **Personen**-App nach Kontakten.
 - [PlaceContentLinkProvider](/uwp/api/windows.ui.xaml.documents.placecontentlinkprovider) – Sucht mithilfe der **Karten**-App nach Inhalten.
 
 > [!IMPORTANT]
@@ -125,11 +125,11 @@ Wenn der Benutzer eine Auswahl über die Personen- oder Ortsauswahl vornimmt, er
 
 Das ContentLinkInfo-Objekt enthält die Informationen, die zum Anzeigen, Aufrufen und Verwalten des Links zu Inhalten verwendet werden.
 
-- **Anzeigetext** – Dies ist die Zeichenfolge, die beim Rendern des Links zu Inhalten angezeigt wird. In einem RichEditBox kann der Benutzer den Text eines Links zu Inhalten nach dem Erstellen bearbeiten, wodurch der Wert dieser Eigenschaft geändert wird.
+- **DisplayText** – Dies ist die Zeichenfolge, die beim Rendern des Links zu Inhalten angezeigt wird. In einem RichEditBox kann der Benutzer den Text eines Links zu Inhalten nach dem Erstellen bearbeiten, wodurch der Wert dieser Eigenschaft geändert wird.
 - **SecondaryText** – Diese Zeichenfolge wird in der QuickInfo eines gerenderten Links zu Inhalten angezeigt.
   - In einem Link zu Inhalten für Orte, der über die Auswahl erstellt wurde, enthält sie die Adresse des Ortes, falls verfügbar.
-- **URI** – Der Link zu weiteren Informationen zum Betreff des Links zu Inhalten. Mit diesem URI kann eine installierte App oder eine Website geöffnet werden.
-- **ID** – Dies ist ein schreibgeschützter Zähler für das jeweilige Steuerelement, der durch das RichEditBox-Steuerelement erstellt wird. Er dient zum Nachverfolgen dieser ContentLinkInfo, wenn beispielsweise Lösch- oder Bearbeitungsaktionen durchgeführt werden. Wenn die ContentLinkInfo wird ausgeschnitten und zurück in das Steuerelement einfügen, erhalten sie eine neue Id. ID-Werte sind inkrementell.
+- **Uri** – Der Link zu weiteren Informationen zum Betreff des Links zu Inhalten. Mit diesem URI kann eine installierte App oder eine Website geöffnet werden.
+- **Id** – Dies ist ein schreibgeschützter Zähler für das jeweilige Steuerelement, der durch das RichEditBox-Steuerelement erstellt wird. Er dient zum Nachverfolgen dieser ContentLinkInfo, wenn beispielsweise Lösch- oder Bearbeitungsaktionen durchgeführt werden. Wenn das ContentLinkInfo-Objekt ausgeschnitten und wieder in das Steuerelement eingefügt wird, erhält es eine neue ID. ID-Werte sind inkrementell.
 - **LinkContentKind** – Eine Zeichenfolge, die den Typ des Links zu Inhalten beschreibt. Die integrierten Inhaltstypen sind _Orte_ und _Kontakte_. Beim Wert wird die Groß-/Kleinschreibung berücksichtigt.
 
 #### <a name="link-content-kind"></a>Art des Links zu Inhalten
@@ -138,7 +138,7 @@ Es gibt verschiedene Situationen, in denen die LinkContentKind wichtig ist.
 
 - Wenn ein Benutzer einen Link zu Inhalten aus einem RichEditBox kopiert und ihn in ein anderes RichEditBox einfügt, müssen beide Steuerelemente über einen ContentLinkProvider für diesen Inhaltstyp verfügen. Wenn dies nicht der Fall ist, wird der Link als Text eingefügt.
 - Sie können LinkContentKind in einem [ContentLinkChanged](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkChanged)-Ereignishandler verwenden, um zu bestimmen, welche Aktion mit einem Content Link ausgeführt werden soll, wenn Sie ihn in anderen Bereichen Ihrer App verwenden. Weitere Informationen finden Sie im Abschnitt „Beispiel“.
-- Die LinkContentKind wirkt sich darauf aus, wie das System den URI öffnet, wenn der Link aufgerufen wird. Weitere Informationen hierzu, erhalten Sie im folgenden Abschnitt zum Starten von URIs.
+- Die LinkContentKind wirkt sich darauf aus, wie das System den URI öffnet, wenn der Link aufgerufen wird. Weitere Informationen hierzu erhalten Sie im folgenden Abschnitt zum Starten von URIs.
 
 #### <a name="uri-launching"></a>Starten des URI
 
@@ -162,13 +162,13 @@ Die Personenauswahl erstellt eine ContentLinkInfo mit einem Uri, der das **ms-Pe
 - Wenn LinkContentKind nicht „Personen“ entspricht, wird die **Personen**-App geöffnet. Dies kann beispielsweise der Fall sein, wenn Sie die LinkContentKind im ContentLinkChanged-Ereignishandler geändert haben.
 
 > [!TIP]
-> Weitere Informationen zu anderen apps und Websites aus Ihrer app öffnen, finden Sie unter den Themen unter [Starten einer app mit einem Uri](/windows/uwp/launch-resume/launch-app-with-uri).
+> Weitere Informationen zum Öffnen anderer Apps und Websites über Ihre App finden Sie unter [Starten einer App mit einem URI](/windows/uwp/launch-resume/launch-app-with-uri).
 
 #### <a name="invoked"></a>Aufgerufen
 
 Wenn der Benutzer einen Link zu Inhalten aufruft, wird das [ContentLinkInvoked](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkInvoked)-Ereignis vor dem Standardverhalten zum Starten des URI ausgelöst. Sie können dieses Ereignis behandeln, um das Standardverhalten außer Kraft zu setzen oder abzubrechen.
 
-Dieses Beispiel zeigt, wie Sie das standardmäßige Startverhalten für einen Link zu Inhalten für Orte außer Kraft setzen können. Anstatt die Karte in einer Infokarte für Orte, einer Karten-App oder im Standard-Webbrowser zu öffnen, markieren Sie das Ereignis als verarbeitet, und öffnen Sie die Karte im [WebView](/uwp/api/windows.ui.xaml.controls.webview)-Steuerelement einer In-App.
+In diesem Beispiel wird veranschaulicht, wie Sie das standardmäßige Aufrufverhalten für einen Link zu Inhalten vom Typ „Ort“ außer Kraft setzen können. Anstatt die Karte in einer Ort-Informationskarte, in der Karten-App oder im Standardwebbrowser zu öffnen, kennzeichnen Sie das Ereignis als „Handled“ und öffnen die Karte in einem [WebView](/uwp/api/windows.ui.xaml.controls.webview)-In-App-Steuerelement.
 
 ```xaml
 <RichEditBox x:Name="editor"
@@ -211,7 +211,7 @@ Dieses Ereignis wird nach dem **TextChanging**-Ereignis und vor dem **TextChange
 
 Sie können die RichEditTextRange.ContentLink-Eigenschaft verwenden, um einen Link zu Inhalten aus einem Rich-Edit-Dokument abzurufen. Die TextRangeUnit-Enumeration hat den Wert ContentLink, um den Link zu Inhalten als eine Einheit festzulegen, die beim Navigieren in einem Textbereich verwendet werden soll.
 
-Dieses Beispiel zeigt, wie Sie alle Links zu Inhalten in einem RichEditBox auflisten und die Personen in einer Liste extrahieren können.
+Dieses Beispiel zeigt, wie Sie alle Links zu Inhalten in einem RichEditBox aufzählen und die Personen in einer Liste extrahieren können.
 
 ```xaml
 <StackPanel Width="300">
@@ -271,9 +271,9 @@ In anderen Situationen ist ein Hyperlink-Textelement in der Regel geeignet.
 
 ### <a name="contentlink-appearance"></a>ContentLink-Aussehen
 
-Das Aussehen eines Links zu Inhalten wird durch dessen Vordergrund, Hintergrund und Cursor bestimmt. In einem Textblock können Sie die Vordergrund- (von TextElement) und [Hintergrund](/uwp/api/windows.ui.xaml.documents.contentlink.background)-Eigenschaften so festlegen, dass die Standardfarben geändert werden.
+Das Aussehen eines Links zu Inhalten wird durch dessen Vordergrund, Hintergrund und Cursor bestimmt. In einem Textblock können Sie die Vordergrund-Eigenschaft (von TextElement) und [Hintergrund](/uwp/api/windows.ui.xaml.documents.contentlink.background)-Eigenschaft so festlegen, dass die Standardfarben geändert werden.
 
-Der [Hand](/uwp/api/windows.ui.core.corecursortype)-Cursor wird standardmäßig angezeigt, wenn der Benutzer mit der Maus auf den Link zu Inhalten zeigt. Im Gegensatz zum RichEditBlock ändern TextBlock-Steuerelemente den Cursor nicht automatisch basierend auf den Linktyp. Sie können die [Cursor](/uwp/api/windows.ui.xaml.documents.contentlink.Cursor)-Eigenschaft so festlegen, dass der Cursor basierend auf dem Linktyp oder anderen Faktoren geändert wird.
+Der [Hand](/uwp/api/windows.ui.core.corecursortype)-Cursor wird standardmäßig angezeigt, wenn der Benutzer mit der Maus auf den Link zu Inhalten zeigt. Im Gegensatz zum RichEditBlock ändern TextBlock-Steuerelemente den Cursor nicht automatisch entsprechend dem Linktyp. Sie können die [Cursor](/uwp/api/windows.ui.xaml.documents.contentlink.Cursor)-Eigenschaft so festlegen, dass der Cursor entsprechend dem Linktyp oder anderen Faktoren geändert wird.
 
 Im Folgenden finden Sie ein Beispiel für einen ContentLink, der in einem TextBlock verwendet wird. Die ContentLinkInfo wird im Code erstellt und der Info-Eigenschaft des ContentLink-Textelements zugewiesen, das in XAML erstellt wird.
 
@@ -309,7 +309,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 In diesem Beispiel kann ein Benutzer einen Link zu Inhalten für eine Person oder einen Ort eingeben oder in einem RickTextBlock platzieren. Sie verarbeiten das ContentLinkChanged-Ereignis, um die Links zu Inhalten zu extrahieren und sie in einer Personen- oder Ortsliste auf dem neuesten Stand zu halten.
 
-In der Elementvorlagen für die Listen können Sie einen TextBlock mit einem ContentLink-Textelement verwenden, um die Informationen zum Link zu Inhalten anzuzeigen. Die ListView stellt ihren eigenen Hintergrund für jedes Element bereit, sodass der ContentLink-Hintergrund auf transparent gesetzt wird.
+In den Elementvorlagen für die Listen können Sie einen TextBlock mit einem ContentLink-Textelement verwenden, um die Informationen zum Link zu Inhalten anzuzeigen. Die ListView stellt ihren eigenen Hintergrund für jedes Element bereit, sodass der ContentLink-Hintergrund auf „Transparent“ festgelegt wird.
 
 ```xaml
 <StackPanel Orientation="Horizontal" Grid.Row="1">

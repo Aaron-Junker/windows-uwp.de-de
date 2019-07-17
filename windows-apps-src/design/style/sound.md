@@ -6,22 +6,22 @@ template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614375"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63789060"
 ---
 # <a name="sound"></a>Sound
 
-![Favoritenbild](images/header-sound.svg)
+![Herobild](images/header-sound.svg)
 
 Es gibt viele Möglichkeiten, Ihre App mit Sound zu verbessern. Sie können Sound zur Ergänzung von Benutzeroberflächenelementen einsetzen, um Benutzer akustisch auf Ereignisse aufmerksam zu machen. Sound ist beispielsweise für Menschen mit Sehbehinderungen ein hilfreiches Benutzeroberflächenelement. Mit Sound können Sie den Benutzer in das Geschehen einbeziehen, beispielsweise, wenn Sie ein Puzzlespiel mit einer beruhigenden Hintergrundmelodie und ein Horror-/Survivalspiel mit bedrohlichen Soundeffekten unterlegen.
 
@@ -33,22 +33,22 @@ Der [**ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-Die **ElementSoundPlayer** verfügt über drei Zustände: **Auf** **aus** und **automatisch**.
+Der **ElementSoundPlayer** verfügt über drei Zustände: **Ein** **Aus** und **Auto**.
 
 In der Einstellung **Aus** wird unabhängig davon, wo Ihre App ausgeführt wird, niemals Sound wiedergegeben. In der Einstellung **Ein** werden für Sounds für Ihre App auf jeder Plattform wiedergegeben.
 
-Das Aktivieren des ElementSoundPlayer ermöglicht automatisch räumliches Audio (3D-Sound). Um den 3D-Sound (während weiterhin der Sound eingeschaltet ist) zu deaktivieren, deaktivieren Sie die **SpatialAudioMode** vom ElementSoundPlayer: 
+Das Aktivieren des ElementSoundPlayer ermöglicht zudem automatisch räumliches Audio (3D-Sound). Um den 3D-Sound (während weiterhin der Sound eingeschaltet ist) zu deaktivieren, deaktivieren Sie den **SpatialAudioMode** des ElementSoundPlayer: 
 
 ```C#
 ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ```
 
-Die **SpatialAudioMode**-Eigenschaft kann diese Werte erhalten: 
-- **Auto**: Räumliche Audio wird eingeschaltet, wenn der sound ist. 
-- **Deaktiviert**: Räumliche Audio ist immer aus, selbst wenn Sie sound ist.
-- **Ein**: Räumliche Audio wird immer wiedergegeben.
+Die **SpatialAudioMode**-Eigenschaft kann folgende Werte annehmen: 
+- **Auto**: Räumliches Audio wird eingeschaltet, wenn Sound eingeschaltet ist. 
+- **Deaktiviert**: Räumliches Audio ist immer ausgeschaltet, selbst wenn Sound eingeschaltet ist.
+- **Ein**: Räumliches Audio wird immer wiedergegeben.
 
-Weitere Informationen zu räumlichem Audio und wie XAML diesen behandelt finden Sie unter [AudioGraph – räumliches Audio](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
+Weitere Informationen zu räumlichem Audio und dessen Behandlung durch XAML finden Sie unter [AudioGraph – räumliches Audio](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
 
 ### <a name="sound-for-tv-and-xbox"></a>Sound für TV und Xbox
 
@@ -69,7 +69,7 @@ Wobei die maximale Lautstärke (relativ zur Systemlautstärke) 1,0 ist und die m
 
 Wenn der Standardsound eines Steuerelements nicht erwünscht ist, kann er deaktiviert werden. Dies erfolgt über die **ElementSoundMode**-Option für das Steuerelement.
 
-Die **ElementSoundMode** verfügt über zwei Zustände: **Off** und **Standard**. Wenn nichts festgelegt wird, hat sie den Zustand **Standard**. In der Einstellung **Aus** wird jeder Sound, der durch das Steuerelement wiedergegeben werden soll, stumm geschaltet, *außer der Fokus*.
+Die **ElementSoundMode**-Option verfügt über zwei Zustände: **Aus** und **Standard**. Wenn nichts festgelegt wird, hat sie den Zustand **Standard**. In der Einstellung **Aus** wird jeder Sound, der durch das Steuerelement wiedergegeben werden soll, stumm geschaltet, *außer der Fokus*.
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -118,7 +118,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>Navigation innerhalb einer Seite
 
-Beim Navigieren zwischen den Bereichen oder Ansichten innerhalb der app-Seite (finden Sie unter [Registerkarten und pivotiert](../controls-and-patterns/pivot.md)), besteht in der Regel bidirektionalen verschieben. Das bedeutet, dass Sie zur nächsten Ansicht bzw. zum nächsten Bereich (oder zur/zum vorherigen) wechseln können, ohne die aktuelle App-Seite zu verlassen, auf der Sie sich befinden.
+Beim Navigieren zwischen Bereichen oder Ansichten innerhalb einer App-Seite (siehe [Registerkarten und Pivots](../controls-and-patterns/pivot.md)) gibt es in der Regel eine bidirektionale Bewegung. Das bedeutet, dass Sie zur nächsten Ansicht bzw. zum nächsten Bereich (oder zur/zum vorherigen) wechseln können, ohne die aktuelle App-Seite zu verlassen, auf der Sie sich befinden.
 
 Das Audioerlebnis für dieses Navigationskonzept wird durch die **MovePrevious**- und **MoveNext**-Sounds umgesetzt.
 

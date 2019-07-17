@@ -6,17 +6,17 @@ label: Check boxes
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3905ef8786a06d4221ce42511f786927c3173ba6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363170"
 ---
 # <a name="check-boxes"></a>Kontrollkästchen
@@ -25,7 +25,7 @@ ms.locfileid: "66363170"
 
 Ein Kontrollkästchen dient zum Aktivieren oder Deaktivieren von Aktionselementen. Es kann für einzelne oder mehrere Listenelemente verwendet werden, die dem Benutzer zur Auswahl stehen. Das Steuerelement verfügt über drei Auswahlzustände: „Deaktiviert“, „Aktiviert“ und „Unbestimmt“. Verwenden Sie den unbestimmten Zustand, wenn für eine Sammlung von Unteroptionen eine Mischung aus deaktivierten als aktivierten Zuständen vorliegt.
 
-> **Wichtige APIs:** [CheckBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [aktivierte Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
+> **Wichtige APIs:** [CheckBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 ![Bespiel für Kontrollkästchenzustände](images/templates-checkbox-states-default.png)
 
@@ -67,7 +67,7 @@ Benutzer können sowohl über **Kontrollkästchen** als auch über **Optionsfeld
 
 ## <a name="create-a-checkbox"></a>Erstellen eines Kontrollkästchens
 
-Legen Sie einen Wert für die Eigenschaft [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) fest, um dem Kontrollkästchen eine Beschriftung zuzuweisen. Die Beschriftung wird neben dem Kontrollkästchen angezeigt.
+Um dem Kontrollkästchen eine Beschriftung zuzuweisen, legen Sie die [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Eigenschaft fest. Die Beschriftung wird neben dem Kontrollkästchen angezeigt.
 
 Der folgende XAML-Code erstellt ein einzelnes Kontrollkästchen, mit dem vor dem Übermitteln eines Formulars den Servicebedingungen zugestimmt werden muss: 
 
@@ -85,7 +85,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>Binden an „IsChecked“
 
-Über die Eigenschaft [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) können Sie den Aktivierungszustand des Kontrollkästchens ermitteln. Der Wert der IsChecked-Eigenschaft kann an einen anderen binären Wert gebunden werden. Da es sich bei „IsChecked“ aber um einen booleschen Wert vom Typ [Nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) handelt, müssen Sie einen Wertkonverter verwenden, um sie an einen booleschen Wert zu binden.
+Mit der [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)-Eigenschaft können Sie den Aktivierungszustand des Kontrollkästchens ermitteln. Der Wert der IsChecked-Eigenschaft kann an einen anderen binären Wert gebunden werden. Da es sich bei „IsChecked“ aber um einen booleschen Wert vom Typ [Nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) handelt, müssen Sie einen Wertkonverter verwenden, um sie an einen booleschen Wert zu binden.
 
 In diesem Beispiel wird die **IsChecked**-Eigenschaft des Kontrollkästchens zum Akzeptieren der Servicebedingungen an die [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)-Eigenschaft der Schaltfläche zum Absenden gebunden. Die Schaltfläche zum Absenden wird nur aktiviert, wenn die Vertragsbedingungen akzeptiert werden.
 
@@ -130,7 +130,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### <a name="handle-click-and-checked-events"></a>Behandeln von Click- und Checked-Ereignissen
 
-Damit bei einer Änderung des Kontrollkästchenzustands eine Aktion ausgeführt wird, können Sie entweder das Ereignis [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) behandeln oder die Ereignisse [Checked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) und [Unchecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked). 
+Wenn bei einer Änderung des Kontrollkästchenzustands eine Aktion ausgeführt werden soll, behandeln Sie das [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis oder die Ereignisse [Checked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) und [Unchecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked). 
 
 Das **Click**-Ereignis tritt bei jeder Änderung des Aktivierungszustands auf. Verwenden Sie beim Behandeln des Click-Ereignisses die **IsChecked**-Eigenschaft, um den Zustand des Kontrollkästchens zu ermitteln.
 
@@ -189,9 +189,9 @@ Status | Eigenschaft | Wert
 ------|----------|------
 Aktiviert | IsChecked | **true** 
 Deaktiviert | IsChecked | **false** 
-Unbestimmt | IsChecked | **null** 
+Unbestimmt | IsChecked | **Null** 
 
-Damit das Kontrollkästchen einen unbestimmten Zustand meldet, müssen Sie die Eigenschaft [IsThreeState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) auf **true** setzen. 
+Damit das Kontrollkästchen einen unbestimmten Zustand meldet, müssen Sie die [IsThreeState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate)-Eigenschaft auf **true** festlegen. 
 
 Bei gruppierbaren Optionen kann die gesamte Gruppe durch ein unbestimmtes Kontrollkästchen dargestellt werden. Verwenden Sie den unbestimmten Zustand des Kontrollkästchens, wenn ein Benutzer nur einige untergeordneten Elemente der Gruppe aktiviert.
 
@@ -294,13 +294,13 @@ private void SetCheckedState()
 
     ![Ein unbestimmtes Kontrollkästchen](images/checkbox4_spicy.png)
 
-    Verwenden Sie stattdessen eine Gruppe von Optionsfeldern, die drei Optionen enthält: Nicht großartige, großartige und zusätzliche großartige.
+    Verwenden Sie stattdessen eine Optionsfeldgruppe mit drei Optionen: Nicht scharf, Scharf, Besonders scharf.
 
-    ![Die Optionsfeldgruppe mit drei Optionen: Nicht großartige, großartige und zusätzliche großartige](images/spicyoptions.png)
+    ![Optionsfeldgruppe mit drei Optionen: Nicht scharf, Scharf, Besonders scharf](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

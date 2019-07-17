@@ -1,11 +1,11 @@
 ---
-Description: Verwenden Sie das Steuerelement zum Aktualisieren ziehen, um neue Inhalte in einer Liste zu erhalten.
+Description: Verwenden Sie das Steuerelement „Aktualisieren durch Ziehen“, um neue Inhalte in eine Liste abzurufen.
 title: Aktualisieren durch Ziehen
 label: Pull-to-refresh
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 pm-contact: predavid
 design-contact: kimsea
@@ -13,15 +13,15 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2efd091d90a856e45d76c0b1357f30417812160a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659255"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63791525"
 ---
 # <a name="pull-to-refresh"></a>Aktualisierung durch Ziehen
 
-Mithilfe der Aktion „Aktualisieren durch Ziehen“ können Benutzer eine Datenliste per Touchgeste nach unten ziehen, um weitere Daten abzurufen. Die Aktion „Aktualisieren durch Ziehen“ wird häufig auf Geräten mit Touchscreen verwendet. Sie können die hier gezeigten APIs zum Implementieren von „Aktualisieren durch Ziehen“ in Ihre App verwenden.
+Mithilfe der Aktion „Aktualisieren durch Ziehen“ können Benutzer eine Datenliste per Toucheingabe nach unten ziehen, um weitere Daten abzurufen. Die Aktion „Aktualisieren durch Ziehen“ wird häufig auf Geräten mit Touchscreen verwendet. Sie können die hier gezeigten APIs zum Implementieren von „Aktualisieren durch Ziehen“ in Ihre App verwenden.
 
 > **Wichtige APIs:** [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
@@ -37,14 +37,14 @@ Sie können auch den [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refre
 
 „Aktualisieren durch Ziehen“ wird durch zwei Steuerelemente aktiviert.
 
-- **RefreshContainer** – Ein ContentControl, das einen Wrapper für das Pull-to-Refresh-Erlebnis bereitstellt. Es verarbeitet die Interaktionen per Fingereingabe und verwaltet den Zustand des internen Visualizers für Aktualisierungen.
+- **RefreshContainer** – Ein ContentControl, das einen Wrapper für das Aktualisieren-durch-Ziehen-Erlebnis bereitstellt. Es verarbeitet die Interaktionen per Toucheingabe und verwaltet den Zustand des internen Visualizers für Aktualisierungen.
 - **RefreshVisualizer** – Kapselt die Aktualisierungsvisualisierung, die im nächsten Abschnitt erläutert wird.
 
 Das wichtigste Steuerelement ist **RefreshContainer**, das Sie als Wrapper um den Inhalt platzieren, den der Benutzer abruft, um eine Aktualisierung auszulösen. Da RefreshContainer nur mit Toucheingabe funktioniert, wird empfohlen, dass Sie auch eine Aktualisierungsschaltfläche für Benutzer bereitstellen, die über keinen Touchscreen verfügen. Sie können die Aktualisierungsschaltfläche an einer geeigneten Stelle in der App positionieren, entweder auf einer Befehlsleiste oder in der Nähe der Oberfläche, die aktualisiert wird.
 
 ## <a name="refresh-visualization"></a>Visualisierung aktualisieren
 
-Die Visualisierung der Standardaktualisierung ist ein kreisförmiges Fortschritts-Drehfeld, das über den Zeitpunkt einer Aktualisierung und deren Fortschritt informiert, nachdem diese gestartet wurde. Der Aktualisierungs-Visualizer verfügt über 5 Zustände.
+Die Visualisierung der Standardaktualisierung ist ein kreisförmiges Fortschritts-Drehfeld, das über den Zeitpunkt einer Aktualisierung und deren Fortschritt informiert, nachdem diese gestartet wurde. Der Aktualisierungs-Visualizer verfügt über fünf Zustände.
 
  Der Abstand, den der Benutzer benötigt, um eine Liste zum Initiieren einer Aktualisierung nach unten zu ziehen, wird als _Schwellenwert_ bezeichnet. Der Visualizer [Zustand](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.State) wird anhand des Ziehstatus im Zusammenhang mit diesen Schwellenwert bestimmt. Die möglichen Werte sind in der [RefreshVisualizerState](/uwp/api/windows.ui.xaml.controls.refreshvisualizerstate)-Enumeration enthalten.
 
@@ -56,13 +56,13 @@ Visuell gibt es keinen Nachweis für den Aktualisierungs-Visualizer.
 
 ### <a name="interacting"></a>Interaktion
 
-Wenn der Benutzer die Liste in die von der PullDirection-Eigenschaft angegebene Richtung zieht und der Visualizer sich im Zustand **Interaktion** befindet, bevor der Schwellenwert erreicht wird.
+Wenn der Benutzer die Liste in die von der PullDirection-Eigenschaft angegebene Richtung zieht und sich der Visualizer im Zustand **Interaktion** befindet, bevor der Schwellenwert erreicht wird.
 
 - Wenn der Benutzer das Steuerelement loslässt, während es sich in diesem Zustand befindet, kehrt das Steuerelement in den **Leerlauf** zurück.
 
     ![Aktualisierung durch Ziehen vor dem Schwellenwert](images/ptr-prethreshold.png)
 
-    Das Symbol wird visuell als deaktiviert (60 % undurchsichtig) angezeigt. Darüber hinaus wird das Symbol mit der Aktion „Bildlauf“ einmal vollständig gedreht.
+    Das Symbol wird visuell als deaktiviert (Deckkraft von 60 %) angezeigt. Darüber hinaus wird das Symbol mit der Scrollen-Aktion einmal vollständig gedreht.
 
 - Wenn der Benutzer die Liste über den Schwellenwert hinaus zieht, wechselt der Visualizer von **Interaktion** in **Ausstehend**.
 
@@ -101,7 +101,7 @@ Wenn der Benutzer von einer Startposition, an der eine Aktualisierung unzulässi
 
 Der Benutzer zieht eine Liste standardmäßig von oben nach unten, um eine Aktualisierung zu initiieren. Wenn Sie über eine Liste oder ein Raster mit einer anderen Ausrichtung verfügen, sollten Sie die Ziehrichtung des Aktualisierungs-Containers entsprechend ändern.
 
-Die [PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection) Eigenschaft nimmt einen der folgenden [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection) Werte: **BottomToTop**, **TopToBottom**, **RightToLeft**, oder **LeftToRight**.
+Die [PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection) Eigenschaft nimmt einen der folgenden [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection) Werte an: **BottomToTop**, **TopToBottom**, **RightToLeft** oder **LeftToRight**.
 
 Wenn Sie die Ziehrichtung ändern, dreht sich die Startposition des Fortschritts-Drehfelds des Visualizers automatisch, sodass der Pfeil in der entsprechenden Position für die Ziehrichtung startet. Bei Bedarf können Sie die [RefreshVisualizer.Orientation](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.Orientation)-Eigenschaft ändern, um das automatische Verhalten außer Kraft zu setzen. In den meisten Fällen empfiehlt es sich, den Standardwert **Auto** beizubehalten.
 
@@ -116,7 +116,7 @@ Um einer Liste die Funktionalität „Aktualisierung durch Ziehen“ hinzuzufüg
 > [!NOTE]
 > Sie können einen eigenständigen RefreshVisualizer instanziieren. Es empfiehlt sich jedoch, Ihre Inhalte in einem RefreshContainer zu umschließen und den von der RefreshContainer.Visualizer-Eigenschaft bereitgestellten RefreshVisualizer auch für Szenarien ohne Touchscreen zu verwenden. In diesem Artikel wird davon ausgegangen, dass der Visualizer immer aus dem Aktualisierungs-Container abgerufen wird.
 
-> Verwenden Sie außerdem der Einfachheit halber die RequestRefresh- und RefreshRequested-Elemente des Containers. `refreshContainer.RequestRefresh()` entspricht dem `refreshContainer.Visualizer.RequestRefresh()`, und entweder wird das Ereignis RefreshContainer.RefreshRequested und die RefreshVisualizer.RefreshRequested Ereignisse ausgelöst.
+> Verwenden Sie außerdem der Einfachheit halber die RequestRefresh- und RefreshRequested-Elemente des Containers. `refreshContainer.RequestRefresh()` entspricht `refreshContainer.Visualizer.RequestRefresh()` und löst sowohl das RefreshContainer.RefreshRequested-Ereignis als auch die RefreshVisualizer.RefreshRequested-Ereignisse aus.
 
 ### <a name="request-a-refresh"></a>Anfordern einer Aktualisierung
 
@@ -334,6 +334,6 @@ public class ListItemData
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Interaktionen per Toucheingabe](../input/touch-interactions.md)
-- [Listenansicht und der Rasteransicht](listview-and-gridview.md)
+- [Listenansicht und Rasteransicht](listview-and-gridview.md)
 - [Elementcontainer und Vorlagen](item-containers-templates.md)
-- [Expression-Animationen](../../composition/composition-animation.md)
+- [Ausdrucksanimationen](../../composition/composition-animation.md)

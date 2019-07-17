@@ -1,66 +1,66 @@
 ---
 title: Abstände und Größen
-description: Die neue Fluent-Standard und Compact Steuerelementstile Vergewissern Sie sich eine vertraut Benutzeroberfläche unabhängig von Geräte- und Eingabe-Methode.
-keywords: UWP, Windows 10, Steuerelemente, Größe, Density, Standard, compact
-ms.date: 4/4/2019
+description: Die neuen Fluent-Steuerelementstilarten Standard und Compact stellen unabhängig von Gerät und Eingabemethode eine vertraute Benutzeroberfläche sicher.
+keywords: UWP, Windows 10, Steuerelemente, Größe, Dichte, Standard, Compact
+ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7b74e3dc2ad047d9e52509b71ef00b829ad63a0d
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
-ms.translationtype: MT
+ms.openlocfilehash: ff88332e0b44749bcd86e06adafeb596ca8678b3
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59249452"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63820639"
 ---
-# <a name="control-size-and-density"></a>Größe des Steuerelements und Dichte
+# <a name="control-size-and-density"></a>Größe und Dichte des Steuerelements
 
-Verwenden Sie eine Kombination von Steuerelementgröße und Dichte, optimieren Ihre Anwendung für die universelle Windows-Plattform (UWP), und geben Sie eine Benutzeroberfläche, die den Anforderungen Ihrer app-Funktionalität und Interaktion am besten geeignet ist.
+Optimieren Sie Ihre UWP (Universal Windows Platform)-Anwendung anhand einer Kombination von Steuerelementgröße und -dichte, und stellen Sie eine Benutzererfahrung bereit, die für die Funktions- und Interaktionsanforderungen der App am besten geeignet ist.
 
-Standardmäßig werden die UWP-apps mit einer mit geringer Dichte gerendert (oder `Standard`) Layout. Seit WinUI 2.1, die eine hohe Dichte (oder `Compact`) Layoutoption aus, für die Informationen werden umfangreiche Benutzeroberfläche und spezielle Szenarien ähnlich, wird auch unterstützt. Dies kann über eine grundlegende Stilressource angegeben werden (Siehe Beispiele unten).
+Standardmäßig werden UWP-Apps mit einem Layout mit geringer Dichte (bzw. `Standard`) gerendert. Ab WinUI 2.1 wird jedoch auch eine Layoutoption mit hoher Dichte (bzw. `Compact`) für Benutzeroberflächen mit vielfältigen Informationen oder ähnlich spezialisierte Szenarien unterstützt. Dies kann über eine grundlegende Stilressource angegeben werden (siehe Beispiele unten).
 
-Bei der Funktionalität und Verhalten nicht geändert und bleibt konsistent, zwischen den beiden Optionen für Größe und Dichte, den Schriftgrad des Standard-Text wurde auf 14px für alle Steuerelemente auf die Supportoptionen für diese beiden Dichte aktualisiert. Diese Schriftgrad über Regionen und Geräte hinweg funktioniert und stellt sicher, dass Ihre Anwendung mit Lastenausgleich und wissen, für Benutzer bleibt.
+Funktionalität und Verhalten haben sich nicht geändert und sind weiterhin einheitlich für die beiden Größen- und Dichteoptionen, der Standardschriftgrad für Text wurde jedoch für alle Steuerelemente auf 14 px aktualisiert, damit beide Dichteoptionen unterstützt werden. Dieser Schriftgrad funktioniert in allen Regionen und auf allen Geräten; damit wird sichergestellt, dass Ihre Anwendung ausgewogen und benutzerfreundlich bleibt.
 
-## <a name="fluent-standard-sizing"></a>Fluent-Standard-größenanpassung
+## <a name="fluent-standard-sizing"></a>Standard-Größenanpassung von Fluent
 
-*Fluent-Standard-größenanpassung* wurde entwickelt, um ein Gleichgewicht zwischen Informationen Dichte Komfort für Benutzer bereitstellen. Richten Sie effektiv alle Elemente auf dem Bildschirm zu einem effektiven Pixeln von 40 x 40 (Epx)-Ziel, das basiert, können Sie UI-Elemente an ein Raster ausrichten und entsprechend skalieren zum Skalieren der Ebene von System.
+Die *Standard-Größenanpassung von Fluent* wurde entwickelt, um ein Gleichgewicht zwischen Informationsdichte und Benutzerfreundlichkeit zu schaffen. Effektiv werden alle Elemente auf dem Bildschirm auf einen Zielwert von 40 x 40 effektive Pixel (epx) ausgerichtet, wodurch UI-Elemente an einem Raster ausgerichtet und gemäß der Skalierung auf Systemebene entsprechend skaliert werden.
 
-**Standardmäßige Größe soll jeweils berührungs- und geben Zeiger zu berücksichtigen.**
+**Die Standard-Größenanpassung wurde sowohl auf Touch- als auch Zeigereingaben ausgelegt.**
 
 > [!NOTE]
->Weitere Informationen zur effektiven Pixeln und Skalieren von Daten zu erhalten, finden Sie unter [Einführung in die UWP-app-Design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>Weitere Informationen zu effektiven Pixeln und Skalierung finden Sie unter [Einführung in das UWP-App-Design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
-> Weitere Informationen zum System Ebene skalieren finden Sie unter [Ausrichtung, Margin und Padding](../layout/alignment-margin-padding.md).
+> Weitere Informationen zum Skalieren auf der Systemebene finden Sie unter [Ausrichtung, Rand, Abstand](../layout/alignment-margin-padding.md).
 
-Für das Windows 10 Oktober 2018 Update (Version 1809), der Standard, die Standardgröße für alle UWP-Steuerelemente wurde verringert, um die benutzerfreundlichkeit für alle Verwendungsszenarien zu erhöhen.
+Für das Windows 10 October 2018 Update (Version 1809) wurde die Standard-Größe für alle UWP-Steuerelemente verringert, um die Benutzerfreundlichkeit in allen Verwendungsszenarien zu verbessern.
 
-Die folgende Abbildung zeigt einige der das Steuerelement Änderungen am Layout, die mit dem Windows eingeführt wurden 10 Oktober 2018 aktualisieren. Insbesondere der Rand zwischen einem Header und dem oberen Rand eines Steuerelements aus 8epx verringert wurde, um 4epx und 44epx Raster an ein Raster 40epx geändert wurde.
+In der folgenden Abbildung werden einige der Layoutänderungen für Steuerelemente veranschaulicht, die mit dem Windows 10 October 2018 Update eingeführt wurden. Konkret wurde der Rand zwischen einer Überschrift und der Oberkante eines Steuerelements von 8epx auf 4epx verringert, und das 44epx-Raster wurde in ein 40epx-Raster geändert.
 
-![Beispiel für einen Standardsteuerelement](images/standarddensity.png)
+![Beispiel eines Standard-Layouts für Steuerelemente](images/standarddensity.png)
 
-*Beispiel für einen Standardsteuerelement*
+*Beispiel eines Standard-Layouts für Steuerelemente*
 
-Dieser nächste Abbildung zeigt die Änderungen, die zum Steuern von Größen für die Windows 10 Oktober 2018 aktualisieren. Insbesondere Ausrichtung am Raster 40epx.
+Die nächste Abbildung veranschaulicht die Änderungen in Bezug auf Steuerelementgrößen, die mit dem Windows 10 October 2018 Update eingeführt wurden. Hier sehen Sie die Ausrichtung am 40epx-Raster.
 
-![Standard-Eingabeereignisse-Beispiel](images/standarddensitycommanding.png)
+![Beispiel für Standard-Befehle](images/standarddensitycommanding.png)
 
-## <a name="fluent-compact-sizing"></a>Fluent-Compact-größenanpassung
+## <a name="fluent-compact-sizing"></a>Compact-Größenanpassung von Fluent
 
-Compact größenanpassung ermöglicht Dichte, informationsreiche eine Gruppe von Steuerelementen und kann durch Folgendes:
+Die Compact-Größenanpassung ermöglicht dichte Gruppen von Steuerelementen mit vielfältigen Informationen; sie bietet Vorteile für folgende Vorgänge:
 
-- Durchsuchen große Mengen an Inhalt.
+- Durchsuchen großer Inhaltsmengen.
 - Maximieren des sichtbaren Inhalts auf einer Seite.
-- Navigation und Interaktion mit der Steuerelemente und Inhalte
+- Navigation durch und Interaktion mit Steuerelementen und Inhalten
 
-**Compact größenanpassung dient in erster Linie zum Zeiger Eingabe zu berücksichtigen.**
+**Die Compact-Größenanpassung ist hauptsächlich auf Zeigereingaben ausgelegt.**
 
 ### <a name="examples"></a>Beispiele
 
-Kompakte Größe wird über eine spezielle Ressourcenverzeichnis implementiert, die in Ihrer Anwendung auf Seitenebene oder auf einem bestimmten Layout angegeben werden können. Das Ressourcenverzeichnis finden Sie in der [WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/) Nuget-Paket.
+Die Compact-Größenanpassung wird über ein spezielles Ressourcenverzeichnis implementiert, das in Ihrer Anwendung entweder auf der Seitenebene oder in einem bestimmten Layout angegeben werden kann. Das Ressourcenverzeichnis finden Sie im [WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/)-Nuget-Paket.
 
-Die folgenden Beispiele zeigen wie die der `Compact` Stil für die Seite und ein einzelnes Grid-Steuerelement angewendet werden kann.
+In den folgenden Beispielen wird erläutert, wie der `Compact`-Stil auf die Seite und auf ein einzelnes Grid-Steuerelement angewendet wird.
 
-#### <a name="page-level"></a>Auf Seitenebene
+#### <a name="page-level"></a>Seitenebene
 
 ```xaml
 <Page.Resources>
@@ -80,7 +80,7 @@ Die folgenden Beispiele zeigen wie die der `Compact` Stil für die Seite und ein
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Richtlinien für die Touch-Ziele](../input/guidelines-for-targeting.md)
+- [Richtlinien für Touch-Ziele](../input/guidelines-for-targeting.md)
 - [ResourceDictionary- und XAML-Ressourcenreferenzen](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
 - [Ressourcenverzeichnis](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.resourcedictionary)
-- [XAML-Formatvorlagen](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-styles) 
+- [XAML-Stile](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-styles) 

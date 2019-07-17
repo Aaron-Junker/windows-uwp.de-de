@@ -6,18 +6,18 @@ label: Contextual commanding in collections
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658595"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63801197"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Kontextbefehle für Sammlungen und Listen
 
@@ -25,7 +25,7 @@ ms.locfileid: "57658595"
 
 Viele Apps enthalten Sammlungen von Inhalten in Form von Listen, Rastern und Strukturen, auf die der Benutzer Aktionen anwenden kann. Beispielsweise kann er Elemente löschen, umbenennen, kennzeichnen oder aktualisieren. In diesem Artikel wird beschrieben, wie Sie mithilfe von Kontextbefehlen derartige Aktionen so implementieren können, dass bei allen Eingabearten die jeweils bestmögliche Benutzererfahrung gewährleistet ist.  
 
-> **Wichtige APIs:** [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **Wichtige APIs:** [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout-Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![Ausführen des Befehls „Als Favorit speichern“ mittels verschiedener Eingabearten](images/ContextualCommand_AddFavorites.png)
 
@@ -35,17 +35,17 @@ Benutzer können zur Interaktion mit UWP-Apps eine [Vielzahl unterschiedlicher G
 
 In der Tabelle unten sind einige typische Befehle für Sammlungen aufgeführt sowie Möglichkeiten, diese Befehle verfügbar zu machen. 
 
-| Befehl          | Eingabeartunabhängig | Beschleuniger für die Mauseingabe | Beschleuniger für die Tastatureingabe | Beschleuniger für die Toucheingabe |
+| Befehl          | Eingabeartunabhängig | Beschleuniger für die Mauseingabe | Tastaturkürzel | Beschleuniger für die Toucheingabe |
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
-| Element löschen      | Kontextmenü   | Hoverschaltfläche      | ENTF-Taste              | Löschen per Wischen   |
+| Element löschen      | Kontextmenü   | Hoverschaltfläche      | ENTF-TASTE              | Löschen per Wischen   |
 | Element kennzeichnen        | Kontextmenü   | Hoverschaltfläche      | STRG+UMSCHALT+G         | Kennzeichnen per Wischen     |
-| Daten aktualisieren     | Kontextmenü   | n. a.               | F5-Taste               | Aktualisierung durch Ziehen   |
-| Element als Favorit speichern | Kontextmenü   | Hoverschaltfläche      | F-Taste, STRG+S            | Als Favorit speichern per Wischen |
+| Daten aktualisieren     | Kontextmenü   | N/V               | F5-TASTE               | Aktualisierung durch Ziehen   |
+| Element als Favorit speichern | Kontextmenü   | Hoverschaltfläche      | F-TASTE, STRG+S            | Als Favorit speichern per Wischen |
 
 
-* **Im Allgemeinen Sie sollte verfügbar machen, alle Befehle für ein Element des Elements [Kontextmenü](menus.md).** Kontextmenüs sind für den Benutzer bei jeder Eingabeart verfügbar und sollten alle Kontextbefehle enthalten, die er ausführen darf.
+* **Grundsätzlich sollten Sie sämtliche Befehle für ein Element im [Kontextmenü](menus.md) des Elements verfügbar machen.** Kontextmenüs sind für den Benutzer bei jeder Eingabeart verfügbar und sollten alle Kontextbefehle enthalten, die er ausführen darf.
 
-* **Erwägen Sie für häufig verwendete Befehle in der Eingabe Accelerators verwenden.** Eingabebeschleuniger basieren auf dem jeweiligen Eingabegerät und erlauben es dem Benutzer, Aktionen schnell auszuführen. Zu den Eingabebeschleunigern gehören:
+* **Für häufig verwendete Befehle empfiehlt sich die Implementierung von Eingabebeschleunigern.** Eingabebeschleuniger basieren auf dem jeweiligen Eingabegerät und erlauben es dem Benutzer, Aktionen schnell auszuführen. Zu den Eingabebeschleunigern gehören:
     - Aktionsausführung per Wischen (Beschleuniger für die Toucheingabe)
     - Datenaktualisierung per Ziehen (Beschleuniger für die Toucheingabe)
     - Tastenkombinationen (Beschleuniger für die Tastatureingabe)
@@ -55,7 +55,7 @@ In der Tabelle unten sind einige typische Befehle für Sammlungen aufgeführt so
 > [!NOTE]
 > Benutzer sollten immer auf sämtliche Befehle zugreifen können, ganz gleich, welches Gerät sie verwenden. Wenn Sie die Befehle Ihrer App beispielsweise nur in Form von Hoverschaltflächen für eine beschleunigte Eingabe über Zeigegeräte verfügbar machen, haben Benutzer von Touchsystemen keinen Zugriff auf sie. Implementieren Sie zumindest ein Kontextmenü, in dem alle Befehle verfügbar sind.  
 
-## <a name="example-the-podcastobject-data-model"></a>Beispiel: Das Datenmodell PodcastObject
+## <a name="example-the-podcastobject-data-model"></a>Beispiel: Beispiel: Datenmodell „PodcastObject“
 
 Zur Verdeutlichung unserer Empfehlungen für die Befehlsimplementierung erstellen wir im Rahmen dieses Artikels eine Liste von Podcasts für eine Podcast-App. Der Beispielcode demonstriert, wie Sie es Benutzern ermöglichen können, bestimmte Podcasts aus der Liste als Favoriten zu speichern.
 
@@ -94,13 +94,13 @@ public class PodcastObject : INotifyPropertyChanged
 }
 ```
 
-Beachten Sie: Das Objekt „PodcastObject“ implementiert die Schnittstelle [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged), um reagieren zu können, sobald der Benutzer die Eigenschaft „IsFavorite“ ändert.
+Beachten Sie: Das PodcastObject-Objekt implementiert die [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged)-Schnittstelle, um reagieren zu können, sobald der Benutzer die IsFavorite-Eigenschaft ändert.
 
-## <a name="defining-commands-with-the-icommand-interface"></a>Definieren von Befehlen mit der Schnittstelle „ICommand“
+## <a name="defining-commands-with-the-icommand-interface"></a>Definieren von Befehlen mit der ICommand-Schnittstelle
 
-Über die [Schnittstelle „ICommand“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) können Sie Befehle definieren, die für mehrere Eingabearten verfügbar sind. Ein Beispiel: Statt den Code eines Löschbefehls in identischer Form in zwei unterschiedliche Ereignishandler zu schreiben (einmal in einen Handler für das Drücken der ENTF-Taste und einmal in einen Handler für das Rechtsklicken auf „Löschen“ in einem Kontextmenü), können Sie Ihre Löschlogik einmalig als Schnittstelle des Typs [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) implementieren und anschließend für verschiedene Eingabearten verfügbar machen.
+Über die [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)-Schnittstelle können Sie Befehle definieren, die für mehrere Eingabearten verfügbar sind. Ein Beispiel: Statt den Code eines Löschbefehls in identischer Form in zwei unterschiedliche Ereignishandler zu schreiben (einmal in einen Handler für das Drücken der ENTF-TASTE und einmal in einen Handler für das Rechtsklicken auf „Löschen“ in einem Kontextmenü), können Sie Ihre Löschlogik einmalig als Schnittstelle des Typs [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) implementieren und anschließend für verschiedene Eingabearten verfügbar machen.
 
-Dazu müssen Sie die Schnittstelle „ICommand“ definieren, die die Aktion „Als Favorit speichern“ darstellt. In diesem Beispiel verwenden Sie die Methode [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) des Befehls, um einen Podcast als Favorit zu speichern. Der betreffende Podcast wird über den Parameter des Befehls an die Methode „Execute“ übergeben. Dieser Parameter kann mithilfe der Eigenschaft „CommandParameter“ gebunden werden.
+Dazu müssen Sie die ICommand-Schnittstelle definieren, die die Aktion „Als Favorit speichern“ darstellt. In diesem Beispiel verwenden Sie die [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute)-Methode des Befehls, um einen Podcast als Favorit zu speichern. Der betreffende Podcast wird über den Parameter des Befehls an die Execute-Methode übergeben. Dieser Parameter kann mithilfe der CommandParameter-Eigenschaft gebunden werden.
 
 ```csharp
 public class FavoriteCommand: ICommand
@@ -127,7 +127,7 @@ Wenn Sie einen Befehl für mehrere Sammlungen und Elemente verwenden möchten, k
 </Application.Resources>
 ```
 
-Zur Ausführung des Befehls rufen Sie seine Methode [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) auf.
+Zur Ausführung des Befehls rufen Sie seine [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute)-Methode auf.
 
 ```csharp
 // Favorite the item using the defined command
@@ -136,14 +136,14 @@ favoriteCommand.Execute(PodcastObject);
 ```
 
 
-## <a name="creating-a-usercontrol-to-respond-to-a-variety-of-inputs"></a>Erstellen eines „UserControl“-Steuerelements zur Reaktion auf verschiedene Eingabearten
+## <a name="creating-a-usercontrol-to-respond-to-a-variety-of-inputs"></a>Erstellen eines UserControl-Steuerelements zur Reaktion auf verschiedene Eingabearten
 
 Wenn Sie eine Liste von Elementen implementieren und jedes dieser Elemente auf verschiedene Eingabearten reagieren können soll, können Sie zur Vereinfachung des Codes jeweils ein [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)-Steuerelement für die einzelnen Elemente definieren. In diesem Steuerelement wiederum definieren Sie das Kontextmenü und die Ereignishandler des jeweiligen Elements. 
 
-So erstellen Sie ein „UserControl“-Steuerelement in Visual Studio:
+So erstellen Sie ein UserControl-Steuerelement in Visual Studio:
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt. Es wird ein Kontextmenü angezeigt.
-2. Klicken Sie auf **Hinzufügen > Neues Element...**. <br />Das Dialogfeld **Neues Element hinzufügen** wird angezeigt. 
-3. Wählen Sie aus der Liste der Elemente die Option „UserControl“ aus. Geben Sie dem Element einen Namen, und klicken Sie auf **Hinzufügen**. Visual Studio generiert nun einen „UserControl“-Stub. 
+2. Klicken Sie auf **Hinzufügen > Neues Element...** <br />Das Dialogfeld **Neues Element hinzufügen** wird angezeigt. 
+3. Wählen Sie aus der Liste der Elemente die Option „UserControl“ aus. Geben Sie dem Element einen Namen, und klicken Sie auf **Hinzufügen**. Visual Studio generiert nun einen UserControl-Stub. 
 
 In unserem Podcast-Beispiel werden alle Podcasts in einer Liste angezeigt. In dieser Liste gibt es verschiedene Möglichkeiten, wie der Benutzer einen Podcast als Favorit speichern kann. Konkret kann der Benutzer folgende Aktionen ausführen, um einen Podcast als Favorit zu speichern:
 - Aufrufen eines Kontextmenüs
@@ -153,7 +153,7 @@ In unserem Podcast-Beispiel werden alle Podcasts in einer Liste angezeigt. In di
 
 Um diese Verhaltensweisen zu kapseln und den Befehl „FavoriteCommand“ anwenden zu können, erstellen Sie nun ein neues [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)-Steuerelement namens „PodcastUserControl“, das einen Podcast in der Liste darstellt.
 
-„PodcastUserControl“ zeigt die Felder des Objekts „PodcastObject“ als „TextBlock“-Objekte an und kann auf verschiedene Benutzerinteraktionen reagieren. Im weiteren Verlauf des Artikels wird das „PodcastUserControl“-Steuerelement referenziert und erweitert.
+PodcastUserControl zeigt die Felder des PodcastObject-Objekts als TextBlock-Objekte an und kann auf verschiedene Benutzerinteraktionen reagieren. Im weiteren Verlauf des Artikels wird das PodcastUserControl-Steuerelement referenziert und erweitert.
 
 **PodcastUserControl.xaml**
 ```xaml
@@ -202,9 +202,9 @@ public sealed partial class PodcastUserControl : UserControl
 }
 ```
 
-Beachten Sie: „PodcastUserControl“ enthält einen Verweis auf „PodcastObject“ in Gestalt von „DependencyProperty“. So lassen sich Objekte des Typs „PodcastObject“ an das „PodcastUserControl“-Steuerelement binden.
+Beachten Sie: PodcastUserControl enthält einen Verweis auf PodcastObject in Gestalt von DependencyProperty. So lassen sich Objekte des Typs PodcastObject an das PodcastUserControl-Steuerelement binden.
 
-Nun erstellen Sie einige Objekte des Typs „PodcastObject“ und binden diese Objekte an ein „ListView“-Element, um eine Podcast-Liste zu erstellen. Die „PodcastUserControl“-Objekte beschreiben die Visualisierung der „PodcastObject“-Objekte und werden daher über die Eigenschaft „ItemTemplate“ von „ListView“ festgelegt.
+Nun erstellen Sie einige Objekte des Typs PodcastObject und binden diese Objekte an ein ListView-Element, um eine Podcast-Liste zu erstellen. Die PodcastUserControl-Objekte beschreiben die Visualisierung der PodcastObject-Objekte und werden daher über die ItemTemplate-Eigenschaft von ListView festgelegt.
 
 **MainPage.xaml**
 ```xaml
@@ -242,13 +242,13 @@ Benutzer können Kontextmenüs über die folgenden „Kontextaktionen“ aufrufe
 | Stift      | Drücken der Drucktaste, langes Drücken auf das Element |
 | Gamepad  | Menü-Taste                             |
 
-**Da der Benutzer ein Kontextmenü angezeigt, unabhängig vom Eingabetyp öffnen kann, sollte Ihr Kontextmenü alle Kontextbefehle für das Element der Liste enthalten.**
+**Da Kontextmenüs über jede Eingabeart geöffnet werden können, sollten sie sämtliche Kontextbefehle enthalten, die für das jeweilige Listenelement verfügbar sind.**
 
 ### <a name="contextflyout"></a>ContextFlyout
 
-Über die in der Klasse „UIElement“ definierte [Eigenschaft „ContextFlyout“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) können Sie ganz einfach ein Kontextmenü erstellen, das bei allen Eingabearten funktioniert. Über die Klasse „MenuFlyout“ stellen Sie ein Flyout bereit, das Ihr Kontextmenü darstellt. Sobald der Benutzer eine der oben aufgeführten „Kontextaktionen“ durchführt, wird das dem Element zugeordnete „MenuFlyout“-Objekt angezeigt.
+Über die in der UIElement-Klasse definierte [ContextFlyout-Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) können Sie ganz einfach ein Kontextmenü erstellen, das bei allen Eingabearten funktioniert. Über die MenuFlyout-Klasse stellen Sie ein Flyout bereit, das Ihr Kontextmenü darstellt. Sobald der Benutzer eine der oben aufgeführten „Kontextaktionen“ durchführt, wird das dem Element zugeordnete MenuFlyout-Objekt angezeigt.
 
-In diesem Beispiel fügen Sie „PodcastUserControl“ eine Eigenschaft „ContextFlyout“ hinzu. Das in der Eigenschaft „ContextFlyout“ definierte „MenuFlyout“-Objekt enthält ein einziges Element, über das sich Podcasts als Favorit speichern lassen. Beachten Sie: „MenuFlyoutItem“ verwendet den oben definierten Befehl „favoriteCommand“, wobei „CommandParameter“ an „PodcastObject“ gebunden ist.
+In diesem Beispiel fügen Sie „PodcastUserControl“ eine ContextFlyout-Eigenschaft hinzu. Das in der ContextFlyout-Eigenschaft definierte MenuFlyout-Objekt enthält ein einziges Element, über das sich Podcasts als Favorit speichern lassen. Beachten Sie: MenuFlyoutItem verwendet den oben definierten favoriteCommand-Befehl, wobei CommandParameter an PodcastObject gebunden ist.
 
 **PodcastUserControl.xaml**
 ```xaml
@@ -265,7 +265,7 @@ In diesem Beispiel fügen Sie „PodcastUserControl“ eine Eigenschaft „Conte
 
 ```
 
-Sie können auch das [Ereignis „ContextRequested“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) verwenden, um auf Kontextaktionen zu reagieren. Das Ereignis „ContextRequested“ wird nicht ausgelöst, wenn die Eigenschaft „ContextFlyout“ definiert wurde.
+Sie können auch das [ContextRequested-Ereignis](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) verwenden, um auf Kontextaktionen zu reagieren. Das ContextRequested-Ereignis wird nicht ausgelöst, wenn die ContextFlyout-Eigenschaft definiert wurde.
 
 ## <a name="creating-input-accelerators"></a>Erstellen von Eingabebeschleunigern
 
@@ -273,17 +273,17 @@ Für jedes Element in einer Sammlung sollte ein Kontextmenü mit allen verfügba
 
 In unserer Podcast-App ist der Befehl „Als Favorit speichern“ einer der am häufigsten ausgeführten Befehle.
 
-### <a name="keyboard-accelerators"></a>Zugriffstasten
+### <a name="keyboard-accelerators"></a>Tastaturkürzel
 
 #### <a name="shortcuts-and-direct-key-handling"></a>Behandeln von Tastenkombinationen und Einzeltasten
 
-![Aktionsausführung per STRG oder F-Taste](images/ContextualCommand_Keyboard.png)
+![Aktionsausführung per STRG oder F-TASTE](images/ContextualCommand_Keyboard.png)
 
-Je nach Art des Inhalts können Sie bestimmte Tastenkombinationen für die Ausführung einer Aktion festlegen. In einer E-Mail-App beispielsweise könnten sich ausgewählte E-Mails über die ENTF-Taste löschen lassen. In einer Podcast-App könnte die Tastenkombination STRG+S oder eine der F-Tasten einen Podcast als Favorit zur späteren Wiedergabe speichern. Obwohl einige Befehle allgemein bekannte Standardtasten bzw. Standardtastenkombinationen haben (z. B. ENTF zum Löschen), sind die Tasten und Tastenkombinationen anderer Befehle jeweils App-spezifisch oder domänenspezifisch. Verwenden Sie falls möglich allgemein bekannte Tasten und Tastenkombinationen, oder zeigen Sie für den Benutzer eine kurze QuickInfo mit der Taste oder Tastenkombination für den jeweiligen Befehl an.
+Je nach Art des Inhalts können Sie bestimmte Tastenkombinationen für die Ausführung einer Aktion festlegen. In einer E-Mail-App beispielsweise könnten sich ausgewählte E-Mails über die ENTF-TASTE löschen lassen. In einer Podcast-App könnte die Tastenkombination STRG+S oder eine der F-TASTEN einen Podcast als Favorit zur späteren Wiedergabe speichern. Obwohl einige Befehle allgemein bekannte Standardtasten bzw. Standardtastenkombinationen haben (z. B. ENTF zum Löschen), sind die Tasten und Tastenkombinationen anderer Befehle jeweils App-spezifisch oder domänenspezifisch. Verwenden Sie falls möglich allgemein bekannte Tasten und Tastenkombinationen, oder zeigen Sie für den Benutzer eine kurze QuickInfo mit der Taste oder Tastenkombination für den jeweiligen Befehl an.
 
-Über das Ereignis [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) kann Ihre App auf einen Tastendruck des Benutzers reagieren. In der Regel gehen die Benutzer davon aus, dass die App beim ersten Tastendruck reagiert, nicht erst, wenn sie die Taste wieder loslassen.
+Über das [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent)-Ereignis kann Ihre App auf einen Tastendruck des Benutzers reagieren. In der Regel gehen die Benutzer davon aus, dass die App beim ersten Tastendruck reagiert, nicht erst, wenn sie die Taste wieder loslassen.
 
-In diesem Beispiel zeigen wir Ihnen, wie Sie den Handler „KeyDown“ zu „PodcastUserControl“ hinzufügen können, damit ein Podcast als Favorit gespeichert wird, wenn der Benutzer STRG+S oder eine der F-Tasten drückt. Dabei verwenden Sie denselben Befehl wie zuvor.
+In diesem Beispiel zeigen wir Ihnen, wie Sie den KeyDown-Handler zu PodcastUserControl hinzufügen können, damit ein Podcast als Favorit gespeichert wird, wenn der Benutzer STRG+S oder eine der F-TASTEN drückt. Dabei verwenden Sie denselben Befehl wie zuvor.
 
 **PodcastUserControl.xaml.cs**
 ```csharp
@@ -306,9 +306,9 @@ protected override void OnKeyDown(KeyRoutedEventArgs e)
 
 ![Anzeigen einer Schaltfläche durch Platzieren des Mauszeigers auf einem Element](images/ContextualCommand_HovertoReveal.png)
 
-Benutzer sind vertraut mit per Rechtsklick aufrufbaren Kontextmenüs. Möglicherweise möchten Sie jedoch, dass sie häufig verwendete Befehle mit nur einem einzigen Mausklick ausführen können. Zu diesem Zweck können Sie der Canvas Ihres Sammlungselements dedizierte Schaltflächen hinzufügen. Damit Ihre Benutzer schnell mithilfe der Maus Aktionen durchführen können, die Benutzeroberfläche aber dennoch übersichtlich bleibt, können Sie festlegen, dass diese Schaltflächen nur angezeigt werden, wenn der Benutzer den Zeiger auf einem bestimmten Listenelement platziert.
+Benutzer sind vertraut mit per Rechtsklick aufrufbaren Kontextmenüs. Möglicherweise möchten Sie jedoch, dass sie häufig verwendete Befehle mit nur einem einzigen Mausklick ausführen können. Zu diesem Zweck können Sie dem Zeichenbereich Ihres Sammlungselements dedizierte Schaltflächen hinzufügen. Damit Ihre Benutzer schnell mithilfe der Maus Aktionen durchführen können, die Benutzeroberfläche aber dennoch übersichtlich bleibt, können Sie festlegen, dass diese Schaltflächen nur angezeigt werden, wenn der Benutzer den Zeiger auf einem bestimmten Listenelement platziert.
 
-In unserem Beispiel wird der Befehl „Als Favorit speichern“ durch eine Schaltfläche dargestellt, die direkt in „PodcastUserControl“ definiert ist. Beachten Sie: Die Schaltfläche in diesem Beispiel verwendet denselben Befehl wie zuvor, „favoriteCommand“. Die Sichtbarkeit der Schaltfläche können Sie über „VisualStateManager“ steuern. Diese Klasse schaltet zwischen den verschiedenen visuellen Zuständen um, sobald der Zeiger auf dem Steuerelement platziert wird oder vom Steuerelement entfernt wird.
+In unserem Beispiel wird der Befehl „Als Favorit speichern“ durch eine Schaltfläche dargestellt, die direkt in PodcastUserControl definiert ist. Beachten Sie: Die Schaltfläche in diesem Beispiel verwendet denselben Befehl wie zuvor, FavoriteCommand. Die Sichtbarkeit der Schaltfläche können Sie über VisualStateManager steuern. Diese Klasse schaltet zwischen den verschiedenen visuellen Zuständen um, sobald der Zeiger auf dem Steuerelement platziert wird oder vom Steuerelement entfernt wird.
 
 **PodcastUserControl.xaml**
 ```xaml
@@ -343,7 +343,7 @@ In unserem Beispiel wird der Befehl „Als Favorit speichern“ durch eine Schal
 </UserControl>
 ```
 
-Die Hoverschaltflächen sollten angezeigt bzw. ausgeblendet werden, sobald der Mauszeiger auf dem Element platziert oder von ihm entfernt wird. Zur Reaktion auf Mausereignisse können Sie die Ereignisse [PointerEntered](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) und [PointerExited](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) in „PodcastUserControl“ verwenden.
+Die Hoverschaltflächen sollten angezeigt bzw. ausgeblendet werden, sobald der Mauszeiger auf dem Element platziert oder von ihm entfernt wird. Zur Reaktion auf Mausereignisse können Sie die Ereignisse [PointerEntered](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) und [PointerExited](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) in PodcastUserControl verwenden.
 
 **PodcastUserControl.xaml.cs**
 ```csharp
@@ -366,7 +366,7 @@ protected override void OnPointerExited(PointerRoutedEventArgs e)
 }
 ```
 
-Die im Hoverzustand angezeigten Schaltflächen sind nur bei der Eingabe über Zeigegeräte verfügbar. Da diese Schaltflächen ausschließlich für die Eingabe über Zeigegeräte zur Verfügung stehen, möchten Sie zur Optimierung der Zeigereingabe möglicherweise den Abstand um das jeweilige Schaltflächensymbol minimieren oder vollständig entfernen. Wenn Sie sich dazu entscheiden, muss die Schaltfläche mindestens 20 × 20 px groß sein, damit sie mit Stift und Maus noch gut bedienbar ist.
+Die im Hoverzustand angezeigten Schaltflächen sind nur bei der Eingabe über Zeigegeräte verfügbar. Da diese Schaltflächen ausschließlich für die Eingabe über Zeigegeräte zur Verfügung stehen, möchten Sie zur Optimierung der Zeigereingabe möglicherweise den Abstand um das jeweilige Schaltflächensymbol minimieren oder vollständig entfernen. Wenn Sie sich dazu entscheiden, muss die Schaltfläche mindestens 20 × 20 Pixel groß sein, damit sie mit Stift und Maus noch gut bedienbar ist.
 
 ### <a name="touch-accelerators"></a>Beschleuniger für die Toucheingabe
 
@@ -376,9 +376,9 @@ Die im Hoverzustand angezeigten Schaltflächen sind nur bei der Eingabe über Ze
 
 Wischgestenbasierte Befehle sind ein Beschleuniger für die Toucheingabe. Sie ermöglichen es Benutzern von Touchgeräten, häufig verwendete sekundäre Aktionen per Touchgeste auszuführen. Mithilfe von Wischgesten können Benutzer auf Touchgeräten schnell und natürlich mit Inhalten interagieren. So können sie beispielsweise gängige Aktionen wie „Löschen per Wischen“ oder „Aufrufen per Wischen“ durchführen. Weitere Informationen finden Sie im Artikel zum Thema [Wischgestenbasierte Befehle](swipe.md).
 
-Um das Wischen in Ihrer Sammlung zu integrieren, benötigen Sie zwei Komponenten: SwipeItems, die die Befehle hostet; und ein SwipeControl, dient als Wrapper für das Element, und ermöglicht die streifeninteraktion.
+Um das Wischen in Ihrer Sammlung zu integrieren, benötigen Sie zwei Komponenten: SwipeItems zum Hosten der Befehle sowie ein SwipeControl als Wrapper des Elements, der die Interaktion per Wischgesten ermöglicht.
 
-„SwipeItems“ kann als Ressource in „PodcastUserControl“ definiert werden. In diesem Beispiel enthält „SwipeItems" einen Befehl, über den sich ein Element als Favorit speichern lässt.
+SwipeItems kann als Ressource in PodcastUserControl definiert werden. In diesem Beispiel enthält SwipeItems einen Befehl, über den sich ein Element als Favorit speichern lässt.
 
 ```xaml
 <UserControl.Resources>
@@ -389,7 +389,7 @@ Um das Wischen in Ihrer Sammlung zu integrieren, benötigen Sie zwei Komponenten
 </UserControl.Resources>
 ```
 
-„SwipeControl“ fungiert als Wrapper für das Element und erlaubt es dem Benutzer, per Wischgesten mit ihm zu interagieren. Beachten Sie, dass „SwipeControl“ einen Verweis auf „SwipeItems“ in seiner Eigenschaft „RightItems“ enthält. Das Element „Als Favorit speichern“ wird angezeigt, wenn der Benutzer von rechts nach links wischt.
+SwipeControl fungiert als Wrapper für das Element und erlaubt es dem Benutzer, per Wischgesten mit ihm zu interagieren. Beachten Sie, dass SwipeControl in seiner RightItems-Eigenschaft einen Verweis auf SwipeItems enthält. Das Element „Als Favorit speichern“ wird angezeigt, wenn der Benutzer von rechts nach links wischt.
 
 ```xaml
 <SwipeControl x:Name="swipeContainer" RightItems="{StaticResource RevealOtherCommands}">
@@ -421,7 +421,7 @@ Um das Wischen in Ihrer Sammlung zu integrieren, benötigen Sie zwei Komponenten
 </SwipeControl>
 ```
 
-Sobald der Benutzer über das Display wischt, um den Befehl „Als Favorit speichern“ aufzurufen, wird die Methode „Invoked“ aufgerufen.
+Sobald der Benutzer über das Display wischt, um den Befehl „Als Favorit speichern“ aufzurufen, wird die Invoked-Methode aufgerufen.
 
 ```csharp
 private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
@@ -448,12 +448,12 @@ Wie Sie Ihre App für die Stifteingabe optimieren können, erfahren Sie im Artik
 * Stellen Sie sicher, dass Ihre Benutzer auf sämtliche Befehle zugreifen können, und zwar über alle Typen von UWP-Geräten.
 * Integrieren Sie ein Kontextmenü, das alle für ein Sammlungselement verfügbaren Befehle bereitstellt. 
 * Implementieren Sie Eingabebeschleuniger für häufig verwendete Befehle. 
-* Verwenden Sie zur Implementierung von Befehlen die [Schnittstelle „ICommand“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand). 
+* Verwenden Sie zur Implementierung von Befehlen die [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand). 
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
 * [Menüs und Kontextmenüs](menus.md)
 * [Wischen](swipe.md)
-* [Zum Aktualisieren nach unten ziehen](pull-to-refresh.md)
-* [Stift- und Stift-Interaktion](../input/pen-and-stylus-interactions.md)
-* [Ihre App für Gamepad und Xbox](../devices/designing-for-tv.md)
+* [Aktualisierung durch Ziehen](pull-to-refresh.md)
+* [Interaktion per Eingabestift](../input/pen-and-stylus-interactions.md)
+* [App-Optimierung für Gamepads und Xbox](../devices/designing-for-tv.md)

@@ -11,10 +11,10 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cd11427ed1b53641a25c32742ca114b121efcfe8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363961"
 ---
 # <a name="xaml-styles"></a>XAML-Formatvorlagen
@@ -33,7 +33,7 @@ Verwenden Sie Stile, um visuelle Eigenschaften in wiederverwendbare Ressourcen a
 
 Sie können einen Stil inline im XAML-Code für ein Steuerelement oder als wiederverwendbare Ressource definieren. Sie können Ressourcen in der XAML-Datei einer bestimmten Seite, in der Datei App.xaml oder in einer separaten XAML-Datei mit Ressourcenverzeichnis definieren. Eine XAML-Datei mit einem Ressourcenverzeichnis kann App-übergreifend genutzt werden. Außerdem können in einer einzelnen App mehrere Ressourcenverzeichnisse zusammengeführt werden. Der Ort, an dem die Ressource definiert wird, bestimmt den Bereich, in dem sie verwendet werden kann. Ressourcen auf Seitenebene sind nur auf der Seite verfügbar, für die sie definiert sind. Sind Ressourcen mit demselben Schlüssel sowohl in „App.xaml“ als auch auf einer Seite definiert, haben die Ressourcen auf der Seite Vorrang vor den Ressourcen in App.xaml. Wenn eine Ressource in einer separaten Ressourcenwörterbuchdatei definiert ist, wird Ihr Bereich dadurch bestimmt, von wo auf das Ressourcenwörterbuch verwiesen wird.
 
-In der [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)-Definition benötigen wir ein [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype)-Attribut und eine Auflistung eines oder mehrerer [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Elemente. Das **TargetType**-Attribut ist eine Zeichenfolge, die einen [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)-Typ angibt, auf den der Stil angewendet wird. Der **TargetType**-Wert muss einen von **FrameworkElement** abgeleiteten Typ angeben, der durch die Windows-Runtime definiert ist, oder einen benutzerdefinierten Typ, der in einer referenzierten Assembly verfügbar ist. Wenn Sie versuchen, einen Stil auf ein Steuerelement anzuwenden, das nicht zum **TargetType**-Attribut des Stils passt, der angewendet werden soll, wird eine Ausnahme ausgelöst.
+In der [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)-Definition benötigen wir ein [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype)-Attribut und eine Auflistung mit einem oder mehreren [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Elementen. Das **TargetType**-Attribut ist eine Zeichenfolge, die einen [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)-Typ angibt, auf den der Stil angewendet wird. Der **TargetType**-Wert muss einen von **FrameworkElement** abgeleiteten Typ angeben, der durch die Windows-Runtime definiert ist, oder einen benutzerdefinierten Typ, der in einer referenzierten Assembly verfügbar ist. Wenn Sie versuchen, einen Stil auf ein Steuerelement anzuwenden, das nicht zum **TargetType**-Attribut des Stils passt, der angewendet werden soll, wird eine Ausnahme ausgelöst.
 
 Jedes [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Element benötigt eine [Property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.property) und einen [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.value). Diese Eigenschaftseinstellungen geben die Steuerelementeigenschaft an, auf die die Einstellung angewendet wird, und den Wert, der für diese Eigenschaft festgelegt wird. Sie können den **Setter.Value** entweder mit Attribut- oder Eigenschaftselementsyntax angeben. Dieses XAML-Codebeispiel zeigt den Stil, der auf die zuvor abgebildeten Schaltflächen angewendet wurde. In diesem XAML-Code verwenden die ersten beiden **Setter**-Elemente Attributsyntax, aber der letzte **Setter** (für die [BorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.borderbrush)-Eigenschaft) verwendet Eigenschaftselementsyntax. Bei diesem Beispiel wird das [x:Key-Attribut](../../xaml-platform/x-key-attribute.md) nicht verwendet, sodass der Stil implizit auf die Schaltflächen angewendet wird. Das implizite oder explizite Anwenden von Stilen wird im nächsten Abschnitt beschrieben.
 
@@ -75,7 +75,7 @@ Diese beiden Schaltflächen veranschaulichen implizite und explizite Stile.
 
 ![Schaltflächen mit impliziten und expliziten Stilen](images/styles-buttons-implicit-explicit.png)
 
-In diesem Beispiel besitzt der erste Stil ein [x:Key](../../xaml-platform/x-key-attribute.md)-Attribut, und der Zieltyp ist [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button). Die [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style)-Eigenschaft der ersten Schaltfläche wird auf diesen Schlüssel festgelegt, sodass der Stil explizit angewendet wird. Der zweite Stil wird implizit auf die zweite Schaltfläche angewendet, da deren Zieltyp **Button** ist und der Stil kein x:Key-Attribut besitzt.
+In diesem Beispiel besitzt der erste Stil ein [x:Key-Attribut](../../xaml-platform/x-key-attribute.md), und der Zieltyp ist [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button). Die [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style)-Eigenschaft der ersten Schaltfläche wird auf diesen Schlüssel festgelegt, sodass der Stil explizit angewendet wird. Der zweite Stil wird implizit auf die zweite Schaltfläche angewendet, da deren Zieltyp **Button** ist und der Stil kein x:Key-Attribut besitzt.
 
 ```XAML
 <Page.Resources>
@@ -147,7 +147,7 @@ Wenn Sie schnell einen Stil auf Ihr Steuerelement anwenden möchten, klicken Sie
 
 ## <a name="lightweight-styling"></a>Einfache Formatierung
 
-Das Überschreiben der Systempinsel geschieht grundsätzlich auf App- oder Seitenebene, und in keinem Fall wirkt sich die Farbüberschreibung auf alle Steuerelemente aus, die auf diesen Pinsel verweisen – und in XAML können zahlreiche Steuerelemente auf denselben Pinsel verweisen.
+Das Überschreiben der Systempinsel geschieht gewöhnlich auf App- oder Seitenebene, und in keinem Fall wirkt sich die Farbüberschreibung auf alle Steuerelemente aus, die auf diesen Pinsel verweisen – und in XAML können zahlreiche Steuerelemente auf denselben Pinsel verweisen.
 
 ![Formatierte Schaltflächen](images/LightweightStyling_ButtonStatesExample.png)
 
@@ -165,7 +165,7 @@ Das Überschreiben der Systempinsel geschieht grundsätzlich auf App- oder Seite
 </Page.Resources>
 ```
 
-Für Zustände wie PointerOver (Mauszeiger über der Schaltfläche), **PointerPressed** (Schaltfläche betätigt) oder Deaktiviert (Schaltfläche erlaubt keine Interaktion). Diese Zeilenenden werden auf die ursprünglichen einfache Stile Namen angefügt: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**, etc. Ändern die stellt Pinsel auch sicher, dass die Steuerelemente einheitlich zu Ihrer app-Design farblich dargestellt werden.
+Für Zustände wie PointerOver (Mauszeiger über der Schaltfläche), **PointerPressed** (Schaltfläche betätigt) oder Deaktiviert (Schaltfläche erlaubt keine Interaktion). Diese Endungen werden auf die ursprünglichen einfachen Formatierungsnamen angewendet: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled** usw. Wenn diese Pinsel ebenfalls geändert werden, wird sichergestellt, dass die Steuerelemente im App-Design einheitlich farbig gestaltet sind.
 
 Die Verwendung dieser Pinselüberschreibungen auf der **App.Resources**-Ebene verändert alle Schaltflächen in der gesamten App und nicht nur auf einer Seite.
 

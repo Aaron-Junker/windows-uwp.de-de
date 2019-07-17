@@ -7,14 +7,14 @@ label: Segoe MDL2 icons
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649055"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63838775"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2-Symbole
 
@@ -22,11 +22,11 @@ ms.locfileid: "57649055"
 
 In diesem Artikel werden die Symbole der Schriftart Segoe MDL2 Assets aufgeführt. 
 
-> **Wichtige APIs:** [**Symbol Enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **Wichtige APIs:** [**Symbol-Enumeration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [**FontIcon-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>Informationen zu MDL2 Assets
 
-Mit der Veröffentlichung von Windows 10 wurde die Schriftart Segoe UI Symbol von Windows 8/8.1 durch die Schriftart Segoe MDL2 Assets ersetzt. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** werden weiterhin als "legacy" Ressource verfügbar, aber es wird empfohlen, aktualisieren Ihre app, um die Verwendung der neuen **Segoe MDL2 Assets**.)
+Mit der Veröffentlichung von Windows 10 wurde die Schriftart Segoe UI Symbol von Windows 8/8.1 durch die Schriftart Segoe MDL2 Assets ersetzt. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** ist weiterhin als „veraltete“ Ressource verfügbar. Es wird jedoch empfohlen, Apps auf die neue Schriftart **Segoe MDL2 Assets** zu aktualisieren.)
 
 Die Mehrzahl der in der Schriftart **Segoe MDL2 Assets** enthaltenen Symbole und Benutzeroberflächen-Steuerelemente sind dem Unicode-Bereich „Private Use Area“ (PUA) zugeordnet. Mithilfe des PUA können Entwickler Glyphen, die keinen vorhandenen Codepunkten zugeordnet sind, private Unicode-Werte zuweisen. Dies ist hilfreich bei der Erstellung einer Symbolschriftart, führt jedoch auch zu einem Interoperabilitätsproblem. Ist die Schriftart nicht verfügbar, werden die Glyphen nicht angezeigt. Verwenden Sie die Glyphen nur, wenn Sie die Schriftart **Segoe MDL2 Assets** explizit angeben können.
 
@@ -40,33 +40,33 @@ Alle Glyphen in **Segoe MDL2 Assets** haben dieselbe feste Breite mit einer kons
 
 ![Verwenden von Glyphen mit der Breite 0](images/segoe-ui-symbol-layering.png)
 
-Viele der Symbole verfügen zudem über gespiegelte Formen, die in Sprachen verwendet werden können, in denen die Rechts-nach-Links-Ausrichtung verwendet wird, beispielsweise Arabisch, Persisch und Hebräisch.
+Viele der Symbole verfügen zudem über gespiegelte Formen, die in Sprachen verwendet werden können, in denen die Rechts-nach-Links-Ausrichtung verwendet wird, beispielsweise Arabisch, Farsi und Hebräisch.
 
 ## <a name="using-the-icons"></a>Verwenden der Symbole
-Wenn Sie eine app in entwickeln C#/VB/C++ und XAML, können Sie angegebenen Symbole aus Segoe MDL2 Assets mit den [Symbol Enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+Wenn Sie eine App in C#/VB/C++ und XAML entwickeln, können Sie mithilfe der [Symbol-Enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol) bestimmte Glyphen der Schriftart Segoe MDL2 Assets verwenden. 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
 ```
 
-Wenn Sie ein Glyphen der Schriftart **Segoe MDL2 Assets** verwenden möchten, das nicht in der Symbolenumeration enthalten ist, verwenden Sie ein [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon).
+Wenn Sie eine Glyphe der Schriftart **Segoe MDL2 Assets** verwenden möchten, die nicht in der Symbol-Enumeration enthalten ist, verwenden Sie ein [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon).
 
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Sie können auch die statische Ressource `SymbolThemeFontFamily` für den Zugriff auf **Segoe MDL2 Assets**, anstatt die Schriftart anhand des Namens:
+Sie können auch mit der statischen Ressource `SymbolThemeFontFamily` auf **Segoe MDL2 Assets** zugreifen, anstatt die Schriftart anhand des Namens anzugeben:
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
 ## <a name="how-do-i-get-this-font"></a>Wie erhalte ich diese Schriftart?
-* Unter Windows 10: Es gibt nichts, was Sie tun müssen, die Schriftart im Lieferumfang von Windows.
-* Auf einem Mac müssen Sie herunterladen und installieren die Schriftart aus: <a href="https://aka.ms/SegoeFonts">Abrufen der Segoe UI und MDL2 Symbol-Schriftarten</a>
+* Auf Windows 10-PCs: Sie müssen keine Schritte ausführen, die Schriftart ist im Lieferumfang von Windows enthalten.
+* Auf einem Mac müssen Sie die Schriftart herunterladen und installieren: <a href="https://aka.ms/SegoeFonts">Symbolschriftarten Segoe UI und MDL2 herunterladen</a>
 
 ## <a name="icon-list"></a>Liste der Symbole
-Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symbole enthält, als hier gezeigt werden kann. Viele der Symbole dienen speziellen Zwecken und werden für gewöhnlich nicht an anderer Stelle verwendet.
+Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symbole enthält, als hier gezeigt werden können. Viele der Symbole dienen speziellen Zwecken und werden für gewöhnlich nicht an anderer Stelle verwendet.
 
 
 <table style="background-color: white; color: black">
@@ -2362,7 +2362,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D5.png" width="32" height="32" alt="CheckList" /></td>
   <td>E9D5</td>
-  <td>Checkliste</td>
+  <td>CheckList</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D9.png" width="32" height="32" alt="Diagnostic" /></td>
   <td>E9D9</td>
@@ -2394,7 +2394,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EA18.png" width="32" height="32" alt="Shield" /></td>
   <td>EA18</td>
-  <td>Schildsymbol</td>
+  <td>Shield</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA1F.png" width="32" height="32" alt="Info2" /></td>
   <td>EA1F</td>
@@ -2690,7 +2690,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EB44.png" width="32" height="32" alt="Radar" /></td>
   <td>EB44</td>
-  <td>Netzdiagramm</td>
+  <td>Radar</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB47.png" width="32" height="32" alt="BusSolid" /></td>
   <td>EB47</td>
@@ -3077,7 +3077,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>Familie</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EBDB.png" width="32" height="32" alt="LockFeedback" /></td>
-  <td>EBDB</td>
+  <td>EBDA</td>
   <td>LockFeedback</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EBDE.png" width="32" height="32" alt="DeviceDiscovery" /></td>
@@ -3094,7 +3094,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EBE8.png" width="32" height="32" alt="Bug" /></td>
   <td>EBE8</td>
-  <td>Fehler</td>
+  <td>Bug</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EBFC.png" width="32" height="32" alt="TabletMode" /></td>
   <td>EBFC</td>
@@ -3438,7 +3438,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/ECAD.png" width="32" height="32" alt="Calories" /></td>
   <td>ECAD</td>
-  <td>Kalorien</td>
+  <td>Calories</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ECB9.png" width="32" height="32" alt="BandBattery0" /></td>
   <td>ECB9</td>
@@ -3846,7 +3846,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE4.png" width="32" height="32" alt="CloudSeach" /></td>
   <td>EDE4</td>
-  <td>CloudSeach</td>
+  <td>CloudSearch</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE5.png" width="32" height="32" alt="PinyinIMELogo" /></td>
   <td>EDE5</td>
@@ -3974,11 +3974,11 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3B.png" width="32" height="32" alt="Replay" /></td>
   <td>EF3B</td>
-  <td>Wiedergeben</td>
+  <td>Replay</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3C.png" width="32" height="32" alt="Eyedropper" /></td>
   <td>EF3C</td>
-  <td>Formatpipette</td>
+  <td>Eyedropper</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3D.png" width="32" height="32" alt="LineDisplay" /></td>
   <td>EF3D</td>
@@ -4018,7 +4018,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/F003.png" width="32" height="32" alt="Relationship" /></td>
   <td>F003</td>
-  <td>Beziehung</td>
+  <td>Relationship</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F080.png" width="32" height="32" alt="DefaultAPN" /></td>
   <td>F080</td>
@@ -4078,7 +4078,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B4.png" width="32" height="32" alt="Protractor" /></td>
   <td>F0B4</td>
-  <td>Winkelmesser</td>
+  <td>Protractor</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B5.png" width="32" height="32" alt="ChecklistMirrored" /></td>
   <td>F0B5</td>
@@ -4506,7 +4506,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/F180.png" width="32" height="32" alt="Lexicon " /></td>
   <td>F180</td>
-  <td>Lexikon </td>
+  <td>Lexicon </td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F182.png" width="32" height="32" alt="ScreenTime" /></td>
   <td>F182</td>
@@ -4561,7 +4561,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>IOT</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F22E.png" width="32" height="32" alt="UnknownMirrored" /></td>
-  <td>F22E</td>
+  <td>F22C</td>
   <td>UnknownMirrored</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F246.png" width="32" height="32" alt="ViewDashboard" /></td>
@@ -4598,7 +4598,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/F270.png" width="32" height="32" alt="Ear" /></td>
   <td>F270</td>
-  <td>Ohr</td>
+  <td>Ear</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F271.png" width="32" height="32" alt="PointerHand" /></td>
   <td>F271</td>
@@ -4629,7 +4629,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>StatusInfo</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F3CD.png" width="32" height="32" alt="StatusInfoLeft" /></td>
-  <td>F3CD</td>
+  <td>F3CC</td>
   <td>StatusInfoLeft</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F3E2.png" width="32" height="32" alt="NearbySharing" /></td>
@@ -4658,7 +4658,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  </tr>
 <tr><td><img src="images/segoe-mdl/F413.png" width="32" height="32" alt="CopyTo" /></td>
   <td>F413</td>
-  <td>CopyTo-Vorgang</td>
+  <td>CopyTo</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F439.png" width="32" height="32" alt="DynamicLock" /></td>
   <td>F439</td>
@@ -4669,7 +4669,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>PenTips</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F45F.png" width="32" height="32" alt="PenTipsMirrored" /></td>
-  <td>F45F</td>
+  <td>F45E</td>
   <td>PenTipsMirrored</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F460.png" width="32" height="32" alt="HWPJoin" /></td>
@@ -4893,7 +4893,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>HolePunchPortraitLeft</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F591.png" width="32" height="32" alt="HolePunchPortraitRight" /></td>
-  <td>F591.</td>
+  <td>F591</td>
   <td>HolePunchPortraitRight</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F592.png" width="32" height="32" alt="HolePunchPortraitTop" /></td>
@@ -5167,7 +5167,7 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Richtlinien für Symbole](../style/icons.md)
-* [Symbolenumeration](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [Symbol-Enumeration](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
 * [FontIcon-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 

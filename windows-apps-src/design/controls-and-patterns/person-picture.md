@@ -5,27 +5,27 @@ template: detail.hbs
 label: Parallax View
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: trestar
 design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638935"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63791707"
 ---
 # <a name="person-picture-control"></a>Personenbild-Steuerelement
 
-Das Personenbild-Steuerelement zeigt das Avatar-Bild für eine Person an, sofern ein solches Bild verfügbar ist. Andernfalls werden die Initialen der Person oder eine allgemeine Glyphe angezeigt. Sie können das Steuerelement zum Anzeigen eines [Contact-Objekts](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) – eines Objekts, das die Kontaktinformationen einer Person verwaltet – verwenden, oder Sie können manuell Kontaktinformationen wie einen Anzeigenamen und ein Profilbild angeben.  
+Das Personenbild-Steuerelement zeigt das Avatar-Bild für eine Person an, sofern ein solches Bild verfügbar ist. Andernfalls werden die Initialen der Person oder eine allgemeine Glyphe angezeigt. Sie können das Steuerelement zum Anzeigen eines [Contact-Objekts](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) (eines Objekts, das die Kontaktinformationen einer Person verwaltet) verwenden, oder Sie können manuell Kontaktinformationen wie einen Anzeigenamen und ein Profilbild angeben.  
 
-> **Wichtige APIs:** [PersonPicture Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [wenden Sie sich an der Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **Wichtige APIs:** [PersonPicture-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [Contact-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
-Diese Abbildung zeigt zwei Steuerelement für Bilder von Personen zusammen mit zwei [TextBlock](text-block.md)-Elementen, die Namen der Benutzer anzeigen. 
-![Das Steuerelement für die person](images/person-picture/person-picture_hero.png)
+Diese Abbildung zeigt zwei Steuerelemente für Bilder von Personen zusammen mit zwei [TextBlock](text-block.md)-Elementen, die die Namen der Benutzer anzeigen. 
+![Das Personenbild-Steuerelement](images/person-picture/person-picture_hero.png)
 
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
@@ -36,7 +36,7 @@ Verwenden Sie das Personenbild, wenn Sie eine Person und deren Kontaktinformatio
 * Zur Anzeige des Absenders einer Nachricht 
 * Zur Anzeige eines Social-Media-Kontakts
 
-Die Abbildung zeigt Person den Bildsteuerelement in einer Liste von Kontakten: ![Das Steuerelement für die person](images/person-picture/person-picture-control.png)
+Die Abbildung zeigt das Personenbild-Steuerelement in einer Kontaktliste: ![Das Personenbild-Steuerelement](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>Beispiele
 
@@ -171,9 +171,9 @@ namespace SampleApp
 
 ## <a name="determining-which-info-to-display"></a>Festlegen der anzuzeigenden Informationen
 
-Wenn Sie ein [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekt angeben, wertet das Personenbild-Steuerelement dieses aus, um zu ermitteln, welche Informationen angezeigt werden können. 
+Wenn Sie ein [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekt angeben, wird es vom Personenbild-Steuerelement ausgewertet, um zu ermitteln, welche Informationen angezeigt werden können. 
 
-Wenn ein Bild verfügbar ist, zeigt das Steuerelement in der folgenden Reihenfolge das erste Bild an, das es findet:
+Wenn ein Bild verfügbar ist, zeigt das Steuerelement erst gefundene Bild an; hierbei gilt die folgende Reihenfolge:
 
 1. LargeDisplayPicture
 1. SmallDisplayPicture
@@ -185,9 +185,9 @@ Ist kein Bild vorhanden, zeigt das Steuerelement den Namen oder die Initialen de
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Kontakte und Kalender](../../contacts-and-calendar/index.md)
-* [Kontaktkarten-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [Beispiel für Visitenkarten](https://go.microsoft.com/fwlink/p/?LinkId=624040)

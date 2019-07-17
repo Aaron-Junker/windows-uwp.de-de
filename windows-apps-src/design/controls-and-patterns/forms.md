@@ -1,68 +1,68 @@
 ---
-Description: Layoutrichtlinien für die Formulare in UWP-apps.
+Description: Layoutrichtlinien für Formulare in UWP-Apps.
 title: Formulare
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
-keywords: Windows 10, UWP, fluent
-ms.openlocfilehash: 8a57f13e168a248569bca1beeceed7b4f6c89f69
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+keywords: Windows 10, UWP, Fluent
+ms.openlocfilehash: ff071a2a98c533ad7c089b28165f026de00ba68f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658155"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319096"
 ---
 # <a name="forms"></a>Formulare
-Ein Formular ist eine Gruppe von Steuerelementen, die erfassen und Senden von Daten von Benutzern. Formulare werden in der Regel verwendet, für die Seite mit Einstellungen, Umfragen, Erstellen von Konten und vieles mehr. 
+Ein Formular ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Formulare werden in der Regel für Seiten mit Einstellungen und Umfragen, zum Erstellen von Konten und für vieles mehr verwendet. 
 
-Dieser Artikel beschreibt Entwurfsrichtlinien für das Erstellen von XAML-Layouts für Formulare.
+In diesem Artikel werden Entwurfsrichtlinien für das Erstellen von XAML-Layouts für Formulare erörtert.
 
-![Beispiel für form](images/PivotHeader.png)
+![Beispiel für Formulare](images/PivotHeader.png)
 
 ## <a name="when-should-you-use-a-form"></a>Wann sollten Sie ein Formular verwenden?
-Ein Formular ist eine dedizierte Seite zum Sammeln von von Dateneingaben, die eindeutig miteinander verknüpft sind. Sie sollten ein Formular verwenden, wenn Sie explizit Daten von einem Benutzer sammeln möchten. Sie können ein Formular für einen Benutzer zu erstellen:
-- Melden Sie sich bei einem Konto
-- Melden Sie sich für ein Konto
-- Ändern Sie die Appeinstellungen, z. B. Datenschutz oder Anzeigeoptionen
-- Machen Sie eine Umfrage
-- Erwerben Sie ein Element
+Ein Formular ist eine spezielle Seite zum Erfassen von Dateneingaben, die eindeutig zueinander gehören. Sie sollten ein Formular verwenden, wenn Sie explizit Daten von einem Benutzer sammeln möchten. Sie können für Benutzer auch ein Formular für folgende Zwecke erstellen:
+- Anmelden bei einem Konto
+- Registrieren für ein Konto
+- Ändern von App-Einstellungen, z. B. Datenschutz- oder Anzeigeoptionen
+- Teilnehmen an einer Umfrage
+- Kaufen eines Artikels
 - Feedback bereitstellen
 
 ## <a name="types-of-forms"></a>Arten von Formularen
 
-Wenn übermittelt und Darstellung von Benutzereingaben, gibt es zwei Arten von Formularen:
+Wenn es um das Übermitteln und Anzeigen von Benutzereingaben geht, gibt es zwei Arten von Formularen:
 
-### <a name="1-instantly-updating"></a>1. Sofort aktualisieren.
-![Seite "Einstellungen"](images/control-examples/toggle-switch-news.png)
+### <a name="1-instantly-updating"></a>1. Mit sofortiger Aktualisierung
+![Einstellungsseite](images/control-examples/toggle-switch-news.png)
 
-Verwenden Sie ein sofort aktualisieren Formular aus, wenn Benutzer sofort die Ergebnisse Ändern der Werte im Formular angezeigt werden sollen. Z. B. in die Seite mit Einstellungen, die aktuellen Einstellungen werden angezeigt, und alle an der Auswahl der vorgenommenen Änderungen werden sofort angewendet. Um die Änderungen in Ihrer app zu bestätigen, dass [Hinzufügen eines ereignishandlers](controls-and-events-intro.md) auf jedem Eingabesteuerelement. Wenn ein Benutzer ein Eingabesteuerelements ändert, kann Ihre app angemessen reagieren.
+Verwenden Sie ein sich sofort aktualisierendes Formular, wenn Benutzer unmittelbar sehen sollen, welches Ergebnis das Ändern der Werte im Formular hat. Auf Einstellungsseiten werden die aktuell ausgewählten Optionen angezeigt, und sämtliche Änderungen an den Einstellungen werden sofort angewendet. Zum Bestätigen der Änderungen in der App müssen Sie jedem Eingabesteuerelement [einen Ereignishandler hinzufügen](controls-and-events-intro.md). Wenn ein Benutzer ein Eingabesteuerelement ändert, kann Ihre App entsprechend reagieren.
 
-### <a name="2-submitting-with-button"></a>2. Übermitteln mit der Schaltfläche
-Die andere Art von Formular kann den Benutzer beim Senden von Daten mit einem Klick auf eine Schaltfläche auswählen.
+### <a name="2-submitting-with-button"></a>2. Übermitteln per Schaltfläche
+Die andere Art von Formular ermöglicht es Benutzern zu entscheiden, ob sie Daten übermitteln, indem Sie auf eine Schaltfläche klicken.
 
-![Kalender hinzufügen, neue Seite "Ereignisse"](images/calendar-form.png)
+![Seite zum Hinzufügen eines neuen Ereignisses im Kalender](images/calendar-form.png)
 
-Diese Art von Formular bietet die Benutzerflexibilität reagiert. In der Regel dieses Typs des Formulars weitere formfreien Eingabefelder enthält und daher empfängt eine größere Vielfalt von Antworten. Um gültige Benutzereingaben und ordnungsgemäß formatierte Daten nach der Übermittlung zu gewährleisten, sollten Sie folgende Aspekte:
+Diese Art von Formular bietet Benutzern eine größere Flexibilität hinsichtlich ihrer Antworten. Im Allgemeinen enthalten derartige Formulare Freiform-Eingabefelder, sodass eine größere Bandbreite von Antworten möglich ist. Um bei der Übermittlung gültige Benutzereingaben und ordnungsgemäß formatierte Daten sicherzustellen, sollten Sie folgende Empfehlungen befolgen:
 
-- Machen Sie es nicht möglich, ungültige Informationen über das richtige Steuerelement senden (d. h., verwenden Sie eine CalendarDatePicker statt ein Textfeld für Datumsangaben). Weitere Informationen finden Sie bei der Auswahl der entsprechenden Benutzereingabe-Steuerelemente im Formular in der Benutzereingabe-Steuerelemente in einem späteren Abschnitt aktivieren.
-- Wenn TextBox-Steuerelemente verwenden, geben Sie Benutzern einen Hinweis, der das gewünschte Eingabeformat mit der [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) Eigenschaft.
-- Geben Sie die Benutzer mit dem entsprechenden Bildschirmtastatur, indem Sie angeben, die erwartete Eingabe eines Steuerelements mit der [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope) Eigenschaft.
-- Markieren Sie erforderliche Eingabe mit einem Sternchen * für die Bezeichnung.
-- Deaktivieren Sie die Schaltfläche "Senden" aus, bis alle erforderlichen Informationen ausgefüllt wird.
-- Wenn ungültige Daten nach der Übermittlung vorhanden sind, markieren Sie die Steuerelemente mit der ungültigen Eingabe mit hervorgehobenen Feldern oder Rahmen und muss der Benutzer das Formular erneut übermitteln.
-- Stellen Sie sicher, dass eine entsprechende Fehlermeldung für den Benutzer anzuzeigen, auf andere Fehler, z. B. Fehler bei der Netzwerkverbindung. 
+- Schließen Sie mit dem richtigen Steuerelement aus, dass ungültige Informationen übermittelt werden (verwenden Sie z. B. ein CalendarDatePicker-Steuerelement anstelle eines TextBox-Steuerelements für Datumsangaben). Weitere Informationen zum Auswählen der richtigen Eingabesteuerelemente für das Formular finden Sie weiter unten im Abschnitt „Eingabesteuerelemente“.
+- Geben Sie bei Verwendung von TextBox-Steuerelementen Benutzern mit der [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText)-Eigenschaft einen Hinweis, welches Eingabeformat gewünscht wird.
+- Stellen Sie für Benutzer die geeignete Bildschirmtastatur bereit, indem Sie die erwartete Eingabe eines Steuerelements mit der [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope)-Eigenschaft angeben.
+- Heben Sie erforderliche Eingaben in der Bezeichnung mit einem Sternchen (*) hervor.
+- Deaktivieren Sie die Schaltfläche zum Übermitteln, bis alle erforderlichen Informationen eingetragen wurden.
+- Wenn bei der Übermittlung ungültige Daten festgestellt werden, kennzeichnen Sie die Steuerelemente mit ungültigen Eingaben mit hervorgehobenen Feldern oder Rahmen, und fordern Sie den Benutzer auf, das Formular erneut zu übermitteln.
+- Stellen Sie sicher, dass bei sonstigen Fehlern (z. B. einer unterbrochenen Netzwerkverbindung) eine entsprechende Fehlermeldung für den Benutzer ausgegeben wird. 
 
 
 ## <a name="layout"></a>Layout
 
-Um die benutzererfahrung zu vereinfachen, und stellen Sie sicher, dass Benutzer die richtige Eingabe eingeben können, sollten Sie die folgenden Empfehlungen für das Entwerfen von Layouts für Formulare aus. 
+Befolgen Sie die nachstehenden Empfehlungen für das Entwerfen von Formularlayouts, um die Benutzerfreundlichkeit zu steigern und sicherzustellen, dass Benutzer die richtigen Informationen eingeben können. 
 
 ### <a name="labels"></a>Beschriftungen
-[Bezeichnungen](labels.md) ausgerichtet und über das Steuerelement platziert werden soll. Viele Steuerelemente verfügen über eine integrierte Header-Eigenschaft der Bezeichnung angezeigt werden. Für Steuerelemente ohne Header-Eigenschaft oder zum Beschriften von Steuerelementgruppen können Sie stattdessen ein [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element verwenden.
+[Beschriftungen](labels.md) sollten linksbündig ausgerichtet und über dem Steuerelement platziert sein. Viele Steuerelemente verfügen über eine integrierte Header-Eigenschaft zum Anzeigen der Beschriftung. Für Steuerelemente ohne Header-Eigenschaft oder zum Beschriften von Steuerelementgruppen können Sie stattdessen ein [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element verwenden.
 
-Um [Entwurf für den Zugriff auf](../accessibility/accessibility.md), bezeichnen alle Person und eine Gruppe von Steuerelementen für Übersichtlichkeit für beide Menschen und Sprachausgabe. 
+Beschriften Sie beim [Entwerfen für Barrierefreiheit](../accessibility/accessibility.md) alle einzelnen Steuerelemente und Steuerelementgruppen, damit diese sowohl für Benutzer als auch für die Sprachausgabe eindeutig sind. 
 
-Verwenden Sie die Standardeinstellung für Schriftschnitte, [UWP Typ Ramp](../style/typography.md). Verwendung `TitleTextBlockStyle` für Seitentitel, `SubtitleTextBlockStyle` für Gruppenüberschriften, und `BodyTextBlockStyle` für Bezeichnungen.
+Verwenden Sie für Schriftschnitte die standardmäßige [UWP-Typhierarchie](../style/typography.md). Verwenden Sie `TitleTextBlockStyle` für Seitentitel, `SubtitleTextBlockStyle` für Gruppenüberschriften und `BodyTextBlockStyle` für Bezeichnungen von Steuerelementen.
 
 <div class="mx-responsive-img">
 <table>
@@ -75,12 +75,12 @@ Verwenden Sie die Standardeinstellung für Schriftschnitte, [UWP Typ Ramp](../st
 </div>
 
 ### <a name="spacing"></a>Abstand
-Um eine Gruppe von Steuerelementen visuell voneinander zu trennen, verwenden Sie [Alignment, Margin und Padding](../layout/alignment-margin-padding.md). Einzelne Eingabesteuerelementen sollte 80px Höhe werden und durch Leerzeichen getrennten 24px auseinander liegen. Gruppen von Benutzereingabe-Steuerelemente sollten Abstand 48px auseinander liegen.
+Informationen zur visuellen Abgrenzung einer Gruppe von Steuerelementen finden Sie unter [Ausrichtung, Ränder und Abstand](../layout/alignment-margin-padding.md). Einzelne Eingabesteuerelemente weisen eine Höhe von 80 Pixel auf, zwischen ihnen sollte ein Abstand von 24 Pixeln liegen. Der Abstand zwischen Gruppen von Eingabesteuerelementen sollte 48 Pixel betragen.
 
-![Forms-Gruppen](images/forms-groups.png)
+![Formulargruppen](images/forms-groups.png)
 
 ### <a name="columns"></a>Spalten
-Erstellen von Spalten kann unnötigen Leerraum in Formularen, vor allem bei größeren Bildschirmgrößen reduziert werden. Wenn Sie ein Formular mit mehreren Spalten erstellen möchten, sollte die Anzahl der Spalten hängt jedoch die Anzahl der Benutzereingabe-Steuerelemente auf der Seite und die Größe des Bildschirms der app-Fensters ab. Statt den Bildschirm mit zahlreichen Eingabesteuerelementen zu überlasten, erwägen Sie, mehrere Seiten für das Formular zu erstellen.  
+Durch das Erstellen von Spalten können Sie unnötigen Leerraum in Formularen verringern, insbesondere für größere Bildschirmgrößen. Wenn Sie jedoch ein Formular mit mehreren Spalten erstellen möchten, sollte die Anzahl der Spalten von der Anzahl der Eingabesteuerelemente auf der Seite und der Bildschirmgröße des App-Fensters abhängen. Anstatt den Bildschirm mit einer Vielzahl von Eingabesteuerelementen zu überfrachten, erwägen Sie, mehrere Seiten für das Formular zu erstellen.  
 
 <div class="mx-responsive-img">
 <table>
@@ -94,66 +94,66 @@ Erstellen von Spalten kann unnötigen Leerraum in Formularen, vor allem bei grö
 
 </div>
 
-### <a name="responsive-layout"></a>Dynamisches layout
-Forms sollte als die größenänderungen Bildschirm- oder Größe ändern, damit der Benutzer alle Felder für die Eingabe nicht detailliert erläutern. Weitere Informationen finden Sie unter [reaktionsfähige Designtechniken](../layout/responsive-design.md). Beispielsweise empfiehlt es sich zu bestimmten Regionen des Formulars immer in der Ansicht jeder Bildschirmgröße.
+### <a name="responsive-layout"></a>Dynamisches Layout
+Die Größe von Formularen sollte sich bei Änderungen der Bildschirm- oder Fenstergröße ändern, damit Benutzer Eingabefelder nicht übersehen. Weitere Informationen finden Sie unter [Reaktionsfähige Designtechniken](../layout/responsive-design.md). Es kann beispielsweise von Vorteil sein, bestimmte Bereiche des Formulars immer sichtbar zu halten, ungeachtet von der jeweiligen Bildschirmgröße.
 
-![Forms-Fokus](images/forms-focus2.png)
+![Fokus auf Formularen](images/forms-focus2.png)
 
 ### <a name="tab-stops"></a>Tabstopps
-Benutzer können mithilfe die Tastatur Steuerelemente mit navigieren [Tabstopps](../input/keyboard-interactions.md#tab-stops). Standardmäßig gibt die Aktivierreihenfolge von Steuerelementen für die Reihenfolge, in der sie in XAML erstellt werden. Um das Standardverhalten zu überschreiben, ändern Sie die **IsTabStop** oder **TabIndex** Eigenschaften des Steuerelements. 
+Benutzer können über die Eingabe von [Tabstopps](../input/keyboard-interactions.md#tab-stops) auf der Tastatur zwischen Steuerelementen wechseln. Standardmäßig spiegelt die Aktivierreihenfolge der Steuerelemente die Reihenfolge wider, in der sie in XAML erstellt wurden. Um das Standardverhalten zu überschreiben, ändern Sie die **IsTabStop**-Eigenschaft oder die **TabIndex**-Eigenschaft des Steuerelements. 
 
-![TAB-Fokus auf das Steuerelement im Formular](images/forms-focus1.png)
+![Fokus durch TAB-TASTE auf Steuerelement im Formular](images/forms-focus1.png)
 
-## <a name="input-controls"></a>Benutzereingabe-Steuerelemente
-Benutzereingabe-Steuerelemente sind die Elemente der Benutzeroberfläche, die Benutzer zur Eingabe von Informationen in Formulare zu ermöglichen. Einige allgemeine Steuerelemente, die Formen hinzugefügt werden können, sowie Informationen zu deren Verwendung weiter unten.
+## <a name="input-controls"></a>Eingabesteuerelemente
+Eingabesteuerelemente sind Elemente der Benutzeroberfläche, über die Benutzer Informationen in Formulare eingeben können. Nachfolgend sind einige gängige Steuerelemente aufgeführt, die Formularen hinzugefügt werden können, sowie Angaben zu ihrer Verwendung.
 
 ### <a name="text-input"></a>Texteingabe
 Steuerelement | Verwendung | Beispiel
  - | - | -
-[TextBox](text-box.md) | Erfassen Sie eine oder mehrere Textzeilen | Namen, formfreien Antworten oder feedback
-[PasswordBox-Element](password-box.md) | Sammeln Sie private Daten verdecken von Zeichen | Kennwörter, Sozialversicherungsnummern (SSN), PINs, Kreditkarteninformationen 
-[AutoSuggestBox](auto-suggest-box.md) | Zeigen Sie Benutzer eine Liste mit Vorschlägen in einen entsprechenden Satz von Daten an, während sie eingeben | Datenbank suchen, um e-Mail-: Zeile, die vorherige Abfragen
-[RichEditBox](rich-edit-box.md) | Bearbeiten von Textdateien mit formatierten Text, links und Bilder | Datei hochladen, Vorschau und in der app bearbeiten
+[TextBox](text-box.md) | Erfassen einer oder mehrerer Textzeilen | Namen, formfreie Antworten oder Feedback
+[PasswordBox](password-box.md) | Erfassen privater Daten durch Verbergen der Zeichen | Kennwörter, Sozialversicherungsnummern (SSN), PINs, Kreditkarteninformationen 
+[AutoSuggestBox](auto-suggest-box.md) | Anzeigen einer Liste mit Vorschlägen für Benutzer aus einer entsprechenden Menge von Daten während der Eingabe | Datenbanksuche, mail to:-Zeile, vorherige Abfragen
+[RichEditBox](rich-edit-box.md) | Bearbeiten von Textdateien mit formatiertem Text, Links und Bildern | Hochladen von Dateien, Vorschau und Bearbeiten in der App
 
 ### <a name="selection"></a>Auswahl
 Steuerelement | Verwendung | Beispiel
 - | - | - 
-| [Kontrollkästchen](checkbox.md) | Aktivieren Sie oder deaktivieren Sie eine oder mehrere Aufgaben | Geschäftsbedingungen stimmen Sie zu, fügen Sie optionale Elemente hinzu, wählen Sie alle zutreffenden
-[Optionsfeld](radio-button.md) | Wählen Sie eine Option aus, aus zwei oder mehr Optionen | Wählen Sie Typ, Versand, Methode usw. an.
-[ToggleSwitch](toggles.md) | Wählen Sie eine der zwei sich gegenseitig ausschließende Optionen | Aktivieren/Deaktivieren
+| [CheckBox](checkbox.md) | Aktivieren oder Deaktivieren eines oder mehrerer Aktionselemente | Akzeptieren von Geschäftsbedingungen, Hinzufügen von optionalen Elementen, Auswählen aller zutreffenden Optionen
+[RadioButton](radio-button.md) | Auswählen einer Option aus mindestens zwei Auswahlmöglichkeiten | Auswählen von Typ, Versandart usw.
+[ToggleSwitch](toggles.md) | Auswählen einer von zwei einander ausschließenden Optionen | Ein/Aus
 
 > **Hinweis**: Wenn fünf oder mehr Auswahlelemente vorhanden sind, verwenden Sie ein Listensteuerelement.
 
 ### <a name="lists"></a>Listen
 Steuerelement | Verwendung | Beispiel
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Starten Sie in compact Zustand, und erweitern Sie, um die Liste der auswählbaren Elemente anzeigen | Wählen Sie aus einer langen Liste von Elementen, z. B. Status oder Länder
-[ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Einträge und Kopfzeilen von Gruppen zuweisen, ziehen Sie Elemente ablegen, kommentieren Sie die Inhalte und Elemente neu anordnen | Rank-Optionen
-[GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Anordnen und Image-basierte Sammlungen durchsuchen | Wählen Sie ein Foto, Farbe, zeigen Design an
+[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Starten im kompakten Modus und Erweitern, um die Liste der auswählbaren Elemente anzuzeigen | Auswählen aus einer langen Liste von Elementen, z. B. Status oder Länder
+[ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Kategorisieren von Elementen und Zuweisen von Gruppenüberschriften, Verschieben von Elementen per Drag & Drop, Überprüfen von Inhalten und Neuanordnen von Elementen | Bilden einer Rangfolge für Optionen
+[GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Anordnen und Durchsuchen von bildbasierten Sammlungen | Auswählen eines Fotos, einer Farbe oder Anzeigedesigns
 
-### <a name="numeric-input"></a>Numerische Eingaben
+### <a name="numeric-input"></a>Numerische Eingabe
 Steuerelement | Verwendung | Beispiel
 - | - | -
-[Schieberegler](slider.md) | Wählen Sie eine Zahl aus einem Bereich von fortlaufenden numerischen Werten | Prozentsätze "," Volume "," wiedergabegeschwindigkeit
-[Bewertung](rating.md) | Bewertung mit Sternen | Kundenfeedback
+[Schieberegler](slider.md) | Auswählen einer Zahl aus einem Bereich von fortlaufenden numerischen Werten | Prozentsätze, Lautstärke, Wiedergabegeschwindigkeit
+[Rating](rating.md) | Bewerten mit Sternen | Kundenfeedback
 
 ### <a name="date-and-time"></a>Datum und Uhrzeit
 
 Steuerelement | Verwendung 
 - | - 
-[CalendarView](calendar-view.md) | Wählen Sie ein einzelnes Datum oder einen Bereich von Datumswerten aus einem Kalender stets sichtbar sind 
-[CalendarDatePicker](calendar-date-picker.md) | Wählen Sie ein einzelnes Datum aus einem kontextbezogene Kalender 
-["DatePicker"](date-picker.md) | Wählen Sie ein einzelnes lokalisierte Datum Wenn kontextbezogene Informationen nicht wichtig ist
-[TimePicker](time-picker.md) | Wählen Sie einen einzigen Wert
+[CalendarView](calendar-view.md) | Auswählen eines einzelnen Datums oder eines Datumsbereichs aus einem immer sichtbaren Kalender 
+[CalendarDatePicker](calendar-date-picker.md) | Auswählen eines einzelnen Datums aus einem kontextbezogenen Kalender 
+[DatePicker](date-picker.md) | Auswählen eines einzelnen bekannten Datums, wenn kontextbezogene Informationen nicht wichtig sind
+[TimePicker](time-picker.md) | Auswählen eines einzelnen Uhrzeitwerts
 
 ### <a name="additional-controls"></a>Zusätzliche Steuerelemente 
-Eine vollständige Liste der UWP-Steuerelementen, finden Sie unter [Index der Steuerelemente nach Funktion](controls-by-function.md).
+Eine komplette Liste der UWP-Steuerelemente finden Sie unter [Index der Steuerelemente nach Funktion](controls-by-function.md).
 
-Komplexer und benutzerdefinierte Benutzeroberflächen-Steuerelemente, finden Sie in UWP-Ressourcen, die von anderen Unternehmen verfügbar wie z. B. [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [ Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP), und [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
+Komplexere und benutzerdefinierte Steuerelemente der Benutzeroberfläche finden Sie in UWP-Ressourcen, die von Unternehmen wie [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) und [ActiPro](https://www.actiprosoftware.com/products/controls/universal) bereitgestellt werden.
 
-## <a name="one-column-form-example"></a>Beispiel für eine Spalte form
-Dieses Beispiel verwendet ein Blog [Master/Detail-](master-details.md) [Listenansicht](lists.md) und [NavigationView](navigationview.md) Steuerelement.
-![Screenshot von einer anderen Form-Beispiel](images/FormExample2.png)
+## <a name="one-column-form-example"></a>Beispiel für Formular mit einer Spalte
+In diesem Beispiel werden eine Acrylic-[Master/Detail](master-details.md)-[Listenansicht](lists.md) und ein [NavigationView](navigationview.md)-Steuerelement verwendet.
+![Screenshot eines weiteren Formularbeispiels](images/FormExample2.png)
 ```xaml
 <StackPanel>
     <TextBlock Text="New Customer" Style="{StaticResource TitleTextBlockStyle}"/>
@@ -177,9 +177,9 @@ Dieses Beispiel verwendet ein Blog [Master/Detail-](master-details.md) [Listenan
 </StackPanel>
 ```
 
-## <a name="two-column-form-example"></a>Beispiel für die Form von zwei Spalten
-Dieses Beispiel verwendet die [Pivot](pivot.md) Steuerelement [Blog](../style/acrylic.md) Hintergrund und [CommandBar](app-bars.md) neben der Benutzereingabe-Steuerelemente.
-![Screenshot des Form-Beispiel](images/FormExample.png)
+## <a name="two-column-form-example"></a>Beispiel für Formular mit zwei Spalten
+In diesem Beispiel werden zusätzlich zu Eingabesteuerelementen das [Pivot](pivot.md)-Steuerelement, der [Acrylic](../style/acrylic.md)-Hintergrund und [CommandBar](app-bars.md) verwendet.
+![Screenshot eines Formularbeispiels](images/FormExample.png)
 ```xaml
 <Grid>
     <Pivot Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}" >
@@ -233,9 +233,9 @@ Dieses Beispiel verwendet die [Pivot](pivot.md) Steuerelement [Blog](../style/ac
 </Grid>
 ```
 
-## <a name="customer-orders-database-sample"></a>Customer-Orders-Datenbank-Beispiel
-![Kunde bestellt Datenbank Screenshot](images/customerorderform.png) erfahren, wie Formulareingabe für die Verbindung ein **Azure** Datenbank und ein vollständig implementiertes Formular, finden Sie unter der [Kunden Auftragsdatenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database) Beispiel-app.
+## <a name="customer-orders-database-sample"></a>Beispieldatenbank für Kundenaufträge
+![Screenshot von Datenbank für Kundenaufträge](images/customerorderform.png) Eine Beschreibung, wie Sie Formulareingaben mit einer **Azure**-Datenbank verbinden, sowie ein vollständig implementiertes Formular finden Sie im Beispiel zur App [Datenbank für Kundenaufträge](https://github.com/Microsoft/Windows-appsample-customers-orders-database).
 
 ## <a name="related-topics"></a>Verwandte Themen
-- [Benutzereingabe-Steuerelemente](controls-and-events-intro.md)
+- [Eingabesteuerelemente](controls-and-events-intro.md)
 - [Typografie](../style/typography.md)

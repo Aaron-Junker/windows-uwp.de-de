@@ -6,13 +6,13 @@ label: Create custom media transport controls
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c42a058398539701cc1df003717eec99d1b2cd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362858"
 ---
 # <a name="create-custom-transport-controls"></a>Erstellen benutzerdefinierter Transportsteuerelemente
@@ -35,7 +35,7 @@ Bevor Sie beginnen, sollten Sie mit den MediaPlayerElement- und MediaTransportCo
 
 **MediaPlayerElement** verfügt über integrierte Transportsteuerelemente, die so konzipiert sind, dass sie standardmäßig mit den meisten Apps für die Video- und Audiowiedergabe verwendet werden können. Sie werden von der [**MediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Klasse bereitgestellt und enthalten Schaltflächen zum Wiedergeben und Beenden von sowie zum Navigieren in Medien, zum Einstellen der Lautstärke, zum Aktivieren/Deaktivieren des Vollbildmodus, zum Übertragen auf ein Zweitgerät, zum Aktivieren von Untertiteln, zum Wechseln von Audiospuren und zum Anpassen der Wiedergaberate. MediaTransportControls verfügt über Eigenschaften, mit denen Sie steuern können, ob die einzelnen Schaltflächen angezeigt und aktiviert werden. Sie können auch die [**IsCompact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediatransportcontrols.iscompact)-Eigenschaft festlegen, um anzugeben, ob die Steuerelemente in einer Zeile oder in zwei Zeilen angezeigt werden.
 
-Allerdings gibt es möglicherweise Szenarien, in denen Sie das Erscheinungsbild des Steuerelements weiter anpassen oder sein Verhalten ändern müssen. Hier einige Beispiele:
+Allerdings gibt es möglicherweise Szenarien, in denen Sie das Erscheinungsbild des Steuerelements weiter anpassen oder sein Verhalten ändern müssen. Dies sind einige Beispiele:
 - Ändern Sie die Symbole, das Schiebereglerverhalten und die Farben.
 - Verschieben Sie weniger häufig verwendete Befehlsschaltflächen in ein Überlaufmenü.
 - Ändern Sie die Reihenfolge, in der Befehle wegfallen, wenn die Größe des Steuerelements geändert wird.
@@ -57,11 +57,11 @@ Das [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Con
 - Der dritte Abschnitt enthält das [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Element, in dem die verschiedenen MediaTransportControls-Elemente zusammengeführt werden und mit dem das Layout der Komponenten definiert wird.
 
 > [!NOTE]
-> Weitere Informationen zum Ändern von Vorlagen finden Sie unter [Steuerelementvorlagen](/windows/uwp/design/controls-and-patterns/control-templates). Können Sie einen Text-Editor oder ähnliche Editoren in der IDE öffnen der XAML-Dateien im \( *Programmdateien*) \Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*derSDK-Version*) \Generic. Das Standardformat und die Vorlage für jedes Steuerelement werden in der Datei **generic.xaml** definiert. Sie finden die MediaTransportControls-Vorlage in generic.xaml, indem Sie nach „MediaTransportControls“ suchen.
+> Weitere Informationen zum Ändern von Vorlagen finden Sie unter [Steuerelementvorlagen](/windows/uwp/design/controls-and-patterns/control-templates). Sie können einen Text-Editor oder vergleichbare Editoren in Ihrer IDE verwenden, um die XAML-Dateien in „\(*Programmdateien*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK-Version*)\Generic“ zu öffnen. Das Standardformat und die Vorlage für jedes Steuerelement werden in der Datei **generic.xaml** definiert. Sie finden die MediaTransportControls-Vorlage in generic.xaml, indem Sie nach „MediaTransportControls“ suchen.
 
 In den folgenden Abschnitten erfahren Sie, wie Sie einige der wichtigsten Elemente der Transportsteuerelemente anpassen:
-- [**Schieberegler**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider): ermöglicht dem Benutzer über ihre Medien bereinigen sowie die Bearbeitung an
-- [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar): alle Schaltflächen enthält.
+- [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider): Ermöglicht Benutzern das Scrubbing durch ihre Medien und zeigt darüber hinaus den Fortschritt an.
+- [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar): Enthält alle Schaltflächen.
 Weitere Informationen finden Sie im Abschnitt zum Aufbau des MediaTransportControls-Referenzthemas.
 
 ## <a name="customize-the-transport-controls"></a>Anpassen der Transportsteuerelemente
@@ -70,7 +70,7 @@ Wenn Sie nur die Darstellung von MediaTransportControls ändern möchten, könne
 
 ### <a name="re-template-the-control"></a>Anpassen der Vorlage eines Steuerelements
 
-**Das Standardformat MediaTransportControls und die Vorlage anpassen.**
+**So passen Sie Standardstil und Standardvorlage von MediaTransportControls an**
 1. Kopieren Sie den Standardstil aus den MediaTransportControls-Stilen und-Vorlagen in ein ResourceDictionary in Ihrem Projekt.
 2. Weisen Sie dem Style einen x:Key-Wert zu, um ihn zu identifizieren, wie hier gezeigt.
 
@@ -97,7 +97,7 @@ Weitere Informationen zum Ändern von Stilen und Vorlagen finden Sie unter [Form
 
 Wenn Sie die Funktionalität der Transportsteuerelemente erweitern oder ändern möchten, müssen Sie eine neue von MediaTransportControls abgeleitete Klasse erstellen. Eine abgeleitete Klasse namens `CustomMediaTransportControls` wird im [Beispiel für die Steuerelemente für den Medientransport](https://go.microsoft.com/fwlink/p/?LinkId=620023) und den übrigen Beispielen auf dieser Seite gezeigt.
 
-**So erstellen Sie eine neue Klasse von MediaTransportControls abgeleitete**
+**So erstellen Sie eine neue Klasse, die von MediaTransportControls abgeleitet ist**
 1. Fügen Sie Ihrem Projekt eine neue Klassendatei hinzu.
     - Wählen Sie in Visual Studio Projekt > Klasse hinzufügen. Das Dialogfeld Neues Element hinzufügen wird angezeigt.
     - Geben Sie im Dialogfeld „Neues Element hinzufügen“ einen Namen für die Klassendatei ein, und klicken Sie dann auf „Hinzufügen“. (Im Beispiel für die Medientransportsteuerelemente hat die Klasse den Namen `CustomMediaTransportControls`.)
@@ -159,7 +159,7 @@ In der MediaTransportControls-Vorlage sind die Befehlsschaltflächen in einem [*
 
 Um ein Element aus den primären Befehlsleistenbefehlen in das Überlaufmenü zu verschieben, müssen Sie die XAML-Steuerelementvorlage bearbeiten.
 
-**So verschieben Sie einen Befehl an das Überlaufmenü**
+**So verschieben Sie einen Befehl in das Überlaufmenü**
 1. Suchen Sie in der Steuerelementvorlage das CommandBar-Element namens `MediaControlsCommandBar`.
 2. Fügen Sie dem XAML-Code für CommandBar einen [**SecondaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands)-Abschnitt hinzu. Platzieren Sie diesen nach dem schließenden Tag für das [**PrimaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands)-Element.
 
@@ -204,7 +204,7 @@ Da das Überlaufmenü aus Textschaltflächen besteht, müssen Sie der Schaltflä
 
 Das Anpassen von MediaTransportControls kann beispielsweise erforderlich sein, wenn Sie dem Steuerelement einen benutzerdefinierten Befehl hinzufügen möchten. Unabhängig davon, ob Sie ihn als primären oder sekundären Befehl hinzufügen, sind die Verfahren zum Erstellen der Befehlsschaltfläche und zum Ändern des Verhaltens gleich. Im [Beispiel für die Medientransportsteuerelemente](https://go.microsoft.com/fwlink/p/?LinkId=620023) wird den primären Befehlen eine Bewertungsschaltfläche hinzugefügt.
 
-**Um eine benutzerdefinierte Schaltfläche hinzuzufügen.**
+**So fügen Sie eine benutzerdefinierte Befehlsschaltfläche hinzu**
 1. Erstellen Sie ein AppBarButton-Objekt, und fügen Sie es dem CommandBar-Element in der Steuerelementvorlage hinzu.
 
 ```xaml
@@ -215,9 +215,9 @@ Das Anpassen von MediaTransportControls kann beispielsweise erforderlich sein, w
               VerticalAlignment="Center" />
 ```
 
-Sie müssen es CommandBar am entsprechenden Speicherort hinzufügen. (Weitere Informationen finden Sie über das Arbeiten mit den Menü-Überlaufabschnitt.) Wie es in der Benutzeroberfläche positioniert ist, wird durch, in dem die Schaltfläche im Markup ist bestimmt. Z. B. Wenn Sie diese Schaltfläche, um als das letzte Element in die primären Befehle angezeigt werden soll, fügen sie am Ende der Befehlsliste primärer hinzu.
+Sie müssen es dem CommandBar-Element an der entsprechenden Position hinzufügen. (Weitere Informationen finden Sie im Abschnitt „Verwenden des Überlaufmenüs“.) Die Platzierung in der Benutzeroberfläche wird durch die Position der Schaltfläche im Markup bestimmt. Wenn diese Schaltfläche als letztes Element in den primären Befehlen angezeigt werden soll, fügen Sie sie am Ende der Liste der primären Befehle hinzu.
 
-Sie können auch das Symbol für die Schaltfläche mit den anpassen. Weitere Informationen finden Sie unter den <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"> <b>AppBarButton</b> </a> Verweis.
+Sie können auch das Symbol für die Schaltfläche anpassen. Weitere Informationen finden Sie in der Referenz zu <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a>.
     
 
 2. Rufen Sie in der [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)-Überschreibung die Schaltfläche aus der Vorlage ab, und registrieren Sie einen Handler für das dazugehörige [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis. Dieser Code wird in die `CustomMediaTransportControls`-Klasse eingefügt.
@@ -272,8 +272,8 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-**Benutzerdefinierten Media-Transportsteuerelemente mit "Gefällt mir" d**
-![benutzerdefinierten Transport mediensteuerelements mit zusätzlichen wie Schaltfläche](images/controls/mtc_double_custom_inprod.png)
+**Benutzerdefinierte Medientransport-Steuerelemente mit hinzugefügter „Gefällt mir“-Schaltfläche**
+![Benutzerdefiniertes Medientransport-Steuerelement mit zusätzlicher „Gefällt mir“-Schaltfläche](images/controls/mtc_double_custom_inprod.png)
 
 ### <a name="modifying-the-slider"></a>Ändern des Schiebereglers
 

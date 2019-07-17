@@ -5,31 +5,31 @@ label: Color Picker
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654475"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63801301"
 ---
-# <a name="color-picker"></a>Farbwähler
+# <a name="color-picker"></a>Farbauswahl
 
 Mithilfe eines Farbwählers können Benutzer Farben suchen und auswählen. Standardmäßig können sie durch die Farben eines Farbspektrums navigieren oder eine bestimmte Farbe in einem Textfeld des Typs „Rot-Grün-Blau (RGB)“, „Wert für Farbton/Sättigung“ oder „Hexadezimal“ angeben.
 
 > **Wichtige APIs:** [ColorPicker-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [Color-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
-![Eine Standard-Farbauswahl](images/color-picker-default.png)
+![Ein Standard-Farbwähler](images/color-picker-default.png)
 
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Mithilfe eines Farbwählers können Benutzer in Ihrer App Farben auswählen. Beispielsweise können sie so Farbeinstellungen wie Textfarben, Hintergrundfarben oder App-Farbdesigns ändern.
+Mithilfe eines Farbwählers können Benutzer in Ihrer App Farben auswählen. Beispielsweise können sie so Farbeinstellungen wie Schriftfarben, Hintergrundfarben oder App-Farbdesigns ändern.
 
 Falls Ihre App zum Zeichnen oder für andere stiftbasierte Aufgaben gedacht ist, sollten Sie neben dem Farbwähler auch die Implementierung von [Steuerelementen für Freihandeingaben](inking-controls.md) in Betracht ziehen.
 
@@ -61,9 +61,9 @@ Der Farbwähler zeigt standardmäßig eine Vorschau der ausgewählten Farbe in d
 
 ### <a name="bind-to-the-chosen-color"></a>Binden an die ausgewählte Farbe
 
-Soll die Farbauswahl sofort wirksam werden, können Sie sie entweder per Datenbindung an die Eigenschaft „Color“ binden oder über das Ereignis „ColorChanged“ in Ihrem Code auf die ausgewählte Farbe zugreifen.
+Soll die Farbauswahl sofort wirksam werden, können Sie sie entweder per Datenbindung an die Color-Eigenschaft binden oder über das ColorChanged-Ereignis in Ihrem Code auf die ausgewählte Farbe zugreifen.
 
-In diesem Beispiel binden Sie die Eigenschaft „Color“ einer als Füllung für ein Rechteck verwendeten Klasse „SolidColorBrush“ direkt an die im Farbwähler ausgewählte Farbe. Jede Änderung am Farbwähler zieht eine Liveänderung an der gebundenen Eigenschaft nach sich.
+In diesem Beispiel binden Sie die Color-Eigenschaft einer als Füllung für ein Rechteck verwendeten SolidColorBrush-Klasse direkt an die im Farbwähler ausgewählte Farbe. Jede Änderung am Farbwähler zieht eine Liveänderung an der gebundenen Eigenschaft nach sich.
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
@@ -79,7 +79,7 @@ In diesem Beispiel binden Sie die Eigenschaft „Color“ einer als Füllung fü
 </Rectangle>
 ```
 
-In diesem Beispiel wird ein vereinfachter Farbwähler verwendet, der nur aus einem kreisförmigen Spektrum und einem Schieberegler besteht. Dies ist eine gängige unkomplizierte Ausführung eines Farbwählers. Lässt sich die Farbänderung in Echtzeit an dem jeweils betroffenen Objekt nachvollziehen, muss kein Farbvorschaubalken angezeigt werden. Weitere Informationen finden Sie im Abschnitt *Anpassen des Farbwählers*.
+In diesem Beispiel wird ein vereinfachter Farbwähler verwendet, der nur aus einem kreisförmigen Spektrum und einem Schieberegler besteht. Dies ist eine gängige unkomplizierte Ausführung eines Farbwählers. Lässt sich die Farbänderung in Echtzeit an dem jeweils betroffenen Objekt nachvollziehen, muss keine Farbvorschauleiste angezeigt werden. Weitere Informationen finden Sie im Abschnitt *Anpassen des Farbwählers*.
 
 ### <a name="save-the-chosen-color"></a>Speichern der ausgewählten Farbe
 
@@ -172,7 +172,7 @@ In diesem Beispiel implementieren Sie im Farbwähler einen Schieberegler und ein
 
 #### <a name="show-a-simple-picker"></a>Anzeigen eines einfachen Wählers
 
-In diesem Beispiel wird demonstriert, wie Sie den Farbwähler mit einer einfachen Benutzeroberfläche für die schnelle und unkomplizierte Verwendung konfigurieren können. Sie implementieren das kreisförmige Spektrum und blenden die standardmäßigen Texteingabefelder aus. Lässt sich die Farbänderung in Echtzeit an dem jeweils betroffenen Objekt nachvollziehen, muss kein Farbvorschaubalken angezeigt werden. Andernfalls sollte die Farbvorschau sichtbar sein.
+In diesem Beispiel wird demonstriert, wie Sie den Farbwähler mit einer einfachen Benutzeroberfläche für die schnelle und unkomplizierte Verwendung konfigurieren können. Sie implementieren das kreisförmige Spektrum und blenden die standardmäßigen Texteingabefelder aus. Lässt sich die Farbänderung in Echtzeit an dem jeweils betroffenen Objekt nachvollziehen, muss keine Farbvorschauleiste angezeigt werden. Andernfalls sollte die Farbvorschau sichtbar sein.
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
@@ -194,27 +194,27 @@ Farbspektrum | IsColorSpectrumVisible, ColorSpectrumShape, ColorSpectrumComponen
 Farbvorschau | IsColorPreviewVisible
 Farbwerte| IsColorSliderVisible, IsColorChannelTextInputVisible
 Deckkraftwerte | IsAlphaEnabled, IsAlphaSliderVisible, IsAlphaTextInputVisible
-Hexwerte | IsHexInputVisible
+Hexadezimalwerte | IsHexInputVisible
 
 > [!NOTE]
-> Das Textfeld und der Schieberegler für die Deckkraft werden nur angezeigt, wenn „AlphaEnabled“ auf **true** gesetzt ist. Dann können Sie die Sichtbarkeit der Eingabesteuerelemente mithilfe der Eigenschaften „IsAlphaTextInputVisible“ und „IsAlphaSliderVisible“ anpassen. Details hierzu finden Sie in der API-Dokumentation.
+> Das Textfeld und der Schieberegler für die Deckkraft werden nur angezeigt, wenn „AlphaEnabled“ auf **true** festgelegt ist. Dann können Sie die Sichtbarkeit der Eingabesteuerelemente mithilfe der Eigenschaften „IsAlphaTextInputVisible“ und „IsAlphaSliderVisible“ anpassen. Details hierzu finden Sie in der API-Dokumentation.
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
-- Überlegen Sie, welche Art Farbwähler für Ihre App die beste Option ist. Einige Szenarien erfordern keine präzise Farbauswahl; dann ist ein vereinfachter Wähler die bessere Entscheidung.
-- Für maximale Genauigkeit bei der Farbauswahl sollten Sie das quadratische Spektrum verwenden, mit einer Mindestgröße von 256 × 256 px. Alternativ können Sie die Texteingabefelder implementieren, damit der Benutzer seine Wunschfarbe präzise anpassen kann.
+- Überlegen Sie, welche Art von Farbwähler für Ihre App am besten geeignet ist. Einige Szenarien erfordern keine präzise Farbauswahl; dann ist ein vereinfachter Wähler die bessere Entscheidung.
+- Für maximale Genauigkeit bei der Farbauswahl sollten Sie das quadratische Spektrum verwenden, mit einer Mindestgröße von 256 × 256 Pixel. Alternativ können Sie die Texteingabefelder implementieren, damit der Benutzer seine Wunschfarbe präzise anpassen kann.
 - Wenn Sie den Farbwähler in einem Flyout hosten, sollte die Farbauswahl nicht bereits durch ein simples Tippen in das Spektrum oder eine einfache Justierung des Schiebereglers übernommen werden. Regeln Sie die Übernahme der Auswahl wie folgt:
   - Implementieren Sie Schaltflächen zum Übernehmen und Abbrechen, über die der Benutzer seine Auswahl anwenden oder verwerfen kann. Durch Klicken oder Tippen auf die Zurück-Schaltfläche bzw. auf eine Stelle außerhalb des Flyouts wird das Flyout geschlossen, ohne dass die Auswahl des Benutzers gespeichert wird.
   - Alternativ kann die Auswahl übernommen werden, sobald der Benutzer das Flyout per Tippen oder Klicken auf eine Stelle außerhalb des Flyouts oder auf die Zurück-Schaltfläche schließt.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel eines XAML-Steuerelementekatalogs](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Stift- und Stift Interaktionen in UWP-apps](../input/pen-and-stylus-interactions.md)
-- [Freihand](inking-controls.md)
+- [Zeichen- und Eingabestiftinteraktionen in UWP-Apps](../input/pen-and-stylus-interactions.md)
+- [Freihandeingaben](inking-controls.md)
 
 <!--
 <div class=”microsoft-internal-note”>

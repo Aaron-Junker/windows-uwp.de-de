@@ -3,25 +3,25 @@ description: Erfahren Sie, wie Sie die Typografie in Ihrer App verwenden, um Ben
 title: Typografie in UWP-Apps
 ms.date: 04/06/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244386"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63820551"
 ---
 # <a name="typography"></a>Typografie
 
-![Favoritenbild](images/header-typography.svg)
+![Herobild](images/header-typography.svg)
 
-Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprache dient, um Informationen zu kommunizieren. Ihr Stil darf diesem Ziel nie im Wege stehen. In diesem Artikel erläutern wir, wie Sie die Typografie in Ihre UWP-App formatieren, damit Benutzer Inhalte schnell und effizient verstehen.
+Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprache dient, um Informationen zu vermitteln. Ihr Stil darf diesem Ziel nie im Wege stehen. In diesem Artikel erläutern wir, wie Sie die Typografie in Ihre UWP-App formatieren, damit Benutzer Inhalte schnell und effizient verstehen.
 
 ## <a name="font"></a>Font
 
-Verwenden Sie eine Schriftart in der gesamten Benutzeroberfläche Ihrer App. Es wird empfohlen, wenn möglich, die Standardschriftart für UWP-Apps **Segoe UI** zu verwenden. Sie wurde entwickelt, um eine optimale Lesbarkeit für Größe und Pixeldichte zu wahren und bietet eine klare, ansprechende und offene Ästhetik, die den Inhalt des Systems ergänzt.
+Verwenden Sie eine Schriftart in der gesamten Benutzeroberfläche Ihrer App. Es wird empfohlen, wenn möglich, die Standardschriftart für UWP-Apps **Segoe UI** zu verwenden. Sie wurde entwickelt, um eine optimale Lesbarkeit für Größe und Pixeldichte zu wahren, und bietet eine klare, ansprechende und offene Ästhetik, die den Inhalt des Systems ergänzt.
 
 ![Beispieltext für die Schriftart „Segoe UI“](images/type/segoe-sample.svg)
 
@@ -70,11 +70,11 @@ Aufgrund der Funktionsweise der Skalierung, entwerfen Sie in effektiven Pixeln, 
 
 ### <a name="type-ramp"></a>Typhierarchie
 
-Die UWP-Typhierarchie stellt wichtige Beziehungen zwischen den Schriftschnitte auf einer Seite her, damit der Benutzer den Inhalt einfach lesen kann. Alle Größen werden in effektiven Pixeln angegeben und sind für UWP-Apps optimiert, die auf allen Geräten ausgeführt werden.
+Die UWP-Typhierarchie stellt wichtige Beziehungen zwischen den Schriftschnitten auf einer Seite her, damit der Benutzer den Inhalt einfach lesen kann. Alle Größen werden in effektiven Pixeln angegeben und sind für UWP-Apps optimiert, die auf allen Geräten ausgeführt werden.
 
 ![Typhierarchie](images/type/type-ramp.png)
 
-### <a name="using-the-type-ramp"></a>Die Typhierarchie verwenden
+### <a name="using-the-type-ramp"></a>Verwenden der Typhierarchie
 
 :::row:::
     :::column:::
@@ -135,7 +135,7 @@ Standardmäßig ist das [TextAlignment](https://docs.microsoft.com/uwp/api/windo
 
 ## <a name="clipping-and-ellipses"></a>Beschnitt und Ellipsen
 
-Wenn die Textmenge den verfügbaren Speicherplatz überschreitet, wird empfohlen, den Text zuzuschneiden, was das Standardverhalten der meisten [UWP-Textsteuerelemente](../controls-and-patterns/text-controls.md)ist.
+Wenn die Textmenge den verfügbaren Speicherplatz überschreitet, wird empfohlen, den Text zuzuschneiden, was dem Standardverhalten der meisten [UWP-Textsteuerelemente](../controls-and-patterns/text-controls.md) entspricht.
 
 ![Gerät mit abgeschnittenem Text](images/type/clipping.svg)
 
@@ -154,7 +154,7 @@ Wenn die Textmenge den verfügbaren Speicherplatz überschreitet, wird empfohlen
     :::column-end:::
 :::row-end:::
 
-**Hinweis**: Wenn der Container nicht klar definiert sind (z. B. keine unterscheidenden Hintergrundfarbe), oder wenn es ist ein Link zum Anzeigen weiterer Text mehr aus, klicken Sie dann die Schaltfläche mit Auslassungszeichen.
+**Hinweis**: Bei Containern, die nicht klar definiert sind (also sich etwa nicht durch eine andere Hintergrundfarbe abheben) oder wenn ein Link zu mehr Text existiert, kann eine Ellipse verwendet werden.
 
 ## <a name="languages"></a>Sprachen 
 
@@ -171,7 +171,7 @@ Verwenden Sie die [LanguageFont-Schriftartenersetzungs-APIs](https://docs.micros
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Hinweise</th>
+<th align="left">Anmerkungen</th>
 </tr>
 </thead>
 <tbody>
@@ -244,7 +244,7 @@ Serifenlose Schriftarten eignen sich für Überschriften und UI-Elemente.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Hinweise</th>
+<th align="left">Anmerkungen</th>
 </tr>
 </thead>
 <tbody>
@@ -287,7 +287,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Hinweise</th>
+<th align="left">Anmerkungen</th>
 </tr>
 </thead>
 <tbody>
@@ -323,7 +323,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Hinweise</th>
+<th align="left">Anmerkungen</th>
 </tr>
 </thead>
 <tbody>
@@ -349,5 +349,5 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 
 * [Textsteuerelemente](../controls-and-patterns/text-controls.md)
 * [XAML-Designressourcen](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
-* [XAML-Formatvorlagen](../controls-and-patterns/xaml-styles.md)
+* [XAML-Stile](../controls-and-patterns/xaml-styles.md)
 * [Microsoft Typografie](https://docs.microsoft.com/typography/)
