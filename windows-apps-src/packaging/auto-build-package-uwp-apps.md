@@ -1,37 +1,37 @@
 ---
 title: Einrichten automatisierter Builds für UWP-Apps
 description: Erfahren Sie, wie Sie automatisierte Builds konfigurieren, um Pakete zum Querladen oder zum Übermitteln an den Store zu erzeugen.
-ms.date: 09/30/2018
+ms.date: 07/17/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 5837674f2cb20710a59eeac0af59498bf28b197e
-ms.sourcegitcommit: a86d0bd1c2f67e5986cac88a98ad4f9e667cfec5
+ms.openlocfilehash: 86e9b15ee71c3ed831a46e369e8feaef8641e714
+ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68229377"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68303582"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Einrichten automatisierter Builds für UWP-Apps
 
-Sie können Pipelines mit Azure verwenden, um automatisierte Builds für UWP-Projekte zu erstellen. In diesem Artikel betrachten wir verschiedene Möglichkeiten zur Verfügung. Wir außerdem zeigen Ihnen wie Sie diese Aufgaben ausführen, indem Sie über die Befehlszeile aus, sodass Sie in jedem anderen Buildsystem integrieren können.
+Sie können Azure Pipelines verwenden, um automatisierte Builds für UWP-Projekte zu erstellen. In diesem Artikel werden verschiedene Möglichkeiten erläutert. Außerdem zeigen wir Ihnen, wie Sie diese Aufgaben mithilfe der Befehlszeile ausführen, damit Sie Sie in beliebige andere Buildsysteme integrieren können.
 
 ## <a name="create-a-new-azure-pipeline"></a>Erstellen einer neuen Azure-Pipeline
 
-Zunächst [Registrierung für Azure-Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up) , wenn Sie dies noch nicht geschehen.
+Melden Sie [sich zunächst für Azure Pipelines an,](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up) Wenn Sie dies noch nicht getan haben.
 
-Als Nächstes erstellen Sie eine Pipeline, die Sie verwenden können, um den Quellcode zu erstellen. Ein Lernprogramm zum Erstellen einer Pipeline zum Erstellen eines GitHub-Repositorys, finden Sie unter [erstellen Ihre erste Pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). Azure-Pipelines unterstützt die aufgeführten repositorytypen [in diesem Artikel](https://docs.microsoft.com/azure/devops/pipelines/repos).
+Erstellen Sie als nächstes eine Pipeline, die Sie zum Erstellen des Quellcodes verwenden können. Ein Tutorial zum Erstellen einer Pipeline zum Erstellen eines GitHub-Repository finden [Sie unter Erstellen Ihrer ersten Pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). Azure Pipelines unterstützt die [in diesem Artikel](https://docs.microsoft.com/azure/devops/pipelines/repos)aufgeführten Repository-Typen.
 
 ## <a name="set-up-an-automated-build"></a>Einrichten eines automatisierten Builds
 
-Wir beginnen mit dem Standard, UWP, Builddefinition, die in Azure DevOps verfügbar ist, und klicken Sie dann zeigen, wie zum Konfigurieren der Pipeline.
+Wir beginnen mit der standardmäßigen UWP-Builddefinition, die in Azure dev OPS verfügbar ist, und zeigen Ihnen, wie Sie die Pipeline konfigurieren.
 
 Wählen Sie in der Liste der Builddefinitionsvorlagen die Vorlage **Universelle Windows-Plattform** aus.
 
-![Wählen Sie die UWP-Vorlage](images/select-yaml-template.png)
+![UWP-Vorlage auswählen](images/select-yaml-template.png)
 
-Diese Vorlage umfasst die grundlegende Konfiguration, um das UWP-Projekt erstellen:
+Diese Vorlage enthält die grundlegende Konfiguration zum Erstellen des UWP-Projekts:
 
 ```yml
 trigger:
@@ -62,44 +62,47 @@ steps:
 
 ```
 
-Die Standardvorlage versucht zum Signieren des Pakets mit dem Zertifikat, das in der CSPROJ-Datei angegeben. Wenn Sie Ihr Paket während des Builds signieren möchten benötigen Sie Zugriff auf den privaten Schlüssel. Andernfalls können Sie deaktivieren, Signierung durch Hinzufügen des Parameters `/p:AppxPackageSigningEnabled=false` auf die `msbuildArgs` Abschnitt in der YAML-Datei.
+Die Standardvorlage versucht, das Paket mit dem Zertifikat zu signieren, das in der CSPROJ-Datei angegeben ist. Wenn Sie das Paket während des Builds signieren möchten, müssen Sie Zugriff auf den privaten Schlüssel haben. Andernfalls können Sie die Signierung deaktivieren, indem Sie `/p:AppxPackageSigningEnabled=false` dem `msbuildArgs` Abschnitt in der YAML-Datei den-Parameter hinzufügen.
 
-## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Fügen Sie Ihr Projekt-Zertifikat hinzu, um die Bibliothek für sichere Dateien
+## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Fügen Sie das Projekt Zertifikat der Bibliothek für sichere Dateien hinzu.
 
-Übermitteln von Zertifikaten zu Ihrem Repository nach Möglichkeit vermeiden, und Git standardmäßig ignoriert. Um die sichere Handhabung von vertraulichen Dateien wie Zertifikate verwalten zu können, unterstützt Azure DevOps [sichere Dateien](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops).
+Sie sollten das Übermitteln von Zertifikaten an Ihr Repository vermeiden, wenn dies möglich ist, und git diese standardmäßig ignoriert. Zum Verwalten der sicheren Behandlung vertraulicher Dateien, wie z. b. Zertifikate, unterstützt Azure devops das Feature " [sichere Dateien](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops) ".
 
 So laden Sie ein Zertifikat für den automatisierten Build hoch:
 
-1. Erweitern Sie im Azure-Pipelines, **Pipelines** im Navigationsbereich und klicken Sie auf **Bibliothek**.
-2. Klicken Sie auf die **sichere Dateien** Registerkarte, und klicken Sie dann auf **+ sichere Datei**.
+1. Erweitern Sie in Azure Pipelines im Navigationsbereich **Pipelines** , und klicken Sie auf **Bibliothek**.
+2. Klicken Sie auf die Registerkarte **sichere Dateien** , und klicken Sie dann auf **+ sichere Datei**.
 
-    ![Gewusst wie: Hochladen einer sicheren Datei](images/secure-file1.png)
+    ![Hochladen einer sicheren Datei](images/secure-file1.png)
 
-3. Navigieren Sie zu der Zertifikatdatei, und klicken Sie auf **OK**.
-4. Nachdem Sie das Zertifikat hochgeladen haben, wählen Sie ihn, um seine Eigenschaften anzuzeigen. Unter **Pipeline Berechtigungen**, aktivieren Sie die **autorisieren, für die Verwendung in allen Pipelines** umschalten.
+3. Navigieren Sie zur Zertifikat Datei, und klicken Sie auf **OK**.
+4. Nachdem Sie das Zertifikat hochgeladen haben, wählen Sie es aus, um seine Eigenschaften anzuzeigen. Aktivieren Sie unter **Pipeline Berechtigungen**die UMSCHALT Fläche **für die Verwendung in allen Pipelines autorisieren** .
 
-    ![Gewusst wie: Hochladen einer sicheren Datei](images/secure-file2.png)
+    ![Hochladen einer sicheren Datei](images/secure-file2.png)
+
+> [!NOTE]
+> Ab Visual Studio 2019 wird ein temporäres Zertifikat nicht mehr in UWP-Projekten generiert. Um Zertifikate zu erstellen oder zu exportieren, verwenden Sie die in [diesem Artikel](create-certificate-package-signing.md)beschriebenen PowerShell-Cmdlets.
 
 ## <a name="configure-the-build-solution-build-task"></a>Konfigurieren der Buildaufgabe „Projektmappe erstellen“
 
-Diese Aufgabe wird jede Lösung, die im Arbeitsverzeichnis zu den Binärdateien und erzeugt die Ausgabe-app-Paket-Datei kompiliert.
-Dieser Task verwendet die MSBuild-Argumente. Sie müssen den Wert dieser Argumente angeben. Orientieren Sie sich an der folgenden Tabelle.
+Mit diesem Task werden alle Lösungen, die sich im Arbeitsordner befinden, in Binärdateien kompiliert und die Ausgabe-App-Paketdatei erstellt.
+Diese Aufgabe verwendet MSBuild-Argumente. Sie müssen den Wert dieser Argumente angeben. Orientieren Sie sich an der folgenden Tabelle.
 
-|**MSBuild-argument**|**Wert**|**Beschreibung**|
+|**MSBuild-Argument**|**Wert**|**Beschreibung**|
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | Definiert den Ordner, in dem die generierten Artefakte gespeichert werden. |
-| AppxBundlePlatforms | $(Build.BuildPlatform) | Können Sie definieren die Plattformen für die im Paket enthalten. |
-| AppxBundle | Immer | Erstellt eine.msixbundle/.appxbundle mit den.msix/.appx-Dateien für die Plattform angegeben. |
-| UapAppxPackageBuildMode | StoreUpload | Generiert die.msixupload/.appxupload-Datei und die **_Test** Ordner für das querladen. |
-| UapAppxPackageBuildMode | CI | Wird nur die.msixupload/.appxupload-Datei generiert. |
-| UapAppxPackageBuildMode | SideloadOnly | Generiert die **_Test** Ordner für das querladen nur. |
-| AppxPackageSigningEnabled | true | Ermöglicht das Paket zu signieren. |
-| "Packagecertificatethumbprint" | Zertifikatfingerabdruck | Dieser Wert **müssen** entsprechen den Fingerabdruck im Signaturzertifikat oder eine leere Zeichenfolge sein. |
-| PackageCertificateKeyFile | Pfad | Der Pfad zu das zu verwendende Zertifikat. Dies wird aus den Metadaten für die sichere Datei abgerufen. |
+| AppxBundlePlatforms | $(Build.BuildPlatform) | Ermöglicht es Ihnen, die Plattformen zu definieren, die in das Paket eingeschlossen werden sollen. |
+| AppxBundle | Immer | Erstellt ein. msixbundle/. appxbundle mit den msix-/AppX-Dateien für die angegebene Plattform. |
+| UapAppxPackageBuildMode | StoreUpload | Generiert die. msixupload/. appxupload-Datei und den Ordner **_Test** für Sideloading. |
+| UapAppxPackageBuildMode | CI | Generiert nur die. msixupload/. appxupload-Datei. |
+| UapAppxPackageBuildMode | Sideloadonly | Generiert nur den Ordner **_Test** für Sideload. |
+| Appxpackagesigningenabled | true | Aktiviert die Paket Signatur. |
+| PackageCertificateThumbprint | Zertifikatfingerabdruck | Dieser Wert **muss** dem Fingerabdruck im Signaturzertifikat entsprechen oder eine leere Zeichenfolge sein. |
+| Packagecertificatekeyfile | Pfad | Der Pfad zu dem Zertifikat, das verwendet werden soll. Dies wird aus den Metadaten der sicheren Datei abgerufen. |
 
-### <a name="configure-the-build"></a>Konfigurieren Sie den build
+### <a name="configure-the-build"></a>Konfigurieren des Builds
 
-Wenn Sie Ihre Lösung über die Befehlszeile oder mithilfe von jedem anderen Buildsystem erstellen möchten, führen Sie MSBuild mit diesen Argumenten.
+Wenn Sie die Projekt Mappe mit der Befehlszeile oder mit einem anderen Buildsystem erstellen möchten, führen Sie MSBuild mit diesen Argumenten aus.
 
 ```powershell
 /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppxPackages\\"
@@ -108,9 +111,9 @@ Wenn Sie Ihre Lösung über die Befehlszeile oder mithilfe von jedem anderen Bui
 /p:AppxBundle=Always
 ```
 
-### <a name="configure-package-signing"></a>Konfigurieren Sie die paketsignierung
+### <a name="configure-package-signing"></a>Konfigurieren der Paket Signierung
 
-Zum Signieren des Pakets MSIX (oder APPX) muss die Pipeline das Signaturzertifikat abrufen. Zu diesem Zweck fügen Sie eine Aufgabe DownloadSecureFile vor die Aufgabe VSBuild hinzu.
+Um das msix-Paket (oder das AppX-Paket) zu signieren, muss die Pipeline das Signaturzertifikat abrufen. Fügen Sie zu diesem Zweck vor der vsbuild-Aufgabe eine Aufgabe downloadsecurefile hinzu.
 Dadurch erhalten Sie Zugriff auf das Signaturzertifikat über ```signingCert```.
 
 ```yml
@@ -121,7 +124,7 @@ Dadurch erhalten Sie Zugriff auf das Signaturzertifikat über ```signingCert```.
     secureFile: '[Your_Pfx].pfx'
 ```
 
-Als Nächstes aktualisieren Sie die VSBuild-Aufgabe, um das Signaturzertifikat zu verweisen:
+Aktualisieren Sie anschließend die vsbuild-Aufgabe, um auf das Signaturzertifikat zu verweisen:
 
 ```yml
 - task: VSBuild@1
@@ -139,19 +142,19 @@ Als Nächstes aktualisieren Sie die VSBuild-Aufgabe, um das Signaturzertifikat z
 ```
 
 > [!NOTE]
-> Das Argument "packagecertificatethumbprint" wird als Vorsichtsmaßnahme absichtlich auf eine leere Zeichenfolge festgelegt. Wenn der Fingerabdruck im Projekt festgelegt ist, aber das signierende Zertifikat stimmt nicht überein, der Build mit dem Fehler fehl: `Certificate does not match supplied signing thumbprint`.
+> Das packagecertifierethumschlag-Print-Argument wird absichtlich als Vorsichtsmaßnahme auf eine leere Zeichenfolge festgelegt. Wenn der Fingerabdruck im Projekt festgelegt ist, aber nicht mit dem Signaturzertifikat identisch ist, schlägt der Build mit dem folgenden `Certificate does not match supplied signing thumbprint`Fehler fehl:.
 
-### <a name="review-parameters"></a>Überprüfen Sie die Parameter
+### <a name="review-parameters"></a>Parameter überprüfen
 
-Die Parameter definiert die `$()` Syntax sind Variablen, die in der Builddefinition definiert und Änderungen in anderen Systemen erstellt.
+Bei den mit der `$()` Syntax definierten Parametern handelt es sich um Variablen, die in der Builddefinition definiert sind, und in anderen Buildsystemen.
 
 ![Standardvariablen](images/building-screen5.png)
 
-Alle vordefinierten Variablen finden Sie unter [vordefinierte Buildvariablen](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
+Informationen zum Anzeigen aller vordefinierten Variablen finden Sie unter [vordefinierte](https://docs.microsoft.com/azure/devops/pipelines/build/variables)Buildvariablen.
 
-## <a name="configure-the-publish-build-artifacts-task"></a>Konfigurieren Sie den Task Veröffentlichen von Buildartefakten
+## <a name="configure-the-publish-build-artifacts-task"></a>Konfigurieren der Aufgabe "Build-Artefakte veröffentlichen"
 
-Die UWP-standardpipeline werden die generierten Elemente nicht gespeichert werden. Um die YAML-Definition die Publish-Funktionen hinzuzufügen, fügen Sie die folgenden Aufgaben hinzu.
+Die UWP-Standard Pipeline speichert die generierten Artefakte nicht. Fügen Sie die folgenden Aufgaben hinzu, um die Veröffentlichungs Funktionen Ihrer YAML-Definition hinzuzufügen.
 
 ```yml
 - task: CopyFiles@2
@@ -167,30 +170,30 @@ Die UWP-standardpipeline werden die generierten Elemente nicht gespeichert werde
     PathtoPublish: '$(build.artifactstagingdirectory)'
 ```
 
-Sehen Sie die generierten Elemente in der **Artefakte** Option des Builds Ergebnisse (Seite).
+Die generierten Artefakte werden in der Option **Artefakte** der Seite Buildergebnisse angezeigt.
 
 ![Artefakte](images/building-screen6.png)
 
-Da wir eingerichtet haben die `UapAppxPackageBuildMode` Argument `StoreUpload`, der Ordner Elemente enthält, das Paket für die Übermittlung an den Store (.msixupload/.appxupload). Beachten Sie, dass Sie auch einen regulären app-Paket (.msix/.appx) oder ein app-Bündel (.msixbundle/.appxbundle/) an den Store übermitteln können. Für die Zwecke dieses Artikels verwenden wir die appxupload-Datei.
+Da wir das `UapAppxPackageBuildMode` -Argument auf `StoreUpload`festgelegt haben, enthält der artefaktordner das Paket für die Übermittlung an den Speicher (. msixupload/. appxupload). Beachten Sie, dass Sie auch eine reguläre App-für (. msix/. AppX) oder eine APP Bundle (. msixbundle/. appxbundle/) an den Speicher übermitteln können. Für die Zwecke dieses Artikels verwenden wir die appxupload-Datei.
 
-## <a name="address-bundle-errors"></a>Bundle-Adressfehler
+## <a name="address-bundle-errors"></a>Adress Bündel Fehler
 
-Wenn Sie mehr als eine UWP-Projekt der Projektmappe hinzufügen, und klicken Sie dann versuchen, ein Paket zu erstellen, erhalten Sie möglicherweise eine Fehlermeldung wie die folgende.
+Wenn Sie Ihrer Projekt Mappe mehrere UWP-Projekte hinzufügen und dann versuchen, ein Paket zu erstellen, erhalten Sie möglicherweise eine Fehlermeldung wie die folgende.
 
   `MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "AppOne.UnitTests_0.1.2595.0_x86.appx" and package full name "8ef641d1-4557-4e33-957f-6895b122f1e6_0.1.2595.0_x86__scrj5wvaadcy6" is not valid in the bundle because it has a different package family name than other packages in the bundle`
 
-Dieser Fehler tritt auf, da auf Projektmappenebene nicht eindeutig ist, welche App im Bündel enthalten sein soll. Um dieses Problem zu beheben, öffnen Sie jede Projektdatei aus, und fügen Sie die folgenden Eigenschaften am Ende des ersten `<PropertyGroup>` Element.
+Dieser Fehler tritt auf, da auf Projektmappenebene nicht eindeutig ist, welche App im Bündel enthalten sein soll. Um dieses Problem zu beheben, öffnen Sie jede Projektdatei, und fügen Sie am Ende des ersten `<PropertyGroup>` Elements die folgenden Eigenschaften hinzu.
 
 |**Projekt**|**Eigenschaften**|
 |-------|----------|
 |App|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
-Entfernen Sie dann die `AppxBundle` MSBuild-Argument aus den Buildschritt.
+Entfernen Sie dann das `AppxBundle` MSBuild-Argument aus dem Buildschritt.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Erstellen Sie Ihre app von .NET für Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
-- [Verpacken von UWP-apps](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-- [Querladen von BRANCHENSPEZIFISCHEN apps unter Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
-- [Erstellen Sie ein Zertifikat zum Signieren des Pakets](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [Erstellen Ihrer .net-App für Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
+- [Packen von UWP-apps](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
+- [Querladen von Branchen-apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
+- [Erstellen eines Zertifikats für die Paket Signierung](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

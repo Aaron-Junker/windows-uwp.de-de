@@ -1,68 +1,51 @@
 ---
-description: Dieses Tutorial veranschaulicht das Hinzufügen von UWP XAML-Benutzeroberflächen, MSIX-Pakete erstellen und andere moderne Komponenten in Ihrer WPF-Anwendung integrieren.
+description: In diesem Tutorial wird veranschaulicht, wie Sie UWP-XAML-Benutzeroberflächen hinzufügen, msix-Pakete erstellen und andere moderne Komponenten in Ihre WPF-App integrieren.
 title: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 07/17/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: Windows 10, Uwp, Windows Forms, Wpf, XAML-Inseln
+keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 35b6886389640c7960c4120772c169161779ab68
-ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
+ms.openlocfilehash: 07d2c957dff61a8b1ec9f9541ffeb9706da8a0e9
+ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68141840"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68303570"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Teil 2: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
 
-Dies ist der zweite Teil eines Tutorials, die zeigt, wie Sie eine Beispiel WPF-desktop-app mit dem Namen Contoso-Ausgaben zu modernisieren. Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-app, finden Sie unter [Lernprogramm: Modernisieren von WPF-app](modernize-wpf-tutorial.md). In diesem Artikel wird vorausgesetzt, Sie haben bereits abgeschlossen [Teil 1](modernize-wpf-tutorial-1.md).
+Dies ist der zweite Teil eines Tutorials, in dem veranschaulicht wird, wie eine WPF-Beispiel-Desktop-App mit dem Namen "ca Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden [Sie unter Tutorial: Modernisieren einer WPF-](modernize-wpf-tutorial.md)app. In diesem Artikel wird davon ausgegangen, dass Sie [Teil 1](modernize-wpf-tutorial-1.md)bereits abgeschlossen haben.
 
-Das Contoso-Entwicklungsteam möchte, im fiktiven Szenario in diesem Tutorial die Contoso-Ausgaben-app-Unterstützung für digitale Signaturen hinzugefügt. Die UWP **InkCanvas** Steuerelement ist eine hervorragende Möglichkeit für dieses Szenario, da Freihandeingaben und KI Funktionen wie die Funktion zur Erkennung von Text und Formen unterstützt. Zu diesem Zweck verwenden Sie die [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) umschlossen von UWP-Steuerelement in das Windows-Community-Toolkit verfügbar. Dieses Steuerelement dient als Wrapper für die Schnittstelle und die Funktionalität der UWP **InkCanvas** Steuerelement für die Verwendung in einer WPF-Anwendung. Weitere Informationen zu den umschlossenen UWP-Steuerelementen, finden Sie unter [Host UWP XAML-Steuerelemente in desktop-apps (XAML-Inseln)](xaml-islands.md).
+Im fiktiven Szenario dieses Lernprogramms möchte das Entwicklungsteam von "Configuration Manager" die Unterstützung digitaler Signaturen der App "kostenpflichtige app" für die kostenpflichtige app hinzufügen. Das UWP **InkCanvas** -Steuerelement ist eine gute Option für dieses Szenario, da es digitale Freihand-und Ki-Funktionen unterstützt, wie z. b. die Fähigkeit, Text und Formen zu erkennen. Zu diesem Zweck verwenden Sie das in der Windows Community Toolkit verfügbare [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) -UWP-Steuerelement. Dieses Steuerelement umschließt die-Schnittstelle und die Funktionalität des UWP **InkCanvas** -Steuer Elements für die Verwendung in einer WPF-App. Weitere Informationen zu umschließenen UWP-Steuerelementen finden Sie unter [Host UWP-XAML-Steuerelemente in Desktop-Apps (XAML-Inseln)](xaml-islands.md).
 
-## <a name="configure-the-project-to-use-xaml-islands"></a>Konfigurieren des Projekts zur Verwendung von XAML-Inseln
+## <a name="configure-the-project-to-use-xaml-islands"></a>Konfigurieren des Projekts für die Verwendung von XAML-Inseln
 
-Bevor Sie hinzufügen können eine **InkCanvas** Steuerelement an die Contoso-Ausgaben-app, müssen Sie zuerst das Projekt zur Unterstützung von UWP-XAML-Inseln konfigurieren.
+Vor dem Hinzufügen eines **InkCanvas** -Steuer Elements zur APP für die kostenpflichtige app müssen Sie zuerst das Projekt für die Unterstützung von UWP-XAML-Inseln konfigurieren.
 
-1. Visual Studio-2019, mit der Maustaste auf die **ContosoExpenses.Core** Projekt **Projektmappen-Explorer** , und wählen Sie **NuGet-Pakete verwalten**.
+1. Klicken Sie in Visual Studio 2019 mit der rechten Maustaste auf das Projekt **contosoaufwands. Core** in **Projektmappen-Explorer** , und wählen Sie **nuget-Pakete verwalten**aus.
 
-    ![Verwalten von NuGet-Pakete-Menü in Visual Studio](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
+    ![Menü "nuget-Pakete verwalten" in Visual Studio](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. In der **NuGet Package Manager** Fenster, klicken Sie auf **Durchsuchen**. Wählen Sie die **Vorabversion einbeziehen** aus, suchen Sie nach der `Microsoft.Toolkit.Wpf.UI.Controls` Packen und Installieren der aktuellen Preview-Version des Pakets in den Ergebnissen angezeigt.
+2. Klicken Sie im Fenster **nuget-Paket-Manager** auf **Durchsuchen**. Wählen Sie die Option **Vorabversion einschließen** aus, suchen Sie `Microsoft.Toolkit.Wpf.UI.Controls` nach dem Paket, und installieren Sie die neueste Vorschauversion des Pakets, das in den Ergebnissen angezeigt wird. Stellen Sie sicher, dass Sie Version 6.0.0-Preview 6.4 oder eine höhere Version installieren.
 
     > [!NOTE]
-    > Dieses Paket enthält die notwendige Infrastruktur zum Hosten von UWP-XAML-Inseln in einer WPF-Anwendung, einschließlich der **InkCanvas** UWP-Steuerelement umschlossen. Eine ähnliche Paket mit dem Namen `Microsoft.Toolkit.Forms.UI.Controls` ist für Windows Forms-apps verfügbar.
+    > Dieses Paket enthält die gesamte erforderliche Infrastruktur zum Hosting von UWP-XAML-Inseln in einer WPF-App, einschließlich des mit **InkCanvas** umschließenden UWP-Steuer Elements. Ein ähnliches Paket namens `Microsoft.Toolkit.Forms.UI.Controls` ist für Windows Forms-apps verfügbar.
 
-3. Mit der rechten Maustaste **ContosoExpenses.Core** Projekt **Projektmappen-Explorer** , und wählen Sie **hinzufügen -> Neues Element**.
+3. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **Add-> Neues Element**aus.
 
-4. Wählen Sie **Anwendungsmanifestdatei**, nennen Sie sie **"App.manifest"** , und klicken Sie auf **hinzufügen**.
+4. Wählen Sie **Anwendungs Manifest-Datei**aus, nennen Sie Sie **app. Manifest**, und klicken Sie auf **Hinzufügen**. Weitere Informationen zu Anwendungs Manifesten finden Sie in [diesem Artikel](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests).
 
-5. Suchen Sie in der Manifestdatei geöffnet, die **Kompatibilität** aus, und identifizieren Sie die folgenden kommentierten **SupportedOS** -Element für Windows 10.
-
-    ```xml
-    <!-- Windows 10 -->
-    <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
-    ```
-
-6. Unter diesem Element, fügen Sie die folgenden **"maxversiontested"** Element.
-
-    ```xml
-    <maxversiontested Id="10.0.18362.0"/>
-    ```
-
-7. Heben Sie die auskommentierung der **SupportedOS** -Element für Windows 10. Dieser Abschnitt sollte jetzt wie folgt aussehen.
+5. Heben Sie die Auskommentierung des folgenden `<supportedOS>` Elements für Windows 10 in der Manifest-Datei auf.
 
     ```xml
     <!-- Windows 10 -->
     <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
-    <maxversiontested Id="10.0.18362.0"/>
     ```
 
-    > [!NOTE]
-    > Die **"maxversiontested"** Element gibt an, dass die app Windows 10, Version 1903 erfordert (build 18362) oder höher. Dies ist die erste Version von Windows 10, die XAML-Inseln unterstützt. Ohne diesen Eintrag im Anwendungsmanifest löst die app zur Laufzeit eine Ausnahme aus. Nach dem Hinzufügen dieses Elements können Sie die folgende Buildwarnung angezeigt, in Ihrem Projekt: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Diese Warnung, nicht dass nichts falsch. in Ihrem Projekt ist, und er ignoriert werden kann.
-
-8. Suchen Sie in der Manifestdatei, die folgenden kommentierten **Anwendung** Abschnitt.
+6. Suchen Sie in der Manifest-Datei nach dem `<application>` folgenden kommentierten Element.
 
     ```xml
     <!--
@@ -74,7 +57,7 @@ Bevor Sie hinzufügen können eine **InkCanvas** Steuerelement an die Contoso-Au
     -->
     ```
 
-9. Löschen Sie diesen Abschnitt, und Ersetzen Sie ihn durch folgendes XML. Dadurch wird die app, um die DPI-Wert beachten und besser Handle andere Skalierungsfaktoren von Windows 10 unterstützt werden konfiguriert.
+7. Löschen Sie diesen Abschnitt, und ersetzen Sie ihn durch den folgenden XML-Code. Dadurch wird die APP so konfiguriert, dass Sie dpi-fähig ist, und die verschiedenen von Windows 10 unterstützten Skalierungsfaktoren besser verarbeiten.
 
     ```xml
     <application xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -85,29 +68,29 @@ Bevor Sie hinzufügen können eine **InkCanvas** Steuerelement an die Contoso-Au
     </application>
     ```
 
-10. Speichern und schließen Sie die `app.manifest` Datei.
+8. Speichern und schließen Sie `app.manifest` die Datei.
 
-12. In **Projektmappen-Explorer**, mit der rechten Maustaste die **ContosoExpenses.Core** Projekt, und wählen **Eigenschaften**.
+9. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **Eigenschaften**aus.
 
-13. In der **Ressourcen** Teil der **Anwendung** Registerkarte, stellen Sie sicher, dass die **Manifest** Dropdownliste nastaven NA hodnotu **"App.manifest"** .
+10. Vergewissern Sie sich, dass im Abschnitt **Ressourcen** der Registerkarte **Anwendung** die Dropdown Liste **Manifest** auf **app. Manifest**festgelegt ist.
 
-    ![.NET Core-app-manifest](images/wpf-modernize-tutorial/NetCoreAppManifest.png)
+    ![.Net Core-App-Manifest](images/wpf-modernize-tutorial/NetCoreAppManifest.png)
 
-16. Speichern Sie die Änderungen an den Projekteigenschaften.
+11. Speichern Sie die Änderungen an den Projekteigenschaften.
 
-## <a name="add-an-inkcanvas-control-to-the-app"></a>Fügen Sie der App ein InkCanvas-Steuerelement
+## <a name="add-an-inkcanvas-control-to-the-app"></a>Fügen Sie der APP ein InkCanvas-Steuerelement hinzu.
 
-Nun, dass Sie das Projekt zur Verwendung von UWP-XAML-Inseln konfiguriert haben, Sie sind jetzt bereit zum Hinzufügen einer [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) UWP-Steuerelement für die app umschlossen.
+Nachdem Sie Ihr Projekt für die Verwendung von UWP-XAML-Inseln konfiguriert haben, können Sie nun ein mit [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) umschließtes UWP-Steuerelement zur APP hinzufügen.
 
-1. In **Projektmappen-Explorer**, erweitern Sie die **Ansichten** Ordner die **ContosoExpenses.Core** Projekt, und doppelklicken Sie auf die **ExpenseDetail.xaml**Datei.
+1. Erweitern Sie in **Projektmappen-Explorer**den Ordner **views** des Projekts **contosoaufwendungen. Core** , und doppelklicken Sie auf die Datei **expensdetail. XAML** .
 
-2. In der **Fenster** Element am oberen Rand der XAML-Datei, fügen Sie das folgende Attribut hinzu. Dies verweist auf der XAML-Namespace für die [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) UWP-Steuerelement umschlossen.
+2. Fügen Sie im **Fenster** Element in der Nähe des oberen Rands der XAML-Datei das folgende Attribut hinzu. Dies verweist auf den XAML-Namespace für das mit [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) umschließende UWP-Steuerelement.
 
     ```xml
     xmlns:toolkit="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"
     ```
 
-    Nach dem Hinzufügen dieses Attributs, das **Fenster** -Element sollte nun wie folgt aussehen.
+    Nach dem Hinzufügen dieses Attributs sollte das **Fenster** Element nun wie folgt aussehen.
 
     ```xml
     <Window x:Class="ContosoExpenses.Views.ExpenseDetail"
@@ -124,7 +107,7 @@ Nun, dass Sie das Projekt zur Verwendung von UWP-XAML-Inseln konfiguriert haben,
             Background="{StaticResource HorizontalBackground}">
     ```
 
-4. In der **ExpenseDetail.xaml** Datei, suchen Sie das schließende `</Grid>` Tag, das unmittelbar vor der `<!-- Chart -->` Kommentar. Fügen Sie den folgenden XAML direkt vor dem abschließenden `</Grid>` Tag. Dieses XAML Fügt ein **InkCanvas** Steuerelement (vorangestellt der **Toolkit** Schlüsselwort, die Sie zuvor als Namespace definiert) und ein einfaches **TextBlock** , die als ein Header für das Steuerelement fungiert.
+4. Suchen Sie in der Datei " **expensdetail. XAML** " `</Grid>` das schließende Tag, das `<!-- Chart -->` dem Kommentar unmittelbar vorangestellt ist. Fügen Sie den folgenden XAML-Code direkt `</Grid>` vor dem Endtag hinzu. Dieser XAML-Code fügt ein **InkCanvas** -Steuerelement hinzu (vorangestellt das **Toolkit** -Schlüsselwort, das Sie zuvor als Namespace definiert haben) und einen einfachen **TextBlock** , der als Header für das Steuerelement fungiert.
 
     ```xml
     <TextBlock Text="Signature:" FontSize="16" FontWeight="Bold" Grid.Row="5" />
@@ -132,40 +115,40 @@ Nun, dass Sie das Projekt zur Verwendung von UWP-XAML-Inseln konfiguriert haben,
     <toolkit:InkCanvas x:Name="Signature" Grid.Row="6" />
     ```
 
-5. Speichern Sie die **ExpenseDetail.xaml** Datei.
+5. Speichern Sie die Datei " **expenldetail. XAML** ".
 
-6. Drücken Sie F5, um die app im Debugger auszuführen.
+6. Drücken Sie F5, um die APP im Debugger auszuführen.
 
-7. Wählen Sie einen Mitarbeiter aus der Liste aus, und wählen Sie dann eine der verfügbaren Ausgaben. Beachten Sie, dass die Expense-Detailseite Speicherplatz für enthält die **InkCanvas** Steuerelement.
+7. Wählen Sie einen Mitarbeiter aus der Liste aus, und wählen Sie dann eine der verfügbaren Ausgaben aus. Beachten Sie, dass die Seite mit den Ausgaben Details Platz für das **InkCanvas** -Steuerelement enthält.
 
-    ![Canvas Kugelschreiber nur](images/wpf-modernize-tutorial/InkCanvasPenOnly.png)
+    ![Nur Ink-Canvas-Stift](images/wpf-modernize-tutorial/InkCanvasPenOnly.png)
 
-    Wenn Sie ein Gerät, das mit einen digitalen Stift, wie eine Oberfläche unterstützt und Sie diese Übungseinheit auf einem physischen Computer ausführen, fahren Sie aus, und versuchen Sie, ihn zu verwenden. Sie sehen, dass die digitale Freihandeingabe, die auf dem Bildschirm angezeigt. Aber wenn Sie nicht, ein Pen-fähiges Gerät haben, und Sie versuchen, sich mit der Maus, geschieht nichts. Dies geschieht, da die **InkCanvas** Steuerelement ist nur für digitale Stifte standardmäßig aktiviert. Allerdings können wir dieses Verhalten zu ändern.
+    Wenn Sie ein Gerät haben, das einen digitalen Stift wie eine Oberfläche unterstützt, und Sie dieses Lab auf einem physischen Computer ausführen, können Sie versuchen, es zu verwenden. Der digitale Ink wird auf dem Bildschirm angezeigt. Wenn Sie jedoch nicht über ein Stift fähiges Gerät verfügen und versuchen, sich mit der Maus anzumelden, geschieht nichts. Dies geschieht, da das **InkCanvas** -Steuerelement standardmäßig nur für digitale Stifte aktiviert ist. Dieses Verhalten kann jedoch geändert werden.
 
-8. Schließen Sie die app, und doppelklicken Sie auf der **ExpenseDetail.xaml.cs** -Datei unter dem **Ansichten** Ordner der **ContosoExpenses.Core** Projekt.
+8. Schließen Sie die APP, und doppelklicken Sie auf die Datei **ExpenseDetail.XAML.cs** im Ordner **views** des Projekts **contosoaufwendungen. Core** .
 
-9. Fügen Sie am oberen Rand der Klasse die folgende Namespacedeklaration hinzu:
+9. Fügen Sie am Anfang der-Klasse die folgende Namespace Deklaration hinzu:
 
     ```csharp
     using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
     ```
 
-10. Suchen Sie die `ExpenseDetail()` Konstruktor.
+10. Suchen Sie `ExpenseDetail()` den-Konstruktor.
 
-11. Fügen Sie die folgende Codezeile unmittelbar nach der `InitializeComponent()` Methode, und speichern Sie die Codedatei.
+11. Fügen Sie nach der `InitializeComponent()` -Methode die folgende Codezeile hinzu, und speichern Sie die Codedatei.
 
     ```csharp
     Signature.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
     ```
 
-    Sie können die **InkPresenter** Objekt, das Anpassen der Freihand-Erfahrung. Dieser Code verwendet die **InputDeviceTypes** Eigenschaft, um die Maus und Stifteingabe aktiviert.
+    Sie können das **InkPresenter** -Objekt verwenden, um die standardmäßige Einbindung zu ändern. In diesem Code wird die **inputdevicetypes** -Eigenschaft verwendet, um die Maus und die Stift Eingabe zu aktivieren.
 
-12. Drücken Sie erneut F5, um erneut, und führen die app im Debugger aus. Wählen Sie einen Mitarbeiter aus der Liste aus, und wählen Sie dann eine der verfügbaren Ausgaben.
+12. Drücken Sie erneut F5, um die APP im Debugger neu zu erstellen und auszuführen. Wählen Sie einen Mitarbeiter aus der Liste aus, und wählen Sie dann eine der verfügbaren Ausgaben aus.
 
-13. Versuchen Sie es jetzt, um etwas in der Signatur Speicherplatz mit der Maus zu zeichnen. Dieses Mal sehen Sie die Freihandeingaben auf dem Bildschirm angezeigt.
+13. Versuchen Sie jetzt, etwas im Signatur Bereich mit der Maus zu zeichnen. Dieses Mal wird die frei Hand Eingabe auf dem Bildschirm angezeigt.
 
     ![Signatur](images/wpf-modernize-tutorial/Signature.png)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-An diesem Punkt in diesem Tutorial, Sie haben erfolgreich hinzugefügt eine UWP **InkCanvas** Steuerelement für die Contoso-Ausgaben-app. Sie sind nun bereit zur [Teil 3: Hinzufügen ein UWP-CalendarView-Steuerelements, das mithilfe von XAML-Inseln](modernize-wpf-tutorial-3.md).
+An dieser Stelle im Tutorial haben Sie ein UWP-Steuerelement " **InkCanvas** " zu der App "appto-Ausgaben" hinzugefügt. Sie sind nun für [Teil 3 bereit: Fügen Sie ein UWP CalendarView-Steuerelement mithilfe von](modernize-wpf-tutorial-3.md)XAML-Inseln hinzu.
