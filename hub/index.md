@@ -512,7 +512,7 @@ ms.locfileid: "67317714"
                                             </div>
                                             <div class="cardText">
                                                 <h3>Microsoft Edge</h3>
-                                                <p>Erhalten Sie Informationen Sie zum Bereitstellen und Verwalten von Microsoft Edge und Internet Explorer 11.</p>
+                                                <p>Erhalten Sie Informationen zum Bereitstellen und Verwalten von Microsoft Edge und Internet Explorer 11.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -550,7 +550,7 @@ ms.locfileid: "67317714"
                                             </div>
                                             <div class="cardText">
                                                 <h3>Surface Hub</h3>
-                                                <p>Erhalten Sie Informationen Sie zum Einrichten und Verwalten von Surface Hub.</p>
+                                                <p>Erhalten Sie Informationen zum Einrichten und Verwalten von Surface Hub.</p>
                                             </div>
                                         </div>
                                     </div>
