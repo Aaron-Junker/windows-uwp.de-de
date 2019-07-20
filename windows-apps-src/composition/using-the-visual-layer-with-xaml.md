@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d118633d9d0d9b7007c94ec4d5053db34b09e29
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: c11a812aaa62e9fa4d27fddc1d55739fe491bd20
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318048"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340844"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Benutzung des Visual Layer mit XAML
 
@@ -25,7 +25,7 @@ Funktionen von XAML und Visual Layer "Interop" kann zum Erstellen von erweiterte
 - Pixelperfekte Schlagschatten
 
 Diese Effekte und Animationen können auf vorhandenen XAML-Inhalt angewendet werden, damit Sie Ihre XAML-App nicht erheblich umstrukturieren müssen, um neue Funktionen nutzen zu können.
-Layoutanimationen, Schatten und Effekte für Unschärfe werden im folgenden Rezepteabschnitt behandelt. Ein Codebeispiel, das Parallax implementiert, finden Sie unter [ParallaxingListItems sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems). Die [WindowsUIDevLabs Repository](https://github.com/microsoft/WindowsCompositionSamples) verfügt außerdem über weitere Beispiele für die Implementierung von Animationen, Schatten und Effekte.
+Layoutanimationen, Schatten und Effekte für Unschärfe werden im folgenden Rezepteabschnitt behandelt. Ein Codebeispiel, das Parallax implementiert, finden Sie unter [ParallaxingListItems sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). Die [WindowsUIDevLabs Repository](https://github.com/microsoft/WindowsCompositionSamples) verfügt außerdem über weitere Beispiele für die Implementierung von Animationen, Schatten und Effekte.
 
 ## <a name="the-xamlcompositionbrushbase-class"></a>Die XamlCompositionBrushBase-Klasse
 
@@ -45,12 +45,12 @@ Codebeispiele finden Sie auf der Referenzseite für [**XamlLight**](https://docs
 
 ## <a name="the-elementcompositionpreview-class"></a>Die ElementCompositionPreview-Klasse
 
-[ **"Elementcompositionpreview"** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) ist eine statische Klasse, die XAML und der visuellen Ebene Interop-Funktionen bereitstellt. Eine Übersicht über die visuelle Ebene und die zugehörige Funktionalität finden Sie unter [Visual Layer](https://docs.microsoft.com/windows/uwp/graphics/visual-layer). Die **ElementCompositionPreview** Klasse bietet die folgenden Methoden:
+[**Elementcompositionpreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) ist eine statische Klasse, die XAML-und Visual Layer-Interop-Funktionen bereitstellt. Eine Übersicht über die visuelle Ebene und die zugehörige Funktionalität finden Sie unter [Visual Layer](https://docs.microsoft.com/windows/uwp/graphics/visual-layer). Die **ElementCompositionPreview** Klasse bietet die folgenden Methoden:
 
--   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Abrufen von "Handzetteln" visuelle Objekt, das zum Rendern dieses Elements verwendet wird
--   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Legt eine "Handin" Visual als letztes untergeordnetes Element der visuellen Struktur dieses Elements fest. Dieses Visual wird über den Rest des Elements gezeichnet. 
--   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Rufen Sie das Visual Satz mit **SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Abrufen eines Objekts, die verwendet werden kann, beim Erstellen von 60 fps-Animationen, die basierend auf den Bildlauf-Offset in ein **ScrollViewer-Element**
+-   [**Getelementvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Dient zum Erstellen eines "Handout"-visuellen Elements, das zum Rendering dieses Elements verwendet wird.
+-   [**Setelementchildvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Legt eine "handin"-Visualisierung als letztes untergeordnetes Element der visuellen Struktur dieses Elements fest. Dieses Visual wird über den Rest des Elements gezeichnet. 
+-   [**Getelementchildvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Abrufen der visuellen Gruppe mithilfe von " **setelementchildvisual** "
+-   [**Getscrollviewermanipulationpropertyset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Dient zum Erstellen eines Objekts, das zum Erstellen von 60fps-Animationen auf der Grundlage eines scrolloffsets in **ScrollViewer** verwendet werden kann.
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>Hinweise auf ElementCompositionPreview.GetElementVisual
 
@@ -96,7 +96,7 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## <a name="getalphamask-methods"></a>**GetAlphaMask** Methoden
 
-[**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image), [ **TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), und [ **Form** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) implementieren eine Methode namens  **GetAlphaMask** zurückgibt, die eine **CompositionBrush** Graustufen-Bildes in der Form des Elements darstellt. Dieser **CompositionBrush** kann als Eingabe für eine Komposition **DropShadow** dienen, also kann der Schatten die Form des Elements anstelle eines Rechtecks haben. Das ermöglicht auf Pixel abgestimmte, Konturbasierte Schatten für Text, Bilder mit Alpha und Formen. Sie können unter *Schlagschatten* im Folgenden ein Beispiel für diese API finden.
+" [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)", " [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)" und " [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) " implementieren jeweils eine Methode namens " **getAlphaMask** ", die einen **compositionbrush** zurückgibt, der ein Graustufenbild mit der Form des Elements darstellt. Dieser **CompositionBrush** kann als Eingabe für eine Komposition **DropShadow** dienen, also kann der Schatten die Form des Elements anstelle eines Rechtecks haben. Das ermöglicht auf Pixel abgestimmte, Konturbasierte Schatten für Text, Bilder mit Alpha und Formen. Sie können unter *Schlagschatten* im Folgenden ein Beispiel für diese API finden.
 
 ## <a name="recipes"></a>Rezepte
 
@@ -362,8 +362,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Übersicht über Visual](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
-- [ **"Elementcompositionpreview"** Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
+- [Übersicht über die visuelle Schicht](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
+- [**Elementcompositionpreview** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - Erweiterte UI und Kompositionsbeispiele in dem [WindowsUIDevLabs-GitHub](https://github.com/microsoft/WindowsCompositionSamples).
-- [BasicXamlInterop-Beispiel](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/BasicXamlInterop)
-- [ParallaxingListItems-Beispiel](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)
+- [Basicxamlinterop-Beispiel](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
+- [Beispiel für "beispieltems"](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

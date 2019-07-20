@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 86e9b15ee71c3ed831a46e369e8feaef8641e714
-ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
+ms.openlocfilehash: de623240e275dda5b6fc4df9afee31e1adf9fd4f
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303582"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340851"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Einrichten automatisierter Builds für UWP-Apps
 
@@ -80,13 +80,14 @@ So laden Sie ein Zertifikat für den automatisierten Build hoch:
 
     ![Hochladen einer sicheren Datei](images/secure-file2.png)
 
+5. Wenn das Zertifikat über ein Kennwort verfügt, empfiehlt es sich, das Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) zu speichern und das Kennwort dann mit einer [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)zu verknüpfen. Sie können die Variable verwenden, um auf das Kennwort aus der Pipeline zuzugreifen.
+
 > [!NOTE]
 > Ab Visual Studio 2019 wird ein temporäres Zertifikat nicht mehr in UWP-Projekten generiert. Um Zertifikate zu erstellen oder zu exportieren, verwenden Sie die in [diesem Artikel](create-certificate-package-signing.md)beschriebenen PowerShell-Cmdlets.
 
 ## <a name="configure-the-build-solution-build-task"></a>Konfigurieren der Buildaufgabe „Projektmappe erstellen“
 
-Mit diesem Task werden alle Lösungen, die sich im Arbeitsordner befinden, in Binärdateien kompiliert und die Ausgabe-App-Paketdatei erstellt.
-Diese Aufgabe verwendet MSBuild-Argumente. Sie müssen den Wert dieser Argumente angeben. Orientieren Sie sich an der folgenden Tabelle.
+Mit diesem Task werden alle Lösungen, die sich im Arbeitsordner befinden, in Binärdateien kompiliert und die Ausgabe-App-Paketdatei erstellt. Diese Aufgabe verwendet MSBuild-Argumente. Sie müssen den Wert dieser Argumente angeben. Orientieren Sie sich an der folgenden Tabelle.
 
 |**MSBuild-Argument**|**Wert**|**Beschreibung**|
 |--------------------|---------|---------------|
@@ -99,6 +100,7 @@ Diese Aufgabe verwendet MSBuild-Argumente. Sie müssen den Wert dieser Argumente
 | Appxpackagesigningenabled | true | Aktiviert die Paket Signatur. |
 | PackageCertificateThumbprint | Zertifikatfingerabdruck | Dieser Wert **muss** dem Fingerabdruck im Signaturzertifikat entsprechen oder eine leere Zeichenfolge sein. |
 | Packagecertificatekeyfile | Pfad | Der Pfad zu dem Zertifikat, das verwendet werden soll. Dies wird aus den Metadaten der sicheren Datei abgerufen. |
+| Packagecertifialisiepassword | Kennwort | Das Kennwort für das Zertifikat. Es wird empfohlen, dass Sie Ihr Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) speichern und das Kennwort mit der [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)verknüpfen. Sie können die Variable an dieses Argument übergeben. |
 
 ### <a name="configure-the-build"></a>Konfigurieren des Builds
 

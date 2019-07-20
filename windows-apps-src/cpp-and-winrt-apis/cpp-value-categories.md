@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, Verschieben, Weiterleiten, Wertekategorien, Verschiebesemantik, perfekte Weiterleitung, lvalue, rvalue, glvalue, prvalue, xvalue
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1860f562233ceefa6d9ebb3741378b3265b4c3a9
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a11d7763c33df6733a8dbf78392d27417e7cf18d
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63797109"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270210"
 ---
 # <a name="value-categories-and-references-to-them"></a>Wertekategorien und zugehörige Verweise
 In diesem Thema werden die verschiedenen Kategorien von Werten (und Verweisen auf Werte) beschrieben, die in C++ vorhanden sind. Sicherlich haben Sie bereits von *lvalues* und *rvalues* gehört, der in diesem Artikel erläuterte Zusammenhang ist Ihnen jedoch möglicherweise neu. Außerdem gibt es noch andere Arten von Werten.

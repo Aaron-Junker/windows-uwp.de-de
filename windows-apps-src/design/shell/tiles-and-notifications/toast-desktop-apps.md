@@ -1,5 +1,5 @@
 ---
-Description: Ermitteln Sie die verschiedenen Optionen, die Win32-desktop-apps verfügen, für das Senden von toastbenachrichtigungen
+Description: Entdecken Sie die verschiedenen Optionen für Desktop-Win32-Apps zum Senden von Popup Benachrichtigungen.
 title: Popupbenachrichtigungen über Desktop-Apps
 label: Toast notifications from desktop apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popupbenachrichtigungen, Desktop-Brücke, Optionen zum Senden von Popups, COM-Server, COM-Aktivator, COM, gefälschter COM, kein COM, ohne COM, Senden von Popupbenachrichtigungen
 ms.localizationpriority: medium
-ms.openlocfilehash: bab89962bdc7986f7653e39c7e5967a493421f05
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ef4810ec594173f3cc4da35d63143909f4859e3c
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636085"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340816"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Popupbenachrichtigungen über Desktop-Apps
 
@@ -30,8 +30,8 @@ Die nachfolgende Tabelle enthält die Optionen für die Unterstützung von Popup
 
 | Option | Visuelle Elemente | Aktionen | Eingaben | Aktiviert im Prozess |
 | -- | -- | -- | -- | -- |
-| [COM-Aktivierung](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
-| [Keine COM / Stub-CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
+| [COM-Activator](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
+| [Keine com/Stub-CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
 
 
 ## <a name="preferred-option---com-activator"></a>Bevorzugte Option – COM-Aktivator
@@ -74,13 +74,13 @@ Wenn Sie klassisches Win32 unterstützen, sind Sie mit dieser Option in Bezug au
 | ToastGeneric-Protokoll | ✔️ | ✔️ |
 | Ältere Vorlagen | ✔️ | ❌ |
 
-Wir werden künftig Dokumente veröffentlichen, die zeigen, wie Sie diese Option verwenden. Im Wesentlichen gilt für Desktop-Brücke-Apps: Senden Sie Popupbenachrichtigungen einfach so, wie eine UWP-App es tun würde. Wenn der Benutzer auf das Popup klickt, wird Ihre App mit der Befehlszeile gestartet, und zwar mit den Start-Argumenten, die Sie im Popup angegeben haben.
+Für Desktop Bridge-Apps können Sie einfach Popup Benachrichtigungen wie eine UWP-App senden. Wenn der Benutzer auf das Popup klickt, wird Ihre App mit der Befehlszeile gestartet, und zwar mit den Start-Argumenten, die Sie im Popup angegeben haben.
 
 Richten Sie für klassische Win32-Apps die AUMID so ein, dass Sie Popupbenachrichtigungen versenden können. Geben Sie dann in Ihrer Verknüpfung auch eine CLSID an. Dies kann eine zufällige GUID sein. Fügen Sie nicht den COM-Server/Aktivator hinzu. Sie fügen eine „Stub“-COM-CLSID hinzu, was dazu führt, dass Info-Center die Benachrichtigung beibehält. Beachten Sie, dass Sie nur Protokollaktivierungspopups verwenden können, da die Stub-CLSID die Aktivierung aller anderen Popupaktivierungen unterbricht. Deshalb müssen Sie Ihre App aktualisieren, um die Protokollaktivierung zu unterstützen. Außerdem müssen Sie Ihre eigene App durch das Popupprotokoll aktualisieren.
 
 
 ## <a name="resources"></a>Ressourcen
 
-* [Senden Sie eine lokale Toast-Benachrichtigung von Remotedesktop C# apps](send-local-toast-desktop.md)
-* [Senden Sie eine lokale Toast-Benachrichtigung über Remotedesktop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md)
-* [Toast-Content-Dokumentation](adaptive-interactive-toasts.md)
+* [Lokale Popup Benachrichtigung von Desktop C# -apps senden](send-local-toast-desktop.md)
+* [Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md)
+* [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)
