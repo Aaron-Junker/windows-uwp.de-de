@@ -1,6 +1,7 @@
 - name: Erstellen von Apps für Windows
-  href: apps/index.md
   items:
+    - name: Übersicht
+      href: apps/index.md
     - name: Erstellen von Desktop-Apps
       items:
         - name: Übersicht
@@ -63,3 +64,19 @@
       href: apps/accessibility.md
     - name: Features und Technologien
       href: apps/features-and-technologies.md
+- name: Erstellen mit Windows
+  items:
+    - name: Entwickeln mit Python
+      items:
+        - name: Übersicht
+          href: python/index.md
+        - name: Erste Schritte für Einsteiger
+          href: python/get-started/python-for-education.md
+        - name: Erste Schritte mit der Webentwicklung
+          href: python/get-started/python-for-web.md
+        - name: Erste Schritte mit Automatisierung
+          href: python/get-started/python-for-scripting.md
+        - name: Häufig gestellte Fragen
+          href: python/faqs.md
+        - name: Ressourcen
+          href: python/resources.md

@@ -9,12 +9,12 @@ ms.topic: hub-page
 title: Windows-Dokumentation
 description: Suchen Sie Entwickler-, Hardware- und IT Pro-Dokumente, die Ihnen beim Erstellen und Verwalten Ihrer Windows-Lösung helfen.
 localizationpriority: medium
-ms.openlocfilehash: a58310793dd43f3c1970ced7d9365690670bb6a2
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8bd9a7e4e9575c725830481339438912af193ee3
+ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317714"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68349201"
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -82,7 +82,7 @@ ms.locfileid: "67317714"
             <a data-default="true" href="#developer">Entwickler</a>
             <ul id="developer">
                 <li>
-                    <a href="#developer-all">alle</a>
+                    <a href="#developer-all">Alle</a>
                     <ul id="developer-all" class="cardsC">
                         <li>
                             <div class="container intro">
@@ -222,13 +222,55 @@ ms.locfileid: "67317714"
                                 </div>
                             </a>
                         </li>
-                       <li>
+                        <li>
+                            <div class="container">
+                                <p>Erstellen mit Windows</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/windows/python/index">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-uwp.svg?branch=master" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Erstellen mit Python</h3>
+                                                <p>Ganz egal, ob Sie plattformübergreifende Web-Apps erstellen, allgemeine Aufgaben mit einem Skript automatisieren oder in einer Schulungsumgebung zum ersten Mal Python kennenlernen – mit uns machen Sie sich mit allem vertraut, was Sie für die Entwicklung mit Python unter Windows benötigen.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="/windows/nodejs/index">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-desktop.svg?branch=master" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Develop with NodeJS<</h3>
+                                                <p>If you love JavaScript and want to build a quick web app with Express, a server-side app with Meteor, a data-heavy enterprise app with Sails, a desktop app with Electron, or an online multi-player game with Socket.io, we'll help you get set up to develop using Node.js on Windows.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li> -->
                     </ul>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="#hardware-dev">Hardware-Entwicklung</a>
+            <a href="#hardware-dev">Hardwareentwicklung</a>
             <ul id="hardware-dev">
                 <li>
                     <a href="#hardware-dev1"></a>
