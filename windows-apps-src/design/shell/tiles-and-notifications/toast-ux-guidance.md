@@ -1,68 +1,67 @@
 ---
-Description: Erfahren Sie, wie effektive und benutzerorientierte Benachrichtigungen zu erstellen, die Ihre Benutzer produktiver und gerne machen.
-title: Toast-UX-Leitfaden
+Description: Erfahren Sie, wie Sie effektive und benutzerorientierte Benachrichtigungen erstellen, mit denen Ihre Benutzer produktiv und zufrieden sind.
+title: Popup-UX-Leitfaden
 label: Toast UX Guidance
 template: detail.hbs
 ms.date: 05/18/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Notification, Collection, Gruppe, Ux, Ux-Anleitungen, Anleitungen, Aktion, Toast, Info-Centers, Noninterruptive, effektive Benachrichtigungen, nicht intrusiv handlungsrelevant Benachrichtigungen verwalten, Organisieren
+keywords: Windows 10-, UWP-, Benachrichtigungs-, Sammlungs-, Gruppen-, UX-, UX-, Leitfaden-, Aktions-, Popup-, Aktions Center-, nicht interruptive, effektive Benachrichtigungen, nicht eindringliche Benachrichtigungen, Aktions fähig, verwalten, organisieren
 ms.localizationpriority: medium
-ms.openlocfilehash: 327a2add84343be3b972f7bb1f232298e7ef92ad
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 111ac9a216b87e120e42c9db7761bd8588548029
+ms.sourcegitcommit: 720d8778d94ef44d2f86d2f1f0ebb05d6420805d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320728"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68415081"
 ---
-# <a name="toast-notification-ux-guidance"></a>Toast-Notification-UX-Leitfaden
-Benachrichtigungen sind ein wichtiger Bestandteil des modernen Lebens. Sie können Benutzer produktiver und engagierte mit apps und Websites als auch auf dem Laufenden bleiben mit Updates werden. Benachrichtigungen können jedoch schnell Aktivieren von nützlich, um overbearing und aufwendig, wenn sie nicht zur benutzerorientierten so entworfen wurden. Benachrichtigungen sind eine mit der rechten Maustaste außerhalb wird deaktiviert, und es ist unwahrscheinlich, nachdem sie deaktiviert sind, sie werden aktiviert, erneut.  So stellen Sie sicher, dass Ihre Benachrichtigungen geeigneten Platz auf dem Bildschirm des Benutzers und die Uhrzeit, damit Sie diesen Kanal Engagement geöffnet halten können.
+# <a name="toast-notification-ux-guidance"></a>Leitfaden für Popup Benachrichtigungs-UX
+Benachrichtigungen sind ein notwendiger Teil des modernen Lebenszyklus. Sie helfen Benutzern, produktiver zu arbeiten und mit apps und Websites zu arbeiten, und bleiben mit allen Updates auf dem laufenden. Allerdings können Benachrichtigungen schnell von Vorteil zu Überlastung und eindringlichem Verhalten werden, wenn Sie nicht auf Benutzer zentrierte Weise entworfen wurden. Ihre Benachrichtigungen werden von einem Rechtsklick entfernt, und es ist unwahrscheinlich, dass Sie deaktiviert werden, wenn Sie ausgeschaltet sind.  Stellen Sie also sicher, dass Ihre Benachrichtigungen den Bildschirmbereich und die Uhrzeit des Benutzers respektieren, damit Sie diesen Engagement-Kanal geöffnet halten können.
 
-> **Wichtige APIs:** [Nuget-Paket für Windows-Community-Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **Wichtige APIs:** [Nuget-Paket für Windows Community Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
-Wir haben unsere Windows-Telemetrie und andere erste sowie Drittanbieter-Fallstudien, um vier Regeln eine hervorragende Benachrichtigung Story macht träfen, analysiert.  Wir sind überzeugt, diese Regeln sind universell anwendbar ist, unabhängig von der Plattform und hilft Ihrer Benachrichtigungen auf eine positive Auswirkung auf Ihre Benutzer haben.
+Wir haben unsere Windows-Telemetrie und andere Fallstudien von erst-und Drittanbietern analysiert, um vier Regeln für eine gute Benachrichtigung zu erhalten.  Wir sind sicher, dass diese Regeln unabhängig von der Plattform universell anwendbar sind und Ihre Benachrichtigungen bei ihren Benutzern positiv beeinflussen können.
 
-## <a name="1-actionable-notifications"></a>1. Aktionen erfordernde Benachrichtigungen
-Aktionen erfordernde Benachrichtigungen den Benutzern ermöglicht, produktiv zu sein, ohne Sie zu Ihrer app zu öffnen.  Natürlich es großartig ist, damit die app startet, ist dies nicht der einzige Maßstab des Erfolgs und ermöglicht Benutzern werden kleine erreichen können Aufgaben ohne in Ihre app ein äußerst leistungsfähiges Tool im benutzerumgebung sein.
+## <a name="1-actionable-notifications"></a>1. Handlungs relevante Benachrichtigungen
+Handlungs relevante Benachrichtigungen ermöglichen es Ihren Benutzern, produktiv zu sein, ohne die APP zu öffnen.  Obwohl es sehr gut ist, App-Starts zu starten, ist dies nicht die einzige Erfolgs Maßnahme, und die Benutzer können kleinere Aufgaben ausführen, ohne in Ihre App wechseln zu müssen. Dies ist ein sehr leistungsfähiges Tool zum begrenzen ihrer Benutzer.
 
-![Aktionen erfordernde Benachrichtigung mit Eingabetextfeld und Schaltflächen Erinnerungen festlegen, und klicken Sie auf die Benachrichtigung reagieren](images/actionable-notification-example01.png)
+![Aktions Benachrichtigung mit Eingabe Textfeld und Schaltflächen zum Festlegen von Erinnerungen und Antworten auf die Benachrichtigung](images/actionable-notification-example01.png)
 
-Über befindet sich ein Beispiel für eine Benachrichtigung, die Aktionen nutzt. Im Gefühl der Abschließen der Aufgaben ist, ein Gefühl durchgehend positiv, und Sie können diese Emotion für Ihre app oder Website erhöhen, durch Senden von Benachrichtigungen, die anwendbare Inhalte enthalten. Aktionen erfordernde Benachrichtigungen können auch die Produktivität zu steigern, sowohl in Unternehmens- und endbenutzeranwendungen Szenarios verringert werden, da die Zeit für Benutzer der Aktion für diese kleineren Aufgaben durchlaufen. Es wird empfohlen, einschließlich Aktionen, die Ihre Benutzer regelmäßig ausführen, oder Elemente, die Sie versuchen, Ihre Benutzer tun zu trainieren.  Beispiele:
-* Wie gewünscht, zu Favoriten hinzugefügt, kennzeichnen oder starring Inhalt
-* Genehmigen oder Verweigern von spesenabrechnungen, Urlaub, Berechtigungen überprüfen usw.
-* Inline auf Nachrichten antworten, e-Mails, Gruppe chats, Kommentare usw.
-* Abschluss Bestellungen mit [Update ausstehend](toast-pending-update.md)
-* Festlegen von Warnungen und Erinnerungen für einem späteren Zeitpunkt als auch Buchung möglicherweise Zeit in einem Kalender
+Oben ist ein Beispiel für eine Benachrichtigung, die Aktionen nutzt. Das Gefühl der Fertigstellung von Aufgaben ist ein universell positives Gefühl, und Sie können dieses Gefühl in Ihre APP oder Website bringen, indem Sie Benachrichtigungen senden, die über handlungsfähige Inhalte verfügen. Handlungs relevante Benachrichtigungen können auch dazu beitragen, die Produktivität zu steigern, sowohl in Unternehmens-als auch in Kunden Szenarien, indem Sie die Zeit verkürzen, die Benutzer durchlaufen, um diese kleineren Aufgaben auszuführen. Es wird empfohlen, Aktionen, die von Ihren Benutzern regelmäßig ausgeführt werden, oder Dinge, die Sie für Ihre Benutzer zu Schulen versuchen, zu erstellen.  Beispiele:
+* Vorlieben, bevorzugen, markieren von Inhalten
+* Genehmigen oder Verweigern von Ausgaben Berichten, Timeout, Berechtigungen usw.
+* Inline Antworten auf Nachrichten, e-Mails, Gruppenchats, Kommentare usw.
+* Abschließen von Bestellungen mithilfe des [ausstehenden Updates](toast-pending-update.md)
+* Festlegen von Warnungen oder Erinnerungen für einen anderen Zeitpunkt sowie möglicherweise die Zeit für die Reservierung von Zeit in einem Kalender
 
-Aktionen erfordernde Benachrichtigungen sind ein äußerst leistungsfähiges Tool, um Benutzern können Sie produktiv, Aufgaben und haben eine großartige und effiziente Umgebung mit Ihrer app oder Website.  Es gibt viele Möglichkeiten eröffnet hier! Wenn Sie Hilfe zum brainstorming Ideen möchten, sollten Sie gerne wenden Sie sich an das Team der Windows-Benachrichtigungen.
+Umsetzbare Benachrichtigungen sind ein sehr leistungsfähiges Tool, mit dem Ihre Benutzer produktiv arbeiten, Aufgaben erledigen und eine gute und effiziente Erfahrung mit Ihrer APP oder Website haben können.  Hier gibt es viele Möglichkeiten. Wenn Sie Hilfe beim Brainstorming benötigen, können Sie sich an das Windows-Benachrichtigungs Team wenden.
 
 ## <a name="2-timing-and-urgency"></a>2. Zeitliche Steuerung und Dringlichkeit
-Im Gegensatz zum Ergebnis, wie wir oft über Benachrichtigungen nachdenken ist Real-Time nicht notwendigerweise die besten! Es wird dringend die Entwickler stellen Sie sich über den Benutzer, und wenn die Benachrichtigung, die sie senden dringend Informationen ist oder nicht. Benutzer können problemlos mit zu vielen Informationen überladen werden, und erhalten frustriert, wenn sie unterbrochen wird werden, während sie, sich zu konzentrieren versuchen. Windows bietet einige Optionen für das Ausmaß der Benachrichtigungen zu beachten, die Sie senden:
+Im Gegensatz dazu, wie wir häufig über Benachrichtigungen nachzudenken, ist Echtzeit nicht unbedingt die beste Lösung. Wir empfehlen Entwicklern, sich über den Benutzer Gedanken zu machen, und wenn es sich bei der gesendeten Benachrichtigung um dringende Informationen handelt. Benutzer können problemlos mit zu vielen Informationen überladen und sind frustriert, wenn Sie unterbrochen werden, während Sie versuchen, sich zu konzentrieren. Windows bietet einige Optionen, um die Eindring Kraft der gesendeten Benachrichtigungen zu überprüfen:
 
-**Unformatierte Benachrichtigungen:** Mithilfe von [unformatierte Benachrichtigungen](raw-notification-overview.md) kann vorteilhaft sein viele Gründe geben, besonders beim Minimieren von Störungen des Benutzers zu.  Unformatierte Benachrichtigungen senden, wird Ihre app im Hintergrund aktiviert werden, damit Sie beurteilen können, ob die Benachrichtigung sinnvoll, sofort in Ihrer app-Kontext bereitstellen. Ist dies etwas Sie meinen, dass angezeigt werden soll, die dem Benutzer sofort, können Sie pop einen [lokalen Toast](send-local-toast.md) von dort aus.  Wenn es etwas ist der Benutzer muss nicht, finden Sie unter zurzeit, Sie erstellen eine [geplant Toast](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/09/30/quickstart-sending-an-alarm-in-windows-10/) , die ausgelöst wird, zu einem späteren Zeitpunkt.
+**Unformatierte Benachrichtigungen:** Die Verwendung von unformatierten [Benachrichtigungen](raw-notification-overview.md) kann aus vielen Gründen von Vorteil sein, insbesondere, wenn es um die Minimierung von Unterbrechungen für den Benutzer geht  Wenn Sie unformatierte Benachrichtigungen senden, wird Ihre APP im Hintergrund hochskaliert, sodass Sie beurteilen können, ob die Benachrichtigung für eine sofortige Bereitstellung im Kontext der APP sinnvoll ist. Wenn es etwas ist, das Sie dem Benutzer sofort angezeigt werden sollten, können Sie von dort aus einen [lokalen Toast](send-local-toast.md) Popup anzeigen.  Wenn dies der Fall ist, den der Benutzer momentan nicht benötigt, können Sie einen [geplanten Toast](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/09/30/quickstart-sending-an-alarm-in-windows-10/) erstellen, der zu einem späteren Zeitpunkt ausgelöst wird.
 
 
-**Inaktiver Datensätze Toast:** können Sie auch eine Benachrichtigung, die überspringen, in der unteren rechten Ecke des Bildschirms anzeigen lassen, und senden Sie stattdessen die Benachrichtigung direkt an den Info-Centers auslösen. Dies geschieht durch Festlegen der [SupressPopup Eigenschaft](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup) auf "true". Obwohl es möglicherweise einige Skepsis auf Benachrichtigungen wird außerhalb der Info-Centers nicht entfernt wurde, sehen Sie eine 2-3-Mal höhere Engagement für Popups, die im Info-Center über live per pop ausgelesen Toast.  Benutzer sind reaktionsfähiger, sofern sie steuern können, wenn sie unterbrochen werden deshalb Inhalt im Wartungscenter so viel effektiver noninvasively Benutzer benachrichtigt werden kann, und sind bereit, um Benachrichtigungen zu erhalten.
+**Ghost Toast:** Sie können auch eine Benachrichtigung auslösen, die in der unteren rechten Ecke des Bildschirms Pop überspringt, und die Benachrichtigung stattdessen direkt an das Wartungs Center senden. Dies wird erreicht, indem die [supresspopup-Eigenschaft](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup) auf true festgelegt wird. Obwohl es möglicherweise gewisse Skepsis bei nicht gesendeten Benachrichtigungen außerhalb des Aktions Centers gibt, wird ein 2-3-Mal höheres Engagement für Popups angezeigt, die sich im Aktions Center über Popup Popup befinden.  Benutzer reagieren besser, wenn Sie für den Empfang von Benachrichtigungen bereit sind, und können steuern, wann Sie unterbrochen werden. aus diesem Grund kann der Inhalt im Aktions Center so viel effektiver sein, wenn die Benutzer nicht mit der invasiven Benachrichtigung benachrichtigt werden.
 
-## <a name="3-clear-out-the-clutter"></a>3. Löschen Sie die Übersichtlichkeit hinsichtlich
-Benachrichtigungen können im Info-Center für relativ lange (Standard drei Tage) beibehalten.  Es ist zwingend erforderlich, dass Sie, dass die Inhalte, die hier befindet sich auf dem neuesten Stand und relevant ist sicherstellen, jedes Mal, wenn der Benutzer die Info-Center öffnet. Sie sind Platz auf dem Bildschirm des Benutzers für die Ermittlung aufwenden musste, und verbraucht dabei Steckplätze, die für einen aktuelleren verwendet werden können.  Nehmen wir an, die Benutzer Ihre e-Mail-app installiert und empfängt zehn e-Mails und zehn Benachrichtigungen und e-Mails.  Je nach Ihrer gewünschten Erfahrung sollten Sie erwägen, diese Benachrichtigungen deaktivieren, wenn der Benutzer lesen die entsprechende e-Mail-Adresse hat, oder Sie die app als eine Möglichkeit zum Entfernen von alten Überfrachtung aus Info-Centers geöffnet.
+## <a name="3-clear-out-the-clutter"></a>3. Löschen der Übersichtlichkeit
+Benachrichtigungen können für eine recht lange Zeit im Aktions Center beibehalten werden (standardmäßig drei Tage).  Es ist zwingend erforderlich, dass Sie sicherstellen, dass der Inhalt, der sich hier befindet, stets auf dem neuesten Stand ist und jedes Mal relevant ist, wenn der Benutzer das Sie verschwenden den Bildschirmbereich des Benutzers und nehmen Slots ein, die für etwas aktuellere Anwendungen verwendet werden können.  Nehmen wir an, dass der Benutzer Ihre e-Mail-Verwaltungs-App installiert und mit diesen e-Mails zehn e-Mails und zehn Benachrichtigungen empfängt.  Abhängig von der gewünschten Darstellung können Sie diese Benachrichtigungen deaktivieren, wenn der Benutzer die entsprechende e-Mail gelesen hat, oder die APP als Möglichkeit zum Entfernen des alten Clusterings aus dem Aktions Center öffnen.
 
-Wir haben eine Reihe von [ToastNotificationHistory](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotificationhistory) APIs, die ermöglichen es Ihnen, erfahren, welche Inhalte im Info-Center ist, und diese Benachrichtigungen zu verwalten. Respektieren Platz auf dem Bildschirm des Benutzers sein, und achten, dass Sie nur relevante und aktuelle Inhalte für Benutzer angezeigt werden.
+Wir verfügen über eine Reihe von " [deastnotificationhistory](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotificationhistory) "-APIs, mit denen Sie sehen können, welcher Inhalt im Aktions Center enthalten ist, und wie Sie diese Benachrichtigungen verwalten. Achten Sie auf den Bildschirmbereich des Benutzers, und achten Sie darauf, dass Sie nur relevante und aktuelle Inhalte für die Benutzer anzeigen.
 
-## <a name="4-keeping-organized"></a>4. Bleiben organisiert
-Wie bereits erwähnt, werden der Inhalt im Wartungscenter drei Tage lang beibehalten.  Um Ihre Benutzer die Informationen auswählen, sie schnell möchten, Organisieren Sie die Benachrichtigungen in Aktion Datencenter [Header](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/toast-headers) oder [Sammlungen](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection). Sehen Sie ein Beispiel für einen Header unten ein.
+## <a name="4-keeping-organized"></a>4. Organisieren
+Wie bereits erwähnt, wird der Inhalt des Aktions Centers drei Tage lang beibehalten.  Um Ihren Benutzern zu helfen, die gesuchten Informationen schnell auszuwählen, ordnen Sie die Benachrichtigungen im Aktions Center mithilfe von [Headern](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/toast-headers) oder [Sammlungen](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection)an. Ein Beispiel für einen Header finden Sie unten.
 
-![Toast-Beispiele mit Header mit der Bezeichnung "Camping!!"](images/toast-headers-action-center.png)
+![Popup Beispiele mit Headern mit der Bezeichnung "Camping!!"](images/toast-headers-action-center.png)
 
-Diese Benachrichtigungen auf eine Weise zu gruppieren, damit relevante Inhalte zusammen bleibt (d. h. Abtrennen von verschiedenen Sportarten Ligen in einer Sport-app oder Sortieren von Nachrichten nach Gruppenchat denken). Sammlungen sind ein offensichtlicher Möglichkeit zum Gruppe von Benachrichtigungen, während Header weniger offensichtlich sind, aber beide selektieren, und wählen Sie Ihre Benachrichtigungen schneller ermöglichen.
+Gruppieren Sie diese Benachrichtigungen auf eine Weise, damit relevante Inhalte unverändert bleiben (d. h. Sie sollten verschiedene Sportgruppen in einer Sport-App aufteilen oder Nachrichten nach Gruppenchat sortieren). Auflistungen sind eine offensichtlichere Methode zum Gruppieren von Benachrichtigungen, wohingegen die Kopfzeile weniger gering ist, aber beide ermöglichen es Benutzern, Benachrichtigungen zu selekieren und schneller auszuwählen.
 
-## <a name="other-resources"></a>Weitere Ressourcen
-Diese vier oben genannten Punkte sind Anleitungen, die wir effektiv über eigene Analyse von Telemetriedaten sowie über die erste und Drittanbieter-Experimente gefunden haben. Bedenken Sie jedoch, die diese Richtlinien sind nichts anderes: Richtlinien.  Wir sind überzeugt, werden diese Regeln helfen, Interaktion und Produktivität Ihrer Benachrichtigungen zu erhöhen, aber nichts kann zur benutzerorientierten denken, und Lernen aus Ihren eigenen Daten ersetzen.  
 
-Wenn Sie noch heute Benachrichtigungen an Ihre UWP-app senden, können Sie Analytics anzeigen, auf was, können Sie Ihre Benachrichtigungen in passiert [Partner Center](https://partner.microsoft.com/dashboard)! Diese Daten bei Verwendung kostenloser Bestandteil der [Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) oder [WNS-APIs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview). Diese Metriken bietet Ihnen einen besseren Einblick in was, können Sie Ihre Benachrichtigungen auf der Windows-Plattform geschieht auch wie Benutzer Dank der Benachrichtigungen interagiert werden. Zugriff auf diese Daten durch Navigieren zum Menü auf der linken Seite einbinden > Benachrichtigungen, klicken auf der Registerkarte "Analyse" innerhalb der Seite "Benachrichtigungen".  Dies befindet sich am selben Ort, die Sie zum Senden von Benachrichtigungen über Partner Center wechseln würde.
+
+Diese vier Punkte sind eine Anleitung, die wir durch unsere eigene Analyse der Telemetriedaten und durch die ersten und Drittanbieter Experimente wirksam gefunden haben. Beachten Sie jedoch, dass diese Richtlinien nur die folgenden Richtlinien erfüllen: Richtlinien.  Wir sind sicher, dass diese Regeln dabei helfen, das Engagement und die Produktivität Ihrer Benachrichtigungen zu steigern, aber nichts kann die Benutzer zentrierte Betrachtung und das Erlernen aus ihren eigenen Daten ersetzen.  
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Inhalt der Popupbenachrichtigung](adaptive-interactive-toasts.md)
+* [Popup Inhalt](adaptive-interactive-toasts.md)
 * [Unformatierte Benachrichtigungen](raw-notification-overview.md)
-* [Update ausstehend](toast-pending-update.md)
-* [Benachrichtigungsbibliothek auf GitHub (Teil der Windows-Community-Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Ausstehende Aktualisierung](toast-pending-update.md)
+* [Benachrichtigungs Bibliothek auf GitHub (Teil des Windows Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
