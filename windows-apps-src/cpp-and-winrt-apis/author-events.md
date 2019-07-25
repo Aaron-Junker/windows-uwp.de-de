@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, Ereignis
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3c834a1696b65099549aa001338a8a02f60e50
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4499b2191734c6ae66131ce92aa2654188313d5e
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745236"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270177"
 ---
 # <a name="author-events-in-cwinrt"></a>Erstellen von Ereignissen in C++/WinRT
 
@@ -91,7 +91,10 @@ namespace winrt::BankAccountWRC::implementation
 }
 ```
 
-Für den Ereignis-Revoker muss die Überladung nicht implementiert werden. Das übernimmt die C++/WinRT-Projektion. (Ausführlichere Informationen findest du unter [Revoke a registered delegate](handle-events.md#revoke-a-registered-delegate) (Widerrufen eines registrierten Delegaten)). Die anderen Überladungen sind nicht in die Projektion integriert, sodass du sie optimal für dein individuelles Szenario implementieren kannst. Ein derartiger Aufruf von [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) und [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function) ist eine effiziente und parallele/threadsichere Standardmethode. Bei einer großen Anzahl von Ereignissen empfiehlt sich jedoch unter Umständen eine Implementierung mit geringer Dichte anstatt einer Implementierung, in der jedes Ereignis ein eigenes Ereignisfeld besitzt.
+> [!NOTE]
+> Informationen über automatische Ereignis-Revoker finden Sie unter [Einen registrierten Delegaten widerrufen](handle-events.md#revoke-a-registered-delegate). Sie erhalten eine kostenlose Implementierung des automatischen Ereignis-Revokers für das Ereignis. Das heißt, Sie müssen nicht die Überladung für den Ereignis-Revoker implementieren – er wird von der C++/WinRT-Projektion für Sie bereitgestellt.
+
+Die anderen Überladungen (die Überladungen für Registrierung und manuellen Rückruf) sind *nicht* in die Projektion integriert. Dies bietet Ihnen die Flexibilität, sie optimal für Ihr Szenario zu implementieren. Der in diesen Implementierungen gezeigte Aufruf von [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) und [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function) ist eine effiziente und parallele/threadsichere Standardmethode. Bei einer großen Anzahl von Ereignissen empfiehlt sich jedoch unter Umständen eine Implementierung mit geringer Dichte anstatt einer Implementierung, in der jedes Ereignis ein eigenes Ereignisfeld besitzt.
 
 Oben ist außerdem zu sehen, dass die Implementierung der Funktion **AdjustBalance** das Ereignis **AccountIsInDebit** auslöst, wenn der Saldo negativ wird.
 
@@ -112,6 +115,8 @@ Schließe diesen Header in `App.cpp` ein.
 ```
 
 Füge in `App.cpp` außerdem den folgenden Code hinzu, um ein Bankkonto zu instanziieren (unter Verwendung des Standardkonstruktors des projizierten Typs), registriere einen Ereignishandler, und sorge dann dafür, dass das Konto ins Minus geht.
+
+`WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
 
 ```cppwinrt
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
