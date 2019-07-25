@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python, Windows 10, Microsoft, Erlernen von Python, python unter Windows für Einsteiger, Installieren von Python mit Microsoft Store, Python mit vs Code, pygame unter unter Windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 9bc9a75b11e90b53f46e8a2b267921078b27ad36
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: 9ef2349b296e5518d6bbb85a035526d7de25ea5c
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349503"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473680"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>Einstieg in die Verwendung von Python unter Windows für Einsteiger
 
@@ -23,10 +23,9 @@ Im folgenden finden Sie eine Schritt-für-Schritt-Anleitung für Einsteiger, die
 
 ## <a name="set-up-your-development-environment"></a>Einrichten der Entwicklungsumgebung
 
-Für Einsteiger, die noch nicht mit python vertraut sind, wird empfohlen, [python über den Microsoft Store zu installieren](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Dies ist besonders wichtig, wenn Sie sich in einer Schulungs Umgebung oder in einer Organisation befinden, die Berechtigungen oder den administrativen Zugriff auf Ihren Computer einschränkt. Wenn Sie die Microsoft Store zur Installation von Python verwenden, wird Sie im Betriebssystem Pfad für den aktuellen Benutzer abgelegt (sodass kein Administrator Zugriff erforderlich ist).
+Für Einsteiger, die noch nicht mit python vertraut sind, wird empfohlen, [python über den Microsoft Store zu installieren](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Bei der Installation über das Microsoft Store wird der grundlegende Python3-Interpreter verwendet. es werden jedoch die Pfad Einstellungen für den aktuellen Benutzer eingerichtet (wodurch kein Administrator Zugriff erforderlich ist) und automatische Updates bereitgestellt. Dies ist besonders hilfreich, wenn Sie sich in einer Schulungs Umgebung oder in einer Organisation befinden, die Berechtigungen oder den administrativen Zugriff auf Ihren Computer einschränkt.
 
-> [!IMPORTANT]
-> Wenn Sie python unter Windows für die **Webentwicklung**verwenden, empfehlen wir eine andere Einrichtung für Ihre Entwicklungsumgebung. Anstatt direkt unter Windows zu installieren, empfiehlt es sich, python über das Windows-Subsystem für Linux zu installieren und zu verwenden. Hilfe finden Sie unter: [Beginnen Sie mit der Verwendung von Python für die Webentwicklung unter Windows](./python-for-web.md). Wenn Sie daran interessiert sind, gängige Aufgaben für Ihr Betriebssystem zu automatisieren, finden Sie weitere Informationen im Leitfaden: [Beginnen Sie mit der Verwendung von Python unter Windows für die Skripterstellung und Automatisierung](./python-for-scripting.md). <br>Für einige erweiterte Szenarien empfiehlt es sich, eine bestimmte Python-Version direkt von [python.org](https://www.python.org/downloads/windows/) herunterzuladen oder eine [Alternative](https://www.python.org/download/alternatives)zu installieren, z. b. Anaconda, jython, pypy, winpython, IronPython usw. Dies wird nur empfohlen, wenn Sie ein fortschrittlicher python-Programmierer mit einem bestimmten Grund für die Auswahl einer alternativen Implementierung sind.
+Wenn Sie python unter Windows für die **Webentwicklung**verwenden, empfehlen wir eine andere Einrichtung für Ihre Entwicklungsumgebung. Anstatt direkt unter Windows zu installieren, empfiehlt es sich, python über das Windows-Subsystem für Linux zu installieren und zu verwenden. Hilfe finden Sie unter: [Beginnen Sie mit der Verwendung von Python für die Webentwicklung unter Windows](./python-for-web.md). Wenn Sie daran interessiert sind, gängige Aufgaben für Ihr Betriebssystem zu automatisieren, finden Sie weitere Informationen im Leitfaden: [Beginnen Sie mit der Verwendung von Python unter Windows für die Skripterstellung und Automatisierung](./python-for-scripting.md). Für einige erweiterte Szenarien (z. b. die Notwendigkeit, auf installierte Dateien von python zuzugreifen oder diese zu ändern, Kopien von Binärdateien zu erstellen oder python-DLLs direkt zu verwenden), empfiehlt es sich, eine bestimmte Python-Version direkt von [python.org](https://www.python.org/downloads/) herunterzuladen oder die Installation von eine [Alternative](https://www.python.org/download/alternatives), wie z. b. Anaconda, jython, pypy, winpython, IronPython usw. Dies wird nur empfohlen, wenn Sie ein fortschrittlicher python-Programmierer mit einem bestimmten Grund für die Auswahl einer alternativen Implementierung sind.
 
 ## <a name="install-python"></a>Installieren von python
 

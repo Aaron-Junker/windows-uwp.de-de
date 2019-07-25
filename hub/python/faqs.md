@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python, Windows 10, Microsoft, PIP, py. exe, Dateipfade, PYTHONPATH, python-Bereitstellung, Python-Paket Erstellung
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4f7f5c325dfd114093e1434259489459a8c78151
-ms.sourcegitcommit: 161eac985af11faaff78797d86343d4fa7d6a05f
+ms.openlocfilehash: fd08061858fc97f1427e94c6a92a4c3a9511967d
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68366728"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473659"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Häufig gestellte Fragen zur Verwendung von Python unter Windows
 
@@ -29,9 +29,11 @@ Einige Pakete enthalten systemeigenen Code, der einen C C++ -oder-Compiler für 
 
 [Befolgen Sie die Diskussion zu StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
 
-## <a name="what-is-pyexe"></a>Was ist py. exe?
+### <a name="what-is-pyexe"></a>Was ist py. exe?
 
-Möglicherweise verfügen Sie über mehrere Versionen von Python, die auf Ihrem Computer installiert sind, da Sie an verschiedenen python-Projekttypen arbeiten. Da diese alle den `python` Befehl verwenden, ist es möglicherweise nicht offensichtlich, welche Verwendung Sie verwenden. Das [Starter. exe](https://docs.python.org/3/using/windows.html#launcher) -Start Programm wählt automatisch die neueste Version von python aus, die Sie installiert haben. Sie können auch Befehle wie `py -3.7` verwenden, um eine bestimmte Version auszuwählen oder `py --list` um festzustellen, welche Versionen verwendet werden können. Das Starter. exe-Start Programm funktioniert **jedoch**nur, wenn Sie eine Version von Python verwenden, die von [python.org](https://www.python.org/downloads/windows/)installiert wird. Wenn Sie python von der Microsoft Store installieren, wird `py` der Befehl **nicht eingeschlossen**. Für Linux, macOS, WSL und die Microsoft Store-Version von python sollten Sie den `python3` Befehl verwenden.
+Möglicherweise verfügen Sie über mehrere Versionen von Python, die auf Ihrem Computer installiert sind, da Sie an verschiedenen python-Projekttypen arbeiten. Da diese alle den `python` Befehl verwenden, ist es möglicherweise nicht offensichtlich, welche Python-Version Sie verwenden. Als Standard wird empfohlen, den `python3` Befehl (oder `python3.7` eine bestimmte Version auszuwählen) zu verwenden.
+
+Das [Starter. exe](https://docs.python.org/3/using/windows.html#launcher) -Start Programm wählt automatisch die neueste Version von python aus, die Sie installiert haben. Sie können auch Befehle wie `py -3.7` verwenden, um eine bestimmte Version auszuwählen oder `py --list` um festzustellen, welche Versionen verwendet werden können. Das Starter. exe-Start Programm funktioniert **jedoch**nur, wenn Sie eine Version von Python verwenden, die von [python.org](https://www.python.org/downloads/windows/)installiert wird. Wenn Sie python von der Microsoft Store installieren, wird `py` der Befehl **nicht eingeschlossen**. Für Linux, macOS, WSL und die Microsoft Store-Version von python sollten Sie den `python3` Befehl (oder `python3.7`) verwenden.
 
 ## <a name="why-dont-file-paths-work-in-python-when-i-copy-paste-them"></a>Warum funktionieren Dateipfade in python nicht, wenn ich Sie kopieren und Einfügen?
 

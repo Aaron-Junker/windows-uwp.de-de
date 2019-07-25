@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python, Microsoft, Windows 10, Tutorials, Onlinekurse, Blogs, Veranstaltungen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: ffcb2b280077d96b0405691976e04fc82959cf4c
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: a987043735dd433288fd53090cf3623b035fad7d
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349483"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473638"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressourcen für die Entwicklung mit Python unter Windows
 
@@ -24,6 +24,8 @@ Eine Liste der Links, die für python-Entwickler empfohlen werden, die auf Compu
 ## <a name="general"></a>Allgemein
 
 - [Microsoft dev-Blogs: Python](https://devblogs.microsoft.com/python/): Lesen Sie die neuesten Updates zu allen Dingen von python bei Microsoft.
+
+- [Ein ausführliches Tutorial zur Linux-Entwicklung unter Windows mit WSL und Visual Studio Code](https://devblogs.microsoft.com/commandline/an-in-depth-tutorial-on-linux-development-on-windows-with-wsl-and-visual-studio-code/): Exemplarische Vorgehensweise zum Einrichten Ihrer Entwicklungsumgebung, zum Erstellen einer python-APP und zum Debuggen.
 
 - [Verwenden von Python unter Windows](https://docs.python.org/3/using/windows.html): Diese python.org-Dokumentation bietet eine Übersicht über das Windows-spezifische Verhalten, das Sie bei der Verwendung von Python unter Microsoft Windows kennen sollten.
 
