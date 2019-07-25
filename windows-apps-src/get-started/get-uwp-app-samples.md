@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, UWP, Beispielcode, Codebeispiele
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 7f56b0f9e4cb7f89b8bc929015ecdf6d5c64d42e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63772224"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321076"
 ---
 # <a name="get-uwp-app-samples"></a>Beispiele für UWP-Apps abrufen
 
-Die Beispiele für Universelle Windows Plattform-Apps (UWP-Apps) sind über Repositorys auf GitHub verfügbar. Unter [Samples](https://developer.microsoft.com/windows/samples "Dev Center Beispiele") finden Sie eine durchsuchbare, kategorisierte Liste. Alternativ können Sie das Repository [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die Universelle Windows-Plattform") durchsuchen, das Beispiele für alle UWP-Features und ihre API-Verwendungsmuster enthält.  
+Die Beispiele für Universelle Windows Plattform-Apps (UWP-Apps) sind über Repositorys auf GitHub verfügbar. Unter [SamplesDev](https://developer.microsoft.com/windows/samples%20%22Dev%20Center%20samples%22) finden Sie eine durchsuchbare, kategorisierte Liste. Alternativ können Sie das Repository [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die Universelle Windows-Plattform") durchsuchen, das Beispiele für alle UWP-Features und ihre API-Verwendungsmuster enthält.  
 ![GitHub-Repository mit UWP-Beispielen](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>Code herunterladen

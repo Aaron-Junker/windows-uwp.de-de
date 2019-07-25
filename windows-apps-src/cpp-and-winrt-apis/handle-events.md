@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: 00870a196517f975d2736298513be7567f3dd29e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 194fd9041b76acb1ef76288fed21c8098462b406
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745055"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844336"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
@@ -18,6 +18,15 @@ In diesem Thema erfährst du, wie du Delegaten, die Ereignisse behandeln, mit [C
 
 > [!NOTE]
 > Informationen zum Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
+## <a name="using-visual-studio-2019-to-add-an-event-handler"></a>Hinzufügen eines Ereignishandlers mithilfe von Visual Studio 2019
+
+Mit der XAML-Designer-Benutzeroberfläche in Visual Studio 2019 lassen sich Ereignishandler einfach zu Projekten hinzufügen. Öffnen Sie im XAML-Designer die XAML-Seite, und wählen Sie das Steuerelement aus, dessen Ereignis behandelt werden soll. Klicken Sie auf der Eigenschaftenseite für dieses Steuerelement auf das Blitzsymbol, um alle Ereignisse aufzulisten, die mit dem Steuerelement verknüpft sind. Doppelklicken Sie dann auf das Ereignis, das behandelt werden soll, z. B.auf *OnClicked*.
+
+Der XAML-Designer fügt den Quelldateien den entsprechenden Ereignishandler-Funktionsprototyp (und eine Stubimplementierung) hinzu, den Sie durch eine eigene Implementierung ersetzen können.
+
+> [!NOTE]
+> Die Ereignishandler müssen in der Regel nicht in der Midl-Datei (`.idl`) beschrieben werden. Deshalb fügt der XAML-Designer keine Ereignishandler-Funktionsprototypen zur Midl-Datei hinzu. Er fügt sie nur den `.h`- und `.cpp`-Dateien hinzu.
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>Registrieren eines Delegaten zum Behandeln eines Ereignisses
 
@@ -49,7 +58,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> Beim Registrieren des Delegaten wird im obigen Codebeispiel ein unformatierter Zeiger vom Typ *this* übergeben, der auf das aktuelle Objekt verweist. Informationen zum Einrichten eines starken oder schwachen Verweises auf ein aktuelles Objekt findest du im Unterabschnitt **Wenn Sie eine Memberfunktion als Stellvertretung verwenden** des Abschnitts [Sicheres Zugreifen auf den *this*-Zeiger mit einem Delegaten für die Ereignisbehandlung](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+> Beim Registrieren des Delegaten wird im obigen Codebeispiel ein unformatierter Zeiger vom Typ *this* übergeben, der auf das aktuelle Objekt verweist. In [Wenn Sie eine Memberfunktion als Stellvertretung verwenden](weak-references.md#if-you-use-a-member-function-as-a-delegate) wird beschrieben, wie Sie einen starken oder schwachen Verweis auf das aktuelle Objekt erstellen.
 
 Ein Handler vom Typ **RoutedEventHandler** kann auch noch auf andere Weise erstellt werden. Der folgende Syntaxblock stammt aus dem Dokumentationsthema für [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler). (Wähle rechts oben auf dieser Webseite im Dropdownmenü **Sprache** die Option *C++/WinRT* aus.) Beachte die verschiedenen Konstruktoren: Einer akzeptiert eine Lambda-Funktion, ein anderer eine freie Funktion und ein weiterer (der oben verwendete) ein Objekt sowie eine Pointer-to-Member-Funktion.
 
@@ -177,8 +186,11 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 > [!NOTE]
 > Im obigen Codebeispiel ist `Button::Click_revoker` ein Typalias für `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. Ein ähnliches Muster gilt für alle C++/WinRT-Ereignisse. Jedes Windows-Runtime-Ereignis verfügt über eine Widerrufsfunktionsüberladung, die einen Ereignis-Revoker zurückgibt, und dieser Revokertyp gehört zur Ereignisquelle. Nehmen wir als weiteres Beispiel das Ereignis [**CoreWindow::SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged): Dieses Ereignis verfügt über eine Registrierungsfunktionsüberladung, die einen Wert vom Typ **CoreWindow::SizeChanged_revoker** zurückgibt.
 
-
 Das Widerrufen von Handlern kann etwa in einem Seitennavigationsszenario sinnvoll sein. Wenn du wiederholt zu einer Seite navigierst und sie wieder verlässt, kannst du beim Verlassen der Seite alle Handler widerrufen. Bei Wiederverwendung der gleichen Seiteninstanz kannst du alternativ den Wert deines Tokens überprüfen und die Registrierung nur ausführen, wenn er noch nicht festgelegt ist (`if (!m_token){ ... }`). Eine dritte Möglichkeit besteht darin, einen Ereignis-Revoker auf der Seite als Datenmember zu speichern. Weiter unten in diesem Thema wird außerdem noch eine vierte Möglichkeit beschrieben: die Erfassung eines starken oder schwachen Verweises auf das *this*-Objekt in deiner Lambda-Funktion.
+
+### <a name="if-your-auto-revoke-delegate-fails-to-register"></a>Wenn das Registrieren des Delegaten fehlschlägt
+
+Wenn Sie beim Registrieren eines Delegaten [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) angeben und das Ergebnis eine [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface)-Ausnahme ist, bedeutet dies in der Regel, dass die Ereignisquelle schwache Verweise nicht unterstützt. Diese Situation tritt z. B. häufig im [**Windows.UI.Composition**](/uwp/api/windows.ui.composition)-Namespace ein. In diesem Fall können Sie nicht den automatischen Widerruf verwenden. Sie müssen die Ereignishandler manuell widerrufen.
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>Delegattypen für asynchrone Aktionen und Vorgänge
 

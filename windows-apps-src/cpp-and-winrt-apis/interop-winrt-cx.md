@@ -5,12 +5,12 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 5394443b4832864e5b46bfbf917c04f0af6d8a19
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a6b57627cbf9021732a8a66818250ffc1fca915f
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360218"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660125"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Interoperabilität zwischen C++/WinRT und C++/CX
 
@@ -54,6 +54,8 @@ Dieses Beispielprojekt veranschaulicht auch die Verwendung von Namespacealiasen 
 - Erstelle ein Projekt vom Typ **Visual C++** \> **Windows Universal** > **Core-App (C++/WinRT)** .
 - Lege in den Projekteigenschaften Folgendes fest: **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden**  \> **Ja (/ZW)** . Dadurch wird die Projektunterstützung für C++/CX aktiviert.
 - Ersetze den Inhalt von `App.cpp` durch das folgende Codelisting:
+
+`WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
 
 ```cppwinrt
 // App.cpp

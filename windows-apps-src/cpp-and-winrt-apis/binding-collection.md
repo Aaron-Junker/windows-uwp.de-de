@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, binden, Sammlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 7669c6536f28d5f979567f5b433dbf614800bec3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 258ec5e0690753c8ad9c3b0648867666397039a5
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65627678"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270174"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML-Elementsteuerelemente: Binden an eine C++/WinRT-Sammlung
 
@@ -39,13 +39,16 @@ Deklariere eine neue Eigenschaft in `BookstoreViewModel.idl`.
 runtimeclass BookstoreViewModel
 {
     BookSku BookSku{ get; };
-    Windows.Foundation.Collections.IObservableVector<IInspectable> BookSkus{ get; };
+    Windows.Foundation.Collections.IObservableVector<BookSku> BookSkus{ get; };
 }
 ...
 ```
 
-> [!IMPORTANT]
-> Wie im obigen MIDL 3.0-Listing zu sehen, handelt es sich beim Typ der Eigenschaft **BookSkus** um [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) von [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). Im nächsten Abschnitt dieses Themas binden wir die Elementquelle eines Listenfelds ([**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) an **BookSkus**. Ein Listenfeld ist ein Elementsteuerelement. Die Eigenschaft [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) muss daher auf einen Wert vom Typ **IObservableVector** (oder **IVector**) von **IInspectable** festgelegt werden – oder auf einen Interoperabilitätstyp wie [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
+> [!NOTE]
+> Wie in der obigen MIDL 3.0-Auflistung zu sehen, handelt es sich beim Typ der Eigenschaft **BookSkus** um [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) von **BookSku**. Im nächsten Abschnitt dieses Themas binden wir die Elementquelle eines Listenfelds ([**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) an **BookSkus**. Ein Listenfeld ist ein Elementsteuerelement. Die Eigenschaft [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) muss daher auf einen Wert vom Typ **IObservableVector** oder **IVector** festgelegt werden – oder auf einen Interoperabilitätstyp wie [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
+
+> [!WARNING]
+> Der in diesem Thema gezeigt Code gilt für C++/WinRT, Version 2.0.190530.8 und höher. Wenn Sie eine frühere Version verwenden, müssen einige geringe Anpassungen am dargestellten Code vornehmen. Ändern Sie in der obigen MIDL 3.0-Auflistung die Eigenschaft **BookSkus** in [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) von [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). Verwenden Sie dann **IInspectable** (anstelle von **BookSku**) auch in Ihrer Implementierung.
 
 Speichere, und führe den Buildvorgang aus. Kopiere die Accessor-Stubs aus `BookstoreViewModel.h` und `BookstoreViewModel.cpp` in den Ordner `\Bookstore\Bookstore\Generated Files\sources`. (Ausführlichere Informationen findest du im vorherigen Thema [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](binding-property.md).) Implementiere diese Accessor-Stubs wie folgt:
 
@@ -58,11 +61,11 @@ struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 
     Bookstore::BookSku BookSku();
 
-    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookSkus();
+    Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> BookSkus();
 
 private:
     Bookstore::BookSku m_bookSku{ nullptr };
-    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> m_bookSkus;
+    Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> m_bookSkus;
 };
 ...
 ```
@@ -73,7 +76,7 @@ private:
 BookstoreViewModel::BookstoreViewModel()
 {
     m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
-    m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
+    m_bookSkus = winrt::single_threaded_observable_vector<Bookstore::BookSku>();
     m_bookSkus.Append(m_bookSku);
 }
 
@@ -82,7 +85,7 @@ Bookstore::BookSku BookstoreViewModel::BookSku()
     return m_bookSku;
 }
 
-Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
+Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> BookstoreViewModel::BookSkus()
 {
     return m_bookSkus;
 }

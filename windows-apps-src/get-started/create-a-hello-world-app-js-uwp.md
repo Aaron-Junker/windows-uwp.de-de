@@ -6,24 +6,24 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 682a69726b20be52a3217f49bed4947b8b621230
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0b5423c9aae607d4f6ffe14b755c8f73e013d8b6
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564508"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820969"
 ---
 # <a name="create-a-hello-world-app-js"></a>Erstellen der App „Hello, world“ (JS)
 
-In diesem Tutorial erfahren Sie, wie Sie JavaScript und HTML zum Erstellen einer einfachen „Hello, World“-App für die universelle Windows-Plattform (UWP) unter Windows 10 verwenden. Mit nur einem Projekt in Microsoft Visual Studio können Sie eine App erstellen, die auf allen Geräten mit Windows 10 ausgeführt werden kann.
+In diesem Tutorial erfahren Sie, wie Sie JavaScript und HTML zum Erstellen einer einfachen „Hello, World“-App für die universelle Windows-Plattform (UWP) unter Windows 10 verwenden. Mit nur einem Projekt in Microsoft Visual Studio kannst du eine App erstellen, die auf allen Geräten mit Windows 10 ausgeführt werden kann.
 
 > [!NOTE]
-> In diesem Tutorial wird Visual Studio Community 2017 verwendet. Wenn Sie eine andere Version von Visual Studio verwenden, sieht die Oberfläche u. U. etwas anders aus.
+> In diesem Tutorial wird Visual Studio Community 2019 verwendet. Wenn du eine andere Version von Visual Studio verwendest, sieht die Oberfläche unter Umständen etwas anders aus.
 
 
 Hier erfahren Sie Folgendes:
 
--   Erstellen eines neuen **Visual Studio**-Projekts für **Windows 10** und die **UWP**
+-   Erstellen Sie ein neues **Visual Studio 2019**-Projekt für **Windows 10** und die **UWP**.
 -   Hinzufügen von HTML und JavaScript-Inhalten
 -   Ausführen des Projekts auf dem lokalen Desktop in Visual Studio
 
@@ -35,24 +35,22 @@ Hier erfahren Sie Folgendes:
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Schritt 1: Erstellen eines neuen Projekts in Visual Studio
 
-1.  Starten Sie Visual Studio.
+1.  Starten Sie Visual Studio 2019.
 
-2.  Wählen Sie im Menü **Datei** die Befehle **Neu > Projekt...** aus, um das Dialogfeld *Neues Projekt* anzuzeigen.
+2.  Wählen Sie im Menü **Datei** die Befehle **Neu > Projekt...** aus, um das Dialogfeld *Neues Projekt erstellen* zu öffnen.
 
-3.  Öffnen Sie in der Vorlagenliste auf der linken Seite **Installiert > Vorlagen > JavaScript**, und wählen Sie dann **Windows Universal** aus, um eine Liste der UWP-Projektvorlagen anzuzeigen.
+3.  Wählen Sie **Leere App (Universelles Windows: JavaScript)** aus, und klicken Sie dann auf **Weiter**.
 
-    (Wenn keine universellen Vorlagen angezeigt werden, fehlen möglicherweise die Komponenten zum Erstellen von UWP-Apps. Sie können die Installation wiederholen und UWP-Unterstützung hinzufügen, indem Sie im Dialogfeld *Neues Projekt* auf **Visual Studio-Installer öffnen** klicken. Siehe [Vorbereiten](get-set-up.md))
+    (Werden keine universellen Vorlagen angezeigt, fehlen möglicherweise die Komponenten zum Erstellen von UWP-Apps. Sie können die Installation wiederholen und UWP-Unterstützung hinzufügen, indem Sie im Dialogfeld *Neues Projekt erstellen* auf **Visual Studio-Installer öffnen** klicken. Siehe [Vorbereiten](get-set-up.md))
 
-4.  Wählen Sie die Vorlage **Leere App (universelle Windows-App)** aus, und geben Sie „HelloWorld“ als **Name** ein. Wählen Sie **OK** aus.
-
-    ![Das Fenster für ein neues Projekt](images/win10-js-01.png)
+4.  Geben Sie im Dialogfeld *Neues Projekt konfigurieren* „HelloWorld“ als **Projektname** ein, und klicken Sie dann auf **Erstellen**.
 
 > [!NOTE]
-> Wenn Sie Visual Studio zum ersten Mal verwenden, wird möglicherweise das Dialogfeld „Einstellungen“ angezeigt, in dem Sie aufgefordert werden, **Entwicklermodus** zu aktivieren. Der Entwicklermodus ist eine spezielle Einstellung, die bestimmte Features unterstützt, z. B. die direkte Ausführung von Apps und nicht nur die Ausführung aus dem Store. Weitere Informationen finden Sie unter [Aktivieren Ihres Geräts für die Entwicklung](enable-your-device-for-development.md). Wählen Sie **Entwicklermodus** aus, klicken Sie auf **Ja**, und schließen Sie das Dialogfeld, um mit dem Tutorial fortzufahren.
+> Wenn du Visual Studio zum ersten Mal verwendest, wird möglicherweise das Dialogfeld „Einstellungen“ angezeigt, in dem du zur Aktivierung von **Entwicklermodus** aufgefordert wirst. Der Entwicklermodus ist eine spezielle Einstellung, die bestimmte Features unterstützt, z. B. die direkte Ausführung von Apps und nicht nur die Ausführung aus dem Store. Weitere Informationen findest du unter [Aktivieren deines Geräts für die Entwicklung](enable-your-device-for-development.md). Wähle **Entwicklermodus** aus, klicke auf **Ja**, und schließe das Dialogfeld, um mit dem Tutorial fortzufahren.
 
  ![Dialogfeld zum Aktivieren des Entwicklermodus](images/win10-cs-00.png)
 
-5.  Das Dialogfeld für die Zielversion/mindestens erforderliche Version wird angezeigt. Da die Standardeinstellungen für dieses Tutorial geeignet sind, wählen Sie **OK** aus, um das Projekt zu erstellen.
+5.  Das Dialogfeld für die Zielversion/mindestens erforderliche Version wird angezeigt. Da die Standardeinstellungen für dieses Tutorial geeignet sind, wähle **OK** aus, um das Projekt zu erstellen.
 
     ![Das Fenster „Projektmappen-Explorer“](images/win10-cs-02.png)
 

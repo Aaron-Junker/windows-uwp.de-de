@@ -5,16 +5,16 @@ keywords: Neuigkeiten, Neuerungen, Aktualisierung, Updates, Features, neu, Windo
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b7fe830e07c1daf95928ab747259cb57aaa7a9f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc35dc50b8dc523aff5478b3ec19c3daeed9dafb
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371339"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820452"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Neuigkeiten für Entwickler in Windows 10, Build 17134
 
-Windows 10 Build 17134 (auch bekannt als April Update oder Version 1803), in Kombination mit Visual Studio 2017 und dem aktualisierten SDK, bietet die Tools, Features und Umgebungen für die Entwicklung eindrucksvoller Apps für die universelle Windows-Plattform. Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
+Windows 10 Build 17134 (auch bekannt als April Update oder Version 1803), in Kombination mit Visual Studio 2019 und dem aktualisierten SDK, bietet die Tools, Features und Umgebungen für die Entwicklung eindrucksvoller Apps für die universelle Windows-Plattform. Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
 Dies ist eine Sammlung von neuen und verbesserten Features und Richtlinien, die in dieser Version für Windows-Entwickler interessant sind. Eine vollständige Liste mit neuen Namespaces, die dem Windows SDK hinzugefügt wurden, finden Sie in den [API-Änderungen unter Windows 10, Build 17134](windows-10-build-17134-api-diff.md). Weitere Informationen zu den Highlights von Windows 10 finden Sie unter [Die Highlights in Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Darüber hinaus finden Sie unter [Windows Developer Platform-Features](https://developer.microsoft.com/windows/platform/features) eine grobe Übersicht über die früheren und zukünftigen neuen Features der Windows-Plattform.
 
@@ -28,7 +28,7 @@ Entwurfsbeispiele | Das Beispiel „BuildCast” wurde auf der Seite [Design-Too
 Eingebettete Handschrift | Den [Textsteuerelementen](../design/controls-and-patterns/text-controls.md) wurde die Stifteingabefunktion hinzugefügt, damit Benutzer mit Windows Ink direkt in die Textfelder schreiben können. Während der Benutzer schreibt, wird der Text in ein Skript konvertiert, das das Verhalten der natürlichen Schreibweise beibehält.
 Fluent Design-Updates | Wir haben viele unserer Fluent Design-Seiten mit neuen Informationen und Anleitungen aktualisiert: </br> * Die [Fluent Design-Übersicht](../design/fluent-design-system/index.md) wurde aktualisiert, um die neuesten Fluent Design-Features widerzuspiegeln. </br> * [Reveal highlight](../design/style/reveal.md) enthält neue Anleitungen über Designs und benutzerdefinierte Steuerelemente. </br> * [Navigationsverlauf und Rückwärtsnavigation](../design/basics/navigation-history-and-backwards-navigation.md) wurden überarbeitet und mit detaillierten Beispielen, Leitfäden zur Optimierung der Geräte und Richtlinien für das benutzerdefinierte Verhalten aktualisiert.
 Fokusnavigation | Im neuen Thema [Fokusnavigation](../design/input/focus-navigation.md) wird beschrieben, wie eine UWP-Anwendung für Benutzer optimiert werden kann, die nicht zeigenden Eingabetypen wie Tastaturen, Gamepads oder Fernbedienungen nutzen. Darüber hinaus werden unter [Programmgesteuerte Fokusnavigation](../design/input/focus-navigation-programmatic.md) die APIs beschrieben, die Sie verwenden können, um diese Funktionen zu verbessern.
-Zugriffstasten | Unsere Anleitung zu [Zugriffstasten](../design/input/keyboard-accelerators.md) wurde mit neuen Verwendbarkeitsinformationen aktualisiert. Fügen Sie QuickInfos zu Zugriffstasten und Bezeichnungen zu Ihren Steuerelementen hinzu, um die Erkennbarkeit zu verbessern oder das Standardverhalten von Zugriffstasten mit neuen APIs zu überschreiben.
+Tastenkombinationen | Unsere Anleitung zu [Zugriffstasten](../design/input/keyboard-accelerators.md) wurde mit neuen Verwendbarkeitsinformationen aktualisiert. Fügen Sie QuickInfos zu Zugriffstasten und Bezeichnungen zu Ihren Steuerelementen hinzu, um die Erkennbarkeit zu verbessern oder das Standardverhalten von Zugriffstasten mit neuen APIs zu überschreiben.
 Seitenlayouts | Wir haben unsere Dokumentation zu [XAML-Seitenlayout](../design/layout/layouts-with-xaml.md) mit neuen Informationen zu dynamischen Layouts und visuellen Zuständen aktualisiert. Diese Features ermöglichen eine bessere Kontrolle darüber, wie die Position der Elemente Ihrer App reagiert und sich an den verfügbaren visuellen Platz anpasst.
 Aktualisierung durch Ziehen | Dank des Steuerelements [Aktualisieren durch Ziehen](../design/controls-and-patterns/pull-to-refresh.md) können Benutzer aktuelle Daten in einer Liste durch das Ausführen einer Ziehbewegung von oben nach unten in der Liste abrufen. Diese Funktion wird häufig auf Geräten mit Touchscreen verwendet.
 Navigationsansicht | Das [Navigationsansicht](../design/controls-and-patterns/navigationview.md)-Steuerelement bietet über ein zuklappbares Navigationsmenü Navigation auf oberster Ebene in Ihrer App. Dieses Steuerelement implementiert das Navigationsbereichsmuster (oder das Muster des Hamburger-Menüs) und passt den Anzeigemodus des Bereichs automatisch an verschiedene Fenstergrößen an.
@@ -102,7 +102,7 @@ Mit Windows Machine Learning können Sie Apps erstellen, die bereits trainierte 
 
 ### <a name="motion-controller-tracking"></a>Nachverfolgung des Motion-Controllers
 
-Motion-Controller stellen die Hände des Benutzers in Windows Mixed Reality dar. [Sehen Sie sich das Video](https://www.youtube.com/watch?v=rkDpRllbLII) an, und erfahren Sie, wie Motion-Controller funktionieren, wenn sie sich innerhalb und außerhalb des Sichtfelds des Mixed Reality-Kopfhörers befinden, und [lesen Sie hier weitere Informationen zum Nachverfolgen des Controllers.](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)
+Motion-Controller stellen die Hände des Benutzers in Windows Mixed Reality dar. [Sehen Sie sich das Video](https://www.youtube.com/watch?v=rkDpRllbLII) an, und erfahren Sie, wie Motion-Controller funktionieren, wenn sie sich innerhalb und außerhalb des Sichtfelds des Mixed Reality-Kopfhörers befinden, und [lesen Sie hier weitere Informationen zum Nachverfolgen des Controllers.](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)
 
 ### <a name="package-a-net-app-in-visual-studio"></a>Verpacken einer .NET-App in Visual Studio
 

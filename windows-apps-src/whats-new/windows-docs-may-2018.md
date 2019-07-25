@@ -5,16 +5,16 @@ keywords: Neues, Neuigkeiten, Update, Features, Entwicklerleitfaden, Windows 10,
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 69df2bbe8bc91fcf4a2631c0f257fc44851c24f2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9adf5a80595e00a30098044536d1ecfe4fd62279
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63805891"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820493"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Neues in der Windows-Entwicklerdokumentation im Mai 2018
 
-Die Entwicklerdokumentation für die Windows-Plattform wird kontinuierlich mit Informationen zu neuen Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden, Videos und Beispiele wurden im Mai parallel zur Entwicklerkonferenz [Microsoft Build 2018](https://www.microsoft.com/build) bereitgestellt.
+Die Entwicklerdokumentation für die Windows-Plattform wird kontinuierlich mit Informationen zu neuen Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden, Videos und Beispiele wurden im Mai parallel zur Entwicklerkonferenz [Microsoft Build 2018](https://www.microsoft.com/build/) bereitgestellt.
 
 Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
@@ -55,7 +55,7 @@ Darüber hinaus wurden die folgenden Seiten mit völlig neuen Informationen übe
 
 ### <a name="app-installer-files-in-visual-studio"></a>App-Installer-Dateien in Visual Studio
 
-App-Installer-Dateien können nun mit Visual Studio 2017 (Update 15.7) erstellt werden. Unter [Erstellen einer App-Installer-Datei mit Visual Studio](../packaging/create-appinstallerfile-vs.md) erfährst du, wie du mithilfe von Visual Studio eine App-Installer-Datei erstellst und automatische Updates für deine Apps aktivierst. Sollten Probleme auftreten, findest du unter [Problembehandlung bei der Installation der App-Installer-Datei](../packaging/troubleshoot-appinstaller-issues.md) Informationen zu häufigen Problemen sowie entsprechende Lösungen.
+App-Installer-Dateien können nun mit Visual Studio 2017, Update 15.7 und höheren Versionen erstellt werden. Unter [Erstellen einer App-Installer-Datei mit Visual Studio](../packaging/create-appinstallerfile-vs.md) erfährst du, wie du mithilfe von Visual Studio eine App-Installer-Datei erstellst und automatische Updates für deine Apps aktivierst. Sollten Probleme auftreten, findest du unter [Problembehandlung bei der Installation der App-Installer-Datei](../packaging/troubleshoot-appinstaller-issues.md) Informationen zu häufigen Problemen sowie entsprechende Lösungen.
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Edge-Steuerelement „WebView“ für Windows Forms- und WPF-Anwendungen
 

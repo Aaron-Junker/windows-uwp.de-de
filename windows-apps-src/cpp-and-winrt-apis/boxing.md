@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, Boxing, Skalarwert
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bd69e07f2285b6c05581a60ddbaf4b394d0b6d0
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 431230d3b67d7a380b4f0b20fdef1e0f918c3aa2
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361195"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270160"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Boxing und Unboxing von Skalarwerten für „IInspectable“ mit C++/WinRT
  
@@ -54,6 +54,8 @@ void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 
 ## <a name="determine-the-type-of-a-boxed-value"></a>Ermitteln der Art eines geschachtelten Werts
 Wenn du einen geschachtelten Wert erhältst und nicht sicher bist, welchen Typ er enthält, kannst du die [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue)-Schnittstelle des geschachtelten Werts abfragen und anschließend **Type** dafür aufrufen. (Der Typ muss bekannt sein, um das Unboxing durchführen zu können.) Codebeispiel:
+
+`WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
 
 ```cppwinrt
 float pi = 3.14f;

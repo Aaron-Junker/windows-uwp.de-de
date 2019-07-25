@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fbe10e41da1b330d6f5042bea109a8a0e04f8ad
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d2b92bf5e265c2d596a7fc7eb54b127010cee897
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360158"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717602"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Umstellen von C++/CX auf C++/WinRT
 
@@ -181,7 +181,7 @@ private:
 };
 ```
 
-Hier ist der gleiche Code nach dem Portieren zu C++/WinRT angegeben. Beachte die Verwendung des Konstruktors `nullptr`. Weitere Informationen zu diesem Konstruktor findest du unter [Nutzen von APIs mit C++/WinRT](consume-apis.md).
+Hier ist der gleiche Code nach dem Portieren zu C++/WinRT angegeben. Beachten Sie die Verwendung des **std::nullptr_t**-Konstruktors. Weitere Informationen zu diesem Konstruktor findest du unter [Nutzen von APIs mit C++/WinRT](consume-apis.md#delayed-initialization).
 
 ```cppwinrt
 using namespace winrt::Windows::Storage::Streams;
@@ -365,7 +365,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 ### <a name="port-platformstring-to-winrthstring"></a>Portieren von **Platform::String\^** zu **winrt::hstring**
 **Platform::String\^** ist das Äquivalent zum HSTRING-ABI-Typ der Windows-Runtime. Für C++/WinRT ist die Entsprechung [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Bei C++/WinRT kannst du aber Windows-Runtime-APIs mit Wide-String-Typen der C++-Standardbibliothek, z. B. **std::wstring**, bzw. Wide-String-Literale aufrufen. Weitere Informationen und Codebeispiele findest du unter [String-Verarbeitung in C++/WinRT](strings.md).
 
-Mit C++/CX kannst du auf die Eigenschaft [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) zugreifen, um die Zeichenfolge als **const wchar_t\*** -Array im C-Stil abzurufen (z. B. zur Übergabe an **std::wcout**).
+Mit C++/CX kannst du auf die Eigenschaft [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) zugreifen, um die Zeichenfolge als **const wchar_t\*** -Array im C-Stil abzurufen (z. B. zur Übergabe an **std::wcout**).
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };

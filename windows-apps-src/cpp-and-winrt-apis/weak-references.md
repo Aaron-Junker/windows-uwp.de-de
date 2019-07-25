@@ -6,18 +6,20 @@ ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, Projektion, stark, schwach, Verweis
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 46a0e21295ba430671be4e36ab213e182c2b1737
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 77fcd8369b2df3fdb42facf9d2b2a1d93188322b
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721630"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844324"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Starke und schwache Verweise in C++/WinRT
 
 Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit der Bedeutung und dem Unterschied zwischen starken und schwachen Verweisen vertraut sind (und mit Verweisen, die keins von beidem sind, wie etwa der implizite *this*-Zeiger). Wie Sie in diesem Thema erfahren werden, kann das Wissen um den korrekten Umgang mit diesen Verweisen den Unterschied zwischen einem zuverlässigen System bedeuten, das reibungslos läuft, und einem, das zu unvorhersehbaren Abstürzen neigt. Durch die Bereitstellung von Hilfsfunktionen mit tiefgreifender Unterstützung in der Sprachprojektion kommt Ihnen [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) bei Ihrer Arbeit, komplexere Systeme einfach und ordnungsgemäß aufzubauen, auf halbem Weg entgegen.
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Sicherer Zugriff auf den *this*-Zeiger in einer Klassenmember-Coroutine
+
+Weitere Informationen zu Coroutinen und Codebeispiele finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 Die Codeauflistung unten zeigt ein typisches Beispiel einer Coroutine, die eine Memberfunktion einer Klasse ist. Sie können dieses Beispiel kopieren und es in einem neuen **Windows-Konsolenanwendung (C++/WinRT)** -Projekt in die angegebenen Dateien einfügen.
 
@@ -59,14 +61,16 @@ int main()
 
 **MyClass::RetrieveValueAsync** arbeitet eine Zeit lang und gibt schließlich eine Kopie des `MyClass::m_value`-Datenmembers zurück. Das Aufrufen von **RetrieveValueAsync** bewirkt die Erstellung eines asynchronen Objekts, und dieses Objekt verfügt über einen impliziten *this*-Zeiger (über den schließlich der Zugriff auf `m_value` erfolgt).
 
+Beachten Sie, dass in einer Coroutine die Ausführung bis zum ersten Anhaltepunkt, an dem die Steuerung an den Aufrufer zurückgegeben wird, synchron verläuft. In **RetrieveValueAsync** ist das erste `co_await` der erste Anhaltepunkt. Bis die Coroutine fortgesetzt wird (in diesem Fall ca. 5 Sekunden später), kann mit dem impliziten *this*-Zeiger, über den der Zugriff auf `m_value` erfolgt, alles Mögliche geschehen sein.
+
 Hier sehen Sie die vollständige Abfolge der Ereignisse.
 
 1. In **main** wird eine Instanz von **MyClass** erstellt (`myclass_instance`).
 2. Das `async`-Objekt wird erstellt und verweist (mithilfe seines *this*) auf `myclass_instance`.
-3. Die **winrt::Windows::Foundation::IAsyncAction::get**-Funktion blockiert für einige Sekunden und gibt dann das Ergebnis von **RetrieveValueAsync** zurück.
+3. Die Funktion **winrt::Windows::Foundation::IAsyncAction::get** trifft auf den ersten Anhaltepunkt, wird einige Sekunden lang blockiert und gibt dann das Ergebnis von **RetrieveValueAsync** zurück.
 4. **RetrieveValueAsync** gibt den Wert von `this->m_value` zurück.
 
-Schritt 4 ist sicher, sofern *this* gültig ist.
+Schritt 4 ist nur unbedenklich, solange *this* gültig bleibt.
 
 Was aber, wenn die Klasseninstanz zerstört wird, bevor der asynchrone Vorgang abgeschlossen wird? Die Klasseninstanz kann auf alle möglichen Weise aus ihrem Bereich gelangen, bevor die asynchrone Methode abgeschlossen ist. Wir können das aber simulieren, indem wir die Klasseninstanz auf `nullptr` festlegen.
 
@@ -193,7 +197,9 @@ int main()
 }
 ```
 
-Das Muster besteht darin, dass der Ereignisempfänger einen Lambda-Ereignishandler mit Abhängigkeiten von seinem *this*-Zeiger aufweist. Immer, wenn der Ereignisempfänger länger besteht als die Ereignisquelle, besteht er länger als diese Abhängigkeiten. Und in diesen Fällen, die häufig sind, funktioniert das Muster gut. Einige dieser Fälle sind offensichtlich, z.B. wenn eine UI-Seite ein Ereignis verarbeitet, das von einem Steuerelement ausgelöst wird, das sich auf der Seite befindet. Die Seite besteht länger als die Schaltfläche &mdash; also besteht der Handler auch länger als die Schaltfläche. Dies gilt immer dann, wenn der Empfänger die Quelle besitzt (z.B. als Datenelement), oder wenn der Empfänger und die Quelle gleichgeordnet sind und sich direkt im Besitz eines anderen Objekts befinden. Wenn Sie sicher sind, dass Sie einen Fall haben, in dem der Handler das *this*-Objekt nicht überleben wird, können Sie *this* normal verwenden, ohne Rücksicht auf eine starke oder schwache Lebensdauer zu nehmen.
+Das Muster besteht darin, dass der Ereignisempfänger einen Lambda-Ereignishandler mit Abhängigkeiten von seinem *this*-Zeiger aufweist. Immer, wenn der Ereignisempfänger länger besteht als die Ereignisquelle, besteht er länger als diese Abhängigkeiten. Und in diesen Fällen, die häufig sind, funktioniert das Muster gut. Einige dieser Fälle sind offensichtlich, z.B. wenn eine UI-Seite ein Ereignis verarbeitet, das von einem Steuerelement ausgelöst wird, das sich auf der Seite befindet. Die Seite besteht länger als die Schaltfläche &mdash; also besteht der Handler auch länger als die Schaltfläche. Dies gilt immer dann, wenn der Empfänger die Quelle besitzt (z.B. als Datenelement), oder wenn der Empfänger und die Quelle gleichgeordnet sind und sich direkt im Besitz eines anderen Objekts befinden. Ein weiterer unbedenklicher Fall ist, wenn die Ereignisquelle Ereignisse synchron auslöst. Sie können dann den Handler unbesorgt widerrufen, da keine Ereignisse mehr empfangen werden.
+
+Wenn Sie wissen, dass der Handler nicht länger als der *this*-Zeiger besteht, von dem er abhängt, können Sie *this* auf normale Weise erfassen, ohne eine starke oder schwache Lebensdauer zu berücksichtigen.
 
 Aber es gibt trotzdem Fälle, in denen *this* seine Verwendung in einem Handler nicht überlebt (einschließlich Handlern für Completion- und Progress-Ereignisse, die durch asynchrone Aktionen und Vorgänge ausgelöst werden), und es ist wichtig, zu wissen, wie mit ihnen umzugehen ist.
 

@@ -6,16 +6,64 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, COM, Komponente
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3badcd59155bc4bb5ef8d9e29271b853c245c24e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 7e3101147f31f630ed6d7d23916eb675f8bc2d21
+ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360316"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67800520"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Erstellen von COM-Komponenten mit C++/WinRT
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) dient als Hilfe beim Erstellen von klassischen COM-Komponenten (Component Object Model) bzw. „Co-Klassen“, wie dies auch für Windows-Runtime-Klassen der Fall ist. Hier ist eine einfache Codedarstellung angegeben. Du kannst sie testen, indem du den Code in die Dateien `pch.h` und `main.cpp` eines neuen Projekts vom Typ **Windows-Konsolenanwendung (C++/WinRT)** einfügst.
+[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) dient als Hilfe beim Erstellen von klassischen COM-Komponenten (Component Object Model) bzw. „Co-Klassen“, wie dies auch für Windows-Runtime-Klassen der Fall ist. In diesem Thema wird die Vorgehensweise gezeigt.
+
+## <a name="how-cwinrt-behaves-by-default-with-respect-to-com-interfaces"></a>Das Standardverhalten von C++/WinRT bezüglich COM-Schnittstellen
+
+Von der C++/WinRT-Vorlage [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) werden die Laufzeitklassen und Aktivierungsfactorys direkt oder indirekt abgeleitet.
+
+Standardmäßig unterstützt **winrt::implements** nur [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-basierte Schnittstellen und ignoriert stillschweigend klassische COM-Schnittstellen. Daher schlägt jeder Aufruf von **QueryInterface** für klassische COM-Schnittstellen mit der Ausnahme **E_NOINTERFACE** fehl.
+
+Bevor wir erläutern, wie Sie dieses Problem lösen, veranschaulichen wir in einem Codebeispiel, was standardmäßig geschieht.
+
+```idl
+// Sample.idl
+runtimeclass Sample
+{
+    Sample();
+    void DoWork();
+}
+
+// Sample.h
+#include "pch.h"
+#include <shobjidl.h> // Needed only for this file.
+
+namespace winrt::MyProject
+{
+    struct Sample : implements<Sample, IInitializeWithWindow>
+    {
+        IFACEMETHOD(Initialize)(HWND hwnd);
+        void DoWork();
+    }
+}
+```
+
+Der folgende Clientcode verwendet die **Sample**-Klasse.
+
+```cppwinrt
+// Client.cpp
+Sample sample; // Construct a Sample object via its projection.
+
+// This next line crashes, because the QI for IInitializeWithWindow fails.
+sample.as<IInitializeWithWindow>()->Initialize(hwnd); 
+```
+
+Damit **winrt::implements** klassische COM-Schnittstellen unterstützt, muss lediglich `unknwn.h` eingefügt werden, bevor C++/WinRT-Header eingeschlossen werden.
+
+Dies kann explizit oder indirekt durch Einschließen einer weiteren Headerdatei, z. B. `ole2.h`, erfolgen. Ein empfohlenes Verfahren besteht darin, die Headerdatei `wil\cppwinrt.h` einzuschließen, die in den [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil) enthalten ist. Die Headerdatei `wil\cppwinrt.h` stellt nicht nur sicher, dass `unknwn.h` vor `winrt/base.h` enthalten ist, sondern sorgt auch dafür, dass die Ausnahmen und Fehlercodes von C++/WinRT und WIL von der jeweils anderen Komponente interpretiert werden können.
+
+## <a name="a-simple-example-of-a-com-component"></a>Ein einfaches Beispiel für eine COM-Komponente
+
+Hier ist ein einfaches Beispiel für eine COM-Komponente, die in C++/WinRT geschrieben wurde. Dies ist eine vollständige Auflistung einer Minianwendung. Sie können also den Code testen, indem Sie ihn in die Dateien `pch.h` und `main.cpp` eines neuen Projekts vom Typ **Windows-Konsolenanwendung (C++/WinRT)** einfügen.
 
 ```cppwinrt
 // pch.h

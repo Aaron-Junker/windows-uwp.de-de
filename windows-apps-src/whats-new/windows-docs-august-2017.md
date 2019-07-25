@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 10
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 53bd11950d30e3924d6d196e911fa05208d0f5ec
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 52b929f2b6f95c2be2feb68a6221a606ca3715e5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371915"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821132"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Neuerungen in der Windows-Entwicklerdokumentation im August 2017
 
@@ -22,7 +22,7 @@ Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Verwenden Sie die neue Erweiterung [Windows Template Studio](https://aka.ms/wtsinstall) für Visual Studio 2017, um UWP-Apps mit den gewünschten Seiten, Frameworks und Features zu erstellen. Diese assistentenbasierte Umgebung implementiert bewährte Methoden und Muster, damit Sie Zeit sparen, wenn Sie Ihrer App Features hinzufügen.
+Verwenden Sie die neue Erweiterung [Windows Template Studio](https://aka.ms/wtsinstall) für Visual Studio 2019, um UWP-Apps mit den gewünschten Seiten, Frameworks und Features zu erstellen. Diese assistentenbasierte Umgebung implementiert bewährte Methoden und Muster, damit Sie Zeit sparen, wenn Sie Ihrer App Features hinzufügen.
 
 ![Windows Template Studio](images/template-studio.png)
 
@@ -63,11 +63,11 @@ Wir haben den neuen Leitfaden [Erste Schritte mit Point Of Service-Geräten](htt
 
 Wir haben Dokumentationen für Xbox Live-Entwickler hinzugefügt. Die Informationen beziehen sich sowohl auf UWP-Spiele als auch auf XDK-Spiele (Xbox Developer Kit).
 
-Im [Xbox Live-Entwicklerhandbuch](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/) erfahren Sie, wie Sie die Xbox Live-APIs verwenden, um Ihr Spiel in das soziale Xbox Live-Spielenetzwerk zu integrieren.
+Im [Xbox Live-Entwicklerhandbuch](https://docs.microsoft.com//gaming/xbox-live/index) erfahren Sie, wie Sie die Xbox Live-APIs verwenden, um Ihr Spiel in das soziale Xbox Live-Spielenetzwerk zu integrieren.
 
-Im [Xbox Live Creators-Programm](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) können alle UWP-Spielentwickler für Xbox-Live geeignete Spiele entwickeln und veröffentlichen, sowohl für den PC als auch für Xbox One.
+Im [Xbox Live Creators-Programm](https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) können alle UWP-Spielentwickler für Xbox-Live geeignete Spiele entwickeln und veröffentlichen, sowohl für den PC als auch für Xbox One.
 
-Weitere Informationen zu den Programmen und Features für Xbox Live-Entwickler finden Sie unter [Programmübersicht für Xbox Live-Entwickler](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/developer-program-overview).
+Weitere Informationen zu den Programmen und Features für Xbox Live-Entwickler finden Sie unter [Programmübersicht für Xbox Live-Entwickler](https://docs.microsoft.com//gaming/xbox-live/developer-program-overview).
 
 ## <a name="videos"></a>Videos
 
@@ -77,7 +77,7 @@ Für [Microsoft HoloLens: Kurs 250](https://developer.microsoft.com/en-us/window
 
 ### <a name="narrator-and-dev-mode"></a>Sprachausgabe und Entwicklermodus
 
-Sie wissen möglicherweise bereits, dass Sie die [Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-narrator-get-started) verwenden können, um die Lesemodusfunktionen Ihrer App zu testen. Die Sprachausgabe bietet aber auch einen Entwicklermodus für eine gute visuelle Darstellung der Informationen, die für die Sprachausgabe verfügbar sind. [Sehen Sie sich das Video an](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode), und erfahren Sie mehr über [Sprachausgabe im Entwicklermodus](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode).
+Sie wissen möglicherweise bereits, dass Sie die [Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator) verwenden können, um die Lesemodusfunktionen Ihrer App zu testen. Die Sprachausgabe bietet aber auch einen Entwicklermodus für eine gute visuelle Darstellung der Informationen, die für die Sprachausgabe verfügbar sind. [Sehen Sie sich das Video an](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode), und erfahren Sie mehr über [Sprachausgabe im Entwicklermodus](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode).
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 

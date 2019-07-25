@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projektion, Implementierung, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: e6bf1e7fb32533aa9d7b865ac7c8afc374290e54
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 88a4c65b20c2fb805baecb8a90498e8e4ec9b229
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360349"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717623"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Nutzen von APIs mit C++/WinRT
 
@@ -79,6 +79,8 @@ Anders ausgedrückt: Einige APIs sind in einem von dir eingeschlossenen Header v
 ## <a name="accessing-members-via-the-object-via-an-interface-or-via-the-abi"></a>Zugreifen auf Member über das Objekt, eine Schnittstelle oder die ABI
 Mit der C++/WinRT-Projektion handelt es sich bei der Laufzeitdarstellung einer Windows-Runtime-Klasse um nichts weiter als um die zugrunde liegenden ABI-Schnittstellen. Der Einfachheit halber kannst du für Klassen aber so programmieren, wie dies vom jeweiligen Autor vorgesehen war. So kannst du beispielsweise die Methode **ToString** eines [**URI**](/uwp/api/windows.foundation.uri) so aufrufen, als ob es sich um eine Methode der Klasse handelt. (Tatsächlich ist es jedoch eine Methode der separaten Schnittstelle **IStringable**.)
 
+`WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
+
 ```cppwinrt
 Uri contosoUri{ L"http://www.contoso.com" };
 WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInterface is called at this point.
@@ -107,15 +109,17 @@ int main()
     winrt::init_apartment();
     Uri contosoUri{ L"http://www.contoso.com" };
 
-    int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+    int port{ contosoUri.Port() }; // Access the Port "property" accessor via C++/WinRT.
 
-    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
+    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri{
+        contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>() };
     HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
 }
 ```
 
 ## <a name="delayed-initialization"></a>Verzögerte Initialisierung
-Selbst der Standardkonstruktor eines projizierten Typs bewirkt die Erstellung eines Windows-Runtime-Unterstützungsobjekts. Es ist aber auch möglich, eine Variable eines projizierten Typs zu erstellen, ohne dass dadurch ein Windows-Runtime-Objekt erstellt wird (und diese Arbeit auf einen späteren Zeitpunkt zu verschieben). Deklariere die Variable oder das Feld mithilfe des speziellen C++/WinRT-Konstruktors `nullptr_t` des projizierten Typs.
+
+Selbst der Standardkonstruktor eines projizierten Typs bewirkt die Erstellung eines Windows-Runtime-Unterstützungsobjekts. Es ist aber auch möglich, eine Variable eines projizierten Typs zu erstellen, ohne dass dadurch ein Windows-Runtime-Objekt erstellt wird (und diese Arbeit auf einen späteren Zeitpunkt zu verschieben). Deklarieren Sie die Variable oder das Feld mithilfe des speziellen C++/WinRT-Konstruktors **std::nullptr_t** des projizierten Typs. Die C++/WinRT-Projektion fügt diesen Konstruktor in jede Laufzeitklasse ein.
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -144,7 +148,7 @@ int main()
 }
 ```
 
-Alle Konstruktoren des projizierten Typs (*ausgenommen* der Konstruktor `nullptr_t`) bewirken die Erstellung eines Windows-Runtime-Unterstützungsobjekts. Dem Konstruktor `nullptr_t` ist im Wesentlichen keine Aktion zugeordnet. Er erwartet, dass das projizierte Objekt zu einem späteren Zeitpunkt initialisiert wird. Du kannst dieses Verfahren also für eine effiziente verzögerte Initialisierung verwenden – unabhängig davon, ob eine Laufzeitklasse über einen Standardkonstruktor verfügt oder nicht.
+Alle Konstruktoren des projizierten Typs (*mit Ausnahme* des **std::nullptr_t**-Konstruktors) bewirken die Erstellung eines Windows-Runtime-Unterstützungsobjekts. Dem **std::nullptr_t**-Konstruktor ist im Wesentlichen keine Aktion zugeordnet. Er erwartet, dass das projizierte Objekt zu einem späteren Zeitpunkt initialisiert wird. Du kannst dieses Verfahren also für eine effiziente verzögerte Initialisierung verwenden – unabhängig davon, ob eine Laufzeitklasse über einen Standardkonstruktor verfügt oder nicht.
 
 Diese Überlegung betrifft auch andere Orte, an denen der Standardkonstruktor aufgerufen wird (etwa Vektoren und Zuordnungen). Sieh dir das folgende Codebeispiel an (Projekt vom Typ **Leere App (C++/WinRT)** erforderlich):
 
@@ -158,6 +162,98 @@ Die Zuweisung erstellt einen neuen Textblock (**TextBlock**) und überschreibt i
 ```cppwinrt
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
+```
+
+### <a name="dont-delay-initialize-by-mistake"></a>Verwenden Sie nicht irrtümlicherweise die verzögerte Initialisierung
+
+Rufen Sie den **std::nullptr_t**-Konstruktor nicht versehentlich auf. Bei der Konfliktauflösung durch den Compiler wird er vor den Factorykonstruktoren bevorzugt. Betrachten Sie beispielsweise diese beiden Laufzeitklassendefinitionen.
+
+```idl
+// GiftBox.idl
+runtimeclass GiftBox
+{
+    GiftBox();
+}
+
+// Gift.idl
+runtimeclass Gift
+{
+    Gift(GiftBox giftBox); // You can create a gift inside a box.
+}
+```
+
+Angenommen, Sie möchten ein Geschenk (**Gift**) erstellen, das sich nicht in einem Geschenkkarton befindet (ein mit einer nicht initialisierten **GiftBox** erstelltes **Gift**). Betrachten wir zunächst die *falsche* Vorgehensweise. Wir wissen, dass ein **Gift**-Konstruktor vorhanden ist, der eine **GiftBox** akzeptiert. Falls wir jedoch für **GiftBox** einen NULL-Wert übergeben (den **Gift**-Konstruktor über eine einheitliche Initialisierung aufrufen, wie dies unten geschieht), erhalten wir *nicht* das gewünschte Ergebnis.
+
+```cppwinrt
+// These are *not* what you intended. Doing it in one of these two ways
+// actually *doesn't* create the intended backing Windows Runtime Gift object;
+// only an empty smart pointer.
+
+Gift gift{ nullptr };
+auto gift{ Gift(nullptr) };
+```
+
+Sie erhalten stattdessen ein nicht initialisiertes **Gift**. Sie erhalten kein **Gift** mit einer nicht initialisierten **GiftBox**. Hier ist die *richtige* Vorgehensweise.
+
+```cppwinrt
+// Doing it in one of these two ways creates an initialized
+// Gift with an uninitialized GiftBox.
+
+Gift gift{ GiftBox{ nullptr } };
+auto gift{ Gift(GiftBox{ nullptr }) };
+```
+
+Im Beispiel für die falsche Vorgehensweise erfolgt die Auflösung durch Übergabe eines `nullptr`-Literals zugunsten des Konstruktors mit verzögerter Initialisierung. Damit die Auflösung zugunsten des Factorykonstruktors erfolgt, muss der Typ des Parameters **GiftBox** lauten. Sie haben weiterhin die Möglichkeit, eine **GiftBox** mit explizit verzögerter Initialisierung zu übergeben, wie im Beispiel für die richtige Vorgehensweise gezeigt.
+
+Das folgende Beispiel zeigt eine *ebenfalls* richtige Vorgehensweise, weil der Typ des Parameters „GiftBox“ und nicht **std::nullptr_t** lautet.
+
+```cppwinrt
+GiftBox giftBox{ nullptr };
+Gift gift{ giftBox }; // Calls factory constructor.
+```
+
+Mehrdeutigkeit entsteht nur, wenn Sie ein `nullptr`-Literal übergeben.
+
+## <a name="dont-copy-construct-by-mistake"></a>Verwenden Sie nicht irrtümlicherweise einen Kopierkonstruktor
+
+Dieser Hinweis ähnelt dem Hinweis im obigen Abschnitt [Verwenden Sie nicht irrtümlicherweise die verzögerte Initialisierung](#dont-delay-initialize-by-mistake).
+
+C++/WinRT-Projektion fügt zusätzlich zum Konstruktor mit verzögerter Initialisierung auch einen Kopierkonstruktor in jede Laufzeitklasse ein. Dies ist ein Konstruktor mit einem einzelnen Parameter, der den gleichen Typ wie das zu erstellende Objekt akzeptiert. Der resultierende intelligente Zeiger verweist auf das Windows-Runtime-Unterstützungsobjekt, auf das auch sein Konstruktorparameter verweist. Das Ergebnis sind zwei intelligente Zeiger-Objekte, die auf das gleiche Unterstützungsobjekt verweisen.
+
+In den Codebeispielen wird die folgende Laufzeitklassendefinition verwendet.
+
+```idl
+// GiftBox.idl
+runtimeclass GiftBox
+{
+    GiftBox(GiftBox biggerBox); // You can place a box inside a bigger box.
+}
+```
+
+Angenommen, wir möchten eine **GiftBox** in einer größeren **GiftBox** erstellen.
+
+```cppwinrt
+GiftBox bigBox{ ... };
+
+// These are *not* what you intended. Doing it in one of these two ways
+// copies bigBox's backing-object-pointer into smallBox.
+// The result is that smallBox == bigBox.
+
+GiftBox smallBox{ bigBox };
+auto smallBox{ GiftBox(bigBox) };
+```
+
+Die *richtige* Vorgehensweise ist das explizite Aufrufen der Aktivierungsfactory.
+
+```cppwinrt
+GiftBox bigBox{ ... };
+
+// These two ways call the activation factory explicitly.
+
+GiftBox smallBox{
+    winrt::get_activation_factory<GiftBox, IGiftBoxFactory>().CreateInstance(bigBox) };
+auto smallBox{
+    winrt::get_activation_factory<GiftBox, IGiftBoxFactory>().CreateInstance(bigBox) };
 ```
 
 ## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>In einer Komponente für Windows-Runtime implementierte API
@@ -185,7 +281,7 @@ Ausführlichere Informationen, Code und eine exemplarische Vorgehensweise für d
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>Im verwendenden Projekt implementierte API
 Ein Typ, der über die XAML-UI genutzt wird, muss eine Laufzeitklasse sein (auch wenn er sich im gleichen Projekt wie der XAML-Code befindet).
 
-Für dieses Szenario wird auf der Grundlage der Windows-Runtime-Metadaten der Laufzeitklasse (`.winmd`) ein projizierter Typ generiert. Auch hier wird ein Header eingeschlossen. Diesmal wird der projizierte Typ allerdings über den zugehörigen Konstruktor vom Typ `nullptr` konstruiert. Dieser Konstruktor führt keine Initialisierung durch. Daher musst du der Instanz über die Hilfsfunktion [**winrt::make**](/uwp/cpp-ref-for-winrt/make) einen Wert zuweisen und alle notwendigen Konstruktorargumente übergeben. Eine Laufzeitklasse, die im gleichen Projekt implementiert wird wie der verwendende Code, muss weder registriert noch per Windows-Runtime/COM-Aktivierung instanziiert werden.
+Für dieses Szenario wird auf der Grundlage der Windows-Runtime-Metadaten der Laufzeitklasse (`.winmd`) ein projizierter Typ generiert. Auch hier wird ein Header eingeschlossen. Diesmal wird der projizierte Typ allerdings über den zugehörigen Konstruktor vom Typ **std::nullptr_t** konstruiert. Dieser Konstruktor führt keine Initialisierung durch. Daher musst du der Instanz über die Hilfsfunktion [**winrt::make**](/uwp/cpp-ref-for-winrt/make) einen Wert zuweisen und alle notwendigen Konstruktorargumente übergeben. Eine Laufzeitklasse, die im gleichen Projekt implementiert wird wie der verwendende Code, muss weder registriert noch per Windows-Runtime/COM-Aktivierung instanziiert werden.
 
 Für das folgende Codebeispiel wird ein Projekt vom Typ **Leere App (C++/WinRT)** benötigt:
 

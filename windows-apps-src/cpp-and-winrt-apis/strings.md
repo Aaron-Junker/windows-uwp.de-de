@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Zeichenfolge
 ms.localizationpriority: medium
-ms.openlocfilehash: d66cdcff8eff8c620d58a5948cbcf081acea2f45
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 004aa3e267bab86527ac3d5c3fe0383ccd4ad904
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360183"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844310"
 ---
 # <a name="string-handling-in-cwinrt"></a>Behandeln von Zeichenfolgen in C++/WinRT
 
@@ -137,6 +137,8 @@ Da es sich bei **hstring** um einen Bereich handelt, kannst du „hstring“ mit
 
 Viele C++ Bibliotheken verwenden **std::string** und arbeiten ausschließlich mit UTF-8-Text. Zur Vereinfachung stehen Hilfsprogramme wie [**winrt::to_string**](/uwp/cpp-ref-for-winrt/to-string) und [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) für die Konvertierung in beide Richtungen zur Verfügung.
 
+`WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
+
 ```cppwinrt
 winrt::hstring w{ L"Hello, World!" };
 
@@ -152,7 +154,7 @@ Weitere Beispiele und Informationen zu **hstring**-Funktionen und -Operatoren fi
 ## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a>Die Gründe für **winrt::hstring** und **winrt::param::hstring**
 Die Windows-Runtime-Implementierung basiert auf **wchar_t**-Zeichen, die binäre Anwendungsschnittstelle (Application Binary Interface, ABI) der Windows-Runtime ist jedoch keine Teilmenge dessen, was von **std::wstring** oder **std::wstring_view** bereitgestellt wird. Die Verwendung dieser Elemente wäre also äußerst ineffizient. Stattdessen steht in C++/WinRT **winrt::hstring** zur Verfügung, um eine unveränderliche Zeichenfolge darzustellen, die der zugrundeliegenden [HSTRING](https://docs.microsoft.com/windows/desktop/WinRT/hstring)-Zeichenfolge entspricht und hinter einer Schnittstelle implementiert wird, die mit der Schnittstelle von **std::wstring** vergleichbar ist. 
 
-Wie du vielleicht schon bemerkt hast, wird von C++/WinRT-Eingabeparametern, die logisch betrachtet **winrt::hstring** akzeptieren sollten, tatsächlich **winrt::param::hstring** erwartet. Der **param**-Namespace enthält eine Reihe von Typen, die ausschließlich zur Optimierung von Eingabeparametern dienen, um eine natürliche Bindung an Typen der C++-Standardbibliothek zu ermöglichen und Kopien und andere Ineffizienzen zu vermeiden. Diese Typen sollten nicht direkt verwendet werden. Wenn du eine Optimierung für deine eigenen Funktionen verwenden möchtest, verwende **std::wstring_view**.
+Wie du vielleicht schon bemerkt hast, wird von C++/WinRT-Eingabeparametern, die logisch betrachtet **winrt::hstring** akzeptieren sollten, tatsächlich **winrt::param::hstring** erwartet. Der **param**-Namespace enthält eine Reihe von Typen, die ausschließlich zur Optimierung von Eingabeparametern dienen, um eine natürliche Bindung an Typen der C++-Standardbibliothek zu ermöglichen und Kopien und andere Ineffizienzen zu vermeiden. Diese Typen sollten nicht direkt verwendet werden. Wenn du eine Optimierung für deine eigenen Funktionen verwenden möchtest, verwende **std::wstring_view**. Siehe auch [Übergabe von Parametern in die ABI-Grenze](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi).
 
 Dadurch kannst du die Besonderheiten der Windows-Runtime-Zeichenfolgenverwaltung weitgehend ignorieren und effizient arbeiten, ohne dir neues Wissen anzueignen. Das ist angesichts der intensiven Nutzung von Zeichenfolgen in der Windows-Runtime ein bedeutender Vorteil.
 
@@ -169,6 +171,22 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
     wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
     ::OutputDebugString(wstringstream.str().c_str());
 }
+```
+
+## <a name="the-correct-way-to-set-a-property"></a>Die richtige Vorgehensweise zum Festlegen einer Eigenschaft
+
+Sie können eine Eigenschaft festlegen, indem Sie einen Wert an eine Setter-Funktion übergeben. Hier sehen Sie ein Beispiel.
+
+```cppwinrt
+// The right way to set the Text property.
+myTextBlock.Text(L"Hello!");
+```
+
+Der folgende Code ist falsch. Er wird kompiliert, jedoch ändert er lediglich den temporären **winrt::hstring**, der von der Accessorfunktion **Text()** zurückgegeben wird, und verwirft dann das Ergebnis.
+
+```cppwinrt
+// *Not* the right way to set the Text property.
+myTextBlock.Text() = L"Hello!";
 ```
 
 ## <a name="important-apis"></a>Wichtige APIs

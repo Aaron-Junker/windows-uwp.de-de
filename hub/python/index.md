@@ -7,17 +7,17 @@ ms.author: mattwoj
 manager: jken
 ms.topic: landing-page
 ms.date: 07/19/2019
-keywords: Windows, Python-Entwicklung
-ms.openlocfilehash: efaa587578fef891f9b870c9f357f19c5f8e5bb7
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+keywords: Windows, Python-Entwicklung, Einstieg in Python unter Windows, Python für Windows-Subsystem für Linux, Python mit WSL, Einrichten der Entwicklungsumgebung für Python unter Windows, IDE für Python unter Windows, Python-Installationsort unter Windows, Ausführen von Python unter Windows, Python für Einsteiger unter Windows
+ms.openlocfilehash: 7711230b141c57135e1cda3f68416f0ed5287eac
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349327"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473648"
 ---
 # <a name="develop-with-python-on-windows"></a>Entwickeln mit Python unter Windows
 
-Ganz egal, ob Sie ein erfahrener Entwickler sind oder gerade erst anfangen – eine der wichtigsten Entscheidungen, die Sie treffen müssen, ist, welche Art von Hardware und Entwicklungsumgebung Sie verwenden möchten. Windows macht erhebliche Fortschritte in Richtung einer besseren Unterstützung von Python-Entwicklern. Hier finden Sie Anleitungen zur Einrichtung Ihrer Entwicklungsumgebung, zur Installation Ihrer Tools unter Windows oder dem Windows-Subsystem für Linux und zur Integration von Tools wie VS Code und Git.
+Ganz egal, ob Sie ein erfahrener Entwickler sind oder gerade erst in die Python-Entwicklung einsteigen – eine der wichtigsten Entscheidungen ist die, welche Entwicklungsumgebung Sie verwenden möchten. Hier finden Sie einen Leitfaden zum Einrichten Ihrer Entwicklungsumgebung, zur Installation Ihrer Tools auf einem nativen Windows-System oder dem Windows-Subsystem für Linux und zur Integration von Tools wie VS Code und Git. Windows hat die Unterstützung von Python-Entwicklern erheblich verbessert, und wir möchten Sie beim Einstieg unterstützen.
 
 <ul class="cardsK panelContent">
     <li>

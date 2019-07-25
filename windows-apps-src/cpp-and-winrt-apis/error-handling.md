@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, fehler, behandlung, ausnahme
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b72bb3cb2527585c114d386981e02d4730614a2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c75cf8763b5f47772a138c15049155458772eeb5
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721642"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660146"
 ---
 # <a name="error-handling-with-cwinrt"></a>Fehlerbehandlung bei C++/WinRT
 
@@ -112,7 +112,7 @@ HRESULT DoWork() noexcept
 [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) behandelt Ausnahmen, die von **std::exception** und [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) und deren abgeleiteten Typen abgeleitet wurden. In Ihrer Implementierung sollten Sie **winrt::hresult_error** oder einen abgeleiteten Typ bevorzugen, damit die Benutzer Ihrer API umfassende Fehlerinformationen erhalten. **std::exception** (die E_FAIL zugeordnet ist) wird unterstützt, wenn sich Ausnahmen aus der Verwendung der Standardvorlagenbibliothek ergeben.
 
 ## <a name="assertions"></a>Assertionen
-Für interne Annahmen in Ihrer Anwendung gibt es Assertionen. Bevorzugen Sie nach Möglichkeit **static_assert** für die Überprüfung während der Kompilierung. Verwenden Sie für Laufzeitbedingungen WINRT_ASSERT mit einem booleschen Ausdruck.
+Für interne Annahmen in Ihrer Anwendung gibt es Assertionen. Bevorzugen Sie nach Möglichkeit **static_assert** für die Überprüfung während der Kompilierung. Verwenden Sie für Laufzeitbedingungen `WINRT_ASSERT` mit einem booleschen Ausdruck. `WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
 
 ```cppwinrt
 WINRT_ASSERT(pos < size());

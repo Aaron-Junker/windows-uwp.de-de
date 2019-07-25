@@ -1,17 +1,17 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: Erstellen der App „Hello World“ in C++/CX (Windows 10)
-description: In Microsoft Visual Studio 2017 kannst du mithilfe von C++/CX eine App entwickeln, die unter Windows 10 sowie auf Smartphones mit Windows 10 ausgeführt werden kann. Die Benutzeroberfläche dieser Apps ist in XAML (Extensible Application Markup Language) definiert.
+description: In Microsoft Visual Studio 2019 können Sie mithilfe von C++/CX eine App entwickeln, die unter Windows 10 sowie auf Smartphones mit Windows 10 ausgeführt werden kann. Die Benutzeroberfläche dieser Apps ist in XAML (Extensible Application Markup Language) definiert.
 ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7e2c56f7d059a164d94bd608fbb8c179d5125f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 65436d7efd1de6e9c3649ad27b29b925bc632d95
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367379"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820658"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Erstellen der App „Hello World“ in C++/CX
 
@@ -21,7 +21,7 @@ ms.locfileid: "66367379"
 Mit Microsoft Visual Studio kannst du eine App in C++/CX entwickeln, die unter Windows 10 mit einer XAML-definierten (Extensible Application Markup Language) Benutzeroberfläche ausgeführt wird.
 
 > [!NOTE]
-> In diesem Tutorial wird Visual Studio Community 2017 verwendet. Wenn du eine andere Version von Visual Studio verwendest, sieht die Oberfläche unter Umständen etwas anders aus.
+> In diesem Tutorial wird Visual Studio Community 2019 verwendet. Wenn du eine andere Version von Visual Studio verwendest, sieht die Oberfläche unter Umständen etwas anders aus.
 
 ## <a name="before-you-start"></a>Bevor Sie beginnen
 
@@ -73,22 +73,15 @@ Wir beginnen mit den Grundlagen:
 
 **Erstellen einer Lösung in Visual Studio**
 
-1.  Wählen Sie in der Menüleiste von Visual Studio **Datei** > **Neu** > **Projekt**.
+1.  Wählen Sie in der Menüleiste von Visual Studio **Datei** > **Neu** > **Projekt** aus.
 
-2.  Erweitere im Dialogfeld **Neues Projekt** im linken Bereich **Installiert** > **Visual C++**  > **Windows Universal**.
+2.  Wählen Sie im Dialogfeld **Neues Projekt erstellen** die Option **Leere App (Universelles Windows: C++/CX)** aus.  Sollte diese Option nicht angezeigt werden, vergewissern Sie sich, dass die Entwicklungstools für universelle Windows-Apps installiert sind. Weitere Informationen finden Sie unter [Vorbereiten](get-set-up.md).
 
-> [!NOTE]
-> Du wirst möglicherweise aufgefordert, die universellen Windows-Tools für die C++-Entwicklung zu installieren.
+![C++/CX-Projektvorlagen im Dialogfeld „Neues Projekt erstellen“ ](images/vs2019-uwp-01.png)
 
-3.  Wählen Sie im mittleren Bereich **Leere App (universelle Windows-App)** aus.
+3.  Klicken Sie auf **Weiter**, und geben Sie dann einen Namen für das Projekt ein. Wir nennen unser Projekt „HelloWorld“.
 
-   (Sollten diese Optionen nicht angezeigt werden, vergewissern Sie sich, dass die Entwicklungstools für universelle Windows-Apps installiert sind. Weitere Informationen finden Sie unter [Vorbereiten](get-set-up.md).)
-
-4.  Geben Sie einen Namen für das Projekt ein. Wir nennen unser Projekt „HelloWorld“.
-
- ![C++/CX-Projektvorlagen im Dialogfeld „Neues Projekt“ ](images/vs2017-uwp-01.png)
-
-5.  Klicken Sie auf die Schaltfläche **OK**.
+4.  Klicken Sie auf die Schaltfläche **Erstellen**.
 
 > [!NOTE]
 > Wenn du Visual Studio zum ersten Mal verwendest, wird möglicherweise das Dialogfeld „Einstellungen“ angezeigt, in dem du zur Aktivierung von **Entwicklermodus** aufgefordert wirst. Der Entwicklermodus ist eine spezielle Einstellung, die bestimmte Features unterstützt, z. B. die direkte Ausführung von Apps und nicht nur die Ausführung aus dem Store. Weitere Informationen findest du unter [Aktivieren deines Geräts für die Entwicklung](enable-your-device-for-development.md). Wähle **Entwicklermodus** aus, klicke auf **Ja**, und schließe das Dialogfeld, um mit dem Tutorial fortzufahren.

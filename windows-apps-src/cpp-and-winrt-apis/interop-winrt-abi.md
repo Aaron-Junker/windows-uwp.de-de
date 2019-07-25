@@ -5,16 +5,18 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: a1745f9ad98ed8dac2e54e17d18467981eafdcec
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d1def649772f94a03d5a1f352dcec1d32c7b0868
+ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360226"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67800577"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interoperabilität zwischen C++/WinRT und der ABI
 
 In diesem Thema wird die Konvertierung zwischen SDK-ABI (Application Binary Interface) und [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Objekten behandelt. Die hier gezeigten Techniken ermöglichen die Implementierung von Interoperabilität zwischen Code, der diese beiden Programmiermethoden verwendet, und der Windows-Runtime. Außerdem kannst du damit deinen Code nach und nach von der ABI zu C++/WinRT migrieren.
+
+Im Allgemeinen macht C++/WinRT ABI-Typen als **void\*** verfügbar, sodass Sie keine Plattformheaderdateien einschließen müssen.
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>Was ist die Windows-Runtime-ABI, und welche ABI-Typen gibt es?
 Eine Windows-Runtime-Klasse (Laufzeitklasse) ist eigentlich eine Abstraktion. Diese Abstraktion definiert eine binäre Schnittstelle (Application Binary Interface, ABI), die es verschiedenen Programmiersprachen ermöglicht, mit einem Objekt zu interagieren. Die Interaktion des Clientcodes mit einem Windows-Runtime-Objekt findet unabhängig von der Programmiersprache auf der untersten Ebene statt. Dabei werden Clientsprachkonstrukte in Aufrufe für die ABI des Objekts übersetzt.
@@ -141,6 +143,8 @@ Hier siehst du weitere ähnliche Low-Level-Konvertierungstechniken, diesmal jedo
 
 Für Konvertierungen auf der untersten Ebene, bei denen nur Adressen kopiert werden, kannst du die Hilfsfunktionen [**winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi), [**winrt::detach_abi**](/uwp/cpp-ref-for-winrt/detach-abi) und [**winrt::attach_abi**](/uwp/cpp-ref-for-winrt/attach-abi) verwenden.
 
+`WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
+
 ```cppwinrt
     // The code in main() already shown above remains here.
 
@@ -242,6 +246,111 @@ int main()
     WINRT_ASSERT(uri == uri_from_abi);
 }
 ```
+
+## <a name="interoperating-with-abi-com-interface-pointers"></a>Interaktion mit ABI-COM-Schnittstellenzeigern
+
+Die folgende Hilfsfunktionsvorlage veranschaulicht das Kopieren eines ABI-COM-Schnittstellenzeigers eines bestimmten Typs in den entsprechenden projizierten Typ intelligenter Zeiger von C++/WinRT.
+
+```cppwinrt
+template<typename To, typename From>
+To to_winrt(From* ptr)
+{
+    To result{ nullptr };
+    winrt::check_hresult(ptr->QueryInterface(winrt::guid_of<To>(), winrt::put_abi(result)));
+    return result;
+}
+...
+ID2D1Factory1* com_ptr{ ... };
+auto cppwinrt_ptr {to_winrt<winrt::com_ptr<ID2D1Factory1>>(com_ptr)};
+```
+
+Die nächste Hilfsfunktionsvorlage ist äquivalent, jedoch wird in ihr aus dem intelligenten Zeigertyp in den [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil) kopiert.
+
+```cppwinrt
+template<typename To, typename From, typename ErrorPolicy>
+To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
+{
+    To result{ nullptr };
+    if constexpr (std::is_same_v<typename ErrorPolicy::result, void>)
+    {
+        ptr.query_to(winrt::guid_of<To>(), winrt::put_abi(result));
+    }
+    else
+    {
+        winrt::check_result(ptr.query_to(winrt::guid_of<To>(), winrt::put_abi(result)));
+    }
+    return result;
+}
+```
+
+Weitere Informationen findest du auch unter [Verwenden von COM-Komponenten mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-com).
+
+### <a name="unsafe-interop-with-abi-com-interface-pointers"></a>Unsichere Interaktion mit ABI-COM-Schnittstellenzeigern
+
+In der folgenden Tabelle sind (zusätzlich zu anderen Vorgängen) unsichere Konvertierungen zwischen einem ABO-COM-Schnittstellenzeiger eines bestimmten Typs und dem entsprechenden projizierten Typ intelligenter Zeiger von C++/WinRT aufgeführt. Setzen Sie für den Code in der Tabelle diese Deklarationen voraus.
+
+```cppwinrt
+winrt::Sample s;
+ISample* p;
+
+void GetSample(_Out_ ISample** pp);
+```
+
+Setzen Sie außerdem voraus, dass **ISample** die Standardschnittstelle für **Sample** ist.
+
+Sie können dies zur Kompilierzeit mit diesem Code bestätigen.
+
+```cppwinrt
+static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISample>);
+```
+
+| Vorgang | Vorgehensweise | Anmerkungen |
+|-|-|-|
+| **ISample\***  aus **winrt::Sample** extrahieren | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* ist noch Besitzer des Objekts. |
+| **ISample\*** von **winrt::Sample** trennen | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* ist nicht mehr Besitzer des Objekts. |
+| **ISample\*** in ein neues **winrt::Sample** übertragen | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* wird Besitzer des Objekts. |
+| **ISample\*** in **winrt::Sample** einfügen | `*put_abi(s) = p;` | *s* wird Besitzer des Objekts. Objekte, die zuvor im Besitz von *s* waren, gehen verloren (wird beim Debuggen bestätigt). |
+| **ISample\*** in **winrt::Sample** empfangen | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | *s* wird Besitzer des Objekts. Objekte, die zuvor im Besitz von *s* waren, gehen verloren (wird beim Debuggen bestätigt). |
+| **ISample\*** in **winrt::Sample** ersetzen | `attach_abi(s, p);` | *s* wird Besitzer des Objekts. Das Objekt, das zuvor im Besitz von *s* war, wird freigegeben. |
+| **ISample\*** nach **winrt::Sample** kopieren | `copy_from_abi(s, p);` | Es wird ein neuer Verweis von *s* auf das Objekt erstellt. Das Objekt, das zuvor im Besitz von *s* war, wird freigegeben. |
+| **winrt::Sample** nach **ISample\*** kopieren | `copy_to_abi(s, reinterpret_cast<void*&>(p));` | *p* erhält eine Kopie des Objekts. Objekte, die zuvor im Besitz von *p* waren, gehen verloren. |
+
+## <a name="interoperating-with-the-abis-guid-struct"></a>Interaktion mit der GUID-Struktur der ABI
+
+[**GUID**](/previous-versions/aa373931(v%3Dvs.80)) wird als **winrt::guid** projiziert. Wenn Sie APIs implementieren, müssen Sie **winrt::guid** für GUID-Parameter verwenden. Andernfalls erfolgen automatische Konvertierungen zwischen **winrt::guid** und **GUID**, solange Sie `unknwn.h` einschließen (von <windows.h> und vielen anderen Headerdateien implizit eingefügt), bevor Sie C++/WinRT-Header einschließen.
+
+Wenn Sie dies nicht tun, können Sie `reinterpret_cast` zwischen ihnen erzwingen. Setzen Sie für die folgende Tabelle diese Deklarationen voraus.
+
+```cppwinrt
+winrt::guid winrtguid;
+GUID abiguid;
+```
+
+| Konvertierung | Mit `#include <unknwn.h>` | Ohne `#include <unknwn.h>` |
+|-|-|-|
+| Von **winrt::guid** in **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
+| Von **GUID** in **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
+
+## <a name="interoperating-with-the-abis-hstring"></a>Interaktion mit dem HSTRING der ABI
+
+Die folgende Tabelle zeigt Konvertierungen zwischen **winrt::hstring** und [ **HSTRING**](/windows/win32/winrt/hstring), sowie andere Vorgänge. Setzen Sie für den Code in der Tabelle diese Deklarationen voraus.
+
+```cppwinrt
+winrt::hstring s;
+HSTRING h;
+
+void GetString(_Out_ HSTRING* value);
+```
+
+| Vorgang | Vorgehensweise | Anmerkungen |
+|-|-|-|
+| **HSTRING** aus **hstring** extrahieren | `h = static_cast<HSTRING>(get_abi(s));` | *s* ist noch Besitzer der Zeichenfolge. |
+| **HSTRING** von **hstring** trennen | `h = reinterpret_cast<HSTRING>(detach_abi(s));` | *s* ist nicht mehr Besitzer der Zeichenfolge. |
+| **HSTRING** in **hstring** einfügen | `*put_abi(s) = h;` | *s* wird Besitzer der Zeichenfolge. Zeichenfolgen, die zuvor im Besitz von *s* waren, gehen verloren (wird beim Debuggen bestätigt). |
+| **HSTRING** in **hstring** empfangen | `GetString(reinterpret_cast<HSTRING*>(put_abi(s)));` | *s* wird Besitzer der Zeichenfolge. Zeichenfolgen, die zuvor im Besitz von *s* waren, gehen verloren (wird beim Debuggen bestätigt). |
+| **HSTRING** in **hstring** ersetzen | `attach_abi(s, h);` | *s* wird Besitzer der Zeichenfolge. Die Zeichenfolge, die zuvor im Besitz von *s* war, wird freigegeben. |
+| **HSTRING** nach **hstring** kopieren | `copy_from_abi(s, h);` | *s* erstellt eine private Kopie der Zeichenfolge. Die Zeichenfolge, die zuvor im Besitz von *s* war, wird freigegeben. |
+| **hstring** nach **HSTRING** kopieren | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* erhält eine Kopie der Zeichenfolge. Zeichenfolgen, die zuvor im Besitz von *h* waren, gehen verloren. |
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [Funktion „AddRef“](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)

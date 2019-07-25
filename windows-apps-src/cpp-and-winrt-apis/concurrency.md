@@ -1,16 +1,16 @@
 ---
 description: Dieses Thema zeigt, wie Sie asynchrone Windows-Runtime-Objekte mit C++/WinRT erstellen und nutzen können.
 title: Parallelität und asynchrone Vorgänge mit C++/WinRT
-ms.date: 04/24/2019
+ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: 910d7a7ca2aaebac6dd462d7104b26a989cf8814
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: cbabf38f41ae940f5c92944154638eae7016e043
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721655"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660098"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Parallelität und asynchrone Vorgänge mit C++/WinRT
 
@@ -230,12 +230,16 @@ IASyncAction DoWorkAsync(Param const& value)
 }
 ```
 
-In einer Coroutine verläuft die Ausführung bis zum ersten Anhaltepunkt, an dem die Steuerung an den Aufrufer zurückgegeben wird, synchron. Bis die Coroutine fortgesetzt wird, kann alles Mögliche mit dem Quellwert passiert sein, auf den ein Verweisparameter verweist. Aus Sicht der Coroutine hat ein Verweisparameter eine unkontrollierte Lebensdauer. Im obigen Beispiel können wir also bis zur `co_await`-Anweisung problemlos auf *value* zugreifen, aber nicht danach. Wir können *value* nicht sicher an **DoOtherWorkAsync** übergeben, wenn das Risiko besteht, dass diese Funktion dadurch angehalten wird und nach dem Fortsetzen versucht, *value* zu verwenden. Damit die Parameter nach dem Anhalten und Fortsetzen ohne Probleme verwendet werden können, sollten Ihre Coroutinen standardmäßig als Wert zu übergebende Parameter verwenden. Dadurch stellen Sie sicher, dass die Erfassung nach Wert erfolgt und keine Probleme mit der Lebensdauer auftreten. Die Fälle, in denen Sie sicher sind, dass keine Probleme auftreten, und Sie daher von dieser Vorgehensweise abweichen können, sind eher selten.
+In einer Coroutine verläuft die Ausführung bis zum ersten Anhaltepunkt, an dem die Steuerung an den Aufrufer zurückgegeben wird, synchron. Bis die Coroutine fortgesetzt wird, kann alles Mögliche mit dem Quellwert passiert sein, auf den ein Verweisparameter verweist. Aus Sicht der Coroutine hat ein Verweisparameter eine unkontrollierte Lebensdauer. Im obigen Beispiel können wir also bis zur `co_await`-Anweisung problemlos auf *value* zugreifen, aber nicht danach. Falls dieser *value* vom Aufrufer zerstört wird, verursacht der anschließende Versuch, in der Coroutine darauf zuzugreifen, eine Beschädigung des Speichers. Wir können *value* nicht sicher an **DoOtherWorkAsync** übergeben, wenn das Risiko besteht, dass diese Funktion dadurch angehalten wird und nach dem Fortsetzen versucht, *value* zu verwenden.
+
+Damit die Parameter nach dem Anhalten und Fortsetzen ohne Probleme verwendet werden können, sollten Ihre Coroutinen standardmäßig als Wert zu übergebende Parameter verwenden. Dadurch stellen Sie sicher, dass die Erfassung nach Wert erfolgt und keine Probleme mit der Lebensdauer auftreten. Die Fälle, in denen Sie sicher sind, dass keine Probleme auftreten, und Sie daher von dieser Vorgehensweise abweichen können, sind eher selten.
 
 ```cppwinrt
 // Coroutine
-IASyncAction DoWorkAsync(Param value);
+IASyncAction DoWorkAsync(Param value); // not const&
 ```
+
+Die Übergabe nach Wert erfordert, dass das Argument einfach zu verschieben oder zu kopieren ist, und dies ist in der Regel bei intelligenten Zeigern der Fall.
 
 Es ist auch fraglich, ob die Übergabe nach Konstantenwert empfehlenswert ist (es sei denn, Sie möchten den Wert verschieben). Diese Vorgehensweise hat keine Auswirkungen auf den Quellwert, von dem Sie eine Kopie erstellen, macht aber die Absicht klar und hilft Ihnen, wenn Sie die Kopie versehentlich ändern.
 
@@ -245,6 +249,38 @@ IASyncAction DoWorkAsync(Param const value);
 ```
 
 Unter [Standard-Arrays und -Vektoren](std-cpp-data-types.md#standard-arrays-and-vectors) erfahren Sie, wie Sie einen Standardvektor an einen asynchronen Aufgerufenen übergeben.
+
+Wenn die Signatur der Coroutine nicht geändert werden kann, die Implementierung jedoch geändert werden kann, können Sie vor dem ersten `co_await` eine lokale Kopie erstellen.
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_value = value;
+    // It's ok to access both safe_value and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_value here (not value).
+}
+```
+
+Wenn das Kopieren von `Param` zu aufwendig ist, extrahieren Sie einfach die erforderlichen Teile vor dem ersten `co_await`.
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_data = value.data;
+    // It's ok to access safe_data, value.data, and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_data here (not value.data, nor value).
+}
+```
+
+## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Sicherer Zugriff auf den *this*-Zeiger in einer Klassenmember-Coroutine
+
+Siehe [Starke und schwache Verweise in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
 
 ## <a name="offloading-work-onto-the-windows-thread-pool"></a>Auslagern von Aufgaben an den Windows-Threadpool
 
@@ -683,7 +719,7 @@ int main()
 ```
 
 > [!NOTE]
-> Implementieren Sie für asynchrone Aktionen oder Vorgänge nicht mehrere *Abschlusshandler*. Sie können entweder einen einzelnen Delegaten für das abgeschlossene Ereignis verwenden oder `co_await` dafür ausführen. Wenn Sie beide Abschlusshandler nutzen, schlägt der zweite fehl. Für ein asynchrones Objekt können Sie einen der beiden folgenden Abschlusshandlertypen verwenden, jedoch nicht beide.
+> Implementieren Sie für asynchrone Aktionen oder Vorgänge nicht mehrere *Abschlusshandler*. Du kannst entweder einen einzelnen Delegaten für das Abschlussereignis verwenden oder `co_await` dafür ausführen. Wenn Sie beide Abschlusshandler nutzen, schlägt der zweite fehl. Für ein asynchrones Objekt können Sie einen der beiden folgenden Abschlusshandlertypen verwenden, jedoch nicht beide.
 
 ```cppwinrt
 auto async_op_with_progress{ CalcPiTo5DPs() };
@@ -723,6 +759,23 @@ int main()
     // Do other work here.
 }
 ```
+
+**winrt::fire_and_forget** ist auch als Rückgabetyp des Ereignishandlers hilfreich, wenn Sie asynchrone Vorgänge in ihm ausführen müssen. Hier ist ein Beispiel (siehe auch [Starke und schwache Verweise in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).
+
+```cppwinrt
+winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)
+{
+    auto lifetime{ get_strong() }; // Prevent *this* from prematurely being destructed.
+    auto ensure_completion{ unique_deferral(args.GetDeferral()) }; // Take a deferral, and ensure that we complete it.
+
+    auto file{ co_await StorageFile::GetFileFromApplicationUriAsync(Uri(L"ms-appx:///video_file.mp4")) };
+    args.SetStorageFile(file);
+
+    // The destructor of unique_deferral completes the deferral here.
+}
+```
+
+Das erste Argument (*sender*) bleibt unbenannt, weil es nie verwendet wird. Aus diesem Grund können wir es problemlos als Verweis belassen. Beachten Sie jedoch, dass *args* als Wert übergeben wird. Siehe oben den Abschnitt [Parameterübergabe](#parameter-passing).
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [concurrency::task-Klasse](/cpp/parallel/concrt/reference/task-class)

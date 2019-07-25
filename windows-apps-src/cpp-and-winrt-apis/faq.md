@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, häufig, gestellte, fragen, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 914cf884b97d14af523cc61b0fcce719104783ba
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 01ff6fb443550287330d6fe503c3d49d81e2142c
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721686"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717640"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Häufig gestellte Fragen zu C++/WinRT
 Hier finden Sie Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -27,7 +27,7 @@ Sämtliche Änderungen (einschließlich wichtiger Änderungen) finden Sie unter 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Warum wird mein neues Projekt nicht kompiliert? Ich verwende Visual Studio 2017 (Version 15.8.0 oder höher) und die SDK-Version 17134
 Wenn Sie Visual Studio 2017 (Version 15.8.0 oder höher) und als Zielversion Windows SDK Version 10.0.17134.0 (Windows 10, Version 1803) verwenden, tritt beim Kompilieren eines neu erstellten C++/WinRT-Projekts möglicherweise der Fehler „*Fehler C3861: 'from_abi': Bezeichner wurde nicht gefunden*“ zusammen mit anderen Fehlern auf, die von *base.h* verursacht werden. Die Lösung besteht darin, für das Projekt eine höhere (konformere) Version des Windows SDK zu verwenden oder die Projekteigenschaft **C/C++**  > **Sprache** > **Konformitätsmodus: Nein** festzulegen (auch wenn **/permissive-** in der Projekteigenschaft **C/C++**  > **Befehlszeile** unter **Zusätzliche Optionen** angezeigt wird. Löschen Sie es dann).
 
-## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>Wie löse ich den Buildfehler „C++/WinRT VSIX bietet keine Projekbuildunterstützung mehr.  Fügen Sie dem Nuget-Paket ,Microsoft.Windows.CppWinRT‘ einen Projektverweis hinzu.“ auf?
+## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>Wie behebe ich den Buildfehler „Die C++/WinRT-VSIX stellt keine Buildunterstützung für das Projekt mehr zur Verfügung.  Fügen Sie dem Projekt einen Verweis auf das Microsoft.Windows.CppWinRT-Nuget-Paket hinzu.“?
 Installieren Sie das NuGet-Paket **Microsoft.Windows.CppWinRT** für Ihr Projekt. Ausführlichere Informationen finden Sie unter [Frühere Versionen der VSIX-Erweiterung](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>Was sind die Voraussetzungen für die C++/WinRT Visual Studio Extension (VSIX)?
@@ -54,6 +54,24 @@ Wenn es sich bei dem nicht aufgelösten Symbol um eine freie Windows-Runtime-Fun
 ```
 
 Es ist wichtig, dass Sie alle Linkerfehler beheben, die Sie beheben können, indem Sie **WindowsApp.lib** anstelle einer alternativen Static Link Library (LIB) verknüpfen, weil Ihre Anwendung ansonsten die Tests des [Zertifizierungskits für Windows-Apps](../debug-test-perf/windows-app-certification-kit.md) nicht bestehen wird, die Visual Studio und der Microsoft Store zum Überprüfen von Übermittlungen verwenden (was bedeutet, dass Ihre Anwendung folglich nicht erfolgreich in den Microsoft Store aufgenommen werden kann).
+
+## <a name="why-am-i-getting-a-class-not-registered-exception"></a>Warum erhalte ich die Ausnahme „Klasse nicht registriert“?
+
+In diesem Fall wird beim Erstellen einer Laufzeitklasse oder beim Zugriff auf einen statischen Member eine Laufzeitausnahme mit dem HRESULT-Wert „REGDB_E_CLASSNOTREGISTERED“ angezeigt.
+
+Eine mögliche Ursache ist, dass Ihre Windows Runtime-Komponente nicht geladen werden kann. Stellen Sie sicher, dass die Windows Runtime-Metadatendatei (`.winmd`) der Komponente den gleichen Namen wie die Komponentenbinärdatei (`.dll`) hat, der auch der Name des Projekts und des Namespacestamms ist. Stellen Sie außerdem sicher, dass die Windows Runtime-Metadaten und die Binärdatei vom Build-Prozess korrekt in den `Appx`-Ordner der nutzenden App kopiert wurden. Und überprüfen Sie, ob das `AppxManifest.xml` der nutzenden App (auch im Ordner `Appx`) ein **&lt;InProcessServer&gt;** -Element enthält, in dem die aktivierbare Klasse und der Binärname ordnungsgemäß deklariert sind.
+
+### <a name="uniform-construction"></a>Einheitliche Konstruktion
+
+Dieser Fehler kann auch auftreten, wenn Sie versuchen, eine lokal implementierte Laufzeitklasse über einen der Konstruktoren des projizierten Typs zu instanziieren (nicht über den **std::nullptr_t**-Konstruktor). Hierfür benötigen Sie das C++/WinRT-2.0-Feature, das häufig als einheitliche Konstruktion bezeichnet wird. Informationen zum Instanziieren von lokal implementierten Laufzeitklassen, die *keine* einheitliche Konstruktion erfordern, finden Sie unter [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md).
+
+Für neue Projekte ist die einheitliche Konstruktion standardmäßig *aktiviert*. Für vorhandene Projekte müssen Sie die einheitliche Konstruktion festlegen, indem Sie das Tool `cppwinrt.exe` konfigurieren. Legen Sie in Visual Studio die Projekteigenschaft **Allgemeine Eigenschaften** > **C++/WinRT** > **Optimiert** auf *Ja* fest. Hierdurch wird der Projektdatei `<CppWinRTOptimized>true</CppWinRTOptimized>` hinzugefügt. Dies hat dieselbe Wirkung wie das Hinzufügen des Schalters `-opt[imize]` beim Aufruf von `cppwinrt.exe` über die Befehlszeile.
+
+Wenn Sie das Projekt *ohne* diese Einstellung erstellen, ruft die resultierende C++/WinRT-Projektion [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory) auf, um auf die Konstruktoren und statischen Member der Laufzeitklasse zuzugreifen. Dies erfordert, dass die Klassen registriert werden und dass das Modul den Einstiegspunkt [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) implementiert.
+
+Wenn Sie das Projekt *mit* dem Schalter `-opt[imize]` erstellen, umgeht das Projekt **RoGetActivationFactory** für die Klassen in der Komponente, sodass Sie sie auf die gleiche Weise wie Klassen außerhalb der Komponente erstellen können (ohne sie registrieren zu müssen).
+
+Um die einheitliche Konstruktion zu verwenden, müssen Sie zudem jeder `.cpp`-Datei der Implementierung `#include <Sub/Namespace/ClassName.g.cpp>` hinzufügen, nachdem Sie die Headerdatei für die Implementierung eingeschlossen haben.
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Sollte ich [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) implementieren und wenn ja, wie?
 Wenn Sie eine Laufzeitklasse verwenden, die Ressourcen in ihrem Destruktor freigibt, und diese Laufzeitklasse von außerhalb ihrer implementierenden Kompilierungseinheit genutzt werden kann (eine für die allgemeine Nutzung durch Windows-Runtime-Clientanwendungen vorgesehene Komponente für Windows-Runtime ist), dann empfehlen wir Ihnen, auch  **IClosable** zu implementieren, um die Nutzung Ihrer Laufzeitklasse durch Sprachen ohne deterministische Finalisierung zu unterstützen. Stellen Sie sicher, dass Ihre Ressourcen freigegeben werden – unabhängig davon, ob der Destruktor, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) oder beide aufgerufen werden. **IClosable::Close** kann beliebig oft aufgerufen werden.
@@ -154,6 +172,25 @@ Das oben dargestellte empfohlene Muster gilt nicht nur für C++/WinRT, sondern f
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>Wie konvertiere ich eine Zeichenfolge in einen Typ – z. B. für die Navigation?
 Am Ende des [Codebeispiels für die Navigationsansicht](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (das größtenteils in C# geschrieben ist) finden Sie einen C++/WinRT-Codeausschnitt, der zeigt, wie das geht.
+
+## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>Wie löse ich Mehrdeutigkeiten bei „GetCurrentTime“ und/oder „TRY“ auf?
+
+In der Headerdatei `winrt/Windows.UI.Xaml.Media.Animation.h` wird eine Methode mit dem Namen **GetCurrentTime** deklariert, und `windows.h` (über `winbase.h`) definiert ein Makro mit dem Namen **GetCurrentTime**. Bei einem Konflikt zwischen den beiden erzeugt der C++-Compiler „*Fehler C4002: Zu viele Argumente für den Aufruf des funktionsähnlichen Makros "GetCurrentTime*“.
+
+Entsprechend wird in `winrt/Windows.Globalization.h` eine Methode mit dem Namen **TRY** deklariert, und in `afx.h` wird ein Makro mit dem Namen **GetCurrentTime** definiert. Bei einem Konflikt zwischen den beiden erzeugt der C++-Compiler „*Fehler C2334: Unerwartete(s) Token vor "{"; sichtbarer Funktionstext wird übersprungen*“.
+
+Um eines oder beide Probleme zu beheben, können Sie wie folgt vorgehen.
+
+```cppwinrt
+#pragma push_macro("GetCurrentTime")
+#pragma push_macro("TRY")
+#undef GetCurrentTime
+#undef TRY
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#pragma pop_macro("TRY")
+#pragma pop_macro("GetCurrentTime")
+```
 
 > [!NOTE]
 > Wenn Ihre Frage in diesem Thema nicht beantwortet wurde, finden Sie möglicherweise Hilfe in der [Visual Studio C++-Entwicklercommunity](https://developercommunity.visualstudio.com/spaces/62/index.html), oder verwenden Sie das [`c++-winrt`-Tag auf Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

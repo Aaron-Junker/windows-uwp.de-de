@@ -1,20 +1,23 @@
 ---
 description: Dieses Thema zeigt, wie C++/WinRT-APIs mithilfe der **winrt::implements**-Basisstruktur direkt oder indirekt erstellt werden.
 title: Erstellen von APIs mit C++/WinRT
-ms.date: 04/23/2019
+ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, projiziert, Projektion, Implementierung, implementieren, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 526c6fba76539a5d43231c29479621478b2dde59
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 74d15b517c5ec6547115bc8ffdb44a2b742c68d6
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65821089"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717663"
 ---
 # <a name="author-apis-with-cwinrt"></a>Erstellen von APIs mit C++/WinRT
 
 Dieses Thema zeigt, wie [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-APIs mithilfe der [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)-Basisstruktur direkt oder indirekt erstellt werden. In diesem Zusammenhang werden die Synonyme *Produzieren* oder *Implementieren* für den Begriff *Erstellen* verwendet. Dieses Thema behandelt die folgenden Szenarien für die Implementierung von APIs für einen C++/WinRT-Typ in dieser Reihenfolge.
+
+> [!NOTE]
+> In diesem Thema werden Komponenten für Windows-Runtime erwähnt, jedoch nur im Kontext von C++/WinRT. Informationen zu Komponenten für Windows-Runtime, die alle Sprachen für Windows-Runtime abdecken, finden Sie unter [Komponenten für Windows-Runtime](/windows/uwp/winrt-components/).
 
 - Sie erstellen *keine* Windows-Runtime-Klasse (Runtime-Klasse). Sie möchten lediglich mindestens eine Windows-Runtime-Schnittstelle für den lokalen Gebrauch in Ihrer App implementieren. Die Ableitung erfolgt in diesem Fall direkt von **winrt::implements**, und Sie implementieren Funktionen.
 - Sie *erstellen eine* Laufzeitklasse. Möglicherweise erstellen Sie eine Komponente, die von einer App genutzt werden soll. Oder Sie erstellen einen Typ, der von der XAML-Benutzeroberfläche (UI) genutzt werden soll, und in diesem Fall implementieren und nutzen Sie eine Laufzeitklasse innerhalb derselben Kompilierungseinheit. In diesen Fällen lassen Sie die Tools Klassen generieren, die von **winrt::implements** abgeleitet sind.
@@ -25,6 +28,7 @@ In beiden Fällen wird der Typ, der Ihre C++/WinRT-APIs implementiert, als *Impl
 > Es ist wichtig, das Konzept eines Implementierungstyps von dem eines projizierten Typs zu unterscheiden. Der projizierte Typ ist in [Verwenden von APIs mit C++/WinRT](consume-apis.md) beschrieben.
 
 ## <a name="if-youre-not-authoring-a-runtime-class"></a>Wenn Sie *keine* Laufzeitklasse erstellen
+
 Das einfachste Szenario ist die Implementierung einer Windows-Runtime-Schnittstelle für die lokale Nutzung. Sie benötigen keine Laufzeitklasse, sondern nur eine normale C++-Klasse. Beispielsweise können Sie eine App rund um [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) schreiben.
 
 > [!NOTE]
@@ -121,6 +125,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>Wenn Sie eine Laufzeitklasse in einer Komponente für Windows-Runtime erstellen, gehen Sie wie folgt vor:
+
 Wenn Ihr Typ in einer Komponente für Windows-Runtime für den Einsatz in einer Anwendung verpackt ist, dann muss es sich um eine Laufzeitklasse handeln.
 
 > [!TIP]
@@ -142,7 +147,9 @@ namespace MyProject
 }
 ```
 
-Diese IDL deklariert eine Windows-Runtime-Klasse (Runtime). Eine Laufzeitklasse ist ein Typ, der über moderne COM-Schnittstellen aktiviert und genutzt werden kann, typischerweise über Ausführungsgrenzen hinweg. Wenn Sie eine IDL-Datei zu Ihrem Projekt hinzufügen und erstellen, generiert die C++/WinRT-Toolkette (`midl.exe` und `cppwinrt.exe`) einen Implementierungstyp für Sie. Unter Verwendung der obigen Beispiel-IDL ist der Implementierungstyp ein C++ Strukturstub namens **winrt::MyProject::implementation::MyRuntimeClass** in Quellcodedateien namens `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` und `MyRuntimeClass.cpp`.
+Diese IDL deklariert eine Windows-Runtime-Klasse (Runtime). Eine Laufzeitklasse ist ein Typ, der über moderne COM-Schnittstellen aktiviert und genutzt werden kann, typischerweise über Ausführungsgrenzen hinweg. Wenn Sie eine IDL-Datei zu Ihrem Projekt hinzufügen und erstellen, generiert die C++/WinRT-Toolkette (`midl.exe` und `cppwinrt.exe`) einen Implementierungstyp für Sie. Ein Beispiel für die Verwendung des IDL-Dateiworkflows finden Sie unter [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md).
+
+Unter Verwendung der obigen Beispiel-IDL ist der Implementierungstyp ein C++ Strukturstub namens **winrt::MyProject::implementation::MyRuntimeClass** in Quellcodedateien namens `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` und `MyRuntimeClass.cpp`.
 
 Der Implementierungstyp sieht so aus.
 
@@ -175,6 +182,7 @@ In diesem Szenario steht also wieder die Basisstrukturvorlage [**winrt::implemen
 Weitere Details, Code und eine exemplarische Vorgehensweise bei der Erstellung von APIs in einer Komponente für Windows-Runtime finden Sie unter [Erstellen von Ereignissen in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
 
 ## <a name="if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui"></a>Wenn Sie eine Laufzeitklasse erstellen, die in Ihrer XAML-Benutzeroberfläche referenziert werden soll, gehen Sie wie folgt vor
+
 Wenn Ihr Typ von Ihrer XAML-Benutzeroberfläche referenziert wird, dann muss er eine Laufzeitklasse sein (auch, wenn er sich im selben Projekt wie die XAML befindet). Obwohl diese typischerweise über Ausführungsgrenzen hinweg aktiviert werden, kann eine Laufzeitklasse stattdessen innerhalb der Kompilierungseinheit verwendet werden, die sie implementiert.
 
 In diesem Szenario erstellen *und* nutzen Sie die APIs. Die Vorgehensweise bei der Implementierung Ihrer Laufzeitklasse ist im Wesentlichen die gleiche wie bei einer Komponente für Windows-Runtime. Weitere Informationen finden Sie im vorherigen Abschnitt &mdash;[Wenn Sie eine Laufzeitklasse in einer Komponente für Windows-Runtime erstellen, gehen Sie wie folgt vor](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component). Das einzige Detail, das sich von der IDL unterscheidet, ist, dass die C++/WinRT-Toolkette nicht nur einen Implementierungstyp, sondern auch einen projizierten Typ generiert. Es ist wichtig zu verstehen, dass in diesem Szenario die Angabe „**MyRuntimeClass**” mehrdeutig sein kann. Es gibt mehrere Entitäten von unterschiedlicher Art mit diesem Namen.
@@ -205,10 +213,11 @@ Ein Beispiel für die Implementierung der **INotifyPropertyChanged**-Schnittstel
 Die Vorgehensweise für die Verwendung Ihrer Laufzeitklasse in diesem Szenario ist unter [APIs mit C++/WinRT nutzen](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project) beschrieben.
 
 ## <a name="runtime-class-constructors"></a>Laufzeitklassenkonstruktoren
+
 Hier sind einige Punkte, die wir aus den oben gezeigten Listings entfernen können.
 
 - Jeder Konstruktor, den Sie in Ihrer IDL deklarieren, bewirkt, dass ein Konstruktor sowohl für Ihren Implementierungstyp als auch für Ihren projizierten Typ generiert wird. IDL-deklarierte Konstruktoren werden verwendet, um die Laufzeitklasse aus einer *anderen Kompiliereinheit* zu nutzen.
-- Unabhängig davon, ob Sie IDL-deklarierte Konstruktoren verwenden, wird eine Konstruktorüberladung von `nullptr_t` für Ihren projizierten Typ generiert. Der Aufruf des `nullptr_t`-Konstruktors ist *der erste von zwei Schritten*, um die Laufzeitklasse aus *derselben* Kompiliereinheit zu verwenden. Weitere Details und ein Codebeispiel finden Sie unter [APIs mit C++/WinRT nutzen](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
+- Unabhängig davon, ob Sie IDL-deklarierte Konstruktoren verwenden, wird eine Konstruktorüberladung von **std::nullptr_t** für den projizierten Typ generiert. Der Aufruf des **std::nullptr_t**-Konstruktors ist *der erste von zwei Schritten*, um die Laufzeitklasse aus *derselben* Kompiliereinheit zu verwenden. Weitere Details und ein Codebeispiel finden Sie unter [APIs mit C++/WinRT nutzen](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
 - Wenn Sie die Laufzeitklasse in *derselben* Kompilierungseinheit nutzen, können Sie auch Nicht-Standardkonstruktoren direkt für den Implementierungstyp implementieren (der sich in `MyRuntimeClass.h` befindet).
 
 > [!NOTE]
@@ -218,7 +227,20 @@ Hier sind einige Punkte, die wir aus den oben gezeigten Listings entfernen könn
 > 
 > Wenn Sie Ihre Laufzeitklasse nur innerhalb derselben Kompilierungseinheit erstellen und nutzen möchten und Sie Konstruktorparameter benötigen, erstellen Sie Konstruktoren, die Sie direkt in Ihrem Implementierungstyp benötigen.
 
+## <a name="runtime-class-methods-properties-and-events"></a>Laufzeitklassenmethoden, -eigenschaften und -ereignisse
+
+Wir haben gesehen, dass der Workflow das Deklarieren der Laufzeitklasse und ihrer Member mithilfe der IDL umfasst und dann Tools Prototypen und Stubimplementierungen generieren. Sie *können* die automatisch generierten Prototypen für die Member der Laufzeitklasse bearbeiten, damit andere Typen als die Typen übergeben werden, die Sie in der IDL deklarieren. Dies ist jedoch nur möglich, solange der Typ, den Sie in der IDL deklarieren, an den Typ weitergeleitet werden kann, den Sie in der implementierten Version deklarieren.
+
+Beispiele:
+
+- Sie können Parametertypen lockern. Wenn z. B. in der IDL die Methode eine **SomeClass** akzeptiert, können Sie diese in der Implementierung in **IInspectable** ändern. Dies ist möglich, da jede **SomeClass** an **IInspectable** weitergeleitet werden kann (der umgekehrte Vorgang ist selbstverständlich nicht möglich).
+- Ein kopierbarer Parameter kann nach Wert statt nach Verweis akzeptiert werden. Sie können z. B. `SomeClass const&` in `SomeClass const&` ändern. Dies ist erforderlich, wenn Sie das Erfassen eines Verweises in einer Coroutine vermeiden müssen (siehe [Parameterübergabe](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
+- Sie können den Rückgabewert lockern. Sie können z. B. **void** in [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) ändern.
+
+Die beiden letzten sind sehr hilfreich, wenn Sie einen Handler für asynchrone Ereignisse schreiben.
+
 ## <a name="instantiating-and-returning-implementation-types-and-interfaces"></a>Instanziierung und Rückgabe von Implementierungstypen und Schnittstellen
+
 In diesem Abschnitt nehmen wir als Beispiel einen Implementierungstyp namens **MyType**, der die Schnittstellen [**IStringable**](/uwp/api/windows.foundation.istringable) und [**IClosable**](/uwp/api/windows.foundation.iclosable) implementiert.
 
 Sie können **MyType** direkt von [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) ableiten (es ist keine Laufzeitklasse).
@@ -249,7 +271,7 @@ namespace MyProject
 }
 ```
 
-Um von **MyType** zu einem **IStringable**- oder **IClosable**-Objekt zu gelangen, das Sie als Teil Ihrer Projektion verwenden oder zurückgeben können, können Sie die Funktionsvorlage [**winrt::make**](/uwp/cpp-ref-for-winrt/make) aufrufen. **make** gibt die Standardschnittstelle des Implementierungstyps zurück.
+Um von **MyType** zu einem **IStringable**- oder **IClosable**-Objekt zu gelangen, das Sie als Teil Ihrer Projektion verwenden oder zurückgeben können, sollten Sie die Funktionsvorlage [**winrt::make**](/uwp/cpp-ref-for-winrt/make) aufrufen. **make** gibt die Standardschnittstelle des Implementierungstyps zurück.
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -335,6 +357,7 @@ void MyType::MemberFunction(MyProject::MyOtherType const& ot)
 ```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Ableiten von einem Typ, der keinen standardmäßigen Konstruktor aufweist
+
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)** ](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) ist ein Beispiel für einen nicht standardmäßigen Konstruktor. Es gibt keinen Standardkonstruktor. Um ein **ToggleButtonAutomationPeer**-Element zu erstellen, müssen Sie also einen *Owner* übergeben. Wenn Sie von **ToggleButtonAutomationPeer** ableiten, dann müssen Sie also einen Konstruktor zur Verfügung stellen, der einen *Owner* annimmt und ihn an die Basisklasse übergibt. Sehen wir uns an, wie dies in der Praxis aussieht.
 
 ```idl
@@ -391,6 +414,47 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 Der Konstruktor der Basisklasse erwartet ein **ToggleButton**-Element. Und **MySpecializedToggleButton** *ist ein* **ToggleButton**-Element.
 
 Bis Sie die oben beschriebene Änderung vornehmen (um den Konstruktorparameter an die Basisklasse weiterzugeben), wird der Compiler Ihren Konstruktor markieren und darauf hinweisen, dass es (in diesem Fall) keinen geeigneten Standardkonstruktor für einen Typ namens **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** gibt. Das ist die Basisklasse der Basisklasse Ihres Implementierungstyps.
+
+## <a name="namespaces-projected-types-implementation-types-and-factories"></a>Namespaces: projizierte Typen, Implementierungstypen und Factorys
+
+Wie Sie weiter oben in diesem Thema gesehen haben, ist eine C++/WinRT-Laufzeitklasse in Form mehrerer C++Klassen in mehreren Namespaces vorhanden. Deshalb hat der Name **MyRuntimeClass** im **winrt::MyProject**-Namespace eine andere Bedeutung als im **winrt::MyProject::implementation**-Namespace. Achten Sie auf den Namespace im aktuellen Kontext, und verwenden Sie dann Namespacepräfixe, wenn Sie einen Namen aus einem anderen Namespace benötigen. Lassen Sie uns die betreffenden Namespaces genauer betrachten.
+
+- **winrt::MyProject**. Dieser Namespace enthält projizierte Typen. Ein Objekt eines projizierten Typs ist ein Proxy und im Grunde lediglich ein intelligenter Zeiger auf ein Unterstützungsobjekt. Dabei kann das Unterstützungsobjekt in Ihrem Projekt oder in einer anderen Kompilierungseinheit implementiert werden.
+- **winrt::MyProject::implementation**. Dieser Namespace enthält Implementierungstypen. Ein Objekt eines Implementierungstyps ist kein Zeiger, sondern ein Wert – ein vollständiges C++-Stapelobjekt. Erstellen Sie Implementierungstypen nicht direkt. Rufen Sie stattdessen [ **winrt::make**](/uwp/cpp-ref-for-winrt/make) auf, und übergeben Sie den Implementierungstyp als Vorlagenparameter. Weiter oben in diesem Thema wurden Beispiele für die Verwendung von **winrt::make** gezeigt, und [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) enthält ein weiteres Beispiel.
+- **winrt::MyProject::factory_implementation**. Dieser Namespace enthält Factorys. Ein Objekt in diesem Namespace unterstützt [**IActivationFactory**](/windows/win32/api/activation/nn-activation-iactivationfactory).
+
+In dieser Tabelle ist die minimale Namespacequalifikation aufgeführt, die in unterschiedlichen Kontexten verwendet werden muss.
+
+|Der Namespace im Kontext|Für die Angabe des projizierten Typs|Für die Angabe des projizierten Typs|
+|-|-|-|
+|**winrt::MyProject**|`MyRuntimeClass`|`implementation::MyRuntimeClass`|
+|**winrt::MyProject::implementation**|`MyProject::MyRuntimeClass`|`MyRuntimeClass`|
+
+> [!IMPORTANT]
+> Wenn aus der Implementierung ein projizierter Typ zurückgegeben werden soll, achten Sie darauf, dass Sie den Implementierungstyp nicht durch Schreiben von `MyRuntimeClass myRuntimeClass;` instanziieren. Die richtigen Verfahren und der Code für dieses Szenario wurden weiter oben in diesem Thema im Abschnitt [Instanziierung und Rückgabe von Implementierungstypen und Schnittstellen](#instantiating-and-returning-implementation-types-and-interfaces) gezeigt.
+>
+> Das Problem bei `MyRuntimeClass myRuntimeClass;` in diesem Szenario ist, dass im Stapel ein **winrt::MyProject::implementation::MyRuntimeClass**-Objekt erstellt wird. Dieses Objekt (vom Typ „implementation“) verhält sich in gewisser Hinsicht wie der projizierte Typ – Sie können auf die gleiche Weise Methoden für es aufrufen, und es kann sogar in einen projizierten Typ konvertiert werden. Das Objekt wird jedoch gemäß den C++-Regeln gelöscht, wenn der Bereich verlassen wird. Wenn ein projizierter Typ (ein intelligenter Zeiger) an das Objekt zurückgegeben wurde, verweist dieser Zeiger auf kein Objekt.
+>
+> Dieser Fehler, bei dem es zu Speicherbeschädigung kommt, ist schwierig zu diagnostizieren. Für Debugbuilds hilft eine C++/WinRT-Assertion, den Fehler mithilfe einer Stapelerkennung abzufangen. Da jedoch Coroutinen auf dem Heap zugeordnet werden, können Sie diesen Fehler nicht abfangen, wenn er in einer Coroutine erfolgt.
+
+## <a name="using-projected-types-and-implementation-types-with-various-cwinrt-features"></a>Verwenden von projizierten Typen und Implementierungstypen mit verschiedenen C++/ WinRT-Funktionen
+
+In der folgenden Tabelle werden C++/-WinRT-Funktionen, die einen Typ erwarten, sowie der erwartete Typ (projizierter Typ, Implementierungstyp oder beide Typen) aufgeführt.
+
+|Feature|Akzeptierter Typ|Anmerkungen|
+|-|-|-|
+|`T` (stellt einen intelligenten Zeiger dar)|Projiziert|Siehe den Hinweis in [Namespaces: projizierte Typen, Implementierungstypen und Factorys](#namespaces-projected-types-implementation-types-and-factories) zur irrtümlichen Verwendung des Implementierungstyps.|
+|`agile_ref<T>`|Beide|Wenn Sie den Implementierungstyp verwenden, muss das Konstruktorargument `com_ptr<T>` lauten.|
+|`com_ptr<T>`|Implementierung|Die Verwendung des projizierten Typs generiert den Fehler `'Release' is not a member of 'T'`.|
+|`default_interface<T>`|Beide|Wenn Sie den Implementierungstyp verwenden, wird die erste implementierte Schnittstelle zurückgegeben.|
+|`get_self<T>`|Implementierung|Die Verwendung des projizierten Typs generiert den Fehler `'_abi_TrustLevel': is not a member of 'T'`.|
+|`guid_of<T>()`|Beide|Gibt die GUID der Standardschnittstelle zurück.|
+|`IWinRTTemplateInterface<T>`<br>|Projiziert|Bei Verwendung des Kompilierungstyps wird der Code kompiliert, dies ist jedoch ein Fehler. Siehe den Hinweis in [Namespaces: projizierte Typen, Implementierungstypen und Factorys.](#namespaces-projected-types-implementation-types-and-factories)|
+|`make<T>`|Implementierung|Bei Verwendung des projizierten Typs wird der folgende Fehler generiert: `'implements_type': is not a member of any direct or indirect base class of 'T'`|
+| `make_agile(T const&amp;)`|Beide|Wenn Sie den Implementierungstyp verwenden, muss das Argument `com_ptr<T>` lauten.|
+| `make_self<T>`|Implementierung|Bei Verwendung des projizierten Typs wird der folgende Fehler generiert: `'Release': is not a member of any direct or indirect base class of 'T'`|
+| `name_of<T>`|Projiziert|Wenn Sie den Implementierungstyp verwenden, erhalten Sie die GUID der Standardschnittstelle in Form einer Zeichenfolge.|
+| `weak_ref<T>`|Beide|Wenn Sie den Implementierungstyp verwenden, muss das Konstruktorargument `com_ptr<T>` lauten.|
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [winrt::com_ptr-Strukturvorlage](/uwp/cpp-ref-for-winrt/com-ptr)

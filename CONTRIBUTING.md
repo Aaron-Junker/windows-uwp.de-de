@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66214739"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414060"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Beitragen zur UWP-Konzeptdokumentation
 
@@ -48,7 +48,7 @@ Wenn du umfangreichere Änderungen an einem bereits vorhandenen Artikel vornehme
 
 Achte beim Erstellen eines Pull Requests im internen Repository darauf, dass du deinen persönlichen Branch mit dem Branch zusammenführst, auf dessen Grundlage er erstellt wurde.
 
-Nach Übermittlung des Pull Requests wird anhand einer [Prüfliste](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master) überprüft, ob die Qualität des Inhalts unseren grundlegenden Standards entspricht. Ist die Überprüfung erfolgreich, wird der Request zur weiteren Überprüfung einem Mitglied des UWP-Dokumentationsteams zugewiesen. Andernfalls erfährst du, was geändert werden muss.
+Nach Übermittlung des Pull Requests wird anhand einer [Pull-Request-Zusammenführung](https://review.docs.microsoft.com/help/contribute/prmerger-overview?branch=master) überprüft, ob er unseren grundlegenden Standards entspricht. Ist die Überprüfung erfolgreich, können Sie den Kommentar `#sign-off` hinzufügen, um den Pull Request an ein Mitglied des UWP-Dokumentationsteams zu übergeben. Andernfalls erfahren Sie, was geändert werden muss, bevor Sie ihn abzeichnen können.
 
 Die zugewiesenen Prüfer können deinen Pull Request genehmigen, ablehnen oder mit dir zusammenarbeiten, um weitere Änderungen vorzunehmen. Prüfer führen den Pull Request erst zusammen, wenn er von dir selbst genehmigt wurde.
 

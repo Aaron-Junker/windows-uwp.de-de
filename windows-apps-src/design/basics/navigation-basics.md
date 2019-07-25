@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1c764eeb57ec8046a93e7fb58e156fa68daea8df
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 6290b142eee4aff7287b9542b645df89164d173b
+ms.sourcegitcommit: 34671182c26f5d0825c216a6cededc02b0059a9e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564521"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286941"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Navigationsdesigngrundlagen für UWP-Apps
 
@@ -150,7 +150,7 @@ Eine hierarchische Struktur empfiehlt sich in folgenden Fällen:
     :::column span="2":::
         ### Combining structures
 
-Du musst dich nicht zwischen den beiden Strukturen entscheiden: In vielen gut gestalteten Apps wird eine Kombination aus beiden Strukturen verwendet. Eine App kann flache Strukturen für übergeordnete Seiten verwenden, die in beliebiger Reihenfolge angezeigt werden können, und hierarchische Strukturen für Seiten mit komplexeren Beziehungen.
+Sie müssen sich nicht zwischen den beiden Strukturen entscheiden: In vielen gut gestalteten Apps wird eine Kombination aus beiden Strukturen verwendet. Eine App kann flache Strukturen für übergeordnete Seiten verwenden, die in beliebiger Reihenfolge angezeigt werden können, und hierarchische Strukturen für Seiten mit komplexeren Beziehungen.
 
 Wenn die Navigationsstruktur über mehrere Ebenen verfügt, empfehlen wir, dass Peer-to-Peer-Navigationselemente nur mit den Peers innerhalb der aktuellen Unterstruktur verknüpft sind. Die Abbildung zeigt eine Navigationsstruktur mit drei Ebenen:
 

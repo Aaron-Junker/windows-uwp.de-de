@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f6fe36fb8955b6234cdf3cb42e4db02a602f4a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 00a65324b799b0cf974271da23fdbcb36aa6c8e2
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364346"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399613"
 ---
 # <a name="rich-edit-box"></a>Rich-Edit-Feld
 
@@ -29,8 +29,7 @@ Sie können ein RichEditBox-Steuerelement verwenden, um Rich-Text-Dokumente zu b
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
 Verwenden Sie **RichEditBox** zum Anzeigen und Bearbeiten von Textdateien. Ein RichEditBox wird nicht dazu verwendet, in der Weise Benutzereingaben in Ihrer App zu erhalten, wie es bei anderen, standardmäßigen Texteingabefeldern erfolgt. Es wird vielmehr dazu verwendet, mit Textdateien zu arbeiten, die von Ihrer App getrennt sind. Den in ein RichEditBox-Element eingegebenen Text speichern Sie üblicherweise in einer RTF-Datei.
--   Wenn der Hauptzweck des mehrzeiligen Textfelds darin besteht, Dokumente zu erstellen (z. B. Blogeinträge oder die Inhalte einer E-Mail-Nachricht) und diese Dokumente Rich-Text erfordern, verwenden Sie ein Rich-Text-Feld.
--   Wenn die Benutzer in der Lage sein sollen, ihre Texte zu formatieren, verwenden Sie ein Rich-Text-Feld.
+-   Wenn der Hauptzweck des mehrzeiligen Textfelds darin besteht, schreibgeschützte Dokumente zu erstellen (z. B. Blogeinträge oder die Inhalte einer E-Mail-Nachricht) und diese Dokumente Rich-Text erfordern, verwenden Sie stattdessen ein [Rich-Text-Feld](/windows/uwp/design/controls-and-patterns/rich-text-block).
 -   Wenn Texte erfasst werden, die nur genutzt und nicht für die Benutzer erneut angezeigt werden, verwenden Sie ein Nur-Text-Eingabesteuerelement.
 -   Verwenden Sie in allen anderen Szenarien ein Nur-Text-Eingabesteuerelement.
 
@@ -218,7 +217,7 @@ Weitere Informationen zur Verwendung von Eingabeumfängen finden Sie unter [Verw
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

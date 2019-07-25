@@ -5,16 +5,18 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Daten, Typen
 ms.localizationpriority: medium
-ms.openlocfilehash: 83d2c0c2c544d63d2806dc71bfc367613d34e23a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a87ba48a0853058ba1259e079c586b97af551656
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745278"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844329"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>C++-Standarddatentypen und C++/WinRT
 
 Mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) kannst du Windows-Runtime-APIs unter Verwendung von C++-Standarddatentypen aufrufen (einschließlich einiger Datentypen der C++-Standardbibliothek). Du kannst Standardzeichenfolgen an APIs übergeben (siehe [Behandeln von Zeichenfolgen in C++/WinRT](strings.md)) sowie Initialisierungslisten und Standardcontainer an APIs übergeben, die eine semantisch äquivalente Sammlung erwarten.
+
+Siehe auch [Übergabe von Parametern in die ABI-Grenze](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi).
 
 ## <a name="standard-initializer-lists"></a>Standardinitialisierungslisten
 Eine Initialisierungsliste (**std::initializer_list**) ist ein Konstrukt der C++-Standardbibliothek. Initialisierungslisten können beim Aufrufen bestimmter Windows-Runtime-Konstruktoren und -Methoden verwendet werden – etwa beim Aufrufen von [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes).

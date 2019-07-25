@@ -5,22 +5,22 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361230"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820500"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen benutzerdefinierter Stile
 
 In diesem Tutorial wird die Anpassung der Benutzeroberfläche (User Interface, UI) unserer XAML-App veranschaulicht. Warnung: in diesem Tutorial taucht möglicherweise ein Einhorn auf. (Im Ernst!)  
 
 ## <a name="prerequisites"></a>Voraussetzungen
-* [Visual Studio 2017 und das Windows 10 SDK (10.0.15063.468 oder höher)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 und das Windows 10 SDK (10.0.15063.468 oder höher)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>Teil 0: Beziehen des Codes
-Der Ausgangspunkt für dieses Lab befindet sich im PhotoLab-Beispielrepository im Ordner [xaml-basics-starting-points/style/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). Nachdem du das Repository geklont/heruntergeladen hast, kannst du das Projekt bearbeiten, indem du „PhotoLab.sln“ mit Visual Studio 2017 öffnest.
+Der Ausgangspunkt für dieses Lab befindet sich im PhotoLab-Beispielrepository im Ordner [xaml-basics-starting-points/style/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). Nachdem Sie das Repository geklont/heruntergeladen haben, können Sie das Projekt bearbeiten, indem Sie „PhotoLab.sln“ mit Visual Studio 2019 öffnen.
 
 Die PhotoLab-App besteht aus zwei Hauptseiten:
 
@@ -54,7 +54,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an. Wenn du
 
 2. Doppelklicke im Projektmappen-Explorer auf die Datei **DetailPage.xaml**, um sie zu öffnen. 
 
-    ![Die Datei „DetailPage.xaml“ im Projektmappen-Explorer von Visual Studio 2017.](../basics/images/xaml-basics/style-detail-page-explorer.png)
+    ![Die Datei „DetailPage.xaml“ im Projektmappen-Explorer von Visual Studio 2019.](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
 3. Verwende ein Polygonelement, um eine Hintergrundform für den Belichtungsschieberegler zu erstellen.
 
@@ -63,7 +63,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an. Wenn du
     <!-- TODO reduce size -->
     ![Ein Einhorn](../basics/images/xaml-basics/unicorn.png)
     
-    > **Weitere Informationen:** Im Artikel [Zeichnen von Formen](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) erfährst du alles, was du über XAML-Formen wissen musst. 
+    > **Weitere Informationen:** Im Artikel [Zeichnen von Formen](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes) erfährst du alles, was du über XAML-Formen wissen musst. 
     
     Wir möchten ein dreieckiges Widget erstellen, das in etwa so aussieht wie die Lautstärkeregelung an einer Stereoanlage.
     
