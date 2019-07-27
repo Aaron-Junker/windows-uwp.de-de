@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d0955e7a018472141b137935c5bc87a9f75a5c6d
+ms.sourcegitcommit: 0c5f81100986cc4b74b54cd1ca2debd283c5b7f6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63789060"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68375272"
 ---
 # <a name="sound"></a>Sound
 
@@ -91,7 +91,6 @@ Der in unserem System am häufigsten verwendete durch ein Steuerelement ausgelö
 
 In der Regel wird dieser Sound nur wiedergegeben, wenn ein Benutzer explizit ein einfaches Steuerelement oder ein Steuerelementteil über ein [Eingabegerät](../input/index.md) anzielt.
 
-<SelectButtonClick.mp3 Audioclip hier>
 
 Um diesen Sound von einem Steuerelementereignis aus wiederzugeben, rufen Sie einfach die Play-Methode aus dem **ElementSoundPlayer** auf und übergeben sie an **ElementSound.Invoke**:
 ```C#
@@ -104,14 +103,10 @@ In XAML gibt es viele Flyouts, Dialogfelder und leicht ausblendbare Benutzerober
 
 Wenn ein Überlagerungs-Inhaltsfenster eingeblendet wird, sollte der **Show**-Sound aufgerufen werden:
 
-<OverlayIn.mp3 Audioclip hier>
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```
 Wenn dagegen ein Überlagerungs-Inhaltsfenster geschlossen wird (oder einfach ausgeblendet wird), sollte der **Hide**-Sound aufgerufen werden:
-
-<OverlayOut.mp3 Audioclip hier>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Hide);
@@ -124,14 +119,10 @@ Das Audioerlebnis für dieses Navigationskonzept wird durch die **MovePrevious**
 
 Beim Wechsel zu einer Ansicht bzw. zu einem Bereich, die/der als das *nächste Element* in einer Liste gilt, rufen Sie auf:
 
-<PageTransitionRight.mp3 Audioclip hier>
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```
 Und beim Wechsel zu einer vorherigen Ansicht bzw. zu einem vorherigen Bereich in einer Liste, die/der als das *vorherige Element* gilt, rufen Sie auf:
-
-<PageTransitionLeft.mp3 Audioclip hier>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
@@ -139,8 +130,6 @@ ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ### <a name="back-navigation"></a>Rückwärtsnavigation
 
 Beim Navigieren von der aktuellen Seite zur vorherigen Seite innerhalb einer App sollte der **GoBack**-Sound aufgerufen werden:
-
-<BackButtonClick.mp3 Audioclip hier>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.GoBack);
@@ -153,8 +142,6 @@ Das Fokussieren geschieht, wenn ein Benutzer durch eine App navigiert – dies 
 
 Um ein Steuerelement zur Wiedergabe des **Focus**-Sounds einzurichten, wenn Ihr Steuerelement den Fokus erhält, rufen Sie auf:
 
-<ElementFocus1.mp3 Audioclip hier>
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ```
@@ -166,5 +153,5 @@ Diese Wechselfunktion soll verhindern, dass die Focus-Sounds monoton werden und 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Entwerfen für Xbox und Fernsehgeräte](https://go.microsoft.com/fwlink/?LinkId=760736)
-* [Dokumentation zur ElementSoundPlayer-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer)
+* [Entwerfen für Xbox und Fernsehgeräte](/windows/uwp/design/devices/designing-for-tv)
+* [Dokumentation zur ElementSoundPlayer-Klasse](/uwp/api/windows.ui.xaml.elementsoundplayer)
