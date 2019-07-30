@@ -1,16 +1,16 @@
 ---
 description: Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *Observable*-Eigenschaft bezeichnet. Dieses Thema zeigt, wie man eine Observable-Eigenschaft implementiert und nutzt und ein XAML-Steuerelement daran bindet.
 title: 'XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft'
-ms.date: 04/24/2019
+ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, binden, Eigenschaft
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5c03eebd2b68e98ae908ea4624471fbd2b3d2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 5ff15e9b86d90aa14fd56e4e7015e949e2742bf6
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65627670"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328881"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft
 Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *Observable*-Eigenschaft bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Eigenschaften in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementierst und XAML-Steuerelemente an sie bindest.
@@ -127,7 +127,7 @@ In der Mutatorfunktion **Title** wird überprüft, ob ein Wert festgelegt wird, 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>Deklarieren und Implementieren von **BookstoreViewModel**
 Unsere XAML-Hauptseite wird an ein Hauptansichtsmodell gebunden. Dieses Ansichtsmodell erhält mehrere Eigenschaften –unter anderem eine vom Typ **BookSku**. In diesem Schritt deklarieren und implementieren wir unsere Laufzeitklasse für das Hauptansichtsmodell.
 
-Füge ein neues Element vom Typ **Midl-Datei (.idl)** namens `BookstoreViewModel.idl` hinzu.
+Füge ein neues Element vom Typ **Midl-Datei (.idl)** namens `BookstoreViewModel.idl` hinzu. Siehe auch [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 ```idl
 // BookstoreViewModel.idl
@@ -210,7 +210,7 @@ Wenn du `BookstoreViewModel.idl` nicht hinzufügst (siehe Listing von `MainPage.
 
 Zur Behebung des erwarteten Fehlers musst du die Accessor-Stubs für die Eigenschaft **MainViewModel** aus den generierten Dateien (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` und `MainPage.cpp`) kopieren und in `\Bookstore\Bookstore\MainPage.h` und `MainPage.cpp` einfügen. Dies wird als Nächstes beschrieben.
 
-Füge `BookstoreViewModel.h` zu `\Bookstore\Bookstore\MainPage.h` hinzu, um den Implementierungstyp **winrt::Bookstore::implementation::BookstoreViewModel** für **BookstoreViewModel** zu deklarieren. Füge einen privaten Member zum Speichern des Ansichtsmodells hinzu. Beachte, dass die Accessorfunktion für die Eigenschaft (und der Member „m_mainViewModel“) als projizierter Typ für **BookstoreViewModel** (**Bookstore::BookstoreViewModel**) implementiert wird. Da sich der Implementierungstyp im gleichen Projekt (Kompilierungseinheit) befindet wie die Anwendung, konstruieren wir „m_mainViewModel“ über die Konstruktorüberladung mit `nullptr_t`. Entferne auch die Eigenschaft **MyProperty**.
+Füge `BookstoreViewModel.h` zu `\Bookstore\Bookstore\MainPage.h` hinzu, um den Implementierungstyp **winrt::Bookstore::implementation::BookstoreViewModel** für **BookstoreViewModel** zu deklarieren. Füge einen privaten Member zum Speichern des Ansichtsmodells hinzu. Beachte, dass die Accessorfunktion für die Eigenschaft (und der Member „m_mainViewModel“) als projizierter Typ für **BookstoreViewModel** (**Bookstore::BookstoreViewModel**) implementiert wird. Da sich der Implementierungstyp im gleichen Projekt (Kompilierungseinheit) befindet wie die Anwendung, konstruieren wir „m_mainViewModel“ über die Konstruktorüberladung mit **std::nullptr_t**. Entferne auch die Eigenschaft **MyProperty**.
 
 ```cppwinrt
 // MainPage.h
@@ -276,6 +276,77 @@ Erstelle nun das Projekt, und führe es aus. Klicke auf die Schaltfläche, um de
 
 ## <a name="using-the-binding-markup-extension-with-cwinrt"></a>Verwenden der {Binding}-Markuperweiterung mit C++/WinRT
 Um in der aktuellen Version von C++/WinRT die {Binding}-Markuperweiterung verwenden zu können, müssen die Schnittstellen [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) und [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) implementiert werden.
+
+## <a name="element-to-element-binding"></a>Element-an-Element-Bindung
+
+Sie können die Eigenschaft eines XAML-Elements an die Eigenschaft eines anderen XAML-Elements binden. Dies ist ein Beispiel hierfür im Markup.
+
+```xaml
+<TextBox x:Name="myTextBox" />
+<TextBlock Text="{x:Bind myTextBox.Text, Mode=OneWay}" />
+```
+
+Sie müssen in der Midl-Datei (.idl) die benannte XAML-Entität `myTextBox` als schreibgeschützte Eigenschaft deklarieren.
+
+```idl
+// MainPage.idl
+runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+{
+    MainPage();
+    Windows.UI.Xaml.Controls.TextBox myTextBox{ get; };
+}
+```
+
+Dies hat den folgenden Grund. Alle Typen, die der XAML-Compiler überprüfen muss (einschließlich der in [{X:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) verwendeten), werden aus Windows-Metadaten (WinMD) gelesen. Sie müssen lediglich der Midl-Datei die schreibgeschützte Eigenschaft hinzufügen. Implementieren Sie dies nicht, denn die Implementierung erfolgt durch den automatisch generierten XAML-CodeBehind.
+
+## <a name="consuming-objects-from-xaml-markup"></a>Verwenden von Objekten aus XAML-Markup
+
+Alle Entitäten, die über die XAML-[ **{x:Bind}-Markuperweiterung**](/windows/uwp/xaml-platform/x-bind-markup-extension) genutzt werden, müssen in IDL öffentlich verfügbar gemacht werden. Wenn das XAML-Markup einen Verweis auf ein anderes Element enthält, das sich ebenfalls im Markup befindet, muss darüber hinaus der Getter für dieses Markup in IDL vorhanden sein.
+
+```xaml
+<Page x:Name="MyPage">
+    <StackPanel>
+        <CheckBox x:Name="UseCustomColorCheckBox" Content="Use custom color"
+             Click="UseCustomColorCheckBox_Click" />
+        <Button x:Name="ChangeColorButton" Content="Change color"
+            Click="{x:Bind ChangeColorButton_OnClick}"
+            IsEnabled="{x:Bind UseCustomColorCheckBox.IsChecked.Value, Mode=OneWay}"/>
+    </StackPanel>
+</Page>
+```
+
+Das *ChangeColorButton*-Element verweist über eine Bindung auf das *UseCustomColorCheckBox*-Element. Daher muss die IDL für diese Seite eine schreibgeschützte Eigenschaft namens *UseCustomColorCheckBox* deklarieren, um für die Bindung zugänglich zu sein.
+
+Der Delegat für den Click-Ereignishandler für *UseCustomColorCheckBox* verwendet die klassische XAML-Delegatsyntax, benötigt daher keinen Eintrag in der IDL, sondern muss nur in deiner Implementierungsklasse öffentlich sein. Auf der anderen Seite verfügt *ChangeColorButton* auch über einen `{x:Bind}`-Click-Ereignishandler, der in die IDL eingefügt werden muss.
+
+```idl
+runtimeclass MyPage : Windows.UI.Xaml.Controls.Page
+{
+    MyPage();
+
+    // These members are consumed by binding.
+    void ChangeColorButton_OnClick();
+    Windows.UI.Xaml.Controls.CheckBox UseCustomColorCheckBox{ get; };
+}
+```
+
+Du musst keine Implementierung für die **UseCustomColorCheckBox**-Eigenschaft bereitstellen. Das übernimmt der XAML-Codegenerator.
+
+### <a name="binding-to-boolean"></a>Binden an einen booleschen Typ
+
+Hierfür kannst du den Diagnosemodus verwenden.
+
+<syntaxhighlight lang="xml">
+<TextBlock Text="{Binding CanPair}"/>
+</syntaxhighlight>
+
+Dieses Beispiel zeigt `true` oder `false` in C++/CX, aber **Windows.Foundation.IReference`1<Boolean>** in C++/WinRT an.
+
+Verwende `x:Bind` beim Binden an einen booleschen Typ.
+
+```xaml
+<TextBlock Text="{x:Bind CanPair}"/>
+```
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
