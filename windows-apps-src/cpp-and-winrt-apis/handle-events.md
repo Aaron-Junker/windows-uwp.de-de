@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: 194fd9041b76acb1ef76288fed21c8098462b406
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844336"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270113"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
@@ -126,7 +126,9 @@ MainPage::MainPage()
 
 ## <a name="revoke-a-registered-delegate"></a>Widerrufen eines registrierten Delegaten
 
-Wenn du einen Delegaten registrierst, wird in der Regel ein Token zurückgegeben. Mit diesem Token kannst du später deinen Delegaten widerrufen. Dadurch wird die Registrierung des Delegaten für das Ereignis aufgehoben, und er wird nicht mehr aufgerufen, wenn das Ereignis erneut ausgelöst wird. Dies wurde der Einfachheit halber in keinem der obigen Codebeispiele gezeigt. Im nächsten Codebeispiel wird das Token allerdings im privaten Datenmember der Struktur gespeichert und der zugehörige Handler im Destruktor widerrufen.
+Wenn du einen Delegaten registrierst, wird in der Regel ein Token zurückgegeben. Mit diesem Token kannst du später deinen Delegaten widerrufen. Dadurch wird die Registrierung des Delegaten für das Ereignis aufgehoben, und er wird nicht mehr aufgerufen, wenn das Ereignis erneut ausgelöst wird.
+
+Dies wurde der Einfachheit halber in keinem der obigen Codebeispiele gezeigt. Im nächsten Codebeispiel wird das Token allerdings im privaten Datenmember der Struktur gespeichert und der zugehörige Handler im Destruktor widerrufen.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -150,6 +152,9 @@ private:
 ```
 
 Anstelle eines starken Verweises wie im obigen Beispiel kannst du einen schwachen Verweis auf die Schaltfläche speichern (siehe [Starke und schwache Verweise in C++/WinRT](weak-references.md)).
+
+> [!NOTE]
+> Wenn eine Ereignisquelle die Ereignisse synchron auslöst, kannst du den Handler widerrufen und sicher sein, dass keine weiteren Ereignisse empfangen werden. Bei asynchronen Ereignissen kann jedoch auch nach dem Widerrufen (insbesondere bei einem Widerruf innerhalb des Destruktors) ein In-Flight-Ereignis das Objekt erreichen, nachdem mit der Zerstörung begonnen wurde. Das Problem lässt sich möglicherweise minimieren, indem die Abonnierung vor der Zerstörung aufgehoben wird. Eine stabilere Lösung findest du jedoch unter [Sicherer Zugriff auf den *this*-Zeiger in einer Klassenmember-Coroutine](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 Alternativ kannst du bei der Registrierung eines Delegaten **winrt::auto_revoke** (ein Wert vom Typ [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) angeben, um einen Ereignis-Revoker (vom Typ [**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) anzufordern. Der Ereignis-Revoker enthält einen schwachen Verweis auf die Ereignisquelle (das Objekt, das das Ereignis auslöst). Zum manuellen Widerrufen kannst du die Memberfunktion **event_revoker::revoke** aufrufen. Der Ereignis-Revoker ruft diese Funktion bei Verlassen des Gültigkeitsbereichs aber automatisch selbst auf. Die Funktion **revoke** überprüft, ob die Ereignisquelle noch vorhanden ist, und widerruft in diesem Fall deinen Delegaten. In diesem Beispiel muss die Ereignisquelle nicht gespeichert werden, und es besteht auch kein Bedarf für einen Destruktor.
 

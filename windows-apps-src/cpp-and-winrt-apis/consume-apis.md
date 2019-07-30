@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projektion, Implementierung, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a4c65b20c2fb805baecb8a90498e8e4ec9b229
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 5a3d4b554fafeb2053e4e6af831c224b5eacd151
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717623"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328868"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Nutzen von APIs mit C++/WinRT
 
@@ -119,7 +119,9 @@ int main()
 
 ## <a name="delayed-initialization"></a>Verzögerte Initialisierung
 
-Selbst der Standardkonstruktor eines projizierten Typs bewirkt die Erstellung eines Windows-Runtime-Unterstützungsobjekts. Es ist aber auch möglich, eine Variable eines projizierten Typs zu erstellen, ohne dass dadurch ein Windows-Runtime-Objekt erstellt wird (und diese Arbeit auf einen späteren Zeitpunkt zu verschieben). Deklarieren Sie die Variable oder das Feld mithilfe des speziellen C++/WinRT-Konstruktors **std::nullptr_t** des projizierten Typs. Die C++/WinRT-Projektion fügt diesen Konstruktor in jede Laufzeitklasse ein.
+In C++/WinRT verfügt jeder projizierte Typ über einen speziellen C++/WinRT-Konstruktor: **std::nullptr_t**. Abgesehen von dieser einen Ausnahme führen alle Konstruktoren eines projizierten Typs – einschließlich des Standardkonstruktors – zur Erstellung eines Windows-Runtime-Sicherungsobjekts und stellen einen intelligenten Zeiger darauf bereit. Diese Regel gilt also überall dort, wo der Standardkonstruktor verwendet wird, z.B. bei nicht initialisierten lokalen Variablen, nicht initialisierten globalen Variablen und nicht initialisierten Membervariablen.
+
+Es ist aber auch möglich, eine Variable eines projizierten Typs zu erstellen, ohne dass dadurch ein Windows-Runtime-Sicherungsobjekt erstellt wird (und diese Arbeit auf einen späteren Zeitpunkt zu verschieben). Deklariere die Variable oder das Feld mit diesem speziellen C++/WinRT-Konstruktor **std::nullptr_t** (den die C++/WinRT-Projektion in jede Laufzeitklasse einfügt). Wir verwenden diesen speziellen Konstruktor mit *m_gamerPicBuffer* im folgenden Codebeispiel.
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -163,6 +165,8 @@ Die Zuweisung erstellt einen neuen Textblock (**TextBlock**) und überschreibt i
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
 ```
+
+Siehe auch [Auswirkungen des Standardkonstruktors auf Sammlungen](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#how-the-default-constructor-affects-collections).
 
 ### <a name="dont-delay-initialize-by-mistake"></a>Verwenden Sie nicht irrtümlicherweise die verzögerte Initialisierung
 
@@ -375,6 +379,66 @@ Bei den Klassen in den beiden obigen Beispielen handelt es sich um Typen aus ein
 auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
 BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
 ```
+
+## <a name="membertype-ambiguities"></a>Mehrdeutigkeiten bei Membern/Typen
+
+Wenn eine Memberfunktion den gleichen Namen hat wie ein Typ, entsteht Mehrdeutigkeit. Die Regeln für eine Suche nach nicht qualifizierten C++-Namen in Memberfunktionen führen dazu, dass zuerst in der Klasse und dann erst in Namespaces gesucht wird. Die Regel *substitution failure is not an error* (SFINAE) wird nicht angewendet (sie wird während der Überladungsauflösung von Funktionsvorlagen angewendet). Wenn also der Name innerhalb der Klasse nicht sinnvoll ist, sucht der Compiler nicht weiter nach einem besseren Treffer, sondern meldet einfach einen Fehler.
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // This doesn't compile. You get the error
+        // "'winrt::Windows::Foundation::IUnknown::as':
+        // no matching overloaded function found".
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Style>() };
+    }
+}
+```
+
+Im obigen Beispiel geht der Compiler davon aus, dass [**FrameworkElement.Style()** ](/uwp/api/windows.ui.xaml.frameworkelement.style) (eine Memberfunktion in C++/WinRT) als Vorlagenparameter an [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) übergeben wird. Die Lösung hierfür besteht darin, die Interpretation des Namens `Style` als Typ [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style) zu erzwingen.
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // One option is to fully-qualify it.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Windows::UI::Xaml::Style>() };
+
+        // Another is to force it to be interpreted as a struct name.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<struct Style>() };
+
+        // If you have "using namespace Windows::UI;", then this is sufficient.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Xaml::Style>() };
+
+        // Or you can force it to be resolved in the global namespace (into which
+        // you imported the Windows::UI::Xaml namespace when you did
+        // "using namespace Windows::UI::Xaml;".
+        auto style = Application::Current().Resources().
+            Lookup(L"MyStyle").as<::Style>();
+    }
+}
+```
+
+Bei der Suche nach nicht qualifizierten Namen gibt es eine spezielle Ausnahme, wenn `::` auf den Namen folgt – in diesem Fall werden Funktionen, Variablen und Enumerationswerte ignoriert. Damit kannst du beispielsweise Folgendes ausführen.
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoSomething()
+    {
+        Visibility(Visibility::Collapsed); // No ambiguity here (special exception).
+    }
+}
+```
+
+Der Aufruf von `Visibility()` wird in den Memberfunktionsnamen von [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) aufgelöst. Aber im Parameter `Visibility::Collapsed` folgt `::` auf das Wort `Visibility`. Daher wird der Methodenname ignoriert, und der Compiler findet die Enumerationsklasse.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [Schnittstelle „QueryInterface“](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))

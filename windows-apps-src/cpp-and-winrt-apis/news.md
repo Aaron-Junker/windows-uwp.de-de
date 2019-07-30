@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, neuerungen, neues
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 537150f6fc000794b11ef9236bfd88469d3f6b19
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: 524d0f2d9e428e87187ca27747fbd1c54406d345
+ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800586"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68308442"
 ---
 # <a name="whats-new-in-cwinrt"></a>Neuerungen in C++/WinRT
 
@@ -28,7 +28,7 @@ Weitere Informationen zur [Visual Studio-Erweiterung C++/WinRT (VSIX)](https://a
 
 - Das `cppwinrt.exe`-Tool ist jetzt im NuGet-Paket Microsoft.Windows.CppWinRT enthalten. Es generiert bedarfsbasiert Plattfomprojektionsheader für jedes Projekt. Das bedeutet, dass das `cppwinrt.exe`-Tool nicht mehr vom Windows SDK abhängig ist. Das Tool wird aber dennoch aus Kompatibilitätsgründen mit dem SDK ausgeliefert.
 - `cppwinrt.exe` generiert jetzt Projektionsheader in jedem plattform- bzw. konfigurationsspezifischen Zwischenordner ($IntDir), um parallele Builds zu ermöglichen.
-- Die C++/WinRT-Unterstützung (Eigenschaften/Ziele) ist jetzt vollständig dokumentiert, falls Sie Ihre Projektdateien manuell anpassen möchten. Weitere Informationen finden Sie unter [Microsoft.Windows.CppWinRT NuGet Package (Das NuGet-Paket Microsoft.Windows.CppWinRT)](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md).
+- Die C++/WinRT-Unterstützung (Eigenschaften/Ziele) ist jetzt vollständig dokumentiert, falls Sie Ihre Projektdateien manuell anpassen möchten. Weitere Informationen findest du in der [Infodatei](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) zum Microsoft.Windows.CppWinRT-NuGet-Paket.
 - Es wurde mehrere Programmfehlerbehebungen vorgenommen.
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>Änderungen an C++/WinRT in Version 2.0

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: a3fa5833d126ea41a6efbf714d2f9dae87eba933
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 01ddc46c80c0ed9a9999ec7c8e67ab9034803a3d
+ms.sourcegitcommit: deb1cdecf34feaa92b0342adc61a5d08f3f10687
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318883"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68332826"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Erstellen eines UWP-Spiels in MonoGame-2D
 
@@ -566,7 +566,7 @@ if (!gameStarted)
 
 Zunächst erstellen wir zwei Zeichenfolgen, eine für jede zu zeichnende Textzeile. Als Nächstes messen wird die Breite und Höhe jeder ausgegebenen Zeile mit der **SpriteFont.MeasureString(String)** -Methode. Dadurch können wir die Größe als **Vector2**-Objekt mit der **X**-Eigenschaft für die Breite und der **Y**-Eigenschaft für die Höhe angeben.
 
-Zuletzt zeichnen wir die einzelnen Zeilen. Wenn Sie den Text horizontal zentrieren möchten, legen Sie den **X**-Wert des Positionsvektors auf den gleichen Wert wie **screenWidth / 2 - textSize.X / 2** fest.
+Zuletzt zeichnen wir die einzelnen Zeilen. Um den Text horizontal zu zentrieren, legen wir den **X**-Wert des Positionsvektors auf den gleichen Wert wie **screenWidth / 2 - textSize.X / 2** fest.
 
 **Aufgabe:** Wie würden Sie die obige Prozedur ändern, um den Text sowohl vertikal als auch horizontal zu zentrieren?
 

@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d2b92bf5e265c2d596a7fc7eb54b127010cee897
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 404a6985c95718363f3dbbc3b8f27a7793b28e86
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717602"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328851"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Umstellen von C++/CX auf C++/WinRT
 
@@ -28,11 +28,21 @@ Es ist möglich, dass du deinen C++/CX-Code nach und nach in C++/WinRT-Code port
 > [!NOTE]
 > Sowohl [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) als auch das Windows SDK deklarieren Typen im Stammnamespace **Windows**. Ein Windows-Typ, der in C++/WinRT projiziert wird, verfügt über den gleichen vollqualifizierten Namen wie der Windows-Typ, befindet sich aber im C++-**winrt**-Namespace. Diese unterschiedlichen Namespaces ermöglichen die Portierung von C++/CX zu C++/WinRT nach deinem eigenen Tempo.
 
-Unter Berücksichtigung der oben erwähnten Ausnahmen ist der erste Schritt beim Portieren eines C++/CX-Projekts zu C++/WinRT das manuelle Hinzufügen von C++/WinRT-Unterstützung (siehe [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Installiere zu diesem Zweck das [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in deinem Projekt. Öffne das Projekt in Visual Studio, klicke auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, und gib **Microsoft.Windows.CppWinRT** in das Suchfeld ein. Wähle das Element in den Suchergebnissen aus, und klicke dann auf **Installieren**, um das Paket für das Projekt zu installieren. Eine Auswirkung dieser Änderung ist, dass die Unterstützung für C++/CX im Projekt deaktiviert wird. Es empfiehlt sich, die Unterstützung deaktiviert zu lassen, damit beim Ermitteln und Portieren deiner Abhängigkeiten aus C++/CX Buildmeldungen als Hilfe angezeigt werden. Du kannst die Unterstützung auch wieder aktivieren (in den Projekteigenschaften, **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden** \> **Ja (/ZW)** ) und das Portieren nach und nach durchführen.
+Unter Berücksichtigung der oben erwähnten Ausnahmen ist der erste Schritt beim Portieren eines C++/CX-Projekts zu C++/WinRT das manuelle Hinzufügen von C++/WinRT-Unterstützung (siehe [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Installiere zu diesem Zweck das [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in deinem Projekt. Öffnen Sie das Projekt in Visual Studio, klicken Sie auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, und gib **Microsoft.Windows.CppWinRT** in das Suchfeld ein. Wähle das Element in den Suchergebnissen aus, und klicke dann auf **Installieren**, um das Paket für das Projekt zu installieren. Eine Auswirkung dieser Änderung ist, dass die Unterstützung für C++/CX im Projekt deaktiviert wird. Es empfiehlt sich, die Unterstützung deaktiviert zu lassen, damit beim Ermitteln und Portieren deiner Abhängigkeiten aus C++/CX Buildmeldungen als Hilfe angezeigt werden. Du kannst die Unterstützung auch wieder aktivieren (in den Projekteigenschaften, **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden** \> **Ja (/ZW)** ) und das Portieren nach und nach durchführen.
 
-Stelle sicher, dass die Projekteigenschaft unter **Allgemein** \> **Version der Zielplattform** auf 10.0.17134.0 (Windows 10, Version 1803) oder höher festgelegt ist.
+Alternativ dazu kannst du die mithilfe der Eigenschaftenseite für das C++/WinRT-Projekt in Visual Studio die folgende Eigenschaft zu deiner `.vcxproj`-Datei hinzufügen. Eine Liste mit ähnlichen Anpassungsoptionen (um das Verhalten des Tools `cppwinrt.exe` zu optimieren) findest du in der [Infodatei](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) zum Microsoft.Windows.CppWinRT-NuGet-Paket.
 
-Füge deiner vorkompilierten Headerdatei (in der Regel `pch.h`) `winrt/base.h` hinzu.
+```xml
+<syntaxhighlight lang="xml">
+  <PropertyGroup Label="Globals">
+    <CppWinRTProjectLanguage>C++/CX</CppWinRTProjectLanguage>
+  </PropertyGroup>
+</syntaxhighlight>
+```
+
+Stelle sicher, dass die Projekteigenschaft **Allgemein** \> **Version der Zielplattform** auf 10.0.17134.0 (Windows 10, Version 1803) oder höher festgelegt ist.
+
+Fügen Sie Ihrer vorkompilierten Headerdatei (in der Regel `pch.h`) `winrt/base.h` hinzu.
 
 ```cppwinrt
 #include <winrt/base.h>
@@ -42,7 +52,88 @@ Wenn du Windows-API-Header mit C++/WinRT-Projektion hinzufügst (z. B. `winrt/W
 
 Wenn für den Projekt zudem Typen der [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) verwendet werden, helfen dir die Informationen unter [Wechsel zu C++/WinRT von WRL](move-to-winrt-from-wrl.md) weiter.
 
+## <a name="file-naming-conventions"></a>Konventionen für die Dateibenennung
+
+### <a name="xaml-markup-files"></a>XAML-Markupdateien
+
+| | C++/CX | C++/WinRT |
+| - | - | - |
+| **XAML-Entwicklerdateien** | MyPage.xaml<br/>MyPage.xaml.h<br/>MyPage.xaml.cpp | MyPage.xaml<br/>MyPage.h<br/>MyPage.cpp<br/>MyPage.idl (siehe unten) |
+| **Generierte XAML-Dateien** | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp<br/>MyPage.g.h |
+
+Beachte, dass C++/WinRT die Zeichenfolge `.xaml` aus den Dateinamen `*.h` und `*.cpp` entfernt.
+
+C++/WinRT fügt eine zusätzliche Entwicklerdatei hinzu: die **Midl-Datei (.idl)** . C++/CX generiert diese Datei automatisch intern und fügt sie zu jedem öffentlichen und geschützten Member hinzu. In C++/WinRT erstellst du die Datei selbst und fügst sie hinzu. Weitere Informationen, Codebeispiele und eine exemplarische Vorgehensweise zum Schreiben in IDL findest du unter [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](/windows/uwp/cpp-and-winrt-apis/binding-property).
+
+Siehe auch [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+
+### <a name="runtime-classes"></a>Laufzeitklassen
+
+In C++/CX gibt es keine Einschränkungen in Bezug auf die Namen von Headerdateien; es ist gängige Praxis, mehrere Laufzeitklassendefinitionen in eine einzelne Headerdatei zu schreiben, insbesondere bei kleinen Klassen. C++/WinRT erfordert jedoch für jede Laufzeitklasse eine eigene Headerdatei, die nach dem Klassennamen benannt ist. 
+
+| C++/CX | C++/WinRT |
+| - | - |
+| **Common.h**<br>`ref class A { ... }`<br>`ref class B { ... }` | **Common.idl**<br>`runtimeclass A { ... }`<br>`runtimeclass B { ... }` |
+|  | **A.h**<br>`namespace implements {`<br>&nbsp;&nbsp;`struct A { ... };`<br>`}` |
+|  | **B.h**<br>`namespace implements {`<br>&nbsp;&nbsp;`struct B { ... };`<br>`}` |
+
+Weniger gängig, aber dennoch erlaubt ist in C++/CX die Verwendung von Headerdateien mit unterschiedlichen Namen für benutzerdefinierte XAML-Steuerelemente. Diese Headerdateien müssen umbenannt werden, damit sie dem Klassennamen entsprechen.
+
+| C++/CX | C++/WinRT |
+| - | - |
+| **A.xaml**<br>`<Page x:Class="LongNameForA" ...>` | **A.xaml**<br>`<Page x:Class="LongNameForA" ...>` |
+| **A.h**<br>`partial ref class LongNameForA { ... }` | **LongNameForA.h**<br>`namespace implements {`<br>&nbsp;&nbsp;`struct LongNameForA { ... };`<br>`}` |
+
+## <a name="header-file-requirements"></a>Anforderungen an Headerdateien
+
+In C++/CX musst du keine speziellen Headerdateien einschließen, weil Headerdateien automatisch aus `.winmd`-Dateien generiert werden. In C++/CX ist es gängige Praxis, `using`-Direktiven für Namespaces zu verwenden, die anhand des Namens genutzt werden.
+
+```cppcx
+using namespace Windows::Media::Playback;
+
+String^ NameOfFirstVideoTrack(MediaPlaybackItem^ item)
+{
+    return item->VideoTracks->GetAt(0)->Name;
+}
+```
+
+Die `using namespace Windows::Media::Playback`-Direktive ermöglicht es, `MediaPlaybackItem` ohne Namespacepräfix zu schreiben. Der `Windows.Media.Core`-Namespace ist ebenfalls beteiligt, weil `item->VideoTracks->GetAt(0)` ein **Windows.Media.Core.VideoTrack**-Element zurückgibt. Da der Name **VideoTrack** nirgendwo eingegeben werden muss, wird keine `using Windows.Media.Core`-Direktive benötigt.
+
+In C++/WinRT musst du jedoch eine Headerdatei für jeden genutzten Namespace einschließen, auch wenn der Name nicht genannt wird.
+
+```cppwinrt
+#include <winrt/Windows.Media.Playback.h>
+#include <winrt/Windows.Media.Core.h> // !!This is important!!
+
+using namespace winrt;
+using namespace Windows::Media::Playback;
+
+winrt::hstring NameOfFirstVideoTrack(MediaPlaybackItem const& item)
+{
+    return item.VideoTracks().GetAt(0).Name();
+}
+```
+
+Andererseits gilt auch: Obwohl das **MediaPlaybackItem.AudioTracksChanged**-Ereignis den Typ **TypedEventHandler\<MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs\>** aufweist, müssen wir `winrt/Windows.Foundation.Collections.h` nicht einschließen, weil wir dieses Ereignis nicht verwendet haben.
+
+In C++/WinRT musst du auch Headerdateien für Namespaces einschließen, die von XAML-Markup genutzt werden.
+
+```xaml
+<!-- MainPage.xaml -->
+<Rectangle Height="400"/>
+```
+
+Bei Verwendung der **Rectangle**-Klasse muss dieses Include hinzugefügt werden.
+
+```cppwinrt
+// MainPage.h
+#include <winrt/Windows.UI.Xaml.Shapes.h>
+```
+
+Wenn du eine Headerdatei vergisst, funktioniert die Kompilierung ordnungsgemäß, aber du erhältst Linkerfehler, weil die `consume_`-Klassen fehlen.
+
 ## <a name="parameter-passing"></a>Parameterübergabe
+
 Beim Schreiben von C++/CX-Quellcode übergibst du C++/CX-Typen als Funktionsparameter in Form von Hütchenverweisen (\^).
 
 ```cppcx
@@ -59,6 +150,7 @@ IASyncAction LogPresenceRecordAsync(PresenceRecord const record);
 Ein C++/WinRT-Objekt ist im Grunde genommen ein Wert, der einen Schnittstellenzeiger zum zugrunde liegenden Windows-Runtime-Objekt enthält. Beim Kopieren eines C++/WinRT-Objekts kopiert der Compiler den gekapselten Schnittstellenzeiger, wodurch sich sein Verweiszähler erhöht. Wenn die Kopie zerstört wird, wird der Verweiszähler verringert. Der mit einem Kopiervorgang verbundene Aufwand sollte also nur in Kauf genommen werden, wenn dies wirklich erforderlich ist.
 
 ## <a name="variable-and-field-references"></a>Variablen und Feldverweise
+
 Beim Schreiben von C++/CX-Quellcode verwendest du Hütchenvariablen (\^) zum Verweisen auf Windows-Runtime-Objekte sowie den Pfeiloperator (-&gt;), um den Verweis einer Hütchenvariablen aufzuheben.
 
 ```cppcx
@@ -81,7 +173,7 @@ if (userList != nullptr)
     ...
 ```
 
-Der Standardkonstruktor für einen C++/CX-Hütchenzeiger führt dafür eine Initialisierung auf null durch. Hier ist ein C++/CX-Codebeispiel angegeben, in dem wir eine Variable bzw. ein Feld des richtigen Typs erstellen, die bzw. das aber nicht initialisiert ist. Es ist also anfänglich kein Verweis auf ein **TextBlock**-Element vorhanden. Wir weisen später einen Verweis zu.
+Der Standardkonstruktor für einen C++/CX-Handledeklaratorverweis (^) führt zu einer Initialisierung mit NULL. Hier ist ein C++/CX-Codebeispiel angegeben, in dem wir eine Variable bzw. ein Feld des richtigen Typs erstellen, die bzw. das aber nicht initialisiert ist. Es ist also anfänglich kein Verweis auf ein **TextBlock**-Element vorhanden. Wir weisen später einen Verweis zu.
 
 ```cppcx
 TextBlock^ textBlock;
@@ -95,11 +187,13 @@ class MyClass
 Informationen zur Entsprechung in C++/WinRT findest du unter [Verzögerte Initialisierung](consume-apis.md#delayed-initialization).
 
 ## <a name="properties"></a>Eigenschaften
+
 Die C++/CX-Spracherweiterungen beinhalten das Konzept der „Eigenschaften“. Beim Schreiben von C++/CX-Quellcode kannst du so auf eine Eigenschaft zugreifen, als ob sie ein Feld wäre. Da der C++-Standardcode nicht über das Konzept einer Eigenschaft verfügt, rufst du in C++/WinRT Get- und Set-Funktionen auf.
 
 In den folgenden Beispielen sind **XboxUserId**, **UserState**, **PresenceDeviceRecords** und **Size** jeweils Eigenschaften.
 
 ### <a name="retrieving-a-value-from-a-property"></a>Abrufen eines Werts aus einer Eigenschaft
+
 Hier ist beschrieben, wie du einen Eigenschaftswert in C++/CX erhältst.
 
 ```cppcx
@@ -125,6 +219,7 @@ void Sample::LogPresenceRecord(PresenceRecord const& record)
 Beachte hierbei, dass die Funktion **PresenceDeviceRecords** ein Windows-Runtime-Objekt zurückgibt, das über eine **Size**-Funktion verfügt. Da es sich beim zurückgegebenen Objekt ebenfalls um einen Typ mit C++/WinRT-Projektion handelt, führen wir das Dereferenzieren durch, indem wir den Punktoperator zum Aufrufen von **Size** verwenden.
 
 ### <a name="setting-a-property-to-a-new-value"></a>Festlegen einer Eigenschaft auf einen neuen Wert
+
 Beim Festlegen einer Eigenschaft auf einen neuen Wert wird ein ähnliches Muster angewandt. Zuerst in C++/CX.
 
 ```cppcx
@@ -138,6 +233,7 @@ record.UserState(newValue);
 ```
 
 ## <a name="creating-an-instance-of-a-class"></a>Erstellen einer Instanz einer Klasse
+
 Hierfür verwendest du ein C++/ CX-Objekt über einen Handle (Hütchenverweis \^). Du erstellst ein neues Objekt über das Schlüsselwort `ref new`, das wiederum [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) aufruft, um eine neue Instanz der Laufzeitklasse zu aktivieren.
 
 ```cppcx
@@ -162,7 +258,7 @@ private:
 };
 ```
 
-Falls die Initialisierung einer Ressource aufwendig ist, wird dieser Vorgang meist verzögert, bis sie tatsächlich benötigt wird.
+Falls die Initialisierung einer Ressource aufwendig ist, wird dieser Vorgang meist verzögert, bis sie tatsächlich benötigt wird. Wie bereits erwähnt, führt der Standardkonstruktor für einen C++/CX-Handledeklaratorverweis (^) zu einer Initialisierung mit NULL.
 
 ```cppcx
 using namespace Windows::Storage::Streams;
@@ -181,7 +277,7 @@ private:
 };
 ```
 
-Hier ist der gleiche Code nach dem Portieren zu C++/WinRT angegeben. Beachten Sie die Verwendung des **std::nullptr_t**-Konstruktors. Weitere Informationen zu diesem Konstruktor findest du unter [Nutzen von APIs mit C++/WinRT](consume-apis.md#delayed-initialization).
+Hier ist der gleiche Code nach dem Portieren zu C++/WinRT angegeben. Beachten Sie die Verwendung des **std::nullptr_t**-Konstruktors. Weitere Informationen zu diesem Konstruktor findest du unter [Verzögerte Initialisierung](consume-apis.md#delayed-initialization).
 
 ```cppwinrt
 using namespace winrt::Windows::Storage::Streams;
@@ -199,7 +295,33 @@ private:
 };
 ```
 
+## <a name="how-the-default-constructor-affects-collections"></a>Auswirkungen des Standardkonstruktors auf Sammlungen
+
+C++Sammlungstypen verwenden den Standardkonstruktor, was zu einer unbeabsichtigten Objektkonstruktion führen kann.
+
+| Szenario | C++/CX | C++/WinRT (falsch) | C++/WinRT (richtig) |
+| - | - | - | - |
+| Lokale Variable, anfänglich leer | `TextBox^ textBox;` | `TextBox textBox; // Creates a TextBox!` | `TextBox textBox{ nullptr };` |
+| Membervariable, anfänglich leer | `class C {`<br/>&nbsp;&nbsp;`TextBox^ textBox;`<br/>`};` | `class C {`<br/>&nbsp;&nbsp;`TextBox textBox; // Creates a TextBox!`<br/>`};` | `class C {`<br/>&nbsp;&nbsp;`TextBox textbox{ nullptr };`<br/>`};` |
+| Globale Variable, anfänglich leer | `TextBox^ g_textBox;` | `TextBox g_textBox; // Creates a TextBox!` | `TextBox g_textBox{ nullptr };` |
+| Vektor von leeren Verweisen | `std::vector<TextBox^> boxes(10);` | `// Creates 10 TextBox objects!`<br/>`std::vector<TextBox> boxes(10);` | `std::vector<TextBox> boxes(10, nullptr);` |
+| Festlegen eines Werts in einer Zuordnung | `std::map<int, TextBox^> boxes;`<br/>`boxes[2] = value;` | `std::map<int, TextBox> boxes;`<br/>`// Creates a TextBox at 2,`<br/>`// then overwrites it!`<br/>`boxes[2] = value;` | `std::map<int, TextBox> boxes;`<br/>`boxes.insert_or_assign(2, value);` |
+| Array aus leeren Verweisen | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
+| Koppeln | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
+
+Für das Erstellen eines Arrays aus leeren Verweisen gibt es keine Kurzschreibweise. Du musst `nullptr` für jedes Element im Array wiederholen. Wenn zu wenige „nullptr“ vorhanden sind, werden die zusätzlichen Elemente standardmäßig konstruiert.
+
+### <a name="more-about-the-stdmap-example"></a>Weitere Informationen zum **std::map**-Beispiel
+
+Der subscript-Operator `[]` für **std::map** weist folgendes Verhalten auf.
+
+- Wenn der Schlüssel in der Zuordnung gefunden wird, wird ein Verweis auf den vorhandenen Wert zurückgegeben (den du überschreiben kannst).
+- Wenn der Schlüssel in der Zuordnung nicht gefunden wird, wird ein neuer Eintrag in der Zuordnung erstellt, der den Schlüssel (verschoben, wenn verschiebbar) und *einen standardmäßig konstruierten Wert* enthält. Dann wird ein Verweis auf den Wert zurückgegeben (den du dann überschreiben kannst).
+
+Anders gesagt: Der `[]`-Operator erstellt immer einen Eintrag in der Zuordnung. Dieses Verhalten unterscheidet sich von C#, Java und JavaScript.
+
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>Konvertieren von einer Basis-Laufzeitklasse zu einer abgeleiteten Klasse
+
 Üblicherweise wird ein Verweis auf die Basis verwendet, für die bekannt ist, dass auf ein Objekt mit einem abgeleiteten Typ verwiesen wird. In C++/CX verwendest du `dynamic_cast`, um „Verweis auf Basis“ in „Verweis auf abgeleitet“ *umzuwandeln*. `dynamic_cast` ist eigentlich nur ein versteckter Aufruf von [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Hier ist ein typisches Beispiel angegeben: Du verarbeitest ein Ereignis für eine geänderte Abhängigkeitseigenschaft und möchtest die Umwandlung von **DependencyObject** zurück in den eigentlichen Typ durchführen, der der Besitzer der Abhängigkeitseigenschaft ist.
 
 ```cppcx
@@ -236,7 +358,39 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 }
 ```
 
+## <a name="derived-classes"></a>Abgeleitete Klassen
+
+Um aus einer Laufzeitklasse abzuleiten, muss die Basisklasse *zusammensetzbar* sein. In C++/CX sind keine besonderen Schritte erforderlich, um Klassen zusammensetzbar zu machen, in C++/WinRT schon. Du verwendest das [unsealed-Schlüsselwort](/uwp/midl-3/intro#base-classes), um anzugeben, dass die Klasse als Basisklasse verwendet werden kann.
+
+```idl
+unsealed runtimeclass BasePage : Windows.UI.Xaml.Controls.Page
+{
+    ...
+}
+runtimeclass DerivedPage : BasePage
+{
+    ...
+}
+```
+
+In der Implementierungsheaderklasse musst du die Basisklassen-Headerdatei einschließen, bevor du den automatisch generierten Header für die abgeleitete Klasse einschließt. Andernfalls erhältst du Fehler wie „Ungültige Verwendung dieses Typs als Ausdruck“.
+
+```cppwinrt
+// DerivedPage.h
+#include "BasePage.h"       // This comes first.
+#include "DerivedPage.g.h"  // Otherwise this header file will produce an error.
+
+namespace winrt::MyNamespace::implementation
+{
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        ...
+    }
+}
+```
+
 ## <a name="event-handling-with-a-delegate"></a>Ereignisbehandlung mit einem Delegaten
+
 Hier ist ein typisches Beispiel für die Behandlung eines Ereignisses in C++/CX mit einer Lambda-Funktion als Delegat angegeben.
 
 ```cppcx
@@ -262,6 +416,7 @@ Anstelle einer Lambda-Funktion kannst du den Delegaten als freie Funktion oder a
 Wenn du von einer C++/CX-Codebasis portierst, für die Ereignisse und Delegate intern verwendet werden (nicht über Binärdateien), hilft dir [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) beim Replizieren dieses Musters in C++/WinRT weiter. Siehe auch [Parametrisierte Delegaten, einfache Signale und Rückrufe in einem Projekt](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project).
 
 ## <a name="revoking-a-delegate"></a>Widerrufen eines Delegaten
+
 In C++/CX verwendest du den Operator `-=`, um eine frühere Ereignisregistrierung zu widerrufen.
 
 ```cppcx
@@ -276,7 +431,78 @@ myButton().Click(token);
 
 Weitere Informationen und Optionen findest du unter [Einen registrierten Delegaten widerrufen](handle-events.md#revoke-a-registered-delegate).
 
+## <a name="boxing-and-unboxing"></a>Boxing und Unboxing
+
+C++/CX führt automatisch ein Boxing von Skalaren zu Objekten durch. In C++/WinRT musst du die Funktion [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) explizit aufrufen. In beiden Sprachen musst du ein Unboxing explizit angeben. Siehe [Boxing und Unboxing mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+
+In der unten stehenden Tabelle werden folgende Definitionen verwendet.
+
+| C++/CX | C++/WinRT|
+|-|-|
+| `int i;` | `int i;` |
+| `String^ s;` | `winrt::hstring s;` |
+| `Object^ o;` | `IInspectable o;`|
+
+| Vorgang | C++/CX | C++/WinRT|
+|-|-|-|-|
+| Boxing | `o = 1;`<br>`o = "string";` | `o = box_value(1);`<br>`o = box_value(L"string");` |
+| Unboxing | `i = (int)o;`<br>`s = (String^)o;` | `i = unbox_value<int>(o);`<br>`s = unbox_value<winrt::hstring>(o);` |
+
+C++/CX und C# lösen Ausnahmen aus, wenn du versuchst, ein Unboxing eines NULL-Zeigers auf einen Werttyp auszuführen. C++/WinRT betrachtet dies als Programmierfehler und stürzt ab. Verwende in C++/WinRT die Funktion [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or), wenn ein Objekt nicht den von dir angenommenen Typ aufweist.
+
+| Szenario | C++/CX | C++/WinRT|
+|-|-|-|-|
+| Unboxing eines bekannten integer-Elements | `i = (int)o;` | `i = unbox_value<int>(o);` |
+| Wenn „o“ NULL ist | `Platform::NullReferenceException` | Absturz |
+| Wenn „o“ kein geboxter int-Wert ist | `Platform::InvalidCastException` | Absturz |
+| Unboxing für „int“, Fallback bei NULL; Absturz in allen anderen Fällen | `i = o ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
+| Unboxing für „int“ (falls möglich); Fallback in allen anderen Fällen | `auto box = dynamic_cast<IBox<int>^>(o);`<br>`i = box ? box->Value : fallback;` | `i = unbox_value_or<int>(o, fallback);` |
+
+### <a name="boxing-and-unboxing-a-string"></a>Boxing und Unboxing von string-Elementen
+
+Ein string-Element ist in einigen Fällen ein Werttyp, in anderen Fällen ein Verweistyp. C++/CX und C++/WinRT behandeln string-Elemente unterschiedlich.
+
+Der ABI-Typ [**HSTRING**](/windows/win32/winrt/hstring) ist ein Zeiger auf ein als Verweis gezähltes string-Element. Er wird jedoch nicht von [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) abgeleitet, ist also technisch gesehen kein *Objekt*. Darüber hinaus stellt ein **HSTRING** mit Wert NULL ein leeres string-Element dar. Das Boxing von Elementen, die nicht von **IInspectable** abgeleitet werden, erfolgt über den Einschluss in [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_), und die Windows-Runtime stellt eine Standardimplementierung in Form des [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue)-Objekts bereit (benutzerdefinierte Typen werden als [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype) gemeldet).
+
+C++/CX stellt ein string-Element der Windows-Runtime als Referenztyp dar, C++/WinRT dagegen als Werttyp. Das bedeutet, dass eine geboxte NULL-Zeichenfolge unterschiedliche Darstellungen aufweisen kann, je nachdem, wie du dorthin gelangt bist.
+
+Darüber hinaus erlaubt C++/CX das Dereferenzieren eines **String^** -Elements mit NULL-Wert, woraufhin dieses Element sich wie die Zeichenfolge `""` verhält.
+
+| Vorgang | C++/CX | C++/WinRT|
+|-|-|-|
+| Kategorie des string-Typs | Verweistyp | Werttyp |
+| **HSTRING** mit NULL-Wert wird dargestellt als | `(String^)nullptr` | `hstring{ nullptr }` |
+| Sind NULL und `""` identisch? | Ja | Ja |
+| Gültigkeit von NULL | `s = nullptr;`<br>`s->Length == 0` (gültig) | `s = nullptr;`<br>`s.size() == 0` (gültig) |
+| Boxing eines string-Elements | `o = s;` | `o = box_value(s);` |
+| Wenn `s` gleich `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
+| Wenn `s` gleich `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
+| Boxing eines string-Elements unter Beibehaltung von NULL | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
+| Boxing eines string-Elements erzwingen | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
+| Unboxing eines bekannten string-Elements | `s = (String^)o;` | `s = unbox_value<hstring>(o);` |
+| Wenn `o` NULL ist | `s == nullptr; // equivalent to ""` | Absturz |
+| Wenn `o` kein geboxter string-Wert ist | `Platform::InvalidCastException` | Absturz |
+| Unboxing für „string“, Fallback bei NULL; Absturz in allen anderen Fällen | `s = o ? (String^)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
+| Unboxing für „string“ (falls möglich); Fallback in allen anderen Fällen | `auto box = dynamic_cast<IBox<String^>^>(o);`<br>`s = box ? box->Value : fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
+
+In den beiden oben genannten Fällen *Unboxing mit Fallback* ist es möglich, dass ein Boxing eines string-Elements mit NULL-Wert erzwungen wurde. In diesem Fall wird das Fallback nicht verwendet. Der Ergebniswert ist eine leere Zeichenfolge, denn diese war enthalten.
+
+## <a name="concurrency-and-asynchronous-operations"></a>Parallelität und asynchrone Vorgänge
+
+Die Parallel Patterns Library (PPL) (beispielsweise [**concurrency::task**](/cpp/parallel/concrt/reference/task-class)) wurde aktualisiert und unterstützt jetzt C++/CX-Handledeklaratorverweise (^).
+
+In C++/WinRT solltest du stattdessen Coroutinen und `co_await` verwenden. Weitere Informationen und Codebeispiele findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+
+## <a name="consuming-objects-from-xaml-markup"></a>Verwenden von Objekten aus XAML-Markup
+
+In einem C++/CX-Projekt kannst du private Member und benannte Elemente aus XAML-Markup nutzen. In C++/WinRT dagegen müssen alle Entitäten, die über die XAML-[ **{x:Bind}-Markuperweiterung**](/windows/uwp/xaml-platform/x-bind-markup-extension) genutzt werden, in IDL öffentlich verfügbar gemacht werden.
+
+Durch Binden an einen booleschen Typ wird in C++/CX `true` oder `false` angezeigt, in C++/WinRT dagegen **Windows.Foundation.IReference`1\<Boolean\>** .
+
+Weitere Informationen sowie Codebeispiele findest du unter [Verwenden von Objekten aus Markup](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup).
+
 ## <a name="mapping-ccx-platform-types-to-cwinrt-types"></a>Zuordnen von C++/CX-**Platform**-Typen zu C++/WinRT-Typen
+
 Unter C++/CX werden im **Platform**-Namespace verschiedene Datentypen bereitgestellt. Diese Typen gehören nicht zum C++-Standard. Daher kannst du sie nur verwenden, wenn du die Windows-Runtime-Spracherweiterungen aktivierst (Visual Studio-Projekteigenschaft **C/C++**  > **Allgemein** > **Windows-Runtime-Erweiterung verwenden** > **Ja (/ZW)** ). In der Tabelle unten findest du Informationen zum Portieren von **Platform**-Typen in ihre Entsprechungen in C++/WinRT. Anschließend kannst du die Option `/ZW` deaktivieren, da C++/WinRT zum C++-Standard gehört.
 
 | C++/CX | C++/WinRT |
@@ -289,6 +515,7 @@ Unter C++/CX werden im **Platform**-Namespace verschiedene Datentypen bereitgest
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
 ### <a name="port-platformagile-to-winrtagileref"></a>Portieren von **Platform::Agile\^** zu **winrt::agile_ref**
+
 Der Typ **Platform::Agile\^** in C++/CX stellt eine Windows-Runtime-Klasse dar, auf die über einen beliebigen Thread zugegriffen werden kann. Die C++/WinRT-Entsprechung lautet [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
 
 In C++/CX:
@@ -304,9 +531,11 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
 
 ### <a name="port-platformarray"></a>Portieren von **Platform::Array\^**
+
 Du kannst eine Initialisierungsliste, ein **std::array**-Element oder ein **std::vector**-Element verwenden. Weitere Informationen und Codebeispiele findest du unter [Standard-Initialisierungslisten](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) und [Standard-Arrays und -Vektoren](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
 ### <a name="port-platformexception-to-winrthresulterror"></a>Portieren von **Platform::Exception\^** zu **winrt::hresult_error**
+
 Der Typ **Platform::Exception\^** wird in C++/CX erzeugt, wenn eine Windows-Runtime-API kein S\_OK HRESULT zurückgibt. Für C++/WinRT ist die Entsprechung [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error).
 
 Zum Portieren zu C++/WinRT musst du den gesamten Code ändern, für den **Platform::Exception\^** verwendet wird, um stattdessen **winrt::hresult_error** zu nutzen.
@@ -356,6 +585,7 @@ throw winrt::hresult_invalid_argument{ L"A valid User is required" };
 ```
 
 ### <a name="port-platformobject-to-winrtwindowsfoundationiinspectable"></a>Portieren von **Platform::Object\^** zu **winrt::Windows::Foundation::IInspectable**
+
 Wie alle C++/WinRT-Typen ist **winrt::Windows::Foundation::IInspectable** ein Werttyp. Hier erfährst du, wie du eine Variable dieses Typs auf null initialisierst.
 
 ```cppwinrt
@@ -363,6 +593,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 ```
 
 ### <a name="port-platformstring-to-winrthstring"></a>Portieren von **Platform::String\^** zu **winrt::hstring**
+
 **Platform::String\^** ist das Äquivalent zum HSTRING-ABI-Typ der Windows-Runtime. Für C++/WinRT ist die Entsprechung [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Bei C++/WinRT kannst du aber Windows-Runtime-APIs mit Wide-String-Typen der C++-Standardbibliothek, z. B. **std::wstring**, bzw. Wide-String-Literale aufrufen. Weitere Informationen und Codebeispiele findest du unter [String-Verarbeitung in C++/WinRT](strings.md).
 
 Mit C++/CX kannst du auf die Eigenschaft [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) zugreifen, um die Zeichenfolge als **const wchar_t\*** -Array im C-Stil abzurufen (z. B. zur Übergabe an **std::wcout**).
@@ -400,7 +631,7 @@ void LogWrapLine(winrt::hstring const& str);
 
 #### <a name="tostring"></a>ToString()
 
-In C++/CX wird die [Object::ToString](/cpp/cppcx/platform-object-class?view=vs-2017#tostring)-Methode bereitgestellt.
+C++/CX-Typen stellen die [Object::ToString](/cpp/cppcx/platform-object-class#tostring)-Methode bereit.
 
 ```cppcx
 int i{ 2 };
@@ -413,6 +644,68 @@ In C++/WinRT ist dies nicht direkt verfügbar, aber du kannst Alternativen nutze
 int i{ 2 };
 auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 ```
+
+C++/WinRT unterstützt auch [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) für eine begrenzte Anzahl von Typen. Du musst Überladungen für alle zusätzlichen Typen hinzufügen, für die du eine Stringification durchführen möchtest.
+
+| Sprache | Stringification von „int“ | Stringification von „enum“ |
+| - | - | - |
+| C++/CX | `String^ result = "hello, " + intValue.ToString();` | `String^ result = "status: " + status.ToString();` |
+| C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |
+
+Bei der Stringification eines enum-Typs musst du die Implementierung von **winrt::to_hstring** bereitstellen.
+
+```cppwinrt
+namespace winrt
+{
+    hstring to_hstring(StatusEnum status)
+    {
+        switch (status)
+        {
+        case StatusEnum::Success: return L"Success";
+        case StatusEnum::AccessDenied: return L"AccessDenied";
+        case StatusEnum::DisabledByPolicy: return L"DisabledByPolicy";
+        default: return to_hstring(static_cast<int>(status));
+        }
+    }
+}
+```
+
+Diese Stringifications werden häufig implizit von der Datenbindung verwendet.
+
+```xaml
+<TextBlock>
+You have <Run Text="{Binding FlowerCount}"/> flowers.
+</TextBlock>
+<TextBlock>
+Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
+</TextBlock>
+```
+
+Diese Bindungen führen **winrt::to_hstring** der gebundenen Eigenschaft durch. Im zweiten Beispiel (**StatusEnum**) musst du eine eigene Überladung von **winrt::to_hstring** bereitstellen, andernfalls erhältst du einen Compilerfehler.
+
+#### <a name="string-building"></a>Erstellung von string-Elementen
+
+C++/CX und C++/WinRT nutzen ein standardmäßiges **std::wstringstream**-Element für die Erstellung von string-Elementen.
+
+| | C++/CX | C++/WinRT |
+|-|-|-|
+| Anfügen eines string-Elements, NULL-Werte beibehalten | `stream.print(s->Data(), s->Length);` | `stream << std::wstring_view{ s };` |
+| Anfügen eines string-Elements, bei erstem NULL-Wert beenden | `stream << s->Data();` | `stream << s.c_str();` |
+| Ergebnisse extrahieren | `ws = stream.str();` | `ws = stream.str();` |
+
+#### <a name="more-examples"></a>Weitere Beispiele anzeigen
+
+In den unten stehenden Beispielen ist *ws* eine Variable des Typs **std::wstring**. C++/CX kann ein **Platform::String**-Element aus einer 8-Bit-Zeichenfolge erstellen, dies ist in C++/WinRT nicht möglich.
+
+| Vorgang | C++/CX | C++/WinRT |
+| - | - | - |
+| string-Element aus Literal erstellen | `String^ s = "hello";`<br>`String^ s = L"hello";` | `// winrt::hstring s{ "hello" }; // Doesn't compile`<br>`winrt::hstring s{ L"hello" };` |
+| Aus **std::wstring** konvertieren, NULL-Werte beibehalten | `String^ s = ref new String(ws.c_str(),`<br>&nbsp;&nbsp;`(uint32_t)ws.size());` | `winrt::hstring s{ ws };`<br>`s = winrt::hstring(ws);`<br>`// s = ws; // Doesn't compile` |
+| Aus **std::wstring** konvertieren, bei erstem NULL-Wert beenden | `String^ s = ref new String(ws.c_str());` | `winrt::hstring s{ ws.c_str() };`<br>`s = winrt::hstring(ws.c_str());`<br>`// s = ws.c_str(); // Doesn't compile` |
+| Zu **std::wstring** konvertieren, NULL-Werte beibehalten | `std::wstring ws{ s->Data(), s->Length };`<br>`ws = std::wstring(s>Data(), s->Length);` | `std::wstring ws{ s };`<br>`ws = s;` |
+| Zu **std::wstring** konvertieren, bei erstem NULL-Wert beenden | `std::wstring ws{ s->Data() };`<br>`ws = s->Data();` | `std::wstring ws{ s.c_str() };`<br>`ws = s.c_str();` |
+| Literal an Methode übergeben | `Method("hello");`<br>`Method(L"hello");` | `// Method("hello"); // Doesn't compile`<br>`Method(L"hello");` |
+| **std::wstring** an Methode übergeben | `Method(ref new String(ws.c_str(),`<br>&nbsp;&nbsp;`(uint32_t)ws.size()); // Stops on first null` | `Method(ws);`<br>`// param::winrt::hstring accepts std::wstring_view` |
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [Strukturvorlage „winrt::delegate“](/uwp/cpp-ref-for-winrt/delegate)

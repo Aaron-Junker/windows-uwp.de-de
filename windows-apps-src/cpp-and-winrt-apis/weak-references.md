@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, Projektion, stark, schwach, Verweis
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77fcd8369b2df3fdb42facf9d2b2a1d93188322b
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 3ad6bb9a98b0fe2a699580001698740e44cea14f
+ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844324"
+ms.lasthandoff: 07/14/2019
+ms.locfileid: "67870320"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Starke und schwache Verweise in C++/WinRT
 
@@ -197,12 +197,13 @@ int main()
 }
 ```
 
-Das Muster besteht darin, dass der Ereignisempfänger einen Lambda-Ereignishandler mit Abhängigkeiten von seinem *this*-Zeiger aufweist. Immer, wenn der Ereignisempfänger länger besteht als die Ereignisquelle, besteht er länger als diese Abhängigkeiten. Und in diesen Fällen, die häufig sind, funktioniert das Muster gut. Einige dieser Fälle sind offensichtlich, z.B. wenn eine UI-Seite ein Ereignis verarbeitet, das von einem Steuerelement ausgelöst wird, das sich auf der Seite befindet. Die Seite besteht länger als die Schaltfläche &mdash; also besteht der Handler auch länger als die Schaltfläche. Dies gilt immer dann, wenn der Empfänger die Quelle besitzt (z.B. als Datenelement), oder wenn der Empfänger und die Quelle gleichgeordnet sind und sich direkt im Besitz eines anderen Objekts befinden. Ein weiterer unbedenklicher Fall ist, wenn die Ereignisquelle Ereignisse synchron auslöst. Sie können dann den Handler unbesorgt widerrufen, da keine Ereignisse mehr empfangen werden.
+Das Muster besteht darin, dass der Ereignisempfänger einen Lambda-Ereignishandler mit Abhängigkeiten von seinem *this*-Zeiger aufweist. Immer, wenn der Ereignisempfänger länger besteht als die Ereignisquelle, besteht er länger als diese Abhängigkeiten. Und in diesen Fällen, die häufig sind, funktioniert das Muster gut. Einige dieser Fälle sind offensichtlich, z.B. wenn eine UI-Seite ein Ereignis verarbeitet, das von einem Steuerelement ausgelöst wird, das sich auf der Seite befindet. Die Seite besteht länger als die Schaltfläche &mdash; also besteht der Handler auch länger als die Schaltfläche. Dies gilt immer dann, wenn der Empfänger die Quelle besitzt (z.B. als Datenelement), oder wenn der Empfänger und die Quelle gleichgeordnet sind und sich direkt im Besitz eines anderen Objekts befinden.
 
 Wenn Sie wissen, dass der Handler nicht länger als der *this*-Zeiger besteht, von dem er abhängt, können Sie *this* auf normale Weise erfassen, ohne eine starke oder schwache Lebensdauer zu berücksichtigen.
 
 Aber es gibt trotzdem Fälle, in denen *this* seine Verwendung in einem Handler nicht überlebt (einschließlich Handlern für Completion- und Progress-Ereignisse, die durch asynchrone Aktionen und Vorgänge ausgelöst werden), und es ist wichtig, zu wissen, wie mit ihnen umzugehen ist.
 
+- Wenn eine Ereignisquelle die Ereignisse *synchron* auslöst, kannst du den Handler widerrufen und sicher sein, dass keine weiteren Ereignisse empfangen werden. Bei asynchronen Ereignissen kann jedoch auch nach dem Widerrufen (insbesondere bei einem Widerruf innerhalb des Destruktors) ein In-Flight-Ereignis das Objekt erreichen, nachdem mit der Zerstörung begonnen wurde. Das Problem lässt sich möglicherweise minimieren, indem die Abonnierung vor der Zerstörung aufgehoben wird. Im Folgenden stellen wir jedoch eine stabilere Lösung vor.
 - Wenn Sie eine Coroutine erstellen, um eine asynchrone Methode zu implementieren, dann ist dies möglich.
 - In seltenen Fällen mit bestimmten XAML-UI-Framework-Objekten (z.B. [**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel)) ist dies möglich, wenn der Empfänger finalisiert wird, ohne die Registrierung für die Ereignisquelle aufzuheben.
 
@@ -252,7 +253,7 @@ In beiden Fällen erfassen wir lediglich den nackten *this*-Zeiger. Und das gesc
 
 ### <a name="the-solution"></a>Die Lösung
 
-Die Lösung besteht im Erfassen eines starken Verweises. Ein starker Verweis *setzt* den Verweiszähler herauf, und er *hält* das aktuelle Objekt am Leben. Sie deklarieren einfach eine Erfassungsvariable (die in diesem Beispiel `strong_this` heißt) und initialisieren Sie mit einem Aufruf an [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), die einen starken Verweis auf unseren *this*-Zeiger abruft.
+Die Lösung besteht darin, einen starken Verweis zu erfassen (oder, wie wir sehen werden, einen schwachen Verweis, wenn ein solcher besser geeignet ist.). Ein starker Verweis *setzt* den Verweiszähler herauf, und er *hält* das aktuelle Objekt am Leben. Sie deklarieren einfach eine Erfassungsvariable (die in diesem Beispiel `strong_this` heißt) und initialisieren Sie mit einem Aufruf an [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), die einen starken Verweis auf unseren *this*-Zeiger abruft.
 
 > [!IMPORTANT]
 > Da **get_strong** eine Memberfunktion der Strukturvorlage **winrt::implements** ist, können Sie sie nur aus einer Klasse aufrufen, die direkt oder indirekt von **winrt::implements** abgeleitet ist, wie etwa eine C++/WinRT-Klasse. Weitere Informationen für das Ableiten aus **winrt::implements** und Beispiele finden Sie unter [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
@@ -273,7 +274,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-Wenn ein starker Verweis nicht geeignet ist, können Sie stattdessen [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) aufrufen, um einen schwachen Verweis auf *this* abzurufen. Bestätigen Sie einfach, dass Sie immer noch einen starken Verweis abrufen können, bevor Sie auf Member zugreifen.
+Wenn ein starker Verweis nicht geeignet ist, können Sie stattdessen [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) aufrufen, um einen schwachen Verweis auf *this* abzurufen. Ein schwacher Verweis behält das aktuelle Objekt *nicht* bei. Bestätige einfach, dass vor dem Zugriff auf Member weiterhin ein starker Verweis aus dem schwachen Verweis abgerufen werden kann.
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -284,6 +285,8 @@ event_source.Event([weak_this{ get_weak() }](auto&& ...)
     }
 });
 ```
+
+Wenn du einen Rohzeiger erfasst, musst du sicherstellen, dass das Objekt, auf das gezeigt wird, beibehalten wird.
 
 ### <a name="if-you-use-a-member-function-as-a-delegate"></a>Wenn Sie eine Memberfunktion als Stellvertretung verwenden
 
@@ -314,11 +317,15 @@ Rufen Sie für einen starken Verweis einfach [**get_strong**](/uwp/cpp-ref-for-w
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
+Das Erfassen eines starken Verweises bedeutet, dass das Objekt erst zur Zerstörung verfügbar wird, nachdem die Registrierung des Handlers aufgehoben wurde und alle ausstehenden Rückrufe zurückgegeben wurden. Diese Garantie gilt aber nur zu dem Zeitpunkt, zu dem das Ereignis ausgelöst wird. Wenn der Ereignishandler asynchron ist, muss die Coroutine einen starken Verweis auf die Klasseninstanz vor dem ersten Anhaltepunkt erhalten (Informationen und Code dazu findest du im Abschnitt [Sicherer Zugriff auf den*this*-Zeiger in einer Klassenmember-Coroutine](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) weiter oben in diesem Thema). Dadurch entsteht jedoch ein Zirkelbezug zwischen der Ereignisquelle und deinem Objekt, daher muss dieser durch Widerrufen des Ereignisses explizit unterbrochen werden.
+
 Für einen schwachen Verweis rufen Sie [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) auf. C++/ WinRT stellt sicher, dass die resultierende Stellvertretung einen schwachen Verweis enthält. Hinter den Kulissen versucht die Stellvertretung in letzter Minute, den schwachen Verweis in einen starken aufzulösen und ruft die Memberfunktion nur auf, wenn dies Erfolg hat.
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 ```
+
+Wenn der Delegat die Memberfunktion *tatsächlich* aufruft, behält C++/WinRT das Objekt bei, bis der Handler zurückgegeben wird. Wenn der Handler jedoch asynchron ist, wird er an Anhaltepunkten zurückgegeben, daher muss die Coroutine vor dem ersten Anhaltepunkt einen starken Verweis auf die Klasseninstanz erhalten. Weitere Informationen findest du ebenfalls im Abschnitt [Sicherer Zugriff auf den *this*-Zeiger in einer Klassenmember-Coroutine](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) weiter oben in diesem Thema.
 
 ### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>Beispiel für einen schwachen Verweis mithilfe von **SwapChainPanel::CompositionScaleChanged**
 
