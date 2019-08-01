@@ -6,23 +6,23 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 24326c19688a0fa6f2300da50e6d13308b79ee2e
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603395"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682467"
 ---
 # <a name="makepriexe-command-line-options"></a>Befehlszeilenoptionen für MakePri.exe
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) akzeptiert die Befehle `createconfig`, `dump`, `new`, `resourcepack` und `versioned`. In diesem Thema werden die Befehlszeilenoptionen für deren Verwendung erläutert.
 
 > [!NOTE]
-> MakePri.exe installiert ist, wenn Sie aktivieren die **Windows SDK für verwaltete UWP-Apps** Option während der Installation von Windows Software Development Kit. Es wird auf den Pfad installiert `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (sowie in Ordnern, die mit dem Namen für die anderen Architekturen). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> Makepri. exe wird installiert, wenn Sie bei der Installation des Windows Software Development Kit die Option **Windows SDK für UWP verwaltete apps** aktivieren. Es wird im Pfad `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` installiert (sowie in Ordnern, die für die anderen Architekturen benannt sind). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`Hyper-V-Hosts oder Hyper-V-Hostcluster in einem separaten Namespace als verwaltete Hyper-V-Hosts hinzuzufügen.
 
-## <a name="getting-help-from-the-command-line"></a>Abrufen von Hilfe über die Befehlszeile
+## <a name="getting-help-from-the-command-line"></a>Hilfe von der Befehlszeile
 
-Sie können ausführen `MakePri.exe help` oder `MakePri.exe /?` um die Befehle anzuzeigen, die Sie mit MakePri.exe verwenden können. Sie können auch ausgeben `MakePri.exe <command> /?` um Einzelheiten zu einem Befehl abzurufen und in sehr seltenen Fällen zu sehen, auch `MakePri.exe <command> <option>` Einzelheiten dazu, eine Option angezeigt.
+Sie können oder `MakePri.exe help` `MakePri.exe /?` ausführen, um die Befehle anzuzeigen, die Sie mit makepri. exe verwenden können. Sie können auch ausgeben `MakePri.exe <command> /?` , um Einzelheiten zu einem Befehl anzuzeigen, und in sehr seltenen Fällen, `MakePri.exe <command> <option>` auch um Besonderheiten in Bezug auf eine Option anzuzeigen.
 
 ## <a name="makepri-commands"></a>MakePri-Befehle
 
@@ -115,7 +115,7 @@ Help:
 Der Befehl `dump` gibt den Dump einer XML-Datei aus, die eine Liste aller Ressourcen in einer angegebenen PRI-Datei enthält. Führen Sie `MakePri.exe dump /?` aus, um detaillierte Hilfe für diesen Befehl anzuzeigen.
 
 > [!NOTE]
-> Ein schemafreies Ressourcenpaket ist ein Ressourcenpaket, das mit dem Schalter *omitSchemaFromResourcePacks* in der PRI-Konfigurationsdatei erstellt wurde. Um ein schemafreies Ressourcenpaket zu sichern, verwenden Sie den Schalter `/es <main_package_PRI_file>`. Wenn Sie nicht, der Haupt-Datei angeben, und klicken Sie dann Sie die Fehlermeldung sehen "*der resources.pri in das Paket war beschädigt, damit Fehler bei der Verschlüsselung (Fehler PRI222: 0xdef0000f - Unbekannter Fehler aufgetreten)*".
+> Ein schemafreies Ressourcenpaket ist ein Ressourcenpaket, das mit dem Schalter *omitSchemaFromResourcePacks* in der PRI-Konfigurationsdatei erstellt wurde. Um ein schemafreies Ressourcenpaket zu sichern, verwenden Sie den Schalter `/es <main_package_PRI_file>`. Wenn Sie die Hauptdatei nicht angeben, wird die Fehlermeldung "die Ressourcen *. pri im Paket ist beschädigt, sodass die Verschlüsselung fehlgeschlagen ist" angezeigt (Fehler PRI222: 0xdef0000f-nicht angegebener Fehler*aufgetreten) ".
 
 ```console
 C:\>makepri dump /?
@@ -416,22 +416,22 @@ Für `resourcepack` und `versioned` können Sie eine Schemadatei bereitstellen, 
 
 **FILEPATH** ist ein Token, das den Speicherort der PRI-Eingabedatei oder PRI-Schemadatei angibt
 
-## <a name="47indexoptionsio-option"></a>&#47;IndexOptions(io)-option
+## <a name="47indexoptionsio-option"></a>&#47;IndexOptions (IO)-Option
 
-Verwendung der Option "Optionen" (/ e/a) mit `new`, `resourcepack`, und `versioned` um Optionen anzugeben, die detaillierte Kontrolle über das Verhalten der Ressource Indexer bereitstellen. Indexoptionen sind standardmäßig deaktiviert.
+Sie verwenden die Option Index Optionen (/IO) mit `new`, `resourcepack`und `versioned` , um Optionen anzugeben, die eine ausführliche Kontrolle über das Verhalten von ressourcenindexer bereitstellen. Index Optionen sind standardmäßig deaktiviert.
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**Optionen** ist eine durch Trennzeichen getrennte Liste umfasst die folgenden Optionen.
+Die **Optionen** sind eine durch Trennzeichen getrennte Liste, die die folgenden Optionen umfasst.
 
-- +/-HiddenFiles(hf). Index (+) oder zu ignorieren (-) versteckte Dateien und Ordner.
-- +/-LinkedFiles(lf). Index (+) oder zu ignorieren (-) verknüpft, Dateien und Ordner.
+- +/-HiddenFiles (HF). Index (+) oder ignorieren (-) ausgeblendete Dateien und Ordner.
+- +/-LinkedFiles (LF). Index (+) oder IGNORE (-) verknüpfte Dateien und Ordner.
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) Option
 
-Verwenden Sie die Zuordnungsoption (/mf) mit `new`, `resourcepack` und `versioned`, um eine Zuordnungsdatei zu generieren. [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) verwendet die Zuordnungsdatei zum Erzeugen von App-Paketen.
+Verwenden Sie die Zuordnungsoption (/mf) mit `new`, `resourcepack` und `versioned`, um eine Zuordnungsdatei zu generieren. [MakeAppx.exe](/windows/msix/package/create-app-package-with-makeappx-tool) verwendet die Zuordnungsdatei zum Erzeugen von App-Paketen.
 
 ```console
 /MappingFile(mf) <MAPPINGFILETYPE>
@@ -501,7 +501,7 @@ Hier ein Beispiel für eine Fehlerbedingung und die entsprechende Fehlermeldung:
 
 | Fehlerbedingung | Fehlermeldung |
 | --------------- | ------------- |
-| Der Name der Ausgabedatei entspricht einem der Ressourcenpaketnamen in der Konfiguration. | Ungültige Konfiguration: Pack-Ressourcenname <resource pack name> können nicht die gleichen wie die Ausgabedatei < outputfilename.pri >. |
+| Der Name der Ausgabedatei entspricht einem der Ressourcenpaketnamen in der Konfiguration. | Ungültige Konfiguration: Der Name <resource pack name> des Ressourcen Pakets darf nicht mit der Ausgabedatei < OutputFileName. pri > identisch sein. |
 
 ## <a name="reversemaprm-option"></a>/ReverseMap(rm) Option
 
@@ -551,4 +551,4 @@ Verwenden Sie stattdessen in Ihrer Konfigurationsdatei das Attribut [resources@m
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [MakePri.exe](compile-resources-manually-with-makepri.md)
+* [Makepri. exe](compile-resources-manually-with-makepri.md)

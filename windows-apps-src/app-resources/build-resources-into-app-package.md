@@ -6,18 +6,18 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f7acabc9858f5a2fa0b6b76d752d2a342959f41f
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627285"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682514"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>Integrieren von Ressourcen im App-Paket und nicht in einem Ressourcenpaket
 
 Einige Arten von Apps (mehrsprachige Wörterbücher, Übersetzungstools usw.) müssen das Standardverhalten von einem App Bundle überschreiben und Ressourcen im App-Paket und nicht in separaten Ressourcenpaketen (oder Ressourcenpaketen) integrieren. In diesem Thema wird erläutert, wie das geht.
 
-Wenn Sie standardmäßig ein [App Bundle (.appxbundle)](../packaging/packaging-uwp-apps.md) erstellen, werden nur Ihre Standardressourcen für Sprache, Skalierung und DirectX-Featureebene im App-Paket integriert. Die übersetzten Ressourcen – und Ihre Ressourcen speziell für nicht standardmäßige Skalierungen und/oder DirectX-Featureebenen – sind in Ressourcenpakete integriert und werden nur auf Geräte heruntergeladen, die sie benötigen. Wenn ein Kunde Ihre App vom Microsoft Store mit einem Gerät erwirbt, auf dem die bevorzugte Sprache auf Spanisch festgelegt ist, werden nur Ihre App sowie das spanische Ressourcenpaket heruntergeladen und installiert. Wenn derselbe Benutzer seine bevorzugte Sprache später unter **Einstellungen** in Französisch ändert, wird das französische Ressourcenpaket für Ihre App heruntergeladen und installiert. Ähnliches passiert mit den Ressourcen, die für die Skalierung und DirectX-Featureebene qualifiziert sind. Bei den meisten Apps bedeutet dieses Verhalten mehr Effizienz, und dies ist genau das, was Sie und der Kunde *wünschen*.
+Wenn Sie standardmäßig ein [App Bundle (.appxbundle)](/windows/msix/package/packaging-uwp-apps) erstellen, werden nur Ihre Standardressourcen für Sprache, Skalierung und DirectX-Featureebene im App-Paket integriert. Die übersetzten Ressourcen – und Ihre Ressourcen speziell für nicht standardmäßige Skalierungen und/oder DirectX-Featureebenen – sind in Ressourcenpakete integriert und werden nur auf Geräte heruntergeladen, die sie benötigen. Wenn ein Kunde Ihre App vom Microsoft Store mit einem Gerät erwirbt, auf dem die bevorzugte Sprache auf Spanisch festgelegt ist, werden nur Ihre App sowie das spanische Ressourcenpaket heruntergeladen und installiert. Wenn derselbe Benutzer seine bevorzugte Sprache später unter **Einstellungen** in Französisch ändert, wird das französische Ressourcenpaket für Ihre App heruntergeladen und installiert. Ähnliches passiert mit den Ressourcen, die für die Skalierung und DirectX-Featureebene qualifiziert sind. Bei den meisten Apps bedeutet dieses Verhalten mehr Effizienz, und dies ist genau das, was Sie und der Kunde *wünschen*.
 
 Wenn Ihre App aber dem Benutzer das Ändern der Sprache direkt über die App erlaubt (statt über **Einstellungen**), ist dieses Standardverhalten nicht korrekt. Sie möchten, dass alle Ihre Sprachressourcen zusammen mit der App bedingungslos einmal heruntergeladen und installiert werden und dann auf dem Gerät verbleiben. Sie möchten, dass diese Ressourcen in das App-Paket und nicht in separaten Ressourcenpaketen integriert werden.
 

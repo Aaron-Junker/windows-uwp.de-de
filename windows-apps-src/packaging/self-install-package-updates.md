@@ -1,23 +1,23 @@
 ---
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: Herunterladen und Installieren von Paketupdates aus dem Store
-description: Erfahren Sie, wie im Partner Center-Pakete als obligatorisch kennzeichnen und Schreiben von Code in Ihre app herunterladen und installieren die Paket-Updates.
+description: Erfahren Sie, wie Sie Pakete in Partner Center als obligatorisch kennzeichnen und Code in ihrer app schreiben, um Paket Updates herunterzuladen und zu installieren.
 ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fc5fca95ca475444792fb0209a936bdfc64cb3c6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cb1ac05bdc5dcaaf31074f1b89e5bbb35e4f850d
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372349"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682725"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>Herunterladen und Installieren von Paketupdates aus dem Store
 
-Ab Windows 10 (Version 1607) können Sie Methoden der [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Klasse im [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store)-Namespace verwenden, um programmgesteuert nach Paketupdates für die aktuelle App im Microsoft Store zu suchen und diese herunterzuladen und zu installieren. Sie können auch für Pakete Abfragen wurden im Partner Center als obligatorisch gekennzeichnet und Funktionen in Ihrer app zu deaktivieren, bis das obligatorische Update installiert wird.
+Ab Windows 10 (Version 1607) können Sie Methoden der [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Klasse im [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store)-Namespace verwenden, um programmgesteuert nach Paketupdates für die aktuelle App im Microsoft Store zu suchen und diese herunterzuladen und zu installieren. Sie können auch Abfragen für Pakete durcharbeiten, die Sie in Partner Center als obligatorisch gekennzeichnet haben, und die Funktionalität in der App deaktivieren, bis das obligatorische Update installiert ist.
 
-Mithilfe von zusätzlichen [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Methoden, die in Version 1803 von Windows 10 eingeführt wurden, können Sie Paketupdates im Hintergrund herunterladen und installieren (ohne dem Benutzer eine Benachrichtigung anzuzeigen), ein [optionales Paket](optional-packages.md) deinstallieren und Informationen zu Paketen im Download und zur Installationswarteschlange für Ihre App erhalten.
+Mithilfe von zusätzlichen [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Methoden, die in Version 1803 von Windows 10 eingeführt wurden, können Sie Paketupdates im Hintergrund herunterladen und installieren (ohne dem Benutzer eine Benachrichtigung anzuzeigen), ein [optionales Paket](/windows/msix/package/optional-packages) deinstallieren und Informationen zu Paketen im Download und zur Installationswarteschlange für Ihre App erhalten.
 
 Mithilfe dieser Features können Sie Ihre Benutzerbasis automatisch mit der neuesten Version Ihrer App, optionalen Paketen und verwandten Diensten im Store auf dem neuesten Stand halten.
 
@@ -26,7 +26,7 @@ Mithilfe dieser Features können Sie Ihre Benutzerbasis automatisch mit der neue
 In diesem Codebeispiel wird veranschaulicht, wie Sie die [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync)-Methode verwenden, um alle verfügbaren Updates im Store zu ermitteln und dann die [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync)-Methode aufzurufen, um die Updates herunterzuladen und zu installieren. Bei Verwendung dieser Methode zum Herunterladen und Installieren von Updates zeigt das Betriebssystem ein Dialogfeld an, in dem die Berechtigung des Benutzers vor dem Herunterladen der Updates angefragt wird.
 
 > [!NOTE]
-> Diese Methoden unterstützen erforderliche [optionale Paketen](optional-packages.md) für Ihre App. Optionale Pakete sind nützlich für herunterladbare Inhalte (DLC)-Add-Ons, da große Apps so im Hinblick auf Größenbeschränkungen geteilt werden, oder auch, um zusätzliche Inhalte getrennt von der Haupt-App zu liefern. Informationen zum Erhalt einer Berechtigung, eine App in den Store zu übermitteln, die optionale Pakete (einschließlich DLC-Add-Ons) verwendet, finden Sie unter [Windows-Support für Entwickler](https://developer.microsoft.com/windows/support).
+> Diese Methoden unterstützen erforderliche [optionale Paketen](/windows/msix/package/optional-packages) für Ihre App. Optionale Pakete sind nützlich für herunterladbare Inhalte (DLC)-Add-Ons, da große Apps so im Hinblick auf Größenbeschränkungen geteilt werden, oder auch, um zusätzliche Inhalte getrennt von der Haupt-App zu liefern. Informationen zum Erhalt einer Berechtigung, eine App in den Store zu übermitteln, die optionale Pakete (einschließlich DLC-Add-Ons) verwendet, finden Sie unter [Windows-Support für Entwickler](https://developer.microsoft.com/windows/support).
 
 In diesem Codebeispiel wird von Folgendem ausgegangen:
 
@@ -193,14 +193,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>Obligatorische Paketupdates
 
-Wenn Sie eine Paket-Eingabe im Partner Center für eine app erstellen, die auf Windows 10, Version 1607 oder höher abzielt können Sie [das Paket als obligatorisch kennzeichnen](../publish/upload-app-packages.md#mandatory-update) sowie Datum und Zeit für die es erforderlich wird. Wenn diese Eigenschaft festgelegt wurde und Ihre App erkennt, dass das Paketupdate verfügbar ist, kann die App ermitteln, ob das Updatepaket obligatorisch ist, und ihr Verhalten ändern, bis das Update installiert ist (z. B. kann Ihre App Features deaktivieren).
+Wenn Sie im Partner Center eine Paket Übermittlung für eine APP erstellen, die auf Windows 10, Version 1607 oder höher, ausgerichtet ist, können Sie [das Paket als obligatorisch kennzeichnen](../publish/upload-app-packages.md#mandatory-update) und das Datum und die Uhrzeit festlegen, zu denen es obligatorisch wird. Wenn diese Eigenschaft festgelegt wurde und Ihre App erkennt, dass das Paketupdate verfügbar ist, kann die App ermitteln, ob das Updatepaket obligatorisch ist, und ihr Verhalten ändern, bis das Update installiert ist (z. B. kann Ihre App Features deaktivieren).
 
 > [!NOTE]
 > Der obligatorische Status eines Pakets wird von Microsoft nicht erzwungen, und das Betriebssystem verfügt über keine Benutzeroberfläche, die den Benutzer darauf hinweist, dass ein erforderliches App-Update installiert werden muss. Entwickler sollten die Einstellung „Obligatorisch” verwenden, um erforderliche App-Updates in ihrem eigenen Code zu erzwingen.  
 
 So kennzeichnen Sie eine Paketübermittlung als obligatorisch:
 
-1. Melden Sie sich beim [Partner Center](https://partner.microsoft.com/dashboard) und navigieren Sie zu der Seite "Übersicht" Ihrer app.
+1. Melden Sie sich bei [Partner Center](https://partner.microsoft.com/dashboard) an, und navigieren Sie zur Übersichtsseite für Ihre APP.
 2. Klicken Sie auf den Namen der Übermittlung, die das Paketupdate enthält, das Sie erforderlich machen möchten.
 3. Navigieren Sie zu der **Pakete**-Seite für die Übermittlung. Wählen Sie im unteren Bereich der Seite **Dieses Update als obligatorisch kennzeichnen** aus, und wählen Sie dann den Tag und die Uhrzeit aus, wann das Paketupdate obligatorisch wird. Diese Option gilt für alle UWP-Pakete in der Übermittlung.
 
@@ -326,7 +326,7 @@ private void HandleMandatoryPackageError()
 
 ## <a name="uninstall-optional-packages"></a>Deinstallieren optionaler Pakete
 
-Ab Windows 10, Version 1803, können Sie die Methoden [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) oder [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) verwenden, um ein [Optionales Paket](optional-packages.md) (einschließlich eines DLC-Pakets) für die aktuelle App zu deinstallieren. Wenn Sie beispielsweise eine App mit Inhalten haben, die über optionale Pakete installiert wurden, sollten Sie z. B. eine Benutzeroberfläche bereitstellen, die Benutzern ermöglicht, die optionalen Pakete zu deinstallieren, um Speicherplatz freizugeben.
+Ab Windows 10, Version 1803, können Sie die Methoden [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) oder [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) verwenden, um ein [Optionales Paket](/windows/msix/package/optional-packages) (einschließlich eines DLC-Pakets) für die aktuelle App zu deinstallieren. Wenn Sie beispielsweise eine App mit Inhalten haben, die über optionale Pakete installiert wurden, sollten Sie z. B. eine Benutzeroberfläche bereitstellen, die Benutzern ermöglicht, die optionalen Pakete zu deinstallieren, um Speicherplatz freizugeben.
 
 Das folgende Codebeispiel veranschaulicht, wie Sie die [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync)-Methode aufrufen. In diesem Beispiel wird von Folgendem ausgegangen:
 * Die Codedatei enthält eine **using**-Anweisung für die Namespaces **Windows.Services.Store** und **System.Threading.Tasks**.
@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Optionale Pakete und die Erstellung zugehöriger Sets](optional-packages.md)
+* [Optionale Pakete und die Erstellung zugehöriger Sets](/windows/msix/package/optional-packages)

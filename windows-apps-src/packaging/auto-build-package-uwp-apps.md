@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: de623240e275dda5b6fc4df9afee31e1adf9fd4f
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 838bd9cb790893ea24b57bb2b0bad49aa262fdbc
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340851"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682529"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Einrichten automatisierter Builds für UWP-Apps
 
@@ -83,7 +83,7 @@ So laden Sie ein Zertifikat für den automatisierten Build hoch:
 5. Wenn das Zertifikat über ein Kennwort verfügt, empfiehlt es sich, das Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) zu speichern und das Kennwort dann mit einer [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)zu verknüpfen. Sie können die Variable verwenden, um auf das Kennwort aus der Pipeline zuzugreifen.
 
 > [!NOTE]
-> Ab Visual Studio 2019 wird ein temporäres Zertifikat nicht mehr in UWP-Projekten generiert. Um Zertifikate zu erstellen oder zu exportieren, verwenden Sie die in [diesem Artikel](create-certificate-package-signing.md)beschriebenen PowerShell-Cmdlets.
+> Ab Visual Studio 2019 wird ein temporäres Zertifikat nicht mehr in UWP-Projekten generiert. Um Zertifikate zu erstellen oder zu exportieren, verwenden Sie die in [diesem Artikel](/windows/msix/package/create-certificate-package-signing)beschriebenen PowerShell-Cmdlets.
 
 ## <a name="configure-the-build-solution-build-task"></a>Konfigurieren der Buildaufgabe „Projektmappe erstellen“
 
@@ -99,8 +99,8 @@ Mit diesem Task werden alle Lösungen, die sich im Arbeitsordner befinden, in Bi
 | UapAppxPackageBuildMode | Sideloadonly | Generiert nur den Ordner **_Test** für Sideload. |
 | Appxpackagesigningenabled | true | Aktiviert die Paket Signatur. |
 | PackageCertificateThumbprint | Zertifikatfingerabdruck | Dieser Wert **muss** dem Fingerabdruck im Signaturzertifikat entsprechen oder eine leere Zeichenfolge sein. |
-| Packagecertificatekeyfile | Pfad | Der Pfad zu dem Zertifikat, das verwendet werden soll. Dies wird aus den Metadaten der sicheren Datei abgerufen. |
-| Packagecertifialisiepassword | Kennwort | Das Kennwort für das Zertifikat. Es wird empfohlen, dass Sie Ihr Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) speichern und das Kennwort mit der [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)verknüpfen. Sie können die Variable an dieses Argument übergeben. |
+| PackageCertificateKeyFile | Pfad | Der Pfad zu dem Zertifikat, das verwendet werden soll. Dies wird aus den Metadaten der sicheren Datei abgerufen. |
+| PackageCertificatePassword | Kennwort | Das Kennwort für das Zertifikat. Es wird empfohlen, dass Sie Ihr Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) speichern und das Kennwort mit der [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)verknüpfen. Sie können die Variable an dieses Argument übergeben. |
 
 ### <a name="configure-the-build"></a>Konfigurieren des Builds
 
@@ -196,6 +196,6 @@ Entfernen Sie dann das `AppxBundle` MSBuild-Argument aus dem Buildschritt.
 ## <a name="related-topics"></a>Verwandte Themen
 
 - [Erstellen Ihrer .net-App für Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
-- [Packen von UWP-apps](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
+- [Packen von UWP-apps](/windows/msix/package/packaging-uwp-apps)
 - [Querladen von Branchen-apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
-- [Erstellen eines Zertifikats für die Paket Signierung](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [Erstellen eines Zertifikats für die Paket Signierung](/windows/msix/package/create-certificate-package-signing)

@@ -1,38 +1,38 @@
 ---
-Description: Die Seite "Pakete" ist, in dem Sie alle für die app die Paketdateien (.appxupload, AppX, appxbundle und/oder XAP-Datei) hochladen, die übermittelt werden.
+Description: Auf der Seite Pakete können Sie alle Paketdateien (. appxupload,. AppX,. appxbundle und/oder. xap) für die von Ihnen übermittelt App hochladen.
 title: Hochladen von App-Paketen
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Pakete, Upload, Hochladen des Anwendungspakets
+keywords: Windows 10, UWP, Pakete, Upload, Hochladen von Paketen
 ms.localizationpriority: medium
-ms.openlocfilehash: 97735a8e860f7c941cc35d77a21496696683640f
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 570ccc1329fd1b2f768ca528b75fe22b982bdaf6
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468880"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682624"
 ---
 # <a name="upload-app-packages"></a>Hochladen von App-Paketen
 
-Die **Pakete** Seite ist, in dem Sie alle für die app die Paketdateien (.msix, .msixupload, .msixbundle, AppX, .appxupload und/oder .appxbundle) hochladen, die übermittelt werden. Sie können alle Pakete für die gleiche app auf dieser Seite hochladen, und beim Kunden Ihre app herunterladen, stellt der Store automatisch jeden Kunden, für das Paket, das am besten geeignet für ihr Gerät ist bereit. Nachdem Sie Ihre Pakete hochgeladen haben, sehen Sie eine Tabelle, in der angegeben wird, [welche Pakete für bestimmte Windows 10-Gerätefamilien angeboten werden](#device-family-availability) (und ggf. für frühere Betriebssystemversionen).
+Auf der Seite **Pakete** können Sie alle Paketdateien (. msix,. msixupload,. msixbundle,. AppX,. appxupload und/oder. appxbundle) für die APP hochladen, die Sie übermitteln. Sie können alle Pakete für dieselbe App auf dieser Seite hochladen, und wenn ein Kunde Ihre APP herunterlädt, stellt der Store jedem Kunden automatisch das Paket bereit, das für das Gerät am besten geeignet ist. Nachdem Sie Ihre Pakete hochgeladen haben, sehen Sie eine Tabelle, in der angegeben wird, [welche Pakete für bestimmte Windows 10-Gerätefamilien angeboten werden](#device-family-availability) (und ggf. für frühere Betriebssystemversionen).
 
 > [!IMPORTANT]
-> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
+> Ab dem 31. Oktober 2018 können neu erstellte Produkte keine Pakete enthalten, die auf Windows 8. x/Windows Phone 8. x oder früher abzielen. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
-Ausführliche Informationen zu Inhalt und Struktur der Pakete finden Sie unter [App-Paketanforderungen](app-package-requirements.md). Sie sollten auch Informationen zu [wie Auswirkungen auf die Pakete Versionsnummern werden für bestimmte Kunden übermittelt](package-version-numbering.md) und [Verwalten von Paketen für verschiedene Szenarios](guidance-for-app-package-management.md).
+Ausführliche Informationen zu Inhalt und Struktur der Pakete finden Sie unter [App-Paketanforderungen](app-package-requirements.md). Außerdem sollten Sie sich darüber informieren, [wie sich Versionsnummern darauf auswirken, welche Pakete an bestimmte Kunden übermittelt werden](package-version-numbering.md) und [wie Pakete für verschiedene Szenarien verwaltet](guidance-for-app-package-management.md)werden.
 
 
 ## <a name="uploading-packages-to-your-submission"></a>Hochladen von Paketen für Ihre Übermittlung
 
-Um Pakete hochzuladen, ziehen Sie sie in das Uploadfeld oder klicken Sie, um Ihre Dateien zu durchsuchen. Die **Pakete** Seite können Sie die .msix, .msixupload, .msixbundle, AppX, .appxupload und/oder .appxbundle-Dateien hochzuladen.
+Um Pakete hochzuladen, ziehen Sie sie in das Uploadfeld oder klicken Sie, um Ihre Dateien zu durchsuchen. Auf der Seite " **Pakete** " können Sie die Dateien ". msix", ". msixupload", ". msixbundle", ". AppX", ". appxupload" und ". appxbundle" hochladen.
 
 > [!IMPORTANT]
-> Es wird empfohlen, für Windows 10 hochladen, die hier .msixupload oder .appxupload-Datei statt .msix, AppX, .msixbundle oder .appxbundle.  Weitere Informationen zum Verpacken von UWP-Apps für den Store finden Sie untere [Verpacken von UWP-App mit Visual Studio](../packaging/packaging-uwp-apps.md).
+> Für Windows 10 empfiehlt es sich, die Datei ". msixupload" oder ". appxupload" anstelle von ". msix", ". AppX", ". msixbundle" oder ". appxbundle" hochzuladen.  Weitere Informationen zum Verpacken von UWP-Apps für den Store finden Sie untere [Verpacken von UWP-App mit Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
 Falls Sie [Flight-Pakete](package-flights.md) für Ihre App erstellt haben, wird eine Dropdownliste mit der Option zum Kopieren von Paketen aus einem Ihrer Flight-Pakete angezeigt. Wählen Sie das Flight-Paket mit den Paketen aus, die Sie übertragen möchten. Anschließend können Sie einige oder alle der Pakete auswählen, um sie in diese Übermittlung aufzunehmen.
 
-Wenn Fehler mit einem Paket während der Überprüfung festgestellt wird, zeigen wir eine Nachricht, damit Sie wissen, was falsch ist. Sie müssen, entfernen Sie das Paket, das Problem beheben, und versuchen Sie es erneut hochzuladen. In anderen Fällen werden Warnungen zu Fehlern angezeigt, die Probleme verursachen können, Sie jedoch nicht daran hindern, Ihre Übermittlung fortzusetzen.
+Wenn bei der Überprüfung Fehler mit einem Paket erkannt werden, wird eine Meldung angezeigt, in der Sie wissen, was falsch ist. Sie müssen das Paket entfernen, das Problem beheben und es dann erneut hochladen. In anderen Fällen werden Warnungen zu Fehlern angezeigt, die Probleme verursachen können, Sie jedoch nicht daran hindern, Ihre Übermittlung fortzusetzen.
 
 
 ## <a name="device-family-availability"></a>Verfügbarkeit von Gerätefamilien
@@ -44,7 +44,7 @@ Weitere Informationen finden Sie unter [Verfügbarkeit von Gerätefamilien](devi
 
 ## <a name="package-details"></a>Paketdetails
 
-Die hochgeladenen Pakete werden hier aufgeführt, gruppiert nach Zielbetriebssystem. Name, Version und Architektur des Pakets werden angezeigt. Klicken Sie auf **Details anzeigen**, um weitere Informationen zu erhalten, z. B. die unterstützten Sprachen, die App-Funktionen oder die Dateigröße der einzelnen Pakete.
+Die hochgeladenen Pakete sind hier aufgelistet, gruppiert nach Ziel Betriebssystem. Name, Version und Architektur des Pakets werden angezeigt. Klicken Sie auf **Details anzeigen**, um weitere Informationen zu erhalten, z. B. die unterstützten Sprachen, die App-Funktionen oder die Dateigröße der einzelnen Pakete.
 
 Wenn Sie ein Paket aus der Einsendung entfernen müssen, klicken Sie dazu im Abschnitt **Details** des Pakets unten auf den Link **Entfernen**.
 

@@ -4,28 +4,28 @@ title: Verwalten von App-Namen
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, Uwp, app-Namen, ändern Sie app-Name "," Update-app-Name "," Name des Spiels "," Produktnamen
+keywords: Windows 10, UWP, APP-Namen, Ändern des App-namens, Aktualisieren von App-Name, Spiel Name, Produktname
 ms.localizationpriority: medium
-ms.openlocfilehash: 786bfd7cbb4129274a2ff19bc33084824d296bcd
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 0022c53dc3afc7e710495900898d3fc5c81ea45a
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63827521"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682684"
 ---
 # <a name="manage-app-names"></a>Verwalten von App-Namen
 
-Die **Verwalten von app-Namen** können Sie anzeigen, alle Namen, den Sie für Ihre app reserviert haben Reservieren von Namen (für andere Sprachen oder So ändern Sie den Namen Ihrer app) und Löschen von Namen nicht erforderlich. Finden Sie auf diese Seite [Partner Center](https://partner.microsoft.com/dashboard) durch Erweitern der **App-Verwaltung** Abschnitt im linken Navigationsmenü für alle Ihre apps.
+Mit der **APP-Namen verwalten** können Sie alle Namen anzeigen, die Sie für Ihre APP reserviert haben, zusätzliche Namen reservieren (für andere Sprachen oder den Namen Ihrer APP) und Namen löschen, die Sie nicht benötigen. Sie finden diese Seite im [Partner Center](https://partner.microsoft.com/dashboard) , indem Sie im linken Navigationsmenü für Ihre apps den Abschnitt **App-Verwaltung** erweitern.
 
 > [!IMPORTANT]
-> Können weitere Namen für eine app reserviert, und Sie können auch einen der Werte in der veröffentlichten Version Ihrer App anstelle des verwenden, die Sie reserviert, wenn Sie die app zunächst im Partner Center erstellt. Bedenken Sie jedoch, dass den Vornamen, die Sie für Ihr Produkt reservieren in einigen Ihrer IT verwendet werden, wird die [Details zur Authentifizierungsidentität](view-app-identity-details.md), wie z. B. die **Package Family Name (PFN)**. Diese Werte möglicherweise für einige Benutzer sichtbar und nicht geändert, also stellen Sie sicher, dass der Name, Sie zuerst reservieren, verwenden Sie für dieses geeignet ist.
+> Sie können zusätzliche Namen für eine APP reservieren, und Sie können entscheiden, ob Sie eine der apps in der veröffentlichten Version Ihrer APP verwenden möchten, anstatt Sie zu verwenden, die Sie bei der ersten Erstellung Ihrer APP im Partner Center reserviert haben. Beachten Sie jedoch, dass der Vorname, den Sie für Ihr Produkt reservieren, in einigen ihrer [Identitäts Details](view-app-identity-details.md)verwendet wird, wie z. b. der **Paket Familienname (PFN)** . Diese Werte sind möglicherweise für einige Benutzer sichtbar und können nicht geändert werden. Stellen Sie daher sicher, dass der von Ihnen reservierte Name für diese Verwendung geeignet ist.
 
 
 ## <a name="reserve-additional-names-for-your-app"></a>Reservieren zusätzlicher Namen für Ihre App
 
-Sie können mehrere App-Namen reservieren, die für dieselbe App verwendet werden. Dies ist besonders hilfreich, wenn Sie Ihre App in mehreren Sprachen anbieten und für die verschiedenen Sprachen unterschiedliche Namen verwenden möchten. Sie können auch einen neuen Namen reservieren um den Namen einer app ändern wie unten beschrieben.
+Sie können mehrere App-Namen reservieren, die für dieselbe App verwendet werden. Dies ist besonders hilfreich, wenn Sie Ihre App in mehreren Sprachen anbieten und für die verschiedenen Sprachen unterschiedliche Namen verwenden möchten. Sie können auch einen neuen Namen reservieren, um den Namen einer APP zu ändern, wie unten beschrieben.
 
-Um einen neuen app-Namen reservieren möchten, finden Sie im Textfeld in die **weitere Namen reserviert** Teil der **Verwalten von app-Namen** Seite. Geben Sie den zu reservierenden Namen ein, und klicken Sie auf **Verfügbarkeit überprüfen**. Wenn der Name verfügbar ist, klicken Sie auf **Produktnamen reservieren**. Sie können mehrere app-Namen reservieren, durch Wiederholen die folgenden Schritte aus, falls gewünscht.
+Um einen neuen APP-Namen zu reservieren, suchen Sie das Textfeld im Abschnitt " **Weitere Namen reservieren** " auf der Seite " **APP-Namen verwalten** ". Geben Sie den zu reservierenden Namen ein, und klicken Sie auf **Verfügbarkeit überprüfen**. Wenn der Name verfügbar ist, klicken Sie auf **Produktnamen reservieren**. Sie können mehrere APP-Namen reservieren, indem Sie diese Schritte ggf. wiederholen.
 
 > [!NOTE]
 > Weitere Informationen zum Reservieren von App-Namen und den Gründen, warum ein bestimmter Name u. U. nicht verfügbar ist, finden Sie unter [App-Erstellung durch Reservierung eines Namens](create-your-app-by-reserving-a-name.md).
@@ -37,28 +37,28 @@ Wenn Sie einen zuvor reservierten Namen nicht mehr verwenden möchten, können S
 
 Um einen reservierten Namen Ihrer App zu löschen, suchen Sie den nicht mehr verwendeten Namen, und klicken Sie auf **Löschen**. Klicken Sie im Bestätigungsdialogfeld erneut auf **Löschen**, um den Vorgang zu bestätigen.
 
-Beachten Sie, dass Ihre app mindestens ein reservierten Name. Um vollständig entfernen einer app von Partner Center (Version alle Namen, die Sie für die app reserviert haben), klicken Sie auf **diese app löschen** aus der **Übersicht über die App** Seite. (Wenn die App in Bearbeitung eine Übermittlung enthält, müssen Sie diese zuerst löschen.) Beachten Sie, dass Sie die app bereits die Store veröffentlicht haben, keine aus Partner Center gelöscht werden können (obwohl Sie verwenden können, die **ein-/ausblenden-Produkte** Funktionen auf Ihre **Übersicht über die** Seite, um es auszublenden). 
+Beachten Sie, dass Ihre APP mindestens einen reservierten Namen aufweisen muss. Wenn Sie eine APP aus Partner Center vollständig entfernen (und alle Namen freigeben möchten, die Sie für die APP reserviert haben), klicken Sie auf der Seite **App-Übersicht** auf **diese APP löschen** . (Wenn die App in Bearbeitung eine Übermittlung enthält, müssen Sie diese zuerst löschen.) Beachten Sie Folgendes: Wenn Sie die APP bereits im Store veröffentlicht haben, können Sie Sie nicht aus dem Partner Center löschen (Sie können die Funktion " **Produkte anzeigen/ausblenden** " auf der **Übersichts** Seite verwenden, um sie auszublenden). 
 
 
 ## <a name="rename-an-app-that-has-already-been-published"></a>Umbenennen einer bereits veröffentlichten App
 
 Wenn Ihre App bereits im Store veröffentlicht wurde und Sie sie umbenennen möchten, können Sie dazu (mithilfe der oben beschriebenen Schritte) einen neuen Namen für die App reservieren und eine neue App-Übermittlung vornehmen. 
 
-Sie müssen Ihrer app-Pakete, um den alten Namen durch die neue ersetzen und die aktualisierten Pakete an Ihrer Einsendung hochladen aktualisieren.
-- Aktualisieren Sie zuerst die Package.StoreAssociation.xml-Datei, um den neuen Namen, entweder manuell oder mithilfe von Visual Studio, zu verwenden (**Projekt > Store > App mit Store verknüpfen** ). Weitere Informationen finden Sie unter [Packen einer UWP-app mit Visual Studio](../packaging/packaging-uwp-apps.md).
+Sie müssen die Pakete Ihrer APP aktualisieren, um den alten Namen durch den neuen zu ersetzen, und die aktualisierten Pakete in ihre Übermittlung hochladen.
+- Aktualisieren Sie zuerst die Package.StoreAssociation.xml-Datei, um den neuen Namen, entweder manuell oder mithilfe von Visual Studio, zu verwenden (**Projekt > Store > App mit Store verknüpfen** ). Weitere Informationen finden Sie unter [Packen einer UWP-App mit Visual Studio](/windows/msix/package/packaging-uwp-apps).
 - Aktualisieren Sie ebenfalls das [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname)-Element im App-Manifest, und aktualisieren Sie Grafiken oder Texte, die den App-Namen enthalten. 
   > [!IMPORTANT]
   > Achten Sie darauf, dass Sie die Datei Package.StoreAssociation.xml aktualisieren, bevor Sie **Paket/Eigenschaften/Anzeigenname** im App-Manifest ändern, andernfalls erhalten Sie möglicherweise einen Fehler.
 
-Zum Aktualisieren einer Store auflisten, damit er den neuen Namen verwendet, finden Sie unter den [Store Angebotsseite](create-app-store-listings.md) für die jeweilige Sprache, und wählen Sie den Namen aus der **Produktname** Dropdownliste. Achten Sie darauf, überprüfen die Beschreibung und andere Teile der Eintrag für alle erwähnungen des Namens und Aktualisierungen vornehmen, wenn erforderlich.
+Um eine Store-Auflistung so zu aktualisieren, dass Sie den neuen Namen verwendet, wechseln Sie zur Liste mit den Listen für diese Sprache, und wählen Sie den Namen aus der Dropdown [Liste](create-app-store-listings.md) **Produktname** aus. Stellen Sie sicher, dass Sie Ihre Beschreibung und andere Teile der Auflistung für alle Erwähnungen des Namens überprüfen, und nehmen Sie bei Bedarf Aktualisierungen vor.
 
 > [!NOTE]
-> Wenn Ihre app-Pakete bzw. Store-Angebote in mehreren Sprachen aufweist, müssen Sie die Pakete zu aktualisieren bzw. Store-Angebote für jede Sprache, in dem der Name muss aktualisiert werden.
+> Wenn Ihre APP Pakete und/oder Speicher Auflistungen in mehreren Sprachen enthält, müssen Sie die Pakete und/oder Speicher Listen für jede Sprache aktualisieren, in der der Name aktualisiert werden muss.
 
-Sobald Ihre app mit dem neuen Namen veröffentlicht wurde, können Sie alle älteren Namen löschen, die Sie nicht mehr verwenden möchten.
+Nachdem Ihre APP mit dem neuen Namen veröffentlicht wurde, können Sie ältere Namen löschen, die Sie nicht mehr verwenden müssen.
 
 > [!TIP]
-> Jede app wird im Partner Center mit dem Vornamen, die Sie für den Dienst reserviert. Wenn Sie die oben genannten benennen Sie eine app Schritte befolgt haben, und Sie in Partner Center angezeigt werden mit dem neuen Namen möchten, müssen Sie den ursprünglichen Namen löschen (indem Sie auf **löschen** auf die **Verwalten von app-Namen** Seite). 
+> Jede APP wird im Partner Center mit dem Vornamen angezeigt, den Sie für Sie reserviert haben. Wenn Sie die obigen Schritte zum Umbenennen einer APP befolgt haben, und Sie möchten, dass Sie im Partner Center mit dem neuen Namen angezeigt wird, müssen Sie den ursprünglichen Namen löschen (indem Sie auf der Seite " **APP-Namen verwalten** " auf " **Löschen** " klicken). 
 
  
 
