@@ -738,45 +738,15 @@
         - name: Vereinfachen von Zahlungen mit der Payment Request-API
           href: ../monetize/payment-request.md
     - name: Verpacken von Apps
-      href: ../packaging/index.md
       items:
-        - name: Verpacken einer UWP-App mit Visual Studio
-          href: ../packaging/packaging-uwp-apps.md
-        - name: Manuelles Verpacken von Apps
-          href: ../packaging/manual-packaging-root.md
-          items:
-            - name: Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“
-              href: ../packaging/create-app-package-with-makeappx-tool.md
-            - name: Erstellen eines Paketsignaturzertifikats
-              href: ../packaging/create-certificate-package-signing.md
-            - name: Signieren eines App-Pakets mit SignTool
-              href: ../packaging/sign-app-package-using-signtool.md
-            - name: Entwickeln mit Bestandspaketen und Paketfaltung
-              href: ../packaging/package-folding.md
-            - name: Flat-Bundle-App-Pakete
-              href: ../packaging/flat-bundles.md
-            - name: Einführung in Bestandspakete
-              href: ../packaging/asset-packages.md
-            - name: Paketerstellung mit dem Verpackungslayout
-              href: ../packaging/packaging-layout.md
-        - name: App-Paketarchitekturen
-          href: ../packaging/device-architecture.md
-        - name: Installieren von UWP-App-Streaming
-          href: ../packaging/streaming-install.md
-          items:
-            - name: Erstellen und Konvertieren einer Quellinhalt-Gruppenzuordnung
-              href: ../packaging/create-cgm.md
-        - name: Optionale Pakete und die Erstellung zugehöriger Sets
-          href: ../packaging/optional-packages.md
-          items:
-            - name: Optionale Pakete mit ausführbarem Code
-              href: ../packaging/optional-packages-with-executable-code.md
-        - name: Installieren von Apps mit dem Tool „WinAppDeployCmd.exe“
-          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: Übersicht
+          href: ../packaging/index.md
         - name: Deklarationen von App-Funktionen
           href: ../packaging/app-capability-declarations.md
         - name: Einrichten automatisierter Builds für UWP-Apps
           href: ../packaging/auto-build-package-uwp-apps.md
+        - name: Installieren von Apps mit dem Tool „WinAppDeployCmd.exe“
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
         - name: Herunterladen und Installieren von Paketupdates aus dem Store
           href: ../packaging/self-install-package-updates.md
 - name: Plattform
