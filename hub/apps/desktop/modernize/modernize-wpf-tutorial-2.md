@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 07d2c957dff61a8b1ec9f9541ffeb9706da8a0e9
-ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
+ms.openlocfilehash: 4d504686e2ff50700e3f4bf242ef5d16be814894
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303570"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729485"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Teil 2: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
 
@@ -29,7 +29,7 @@ Vor dem Hinzufügen eines **InkCanvas** -Steuer Elements zur APP für die kosten
 
     ![Menü "nuget-Pakete verwalten" in Visual Studio](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. Klicken Sie im Fenster **nuget-Paket-Manager** auf **Durchsuchen**. Wählen Sie die Option **Vorabversion einschließen** aus, suchen Sie `Microsoft.Toolkit.Wpf.UI.Controls` nach dem Paket, und installieren Sie die neueste Vorschauversion des Pakets, das in den Ergebnissen angezeigt wird. Stellen Sie sicher, dass Sie Version 6.0.0-Preview 6.4 oder eine höhere Version installieren.
+2. Klicken Sie im Fenster **nuget-Paket-Manager** auf **Durchsuchen**. Wählen Sie die Option **Vorabversion einschließen** aus, suchen Sie `Microsoft.Toolkit.Wpf.UI.Controls` nach dem Paket, und installieren Sie die neueste Vorschauversion des Pakets, das in den Ergebnissen angezeigt wird. Stellen Sie sicher, dass Sie Version 6.0.0-preview7 oder eine höhere Version installieren.
 
     > [!NOTE]
     > Dieses Paket enthält die gesamte erforderliche Infrastruktur zum Hosting von UWP-XAML-Inseln in einer WPF-App, einschließlich des mit **InkCanvas** umschließenden UWP-Steuer Elements. Ein ähnliches Paket namens `Microsoft.Toolkit.Forms.UI.Controls` ist für Windows Forms-apps verfügbar.

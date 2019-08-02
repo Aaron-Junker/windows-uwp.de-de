@@ -1,151 +1,112 @@
 ---
-Description: Zeigen Sie mehrere Teile Ihrer app in separaten Fenstern.
+Description: Zeigen Sie verschiedene Teile der app in separaten Fenstern an.
 title: Anzeigen mehrerer Ansichten für eine App
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 275dc6ab7cdb310dff817a3e0017568ad2fed80c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ee49b5fe5b5956e9069ea196c4d2e029b3a15763
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317122"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729517"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Anzeigen mehrerer Ansichten für eine App
 
 ![Drahtmodell, das eine App mit mehreren Fenstern zeigt.](images/multi-view.gif)
 
-Sie können Ihren Benutzern zu mehr Produktivität verhelfen, indem Sie ihnen ermöglichen, unabhängige Teile der App in separaten Fenstern anzuzeigen. Wenn Sie für eine App mehrere Fenster erstellen, verhält sich jedes Fenster anders. Auf der Taskleiste wird jedes Fenster separat angezeigt. Die Benutzer können App-Fenster unabhängig voneinander verschieben, deren Größe ändern, Fenster anzeigen und ausblenden und zwischen App-Fenstern wechseln, als würde es sich um separate Apps handeln. Jedes Fenster agiert in seinem eigenen Thread.
+Sie können Ihren Benutzern zu mehr Produktivität verhelfen, indem Sie ihnen ermöglichen, unabhängige Teile der App in separaten Fenstern anzuzeigen. Wenn Sie mehrere Fenster für eine APP erstellen, wird jedes Fenster in der Taskleiste separat angezeigt. Die Benutzer können App-Fenster unabhängig voneinander verschieben, deren Größe ändern, Fenster anzeigen und ausblenden und zwischen App-Fenstern wechseln, als würde es sich um separate Apps handeln.
 
-> **Wichtige APIs:** [**ApplicationViewSwitcher**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher), [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+> **Wichtige APIs:** [Windows. UI. viewmanagement-Namespace](/uwp/api/windows.ui.viewmanagement), [Windows. UI. windowmanagement-Namespace](/uwp/api/windows.ui.windowmanagement)
 
 ## <a name="when-should-an-app-use-multiple-views"></a>Wann sollte eine App mehrere Ansichten verwenden?
-Es gibt eine Reihe von Szenarien, die von mehreren Ansichten profitieren können. Hier finden Sie einige Beispiele:
- - Eine E-Mail-App, die Benutzern beim Verfassen einer neuen E-Mail eine Liste der empfangenen Nachrichten anzeigt.
- - Eine Adressbuch-App, mit der Benutzer Kontaktinformationen für mehrere Personen nebeneinander vergleichen können.
- - Eine Musikplayer-App, mit der Benutzer beim Durchsuchen einer Liste anderer verfügbarer Musiktitel sehen können, was wiedergegeben wird.
- - Eine Notizen-App, mit der Benutzer Informationen von einer Seite in eine andere kopieren können.
- - Eine Lese-App, mit der Benutzer mehrere Artikel für das spätere Lesen öffnen können, um zunächst alle wichtigen Schlagzeilen zu durchsuchen.
 
-Weitere Informationen zum Erstellen separaten Instanzen Ihrer App finden Sie unter [Erstellen einer UWP-App mit mehreren Instanzen](../../launch-resume/multi-instance-uwp.md).
+Es gibt eine Vielzahl von Szenarien, die von mehreren Ansichten profitieren können. Hier finden Sie einige Beispiele:
 
-## <a name="what-is-a-view"></a>Was ist eine Ansicht?
+- Eine E-Mail-App, die Benutzern beim Verfassen einer neuen E-Mail eine Liste der empfangenen Nachrichten anzeigt.
+- Eine Adressbuch-App, mit der Benutzer Kontaktinformationen für mehrere Personen nebeneinander vergleichen können.
+- Eine Musikplayer-App, mit der Benutzer beim Durchsuchen einer Liste anderer verfügbarer Musiktitel sehen können, was wiedergegeben wird.
+- Eine Notizen-App, mit der Benutzer Informationen von einer Seite in eine andere kopieren können.
+- Eine Lese-App, mit der Benutzer mehrere Artikel für das spätere Lesen öffnen können, um zunächst alle wichtigen Schlagzeilen zu durchsuchen.
 
-Eine App-Ansicht ist die 1:1-Zuordnung eines Threads und eines Fensters, das die App zur Anzeige von Inhalten verwendet. Sie wird durch ein [**Windows.ApplicationModel.Core.CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)-Objekt dargestellt.
+Während jedes App-Layout einzigartig ist, empfehlen wir Ihnen, eine Schaltfläche für ein „Neues Fenster” an einem geeigneten Ort zu platzieren, wie etwa die obere rechte Ecke des Inhalts, der in einem neuen Fenster geöffnet werden kann. Sie sollten auch eine [Kontextmenü](../controls-and-patterns/menus.md) Option "in einem neuen Fenster öffnen" einschließen.
 
-Ansichten werden durch das [**CoreApplication**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplication)-Objekt verwaltet. Sie rufen [**CoreApplication.CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) auf, um ein [**CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)-Objekt zu erstellen. Die **CoreApplicationView** vereint ein [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) und einen [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) (der in den Eigenschaften [**CoreWindow**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) und [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.dispatcher) gespeichert ist). Sie können sich **CoreApplicationView** als das Objekt vorstellen, das von der Windows-Runtime für die Interaktion mit dem zentralen Windows-System verwendet wird.
+Informationen zum Erstellen separater Instanzen Ihrer APP (anstelle von separaten Fenstern für die gleiche Instanz) finden Sie unter [Erstellen einer UWP-App mit mehreren Instanzen](../../launch-resume/multi-instance-uwp.md).
 
-In der Regel arbeiten Sie nicht direkt mit der [**CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView). Stattdessen wird die [**ApplicationView**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView)-Klasse von der Windows-Runtime im [**Windows.UI.ViewManagement**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement)-Namespace bereitgestellt. Diese Klasse stellt Eigenschaften, Methoden und Ereignisse bereit, die Sie bei der Interaktion zwischen App und Windowing-System verwenden. Wenn Sie mit einer **ApplicationView** arbeiten möchten, rufen Sie die statische [**ApplicationView.GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview)-Methode auf, die eine an den aktuellen Thread der **CoreApplicationView** gebundene Instanz von **ApplicationView** abruft.
+## <a name="windowing-hosts"></a>Fenster Hosts
 
-Entsprechend umschließt das XAML-Framework das [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Objekt in einem [**Windows.UI.XAML.Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window)-Objekt. In einer XAML-App interagieren Sie normalerweise mit dem **Window**-Objekt, anstatt direkt mit dem **CoreWindow** zu arbeiten.
+Es gibt verschiedene Möglichkeiten, wie UWP-Inhalte in einer APP gehostet werden können.
 
-## <a name="show-a-new-view"></a>Anzeigen einer neuen Ansicht
+- [Corewindow](/uwp/api/windows.ui.core.corewindow)/-[applicationview](/uwp/api/windows.ui.viewmanagement.applicationview)
 
-Während jedes App-Layout einzigartig ist, empfehlen wir Ihnen, eine Schaltfläche für ein „Neues Fenster” an einem geeigneten Ort zu platzieren, wie etwa die obere rechte Ecke des Inhalts, der in einem neuen Fenster geöffnet werden kann. Erwägen Sie außerdem, die Kontextmenüoption „In einem neuen Fenster öffnen” einzufügen.
+     Eine App-Ansicht ist die 1:1-Zuordnung eines Threads und eines Fensters, das die App zur Anzeige von Inhalten verwendet. Die erste Ansicht, die beim Starten der App erstellt wird, wird als *Hauptansicht* bezeichnet. Jede corewindow/applicationview wird in einem eigenen Thread betrieben. Wenn Sie an verschiedenen UI-Threads arbeiten müssen, können Sie mehrere Fenster Anwendungen erschweren.
 
-Sehen wir uns die Schritte zum Erstellen einer neuen Ansicht an. Die neue Ansicht wird hier als Reaktion auf das Anklicken einer Schaltfläche gestartet.
+    Die Hauptansicht für Ihre APP wird immer in einer applicationview gehostet. Der Inhalt in einem sekundären Fenster kann in einer applicationview oder in einem appwindow gehostet werden.
 
-```csharp
-private async void Button_Click(object sender, RoutedEventArgs e)
-{
-    CoreApplicationView newView = CoreApplication.CreateNewView();
-    int newViewId = 0;
-    await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-    {
-        Frame frame = new Frame();
-        frame.Navigate(typeof(SecondaryPage), null);   
-        Window.Current.Content = frame;
-        // You have to activate the window in order to show it later.
-        Window.Current.Activate();
+    Informationen zum Verwenden von applicationview zum Anzeigen sekundärer Fenster in der App finden Sie unter [Verwenden von applicationview](application-view.md).
+- [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)
 
-        newViewId = ApplicationView.GetForCurrentView().Id;
-    });
-    bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
-}
-```
+    Appwindow vereinfacht die Erstellung von UWP-apps mit mehreren Fenstern, da Sie auf demselben UI-Thread betrieben wird, aus dem Sie erstellt wurde.
 
-**Um eine neue Ansicht anzuzeigen.**
+    Die appwindow-Klasse und andere APIs im [windowmanagement](/uwp/api/windows.ui.windowmanagement) -Namespace sind ab Windows 10, Version 1903 (SDK 18362) verfügbar. Wenn Ihre APP auf frühere Versionen von Windows 10 ausgerichtet ist, müssen Sie die applicationview zum Erstellen sekundärer Fenster verwenden.
 
-1.  Rufen Sie [**CoreApplication.CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) auf, um ein neues Fenster und einen Thread für den anzuzeigenden Inhalt zu erstellen.
+    Informationen zum Verwenden von appwindow zum Anzeigen sekundärer Fenster in der App finden Sie unter [Verwenden von appwindow](app-window.md).
 
-    ```csharp
-    CoreApplicationView newView = CoreApplication.CreateNewView();
-    ```
+    > [!NOTE]
+    > Appwindow befindet sich derzeit in der Vorschau Phase. Dies bedeutet, dass Sie apps, die appwindow verwenden, an den Store übermitteln können, einige Plattform-und frameworkkomponenten jedoch bekanntermaßen nicht mit appwindow arbeiten (siehe [Einschränkungen](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)).
+- [Desktopwindowxamlsource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) (XAML-Inseln)
 
-2.  Verfolgen Sie die [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id) der neuen Ansicht nach. Über die ID können Sie die Ansicht später anzeigen.
+     UWP-XAML-Inhalte in einer Win32-app (mit HWND), die auch als XAML-Inseln bezeichnet wird, werden in einer desktopwindowxamlsource gehostet.
 
-    Sie können Ihre App mit einer bestimmten Infrastruktur ausstatten, um das Nachverfolgen der erstellten Ansichten zu erleichtern. Ein Beispiel bietet die `ViewLifetimeControl`-Klasse im [MultipleViews-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620574).
+    Weitere Informationen zu XAML-Inseln finden [Sie unter Verwenden der UWP-XAML-Hosting-API in einer Desktop Anwendung](/windows/apps/desktop/modernize/using-the-xaml-hosting-api) .
 
-    ```csharp
-    int newViewId = 0;
-    ```
+### <a name="make-code-portable-across-windowing-hosts"></a>Codieren von Code über windowinghosts
 
-3.  Füllen Sie das Fenster im neuen Thread auf.
+Wenn XAML-Inhalt in einem [corewindow](/uwp/api/windows.ui.core.corewindow)-Fenster angezeigt wird, sind immer ein zugeordnetes [applicationview](/uwp/api/windows.ui.viewmanagement.applicationview) -und XAML- [Fenster](/uwp/api/windows.ui.xaml.window)vorhanden. Sie können APIs für diese Klassen verwenden, um Informationen wie die Fenster Begrenzungen zu erhalten. Zum Abrufen einer Instanz dieser Klassen verwenden Sie die statische [corewindow. getforcurrentthread](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) -Methode, die [applicationview. getforcurrentview](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) -Methode oder die [Window. Current](/uwp/api/windows.ui.xaml.window.current) -Eigenschaft. Außerdem gibt es viele Klassen, die das `GetForCurrentView` Muster verwenden, um eine Instanz der Klasse abzurufen, z. b. [Displayinformation. getforcurrentview](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview).
 
-    Mithilfe der [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)-Methode können Sie die Arbeit am UI-Thread für die neue Ansicht planen. Mithilfe eines [Lambdaausdrucks](https://go.microsoft.com/fwlink/p/?LinkId=389615) übergeben Sie eine Funktion als Argument an die **RunAsync**-Methode. Die in der Lambdafunktion ausgeführten Arbeiten finden im Thread der neuen Ansicht statt.
+Diese APIs funktionieren, weil es nur eine einzige Struktur von XAML-Inhalt für eine corewindow/applicationview gibt, sodass der XAML-Code den Kontext kennt, in dem er gehostet wird, dass corewindow/applicationview.
 
-    In XAML fügen Sie der [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content)-Eigenschaft von [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) in der Regel einen [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) hinzu und navigieren dann den **Frame** zu einer XAML-[**Seite**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), auf der Sie den App-Inhalt definiert haben. Weitere Informationen finden Sie unter [Peer-zu-Peer-Navigation zwischen zwei Seiten](../basics/navigate-between-two-pages.md).
+Wenn XAML-Inhalt innerhalb von appwindow oder desktopwindowxamlsource ausgeführt wird, können mehrere Strukturen von XAML-Inhalt gleichzeitig im selben Thread ausgeführt werden. In diesem Fall erhalten diese APIs nicht die richtigen Informationen, da der Inhalt nicht mehr in der aktuellen corewindow/applicationview (und im XAML-Fenster) ausgeführt wird.
 
-    Nachdem das neue [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) aufgefüllt wurde, müssen Sie die [**Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate)-Methode von **Window** aufrufen, um das **Window** später anzuzeigen. Diese Arbeit findet im Thread der neuen Ansicht statt, sodass das neue **Window** aktiviert ist.
+Um sicherzustellen, dass Ihr Code auf allen windowinghosts ordnungsgemäß funktioniert, sollten Sie APIs ersetzen, die auf [corewindow](/uwp/api/windows.ui.core.corewindow), [applicationview](/uwp/api/windows.ui.viewmanagement.applicationview)und [Window](/uwp/api/windows.ui.xaml.window) basieren, mit neuen APIs, die ihren Kontext aus der [xamlroot](/uwp/api/windows.ui.xaml.xamlroot) -Klasse erhalten.
+Die xamlroot-Klasse stellt eine Struktur von XAML-Inhalten und Informationen über den Kontext dar, in dem Sie gehostet wird, egal, ob es sich um ein corewindow-, appwindow-oder desktopwindowxamlsource-Element handelt. Diese Abstraktions Ebene ermöglicht das Schreiben desselben Codes, unabhängig davon, in welchem windowinghost das XAML ausgeführt wird.
 
-    Schließlich rufen Sie die [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id) der neuen Ansicht ab, die Sie später zum Anzeigen der Ansicht verwenden. Auch diese Arbeit wird im Thread der neuen Ansicht erledigt, sodass [**ApplicationView.GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) die **Id** der neuen Ansicht abruft.
+Diese Tabelle zeigt Code, der nicht ordnungsgemäß auf windowinghosts funktioniert, sowie den neuen portablen Code, durch den Sie ihn ersetzen können, sowie einige APIs, die Sie nicht ändern müssen.
 
-    ```csharp
-    await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-    {
-        Frame frame = new Frame();
-        frame.Navigate(typeof(SecondaryPage), null);   
-        Window.Current.Content = frame;
-        // You have to activate the window in order to show it later.
-        Window.Current.Activate();
-
-        newViewId = ApplicationView.GetForCurrentView().Id;
-    });
-    ```
-
-4.  Zeigen Sie die neue Ansicht an, indem Sie [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync) aufrufen.
-
-    Nachdem Sie eine neue Ansicht erstellt haben, können Sie sie in einem neuen Fenster anzeigen, indem Sie die [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync)-Methode aufrufen. Der *viewId*-Parameter für diese Methode ist eine ganze Zahl, die die einzelnen Ansichten in der App eindeutig identifiziert. Sie rufen die [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id) der Ansicht entweder über die **ApplicationView.Id**-Eigenschaft oder die [**ApplicationView.GetApplicationViewIdForWindow**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getapplicationviewidforwindow)-Methode ab.
-
-    ```csharp
-    bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
-    ```
-
-## <a name="the-main-view"></a>Die Hauptansicht
-
-
-Die erste Ansicht, die beim Starten der App erstellt wird, wird als *Hauptansicht* bezeichnet. Diese Ansicht ist in der [**CoreApplication.MainView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.mainview)-Eigenschaft gespeichert und ihre [**IsMain**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.ismain)-Eigenschaft ist „true“. Diese Ansicht wird nicht von Ihnen, sondern von der App erstellt. Der Thread der Hauptansicht dient als Manager für die App und alle App-Aktivierungsereignisse werden in diesem Thread übermittelt.
-
-Wenn sekundäre Ansichten geöffnet sind, kann das Fenster der Hauptansicht ausgeblendet werden, z. B. durch Klicken auf die Schaltfläche „Schließen“ (X) in der Fenstertitelleiste. Der Thread bleibt jedoch aktiv. Durch Aufrufen von [**Close**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.close) im [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) der Hauptansicht wird eine **InvalidOperationException** ausgelöst. (Verwenden [ **Application.Exit** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.exit) zu Ihrer app zu schließen.) Wenn die Hauptansicht der Thread beendet wird, wird die app geschlossen.
-
-## <a name="secondary-views"></a>Sekundäre Ansichten
-
-
-Andere Ansichten sind sekundäre Ansichten. Dies schließt auch Ansichten ein, die durch Aufrufen von [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) im App-Code erstellt werden. Sowohl die Hauptansicht als auch sekundäre Ansichten werden in der [**CoreApplication.Views**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.views)-Auflistung gespeichert. Normalerweise erstellen Sie sekundäre Ansichten in Reaktion auf eine Benutzeraktion. In einigen Fällen erstellt das System sekundäre Ansichten für Ihre App.
+| Wenn Sie... | Ersetzen durch... |
+| - | - |
+| Corewindow. getforcurrentthread (). [Begrenzungen](/uwp/api/windows.ui.core.corewindow.bounds) | _UIElement_. Xamlroot. [Größe](/uwp/api/windows.ui.xaml.xamlroot.size) |
+| Corewindow. getforcurrentthread (). [SizeChanged](/uwp/api/windows.ui.core.corewindow.sizechanged) | _UIElement_. Xamlroot. [Geändert](/uwp/api/windows.ui.xaml.xamlroot.changed) |
+| CoreWindow. [Sichtbar](/uwp/api/windows.ui.core.corewindow.visible) | _UIElement_. Xamlroot. [Ishostvisible](/uwp/api/windows.ui.xaml.xamlroot.ishostvisible) |
+| CoreWindow. [Visibilitychanged](/uwp/api/windows.ui.core.corewindow.visibilitychanged) | _UIElement_. Xamlroot. [Geändert](/uwp/api/windows.ui.xaml.xamlroot.changed) |
+| Corewindow. getforcurrentthread (). [GetKeyState](/uwp/api/windows.ui.core.corewindow.getkeystate) | Unverändert. Dies wird in appwindow und desktopwindowxamlsource unterstützt. |
+| Corewindow. getforcurrentthread (). [GetAsyncKeyState](/uwp/api/windows.ui.core.corewindow.getasynckeystate) | Unverändert. Dies wird in appwindow und desktopwindowxamlsource unterstützt. |
+| Ster. [Aktuell](/uwp/api/windows.ui.xaml.window.current) | Gibt das XAML-Hauptfenster Objekt zurück, das eng an das aktuelle corewindow-Objekt gebunden ist. Siehe Hinweis nach dieser Tabelle. |
+| Window. Current. [Begrenzungen](/uwp/api/windows.ui.xaml.window.bounds) | _UIElement_. Xamlroot. [Größe](/uwp/api/windows.ui.xaml.xamlroot.size) |
+| Window. Current. [Inhalt](/uwp/api/windows.ui.xaml.window.content) | UIElement root = _UIElement_. Xamlroot. [Inhalt](/uwp/api/windows.ui.xaml.xamlroot.content) |
+| Window. Current. [Compositor](/uwp/api/windows.ui.xaml.window.compositor) | Unverändert. Dies wird in appwindow und desktopwindowxamlsource unterstützt. |
+| VisualTreeHelper. [Getopenpopups](/uwp/api/windows.ui.xaml.media.visualtreehelper.getopenpopups)<br/>In XAML-Inseln führt dies zu einem Fehler. In appwindow-apps werden dadurch geöffnete Popups im Hauptfenster zurückgegeben. | VisualTreeHelper. [Getopenpopupsforxamlroot](/uwp/api/windows.ui.xaml.media.visualtreehelper.getopenpopupsforxamlroot) (_UIElement_. Xamlroot) |
+| FocusManager. [Getfocu-Delta Element](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement) | FocusManager. [Getfocu-Delta Element](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement#Windows_UI_Xaml_Input_FocusManager_GetFocusedElement_Windows_UI_Xaml_XamlRoot_) (_UIElement_. Xamlroot) |
+| contentdialog. showasync () | contentdialog. [Xamlroot](/uwp/api/windows.ui.xaml.uielement.xamlroot) _UIElement_.  =  Xamlroot;<br/>contentdialog. showasync (); |
+| menuflyout. showat (null, neuer Punkt (10, 10)); | menuflyout. [Xamlroot](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.xamlroot) _UIElement_.  =  Xamlroot;<br/>menuflyout. showat (null, neuer Punkt (10, 10)); |
 
 > [!NOTE]
-> Sie können das Windows-Feature *Zugewiesener Zugriff* verwenden, um eine App im [Kioskmodus](https://docs.microsoft.com/windows/manage/set-up-a-device-for-anyone-to-use) auszuführen. In diesem Fall erstellt das System eine sekundäre Ansicht, um die App-Benutzeroberfläche über dem Sperrbildschirm darzustellen. Von der App erstellte sekundäre Ansichten sind nicht zulässig. Wenn Sie also versuchen, Ihre eigene sekundäre Ansicht im Kioskmodus anzuzeigen, wird eine Ausnahme ausgelöst.
+> Bei XAML-Inhalt in einer desktopwindowxamlsource ist ein corewindow/-Fenster auf dem Thread vorhanden, aber es ist immer unsichtbar und hat eine Größe von 1 x 1. Der Zugriff auf die APP ist weiterhin möglich, es gibt jedoch keine sinnvollen Begrenzungen oder Sichtbarkeit.
+>
+>Bei XAML-Inhalten in appwindow wird immer genau ein corewindow im gleichen Thread vorhanden sein. Wenn Sie eine `GetForCurrentView` -oder `GetForCurrentThread` -API aufgerufen haben, gibt diese API ein Objekt zurück, das den Status des corewindow im Thread widerspiegelt, nicht jedoch die appwindows, die möglicherweise in diesem Thread ausgeführt werden.
 
-## <a name="switch-from-one-view-to-another"></a>Wechseln zwischen Ansichten
-
-Erwägen Sie, den Benutzern eine Möglichkeit zur Navigation von einem sekundären Fenster zurück zum Hauptfenster anzubieten. Verwenden Sie dazu die [**ApplicationViewSwitcher.SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.switchasync)-Methode. Sie rufen diese Methode über den Thread des Fensters auf, von dem aus Sie wechseln, und übergeben die Ansichts-ID des Fensters, zu dem Sie wechseln.
-
-```csharp
-await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
-```
-
-Wenn Sie [**SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.switchasync) verwenden, können Sie auswählen, ob das erste Fenster geschlossen und aus der Taskleiste entfernt werden soll, indem Sie den Wert von [**ApplicationViewSwitchingOptions**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitchingOptions) angeben.
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
-* Bieten Sie einen klaren Einstiegspunkt zur sekundären Ansicht anhand des Symbols „Neues Fenster öffnen” an.
-* Übermitteln Sie den Benutzern den Zweck der sekundäre Ansicht.
-* Stellen Sie sicher, dass Ihre App in einer Ansicht voll funktionsfähig ist und dass Benutzer nur aus praktischen Gründen eine sekundäre Ansicht öffnen.
-* Verlassen Sie sich nicht auf die sekundäre Ansicht, um Benachrichtigungen oder andere vorübergehende visuelle Elemente anzubieten.
+- Bieten Sie einen klaren Einstiegspunkt zur sekundären Ansicht anhand des Symbols „Neues Fenster öffnen” an.
+- Übermitteln Sie den Benutzern den Zweck der sekundäre Ansicht.
+- Stellen Sie sicher, dass Ihre APP in einer einzigen Ansicht voll funktionsfähig ist und dass Benutzer eine sekundäre Ansicht nur aus Gründen der Benutzer Sicht öffnen.
+- Verlassen Sie sich nicht auf die sekundäre Ansicht, um Benachrichtigungen oder andere vorübergehende visuelle Elemente anzubieten.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
-* [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
- 
+- [Verwenden von appwindow](app-window.md)
+- [Verwenden von applicationview](application-view.md)
+- [Applicationviewswitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
+- ["Kreatenewview"](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)

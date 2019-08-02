@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 560d339476ef3cd45f30bfc678661fb0a4a11ee1
-ms.sourcegitcommit: f6af7aeb8506379a184207035c8e43288cb31453
+ms.openlocfilehash: 765fefa0b489e1620d7a37fe75acd02acb8d5ae8
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601533"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729479"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML-Inseln)
 
@@ -77,7 +77,7 @@ Die am Diagrammende aufgeführten APIs sind im Lieferumfang des Windows SDK enth
 XAML-Inseln erfordern Windows 10, Version 1903 und höher. Um XAML-Inseln in Ihrer Anwendung zu verwenden, müssen Sie zuerst das Projekt einrichten:
 
 1. Ändern Sie das Projekt, um Windows-Runtime-APIs zu verwenden. Anweisungen hierzu finden Sie in [diesem Artikel](desktop-to-uwp-enhance.md#set-up-your-project).
-2. Installieren Sie eines dieser nuget-Pakete in Ihrem Projekt. Stellen Sie sicher, dass Sie Version 6.0.0-Preview 6.4 oder eine höhere Version des Pakets installieren.
+2. Installieren Sie eines dieser nuget-Pakete in Ihrem Projekt. Stellen Sie sicher, dass Sie Version 6.0.0-preview7 oder eine höhere Version des Pakets installieren.
     * WPF Installieren Sie [Microsoft. Toolkit. WPF. UI. Controls.](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)
     * Windows Forms: [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
     * C++Win32 [Microsoft. Toolkit. Win32. UI. xamlapplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
@@ -91,7 +91,7 @@ Ab der Veröffentlichung von Windows 10, Version 1903, sind die umschpackten Ste
 
 * Version 1,0 der Steuerelemente für die .NET Framework 4.6.2 und höher ist für die Veröffentlichung in der [6,0-Version des Toolkits](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones)geplant.
 * Version 1,0 der Steuerelemente für .net Core 3 ist für eine spätere Version des Toolkits geplant.
-* Wenn Sie die neuesten Vorschau Versionen der Versionen 1,0 für die .NET Framework und .net Core 3 testen möchten, lesen Sie die nuget-Pakete **6.0.0-Preview 6.4** in der [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) Gallery.
+* Wenn Sie die neueste Vorschauversion der Versionen 1,0 der Steuerelemente für den .NET Framework und .net Core 3 testen möchten, lesen Sie die **6.0.0-preview7** nuget-Pakete im [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) Gallery.
 
 Weitere Informationen finden Sie unter [in diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap).
 

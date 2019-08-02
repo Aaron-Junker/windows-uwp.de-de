@@ -1,76 +1,106 @@
 ---
-description: Dieses Tutorial veranschaulicht das Hinzufügen von UWP XAML-Benutzeroberflächen, MSIX-Pakete erstellen und andere moderne Komponenten in Ihrer WPF-Anwendung integrieren.
-title: Packen und Bereitstellen mit MSIX
+description: In diesem Tutorial wird veranschaulicht, wie Sie UWP-XAML-Benutzeroberflächen hinzufügen, msix-Pakete erstellen und andere moderne Komponenten in Ihre WPF-App integrieren.
+title: Verpacken und Bereitstellen mit MSIX
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: Windows 10, Uwp, Windows Forms, Wpf, XAML-Inseln
+keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: d11ef296b690297d33ebd5d366c2594f70b6d10b
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.openlocfilehash: 961157bc3d3429b56d3da24a46d71cbb5b84e7a3
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420099"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729499"
 ---
-# <a name="part-5-package-and-deploy-with-msix"></a>Teil 5: Packen und Bereitstellen mit MSIX
+# <a name="part-5-package-and-deploy-with-msix"></a>Teil 5: Verpacken und Bereitstellen mit MSIX
 
-Dies ist der letzte Teil eines Tutorials, die zeigt, wie Sie eine Beispiel WPF-desktop-app mit dem Namen Contoso-Ausgaben zu modernisieren. Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-app, finden Sie unter [Lernprogramm: Modernisieren von WPF-app](modernize-wpf-tutorial.md). In diesem Artikel wird vorausgesetzt, Sie haben bereits abgeschlossen [Teil 4](modernize-wpf-tutorial-4.md).
+Dies ist der letzte Teil eines Tutorials, in dem veranschaulicht wird, wie eine WPF-Beispiel-Desktop-App mit dem Namen "ca Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden [Sie unter Tutorial: Modernisieren einer WPF-](modernize-wpf-tutorial.md)app. In diesem Artikel wird davon ausgegangen, dass Sie [Teil 4](modernize-wpf-tutorial-4.md)bereits abgeschlossen haben.
 
-In [Teil 4](modernize-wpf-tutorial-4.md) haben Sie gelernt, dass einige WinRT-APIs, die Benachrichtigungen-API, einschließlich Paketidentität erfordern, bevor sie in einer app verwendet werden können. Sie erhalten Paketidentität Packen mit Contoso-Ausgaben [MSIX](https://docs.microsoft.com/windows/msix), das verpackungsformat, eingeführt in Windows 10 zum Verpacken und Bereitstellen von Windows-Anwendungen. MSIX bietet Vorteile gegenüber der in der Tabelle sowohl für Entwickler und IT-Spezialisten, einschließlich:
+In [Teil 4](modernize-wpf-tutorial-4.md) haben Sie gelernt, dass einige WinRT-APIs, einschließlich der Benachrichtigungs-API, eine Paket Identität erfordern, bevor Sie in einer App verwendet werden können. Sie können die Paket Identität abrufen, indem Sie die Kosten für " [msix](https://docs.microsoft.com/windows/msix)", das in Windows 10 eingeführte Verpackungs Format zum Packen und Bereitstellen von Windows-Anwendungen, verpacken. Msix bietet den Vorteil der Tabelle für Entwickler und IT-Experten, einschließlich:
 
-- Optimiert die Netzwerk-Nutzung und Speicherplatz.
-- Bereinigen abgeschlossen zu deinstallieren, Dank ein einfacher Container, in dem die app ausgeführt wird. Keine Registrierungsschlüssel und die temporären Dateien verbleiben auf dem System.
-- Entkoppelt Betriebssystemupdates von Anwendungsupdates und Anpassungen.
-- Vereinfacht die Installation, aktualisieren und deinstallieren Sie den Prozessserver. 
+- Optimierte Netzwerk Auslastung und Speicherplatz.
+- Vollständige Deinstallation dank eines Lightweight-Containers, in dem die app ausgeführt wird. Auf dem System sind keine Registrierungsschlüssel und temporären Dateien vorhanden.
+- Entkoppelt Betriebssystemupdates von Anwendungs Updates und-Anpassungen.
+- Vereinfacht die Installation, Aktualisierung und Deinstallation. 
 
-In diesem Teil des Tutorials erfahren Sie, wie die Contoso-Ausgaben-app in einem MSIX-Paket verpackt werden.
+In diesem Teil des Tutorials erfahren Sie, wie Sie die app "appto-Ausgaben" in einem msix-Paket verpacken.
 
 ## <a name="package-the-application"></a>Packen der Anwendung
 
-2019 für Visual Studio bietet eine einfache Möglichkeit zum Verpacken von einer Desktopanwendung mit dem Paketerstellungsprojekt für Windows-Anwendung. 
+Visual Studio 2019 bietet eine einfache Möglichkeit zum Packen einer Desktop Anwendung mithilfe des Windows-Anwendungspaket Erstellungs Projekts. 
 
-1. In **Projektmappen-Explorer**, mit der rechten Maustaste die **ContosoExpenses** Lösung, und wählen Sie **hinzufügen -> Neues Projekt**.
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die Projekt Mappe **conabsoaufwendungen** , und wählen Sie **Hinzufügen-> Neues Projekt**aus.
 
     ![Neues Projekt hinzufügen](images/wpf-modernize-tutorial/AddNewProject.png)
 
-3. In der **Hinzufügen eines neuen Projekts** (Dialogfeld), und suchen Sie `packaging`, wählen Sie die **Paketerstellungsprojekt für Windows-Anwendungen** -Projektvorlage in das C# Ereigniskategorie, und klicken Sie auf **weiter** .
+3. Suchen Sie im Dialogfeld **Neues Projekt hinzufügen** nach, `packaging`wählen Sie die Projektvorlage Projektvorlage für **Windows-Anwendungspakete** in der C# Kategorie aus, und klicken Sie auf **weiter**.
 
     ![Paketerstellungsprojekt für Windows-Anwendungen](images/wpf-modernize-tutorial/WAP.png)
 
-4. Nennen Sie das neue Projekt `ContosoExpenses.Package` , und klicken Sie auf **erstellen**.
+4. Benennen Sie das neue `ContosoExpenses.Package` Projekt, und klicken Sie auf **Erstellen**.
 
-5. Wählen Sie **Windows 10, Version 1903 (10.0; Erstellen Sie 18362)** für beide die **Zielversion** und **Mindestversion** , und klicken Sie auf **OK**.
+5. Wählen Sie **Windows 10, Version 1903 (10,0; Build 18362)** für die **Zielversion** und die **Mindestversion** , und klicken Sie auf **OK**.
 
-    Die **ContosoExpenses.Package** Projekt wird hinzugefügt, um die **ContosoExpenses** Lösung. Dieses Projekt enthält eine [Paketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root), das beschreibt, die Anwendung, und einige Standard-Objekte, die für Elemente wie das Symbol in das Menü "Programme" und die Kachel auf dem Startbildschirm verwendet werden. Im Gegensatz zu einer UWP-Projekt enthalten nicht das Packaging-Projekt jedoch Code. Dient zum Packen einer vorhandenen desktop-app.
+    Das Projekt **condesoaufwands. Package** wird der Projekt Mappe **condesoaufwands** hinzugefügt. Dieses Projekt enthält ein [Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root), in dem die Anwendung beschrieben wird, sowie einige Standardobjekte, die für Elemente verwendet werden, z. b. das Symbol im Menü Programme und die Kachel auf dem Start Bildschirm. Anders als bei einem UWP-Projekt enthält das Paket Erstellungs Projekt jedoch keinen Code. Der Zweck besteht darin, eine vorhandene Desktop-App zu verpacken.
 
-6. In der **ContosoExpenses.Package** Projekt der rechten Maustaste auf die **Anwendungen** Knoten, und wählen Sie **Verweis hinzufügen**. Dieser Knoten gibt an, welche Anwendungen in der Projektmappe im Paket enthalten sein werden.
+6. Klicken Sie im Projekt **contosoaufwendungen. Package** mit der rechten Maustaste auf den Knoten **Anwendungen** , und wählen Sie **Verweis hinzufügen**aus. Dieser Knoten gibt an, welche Anwendungen in der Lösung in das Paket aufgenommen werden.
 
-7. Wählen Sie in der Liste der Projekte, **ContosoExpenses.Core** , und klicken Sie auf **OK**.
+7. Wählen Sie in der Liste der Projekte die Option **contosoaufwendungen. Core** aus, und klicken Sie auf **OK**.
 
-8. Erweitern Sie die **Anwendungen** Knoten und überprüfen Sie, die die **ContosoExpense.Core** Projekt verwiesen wird und in Fettschrift hervorgehoben. Dies bedeutet, dass es als Ausgangspunkt für das Paket verwendet wird.
+8. Erweitern Sie den Knoten **Anwendungen** , und vergewissern Sie sich, dass auf das Projekt **contosospesen. Core** verwiesen wird und fett hervorgehoben ist. Dies bedeutet, dass Sie als Ausgangspunkt für das Paket verwendet wird.
 
-9. Mit der rechten Maustaste die **ContosoExpenses.Package** Projekt, und wählen **als Startprojekt festlegen**.
+9. Klicken Sie mit der rechten Maustaste auf das Projekt **condesoaufwands. Package** , und wählen Sie **als Startprojekt festlegen**aus.
 
-10. Drücken Sie **F5** die Pakete-app im Debugger zu starten.
+10. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Projekt Knoten **condesoaufwendungen. Paket** , und wählen Sie **Projektdatei bearbeiten**aus.
 
-An diesem Punkt können Sie einige Änderungen bemerken, die angeben, dass die app ist nun ebenfalls enthalten:
+11. Suchen Sie das `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />`-Element in der Datei.
 
-- Das Symbol auf der Taskleiste oder im Startmenü ist jetzt das Standard-Objekt, der Bestandteil jedes **Paketerstellungsprojekt für Windows-Anwendungen**.
-- Wenn Sie mit der rechten Maustaste die **ContosoExpense.Package** Anwendung im Startmenü, sehen Sie Optionen, die in der Regel für die apps aus dem Microsoft Store, z. B. reserviert sind **Anwendungseinstellungen**, **Bewerten und überprüfen Sie** und **Freigabe**.
+12. Ersetzen Sie dieses Element durch den folgenden XML-Code.
 
-    ![ContosoExpenses im Menü "Start"](images/wpf-modernize-tutorial/StartMenu.png)
+    ``` xml
+    <ItemGroup>
+        <SDKReference Include="Microsoft.VCLibs,Version=14.0">
+        <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
+        <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
+        <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
+        <Implicit>true</Implicit>
+        </SDKReference>
+    </ItemGroup>
+    <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+    <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
+        <ItemGroup>
+        <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
+        <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
+        <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
+            <SourceProject>
+            </SourceProject>
+        </_FilteredNonWapProjProjectOutput>
+        </ItemGroup>
+    </Target>
+    ```
 
-- Wenn Sie die app deinstallieren möchten, Sie können mit der rechten Maustaste **ContosoExpense.Package** im Startmenü, und wählen Sie **Deinstallieren**. Die app wird sofort entfernt werden ohne jede Überbleibsel auf dem System verlassen zu müssen.
+13. Speichern Sie die Projektdatei, und schließen Sie Sie.
 
-## <a name="test-the-notification"></a>Zum Testen der Benachrichtigung
+14. Drücken Sie **F5** , um die APP im Debugger zu starten.
 
-Nun, da Sie die Contoso-Ausgaben-app mit MSIX verpackt haben, können Sie das Notification-Szenario, das am Ende der Arbeit war nicht testen [Teil 4](modernize-wpf-tutorial-4.md).
+An diesem Punkt können Sie einige Änderungen bemerken, die darauf hinweisen, dass die App nun als verpackt ausgeführt wird:
 
-1. In der Contoso-Ausgaben-app, wählen Sie einen Mitarbeiter aus der Liste aus, und klicken Sie dann auf die **Hinzufügen von neuen Ausgaben** Schaltfläche. 
-2. Füllen Sie alle Felder in der Form, und drücken Sie **speichern**.
-3. Vergewissern Sie sich, dass Sie eine Betriebssystem-Benachrichtigung angezeigt.
+- Das Symbol in der Taskleiste oder im Startmenü ist nun das Standard Objekt, das in jedem Windows- **Anwendungspaket**enthalten ist.
+- Wenn Sie mit der rechten Maustaste auf die Anwendung **condesospesen. Package** im Startmenü klicken, werden Optionen angezeigt, die in der Regel für apps reserviert sind, die vom Microsoft Store heruntergeladen werden, z. b. **App-Einstellungen**, **Rate und Überprüfung** und **Freigabe.** .
 
-![Toast-Benachrichtigung](images/wpf-modernize-tutorial/ToastNotification.png)
+    ![Conum-Ausgaben im Startmenü](images/wpf-modernize-tutorial/StartMenu.png)
+
+- Wenn Sie die APP deinstallieren möchten, klicken Sie im Startmenü mit der rechten Maustaste auf **condesospesen. Package** , und wählen Sie **deinstallieren**aus. Die APP wird sofort entfernt, ohne dass Sie auf dem System übrig bleibt.
+
+## <a name="test-the-notification"></a>Testen der Benachrichtigung
+
+Nachdem Sie die APP für die kostenpflichtige Geräteverwaltung mit msix verpackt haben, können Sie das Benachrichtigungs Szenario testen, das am Ende von [Teil 4](modernize-wpf-tutorial-4.md)nicht funktionierte.
+
+1. Wählen Sie in der APP für die kostenpflichtige app einen Mitarbeiter aus der Liste aus, und klicken Sie dann auf die Schaltfläche **neue Ausgaben hinzufügen** . 
+2. Vervollständigen Sie alle Felder im Formular, und klicken Sie auf **Speichern**.
+3. Vergewissern Sie sich, dass eine Betriebssystem Benachrichtigung angezeigt wird.
+
+![Popup Benachrichtigung](images/wpf-modernize-tutorial/ToastNotification.png)
