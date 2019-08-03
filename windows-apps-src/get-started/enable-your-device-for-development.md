@@ -6,12 +6,12 @@ keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c1979f8e8232ee3bfd2e2961307608bf8da7836
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 09f115cad236582ccb0008c2274a7472ed4c0d55
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714150"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682658"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
@@ -60,7 +60,7 @@ Die Einstellung für das Querladen von Apps wird normalerweise von Unternehmen o
 
 Spezifische Informationen für Gerätefamilien
 
--   Desktopgeräte: Du kannst ein App-Paket (APPX-Datei) sowie sämtliche Zertifikate, die zum Ausführen der App benötigt werden, mithilfe des Windows PowerShell-Skripts installieren, das mit dem Paket erstellt wird („Add-AppDevPackage.ps1“). Weitere Informationen finden Sie unter [Verpacken von UWP-Apps](../packaging/packaging-uwp-apps.md).
+-   Desktopgeräte: Du kannst ein App-Paket (APPX-Datei) sowie sämtliche Zertifikate, die zum Ausführen der App benötigt werden, mithilfe des Windows PowerShell-Skripts installieren, das mit dem Paket erstellt wird („Add-AppDevPackage.ps1“). Weitere Informationen finden Sie unter [Verpacken von UWP-Apps](/windows/msix/package/packaging-uwp-apps).
 
 -   Mobilgeräte: Wenn das erforderliche Zertifikat bereits installiert ist, kannst du auf die Datei tippen, um alle APPX-Dateien zu installieren, die du per E-Mail oder auf einer SD-Karte erhalten hast.
 

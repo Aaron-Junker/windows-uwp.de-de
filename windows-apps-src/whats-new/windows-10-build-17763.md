@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d393ee92be8768861da0fb0783372c8bafc6f815
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: faf3cdc1a3fab3bd0332b995c25b081d296a55bb
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821111"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682777"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Neuigkeiten für Entwickler in Windows 10, Build 17763
 
@@ -83,7 +83,7 @@ Feature | Beschreibung
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview) ist das neue, moderne Paketformat für alle Windows-Apps. Das MSIX-Format (Open Source) bewahrt die Funktionalität vorhandener Pakete und ermöglicht gleichzeitig moderne Bereitstellungsfunktionen.
 MSIX-Verpackungstool | Das neue [MSIX-Verpackungstool](https://docs.microsoft.com/windows/msix/mpt-overview) ermöglicht es Ihnen, Ihre vorhandenen Desktopanwendungen neu im MSIX-Format zu verpacken, selbst wenn Sie keinen Zugriff auf deren Quellcode haben. Das Tool kann in der Befehlszeile oder über seine interaktive Benutzeroberfläche ausgeführt werden.
 Unterstützung von Desktop-App-Konverter für MSIX | Sie können den [Desktop-App-Konverter](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) verwenden, um ein MSIX-Paket auszugeben. Dazu verwenden Sie den `-MakeMSIX`-Parameter.
-MakeAppx.exe-Toolunterstützung für MSIX | Sie können das MakeAppx.exe-Tool verwenden, um ein MSIX-Paket für UWP-Apps oder herkömmliche Desktopanwendungen zu erstellen. Dieses Tool ist im Windows 10 SDK enthalten und kann über eine Eingabeaufforderung oder eine Skriptdatei verwendet werden. </br> Informationen zu UWP-Apps finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). </br> Informationen zu Desktopanwendungen finden Sie unter [Manuelles Verpacken einer Desktopanwendung](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion).
+MakeAppx.exe-Toolunterstützung für MSIX | Sie können das MakeAppx.exe-Tool verwenden, um ein MSIX-Paket für UWP-Apps oder herkömmliche Desktopanwendungen zu erstellen. Dieses Tool ist im Windows 10 SDK enthalten und kann über eine Eingabeaufforderung oder eine Skriptdatei verwendet werden. </br> Informationen zu UWP-Apps finden Sie unter [Erstellen eines App-Pakets mit dem Tool „MakeAppx.exe“](/windows/msix/package/create-app-package-with-makeappx-tool). </br> Informationen zu Desktopanwendungen finden Sie unter [Manuelles Verpacken einer Desktopanwendung](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion).
 Framework zur Paketunterstützung (Package Support Framework, PSF) | Das [Package Support Framework](https://docs.microsoft.com/windows/msix/package-support-framework-overview) ist ein Open Source-Kit, über das Sie Korrekturen auf Ihre vorhandenen Desktopanwendungen anwenden können, wenn Sie keinen Zugriff auf den Quellcode haben, die Anwendungen aber in einem MSIX-Container ausführen möchten.
 Store-Analyse-API | Die [Microsoft Store-Analyse-API](../monetize/access-analytics-data-using-windows-store-services.md) enthält jetzt die folgenden neuen Methoden: </br> * [Abrufen von Analysedaten für Ihre UWP-App](../monetize/get-insights-data-for-your-app.md) </br> * [Abrufen von Analysedaten für Ihre Desktopanwendung](../monetize/get-insights-data-for-your-desktop-app.md) </br>* [Abrufen von Upgradeblockierungen für Ihre Desktopanwendung](../monetize/get-desktop-block-data.md) </br> * [Abrufen von Details zur Upgradeblockierung für Ihre Desktopanwendung](../monetize/get-desktop-block-data-details.md)
 
