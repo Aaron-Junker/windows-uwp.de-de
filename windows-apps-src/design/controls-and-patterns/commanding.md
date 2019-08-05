@@ -4,13 +4,13 @@ description: In diesem Artikel wird beschrieben, wie die XamlUICommand-Klasse un
 author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
-ms.date: 03/11/2019
-ms.openlocfilehash: a85a101cd529bf487cbc97b93bb3905f28213c19
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.date: 07/23/2019
+ms.openlocfilehash: 338cae7b6238c3c773f409322600c8bee8c193f5
+ms.sourcegitcommit: 401c8ecaf74eee247f1ed0093028cc6558b4a605
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793856"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68446371"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Befehle in UWP-Apps (Universelle Windows-Plattform), die StandardUICommand, XamlUICommand und ICommand verwenden
 
@@ -36,9 +36,11 @@ Befehle können direkt über UI-Interaktionen aufgerufen werden, z. B. durch Kl
 
 Befehle können in einem bestimmten Kontext der App ausgeführt werden (z. B. Löschen von Text oder Rückgängigmachen einer Aktion), oder sie können kontextfrei sein (z. B. Stummschalten von Audio oder Einstellen der Helligkeit).
 
-In der folgenden Abbildung sind zwei Befehlsschnittstellen (eine [CommandBar](app-bars.md) und ein unverankertes, kontextbezogenes [CommandBarFlyout](command-bar-flyout.md)) dargestellt, die viele Befehle gemeinsam nutzen.
+In der folgenden Abbildung sind zwei Befehlsschnittstellen (eine [CommandBar](app-bars.md) und ein unverankertes, kontextbezogenes [CommandBarFlyout](command-bar-flyout.md)) dargestellt, die einige Befehle gemeinsam nutzen.
 
-![Beispiel für Befehlsschnittstelle](images/commanding/command-interface-example.png)
+![Befehlsleiste in Microsoft Fotos](images/control-examples/command-bar-photos.png)<br>*Befehlsleiste in Microsoft Fotos*
+
+![Kontextmenü in der Microsoft Fotos-Galerie](images/ContextMenu_example.png)<br>*Kontextmenü in der Microsoft Fotos-Galerie*
 
 ## <a name="command-interactions"></a>Befehlsinteraktionen
 
@@ -61,7 +63,7 @@ In der nachstehenden Tabelle sind einige typische Befehle für Sammlungen sowie 
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Element löschen      | Kontextmenü   | Hoverschaltfläche      | ENTF-TASTE              | Löschen per Wischen   |
 | Element kennzeichnen        | Kontextmenü   | Hoverschaltfläche      | STRG+UMSCHALT+G         | Kennzeichnen per Wischen     |
-| Daten aktualisieren     | Kontextmenü   | N/V               | F5-TASTE               | Aktualisierung durch Ziehen   |
+| Daten aktualisieren     | Kontextmenü   | NICHT ZUTREFFEND               | F5-TASTE               | Aktualisierung durch Ziehen   |
 | Element als Favorit speichern | Kontextmenü   | Hoverschaltfläche      | F-TASTE, STRG+S            | Als Favorit speichern per Wischen |
 
 **Stellen Sie stets ein Kontextmenü bereit** Wir empfehlen, alle relevanten kontextbezogenen Befehle in einem traditionellen Kontextmenü oder in CommandBarFlyout einzuschließen, da beide für sämtliche Eingabetypen unterstützt werden. Wenn ein Befehl beispielsweise nur während eines Mauszeiger-Hoverereignisses verfügbar gemacht wird, kann er nicht auf einem reinen Toucheingabegerät verwendet werden.
@@ -1084,7 +1086,7 @@ Verfolgen Sie beim Erstellen von Befehlen für Ihre UWP-Apps folgende Ansätze:
 
 Ein komplettes Beispiel, das eine Implementierung von [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) und [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) veranschaulicht, finden Sie im Beispiel zum [XAML-Steuerelementekatalog](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Steuerelemente und Muster für UWP-Apps](index.md)
 

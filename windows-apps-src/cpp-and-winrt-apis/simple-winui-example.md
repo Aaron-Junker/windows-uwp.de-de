@@ -5,16 +5,16 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 082e7ca0684495e1f67c2fa79b448866f68a059c
-ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
+ms.openlocfilehash: 5d0066abb2a6eb15f1d31aaf930ed2c0f0faf81a
+ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2019
-ms.locfileid: "67870345"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372718"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>Eine einfache C++/WinRT-Windows-UI-Beispielbibliothek
 
-Dieses Thema führt durch den Prozess zum Hinzufügen einer einfachen Unterstützung für die Windows-UI-Bibliothek (WinUI) zu einem C++/WinRT-Projekt.
+Dieses Thema führt durch den Prozess zum Hinzufügen einer einfachen Unterstützung für die [Windows-UI-Bibliothek (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) zu einem C++/WinRT-Projekt. Die Windows-UI-Bibliothek ist übrigens ebenfalls in C++/WinRT geschrieben.
 
 > [!NOTE]
 > Das Toolkit für die Windows-UI-Bibliothek (WinUI) steht in Form von NuGet-Paketen zur Verfügung, die mithilfe von Visual Studio zu einem vorhandenen oder neuen Projekt hinzugefügt werden können, wie wir in diesem Thema sehen werden. Weitere Hintergrundinformationen sowie Details zu Einrichtung und Unterstützung findest du unter [Erste Schritte mit der Windows-UI-Bibliothek](/uwp/toolkits/winui/getting-started).
@@ -49,7 +49,9 @@ Klicke auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, gib 
 
 ## <a name="edit-mainpageh-and-cpp-as-necessary"></a>Bearbeiten von „MainPage.h“ und „MainPage.cpp“ nach Bedarf
 
-Bearbeite in `MainPage.h` die Includes, sodass sie wie folgt aussehen.
+Wenn Sie einem C++/WinRT-Projekt ein NuGet-Paket hinzufügen (z. B. das Paket **Microsoft.UI.Xaml**, das Sie zuvor hinzugefügt haben), generieren die Tools einen Satz von Projektionsheadern im Ordner `\Generated Files\winrt` des Projekts. Wenn Sie diese Headerdateien in das Projekt einbinden möchten, damit Verweise auf diese neuen Typen aufgelöst werden, müssen Sie sie einschließen.
+
+Bearbeiten Sie also in `MainPage.h` die Includes, sodass sie wie in der folgenden Auflistung aussehen. Wenn Sie WinUI von mehreren XAML-Seiten verwenden möchten, können Sie die vorkompilierte Headerdatei öffnen (in der Regel `pch.h`) und sie stattdessen dort einfügen.
 
 ```cppwinrt
 #include "MainPage.g.h"

@@ -6,14 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, neuerungen, neues
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 524d0f2d9e428e87187ca27747fbd1c54406d345
-ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
+ms.openlocfilehash: e1fd738435b8622a2db2e849abf1c4984bb7ae64
+ms.sourcegitcommit: fccefde61a155a4a5a866acd1c4c9de42a14ddfd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68308442"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507730"
 ---
 # <a name="whats-new-in-cwinrt"></a>Neuerungen in C++/WinRT
+
+Bei Veröffentlichung zukünftiger Versionen von C++/WinRT werden in diesem Thema jeweils die Neuerungen und Änderungen beschrieben.
 
 ## <a name="news-and-changes-in-cwinrt-20"></a>Neuerungen und Änderungen in C++/WinRT 2.0
 
@@ -49,22 +51,14 @@ Dank des xlang-Metadatenreaders hat das `cppwinrt.exe`-Tool weniger Abhängigkei
  
 Im Folgenden sind alle Abhängigkeiten für `cppwinrt.exe` 2.0 aufgelistet:
  
-- api-ms-win-core-processenvironment-l1-1-0.dll
-- api-ms-win-core-libraryloader-l1-2-0.dll
-- XmlLite.dll
-- api-ms-win-core-memory-l1-1-0.dll
-- api-ms-win-core-handle-l1-1-0.dll
-- api-ms-win-core-file-l1-1-0.dll
-- SHLWAPI.dll
 - ADVAPI32.dll
 - KERNEL32.dll
-- api-ms-win-core-rtlsupport-l1-1-0.dll
-- api-ms-win-core-processthreads-l1-1-0.dll
-- api-ms-win-core-heap-l1-1-0.dll
-- api-ms-win-core-console-l1-1-0.dll
-- api-ms-win-core-localization-l1-2-0.dll
+- SHLWAPI.dll
+- XmlLite.dll
 
-Hier sehen Sie die Abhängigkeiten von `cppwinrt.exe` 1.0:
+Alle diese DLLs sind nicht nur unter Windows 10 verfügbar, sondern bis zurück zu Windows 7 und sogar Windows Vista. Bei Bedarf kann der alte Buildserver unter Windows 7 nun `cppwinrt.exe` ausführen, um C++-Header für Ihr Projekt zu generieren. Mit etwas Aufwand können Sie sogar [C++/WinRT unter Windows 7 ausführen](https://github.com/kennykerr/win7), falls dies für Sie von Interesse ist.
+
+Vergleichen Sie die Liste oben mit den folgenden Abhängigkeiten, die für `cppwinrt.exe` 1.0 bestehen.
 
 - ADVAPI32.dll
 - SHELL32.dll
@@ -150,7 +144,9 @@ Ein neues Projekt (aus einer Projektvorlage) verwendet standardmäßig `-opt`.
 
 ##### <a name="uniform-construction-and-direct-implementation-access"></a>Einheitliche Konstruktion und direkter Implementierungszugriff
 
-Durch diese beiden Optimierungen erhält Ihre Komponente direkten Zugriff auf ihre eigenen Implementierungstypen, auch wenn sie nur die projizierten Typen verwendet. Wenn Sie nur die API-Oberfläche verwenden möchten, ist es nicht erforderlich, [**make**](/uwp/cpp-ref-for-winrt/make), [**make_self**](/uwp/cpp-ref-for-winrt/make-self) oder [**get_seöf**](/uwp/cpp-ref-for-winrt/get-self) zu verwenden. Ihre Aufrufe werden als direkte Aufrufe in der Implementierung kompiliert und werden möglicherweise komplett per Inlineersetzung optimiert. Weitere Informationen über die einheitliche Konstruktion finden Sie in den häufig gestellten Fragen unter [Warum erhalte ich die Ausnahme „Klasse nicht registriert“?](faq.md#why-am-i-getting-a-class-not-registered-exception).
+Durch diese beiden Optimierungen erhält Ihre Komponente direkten Zugriff auf ihre eigenen Implementierungstypen, auch wenn sie nur die projizierten Typen verwendet. Wenn Sie nur die API-Oberfläche verwenden möchten, ist es nicht erforderlich, [**make**](/uwp/cpp-ref-for-winrt/make), [**make_self**](/uwp/cpp-ref-for-winrt/make-self) oder [**get_seöf**](/uwp/cpp-ref-for-winrt/get-self) zu verwenden. Ihre Aufrufe werden als direkte Aufrufe in der Implementierung kompiliert und werden möglicherweise komplett per Inlineersetzung optimiert.
+
+Weitere Informationen und Codebeispiele finden Sie unter [Aktivieren von einheitlicher Konstruktion und direktem Implementierungszugriff](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 ##### <a name="type-erased-factories"></a>Factorys ohne Typen
 
@@ -186,9 +182,11 @@ fire_and_forget Async(DispatcherQueueController controller)
 
 Die Coroutinehilfsobjekte können jetzt auch mit `[[nodiscard]]` versehen werden, sodass ihre Verwendbarkeit verbessert wird. Wenn Sie vergessen, `co_await` zu verwenden (oder nicht wissen, dass dies erforderlich ist), führen derartige Fehler aufgrund von `[[nodiscard]]` jetzt zu Compilerwarnungen.
 
-#### <a name="help-with-diagnosing-stack-allocations"></a>Hilfe bei der Diagnose von Stapelzuweisungen
+#### <a name="help-with-diagnosing-direct-stack-allocations"></a>Hilfe bei der Diagnose von direkten (Stapel-)Zuweisungen
 
 Da die projizierten und Implementierungsklassennamen (standardmäßig) übereinstimmen und sich nur beim Namespace unterscheiden, kann es passieren, dass Sie sie verwechseln und versehentlich eine Implementierung auf dem Stapel statt mit den Hilfsfunktionen der [**make**](/uwp/cpp-ref-for-winrt/make)-Familie erstellen. Die Diagnose diese Problems ist nicht immer leicht, da das Objekt möglicherweise gelöscht wird, während ausstehende Verweise noch aktiv sind. Eine Assertion erkennt dies jetzt in Debugbuilds. Die Assertion erkennt zwar keine Stapelzuweisungen in einer Coroutine, ist aber dennoch hilfreich, die meisten dieser Fehler zu erkennen.
+
+Weitere Informationen finden Sie unter [Diagnostizieren direkter Zuordnungen](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
 
 #### <a name="improved-capture-helpers-and-variadic-delegates"></a>Verbesserte capture-Hilfsfunktionen und variadische Delegaten
 
@@ -257,6 +255,8 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
+Weitere Informationen finden Sie unter [Informationen zu Destruktoren](/windows/uwp/cpp-and-winrt-apis/details-about-destructors).
+
 #### <a name="improved-support-for-com-style-single-interface-inheritance"></a>Verbesserte Unterstützung für die Vererbung einer Schnittstelle (COM)
 
 C++/WinRT wird nicht nur für die Windows-Runtime-Programmierung sondern auch zum Erstellen und Verwenden von Nur-COM-APIs verwendet. Mit diesem Update können Sie einen COM-Server mit einer Schnittstellenhierarchie implementieren. Dies ist für die Windows-Runtime nicht erforderlich, jedoch für einige COM-Implementierungen.
@@ -283,7 +283,7 @@ In der unten stehenden Tabelle werden Änderungen für C++/WinRT im Windows SDK,
 | Das Systemformat von Visual Studio-Projekten hat sich geändert. | Weitere Informationen finden Sie unten unter [Festlegen des Ziels Ihres C++/WinRT-Projekt auf eine spätere Version des Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | Es gibt neue Funktionen und Basisklassen, mit denen Sie ein Sammlungsobjekt an eine Windows-Runtime-Funktion übergeben oder Ihre eigenen Sammlungseigenschaften und Sammlungstypen implementieren können. | Weitere Informationen finden Sie unter [Collections with C++/WinRT (Sammlungen in C++/WinRT)](collections.md). |
 | Sie können die Markup-Erweiterung [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) mit Ihren C++/WinRT-Runtimeklassen verwenden. | Weitere Informationen und Codebeispiele finden Sie in der [Übersicht über Datenbindung](/windows/uwp/data-binding/data-binding-quickstart). |
-| Durch Unterstützung für das Abbrechen einer Coroutine können Sie einen Abbruchsrückruf registrieren. | Weitere Informationen finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency.md#canceling-an-asychronous-operation-and-cancellation-callbacks). |
+| Durch Unterstützung für das Abbrechen einer Coroutine können Sie einen Abbruchsrückruf registrieren. | Weitere Informationen finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency-2.md#canceling-an-asychronous-operation-and-cancellation-callbacks). |
 | Beim Erstellen eines Delegaten, der auf eine Memberfunktion zeigt, können Sie einen starken oder einen schwachen Verweis auf das aktuelle Objekt (statt eines unformatierten *this*-Zeiger) erstellen. | Weitere Informationen und Codebeispiele finden Sie im Unterabschnitt **If you use a member function as a delegate (Wenn Sie eine Memberfunktion als Delegaten verwenden)** im Artikel [*Strong and weak references in C++/WinRT (Starke und schwache Verweise in C++/WinRT)* ](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
 | Es wurden Probleme behoben, die durch die verbesserte Konformität mit dem C++-Standard in Visual Studio erkannt wurden. Die LLVM- und Clang-Toolkette wird zudem besser eingesetzt, um die Konformität mit Standards in C++/WinRT zu prüfen. | Das unter [Warum wird mein neues Projekt nicht kompiliert? Ich verwende Visual Studio 2017 (Version 15.8.0 oder höher) und die SDK-Version 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) beschriebene Problem tritt nicht mehr auf. |
 

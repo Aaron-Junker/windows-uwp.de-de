@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, häufig, gestellte, fragen, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ff6fb443550287330d6fe503c3d49d81e2142c
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 6bac3fec34467f29d9cf2cc3f1ce4e3754187745
+ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717640"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485150"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Häufig gestellte Fragen zu C++/WinRT
 Hier finden Sie Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -63,15 +63,9 @@ Eine mögliche Ursache ist, dass Ihre Windows Runtime-Komponente nicht geladen w
 
 ### <a name="uniform-construction"></a>Einheitliche Konstruktion
 
-Dieser Fehler kann auch auftreten, wenn Sie versuchen, eine lokal implementierte Laufzeitklasse über einen der Konstruktoren des projizierten Typs zu instanziieren (nicht über den **std::nullptr_t**-Konstruktor). Hierfür benötigen Sie das C++/WinRT-2.0-Feature, das häufig als einheitliche Konstruktion bezeichnet wird. Informationen zum Instanziieren von lokal implementierten Laufzeitklassen, die *keine* einheitliche Konstruktion erfordern, finden Sie unter [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md).
+Dieser Fehler kann auch auftreten, wenn Sie versuchen, eine lokal implementierte Laufzeitklasse über einen der Konstruktoren des projizierten Typs zu instanziieren (nicht über den **std::nullptr_t**-Konstruktor). Hierfür benötigen Sie das C++/WinRT-2.0-Feature, das häufig als einheitliche Konstruktion bezeichnet wird. Wenn Sie dieses Feature abonnieren möchten, finden Sie weitere Informationen und Codebeispiele unter [Aktivieren von einheitlicher Konstruktion und direktem Implementierungszugriff](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
 
-Für neue Projekte ist die einheitliche Konstruktion standardmäßig *aktiviert*. Für vorhandene Projekte müssen Sie die einheitliche Konstruktion festlegen, indem Sie das Tool `cppwinrt.exe` konfigurieren. Legen Sie in Visual Studio die Projekteigenschaft **Allgemeine Eigenschaften** > **C++/WinRT** > **Optimiert** auf *Ja* fest. Hierdurch wird der Projektdatei `<CppWinRTOptimized>true</CppWinRTOptimized>` hinzugefügt. Dies hat dieselbe Wirkung wie das Hinzufügen des Schalters `-opt[imize]` beim Aufruf von `cppwinrt.exe` über die Befehlszeile.
-
-Wenn Sie das Projekt *ohne* diese Einstellung erstellen, ruft die resultierende C++/WinRT-Projektion [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory) auf, um auf die Konstruktoren und statischen Member der Laufzeitklasse zuzugreifen. Dies erfordert, dass die Klassen registriert werden und dass das Modul den Einstiegspunkt [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) implementiert.
-
-Wenn Sie das Projekt *mit* dem Schalter `-opt[imize]` erstellen, umgeht das Projekt **RoGetActivationFactory** für die Klassen in der Komponente, sodass Sie sie auf die gleiche Weise wie Klassen außerhalb der Komponente erstellen können (ohne sie registrieren zu müssen).
-
-Um die einheitliche Konstruktion zu verwenden, müssen Sie zudem jeder `.cpp`-Datei der Implementierung `#include <Sub/Namespace/ClassName.g.cpp>` hinzufügen, nachdem Sie die Headerdatei für die Implementierung eingeschlossen haben.
+Informationen zum Instanziieren von lokal implementierten Laufzeitklassen, die *keine* einheitliche Konstruktion erfordern, finden Sie unter [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md).
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Sollte ich [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) implementieren und wenn ja, wie?
 Wenn Sie eine Laufzeitklasse verwenden, die Ressourcen in ihrem Destruktor freigibt, und diese Laufzeitklasse von außerhalb ihrer implementierenden Kompilierungseinheit genutzt werden kann (eine für die allgemeine Nutzung durch Windows-Runtime-Clientanwendungen vorgesehene Komponente für Windows-Runtime ist), dann empfehlen wir Ihnen, auch  **IClosable** zu implementieren, um die Nutzung Ihrer Laufzeitklasse durch Sprachen ohne deterministische Finalisierung zu unterstützen. Stellen Sie sicher, dass Ihre Ressourcen freigegeben werden – unabhängig davon, ob der Destruktor, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) oder beide aufgerufen werden. **IClosable::Close** kann beliebig oft aufgerufen werden.

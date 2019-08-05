@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, winrt, Projektion, Erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: 64104124a6342da3f6963c61bafc871838fd00f6
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 346877178b4450df5fb0151656d58e203ea0be63
+ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721678"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372736"
 ---
 # <a name="get-started-with-cwinrt"></a>Erste Schritte mit C++/WinRT
 
@@ -159,13 +159,33 @@ Sie können auch die Verknüpfungseinstellungen des Projekts verwenden, um `Wind
 
 Jetzt können Sie kompilieren und verknüpfen und Ihrem Projekt C++/WinRT-Code hinzufügen (beispielsweise Code ähnlich dem im Abschnitt [Schnelleinstieg zu C++/WinRT](#a-cwinrt-quick-start) oben).
 
+## <a name="the-three-main-scenarios-for-cwinrt"></a>Die drei wichtigsten Szenarien für C++/WinRT
+
+Wenn Sie C++/WinRT verwenden und sich damit ebenso wie mit der restlichen Dokumentation hier vertraut machen, werden Sie wahrscheinlich feststellen, dass es drei Hauptszenarien gibt, die in den folgenden Abschnitten beschrieben werden.
+
+### <a name="consuming-windows-runtime-apis-and-types"></a>Verarbeiten von Windows-Runtime-APIs und -Typen
+
+Mit anderen Worten: Es geht um das *Verwenden* oder *Aufrufen* von APIs. Beispiele sind API-Aufrufe für die Kommunikation über Bluetooth, das Streamen und Präsentieren von Videos, die Integration in die Windows-Shell usw. C++/WinRT unterstützt diese Kategorie von Szenarien uneingeschränkt. Weitere Informationen finden Sie unter [Nutzen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+
+### <a name="authoring-windows-runtime-apis-and-types"></a>Erstellen von Windows-Runtime APIs und -Typen
+
+Das heißt, das *Erstellen* von APIs und Typen. Beispielsweise werden die Arten von APIs erzeugt, die im Abschnitt oben beschrieben werden, die Grafik-APIs oder die Speicher- und Dateisystem-APIs, die Netzwerk-APIs usw. Weitere Informationen finden Sie unter [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+
+Das Erstellen von APIs mit C++/WinRT ist etwas komplizierter als deren Verwendung, da Sie die Form der API mit IDL definieren müssen, bevor Sie sie implementieren können. Eine exemplarische Vorgehensweise finden Sie unter [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](/windows/uwp/cpp-and-winrt-apis/binding-property).
+
+### <a name="xaml-applications"></a>XAML-Anwendungen
+
+Dieses Szenario dient dem Entwickeln von Anwendungen und Steuerelementen im XAML-UI-Framework. Das Arbeiten in einer XAML-Anwendung vereint Nutzung und Erstellung. Da XAML heute jedoch das vorherrschende UI-Framework unter Windows ist und dessen Auswirkungen auf die Windows-Runtime entsprechend zunehmen, verdient es eine eigene Kategorie von Szenarien.
+
+Beachten Sie, dass XAML am besten für Programmiersprachen geeignet ist, die Reflektion unterstützen. In C++/WinRT müssen Sie manchmal einen etwas höheren Aufwand betreiben, um mit dem XAML-Framework zusammenzuarbeiten. Alle diese Fälle werden in der Dokumentation behandelt. Ein guter Ausgangspunkt ist [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](/windows/uwp/cpp-and-winrt-apis/binding-property) sowie [Benutzerdefinierte (vorlagenbasierte) XAML-Steuerelemente mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl).
+
 ## <a name="important-apis"></a>Wichtige APIs
 * [SyndicationClient::RetrieveFeedAsync-Methode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed.Items-Eigenschaft](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [winrt::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::hresult_error-Struktur](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Fehlerbehandlung bei C++/WinRT](error-handling.md)
 * [Interoperabilität zwischen C++/WinRT und C++/CX](interop-winrt-cx.md)
