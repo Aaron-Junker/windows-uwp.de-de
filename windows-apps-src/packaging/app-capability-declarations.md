@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 21df2a5b12af7b84c0d3f857f121820c35424fb6
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 2a846fee7f72242d9e3becc19cf5be71128dbd9e
+ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682602"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796729"
 ---
 # <a name="app-capability-declarations"></a>Deklarationen von App-Funktionen
 
@@ -62,7 +62,7 @@ Funktionen zur allgemeinen Verwendung gelten für die meisten allgemeinen App-Sz
 Gerätefunktionen ermöglichen Ihrer App den Zugriff auf Peripheriegeräte und interne Geräte. Gerätefunktionen werden mit dem **DeviceCapability**-Element in Ihrem App-Paketmanifest angegeben. Dieses Element erfordert unter Umständen zusätzliche untergeordnete Elemente. Einige Gerätefunktionen müssen dem Paketmanifest manuell hinzugefügt werden. Weitere Informationen finden Sie unter [Angeben von Gerätefunktionen in einem Paketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) und [**Schemareferenz zu DeviceCapability**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
 
 > [!NOTE]
-> Sie können über mehrere **devicecapability** -und **Capability** -Elemente **unter dem Capability** -Element verfügen, aber alle **devicecapability** -Elemente müssen **nach den** Funktions Elementen stehen.
+> Sie können über mehrere **devicecapability** -und **Capability** -Elemente unter dem capability-Element verfügen, aber alle **devicecapability** - Elemente müssen nach den Funktions Elementen stehen.
 
 | Funktionsszenario | Funktionsnutzung |
 |---------------------|------------------|
@@ -93,7 +93,7 @@ Wenn Ihre APP eingeschränkte Funktionen deklariert, müssen Sie während des Ap
 
 Stellen Sie sicher, dass Sie diese eingeschränkten Funktionen nur dann deklarieren, wenn Ihre APP Sie tatsächlich benötigt. Es gibt Fälle, in denen solche Funktionen notwendig und angemessen sind. Dazu gehört beispielsweise das Banking mit zweistufiger Authentifizierung, bei der Benutzer eine Smartcard mit einem digitalen Zertifikat bereitstellen, das ihre Identität bestätigt. Andere Apps werden unter Umständen in erster Linie für Unternehmenskunden entworfen und erfordern ggf. Zugriff auf Unternehmensressourcen, auf die nur mit den Domänenanmeldeinformationen des Benutzers zugegriffen werden kann.
 
-Um eine eingeschränkte Funktion zu deklarieren, ändern Sie die Quelldatei für`Package.appxmanifest`das [App-Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) (). Fügen Sie die XML-Namespace Deklaration **xmlns: rescap** hinzu, und verwenden Sie das cmdx **-Präfix** , wenn Sie die eingeschränkte Funktion deklarieren Hier sehen Sie z. B., wie die **appCaptureSettings**-Funktion deklariert wird.
+Um eine eingeschränkte Funktion zu deklarieren, ändern Sie die Quelldatei für`Package.appxmanifest`das [App-Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) (). Fügen Sie die XML-Namespace Deklaration **xmlns: rescap** hinzu , und verwenden Sie das cmdx-Präfix, wenn Sie die eingeschränkte Funktion deklarieren Hier sehen Sie z. B., wie die **appCaptureSettings**-Funktion deklariert wird.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -148,7 +148,7 @@ In der folgenden Tabelle sind die eingeschränkten Funktionen aufgeführt. Sie k
 | **VPN-App** | Die eingeschränkte **networkingVpnProvider**-Funktion ermöglicht Apps den Vollzugriff auf VPN-Features. Sie haben dann u. a. die Möglichkeit, Verbindungen zu verwalten und VPN-Plug-In-Funktionen bereitzustellen.<br /><br />Für diese Funktion sind einige APIs aus dem [**Windows.Networking.Vpn**](https://docs.microsoft.com/uwp/api/Windows.Networking.Vpn)-Namespace erforderlich. |
 | **Andere APP-Verwaltung** | Die eingeschränkte **packageManagement**-Funktion ermöglicht Apps die direkte Verwaltung anderer Apps.<br /><br />Die **packageQuery**-Gerätefunktion ermöglicht Apps die Erfassung von Informationen zu anderen Apps.<br /><br />Diese Funktionen werden für den Zugriff auf einige Methoden und Eigenschaften der [**PackageManager**](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager)-Klasse benötigt. |
 | **Externe Anzeige** | Die eingeschränkte **screenDuplication**-Funktion ermöglicht es Apps, den Bildschirm auf ein anderes Gerät zu projizieren.<br /><br />Diese Funktion wird für die Verwendung von APIs im DirectX-Namespace benötigt. <br /><br />Es wird nicht empfohlen, diese Funktion in Anwendungen zu deklarieren, die Sie an die Microsoft Store übermitteln. In den meisten Fällen wird die Verwendung dieser Funktion nicht genehmigt. |
-| **Benutzerprinzipalname** | Mit der eingeschränkten **userPrincipalName**-Funktion können Apps den Miniaturansichtscache von Fotos ändern bzw. darauf zugreifen.<br /><br />Diese Funktion wird zum Aufrufen der [**GetUserNameEx**](https://docs.microsoft.com/windows/desktop/api/secext/nf-secext-getusernameexa)-Funktion benötigt. <br /><br />Es wird nicht empfohlen, diese Funktion in Anwendungen zu deklarieren, die Sie an die Microsoft Store übermitteln. In den meisten Fällen wird die Verwendung dieser Funktion nicht genehmigt. |
+| **Benutzerprinzipalname** | Mit der eingeschränkten Funktion " **userPrincipalName** " können apps auf den Benutzer Prinzipal Namen (User Principal Name, UPN) des aktuellen Benutzers zugreifen.<br /><br />Diese Funktion wird zum Aufrufen der [**GetUserNameEx**](https://docs.microsoft.com/windows/desktop/api/secext/nf-secext-getusernameexa)-Funktion benötigt. <br /><br />Es wird nicht empfohlen, diese Funktion in Anwendungen zu deklarieren, die Sie an die Microsoft Store übermitteln. In den meisten Fällen wird die Verwendung dieser Funktion nicht genehmigt. |
 | **Brieftasche** | Die eingeschränkte **walletSystem**-Funktion gewährt Apps vollständigen Zugriff auf die gespeicherten Ausweiskarten.<br /><br />Für diese Funktion sind einige APIs aus dem [**Windows.ApplicationModel.Wallet.System**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Wallet.System)-Namespace erforderlich. <br /><br />Es wird nicht empfohlen, diese Funktion in Anwendungen zu deklarieren, die Sie an die Microsoft Store übermitteln. In den meisten Fällen wird die Verwendung dieser Funktion nicht genehmigt. |
 | **Positionsverlauf** | Die eingeschränkte **locationHistory**-Funktion ermöglicht Apps den Zugriff auf den Standortverlauf des Geräts.<br /><br />Für diese Funktion sind die APIs im [**Windows.Devices.Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)-Namespace erforderlich.
 | **App-Schließbestätigung** | Die eingeschränkte **confirmAppClose**-Funktion ermöglicht es Apps, sich selbst und eigene Fenster zu schließen und das Schließen der App zu verzögern.<br /><br />Apps erfordern diese Funktion eventuell in Windows 10, Version 1703 (Build 10.0.15063) und höher. In früheren Versionen von Windows 10 ist diese Funktion privat und bewirkt, dass die App-Installation mit der Fehlermeldung "Die angeforderte Funktion kann für diese Anwendung nicht autorisiert werden" fehlschlägt. |
