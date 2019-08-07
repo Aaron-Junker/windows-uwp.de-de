@@ -3,7 +3,7 @@ description: Sie können eine erweiterbare Strukturansicht erstellen, indem Sie 
 title: Strukturansicht
 label: Tree view
 template: detail.hbs
-ms.date: 06/14/2019
+ms.date: 07/24/2019
 ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 4c29e8f2f88469dfbf260268682cf18e0399e327
-ms.sourcegitcommit: 81cb0b597bedfed8a54ac8b7e84089ef057fa9e3
+ms.openlocfilehash: 8e18455a39441d46e13e5a9a72291c9cd379c310
+ms.sourcegitcommit: 9effd88952bd26611f7b0a0e7baa68aba7d0ee8d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68514132"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68616530"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -99,7 +99,7 @@ Um eine Strukturansicht zu erstellen, verwenden Sie ein [TreeView](/uwp/api/wind
 Sie können eine hierarchische Datenquelle an die [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)-Eigenschaft binden, um den Inhalt der Strukturansicht bereitzustellen, ebenso wie bei der **ItemsSource** der [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Verwenden Sie auf die gleiche Weise [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (und den optionalen [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)), um eine [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) bereitzustellen, die das Element rendert.
 
 > [!IMPORTANT]
-> **ItemsSource** und die zugehörigen APIs erfordern Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher, oder die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **ItemsSource** und die zugehörigen APIs erfordern Windows 10, Version 1809 ([SDK 17763 oder höher](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), oder die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/).
 >
 > **ItemsSource** ist ein alternativer Mechanismus zu **TreeView.RootNodes** für das Ablegen von Inhalt im **TreeView**-Steuerelement. **ItemsSource** und **RootNodes** können nicht gleichzeitig festgelegt werden. Wenn Sie **ItemsSource** verwenden, werden Knoten für Sie erstellt, und Sie können aus der **TreeView.RootNodes**-Eigenschaft darauf zugreifen.
 
