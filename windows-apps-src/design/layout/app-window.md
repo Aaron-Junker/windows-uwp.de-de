@@ -5,16 +5,16 @@ ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f9b247a4a8eb69fa390a9e250e0f88deff9311bf
-ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
+ms.openlocfilehash: 9b89d9100157cf40266bb983e258aa187f65dc93
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68730518"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867463"
 ---
 # <a name="show-multiple-views-with-appwindow"></a>Mehrere Ansichten mit appwindow anzeigen
 
-[Appwindow](/uwp/api/windows.ui.windowmanagement.appwindow) und zugehörige APIs vereinfachen die Erstellung von apps mit mehreren Fenstern, indem Sie Ihre APP-Inhalte in sekundären Fenstern anzeigen lassen, während Sie in jedem Fenster immer noch an demselben UI-Thread arbeiten.
+[Appwindow](/uwp/api/windows.ui.windowmanagement.appwindow) und die dazugehörigen APIs vereinfachen die Erstellung von apps mit mehreren Fenstern, indem Sie Ihre APP-Inhalte in sekundären Fenstern anzeigen lassen, während Sie in jedem Fenster immer noch an demselben UI-Thread arbeiten.
 
 > [!NOTE]
 > Appwindow befindet sich derzeit in der Vorschau Phase. Dies bedeutet, dass Sie apps, die appwindow verwenden, an den Store übermitteln können, einige Plattform-und frameworkkomponenten jedoch bekanntermaßen nicht mit appwindow arbeiten (siehe [Einschränkungen](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)).

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 838bd9cb790893ea24b57bb2b0bad49aa262fdbc
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 9df150d4a8873630a371fa2ad02e8c88bed7f42e
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682529"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867743"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Einrichten automatisierter Builds für UWP-Apps
 
@@ -80,7 +80,7 @@ So laden Sie ein Zertifikat für den automatisierten Build hoch:
 
     ![Hochladen einer sicheren Datei](images/secure-file2.png)
 
-5. Wenn das Zertifikat über ein Kennwort verfügt, empfiehlt es sich, das Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) zu speichern und das Kennwort dann mit einer [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)zu verknüpfen. Sie können die Variable verwenden, um auf das Kennwort aus der Pipeline zuzugreifen.
+5. Wenn der private Schlüssel im Zertifikat über ein Kennwort verfügt, empfiehlt es sich, das Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) zu speichern und das Kennwort dann mit einer [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)zu verknüpfen. Sie können die Variable verwenden, um auf das Kennwort aus der Pipeline zuzugreifen. Beachten Sie, dass ein Kennwort nur für den privaten Schlüssel unterstützt wird. die Verwendung einer Zertifikatsdatei, die selbst Kenn Wort geschützt ist, wird derzeit nicht unterstützt.
 
 > [!NOTE]
 > Ab Visual Studio 2019 wird ein temporäres Zertifikat nicht mehr in UWP-Projekten generiert. Um Zertifikate zu erstellen oder zu exportieren, verwenden Sie die in [diesem Artikel](/windows/msix/package/create-certificate-package-signing)beschriebenen PowerShell-Cmdlets.
@@ -100,7 +100,7 @@ Mit diesem Task werden alle Lösungen, die sich im Arbeitsordner befinden, in Bi
 | Appxpackagesigningenabled | true | Aktiviert die Paket Signatur. |
 | PackageCertificateThumbprint | Zertifikatfingerabdruck | Dieser Wert **muss** dem Fingerabdruck im Signaturzertifikat entsprechen oder eine leere Zeichenfolge sein. |
 | PackageCertificateKeyFile | Pfad | Der Pfad zu dem Zertifikat, das verwendet werden soll. Dies wird aus den Metadaten der sicheren Datei abgerufen. |
-| PackageCertificatePassword | Kennwort | Das Kennwort für das Zertifikat. Es wird empfohlen, dass Sie Ihr Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) speichern und das Kennwort mit der [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)verknüpfen. Sie können die Variable an dieses Argument übergeben. |
+| PackageCertificatePassword | Kennwort | Das Kennwort für den privaten Schlüssel im Zertifikat. Es wird empfohlen, dass Sie Ihr Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) speichern und das Kennwort mit der [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)verknüpfen. Sie können die Variable an dieses Argument übergeben. |
 
 ### <a name="configure-the-build"></a>Konfigurieren des Builds
 

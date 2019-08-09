@@ -1,26 +1,26 @@
 ---
 title: Barrierefreiheit in Windows 10
-description: Diese Seite enthält die Informationen für die Ihnen den Einstieg in die Entwicklung barrierefreier Windows-apps.
+description: Diese Seite enthält Informationen, die Ihnen den Einstieg in die Entwicklung zugänglicher Windows-apps erleichtern.
 ms.topic: article
 ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-keywords: Barrierefreiheit in Windows 10, Barrierefreiheit, zugegriffen werden kann, win32-apps erstellen, Erstellen von UWP-apps zugegriffen werden kann, Erstellen von WPF-apps zugegriffen werden kann, Erstellen von Windows Forms-apps zugegriffen werden kann
-ms.openlocfilehash: b818b99ebf896b2d2de219d2eedbfd101f3a5caa
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+keywords: Barrierefreiheit in Windows 10, Barrierefreiheit, Barrierefreiheit, barrierefreie Win32-apps, Aufbau barer UWP-apps, Aufbau zugänglicher WPF-apps, Aufbau von zugänglichen WinForms-apps
+ms.openlocfilehash: bb82103c030c436655630a37678bbec11e588f61
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214995"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867427"
 ---
 # <a name="accessibility-in-windows-10"></a>Barrierefreiheit in Windows 10
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![Hero-Accessibility-Bar-Smaller. png](images/hero-accessibility-bar-smaller.png)
 
-Barrierefreier apps dienen als inklusive durch Verbesserung der benutzerfreundlichkeit für so viele Anwender wie möglich, einschließlich derer mit behinderungen, persönliche Einstellungen, bestimmten Arbeitsweisen oder situationsbedingte-Einschränkungen (z. B. steuern, cooking, Glanz und So weiter).
+Barrierefreie apps sind so konzipiert, dass Sie so viele Personen wie möglich verbessern können, einschließlich derjenigen mit Behinderungen, persönlicher Vorlieben, spezifischer Arbeitsstile oder situations Einschränkungen (z. b. Fahr-, Koch-, Glas usw.).
 
-Diese Seite enthält Informationen wie die verschiedenen Windows-Entwicklungsframeworks Eingabehilfen für Entwickler von Windows-Anwendungen, hilfstechnologie-Entwickler, die von Tools wie Sprachausgabe und Bildschirmlupe und Softwaretest unterstützen Entwickler, die automatisierte Skripts zum Testen von Anwendungen zu erstellen.
+Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklungs Frameworks den Zugriff für Entwickler unterstützen, die Windows-Anwendungen entwickeln, hilfstechnologieentwickler, die Tools wie Sprachausgabe und Bildschirmlupe und Softwaretest entwickeln. Entwickler, die automatisierte Skripts zum Testen von Anwendungen erstellen.
 
 ## <a name="platform-specific-documentation"></a>Plattformspezifische Dokumentation
 
@@ -28,7 +28,7 @@ Diese Seite enthält Informationen wie die verschiedenen Windows-Entwicklungsfra
     :::column:::
         ![Universal Windows Platform (UWP)](images/platform-uwp.png)
 
-        ### Universal Windows Platform (UWP)
+        **Universal Windows Platform (UWP)**
 
         Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
@@ -43,7 +43,7 @@ Diese Seite enthält Informationen wie die verschiedenen Windows-Entwicklungsfra
     :::column:::
         ![Win32 platform apps](images/platform-win32.png)
 
-        ### Win32 platform
+        **Win32 platform**
 
         Develop accessible apps and tools on the original platform for C/C++ Windows applications.
 
@@ -68,7 +68,7 @@ Diese Seite enthält Informationen wie die verschiedenen Windows-Entwicklungsfra
     :::column:::
         ![WPF platform](images/platform-wpf.png)
 
-        ### Windows Presentation Foundation (WPF)
+        **Windows Presentation Foundation (WPF)**
 
         Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
@@ -91,7 +91,7 @@ Diese Seite enthält Informationen wie die verschiedenen Windows-Entwicklungsfra
     :::column:::
         ![Windows Forms platform apps](images/platform-winforms.png)
 
-        ### Windows Forms (WinForms)
+        **Windows Forms (WinForms)**
 
         Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
 

@@ -1,6 +1,6 @@
 ---
-Description: Erfahren Sie, reaktionsfähige Designtechniken zum Anpassen Ihrer app für bestimmte Geräte
-label: Responsive design techniques
+Description: Erlernen von reaktionsfähigen Entwurfs Techniken zum Anpassen Ihrer APP für bestimmte Geräte
+title: Reaktionsfähige Designtechniken
 template: detail.hbs
 op-migration-status: ready
 ms.date: 10/10/2017
@@ -8,39 +8,39 @@ ms.topic: article
 keywords: windows 10, UWP
 localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9e06131da5d7dd56354e1871867f9956ad13aa2c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f688522ec8970b1e3570610663f5a3e6cae65793
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624815"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867414"
 ---
 # <a name="responsive-design-techniques"></a>Reaktionsfähige Designtechniken
 
-UWP-apps verwenden effektive Pixeln, um sicherzustellen, dass Ihre Benutzeroberfläche lesbar und auf allen Windows-betriebenen Geräten verwendet werden kann. Warum sollten also Sie überhaupt die Benutzeroberfläche Ihrer App für eine bestimmte Gerätefamilie anpassen wollen?
+UWP-Apps verwenden effektive Pixel, um sicherzustellen, dass die Benutzeroberfläche auf allen Windows-Geräten lesbar und verwendbar ist. Warum sollten also Sie überhaupt die Benutzeroberfläche Ihrer App für eine bestimmte Gerätefamilie anpassen wollen?
 
-- **Um möglichst effiziente Nutzung des Speicherplatzes und den Bedarf reduzieren, navigieren**
+- **Um den Speicherplatz optimal zu nutzen und die Notwendigkeit der Navigation zu reduzieren**
 
-    Wenn Sie eine app für ein Gerät suchen, die einen kleinen Bildschirm entworfen haben, wie z. B. ein Tablet, wird die app auf einem PC mit einem viel größeren Bildschirm verwendet werden, aber vermutlich wird eine Menge Bildschirmplatz. Sie können die App anpassen, damit mehr Inhalt angezeigt wird, wenn eine bestimmte Bildschirmgröße überschritten wird. Beispielsweise könnte eine shopping-app eine Artikelkategorie anzeigt, zu einem Zeitpunkt auf einem Tablet, aber mehrere Kategorien und Produkte gleichzeitig auf einem PC oder Laptop anzeigen.
+    Wenn Sie eine APP so entwerfen, dass Sie auf einem Gerät mit einem kleinen Bildschirm (z. b. einem Tablet) gut aussieht, kann die APP auf einem PC mit einer viel größeren Anzeige verwendet werden, aber es gibt wahrscheinlich etwas vergeudeten Speicherplatz. Sie können die App anpassen, damit mehr Inhalt angezeigt wird, wenn eine bestimmte Bildschirmgröße überschritten wird. Beispielsweise kann eine Einkaufs-App auf einem Tablet jeweils eine waren Kategorie anzeigen, aber mehrere Kategorien und Produkte gleichzeitig auf einem PC oder Laptop anzeigen.
 
     Durch das Platzieren von mehr Inhalt auf dem Bildschirm reduzieren Sie die erforderliche Navigation des Benutzers.
 
-- **Geräte Funktionen nutzen**
+- **So nutzen Sie die Funktionen von Geräten**
 
-    Bestimmte Geräte verfügen über bestimmte Gerätefunktionen. Beispielsweise sind die Laptops häufig einen Ortungssensor und eine Kamera, während einer TV möglicherweise nicht mit entweder. Ihre App kann erkennen, welche Funktionen verfügbar sind und Features die Verwendung dieser ermöglichen.
+    Bestimmte Geräte verfügen über bestimmte Gerätefunktionen. Beispielsweise verfügen Laptops wahrscheinlich über einen Standort Sensor und eine Kamera, während ein Fernsehgerät möglicherweise keines hat. Ihre App kann erkennen, welche Funktionen verfügbar sind und Features die Verwendung dieser ermöglichen.
 
-- **Um für die Eingabe zu optimieren.**
+- **So optimieren Sie die Eingabe**
 
     Die universelle Steuerelementbibliothek kann mit allen Eingabetypen (Toucheingabe, Stift, Tastatur, Maus) verwendet werden. Sie können jedoch eine Optimierung für bestimmte Eingabetypen erreichen, indem Sie Ihre UI-Elemente neu anordnen. Wenn Sie z. B. Elemente für die Navigation am unteren Bildschirmrand platzieren, ist der Zugriff auf diese für Smartphonebenutzer einfacher; die meisten PC-Benutzer hingegen erwarten, dass Elemente für die Navigation eher am oberen Bildschirmrand angezeigt werden.
 
 Wenn Sie die Benutzeroberfläche Ihrer App für bestimmte Bildschirmbreiten optimieren, spricht man vom Erstellen eines reaktionsfähigen Designs. Im folgenden werden sechs reaktionsfähige Designtechniken aufgeführt, mit denen Sie die Benutzeroberfläche Ihrer App anpassen können:
 
 >[!TIP]
-> Viele UWP-Steuerelemente implementieren automatisch diese Verhaltensweisen reagieren. Um eine reaktionsfähige Benutzeroberfläche zu erstellen, es wird empfohlen beim Auschecken der [UWP-Steuerelementen](../controls-and-patterns/index.md).
+> Viele UWP-Steuerelemente implementieren diese Reaktionsverhalten automatisch. Zum Erstellen einer reaktionsfähigen Benutzeroberfläche empfiehlt es sich, die [UWP](../controls-and-patterns/index.md)-Steuerelemente zu überprüfen.
 
 ## <a name="reposition"></a>Ändern der Position
 
-Sie können den Speicherort und die Position der UI-Elemente für die optimale Nutzung der Größe des Fensters ändern. In diesem Beispiel werden mit kleinere Fenster Elemente vertikal gestapelt. Wenn die app auf einem größeren Fenster öffnen, können Elemente die größere Fensterbreite nutzen.
+Sie können den Speicherort und die Position der Benutzeroberflächen Elemente ändern, um die Fenstergröße optimal zu nutzen. In diesem Beispiel stapelt das kleinere Fensterelemente vertikal. Wenn die app in ein größeres Fenster übersetzt wird, können Elemente die größere Fensterbreite nutzen.
 
 ![Ändern der Position](images/rsp-design/rspd-reposition2.gif)
 
@@ -48,15 +48,15 @@ In diesem Beispielentwurf einer Foto-App ändert die Foto-App die Position des I
 
 ## <a name="resize"></a>Ändern der Größe
 
-Sie können durch Anpassen der Ränder und die Größe der Elemente der Benutzeroberfläche für die Größe des Fensters optimieren. Beispielsweise könnte dies das Leseerlebnis auf einem größeren Bildschirm erweitern, indem Sie einfach wächst des Inhalten-Frames.
+Sie können die Fenstergröße optimieren, indem Sie die Ränder und die Größe der Benutzeroberflächen Elemente anpassen. Dies kann z. b. dazu kommen, dass die Lesevorgänge auf einem größeren Bildschirm durch einfaches Vergrößern des Inhalts Rahmens erweitert werden.
 
 ![Ändern der Größe von Designelementen](images/rsp-design/rspd-resize2.gif)
 
 ## <a name="reflow"></a>Neuanordnen
 
-Durch Änderung der Anordnung von UI-Elementen basierend auf dem Gerät und der Ausrichtung kann Ihre App eine optimale Ansicht der Inhalte bieten. Beispielsweise kann beim Wechseln zu einem größeren Bildschirm, es sinnvoll, Spalten hinzuzufügen, größere Container zu verwenden oder Listenelemente auf andere Weise zu generieren.
+Durch Änderung der Anordnung von UI-Elementen basierend auf dem Gerät und der Ausrichtung kann Ihre App eine optimale Ansicht der Inhalte bieten. Wenn beispielsweise ein größerer Bildschirm angezeigt wird, ist es möglicherweise sinnvoll, Spalten hinzuzufügen, größere Container zu verwenden oder Listenelemente auf andere Weise zu generieren.
 
-Dieses Beispiel zeigt, wie eine einzelne Spalte mit vertikal scrollen von Inhalt auf einem kleineren Bildschirm, der auf einem größeren Bildschirm zum Anzeigen der beiden Textspalten solche werden kann.
+Dieses Beispiel zeigt, wie eine einzelne Spalte mit vertikalem Bildlauf auf einem kleineren Bildschirm, der auf einen größeren Bildschirm umgeleitet werden kann, um zwei Textspalten anzuzeigen.
 
 ![Neuanordnen von Designelementen](images/rsp-design/rspd_reflow.gif)
 
@@ -66,9 +66,9 @@ Das Ein- und Ausblenden von UI-Elementen kann von der Bildschirmfläche sowie da
 
 ![Ausblenden von Designelementen](images/rsp-design/rspd-revealhide.gif)
 
-Media Player-Steuerelement wird z. B. verringert, die Schaltfläche auf kleineren Bildschirmen und erweitern Sie auf größeren Bildschirmen. Der MediaPlayer auf einem größeren Fenster öffnen kann wesentlich mehr auf dem Bildschirm behandeln, können Sie Funktionen als in einem kleineren Fenster.
+Media Player-Steuerelemente verringern z. b. den Schaltflächen Satz auf kleineren Bildschirmen und erweitern ihn auf größeren Bildschirmen. Der Media Player in einem größeren Fenster kann viel mehr Bildschirmfunktionen verarbeiten, als in einem kleineren Fenster möglich sind.
 
-Die Methode zum Ein- und Ausblenden umfasst die Wahl, wann mehr Metadaten angezeigt werden sollen. In kleineren Windows empfiehlt es sich um eine minimale Menge an Metadaten anzuzeigen. In größeren Windows kann eine beträchtliche Menge an Metadaten angefügt werden sollen. Einige Beispiele dafür, wann ein- oder Ausblenden von Metadaten:
+Die Methode zum Ein- und Ausblenden umfasst die Wahl, wann mehr Metadaten angezeigt werden sollen. Bei kleineren Fenstern ist es am besten, eine minimale Menge an Metadaten anzuzeigen. Bei größeren Fenstern kann eine beträchtliche Menge an Metadaten angezeigt werden. Einige Beispiele für das Anzeigen oder Ausblenden von Metadaten sind:
 
 - In einer E-Mail-App können Sie den Avatar des Benutzers anzeigen.
 - In einer Musik-App können Sie weitere Informationen zu einem Album oder Interpreten anzeigen.
@@ -78,20 +78,20 @@ Die Methode zum Ein- und Ausblenden umfasst die Wahl, wann mehr Metadaten angeze
 
 ## <a name="replace"></a>Ersetzen
 
-Dieses Verfahren können Sie die Benutzeroberfläche für eine bestimmte Haltepunkte zu wechseln. In diesem Beispiel, das den Navigationsbereich und der Compact vorübergehenden Benutzeroberfläche eignet sich gut für kleinere Bildschirme, aber auf einem größeren Bildschirm Registerkarten die bessere Wahl sein können.
+Mit dieser Technik können Sie die Benutzeroberfläche für bestimmte Breakpoints wechseln. In diesem Beispiel funktionieren der Navigationsbereich und seine kompakte, vorübergehende Benutzeroberfläche gut für einen kleineren Bildschirm, aber auf einem größeren Bildschirm sind Registerkarten möglicherweise besser geeignet.
 
 ![Ersetzen von Designelementen](images/rsp-design/rspd-replace.gif)
 
-Die [NavigationView](../controls-and-patterns/navigationview.md) Steuerelement unterstützt diese Technik reagiert, indem Sie ermöglichen es den Benutzern, die die Position im Bereich entweder oben oder links fest.
+Das [navigationview](../controls-and-patterns/navigationview.md) -Steuerelement unterstützt dieses reaktionsfähige Verfahren, indem es Benutzern ermöglicht, die Bereichs Position entweder auf oben oder Links festzulegen.
 
 ## <a name="re-architect"></a>Ändern der Architektur
 
-Sie können die Architektur Ihrer App reduzieren oder erweitern, um eine bessere Darstellung für bestimmte Geräte zu erzielen. In diesem Beispiel zeigt das Fenster Erweitern des gesamten Master-/Detail-Musters.
+Sie können die Architektur Ihrer App reduzieren oder erweitern, um eine bessere Darstellung für bestimmte Geräte zu erzielen. In diesem Beispiel zeigt die Erweiterung des Fensters das gesamte Master-/Detail-Muster an.
 
 ![ein Beispiel für das erneute Erstellen der Architektur einer Benutzeroberfläche](images/rsp-design/rspd-rearchitect.gif)
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 - [Bildschirmgrößen und Haltepunkte](screen-sizes-and-breakpoints-for-responsive-design.md)
-- [Reaktionsfähige Layouts mit XAML](layouts-with-xaml.md)
-- [UWP-Steuerelemente und Muster](../controls-and-patterns/index.md)
+- [Dynamische Layouts mit XAML](layouts-with-xaml.md)
+- [UWP-Steuerelemente und-Muster](../controls-and-patterns/index.md)

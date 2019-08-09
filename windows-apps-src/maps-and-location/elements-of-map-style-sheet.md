@@ -7,20 +7,20 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Karten, Karten-Stylesheet
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f59775de8d86b5a0bae77d8c84e08e0328896f4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 723426b4affec4251f26485ac7ecc1fca307c102
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63816675"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867702"
 ---
 # <a name="map-style-sheet-reference"></a>Karten-Stylesheet-Referenz
 
-Microsoft Zuordnung-Technologien _zuordnen Stylesheets_ um die Darstellung von Zuordnungen definieren.  Ein Stylesheet für die Zuordnung wird mithilfe von JavaScript Object Notation (JSON) definiert und kann verwendet werden, in verschiedene Möglichkeiten, einschließlich in einer Windows Store-Anwendung [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) über die [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) -Methode.
+Microsoft-Zuordnungs Technologien verwenden _Karten Stylesheets_ , um die Darstellung von Zuordnungen zu definieren.  Ein Karten Stylesheet wird mithilfe von JavaScript Object Notation (JSON) definiert und kann auf verschiedene Weise verwendet werden, einschließlich der [mapcontrol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) -Methode von Windows Store-Anwendungen über die [mapstylesheet. Parser-fromjson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) -Methode.
 
-Stylesheets können erstellt werden, interaktiv mit dem [Zuordnung Formatvorlagen-Editor](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) Anwendung.
+Stylesheets können interaktiv mithilfe der Editor-Anwendung des [Karten Stylesheets](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) erstellt werden.
 
-Die folgende JSON-Code kann verwendet werden, um Wasser Bereiche in Rot angezeigt werden, Wasser Bezeichnungen in grün angezeigt und Land Bereiche, die in blau angezeigt werden:
+Der folgende JSON-Code kann verwendet werden, um Wasser Bereiche in rot anzuzeigen, Wasser Bezeichnungen werden grün angezeigt, und Länder Bereiche werden in blau angezeigt:
 
 ```json
     {"version":"1.*",
@@ -29,7 +29,7 @@ Die folgende JSON-Code kann verwendet werden, um Wasser Bereiche in Rot angezeig
     }
 ```
 
-Diese JSON kann verwendet werden, um alle Bezeichnungen und Punkte aus einer Zuordnung zu entfernen.
+Dieser JSON-Code kann verwendet werden, um alle Bezeichnungen und Punkte aus einer Karte zu entfernen.
 
 ```json
 
@@ -45,110 +45,191 @@ In einigen Fällen wird der Wert einer Eigenschaft transformiert, um das endgül
     }
 ```
 
-In diesem Thema werden die JSON-Einträge und [-Eigenschaften](#properties) behandelt, mit denen Sie das Aussehen und Verhalten von Karten anpassen können.  Diese Eigenschaften können auch angewendet werden, für Benutzer kartenelemente über die [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.mapstylesheetentry) Eigenschaft.
+In diesem Thema werden die JSON-Einträge und [-Eigenschaften](#properties) behandelt, mit denen Sie das Aussehen und Verhalten von Karten anpassen können.  Diese Eigenschaften können auch auf Benutzer Zuordnungs Elemente über die [mapstylesheetentry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.mapstylesheetentry) -Eigenschaft angewendet werden.
 
 <a id="entries" />
 
 ## <a name="entries"></a>Einträge
-In der folgenden Tabelle wird das Zeichen „>” verwendet, um Ebenen in der Eintragshierarchie darzustellen.  Es zeigt auch, welche Versionen von Windows jeder Eintrag unterstützen und die ignorieren.
+In der folgenden Tabelle wird das Zeichen „>” verwendet, um Ebenen in der Eintragshierarchie darzustellen.  Außerdem wird gezeigt, welche Versionen von Windows die einzelnen Einträge unterstützen und welche ignoriert werden.
 
-| Version | Name der Windows-Version |
+| Version | Windows-Releasename |
 |---------|----------------------|
 |  1703   | Creators Update      |
 |  1709   | Fall Creators Update |
 |  1803   | Update April 2018    |
-|  1809   | Update für Oktober 2018  |
+|  1809   | Update vom Oktober 2018  |
+|  1903   | Update vom Mai 2019      |
 
-| Name                         | Eigenschaftsgruppe            | 1703 | 1709 | 1803 | 1809 | Beschreibung    |
-|------------------------------|---------------------------|------|------|------|------|----------------|
-| version                      | [Version](#version)       |  ✔   |  ✔   |  ✔   |  ✔   | Die Stylesheet-Version, die Sie verwenden möchten |
-| Einstellungen                     | [Einstellungen](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | Die Einstellungen, die für das gesamte Stylesheet gelten |
-| mapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Der übergeordnete Eintrag für alle Karteneinträge |
-| > baseMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Der übergeordnete Eintrag für alle Einträge mit Ausnahme von Benutzereinträgen |
-| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Beschreiben Land Bereiche verwenden.  Diese sollte nicht zu verwechseln mit der physischen Gebäude unter dem Struktureintrag sind. |
-| >>> airport                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Flughäfen umfassen. |
-| >>> areaOfInterest           | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Bereiche, in denen es viele Unternehmen oder Sehenswürdigkeiten gibt |
-| >>> cemetery                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die FRIEDHÖFEN umfassen. |
-| >>> continent                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Continent Bereich Bezeichnungen. |
-| >>> education                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Schulen und andere Bildungseinrichtungen Funktionen umfassen. |
-| >>> indigenousPeoplesReserve | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die einheimischen Peoples umfassen reserviert. |
-| >>> industrial               | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Bereiche, die für gewerbliche Zwecke verwendet werden. |
-| >>> island                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Insel Bereich Bezeichnungen. |
-| >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die für medizinische Zwecke verwendet werden (z. B.: einen Campus Krankenhaus). |
-| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die militärische Basen umfassen oder militärische verwendet. |
-| >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die nautische verwandten Zwecken verwendet werden. |
-| >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bezeichnungen der Nachbarschaft-Bereich. |
-| >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die als ein Flugzeug Weg verwendet wird. |
-| >>> sand                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Sandige Flächen wie Strände |
-| >>> shoppingCenter           | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Flächen, die Einkaufspassagen oder Einkaufszentren zugeordnet sind |
-| >>> stadium                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die kuppeldach umfassen. |
-| >>> underground              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Unterirdische Bereiche (z. B. Fläche einer U-Bahn-Station) |
-| >>> vegetation               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Wälder, Grünflächen usw. |
-| >>>> forest                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Flächen mit Waldbestand |
-| >>>> golfCourse              | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Golf-Kurse umfasst. |
-| >>>> park                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Parks umfassen. |
-| >>>> playingField            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Als Spielfelder genutzte Flächen, wie Baseballfelder oder Tennisplätze |
-| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Art umfassen reserviert. |
-| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Alle Point-Features, die mit einem Symbol für eine Art gezeichnet werden. |
-| >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | Zahlen Bezeichnungen zu beheben. |
-| >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die natürliche Features darstellen. |
-| >>>> peak                    | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Berggipfel darstellen |
-| >>>>> volcanicPeak           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Vulkangipfel darstellen |
-| >>>> waterPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Standorte von Wasseranlagen darstellen, wie Wasserfälle |
-| >>> pointOfInterest          | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die alle interessanten Ort darstellen. |
-| >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Die Symbole, die zur Darstellung der einem beliebigen Business-Speicherort. |
-| >>>>> AttractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Symbole, die Sport-Attraktionen z. B. Museen, Zoos usw. darstellen. |
-| >>>>> CommunityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Symbole, die zur Darstellung der Speicherorte der allgemeinen Verwendung für die Community. |
-| >>>>> EducationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Symbole, die zur Darstellung der Schulen und andere Bildungseinrichtungen im Zusammenhang mit Standorten. |
-| >>>>> EntertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Symbole, die Unterhaltung Veranstaltungsorten, z.B. Theater, Kinos usw. darstellen. |
-| >>>>> EssentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Symbole, die wichtige Dienste wie z.B. Parkmöglichkeiten sowie Banken, Gas darstellen. |
-| >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die zur Darstellung der Restaurants, Cafés usw. |
-| >>>>> LodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Symbole, die Hotels und anderen Unternehmen Unterbringung darstellen. |
-| >>>>> RealEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Die Symbole, die zur Darstellung der Immobilien-Unternehmen. |
-| >>>>> ShoppingPoint          | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Symbole, die Hotels und anderen Unternehmen Unterbringung darstellen. |
-| >>> populatedPlace           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die die Größe eines bewohnten Ortes darstellen (z. B. eine Stadt oder eine Ortschaft) |
-| >>>> capital                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die die Hauptstadt eines bewohnten Gebiets darstellen |
-| >>>>> adminDistrictCapital   | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die die Hauptstadt von Bundesländern/Provinzen darstellen |
-| >>>>> countryRegionCapital   | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die die Hauptstadt von Ländern oder Regionen darstellen |
-| >>> roadShield               | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Zeichen, die die Bezeichnung einer Straße darstellen (Zum Beispiel: I-5). Verwenden Sie nur Palettenwerte, wenn Sie die **ImageFamily**-Eigenschaft des Einstellungseintrags auf einen Wert von *Palette* festlegen. |
-| >>> roadExit                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Ausfahrten, in der Regel aus einer Autobahn mit Zugangsüberwachungssystem, darstellen |
-| >>> transit                  | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Bushaltestellen, Zughaltestellen, Flughäfen usw. darstellen |
-| >> political                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Politische Gebiete, wie Länder, Regionen und Staaten |
-| >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Country-Region Rahmen und Bezeichnungen. |
-| >>> adminDistrict            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin1, Staaten, Provinzen, usw., Ränder und Bezeichnungen. |
-| >>> district                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin2, Landkreise, usw., Ränder und Bezeichnungen. |
-| >> structure                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Häuser und andere gebäudeähnliche Bauten |
-| >>> building                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Gebäude. |
-| >>>> educationBuilding       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Das Gebäude für Bildungseinrichtungen verwendet. |
-| >>>> medicalBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Das Gebäude für medizinische Zwecke, z. B. in Krankenhäusern verwendet. |
-| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Das Gebäude für die Übertragung wie Flughäfen verwendet. |
-| >> transportation            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Linien, die Teil des Transportnetzwerks sind (z. B. Straßen, Züge und Fähren) |
-| >>> road                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Linien, die alle Straßen darstellen |
-| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die große, kontrollierten Zugriff Straßen darstellen. |
-| >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Linien, die Hochgeschwindigkeits-Rampen, die in der Regel darstellen mit verbinden gesteuert Zugriff Straßen. |
-| >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Straßen darstellen. |
-| >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die wichtige Straßen darstellen. |
-| >>>> arterialRoad            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Arterieller Straßen darstellen. |
-| >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Straßen darstellen. |
-| >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Rampen darstellen, die in der Regel mit Straßen zu verbinden. |
-| >>>>> unpavedStreet          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die unpaved Straßen darstellen. |
-| >>>> tollRoad                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Straßen, die Kosten Geld darstellen verwenden. |
-| >>> railway                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Eisenbahnlinien |
-| >>> trail                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Spazierwege durch Parks oder Wanderwege |
-| >>> Gehweg eingetragen                  | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Mit erhöhten Rechten Gehweg eingetragen. |
-| >>> waterRoute               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Fährlinien |
-| >> water                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Alle Elemente, die wie Wasser aussehen. Dazu zählen Ozeane und Flüsse. |
-| >>> river                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Flüsse, Ströme oder andere Wasserstraßen.  Beachten Sie, dass es sich herbei um Linien oder Polygone handeln kann, die zu stehenden Gewässern verbinden können. |
-| > routeMapElement            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Alle Weiterleitung verwandten Einträgen. |
-| >> routeLine                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Weiterleiten von Line-bezogenen Einträge. |
-| >>> drivingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die treibende Routen darstellen. |
-| >>> scenicRoute              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Zeilen, die scenic treibende Routen darstellen. |
-| >>> walkingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Positionen darstellen, die Routen zu durchlaufen. |
-| > userMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Benutzereinträge für alle. |
-| >> userBillboard             | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Das Format für Standard-[MapBillboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)-Instanzen |
-| >> userLine                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Das Format für Standard-[MapPolyline](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mappolyline)-Instanzen |
-| >> userModel3D               | [MapElement3D](#mapelement3d) |      |  ✔   |  ✔   |  ✔   | Das Format für Standard-[MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d)-Instanzen.  Dies gilt in erster Linie zur Einstellung von renderAsSurface. |
-| >> userPoint                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Das Format für Standard-[MapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon)-Instanzen |
+| Name                               | Eigenschaftsgruppe            | 1703 | 1709 | 1803 | 1809 | 1903 | Beschreibung    |
+|------------------------------------|---------------------------|------|------|------|------|------|----------------|
+| version                            | [Version](#version)       |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Stylesheet-Version, die Sie verwenden möchten |
+| Einstellungen                           | [Einstellungen](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Einstellungen, die für das gesamte Stylesheet gelten |
+| mapElement                         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der übergeordnete Eintrag für alle Karteneinträge |
+| > baseMapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der übergeordnete Eintrag für alle Einträge mit Ausnahme von Benutzereinträgen |
+| >> area                            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die den Land Gebrauch beschreiben.  Diese sollten nicht mit den physischen Gebäuden in dem Struktur Eintrag verwechselt werden. |
+| >>> airport                        | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Flughäfen umfassen. |
+| >>> areaOfInterest                 | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, in denen es viele Unternehmen oder Sehenswürdigkeiten gibt |
+| >>> cemetery                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Friedhöfe umfassen. |
+| >>> continent                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Kontinente Flächen Bezeichnungen. |
+| >>> education                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Schulen und andere Bildungseinrichtungen umfassen. |
+| >>> indigenousPeoplesReserve       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die indigene Völker abdecken, sind reserviert. |
+| >>> industrial                     | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die für Industrie Zwecke verwendet werden. |
+| >>> island                         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Insel Flächen Bezeichnungen. |
+| >>> medical                        | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die für medizinische Zwecke verwendet werden (z. b. ein krankenhauscampus). |
+| >>> military                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die militärische Basen umfassen oder militärisch verwendet werden. |
+| >>> nautical                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die für die zu einem Gebiet Gehör Ende Zwecke verwendet werden. |
+| >>> neighborhood                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Raum Bezeichnungen für die Region. |
+| >>> runway                         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die als Flugzeug-Landebahn verwendet werden. |
+| >>> sand                           | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Sandige Flächen wie Strände |
+| >>> shoppingCenter                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Flächen, die Einkaufspassagen oder Einkaufszentren zugeordnet sind |
+| >>> stadium                        | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Stadien umfassen. |
+| >>> underground                    | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   |  ✔   | Unterirdische Bereiche (z. B. Fläche einer U-Bahn-Station) |
+| >>> vegetation                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Wälder, Grünflächen usw. |
+| >>>> forest                        | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Flächen mit Waldbestand |
+| >>>> golfCourse                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Golf Kurse umfassen. |
+| >>>> park                          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Park Bereiche umfassen. |
+| >>>> playingField                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Als Spielfelder genutzte Flächen, wie Baseballfelder oder Tennisplätze |
+| >>>> reserve                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bereiche, die Natur Reserven umfassen. |
+| > > frozenwater                     | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Fixierter Wasser, wie Gletscher. |
+| >> point                           | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Alle Point-Funktionen, die mit einem Symbol einiger Art gezeichnet werden. |
+| >>> address                        | [Pointstyle](#pointstyle) |      |      |  ✔   |  ✔   |  ✔   | Adress Nummern Bezeichnungen. |
+| >>> naturalPoint                   | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die natürliche Funktionen darstellen. |
+| >>>> peak                          | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Berggipfel darstellen |
+| >>>>> volcanicPeak                 | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Vulkangipfel darstellen |
+| >>>> waterPoint                    | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Standorte von Wasseranlagen darstellen, wie Wasserfälle |
+| >>> pointOfInterest                | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die einen beliebigen interessanten Speicherort darstellen. |
+| >>>> business                      | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die alle Geschäfts Orte darstellen. |
+| > > > > > attractionpoint              | [Pointstyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die touristische Attraktionen darstellen, wie z. b. Museen, Zoos usw. |
+| > > > > > > "amusementplacepoint"         | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für den vergnüsort. |
+| > > > > > >.               | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Das Aquarien Symbol. |
+| > > > > > > artgallerypoint             | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für Kunstgalerie. |
+| > > > > > > Mobile Point                   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Camp-Symbol. |
+| > > > > > > fishingpoint                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Angel Symbol. |
+| > > > > > > Gärtnerei Punkt                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Garten Symbol. |
+| > > > > > > hikingpoint                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Wander Symbol. |
+| > > > > > > librarypoint                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Bibliotheks Symbol. |
+| > > > > > > museumpoint                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Museum". |
+| > > > > > > naturalplacepoint           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für natürliches platzieren. |
+| > > > > > >.                   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Park Symbol. |
+| > > > > > > restareapoint               | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für den Rest-Bereich. |
+| > > > > > >.      | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für Touristenattraktion. |
+| > > > > > > Zoomen                    | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Zoosymbol. |
+| > > > > > communitypoint               | [Pointstyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Orte der allgemeinen Verwendung für die Community darstellen. |
+| > > > > > > konventionencenterpoint       | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für das Konvention-Center. |
+| > > > > > > "financialpoint"              | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Finanz Symbol. |
+| > > > > > > governmentpoint             | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Regierung". |
+| > > > > > > informationtechnologypoint  | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Informationstechnologie". |
+| > > > > > > palacepoint                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Schloss Symbol. |
+| > > > > > > pollingstationpoint         | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Abruf Station". |
+| > > > > > > Research Point               | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Forschungs Symbol. |
+| > > > > > educationpoint               | [Pointstyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Schulen und andere Bildungseinrichtungen darstellen. |
+| > > > > > entertainmentpoint           | [Pointstyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Unterhaltungsveranstaltungen darstellen, wie z. b. Theater, Kinos usw. |
+| > > > > > > artspoint                   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Kunst" |
+| > > > > > > bowlingpoint                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Bowlingsymbol. |
+| > > > > > > casinopoint                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Das Casino-Symbol. |
+| > > > > > >.             | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für den Golf Kurs. |
+| > > > > > >-Sicherungspunkt                    | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Fitness". |
+| > > > > > >.                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Marina". |
+| > > > > > >.           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Film Theater Symbol. |
+| > > > > > > Nightclub Point              | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Nacht Club Symbol. |
+| > > > > > > "neu erstellen"             | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für die Wiederholung. |
+| > > > > > >-skatingpoint                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Schlittschuh Symbol. |
+| > > > > > > skiareapoint                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Ski Area Icon. |
+| > > > > > >.                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Das poolpoolsymbol. |
+| > > > > > > poolpoint           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Das poolpoolsymbol. |
+| > > > > > > Theater Punkt                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Theater Symbol. |
+| > > > > > > winerypoint                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Winery-Symbol. |
+| > > > > > essentialservicepoint        | [Pointstyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die wichtige Dienste darstellen, wie z. b. Parkplätze, Banken, Gas usw. |
+| > > > > > > atmpoint                    | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | ATM-Symbol. |
+| > > > > > >.       | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Auto Mobil Verleih-Symbol. |
+| > > > > > > Auto Report Point       | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Auto Mobil Reparatur Symbol. |
+| > > > > > > bankpoint                   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Bank Symbol. |
+| > > > > > > clinicpoint                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Klinikum (Symbol). |
+| > > > > > > "elektricchargingstationpoint"| [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "elektrische Ladestation". |
+| > > > > > > firestationpoint            | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Feuer Station-Symbol. |
+| > > > > > >.             | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Das erstellungensymbol. |
+| > > > > > > grocerypoint                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Lebensmittel Symbol. |
+| > > > > > > hospitalpoint               | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Krankenhaus Symbol. |
+| > > > > > > launtrockenpunkt                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Wäscherei". |
+| > > > > > > "liquorandwinestorepoint"     | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Spirituosen und Wein Speicher". |
+| > > > > >-Postpoint                   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Mail". |
+| > > > > > > marketpoint                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für den Markt. |
+| > > > > > >.                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Einstellungensymbol |
+| > > > > > > petspoint                   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Haustiere (Symbol). |
+| > > > > > >-pharmaypoint               | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Apotheken Symbol. |
+| > > > > > > Richtlinien Punkt                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Polizei Symbol. |
+| > > > > > > postalservicepoint          | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Postservice-Symbol. |
+| > > > > > > professionalpoint           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Professional Service". |
+| > > > > > > toiletpunkt                 | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Das WC-Symbol. |
+| > > > > >-veterinarianpoint           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Tierarzt-Symbol. |
+| >>>>> foodPoint                    | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Restaurants, Cafés usw. darstellen |
+| > > > > > > barandgrillpoint            | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für Balken und Grillen. |
+| > > > > > > barpunkt                    | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Balken Symbol. |
+| > > > > > >-Brauerei Punkt                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Brauerei Symbol. |
+| > > > > > >-Punkt                   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Icon-Symbol. |
+| > > > > > > icecreamshoppoint           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für eissahne-Geschäft. |
+| > > > > > >-restaurantpoint             | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Restaurant Symbol. |
+| > > > > > > teashoppoint                | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Teashop-Symbol. |
+| > > > > > lodgingpoint                 | [Pointstyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Hotels und andere Unternehmen darstellen. |
+| > > > > > > gotelpoint                  | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Hotel Symbol. |
+| > > > > > realestatepoint              | [Pointstyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Immobilien Unternehmen darstellen. |
+| > > > > > shoppingpoint                | [Pointstyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Hotels und andere Unternehmen darstellen. |
+| > > > > > > "Automobilhändler Point"       | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für den Automobilhändler. |
+| > > > > > > beautyandspapoint           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Schönheit und Spa". |
+| > > > > > > bookstorepoint              | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Buchbuchbuch. |
+| > > > > > > departmentstorepoint        | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Abteilungs speichersymbol. |
+| > > > > > > "        | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Das Symbol für den Elektronik Shop. |
+| > > > > > > golfshoppoint               | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol für den Golf Shop. |
+| > > > > > > homeapplianceshoppoint      | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Start-Appliance-Symbol. |
+| > > > > > > mallpoint                   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbol "Mall". |
+| > > > > > "phoneshoppoint"              | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Telefon Shop-Symbol. |
+| >>> populatedPlace                 | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die die Größe eines bewohnten Ortes darstellen (z. B. eine Stadt oder eine Ortschaft) |
+| >>>> capital                       | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die die Hauptstadt eines bewohnten Gebiets darstellen |
+| >>>>> adminDistrictCapital         | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die die Hauptstadt von Bundesländern/Provinzen darstellen |
+| > > > > > > majoradmindistrictcapital   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbole, die die Hauptstadt eines Bundesstaats oder Provinz darstellen. |
+| > > > > > > minoradmindistrictcapital   | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbole, die das neben-Haupt Kapital eines Bundesstaats oder Provinz darstellen. |
+| >>>>> countryRegionCapital         | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die die Hauptstadt von Ländern oder Regionen darstellen |
+| > > > > majorpopulatedplace           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbole, die die Größe des großen aufgefüllten Platzes darstellen. |
+| > > > > minorpopulatedplace           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbole, die die Größe des geringfügigen aufgefüllten Platzes darstellen. |
+| >>> roadShield                     | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeichen, die die Bezeichnung einer Straße darstellen (Beispiel: I-5). Verwenden Sie nur Palettenwerte, wenn Sie die **ImageFamily**-Eigenschaft des Einstellungseintrags auf einen Wert von *Palette* festlegen. |
+| >>> roadExit                       | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Ausfahrten, in der Regel aus einer Autobahn mit Zugangsüberwachungssystem, darstellen |
+| >>> transit                        | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Bushaltestellen, Zughaltestellen, Flughäfen usw. darstellen |
+| >> political                       | [Borderedmapelement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Politische Gebiete, wie Länder, Regionen und Staaten |
+| >>> countryRegion                  | [Borderedmapelement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Länder Regions Grenzen und-Bezeichnungen. |
+| >>> adminDistrict                  | [Borderedmapelement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Admin1, States, Provinzen usw., Rahmen und Bezeichnungen. |
+| >>> district                       | [Borderedmapelement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Admin2, Countys usw., Rahmen und Bezeichnungen. |
+| >> structure                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Häuser und andere gebäudeähnliche Bauten |
+| >>> building                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Bau. |
+| >>>> educationBuilding             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Für Bildungseinrichtungen verwendete Gebäude. |
+| >>>> medicalBuilding               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Gebäude, die für medizinische Zwecke wie Krankenhäuser verwendet werden. |
+| >>>> transitBuilding               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Für die Übertragung verwendete Gebäude, z. b. Flughäfen |
+| >> transportation                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Linien, die Teil des Transportnetzwerks sind (z. B. Straßen, Züge und Fähren) |
+| >>> road                           | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Linien, die alle Straßen darstellen |
+| >>>> controlledAccessHighway       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die große, gesteuerte Zugriffs Straßen darstellen. |
+| >>>>> highSpeedRamp                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die hoch Geschwindigkeits Rampen darstellen, die in der Regel mit kontrollierten Zugriffs Straßen verbunden werden. |
+| >>>> highway                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Straßen darstellen. |
+| >>>> majorRoad                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Linien, die Hauptstraßen darstellen. |
+| >>>> arterialRoad                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die auf dem Weg arterielle Straßen darstellen. |
+| >>>> street                        | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Straßen darstellen. |
+| >>>>> ramp                         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Rampen darstellen, die in der Regel eine Verbindung zu den- |
+| >>>>> unpavedStreet                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die nicht gepflasterte Straßen darstellen. |
+| >>>> tollRoad                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Straßen darstellen, die Geld Kosten verursachen. |
+| >>> railway                        | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Eisenbahnlinien |
+| >>> trail                          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Spazierwege durch Parks oder Wanderwege |
+| > > >-Gang                        | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   |  ✔   | Erhöhter Gang. |
+| >>> waterRoute                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Fährlinien |
+| >> water                           | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Alle Elemente, die wie Wasser aussehen. Dazu zählen Ozeane und Flüsse. |
+| >>> river                          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Flüsse, Ströme oder andere Wasserstraßen.  Beachten Sie, dass es sich herbei um Linien oder Polygone handeln kann, die zu stehenden Gewässern verbinden können. |
+| > routeMapElement                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Alle Routing bezogenen Einträge. |
+| >> routeLine                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen bezogene Einträge weiterleiten. |
+| >>> drivingRoute                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Fahr Routen darstellen. |
+| >>> scenicRoute                    | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die die Routen für das Routing darstellen. |
+| >>> walkingRoute                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeilen, die Wanderrouten darstellen. |
+| > userMapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Alle Benutzereinträge. |
+| >> userBillboard                   | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   |  ✔   | Das Format für Standard-[MapBillboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)-Instanzen |
+| >> userLine                        | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Das Format für Standard-[MapPolyline](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mappolyline)-Instanzen |
+| >> userModel3D                     | [MapElement3D](#mapelement3d) |      |  ✔   |  ✔   |  ✔   |  ✔   | Das Format für Standard-[MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d)-Instanzen.  Dies gilt in erster Linie zur Einstellung von renderAsSurface. |
+| >> userPoint                       | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Das Format für Standard-[MapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon)-Instanzen |
 
 <a id="properties" />
 
@@ -168,44 +249,45 @@ In diesem Abschnitt werden die Eigenschaften beschrieben, die Sie für die Eintr
 
 ### <a name="settings-properties"></a>Einstellungseigenschaften
 
-| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | Beschreibung |
-|------------------------------|---------|------|------|------|------|-------------|
-| atmosphereVisible            | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob die Atmosphäre im 3D-Steuerelement angezeigt wird |
-| buildingTexturesVisible      | Bool    |      |      |  ✔   |  ✔   | Ein Flag, das angibt, ob Texturen auf symbolischen 3D-Gebäuden, die über Texturen verfügen, angezeigt werden sollen oder nicht |
-| fogColor                     | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert des Distanznebels, der im 3D-Steuerelement angezeigt wird |
-| glowColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert, der für glänzende Beschriftungen und Symbole angewendet werden kann |
-| imageFamily                  | Zeichenfolge  |  ✔   |  ✔   |  ✔   |  ✔   | Der Name der Bildzusammenstellung, die für dieses Format verwendet werden soll. Legen Sie diesen Wert auf *Default* für Zeichen fest, die feste Farben verwenden, die auf den Zeichen in der realen Welt basieren. Legen Sie diesen Wert auf *Palette* für Zeichen fest, die über die Palette konfigurierbare Farben verwenden. |
-| landColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert von Landflächen, bevor etwas darauf gezeichnet wird |
-| logosVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Elemente mit einer **Organization**-Eigenschaft die entsprechenden Logos zeichnen oder ein allgemeines Symbol verwenden sollen |
-| officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Elemente, die über eine offizielle Farbeigenschaft verfügen (wie Transitlinien in China), in dieser Farbe gezeichnet werden sollen. Deaktivieren Sie diesen Wert beispielsweise für Schwarz-Weiß-Karten. |
-| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, der angibt, ob Raster Regionen gezeichnet werden soll, in dem sie eine bessere Darstellung als Vektoren (Japan und Südkorea) verfügen. |
-| shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Schattierungen für Erhöhungen auf der Karte gezeichnet werden sollen |
-| shadedReliefDarkColor        | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der dunklen Seite des schattierten Reliefs.  Alpha-Kanal stellt die maximale alpha-Wert dar. |
-| shadedReliefLightColor       | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der hellen Seite des schattierten Reliefs.  Alpha-Kanal stellt die maximale alpha-Wert dar. |
-| shadowColor                  | Farbe   |      |      |      |  ✔   | Die Farbe des Schattens hinter Symbole, die Schatten zu verwenden. |
-| spaceColor                   | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert für den Bereich um die Karte herum |
-| useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob die ursprünglichen Farben in das SVG-Format verwendet, anstatt den Palette-Eintrag für die Farben in einem Image suchen werden soll. |
+| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | 1903 | Beschreibung |
+|------------------------------|---------|------|------|------|------|------|-------------|
+| atmosphereVisible            | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob die Atmosphäre im 3D-Steuerelement angezeigt wird |
+| buildingTexturesVisible      | Bool    |      |      |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Texturen auf symbolischen 3D-Gebäuden, die über Texturen verfügen, angezeigt werden sollen oder nicht |
+| fogColor                     | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert des Distanznebels, der im 3D-Steuerelement angezeigt wird |
+| glowColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert, der für glänzende Beschriftungen und Symbole angewendet werden kann |
+| imageFamily                  | Zeichenfolge  |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Name der Bildzusammenstellung, die für dieses Format verwendet werden soll. Legen Sie diesen Wert auf *Default* für Zeichen fest, die feste Farben verwenden, die auf den Zeichen in der realen Welt basieren. Legen Sie diesen Wert auf *Palette* für Zeichen fest, die über die Palette konfigurierbare Farben verwenden. |
+| landColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert von Landflächen, bevor etwas darauf gezeichnet wird |
+| logosVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Elemente mit einer **Organization**-Eigenschaft die entsprechenden Logos zeichnen oder ein allgemeines Symbol verwenden sollen |
+| officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Elemente, die über eine offizielle Farbeigenschaft verfügen (wie Transitlinien in China), in dieser Farbe gezeichnet werden sollen. Deaktivieren Sie diesen Wert beispielsweise für Schwarz-Weiß-Karten. |
+| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Raster Bereiche gezeichnet werden sollen, in denen Sie über eine bessere Darstellung als Vektoren (Japan und Korea) verfügen. |
+| shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Schattierungen für Erhöhungen auf der Karte gezeichnet werden sollen |
+| shadedReliefDarkColor        | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der dunklen Seite des schattierten Reliefs.  Der Alpha-Kanal stellt den maximalen Alpha Wert dar. |
+| shadedReliefLightColor       | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der hellen Seite des schattierten Reliefs.  Der Alpha-Kanal stellt den maximalen Alpha Wert dar. |
+| ShadowColor                  | Farbe   |      |      |      |  ✔   |  ✔   | Die Farbe des Schattens hinter Symbolen, die Schatten verwenden. |
+| spaceColor                   | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert für den Bereich um die Karte herum |
+| useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob die ursprünglichen Farben in der SVG verwendet werden sollen, anstatt den Paletteneintrag für Farben in einem Bild zu suchen. |
 
 <a id="mapelement" />
 
 ### <a name="mapelement-properties"></a>MapElement-Eigenschaften
 
-| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | Beschreibung |
-|------------------------------|---------|------|------|------|------|-------------|
-| backgroundScale              | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   | Betrag, um den das Hintergrundelement eines Symbols skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
-| fillColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe, die für das Füllen von Polygonen, den Hintergrund von Punktsymbolen und für die Mitte von geteilten Linien verwendet wird |
-| fontFamily                   | Zeichenfolge  |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| iconColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der Glyphe, die in der Mitte eines Punktsymbols angezeigt wird |
-| iconScale                    | Gleitkomma   |      |  ✔   |  ✔   |  ✔   | Betrag, um den die Glyphe eines Symbols skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
-| labelColor                   | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| labelOutlineColor            | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| labelScale                   | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die Standardgröße von Beschriftungen skaliert wird. Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
-| labelVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| overwriteColor               | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | Führt das Überschreiben von **StrokeColor** mit dem Alphawert von **FillColor** aus, anstatt eine Mischung der beiden Farben zu verwenden |
-| scale                        | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die gesamte Größe des Punkts skaliert wird. Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
-| strokeColor                  | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe, die für die Kontur von Polygonen, die Kontur von Punktsymbolen und die Farbe von Linien verwendet werden soll |
-| strokeWidthScale             | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die Strichstärke von Linien skaliert wird Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
-| visible                      | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | 1903 | Beschreibung |
+|------------------------------|---------|------|------|------|------|------|-------------|
+| backgroundScale              | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Betrag, um den das Hintergrundelement eines Symbols skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
+| fillColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe, die für das Füllen von Polygonen, den Hintergrund von Punktsymbolen und für die Mitte von geteilten Linien verwendet wird |
+| fontFamily                   | Zeichenfolge  |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| FontWeight                   | Zeichenfolge  |      |      |      |      |  ✔   | Die Dichte einer Schriftart in Bezug auf die Helligkeit oder die schwere haftigkeit der Striche. "**Light**", "**Normal**", "**Semibold**" und "**Bold**" können festgelegt werden. |
+| iconColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der Glyphe, die in der Mitte eines Punktsymbols angezeigt wird |
+| iconScale                    | Gleitkomma   |      |  ✔   |  ✔   |  ✔   |  ✔   | Betrag, um den die Glyphe eines Symbols skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
+| labelColor                   | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| labelOutlineColor            | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| labelScale                   | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die Standardgröße von Beschriftungen skaliert wird. Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
+| labelVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| overwriteColor               | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Führt das Überschreiben von **StrokeColor** mit dem Alphawert von **FillColor** aus, anstatt eine Mischung der beiden Farben zu verwenden |
+| scale                        | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die gesamte Größe des Punkts skaliert wird. Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
+| strokeColor                  | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe, die für die Kontur von Polygonen, die Kontur von Punktsymbolen und die Farbe von Linien verwendet werden soll |
+| strokeWidthScale             | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die Strichstärke von Linien skaliert wird Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
+| visible                      | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
 
 <a id="borderedmap" />
 
@@ -213,12 +295,12 @@ In diesem Abschnitt werden die Eigenschaften beschrieben, die Sie für die Eintr
 
 Diese Eigenschaftengruppe erbt von der [MapElement](#mapelement)-Eigenschaftengruppe.
 
-| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | Beschreibung |
-|------------------------------|---------|------|------|------|------|-------------|
-| borderOutlineColor           | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Die sekundäre oder Umrandungslinienfarbe des Rahmens eines gefüllten Polygons |
-| borderStrokeColor            | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Die primäre Farbe des Rahmens eines gefüllten Polygons |
-| borderVisible                | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| borderWidthScale             | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   | Der Betrag, um der Strich der Rahmenlinien, die skaliert werden. Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
+| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | 1903 | Beschreibung |
+|------------------------------|---------|------|------|------|------|------|-------------|
+| borderOutlineColor           | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die sekundäre oder Umrandungslinienfarbe des Rahmens eines gefüllten Polygons |
+| borderStrokeColor            | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die primäre Farbe des Rahmens eines gefüllten Polygons |
+| borderVisible                | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| borderWidthScale             | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Betrag, um den der Strich des Rahmens skaliert wird. Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
 
 <a id="pointstyle" />
 
@@ -226,14 +308,16 @@ Diese Eigenschaftengruppe erbt von der [MapElement](#mapelement)-Eigenschaftengr
 
 Diese Eigenschaftengruppe erbt von der [MapElement](#mapelement)-Eigenschaftengruppe.
 
-| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | Beschreibung |
-|------------------------------|---------|------|------|------|------|-------------|
-| Shape-Hintergrund             | Gleitkomma   |      |      |      |  ✔   | Form, der als Hintergrund des Symbols – ersetzen jede Form, die vorhanden ist. |
-| stemAnchorRadiusScale        | Gleitkomma   |      |      |  ✔   |  ✔   | Betrag, um den der Ankerpunkt eines Symbolschafts skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
-| stemColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe des Schafts unten an einem Symbol im 3D-Modus |
-| stemHeightScale              | Gleitkomma   |      |      |  ✔   |  ✔   | Betrag, um den die Länge eines Symbolschafts skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Länge. |
-| stemOutlineColor             | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der Kontur um den Schaft unten an einem Symbol im 3D-Modus |
-| stemWidthScale               | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   | Betrag, um den die Breite eines Symbolschafts skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Länge. |
+| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | 1903 | Beschreibung |
+|------------------------------|---------|------|------|------|------|------|-------------|
+| shadowvisible                | Bool    |      |      |      |      |  ✔   | Das Flag, das angibt, ob der Schatten des Symbols sichtbar sein soll. |
+| Shape-Hintergrund             | Zeichenfolge  |      |      |      |      |  ✔   | Form, die als Hintergrund des Symbols verwendet werden soll, und ersetzt jede beliebige Form, die dort vorhanden ist. |
+| Form Symbol                   | Zeichenfolge  |      |      |      |      |  ✔   | Form, die als Vordergrund Symbol des Symbols verwendet werden soll, und ersetzt jede beliebige Form, die dort vorhanden ist. |
+| stemAnchorRadiusScale        | Gleitkomma   |      |      |  ✔   |  ✔   |  ✔   | Betrag, um den der Ankerpunkt eines Symbolschafts skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
+| stemColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe des Schafts unten an einem Symbol im 3D-Modus |
+| stemHeightScale              | Gleitkomma   |      |      |  ✔   |  ✔   |  ✔   | Betrag, um den die Länge eines Symbolschafts skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Länge. |
+| stemOutlineColor             | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der Kontur um den Schaft unten an einem Symbol im 3D-Modus |
+| stemWidthScale               | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Betrag, um den die Breite eines Symbolschafts skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Länge. |
 
 <a id="mapelement3d" />
 
@@ -241,6 +325,6 @@ Diese Eigenschaftengruppe erbt von der [MapElement](#mapelement)-Eigenschaftengr
 
 Diese Eigenschaftengruppe erbt von der [MapElement](#mapelement)-Eigenschaftengruppe.
 
-| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | Beschreibung |
-|------------------------------|---------|------|------|------|------|------------|
-| renderAsSurface              | Bool    |      |      |  ✔   |  ✔   | Ein Flag, das angibt, dass ein 3D-Modell wie ein Gebäude gerendert werden soll – ohne Tiefenausblendung gegen den Boden |
+| Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | 1903 | Beschreibung |
+|------------------------------|---------|------|------|------|------|------|------------|
+| renderAsSurface              | Bool    |      |      |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, dass ein 3D-Modell wie ein Gebäude gerendert werden soll – ohne Tiefenausblendung gegen den Boden |
