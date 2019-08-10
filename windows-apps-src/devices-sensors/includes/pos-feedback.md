@@ -1,26 +1,26 @@
 ---
 title: Support und Feedback
-description: Includedatei für Support und feedback
+description: Support und Feedback Include-Datei
 ms.date: 06/12/2018
-ms.topic: article
+ms.topic: include
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: fd8f39ccaa735f02a8f014179b9cc254eacc26cd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3a9714f24a52c225c6c7b52ae3eec6edf5dc3feb
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66376931"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68912369"
 ---
 ## <a name="support-and-feedback"></a>Support und Feedback
 
 ### <a name="find-answers-to-your-questions"></a>Finden Sie Antworten auf Ihre Fragen
 
-Haben Sie Fragen? Fragen Sie uns auf [Stack Overflow](https://aka.ms/pos-stackoverflow) oder [MSDN-Forum für UWP](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D)
+Haben Sie Fragen? Fragen Sie uns entweder [Stack Overflow](https://aka.ms/pos-stackoverflow) oder im [MSDN-UWP-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D)
 
-Helfen Sie uns Ihre Fragen suchen:
-- Hinzufügen der [Pointofservice](https://aka.ms/pos-stackoverflow) Tag auf Ihre Frage in Stack Overflow. 
-- Enthalten die ["Pointofservice"](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D) Begriff in Ihrem Beitrag im MSDN-UWP-Forum
+Helfen Sie uns, Ihre Fragen zu finden:
+- Fügen Sie der Frage in Stack Overflow das [pointfservice](https://aka.ms/pos-stackoverflow) -Tag hinzu. 
+- Begriff ["PointF Service"](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D) in Ihr Beitrag im MSDN-UWP-Forum einschließen
 
-### <a name="make-feature-suggestions-or-give-feedback"></a>Machen Sie Vorschläge für Features oder geben feedback
-Finden Sie unter [Entwickler Feedback UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=202594).
+### <a name="make-feature-suggestions-or-give-feedback"></a>Vorschläge machen oder Feedback geben
+Weitere Informationen finden Sie unter [Entwickler Feedback UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=202594).
