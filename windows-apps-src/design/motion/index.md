@@ -12,12 +12,12 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1096bdab340c3f0fef24b5815423f72b0f5c8219
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444165"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867404"
 ---
 # <a name="motion-for-uwp-apps"></a>Bewegung für UWP-Apps
 
@@ -74,21 +74,21 @@ Dank intelligenter Bewegung erhält der Benutzer eine Rückmeldung, die sich an 
 
 :::row:::
     :::column:::
-        ### [Timing and easing](timing-and-easing.md)
-        Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.
+### <a name="timing-and-easingtiming-and-easingmd"></a>[Timing und Beschleunigung](timing-and-easing.md)
+Timing und Beschleunigung sind wichtige Elemente, um die Bewegung von Objekten natürlich erscheinen zu lassen, die in die Benutzeroberfläche hineinkommen, sie verlassen oder sich darin bewegen.
     :::column-end:::
     :::column:::
-        ### [Directionality and gravity](directionality-and-gravity.md)
-        Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.
+### <a name="directionality-and-gravitydirectionality-and-gravitymd"></a>[Richtung und Schwerkraft](directionality-and-gravity.md)
+Richtungssignale festigen das mentale Modell der Erlebnisse, die ein Benutzer auf einer Oberfläche macht. Eine gerichtete Bewegung unterliegt Kräften – z.B. der Schwerkraft –, die die Natürlichkeit der Bewegung verstärken.
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        ### [Page transitions](page-transitions.md)
-        Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
+### <a name="page-transitionspage-transitionsmd"></a>[Seitenübergänge](page-transitions.md)
+Seitenübergänge dienen der Navigation, wenn Benutzer zwischen Seiten in einer App wechseln, und liefern Feedback über die Beziehung zwischen Seiten. Mithilfe von Seitenübergängen wissen Benutzer immer, an welcher Stelle der Navigationshierarchie sie sich gerade befinden.
     :::column-end:::
     :::column:::
-        ### [Connected animation](connected-animation.md)
-        Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
+### <a name="connected-animationconnected-animationmd"></a>[Verbundene Animationen](connected-animation.md)
+Mit verbundenen Animationen können Sie dynamische und ansprechende Navigationsfunktionen erstellen, indem Sie den Übergang eines Elements zwischen zwei verschiedenen Ansichten animieren.
     :::column-end:::
 :::row-end:::

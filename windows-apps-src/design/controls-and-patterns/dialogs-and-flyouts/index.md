@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 43d63b1831766ecdf65fe1c1d7fd15457f728f83
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582718"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867441"
 ---
 # <a name="dialogs-and-flyouts"></a>Dialogfelder und Flyouts
 
@@ -29,20 +29,20 @@ Dialogfelder und Flyouts sind vorübergehende UI-Elemente, die angezeigt werden,
 
 :::row:::
     :::column:::
-        **Dialogs**
-        
-        ![Example of a dialog](../images/dialogs/dialog_RS2_delete_file.png)
+**Dialogs**
 
-        Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
+![Beispiel für ein Dialogfeld](../images/dialogs/dialog_RS2_delete_file.png)
+
+Dialogfelder sind modale Benutzeroberflächenüberlagerungen, die kontextbezogene App-Informationen enthalten. Dialogfelder blockieren Interaktionen mit dem App-Fenster, bis sie explizit geschlossen werden. Sie verlangen häufig eine Aktion vom Benutzer.
     :::column-end:::
     :::column::: 
-        **Flyouts**
+**Flyouts**
 
-        ![Example of a flyout](../images/flyout-example2.png)
+![Flyout-Beispiel](../images/flyout-example2.png)
 
-        A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a secondary control or show more detail about an item.
+Ein Flyout ist ein einfaches kontextbezogenes Popupmenü zum Anzeigen der Benutzeroberfläche, die im Zusammenhang mit den Aktionen des Benutzers steht. Es umfasst die Platzierungs- und Größenlogik und kann dazu verwendet werden, ein sekundäres Steuerelement oder weitere Einzelheiten zu einem Element anzuzeigen.
 
-        Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+Im Gegensatz zu einem Dialogfeld kann ein Flyout durch Tippen oder Klicken auf eine Stelle außerhalb des Flyouts schnell geschlossen werden. Das Drücken der ESC- oder Zurück-Taste sowie das Ändern der Größe des App-Fensters oder der Ausrichtung des Geräts haben denselben Effekt.
     :::column-end:::
 :::row-end:::
 
