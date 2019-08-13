@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: python, Windows 10, Microsoft, Erlernen von Python, python unter Windows für Einsteiger, Installieren von Python mit Microsoft Store, Python mit vs Code, pygame unter unter Windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 9ef2349b296e5518d6bbb85a035526d7de25ea5c
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: 5c1861d76a98ff76b130f3012d730980482cda75
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473680"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959091"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>Einstieg in die Verwendung von Python unter Windows für Einsteiger
 
@@ -31,11 +29,11 @@ Wenn Sie python unter Windows für die **Webentwicklung**verwenden, empfehlen wi
 
 So installieren Sie python mithilfe der Microsoft Store:
 
-1. Wechseln Sie zu  Ihrem Startmenü (unten links Windows-Symbol), geben Sie "Microsoft Store" ein, und wählen Sie den Link zum Öffnen des Stores aus.
+1. Wechseln Sie zu Ihrem Startmenü (unten links Windows-Symbol), geben Sie "Microsoft Store" ein, und wählen Sie den Link zum Öffnen des Stores aus.
 
 2. Nachdem der Speicher geöffnet ist, wählen Sie im Menü oben rechts die Option **Suchen** aus, und geben Sie "python" ein. Öffnen Sie "Python 3,7" in den Ergebnissen unter apps. Wählen Sie **Get**aus.
 
-3. Nachdem python den Download-und Installationsprozess abgeschlossen hat, öffnen Sie Windows PowerShell  über das Startmenü (unten links Windows-Symbol). Nachdem PowerShell geöffnet ist, geben `Python --version` Sie ein, um zu bestätigen, dass Python3 auf Ihrem Computer installiert ist.
+3. Nachdem python den Download-und Installationsprozess abgeschlossen hat, öffnen Sie Windows PowerShell über das Startmenü (unten links Windows-Symbol). Nachdem PowerShell geöffnet ist, geben `Python --version` Sie ein, um zu bestätigen, dass Python3 auf Ihrem Computer installiert ist.
 
 4. Die Microsoft Store Installation von python umfasst **PIP**, den Standardpaket-Manager. PIP ermöglicht Ihnen, zusätzliche Pakete zu installieren und zu verwalten, die nicht Teil der python-Standardbibliothek sind. Geben `pip --version`Sie ein, um zu bestätigen, dass Sie auch PIP zum Installieren und Verwalten von Paketen zur Verfügung haben.
 

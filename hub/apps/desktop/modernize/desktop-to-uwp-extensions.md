@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c47eba0e0f5969e978cde5575cf8ab05e589350e
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 87483c5d34cfb2b0bb266fb3d903e15d1b492187
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682483"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959055"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Integrieren Ihrer APP für gepackte Desktops in Windows 10 und UWP
 
@@ -110,7 +110,7 @@ Dazu müssen Sie den [programmgesteuerten Bezeichner (Programm-ID)](https://docs
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-<FileTypeAssociation Name="[AppID]">
+<FileTypeAssociation Name="[Name]">
          <MigrationProgIds>
             <MigrationProgId>"[ProgID]"</MigrationProgId>
         </MigrationProgIds>
@@ -123,7 +123,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. Diese ID wird intern verwendet, um einen [programmgesteuerte Bezeichner (Programm-ID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) mit Hash zu generieren, die mit Ihrer Dateitypzuordnung verknüpft ist. Mithilfe dieser ID können Sie Änderungen in zukünftigen Versionen Ihrer App verwalten. |
+|Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |MigrationProgId |Der [programmatische Bezeichner (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) , der die Anwendung, Komponente und Version der Desktop Anwendung beschreibt, von der Sie Dateizuordnungen erben möchten.|
 
 #### <a name="example"></a>Beispiel
@@ -137,7 +137,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <rescap3:MigrationProgIds>
               <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
               <rescap3:MigrationProgId>Foo.Bar.2</rescap3:MigrationProgId>
@@ -169,7 +169,7 @@ Sie können Ihre gepackte Anwendung mit Dateityp Erweiterungen verknüpft haben.
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[file extension]"</FileType>
         </SupportedFileTypes>
@@ -182,7 +182,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. Diese ID wird intern verwendet, um einen [programmgesteuerte Bezeichner (Programm-ID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) mit Hash zu generieren, die mit Ihrer Dateitypzuordnung verknüpft ist. Mithilfe dieser ID können Sie Änderungen in zukünftigen Versionen Ihrer App verwalten.   |
+|Name | Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten.   |
 |FileType |Die Erweiterung, die von Ihrer App unterstützt wird. |
 
 #### <a name="example"></a>Beispiel
@@ -196,9 +196,8 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="mediafiles">
             <uap:SupportedFileTypes>
-            <uap:FileType>.txt</uap:FileType>
             <uap:FileType>.avi</uap:FileType>
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
@@ -231,7 +230,7 @@ Sie können diesem Menü Optionen hinzufügen. Diese Optionen geben Benutzern we
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedVerbs>
            <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
         </SupportedVerbs>
@@ -244,7 +243,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie | Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. |
+|Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |Verb |Der Name, der im Kontextmenü des Datei-Explorers angezeigt wird. Diese Zeichenfolge kann mithilfe von ```ms-resource``` lokalisiert werden.|
 |Id |Die eindeutige ID des Verbs. Wenn es sich bei Ihrer Anwendung um eine UWP-App handelt, wird Sie als Teil ihrer Aktivierungs Ereignis Argumente an Ihre APP übermittelt, sodass Sie die Auswahl des Benutzers entsprechend behandeln kann. Wenn es sich bei Ihrer Anwendung um eine APP mit vollständiger Vertrauenswürdigkeit handelt, empfängt Sie stattdessen Parameter (siehe das nächste Aufzählungs Zeichen). |
 |Parameter |Die Liste mit Argumentparametern und -werten für das Verb. Wenn es sich bei Ihrer Anwendung um eine APP mit vollständiger Vertrauenswürdigkeit handelt, werden diese Parameter als Ereignis Argumente an die Anwendung übermittelt, wenn die Anwendung aktiviert wird. Sie können das Verhalten Ihrer Anwendung auf der Grundlage verschiedener Aktivierungs Verben anpassen. Wenn eine Variable einen Dateipfad enthalten kann, schließen Sie den Parameterwert in Anführungszeichen. Dadurch werden jegliche Probleme vermieden, die in Fällen auftreten, bei denen der Pfad Leerzeichen enthält. Wenn Ihre Anwendung eine UWP-APP ist, können Sie keine Parameter übergeben. Die App empfängt stattdessen die ID (siehe das vorherige Aufzählungszeichen).|
@@ -263,7 +262,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" Parameters="/e &quot;%1&quot;">Edit</uap3:Verb>
               <uap3:Verb Id="Print" Extended="true" Parameters="/p &quot;%1&quot;">Print</uap3:Verb>
@@ -295,7 +294,7 @@ Sie können sicherstellen, dass die Benutzer ihre neue Paket Anwendung standardm
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" UseUrl="true" Parameters="%1">
+    <FileTypeAssociation Name="[Name]" UseUrl="true" Parameters="%1">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -308,9 +307,9 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. |
+|Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |UseUrl |Gibt an, ob Dateien direkt über eine URL-Ziel geöffnet werden sollen. Wenn Sie diesen Wert nicht festlegen, wird die Datei vom System zuerst lokal heruntergeladen, wenn die Anwendung versucht, eine Datei mithilfe einer URL zu öffnen. |
-|Parameter |Optionale Parameter. |
+|Parameter | Optionale Parameter. |
 |FileType |Die relevanten Dateierweiterungen. |
 
 #### <a name="example"></a>Beispiel
@@ -324,7 +323,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
       <Application>
         <Extensions>
           <uap:Extension Category="windows.fileTypeAssociation">
-            <uap3:FileTypeAssociation Name="documenttypes" UseUrl="true" Parameters="%1">
+            <uap3:FileTypeAssociation Name="myfiletypes" UseUrl="true" Parameters="%1">
               <uap:SupportedFileTypes>
                 <uap:FileType>.txt</uap:FileType>
                 <uap:FileType>.doc</uap:FileType>
@@ -484,7 +483,7 @@ Geben Sie an, wie sich die Anwendung verhält, wenn ein Benutzer mehrere Dateien
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" MultiSelectModel="[SelectionModel]">
+    <FileTypeAssociation Name="[Name]" MultiSelectModel="[SelectionModel]">
         <SupportedVerbs>
             <Verb Id="Edit" MultiSelectModel="[SelectionModel]">Edit</Verb>
         </SupportedVerbs>
@@ -499,7 +498,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. |
+|Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |MultiSelectModel |Weitere Informationen finden Sie unter unten. |
 |FileType |Die relevanten Dateierweiterungen. |
 
@@ -525,7 +524,7 @@ Bei verpackten Desktop-Apps stehen die gleichen drei Optionen zur Verfügung wie
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="myapp" MultiSelectModel="Document">
+          <uap3:FileTypeAssociation Name="myfiletypes" MultiSelectModel="Document">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap3:Verb>
               <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
@@ -559,7 +558,7 @@ Ermöglichen Sie es Benutzern, eine Miniaturansicht des Dateiinhalts anzuzeigen,
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -574,7 +573,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. |
+|Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |FileType |Die relevanten Dateierweiterungen. |
 |Clsid   |Die Klassen-ID Ihrer App. |
 
@@ -591,7 +590,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap2:SupportedFileTypes>
@@ -622,7 +621,7 @@ Ermöglichen Sie es Benutzern, den Inhalt einer Datei in Vorschaubereich des Dat
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -636,7 +635,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. |
+|Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |FileType |Die relevanten Dateierweiterungen. |
 |Clsid   |Die Klassen-ID Ihrer App. |
 
@@ -653,7 +652,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
                 </uap2SupportedFileTypes>
@@ -685,7 +684,7 @@ Für weitere Informationen zum **Art**-Feld und die Werte, die Sie für dieses F
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -701,7 +700,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. |
+|Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |FileType |Die relevanten Dateierweiterungen. |
 |Wert |Ein gültiger [Art-Wert](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
@@ -716,7 +715,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-           <uap:FileTypeAssociation Name="Contoso">
+           <uap:FileTypeAssociation Name="mediafiles">
              <uap:SupportedFileTypes>
                <uap:FileType>.m4a</uap:FileType>
                <uap:FileType>.mta</uap:FileType>
@@ -748,7 +747,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 
 ```XML
 <uap:Extension Category="windows.fileTypeAssociation">
-    <uap:FileTypeAssociation Name="[AppID]">
+    <uap:FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>.bar</FileType>
         </SupportedFileTypes>
@@ -762,7 +761,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fileTypeAssociation``.
-|Name |Eine eindeutige ID für Ihre App. |
+|Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |FileType |Die relevanten Dateierweiterungen. |
 |Clsid  |Die Klassen-ID Ihrer App. |
 
@@ -778,7 +777,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap:SupportedFileTypes>

@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: python, Windows 10, Microsoft, python unter Windows, Python Web mit WSL, Python-Web-App mit Windows-Subsystem für Linux, python-Webentwicklung unter Windows, Flask-app unter Windows, Django-app unter Windows, Python Web, Flask Web dev unter Windows, Django Web dev unter Windows, Windows Web dev mit Python, vs Code Python Web dev, Remote-WSL-Erweiterung, Ubuntu, WSL, venv, PIP, Microsoft python-Erweiterung, python unter Windows ausführen, python unter Windows verwenden, mit Python unter Windows erstellen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: eafe85ac7e954d1a76708b059a191c14526afff8
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: fa6da9f5151d9457aafd255c9d10c91e3d219cee
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473685"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959086"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Beginnen Sie mit der Verwendung von Python für die Webentwicklung unter Windows.
 
@@ -33,7 +31,7 @@ Mithilfe von WSL können Sie eine GNU/Linux-Umgebung ausführen, einschließlich
 
 Um WSL auf Ihrem Computer zu aktivieren, müssen Sie folgende Schritte ausführen:
 
-1. Wechseln Sie zu  Ihrem Startmenü (unten links Windows-Symbol), geben Sie "Windows-Funktionen ein-oder ausschalten" ein, und klicken Sie auf den Link zur **Systemsteuerung** , um das Popup Menü " **Windows-Features** " zu öffnen. Suchen Sie in der Liste "Windows-Subsystem für Linux", und aktivieren Sie das Kontrollkästchen, um das Feature zu aktivieren.
+1. Wechseln Sie zu Ihrem Startmenü (unten links Windows-Symbol), geben Sie "Windows-Funktionen ein-oder ausschalten" ein, und klicken Sie auf den Link zur **Systemsteuerung** , um das Popup Menü " **Windows-Features** " zu öffnen. Suchen Sie in der Liste "Windows-Subsystem für Linux", und aktivieren Sie das Kontrollkästchen, um das Feature zu aktivieren.
 
 2. Starten Sie den Computer bei entsprechender Aufforderung neu.
 
@@ -43,7 +41,7 @@ Es stehen mehrere Linux-Distributionen zur Verfügung, die auf WSL ausgeführt w
 
 1. Öffnen Sie diesen [Ubuntu 18,04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) -Link, öffnen Sie den Microsoft Store, und wählen Sie **Get**aus. *(Dieser Download ist recht umfangreich und kann einige Zeit in Anspruch nehmen.)*
 
-2. Nachdem der Download abgeschlossen ist, wählen Sie **starten** von der Microsoft Store oder starten aus, indem Sie im Startmenü  "Ubuntu 18,04 LTS" eingeben.
+2. Nachdem der Download abgeschlossen ist, wählen Sie **starten** von der Microsoft Store oder starten aus, indem Sie im Startmenü "Ubuntu 18,04 LTS" eingeben.
 
 3. Wenn Sie die Verteilung zum ersten Mal ausführen, werden Sie aufgefordert, einen Kontonamen und ein Kennwort zu erstellen. Anschließend werden Sie standardmäßig automatisch als dieser Benutzer angemeldet. Sie können einen beliebigen Benutzernamen und ein Kennwort auswählen. Sie haben keinen Einfluss auf den Windows-Benutzernamen.
 
@@ -64,7 +62,7 @@ Profitieren Sie von [IntelliSense](https://code.visualstudio.com/docs/editor/int
 
 Wir erstellen nun ein neues Projektverzeichnis auf dem Linux-Dateisystem (Ubuntu), mit dem wir dann mit Linux-apps und-Tools mit vs Code arbeiten werden.
 
-1. Schließen Sie vs Code, und öffnen Sie Ubuntu 18,04 (Ihre WSL-Befehlszeile)  , indem Sie in das Startmenü (unten links Fenster) klicken und Folgendes eingeben: "Ubuntu 18,04".
+1. Schließen Sie vs Code, und öffnen Sie Ubuntu 18,04 (Ihre WSL-Befehlszeile) , indem Sie in das Startmenü (unten links Fenster) klicken und Folgendes eingeben: "Ubuntu 18,04".
 
 2. Navigieren Sie in der Ubuntu-Befehlszeile zu dem Speicherort, an dem das Projekt abgelegt werden soll, und erstellen `mkdir HelloWorld`Sie ein Verzeichnis für dieses:.
 
@@ -154,7 +152,7 @@ Gratul. Sie sind so eingerichtet, dass Sie Python-Programme erstellen und ausfü
 
 [Flask](http://flask.pocoo.org/) ist ein Webanwendungs Framework für python. In diesem kurzen Tutorial erstellen Sie eine kleine "Hallo Welt" Flask-APP, die vs Code und WSL verwendet.
 
-1. Öffnen Sie Ubuntu 18,04 (Ihre WSL-Befehlszeile), indem  Sie zu Ihrem Startmenü wechseln (unten links Windows-Symbol), und geben Sie Folgendes ein: "Ubuntu 18,04".
+1. Öffnen Sie Ubuntu 18,04 (Ihre WSL-Befehlszeile), indem Sie zu Ihrem Startmenü wechseln (unten links Windows-Symbol), und geben Sie Folgendes ein: "Ubuntu 18,04".
 
 2. Erstellen Sie ein Verzeichnis für Ihr Projekt `mkdir HelloWorld-Flask`:, `cd HelloWorld-Flask` und geben Sie dann das Verzeichnis ein.
 
@@ -232,7 +230,7 @@ Herzlichen Glückwunsch, Sie haben eine Flask-Webanwendung mit Visual Studio Cod
 
 [Django](https://www.djangoproject.com) ist ein Webanwendungs Framework für python. In diesem kurzen Tutorial erstellen Sie eine kleine Django-App mit dem Hallo Welt "", die vs Code und WSL verwendet.
 
-1. Öffnen Sie Ubuntu 18,04 (Ihre WSL-Befehlszeile), indem  Sie zu Ihrem Startmenü wechseln (unten links Windows-Symbol), und geben Sie Folgendes ein: "Ubuntu 18,04".
+1. Öffnen Sie Ubuntu 18,04 (Ihre WSL-Befehlszeile), indem Sie zu Ihrem Startmenü wechseln (unten links Windows-Symbol), und geben Sie Folgendes ein: "Ubuntu 18,04".
 
 2. Erstellen Sie ein Verzeichnis für Ihr Projekt `mkdir HelloWorld-Django`:, `cd HelloWorld-Django` und geben Sie dann das Verzeichnis ein.
 

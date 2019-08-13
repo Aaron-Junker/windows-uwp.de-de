@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: python, Windows 10, Microsoft, python-Systemverwaltung, python-Datei Automatisierung, python-Skripts unter Windows, Einrichten von Python unter Windows, python-Entwicklerumgebung unter Windows, python-Entwicklungsumgebung unter Windows, Python mit PowerShell, python-Skripts für Dateisystem Tasks
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: b34bf61f4ce4d2157df572cfbbc9337fced6cf2f
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: 93fdea3347cc15aa6231ff90fb18eb2f7defb201
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473667"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959069"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Einstieg in die Verwendung von Python unter Windows für die Skripterstellung und Automatisierung
 
@@ -31,11 +29,11 @@ Wenn Sie python für die **Webentwicklung** unter Windows verwenden, empfehlen w
 
 So installieren Sie python mithilfe der Microsoft Store:
 
-1. Wechseln Sie zu  Ihrem Startmenü (unten links Windows-Symbol), geben Sie "Microsoft Store" ein, und wählen Sie den Link zum Öffnen des Stores aus.
+1. Wechseln Sie zu Ihrem Startmenü (unten links Windows-Symbol), geben Sie "Microsoft Store" ein, und wählen Sie den Link zum Öffnen des Stores aus.
 
 2. Nachdem der Speicher geöffnet ist, wählen Sie im Menü oben rechts die Option **Suchen** aus, und geben Sie "python" ein. Öffnen Sie "Python 3,7" in den Ergebnissen unter apps. Wählen Sie **Get**aus.
 
-3. Nachdem python den Download-und Installationsprozess abgeschlossen hat, öffnen Sie Windows PowerShell  über das Startmenü (unten links Windows-Symbol). Nachdem PowerShell geöffnet ist, geben `Python --version` Sie ein, um zu bestätigen, dass Python3 auf Ihrem Computer installiert wurde.
+3. Nachdem python den Download-und Installationsprozess abgeschlossen hat, öffnen Sie Windows PowerShell über das Startmenü (unten links Windows-Symbol). Nachdem PowerShell geöffnet ist, geben `Python --version` Sie ein, um zu bestätigen, dass Python3 auf Ihrem Computer installiert wurde.
 
 4. Die Microsoft Store Installation von python umfasst **PIP**, den Standardpaket-Manager. PIP ermöglicht Ihnen, zusätzliche Pakete zu installieren und zu verwalten, die nicht Teil der python-Standardbibliothek sind. Geben `pip --version`Sie ein, um zu bestätigen, dass Sie auch PIP zum Installieren und Verwalten von Paketen zur Verfügung haben.
 
@@ -88,7 +86,7 @@ Allgemeine Systemverwaltungsaufgaben können sehr lange dauern, aber mit einem P
 
 Beginnen wir mit einem einfachen Skript, das eine Verzeichnisstruktur durchläuft und die Verzeichnisstruktur anzeigt.
 
-1. Öffnen Sie PowerShell über  das Startmenü (unten links Windows-Symbol).
+1. Öffnen Sie PowerShell über das Startmenü (unten links Windows-Symbol).
 
 2. Erstellen Sie ein Verzeichnis für Ihr Projekt `mkdir python-scripts`:, und öffnen Sie dann `cd python-scripts`das Verzeichnis:.
 
