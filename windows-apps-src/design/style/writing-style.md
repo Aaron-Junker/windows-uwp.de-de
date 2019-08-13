@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: aaaf13c455d3d05d5ccfac6b2bd61418f3e8e5bb
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820521"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867687"
 ---
 # <a name="writing-style"></a>Schreibstil
 
@@ -41,12 +41,10 @@ Benutzer müssen in der Lage sein, den Text auf einen Blick zu lesen und zu vers
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        Select **filters** to add effects to your image.
+![Richtig](images/do.svg) Wählen Sie **Filter aus**, um Ihrem Bild Effekte hinzuzufügen.
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        If you want to add visual effects or alterations to your image, select **filters.**
+![Falsch](images/dont.svg) Wenn Sie Ihrem Bild visuelle Effekte oder Änderungen hinzufügen möchten, wählen Sie **Filter** aus.
     :::column-end:::
 :::row-end:::
 
@@ -56,12 +54,10 @@ Apps werden durch Aktionen definiert. Benutzer führen Aktionen aus, wenn sie di
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        Restart the app to see your changes.
+![Richtig](images/do.svg) Starten Sie die App neu, um die Änderungen anzuzeigen.
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        The changes will be applied when the app is restarted.
+![Falsch](images/dont.svg) Die Änderungen werden übernommen, wenn die App neu gestartet wird.
     :::column-end:::
 :::row-end:::
 
@@ -71,12 +67,10 @@ Benutzer überfliegen den Text und überspringen häufig mehrere Wörter. Machen
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        We couldn't upload the picture. If this happens again, try restarting the app. But don't worry — your picture will be waiting when you come back.
+![Richtig](images/do.svg) Wir konnten das Bild nicht hochladen. Wenn dieses Problem erneut auftritt, starten Sie die App neu. Aber keine Sorge – Ihr Bild wartet auf Sie, wenn Sie zurückkehren.
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        An error occured, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
+![Falsch](images/dont.svg) Es ist ein Fehler aufgetreten, sodass das Bild nicht hochgeladen werden konnte. Versuchen Sie es noch einmal. Wenn dieses Problem wieder auftritt, müssen Sie die App neu starten. Aber keine Sorge – wir haben Ihre Arbeit lokal gespeichert, und sie wird auch dann noch da sein, wenn Sie zurückkehren.
     :::column-end:::
 :::row-end:::
 
@@ -93,8 +87,7 @@ Wenden Sie sich direkt an den Benutzer.
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        We couldn't save your file to that location.
+![Richtig](images/do.svg) Wir konnten die Datei nicht an diesem Speicherort speichern.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -110,8 +103,7 @@ Wenden Sie sich direkt an den Benutzer.
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
+![Richtig](images/do.svg) Der Entwurfsleitfaden für die universelle Windows-Plattform (UWP) ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Mit den Entwurfsfeatures in jeder UWP-App können Sie Benutzeroberflächen (UI) erstellen, die für eine Vielzahl von Geräten geeignet sind.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -125,8 +117,7 @@ Benutzer verwenden Kontraktionen und erwarten, diese zu sehen. Ein Vermeiden lä
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        When you're happy with your image, select **save** to add it to your gallery. From there, you'll be able to share it with friends.
+![Richtig](images/do.svg) Wenn Sie mit Ihrem Bild zufrieden sind, wählen Sie **Speichern** aus, um es der Galerie hinzuzufügen. Von dort aus können Sie es mit Freunden teilen.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -140,12 +131,12 @@ Benutzer verwenden Kontraktionen und erwarten, diese zu sehen. Ein Vermeiden lä
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>You’re not connected.</b>
-        * Check that your network cables are plugged in.
-        * Make sure you're not in airplane mode.
-        * See if your wireless switch is turned on.
-        * Restart your router.
+![Richtig](images/do.svg)
+<b>Sie sind nicht verbunden.</b>
+* Überprüfen Sie, ob die Netzwerkkabel angeschlossen sind.
+* Stellen Sie sicher, dass Sie nicht im Flugmodus sind.
+* Stellen Sie sicher, dass Ihr Drahtlosswitch aktiviert ist.
+* Starten Sie den Router neu.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -159,11 +150,11 @@ Auch wenn Großbuchstaben wichtig sind, werden diese oft übermäßig verwendet.
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>Which part is giving you trouble?</b>
-        * I forgot your password.
-        * It won't accept password.
-        * Someone else might be using my account.
+![Richtig](images/do.svg)
+<b>Welcher Teil ist problematisch?</b>
+* Ich habe das Kennwort vergessen.
+* Mein Kennwort wird nicht akzeptiert.
+* Eine andere Person verwendet eventuell mein Konto.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -183,12 +174,12 @@ Es ist vor allem wichtig, dass die Fehlermeldung den Benutzer nicht dafür veran
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>You’re not connected.</b>
-        * Check that your network cables are plugged in.
-        * Make sure you're not in airplane mode.
-        * See if your wireless switch is turned on.
-        * Restart your router.
+![Richtig](images/do.svg)
+<b>Sie sind nicht verbunden.</b>
+* Überprüfen Sie, ob die Netzwerkkabel angeschlossen sind.
+* Stellen Sie sicher, dass Sie nicht im Flugmodus sind.
+* Stellen Sie sicher, dass Ihr Drahtlosswitch aktiviert ist.
+* Starten Sie den Router neu.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -198,16 +189,16 @@ Es ist vor allem wichtig, dass die Fehlermeldung den Benutzer nicht dafür veran
 
 :::row:::
     :::column:::
-        Many of the same advice for writing error messages also applies when creating the text for any dialogs in your app. While dialogs are expected by the user, they still interrupt the normal flow of the app, and need to be helpful and concise so the user can get back to what they were doing.
+Viele Ratschläge zum Schreiben von Fehlermeldungen gelten auch für das Verfassen von Text für Dialoge in Ihrer App. Obwohl Dialoge vom Benutzer erwartet werden, unterbrechen sie den normalen Ablauf der App und sollten daher hilfreich und präzise sein, damit der Benutzer seine Tätigkeit fortsetzen kann.
 
-        But most important is the "call and response" between the title of a dialog and its buttons. Make sure that your buttons are clear answers to the question posed by the title, and that their format is consistent across your app.
+Besonders wichtig ist das „Aufrufen und Reagieren“ zwischen dem Titel eines Dialogs und seiner Schaltflächen. Stellen Sie sicher, dass Ihre Schaltflächen klare Antworten auf die Fragen im Titel enthalten und deren Format in der gesamten App einheitlich ist.
     :::column-end:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>Which part is giving you trouble?</b>
-        1. I forgot my password
-        2. It won't accept my password
-        3. Someone else might be using my account
+![Richtig](images/do.svg)
+<b>Welcher Teil ist problematisch?</b>
+1. Ich habe mein Kennwort vergessen
+2. Mein Kennwort wird nicht akzeptiert
+3. Eine andere Person verwendet eventuell mein Konto
     :::column-end:::
 :::row-end:::
 
@@ -215,13 +206,13 @@ Es ist vor allem wichtig, dass die Fehlermeldung den Benutzer nicht dafür veran
 
 :::row:::
     :::column:::
-        Text on buttons needs to be concise enough that users can read it all at a glance and clear enough that the button's function is immediately obvious. The longest the text on a button should ever be is a couple short words, and many should be shorter than that.
-        When writing the text for buttons, remember that every button represents an action. Be sure to use the *active voice* in button text, to use words that represent actions rather than reactions.
+Text auf Schaltflächen muss so kompakt sein, dass Benutzer ihn auf einen Blick lesen können, und so klar sein, dass die Funktion der Schaltfläche sofort offensichtlich ist. Der Text auf einer Schaltfläche sollte höchstens ein paar kurze Wörter lang und am besten noch kürzer sein.
+Wenn Sie den Text für Schaltflächen schreiben, denken Sie daran, dass jede Schaltfläche eine Aktion darstellt. Verwenden Sie im Schaltflächentext *das Aktiv* in Worten, die Aktionen statt Reaktionen beschreiben.
     :::column-end:::
     :::column:::
-        ![Do](images/do.svg)
-        * Install now
-        * Share
+![Empfohlen](images/do.svg)
+* Jetzt installieren
+* Share
     :::column-end:::
 :::row-end:::
 

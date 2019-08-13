@@ -10,18 +10,18 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
+ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363058"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796714"
 ---
 # <a name="content-links-in-text-controls"></a>Links zu Inhalten in Textsteuerelementen
 
 Links zu Inhalten bieten eine Möglichkeit, umfangreiche Daten in Textsteuerelemente einzubetten, wodurch Benutzer weitere Informationen zu einer Person oder einem Ort finden und verwenden können, ohne den Kontext Ihrer App verlassen zu müssen.
 
-Wenn der Benutzer einem Eintrag in einer RichEditBox ein kaufmännisches Und-Zeichen (@) als Präfix hinzufügt, wird eine Liste der Personen und/oder Ortsvorschläge angezeigt, die mit dem Eintrag übereinstimmen. Wenn der Benutzer dann beispielsweise einen Ort auswählt, wird ein ContentLink für diesen Ort in den Text eingefügt. Wenn der Benutzer den Link zu dem Inhalt aus der RichEditBox aufruft, werden ein Flyout mit einer Karte und zusätzliche Informationen zu dem Ort angezeigt.
+Wenn der Benutzer einem Eintrag in einer RichEditBox das kaufmännisches Und-Zeichen (@) als Präfix hinzufügt, wird eine Liste der Personen und/oder Ortsvorschläge angezeigt, die mit dem Eintrag übereinstimmen. Wenn der Benutzer dann beispielsweise einen Ort auswählt, wird ein ContentLink für diesen Ort in den Text eingefügt. Wenn der Benutzer den Link zu dem Inhalt aus der RichEditBox aufruft, werden ein Flyout mit einer Karte und zusätzliche Informationen zu dem Ort angezeigt.
 
 > **Wichtige APIs:** [ContentLink-Klasse](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo-Klasse](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange-Klasse](/uwp/api/windows.ui.text.richedittextrange)
 

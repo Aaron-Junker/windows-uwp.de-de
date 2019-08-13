@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1d162fcf9a0f1023c58792e8c9f7a0e22fac4440
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820551"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867755"
 ---
 # <a name="typography"></a>Typografie
 
@@ -25,16 +25,14 @@ Verwenden Sie eine Schriftart in der gesamten Benutzeroberfläche Ihrer App. Es 
 
 ![Beispieltext für die Schriftart „Segoe UI“](images/type/segoe-sample.svg)
 
-Weitere Informationen zum Anzeigen anderer Sprachen als Englisch oder um eine andere Schriftart für Ihre App auszuwählen finden Sie unter [Sprachen](#Languages) und [Schriftarten](#Fonts) für unsere empfohlenen Schriftarten für UWP-Apps.
+Weitere Informationen zum Anzeigen anderer Sprachen als Englisch oder um eine andere Schriftart für Ihre App auszuwählen finden Sie unter [Sprachen](#languages) und [Schriftarten](#fonts) für unsere empfohlenen Schriftarten für UWP-Apps.
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Pick one font for your UI.
+![Richtig](images/do.svg) Wählen Sie eine Schriftart für Ihre Benutzeroberfläche aus.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Don't mix multiple fonts.
+![Falsch](images/dont.svg) Mischen Sie nicht mehrere Schriftarten.
     :::column-end:::
 :::row-end:::
 
@@ -48,12 +46,10 @@ Aufgrund der Funktionsweise der Skalierung, entwerfen Sie in effektiven Pixeln, 
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Follow the UWP [type ramp](#type-ramp) sizing.
+![Richtig](images/do.svg) Folgen Sie der Größenanpassung der UWP-[Typhierarchie](#type-ramp).
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use a font size smaller than 12 px.
+![Falsch](images/dont.svg) Verwenden Sie einen Schriftgrad kleiner als 12 Pixel.
     :::column-end:::
 :::row-end:::
 
@@ -61,10 +57,10 @@ Aufgrund der Funktionsweise der Skalierung, entwerfen Sie in effektiven Pixeln, 
 
 :::row:::
     :::column:::
-        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+Benutzer folgen beim Sichten einer Seite der visuellen Hierarchie: Überschriften fassen Inhalte zusammen, Textkörper enthalten weitere Details. Um eine klare visuelle Hierarchie in Ihrer App zu erstellen, folgen Sie der UWP-Typhierarchie.
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/type-hierarchy.svg)
+![Textblock-Stile](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,10 +74,10 @@ Die UWP-Typhierarchie stellt wichtige Beziehungen zwischen den Schriftschnitten 
 
 :::row:::
     :::column:::
-        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+Sie können auf Ebenen der Typhierarchie als [statische Ressourcen](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) für XAML zugreifen. Die Stile folgen der Benennungskonvention `*TextBlockStyle`.
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/text-block-type-ramp.svg)
+![Textblock-Stile](images/type/text-block-type-ramp.svg)
     :::column-end:::
 :::row-end:::
 
@@ -97,16 +93,14 @@ Die UWP-Typhierarchie stellt wichtige Beziehungen zwischen den Schriftschnitten 
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Use "Body" for most text.
+![Richtig](images/do.svg) Verwenden Sie für die meisten Texte „Body“.
 
-        Use "Base" for titles when space is constrained.
+Verwenden Sie „Base“ für Titel mit begrenztem Platz.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use "Caption" for primary action or any long strings.
+![Falsch](images/dont.svg) Verwenden Sie „Caption“ nicht für die Hauptaktion oder für lange Zeichenfolgen.
 
-        Use "Header" or "Subheader" if text needs to wrap.
+Verwenden Sie „Header“ oder „Subheader“, wenn Text umgebrochen werden muss.
     :::column-end:::
 :::row-end:::
 
@@ -124,12 +118,10 @@ Standardmäßig ist das [TextAlignment](https://docs.microsoft.com/uwp/api/windo
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Keep to 50–60 letters per line for ease of reading.
+![Richtig](images/do.svg) Halten Sie sich zur besseren Lesbarkeit an 50 bis 60 Wörter pro Zeile.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Less than 20 characters or more than 60 characters per line is difficult to read.
+![Falsch](images/dont.svg) Weniger als 20 oder mehr als 60 Zeichen pro Zeile sind schwer lesbar.
     :::column-end:::
 :::row-end:::
 
@@ -145,12 +137,10 @@ Wenn die Textmenge den verfügbaren Speicherplatz überschreitet, wird empfohlen
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Clip text, and wrap if multiple lines are enabled.
+![Richtig](images/do.svg) Schneiden Sie Text zu, oder brechen Sie ihn um, wenn mehrere Zeilen aktiviert sind.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use ellipses to avoid visual clutter.
+![Falsch](images/dont.svg) Verwenden Sie für mehr Übersichtlichkeit Ellipsen.
     :::column-end:::
 :::row-end:::
 
@@ -328,7 +318,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Segoe MDL2-Ressourcen</td>
+<td align="left">Segoe MDL2 Assets</td>
 <td align="left">Regular</td>
 <td align="left">Benutzeroberflächen-Schriftart für App-Symbole. Weitere Informationen finden Sie im Artikel <a href="segoe-ui-symbol-font.md">Segoe MDL2 Assets</a>.</td>
 </tr>

@@ -6,12 +6,12 @@ keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 09f115cad236582ccb0008c2274a7472ed4c0d55
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 705ff7fab00d13123211feb747ea9a9f95b0cc43
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682658"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867614"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
@@ -46,6 +46,9 @@ So sieht die Einstellungsseite auf Desktopgeräten aus:
 
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>Welche Einstellung soll ich auswählen: Querladen von Apps oder Entwicklermodus?
 
+> [!NOTE]
+> Ab Windows-Insider-Build 18956 wurde die Option zum Querladen entfernt, und für den Entwicklermodus gibt es jetzt einen Umschalter. Weitere Informationen zum Querladen finden Sie im nächsten Abschnitt. 
+
  Sie können ein Gerät für die Entwicklung oder nur für das Querladen aktivieren.
 
 -   *Microsoft Store-Apps* ist die Standardeinstellung. Lass diese Einstellung aktiviert, wenn du keine Apps entwickelst oder spezielle interne Apps verwendest, die von deinem Unternehmen bereitgestellt wurden.
@@ -55,6 +58,9 @@ So sieht die Einstellungsseite auf Desktopgeräten aus:
 Standardmäßig können nur UWP-Apps (Universelle Windows-Plattform) aus dem Microsoft Store installiert werden. Wenn Sie diese Einstellungen ändern, um die Entwicklerfeatures zu verwenden, kann hierdurch die Sicherheitsstufe Ihres Geräts geändert werden. Sie sollten keine Apps aus nicht überprüften Quellen installieren.
 
 ### <a name="sideload-apps"></a>Querladen von Apps
+
+> [!NOTE]
+> Ab Windows-Insider-Build 18956 ist Querladen standardmäßig aktiviert. Sie können nun ein signiertes MSIX-Paket ohne besondere Konfiguration auf einem Gerät bereitstellen. 
 
 Die Einstellung für das Querladen von Apps wird normalerweise von Unternehmen oder Bildungseinrichtungen verwendet, die benutzerdefinierte Apps auf verwalteten Geräten installieren müssen, ohne den Microsoft Store zu nutzen, oder von anderen Benutzern, die Apps aus Microsoft-fremden Quellen ausführen müssen. In diesem Fall erzwingt die Organisation häufig eine Richtlinie, um die Einstellung *UWP-Apps* zu deaktivieren, wie oben in der Abbildung der Einstellungsseite gezeigt. Die Organisation stellt außerdem das erforderliche Zertifikat und den Installationsspeicherort zum Querladen von Apps bereit. Weitere Informationen finden Sie in den TechNet-Artikeln [Querladen von Branchen-Apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) und [Erste Schritte mit der Bereitstellung von Apps in Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 

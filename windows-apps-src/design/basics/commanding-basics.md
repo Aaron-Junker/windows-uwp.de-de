@@ -11,12 +11,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8b33fe420e93c9ce78c625ad365ec8dc10e343ad
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63796427"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867455"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>Befehlsdesigngrundlagen für UWP-Apps
 
@@ -48,52 +48,52 @@ Die Verwendung der richtigen Elemente in einer Befehlsschnittstelle kann den Unt
 
 :::row:::
     :::column:::
-        ![button image](images/commanding/thumbnail-button.svg)
+![Abbildung einer Schaltfläche](images/commanding/thumbnail-button.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Buttons</b>
+<b>Schaltflächen</b>
 
-        <a href="../controls-and-patterns/buttons.md" style="text-decoration:none">Buttons</a> trigger an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.
+<a href="../controls-and-patterns/buttons.md" style="text-decoration:none">Schaltflächen</a> lösen eine sofortige Aktion aus. Beispiele hierfür sind das Senden einer E-Mail oder von Formulardaten oder das Bestätigen einer Aktion in einem Dialogfeld.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![list image](images/commanding/thumbnail-list.svg)
+![Abbildung einer Liste](images/commanding/thumbnail-list.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Lists</b>
+<b>Listen</b>
 
-        <a href="../controls-and-patterns/lists.md" style="text-decoration:none">Lists</a> present items in a interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.
+<a href="../controls-and-patterns/lists.md" style="text-decoration:none">Listen</a> stellen Elemente in einer interaktiven Liste oder in einem Raster dar. Listen werden normalerweise für viele Optionen oder Anzeigeelemente verwendet. Beispiele sind u.a. Dropdownliste, Listenfeld sowie Listen- und Rasteransicht.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![selection control image](images/commanding/thumbnail-selection.svg)
+![Abbildung eines Auswahlsteuerelements](images/commanding/thumbnail-selection.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Selection controls</b>
+<b>Auswahlsteuerelemente</b>
 
-        Lets users choose from a few options, such as when completing a survey or configuring app settings. Examples include <a href="../controls-and-patterns/checkbox.md">check box</a>, <a href="../controls-and-patterns/radio-button.md">radio button</a>, and <a href="../controls-and-patterns/toggles.md">toggle switch</a>.
+Ermöglichen die Auswahl einiger Optionen, z.B. beim Ausfüllen einer Umfrage oder beim Konfigurieren von App-Einstellungen. Beispiele hierfür sind <a href="../controls-and-patterns/checkbox.md">Kontrollkästchen</a>, <a href="../controls-and-patterns/radio-button.md">Optionsfeld</a> und <a href="../controls-and-patterns/toggles.md">Umschalter</a>.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Calendar  image](images/commanding/thumbnail-calendar.svg)
+![Abbildung eines Kalenders](images/commanding/thumbnail-calendar.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Calendar, date and time pickers</b>
+<b>Auswahlsteuerelemente für Kalender, Datum und Uhrzeit</b>
 
-        <a href="../controls-and-patterns/date-and-time.md">Calendar, date and time pickers</a> enable users to view and modify date and time info, such as when creating an event or setting an alarm. Examples include calendar date picker, calendar view, date picker, time picker.
+<a href="../controls-and-patterns/date-and-time.md">Auswahlsteuerelemente für Kalender, Datum und Uhrzeit</a> ermöglichen die Anzeige und Änderung von Datum und Uhrzeit, z.B. beim Erstellen eines Ereignisses oder Festlegen eines Alarms. Beispiele sind Kalenderdatumsauswahl, Kalenderansicht, Datumsauswahl und Uhrzeitauswahl.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Predictive text entry image](images/commanding/thumbnail-autosuggest.svg)
+![Abbildung einer Textvorhersage](images/commanding/thumbnail-autosuggest.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Predictive text entry</b>
+<b>Textvorhersage</b>
 
-        Provides suggestions as users type, such as when entering data or performing queries. Examples include <a href="../controls-and-patterns/auto-suggest-box.md">auto-suggest box</a>.<br>
+Bietet Vorschläge, während Benutzer z.B. Daten eingeben oder Abfragen ausführen. Ein Beispiel hierfür ist das <a href="../controls-and-patterns/auto-suggest-box.md">Feld mit automatischen Vorschlägen</a>.<br>
 :::row-end:::
 
 Eine vollständige Liste finden Sie unter [Steuerelemente und UI-Elemente](../controls-and-patterns/index.md).
@@ -110,36 +110,36 @@ Hier eine Liste mit einigen der gängigsten Befehlsoberflächen.
 
 :::row:::
     :::column:::
-        ![app canvas image](images/commanding/thumbnail-canvas.svg)
+![Abbildung einer App-Canvas](images/commanding/thumbnail-canvas.svg)
     :::column-end:::
     :::column span="2":::
-        <b>App canvas (content area)</b>
+<b>App-Canvas (Inhaltsbereich)</b>
 
-        If a command is constantly needed for users to complete core scenarios, put it on the canvas. Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use. However, choose the commands you put on the canvas carefully. Too many commands on the app canvas take up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface.
+Wenn ein Befehl ständig für Kernszenarien benötigt wird, legen Sie ihn auf der Canvas ab. Da Sie Befehle in der Nähe von (oder auf) Objekten platzieren können, die durch den Befehl beeinflusst werden, sind auf der Canvas platzierte Befehle besonders komfortabel und intuitiv. Wählen Sie die Befehle für die Canvas aber mit Bedacht. Wenn Sie zu viele Befehle auf der App-Canvas positionieren, gehen dem Benutzer wertvoller Platz und die Übersichtlichkeit verloren. Wenn der Befehl nicht häufig verwendet wird, sollten Sie ihn in eine andere Befehlsoberfläche einfügen.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![commandbar image](images/commanding/thumbnail-commandbar.svg)
+![Abbildung einer Befehlsleiste](images/commanding/thumbnail-commandbar.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Command bars and menu bars</b>
+<b>Befehls- und Menüleisten</b>
 
-        <a href="../controls-and-patterns/app-bars.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls-and-patterns/menus.md#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).
+<a href="../controls-and-patterns/app-bars.md">Befehlsleisten</a> helfen beim Organisieren von Befehlen und machen sie leicht zugänglich. Befehlsleisten können oben oder unten auf dem Bildschirm bzw. oben und unten auf dem Bildschirm platziert werden (eine <a href="../controls-and-patterns/menus.md#create-a-menu-bar">Menüleiste</a> kann auch verwendet werden, wenn die Funktionalität in Ihrer Anwendung zu komplex für eine Befehlsleiste ist).
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![context menu image](images/commanding/thumbnail-contextmenu.svg)
+![Abbildung eines Kontextmenüs](images/commanding/thumbnail-contextmenu.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Menus and context menus</b>
+<b>Menüs und Kontextmenüs</b>
 
-        <p>Menus and context menus save space by organizing commands and hiding them until the user needs them. Users typically access a menu or context menu by clicking a button or right-clicking a control.</p> 
+<p>Menüs und Kontextmenüs sparen Platz, indem Befehle angeordnet und ausgeblendet werden, bis der Benutzer sie benötigt. Benutzer greifen in der Regel auf ein Menü oder Kontextmenü zu, indem Sie auf eine Schaltfläche klicken oder mit der rechten Maustaste auf ein Steuerelement klicken.</p> 
 
-        <p>The <a href="../controls-and-patterns/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
+<p>Das <a href="../controls-and-patterns/command-bar-flyout.md">Flyout der Befehlsleiste</a> ist ein Kontextmenü, in dem die Vorteile einer Befehlsleiste und eines Kontextmenüs zu einem einzelnen Steuerelement kombiniert werden. Es eignet sich für Verknüpfungen mit häufig verwendeten Aktionen und ermöglicht den Zugriff auf sekundäre Befehle, die nur in bestimmten Kontexten relevant sind (z.B. Zwischenablage oder benutzerdefinierte Befehle).</p>
 
-        <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
+<p>Die UWP bietet auch eine Reihe herkömmlicher Menüs und Kontextmenüs. Weitere Informationen finden Sie in der <a href="../controls-and-patterns/menus.md">Übersicht über Menüs und Kontextmenüs</a>.</p>
 :::row-end:::
 
 ## <a name="provide-command-feedback"></a>Feedback zu Befehlen 
@@ -153,32 +153,32 @@ Hier sind einige Möglichkeiten, um Feedback in Ihrer App bereitzustellen.
 
 :::row:::
     :::column:::
-        ![commandbar content area image](images/commanding/thumbnail-commandbar2.svg)
+![Abbildung des Inhaltsbereichs einer Befehlsleiste](images/commanding/thumbnail-commandbar2.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Command bar</b>
+<b>Befehlsleiste</b>
 
-        The content area of the <a href="../controls-and-patterns/app-bars.md">command bar</a> is an intuitive place to communicate status to users if they'd like to see feedback.
+Der Inhaltsbereich der <a href="../controls-and-patterns/app-bars.md">Befehlsleiste</a> ist ein intuitiver Ort, um Benutzern einen Status mitzuteilen, wenn sie Feedback erhalten möchten.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Flyout image](images/commanding/thumbnail-flyout.svg)
+![Abbildung eines Flyouts](images/commanding/thumbnail-flyout.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Flyouts</b>
+<b>Flyouts</b>
 
        <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Flyouts</a> sind einfache, kontextbezogene Popups, die durch Antippen oder Klicken außerhalb des Flyouts verworfen werden können.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Dialog image](images/commanding/thumbnail-dialog.svg)
+![Abbildung eines Dialogs](images/commanding/thumbnail-dialog.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Dialog controls</b>
+<b>Dialogsteuerelemente</b>
 
-        <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Dialog controls</a> are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user. Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.
+<a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Dialogsteuerelemente</a> sind modale Benutzeroberflächenüberlagerungen, die kontextbezogene App-Informationen enthalten. Die meisten Dialogfelder blockieren die Interaktion mit dem App-Fenster, bis sie explizit geschlossen werden, und erfordern häufig eine Aktion des Benutzers. Dialogfelder können als störend empfunden werden und sollten daher nur in bestimmten Situationen zum Einsatz kommen. Weitere Informationen finden Sie unter [Bestätigen oder Rückgängigmachen von Aktionen](#when-to-confirm-or-undo-actions)
     :::column-end:::
 :::row-end:::
 
@@ -191,23 +191,23 @@ Unabhängig davon, wie durchdacht das Design der UI Ihrer App ist – jeder Benu
 
 :::row:::
     :::column:::
-        ![do image](images/do.svg)
+![Abbildung von „Richtig“](images/do.svg)
 
-        For actions that can't be undone and have major consequences, we recommend using a confirmation dialog. Examples of such actions include:
-        -   Overwriting a file
-        -   Not saving a file before closing
-        -   Confirming permanent deletion of a file or data
-        -   Making a purchase (unless the user opts out of requiring a confirmation)
-        -   Submitting a form, such as signing up for something
+Für Aktionen, die nicht rückgängig gemacht werden können und schwerwiegende Auswirkungen haben, empfehlen wir die Verwendung eines Bestätigungsdialogfelds. Beispiele für solche Aktionen:
+-   Überschreiben einer Datei
+-   Schließen einer Datei ohne Speichern
+-   Bestätigen der endgültigen Löschung einer Datei oder von Daten
+-   Einkaufen (es sei denn, der Benutzer lehnt eine Bestätigungsanforderung ab)
+-   Senden eines Formulars, z. B. bei Registrierungen
     :::column-end:::
     :::column:::
-        ![do image](images/do.svg)
+![Abbildung von „Richtig“](images/do.svg)
 
-        For actions that can be undone, offering a simple undo command is usually enough. Examples of such actions include:
-        -   Deleting a file
-        -   Deleting an email (not permanently)
-        -   Modifying content or editing text
-        -   Renaming a file
+Für Aktionen, die rückgängig gemacht werden können, ist ein einfacher „Rückgängig“-Befehl in der Regel ausreichend. Beispiele für solche Aktionen:
+-   Löschen einer Datei
+-   Löschen einer E-Mail (nicht endgültig)
+-   Ändern des Inhalts oder Bearbeiten von Text
+-   Umbenennen einer Datei
 :::row-end:::
 
 ##  <a name="optimize-for-specific-input-types"></a>Optimieren für bestimmte Eingabearten

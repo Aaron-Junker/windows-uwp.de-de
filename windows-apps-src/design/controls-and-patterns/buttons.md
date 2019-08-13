@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8f8d4172389fc2778fda4e335a29b3bae7d90fd0
-ms.sourcegitcommit: 5fcd3a595efd3686009505602c34e10163fd0aa5
+ms.openlocfilehash: e454bed6dc1a9429fe313e305dc9ba818d86e765
+ms.sourcegitcommit: 802699ce8d21e7fa4639f0b19b1c5b6c46c2c727
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558767"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835640"
 ---
 # <a name="buttons"></a>Schaltflächen
 
@@ -36,6 +36,7 @@ Steuerelement | Beschreibung
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Eine Schaltfläche mit einem Chevron zum Öffnen eines angefügten Flyouts.
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Schaltfläche mit zwei Seiten. Eine Seite initiiert eine Aktion, während die andere Seite ein Menü öffnet.
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Umschaltfläche mit zwei Seiten. Mit einer Seite wird aktiviert/deaktiviert, über die andere Seite wird ein Menü geöffnet.
+[ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | Eine Schaltfläche, die ein-oder ausgeschaltet werden kann.
 
 | **Abrufen der Windows-UI-Bibliothek** |
 | - |
@@ -59,6 +60,8 @@ Verwenden Sie ein **RepeatButton**-Steuerelement, um Benutzern das wiederholte A
 Verwenden Sie ein **DropDownButton**-Steuerelement, wenn die Schaltfläche über ein Flyout mit weiteren Optionen verfügt. Das Standard-Chevron liefert einen visuellen Hinweis, dass die Schaltfläche ein Flyout enthält.
 
 Verwenden Sie ein **SplitButton**-Steuerelement, wenn der Benutzer in der Lage sein soll, direkt eine Aktion auszulösen oder unabhängig davon unter weiteren Aktionen auszuwählen.
+
+Verwenden Sie ein **ToggleButton**-Steuerelement, wenn der Benutzer in der Lage sein soll, zwischen zwei sich gegenseitig ausschließenden Zuständen sofort zu wechseln, und eine Schaltfläche die beste Lösung für Ihre Anforderungen an die Benutzeroberfläche ist. Wenn die Benutzeroberfläche nicht von einer Schaltfläche profitiert, ist es möglicherweise besser, mit [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [CheckBox](checkbox.md), [RadioButton](radio-button.md), oder [ToggleSwitch](toggles.md) zu arbeiten.
 
 ## <a name="examples"></a>Beispiele
 
