@@ -185,7 +185,7 @@ Wenn Sie möchten, dass auf der Taskleiste angeheftete Kontakte ein Signal erhal
 
 Um einen Kontakt zu benachrichtigen, muss der Knoten der obersten Ebene Popups hint-people-Parameter enthalten, um den Absender-Kontakt oder andere Kontakte anzugeben. Dieser Parameter kann folgende Werte haben:
 + **E-Mail-Adresse** 
-    + Beispiel: mailto:johndoe@mydomain.com
+    + Beispiel: [mailto:johndoe@mydomain.com](mailto:johndoe@mydomain.com)
 + **Telefonnummer** 
     + Beispiel: Tel:888-888-8888
 + **Remote-ID** 
