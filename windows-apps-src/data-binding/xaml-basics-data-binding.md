@@ -238,7 +238,7 @@ In dieser Phase erstellen wir unidirektionale Bindungen von einem Steuerelement 
     > [!NOTE]
     > In der Standardeinstellung sind **Bindungs**-Ausdrücke *unilateral*, was bedeutet, dass sie die Benutzeroberfläche automatisch aktualisieren, wenn die Eigenschaft des gebundenen Werts sich ändert. 
     > 
-    > Im Gegensatz dazu ist die Standardeinstellung für **x: Bind***einmalig*, was bedeutet, dass jegliche Änderungen an der gebundenen Eigenschaft ignoriert werden. Dies ist die Standardeinstellung, da es die leistungsstärkste Option ist und die meisten Bindungen zu statischen, schreibgeschützten Daten erstellt werden. 
+    > Im Gegensatz dazu ist die Standardeinstellung für **x: Bind** *einmalig*, was bedeutet, dass jegliche Änderungen an der gebundenen Eigenschaft ignoriert werden. Dies ist die Standardeinstellung, da es die leistungsstärkste Option ist und die meisten Bindungen zu statischen, schreibgeschützten Daten erstellt werden. 
     >
     > Hier gilt folgende Lektion: die bei Verwendung von **X: Bind** mit Eigenschaften, deren Werte sich ändern kann, müssen Sie ```Mode=OneWay```oder ```Mode=TwoWay``` hinzufügen. Im nächsten Abschnitt sehen Sie ein Beispiel dafür.
 
