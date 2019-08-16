@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb8132e7b382ee801d83986261bf71d8fef490f
-ms.sourcegitcommit: 04a6e60c3b24d6efae0f0e2ada1d66a369471fb3
+ms.openlocfilehash: d582d4815b4fb2168b187a1efff3795cc98aca02
+ms.sourcegitcommit: 99595e4938213aafdb49635d684d8ba8eb3f697a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830416"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69487807"
 ---
 # <a name="capture-photos-and-video-with-the-windows-built-in-camera-ui"></a>Fotos und Videos mit der Windows-Benutzeroberfläche für integrierte Kameras erfassen
 
@@ -22,7 +22,7 @@ In diesem Artikel wird beschrieben, wie Sie mit der cameracaptureui-Klasse Fotos
 Wenn Sie eine eigene Kamera-UI bereitstellen möchten oder Ihr Szenario eine zuverlässigere Steuerung des Aufnahmevorgangs auf unterster Ebene erfordert, sollten Sie das [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)-Objekt verwenden und Ihre eigene Aufzeichnungsoberfläche implementieren. Weitere Informationen finden Sie unter [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md).
 
 > [!NOTE]
-> Sie sollten die **Webcam** -oder **Mikrofon** -Funktionen nicht in der APP-Manifest-Datei angeben, wenn Ihre APP nur cameracaptureui verwendet. Wenn Sie dies tun, wird Ihre APP in den Datenschutzeinstellungen des Geräts angezeigt, aber selbst wenn der Benutzer den Kamera Zugriff auf Ihre APP verweigert, verhindert dies, dass "cameracaptureui" Medien erfasst. <p>Das liegt daran, dass es sich bei der integrierten Kamera-App von Windows um eine vertrauenswürdige Erstanbieter-App handelt, die erfordert, dass der Benutzer die Foto-, Audio- und Videoaufnahme durch einen Tastendruck initiiert. Bei Verwendung von "cameracaptureui" bei Verwendung von "cameracaptureui" als einziger Foto Erfassungs Mechanismus kann bei Ihrer APP ein Fehler bei der Zertifizierung des Zertifizierungs Kits Microsoft Store für Windows-Anwendungen auftreten.<p>
+> Sie sollten die **Webcam** -oder **Mikrofon** -Funktionen in der APP-Manifest-Datei nicht angeben, wenn Ihre APP nur cameracaptureui verwendet. Wenn Sie dies tun, wird Ihre APP in den Datenschutzeinstellungen des Geräts angezeigt, aber selbst wenn der Benutzer den Kamera Zugriff auf Ihre APP verweigert, verhindert dies, dass "cameracaptureui" Medien erfasst. <p>Das liegt daran, dass es sich bei der integrierten Kamera-App von Windows um eine vertrauenswürdige Erstanbieter-App handelt, die erfordert, dass der Benutzer die Foto-, Audio- und Videoaufnahme durch einen Tastendruck initiiert. Bei Verwendung von "cameracaptureui" bei Verwendung von "cameracaptureui" als einziger Foto Erfassungs Mechanismus kann bei Ihrer APP ein Fehler bei der Zertifizierung des Zertifizierungs Kits Microsoft Store für Windows-Anwendungen auftreten.<p>
 Sie müssen die Webcam-oder Mikrofon-Funktionen in der APP-Manifest-Datei angeben, wenn Sie mediacapture verwenden, um Audioinhalte, Fotos oder Videos Programm gesteuert zu erfassen.
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>Aufnehmen eines Fotos mit „CameraCaptureUI“
@@ -34,7 +34,7 @@ Um die Kameraaufnahme-UI zu verwenden, schließen Sie den [**Windows.Media.Captu
 Um ein Foto aufzunehmen, erstellen Sie ein neues [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI)-Objekt. Mithilfe der Eigenschaft " [**photosettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.photosettings) " des Objekts können Sie Eigenschaften für das zurückgegebene Foto angeben, z. b. das Bildformat des Fotos. Standardmäßig unterstützt die Kamera Fassungs Benutzeroberfläche das Ausschneiden des Fotos, bevor es zurückgegeben wird. Dies kann mit der [**allowcropping**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureuiphotocapturesettings.allowcropping) -Eigenschaft deaktiviert werden. In diesem Beispiel wird [**CroppedSizeInPixels**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureuiphotocapturesettings.croppedsizeinpixels) festgelegt, um anzufordern, dass das zurückgegebene Bild 200 x 200 Pixel hat.
 
 > [!NOTE]
-> Das Zuschneiden von Bildern in " **cameracaptureui** " wird für Geräte in der mobilen Gerätefamilie nicht unterstützt. Der Wert der [**AllowCropping**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureuiphotocapturesettings.allowcropping)-Eigenschaft wird ignoriert, wenn Ihre App auf diesen Geräten ausgeführt wird.
+> Das Zuschneiden von Bildern in " **cameracaptureui** " wird für Geräte in der Produktfamilie für mobile Geräte nicht unterstützt. Der Wert der [**AllowCropping**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureuiphotocapturesettings.allowcropping)-Eigenschaft wird ignoriert, wenn Ihre App auf diesen Geräten ausgeführt wird.
 
 Rufen Sie [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) auf, und geben Sie [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode) an, um festzulegen, dass ein Foto aufgenommen werden soll. Die Methode gibt eine [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Instanz mit dem Bild zurück, wenn die Aufnahme erfolgreich ist. Wenn der Benutzer die Aufnahme abbricht, ist das zurückgegebene Objekt „null“.
 
@@ -46,7 +46,7 @@ Die **StorageFile** mit dem aufgenommenen Foto erhält einen dynamisch generiert
 
 Zur Verwendung des Fotos in der App kann die Erstellung eines [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)-Objekts hilfreich sein, das mit unterschiedlichen Funktionen für universelle Windows-Apps genutzt werden kann.
 
-Zuerst sollten Sie den [**Windows. Graphics. Imaging**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging) -Namespace in Ihr Projekt einschließen.
+Fügen Sie zunächst den [**Windows. Graphics. Imaging**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging) -Namespace in Ihr Projekt ein.
 
 [!code-cs[UsingSoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmap)]
 
