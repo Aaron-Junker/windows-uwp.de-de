@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, winrt, Projektion, Problembehandlung, HRESULT, Fehler
 ms.localizationpriority: medium
-ms.openlocfilehash: add3875e15ad747422b2e53e5d8f8438b61b3b20
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 7c34ca6da522726f07e3f4ff5092b011bd15dd93
+ms.sourcegitcommit: 260d1a0b73ef422eb6875a3e3b52495a82630f06
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270104"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560159"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Behandlung von C++/WinRT-Problemen
 
@@ -41,7 +41,7 @@ Wenn Ihre App beendet wird und Sie nur wissen, dass beim XAML-Markup-Parsing ein
 | Die Tests im Zertifizierungskit für Windows-Apps erzeugen einen Fehler, dass eine Ihrer Laufzeitklassen „*ist nicht von einer Windows-Basisklasse abgeleitet. Alle zusammensetzbaren Klassen müssen letztlich von einem Typ im Windows-Namespace abgeleitet sein*“.|Jede Laufzeitklasse (die Sie in Ihrer Anwendung deklarieren), die von einer Basisklasse abgeleitet ist, wird als *zusammensetzbare* Klasse bezeichnet. Die letztliche Basisklasse einer zusammensetzbaren Klasse muss ein Typ sein, der seinen Ursprung in einem Windows.*-Namespace hat; beispielsweise [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). Weitere Details finden Sie unter [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md).|
 | Der C++ Compiler erzeugt einen „*WinRT-Typ erforderlich*“-Fehler für eine Stellvertretungsspezialisierung eines EventHandlers oder TypedEventHandlers.|Erwägen Sie stattdessen die Verwendung von **winrt::delegate&lt;...T&gt;** . Mehr dazu erfahren Sie unter [Erstellen von Ereignissen in C++/WinRT](author-events.md).|
 | Der C++-Compiler erzeugt einen Fehler „*WinRT-Tp erforderlich*“ für die Spezialisierung eines asynchronen Vorgangs der Windows Runtime.|Erwägen Sie, stattdessen eine [**Aufgabe**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class) der Parallel Patterns Library (PPL) zurückzugeben. Mehr dazu erfahren Sie unter [Parallelität und asynchrone Vorgänge](concurrency.md).|
-| Der C++ Compiler erzeugt „*Fehler C2220: Warnung als Fehler behandelt – keine ‚Object‘-Datei generiert*“.|Korrigieren Sie entweder die Warnung, oder legen Sie **C/C++**  > **Allgemein** > **Warnung als Fehler behandeln** auf **Nein (/WX-)** fest.|
+| Der C++ Compiler erzeugt „*Fehler C2220: Warnung als Fehler behandelt – keine ‚Object‘-Datei generiert*“.|Korrigiere entweder die Warnung, oder lege **C/C++**  > **Allgemein** > **Warnung als Fehler behandeln** auf **Nein (/WX-)** fest.|
 | Ihre App stürzt ab, weil ein Ereignishandler in Ihrem C++/WinRT-Objekt aufgerufen wird, nachdem das Objekt zerstört wurde.|Weitere Informationen dazu finden Sie unter [Sicherer Zugriff auf den *this*-Zeiger mit einer Stellvertretung zum Ereignishandling](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)|
 | Der C++-Compiler erzeugt „*Fehler C2338: Dies dient nur zur Unterstützung schwacher Verweise*“.|Sie fordern einen schwachen Verweis für einen Typ an, der die **winrt::no_weak_ref**-Markerstruktur als Vorlagenargument an seine Basisklasse übergeben hat. Mehr dazu finden Sie unter [Verzicht auf die Unterstützung von schwachen Verweisen](weak-references.md#opting-out-of-weak-reference-support).|
 | Der C++-Linker erzeugt „*Fehler LNK2019: Nicht aufgelöstes externes Symbol*“|Mehr dazu finden Sie unter [Warum erhalte ich den Fehler „LNK2019: Nicht aufgelöstes externes Symbol“ vom Linker?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|

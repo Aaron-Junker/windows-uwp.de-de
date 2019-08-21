@@ -1,47 +1,50 @@
 ---
-description: Dieses Tutorial veranschaulicht das Hinzufügen von UWP XAML-Benutzeroberflächen, MSIX-Pakete erstellen und andere moderne Komponenten in Ihrer WPF-Anwendung integrieren.
-title: Hinzufügen eines UWP-CalendarView-Steuerelements, das mithilfe von XAML-Inseln
+description: In diesem Tutorial wird veranschaulicht, wie Sie UWP-XAML-Benutzeroberflächen hinzufügen, msix-Pakete erstellen und andere moderne Komponenten in Ihre WPF-App integrieren.
+title: Hinzufügen eines UWP-CalendarView-Steuerelements mithilfe von XAML Islands
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: Windows 10, Uwp, Windows Forms, Wpf, XAML-Inseln
+keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: fce9135267461f61515c7dc04bbaf43b1e4c04ed
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.openlocfilehash: 830c1cdf2e24e716d51642bc65b5b6783d0d784a
+ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420114"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69643376"
 ---
-# <a name="part-3-add-a-uwp-calendarview-control-using-xaml-islands"></a>Teil 3: Hinzufügen eines UWP-CalendarView-Steuerelements, das mithilfe von XAML-Inseln
+# <a name="part-3-add-a-uwp-calendarview-control-using-xaml-islands"></a>Teil 3: Hinzufügen eines UWP-CalendarView-Steuerelements mithilfe von XAML Islands
 
-Dies ist der dritte Teil eines Tutorials, die zeigt, wie Sie eine Beispiel WPF-desktop-app mit dem Namen Contoso-Ausgaben zu modernisieren. Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-app, finden Sie unter [Lernprogramm: Modernisieren von WPF-app](modernize-wpf-tutorial.md). In diesem Artikel wird vorausgesetzt, Sie haben bereits abgeschlossen [Teil 2](modernize-wpf-tutorial-2.md).
+Dies ist der dritte Teil eines Tutorials, in dem veranschaulicht wird, wie Sie eine WPF-Beispiel-Desktop-App mit dem Namen "" mit den Kosten für " Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden [Sie unter Tutorial: Modernisieren einer WPF-](modernize-wpf-tutorial.md)app. In diesem Artikel wird davon ausgegangen, dass Sie [Teil 2](modernize-wpf-tutorial-2.md)bereits abgeschlossen haben.
 
-Das Contoso-Entwicklungsteam möchte, im fiktiven Szenario in diesem Tutorial wählen Sie das Datum für einen Ausgabenbericht auf einem Touchscreen-Gerät zu vereinfachen. In diesem Teil des Lernprogramms fügen Sie eine UWP [CalendarView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/calendar-view) Steuerelement an die app. Dies ist das gleiche Steuerelement, das in der Windows 10-Funktionen für Datum und Uhrzeit auf der Taskleiste verwendet wird.
+Im fiktiven Szenario dieses Lernprogramms möchte das Entwicklungsteam von "Configuration Manager" das Datum für einen Ausgaben Bericht auf einem Touchscreen-fähigen Gerät leichter auswählen. In diesem Teil des Tutorials fügen Sie der APP ein UWP [CalendarView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/calendar-view) -Steuerelement hinzu. Dabei handelt es sich um dasselbe Steuerelement, das in der Windows 10-Funktionen für Datum und Uhrzeit auf der Taskleiste verwendet wird.
 
-![CalendarViewControl-Bild](images/wpf-modernize-tutorial/CalendarViewControl.png)
+![Calendarviewcontrol-Bild](images/wpf-modernize-tutorial/CalendarViewControl.png)
 
-Im Gegensatz zu den **InkCanvas** steuern, den Sie in [Teil 2](modernize-wpf-tutorial-2.md), das Windows-Community-Toolkit stellt keine umschlossene Version der UWP **CalendarView** , die in WPF-apps verwendet werden kann . Als Alternative können Sie Hosten einer **InkCanvas** in der allgemeinen [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) Steuerelement. Sie können dieses Steuerelement verwenden, um alle UWP-Steuerelemente bereitgestellt, die vom Hersteller Plattform oder a 3rd-Party hosten. Die **WindowsXamlHost** Steuerelement erfolgt über die `Microsoft.Toolkit.Wpf.UI.XamlHost` NuGet-Paket. Dieses Paket ist im Lieferumfang der `Microsoft.Toolkit.Wpf.UI.Controls` NuGet-Paket, das Sie in installiert [Teil 2](modernize-wpf-tutorial-2.md).
+Im Gegensatz zum **InkCanvas** -Steuerelement, das Sie in [Teil 2](modernize-wpf-tutorial-2.md)hinzugefügt haben, bietet das Windows Community Toolkit keine umschließende Version der UWP **CalendarView** , die in WPF-Apps verwendet werden kann. Als Alternative können Sie eine **InkCanvas** im generischen [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) -Steuerelement hosten. Sie können dieses Steuerelement zum Hosten beliebiger UWP-Steuerelemente von UWP verwenden, die von der Windows SDK oder der WinUI-Bibliothek bereitgestellt werden Das **windowsxamlhost** -Steuerelement wird vom `Microsoft.Toolkit.Wpf.UI.XamlHost` Paket nuget-Paket bereitgestellt. Dieses Paket ist in dem `Microsoft.Toolkit.Wpf.UI.Controls` nuget-Paket enthalten, das Sie in [Teil 2](modernize-wpf-tutorial-2.md)installiert haben.
 
-Zum Verwenden der **WindowsXamlHost** -Steuerelement, müssen Sie die WinRT-APIs direkt aus Code in der WPF-app aufrufen. Die `Microsoft.Windows.SDK.Contracts` NuGet-Paket enthält die Verweise notwendig, um Sie zum Aufrufen von WinRT-APIs aus der app zu ermöglichen. Dieses Paket ist auch im enthalten die `Microsoft.Toolkit.Wpf.UI.Controls` NuGet-Paket, das Sie in installiert [Teil 2](modernize-wpf-tutorial-2.md).
+> [!NOTE]
+> Dieses Tutorial veranschaulicht nur die Verwendung von [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) zum Hosten des vom Windows SDK bereitgestellten **CalendarView** -Steuer Elements. Eine exemplarische Vorgehensweise, die das Hosten eines benutzerdefinierten Steuer Elements veranschaulicht, finden [Sie unter Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML](host-custom-control-with-xaml-islands.md)
 
-## <a name="add-the-windowsxamlhost-control"></a>Fügen Sie das Steuerelement WindowsXamlHost
+Um das **windowsxamlhost** -Steuerelement zu verwenden, müssen Sie WinRT-APIs direkt aus dem Code in der WPF-App abrufen. Das `Microsoft.Windows.SDK.Contracts` nuget-Paket enthält die Verweise, die erforderlich sind, damit Sie WinRT-APIs von der APP aufrufen können. Dieses Paket ist auch in dem `Microsoft.Toolkit.Wpf.UI.Controls` nuget-Paket enthalten, das Sie in [Teil 2](modernize-wpf-tutorial-2.md)installiert haben.
 
-1. In **Projektmappen-Explorer**, erweitern Sie die **Ansichten** Ordner in der **ContosoExpenses.Core** Projekt, und doppelklicken Sie auf die **AddNewExpense.xaml**Datei. Dies ist das Formular verwendet, um eine neue Ausgabe zur Liste hinzuzufügen. Hier ist, wie sie in der aktuellen Version der app angezeigt wird.
+## <a name="add-the-windowsxamlhost-control"></a>Hinzufügen des Steuer Elements "windowsxamlhost"
 
-    ![Fügen Sie neue Ausgaben hinzu.](images/wpf-modernize-tutorial/AddNewExpense.png)
+1. Erweitern Sie in **Projektmappen-Explorer**den Ordner **views** im Projekt **contosoaufwendungen. Core** , und doppelklicken Sie auf die Datei **addnewexpse. XAML** . Dies ist das Formular, mit dem der Liste neue Ausgaben hinzugefügt werden. Hier sehen Sie, wie Sie in der aktuellen Version der App angezeigt wird.
 
-    Datumsauswahl-Steuerelement enthalten, die in WPF ist für herkömmliche Computer mit Maus und Tastatur vorgesehen. Auswählen eines Datums mit einem Touchscreen ist, nicht wirklich sinnvoll, aufgrund der kleinen Größe des Steuerelements und der begrenzten Platz zwischen jeden Tag im Kalender.
+    ![Neue Ausgaben hinzufügen](images/wpf-modernize-tutorial/AddNewExpense.png)
 
-2. Am oberen Rand der **AddNewExpense.xaml** hinzufügen. das folgende Attribut hinzu der **Fenster** Element.
+    Das in WPF enthaltene Steuerelement für die Datumsauswahl ist für herkömmliche Computer mit Maus und Tastatur gedacht. Die Auswahl eines Datums mit einem Touchscreen ist aufgrund der geringen Größe des Steuer Elements und des begrenzten Platzes zwischen den einzelnen Tagen im Kalender nicht wirklich möglich.
+
+2. Fügen Sie am Anfang der Datei " **addnewexpse. XAML** " dem **Window** -Element das folgende-Attribut hinzu.
 
     ```xml
     xmlns:xamlhost="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
     ```
 
-    Nach dem Hinzufügen dieses Attributs, das **Fenster** -Element sollte nun wie folgt aussehen.
+    Nach dem Hinzufügen dieses Attributs sollte das **Fenster** Element nun wie folgt aussehen.
 
     ```xml
     <Window x:Class="ContosoExpenses.Views.AddNewExpense"
@@ -57,7 +60,7 @@ Zum Verwenden der **WindowsXamlHost** -Steuerelement, müssen Sie die WinRT-APIs
             Background="{StaticResource AddNewExpenseBackground}">
     ```
 
-3. Ändern der **Höhe** Attribut der **Fenster** Element von 450 auf 800. Dies ist erforderlich, da die UWP **CalendarView** mehr Speicherplatz als der WPF-Datumsauswahl die Kontrolle übernimmt.
+3. Ändern Sie das **height** -Attribut des **Window** -Elements von 450 in 800. Dies ist erforderlich, da das UWP **CalendarView** -Steuerelement mehr Platz benötigt als die WPF-Datumsauswahl.
 
     ```xml
     <Window x:Class="ContosoExpenses.Views.AddNewExpense"
@@ -73,38 +76,38 @@ Zum Verwenden der **WindowsXamlHost** -Steuerelement, müssen Sie die WinRT-APIs
             Background="{StaticResource AddNewExpenseBackground}">
     ```
 
-4. Suchen Sie die `DatePicker` Element im unteren Bereich der Datei, und Ersetzen Sie dieses Element durch das folgende XAML.
+4. Suchen Sie `DatePicker` das-Element am Ende der Datei, und ersetzen Sie dieses Element durch den folgenden XAML-Code.
 
     ```xml
     <xamlhost:WindowsXamlHost InitialTypeName="Windows.UI.Xaml.Controls.CalendarView" Grid.Column="1" Grid.Row="6" Margin="5, 0, 0, 0" x:Name="CalendarUwp"  />
     ```
 
-    Dieses XAML fügt die **WindowsXamlHost** Steuerelement. Die **InitialTypeName** Eigenschaft gibt an, der vollständige Name des UWP-Steuerelements, die Sie hosten möchten (in diesem Fall **Windows.UI.Xaml.Controls.CalendarView**).
+    Mit diesem XAML-Code wird das **windowsxamlhost** -Steuerelement hinzugefügt. Die **initialtypame** -Eigenschaft gibt den vollständigen Namen des UWP-Steuer Elements an, das Sie hosten möchten (in diesem Fall **Windows. UI. XAML. Controls. CalendarView**).
 
-5. Drücken Sie F5, um die app im Debugger ausführen. Wählen Sie einen Mitarbeiter aus der Liste aus, und drücken Sie dann die **Hinzufügen von neuen Ausgaben** Schaltfläche. Vergewissern Sie sich, dass die folgende Seite auf die neue UWP hostet **CalendarView** Steuerelement.
+5. Drücken Sie F5, um die APP im Debugger zu erstellen und auszuführen. Wählen Sie einen Mitarbeiter aus der Liste aus, und klicken Sie dann auf die Schaltfläche **neue Ausgaben hinzufügen** . Vergewissern Sie sich, dass die folgende Seite das neue UWP **CalendarView** -Steuerelement hostet.
 
-    ![CalendarView-wrapper](images/wpf-modernize-tutorial/CalendarViewWrapper.png)
+    ![CalendarView-Wrapper](images/wpf-modernize-tutorial/CalendarViewWrapper.png)
 
 6. Schließen Sie die App.
 
-## <a name="interact-with-the-windowsxamlhost-control"></a>Interagieren Sie mit dem WindowsXamlHost-Steuerelement
+## <a name="interact-with-the-windowsxamlhost-control"></a>Interagieren mit dem windowsxamlhost-Steuerelement
 
-Als Nächstes aktualisieren Sie die app, um das ausgewählte Datum zu verarbeiten, auf dem Bildschirm angezeigt und das Füllen der **Expense** Objekt, das in der Datenbank gespeichert.
+Als nächstes aktualisieren Sie die APP, um das ausgewählte Datum zu verarbeiten, auf dem Bildschirm anzuzeigen und das **Ausgaben** Objekt zu füllen, das in der Datenbank gespeichert werden soll.
 
 Die UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) enthält zwei Member, die für dieses Szenario relevant sind:
 
-- Die **SelectedDates** Eigenschaft enthält das Datum, die vom Benutzer ausgewählt wurde.
-- Die **SelectedDatesChanged** Ereignis wird ausgelöst, wenn der Benutzer ein Datum auswählt.
+- Die **SelectedDates** -Eigenschaft enthält das Datum, das vom Benutzer ausgewählt wurde.
+- Das **selecteddateschangi-** Ereignis wird ausgelöst, wenn der Benutzer ein Datum auswählt.
 
-Allerdings die **WindowsXamlHost** Steuerelement ist ein generischer Host-Steuerelement für *alle* der UWP-Steuerelement. Daher keine Eigenschaft namens offengelegt **SelectedDates** oder ein Ereignis namens **SelectedDatesChanged**, da sie von spezifisch sind die **CalendarView** Steuerelement. Um auf diese Member zuzugreifen, müssen Sie Code, in den umgewandelt schreiben die **WindowsXamlHost** auf die **CalendarView** Typ. Der beste Ort zum hierfür erfolgt als Reaktion auf die **ChildChanged** Ereignis die **WindowsXamlHost** -Steuerelement, das ausgelöst wird, wenn das gehostete Steuerelement gerendert wurde.
+Das **windowsxamlhost** -Steuerelement ist jedoch ein generisches Host Steuerelement für *jede* Art von UWP-Steuerelement. Daher wird eine Eigenschaft mit dem Namen **SelectedDates** oder ein Ereignis mit dem Namen **selecteddateschge**nicht verfügbar gemacht, da Sie für das **CalendarView** -Steuerelement spezifisch sind. Um auf diese Member zuzugreifen, müssen Sie Code schreiben, der den **windowsxamlhost** in den **CalendarView** -Typ umwandelt. Der beste Ort hierfür ist die Reaktion auf das **ChildChanged** -Ereignis des Steuer Elements **windowsxamlhost** , das ausgelöst wird, wenn das gehostete Steuerelement gerendert wurde.
 
-1. In der **AddNewExpense.xaml** -Datei, einen Ereignishandler hinzufügen für die **ChildChanged** Ereignis die **WindowsXamlHost** Kontrolle, die Sie zuvor hinzugefügt haben. Wenn Sie fertig sind, die **WindowsXamlHost** -Element sollte wie folgt aussehen.
+1. Fügen Sie in der Datei **addnewexpse. XAML** einen Ereignishandler für das **ChildChanged** -Ereignis des Steuer Elements **windowsxamlhost** hinzu, das Sie zuvor hinzugefügt haben. Wenn Sie dies abgeschlossen haben, sollte das **windowsxamlhost** -Element wie folgt aussehen.
 
     ```xml
     <xamlhost:WindowsXamlHost InitialTypeName="Windows.UI.Xaml.Controls.CalendarView" Grid.Column="1" Grid.Row="6" Margin="5, 0, 0, 0" x:Name="CalendarUwp"  ChildChanged="CalendarUwp_ChildChanged" />
     ```
 
-2. Suchen Sie in der gleichen Datei die **Grid.RowDefinitions** Element der Haupt- **Raster**. Fügen Sie eine weitere **RowDefinition** -Element mit dem **Höhe** gleich **automatisch** am Ende der Liste der untergeordneten Elemente. Wenn Sie fertig sind, die **Grid.RowDefinitions** -Element sollte wie folgt aussehen (es sollte nun 9 werden **RowDefinition** Elemente).
+2. Suchen Sie in derselben Datei das **Grid. RowDefinitions** -Element des Haupt **Rasters**. Fügen Sie ein **RowDefinition** -Element mit der **Höhe** " **Auto** " am Ende der Liste mit untergeordneten Elementen hinzu. Wenn Sie den Vorgang abgeschlossen haben, sollte das **Grid. RowDefinitions** -Element wie folgt aussehen (es sollten nun 9 **RowDefinition** -Elemente vorhanden sein).
 
     ```xml
     <Grid.RowDefinitions>
@@ -120,28 +123,28 @@ Allerdings die **WindowsXamlHost** Steuerelement ist ein generischer Host-Steuer
     </Grid.RowDefinitions>
     ```
 
-4. Der folgende XAML nach dem Hinzufügen der **WindowsXamlHost** Element und vor der **Schaltfläche** Element am Ende der Datei.
+4. Fügen Sie den folgenden XAML-Code nach dem **windowsxamlhost** -Element und vor dem **Schalt** Flächen Element in der Nähe des Datei Endes hinzu.
 
     ```xml
     <TextBlock Text="Selected date:" FontSize="16" FontWeight="Bold" Grid.Row="7" Grid.Column="0" />
     <TextBlock Text="{Binding Path=Date}" FontSize="16" Grid.Row="7" Grid.Column="1" />
     ```
 
-5. Suchen Sie die **Schaltfläche** Element am Ende der Datei, und Ändern der **Grid.Row** Eigenschaft **7** zu **8**. Dies verlagert die Schaltfläche eine Zeile im Raster nach unten, da Sie eine neue Zeile hinzugefügt.
+5. Suchen Sie das **Schalt** Flächen Element am Ende der Datei, und ändern Sie die Eigenschaft **Grid. Row** von **7** in **8**. Dadurch wird die Schaltfläche um eine Zeile im Raster nach unten verschoben, da Sie eine neue Zeile hinzugefügt haben.
 
     ```xml
     <Button Content="Save" Grid.Row="8" Grid.Column="0" Command="{Binding Path=SaveExpenseCommand}" Margin="5, 12, 0, 0" HorizontalAlignment="Left" Width="180" />
     ```
 
-6. Öffnen der **AddNewExpense.xaml.cs** Codedatei.
+6. Öffnen Sie die **AddNewExpense.XAML.cs** -Codedatei.
 
-7. Fügen Sie die folgende Anweisung am Anfang der Datei.
+7. Fügen Sie am Anfang der Datei die folgende-Anweisung hinzu.
 
     ```csharp
     using Microsoft.Toolkit.Wpf.UI.XamlHost;
     ```
 
-8. Fügen Sie den folgenden Ereignishandler, um die `AddNewExpense` Klasse. Dieser Code implementiert die **ChildChanged** Ereignis die **WindowsXamlHost** Kontrolle, die Sie zuvor in der XAML-Datei deklariert.
+8. Fügen Sie der `AddNewExpense`-Klasse den folgenden Ereignishandler hinzu. Mit diesem Code wird das **ChildChanged** -Ereignis des Steuer Elements **windowsxamlhost** implementiert, das Sie zuvor in der XAML-Datei deklariert haben.
 
     ```csharp
     private void CalendarUwp_ChildChanged(object sender, System.EventArgs e)
@@ -164,13 +167,13 @@ Allerdings die **WindowsXamlHost** Steuerelement ist ein generischer Host-Steuer
     }
     ```
 
-    Dieser Code verwendet die **untergeordneten** Eigenschaft der **WindowsXamlHost** Steuerelement auf der UWP **CalendarView** Steuerelement. Der Code abonniert dann den **SelectedDatesChanged** -Ereignis, das ausgelöst wird, wenn der Benutzer ein Datum aus dem Kalender auswählt. Dieser Ereignishandler übergibt das ausgewählte Datum, an dem "ViewModel", in dem die neue **Expense** Objekt erstellt und in der Datenbank gespeichert. Zu diesem Zweck werden im Code die messaging-Infrastruktur von MVVM Light-NuGet-Paket bereitgestellt. Der Code sendet eine Nachricht namens **SelectedDateMessage** an das ViewModel wird dem empfangen und Festlegen der **Datum** Eigenschaft mit dem ausgewählten Wert. In diesem Szenario die **CalendarView** Steuerelement für Einzelauswahl-Modus konfiguriert ist, damit die Auflistung nur ein Element enthalten soll.
+    Dieser Code verwendet die **Child** -Eigenschaft des **windowsxamlhost** -Steuer Elements, um auf das UWP **CalendarView** -Steuerelement zuzugreifen. Der Code abonniert dann das **selecteddateschangi-** Ereignis, das ausgelöst wird, wenn der Benutzer ein Datum aus dem Kalender auswählt. Dieser Ereignishandler übergibt das ausgewählte Datum an das ViewModel-Objekt, in dem das neue **Ausgaben** Objekt erstellt und in der Datenbank gespeichert wird. Zu diesem Zweck verwendet der Code die Messaging-Infrastruktur, die vom MVVM Light-nuget-Paket bereitgestellt wird. Der Code sendet eine Nachricht mit dem Namen **selecteddatemess** an das ViewModel, das Sie empfängt und die **Date** -Eigenschaft mit dem ausgewählten Wert festgelegt. In diesem Szenario wird das **CalendarView** -Steuerelement für den Einzel Auswahlmodus konfiguriert, sodass die Auflistung nur ein Element enthält.
 
-    An diesem Punkt das Projekt dennoch wird nicht kompiliert, da die Implementierung für fehlt die **SelectedDateMessage** Klasse. Die folgenden Schritte aus dieser Klasse zu implementieren.
+    An diesem Punkt wird das Projekt immer noch nicht kompiliert, weil die Implementierung für die **selecteddatemess** -Klasse fehlt. In den folgenden Schritten wird diese Klasse implementiert.
 
-9. In **Projektmappen-Explorer**, mit der rechten Maustaste die **Nachrichten** Ordner, und wählen Sie **hinzufügen ->-Klasse**. Nennen Sie die neue Klasse **SelectedDateMessage** , und klicken Sie auf **hinzufügen**.
+9. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Ordner **Messages** , und wählen Sie **Add-> Class**aus. Nennen Sie die neue Klasse **selecteddatemess** , und klicken Sie auf **Hinzufügen**.
 
-10. Ersetzen Sie den Inhalt von der **SelectedDateMessage.cs** Codedatei mit dem folgenden Code. Dieser Code Fügt eine using-Anweisung für die `GalaSoft.MvvmLight.Messaging` Namespace (in der MVVM Light-NuGet-Paket), erbt die **MessageBase** Klasse, und fügt **"DateTime"** -Eigenschaft, die über initialisiert wird die öffentlicher Konstruktor. Wenn Sie fertig sind, sollte die Datei wie folgt aussehen.
+10. Ersetzen Sie den Inhalt der **SelectedDateMessage.cs** -Codedatei durch den folgenden Code. Mit diesem Code wird eine using-Anweisung `GalaSoft.MvvmLight.Messaging` für den-Namespace (aus dem MVVM Light-nuget-Paket) hinzugefügt, von der **messagebase** -Klasse geerbt und die **DateTime** -Eigenschaft hinzugefügt, die über den öffentlichen-Konstruktor initialisiert wird. Wenn Sie den Vorgang abgeschlossen haben, sollte die Datei wie folgt aussehen.
 
     ```csharp
     using GalaSoft.MvvmLight.Messaging;
@@ -190,9 +193,9 @@ Allerdings die **WindowsXamlHost** Steuerelement ist ein generischer Host-Steuer
     }
     ```
 
-11. Als Nächstes aktualisieren Sie das "ViewModel", um diese Meldung wird angezeigt, und füllen Sie die **Datum** Eigenschaft von "ViewModel". In **Projektmappen-Explorer**, erweitern Sie die **ViewModels** Ordner, und Öffnen der **AddNewExpenseViewModel.cs** Datei.
+11. Als nächstes aktualisieren Sie das ViewModel, um diese Meldung zu empfangen und die **Date** -Eigenschaft von ViewModel aufzufüllen. Erweitern Sie in **Projektmappen-Explorer**den Ordner **ViewModels** , und öffnen Sie die Datei **AddNewExpenseViewModel.cs** .
 
-12. Suchen Sie den öffentlichen Konstruktor für die `AddNewExpenseViewModel` Klasse und fügen Sie den folgenden Code am Ende des Konstruktors. Dieser Code registriert wird, zum Empfangen der **SelectedDateMessage**, extrahieren Sie das ausgewählte Datum aus über die **"SelectedDate"** -Eigenschaft, und wir eine Verwendung zur Festlegung der **Datum** Eigenschaft durch das "ViewModel" verfügbar gemacht. Da diese Eigenschaft gebunden ist, mit der **TextBlock** Kontrolle, die Sie zuvor hinzugefügt haben, sehen Sie das Datum, die vom Benutzer ausgewählt wurde.
+12. Suchen Sie den öffentlichen Konstruktor für `AddNewExpenseViewModel` die Klasse, und fügen Sie am Ende des Konstruktors den folgenden Code hinzu. Dieser Code registriert sich für den Empfang von **selecteddatemess**, extrahiert das ausgewählte Datum über die **SelectedDate** -Eigenschaft, und wir verwenden dieses, um die **Date** -Eigenschaft festzulegen, die von ViewModel verfügbar gemacht wird. Da diese Eigenschaft mit dem **TextBlock** -Steuerelement gebunden ist, das Sie zuvor hinzugefügt haben, können Sie das vom Benutzer ausgewählte Datum sehen.
 
     ```csharp
     Messenger.Default.Register<SelectedDateMessage>(this, message =>
@@ -201,7 +204,7 @@ Allerdings die **WindowsXamlHost** Steuerelement ist ein generischer Host-Steuer
     });
     ```
 
-    Wenn Sie fertig sind, die `AddNewExpenseViewModel` Konstruktor sollte wie folgt aussehen. 
+    Wenn Sie den Vorgang abgeschlossen haben `AddNewExpenseViewModel` , sollte der Konstruktor wie folgt aussehen. 
 
     ```csharp
     public AddNewExpenseViewModel(IDatabaseService databaseService, IStorageService storageService)
@@ -219,14 +222,14 @@ Allerdings die **WindowsXamlHost** Steuerelement ist ein generischer Host-Steuer
     ```
 
     > [!NOTE]
-    > Die `SaveExpenseCommand` -Methode in derselben Codedatei übernimmt das die Ausgaben in der Datenbank speichern. Diese Methode verwendet die **Datum** Eigenschaft zum Erstellen des neuen **Expense** Objekt. Diese Eigenschaft wird jetzt aufgefüllt wird, indem die **CalendarView** steuern, über die `SelectedDateMessage` Meldung, die Sie gerade erstellt.
+    > Mit `SaveExpenseCommand` der-Methode in derselben Codedatei werden die Ausgaben in der Datenbank gespeichert. Diese Methode verwendet die **Date** -Eigenschaft, um das neue **Ausgaben** Objekt zu erstellen. Diese Eigenschaft wird jetzt durch das **CalendarView** -Steuerelement durch die `SelectedDateMessage` soeben erstellte Nachricht aufgefüllt.
 
-13. Drücken Sie F5, um die app im Debugger ausführen. Wählen Sie eine der verfügbaren Mitarbeiter, und klicken Sie dann auf die **Hinzufügen von neuen Ausgaben** Schaltfläche. Füllen Sie alle Felder im Formular aus, und wählen Sie ein Datum aus dem neuen **CalendarView** Steuerelement. Vergewissern Sie sich, dass das ausgewählte Datum als Zeichenfolge unterhalb des Steuerelements angezeigt wird.
+13. Drücken Sie F5, um die APP im Debugger zu erstellen und auszuführen. Wählen Sie einen der verfügbaren Mitarbeiter aus, und klicken Sie dann auf die Schaltfläche **neue Ausgaben hinzufügen** . Vervollständigen Sie alle Felder im Formular, und wählen Sie ein Datum aus dem neuen **CalendarView** -Steuerelement aus. Vergewissern Sie sich, dass das ausgewählte Datum als Zeichenfolge unter dem Steuerelement angezeigt wird.
 
-14. Drücken Sie die **speichern** Schaltfläche. Das Formular wird geschlossen, und die neue Ausgabe wird an das Ende der Liste der Ausgaben hinzugefügt. Die erste Spalte mit dem Expense-Datum muss das Datum, die Sie, in ausgewählt der **CalendarView** Steuerelement.
+14. Klicken Sie auf die Schaltfläche **Speichern** . Das Formular wird geschlossen, und die neue Kosten werden am Ende der Liste der Ausgaben hinzugefügt. Die erste Spalte mit dem Spesen Datum sollte das Datum sein, das Sie im **CalendarView** -Steuerelement ausgewählt haben.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-An diesem Punkt in diesem Tutorial, Sie haben erfolgreich ersetzt ein WPF-Datum-Uhrzeit-Steuerelement mit der UWP **CalendarView** -Steuerelement, das Fingereingabe und digitale Stifte zusätzlich zu Maus- und Tastatureingaben unterstützt. Zwar enthält das Windows-Community-Toolkit eine umschlossene Version der UWP keine **CalendarView** -Steuerelement, das direkt in einer WPF-app verwendet werden kann zum Hosten des Steuerelements mithilfe der allgemeinen konnten [WindowsXamlHost ](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) Steuerelement.
+An dieser Stelle im Tutorial haben Sie ein WPF-Datum/Uhrzeit-Steuerelement erfolgreich durch das UWP **CalendarView** -Steuerelement ersetzt, das neben Maus-und Tastatureingaben auch Finger Eingaben und digitale Stifte unterstützt. Obwohl das Windows Community Toolkit keine umschließende Version des UWP **CalendarView** -Steuer Elements bereitstellt, das direkt in einer WPF-App verwendet werden kann, konnten Sie das Steuerelement mit dem generischen [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) -Steuerelement hosten.
 
-Sie sind nun bereit zur [Teil 4: Hinzufügen von Windows 10-Benutzeraktivitäten und Benachrichtigungen](modernize-wpf-tutorial-4.md).
+Sie sind jetzt bereit für [Teil 4: Fügen Sie Windows 10-Benutzeraktivitäten](modernize-wpf-tutorial-4.md)und-Benachrichtigungen hinzu.

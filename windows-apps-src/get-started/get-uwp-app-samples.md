@@ -1,56 +1,59 @@
 ---
 title: Beispiele für UWP-Apps abrufen
-description: Erfahren Sie, wie Sie die UWP-Codebeispiele von GitHub herunterladen.
+description: Erfahre, wie du die UWP-Codebeispiele von GitHub herunterlädst.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Beispielcode, Codebeispiele
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f56b0f9e4cb7f89b8bc929015ecdf6d5c64d42e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6b0e30804eabb7e50c5a7319bba9a6b2c83e1d7e
+ms.sourcegitcommit: 99595e4938213aafdb49635d684d8ba8eb3f697a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321076"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69487851"
 ---
 # <a name="get-uwp-app-samples"></a>Beispiele für UWP-Apps abrufen
 
-Die Beispiele für Universelle Windows Plattform-Apps (UWP-Apps) sind über Repositorys auf GitHub verfügbar. Unter [SamplesDev](https://developer.microsoft.com/windows/samples%20%22Dev%20Center%20samples%22) finden Sie eine durchsuchbare, kategorisierte Liste. Alternativ können Sie das Repository [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die Universelle Windows-Plattform") durchsuchen, das Beispiele für alle UWP-Features und ihre API-Verwendungsmuster enthält.  
-![GitHub-Repository mit UWP-Beispielen](images/GitHubUWPSamplesPage.png)
+Die Beispiele für Universelle Windows Plattform-Apps (UWP-Apps) sind in Repositorys auf GitHub verfügbar. Unter [Codebeispiele](https://developer.microsoft.com/windows/samples) findest du eine durchsuchbare, kategorisierte Liste. Alternativ kannst du das [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die universelle Windows-Plattform")-Repository durchsuchen. Das Repository mit Beispielen für die universelle Windows-Plattform enthält Beispiele, in denen alle UWP-Features und deren API-Verwendungsmuster veranschaulicht werden.
+
+![UWP-Beispielrepository von GitHub](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>Code herunterladen
 
-Um die Beispiele herunterzuladen, wechseln Sie zum [Repository](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die Universelle Windows-Plattform") und wählen **Clone or download** (Klonen oder herunterladen) und dann **Download ZIP** (ZIP herunterladen) aus. Oder klicken Sie einfach [hier](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "ZIP-Datei mit App-Beispielen für die Universelle Windows-Plattform herunterladen").
+Um die Beispiele herunterzuladen, wechsle zum [Repository](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit App-Beispielen für die universelle Windows-Plattform"). Wähle **Clone or download** (Klonen oder herunterladen) und dann **Download ZIP** (ZIP-Datei herunterladen) aus. 
 
-Die ZIP-Datei enthält stets die neuesten Beispiele. Sie benötigen zum Herunterladen kein GitHub-Konto. Wenn ein SDK-Update veröffentlicht wird oder wenn Sie alle aktuellen Änderungen/Ergänzungen übernehmen möchten, suchen Sie einfach nach der neuesten ZIP-Datei.
+![Herunterladen von Beispielen](images/SamplesDownloadButton.png)
 
-![Beispieldownload](images/SamplesDownloadButton.png)
+Du kannst auch [die Beispiele aus diesem Artikel herunterladen](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "ZIP-Datei mit App-Beispielen für die universelle Windows-Plattform herunterladen").
 
+Die ZIP-Downloaddatei enthält immer die neuesten Beispiele. Du benötigst zum Herunterladen kein GitHub-Konto. Wenn ein SDK-Update veröffentlicht wird oder du alle aktuellen Änderungen und Ergänzungen übernehmen möchtest, lade einfach die neueste ZIP-Datei herunter.
 
 > [!NOTE]
-> Für das Öffnen, Erstellen und Ausführen der UWP-Beispiele sind Visual Studio 2015 oder höher und das Windows SDK erforderlich. Eine kostenlose Kopie von Visual Studio Community mit Unterstützung für die Erstellung von UWP-Apps erhalten Sie [hier](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Downloads für Windows-Entwicklungstools").  
+> Für das Öffnen, Erstellen und Ausführen der UWP-Beispiele sind Visual Studio 2015 oder höher und das Windows SDK erforderlich. Eine kostenlose Kopie von Visual Studio Community erhältst du [hier](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Downloads für Windows-Entwicklungstools"). Visual Studio Community unterstützt das Entwickeln von UWP-Apps.  
 >
-> Darüber hinaus sollten Sie sicherstellen, dass nicht nur einzelne Beispiele, sondern das gesamte Archiv entpackt wurde. Alle Beispiele erfordern den Archivordner „SharedContent“. Die Beispiele für UWP-Features verfügen über verknüpfte Dateien in Visual Studio, um das Duplizieren gemeinsam verwendeter Dateien zu vermeiden, z. B. von Beispieldateien für Vorlagen und Bildressourcen. Diese gemeinsamen Dateien werden im Ordner „SharedContent“ im Stammverzeichnis des Repositorys gespeichert. Der Verweis in den Projektdateien erfolgt über Links.
+> Damit die Beispiele ordnungsgemäß funktionieren, solltest du sicherstellen, dass nicht einzelne Beispiele, sondern das gesamte Archiv entpackt wird. Alle Beispiele erfordern den Archivordner „SharedContent“. Die Beispiele für UWP-Features verfügen über verknüpfte Dateien in Visual Studio, um das Duplizieren gemeinsam verwendeter Dateien zu vermeiden, z. B. von Beispieldateien für Vorlagen und Bildressourcen. Allgemeine Dateien werden im Stammverzeichnis des Repositorys im SharedContent-Ordner gespeichert. Links werden in den Projektdateien verwendet, um auf allgemeine Dateien zu verweisen.
+> 
 
-Öffnen Sie nach dem Herunterladen der ZIP-Datei die Beispiele in Visual Studio:
+## <a name="open-the-samples"></a>Öffnen der Beispiele
 
-1.  Klicken Sie vor dem Extrahieren des Archivs mit der rechten Maustaste darauf, und wählen Sie **Eigenschaften** > **Blockierung aufheben** > **Übernehmen** aus. Entpacken Sie anschließend das Archiv in einen lokalen Ordner auf Ihrem Computer.
+Öffne nach dem Herunterladen der ZIP-Datei die Beispiele in Visual Studio.
+
+1.  Klicke vor dem Extrahieren des Archivs mit der rechten Maustaste, und wähle **Eigenschaften** > **Blockierung aufheben** > **Übernehmen** aus. Entpacke anschließend das Archiv auf deinem Computer in einen lokalen Ordner.
 
     ![Entpacktes Archiv](images/SamplesUnzip1.png)
-2.  Im Beispielordner wird eine Reihe von Ordnern angezeigt, die jeweils ein Beispiel für UWP-Features enthalten.
+2.  Jeder Ordner im Ordner „Samples“ enthält ein Beispiel für eine UWP-Funktion.
 
     ![Beispielordner](images/SamplesUnzip2.png)
-
-3.  Wählen Sie ein Beispiel wie z. B. Höhenmesser aus, um mehrere Ordner mit den unterstützten Sprachen anzuzeigen.
+3.  Wähle ein Beispiel aus, z.B. „Altimeter“. Unterordner geben die unterstützten Sprachen an.
 
     ![Sprachordner](images/SamplesUnzip3.png)
-
-4.  Wählen Sie die gewünschte Sprache (z. B. CS für C\#) aus. Es wird eine Visual Studio-Projektmappendatei angezeigt, die Sie in Visual Studio öffnen können.
+4.  Wähle den Ordner der zu verwendenden Sprache aus. Im Ordnerinhalt siehst du eine Visual Studio-Projektmappendatei (.sln), die du in Visual Studio öffnen kannst. Beispiel: *Altimeter.sln*.
 
     ![VS-Projektmappe](images/SamplesUnzip4.png)
 
 ## <a name="give-feedback-ask-questions-and-report-issues"></a>Geben Sie Feedback, stellen Sie Fragen und melden Sie Probleme
 
-Wenn Sie Fragen oder Probleme haben, klicken Sie einfach auf die Registerkarte „Probleme“ im Repository, um ein neues Problem zu erstellen. Wir werden versuchen, zu helfen.
+Wenn du Fragen oder Probleme hast, klicke einfach auf die Registerkarte **Issues** (Probleme) im Repository, um ein neues Problem zu erstellen. Wir werden versuchen, zu helfen.
 
 ![Feedback-Bild](images/GitHubUWPSamplesFeedback.png)

@@ -1,42 +1,45 @@
 ---
-description: Dieses Tutorial veranschaulicht das Hinzufügen von UWP XAML-Benutzeroberflächen, MSIX-Pakete erstellen und andere moderne Komponenten in Ihrer WPF-Anwendung integrieren.
+description: In diesem Tutorial wird veranschaulicht, wie Sie UWP-XAML-Benutzeroberflächen hinzufügen, msix-Pakete erstellen und andere moderne Komponenten in Ihre WPF-App integrieren.
 title: Migrieren der Contoso-Spesen-App zu .NET Core 3
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: Windows 10, Uwp, Windows Forms, Wpf, XAML-Inseln
+keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 6e303e7059edd72fcdeb5455f450e6ece9d58e02
-ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
+ms.openlocfilehash: 97488a913605916c067861b5941d7aa127b00917
+ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68141847"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69643414"
 ---
 # <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Teil 1: Migrieren der Contoso-Spesen-App zu .NET Core 3
 
-Dies ist der erste Teil eines Tutorials, die zeigt, wie Sie eine Beispiel WPF-desktop-app mit dem Namen Contoso-Ausgaben zu modernisieren. Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-app, finden Sie unter [Lernprogramm: Modernisieren von WPF-app](modernize-wpf-tutorial.md).
+Dies ist der erste Teil eines Tutorials, in dem veranschaulicht wird, wie eine WPF-Beispiel-Desktop-App mit dem Namen "ca Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden [Sie unter Tutorial: Modernisieren einer WPF-](modernize-wpf-tutorial.md)app.
   
-In diesem Teil des Tutorials, migrieren Sie die gesamte Contoso-Ausgaben-app von .NET Framework 4.7.2 [.NET Core 3](modernize-wpf-tutorial.md#net-core-3). Bevor Sie diesen Teil des Tutorials beginnen, stellen Sie sicher, dass Sie führen Sie Folgendes:
+In diesem Teil des Tutorials migrieren Sie die gesamte app "apptoso-Ausgaben" von der .NET Framework 4.7.2 zu [.net Core 3](modernize-wpf-tutorial.md#net-core-3). Bevor Sie mit diesem Teil des Tutorials beginnen, stellen Sie sicher, dass Sie Folgendes tun:
 
-* [Öffnen Sie ein, und erstellen Sie das Beispiel ContosoExpenses](modernize-wpf-tutorial.md#get-the-contoso-expenses-sample-app) in Visual Studio-2019.
-* Wenn Sie eine Version von Visual Studio-2019 verwenden, aktivieren Sie die Preview-Versionen von .NET Core SDK. Wechseln Sie in Visual Studio zu **Tools > Optionen**"Preview" in das Suchfeld, und wählen Sie **verwenden Sie die Preview-Versionen von .NET Core SDK**. Bei Verwendung einer [Preview-Version von Visual Studio-2019](https://visualstudio.microsoft.com/vs/preview/), müssen Sie nicht diese Option auswählen, da .NET Core Preview-Versionen sind standardmäßig aktiviert.
+* [Öffnen Sie, und erstellen Sie das contosoausgaben-Beispiel](modernize-wpf-tutorial.md#get-the-contoso-expenses-sample-app) in Visual Studio 2019.
+* Wenn Sie eine Releaseversion von Visual Studio 2019 verwenden, aktivieren Sie Vorschau Versionen der .net Core SDK. Wechseln Sie in Visual Studio zu Extras **> Optionen**, geben Sie "Preview" in das Suchfeld ein, und wählen Sie **Vorschau der .net Core SDK verwenden aus**. Wenn Sie eine [Vorschauversion von Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/)verwenden, müssen Sie diese Option nicht auswählen, da die Vorschauversion von .net Core standardmäßig aktiviert ist.
 
-## <a name="migrate-the-contosoexpenses-project-to-net-core-3"></a>Migrieren Sie das Projekt ContosoExpenses zu .NET Core-3
+> [!NOTE]
+> Weitere Informationen zum Migrieren einer WPF-Anwendung vom .NET Framework zu .net Core 3 finden Sie in [dieser Blog Reihe](https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/).
 
-In diesem Abschnitt müssen Sie die ContosoExpenses-Projekts in der Contoso-Ausgaben-app auf .NET Core-3 migrieren. Dazu müssen Sie erstellen eine neue Projektdatei, die die gleichen Dateien wie dem vorhandenen ContosoExpenses-Projekt, aber .NET Core-3-Ziele anstelle von .NET Framework 4.7.2 enthält. Dadurch können Sie zu einem einzigen Projekt mit .NET Framework und .NET Core-Versionen der app zu verwalten.
+## <a name="migrate-the-contosoexpenses-project-to-net-core-3"></a>Migrieren des contosoaufwendungen-Projekts zu .net Core 3
 
-1. Stellen Sie sicher, dass die ContosoExpenses derzeit Ziel .NET Framework 4.7.2 Projekt. Im Projektmappen-Explorer mit der Maustaste der **ContosoExpenses** Projekts **Eigenschaften**, und überprüfen Sie, ob die **Zielframework** Eigenschaft der  **Anwendung** Registerkarte auf .NET Framework 4.7.2 festgelegt ist.
+In diesem Abschnitt Migrieren Sie das Projekt contosoaufwendungen in der Contoso-Ausgaben-APP zu .net Core 3. Hierzu erstellen Sie eine neue Projektdatei, die die gleichen Dateien wie das vorhandene contosoaufwendungen-Projekt enthält, aber .net Core 3 anstelle der .NET Framework 4.7.2. Auf diese Weise können Sie eine einzelne Lösung mit .NET Framework und .net Core-Versionen der App verwalten.
+
+1. Vergewissern Sie sich, dass das Projekt condesoaufwands derzeit auf die .NET Framework 4.7.2 abzielt. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **condesoaufwands** , wählen Sie **Eigenschaften**aus, und vergewissern Sie sich, dass die Eigenschaft **Ziel Framework** auf der Registerkarte **Anwendung** auf .NET Framework 4.7.2 festgelegt ist.
 
     ![.NET Framework Version 4.7.2 für das Projekt](images/wpf-modernize-tutorial/NETFramework472.png)
 
-3. Navigieren Sie im Windows-Explorer zu dem **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses** Ordner, und erstellen Sie eine neue Textdatei mit dem Namen **ContosoExpenses.Core.csproj**.
+3. Navigieren Sie in Windows-Explorer zum Ordner " **c:\winappsmodernizationworkshop\lab\exercise1\01-start\contosoaufwendungen** ", und erstellen Sie eine neue Textdatei mit dem Namen " **contosoaufwands. Core. csproj**".
 
-4. Klicken Sie mit der rechten Maustaste auf die Datei, wählen Sie **Öffnen mit**, und klicken Sie dann in einem Text-Editor Ihrer Wahl, z. B. Editor, Visual Studio Code oder Visual Studio öffnen.
+4. Klicken Sie mit der rechten Maustaste auf die Datei, wählen Sie **Öffnen mit**aus, und öffnen Sie Sie dann in einem Text-Editor Ihrer Wahl, z. b. Notepad, Visual Studio Code oder Visual Studio.
 
-5. Kopieren Sie den folgenden Text in die Datei, und speichern Sie sie.
+5. Kopieren Sie den folgenden Text in die Datei, und speichern Sie ihn.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
@@ -50,29 +53,29 @@ In diesem Abschnitt müssen Sie die ContosoExpenses-Projekts in der Contoso-Ausg
     </Project>
     ```
 
-6. Die Datei schließen und zurück zu den **ContosoExpenses** Projektmappe in Visual Studio.
+6. Schließen Sie die Datei, und kehren Sie zur Projekt Mappe **condesoaufwands** in Visual Studio zurück.
 
-7. Mit der rechten Maustaste die **ContosoExpenses** Lösung, und wählen Sie **hinzufügen -> vorhandenes Projekt**. Wählen Sie die **ContosoExpenses.Core.csproj** Datei, die Sie gerade erstellt haben, der `C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses` Ordner, um es zur Projektmappe hinzuzufügen.
+7. Klicken Sie mit der rechten Maustaste auf die Lösung **conabsoaufwands** , und wählen Sie **Add-> vorhandenes Projekt** Wählen Sie die Datei **contosoaufwendungen. Core. csproj** aus, die Sie `C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses` soeben im Ordner erstellt haben, um Sie der Projekt Mappe hinzuzufügen.
 
-Die **ContosoExpenses.Core.csproj** enthält die folgenden Elemente:
+**Contosoaufwands. Core. csproj** umfasst die folgenden Elemente:
 
-* Die **Projekt** Element gibt an, eine SDK-Version von **Microsoft.NET.Sdk.WindowsDesktop**. Dies bezieht sich auf Anwendungen von .NET für Windows Desktop, und sie enthält Komponenten für WPF und Windows Forms-apps.
-* Die **PropertyGroup** Element enthält untergeordnete Elemente, die angeben, die Projektausgabe ist eine ausführbare Datei (nicht in eine DLL), .NET Core 3 abzielt und WPF verwendet. Verwenden Sie für eine Windows Forms-app eine **UseWinForms** -Element anstelle des dem **UseWPF** Element.
+* Das **Project** -Element gibt eine SDK-Version von **Microsoft. net. SDK. windowsdesktop**an. Dies bezieht sich auf .NET-Anwendungen für Windows Desktop und umfasst Komponenten für WPF-und Windows Forms-apps.
+* Das **PropertyGroup** -Element enthält untergeordnete Elemente, die angeben, dass die Projekt Ausgabe eine ausführbare Datei (keine dll) ist, auf .net Core 3 ausgerichtet ist und WPF verwendet. Für eine Windows Forms-APP würden Sie ein **usewinforms** -Element anstelle des **usewpf** -Elements verwenden.
 
 > [!NOTE]
-> Bei der Arbeit mit csproj-Format mit .NET Core 3.0 eingeführt wurde, gelten alle Dateien im selben Ordner wie der CSPROJ-Datei Teil des Projekts. Aus diesem Grund müssen Sie jede Datei im Projekt enthaltenen angeben. Sie müssen angeben, dass nur die Dateien, die für die Sie eine benutzerdefinierte Aktion oder die Sie definieren möchten ausschließen möchten.
+> Wenn Sie mit dem csproj-Format arbeiten, das mit .net Core 3,0 eingeführt wurde, werden alle Dateien im selben Ordner wie die CSPROJ-Datei als Teil des Projekts betrachtet. Daher müssen Sie nicht jede Datei angeben, die im Projekt enthalten ist. Sie müssen nur die Dateien angeben, für die Sie eine benutzerdefinierte Buildaktion definieren möchten oder die Sie ausschließen möchten.
 
-## <a name="migrate-the-contosoexpensesdata-project-to-net-standard"></a>Migrieren Sie das ContosoExpenses.Data-Projekt auf .NET Standard
+## <a name="migrate-the-contosoexpensesdata-project-to-net-standard"></a>Migrieren Sie das Projekt Conto soaufwands. Data zu .NET Standard
 
-Die **ContosoExpenses** Lösung umfasst eine **ContosoExpenses.Data** Klassenbibliothek, die Modelle und -Schnittstellen für Dienste enthält, und ist auf .NET 4.7.2. .NET Core-3.0-apps können .NET Framework-Bibliotheken verwenden, solange Sie nicht diese APIs verwenden, die in .NET Core nicht verfügbar sind. Ist jedoch der beste Migrationspfad für die Modernisierung Ihrer Bibliotheken in .NET Standard zu verschieben. Dadurch wird sichergestellt, dass Ihre Bibliothek vollständig von Ihrer app von .NET Core 3.0 unterstützt wird. Darüber hinaus können Sie die Bibliothek auch mit anderen Plattformen wie Web (über ASP.NET Core) und mobile Geräte (über Xamarin) wiederverwenden.
+Die Lösung **condesoaufwands** umfasst eine **condesoaufwands. Data** -Klassenbibliothek, die Modelle und Schnittstellen für Dienste und .NET 4.7.2-Ziele enthält. .Net Core 3,0-Apps können .NET Framework Bibliotheken verwenden, sofern Sie keine APIs verwenden, die in .net Core nicht verfügbar sind. Der beste Modernisierungspfad besteht jedoch darin, Ihre Bibliotheken in .NET Standard zu verschieben. Dadurch wird sichergestellt, dass Ihre Bibliothek von Ihrer .net Core 3,0-App vollständig unterstützt wird. Außerdem können Sie die Bibliothek auch mit anderen Plattformen wieder verwenden, wie z. b. Web (über ASP.net Core) und Mobile (über xamarin).
 
-Migrieren der **ContosoExpenses.Data** Projekt auf .NET Standard:
+So migrieren Sie das Projekt **Conto soaufwands. Data** zu .NET Standard:
 
-1. In Visual Studio mit der Maustaste der **ContosoExpenses.Data** Projekt, und wählen **Projekt entladen**. Mit der rechten Maustaste erneut auf des Projekts, und wählen Sie dann **bearbeiten ContosoExpenses.Data.csproj**.
+1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Projekt **Conto soaufwands. Data** , und wählen Sie **Projekt entladen**aus. Klicken Sie mit der rechten Maustaste erneut auf das Projekt, und wählen Sie dann **condesoaufwands. Data. csproj bearbeiten**aus.
 
-2. Löschen Sie den gesamten Inhalt der Projektdatei an.
+2. Löschen Sie den gesamten Inhalt der Projektdatei.
 
-3. Kopieren Sie und fügen Sie den folgenden XML-Code, und speichern Sie die Datei.
+3. Kopieren Sie den folgenden XML-Code, und speichern Sie die Datei.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -84,23 +87,23 @@ Migrieren der **ContosoExpenses.Data** Projekt auf .NET Standard:
     </Project>
     ```
 
-4. Mit der rechten Maustaste die **ContosoExpenses.Data** Projekt, und wählen **Projekt erneut laden**.
+4. Klicken Sie mit der rechten Maustaste auf das Projekt **Conto soaufwands. Data** , und wählen Sie **Projekt erneut laden**
 
-## <a name="configure-nuget-packages-and-dependencies"></a>Konfigurieren von NuGet-Pakete und Abhängigkeiten
+## <a name="configure-nuget-packages-and-dependencies"></a>Konfigurieren von nuget-Paketen und-Abhängigkeiten
 
-Wenn Sie migriert die **ContosoExpenses.Core** und **ContosoExpenses.Data** Projekte in den vorherigen Abschnitten haben Sie die NuGet-Paketverweise aus den Projekten entfernt. In diesem Abschnitt fügen Sie diese Verweise wieder.
+Beim Migrieren der Projekte " **contosoaufwendungen. Core** " und " **contosoaufwendungen. Data** " in den vorherigen Abschnitten haben Sie die nuget-Paket Verweise aus den Projekten entfernt. In diesem Abschnitt fügen Sie diese Verweise wieder hinzu.
 
-So konfigurieren Sie die NuGet-Pakete für die **ContosoExpenses.Data** Projekt:
+So konfigurieren Sie nuget-Pakete für das Projekt **condesoaufwands. Data** :
 
-1.  In der **ContosoExpenses.Data** projizieren, erweitern Sie die **Abhängigkeiten** Knoten. Beachten Sie, dass die **NuGet** Abschnitt nicht vorhanden ist.
+1. Erweitern Sie im Projekt **condesoaufwands. Data** den Knoten **Abhängigkeiten** . Beachten Sie, dass der **nuget** -Abschnitt fehlt.
 
-    ![NuGet-Pakete](images/wpf-modernize-tutorial/NuGetPackages.png)
+    ![Nuget-Pakete](images/wpf-modernize-tutorial/NuGetPackages.png)
 
-    Wenn Sie öffnen die **"Packages.config"** in die **Projektmappen-Explorer** finden Sie 'ALTER' Verweise auf die NuGet-Pakete verwendet das Projekt aus, wenn sie das vollständige .NET Framework verwendet wurde.
+    Wenn Sie die Datei " **Packages. config** " in der **Projektmappen-Explorer** öffnen, finden Sie die alten Verweise der nuget-Pakete, die das Projekt verwendet haben, als die vollständige .NET Framework verwendet wurde.
 
     ![Abhängigkeiten und Pakete](images/wpf-modernize-tutorial/Packages.png)
 
-    Hier ist der Inhalt der **"Packages.config"** Datei. Sie werden feststellen, dass alle NuGet-Pakete im vollständigen .NET Framework 4.7.2 als Ziel:
+    Im folgenden finden Sie den Inhalt der Datei " **Packages. config** ". Sie werden feststellen, dass alle nuget-Pakete auf den vollständigen .NET Framework 4.7.2 abzielen:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -110,21 +113,21 @@ So konfigurieren Sie die NuGet-Pakete für die **ContosoExpenses.Data** Projekt:
     </packages>
     ```
 
-2. In der **ContosoExpenses.Data** Projekt, löschen Sie die **"Packages.config"** Datei.
+2. Löschen Sie die Datei " **Packages. config** " im Projekt " **condesoaufwands. Data** ".
 
-4. In der **ContosoExpenses.Data** Projekt der rechten Maustaste auf die **Abhängigkeiten** Knoten, und wählen Sie **NuGet-Pakete verwalten**.
+4. Klicken Sie im Projekt **condesoaufwands. Data** mit der rechten Maustaste auf den Knoten **Abhängigkeiten** , und wählen Sie **nuget-Pakete verwalten**aus.
 
-  ![Verwalten Sie NuGet-Pakete...](images/wpf-modernize-tutorial/ManageNugetNETCORE3.png)
+  ![Nuget-Pakete verwalten...](images/wpf-modernize-tutorial/ManageNugetNETCORE3.png)
 
-5. In der **NuGet Package Manager** Fenster, klicken Sie auf **Durchsuchen**. Suchen Sie nach der `Bogus` Packen und installieren Sie es.
+5. Klicken Sie im Fenster **nuget-Paket-Manager** auf **Durchsuchen**. Suchen Sie nach `Bogus` dem Paket, und installieren Sie die neueste stabile Version.
 
-    ![Gefälschte NuGet-Paket](images/wpf-modernize-tutorial/Bogus.png)
+    ![Bogus-nuget-Paket](images/wpf-modernize-tutorial/Bogus.png)
 
-6. Suchen Sie nach der `LiteDB` Packen und installieren Sie es.
+6. Suchen Sie nach `LiteDB` dem Paket, und installieren Sie die neueste stabile Version.
 
-    ![LiteDB NuGet-Paket](images/wpf-modernize-tutorial/LiteDB.png)
+    ![Litedb-nuget-Paket](images/wpf-modernize-tutorial/LiteDB.png)
 
-    Sie Fragen sich vielleicht, wo dieser Liste von NuGet-Pakete gespeichert ist, da das Projekt nicht mehr als eine Datei "Packages.config" enthält. Die referenzierten NuGet-Pakete werden direkt in die CSPROJ-Datei gespeichert. Sie können dies überprüfen, indem der Inhalt von der **ContosoExpenses.Data.csproj** Projektdatei in einem Text-Editor. Sie finden die folgenden Zeilen am Ende der Datei hinzugefügt:
+    Sie Fragen sich vielleicht, wo diese Liste von nuget-Paketen gespeichert ist, da das Projekt nicht mehr über die Datei "Packages. config" verfügt. Die nuget-Pakete, auf die verwiesen wird, werden direkt in der CSPROJ-Datei gespeichert. Sie können dies überprüfen, indem Sie den Inhalt der Projektdatei **condesoaufwands. Data. csproj** in einem Text-Editor anzeigen. Sie werden feststellen, dass am Ende der Datei die folgenden Zeilen hinzugefügt wurden:
 
     ```xml
     <ItemGroup>
@@ -134,11 +137,11 @@ So konfigurieren Sie die NuGet-Pakete für die **ContosoExpenses.Data** Projekt:
     ```
 
     > [!NOTE]
-    > Sie können auch bemerken, dass Sie die gleichen Pakete für das .NET Core-3-Projekt wie die von .NET Framework 4.7.2-Projekten verwendet wird, installieren. NuGet-Pakete unterstützt die Festlegung von Zielversionen. Autoren von Klassenbibliotheken zählen verschiedene Versionen einer Bibliothek im selben Paket, für verschiedene Architekturen und -Plattformen kompiliert. Diese Pakete unterstützen die Vollversion von .NET Framework sowie .NET Standard 2.0, die mit .NET Core-3-Projekte kompatibel ist. Weitere Informationen zu den unterschieden, die .NET Framework, .NET Core und .NET Standard finden Sie unter [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
+    > Sie werden möglicherweise auch bemerken, dass Sie dieselben Pakete für dieses .net Core 3-Projekt installieren wie die von .NET Framework 4.7.2-Projekten verwendeten. Nuget-Pakete unterstützen die Zielvorgabe. Bibliotheks Autoren können unterschiedliche Versionen einer Bibliothek im selben Paket enthalten, die für verschiedene Architekturen und Plattformen kompiliert werden. Diese Pakete unterstützen das vollständige .NET Framework und .NET Standard 2,0, das mit .net Core 3-Projekten kompatibel ist. Weitere Informationen zu den unterschieden .NET Framework, .net Core und .NET Standard finden Sie unter [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
 
-So konfigurieren Sie die NuGet-Pakete für die **ContosoExpenses.Core** Projekt:
+So konfigurieren Sie nuget-Pakete für das Projekt **contosoaufwendungen. Core** :
 
-1. In der **ContosoExpenses.Core** -Projekt, öffnen die **"Packages.config"** Datei. Beachten Sie, dass sie derzeit die folgenden Verweise enthält, die .NET Framework 4.7.2 als Ziel.
+1. Öffnen Sie im Projekt **contosoaufwendungen. Core** die Datei **Packages. config** . Beachten Sie, dass Sie derzeit die folgenden Verweise enthält, die auf die .NET Framework 4.7.2 abzielen.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -150,43 +153,43 @@ So konfigurieren Sie die NuGet-Pakete für die **ContosoExpenses.Core** Projekt:
     </packages>
     ```
 
-    In den folgenden Schritten müssen Sie .NET Standard-Versionen, der die `MvvmLightLibs` und `Unity` Pakete. Die anderen zwei sind Abhängigkeiten von NuGet automatisch heruntergeladen, wenn Sie diese beiden Bibliotheken installieren.
+    In den folgenden Schritten .NET Standard Sie Versionen der `MvvmLightLibs` -und- `Unity` Pakete. Die anderen beiden sind Abhängigkeiten, die von nuget automatisch heruntergeladen werden, wenn Sie diese beiden Bibliotheken installieren.
 
-2. In der **ContosoExpenses.Core** Projekt, löschen Sie die **"Packages.config"** Datei.
+2. Löschen Sie die Datei " **Packages. config** " im Projekt " **contosoaufwendungen. Core** ".
 
-3. Mit der rechten Maustaste die **ContosoExpenses.Core** Projekt, und wählen **NuGet-Pakete verwalten**.
+3. Klicken Sie mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **nuget-Pakete verwalten**.
 
-4. In der **NuGet Package Manager** Fenster, klicken Sie auf **Durchsuchen**. Suchen Sie nach der `Unity` Packen und installieren Sie es.
+4. Klicken Sie im Fenster **nuget-Paket-Manager** auf **Durchsuchen**. Suchen Sie nach `Unity` dem Paket, und installieren Sie die neueste stabile Version.
 
-    ![Unity-Pakets](images/wpf-modernize-tutorial/UnityPackage.png)
+    ![Unity-Paket](images/wpf-modernize-tutorial/UnityPackage.png)
 
-5. Suchen Sie nach der `MvvmLightLibsStd10` Packen und installieren Sie es. Dies ist die .NET Standard-Version von der `MvvmLightLibs` Paket. Für dieses Paket wurde der Autor die Version der Bibliothek in ein separates Paket als .NET Framework-Version von .NET Standard-Paket.
+5. Suchen Sie nach `MvvmLightLibsStd10` dem Paket, und installieren Sie die neueste stabile Version. Dies ist die .NET Standard Version des `MvvmLightLibs` Pakets. Für dieses Paket hat der Autor die .NET Standard Version der Bibliothek in einem separaten Paket als die .NET Framework Version verpacken.
 
-    ![MvvmLightsLibs-Paket](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
+    ![Mvvmlightlisb-Paket](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
 
-6. In der **ContosoExpenses.Core** Projekt der rechten Maustaste auf die **Abhängigkeiten** Knoten, und wählen Sie **Verweis hinzufügen**.
+6. Klicken Sie im Projekt **contosoaufwendungen. Core** mit der rechten Maustaste auf den Knoten **Abhängigkeiten** , und wählen Sie **Verweis hinzufügen**aus.
 
-7. In der **Projekte > Projektmappe** Kategorie **ContosoExpenses.Data** , und klicken Sie auf **OK**.
+7. Wählen Sie in der Kategorie **Projekte > Projekt** Mappe die Option **conessoaufwendungen. Data** aus, und klicken Sie auf **OK**.
 
     ![Verweis hinzufügen](images/wpf-modernize-tutorial/AddReference.png)
 
-## <a name="disable-auto-generated-assembly-attributes"></a>Deaktivieren von automatisch generierten Assemblynamen-Attribute
+## <a name="disable-auto-generated-assembly-attributes"></a>Automatisch generierte Assemblyattribute deaktivieren
 
-An diesem Punkt im Migrationsvorgang, wenn Sie versuchen, Sie erstellen die **ContosoExpenses.Core** Projekt werden einige Fehler angezeigt.
+Wenn Sie an dieser Stelle im Migrations Vorgang versuchen, das Projekt **contosoaufwendungen. Core** zu erstellen, werden einige Fehler angezeigt.
 
-![Neue .NET Core-3-Buildfehler](images/wpf-modernize-tutorial/NETCORE3BuildNewErrors.png)
+![.Net Core 3 Erstellen neuer Fehler](images/wpf-modernize-tutorial/NETCORE3BuildNewErrors.png)
 
-Dieses Problem wird durchgeführt, da das neue csproj-Format mit .NET Core 3.0 speichert die Assemblyinformationen in der Projektdatei statt der **"AssemblyInfo.cs"** Datei. Um diese Fehler zu beheben, dieses Verhalten deaktivieren, und lassen Sie das Projekt weiterhin verwenden, die **"AssemblyInfo.cs"** Datei.
+Dieses Problem ist aufgetreten, weil das neue csproj-Format, das mit .net Core 3,0 eingeführt wurde, die Assemblyinformationen in der Projektdatei und nicht in der **AssemblyInfo.cs** -Datei speichert. Um diese Fehler zu beheben, deaktivieren Sie dieses Verhalten, und lassen Sie das Projekt die **AssemblyInfo.cs** -Datei weiterhin verwenden.
 
-1. In Visual Studio mit der Maustaste der **ContosoExpenses.Core** Projekt, und wählen **Projekt entladen**. Mit der rechten Maustaste erneut auf des Projekts, und wählen Sie dann **bearbeiten ContosoExpenses.Core.csproj**.
+1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **Projekt entladen**aus. Klicken Sie mit der rechten Maustaste erneut auf das Projekt, und wählen Sie dann **contosoaufwendungen. Core. csproj bearbeiten**aus.
 
-1. Fügen Sie das folgende Element in der **PropertyGroup** aus, und speichern Sie die Datei.
+1. Fügen Sie im Abschnitt **PropertyGroup** das folgende-Element hinzu, und speichern Sie die Datei.
 
     ```XML
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     ```
 
-    Nach dem Hinzufügen dieses Elements, das **PropertyGroup** Abschnitt sollte jetzt wie folgt aussehen:
+    Nach dem Hinzufügen dieses Elements sollte der **PropertyGroup** -Abschnitt nun wie folgt aussehen:
 
     ```XML
     <PropertyGroup>
@@ -197,17 +200,17 @@ Dieses Problem wird durchgeführt, da das neue csproj-Format mit .NET Core 3.0 s
     </PropertyGroup>
     ```
 
-3. Mit der rechten Maustaste die **ContosoExpenses.Core** Projekt, und wählen **Projekt erneut laden**.
+3. Klicken Sie mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **Projekt erneut laden**.
 
-4. Mit der rechten Maustaste die **ContosoExpenses.Data** Projekt, und wählen **Projekt entladen**. Mit der rechten Maustaste erneut auf des Projekts, und wählen Sie dann **bearbeiten ContosoExpenses.Data.csproj**.
+4. Klicken Sie mit der rechten Maustaste auf das Projekt **Conto soaufwands. Data** , und wählen Sie **Projekt entladen**aus. Klicken Sie mit der rechten Maustaste erneut auf das Projekt, und wählen Sie dann **condesoaufwands. Data. csproj bearbeiten**aus.
 
-5. Fügen Sie den gleichen Eintrag in der **PropertyGroup** aus, und speichern Sie die Datei.
+5. Fügen Sie im Abschnitt **PropertyGroup** denselben Eintrag hinzu, und speichern Sie die Datei.
 
     ```xml
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     ```
 
-    Nach dem Hinzufügen dieses Elements, das **PropertyGroup** Abschnitt sollte jetzt wie folgt aussehen:
+    Nach dem Hinzufügen dieses Elements sollte der **PropertyGroup** -Abschnitt nun wie folgt aussehen:
 
     ```xml
     <PropertyGroup>
@@ -216,47 +219,47 @@ Dieses Problem wird durchgeführt, da das neue csproj-Format mit .NET Core 3.0 s
     </PropertyGroup>
     ```
 
-6. Mit der rechten Maustaste die **ContosoExpenses.Data** Projekt, und wählen **Projekt erneut laden**.
+6. Klicken Sie mit der rechten Maustaste auf das Projekt **Conto soaufwands. Data** , und wählen Sie **Projekt erneut laden**
 
-## <a name="add-the-windows-compatibility-pack"></a>Fügen Sie das Windows Compatibility Pack
+## <a name="add-the-windows-compatibility-pack"></a>Hinzufügen des Windows-Kompatibilitätspakets
 
-Wenn Sie nun versuchen, Sie kompilieren die **ContosoExpenses.Core** und **ContosoExpenses.Data** -Projekten werden Sie feststellen, dass die vorherigen Fehler sind jetzt behoben, aber es noch einige Fehler in gibt der  **ContosoExpenses.Data** Bibliothek, die ungefähr wie folgt aussehen.
+Wenn Sie nun versuchen, die Projekte " **contosoaufwands. Core** " und " **contosoausgaben. Data** " zu kompilieren, sehen Sie, dass die vorherigen Fehler jetzt korrigiert sind, aber in der **Datei "contosoaufwendungen. Data** " ähnlich wie diese angezeigt werden.
 
 `Services\RegistryService.cs(9,26,9,34): error CS0103: The name 'Registry' does not exist in the current context`
 `Services\RegistryService.cs(12,26,12,34): error CS0103: The name 'Registry' does not exist in the current context`
 `Services\RegistryService.cs(12,97,12,123): error CS0103: The name 'RegistryKeyPermissionCheck' does not exist in the current context`
 
-Diese Fehler sind das Ergebnis der Konvertierung der **ContosoExpenses.Data** Projekt aus einer .NET Framework-Bibliothek (die speziell für Windows), .NET Standard-Bibliothek, die auf mehreren Plattformen, einschließlich Linux, Android, iOS ausgeführt werden können, und vieles mehr. Die **ContosoExpenses.Data** -Projekt enthält eine Klasse namens **RegistryService**, die Interaktion mit der Registrierung ein nur-Windows-Konzept.
+Diese Fehler sind das Ergebnis der Typumwandlung des Projekts **condesoaufwands. Data** aus einer .NET Framework-Bibliothek (die für Windows spezifisch ist) in eine .NET Standard Bibliothek, die auf mehreren Plattformen ausgeführt werden kann, einschließlich Linux, Android, IOS und mehr. Das Projekt " **condesoaufwands. Data** " enthält eine Klasse mit dem Namen " **registryservice**", die mit der Registrierung interagiert, einem reinen Windows-Konzept.
 
-Um diese Fehler zu beheben, installieren die [Windows Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) NuGet-Paket. Dieses Paket bietet Unterstützung für viele Windows-spezifische APIs in .NET Standard-Bibliothek verwendet werden. Die Bibliothek werden nicht mehr plattformübergreifende, nach dem verwenden dieses Paket, sondern immer noch .NET Standard als Ziel wird. 
+Um diese Fehler zu beheben, installieren Sie das nuget-Paket für die [Windows-Kompatibilität](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) . Dieses Paket bietet Unterstützung für viele Windows-spezifische APIs, die in einer .NET Standard Bibliothek verwendet werden. Die Bibliothek ist nach der Verwendung dieses Pakets nicht mehr plattformübergreifend, sondern wird weiterhin auf .NET Standard ausgerichtet. 
 
-1. Mit der rechten Maustaste auf die **ContosoExpenses.Data** Projekt.
-2. Wählen Sie **NuGet-Pakete verwalten**.
-3. In der **NuGet Package Manager** Fenster, klicken Sie auf **Durchsuchen**. Suchen Sie nach der `Microsoft.Windows.Compatibility` Packen und installieren Sie es. 
+1. Klicken Sie mit der rechten Maustaste auf das Projekt **Conto soaufwands. Data** .
+2. Wählen Sie **nuget-Pakete verwalten**aus.
+3. Klicken Sie im Fenster **nuget-Paket-Manager** auf **Durchsuchen**. Suchen Sie nach `Microsoft.Windows.Compatibility` dem Paket, und installieren Sie die neueste stabile Version.
 
     ![](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
 
-4. Jetzt wiederholen, um das Projekt zu kompilieren, indem Sie mit der rechten Maustaste auf die **ContosoExpenses.Data** Projekt- und Auswahl **erstellen**.
+4. Wiederholen Sie den Vorgang, um das Projekt zu kompilieren, indem Sie mit der rechten Maustaste auf das Projekt **Conto soaufwands. Data** klicken und **Erstellen**wählen.
 
-Dieses Mal wird der Buildprozess ohne Fehler abgeschlossen.
+Dieses Mal wird der Buildprozess ohne Fehler beendet.
 
-## <a name="test-and-debug-the-migration"></a>Testen Sie und Debuggen Sie die migration
+## <a name="test-and-debug-the-migration"></a>Testen und Debuggen der Migration
 
-Nun, dass die Projekte erfolgreich erstellen, können Sie zum Ausführen und testen die app, um festzustellen, ob alle Laufzeitfehler.
+Nachdem Sie die Projekte erfolgreich aufgebaut haben, können Sie die app ausführen und testen, um festzustellen, ob Laufzeitfehler vorliegen.
 
-1. Mit der rechten Maustaste die **ContosoExpenses.Core** Projekt, und wählen **als Startprojekt festlegen**.
+1. Klicken Sie mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **als Startprojekt festlegen**aus.
 
-2. Drücken Sie F5, um die **ContosoExpenses.Core** Projekt im Debugger. Es wird eine Ausnahme, die etwa wie folgt angezeigt.
+2. Drücken Sie F5, um das Projekt **contosoaufwands. Core** im Debugger zu starten. Eine Ausnahme wie die folgende wird angezeigt.
 
-    ![Ausnahme in Visual Studio angezeigt](images/wpf-modernize-tutorial/ExceptionNETCore3.png)
+    ![In Visual Studio angezeigte Ausnahme](images/wpf-modernize-tutorial/ExceptionNETCore3.png)
 
-    Diese Ausnahme ausgelöst wird, da Wenn Sie den Inhalt in die CSPROJ-Datei, die zu Beginn der Migration gelöscht, die Informationen über entfernt die **Buildvorgang** für die Bilddateien. Dieses Problem beheben, die folgenden Schritte aus.
+    Diese Ausnahme wird ausgelöst, weil Sie beim Löschen des Inhalts aus der CSPROJ-Datei zu Beginn der Migration die Informationen über die Buildaktion für die Bilddateien entfernt haben. Mit den folgenden Schritten wird dieses Problem behoben.
 
-3. Beenden Sie den Debugger an.
+3. Beendet den Debugger.
 
-4. Mit der rechten Maustaste die **ContosoExpenses.Core** Projekt, und wählen **Projekt entladen**. Mit der rechten Maustaste erneut auf des Projekts, und wählen Sie dann **bearbeiten ContosoExpenses.Core.csproj**.
+4. Klicken Sie mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **Projekt entladen**aus. Klicken Sie mit der rechten Maustaste erneut auf das Projekt, und wählen Sie dann **contosoaufwendungen. Core. csproj bearbeiten**aus.
 
-5. Vor dem schließenden **Projekt** -Element, fügen Sie den folgenden Eintrag hinzu:
+5. Fügen Sie vor dem schließenden **Projekt** Element den folgenden Eintrag hinzu:
 
     ```xml
     <ItemGroup>
@@ -266,19 +269,19 @@ Nun, dass die Projekte erfolgreich erstellen, können Sie zum Ausführen und tes
     </ItemGroup>
     ```
 
-6. Mit der rechten Maustaste die **ContosoExpenses.Core** Projekt, und wählen **Projekt erneut laden**.
+6. Klicken Sie mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **Projekt erneut laden**.
 
-7. Um die app die Contoso.ico zuzuweisen, Maustaste den **ContosoExpenses.Core** Projekt, und wählen **Eigenschaften**. Klicken Sie in der geöffneten Seite auf Dropdownliste **Symbol** , und wählen Sie `Images\contoso.ico`.
+7. Wenn Sie die Datei contoso. ico der APP zuweisen möchten, klicken Sie mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **Eigenschaften**aus. Klicken Sie auf der geöffneten Seite unter **Symbol** auf Dropdown, und `Images\contoso.ico`wählen Sie aus.
 
-    ![Symbol "Contoso" in den Eigenschaften des Projekts](images/wpf-modernize-tutorial/ContosoIco.png)
+    ![Symbol "Configuration Manager" in den Projekteigenschaften](images/wpf-modernize-tutorial/ContosoIco.png)
 
 8. Klicken Sie auf **Speichern**.
 
-9. Drücken Sie F5, um die **ContosoExpenses.Core** Projekt im Debugger. Vergewissern Sie sich, dass die app nun ausgeführt wird.
+9. Drücken Sie F5, um das Projekt **contosoaufwands. Core** im Debugger zu starten. Vergewissern Sie sich, dass die App nun ausgeführt wird.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-An diesem Punkt sind in diesem Tutorial Sie erfolgreich die Contoso-Ausgaben-app auf .NET Core 3 migriert. Sie sind nun bereit zur [Teil 2: Fügen Sie ein UWP-InkCanvas-Steuerelement, das mithilfe von XAML-Inseln](modernize-wpf-tutorial-2.md).
+An dieser Stelle im Tutorial haben Sie die APP für die APP für die kostenpflichtige app erfolgreich zu .net Core 3 migriert. Sie sind nun für [Teil 2 bereit: Fügen Sie ein UWP InkCanvas-Steuerelement mithilfe von](modernize-wpf-tutorial-2.md)XAML-Inseln hinzu.
 
 > [!NOTE]
-> Wenn Sie einen Bildschirm hochauflösende haben, werden Sie feststellen, dass die app sehr kleinen Bildern. Sie müssen dieses Problem im nächsten Schritt des Tutorials zu beheben.
+> Wenn Sie über einen Bildschirm mit hoher Auflösung verfügen, werden Sie möglicherweise bemerken, dass die APP sehr klein aussieht. Dieses Problem wird im nächsten Schritt des Tutorials behandelt.
