@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc696746de837c4883ae4a9ee8ebcf42cb78b12
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 8bbff4553dc4ad540f0d9afa2507ad763fa96744
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57822885"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867581"
 ---
 # <a name="keyboard-accelerators"></a>Zugriffstasten
 
@@ -37,18 +37,18 @@ Zugriffstasten umfassen generell die Funktionstasten F1 bis F12 oder eine Kombin
 
 Zugriffstasten sind nicht für jede Aktion verfügbar, gehören allerdings häufig zu Befehlen, die in Menüs verfügbar gemacht werden (und sollten im Inhalt des Menüelements angegeben werden). Zugriffstasten können ebenfalls Aktionen zugeordnet werden, die nicht über entsprechende Menüelemente verfügen. Da der Benutzer von den Menüs der Anwendungen abhängt, um den verfügbaren Befehlssatz zu ermitteln und zu erfahren, sollten Sie die Ermittlung der Zugriffstasten so einfach wie möglich machen (die Verwendung von Beschriftungen oder festgelegten Mustern kann dabei hilfreich sein).
 
-![Zugriffstasten, die in einer elementbezeichnung Menü beschrieben](images/accelerators/accelerators_menuitemlabel.png)  
-*Zugriffstasten, die in einer elementbezeichnung Menü beschrieben*
+![In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger](images/accelerators/accelerators_menuitemlabel.png)  
+*In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger*
 
 ## <a name="when-to-use-keyboard-accelerators"></a>Verwendung von Zugriffstasten
 
 Es wird empfohlen, dass Sie Zugriffstasten überall in Ihrer UI angegeben, wo dies sinnvoll ist, und Zugriffstasten für alle benutzerdefinierten Steuerelemente unterstützen.
 
-- Zugriffstasten machen Ihre app für Benutzer Körperbehinderte Menschen, die Benutzer, die nur einen Schlüssel zu einem Zeitpunkt drücken oder schwierigkeiten bei der Verwendung einer mouse.* * einschließlich zugänglicher
+- Mithilfe von Tastenkombinationen können Sie Benutzern mit motorischen Behinderungen den Zugriff auf Ihre APP erleichtern, einschließlich der Benutzer, die jeweils nur einen Schlüssel drücken können oder Schwierigkeiten mit der Maus haben. * *
 
   Eine gut durchdachte Tastatur-UI ist ein wichtiger Aspekt für die Barrierefreiheit von Software. Sie ermöglicht es Benutzern mit einer Sehbeeinträchtigung oder mit bestimmten motorischen Einschränkungen, in einer App zu navigieren und mit deren Features zu interagieren. Diese Benutzer können u. U. keine Maus bedienen und sind auf verschiedene Hilfstechnologien wie etwa Tastaturerweiterungstools, Bildschirmtastaturen, Bildschirmlupen, Bildschirmleseprogramme oder die Möglichkeit der Spracheingabe angewiesen. Für diese Benutzer ist eine vollständige Befehlsabdeckung entscheidend.
 
-- Zugriffstasten stellen die Ihrer app, besser verwendbar für erfahrene Benutzer, die über die Tastatur interagieren möchten.
+- Mithilfe von Tastatur Accelerators können Sie Ihre APP für Hauptbenutzer verwendbar machen, die die Interaktion mit der Tastatur bevorzugen.
 
   Erfahrene Benutzer haben oftmals eine starke Vorliebe für die Verwendung der Tastatur, da tastaturbasierte Befehle viel schneller eingegeben werden können. Zudem ist es dafür nicht erforderlich, die Hände von der Tastatur wegzubewegen. Für diese Benutzer sind Effizienz und Konsistenz entscheidend. Die Vollständigkeit hingegen ist nur für am häufigsten verwendeten Befehle wichtig.
 
@@ -126,14 +126,14 @@ Es wird empfohlen, dass Sie Zugriffstasten für die am häufigsten verwendeten A
 </CommandBar>
 ```
 
-![Beschrieben in einer QuickInfo eine Zugriffstaste](images/accelerators/accelerators_tooltip.png)  
-***Beschrieben in einer QuickInfo eine Zugriffstaste***
+![In einer QuickInfo beschriebene Tastatur Beschleunigung](images/accelerators/accelerators_tooltip.png)  
+***In einer QuickInfo beschriebene Tastatur Beschleunigung***
 
 Das [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)-Objekt verfügt über eine Sammlung an [Zugriffstasten](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator), d. h. [Zugriffstasten](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators), über die Sie Ihre benutzerdefinierten Zugriffstasten-Objekte angeben und die Tastenkombinationen für die Zugriffstaste festlegen:
 
--   **[Schlüssel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**  : die [VirtualKey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey) für die Zugriffstaste verwendet.
+-   **[Key](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** : der [virtualkey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey) , der für die Zugriffstaste verwendet wird.
 
--   **[Modifizierer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)**  – die [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers) für die Zugriffstaste verwendet. Wird der Modifizierer nicht angegeben, ist der Standardwert „None“.
+-   **[Modifiziererer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – die für die Tastatur Zugriffstaste verwendeten [virtualkeymodifier](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers) . Wird der Modifizierer nicht angegeben, ist der Standardwert „None“.
 
 > [!NOTE]
 > Es werden Zugriffstasten, die aus einer einzelnen Taste bestehen (A, Löschen, F2, Leertaste, Esc, Multimediataste) und Zugriffstasten mit mehreren Tasten (STRG+UMSCHALT+M) unterstützt. Virtuelle Tasten in Gamepad werden jedoch nicht unterstützt.
@@ -195,7 +195,7 @@ Das ScopeOwner-Attribut des Elements MenuFlyoutItem.KeyboardAccelerators kennzei
 
 Das [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator)-Objekt verwendet das [Steuerungsmuster der Benutzeroberflächenautomatisierung (UIA)](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview), um Maßnahmen zu ergreifen, wenn eine Zugriffstaste aufgerufen wird.
 
-Die UIA-Steuerungsmuster machen die häufig verwendeten Steuerelement-Funktionen verfügbar. Z. B. das Schaltflächen-Steuerelement implementiert die [Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke) -Steuerelementmuster unterstützen das Click-Ereignis (in der Regel ein Steuerelement wird aufgerufen, indem klicken, doppelklicken oder drücken Sie, eine der vordefinierten Tastenkombination oder ein anderes Kombination von Tastatureingaben). Wenn eine Zugriffstaste verwendet wird, um ein Steuerelement aufzurufen, sucht das XAML-Framework danach, ob das Steuerelement das Invoke-Steuerungsmuster implementiert und wenn dies der Fall ist, wird es aktiviert (es ist nicht erforderlich, das KeyboardAcceleratorInvoked-Ereignis durchzuführen).
+Die UIA-Steuerungsmuster machen die häufig verwendeten Steuerelement-Funktionen verfügbar. Das Button-Steuerelement implementiert beispielsweise das [Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke)-Steuerungsmuster, um den Klickvorgang zu unterstützen (generell wird ein Steuerelement durch Klicken, Doppelklicken oder Drücken der Eingabetaste, eine vordefinierte Tastenkombination oder eine andere Tastenkombination aufgerufen). Wenn eine Zugriffstaste verwendet wird, um ein Steuerelement aufzurufen, sucht das XAML-Framework danach, ob das Steuerelement das Invoke-Steuerungsmuster implementiert und wenn dies der Fall ist, wird es aktiviert (es ist nicht erforderlich, das KeyboardAcceleratorInvoked-Ereignis durchzuführen).
 
 Im folgenden Beispiel löst STRG+S das Click-Ereignis aus, da die Schaltfläche das Invoke-Muster implementiert.
 
@@ -219,11 +219,11 @@ Wenn keine Übereinstimmung identifiziert wird, wird die Zugriffstaste ungültig
 
 Das Invoke-Ereignis des [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator)-Objekts wird ausgelöst, wenn die Zugriffstaste ausgeführt wird. Das [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs)-Ereignisobjekt enthält die folgenden Eigenschaften:
 
-- [**Behandelt** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Festlegung auf "true" wird verhindert, dass das Ereignis, das das Steuerelementmuster auslösen und beendet die Zugriffstaste Eventbubbling. Der Standardwert ist FALSE.
-- [**Element** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): Das Objekt, mit der Zugriffstaste verknüpft ist.
-- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): Die Zugriffstaste verwendet, um das Invoked-Ereignis auszulösen.
+- [**Behandelt**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (Boolescher Wert): Wenn diese Option auf true festgelegt wird, wird das Ereignis, das das Steuerelement Muster auslöst, verhindert Der Standardwert ist FALSE.
+- \- [**Element**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): Das der Zugriffstaste zugeordnete-Objekt.
+- [**Keyboardaccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): Die Tastenkombination, mit der das aufgerufene Ereignis ausgelöst wird.
 
-Hier demonstriert, wie eine Auflistung von Zugriffstasten für Elemente in einer ListView definiert, und wie das Invoked-Ereignis für jede Zugriffstaste behandelt.
+Hier veranschaulichen wir, wie Sie eine Auflistung von Tastatur Accelerators für Elemente in einem ListView-Element definieren und wie Sie das aufgerufene Ereignis für jede Zugriffstaste verarbeiten.
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -249,9 +249,26 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 }
 ```
 
-## <a name="override-default-keyboard-behavior"></a>Überschreiben des Standardverhaltens der Tastatur
+## <a name="override-default-keyboard-behavior"></a>Standardmäßiges Tastatur Verhalten überschreiben
 
-In einigen Fällen müssen Sie möglicherweise das Standardverhalten von bestimmten Schlüsseln, z. B. die RÜCKTASTE oder die EINGABETASTE zu überschreiben. Beispiel: 
+Einige Steuerelemente unterstützen, wenn Sie den Fokus haben, integrierte Tastaturbeschleuniger, die beliebige App-definierte Zugriffstasten überschreiben. Wenn z. b. ein [Textfeld](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) den Fokus besitzt, kopiert der Steuerelement-und C-Accelerator nur den aktuell markierten Text (app-definierte Acceleratoren werden ignoriert, und es werden keine weiteren Funktionen ausgeführt).
+
+Obwohl es nicht empfehlenswert ist, das Standardverhalten von Steuerelementen aufgrund von Benutzer Vertrautheit und-Erwartungen zu überschreiben, können Sie die integrierte Tastatur Beschleunigung eines Steuer Elements überschreiben. Im folgenden Beispiel wird gezeigt, wie Sie die Control + C-Tastatur Beschleunigung für ein [Textfeld](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) über den [PreviewKeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown) -Ereignishandler überschreiben: 
+
+``` csharp
+ private void TextBlock_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
+ {
+    var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(Windows.System.VirtualKey.Control);
+    var isCtrlDown = ctrlState == CoreVirtualKeyStates.Down || ctrlState 
+        ==  (CoreVirtualKeyStates.Down | CoreVirtualKeyStates.Locked);
+    if (isCtrlDown && e.Key == Windows.System.VirtualKey.C)
+    {
+        // Your custom keyboard accelerator behavior.
+        
+        e.Handled = true;
+    }
+ }
+```  
 
 ## <a name="disable-a-keyboard-accelerator"></a>Deaktivieren einer Zugriffstaste 
 
@@ -314,12 +331,12 @@ Es wird empfohlen, dass Sie Zugriffstasten für UWP-Apps konsistent sind. Benutz
 
 Aufgrund der unterschiedlichen Funktionen ist dies allerdings nicht immer in allen Apps möglich.
 
-| **Bearbeiten** | **Allgemeine Zugriffstaste** |
+| **Bearbeiten** | **Allgemeine Tastatur Beschleunigung** |
 | ------------- | ----------------------------------- |
 | Den Bearbeitungsmodus beginnen | STRG+E |
 | Alle Elemente in einem Steuerelement mit angezeigtem Fokus oder Fenster auswählen | STRG+A |
 | Suchen und Ersetzen | STRG+H |
-| Rückgängig machen | STRG+Z |
+| undo | STRG+Z |
 | Redo | STRG+Y |
 | Die Auswahl löschen und in die Zwischenablage kopieren | STRG+X |
 | Auswahl in die Zwischenablage kopieren | STRG+C, STRG+EINFG |
@@ -339,7 +356,7 @@ Aufgrund der unterschiedlichen Funktionen ist dies allerdings nicht immer in all
 | Nach Inhalten in einem Steuerelement mit Fokus oder Fenster suchen | STRG+F |
 | Das nächste Suchergebnis anzeigen | F3 |
 
-| **Andere Aktionen** | |
+| **Weitere Aktionen** | |
 | ------------- | ----------------------------------- |
 | Favoriten hinzufügen | STRG+D | 
 | Aktualisieren | F5 oder STRG+R | 
@@ -358,21 +375,21 @@ Beachten Sie, dass einige der Kombinationen nicht für lokalisierte Versionen vo
 
 Da Zugriffstasten in der Regel nicht direkt in der Benutzeroberfläche Ihrer UWP-Anwendung beschrieben sind, können Sie die Auffindbarkeit durch [QuickInfos](../controls-and-patterns/tooltips.md) verbessern, die automatisch angezeigt werden, wenn der Benutzer den Fokus auf ein Steuerelement setzt bzw. die Maus drückt und hält oder mit dem Mauszeiger darauf zeigt. Die QuickInfo kann erkennen, ob ein Steuerelement über eine zugeordnete Zugriffstaste verfügt und, wenn ja, welche Tastenkombination als Zugriffstaste verwendet wird.
 
-**Windows 10, Version 1803 (April 2018 Update) und höher**
+**Windows 10, Version 1803 (Update April 2018) und neuer**
 
-Standardmäßig wird bei Zugriffstasten deklariert sind, werden alle Steuerelemente (mit Ausnahme von [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) und [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) stellen Sie die entsprechenden Tastenkombination in einer QuickInfo.
+Beim Deklarieren von Tastatur Accelerators werden standardmäßig alle Steuerelemente (außer [menuflyoutitem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) und [togglemenuflyoutitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) die entsprechenden Tastenkombinationen in einer QuickInfo angezeigt.
 
 > [!NOTE] 
-> Wenn ein Steuerelement definiert (mehr als eine Accelerator) ist, wird nur die ersten angezeigt.
+> Wenn für ein Steuerelement mehr als eine Zugriffstaste definiert ist, wird nur die erste angezeigt.
 
 ![QuickInfo für Zugriffstasten](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
-*Accelerator-Tastenkombination in QuickInfo*
+*Kombinations Feld Tastenkombination in QuickInfo*
 
-Für [Schaltfläche](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), und [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) Objekten, die Zugriffstaste an das Steuerelement des Standard-QuickInfo angefügt wird. Für [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) und [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) Objekte, die Zugriffstaste mit dem Flyout-Text angezeigt wird.
+Für [Schalt](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)Flächen-, [appbarbutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)-und [appbartogglebutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) -Objekte wird die Tastatur Beschleunigung an die Standard-QuickInfo des Steuer Elements angefügt. Für [menuflyoutitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) -Objekte und " [degglemenuflyoutitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)"-Objekte wird die Tastatur Beschleunigung mit dem Flyout-Text angezeigt.
 
 > [!NOTE]
-> Angeben einer QuickInfo angezeigt wird (siehe "Button1" im folgenden Beispiel) dieses Verhalten überschrieben.
+> Durch das Angeben einer QuickInfo (siehe Button1 im folgenden Beispiel) wird dieses Verhalten überschrieben.
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
@@ -403,7 +420,7 @@ Für [Schaltfläche](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls
 
 ![QuickInfo für Zugriffstasten](images/accelerators/accelerators-button-small.png)
 
-*Accelerator-Tastenkombination der Schaltfläche Standard-QuickInfo hinzugefügt*
+*Tastenkombination-Kombinations Feld zur Standard QuickInfo der Schaltfläche angehängt*
 
 ```xaml
 <AppBarButton Icon="Save" Label="Save">
@@ -415,7 +432,7 @@ Für [Schaltfläche](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls
 
 ![QuickInfo für Zugriffstasten](images/accelerators/accelerators-appbarbutton-small.png)
 
-*Accelerator-Tastenkombination AppBarButtons Standard-QuickInfo hinzugefügt*
+*Tastenkombination-Kombinations Feld an die Standard-QuickInfo von appbarbutton angehängt*
 
 ```xaml
 <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
@@ -441,9 +458,9 @@ Für [Schaltfläche](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls
 
 ![QuickInfo für Zugriffstasten](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
-*Accelerator-Tastenkombination, die an MenuFlyoutItems Text angefügt*
+*Kombinations Feld "Tastenkombination" an menuflyoutitem-Text angehängt*
 
-Die Präsentation-Verhalten steuern, indem Sie mit der [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) -Eigenschaft, die zwei Werte akzeptiert: [Automatische](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) oder [ausgeblendet](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
+Steuern Sie das Darstellungs Verhalten mithilfe der [keyboardacceleratorplacementmode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) -Eigenschaft, die zwei Werte akzeptiert: [Automatisch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) oder [ausgeblendet](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 
 ```xaml
 <Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
@@ -476,8 +493,8 @@ In einigen Fällen wird empfohlen, die Beschriftung eines Steuerelements zu verw
 
 Bei einigen Plattformsteuerelementen geschieht dies standardmäßig, insbesondere bei den Objekten [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) und [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), während es bei [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) und [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) dazu kommt, wenn sie im Überlaufmenü der [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) angezeigt werden.
 
-![Zugriffstasten, die in einer elementbezeichnung Menü beschrieben](images/accelerators/accelerators_menuitemlabel.png)  
-*Zugriffstasten, die in einer elementbezeichnung Menü beschrieben*
+![In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger](images/accelerators/accelerators_menuitemlabel.png)  
+*In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger*
 
 Sie können den Standardtext für die Beschriftung der Zugriffstaste über die Eigenschaft [KeyboardAcceleratorTextOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) der Steuerelemente [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) und [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) überschreiben (verwenden Sie ein Leerzeichen, wenn kein Text vorhanden sein soll). 
 
@@ -513,8 +530,8 @@ Wenn das [CharacterReceived](https://docs.microsoft.com/uwp/api/windows.ui.core.
 Die Vorschaueingabeereignisse werden vor allen anderen Ereignissen ausgelöst. Wenn Sie diese Ereignisse nicht behandeln, wird die Zugriffstaste für das Element, das den Fokus hat ausgelöst, gefolgt vom KeyDown-Ereignis. Beide Ereignisse durchlaufen ein Bubbling, bis der Vorgang durchgeführt wird.
 
 
-![Ereignis schlüsselsequenzspalte](images/accelerators/accelerators_keyevents.png)
-***Schlüsselsequenzspalte-Ereignis***
+![Key Event Sequence](images/accelerators/accelerators_keyevents.png)
+***Key-Ereignis Sequenz***
 
 Reihenfolge der Ereignisse:
 
@@ -559,8 +576,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 Es wird empfohlen, alle Zugriffstasten zu lokalisieren. Sie können dies anhand der standardmäßigen UWP-Ressourcendatei (.resw) und des x: Uid-Attributs in Ihrer XAML-Deklarationen durchführen. In diesem Beispiel lädt Windows-Runtime automatisch die Ressourcen.
 
-![Tastatur Accelerator Lokalisierung mit UWP-Ressourcendatei](images/accelerators/accelerators_localization.png)
-***Accelerator Lokalisierung mit UWP-Ressourcendatei der Tastatur***
+![Lokalisierung der Tastatur Beschleunigung mit UWP-](images/accelerators/accelerators_localization.png)
+Ressourcen Datei***Tastaturbeschleuniger Lokalisierung mit UWP-Ressourcen Datei***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -618,9 +635,9 @@ public class MyListView : ListView
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Tastenkombinationen](keyboard-interactions.md)
+- [Tastatur Interaktionen](keyboard-interactions.md)
 - [Zugriffsschlüssel](access-keys.md)
 
 ### <a name="samples"></a>Proben
 
-- [XAML-Steuerelementsammlungen](https://github.com/Microsoft/Xaml-Controls-Gallery)
+- [XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery)

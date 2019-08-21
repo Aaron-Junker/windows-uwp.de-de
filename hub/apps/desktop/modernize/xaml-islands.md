@@ -1,97 +1,126 @@
 ---
 description: Diese Anleitung hilft Ihnen, Fluent-basierte UWP-UIs direkt in einer WPF- oder Windows Forms-Anwendung zu erstellen.
 title: UWP-Steuerelemente in Desktop-Apps
-ms.date: 07/26/2019
+ms.date: 08/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.custom: RS5, 19H1
-ms.openlocfilehash: 765fefa0b489e1620d7a37fe75acd02acb8d5ae8
-ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
+ms.custom: 19H1
+ms.openlocfilehash: bd49417d110759dc9fec4ff4c9003e842bf1d7bb
+ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729479"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69643348"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML-Inseln)
 
-Ab Windows 10, Version 1903, können Sie UWP-Steuerelemente in nicht-UWP-Desktop Anwendungen mit einer Funktion namens " *XAML-Inseln*" hosten. Diese Funktion ermöglicht es Ihnen, das Aussehen, das Gefühl und die Funktionalität Ihrer vorhandenen Desktop Anwendungen mit den neuesten Windows 10-Benutzeroberflächen Features zu verbessern, die nur über UWP-Steuerelemente zur Verfügung stehen. Dies bedeutet, dass Sie UWP-Funktionen wie z. b. [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) und Steuerelemente verwenden können, die das [fließende Entwurfs System](/windows/uwp/design/fluent-design-system/index) in Ihren vorhandenen C++ WPF-, Windows Forms-und Win32-Anwendungen unterstützen.
+Ab Windows 10, Version 1903, können Sie UWP-Steuerelemente in nicht-UWP-Desktop Anwendungen mit einer Funktion namens " *XAML-Inseln*" hosten. Diese Funktion ermöglicht es Ihnen, das Aussehen, das Gefühl und die Funktionalität Ihrer vorhandenen WPF-, Windows Forms- C++ und Win32-Anwendungen mit den neuesten Windows 10-Benutzeroberflächen Features zu verbessern, die nur über UWP-Steuerelemente zur Verfügung stehen. Dies bedeutet, dass Sie UWP-Funktionen wie z. b. [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) und Steuerelemente verwenden können, die das [fließende Entwurfs System](/windows/uwp/design/fluent-design-system/index) in Ihren vorhandenen C++ WPF-, Windows Forms-und Win32-Anwendungen unterstützen.
 
-Es gibt mehrere Möglichkeiten, XAML-Inseln in Ihren WPF-, Windows Forms- C++ und Win32-Anwendungen zu verwenden. Dies hängt von der verwendeten Technologie oder dem Framework ab. 
+Sie können ein beliebiges UWP-Steuerelement hosten, das von [Windows. UI. XAML. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)abgeleitet wird, einschließlich:
+
+* Alle UWP-Steuerelemente, die von der Windows SDK-oder WinUI-Bibliothek bereitgestellt werden.
+* Jedes benutzerdefinierte UWP-Steuerelement (z. b. ein Benutzer Steuerelement, das aus mehreren UWP-Steuerelementen besteht, die zusammenarbeiten). Sie müssen über den Quellcode für das benutzerdefinierte Steuerelement verfügen, damit Sie es mit Ihrer Anwendung kompilieren können.
+
+Im Grunde werden XAML-Inseln mit der *UWP-XAML-Hosting-API*erstellt. Diese API besteht aus mehreren Windows-Runtime Klassen und COM-Schnittstellen, die im SDK für Windows 10, Version 1903, eingeführt wurden. Wir stellen auch eine Reihe von XAML-Steuerelementen für die .net-Insel im [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) bereit, die intern die UWP-XAML-Hosting-API verwenden und eine komfortablere Entwicklungsumgebung für WPF-und Windows Forms-Apps bieten.
+
+Wie Sie XAML-Inseln verwenden, hängt von Ihrem Anwendungstyp und den Typen von UWP-Steuerelementen ab, die Sie hosten möchten.
 
 > [!NOTE]
 > Wenn Sie Feedback zu XAML-Inseln haben, erstellen Sie ein neues Problem im Repository " [Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) ", und lassen Sie Ihre Kommentare dort ablegen. Wenn Sie Ihr Feedback lieber privat einreichen möchten, können Sie es an XamlIslandsFeedback@microsoft.comsenden. Ihre Einblicke und Szenarios sind für uns äußerst wichtig.
 
-## <a name="how-do-xaml-islands-work"></a>Funktionsweise von XAML-Inseln
+## <a name="wpf-and-windows-forms-applications"></a>WPF-und Windows Forms Anwendungen
 
-Ab Windows 10, Version 1903, bieten wir zwei Möglichkeiten, um XAML-Inseln in Ihren WPF-, Windows Forms- C++ und Win32-Anwendungen zu verwenden:
+Es wird empfohlen, dass WPF-und Windows Forms Anwendungen die XAML-Steuerelemente für die .net-Insel verwenden, die im Windows Community Toolkit verfügbar sind. Diese Steuerelemente stellen ein Objektmodell bereit, das die Eigenschaften, Methoden und Ereignisse der entsprechenden UWP-Steuerelemente imitiert (oder Zugriff darauf bietet). Außerdem behandeln Sie Verhalten wie Tastaturnavigation und Layoutänderungen.
 
-* Der Windows SDK stellt mehrere Windows-Runtime Klassen und COM-Schnittstellen bereit, die Ihre Anwendung verwenden kann, um beliebige UWP-Steuerelemente zu hosten, die von [**Windows. UI. XAML. UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)abgeleitet werden. Gemeinsam werden diese Klassen und Schnittstellen als *UWP-XAML-Hosting-API*bezeichnet und ermöglichen Ihnen das Hosten von UWP-Steuerelementen in jedem Benutzeroberflächen Element in der Anwendung, das über ein zugeordnetes Fenster Handle (HWND) verfügt. Weitere Informationen zu dieser API finden Sie unter [Verwenden der XAML-Hosting-API](using-the-xaml-hosting-api.md).
-
-* Das [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) bietet auch zusätzliche XAML-Insel Steuerelemente für WPF und Windows Forms. Diese Steuerelemente verwenden intern die UWP-XAML-Hosting-API und implementieren das gesamte Verhalten, das Sie andernfalls selbst behandeln müssen, wenn Sie die UWP-XAML-Hosting-API direkt verwendet haben, einschließlich der Tastaturnavigation und der Layoutänderungen. Für WPF-und Windows Forms-Anwendungen wird dringend empfohlen, dass Sie diese Steuerelemente anstelle der UWP-XAML-Hosting-API direkt verwenden, da Sie viele der Implementierungsdetails für die Verwendung der API abstrahieren. Beachten Sie, dass diese Steuerelemente ab Windows 10, Version 1903, [als Entwicklervorschau verfügbar](#feature-roadmap)sind.
-
-> [!NOTE]
-> C++Win32-Desktop Anwendungen müssen die UWP-XAML-Hosting-API zum Hosten von UWP-Steuerelementen verwenden. Die Steuerelemente der XAML-Insel im Windows Community Toolkit sind für C++ Win32-Desktop Anwendungen nicht verfügbar.
-
-Es gibt zwei Typen von XAML-Insel Steuerelementen, die vom Windows Community Toolkit für WPF und Windows Forms Anwendungen bereitgestellt werden: umschließende Steuer *Elemente* und *Host Steuerelemente*. 
+Es gibt zwei Sätze von XAML-Insel Steuerelementen für WPF-und Windows Forms-Anwendungen: umschließende Steuer *Elemente* und *Host Steuerelemente*. Ab Windows 10, Version 1903, sind diese Steuerelemente [als Entwicklervorschau verfügbar](#feature-roadmap).
 
 ### <a name="wrapped-controls"></a>Umschließt Steuerelemente
 
-WPF-und Windows Forms Anwendungen können eine Auswahl von umschließenden UWP-Steuerelementen im [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)verwenden. Diese werden als umschließende Steuer *Elemente* bezeichnet, da Sie die Schnittstelle und Funktionalität eines bestimmten UWP-Steuer Elements umschließen. Sie können diese Steuerelemente direkt zur Entwurfs Oberfläche Ihres WPF-oder Windows Forms Projekts hinzufügen und diese dann wie jedes andere WPF-oder Windows Forms-Steuerelement im Designer verwenden.
+WPF-und Windows Forms Anwendungen können eine Auswahl von XAML-Insel Steuerelementen verwenden, die die Schnittstelle und Funktionalität eines bestimmten UWP-Steuer Elements einschließen. Sie können diese Steuerelemente direkt zur Entwurfs Oberfläche Ihres WPF-oder Windows Forms Projekts hinzufügen und diese dann wie jedes andere WPF-oder Windows Forms-Steuerelement im Designer verwenden.
 
-Die folgenden umschließbaren UWP-Steuerelemente für die Implementierung von XAML-Inseln sind zurzeit für WPF verfügbar (siehe das Paket " [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) ") und Windows Forms Anwendungen (siehe das [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) -Paket). ).
+Die folgenden umschließbaren UWP-Steuerelemente sind zurzeit im Windows Community Toolkit verfügbar. 
 
 | Steuerelement | Mindestens unterstütztes Betriebssystem | Beschreibung |
 |-----------------|-------------------------------|-------------|
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, Version 1903 | Stellen Sie eine Oberfläche und zugehörige Symbolleisten für die Windows Ink-basierte Benutzerinteraktion in Ihrer Windows Forms-oder WPF-Desktop Anwendung bereit. |
-| [Mediaplayerelement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, Version 1903 | Bettet eine Ansicht ein, die Medieninhalte wie z. b. Videos in Ihrer Windows Forms-oder WPF-Desktop Anwendung streamt und rendert |
-| [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, Version 1903 | Ermöglicht es Ihnen, eine symbolische oder eine Fotoansicht in der Windows Forms-oder WPF-Desktop Anwendung anzuzeigen. |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, Version 1903 | Stellen Sie eine Oberfläche und zugehörige Symbolleisten für die Windows Ink-basierte Benutzerinteraktion in Ihrer Windows Forms-oder WPF-Desktop Anwendung bereit. |
+| [Mediaplayerelement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, Version 1903 | Bettet eine Ansicht ein, die Medieninhalte wie z. b. Videos in Ihrer Windows Forms-oder WPF-Desktop Anwendung streamt und rendert |
+| [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, Version 1903 | Ermöglicht es Ihnen, eine symbolische oder eine Fotoansicht in der Windows Forms-oder WPF-Desktop Anwendung anzuzeigen. |
 
-Zusätzlich zu den umschließenden Steuerelementen für XAML-Inseln bietet das Windows Community Toolkit auch die folgenden Steuerelemente für das Hosting von Webinhalten in WPF (siehe das Paket " [Microsoft. Toolkit. WPF. UI. Controls. WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView) ") und Windows Forms Anwendungen (siehe Das [Microsoft. Toolkit. Forms. UI. Controls. WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView) -Paket).
+Eine exemplarische Vorgehensweise, die die Verwendung der umschließenen UWP-Steuerelemente veranschaulicht, finden Sie unter [Hosten eines UWP-Standard Steuer Elements in einer WPF-App](host-standard-control-with-xaml-islands.md)
+
+### <a name="host-controls"></a>Host Steuerelemente
+
+Für Szenarien, die über diejenigen hinausgehen, die von den verfügbaren umschlenenen Steuerelementen abgedeckt werden, können WPF-und Windows Forms Anwendungen auch das [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) -Steuerelement verwenden, das im Windows Community Toolkit
+
+| Steuerelement | Mindestens unterstütztes Betriebssystem | Beschreibung |
+|-----------------|-------------------------------|-------------|
+| [Windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10, Version 1903 | Kann ein beliebiges UWP-Steuerelement hosten, das von [Windows. UI. XAML. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)abgeleitet wird, einschließlich der von der Windows SDK bereitgestellten UWP-Steuerelemente von UWP und benutzerdefinierter Steuerelemente. |
+
+Exemplarische Vorgehensweisen, die veranschaulichen, wie das **Windows xamlhost** -Steuerelement verwendet wird, finden Sie unter [Hosten eines UWP-Standard Steuer Elements in einer WPF-App](host-standard-control-with-xaml-islands.md) und [Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mit XAML-Inseln](host-custom-control-with-xaml-islands.md)
+
+> [!NOTE]
+> Das Verwenden des **windowsxamlhost** -Steuer Elements zum Hosten von benutzerdefinierten UWP-Steuerelementen wird nur in WPF-und Windows Forms-Apps unterstützt, die auf .net Core Das Hosting von UWP-Steuerelementen, die vom Windows SDK bereitgestellt werden, wird in Apps unterstützt, die auf die .NET Framework oder .net Core 3 abzielen.
+
+<span id="requirements" />
+
+### <a name="configure-your-project-to-use-the-xaml-island-net-controls"></a>Konfigurieren des Projekts für die Verwendung der XAML-Insel-. NET-Steuerelemente
+
+Die .NET-Steuerelemente der XAML-Insel erfordern Windows 10, Version 1903 oder eine höhere Version. Wenn Sie diese Steuerelemente verwenden möchten, installieren Sie eines der unten aufgeführten nuget-Pakete. Diese Pakete enthalten alles, was Sie benötigen, um die von der XAML-Insel umschließenen Steuerelemente und Host Steuerelemente zu verwenden, und Sie enthalten andere zugehörige nuget-Pakete.
+
+| Typ des Steuer Elements | Nuget-Paket  | Verwandte Artikel |
+|-----------------|----------------|---------------------|
+| [Umschließt Steuerelemente](#wrapped-controls) | Version 6.0.0-preview7 oder höher dieser Pakete: <ul><li>WPF [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Hosten eines UWP-Standard Steuer Elements in einer WPF-App](host-standard-control-with-xaml-islands.md)  |
+| [Host Steuerelement](#host-controls) | Version 6.0.0-preview7 oder höher dieser Pakete: <ul><li>WPF [Microsoft. Toolkit. WPF. UI. xamlhost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft. Toolkit. Forms. UI. xamlhost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Hosten eines UWP-Standard Steuer Elements in einer WPF-App](host-standard-control-with-xaml-islands.md)<br/>[Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App](host-custom-control-with-xaml-islands.md)  |
+
+Beachten Sie die folgenden Details:
+
+* Die Host Steuerelement Pakete sind auch in den umschließenden Steuerelement Paketen enthalten. Sie können die umschließenden Steuerelement Pakete installieren, wenn Sie beide Sätze von Steuerelementen verwenden möchten.
+
+* Wenn Sie ein benutzerdefiniertes UWP-Steuerelement verwenden, muss das WPF-oder Windows Forms Projekt auf .net Core 3 ausgerichtet sein. Das Hosting von benutzerdefinierten UWP-Steuerelementen wird in apps nicht unterstützt, die auf .NET Framework abzielen. Außerdem müssen Sie einige zusätzliche Schritte ausführen, um auf das benutzerdefinierte Steuerelement zu verweisen. Weitere Informationen finden Sie unter [Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln](host-custom-control-with-xaml-islands.md).
+
+* In früheren Versionen dieser Anweisungen haben Sie das `maxversiontested` -Element einem Anwendungs Manifest in der WPF-oder Windows Forms-Projekt hinzugefügt. Solange Sie die neuesten Vorschau Versionen der oben aufgeführten nuget-Pakete verwenden, müssen Sie dieses Element nicht mehr dem Manifest hinzufügen.
+
+### <a name="architecture-of-xaml-island-net-controls"></a>Architektur von .NET-Steuerelementen der XAML-Insel
+
+Im folgenden finden Sie einen kurzen Blick darauf, wie die verschiedenen Typen von XAML-Steuerelementen auf der UWP-XAML-Hosting-API architektonisch organisiert sind.
+
+![Hoststeuerelement-Architektur](images/xaml-islands/host-controls.png)
+
+Die am Diagrammende aufgeführten APIs sind im Lieferumfang des Windows SDK enthalten. Die umschließenen Steuerelemente und Host Steuerelemente sind über nuget-Pakete im Windows Community Toolkit verfügbar.
+
+### <a name="web-view-controls"></a>Webansichts Steuerelemente
+
+Das Windows Community Toolkit bietet auch die folgenden .NET-Steuerelemente für das Hosting von Webinhalten in WPF-und Windows Forms-Anwendungen. Diese Steuerelemente werden häufig in ähnlichen Szenarien für die Desktop-App-Modernisierung verwendet wie die XAML-Insel Steuerelemente, und Sie werden im gleichen Repository von [Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32) -Repository wie die XAML-Insel Steuerelemente verwaltet.
 
 | Steuerelement | Mindestens unterstütztes Betriebssystem | Beschreibung |
 |-----------------|-------------------------------|-------------|
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10, Version 1803 | Verwendet das Microsoft Edge-Renderingmodul, um Webinhalte anzuzeigen. |
 | [Webviewcompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Bietet eine Version von **WebView** , die mit mehr Betriebssystemversionen kompatibel ist. Dieses Steuerelement verwendet das Microsoft Edge-Renderingmodul, um Webinhalte in Windows 10, Version 1803 und höher, anzuzeigen, und die Internet Explorer-Rendering-Engine zeigt Webinhalt in früheren Versionen von Windows 10, Windows 8. x und Windows 7 an. |
 
-### <a name="host-controls"></a>Host Steuerelemente
+Wenn Sie diese Steuerelemente verwenden möchten, installieren Sie eines der folgenden nuget-Pakete:
 
-Für Szenarien, die über diejenigen hinausgehen, die von den verfügbaren umschlenenen Steuerelementen abgedeckt werden, können WPF-und Windows Forms Anwendungen auch das Steuerelement [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) im [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) Dieses Steuerelement kann ein beliebiges UWP-Steuerelement hosten, das von " [**Windows. UI. XAML. UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)" abgeleitet wird, einschließlich sämtlicher UWP-Steuerelemente, die von der Windows SDK bereitgestellt werden, sowie Dieses Steuerelement unterstützt Windows 10 Insider Preview SDK Build 17709 und spätere Versionen.
+* WPF [Microsoft. Toolkit. WPF. UI. Controls. WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView)
+* Windows Forms: [Microsoft. Toolkit. Forms. UI. Controls. WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView)
 
-Diese Steuerelemente sind in den Paketen [Microsoft. Toolkit. WPF. UI. xamlhost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) (für WPF) und [Microsoft. Toolkit. Forms. UI. xamlhost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) (für Windows Forms) verfügbar. Diese Pakete sind in den Paketen [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) und [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) enthalten, die die umschließenden Steuerelemente enthalten.
+## <a name="c-win32-applications"></a>C++Win32-Anwendungen
 
-### <a name="architecture-overview"></a>Übersicht über die Architektur
+Die .NET-Steuerelemente der XAML-Insel C++ werden in Win32-Anwendungen nicht unterstützt. Diese Anwendungen müssen stattdessen die *UWP-XAML-Hosting-API* verwenden, die vom Windows 10 SDK bereitgestellt wird (Version 1903 und höher).
 
-Nachfolgend ist dargestellt, wie diese Steuerelemente architektonisch organisiert sind.
-
-![Hoststeuerelement-Architektur](images/xaml-islands/host-controls.png)
-
-Die am Diagrammende aufgeführten APIs sind im Lieferumfang des Windows SDK enthalten. Die umschließenen Steuerelemente und Host Steuerelemente sind über nuget-Pakete im Windows Community Toolkit verfügbar.
-
-<span id="requirements" />
-
-## <a name="configure-your-project-to-use-xaml-islands"></a>Konfigurieren des Projekts für die Verwendung von XAML-Inseln
-
-XAML-Inseln erfordern Windows 10, Version 1903 und höher. Um XAML-Inseln in Ihrer Anwendung zu verwenden, müssen Sie zuerst das Projekt einrichten:
-
-1. Ändern Sie das Projekt, um Windows-Runtime-APIs zu verwenden. Anweisungen hierzu finden Sie in [diesem Artikel](desktop-to-uwp-enhance.md#set-up-your-project).
-2. Installieren Sie eines dieser nuget-Pakete in Ihrem Projekt. Stellen Sie sicher, dass Sie Version 6.0.0-preview7 oder eine höhere Version des Pakets installieren.
-    * WPF Installieren Sie [Microsoft. Toolkit. WPF. UI. Controls.](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)
-    * Windows Forms: [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
-    * C++Win32 [Microsoft. Toolkit. Win32. UI. xamlapplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
+Die UWP-XAML-Hosting-API besteht aus mehreren Windows-Runtime Klassen und com C++ -Schnittstellen, mit denen die Win32-Anwendung beliebige UWP-Steuerelemente hosten kann, die von [Windows. UI. XAML. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)abgeleitet werden. Sie können UWP-Steuerelemente in jedem Benutzeroberflächen Element in der Anwendung hosten, das über ein zugeordnetes Fenster Handle (HWND) verfügt. Weitere Informationen zu dieser API einschließlich der Voraussetzungen finden [Sie unter Verwenden der UWP-XAML-Hosting C++ -API in einer Win32-App](using-the-xaml-hosting-api.md).
 
 > [!NOTE]
-> In früheren Versionen dieser Anweisungen haben Sie das **maxversiongetestete** -Element einem Anwendungs Manifest in Ihrem Projekt hinzugefügt. Ab der aktuellen Vorschauversion der nuget-Pakete müssen Sie dieses Element nicht mehr dem Manifest hinzufügen.
+> Die umschließenden Steuerelemente und Host Steuerelemente im Windows Community Toolkit verwenden intern die UWP-XAML-Hosting-API und implementieren das gesamte Verhalten, das Sie andernfalls selbst behandeln müssen, wenn Sie die UWP-XAML-Hosting-API direkt verwendet haben, einschließlich der Tastaturnavigation. und Layoutänderungen. Für WPF-und Windows Forms-Anwendungen wird dringend empfohlen, dass Sie diese Steuerelemente anstelle der UWP-XAML-Hosting-API direkt verwenden, da Sie viele der Implementierungsdetails für die Verwendung der API abstrahieren.
 
 ## <a name="feature-roadmap"></a>Featureroadmap
 
-Ab der Veröffentlichung von Windows 10, Version 1903, sind die umschpackten Steuerelemente und Host Steuerelemente im Windows Community Toolkit weiterhin in der Developer Preview, bis die Version 1,0 der Steuerelemente verfügbar ist.
+Ab der Veröffentlichung von Windows 10, Version 1903, sind die XAML-Steuerelemente für die .net-Insel im Windows Community Toolkit weiterhin in der Developer Preview, bis die Version 1,0 der Steuerelemente verfügbar ist.
 
 * Version 1,0 der Steuerelemente für die .NET Framework 4.6.2 und höher ist für die Veröffentlichung in der [6,0-Version des Toolkits](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones)geplant.
 * Version 1,0 der Steuerelemente für .net Core 3 ist für eine spätere Version des Toolkits geplant.
-* Wenn Sie die neueste Vorschauversion der Versionen 1,0 der Steuerelemente für den .NET Framework und .net Core 3 testen möchten, lesen Sie die **6.0.0-preview7** nuget-Pakete im [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) Gallery.
+* Wenn Sie die neueste Vorschauversion der Versionen 1,0 der Steuerelemente für den .NET Framework und .net Core 3 testen möchten, finden Sie weitere Informationen unter den nuget-Paketen der Version 6.0.0-preview7 (oder höher) im [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) Gallery.
 
 Weitere Informationen finden Sie unter [in diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap).
 
