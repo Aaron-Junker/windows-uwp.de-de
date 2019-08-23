@@ -9,20 +9,25 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, Windows-Benachrichtigungsdienst, Benachrichtigung, Windows, Firewall, Problembehandlung, IP, Datenverkehr, Unternehmen, Netzwerk, IPv4, VIP, FQDN, öffentliche IP-Adresse
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8a72eec46971fa27a4bd0dec112430f2eb3535
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 817dec616a88f0b374bc019cbbf23f56fad94484
+ms.sourcegitcommit: 820704a73174e81da3dc00cf0603c0c82471cdfe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867310"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69908453"
 ---
-# <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>Zulassen von Windows-Benachrichtigungs Datenverkehr durch Unternehmens Firewalls
+# <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Unternehmens Firewall-und Proxy Konfigurationen zur Unterstützung von WNS-Datenverkehr
 
 ## <a name="background"></a>Hintergrund
-Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Netzwerk Datenverkehr. Leider können dadurch auch wichtige Dinge wie die Kommunikation mit dem Windows-Benachrichtigungsdienst blockiert werden. Dies bedeutet, dass alle über WNS gesendeten Benachrichtigungen gelöscht werden. Um dies zu vermeiden, können Netzwerkadministratoren die Liste der genehmigten WNS-Kanäle zur Ausnahmeliste hinzufügen, damit der WNS-Datenverkehr die Firewall durchlaufen kann. Im folgenden finden Sie weitere Details dazu, wie und was hinzugefügt werden muss. 
+Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Netzwerk Datenverkehr. Leider können dadurch auch wichtige Dinge wie die Kommunikation mit dem Windows-Benachrichtigungsdienst blockiert werden. Dies bedeutet, dass alle über WNS gesendeten Benachrichtigungen in bestimmten Netzwerkkonfigurationen abgelegt werden. Um dies zu vermeiden, können Netzwerkadministratoren die Liste der genehmigten WNS-Kanäle zur Ausnahmeliste hinzufügen, damit der WNS-Datenverkehr die Firewall durchlaufen kann. Im folgenden finden Sie weitere Details dazu, wie und was hinzugefügt werden muss, sowie Unterstützung für verschiedene Proxy Typen.
+
+## <a name="proxy-support"></a>Proxy Unterstützung
 
 > [!Note] 
-Ab 6/24/2019 unterstützen Windows-Clients **keine** Proxys, die Verbindung mit WNS muss eine direkte Verbindung sein.
+Windows-Clients unterstützen **nicht** alle Proxys, die Verbindung mit WNS muss eine direkte Verbindung sein.
+
+**Demnächst!** Wir untersuchen aktiv verschiedene Netzwerkkonfigurationen, Proxys und Firewalls. Wir werden diese Seite mit weiteren Details zu allgemeinen Unternehmens Szenarien und WNS-Unterstützung aktualisieren.
+
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>Welche Informationen sollten der Zulassungs hinzugefügt werden?
 Im folgenden finden Sie eine Liste, die die FQDNs, VIPs und IP-Adressbereiche enthält, die vom Windows-Benachrichtigungsdienst verwendet werden. 

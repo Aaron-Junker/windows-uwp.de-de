@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 940a81d21e071558d510e565785d1f52ca0bb1a3
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.openlocfilehash: 6f5c01b23f02bb9c116ddaaec698612aa539539d
+ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643379"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979352"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>Teil 5: Verpacken und Bereitstellen mit MSIX
 
@@ -75,8 +75,8 @@ Visual Studio 2019 bietet eine einfache Möglichkeit zum Packen einer Desktop An
         <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
         <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
         <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-            <SourceProject>
-            </SourceProject>
+            <SourceProject></SourceProject>
+            <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
         </_FilteredNonWapProjProjectOutput>
         </ItemGroup>
     </Target>

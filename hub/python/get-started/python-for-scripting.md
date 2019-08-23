@@ -8,16 +8,19 @@ ms.topic: article
 keywords: python, Windows 10, Microsoft, python-Systemverwaltung, python-Datei Automatisierung, python-Skripts unter Windows, Einrichten von Python unter Windows, python-Entwicklerumgebung unter Windows, python-Entwicklungsumgebung unter Windows, Python mit PowerShell, python-Skripts für Dateisystem Tasks
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 93fdea3347cc15aa6231ff90fb18eb2f7defb201
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: dbb7a60103c27f648ca8bf23f87dee06923f0cd9
+ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959069"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979326"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Einstieg in die Verwendung von Python unter Windows für die Skripterstellung und Automatisierung
 
 Im folgenden finden Sie eine Schritt-für-Schritt-Anleitung für das Einrichten Ihrer Entwicklerumgebung und den Einstieg in die Verwendung von Python für die Skripterstellung und Automatisierung von Dateisystem Vorgängen unter Windows.
+
+> [!NOTE]
+> In diesem Artikel wird beschrieben, wie Sie Ihre Umgebung einrichten, um einige der nützlichen Bibliotheken in Python zu verwenden, die Aufgaben plattformübergreifend automatisieren können, wie z. b. das Durchsuchen des Dateisystems, das Zugreifen auf das Internet, das Auswerten von Dateitypen usw., von einem Windows-zentrierten Informationen zu Windows-spezifischen Vorgängen finden Sie unter [ctypes](https://docs.python.org/3/library/ctypes.html), eine C-kompatible fremd Funktionsbibliothek für python, [winreg](https://docs.python.org/3/library/winreg.html), Funktionen, die die Windows-Registrierungs-API für python und [python/WinRT](https://pypi.org/project/winrt/)verfügbar machen, sodass der Zugriff Windows-Runtime APIs von Thon.
 
 ## <a name="set-up-your-development-environment"></a>Einrichten der Entwicklungsumgebung
 
