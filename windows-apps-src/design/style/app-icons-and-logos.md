@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0352e01363fc077439325eba4f74fe97febac33c
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 760beb6b9baf63b23efb531567f4b5319f95845c
+ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820548"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979361"
 ---
 # <a name="app-icons-and-logos"></a>App-Symbole und Logos 
 
@@ -22,7 +22,6 @@ Jede App hat ein Symbol/Logo, das sie darstellt, und dieses Symbol wird an mehre
 
 :::row:::
     :::column:::
-        * In der Titelleiste Ihres App-Fensters
         * In der App-Liste im Startmenü
         * In der Taskleiste und im Task-Manager
         * Auf den Kacheln Ihrer App
