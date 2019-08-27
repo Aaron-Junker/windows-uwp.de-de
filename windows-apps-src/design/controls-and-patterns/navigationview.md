@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e00c9860ca2aa8661581de265fff106c45b30ab5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7431e9e41c008471fccdb955a64d44316855de0d
+ms.sourcegitcommit: 77df36d2a7391cbc588d44c47ac02d0701092264
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319399"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976221"
 ---
 # <a name="navigation-view"></a>Navigationsansicht
 
@@ -709,6 +709,29 @@ In diesem Beispiel wird veranschaulicht, wie du die Designressourcen in „App.x
     </Application.Resources>
 </Application>
 ```
+
+### <a name="top-whitespace"></a>Leerraum oben
+Einige Apps [passen die Titelleiste ihres Fensters an](https://docs.microsoft.com/windows/uwp/design/shell/title-bar) und erweitern so den App-Inhalt auf den Bereich der Titelleiste. Wenn NavigationView das Stammelement in Apps ist, die ihren Inhalt **mithilfe der [ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar)-API** in die Titelleiste erweitern, passt das Steuerelement die Position seiner interaktiven Elemente automatisch an, um eine Überlappung mit dem [ziehbaren Bereich](https://docs.microsoft.com/windows/uwp/design/shell/title-bar#draggable-regions) zu vermeiden. 
+![Eine App, die ihren Inhalt in die Titelleiste erweitert](images/navigation-view-with-titlebar-padding.png)
+
+Wenn deine App den ziehbaren Bereich durch Aufrufen der [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar)-Methode angibt und du die Schaltflächen „Zurück“ und „Menü“ lieber oben im App-Fenster anordnen möchtest, lege `IsTitleBarAutoPaddingEnabled` auf FALSE fest.
+
+![App, die ihren Inhalt in die Titelleiste erweitert, ohne Innenabstand](images/navigation-view-no-titlebar-padding.png)
+
+```Xaml
+<muxc:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False">
+```
+
+#### <a name="remarks"></a>Hinweise
+Um die Position des Kopfzeilenbereichs von NavigationView genauer anzupassen, überschreibe die XAML-Themenressource *NavigationViewHeaderMargin* – z. B. in den Ressourcen für die Seite.
+
+```Xaml
+<Page.Resources>
+    <Thickness x:Key="NavigationViewHeaderMargin">12,0</Thickness>
+</Page.Resources>
+```
+
+Diese Themenressource ändert den Rand um [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header).
 
 ## <a name="related-topics"></a>Verwandte Themen
 
