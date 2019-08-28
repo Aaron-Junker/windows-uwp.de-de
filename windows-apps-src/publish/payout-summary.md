@@ -2,177 +2,177 @@
 Description: Die Auszahlungsübersicht enthält Details zu den mit Ihren Apps und Add-Ons erzielten Erlösen. Sie werden auch darüber informiert, wann Sie Zahlungen erhalten und wie hoch diese Zahlungen sind.
 title: Auszahlungsübersicht
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
-ms.date: 10/31/2018
+ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10 UWP, Auszahlungszusammenfassung, Anweisung, Zahlungen, Einnahmen, Auszahlung, Einnahmen
 ms.localizationpriority: medium
-ms.openlocfilehash: 90238360ecc48beb974546dc5b49ac09c01407eb
-ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
+ms.openlocfilehash: 777ee4201b435f17cdc4fc3650a2d33645ff56b9
+ms.sourcegitcommit: 769ec7811aaaa79fe521e3e984a2e1a2a9671caf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67495732"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70057821"
 ---
 # <a name="payout-summary"></a>Auszahlungsübersicht
 
-Die **auszahlungszusammenfassung** zeigt Informationen über das Geld, die Sie bei Microsoft erworben haben. Sie werden auch darüber informiert, wann Sie Zahlungen erhalten und wie hoch diese Zahlungen sind.
+Die **Auszahlungs Zusammenfassung** zeigt Ihnen Details zu dem Geld, das Sie bei Microsoft erworben haben. Sie werden auch darüber informiert, wann Sie Zahlungen erhalten und wie hoch diese Zahlungen sind.
 
 Wenn Sie Produkte im Azure Marketplace verkaufen, werden Ihnen in der **Auszahlungsübersicht** auch Informationen zu erfolgreichen Auszahlungen angezeigt. Weitere Informationen zur Bezahlung im Azure Marketplace finden Sie in den [Teilnahmerichtlinien für Microsoft Azure Marketplace](https://go.microsoft.com/fwlink/p/?LinkId=722436) und in der [Microsoft Azure Marketplace-Herausgebervereinbarung](https://go.microsoft.com/fwlink/p/?LinkID=699560 ).
 
 > [!NOTE]
-> Um für die Auszahlungen geeignet zu sein, müssen Ihre fortgesetzt erreichen die [Zahlung Schwellenwert](payment-thresholds-methods-and-timeframes.md) von 50 US-Dollar. Weitere Informationen zu den Schwellenwert für die Zahlung finden Sie auf dieser Seite, und überprüfen Sie die Vereinbarung für app-Entwickler.
+> Um sich für die Auszahlung zu qualifizieren, muss Ihr fort Betrag den [Zahlungs Schwellenwert](payment-thresholds-methods-and-timeframes.md) von $50 erreichen. Weitere Informationen zum Schwellenwert für die Zahlung finden Sie auf dieser Seite, und lesen Sie die App-Entwickler Vereinbarung.
 
-## <a name="access-the-payout-summary-pages"></a>Zugriff auf den Zusammenfassungsseiten Auszahlung
+## <a name="access-the-payout-summary-pages"></a>Zugreifen auf die Auszahlungs Zusammenfassungs Seiten
 
-So öffnen Sie eine der Auszahlungen Zusammenfassung Seiten:
+So öffnen Sie eine der Auszahlungs Zusammenfassungs Seiten:
 
-1. Wählen Sie in der oberen rechten Ecke das Symbol "Money".
-2. Wählen Sie Zahlungen, Transaktionsverlauf, oder Exportieren von Daten.
+1. Wählen Sie in der oberen rechten Ecke das Symbol Money aus.
+2. Wählen Sie Zahlungen, Transaktionsverlauf oder Daten exportieren aus.
 
 ## <a name="payments-page"></a>Seite "Zahlungen"
 
-Die Ergebnisse auf dieser Seite stellen dar, alle Programme, an denen Sie beteiligt. Sie können nach Teilnehmer-ID, Programm, Zahlung-ID und Earning Typ filtern. Mengen werden in US-Dollar angegeben. Der kostenpflichtige Wert wird auch in Zahlen, Währung angezeigt.
+Die Summen auf dieser Seite stellen alle Programme dar, an denen Sie teilnehmen. Sie können nach Teilnehmer-ID, Programm, Zahlungs-ID und Erstellungs Typ filtern. Beträge werden in US-Dollar angegeben. Der kostenpflichtige Wert wird auch Unterzahlung in Währung angezeigt.
 
 | Bereich                   | Beschreibung                                                                                  |
 |------------------------|----------------------------------------------------------------------------------------------|
-| In diesem Jahr bezahlt gesamt   | Die kombinierte Summe zahlte für Sie in diesem Jahr in US-Dollar für alle Programme.       |
-| Nächste geschätzte Zahlung | Der einzelnen weiter Zahlungen an Sie (selbst wenn es gibt noch andere in Kürze verfügbar), in US-Dollar. |
-| Letzte Zahlung           | Der Wert (in US-Dollar), Name des Programms und Programm Ihrer letzten Zahlung.           |
-| Zahlungen von Quelle     | Die Menge von Zahlungen, die in US-Dollar, die vom Programm in den letzten 12 Monaten dargestellt.           |
-| Zahlungen               | Wählen Sie bezahlte oder ausstehend, und klicken Sie dann wie gewünscht zu sortieren. Wählen Sie für zusätzliche Details zu einer bestimmten Zahlung Ansicht ein. Wählen Sie zum Herunterladen einer Kopie der Zahlung-überweisungsland Anweisung herunterladen. Beachten Sie, dass transaktionsverlaufsdaten angezeigt werden, bis zu 24 Stunden dauern können, damit Sie nicht zugeordnete Ergebnis sofort sehen können. |
+| Summe bezahlt in diesem Jahr   | Die kombinierte Summe, die Sie in diesem Jahr in US-Dollar für alle Ihre Programme bezahlt haben.       |
+| Nächste geschätzte Zahlung | Die nächste nächste Zahlung an Sie (auch wenn andere in Kürze verfügbar sind) in US-Dollar. |
+| Letzte Zahlung           | Der Betrag (in US-Dollar), der Programmname und das Programm Ihrer letzten Zahlung.           |
+| Zahlungen nach Quelle     | Die Menge der Zahlungen in US-Dollar, die durch das Programm in den letzten 12 Monaten dargestellt wird.           |
+| Zahlungen               | Wählen Sie bezahlt oder ausstehend aus, und sortieren Sie Sie nach Ihren Wünschen. Weitere Informationen zu einer bestimmten Zahlung finden Sie in der SELECT-Sicht. Wählen Sie herunterladen aus, um eine Kopie der Payment-überweisungserklärung herunterzuladen. Beachten Sie, dass es bis zu 24 Stunden dauern kann, bis die Daten für den Transaktionsverlauf angezeigt werden, sodass die zugehörigen Gewinne möglicherweise nicht sofort angezeigt werden. |
 
-Um die Daten auf dieser Seite zu exportieren, wählen Sie exportieren, und befolgen Sie dann den Anweisungen auf der Seite des Export-Daten.
+Wählen Sie zum Exportieren der Daten auf dieser Seite exportieren aus, und befolgen Sie dann die Anweisungen auf der Seite Daten exportieren.
 
-## <a name="transaction-history-page"></a>Transaktion Seite "Verlauf"
+## <a name="transaction-history-page"></a>Seite "Transaktionsverlauf"
 
-Auf dieser Seite werden alle Ihre individuellen Ergebnis, einschließlich des Datums, Typ und gibt an, dass für jede angezeigt. Sie können einen Zeitraum zur Anzeige auswählen, und Sie können auch nach Registrierungs-ID, Programm, Earning-Typ, Hebel, Zahlung-ID und Status filtern. Daten sind für das aktuelle Geschäftsjahr (1. Juli – 30. Juni) und den vorherigen zwei Geschäftsjahre verfügbar.
+Auf dieser Seite werden alle individuellen Einnahmen angezeigt, einschließlich des Datums, des Typs und des Erwerbs für jede. Sie können einen Zeitraum auswählen, der angezeigt werden soll. Außerdem können Sie nach Registrierungs-ID, Programm, Zahlungs-ID, erzahltyp, Hebel und Status filtern. Daten sind für das aktuelle Geschäftsjahr (1. Juli – 30. Juni) und die letzten beiden Geschäftsjahre verfügbar.
 
-Um eine gibt an, dass weitere Details anzuzeigen, wählen Sie den Pfeil nach unten rechts auf der Seite. Dadurch werden der Hebel Umsatzerlös und Produkt angezeigt. Wenn für eine der Grund diese Daten nicht verfügbar sind, aber Sie benötigen Zugriff auf diese, wenden Sie sich an [unterstützen](https://developer.microsoft.com/en-us/windows/support)]. Wenn der gibt an, dass das Ergebnis eine Anpassung, und nicht für eine Transaktion ist, werden die Produkt-Felder nicht angezeigt.
+Wählen Sie den Pfeil nach unten auf der rechten Seite der Seite aus, um weitere Details zu einem Erwerbs Bereich anzuzeigen. Dadurch werden der Hebel, der Umsatz und das Produkt angezeigt. Wenn eine dieser Daten aus irgendeinem Grund nicht verfügbar ist, Sie aber darauf zugreifen müssen, wenden Sie sich an den [Support](https://developer.microsoft.com/en-us/windows/support). Wenn das Ergebnis einer Anpassung und nicht einer Transaktion entspricht, werden die Produktfelder nicht angezeigt.
 
-Um die Transaktion Daten auf dieser Seite zu exportieren, wählen Sie exportieren, und befolgen Sie dann den Anweisungen auf der Seite des Export-Daten. Dateien, die auf der Seite Transaktionsverlauf exportiert Anzeigen von Daten in der Transaktion Währungen Ergebnis in Transaktion Währung und US-Dollar angezeigt, und der kostenpflichtige Wert im Zahlen, Währung.
+Wählen Sie zum Exportieren der Transaktionsdaten auf dieser Seite die Option Exportieren aus, und befolgen Sie dann die Anweisungen auf der Seite Daten exportieren. Dateien, die aus der Seite Transaktionsverlauf exportiert wurden, zeigen Daten in Transaktionswährung, Einnahmen in Transaktionswährung und US-Dollar sowie den bezahlten Wert in Zahlung in Währung an.
 
 ## <a name="payment-status"></a>Zahlungsstatus
 
-| Gibt an, dass status           | Grund                                                                                                                                      | Partner-Aktion erforderlich?                                   |
+| Erwerbsstatus           | Grund                                                                                                                                      | Partner Aktion erforderlich?                                   |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
-| Nicht verarbeitet              | Der gibt an, dass ist berechtigt, für die Zahlung. Es bleibt in diesem Status für einen Zeitraum Kühlung wie in der Programmhandbuch für die anreizprogramm definiert. | Nein                                                         |
-| Bevorstehende                 | Zahlung-Reihenfolge, die ausstehende internen Prüfungen generiert wird, bevor Zahlung verarbeitet wird.                                                               | Nein                                                         |
-| Ausstehende Steuer-Rechnung      | Ihre Rechnung Tax ist unvollständig oder ungültig.                                                                                                  | Müssen Sie Ihrer Steuer-Rechnung zu aktualisieren, bevor Sie bezahlt werden können |
-| Während der Überprüfung abgelehnt   | Die Zahlung wurde während der Überprüfung abgelehnt.                                                                                                     | Wenden Sie sich an [Microsoft-Support](https://developer.microsoft.com/en-us/windows/support) Details                      |
-| Failed                   | Die Zahlung konnte aufgrund eines Fehlers der Microsoft-System nicht.                                                                                         | Wenden Sie sich an [Microsoft-Support](https://developer.microsoft.com/en-us/windows/support) Details                      |
+| Nicht verarbeitet              | Der Erwerb ist für die Zahlung berechtigt. Sie verbleibt in diesem Zustand für einen kühl Zeitraum, wie im Programmhandbuch für das Incentive-Programm definiert. | Nein                                                         |
+| Ansteh                 | Der Zahlungsauftrag hat ausstehende interne Überprüfungen generiert, bevor die Zahlung verarbeitet wird.                                                               | Nein                                                         |
+| Ausstehende Steuerrechnung      | Ihre Steuerrechnung ist unvollständig oder ungültig.                                                                                                  | Sie müssen ihre Steuerrechnung aktualisieren, bevor Sie bezahlen können. |
+| Ablehnung während der Überprüfung   | Die Zahlung wurde während der Überprüfung abgelehnt.                                                                                                     | Weitere Informationen erhalten Sie vom [Microsoft Support](https://developer.microsoft.com/en-us/windows/support) .                      |
+| Fehler                   | Die Zahlung ist aufgrund eines Microsoft-Systemfehlers fehlgeschlagen.                                                                                         | Weitere Informationen erhalten Sie vom [Microsoft Support](https://developer.microsoft.com/en-us/windows/support) .                      |
 | In Bearbeitung              | Die Zahlung wird ausgeführt.                                                                                                                 | Nein                                                         |
-| Falsche Zahlung        | Die Zahlung abzusichern wird ausgeführt.                                                                                                       | Nein                                                         |
-| Gesendet                     | Die Zahlung wurde an Ihre Bank gesendet.                                                                                                     | Nein                                                         |
-| Eine erneute Verarbeitung             | Die Zahlung ist ein Microsoft-System-Fehler aufgetreten, und es wird erneut verarbeitet wird.                                                                  | Nein                                                         |
-| Reserviert                 | Die Zahlung von Ihrer Bank umgekehrt wurde und erneut in den nächsten zahlungszyklus gesendet werden.                                                     | Nein                                                         |
-| Steuer-Rechnung abgelehnt     | Ihre Rechnung Tax wurde während der Überprüfung abgelehnt. Alle ausstehenden Zahlungen werden angehalten, bis die Steuer Rechnung Überprüfung abgeschlossen ist.                 | Wenden Sie sich an [Microsoft-Support](https://developer.microsoft.com/en-us/windows/support) Details                      |
-| Steuer-Rechnung geprüft | Ihre Rechnung steuern werden überprüft. Ihre Zahlung wird freigegeben, nachdem die Steuer-Rechnung genehmigt wurde.                                   | Nein                                                         |
-| Abgelehnt                 | Die Zahlung wurde von Ihrer Bank abgelehnt.                                                                                                      | Weitere Informationen erhalten Sie von Ihrer Bank.                             |
+| Falsche Zahlung        | Der Zahlungsvorgang wird wiederholt.                                                                                                       | Nein                                                         |
+| Entsand                     | Die Zahlung wurde an Ihre Bank gesendet.                                                                                                     | Nein                                                         |
+| Reprocessing             | Bei der Zahlung ist ein Microsoft-Systemfehler aufgetreten, der erneut verarbeitet wird.                                                                  | Nein                                                         |
+| Reserviert                 | Die Zahlung wurde von Ihrer Bank rückgängig gemacht und wird im nächsten Zahlungszeitraum erneut gesendet.                                                     | Nein                                                         |
+| Finanzrechnung abgelehnt     | Ihre Steuerrechnung wurde während der Überprüfung abgelehnt. Alle ausstehenden Zahlungen werden angehalten, bis die Überprüfung der Steuerrechnung abgeschlossen ist.                 | Weitere Informationen erhalten Sie vom [Microsoft Support](https://developer.microsoft.com/en-us/windows/support) .                      |
+| Steuerrechnung unter Review | Ihre Steuerrechnung wird geprüft. Ihre Zahlung wird nach Genehmigung der Steuerrechnung freigegeben.                                   | Nein                                                         |
+| Ablehnung                 | Die Zahlung wurde von Ihrer Bank abgelehnt.                                                                                                      | Weitere Informationen erhalten Sie von der Bank.                             |
 
-## <a name="export-data-page"></a>Exportieren Sie die Seite "Daten"
+## <a name="export-data-page"></a>Seite "Daten exportieren"
 
-Befolgen Sie die Anweisungen auf dieser Seite können Sie die Daten exportieren.
+Befolgen Sie die Anweisungen auf dieser Seite, um die gewünschten Daten zu exportieren.
 
-Hinweise:
+Notizen:
 
-- Wenn Sie diese Seite entweder die Zahlungen oder die Transaktion Seite "Verlauf" zugreifen, werden Ihre Filter nicht übertragen. Sie müssen sie auf der Seite des Export-Daten zu wiederholen.
-- Die Export Data-Seite wird nicht eigenständig aktualisiert. Sie müssen die Seite manuell, um die neuesten Daten anzeigen zu aktualisieren.
-- Der Filter kann keine Daten verfügbar-Fehler führen. Dies bedeutet wahrscheinlich, Sie bleibt die Standardeinstellung auf drei Monate ausgewählten Zeitraum und dann eine Zahlung-ID aus, die außerhalb dieses Zeitraums ist verdienen ausgewählt haben. Erweitern Sie Ihre Zeitraum aus, und versuchen Sie es erneut.
+- Wenn Sie über die Seite Zahlungen oder Transaktionsverlauf auf diese Seite zugreifen, werden die Filter nicht durchgeführt. Sie müssen Sie auf der Seite Daten exportieren wiederholen.
+- Die Seite "Daten exportieren" wird nicht eigenständig aktualisiert. Möglicherweise müssen Sie die Seite manuell aktualisieren, um die neuesten Daten anzuzeigen.
+- Der Filter führt möglicherweise zu einem Fehler, der nicht verfügbar ist. Dies bedeutet wahrscheinlich, dass Sie den Standard Zeitraum in drei Monaten ausgewählt haben und dann eine Zahlungs-ID aus einem Verdienst außerhalb dieses Zeitraums ausgewählt haben. Erweitern Sie den Zeitraum, und versuchen Sie es noch mal.
 
-## <a name="payment-download-export"></a>Zahlung Download exportieren
+## <a name="payment-download-export"></a>Zahlungs Download Export
 
-Mit dieser Option wird einen Download der Zahlungen, die Sie in Ihrer Bank für ein bestimmtes Programm, und die zugehörigen Gebühr empfangen und ertragreiche Menge aggregiert. Dieser Bericht ist für viele Partner Center-Programme verwendet, daher einige Spalten möglicherweise nicht anwendbar auf den Bericht. Diese Spalten werden unten markiert.
+Mit dieser Option können Sie die Zahlungen, die Sie in Ihrer Bank für ein bestimmtes Programm erhalten haben, sowie die zugehörigen Steuern und den aggregierten Erwerbs Betrag herunterladen. Dieser Bericht wird für viele Partner Center-Programme verwendet, sodass einige Spalten für den Bericht möglicherweise nicht zutreffend sind. Diese Spalten sind unten markiert.
 
 | Spaltenname              | Beschreibung                                                                                                                             |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| participantID            | Die primäre Identität des Partners gibt an, dass im Rahmen des Programms                                                                           |
-| participantIDType        | In der Regel Programm-Id für Incentive Programme und Verkäufer-ID für Store-Programme                                                              |
-| participantName          | Name des Partners ertragreiche                                                                                                             |
-| programName              | Incentive/Geschäftsname-Programm                                                                                                            |
-| Ertragswert                   | Menge, die in der Zahlen, Währung für diese Anwendung/ParticipantID erworben                                                                     |
-| earnedUSD                | Menge, die durch die Anwendung/Teilnehmer-ID, in US-Dollar                                                                                    |
-| withheldTax              | In der Zahlen, Währung für die Anwendung/ParticipantID Abgaben Steuerbetrag                                                             |
-| salesTax                 | Gesamtmenge der Mehrwertsteuer in die Währung bezahlen, für die Anwendung/participantID                                                          |
-| totalPayment             | Gesamtbetrag der Zahlung in der lokalen Währung Quellensteuer ausschließen und die Mehrwertsteuer (falls zutreffend) für die Anwendung/participantID |
-| currencyCode             | Der Code für Zahlen, Währung                                                                                                                    |
-| PaymentMethod            | Die Methode zum Bezahlen des Partners (elektronische Überweisung, Gutschrift)                                                              |
-| paymentID                | Eindeutiger Bezeichner für die Zahlung. Diese Zahl wird in der Regel in Ihrem Kontoauszug angezeigt.                                               |
-| paymentStatus            | Zahlungsstatus                                                                                                                          |
-| paymentStatusDescription | Beschreibung des Zahlungsstatus                                                                                                  |
-| paymentDate              | Der Zahlung wurde von Microsoft gesendet.                                                                                                    |
+| participantid            | Die primäre Identität des Partners, der sich unter dem Programm verdient                                                                           |
+| participantidtype        | Normalerweise Programm-ID für Incentive-Programme und Verkäufer-ID für Store-Programme                                                              |
+| participantName          | Name des Erwerbs Partners                                                                                                             |
+| Program Name              | Name des Incentive/Store-Programms                                                                                                            |
+| erzielten                   | Betrag, der in der Zahlen-zu-Währung für dieses Programm/diese Element-ID verdient wurde                                                                     |
+| earnetzdusd                | Betrag für die Programm/Teilnehmer-ID in USD                                                                                    |
+| withheldtax              | Betrag der in der Zahlen-zu-Währung für das Programm/participantid gehaltenen Steuerelement                                                             |
+| salesTax                 | Gesamtbetrag der Umsatzsteuer in der Zahlen-zu-Währung für das Programm/die participantid                                                          |
+| totalpayment             | Gesamtzahlung in der lokalen Währung ohne die zurück Haltungs Steuern und einschließlich der Umsatzsteuer (falls zutreffend) für die Programm/participantid |
+| currencyCode             | Bezahlen an Währungscode                                                                                                                    |
+| PaymentMethod            | Die Methode, die verwendet wird, um den Partner zu bezahlen (Electronic Bank Transfer, Bonitäts Hinweis)                                                              |
+| PaymentID                | Eindeutiger Bezeichner für die Zahlung. Diese Zahl ist normalerweise in der Bank-Anweisung sichtbar.                                               |
+| paymentstatus            | Zahlungsstatus                                                                                                                          |
+| paymentstatus Description | Benutzerfreundliche Beschreibung des Zahlungsstatus                                                                                                  |
+| paymentdate              | Die Datums Zahlung wurde von Microsoft gesendet.                                                                                                    |
 
-## <a name="transaction-history-download-export"></a>Transaktion Verlauf Download exportieren
+## <a name="transaction-history-download-export"></a>Transaktionsverlauf-Download Export
 
-Mit dieser Option wird einen Download jedes ertragreiche Zeilenelements in die Transaktion-Verlaufsseite angezeigten gibt an, dass Typ, Datum, zugeordnete Transaktion Menge, Kunde, Produkt und andere transaktionale Details für Ihre Programme.
+Mit dieser Option können Sie jedes auf der Seite Transaktionsverlauf gelaufene Element auf der Seite Transaktionsverlauf herunterladen, den Typ, das Datum, die zugehörige Transaktions Menge, den Kunden, das Produkt und andere Transaktionsdetails, die für Ihre Programme gelten, erwerben.
 
 | Spaltenname                    | Beschreibung                                                                                                                              |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| earningId                      | Eindeutiger Bezeichner für jede gibt an, dass                                                                                                       |
-| participantId                  | Die primäre Identität des Partners gibt an, dass im Rahmen des Programms                                                                            |
-| participantIdType              | ID des Verkäufers                                                                                                                                |
-| participantName                | Name des Partners ertragreiche                                                                                                              |
-| partnerCountryCode             | Standort/Land des Partners, direkt                                                                                                  |
-| programName                    | Incentive/Geschäftsname-Programm                                                                                                             |
+| earningid                      | Eindeutiger Bezeichner für jedes Einkommen                                                                                                       |
+| participantid                  | Die primäre Identität des Partners, der sich unter dem Programm verdient                                                                            |
+| participantidtype              | Verkäufer-ID                                                                                                                                |
+| participantName                | Name des Erwerbs Partners                                                                                                              |
+| partnercountrycode             | Standort/Land des Erwerbs Partners                                                                                                  |
+| Program Name                    | Name des Incentive/Store-Programms                                                                                                             |
 | transactionId                  | Eindeutiger Bezeichner für die Transaktion                                                                                                    |
-| transactionCurrency            | Währung, in dem die ursprüngliche Transaktion für den Kunden aufgetreten ist.                                                                             |
-| transactionDate                | Datum der Transaktion. Nützlich für Programme, in denen viele Transaktionen, die eine gibt an, dass beitragen                                           |
-| transactionExchangeRate        | Wechselkursdatum verwendet, um die entsprechende USD-Betrag anzuzeigen.                                                                             |
-| transactionAmount              | Betrag in der ursprünglichen Transaktion Währung, die basierend auf der gibt an, dass generiert wird                                              |
-| transactionAmountUSD           | Betrag in US-Dollar                                                                                                                |
-| Hebel                          | Gibt die Geschäftsregel für die gibt an, dass an                                                                                                  |
-| earningRate                    | Incentive Tarif auf Transaktionsbetrags verdienen generieren                                                                      |
-| quantity                       | Variiert basierend auf Programm. Berechnete Menge für transaktionale Programme                                                            |
-| earningType                    | Gibt an, ob diese Gebühr "," Rebate "," Coop "," Selling usw.                                                                                          |
-| earningAmount                  | Gibt an, dass Betrag in der ursprünglichen Transaktion Währung                                                                                      |
-| earningAmountUSD               | Gibt an, dass der Umfang in US-Dollar                                                                                                                    |
-| earningDate                    | Datum der gibt an, dass                                                                                                                      |
-| calculationDate                | Datum, an der gibt an, dass im System berechnet wurde                                                                                            |
-| earningExchangeRate            | Wechselkurs verwendet, um die entsprechende USD-Betrag anzuzeigen.                                                                                  |
-| exchangeRateDate               | Zum Berechnen von EarningAmount USD von Wechselkursdatum                                                                                   |
-| claimId                        | Wird immer leer sein.                                                                                                                     |
-| paymentId                      | Eindeutiger Bezeichner für die Zahlung. Diese Zahl wird in Ihrem Konto in der Regel angezeigt.                                                 |
-| paymentStatus                  | Zahlungsstatus                                                                                                                           |
-| paymentStatusDescription       | Beschreibung des Zahlungsstatus                                                                                                   |
-| customerId                     | Wird immer leer sein.                                                                                                                     |
-| customerName                   | Wird immer leer sein.                                                                                                                     |
+| transaktioncurrency            | Währung, in der die ursprüngliche Kunden Transaktion aufgetreten ist                                                                             |
+| TransactionDate                | Datum der Transaktion. Nützlich für Programme, bei denen viele Transaktionen zu einem Verdienst beitragen                                           |
+| transaktionexchangerate        | Wechselkurs Datum, das zum Anzeigen des entsprechenden USD Amount verwendet wird                                                                             |
+| transaktionamount              | Transaktionsbetrag in der ursprünglichen Transaktionswährung, je nachdem, welche Einnahmen generiert werden                                              |
+| transaktionsetusd           | Transaktionsbetrag in USD                                                                                                                |
+| Tor                          | Gibt die Geschäftsregel für den Verdienst an.                                                                                                  |
+| earningrate                    | Auf Transaktionsbetrag angewendete Incentive-Rate zum Generieren eines Erwerbs                                                                      |
+| quantity                       | Variiert je nach Programm. Gibt die in Rechnung gestellte Menge für Transaktions Programme an.                                                            |
+| earningtype                    | Gibt an, ob es sich um Gebühr, Rabatt, Coop, Sell usw. handelt.                                                                                          |
+| earningamount                  | Betrag in der ursprünglichen Transaktionswährung                                                                                      |
+| earningamountusd               | Betrag in USD                                                                                                                    |
+| earningdate                    | Datum des Erwerbs                                                                                                                      |
+| calculationdate                | Datum, an dem das Verdienst im System berechnet wurde                                                                                            |
+| earningexchangerate            | Wechselkurs, der zum Anzeigen des entsprechenden USD Amount verwendet wird                                                                                  |
+| exchangeratedate               | Zum Berechnen von "earningamount USD" verwendetes Wechselkurs Datum                                                                                   |
+| claimid                        | Wird immer leer sein.                                                                                                                     |
+| PaymentID                      | Eindeutiger Bezeichner für die Zahlung. Diese Zahl ist normalerweise in der Bank-Anweisung sichtbar.                                                 |
+| paymentstatus                  | Zahlungsstatus                                                                                                                           |
+| paymentstatus Description       | Benutzerfreundliche Beschreibung des Zahlungsstatus                                                                                                   |
+| CustomerID                     | Wird immer leer sein.                                                                                                                     |
+| CustomerName                   | Wird immer leer sein.                                                                                                                     |
 | PartNumber                     | Wird immer leer sein.                                                                                                                     |
-| productName                    | Mit der Transaktion verknüpften Produktnamen                                                                                                       |
+| productName                    | Mit Transaktion verknüpfter Produktname                                                                                                       |
 | productId                      | Eindeutige Produkt-ID                                                                                                                |
 | parentProductId                | Eindeutige übergeordnete Produkt-ID. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet die ID des übergeordneten Produkts „Produkt-ID“. |
-| parentProductName              | Name des übergeordneten Produkts. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet der Name des übergeordneten Produkts „Produktname“.   |
+| "parametriproductname"              | Name des übergeordneten Produkts. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet der Name des übergeordneten Produkts „Produktname“.   |
 | productType                    | Art des Produkts (z. B. App, Add-On, Spiel usw.)                                                                                        |
-| invoiceNumber                  | Wird immer leer sein.                                                                                                                     |
-| subscriptionId                 | Wird immer leer sein.                                                                                                                     |
-| subscriptionStartDate          | Wird immer leer sein.                                                                                                                     |
-| subscriptionEndDate            | Wird immer leer sein.                                                                                                                     |
+| invoicenumschlag                  | Wird immer leer sein.                                                                                                                     |
+| SubscriptionId                 | Wird immer leer sein.                                                                                                                     |
+| Abonnement StartDate          | Wird immer leer sein.                                                                                                                     |
+| Abonnement Enddatum            | Wird immer leer sein.                                                                                                                     |
 | resellerId                     | Wird immer leer sein.                                                                                                                     |
 | resellerName                   | Wird immer leer sein.                                                                                                                     |
-| distributorId                  | Wird immer leer sein.                                                                                                                     |
-| distributorName                | Wird immer leer sein.                                                                                                                     |
-| ' AgreementNumber '                | Wird immer leer sein.                                                                                                                     |
-| agreementStartDate             | Wird immer leer sein.                                                                                                                     |
-| agreementEndDate               | Wird immer leer sein.                                                                                                                     |
-| arbeitsauslastung                       | Wird immer leer sein.                                                                                                                     |
-| transactionType                | Art der Transaktion (z. B. Einkauf, Erstattung, Rückbuchung, Ausgleich usw.)                                                               |
-| localProviderSeller            | Eingetragener lokaler Anbieter/Verkäufer                                                                                                          |
-| taxRemitted                    | Höhe der bezahlten Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer).                                                                                   |
-| taxRemitModel                  | Für die Überweisung von Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer) zuständige Partei.                                                                    |
-| storeFee                       | Der Betrag, der von Microsoft als eine Gebühr für das Verfügbarmachen der app oder ein Add-on in der Store beibehalten wird.                                           |
-| transactionPaymentMethod       | Kundenzahlungsmittel, das für die Transaktion verwendet wird (z. B. Kreditkarte, Mobilfunkanbieterrechnung, PayPal usw.)                                |
-| tpan                           | Gibt das Drittanbieter-Ad-Netzwerk                                                                                                     |
-| purchaseTypeCode               | Wird immer leer sein.                                                                                                                     |
-| purchaseOrderType              | Wird immer leer sein.                                                                                                                     |
-| purchaseOrderCoverageStartDate | Wird immer leer sein.                                                                                                                     |
-| purchaseOrderCoverageEndDate   | Wird immer leer sein.                                                                                                                     |
-| externalReferenceId            | Wird immer leer sein.                                                                                                                     |
-| externalReferenceIdLabel       | Wird immer leer sein.                                                                                                                     |
+| verteilbare d                  | Wird immer leer sein.                                                                                                                     |
+| Distributor Name                | Wird immer leer sein.                                                                                                                     |
+| AgreementNumber                | Wird immer leer sein.                                                                                                                     |
+| agreementstartdate             | Wird immer leer sein.                                                                                                                     |
+| agreementenddate               | Wird immer leer sein.                                                                                                                     |
+| beitragen                       | Wird immer leer sein.                                                                                                                     |
+| Transaktionstyp                | Art der Transaktion (z. B. Einkauf, Erstattung, Rückbuchung, Ausgleich usw.)                                                               |
+| localproviderseller            | Eingetragener lokaler Anbieter/Verkäufer                                                                                                          |
+| taxreover                    | Höhe der bezahlten Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer).                                                                                   |
+| taxremitmodel                  | Für die Überweisung von Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer) zuständige Partei.                                                                    |
+| storefee                       | Der von Microsoft beibehaltene Betrag für die Bereitstellung der APP oder des Add-Ins im Store.                                           |
+| transaktionpaymentmethod       | Kundenzahlungsmittel, das für die Transaktion verwendet wird (z. B. Kreditkarte, Mobilfunkanbieterrechnung, PayPal usw.)                                |
+| tpan                           | Gibt das Drittanbieter-Ad-Netzwerk an.                                                                                                     |
+| purchasetypeer Code               | Wird immer leer sein.                                                                                                                     |
+| PurchaseOrderType              | Wird immer leer sein.                                                                                                                     |
+| purchaseordercoveragestartdate | Wird immer leer sein.                                                                                                                     |
+| purchaseordercoverageenddate   | Wird immer leer sein.                                                                                                                     |
+| externalreferenceid            | Wird immer leer sein.                                                                                                                     |
+| externalreferenceidlabel       | Wird immer leer sein.                                                                                                                     |
 
-## <a name="payout-statement-download-export-legacy"></a>Auszahlungen-Anweisung Download Export (Vorgängerversion)
+## <a name="payout-statement-download-export-legacy"></a>Download der Auszahlungs Anweisung Download (Legacy)
 
-Für einen begrenzten Zeitraum in der alten Auszahlung Seite "Zusammenfassung" werden Auszahlung Anweisungen zum Herunterladen zur Verfügung. Dieser Bericht enthält die folgenden Felder.
+Für einen begrenzten Zeitraum auf der Seite alte Auszahlungs Zusammenfassung stehen Auszahlungs Anweisungen zum Download zur Verfügung. Dieser Bericht enthält die folgenden Felder.
 
 > [!NOTE]
-> Ältere Transaktionsverlauf verfügt über eine Spalte namens "Reserviert" entspricht der Spalte "Ergebnis" in der modernen Geschichte, außer dass es alle Ergebnis mit dem Status schließt = "Bezahlt".
+> Der Legacy Transaktionsverlauf verfügt über eine Spalte mit dem Namen "reserviert", die der Spalte "Gewinn" im modernen Verlauf entspricht, mit dem Unterschied, dass der gesamte Gewinn mit Status = "Payment sent" ausgeschlossen wird.
 
 | Name des Felds              | Beschreibung                                                                                                                                                             |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

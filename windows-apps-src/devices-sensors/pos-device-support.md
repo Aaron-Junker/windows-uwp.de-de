@@ -5,19 +5,19 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: aa8bec12ca3920b1e273d8f2d98186f62a340016
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6d67dd7bc7d2f6323679dd7c69a98df841b2848c
+ms.sourcegitcommit: 769ec7811aaaa79fe521e3e984a2e1a2a9671caf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321529"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70057814"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Unterstützte Point of Service-Peripheriegeräte
 
 ## <a name="barcode-scanner"></a>Strichcodescanner
-| Verbindung | Support |
+| Verbindung | Unterstützung |
 | -------------|-------------|
-| USB          | <p>Windows enthält einen in-Box Klassentreiber für Barcodescanner USB-Verbindung basierend auf der HID POS-Scanner-Verwendungstabelle (8 c)-Spezifikation definiert, indem [USB.org](https://www.usb.org/hid). Eine Liste bekannter kompatibler Geräte finden Sie in folgender Tabelle.  Sehen Sie im Handbuch Ihres Strichcodescanners nach oder wenden Sie sich an den Hersteller, um zu erfahren, wie Sie Ihren Scanner im **USB.HID.POS Scanner**-Scannermodus konfigurieren. </p><p>Windows unterstützt auch die Implementierung von herstellerspezifischen Treibern für weitere Strichcodescanner, die den Scannerstandard „USB.HID.POS“ nicht unterstützen. Erfragen Sie beim Hersteller Ihres Strichcodescanners, ob ein herstellerspezifischer Treiber verfügbar ist.</p><p>Hersteller von Strichcodescannern sollten Sie sich an das [Strichcodescannertreiber-Entwurfshandbuch](https://aka.ms/pointofservice-drv) für weitere Informationen zum Erstellen eines benutzerdefinierten Strichcodescannertreibers wenden</p> |
+| USB          | <p>Windows enthält einen in-Box-Klassen Treiber für USB-verbundene Barcode Scanner, die auf der von [USB.org](https://www.usb.org/hid)definierten Spezifikation für die Verwendung von HID POS-Überprüfungs Tabellen (8c) basieren. Eine Liste bekannter kompatibler Geräte finden Sie in folgender Tabelle.  Sehen Sie im Handbuch Ihres Strichcodescanners nach oder wenden Sie sich an den Hersteller, um zu erfahren, wie Sie Ihren Scanner im **USB.HID.POS Scanner**-Scannermodus konfigurieren. </p><p>Windows unterstützt auch die Implementierung von herstellerspezifischen Treibern für weitere Strichcodescanner, die den Scannerstandard „USB.HID.POS“ nicht unterstützen. Erfragen Sie beim Hersteller Ihres Strichcodescanners, ob ein herstellerspezifischer Treiber verfügbar ist.</p><p>Hersteller von Strichcodescannern sollten Sie sich an das [Strichcodescannertreiber-Entwurfshandbuch](https://aka.ms/pointofservice-drv) für weitere Informationen zum Erstellen eines benutzerdefinierten Strichcodescannertreibers wenden</p> |
 | Bluetooth    | <p>Windows unterstützt den auf Seriellem Port-Protokoll – einfacher serieller Schnittstelle (SPP-SSI) basierten Bluetooth-Strichcodescanner. Eine Liste bekannter kompatibler Geräte finden Sie in folgender Tabelle. Sehen Sie im Handbuch Ihres Strichcodescanners nach oder wenden Sie sich an den Hersteller, um zu erfahren, wie Sie Ihren Scanner im **SPP-SSI**-Scannermodus konfigurieren.</p> |
 | Webcam       | <p>Ab Windows 10, Version 1803, können Sie Strichcodescanner über ein Standard-Kameraobjektiv von einer universellen Windows-Anwendung lesen. Es wird empfohlen, dass Sie eine Kamera verwenden, die Autofokus und eine Auflösung von mindestens 1920 x 1440 unterstützt.  Einige niedrigere Auflösungen bei Kameras können Standardstrichcodes lesen, wenn der Strichcode groß genug gedruckt wird.  Barcodes mit weniger umfangreichen Elementen benötigen möglicherweise höhere Auflösungen bei einer Kamera.</p>| 
 |
@@ -25,61 +25,61 @@ ms.locfileid: "67321529"
 
 | Hersteller  | Modell                          | Funktion | Verbindung    | Typ         | Modus                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
-| Code          | Reader™ 950                    | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Code          | Reader™ 1021                   | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Code          | Reader™ 1421                   | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Code          | Reader™ 5000                   | 2D         | USB          | Präsentation | HID POS-Scanner           |
-| Honeywell     | Genesis 7580g                  | 2D         | USB          | Präsentation | HID POS-Scanner           |
-| Honeywell     | Granit 198Xi                   | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Granit 191Xi                   | 2D         | USB          | Handheld     | HID POS-Scanner           |
+| Code          | Leser™ 950                    | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Code          | Leser™ 1021                   | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Code          | Leser™ 1421                   | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Code          | Leser™ 5000                   | 2D         | USB          | Presentation | HID POS-Scanner           |
+| Honeywell     | Genesis 7580g                  | 2D         | USB          | Presentation | HID POS-Scanner           |
+| Honeywell     | Granit 198xi                   | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | Granit 191xi                   | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
 | Honeywell     | N5680                          | 2D         | Intern     | Komponente    | HID POS-Scanner           |
 | Honeywell     | N3680                          | 2D         | Intern     | Komponente    | HID POS-Scanner           |
-| Honeywell     | Orbit 7190g                    | 2D         | USB          | Präsentation | HID POS-Scanner           |
-| Honeywell     | Stratos 2700                   | 2D         | USB          | In der Leistungsindikatoren   | HID POS-Scanner           |
-| Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Voyager 1202g                  | 1D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Voyager 1202-bf                | 1D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Voyager 145Xg                  | 1D / 2D¹   | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Voyager 1602g                  | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Xenon 1900g                    | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Xenon 1902g                    | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Xenon 1902g-bf                 | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Xenon 1900h                    | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Honeywell     | Xenon 1902h                    | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| HP            | Wert (HR2150) Barcode-Scanner | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Intermec      | SG20                           | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Socket Mobile | CHS 7Ci                        | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | CHS 7Di                        | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | CHS 7Mi                        | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | CHS 7Pi                        | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | CHS 8Ci                        | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | DuraScan D700                  | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | DuraScan D730                  | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | DuraScan D740                  | 2D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | SocketScan S700                | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | SocketScan S730                | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | SocketScan S740                | 2D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Socket Mobile | SocketScan S850                | 2D         | Bluetooth    | Handheld     | Seriell-Portprofil (SPP) |
-| Zebra         | DS2208²                        | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Zebra         | DS2278                         | 2D         | USB          | Handheld     | HID POS-Scanner           |
-| Zebra         | DS8108³                        | 2D         | USB          | Handheld     | HID POS-Scanner           |
-|
+| Honeywell     | Umlauf 7190g                    | 2D         | USB          | Presentation | HID POS-Scanner           |
+| Honeywell     | Stratos 2700                   | 2D         | USB          | Im Zählers   | HID POS-Scanner           |
+| Honeywell     | Voyager 1200g                  | 1D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | Voyager 1202g                  | 1D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | Voyager 1202-BF                | 1D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | "Voyager 145xg"                  | 1D/2D<sup>1</sup>   | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | Voyager 1602g                  | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | Xenon 1900g                    | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | Xenon 1902g                    | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | Xenon 1902g-BF                 | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | Xenon 19 h                    | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Honeywell     | Xenon 1902h                    | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| HP            | Wert Barcode Scanner (HR2150) | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Intermec      | SG20                           | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Socket Mobile | CHS 7ci                        | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | CHS 7DI                        | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | CHS 7MI                        | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | CHS 7pi                        | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | CHS 8ci                        | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | DuraScan D700                  | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | DuraScan D730                  | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | DuraScan D740                  | 2D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | Socketscan S700                | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | Socketscan S730                | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | Socketscan S740                | 2D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | Socketscan S800                | 1D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Socket Mobile | Socketscan S850                | 2D         | Bluetooth    | Gehaltenen     | PP (Serial Port Profile) |
+| Ze         | DS2208<sup>2</sup>                        | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Ze         | DS2278                         | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Ze         | DS8108<sup>3</sup>                        | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
+| Ze         | DS8178<sup>4</sup>                         | 2D         | USB          | Gehaltenen     | HID POS-Scanner           | 
 
 
-¹ Upgradable 2D Barcodes über Honeywell unterstützen. <br/>
-² mindestens Firmware 009 (2018.07.09) erforderlich. Aktualisiert werden, können mithilfe von Zebra [123Scan](http://www.zebra.com/123scan).<br/>
-³ mindestens Firmware 016 (2018.01.18) erforderlich. Aktualisiert werden, können mithilfe von Zebra [123Scan](http://www.zebra.com/123scan). 
-
+<sup>1</sup> aktualisierbar zur Unterstützung von 2D-Barcodes durch Honeywell <br/>
+<sup>2</sup> mindestens erforderliche Firmware 009 (2018.07.09) erforderlich. Aktualisierbar mithilfe von Zebra [123scan](http://www.zebra.com/123scan).<br/>
+<sup>3</sup> mindestens erforderliche Firmware (2018.01.18) erforderlich. Aktualisierbar mithilfe von Zebra [123scan](http://www.zebra.com/123scan).<br/> 
+<sup>4</sup> minimale Firmware 023 (2019.03.11) erforderlich. Aktualisierbar mithilfe von Zebra [123scan](http://www.zebra.com/123scan).<br/>
 
 <hr>
 
-### <a name="windows-devices-with-built-in-barcode-scanner"></a>Windows-Geräte mit integrierten Barcode-scanner
+### <a name="windows-devices-with-built-in-barcode-scanner"></a>Windows-Geräte mit integrierter Barcode Scanner
 | Hersteller   | Modell | Betriebssystem |
 |----------------|-------|------------------|
-| Innowi         | ChecOut-M | Windows 10   |
+| InnoWi         | Checout-M | Windows 10   |
 
-### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Windows Mobile-Geräte mit integrierten Barcodescanner
+### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Windows Mobile-Geräte mit integrierter Barcode Scanner
 | Hersteller   | Modell | Betriebssystem |
 |----------------|-------|------------------|
 | Bluebird       | EF400 | Windows Mobile   |
@@ -90,17 +90,17 @@ ms.locfileid: "67321529"
 | Janam          | XT2      | Windows Mobile   |
 | Panasonic      | FZ-E1 | Windows Mobile   |
 | Panasonic      | FZ-F1 |Windows Mobile   |
-| PointMobile    | PM80 | Windows Mobile   |
-| Zebra          | TC700j | Windows Mobile   |
-| HP             | Elite X3 aus "jackets" | Windows Mobile   |
+| Pointmobile    | PM80 | Windows Mobile   |
+| Ze          | TC700j | Windows Mobile   |
+| HP             | Elite-X3-Jacke | Windows Mobile   |
 
 
 
 
 ## <a name="cash-drawer"></a>Kassenschublade
-| Verbindung | Support |
+| Verbindung | Unterstützung |
 | -------------|-------------|
-| Netzwerk/Bluetooth | <p> Eine direkte Verbindung zur Kassenschublade kann über das Netzwerk oder über Bluetooth hergestellt werden, je nach den Funktionen der Kassenschublade. </p><p>APG Bargeld Drawer:  NetPRO, BluePRO</p> |
+| Netzwerk/Bluetooth | <p> Eine direkte Verbindung zur Kassenschublade kann über das Netzwerk oder über Bluetooth hergestellt werden, je nach den Funktionen der Kassenschublade. </p><p>APG-Bargeld:  NetPRO, BluePRO</p> |
 | DK-Port | <p> Kassenschubladen ohne Netzwerk- oder Bluetooth-Funktionen können über den DK-Port auf unterstützten Belegdruckern oder das Star Micronics DK-AirCash-Zubehör verbunden werden. </p>
 | OPOS    | <p> Unterstützt alle OPOS-kompatiblen Kassenschubladen über OPOS Service-Objekte, die vom Hersteller bereitgestellt werden. Installieren Sie die OPOS-Treiber für das Gerät entsprechend den Anweisungen des Herstellers. </p> |
 
@@ -121,7 +121,7 @@ Windows bietet Unterstützung für die folgenden Magnetstreifenleser von Magtek 
  Windows unterstützt die Implementierung der zusätzlichen anbieterspezifischen Treiber zur Unterstützung von Magnetstreifenlesern. Bitte prüfen Sie die Verfügbarkeit des Magnetstreifenlesers bei Ihrem Hersteller. Hersteller von Magnetstreifenlesers sollten sich an das [Magnetstreifenleser-Entwurfshandbuch](https://aka.ms/pointofservice-drv) für weitere Informationen zum Erstellen eines benutzerdefinierten Magnetstreifenlesers wenden.
 
 ## <a name="receipt-printer-posprinter"></a>Belegdrucker (POSPrinter)
-| Verbindung | Support |
+| Verbindung | Unterstützung |
 | -------------|-------------|
 | Netzwerk und Bluetooth | <p>Windows unterstützt die Möglichkeit, mit der Epson ESC/POS-Druckersteuerungssprache auf Belegdruckern über Netzwerk und Bluetooth zu drucken.  Die unten aufgeführten Drucker werden automatisch über POSPrinter-APIs ermittelt. Zusätzliche Belegdrucker, die eine ESC/POS-Emulation bieten, funktionieren auch, müssen aber über einen [Out-Band-Kopplungs](https://aka.ms/pointofservice-oobpairing)-Prozess verknüpft werden .</p><p>Hinweis: Kassenbelegstationen und Journalstationen werden von dieser Methode nicht unterstützt.</p> |
 | OPOS    | <p> Unterstützt alle OPOS-kompatiblen Belegdrucker über OPOS-Dienstobjekte. Installieren Sie die OPOS-Treiber für das Gerät entsprechend den Anweisungen des Herstellers. </p> |
