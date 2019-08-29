@@ -533,13 +533,11 @@
           href: accessibility/practices-to-avoid.md
         - name: Benutzerdefinierte Automatisierungspeers
           href: accessibility/custom-automation-peers.md
-          items:
-            - name: Steuerelementmuster und Schnittstellen
-              href: accessibility/control-patterns-and-interfaces.md
+        - name: Steuerelementmuster und Schnittstellen
+          href: accessibility/control-patterns-and-interfaces.md
     - name: App-Einstellungen
-      href: app-settings/app-settings-and-data.md
       items:
-        - name: Richtlinien
+        - name: Richtlinien für App-Einstellungen
           href: app-settings/guidelines-for-app-settings.md
         - name: Speichern und Abrufen von App-Einstellungen und -Daten
           href: app-settings/store-and-retrieve-app-data.md
@@ -572,9 +570,10 @@
           href: globalizing/use-utf8-code-page.md
         - name: Vorbereiten Ihrer Anwendung auf den Wechsel der japanischen Ära
           href: globalizing/japanese-era-change.md
-    - name: Anleitungen für die App-Hilfe
-      href: in-app-help/guidelines-for-app-help.md
+    - name: In-App-Hilfe
       items:
+        - name: Anleitungen für die App-Hilfe
+          href: in-app-help/guidelines-for-app-help.md
         - name: Benutzeroberfläche mit Anleitungen
           href: in-app-help/instructional-ui.md
         - name: In-App-Hilfe
