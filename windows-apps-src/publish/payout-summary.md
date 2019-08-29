@@ -6,12 +6,12 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10 UWP, Auszahlungszusammenfassung, Anweisung, Zahlungen, Einnahmen, Auszahlung, Einnahmen
 ms.localizationpriority: medium
-ms.openlocfilehash: 777ee4201b435f17cdc4fc3650a2d33645ff56b9
-ms.sourcegitcommit: 769ec7811aaaa79fe521e3e984a2e1a2a9671caf
+ms.openlocfilehash: 68a7de0692d05ffe8d1b489e75a58c16b3c826df
+ms.sourcegitcommit: 9779be4a1075e924dca7585808722d95cda99aff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70057821"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118059"
 ---
 # <a name="payout-summary"></a>Auszahlungsübersicht
 
@@ -75,7 +75,6 @@ Befolgen Sie die Anweisungen auf dieser Seite, um die gewünschten Daten zu expo
 
 Notizen:
 
-- Wenn Sie über die Seite Zahlungen oder Transaktionsverlauf auf diese Seite zugreifen, werden die Filter nicht durchgeführt. Sie müssen Sie auf der Seite Daten exportieren wiederholen.
 - Die Seite "Daten exportieren" wird nicht eigenständig aktualisiert. Möglicherweise müssen Sie die Seite manuell aktualisieren, um die neuesten Daten anzuzeigen.
 - Der Filter führt möglicherweise zu einem Fehler, der nicht verfügbar ist. Dies bedeutet wahrscheinlich, dass Sie den Standard Zeitraum in drei Monaten ausgewählt haben und dann eine Zahlungs-ID aus einem Verdienst außerhalb dieses Zeitraums ausgewählt haben. Erweitern Sie den Zeitraum, und versuchen Sie es noch mal.
 
@@ -83,124 +82,98 @@ Notizen:
 
 Mit dieser Option können Sie die Zahlungen, die Sie in Ihrer Bank für ein bestimmtes Programm erhalten haben, sowie die zugehörigen Steuern und den aggregierten Erwerbs Betrag herunterladen. Dieser Bericht wird für viele Partner Center-Programme verwendet, sodass einige Spalten für den Bericht möglicherweise nicht zutreffend sind. Diese Spalten sind unten markiert.
 
-| Spaltenname              | Beschreibung                                                                                                                             |
-|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| participantid            | Die primäre Identität des Partners, der sich unter dem Programm verdient                                                                           |
-| participantidtype        | Normalerweise Programm-ID für Incentive-Programme und Verkäufer-ID für Store-Programme                                                              |
-| participantName          | Name des Erwerbs Partners                                                                                                             |
-| Program Name              | Name des Incentive/Store-Programms                                                                                                            |
-| erzielten                   | Betrag, der in der Zahlen-zu-Währung für dieses Programm/diese Element-ID verdient wurde                                                                     |
-| earnetzdusd                | Betrag für die Programm/Teilnehmer-ID in USD                                                                                    |
-| withheldtax              | Betrag der in der Zahlen-zu-Währung für das Programm/participantid gehaltenen Steuerelement                                                             |
-| salesTax                 | Gesamtbetrag der Umsatzsteuer in der Zahlen-zu-Währung für das Programm/die participantid                                                          |
-| totalpayment             | Gesamtzahlung in der lokalen Währung ohne die zurück Haltungs Steuern und einschließlich der Umsatzsteuer (falls zutreffend) für die Programm/participantid |
-| currencyCode             | Bezahlen an Währungscode                                                                                                                    |
-| PaymentMethod            | Die Methode, die verwendet wird, um den Partner zu bezahlen (Electronic Bank Transfer, Bonitäts Hinweis)                                                              |
-| PaymentID                | Eindeutiger Bezeichner für die Zahlung. Diese Zahl ist normalerweise in der Bank-Anweisung sichtbar.                                               |
-| paymentstatus            | Zahlungsstatus                                                                                                                          |
-| paymentstatus Description | Benutzerfreundliche Beschreibung des Zahlungsstatus                                                                                                  |
-| paymentdate              | Die Datums Zahlung wurde von Microsoft gesendet.                                                                                                    |
+| Spaltenname              | Beschreibung                                                                                                                               |
+|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------  |
+| participantid            | Die primäre Identität des Partners, der sich unter dem Programm verdient                                                                             |
+| participantidtype        | Normalerweise Programm-ID für Incentive-Programme und Verkäufer-ID für Store-Programme                                                                |
+| participantName          | Name des Erwerbs Partners                                                                                                               |
+| Program Name              | Name des Incentive/Store-Programms                                                                                                              |
+| erzielten                   | Betrag, der in der Zahlen-zu-Währung für dieses Programm/diese Element-ID verdient wurde                                                                       |
+| earnetzdusd                | Betrag für die Programm/Teilnehmer-ID in USD                                                                                      |
+| withheldtax              | Betrag der in der Zahlen-zu-Währung für das Programm/participantid gehaltenen Steuerelement                                                               |
+| salesTax                 | Gesamtbetrag der Umsatzsteuer in der Zahlen-zu-Währung für das Programm/die participantid (gilt nur für Incentive-Programme)                   |
+| servicefeetax            | Gesamtmenge der servicefeetax in "Pay-to-Currency" für das Programm/die "participantid" (gilt nur für Store-Programme und Azure Marketplace) |
+| totalpayment             | Gesamtzahlung in der lokalen Währung ohne die zurück Haltungs Steuern und einschließlich der Umsatzsteuer (falls zutreffend) für die Programm/participantid   |
+| currencyCode             | Bezahlen an Währungscode                                                                                                                      |
+| PaymentMethod            | Die Methode, mit der der Partner bezahlt wird, z. b. Electronic Bank Transfer, Bonitäts Hinweis                                                             |
+| PaymentID                | Eindeutiger Bezeichner für die Zahlung. Diese Zahl ist normalerweise in der Bank-Anweisung sichtbar. (gilt nur für SAP-Zahlungen)              |
+| paymentstatus            | Zahlungsstatus                                                                                                                            |
+| paymentstatus Description | Benutzerfreundliche Beschreibung des Zahlungsstatus                                                                                                    |
+| paymentdate              | Die Datums Zahlung wurde von Microsoft gesendet.                                                                                                      |
 
 ## <a name="transaction-history-download-export"></a>Transaktionsverlauf-Download Export
 
 Mit dieser Option können Sie jedes auf der Seite Transaktionsverlauf gelaufene Element auf der Seite Transaktionsverlauf herunterladen, den Typ, das Datum, die zugehörige Transaktions Menge, den Kunden, das Produkt und andere Transaktionsdetails, die für Ihre Programme gelten, erwerben.
 
-| Spaltenname                    | Beschreibung                                                                                                                              |
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| earningid                      | Eindeutiger Bezeichner für jedes Einkommen                                                                                                       |
-| participantid                  | Die primäre Identität des Partners, der sich unter dem Programm verdient                                                                            |
-| participantidtype              | Verkäufer-ID                                                                                                                                |
-| participantName                | Name des Erwerbs Partners                                                                                                              |
-| partnercountrycode             | Standort/Land des Erwerbs Partners                                                                                                  |
-| Program Name                    | Name des Incentive/Store-Programms                                                                                                             |
-| transactionId                  | Eindeutiger Bezeichner für die Transaktion                                                                                                    |
-| transaktioncurrency            | Währung, in der die ursprüngliche Kunden Transaktion aufgetreten ist                                                                             |
-| TransactionDate                | Datum der Transaktion. Nützlich für Programme, bei denen viele Transaktionen zu einem Verdienst beitragen                                           |
-| transaktionexchangerate        | Wechselkurs Datum, das zum Anzeigen des entsprechenden USD Amount verwendet wird                                                                             |
-| transaktionamount              | Transaktionsbetrag in der ursprünglichen Transaktionswährung, je nachdem, welche Einnahmen generiert werden                                              |
-| transaktionsetusd           | Transaktionsbetrag in USD                                                                                                                |
-| Tor                          | Gibt die Geschäftsregel für den Verdienst an.                                                                                                  |
-| earningrate                    | Auf Transaktionsbetrag angewendete Incentive-Rate zum Generieren eines Erwerbs                                                                      |
-| quantity                       | Variiert je nach Programm. Gibt die in Rechnung gestellte Menge für Transaktions Programme an.                                                            |
-| earningtype                    | Gibt an, ob es sich um Gebühr, Rabatt, Coop, Sell usw. handelt.                                                                                          |
-| earningamount                  | Betrag in der ursprünglichen Transaktionswährung                                                                                      |
-| earningamountusd               | Betrag in USD                                                                                                                    |
-| earningdate                    | Datum des Erwerbs                                                                                                                      |
-| calculationdate                | Datum, an dem das Verdienst im System berechnet wurde                                                                                            |
-| earningexchangerate            | Wechselkurs, der zum Anzeigen des entsprechenden USD Amount verwendet wird                                                                                  |
-| exchangeratedate               | Zum Berechnen von "earningamount USD" verwendetes Wechselkurs Datum                                                                                   |
-| claimid                        | Wird immer leer sein.                                                                                                                     |
-| PaymentID                      | Eindeutiger Bezeichner für die Zahlung. Diese Zahl ist normalerweise in der Bank-Anweisung sichtbar.                                                 |
-| paymentstatus                  | Zahlungsstatus                                                                                                                           |
-| paymentstatus Description       | Benutzerfreundliche Beschreibung des Zahlungsstatus                                                                                                   |
-| CustomerID                     | Wird immer leer sein.                                                                                                                     |
-| CustomerName                   | Wird immer leer sein.                                                                                                                     |
-| PartNumber                     | Wird immer leer sein.                                                                                                                     |
-| productName                    | Mit Transaktion verknüpfter Produktname                                                                                                       |
-| productId                      | Eindeutige Produkt-ID                                                                                                                |
-| parentProductId                | Eindeutige übergeordnete Produkt-ID. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet die ID des übergeordneten Produkts „Produkt-ID“. |
-| "parametriproductname"              | Name des übergeordneten Produkts. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet der Name des übergeordneten Produkts „Produktname“.   |
-| productType                    | Art des Produkts (z. B. App, Add-On, Spiel usw.)                                                                                        |
-| invoicenumschlag                  | Wird immer leer sein.                                                                                                                     |
-| SubscriptionId                 | Wird immer leer sein.                                                                                                                     |
-| Abonnement StartDate          | Wird immer leer sein.                                                                                                                     |
-| Abonnement Enddatum            | Wird immer leer sein.                                                                                                                     |
-| resellerId                     | Wird immer leer sein.                                                                                                                     |
-| resellerName                   | Wird immer leer sein.                                                                                                                     |
-| verteilbare d                  | Wird immer leer sein.                                                                                                                     |
-| Distributor Name                | Wird immer leer sein.                                                                                                                     |
-| AgreementNumber                | Wird immer leer sein.                                                                                                                     |
-| agreementstartdate             | Wird immer leer sein.                                                                                                                     |
-| agreementenddate               | Wird immer leer sein.                                                                                                                     |
-| beitragen                       | Wird immer leer sein.                                                                                                                     |
-| Transaktionstyp                | Art der Transaktion (z. B. Einkauf, Erstattung, Rückbuchung, Ausgleich usw.)                                                               |
-| localproviderseller            | Eingetragener lokaler Anbieter/Verkäufer                                                                                                          |
-| taxreover                    | Höhe der bezahlten Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer).                                                                                   |
-| taxremitmodel                  | Für die Überweisung von Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer) zuständige Partei.                                                                    |
-| storefee                       | Der von Microsoft beibehaltene Betrag für die Bereitstellung der APP oder des Add-Ins im Store.                                           |
-| transaktionpaymentmethod       | Kundenzahlungsmittel, das für die Transaktion verwendet wird (z. B. Kreditkarte, Mobilfunkanbieterrechnung, PayPal usw.)                                |
-| tpan                           | Gibt das Drittanbieter-Ad-Netzwerk an.                                                                                                     |
-| purchasetypeer Code               | Wird immer leer sein.                                                                                                                     |
-| PurchaseOrderType              | Wird immer leer sein.                                                                                                                     |
-| purchaseordercoveragestartdate | Wird immer leer sein.                                                                                                                     |
-| purchaseordercoverageenddate   | Wird immer leer sein.                                                                                                                     |
-| externalreferenceid            | Wird immer leer sein.                                                                                                                     |
-| externalreferenceidlabel       | Wird immer leer sein.                                                                                                                     |
-
-## <a name="payout-statement-download-export-legacy"></a>Download der Auszahlungs Anweisung Download (Legacy)
-
-Für einen begrenzten Zeitraum auf der Seite alte Auszahlungs Zusammenfassung stehen Auszahlungs Anweisungen zum Download zur Verfügung. Dieser Bericht enthält die folgenden Felder.
-
-> [!NOTE]
-> Der Legacy Transaktionsverlauf verfügt über eine Spalte mit dem Namen "reserviert", die der Spalte "Gewinn" im modernen Verlauf entspricht, mit dem Unterschied, dass der gesamte Gewinn mit Status = "Payment sent" ausgeschlossen wird.
-
-| Name des Felds              | Beschreibung                                                                                                                                                             |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Umsatzquelle          | Die Quelle der Umsätze, basierend auf dem Transaktionsort (z. B. Microsoft Store, Windows Phone Store, Microsoft Store 8, Werbung usw.).                  |
-| Bestellnummer                | Eindeutiger Bezeichner für die Bestellung. Anhand dieser ID können Sie kaufbezogene Transaktionen und die entsprechenden Transaktionen, die sich nicht auf Käufe beziehen (z. B. Erstattungen, Rückvergütungen usw.), ermitteln. Beide Arten von Transaktionen besitzen die gleiche Bestell-ID. Im Fall einer aufgeteilten Belastung, bei der mehrere Zahlungsmethoden für einen einzelnen Einkauf verwendet wurden, können Sie die kaufbezogenen Transaktionen verknüpfen. |
-| Transaktions-ID          | Eindeutige Transaktions-ID.                                                                                                                                          |
-| Datum/Uhrzeit der Transaktion   | Das Datum und die Uhrzeit der Transaktion (UTC).                                                                                                                       |
-| Übergeordnete Produkt-ID       | Eindeutige übergeordnete Produkt-ID. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet die ID des übergeordneten Produkts „Produkt-ID“.                                |
-| Produkt-ID              | Eindeutige Produkt-ID.                                                                                                                                              |
-| Name des übergeordneten Produkts     | Name des übergeordneten Produkts. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet der Name des übergeordneten Produkts „Produktname“.                                  |
-| Produktname            | Name des Produkts.                                                                                                                                                    |
-| Produkttyp            | Art des Produkts (z. B. App, Add-On, Spiel usw.)                                                                                                                       |
-| Anzahl                | Wenn die Umsatzquelle „Microsoft Store für Unternehmen“ ist, gibt die Menge die Anzahl der erworben Lizenzen an. Für alle anderen Umsatzquellen ist die Menge immer 1. Hinweis: Auch wenn eine Transaktion in zwei Positionen unterteilt wird, weil zwei verschiedene Zahlungsmethoden verwendet wurden, wird für jede Position die Menge 1 angezeigt. |
-| Transaktionstyp        | Art der Transaktion (z. B. Einkauf, Erstattung, Rückbuchung, Ausgleich usw.)                                                                                              |
-| Zahlungsmethode          | Kundenzahlungsmittel, das für die Transaktion verwendet wird (z. B. Kreditkarte, Mobilfunkanbieterrechnung, PayPal usw.)                                                               |
-| Land/Region        | Land/Region, in dem die Transaktion durchgeführt wurde.                                                                                                                          |
-| Lokaler Anbieter/Verkäufer | Eingetragener lokaler Anbieter/Verkäufer.                                                                                                                                        |
-| Transaktionswährung    | Währung der Transaktion.                                                                                                                                            |
-| Transaktionsbetrag      | Betrag der Transaktion.                                                                                                                                              |
-| Bezahlte Steuern            | Höhe der bezahlten Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer).                                                                                                                  |
-| Nettoeinnahmen            | Transaktionsbetrag minus bezahlter Steuern.                                                                                                                                   |
-| Store-Gebühr               | Der Prozentsatz der Nettoeinnahmen, die von Microsoft als Gebühr für das Verfügbarmachen der App oder des Add-Ons im Store erhoben wird                                                      |
-| App-Erlöse            | Nettoeinnahmen abzüglich der Store-Gebühr.                                                                                                                                       |
-| Einbehaltene Steuern          | Höhe der einbehaltenen Einkommensteuer. (Nicht enthalten in der **reservierten** .csv-Datei.)                                                                                                |
-| Auszahlung                 | App-Erlöse abzüglich aller geltenden Steuereinbehaltungen (Betrag angezeigt in Transaktionswährung). (Nicht enthalten in der **reservierten** .csv-Datei.)                               |
-| Wechselkurs                 | Wechselkurs für die Umrechnung der Transaktionswährung in die Auszahlungswährung.                                                                                         |
-| Auszahlungswährung        | Währung der Auszahlung.                                                                                                                                       |
-| Umgerechnete Auszahlung       | Basierend auf dem Wechselkurs in die Auszahlungswährung umgerechneter Auszahlungsbetrag.                                                                                                         |
-| Steuerzahlungsmodell         | Für die Überweisung von Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer) zuständige Partei.                                                                                                   |
-| Qualifikationsdatum/Uhrzeit   | Datum und Uhrzeit, an dem/zu der der Transaktionserlös zur Auszahlung qualifiziert wird (UTC). Wenn eine Auszahlung erstellt wird, enthält diese Transaktionserlöse, die einen Qualifizierungszeitpunkt enthalten, der vor dem Erstellungsdatum der Auszahlung liegt. (Nur enthalten in der **reservierten** .csv-Datei.) |
-| Gebühren                 | Zeigt eine Aufschlüsselung aller Gebührendetails, aggregiert in der Spalte „Transaktionsbetrag“. (Nur für Azure Marketplace; nicht enthalten in der **reservierten** .csv-Datei.) |
+| Spaltenname                    | Beschreibung                                                                                                                              | Anwendbarkeit für Incentives/Store/Azure Marketplace           |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| earningid                      | Eindeutiger Bezeichner für jedes Einkommen                                                                                                       | All                                                            |
+| participantid                  | Die primäre Identität des Partners, der sich unter dem Programm verdient                                                                            | All                                                            |
+| participantidtype              | Hauptsächlich Programm-ID für Incentive-Programme und Verkäufer, wenn für Store-Programme und Azure Marketplace                                          | All                                                            |
+| participantName                | Name des Erwerbs Partners                                                                                                              | All                                                            |
+| partnercountrycode             | Standort/Land des Erwerbs Partners                                                                                                  | All                                                            |
+| Program Name                    | Name des Incentive/Store-Programms                                                                                                             | All                                                            |
+| transactionId                  | Eindeutiger Bezeichner für die Transaktion                                                                                                    | All                                                            |
+| transaktioncurrency            | Währung, in der die ursprüngliche Kunden Transaktion aufgetreten ist (Dies ist keine Währung für den Partnerstandort)                                     | All                                                            |
+| TransactionDate                | Datum der Transaktion. Nützlich für Programme, bei denen viele Transaktionen zu einem Verdienst beitragen                                           | All                                                            |
+| transaktionexchangerate        | Wechselkurs Datum zum Anzeigen der entsprechenden Transaktion in USD                                                                 | All                                                            |
+| transaktionamount              | Transaktionsbetrag in der ursprünglichen Transaktionswährung, je nachdem, welche Einnahmen generiert werden                                              | All                                                            |
+| transaktionsetusd           | Transaktionsbetrag in USD                                                                                                                | All                                                            |
+| Tor                          | Gibt die Geschäftsregel für den Verdienst an.                                                                                                  | All                                                            |
+| earningrate                    | Auf Transaktionsbetrag angewendete Incentive-Rate zum Generieren eines Erwerbs                                                                      | All                                                            |
+| quantity                       | Variiert je nach Programm. Gibt die in Rechnung gestellte Menge für Transaktions Programme an.                                                            | All                                                            |
+| quantitytype                   | Gibt den Typ der Menge an, z. b. die Abrechnung, Mau                                                                                     | All                                                            |
+| earningtype                    | Gibt an, ob es sich um Gebühr, Rabatt, Coop, Sell usw. handelt.                                                                                          | All                                                            |
+| earningamount                  | Betrag in der ursprünglichen Transaktionswährung                                                                                      | All                                                            |
+| earningamountusd               | Betrag in USD                                                                                                                    | All                                                            |
+| earningdate                    | Datum des Erwerbs                                                                                                                      | All                                                            |
+| calculationdate                | Datum, an dem das Verdienst im System berechnet wurde                                                                                            | All                                                            |
+| earningexchangerate            | Wechselkurs, der zum Anzeigen des entsprechenden USD Amount verwendet wird                                                                                  | All                                                            |
+| exchangeratedate               | Zum Berechnen von "earningamount USD" verwendetes Wechselkurs Datum                                                                                   | All                                                            |
+| paymentpaytwotax             | Betrag (ohne Steuern) in Zahlen an Währungen für "Gesendete" Zahlungen                                                                 | All                                                            |
+| paymentcurrency                | Bezahlen Sie die Währung, die vom Partner im Zahlungsprofil gewählt wurde. Nur für gesendete Zahlungen angezeigt                                                   | All                                                            |
+| paymentexchangerate            | Wechselkurs zur Berechnung von paymentpaytwotax in der Zahlungswährung mithilfe von exchangeratedate                                            | All                                                            |
+| claimid                        | Eindeutiger Bezeichner für Anspruch                                                                                                              | Incentives: nur einige Programme                                |
+| planId                         | Eindeutiger Bezeichner für den Plan                                                                                                               | Incentives: nur einige Programme                                |
+| PaymentID                      | Eindeutiger Bezeichner für die Zahlung. Diese Zahl ist normalerweise in der Bank-Anweisung sichtbar.                                                 | Nur SAP-Zahlungen                                              |
+| paymentstatus                  | Zahlungsstatus                                                                                                                           | All                                                            |
+| paymentstatus Description       | Benutzerfreundliche Beschreibung des Zahlungsstatus                                                                                                   | All                                                            |
+| CustomerID                     | Wird immer leer sein.                                                                                                                     | Nur Incentive-Programme (Ausnahme: OEM) und Azure Marketplace |
+| CustomerName                   | Wird immer leer sein.                                                                                                                     | Nur Incentive-Programme (Ausnahme: OEM) und Azure Marketplace |
+| PartNumber                     | Wird immer leer sein.                                                                                                                     | Einige Incentive-und Store-Programme und Azure Marketplace        |
+| productName                    | Mit Transaktion verknüpfter Produktname                                                                                                       | All                                                            |
+| productId                      | Eindeutige Produkt-ID                                                                                                                | Speichern und Azure Marketplace                                    |
+| parentProductId                | Eindeutige übergeordnete Produkt-ID. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet die ID des übergeordneten Produkts „Produkt-ID“. | Speichern und Azure Marketplace                                    |
+| "parametriproductname"              | Name des übergeordneten Produkts. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet der Name des übergeordneten Produkts „Produktname“.   | Speichern und Azure Marketplace                                    |
+| productType                    | Art des Produkts (z. B. App, Add-On, Spiel usw.)                                                                                        | Speichern und Azure Marketplace                                    |
+| invoicenumschlag                  | Rechnungsnummer (gilt nur für EA)                                                                                                  | Incentive und Azure Marketplace: nur einige Programme           |
+| SubscriptionId                 | Dem Kunden zugeordneter Abonnement Bezeichner                                                                                         | Incentive: nur einige Programme                                 |
+| Abonnement StartDate          | Startdatum des Abonnements                                                                                                                  | Incentive: nur einige Programme                                 |
+| Abonnement Enddatum            | Enddatum des Abonnements                                                                                                                    | Incentive: nur einige Programme                                 |
+| resellerId                     | Reseller-Bezeichner                                                                                                                      | Incentive: nur einige Programme                                 |
+| resellerName                   | Name des Wiederverkäufers                                                                                                                            | Incentive: nur einige Programme                                 |
+| verteilbare d                  | Verteiler Bezeichner                                                                                                                   | Incentive: nur einige Programme                                 |
+| Distributor Name                | Verteiler Name                                                                                                                         | Incentive: nur einige Programme                                 |
+| AgreementNumber                | Vereinbarungsnummer                                                                                                                         | Incentive: nur einige Programme                                 |
+| agreementstartdate             | Vereinbarungsstartdatum                                                                                                                     | Incentive: nur einige Programme                                 |
+| agreementenddate               | Vereinbarungsenddatum                                                                                                                       | Incentive: nur einige Programme                                 |
+| beitragen                       | Workload                                                                                                                                 | Incentive: nur einige Programme                                 |
+| Transaktionstyp                | Art der Transaktion (z. B. Einkauf, Erstattung, Rückbuchung, Ausgleich usw.)                                                               | Speichern und Azure Marketplace                                    |
+| localproviderseller            | Eingetragener lokaler Anbieter/Verkäufer                                                                                                          | Nur speichern                                                     |
+| taxreover                    | Höhe der bezahlten Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer).                                                                                   | Speichern und Azure Marketplace                                    |
+| taxremitmodel                  | Für die Überweisung von Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer) zuständige Partei.                                                                    | Nur speichern                                                     |
+| storefee                       | Der von Microsoft beibehaltene Betrag für die Bereitstellung der APP oder des Add-Ins im Store.                                           | Nur speichern                                                     |
+| transaktionpaymentmethod       | Kundenzahlungsmittel, das für die Transaktion verwendet wird (z. B. Kreditkarte, Mobilfunkanbieterrechnung, PayPal usw.)                                | Speichern und Azure Marketplace                                    |
+| tpan                           | Gibt das Drittanbieter-Ad-Netzwerk an.                                                                                                     | Nur Store-ADS                                               |
+| CustomerCountry                | Land des Kunden                                                                                                                         | Speichern und Azure Marketplace                                    |
+| customercity                   | Kunden Stadt                                                                                                                            | Speichern und Azure Marketplace                                    |
+| customerstate                  | Kunden Zustand                                                                                                                           | Speichern und Azure Marketplace                                    |
+| customerzip                    | Kunden-Zip/Postleitzahl                                                                                                                 | Speichern und Azure Marketplace                                    |
+| purchasetypeer Code               | Wird immer leer sein.                                                                                                                     | Incentive Program-CRI                                        |
+| PurchaseOrderType              | Wird immer leer sein.                                                                                                                     | Incentive Program-CRI                                        |
+| purchaseordercoveragestartdate | Wird immer leer sein.                                                                                                                     | Incentive Program-CRI                                        |
+| purchaseordercoverageenddate   | Wird immer leer sein.                                                                                                                     | Incentive Program-CRI                                        |
+| programufferinglevel           |                                                                                                                                          | Incentive Program-CRI                                        |
+| TenantID                       |                                                                                                                                          | Incentive-Programme                                             |
+| externalreferenceid            | Eindeutiger Bezeichner für das Programm                                                                                                        | Direct Pay-Programme (Incentive und Store)                      |
+| externalreferenceidlabel       | Eindeutige bezeichnerbezeichnung                                                                                                                  | Direct Pay-Programme (Incentive und Store)                      |
