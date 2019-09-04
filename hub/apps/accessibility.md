@@ -7,12 +7,12 @@ ms.localizationpriority: medium
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
 keywords: Barrierefreiheit in Windows 10, Barrierefreiheit, Barrierefreiheit, barrierefreie Win32-apps, Aufbau barer UWP-apps, Aufbau zugänglicher WPF-apps, Aufbau von zugänglichen WinForms-apps
-ms.openlocfilehash: bb82103c030c436655630a37678bbec11e588f61
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 63d9b321f71019c164fe4de238a618f2730b2052
+ms.sourcegitcommit: 81213db9de2c12400d2e4d176346b466ee0794c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867427"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70237788"
 ---
 # <a name="accessibility-in-windows-10"></a>Barrierefreiheit in Windows 10
 
@@ -25,94 +25,82 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 ## <a name="platform-specific-documentation"></a>Plattformspezifische Dokumentation
 
 :::row:::
-    :::column:::
-        ![Universal Windows Platform (UWP)](images/platform-uwp.png)
+   :::column:::
+      ![Universelle Windows-Plattform (UWP)](images/platform-uwp.png)
 
-        **Universal Windows Platform (UWP)**
+      **Universelle Windows-Plattform (UWP)**
 
-        Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      Entwickeln Sie barrierefreie apps und Tools auf der modernen Plattform für Windows 10-Anwendungen und-Spiele auf allen Windows-Geräten (einschließlich PCs, Smartphones, Xbox One, hololens usw.), und veröffentlichen Sie Sie auf dem Microsoft Store.
 
-        [Designing inclusive software](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
+      [Entwerfen von barrierefreier Software](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
 
-        [Developing inclusive Windows apps](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
+      [Entwickeln von barrierefreien Windows-Apps](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
 
-        [Accessibility testing](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
+      [Testen der Barrierefreiheit](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
 
-        [Accessibility in the Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
-    :::column-end:::
-    :::column:::
-        ![Win32 platform apps](images/platform-win32.png)
+      [Barrierefreiheit im Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+   :::column-end:::
+   :::column:::
+      ![Win32-Plattform-apps](images/platform-win32.png)
 
-        **Win32 platform**
+      **Win32-Plattform**
 
-        Develop accessible apps and tools on the original platform for C/C++ Windows applications.
+      Entwickeln Sie barrierefreie apps und Tools auf der ursprünglichen Plattform für CC++ /Windows-Anwendungen.
 
-        [What's new in Windows accessibility and automation](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
+      [Neues bei Windows-Barrierefreiheit und-Automatisierung](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
 
-        [Developing accessible applications for Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
+      [Entwickeln von zugänglichen Anwendungen für Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
 
-        [Developing accessible UI frameworks for Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [Entwickeln barrierefreier Benutzeroberflächen-Frameworks für Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
 
-        [Developing assistive technology for Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
+      [Entwickeln von Hilfstechnologien für Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
 
-        [Testing for accessibility](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [Testen auf Barrierefreiheit](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
 
-        [Legacy accessibility and automation technology - MSAA to UI Automation](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [Legacy-Barrierefreiheit und Automatisierungs Technologie-MSAA für die Benutzeroberflächen Automatisierung](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
 
-        [Windows Accessibility features](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
+      [Windows-Barrierefreiheits Funktionen](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
 
-        [Guidelines for designing accessible apps](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
-    :::column-end:::
+      [Richtlinien zum Entwerfen barrierefreier Apps](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
+   :::column-end:::
 :::row-end:::
 :::row:::
-    :::column:::
-        ![WPF platform](images/platform-wpf.png)
+   :::column:::
+      ![WPF-Plattform](images/platform-wpf.png)
 
-        **Windows Presentation Foundation (WPF)**
+      **Windows Presentation Foundation (WPF)**
 
-        Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
+      Entwickeln Sie barrierefreie apps und Tools auf der eingerichteten Plattform für verwaltete Windows-Anwendungen mit einem XAML-Benutzeroberflächen Modell und den .NET Framework.
 
-        [Accessibility Best Practices](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [Bewährte Methoden für die Barrierefreiheit](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
 
-        [UI Automation Fundamentals](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
+      [Grundlagen der Benutzeroberflächenautomatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
 
-        [UI Automation Providers for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
+      [Benutzeroberflächenautomatisierungs-Anbieter für verwalteten Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
 
-        [UI Automation Clients for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
+      [Benutzeroberflächenautomatisierungs-Clients für verwalteten Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
 
-        [UI Automation Control Patterns](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
+      [Steuerelement Muster für Benutzeroberflächen Automatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-        [UI Automation Text Pattern](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [Benutzeroberflächenautomatisierungs-Text Muster](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-        [UI Automation Control Types](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [Steuerelement Typen der Benutzeroberflächen Automatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
 
-        [UI Automation Specification and Community Promise](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
-        :::column-end:::
-    :::column:::
-        ![Windows Forms platform apps](images/platform-winforms.png)
+      [Benutzeroberflächenautomatisierungs-Spezifikation und Community Promise](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      :::column-end:::
+   :::column:::
+      ![Apps für Windows Forms Plattform](images/platform-winforms.png)
 
-        **Windows Forms (WinForms)**
+      **Windows Forms (WinForms)**
 
-        Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
+      Entwickeln Sie barrierefreie apps und Tools für verwaltete Windows-Anwendungen mit einem XAML-Benutzeroberflächen Modell und dem .NET Framework.
 
-        [Windows Forms Accessibility](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Windows Forms Barrierefreiheit](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-        [Creating an Accessible Windows Application](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [Erstellen einer zugänglichen Windows-Anwendung](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-        [Properties on Windows Forms Controls That Support Accessibility Guidelines](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [Eigenschaften für Windows Forms Steuerelemente, die Barrierefreiheits Richtlinien unterstützen](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-        [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
-    :::column-end:::
-<!--         
-    :::column:::
-![.NET platform](images/platform-dotnet.png)
-
-        ### .NET
-
-        Develop accessible apps and tools for managed Windows applications with the .NET Framework.
-    :::column-end:::
-    :::column:::
-
-    :::column-end:::
- -->    
+      [Bereitstellen von Barrierefreiheits Informationen für Steuerelemente in einem Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+   :::column-end:::
 :::row-end:::

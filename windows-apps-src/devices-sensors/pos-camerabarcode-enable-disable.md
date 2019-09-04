@@ -5,12 +5,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4b11d6a360f09a9600961a3e50e3dd6701bf46
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 8394f79e9581101d6def0f1568cb000ffdee5987
+ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714016"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243314"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>Enthält Informationen zum aktivieren oder deaktivieren der Standard-Software-Decoder, der mit im Lieferumfang von Windows enthalten ist
 
@@ -47,3 +47,9 @@ Windows Registry Editor Version 5.00
 
 > [!NOTE]
 > Der in Windows 10 integrierte Softwaredecoder stammt von [**Digimarc Corporation**](https://www.digimarc.com/).
+
+## <a name="see-also"></a>Siehe auch
+
+### <a name="samples"></a>Proben
+
+- [Beispiel für Barcode Scanner](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
