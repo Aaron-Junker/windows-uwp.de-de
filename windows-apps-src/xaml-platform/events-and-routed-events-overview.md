@@ -6,12 +6,12 @@ ms.date: 07/12/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9150fd34653e2beeeb8d8c1557cf9f77e95791e3
-ms.sourcegitcommit: e0ae346eadda864dcad1453cd1644668549e66e1
+ms.openlocfilehash: 0c5acc7d0d891785a7abd4f8976b0fb82bb3323b
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603441"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393627"
 ---
 # <a name="events-and-routed-events-overview"></a>Übersicht über Ereignisse und Routingereignisse
 
@@ -299,7 +299,7 @@ Beim Definieren von benutzerdefinierten Ereignissen hängen die Vorgehensweise b
 - Für C# und Visual Basic definieren Sie ein CLR-Ereignis. Sie können das .NET-Standardereignismuster verwenden, es sei denn, Sie verwenden benutzerdefinierte Accessoren (**add**/**remove**). Zusätzliche Tipps:
     - Für den Ereignishandler empfiehlt sich die Verwendung von [**System.EventHandler<TEventArgs>** ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1?redirectedfrom=MSDN), da die Übersetzung in den generischen Windows-Runtime-Ereignisdelegaten [**EventHandler<T>** ](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)integriert ist.
     - Basieren Sie Ihre Ereignisdatenklasse nicht auf [**System.EventArgs**](https://docs.microsoft.com/dotnet/api/system.eventargs?redirectedfrom=MSDN), da dann keine Übersetzung in die Windows-Runtime erfolgt. Verwenden Sie eine vorhandene Ereignisdatenklasse oder gar keine Basisklasse.
-    - Wenn Sie benutzerdefinierte Accessoren verwenden, lesen Sie [Benutzerdefinierte Ereignisse und Ereignis-Accessoren in Windows-Runtime-Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/hh972883(v=vs.140)).
+    - Wenn Sie benutzerdefinierte Accessoren verwenden, finden Sie weitere Informationen [unter benutzerdefinierte Ereignisse und Ereignisaccessoren in Windows-Runtime-Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/hh972883(v=vs.140)).
     - Wenn Ihnen das .NET-Standardereignismuster nicht bekannt ist, lesen Sie unter [Definieren von Ereignissen für benutzerdefinierte Silverlight-Klassen](https://docs.microsoft.com/previous-versions/windows/). Dieser Inhalt wurde zwar für Microsoft Silverlight verfasst, stellt aber dennoch einen hilfreichen Überblick über den Code und die Konzepte für das .NET-Standardereignismuster dar.
 - Für C++/CX lesen Sie [Ereignisse (C++/CX)](https://docs.microsoft.com/cpp/cppcx/events-c-cx).
     - Verwenden Sie auch für Ihre eigenen Verwendungen von benutzerdefinierten Ereignissen benannte Verweise. Verwenden Sie nicht Lambda für benutzerdefinierte Ereignisse, da dadurch u. U. ein Zirkelverweis erstellt wird.

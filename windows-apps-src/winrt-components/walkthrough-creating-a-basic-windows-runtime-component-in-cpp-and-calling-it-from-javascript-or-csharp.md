@@ -1,42 +1,43 @@
 ---
-title: Erstellen einer Komponente für Windows-Runtime in C++/CX und deren Aufruf über JavaScript oder C#
-description: In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie eine einfache Komponenten-DLL-Datei für Windows-Runtime erstellen, die von JavaScript, C# oder Visual Basic aufgerufen werden kann.
+title: Exemplarische Vorgehensweise zum C++Erstellen einer/CX-Windows-Runtime Komponente und zum Aufrufen dieser Komponente über JavaScript oderC#
+description: In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie eine grundlegende Windows-Runtime Komponenten-DLL erstellen C#, die von JavaScript, oder Visual Basic aufgerufen werden kann.
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bed6858998fe20a5dddf709cac1d2436f001c08
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b12dd09251d8d8a93869ff2f4318233d89fa0e89
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363197"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393651"
 ---
-# <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>Exemplarische Vorgehensweise: Erstellen einer Komponente für Windows-Runtime in C++/CX und deren Aufruf über JavaScript oder C#
-> [!NOTE]
-> In diesem Thema erhalten Sie Unterstützung bei der Verwaltung Ihrer C++/CX-Anwendung. Es wird jedoch empfohlen, dass Sie [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) für neue Anwendungen nutzen. C++/WinRT ist eine vollständig standardisierte, moderne C++17 Sprachprojektion für Windows-Runtime-(WinRT)-APIs, die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet. Informationen zum Erstellen einer Windows-Runtime-Komponente mithilfe C++ / WinRT, finden Sie unter [Erstellen von Ereignissen in C++ / WinRT](../cpp-and-winrt-apis/author-events.md).
+# <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Exemplarische Vorgehensweise zum C++Erstellen einer/CX-Windows-Runtime Komponente und zum Aufrufen dieser Komponente über JavaScript oderC#
 
-In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie eine einfache Komponenten-DLL-Datei für Windows-Runtime erstellen, die von JavaScript, C# oder Visual Basic aufgerufen werden kann. Bevor Sie mit dieser exemplarischen Vorgehensweise beginnen, stellen Sie sicher, dass Sie Konzepte wie die abstrakte binäre Schnittstelle (ABI), Verweisklassen und Visual C++-Komponentenerweiterungen kennen, die das Verwenden von Verweisklassen vereinfachen. Weitere Informationen finden Sie unter [Erstellen von Komponenten für Windows-Runtime in C++](creating-windows-runtime-components-in-cpp.md) und [Visual C++-Programmiersprachenreferenz (C++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
+> [!NOTE]
+> In diesem Thema erhalten Sie Unterstützung bei der Verwaltung Ihrer C++/CX-Anwendung. Es wird jedoch empfohlen, dass Sie [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) für neue Anwendungen nutzen. C++/WinRT ist eine vollständig standardisierte, moderne C++17 Sprachprojektion für Windows-Runtime-(WinRT)-APIs, die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet. Informationen zum Erstellen einer Windows-Runtime Komponente mithilfe C++von/WinRT finden Sie unter Erstellen von [Ereignissen C++in/WinRT](../cpp-and-winrt-apis/author-events.md).
+
+In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie eine grundlegende Windows-Runtime Komponenten-DLL erstellen C#, die von JavaScript, oder Visual Basic aufgerufen werden kann. Bevor Sie mit dieser exemplarischen Vorgehensweise beginnen, stellen Sie sicher, dass Sie Konzepte wie die abstrakte binäre Schnittstelle (ABI), Verweisklassen und Visual C++-Komponentenerweiterungen kennen, die das Verwenden von Verweisklassen vereinfachen. Weitere Informationen finden Sie unter [Windows-Runtime Komponenten mit C++/CX](creating-windows-runtime-components-in-cpp.md) und [Visual C++ Language Reference (C++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
 
 ## <a name="creating-the-c-component-dll"></a>Erstellen der C++-Komponenten-DLL-Datei
 In diesem Beispiel erstellen wir zunächst das Komponentenprojekt. Sie können aber auch das JavaScript-Projekt zuerst erstellen. Die Reihenfolge spielt keine Rolle.
 
 Beachten Sie, dass die Hauptklasse der Komponente Beispiele für Eigenschafts- und Methodendefinitionen sowie eine Ereignisdeklaration enthält. Diese werden nur aus Gründen der Anschaulichkeit bereitgestellt. Sie sind nicht erforderlich, und in diesem Beispiel ersetzen wir den gesamten generierten Code durch unseren eigenen Code.
 
-### <a name="to-create-the-c-component-project"></a>**Das C++-Komponentenprojekt erstellen**
+### <a name="to-create-the-c-component-project"></a>**So erstellen Sie C++ das Komponenten Projekt**
 1. Klicken Sie in der Visual Studio-Menüleiste auf **Datei, Neu, Projekt**.
 
 2. Erweitern Sie im Dialogfeld **Neues Projekt** im linken Bereich **Visual C++** , und wählen Sie dann den Knoten für universelle Windows-Apps aus.
 
-3. Wählen Sie im mittleren Bereich **Komponente für Windows-Runtime** und nennen Sie das Projekt WinRT\_CPP.
+3. Wählen Sie im mittleren Bereich **Windows-Runtime Komponente** aus, und benennen Sie das Projekt mit\_WinRT cpp.
 
-4. Klicken Sie auf die Schaltfläche **OK**.
+4. Klicken Sie auf die Schaltfläche **OK** .
 
-## <a name="to-add-an-activatable-class-to-the-component"></a>**Eine aktivierbare Klasse der Komponente hinzu**
+## <a name="to-add-an-activatable-class-to-the-component"></a>**So fügen Sie der Komponente eine aktivierbare Klasse hinzu**
 Eine aktivierbare Klasse kann vom Clientcode mithilfe eines **new**-Ausdrucks (**New** in Visual Basic oder **ref new** in C++) erstellt werden. In der Komponente können Sie sie als **public ref class sealed** deklarieren. Die Class1.h- und CPP-Dateien verfügen bereits über eine Verweisklasse. Sie können den Namen ändern, aber in diesem Beispiel verwenden wir den Standardnamen – Class1. Sie können zusätzliche Verweisklassen oder Standardklassen in der Komponente definieren, falls sie benötigt werden. Weitere Informationen zu Verweisklassen finden Sie unter [Typsystem (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
 
-Fügen Sie die folgenden \#include-Direktiven "Class1.h":
+Fügen Sie \#Class1. h diese include-Direktiven hinzu:
 
 ```cpp
 #include <collection.h>
@@ -421,7 +422,7 @@ function ButtonClear_Click() {
 }
 ```
 
-Fügen Sie Code zum Hinzufügen von Ereignis-Listenern durch Ersetzen des vorhandenen Aufrufs von „WinJS.UI.processAll“ in „app.onactivated“ in „default.js“ durch den folgenden Code hinzu, der die Ereignisregistrierung in einem „then“-Block implementiert. Eine ausführliche Erläuterung dieser, finden Sie unter [Erstellen einer "Hello, World"-app (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp).
+Fügen Sie Code zum Hinzufügen von Ereignis-Listenern durch Ersetzen des vorhandenen Aufrufs von „WinJS.UI.processAll“ in „app.onactivated“ in „default.js“ durch den folgenden Code hinzu, der die Ereignisregistrierung in einem „then“-Block implementiert. Eine ausführliche Erläuterung hierzu finden Sie unter [Erstellen einer "Hello, World"-app (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp).
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -479,7 +480,7 @@ Kopieren Sie den folgenden Code in das Grid-Element in „MainPage.xaml“.
 ```
 
 ## <a name="to-add-the-event-handlers-for-the-buttons"></a>So fügen Sie die Ereignishandler für die Schaltflächen hinzu
-Öffnen Sie die Datei „MainPage.xaml.cs“ im Projektmappen-Explorer. (Die Datei kann unter "MainPage.xaml" geschachtelt werden.) Hinzufügen einer using-Direktive für System.Text, und fügen Sie dann den Ereignishandler für die logarithmusberechnung in der Klasse MainPage hinzu.
+Öffnen Sie die Datei „MainPage.xaml.cs“ im Projektmappen-Explorer. (Die Datei ist möglicherweise unter "MainPage. XAML" enthalten.) Fügen Sie eine using-Direktive für "System. Text" hinzu, und fügen Sie dann den Ereignishandler für die Logarithmus Berechnung in der MainPage-Klasse hinzu.
 
 ```csharp
 private void Button1_Click_1(object sender, RoutedEventArgs e)
@@ -584,15 +585,15 @@ Wählen Sie das C#-Projekt oder das JavaScript-Projekt als Startprojekt aus, ind
 ## <a name="inspecting-your-component-in-object-browser-optional"></a>Untersuchen der Komponente im Objektkatalog (optional)
 Im Objektkatalog können Sie alle Windows-Runtime-Typen untersuchen, die in WINMD-Dateien definiert werden. Dazu zählen die Typen im Plattformnamespace und Standardnamespace. Da die Typen im „Platform::Collections“-Namespace aber in der Headerdatei „collections.h“ und nicht in einer WINMD-Datei definiert werden, werden sie nicht im Objektkatalog angezeigt.
 
-### <a name="to-inspect-a-component"></a>**Um eine Komponente zu überprüfen.**
+### <a name="to-inspect-a-component"></a>**So überprüfen Sie eine Komponente**
 1. Wählen Sie auf der Menüleiste **Ansicht, Objektkatalog** (STRG+ALT+J) aus.
 
-2. Erweitern Sie im linken Bereich des Objektkatalogs die WinRT\_CPP-Knoten, zeigen die Typen und Methoden, die in der Komponente definiert sind.
+2. Erweitern Sie im linken Bereich des Objektkatalog den Knoten WinRT\_cpp, um die Typen und Methoden anzuzeigen, die für die Komponente definiert sind.
 
 ## <a name="debugging-tips"></a>Tipps zum Debuggen
 Laden Sie für einen besseren Debugvorgang die Debuggingsymbole von den öffentlichen Microsoft-Symbolservern herunter:
 
-### <a name="to-download-debugging-symbols"></a>**Debugsymbole herunterladen**
+### <a name="to-download-debugging-symbols"></a>**So laden Sie Debugsymbole herunter**
 1. Wählen Sie auf der Menüleiste **Extras, Optionen** aus.
 
 2. Erweitern Sie im Dialogfeld **Optionen** die Option **Debuggen** , und wählen Sie **Symbole** aus.
@@ -610,4 +611,4 @@ Wenn der JavaScript-Code die öffentlichen Eigenschaften oder Methoden in der Ko
 Wenn Sie ein C++-Komponentenprojekt für Windows-Runtime aus einer Projektmappe entfernen, müssen Sie den Projektverweis auch aus dem JavaScript-Projekt manuell entfernen. Andernfalls werden nachfolgende Debug- oder Buildvorgänge verhindert. Bei Bedarf können Sie dann einen Assemblyverweis zur DLL-Datei hinzufügen.
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen von Windows-Runtime-Komponenten in C++ / CX](creating-windows-runtime-components-in-cpp.md)
+* [Windows-Runtime Komponenten mit C++/CX](creating-windows-runtime-components-in-cpp.md)

@@ -1,20 +1,20 @@
 ---
 title: Verwenden von Windows-Runtime-Objekten in einer Multithread-Umgebung | Microsoft Docs
-description: In diesem Artikel wird beschrieben, wie das .NET Framework Aufrufe von C#- und Visual Basic-Code auf Objekte verarbeitet, die von der Windows-Runtime oder von Komponenten für Windows-Runtime bereitgestellt werden.
+description: In diesem Artikel wird erläutert, wie die .NET Framework Aufrufe C# von und Visual Basic Code an Objekte behandelt, die vom Windows-Runtime oder von Windows-Runtime Komponenten bereitgestellt werden.
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: Windows 10, UWP, Timer, Threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 3afa1720ede9728e9cc25af434a431300faf26d6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4fc4f704d8e9f53282ab09dbc61bc5e625d00da9
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371208"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393530"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Verwenden von Windows-Runtime-Objekten in einer Multithread-Umgebung
-In diesem Artikel wird beschrieben, wie das .NET Framework Aufrufe von C#- und Visual Basic-Code auf Objekte verarbeitet, die von der Windows-Runtime oder von Komponenten für Windows-Runtime bereitgestellt werden.
+In diesem Artikel wird erläutert, wie die .NET Framework Aufrufe C# von und Visual Basic Code an Objekte behandelt, die vom Windows-Runtime oder von Windows-Runtime Komponenten bereitgestellt werden.
 
 Im .NET Framework können Sie standardmäßig ohne besondere Verarbeitung über mehrere Threads auf alle Objekte zugreifen. Sie benötigen lediglich einen Verweis auf das Objekt. Solche Objekte werden in der Windows-Runtime als *agil* bezeichnet. Die meisten Windows-Runtime-Klassen sind agil, einige jedoch nicht, und selbst agile Klassen erfordern möglicherweise eine besondere Verarbeitung.
 
@@ -163,4 +163,4 @@ Für Objekte, die im UI-Thread ausgeführt werden und Ausnahmen auslösen, wenn 
 ## <a name="see-also"></a>Siehe auch
 [C#-Handbuch](/dotnet/csharp/)
 
-[Leitfaden für Visual Basic](/dotnet/visual-basic/)
+[Visual Basic Handbuch](/dotnet/visual-basic/)

@@ -6,16 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b9fcdff5b8648822bb5cc22771daded23f6d52a5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4af684fb8352cef154f83ad30723ff3f9bd6aa42
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322229"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393698"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>Verteilen einer verwalteten Komponente für Windows-Runtime
-
-
 
 Sie können Ihre Komponente für Windows-Runtime durch Kopieren der Dateien verteilen. Wenn Ihre Komponente aus vielen Dateien besteht, kann die Installation für Ihre Benutzer aber sehr mühsam sein. Außerdem verursachen Fehler beim Platzieren der Dateien oder beim Festlegen von Verweisen möglicherweise Probleme. Sie können eine komplexe Komponente als Visual Studio-Erweiterungs-SDK packen, um die Installation und Verwendung einfacher zu gestalten. Benutzer müssen nur einen Verweis für das gesamte Paket festlegen. Benutzer können Ihre Komponente mit dem Dialogfeld **Erweiterungen und Updates** problemlos suchen und installieren, wie in der MSDN Library unter [Suchen und Verwenden von Visual Studio-Erweiterungen](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2015) beschrieben.
 
@@ -28,7 +26,7 @@ company.product.purpose.extension
 For example: Microsoft.Cpp.Build.dll
 ```
 
-Ihre Binärdateien werden in App-Paketen möglicherweise mit Binärdateien von anderen Entwicklern installiert. Finden Sie unter "Erweiterungs-SDKs" in [Vorgehensweise: Erstellen eines Software Development Kits](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015), in der MSDN Library.
+Ihre Binärdateien werden in App-Paketen möglicherweise mit Binärdateien von anderen Entwicklern installiert. Weitere Informationen finden Sie unter "Erweiterungs [-sdche" in Gewusst wie: Erstellen Sie ein Software Development](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015)Kit in der MSDN Library.
 
 Die Entscheidung darüber, wie Sie Ihre Komponente verteilen, hängt von Komplexität der Komponente ab. Sie sollten ein Erweiterungs-SDK oder einen ähnlichen Paket-Manager verwenden, wenn:
 
@@ -39,22 +37,22 @@ Die Entscheidung darüber, wie Sie Ihre Komponente verteilen, hängt von Komplex
 
 Ein Erweiterungs-SDK ist besonders nützlich, wenn mindestens einer der oben genannten Punkte zutrifft.
 
-> **Beachten Sie**  bei komplexen Komponenten bietet das NuGet-paketverwaltungssystem eine open-Source-Alternative zu Erweiterungs-SDKs. Wie mit Erweiterungs-SDKs können Sie mit NuGet Pakete erstellen, die die Installation komplexer Komponenten vereinfachen. Ein Vergleich von NuGet-Paketen und Visual Studio-Erweiterungs-SDKs finden Sie unter [Hinzufügen von Referenzen mithilfe von NuGet im Vergleich zu einer SDK-Erweiterung](https://docs.microsoft.com/visualstudio/ide/adding-references-using-nuget-versus-an-extension-sdk?view=vs-2015) in der MSDN Library.
+> **Hinweis für komplexe**Komponenten bietet das nuget-Paketverwaltungssystem eine Open Source-Alternative zu Erweiterungs-sdkern.   Wie mit Erweiterungs-SDKs können Sie mit NuGet Pakete erstellen, die die Installation komplexer Komponenten vereinfachen. Ein Vergleich von NuGet-Paketen und Visual Studio-Erweiterungs-SDKs finden Sie unter [Hinzufügen von Referenzen mithilfe von NuGet im Vergleich zu einer SDK-Erweiterung](https://docs.microsoft.com/visualstudio/ide/adding-references-using-nuget-versus-an-extension-sdk?view=vs-2015) in der MSDN Library.
 
 ## <a name="distribution-by-file-copy"></a>Verteilung durch Kopieren von Dateien
 
 Wenn Ihre Komponente aus einer einzigen WINMD-Datei oder einer WINMD-Datei und einer Ressourcenindexdatei (PRI) besteht, können Sie einfach die WINMD-Datei so bereitstellen, dass Benutzer sie kopieren können. Benutzer können die Datei an einer beliebige Position in ein Projekt einfügen, im Dialogfeld **Vorhandenes Element hinzufügen** die WINMD-Datei dem Projekt hinzufügen und dann mit dem Dialogfeld „Verweis-Manager” einen Verweis erstellen. Wenn Sie eine PRI-Datei oder eine XML-Datei einbeziehen, sollten Sie die Benutzer anweisen, diese Dateien in dasselbe Verzeichnis wie die WINMD-Datei zu kopieren.
 
-> **Beachten Sie**  Visual Studio immer erzeugt eine PRI-Datei bei der Erstellung Ihrer Windows-Runtime-Komponente, auch wenn Ihr Projekt keine Ressourcen enthält. Wenn Sie eine Test-app für Ihre Komponente verfügen, können Sie bestimmen, ob es sich bei die PRI-Datei verwendet wird, im Inhalt des app-Pakets im MS-\\Debuggen\\Ordner "AppX". Wenn die PRI-Datei Ihrer Komponente dort nicht angezeigt wird, müssen Sie sie nicht verteilen. Sie können auch mit dem Tool [MakePRI.exe](https://docs.microsoft.com/previous-versions/windows/apps/jj552945(v=win.10)) die Ressourcendatei aus Ihrem Komponentenprojekt für Windows-Runtime ausgeben. Geben Sie z. B. im Eingabeaufforderungsfenster von Visual Studio Folgendes ein: makepri dump /if MyComponent.pri /of MyComponent.pri.xml. Weitere Informationen zu PRI-Dateien finden Sie unter [Ressourcenverwaltungssystem (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)).
+> **Beachten Sie,** dass Visual Studio immer eine PRI-Datei erstellt, wenn Sie die Windows-Runtime Komponente erstellen, auch wenn Ihr Projekt keine Ressourcen enthält.   Wenn Sie über eine Test-App für die Komponente verfügen, können Sie bestimmen, ob die PRI-Datei verwendet wird, indem Sie den Inhalt des App-\\Pakets\\im Ordner "bin debug AppX" untersuchen. Wenn die PRI-Datei Ihrer Komponente dort nicht angezeigt wird, müssen Sie sie nicht verteilen. Sie können auch mit dem Tool [MakePRI.exe](https://docs.microsoft.com/previous-versions/windows/apps/jj552945(v=win.10)) die Ressourcendatei aus Ihrem Komponentenprojekt für Windows-Runtime ausgeben. Geben Sie z. B. im Eingabeaufforderungsfenster von Visual Studio Folgendes ein: makepri dump /if MyComponent.pri /of MyComponent.pri.xml. Weitere Informationen zu PRI-Dateien finden Sie unter [Ressourcenverwaltungssystem (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)).
 
 ## <a name="distribution-by-extension-sdk"></a>Verteilung durch Erweiterungs-SDK
 
 Eine komplexe Komponente enthält in der Regel Windows-Ressourcen, aber lesen Sie den Hinweis zum Erkennen von leeren PRI-Dateien im vorherigen Abschnitt.
 
-**Erstellen Sie ein Erweiterungs-SDK**
+**So erstellen Sie ein Erweiterungs-SDK**
 
 1.  Überprüfen Sie, ob das Visual Studio-SDK installiert ist. Sie können das Visual Studio-SDK von der Seite [Visual Studio-Downloads](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs) herunterladen.
-2.  Erstellen eines neues Projekts mit der VSIX-Projektvorlage Sie finden die Vorlage in der Kategorie „Erweiterbarkeit” unter Visual C# oder Visual Basic. Diese Vorlage wird als Teil des Visual Studio-SDK installiert. ([Exemplarische Vorgehensweise: Erstellen einer SDK mit C# oder Visual Basic](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-csharp-or-visual-basic?view=vs-2015) oder [Exemplarische Vorgehensweise: Erstellen eines SDK mit C++](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-cpp?view=vs-2015), wird die Verwendung dieser Vorlage in einem sehr einfachen Szenario veranschaulicht. )
+2.  Erstellen eines neues Projekts mit der VSIX-Projektvorlage Sie finden die Vorlage in der Kategorie „Erweiterbarkeit” unter Visual C# oder Visual Basic. Diese Vorlage wird als Teil des Visual Studio-SDK installiert. ([Exemplarische Vorgehensweise: Erstellen eines SDK mithilfe C# von oder](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-csharp-or-visual-basic?view=vs-2015) Visual Basic [oder Exemplarische Vorgehensweise: Wenn Sie ein SDK C++ ](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-cpp?view=vs-2015)mithilfe von erstellen, wird die Verwendung dieser Vorlage in einem sehr einfachen Szenario veranschaulicht. )
 3.  Legen Sie die Ordnerstruktur für Ihr SDK fest. Die Ordnerstruktur beginnt auf der Stammebene des VSIX-Projekts mit den Ordnern **References**, **Redist** und **DesignTime**.
 
     -   **References** ist der Speicherort für Binärdateien, die Ihre Benutzer für die Programmierung verwenden können. Das Erweiterungs-SDK erstellt in den Visual Studio-Projekten Ihrer Benutzer Verweise auf diese Dateien.
@@ -63,15 +61,15 @@ Eine komplexe Komponente enthält in der Regel Windows-Ressourcen, aber lesen Si
 
     In jedem dieser Ordner können Sie Konfigurationsordner erstellen. Die zulässigen Namen sind „debug”, „retail” und „CommonConfiguration”. Der Ordner „CommonConfiguration” ist für Dateien vorgesehen, die für „retail”- und „debug”-Builds identisch sind. Wenn Sie nur „retail”-Builds Ihrer Komponente verteilen, können Sie alles in „CommonConfiguration” einfügen und die beiden anderen Ordner weglassen.
 
-    In jedem Konfigurationsordner können Sie Architekturordner für plattformspezifische Dateien bereitstellen. Wenn Sie dieselben Dateien für alle Plattformen verwenden, können Sie einen einzelnen Ordner mit dem Namen „neutral” vorsehen. Finden Sie Details der Ordnerstruktur, einschließlich weiterer architekturordnernamen, im [Vorgehensweise: Erstellen eines Software Development Kits](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015), in der MSDN Library. (Dieser Artikel behandelt Plattform-SDKs und Erweiterungs-SDKs. Reduzieren Sie den Abschnitt über Plattform-SDKs, um Missverständnisse zu vermeiden. )
+    In jedem Konfigurationsordner können Sie Architekturordner für plattformspezifische Dateien bereitstellen. Wenn Sie dieselben Dateien für alle Plattformen verwenden, können Sie einen einzelnen Ordner mit dem Namen „neutral” vorsehen. Details zur Ordnerstruktur, einschließlich weiterer Architektur Ordnernamen, finden Sie unter [Gewusst wie: Erstellen Sie ein Software Development](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015)Kit in der MSDN Library. (Dieser Artikel behandelt Plattform-SDKs und Erweiterungs-SDKs. Reduzieren Sie den Abschnitt über Plattform-SDKs, um Missverständnisse zu vermeiden. )
 
-4.  Erstellen Sie eine SDK-Manifestdatei. Das Manifest enthält den Namen, die Version, die Architekturen, die Ihr SDK unterstützt, .NET Framework-Versionen und Informationen darüber, wie Visual Studio Ihr SDK verwendet. Sie finden ein Beispiel in "und" Details [Vorgehensweise: Erstellen eines Software Development Kits](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015).
+4.  Erstellen Sie eine SDK-Manifestdatei. Das Manifest gibt den Namen und die Versionsinformationen, die von Ihrem SDK unterstützten Architekturen, .NET-Versionen und andere Informationen über die Art und Weise an, wie Visual Studio Ihr SDK verwendet. Ausführliche Informationen und ein Beispiel finden Sie unter [Gewusst wie: Erstellen Sie ein Software Development](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015)Kit.
 5.  Erstellen und verteilen Sie das Erweiterungs-SDK. Ausführliche Informationen einschließlich Lokalisierung und Signierung des VSIX-Pakets finden Sie unter „VSIX Deployment” in der MSDN Library.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen eines Software Development Kits](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015)
-* [NuGet-paketverwaltungssystem](https://github.com/NuGet/Home)
-* [Ressourcenverwaltungssystem (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
+* [Nuget-Paketverwaltungssystem](https://github.com/NuGet/Home)
+* [Ressourcen Verwaltungs System (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
 * [Suchen und Verwenden von Visual Studio-Erweiterungen](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2015)
-* [MakePRI.exe-Befehlsoptionen](https://docs.microsoft.com/previous-versions/windows/apps/jj552945(v=win.10))
+* [Makepri. exe-Befehlsoptionen](https://docs.microsoft.com/previous-versions/windows/apps/jj552945(v=win.10))

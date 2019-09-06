@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Spiele, Entwickeln von Spielen
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a4e151851ef663055a4199b7ec9b8c1b168b578
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: db510c1dc084fd1af986d618716854ed09cfc618
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682608"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393602"
 ---
 # <a name="windows-10-game-development-guide"></a>Handbuch zur Entwicklung von Spielen unter Windows 10
 
@@ -560,9 +560,9 @@ Bei Windows-JavaScript-Apps kann auf einfache und intuitive Weise auf die leistu
 </table>
 
 
-#### <a name="use-windows-runtime-components-to-combine-languages"></a>Kombinieren von Programmiersprachen mithilfe von Komponenten für Windows-Runtime
+#### <a name="use-windows-runtime-components-to-combine-languages"></a>Verwenden von Windows-Runtime-Komponenten zum Kombinieren von Sprachen
 
-Mit der universellen Windows-Plattform ist es leicht möglich, Komponenten zu kombinieren, die in unterschiedlichen Programmiersprachen geschrieben wurden. Erstellen Sie Komponenten für Windows-Runtime in C++, C# oder Visual Basic, und nutzen Sie diese dann per JavaScript, C#, C++ oder Visual Basic. Dies ist eine hervorragende Möglichkeit, wenn Sie Teile des Spiels in der Sprache Ihrer Wahl programmieren möchten. Über Komponenten können Sie außerdem externe Bibliotheken nutzen, die nur in einer bestimmten Sprache verfügbar sind, oder auch älteren Code, den Sie bereits geschrieben haben.
+Mit der universellen Windows-Plattform ist es leicht möglich, Komponenten zu kombinieren, die in unterschiedlichen Programmiersprachen geschrieben wurden. Erstellen Sie Windows-Runtime Komponenten C++in C#-,-oder-Visual Basic, und rufen Sie Sie dann C#über C++JavaScript,, oder Visual Basic auf. Dies ist eine hervorragende Möglichkeit, wenn Sie Teile des Spiels in der Sprache Ihrer Wahl programmieren möchten. Über Komponenten können Sie außerdem externe Bibliotheken nutzen, die nur in einer bestimmten Sprache verfügbar sind, oder auch älteren Code, den Sie bereits geschrieben haben.
 
 <table>
     <colgroup>
@@ -570,8 +570,8 @@ Mit der universellen Windows-Plattform ist es leicht möglich, Komponenten zu ko
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>So wird's gemacht: Erstellen von Komponenten für Windows-Runtime</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">Erstellen von Windows-Runtime-Komponenten</a></td>
+        <td>Erstellen von Windows-Runtime-Komponenten</td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">Windows-Runtime Komponenten mit C++/CX</a></td>
     </tr>
 </table>
 

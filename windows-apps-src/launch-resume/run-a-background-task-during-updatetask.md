@@ -3,14 +3,14 @@ title: Ausführen einer Hintergrundaufgabe beim Aktualisieren der UWP-App
 description: Hier erfahren Sie, wie Sie eine Hintergrundaufgabe erstellen, die ausgeführt wird, wenn die Store-App Ihrer Universellen Windows-Plattform (UWP) aktualisiert wird.
 ms.date: 04/21/2017
 ms.topic: article
-keywords: Windows 10 "," Uwp "," Update "," Hintergrundaufgabe "," Updatetask "," Hintergrundaufgabe
+keywords: Windows 10, UWP, Update, Hintergrundaufgabe, Updatetask, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: fa5420b14d3d73f370031eed917e0e7c367c41c7
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 15406e52eeceb579f2add783c74a1011074c69b7
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820958"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393548"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Ausführen einer Hintergrundaufgabe beim Aktualisieren der UWP-App
 
@@ -20,11 +20,11 @@ The Hintergrundaufgabe „Update-Aufgabe“ wird vom Betriebssystem aufgerufen, 
 
 Die Update-Aufgabe unterscheidet sich vom Starten einer Hintergrundaufgabe mit dem [ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)-Auslöser, da Ihre App in diesem Fall mindestens einmal ausgeführt werden muss, bevor sie aktualisiert wird, um die Hintergrundaufgabe zu registrieren, die durch den **ServicingComplete**-Auslöser aktiviert wird.  Die Update-Aufgabe wird nicht registriert, und daher wird bei einer App, die noch nicht ausgeführt wurde, die aber aktualisiert wurde, dennoch die Update-Aufgabe ausgelöst.
 
-## <a name="step-1-create-the-background-task-class"></a>Schritt 1: Erstellen Sie die Hintergrund-Task-Klasse
+## <a name="step-1-create-the-background-task-class"></a>Schritt 1: Erstellen der Hintergrundaufgaben Klasse
 
 Wie bei anderen Arten von Hintergrundaufgaben implementieren Sie die Hintergrundaufgabe „Update-Aufgabe“ als eine Komponente für Windows-Runtime. Befolgen Sie zum Erstellen dieser Komponente die Schritte im Abschnitt **Erstellen der Hintergrundaufgabenklasse** im Artikel [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task). Die Schritte sind folgende:
 
-- Hinzufügen einer Komponente für Windows-Runtime zu Ihrer Lösung
+- Fügen Sie der Projekt Mappe ein Windows-Runtime Komponenten Projekt hinzu.
 - Erstellen einer Referenz von einer App zur Komponente
 - Erstellen einer öffentlichen, versiegelten Klasse in der Komponente, die [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) implementiert.
 - Implementieren der [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)-Methode, die den erforderlichen Einstiegspunkt darstellt, der aufgerufen wird, wenn die Update-Aufgabe ausgeführt wird. Wenn Sie beabsichtigen, von Ihrer Hintergrundaufgabe asynchrone Aufrufe auszuführen, finden Sie unter [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) Erläuterungen dazu, wie Sie in Ihrer **Run**-Methode eine Verzögerung verwenden.
@@ -48,7 +48,7 @@ namespace BackgroundTasks
 }
 ```
 
-## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>Schritt 2: Die Hintergrundaufgabe im Paketmanifest deklarieren
+## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>Schritt 2: Deklarieren Sie Ihre Hintergrundaufgabe im Paket Manifest.
 
 Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste auf die Datei **Package.appxmanifest**, und klicken Sie auf **Code anzeigen**, um das Paketmanifest anzuzeigen. Fügen Sie den folgenden `<Extensions>`-XML-Code hinzu, um Ihre Update-Aufgabe zu deklarieren:
 
@@ -70,7 +70,7 @@ Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste au
 
 Stellen Sie beim obigen XML-Code sicher, dass das `EntryPoint`-Attribut auf den namespace.class-Namen Ihrer Update-Klassenaufgabe festgelegt ist. Beim Namen wird Groß- und Kleinschreibung beachtet.
 
-## <a name="step-3-debugtest-your-update-task"></a>Schritt 3: Debuggen/Test die Update-Aufgabe
+## <a name="step-3-debugtest-your-update-task"></a>Schritt 3: Debuggen/Testen der Update Aufgabe
 
 Stellen Sie sicher, dass Sie Ihre App auf Ihrem Computer bereitgestellt haben, sodass etwas aktualisiert werden kann.
 
@@ -86,12 +86,12 @@ Um sicherzustellen, dass die UpdateTask ausgelöst wird, erhöhen Sie als Nächs
 
 ![Version aktualisieren](images/bump-version.png)
 
-Nun in Visual Studio-2019 beim Drücken von F5, Ihre app aktualisiert werden und das System wird die Komponente UpdateTask im Hintergrund aktivieren. Der Debugger wird automatisch an den Hintergrundprozess angehängt. Der Haltepunkt wird erreicht, und Sie können Ihre Update-Code-Logik durchlaufen.
+Wenn Sie jetzt F5 drücken, wird Ihre APP in Visual Studio 2019 aktualisiert, und das System aktiviert die Updatetask-Komponente im Hintergrund. Der Debugger wird automatisch an den Hintergrundprozess angehängt. Der Haltepunkt wird erreicht, und Sie können Ihre Update-Code-Logik durchlaufen.
 
 Wenn die Hintergrundaufgabe abgeschlossen ist, können Sie in der gleichen Debug-Sitzung über das Windows-Startmenü die Vordergrund-App starten. Der Debugger wird wieder automatisch angehängt, diesmal an den Vordergrundprozess, und Sie können die Logik Ihrer App durchlaufen.
 
 > [!NOTE]
-> Visual Studio 2015-Benutzer: Die oben genannten Schritte gelten für Visual Studio 2017 oder Visual Studio-2019. Wenn Sie Visual Studio 2015 verwenden, können Sie dieselben Techniken zum Auslösen und Tasten der UpdateTask verwenden, wobei Visual Studio aber nicht daran angefügt wird. Alternativ können Sie in VS 2015 einen [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) einrichten, der die UpdateTask als Einstiegspunkt festlegt, und die Ausführung direkt in der Vordergrund-App auslösen.
+> Visual Studio 2015-Benutzer: Die oben aufgeführten Schritte gelten für Visual Studio 2017 oder Visual Studio 2019. Wenn Sie Visual Studio 2015 verwenden, können Sie dieselben Techniken zum Auslösen und Tasten der UpdateTask verwenden, wobei Visual Studio aber nicht daran angefügt wird. Alternativ können Sie in VS 2015 einen [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) einrichten, der die UpdateTask als Einstiegspunkt festlegt, und die Ausführung direkt in der Vordergrund-App auslösen.
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -1,6 +1,6 @@
 ---
-title: Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic
-description: Ab .NET Framework 4.5 können Sie mit verwaltetem Code eigene Windows-Runtime-Typen erstellen, die in einer Komponente für Windows-Runtime gepackt sind.
+title: Windows-Runtime Komponenten mit C# und Visual Basic
+description: Ab .NET 4,5 können Sie verwalteten Code verwenden, um eigene Windows-Runtime Typen zu erstellen, die in einer Windows-Runtime Komponente verpackt sind.
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ms.date: 12/04/2018
 ms.topic: article
@@ -9,43 +9,44 @@ dev_langs:
 - vb
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a20f8e85927015d6aa69dbbf4381cb2d7daafc36
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 351d59cbecd0941cdc6218d02672b2a679cf3fce
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372031"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393729"
 ---
-# <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic
-Ab .NET Framework 4.5, können Sie verwalteten Code verwenden, um Ihre eigenen Windows-Runtime-Typen zu erstellen und Packen Sie sie in einer Windows-Runtime-Komponente. Sie können Ihre Komponente verwenden, in apps für universelle Windows-Plattform (UWP), die in C++, JavaScript, Visual Basic geschrieben werden oder C#. In diesem Thema werden die Regeln zum Erstellen einer Komponente und einige Aspekte der .NET Framework-Unterstützung für die Windows-Runtime erläutert. Im Allgemeinen ist diese Unterstützung allen .NET Framework-Programmierern klar. Wenn Sie aber eine Komponente erstellen, die mit JavaScript oder C++ verwendet werden soll, müssen Sie auf die Unterschiede bei der Unterstützung der Windows-Runtime durch diese Sprachen achten.
+# <a name="windows-runtime-components-with-c-and-visual-basic"></a>Windows-Runtime Komponenten mit C# und Visual Basic
 
-Wenn Sie eine Komponente für die Verwendung nur in UWP-apps erstellen, die in Visual Basic geschrieben werden oder C#, und die Komponente enthält keine UWP-Steuerelemente, und klicken Sie dann mithilfe von Onsider der **Klassenbibliothek** Vorlage anstelle von der **Windows Runtime-Komponente** in Microsoft Visual Studio-Projektvorlage. Eine einfache Klassenbibliothek weist weniger Einschränkungen auf.
+Sie können verwalteten Code verwenden, um eigene Windows-Runtime Typen zu erstellen und Sie in einer Windows-Runtime Komponente zu verpacken. Sie können Ihre Komponente in universelle Windows-Plattform-Apps (UWP) verwenden, die in C++, JavaScript, Visual Basic oder C#geschrieben sind. In diesem Thema werden die Regeln zum Erstellen einer-Komponente beschrieben und einige Aspekte der .NET-Unterstützung für die Windows-Runtime erläutert. Diese Unterstützung ist im Allgemeinen für den .NET-Programmierer transparent. Wenn Sie aber eine Komponente erstellen, die mit JavaScript oder C++ verwendet werden soll, müssen Sie auf die Unterschiede bei der Unterstützung der Windows-Runtime durch diese Sprachen achten.
 
-## <a name="declaring-types-in-windows-runtime-components"></a>Deklarieren von Typen in Komponenten für Windows-Runtime
+Wenn Sie eine Komponente nur für UWP-Apps erstellen, die in Visual Basic oder C#geschrieben sind, und die Komponente keine UWP-Steuerelemente enthält, verwendet onsider die **Klassen Bibliotheks** Vorlage anstelle des **Windows-Runtime Component** -Projekts. Vorlage in Microsoft Visual Studio. Eine einfache Klassenbibliothek weist weniger Einschränkungen auf.
 
-Intern können die Windows-Runtime-Typen in Ihrer Komponente alle .NET Framework-Funktionalitäten verwenden, die in einer UWP-app zulässig ist. Weitere Informationen finden Sie unter [.NET für UWP-apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0).
+## <a name="declaring-types-in-windows-runtime-components"></a>Deklarieren von Typen in Windows-Runtime Komponenten
 
-Extern können die Member Ihrer Typen verfügbar machen nur über die Windows-Runtime-Typen für ihre Parameter und Rückgabewerte. Die folgende Liste beschreibt die Einschränkungen für .NET Framework-Typen, die von einer Windows-Runtime-Komponente verfügbar gemacht werden.
+Intern können die Windows-Runtime Typen in der Komponente beliebige .NET-Funktionen verwenden, die in einer UWP-App zulässig sind. Weitere Informationen finden Sie unter [.net für UWP-apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0).
 
-- Die Felder, Parameter und Rückgabewerte aller öffentlichen Typen und Member in der Komponente müssen Windows-Runtime-Typen sein. Diese Einschränkung gilt auch für die Windows-Runtime-Typen, die Sie erstellen und die Typen an, die von der Windows-Runtime selbst bereitgestellt werden. Außerdem trifft sie auf einige .NET Framework-Typen zu. Die Aufnahme dieser Typen ist Teil der Unterstützung der .NET Framework stellt die normale Verwendung der Windows-Runtime in verwaltetem Code&mdash;Code bekannte .NET Framework-Typen anstelle der zugrunde liegenden Windows-Runtime-Typen zu verwenden scheint. Beispielsweise können Sie .NET Framework-primitive Typen wie z. B. **Int32** und **doppelte**, bestimmte grundlagentypen wie **DateTimeOffset** und **Uri** , sowie einige häufig verwendete generische Schnittstellentypen wie z. B. **"IEnumerable"&lt;T&gt;**  (IEnumerable (Of T) in Visual Basic) und **IDictionary&lt; TKey, TValue&gt;** . Beachten Sie, dass die Typargumente dieser generischen Typen mit Windows-Runtime-Typen sein müssen. Dies wird in den Abschnitten erläutert [übergeben von Windows-Runtime-Typen an verwalteten Code](#passing-windows-runtime-types-to-managed-code) und [übergeben von verwalteten Typen an Windows-Runtime](#passing-managed-types-to-the-windows-runtime)weiter unten in diesem Thema.
+Extern können die Member ihrer Typen nur Windows-Runtime Typen für Ihre Parameter und Rückgabewerte verfügbar machen. In der folgenden Liste werden die Einschränkungen für .NET-Typen beschrieben, die von einer Windows-Runtime Komponente verfügbar gemacht werden.
 
-- Öffentliche Klassen und Schnittstellen können Methoden, Eigenschaften und Ereignisse enthalten. Sie können Delegaten für Ereignisse zu deklarieren, oder die **EventHandler&lt;T&gt;**  delegieren. Eine öffentliche Klasse oder Schnittstelle kann nicht:
+- Die Felder, Parameter und Rückgabewerte aller öffentlichen Typen und Member in der Komponente müssen Windows-Runtime-Typen sein. Diese Einschränkung schließt die Windows-Runtime Typen ein, die Sie erstellen, sowie die Typen, die von der Windows-Runtime selbst bereitgestellt werden. Es enthält auch eine Reihe von .NET-Typen. Die Aufnahme dieser Typen ist Teil der Unterstützung, die .net bereitstellt, um die natürliche Verwendung der Windows-Runtime in verwaltetem&mdash;Code zu ermöglichen. Ihr Code scheint vertraute .NET-Typen anstelle der zugrunde liegenden Windows-Runtime Typen zu verwenden. Sie können z. b. die primitiven .NET-Typen, wie z. b. **Int32** und **Double**, bestimmte grundlegende Typen wie **DateTimeOffset** und **URI**und einige häufig verwendete generische Schnittstellentypen wie **&lt;IEnumerable Tverwenden.&gt;** (IEnumerable (of T) in Visual Basic) und **IDictionary&lt;TKey, TValue&gt;** . Beachten Sie, dass die Typargumente dieser generischen Typen Windows-Runtime Typen sein müssen. Dies wird in den Abschnitten Weiterleiten von [Windows-Runtime Typen an verwalteten Code](#passing-windows-runtime-types-to-managed-code) und [übergeben von verwalteten Typen an den Windows-Runtime](#passing-managed-types-to-the-windows-runtime)weiter unten in diesem Thema erläutert.
+
+- Öffentliche Klassen und Schnittstellen können Methoden, Eigenschaften und Ereignisse enthalten. Sie können Delegaten für Ihre Ereignisse deklarieren oder den **EventHandler&lt;T&gt;**  -Delegaten verwenden. Eine öffentliche Klasse oder Schnittstelle kann nicht folgende Aktionen ausführen:
     - generisch sein.
-    - Implementieren einer Schnittstelle, die nicht auf einem Windows-Runtime-Schnittstelle ist (jedoch Sie erstellen Ihre eigenen Windows-Runtime-Schnittstellen und diese implementieren).
-    - Ableiten von Typen, die nicht in der Windows-Runtime, z. B. **"System.Exception"** und **System.EventArgs**.
+    - Implementieren Sie eine Schnittstelle, bei der es sich nicht um eine Windows-Runtime-Schnittstelle handelt (Sie können jedoch eigene Windows-Runtime Schnittstellen erstellen und implementieren).
+    - Leiten Sie von Typen ab, die sich nicht im Windows-Runtime befinden, wie z. b **. System. Exception** und **System. EventArgs**.
 
 - Alle öffentliche Typen müssen über einen Stammnamespace verfügen, der mit dem Assemblynamen übereinstimmt, und der Assemblyname darf nicht mit „Windows” beginnen.
 
-    > **Tipp**. Standardmäßig haben Visual Studio-Projekte für Namespacenamen, die Namen der Assembly übereinstimmen. In Visual Basic wird die Namespace-Anweisung für diesen Standardnamespace nicht im Code angezeigt.
+    > **Tipp**: Standardmäßig verfügen Visual Studio-Projekte über Namespace Namen, die mit dem Assemblynamen identisch sind. In Visual Basic wird die Namespace-Anweisung für diesen Standardnamespace nicht im Code angezeigt.
 
 - Öffentliche Strukturen können nur öffentliche Felder als Member enthalten, und diese Felder müssen Werttypen oder Zeichenfolgen sein.
-- Öffentliche Klassen müssen **versiegelt** (**NotInheritable** in Visual Basic) sein. Erfordert das Programmiermodell Polymorphie, können Sie eine öffentliche Schnittstelle erstellen und implementieren diese Schnittstelle für die Klassen, die polymorph sein müssen.
+- Öffentliche Klassen müssen **versiegelt** (**NotInheritable** in Visual Basic) sein. Wenn das Programmiermodell Polymorphie erfordert, können Sie eine öffentliche Schnittstelle erstellen und diese Schnittstelle in den Klassen implementieren, die polymorph sein müssen.
 
 ## <a name="debugging-your-component"></a>Debuggen der Komponente
 
-Wenn sowohl Ihre UWP-app und Ihre Komponente mit verwaltetem Code basieren, können Sie beide gleichzeitig Debuggen.
+Wenn sowohl Ihre UWP-App als auch die Komponente mit verwaltetem Code erstellt werden, können Sie beide gleichzeitig Debuggen.
 
-Wenn Sie Ihre Komponente als Teil einer UWP-app mit C++ testen, können Sie verwalteten und systemeigenen Code gleichzeitig Debuggen. Die Vorgabe ist nur systemeigener Code.
+Wenn Sie die Komponente als Teil einer UWP-App mit C++testen, können Sie verwalteten und nativen Code gleichzeitig Debuggen. Die Vorgabe ist nur systemeigener Code.
 
 ## <a name="to-debug-both-native-c-code-and-managed-code"></a>So debuggen Sie systemeigenen C++-Code und verwalteten Code
 1.  Öffnen Sie das Kontextmenü für das Visual C++-Projekt, und wählen Sie **Eigenschaften** aus.
@@ -53,7 +54,7 @@ Wenn Sie Ihre Komponente als Teil einer UWP-app mit C++ testen, können Sie verw
 3.  Wählen Sie **Debuggertyp** aus, und ändern Sie dann in der Dropdownliste **Nur systemeigen** in **Gemischt (verwaltet und systemeigen)** . Klicken Sie auf **OK**.
 4.  Legen Sie Haltepunkte im systemeigenen und verwalteten Code fest.
 
-Wenn Sie Ihre Komponente als Teil einer UWP-app mit JavaScript testen, ist die Lösung wird standardmäßig in JavaScript-Debugmodus. In Visual Studio ist das gleichzeitige Debuggen von JavaScript und verwaltetem Code nicht möglich.
+Wenn Sie die Komponente als Teil einer UWP-App mit JavaScript testen, befindet sich die Projekt Mappe standardmäßig im JavaScript-Debugmodus. In Visual Studio ist das gleichzeitige Debuggen von JavaScript und verwaltetem Code nicht möglich.
 
 ## <a name="to-debug-managed-code-instead-of-javascript"></a>So debuggen Sie verwalteten Code anstelle von JavaScript
 1.  Öffnen Sie das Kontextmenü für das JavaScript-Projekt, und wählen Sie **Eigenschaften** aus.
@@ -62,53 +63,53 @@ Wenn Sie Ihre Komponente als Teil einer UWP-app mit JavaScript testen, ist die L
 4.  Legen Sie Haltepunkte im verwaltetem Code fest, und debuggen Sie wie gewohnt.
 
 ## <a name="passing-windows-runtime-types-to-managed-code"></a>Übergeben von Windows-Runtime Typen an verwalteten Code
-Wie bereits im Abschnitt erwähnt [Deklarieren von Typen in Windows-Runtime-Komponenten](#declaring-types-in-windows-runtime-components), bestimmte .NET Framework-Typen können in den Signaturen von Membern öffentlicher Klassen erscheinen. Dies ist Teil der Unterstützung, die .NET Framework bietet, um die natürliche Verwendung der Windows-Runtime in verwaltetem Code zu ermöglichen. Darin sind primitive Typen und einige Klassen und Schnittstellen enthalten. Wenn die Komponente über JavaScript oder von C++-Code verwendet wird, ist es wichtig zu wissen, wie die .NET Framework-Typen an den Aufrufer angezeigt werden. Finden Sie unter [Exemplarische Vorgehensweise: Erstellen einer einfachen Komponente in C# oder Visual Basic und Aufrufen dieser Komponente über JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) Beispiele mit JavaScript. In diesem Abschnitt werden häufig verwendete Typen beschrieben.
+Wie bereits im Abschnitt " [Deklarieren von Typen in Windows-Runtime Komponenten](#declaring-types-in-windows-runtime-components)" erwähnt, können bestimmte .NET-Typen in den Signaturen von Membern öffentlicher Klassen erscheinen. Dies ist Teil der Unterstützung, die .net bietet, um die natürliche Verwendung der Windows-Runtime in verwaltetem Code zu ermöglichen. Darin sind primitive Typen und einige Klassen und Schnittstellen enthalten. Wenn die Komponente aus JavaScript oder aus C++ Code verwendet wird, ist es wichtig zu wissen, wie die .NET-Typen dem Aufrufer angezeigt werden. Beispiele mit JavaScript finden Sie unter Exemplarische Vorgehensweise [: Erstellen eines C# -oder Visual Basic Windows-Runtime Komponente und Aufrufen dieser Komponente aus JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) . In diesem Abschnitt werden häufig verwendete Typen beschrieben.
 
-In .NET Framework, Primitive Typen wie die **Int32** Struktur besitzen viele nützliche Eigenschaften und Methoden, wie z. B. die **TryParse** Methode. Im Gegensatz dazu haben primitive Typen und Strukturen in der Windows-Runtime nur Felder. Wenn Sie diese Typen an verwalteten Code übergeben, verhalten sie sich wie .NET Framework-Typen, und Sie können die Eigenschaften und Methoden der .NET Framework-Typen wie gewohnt verwenden. Die folgende Liste fasst die Ersetzungen zusammen, die automatisch in der IDE vorgenommen werden:
+In .net verfügen primitive Typen wie z. b. die **Int32** -Struktur über viele nützliche Eigenschaften und Methoden, z. b. die **tryparamese** -Methode. Im Gegensatz dazu haben primitive Typen und Strukturen in der Windows-Runtime nur Felder. Wenn Sie diese Typen an verwalteten Code übergeben, scheinen Sie .NET-Typen zu sein, und Sie können die Eigenschaften und Methoden von .NET-Typen wie gewohnt verwenden. Die folgende Liste fasst die Ersetzungen zusammen, die automatisch in der IDE vorgenommen werden:
 
--   Für die Windows-Runtime-primitive **Int32**, **Int64**, **einzelne**, **doppelte**, **booleschen**,  **Zeichenfolge** (eine unveränderliche Auflistung von Unicode-Zeichen), **Enum**, **UInt32**, **UInt64**, und **Guid**, verwenden Sie den Typ mit dem gleichen Namen im System-Namespace.
--   Für **UInt8**, verwenden Sie **System.Byte**.
--   Für **Char16**, verwenden Sie **System.Char**.
--   Für die **"iinspectable"** Schnittstelle, verwenden Sie **"System.Object"** .
+-   Für die Windows-Runtime Primitives **Int32**, **Int64**, **Single**, **Double**, **Boolean**, **String** (eine unveränderliche Auflistung von Unicode-Zeichen), **enum**, **UInt32**, **UInt64**und **GUID.** verwenden Sie den Typ desselben Namens im System-Namespace.
+-   Verwenden Sie für **UInt8**den Wert **System. Byte**.
+-   VerwendenSie für Char16 **System. Char**.
+-   Verwenden Sie für die **iinspectable** -Schnittstelle die **System. Object**-Schnittstelle.
 
-Wenn C# oder Visual Basic bietet ein Programmiersprachen-Schlüsselwort für alle Typen, dann können Sie stattdessen das Schlüsselwort verwenden.
+Wenn C# oder Visual Basic ein sprach Schlüsselwort für einen dieser Typen bereitstellt, können Sie stattdessen das Language-Schlüsselwort verwenden.
 
-Zusätzlich zu primitiven Typen erscheinen einige grundlegende, häufig verwendete Windows-Runtime-Typen in verwaltetem Code als ihre .NET Framework-Entsprechung. Nehmen wir beispielsweise an Ihre JavaScript-Code verwendet die **Windows.Foundation.Uri** -Klasse, und Sie möchten, zum Übergeben einer C# oder Visual Basic-Methode. Entspricht der Typ in verwaltetem Code von .NET Framework ist **System.Uri** -Klasse, und das ist der Typ, der für den Methodenparameter verwendet. Sie können feststellen, wann ein Windows-Runtime-Typ als .NET Framework-Typ erscheint, da IntelliSense in Visual Studio den Windows-Runtime-Typ ausblendet, wenn Sie verwalteten Code schreiben und den entsprechenden .NET Framework-Typ anzeigt. (In der Regel haben beiden Typen den gleichen Namen. Beachten Sie jedoch, dass die **Windows.Foundation.DateTime** Struktur wird in verwaltetem Code als **System.DateTimeOffset** und nicht als **System.DateTime**.)
+Zusätzlich zu den primitiven Typen werden einige grundlegende, häufig verwendete Windows-Runtime Typen in verwaltetem Code als Ihre .NET-Entsprechungen angezeigt. Angenommen, Ihr JavaScript-Code verwendet die **Windows. Foundation. Uri** -Klasse, und Sie möchten Sie an eine C# -oder-Visual Basic-Methode übergeben. Der entsprechende Typ in verwaltetem Code ist die .NET-Klasse **System. Uri** , und das ist der Typ, der für den Methoden Parameter verwendet werden soll. Sie können erkennen, wenn ein Windows-Runtime Typ als .NET-Typ angezeigt wird, da IntelliSense in Visual Studio beim Schreiben von verwaltetem Code den Windows-Runtime-Typ verbirgt und den entsprechenden .NET-Typ anzeigt. (In der Regel haben beiden Typen den gleichen Namen. Beachten Sie jedoch, dass die **Windows. Foundation. DateTime** -Struktur in verwaltetem Code als **System. DateTimeOffset** und nicht als **System. DateTime**angezeigt wird.
 
-Für einige häufig verwendete Sammlungstypen erfolgt die Zuordnung zwischen den Schnittstellen, die von einem Windows-Runtime-Typ implementiert werden, und den Schnittstellen, die vom entsprechenden .NET Framework-Typ implementiert werden. Wie bei den bereits erwähnten Typen deklarieren Sie Parametertypen, indem Sie den .NET Framework-Typ verwenden. Dadurch werden bestimmte Unterschiede zwischen den Typen ausgeblendet, und das Schreiben von .NET Framework-Code wirkt natürlicher.
+Bei einigen häufig verwendeten Auflistungs Typen erfolgt die Zuordnung zwischen den Schnittstellen, die von einem Windows-Runtime-Typ implementiert werden, und den Schnittstellen, die vom entsprechenden .NET-Typ implementiert werden. Wie bei den oben erwähnten Typen deklarieren Sie Parametertypen mithilfe des .net-Typs. Dies verbirgt einige Unterschiede zwischen den Typen und macht das Schreiben von .NET-Code natürlicher.
 
-In der folgenden Tabelle sind die häufigsten dieser generischen Schnittstellentypen zusammen mit anderen allgemeinen Klassen- und Schnittstellenzuordnungen aufgeführt. Eine vollständige Liste der Windows-Runtime-Typen, die vom .NET Framework zugeordnet werden soll, finden Sie unter [.NET Framework-Zuordnungen von Windows-Runtime-Typen](net-framework-mappings-of-windows-runtime-types.md).
+In der folgenden Tabelle sind die häufigsten dieser generischen Schnittstellentypen zusammen mit anderen allgemeinen Klassen- und Schnittstellenzuordnungen aufgeführt. Eine umfassende Liste der Windows-Runtime Typen, die von .net Maps zugeordnet werden, finden Sie unter .net-Zuordnungen [von Windows-Runtime Typen](net-framework-mappings-of-windows-runtime-types.md).
 
-| Windows-Runtime                                  | .NET Framework                                    |
+| Windows-Runtime                                  | .NET                                    |
 |-|-|
-| IIterable&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
+| Iiterable&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
 | IVector&lt;T&gt;                                 | IList&lt;T&gt;                                    |
-| IVectorView&lt;T&gt;                             | IReadOnlyList&lt;T&gt;                            |
+| IVector View&lt;T&gt;                             | Ilesonlylist&lt;T&gt;                            |
 | IMap&lt;K, V&gt;                                 | IDictionary&lt;TKey, TValue&gt;                   |
-| IMapView&lt;K, V&gt;                             | IReadOnlyDictionary&lt;TKey, TValue&gt;           |
-| IKeyValuePair&lt;K, V&gt;                        | KeyValuePair&lt;TKey, TValue&gt;                  |
+| Imapview&lt;K, V&gt;                             | Ileseronlydictionary&lt;TKey, TValue&gt;           |
+| Ikeyvaluepair&lt;K, V&gt;                        | KeyValuePair&lt;TKey, TValue&gt;                  |
 | IBindableIterable                                | IEnumerable                                       |
 | IBindableVecinr                                  | IList                                             |
 | Windows.UI.Xaml.Data.INotifyPropertyChanged      | System.ComponentModel.INotifyPropertyChanged      |
 | Windows.UI.Xaml.Data.PropertyChangedEventHandler | System.ComponentModel.PropertyChangedEventHandler |
 | Windows.UI.Xaml.Data.PropertyChangedEventArgs    | System.ComponentModel.PropertyChangedEventArgs    |
 
-Wenn ein Typ mehrere Schnittstellen implementiert, können Sie jede Schnittstelle verwenden, die als Parametertyp oder Rückgabetyp eines Members implementiert wird. Sie können z. B. übergeben oder Zurückgeben einer **Wörterbuch&lt;ganze Zahl, Zeichenfolge&gt;**  (**Dictionary (Of Integer, String)** in Visual Basic) als **IDictionary&lt;ganze Zahl, Zeichenfolge&gt;** , **IReadOnlyDictionary&lt;ganze Zahl, Zeichenfolge&gt;** , oder **"IEnumerable"&lt; System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;** .
+Wenn ein Typ mehrere Schnittstellen implementiert, können Sie jede Schnittstelle verwenden, die als Parametertyp oder Rückgabetyp eines Members implementiert wird. Beispielsweise können Sie das **Wörterbuch&lt;int, String&gt;**  (**Dictionary (of Integer, String)** in Visual Basic) als **IDictionary&lt;int, String&gt;** , **Iread onlydictionary übergeben oder zurückgeben. int,&gt;String oder IEnumerable System. Collections. Generic. KeyValuePair TKey, TValue. &lt;** **&lt;&lt;&gt;&gt;**
 
 > [!IMPORTANT]
-> JavaScript verwendet die Schnittstelle, die zuerst in der Liste der Schnittstellen angezeigt wird, die ein verwalteter Typ implementiert. Wenn Sie zurückkehren, z. B. **Wörterbuch&lt;ganze Zahl, Zeichenfolge&gt;**  an JavaScript-Code, sie wird als **IDictionary&lt;ganze Zahl, Zeichenfolge&gt;**  unabhängig davon, welche Schnittstelle, die Sie als Rückgabetyp angeben. Das bedeutet, dass die erste Schnittstelle Member enthalten muss, die in den nächsten Schnittstellen erscheinen, damit diese Member für JavaScript sichtbar sind.
+> JavaScript verwendet die Schnittstelle, die zuerst in der Liste der Schnittstellen angezeigt wird, die ein verwalteter Typ implementiert. Wenn Sie z. b. **"&lt;Dictionary int"&gt; , "String** " in JavaScript-Code zurückgeben, wird es als " **IDictionary&lt;int"&gt; , "String" (Zeichenfolge** ) angezeigt Das bedeutet, dass die erste Schnittstelle Member enthalten muss, die in den nächsten Schnittstellen erscheinen, damit diese Member für JavaScript sichtbar sind.
 
-In der Windows-Runtime **IMap&lt;K, V&gt;**  und **IMapView&lt;K, V&gt;**  durchlaufen, indem Sie IKeyValuePair. Wenn Sie sie an verwalteten Code übergeben, werden sie als **IDictionary&lt;TKey, TValue&gt;**  und **IReadOnlyDictionary&lt;TKey, TValue&gt;** , sodass Sie verwenden, auf natürliche Weise **System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;**  um diese aufzulisten.
+In der Windows-Runtime werden **IMap&lt;k, v&gt;**  und **imapview&lt;K V&gt;**  mithilfe von "ikeyvaluepair" durchlaufen. Wenn Sie Sie an verwalteten Code übergeben, werden Sie als **IDictionary&lt;TKey, TValue&gt;**  und **ileseronlydictionary&lt;TKey, TValue&gt;** angezeigt, sodass Sie natürlich **System. Collections. Generic. KeyValuePair&lt;TKey, TValue&gt;** zum Auflisten der Werte.
 
-Die Darstellungsweise von Schnittstellen in verwaltetem Code wirkt sich auf die Darstellungsweise der Typen aus, die diese Schnittstellen implementieren. Z. B. die **PropertySet** -Klasse implementiert **IMap&lt;K, V&gt;** , die angezeigt wird, in verwaltetem Code als **IDictionary&lt;TKey, TValue&gt;** . **PropertySet** scheint, als ob er implementiert **IDictionary&lt;TKey, TValue&gt;**  anstelle von **IMap&lt;K, V&gt;** in verwaltet Code anscheinend über eine **hinzufügen** -Methode, die wie verhält sich die **hinzufügen** -Methode in .NET Framework-Wörterbüchern. Es nicht angezeigt, damit ein **einfügen** Methode. Sie finden dieses Beispiel im Thema [Exemplarische Vorgehensweise: Erstellen einer einfachen Komponente in C# oder Visual Basic und Aufrufen dieser Komponente über JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+Die Darstellungsweise von Schnittstellen in verwaltetem Code wirkt sich auf die Darstellungsweise der Typen aus, die diese Schnittstellen implementieren. Beispielsweise implementiert die **PropertySet** -Klasse **IMap&lt;K, V&gt;** , das in verwaltetem Code als **IDictionary&lt;TKey, TValue&gt;** angezeigt wird. **PropertySet** wird so angezeigt, als ob es **&lt;IDictionary TKey,&gt; TValue** anstelle von **IMap&lt;K&gt;, V**implementiert hat, sodass es in verwaltetem Code eine **Add** -Methode hat, die sich verhält. wie die **Add** -Methode für .net-Wörterbücher. Es scheint keine **Insert** -Methode zu haben. Dieses Beispiel finden Sie im Thema Exemplarische Vorgehensweise [zum Erstellen einer C# -oder Visual Basic Windows-Runtime-Komponente und zum Aufrufen dieser Komponente über JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
 ## <a name="passing-managed-types-to-the-windows-runtime"></a>Übergeben von verwalteten Typen an die Windows-Runtime
 
-Wie bereits im vorherigen Abschnitt erwähnt, können einige Windows-Runtime-Typen als .NET Framework-Typen in den Signaturen von Komponentenmembern oder in den Signaturen von Windows-Runtime-Membern erscheinen, wenn Sie sie in der IDE verwenden. Wenn Sie .NET Framework-Typen an diese Member übergeben oder als Rückgabewerte von Komponentenmembern verwenden, werden sie dem Code auf der anderen Seite als der entsprechende Windows-Runtime-Typ dargestellt. Weitere Beispiele für die Auswirkungen, wenn die Komponente aus JavaScript aufgerufen wird, finden Sie unter im Abschnitt "Rückgabe von verwalteten Typen aus der Komponente" in [Exemplarische Vorgehensweise: Erstellen einer einfachen Komponente in C# oder Visual Basic und Aufrufen dieser Komponente über JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+Wie bereits im vorherigen Abschnitt erläutert, können einige Windows-Runtime Typen als .NET-Typen in den Signaturen der Member der Komponente oder in den Signaturen Windows-Runtime Members angezeigt werden, wenn Sie Sie in der IDE verwenden. Wenn Sie .NET-Typen an diese Member übergeben oder als Rückgabewerte der Member der Komponente verwenden, werden Sie im Code auf der anderen Seite als der entsprechende Windows-Runtime Typs angezeigt. Beispiele für die Auswirkungen, die dies haben kann, wenn Ihre Komponente aus JavaScript aufgerufen wird, finden Sie im Abschnitt "zurückgeben von verwalteten Typen aus der Komponente" unter Exemplarische Vorgehensweise: [Erstellen C# eines-oder-Visual Basic Windows-Runtime Komponente und Aufrufen der Komponente aus. JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
 ## <a name="overloaded-methods"></a>Überladene Methoden
 
-In der Windows-Runtime können Methoden überladen werden. Wenn Sie mehrere Überladungen mit der gleichen Anzahl von Parametern deklarieren, Sie müssen jedoch anwenden, die [ **Windows.Foundation.Metadata.DefaultOverloadAttribute** ](/uwp/api/windows.foundation.metadata.defaultoverloadattribute) -Attribut auf nur eine dieser Überladungen. Nur diese Überladung kann aus JavaScript aufgerufen werden. Im folgenden Code ist beispielsweise die Überladung, die **int** übernimmt (**Integer** in Visual Basic), die Standardüberladung.
+In der Windows-Runtime können Methoden überladen werden. Wenn Sie jedoch mehrere über Ladungen mit der gleichen Anzahl von Parametern deklarieren, müssen Sie das [**Windows. Foundation. Metadata. defaultoverloadattribute**](/uwp/api/windows.foundation.metadata.defaultoverloadattribute) -Attribut auf nur eine dieser über Ladungen anwenden. Nur diese Überladung kann aus JavaScript aufgerufen werden. Im folgenden Code ist beispielsweise die Überladung, die **int** übernimmt (**Integer** in Visual Basic), die Standardüberladung.
 
 ```csharp
 public string OverloadExample(string s)
@@ -134,15 +135,15 @@ Public Function OverloadExample(ByVal x As Integer) As Integer
 End Function
 ```
 
-> [WICHTIG] JavaScript ermöglicht die Übergabe aller Werte, **OverloadExample**, und wandelt den Wert in den Typ, der durch den Parameter erforderlich ist. Rufen Sie **OverloadExample** mit "Zweiundvierzig", "42" oder 42,3 alle diese Werte werden an die Überladung übergeben. Die standardmäßige Überladung im vorherigen Beispiel gibt 0, 42 und 42 zurück.
+> Wichtig JavaScript ermöglicht das Übergeben eines beliebigen Werts an **OverloadExample**und wandelt den Wert in den Typ um, der für den-Parameter erforderlich ist. Sie können **OverloadExample** mit "42", "42" oder 42,3 aufrufen, aber alle diese Werte werden an die Standard Überladung geleitet. Die Standard Überladung im vorherigen Beispiel gibt 0, 42 bzw. 42 zurück.
 
-Sie können nicht angewendet werden die **DefaultOverloadAttribut**e-Attribut an die Konstruktoren. Alle Konstruktoren in einer Klasse müssen eine unterschiedliche Anzahl von Parametern aufweisen.
+Das Attribut **defauldeverloadattribue**kann nicht auf Konstruktoren angewendet werden. Alle Konstruktoren in einer Klasse müssen eine unterschiedliche Anzahl von Parametern aufweisen.
 
 ## <a name="implementing-istringable"></a>Implementieren von IStringable
 
-Ab Windows 8.1, die Windows-Runtime enthält eine **IStringable** Schnittstelle, deren einzige Methode, **IStringable.ToString**, eine grundlegende formatierungsunterstützung vergleichbar mit der gebotenen bietet **Object.ToString**. Wenn Sie sich entschließen, implementieren Sie **IStringable** in einem öffentlich verwalteten Typ, der in einer Windows-Runtime-Komponente exportiert wird, gelten die folgenden Einschränkungen:
+Beginnend mit Windows 8.1 enthält die Windows-Runtime eine **istringable** -Schnittstelle, deren einzige Methode, **istringable. destring**, eine grundlegende Formatierungs Unterstützung bietet, die vergleichbar mit der von **Object. destring**bereitgestellten ist. Wenn Sie **istringable** in einem öffentlich verwalteten Typ implementieren möchten, der in eine Windows-Runtime Komponente exportiert wird, gelten die folgenden Einschränkungen:
 
--   Sie können definieren, die **IStringable** -Schnittstelle nur in einer "class Implements"-Beziehung, z. B. den folgenden Code in C#:
+-   Sie können die **istringable** -Schnittstelle nur in einer "Klasse implementiert"-Beziehung definieren, wie z. C#b. den folgenden Code in:
 
     ```cs
     public class NewClass : IStringable
@@ -154,10 +155,10 @@ Ab Windows 8.1, die Windows-Runtime enthält eine **IStringable** Schnittstelle,
     Public Class NewClass : Implements IStringable
     ```
 
--   Sie können nicht implementieren **IStringable** auf einer Schnittstelle.
--   Sie können einen Parameter vom Typ nicht deklarieren **IStringable**.
--   **IStringable** darf nicht der Rückgabetyp einer Methode, eine Eigenschaft oder ein Feld sein.
--   Sie können nicht ausgeblendet werden Ihre **IStringable** Implementierung von Basisklassen mithilfe eine Methodendefinition wie die folgende:
+-   Sie können **istringable** nicht in einer Schnittstelle implementieren.
+-   Sie können einen Parameter nicht als Typ **istringable**deklarieren.
+-   **Istringable** kann nicht der Rückgabetyp einer Methode, einer Eigenschaft oder eines Felds sein.
+-   Sie können die **istringable** -Implementierung nicht aus Basisklassen ausblenden, indem Sie eine Methoden Definition wie die folgende verwenden:
 
     ```cs
     public class NewClass : IStringable
@@ -169,20 +170,20 @@ Ab Windows 8.1, die Windows-Runtime enthält eine **IStringable** Schnittstelle,
     }
     ```
 
-    Stattdessen die **IStringable.ToString** Implementierung muss die basisklassenimplementierung immer überschreiben. Sie können Ausblenden einer **ToString** Implementierung nur, indem sie auf einer stark typisierten Klasseninstanz aufrufen.
+    Stattdessen muss die Implementierung **istringable. destring** die Basisklassen Implementierung immer überschreiben. Sie können eine Implementierung von " **destring** " nur ausblenden, indem Sie Sie auf einer stark typisierten Klasseninstanz aufrufen.
 
 > [!NOTE]
-> Unter einer Vielzahl von Bedingungen, Aufrufe von systemeigenem Code von einem verwalteten Typ, der implementiert **IStringable** oder blendet Sie aus der **ToString** Implementierung kann zu unerwartetem Verhalten führen.
+> Unter einer Vielzahl von Bedingungen kann es bei Aufrufen von System eigenem Code zu einem verwalteten Typ, der **istringable** implementiert oder seine **destring** -Implementierung verbirgt, zu unerwartetem Verhalten führen.
 
 ## <a name="asynchronous-operations"></a>Asynchrone Vorgänge
 
-Um eine asynchrone Methode in der Komponente zu implementieren, fügen Sie hinzu "Async" am Ende des Methodennamens, und zurückgeben Sie eines der Windows-Runtime-Schnittstellen, die asynchrone Aktionen oder Operationen darstellen: **IAsyncAction**, **IAsyncActionWithProgress&lt;TProgress&gt;** , **IAsyncOperation&lt;TResult&gt;** , oder **IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** .
+Um eine asynchrone Methode in der Komponente zu implementieren, fügen Sie "Async" am Ende des Methoden namens hinzu und geben eine der Windows-Runtime-Schnittstellen zurück, die asynchrone Aktionen oder Vorgänge darstellen: **Iasyncaction**, **iasyncactionwithprogress&lt;tprogress&gt;** , **iasyncoperation&lt;TResult&gt;** oder **iasyncoperationwithprogress&lt;TResult, tprogress &gt;** .
 
-Können Sie .NET Framework-Aufgaben (die [ **Aufgabe** ](/dotnet/api/system.threading.tasks.task) -Klasse und generische [ **Aufgabe&lt;TResult&gt;**  ](/dotnet/api/system.threading.tasks.task-1) Klasse), die asynchrone Methode zu implementieren. Sie müssen eine Aufgabe, die eine laufende Operation, wie z. B. eine Aufgabe darstellt, die von einer asynchronen Methode in geschriebenen zurückgegeben wird zurückgeben C# oder Visual Basic oder eine Aufgabe, die von zurückgegeben wird das [ **"Task.Run"** ](/dotnet/api/system.threading.tasks.task.run) -Methode. Wenn Sie für die Aufgabenerstellung einen Konstruktor verwenden, müssen Sie seine [Task.Start](/dotnet/api/system.threading.tasks.task.start)-Methode vor der Rückgabe aufrufen.
+Sie können .net-Aufgaben (die [**Aufgaben**](/dotnet/api/system.threading.tasks.task) Klasse und die [**generische&lt;Aufgabe TResult&gt;** ](/dotnet/api/system.threading.tasks.task-1) -Klasse) verwenden, um die asynchrone Methode zu implementieren. Sie müssen eine Aufgabe zurückgeben, die einen laufenden Vorgang darstellt, z. b. einen Task, der von einer asynchronen C# Methode zurückgegeben wird, die in oder Visual Basic geschrieben wurde, oder eine Aufgabe, die von der [Task. Run](/dotnet/api/system.threading.tasks.task.run) -Methode zurückgegeben wird. Wenn Sie für die Aufgabenerstellung einen Konstruktor verwenden, müssen Sie seine [Task.Start](/dotnet/api/system.threading.tasks.task.start)-Methode vor der Rückgabe aufrufen.
 
-Eine Methode, verwendet `await` (`Await` in Visual Basic) erfordert die `async` Schlüsselwort (`Async` in Visual Basic). Wenn Sie solche Methode einer Komponente für Windows-Runtime verfügbar machen, wenden Sie die `async` Schlüsselwort an den Delegaten, die Sie zum Übergeben der **ausführen** Methode.
+Eine Methode, die `await` (`Await` in Visual Basic) verwendet, `async` erfordert das`Async` Schlüsselwort (in Visual Basic). Wenn Sie eine solche Methode aus einer Windows-Runtime Komponente verfügbar machen, wenden `async` Sie das-Schlüsselwort auf den Delegaten an, den Sie an die **Run** -Methode übergeben.
 
-Für asynchrone Aktionen und Vorgänge, die weder die Abbruch- noch die Fortschrittsberichterstattung unterstützen, können Sie mit der Erweiterungsmethode [WindowsRuntimeSystemExtensions.AsAsyncAction](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN) oder [AsAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN) die Aufgabe in die entsprechende Schnittstelle umschließen. Beispielsweise implementiert der folgende Code eine asynchrone Methode mithilfe der **"Task.Run"&lt;TResult&gt;**  Methode für den Aufgabenstart nutzt. Die **AsAsyncOperation&lt;TResult&gt;**  Erweiterungsmethode gibt die Aufgabe als asynchronen Vorgang Windows-Runtime zurück.
+Für asynchrone Aktionen und Vorgänge, die weder die Abbruch- noch die Fortschrittsberichterstattung unterstützen, können Sie mit der Erweiterungsmethode [WindowsRuntimeSystemExtensions.AsAsyncAction](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN) oder [AsAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN) die Aufgabe in die entsprechende Schnittstelle umschließen. Beispielsweise implementiert der folgende Code eine asynchrone Methode, indem die **Task. Run&lt;&gt; TResult** -Methode verwendet wird, um eine Aufgabe zu starten. Die " **asasyncoperation&lt;TResult&gt;**  "-Erweiterungsmethode gibt die Aufgabe als Windows-Runtime asynchronen Vorgang zurück.
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -207,7 +208,7 @@ Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 End Function
 ```
 
-Der folgende JavaScript-Code zeigt, wie die Methode mithilfe von aufgerufen werden konnte eine [ **WinJS.Promise** ](https://docs.microsoft.com/previous-versions/windows/apps/br211867(v=win.10)) Objekt. Die an die then-Methode übergebene Funktion wird ausgeführt, wenn der asynchrone Aufruf abgeschlossen ist. Der StringList-Parameter enthält die Liste der Zeichenfolgen, die von zurückgegeben wird das **DownloadAsStringAsync** -Methode, die Funktion übernimmt erforderliche Verarbeitung erforderlich ist.
+Der folgende JavaScript-Code zeigt, wie die-Methode mit einem [**winjs. Promise**](https://docs.microsoft.com/previous-versions/windows/apps/br211867(v=win.10)) -Objekt aufgerufen werden kann. Die an die then-Methode übergebene Funktion wird ausgeführt, wenn der asynchrone Aufruf abgeschlossen ist. Der stringlist-Parameter enthält die Liste der Zeichen folgen, die von der **downloadasstringasync** -Methode zurückgegeben werden, und die Funktion übernimmt die erforderliche Verarbeitung.
 
 ```javascript
 function asyncExample(id) {
@@ -219,9 +220,9 @@ function asyncExample(id) {
 }
 ```
 
-Verwenden Sie für asynchrone Aktionen und Vorgänge, die Abbruch oder Fortschrittsberichterstattung unterstützt, die [ **AsyncInfo** ](/dotnet/api/system.runtime.interopservices.windowsruntime) Klasse, die eine begonnene Aufgabe zu generieren und zu verknüpfen, die die Abbruch- und fortschrittsberichterstattungs- die Funktionen des Tasks mit den Abbruch und Funktionen von der entsprechenden Windows-Runtime-Schnittstelle für statusberichterstellung. Ein Beispiel, Abbruch- und Fortschrittsberichterstattung unterstützt, finden Sie unter [Exemplarische Vorgehensweise: Erstellen einer einfachen Komponente in C# oder Visual Basic und Aufrufen dieser Komponente über JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+Verwenden Sie für asynchrone Aktionen und Vorgänge, die die Abbruch-oder Fortschritts Berichterstattung unterstützen, die [**asyncinfo**](/dotnet/api/system.runtime.interopservices.windowsruntime) -Klasse, um eine gestartete Aufgabe zu generieren und die Abbruch-und Fortschritts Berichterstattungs Funktionen der Aufgabe mit dem Abbruch und Fortschritt zu verbinden. Berichterstattungs Funktionen der entsprechenden Windows-Runtime-Schnittstelle. Ein Beispiel, das sowohl die Abbruch-als auch die Fortschritts Berichterstattung unterstützt, finden Sie unter Exemplarische Vorgehensweise: [Erstellen C# eines-oder Visual Basic Windows-Runtime-Komponente und Aufrufen dieser Komponente über JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
-Beachten Sie, dass Sie die Methoden verwenden, können die **AsyncInfo** Klasse, auch wenn die asynchrone Methode unterstützen einen Abbruch oder Fortschrittsberichterstattung nicht. Wenn Sie eine Visual Basic-Lambda-Funktion verwenden oder ein C# anonyme Methode, geben Sie keine Parameter für das Token und [ **IProgress&lt;T&gt;**  ](https://docs.microsoft.com/dotnet/api/system.iprogress-1?redirectedfrom=MSDN) Schnittstelle. Wenn Sie eine C#-Lambda-Funktion verwenden, geben Sie einen Tokenparameter an, aber ignorieren Sie ihn. Im vorherigen Beispiel verwendet die AsAsyncOperation&lt;TResult&gt; Methode sieht wie folgt aus, bei der Verwendung der [ **AsyncInfo.Run&lt;TResult&gt;(Func&lt; CancellationToken, Task&lt;TResult&gt;&gt;** ](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN))-Überladungsmethode.
+Beachten Sie, dass Sie die Methoden der **asyncinfo** -Klasse auch dann verwenden können, wenn Ihre asynchrone Methode die Abbruch-oder Fortschritts Berichterstattung nicht unterstützt. Wenn Sie eine Visual Basic Lambda-Funktion oder eine C# anonyme Methode verwenden, geben Sie keine Parameter für das Token und die [&lt;iprogress t&gt; ](https://docs.microsoft.com/dotnet/api/system.iprogress-1?redirectedfrom=MSDN) -Schnittstelle an. Wenn Sie eine C#-Lambda-Funktion verwenden, geben Sie einen Tokenparameter an, aber ignorieren Sie ihn. Das vorherige Beispiel, in dem die Methode asasyncoperation&lt;TResult&gt; verwendet wurde, sieht wie folgt aus, wenn Sie die [**asyncinfo. Run&gt;&lt;TResult&lt;(Func CancellationToken, Task&lt;)verwenden.&gt;TResult&gt;** ](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN))-Methoden Überladung.
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -246,7 +247,7 @@ Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 End Function
 ```
 
-Wenn Sie eine asynchrone Methode, die optional die Abbruch- oder Fortschrittsberichterstattung unterstützt erstellen, erwägen Sie Überladungen, die keine Parameter für ein Abbruchtoken haben oder die **IProgress&lt;T&gt;**  -Schnittstelle.
+Wenn Sie eine asynchrone Methode erstellen, die optional die Abbruch-oder Fortschritts Berichterstattung unterstützt, sollten Sie über Ladungen hinzufügen, die keine Parameter für ein Abbruch Token oder die **&lt;iprogress t&gt;**  -Schnittstelle aufweisen.
 
 ## <a name="throwing-exceptions"></a>Auslösen von Ausnahmen
 
@@ -256,30 +257,30 @@ Wenn die Komponente die Ausnahme nicht behandelt, wird eine entsprechende Ausnah
 
 -   In JavaScript erscheint die Ausnahme als Objekt, in dem die Ausnahmemeldung durch eine Stapelüberwachung ersetzt ist. Wenn Sie Ihre App in Visual Studio debuggen, wird der Originaltext der Meldung im Ausnahmedialogfeld des Debuggers unter „WinRT Information" angezeigt. Sie können mit JavaScript-Code nicht auf den Originaltext der Meldung zugreifen.
 
-    > **Tipp**. Derzeit wird die stapelüberwachung enthält den verwalteten Ausnahmetyp, aber nicht empfohlen, analysieren die Ablaufverfolgung aus, um den Ausnahmetyp zu identifizieren. Verwenden Sie stattdessen einen HRESULT-Wert, wie weiter unten in diesem Abschnitt beschrieben.
+    > **Tipp**: Zurzeit enthält die Stapel Überwachung den verwalteten Ausnahmetyp. es wird jedoch nicht empfohlen, die Ablauf Verfolgung zu durchsuchen, um den Ausnahmetyp zu identifizieren. Verwenden Sie stattdessen einen HRESULT-Wert, wie weiter unten in diesem Abschnitt beschrieben.
 
--   In C++ erscheint die Ausnahme als Plattformausnahme. Wenn HResult-Eigenschaft der verwalteten Ausnahme dem HRESULT des einer bestimmten plattformausnahme zugeordnet werden kann, wird die spezielle Ausnahme verwendet. andernfalls ein [ **Platform:: COMException** ](https://docs.microsoft.com/cpp/cppcx/platform-comexception-class) Ausnahme ausgelöst. Der Meldungstext der verwalteten Ausnahme ist für C++-Code nicht verfügbar. Wenn eine bestimmte Plattformausnahme ausgelöst wurde, erscheint der Meldungstext für diesen Ausnahmetyp. Andernfalls wird kein Meldungstext ausgegeben. Siehe [Ausnahmen (C++/CX)](https://docs.microsoft.com/cpp/cppcx/exceptions-c-cx).
+-   In C++ erscheint die Ausnahme als Plattformausnahme. Wenn die HRESULT-Eigenschaft der verwalteten Ausnahme dem HRESULT einer bestimmten Platt Form Ausnahme zugeordnet werden kann, wird die spezifische Ausnahme verwendet. Andernfalls wird eine [**Platform:: COMException**](https://docs.microsoft.com/cpp/cppcx/platform-comexception-class) -Ausnahme ausgelöst. Der Meldungstext der verwalteten Ausnahme ist für C++-Code nicht verfügbar. Wenn eine bestimmte Plattformausnahme ausgelöst wurde, erscheint der Meldungstext für diesen Ausnahmetyp. Andernfalls wird kein Meldungstext ausgegeben. Siehe [Ausnahmen (C++/CX)](https://docs.microsoft.com/cpp/cppcx/exceptions-c-cx).
 -   In C# oder Visual Basic ist die Ausnahme eine normale verwaltete Ausnahme.
 
-Wenn Sie in Ihrer Komponente eine Ausnahme auslösen, sollten Sie einen nicht öffentlichen Ausnahmetyp verwenden, dessen HResult-Eigenschaftswert speziell für Ihre Komponente gilt, damit die Ausnahme leichter von einem JavaScript- oder C++-Aufrufer verwaltet werden kann. Das HRESULT ist verfügbar, um eine JavaScript-Aufrufer über das Ausnahmeobjekt Number-Eigenschaft und einer C++-Aufrufer über die [ **COMException:: HRESULT** ](https://docs.microsoft.com/cpp/cppcx/platform-comexception-class#hresult) Eigenschaft.
+Wenn Sie in Ihrer Komponente eine Ausnahme auslösen, sollten Sie einen nicht öffentlichen Ausnahmetyp verwenden, dessen HResult-Eigenschaftswert speziell für Ihre Komponente gilt, damit die Ausnahme leichter von einem JavaScript- oder C++-Aufrufer verwaltet werden kann. Das HRESULT ist für einen JavaScript-Aufrufer über die Number-Eigenschaft des Ausnahme Objekts und C++ für einen Aufrufer über die [COMException:: HRESULT](https://docs.microsoft.com/cpp/cppcx/platform-comexception-class#hresult) -Eigenschaft verfügbar.
 
 > [!NOTE]
-> Verwenden Sie einen negativen Wert für Ihre HRESULT. Ein positiver Wert wird als Erfolg interpretiert und im JavaScript- oder C++-Aufrufer wird keine Ausnahme ausgelöst.
+> Verwenden Sie einen negativen Wert für HRESULT. Ein positiver Wert wird als Erfolg interpretiert und im JavaScript- oder C++-Aufrufer wird keine Ausnahme ausgelöst.
 
 ## <a name="declaring-and-raising-events"></a>Deklarieren und Auslösen von Ereignissen
 
-Wenn Sie einen Typ deklarieren, um die Daten für das Ereignis aufzunehmen, leiten Sie diesen von „Object“ und nicht von „EventArgs“ ab, da „EventArgs“ kein Windows-Runtime-Typ ist. Verwenden Sie [ **EventHandler&lt;TEventArgs&gt;**  ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1?redirectedfrom=MSDN) als Typ des Ereignisses, und verwenden Sie den Ereignisargumenttyp als das allgemeine Typargument. Lösen Sie das Ereignis genauso wie in einer .NET Framework-Anwendung aus.
+Wenn Sie einen Typ deklarieren, um die Daten für das Ereignis aufzunehmen, leiten Sie diesen von „Object“ und nicht von „EventArgs“ ab, da „EventArgs“ kein Windows-Runtime-Typ ist. Verwenden Sie [**EventHandler&lt;TEventArgs&gt;** ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1?redirectedfrom=MSDN) als Typ des Ereignisses, und verwenden Sie den Ereignis Argumenttyp als generisches Typargument. Rufen Sie das-Ereignis genau wie in einer .NET-Anwendung auf.
 
-Wenn Ihre Komponente für Windows-Runtime von JavaScript oder C++ verwendet wird, folgt das Ereignis dem Windows-Runtime-Ereignismuster, das diese Sprachen erwarten. Wenn Sie die Komponente in C# oder Visual Basic verwenden, erscheint das Ereignis als normales .NET Framework-Ereignis. Ein Beispiel finden Sie [Exemplarische Vorgehensweise: Erstellen einer einfachen Komponente in C# oder Visual Basic und Aufrufen dieser Komponente über JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript).
+Wenn Ihre Komponente für Windows-Runtime von JavaScript oder C++ verwendet wird, folgt das Ereignis dem Windows-Runtime-Ereignismuster, das diese Sprachen erwarten. Wenn Sie die Komponente von C# oder Visual Basic verwenden, wird das Ereignis als normales .NET-Ereignis angezeigt. Ein Beispiel finden Sie unter Exemplarische Vorgehensweise [: C# Erstellen eines-oder-Visual Basic Windows-Runtime Komponente und Aufrufen dieser Komponente über JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript).
 
-Wenn Sie benutzerdefinierte Ereignisaccessoren implementieren (in Visual Basic ein Ereignis mit dem Schlüsselwort **Custom** deklarieren), müssen Sie in der Implementierung das Windows-Runtime-Ereignismuster verwenden. Siehe [Benutzerdefinierte Ereignisse und Ereignisaccessoren in Komponenten für Windows-Runtime](custom-events-and-event-accessors-in-windows-runtime-components.md). Beachten Sie, dass das Ereignis auch dann als einfaches .NET Framework-Ereignis erscheint, wenn Sie C#- oder Visual Basic-Code verwenden.
+Wenn Sie benutzerdefinierte Ereignisaccessoren implementieren (in Visual Basic ein Ereignis mit dem Schlüsselwort **Custom** deklarieren), müssen Sie in der Implementierung das Windows-Runtime-Ereignismuster verwenden. Siehe [benutzerdefinierte Ereignisse und Ereignisaccessoren in Windows-Runtime-Komponenten](custom-events-and-event-accessors-in-windows-runtime-components.md). Beachten Sie Folgendes: Wenn Sie das- C# Ereignis von oder Visual Basic-Code behandeln, scheint es sich immer noch um ein normales .NET-Ereignis zu handeln.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 Nachdem Sie eine Komponente für Windows-Runtime für eigene Zwecke erstellt haben, stellen Sie möglicherweise fest, dass die Funktionen, die diese kapselt, für andere Entwickler nützlich sind. Sie haben zwei Optionen, um eine Komponente für die Verteilung an andere Entwickler zu packen. Siehe [Verteilen einer verwalteten Komponente für Windows-Runtime](https://docs.microsoft.com/previous-versions/windows/apps/jj614475(v=vs.140)).
 
-Weitere Informationen zu Visual Basic- und C#-Sprachfunktionen und zur .NET Framework-Unterstützung für die Windows-Runtime finden Sie unter [Visual Basic- und C#-Programmiersprachenreferenz](https://docs.microsoft.com/visualstudio/welcome-to-visual-studio-2015?view=vs-2015).
+Weitere Informationen zu Visual Basic-und C# sprach Features sowie zur .NET-Unterstützung für die Windows-Runtime finden Sie unter [Visual Basic und C# Sprachreferenz](https://docs.microsoft.com/visualstudio/welcome-to-visual-studio-2015?view=vs-2015).
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [.NET für UWP-apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
-* [Exemplarische Vorgehensweise: Erstellen einer einfachen Windows-Runtime-Komponente, und es über JavaScript aufrufen](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [.Net für UWP-apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
+* [Exemplarische Vorgehensweise zum C# Erstellen eines-oder-Visual Basic Windows-Runtime Komponente und zum Aufrufen dieser Komponente über JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

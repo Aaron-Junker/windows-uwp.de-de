@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2a846fee7f72242d9e3becc19cf5be71128dbd9e
-ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
+ms.openlocfilehash: bc591f66505fa6e7019cb37fed636700d8dec709
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796729"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393598"
 ---
 # <a name="app-capability-declarations"></a>Deklarationen von App-Funktionen
 
@@ -62,7 +62,7 @@ Funktionen zur allgemeinen Verwendung gelten für die meisten allgemeinen App-Sz
 Gerätefunktionen ermöglichen Ihrer App den Zugriff auf Peripheriegeräte und interne Geräte. Gerätefunktionen werden mit dem **DeviceCapability**-Element in Ihrem App-Paketmanifest angegeben. Dieses Element erfordert unter Umständen zusätzliche untergeordnete Elemente. Einige Gerätefunktionen müssen dem Paketmanifest manuell hinzugefügt werden. Weitere Informationen finden Sie unter [Angeben von Gerätefunktionen in einem Paketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) und [**Schemareferenz zu DeviceCapability**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
 
 > [!NOTE]
-> Sie können über mehrere **devicecapability** -und **Capability** -Elemente unter dem capability-Element verfügen, aber alle **devicecapability** - Elemente müssen nach den Funktions Elementen stehen.
+> Sie können über mehrere **devicecapability** -und **Capability** -Elemente **unter dem Capability** -Element verfügen, aber alle **devicecapability** - **Elemente müssen** nach den Funktions Elementen stehen.
 
 | Funktionsszenario | Funktionsnutzung |
 |---------------------|------------------|
@@ -93,7 +93,7 @@ Wenn Ihre APP eingeschränkte Funktionen deklariert, müssen Sie während des Ap
 
 Stellen Sie sicher, dass Sie diese eingeschränkten Funktionen nur dann deklarieren, wenn Ihre APP Sie tatsächlich benötigt. Es gibt Fälle, in denen solche Funktionen notwendig und angemessen sind. Dazu gehört beispielsweise das Banking mit zweistufiger Authentifizierung, bei der Benutzer eine Smartcard mit einem digitalen Zertifikat bereitstellen, das ihre Identität bestätigt. Andere Apps werden unter Umständen in erster Linie für Unternehmenskunden entworfen und erfordern ggf. Zugriff auf Unternehmensressourcen, auf die nur mit den Domänenanmeldeinformationen des Benutzers zugegriffen werden kann.
 
-Um eine eingeschränkte Funktion zu deklarieren, ändern Sie die Quelldatei für`Package.appxmanifest`das [App-Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) (). Fügen Sie die XML-Namespace Deklaration **xmlns: rescap** hinzu , und verwenden Sie das cmdx-Präfix, wenn Sie die eingeschränkte Funktion deklarieren Hier sehen Sie z. B., wie die **appCaptureSettings**-Funktion deklariert wird.
+Um eine eingeschränkte Funktion zu deklarieren, ändern Sie die Quelldatei für`Package.appxmanifest`das [App-Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) (). Fügen Sie die XML-Namespace Deklaration **xmlns: rescap** hinzu, und verwenden Sie das cmdx **-Präfix** , wenn Sie die eingeschränkte Funktion deklarieren Hier sehen Sie z. B., wie die **appCaptureSettings**-Funktion deklariert wird.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -206,7 +206,7 @@ In der folgenden Tabelle sind die eingeschränkten Funktionen aufgeführt. Sie k
 | **Einmaliges Anmelden für Unternehmen in der Cloud** | Die Funktion **enterpriseCloudSSO** ermöglicht das einmalige Anmelden von Apps mit Azure Active Directory (AAD)-Ressourcen innerhalb eines gehosteten Webansichtssteuerelements. |
 | **VoIP-Anrufe automatisch akzeptieren** | Die **backgroundvoip** -Funktion ermöglicht es Ihnen, eingehende VoIP-Anrufe automatisch zu empfangen und zu akzeptieren, ohne dass der Benutzer den Aufruf explizit annehmen muss. Apps, die diese Funktion nutzen, wird die vollständige Kontrolle über Kamera und Mikrofon gewährt und sie können diese Ressourcen im Hintergrund verwenden.<br /><br />Es wird nicht empfohlen, diese Funktion in apps zu deklarieren, die an den Microsoft Store gesendet wurden Für die meisten Entwickler wird die Verwendung dieser Funktion nicht genehmigt. |
 | **Reservieren von Ressourcen für VoIP-Anrufe** | Mit der **oneprocessvoip** -Funktion können Sie die CPU-und Arbeitsspeicher Ressourcen reservieren, die für einen VoIP-Rückruf in einer Einzel Prozess Anwendung erforderlich sind.<br /><br />Es wird nicht empfohlen, diese Funktion in apps zu deklarieren, die an den Microsoft Store gesendet wurden Für die meisten Entwickler wird die Verwendung dieser Funktion nicht genehmigt. |
-| **Entwicklungmodusnetzwerk** | Die Funktion **developmentModeNetwork** ermöglicht Apps den Zugriff auf Netzwerkpfade, die die Anmeldeinformationen des angemeldeten Benutzers verwenden, wenn die OpenFile Win32 API in einer C++/CX-UWP-App oder C++-Komponente für Windows-Runtime aufgerufen wird. <br /><br />Es wird nicht empfohlen, diese Funktion in Anwendungen zu deklarieren, die Sie an die Microsoft Store übermitteln. In den meisten Fällen wird die Verwendung dieser Funktion nicht genehmigt. |
+| **Entwicklungmodusnetzwerk** | Die Funktion " **developmentapdenetwork** " ermöglicht apps den Zugriff auf Netzwerk Pfade mithilfe der Anmelde Informationen des angemeldeten Benutzers, wenn die OpenFile-Win32- C++API in einer/CX UWP-APP oder C++ Windows-Runtime Komponente aufgerufen wird. <br /><br />Es wird nicht empfohlen, diese Funktion in Anwendungen zu deklarieren, die Sie an die Microsoft Store übermitteln. In den meisten Fällen wird die Verwendung dieser Funktion nicht genehmigt. |
 | **Umfassender Dateisystem Zugriff** | Die Funktion **broadFileSystemAccess** ermöglicht Apps den gleichen Zugriff auf das Dateisystem wie der Benutzer, der aktuell die App ohne zusätzliche Dateiauswahlaufforderungen während der Laufzeit ausführt. Beachten Sie, dass diese Funktion nicht erforderlich ist, um auf Dateien zuzugreifen, die der Benutzer bereits mithilfe von FilePicker oder Folderpicker ausgewählt hat.<br/><br/>Diese Funktion funktioniert für die [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage)-APIs. Da Benutzer die Berechtigung jederzeit in den Einstellungen erteilen oder verweigern können, sollten Sie sicherstellen, dass Ihre APP für diese Änderungen stabil ist. Im Update vom April 2018 lautet die Standardeinstellung für die Berechtigung „Ein“. Im Update vom Oktober 2018 lautet sie „Aus“. Außerdem ist es wichtig, dass Sie keine speziellen Ordnerfunktionen mit dieser Funktion deklarieren wie z. B. **Dokumente**, **Bilder** oder **Videos**. Sie können diese Funktion in Ihrer APP aktivieren, indem Sie dem Manifest **broadfilesystemaccess** hinzufügen. Ein Beispiel finden Sie im Artikel [Datei Zugriffsberechtigungen](/windows/uwp/files/file-access-permissions) . |
 | **System Firmware und BIOS** | Die **smbios**-Funktion ermöglicht Apps den Zugriff auf BIOS-Daten und Systemfirmware-Daten. |
 | **Berechtigungsebene mit voller Vertrauenswürdigkeit** | Mit der eingeschränkten **runfulltrust** -Funktion können apps auf dem Computer des Benutzers mit der Berechtigungsstufe "volle Vertrauenswürdigkeit" ausgeführt werden. Diese Funktion ist für die Verwendung der [fulltrustprocesslauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) -API erforderlich.<br /><br />Diese Funktion ist auch für alle Desktop Anwendungen erforderlich, die als AppX-oder msix-Paket (wie bei der [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)) bereitgestellt werden, und wird automatisch in ihrem Manifest angezeigt, wenn diese apps mit dem Desktop App Converter (DAC) verpackt werden. Visual Studio: |

@@ -5,14 +5,14 @@ Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.date: 01/11/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Hintergrundaufgaben
+keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 280f2253fda7de816ee753798dcab754d58ae847
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: df2fad68fd1aab9b3b056e962736f3d37f749e63
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370552"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393537"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Aktualisieren einer Live-Kachel über eine Hintergrundaufgabe
 
@@ -29,7 +29,7 @@ Das folgende Video zeigt, wie Sie Ihren Apps Live-Kacheln hinzufügen:
 
 ## <a name="create-the-background-task-project"></a>Erstellen des Hintergrundaufgabenprojekts  
 
-Fügen Sie der Projektmappe zum Aktivieren einer Live-Kachel für Ihre App ein neues Projekt mit Komponenten für Windows-Runtime hinzu. Dies ist eine separate Assembly, die vom BS im Hintergrund geladen und ausgeführt wird, wenn Benutzer die App installieren.
+Zum Aktivieren einer Live-Kachel für Ihre APP fügen Sie Ihrer Projekt Mappe ein neues Windows-Runtime Komponenten Projekt hinzu. Dies ist eine separate Assembly, die vom BS im Hintergrund geladen und ausgeführt wird, wenn Benutzer die App installieren.
 
 1.  Klicken Sie im Projektmappen-Explorer auf die Projektmappe, klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **Neues Projekt**.
 2.  Wählen Sie im Dialogfeld **Neues Projekt hinzufügen** im Abschnitt **Installiert &gt; Andere Sprachen &gt; Visual C# &gt; Windows Universal** die Vorlage **Komponente für Windows-Runtime** aus.
@@ -152,7 +152,7 @@ namespace BackgroundTasks
 6.  Klicken oder tippen Sie auf die Registerkarte **Anwendungsbenutzeroberfläche**.
 7.  Legen Sie die Option **Benachrichtigungen bei gesperrtem Bildschirm** auf **Text für Infoanzeiger und Kachel**fest.
 8.  Legen Sie im Feld **Infoanzeigerlogo** einen Pfad zu einem Symbol mit einer Größe von 24 x 24 Pixel fest.
-    **Wichtige**  dieses Symbol muss nur monochrome und transparent Pixel verwenden.
+    **Wichtig dieses Symbol**darfnurmonochromeundtransparentePixelverwenden  .
 9.  Legen Sie im Feld **Kleines Logo** einen Pfad zu einem Symbol der Größe 30 x 30 Pixel fest.
 10. Legen Sie im Feld **Breites Logo** einen Pfad zu einem Symbol mit einer Größe von 310 x 150 Pixel fest.
 
@@ -161,7 +161,7 @@ namespace BackgroundTasks
 
 Erstellen Sie zum Registrieren Ihrer Aufgabe ein [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)-Objekt.
 
-> **Beachten Sie**  ab in Windows 8.1-Hintergrund Registrierung Aufgabenparameter werden überprüft, die zum Zeitpunkt der Registrierung. Bei ungültigen Registrierungsparametern wird ein Fehler zurückgegeben. Ihre App muss Szenarien mit nicht erfolgreicher Registrierung von Hintergrundaufgaben problemlos verarbeiten können. Verwenden Sie beispielsweise eine Bedingungsanweisung, um die App auf Registrierungsfehler zu prüfen, und wiederholen Sie die nicht erfolgreiche Registrierung mit anderen Parameterwerten.
+> **Hinweis ab Windows 8.1**werden die Registrierungs Parameter für die Hintergrundaufgabe zum Zeitpunkt der Registrierung überprüft.   Bei ungültigen Registrierungsparametern wird ein Fehler zurückgegeben. Ihre App muss Szenarien mit nicht erfolgreicher Registrierung von Hintergrundaufgaben problemlos verarbeiten können. Verwenden Sie beispielsweise eine Bedingungsanweisung, um die App auf Registrierungsfehler zu prüfen, und wiederholen Sie die nicht erfolgreiche Registrierung mit anderen Parameterwerten.
  
 
 Fügen Sie auf der Hauptseite der App die **RegisterBackgroundTask**-Methode hinzu, und rufen Sie sie im **OnNavigatedTo**-Ereignishandler auf.
@@ -257,10 +257,10 @@ Legen Sie zum Debuggen der Hintergrundaufgabe in der Run-Methode der Aufgabe ein
 
 
 * [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
-* [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
-* [ **"Tilenotification"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
+* [**Tileupdatemanager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
+* [**Tilenotifizierung**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Unterstützen Ihrer App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md)
-* [Richtlinien und Prüfliste für Kacheln und Signale](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
+* [Richtlinien und Prüfliste für Kacheln und Ausweise](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
 
  
 

@@ -9,12 +9,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, Windows-Benachrichtigungsdienst, Benachrichtigung, Windows, Firewall, Problembehandlung, IP, Datenverkehr, Unternehmen, Netzwerk, IPv4, VIP, FQDN, öffentliche IP-Adresse
 ms.localizationpriority: medium
-ms.openlocfilehash: 817dec616a88f0b374bc019cbbf23f56fad94484
-ms.sourcegitcommit: 820704a73174e81da3dc00cf0603c0c82471cdfe
+ms.openlocfilehash: 0ba6d2e678eee0d851b4f2e3897f9fc067b74580
+ms.sourcegitcommit: 3360db6bc975516e01913d3d73599c964a411052
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69908453"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70296983"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Unternehmens Firewall-und Proxy Konfigurationen zur Unterstützung von WNS-Datenverkehr
 
@@ -23,8 +23,8 @@ Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Netzwerk
 
 ## <a name="proxy-support"></a>Proxy Unterstützung
 
-> [!Note] 
-Windows-Clients unterstützen **nicht** alle Proxys, die Verbindung mit WNS muss eine direkte Verbindung sein.
+> [!Note]
+> Windows-Clients unterstützen **nicht** alle Proxys, die Verbindung mit WNS muss eine direkte Verbindung sein.
 
 **Demnächst!** Wir untersuchen aktiv verschiedene Netzwerkkonfigurationen, Proxys und Firewalls. Wir werden diese Seite mit weiteren Details zu allgemeinen Unternehmens Szenarien und WNS-Unterstützung aktualisieren.
 
