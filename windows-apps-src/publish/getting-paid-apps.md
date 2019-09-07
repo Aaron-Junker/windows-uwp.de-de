@@ -1,23 +1,23 @@
 ---
-Description: Informationen Sie zu Zahlungen für Ihre apps, Add-ons (in-app-Produkte) empfangen und Ergebnis ankündigen.
+Description: Erfahren Sie mehr über das Empfangen von Zahlungen für Ihre apps, Add-ons (in-App-Produkte) und Werbeeinnahmen.
 title: Bezahlung
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, UWP, Bezahlung, App-Verkäufe, App-Erlöse, Auszahlung, Store-Gebühr, Auszahlungssperre, Prozentsatz
 ms.localizationpriority: medium
-ms.openlocfilehash: f0e9439ee31c25657aac1f55dc277123f901209a
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 8a3c8bf0d2d203b650b2706c24dc4c20e88e2576
+ms.sourcegitcommit: 36f502e2449f49e82bd593d6aea0b71ac48d6bec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790989"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70750562"
 ---
 # <a name="getting-paid"></a>Bezahlung
-Hier ist einige wichtige Informationen über die Zahlung für Ihre apps, Add-ons und Werbung Ergebnis erhalten.
+Hier sind einige wichtige Informationen zum Empfangen von Zahlungen für Ihre apps, Add-ons und Werbeeinnahmen.
 
 > [!IMPORTANT]
-> Bevor Sie Geld von app-Verkäufe in den Microsoft Store erhalten können, müssen Sie [richten Sie Ihr Zahlungskonto, und füllen Sie die erforderlichen Steuerformulare](setting-up-your-payout-account-and-tax-forms.md).
+> Bevor Sie im Microsoft Store Geld von App-Verkäufen erhalten können, müssen Sie [Ihr Auszahlungs Konto einrichten und die erforderlichen Steuerformulare ausfüllen](setting-up-your-payout-account-and-tax-forms.md).
 
 ## <a name="store-fee"></a>Store-Gebühr
 
@@ -46,7 +46,7 @@ Beachten Sie, dass der von Ihnen ausgewählte Preis u. U. eine Verkaufs- oder Me
 
 ## <a name="payout-reporting"></a>Auszahlungsberichte
 
-Können Zugriff auf Informationen über Ihre Zahlungsinformationen und Herunterladen der Berichte in der **auszahlungszusammenfassung** von [Partner Center](https://partner.microsoft.com/dashboard). Weitere Informationen zu den aufgeführten Details und zu den Kategorien, in die wir Ihre Erlöse einteilen, finden Sie unter [Auszahlungszusammenfassung](payout-summary.md).
+Sie können auf Details zu ihren Zahlungsinformationen zugreifen und Berichte in der **Auszahlungs Zusammenfassung** von [Partner Center](https://partner.microsoft.com/dashboard)herunterladen. Weitere Informationen zu den aufgeführten Details und zu den Kategorien, in die wir Ihre Erlöse einteilen, finden Sie unter [Auszahlungszusammenfassung](payout-summary.md).
 
 
 ## <a name="payout-timeframe"></a>Auszahlungszeitraum
@@ -56,14 +56,14 @@ Zahlungen erfolgen monatlich (vorausgesetzt, der entsprechende Zahlungsschwellen
 
 ##  <a name="payout-hold-status"></a>Auszahlungssperre
 
-Standardmäßig senden wir Zahlungen monatlich, wie oben beschrieben. Sie haben jedoch die Möglichkeit, Ihre Auszahlungen zu sperren, sodass wir keine Zahlungen an Ihr Konto senden können. Wenn Sie Ihre Auszahlungen sperren, zeichnen wir weiterhin alle Ihre Umsätze auf und geben die Details in Ihrer **Auszahlungszusammenfassung** an. Allerdings senden wir so lange keine Zahlungen an Ihr Konto, bis Sie die Sperre entfernen. 
+Standardmäßig senden wir Zahlungen monatlich, wie oben beschrieben. Sie haben jedoch die Möglichkeit, Ihre Zahlungen für ein Programm auf dem halten zu platzieren, was uns daran hindert, Zahlungen an Ihr Konto zu senden. Wenn Sie Ihre Auszahlungen sperren, zeichnen wir weiterhin alle Ihre Umsätze auf und geben die Details in Ihrer **Auszahlungszusammenfassung** an. Allerdings senden wir so lange keine Zahlungen an Ihr Konto, bis Sie die Sperre entfernen.
 
-Um Ihre Zahlungen zu sperren, wechseln Sie zu **Kontoeinstellungen**. Setzen Sie den Schieberegler unter **Finanzielle Details** im Bereich **Payout hold status** auf **Ein**. Sie können die Auszahlungssperre jederzeit ändern. Beachten Sie jedoch, dass sich Ihre Auswahl auf die nächste monatliche Auszahlung auswirkt. Wenn Sie beispielsweise die April-Auszahlung sperren möchten, sollten Sie die Auszahlungssperre schon vor Ende März auf **Ein** festlegen.
+Wechseln Sie zu den **Entwicklereinstellungen**, um Ihre Zahlungen zu speichern. Suchen Sie unter " **Auszahlungs-und Steuer**Profil Zuweisung" im Abschnitt " **Auszahlungs-und Steuer Profil Zuweisung** " das Programm, für das Sie die Zahlungen erhalten möchten. Aktivieren Sie das Kontrollkästchen **meine Zahlung aufbewahren** , um die Zahlungen für dieses Programm zu speichern. Sie können die Auszahlungssperre jederzeit ändern. Beachten Sie jedoch, dass sich Ihre Auswahl auf die nächste monatliche Auszahlung auswirkt. Wenn Sie beispielsweise die April-Auszahlung sperren möchten, sollten Sie die Auszahlungssperre schon vor Ende März auf **Ein** festlegen.
 
-Nachdem Sie die Auszahlungssperre auf **Ein** festgelegt haben, werden alle Auszahlungen gesperrt, bis Sie den Schieberegler wieder auf **Aus** setzen. Dann werden Sie im nächsten monatlichen Auszahlungszyklus berücksichtigt (vorausgesetzt, der entsprechende Zahlungsschwellenwert wurde erreicht). Wenn Sie zum Beispiel Ihre Auszahlungen gesperrt haben, aber eine Auszahlung im Juni generieren möchten, sollten Sie die Auszahlungssperre noch vor Ende Mai auf **Aus** setzen.
+Nachdem Sie den Status der Auszahlungs Aufbewahrung auf ein festgelegt **haben, werden**alle Auszahlungen für dieses Programm angehalten, bis Sie den Schieberegler wieder auf aus-und **ausschalten**. Dann werden Sie im nächsten monatlichen Auszahlungszyklus berücksichtigt (vorausgesetzt, der entsprechende Zahlungsschwellenwert wurde erreicht). Wenn Sie zum Beispiel Ihre Auszahlungen gesperrt haben, aber eine Auszahlung im Juni generieren möchten, sollten Sie die Auszahlungssperre noch vor Ende Mai auf **Aus** setzen.
 
 > [!NOTE]
-> Ihre **Auszahlung Sperrstatus** Option gilt für die **alle** Umsatzquellen, die über das Windows-Developer-Programm im Partner Center (Microsoft Store, angekündigt, Azure Marketplace usw..) bezahlt werden. Es ist nicht möglich, für jede Umsatzquelle eine separate Option für die Auszahlungssperre festzulegen.
+> Der **Status Ihrer Auszahlungs Aufbewahrung** gilt für jedes Programm einzeln (Microsoft Store, Werbung, Azure Marketplace usw.). Wenn Sie Zahlungen für all Ihre Programme durchsetzen möchten, müssen Sie die Zahlungen für jedes Programm einzeln aufbewahren.
 
 
  
