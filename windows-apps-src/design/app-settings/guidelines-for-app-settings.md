@@ -8,42 +8,37 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5c5e19c6e23f4c0094220a735a0c2a48c1cc34
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 72da3d17f3584d0c295926880b949591b83b47a7
+ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362057"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076397"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
+App-Einstellungen sind die Benutzer anpassbaren Teile ihrer universelle Windows-Plattform-app (UWP), auf die über eine APP-Einstellungsseite zugegriffen wird. Beispielsweise kann eine Newsreader-App den Benutzer angeben, welche Nachrichtenquellen angezeigt werden sollen oder wie viele Spalten auf dem Bildschirm angezeigt werden sollen, während eine Wetter-App den Benutzer zwischen Celsius und Fahrenheit wählen kann. Dieser Artikel enthält Empfehlungen und bewährte Methoden zum Erstellen und Anzeigen von App-Einstellungen.
 
-
-App-Einstellungen sind die vom Benutzer anpassbaren Teile Ihrer App und live innerhalb der Einstellungsseite einer App. Beispielsweise kann ein Benutzer in einer Newsreader-App angeben, welche neuen Quellen oder wie viele Spalten auf dem Bildschirm angezeigt werden sollen. Und die Einstellungen einer Wetter-App können es dem Benutzer ermöglichen, zwischen Celsius und Fahrenheit als Standardmaßeinheit zu wählen. In diesem Artikel werden bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen beschrieben.
-
-
-## <a name="should-i-include-a-settings-page-in-my-app"></a>Sollte die App eine Seite für App-Einstellungen beinhalten?
+## <a name="when-to-provide-a-settings-page"></a>Angeben der Seite "Einstellungen"
 
 Hier sind Beispiele für App-Optionen, die zu einer Seite für App-Einstellungen gehören:
 
--   Konfigurationsoptionen, die sich auf das Verhalten der App auswirken und keine häufige erneute Anpassung erfordern (z. B. die Auswahl der Standardtemperatureinheit Celsius oder Fahrenheit in einer Wetter-App, das Ändern der Kontoeinstellungen für eine E-Mail-App, Einstellungen für Benachrichtigungen oder Barrierefreiheitsoptionen).
--   Optionen, die von den bevorzugten Benutzereinstellungen abhängen, wie Musik, Soundeffekte oder Farbdesigns.
--   App-Infos, die eher selten benötigt werden, z. B. Datenschutzrichtlinie, Hilfe, App-Version oder Copyright-Informationen.
+- Konfigurationsoptionen, die sich auf das Verhalten der App auswirken und keine häufige erneute Anpassung erfordern (z. B. die Auswahl der Standardtemperatureinheit Celsius oder Fahrenheit in einer Wetter-App, das Ändern der Kontoeinstellungen für eine E-Mail-App, Einstellungen für Benachrichtigungen oder Barrierefreiheitsoptionen).
+- Optionen, die von den bevorzugten Benutzereinstellungen abhängen, wie Musik, Soundeffekte oder Farbdesigns.
+- App-Infos, die eher selten benötigt werden, z. B. Datenschutzrichtlinie, Hilfe, App-Version oder Copyright-Informationen.
 
 Befehle, die Teil des typischen App-Workflows sind (z. B. das Ändern der Pinselgröße in einer Zeichen-App), sollten sich nicht auf einer Einstellungsseite befinden. Weitere Informationen zur Platzierung von Befehlen finden Sie unter [Befehlsdesigngrundlagen](https://docs.microsoft.com/windows/uwp/layout/commanding-basics).
 
 ## <a name="general-recommendations"></a>Allgemeine Empfehlungen
 
-
--   Halten Sie die Einstellungsseiten möglichst einfach, und verwenden Sie binäre Steuerelemente (an/aus). Ein [Umschalter](../controls-and-patterns/toggles.md) ist in der Regel das beste Steuerelement für binäre Einstellungen.
--   Verwenden Sie [Optionsfelder](../controls-and-patterns/radio-button.md) für Einstellungen, mit denen Benutzer aus bis zu fünf zusammenhängenden Optionen, die sich gegenseitig ausschließen, eine auswählen können.
--   Erstellen Sie einen Einstiegspunkt für alle App-Einstellungen auf der Einstellungsseite Ihrer App.
--   Verwenden Sie einfache Einstellungen. Definieren Sie intelligente Standardwerte, und halten Sie die Anzahl von Einstellungen so gering wie möglich.
--   Wenn ein Benutzer eine Einstellung ändert, sollte die App die Änderung sofort wiedergeben.
--   Fügen Sie keine Befehle hinzu, die zu einem häufig verwendeten App-Workflow gehören.
+- Halten Sie die Einstellungsseiten möglichst einfach, und verwenden Sie binäre Steuerelemente (an/aus). Ein [Umschalter](../controls-and-patterns/toggles.md) ist in der Regel das beste Steuerelement für binäre Einstellungen.
+- Verwenden Sie [Optionsfelder](../controls-and-patterns/radio-button.md) für Einstellungen, mit denen Benutzer aus bis zu fünf zusammenhängenden Optionen, die sich gegenseitig ausschließen, eine auswählen können.
+- Erstellen Sie einen Einstiegspunkt für alle App-Einstellungen auf der Einstellungsseite Ihrer App.
+- Verwenden Sie einfache Einstellungen. Definieren Sie intelligente Standardwerte, und halten Sie die Anzahl von Einstellungen so gering wie möglich.
+- Wenn ein Benutzer eine Einstellung ändert, sollte die App die Änderung sofort wiedergeben.
+- Fügen Sie keine Befehle hinzu, die zu einem häufig verwendeten App-Workflow gehören.
 
 ## <a name="entry-point"></a>Einstiegspunkt
-
 
 Die Methode, mit der Benutzer auf die Einstellungsseite Ihrer App zugreifen, sollte auf dem Layout Ihrer App basieren.
 
@@ -63,11 +58,11 @@ Bei Verwendung einer [App-Leiste](../controls-and-patterns/app-bars.md) oder Too
 
 Wenn Sie ein Hublayout verwenden, sollte sich der Einstiegspunkt für App-Einstellungen im Überlaufmenü „Mehr“ einer App-Leiste befinden.
 
-**Tabs/pivots**
+**Registerkarten/Pivots**
 
 Bei einem Registerkarten- oder Pivots-Layout raten wir davon ab, den Einstiegspunkt für App-Einstellungen als eines der Elemente der obersten Ebene in der Navigation zu platzieren. Stattdessen sollte der Einstiegspunkt für App-Einstellungen im Überlaufmenü „Mehr“ einer App-Leiste platziert werden.
 
-**Master-details**
+**Master-Details**
 
 Anstatt den Einstiegspunkt für App-Einstellungen innerhalb eines Master/Details-Bereichs zu u verstecken, machen Sie ihn als letztes angeheftete Element auf der obersten Ebene des Masterbereichs verfügbar.
 
@@ -117,35 +112,35 @@ Unter einer Unterüberschrift „Rechtliches” können Sie alle „Nutzungsbedi
 
 Wenn Sie eine Liste der gewünschten Elemente auf der Seite für App-Einstellungen erstellt haben, berücksichtigen Sie die folgenden Richtlinien:
 
--   Gruppieren Sie ähnliche oder verwandte Einstellungen unter einer Einstellungsbezeichnung.
--   Versuchen Sie, die Gesamtanzahl der Einstellungen auf maximal vier oder fünf zu begrenzen.
--   Zeigen Sie unabhängig vom App-Kontext dieselben Einstellungen an. Sind einige Einstellungen in einem bestimmten Kontext nicht relevant, deaktivieren Sie sie im Einstellungen-Flyout der App.
--   Verwenden Sie für Einstellungen informative Beschriftungen, die nur aus einem Wort bestehen. Nennen Sie für kontobezogene Einstellungen die Einstellung „Konten“ statt „Kontoeinstellungen“. Wenn Sie nur eine Option für Ihre Einstellungen festlegen möchten und die Einstellungen selbst sich nicht als Beschriftung eignen, verwenden Sie „Optionen“ oder „Standardeinstellungen“.
--   Wird über eine Einstellung direkt das Web anstelle eines Flyouts aufgerufen, informieren Sie den Benutzer mit einem als [Hyperlink](../controls-and-patterns/hyperlinks.md) formatierten visuellen Hinweis darüber, z. B. mit „Hilfe (online)“ oder „Webforen“. Mehrere Weblinks sollten Sie in einem Flyout mit einer einzelnen Einstellung gruppieren. Beispiel: Die Einstellung „Info“ könnte ein Flyout mit Links zu Ihren Nutzungsbedingungen, Datenschutzbestimmungen und App-Support-Infos öffnen.
--   Fassen Sie selten verwendete Einstellungen zu einem einzelnen Eintrag zusammen, damit für gängigere Einstellungen jeweils ein eigener Eintrag zur Verfügung steht. Fassen Sie Inhalte oder Links, die nur Informationen enthalten, unter der Einstellung „Info“ zusammen.
--   Wiederholen Sie die Funktionen nicht im Berechtigungsbereich. Windows stellt diesen Bereich standardmäßig bereit, und er kann nicht geändert werden.
+- Gruppieren Sie ähnliche oder verwandte Einstellungen unter einer Einstellungsbezeichnung.
+- Versuchen Sie, die Gesamtanzahl der Einstellungen auf maximal vier oder fünf zu begrenzen.
+- Zeigen Sie unabhängig vom App-Kontext dieselben Einstellungen an. Sind einige Einstellungen in einem bestimmten Kontext nicht relevant, deaktivieren Sie sie im Einstellungen-Flyout der App.
+- Verwenden Sie für Einstellungen informative Beschriftungen, die nur aus einem Wort bestehen. Nennen Sie für kontobezogene Einstellungen die Einstellung „Konten“ statt „Kontoeinstellungen“. Wenn Sie nur eine Option für Ihre Einstellungen festlegen möchten und die Einstellungen selbst sich nicht als Beschriftung eignen, verwenden Sie „Optionen“ oder „Standardeinstellungen“.
+- Wird über eine Einstellung direkt das Web anstelle eines Flyouts aufgerufen, informieren Sie den Benutzer mit einem als [Hyperlink](../controls-and-patterns/hyperlinks.md) formatierten visuellen Hinweis darüber, z. B. mit „Hilfe (online)“ oder „Webforen“. Mehrere Weblinks sollten Sie in einem Flyout mit einer einzelnen Einstellung gruppieren. Beispiel: Die Einstellung „Info“ könnte ein Flyout mit Links zu Ihren Nutzungsbedingungen, Datenschutzbestimmungen und App-Support-Infos öffnen.
+- Fassen Sie selten verwendete Einstellungen zu einem einzelnen Eintrag zusammen, damit für gängigere Einstellungen jeweils ein eigener Eintrag zur Verfügung steht. Fassen Sie Inhalte oder Links, die nur Informationen enthalten, unter der Einstellung „Info“ zusammen.
+- Wiederholen Sie die Funktionen nicht im Berechtigungsbereich. Windows stellt diesen Bereich standardmäßig bereit, und er kann nicht geändert werden.
 
--   Hinzufügen von Einstellungsinhalten zum Einstellungen-Flyout
--   Stellen Sie Inhalte von oben nach unten in einer einzelnen, ggf. bildlauffähigen Spalte dar. Beschränken Sie den Bildlauf auf die doppelte Bildschirmhöhe.
--   Verwenden Sie die folgenden Steuerelemente für App-Einstellungen:
+- Hinzufügen von Einstellungsinhalten zum Einstellungen-Flyout
+- Stellen Sie Inhalte von oben nach unten in einer einzelnen, ggf. bildlauffähigen Spalte dar. Beschränken Sie den Bildlauf auf die doppelte Bildschirmhöhe.
+- Verwenden Sie die folgenden Steuerelemente für App-Einstellungen:
 
-    -   [Ein/aus-Schalter](../controls-and-patterns/toggles.md): Legen Sie Werte ein- oder ausschalten, um Benutzern zu ermöglichen.
-    -   [Optionsfelder](../controls-and-patterns/radio-button.md): Damit können Benutzer ein Element aus einem Satz von bis zu 5 gegenseitig aus, wählen Sie im Zusammenhang mit Optionen.
-    -   [Das Texteingabefeld](../controls-and-patterns/text-block.md): Damit Benutzer Text eingeben kann. Wählen Sie die Art des Texteingabefelds passend zum Typ des vom Benutzer erhaltenen Texts aus, beispielsweise für E-Mail-Adressen oder Kennwörter.
-    -   [Hyperlinks](../controls-and-patterns/hyperlinks.md): Um den Benutzer zu einer anderen Seite innerhalb der app oder eine externe Website zu leiten. Wenn ein Benutzer auf einen Hyperlink klickt, wird das Einstellungen-Flyout geschlossen.
-    -   [Schaltflächen](../controls-and-patterns/buttons.md): Um eine sofortige Aktion zu initiieren, ohne die aktuelle Einstellungen-Flyout geschlossen wird, Benutzern zu ermöglichen.
--   Wenn eines der Steuerelemente deaktiviert ist, fügen Sie eine beschreibende Meldung hinzu. Platzieren Sie diese Meldung über dem deaktivierten Steuerelement.
--   Zeigen Sie Inhalte und Steuerelemente als einzelnen Block per Animation an, nachdem das Einstellungen-Flyout und die Überschrift eingeblendet wurden. Animieren Sie Inhalte mit der Animation [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) oder [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) mit einem Offset links von 100 Pixel.
--   Verwenden Sie Abschnittsüberschriften, Absätze und Bezeichnungen, um Inhalte ggf. zu organisieren und zu erläutern.
--   Verwenden Sie zum Wiederholen von Einstellungen eine zusätzliche UI-Ebene oder ein Model zum Erweitern und Reduzieren. Beschränken Sie Hierarchien jedoch auf maximal zwei Ebenen. So könnte zum Beispiel in einer Wetter-App, deren Einstellungen sich auf die jeweilige Stadt beziehen, eine Liste mit Städten angezeigt werden. Der Benutzer muss dann nur auf die gewünschte Stadt zu tippen, um ein neues Flyout zu öffnen oder zu erweitern, um die Einstellungsoptionen anzuzeigen.
--   Wenn das Laden von Steuerelementen oder Webinhalten längere Zeit in Anspruch nimmt, informieren Sie den Benutzer mithilfe eines unbestimmten Statussteuerelements darüber, dass Informationen geladen werden. Weitere Informationen finden Sie unter [Richtlinien für Statussteuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls).
--   Verwenden Sie keine Schaltflächen für die Navigation oder zum Übernehmen von Änderungen. Verwenden Sie Hyperlinks, um zu anderen Seiten zu navigieren, und speichern Sie Änderungen an App-Einstellungen automatisch, wenn ein Benutzer das Einstellungen-Flyout schließt, anstatt eine Schaltfläche für das Übernehmen von Änderungen zu verwenden.
+    - [Schalter umschalten](../controls-and-patterns/toggles.md): , Damit Benutzer Werte ein-oder ausschalten können.
+    - Options [Felder:](../controls-and-patterns/radio-button.md) Ermöglicht Benutzern das Auswählen eines Elements aus einem Satz von bis zu 5 Optionen, die sich gegenseitig ausschließen.
+    - [Eingabefeld für Text](../controls-and-patterns/text-block.md): , Damit Benutzer Text eingeben können. Wählen Sie die Art des Texteingabefelds passend zum Typ des vom Benutzer erhaltenen Texts aus, beispielsweise für E-Mail-Adressen oder Kennwörter.
+    - [Hyperlinks](../controls-and-patterns/hyperlinks.md): , Wenn der Benutzer auf eine andere Seite in der APP oder auf eine externe Website über gelangen soll. Wenn ein Benutzer auf einen Hyperlink klickt, wird das Einstellungen-Flyout geschlossen.
+    - [Schalt](../controls-and-patterns/buttons.md)Flächen: , Damit Benutzer eine sofortige Aktion initiieren können, ohne das aktuelle Einstellungs-Flyout zu verwerfen.
+- Wenn eines der Steuerelemente deaktiviert ist, fügen Sie eine beschreibende Meldung hinzu. Platzieren Sie diese Meldung über dem deaktivierten Steuerelement.
+- Zeigen Sie Inhalte und Steuerelemente als einzelnen Block per Animation an, nachdem das Einstellungen-Flyout und die Überschrift eingeblendet wurden. Animieren Sie Inhalte mit der Animation [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) oder [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) mit einem Offset links von 100 Pixel.
+- Verwenden Sie Abschnittsüberschriften, Absätze und Bezeichnungen, um Inhalte ggf. zu organisieren und zu erläutern.
+- Verwenden Sie zum Wiederholen von Einstellungen eine zusätzliche UI-Ebene oder ein Model zum Erweitern und Reduzieren. Beschränken Sie Hierarchien jedoch auf maximal zwei Ebenen. So könnte zum Beispiel in einer Wetter-App, deren Einstellungen sich auf die jeweilige Stadt beziehen, eine Liste mit Städten angezeigt werden. Der Benutzer muss dann nur auf die gewünschte Stadt zu tippen, um ein neues Flyout zu öffnen oder zu erweitern, um die Einstellungsoptionen anzuzeigen.
+- Wenn das Laden von Steuerelementen oder Webinhalten längere Zeit in Anspruch nimmt, informieren Sie den Benutzer mithilfe eines unbestimmten Statussteuerelements darüber, dass Informationen geladen werden. Weitere Informationen finden Sie unter [Richtlinien für Statussteuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls).
+- Verwenden Sie keine Schaltflächen für die Navigation oder zum Übernehmen von Änderungen. Verwenden Sie Hyperlinks, um zu anderen Seiten zu navigieren, und speichern Sie Änderungen an App-Einstellungen automatisch, wenn ein Benutzer das Einstellungen-Flyout schließt, anstatt eine Schaltfläche für das Übernehmen von Änderungen zu verwenden.
 
 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Grundlagen des Berichtsentwurfs Befehl](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+* [Grundlagen des Befehls Entwurfs](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
 * [Richtlinien für Statussteuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
-* [Store und Abrufen von app-Daten](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [Speichern und Abrufen von App-Daten](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [ **"Entrancemetransition"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

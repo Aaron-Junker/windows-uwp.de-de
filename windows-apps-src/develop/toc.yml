@@ -933,11 +933,11 @@
     - name: Komponenten für Windows-Runtime
       href: ../winrt-components/index.md
       items:
-        - name: Erstellen von Komponenten für Windows-Runtime in C++/CX
+        - name: Komponenten für Windows-Runtime mit C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-        - name: 'Exemplarische Vorgehensweise: Erstellen von Windows-Runtime-Komponenten in C++/CX und Aufrufen über JavaScript oder C#'
+        - name: Exemplarische Vorgehensweise für eine C++/CX-Windows-Runtime Komponente
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-        - name: 'Erstellen von Komponenten für Windows-Runtime in C# und Visual Basic'
+        - name: 'Komponenten für Windows-Runtime in C# und Visual Basic'
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
           items:
             - name: Benutzerdefinierte Ereignisse und Ereignisaccessoren in Komponenten für Windows-Runtime
@@ -948,9 +948,9 @@
               href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
             - name: Verteilen einer verwalteten Komponente für Windows-Runtime
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-            - name: .NET Framework-Zuordnungen von Windows-Runtime-Typen
+            - name: .NET-Zuordnungen von Windows-Runtime-Typen
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: 'Exemplarische Vorgehensweise: Erstellen einer einfachen Komponente für Windows-Runtime und Aufrufen der Komponente über JavaScript'
+        - name: 'Exemplarische Vorgehensweise für eine C#- oder Visual Basic-Komponente für Windows-Runtime'
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: Auslösen von Ereignissen in Komponenten für Windows-Runtime
           href: ../winrt-components/raising-events-in-windows-runtime-components.md
