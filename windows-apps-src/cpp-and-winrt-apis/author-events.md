@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, Ereignis
 ms.localizationpriority: medium
-ms.openlocfilehash: 4499b2191734c6ae66131ce92aa2654188313d5e
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: e8bb86bd8d52ff96f010bf41758f1e4602330d52
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270177"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393479"
 ---
 # <a name="author-events-in-cwinrt"></a>Erstellen von Ereignissen in C++/WinRT
 

@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 404a6985c95718363f3dbbc3b8f27a7793b28e86
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328851"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393461"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Umstellen von C++/CX auf C++/WinRT
 
@@ -471,11 +471,11 @@ Darüber hinaus erlaubt C++/CX das Dereferenzieren eines **String^** -Elements m
 | Vorgang | C++/CX | C++/WinRT|
 |-|-|-|
 | Kategorie des string-Typs | Verweistyp | Werttyp |
-| **HSTRING** mit NULL-Wert wird dargestellt als | `(String^)nullptr` | `hstring{ nullptr }` |
+| **HSTRING** mit NULL-Wert wird dargestellt als | `(String^)nullptr` | `hstring{}` |
 | Sind NULL und `""` identisch? | Ja | Ja |
 | Gültigkeit von NULL | `s = nullptr;`<br>`s->Length == 0` (gültig) | `s = nullptr;`<br>`s.size() == 0` (gültig) |
 | Boxing eines string-Elements | `o = s;` | `o = box_value(s);` |
-| Wenn `s` gleich `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
+| Wenn `s` gleich `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
 | Wenn `s` gleich `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
 | Boxing eines string-Elements unter Beibehaltung von NULL | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
 | Boxing eines string-Elements erzwingen | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
@@ -514,7 +514,7 @@ Unter C++/CX werden im **Platform**-Namespace verschiedene Datentypen bereitgest
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformagile-to-winrtagileref"></a>Portieren von **Platform::Agile\^** zu **winrt::agile_ref**
+### <a name="port-platformagile-to-winrtagile_ref"></a>Portieren von **Platform::Agile\^** zu **winrt::agile_ref**
 
 Der Typ **Platform::Agile\^** in C++/CX stellt eine Windows-Runtime-Klasse dar, auf die über einen beliebigen Thread zugegriffen werden kann. Die C++/WinRT-Entsprechung lautet [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
 
@@ -534,7 +534,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 Du kannst eine Initialisierungsliste, ein **std::array**-Element oder ein **std::vector**-Element verwenden. Weitere Informationen und Codebeispiele findest du unter [Standard-Initialisierungslisten](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) und [Standard-Arrays und -Vektoren](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
-### <a name="port-platformexception-to-winrthresulterror"></a>Portieren von **Platform::Exception\^** zu **winrt::hresult_error**
+### <a name="port-platformexception-to-winrthresult_error"></a>Portieren von **Platform::Exception\^** zu **winrt::hresult_error**
 
 Der Typ **Platform::Exception\^** wird in C++/CX erzeugt, wenn eine Windows-Runtime-API kein S\_OK HRESULT zurückgibt. Für C++/WinRT ist die Entsprechung [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error).
 

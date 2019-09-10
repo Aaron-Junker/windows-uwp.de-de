@@ -5,15 +5,15 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, binden, Eigenschaft
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ff15e9b86d90aa14fd56e4e7015e949e2742bf6
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
+ms.sourcegitcommit: eb683734801c1de5977db70e626609cf7e5b7654
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328881"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70304523"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft
-Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *Observable*-Eigenschaft bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Eigenschaften in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementierst und XAML-Steuerelemente an sie bindest.
+Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *Observable*-Eigenschaft bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Eigenschaften in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementierst und XAML-Steuerelemente an sie bindest (Hintergrundinformationen findest Du unter [Datenbindung](/windows/uwp/data-binding)).
 
 > [!IMPORTANT]
 > Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit C++/WinRT findest du unter [Verwenden von APIs mit C++/WinRT](consume-apis.md) sowie unter [Erstellen von APIs mit C++/WinRT](author-apis.md).
