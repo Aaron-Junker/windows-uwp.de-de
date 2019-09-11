@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 81065c214cc2b0583a99ac88cf1c3e4cd784658a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d2c8e05d2b01b110085ed82c19cecd251c9c6971
+ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361688"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876242"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>Integration in die Steuerelemente für den Systemmedientransport
 
@@ -34,6 +34,11 @@ Wenn Sie Metadaten, die für die Medienobjekte in SMTC angezeigt werden, hinzuf�
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
+
+
+> [!Note]
+> Apps sollten einen Wert für die [**Type**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaitemdisplayproperties.type) -Eigenschaft festlegen, auch wenn Sie keine anderen Medien Metadaten bereitstellen, die von den System Media-Transport Steuerelementen angezeigt werden. Dieser Wert hilft dem System dabei, Ihre Medieninhalte ordnungsgemäß zu verarbeiten, einschließlich der Aktivierung des Bildschirmschoners während der Wiedergabe.
+
 
 ## <a name="use-commandmanager-to-modify-or-override-the-default-smtc-commands"></a>Verwenden Sie CommandManager, um die Standard-SMTC-Befehle zu ändern oder zu überschreiben.
 Ihre App kann das Verhalten der SMTC-Steuerelemente in der [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager)-Klasse ändern oder vollständig überschreiben. Sie können für jede Instanz der **MediaPlayer**-Klasse eine Befehlsmanagerinstanz abrufen, indem Sie auf die [**CommandManager**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.commandmanager)-Eigenschaft zugreifen.
@@ -77,9 +82,9 @@ Wie weiter oben in diesem Artikel bereits erwähnt, erkennt der SMTC automatisch
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Medienwiedergabe](media-playback.md)
-* [Abspielen von Audio- und Videodateien mit MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Manuelle Steuerung für die System-Media-Transport-Steuerelemente](system-media-transport-controls.md)
-* [System-MTU Wert Mediensteuerelementen-Beispiel auf github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [Wiedergabe von Audiodateien und Videos mit Media Player](play-audio-and-video-with-mediaplayer.md)
+* [Manuelles Steuern der System Media-Transport Steuerelemente](system-media-transport-controls.md)
+* [Beispiel für das tranportieren von System Medien auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
  
 
  

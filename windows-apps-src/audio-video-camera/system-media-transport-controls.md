@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e306cfe1ee03e9ef4a0688145c2db7b3addd68e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0a4163105b934f5c1e2970fab9f51b76d69d1bd8
+ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318503"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876223"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>Manuelle Steuerung der Steuerelemente für den Systemmedientransport
 
@@ -66,6 +66,11 @@ Wenn es Ihr Szenario erfordert, können Sie die von den Steuerelementen für den
 
 [!code-cs[SystemMediaTransportControlsUpdaterManual](./code/SMTCWin10/cs/MainPage.xaml.cs#SystemMediaTransportControlsUpdaterManual)]
 
+> [!Note]
+> Apps sollten einen Wert für die [systemmediatransportcontrolsdisplayupdater. Type](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.type#Windows_Media_SystemMediaTransportControlsDisplayUpdater_Type
+) -Eigenschaft festlegen, auch wenn Sie keine anderen Medien Metadaten bereitstellen, die von den System Media-Transport Steuerelementen angezeigt werden. Dieser Wert hilft dem System dabei, Ihre Medieninhalte ordnungsgemäß zu verarbeiten, einschließlich der Aktivierung des Bildschirmschoners während der Wiedergabe.
+
+
 ## <a name="update-the-system-media-transport-controls-timeline-properties"></a>Aktualisieren der Zeitskalaeigenschaften der Steuerelemente für den Systemmedientransport
 
 Die Steuerelemente für den Systemmedientransport zeigen Informationen über die Zeitskala des aktuell wiedergegebenen Medienelements an, z. B. die aktuelle Wiedergabeposition, die Startzeit und die Endzeit des Medienelements. Erstellen Sie zum Aktualisieren der Zeitskalaeigenschaften der Steuerelemente für den Systemmedientransport ein neues [**SystemMediaTransportControlsTimelineProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControlsTimelineProperties)-Objekt. Legen Sie die Eigenschaften des Objekts so fest, dass sich der aktuelle Zustand des wiedergegebenen Medienelements widerspiegelt. Rufen Sie die [**SystemMediaTransportControls.UpdateTimelineProperties**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.updatetimelineproperties)-Methode auf, damit die Zeitskala durch die Steuerelemente aktualisiert wird.
@@ -74,7 +79,7 @@ Die Steuerelemente für den Systemmedientransport zeigen Informationen über die
 
 -   Sie müssen einen Wert für die [**StartTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.starttime)-, [**EndTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.endtime)- und [**Position**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested)-Eigenschaften angeben, um eine Zeitskala für das wiedergegebene Element anzuzeigen.
 
--   [**MinSeekTime** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime) und [ **MaxSeekTime** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime) können Sie den Bereich innerhalb der Zeitachse angeben, die der Benutzer gesucht werden kann. Ein typisches Szenario hierfür ist es, den Anbietern Werbepausen in ihren Medien zu ermöglichen.
+-   Mit [**minseektime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime) und [**maxseektime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime) können Sie den Bereich innerhalb der Zeitachse angeben, den der Benutzer suchen kann. Ein typisches Szenario hierfür ist es, den Anbietern Werbepausen in ihren Medien zu ermöglichen.
 
     Sie müssen die [**MinSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime)- und [**MaxSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime)-Eigenschaften festlegen, um [**PositionChangeRequest**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested) auszulösen.
 
@@ -84,11 +89,11 @@ Die Steuerelemente für den Systemmedientransport zeigen Informationen über die
 
 Es gibt eine Reihe von Steuerelementeigenschaften für den Systemmedientransport, die sich auf den Zustand des Media Players selbst, und nicht auf den Zustand des wiedergegebenen Medienelements beziehen. Jede dieser Eigenschaften ist einem Ereignis zugeordnet, das ausgelöst wird, wenn der Benutzer das zugeordnete Steuerelement anpasst. Diese Eigenschaften und Ereignisse sind folgende:
 
-| Eigenschaft                                                                  | Ereignis                                                                                                   |
+| Eigenschaft                                                                  | event                                                                                                   |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [**AutoRepeatMode**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.autorepeatmode) | [**AutoRepeatModeChangeRequested**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.autorepeatmodechangerequested) |
-| [**PlaybackRate**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackrate)     | [**PlaybackRateChangeRequested**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackratechangerequested)     |
-| [**ShuffleEnabled**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.shuffleenabled) | [**ShuffleEnabledChangeRequested**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.shuffleenabledchangerequested) |
+| [**Autorepeer**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.autorepeatmode) | [**Autorepeer-Liste**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.autorepeatmodechangerequested) |
+| [**Playbackrate**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackrate)     | [**Playbackratechangerequ.** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackratechangerequested)     |
+| [**Shuffleaktivierte**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.shuffleenabled) | [ **"Shuffleenabledchangerequ."** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.shuffleenabledchangerequested) |
 
  
 Registrieren Sie zum Behandeln von Benutzerinteraktionen mit einem der folgenden Steuerelemente zunächst einen Handler für das zugeordnete Ereignis.
@@ -111,8 +116,8 @@ Weitere Informationen zur Audiowiedergabe im Hintergrund finden Sie unter [Wiede
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Medienwiedergabe](media-playback.md)
-* [Integrieren Sie in das Medium für die Transport-Steuerelemente](integrate-with-systemmediatransportcontrols.md) 
-* [System-Media-MTU-Wert-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
+* [Integration in die System Media-Transport Steuerelemente](integrate-with-systemmediatransportcontrols.md) 
+* [Beispiel für System Medien-Tranport](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 
