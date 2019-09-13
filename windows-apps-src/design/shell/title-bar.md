@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Titelleiste
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c613456525648883735850fe831cb3b67f145c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 323b9b80a7d0087a07faf34d598f51d643e1324c
+ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648815"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930334"
 ---
 # <a name="title-bar-customization"></a>Anpassen der Titelleiste
 
@@ -20,7 +20,7 @@ ms.locfileid: "57648815"
 
 Wenn Ihre App in einem Desktop-Fenster ausgeführt wird, können Sie die Titelleisten der Fenster anpassen, damit sie das gleiche Erscheinungsbild wie die App aufweisen Mit den APIs zur Anpassung der Titelleiste können Sie die Farben für die Elemente der Titelleiste angeben, oder Ihren App-Inhalte in den Bereich der Titelleiste anpassen und volle Kontrolle darüber erhalten.
 
-> **Wichtige APIs:** [ApplicationView.TitleBar Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [ApplicationViewTitleBar Klasse](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **Wichtige APIs:** [Applicationview. TitleBar-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [applicationviewtitlebar-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [coreapplicationviewtitlebar-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>Ausmaße der Anpassung der Titelleiste
 
@@ -130,10 +130,14 @@ public MainPage()
 
     var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
     coreTitleBar.ExtendViewIntoTitleBar = true;
-
+    coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
     // Set XAML element as a draggable region.
-    AppTitleBar.Height = coreTitleBar.Height;
     Window.Current.SetTitleBar(AppTitleBar);
+}
+
+private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+{
+    AppTitleBar.Height = sender.Height;
 }
 ```
 
@@ -166,7 +170,7 @@ Sie können Inhalte unter den Titelleistensteuerungsbereich zeichnen, der von di
 
 Sie können das [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged)-Ereignis so festlegen, dass es auf die Änderungen der Größe der Titelleistenschaltfläche reagiert. Dies kann beispielsweise der Fall sein, wenn die Schaltfläche des Systems „Zurück” angezeigt oder ausgeblendet wird. Verwenden Sie dieses Ereignis, um das Positionieren von Benutzeroberflächenelementen zu überprüfen und aktualisieren, die von der Größe der Titelleiste abhängen.
 
-In diesem Beispiel wird veranschaulicht, wie das Layouts der Titelleiste für Änderungen der Systemschaltflächen wie „Zurück” angezeigt oder ausgeblendet wird. `AppTitleBar`, `LeftPaddingColumn`, und `RightPaddingColumn` werden in der zuvor gezeigte XAML deklariert.
+In diesem Beispiel wird veranschaulicht, wie das Layouts der Titelleiste für Änderungen der Systemschaltflächen wie „Zurück” angezeigt oder ausgeblendet wird. `AppTitleBar`, `LeftPaddingColumn` und`RightPaddingColumn` werden in der zuvor gezeigten XAML deklariert.
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -189,7 +193,7 @@ private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
 
 ### <a name="interactive-content"></a>interaktiver Inhalt
 
-Sie können interaktive Steuerelemente, z. B. Schaltflächen, Menüs oder ein Suchfeld im oberen Teil der App festlegen, sodass sie in der Titelleiste angezeigt werden. Es gibt jedoch einige Regeln, damit Ihre interaktiven Elemente die Benutzereingaben erhalten.
+Sie können interaktive Steuerelemente, z. B. Schaltflächen, Menüs oder ein Suchfeld im oberen Teil der App festlegen, sodass sie in der Titelleiste angezeigt werden. Es gibt jedoch einige Regeln, die Sie befolgen müssen, um sicherzustellen, dass Ihre interaktiven Elemente Benutzereingaben erhalten.
 - Rufen Sie SetTitleBar auf, um einen Bereich als ziehbare Region der Titelleiste zu definieren. Falls nicht, setzt das System die ziehbare Standardregion am oberen Rand der Seite fest. Das System wird dann alle Benutzereingaben in diesem Bereich behandeln und verhindern, dass Eingaben ihre Steuerelemente erreichen.
 - Legen Sie die interaktiven Steuerelemente am oberen Rand des ziehbaren Bereichs fest, der durch den Aufruf von SetTitleBar (mit einer höheren Z-Reihenfolge) definiert ist. Legen Sie die interaktiven Steuerelemente des UIElements, die als SetTitleBar übergeben wurden, nicht als untergeordnete Elemente fest. Nachdem Sie ein Element an SetTitleBar übergeben haben, behandelt das System es wie die System-Titelleiste und behandelt alle Zeigereingaben auf das Element.
 
@@ -275,7 +279,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->Der _Vollbild_ Modus kann nur angezeigt werden, wenn er von Ihrer App unterstützt wird. Weitere Informationen finden Sie unter [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode). [_Tabletmodus_ ](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) ist eine Option auf unterstützter Hardware, damit Benutzer, zum Ausführen einer app im tabletmodus auswählen können.
+>Der _Vollbild_ Modus kann nur angezeigt werden, wenn er von Ihrer App unterstützt wird. Weitere Informationen finden Sie unter [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode). Der [_Tablet-Modus_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) ist eine Benutzer Option auf unterstützter Hardware, sodass ein Benutzer eine beliebige App im Tablet-Modus ausführen kann.
 
 ## <a name="full-customization-example"></a>Umfassendes Anpassungsbeispiel
 
@@ -375,11 +379,11 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
-- Stellen Sie offensichtlich dar, ob das Fenster aktiv oder inaktiv ist. Ändern Sie mindestens die Farbe von Text, Symbolen und Schaltflächen in der Titelleiste.
+- Machen Sie es offensichtlich, wenn Ihr Fenster aktiv oder inaktiv ist. Ändern Sie mindestens die Farbe von Text, Symbolen und Schaltflächen in der Titelleiste.
 - Definieren Sie einen ziehbaren Bereich am oberen Rand des App-Canvas. Durch das Abstimmen der Platzierung der System-Titelleisten sind diese einfacher zu finden.
 - Definieren Sie einen ziehbaren Bereich, der mit der visuellen Titelleiste (sofern vorhanden) in der App Canvas übereinstimmt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Blog](../style/acrylic.md)
+- [Acrylic](../style/acrylic.md)
 - [Farbe](../style/color.md)

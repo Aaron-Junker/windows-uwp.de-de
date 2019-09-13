@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a22846c2b0499b990a27b1c445ad36f2ff1a0437
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: ab9bff69ac9ac0eaf1f02c943229829e726a0b9d
+ms.sourcegitcommit: 8cbc9ec62a318294d5acfea3dab24e5258e28c52
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979309"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70911572"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
-In diesem Artikel wird veranschaulicht, wie das [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) -Steuerelement im Windows Community Toolkit zum Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App verwendet wird, die auf .net Core 3 ausgerichtet ist. Das benutzerdefinierte Steuerelement enthält mehrere UWP-Steuerelemente von erst Anbietern und bindet eine Eigenschaft in einem der UWP-Steuerelemente an eine Zeichenfolge in der WPF-App.
+In diesem Artikel wird veranschaulicht, wie das [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) -Steuerelement im Windows Community Toolkit zum Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App verwendet wird, die auf .net Core 3 ausgerichtet ist. Das benutzerdefinierte Steuerelement enthält mehrere UWP-Steuerelemente von erst Anbietern aus dem Windows SDK und bindet eine Eigenschaft in einem der UWP-Steuerelemente an eine Zeichenfolge in der WPF-App. In diesem Artikel wird auch veranschaulicht, wie Sie ein UWP-Steuerelement einer ersten Partei aus der [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/)hosten.
 
 Obwohl in diesem Artikel beschrieben wird, wie Sie dies in einer WPF-APP tun, ist der Prozess bei einer Windows Forms-App ähnlich. Eine Übersicht über das Hosting von UWP-Steuerelementen in WPF und Windows Forms-apps finden Sie in [diesem Artikel](xaml-islands.md#wpf-and-windows-forms-applications).
 
@@ -60,8 +60,8 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 7. Konfigurieren Sie die Lösung so, dass Sie auf eine bestimmte Plattform wie x86 oder x64 ausgerichtet ist. Benutzerdefinierte UWP-Steuerelemente werden in Projekten, die auf **CPU**ausgerichtet sind, nicht unterstützt
 
     1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektmappenknoten, und wählen Sie **Eigenschaften** -> **Konfigurations Eigenschaften** -> **Configuration Manager**. 
-    2. Wählen Sie unter **aktive**Projektmappenplattform die Option **neu**. 
-    3. Wählen Sie im Dialogfeld **neue** Projektmappenplattform **x64** oder **x86** aus, und klicken Sie auf **OK**. 
+    2. Wählen Sie unter **Aktive Projektmappenplattform**die Option **neu**. 
+    3. Wählen Sie im Dialogfeld **Neue Projektmappenplattform** **x64** oder **x86** aus, und klicken Sie auf **OK**. 
     4. Schließen Sie die Dialogfelder öffnen.
 
 ## <a name="create-a-xamlapplication-object-in-a-uwp-app-project"></a>Erstellen eines xamlapplication-Objekts in einem UWP-App-Projekt
@@ -106,7 +106,7 @@ Fügen Sie als nächstes der gleichen Projekt Mappe wie das WPF-Projekt ein UWP-
 
 Wenn Sie ein benutzerdefiniertes UWP-Steuerelement in Ihrer WPF-App hosten möchten, müssen Sie über den Quellcode für das Steuerelement verfügen, damit Sie ihn mit der APP kompilieren können. In der Regel werden benutzerdefinierte Steuerelemente in einem UWP-Klassen Bibliotheksprojekt für eine einfache Portabilität definiert.
 
-In diesem Abschnitt definieren Sie ein einfaches benutzerdefiniertes UWP-Steuerelement in einem neuen Klassen Bibliotheksprojekt. Alternativ können Sie das benutzerdefinierte UWP-Steuerelement im UWP-App-Projekt definieren, das Sie im vorherigen Abschnitt erstellt haben. Diese Schritte führen dies jedoch in einem separaten Klassen Bibliotheksprojekt aus, um die Veranschaulichung zu veranschaulichen, da dies in der Regel die Implementierung benutzerdefinierter Steuerelemente für die Portabilität ist 
+In diesem Abschnitt definieren Sie ein einfaches benutzerdefiniertes UWP-Steuerelement in einem neuen Klassen Bibliotheksprojekt. Alternativ können Sie das benutzerdefinierte UWP-Steuerelement im UWP-App-Projekt definieren, das Sie im vorherigen Abschnitt erstellt haben. Diese Schritte führen dies jedoch in einem separaten Klassen Bibliotheksprojekt aus, um die Veranschaulichung zu veranschaulichen, da dies in der Regel die Implementierung benutzerdefinierter Steuerelemente für die Portabilität ist
 
 Wenn Sie bereits über ein benutzerdefiniertes Steuerelement verfügen, können Sie es anstelle des hier gezeigten Steuer Elements verwenden. Sie müssen jedoch weiterhin das Projekt konfigurieren, das das Steuerelement enthält, wie in den folgenden Schritten gezeigt.
 
@@ -195,6 +195,60 @@ Wenn Sie bereits über ein benutzerdefiniertes Steuerelement verfügen, können 
     ```
 
 6. Erstellen und ausführen Sie Ihre APP, und vergewissern Sie sich, dass das UWP-Benutzer Steuerelement wie erwartet angezeigt wird
+
+## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Hinzufügen eines Steuer Elements aus der WinUI-Bibliothek zum benutzerdefinierten Steuerelement
+
+In der Vergangenheit wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen der UWP-Steuerelemente der ersten Partei aus der Windows SDK in einem nuget-Paket verteilt werden, das nicht an Windows SDK Releases gebunden ist. Diese Bibliothek enthält auch neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der Roadmap für die [WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) .
+
+In diesem Abschnitt wird veranschaulicht, wie Sie ein UWP-Steuerelement aus der WinUI-Bibliothek dem Benutzer Steuerelement hinzufügen, damit Sie dieses Steuerelement in Ihrer WPF-App hosten können 
+
+1. Installieren Sie im UWP-App-Projekt die neueste Vorabversion des nuget-Pakets " [Microsoft. UI. XAML](https://www.nuget.org/packages/Microsoft.UI.Xaml) ".
+    > [!NOTE]
+    > Stellen Sie sicher, dass Sie die neueste Version der *vorab* Version installieren. Zurzeit funktionieren nur vorab Versionen dieses Pakets, wenn Sie Ihre APP in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken.
+
+2. Fügen Sie in der Datei app. XAML in diesem Projekt dem- `<xaml:Application>` Element das folgende untergeordnete-Element hinzu.
+
+    ```xml
+    <Application.Resources>
+        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+    </Application.Resources>
+    ```
+
+    Nachdem dieses Element hinzugefügt wurde, sollte der Inhalt dieser Datei nun in etwa wie folgt aussehen.
+
+    ```xml
+    <xaml:XamlApplication
+        x:Class="MyUWPApp.App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xaml="using:Microsoft.Toolkit.Win32.UI.XamlHost"
+        xmlns:local="using:MyUWPApp">
+        <Application.Resources>
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+        </Application.Resources>
+    </xaml:XamlApplication>
+    ```
+
+3. Installieren Sie im UWP-Klassen Bibliotheksprojekt die neueste Vorabversion des nuget-Pakets " [Microsoft. UI. XAML](https://www.nuget.org/packages/Microsoft.UI.Xaml) " (die Version, die Sie im UWP-App-Projekt installiert haben).
+
+4. Öffnen Sie im gleichen Projekt die XAML-Datei für das Benutzer Steuer `<UserControl>` Element, und fügen Sie dem-Element die folgende Namespace-Deklaration hinzu.
+
+    ```xml
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    ```
+
+5. Fügen Sie in derselben Datei ein `<winui:RatingControl />` -Element als untergeordnetes Element `<StackPanel>`von hinzu. Dieses Element fügt eine Instanz der [ratingcontrol](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol?view=winui-2.2) -Klasse aus der WinUI-Bibliothek hinzu. Nach dem `<StackPanel>` Hinzufügen dieses Elements sollte nun in etwa wie folgt aussehen.
+
+    ```xml
+    <StackPanel Background="LightCoral">
+        <TextBlock>This is a simple custom UWP control</TextBlock>
+        <Rectangle Fill="Blue" Height="100" Width="100"/>
+        <TextBlock Text="{x:Bind XamlIslandMessage}" FontSize="50"></TextBlock>
+        <winui:RatingControl />
+    </StackPanel>
+    ```
+
+6. Erstellen und führen Sie Ihre APP aus, und vergewissern Sie sich, dass das neue Bewertungs Steuerelement wie erwartet angezeigt wird
 
 ## <a name="package-the-app"></a>Verpacken der APP
 
