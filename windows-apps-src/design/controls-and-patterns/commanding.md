@@ -4,13 +4,13 @@ description: In diesem Artikel wird beschrieben, wie die XamlUICommand-Klasse un
 author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
-ms.date: 07/23/2019
-ms.openlocfilehash: 338cae7b6238c3c773f409322600c8bee8c193f5
-ms.sourcegitcommit: 401c8ecaf74eee247f1ed0093028cc6558b4a605
+ms.date: 09/13/2019
+ms.openlocfilehash: 1d176f90af4a3d601e44ce7e3e0ac708bcb7dd45
+ms.sourcegitcommit: e5ed95f8252ddc7f39055d8f7276e82167bb9891
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68446371"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70973696"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Befehle in UWP-Apps (Universelle Windows-Plattform), die StandardUICommand, XamlUICommand und ICommand verwenden
 
@@ -63,7 +63,7 @@ In der nachstehenden Tabelle sind einige typische Befehle für Sammlungen sowie 
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Element löschen      | Kontextmenü   | Hoverschaltfläche      | ENTF-TASTE              | Löschen per Wischen   |
 | Element kennzeichnen        | Kontextmenü   | Hoverschaltfläche      | STRG+UMSCHALT+G         | Kennzeichnen per Wischen     |
-| Daten aktualisieren     | Kontextmenü   | NICHT ZUTREFFEND               | F5-TASTE               | Aktualisierung durch Ziehen   |
+| Daten aktualisieren     | Kontextmenü   | N/V               | F5-TASTE               | Aktualisierung durch Ziehen   |
 | Element als Favorit speichern | Kontextmenü   | Hoverschaltfläche      | F-TASTE, STRG+S            | Als Favorit speichern per Wischen |
 
 **Stellen Sie stets ein Kontextmenü bereit** Wir empfehlen, alle relevanten kontextbezogenen Befehle in einem traditionellen Kontextmenü oder in CommandBarFlyout einzuschließen, da beide für sämtliche Eingabetypen unterstützt werden. Wenn ein Befehl beispielsweise nur während eines Mauszeiger-Hoverereignisses verfügbar gemacht wird, kann er nicht auf einem reinen Toucheingabegerät verwendet werden.
@@ -406,7 +406,10 @@ Die Beispiel-UI enthält eine [ListView](https://docs.microsoft.com/uwp/api/wind
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <XamlUICommand x:Name="CustomXamlUICommand" ExecuteRequested="DeleteCommand_ExecuteRequested" Description="Custom XamlUICommand" Label="Custom XamlUICommand">
+        <XamlUICommand x:Name="CustomXamlUICommand" 
+                       ExecuteRequested="DeleteCommand_ExecuteRequested"
+                       Description="Custom XamlUICommand" 
+                       Label="Custom XamlUICommand">
             <XamlUICommand.IconSource>
                 <FontIconSource FontFamily="Wingdings" Glyph="&#x4D;"/>
             </XamlUICommand.IconSource>
@@ -458,7 +461,8 @@ Die Beispiel-UI enthält eine [ListView](https://docs.microsoft.com/uwp/api/wind
             <muxcontrols:MenuBarItem Title="File">
             </muxcontrols:MenuBarItem>
             <muxcontrols:MenuBarItem Title="Edit">
-                <MenuFlyoutItem x:Name="DeleteFlyoutItem" Command="{StaticResource CustomXamlUICommand}"/>
+                <MenuFlyoutItem x:Name="DeleteFlyoutItem" 
+                                Command="{StaticResource CustomXamlUICommand}"/>
             </muxcontrols:MenuBarItem>
             <muxcontrols:MenuBarItem Title="Help">
             </muxcontrols:MenuBarItem>
@@ -546,7 +550,8 @@ private void ControlExample_Loaded(object sender, RoutedEventArgs e)
 {
     for (var i = 0; i < 5; i++)
     {
-        collection.Add(new ListItemData { Text = "List item " + i.ToString(), Command = CustomXamlUICommand });
+        collection.Add(
+           new ListItemData { Text = "List item " + i.ToString(), Command = CustomXamlUICommand });
     }
 }
 
@@ -560,7 +565,8 @@ private void ListView_Loaded(object sender, RoutedEventArgs e)
 3. Anschließend definieren wir den ICommand ExecuteRequested-Handler, in dem wir den Befehl zum Löschen von Elementen implementieren.
 
 ``` csharp
-private void DeleteCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
+private void DeleteCommand_ExecuteRequested(
+   XamlUICommand sender, ExecuteRequestedEventArgs args)
 {
     if (args.Parameter != null)
     {
@@ -593,7 +599,9 @@ private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs 
 
 private void ListViewSwipeContainer_PointerEntered(object sender, PointerRoutedEventArgs e)
 {
-    if (e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Mouse || e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
+    if (e.Pointer.PointerDeviceType == 
+        Windows.Devices.Input.PointerDeviceType.Mouse || 
+        e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
     {
         VisualStateManager.GoToState(sender as Control, "HoverButtonsShown", true);
     }
@@ -845,8 +853,10 @@ namespace UICommand1.ViewModel
         public RelayCommand MoveRightCommand { get; private set; }
 
         // Item collections
-        public ObservableCollection<ListItemData> ListItemLeft { get; } = new ObservableCollection<ListItemData>();
-        public ObservableCollection<ListItemData> ListItemRight { get; } = new ObservableCollection<ListItemData>();
+        public ObservableCollection<ListItemData> ListItemLeft { get; } = 
+           new ObservableCollection<ListItemData>();
+        public ObservableCollection<ListItemData> ListItemRight { get; } = 
+           new ObservableCollection<ListItemData>();
 
         public ListItemData listItem;
 
@@ -855,8 +865,10 @@ namespace UICommand1.ViewModel
         /// </summary>
         public UICommand1ViewModel()
         {
-            MoveLeftCommand = new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
-            MoveRightCommand = new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
+            MoveLeftCommand = 
+               new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
+            MoveRightCommand = 
+               new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
 
             LoadItems();
         }
@@ -1034,7 +1046,8 @@ namespace UICommand1
         /// Determines whether this <see cref="RelayCommand"/> can execute in its current state.
         /// </summary>
         /// <param name="parameter">
-        /// Data used by the command. If the command does not require data to be passed, this object can be set to null.
+        /// Data used by the command. If the command does not require 
+        /// data to be passed, this object can be set to null.
         /// </param>
         /// <returns>true if this command can be executed; otherwise, false.</returns>
         public bool CanExecute(object parameter)
@@ -1046,7 +1059,8 @@ namespace UICommand1
         /// Executes the <see cref="RelayCommand"/> on the current command target.
         /// </summary>
         /// <param name="parameter">
-        /// Data used by the command. If the command does not require data to be passed, this object can be set to null.
+        /// Data used by the command. If the command does not require 
+        /// data to be passed, this object can be set to null.
         /// </param>
         public void Execute(object parameter)
         {
@@ -1086,7 +1100,7 @@ Verfolgen Sie beim Erstellen von Befehlen für Ihre UWP-Apps folgende Ansätze:
 
 Ein komplettes Beispiel, das eine Implementierung von [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) und [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) veranschaulicht, finden Sie im Beispiel zum [XAML-Steuerelementekatalog](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Steuerelemente und Muster für UWP-Apps](index.md)
 
@@ -1102,13 +1116,3 @@ Ein komplettes Beispiel, das eine Implementierung von [XamlUICommand](https://do
 
 - [Universelle Windows-Plattform – Beispiele (C# und C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 - [XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery)
-
-<!---Some context for the following links goes here
-- [link to next logical step for the customer](global-quickstart-template.md)--->
-
-<!--- Required:
-In Overview articles, provide at least one next step and no more than three.
-Next steps in overview articles will often link to a quickstart.
-Use regular links; do not use a blue box link. What you link to will depend on what is really a next step for the customer.
-Do not use a "More info section" or a "Resources section" or a "See also section".
---->

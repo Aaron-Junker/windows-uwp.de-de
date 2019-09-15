@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3465d108fc725c45999782eff80593832208b5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 31371c2b2a4826939de428fb6d7c082b78d05843
+ms.sourcegitcommit: 6951827b7d0948618e1fbb082c28794c7f23f83c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319514"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923154"
 ---
 # <a name="menus-and-context-menus"></a>Menüs und Kontextmenüs
 
@@ -32,7 +32,7 @@ Menüs und Kontextmenüs zeigen auf Anforderung des Benutzers eine Liste von Bef
 
 | **Plattform-APIs** | **Windows-UI-Bibliotheks-APIs** |
 | - | - |
-| [MenuFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar-Klasse](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout-Eigenschaft](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [MenuBar-Klasse](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar-Klasse](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout-Eigenschaft](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) | [MenuBar-Klasse](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -90,7 +90,7 @@ Wenn Sie Befehle (z. B. Ausschneiden, Kopieren und Einfügen) hinzufügen möcht
 - Haben Sie einen einzigen Einstiegspunkt (am oberen Bildschirmrand, z. B. über ein Menü „Datei“), der immer angezeigt wird
 - Werden in der Regel an eine Schaltfläche oder ein übergeordnetes Menüelement angehängt
 - Werden mit der linken Maustaste (oder einer entsprechenden Aktion, z. B. durch Tippen) aufgerufen
-- Werden Elementen über ihre [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout)- oder [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)-Eigenschaft zugeordnet oder in einer Menüleiste am oberen Rand des App-Fensters gruppiert.
+- Werden Elementen über ihre [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout)- oder [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)-Eigenschaft zugeordnet oder in einer Menüleiste am oberen Rand des App-Fensters gruppiert.
 
 ### <a name="context-menus"></a>Kontextmenüs
 
