@@ -2,28 +2,30 @@
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: Erstellen der App „Hello, world“ (JS)
 description: In diesem Tutorial erfahren Sie, wie Sie JavaScript und HTML zum Erstellen einer einfachen &\#0034;Hello, World&\#0034;-App für die universelle Windows-Plattform (UWP) unter Windows 10 verwenden.
-ms.date: 03/06/2017
+ms.date: 09/12/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5423c9aae607d4f6ffe14b755c8f73e013d8b6
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 3f4ab5b177539bc286ce24d480cd949d43a51e17
+ms.sourcegitcommit: bd41fb6f59dfbd7021b14ff749b8b0f83f883c0f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820969"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70963624"
 ---
 # <a name="create-a-hello-world-app-js"></a>Erstellen der App „Hello, world“ (JS)
 
-In diesem Tutorial erfahren Sie, wie Sie JavaScript und HTML zum Erstellen einer einfachen „Hello, World“-App für die universelle Windows-Plattform (UWP) unter Windows 10 verwenden. Mit nur einem Projekt in Microsoft Visual Studio kannst du eine App erstellen, die auf allen Geräten mit Windows 10 ausgeführt werden kann.
+In diesem Tutorial erfahren Sie, wie Sie JavaScript und HTML zum Erstellen einer einfachen „Hello, World“-App für die universelle Windows-Plattform (UWP) unter Windows 10 verwenden. Mit nur einem Projekt in Microsoft Visual Studio können Sie eine App erstellen, die auf allen Geräten mit Windows 10 ausgeführt werden kann.
 
 > [!NOTE]
-> In diesem Tutorial wird Visual Studio Community 2019 verwendet. Wenn du eine andere Version von Visual Studio verwendest, sieht die Oberfläche unter Umständen etwas anders aus.
+> In diesem Tutorial wird Visual Studio Community 2017 verwendet. Wenn du eine andere Version von Visual Studio verwendest, sieht die Oberfläche unter Umständen etwas anders aus.
 
+> [!WARNING]
+> Die Entwicklung von JavaScript-UWP-Apps wird in Visual Studio 2019 nicht unterstützt. Sie müssen Visual Studio 2017 verwenden, um eine JavaScript-UWP-App zu entwickeln.
 
 Hier erfahren Sie Folgendes:
 
--   Erstellen Sie ein neues **Visual Studio 2019**-Projekt für **Windows 10** und die **UWP**.
+-   Erstellen eines neuen **Visual Studio 2017**-Projekts für **Windows 10** und die **UWP**.
 -   Hinzufügen von HTML und JavaScript-Inhalten
 -   Ausführen des Projekts auf dem lokalen Desktop in Visual Studio
 
@@ -35,7 +37,7 @@ Hier erfahren Sie Folgendes:
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Schritt 1: Erstellen eines neuen Projekts in Visual Studio
 
-1.  Starten Sie Visual Studio 2019.
+1.  Starten Sie Visual Studio 2017.
 
 2.  Wählen Sie im Menü **Datei** die Befehle **Neu > Projekt...** aus, um das Dialogfeld *Neues Projekt erstellen* zu öffnen.
 
