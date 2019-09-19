@@ -1,0 +1,69 @@
+### YamlMime:Hub
+title: Windows-Dokumentation
+summary: Informationen für Softwareentwickler, Hardwaretechniker und IT-Experten.
+brand: windows
+metadata:
+  title: Windows-Dokumentation | Microsoft-Dokumentation
+  titleSuffix: ''
+  author: tedhudek
+  ms.author: tedhudek
+  ms.topic: hub-page
+  uhfHeaderId: MSDocsHeader-DocsL1
+  ms.openlocfilehash: 0cdab14a7301cdb20ca6986854523c5b6e834b21
+  ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71100833"
+highlightedContent:
+  items:
+  - title: Erwerben von Visual Studio und des Windows SDK
+    itemType: download
+    url: https://developer.microsoft.com/windows/downloads
+  - title: WDK herunterladen
+    itemType: download
+    url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
+  - title: Nehmen Sie am Windows-Insider-Programm teil
+    itemType: overview
+    url: https://docs.microsoft.com/windows-insider
+  - title: Verbessern Sie Ihre Kenntnisse
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=m365%2Cwindows
+additionalContent:
+  sections:
+  - items:
+    - title: App-Entwicklung
+      links:
+      - text: Einstieg in das Schreiben von Windows 10-Apps
+        url: https://docs.microsoft.com/windows/apps
+      - text: Hinzufügen von Windows 10-Features zu ihren Apps
+        url: https://docs.microsoft.com/windows/apps/desktop/modernize/
+      - text: Entwickeln mit Python unter Windows
+        url: https://docs.microsoft.com/windows/python/index
+      - text: Einrichten des Windows-Subsystems für Linux
+        url: https://docs.microsoft.com/windows/wsl/about
+      - text: Codebeispiele finden
+        url: https://developer.microsoft.com/windows/samples
+    - title: Hardware-Entwicklung
+      links:
+      - text: Informationen zum Aufbauen von Geräten
+        url: https://docs.microsoft.com/windows-hardware/get-started/index
+      - text: Entwickeln von Gerätetreibern
+        url: https://docs.microsoft.com/windows-hardware/drivers
+      - text: Erstellen von Windows-Images
+        url: https://docs.microsoft.com/windows-hardware/manufacture/
+      - text: Testen von Leistung und Kompatibilität
+        url: https://docs.microsoft.com/windows-hardware/test
+      - text: Treiberbeispiele finden
+        url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
+    - title: IT-Administrator
+      links:
+      - text: Konfigurieren und Bereitstellen von Windows 10
+        url: https://docs.microsoft.com/windows/windows-10/
+      - text: Windows 10-Versionsinformationen finden
+        url: https://docs.microsoft.com/windows/release-information/
+      - text: Verwalten von Windows Server
+        url: https://docs.microsoft.com/windows-server/
+      - text: Erste Schritte mit Microsoft Store for Business
+        url: https://docs.microsoft.com/microsoft-store/
+  footer: '[Blogs](https://blogs.windows.com/) - [Twitter](https://twitter.com/windowsdocs) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows) - [Entwicklercommunity](https://social.msdn.microsoft.com/Forums/windowsdesktop)'
