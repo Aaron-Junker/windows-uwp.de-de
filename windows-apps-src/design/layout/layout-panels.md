@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 154271e455996bee15ac01c2e41f55b0d9c08fe0
-ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
+ms.openlocfilehash: 4fbda33e044880b263feafbcf88b041abdadc310
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039137"
+ms.locfileid: "71061964"
 ---
 # <a name="layout-panels"></a>Layoutpanels
 
@@ -29,7 +29,7 @@ Bei der Wahl eines Layoutpanels müssen mehrere Dinge berücksichtigt werden:
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/RatingControl">die App zu öffnen und RatingControl in Aktion zu sehen</a>.</p>
+    <p>Wenn Sie die Katalog-App für <strong style="font-weight: semi-bold">XAML</strong> -Steuerelemente installiert haben, finden Sie weitere Informationen unter <a href="xamlcontrolsgallery:/item/RelativePanel">relativepanel</a>, <a href="xamlcontrolsgallery:/item/StackPanel">StackPanel</a>, <a href="xamlcontrolsgallery:/item/Grid">Grid</a>, <a href="xamlcontrolsgallery:/item/VariableSizedWrapGrid">variablesizedwrapgrid</a>und <a href="xamlcontrolsgallery:/item/Canvas">Canvas</a> in Aktion.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
