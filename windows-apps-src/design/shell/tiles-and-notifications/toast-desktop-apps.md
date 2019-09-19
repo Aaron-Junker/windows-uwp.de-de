@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popupbenachrichtigungen, Desktop-Brücke, Optionen zum Senden von Popups, COM-Server, COM-Aktivator, COM, gefälschter COM, kein COM, ohne COM, Senden von Popupbenachrichtigungen
 ms.localizationpriority: medium
-ms.openlocfilehash: ef4810ec594173f3cc4da35d63143909f4859e3c
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 030f8b1380dc28a41e65989ccbda688523fad965
+ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340816"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71100815"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Popupbenachrichtigungen über Desktop-Apps
 
@@ -54,7 +54,7 @@ Mit der Option des COM-Aktivators können Sie die folgenden Benachrichtigungsvor
 > [!NOTE]
 > Wenn Sie den COM-Aktivator zu Ihrer vorhandenen Desktop-Brücke-App hinzufügen, aktivieren die Vordergrund/Hintergrund- und älteren Benachrichtigungsaktivierungen nun Ihren COM-Aktivator anstelle der Befehlszeile.
 
-Informationen zur Verwendung dieser Option finden Sie unter [Senden von Popupbenachrichtigungen über C#-Apps](send-local-toast-desktop.md) oder [Senden von Popupbenachrichtigungen über C++ WRL-Apps](send-local-toast-desktop-cpp-wrl.md).
+Informationen zur Verwendung dieser Option finden Sie unter [Senden einer lokalen Popup Benachrichtigung von Desktop- C# apps](send-local-toast-desktop.md) oder [Senden einer lokalen Popup Benachrichtigung von Desktop C++ -WRL-apps](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>Alternative Option – kein COM/Stub-CLSID
