@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bc591f66505fa6e7019cb37fed636700d8dec709
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 5905c494babfcbbe8dd93b85e30602ef490fcc81
+ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393598"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71141947"
 ---
 # <a name="app-capability-declarations"></a>Deklarationen von App-Funktionen
 
@@ -31,7 +31,10 @@ Es gibt mehrere Arten von Funktionen.
 
 ## <a name="general-use-capabilities"></a>Funktionen zur allgemeinen Verwendung
 
-Funktionen zur allgemeinen Verwendung gelten für die meisten allgemeinen App-Szenarien.
+Allgemeine Verwendungs Funktionen **werden mithilfe von** Funktions Elementen in Ihrem App-Paket Manifest angegeben. Diese Funktionen gelten für die gängigsten App-Szenarios.
+
+> [!NOTE]
+> Alle Funktionselemente müssen vor **den Elementen "** [customcapability](#custom-capabilities) " und " [devicecapability](#device-capabilities) " unter dem Knoten " **Funktionen** " im Paket Manifest stehen.
 
 | Funktionsszenario | Funktionsnutzung |
 |---------------------|------------------|
@@ -59,10 +62,10 @@ Funktionen zur allgemeinen Verwendung gelten für die meisten allgemeinen App-Sz
 
 ## <a name="device-capabilities"></a>Gerätefunktionen
 
-Gerätefunktionen ermöglichen Ihrer App den Zugriff auf Peripheriegeräte und interne Geräte. Gerätefunktionen werden mit dem **DeviceCapability**-Element in Ihrem App-Paketmanifest angegeben. Dieses Element erfordert unter Umständen zusätzliche untergeordnete Elemente. Einige Gerätefunktionen müssen dem Paketmanifest manuell hinzugefügt werden. Weitere Informationen finden Sie unter [Angeben von Gerätefunktionen in einem Paketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) und [**Schemareferenz zu DeviceCapability**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
+Gerätefunktionen ermöglichen Ihrer App den Zugriff auf Peripheriegeräte und interne Geräte. Gerätefunktionen werden mithilfe der **devicecapability** -Elemente in Ihrem App-Paket Manifest angegeben. Dieses Element erfordert unter Umständen zusätzliche untergeordnete Elemente. Einige Gerätefunktionen müssen dem Paketmanifest manuell hinzugefügt werden. Weitere Informationen finden Sie unter [Angeben von Gerätefunktionen in einem Paketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) und [**Schemareferenz zu DeviceCapability**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
 
 > [!NOTE]
-> Sie können über mehrere **devicecapability** -und **Capability** -Elemente **unter dem Capability** -Element verfügen, aber alle **devicecapability** - **Elemente müssen** nach den Funktions Elementen stehen.
+> Es können mehrere **devicecapability** -Elemente unter dem **Funktionen** -Element im Paket Manifest vorhanden sein. Alle **devicecapability** -Elemente müssen nach allen **Funktionen** und [customcapability](#custom-capabilities) -Elementen stehen.
 
 | Funktionsszenario | Funktionsnutzung |
 |---------------------|------------------|
@@ -107,6 +110,9 @@ Um eine eingeschränkte Funktion zu deklarieren, ändern Sie die Quelldatei für
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> Alle eingeschränkten Funktionselemente müssen vor allen [customcapability](#custom-capabilities) -und [devicecapability](#device-capabilities) -Elementen unter dem Knoten **Funktionen** im Paket Manifest stehen.
 
 ### <a name="restricted-capability-approval-process"></a>Genehmigungsprozess für eingeschränkte Funktionen
 
@@ -243,6 +249,9 @@ Um eine benutzerdefinierte Funktion zu deklarieren, ändern Sie die Quelldatei`P
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> Alle **customcapability** -Elemente müssen **nach allen Funktions Elementen und** vor allen [devicecapability](#device-capabilities) -Elementen unter dem Knoten **Funktionen** im Paket Manifest stehen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
