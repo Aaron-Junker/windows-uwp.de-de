@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c85eaacd62de9a2efe380197ba467c5009cd0c5
-ms.sourcegitcommit: 9f8f431fcacdb519126a0d831ba93baab21459f8
+ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2019
+ms.lasthandoff: 09/20/2019
 ms.locfileid: "68757436"
 ---
 # <a name="launch-the-windows-maps-app"></a>Starten der Windows-Karten-App
@@ -235,7 +235,7 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 </tr>
 <tr class="even">
 <td align="left"><p><b>Plastik</b></p></td>
-<td align="left"><p>Format</p></td>
+<td align="left"><p>Stil</p></td>
 <td align="left"><p>sty = "sty=" ("a" / "r"/"3d")</p>
 <p>Beispiel:</p>
 <p>sty=a</p></td>
