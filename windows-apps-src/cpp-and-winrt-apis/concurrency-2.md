@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a275d5c91e03f9eb5b6348cda673d93e7132d7a
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: 1170b8e1291afd166f210feb291b644d1c7ed546
+ms.sourcegitcommit: e5a154c7b6c1b236943738febdb17a4815853de5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485146"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164827"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Erweiterte Parallelität und Asynchronie mit C++/WinRT
 
@@ -731,7 +731,7 @@ int main()
 
 Die **get**-Funktion wird auf unbegrenzte Zeit blockiert, bis das asynchrone Objekt abgeschlossen wurde. Asynchrone Objekte sind tendenziell sehr kurzlebig, sodass dies häufig alles ist, was Sie benötigen.
 
-Es gibt jedoch Fälle, in denen dies nicht ausreicht, und Sie müssen den Wartevorgang verwerfen, nachdem einige Zeit vergangen ist. Dank der von der Windows-Runtime bereitgestellten Bausteine war es immer möglich, diesen Code zu schreiben. Das Bereitstellen der **wait_for**-Funktion wurde jetzt jedoch durch C++/WinRT wesentlich vereinfacht. Sie ist auch in **IAsyncAction** implementiert und ähnelt ebenfalls der von **std::function** bereitgestellten Funktionalität.
+Es gibt jedoch Fälle, in denen dies nicht ausreicht, und Sie müssen den Wartevorgang verwerfen, nachdem einige Zeit vergangen ist. Dank der von der Windows-Runtime bereitgestellten Bausteine war es immer möglich, diesen Code zu schreiben. Durch das Bereitstellen der **wait_for**-Funktion wurde dies jetzt jedoch durch C++/WinRT wesentlich vereinfacht. Sie ist auch in **IAsyncAction** implementiert und ähnelt ebenfalls der von **std::function** bereitgestellten Funktionalität.
 
 ```cppwinrt
 using namespace std::chrono_literals;
@@ -745,6 +745,9 @@ int main()
     }
 }
 ```
+
+> [!NOTE]
+> **wait_for** verwendet **std::chrono::chrono::duration** an der Schnittstelle, ist aber auf einen kleineren Bereich beschränkt als das, was **std::chrono::duration** bietet (etwa 49,7 Tage).
 
 Die **wait_for**-Funktion im nächsten Beispiel wartet ca. fünf Sekunden lang und überprüft dann, ob der Vorgang abgeschlossen wurde. Wenn der Vergleich positiv ausgefallen ist, wissen Sie, dass das asynchrone Objekt erfolgreich abgeschlossen wurde, und Sie sind fertig. Wenn Sie auf ein Ergebnis warten, können Sie einfach die **get**-Funktion aufrufen, um das Ergebnis abzurufen.
 
@@ -796,6 +799,6 @@ case AsyncStatus::Started:
 * [winrt::get_progress_token](/uwp/cpp-ref-for-winrt/get-progress-token)
 * [winrt::resume_foreground](/uwp/cpp-ref-for-winrt/resume-foreground)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Parallelität und asynchrone Vorgänge](concurrency.md)
 * [Verarbeiten von Ereignissen über Delegaten in C++/WinRT](handle-events.md)

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fdde696a0bc1dc7706f89ede5d525194e5d2830
-ms.sourcegitcommit: f0e539359b9766db0339ddbae3f7ccf0069011e8
+ms.openlocfilehash: 2f276c1a4abb57c5505a39afc538cc6f7319a23d
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67885663"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061947"
 ---
 # <a name="pull-to-refresh"></a>Aktualisierung durch Ziehen
 
@@ -32,6 +32,22 @@ Mithilfe der Aktion „Aktualisieren durch Ziehen“ können Benutzer eine Daten
 Verwenden Sie „Aktualisieren durch Ziehen“ für Datenlisten oder -raster, die vom Benutzer regelmäßig aktualisiert werden, vor allem, wenn die App hauptsächlich auf Geräten mit Touchscreen ausgeführt werden soll.
 
 Sie können auch den [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer) verwenden, um eine konsistente Aktualisierungsoption zu erstellen, die auf andere Weise, wie z. B. durch eine Aktualisierungsschaltfläche aufgerufen wird.
+
+## <a name="examples"></a>Beispiele
+
+<table>
+<th align="left">XAML-Steuerelementekatalog<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/PullToRefresh">die App zu öffnen und PullToRefresh in Aktion zu sehen</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="refresh-controls"></a>Aktualisierungssteuerelemente
 
@@ -332,6 +348,10 @@ public class ListItemData
     public string Body { get; set; }
 }
 ```
+
+## <a name="get-the-sample-code"></a>Beispielcode herunterladen
+
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

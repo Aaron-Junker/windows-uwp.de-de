@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ff88332e0b44749bcd86e06adafeb596ca8678b3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1c535e4ea4ad3c93acb048de2050d5ae7a9c2c2b
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820639"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061938"
 ---
 # <a name="control-size-and-density"></a>Größe und Dichte des Steuerelements
 
@@ -20,6 +20,22 @@ Optimieren Sie Ihre UWP (Universal Windows Platform)-Anwendung anhand einer Komb
 Standardmäßig werden UWP-Apps mit einem Layout mit geringer Dichte (bzw. `Standard`) gerendert. Ab WinUI 2.1 wird jedoch auch eine Layoutoption mit hoher Dichte (bzw. `Compact`) für Benutzeroberflächen mit vielfältigen Informationen oder ähnlich spezialisierte Szenarien unterstützt. Dies kann über eine grundlegende Stilressource angegeben werden (siehe Beispiele unten).
 
 Funktionalität und Verhalten haben sich nicht geändert und sind weiterhin einheitlich für die beiden Größen- und Dichteoptionen, der Standardschriftgrad für Text wurde jedoch für alle Steuerelemente auf 14 px aktualisiert, damit beide Dichteoptionen unterstützt werden. Dieser Schriftgrad funktioniert in allen Regionen und auf allen Geräten; damit wird sichergestellt, dass Ihre Anwendung ausgewogen und benutzerfreundlich bleibt.
+
+## <a name="examples"></a>Beispiele
+
+<table>
+<th align="left">XAML-Steuerelementekatalog<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/Compact Sizing">die App zu öffnen und die Änderung in eine kompakte Größe in Aktion zu sehen</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="fluent-standard-sizing"></a>Standard-Größenanpassung von Fluent
 
@@ -77,6 +93,10 @@ In den folgenden Beispielen wird erläutert, wie der `Compact`-Stil auf die Seit
     </Grid.Resources>
 </Grid>
 ```
+
+## <a name="get-the-sample-code"></a>Beispielcode herunterladen
+
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
