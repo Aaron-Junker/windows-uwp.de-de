@@ -1,0 +1,87 @@
+### YamlMime:Landing
+title: Dokumentation zu Python unter Windows
+summary: Beginnen Sie mit der Entwicklung mit Python unter Windows, einschließlich der Einrichtung für Ihre Entwicklungsumgebung, Skripting und Automatisierung, Erstellung von Webanwendungen und FAQs.
+metadata:
+  author: mattwojo
+  description: Beginnen Sie mit dem Entwickeln mit Python unter Windows.
+  manager: jken
+  ms.author: mattwoj
+  ms.date: 09/15/2019
+  ms.prod: dev-environment
+  ms.technology: windows-python
+  ms.topic: landing-page
+  ms.openlocfilehash: 60c0905a87d5089cccf5a525a6d29f87c327fd62
+  ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/25/2019
+  ms.locfileid: "71251117"
+landingContent:
+- title: Erste Schritte für Einsteiger
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Einrichten der Entwicklungsumgebung
+      url: get-started/python-for-education.md#set-up-your-development-environment
+  - linkListType: tutorial
+    links:
+    - text: Ausführen von einfachem Python-Code
+      url: get-started/python-for-education.md#hello-world-tutorial-for-some-python-basics
+    - text: HelloWorld mit VS Code
+      url: get-started/python-for-education.md#hello-world-tutorial-for-using-python-with-vs-code
+    - text: Erstellen eines einfachen Spiels mit Pygame
+      url: get-started/python-for-education.md#create-a-simple-game-with-pygame
+- title: Erste Schritte mit der Webentwicklung
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Einrichten der Entwicklungsumgebung
+      url: get-started/python-for-web.md#set-up-your-development-environment
+  - linkListType: tutorial
+    links:
+    - text: HelloWorld mit Flask
+      url: get-started/python-for-web.md#hello-world-tutorial-for-flask
+    - text: HelloWorld mit Django
+      url: get-started/python-for-web.md#hello-world-tutorial-for-django
+- title: Erste Schritte mit Automatisierungsskripts
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Einrichten der Entwicklungsumgebung
+      url: get-started/python-for-scripting.md#set-up-your-development-environment
+  - linkListType: tutorial
+    links:
+    - text: 'Beispielskript: Anzeigen des Dateisystems'
+      url: get-started/python-for-scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
+    - text: 'Beispielskript: Ändern aller Dateien in einem Verzeichnis'
+      url: get-started/python-for-scripting.md#example-script-to-modify-all-files-in-a-directory
+- title: Zusätzliche Ressourcen
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Häufig gestellte Fragen
+      url: faqs.md
+  - linkListType: learn
+    links:
+    - text: Testen Sie Python (ohne etwas installieren zu müssen) in diesem Einführungskurs
+      url: https://docs.microsoft.com/learn/modules/intro-to-python/
+    - text: Empfohlene Links
+      url: resources.md
+    - text: Empfohlene Onlinekurse
+      url: resources.md#online-courses
+    - text: Empfohlene Webentwicklerlinks
+      url: resources.md#web-development
+- title: Supportleitfaden für Mac zu Windows
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Ändern der Entwicklungsumgebung
+      url: ../mac-to-windows.md
+    - text: Tastenkombinationen
+      url: ../mac-to-windows.md#keyboard-shortcuts
+    - text: Trackpad-Tastenkombinationen
+      url: ../mac-to-windows.md#trackpad-shortcuts
+    - text: Terminal und Shell
+      url: ../mac-to-windows.md#terminal-and-shell
+    - text: Apps und Hilfsprogramme
+      url: ../mac-to-windows.md#apps-and-utilities
