@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, Microsoft, Windows 10, Tutorials, Onlinekurse, Blogs, Veranstaltungen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 28a77b9e936acddb6158d865aef933f27444c5c9
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: 3320cef0d3aaf48a2f93d65d93bf8876f1f997d6
+ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959059"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249242"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressourcen für die Entwicklung mit Python unter Windows
 
@@ -45,8 +45,7 @@ Eine Liste der Links, die für python-Entwickler empfohlen werden, die auf Compu
 
 - [Python und Visual Studio Code](https://code.visualstudio.com/docs/languages/python): Eine Übersicht über die Verwendung von Python mit vs Code.
 
-
-### <a name="online-courses"></a>Online Kurse
+## <a name="online-courses"></a>Online Kurse
 
 - [Einführung in python auf Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Probieren Sie die interaktive Microsoft Learn Plattform aus, und gewinnen Sie Erfahrungspunkte für dieses Modul, das die Grundlagen zum Schreiben von grundlegender Python-Code, zum Deklarieren von Variablen und zum Arbeiten mit Konsolen Eingaben und-Ausgaben umfasst. Die interaktive Sandbox-Umgebung ist ein idealer Ausgangspunkt für Benutzer, die noch nicht Ihre python-Entwicklungsumgebung eingerichtet haben.
 

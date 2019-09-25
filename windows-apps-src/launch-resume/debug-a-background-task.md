@@ -4,14 +4,14 @@ description: Hier erfahren Sie, wie Sie eine Hintergrundaufgabe einschließlich 
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Hintergrundaufgaben
+keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ebd180ebc3bc08b418f3b22ebed190bf73c18d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad133a9b1eb22695e6ce5d8b3edba9ad3a138b68
+ms.sourcegitcommit: f1261aa6f7eeb62bf770a08b58ec4357bdc20c7e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366205"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224759"
 ---
 # <a name="debug-a-background-task"></a>Debuggen einer Hintergrundaufgabe
 
@@ -42,10 +42,13 @@ Hintergrundaufgaben können mit Microsoft Visual Studio manuell ausgelöst werde
 
 2.  Führen Sie Ihre Anwendung im Debugger aus, und lösen Sie dann die Hintergrundaufgabe über die Symbolleiste **Zyklusereignisse** aus. In diesem Dropdownmenü werden die Namen der Hintergrundaufgaben angezeigt, die von Visual Studio aktiviert werden können.
 
-    Dies funktioniert nur dann, wenn die Hintergrundaufgabe bereits registriert ist und noch auf den Auslöser wartet. Wenn eine Hintergrundaufgabe z. B. mit einem einmaligen TimeTrigger registriert wurde und der Trigger bereits ausgelöst wurde, hat ein Start der Aufgabe mit Visual Studio keine Wirkung.
+> [!NOTE]
+> Die Symbolleisten Optionen für Lebenszyklus Ereignisse werden in Visual Studio standardmäßig nicht angezeigt. Um diese Optionen anzuzeigen, klicken Sie mit der rechten Maustaste auf die aktuelle Symbolleiste in Visual Studio, und stellen Sie sicher, dass **Debugspeicherort** aktiviert ist.
+
+    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
 
 > [!Note]
-> Hintergrundaufgaben, die über folgende Trigger können nicht auf diese Weise aktiviert werden: [**Anwendung Trigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger), [ **MediaProcessing Trigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger), [ **"controlchanneltrigger"** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), [ **"Pushnotificationtrigger"** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger), und Aufgaben im Hintergrund mit einem [ **SystemTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) mit der [  **SmsReceived** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) Typ auslösen.  
+> Hintergrundaufgaben, die die folgenden Trigger verwenden, können nicht auf diese Weise aktiviert werden: [**Anwendungs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)-, [**mediaprocessing**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)-, [**controlchannel-** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), [**pushnotification-** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)und Hintergrundaufgaben mithilfe eines [**systemauslösers**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) mit dem [**smsempfangener**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) auslösertyp.  
 > **Anwendungs-Trigger** und **MediaProcessingTrigger** können im Code mit `trigger.RequestAsync()` manuell signalisiert werden.
 
 ![Debuggen von Hintergrundaufgaben](images/debugging-activation.png)
@@ -69,7 +72,7 @@ Die Aktivierung von Hintergrundaufgaben hängt von drei Faktoren ab:
 
 2.  Verwenden Sie den Manifest-Designer, um zu überprüfen, ob die Hintergrundaufgabe ordnungsgemäß im Paketmanifest deklariert wurde:
 
-    -   Für C# und C++ muss das Einstiegspunktattribut dem Namespace der Hintergrundaufgabe gefolgt vom Klassennamen entsprechen. Zum Beispiel: RuntimeComponent1.MyBackgroundTask.
+    -   Für C# und C++ muss das Einstiegspunktattribut dem Namespace der Hintergrundaufgabe gefolgt vom Klassennamen entsprechen. Zum Beispiel: RuntimeComponent1. mybackgroundtask.
     -   Alle Triggerarten, die mit der Aufgabe verwendet werden, müssen ebenfalls angegeben sein.
     -   Die ausführbare Datei DARF NICHT angegeben werden, es sei denn, Sie verwenden [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) oder [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger).
 
@@ -78,8 +81,8 @@ Die Aktivierung von Hintergrundaufgaben hängt von drei Faktoren ab:
     Wenn Sie sich an dieses Verfahren halten und das Ereignisprotokoll den falschen Einstiegspunkt oder Trigger für die Hintergrundaufgabe anzeigt, wird die Hintergrundaufgabe nicht ordnungsgemäß von der App registriert. Weitere Informationen zu dieser Aufgabe finden Sie unter [Registrieren einer Hintergrundaufgabe](register-a-background-task.md).
 
     1.  Öffnen Sie die Ereignisanzeige, indem Sie zum Startbildschirm wechseln und nach „eventvwr.exe“ suchen.
-    2.  Wechseln Sie zu **Anwendungs- und Dienstprotokolle**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** in der Ereignisanzeige.
-    3.  Wählen Sie im Aktionsbereich **Ansicht**  - &gt; **analytische und Debugprotokolle** um die diagnoseprotokollierung zu aktivieren.
+    2.  Wechseln Sie zu **Anwendungs-und Dienst Protokolle**  - &gt; **Microsoft**  - &gt; Windows -backgroundtaskinfrastructure in der Ereignisanzeige. &gt;
+    3.  Wählen Sie im Aktionsbereich **Ansicht**  - &gt; **analytische und Debugprotokolle anzeigen** aus, um die Diagnoseprotokollierung zu aktivieren.
     4.  Wählen Sie die Option **Diagnoseprotokoll** aus, und klicken Sie auf **Protokoll aktivieren**.
     5.  Versuchen Sie nun, die App zu verwenden, um die Hintergrundaufgabe erneut zu registrieren und zu aktivieren.
     6.  Zeigen Sie detaillierte Fehlerinformationen im Diagnoseprotokoll an. Dies schließt den Einstiegspunkt ein, der für die Hintergrundaufgabe registriert ist.
@@ -101,7 +104,7 @@ Wenn eine App mit Hintergrundaufgaben mit Visual Studio bereitgestellt wird und 
 -   Wenn für die Hintergrundaufgabe der Zugriff auf den Sperrbildschirm erforderlich ist, müssen Sie dafür sorgen, dass die App auf dem Sperrbildschirm platziert wird, bevor Sie versuchen, die Hintergrundaufgabe zu debuggen. Weitere Informationen zum Angeben von Manifestoptionen für sperrbildschirmfähige Apps finden Sie unter [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md).
 -   Parameter für die Registrierung von Hintergrundaufgaben werden zum Zeitpunkt der Registrierung überprüft. Bei ungültigen Registrierungsparametern wird ein Fehler zurückgegeben. Stellen Sie sicher, dass Ihre App problemlos mit Szenarien ohne erfolgreiche Registrierung von Hintergrundaufgaben zurechtkommt. Andernfalls stürzt die App unter Umständen ab, wenn sie so konzipiert ist, dass nach dem Versuch, eine Aufgabe zu registrieren, ein gültiges Registrierungsobjekt vorhanden sein muss.
 
-Weitere Informationen zur Verwendung von Visual Studio eine Hintergrundaufgabe Debuggen finden Sie unter [wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
+Weitere Informationen zum Verwenden von vs zum Debuggen einer Hintergrundaufgabe finden Sie unter Vorgehens [Weise beim Ausführen von Suspend-, Resume-und Background-Ereignissen in UWP-apps](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
 
 ## <a name="related-topics"></a>Verwandte Themen
 
@@ -110,8 +113,8 @@ Weitere Informationen zur Verwendung von Visual Studio eine Hintergrundaufgabe D
 * [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
 * [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
-* [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
-* [Analysieren der Codequalität von UWP-apps mit Visual Studio-Codeanalyse](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
+* [Auslösung von Suspend-, Resume-und Background-Ereignissen in UWP-apps](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [Analysieren der Codequalität von UWP-apps mit der Code Analyse von Visual Studio](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  
 

@@ -73,7 +73,7 @@
     - name: Entwickeln mit Python
       items:
         - name: Übersicht
-          href: python/index.md
+          href: python/index.yml
         - name: Erste Schritte für Einsteiger
           href: python/get-started/python-for-education.md
         - name: Erste Schritte mit der Webentwicklung
