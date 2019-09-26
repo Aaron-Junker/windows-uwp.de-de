@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1827f24e467c113034c5d0303aaebce0e603da2a
-ms.sourcegitcommit: 68121f21c899975f3634456a651ae8e1e53c19f7
+ms.openlocfilehash: 974d96f6ba2daf275ffd346f50571787d4eee925
+ms.sourcegitcommit: ad2940a12a7ee59ee7696cd23a03743eef84ca31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70841848"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71275749"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Einrichten von Auszahlungskonten und Steuerformularen.
 
@@ -95,6 +95,9 @@ Bei einem Auszahlungskonto handelt es sich um das Bankkonto, auf das wir Ihren V
     ![Auswahl für Auszahlungs Kontotyp](images/payout-account-type-selection.png)
 
 4. Wählen Sie ein vorhandenes Zahlungsprofil aus, oder klicken Sie auf **Neues Zahlungsprofil erstellen** , um ein neues Profil für die ausgewählte Zahlungsmethode zu erstellen.
+
+> [!NOTE]
+> Wenn Ihr Konto aus irgendeinem Grund nicht für den Empfang von Microsoft-Geldern bereit ist, können Sie das Kontrollkästchen **meine Zahlung aufbewahren** aktivieren. Sie erhalten weiterhin einen fort Betrag von ihren Verkäufen, aber Zahlungen werden erst verteilt, wenn Sie **meine Zahlung speichern deaktivieren.**
 
 ### <a name="create-a-bank-based-payment-profile"></a>Erstellen eines bankbasierten Zahlungs Profils
 
