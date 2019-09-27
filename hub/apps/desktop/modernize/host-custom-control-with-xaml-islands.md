@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ab9bff69ac9ac0eaf1f02c943229829e726a0b9d
-ms.sourcegitcommit: 8cbc9ec62a318294d5acfea3dab24e5258e28c52
+ms.openlocfilehash: 3c14cfaefcf10aa051e3054d5df2e6da9fd77602
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70911572"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317064"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
@@ -40,7 +40,7 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 > [!NOTE]
 > Wenn Sie über ein vorhandenes Projekt verfügen, das auf den .NET Framework abzielt, müssen Sie Ihr Projekt zu .net Core 3 migrieren. Weitere Informationen finden Sie in [dieser Blog Reihe](https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/).
 
-1. Wenn Sie dies noch nicht getan haben, installieren Sie die neueste verfügbare Vorschauversion des [.net Core 3 Preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+1. Wenn Sie dies nicht bereits getan haben, installieren Sie die neueste Version des [.net Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
 2. Erstellen Sie in Visual Studio 2019 ein neues Projekt **WPF-App (.net Core)** .
 

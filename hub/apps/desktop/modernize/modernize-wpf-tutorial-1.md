@@ -8,21 +8,18 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 97488a913605916c067861b5941d7aa127b00917
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.openlocfilehash: 6a52e12f9d60ee4abb4b1aed3043a69c25845267
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643414"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317104"
 ---
 # <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Teil 1: Migrieren der Contoso-Spesen-App zu .NET Core 3
 
 Dies ist der erste Teil eines Tutorials, in dem veranschaulicht wird, wie eine WPF-Beispiel-Desktop-App mit dem Namen "ca Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden [Sie unter Tutorial: Modernisieren einer WPF-](modernize-wpf-tutorial.md)app.
   
-In diesem Teil des Tutorials migrieren Sie die gesamte app "apptoso-Ausgaben" von der .NET Framework 4.7.2 zu [.net Core 3](modernize-wpf-tutorial.md#net-core-3). Bevor Sie mit diesem Teil des Tutorials beginnen, stellen Sie sicher, dass Sie Folgendes tun:
-
-* [Öffnen Sie, und erstellen Sie das contosoausgaben-Beispiel](modernize-wpf-tutorial.md#get-the-contoso-expenses-sample-app) in Visual Studio 2019.
-* Wenn Sie eine Releaseversion von Visual Studio 2019 verwenden, aktivieren Sie Vorschau Versionen der .net Core SDK. Wechseln Sie in Visual Studio zu Extras **> Optionen**, geben Sie "Preview" in das Suchfeld ein, und wählen Sie **Vorschau der .net Core SDK verwenden aus**. Wenn Sie eine [Vorschauversion von Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/)verwenden, müssen Sie diese Option nicht auswählen, da die Vorschauversion von .net Core standardmäßig aktiviert ist.
+In diesem Teil des Tutorials migrieren Sie die gesamte app "apptoso-Ausgaben" von der .NET Framework 4.7.2 zu [.net Core 3](modernize-wpf-tutorial.md#net-core-3). Bevor Sie mit diesem Teil des Tutorials beginnen, stellen Sie sicher, dass Sie [das contosoausgaben-Beispiel](modernize-wpf-tutorial.md#get-the-contoso-expenses-sample-app) in Visual Studio 2019 öffnen und erstellen.
 
 > [!NOTE]
 > Weitere Informationen zum Migrieren einer WPF-Anwendung vom .NET Framework zu .net Core 3 finden Sie in [dieser Blog Reihe](https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/).
@@ -253,7 +250,7 @@ Nachdem Sie die Projekte erfolgreich aufgebaut haben, können Sie die app ausfü
 
     ![In Visual Studio angezeigte Ausnahme](images/wpf-modernize-tutorial/ExceptionNETCore3.png)
 
-    Diese Ausnahme wird ausgelöst, weil Sie beim Löschen des Inhalts aus der CSPROJ-Datei zu Beginn der Migration die Informationen über die Buildaktion für die Bilddateien entfernt haben. Mit den folgenden Schritten wird dieses Problem behoben.
+    Diese Ausnahme wird ausgelöst, weil Sie beim Löschen des Inhalts aus der CSPROJ-Datei zu Beginn der Migration die Informationen über die **Buildaktion** für die Bilddateien entfernt haben. Mit den folgenden Schritten wird dieses Problem behoben.
 
 3. Beendet den Debugger.
 

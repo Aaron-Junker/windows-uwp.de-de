@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2deae93f8a9706b2d5d6bebfa23b852c8d6d554f
-ms.sourcegitcommit: 8cbc9ec62a318294d5acfea3dab24e5258e28c52
+ms.openlocfilehash: cdaaa20b28a7f181467f6047bc93350ec40b366a
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70911565"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317075"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines UWP-Standard Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
@@ -38,7 +38,7 @@ Obwohl in diesem Artikel das Hosten von UWP-Steuerelementen in einer WPF-App ver
 
 Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen und zum Hosten von XAML-Inseln zu konfigurieren. Wenn Sie über ein vorhandenes WPF-Projekt verfügen, können Sie diese Schritte und Codebeispiele für Ihr Projekt anpassen.
 
-1. Erstellen Sie in Visual Studio 2019 ein neues Projekt **WPF-App (.NET Framework)** oder **WPF-App (.net Core)** . Wenn Sie ein Projekt für eine **WPF-App (.net Core)** erstellen möchten, müssen Sie zunächst die neueste verfügbare Vorschauversion des [.net Core 3 Preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)installieren.
+1. Erstellen Sie in Visual Studio 2019 ein neues Projekt **WPF-App (.NET Framework)** oder **WPF-App (.net Core)** . Wenn Sie ein Projekt für eine **WPF-App (.net Core)** erstellen möchten, müssen Sie zunächst die neueste Version des [.net Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)installieren.
 
 2. Stellen Sie sicher, dass die [Paket Verweise](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
 
