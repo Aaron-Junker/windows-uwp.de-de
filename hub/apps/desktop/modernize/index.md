@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 47cb292b1f5aeed9473cac0f27074f449dc67032
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: b8ad9726397671bcb2b641d6769f014721a27a72
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414106"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317091"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -32,15 +32,9 @@ Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](/windo
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 ist die nächste Hauptversion von .NET Core. Das Highlight dieser anstehenden Version ist der Support für Windows-Desktop-Apps, einschließlich Windows Forms- und WPF-Apps. Sie können neue und vorhandene Windows-Desktop-Apps unter .NET Core 3 ausführen und alle Vorteile von .NET Core genießen. UWP-Steuerelemente, die über [XAML-Inseln](xaml-islands.md) gehostet werden, können auch in Windows Forms- und WPF-Apps verwendet werden, die für .NET Core 3 bestimmt sind.
+.NET Core 3 ist die neueste Hauptversion von .NET Core. Das Highlight dieser Version ist der Support für Windows-Desktop-Apps, einschließlich Windows Forms- und WPF-Apps. Sie können neue und vorhandene Windows-Desktop-Apps unter .NET Core 3 ausführen und alle Vorteile von .NET Core genießen. UWP-Steuerelemente, die über [XAML-Inseln](xaml-islands.md) gehostet werden, können auch in Windows Forms- und WPF-Apps verwendet werden, die für .NET Core 3 bestimmt sind.
 
-Weitere Informationen finden Sie in den folgenden Artikeln:
-
-* [Ankündigung: .NET Core 3.0 (Vorschauversion 1)](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)
-* [Ankündigung: .NET Core 3.0 (Vorschauversion 2)](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-2/)
-* [Ankündigung: .NET Core 3.0 (Vorschauversion 3)](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-3/)
-* [Ankündigung: .NET Core 3.0 (Vorschauversion 4)](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-4/)
-* [Neuerungen in .NET Core 3.0 (Vorschauversion 2)](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+Weitere Informationen finden Sie unter [Neues in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
 
 ## <a name="uwp-apis"></a>UWP-APIs
 

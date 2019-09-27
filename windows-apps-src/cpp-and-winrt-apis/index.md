@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion
 ms.localizationpriority: medium
-ms.openlocfilehash: 7554b635f76f7d00901ecb7936fdd0351d8dee75
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 61a54edc236f94bec44420471a176a2014fcdb0d
+ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393468"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71329576"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -67,7 +67,7 @@ C++/WinRT arbeitet besser und erzeugt kleinere Binärdateien als jede andere Spr
 | [Starke und schwache Verweise in C++/WinRT](weak-references.md) | Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit der Bedeutung und dem Unterschied zwischen starken und schwachen Verweisen vertraut sind. |
 | [Agile Objekte](agile-objects.md) | Ein agiles Objekt ist ein Objekt, auf das von jedem Thread aus zugegriffen werden kann. Ihre C++/WinRT-Typen sind standardmäßig agil, aber Sie können diese Option auch deaktivieren. |
 | [Diagnostizieren direkter Zuordnungen](diag-direct-alloc.md) | Dieses Thema erläutert eingehend ein C++/WinRT 2.0-Feature, das Ihnen beim Diagnostizieren eines Fehlers hilft, der entsteht, weil ein Objekt des Implementierungstyps im Stapel statt wie vorgesehen durch Verwendung der [**winrt::make**](/uwp/cpp-ref-for-winrt/make)-Hilfsprogrammfamilie erstellt wurde. |
-| [Informationen zu Destruktoren](details-about-destructors.md) | C++/WinRT 2.0 ermöglicht es Ihnen, die Zerstörung Ihrer Implementierungstypen zu verzögern und während der Zerstörung sicher Abfragen auszuführen. Dieses Thema beschreibt diese Features und erläutert die Verwendung. |
+| [Erweiterungspunkte für Ihre Implementierungstypen](details-about-destructors.md) | Mit diesen Erweiterungspunkten in C++/WinRT 2.0 können Sie die Zerstörung ihrer Implementierungstypen hinausschieben, um eine sichere Abfrage während der Zerstörung zu ermöglichen, einen Hook für den Eintrag zur Verfügung zu haben und Ihre projektierten Methoden zu beenden. |
 | [Eine einfache C++/WinRT-Windows-UI-Beispielbibliothek](simple-winui-example.md) | Dieses Thema führt Sie durch den Prozess zum Hinzufügen von einfacher Unterstützung für WinUI innerhalb eines C++/WinRT-Projekts. |
 
 ### <a name="topics-about-the-c-language"></a>Themen zur C++-Sprache
