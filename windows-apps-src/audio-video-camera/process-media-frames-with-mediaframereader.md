@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2442647d39c4142b50c0a2a9b1fbc2c0eb66ca
-ms.sourcegitcommit: be519a7ecff53696b853754c879db32be9a53289
+ms.openlocfilehash: ddd35e0365efcc8c224e717b66f53734af32123d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69544918"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339752"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Verarbeiten von Medienframes mit „MediaFrameReader“
 
@@ -129,7 +129,7 @@ Nun wird der **FrameArrived**-Ereignishandler implementiert. Wenn der Handler au
 
 Das **Image**-Steuerelement kann nur Bilder in BRGA8 Format anzeigen, die entweder vormultipliziert sind oder kein Alpha aufweisen. Weist der eingehende Frame nicht dieses Format auf, wird mit der statischen Methode [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) die Software-Bitmap in das richtige Format konvertiert.
 
-Als Nächstes wird mit der [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange?redirectedfrom=MSDN#System_Threading_Interlocked_Exchange__1___0____0_)-Methode der Verweis auf die eingehende Bitmap mit der Hintergrundpuffer-Bitmap ausgetauscht. Bei dieser Methode werden die Verweise in einer threadsicheren atomischen Operation ausgetauscht. Nach dem Austausch wird das alte Hintergrundpufferbild – jetzt in der *softwareBitmap*-Variablen – gelöscht, um seine Ressourcen zu bereinigen.
+Als Nächstes wird mit der [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange#System_Threading_Interlocked_Exchange__1___0____0_)-Methode der Verweis auf die eingehende Bitmap mit der Hintergrundpuffer-Bitmap ausgetauscht. Bei dieser Methode werden die Verweise in einer threadsicheren atomischen Operation ausgetauscht. Nach dem Austausch wird das alte Hintergrundpufferbild – jetzt in der *softwareBitmap*-Variablen – gelöscht, um seine Ressourcen zu bereinigen.
 
 Als Nächstes wird mit dem mit dem **Image**-Element verknüpften [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) eine Aufgabe erstellt, die durch Aufrufen von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) im UI-Thread ausgeführt wird. Da die asynchronen Aufgaben in dieser Aufgabe ausgeführt werden, wird der an **RunAsync** weitergegebene Lambda-Ausdruck mit dem *async*- Schlagwort deklariert.
 
@@ -169,7 +169,7 @@ Die **FrameRenderer**-Hilfsprogrammklasse implementiert die folgenden Methoden.
 ## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>Verwenden von MultiSourceMediaFrameReader zum Abrufen zeitkorrelierter Frames aus mehreren Quellen
 Ab Windows 10, Version 1607, können Sie mit [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) zeitkorrelierte Frames aus mehreren Quellen empfangen. Diese API vereinfacht im Vergleich mit der [**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper)-Klasse die Verarbeitung von Frames aus mehreren Quellen, die zeitlich eng aufeinanderfolgend erfasst wurden. Eine Einschränkung bei der Verwendung dieser neuen Methode ist, das Ereignisse, die eine Frameankunft signalisieren, nur mit der Geschwindigkeit der langsamsten Erfassungsquelle ausgelöst werden. Zusätzliche Frames aus schneller Quellen werden gelöscht. Und da das System erwartet, dass Frames aus verschiedenen Quellen unterschiedlich schnell eintreffen, kann es nicht automatisch erkennen, wenn eine Quelle das Generieren von Frames endgültig beendet hat. Der Beispielcode in diesem Abschnitt zeigt, wie Sie mit einem Ereignis Ihre eigene Timeoutlogik erstellen. Der Aufruf erfolgt, wenn korrelierte Frames nicht in einem von der App festgelegten Zeitlimit eintreffen.
 
-Die Schritte für die Verwendung von [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) ähneln den Schritten für die zuvor in diesem Artikel beschriebene Verwendung von [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader). In diesem Beispiel wird eine Farbquelle und eine Tiefenquelle verwendet. Deklarieren Sie einige Zeichenfolgenvariablen, um die Frame-IDs der Medienquelle zu speichern, die verwendet werden, um Frames aus jeder Quelle auswählen. Deklarieren Sie dann ein [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7), eine [**CancellationTokenSource**](https://docs.microsoft.com/dotnet/api/system.threading.cancellationtokensource?redirectedfrom=MSDN) sowie einen [**EventHandler**](https://docs.microsoft.com/dotnet/api/system.eventhandler?redirectedfrom=MSDN), der zur Implementierung von Timeoutlogik für das Beispiel verwendet wird. 
+Die Schritte für die Verwendung von [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) ähneln den Schritten für die zuvor in diesem Artikel beschriebene Verwendung von [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader). In diesem Beispiel wird eine Farbquelle und eine Tiefenquelle verwendet. Deklarieren Sie einige Zeichenfolgenvariablen, um die Frame-IDs der Medienquelle zu speichern, die verwendet werden, um Frames aus jeder Quelle auswählen. Deklarieren Sie dann ein [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim), eine [**CancellationTokenSource**](https://docs.microsoft.com/dotnet/api/system.threading.cancellationtokensource) sowie einen [**EventHandler**](https://docs.microsoft.com/dotnet/api/system.eventhandler), der zur Implementierung von Timeoutlogik für das Beispiel verwendet wird. 
 
 [!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
 
@@ -187,7 +187,7 @@ Nach der Initialisierung des **MediaCapture**-Objekts rufen Sie die [**MediaFram
 
 Erstellen und initialisieren Sie den **MultiSourceMediaFrameReader** durch Aufrufen von [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createmultisourceframereaderasync). Übergeben Sie dabei ein Array mit Framequellen für den Reader. Registrieren Sie einen Ereignishandler für das Ereignis [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.FrameArrived). Dieses Beispiel erstellt eine Instanz der zuvor in diesem Artikel beschriebenen **FrameRenderer**-Hilfsklasse, die zum Rendern von Frames für ein **Image**-Steuerelement dient. Starten Sie die den Framereader durch Aufrufen von [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.StartAsync).
 
-Registrieren Sie einen Ereignishandler für das zuvor in diesem Beispiel deklarierte Ereignis **CorellationFailed**. Dieses Ereignis signalisiert, wenn eine der verwendeten Medienframequellen die Produktion von Frames beendet. Rufen Sie schließlich mit [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#System_Threading_Tasks_Task_Run_System_Action_) die Timeout-Hilfsmethode **NotifyAboutCorrelationFailure** in einem separaten Thread auf. Die Implementierung dieser Methode wird später in diesem Artikel gezeigt.
+Registrieren Sie einen Ereignishandler für das zuvor in diesem Beispiel deklarierte Ereignis **CorellationFailed**. Dieses Ereignis signalisiert, wenn eine der verwendeten Medienframequellen die Produktion von Frames beendet. Rufen Sie schließlich mit [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run_System_Action_) die Timeout-Hilfsmethode **NotifyAboutCorrelationFailure** in einem separaten Thread auf. Die Implementierung dieser Methode wird später in diesem Artikel gezeigt.
 
 [!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
 
@@ -195,7 +195,7 @@ Das Ereignis **FrameArrived** wird jedes Mal ausgelöst, wenn ein neuer Frame vo
 
 Rufen Sie die dem Ereignis zugeordnete [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference) durch Aufrufen von [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.TryAcquireLatestFrame) ab. Rufen Sie die jeder Medienframequelle zugeordnete **MediaFrameReference** durch Aufrufen von [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference.trygetframereferencebysourceid) ab. Übergeben Sie dabei die ID-Zeichenfolgen, die Sie gespeichert haben, als der Framereader initialisiert wurde.
 
-Rufen Sie die [**Set**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set?redirectedfrom=MSDN#System_Threading_ManualResetEventSlim_Set)-Methode des **ManualResetEventSlim**-Objekts auf, um zu signalisieren, dass Frames angekommen sind. Dieses Ereignis wird in der **NotifyCorrelationFailure**-Methode überprüft, die in einem separaten Thread ausgeführt wird. 
+Rufen Sie die [**Set**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set#System_Threading_ManualResetEventSlim_Set)-Methode des **ManualResetEventSlim**-Objekts auf, um zu signalisieren, dass Frames angekommen sind. Dieses Ereignis wird in der **NotifyCorrelationFailure**-Methode überprüft, die in einem separaten Thread ausgeführt wird. 
 
 Schließlich verarbeiten Sie die zeitkorrelierten Medienframes. Dieses Beispiel zeigt einfach den Frame aus der Tiefenquelle an.
 

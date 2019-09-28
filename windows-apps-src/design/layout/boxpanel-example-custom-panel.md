@@ -12,12 +12,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fdde8c5af2120786f215480cc7e7ae422d77c5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3fe1389e3c3db28f834217b4f163c48633c32d14
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365059"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340166"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel, ein Beispiel für benutzerdefinierte Panels
 
@@ -25,7 +25,7 @@ ms.locfileid: "66365059"
 
 Hier erfahren Sie, wie Sie Code für eine benutzerdefinierte [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)-Klasse schreiben. Dabei implementieren Sie die Methoden [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) und [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) und verwenden die [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children)-Eigenschaft. 
 
-> **Wichtige APIs:** [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel), [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride),[**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
+> **Wichtige APIs:** [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel), [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride),[**Mess reoverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
 
 Der Beispielcode zeigt eine benutzerdefinierte Panelimplementierung. Wir gehen jedoch nicht detailliert auf die Erklärung der Layoutkonzepte ein, die Einfluss darauf haben, wie Sie ein Panel für verschiedene Layoutszenarien anpassen können. Wenn Sie weitere Informationen zu diesen Layoutkonzepten und der Anwendbarkeit auf Ihr jeweiliges Layoutszenario benötigen, lesen Sie [Übersicht über benutzerdefinierte XAML-Panels](custom-panels-overview.md).
 
@@ -134,7 +134,7 @@ Was geschieht also während des Messdurchlaufs? Dabei wird für jedes Element, b
 Dieses Panel kann verwendet werden, wenn die Höhenkomponenten von *availableSize* unbegrenzt ist. Wenn dies wahr ist, verfügt das Panel über keine bekannte Höhe zum Teilen. In diesem Fall informiert die Logik für den Messdurchlauf jedes untergeordnete Element darüber, dass es noch keine begrenzte Höhe aufweist. Dazu wird ein [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)-Wert an den [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)-Aufruf für untergeordnete Elemente übergeben, wobei [**Size.Height**](https://docs.microsoft.com/uwp/api/windows.foundation.size.height) endlos ist. Dies ist zulässig. Beim Aufruf von **Measure** wird der [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize)-Wert laut Logik als Minimalwert von Folgendem festgelegt: an **Measure** übergebene Werte oder die natürliche Größe des jeweiligen Elements aus Faktoren wie den explizit festgelegten Werten [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) und [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width).
 
 > [!NOTE]
-> Die interne Logik des [ **StackPanel** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) verfügt auch über dieses Verhalten: **StackPanel** übergibt eine unendliche Dimensionswert zu [ **Measure** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) auf untergeordneten Standorten, gibt an, dass es keine Einschränkung auf untergeordneten Standorten in der Dimension Ausrichtung gibt. **StackPanel** passt seine Größe normalerweise dynamisch an, sodass alle untergeordneten Elemente in einem Stapel Platz haben, der in dieser Dimension zunimmt.
+> Die interne Logik von [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) weist auch dieses Verhalten auf: **StackPanel** übergibt einen unendlichen Dimensions Wert, um untergeordnete Elemente zu [**Messen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) , was darauf hinweist, dass keine Einschränkung für untergeordnete Elemente in der Orientation-Dimension vorhanden ist. **StackPanel** passt seine Größe normalerweise dynamisch an, sodass alle untergeordneten Elemente in einem Stapel Platz haben, der in dieser Dimension zunimmt.
 
 Das Panel selbst kann aber kein [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)-Element mit einem endlosen Wert aus [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) zurückgeben, weil dadurch im Layout eine Ausnahme ausgelöst wird. Teil dieser Logik ist es also, die von einem beliebigen untergeordneten Element angeforderte Maximalhöhe herauszufinden und diese Höhe als Zellenhöhe zu verwenden, wenn sie nicht bereits aus den eigenen Größenbeschränkungen des Panels stammt. Dies ist die Hilfsfunktion `LimitUnboundedSize`, auf die im vorherigen Code verwiesen wurde, der diese Zellenmaximalhöhe verwendet, um dem Panel eine begrenzte Höhe zuzuweisen. Zudem wird davon ausgegangen, dass `cellheight` eine finite Zahl ist, bevor der Anordnungsdurchlauf initiiert wird:
 
@@ -182,7 +182,7 @@ Dieses Panel wird nach dem Konzept von Zeilen und Spalten angeordnet. Die Anzahl
 
 Panels müssen die zugehörigen Inhalte mitunter beschneiden. Wenn dies der Fall ist, entspricht die beschnittene Größe der in [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) vorhandenen Größe, weil sie die [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)-Logik als Mindestwert, der an **Measure** übergeben wurde, oder als andere natürliche Größenfaktoren festlegt. Normalerweise müssen Sie die Beschneidung in der [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange)-Phase also nicht überprüfen. Die Beschneidung erfolgt einfach basierend auf der Übergabe der **DesiredSize** an die einzelnen **Arrange**-Aufrufe.
 
-Beim Durchlaufen der Schleife benötigen Sie nicht immer eine Zählung, wenn alle zum Definieren der Renderingposition benötigten Informationen anderweitig bekannt sind. Zum Beispiel ist in der [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Layoutlogik die Position in der [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children)-Sammlung unerheblich. Alle zum Positionieren der einzelnen Elemente in einer **Canvas** benötigten Infos sind durch Lesen der Werte [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) und [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) der untergeordneten Elemente im Rahmen der Anordnungslogik bekannt. Die `BoxPanel`-Logik benötigt eine Zählung für den Vergleich mit dem *colcount*-Wert, damit ersichtlich ist, wann eine neue Zeile begonnen und der *y*-Wert versetzt wird.
+Beim Durchlaufen der Schleife benötigen Sie nicht immer eine Zählung, wenn alle zum Definieren der Renderingposition benötigten Informationen anderweitig bekannt sind. Zum Beispiel ist in der [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Layoutlogik die Position in der [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children)-Sammlung unerheblich. Alle zum Positionieren der einzelnen Elemente in einer **Canvas** benötigten Infos sind durch Lesen der Werte [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) und [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) der untergeordneten Elemente im Rahmen der Anordnungslogik bekannt. Die `BoxPanel`-Logik benötigt eine Zählung für den Vergleich mit dem *colcount*-Wert, damit ersichtlich ist, wann eine neue Zeile begonnen und der *y*-Wert versetzt wird.
 
 Normalerweise sind der eingegebene Wert für *finalSize* und der Wert für [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), der aus einer [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)-Implementierung zurückgegeben wird, identisch. Weitere Informationen zu den entsprechenden Gründen finden Sie unter [Übersicht über benutzerdefinierte XAML-Panels](custom-panels-overview.md) im Abschnitt **ArrangeOverride**.
 
@@ -209,7 +209,7 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 ## <a name="the-scenario-for-boxpanel"></a>Szenario für BoxPanel
 
-Das besondere Szenario für `BoxPanel` sieht so aus, dass es sich um einen Bereich handelt, in dem sich eine der Hauptdeterminante zur Aufteilung der Fläche aus der Kenntnis der Anzahl untergeordneter Elemente ergibt und in dem die bekannte verfügbare Fläche für den Bereich geteilt wird. Bereiche sind immanente Rechtecksformen. Viele Panels funktionieren so, dass die rechteckige Fläche in weitere Rechtecke geteilt wird. Genau diese Funktion übernimmt die [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Klasse für die zugehörigen Zellen. Im Fall von **Grid** wird die Größe der Zellen durch [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)- und [**RowDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RowDefinition)-Werte festgelegt, und Elemente deklarieren die exakte Zelle, in die sie über die angehängten Eigenschaften [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) und [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column?view=netframework-4.8) einfließen. Zum Abrufen eines guten Layouts aus einem **Grid** muss zuvor normalerweise die Anzahl der untergeordneten Elemente bekannt sein, sodass genügend Zellen vorhanden sind und jedes untergeordnete Element seine angehängten Eigenschaften so festlegt, dass es in seine eigene Zelle passt.
+Das besondere Szenario für `BoxPanel` sieht so aus, dass es sich um einen Bereich handelt, in dem sich eine der Hauptdeterminante zur Aufteilung der Fläche aus der Kenntnis der Anzahl untergeordneter Elemente ergibt und in dem die bekannte verfügbare Fläche für den Bereich geteilt wird. Bereiche sind immanente Rechtecksformen. Viele Panels funktionieren so, dass die rechteckige Fläche in weitere Rechtecke geteilt wird. Genau diese Funktion übernimmt die [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Klasse für die zugehörigen Zellen. Im Fall von **Grid** wird die Größe der Zellen durch [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)- und [**RowDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RowDefinition)-Werte festgelegt, und Elemente deklarieren die exakte Zelle, in die sie über die angehängten Eigenschaften [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) und [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) einfließen. Zum Abrufen eines guten Layouts aus einem **Grid** muss zuvor normalerweise die Anzahl der untergeordneten Elemente bekannt sein, sodass genügend Zellen vorhanden sind und jedes untergeordnete Element seine angehängten Eigenschaften so festlegt, dass es in seine eigene Zelle passt.
 
 Wie verhält es sich jedoch, wenn die Anzahl untergeordneter Elemente dynamisch ist? Das ist durchaus möglich. Der Code Ihrer App kann Sammlungen Elemente hinzufügen. Dies geschieht in Reaktion auf dynamische Laufzeitzustände, die Sie für wichtig genug erachten, um die Benutzeroberfläche zu aktualisieren. Wenn Sie eine Datenbindung zum Sichern von Sammlungen/Geschäftsobjekten verwenden, erfolgen der Abruf solcher Updates und die Aktualisierung der Benutzeroberfläche automatisch. Daher ist dies oftmals die bevorzugte Technik (siehe [Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)).
 
@@ -223,10 +223,10 @@ Möglicherweise fragen Sie sich, warum das Panel nicht stattdessen die Abmessung
 
 **Referenz**
 
-* [**FrameworkElement.ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
-* [**FrameworkElement.MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
-* [**Bereich**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+* [**FrameworkElement. ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
+* [**FrameworkElement. messreoverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
+* [**Verkleidung**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 **Konzepte**
 
-* [Alignment, Margin und padding](alignment-margin-padding.md)
+* [Ausrichtung, Margin und Auffüllung](alignment-margin-padding.md)

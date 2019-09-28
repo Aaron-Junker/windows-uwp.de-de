@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: be6780851c05f59abc373318f0746c8e436b74ac
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2f9a253d8470407141c9ae56367d123d638d12c6
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318407"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339822"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Erkennen von Gesichtern in Bildern oder Videos
 
@@ -77,7 +77,7 @@ Für die Gesichtserkennung in einem Video ist es effizienter, die [**FaceTracker
 
 [!code-cs[FaceTrackingUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceTrackingUsing)]
 
-Deklarieren Sie eine Klassenvariable für das **FaceTracker**-Objekt. In diesem Beispiel wird ein [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) verwendet, um die Gesichtsverfolgung für ein definiertes Intervall zu initiieren. Mit einem [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim?redirectedfrom=MSDN) wird sichergestellt, dass immer nur ein Gesichtsverfolgungsvorgang ausgeführt wird.
+Deklarieren Sie eine Klassenvariable für das **FaceTracker**-Objekt. In diesem Beispiel wird ein [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) verwendet, um die Gesichtsverfolgung für ein definiertes Intervall zu initiieren. Mit einem [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim) wird sichergestellt, dass immer nur ein Gesichtsverfolgungsvorgang ausgeführt wird.
 
 [!code-cs[ClassVariables3](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables3)]
 
@@ -91,15 +91,15 @@ Die [**FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnaly
 
 **FaceDetector** unterstützt wie **FaceTracker** eine begrenzte Anzahl von Pixelformaten. In diesem Beispiel wird die Gesichtserkennung abgebrochen, wenn der bereitgestellte Frame nicht das Format Nv12 aufweist.
 
-Rufen Sie [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) auf, um eine Liste von [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace)-Objekten, die die Gesichter im Frame darstellen, abzurufen. Sobald Sie über die Liste der Gesichter verfügen, können Sie sie (auf die gleiche Weise wie weiter oben für die Gesichtserkennung beschrieben) anzeigen. Beachten Sie, dass da das Gesicht nachverfolgung Hilfsmethode, die nicht im UI-Thread aufgerufen wird, müssen Sie alle Aktualisierungen der Benutzeroberfläche in in einem Aufruf vornehmen [ **CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
+Rufen Sie [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) auf, um eine Liste von [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace)-Objekten, die die Gesichter im Frame darstellen, abzurufen. Sobald Sie über die Liste der Gesichter verfügen, können Sie sie (auf die gleiche Weise wie weiter oben für die Gesichtserkennung beschrieben) anzeigen. Beachten Sie, dass Sie alle Aktualisierungen der Benutzeroberfläche innerhalb eines Aufrufs von [**coredispatcher. runasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)ausführen müssen, da die Hilfsmethode für die Gesichts Verfolgung nicht im UI-Thread aufgerufen wird.
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Analyse der Szene für medienaufzeichnung](scene-analysis-for-media-capture.md)
-* [Beispiel eines grundlegenden Gesichtserkennung](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Grundlegende Gesichtserkennungs-überwachungsbeispiel](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Szenenanalyse für Medien Erfassung](scene-analysis-for-media-capture.md)
+* [Beispiel für grundlegende Gesichtserkennung](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [Beispiel für grundlegende Gesichts Verfolgung](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [Kamera](camera.md)
-* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Einfaches Foto, Video und Audioerfassung mit mediacapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Medienwiedergabe](media-playback.md)

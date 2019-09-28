@@ -7,12 +7,12 @@ keywords: windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f1cc0e932a1dd413ed94e1fe5d9a3d1e6b0870c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393579"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339201"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Erweitern Ihrer Desktop-App mit modernen UWP-Komponenten
 
@@ -175,7 +175,7 @@ Sie können auch das **Package.appxmanifest** im Designer öffnen, die **Deklara
 
 ### <a name="start-the-uwp-app"></a>Starten der UWP-App
 
-Erstellen Sie zunächst in Ihrer Desktop-Anwendung eine [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN), die den Protokollnamen und alle Parameter enthält, die an die UWP-App übergeben werden sollen. Rufen Sie dann die [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)-Methode auf.
+Erstellen Sie zunächst in Ihrer Desktop-Anwendung eine [Uri](https://docs.microsoft.com/dotnet/api/system.uri), die den Protokollnamen und alle Parameter enthält, die an die UWP-App übergeben werden sollen. Rufen Sie dann die [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)-Methode auf.
 
 ```csharp
 
@@ -220,7 +220,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-Überschreiben Sie die ``OnNavigatedTo`` -Methode im Code hinter ihrer XAML-Seite, um die an die Seite übergebenen Parameter zu verwenden. In diesem Fall verwenden wir den Breiten- und Längengrad, die in diese Seite übergeben wurden, um einen Standort in einer Karte anzuzeigen.
+Überschreiben Sie im Code hinter der XAML-Seite die ``OnNavigatedTo``-Methode, um die an die Seite übergebenen Parameter zu verwenden. In diesem Fall verwenden wir den Breiten- und Längengrad, die in diese Seite übergeben wurden, um einen Standort in einer Karte anzuzeigen.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -295,7 +295,7 @@ Die folgenden Schritte
 </Extensions>  
 ```
 
-Geben Sie den Namen der ausführbaren Datei des UWP-Projekts an und den Namen der Einstiegspunkt-Klasse. Dieses Markup geht davon aus, dass der Name der ausführbaren Datei für die `ShareTarget.exe`UWP-App lautet.
+Geben Sie den Namen der ausführbaren Datei des UWP-Projekts an und den Namen der Einstiegspunkt-Klasse. Dieses Markup geht davon aus, dass der Name der ausführbaren Datei für Ihre UWP-App `ShareTarget.exe` ist.
 
 Sie müssen außerdem angeben, welche Arten von Dateien mit Ihrer App freigegeben können. In diesem Beispiel erstellen wir die [WPF-photostoredemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) -Desktop Anwendung als Freigabe Ziel für Bitmapbilder, sodass wir `Bitmap` für den unterstützten Dateityp angeben.
 
@@ -366,7 +366,7 @@ Diese Erweiterung ermöglicht der UWP-APP das Starten der Desktop Anwendung, fü
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-Für Instanzen der Desktop Anwendung, die bereits vom Benutzer geöffnet wurden, können wir auch das [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) -Ereignis behandeln und den Pfad zum Speicherort der Datei übergeben. Auf diese Weise wird für alle geöffneten Instanzen der Desktop Anwendung das freigegebene Foto angezeigt.
+Für Instanzen der Desktop Anwendung, die bereits vom Benutzer geöffnet wurden, können wir auch das [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher) -Ereignis behandeln und den Pfad zum Speicherort der Datei übergeben. Auf diese Weise wird für alle geöffneten Instanzen der Desktop Anwendung das freigegebene Foto angezeigt.
 
 ```csharp
 ...

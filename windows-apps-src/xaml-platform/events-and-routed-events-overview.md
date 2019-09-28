@@ -6,12 +6,12 @@ ms.date: 07/12/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c5acc7d0d891785a7abd4f8976b0fb82bb3323b
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 2615988f40fd14cab920ad52e490c4992dbb5f4a
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393627"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340491"
 ---
 # <a name="events-and-routed-events-overview"></a>Übersicht über Ereignisse und Routingereignisse
 
@@ -27,7 +27,7 @@ Grundsätzlich sind Ereigniskonzepte bei der Programmierung einer Windows-Runtim
 
 Wenn Sie C#, Visual Basic oder C++/CX als Programmiersprache verwenden, wird die UI im Markup (XAML) definiert. In der XAML-Markupsyntax ähneln einige der Prinzipien, nach denen UI-Ereignisse zwischen Markupelementen und Laufzeitcodeentitäten verbunden werden, denen anderer Webtechnologien (z. B. ASP.NET oder HTML5).
 
-**Beachten Sie**  , dass der Code, der die Lauf Zeit Logik für eine XAML-definierte Benutzeroberfläche bereitstellt, häufig als *Code Behind* oder die Code-Behind-Datei bezeichnet wird. In den Projektmappenansichten von Microsoft Visual Studio wird diese Beziehung grafisch dargestellt. Dabei ist die CodeBehind-Datei eine abhängige und geschachtelte Datei zu der XAML-Seite, auf die sie sich bezieht.
+**Hinweis**  Der Code, der die Lauf Zeit Logik für eine XAML-definierte Benutzeroberfläche bereitstellt, wird häufig als *Code Behind* oder die Code-Behind-Datei bezeichnet. In den Projektmappenansichten von Microsoft Visual Studio wird diese Beziehung grafisch dargestellt. Dabei ist die CodeBehind-Datei eine abhängige und geschachtelte Datei zu der XAML-Seite, auf die sie sich bezieht.
 
 ## <a name="buttonclick-an-introduction-to-events-and-xaml"></a>Button.Click: Einführung in Ereignisse und XAML
 
@@ -80,13 +80,13 @@ void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, W
 
 In diesem Beispiel basiert die `ShowUpdatesButton_Click`-Methode auf dem [**RoutedEventHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventhandler)-Delegaten. Sie wissen, dass dies der zu verwendende Delegat ist, weil er in der Syntax für die [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Methode auf der MSDN-Referenzseite aufgeführt wird.
 
-**Tip Visual Studio**bietet eine bequeme Möglichkeit, den Ereignishandler zu benennen und die Handlermethode zu definieren, während Sie XAML bearbeiten.   Wenn Sie den Attributnamen des Ereignisses im XAML-Text-Editor bereitstellen, warten Sie einen Moment, bis eine Microsoft IntelliSense-Liste angezeigt wird. Wenn Sie in der Liste auf **&lt;Neuer Ereignishandler&gt;** klicken, schlägt Microsoft Visual Studio einen Methodennamen vor, der auf dem **x:Name** des Elements (oder der Typbezeichnung), dem Ereignisnamen und einem numerischen Suffix basiert. Anschließend können Sie mit der rechten Maustaste auf den ausgewählten Ereignishandler und dann mit der linken Maustaste auf **Zum Ereignishandler navigieren** klicken. Dadurch navigieren Sie direkt zu der neu eingefügten Ereignishandlerdefinition, wie sie in der Code-Editoransicht Ihrer CodeBehind-Datei für die XAML-Seite angezeigt wird. Der Ereignishandler hat bereits die richtige Signatur, einschließlich des *sender*-Parameters und der Ereignisdatenklasse, die von dem Ereignis verwendet wird. Wenn zudem bereits eine Handlermethode mit der richtigen Signatur im CodeBehind vorhanden ist, wird der Name dieser Methode zusammen mit der Option **&lt;Neuer Ereignishandler&gt;** im Auto-Vervollständigen-Dropdown angezeigt. Sie können auch die Tabulatortaste drücken, anstatt auf die IntelliSense-Listenelemente zu klicken.
+**Tip**  visual Studio bietet eine bequeme Möglichkeit, den Ereignishandler zu benennen und die Handlermethode zu definieren, während Sie XAML bearbeiten. Wenn Sie den Attributnamen des Ereignisses im XAML-Text-Editor bereitstellen, warten Sie einen Moment, bis eine Microsoft IntelliSense-Liste angezeigt wird. Wenn Sie in der Liste auf **&lt;Neuer Ereignishandler&gt;** klicken, schlägt Microsoft Visual Studio einen Methodennamen vor, der auf dem **x:Name** des Elements (oder der Typbezeichnung), dem Ereignisnamen und einem numerischen Suffix basiert. Anschließend können Sie mit der rechten Maustaste auf den ausgewählten Ereignishandler und dann mit der linken Maustaste auf **Zum Ereignishandler navigieren** klicken. Dadurch navigieren Sie direkt zu der neu eingefügten Ereignishandlerdefinition, wie sie in der Code-Editoransicht Ihrer CodeBehind-Datei für die XAML-Seite angezeigt wird. Der Ereignishandler hat bereits die richtige Signatur, einschließlich des *sender*-Parameters und der Ereignisdatenklasse, die von dem Ereignis verwendet wird. Wenn zudem bereits eine Handlermethode mit der richtigen Signatur im CodeBehind vorhanden ist, wird der Name dieser Methode zusammen mit der Option **&lt;Neuer Ereignishandler&gt;** im Auto-Vervollständigen-Dropdown angezeigt. Sie können auch die Tabulatortaste drücken, anstatt auf die IntelliSense-Listenelemente zu klicken.
 
 ## <a name="defining-an-event-handler"></a>Definieren eines Ereignishandlers
 
 Für Objekte, die UI-Elemente darstellen und in XAML deklariert werden, wird Ereignishandlercode in der partiellen Klasse definiert, die als CodeBehind für eine XAML-Seite fungiert. Ereignishandler sind Methoden, die Sie als Teil der Ihrem XAML zugeordneten partiellen Klasse schreiben. Diese Ereignishandler basieren auf den Delegaten, die von einem bestimmten Ereignis verwendet werden. Die Ereignishandlermethoden können öffentlich oder privat sein. Der private Zugriff funktioniert, weil der vom XAML erstellte Handler und die Instanz letztendlich durch die Codegenerierung verbunden werden. Im Allgemeinen wird empfohlen, die Ereignishandlermethoden in der Klasse öffentlich zu machen.
 
-Hinweis  Ereignishandler für C++ werden in partiellen Klassen nicht definiert. Sie werden im Header als privates Klassenmember deklariert. Bei den Erstellungsaktionen für ein C++-Projekt wird Code generiert, der das XAML-Typsystem und das CodeBehind-Modell für C++ unterstützt.
+**Beachten Sie**, dass C++   -Ereignishandler nicht in partiellen Klassen definiert werden, sondern im Header als privates Klassenmember deklariert werden. Bei den Erstellungsaktionen für ein C++-Projekt wird Code generiert, der das XAML-Typsystem und das CodeBehind-Modell für C++ unterstützt.
 
 ### <a name="the-sender-parameter-and-event-data"></a>Der *sender*-Parameter und Ereignisdaten
 
@@ -127,7 +127,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-**Beachten Sie**  , dass eine ausführlichere Syntax vorhanden ist. 2005 wurde in C# der Rückschluss auf Delegaten als neues Feature eingeführt. Damit kann der Compiler die neue Delegatinstanz ableiten, und die vorherige, einfachere Syntax kann verwendet werden. Die Funktion der ausführlichen Syntax entspricht dem vorherigen Beispiel. Vor der Registrierung wird jedoch explizit eine neue Delegatinstanz erstellt. Der Delegatrückschluss wird somit nicht genutzt. Diese explizite Syntax ist zwar nicht so üblich, aber dennoch in einigen Codebeispielen anzutreffen.
+**Hinweis**  Eine ausführlichere Syntax ist vorhanden. 2005 wurde in C# der Rückschluss auf Delegaten als neues Feature eingeführt. Damit kann der Compiler die neue Delegatinstanz ableiten, und die vorherige, einfachere Syntax kann verwendet werden. Die Funktion der ausführlichen Syntax entspricht dem vorherigen Beispiel. Vor der Registrierung wird jedoch explizit eine neue Delegatinstanz erstellt. Der Delegatrückschluss wird somit nicht genutzt. Diese explizite Syntax ist zwar nicht so üblich, aber dennoch in einigen Codebeispielen anzutreffen.
 
 ```csharp
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
@@ -147,9 +147,9 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**Beachten Sie**  , dass Visual Studio und seine XAML-Entwurfs Oberfläche im Allgemeinen das instanzbehandlungsverfahren anstelle des **Handles** -Schlüssel Worts herauf Stufen. Das Erstellen der Ereignishandlerverknüpfung in XAML ist Teil eines typischen Designer-Entwickler-Workflows, und die **Handles**-Schlüsselworttechnik ist mit dem Verknüpfen der Ereignishandler in XAML nicht kompatibel.
+**Hinweis**  visual Studio und die zugehörige XAML-Entwurfs Oberfläche Stufen das instanzbehandlungsverfahren in der Regel anstelle des **Handles** -Schlüssel Worts herauf. Das Erstellen der Ereignishandlerverknüpfung in XAML ist Teil eines typischen Designer-Entwickler-Workflows, und die **Handles**-Schlüsselworttechnik ist mit dem Verknüpfen der Ereignishandler in XAML nicht kompatibel.
 
-In C++/CX verwenden Sie auch die **+=** -Syntax, es gibt jedoch Unterschiede in der C# grundlegenden Form:
+In C++/CX verwenden Sie auch die Syntax von **+=** , aber es gibt Unterschiede in der C# grundlegenden Form:
 
 - Es gibt keinen Rückschluss auf Delegaten. Sie müssen deshalb **ref new** für die Delegatinstanz verwenden.
 - Der Delegatkonstruktor besitzt zwei Parameter und benötigt das Zielobjekt als ersten Parameter. Normalerweise geben Sie **this** an.
@@ -178,7 +178,7 @@ In einigen seltenen Fällen sollten Ereignishandler explizit entfernt werden. Da
 
 " [**FrameworkElement. entladen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.unloaded) " oder " [**Page. navigatedfrom**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) " sind mögliche Ereignis Trigger, die geeignete Positionen in der Zustands Verwaltung und der Objekt Lebensdauer aufweisen, sodass Sie diese zum Entfernen von Handlern für andere Ereignisse verwenden können.
 
-Sie können z. b. einen Ereignishandler mit dem Namen **textBlock1\_pointereingegeben** aus dem Zielobjekt **textBlock1** entfernen, indem Sie diesen Code verwenden.
+Beispielsweise können Sie einen Ereignishandler mit dem Namen **textBlock1 @ no__t-1pointereingegebenen** aus dem Zielobjekt **textBlock1** mithilfe dieses Codes entfernen.
 
 ```csharp
 textBlock1.PointerEntered -= textBlock1_PointerEntered;
@@ -246,7 +246,7 @@ Wenn ein Ereignis entlang einer Route ein Bubbling durchläuft, ist *sender* nic
 
 In einigen Fällen interessieren Sie sich nicht für das *sender*-Objekt, sondern eher dafür, auf welchem der möglichen untergeordneten Objekte sich der Mauszeiger beim Auslösen eines Zeigerereignisses befindet oder welches Objekt in einer größeren UI beim Drücken einer Taste den Fokus hatte. Für diese Fälle können Sie den Wert der [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource)-Eigenschaft verwenden. An allen Punkten in der Route meldet **OriginalSource** das ursprüngliche Objekt, von dem das Ereignis ausgelöst wurde, und nicht das Objekt, dem der Handler angefügt ist. Bei [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Eingabeereignissen ist das ursprüngliche Objekt jedoch häufig ein Objekt, das nicht direkt im XAML für die UI-Definition auf Seitenebene sichtbar ist. Stattdessen kann das ursprüngliche Quellobjekt ein Vorlagenteil eines Steuerelements sein. Wenn der Benutzer beispielsweise mit dem Mauszeiger auf die äußere Kante eines [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) zeigt, ist **OriginalSource** für die meisten Zeigerereignissen ein [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)-Vorlagenbestandteil in [**Template**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template), nicht **Button** selbst.
 
-**Tipp Eingabe Ereignis**Blasen ist besonders nützlich, wenn Sie ein Steuerelement mit Vorlagen erstellen.   Auf jedes Steuerelement, das eine Vorlage besitzt, kann durch seinen Consumer eine neue Vorlage angewendet werden. Der Consumer, der eine Arbeitsvorlage erneut zu erstellen versucht, kann versehentlich in der Standardvorlage deklarierten Ereignisbehandlungscode entfernen. Sie können dennoch eine Ereignisbehandlung auf Steuerelementebene bereitstellen, indem Sie Handler als Teil der [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)-Überschreibung in der Klassendefinition anfügen. Anschließend können Sie die Eingabeereignisse abfangen, die bei der Instanziierung per Bubbling zum Stamm des Steuerelements weitergeleitet werden.
+**Tip**  input-Ereignis Blasen ist besonders nützlich, wenn Sie ein Steuerelement mit Vorlagen erstellen. Auf jedes Steuerelement, das eine Vorlage besitzt, kann durch seinen Consumer eine neue Vorlage angewendet werden. Der Consumer, der eine Arbeitsvorlage erneut zu erstellen versucht, kann versehentlich in der Standardvorlage deklarierten Ereignisbehandlungscode entfernen. Sie können dennoch eine Ereignisbehandlung auf Steuerelementebene bereitstellen, indem Sie Handler als Teil der [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)-Überschreibung in der Klassendefinition anfügen. Anschließend können Sie die Eingabeereignisse abfangen, die bei der Instanziierung per Bubbling zum Stamm des Steuerelements weitergeleitet werden.
 
 ### <a name="the-handled-property"></a>Die Eigenschaft **Handled**
 
@@ -297,8 +297,8 @@ Eine geringe Anzahl von UI-Elementen unterstützt die *Steuerung*. Die Steuerung
 Beim Definieren von benutzerdefinierten Ereignissen hängen die Vorgehensweise beim Hinzufügen des Ereignisses und die Bedeutung für Ihren Klassenentwurf erheblich von der verwendeten Programmiersprache ab.
 
 - Für C# und Visual Basic definieren Sie ein CLR-Ereignis. Sie können das .NET-Standardereignismuster verwenden, es sei denn, Sie verwenden benutzerdefinierte Accessoren (**add**/**remove**). Zusätzliche Tipps:
-    - Für den Ereignishandler empfiehlt sich die Verwendung von [**System.EventHandler<TEventArgs>** ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1?redirectedfrom=MSDN), da die Übersetzung in den generischen Windows-Runtime-Ereignisdelegaten [**EventHandler<T>** ](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)integriert ist.
-    - Basieren Sie Ihre Ereignisdatenklasse nicht auf [**System.EventArgs**](https://docs.microsoft.com/dotnet/api/system.eventargs?redirectedfrom=MSDN), da dann keine Übersetzung in die Windows-Runtime erfolgt. Verwenden Sie eine vorhandene Ereignisdatenklasse oder gar keine Basisklasse.
+    - Für den Ereignishandler empfiehlt sich die Verwendung von [**System.EventHandler<TEventArgs>** ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1), da die Übersetzung in den generischen Windows-Runtime-Ereignisdelegaten [**EventHandler<T>** ](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)integriert ist.
+    - Basieren Sie Ihre Ereignisdatenklasse nicht auf [**System.EventArgs**](https://docs.microsoft.com/dotnet/api/system.eventargs), da dann keine Übersetzung in die Windows-Runtime erfolgt. Verwenden Sie eine vorhandene Ereignisdatenklasse oder gar keine Basisklasse.
     - Wenn Sie benutzerdefinierte Accessoren verwenden, finden Sie weitere Informationen [unter benutzerdefinierte Ereignisse und Ereignisaccessoren in Windows-Runtime-Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/hh972883(v=vs.140)).
     - Wenn Ihnen das .NET-Standardereignismuster nicht bekannt ist, lesen Sie unter [Definieren von Ereignissen für benutzerdefinierte Silverlight-Klassen](https://docs.microsoft.com/previous-versions/windows/). Dieser Inhalt wurde zwar für Microsoft Silverlight verfasst, stellt aber dennoch einen hilfreichen Überblick über den Code und die Konzepte für das .NET-Standardereignismuster dar.
 - Für C++/CX lesen Sie [Ereignisse (C++/CX)](https://docs.microsoft.com/cpp/cppcx/events-c-cx).
@@ -311,7 +311,7 @@ Das Definieren eines benutzerdefinierten Ereignisses erfolgt in der Regel im Rah
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Übersicht über XAML](xaml-overview.md)
-* [Schnellstart: Fingereingabe](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))
+* [Schnellstart: Berührungs Eingabe @ no__t-0
 * [Tastatur Interaktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [.Net-Ereignisse und-Delegaten](https://go.microsoft.com/fwlink/p/?linkid=214364)
 * [Erstellen von Windows-Runtime-Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))

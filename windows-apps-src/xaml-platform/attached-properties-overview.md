@@ -10,24 +10,24 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: ffb71812e192c8ca77d8f117a98e032f9e9814c9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d3892857baa29e2275845cb077e5ad9ea3166ada
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366485"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340605"
 ---
 # <a name="attached-properties-overview"></a>Übersicht über angefügte Eigenschaften
 
 Eine *angefügte Eigenschaft* ist ein XAML-Konzept. Mit angefügten Eigenschaften können zusätzliche Eigenschaft-Wert-Paare für ein Objekt festgelegt werden, aber die Eigenschaften sind nicht Teil der ursprünglichen Objektdefinition. Angefügte Eigenschaften werden in der Regel als eine spezialisierte Form der Abhängigkeitseigenschaft definiert, die keinen herkömmlichen Eigenschaftenwrapper im Objektmodell des Besitzertyps enthält.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 Es wird davon ausgegangen, dass Sie das Grundkonzept von Abhängigkeitseigenschaften verstehen und die [Übersicht über Abhängigkeitseigenschaften](dependency-properties-overview.md) gelesen haben.
 
 ## <a name="attached-properties-in-xaml"></a>Angefügte Eigenschaften in XAML
 
-In XAML legen Sie angefügte Eigenschaften mithilfe der Syntax _AttachedPropertyProvider.PropertyName_ fest. Hier ist ein Beispiel dafür angegeben, wie Sie [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) in XAML festlegen können.
+In XAML legen Sie angefügte Eigenschaften mithilfe der Syntax _AttachedPropertyProvider.PropertyName_ fest. Hier ist ein Beispiel dafür angegeben, wie Sie [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) in XAML festlegen können.
 
 ```xaml
 <Canvas>
@@ -36,13 +36,13 @@ In XAML legen Sie angefügte Eigenschaften mithilfe der Syntax _AttachedProperty
 ```
 
 > [!NOTE]
-> Wir verwenden einfach [ **Canvas.Left** ](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) als Beispiel die Eigenschaft ohne vollständig erläutert, warum Sie es nutzen würden angefügt. Weitere Informationen darüber, wozu **Canvas.Left** dient und wie [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) untergeordnete Layoutelemente handhabt, finden Sie im Referenzthema zu [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) oder unter [Definieren von Layouts mit XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
+> Wir verwenden einfach [**Canvas. Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) als Beispiel für eine angefügte Eigenschaft, ohne vollständig zu erläutern, warum Sie Sie verwenden. Weitere Informationen darüber, wozu **Canvas.Left** dient und wie [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) untergeordnete Layoutelemente handhabt, finden Sie im Referenzthema zu [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) oder unter [Definieren von Layouts mit XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
 
 ## <a name="why-use-attached-properties"></a>Gründe für die Verwendung von angefügten Eigenschaften
 
 Mit angefügten Eigenschaften können Sie die Codierungskonventionen umgehen, die zur Laufzeit die Weitergabe von Informationen zwischen verschiedenen Objekten in einer Beziehung verhindern können. Es ist natürlich möglich, Eigenschaften in eine allgemeine Basisklasse einzufügen, sodass jedes Objekt diese Eigenschaft abrufen und festlegen kann. Die reine Anzahl an Szenarien, in denen Sie diese Möglichkeit vielleicht nutzen möchten, bläht jedoch die Basisklassen mit freigabefähigen Eigenschaften auf. Es können sogar Fälle auftreten, in denen nur zwei von Hunderten von Nachfolgerelementen versuchen, eine Eigenschaft zu verwenden. Das ist kein optimaler Klassenentwurf. Daher ist es durch das Konzept der angefügten Eigenschaften möglich, dass ein Objekt einer Eigenschaft einen Wert zuweist, den die eigene Klassenstruktur nicht definiert. Die definierende Klasse kann diesen Wert zur Laufzeit aus untergeordneten Objekten lesen, nachdem die verschiedenen Objekte in einer Objektstruktur erstellt wurden.
 
-Untergeordnete Elemente können beispielsweise angefügte Eigenschaften verwenden, um ihre übergeordneten Elemente darüber zu informieren, wie sie auf der Benutzeroberfläche dargestellt werden müssen. Dies ist bei der angefügten Eigenschaft [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) der Fall. **Canvas.Left** wird als angefügte Eigenschaft erstellt, da sie für Elemente, die in einem [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Element enthalten sind, und nicht für das **Canvas**-Element selbst festgelegt wird. Jedes mögliche untergeordnete Element verwendet dann **Canvas.Left** und [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8), um sein Layoutoffset innerhalb des übergeordneten **Canvas**-Layoutcontainerelements anzugeben. Durch angefügte Eigenschaften kann dieses Szenario verwendet werden, ohne dass das Basiselementobjekt mit zahlreichen Eigenschaften gefüllt wird, die jeweils nur für einen der vielen möglichen Layoutcontainer gelten. Stattdessen implementieren viele der Layoutcontainer ihren eigenen Satz an angefügten Eigenschaften.
+Untergeordnete Elemente können beispielsweise angefügte Eigenschaften verwenden, um ihre übergeordneten Elemente darüber zu informieren, wie sie auf der Benutzeroberfläche dargestellt werden müssen. Dies ist bei der angefügten Eigenschaft [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) der Fall. **Canvas.Left** wird als angefügte Eigenschaft erstellt, da sie für Elemente, die in einem [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Element enthalten sind, und nicht für das **Canvas**-Element selbst festgelegt wird. Jedes mögliche untergeordnete Element verwendet dann **Canvas.Left** und [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top), um sein Layoutoffset innerhalb des übergeordneten **Canvas**-Layoutcontainerelements anzugeben. Durch angefügte Eigenschaften kann dieses Szenario verwendet werden, ohne dass das Basiselementobjekt mit zahlreichen Eigenschaften gefüllt wird, die jeweils nur für einen der vielen möglichen Layoutcontainer gelten. Stattdessen implementieren viele der Layoutcontainer ihren eigenen Satz an angefügten Eigenschaften.
 
 Zum Implementieren der angefügten Eigenschaft definiert die [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Klasse ein statisches [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)-Feld mit dem Namen [**Canvas.LeftProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.leftproperty). Dann stellt **Canvas** die Methoden [**SetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.setleft) und [**GetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.getleft) als öffentliche Accessoren für die angefügte Eigenschaft bereit, um den Zugriff auf die XAML-Einstellung und den Laufzeitwert zu ermöglichen. Für XAML und für das Abhängigkeitssystem erfüllt dieser API-Satz ein Muster, das eine spezielle XAML-Syntax für angefügte Eigenschaften ermöglicht und den Wert im Abhängigkeitseigenschaftenspeicher speichert.
 
@@ -123,15 +123,15 @@ Der Punkt im Namen einer angefügten Eigenschaft ist ein wichtiger Teil des Iden
 - Wenn Sie eine angefügte Eigenschaft als Teil des Zielpfads für eine Animation angeben möchten, schließen Sie den Namen der angefügten Eigenschaft in Klammern („()“) ein, beispielsweise „(Canvas.Left)“. Weitere Informationen finden Sie unter [Property-path-Syntax](property-path-syntax.md).
 
 > [!WARNING]
-> Eine vorhandene Einschränkung der Windows-Runtime-XAML-Implementierung ist, dass Sie eine benutzerdefinierte, angefügte Eigenschaft animieren nicht möglich.
+> Eine vorhandene Einschränkung der Windows-Runtime XAML-Implementierung besteht darin, dass Sie keine benutzerdefinierte angefügte Eigenschaft animieren können.
 
-- So geben Sie eine angefügte Eigenschaft als die Zieleigenschaft für einen Ressourcenverweis aus einer Ressourcendatei, an **X: Uid-** , verwenden eine spezielle Syntax, die eine Code-Format, vollständig qualifizierter fügt **verwenden:** Deklaration innerhalb eckige Klammern ("\[\]"), um eine Unterbrechung absichtliche Bereich zu erstellen. Angenommen, es ist ein Element vorhanden `<TextBlock x:Uid="Title" />`, den Ressourcenschlüssel in der Ressourcendatei, dessen Ziel die **Canvas.Top** Wert für diese Instanz ist "Title.\[ Using:Windows.UI.Xaml.Controls\]Canvas.Top ". Weitere Informationen zu Ressourcendateien und XAML finden Sie unter [Schnellstart: Übersetzen von UI-Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
+- Wenn Sie eine angefügte Eigenschaft als Ziel Eigenschaft für einen Ressourcen Verweis aus einer Ressourcen Datei auf " **x:UID**" angeben möchten, **verwenden Sie eine** spezielle Syntax, die eine voll qualifizierte Codeformat-Deklaration in eckigen Klammern ("\[ @ no__t-3") in einfügt. Erstellen Sie einen absichtlichen Bereichs Umbruch. Wenn beispielsweise ein Element `<TextBlock x:Uid="Title" />` vorhanden ist, lautet der Ressourcen Schlüssel in der Ressourcen Datei, der den **Canvas. Top** -Wert für diese Instanz verwendet, "Title. \[using: Windows.UI.XAML.Controls\]Canvas.Top". Weitere Informationen zu Ressourcen Dateien und XAML finden Sie unter [quick Start: Übersetzen von UI-Ressourcen @ no__t-0.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 - [Benutzerdefinierte angefügte Eigenschaften](custom-attached-properties.md)
 - [Übersicht über Abhängigkeitseigenschaften](dependency-properties-overview.md)
 - [Definieren von Layouts mit XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-- [Schnellstart: Übersetzen von UI-Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh943060(v=win.10))
+- [Schnellstart: Übersetzen von UI-Ressourcen @ no__t-0
 - [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)
 - [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)

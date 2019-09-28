@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b27c5a0446bc9b329b09855f06d58a13723ece1c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f73bb15d2746dbac4403ca6daffb603588cf7a58
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317382"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340096"
 ---
 # <a name="access-keys"></a>Zugriffstasten
 
@@ -44,7 +44,7 @@ Microsoft Office-Apps bieten umfassende Unterstützung für Zugriffstasten. Die 
 
 ![Zugriffstasteninfo-Signale für Zugriffstasten in Microsoft Word](images/accesskeys/keytip-badges-word.png)
 
-_KeyTip-Badges für Zugriffstasten in Microsoft Word_
+_KeyTip-Abzeichen für Zugriffsschlüssel in Microsoft Word_
 
 Um eine Zugriffstaste zu einem Steuerelement hinzuzufügen, verwenden Sie die **AccessKey-Eigenschaft**. Der Wert dieser Eigenschaft gibt die Zugriffstastensequenz, die Verknüpfung (bei einem einzelnen alphanumerischen Zeichen) und die Zugriffstasteninfo an.
 
@@ -72,11 +72,9 @@ Microsoft Word bietet beispielsweise zwei Zugriffstastenbereiche: einen primäre
 
 Die folgenden Abbildungen zeigen die zwei Zugriffstastenbereiche in Word. Das erste Beispiel zeigt die primären Zugriffstasten, mit denen ein Benutzer eine Registerkarte und andere Befehle auf oberster Ebene auswählen kann. Das zweite zeigt die sekundären Zugriffstasten für die Registerkarte „Start“.
 
-![Primären Zugriffsschlüssel in Microsoft Word](images/accesskeys/primary-access-keys-word.png)
-_primären Zugriffsschlüssel in Microsoft Word_
+primäre Zugriffsschlüssel für @no__t 0in Microsoft Word @ no__t-1_primäre Zugriffsschlüssel in Microsoft Word_
 
-![Sekundären Zugriffsschlüssel in Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
-_sekundären Zugriffsschlüssel in Microsoft Word_
+sekundäre Zugriffsschlüssel für ![in Microsoft Word @ no__t-1_sekundäre Zugriffsschlüssel in Microsoft Word_
 
 Zugriffstasten können für Elemente in verschiedenen Bereichen dupliziert werden. Im obigen Beispiel ist „2“ die Zugriffstaste für „Rückgängig“ im primären Bereich und „Kursiv“ im sekundären Bereich.
 
@@ -110,11 +108,11 @@ Hier erfahren Sie, wie Sie einen Zugriffstastenbereich definieren.
 
 ![Primäre Zugriffstasten für Befehlsleiste](images/accesskeys/primary-access-keys-commandbar.png)
 
-_Primäre Bereich CommandBar und unterstützten Zugriffsschlüssel_
+_Primärer CommandBar-Bereich und unterstützte Zugriffstasten_
 
 ![Sekundäre Zugriffstasten für Befehlsleiste](images/accesskeys/secondary-access-keys-commandbar.png)
 
-_Sekundäre Bereich CommandBar und unterstützten Zugriffsschlüssel_
+_Sekundärer CommandBar-Bereich und unterstützte Zugriffstasten_
 
 ### <a name="windows-10-creators-update-and-older"></a>Windows 10 Creators Update oder älter
 
@@ -233,13 +231,13 @@ Ressourcen für die einzelnen Sprachen werden in entsprechenden Zeichenfolgenord
 
 ![Ressourcen-Zeichenfolgenordner für Englisch und Spanisch](images/accesskeys/resource-string-folders.png)
 
-_Englisch und Spanisch Zeichenfolge Ressourcenordner_
+_Englische und spanische Ressourcen Zeichen folgen Ordner_
 
 Lokalisierte Zugriffstasten werden in der Datei projects resources.resw angegeben:
 
 ![Geben Sie die AccessKey-Eigenschaft an, die in der Datei resources.resw angegeben ist.](images/accesskeys/resource-resw-file.png)
 
-_Geben Sie die AccessKey-Eigenschaft, die in der Datei "Resources.resw" angegeben_
+_Geben Sie die in der Datei "Resources. resw" angegebene AccessKey-Eigenschaft an._
 
 Weitere Informationen finden Sie unter [Übersetzen von UI-Ressourcen ](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
 
@@ -251,21 +249,21 @@ In der Regel ist die Standardposition der Zugriffstasteninfo ausreichend und bie
 
 ![Beispiel für die automatische Platzierung der Zugriffstasteninfo](images/accesskeys/auto-keytip-position.png)
 
-_Beispiel für die automatische Zugriffstasteninfo-Platzierung_
+_Beispiel für automatische schlüsseltip-Platzierung_
 
 Falls Sie jedoch mehr Kontrolle über die Positionierung der Zugriffstasteninfo benötigen, empfehlen wir Folgendes:
 
-1.  **Prinzip der offensichtliche Zuordnung**: Der Benutzer kann das Steuerelement Zugriffstasteninfo leicht zuordnen.
+1.  **Offensichtliches**Zuordnungs Prinzip: Der Benutzer kann das Steuerelement problemlos mit dem Schlüssel Tipp verknüpfen.
 
     a.  Die Zugriffstasteninfo sollte sich **in der Nähe** des Elements mit der Zugriffstaste befinden (Besitzer).  
     b.  Die Zugriffstasteninfo sollte **aktivierte Elemente nicht verdecken**, die Zugriffstasten aufweisen.   
     c.  Wenn eine Zugriffstasteninfo nicht in der Nähe des Besitzers platziert werden kann, sollte sie mit dem Besitzer überlappen. 
 
-2.  **Erkennbarkeit**: Der Benutzer kann das Steuerelement mit Zugriffstasteninfo schnell ermitteln.
+2.  **Auffindbarkeit**: Der Benutzer kann das Steuerelement schnell mit dem Schlüssel Tipp ermitteln.
 
     a.  Die Zugriffstasteninfo sollte andere Zugriffstasteninfos nie **überlappen**.  
 
-3.  **Einfache Überprüfung:** Der Benutzer kann die Zugriffstasteninfos einfach zu erfassen.
+3.  **Einfache Überprüfung:** Der Benutzer kann problemlos die Schlüssel Tipps erhalten.
 
     a.  Zugriffstasteninfos sollten aneinander und am UI-Element **ausgerichtet** sein.
     b.  Zugriffstasteninfos sollten so weitgehend wie möglich **gruppiert** sein. 
@@ -274,11 +272,11 @@ Falls Sie jedoch mehr Kontrolle über die Positionierung der Zugriffstasteninfo 
 
 Verwenden Sie die Eigenschaft **KeyTipPlacementMode**, um die Platzierung der Zugriffstasteninfo auf Element- oder Gruppenbasis anzupassen.
 
-Die Platzierungsmodi sind: Oben, unten, rechts, links, ausgeblendet, Center und automatisch.
+Die Platzierungs Modi lauten: Oben, unten, rechts, Links, ausgeblendet, zentriert und automatisch.
 
 ![Platzierungsmodi für Zugriffstasteninfo](images/accesskeys/keytip-postion-modes.png)
 
-_Modi der Zugriffstasteninfos-Platzierung_
+_Schlüsseltip-Platzierungs Modi_
 
 Die Mittellinie des Steuerelements wird verwendet, um die vertikale und horizontale Ausrichtung der Zugriffstasteninfo zu berechnen.
 
@@ -303,7 +301,7 @@ Die KeyTipHorizontalOffset-Eigenschaft gibt an, wie weit die Zugriffstasteninfo 
 
 ![Platzierungsmodi für Zugriffstasteninfo](images/accesskeys/keytip-offsets.png)
 
-_Festlegen der vertikalen und horizontalen Offsets für eine Zugriffstasteninfo_
+_Festlegen von vertikalen und horizontalen Offsets für einen schlüsseltip_
 
 ``` xaml
 <Button
@@ -320,7 +318,7 @@ Die Position einer Zugriffstasteninfo wird automatisch am Bildschirmrand ausgeri
 
 ![Platzierungsmodi für Zugriffstasteninfo](images/accesskeys/keytips-screen-edge.png)
 
-_Am Bildschirmrand führt dazu, dass es sich bei Zugriffstasteninfo zu selbst automatisch neu_
+_Der Bildschirmrand bewirkt, dass sich der schlüsseltip automatisch neu positioniert._
 
 ## <a name="key-tip-style"></a>Zugriffstasteninfoformat
 
@@ -330,7 +328,7 @@ Wenn Sie Ihre eigenen Formate für Zugriffstasteninfos angeben müssen, verwende
 
 ![Platzierungsmodi für Zugriffstasteninfo](images/accesskeys/keytip-customization.png)
 
-_Optionen für die Anpassung von Zugriffstasteninfos_
+_Optionen für die Anpassung von Schlüssel Tipps_
 
 In diesem Beispiel wird veranschaulicht, wie Sie diese Anwendungsressourcen ändern:
 
@@ -353,14 +351,14 @@ In diesem Beispiel wird veranschaulicht, wie Sie diese Anwendungsressourcen änd
 
 Das XAML-Framework stellt Automatisierungseigenschaften bereit, mit denen UI-Automatisierungsclients Informationen zu Elementen in der Benutzeroberfläche ermitteln können.
 
-Wenn Sie die AccessKey-Eigenschaft für ein UIElement- oder TextElement-Steuerelement angeben, können Sie mithilfe der [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8)-Eigenschaft diesen Wert abrufen. Barrierefreiheitclients, z. B. die Sprachausgabe, lesen den Wert dieser Eigenschaft jedes Mal, wenn ein Element den Fokus erhält.
+Wenn Sie die AccessKey-Eigenschaft für ein UIElement- oder TextElement-Steuerelement angeben, können Sie mithilfe der [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey)-Eigenschaft diesen Wert abrufen. Barrierefreiheitclients, z. B. die Sprachausgabe, lesen den Wert dieser Eigenschaft jedes Mal, wenn ein Element den Fokus erhält.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Tastenkombinationen](keyboard-interactions.md)
-* [Zugriffstasten](keyboard-accelerators.md)
+* [Tastatur Interaktionen](keyboard-interactions.md)
+* [Tastaturbeschleuniger](keyboard-accelerators.md)
 
 **Beispiele**
-* [XAML-Steuerelementsammlungen (auch bekannt als XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [Katalog der XAML-Steuerelemente (auch als xamluibasics bezeichnet)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 

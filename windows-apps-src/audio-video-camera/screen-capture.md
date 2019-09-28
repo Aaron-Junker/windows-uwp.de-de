@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: Windows 10, UWP, Bildschirmaufnahme
 ms.localizationpriority: medium
-ms.openlocfilehash: 703e5738b7e1b3ce55085aa348da5e153eb2fa71
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: ad9a6bbc4055258b5f89b07d8670f3147eafc86d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713872"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339760"
 ---
 # <a name="screen-capture"></a>Bildschirmaufnahme
 
@@ -23,17 +23,17 @@ Ab Windows 10,Version 1803, enthält der [Windows.Graphics.Capture](https://docs
 Mit der Bildschirmaufnahme können Entwickler sichere System-UIs für Endbenutzer aufrufen, um das Fenster für die Anzeige oder die Anwendung für die Aufzeichnung auszuwählen. Es wird ein gelber Rahmen mit einer Benachrichtigung vom System um das aktiv erfasste Element herum gezeichnet. Im Fall von mehreren gleichzeitigen Aufnahmesitzungen wird ein gelber Rahmen um jedes erfasste Element gezeichnet.
 
 > [!NOTE]
-> In der Bildschirmaufnahme APIs werden nur unterstützt, auf dem Desktop und Windows Mixed Reality immersive Headsets.
+> Die Bildschirmaufnahme-APIs werden nur auf Desktop-und Windows Mixed Reality-, immersiven Headsets unterstützt.
 
 ## <a name="add-the-screen-capture-capability"></a>Hinzufügen der Bildschirmaufnahmefunktion
 
-Die APIs finden Sie in der **Windows.Graphics.Capture** Namespace erfordern eine allgemeine Funktion in Ihrem Anwendungsmanifest deklariert werden:
+Die im **Windows. Graphics. Capture** -Namespace gefundenen APIs erfordern eine allgemeine Funktion, die im Manifest der Anwendung deklariert werden muss:
 
-1. Open **"Package.appxmanifest"** in die **Projektmappen-Explorer**.
+1. Öffnen Sie " **Package. appxmanifest** " im **Projektmappen-Explorer**.
 2. Wählen Sie die Registerkarte **Funktionen** aus.
-3. Überprüfen Sie **Grafikerfassung**.
+3. Überprüfen Sie die **Grafik Erfassung**.
 
-![Grafik erfassen](images/screen-capture-1.png)
+![Grafik Erfassung](images/screen-capture-1.png)
 
 ## <a name="launch-the-system-ui-to-start-screen-capture"></a>Starten Sie die System-Benutzeroberfläche, um die Bildschirmaufnahme zu starten
 
@@ -94,7 +94,7 @@ Public Async Function StartCaptureAsync() As Task
 End Function
 ```
 
-Da dies die UI-Code ist, muss sie für den UI-Thread aufgerufen werden. Wenn Sie es im Code-Behind für eine Seite Ihrer Anwendung aufrufen (wie **"MainPage.Xaml.cs"** ) Dies ist automatisch für Sie ausgeführt, aber falls nicht, Sie können erzwingen, dass es für die Ausführung im UI-Thread durch den folgenden Code:
+Da es sich um einen UI-Code handelt, muss er im UI-Thread aufgerufen werden. Wenn Sie den Code aus dem Code-Behind für eine Seite Ihrer Anwendung aufrufen (wie z. b. **MainPage.XAML.cs**), erfolgt dies automatisch, wenn dies nicht der Fall ist, können Sie die Ausführung im UI-Thread mit folgendem Code erzwingen:
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>Erstellen Sie ein Frameerfassungspool und eine Sammlungssitzung
 
-Mithilfe der **GraphicsCaptureItem**, erstellen Sie eine [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) mit dem D3D-Gerät unterstützt Pixelformat (**DXGI\_FORMAT\_ B8G8R8A8\_UNORM**), die Anzahl der gewünschten Frames (die eine beliebige ganze Zahl sein können) und Rahmen Größe. Die **ContentSize**-Eigenschaft der **GraphicsCaptureItem**-Klasse kann ebenfalls als Anzahl der Frames verwendet werden:
+Mithilfe von **graphicscaptureitem**erstellen Sie ein [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) -Element mit Ihrem D3D-Gerät, unterstütztes Pixel Format (**DXGI @ no__t-3format @ no__t-4b8g8r8a8 @ no__t-5unorm**), Anzahl der gewünschten Frames (die beliebig Integer sein können). ) und Frame Größe. Die **ContentSize**-Eigenschaft der **GraphicsCaptureItem**-Klasse kann ebenfalls als Anzahl der Frames verwendet werden:
 
 ```cs
 private GraphicsCaptureItem _item;
@@ -218,9 +218,9 @@ Alternativ können Sie manuell Frames mit der **Direct3D11CaptureFramePool.TryGe
 
 Das **Direct3D11CaptureFrame**-Objekt enthält die Eigenschaften **ContentSize**, **Surface** und **SystemRelativeTime**. Die **SystemRelativeTime** ist die QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter))-Zeit, die zum Synchronisieren von anderen Medienelemente verwendet werden kann.
 
-## <a name="process-capture-frames"></a>Frames für Prozess erfassen
+## <a name="process-capture-frames"></a>Prozess Erfassungs Frames
 
-Frames aus **Direct3D11CaptureFramePool** werden beim Aufrufen von **TryGetNextFrame** ausgecheckt, und gemäß der Lebensdauer des **Direct3D11CaptureFrame**-Objekts wieder eingecheckt. Für systemeigene Anwendungen reicht das Veröffentlichen des **Direct3D11CaptureFrame**-Objekts aus, um die Frame zurück in den Frame-Pool einzuchecken. Für verwaltete Anwendungen wird empfohlen, die **Direct3D11CaptureFrame.Dispose** (**Schließen** in C++)-Methode zu verwenden. **Direct3D11CaptureFrame** implementiert die [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable)-Schnittstelle, die als [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable?redirectedfrom=MSDN) für C#-Aufrufer projiziert wird.
+Frames aus **Direct3D11CaptureFramePool** werden beim Aufrufen von **TryGetNextFrame** ausgecheckt, und gemäß der Lebensdauer des **Direct3D11CaptureFrame**-Objekts wieder eingecheckt. Für systemeigene Anwendungen reicht das Veröffentlichen des **Direct3D11CaptureFrame**-Objekts aus, um die Frame zurück in den Frame-Pool einzuchecken. Für verwaltete Anwendungen wird empfohlen, die **Direct3D11CaptureFrame.Dispose** (**Schließen** in C++)-Methode zu verwenden. **Direct3D11CaptureFrame** implementiert die [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable)-Schnittstelle, die als [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable) für C#-Aufrufer projiziert wird.
 
 Anwendungen sollten weder Verweise auf **Direct3D11CaptureFrame**-Objekte speichern, noch Verweise auf die zugrunde liegende Direct3D-Oberfläche speichern, nachdem der Frame erneut eingecheckt wurde.
 
@@ -228,9 +228,9 @@ Während der Verarbeitung eines Frames, empfiehlt es sich, dass Anwendungen die 
 
 Die zugrunde liegende Direct3D-Oberfläche gibt immer die Größe an, die beim Erstellen (oder neuerstellen) von **Direct3D11CaptureFramePool** angegeben wird. Wenn der Inhalt größer als der Frame ist, werden die Inhalte auf die Größe des Frame zugeschnitten. Wenn der Inhalt kleiner als der Frames ist, enthält der Rest des Frames nicht definierte Daten. Es wird empfohlen, dass Anwendungen eine Sub-Rect mit der **ContentSize**-Eigenschaft für den **Direct3D11CaptureFrame** kopieren, um zu verhindern, dass der Inhalt nicht definiert ist.
 
-## <a name="take-a-screenshot"></a>Erstellen Sie einen screenshot
+## <a name="take-a-screenshot"></a>Screenshot erstellen
 
-In unserem Beispiel konvertieren wir jede **Direct3D11CaptureFrame** in einem [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), diese ist Teil der [Win2D-APIs](https://microsoft.github.io/Win2D/html/Introduction.htm).
+In unserem Beispiel konvertieren wir jede **Direct3D11CaptureFrame** in eine [canvasbitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), die Teil der [Win2D-APIs](https://microsoft.github.io/Win2D/html/Introduction.htm)ist.
 
 ```cs
 // Convert our D3D11 surface into a Win2D object.
@@ -239,7 +239,7 @@ CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
     frame.Surface);
 ```
 
-Sobald wir haben die **CanvasBitmap**, können wir ihn als Image-Datei speichern. Im folgenden Beispiel wir speichern es als PNG-Datei des Benutzers **gespeicherte Bilder** Ordner.
+Sobald wir über die **canvasbitmap**verfügen, können wir Sie als Bilddatei speichern. Im folgenden Beispiel speichern wir ihn als PNG-Datei im Ordner " **gespeicherte Bilder** " des Benutzers.
 
 ```cs
 StorageFolder pictureFolder = KnownFolders.SavedPictures;
@@ -259,10 +259,10 @@ Wenn **Recreate** aufgerufen wird, werden alle vorhandenen Frames verworfen. Dad
 
 ## <a name="putting-it-all-together"></a>Zusammenfassung
 
-Der folgende Codeausschnitt ist ein End-to-End-Beispiel zum Erfassen von Bildschirminhalten in einer UWP-Anwendung zu implementieren. In diesem Beispiel haben wir zwei Schaltflächen im Front-End: eine Aufrufe **Button_ClickAsync**, und die andere **ScreenshotButton_ClickAsync**.
+Der folgende Code Ausschnitt ist ein End-to-End-Beispiel für das Implementieren der Bildschirmaufzeichnung in einer UWP-Anwendung. In diesem Beispiel haben wir zwei Schaltflächen im Front-End: eine ruft **Button_ClickAsync**auf, und die andere ruft **ScreenshotButton_ClickAsync**auf.
 
 > [!NOTE]
-> Dieser Codeausschnitt verwendet [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm), eine Bibliothek für das Rendering von 2D-Grafiken. Informationen finden Sie ihre Dokumentation dazu, wie Sie es für Ihr Projekt einzurichten.
+> In diesem Code Ausschnitt wird [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)verwendet, eine Bibliothek für das 2D-Grafik Rendering. Informationen dazu, wie Sie für Ihr Projekt eingerichtet werden, finden Sie in der zugehörigen Dokumentation.
 
 ```cs
 using Microsoft.Graphics.Canvas;
@@ -686,8 +686,8 @@ End Class
 
 ## <a name="record-a-video"></a>Aufzeichnen eines Videos
 
-Wenn Sie ein Video zu Ihrer Anwendung aufzeichnen möchten, erreichen Sie so leichter mit dem [Windows.Media.AppRecording Namespace](https://docs.microsoft.com/uwp/api/windows.media.apprecording). Dies ist Teil des Desktop Erweiterungs-SDK, damit er nur auf Desktop funktioniert und erfordert, dass Sie einen Verweis darauf aus Ihrem Projekt hinzufügen. Finden Sie unter [Familien Geräteübersicht](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) für Weitere Informationen.
+Wenn Sie ein Video der Anwendung aufzeichnen möchten, können Sie dies mit dem [Windows. Media. apprecording-Namespace](https://docs.microsoft.com/uwp/api/windows.media.apprecording)vereinfachen. Diese Funktion ist Teil des Desktop Erweiterungs-SDKs, funktioniert daher nur auf dem Desktop und erfordert, dass Sie einen Verweis darauf aus dem Projekt hinzufügen. Weitere Informationen finden Sie unter [Übersicht über Gerätefamilien](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) .
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Windows.Graphics.Capture-Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows. Graphics. Capture-Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

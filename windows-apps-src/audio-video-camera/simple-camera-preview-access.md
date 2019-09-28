@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fba78a619f18d7da2e190758d73ac7a56b12fb9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1f35cbab511912bd9cf6616330f3e9e7737189fd
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360655"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339748"
 ---
 # <a name="display-the-camera-preview"></a>Anzeigen der Kameravorschau
 
@@ -24,7 +24,7 @@ Informationen zum Schreiben einer Kamera-App, die Fotos oder Videos aufnimmt, fi
 
 Damit Ihre App auf die Kamera eines Geräts zugreifen kann, müssen Sie die Verwendung der *webcam*- und *microphone*-Gerätefunktionen durch Ihre App deklarieren. 
 
-**Hinzufügen von Funktionen zu app-manifest**
+**Hinzufügen von Funktionen zum App-Manifest**
 
 1.  Öffnen Sie in Microsoft Visual Studio im **Projektmappen-Explorer** den Designer für das Anwendungsmanifest, indem Sie auf das Element **package.appxmanifest** doppelklicken.
 2.  Wählen Sie die Registerkarte **Funktionen** aus.
@@ -40,7 +40,7 @@ Mithilfe eines [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.U
 
 ## <a name="use-mediacapture-to-start-the-preview-stream"></a>Verwenden von MediaCapture zum Starten des Vorschaudatenstroms
 
-Das [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)-Objekt ist die Schnittstelle Ihrer App mit der Kamera des Geräts. Diese Klasse ist ein Mitglied des Windows.Media.Capture-Namespace. Im Beispiel in diesem Artikel werden neben den in der Standard-Projektvorlage enthaltenen APIs auch APIs aus den Namespaces [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) und [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks?redirectedfrom=MSDN) verwendet.
+Das [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)-Objekt ist die Schnittstelle Ihrer App mit der Kamera des Geräts. Diese Klasse ist ein Mitglied des Windows.Media.Capture-Namespace. Im Beispiel in diesem Artikel werden neben den in der Standard-Projektvorlage enthaltenen APIs auch APIs aus den Namespaces [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) und [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks) verwendet.
 
 Fügen Sie using-Direktiven hinzu, um die folgenden Namespaces in die CS-Datei Ihrer Seite einzubeziehen.
 
@@ -99,5 +99,5 @@ Stellen Sie im **Suspending**-Ereignishandler zunächst sicher, dass die Seite i
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
-* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Erhalten Sie einen Frame (Vorschau)](get-a-preview-frame.md)
+* [Einfaches Foto, Video und Audioerfassung mit mediacapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Verschaffen Sie sich einen Vorschau Frame.](get-a-preview-frame.md)

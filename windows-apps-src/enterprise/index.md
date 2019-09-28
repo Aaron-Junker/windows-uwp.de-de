@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: baac4498fcc6dd65d106166f73ca89db89cbfc6b
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: eec1de013efce7b23cd89e81f659a5cc530638c4
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821003"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339964"
 ---
 # <a name="enterprise"></a>Unternehmen
 
@@ -78,7 +78,7 @@ Weitere Informationen finden Sie unter [Teilen von Code zwischen einer Desktop-A
 
 ### <a name="sql-server-connectivity"></a>SQL Server-Konnektivität
 
-Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN&view=netframework-4.7.2) speichern und abrufen.
+Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) speichern und abrufen.
 
 Informationen hierzu finden Sie unter [Verwenden einer SQL Server-Datenbank in einer UWP-App](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases).
 
@@ -125,7 +125,7 @@ Branchenspezifische Apps müssen häufig mit Daten auf einer Vielzahl von andere
 |-------|-------------|
 | [Grundlagen zum Netzwerk](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | In dieser exemplarischen Vorgehensweise werden grundlegende, für alle UWP-Apps relevante Netzwerkkonzepte erläutert, unabhängig von den verwendeten Kommunikationsprotokollen.  |
 | [Welche Netzwerktechnologie?](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-Apps zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App am besten geeignet sind. |
-| [XML- und SOAP-Serialisierung](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | Bei der XML-Serialisierung werden Objekte in einen XML-Datenstrom konvertiert, der einer bestimmten Sprache der XML-Schemadefinition (XSD) entspricht. Sie können zum Konvertieren zwischen XML und einer stark typisierten Klasse die systemeigene [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument?redirectedfrom=MSDN)-Klasse oder eine externe Bibliothek verwenden. |
+| [XML- und SOAP-Serialisierung](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | Bei der XML-Serialisierung werden Objekte in einen XML-Datenstrom konvertiert, der einer bestimmten Sprache der XML-Schemadefinition (XSD) entspricht. Sie können zum Konvertieren zwischen XML und einer stark typisierten Klasse die systemeigene [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument)-Klasse oder eine externe Bibliothek verwenden. |
 | [JSON-Serialisierung](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | Die JSON-Serialisierung (JavaScript Object Notation) ist ein gängiges Format für die Kommunikation mit REST-APIs. [JSON.NET von Newtonsoft](https://www.newtonsoft.com/json) wird vollständig für UWP-Apps unterstützt. |
 
 ## <a name="devices"></a>Geräte

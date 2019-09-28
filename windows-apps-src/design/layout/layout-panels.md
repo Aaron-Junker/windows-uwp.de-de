@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fbda33e044880b263feafbcf88b041abdadc310
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061964"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340121"
 ---
 # <a name="layout-panels"></a>Layoutpanels
 
@@ -46,7 +46,7 @@ Bevor wir die einzelnen Panels besprechen, lassen Sie uns einige gemeinsame Eige
 
 Die meisten XAML-Layoutpanels verwenden angefügte Eigenschaften, mit denen die untergeordneten Elemente das übergeordnete Panel darüber informieren, wie sie in der Benutzeroberfläche positioniert werden sollen. Angefügte Eigenschaften verwenden die Syntax *AttachedPropertyProvider.PropertyName*. Wenn in anderen Panels geschachtelte Panels vorhanden sind, werden angefügte Eigenschaften von UI-Elementen, die Layoutmerkmale für ein übergeordnetes Element angeben, nur vom direkt übergeordneten Panel interpretiert.
 
-Hier sehen Sie ein Beispiel für das Festlegen der angefügten Eigenschaft [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) auf einem Schaltflächen-Steuerelement in XAML. Hiermit wird das übergeordnete Canvas-Element darüber informiert, dass das Button-Element 50 effektive Pixel vom linken Rand des Canvas-Elements entfernt positioniert werden soll.
+Hier sehen Sie ein Beispiel für das Festlegen der angefügten Eigenschaft [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) auf einem Schaltflächen-Steuerelement in XAML. Hiermit wird das übergeordnete Canvas-Element darüber informiert, dass das Button-Element 50 effektive Pixel vom linken Rand des Canvas-Elements entfernt positioniert werden soll.
 
 ```xaml
 <Canvas>
@@ -147,9 +147,9 @@ Wird in einem StackPanel die Größe eines untergeordneten Elements nicht expliz
 
 Das [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Panel unterstützt Fluid-Layouts und ermöglicht die Anordnung von Steuerelementen in mehrzeiligen und mehrspaltigen Layouts. Sie können die Zeilen und Spalten eines Rasterpanels mit den Eigenschaften [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) und [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions) angeben.
 
-Mit den angefügten Eigenschaften [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column?view=netframework-4.8) und [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) ordnen Sie Objekte in bestimmten Zellen an.
+Mit den angefügten Eigenschaften [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) und [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) ordnen Sie Objekte in bestimmten Zellen an.
 
-Wenn der Inhalt über mehrere Zeilen und Spalten angezeigt werden soll, können Sie die angefügten Eigenschaften [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) und [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan?view=netframework-4.8) verwenden.
+Wenn der Inhalt über mehrere Zeilen und Spalten angezeigt werden soll, können Sie die angefügten Eigenschaften [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) und [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan) verwenden.
 
 In diesem XAML-Beispiel wird veranschaulicht, wie Sie ein Rasterelement mit zwei Zeilen und zwei Spalten erstellen.
 
@@ -245,7 +245,7 @@ In diesem Beispiel beträgt die maximale Anzahl von Zeilen in jeder Spalte 3. Di
 
 ## <a name="canvas"></a>Canvas
 
-Das [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Panel positioniert seine untergeordneten Elemente mit festen Koordinatenpunkten und unterstützt keine Fluid-Layouts. Sie geben die Punkte in den einzelnen untergeordneten Elementen an, indem Sie für jedes Element die angefügten Eigenschaften [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) und [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) festlegen. Das übergeordnete Canvas liest während des [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange)-Durchlaufs des Layouts diese angehängten Eigenschaftswerte von seinen untergeordneten Elementen.
+Das [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Panel positioniert seine untergeordneten Elemente mit festen Koordinatenpunkten und unterstützt keine Fluid-Layouts. Sie geben die Punkte in den einzelnen untergeordneten Elementen an, indem Sie für jedes Element die angefügten Eigenschaften [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) und [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) festlegen. Das übergeordnete Canvas liest während des [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange)-Durchlaufs des Layouts diese angehängten Eigenschaftswerte von seinen untergeordneten Elementen.
 
 Objekte in einem Canvas-Panel können sich überlappen, wobei ein Objekt über einem anderen Objekt gezeichnet wird. Standardmäßig rendert das Canvas-Element untergeordnete Objekte in der Reihenfolge, in der sie deklariert werden, d. h., das letzte untergeordnete Element wird im Vordergrund gerendert (jedes Element verfügt über einen standardmäßigen Z-Index von 0). Dies ist genauso wie bei anderen integrierten Panels. Canvas unterstützt jedoch auch die angefügte Eigenschaft [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)), die Sie für die einzelnen untergeordneten Elemente festlegen können. Sie können diese Eigenschaft im Code festlegen, um die Zeichnungsreihenfolge von Elementen zur Laufzeit zu ändern. Das Element mit dem höchsten Canvas.ZIndex-Wert wird zuletzt gezeichnet, also über allen anderen Elementen, die sich im gleichen Raum befinden oder sich auf irgendeine Weise überlappen. Beachten Sie, dass der Alpha-Wert (Transparenz) berücksichtigt wird. Auch wenn sich Elemente überlappen, werden die Inhalte in Überlappungsbereichen also ggf. vermischt, wenn das obere Element über einen Alpha-Wert verfügt, der nicht dem Maximalwert entspricht.
 

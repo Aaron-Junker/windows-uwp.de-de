@@ -1,30 +1,30 @@
 ---
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: Verwenden Sie diese Methoden in der Microsoft Store-Übermittlung API zum Verwalten von Paket-Flight-Übermittlungen für apps, die mit Ihrem Partner Center-Konto registriert sind.
+description: Verwenden Sie diese Methoden in der Microsoft Store Übermittlungs-API, um die Übertragung von Paketen für apps zu verwalten, die bei Ihrem Partner Center-Konto registriert sind.
 title: Verwalten von Flight-Paket-Übermittlungen
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Flight-Übermittlungen
 ms.localizationpriority: medium
-ms.openlocfilehash: 11fb2427ece0f0e37fb2a5f2759094d6e04930c8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 813b1375b3bdba42f0568cb7d961f8108d5828a1
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320147"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340416"
 ---
 # <a name="manage-package-flight-submissions"></a>Verwalten von Flight-Paket-Übermittlungen
 
 Mithilfe der Methoden der Microsoft Store-Übermittlungs-API können Sie Flight-Paket-Übermittlungen für Ihre Apps verwalten, einschließlich gradueller Paketrollouts. Eine Einführung in die Microsoft Store-Übermittlungs-API einschließlich der Voraussetzungen für die Verwendung der API finden Sie unter [Erstellen und Verwalten von Übermittlungen mit Microsoft Store-Diensten](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> Wenn Sie die Übermittlung zum Microsoft Store-API verwenden, um eine Eingabe für ein Paket Flug zu erstellen, achten Sie darauf, dass Sie weitere Änderungen an der Übermittlung zu vornehmen, nur mithilfe der API, anstatt Partner Center. Wenn Sie das Dashboard zum Ändern einer Übermittlung verwenden, die ursprünglich mit der API erstellt wurde, können Sie die Übermittlung nicht länger mithilfe der API ändern oder übermitteln. In einigen Fällen kann der Fehlerstatus der Übermittlung belassen werden, mit dem die Übermittlung nicht fortgesetzt werden kann. In diesem Fall müssen Sie die Übermittlung löschen und eine neue Übermittlung erstellen.
+> Wenn Sie die Microsoft Store Übermittlungs-API verwenden, um eine Übermittlung für einen paketflight zu erstellen, stellen Sie sicher, dass Sie weitere Änderungen an der Übermittlung nur über die API anstelle von Partner Center vornehmen. Wenn Sie das Dashboard zum Ändern einer Übermittlung verwenden, die ursprünglich mit der API erstellt wurde, können Sie die Übermittlung nicht länger mithilfe der API ändern oder übermitteln. In einigen Fällen kann der Fehlerstatus der Übermittlung belassen werden, mit dem die Übermittlung nicht fortgesetzt werden kann. In diesem Fall müssen Sie die Übermittlung löschen und eine neue Übermittlung erstellen.
 
 <span id="methods-for-package-flight-submissions" />
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>Methoden zum Verwalten von Flight-Paket-Übermittlungen
 
-Verwenden Sie die folgenden Methoden zum Abrufen, Erstellen, Aktualisieren, Committen oder Löschen einer Flight-Paket-Übermittlung. Bevor Sie diese Methoden verwenden können, muss der Flug Paket bereits im Partner Center vorhanden sein. Sie können einen Paket Flug erstellen [im Partner Center](https://docs.microsoft.com/windows/uwp/publish/package-flights) oder mithilfe von den Microsoft Store-Übermittlung-API-Methoden, die in beschriebenen [Paket Flüge verwalten](manage-flights.md).
+Verwenden Sie die folgenden Methoden zum Abrufen, Erstellen, Aktualisieren, Committen oder Löschen einer Flight-Paket-Übermittlung. Bevor Sie diese Methoden verwenden können, muss der paketflug bereits im Partner Center vorhanden sein. Sie können einen paketflug [in Partner Center](https://docs.microsoft.com/windows/uwp/publish/package-flights) oder mithilfe der Methoden zur Microsoft Store Übermittlung von APIs in erstellen, die unter [Verwalten von Paket Flügen](manage-flights.md)beschrieben werden.
 
 <table>
 <colgroup>
@@ -43,32 +43,32 @@ Verwenden Sie die folgenden Methoden zum Abrufen, Erstellen, Aktualisieren, Comm
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
-<td align="left"><a href="get-a-flight-submission.md">Erhalten Sie ein vorhandenes Paket Flight Übermittlung</a></td>
+<td align="left"><a href="get-a-flight-submission.md">Eine vorhandene paketübertragungs Übermittlung erhalten</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status</td>
-<td align="left"><a href="get-status-for-a-flight-submission.md">Abrufen des Status einer vorhandenen Paket-Flight-Übermittlung</a></td>
+<td align="left"><a href="get-status-for-a-flight-submission.md">Gibt den Status einer vorhandenen paketübermittlungs Übermittlung an.</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions</td>
-<td align="left"><a href="create-a-flight-submission.md">Erstellen Sie eine neue Paket-Flight-Übermittlung</a></td>
+<td align="left"><a href="create-a-flight-submission.md">Erstellen einer neuen paketflight-Übermittlung</a></td>
 </tr>
 <tr>
 <td align="left">PUT</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
-<td align="left"><a href="update-a-flight-submission.md">Aktualisieren einer vorhandenen Paket flight</a></td>
+<td align="left"><a href="update-a-flight-submission.md">Aktualisieren einer vorhandenen Paket-Flight-Übermittlung</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit</td>
-<td align="left"><a href="commit-a-flight-submission.md">Übernehmen einer neuen oder aktualisierten Pakets-Flight-Übermittlung</a></td>
+<td align="left"><a href="commit-a-flight-submission.md">Commit für eine neue oder aktualisierte paketflight-Übermittlung</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
-<td align="left"><a href="delete-a-flight-submission.md">Löschen Sie eine Paket-Flight-Eingabe</a></td>
+<td align="left"><a href="delete-a-flight-submission.md">Löschen einer paketflight-Übermittlung</a></td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +79,7 @@ Verwenden Sie die folgenden Methoden zum Abrufen, Erstellen, Aktualisieren, Comm
 
 Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu erstellen.
 
-1. Wenn noch nicht geschehen, vollständige die Voraussetzungen im Abschnitt [erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md), einschließlich eine Azure AD-Anwendung mit Ihrem Partner Center-Konto zuordnen und Abrufen Ihrer Client-ID und Schlüssel. Sie müssen dies nur einmal durchführen. nachdem Sie Client-ID und Schlüssel erhalten haben, können Sie diese jedes Mal wiederverwenden, wenn Sie ein neues Azure AD-Token erstellen müssen.  
+1. Wenn Sie dies noch nicht getan haben, müssen Sie die unter [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Diensten](create-and-manage-submissions-using-windows-store-services.md)beschriebenen Voraussetzungen erfüllen. dazu gehören das Zuordnen einer Azure AD Anwendung zu Ihrem Partner Center-Konto und das Abrufen der Client-ID und des Schlüssels. Sie müssen dies nur einmal durchführen. nachdem Sie Client-ID und Schlüssel erhalten haben, können Sie diese jedes Mal wiederverwenden, wenn Sie ein neues Azure AD-Token erstellen müssen.  
 
 2. [Abrufen eines Azure AD-Zugriffstokens](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Sie müssen dieses Zugriffstoken an die Methoden in der Microsoft Store-Übermittlungs-API übergeben. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
@@ -92,7 +92,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu er
     Der Antworttext enthält eine [Flight-Übermittlung](#flight-submission-object)-ressource, die eine ID für die neue Übermittlung, die SAS-URI (Shared Access Signatur) zum Hochladen von Paketen für die Übermittlung an Azure Blob Storage und die Daten für die neue Übermittlung (inkl. alle Eintrags- und Preisinfos) enthält.
 
     > [!NOTE]
-    > Ein SAS-URI ermöglicht den Zugriff auf eine sichere Ressource in Azure Storage, ohne dass Kontoschlüssel benötigt werden. Hintergrundinformationen zu SAS-URIs und ihrer Verwendung mit Azure Blob Storage finden Sie unter [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/) und [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit Blob Storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+    > Ein SAS-URI ermöglicht den Zugriff auf eine sichere Ressource in Azure Storage, ohne dass Kontoschlüssel benötigt werden. Hintergrundinformationen zu SAS-URIs und deren Verwendung mit Azure BLOB Storage finden Sie unter [shared Access Signature, Part 1: Grundlegendes zum SAS-Modell @ no__t-0 und [shared Access Signature, Teil 2: Erstellen und Verwenden einer SAS mit BLOB Storage @ no__t-0.
 
 4. Wenn Sie neue Pakete für die Übermittlung hinzufügen, müssen Sie [die Pakete vorbereiten](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) und einem ZIP-Archiv hinzufügen.
 
@@ -106,11 +106,11 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu er
 
 4. Wenn Sie neue Pakete für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv mit dem SAS-URI auf [Azure Blob Storage](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage) hochladen, der im Antworttext der POST-Methode bereitgestellt wurde, die Sie zuvor aufgerufen haben. Zu diesem Zweck können Sie verschiedene Azure-Bibliotheken auf unterschiedlichen Plattformen verwenden, darunter:
 
-    * [Azure Storage-Clientbibliothek für .NET](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-    * [Azure Storage-SDK für Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-    * [Azure Storage-SDK für Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
+    * [Azure Storage-Client Bibliothek für .net](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [Azure Storage SDK für Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [Azure Storage SDK für python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    Das folgende C#-Codebeispiel zeigt, wie Sie ein ZIP-Archiv mithilfe der [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN)-Klasse in der Azure Storage-Clientbibliothek für .NET auf Azure Blob Storage hochladen. Im Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstromobjekt geschrieben wurde.
+    Das folgende C#-Codebeispiel zeigt, wie Sie ein ZIP-Archiv mithilfe der [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob)-Klasse in der Azure Storage-Clientbibliothek für .NET auf Azure Blob Storage hochladen. Im Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstromobjekt geschrieben wurde.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -119,7 +119,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu er
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. Führen Sie folgende Methode aus, um [die Flight-Paket-Übermittlung zu committen](commit-a-flight-submission.md). Dies wird von Partner Center benachrichtigt, dass die Übermittlung abgeschlossen ist, und Ihre Änderungen jetzt auf Ihr Konto angewendet werden soll.
+5. Führen Sie folgende Methode aus, um [die Flight-Paket-Übermittlung zu committen](commit-a-flight-submission.md). Dadurch wird Partner Center benachrichtigt, dass Sie Ihre Übermittlung abgeschlossen haben und dass Ihre Updates jetzt auf Ihr Konto angewendet werden sollen.
 
     ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -133,7 +133,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu er
 
     Um den Status der Übermittlung zu überprüfen, zeigen Sie den Wert *status* im Antworttext an. Dieser Wert sollte von **CommitStarted** entweder in **PreProcessing** geändert worden sein, wenn die Anforderung erfolgreich war, oder in **CommitFailed**, wenn die Anforderung Fehler enthalten hat. Wenn Fehler aufgetreten sind, enthält das Feld *StatusDetails* Feld weitere Details zu den Fehlern.
 
-7. Nachdem das Commit erfolgreich abgeschlossen wurde, wird die Übermittlung zur Aufnahme an den Store gesendet. Sie können weiterhin den Status der Übermittlung mithilfe der vorherigen Methode oder besuchen Sie die Partner Center überwacht werden soll.
+7. Nachdem das Commit erfolgreich abgeschlossen wurde, wird die Übermittlung zur Aufnahme an den Store gesendet. Sie können den Übermittlungs Fortschritt weiterhin mithilfe der vorherigen Methode oder durch Besuch von Partner Center überwachen.
 
 <span/>
 
@@ -155,7 +155,7 @@ Weitere Informationen finden Sie auf unserer [StoreBroker-Seite auf GitHub](http
 
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>Verwalten eines graduellen Paketrollouts für eine Flight-Paket-Übermittlung
 
-Sie können die aktualisierten Pakete in einer Flight-Paket-Übermittlung graduell für einen bestimmten Prozentsatz der Kunden Ihrer App unter Windows 10 einführen. So können Sie Feedback und Analysedaten für die jeweiligen Pakete überwachen und vor einem umfassenden Rollout sicherstellen, dass das Update ordnungsgemäß funktioniert. Sie können den Rollout-Prozentwert für eine veröffentlichte Übermittlung ändern (oder die Aktualisierung anhalten), ohne dass Sie eine neue Übermittlung erstellen müssen. Weitere Informationen sowie Anweisungen zum Aktivieren und verwalten einen Rollout schrittweise Paket im Partner Center finden Sie unter [in diesem Artikel](../publish/gradual-package-rollout.md).
+Sie können die aktualisierten Pakete in einer Flight-Paket-Übermittlung graduell für einen bestimmten Prozentsatz der Kunden Ihrer App unter Windows 10 einführen. So können Sie Feedback und Analysedaten für die jeweiligen Pakete überwachen und vor einem umfassenden Rollout sicherstellen, dass das Update ordnungsgemäß funktioniert. Sie können den Rollout-Prozentwert für eine veröffentlichte Übermittlung ändern (oder die Aktualisierung anhalten), ohne dass Sie eine neue Übermittlung erstellen müssen. Weitere Informationen, einschließlich Anleitungen zum Aktivieren und Verwalten einer schrittweisen Paket Bereitstellung in Partner Center, finden Sie in [diesem Artikel](../publish/gradual-package-rollout.md).
 
 Um ein graduelles Paketrollout für eine Flight-Paket-Übermittlung programmgesteuert zu aktivieren, gehen Sie wie folgt vor, und verwenden Sie dabei Methoden in der Microsoft Store-Übermittlungs-API:
 
@@ -182,22 +182,22 @@ Nachdem ein graduelles Paketrollout für eine Flight-Paket-Übermittlung aktivie
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout</td>
-<td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">Rufen Sie die Informationen zur schrittweisen Einführung für eine Paket-Flight-Eingabe</a></td>
+<td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">Informationen zum schrittweisen Rollout für eine Package Flight-Übermittlung</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage</td>
-<td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">Aktualisieren Sie den schrittweisen Rollout-Prozentsatz für eine Paket-Flight-Eingabe</a></td>
+<td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">Aktualisieren des prozentualen Rollout Prozentsatzes für die Übermittlung eines paketflugs</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout</td>
-<td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">Anhalten der schrittweisen Rollouts für eine Paket-Flight-Eingabe</a></td>
+<td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">Schrittweises Rollout für die Übermittlung eines paketflugs anhalten</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout</td>
-<td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">Abschließen der schrittweisen Rollouts für eine Paket-Flight-Eingabe</a></td>
+<td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">Abschließen des schrittweisen Rollouts für eine Paket Flug Übermittlung</a></td>
 </tr>
 </tbody>
 </table>
@@ -301,7 +301,7 @@ Diese Ressource stellt den Zugriff auf die Zertifizierungsberichtsdaten für ein
 
 | Wert           | Typ    | Beschreibung         |
 |-----------------|---------|------|
-|     date            |    String     |  Das Datum und Uhrzeit, die der Bericht, im ISO 8601-Format generiert wurde.    |
+|     date            |    String     |  Das Datum und die Uhrzeit, zu der der Bericht generiert wurde, im ISO 8601-Format.    |
 |     reportUrl            |    String     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
 
 
@@ -331,13 +331,13 @@ Diese Ressource enthält Details zu einem Paket in einer Übermittlung.
 Die Ressource hat die folgenden Werte.
 
 > [!NOTE]
-> Beim Aufruf der Methode für das [Aktualisieren einer Flight-Paket-Übermittlung](update-a-flight-submission.md) sind im Anforderungstext nur die Werte *fileName*, *fileStatus*, *minimumDirectXVersion* und *minimumSystemRam* dieses Objekts erforderlich. Die anderen Werte werden vom Partner Center aufgefüllt.
+> Beim Aufruf der Methode für das [Aktualisieren einer Flight-Paket-Übermittlung](update-a-flight-submission.md) sind im Anforderungstext nur die Werte *fileName*, *fileStatus*, *minimumDirectXVersion* und *minimumSystemRam* dieses Objekts erforderlich. Die anderen Werte werden von Partner Center aufgefüllt.
 
 | Wert           | Typ    | Beschreibung              |
 |-----------------|---------|------|
 | fileName   |   String      |  Der Name des Pakets.    |  
 | fileStatus    | String    |  Der Status des Pakets. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  String   |  Eine ID, die das Paket eindeutig identifiziert. Dieser Wert wird vom Partner Center verwendet.   |     
+| id    |  String   |  Eine ID, die das Paket eindeutig identifiziert. Dieser Wert wird von Partner Center verwendet.   |     
 | version    |  String   |  Die Version des App-Pakets. Weitere Informationen finden Sie unter [Paketversionsnummern](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  String   |  Die Architektur des App-Pakets (z. B. ARM).   |     
 | languages    | array    |  Ein Array von Sprachcodes für die Sprachen, die von der App unterstützt werden. Weitere Informationen finden Sie unter [Unterstützte Sprachen](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
@@ -389,7 +389,7 @@ Diese Ressource enthält [Einstellungen für graduelle Paketrollouts](#manage-gr
 | fallbackSubmissionId    |  String   |  Die ID der Übermittlung, die die Kunden erhalten, die keine Pakete im Rahmen des graduellen Paketrollouts erhalten.   |          
 
 > [!NOTE]
-> Die *PackageRolloutStatus* und *FallbackSubmissionId* Werte, die vom Partner Center zugewiesen sind, und nicht vom Entwickler festgelegt werden sollen. Wenn Sie diese Werte in einen Anforderungstext einfügen, werden diese Werte ignoriert.
+> Die Werte *packagerolloutstatus* und *fallbacksubmissionid* werden von Partner Center zugewiesen und sind nicht für die Festlegung durch den Entwickler vorgesehen. Wenn Sie diese Werte in einen Anforderungstext einfügen, werden diese Werte ignoriert.
 
 <span/>
 
@@ -424,11 +424,11 @@ Die folgenden Codes stellen den Status einer Übermittlung dar.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Verwalten Sie Paket Flüge mit die Übermittlung zum Microsoft Store-API](manage-flights.md)
-* [Erhalten Sie eine Paket-Flight-Eingabe](get-a-flight-submission.md)
-* [Erstellen Sie eine Paket-Flight-Eingabe](create-a-flight-submission.md)
-* [Aktualisieren Sie eine Paket-Flight-Eingabe](update-a-flight-submission.md)
-* [Übernehmen Sie eine Paket-Flight-Eingabe](commit-a-flight-submission.md)
-* [Löschen Sie eine Paket-Flight-Eingabe](delete-a-flight-submission.md)
-* [Abrufen des Status einer Paket-Flight-Übermittlung](get-status-for-a-flight-submission.md)
+* [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
+* [Verwalten von Paket Flügen mithilfe der Microsoft Store Übermittlungs-API](manage-flights.md)
+* [Get a Package Flight Submission](get-a-flight-submission.md)
+* [Erstellen einer paketflight-Übermittlung](create-a-flight-submission.md)
+* [Aktualisieren einer paketflight-Übermittlung](update-a-flight-submission.md)
+* [Commit für eine Paket-Flight-Übermittlung](commit-a-flight-submission.md)
+* [Löschen einer paketflight-Übermittlung](delete-a-flight-submission.md)
+* [Den Status einer paketflight-Übermittlung erhalten](get-status-for-a-flight-submission.md)

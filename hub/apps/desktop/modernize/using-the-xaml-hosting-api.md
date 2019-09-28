@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6c1f45b4bd3da74ea150c05800eba7ec10568894
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.openlocfilehash: cdcef66dc1f0026ff369eeb3f3c7881385d6e5ba
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643404"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339295"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App
 
-Ab Windows 10, Version 1903, können nicht-UWP-Desktop-Apps C++ (einschließlich Win32-, WPF-und Windows Forms-Apps) die UWP- *XAML-Hosting-API* verwenden, um UWP-Steuerelemente in jedem Benutzeroberflächen Element zu hosten, das einem Fenster Handle (HWND) zugeordnet ist. Diese API ermöglicht es nicht-UWP-Desktop-Apps, die neuesten Windows 10-Benutzeroberflächen Features zu verwenden, die nur über UWP-Steuerelemente verfügbar sind. Beispielsweise können nicht-UWP-Desktop-Apps diese API verwenden, um UWP-Steuerelemente zu hosten, die das [fließende Design System](/windows/uwp/design/fluent-design-system/index) verwenden und [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions)unterstützen.
+Ab Windows 10, Version 1903, können nicht-UWP-Desktop-Apps C++ (einschließlich Win32-, WPF-und Windows Forms-Apps) die *UWP-XAML-Hosting-API* verwenden, um UWP-Steuerelemente in jedem Benutzeroberflächen Element zu hosten, das einem Fenster Handle (HWND) zugeordnet ist. Diese API ermöglicht es nicht-UWP-Desktop-Apps, die neuesten Windows 10-Benutzeroberflächen Features zu verwenden, die nur über UWP-Steuerelemente verfügbar sind. Beispielsweise können nicht-UWP-Desktop-Apps diese API verwenden, um UWP-Steuerelemente zu hosten, die das [fließende Design System](/windows/uwp/design/fluent-design-system/index) verwenden und [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions)unterstützen.
 
 Die UWP-XAML-Hosting-API stellt die Grundlage für einen umfassenderen Satz von Steuerelementen dar, die wir bereitstellen, damit Entwickler eine fließende Benutzeroberfläche für Desktop-Apps ohne UWP bereitstellen können. Diese Funktion wird als *XAML-Inseln*bezeichnet. Eine Übersicht über diese Funktion finden Sie unter [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML-Inseln)](xaml-islands.md).
 
@@ -58,7 +58,7 @@ Wählen Sie eine der folgenden Optionen aus, um Ihr Projekt für die Bereitstell
 * **Installieren Sie das Paket "Microsoft. Toolkit. Win32. UI. SDK**". Wenn Sie Ihre APP nicht in einem msix-Paket verpacken möchten, können Sie [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v 6.0.0-preview7 oder höher) installieren. Dieses Paket enthält mehrere Build-und Lauf Zeit Objekte, die es ermöglichen, dass XAML-Inseln in der App funktionieren. Stellen Sie sicher, dass die Option **Vorabversion einschließen** ausgewählt ist, damit Sie die neuesten Vorschau Versionen dieses Pakets anzeigen können.
 
 > [!NOTE]
-> In früheren Versionen dieser Anweisungen haben Sie das `maxversiontested` -Element einem Anwendungs Manifest in Ihrem Projekt hinzugefügt. Solange Sie eine der oben aufgeführten Optionen verwenden, müssen Sie dieses Element nicht mehr dem Manifest hinzufügen.
+> In früheren Versionen dieser Anweisungen haben Sie das `maxversiontested`-Element einem Anwendungs Manifest in Ihrem Projekt hinzugefügt. Solange Sie eine der oben aufgeführten Optionen verwenden, müssen Sie dieses Element nicht mehr dem Manifest hinzufügen.
 
 ### <a name="additional-requirements-for-custom-uwp-controls"></a>Zusätzliche Anforderungen für benutzerdefinierte UWP-Steuerelemente
 
@@ -146,7 +146,7 @@ Der grundlegende Prozess der Verwendung der XAML-Hosting-API zum Hosten eines UW
 
     1. Erstellen Sie ein **desktopwindowxamlsource** -Objekt, und wandeln Sie es in die Schnittstelle **idesktopwindowxamlsourcenative** oder **IDesktopWindowXamlSourceNative2** com um.
         > [!NOTE]
-        > Diese Schnittstellen werden in der **Windows. UI. XAML. Hosting. desktopwindowxamlsource. h** -Header Datei im Windows SDK deklariert. Standardmäßig befindet sich diese Datei unter% Program Files (x86)% \ Windows kits\10\include\\< Buildnummer\>\in.
+        > Diese Schnittstellen werden in der **Windows. UI. XAML. Hosting. desktopwindowxamlsource. h** -Header Datei im Windows SDK deklariert. Standardmäßig befindet sich diese Datei unter% Program Files (x86)% \ Windows kits\10\include @ no__t-0 < Buildnummer @ no__t-1\um.
 
     2. Ruft die **attachtowindow** -Methode der **idesktopwindowxamlsourcenative** -Schnittstelle oder der **IDesktopWindowXamlSourceNative2** -Schnittstelle auf und übergibt das Fenster Handle des übergeordneten UI-Elements in der Anwendung.
 
@@ -156,7 +156,7 @@ Der grundlegende Prozess der Verwendung der XAML-Hosting-API zum Hosten eines UW
 
 Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben beschriebene Prozess implementiert wird:
 
-1. Öffnen Sie im Ordner **Quelldateien** des Projekts die Standarddatei **windowsproject. cpp** . Löschen Sie den gesamten Inhalt der Datei, und fügen Sie `include` die `using` folgenden-und-Anweisungen hinzu. Zusätzlich zu den Standard C++ -und UWP-Headern und-Namespaces enthalten diese Anweisungen mehrere Elemente, die für XAML-Inseln spezifisch sind.
+1. Öffnen Sie im Ordner **Quelldateien** des Projekts die Standarddatei **windowsproject. cpp** . Löschen Sie den gesamten Inhalt der Datei, und fügen Sie die folgenden `include`-und `using`-Anweisung hinzu. Zusätzlich zu den Standard C++ -und UWP-Headern und-Namespaces enthalten diese Anweisungen mehrere Elemente, die für XAML-Inseln spezifisch sind.
 
     ```cppwinrt
     #include <windows.h>
@@ -336,7 +336,7 @@ Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben beschrie
 
 5. Speichern Sie die Codedatei, erstellen Sie die APP, und führen Sie Sie aus. Vergewissern Sie sich, dass das UWP- **TextBlock** -Steuerelement im App-Fenster angezeigt wird.
     > [!NOTE]
-    > Möglicherweise werden mehrere Buildwarnungen angezeigt, `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` einschließlich `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`und. Diese Warnungen sind bekannte Probleme mit den aktuellen Tools und nuget-Paketen und können ignoriert werden.
+    > Möglicherweise werden mehrere Buildwarnungen angezeigt, einschließlich `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` und `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Diese Warnungen sind bekannte Probleme mit den aktuellen Tools und nuget-Paketen und können ignoriert werden.
 
 Ausführliche Beispiele für diese Aufgaben finden Sie in den folgenden Code Dateien:
 
@@ -358,7 +358,7 @@ Um ein benutzerdefiniertes UWP-Steuerelement zu hosten, benötigen Sie die folge
 
 * **Das benutzerdefinierte UWP-Steuer**Element. Sie benötigen den Quellcode für das benutzerdefinierte UWP-Steuerelement, das Sie hosten möchten, damit Sie es mit Ihrer APP kompilieren können. In der Regel wird das benutzerdefinierte Steuerelement in einem UWP-Klassen Bibliotheksprojekt definiert, auf das Sie in C++ derselben Projekt Mappe wie das Win32-Projekt verweisen.
 
-* **Ein UWP-App-Projekt, das ein xamlapplication-Objekt definiert**. Das C++ Win32-Projekt muss Zugriff auf eine Instanz der `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` -Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Dieser Typ fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung. Die empfohlene Vorgehensweise besteht darin, ein **leeres App-Projekt (Universal Windows)** zur gleichen Projekt Mappe wie das C++ Win32-Projekt hinzuzufügen und die `App` Standardklasse in diesem Projekt zu überarbeiten.
+* **Ein UWP-App-Projekt, das ein xamlapplication-Objekt definiert**. Das C++ Win32-Projekt muss Zugriff auf eine Instanz der `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`-Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Dieser Typ fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung. Die empfohlene Vorgehensweise besteht darin, ein **leeres App-Projekt (Universal Windows)** zur gleichen Projekt Mappe wie das C++ Win32-Projekt hinzuzufügen und die Standard `App`-Klasse in diesem Projekt zu überarbeiten.
   > [!NOTE]
   > Die Projekt Mappe kann nur ein Projekt enthalten, das `XamlApplication` ein-Objekt definiert. Alle benutzerdefinierten UWP-Steuerelemente in Ihrer APP `XamlApplication` verwenden dasselbe Objekt gemeinsam. Das Projekt, das das `XamlApplication` Objekt definiert, muss Verweise auf alle anderen UWP-Bibliotheken und-Projekte enthalten, die in der XAML-Insel als Host-UWP-Steuerelemente verwendet werden.
 
@@ -376,7 +376,7 @@ Führen Sie die folgenden allgemeinen Schritte aus, um C++ ein benutzerdefiniert
 
 Ein vollständiges Beispiel für eine C++ Win32-Anwendung finden Sie in den folgenden Projekten auf der [XAML-Insel mit benutzerdefiniertem Steuerelement Sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App):
 
-* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): Dieses Projekt implementiert ein benutzerdefiniertes UWP-XAML-Steuerelement mit dem Namen `MyUserControl` , das ein Textfeld, mehrere Schaltflächen und ein Kombinations Feld enthält.
+* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): In diesem Projekt wird ein benutzerdefiniertes UWP-XAML-Steuerelement mit dem Namen `MyUserControl` implementiert, das ein Textfeld, mehrere Schaltflächen und ein Kombinations Feld enthält.
 * [Myapp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp): Dies ist ein UWP-App-Projekt mit den oben beschriebenen Änderungen.
 * [Samplecppapp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp): Dies ist das C++ Win32-App-Projekt, das das benutzerdefinierte UWP-XAML-Steuerelement in einer XAML-Insel hostet.
 
@@ -395,9 +395,9 @@ Damit Tastatureingaben für jede XAML-Insel ordnungsgemäß behandelt werden, mu
 
   * **C++ Win32:** : Die APP kann **pretranslatemess** direkt in der Hauptnachrichten Schleife aufzurufen. Ein Beispiel finden Sie in der Datei " [xamlbridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
 
-  * **WPF** Die APP kann **pretranslatemess** aus dem Ereignishandler für das [ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2) -Ereignis aufrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) im Windows Community Toolkit.
+  * **WPF** Die APP kann **pretranslatemess** aus dem Ereignishandler für das [ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) -Ereignis aufrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) im Windows Community Toolkit.
 
-  * **Windows Forms:** Die APP kann **pretranslatemess** aus einer außer Kraft setzung für die [Control. PreProcessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage?view=netframework-4.7.2) -Methode abrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) im Windows Community Toolkit.
+  * **Windows Forms:** Die APP kann **pretranslatemess** aus einer außer Kraft setzung für die [Control. PreProcessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage) -Methode abrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) im Windows Community Toolkit.
 
 ### <a name="keyboard-focus-navigation"></a>Tastaturfokus Navigation
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: ad133a9b1eb22695e6ce5d8b3edba9ad3a138b68
-ms.sourcegitcommit: f1261aa6f7eeb62bf770a08b58ec4357bdc20c7e
+ms.openlocfilehash: c337de2a1fc349cfa3965402848fbead51e61e83
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71224759"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340470"
 ---
 # <a name="debug-a-background-task"></a>Debuggen einer Hintergrundaufgabe
 
@@ -36,7 +36,7 @@ In diesem Thema wird vorausgesetzt, dass Sie bereits über eine App mit einer Hi
 
 Hintergrundaufgaben können mit Microsoft Visual Studio manuell ausgelöst werden. Anschließend können Sie den Code schrittweise durchlaufen und ihn debuggen.
 
-1.  Setzen Sie in C# einen Haltepunkt in der Run-Methode der Hintergrundklasse (für In-Process-Aufgaben den Haltepunkt in App.OnBackgroundActivated()) festlegen), und/oder schreiben Sie mithilfe von [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics?view=netframework-4.7.2) eine Debuggerausgabe.
+1.  Setzen Sie in C# einen Haltepunkt in der Run-Methode der Hintergrundklasse (für In-Process-Aufgaben den Haltepunkt in App.OnBackgroundActivated()) festlegen), und/oder schreiben Sie mithilfe von [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics) eine Debuggerausgabe.
 
     Setzen Sie in C++ einen Haltepunkt in der Run-Funktion der Hintergrundklasse (für In-Process-Aufgaben den Haltepunkt in App.OnBackgroundActivated()) festlegen, und/oder schreiben Sie mithilfe von [**OutputDebugString**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw) eine Debuggerausgabe.
 

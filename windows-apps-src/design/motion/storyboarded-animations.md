@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5b3598f2d50a49aa9d51721c2c1eb1261c8aa8
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 1107670e837dff294739e9ba38c7dea9004d1d62
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820512"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340346"
 ---
 # <a name="storyboarded-animations"></a>Storyboardanimationen
 
@@ -66,13 +66,13 @@ Sehen wir uns dazu ein einfaches Beispiel an. In diesem XAML-Beispiel wird die [
 
 Im vorherigen Beispiel hat das Storyboard die [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)-Eigenschaft eines [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Objekts animiert. Dabei deklarieren Sie nicht die Animationen des Objekts selbst. Stattdessen führen Sie dies in der Animationsdefinition eines Storyboards durch. Storyboards werden normalerweise in XAML-Code definiert, der sich nicht in unmittelbarer Nähe der XAML-UI-Definition des zu animierenden Objekts befindet. Stattdessen werden sie meist als XAML-Ressource eingerichtet.
 
-Um eine Animation mit einem Ziel zu verbinden, verweisen Sie anhand des identifizierenden Programmierungsnamens auf das Ziel. Sie sollten stets das [x:Name-Attribut](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute) in der XAML-UI-Definition anwenden, um das Objekt zu benennen, das Sie animieren möchten. Anschließend geben Sie das zu animierende Objekt als Ziel an, indem Sie [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) in der Animationsdefinition festlegen. Für den Wert von **Storyboard.TargetName** verwenden Sie die Namenszeichenfolge des Zielobjekts. Dies ist die Zeichenfolge, die Sie bereits an anderer Stelle mit dem x:Name-Attribut festgelegt haben.
+Um eine Animation mit einem Ziel zu verbinden, verweisen Sie anhand des identifizierenden Programmierungsnamens auf das Ziel. Sie sollten stets das [x:Name-Attribut](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute) in der XAML-UI-Definition anwenden, um das Objekt zu benennen, das Sie animieren möchten. Anschließend geben Sie das zu animierende Objekt als Ziel an, indem Sie [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) in der Animationsdefinition festlegen. Für den Wert von **Storyboard.TargetName** verwenden Sie die Namenszeichenfolge des Zielobjekts. Dies ist die Zeichenfolge, die Sie bereits an anderer Stelle mit dem x:Name-Attribut festgelegt haben.
 
 ### <a name="targeting-the-dependency-property-to-animate"></a>Angeben der zu animierenden Abhängigkeitseigenschaft
 
 Sie legen einen Wert für [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) in der Animation fest. Damit wird bestimmt, welche spezifische Eigenschaft des Zielobjekts animiert wird.
 
-Es kann vorkommen, dass Sie eine Eigenschaft als Ziel angeben müssen, bei der es sich nicht um eine direkte Eigenschaft des Zielobjekts handelt, sondern die tiefer in einer Beziehung zwischen Objekt und Eigenschaft geschachtelt ist. Dies ist häufig erforderlich, um Detailinformationen für eine Gruppe von beitragenden Objekt- und Eigenschaftswerten anzuzeigen, bis Sie auf einen Eigenschaftstyp verweisen können, der animiert werden kann ([**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). Dieses Konzept wird als *indirekte Zielbestimmung* bezeichnet. Um eine Eigenschaft auf diese Art als Ziel auszuwählen, wird ein *Eigenschaftspfad* verwendet.
+Es kann vorkommen, dass Sie eine Eigenschaft als Ziel angeben müssen, bei der es sich nicht um eine direkte Eigenschaft des Zielobjekts handelt, sondern die tiefer in einer Beziehung zwischen Objekt und Eigenschaft geschachtelt ist. Dies ist häufig erforderlich, um Detailinformationen für eine Gruppe von beitragenden Objekt- und Eigenschaftswerten anzuzeigen, bis Sie auf einen Eigenschaftstyp verweisen können, der animiert werden kann ([**Double**](https://docs.microsoft.com/dotnet/api/system.double), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). Dieses Konzept wird als *indirekte Zielbestimmung* bezeichnet. Um eine Eigenschaft auf diese Art als Ziel auszuwählen, wird ein *Eigenschaftspfad* verwendet.
 
 Hier sehen Sie ein Beispiel. Ein häufiges Szenario für eine Storyboardanimation ist eine Farbänderung für einen Teil einer App-UI oder eines Steuerelements, um anzuzeigen, dass sich das Steuerelement in einem bestimmten Zustand befindet. Angenommen, Sie möchten das [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground)-Element eines [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Elements so animieren, dass sich die Farbe von Rot in Grün ändert. Wenn Sie erwarten, dass hierbei ein [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)-Element verwendet wird, liegen Sie richtig. Keine der Eigenschaften von UI-Elementen, die sich auf die Farbe des Objekts auswirken, weisen jedoch den Typ [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) auf. Stattdessen weisen sie den Typ [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) auf. Das eigentliche Ziel der Animation sollte also die [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)-Eigenschaft der [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)-Klasse sein. Dabei handelt es sich um einen von **Brush** abgeleiteten Typ, der normalerweise für diese farbbezogenen UI-Eigenschaften verwendet wird. In Bezug auf die Erstellung eines Eigenschaftspfads für die Eigenschaftsangabe der Animation sieht dies wie folgt aus:
 
@@ -107,11 +107,11 @@ Weitere Informationen zur Verwendung eines Eigenschaftenpfads für die indirekte
 
 Das Windows-Runtime-Animationssystem verfügt über drei spezielle Typen für Storyboardanimationen:
 
--   [**Doppelte**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), können animiert werden, mit einem [ **DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation)
--   [**Punkt**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), können animiert werden, mit einem [ **PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
--   [**Farbe**](https://docs.microsoft.com/uwp/api/Windows.UI.Color), können animiert werden, mit einem [ **ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
+-   [**Double**](https://docs.microsoft.com/dotnet/api/system.double), kann mit jeder [ **DoubleAnimation** animiert werden.](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation)
+-   [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), kann mit jeder [ **pointanimung** animiert werden.](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
+-   [**Farbe**](https://docs.microsoft.com/uwp/api/Windows.UI.Color), kann mit allen [ **ColorAnimation** animiert werden](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
 
-Es ist auch ein generalisierter [**Object**](https://docs.microsoft.com/dotnet/api/system.object?redirectedfrom=MSDN)-Animationstyp für Objektverweiswerte vorhanden, der später erläutert wird.
+Es ist auch ein generalisierter [**Object**](https://docs.microsoft.com/dotnet/api/system.object)-Animationstyp für Objektverweiswerte vorhanden, der später erläutert wird.
 
 ### <a name="specifying-the-animated-values"></a>Angeben der animierten Werte
 
@@ -125,9 +125,9 @@ Die beschriebenen Animationstypen werden auch als **From**/**To**/**By**-Animati
 -   Wenn Sie keinen **To**-Wert oder einen **By**-Wert angeben, wird als Endwert der Wert verwendet, den die animierte Eigenschaft vor dem Ausführen der Animation aufweist. In diesem Fall empfiehlt sich die Nutzung eines **From**-Werts, weil die Animation den Wert ansonsten gar nicht ändert, da der Start- und Endwert identisch sind.
 -   Eine Animation verfügt normalerweise über mindestens ein **From**-, **By**- oder **To**-Element, aber nicht über alle drei.
 
-Sehen wir uns das vorherige XAML-Beispiel und die **From**- und **To**-Werte sowie **Duration** erneut an. Im Beispiel wird die [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)-Eigenschaft animiert, und der Eigenschaftstyp von **Opacity** lautet [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN). Als Animation muss hier also [**DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation) verwendet werden.
+Sehen wir uns das vorherige XAML-Beispiel und die **From**- und **To**-Werte sowie **Duration** erneut an. Im Beispiel wird die [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)-Eigenschaft animiert, und der Eigenschaftstyp von **Opacity** lautet [**Double**](https://docs.microsoft.com/dotnet/api/system.double). Als Animation muss hier also [**DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation) verwendet werden.
 
-Mit `From="1.0" To="0.0"` wird angegeben, dass die [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)-Eigenschaft während der Ausführung der Animation mit dem Wert 1 beginnt und zu 0 animiert wird. Anders ausgedrückt: Hinsichtlich der Bedeutung dieser [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)-Werte für die **Opacity**-Eigenschaft bewirkt diese Animation, dass das Objekt undurchsichtig gestartet wird und dann transparent wird.
+Mit `From="1.0" To="0.0"` wird angegeben, dass die [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)-Eigenschaft während der Ausführung der Animation mit dem Wert 1 beginnt und zu 0 animiert wird. Anders ausgedrückt: Hinsichtlich der Bedeutung dieser [**Double**](https://docs.microsoft.com/dotnet/api/system.double)-Werte für die **Opacity**-Eigenschaft bewirkt diese Animation, dass das Objekt undurchsichtig gestartet wird und dann transparent wird.
 
 ```xaml
 ...
@@ -149,7 +149,7 @@ Weitere Informationen zu [**Duration**](https://docs.microsoft.com/uwp/api/Windo
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By akzeptieren NULL-Werte
 
-Es wurde bereits erwähnt, dass Sie **From**, **To** oder **By** weglassen können und so aktuelle nicht animierte Werte als Ersatzwerte für einen fehlenden Wert verwenden können. **From**, **To** oder **By**-Eigenschaften einer Animation sind möglicherweise von einem anderen Typ, als Sie vermuten. Der Typ der [**DoubleAnimation.To**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation.easingfunction)-Eigenschaft lautet beispielsweise nicht [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN). Stattdessen gilt [**Nullable**](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) für **Double**. Der Standardwert lautet **null**, nicht 0. Anhand dieses **null**-Werts kann das Animationssystem unterscheiden, dass Sie keinen spezifischen Wert für eine **From**-, **To**- oder **By**-Eigenschaft festgelegt haben. Visual C++-komponentenerweiterungen (C++ / CX) verfügt nicht über eine **Nullable** eingeben, damit er verwendet [ **"IReference"** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_) stattdessen.
+Es wurde bereits erwähnt, dass Sie **From**, **To** oder **By** weglassen können und so aktuelle nicht animierte Werte als Ersatzwerte für einen fehlenden Wert verwenden können. **From**, **To** oder **By**-Eigenschaften einer Animation sind möglicherweise von einem anderen Typ, als Sie vermuten. Der Typ der [**DoubleAnimation.To**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation.easingfunction)-Eigenschaft lautet beispielsweise nicht [**Double**](https://docs.microsoft.com/dotnet/api/system.double). Stattdessen gilt [**Nullable**](https://docs.microsoft.com/dotnet/api/system.nullable-1) für **Double**. Der Standardwert lautet **null**, nicht 0. Anhand dieses **null**-Werts kann das Animationssystem unterscheiden, dass Sie keinen spezifischen Wert für eine **From**-, **To**- oder **By**-Eigenschaft festgelegt haben. Für C++ Visual Component ExtensionsC++(/CX) gibt es keinen Typ, der **NULL-Werte** zulässt, weshalb stattdessen [IReference](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_) verwendet wird.
 
 ### <a name="other-properties-of-an-animation"></a>Andere Eigenschaften einer Animation
 
@@ -169,7 +169,7 @@ Sie können die Animation dazu veranlassen, mehrere Durchläufe auszuführen. Ei
 
 Weitere Informationen zu [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior)-Werten und zur XAML-Syntax finden Sie unter [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior).
 
-### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior = "Ende"**
 
 Wenn eine Animation endet, belässt die Animation den Eigenschaftswert standardmäßig auf dem letzten per **To** oder **By** geänderten Wert. Dies gilt auch, wenn die Dauer abgelaufen ist. Wenn Sie den Wert der [**FillBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior)-Eigenschaft jedoch auf [**FillBehavior.Stop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) festlegen, wird der Wert des animierten Werts auf den Stand vor dem Anwenden der Animation zurückgesetzt. Genauer gesagt: Er wird auf den aktuell geltenden Wert zurückgesetzt, der vom Abhängigkeitseigenschaftensystem bestimmt wird. (Weitere Informationen zu dieser Unterscheidung finden Sie unter [Übersicht über Abhängigkeitseigenschaften](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview).)
 
@@ -239,8 +239,8 @@ Eine Animation ist unabhängig, wenn Sie diese Merkmale aufweist:
 
 -   Das [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration)-Element der Animation hat einen Wert von 0 Sekunden (siehe Warnhinweis).
 -   Die Animation hat [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) als Ziel.
--   Die Animation ausgerichtet ist, einen-Untereigenschaft Wert dieser [ **"UIElement"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) Eigenschaften: [**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d), [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform), [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection), [**Clip**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
--   Die Animation hat [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) oder [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) als Ziel.
+-   Die Animation zielt auf einen untergeordneten Eigenschafts Wert dieser [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) -Eigenschaften ab: [**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d), [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform), [**Projektion**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection), [**Clip**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
+-   Die Animation hat [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) oder [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) als Ziel.
 -   Die Animation hat einen [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)-Wert als Ziel und verwendet ein [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)-Element, für das [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) animiert wird.
 -   Die Animation ist ein [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)-Element.
 
@@ -265,7 +265,7 @@ Die erforderliche Aktivierung abhängiger Animationen durch den App-Entwickler i
 Als App-Entwickler können Sie sich auch für die Anwendung einer App-weiten Einstellung entscheiden, mit der abhängige Animationen stets deaktiviert werden – auch Animationen, für die **EnableDependentAnimation** auf **true** festgelegt ist. Informationen finden Sie unter [**Timeline.AllowDependentAnimations**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
 > [!TIP]
-> Bei Verwendung der Animationsbereich in Blend für Visual Studio-2019, wenn Sie versuchen, eine abhängige Animation auf eine Eigenschaft des visuellen Zustands anzuwenden, werden Warnungen im Designer angezeigt werden. Warnungen werden nicht in der Buildausgabe oder der Fehlerliste angezeigt. Wenn Sie XAML manuell bearbeiten, wird eine Warnung von der Designer nicht angezeigt. Zur Laufzeit beim Debuggen des Ausgabebereichs-Debug-Ausgabe wird eine Warnmeldung angezeigt, die die Animation ist nicht unabhängig und wird übersprungen.
+> Wenn Sie den Animations Bereich in Blend für Visual Studio 2019 verwenden, werden Warnungen im Designer angezeigt, wenn Sie versuchen, eine abhängige Animation auf eine Eigenschaft des visuellen Zustands anzuwenden. Warnungen werden nicht in der Buildausgabe oder Fehlerliste angezeigt. Wenn Sie XAML per Hand bearbeiten, wird im Designer keine Warnung angezeigt. Zum Zeitpunkt der debugerstellung zeigt die Debug-Ausgabe im Ausgabebereich eine Warnung an, dass die Animation nicht unabhängig ist und übersprungen wird.
 
 
 ## <a name="starting-and-controlling-an-animation"></a>Starten und Steuern einer Animation
@@ -331,13 +331,13 @@ Bisher wurden die benutzerdefinierten Animationen vorgestellt, bei denen die Ani
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Eigenschaftspfad syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)
+* [Eigenschafts Pfad Syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)
 * [Übersicht über Abhängigkeitseigenschaften](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview)
-* [Keyframe- und vereinfachen von Animationen für Funktion](key-frame-and-easing-function-animations.md)
-* [Niedergeschrieben Animationen für visuelle Zustände](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
+* [Keyframe-und Beschleunigungsfunktionen-Animationen](key-frame-and-easing-function-animations.md)
+* [Storyboarded Animationen für visuelle Zustände](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
 * [Steuerelementvorlagen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
 * [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
+* [**Storyboard. TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  
 
  

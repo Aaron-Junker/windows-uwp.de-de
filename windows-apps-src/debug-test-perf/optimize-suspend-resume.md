@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f94fcdf33267ab352f5cdc274e07373952b0939b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 610b6237071c9d7435ca167c1a89b4ef7c40b333
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362156"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339575"
 ---
 # <a name="optimize-suspendresume"></a>Optimieren von Anhalten/Fortsetzen
 
@@ -60,11 +60,11 @@ Wenn Sie Ihre Daten serialisieren, sollten Sie ein erneutes Serialisieren vermei
 
 ### <a name="serializing-data-in-c-and-visual-basic"></a>Serialisieren von Daten in C# und Visual Basic
 
-Als Serialisierungstechnologien für .NET-Apps stehen die Klassen [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN), [**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) und [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer?redirectedfrom=MSDN) zur Verfügung.
+Als Serialisierungstechnologien für .NET-Apps stehen die Klassen [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer), [**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) und [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer) zur Verfügung.
 
-Aus Leistungsgründen empfehlen wir die Verwendung der [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN)-Klasse. Die **XmlSerializer**-Klasse zeichnet sich durch die schnellste Serialisierung und Deserialisierung sowie durch einen geringen Speicherbedarf aus. **XmlSerializer** ist nur in wenigen Bereichen mit .NET Framework verknüpft. Im Vergleich zu den anderen Serialisierungstechnologien müssen daher für die Verwendung von **XmlSerializer** weniger Module in Ihre App geladen werden.
+Aus Leistungsgründen empfehlen wir die Verwendung der [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer)-Klasse. Die **XmlSerializer**-Klasse zeichnet sich durch die schnellste Serialisierung und Deserialisierung sowie durch einen geringen Speicherbedarf aus. **XmlSerializer** ist nur in wenigen Bereichen mit .NET Framework verknüpft. Im Vergleich zu den anderen Serialisierungstechnologien müssen daher für die Verwendung von **XmlSerializer** weniger Module in Ihre App geladen werden.
 
-[**DataContractSerializer** ](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) erleichtert es, Serialisieren von benutzerdefinierten Klassen, obwohl es sich um eine größere Auswirkungen auf die Leistung als hat **XmlSerializer**. Wenn Sie eine bessere Leistung benötigen, denken Sie über einen Wechsel nach. Generell sollten Sie nur ein Serialisierungsprogramm laden und **XmlSerializer** vorziehen, falls Sie nicht die Funktionen eines anderen Serialisierungsprogramms benötigen.
+[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) vereinfacht das Serialisieren von benutzerdefinierten Klassen, obwohl dies eine größere Auswirkung auf die Leistung hat als **XmlSerializer**. Wenn Sie eine bessere Leistung benötigen, denken Sie über einen Wechsel nach. Generell sollten Sie nur ein Serialisierungsprogramm laden und **XmlSerializer** vorziehen, falls Sie nicht die Funktionen eines anderen Serialisierungsprogramms benötigen.
 
 ### <a name="reduce-memory-footprint"></a>Verringern des Speicherbedarfs
 
@@ -85,7 +85,7 @@ Bei den meisten Apps ist keine Behandlung des [**Resuming**](https://docs.micros
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Richtlinien für die app anhalten und fortsetzen](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [Richtlinien für die APP Suspend und Resume](https://docs.microsoft.com/windows/uwp/launch-resume/index)
  
 
  

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef2007648c21e015aa2ae692d28efa56c922bf5
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 89257a4ec64458f5734c2b04c1e654a7c0c44f27
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660198"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339902"
 ---
 # <a name="keyboard-events"></a>Tastaturereignisse
 
@@ -94,10 +94,10 @@ void MyProject::MainPage::Grid_KeyUp(
 
 Alle Tastaturereignisse verwenden [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) für Ereignisdaten. **KeyRoutedEventArgs** enthält die folgenden Eigenschaften:
 
--   [**Schlüssel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
--   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**Behandelt**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
--   [**OriginalSource** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (geerbt von [ **RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
+-   [**Wichtigen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**Keystatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
+-   [**Umgangs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (geerbt von [**routedebug args**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
 ### <a name="key"></a>Key
 
@@ -277,7 +277,7 @@ End Sub
 ```
 
 > [!NOTE]
-> Durch das Festlegen der [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey?view=netframework-4.8)- oder [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8)-Eigenschaft in XAML werden Zeichenfolgeninformationen zum Dokumentieren der Tastenkombination zum Auslösen der jeweiligen Aktion bereitgestellt. Die Informationen werden von Microsoft-Benutzeroberflächenautomatisierungsclients wie der Sprachausgabe erfasst und normalerweise direkt für den Benutzer bereitgestellt.
+> Durch das Festlegen der [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey)- oder [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey)-Eigenschaft in XAML werden Zeichenfolgeninformationen zum Dokumentieren der Tastenkombination zum Auslösen der jeweiligen Aktion bereitgestellt. Die Informationen werden von Microsoft-Benutzeroberflächenautomatisierungsclients wie der Sprachausgabe erfasst und normalerweise direkt für den Benutzer bereitgestellt.
 >
 > Mit dem Festlegen der Eigenschaft **AutomationProperties.AcceleratorKey** oder **AutomationProperties.AccessKey** ist keine eigene Aktion verknüpft. Sie müssen weiterhin Handler für [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)- oder [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignisse anhängen, um das Verhalten der Tastenkombination tatsächlich in die App zu implementieren. Außerdem wird der Unterstrichzusatz für eine Zugriffstaste nicht automatisch bereitgestellt. Sie müssen den Text für die jeweilige Taste in Ihrem mnemonischen Zeichen explizit als [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline)-Formatierung unterstreichen, wenn in der UI unterstrichener Text angezeigt werden soll.
 
@@ -319,7 +319,7 @@ Der Zweck der Eigenschaft [**Handled**](https://docs.microsoft.com/uwp/api/windo
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>"AddHandler " und bereits behandelte Tastaturereignisse
 
-Sie können eine spezielle Technik verwenden, um Handler anzufügen, die auf bereits als verarbeitet markierte Ereignisse reagieren können. Diese Technik verwendet den [ **AddHandler** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) Methode zum Registrieren eines Handlers, anstatt XAML-Attribute oder sprachspezifische Syntax beim Hinzufügen von Handlern, z. B. += in C\#.
+Sie können eine spezielle Technik verwenden, um Handler anzufügen, die auf bereits als verarbeitet markierte Ereignisse reagieren können. Bei dieser Methode wird die [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) -Methode verwendet, um einen Handler zu registrieren, anstatt XAML-Attribute oder sprachspezifische Syntax zum Hinzufügen von Handlern zu verwenden, wie z. b. + = in C @ no__t-2.
 
 Eine generelle Einschränkung dieser Technik besteht darin, dass die API **AddHandler** einen Parameter vom Typ [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) verwendet, der das fragliche Routingereignis identifiziert. Nicht alle Routingereignisse bieten einen **RoutedEvent**-Bezeichner. Dieser Umstand wirkt sich somit darauf aus, welche Routingereignisse im Fall [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) noch verarbeitet werden können. Die Ereignisse [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) und [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) haben Routingereignisbezeichner ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) und [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent)) in [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). Andere Texteingabe-Ereignisse, wie [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged), besitzen jedoch keine Routingereignisbezeichner und können deshalb für die Technik **AddHandler** nicht verwendet werden.
 
@@ -327,7 +327,7 @@ Eine generelle Einschränkung dieser Technik besteht darin, dass die API **AddHa
 
 Sie können die wichtigsten Ereignisse für bestimmte Steuerelemente überschreiben (z. B. [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)), um eine konsistente Fokusnavigation für verschiedene Eingabegeräte (darunter Tastatur und Gamepad) bereitzustellen.
 
-Im folgenden Beispiel wir Unterklasse des Steuerelements und außer Kraft setzen das KeyDown-Verhalten, das Fokus zu verschieben, an die GridView zu Inhalt, wenn beliebige Pfeiltaste gedrückt wird.
+Im folgenden Beispiel wird das-Steuerelement unterteilt und das KeyDown-Verhalten überschrieben, um den Fokus auf den GridView-Inhalt zu verschieben, wenn eine beliebige Pfeiltaste gedrückt wird.
 
 ```csharp
   public class CustomGridView : GridView
@@ -384,25 +384,25 @@ Benutzer können Daten in Ihre App schneller und einfacher eingeben, wenn Sie de
 ## <a name="related-articles"></a>Verwandte Artikel
 
 **Entwickler**
-* [Tastenkombinationen](keyboard-interactions.md)
+* [Tastatur Interaktionen](keyboard-interactions.md)
 * [Identifizieren von Eingabegeräten](identify-input-devices.md)
-* [Reagieren Sie auf das Vorhandensein der Bildschirmtastatur](respond-to-the-presence-of-the-touch-keyboard.md)
+* [Reagieren auf das vorhanden sein der Touchscreen-Tastatur](respond-to-the-presence-of-the-touch-keyboard.md)
 
 **Designer**
 * [Tastaturentwurfsrichtlinien](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 
 **Beispiele**
-* [Touch-Tastatur – Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Beispiel für eine Berührungs Tastatur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+* [Beispiel für eine einfache Eingabe](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Eingabe Beispiel mit niedriger Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archivbeispiele**
-* [Eingabebeispiel](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Eingabe: Touch-Tastatur – Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Reagieren auf die Darstellung der Bildschirmtastatur Beispiel](https://go.microsoft.com/fwlink/p/?linkid=231633)
-* [Bearbeiten der XAML-Textbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [Eingabe Beispiel](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [eingabe: Beispiel für Gerätefunktionen @ no__t-0
+* [eingabe: Sample Tastatur Sample @ no__t-0
+* [Reagieren auf das Aussehen der Bildschirmtastatur (Beispiel)](https://go.microsoft.com/fwlink/p/?linkid=231633)
+* [Beispiel für XAML-Textbearbeitung](https://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 57532c45bdf6c2b8feb2af1277be74a0f8b2c759
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 34f315628af0ea181756f2456d4d0dfe70bf8377
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320301"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340552"
 ---
 # <a name="property-path-syntax"></a>PropertyPath-Syntax
 
@@ -50,11 +50,11 @@ Bei jedem dieser Schritte wird der Wert als Objekt behandelt. Der Typ des Ergebn
 
 ### <a name="indexers"></a>Indexer
 
-Ein Eigenschaftspfad für Datenbindungen kann Verweise auf indizierte Eigenschaften aufweisen. Das ermöglicht die Bindung an geordnete Listen/Vektoren oder Wörterbücher/Karten. Verwenden Sie eckige Klammern "\[\]" Zeichen, um eine indizierte Eigenschaft anzugeben. Diese Klammern können entweder eine ganze Zahl (für eine geordnete Liste) oder eine Zeichenfolge ohne Anführungszeichen (für Wörterbücher) enthalten. Darüber hinaus ist die Bindung an ein Wörterbuch möglich, bei der der Schlüssel eine ganze Zahl ist. Sie können verschiedene indizierte Eigenschaften im selben Pfad verwenden und die Objekteigenschaft mit einem Punkt abtrennen.
+Ein Eigenschaftspfad für Datenbindungen kann Verweise auf indizierte Eigenschaften aufweisen. Das ermöglicht die Bindung an geordnete Listen/Vektoren oder Wörterbücher/Karten. Verwenden Sie eckige Klammern "\[ @ no__t-1" Zeichen, um eine indizierte Eigenschaft anzugeben. Diese Klammern können entweder eine ganze Zahl (für eine geordnete Liste) oder eine Zeichenfolge ohne Anführungszeichen (für Wörterbücher) enthalten. Darüber hinaus ist die Bindung an ein Wörterbuch möglich, bei der der Schlüssel eine ganze Zahl ist. Sie können verschiedene indizierte Eigenschaften im selben Pfad verwenden und die Objekteigenschaft mit einem Punkt abtrennen.
 
-Nehmen wir zum Beispiel ein Geschäftsobjekt, bei dem es eine Liste von „Teams“ gibt (geordnete Liste), von denen jedes ein Wörterbuch von „Players“ aufweist, wobei als Schlüssel für jeden Spieler der Nachname verwendet wird. Ein Beispielpfad-Eigenschaft an einen bestimmten Player im zweiten-Team ist: "Teams\[1\]. Spieler\[Smith\]". (Sie verwenden 1, um das zweite Element in „Teams“ anzugeben, da die Liste nullindiziert ist.)
+Nehmen wir zum Beispiel ein Geschäftsobjekt, bei dem es eine Liste von „Teams“ gibt (geordnete Liste), von denen jedes ein Wörterbuch von „Players“ aufweist, wobei als Schlüssel für jeden Spieler der Nachname verwendet wird. Ein Beispiel für einen Eigenschafts Pfad zu einem bestimmten Player im zweiten Team ist: "Teams @ no__t-01 @ no__t-1. Players @ no__t-2smith @ no__t-3 ". (Sie verwenden 1, um das zweite Element in „Teams“ anzugeben, da die Liste nullindiziert ist.)
 
-**Beachten Sie**  Indizierung-Unterstützung für C++-Datenquellen ist beschränkt; Siehe [Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
+**Beachten Sie**, dass   indizierungs Unterstützung für C++ Datenquellen begrenzt ist. Ausführliche Informationen finden Sie [unter Datenbindung](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
 
 ### <a name="attached-properties"></a>Angefügte Eigenschaften
 
@@ -70,7 +70,7 @@ Da ein Eigenschaftspfad von einem Bindungsmodul interpretiert wird und auf Infor
 
 ## <a name="property-path-for-animation-targeting"></a>Eigenschaftspfad für die Animationsausrichtung
 
-Animationen stützen sich auf die Ausrichtung auf eine Abhängigkeitseigenschaft, wobei Storyboardwerte angewendet werden, wenn die Animation läuft. Die Animation ermittelt ein Element anhand des Namens ([x:Name-Attribut](x-name-attribute.md)), um das Objekt mit der zu animierenden Eigenschaft zu identifizieren. Oft ist es erforderlich, einen Eigenschaftspfad zu definieren, der mit dem Objekt beginnt, das als der [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) bezeichnet wird, und mit dem speziellen Abhängigkeitseigenschaftswert endet, bei dem die Animation angewendet werden soll. Dieser Eigenschaftspfad wird als Wert für [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) verwendet.
+Animationen stützen sich auf die Ausrichtung auf eine Abhängigkeitseigenschaft, wobei Storyboardwerte angewendet werden, wenn die Animation läuft. Die Animation ermittelt ein Element anhand des Namens ([x:Name-Attribut](x-name-attribute.md)), um das Objekt mit der zu animierenden Eigenschaft zu identifizieren. Oft ist es erforderlich, einen Eigenschaftspfad zu definieren, der mit dem Objekt beginnt, das als der [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) bezeichnet wird, und mit dem speziellen Abhängigkeitseigenschaftswert endet, bei dem die Animation angewendet werden soll. Dieser Eigenschaftspfad wird als Wert für [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) verwendet.
 
 Weitere Informationen zum Definieren von Animationen in XAML finden Sie unter [Storyboardanimationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
@@ -84,19 +84,19 @@ Sie können eine Eigenschaft animieren, bei der es sich um eine Untereigenschaft
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>Angeben eines bestimmten untergeordneten Elements in einer Sammlung
 
-Sie können einen numerischen Indexer dazu verwenden, ein untergeordnetes Element in einer Sammlungseigenschaft anzugeben. Verwenden Sie eckige Klammern "\[\]"-Indexwert für Zeichen, um die ganze Zahl. Sie können nur geordnete Listen aber keine Wörterbücher referenzieren. Da es sich bei einer Sammlung nicht um einen Wert handelt, der animiert werden kann, kann eine Indexerverwendung nie die Endeigenschaft in einem Eigenschaftspfad sein.
+Sie können einen numerischen Indexer dazu verwenden, ein untergeordnetes Element in einer Sammlungseigenschaft anzugeben. Verwenden Sie eckige Klammern "\[ @ no__t-1" Zeichen um den ganzzahligen Indexwert. Sie können nur geordnete Listen aber keine Wörterbücher referenzieren. Da es sich bei einer Sammlung nicht um einen Wert handelt, der animiert werden kann, kann eine Indexerverwendung nie die Endeigenschaft in einem Eigenschaftspfad sein.
 
-Z. B. beenden die erste Farbe an, dass Sie animieren möchten Farbe in eine [ **LinearGradientBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) eines Steuerelements angewendeten [ **Hintergrund** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) -Eigenschaft, dies ist der Eigenschaftenpfad: "(Control.Background). (GradientBrush.GradientStops) \[0\]. () GradientStop.Color) ". Achten Sie darauf, dass der Indexer nicht der letzte Schritt im Pfad ist und dass vor allem der letzte Schritt die [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color)-Eigenschaft des Elements 0 in der Sammlung referenzieren muss, um einen animierten [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)-Wert darauf anzuwenden.
+Um z. b. anzugeben, dass Sie die erste Farb Ende Farbe in einem [**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) animieren möchten, der auf die [**Hintergrund**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) Eigenschaft eines Steuer Elements angewendet wird, ist dies der Eigenschafts Pfad: "(Control. Background). (GradientBrush. GradientStops) \[0 @ no__t-5. (Gradienthalte. Color) ". Achten Sie darauf, dass der Indexer nicht der letzte Schritt im Pfad ist und dass vor allem der letzte Schritt die [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color)-Eigenschaft des Elements 0 in der Sammlung referenzieren muss, um einen animierten [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)-Wert darauf anzuwenden.
 
 ## <a name="animating-an-attached-property"></a>Animieren einer angefügten Eigenschaft
 
-Wenn auch dies selten vorkommt, kann eine angefügte Eigenschaft animiert werden, sofern die angefügte Eigenschaft einen Eigenschaftswert aufweist, der mit einem Animationstyp übereinstimmt. Da der Bezeichnername einer angefügten Eigenschaft bereits einen Punkt enthält, muss ein Name für die angefügte Eigenschaft in runden Klammern hinzugefügt werden, damit der Punkt nicht als Objekteigenschaftsschritt interpretiert wird. Verwenden Sie beispielsweise für die Zeichenfolge, die zum Animieren der angefügten [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8)-Eigenschaft auf einem Objekt angegeben werden muss, den Eigenschaftspfad „(Grid.Row)“.
+Wenn auch dies selten vorkommt, kann eine angefügte Eigenschaft animiert werden, sofern die angefügte Eigenschaft einen Eigenschaftswert aufweist, der mit einem Animationstyp übereinstimmt. Da der Bezeichnername einer angefügten Eigenschaft bereits einen Punkt enthält, muss ein Name für die angefügte Eigenschaft in runden Klammern hinzugefügt werden, damit der Punkt nicht als Objekteigenschaftsschritt interpretiert wird. Verwenden Sie beispielsweise für die Zeichenfolge, die zum Animieren der angefügten [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row)-Eigenschaft auf einem Objekt angegeben werden muss, den Eigenschaftspfad „(Grid.Row)“.
 
-**Beachten Sie**  für dieses Beispiel den Wert der [ **Grid.Row** ](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) ist ein **Int32** Eigenschaftentyp. Daher ist die Animation mit einer **Double**-Animation nicht möglich. Definieren Sie stattdessen eine [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)-Klasse, die über [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame)-Komponenten verfügt, wobei [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) auf eine ganze Zahl wie „0“ oder „1“ festgelegt wird.
+**Hinweis**  Für dieses Beispiel ist der Wert von [**Grid. Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) ein **Int32** -Eigenschaftentyp. Daher ist die Animation mit einer **Double**-Animation nicht möglich. Definieren Sie stattdessen eine [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)-Klasse, die über [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame)-Komponenten verfügt, wobei [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) auf eine ganze Zahl wie „0“ oder „1“ festgelegt wird.
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>Regeln für die Eigenschaften in einem Animationsausrichtungs-Eigenschaftspfad
 
--   Der angenommene Anfangspunkt des Eigenschaftspfads ist das Objekt, das von einem [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) bezeichnet wird.
+-   Der angenommene Anfangspunkt des Eigenschaftspfads ist das Objekt, das von einem [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) bezeichnet wird.
 -   Alle über den Eigenschaftspfad hinweg referenzierten Objekte und Eigenschaften müssen öffentlich sein.
 -   Die Endeigenschaft (die Eigenschaft, bei der es sich um die letzte ausgewiesene Eigenschaft im Pfad handelt) muss öffentlich, les- und schreibbar und eine Abhängigkeitseigenschaft sein.
 -   Die Endeigenschaft muss zudem über einen Eigenschaftstyp verfügen, der von einer der breitgefächerten Klassen von Animationstypen animiert werden kann ([**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)-Animationen, **Double**-Animationen, [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)-Animationen, [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)).
@@ -107,15 +107,15 @@ Die [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Proper
 
 Meistens ist es in XAML möglich, eine [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)-Klasse ohne jeglichen Code anzuwenden. In einigen Fällen ist es jedoch sinnvoll, ein **PropertyPath**-Objekt mithilfe von Code zu definieren und dieses zur Laufzeit einer Eigenschaft zuzuordnen.
 
-[ **"PropertyPath"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) verfügt über eine [ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor) -Konstruktor, und nicht über einen Standardkonstruktor verfügen. Die Zeichenfolge, die Sie diesem Konstruktor übergeben, wird mithilfe der zuvor beschriebenen Eigenschaftspfadsyntax definiert. Dies ist dieselbe Zeichenfolge, mit der Sie [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) als XAML-Attribut zuweisen können. Die einzige andere API der **PropertyPath**-Klasse ist die schreibgeschützte [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path)-Eigenschaft. Sie können diese Eigenschaft als Konstruktionszeichenfolge für eine andere **PropertyPath**-Instanz verwenden.
+[**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) verfügt über einen [**PropertyPath (String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor) -Konstruktor und verfügt über keinen Standardkonstruktor. Die Zeichenfolge, die Sie diesem Konstruktor übergeben, wird mithilfe der zuvor beschriebenen Eigenschaftspfadsyntax definiert. Dies ist dieselbe Zeichenfolge, mit der Sie [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) als XAML-Attribut zuweisen können. Die einzige andere API der **PropertyPath**-Klasse ist die schreibgeschützte [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path)-Eigenschaft. Sie können diese Eigenschaft als Konstruktionszeichenfolge für eine andere **PropertyPath**-Instanz verwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
-* [Niedergeschrieben Animationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
-* [{Binding}-Markuperweiterung](binding-markup-extension.md)
+* [Storyboarding-Animationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
+* [{Binding}-Markup Erweiterung](binding-markup-extension.md)
 * [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
-* [**Bindung**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
-* [**Bindung-Konstruktor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.-ctor)
+* [**Lichere**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
+* [**Bindungskonstruktor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.-ctor)
 * [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
 

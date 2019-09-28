@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dd8bd8f80be068af92d679795431cf9a938fd5f6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 19f297e731225d28f92f63ad9359bba70f0f0b32
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372953"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340444"
 ---
 # <a name="xaml-intrinsic-data-types"></a>Systeminterne XAML-Datentypen
 
@@ -24,25 +24,25 @@ XAML für die Windows-Runtime bietet Unterstützung auf Sprachebene für diese T
 
 | XAML-Grundtyp | Beschreibung |
 |-------|-------------|
-| **x:Boolean**  | Für die CLR-Unterstützung: [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean?redirectedfrom=MSDN). XAML analysiert Werte für **x:Boolean** ohne Berücksichtigung der Groß-/Kleinschreibung. „x:Bool“ ist keine zulässige Alternative. |
-| **x:String**   | Für die CLR-Unterstützung: [**String**](https://docs.microsoft.com/dotnet/api/system.string?redirectedfrom=MSDN). Die Codierung für die Zeichenfolge wird standardmäßig auf die umgebende XML-Codierung festgelegt. |
-| **x:Double**   | Für die CLR-Unterstützung: [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN). Zusätzlich zu den numerischen Werten lässt die Textsyntax für **x:Double** das Token „NaN“ zu. So kann „Auto“ für das Layoutverhalten als Ressourcenwert gespeichert werden. Bei den Token wird die Groß-/Kleinschreibung berücksichtigt. Sie können die wissenschaftliche Schreibweise verwenden (also beispielsweise „1+E06“ für `1,000,000`). |
-| **x:Int32**    | Für die CLR-Unterstützung: [**Int32**](https://docs.microsoft.com/dotnet/api/system.int32?redirectedfrom=MSDN). **x:Int32** wird als Zahl mit Vorzeichen behandelt. Sie können das Minuszeichen („-“) für eine negative ganze Zahl verwenden. In XAML wird das Fehlen eines Vorzeichens in der Textsyntax als positiver Wert mit Vorzeichen interpretiert. |
+| **x:Boolean**  | Für die CLR-Unterstützung: [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean). XAML analysiert Werte für **x:Boolean** ohne Berücksichtigung der Groß-/Kleinschreibung. „x:Bool“ ist keine zulässige Alternative. |
+| **x:String**   | Für die CLR-Unterstützung: [**String**](https://docs.microsoft.com/dotnet/api/system.string). Die Codierung für die Zeichenfolge wird standardmäßig auf die umgebende XML-Codierung festgelegt. |
+| **x:Double**   | Für die CLR-Unterstützung: [**Double**](https://docs.microsoft.com/dotnet/api/system.double). Zusätzlich zu den numerischen Werten lässt die Textsyntax für **x:Double** das Token „NaN“ zu. So kann „Auto“ für das Layoutverhalten als Ressourcenwert gespeichert werden. Bei den Token wird die Groß-/Kleinschreibung berücksichtigt. Sie können die wissenschaftliche Schreibweise verwenden (also beispielsweise „1+E06“ für `1,000,000`). |
+| **x:Int32**    | Für die CLR-Unterstützung: [**Int32**](https://docs.microsoft.com/dotnet/api/system.int32). **x:Int32** wird als Zahl mit Vorzeichen behandelt. Sie können das Minuszeichen („-“) für eine negative ganze Zahl verwenden. In XAML wird das Fehlen eines Vorzeichens in der Textsyntax als positiver Wert mit Vorzeichen interpretiert. |
 
 Diese Grundtypen der Programmiersprache XAML sind im Allgemeinen die einzigen Fälle, in denen Sie ein Objektelement definieren, das das Präfix **x:** in XAML verwendet. Alle anderen XAML-Sprachfeatures werden in der Regel in Attributform oder als Markuperweiterung verwendet.
 
-**Beachten Sie**  gemäß der Konvention werden die Sprachprimitiven für XAML und alle anderen XAML-Sprachelemente mit dem Präfix "x" angezeigt. So werden XAML-Sprachelemente in der Regel im echten Markup verwendet. Diese Konvention wird in der Dokumentation für XAML und auch in der XAML-Spezifikation befolgt.
+**Beachten Sie**  BY-Konvention, die sprach primitiven für XAML und alle anderen XAML-Sprachelemente werden mit dem Präfix "x:" angezeigt. So werden XAML-Sprachelemente in der Regel im echten Markup verwendet. Diese Konvention wird in der Dokumentation für XAML und auch in der XAML-Spezifikation befolgt.
 
 ## <a name="other-xaml-primitives"></a>Andere XAML-Grundtypen
 
 In der XAML 2009-Spezifikation werden weitere XAML-Grundtypen auf Sprachebene aufgeführt, etwa **x:Uri** und **x:Single**. Falls diese nicht in der Tabelle in diesem Artikel aufgeführt sind, werden andere XAML-Grundtypen auf Sprachebene, die in einem anderen XAML-Vokabular oder in der XAML-Spezifikation von 2009 definiert sind, derzeit von XAML für die Windows-Runtime nicht unterstützt.
 
-**Beachten Sie**  Datums- und Uhrzeitangaben (Eigenschaften, mit denen [ **"DateTime"** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime) oder [ **DateTimeOffset**](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN), [ **TimeSpan** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) oder [ **System.TimeSpan**](https://docs.microsoft.com/dotnet/api/system.timespan?redirectedfrom=MSDN)) sind nicht mit einer XAML-Grundtyp festgelegt werden. Diese Eigenschaften können in XAML grundsätzlich nicht festgelegt werden, da im XAML-Parser der Windows-Runtime kein Standardverhalten für die Konvertierung der Ausgangszeichenfolge für Datums- und Uhrzeitangaben vorhanden ist. Für Initialisierungswerte von Datums- und Uhrzeiteigenschaften müssen Sie CodeBehind verwenden, der ausgeführt wird, wenn eine Seite oder ein Element geladen wird.
+**Beachten Sie**   Datumsangaben und Uhrzeiten (Eigenschaften, die [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime) oder [**DateTimeOffset**](https://docs.microsoft.com/dotnet/api/system.datetimeoffset), [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) oder [**System. TimeSpan**](https://docs.microsoft.com/dotnet/api/system.timespan)verwenden) nicht mit einem XAML-primitiven festgelegt werden können. Diese Eigenschaften können in XAML grundsätzlich nicht festgelegt werden, da im XAML-Parser der Windows-Runtime kein Standardverhalten für die Konvertierung der Ausgangszeichenfolge für Datums- und Uhrzeitangaben vorhanden ist. Für Initialisierungswerte von Datums- und Uhrzeiteigenschaften müssen Sie CodeBehind verwenden, der ausgeführt wird, wenn eine Seite oder ein Element geladen wird.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Übersicht über XAML](xaml-overview.md)
-* [Handbuch für XAML-syntax](xaml-syntax-guide.md)
-* [Niedergeschrieben Animationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
+* [Leitfaden zur XAML-Syntax](xaml-syntax-guide.md)
+* [Storyboarding-Animationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
  
 
