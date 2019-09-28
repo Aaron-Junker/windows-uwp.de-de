@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a885be33cfd9170d4324c096814d381a92e7d3d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 71f8298456b3c297994d6aa11d815a6b46ba7ff4
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319493"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340360"
 ---
 # <a name="rich-text-block"></a>Rich-Text-Block
 
@@ -151,7 +151,7 @@ Siehe „Typografie“ und „Richtlinien für Schriftarten“.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -168,4 +168,4 @@ Siehe „Typografie“ und „Richtlinien für Schriftarten“.
 
 
 **Für Entwickler (Sonstige)**
-- [StringLength-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)
+- [StringLength-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length)

@@ -5,15 +5,15 @@ ms.date: 03/28/2019
 ms.topic: article
 keywords: Windows 10, UWP, SQL Server, Datenbank
 ms.localizationpriority: medium
-ms.openlocfilehash: 487497fd3b715f6d497eb76b8da6a3e60903772a
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 05579affd127fd951e233d1492d23e2dad0f4b53
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713779"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340037"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Verwenden einer SQL Server-Datenbank in einer UWP-App
-Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) speichern und abrufen.
+Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) speichern und abrufen.
 
 In diesem Leitfaden erfährst du, wie das geht. Wenn du die [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases)-Beispieldatenbank in deiner SQL Server-Instanz installierst und diese Codeausschnitte verwendest, erhältst du eine einfache Benutzeroberfläche (User Interface, UI), die Produkte aus der Northwind-Beispieldatenbank anzeigt.
 
@@ -50,7 +50,7 @@ In diesem Abschnitt führen wir folgende Schritte aus:
 :five: Auffüllen der Benutzeroberfläche mit Produkten
 
 >[!NOTE]
-> In diesem Abschnitt wird eine mögliche Methode zur Strukturierung deines Datenzugriffscodes veranschaulicht. Hierbei handelt es sich lediglich um ein Beispiel, um zu zeigen, wie du Daten mithilfe von [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) in einer SQL Server-Datenbank speichern und daraus abrufen kannst. Du kannst deinen Code natürlich auch anders strukturieren, wenn das für das Design deiner App sinnvoller ist.
+> In diesem Abschnitt wird eine mögliche Methode zur Strukturierung deines Datenzugriffscodes veranschaulicht. Hierbei handelt es sich lediglich um ein Beispiel, um zu zeigen, wie du Daten mithilfe von [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) in einer SQL Server-Datenbank speichern und daraus abrufen kannst. Du kannst deinen Code natürlich auch anders strukturieren, wenn das für das Design deiner App sinnvoller ist.
 
 ### <a name="add-a-connection-string"></a>Hinzufügen einer Verbindungszeichenfolge
 
@@ -77,7 +77,7 @@ sealed partial class App : Application
 
 ### <a name="create-a-class-to-hold-product-data"></a>Erstellen einer Klasse für Produktdaten
 
-Wir erstellen eine Klasse, die das [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN)-Ereignis implementiert, damit wir Attribute auf unserer XAML-Benutzeroberfläche an die Eigenschaften in dieser Klasse binden können.
+Wir erstellen eine Klasse, die das [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged)-Ereignis implementiert, damit wir Attribute auf unserer XAML-Benutzeroberfläche an die Eigenschaften in dieser Klasse binden können.
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -106,7 +106,7 @@ public class Product : INotifyPropertyChanged
 
 ### <a name="retrieve-products-from-the-sql-server-database"></a>Abrufen von Produkten aus der SQL Server-Datenbank
 
-Erstelle eine Methode, die Produkte aus der Northwind-Beispieldatenbank abruft und sie dann als [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN)-Sammlung von ``Product``-Instanzen zurückgibt.
+Erstelle eine Methode, die Produkte aus der Northwind-Beispieldatenbank abruft und sie dann als [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)-Sammlung von ``Product``-Instanzen zurückgibt.
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -208,7 +208,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="show-products-in-the-listview"></a>Anzeigen von Produkten in der Listenansicht
 
-Öffne die Datei **MainPage.xaml.cs**, und füge dem Konstruktor der ``MainPage``-Klasse Code hinzu, um die **ItemSource**-Eigenschaft des [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)-Elements auf die [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN)-Sammlung von ``Product``-Instanzen festzulegen.
+Öffne die Datei **MainPage.xaml.cs**, und füge dem Konstruktor der ``MainPage``-Klasse Code hinzu, um die **ItemSource**-Eigenschaft des [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)-Elements auf die [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)-Sammlung von ``Product``-Instanzen festzulegen.
 
 ```csharp
 public MainPage()
@@ -222,7 +222,7 @@ Starte das Projekt. Daraufhin werden auf der Benutzeroberfläche Produkte aus de
 
 ![Northwind-Produkte](images/products-northwind.png)
 
-Erkunde den [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN)-Namespace, um noch weitere Verwendungsmöglichkeiten für Daten in deiner SQL Server-Datenbank kennenzulernen.
+Erkunde den [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient)-Namespace, um noch weitere Verwendungsmöglichkeiten für Daten in deiner SQL Server-Datenbank kennenzulernen.
 
 ## <a name="trouble-connecting-to-your-database"></a>Probleme beim Herstellen der Verbindung mit deiner Datenbank?
 
@@ -242,8 +242,8 @@ Weitere Informationen findest du unter [Verwenden einer SQLite-Datenbank in eine
 
 **Nutzen des gleichen Codes für verschiedene Apps auf verschiedenen Plattformen**
 
-Weitere Informationen findest du unter [Move from a desktop application to UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate) (Migrieren von einer Desktopanwendung zu UWP).
+Weitere Informationen finden Sie unter [Migrieren von einer Desktopanwendung zu UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
 
 **Hinzufügen von Master/Detail-Seiten mit Azure SQL-Back-Ends**
 
-Weitere Informationen findest du unter [Customers Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) (Beispiel für eine Kundenauftragsdatenbank).
+Weitere Informationen finden Sie unter [Customers Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) (Beispiel für eine Kundenauftragsdatenbank).

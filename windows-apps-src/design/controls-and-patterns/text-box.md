@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c607dca678a8be9ebb8d0128a84293910cf73fdc
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 82e05880dc8b0a983f4f8005b40939e5ffe0cbe4
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319291"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340396"
 ---
 # <a name="text-box"></a>Textfeld
 
@@ -309,7 +309,7 @@ Weitere Informationen und Beispiele finden Sie unter [Verwenden des Eingabeumfan
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -319,4 +319,4 @@ Weitere Informationen und Beispiele finden Sie unter [Verwenden des Eingabeumfan
 - [Richtlinien für die Texteingabe](text-controls.md)
 - [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [StringLength-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)
+- [StringLength-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length)
