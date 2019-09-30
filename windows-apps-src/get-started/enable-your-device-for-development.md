@@ -6,12 +6,12 @@ keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 705ff7fab00d13123211feb747ea9a9f95b0cc43
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 1a4c1f90c0fa8304f95b1dc958fe5a75e74301dd
+ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867614"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71205930"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
@@ -47,7 +47,7 @@ So sieht die Einstellungsseite auf Desktopgeräten aus:
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>Welche Einstellung soll ich auswählen: Querladen von Apps oder Entwicklermodus?
 
 > [!NOTE]
-> Ab Windows-Insider-Build 18956 wurde die Option zum Querladen entfernt, und für den Entwicklermodus gibt es jetzt einen Umschalter. Weitere Informationen zum Querladen finden Sie im nächsten Abschnitt. 
+> Ab Windows-Insider-Build 18956 wurde die Option zum Querladen entfernt, und für den Entwicklermodus gibt es jetzt einen Umschalter. Weitere Informationen zum Querladen finden Sie im nächsten Abschnitt.
 
  Sie können ein Gerät für die Entwicklung oder nur für das Querladen aktivieren.
 
@@ -60,7 +60,7 @@ Standardmäßig können nur UWP-Apps (Universelle Windows-Plattform) aus dem Mic
 ### <a name="sideload-apps"></a>Querladen von Apps
 
 > [!NOTE]
-> Ab Windows-Insider-Build 18956 ist Querladen standardmäßig aktiviert. Sie können nun ein signiertes MSIX-Paket ohne besondere Konfiguration auf einem Gerät bereitstellen. 
+> Ab Windows-Insider-Build 18956 ist Querladen standardmäßig aktiviert. Sie können nun ein signiertes MSIX-Paket ohne besondere Konfiguration auf einem Gerät bereitstellen.
 
 Die Einstellung für das Querladen von Apps wird normalerweise von Unternehmen oder Bildungseinrichtungen verwendet, die benutzerdefinierte Apps auf verwalteten Geräten installieren müssen, ohne den Microsoft Store zu nutzen, oder von anderen Benutzern, die Apps aus Microsoft-fremden Quellen ausführen müssen. In diesem Fall erzwingt die Organisation häufig eine Richtlinie, um die Einstellung *UWP-Apps* zu deaktivieren, wie oben in der Abbildung der Einstellungsseite gezeigt. Die Organisation stellt außerdem das erforderliche Zertifikat und den Installationsspeicherort zum Querladen von Apps bereit. Weitere Informationen finden Sie in den TechNet-Artikeln [Querladen von Branchen-Apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) und [Erste Schritte mit der Bereitstellung von Apps in Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 
@@ -100,7 +100,7 @@ Weitere Informationen zum Geräteportal findest du in der [Übersicht über das 
 
 Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
 - [Geräteportal für Windows-Desktop](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Geräteportal für HoloLens](https://developer.microsoft.com/mixed-reality)
+- [Geräteportal für HoloLens](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
 - [Geräteportal für IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Geräteportal für Mobilgeräte](../debug-test-perf/device-portal-mobile.md)
 - [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md)
@@ -207,26 +207,26 @@ Sie können mithilfe von „gpedit.msc“ die Gruppenrichtlinien für die Gerät
 1.  Führen Sie **regedit** aus.
 2.  Legen Sie diesen DWORD-Wert auf 1 fest, um das Querladen zu aktivieren.
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
 
     - ODER
 
     Um den Entwicklermodus zu aktivieren, legen Sie diese DWORD-Werte auf 1 fest:
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense`
 
 **Aktivieren des Geräts mithilfe von PowerShell**
 
 1.  Führen Sie PowerShell mit Administratorrechten aus.
 2.  Führen Sie zum Aktivieren des Querladens diesen Befehl aus:
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"`
 
     - ODER
 
     Führen Sie zum Aktivieren des Entwicklermodus diesen Befehl aus:
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"`
 
 ## <a name="upgrade-your-device-from-windows-81-to-windows-10"></a>Aktualisieren Ihres Geräts von Windows 8.1 auf Windows 10
 
@@ -235,7 +235,7 @@ Wenn Sie Apps auf Ihrem Windows 8.1-Gerät erstellen oder querladen, müssen Si
 **So hebst du die Registrierung einer Entwicklerlizenz auf:**
 
 1.  Führen Sie PowerShell mit Administratorrechten aus.
-2.  Führen Sie folgenden Befehl aus: **unregister-windowsdeveloperlicense**.
+2.  Führen Sie diesen Befehl aus: `unregister-windowsdeveloperlicense`.
 
 Danach müssen Sie Ihr Gerät wie in diesem Thema beschrieben für die Entwicklung aktivieren, damit Sie weiterhin auf diesem Gerät entwickeln können. Andernfalls erhalten Sie möglicherweise eine Fehlermeldung, wenn Sie Ihre App debuggen oder versuchen, ein Paket dafür zu erstellen. Hier ist ein Beispiel für diesen Fehler:
 

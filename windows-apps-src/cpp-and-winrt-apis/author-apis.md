@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, projiziert, Projektion, Implementierung, implementieren, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8aca92d7eb7bc93ba4be99449d5e813238d744
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: eba0e6312bc22153d8cb62eb97d32635184f0fdc
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393494"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317111"
 ---
 # <a name="author-apis-with-cwinrt"></a>Erstellen von APIs mit C++/WinRT
 
@@ -430,7 +430,7 @@ Wie Sie weiter oben in diesem Thema gesehen haben, ist eine C++/WinRT-Laufzeitkl
 
 In dieser Tabelle ist die minimale Namespacequalifikation aufgeführt, die in unterschiedlichen Kontexten verwendet werden muss.
 
-|Der Namespace im Kontext|Für die Angabe des projizierten Typs|Für die Angabe des projizierten Typs|
+|Der Namespace im Kontext|Für die Angabe des projizierten Typs|So geben Sie den Implementierungstyp an|
 |-|-|-|
 |**winrt::MyProject**|`MyRuntimeClass`|`implementation::MyRuntimeClass`|
 |**winrt::MyProject::implementation**|`MyProject::MyRuntimeClass`|`MyRuntimeClass`|

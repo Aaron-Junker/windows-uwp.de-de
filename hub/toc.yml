@@ -68,6 +68,8 @@
       href: apps/accessibility.md
     - name: Features und Technologien
       href: apps/features-and-technologies.md
+    - name: Neueste Aktualisierungen der Dokumentation
+      href: apps/whats-new/latest-doc-updates.md
 - name: Erstellen mit Windows
   items:
     - name: Entwickeln mit Python

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, COM, Komponente
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8da62908d33c053cee4ba3f55645be9dbdcaada9
-ms.sourcegitcommit: b9268ca84af56ee1c4f4ac0314e2452193369f01
+ms.openlocfilehash: 5ff3677c3624974759d1f6ff21d6e53cf9d33144
+ms.sourcegitcommit: c5699e74b60c5c7a88658b4ebe30c1475eef5c27
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293371"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71344516"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Erstellen von COM-Komponenten mit C++/WinRT
 

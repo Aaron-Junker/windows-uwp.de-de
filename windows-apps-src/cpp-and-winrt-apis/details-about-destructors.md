@@ -1,20 +1,24 @@
 ---
-description: C++/WinRT 2.0 ermöglicht es Ihnen, die Zerstörung Ihrer Implementierungstypen zu verzögern und während der Zerstörung sicher Abfragen auszuführen. Dieses Thema beschreibt diese Features und erläutert die Verwendung.
-title: Informationen zu Destruktoren
-ms.date: 07/19/2019
+description: Mit diesen Erweiterungspunkten in C++/WinRT 2.0 können Sie die Zerstörung ihrer Implementierungstypen hinausschieben, um eine sichere Abfrage während der Zerstörung zu ermöglichen, einen Hook für den Eintrag zur Verfügung zu haben und Ihre projektierten Methoden zu beenden.
+title: Erweiterungspunkte für Ihre Implementierungstypen
+ms.date: 09/26/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, verzögerte zerstörung, sichere abfragen
 ms.localizationpriority: medium
-ms.openlocfilehash: 9806ea54665b24c246f2023714a14d94ec3bcc8e
-ms.sourcegitcommit: 02cc7aaa408efe280b089ff27484e8bc879adf23
+ms.openlocfilehash: 76068ffc655c20aa13b50cce9ac49af9afd50805
+ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387797"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71329558"
 ---
-# <a name="details-about-destructors"></a>Informationen zu Destruktoren
+# <a name="extension-points-for-your-implementation-types"></a>Erweiterungspunkte für Ihre Implementierungstypen
 
-C++/WinRT 2.0 ermöglicht es Ihnen, die Zerstörung Ihrer Implementierungstypen zu verzögern und während der Zerstörung sicher Abfragen auszuführen. Dieses Thema beschreibt diese Features und erläutert die Verwendung.
+Die [winrt::implements-Strukturvorlage](/uwp/cpp-ref-for-winrt/implements) bildet die Basis, von der Ihre eigenen [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Implementierungen (von Laufzeitklassen und Aktivierungsfactorys) direkt oder indirekt abgeleitet sind.
+
+In diesem Thema werden die Erweiterungspunkte von **winrt::implements** in C++/WinRT 2.0 erörtert. Sie können sich dafür entscheiden, diese Erweiterungspunkte für Ihre Implementierungstypen zu implementieren, um das Standardverhalten von Inspectable-Objekten (*inspectable* im Sinne der [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-Schnittstelle) anzupassen.
+
+Mit diesen Erweiterungspunkten können Sie die Zerstörung ihrer Implementierungstypen hinausschieben, um eine sichere Abfrage während der Zerstörung zu ermöglichen, einen Hook für den Eintrag zur Verfügung zu haben und Ihre projektierten Methoden zu beenden. Dieses Thema beschreibt diese Features und erläutert mehr zu Situation und Art ihrer Verwendung.
 
 ## <a name="deferred-destruction"></a>Verzögerte Zerstörung
 
@@ -89,7 +93,11 @@ struct Sample : implements<Sample, IStringable>
 };
 ```
 
-Dies ist mit einem stärker deterministischen Garbage Collector vergleichbar. Praktischer und effizienter wäre es, die **final_release**-Funktion in eine Coroutine umzuwandeln und schließlich die Zerstörung an einer zentralen Stelle zu behandeln, wobei sie gleichzeitig in der Lage sind, Threads ggf. zu unterbrechen und zu wechseln.
+Dies ist mit einem stärker deterministischen Garbage Collector vergleichbar.
+
+Normalerweise erfolgt die Zerstörung des Objekts, wenn **std::unique_ptr** zerstört, Sie können seine Zerstörung aber beschleunigen, indem Sie  **std::unique_ptr::reset** aufrufen, oder aufschieben, indem Sie den  **std::unique_ptr** irgendwo speichern.
+
+Praktischer und effizienter wäre es, die **final_release**-Funktion in eine Coroutine umzuwandeln und schließlich die Zerstörung an einer zentralen Stelle zu behandeln, wobei sie gleichzeitig in der Lage sind, Threads ggf. zu unterbrechen und zu wechseln.
 
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
@@ -111,7 +119,7 @@ Eine Unterbrechung bewirkt eine Rückgabe des aufrufenden Threads, der den Aufru
 
 Auf dem Konzept der verzögerten Zerstörung baut die Fähigkeit auf, Schnittstellen während der Zerstörung sicher abzufragen.
 
-Das klassische COM basiert auf zwei zentralen Konzepten. Das erste ist die Verweiszählung, das zweite die Abfrage von Schnittstellen. Zusätzlich zu **AddRef** und **Release** stellt die **IUnknown**-Schnittstelle [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void) bereit. Diese Methode wird von bestimmten UI-Frameworks ausgiebig genutzt, z. B. XAML, um beim Simulieren des zusammensetzbaren Typsystems die XAML-Hierarchie zu durchlaufen. Betrachten wir dazu ein einfaches Beispiel.
+Das klassische COM basiert auf zwei zentralen Konzepten. Das erste ist die Verweiszählung, das zweite die Abfrage von Schnittstellen. Über **AddRef** und **Release** hinaus stellt die **IUnknown**-Schnittstelle [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)) bereit. Diese Methode wird von bestimmten UI-Frameworks ausgiebig genutzt, z. B. XAML, um beim Simulieren des zusammensetzbaren Typsystems die XAML-Hierarchie zu durchlaufen. Betrachten wir dazu ein einfaches Beispiel.
 
 ```cppwinrt
 struct MainPage : PageT<MainPage>
@@ -172,3 +180,59 @@ Zuerst wird die **final_release**-Funktion aufgerufen, die die Implementierung b
 Im Destruktor löschen wir den Datenkontext, der bekanntlich eine Abfrage der **FrameworkElement**-Basisklasse benötigt.
 
 All dies ist möglich aufgrund der Entprellung der Verweisanzahl (bzw. Stabilisierung der Verweisanzahl) in C++/WinRT 2.0.
+
+## <a name="method-entry-and-exit-hooks"></a>Methodeneintritts- und Beendigungs-Hooks
+
+Einen weniger häufig verwendeten Erweiterungspunkt stellen die Struktur  **abi_guard** und die Funktionen **abi_enter** und **abi_exit** dar.
+
+Wenn Ihr Implementierungstyp eine Funktion **abi_enter** definiert, wird diese Funktion am Anfang jeder Ihrer projektierten Schnittstellenmethoden aufgerufen (ohne Berücksichtigung der Methoden von  [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)).
+
+Analog wird, wenn Sie **abi_exit** definieren, diese Funktion beim Beenden jeder derartigen Methode aufgerufen, allerdings nicht, wenn Ihre **abi_enter** eine Ausnahme auslöst. Der Aufruf *erfolgt* jedoch, wenn eine Ausnahme von Ihrer projektierten Schnittstellenmethode selbst ausgelöst wird.
+
+Beispielsweise können Sie **abi_enter** verwenden, um eine hypothetische  **invalid_state_error**-Ausnahme auszulösen, wenn ein Client versucht, ein Objekt zu verwenden, nachdem das Objekt in einen nicht verwendbaren Zustand versetzt wurde&mdash;beispielsweise nach einem Aufruf der Methode  **Shut­Down** oder **Disconnect** . Die C++/WinRT-Iteratorklassen verwenden dieses Feature, um eine Ausnahme wegen ungültigem Zustand in der  **abi_enter**-Funktion auszulösen, wenn sich die zugrundeliegende Sammlung geändert hat.
+
+Über die einfachen Funktionen **abi_enter** und **abi_exit** hinaus können Sie einen verschachtelten Typ namens  **abi_guard** definieren. In diesem Fall wird beim Eintritt in jede Ihrer projektierten Schnittstellenmethoden (mit Ausnahme von **IInspectable**) eine Instanz von **abi_guard** mit einem Verweis auf das Objekt als ihrem Konstruktorparameter erstellt.  **abi_guard** wird dann beim Verlassen der Methode zerstört. Sie können jeden gewünschten zusätzlichen Zustand in Ihrem **abi_guard**-Typ implementieren.
+
+Wenn Sie keine eigene **abi_guard**-Funktion definieren, können Sie eine Standardfunktion verwenden, die **abi_enter** bei der Erstellung und  **abi_exit** bei der Zerstörung aufruft.
+
+Diese Wächter werden nur verwendet, wenn eine Methode *über die projektierte Schnittstelle* aufgerufen wird. Wenn Sie Methoden für das Implementierungsobjekt direkt aufrufen, gelangen diese Aufrufe ohne Wächter direkt in die Implementierung.
+
+Codebeispiel:
+
+```cppwinrt
+struct Sample : SampleT<Sample, IClosable>
+{
+    void abi_enter();
+    void abi_exit();
+
+    void Close();
+};
+
+void example1()
+{
+    auto sampleObj1{ winrt::make<Sample>() };
+    sampleObj1.Close(); // Calls abi_enter and abi_exit.
+}
+
+void example2()
+{
+    auto sampleObj2{ winrt::make_self<Sample>() };
+    sampleObj2->Close(); // Doesn't call abi_enter nor abi_exit.
+}
+
+// A guard is used only for the duration of the method call.
+// If the method is a coroutine, then the guard applies only until
+// the IAsyncXxx is returned; not until the coroutine completes.
+
+IAsyncAction CloseAsync()
+{
+    // Guard is active here.
+    DoWork();
+
+    // Guard becomes inactive once DoOtherWorkAsync
+    // returns an IAsyncAction.
+    co_await DoOtherWorkAsync();
+
+    // Guard is not active here.
+}
+```

@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a5cec4c53d05e14537c5cc965b795a5eab8382f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d3d52429d4d91aa646f19aad5444f895f71504de
+ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564447"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71205927"
 ---
 # <a name="start-coding"></a>Beginnen Sie mit der Codierung
 
@@ -44,12 +44,12 @@ Eine ausführlichere exemplarische Vorgehensweise zu den Grundlagen der Codierun
 **Dokumentation:**
 
 * [Erste Schritte mit C#](https://docs.microsoft.com/dotnet/csharp/getting-started/)
-* [C#-Schnellstarts](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
+* [C#-Schnellstarts](https://docs.microsoft.com/dotnet/csharp/quick-starts/)
 * [Erste Schritte mit Visual Studio](https://docs.microsoft.com/visualstudio/ide/)
 
-**Videos:**
+**Tutorials:**
 
-* [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
+* [Windows auf Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module)
 
 ## <a name="using-the-docs"></a>Verwenden der Dokumentation
 

@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 06f5ce8ad7576114137adb862f89720e27d3802b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e78fddf1a0dae39d4479a4a1786a36687337c75e
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364291"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340231"
 ---
 # <a name="draw-shapes"></a>Zeichnen von Formen
 
@@ -20,7 +20,7 @@ Erfahren Sie, wie Sie Formen wie Ellipsen, Rechtecke, Polygone und Pfade zeichne
 > **Wichtige APIs:** [Path-Klasse](/uwp/api/Windows.UI.Xaml.Shapes.Path), [Windows.UI.Xaml.Shapes-Namespace](/uwp/api/Windows.UI.Xaml.Shapes), [Windows.UI.Xaml.Media-Namespace](/uwp/api/Windows.UI.Xaml.Media)
 
 
-Zwei Sätze von Klassen definieren einen Bereich in der XAML-Benutzeroberfläche:  [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)-Klassen und [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry)-Klassen. Der Hauptunterschied zwischen diesen Klassen besteht darin, dass einer **Shape**-Klasse ein Pinsel zugeordnet ist und diese auf dem Bildschirm gerendert werden kann, während eine **Geometry**-Klasse einfach einen Bereich definiert und nur gerendert wird, wenn sie Informationen zu einer anderen UI-Eigenschaft beiträgt. Sie können sich eine **Shape**-Klasse als [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) vorstellen, dessen Umrandung durch eine **Geometry**-Klasse definiert ist. In diesem Thema werden hauptsächlich die **Shape**-Klassen behandelt.
+Zwei Sätze von Klassen definieren einen Bereich in der XAML-Benutzeroberfläche: [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)-Klassen und [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry)-Klassen. Der Hauptunterschied zwischen diesen Klassen besteht darin, dass einer **Shape**-Klasse ein Pinsel zugeordnet ist und diese auf dem Bildschirm gerendert werden kann, während eine **Geometry**-Klasse einfach einen Bereich definiert und nur gerendert wird, wenn sie Informationen zu einer anderen UI-Eigenschaft beiträgt. Sie können sich eine **Shape**-Klasse als [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) vorstellen, dessen Umrandung durch eine **Geometry**-Klasse definiert ist. In diesem Thema werden hauptsächlich die **Shape**-Klassen behandelt.
 
 Die [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)-Klassen sind [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line), [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse), [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon), [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) und [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path). **Path** ist interessant, da Sie mit dieser Klasse beliebige Geometrien definieren können, und die Klasse [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) stellt eine Möglichkeit zum Definieren der Teile eines **Path** dar.
 
@@ -147,7 +147,7 @@ Dies ist das gerenderte [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon).
 
 Eine [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) ist eine einfache Verbindung zweier Punkte in einem Koordinatenbereich. Eine **Line** ignoriert alle Werte für [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill), da sie keinen Innenbereich hat. Geben Sie bei einer **Line** Werte für die Eigenschaften [**Stroke**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.stroke) und [**StrokeThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.strokethickness) an, da die **Line** andernfalls nicht gerendert werden kann.
 
-Sie verwenden keine [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)-Werte, um eine [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line)-Form anzugeben, sondern diskrete [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)-Werte für [**X1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x1), [**Y1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y1), [**X2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x2) und [**Y2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y2). Dadurch wird das Markup für horizontale oder vertikale Linien minimiert. Beispielsweise definiert `<Line Stroke="Red" X2="400"/>` eine horizontale Linie mit einer Länge von 400 Pixeln. Die anderen X,Y-Eigenschaften sind standardmäßig 0. Mit diesem XAML wird daher bei Punkten eine Linie von `(0,0)` bis `(400,0)` gezeichnet. Anschließend können Sie [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) zum Verschieben der gesamten **Line** verwenden, wenn sie an einem anderen Punkt als (0,0) beginnen soll.
+Sie verwenden keine [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)-Werte, um eine [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line)-Form anzugeben, sondern diskrete [**Double**](https://docs.microsoft.com/dotnet/api/system.double)-Werte für [**X1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x1), [**Y1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y1), [**X2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x2) und [**Y2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y2). Dadurch wird das Markup für horizontale oder vertikale Linien minimiert. Beispielsweise definiert `<Line Stroke="Red" X2="400"/>` eine horizontale Linie mit einer Länge von 400 Pixeln. Die anderen X,Y-Eigenschaften sind standardmäßig 0. Mit diesem XAML wird daher bei Punkten eine Linie von `(0,0)` bis `(400,0)` gezeichnet. Anschließend können Sie [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) zum Verschieben der gesamten **Line** verwenden, wenn sie an einem anderen Punkt als (0,0) beginnen soll.
 
 ```xaml
 <Line Stroke="Red" X2="400"/>
@@ -165,7 +165,7 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
+## <a name="span-id_polylinespanspan-id_polylinespanspan-id_polylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
 Eine [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) ähnelt einem [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon), da bei beiden die Grenze der Form durch eine Reihe von Punkten definiert wird. Bei einer **Polyline** wird jedoch der letzte Punkt nicht mit dem ersten verbunden.
 
@@ -233,7 +233,7 @@ Hier ist der gerenderte [**Pfad**](/uwp/api/Windows.UI.Xaml.Shapes.Path).
 
 ![Ein gerenderter Pfad](images/shapes-path.jpg)
 
-Das nächste Beispiel zeigt die Verwendung der anderen vorgestellten Technik: [**GeometryGroup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.geometrygroup) mit [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry). Dieses Beispiel zeigt einige der beitragenden Geometrietypen, die als Teil von **PathGeometry** verwendet werden können:  [**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) und die verschiedenen Elemente, die ein Segment in [**PathFigure.Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments) darstellen können.
+Das nächste Beispiel zeigt die Verwendung der anderen vorgestellten Technik: [**GeometryGroup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.geometrygroup) mit [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry). Dieses Beispiel stellt einige der beteiligten Geometrietypen vor, die als Teil einer **PathGeometry** verwendet werden können: [**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) und die verschiedenen Elemente, die als Segment in [**PathFigure.Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments) dienen können.
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">
