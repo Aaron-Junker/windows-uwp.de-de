@@ -46,9 +46,9 @@ Windows bietet viele Möglichkeiten, Spracherkennung und Text-zu-Sprache (auch a
 
 Weitere Informationen zu den verschiedenen Möglichkeiten zur Verwendung von sprach Interaktionen in Windows-apps finden Sie unter [sprach Interaktionen](/windows/uwp/design/input/speech-interactions).
 
-### <a name="windows-ai"></a>Windows AI
+### <a name="windows-ai"></a>Windows KI
 
-![Windows AI](images/windows-ai.png)
+![Windows KI](images/windows-ai.png)
 
 Wir bieten verschiedene Ki-Lösungen, die Sie verwenden können, um Ihre Windows-Anwendungen zu verbessern. Mit Windows Machine Learning können Sie trainierte Machine Learning-Modelle in Ihre apps integrieren und lokal auf dem Gerät ausführen. Mit den Windows-Bild Verarbeitungs Kenntnissen können Sie vorgefertigte Bibliotheken verwenden, um gängige Bildverarbeitungsaufgaben auszuführen oder eigene benutzerdefinierte Lösungen zu erstellen. Directml bietet APIs auf niedriger Ebene (DirectX-Stil), mit denen Sie die Hardware voll ausschöpfen können.
 

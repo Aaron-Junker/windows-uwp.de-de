@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5c846d0e0110a1285e67f6f21e1eeb7a0d9c2624
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 6d45e70afa5b0dc6e903dbd253c09042bb2046c2
+ms.sourcegitcommit: f7ef7e894d7b7fc24483b4485605686abf8f2e93
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339279"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679210"
 ---
 # <a name="xaml-overview"></a>Übersicht über XAML
 
@@ -144,10 +144,10 @@ XAML ist eine deklarative Programmiersprache für Objekte und ihre Eigenschaften
 Dies ist ein einfaches Beispiel. Die <xref:Windows.UI.Xaml.Controls.Button>-Klasse unterstützt ein Ereignis mit dem Namen <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. Sie können einen Handler für **Click** schreiben, mit dem Code ausgeführt wird, der aufgerufen wird, nachdem Benutzer auf das **Button**-Element geklickt haben. Im XAML-Code geben Sie **Click** als Attribut des **Button**-Elements an. Stellen Sie für den Attributwert eine Zeichenfolge bereit, bei der es sich um den Methodennamen des Handlers handelt.
 
 ```xml
-<Button Click="showUpdatesButton-Click">Show updates</Button>
+<Button Click="showUpdatesButton_Click">Show updates</Button>
 ```
 
-Bei der Kompilierung wird vom Compiler dann erwartet, dass eine Methode mit dem Namen `showUpdatesButton-Click` in der CodeBehind-Datei und im Namespace definiert ist, der im [x:Class](x-class-attribute.md)-Wert der XAML-Seite deklariert wurde. Außerdem muss diese Methode den delegatvertrag für das <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>-Ereignis erfüllen. Zum Beispiel:
+Bei der Kompilierung wird vom Compiler dann erwartet, dass eine Methode mit dem Namen `showUpdatesButton_Click` in der CodeBehind-Datei und im Namespace definiert ist, der im [x:Class](x-class-attribute.md)-Wert der XAML-Seite deklariert wurde. Außerdem muss diese Methode den delegatvertrag für das <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>-Ereignis erfüllen. Zum Beispiel:
 
 ```csharp
 namespace App1

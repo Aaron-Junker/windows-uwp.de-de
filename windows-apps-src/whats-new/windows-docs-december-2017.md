@@ -44,7 +44,7 @@ Füge auf Geräten, die Interaktionen per Toucheingabe unterstützen, die Tastat
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusammenarbeit der Entwickler im Microsoft-Ökosystem durch die Freigabe von Engineering Systems-Arbeitsaufgaben (Fehler, Features usw.) und die Verteilung von Inhalten (Builds, Dokumente, Spezifikationen) zu optimieren. [Weitere Informationen](https://docs.microsoft.com/collaborate/).
+Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusammenarbeit der Entwickler im Microsoft-Ökosystem durch die Freigabe von Engineering Systems-Arbeitselement (Fehler, Features usw.) und die Verteilung von Inhalten (Builds, Dokumente, Spezifikationen) zu optimieren. [Weitere Informationen](https://docs.microsoft.com/collaborate/).
 
 ![Microsoft Collaborate in Partner Center](images/microsoft_collaborate_screenshot.PNG)
 
