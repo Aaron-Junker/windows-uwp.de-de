@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP, Benutzerrollen, Benutzerberechtigung, benutzerdefinierte Rollen, Zugriff für Benutzer, Berechtigungen anpassen, Standardrollen
 ms.localizationpriority: medium
 ms.openlocfilehash: ead8012c6d4b9243e70dcc09f7ef174a3d907356
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.sourcegitcommit: 035b03f1247eae4e9359ee7db66429d4e1c1d09b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "68349216"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Legen Sie Rollen oder benutzerdefinierte Berechtigungen für Kontenbenutzer fest
@@ -95,7 +95,7 @@ Die Berechtigungen in diesem Abschnitt können nicht auf bestimmte Produkte bes
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">Berechtigungs Name</th>
+    <th align="left">Name der Berechtigung</th>
     <th align="left">Schreibgeschützt</th>
     <th align="left">Lese-/Schreibzugriff</th>
     </tr>
@@ -157,19 +157,19 @@ Beachten Sie, dass einige Berechtigungen nicht für Add-Ons festgelegt werden k�
 <table>
     <thead>
     <tr class="header">
-    <th align="left">Berechtigungs&nbsp;Name</th>
-    <th align="left">Schreibgeschützt &nbsp;</th>
+    <th align="left">Name der Berechtigung</th>
+    <th align="left">Schreibgeschützt</th>
     <th align="left">Lese-/Schreibzugriff</th>
-    <th align="left">Schreibgeschützt&nbsp;(Add-On)&nbsp; </th>
+    <th align="left">Schreibgeschützt&nbsp;(Add-On) </th>
     <th align="left">Lese- und Schreibzugriff&nbsp;(Add-On)</th>
     </tr>
     </thead>
     <tbody>
     <tr><td align="left">    <b>Akquisitionen</b> (einschließlich Near Real Time Data) </td><td>    Kann die Berichte <a href="acquisitions-report.md">Käufe</a> und <a href="add-on-acquisitions-report.md">Add-On-Käufe</a> für das Produkt anzeigen.        </td><td>    Nicht zutreffend    </td><td>    N/v (Einstellungen für das übergeordnete Produkt enthalten den Bericht **zu den Add-on-Akquisitionen** )        </td><td>    Nicht zutreffend                         </td></tr>
-    <tr><td align="left">    <b>Ungs</b> </td><td>    Kann den <a href="usage-report.md">Bericht „Nutzung“</a> für das Produkt anzeigen.     </td><td>    Nicht zutreffend       </td><td>    N/V     </td><td>    Nicht zutreffend         </td></tr>
-    <tr><td align="left">    <b></b> Integrität (einschließlich Near Real Time Data) </td><td>    Kann den <a href="health-report.md">Bericht „Integrität“</a> für das Produkt anzeigen.    </td><td>    Nicht zutreffend     </td><td>    N/V     </td><td>    Nicht zutreffend         </td></tr>
+    <tr><td align="left">    <b>Ungs</b> </td><td>    Kann den <a href="usage-report.md">Bericht „Nutzung“</a> für das Produkt anzeigen.     </td><td>    Nicht zutreffend       </td><td>    Nicht zutreffend     </td><td>    Nicht zutreffend         </td></tr>
+    <tr><td align="left">    <b></b> Integrität (einschließlich Near Real Time Data) </td><td>    Kann den <a href="health-report.md">Bericht „Integrität“</a> für das Produkt anzeigen.    </td><td>    Nicht zutreffend     </td><td>    Nicht zutreffend     </td><td>    Nicht zutreffend         </td></tr>
     <tr><td align="left">    <b>Kundenfeedback</b>    </td><td>    Kann die Berichte <a href="reviews-report.md">Rezensionen</a> und <a href="feedback-report.md">Feedback</a> für das Produkt anzeigen.       </td><td>    Nicht verfügbar (Um auf Feedback oder Rezensionen reagieren zu können, muss die Berechtigung <b>Kunden kontaktieren</b> erteilt werden)   </td><td>    Nicht zutreffend     </td><td>    Nicht zutreffend         </td></tr>
-    <tr><td align="left">    <b>Xbox Analytics</b> </td><td>    Kann den <a href="xbox-analytics-report.md">Xbox Analytics-Bericht</a> für das Produktanzeigen.    </td><td>    Nicht zutreffend   </td><td>    N/V       </td><td>    Nicht zutreffend          </td></tr>
+    <tr><td align="left">    <b>Xbox Analytics</b> </td><td>    Kann den <a href="xbox-analytics-report.md">Xbox Analytics-Bericht</a> für das Produktanzeigen.    </td><td>    Nicht zutreffend   </td><td>    Nicht zutreffend       </td><td>    Nicht zutreffend          </td></tr>
     </tbody>
     </table>
 
@@ -178,10 +178,10 @@ Beachten Sie, dass einige Berechtigungen nicht für Add-Ons festgelegt werden k�
 <table>
     <thead>
     <tr class="header">
-    <th align="left">Berechtigungs&nbsp;Name</th>
-    <th align="left">Schreibgeschützt &nbsp;</th>
+    <th align="left">Name der Berechtigung</th>
+    <th align="left">Schreibgeschützt</th>
     <th align="left">Lese-/Schreibzugriff</th>
-    <th align="left">Schreibgeschützt&nbsp;(Add-On)&nbsp; </th>
+    <th align="left">Schreibgeschützt&nbsp;(Add-On) </th>
     <th align="left">Lese- und Schreibzugriff&nbsp;(Add-On)</th>
     </tr>
     </thead>
@@ -199,10 +199,10 @@ Beachten Sie, dass einige Berechtigungen nicht für Add-Ons festgelegt werden k�
 <table>
     <thead>
     <tr class="header">
-    <th align="left">Berechtigungs&nbsp;Name</th>
-    <th align="left">Schreibgeschützt &nbsp;</th>
+    <th align="left">Name der Berechtigung</th>
+    <th align="left">Schreibgeschützt</th>
     <th align="left">Lese-/Schreibzugriff</th>
-    <th align="left">Schreibgeschützt&nbsp;(Add-On)&nbsp; </th>
+    <th align="left">Schreibgeschützt&nbsp;(Add-On) </th>
     <th align="left">Lese- und Schreibzugriff&nbsp;(Add-On)</th>
     </tr>
     </thead>
@@ -227,10 +227,10 @@ Beachten Sie, dass einige Berechtigungen nicht für Add-Ons festgelegt werden k�
 <table>
     <thead>
     <tr class="header">
-    <th align="left">Berechtigungs&nbsp;Name</th>
-    <th align="left">Schreibgeschützt &nbsp;</th>
+    <th align="left">Name der Berechtigung</th>
+    <th align="left">Schreibgeschützt</th>
     <th align="left">Lese-/Schreibzugriff</th>
-    <th align="left">Schreibgeschützt&nbsp;(Add-On)&nbsp; </th>
+    <th align="left">Schreibgeschützt&nbsp;(Add-On) </th>
     <th align="left">Lese- und Schreibzugriff&nbsp;(Add-On)</th>
     </tr>
     </thead>
@@ -239,7 +239,7 @@ Beachten Sie, dass einige Berechtigungen nicht für Add-Ons festgelegt werden k�
     <tr><td align="left">    <b>Partner Dienste</b>&nbsp;*</td><td>    Kann die Seite "Webdienste" eines Kontos anzeigen.  </td><td>    Kann die Seite "Webdienste" eines Kontos anzeigen und bearbeiten.      </td><td>    Nicht zutreffend    </td><td>    Nicht zutreffend                      </td></tr>
     <tr><td align="left">    <b>Xbox-Test Konten</b>&nbsp;*</td><td>    Kann die Seite "Xbox-Test Konten" eines Kontos anzeigen.  </td><td>    Kann die Seite "Xbox-Test Konten" eines Kontos anzeigen und bearbeiten.    </td><td>    Nicht zutreffend    </td><td>    Nicht zutreffend                      </td></tr>
     <tr><td align="left">    <b>Xbox-Test Konten pro Sandbox</b>&nbsp;*</td><td>    Die Seite Xbox-Test Konten kann nur für die angegebenen Sand Fächer eines Kontos angezeigt werden.  </td><td>    Kann den Xbox-Test anzeigen und bearbeiten.   <tr><td align="left">    <b>Konten Seite nur für die angegebenen Sandkästen eines Kontos    </td><td>    Nicht zutreffend    </td><td>    Nicht zutreffend                      </td></tr>
-    <tr><td align="left">    <b>Xbox-Geräte</b>&nbsp;*</td><td>    Kann die Seite Xbox One-Entwicklungs Konsolen eines Kontos anzeigen.  </td><td>    Kann die Seite Xbox One-Entwicklungs Konsolen eines Kontos anzeigen und bearbeiten.    </td><td>    Nicht zutreffend    </td><td>    Nicht zutreffend                      </td></tr>
+    <tr><td align="left"><b>Xbox Devices</b>&nbsp; @ no__t-3</td><td>    Kann die Seite Xbox One-Entwicklungs Konsolen eines Kontos anzeigen.  </td><td>    Kann die Seite Xbox One-Entwicklungs Konsolen eines Kontos anzeigen und bearbeiten.    </td><td>    Nicht zutreffend    </td><td>    Nicht zutreffend                      </td></tr>
     <tr><td align="left">    <b>Xbox-Geräte pro Sandbox</b>&nbsp;*</td><td>    Kann die Seite Xbox One-Entwicklungs Konsolen nur für die angegebenen Sand Fächer eines Kontos anzeigen.  </td><td>    Kann die Seite Xbox One-Entwicklungs Konsolen nur für die angegebenen Sand Fächer eines Kontos anzeigen und bearbeiten.    </td><td>    Nicht zutreffend    </td><td>    Nicht zutreffend                      </td></tr>
     <tr><td align="left">    <b>App-Kanäle</b>&nbsp;*</td><td>    Nicht zutreffend  </td><td>    Kann Werbevideokanäle auf der Xbox-Konsole für die Anzeige über OneGuide veröffentlichen.    </td><td>    Nicht zutreffend    </td><td>    Nicht zutreffend                      </td></tr>
     <tr><td align="left">    <b>Dienst Konfiguration</b>&nbsp;*</td><td>    Kann die Seite für die Xbox Live-Dienst Konfiguration eines Produkts anzeigen.  </td><td>    Kann die Seite für die Xbox Live-Dienst Konfiguration eines Produkts anzeigen und bearbeiten.    </td><td>    Nicht zutreffend    </td><td>    Nicht zutreffend                      </td></tr>

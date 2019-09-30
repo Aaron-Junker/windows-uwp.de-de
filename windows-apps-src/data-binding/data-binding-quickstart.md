@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 0832e46794302a3ccc9eba81d4b0e9d93dd9be8c
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0a967c923d9f8616a3a05af5bb0ebb612251d3b8
+ms.sourcegitcommit: 035b03f1247eae4e9359ee7db66429d4e1c1d09b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339667"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71674543"
 ---
 # <a name="data-binding-overview"></a>Übersicht über Datenbindung
 
@@ -704,7 +704,8 @@ public:
 ...
 ```
 
-> [Hinweis!] Für das C++obige/WinRT-Codelisting in `StringFormatter.idl` verwenden wir das [default-Attribut](https://docs.microsoft.com/windows/desktop/midl/default) , um **IValueConverter** als Standardschnittstelle zu deklarieren. In der Auflistung hat **stringformatter** nur einen Konstruktor und keine Methoden, sodass keine Standardschnittstelle für Sie generiert wird. Das `default`-Attribut ist optimal, wenn Sie **stringformatter**keine Instanzmember hinzufügen, da keine QueryInterface erforderlich ist, um die **IValueConverter** -Methoden aufzurufen. Alternativ dazu können Sie eine standardmäßige **istringformatter** -Schnittstelle zur Generierung auffordern. dazu können Sie die Lauf Zeit Klasse selbst mit dem default_interface- [Attribut](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute)versehen. Diese Option ist optimal, wenn Sie **stringformatter** Instanzmember hinzufügen, die häufiger als die Methoden von **IValueConverter** aufgerufen werden, da keine QueryInterface erforderlich ist, um die Instanzmember aufzurufen.
+> [!NOTE]
+> Für das C++obige/WinRT-Codelisting in `StringFormatter.idl` verwenden wir das [default-Attribut](https://docs.microsoft.com/windows/desktop/midl/default) , um **IValueConverter** als Standardschnittstelle zu deklarieren. In der Auflistung hat **stringformatter** nur einen Konstruktor und keine Methoden, sodass keine Standardschnittstelle für Sie generiert wird. Das `default`-Attribut ist optimal, wenn Sie **stringformatter**keine Instanzmember hinzufügen, da keine QueryInterface erforderlich ist, um die **IValueConverter** -Methoden aufzurufen. Alternativ dazu können Sie eine standardmäßige **istringformatter** -Schnittstelle zur Generierung auffordern. dazu können Sie die Lauf Zeit Klasse selbst mit dem default_interface- [Attribut](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute)versehen. Diese Option ist optimal, wenn Sie **stringformatter** Instanzmember hinzufügen, die häufiger als die Methoden von **IValueConverter** aufgerufen werden, da keine QueryInterface erforderlich ist, um die Instanzmember aufzurufen.
 
 Nun können wir eine Instanz von **stringformatter** als Seiten Ressource hinzufügen und Sie in der Bindung des **TextBlock** -Objekts verwenden, das die **releasedatetime** -Eigenschaft anzeigt.
 
