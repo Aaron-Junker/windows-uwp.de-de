@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: a846b48565a6029656ecfdd21763931df74b5375
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 879a400d22b3032bb4ee3f3f378a85f04ad73355
+ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826457"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71705566"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Änderungsverlauf für Microsoft Store-Richtlinien
 
@@ -31,6 +31,18 @@ ms.locfileid: "66826457"
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td>1\. Oktober 2019</td>
+<td>7.12</td>
+<td><p>Neue Richtlinie 10.2.6 zur Sperrung von Apps hinzugefügt, die Krypto-Mining auf dem Gerät durchführen.</p>
+<p>10.8.4 wurde aktualisiert, um die Offenlegungspflicht für Quoten für Produkte hinzuzufügen, die Lootboxen oder andere randomisierte virtuelle Elemente anbieten.</p>
+<p>10.8.7 wurde aktualisiert, um Anforderungen bezüglich der Preisbestimmungen hinzuzufügen.</p>
+<p>10.10.1 wurde aktualisiert, um Anforderungen in Bezug auf die Wahrheit in Werbung hinzuzufügen.</p>
+<p>10.13.1 wurde aktualisiert, um zu verdeutlichen, dass Produkte, die hauptsächlich Remote-Spiel-/Steuerungsfunktionen bieten, zu Spielprodukten gehören.</p>
+<p>Die Voraussetzung des Unternehmenskontos für bestimmte App-Typen wurde ab 10.14 entfernt. </p>
+<p>11.12 mit Anforderungen für benutzergenerierte Inhalte wurde hinzugefügt.</p>
+</td>
+</tr>
 <tr class="even">
 <td>5\. März 2019</td>
 <td>7.11</td>
@@ -40,7 +52,7 @@ ms.locfileid: "66826457"
 <p>Aktualisierung von 10.14, um Anforderungen für die verbindliche Verwendung eines Unternehmenskontotyps hinzuzufügen.</p></td>
 </tr>
 <tr class="odd">
-<td>15\. November 2018</td>
+<td>15. November 2018</td>
 <td>7.10</td>
 <td><p>Richtlinie geändert, um auf „Produkte“ im Allgemeinen sowie bestimmte Produkttypen, z. B. Apps, Spiele und Add-Ins, zu verweisen.</p>
 <p>Anforderungen bezüglich Wertversprechen während der ersten Ausführung zu Abschnitt 10.1.1 hinzugefügt.</p>
@@ -65,39 +77,39 @@ ms.locfileid: "66826457"
 <p>Abschnitt 10.13.11 wurde mit Anforderungen zu personenbezogenen Daten aktualisiert.</p></td>
 </tr>
 <tr class="odd">
-<td>17\. April 2018</td>
+<td>17. April 2018</td>
 <td>7.8</td>
 <td><p>Aktualisierung 10.8.4 zur Klarstellung von Formulierungen.</p>
 <p>Aktualisierung 10.14 zur Angabe des Datums, an dem diese Richtlinie wirksam wird.</p>
 <p>Der Titel von 11.3 wurde geändert</p></td>
 </tr>
 <tr class="even">
-<td>14\. Februar 2018</td>
+<td>14. Februar 2018</td>
 <td>7.7</td>
-<td><p>10\.5.5 wurde aktualisiert zur Klärung der Anforderungen für das Speichern oder Übertragen vertraulicher persönlicher Informationen.</p>
+<td><p>10.5.5 wurde aktualisiert zur Klärung der Anforderungen für das Speichern oder Übertragen vertraulicher persönlicher Informationen.</p>
 <p>In 10.8.3 wurde „Geschäftskontotyp” durch „Unternehmenskontotyp” ersetzt.</p>
-<p>10\.14 wurde hinzugefügt, um den Unternehmenskontotyp für Apps zu verlangen, die in der App Authentifizierungsmethoden verwenden.</p></td>
+<p>10.14 wurde hinzugefügt, um den Unternehmenskontotyp für Apps zu verlangen, die in der App Authentifizierungsmethoden verwenden.</p></td>
 </tr>
 <tr class="odd">
-<td>20\. November 2017</td>
+<td>20. November 2017</td>
 <td>7.6</td>
 <td><p>Absatz 11.3 (Schaden für andere) wurde aktualisiert, um Folgendes zu verdeutlichen: (a) die Anforderungen an Produktsicherheit und Komfort und (b) die Verbote bezüglich des Verursachens oder Anstiftens realer Schäden.</p></td>
 </tr>
 <tr class="even">
-<td>26\. Oktober 2017</td>
+<td>26. Oktober 2017</td>
 <td>7.5</td>
-<td><p>10\.2.4 wurde aktualisiert und 10.2.5 hinzugefügt, um die Anforderungen für Softwareabhängigkeiten zu verdeutlichen.</p>
-<p>10\.8.2 wurde aktualisiert, um die erforderlichen Zahlungsmethoden für wohltätige Spenden und Glücksspielzahlungen zu verdeutlichen. 10\.8.6 wurde zu 10.8 (Finanztransaktionen) hinzugefügt, um die Anforderungen für Abonnements zu beschreiben.</p>
+<td><p>10.2.4 wurde aktualisiert und 10.2.5 hinzugefügt, um die Anforderungen für Softwareabhängigkeiten zu verdeutlichen.</p>
+<p>10.8.2 wurde aktualisiert, um die erforderlichen Zahlungsmethoden für wohltätige Spenden und Glücksspielzahlungen zu verdeutlichen. 10.8.6 wurde zu 10.8 (Finanztransaktionen) hinzugefügt, um die Anforderungen für Abonnements zu beschreiben.</p>
 <p>0\.13.5 wurde aktualisiert, um die Anforderungen für die Anmeldung bei Xbox Live zu verdeutlichen.</p>
 <p>Aktualisierung der Definition von „Microsoft Store” im Zusammenhang mit den Änderungen für das Branding des Microsoft Store.</p></td>
 </tr>
 <tr class="odd">
-<td>13\. Juni 2017</td>
+<td>13. Juni 2017</td>
 <td>7.4</td>
 <td><p>Hinweis, dass Metadaten- und Inhaltsrichtlinien für Trailer und Trailer-Miniaturansichten gelten, wurde hinzugefügt.</p></td>
 </tr>
 <tr class="even">
-<td>29\. März 2017</td>
+<td>29. März 2017</td>
 <td>7.3</td>
 <td><p>Abschnitt 10.8.1 wurde aktualisiert, um die API für In-App-Einkäufe von Microsoft umzubenennen.</p>
 <p>Abschnitt 10.8.2 wurde aktualisiert, um die API zur Zahlungsanforderung von Microsoft hinzuzufügen.</p>
@@ -105,13 +117,13 @@ ms.locfileid: "66826457"
 <p>„Schaden für Benutzer“ (11.3) wurde aktualisiert, um die Schädigung von Benutzern abzudecken.</p></td>
 </tr>
 <tr class="odd">
-<td>17\. Januar 2017</td>
+<td>17. Januar 2017</td>
 <td>7.2</td>
 <td><p>Erhöhte Sicherheit (10.2.1), um Anforderungen für die Browserfunktionen abzudecken.</p>
 <p>„Finanztransaktionen“ (10.8.4) wurde aktualisiert, um den klaren Hinweis auf das Initiieren eines In-App-Kaufs erforderlich zu machen.</p></td>
 </tr>
 <tr class="even">
-<td>19\. Oktober 2016</td>
+<td>19. Oktober 2016</td>
 <td>7.1</td>
 <td><p>„Klare Aussagen über Funktion &amp; Nutzen; genaue Darstellung“ (10.1) wurde neu strukturiert. Zudem wurden Anforderungen in Bezug auf Geräteabhängigkeiten und Zielgerätfunktionalität hinzugefügt.</p>
 <p>„Persönliche Daten“(10.5) wurde aktualisiert, sodass nun ein Link zur Datenschutzrichtlinie in den Metadaten sowie eine deutliche Formulierung der Einschränkungen bei der Offenlegung persönlicher Informationen ohne Zustimmung erforderlich sind.</p>
@@ -130,13 +142,13 @@ ms.locfileid: "66826457"
 <p>Aktualisierung der Verhaltensregeln; explizit eingeschlossen ist nun der unberechtigte Zugriff auf persönliche Informationen bzw. deren unberechtigte Nutzung.</p></td>
 </tr>
 <tr class="even">
-<td>15\. Juni 2016</td>
+<td>15. Juni 2016</td>
 <td>6.9</td>
 <td><p>„Klare Aussagen über Funktion &amp; Nutzen“ (10.1) wurde aktualisiert.</p>
 <p>„Benachrichtigungen“ (10.9) wurde durch 10.9.4 ergänzt.</p></td>
 </tr>
 <tr class="odd">
-<td>30\. März 2016</td>
+<td>30. März 2016</td>
 <td>6.8</td>
 <td><p>„Klare Aussagen über Funktion &amp; Nutzen“ (10.1) wurde aktualisiert.</p>
 <p>„Altersfreigaben“ (11.1) wurde aktualisiert (11.11.1 wurde entfernt).</p></td>
@@ -154,7 +166,7 @@ ms.locfileid: "66826457"
 <td><p>„Werbung – Verhaltensregeln und Inhalt“ (10.10.6) wurde aktualisiert.</p></td>
 </tr>
 <tr class="even">
-<td>29\. Juli 2015</td>
+<td>29. Juli 2015</td>
 <td>6.5</td>
 <td><p>Beschreibung des unzulässigen App-Verhaltens im Abschnitt „Sicherheit“ (10.2.2) überarbeitet.</p>
 <p>Erforderliche Standorteinstellungen im Abschnitt „Persönliche Daten“ (10.5.1) mit Informationen zu Windows 10 Mobile-Apps ergänzt.</p></td>
@@ -167,7 +179,7 @@ ms.locfileid: "66826457"
 <p>Aktualisierte und konsolidierte Anforderungen in „11.12 – Altersfreigaben“</p></td>
 </tr>
 <tr class="even">
-<td>29\. April 2015</td>
+<td>29. April 2015</td>
 <td>6.3</td>
 <td><p>Zu „Persönliche Daten“ (10.5) wurde eine Anforderung hinzugefügt.</p>
 <p>„Funktionen“ (10.6) wurde aktualisiert.</p>
@@ -176,7 +188,7 @@ ms.locfileid: "66826457"
 <p>„Hetze oder Diskriminierung“ (11.5) wurde aktualisiert und in „Anstößiger Inhalt“ umbenannt.</p></td>
 </tr>
 <tr class="odd">
-<td>23\. Oktober 2014</td>
+<td>23. Oktober 2014</td>
 <td>6.2</td>
 <td><p>Zusammengeführte Richtlinien für den Windows Store und Windows Phone Store.</p></td>
 </tr>

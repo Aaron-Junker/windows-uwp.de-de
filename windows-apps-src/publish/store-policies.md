@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 3511fb221e1e087f7ced5ce11aca8d53bd027079
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 26c7a7a123d8892bf1c3584685db49f2d86c654a
+ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826477"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71705554"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
 
 
-**Dokumentversion: 7.11**
+**Dokumentversion: 7.12**
 
-**Dokumentdatum: 5. März 2019**
+**Dokumentdatum: 1. Oktober 2019**
 
 > [!NOTE]
 > Eine Zusammenfassung der zuletzt vorgenommenen Änderungen an dieser Vereinbarung finden Sie im Abschnitt [Änderungsverlauf](store-policies-change-history.md).
@@ -72,9 +72,9 @@ Feedback zu den Richtlinien ist jederzeit willkommen. Veröffentlichen Sie hierz
 - [11.9 Übermäßige oder unnötige Obszönitäten](#119-excessive-profanity-and-inappropriate-content)
 - [11.10 Spezifische Anforderungen für Länder/Regionen](#1110-countryregion-specific-requirements)
 - [11.11 Altersfreigaben](#1111-age-ratings)
+- [11.12 Benutzergenerierte Inhalte](#1112-user-generated-content)
 
 ## <a name="product-policies"></a>Produktrichtlinien
-
 
 ### <a name="101-distinct-function--value-accurate-representation"></a>10.1 Klare Aussagen über Funktion und Nutzen; genaue Darstellung
 
@@ -128,6 +128,9 @@ Ihr Produkt kann auf nicht integrierte Software (z. B. ein anderes Produkt oder 
 
 Alle Ihre Produkte und in die Produkte integrierten Angebote, die im Store erworben werden können, dürfen nur über den Store installiert und aktualisiert werden.
 
+**10.2.6**
+
+Apps, die Krypto-Mining auf dem Gerät ermöglichen, sind nicht zulässig. Apps, die die Remoteverwaltung von Krypto-Mining ermöglichen, sind zulässig.
 
 ### <a name="103-product-is-testable"></a>10.3 Testbarkeit des Produkts
 
@@ -238,7 +241,9 @@ Wenn für Ihr Produkt Finanzinformationen erforderlich sind, müssen Sie dieses 
 
 **10.8.4**
 
-Ihr Produkt und die zugehörigen Metadaten müssen Informationen zu den Arten der angebotenen Käufe innerhalb des Produkts und den Preisspannen bereitstellen. Sie dürfen die Kunden über die Art der Werbung und Angebote innerhalb des Produkts nicht im Unklaren lassen. Dies betrifft auch den Umfang und die Bedingungen für etwaige Testversionen. Wenn Ihr Produkt den Zugriff auf von Nutzern erstellte Inhalte während oder nach Ablauf einer Testversion einschränkt, müssen Sie den Nutzern dies vorab mitteilen. Darüber hinaus muss Ihr Produkt den Nutzern klar erläutern, dass im Produkt eine Kaufoption enthalten ist. 
+Ihr Produkt und die zugehörigen Metadaten müssen Informationen zu den Arten der angebotenen Käufe innerhalb des Produkts und den Preisspannen bereitstellen. Sie dürfen die Kunden über die Art der Werbung und Angebote innerhalb des Produkts nicht im Unklaren lassen. Dies betrifft auch den Umfang und die Bedingungen für etwaige Testversionen. Wenn Ihr Produkt den Zugriff auf von Nutzern erstellte Inhalte während oder nach Ablauf einer Testversion einschränkt, müssen Sie den Nutzern dies vorab mitteilen. Darüber hinaus muss Ihr Produkt den Nutzern klar erläutern, dass im Produkt eine Kaufoption enthalten ist.
+
+Wenn dein Spiel Lootboxen oder andere Mechanismen anbietet, die randomisierte virtuelle Elemente bereitstellen, musst du die Chancen, jedes Element zu erhalten, vor dem Kauf offen legen. Diese Offenlegungen können wie folgt angezeigt werden: produktintern, z. B. in einem In-App-Store, auf der Microsoft Store-Produktbeschreibungsseite und/oder auf einer Entwickler- oder Herausgeber-Website, mit einem Link auf der Store-Produktbeschreibungsseite und/oder in der App.
 
 **10.8.6**
 
@@ -246,6 +251,9 @@ Sie müssen die Microsoft-API für wiederkehrende Abrechnungen zur Abrechnung vo
 - Sie können ein Abonnement aufwerten, es jedoch nicht für Benutzer, die es zuvor erworben haben, im Wert reduzieren.
 - Wenn Sie ein aktives Abonnement beenden, müssen Sie gekaufte digitale Produkte oder Dienste solange bereitstellen, bis das Abonnement abläuft.
 
+**10.8.7**
+
+Alle Preise, einschließlich Ausverkäufen oder Rabatten, für deine digitalen Produkte oder Dienste müssen allen geltenden Gesetzen, Vorschriften und regulatorischen Richtlinien entsprechen, einschließlich, aber nicht beschränkt auf die [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl) (Richtlinien gegen irreführende Preisgestaltung) der Federal Trade Commission. 
 
 ### <a name="109-notifications"></a>10.9 Benachrichtigungen
 
@@ -279,6 +287,7 @@ Für alle Aktivitäten im Zusammenhang mit Werbung gelten die folgenden Anforder
 - Der primäre Zweck Ihres Produkts sollte nicht darin bestehen, Nutzer zum Klicken auf Anzeigen zu bewegen.
 - Ihr Produkt darf keinesfalls die Sichtbarkeit, den Nutzen oder die Qualität der angezeigten Werbung stören oder beeinträchtigen.
 - Ihr Produkt muss die vom Nutzer ausgewählten Werbe-ID-Einstellungen berücksichtigen.
+- Alle Werbung muss wahrheitsgemäß, nicht irreführend und in Übereinstimmung mit allen geltenden Gesetzen, Vorschriften und Richtlinien sein.
 
 **10.10.2**
 
@@ -302,11 +311,9 @@ In Ihrer Datenschutzerklärung oder Ihren Nutzungsbedingungen muss für die Nutz
 
 Wenn Ihr Produkt für Kinder unter 13 Jahren ausgelegt ist (gemäß Definition in [COPPA (Children’s Online Privacy Protection Act)](http://go.microsoft.com/fwlink/p/?LinkID=623015), dem Gesetz zum Schutz der Privatsphäre von Kindern im Internet), müssen Sie Microsoft darüber im Partner Center informieren und sicherstellen, dass alle in Ihrem Produkt angezeigten Werbeinhalte für Kinder unter 13 Jahren geeignet sind.
 
-
 ### <a name="1011-mobile-voice-plans"></a>10.11 Mobilfunk-Tarifpläne (Voice)
 
 Über Ihr Produkt dürfen keine Mobilfunk-Tarifpläne (Voice) verkauft, verlinkt oder anderweitig beworben werden.
-
 
 ### <a name="1012-edge-extensions"></a>10.12 Edge-Erweiterungen
 
@@ -317,14 +324,13 @@ Für Edge-Erweiterungen gelten die folgenden zusätzlichen Anforderungen:
 - Wenn die Erweiterung Webaktivitäten erfasst, so ist dies nur zulässig, wenn dies für eine weithin offengelegte, für den Benutzer sichtbare Funktion erforderlich ist und nur in diesem Rahmen erfolgt.
 - Die Erweiterung darf die Browserfunktionalität oder -einstellungen nicht programmgesteuert ändern oder scheinbar ändern. Dies gilt u. a. für die Suchanbieter und Vorschläge der Adressleiste, die Startseite oder Homepage, die neue Registerkartenseite und das Hinzufügen oder Entfernen von Favoriten und Leselistenelementen.
 
-
 ### <a name="1013-gaming-and-xbox"></a>10.13 Spiele und Xbox
 
 Für Produkte für Xbox One bzw. Produkte, die primär Spielzwecken dienen, gelten die folgenden Anforderungen:
 
 **10.13.1**
 
-Spielprodukte für Xbox One müssen Xbox Live-Dienste entweder über das [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722)-Programm oder das [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742)-Programm verwenden.
+Spielprodukte, einschließlich Produkten, die hauptsächlich Remote-Spiel-/Steuerungsfunktionen von Spielen anbieten, die auf anderen Geräten oder Plattformen ausgeführt werden, die für Xbox One entwickelt wurden, müssen Xbox Live-Dienste entweder über das Programm [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) oder [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) nutzen.
 
 **10.13.2**
 
@@ -379,11 +385,9 @@ Die folgenden Datenschutzanforderungen gelten für Xbox Live-Benutzerdaten:
 - Dienste und Benutzerdaten müssen in Spielen angemessen verwendet werden. Zu diesen Daten gehören (ohne Einschränkung) Nutzungsdaten, Bezeichner für Konten und andere personenbezogene Daten, Statistiken, Punktestände, Bewertungen, Bestenlisten, Verbindungen mit anderen Benutzern und alle anderen Daten im Zusammenhang mit sozialen Aktivitäten des Benutzers.
 - Xbox Live-Soziogrammdaten (z. B. Freundeslisten) dürfen, mit Ausnahme von Kontobezeichnern von Benutzern, die ihr Xbox Live-Konto mit Ihrem Spiel verknüpft haben, nicht gespeichert werden.
 - Löschen Sie alle Kontobezeichner, wenn Sie Ihr Spiel aus unserem Dienst entfernen oder ein Benutzer die Verknüpfung des eigenen Xbox Live-Kontos mit Ihrem Spiel aufhebt. Dienste oder Benutzerdaten (auch in anonymer, zusammengefasster oder abgeleiteter Form) dürfen nicht für Anzeigennetzwerke, Datenmakler oder andere Werbe- bzw. Monetarisierungsdienste freigegeben werden.
-- Wenn Microsoft Anfragen von Endbenutzern zum Löschen ihrer personenbezogenen Daten erhält, teilen wir Ihnen diese Anfragen mit, indem wir eine Liste der Benutzer-IDs bereitstellen. Sie müssen diese Liste mindestens alle 30 Tage überprüfen, um sicherzustellen, dass Sie alle Löschanfragen erhalten haben. Sie dürfen die Informationen auf der Liste nur verwenden, um den Löschanfragen der Endbenutzer nachzukommen. Einzelheiten zu diesem Vorgang finden Sie unter [Tools – Liste gelöschter Konten](https://aka.ms/xbox-deleted). 
+- Wenn Microsoft Anfragen von Endbenutzern zum Löschen ihrer personenbezogenen Daten erhält, teilen wir Ihnen diese Anfragen mit, indem wir eine Liste der Benutzer-IDs bereitstellen. Sie müssen diese Liste mindestens alle 30 Tage überprüfen, um sicherzustellen, dass Sie alle Löschanfragen erhalten haben. Sie dürfen die Informationen auf der Liste nur verwenden, um den Löschanfragen der Endbenutzer nachzukommen. Einzelheiten zu diesem Vorgang finden Sie unter [Tools – Liste gelöschter Konten](https://aka.ms/xbox-deleted).
 
 ### <a name="1014-account-type"></a>10.14 Kontotyp
-
-Ab dem 17. April 2018 müssen neu veröffentlichte Produkte, die eine Authentifizierung für den Zugriff auf die primären Funktionen erfordern, einen sicheren dedizierten Drittauthentifizierungsanbieter verwenden oder über einen Unternehmenskontotyp veröffentlicht werden. Beachten Sie, dass alle Apps gemäß Richtlinie 10.8.3 auch dann ein Unternehmenskonto verwenden müssen, wenn für sie Finanzinformationen erforderlich sind.
 
 Wenn ein vernünftiger Nutzer den Namen Ihres Herausgeberkontos als den einer Unternehmenseinheit interpretieren würde, müssen Sie die Veröffentlichung von einem Unternehmenskontotyp aus vornehmen, nicht von einem Einzelkonto.
 
@@ -400,7 +404,6 @@ Metadaten und andere Begleitinhalte Ihres Produkts dürfen nur Inhalte enthalten
 ### <a name="112-content-including-names-logos-original-and-third-party"></a>11.2 Inhalte einschließlich Namen und Logos (original und von Drittanbietern)
 
 Alle Inhalte in Ihrem Produkt und die zugehörigen Metadaten müssen entweder vom App-Anbieter erstellt worden sein, ordnungsgemäß von einem Drittanbieter als Rechteinhaber lizenziert sein, im durch den Rechteinhaber als zulässig vorgegebenen Rahmen verwendet werden oder auf andere Weise im gesetzlich vorgeschriebenen Rahmen verwendet werden.
-
 
 ### <a name="113-risk-of-harm"></a>11.3 Schadensrisiko
 
@@ -443,7 +446,6 @@ Ihr Produkt darf keine Inhalte oder Funktionen enthalten, die im realen Leben il
 - Ihr Produkt darf keine übermäßigen oder unnötigen Obszönitäten enthalten.
 - Ihr Produkt darf keine Inhalte enthalten oder anzeigen, die nach allgemeinen Maßstäben als anstößig gelten.
 
-
 ### <a name="1110-countryregion-specific-requirements"></a>11.10 Spezifische Anforderungen für Länder/Regionen
 
 Inhalte, die in einem der Zielländer/einer der Zielregionen Ihres Produkts als beleidigend gelten, sind nicht zulässig. Inhalte können aufgrund lokaler Gesetze oder kultureller Normen in bestimmten Ländern/Regionen als beleidigend angesehen werden. Beispiele für potenziell beleidigende Inhalte in bestimmten Ländern/Regionen:
@@ -454,7 +456,6 @@ China
 - Verweise auf umstrittene Gebiete oder Regionen
 - Bereitstellung oder Zugriff auf Inhalte oder Dienste, die unter dem jeweils anwendbaren Recht rechtswidrig sind.
 
-
 ### <a name="1111-age-ratings"></a>11.11 Altersfreigaben
 
 Sie müssen beim Einreichen im Partner Center eine Altersfreigabe für Ihr Produkt anfordern. Sie sind dafür verantwortlich, den Fragebogen für die Altersfreigabe ordnungsgemäß auszufüllen, um die passende Altersfreigabe zu erhalten.
@@ -463,6 +464,12 @@ Sie müssen beim Einreichen im Partner Center eine Altersfreigabe für Ihr Produ
 
 Wenn Ihr Produkt Inhalte (z. B. von Benutzern erstellte Inhalte, Verkaufsinhalte oder andere webbasierte Inhalte) bereitstellt, die möglicherweise für eine höhere Altersfreigabe als die zugewiesene geeignet ist, müssen Sie Nutzern die Möglichkeit bieten, durch Verwendung eines Inhaltsfilters oder Anmeldung mit einem bereits vorhandenen Konto dem Empfang solcher Inhalte zuzustimmen.
 
+### <a name="1112-user-generated-content"></a>11.12 Benutzergenerierte Inhalte
+
+Benutzergenerierte Inhalte sind Inhalte, die Benutzer zu einer App oder einem Produkt beitragen und der von einigen oder allen Benutzern angezeigt oder aufgerufen werden kann. Wenn dein Produkt benutzergenerierte Inhalte enthält, musst du
+
+- Produktbedingungen und/oder Inhaltsrichtlinien veröffentlichen und für Benutzer verfügbar machen
+- Benutzern eine Möglichkeit bieten, ungeeignete Inhalte innerhalb des Produkts zu melden.
 
 ---
 <sup>1</sup>„Store“ oder „Microsoft Store“ bezeichnet unabhängig vom Namen eine im Besitz von Microsoft befindliche und von Microsoft betriebene Plattform, über die Apps für Kunden angeboten und von diesen erworben werden können. Sofern nicht anders angegeben, umfasst der Begriff Store den Microsoft Store, den Windows Store, den Xbox-Store, den Microsoft Store für Unternehmen und den Microsoft Store für Bildungseinrichtungen.
