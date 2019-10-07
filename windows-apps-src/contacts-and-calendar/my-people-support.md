@@ -5,14 +5,17 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f54cb261f6ef94545d656d5bd4f624622cc6dfff
+ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820224"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71982230"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Support für Meine Kontakte zu einer Anwendung hinzufügen
+
+> [!Note]
+> Ab dem Windows 10-Update von Mai 2019 (Version 1903) werden in neuen Windows 10-Installationen standardmäßig "Benutzer in der Taskleiste" nicht mehr angezeigt. Kunden können die Funktion aktivieren, indem Sie mit der rechten Maustaste auf die Taskleiste klicken und "Benutzer auf der Taskleiste anzeigen" drücken. Entwickler werden davon abgeraten, meine Personen Unterstützung zu Ihren Anwendungen hinzuzufügen. Weitere Informationen zum Optimieren von Apps für Windows 10 finden Sie im [Windows Developer-Blog](https://blogs.windows.com/windowsdeveloper/) .
 
 Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakten an die Taskleiste, um neue Kontaktobjekt zu erstellen, die auf unterschiedliche Weise miteinander interagieren können. In diesem Artikel wird gezeigt, wie Sie Support für dieses Feature hinzufügen können, damit Benutzer Kontakte direkt in der App anheften können. Wenn Kontakte angeheftet sind, werden neue Arten an Benutzerinteraktionen verfügbar, z. B. [Meine Kontakte freigeben](my-people-sharing.md) und [Benachrichtigungen ](my-people-notifications.md).
 
@@ -27,8 +30,8 @@ Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakte
 
 Es gibt drei Dinge, die durchgeführt werden müssen, damit die Anwendung das Feature„ Meine Kontakte” verwenden kann:
 
-1. [Unterstützung für die "sharetarget" aktivierungskontrakt im Anwendungsmanifest deklariert werden.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Kommentieren Sie die Kontakte, die die Benutzer freigeben können, um Ihre App ein.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Deklarieren Sie die Unterstützung für den sharetarget-Aktivierungs Vertrag in Ihrem Anwendungs Manifest.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Kommentieren Sie die Kontakte, die die Benutzer für die Verwendung Ihrer APP freigeben können.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  Unterstützen Sie mehrere Instanzen Ihrer Anwendung, die zur gleichen Zeit ausgeführt werden. Benutzer müssen mit einer vollständigen Version Ihrer Anwendung interagieren, während Sie diese im Kontaktbereich verwenden.  Sie können diese sogar in mehreren Kontaktlisten gleichzeitig verwenden.  Um dies zu unterstützen, muss Ihre Anwendung mehrere Ansichten gleichzeitig ausführen können. Weitere Informationen hierzu finden Sie im Artikel ["Anzeigen mehrerer Ansichten für eine App"](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 Wenn Sie dies getan haben, wird die Anwendung in der Kontaktliste für Kontakte mit Kommentaren angezeigt.
@@ -184,7 +187,7 @@ Wenn Sie möchten, dass auf der Taskleiste angeheftete Kontakte ein Signal erhal
 ![Benachrichtigung für „Meine Kontakte”](images/my-people-badging.png)
 
 Um einen Kontakt zu benachrichtigen, muss der Knoten der obersten Ebene Popups hint-people-Parameter enthalten, um den Absender-Kontakt oder andere Kontakte anzugeben. Dieser Parameter kann folgende Werte haben:
-+ **E-Mail-Adresse** 
++ **E-Mail Adresse** 
     + Beispiel: [mailto:johndoe@mydomain.com](mailto:johndoe@mydomain.com)
 + **Telefonnummer** 
     + Beispiel: Tel:888-888-8888
@@ -250,9 +253,9 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 ## <a name="see-also"></a>Siehe auch
 + [Freigeben von „Meine Kontakte”](my-people-sharing.md)
-+ [Meine Benachrichtigungen Personen](my-people-notifications.md)
-+ [Channel 9-Video zum Hinzufügen, dass meine Benutzer zu einer Anwendung zu unterstützen.](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [Meine Benutzer-integrationsbeispiel](https://aka.ms/mypeoplebuild2017)
-+ [Wenden Sie sich an kartenbeispiels](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [Dokumentation zur PinnedContactManager-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [Meine Personen benachrichtigt](my-people-notifications.md)
++ [Channel 9-Video zum Hinzufügen von Support für meine Personen zu einer Anwendung](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [Beispiel für die Integration von meine Personen](https://aka.ms/mypeoplebuild2017)
++ [Beispiel für eine Kontaktkarte](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [Dokumentation der pinnedcontactmanager-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [Verbinden der App mit Aktionen auf einer Visitenkarte](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

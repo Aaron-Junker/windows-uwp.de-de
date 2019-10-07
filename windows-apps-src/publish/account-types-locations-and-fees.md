@@ -6,19 +6,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Entwicklerkonto, individuell, Unternehmen, geschäftlich
 ms.localizationpriority: medium
-ms.openlocfilehash: 92f657386c3a5d1ca6815b9b0a9e56b4d6f2578b
-ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
+ms.openlocfilehash: b8a02079e7589d7c92ececa03496600a82ef427e
+ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67495746"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71982240"
 ---
 # <a name="account-types-locations-and-fees"></a>Kontotypen, Standorte und Gebühren
 
-Die Windows-Programm in [Partner Center](https://partner.microsoft.com/dashboard) bietet sowohl einzelne und Konten in vielen Unternehmen [Ländern und Regionen](#developer-account-and-app-submission-markets). Entweder der Typ des Kontos ermöglicht den Zugriff zum Veröffentlichen von apps in den Store und weitere Microsoft-Programmen teilnehmen.
+Das Windows-Programm im [Partner Center](https://partner.microsoft.com/dashboard) bietet sowohl einzelne als auch Unternehmenskonten in vielen [Ländern und Regionen](#developer-account-and-app-submission-markets). Beide Konto Typen haben Zugriff auf das Veröffentlichen von apps im Store und die Teilnahme an weiteren Microsoft-Programmen.
 
 > [!NOTE]
-> Wenn Sie Ihr Entwicklerkonto öffnen zu können, stellen Sie sicher, zur Anmeldung beim [Partner Center](https://partner.microsoft.com/dashboard) mit dem Microsoft-Konto, das Sie für Ihr Entwicklerkonto verwenden möchten. Sie haben die Möglichkeit, auch später noch [weitere Benutzer zum Konto hinzuzufügen](manage-account-users.md).
+> Wenn Sie Ihr Entwicklerkonto öffnen, stellen Sie sicher, dass Sie sich bei [Partner Center](https://partner.microsoft.com/dashboard) mit dem Microsoft-Konto anmelden, das Sie für Ihr Entwicklerkonto verwenden möchten. Sie haben die Möglichkeit, auch später noch [weitere Benutzer zum Konto hinzuzufügen](manage-account-users.md).
 
 Zu [Beginn des Registrierungsprozesses](https://go.microsoft.com/fwlink/p/?LinkId=615100) müssen Sie entscheiden, ob Sie ein individuelles Konto oder ein Unternehmenskonto erstellen möchten. Beide Arten von Konten ermöglichen die Übermittlung von Apps, Spielen, Add-Ins und Diensten.
 
@@ -33,30 +33,19 @@ Im Folgenden sind die grundlegenden Unterschiede zwischen den beiden Kontotypen 
 |--------------------|-----------------|
 | <ul><li>Kostet ca. 19 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Kürzerer Kontoüberprüfungsprozess</li></ul> | <ul><li>Kostet ca. 99 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Erfordert eine bessere Überprüfung des Kontos</li><li>Erfordert, dass Ihr Unternehmen als solches im Land oder in der Region seiner Niederlassung anerkannt ist</li><li>Übermitteln von Apps mit eingeschränkter Funktionalität (wie in den [Microsoft Store-Richtlinien](store-policies.md#1014-account-type) beschrieben)</li></ul> |
 
-Unternehmenskonten sind etwas teurer. Das liegt hauptsächlich daran, dass wir durch einige zusätzliche Schritte sicherstellen, dass Sie von Ihrem Unternehmen autorisiert wurden und zum Einrichten des Kontos berechtigt sind. Pro dem [Store Richtlinien](store-policies.md#1014-account-type), apps für bestimmte Funktionen wie diejenigen, die finanzielle Zugriff auf Kontoinformationen oder, die Authentifizierung für die primäre Funktionalität zugreifen (ohne Verwendung einer sicheren, dedizierten von Drittanbietern erfordern Authentication-Anbieter), können nur von Unternehmenskonten veröffentlicht werden.
+Unternehmenskonten sind etwas teurer. Das liegt hauptsächlich daran, dass wir durch einige zusätzliche Schritte sicherstellen, dass Sie von Ihrem Unternehmen autorisiert wurden und zum Einrichten des Kontos berechtigt sind. Gemäß den [Store-Richtlinien](store-policies.md#1014-account-type), Apps mit einer bestimmten Funktionalität, z. b. solche, die auf finanzielle Kontoinformationen zugreifen oder eine Authentifizierung für den Zugriff auf die primäre Funktionalität benötigen (ohne einen sicheren dedizierten Drittanbieter-Authentifizierungs Anbieter) kann nur von Unternehmenskonten veröffentlicht werden.
 
 ## <a name="account-verification"></a>Kontobenachrichtigung
 
-Nach Abschluss der Registrierung durchläuft Ihr Konto den Überprüfungsprozess. Bei individuellen Konten wird sichergestellt, dass der Anzeigename für den Herausgeber nicht bereits von einem anderen Unternehmen verwendet wird. Bei Unternehmenskonten bestätigen unsere Partner Dun & Bradstreet, dass Sie zum Erstellen eines Kontos für Ihr Unternehmen autorisiert sind. Dieser Vorgang kann zwischen wenigen Tagen und mehreren Wochen dauern. Häufig erhält Ihr Unternehmen im Rahmen dieses Prozesses einen Telefonanruf. Stellen Sie daher sicher, dass alle Ihre Kontaktinformationen in den Registrierungsformularen aktuell sind. Apps über ein geschäftliches Konto nicht gesendet werden, bis es überprüft wurde, während Sie warten, Sie können jedoch [einen app-Namen reservieren](create-your-app-by-reserving-a-name.md) weiterhin erstellen und Testen von apps aus, und arbeiten an Ihrer Einreichungen wird vorbereitet.
+Nach Abschluss der Registrierung durchläuft Ihr Konto den Überprüfungsprozess. Bei individuellen Konten wird sichergestellt, dass der Anzeigename für den Herausgeber nicht bereits von einem anderen Unternehmen verwendet wird. Bei Unternehmenskonten bestätigen unsere Partner Dun & Bradstreet, dass Sie zum Erstellen eines Kontos für Ihr Unternehmen autorisiert sind. Dieser Vorgang kann zwischen wenigen Tagen und mehreren Wochen dauern. Häufig erhält Ihr Unternehmen im Rahmen dieses Prozesses einen Telefonanruf. Stellen Sie daher sicher, dass alle Ihre Kontaktinformationen in den Registrierungsformularen aktuell sind. Sie können keine apps von einem Unternehmens Konto übermitteln, bis die Überprüfung erfolgt ist, aber während Sie warten, können Sie [einen APP-Namen reservieren](create-your-app-by-reserving-a-name.md) , um apps zu entwickeln und zu testen. Außerdem können Sie Ihre Einreichungen vorbereiten.
 
 Sie können den Überprüfungsstatus auf der Seite **Kontoeinstellungen** überprüfen. 
-
 
 ## <a name="developer-account-and-app-submission-markets"></a>Märkte für das Entwicklerkonto und die App-Einreichung
 
 Sie können sich für ein Entwicklerkonto registrieren und Apps einreichen, wenn Sie in einem bzw. einer der im Folgenden aufgeführten Länder oder Regionen leben oder geschäftlich tätig sind.
 
 In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen Kosten für die Registrierung Ihres Entwicklerkontos. Hierbei handelt es sich um eine einmalige Gebühr, es ist keine Verlängerung erforderlich. Beachten Sie, dass die Preise Änderungen unterliegen.
-
-> [!NOTE]
-> Bei der Anmeldung werden sämtliche anwendbare Steuern und Gebühren zur Registrierungsgebühr addiert. Darüber hinaus erhebt Ihre Bank bei Auszahlungen unter Umständen Gebühren für den Zahlungseingang.
-
-In der Spalte **Auszahlung** wird angegeben, auf welchem Weg Sie das mit Ihren Apps verdiente [Geld von uns erhalten](getting-paid-apps.md). Sie können ein [Auszahlungskonto](setting-up-your-payout-account-and-tax-forms.md) auswählen, auf das wir dieses Geld überweisen.
-
-> [!NOTE]
-> Einige Märkte unterstützen kostenpflichtige Apps (**Auszahlung**) nicht. In diesen Märkten können nur kostenlose Apps eingereicht werden.
-
-In der Spalte **PayPal** wird angegeben, ob PayPal als Zahlungsmethode für Ihr [Auszahlungskonto](setting-up-your-payout-account-and-tax-forms.md) und (und, sofern nichts anderes angegeben, für Ihre Entwicklerkonto-Registrierungsgebühr) unterstützt wird.
 
 | Land/Region                    | Individuelle Registrierungskosten | Kosten für die Unternehmensregistrierung |
 |-----------------------------------|---------------------|------------------|
@@ -161,8 +150,8 @@ In der Spalte **PayPal** wird angegeben, ob PayPal als Zahlungsmethode für Ihr 
 | Liechtenstein                     | 17 CHF              | 93 CHF           |  
 | Litauen                         | 14 EUR              | 75 EUR           |  
 | Luxemburg                        | 14 EUR              | 75 EUR           |  
-| Macau (SAR)                         | 19 USD              | 99 USD           |  
-| Nordmazedonien                 | 19 USD              | 99 USD           |  
+| Macau SAR                         | 19 USD              | 99 USD           |  
+| Mazedonien (ehem. jugoslawische Republik Mazedonien)                 | 19 USD              | 99 USD           |  
 | Madagaskar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaysia                          | 62 MYR              | 300 MYR          |  
