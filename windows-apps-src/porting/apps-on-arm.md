@@ -5,22 +5,22 @@ ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, always connected, ARM, ARM64, x86-emulation
 ms.localizationpriority: medium
-ms.openlocfilehash: 740956480323d7c201e81071a444026b8d155462
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 7450b469f77fec4288ad6dff01ee7673affc8dd9
+ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682734"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72237534"
 ---
 # <a name="windows-10-on-arm"></a>Windows 10 auf ARM
-Ursprünglich konnte Windows 10 (im Unterschied zu Windows 10 Mobile) nur auf PCs ausgeführt werden, die über x86- und x64-Prozessoren verfügen. Windows 10 Desktop (Pro und S-Editionen) kann jetzt auf Computern ausgeführt werden, die über ARM64 Prozessoren mit dem Fall Creators Update verfügen. Dank der stromsparenden Architektur der ARM-CPU weisen diese PCs eine Akkulaufzeit über einen ganzen Tag auf und erhalten Unterstützung für mobile Datennetzwerke. Diese PCs bieten eine hervorragende Anwendungskompatibilität und ermöglichen Ihnen, Ihre bestehenden x86 win32-Anwendungen unverändert auszuführen. Beispiel: Adobe Reader. Für weitere Informationen oder Demos sehen Sie sich das [Channel 9-Video für den Always Connected-PC](https://channel9.msdn.com/Events/Build/2017/P4171) an.
+Ursprünglich konnte Windows 10 (im Unterschied zu Windows 10 Mobile) nur auf PCs ausgeführt werden, die über x86- und x64-Prozessoren verfügen. Jetzt kann Windows 10 Desktop auf Computern ausgeführt werden, die von ARM64-Prozessoren mit dem Fall Creators Update oder neuer unter betrieben werden. Dank der stromsparenden Architektur der ARM-CPU weisen diese PCs eine Akkulaufzeit über einen ganzen Tag auf und erhalten Unterstützung für mobile Datennetzwerke. Diese PCs bieten eine hervorragende Anwendungskompatibilität und ermöglichen Ihnen, Ihre bestehenden x86 win32-Anwendungen unverändert auszuführen. Weitere Informationen oder eine Demo finden Sie im [Channel 9-Video für den stets verbundenen PC](https://channel9.msdn.com/Events/Build/2017/P4171).
 
 Wir verwenden den Begriff *ARM* hier als eine Kurzform für PCs, auf denen die Desktopversion von Windows 10 auf ARM64-Prozessoren (oft auch als *AArch64* bezeichnet) ausgeführt wird.  Wir verwenden den Begriff *ARM32"* hier als eine Kurzform für die 32-Bit-ARM-Architektur (in anderen Dokumentationen häufig *ARM* genannt).
 
 ## <a name="apps-and-experiences-on-arm"></a>Apps und Funktionen auf ARM
 
 ### <a name="built-in-windows-10-experiences-apps-and-drivers"></a>Integrierte Windows 10-Funktionen, Apps und Treiber
-Die integrierten Windows 10-Funktionen wie z. B. Microsoft Edge, Cortana, Startmenü und Explorer sind alle nativ und werden als ARM64 (oder ARM32) ausgeführt. Dies beinhaltet auch alle Gerätetreiber wie z. B. Grafik, Netzwerk oder die Festplatte. Dies gewährleistet, dass Sie die beste Benutzererfahrung und Akkulaufzeit Ihres Geräts mit der vollen nativen Geschwindigkeit des Qualcomm Snapdragon-Prozessors erhalten.
+Die integrierten Windows 10-Umgebungen, wie z. b. Edge, Cortana, Startmenü und Explorer, sind System eigen und werden als ARM64 ausgeführt. Dies umfasst auch alle Gerätetreiber, z. b. Grafiken, Netzwerke oder die Festplatte. Dadurch wird sichergestellt, dass das Gerät, das mit der vollständigen nativen Geschwindigkeit des Qualcomm-Snapdragon-Prozessors ausgeführt wird, die beste Benutzer Leistung und Akku Lebensdauer erreicht.
 
 ### <a name="universal-windows-platform-uwp-apps"></a>Apps für die Universelle Windows-Plattform (UWP)
 Windows 10 auf Arm führt alle x86-, ARM32-und ARM64 [UWP-apps](../get-started/universal-application-platform-guide.md) aus dem Microsoft Store aus. ARM32-und ARM64-apps werden nativ ohne jegliche Emulation ausgeführt, während x86-apps unter Emulation ausgeführt werden. Wenn Sie eine UWP-Entwickler sind, stellen Sie bitte sicher, dass Sie ein ARM-Paket für Ihre App übermitteln, da dies die beste Benutzererfahrung für das Gerät bietet. Weitere Informationen finden Sie unter [App-Paket-Architekturen](/windows/msix/package/device-architecture).
@@ -33,9 +33,9 @@ Windows 10 auf Arm führt alle x86-, ARM32-und ARM64 [UWP-apps](../get-started/u
 > Wenn ein Benutzer eine UWP-App aus dem Microsoft Store herunterlädt, wird die ARM32-Version auf einem ARM64-Gerät installiert, sofern nicht nur eine x86-Version verfügbar ist. Weitere Informationen zu Architekturen finden Sie unter [App-Paket-Architekturen](/windows/msix/package/device-architecture).
 
 ### <a name="win32-apps"></a>Win32-Apps
-Zusätzlich zu den UWP-apps kann Windows 10 auf Arm auch Ihre x86-Win32-Apps (z. b. Adobe Reader) unverändert ausführen und so eine gute Leistung und eine nahtlose Benutzer Darstellung wie alle PCs ausführen. Diese x86-Win32-apps müssen für Arm nicht neu kompiliert werden, und Sie müssen nicht einmal erkennen, dass Sie auf ARM-Prozessor ausgeführt werden. Beachten Sie, dass 64-Bit-x64-Win32-Anwendungen nicht unterstützt werden, aber die überwiegende Mehrheit der Apps alle über x86-Versionen ihrer Apps verfügen. Wählen Sie aus der Benutzerperspektive einfach das 32-Bit-x86-Installationsprogramm für den PC mit Windows auf ARM aus.
+Zusätzlich zu UWP-apps kann Windows 10 auf Arm auch Ihre x86-Win32-apps unverändert ausführen, mit einer guten Leistung und einer nahtlosen Benutzer Darstellung, wie bei jedem beliebigen PC. Diese x86-Win32-apps müssen für Arm nicht neu kompiliert werden und bemerken nicht einmal, dass Sie auf einem Arm-Prozessor ausgeführt werden. Beachten Sie, dass 64-Bit-x64-Win32-apps nicht unterstützt werden, aber für die meisten apps ist x86-Versionen verfügbar.  Wenn Sie die Auswahl der APP-Architektur gewählt haben, wählen Sie einfach die Version 32-Bit x86 aus, um die APP auf einem Windows 10 auf Arm-PC auszuführen.
 
-## <a name="in-this-section"></a>In diesem Abschnitt
+## <a name="in-this-section"></a>Inhalt dieses Abschnitts
 |Thema | Beschreibung |
 |-----|-----|
 |[Funktionsweise der x86-Emulation auf ARM](apps-on-arm-x86-emulation.md)|Eine Übersicht mit detaillierten Informationen dazu, wie x86-Apps auf ARM emuliert werden.|

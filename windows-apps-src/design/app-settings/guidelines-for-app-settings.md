@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 72da3d17f3584d0c295926880b949591b83b47a7
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
+ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076397"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163704"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
@@ -82,7 +82,7 @@ Mobilgeräte:
 ## <a name="color-mode-settings"></a>Einstellungen für den Farbmodus
 
 
-Wenn Ihre App Benutzern die Auswahl des Farbmodus ermöglicht, machen Sie diese Optionen mit [Optionsfeldern](../controls-and-patterns/radio-button.md) oder einem [Kombinationsfeld](../controls-and-patterns/lists.md#drop-down-lists) mit dem Header „Wählen Sie einen App-Modus“ verfügbar. Die Optionen sollten lauten:
+Wenn Ihre App Benutzern die Auswahl des Farbmodus ermöglicht, machen Sie diese Optionen mit [Optionsfeldern](../controls-and-patterns/radio-button.md) oder einem [Kombinationsfeld](../controls-and-patterns/combo-box.md) mit dem Header „Wählen Sie einen App-Modus“ verfügbar. Die Optionen sollten lauten:
 - Hell
 - Dunkel
 - Windows-Standard

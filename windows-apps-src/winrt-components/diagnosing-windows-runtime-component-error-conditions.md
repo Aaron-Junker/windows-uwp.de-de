@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 330cbaab4a1c8313fb0b298dea55176eb66d4803
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 55bf6360f09ba4ab6c7878543ecfa0c80c4558e3
+ms.sourcegitcommit: 74c674c70b86bafeac7c8c749b1662fae838c428
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340523"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252312"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Diagnostizieren von Fehlerbedingungen für Komponenten für Windows-Runtime
 
@@ -69,7 +69,7 @@ In der UWP können überladene Methoden nur dann über dieselbe Anzahl von Param
 
 In der universellen Windows-Plattform müssen sich alle öffentlichen Typen in einer Windows-Metadatendatei (WINMD) in einem Namespace mit demselben Namen wie die WINMD-Datei oder in Subnamespaces des Dateinamens befinden. Wenn Ihr Visual Studio-Projekt beispielsweise A.B heißt (d. h. die Komponente für Windows-Runtime ist A.B.WINMD), kann es die öffentlichen Klassen A.B.Class1 und A.B.C.Class2 enthalten, aber nicht A.Class3 (WME0006) oder D.Class4 (WME1044).
 
-> **Beachten Sie**   Diese Einschränkungen gelten nur für öffentliche Typen, nicht für private Typen, die in der Implementierung verwendet werden.
+> **Hinweis**  Diese Einschränkungen gelten nur für öffentliche Typen, nicht jedoch für bei der Implementierung verwendete private Typen.
 
 Für A.Class3 können Sie Class3 in einen anderen Namespace verschieben oder den Namen der Komponente für Windows-Runtime in A.WINMD ändern. Obwohl WME0006 eine Warnung ist, sollten Sie sie als Fehler behandeln. Im vorherigen Beispiel kann A.Class3 nicht vom Code, der A.B.WINMD aufruft, gefunden werden.
 
@@ -81,7 +81,7 @@ Die Komponente muss mindestens einen **public sealed**-Typ (**Public NotInherita
 
 Ein Typ in einer Komponente für Windows-Runtime darf nicht wie ein Namespace benannt werden (WME1068).
 
-> **Vorsicht**  Wenn Sie "winmdexp. exe" direkt aufrufen und die/out-Option nicht verwenden, um einen Namen für die Windows-Runtime Komponente anzugeben, versucht winmdexp. exe, einen Namen zu generieren, der alle Namespaces in der Komponente enthält. Die Umbenennung von Namespaces kann zur Änderung des Komponentennamens führen.
+> **Achtung**  Wenn Sie Winmdexp.exe direkt aufrufen und für die Benennung der Komponente für Windows-Runtime nicht die Option „/out” verwenden, versucht Winmdexp.exe, einen Namen zu generieren, der alle Namespaces in der Komponente enthält. Die Umbenennung von Namespaces kann zur Änderung des Komponentennamens führen.
 
  
 
@@ -102,9 +102,9 @@ Viele dieser Zuordnungen sind Schnittstellen. Zum Beispiel wird [IList&lt;T&gt;]
 
 Im Allgemeinen sollte die Schnittstelle ausgewählt werden, die dem Typ am nächsten ist. Für Dictionary&lt;int, string&gt; ist beispielsweise IDictionary&lt;int, string&gt; am besten geeignet.
 
-> **Wichtig**  javascript verwendet die Schnittstelle, die zuerst in der Liste der Schnittstellen angezeigt wird, die ein verwalteter Typ implementiert. Wenn Sie beispielsweise „Dictionary&lt;int, string&gt;“ an JavaScript-Code zurückgeben, wird „IDictionary&lt;int, string&gt;“ angezeigt, unabhängig davon, welche Schnittstelle Sie als Rückgabetyp angeben. Das bedeutet, dass die erste Schnittstelle Member enthalten muss, die in den nächsten Schnittstellen erscheinen, damit diese Member für JavaScript sichtbar sind.
+> **Wichtig**  JavaScript verwendet die Schnittstelle, die zuerst in der Liste der Schnittstellen angezeigt wird, die ein verwalteter Typ implementiert. Wenn Sie beispielsweise „Dictionary&lt;int, string&gt;“ an JavaScript-Code zurückgeben, wird „IDictionary&lt;int, string&gt;“ angezeigt, unabhängig davon, welche Schnittstelle Sie als Rückgabetyp angeben. Das bedeutet, dass die erste Schnittstelle Member enthalten muss, die in den nächsten Schnittstellen erscheinen, damit diese Member für JavaScript sichtbar sind.
 
-> **Vorsicht**  Vermeiden Sie die Verwendung der nicht generischen Schnittstellen [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) und [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) , wenn die Komponente von JavaScript verwendet wird. Diese Schnittstellen werden [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) und [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator) zugeordnet. Sie unterstützen die Bindung für XAML-Steuerelemente und sind für JavaScript nicht sichtbar. JavaScript generiert die Laufzeitfehlermeldung „Die Funktion '%s' kann aufgrund einer ungültigen Signatur nicht aufgerufen werden.”
+> **Achtung**  Vermeiden Sie die nicht generischen Schnittstellen [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) und [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable), wenn die Komponente von JavaScript verwendet wird. Diese Schnittstellen werden [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) und [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator) zugeordnet. Sie unterstützen die Bindung für XAML-Steuerelemente und sind für JavaScript nicht sichtbar. JavaScript generiert die Laufzeitfehlermeldung „Die Funktion '%s' kann aufgrund einer ungültigen Signatur nicht aufgerufen werden.”
 
  
 
@@ -131,7 +131,7 @@ Im Allgemeinen sollte die Schnittstelle ausgewählt werden, die dem Typ am näch
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>Die Methode "{0}" weist in der Signatur einen Parameter vom Typ "{1}" auf. Obwohl es sich bei diesem generischen Typ nicht um einen gültigen Windows-Runtime-Typ handelt, werden von diesem Typ oder von dessen generischen Parametern Schnittstellen implementiert, die gültige Windows-Runtime-Typen sind. [mailto:johndoe@mydomain.com]({2})</p>
-> **note @ no__t-1 @ no__t-2for {2} fügt winmdexp. exe eine Liste von Alternativen an, z. b. "ändern Sie den Typ ' System. Collections. Generic. List @ no__t-4T @ no__t-5 ' in der Methoden Signatur stattdessen in einen der folgenden Typen: ' System. Collections. Generic. IList @ no__t-0t @ no__t-1, System. Collections. Generic. Iread onlylist @ no__t-2T @ no__t-3, System. Collections. Generic. IEnumerable @ no__t-4T @ no__t-5 '. "
+> **note @ no__t-1 für {2} fügt "winmdexp. exe" eine Liste von Alternativen an, z. b. "ändern Sie den Typ" System. Collections. Generic. List @ no__t-3T @ no__t-4 "in der Methoden Signatur stattdessen in einen der folgenden Typen: ' System. Collections. Generic. IList @ no__t-0t @ no__t-1, System. Collections. Generic. Iread onlylist @ no__t-2T @ no__t-3, System. Collections. Generic. IEnumerable @ no__t-4T @ no__t-5 '. "
 </td>
 </tr>
 <tr class="even">
@@ -210,7 +210,7 @@ In der UWP werden Rückgabewerte als Ausgabeparameter betrachtet, und die Namen 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **Hinweis**  Wenn Sie den Namen des Rückgabewerts ändern und der neue Name mit dem Namen eines anderen Parameters kollidiert, erhalten Sie die Fehlermeldung Meldung wme1091.
+> **Hinweis**  Wenn Sie den Namen des Rückgabewerts ändern und der neue Namen mit dem Namen eines anderen Parameters in Konflikt steht, erhalten Sie die Fehlermeldung WME1091.
 
 JavaScript-Code kann auf die Ausgabeparameter einer Methode, einschließlich des Rückgabewerts, über den Namen zugreifen. Ein Beispiel finden Sie unter [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute).
 
@@ -219,7 +219,7 @@ JavaScript-Code kann auf die Ausgabeparameter einer Methode, einschließlich des
 | WME1091 | Die Methode "\{0}" weist den Rückgabewert "\{1}" auf, der mit einem Parameternamen identisch ist. Methodenparameter und Rückgabewerte müssen für Windows-Runtime eindeutige Namen aufweisen. |
 | WME1092 | Die Methode "\{0}" weist einen Parameter mit dem Namen "\{1}" auf, der mit dem Standardnamen des Rückgabewerts identisch ist. Verwenden Sie ggf. einen anderen Namen für den Parameter, oder verwenden Sie das System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute, um den Namen des Rückgabewerts explizit anzugeben. |
 
-**Hinweis**  Der Standardname lautet "returnValue" für Eigenschaftenaccessoren und "Wert" für alle anderen Methoden.
+**Hinweis**  Der Standardname lautet „returnValue" für Eigenschaftenaccessoren und „Value" für alle anderen Methoden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 

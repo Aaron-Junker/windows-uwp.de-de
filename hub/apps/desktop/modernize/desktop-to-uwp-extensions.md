@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 87483c5d34cfb2b0bb266fb3d903e15d1b492187
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: 316682ba136b5b3249d26abd0a5c5a877abbcf12
+ms.sourcegitcommit: 76357092f90b70bdb21ee43a5a416fe1fbfd9b89
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959055"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72257937"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Integrieren Ihrer APP für gepackte Desktops in Windows 10 und UWP
 
@@ -110,7 +110,7 @@ Dazu müssen Sie den [programmgesteuerten Bezeichner (Programm-ID)](https://docs
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-<FileTypeAssociation Name="[Name]">
+    <FileTypeAssociation Name="[Name]">
          <MigrationProgIds>
             <MigrationProgId>"[ProgID]"</MigrationProgId>
         </MigrationProgIds>
@@ -287,8 +287,8 @@ Sie können sicherstellen, dass die Benutzer ihre neue Paket Anwendung standardm
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-* http:\//Schemas.Microsoft.com/AppX/Manifest/UAP/windows10
-* http:\//Schemas.Microsoft.com/AppX/Manifest/UAP/windows10/3 "
+* http: \//Schemas. Microsoft. com/AppX/Manifest/UAP/Windows 10
+* http: \//Schemas. Microsoft. com/AppX/Manifest/UAP/Windows 10/3 "
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -372,7 +372,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 
 |Name |Beschreibung |
 |-------|-------------|
-|Kategorie |Immer``windows.firewallRules``|
+|Kategorie |Immer ``windows.firewallRules``|
 |Ausführbare Datei |Der Name der ausführbaren Datei, die Sie der Liste der Firewallausnahmen hinzufügen möchten. |
 |Richtung |Gibt an, ob die Regel eine ein- oder ausgehende Regel ist. |
 |IPProtocol |Das Kommunikationsprotokoll |
@@ -995,17 +995,16 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 ```XML
 <Package
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  IgnorableNamespaces="uap3">
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  IgnorableNamespaces="uap3, desktop">
   <Applications>
     <Application>
       <Extensions>
-         <uap3:Extension
-                Category="windows.appExecutionAlias"
-                Executable="exes\launcher.exe"
-                EntryPoint="Windows.FullTrustApplication">
-            <uap3:AppExecutionAlias>
-                <desktop:ExecutionAlias Alias="Contoso.exe" />
-            </uap3:AppExecutionAlias>
+        <uap3:Extension
+          Category="windows.protocol">
+          <uap3:Protocol
+            Name="myapp-cmd"
+            Parameters="/p &quot;%1&quot;" />
         </uap3:Extension>
       </Extensions>
     </Application>
@@ -1049,23 +1048,21 @@ Benutzer und andere Prozesse können einen Alias verwenden, um Ihre Anwendung zu
 ```XML
 <Package
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
-  IgnorableNamespaces="uap3, desktop">
+  IgnorableNamespaces="uap3">
   <Applications>
     <Application>
       <Extensions>
-        <uap3:Extension
-          Category="windows.protocol">
-          <uap3:Protocol
-            Name="myapp-cmd"
-            Parameters="/p &quot;%1&quot;" />
+         <uap3:Extension
+                Category="windows.appExecutionAlias"
+                Executable="exes\launcher.exe"
+                EntryPoint="Windows.FullTrustApplication">
+            <uap3:AppExecutionAlias>
+                <desktop:ExecutionAlias Alias="Contoso.exe" />
+            </uap3:AppExecutionAlias>
         </uap3:Extension>
       </Extensions>
     </Application>
   </Applications>
-</Package>
- 
-...
 </Package>
 ```
 

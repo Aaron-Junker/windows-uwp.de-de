@@ -1,21 +1,21 @@
 ---
-Description: Dieses Thema listet die Schriftarten, die für die UWP-apps, die in anderen Sprachen als USA lokalisiert sind verfügbar Englisch.
+Description: In diesem Thema werden die verfügbaren Schriftarten für UWP-apps aufgelistet, die in anderen Sprachen als in den USA Englisch.
 title: Internationale Schriftarten
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 06284481ccecbc3c9cd7d7a78d83ccd6e97a49a7
+ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601135"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72237526"
 ---
 # <a name="international-fonts"></a>Internationale Schriftarten
 
-Dieses Thema listet die Schriftarten, die für die UWP-apps, die in anderen Sprachen als USA lokalisiert sind verfügbar Englisch.
+In diesem Thema werden die verfügbaren Schriftarten für UWP-apps aufgelistet, die in anderen Sprachen als in den USA Englisch.
 
 In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag](https://go.microsoft.com/fwlink/p/?linkid=227302) der Sprache angegeben. Eine Liste mit speziell vom Microsoft Store unterstützten Sprachtags finden Sie unter [Unterstützte Sprachen](../../publish/supported-languages.md).
 
@@ -23,7 +23,7 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | --------- | ----------- | -------------------- |
 | Afrikaans | af-ZA | Segoe UI |
 | Albanisch | sq-AL | Segoe UI |
-| Amhari | am-ET | Ebrima |
+| Amharisch | am-ET | Ebrima |
 | Arabisch | ar-SA | Segoe UI |
 | Armenisch | hy-AM | Segoe UI |
 | Assamesisch | as-IN | Nirmala UI |
@@ -37,9 +37,9 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Katalanisch | ca-ES | Segoe UI |
 | Zentralkurdisch (Arabisch) | ku-ARAB-IQ | Segoe UI |
 | Cherokee (Cherokee) | chr-CHER-US | Gadugi |
-| Chinesisch (vereinfacht) | zh-CN | MS YaHei UI |
-| Chinesisch (traditionell, Hongkong SAR) | zh-HK | MS JhengHei UI |
-| Chinesisch (traditionell, Taiwan) | zh-TW | MS JhengHei UI |
+| Chinesisch (vereinfacht) | zh-CN | Microsoft YaHei UI |
+| Chinesisch (traditionell, Hongkong SAR) | zh-HK | Microsoft JhengHei UI |
+| Chinesisch (traditionell, Taiwan) | zh-TW | Microsoft JhengHei UI |
 | Kroatisch | hr-HR | Segoe UI |
 | Tschechisch | cs-CZ | Segoe UI |
 | Dänisch | da-DK | Segoe UI |
@@ -66,7 +66,7 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | isi Xhosa | xh-ZA | Segoe UI |
 | isi Zulu | zu-ZA | Segoe UI |
 | Italienisch | it-IT | Segoe UI |
-| Japanisch | ja-JP | Meiryo UI (siehe unten stehende Anmerkungen) |
+| Japanisch | ja-JP | Yu Gothic UI |
 | Kannada | kn-IN | Nirmala UI |
 | Kasachisch | kk-KZ | Segoe UI |
 | Khmer | km-KH | Leelawadee UI |
@@ -99,7 +99,7 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Quechua | quz-PE | Segoe UI |
 | Rumänisch | ro-RO | Segoe UI |
 | Russisch | ru-RU | Segoe UI |
-| Schottisches Gälisch | gd-GB | Segoe UI |
+| Schottisch-Gälisch | gd-GB | Segoe UI |
 | Serbisch (Kyrillisch, Bosnien und Herzegowina) | sr-Cyrl-BA | Segoe UI |
 | Serbisch (Kyrillisch, Serbien) | sr-Cyrl-CS | Segoe UI |
 | Serbisch (Lateinisch) | sr-Latn-CS | Segoe UI |
@@ -129,11 +129,7 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Wolof | wo-SN | Segoe UI |
 | Yoruba | yo-NG | Segoe UI |
 
-## <a name="japanese-fonts"></a>Japanische Schriften
-
-Die Schriftart Meiryo UI wird in Windows verwendet Windows enthält Yu Gothic und Yu Mincho, zwei Schriftfamilien zur Unterstützung der Anzeige und Bearbeitung japanischer Dokumente. Yu Gothic wird für App-UIs nicht empfohlen.
-
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [BCP-47-Sprachtag.](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Bcp-47-Sprachtag](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Unterstützte Sprachen](../../publish/supported-languages.md)

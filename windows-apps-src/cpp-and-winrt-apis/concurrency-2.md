@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: 1170b8e1291afd166f210feb291b644d1c7ed546
-ms.sourcegitcommit: e5a154c7b6c1b236943738febdb17a4815853de5
+ms.openlocfilehash: 9484b61aae91ae426efb1963cd37ebf276ef7c6c
+ms.sourcegitcommit: f8634aad3a3675c2f0eac62f56df3def4285a7b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164827"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720437"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Erweiterte Parallelität und Asynchronie mit C++/WinRT
 
@@ -787,6 +787,51 @@ case AsyncStatus::Started:
 - **AsyncStatus::Canceled** bedeutet, dass das asynchrone Objekt abgebrochen wurde. Da ein Abbruch in der Regel vom Aufrufer angefordert wird, wird dieser Status selten behandelt. In der Regel wird ein abgebrochenes asynchrones Objekt einfach verworfen.
 - **Asyncstatus:: Error** bedeutet, dass bei dem asynchronen Objekt ein Fehler aufgetreten ist. Sie können ggf. mithilfe von **get** die Ausnahme erneut auslösen.
 - **AsyncStatus::Started** bedeutet, dass das asynchrone Objekt noch ausgeführt wird. Das asynchrone Windows-Runtime-Muster lässt nicht mehrere Wartevorgänge zu. Deshalb können Sie **wait_for** nicht in einer Schleife aufrufen. Wenn bei der Wartezeit tatsächlich ein Timeout aufgetreten ist, stehen Ihnen einige Optionen zur Verfügung. Sie können das Objekt verwerfen, oder Sie können seinen Status abfragen, bevor Sie ggf. durch den Aufruf von **get** ein Ergebnis abrufen. Es empfiehlt sich jedoch, das Objekt an dieser Stelle zu verwerfen.
+
+## <a name="returning-an-array-asynchronously"></a>Asynchrone Rückgabe eines Arrays
+
+Unten ist ein Beispiel für [MIDL 3.0](/uwp/midl-3/) dargestellt, das *Error MIDL2025: [msg]syntax error [context]: expecting > or, near "["* bewirkt.
+
+```idl
+Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();
+```
+
+Der Grund dafür ist, dass die Verwendung eines Arrays als Argument eines Parametertyps oder als parametrisierte Schnittstelle ungültig ist. Wir benötigen also ein weniger offensichtliches Verfahren, um das Ziel der asynchronen Rückgabe eines Arrays aus einer Methode einer Laufzeitklasse zu erreichen. 
+
+Sie können das Array in ein [PropertyValue](/uwp/api/windows.foundation.propertyvalue)-Objekt verpackt zurückgeben. Der aufrufende Code packt es dann aus. Hier sehen Sie ein Codebeispiel, das Sie ausprobieren können, indem Sie die Laufzeitklasse **SampleComponent** einem **Komponente für Windows-Runtime (C++/WinRT)** -Projekt hinzufügen und dieses dann (beispielsweise) von einem **Core App (C++/WinRT)** -Projekt konsumieren.
+
+```cppwinrt
+// SampleComponent.idl
+namespace MyComponentProject
+{
+    runtimeclass SampleComponent
+    {
+        Windows.Foundation.IAsyncOperation<IInspectable> RetrieveCollectionAsync();
+    };
+}
+
+// SampleComponent.h
+...
+struct SampleComponent : SampleComponentT<SampleComponent>
+{
+    ...
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> RetrieveCollectionAsync()
+    {
+        co_return Windows::Foundation::PropertyValue::CreateInt32Array({ 99, 101 }); // Box an array into a PropertyValue.
+    }
+}
+...
+
+// SampleCoreApp.cpp
+...
+MyComponentProject::SampleComponent m_sample_component;
+...
+auto boxed_array{ co_await m_sample_component.RetrieveCollectionAsync() };
+auto property_value{ boxed_array.as<winrt::Windows::Foundation::IPropertyValue>() };
+winrt::com_array<int32_t> my_array;
+property_value.GetInt32Array(my_array); // Unbox back into an array.
+...
+```
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [IAsyncAction-Schnittstelle](/uwp/api/windows.foundation.iasyncaction)
